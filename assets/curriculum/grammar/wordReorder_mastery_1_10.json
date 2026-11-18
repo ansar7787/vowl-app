@@ -1,0 +1,774 @@
+{
+  "gameType": "wordReorder",
+  "phase": "mastery",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "wr_l1_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The students laugh.",
+      "shuffledWords": [
+        "students",
+        "The",
+        "laugh"
+      ],
+      "correctOrder": [
+        1,
+        0,
+        2
+      ],
+      "hint": "Find who is doing the laughing, and place that before the action word.",
+      "explanation": "English statements begin with the subject before the verb: 'The students' (who) comes before 'laugh' (what they do). There is no object here — the verb alone completes the idea.",
+      "grammarRule": "Basic Subject-Verb Order (S-V)",
+      "structureType": "S-V",
+      "level": 1
+    },
+    {
+      "id": "wr_l1_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "Local musicians perform.",
+      "shuffledWords": [
+        "musicians",
+        "Local",
+        "perform"
+      ],
+      "correctOrder": [
+        1,
+        0,
+        2
+      ],
+      "hint": "The word describing the musicians stays attached to them, right before the verb.",
+      "explanation": "Local describes musicians, so it stays directly in front of the noun it modifies, and the whole subject phrase comes before the verb perform.",
+      "grammarRule": "Basic Subject-Verb Order (S-V)",
+      "structureType": "S-V",
+      "level": 1
+    },
+    {
+      "id": "wr_l1_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The tall office building trembles.",
+      "shuffledWords": [
+        "tall",
+        "office",
+        "The",
+        "building",
+        "trembles"
+      ],
+      "correctOrder": [
+        2,
+        0,
+        1,
+        3,
+        4
+      ],
+      "hint": "A longer subject can include several describing words, but the verb still comes after all of them.",
+      "explanation": "Even with a longer subject — 'The tall office building' — English keeps the same rule: everything describing the subject comes first, and the verb trembles still comes last.",
+      "grammarRule": "Basic Subject-Verb Order (S-V)",
+      "structureType": "S-V",
+      "level": 1
+    },
+    {
+      "id": "wr_l2_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The chef prepares dinner.",
+      "shuffledWords": [
+        "chef",
+        "dinner",
+        "prepares",
+        "The"
+      ],
+      "correctOrder": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "hint": "After naming who acts and what they do, add the thing that receives the action.",
+      "explanation": "The chef (subject) performs the action prepares (verb), and dinner (object) is the thing being prepared — the standard S-V-O pattern.",
+      "grammarRule": "Subject-Verb-Object Order (S-V-O)",
+      "structureType": "S-V-O",
+      "level": 2
+    },
+    {
+      "id": "wr_l2_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "Nurses treat patients.",
+      "shuffledWords": [
+        "Nurses",
+        "patients",
+        "treat"
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1
+      ],
+      "hint": "A plural subject with no article still comes first, followed by the verb, then the object.",
+      "explanation": "Plural nouns like nurses and patients don't need an article, but the order stays the same: subject, then verb, then object.",
+      "grammarRule": "Subject-Verb-Object Order (S-V-O)",
+      "structureType": "S-V-O",
+      "level": 2
+    },
+    {
+      "id": "wr_l2_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The new manager reviews contracts.",
+      "shuffledWords": [
+        "manager",
+        "The",
+        "reviews",
+        "contracts",
+        "new"
+      ],
+      "correctOrder": [
+        1,
+        4,
+        0,
+        2,
+        3
+      ],
+      "hint": "Keep the describing word next to the subject noun, then follow with the verb and object.",
+      "explanation": "New describes manager and stays right before it; the sentence still follows subject + verb + object with reviews contracts completing the action.",
+      "grammarRule": "Subject-Verb-Object Order (S-V-O)",
+      "structureType": "S-V-O",
+      "level": 2
+    },
+    {
+      "id": "wr_l3_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The soup tastes delicious.",
+      "shuffledWords": [
+        "tastes",
+        "delicious",
+        "soup",
+        "The"
+      ],
+      "correctOrder": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "hint": "Tastes is a linking verb here — it connects the subject to a word that describes it, not an object.",
+      "explanation": "Tastes links soup to the description delicious. Unlike action verbs, linking verbs are followed by a complement that describes the subject, not a separate object.",
+      "grammarRule": "Linking Verb + Complement (S-V-C)",
+      "structureType": "S-V-C",
+      "level": 3
+    },
+    {
+      "id": "wr_l3_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "Her voice sounds calm.",
+      "shuffledWords": [
+        "Her",
+        "calm",
+        "voice",
+        "sounds"
+      ],
+      "correctOrder": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "hint": "Put the possessor and the thing possessed together first, then the linking verb, then the description.",
+      "explanation": "Her voice is the subject, sounds is the linking verb, and calm describes the voice itself — this is a complement, not something being acted on.",
+      "grammarRule": "Linking Verb + Complement (S-V-C)",
+      "structureType": "S-V-C",
+      "level": 3
+    },
+    {
+      "id": "wr_l3_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "This restaurant is famous.",
+      "shuffledWords": [
+        "famous",
+        "restaurant",
+        "is",
+        "This"
+      ],
+      "correctOrder": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "hint": "Is often works this way too: subject, then is, then the word that describes the subject.",
+      "explanation": "Is is the most common linking verb. This restaurant is the subject, and famous describes it directly through is, following the same S-V-C pattern as tastes and sounds.",
+      "grammarRule": "Linking Verb + Complement (S-V-C)",
+      "structureType": "S-V-C",
+      "level": 3
+    },
+    {
+      "id": "wr_l4_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "I enjoy long walks.",
+      "shuffledWords": [
+        "long",
+        "walks",
+        "enjoy",
+        "I"
+      ],
+      "correctOrder": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "hint": "A pronoun subject like I follows the same order as any other subject: it comes first.",
+      "explanation": "I replaces a noun as the subject but the sentence still follows subject + verb + object: I enjoy long walks.",
+      "grammarRule": "Personal Pronouns as Subject (S-V-O)",
+      "structureType": "S-V-O",
+      "level": 4
+    },
+    {
+      "id": "wr_l4_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "They organize community events.",
+      "shuffledWords": [
+        "They",
+        "organize",
+        "events",
+        "community"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        3,
+        2
+      ],
+      "hint": "The pronoun stands alone before the verb — no article or extra word needed with plural pronouns.",
+      "explanation": "They is a subject pronoun and needs no article; it goes straight before the verb organize, followed by the object community events.",
+      "grammarRule": "Personal Pronouns as Subject (S-V-O)",
+      "structureType": "S-V-O",
+      "level": 4
+    },
+    {
+      "id": "wr_l4_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "We appreciate your effort.",
+      "shuffledWords": [
+        "effort",
+        "We",
+        "your",
+        "appreciate"
+      ],
+      "correctOrder": [
+        1,
+        3,
+        2,
+        0
+      ],
+      "hint": "The subject pronoun leads the sentence, and a possessive word can appear inside the object phrase.",
+      "explanation": "We is the subject pronoun, appreciate is the verb, and your effort is the object — showing that possessive words like your can appear within the object too.",
+      "grammarRule": "Personal Pronouns as Subject (S-V-O)",
+      "structureType": "S-V-O",
+      "level": 4
+    },
+    {
+      "id": "wr_l5_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "She orders an iced coffee.",
+      "shuffledWords": [
+        "an",
+        "coffee",
+        "iced",
+        "orders",
+        "She"
+      ],
+      "correctOrder": [
+        4,
+        3,
+        0,
+        2,
+        1
+      ],
+      "hint": "Use an, not a, before a word that starts with a vowel sound.",
+      "explanation": "An is used before iced because it starts with a vowel sound. The article sits directly before the adjective and noun it introduces: an iced coffee.",
+      "grammarRule": "Articles (a/an/the) Before Nouns",
+      "structureType": "S-V-O",
+      "level": 5
+    },
+    {
+      "id": "wr_l5_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "He wants a bicycle helmet.",
+      "shuffledWords": [
+        "bicycle",
+        "a",
+        "helmet",
+        "He",
+        "wants"
+      ],
+      "correctOrder": [
+        3,
+        4,
+        1,
+        0,
+        2
+      ],
+      "hint": "A goes before a word starting with a consonant sound, right before the noun phrase.",
+      "explanation": "A is used before bicycle because it begins with a consonant sound. It stays attached to the noun phrase it introduces: a bicycle helmet.",
+      "grammarRule": "Articles (a/an/the) Before Nouns",
+      "structureType": "S-V-O",
+      "level": 5
+    },
+    {
+      "id": "wr_l5_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "Our manager finalizes the budget report.",
+      "shuffledWords": [
+        "Our",
+        "budget",
+        "report",
+        "manager",
+        "finalizes",
+        "the"
+      ],
+      "correctOrder": [
+        0,
+        3,
+        4,
+        5,
+        1,
+        2
+      ],
+      "hint": "A possessive word can open the sentence, while the appears later inside the object phrase.",
+      "explanation": "Our introduces the subject, and the appears before budget report because it refers to one specific, known report — the definite article the marks something already understood.",
+      "grammarRule": "Articles (a/an/the) Before Nouns",
+      "structureType": "S-V-O",
+      "level": 5
+    },
+    {
+      "id": "wr_l6_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "I love this neighborhood.",
+      "shuffledWords": [
+        "I",
+        "neighborhood",
+        "this",
+        "love"
+      ],
+      "correctOrder": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "hint": "This points to something specific and singular, and it sits right before the noun.",
+      "explanation": "This is a demonstrative that points to one specific neighborhood; it takes the place of an article directly before the noun.",
+      "grammarRule": "Demonstratives (this/that/these/those) + Noun",
+      "structureType": "S-V-O",
+      "level": 6
+    },
+    {
+      "id": "wr_l6_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "She recommends that restaurant.",
+      "shuffledWords": [
+        "recommends",
+        "restaurant",
+        "that",
+        "She"
+      ],
+      "correctOrder": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "hint": "That works like this, but usually refers to something farther away or already mentioned.",
+      "explanation": "That singles out one particular restaurant, likely one already known to the listener, and sits directly before the noun it modifies.",
+      "grammarRule": "Demonstratives (this/that/these/those) + Noun",
+      "structureType": "S-V-O",
+      "level": 6
+    },
+    {
+      "id": "wr_l6_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "We prefer these seating options.",
+      "shuffledWords": [
+        "these",
+        "seating",
+        "We",
+        "prefer",
+        "options"
+      ],
+      "correctOrder": [
+        2,
+        3,
+        0,
+        1,
+        4
+      ],
+      "hint": "These is the plural form of this — it must match a plural noun.",
+      "explanation": "These agrees with the plural noun options, and the whole phrase seating options acts as one unit after the demonstrative.",
+      "grammarRule": "Demonstratives (this/that/these/those) + Noun",
+      "structureType": "S-V-O",
+      "level": 6
+    },
+    {
+      "id": "wr_l7_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "My colleague answers phone calls.",
+      "shuffledWords": [
+        "colleague",
+        "My",
+        "calls",
+        "answers",
+        "phone"
+      ],
+      "correctOrder": [
+        1,
+        0,
+        3,
+        4,
+        2
+      ],
+      "hint": "A possessive word shows who owns or relates to the noun, and comes right before it.",
+      "explanation": "My shows the relationship between the speaker and colleague; it functions like an article, sitting directly before the subject noun.",
+      "grammarRule": "Possessive Adjectives Before Nouns",
+      "structureType": "S-V-O",
+      "level": 7
+    },
+    {
+      "id": "wr_l7_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "Their company values honest feedback.",
+      "shuffledWords": [
+        "company",
+        "feedback",
+        "honest",
+        "Their",
+        "values"
+      ],
+      "correctOrder": [
+        3,
+        0,
+        4,
+        2,
+        1
+      ],
+      "hint": "The possessive word can start the sentence, and a single describing word can sit inside the object phrase.",
+      "explanation": "Their marks the subject as belonging to a group, while honest describes feedback inside the object phrase — both stay right before their nouns.",
+      "grammarRule": "Possessive Adjectives Before Nouns",
+      "structureType": "S-V-O",
+      "level": 7
+    },
+    {
+      "id": "wr_l7_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "Its engine needs regular maintenance.",
+      "shuffledWords": [
+        "maintenance",
+        "Its",
+        "engine",
+        "regular",
+        "needs"
+      ],
+      "correctOrder": [
+        1,
+        2,
+        4,
+        3,
+        0
+      ],
+      "hint": "Its (no apostrophe) shows possession for a thing, not a person — it still comes right before the noun.",
+      "explanation": "Its is the possessive form used for objects, animals, or machines; here it shows that the engine belongs to something already mentioned, like a car.",
+      "grammarRule": "Possessive Adjectives Before Nouns",
+      "structureType": "S-V-O",
+      "level": 7
+    },
+    {
+      "id": "wr_l8_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "We invite several close friends.",
+      "shuffledWords": [
+        "close",
+        "friends",
+        "We",
+        "several",
+        "invite"
+      ],
+      "correctOrder": [
+        2,
+        4,
+        3,
+        0,
+        1
+      ],
+      "hint": "A quantifier like several tells us how many, and comes before any describing word and the noun.",
+      "explanation": "Several indicates an unspecified but noticeable number, and it comes before the adjective close and the noun friends, in that order.",
+      "grammarRule": "Quantifiers Before Plural Nouns",
+      "structureType": "S-V-O",
+      "level": 8
+    },
+    {
+      "id": "wr_l8_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The bakery sells many fresh pastries.",
+      "shuffledWords": [
+        "sells",
+        "The",
+        "fresh",
+        "bakery",
+        "pastries",
+        "many"
+      ],
+      "correctOrder": [
+        1,
+        3,
+        0,
+        5,
+        2,
+        4
+      ],
+      "hint": "Many also shows quantity and goes in the same slot as several, before the adjective and noun.",
+      "explanation": "Many expresses a large but unspecified quantity, positioned before fresh and pastries, following the same pattern as other quantifiers.",
+      "grammarRule": "Quantifiers Before Plural Nouns",
+      "structureType": "S-V-O",
+      "level": 8
+    },
+    {
+      "id": "wr_l8_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "She keeps a few old photographs.",
+      "shuffledWords": [
+        "She",
+        "photographs",
+        "few",
+        "a",
+        "old",
+        "keeps"
+      ],
+      "correctOrder": [
+        0,
+        5,
+        3,
+        2,
+        4,
+        1
+      ],
+      "hint": "A few acts as one unit meaning 'some' — keep those two words together before the adjective and noun.",
+      "explanation": "A few is a two-word quantifier that functions as a single unit; it stays together before old and photographs, unlike single-word quantifiers such as many.",
+      "grammarRule": "Quantifiers Before Plural Nouns",
+      "structureType": "S-V-O",
+      "level": 8
+    },
+    {
+      "id": "wr_l9_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The coach encourages us.",
+      "shuffledWords": [
+        "encourages",
+        "The",
+        "coach",
+        "us"
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "hint": "Object pronouns like us come right after the verb, in the object's usual position.",
+      "explanation": "Us is an object pronoun that replaces a noun phrase like the players; it takes the same position a full object would, right after the verb.",
+      "grammarRule": "Object Pronouns After the Verb",
+      "structureType": "S-V-O",
+      "level": 9
+    },
+    {
+      "id": "wr_l9_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "My parents support them.",
+      "shuffledWords": [
+        "My",
+        "them",
+        "support",
+        "parents"
+      ],
+      "correctOrder": [
+        0,
+        3,
+        2,
+        1
+      ],
+      "hint": "The subject can be a possessive noun phrase, while the object slot holds a pronoun like them.",
+      "explanation": "My parents is the subject phrase, and them is the object pronoun replacing a group of people already mentioned, sitting right after the verb.",
+      "grammarRule": "Object Pronouns After the Verb",
+      "structureType": "S-V-O",
+      "level": 9
+    },
+    {
+      "id": "wr_l9_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The customer service team calls him.",
+      "shuffledWords": [
+        "calls",
+        "service",
+        "customer",
+        "The",
+        "team",
+        "him"
+      ],
+      "correctOrder": [
+        3,
+        2,
+        1,
+        4,
+        0,
+        5
+      ],
+      "hint": "Even a multi-word subject like a team name doesn't change where the object pronoun goes.",
+      "explanation": "Customer service team is a compound noun acting as one subject unit; the object pronoun him still follows immediately after the verb calls, unaffected by the subject's length.",
+      "grammarRule": "Object Pronouns After the Verb",
+      "structureType": "S-V-O",
+      "level": 9
+    },
+    {
+      "id": "wr_l10_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "Our new neighbor walks her small dog.",
+      "shuffledWords": [
+        "new",
+        "Our",
+        "small",
+        "neighbor",
+        "dog",
+        "walks",
+        "her"
+      ],
+      "correctOrder": [
+        1,
+        0,
+        3,
+        5,
+        6,
+        2,
+        4
+      ],
+      "hint": "Combine everything you've learned: possessive + adjective for the subject, then the verb, then possessive + adjective for the object.",
+      "explanation": "This review sentence layers a possessive and adjective before the subject noun (Our new neighbor) and again before the object noun (her small dog), around the central verb walks.",
+      "grammarRule": "Basic Sentence Structure (Review)",
+      "structureType": "S-V-O",
+      "level": 10
+    },
+    {
+      "id": "wr_l10_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The friendly barista remembers my usual order.",
+      "shuffledWords": [
+        "my",
+        "friendly",
+        "remembers",
+        "barista",
+        "The",
+        "order",
+        "usual"
+      ],
+      "correctOrder": [
+        4,
+        1,
+        3,
+        2,
+        0,
+        6,
+        5
+      ],
+      "hint": "Article and adjective build the subject; possessive and adjective build the object — the verb sits between them.",
+      "explanation": "The friendly barista uses an article and adjective to build the subject, while my usual order uses a possessive and adjective to build the object, showing how noun phrases grow while the core S-V-O order stays fixed.",
+      "grammarRule": "Basic Sentence Structure (Review)",
+      "structureType": "S-V-O",
+      "level": 10
+    },
+    {
+      "id": "wr_l10_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "Several loyal customers recommend this popular bakery.",
+      "shuffledWords": [
+        "popular",
+        "bakery",
+        "this",
+        "loyal",
+        "recommend",
+        "customers",
+        "Several"
+      ],
+      "correctOrder": [
+        6,
+        3,
+        5,
+        4,
+        2,
+        0,
+        1
+      ],
+      "hint": "A quantifier and adjective open the subject; a demonstrative and adjective open the object.",
+      "explanation": "Several loyal customers combines a quantifier and adjective before the subject noun, and this popular bakery combines a demonstrative and adjective before the object noun — a fitting final review of everything from this file.",
+      "grammarRule": "Basic Sentence Structure (Review)",
+      "structureType": "S-V-O",
+      "level": 10
+    }
+  ]
+}

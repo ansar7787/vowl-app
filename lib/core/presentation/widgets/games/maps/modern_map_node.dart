@@ -729,6 +729,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                             'contextualUsage',
                             'partsOfSpeech',
                             'grammarQuest',
+                            'wordReorder',
                           };
                           final isPhasedGame = phasedGames.contains(widget.gameType);
 

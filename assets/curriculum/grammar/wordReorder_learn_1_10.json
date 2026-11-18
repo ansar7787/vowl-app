@@ -1,0 +1,511 @@
+{
+  "gameType": "wordReorder",
+  "phase": "learn",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "wr_l1_learn_q1",
+      "level": 1,
+      "conceptTitle": "Basic Subject-Verb Order (S-V)",
+      "structureType": "S-V",
+      "topicEmoji": "🧱",
+      "sentence": "The students laugh.",
+      "orderedWords": [
+        "The",
+        "students",
+        "laugh"
+      ],
+      "ruleExplanation": "English statements begin with the subject before the verb: 'The students' (who) comes before 'laugh' (what they do). There is no object here — the verb alone completes the idea.",
+      "nativeTip": "Find who is doing the laughing, and place that before the action word."
+    },
+    {
+      "id": "wr_l1_learn_q2",
+      "level": 1,
+      "conceptTitle": "Basic Subject-Verb Order (S-V)",
+      "structureType": "S-V",
+      "topicEmoji": "🧱",
+      "sentence": "Local musicians perform.",
+      "orderedWords": [
+        "Local",
+        "musicians",
+        "perform"
+      ],
+      "ruleExplanation": "Local describes musicians, so it stays directly in front of the noun it modifies, and the whole subject phrase comes before the verb perform.",
+      "nativeTip": "The word describing the musicians stays attached to them, right before the verb."
+    },
+    {
+      "id": "wr_l1_learn_q3",
+      "level": 1,
+      "conceptTitle": "Basic Subject-Verb Order (S-V)",
+      "structureType": "S-V",
+      "topicEmoji": "🧱",
+      "sentence": "The tall office building trembles.",
+      "orderedWords": [
+        "The",
+        "tall",
+        "office",
+        "building",
+        "trembles"
+      ],
+      "ruleExplanation": "Even with a longer subject — 'The tall office building' — English keeps the same rule: everything describing the subject comes first, and the verb trembles still comes last.",
+      "nativeTip": "A longer subject can include several describing words, but the verb still comes after all of them."
+    },
+    {
+      "id": "wr_l2_learn_q1",
+      "level": 2,
+      "conceptTitle": "Subject-Verb-Object Order (S-V-O)",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "The chef prepares dinner.",
+      "orderedWords": [
+        "The",
+        "chef",
+        "prepares",
+        "dinner"
+      ],
+      "ruleExplanation": "The chef (subject) performs the action prepares (verb), and dinner (object) is the thing being prepared — the standard S-V-O pattern.",
+      "nativeTip": "After naming who acts and what they do, add the thing that receives the action."
+    },
+    {
+      "id": "wr_l2_learn_q2",
+      "level": 2,
+      "conceptTitle": "Subject-Verb-Object Order (S-V-O)",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "Nurses treat patients.",
+      "orderedWords": [
+        "Nurses",
+        "treat",
+        "patients"
+      ],
+      "ruleExplanation": "Plural nouns like nurses and patients don't need an article, but the order stays the same: subject, then verb, then object.",
+      "nativeTip": "A plural subject with no article still comes first, followed by the verb, then the object."
+    },
+    {
+      "id": "wr_l2_learn_q3",
+      "level": 2,
+      "conceptTitle": "Subject-Verb-Object Order (S-V-O)",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "The new manager reviews contracts.",
+      "orderedWords": [
+        "The",
+        "new",
+        "manager",
+        "reviews",
+        "contracts"
+      ],
+      "ruleExplanation": "New describes manager and stays right before it; the sentence still follows subject + verb + object with reviews contracts completing the action.",
+      "nativeTip": "Keep the describing word next to the subject noun, then follow with the verb and object."
+    },
+    {
+      "id": "wr_l3_learn_q1",
+      "level": 3,
+      "conceptTitle": "Linking Verb + Complement (S-V-C)",
+      "structureType": "S-V-C",
+      "topicEmoji": "🧱",
+      "sentence": "The soup tastes delicious.",
+      "orderedWords": [
+        "The",
+        "soup",
+        "tastes",
+        "delicious"
+      ],
+      "ruleExplanation": "Tastes links soup to the description delicious. Unlike action verbs, linking verbs are followed by a complement that describes the subject, not a separate object.",
+      "nativeTip": "Tastes is a linking verb here — it connects the subject to a word that describes it, not an object."
+    },
+    {
+      "id": "wr_l3_learn_q2",
+      "level": 3,
+      "conceptTitle": "Linking Verb + Complement (S-V-C)",
+      "structureType": "S-V-C",
+      "topicEmoji": "🧱",
+      "sentence": "Her voice sounds calm.",
+      "orderedWords": [
+        "Her",
+        "voice",
+        "sounds",
+        "calm"
+      ],
+      "ruleExplanation": "Her voice is the subject, sounds is the linking verb, and calm describes the voice itself — this is a complement, not something being acted on.",
+      "nativeTip": "Put the possessor and the thing possessed together first, then the linking verb, then the description."
+    },
+    {
+      "id": "wr_l3_learn_q3",
+      "level": 3,
+      "conceptTitle": "Linking Verb + Complement (S-V-C)",
+      "structureType": "S-V-C",
+      "topicEmoji": "🧱",
+      "sentence": "This restaurant is famous.",
+      "orderedWords": [
+        "This",
+        "restaurant",
+        "is",
+        "famous"
+      ],
+      "ruleExplanation": "Is is the most common linking verb. This restaurant is the subject, and famous describes it directly through is, following the same S-V-C pattern as tastes and sounds.",
+      "nativeTip": "Is often works this way too: subject, then is, then the word that describes the subject."
+    },
+    {
+      "id": "wr_l4_learn_q1",
+      "level": 4,
+      "conceptTitle": "Personal Pronouns as Subject (S-V-O)",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "I enjoy long walks.",
+      "orderedWords": [
+        "I",
+        "enjoy",
+        "long",
+        "walks"
+      ],
+      "ruleExplanation": "I replaces a noun as the subject but the sentence still follows subject + verb + object: I enjoy long walks.",
+      "nativeTip": "A pronoun subject like I follows the same order as any other subject: it comes first."
+    },
+    {
+      "id": "wr_l4_learn_q2",
+      "level": 4,
+      "conceptTitle": "Personal Pronouns as Subject (S-V-O)",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "They organize community events.",
+      "orderedWords": [
+        "They",
+        "organize",
+        "community",
+        "events"
+      ],
+      "ruleExplanation": "They is a subject pronoun and needs no article; it goes straight before the verb organize, followed by the object community events.",
+      "nativeTip": "The pronoun stands alone before the verb — no article or extra word needed with plural pronouns."
+    },
+    {
+      "id": "wr_l4_learn_q3",
+      "level": 4,
+      "conceptTitle": "Personal Pronouns as Subject (S-V-O)",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "We appreciate your effort.",
+      "orderedWords": [
+        "We",
+        "appreciate",
+        "your",
+        "effort"
+      ],
+      "ruleExplanation": "We is the subject pronoun, appreciate is the verb, and your effort is the object — showing that possessive words like your can appear within the object too.",
+      "nativeTip": "The subject pronoun leads the sentence, and a possessive word can appear inside the object phrase."
+    },
+    {
+      "id": "wr_l5_learn_q1",
+      "level": 5,
+      "conceptTitle": "Articles (a/an/the) Before Nouns",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "She orders an iced coffee.",
+      "orderedWords": [
+        "She",
+        "orders",
+        "an",
+        "iced",
+        "coffee"
+      ],
+      "ruleExplanation": "An is used before iced because it starts with a vowel sound. The article sits directly before the adjective and noun it introduces: an iced coffee.",
+      "nativeTip": "Use an, not a, before a word that starts with a vowel sound."
+    },
+    {
+      "id": "wr_l5_learn_q2",
+      "level": 5,
+      "conceptTitle": "Articles (a/an/the) Before Nouns",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "He wants a bicycle helmet.",
+      "orderedWords": [
+        "He",
+        "wants",
+        "a",
+        "bicycle",
+        "helmet"
+      ],
+      "ruleExplanation": "A is used before bicycle because it begins with a consonant sound. It stays attached to the noun phrase it introduces: a bicycle helmet.",
+      "nativeTip": "A goes before a word starting with a consonant sound, right before the noun phrase."
+    },
+    {
+      "id": "wr_l5_learn_q3",
+      "level": 5,
+      "conceptTitle": "Articles (a/an/the) Before Nouns",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "Our manager finalizes the budget report.",
+      "orderedWords": [
+        "Our",
+        "manager",
+        "finalizes",
+        "the",
+        "budget",
+        "report"
+      ],
+      "ruleExplanation": "Our introduces the subject, and the appears before budget report because it refers to one specific, known report — the definite article the marks something already understood.",
+      "nativeTip": "A possessive word can open the sentence, while the appears later inside the object phrase."
+    },
+    {
+      "id": "wr_l6_learn_q1",
+      "level": 6,
+      "conceptTitle": "Demonstratives (this/that/these/those) + Noun",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "I love this neighborhood.",
+      "orderedWords": [
+        "I",
+        "love",
+        "this",
+        "neighborhood"
+      ],
+      "ruleExplanation": "This is a demonstrative that points to one specific neighborhood; it takes the place of an article directly before the noun.",
+      "nativeTip": "This points to something specific and singular, and it sits right before the noun."
+    },
+    {
+      "id": "wr_l6_learn_q2",
+      "level": 6,
+      "conceptTitle": "Demonstratives (this/that/these/those) + Noun",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "She recommends that restaurant.",
+      "orderedWords": [
+        "She",
+        "recommends",
+        "that",
+        "restaurant"
+      ],
+      "ruleExplanation": "That singles out one particular restaurant, likely one already known to the listener, and sits directly before the noun it modifies.",
+      "nativeTip": "That works like this, but usually refers to something farther away or already mentioned."
+    },
+    {
+      "id": "wr_l6_learn_q3",
+      "level": 6,
+      "conceptTitle": "Demonstratives (this/that/these/those) + Noun",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "We prefer these seating options.",
+      "orderedWords": [
+        "We",
+        "prefer",
+        "these",
+        "seating",
+        "options"
+      ],
+      "ruleExplanation": "These agrees with the plural noun options, and the whole phrase seating options acts as one unit after the demonstrative.",
+      "nativeTip": "These is the plural form of this — it must match a plural noun."
+    },
+    {
+      "id": "wr_l7_learn_q1",
+      "level": 7,
+      "conceptTitle": "Possessive Adjectives Before Nouns",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "My colleague answers phone calls.",
+      "orderedWords": [
+        "My",
+        "colleague",
+        "answers",
+        "phone",
+        "calls"
+      ],
+      "ruleExplanation": "My shows the relationship between the speaker and colleague; it functions like an article, sitting directly before the subject noun.",
+      "nativeTip": "A possessive word shows who owns or relates to the noun, and comes right before it."
+    },
+    {
+      "id": "wr_l7_learn_q2",
+      "level": 7,
+      "conceptTitle": "Possessive Adjectives Before Nouns",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "Their company values honest feedback.",
+      "orderedWords": [
+        "Their",
+        "company",
+        "values",
+        "honest",
+        "feedback"
+      ],
+      "ruleExplanation": "Their marks the subject as belonging to a group, while honest describes feedback inside the object phrase — both stay right before their nouns.",
+      "nativeTip": "The possessive word can start the sentence, and a single describing word can sit inside the object phrase."
+    },
+    {
+      "id": "wr_l7_learn_q3",
+      "level": 7,
+      "conceptTitle": "Possessive Adjectives Before Nouns",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "Its engine needs regular maintenance.",
+      "orderedWords": [
+        "Its",
+        "engine",
+        "needs",
+        "regular",
+        "maintenance"
+      ],
+      "ruleExplanation": "Its is the possessive form used for objects, animals, or machines; here it shows that the engine belongs to something already mentioned, like a car.",
+      "nativeTip": "Its (no apostrophe) shows possession for a thing, not a person — it still comes right before the noun."
+    },
+    {
+      "id": "wr_l8_learn_q1",
+      "level": 8,
+      "conceptTitle": "Quantifiers Before Plural Nouns",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "We invite several close friends.",
+      "orderedWords": [
+        "We",
+        "invite",
+        "several",
+        "close",
+        "friends"
+      ],
+      "ruleExplanation": "Several indicates an unspecified but noticeable number, and it comes before the adjective close and the noun friends, in that order.",
+      "nativeTip": "A quantifier like several tells us how many, and comes before any describing word and the noun."
+    },
+    {
+      "id": "wr_l8_learn_q2",
+      "level": 8,
+      "conceptTitle": "Quantifiers Before Plural Nouns",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "The bakery sells many fresh pastries.",
+      "orderedWords": [
+        "The",
+        "bakery",
+        "sells",
+        "many",
+        "fresh",
+        "pastries"
+      ],
+      "ruleExplanation": "Many expresses a large but unspecified quantity, positioned before fresh and pastries, following the same pattern as other quantifiers.",
+      "nativeTip": "Many also shows quantity and goes in the same slot as several, before the adjective and noun."
+    },
+    {
+      "id": "wr_l8_learn_q3",
+      "level": 8,
+      "conceptTitle": "Quantifiers Before Plural Nouns",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "She keeps a few old photographs.",
+      "orderedWords": [
+        "She",
+        "keeps",
+        "a",
+        "few",
+        "old",
+        "photographs"
+      ],
+      "ruleExplanation": "A few is a two-word quantifier that functions as a single unit; it stays together before old and photographs, unlike single-word quantifiers such as many.",
+      "nativeTip": "A few acts as one unit meaning 'some' — keep those two words together before the adjective and noun."
+    },
+    {
+      "id": "wr_l9_learn_q1",
+      "level": 9,
+      "conceptTitle": "Object Pronouns After the Verb",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "The coach encourages us.",
+      "orderedWords": [
+        "The",
+        "coach",
+        "encourages",
+        "us"
+      ],
+      "ruleExplanation": "Us is an object pronoun that replaces a noun phrase like the players; it takes the same position a full object would, right after the verb.",
+      "nativeTip": "Object pronouns like us come right after the verb, in the object's usual position."
+    },
+    {
+      "id": "wr_l9_learn_q2",
+      "level": 9,
+      "conceptTitle": "Object Pronouns After the Verb",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "My parents support them.",
+      "orderedWords": [
+        "My",
+        "parents",
+        "support",
+        "them"
+      ],
+      "ruleExplanation": "My parents is the subject phrase, and them is the object pronoun replacing a group of people already mentioned, sitting right after the verb.",
+      "nativeTip": "The subject can be a possessive noun phrase, while the object slot holds a pronoun like them."
+    },
+    {
+      "id": "wr_l9_learn_q3",
+      "level": 9,
+      "conceptTitle": "Object Pronouns After the Verb",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "The customer service team calls him.",
+      "orderedWords": [
+        "The",
+        "customer",
+        "service",
+        "team",
+        "calls",
+        "him"
+      ],
+      "ruleExplanation": "Customer service team is a compound noun acting as one subject unit; the object pronoun him still follows immediately after the verb calls, unaffected by the subject's length.",
+      "nativeTip": "Even a multi-word subject like a team name doesn't change where the object pronoun goes."
+    },
+    {
+      "id": "wr_l10_learn_q1",
+      "level": 10,
+      "conceptTitle": "Basic Sentence Structure (Review)",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "Our new neighbor walks her small dog.",
+      "orderedWords": [
+        "Our",
+        "new",
+        "neighbor",
+        "walks",
+        "her",
+        "small",
+        "dog"
+      ],
+      "ruleExplanation": "This review sentence layers a possessive and adjective before the subject noun (Our new neighbor) and again before the object noun (her small dog), around the central verb walks.",
+      "nativeTip": "Combine everything you've learned: possessive + adjective for the subject, then the verb, then possessive + adjective for the object."
+    },
+    {
+      "id": "wr_l10_learn_q2",
+      "level": 10,
+      "conceptTitle": "Basic Sentence Structure (Review)",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "The friendly barista remembers my usual order.",
+      "orderedWords": [
+        "The",
+        "friendly",
+        "barista",
+        "remembers",
+        "my",
+        "usual",
+        "order"
+      ],
+      "ruleExplanation": "The friendly barista uses an article and adjective to build the subject, while my usual order uses a possessive and adjective to build the object, showing how noun phrases grow while the core S-V-O order stays fixed.",
+      "nativeTip": "Article and adjective build the subject; possessive and adjective build the object — the verb sits between them."
+    },
+    {
+      "id": "wr_l10_learn_q3",
+      "level": 10,
+      "conceptTitle": "Basic Sentence Structure (Review)",
+      "structureType": "S-V-O",
+      "topicEmoji": "🧱",
+      "sentence": "Several loyal customers recommend this popular bakery.",
+      "orderedWords": [
+        "Several",
+        "loyal",
+        "customers",
+        "recommend",
+        "this",
+        "popular",
+        "bakery"
+      ],
+      "ruleExplanation": "Several loyal customers combines a quantifier and adjective before the subject noun, and this popular bakery combines a demonstrative and adjective before the object noun — a fitting final review of everything from this file.",
+      "nativeTip": "A quantifier and adjective open the subject; a demonstrative and adjective open the object."
+    }
+  ]
+}

@@ -1,0 +1,756 @@
+{
+  "gameType": "wordReorder",
+  "phase": "practice",
+  "batchIndex": 13,
+  "levels": "121-130",
+  "quests": [
+    {
+      "id": "wr_l121_practice_q1",
+      "level": 121,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Close the door.",
+      "shuffledWords": [
+        "Close",
+        "door",
+        "the"
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1
+      ],
+      "hint": "Commands start directly with the base verb — no subject needed at all.",
+      "explanation": "Close opens the sentence with no stated subject (you is understood), followed directly by the object the door.",
+      "grammarRule": "Affirmative Imperatives (No Subject)",
+      "structureType": "V-O"
+    },
+    {
+      "id": "wr_l121_practice_q2",
+      "level": 121,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Turn off the lights.",
+      "shuffledWords": [
+        "the",
+        "Turn",
+        "lights",
+        "off"
+      ],
+      "correctOrder": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "hint": "A phrasal verb like turn off stays together, right at the start of the command.",
+      "explanation": "Turn off is a phrasal verb that opens the command as one unit, followed by the object the lights.",
+      "grammarRule": "Affirmative Imperatives (No Subject)",
+      "structureType": "V-Prt-O"
+    },
+    {
+      "id": "wr_l121_practice_q3",
+      "level": 121,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Submit your application before Friday.",
+      "shuffledWords": [
+        "Friday",
+        "before",
+        "your",
+        "application",
+        "Submit"
+      ],
+      "correctOrder": [
+        4,
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "The command can end with a deadline, even though it still starts with the base verb.",
+      "explanation": "Submit opens the command, your application is the object, and before Friday (a deadline) closes the sentence.",
+      "grammarRule": "Affirmative Imperatives (No Subject)",
+      "structureType": "V-O-Time"
+    },
+    {
+      "id": "wr_l122_practice_q1",
+      "level": 122,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Don't touch the wet paint.",
+      "shuffledWords": [
+        "Don't",
+        "the",
+        "touch",
+        "paint",
+        "wet"
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1,
+        4,
+        3
+      ],
+      "hint": "Don't opens a negative command, right before the base verb — no subject is used here either.",
+      "explanation": "Don't opens the negative command before touch, with the wet paint as the object.",
+      "grammarRule": "Negative Imperatives",
+      "structureType": "Don't-V-O"
+    },
+    {
+      "id": "wr_l122_practice_q2",
+      "level": 122,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Don't forget your umbrella.",
+      "shuffledWords": [
+        "umbrella",
+        "Don't",
+        "your",
+        "forget"
+      ],
+      "correctOrder": [
+        1,
+        3,
+        2,
+        0
+      ],
+      "hint": "The same don't-plus-base-verb pattern applies to any negative instruction.",
+      "explanation": "Don't precedes forget, with your umbrella as the object, warning against forgetting something.",
+      "grammarRule": "Negative Imperatives",
+      "structureType": "Don't-V-O"
+    },
+    {
+      "id": "wr_l122_practice_q3",
+      "level": 122,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Don't leave your bags unattended.",
+      "shuffledWords": [
+        "your",
+        "leave",
+        "bags",
+        "Don't",
+        "unattended"
+      ],
+      "correctOrder": [
+        3,
+        1,
+        0,
+        2,
+        4
+      ],
+      "hint": "Don't still opens the command, even with a descriptive word at the end of the object.",
+      "explanation": "Don't precedes leave, with your bags unattended as the object, including a describing word after the noun.",
+      "grammarRule": "Negative Imperatives",
+      "structureType": "Don't-V-O-Adj"
+    },
+    {
+      "id": "wr_l123_practice_q1",
+      "level": 123,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Please arrive on time.",
+      "shuffledWords": [
+        "Please",
+        "time",
+        "arrive",
+        "on"
+      ],
+      "correctOrder": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "hint": "Please can open the sentence, softening the command right from the start.",
+      "explanation": "Please opens the sentence before arrive, softening the command into a polite request from the very first word.",
+      "grammarRule": "Imperatives with 'Please' (Placement)",
+      "structureType": "Please-V-Time"
+    },
+    {
+      "id": "wr_l123_practice_q2",
+      "level": 123,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Fasten your seatbelt, please.",
+      "shuffledWords": [
+        "please",
+        "your",
+        "Fasten",
+        "seatbelt,"
+      ],
+      "correctOrder": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "hint": "Please can also close the sentence, set off by a comma, for the same softening effect.",
+      "explanation": "Please closes the sentence after a comma, following fasten your seatbelt — the same softening effect as opening with please, just at the other end.",
+      "grammarRule": "Imperatives with 'Please' (Placement)",
+      "structureType": "V-O,-Please"
+    },
+    {
+      "id": "wr_l123_practice_q3",
+      "level": 123,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Please keep the noise down.",
+      "shuffledWords": [
+        "the",
+        "Please",
+        "keep",
+        "noise",
+        "down"
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0,
+        3,
+        4
+      ],
+      "hint": "Please opens the sentence here too, right before the phrasal verb.",
+      "explanation": "Please opens the sentence before keep the noise down, a phrasal-verb command softened by please at the start.",
+      "grammarRule": "Imperatives with 'Please' (Placement)",
+      "structureType": "Please-V-O-Prt"
+    },
+    {
+      "id": "wr_l124_practice_q1",
+      "level": 124,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "First, turn on the machine.",
+      "shuffledWords": [
+        "the",
+        "First,",
+        "on",
+        "turn",
+        "machine"
+      ],
+      "correctOrder": [
+        1,
+        3,
+        2,
+        0,
+        4
+      ],
+      "hint": "A sequencing word like first can front an instruction, set off by a comma, before the command itself.",
+      "explanation": "First fronts the instruction, followed by a comma and the command turn on the machine, showing this is the opening step.",
+      "grammarRule": "Sequencing Instructions (First/Then/Finally)",
+      "structureType": "Sequence-Word,-V-Prt-O"
+    },
+    {
+      "id": "wr_l124_practice_q2",
+      "level": 124,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Then, add the ingredients slowly.",
+      "shuffledWords": [
+        "Then,",
+        "the",
+        "add",
+        "ingredients",
+        "slowly"
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1,
+        3,
+        4
+      ],
+      "hint": "Then works the same way, marking this as the next step in a sequence.",
+      "explanation": "Then fronts the instruction, followed by a comma and add the ingredients slowly, marking the next step after the first.",
+      "grammarRule": "Sequencing Instructions (First/Then/Finally)",
+      "structureType": "Sequence-Word,-V-O-Adv"
+    },
+    {
+      "id": "wr_l124_practice_q3",
+      "level": 124,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Finally, press the start button.",
+      "shuffledWords": [
+        "start",
+        "the",
+        "press",
+        "button",
+        "Finally,"
+      ],
+      "correctOrder": [
+        4,
+        2,
+        1,
+        0,
+        3
+      ],
+      "hint": "Finally signals the last step, still fronting the sentence before the comma and command.",
+      "explanation": "Finally fronts the instruction, followed by a comma and press the start button, marking the last step in the sequence.",
+      "grammarRule": "Sequencing Instructions (First/Then/Finally)",
+      "structureType": "Sequence-Word,-V-O"
+    },
+    {
+      "id": "wr_l125_practice_q1",
+      "level": 125,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Could you close the window?",
+      "shuffledWords": [
+        "close",
+        "you",
+        "Could",
+        "window",
+        "the"
+      ],
+      "correctOrder": [
+        2,
+        1,
+        0,
+        4,
+        3
+      ],
+      "hint": "Could inverts to the front, before you, to soften a command into a polite request.",
+      "explanation": "Could opens the request before you, with close the window following in normal verb-object order.",
+      "grammarRule": "Polite Requests with 'Could You'",
+      "structureType": "Could-You-V-O"
+    },
+    {
+      "id": "wr_l125_practice_q2",
+      "level": 125,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Could you send me the invoice?",
+      "shuffledWords": [
+        "invoice",
+        "you",
+        "the",
+        "me",
+        "send",
+        "Could"
+      ],
+      "correctOrder": [
+        5,
+        1,
+        4,
+        3,
+        2,
+        0
+      ],
+      "hint": "The same pattern works with a double object after the base verb.",
+      "explanation": "Could opens the request before you, and send me the invoice follows, with me and the invoice as indirect and direct objects.",
+      "grammarRule": "Polite Requests with 'Could You'",
+      "structureType": "Could-You-V-O-O"
+    },
+    {
+      "id": "wr_l125_practice_q3",
+      "level": 125,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Could you repeat that, please?",
+      "shuffledWords": [
+        "you",
+        "repeat",
+        "please",
+        "Could",
+        "that,"
+      ],
+      "correctOrder": [
+        3,
+        0,
+        1,
+        4,
+        2
+      ],
+      "hint": "Please can still close the sentence after a comma, even within a could-you request.",
+      "explanation": "Could opens the request before you, repeat that follows, and please closes the sentence after a comma for extra politeness.",
+      "grammarRule": "Polite Requests with 'Could You'",
+      "structureType": "Could-You-V-O,-Please"
+    },
+    {
+      "id": "wr_l126_practice_q1",
+      "level": 126,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Would you mind waiting outside?",
+      "shuffledWords": [
+        "Would",
+        "you",
+        "waiting",
+        "mind",
+        "outside"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        3,
+        2,
+        4
+      ],
+      "hint": "Would you mind is followed by the -ing form of the verb, not the base form.",
+      "explanation": "Would you mind requires the -ing form waiting (not the base verb wait), making this an especially polite request.",
+      "grammarRule": "Polite Requests with 'Would You Mind'",
+      "structureType": "Would-You-Mind-Ving-Place"
+    },
+    {
+      "id": "wr_l126_practice_q2",
+      "level": 126,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Would you mind lowering your voice?",
+      "shuffledWords": [
+        "your",
+        "Would",
+        "voice",
+        "you",
+        "lowering",
+        "mind"
+      ],
+      "correctOrder": [
+        1,
+        3,
+        5,
+        4,
+        0,
+        2
+      ],
+      "hint": "The same -ing rule applies here: mind is always followed by a gerund.",
+      "explanation": "Would you mind precedes lowering (the -ing form), with your voice as the object.",
+      "grammarRule": "Polite Requests with 'Would You Mind'",
+      "structureType": "Would-You-Mind-Ving-O"
+    },
+    {
+      "id": "wr_l126_practice_q3",
+      "level": 126,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Would you mind checking the schedule?",
+      "shuffledWords": [
+        "schedule",
+        "the",
+        "you",
+        "mind",
+        "Would",
+        "checking"
+      ],
+      "correctOrder": [
+        4,
+        2,
+        3,
+        5,
+        1,
+        0
+      ],
+      "hint": "Mind still takes the -ing form, regardless of which verb or object follows.",
+      "explanation": "Would you mind precedes checking (the -ing form), with the schedule as the object.",
+      "grammarRule": "Polite Requests with 'Would You Mind'",
+      "structureType": "Would-You-Mind-Ving-O"
+    },
+    {
+      "id": "wr_l127_practice_q1",
+      "level": 127,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Let's review the numbers together.",
+      "shuffledWords": [
+        "Let's",
+        "review",
+        "together",
+        "numbers",
+        "the"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        4,
+        3,
+        2
+      ],
+      "hint": "Let's proposes an action that includes the speaker, followed directly by the base verb.",
+      "explanation": "Let's opens the suggestion, including the speaker in the action, followed by review the numbers together.",
+      "grammarRule": "Suggestions with 'Let's'",
+      "structureType": "Let's-V-O-Adv"
+    },
+    {
+      "id": "wr_l127_practice_q2",
+      "level": 127,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Let's take a short break.",
+      "shuffledWords": [
+        "short",
+        "break",
+        "a",
+        "take",
+        "Let's"
+      ],
+      "correctOrder": [
+        4,
+        3,
+        2,
+        0,
+        1
+      ],
+      "hint": "The same let's-plus-base-verb pattern makes a shared suggestion.",
+      "explanation": "Let's precedes take, with a short break as the object, suggesting a shared action.",
+      "grammarRule": "Suggestions with 'Let's'",
+      "structureType": "Let's-V-O"
+    },
+    {
+      "id": "wr_l127_practice_q3",
+      "level": 127,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Let's schedule the meeting for Monday.",
+      "shuffledWords": [
+        "Let's",
+        "for",
+        "meeting",
+        "Monday",
+        "schedule",
+        "the"
+      ],
+      "correctOrder": [
+        0,
+        4,
+        5,
+        2,
+        1,
+        3
+      ],
+      "hint": "Let's still opens the suggestion, even with a time expression at the end.",
+      "explanation": "Let's precedes schedule, with the meeting as the object and for Monday closing the sentence.",
+      "grammarRule": "Suggestions with 'Let's'",
+      "structureType": "Let's-V-O-Time"
+    },
+    {
+      "id": "wr_l128_practice_q1",
+      "level": 128,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Make sure to lock the door.",
+      "shuffledWords": [
+        "to",
+        "sure",
+        "door",
+        "the",
+        "lock",
+        "Make"
+      ],
+      "correctOrder": [
+        5,
+        1,
+        0,
+        4,
+        3,
+        2
+      ],
+      "hint": "Make sure to is followed by the base form of the verb, giving a firm instruction.",
+      "explanation": "Make sure to precedes lock (base form), with the door as the object, emphasizing the importance of the action.",
+      "grammarRule": "Instructions with 'Make Sure To'",
+      "structureType": "Make-Sure-To-V-O"
+    },
+    {
+      "id": "wr_l128_practice_q2",
+      "level": 128,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Make sure to save your work.",
+      "shuffledWords": [
+        "save",
+        "to",
+        "work",
+        "your",
+        "sure",
+        "Make"
+      ],
+      "correctOrder": [
+        5,
+        4,
+        1,
+        0,
+        3,
+        2
+      ],
+      "hint": "The same pattern applies to any important instruction using make sure to.",
+      "explanation": "Make sure to precedes save (base form), with your work as the object.",
+      "grammarRule": "Instructions with 'Make Sure To'",
+      "structureType": "Make-Sure-To-V-O"
+    },
+    {
+      "id": "wr_l128_practice_q3",
+      "level": 128,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Make sure to arrive early tomorrow.",
+      "shuffledWords": [
+        "tomorrow",
+        "sure",
+        "arrive",
+        "to",
+        "Make",
+        "early"
+      ],
+      "correctOrder": [
+        4,
+        1,
+        3,
+        2,
+        5,
+        0
+      ],
+      "hint": "Make sure to still leads into the base verb, even with a time word at the end.",
+      "explanation": "Make sure to precedes arrive (base form), with early tomorrow closing the sentence.",
+      "grammarRule": "Instructions with 'Make Sure To'",
+      "structureType": "Make-Sure-To-V-Adv-Time"
+    },
+    {
+      "id": "wr_l129_practice_q1",
+      "level": 129,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Report to the front desk by nine.",
+      "shuffledWords": [
+        "front",
+        "Report",
+        "by",
+        "to",
+        "nine",
+        "desk",
+        "the"
+      ],
+      "correctOrder": [
+        1,
+        3,
+        6,
+        0,
+        5,
+        2,
+        4
+      ],
+      "hint": "The command opens with the verb, then where to go, then by what time.",
+      "explanation": "Report opens the instruction, to the front desk (place) follows, and by nine (time) closes it, extending the imperative into a full place-time chain.",
+      "grammarRule": "Practical Instructions (Multi-Element)",
+      "structureType": "V-Place-Time"
+    },
+    {
+      "id": "wr_l129_practice_q2",
+      "level": 129,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Leave your luggage at the counter.",
+      "shuffledWords": [
+        "luggage",
+        "counter",
+        "at",
+        "your",
+        "the",
+        "Leave"
+      ],
+      "correctOrder": [
+        5,
+        3,
+        0,
+        2,
+        4,
+        1
+      ],
+      "hint": "The object comes right after the verb, then the place where it should go.",
+      "explanation": "Leave opens the instruction, your luggage is the object, and at the counter (place) closes the sentence.",
+      "grammarRule": "Practical Instructions (Multi-Element)",
+      "structureType": "V-O-Place"
+    },
+    {
+      "id": "wr_l129_practice_q3",
+      "level": 129,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Submit the form at our office before noon.",
+      "shuffledWords": [
+        "before",
+        "noon",
+        "our",
+        "form",
+        "Submit",
+        "at",
+        "the",
+        "office"
+      ],
+      "correctOrder": [
+        4,
+        6,
+        3,
+        5,
+        2,
+        7,
+        0,
+        1
+      ],
+      "hint": "Stack object, then place, then time, just as in earlier statement-based sentences from this curriculum.",
+      "explanation": "Submit opens the instruction, the form is the object, at our office (place) follows, and before noon (time) closes it.",
+      "grammarRule": "Practical Instructions (Multi-Element)",
+      "structureType": "V-O-Place-Time"
+    },
+    {
+      "id": "wr_l130_practice_q1",
+      "level": 130,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "First, make sure to check your passport.",
+      "shuffledWords": [
+        "your",
+        "sure",
+        "passport",
+        "to",
+        "check",
+        "make",
+        "First,"
+      ],
+      "correctOrder": [
+        6,
+        5,
+        1,
+        3,
+        4,
+        0,
+        2
+      ],
+      "hint": "Combine a fronted sequencing word with a make-sure-to instruction.",
+      "explanation": "First fronts the instruction with a comma, followed by make sure to check your passport, combining two skills from this file.",
+      "grammarRule": "Imperatives & Requests Mastery (Review)",
+      "structureType": "Sequence-Word,-Make-Sure-To-V-O"
+    },
+    {
+      "id": "wr_l130_practice_q2",
+      "level": 130,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Could you please turn down the volume?",
+      "shuffledWords": [
+        "volume",
+        "please",
+        "you",
+        "down",
+        "the",
+        "turn",
+        "Could"
+      ],
+      "correctOrder": [
+        6,
+        2,
+        1,
+        5,
+        3,
+        4,
+        0
+      ],
+      "hint": "Please can also sit in the middle of a request, right between you and the verb.",
+      "explanation": "Please sits between you and turn down here, showing a third possible position for please beyond the sentence-opening and sentence-closing spots seen earlier.",
+      "grammarRule": "Imperatives & Requests Mastery (Review)",
+      "structureType": "Could-You-Please-V-Prt-O"
+    },
+    {
+      "id": "wr_l130_practice_q3",
+      "level": 130,
+      "instruction": "Tap the words in the correct grammatical order",
+      "targetSentence": "Don't forget to submit the form before Friday.",
+      "shuffledWords": [
+        "forget",
+        "the",
+        "before",
+        "Friday",
+        "to",
+        "submit",
+        "form",
+        "Don't"
+      ],
+      "correctOrder": [
+        7,
+        0,
+        4,
+        5,
+        1,
+        6,
+        2,
+        3
+      ],
+      "hint": "Combine a negative command with an infinitive and a deadline at the end.",
+      "explanation": "Don't forget opens the negative command, to submit the form (an infinitive phrase) follows, and before Friday (deadline) closes the sentence.",
+      "grammarRule": "Imperatives & Requests Mastery (Review)",
+      "structureType": "Don't-V-Inf-O-Time"
+    }
+  ]
+}

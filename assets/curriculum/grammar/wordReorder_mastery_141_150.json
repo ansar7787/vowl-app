@@ -1,0 +1,884 @@
+{
+  "gameType": "wordReorder",
+  "phase": "mastery",
+  "batchIndex": 15,
+  "levels": "141-150",
+  "quests": [
+    {
+      "id": "wr_l141_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "This laptop is faster than my old one.",
+      "shuffledWords": [
+        "old",
+        "laptop",
+        "is",
+        "faster",
+        "one",
+        "than",
+        "This",
+        "my"
+      ],
+      "correctOrder": [
+        6,
+        1,
+        2,
+        3,
+        5,
+        7,
+        0,
+        4
+      ],
+      "hint": "Add -er to a short adjective, then use than to introduce what it's being compared to.",
+      "explanation": "Faster adds -er to fast for a short adjective, and than introduces the second item being compared, my old one.",
+      "grammarRule": "Comparative Adjectives ('-er' / 'More' + Than)",
+      "structureType": "S-Be-Comp-Than-O",
+      "level": 141
+    },
+    {
+      "id": "wr_l141_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "Her apartment is more spacious than mine.",
+      "shuffledWords": [
+        "spacious",
+        "apartment",
+        "is",
+        "mine",
+        "Her",
+        "than",
+        "more"
+      ],
+      "correctOrder": [
+        4,
+        1,
+        2,
+        6,
+        0,
+        5,
+        3
+      ],
+      "hint": "Longer adjectives use more instead of -er, still followed by than and the second item.",
+      "explanation": "More spacious uses more before a longer adjective instead of adding -er, followed by than and mine.",
+      "grammarRule": "Comparative Adjectives ('-er' / 'More' + Than)",
+      "structureType": "S-Be-More-Adj-Than-Pronoun",
+      "level": 141
+    },
+    {
+      "id": "wr_l141_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "He is taller than his brother.",
+      "shuffledWords": [
+        "He",
+        "is",
+        "than",
+        "his",
+        "brother",
+        "taller"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        5,
+        2,
+        3,
+        4
+      ],
+      "hint": "The short-adjective plus -er pattern still applies, then than introduces the comparison.",
+      "explanation": "Taller adds -er to a short adjective, and than his brother names who he's being compared to.",
+      "grammarRule": "Comparative Adjectives ('-er' / 'More' + Than)",
+      "structureType": "S-Be-Comp-Than-O",
+      "level": 141
+    },
+    {
+      "id": "wr_l142_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "This is the fastest route to downtown.",
+      "shuffledWords": [
+        "the",
+        "is",
+        "downtown",
+        "route",
+        "fastest",
+        "This",
+        "to"
+      ],
+      "correctOrder": [
+        5,
+        1,
+        0,
+        4,
+        3,
+        6,
+        2
+      ],
+      "hint": "Use the before a superlative, and add -est to a short adjective to compare against everything else.",
+      "explanation": "The fastest uses the plus -est to single out one item as the best in its category among all others, followed by route to downtown.",
+      "grammarRule": "Superlative Adjectives ('The -est' / 'The Most' / Irregular)",
+      "structureType": "S-Be-The-Sup-O-Place",
+      "level": 142
+    },
+    {
+      "id": "wr_l142_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "She is the most experienced candidate.",
+      "shuffledWords": [
+        "experienced",
+        "She",
+        "the",
+        "candidate",
+        "most",
+        "is"
+      ],
+      "correctOrder": [
+        1,
+        5,
+        2,
+        4,
+        0,
+        3
+      ],
+      "hint": "Longer adjectives use the most instead of -est, still preceded by the.",
+      "explanation": "The most experienced uses the most before a longer adjective, singling out one candidate as the top among all others.",
+      "grammarRule": "Superlative Adjectives ('The -est' / 'The Most' / Irregular)",
+      "structureType": "S-Be-The-Most-Adj-O",
+      "level": 142
+    },
+    {
+      "id": "wr_l142_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "That was the best decision we made.",
+      "shuffledWords": [
+        "was",
+        "we",
+        "the",
+        "That",
+        "decision",
+        "best",
+        "made"
+      ],
+      "correctOrder": [
+        3,
+        0,
+        2,
+        5,
+        4,
+        1,
+        6
+      ],
+      "hint": "The plus a short irregular superlative like best still leads into the noun it describes.",
+      "explanation": "The best decision uses the irregular superlative best (not gooder or goodest), following the same the-plus-superlative pattern.",
+      "grammarRule": "Superlative Adjectives ('The -est' / 'The Most' / Irregular)",
+      "structureType": "S-Be-The-Sup-O",
+      "level": 142
+    },
+    {
+      "id": "wr_l143_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "This test is as difficult as the last one.",
+      "shuffledWords": [
+        "one",
+        "test",
+        "the",
+        "as",
+        "is",
+        "as",
+        "This",
+        "difficult",
+        "last"
+      ],
+      "correctOrder": [
+        6,
+        1,
+        4,
+        5,
+        7,
+        3,
+        2,
+        8,
+        0
+      ],
+      "hint": "As...as sandwiches the adjective between two as words, comparing two things as equal.",
+      "explanation": "As difficult as sandwiches the adjective difficult between two as words, showing this test and the last one are equally hard.",
+      "grammarRule": "Comparisons with 'As...As' (Equal & Negative)",
+      "structureType": "S-Be-As-Adj-As-O",
+      "level": 143
+    },
+    {
+      "id": "wr_l143_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "She runs as fast as her teammates.",
+      "shuffledWords": [
+        "her",
+        "as",
+        "teammates",
+        "as",
+        "She",
+        "runs",
+        "fast"
+      ],
+      "correctOrder": [
+        4,
+        5,
+        3,
+        6,
+        1,
+        0,
+        2
+      ],
+      "hint": "The same as...as pattern compares two things as equally fast, not one faster than the other.",
+      "explanation": "As fast as sandwiches fast between the two as words, comparing her running speed equally to her teammates'.",
+      "grammarRule": "Comparisons with 'As...As' (Equal & Negative)",
+      "structureType": "S-V-As-Adj-As-O",
+      "level": 143
+    },
+    {
+      "id": "wr_l143_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The new model isn't as reliable as the old one.",
+      "shuffledWords": [
+        "isn't",
+        "one",
+        "old",
+        "as",
+        "new",
+        "as",
+        "reliable",
+        "model",
+        "The",
+        "the"
+      ],
+      "correctOrder": [
+        8,
+        4,
+        7,
+        0,
+        5,
+        6,
+        3,
+        9,
+        2,
+        1
+      ],
+      "hint": "A negative before as...as shows the two things are NOT equal, the opposite of the previous two sentences.",
+      "explanation": "Isn't as reliable as shows the new model falls short of the old one's reliability — negating as...as expresses inequality, not equality.",
+      "grammarRule": "Comparisons with 'As...As' (Equal & Negative)",
+      "structureType": "S-Isn't-As-Adj-As-O",
+      "level": 143
+    },
+    {
+      "id": "wr_l144_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "This coffee is too hot to drink.",
+      "shuffledWords": [
+        "hot",
+        "coffee",
+        "is",
+        "too",
+        "to",
+        "This",
+        "drink"
+      ],
+      "correctOrder": [
+        5,
+        1,
+        2,
+        3,
+        0,
+        4,
+        6
+      ],
+      "hint": "Too plus an adjective, then to plus the base verb, shows something is excessive for that action.",
+      "explanation": "Too hot to drink shows the coffee's temperature is excessive, making the action to drink impossible or unpleasant.",
+      "grammarRule": "Excessive Degree ('Too' + Adjective + Infinitive)",
+      "structureType": "S-Be-Too-Adj-Inf",
+      "level": 144
+    },
+    {
+      "id": "wr_l144_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The instructions are too complicated to follow.",
+      "shuffledWords": [
+        "The",
+        "too",
+        "are",
+        "follow",
+        "to",
+        "complicated",
+        "instructions"
+      ],
+      "correctOrder": [
+        0,
+        6,
+        2,
+        1,
+        5,
+        4,
+        3
+      ],
+      "hint": "The same too-plus-adjective-plus-infinitive pattern shows the instructions are excessively hard to follow.",
+      "explanation": "Too complicated to follow shows the instructions exceed a reasonable level of difficulty for the action of following them.",
+      "grammarRule": "Excessive Degree ('Too' + Adjective + Infinitive)",
+      "structureType": "S-Be-Too-Adj-Inf",
+      "level": 144
+    },
+    {
+      "id": "wr_l144_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "She is too busy to answer calls.",
+      "shuffledWords": [
+        "calls",
+        "is",
+        "She",
+        "too",
+        "to",
+        "busy",
+        "answer"
+      ],
+      "correctOrder": [
+        2,
+        1,
+        3,
+        5,
+        4,
+        6,
+        0
+      ],
+      "hint": "Too still shows excess, this time making an action (answering calls) impossible.",
+      "explanation": "Too busy to answer shows her schedule is excessively full, preventing the action of answering calls.",
+      "grammarRule": "Excessive Degree ('Too' + Adjective + Infinitive)",
+      "structureType": "S-Be-Too-Adj-Inf-O",
+      "level": 144
+    },
+    {
+      "id": "wr_l145_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "He is old enough to drive.",
+      "shuffledWords": [
+        "is",
+        "drive",
+        "enough",
+        "to",
+        "He",
+        "old"
+      ],
+      "correctOrder": [
+        4,
+        0,
+        5,
+        2,
+        3,
+        1
+      ],
+      "hint": "Enough comes after the adjective (not before, like too), then to plus the base verb.",
+      "explanation": "Old enough to drive places enough after the adjective old, showing a sufficient level has been reached for the action to drive.",
+      "grammarRule": "Sufficient Degree (Adjective + 'Enough' + Infinitive)",
+      "structureType": "S-Be-Adj-Enough-Inf",
+      "level": 145
+    },
+    {
+      "id": "wr_l145_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The room isn't big enough for everyone.",
+      "shuffledWords": [
+        "isn't",
+        "enough",
+        "for",
+        "everyone",
+        "The",
+        "room",
+        "big"
+      ],
+      "correctOrder": [
+        4,
+        5,
+        0,
+        6,
+        1,
+        2,
+        3
+      ],
+      "hint": "A negative before adjective-plus-enough shows the level is insufficient, not excessive like too.",
+      "explanation": "Isn't big enough shows the room falls short of a sufficient size, with for everyone naming who it's insufficient for.",
+      "grammarRule": "Sufficient Degree (Adjective + 'Enough' + Infinitive)",
+      "structureType": "S-Isn't-Adj-Enough-For-O",
+      "level": 145
+    },
+    {
+      "id": "wr_l145_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "She is qualified enough to lead the project.",
+      "shuffledWords": [
+        "lead",
+        "the",
+        "She",
+        "project",
+        "enough",
+        "to",
+        "is",
+        "qualified"
+      ],
+      "correctOrder": [
+        2,
+        6,
+        7,
+        4,
+        5,
+        0,
+        1,
+        3
+      ],
+      "hint": "Enough still follows the adjective directly, before the infinitive phrase.",
+      "explanation": "Qualified enough to lead places enough right after qualified, showing she has reached a sufficient level for the action to lead the project.",
+      "grammarRule": "Sufficient Degree (Adjective + 'Enough' + Infinitive)",
+      "structureType": "S-Be-Adj-Enough-Inf-O",
+      "level": 145
+    },
+    {
+      "id": "wr_l146_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "How much time do you need?",
+      "shuffledWords": [
+        "much",
+        "time",
+        "you",
+        "How",
+        "do",
+        "need"
+      ],
+      "correctOrder": [
+        3,
+        0,
+        1,
+        4,
+        2,
+        5
+      ],
+      "hint": "How much asks about an uncountable noun like time, and stays together as one question phrase.",
+      "explanation": "How much time asks about an uncountable quantity, since time cannot be counted individually, followed by do you need in question order.",
+      "grammarRule": "Quantity: 'How Much' / 'How Many' / 'Much'",
+      "structureType": "How-Much-N-Do-S-V",
+      "level": 146
+    },
+    {
+      "id": "wr_l146_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "How many employees work here?",
+      "shuffledWords": [
+        "employees",
+        "here",
+        "many",
+        "How",
+        "work"
+      ],
+      "correctOrder": [
+        3,
+        2,
+        0,
+        4,
+        1
+      ],
+      "hint": "How many asks about a countable noun like employees, a different question word from how much.",
+      "explanation": "How many employees asks about a countable noun (since employees can be counted one by one), unlike how much for uncountable nouns.",
+      "grammarRule": "Quantity: 'How Much' / 'How Many' / 'Much'",
+      "structureType": "How-Many-N-V-Place",
+      "level": 146
+    },
+    {
+      "id": "wr_l146_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "We don't have much information yet.",
+      "shuffledWords": [
+        "much",
+        "information",
+        "yet",
+        "have",
+        "We",
+        "don't"
+      ],
+      "correctOrder": [
+        4,
+        5,
+        3,
+        0,
+        1,
+        2
+      ],
+      "hint": "Much pairs with an uncountable noun in a negative statement too, not just in questions.",
+      "explanation": "Don't have much information uses much before the uncountable noun information, showing this pairing works in negative statements as well as questions.",
+      "grammarRule": "Quantity: 'How Much' / 'How Many' / 'Much'",
+      "structureType": "S-Don't-Have-Much-N-Time",
+      "level": 146
+    },
+    {
+      "id": "wr_l147_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "She has a few close friends.",
+      "shuffledWords": [
+        "has",
+        "a",
+        "few",
+        "She",
+        "friends",
+        "close"
+      ],
+      "correctOrder": [
+        3,
+        0,
+        1,
+        2,
+        5,
+        4
+      ],
+      "hint": "A few (with 'a') gives a positive feeling — some, and that's enough.",
+      "explanation": "A few close friends expresses a positive view of the quantity, suggesting a small but satisfying number of friends.",
+      "grammarRule": "Quantity Contrast: 'A Few/A Little' vs. 'Few/Little'",
+      "structureType": "S-Has-A-Few-Adj-N",
+      "level": 147
+    },
+    {
+      "id": "wr_l147_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "Few people attended the seminar.",
+      "shuffledWords": [
+        "Few",
+        "the",
+        "attended",
+        "people",
+        "seminar"
+      ],
+      "correctOrder": [
+        0,
+        3,
+        2,
+        1,
+        4
+      ],
+      "hint": "Few without 'a' gives a negative feeling — almost none, not enough.",
+      "explanation": "Few people (without a) expresses a negative view of the turnout, suggesting an insufficient number attended — contrast this with a few in the previous sentence.",
+      "grammarRule": "Quantity Contrast: 'A Few/A Little' vs. 'Few/Little'",
+      "structureType": "Few-N-V-O",
+      "level": 147
+    },
+    {
+      "id": "wr_l147_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "We have little time to prepare.",
+      "shuffledWords": [
+        "to",
+        "We",
+        "time",
+        "little",
+        "have",
+        "prepare"
+      ],
+      "correctOrder": [
+        1,
+        4,
+        3,
+        2,
+        0,
+        5
+      ],
+      "hint": "Little without 'a' works the same negative way for uncountable nouns, meaning almost none.",
+      "explanation": "Little time (without a) expresses a negative view, suggesting there isn't enough time to prepare — the uncountable counterpart to few.",
+      "grammarRule": "Quantity Contrast: 'A Few/A Little' vs. 'Few/Little'",
+      "structureType": "S-Have-Little-N-Inf",
+      "level": 147
+    },
+    {
+      "id": "wr_l148_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "Each participant received a certificate.",
+      "shuffledWords": [
+        "a",
+        "participant",
+        "certificate",
+        "Each",
+        "received"
+      ],
+      "correctOrder": [
+        3,
+        1,
+        4,
+        0,
+        2
+      ],
+      "hint": "Each treats members of a group individually, taking a singular noun and singular verb.",
+      "explanation": "Each participant treats every member of the group one by one, taking a singular noun and singular verb received.",
+      "grammarRule": "Determiner Contrast: Each / Both / Every",
+      "structureType": "S-V-O",
+      "level": 148
+    },
+    {
+      "id": "wr_l148_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "Both candidates answered the questions well.",
+      "shuffledWords": [
+        "Both",
+        "the",
+        "well",
+        "answered",
+        "questions",
+        "candidates"
+      ],
+      "correctOrder": [
+        0,
+        5,
+        3,
+        1,
+        4,
+        2
+      ],
+      "hint": "Both refers to exactly two people or things together, taking a plural verb.",
+      "explanation": "Both candidates refers to exactly two people together, taking the plural verb answered, unlike each which treats members one by one.",
+      "grammarRule": "Determiner Contrast: Each / Both / Every",
+      "structureType": "S-V-O-Adv",
+      "level": 148
+    },
+    {
+      "id": "wr_l148_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "Every department submitted its report.",
+      "shuffledWords": [
+        "submitted",
+        "Every",
+        "its",
+        "report",
+        "department"
+      ],
+      "correctOrder": [
+        1,
+        4,
+        0,
+        2,
+        3
+      ],
+      "hint": "Every views the whole group as a set, still taking a singular noun and verb like each.",
+      "explanation": "Every department views the whole set of departments collectively, but like each, still takes a singular noun and verb submitted.",
+      "grammarRule": "Determiner Contrast: Each / Both / Every",
+      "structureType": "S-V-O",
+      "level": 148
+    },
+    {
+      "id": "wr_l149_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "Either option works for me.",
+      "shuffledWords": [
+        "works",
+        "for",
+        "option",
+        "me",
+        "Either"
+      ],
+      "correctOrder": [
+        4,
+        2,
+        0,
+        1,
+        3
+      ],
+      "hint": "Either refers to one of two options, in a positive statement, taking a singular verb.",
+      "explanation": "Either option refers to one of exactly two choices, taking the singular verb works.",
+      "grammarRule": "Determiner: 'Either' / 'Neither'",
+      "structureType": "S-V-Place",
+      "level": 149
+    },
+    {
+      "id": "wr_l149_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "Neither candidate accepted the offer.",
+      "shuffledWords": [
+        "offer",
+        "candidate",
+        "the",
+        "Neither",
+        "accepted"
+      ],
+      "correctOrder": [
+        3,
+        1,
+        4,
+        2,
+        0
+      ],
+      "hint": "Neither refers to not one of two options, and it's already negative — no extra 'not' needed.",
+      "explanation": "Neither candidate means not one of the two candidates, carrying its own built-in negative meaning without needing a separate not.",
+      "grammarRule": "Determiner: 'Either' / 'Neither'",
+      "structureType": "S-V-O",
+      "level": 149
+    },
+    {
+      "id": "wr_l149_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "You can choose either color.",
+      "shuffledWords": [
+        "can",
+        "choose",
+        "color",
+        "either",
+        "You"
+      ],
+      "correctOrder": [
+        4,
+        0,
+        1,
+        3,
+        2
+      ],
+      "hint": "Either still refers to one of two, this time inside a can-statement about choice.",
+      "explanation": "Either color offers a choice between exactly two options, following can choose in the sentence.",
+      "grammarRule": "Determiner: 'Either' / 'Neither'",
+      "structureType": "S-Can-V-O",
+      "level": 149
+    },
+    {
+      "id": "wr_l150_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "Neither model is fast enough for our needs.",
+      "shuffledWords": [
+        "Neither",
+        "fast",
+        "enough",
+        "needs",
+        "model",
+        "is",
+        "for",
+        "our"
+      ],
+      "correctOrder": [
+        0,
+        4,
+        5,
+        1,
+        2,
+        6,
+        7,
+        3
+      ],
+      "hint": "Combine neither (not one of two) with adjective-plus-enough for insufficient degree.",
+      "explanation": "Neither model states that not one of the two options qualifies, and fast enough for our needs explains exactly how they fall short.",
+      "grammarRule": "Comparisons & Quantity Mastery (Review)",
+      "structureType": "Neither-N-Be-Adj-Enough-For-O",
+      "level": 150
+    },
+    {
+      "id": "wr_l150_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "Both candidates were more qualified than expected.",
+      "shuffledWords": [
+        "expected",
+        "candidates",
+        "were",
+        "than",
+        "more",
+        "Both",
+        "qualified"
+      ],
+      "correctOrder": [
+        5,
+        1,
+        2,
+        4,
+        6,
+        3,
+        0
+      ],
+      "hint": "Combine both (referring to the pair together) with a comparative structure.",
+      "explanation": "Both candidates refers to the pair together, and were more qualified than expected uses a comparative to describe how they exceeded expectations.",
+      "grammarRule": "Comparisons & Quantity Mastery (Review)",
+      "structureType": "Both-N-Be-More-Adj-Than-O",
+      "level": 150
+    },
+    {
+      "id": "wr_l150_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "We don't have enough time to finish every task.",
+      "shuffledWords": [
+        "to",
+        "finish",
+        "don't",
+        "enough",
+        "task",
+        "have",
+        "We",
+        "every",
+        "time"
+      ],
+      "correctOrder": [
+        6,
+        2,
+        5,
+        3,
+        8,
+        0,
+        1,
+        7,
+        4
+      ],
+      "hint": "Combine a negative enough-statement with every, reviewing two quantity skills from this file.",
+      "explanation": "Don't have enough time states an insufficient amount, and to finish every task names the individualized goal (every, one by one) that falls short of that time.",
+      "grammarRule": "Comparisons & Quantity Mastery (Review)",
+      "structureType": "S-Don't-Have-Enough-N-Inf-Every-N",
+      "level": 150
+    }
+  ]
+}

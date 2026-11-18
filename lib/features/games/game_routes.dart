@@ -42,6 +42,8 @@ import 'package:vowl/features/grammar/parts_of_speech/presentation/pages/parts_o
 import 'package:vowl/features/grammar/parts_of_speech/presentation/pages/parts_of_speech_practice_screen.dart';
 import 'package:vowl/features/grammar/grammar_quest/presentation/pages/grammar_quest_learn_screen.dart';
 import 'package:vowl/features/grammar/grammar_quest/presentation/pages/grammar_quest_practice_screen.dart';
+import 'package:vowl/features/grammar/word_reorder/presentation/pages/word_reorder_learn_screen.dart';
+import 'package:vowl/features/grammar/word_reorder/presentation/pages/word_reorder_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -373,6 +375,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'wordreorder') {
+          return fadeTransitionPage(
+            child: WordReorderLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -483,6 +491,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'grammarquest') {
           return fadeTransitionPage(
             child: GrammarQuestPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'wordreorder') {
+          return fadeTransitionPage(
+            child: WordReorderPracticeScreen(level: level),
             state: state,
           );
         }

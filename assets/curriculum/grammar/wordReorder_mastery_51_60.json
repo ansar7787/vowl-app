@@ -1,0 +1,826 @@
+{
+  "gameType": "wordReorder",
+  "phase": "mastery",
+  "batchIndex": 6,
+  "levels": "51-60",
+  "quests": [
+    {
+      "id": "wr_l51_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "She is not available.",
+      "shuffledWords": [
+        "available",
+        "is",
+        "She",
+        "not"
+      ],
+      "correctOrder": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "hint": "Not slots in right after the be-verb, before whatever describes the subject.",
+      "explanation": "Not follows is directly, between the verb and the complement available — this is the standard negative position with be.",
+      "grammarRule": "Negative with 'Be' (Full Form)",
+      "structureType": "S-Be-Not-C",
+      "level": 51
+    },
+    {
+      "id": "wr_l51_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "They are not ready.",
+      "shuffledWords": [
+        "not",
+        "They",
+        "are",
+        "ready"
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "hint": "The same rule applies with are: the negative word sits right after it.",
+      "explanation": "Not comes immediately after are, keeping the be-verb and its negative together before the complement ready.",
+      "grammarRule": "Negative with 'Be' (Full Form)",
+      "structureType": "S-Be-Not-C",
+      "level": 51
+    },
+    {
+      "id": "wr_l51_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "I am not familiar with this software.",
+      "shuffledWords": [
+        "familiar",
+        "with",
+        "software",
+        "I",
+        "not",
+        "am",
+        "this"
+      ],
+      "correctOrder": [
+        3,
+        5,
+        4,
+        0,
+        1,
+        6,
+        2
+      ],
+      "hint": "Even with a longer ending, am not still keeps not directly after the verb.",
+      "explanation": "Am not stays together right after I, and the longer phrase familiar with this software simply follows as the complement.",
+      "grammarRule": "Negative with 'Be' (Full Form)",
+      "structureType": "S-Be-Not-C",
+      "level": 51
+    },
+    {
+      "id": "wr_l52_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The printer isn't working.",
+      "shuffledWords": [
+        "working",
+        "printer",
+        "The",
+        "isn't"
+      ],
+      "correctOrder": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "hint": "Isn't already contains 'is' and 'not' fused together — treat it as one single word.",
+      "explanation": "Isn't is a contraction of is not and functions as one unit, sitting in the normal be-verb position between the subject and the complement.",
+      "grammarRule": "Negative with 'Be' (Contraction)",
+      "structureType": "S-Be(neg)-C",
+      "level": 52
+    },
+    {
+      "id": "wr_l52_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "These figures aren't accurate.",
+      "shuffledWords": [
+        "aren't",
+        "accurate",
+        "figures",
+        "These"
+      ],
+      "correctOrder": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "hint": "Aren't works the same way — one word standing in for are not.",
+      "explanation": "Aren't fuses are and not into a single word, occupying the same slot a full form would between the plural subject and complement.",
+      "grammarRule": "Negative with 'Be' (Contraction)",
+      "structureType": "S-Be(neg)-C",
+      "level": 52
+    },
+    {
+      "id": "wr_l52_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The signal isn't reliable in this building.",
+      "shuffledWords": [
+        "this",
+        "building",
+        "isn't",
+        "The",
+        "in",
+        "signal",
+        "reliable"
+      ],
+      "correctOrder": [
+        3,
+        5,
+        2,
+        6,
+        4,
+        0,
+        1
+      ],
+      "hint": "The contracted verb still leads the complement, even when a place phrase follows.",
+      "explanation": "Isn't still comes right after signal, and in this building (a place phrase) simply extends the sentence after the complement reliable.",
+      "grammarRule": "Negative with 'Be' (Contraction)",
+      "structureType": "S-Be(neg)-C-Place",
+      "level": 52
+    },
+    {
+      "id": "wr_l53_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "She does not agree with the proposal.",
+      "shuffledWords": [
+        "She",
+        "proposal",
+        "not",
+        "with",
+        "agree",
+        "the",
+        "does"
+      ],
+      "correctOrder": [
+        0,
+        6,
+        2,
+        4,
+        3,
+        5,
+        1
+      ],
+      "hint": "Does not stays together as a unit, right after the subject and before the base verb.",
+      "explanation": "Does not follows she and precedes the base verb agree — the main verb loses its -s ending once does carries it.",
+      "grammarRule": "Negative with Do/Does (Full Form)",
+      "structureType": "S-Does-Not-V-O",
+      "level": 53
+    },
+    {
+      "id": "wr_l53_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "They do not accept late returns.",
+      "shuffledWords": [
+        "late",
+        "They",
+        "not",
+        "accept",
+        "do",
+        "returns"
+      ],
+      "correctOrder": [
+        1,
+        4,
+        2,
+        3,
+        0,
+        5
+      ],
+      "hint": "Do not works the same way with a plural subject, keeping the base verb after it.",
+      "explanation": "Do not follows they, and accept stays in base form, with late returns completing the object.",
+      "grammarRule": "Negative with Do/Does (Full Form)",
+      "structureType": "S-Do-Not-V-O",
+      "level": 53
+    },
+    {
+      "id": "wr_l53_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The company does not disclose its revenue.",
+      "shuffledWords": [
+        "does",
+        "its",
+        "revenue",
+        "not",
+        "disclose",
+        "company",
+        "The"
+      ],
+      "correctOrder": [
+        6,
+        5,
+        0,
+        3,
+        4,
+        1,
+        2
+      ],
+      "hint": "A possessive word inside the object doesn't change where does not sits.",
+      "explanation": "Does not follows the company, and disclose stays in base form, with its revenue (including a possessive) as the object.",
+      "grammarRule": "Negative with Do/Does (Full Form)",
+      "structureType": "S-Does-Not-V-O",
+      "level": 53
+    },
+    {
+      "id": "wr_l54_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "He doesn't trust online reviews.",
+      "shuffledWords": [
+        "reviews",
+        "online",
+        "doesn't",
+        "He",
+        "trust"
+      ],
+      "correctOrder": [
+        3,
+        2,
+        4,
+        1,
+        0
+      ],
+      "hint": "Doesn't fuses does and not into one word, sitting where does not would.",
+      "explanation": "Doesn't stands in for does not as a single word, right after He and before the base verb trust.",
+      "grammarRule": "Negative with Do/Does (Contraction)",
+      "structureType": "S-Doesn't-V-O",
+      "level": 54
+    },
+    {
+      "id": "wr_l54_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "We don't discuss salaries openly.",
+      "shuffledWords": [
+        "salaries",
+        "openly",
+        "don't",
+        "discuss",
+        "We"
+      ],
+      "correctOrder": [
+        4,
+        2,
+        3,
+        0,
+        1
+      ],
+      "hint": "Don't is the contracted form for plural or I/you/we/they subjects, in the same position.",
+      "explanation": "Don't replaces do not as one word after We, with discuss in base form and openly (manner) closing the sentence.",
+      "grammarRule": "Negative with Do/Does (Contraction)",
+      "structureType": "S-Don't-V-O-Adv",
+      "level": 54
+    },
+    {
+      "id": "wr_l54_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The system doesn't save changes automatically.",
+      "shuffledWords": [
+        "changes",
+        "The",
+        "save",
+        "system",
+        "automatically",
+        "doesn't"
+      ],
+      "correctOrder": [
+        1,
+        3,
+        5,
+        2,
+        0,
+        4
+      ],
+      "hint": "The contraction still comes right before the base verb, even with a manner adverb at the end.",
+      "explanation": "Doesn't precedes save, keeping the base verb form, while automatically (manner) closes the sentence in its usual end position.",
+      "grammarRule": "Negative with Do/Does (Contraction)",
+      "structureType": "S-Doesn't-V-O-Adv",
+      "level": 54
+    },
+    {
+      "id": "wr_l55_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "He did not attend the conference.",
+      "shuffledWords": [
+        "the",
+        "did",
+        "conference",
+        "attend",
+        "He",
+        "not"
+      ],
+      "correctOrder": [
+        4,
+        1,
+        5,
+        3,
+        0,
+        2
+      ],
+      "hint": "Did not carries all the past meaning, so the main verb returns to its base form.",
+      "explanation": "Did not follows He, and attend appears in base form instead of attended, since did already marks the past.",
+      "grammarRule": "Negative with Did (Full Form, Past)",
+      "structureType": "S-Did-Not-V-O",
+      "level": 55
+    },
+    {
+      "id": "wr_l55_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "They did not receive the invoice.",
+      "shuffledWords": [
+        "did",
+        "not",
+        "receive",
+        "invoice",
+        "They",
+        "the"
+      ],
+      "correctOrder": [
+        4,
+        0,
+        1,
+        2,
+        5,
+        3
+      ],
+      "hint": "The same rule holds: did not plus the base verb, not the past-tense form.",
+      "explanation": "Did not precedes receive (base form, not received), following they, with the invoice as the object.",
+      "grammarRule": "Negative with Did (Full Form, Past)",
+      "structureType": "S-Did-Not-V-O",
+      "level": 55
+    },
+    {
+      "id": "wr_l55_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The airline did not offer a refund.",
+      "shuffledWords": [
+        "refund",
+        "a",
+        "did",
+        "offer",
+        "The",
+        "airline",
+        "not"
+      ],
+      "correctOrder": [
+        4,
+        5,
+        2,
+        6,
+        3,
+        1,
+        0
+      ],
+      "hint": "A longer subject phrase doesn't change where did not sits or that the verb stays base form.",
+      "explanation": "Did not follows the airline, and offer stays base form, with a refund as the object.",
+      "grammarRule": "Negative with Did (Full Form, Past)",
+      "structureType": "S-Did-Not-V-O",
+      "level": 55
+    },
+    {
+      "id": "wr_l56_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "She didn't finish the presentation.",
+      "shuffledWords": [
+        "presentation",
+        "didn't",
+        "the",
+        "She",
+        "finish"
+      ],
+      "correctOrder": [
+        3,
+        1,
+        4,
+        2,
+        0
+      ],
+      "hint": "Didn't fuses did and not into one word, still followed by the base form of the verb.",
+      "explanation": "Didn't replaces did not as a single word before finish, which stays in base form after it.",
+      "grammarRule": "Negative with Did (Contraction)",
+      "structureType": "S-Didn't-V-O",
+      "level": 56
+    },
+    {
+      "id": "wr_l56_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "We didn't expect such a delay.",
+      "shuffledWords": [
+        "delay",
+        "such",
+        "expect",
+        "didn't",
+        "We",
+        "a"
+      ],
+      "correctOrder": [
+        4,
+        3,
+        2,
+        1,
+        5,
+        0
+      ],
+      "hint": "The same one-word contraction appears before expect, with the base verb form unchanged.",
+      "explanation": "Didn't precedes expect (base form), followed by the object such a delay, keeping the contracted-plus-base-verb pattern.",
+      "grammarRule": "Negative with Did (Contraction)",
+      "structureType": "S-Didn't-V-O",
+      "level": 56
+    },
+    {
+      "id": "wr_l56_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The manager didn't approve the budget request.",
+      "shuffledWords": [
+        "budget",
+        "didn't",
+        "the",
+        "The",
+        "request",
+        "approve",
+        "manager"
+      ],
+      "correctOrder": [
+        3,
+        6,
+        1,
+        5,
+        2,
+        0,
+        4
+      ],
+      "hint": "Even with a compound object, didn't still sits right before the base verb.",
+      "explanation": "Didn't comes before approve (base form), and the budget request (a compound noun) completes the object.",
+      "grammarRule": "Negative with Did (Contraction)",
+      "structureType": "S-Didn't-V-O",
+      "level": 56
+    },
+    {
+      "id": "wr_l57_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "You cannot park here.",
+      "shuffledWords": [
+        "You",
+        "park",
+        "cannot",
+        "here"
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1,
+        3
+      ],
+      "hint": "Cannot is written as one word and slots in right after the subject, before the base verb.",
+      "explanation": "Cannot follows You directly and precedes the base verb park — modal negatives keep the base verb form, just like do/does/did negatives.",
+      "grammarRule": "Negative with Modals (Full Form)",
+      "structureType": "S-Modal(neg)-V",
+      "level": 57
+    },
+    {
+      "id": "wr_l57_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "She should not ignore the warning.",
+      "shuffledWords": [
+        "the",
+        "not",
+        "She",
+        "warning",
+        "should",
+        "ignore"
+      ],
+      "correctOrder": [
+        2,
+        4,
+        1,
+        5,
+        0,
+        3
+      ],
+      "hint": "Should not stays together as two words here, right after the subject and before the base verb.",
+      "explanation": "Should not follows She and precedes ignore (base form), with the warning as the object.",
+      "grammarRule": "Negative with Modals (Full Form)",
+      "structureType": "S-Modal-Not-V-O",
+      "level": 57
+    },
+    {
+      "id": "wr_l57_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "We cannot guarantee immediate delivery.",
+      "shuffledWords": [
+        "We",
+        "cannot",
+        "guarantee",
+        "delivery",
+        "immediate"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2,
+        4,
+        3
+      ],
+      "hint": "Cannot still comes right after the subject, even with a two-word object at the end.",
+      "explanation": "Cannot follows We and precedes guarantee (base form), with immediate delivery as the object.",
+      "grammarRule": "Negative with Modals (Full Form)",
+      "structureType": "S-Modal(neg)-V-O",
+      "level": 57
+    },
+    {
+      "id": "wr_l58_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "I can't remember his name.",
+      "shuffledWords": [
+        "remember",
+        "can't",
+        "his",
+        "I",
+        "name"
+      ],
+      "correctOrder": [
+        3,
+        1,
+        0,
+        2,
+        4
+      ],
+      "hint": "Can't fuses can and not into one word, staying right before the base verb.",
+      "explanation": "Can't replaces cannot informally, sitting before remember (base form), with his name as the object.",
+      "grammarRule": "Negative with Modals (Contraction)",
+      "structureType": "S-Modal(neg)-V-O",
+      "level": 58
+    },
+    {
+      "id": "wr_l58_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "You shouldn't skip breakfast.",
+      "shuffledWords": [
+        "skip",
+        "shouldn't",
+        "You",
+        "breakfast"
+      ],
+      "correctOrder": [
+        2,
+        1,
+        0,
+        3
+      ],
+      "hint": "Shouldn't is one word standing in for should not, in the same position before the base verb.",
+      "explanation": "Shouldn't precedes skip (base form) after You, showing the contracted modal keeps the same slot as its full form.",
+      "grammarRule": "Negative with Modals (Contraction)",
+      "structureType": "S-Modal(neg)-V-O",
+      "level": 58
+    },
+    {
+      "id": "wr_l58_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "She couldn't finish the marathon.",
+      "shuffledWords": [
+        "couldn't",
+        "marathon",
+        "the",
+        "She",
+        "finish"
+      ],
+      "correctOrder": [
+        3,
+        0,
+        4,
+        2,
+        1
+      ],
+      "hint": "Couldn't works the same way, fusing could and not before the base verb finish.",
+      "explanation": "Couldn't comes before finish (base form) after She, with the marathon as the object.",
+      "grammarRule": "Negative with Modals (Contraction)",
+      "structureType": "S-Modal(neg)-V-O",
+      "level": 58
+    },
+    {
+      "id": "wr_l59_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "He was not aware of the change.",
+      "shuffledWords": [
+        "change",
+        "aware",
+        "not",
+        "the",
+        "of",
+        "He",
+        "was"
+      ],
+      "correctOrder": [
+        5,
+        6,
+        2,
+        1,
+        4,
+        3,
+        0
+      ],
+      "hint": "Was not works like is not, but for the past — not still follows the be-verb directly.",
+      "explanation": "Was not follows He and precedes aware, with of the change extending the complement — the past-tense counterpart to is not.",
+      "grammarRule": "Negative with Was/Were (Past Be)",
+      "structureType": "S-Was-Not-C",
+      "level": 59
+    },
+    {
+      "id": "wr_l59_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "They weren't satisfied with the service.",
+      "shuffledWords": [
+        "satisfied",
+        "the",
+        "weren't",
+        "They",
+        "with",
+        "service"
+      ],
+      "correctOrder": [
+        3,
+        2,
+        0,
+        4,
+        1,
+        5
+      ],
+      "hint": "Weren't contracts were and not into one word, in the same position a full form would take.",
+      "explanation": "Weren't replaces were not as one unit after They, followed by satisfied and the extending phrase with the service.",
+      "grammarRule": "Negative with Was/Were (Past Be)",
+      "structureType": "S-Weren't-C",
+      "level": 59
+    },
+    {
+      "id": "wr_l59_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The summary wasn't accurate.",
+      "shuffledWords": [
+        "wasn't",
+        "The",
+        "summary",
+        "accurate"
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "hint": "Wasn't works the same way for singular subjects, fusing was and not into one word.",
+      "explanation": "Wasn't stands in for was not after report, followed directly by the complement accurate.",
+      "grammarRule": "Negative with Was/Were (Past Be)",
+      "structureType": "S-Wasn't-C",
+      "level": 59
+    },
+    {
+      "id": "wr_l60_q1",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "The manager wasn't able to attend the meeting.",
+      "shuffledWords": [
+        "wasn't",
+        "manager",
+        "the",
+        "able",
+        "to",
+        "attend",
+        "meeting",
+        "The"
+      ],
+      "correctOrder": [
+        7,
+        1,
+        0,
+        3,
+        4,
+        5,
+        2,
+        6
+      ],
+      "hint": "Combine a be-negative contraction with an infinitive phrase — wasn't able, then to plus the base verb.",
+      "explanation": "Wasn't able to attend combines the past-be contraction wasn't with an infinitive verb pattern, followed by the meeting as the object.",
+      "grammarRule": "Negative Forms Mastery (Review)",
+      "structureType": "S-Wasn't-Inf-O",
+      "level": 60
+    },
+    {
+      "id": "wr_l60_q2",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "We don't usually work on weekends.",
+      "shuffledWords": [
+        "We",
+        "don't",
+        "weekends",
+        "work",
+        "usually",
+        "on"
+      ],
+      "correctOrder": [
+        0,
+        1,
+        4,
+        3,
+        5,
+        2
+      ],
+      "hint": "Mix a do-negative contraction with a mid-position frequency adverb, then close with a time expression.",
+      "explanation": "Don't (negative contraction) precedes usually (frequency, mid-position) and work (base verb), with on weekends (time) closing the sentence.",
+      "grammarRule": "Negative Forms Mastery (Review)",
+      "structureType": "S-Don't-Adv-V-Time",
+      "level": 60
+    },
+    {
+      "id": "wr_l60_q3",
+      "instruction": "REORDER WORDS",
+      "subtype": "wordReorder",
+      "interactionType": "reorder",
+      "sentence": "She shouldn't ignore her doctor's advice.",
+      "shuffledWords": [
+        "She",
+        "doctor's",
+        "ignore",
+        "shouldn't",
+        "her",
+        "advice"
+      ],
+      "correctOrder": [
+        0,
+        3,
+        2,
+        4,
+        1,
+        5
+      ],
+      "hint": "Combine a modal-negative contraction with a possessive 's noun phrase as the object.",
+      "explanation": "Shouldn't precedes ignore (base form), and her doctor's advice (a possessive noun phrase) serves as the object, tying two earlier skills together.",
+      "grammarRule": "Negative Forms Mastery (Review)",
+      "structureType": "S-Modal(neg)-V-O",
+      "level": 60
+    }
+  ]
+}
