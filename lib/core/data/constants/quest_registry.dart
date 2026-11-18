@@ -152,7 +152,7 @@ abstract class QuestRegistry {
     final endLevel = batchIndex * 10;
 
     final resolvedPhase =
-        phase ?? ((category == 'vocabulary' || gameType == 'partsOfSpeech' || gameType == 'grammarQuest' || gameType == 'wordReorder' || gameType == 'sentenceCorrection' || gameType == 'tenseMastery' || gameType == 'subjectVerbAgreement' || gameType == 'articleInsertion' || gameType == 'questionFormatter' || gameType == 'clauseConnector' || gameType == 'voiceSwap' || gameType == 'punctuationMastery' || gameType == 'modifierPlacement' || gameType == 'modalsSelection' || gameType == 'prepositionChoice' || gameType == 'pronounResolution') ? 'mastery' : null);
+        phase ?? ((category == 'vocabulary' || gameType == 'partsOfSpeech' || gameType == 'grammarQuest' || gameType == 'wordReorder' || gameType == 'sentenceCorrection' || gameType == 'tenseMastery' || gameType == 'subjectVerbAgreement' || gameType == 'articleInsertion' || gameType == 'questionFormatter' || gameType == 'clauseConnector' || gameType == 'voiceSwap' || gameType == 'punctuationMastery' || gameType == 'modifierPlacement' || gameType == 'modalsSelection' || gameType == 'prepositionChoice' || gameType == 'pronounResolution' || gameType == 'relativeClauses') ? 'mastery' : null);
 
     if (resolvedPhase != null) {
       return 'assets/curriculum/$category/${gameType}_${resolvedPhase}_${startLevel}_$endLevel.json';

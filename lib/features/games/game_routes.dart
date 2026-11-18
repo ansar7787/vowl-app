@@ -68,6 +68,8 @@ import 'package:vowl/features/grammar/preposition_choice/presentation/pages/prep
 import 'package:vowl/features/grammar/preposition_choice/presentation/pages/preposition_choice_practice_screen.dart';
 import 'package:vowl/features/grammar/pronoun_resolution/presentation/pages/pronoun_resolution_learn_screen.dart';
 import 'package:vowl/features/grammar/pronoun_resolution/presentation/pages/pronoun_resolution_practice_screen.dart';
+import 'package:vowl/features/grammar/relative_clauses/presentation/pages/relative_clauses_learn_screen.dart';
+import 'package:vowl/features/grammar/relative_clauses/presentation/pages/relative_clauses_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -477,6 +479,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'relativeclauses') {
+          return fadeTransitionPage(
+            child: RelativeClausesLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -665,6 +673,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'pronounresolution') {
           return fadeTransitionPage(
             child: PronounResolutionPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'relativeclauses') {
+          return fadeTransitionPage(
+            child: RelativeClausesPracticeScreen(level: level),
             state: state,
           );
         }

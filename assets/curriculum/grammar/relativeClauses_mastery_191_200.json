@@ -1,0 +1,608 @@
+{
+  "gameType": "relativeClauses",
+  "phase": "mastery",
+  "batchIndex": 20,
+  "levels": "191-200",
+  "quests": [
+    {
+      "id": "rc_l191_q1",
+      "instruction": "SHOW THE OWNERSHIP",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "The professor whose research grant was recently renewed will supervise three graduate students this year. What does 'whose' link together here?",
+      "hint": "Remember that 'whose' always connects an owner to the noun sitting right after it.",
+      "explanation": "'Whose' links 'the professor' (the owner) to 'research grant' (the thing owned); the graduate students play no part in this possessive relationship.",
+      "options": [
+        "The professor and the research grant, showing possession",
+        "The professor and the graduate students, showing possession",
+        "The research grant and the graduate students",
+        "Nothing - 'whose' functions as the subject of 'renewed' here"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The professor and the research grant, showing possession",
+      "grammarRule": "Possessive Relative Pronoun whose",
+      "clauseType": "defining",
+      "level": 191
+    },
+    {
+      "id": "rc_l191_q2",
+      "instruction": "SPOT WHAT'S OPTIONAL",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "The internship ___ she applied for last spring finally responded with an offer.",
+      "hint": "'She' already has a job in this clause - 'applied for.' Does this defining clause about a thing allow the pronoun to disappear?",
+      "explanation": "'She' is the subject of 'applied for,' making 'the internship' the object; since it's a thing in a defining clause, the pronoun can be dropped entirely.",
+      "options": [
+        "who",
+        "whose",
+        "whom",
+        "(no word needed)"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "(no word needed)",
+      "grammarRule": "Omission of Object Relative Pronoun",
+      "clauseType": "defining",
+      "level": 191
+    },
+    {
+      "id": "rc_l191_q3",
+      "instruction": "MIND THE REGISTER",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "Which sentence is most appropriate for a formal scholarship application?",
+      "hint": "Formal written applications favor the traditional object pronoun for a person over casual alternatives.",
+      "explanation": "'Whom' is the formally correct object pronoun for a person in this register; the other options are grammatical but progressively more casual or incorrectly punctuated for this context.",
+      "options": [
+        "The mentor who I worked with during my research project encouraged me to apply.",
+        "The mentor I worked with during my research project encouraged me to apply.",
+        "The mentor, whom I worked with during my research project, encouraged me to apply.",
+        "The mentor whom I worked with during my research project encouraged me to apply."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The mentor whom I worked with during my research project encouraged me to apply.",
+      "grammarRule": "Whom in Formal Register",
+      "clauseType": "defining",
+      "level": 191
+    },
+    {
+      "id": "rc_l192_q1",
+      "instruction": "ESSENTIAL OR EXTRA?",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "The airline app, which crashed during check-in, has since been updated. Is this clause defining or non-defining, and why?",
+      "hint": "Think about how many airline apps this sentence could be referring to - one specific one, or several needing narrowing down.",
+      "explanation": "'The airline app' already refers to one specific app, so 'which crashed during check-in' is extra, non-defining detail, correctly set off with commas.",
+      "options": [
+        "Non-defining - 'the airline app' is already a specific, singular thing, so the crash detail is extra information.",
+        "Non-defining - because apps always require commas.",
+        "Defining - because 'which' always introduces essential information.",
+        "Defining - the crash detail is essential to know which app is meant."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Non-defining - 'the airline app' is already a specific, singular thing, so the crash detail is extra information.",
+      "grammarRule": "Defining vs Non-Defining Relative Clause",
+      "clauseType": "non-defining",
+      "level": 192
+    },
+    {
+      "id": "rc_l192_q2",
+      "instruction": "REDUCE THE CLAUSE",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "Which is the correctly reduced form of 'Travelers who were delayed by the storm were rebooked on later flights'?",
+      "hint": "Drop 'who were' and keep only the participle that matches the passive meaning.",
+      "explanation": "'Delayed' correctly reduces 'who were delayed,' dropping the pronoun and the auxiliary 'were,' and keeping the passive sense - the storm delayed the travelers.",
+      "options": [
+        "Travelers delay by the storm were rebooked on later flights.",
+        "Travelers delayed by the storm were rebooked on later flights.",
+        "Travelers delaying by the storm were rebooked on later flights.",
+        "Travelers who delayed by the storm were rebooked on later flights."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Travelers delayed by the storm were rebooked on later flights.",
+      "grammarRule": "Reduced Passive Relative Clause",
+      "clauseType": "defining",
+      "level": 192
+    },
+    {
+      "id": "rc_l192_q3",
+      "instruction": "PLACE OR THING?",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "The terminal ___ our connecting flight departs is a fifteen-minute walk from here.",
+      "hint": "'Departs' doesn't take a direct object here - the terminal is simply where the departing happens.",
+      "explanation": "'Where' correctly shows that the terminal is the location of the departure, standing in for 'from which our connecting flight departs.'",
+      "options": [
+        "who",
+        "where",
+        "that",
+        "which"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "where",
+      "grammarRule": "Relative Adverb of Place (where)",
+      "clauseType": "defining",
+      "level": 192
+    },
+    {
+      "id": "rc_l193_q1",
+      "instruction": "DETERMINE THE ROLE",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "The specialist whom my doctor referred me to finally has an opening next week. Why is 'whom' correct here?",
+      "hint": "Check who is doing the referring, and who is being referred.",
+      "explanation": "'My doctor' is the subject of 'referred,' making 'the specialist' the object - which calls for 'whom.'",
+      "options": [
+        "Because 'the specialist' is the subject of 'referred.'",
+        "Because 'whom' shows possession of the referral.",
+        "Because 'the specialist' is the object of 'referred' - 'my doctor' is the subject.",
+        "Because 'whom' is required whenever a preposition appears nearby."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Because 'the specialist' is the object of 'referred' - 'my doctor' is the subject.",
+      "grammarRule": "Object Relative Clause with whom",
+      "clauseType": "defining",
+      "level": 193
+    },
+    {
+      "id": "rc_l193_q2",
+      "instruction": "SPOT WHAT'S OPTIONAL",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "My best friend, ___ I've known since childhood, is getting married next month.",
+      "hint": "Notice the commas around this clause - does that change whether this pronoun, even though it's an object relative, could ever be dropped?",
+      "explanation": "Because this is a non-defining clause, signaled by the commas since 'my best friend' is already unique, the pronoun cannot be omitted and 'that' cannot be used; 'whom' is the formally correct choice for a person here.",
+      "options": [
+        "(no word needed)",
+        "whom",
+        "that",
+        "which"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "whom",
+      "grammarRule": "Non-Defining Clauses Cannot Omit Their Pronoun",
+      "clauseType": "non-defining",
+      "level": 193
+    },
+    {
+      "id": "rc_l193_q3",
+      "instruction": "MIND THE REGISTER",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "Which sentence would sound most natural in a casual social media caption?",
+      "hint": "Captions are short and casual - which option drops the unnecessary connecting word?",
+      "explanation": "'This is the friend I met on my trip to Portugal!' is the shortest, most natural phrasing for a casual caption, dropping the object relative pronoun entirely.",
+      "options": [
+        "This is the friend, that I met on my trip to Portugal!",
+        "This is the friend which I met on my trip to Portugal!",
+        "This is the friend I met on my trip to Portugal!",
+        "This is the friend whom I met on my trip to Portugal!"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "This is the friend I met on my trip to Portugal!",
+      "grammarRule": "Omission of Object Relative Pronoun",
+      "clauseType": "defining",
+      "level": 193
+    },
+    {
+      "id": "rc_l194_q1",
+      "instruction": "FIX THE SENTENCE",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "Fix this line from a resignation letter: 'I am grateful for the opportunities, that this company, has provided me.'",
+      "hint": "Two things need fixing here: a pronoun that cannot follow a comma, and commas that don't belong in a defining clause at all.",
+      "explanation": "Since there could be many kinds of opportunities, this clause is defining and needs no commas at all; 'that' works fine once the commas are removed.",
+      "options": [
+        "I am grateful for the opportunities, that this company, has provided me, still.",
+        "I am grateful for the opportunities that this company has provided me.",
+        "I am grateful, for the opportunities that this company has provided me.",
+        "I am grateful for the opportunities that this company has, provided me."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "I am grateful for the opportunities that this company has provided me.",
+      "grammarRule": "Defining vs Non-Defining Relative Clause",
+      "clauseType": "defining",
+      "level": 194
+    },
+    {
+      "id": "rc_l194_q2",
+      "instruction": "MIND THE REGISTER",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "Which sentence is most appropriate for a formal cover letter?",
+      "hint": "A cover letter is a formal document - check which object pronoun for a person matches that elevated register.",
+      "explanation": "'Whom' is the formally correct object pronoun for a person in this register; the other options are grammatical but progressively more casual, or add a comma that isn't clearly justified on a first mention.",
+      "options": [
+        "The hiring manager whom I spoke with at the career fair mentioned this role.",
+        "The hiring manager who I spoke with at the career fair mentioned this role.",
+        "The hiring manager, whom I spoke with at the career fair, mentioned this role.",
+        "The hiring manager I spoke with at the career fair mentioned this role."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The hiring manager whom I spoke with at the career fair mentioned this role.",
+      "grammarRule": "Whom in Formal Register",
+      "clauseType": "defining",
+      "level": 194
+    },
+    {
+      "id": "rc_l194_q3",
+      "instruction": "FIND THE ERROR",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "Find the error in this professional email sentence: 'Please find attached the report, that summarizes our Q3 performance.'",
+      "hint": "Identify the relative pronoun that is never allowed to follow a comma.",
+      "explanation": "'That' can never follow a comma; since the report is already specifically identified as attached, 'which' is the correct fix.",
+      "options": [
+        "'That' should be 'which,' since it follows a comma.",
+        "'Attached' should be 'attaching.'",
+        "A comma is needed after 'Please.'",
+        "There is no error."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "'That' should be 'which,' since it follows a comma.",
+      "grammarRule": "That Cannot Introduce Non-Defining Clauses",
+      "clauseType": "non-defining",
+      "level": 194
+    },
+    {
+      "id": "rc_l195_q1",
+      "instruction": "MIND THE REGISTER",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "Compare: A) 'The clause the lawyers debated for hours was removed.' B) 'The clause that the lawyers debated for hours was removed.' Which register is each suited to?",
+      "hint": "Ask which version drops the pronoun, and which restores it in full.",
+      "explanation": "Sentence A drops the object relative pronoun, giving it a slightly more casual feel; sentence B restores 'that,' which reads as more neutral or formal written English. Both are equally grammatical.",
+      "options": [
+        "Both are equally formal.",
+        "A is formal; B is casual.",
+        "A is grammatically incorrect.",
+        "A is more casual (pronoun omitted); B is more neutral/formal (pronoun retained)."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "A is more casual (pronoun omitted); B is more neutral/formal (pronoun retained).",
+      "grammarRule": "Omission of Object Relative Pronoun",
+      "clauseType": "defining",
+      "level": 195
+    },
+    {
+      "id": "rc_l195_q2",
+      "instruction": "MIND THE REGISTER",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "Which version belongs in a formal quarterly report rather than a casual conversation?",
+      "hint": "Formal reports spell out every grammatical element and avoid slang or sentence fragments.",
+      "explanation": "'The metrics that the team tracked improved significantly' keeps the pronoun and uses neutral, professional vocabulary throughout, unlike the increasingly casual alternatives.",
+      "options": [
+        "The metrics the team tracked improved significantly.",
+        "Yeah, the metrics we tracked got way better.",
+        "The metrics that the team tracked improved significantly.",
+        "The numbers we were looking at? Way up."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The metrics that the team tracked improved significantly.",
+      "grammarRule": "Omission of Object Relative Pronoun",
+      "clauseType": "defining",
+      "level": 195
+    },
+    {
+      "id": "rc_l195_q3",
+      "instruction": "MIND THE REGISTER",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "Which sentence incorrectly applies an overly formal structure to an obviously casual context - a text to a close friend?",
+      "hint": "Look for the version that sounds like a written letter rather than a quick message to a friend.",
+      "explanation": "A fronted preposition ('to which we went') is a formal, written pattern; it sounds stiff and out of place in a casual text, unlike the other three options.",
+      "options": [
+        "The restaurant to which we went last night was amazing!",
+        "The restaurant we went to last night was amazing!",
+        "That restaurant we hit up last night was amazing!",
+        "OMG the restaurant from last night was so good!"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The restaurant to which we went last night was amazing!",
+      "grammarRule": "Preposition + whom/which (Fronted Preposition)",
+      "clauseType": "defining",
+      "level": 195
+    },
+    {
+      "id": "rc_l196_q1",
+      "instruction": "SPOT WHAT'S OPTIONAL",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "The feedback from the panel of reviewers ___ we incorporated into the final draft significantly improved the manuscript.",
+      "hint": "'We' already has a job in this clause - 'incorporated.' Does this defining clause about a thing allow the pronoun to disappear, despite the long descriptive phrase in front of it?",
+      "explanation": "'We' is the subject of 'incorporated,' making 'the feedback' - not 'the panel' or 'reviewers' - the object; since it's a thing in a defining clause, the pronoun can be dropped entirely.",
+      "options": [
+        "(no word needed)",
+        "whom",
+        "whose",
+        "who"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "(no word needed)",
+      "grammarRule": "Omission of Object Relative Pronoun",
+      "clauseType": "defining",
+      "level": 196
+    },
+    {
+      "id": "rc_l196_q2",
+      "instruction": "MIND THE REGISTER",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "In her formal resignation letter, she wrote: 'The support from my colleagues, ___ I will always remember fondly, made this decision especially difficult.'",
+      "hint": "Notice the commas already present, and remember which pronouns can never follow one.",
+      "explanation": "The commas signal a non-defining clause about 'the support,' a thing; 'which' is required, since 'that' can never follow a comma and the pronoun cannot be dropped here.",
+      "options": [
+        "that",
+        "(no word needed)",
+        "which",
+        "who"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "which",
+      "grammarRule": "Non-Defining Clauses Cannot Omit Their Pronoun",
+      "clauseType": "non-defining",
+      "level": 196
+    },
+    {
+      "id": "rc_l196_q3",
+      "instruction": "MARK THE CLAUSE",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "The clinic where I received treatment for over a decade, whose staff became like family, is closing permanently. How many separate relative clauses does this sentence contain, and what does each describe?",
+      "hint": "Work through the sentence piece by piece and check the punctuation and pronoun of each clause separately.",
+      "explanation": "There are two relative clauses: 'where I received treatment for over a decade' (defining, no commas, describing the clinic) and 'whose staff became like family' (non-defining, set off by commas, also describing the clinic).",
+      "options": [
+        "Three: 'where,' 'whose,' and 'is closing' are each separate clauses.",
+        "One: the whole underlined portion describes 'treatment' only.",
+        "Two: 'where I received treatment...' describes the clinic (defining); 'whose staff became like family' describes the clinic again (non-defining).",
+        "Two: both clauses describe 'staff,' not 'the clinic.'"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Two: 'where I received treatment...' describes the clinic (defining); 'whose staff became like family' describes the clinic again (non-defining).",
+      "grammarRule": "Defining vs Non-Defining Relative Clause",
+      "clauseType": "non-defining",
+      "level": 196
+    },
+    {
+      "id": "rc_l197_q1",
+      "instruction": "TEST THE RULE",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "The candidate shortlisted for the position, whom the panel unanimously recommended, starts Monday. Which statement about this sentence is true?",
+      "hint": "Check each descriptive piece separately: is it a reduced clause or a full one, and what noun does it attach to?",
+      "explanation": "'Shortlisted for the position' is a reduced passive clause, and 'whom the panel unanimously recommended' is a full non-defining clause - both describe 'the candidate.'",
+      "options": [
+        "'Shortlisted for the position' describes 'the panel,' not 'the candidate.'",
+        "Both parts are reduced clauses.",
+        "There is an error: 'whom' should be 'who.'",
+        "'Shortlisted for the position' is a reduced passive clause; 'whom the panel unanimously recommended' is a full non-defining clause - both correctly describe 'the candidate.'"
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "'Shortlisted for the position' is a reduced passive clause; 'whom the panel unanimously recommended' is a full non-defining clause - both correctly describe 'the candidate.'",
+      "grammarRule": "Reduced Passive Relative Clause",
+      "clauseType": "non-defining",
+      "level": 197
+    },
+    {
+      "id": "rc_l197_q2",
+      "instruction": "PREPOSITION + PRONOUN",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "The regulation ___ the company must comply, updated last month, affects all overseas branches.",
+      "hint": "Say the phrase as a normal sentence first: 'the company must comply ___ the regulation.' Which preposition belongs there, and where does it sit in the formal pattern?",
+      "explanation": "'Comply with' needs its preposition; in the formal, fronted pattern it moves in front of 'which': 'with which the company must comply.'",
+      "options": [
+        "with that",
+        "that",
+        "with which",
+        "which with"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "with which",
+      "grammarRule": "Preposition + whom/which (Fronted Preposition)",
+      "clauseType": "defining",
+      "level": 197
+    },
+    {
+      "id": "rc_l197_q3",
+      "instruction": "FIX THE SENTENCE",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "Fix this sentence: 'The vaccine, developed over three years, that received emergency approval last week, is now being distributed nationwide.'",
+      "hint": "One relative pronoun here is not allowed to follow a comma - find it and replace it.",
+      "explanation": "'That' cannot follow a comma; since the vaccine is already uniquely identified, this second clause is non-defining and needs 'which' instead.",
+      "options": [
+        "The vaccine, developing over three years, that received emergency approval last week, is now being distributed nationwide.",
+        "The vaccine, developed over three years, which received emergency approval last week, is now being distributed nationwide.",
+        "The vaccine, developed over three years that received emergency approval last week, is now being distributed nationwide.",
+        "The vaccine developed over three years that received emergency approval last week is now being distributed nationwide."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The vaccine, developed over three years, which received emergency approval last week, is now being distributed nationwide.",
+      "grammarRule": "That Cannot Introduce Non-Defining Clauses",
+      "clauseType": "non-defining",
+      "level": 197
+    },
+    {
+      "id": "rc_l198_q1",
+      "instruction": "JUDGE THE SENTENCE",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "Which sentence has no errors at all?",
+      "hint": "Check the pronoun after 'of' and both commas around the non-defining clause.",
+      "explanation": "'Most of whom' is the correct pattern for people after a preposition, and both commas correctly frame this non-defining clause about the interns.",
+      "options": [
+        "The interns most of whom had no prior experience, quickly became valuable team members.",
+        "The interns, most of whom had no prior experience quickly became valuable team members.",
+        "The interns, most of who had no prior experience, quickly became valuable team members.",
+        "The interns, most of whom had no prior experience, quickly became valuable team members."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The interns, most of whom had no prior experience, quickly became valuable team members.",
+      "grammarRule": "Quantifier + of + whom/which",
+      "clauseType": "non-defining",
+      "level": 198
+    },
+    {
+      "id": "rc_l198_q2",
+      "instruction": "JUDGE THE SENTENCE",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "Which of these four sentences has no grammatical errors?",
+      "hint": "Check each clause's punctuation and pronoun choice separately - one shows place, the other shows possession.",
+      "explanation": "'Where I was treated' correctly identifies the clinic without commas... actually here it is non-defining since the clinic is unique, and 'whose staff I still keep in touch with' correctly shows possession, both properly punctuated.",
+      "options": [
+        "The clinic where I was treated whose staff, I still keep in touch with closed last year.",
+        "The clinic where I was treated, that staff I still keep in touch with, closed last year.",
+        "The clinic, where I was treated whose staff I still keep in touch with, closed last year.",
+        "The clinic where I was treated, whose staff I still keep in touch with, closed last year."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The clinic where I was treated, whose staff I still keep in touch with, closed last year.",
+      "grammarRule": "Defining vs Non-Defining Relative Clause",
+      "clauseType": "non-defining",
+      "level": 198
+    },
+    {
+      "id": "rc_l198_q3",
+      "instruction": "JUDGE THE SENTENCE",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "Out of these four options, which one is fully correct?",
+      "hint": "Check the pronoun after the preposition, the voice of the participle, and whether commas are present where the clause is non-defining.",
+      "explanation": "'For which the board voted unanimously' correctly follows a preposition with 'which,' and 'submitted just before the deadline' is a correctly punctuated non-defining reduced clause.",
+      "options": [
+        "The proposal for which the board voted unanimously submitted just before the deadline will be reviewed again next quarter.",
+        "The proposal for that the board voted unanimously, submitted just before the deadline, will be reviewed again next quarter.",
+        "The proposal for which the board voted unanimously, submitted just before the deadline, will be reviewed again next quarter.",
+        "The proposal for which the board voted unanimously, submitting just before the deadline, will be reviewed again next quarter."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The proposal for which the board voted unanimously, submitted just before the deadline, will be reviewed again next quarter.",
+      "grammarRule": "Preposition + whom/which (Fronted Preposition)",
+      "clauseType": "non-defining",
+      "level": 198
+    },
+    {
+      "id": "rc_l199_q1",
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "The negotiator whose calm demeanor defused the crisis, praised widely in the press, declined all interview requests. What is the antecedent of 'praised widely in the press'?",
+      "hint": "Work backward - who was actually praised in the press coverage of this story?",
+      "explanation": "'The negotiator' - not the demeanor, the crisis, or the interview requests - is who was praised widely in the press; this is a second, non-defining detail about the negotiator already identified by the 'whose' clause.",
+      "options": [
+        "the crisis",
+        "the negotiator",
+        "calm demeanor",
+        "interview requests"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "the negotiator",
+      "grammarRule": "Antecedent Identification",
+      "clauseType": "non-defining",
+      "level": 199
+    },
+    {
+      "id": "rc_l199_q2",
+      "instruction": "SPOT WHAT'S OPTIONAL",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "The estimate ___ the contractor initially provided, revised twice since then, still seems optimistic.",
+      "hint": "'The contractor' already has a job in this clause - 'provided.' Does this defining clause about a thing allow the pronoun to disappear?",
+      "explanation": "'The contractor' is the subject of 'provided,' making 'the estimate' the object; since it's a thing in a defining clause, the pronoun can be dropped entirely.",
+      "options": [
+        "(no word needed)",
+        "whose",
+        "whom",
+        "who"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "(no word needed)",
+      "grammarRule": "Omission of Object Relative Pronoun",
+      "clauseType": "defining",
+      "level": 199
+    },
+    {
+      "id": "rc_l199_q3",
+      "instruction": "MIND THE REGISTER",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "Which sentence is best suited for a formal client-facing project update?",
+      "hint": "Check register, punctuation, and subject-verb agreement all at once.",
+      "explanation": "This version keeps the full pronoun, matches the formal register expected in a client update, and correctly punctuates the non-defining reduced clause describing the milestones.",
+      "options": [
+        "The milestones we were s'posed to hit in March finally got done.",
+        "The milestones that was originally scheduled for March have now been met, they were delayed due to supply issues.",
+        "The milestones, originally scheduled for March delayed due to supply issues, have now been met.",
+        "The milestones that were originally scheduled for March, delayed due to supply issues, have now been met."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The milestones that were originally scheduled for March, delayed due to supply issues, have now been met.",
+      "grammarRule": "Omission of Object Relative Pronoun",
+      "clauseType": "non-defining",
+      "level": 199
+    },
+    {
+      "id": "rc_l200_q1",
+      "instruction": "MARK THE CLAUSE",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "The report submitted by the consultant, whose findings the board initially disputed, was ultimately the same document that convinced them to change course. Identify every relative structure in this sentence and what each one describes.",
+      "hint": "Work through the sentence piece by piece: a reduced clause, a non-defining 'whose' clause, and a final defining clause - check what each one actually attaches to.",
+      "explanation": "This sentence contains three relative structures: a reduced passive clause describing the report, a non-defining possessive clause describing the consultant, and a final defining clause identifying which document convinced the board - each studied separately across this course, now working together.",
+      "options": [
+        "'Whose findings' describes 'the report,' not 'the consultant.'",
+        "'submitted by the consultant' (reduced, describes 'the report'); 'whose findings the board initially disputed' (non-defining, describes 'the consultant'); 'that convinced them to change course' (defining, describes 'the same document').",
+        "'submitted by the consultant' describes 'the board'; the rest is a single non-defining clause about 'the report.'",
+        "There are only two relative clauses in this sentence."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "'submitted by the consultant' (reduced, describes 'the report'); 'whose findings the board initially disputed' (non-defining, describes 'the consultant'); 'that convinced them to change course' (defining, describes 'the same document').",
+      "grammarRule": "Defining vs Non-Defining Relative Clause",
+      "clauseType": "non-defining",
+      "level": 200
+    },
+    {
+      "id": "rc_l200_q2",
+      "instruction": "JUDGE THE SENTENCE",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "You are writing a formal recommendation letter for a former employee. Which sentence best fits this context?",
+      "hint": "Check whether each clause needs commas, whether 'that' appears where it shouldn't, and whether any pronoun has been dropped where it must stay.",
+      "explanation": "'That she led' is a correctly unpunctuated defining clause identifying the initiative, and 'which increased department efficiency by twenty percent' is a correctly comma-separated non-defining clause adding detail - both fit the formal register.",
+      "options": [
+        "The initiative that she led, which increased department efficiency by twenty percent, remains a benchmark for the team.",
+        "The initiative that she led which increased department efficiency by twenty percent remains a benchmark for the team.",
+        "The initiative she led, that increased department efficiency by twenty percent, remains a benchmark for the team.",
+        "The initiative, she led, that increased department efficiency by twenty percent remains a benchmark for the team."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The initiative that she led, which increased department efficiency by twenty percent, remains a benchmark for the team.",
+      "grammarRule": "Defining vs Non-Defining Relative Clause",
+      "clauseType": "non-defining",
+      "level": 200
+    },
+    {
+      "id": "rc_l200_q3",
+      "instruction": "JUDGE THE SENTENCE",
+      "interactionType": "choice",
+      "subtype": "relativeClauses",
+      "question": "Which sentence demonstrates correct, natural use of relative clauses across a defining clause, a non-defining clause, and a reduced clause all in one sentence?",
+      "hint": "This is the final question of the course - check every skill at once: pronoun role, defining versus non-defining punctuation, and whether the reduced clause uses the correct participle.",
+      "explanation": "This option correctly combines all three structures studied throughout the course: a defining clause needing no comma, a non-defining reduced clause properly set off by commas, and accurate pronoun and participle choices throughout - a fitting close to everything this curriculum has taught.",
+      "options": [
+        "The teacher who first inspired my love of writing, now retiring and living abroad, still replies to every email I send her.",
+        "The teacher who first inspired my love of writing, now retired and living abroad, still replies to every email I send her.",
+        "The teacher, that first inspired my love of writing now retired and living abroad, still replies to every email I send her.",
+        "The teacher whom first inspired my love of writing, now retired and living abroad, still replies to every email I send her."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The teacher who first inspired my love of writing, now retired and living abroad, still replies to every email I send her.",
+      "grammarRule": "Defining vs Non-Defining Relative Clause",
+      "clauseType": "non-defining",
+      "level": 200
+    }
+  ]
+}

@@ -1,0 +1,608 @@
+{
+  "gameType": "relativeClauses",
+  "phase": "practice",
+  "batchIndex": 17,
+  "levels": "161-170",
+  "quests": [
+    {
+      "id": "rc_l161_practice_q1",
+      "level": 161,
+      "instruction": "REDUCE THE CLAUSE",
+      "question": "The woman who is standing by the door is my aunt. Which of these means exactly the same thing, in reduced form?",
+      "sentence": "The woman who is standing by the door is my aunt. Which of these means exactly the same thing, in reduced form?",
+      "targetClause": "The woman standing by the door is my aunt.",
+      "options": [
+        "The woman stood by the door is my aunt.",
+        "The woman who standing by the door is my aunt.",
+        "The woman stand by the door is my aunt.",
+        "The woman standing by the door is my aunt."
+      ],
+      "correctAnswer": "The woman standing by the door is my aunt.",
+      "correctAnswerIndex": 3,
+      "hint": "Drop both the relative pronoun and the verb 'is,' keeping only the '-ing' form.",
+      "explanation": "'Standing' is the reduced form of 'who is standing': the subject relative pronoun and the auxiliary 'is' are dropped, leaving just the present participle.",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l161_practice_q2",
+      "level": 161,
+      "instruction": "REDUCE THE CLAUSE",
+      "question": "Full: 'The passengers who were waiting at the gate grew impatient.' Reduced: 'The passengers ___ at the gate grew impatient.'",
+      "sentence": "Full: 'The passengers who were waiting at the gate grew impatient.' Reduced: 'The passengers waiting at the gate grew impatient.'",
+      "targetClause": "waiting",
+      "options": [
+        "wait",
+        "waiting",
+        "who waiting",
+        "waited"
+      ],
+      "correctAnswer": "waiting",
+      "correctAnswerIndex": 1,
+      "hint": "The full clause describes an ongoing action ('were waiting') - which participle captures that?",
+      "explanation": "'Waiting' is correct: it reduces 'who were waiting,' dropping the pronoun and the auxiliary 'were,' leaving the present participle.",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l161_practice_q3",
+      "level": 161,
+      "instruction": "TEST THE RULE",
+      "question": "Which sentence can be correctly reduced using an '-ing' form?",
+      "sentence": "Which sentence can be correctly reduced using an '-ing' form?",
+      "targetClause": "The chef who is preparing the tasting menu trained in Paris.",
+      "options": [
+        "The dish that I am preparing for the party is a family recipe.",
+        "Neither sentence can be reduced.",
+        "The chef who is preparing the tasting menu trained in Paris.",
+        "Both sentences can be reduced the same way."
+      ],
+      "correctAnswer": "The chef who is preparing the tasting menu trained in Paris.",
+      "correctAnswerIndex": 2,
+      "hint": "Check who is doing the preparing in each sentence - is the antecedent itself performing the action?",
+      "explanation": "Only subject relative clauses reduce with '-ing': the chef is doing the preparing. In the other case, 'I' is doing the preparing, not 'the dish,' so that object relative clause cannot be reduced this way.",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l162_practice_q1",
+      "level": 162,
+      "instruction": "REDUCE THE CLAUSE",
+      "question": "The car that was stolen last night was found this morning. Which of these means exactly the same thing, in reduced form?",
+      "sentence": "The car that was stolen last night was found this morning. Which of these means exactly the same thing, in reduced form?",
+      "targetClause": "The car stolen last night was found this morning.",
+      "options": [
+        "The car stealing last night was found this morning.",
+        "The car that stolen last night was found this morning.",
+        "The car steal last night was found this morning.",
+        "The car stolen last night was found this morning."
+      ],
+      "correctAnswer": "The car stolen last night was found this morning.",
+      "correctAnswerIndex": 3,
+      "hint": "Drop both the relative pronoun and the verb 'was,' keeping only the past participle.",
+      "explanation": "'Stolen' is the reduced form of 'that was stolen': the pronoun and the auxiliary 'was' are dropped, leaving just the past participle - correct because the original clause was passive.",
+      "grammarRule": "Reduced Passive Relative Clause",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l162_practice_q2",
+      "level": 162,
+      "instruction": "REDUCE THE CLAUSE",
+      "question": "Full: 'The documents that were signed yesterday need to be filed.' Reduced: 'The documents ___ yesterday need to be filed.'",
+      "sentence": "Full: 'The documents that were signed yesterday need to be filed.' Reduced: 'The documents signed yesterday need to be filed.'",
+      "targetClause": "signed",
+      "options": [
+        "signed",
+        "that signed",
+        "sign",
+        "signing"
+      ],
+      "correctAnswer": "signed",
+      "correctAnswerIndex": 0,
+      "hint": "The full clause is passive ('were signed') - which participle matches a passive meaning?",
+      "explanation": "'Signed' is correct: it reduces 'that were signed,' dropping the pronoun and 'were,' leaving the past participle.",
+      "grammarRule": "Reduced Passive Relative Clause",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l162_practice_q3",
+      "level": 162,
+      "instruction": "TEST THE RULE",
+      "question": "Which sentence correctly uses a reduced clause to show that the report was WRITTEN BY someone else?",
+      "sentence": "Which sentence correctly uses a reduced clause to show that the report was WRITTEN BY someone else?",
+      "targetClause": "The report written by the intern contained several errors.",
+      "options": [
+        "The report that written by the intern contained several errors.",
+        "The report write by the intern contained several errors.",
+        "The report written by the intern contained several errors.",
+        "The report writing the summary contained several errors."
+      ],
+      "correctAnswer": "The report written by the intern contained several errors.",
+      "correctAnswerIndex": 2,
+      "hint": "The report didn't write itself - someone wrote it. Which participle form shows this passive relationship correctly?",
+      "explanation": "'Written' (past participle) correctly shows the passive meaning; '-ing' would incorrectly suggest the report itself is actively writing something.",
+      "grammarRule": "Reduced Passive Relative Clause",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l163_practice_q1",
+      "level": 163,
+      "instruction": "JUDGE THE SENTENCE",
+      "question": "Compare: A) 'The employee managing the project...' B) 'The employee managed by the project...' Which one describes an employee who is IN CHARGE of the project?",
+      "sentence": "Compare: A) 'The employee managing the project...' B) 'The employee managed by the project...' Which one describes an employee who is IN CHARGE of the project?",
+      "targetClause": "Sentence A",
+      "options": [
+        "Neither sentence",
+        "Both sentences equally",
+        "Sentence A",
+        "Sentence B"
+      ],
+      "correctAnswer": "Sentence A",
+      "correctAnswerIndex": 2,
+      "hint": "Ask whether the employee is performing the managing, or receiving it - and whether that second reading even makes sense.",
+      "explanation": "'Managing' shows the employee is doing the managing - in charge of the project. 'Managed by the project' would be an odd passive, since projects don't typically manage people.",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l163_practice_q2",
+      "level": 163,
+      "instruction": "REDUCE THE CLAUSE",
+      "question": "The negotiations ___ by both sides finally reached a resolution.",
+      "sentence": "The negotiations led by both sides finally reached a resolution.",
+      "targetClause": "led",
+      "options": [
+        "that leading",
+        "led",
+        "leading",
+        "lead"
+      ],
+      "correctAnswer": "led",
+      "correctAnswerIndex": 1,
+      "hint": "Were the negotiations doing the leading, or being led by the two sides?",
+      "explanation": "'Led' is correct because the negotiations were led BY both sides - a passive relationship; '-ing' would wrongly suggest the negotiations themselves were actively leading something.",
+      "grammarRule": "Reduced Passive Relative Clause",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l163_practice_q3",
+      "level": 163,
+      "instruction": "JUDGE THE SENTENCE",
+      "question": "Which sentence correctly describes a student who FEELS curious about the topic, rather than one who causes curiosity in others?",
+      "sentence": "Which sentence correctly describes a student who FEELS curious about the topic, rather than one who causes curiosity in others?",
+      "targetClause": "The interested student asked several follow-up questions.",
+      "options": [
+        "The interest student asked several follow-up questions.",
+        "Both sentences mean the same thing.",
+        "The interested student asked several follow-up questions.",
+        "The interesting student asked several follow-up questions."
+      ],
+      "correctAnswer": "The interested student asked several follow-up questions.",
+      "correctAnswerIndex": 2,
+      "hint": "One of these participles describes how the student feels; the other describes the effect the student has on other people.",
+      "explanation": "'Interested' describes the student's own feeling. 'Interesting' would describe a student who causes interest in others - a different meaning entirely.",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l164_practice_q1",
+      "level": 164,
+      "instruction": "TEST THE RULE",
+      "question": "Which sentence CANNOT be correctly reduced using a participle?",
+      "sentence": "Which sentence CANNOT be correctly reduced using a participle?",
+      "targetClause": "The pictures that the photographer is taking will be ready tomorrow.",
+      "options": [
+        "The photographer who is taking the pictures arrived early.",
+        "The pictures that the photographer is taking will be ready tomorrow.",
+        "Both sentences can be reduced the same way.",
+        "Neither sentence can be reduced."
+      ],
+      "correctAnswer": "The pictures that the photographer is taking will be ready tomorrow.",
+      "correctAnswerIndex": 1,
+      "hint": "Check whether the antecedent is doing the action, or receiving it from someone else mentioned in the clause.",
+      "explanation": "'The photographer' - not 'the pictures' - is doing the taking, so this is an object relative clause; object relative clauses generally cannot be reduced to a simple participle this way, unlike subject relative clauses.",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l164_practice_q2",
+      "level": 164,
+      "instruction": "TEST THE RULE",
+      "question": "Which sentence sounds unnatural if reduced with an '-ing' form, because the verb describes a mental state rather than an ongoing action?",
+      "sentence": "Which sentence sounds unnatural if reduced with an '-ing' form, because the verb describes a mental state rather than an ongoing action?",
+      "targetClause": "The man who knows the answer raised his hand.",
+      "options": [
+        "The man who knows the answer raised his hand.",
+        "The man who is waiting outside is my neighbor.",
+        "Both reduce equally naturally.",
+        "Neither reduces naturally."
+      ],
+      "correctAnswer": "The man who knows the answer raised his hand.",
+      "correctAnswerIndex": 0,
+      "hint": "Compare 'waiting,' which describes an ongoing action, with 'knowing,' which describes a mental state - does the second sound natural in everyday speech?",
+      "explanation": "Stative verbs like 'know,' 'believe,' or 'want' generally resist this kind of reduction, even though the '-ing' form technically exists; 'waiting' reduces naturally, but 'knowing' sounds stiff or archaic here.",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l164_practice_q3",
+      "level": 164,
+      "instruction": "TEST THE RULE",
+      "question": "Which sentence CANNOT be reduced to a shorter participle phrase?",
+      "sentence": "Which sentence CANNOT be reduced to a shorter participle phrase?",
+      "targetClause": "The employee whose contract is being reviewed raised concerns.",
+      "options": [
+        "The employee whose contract is being reviewed raised concerns.",
+        "The employee who is reviewing the contract found an error.",
+        "Neither can be reduced.",
+        "Both can be reduced the same way."
+      ],
+      "correctAnswer": "The employee whose contract is being reviewed raised concerns.",
+      "correctAnswerIndex": 0,
+      "hint": "Reduction works by dropping a relative pronoun and a form of 'be' - does 'whose' behave the same way as 'who' or 'that' here?",
+      "explanation": "Clauses beginning with 'whose' generally cannot be shortened to a simple participle phrase, because 'whose' shows possession, not simply a subject doing or receiving an action.",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l165_practice_q1",
+      "level": 165,
+      "instruction": "TEST THE RULE",
+      "question": "Why can't 'The man whose car was stolen' be reduced to something like 'The man car stolen'?",
+      "sentence": "Why can't 'The man whose car was stolen' be reduced to something like 'The man car stolen'?",
+      "targetClause": "Because dropping 'whose' would break the possessive link between the man and the car, leaving the sentence unclear.",
+      "options": [
+        "Because 'stolen' can only be used with 'that,' never with 'whose.'",
+        "Because 'whose' clauses are always non-defining.",
+        "Because possessive clauses never contain a verb.",
+        "Because dropping 'whose' would break the possessive link between the man and the car, leaving the sentence unclear."
+      ],
+      "correctAnswer": "Because dropping 'whose' would break the possessive link between the man and the car, leaving the sentence unclear.",
+      "correctAnswerIndex": 3,
+      "hint": "Think about what job 'whose' is doing in this sentence - what would be lost if it disappeared?",
+      "explanation": "'Whose' shows that the car belongs to the man; removing it would destroy that link, leaving a nonsensical string of nouns. This differs from 'who' or 'that,' which can be dropped because the participle alone still shows the relationship to the antecedent.",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l165_practice_q2",
+      "level": 165,
+      "instruction": "JUDGE THE SENTENCE",
+      "question": "Which sentence correctly keeps 'whose' unreduced, as required?",
+      "sentence": "Which sentence correctly keeps 'whose' unreduced, as required?",
+      "targetClause": "The company whose profits declined announced layoffs.",
+      "options": [
+        "The company declined profits announced layoffs.",
+        "The company profits declined announced layoffs.",
+        "The company whose declined profits announced layoffs.",
+        "The company whose profits declined announced layoffs."
+      ],
+      "correctAnswer": "The company whose profits declined announced layoffs.",
+      "correctAnswerIndex": 3,
+      "hint": "Only one of these keeps the possessive link between the company and its profits clear and grammatical.",
+      "explanation": "'Whose' must stay to show that the profits belong to the company; none of the other options preserve both the meaning and the grammar.",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l165_practice_q3",
+      "level": 165,
+      "instruction": "REDUCE THE CLAUSE",
+      "question": "The company whose profits declined announced layoffs affecting workers across three states. Which part of this sentence IS a valid reduction?",
+      "sentence": "The company whose profits declined announced layoffs affecting workers across three states. Which part of this sentence IS a valid reduction?",
+      "targetClause": "affecting workers across three states",
+      "options": [
+        "The company",
+        "affecting workers across three states",
+        "whose profits declined",
+        "announced layoffs"
+      ],
+      "correctAnswer": "affecting workers across three states",
+      "correctAnswerIndex": 1,
+      "hint": "Look for a participle phrase elsewhere in the sentence that stands in for a full relative clause, separate from the 'whose' clause.",
+      "explanation": "'Affecting workers across three states' is a reduced form of 'that affected workers...' - a valid reduction, unlike the 'whose' clause earlier in the sentence, which must stay in full.",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l166_practice_q1",
+      "level": 166,
+      "instruction": "REDUCE THE CLAUSE",
+      "question": "My brother, who lives in Paris, works as a chef. Can this non-defining clause also be reduced?",
+      "sentence": "My brother, who lives in Paris, works as a chef. Can this non-defining clause also be reduced?",
+      "targetClause": "Yes: 'My brother, living in Paris, works as a chef.'",
+      "options": [
+        "No, non-defining clauses can never be reduced.",
+        "No, because 'lives' cannot form a participle.",
+        "Yes, but only if the comma is removed first.",
+        "Yes: 'My brother, living in Paris, works as a chef.'"
+      ],
+      "correctAnswer": "Yes: 'My brother, living in Paris, works as a chef.'",
+      "correctAnswerIndex": 3,
+      "hint": "Try applying the same drop-the-pronoun-and-'be' pattern you've used before, but keep the commas this time.",
+      "explanation": "Non-defining clauses can be reduced too, as long as the commas stay in place: 'living in Paris' replaces 'who lives in Paris,' with the extra information still clearly set off by commas.",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l166_practice_q2",
+      "level": 166,
+      "instruction": "REDUCE THE CLAUSE",
+      "question": "The bridge, which was built in 1932, connects the two districts. Which reduced version is correct?",
+      "sentence": "The bridge, which was built in 1932, connects the two districts. Which reduced version is correct?",
+      "targetClause": "The bridge, built in 1932, connects the two districts.",
+      "options": [
+        "The bridge, that built in 1932, connects the two districts.",
+        "The bridge, built in 1932, connects the two districts.",
+        "The bridge built in 1932 connects the two districts.",
+        "The bridge, building in 1932, connects the two districts."
+      ],
+      "correctAnswer": "The bridge, built in 1932, connects the two districts.",
+      "correctAnswerIndex": 1,
+      "hint": "Keep the commas exactly where they were, and choose the participle form that matches the passive meaning of 'was built.'",
+      "explanation": "'Built' correctly reduces 'which was built,' and the commas must stay since this is still non-defining information about a unique bridge.",
+      "grammarRule": "Reduced Passive Relative Clause",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l166_practice_q3",
+      "level": 166,
+      "instruction": "DIAGNOSE THE ERROR",
+      "question": "Which sentence commits an error by losing its commas during reduction?",
+      "sentence": "Which sentence commits an error by losing its commas during reduction?",
+      "targetClause": "Mount Everest standing at over 8,800 meters is the tallest mountain on Earth.",
+      "options": [
+        "Mount Everest, standing at over 8,800 meters, is the tallest mountain on Earth.",
+        "Mount Everest standing at over 8,800 meters is the tallest mountain on Earth.",
+        "The password, which was reset yesterday, no longer works.",
+        "The volunteers, working through the night, finished just before dawn."
+      ],
+      "correctAnswer": "Mount Everest standing at over 8,800 meters is the tallest mountain on Earth.",
+      "correctAnswerIndex": 1,
+      "hint": "Ask whether 'Mount Everest' needs any narrowing down at all - and whether the comma should have stayed even after reduction.",
+      "explanation": "Reducing a clause doesn't remove the need for its commas; since Mount Everest is unique, the non-defining comma must stay even in the reduced form.",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l167_practice_q1",
+      "level": 167,
+      "instruction": "INTERPRET THE CLAUSE",
+      "question": "The team managing the crisis worked around the clock. What is the FULL, unreduced meaning of 'managing the crisis'?",
+      "sentence": "The team managing the crisis worked around the clock. What is the FULL, unreduced meaning of 'managing the crisis'?",
+      "targetClause": "who was managing the crisis / who were managing the crisis",
+      "options": [
+        "who was managing the crisis / who were managing the crisis",
+        "whose crisis was being managed",
+        "that the crisis was managing",
+        "who was being managed by the crisis"
+      ],
+      "correctAnswer": "who was managing the crisis / who were managing the crisis",
+      "correctAnswerIndex": 0,
+      "hint": "Ask whether the team is doing the managing, or whether something else is managing the team.",
+      "explanation": "'Managing' is a present participle showing an active relationship: the team was doing the managing. The full form is 'who was/were managing the crisis.'",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l167_practice_q2",
+      "level": 167,
+      "instruction": "INTERPRET THE CLAUSE",
+      "question": "The employees selected for the pilot program will start Monday. What is the FULL, unreduced meaning of 'selected for the pilot program'?",
+      "sentence": "The employees selected for the pilot program will start Monday. What is the FULL, unreduced meaning of 'selected for the pilot program'?",
+      "targetClause": "who were selected for the pilot program",
+      "options": [
+        "who are selecting the pilot program",
+        "who selected the pilot program",
+        "whose pilot program was selected",
+        "who were selected for the pilot program"
+      ],
+      "correctAnswer": "who were selected for the pilot program",
+      "correctAnswerIndex": 3,
+      "hint": "Ask whether the employees chose the program, or whether someone else chose the employees for it.",
+      "explanation": "'Selected' is a past participle showing a passive relationship: someone else selected the employees. The full form is 'who were selected for the pilot program.'",
+      "grammarRule": "Reduced Passive Relative Clause",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l167_practice_q3",
+      "level": 167,
+      "instruction": "INTERPRET THE CLAUSE",
+      "question": "Compare: A) 'The horse racing down the track was disqualified.' B) 'The horse raced down the track was disqualified.' Which one means the horse itself was running?",
+      "sentence": "Compare: A) 'The horse racing down the track was disqualified.' B) 'The horse raced down the track was disqualified.' Which one means the horse itself was running?",
+      "targetClause": "Sentence A",
+      "options": [
+        "Both sentences",
+        "Sentence A",
+        "Sentence B",
+        "Neither sentence"
+      ],
+      "correctAnswer": "Sentence A",
+      "correctAnswerIndex": 1,
+      "hint": "One participle shows the horse doing the running; the other would need someone racing the horse, which is a less natural reading here.",
+      "explanation": "'Racing' (active) means the horse itself was running down the track. 'Raced' would suggest someone raced the horse, a less natural reading in this context.",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l168_practice_q1",
+      "level": 168,
+      "instruction": "REDUCE THE CLAUSE",
+      "question": "Which is the correct reduced form of 'The workers who are striking for better pay have blocked the entrance'?",
+      "sentence": "Which is the correct reduced form of 'The workers who are striking for better pay have blocked the entrance'?",
+      "targetClause": "The workers striking for better pay have blocked the entrance.",
+      "options": [
+        "The workers struck for better pay have blocked the entrance.",
+        "The workers who striking for better pay have blocked the entrance.",
+        "The workers striking for better pay have blocked the entrance.",
+        "The workers strike for better pay have blocked the entrance."
+      ],
+      "correctAnswer": "The workers striking for better pay have blocked the entrance.",
+      "correctAnswerIndex": 2,
+      "hint": "Drop 'who are' and keep only the participle that matches the ongoing action.",
+      "explanation": "'Striking' correctly reduces 'who are striking,' dropping the pronoun and 'are.'",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l168_practice_q2",
+      "level": 168,
+      "instruction": "REDUCE THE CLAUSE",
+      "question": "Which is the correct reduced form of 'The evidence that was presented in court convinced the jury'?",
+      "sentence": "Which is the correct reduced form of 'The evidence that was presented in court convinced the jury'?",
+      "targetClause": "The evidence presented in court convinced the jury.",
+      "options": [
+        "The evidence present in court convinced the jury.",
+        "The evidence that presented in court convinced the jury.",
+        "The evidence presented in court convinced the jury.",
+        "The evidence presenting in court convinced the jury."
+      ],
+      "correctAnswer": "The evidence presented in court convinced the jury.",
+      "correctAnswerIndex": 2,
+      "hint": "This clause is passive ('was presented') - which participle form matches that?",
+      "explanation": "'Presented' correctly reduces 'that was presented,' dropping the pronoun and 'was,' matching the passive meaning.",
+      "grammarRule": "Reduced Passive Relative Clause",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l168_practice_q3",
+      "level": 168,
+      "instruction": "TEST THE RULE",
+      "question": "Which is the correct reduced form of 'The book that my sister is reading was a birthday gift'?",
+      "sentence": "Which is the correct reduced form of 'The book that my sister is reading was a birthday gift'?",
+      "targetClause": "This clause cannot be reduced to a participle phrase, because 'my sister,' not 'the book,' is doing the reading.",
+      "options": [
+        "This clause cannot be reduced to a participle phrase, because 'my sister,' not 'the book,' is doing the reading.",
+        "The book reads by my sister was a birthday gift.",
+        "The book my sister reading was a birthday gift.",
+        "The book reading by my sister was a birthday gift."
+      ],
+      "correctAnswer": "This clause cannot be reduced to a participle phrase, because 'my sister,' not 'the book,' is doing the reading.",
+      "correctAnswerIndex": 0,
+      "hint": "Ask who is actually doing the reading - the book, or someone else mentioned in the clause?",
+      "explanation": "Since 'my sister' - not 'the book' - is doing the reading, this is an object relative clause and cannot be reduced to a simple participle phrase attached to 'book.' Note: dropping 'that' to get 'the book my sister is reading' is a different technique - object relative pronoun omission - not participle reduction.",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l169_practice_q1",
+      "level": 169,
+      "instruction": "EXPAND THE CLAUSE",
+      "question": "Expand this reduced clause to its full form: 'The technicians repairing the server worked through lunch.'",
+      "sentence": "Expand this reduced clause to its full form: 'The technicians repairing the server worked through lunch.'",
+      "targetClause": "The technicians who were repairing the server worked through lunch.",
+      "options": [
+        "The technicians who repair the server worked through lunch.",
+        "The technicians who repaired the server worked through lunch.",
+        "The technicians who were repairing the server worked through lunch.",
+        "The technicians whose server was repaired worked through lunch."
+      ],
+      "correctAnswer": "The technicians who were repairing the server worked through lunch.",
+      "correctAnswerIndex": 2,
+      "hint": "The reduced participle 'repairing' suggests an ongoing action - which full verb tense best captures that?",
+      "explanation": "'Repairing' most naturally expands to the past progressive 'who were repairing,' matching the ongoing nature of the action alongside 'worked through lunch.'",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l169_practice_q2",
+      "level": 169,
+      "instruction": "EXPAND THE CLAUSE",
+      "question": "Expand this reduced clause to its full form: 'The applications submitted after the deadline were rejected automatically.'",
+      "sentence": "Expand this reduced clause to its full form: 'The applications submitted after the deadline were rejected automatically.'",
+      "targetClause": "The applications that were submitted after the deadline were rejected automatically.",
+      "options": [
+        "The applications that are submitting after the deadline were rejected automatically.",
+        "The applications whose deadline was submitted were rejected automatically.",
+        "The applications that submitted after the deadline were rejected automatically.",
+        "The applications that were submitted after the deadline were rejected automatically."
+      ],
+      "correctAnswer": "The applications that were submitted after the deadline were rejected automatically.",
+      "correctAnswerIndex": 3,
+      "hint": "'Submitted' is a past participle - applications don't submit themselves, so which voice does the full clause need?",
+      "explanation": "'Submitted' expands to the passive 'that were submitted,' since applications are submitted by someone, not by themselves.",
+      "grammarRule": "Reduced Passive Relative Clause",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l169_practice_q3",
+      "level": 169,
+      "instruction": "EXPAND THE CLAUSE",
+      "question": "Expand this reduced clause to its full form, keeping the meaning and punctuation the same: 'The new policy, announced without warning, upset many employees.'",
+      "sentence": "Expand this reduced clause to its full form, keeping the meaning and punctuation the same: 'The new policy, announced without warning, upset many employees.'",
+      "targetClause": "The new policy, which was announced without warning, upset many employees.",
+      "options": [
+        "The new policy, which was announced without warning, upset many employees.",
+        "The new policy, that was announced without warning, upset many employees.",
+        "The new policy, announcing without warning, upset many employees.",
+        "The new policy which was announced without warning upset many employees."
+      ],
+      "correctAnswer": "The new policy, which was announced without warning, upset many employees.",
+      "correctAnswerIndex": 0,
+      "hint": "Keep both commas exactly where they are, and choose the pronoun and voice that match the passive participle 'announced.'",
+      "explanation": "'Announced' expands to 'which was announced,' and since this is non-defining information, both commas and 'which' (not 'that') must be used.",
+      "grammarRule": "Reduced Passive Relative Clause",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l170_practice_q1",
+      "level": 170,
+      "instruction": "JUDGE THE SENTENCE",
+      "question": "Which sentence correctly describes documents that SOMEONE ELSE reviewed, rather than documents that were reviewing anything?",
+      "sentence": "Which sentence correctly describes documents that SOMEONE ELSE reviewed, rather than documents that were reviewing anything?",
+      "targetClause": "The documents reviewed by the auditor revealed inconsistencies.",
+      "options": [
+        "The documents review by the auditor revealed inconsistencies.",
+        "The documents reviewed by the auditor revealed inconsistencies.",
+        "Both sentences mean the same thing.",
+        "The documents reviewing the auditor revealed inconsistencies."
+      ],
+      "correctAnswer": "The documents reviewed by the auditor revealed inconsistencies.",
+      "correctAnswerIndex": 1,
+      "hint": "The documents didn't review anything themselves - someone reviewed them. Which participle shows this correctly?",
+      "explanation": "'Reviewed' (past participle) correctly shows the passive relationship: the auditor reviewed the documents. '-ing' would reverse the roles entirely.",
+      "grammarRule": "Reduced Passive Relative Clause",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l170_practice_q2",
+      "level": 170,
+      "instruction": "JUDGE THE SENTENCE",
+      "question": "Which sentence correctly combines these facts, keeping the 'whose' clause intact: 'The novelist has a new book. The novelist's earlier work won critical acclaim. The novelist is currently touring five countries.'",
+      "sentence": "Which sentence correctly combines these facts, keeping the 'whose' clause intact: 'The novelist has a new book. The novelist's earlier work won critical acclaim. The novelist is currently touring five countries.'",
+      "targetClause": "The novelist, whose earlier work won critical acclaim, is currently touring five countries with a new book.",
+      "options": [
+        "The novelist, whose earlier work won critical acclaim, is currently touring five countries with a new book.",
+        "The novelist earlier work won critical acclaim touring five countries with a new book.",
+        "The novelist, earlier work winning critical acclaim, is currently touring five countries with a new book.",
+        "The novelist whose winning critical acclaim earlier work is currently touring five countries with a new book."
+      ],
+      "correctAnswer": "The novelist, whose earlier work won critical acclaim, is currently touring five countries with a new book.",
+      "correctAnswerIndex": 0,
+      "hint": "The 'whose' clause must stay in full; only check whether the rest of the sentence is logically and grammatically combined.",
+      "explanation": "'Whose earlier work won critical acclaim' correctly keeps the possessive clause intact and unreduced, while the rest of the sentence combines the remaining facts clearly.",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l170_practice_q3",
+      "level": 170,
+      "instruction": "DIAGNOSE THE ERROR",
+      "question": "Which sentence contains an error related to reduced relative clauses?",
+      "sentence": "Which sentence contains an error related to reduced relative clauses?",
+      "targetClause": "The house who belonging to my uncle is for sale.",
+      "options": [
+        "The house who belonging to my uncle is for sale.",
+        "The bridge, built in 1932, connects the two districts.",
+        "The manager reviewing the applications will call finalists tomorrow.",
+        "The evidence presented in court convinced the jury."
+      ],
+      "correctAnswer": "The house who belonging to my uncle is for sale.",
+      "correctAnswerIndex": 0,
+      "hint": "A reduced clause drops its relative pronoun entirely - check whether any option has accidentally kept one.",
+      "explanation": "'The house who belonging to my uncle' incorrectly keeps 'who' alongside the reduced participle 'belonging'; a reduced clause never keeps its relative pronoun.",
+      "grammarRule": "Reduced Relative Clause with -ing",
+      "clauseType": "defining"
+    }
+  ]
+}

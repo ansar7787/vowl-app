@@ -1,0 +1,608 @@
+{
+  "gameType": "relativeClauses",
+  "phase": "practice",
+  "batchIndex": 12,
+  "levels": "111-120",
+  "quests": [
+    {
+      "id": "rc_l111_practice_q1",
+      "level": 111,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The pilot who landed the aircraft that lost an engine over the Pacific received a medal. What does 'that lost an engine over the Pacific' describe?",
+      "sentence": "The pilot who landed the aircraft that lost an engine over the Pacific received a medal. What does 'that lost an engine over the Pacific' describe?",
+      "targetClause": "the aircraft",
+      "options": [
+        "a medal",
+        "the Pacific",
+        "the aircraft",
+        "the pilot"
+      ],
+      "correctAnswer": "the aircraft",
+      "correctAnswerIndex": 2,
+      "hint": "Two clauses are stacked here. Ask which noun sits directly in front of 'that' and whether it can logically be the thing that lost an engine.",
+      "explanation": "'That lost an engine over the Pacific' modifies 'the aircraft,' the noun directly before it. The earlier clause, 'who landed the aircraft,' modifies 'the pilot.' In stacked clauses, each relative word attaches to the nearest noun that makes sense with its verb.",
+      "grammarRule": "Stacked Relative Clauses",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l111_practice_q2",
+      "level": 111,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The scientist who discovered the enzyme ___ regulates blood sugar received a prestigious prize.",
+      "sentence": "The scientist who discovered the enzyme which regulates blood sugar received a prestigious prize.",
+      "targetClause": "which",
+      "options": [
+        "whom",
+        "whose",
+        "who",
+        "which"
+      ],
+      "correctAnswer": "which",
+      "correctAnswerIndex": 3,
+      "hint": "Two clauses, two antecedents. This blank belongs to the second one, so ask which noun stands directly before it and what that noun is doing.",
+      "explanation": "'The enzyme' is the antecedent of this blank, and it is the subject of 'regulates,' so a pronoun for things is needed: 'which.' The earlier 'who' already belongs to 'the scientist'; a personal pronoun cannot refer to an enzyme.",
+      "grammarRule": "Stacked Relative Clauses",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l111_practice_q3",
+      "level": 111,
+      "instruction": "DETERMINE THE ROLE",
+      "question": "The farmer whose orchard the council wanted to buy refused to sell. What does 'whose' link together in this sentence?",
+      "sentence": "The farmer whose orchard the council wanted to buy refused to sell. What does 'whose' link together in this sentence?",
+      "targetClause": "The farmer and the orchard, because the farmer owns it",
+      "options": [
+        "The farmer and the council, because they are in conflict",
+        "The farmer and the orchard, because the farmer owns it",
+        "Nothing - here 'whose' works as the subject of 'wanted'",
+        "The council and the orchard, because the council owns it"
+      ],
+      "correctAnswer": "The farmer and the orchard, because the farmer owns it",
+      "correctAnswerIndex": 1,
+      "hint": "'Whose' always connects an owner to the noun that comes right after it.",
+      "explanation": "'Whose' links 'the farmer' (the owner) to 'orchard' (the thing owned). The council is the subject of 'wanted to buy,' so it plays no part in the possession relationship.",
+      "grammarRule": "Possessive Relative Pronoun whose",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l112_practice_q1",
+      "level": 112,
+      "instruction": "ESSENTIAL OR EXTRA?",
+      "question": "Our firm has three offices - Denver, Austin, and Portland - but only the Austin office handles international clients. Which sentence best reflects this?",
+      "sentence": "Our firm has three offices - Denver, Austin, and Portland - but only the Austin office handles international clients. Which sentence best reflects this?",
+      "targetClause": "The office that handles international clients is in Austin.",
+      "options": [
+        "The office that handles international clients is in Austin.",
+        "The office, that handles international clients, is in Austin.",
+        "The office, which handles international clients, is in Austin.",
+        "The office which handles international clients, is in Austin."
+      ],
+      "correctAnswer": "The office that handles international clients is in Austin.",
+      "correctAnswerIndex": 0,
+      "hint": "Decide whether the clause has to pick one office out of several, or just adds a fact about an office that is already identified.",
+      "explanation": "With three offices, the clause is essential because it tells us which office is meant, so it is defining: no commas, and 'that' is fine. Commas would suggest the firm has only one office, and 'that' can never follow a comma.",
+      "grammarRule": "Defining vs Non-Defining Relative Clause",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l112_practice_q2",
+      "level": 112,
+      "instruction": "PUNCTUATE IT RIGHT",
+      "question": "A rural clinic has exactly one physician. She trained in Havana and speaks three languages. Which brochure sentence uses the Havana fact correctly?",
+      "sentence": "A rural clinic has exactly one physician. She trained in Havana and speaks three languages. Which brochure sentence uses the Havana fact correctly?",
+      "targetClause": "The physician, who trained in Havana, speaks three languages.",
+      "options": [
+        "The physician, who trained in Havana, speaks three languages.",
+        "The physician, that trained in Havana, speaks three languages.",
+        "The physician who trained in Havana speaks three languages.",
+        "The physician, who trained in Havana speaks three languages."
+      ],
+      "correctAnswer": "The physician, who trained in Havana, speaks three languages.",
+      "correctAnswerIndex": 0,
+      "hint": "Only one physician exists, so the Havana detail is extra background. Check both the commas and the pronoun.",
+      "explanation": "Because there is only one physician, 'who trained in Havana' is non-defining: it needs a comma on each side and cannot use 'that.' Without commas, the sentence would suggest the clinic has several physicians and this is the one who trained in Havana.",
+      "grammarRule": "Comma Placement in Non-Defining Clauses",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l112_practice_q3",
+      "level": 112,
+      "instruction": "READ BETWEEN THE COMMAS",
+      "question": "A school newsletter says: 'Students who complete the survey will receive a free lunch coupon.' A parent argues that her daughter, who was absent on survey day, should receive one too. Does the sentence support her argument?",
+      "sentence": "A school newsletter says: 'Students who complete the survey will receive a free lunch coupon.' A parent argues that her daughter, who was absent on survey day, should receive one too. Does the sentence support her argument?",
+      "targetClause": "No - the clause has no commas, so it limits the coupons to students who completed the survey.",
+      "options": [
+        "Yes - the sentence promises coupons to every student in the school.",
+        "No - the clause has no commas, so it limits the coupons to students who completed the survey.",
+        "No - because 'who' cannot be used in a newsletter.",
+        "Yes - relative clauses never limit who receives something."
+      ],
+      "correctAnswer": "No - the clause has no commas, so it limits the coupons to students who completed the survey.",
+      "correctAnswerIndex": 1,
+      "hint": "Ask whether 'who complete the survey' narrows down a group or simply describes everyone in it.",
+      "explanation": "The clause has no commas, so it is defining: it limits the coupons to the students who completed the survey. A parent cannot read the sentence as a promise to every student.",
+      "grammarRule": "Defining vs Non-Defining Relative Clause",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l113_practice_q1",
+      "level": 113,
+      "instruction": "PLACE OR THING?",
+      "question": "The warehouse ___ the company leased in 2015 flooded during the storm.",
+      "sentence": "The warehouse that the company leased in 2015 flooded during the storm.",
+      "targetClause": "that",
+      "options": [
+        "where",
+        "when",
+        "whom",
+        "that"
+      ],
+      "correctAnswer": "that",
+      "correctAnswerIndex": 3,
+      "hint": "'The company leased' something - ask whether the warehouse is the thing being leased or merely the setting for an action.",
+      "explanation": "'Leased' takes 'the warehouse' as its direct object, so an object relative pronoun ('that') is needed. 'Where' would only work if the warehouse were the location of some other action, and 'whom' is for people.",
+      "grammarRule": "Where vs Which/That for Places",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l113_practice_q2",
+      "level": 113,
+      "instruction": "PLACE OR THING?",
+      "question": "The warehouse ___ the company stores its winter inventory flooded during the storm.",
+      "sentence": "The warehouse where the company stores its winter inventory flooded during the storm.",
+      "targetClause": "where",
+      "options": [
+        "why",
+        "who",
+        "which",
+        "where"
+      ],
+      "correctAnswer": "where",
+      "correctAnswerIndex": 3,
+      "hint": "'Stores' already has its object - 'its winter inventory.' What job is left for the warehouse?",
+      "explanation": "'Stores' already has its object, 'its winter inventory,' so the warehouse is only the place where the storing happens. 'Where' (meaning 'in which') fits; 'which' alone would leave the clause without the preposition it needs.",
+      "grammarRule": "Relative Adverb of Place (where)",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l113_practice_q3",
+      "level": 113,
+      "instruction": "DETERMINE THE ROLE",
+      "question": "The storm ___ flooded the warehouse also closed the airport.",
+      "sentence": "The storm which flooded the warehouse also closed the airport.",
+      "targetClause": "which",
+      "options": [
+        "why",
+        "which",
+        "when",
+        "where"
+      ],
+      "correctAnswer": "which",
+      "correctAnswerIndex": 1,
+      "hint": "Check whether 'flooded' has a subject anywhere else. If the gap must be the subject, can an adverb do that job?",
+      "explanation": "Nothing else performs 'flooded,' so the gap must supply the subject - a job only relative pronouns can do. 'When' and 'where' are adverbs and can never be subjects; 'which' refers back to the storm.",
+      "grammarRule": "Relative Adverbs Cannot Be Subjects",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l114_practice_q1",
+      "level": 114,
+      "instruction": "SHOW THE OWNERSHIP",
+      "question": "The museum, ___ collection includes over 50,000 artifacts, reopens in June.",
+      "sentence": "The museum, whose collection includes over 50,000 artifacts, reopens in June.",
+      "targetClause": "whose",
+      "options": [
+        "which",
+        "whose",
+        "that",
+        "who"
+      ],
+      "correctAnswer": "whose",
+      "correctAnswerIndex": 1,
+      "hint": "Look at the noun right after the gap. What owns it? Also notice the commas around the clause.",
+      "explanation": "The collection belongs to the museum, so the possessive 'whose' is needed. It works for things as well as people, and here it introduces a non-defining clause; 'that' could never follow a comma.",
+      "grammarRule": "Possessive Relative Pronoun whose",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l114_practice_q2",
+      "level": 114,
+      "instruction": "SHOW THE OWNERSHIP",
+      "question": "Which pair of sentences could be combined into one using 'whose'?",
+      "sentence": "Which pair of sentences could be combined into one using 'whose'?",
+      "targetClause": "The band released an album. The band's tour sold out in a day.",
+      "options": [
+        "The band released an album. Critics praised the album.",
+        "The band released an album. The album came out in May.",
+        "The band released an album. The band's tour sold out in a day.",
+        "The band released an album. The album sold out in a day."
+      ],
+      "correctAnswer": "The band released an album. The band's tour sold out in a day.",
+      "correctAnswerIndex": 2,
+      "hint": "'Whose' replaces a possessive form (X's Y). Look for the pair where one noun owns or belongs to the other.",
+      "explanation": "'The band's tour' shows possession, so the pair becomes 'The band whose tour sold out in a day released an album.' In the other pairs the second sentence is about the album itself, which calls for 'that' or 'which' rather than 'whose.'",
+      "grammarRule": "Possessive Relative Pronoun whose",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l114_practice_q3",
+      "level": 114,
+      "instruction": "DETERMINE THE ROLE",
+      "question": "The driver whose licence the officer confiscated appealed the decision. Inside the relative clause, what is the grammatical role of 'the officer'?",
+      "sentence": "The driver whose licence the officer confiscated appealed the decision. Inside the relative clause, what is the grammatical role of 'the officer'?",
+      "targetClause": "The subject of 'confiscated'",
+      "options": [
+        "The subject of 'confiscated'",
+        "The antecedent of 'whose'",
+        "The possessor introduced by 'whose'",
+        "The object of 'confiscated'"
+      ],
+      "correctAnswer": "The subject of 'confiscated'",
+      "correctAnswerIndex": 0,
+      "hint": "Find the verb 'confiscated' and ask who performed the confiscating.",
+      "explanation": "'Whose licence' is the object of 'confiscated' - the officer took it. The officer performs the action, so 'the officer' is the subject. 'Whose' only supplies the possessive link back to 'the driver.'",
+      "grammarRule": "Possessive Relative Pronoun whose",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l115_practice_q1",
+      "level": 115,
+      "instruction": "MIND THE REGISTER",
+      "question": "Casual: 'The consultant we picked last year keeps missing deadlines.' Which is the most formal rewrite for a board report?",
+      "sentence": "Casual: 'The consultant we picked last year keeps missing deadlines.' Which is the most formal rewrite for a board report?",
+      "targetClause": "The consultant whom we selected last year has repeatedly missed deadlines.",
+      "options": [
+        "The consultant, whom we selected last year has repeatedly missed deadlines.",
+        "The consultant whom we selected last year has repeatedly missed deadlines.",
+        "The consultant who we selected last year has repeatedly missed deadlines.",
+        "The consultant which we selected last year has repeatedly missed deadlines."
+      ],
+      "correctAnswer": "The consultant whom we selected last year has repeatedly missed deadlines.",
+      "correctAnswerIndex": 1,
+      "hint": "Formal writing restores the pronoun and uses the traditional object form for a person.",
+      "explanation": "In a formal report, the omitted pronoun is restored, and because the consultant is the object of 'selected,' the formal choice is 'whom.' 'Which' cannot refer to a person, and the stray comma would wrongly turn the clause into extra information.",
+      "grammarRule": "Whom in Formal Register",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l115_practice_q2",
+      "level": 115,
+      "instruction": "MIND THE REGISTER",
+      "question": "Formal: 'My supervisor, whom I greatly respect, retired last week.' Which casual version keeps the same meaning and is still grammatical?",
+      "sentence": "Formal: 'My supervisor, whom I greatly respect, retired last week.' Which casual version keeps the same meaning and is still grammatical?",
+      "targetClause": "My boss, who I really respect, retired last week.",
+      "options": [
+        "My boss, that I really respect, retired last week.",
+        "My boss, who I really respect, retired last week.",
+        "My boss I really respect retired last week.",
+        "My boss, whom I really respect retired last week."
+      ],
+      "correctAnswer": "My boss, who I really respect, retired last week.",
+      "correctAnswerIndex": 1,
+      "hint": "Casual speech can relax 'whom,' but a clause set off by commas still needs a visible pronoun - and one particular pronoun is never allowed after a comma.",
+      "explanation": "Casual English can swap 'whom' for 'who,' but this is a non-defining clause, so the pronoun and both commas must stay. Dropping the pronoun and commas would turn it into a defining clause suggesting several bosses, 'that' can never follow a comma, and the last option is missing its closing comma.",
+      "grammarRule": "Non-Defining Clauses Cannot Omit Their Pronoun",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l115_practice_q3",
+      "level": 115,
+      "instruction": "MIND THE REGISTER",
+      "question": "Which sentence would suit a formal news editorial AND is correctly punctuated, given that the town has only one mayor?",
+      "sentence": "Which sentence would suit a formal news editorial AND is correctly punctuated, given that the town has only one mayor?",
+      "targetClause": "The mayor, whom voters elected by a narrow margin, faces a recall vote.",
+      "options": [
+        "The mayor, who voters elected by a narrow margin, faces a recall vote.",
+        "The mayor whom voters elected by a narrow margin faces a recall vote.",
+        "The mayor, whom voters elected by a narrow margin, faces a recall vote.",
+        "The mayor, that voters elected by a narrow margin, faces a recall vote."
+      ],
+      "correctAnswer": "The mayor, whom voters elected by a narrow margin, faces a recall vote.",
+      "correctAnswerIndex": 2,
+      "hint": "Two tests at once: is the punctuation right for a unique mayor, and is the pronoun the formal choice for a person in object position?",
+      "explanation": "Since there is one mayor, the clause is non-defining and needs commas on both sides. 'Whom' is the formal object pronoun for a person, matching an editorial's register. 'Who' is more casual, 'that' can never follow a comma, and dropping the commas would imply several mayors.",
+      "grammarRule": "Whom in Formal Register",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l116_practice_q1",
+      "level": 116,
+      "instruction": "DIAGNOSE THE ERROR",
+      "question": "What is the error in this sentence? 'The festival, that draws visitors from across the country, begins in July.'",
+      "sentence": "What is the error in this sentence? 'The festival, that draws visitors from across the country, begins in July.'",
+      "targetClause": "'That' has been used to introduce a non-defining clause; 'which' is required.",
+      "options": [
+        "'That' has been used to introduce a non-defining clause; 'which' is required.",
+        "The commas are wrong; a unique festival needs a defining clause.",
+        "There is no error.",
+        "'Festival' is a place, so 'where' is required."
+      ],
+      "correctAnswer": "'That' has been used to introduce a non-defining clause; 'which' is required.",
+      "correctAnswerIndex": 0,
+      "hint": "Look at the punctuation first, then check which relative pronouns may follow a comma.",
+      "explanation": "The commas are appropriate, since the festival is unique and the clause adds extra information. The problem is 'that': it can never introduce a non-defining clause, so 'which' must replace it.",
+      "grammarRule": "That Cannot Introduce Non-Defining Clauses",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l116_practice_q2",
+      "level": 116,
+      "instruction": "DIAGNOSE THE ERROR",
+      "question": "What is the error in this sentence? 'The applicant submitted the incomplete form was rejected.'",
+      "sentence": "What is the error in this sentence? 'The applicant submitted the incomplete form was rejected.'",
+      "targetClause": "A subject relative pronoun has been dropped; 'who' or 'that' is needed before 'submitted.'",
+      "options": [
+        "There is no error, because relative pronouns can always be omitted.",
+        "A comma is missing after 'applicant.'",
+        "A subject relative pronoun has been dropped; 'who' or 'that' is needed before 'submitted.'",
+        "The object relative pronoun 'whom' is missing after 'form.'"
+      ],
+      "correctAnswer": "A subject relative pronoun has been dropped; 'who' or 'that' is needed before 'submitted.'",
+      "correctAnswerIndex": 2,
+      "hint": "Ask which noun is the subject of 'submitted' and whether anything else in the sentence could supply that subject.",
+      "explanation": "'Submitted' has no subject of its own - 'the applicant' must supply it - so the subject relative pronoun ('who' or 'that') cannot be dropped. Only object relative pronouns in defining clauses can be omitted.",
+      "grammarRule": "Subject Relative Pronoun Cannot Be Omitted",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l116_practice_q3",
+      "level": 116,
+      "instruction": "DIAGNOSE THE ERROR",
+      "question": "Which sentence contains two separate errors - one with the pronoun and one with the punctuation?",
+      "sentence": "Which sentence contains two separate errors - one with the pronoun and one with the punctuation?",
+      "targetClause": "The author, that wrote the memoir was invited to speak.",
+      "options": [
+        "The author who wrote the memoir, was invited to speak.",
+        "The author, that wrote the memoir was invited to speak.",
+        "The author who wrote the memoir was invited to speak.",
+        "The author, who wrote the memoir, was invited to speak."
+      ],
+      "correctAnswer": "The author, that wrote the memoir was invited to speak.",
+      "correctAnswerIndex": 1,
+      "hint": "Count the problems in each sentence separately: pronoun choice and comma balance are different skills.",
+      "explanation": "'The author, that wrote the memoir was invited to speak' has two errors: 'that' cannot follow a comma, and the closing comma is missing. The defining and non-defining versions are both correct, and the sentence with only a stray comma has just one error.",
+      "grammarRule": "That Cannot Introduce Non-Defining Clauses",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l117_practice_q1",
+      "level": 117,
+      "instruction": "READ BETWEEN THE COMMAS",
+      "question": "Policy A: 'Claims that involve water damage are excluded.' Policy B: 'Claims, which involve water damage, are excluded.' A customer files a claim for fire damage. Under which policy is her claim still covered?",
+      "sentence": "Policy A: 'Claims that involve water damage are excluded.' Policy B: 'Claims, which involve water damage, are excluded.' A customer files a claim for fire damage. Under which policy is her claim still covered?",
+      "targetClause": "Policy A only",
+      "options": [
+        "Both policies",
+        "Neither policy",
+        "Policy A only",
+        "Policy B only"
+      ],
+      "correctAnswer": "Policy A only",
+      "correctAnswerIndex": 2,
+      "hint": "Ask whether each clause narrows down which claims are excluded or describes all claims.",
+      "explanation": "In Policy A the clause is defining: only claims involving water damage are excluded, so a fire claim survives. In Policy B the commas make the clause non-defining, describing all claims as water-related and excluding every one of them.",
+      "grammarRule": "Defining vs Non-Defining Relative Clause",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l117_practice_q2",
+      "level": 117,
+      "instruction": "READ BETWEEN THE COMMAS",
+      "question": "The staff handbook says: 'Employees, who work remotely, must attend the monthly meeting.' What does this sentence imply?",
+      "sentence": "The staff handbook says: 'Employees, who work remotely, must attend the monthly meeting.' What does this sentence imply?",
+      "targetClause": "That every employee works remotely, so everyone must attend.",
+      "options": [
+        "That every employee works remotely, so everyone must attend.",
+        "That no employee is required to attend.",
+        "That only the employees who work remotely must attend.",
+        "That office employees must attend while remote employees may skip it."
+      ],
+      "correctAnswer": "That every employee works remotely, so everyone must attend.",
+      "correctAnswerIndex": 0,
+      "hint": "Commas turn the clause into extra information about a group that is already fully identified.",
+      "explanation": "With commas, 'who work remotely' is non-defining: it adds a fact about all the employees rather than picking out a subset. To limit the rule to remote workers, the handbook would need to drop the commas.",
+      "grammarRule": "Defining vs Non-Defining Relative Clause",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l117_practice_q3",
+      "level": 117,
+      "instruction": "READ BETWEEN THE COMMAS",
+      "question": "An airline sign reads: 'Passengers, whose bags exceed 23 kg, must pay a fee.' Why is this version misleading?",
+      "sentence": "An airline sign reads: 'Passengers, whose bags exceed 23 kg, must pay a fee.' Why is this version misleading?",
+      "targetClause": "The commas suggest that every passenger's bags exceed 23 kg.",
+      "options": [
+        "The commas suggest that every passenger's bags exceed 23 kg.",
+        "The commas make no difference to the meaning.",
+        "The clause should use 'that' instead of 'whose.'",
+        "'Whose' cannot refer to passengers."
+      ],
+      "correctAnswer": "The commas suggest that every passenger's bags exceed 23 kg.",
+      "correctAnswerIndex": 0,
+      "hint": "Think about what commas do to a clause: do they select some passengers, or describe all of them?",
+      "explanation": "The commas make the clause non-defining, so it seems to describe all passengers. The airline means only those with heavy bags, which requires no commas: 'Passengers whose bags exceed 23 kg must pay a fee.'",
+      "grammarRule": "Possessive Relative Pronoun whose",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l118_practice_q1",
+      "level": 118,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The report on urban air quality that the city commissioned last year, which relied on data from forty sensors, recommends stricter limits. What does 'which relied on data from forty sensors' describe?",
+      "sentence": "The report on urban air quality that the city commissioned last year, which relied on data from forty sensors, recommends stricter limits. What does 'which relied on data from forty sensors' describe?",
+      "targetClause": "the report",
+      "options": [
+        "urban air quality",
+        "the city",
+        "the report",
+        "last year"
+      ],
+      "correctAnswer": "the report",
+      "correctAnswerIndex": 2,
+      "hint": "The nearest noun is 'last year,' but ask what could logically have relied on sensor data.",
+      "explanation": "'The report' - the one the city commissioned - relied on sensor data. 'Last year' is just a time phrase, and 'urban air quality' is what the report is about. The comma shows this clause adds extra detail.",
+      "grammarRule": "Antecedent Identification",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l118_practice_q2",
+      "level": 118,
+      "instruction": "MARK THE CLAUSE",
+      "question": "In 'The startup whose founders dropped out of university and moved to Berlin raised forty million euros,' which words make up the relative clause?",
+      "sentence": "In 'The startup whose founders dropped out of university and moved to Berlin raised forty million euros,' which words make up the relative clause?",
+      "targetClause": "whose founders dropped out of university and moved to Berlin",
+      "options": [
+        "whose founders dropped out of university and moved to Berlin",
+        "The startup whose founders",
+        "raised forty million euros",
+        "dropped out of university and moved to Berlin raised forty million euros"
+      ],
+      "correctAnswer": "whose founders dropped out of university and moved to Berlin",
+      "correctAnswerIndex": 0,
+      "hint": "A relative clause begins with the relative word and ends just before the main verb that belongs to the antecedent.",
+      "explanation": "The relative clause starts at 'whose' and runs through 'Berlin.' The main verb 'raised' belongs to 'the startup' - the antecedent - so it falls outside the clause.",
+      "grammarRule": "Relative Clause Recognition",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l118_practice_q3",
+      "level": 118,
+      "instruction": "SPOT WHAT'S OPTIONAL",
+      "question": "Researchers who studied the effect ___ the drug had on memory reported mixed results.",
+      "sentence": "Researchers who studied the effect (no word needed) the drug had on memory reported mixed results.",
+      "targetClause": "(no word needed)",
+      "options": [
+        "whom",
+        "whose",
+        "who",
+        "(no word needed)"
+      ],
+      "correctAnswer": "(no word needed)",
+      "correctAnswerIndex": 3,
+      "hint": "Look at the second clause only. 'The drug' already has a job - 'had.' What does that leave for 'the effect'?",
+      "explanation": "'The drug' is the subject of 'had,' so 'the effect' is the object, and this defining clause can drop its pronoun. The first clause ('who studied') is a subject relative clause, so its pronoun must stay.",
+      "grammarRule": "Omission of Object Relative Pronoun",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l119_practice_q1",
+      "level": 119,
+      "instruction": "MIND THE REGISTER",
+      "question": "In the company's formal incident report, the analyst wrote: 'The technician of the regional office ___ the manufacturer eventually dispatched had never serviced that model.'",
+      "sentence": "In the company's formal incident report, the analyst wrote: 'The technician of the regional office whom the manufacturer eventually dispatched had never serviced that model.'",
+      "targetClause": "whom",
+      "options": [
+        "which",
+        "who",
+        "whose",
+        "whom"
+      ],
+      "correctAnswer": "whom",
+      "correctAnswerIndex": 3,
+      "hint": "The manufacturer dispatched someone. Ask who does the dispatching and who is dispatched, then consider the formal setting.",
+      "explanation": "'The manufacturer' is the subject of 'dispatched,' so 'the technician' is the object. In a formal report, the object pronoun for a person is 'whom.'",
+      "grammarRule": "Whom in Formal Register",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l119_practice_q2",
+      "level": 119,
+      "instruction": "SHOW THE OWNERSHIP",
+      "question": "The seminar on climate finance, ___ organizers received over three hundred applications, was cancelled at the last minute.",
+      "sentence": "The seminar on climate finance, whose organizers received over three hundred applications, was cancelled at the last minute.",
+      "targetClause": "whose",
+      "options": [
+        "that",
+        "whose",
+        "which",
+        "who"
+      ],
+      "correctAnswer": "whose",
+      "correctAnswerIndex": 1,
+      "hint": "Ask what belongs to the seminar, and notice the commas around the clause.",
+      "explanation": "The organizers belong to the seminar, so the possessive 'whose' is needed. 'Which' and 'who' cannot show possession, and 'that' can never appear in a clause set off by commas.",
+      "grammarRule": "Possessive Relative Pronoun whose",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l119_practice_q3",
+      "level": 119,
+      "instruction": "PLACE OR THING?",
+      "question": "The cafe near the station ___ we met every Friday during college has finally closed.",
+      "sentence": "The cafe near the station where we met every Friday during college has finally closed.",
+      "targetClause": "where",
+      "options": [
+        "that",
+        "who",
+        "which",
+        "where"
+      ],
+      "correctAnswer": "where",
+      "correctAnswerIndex": 3,
+      "hint": "Does 'met' take the cafe as its object, or does the cafe just provide the setting?",
+      "explanation": "We met each other at the cafe; 'met' does not take the cafe as its object. The cafe is only the setting, so the relative adverb 'where' (meaning 'at which') is correct.",
+      "grammarRule": "Relative Adverb of Place (where)",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l120_practice_q1",
+      "level": 120,
+      "instruction": "PUNCTUATE IT RIGHT",
+      "question": "A company has one CEO and several regional directors. Which sentence is correct and reflects this?",
+      "sentence": "A company has one CEO and several regional directors. Which sentence is correct and reflects this?",
+      "targetClause": "The CEO, who founded the firm, promoted the director whom she trusted most.",
+      "options": [
+        "The CEO who founded the firm promoted the director, whom she trusted most.",
+        "The CEO who founded the firm promoted the director whom she trusted most.",
+        "The CEO, who founded the firm, promoted the director whom she trusted most.",
+        "The CEO, that founded the firm, promoted the director whom she trusted most."
+      ],
+      "correctAnswer": "The CEO, who founded the firm, promoted the director whom she trusted most.",
+      "correctAnswerIndex": 2,
+      "hint": "Check each clause against its own antecedent: one is unique, one is chosen from several.",
+      "explanation": "'Who founded the firm' is non-defining because there is only one CEO: it takes commas and cannot use 'that.' 'Whom she trusted most' is defining because it picks one director from several, so it takes no commas. The other options mismatch the punctuation to the situation.",
+      "grammarRule": "Defining vs Non-Defining Relative Clause",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l120_practice_q2",
+      "level": 120,
+      "instruction": "SPOT WHAT'S OPTIONAL",
+      "question": "In 'The advice the mentor gave the student who struggled most helped everyone,' which statement about omitted pronouns is correct?",
+      "sentence": "In 'The advice the mentor gave the student who struggled most helped everyone,' which statement about omitted pronouns is correct?",
+      "targetClause": "'The mentor gave the student' modifies 'advice' and has lost 'that' or 'which.'",
+      "options": [
+        "'The mentor gave' modifies 'student' and has lost 'whom.'",
+        "No pronoun has been omitted anywhere in the sentence.",
+        "'Who struggled most' has lost its pronoun.",
+        "'The mentor gave the student' modifies 'advice' and has lost 'that' or 'which.'"
+      ],
+      "correctAnswer": "'The mentor gave the student' modifies 'advice' and has lost 'that' or 'which.'",
+      "correctAnswerIndex": 3,
+      "hint": "Find the noun that the mentor actually gave, and check whether 'who struggled most' still has a visible pronoun.",
+      "explanation": "The mentor gave the advice, so the omitted object pronoun belongs to 'advice.' The clause 'who struggled most' is a subject relative clause and keeps its pronoun, as it must.",
+      "grammarRule": "Omission of Object Relative Pronoun",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l120_practice_q3",
+      "level": 120,
+      "instruction": "TEST THE RULE",
+      "question": "Which statement about relative clauses is FALSE?",
+      "sentence": "Which statement about relative clauses is FALSE?",
+      "targetClause": "Relative adverbs such as 'where' can serve as the subject of their clause.",
+      "options": [
+        "Relative adverbs such as 'where' can serve as the subject of their clause.",
+        "'That' can introduce defining clauses about both people and things.",
+        "A non-defining clause can never drop its relative pronoun.",
+        "An object relative pronoun in a defining clause can often be omitted."
+      ],
+      "correctAnswer": "Relative adverbs such as 'where' can serve as the subject of their clause.",
+      "correctAnswerIndex": 0,
+      "hint": "Test each statement against what you know about subjects, commas, and omission.",
+      "explanation": "Relative adverbs (where, when, why) can never be the subject of their clause - only relative pronouns can. The other three statements are true: 'that' works in defining clauses for people and things, non-defining clauses keep their pronoun, and object pronouns in defining clauses can often be dropped.",
+      "grammarRule": "Relative Adverbs Cannot Be Subjects",
+      "clauseType": "defining"
+    }
+  ]
+}

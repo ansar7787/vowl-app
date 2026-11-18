@@ -1,0 +1,608 @@
+{
+  "gameType": "relativeClauses",
+  "phase": "practice",
+  "batchIndex": 16,
+  "levels": "151-160",
+  "quests": [
+    {
+      "id": "rc_l151_practice_q1",
+      "level": 151,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The clause that the lawyer who drafted the agreement inserted at the last minute caused confusion. What did the lawyer insert?",
+      "sentence": "The clause that the lawyer who drafted the agreement inserted at the last minute caused confusion. What did the lawyer insert?",
+      "targetClause": "the clause",
+      "options": [
+        "the agreement",
+        "confusion",
+        "the lawyer",
+        "the clause"
+      ],
+      "correctAnswer": "the clause",
+      "correctAnswerIndex": 3,
+      "hint": "There are two nested clauses here. Strip out 'who drafted the agreement' - it just tells you which lawyer. What was actually inserted?",
+      "explanation": "'The clause' is what was inserted; 'that the lawyer ... inserted' is an object relative clause about the clause, with 'who drafted the agreement' nested inside it, describing the lawyer.",
+      "grammarRule": "Nested Relative Clauses",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l151_practice_q2",
+      "level": 151,
+      "instruction": "MARK THE CLAUSE",
+      "question": "In 'The clause that the lawyer who drafted the agreement inserted caused confusion,' which words form the clause describing 'the lawyer'?",
+      "sentence": "In 'The clause that the lawyer who drafted the agreement inserted caused confusion,' which words form the clause describing 'the lawyer'?",
+      "targetClause": "who drafted the agreement",
+      "options": [
+        "inserted at the last minute",
+        "who drafted the agreement",
+        "that the lawyer inserted",
+        "the clause that the lawyer inserted"
+      ],
+      "correctAnswer": "who drafted the agreement",
+      "correctAnswerIndex": 1,
+      "hint": "Find the relative word that comes directly after 'the lawyer' and see where that inner clause ends.",
+      "explanation": "'Who drafted the agreement' is nested inside the larger clause 'that the lawyer ... inserted,' which itself describes 'the clause.' Each relative clause attaches to the noun immediately before its relative word.",
+      "grammarRule": "Nested Relative Clauses",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l151_practice_q3",
+      "level": 151,
+      "instruction": "JUDGE THE SENTENCE",
+      "question": "Which rewrite of the contract sentence is clearest, keeping the same meaning?",
+      "sentence": "Which rewrite of the contract sentence is clearest, keeping the same meaning?",
+      "targetClause": "The lawyer drafted the agreement. The clause she inserted at the last minute caused confusion.",
+      "options": [
+        "The clause caused confusion that the lawyer inserted who drafted the agreement.",
+        "The clause that inserted the lawyer who drafted the agreement caused confusion.",
+        "The lawyer drafted the agreement. The clause she inserted at the last minute caused confusion.",
+        "The lawyer who drafted the agreement caused confusion."
+      ],
+      "correctAnswer": "The lawyer drafted the agreement. The clause she inserted at the last minute caused confusion.",
+      "correctAnswerIndex": 2,
+      "hint": "Nested clauses can often be split into two shorter sentences without losing any information.",
+      "explanation": "Splitting the sentence keeps each clause next to its own noun and removes the nesting entirely, without changing the meaning. The other options either drop information or scramble the structure.",
+      "grammarRule": "Nested Relative Clauses",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l152_practice_q1",
+      "level": 152,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The engineer confirmed that the bridge which the survey that the council commissioned had flagged as unsafe would be closed. What had been flagged as unsafe?",
+      "sentence": "The engineer confirmed that the bridge which the survey that the council commissioned had flagged as unsafe would be closed. What had been flagged as unsafe?",
+      "targetClause": "the bridge",
+      "options": [
+        "the survey",
+        "the council",
+        "the engineer",
+        "the bridge"
+      ],
+      "correctAnswer": "the bridge",
+      "correctAnswerIndex": 3,
+      "hint": "Peel back the layers one at a time: a survey was commissioned, and that survey flagged something. What did it flag?",
+      "explanation": "'The bridge' is what the survey flagged as unsafe. 'That the council commissioned' is nested inside, describing 'the survey,' and the whole thing sits inside the clause describing 'the bridge.'",
+      "grammarRule": "Nested Relative Clauses",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l152_practice_q2",
+      "level": 152,
+      "instruction": "DETERMINE THE ROLE",
+      "question": "In the same sentence, what is the grammatical role of 'the council' inside its own small clause?",
+      "sentence": "In the same sentence, what is the grammatical role of 'the council' inside its own small clause?",
+      "targetClause": "The subject of 'commissioned'",
+      "options": [
+        "The object of 'commissioned'",
+        "The subject of 'flagged'",
+        "The subject of 'commissioned'",
+        "The antecedent of 'which'"
+      ],
+      "correctAnswer": "The subject of 'commissioned'",
+      "correctAnswerIndex": 2,
+      "hint": "Find the verb 'commissioned' and ask who performed that action.",
+      "explanation": "'The council' is the subject of 'commissioned' - the council commissioned the survey. This is the innermost of the three nested clauses in the sentence.",
+      "grammarRule": "Nested Relative Clauses",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l152_practice_q3",
+      "level": 152,
+      "instruction": "JUDGE THE SENTENCE",
+      "question": "Which plain-language rewrite keeps the same meaning as the nested original?",
+      "sentence": "Which plain-language rewrite keeps the same meaning as the nested original?",
+      "targetClause": "The council commissioned a survey. The survey flagged the bridge as unsafe. The bridge will be closed.",
+      "options": [
+        "The council commissioned a survey. The survey flagged the bridge as unsafe. The bridge will be closed.",
+        "The survey commissioned the council. The bridge flagged the survey as unsafe.",
+        "The engineer commissioned the survey that the bridge had flagged.",
+        "The council commissioned the bridge. The survey flagged the council as unsafe."
+      ],
+      "correctAnswer": "The council commissioned a survey. The survey flagged the bridge as unsafe. The bridge will be closed.",
+      "correctAnswerIndex": 0,
+      "hint": "Unpack the layers in order: who commissioned what, what that thing found, and what will happen as a result.",
+      "explanation": "This version keeps the same three facts in the same logical order without nesting: the council commissioned a survey, the survey flagged the bridge, and the bridge will close. The other rewrites change or lose information.",
+      "grammarRule": "Nested Relative Clauses",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l153_practice_q1",
+      "level": 153,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "She interviewed the parents of the students who had complained. Who had complained?",
+      "sentence": "She interviewed the parents of the students who had complained. Who had complained?",
+      "targetClause": "It is ambiguous - most readers would assume 'the students,' but 'the parents' is also grammatically possible.",
+      "options": [
+        "Definitely the parents, because they are named first.",
+        "Neither - the sentence is ungrammatical.",
+        "Definitely the students, because 'who' can only refer to people close to it.",
+        "It is ambiguous - most readers would assume 'the students,' but 'the parents' is also grammatically possible."
+      ],
+      "correctAnswer": "It is ambiguous - most readers would assume 'the students,' but 'the parents' is also grammatically possible.",
+      "correctAnswerIndex": 3,
+      "hint": "Check the verb's number and think about which reading a reader would naturally assume without more context.",
+      "explanation": "'Who had complained' most naturally attaches to the nearer noun, 'the students,' since nothing marks it as referring to 'the parents.' Because both nouns could take a plural verb, this sentence is genuinely ambiguous without more context.",
+      "grammarRule": "Attachment Ambiguity in Relative Clauses",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l153_practice_q2",
+      "level": 153,
+      "instruction": "JUDGE THE SENTENCE",
+      "question": "Which rewrite removes the ambiguity and makes clear that the PARENTS complained?",
+      "sentence": "Which rewrite removes the ambiguity and makes clear that the PARENTS complained?",
+      "targetClause": "She interviewed the parents, who had complained, of the students.",
+      "options": [
+        "She interviewed the parents of the students, complained who had.",
+        "She interviewed the students' parents who had complained about them.",
+        "She interviewed the parents, who had complained, of the students.",
+        "She interviewed the parents of the students who had complained."
+      ],
+      "correctAnswer": "She interviewed the parents, who had complained, of the students.",
+      "correctAnswerIndex": 2,
+      "hint": "Move the clause so it sits directly next to 'parents' instead of 'students.'",
+      "explanation": "Placing the clause right after 'the parents' leaves no doubt about who complained. The other options either keep the ambiguity or scramble the sentence.",
+      "grammarRule": "Attachment Ambiguity in Relative Clauses",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l153_practice_q3",
+      "level": 153,
+      "instruction": "JUDGE THE SENTENCE",
+      "question": "Which rewrite is the clearest way to say the STUDENTS complained, avoiding any of the original ambiguity?",
+      "sentence": "Which rewrite is the clearest way to say the STUDENTS complained, avoiding any of the original ambiguity?",
+      "targetClause": "She interviewed the parents of students who had complained.",
+      "options": [
+        "She interviewed the parents of the students, who had complained.",
+        "She interviewed the parents of students who had complained.",
+        "She interviewed of the students who had complained the parents.",
+        "She interviewed the parents of the students who had complained."
+      ],
+      "correctAnswer": "She interviewed the parents of students who had complained.",
+      "correctAnswerIndex": 1,
+      "hint": "Give 'students' its own short clause before folding in the parents, so there is no doubt about who is doing the complaining.",
+      "explanation": "Naming 'the students who had complained' first and then adding their parents removes the ambiguity entirely. The other versions either keep both readings open or are grammatically broken.",
+      "grammarRule": "Attachment Ambiguity in Relative Clauses",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l154_practice_q1",
+      "level": 154,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The airline cancelled the flight, which stranded hundreds of passengers overnight. What does 'which' refer to?",
+      "sentence": "The airline cancelled the flight, which stranded hundreds of passengers overnight. What does 'which' refer to?",
+      "targetClause": "the fact that the airline cancelled the flight",
+      "options": [
+        "the flight itself",
+        "the airline itself",
+        "the fact that the airline cancelled the flight",
+        "hundreds of passengers"
+      ],
+      "correctAnswer": "the fact that the airline cancelled the flight",
+      "correctAnswerIndex": 2,
+      "hint": "Ask what actually stranded the passengers - the flight itself, or the fact that it was cancelled?",
+      "explanation": "'Which' refers to the whole event of cancelling the flight, not to 'the flight' alone - a flight cannot strand anyone by simply existing, but cancelling one can.",
+      "grammarRule": "Which Referring to an Entire Clause",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l154_practice_q2",
+      "level": 154,
+      "instruction": "JUDGE THE SENTENCE",
+      "question": "Which sentence uses 'which' to refer to a single noun rather than a whole clause?",
+      "sentence": "Which sentence uses 'which' to refer to a single noun rather than a whole clause?",
+      "targetClause": "The airline grounded the plane, which needed repairs.",
+      "options": [
+        "The airline grounded the plane, which needed repairs.",
+        "The airline apologised publicly, which surprised no one.",
+        "The airline delayed the flight, which frustrated passengers.",
+        "The airline rebooked everyone, which took most of the night."
+      ],
+      "correctAnswer": "The airline grounded the plane, which needed repairs.",
+      "correctAnswerIndex": 0,
+      "hint": "In one of these sentences, something specific 'needed repairs' - a plane, not an event.",
+      "explanation": "'The plane, which needed repairs' attaches 'which' to the single noun 'plane.' In the delay and rebooking sentences, 'which' points back to the whole preceding event rather than one noun.",
+      "grammarRule": "Which Referring to an Entire Clause",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l154_practice_q3",
+      "level": 154,
+      "instruction": "DIAGNOSE THE ERROR",
+      "question": "What is the error in this sentence? 'The flight was cancelled, that stranded hundreds of passengers.'",
+      "sentence": "What is the error in this sentence? 'The flight was cancelled, that stranded hundreds of passengers.'",
+      "targetClause": "'That' cannot follow a comma or refer to a whole preceding clause; 'which' is needed.",
+      "options": [
+        "There is no error.",
+        "'That' cannot follow a comma or refer to a whole preceding clause; 'which' is needed.",
+        "A second comma is needed after 'that.'",
+        "'Stranded' should be 'stranding.'"
+      ],
+      "correctAnswer": "'That' cannot follow a comma or refer to a whole preceding clause; 'which' is needed.",
+      "correctAnswerIndex": 1,
+      "hint": "This 'which' refers to a whole event, not a single noun. Check which pronoun is allowed to do that job.",
+      "explanation": "'That' can never follow a comma, and it also cannot refer back to a whole clause the way 'which' can. 'Which' is required here.",
+      "grammarRule": "Which Referring to an Entire Clause",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l155_practice_q1",
+      "level": 155,
+      "instruction": "JUDGE THE SENTENCE",
+      "question": "Which review sentence makes clear that the STAFF (not the food) were unfriendly?",
+      "sentence": "Which review sentence makes clear that the STAFF (not the food) were unfriendly?",
+      "targetClause": "The staff, who were unfriendly, ruined an otherwise good meal.",
+      "options": [
+        "The staff ruined an otherwise good meal, that were unfriendly.",
+        "An otherwise good meal was ruined by the staff who were unfriendly, in our opinion.",
+        "The staff ruined an otherwise good meal who were unfriendly.",
+        "The staff, who were unfriendly, ruined an otherwise good meal."
+      ],
+      "correctAnswer": "The staff, who were unfriendly, ruined an otherwise good meal.",
+      "correctAnswerIndex": 3,
+      "hint": "Keep the clause describing the staff right next to the word 'staff.'",
+      "explanation": "'The staff, who were unfriendly, ruined an otherwise good meal' places the clause directly after 'staff.' In the other options the clause drifts toward 'meal' or is missing its comma.",
+      "grammarRule": "Misplaced Relative Clauses",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l155_practice_q2",
+      "level": 155,
+      "instruction": "JUDGE THE SENTENCE",
+      "question": "A product review says: 'I bought a charger for my laptop that stopped working after a week.' What is ambiguous here?",
+      "sentence": "A product review says: 'I bought a charger for my laptop that stopped working after a week.' What is ambiguous here?",
+      "targetClause": "It is unclear whether the charger or the laptop stopped working.",
+      "options": [
+        "It is unclear how long ago the laptop was bought.",
+        "It is unclear whether the charger or the laptop stopped working.",
+        "There is no ambiguity; 'that' always refers to the nearest word.",
+        "It is unclear whether the reviewer or the laptop is the subject."
+      ],
+      "correctAnswer": "It is unclear whether the charger or the laptop stopped working.",
+      "correctAnswerIndex": 1,
+      "hint": "Ask what could grammatically have 'stopped working' - the charger, or the laptop.",
+      "explanation": "'That stopped working' sits right after 'laptop,' so it could describe either the laptop or the charger the reviewer meant to complain about. Moving the clause next to 'charger' would remove the ambiguity.",
+      "grammarRule": "Misplaced Relative Clauses",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l155_practice_q3",
+      "level": 155,
+      "instruction": "JUDGE THE SENTENCE",
+      "question": "Which rewrite of the charger review removes the ambiguity, making clear the CHARGER stopped working?",
+      "sentence": "Which rewrite of the charger review removes the ambiguity, making clear the CHARGER stopped working?",
+      "targetClause": "I bought a charger that stopped working after a week for my laptop.",
+      "options": [
+        "I bought for my laptop a charger, that stopped working after a week.",
+        "I bought a charger for my laptop which stopped working after a week for it.",
+        "I bought a charger that stopped working after a week for my laptop.",
+        "I bought a charger for my laptop that stopped working after a week."
+      ],
+      "correctAnswer": "I bought a charger that stopped working after a week for my laptop.",
+      "correctAnswerIndex": 2,
+      "hint": "Move 'for my laptop' so it no longer sits between 'charger' and its clause.",
+      "explanation": "Moving the prepositional phrase after the clause keeps 'that stopped working' directly beside 'charger.' The other options keep the ambiguity or break the sentence.",
+      "grammarRule": "Misplaced Relative Clauses",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l156_practice_q1",
+      "level": 156,
+      "instruction": "SPOT THE HIDDEN CLAUSE",
+      "question": "The proposal submitted yesterday is already under review. What full relative clause is 'submitted yesterday' standing in for?",
+      "sentence": "The proposal submitted yesterday is already under review. What full relative clause is 'submitted yesterday' standing in for?",
+      "targetClause": "that was submitted yesterday",
+      "options": [
+        "that was submitted yesterday",
+        "who submitted yesterday",
+        "which submits yesterday",
+        "that submits yesterday"
+      ],
+      "correctAnswer": "that was submitted yesterday",
+      "correctAnswerIndex": 0,
+      "hint": "Try inserting 'that/which was' right before 'submitted' and see if the sentence still makes sense.",
+      "explanation": "'Submitted yesterday' is a shortened form of 'that was submitted yesterday' - the relative pronoun and 'was' have both been dropped, leaving only the past participle. You will study this pattern, called a reduced relative clause, in the levels ahead.",
+      "grammarRule": "Reduced Relative Clause Preview (Recognition)",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l156_practice_q2",
+      "level": 156,
+      "instruction": "SPOT THE HIDDEN CLAUSE",
+      "question": "The team working on the merger meets every morning. What full relative clause does 'working on the merger' stand in for?",
+      "sentence": "The team working on the merger meets every morning. What full relative clause does 'working on the merger' stand in for?",
+      "targetClause": "that is working on the merger",
+      "options": [
+        "which worked on the merger",
+        "that is working on the merger",
+        "that works on the merger",
+        "who work on the merger"
+      ],
+      "correctAnswer": "that is working on the merger",
+      "correctAnswerIndex": 1,
+      "hint": "Try inserting 'that/who is' right before 'working' and see if the meaning stays the same.",
+      "explanation": "'Working on the merger' is short for 'that is working on the merger' - here the pronoun and 'is' have been dropped, leaving only the '-ing' form. This is the present-tense version of the same shortening pattern.",
+      "grammarRule": "Reduced Relative Clause Preview (Recognition)",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l156_practice_q3",
+      "level": 156,
+      "instruction": "TEST THE RULE",
+      "question": "Both 'submitted yesterday' and 'working on the merger' are shortened relative clauses. What do they have in common?",
+      "sentence": "Both 'submitted yesterday' and 'working on the merger' are shortened relative clauses. What do they have in common?",
+      "targetClause": "In both, the relative pronoun and a form of 'be' have been dropped, leaving only the participle.",
+      "options": [
+        "Both have added a comma before the participle.",
+        "In both, the relative pronoun and a form of 'be' have been dropped, leaving only the participle.",
+        "Both have changed a defining clause into a non-defining one.",
+        "Both have replaced 'that' with 'which.'"
+      ],
+      "correctAnswer": "In both, the relative pronoun and a form of 'be' have been dropped, leaving only the participle.",
+      "correctAnswerIndex": 1,
+      "hint": "Compare what has been removed from each one: a relative pronoun, and a form of the verb 'be.'",
+      "explanation": "In both cases, the relative pronoun and a form of 'be' have been dropped, leaving only the participle - a past participle for the passive version, an '-ing' form for the active one. You will explore exactly when this shortening is possible in an upcoming phase.",
+      "grammarRule": "Reduced Relative Clause Preview (Recognition)",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l157_practice_q1",
+      "level": 157,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The results of the survey, the methodology of which had been criticised by peer reviewers, were nonetheless published. What had been criticised?",
+      "sentence": "The results of the survey, the methodology of which had been criticised by peer reviewers, were nonetheless published. What had been criticised?",
+      "targetClause": "the survey's methodology",
+      "options": [
+        "the survey's methodology",
+        "the results",
+        "the results' methodology",
+        "the peer reviewers"
+      ],
+      "correctAnswer": "the survey's methodology",
+      "correctAnswerIndex": 0,
+      "hint": "'The methodology of which' - whose methodology is this referring to?",
+      "explanation": "'Of which' points back to 'the survey': the survey's methodology was criticised. 'The results' is what got published, not what was criticised.",
+      "grammarRule": "Antecedent Identification",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l157_practice_q2",
+      "level": 157,
+      "instruction": "MATCH THE AGREEMENT",
+      "question": "The committee reviewed the proposals, several of which ___ later withdrawn by their authors.",
+      "sentence": "The committee reviewed the proposals, several of which were later withdrawn by their authors.",
+      "targetClause": "were",
+      "options": [
+        "is",
+        "were",
+        "was",
+        "has been"
+      ],
+      "correctAnswer": "were",
+      "correctAnswerIndex": 1,
+      "hint": "Look at the quantifier 'several' - is it singular or plural?",
+      "explanation": "'Several' is plural, so the verb must be 'were.' The plural noun 'proposals' inside 'of which' does not itself control the verb - the quantifier does.",
+      "grammarRule": "Verb Agreement in Quantifier Relative Clauses",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l157_practice_q3",
+      "level": 157,
+      "instruction": "JUDGE THE SENTENCE",
+      "question": "Which sentence correctly reports that only some of the committee's recommendations were adopted, not all of them?",
+      "sentence": "Which sentence correctly reports that only some of the committee's recommendations were adopted, not all of them?",
+      "targetClause": "The recommendations that the board approved were implemented within a month.",
+      "options": [
+        "The recommendations, which the board approved, were implemented within a month.",
+        "The recommendations the board approved, were implemented within a month.",
+        "The recommendations, that the board approved, were implemented within a month.",
+        "The recommendations that the board approved were implemented within a month."
+      ],
+      "correctAnswer": "The recommendations that the board approved were implemented within a month.",
+      "correctAnswerIndex": 3,
+      "hint": "Decide whether the clause should narrow down which recommendations were adopted, or simply describe all of them.",
+      "explanation": "Without commas, 'that the board approved' is defining and narrows the group down to only the approved recommendations. With commas, the sentence would claim the board approved every recommendation.",
+      "grammarRule": "Defining vs Non-Defining Relative Clause",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l158_practice_q1",
+      "level": 158,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The email from the vendor whose invoice had already been paid confused the accounting team. Whose invoice had been paid?",
+      "sentence": "The email from the vendor whose invoice had already been paid confused the accounting team. Whose invoice had been paid?",
+      "targetClause": "the vendor",
+      "options": [
+        "the accounting team",
+        "the email",
+        "the invoice",
+        "the vendor"
+      ],
+      "correctAnswer": "the vendor",
+      "correctAnswerIndex": 3,
+      "hint": "'Whose' points to the noun directly in front of it, not to a noun buried inside a prepositional phrase further back.",
+      "explanation": "'Whose' attaches to the nearest logical noun, 'the vendor,' so it is the vendor's invoice that had been paid. 'The email' cannot own an invoice.",
+      "grammarRule": "Antecedent Identification",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l158_practice_q2",
+      "level": 158,
+      "instruction": "JUDGE THE SENTENCE",
+      "question": "Which sentence is the clearest possible rewrite of the vendor/invoice sentence, keeping the same meaning?",
+      "sentence": "Which sentence is the clearest possible rewrite of the vendor/invoice sentence, keeping the same meaning?",
+      "targetClause": "The vendor's invoice had already been paid. The email about it confused the accounting team.",
+      "options": [
+        "The vendor's invoice had already been paid. The email about it confused the accounting team.",
+        "The vendor confused the accounting team whose email had already been paid.",
+        "The email confused the accounting team whose invoice had already been paid.",
+        "The invoice confused the accounting team whose email had already been paid."
+      ],
+      "correctAnswer": "The vendor's invoice had already been paid. The email about it confused the accounting team.",
+      "correctAnswerIndex": 0,
+      "hint": "Split the idea into two short sentences so nothing has to be untangled.",
+      "explanation": "Splitting the sentence keeps 'the vendor' and 'whose invoice' next to each other and removes any need to untangle a long noun phrase. The other options change the meaning or garble the grammar.",
+      "grammarRule": "Antecedent Identification",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l158_practice_q3",
+      "level": 158,
+      "instruction": "MARK THE CLAUSE",
+      "question": "In 'The manager rejected the estimate that the contractor whose team was understaffed had submitted,' which clause is nested inside another?",
+      "sentence": "In 'The manager rejected the estimate that the contractor whose team was understaffed had submitted,' which clause is nested inside another?",
+      "targetClause": "'whose team was understaffed' is nested inside 'that the contractor had submitted'",
+      "options": [
+        "'that the contractor had submitted' is nested inside 'whose team was understaffed'",
+        "Neither clause is nested; they are separate and parallel",
+        "'The manager rejected the estimate' is itself a relative clause",
+        "'whose team was understaffed' is nested inside 'that the contractor had submitted'"
+      ],
+      "correctAnswer": "'whose team was understaffed' is nested inside 'that the contractor had submitted'",
+      "correctAnswerIndex": 3,
+      "hint": "Look for a relative clause that sits entirely within the boundaries of a longer one.",
+      "explanation": "'Whose team was understaffed' sits entirely inside the larger clause 'that the contractor ... had submitted,' which itself describes 'the estimate.' This is the same nesting pattern practised earlier in this phase.",
+      "grammarRule": "Nested Relative Clauses",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l159_practice_q1",
+      "level": 159,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The recall affects vehicles manufactured before 2019, which the company says pose a fire risk. What poses the fire risk?",
+      "sentence": "The recall affects vehicles manufactured before 2019, which the company says pose a fire risk. What poses the fire risk?",
+      "targetClause": "the vehicles manufactured before 2019",
+      "options": [
+        "the company",
+        "the recall itself",
+        "the vehicles manufactured before 2019",
+        "the year 2019"
+      ],
+      "correctAnswer": "the vehicles manufactured before 2019",
+      "correctAnswerIndex": 2,
+      "hint": "Check whether 'vehicles' or '2019' can logically 'pose a fire risk,' and look at the verb's number.",
+      "explanation": "'Vehicles' is the only noun that could logically pose a fire risk, and 'which' with a plural sense matches it; '2019' is just a year and cannot pose anything.",
+      "grammarRule": "Antecedent Identification",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l159_practice_q2",
+      "level": 159,
+      "instruction": "JUDGE THE SENTENCE",
+      "question": "Which safety notice sentence is correctly punctuated, given that only SOME vehicles in the fleet are affected?",
+      "sentence": "Which safety notice sentence is correctly punctuated, given that only SOME vehicles in the fleet are affected?",
+      "targetClause": "Vehicles that were manufactured before 2019 must be inspected immediately.",
+      "options": [
+        "Vehicles which were manufactured before 2019 must be inspected immediately, we believe.",
+        "Vehicles that were manufactured before 2019 must be inspected immediately.",
+        "Vehicles, which were manufactured before 2019, must be inspected immediately.",
+        "Vehicles, that were manufactured before 2019, must be inspected immediately."
+      ],
+      "correctAnswer": "Vehicles that were manufactured before 2019 must be inspected immediately.",
+      "correctAnswerIndex": 1,
+      "hint": "Decide whether the clause should narrow the group down to certain vehicles, or describe the whole fleet.",
+      "explanation": "Since only some vehicles are affected, the clause must narrow the group down, so it is defining: no commas, and 'that' works. With commas, the sentence would wrongly claim every vehicle in the fleet was manufactured before 2019.",
+      "grammarRule": "Defining vs Non-Defining Relative Clause",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l159_practice_q3",
+      "level": 159,
+      "instruction": "DETERMINE THE ROLE",
+      "question": "In 'The regulator, whose warning the company had ignored for months, opened a formal investigation,' what is the grammatical role of 'the company'?",
+      "sentence": "In 'The regulator, whose warning the company had ignored for months, opened a formal investigation,' what is the grammatical role of 'the company'?",
+      "targetClause": "The subject of 'had ignored'",
+      "options": [
+        "The subject of 'had ignored'",
+        "The object of 'had ignored'",
+        "The subject of 'opened'",
+        "The antecedent of 'whose'"
+      ],
+      "correctAnswer": "The subject of 'had ignored'",
+      "correctAnswerIndex": 0,
+      "hint": "Find the verb 'had ignored' and ask who performed that action.",
+      "explanation": "'The company' is the subject of 'had ignored' - the company ignored the regulator's warning. 'Whose' simply supplies the possessive link between 'the regulator' and 'warning.'",
+      "grammarRule": "Antecedent Identification",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l160_practice_q1",
+      "level": 160,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The findings of the panel that reviewed the complaints filed by former employees were released Friday. What was released?",
+      "sentence": "The findings of the panel that reviewed the complaints filed by former employees were released Friday. What was released?",
+      "targetClause": "the findings",
+      "options": [
+        "the findings",
+        "the complaints",
+        "the panel",
+        "former employees"
+      ],
+      "correctAnswer": "the findings",
+      "correctAnswerIndex": 0,
+      "hint": "Two decoys and a nested clause sit between the true antecedent and 'were released.' Check the verb's number and work backward.",
+      "explanation": "'The findings' - a plural noun matching the plural verb 'were released' - is what was released. 'The panel,' 'the complaints,' and 'former employees' are all part of the descriptive chain leading up to it, not the antecedent.",
+      "grammarRule": "Antecedent Identification",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l160_practice_q2",
+      "level": 160,
+      "instruction": "JUDGE THE SENTENCE",
+      "question": "Which sentence removes the ambiguity in 'They fired the manager who oversaw the department that failed the audit,' making clear the DEPARTMENT failed the audit (which is already true), while also making clear who was fired?",
+      "sentence": "Which sentence removes the ambiguity in 'They fired the manager who oversaw the department that failed the audit,' making clear the DEPARTMENT failed the audit (which is already true), while also making clear who was fired?",
+      "targetClause": "The manager oversaw a department that failed the audit. The company fired the manager.",
+      "options": [
+        "The department oversaw a manager that the company fired for the audit.",
+        "They fired the department who oversaw the manager that failed the audit.",
+        "The manager oversaw a department that failed the audit. The company fired the manager.",
+        "The audit fired the manager who oversaw the department that failed."
+      ],
+      "correctAnswer": "The manager oversaw a department that failed the audit. The company fired the manager.",
+      "correctAnswerIndex": 2,
+      "hint": "The original is actually unambiguous once you check verb agreement - but rewrite it as two clear sentences to confirm your understanding of both nested clauses.",
+      "explanation": "This rewrite keeps both facts in order without nesting: the manager oversaw the department, and the department failed the audit, and then the firing is reported. The other options blur or reverse who did what.",
+      "grammarRule": "Nested Relative Clauses",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l160_practice_q3",
+      "level": 160,
+      "instruction": "TEST THE RULE",
+      "question": "Which statement about complex, real-world relative clauses is FALSE?",
+      "sentence": "Which statement about complex, real-world relative clauses is FALSE?",
+      "targetClause": "A relative clause always attaches to the very first noun in the sentence, no matter how far away it is.",
+      "options": [
+        "A relative clause always attaches to the very first noun in the sentence, no matter how far away it is.",
+        "Moving a misplaced relative clause next to its true antecedent can remove ambiguity.",
+        "'Which' after a comma can refer to an entire preceding clause rather than one noun.",
+        "One relative clause can be nested inside another relative clause."
+      ],
+      "correctAnswer": "A relative clause always attaches to the very first noun in the sentence, no matter how far away it is.",
+      "correctAnswerIndex": 0,
+      "hint": "Test each statement against what this block has taught about nesting, ambiguity, and whole-clause reference.",
+      "explanation": "A relative clause almost always attaches to the noun closest to it, or to whichever noun the verb's number logically supports - it does not simply attach to the first noun in the sentence regardless of distance or agreement. The other three statements are true.",
+      "grammarRule": "Attachment Ambiguity in Relative Clauses",
+      "clauseType": "defining"
+    }
+  ]
+}

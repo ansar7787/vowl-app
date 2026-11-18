@@ -1,0 +1,608 @@
+{
+  "gameType": "relativeClauses",
+  "phase": "practice",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "rc_l101_practice_q1",
+      "level": 101,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The architect who designed the new library, which opened last spring, also designed our city hall. What is the antecedent of 'which opened last spring'?",
+      "sentence": "The architect who designed the new library, which opened last spring, also designed our city hall. What is the antecedent of 'which opened last spring'?",
+      "targetClause": "the new library",
+      "options": [
+        "the architect",
+        "our city hall",
+        "last spring",
+        "the new library"
+      ],
+      "correctAnswer": "the new library",
+      "correctAnswerIndex": 3,
+      "hint": "Work backward from 'which' - what actually 'opened last spring'?",
+      "explanation": "'The new library' - not the architect or city hall - is what opened last spring; the comma confirms this is extra, non-defining detail about a specific, already-identified library.",
+      "grammarRule": "Antecedent Identification",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l101_practice_q2",
+      "level": 101,
+      "instruction": "SHOW THE OWNERSHIP",
+      "question": "The witness ___ testimony contradicted the officer's report was cross-examined for hours.",
+      "sentence": "The witness whose testimony contradicted the officer's report was cross-examined for hours.",
+      "targetClause": "whose",
+      "options": [
+        "who",
+        "which",
+        "whose",
+        "whom"
+      ],
+      "correctAnswer": "whose",
+      "correctAnswerIndex": 2,
+      "hint": "Check what belongs to the witness, rather than what the witness is doing directly.",
+      "explanation": "'Whose' is correct because the testimony belongs to the witness - a possessive link, not a direct action.",
+      "grammarRule": "Possessive Relative Pronoun whose",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l101_practice_q3",
+      "level": 101,
+      "instruction": "SPOT WHAT'S OPTIONAL",
+      "question": "The contractor ___ we hired last spring finally finished the renovation.",
+      "sentence": "The contractor (no word needed) we hired last spring finally finished the renovation.",
+      "targetClause": "(no word needed)",
+      "options": [
+        "which",
+        "who",
+        "whom",
+        "(no word needed)"
+      ],
+      "correctAnswer": "(no word needed)",
+      "correctAnswerIndex": 3,
+      "hint": "Check whether 'we' already has a job in this clause, and whether any commas are signaling extra information.",
+      "explanation": "'We' is the subject of 'hired,' making 'the contractor' the object; since there are no commas here, this defining clause allows the pronoun to be dropped entirely.",
+      "grammarRule": "Omission of Object Relative Pronoun",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l102_practice_q1",
+      "level": 102,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The findings of the three-year clinical trial that researchers just published have sparked global debate. What is the antecedent of 'that researchers just published'?",
+      "sentence": "The findings of the three-year clinical trial that researchers just published have sparked global debate. What is the antecedent of 'that researchers just published'?",
+      "targetClause": "the findings",
+      "options": [
+        "the three-year clinical trial",
+        "researchers",
+        "the findings",
+        "global debate"
+      ],
+      "correctAnswer": "the findings",
+      "correctAnswerIndex": 2,
+      "hint": "'Of the three-year clinical trial' just describes what kind of findings - check what was actually published.",
+      "explanation": "'The findings' - not 'the trial' - is what was published; 'of the three-year clinical trial' is simply a prepositional phrase modifying 'findings.'",
+      "grammarRule": "Antecedent Identification",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l102_practice_q2",
+      "level": 102,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The director of operations for the northeast region ___ handled the crisis received a company-wide commendation.",
+      "sentence": "The director of operations for the northeast region who handled the crisis received a company-wide commendation.",
+      "targetClause": "who",
+      "options": [
+        "whom",
+        "who",
+        "which",
+        "whose"
+      ],
+      "correctAnswer": "who",
+      "correctAnswerIndex": 1,
+      "hint": "Strip away 'of operations for the northeast region' - it's all just describing which director. Who actually handled the crisis?",
+      "explanation": "'The director' - a person - is who handled the crisis, so 'who' is correct despite the long descriptive phrase in between.",
+      "grammarRule": "Antecedent Identification",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l102_practice_q3",
+      "level": 102,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The headquarters of the multinational corporation, which relocated to Singapore last year, now employs over ten thousand people. What is the antecedent of 'which relocated to Singapore last year'?",
+      "sentence": "The headquarters of the multinational corporation, which relocated to Singapore last year, now employs over ten thousand people. What is the antecedent of 'which relocated to Singapore last year'?",
+      "targetClause": "the headquarters",
+      "options": [
+        "the multinational corporation",
+        "Singapore",
+        "ten thousand people",
+        "the headquarters"
+      ],
+      "correctAnswer": "the headquarters",
+      "correctAnswerIndex": 3,
+      "hint": "'Of the multinational corporation' just tells you whose headquarters - check what actually relocated.",
+      "explanation": "'The headquarters' - not 'the corporation' itself - is what relocated; the comma confirms this is non-defining extra detail about a specific, already-identified headquarters.",
+      "grammarRule": "Antecedent Identification",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l103_practice_q1",
+      "level": 103,
+      "instruction": "JUDGE THE SENTENCE",
+      "question": "Which sentence uses punctuation correctly?",
+      "sentence": "Which sentence uses punctuation correctly?",
+      "targetClause": "The Amazon Rainforest, which produces roughly 20% of the world's oxygen, spans several countries.",
+      "options": [
+        "The Amazon Rainforest which produces roughly 20% of the world's oxygen spans several countries.",
+        "The Amazon Rainforest, which produces roughly 20% of the world's oxygen, spans several countries.",
+        "The Amazon Rainforest that produces roughly 20% of the world's oxygen, spans several countries.",
+        "The Amazon Rainforest, that produces roughly 20% of the world's oxygen, spans several countries."
+      ],
+      "correctAnswer": "The Amazon Rainforest, which produces roughly 20% of the world's oxygen, spans several countries.",
+      "correctAnswerIndex": 1,
+      "hint": "Think about whether there could be more than one 'Amazon Rainforest' - does this detail need to narrow anything down?",
+      "explanation": "Since the Amazon Rainforest is a unique, one-of-a-kind place, the fact about oxygen production is non-defining extra information, requiring commas and 'which' rather than 'that.'",
+      "grammarRule": "Comma Placement in Non-Defining Clauses",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l103_practice_q2",
+      "level": 103,
+      "instruction": "JUDGE THE SENTENCE",
+      "question": "Which of the following is correctly punctuated?",
+      "sentence": "Which of the following is correctly punctuated?",
+      "targetClause": "Employees who arrive after 9 a.m. must sign in at the front desk.",
+      "options": [
+        "Employees, who arrive after 9 a.m., must sign in at the front desk.",
+        "Employees who arrive after 9 a.m. must sign in at the front desk.",
+        "Employees that arrive after 9 a.m., must sign in at the front desk.",
+        "Employees, that arrive after 9 a.m., must sign in at the front desk."
+      ],
+      "correctAnswer": "Employees who arrive after 9 a.m. must sign in at the front desk.",
+      "correctAnswerIndex": 1,
+      "hint": "Think about whether this rule is meant to apply to all employees or just some of them.",
+      "explanation": "This rule logically applies only to employees who arrive late, not all employees, so the clause is defining and needs no commas.",
+      "grammarRule": "Comma Placement in Defining Clauses",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l103_practice_q3",
+      "level": 103,
+      "instruction": "SPOT WHAT'S OPTIONAL",
+      "question": "My phone, ___ I've had for five years, finally stopped working.",
+      "sentence": "My phone, which I've had for five years, finally stopped working.",
+      "targetClause": "which",
+      "options": [
+        "which",
+        "that",
+        "who",
+        "(no word needed)"
+      ],
+      "correctAnswer": "which",
+      "correctAnswerIndex": 0,
+      "hint": "Notice the commas already surrounding this clause - what does that tell you about whether 'that' or omission would work here?",
+      "explanation": "The commas signal a non-defining clause, since 'my phone' is already unique - which rules out both 'that' and omission, leaving 'which' as the only correct choice.",
+      "grammarRule": "Non-Defining Clauses Cannot Omit Their Pronoun",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l104_practice_q1",
+      "level": 104,
+      "instruction": "MIND THE REGISTER",
+      "question": "The board of directors received a formal memo stating: 'The candidate whom the committee unanimously recommended will assume the role of Chief Financial Officer.' Is 'whom' used correctly here?",
+      "sentence": "The board of directors received a formal memo stating: 'The candidate whom the committee unanimously recommended will assume the role of Chief Financial Officer.' Is 'whom' used correctly here?",
+      "targetClause": "Yes, because the candidate is the object of 'recommended,' and formal writing favors 'whom'",
+      "options": [
+        "No, 'who' should be used instead in all cases",
+        "No, 'whom' can never appear in a defining clause",
+        "Yes, but only because there's a comma nearby",
+        "Yes, because the candidate is the object of 'recommended,' and formal writing favors 'whom'"
+      ],
+      "correctAnswer": "Yes, because the candidate is the object of 'recommended,' and formal writing favors 'whom'",
+      "correctAnswerIndex": 3,
+      "hint": "Check who is doing the recommending, and who is being recommended - then consider the setting this sentence appears in.",
+      "explanation": "'The committee' is the subject of 'recommended,' making 'the candidate' the object; 'whom' correctly marks this role and fits the formal register of the memo.",
+      "grammarRule": "Whom in Formal Register",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l104_practice_q2",
+      "level": 104,
+      "instruction": "MIND THE REGISTER",
+      "question": "A text message reads: 'omg the guy I met at your party last night just texted me!!' Is the omission of the relative pronoun before 'I met' acceptable here?",
+      "sentence": "A text message reads: 'omg the guy I met at your party last night just texted me!!' Is the omission of the relative pronoun before 'I met' acceptable here?",
+      "targetClause": "Yes, because casual speech and writing naturally drop object relative pronouns",
+      "options": [
+        "No, the pronoun should never be dropped in any context",
+        "Yes, because casual speech and writing naturally drop object relative pronouns",
+        "No, only 'that' can ever be dropped, never 'who'",
+        "Yes, but only in questions, never statements"
+      ],
+      "correctAnswer": "Yes, because casual speech and writing naturally drop object relative pronouns",
+      "correctAnswerIndex": 1,
+      "hint": "Think about the setting this message was written in, and how people naturally speak or text in that kind of context.",
+      "explanation": "Casual speech and writing, like text messages, naturally drop object relative pronouns; this omission is completely standard and expected here.",
+      "grammarRule": "Omission of Object Relative Pronoun",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l104_practice_q3",
+      "level": 104,
+      "instruction": "MIND THE REGISTER",
+      "question": "Which version fits the formal tone of a legal deposition transcript, given there is only one defendant in this case?",
+      "sentence": "Which version fits the formal tone of a legal deposition transcript, given there is only one defendant in this case?",
+      "targetClause": "The defendant, whom investigators questioned for six hours, ultimately confessed.",
+      "options": [
+        "The defendant who investigators questioned for six hours ultimately confessed.",
+        "The defendant, whom investigators questioned for six hours, ultimately confessed.",
+        "The defendant investigators questioned for six hours ultimately confessed.",
+        "The defendant, that investigators questioned for six hours, ultimately confessed."
+      ],
+      "correctAnswer": "The defendant, whom investigators questioned for six hours, ultimately confessed.",
+      "correctAnswerIndex": 1,
+      "hint": "Since there's only one defendant in this case, check for both correct comma placement and the more formal object pronoun.",
+      "explanation": "'Whom' matches the formal legal register, and since there's only one defendant, commas are required on both sides of this non-defining clause.",
+      "grammarRule": "Whom in Formal Register",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l105_practice_q1",
+      "level": 105,
+      "instruction": "ESSENTIAL OR EXTRA?",
+      "question": "The novelist who wrote three bestsellers, whose latest book was just adapted into a film, will speak at the festival. Which clause is defining, and which is non-defining?",
+      "sentence": "The novelist who wrote three bestsellers, whose latest book was just adapted into a film, will speak at the festival. Which clause is defining, and which is non-defining?",
+      "targetClause": "'who wrote three bestsellers' is defining; 'whose latest book was just adapted into a film' is non-defining.",
+      "options": [
+        "'who wrote three bestsellers' is defining; 'whose latest book was just adapted into a film' is non-defining.",
+        "Both clauses are defining.",
+        "Both clauses are non-defining.",
+        "'who wrote three bestsellers' is non-defining; 'whose latest book was just adapted into a film' is defining."
+      ],
+      "correctAnswer": "'who wrote three bestsellers' is defining; 'whose latest book was just adapted into a film' is non-defining.",
+      "correctAnswerIndex": 0,
+      "hint": "Check the punctuation around each clause separately.",
+      "explanation": "'Who wrote three bestsellers' has no commas and helps identify which novelist - defining. 'Whose latest book was just adapted into a film,' set off by a comma, adds extra detail about this specific novelist - non-defining.",
+      "grammarRule": "Defining vs Non-Defining Relative Clause",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l105_practice_q2",
+      "level": 105,
+      "instruction": "PUNCTUATE IT RIGHT",
+      "question": "Which sentence is correctly constructed, given that there are several nominees but only one award ceremony this year?",
+      "sentence": "Which sentence is correctly constructed, given that there are several nominees but only one award ceremony this year?",
+      "targetClause": "The nominee who won the award, which took place downtown, gave an emotional speech.",
+      "options": [
+        "The nominee who won the award, which took place downtown, gave an emotional speech.",
+        "The nominee, who won the award, which took place downtown, gave an emotional speech.",
+        "The nominee who won the award which took place downtown gave an emotional speech.",
+        "The nominee, who won the award which took place downtown, gave an emotional speech."
+      ],
+      "correctAnswer": "The nominee who won the award, which took place downtown, gave an emotional speech.",
+      "correctAnswerIndex": 0,
+      "hint": "Check each clause against its own antecedent separately - 'nominee' has several candidates, 'award ceremony' has only one this year.",
+      "explanation": "'Who won the award' is defining, since there are multiple nominees; 'which took place downtown' is non-defining, since there's only one award ceremony this year.",
+      "grammarRule": "Defining vs Non-Defining Relative Clause",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l105_practice_q3",
+      "level": 105,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The email from the client, which arrived just before the deadline, mentioned a change that would affect the entire timeline. What does 'that would affect the entire timeline' describe?",
+      "sentence": "The email from the client, which arrived just before the deadline, mentioned a change that would affect the entire timeline. What does 'that would affect the entire timeline' describe?",
+      "targetClause": "a change",
+      "options": [
+        "the email",
+        "a change",
+        "the client",
+        "the deadline"
+      ],
+      "correctAnswer": "a change",
+      "correctAnswerIndex": 1,
+      "hint": "Work backward from 'that' - what would actually 'affect the entire timeline'?",
+      "explanation": "'A change' - the specific change mentioned in the email - is what would affect the timeline, making this a separate defining clause from the non-defining one describing the email's arrival.",
+      "grammarRule": "Antecedent Identification",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l106_practice_q1",
+      "level": 106,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The letter from the lawyer at the downtown office that finally arrived settled the entire dispute. What is the antecedent of 'that finally arrived'?",
+      "sentence": "The letter from the lawyer at the downtown office that finally arrived settled the entire dispute. What is the antecedent of 'that finally arrived'?",
+      "targetClause": "the letter",
+      "options": [
+        "the lawyer",
+        "the letter",
+        "the downtown office",
+        "the entire dispute"
+      ],
+      "correctAnswer": "the letter",
+      "correctAnswerIndex": 1,
+      "hint": "Two decoys stand between the true antecedent and 'that' - a person and a place. What actually 'arrived'?",
+      "explanation": "'The letter' - not the lawyer or the office - is what arrived; both 'from the lawyer' and 'at the downtown office' are just descriptive phrases.",
+      "grammarRule": "Antecedent Identification",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l106_practice_q2",
+      "level": 106,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The invitation from my cousin in Chicago, which I almost missed in my spam folder, arrived just in time. What is the antecedent of 'which I almost missed in my spam folder'?",
+      "sentence": "The invitation from my cousin in Chicago, which I almost missed in my spam folder, arrived just in time. What is the antecedent of 'which I almost missed in my spam folder'?",
+      "targetClause": "the invitation",
+      "options": [
+        "the invitation",
+        "my cousin",
+        "Chicago",
+        "my spam folder"
+      ],
+      "correctAnswer": "the invitation",
+      "correctAnswerIndex": 0,
+      "hint": "Two decoys - a person and a place - sit between the true antecedent and 'which.' What did 'I' actually almost miss?",
+      "explanation": "'The invitation' - not the cousin or Chicago - is what was almost missed; the comma confirms this is non-defining detail about a specific, already-identified invitation.",
+      "grammarRule": "Antecedent Identification",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l106_practice_q3",
+      "level": 106,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The proposal from the marketing team for the spring campaign ___ ultimately won approval from the board.",
+      "sentence": "The proposal from the marketing team for the spring campaign which ultimately won approval from the board.",
+      "targetClause": "which",
+      "options": [
+        "whose",
+        "whom",
+        "which",
+        "who"
+      ],
+      "correctAnswer": "which",
+      "correctAnswerIndex": 2,
+      "hint": "Strip away 'from the marketing team' and 'for the spring campaign' - both are just descriptive detail. What actually won approval?",
+      "explanation": "'The proposal' - a thing - is what won approval, so 'which' is correct despite two descriptive phrases sitting in between.",
+      "grammarRule": "Antecedent Identification",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l107_practice_q1",
+      "level": 107,
+      "instruction": "SPOT WHAT'S OPTIONAL",
+      "question": "The venue ___ we finally booked for the wedding has a stunning garden.",
+      "sentence": "The venue (no word needed) we finally booked for the wedding has a stunning garden.",
+      "targetClause": "(no word needed)",
+      "options": [
+        "(no word needed)",
+        "whom",
+        "who",
+        "whose"
+      ],
+      "correctAnswer": "(no word needed)",
+      "correctAnswerIndex": 0,
+      "hint": "'We' already has a job in this clause - 'booked.' Does this defining clause allow the pronoun to disappear?",
+      "explanation": "'We' is the subject of 'booked,' making 'the venue' the object; since this is a defining clause about a thing, the pronoun can be dropped entirely.",
+      "grammarRule": "Omission of Object Relative Pronoun",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l107_practice_q2",
+      "level": 107,
+      "instruction": "SPOT WHAT'S OPTIONAL",
+      "question": "The morning ___ we exchanged vows is one I'll never forget.",
+      "sentence": "The morning (no word needed) we exchanged vows is one I'll never forget.",
+      "targetClause": "(no word needed)",
+      "options": [
+        "who",
+        "which",
+        "whom",
+        "(no word needed)"
+      ],
+      "correctAnswer": "(no word needed)",
+      "correctAnswerIndex": 3,
+      "hint": "This relative adverb of time can often be dropped in natural, everyday English, just like object pronouns can.",
+      "explanation": "'When' can be omitted here, just as in earlier lessons - 'the morning we exchanged vows' is a natural, complete way to express this defining time clause.",
+      "grammarRule": "Omission of Relative Adverb (when)",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l107_practice_q3",
+      "level": 107,
+      "instruction": "SPOT WHAT'S OPTIONAL",
+      "question": "Our wedding day, ___ we'll always remember fondly, was absolutely perfect.",
+      "sentence": "Our wedding day, which we'll always remember fondly, was absolutely perfect.",
+      "targetClause": "which",
+      "options": [
+        "who",
+        "that",
+        "which",
+        "(no word needed)"
+      ],
+      "correctAnswer": "which",
+      "correctAnswerIndex": 2,
+      "hint": "Notice the commas here - does that change whether this pronoun, even though it's an object relative, could ever be dropped?",
+      "explanation": "Because this is a non-defining clause, signaled by the commas since 'our wedding day' is already unique, the pronoun cannot be omitted, and 'that' is banned after a comma - 'which' is the only correct choice.",
+      "grammarRule": "Non-Defining Clauses Cannot Omit Their Pronoun",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l108_practice_q1",
+      "level": 108,
+      "instruction": "ESSENTIAL OR EXTRA?",
+      "question": "The defendant's attorney, who has practiced law for over two decades, requested a continuance. Is this clause defining or non-defining, and why?",
+      "sentence": "The defendant's attorney, who has practiced law for over two decades, requested a continuance. Is this clause defining or non-defining, and why?",
+      "targetClause": "Non-defining - 'the defendant's attorney' already refers to one specific person, so the experience detail is extra.",
+      "options": [
+        "Non-defining - 'the defendant's attorney' already refers to one specific person, so the experience detail is extra.",
+        "Defining - the experience detail is essential to know which attorney is meant.",
+        "Non-defining - because attorneys always require commas.",
+        "Defining - because the sentence would be incomplete without it."
+      ],
+      "correctAnswer": "Non-defining - 'the defendant's attorney' already refers to one specific person, so the experience detail is extra.",
+      "correctAnswerIndex": 0,
+      "hint": "Think about how many attorneys 'the defendant's attorney' could refer to - one specific one, or several needing narrowing down?",
+      "explanation": "'The defendant's attorney' already identifies one specific person, so the experience detail is non-defining extra information, correctly set off with commas.",
+      "grammarRule": "Defining vs Non-Defining Relative Clause",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l108_practice_q2",
+      "level": 108,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The medication that the specialist initially prescribed, which caused an unexpected allergic reaction, was immediately discontinued. What does 'which caused an unexpected allergic reaction' describe?",
+      "sentence": "The medication that the specialist initially prescribed, which caused an unexpected allergic reaction, was immediately discontinued. What does 'which caused an unexpected allergic reaction' describe?",
+      "targetClause": "the medication",
+      "options": [
+        "the specialist",
+        "an allergic reaction",
+        "the reaction itself, separate from the medication",
+        "the medication"
+      ],
+      "correctAnswer": "the medication",
+      "correctAnswerIndex": 3,
+      "hint": "Work backward from 'which' - what actually caused the reaction?",
+      "explanation": "'The medication' - not the specialist - is what caused the reaction; this is a second, non-defining clause adding extra detail about the medication already identified by the first, defining clause.",
+      "grammarRule": "Antecedent Identification",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l108_practice_q3",
+      "level": 108,
+      "instruction": "SPOT WHAT'S OPTIONAL",
+      "question": "The hypothesis ___ the research team spent years testing was ultimately disproven by newer data.",
+      "sentence": "The hypothesis (no word needed) the research team spent years testing was ultimately disproven by newer data.",
+      "targetClause": "(no word needed)",
+      "options": [
+        "(no word needed)",
+        "who",
+        "whose",
+        "whom"
+      ],
+      "correctAnswer": "(no word needed)",
+      "correctAnswerIndex": 0,
+      "hint": "'The research team' already has a job in this clause. Does this defining clause about a thing allow the pronoun to disappear?",
+      "explanation": "'The research team' is the subject of 'spent... testing,' making 'the hypothesis' the object; since it's a thing in a defining clause, the pronoun can be dropped entirely.",
+      "grammarRule": "Omission of Object Relative Pronoun",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l109_practice_q1",
+      "level": 109,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "Local officials confirmed that the bridge, which has been closed for repairs since March, will reopen next month. What does 'which has been closed for repairs since March' describe?",
+      "sentence": "Local officials confirmed that the bridge, which has been closed for repairs since March, will reopen next month. What does 'which has been closed for repairs since March' describe?",
+      "targetClause": "the bridge",
+      "options": [
+        "local officials",
+        "repairs",
+        "next month",
+        "the bridge"
+      ],
+      "correctAnswer": "the bridge",
+      "correctAnswerIndex": 3,
+      "hint": "Work backward from 'which' - what has actually been closed?",
+      "explanation": "'The bridge' - not local officials or next month - is what has been closed for repairs; the comma confirms this is non-defining detail about a specific, already-identified bridge.",
+      "grammarRule": "Antecedent Identification",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l109_practice_q2",
+      "level": 109,
+      "instruction": "SPOT WHAT'S OPTIONAL",
+      "question": "The report ___ the agency released Tuesday revealed significant funding gaps.",
+      "sentence": "The report (no word needed) the agency released Tuesday revealed significant funding gaps.",
+      "targetClause": "(no word needed)",
+      "options": [
+        "who",
+        "whom",
+        "(no word needed)",
+        "whose"
+      ],
+      "correctAnswer": "(no word needed)",
+      "correctAnswerIndex": 2,
+      "hint": "'The agency' already has a job in this clause. Does this defining clause about a thing allow the pronoun to disappear?",
+      "explanation": "'The agency' is the subject of 'released,' making 'the report' the object; since it's a thing in a defining clause, the pronoun can be dropped entirely.",
+      "grammarRule": "Omission of Object Relative Pronoun",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l109_practice_q3",
+      "level": 109,
+      "instruction": "DETERMINE THE ROLE",
+      "question": "The senator, whom several colleagues have publicly criticized, defended the controversial vote. Why is 'whom' (not 'who') used here?",
+      "sentence": "The senator, whom several colleagues have publicly criticized, defended the controversial vote. Why is 'whom' (not 'who') used here?",
+      "targetClause": "Because 'the senator' is the object of 'criticized' - 'colleagues' is the subject.",
+      "options": [
+        "Because 'whom' is required after every comma.",
+        "Because 'the senator' is the object of 'criticized' - 'colleagues' is the subject.",
+        "Because 'the senator' is the subject of 'criticized.'",
+        "Because this is a news article, and news always uses 'whom.'"
+      ],
+      "correctAnswer": "Because 'the senator' is the object of 'criticized' - 'colleagues' is the subject.",
+      "correctAnswerIndex": 1,
+      "hint": "Check who is doing the criticizing, and who is being criticized.",
+      "explanation": "'Colleagues' is the subject of 'have criticized,' making 'the senator' the object - which calls for 'whom,' regardless of the news context.",
+      "grammarRule": "Object Relative Clause with whom",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l110_practice_q1",
+      "level": 110,
+      "instruction": "PINPOINT THE ANTECEDENT",
+      "question": "The keys to the safe deposit box that my grandmother left me were nowhere to be found. What is the antecedent of 'that my grandmother left me'?",
+      "sentence": "The keys to the safe deposit box that my grandmother left me were nowhere to be found. What is the antecedent of 'that my grandmother left me'?",
+      "targetClause": "the keys",
+      "options": [
+        "the keys",
+        "the safe deposit box",
+        "my grandmother",
+        "me"
+      ],
+      "correctAnswer": "the keys",
+      "correctAnswerIndex": 0,
+      "hint": "'To the safe deposit box' just tells you what the keys open - check what my grandmother actually left me.",
+      "explanation": "'The keys' - not the safe deposit box itself - is what my grandmother left me; 'to the safe deposit box' is simply a prepositional phrase describing which keys.",
+      "grammarRule": "Antecedent Identification",
+      "clauseType": "defining"
+    },
+    {
+      "id": "rc_l110_practice_q2",
+      "level": 110,
+      "instruction": "SPOT WHAT'S OPTIONAL",
+      "question": "The inheritance, ___ my grandmother carefully organized before she passed, included several family heirlooms.",
+      "sentence": "The inheritance, which my grandmother carefully organized before she passed, included several family heirlooms.",
+      "targetClause": "which",
+      "options": [
+        "that",
+        "whom",
+        "which",
+        "(no word needed)"
+      ],
+      "correctAnswer": "which",
+      "correctAnswerIndex": 2,
+      "hint": "Notice the commas - does that change whether this pronoun could ever be dropped, or whether 'that' could be used?",
+      "explanation": "Because this is a non-defining clause, signaled by the commas, the pronoun cannot be omitted and 'that' cannot be used; 'which' is the only correct choice.",
+      "grammarRule": "Non-Defining Clauses Cannot Omit Their Pronoun",
+      "clauseType": "non-defining"
+    },
+    {
+      "id": "rc_l110_practice_q3",
+      "level": 110,
+      "instruction": "ESSENTIAL OR EXTRA?",
+      "question": "The heirloom that meant the most to her, a silver locket which had belonged to her own mother, was passed down to me. Which of the following is true about the two relative clauses in this sentence?",
+      "sentence": "The heirloom that meant the most to her, a silver locket which had belonged to her own mother, was passed down to me. Which of the following is true about the two relative clauses in this sentence?",
+      "targetClause": "'that meant the most to her' is a defining relative clause; 'which had belonged to her own mother' is a non-defining relative clause describing 'a silver locket.'",
+      "options": [
+        "Both are defining relative clauses.",
+        "Both are non-defining relative clauses.",
+        "'that meant the most to her' is a defining relative clause; 'which had belonged to her own mother' is a non-defining relative clause describing 'a silver locket.'",
+        "Neither is a relative clause at all."
+      ],
+      "correctAnswer": "'that meant the most to her' is a defining relative clause; 'which had belonged to her own mother' is a non-defining relative clause describing 'a silver locket.'",
+      "correctAnswerIndex": 2,
+      "hint": "Check the punctuation around each clause separately, and what noun each one attaches to.",
+      "explanation": "'That meant the most to her' has no commas and identifies which heirloom - defining. 'Which had belonged to her own mother,' set off by commas, adds extra detail about 'a silver locket' - non-defining.",
+      "grammarRule": "Defining vs Non-Defining Relative Clause",
+      "clauseType": "defining"
+    }
+  ]
+}
