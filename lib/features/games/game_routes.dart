@@ -44,6 +44,8 @@ import 'package:vowl/features/grammar/grammar_quest/presentation/pages/grammar_q
 import 'package:vowl/features/grammar/grammar_quest/presentation/pages/grammar_quest_practice_screen.dart';
 import 'package:vowl/features/grammar/word_reorder/presentation/pages/word_reorder_learn_screen.dart';
 import 'package:vowl/features/grammar/word_reorder/presentation/pages/word_reorder_practice_screen.dart';
+import 'package:vowl/features/grammar/sentence_correction/presentation/pages/sentence_correction_learn_screen.dart';
+import 'package:vowl/features/grammar/sentence_correction/presentation/pages/sentence_correction_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -381,6 +383,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'sentencecorrection') {
+          return fadeTransitionPage(
+            child: SentenceCorrectionLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -497,6 +505,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'wordreorder') {
           return fadeTransitionPage(
             child: WordReorderPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'sentencecorrection') {
+          return fadeTransitionPage(
+            child: SentenceCorrectionPracticeScreen(level: level),
             state: state,
           );
         }

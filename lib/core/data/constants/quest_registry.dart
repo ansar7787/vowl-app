@@ -152,7 +152,7 @@ abstract class QuestRegistry {
     final endLevel = batchIndex * 10;
 
     final resolvedPhase =
-        phase ?? ((category == 'vocabulary' || gameType == 'partsOfSpeech' || gameType == 'grammarQuest' || gameType == 'wordReorder') ? 'mastery' : null);
+        phase ?? ((category == 'vocabulary' || gameType == 'partsOfSpeech' || gameType == 'grammarQuest' || gameType == 'wordReorder' || gameType == 'sentenceCorrection') ? 'mastery' : null);
 
     if (resolvedPhase != null) {
       return 'assets/curriculum/$category/${gameType}_${resolvedPhase}_${startLevel}_$endLevel.json';
