@@ -1,0 +1,578 @@
+{
+  "gameType": "questionFormatter",
+  "phase": "practice",
+  "batchIndex": 3,
+  "levels": "21-30",
+  "quests": [
+    {
+      "id": "qf_l21_practice_q1",
+      "level": 21,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The gym is open 24 hours.",
+      "sentence": "The gym is open 24 hours.",
+      "options": [
+        "Does the gym open 24 hours?",
+        "Is the gym opening 24 hours?",
+        "Is the gym open 24 hours?",
+        "The gym is open 24 hours?"
+      ],
+      "correctAnswer": "Is the gym open 24 hours?",
+      "correctAnswerIndex": 2,
+      "hint": "Check whether the sentence uses 'be' as its main verb, not an action verb.",
+      "explanation": "'Open' here is an adjective describing the gym, and the verb is 'is' (a form of 'be'). The question only needs to move 'is' - adding 'does' would incorrectly treat 'open' as an action verb.",
+      "grammarRule": "Auxiliary Selection: Be vs Do/Does/Did",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l21_practice_q2",
+      "level": 21,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The new software update fixes several bugs.",
+      "sentence": "The new software update fixes several bugs.",
+      "options": [
+        "Does the new software update fix several bugs?",
+        "Is the new software update fix several bugs?",
+        "Does the new software update fixes several bugs?",
+        "The new software update fixes several bugs?"
+      ],
+      "correctAnswer": "Does the new software update fix several bugs?",
+      "correctAnswerIndex": 0,
+      "hint": "'Fixes' is an action verb, not a form of 'be' - it needs 'does' support.",
+      "explanation": "Unlike a 'be' sentence, this one uses the action verb 'fixes', so it requires 'does' for the question, and the verb returns to its base form, 'fix'.",
+      "grammarRule": "Auxiliary Selection: Be vs Do/Does/Did",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l21_practice_q3",
+      "level": 21,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The plumber fixed the leak yesterday.",
+      "sentence": "The plumber fixed the leak yesterday.",
+      "options": [
+        "Was the plumber fixed the leak yesterday?",
+        "Did the plumber fixed the leak yesterday?",
+        "The plumber fixed the leak yesterday?",
+        "Did the plumber fix the leak yesterday?"
+      ],
+      "correctAnswer": "Did the plumber fix the leak yesterday?",
+      "correctAnswerIndex": 3,
+      "hint": "Look at the tense first - this action happened in the past and needs 'did', not 'was'.",
+      "explanation": "'Fixed' is an action verb in the past tense, so the question needs 'did', and the verb returns to its base form, 'fix' - not a 'be' construction.",
+      "grammarRule": "Auxiliary Selection: Be vs Do/Does/Did",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l22_practice_q1",
+      "level": 22,
+      "instruction": "Turn the statement into a question.",
+      "statement": "She has to finish the report by Friday.",
+      "sentence": "She has to finish the report by Friday.",
+      "options": [
+        "Has she to finish the report by Friday?",
+        "Does she have to finish the report by Friday?",
+        "Does she has to finish the report by Friday?",
+        "She has to finish the report by Friday?"
+      ],
+      "correctAnswer": "Does she have to finish the report by Friday?",
+      "correctAnswerIndex": 1,
+      "hint": "'Has to' shows obligation and behaves like a main verb - it needs 'does', just like possessive 'has'.",
+      "explanation": "'Has to' expresses obligation and is not an auxiliary on its own, so the question needs 'does', and 'has' returns to its base form 'have'.",
+      "grammarRule": "Semi-Modal Questions with Have To/Has To",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l22_practice_q2",
+      "level": 22,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The passengers have to show their tickets at the gate.",
+      "sentence": "The passengers have to show their tickets at the gate.",
+      "options": [
+        "Have the passengers to show their tickets at the gate?",
+        "Does the passengers have to show their tickets at the gate?",
+        "Do the passengers have to show their tickets at the gate?",
+        "The passengers have to show their tickets at the gate?"
+      ],
+      "correctAnswer": "Do the passengers have to show their tickets at the gate?",
+      "correctAnswerIndex": 2,
+      "hint": "'The passengers' is plural, so 'have to' needs 'Do'.",
+      "explanation": "Plural subjects like 'the passengers' take 'do' with the obligation phrase 'have to', following the normal do-support pattern.",
+      "grammarRule": "Semi-Modal Questions with Have To/Has To",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l22_practice_q3",
+      "level": 22,
+      "instruction": "Turn the statement into a question.",
+      "statement": "He has to renew his passport this month.",
+      "sentence": "He has to renew his passport this month.",
+      "options": [
+        "Has he to renew his passport this month?",
+        "Does he has to renew his passport this month?",
+        "He has to renew his passport this month?",
+        "Does he have to renew his passport this month?"
+      ],
+      "correctAnswer": "Does he have to renew his passport this month?",
+      "correctAnswerIndex": 3,
+      "hint": "Treat 'has to' as an ordinary verb phrase needing 'does', not as something you can invert directly.",
+      "explanation": "'Has to' requires do-support because it isn't an auxiliary; 'does' appears and 'has' changes to its base form, 'have'.",
+      "grammarRule": "Semi-Modal Questions with Have To/Has To",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l23_practice_q1",
+      "level": 23,
+      "instruction": "Turn the statement into a question.",
+      "statement": "You need to sign the form before leaving.",
+      "sentence": "You need to sign the form before leaving.",
+      "options": [
+        "Do you need to sign the form before leaving?",
+        "Need you to sign the form before leaving?",
+        "Do you needs to sign the form before leaving?",
+        "You need to sign the form before leaving?"
+      ],
+      "correctAnswer": "Do you need to sign the form before leaving?",
+      "correctAnswerIndex": 0,
+      "hint": "'Need to' behaves like a regular verb here - use 'do' plus the base form.",
+      "explanation": "In this everyday sense, 'need to' is a main verb phrase, not a modal, so it requires 'do' for the question and stays in its base form.",
+      "grammarRule": "Semi-Modal Questions with Need To",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l23_practice_q2",
+      "level": 23,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The recipe needs one more egg.",
+      "sentence": "The recipe needs one more egg.",
+      "options": [
+        "Need the recipe one more egg?",
+        "Does the recipe need one more egg?",
+        "Does the recipe needs one more egg?",
+        "The recipe needs one more egg?"
+      ],
+      "correctAnswer": "Does the recipe need one more egg?",
+      "correctAnswerIndex": 1,
+      "hint": "'The recipe' is singular, so 'needs' takes 'does' and loses its -s.",
+      "explanation": "'The recipe' is a singular subject, so 'does' is required, and the verb 'needs' returns to its base form, 'need'.",
+      "grammarRule": "Semi-Modal Questions with Need To",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l23_practice_q3",
+      "level": 23,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The travelers need to arrive two hours early.",
+      "sentence": "The travelers need to arrive two hours early.",
+      "options": [
+        "Need the travelers to arrive two hours early?",
+        "Does the travelers need to arrive two hours early?",
+        "The travelers need to arrive two hours early?",
+        "Do the travelers need to arrive two hours early?"
+      ],
+      "correctAnswer": "Do the travelers need to arrive two hours early?",
+      "correctAnswerIndex": 3,
+      "hint": "'The travelers' is plural - pair it with 'Do'.",
+      "explanation": "'The travelers' is plural, so 'do' is correct, and 'need' stays in its base form after 'do'.",
+      "grammarRule": "Semi-Modal Questions with Need To",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l24_practice_q1",
+      "level": 24,
+      "instruction": "Turn the statement into a question.",
+      "statement": "He used to play the guitar every weekend.",
+      "sentence": "He used to play the guitar every weekend.",
+      "options": [
+        "Did he use to play the guitar every weekend?",
+        "Did he used to play the guitar every weekend?",
+        "Was he used to play the guitar every weekend?",
+        "He used to play the guitar every weekend?"
+      ],
+      "correctAnswer": "Did he use to play the guitar every weekend?",
+      "correctAnswerIndex": 0,
+      "hint": "After 'did', 'used to' loses its -d, becoming 'use to'.",
+      "explanation": "'Used to' describes a past habit. Once 'did' appears, the verb drops its -d ending, just like any other past verb: 'used' becomes 'use'.",
+      "grammarRule": "Past Habitual Questions with Used To",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l24_practice_q2",
+      "level": 24,
+      "instruction": "Turn the statement into a question.",
+      "statement": "They used to live in a small village.",
+      "sentence": "They used to live in a small village.",
+      "options": [
+        "Did they used to live in a small village?",
+        "Were they used to live in a small village?",
+        "Did they use to live in a small village?",
+        "They used to live in a small village?"
+      ],
+      "correctAnswer": "Did they use to live in a small village?",
+      "correctAnswerIndex": 2,
+      "hint": "Remember: 'did' plus 'use to', not 'used to'.",
+      "explanation": "Because 'did' already marks the past tense, 'used' must return to its base form 'use', following the same rule as other past verbs.",
+      "grammarRule": "Past Habitual Questions with Used To",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l24_practice_q3",
+      "level": 24,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The bakery used to close at noon on Sundays.",
+      "sentence": "The bakery used to close at noon on Sundays.",
+      "options": [
+        "Did the bakery used to close at noon on Sundays?",
+        "Did the bakery use to close at noon on Sundays?",
+        "Does the bakery use to close at noon on Sundays?",
+        "The bakery used to close at noon on Sundays?"
+      ],
+      "correctAnswer": "Did the bakery use to close at noon on Sundays?",
+      "correctAnswerIndex": 1,
+      "hint": "'Did' handles the past tense, so 'used to' becomes 'use to'.",
+      "explanation": "As with all past-tense do-support, once 'did' is present, 'used' drops its -d ending and becomes 'use'.",
+      "grammarRule": "Past Habitual Questions with Used To",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l25_practice_q1",
+      "level": 25,
+      "instruction": "Turn the statement into a question.",
+      "statement": "A number of employees work remotely.",
+      "sentence": "A number of employees work remotely.",
+      "options": [
+        "Do a number of employees work remotely?",
+        "Does a number of employees work remotely?",
+        "Do a number of employees works remotely?",
+        "A number of employees work remotely?"
+      ],
+      "correctAnswer": "Do a number of employees work remotely?",
+      "correctAnswerIndex": 0,
+      "hint": "'A number of' means 'several', so the subject is plural - use 'Do'.",
+      "explanation": "'A number of + plural noun' is treated as plural, so it takes 'do'. This differs from 'the number of', which is treated as singular.",
+      "grammarRule": "Subject-Verb Agreement: Quantifier Expressions",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l25_practice_q2",
+      "level": 25,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The number of complaints stays low each month.",
+      "sentence": "The number of complaints stays low each month.",
+      "options": [
+        "Do the number of complaints stay low each month?",
+        "Does the number of complaints stays low each month?",
+        "The number of complaints stays low each month?",
+        "Does the number of complaints stay low each month?"
+      ],
+      "correctAnswer": "Does the number of complaints stay low each month?",
+      "correctAnswerIndex": 3,
+      "hint": "'The number of' is treated as singular - unlike 'a number of'.",
+      "explanation": "'The number of + plural noun' is grammatically singular, so it takes 'does', in contrast to 'a number of', which takes 'do'.",
+      "grammarRule": "Subject-Verb Agreement: Quantifier Expressions",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l25_practice_q3",
+      "level": 25,
+      "instruction": "Turn the statement into a question.",
+      "statement": "A number of stores close early on Sundays.",
+      "sentence": "A number of stores close early on Sundays.",
+      "options": [
+        "Does a number of stores close early on Sundays?",
+        "Do a number of stores close early on Sundays?",
+        "Do a number of stores closes early on Sundays?",
+        "A number of stores close early on Sundays?"
+      ],
+      "correctAnswer": "Do a number of stores close early on Sundays?",
+      "correctAnswerIndex": 1,
+      "hint": "'A number of' + plural noun is plural - use 'Do'.",
+      "explanation": "Like other 'a number of' phrases, this subject is treated as plural, so 'do' is correct and the verb 'close' stays in base form.",
+      "grammarRule": "Subject-Verb Agreement: Quantifier Expressions",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l26_practice_q1",
+      "level": 26,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The news surprises everyone at the office.",
+      "sentence": "The news surprises everyone at the office.",
+      "options": [
+        "Do the news surprise everyone at the office?",
+        "Does the news surprises everyone at the office?",
+        "Does the news surprise everyone at the office?",
+        "The news surprises everyone at the office?"
+      ],
+      "correctAnswer": "Does the news surprise everyone at the office?",
+      "correctAnswerIndex": 2,
+      "hint": "'News' looks plural but is always singular in English.",
+      "explanation": "Despite ending in -s, 'news' is an uncountable noun that takes singular agreement, so 'does' is correct here.",
+      "grammarRule": "Subject-Verb Agreement: Uncountable Nouns",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l26_practice_q2",
+      "level": 26,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The advice from her mentor helps her a lot.",
+      "sentence": "The advice from her mentor helps her a lot.",
+      "options": [
+        "Does the advice from her mentor help her a lot?",
+        "Do the advice from her mentor help her a lot?",
+        "Does the advice from her mentor helps her a lot?",
+        "The advice from her mentor helps her a lot?"
+      ],
+      "correctAnswer": "Does the advice from her mentor help her a lot?",
+      "correctAnswerIndex": 0,
+      "hint": "'Advice' is uncountable, so it's always singular.",
+      "explanation": "'Advice' cannot be counted or made plural, so it always takes singular verb forms like 'does'.",
+      "grammarRule": "Subject-Verb Agreement: Uncountable Nouns",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l26_practice_q3",
+      "level": 26,
+      "instruction": "Turn the statement into a question.",
+      "statement": "This information matches the report.",
+      "sentence": "This information matches the report.",
+      "options": [
+        "Do this information match the report?",
+        "Does this information matches the report?",
+        "This information matches the report?",
+        "Does this information match the report?"
+      ],
+      "correctAnswer": "Does this information match the report?",
+      "correctAnswerIndex": 3,
+      "hint": "'Information' is uncountable and always singular.",
+      "explanation": "Like 'news' and 'advice', 'information' is an uncountable noun and always takes singular agreement, so 'does' is correct.",
+      "grammarRule": "Subject-Verb Agreement: Uncountable Nouns",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l27_practice_q1",
+      "level": 27,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The list of ingredients includes three allergens.",
+      "sentence": "The list of ingredients includes three allergens.",
+      "options": [
+        "Do the list of ingredients include three allergens?",
+        "Does the list of ingredients include three allergens?",
+        "Does the list of ingredients includes three allergens?",
+        "The list of ingredients includes three allergens?"
+      ],
+      "correctAnswer": "Does the list of ingredients include three allergens?",
+      "correctAnswerIndex": 1,
+      "hint": "Ignore the phrase between the subject and the verb - the true subject is 'the list', which is singular.",
+      "explanation": "The true subject is 'the list', not 'ingredients'. Even though a plural noun sits closer to the verb, the question must agree with 'list' and use 'does'.",
+      "grammarRule": "Subject-Verb Agreement: Intervening Phrases",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l27_practice_q2",
+      "level": 27,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The boxes on the top shelf belong to the manager.",
+      "sentence": "The boxes on the top shelf belong to the manager.",
+      "options": [
+        "Does the boxes on the top shelf belong to the manager?",
+        "Do the boxes on the top shelf belongs to the manager?",
+        "Do the boxes on the top shelf belong to the manager?",
+        "The boxes on the top shelf belong to the manager?"
+      ],
+      "correctAnswer": "Do the boxes on the top shelf belong to the manager?",
+      "correctAnswerIndex": 2,
+      "hint": "The true subject is 'the boxes', not 'the top shelf' - it's plural.",
+      "explanation": "'The boxes' is the real subject, so the question takes 'do', even though a singular noun, 'shelf', appears closer to the verb.",
+      "grammarRule": "Subject-Verb Agreement: Intervening Phrases",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l27_practice_q3",
+      "level": 27,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The cost of the repairs worries the homeowner.",
+      "sentence": "The cost of the repairs worries the homeowner.",
+      "options": [
+        "Do the cost of the repairs worry the homeowner?",
+        "Does the cost of the repairs worries the homeowner?",
+        "The cost of the repairs worries the homeowner?",
+        "Does the cost of the repairs worry the homeowner?"
+      ],
+      "correctAnswer": "Does the cost of the repairs worry the homeowner?",
+      "correctAnswerIndex": 3,
+      "hint": "The subject is 'the cost', which is singular, not 'the repairs'.",
+      "explanation": "'The cost' is the true singular subject; the plural noun 'repairs' in between doesn't change the agreement, so 'does' is correct.",
+      "grammarRule": "Subject-Verb Agreement: Intervening Phrases",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l28_practice_q1",
+      "level": 28,
+      "instruction": "Turn the statement into a question.",
+      "statement": "She went to the dentist this morning.",
+      "sentence": "She went to the dentist this morning.",
+      "options": [
+        "Did she go to the dentist this morning?",
+        "Did she went to the dentist this morning?",
+        "Did she going to the dentist this morning?",
+        "She went to the dentist this morning?"
+      ],
+      "correctAnswer": "Did she go to the dentist this morning?",
+      "correctAnswerIndex": 0,
+      "hint": "'Went' comes from 'go' - use the base form after 'did'.",
+      "explanation": "'Went' is the irregular past of 'go'. After 'did', it returns to its base form, 'go'.",
+      "grammarRule": "Past Simple Questions with Did (Irregular Verbs II)",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l28_practice_q2",
+      "level": 28,
+      "instruction": "Turn the statement into a question.",
+      "statement": "He made a mistake on the invoice.",
+      "sentence": "He made a mistake on the invoice.",
+      "options": [
+        "Did he made a mistake on the invoice?",
+        "Did he make a mistake on the invoice?",
+        "Has he make a mistake on the invoice?",
+        "He made a mistake on the invoice?"
+      ],
+      "correctAnswer": "Did he make a mistake on the invoice?",
+      "correctAnswerIndex": 1,
+      "hint": "'Made' comes from 'make' - restore that base form after 'did'.",
+      "explanation": "The irregular verb 'made' returns to its base form 'make' once 'did' appears in the question.",
+      "grammarRule": "Past Simple Questions with Did (Irregular Verbs II)",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l28_practice_q3",
+      "level": 28,
+      "instruction": "Turn the statement into a question.",
+      "statement": "They took the wrong exit off the highway.",
+      "sentence": "They took the wrong exit off the highway.",
+      "options": [
+        "Did they took the wrong exit off the highway?",
+        "Did they taken the wrong exit off the highway?",
+        "Did they take the wrong exit off the highway?",
+        "They took the wrong exit off the highway?"
+      ],
+      "correctAnswer": "Did they take the wrong exit off the highway?",
+      "correctAnswerIndex": 2,
+      "hint": "'Took' comes from 'take' - use that base form.",
+      "explanation": "'Took' is the irregular past of 'take'; after 'did', it becomes 'take', not 'taken', which is the participle form.",
+      "grammarRule": "Past Simple Questions with Did (Irregular Verbs II)",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l29_practice_q1",
+      "level": 29,
+      "instruction": "Turn the statement into a question.",
+      "statement": "She said the meeting was cancelled.",
+      "sentence": "She said the meeting was cancelled.",
+      "options": [
+        "Did she say the meeting was cancelled?",
+        "Did she said the meeting was cancelled?",
+        "Has she say the meeting was cancelled?",
+        "She said the meeting was cancelled?"
+      ],
+      "correctAnswer": "Did she say the meeting was cancelled?",
+      "correctAnswerIndex": 0,
+      "hint": "'Said' comes from 'say' - restore the base form after 'did'.",
+      "explanation": "'Said' is the irregular past of 'say'; the question needs 'did' plus the base form 'say'.",
+      "grammarRule": "Past Simple Questions with Did (Irregular Verbs III)",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l29_practice_q2",
+      "level": 29,
+      "instruction": "Turn the statement into a question.",
+      "statement": "He found his keys under the couch.",
+      "sentence": "He found his keys under the couch.",
+      "options": [
+        "Did he found his keys under the couch?",
+        "Did he founded his keys under the couch?",
+        "He found his keys under the couch?",
+        "Did he find his keys under the couch?"
+      ],
+      "correctAnswer": "Did he find his keys under the couch?",
+      "correctAnswerIndex": 3,
+      "hint": "'Found' comes from 'find' - use that base form.",
+      "explanation": "'Found' is the irregular past of 'find'; after 'did', it returns to the base form 'find'.",
+      "grammarRule": "Past Simple Questions with Did (Irregular Verbs III)",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l29_practice_q3",
+      "level": 29,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The shop sold its last umbrella before the storm.",
+      "sentence": "The shop sold its last umbrella before the storm.",
+      "options": [
+        "Did the shop sold its last umbrella before the storm?",
+        "Did the shop sell its last umbrella before the storm?",
+        "Did the shop selling its last umbrella before the storm?",
+        "The shop sold its last umbrella before the storm?"
+      ],
+      "correctAnswer": "Did the shop sell its last umbrella before the storm?",
+      "correctAnswerIndex": 1,
+      "hint": "'Sold' comes from 'sell' - restore that base form.",
+      "explanation": "'Sold' is the irregular past of 'sell'; the question uses 'did' plus the base form 'sell'.",
+      "grammarRule": "Past Simple Questions with Did (Irregular Verbs III)",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l30_practice_q1",
+      "level": 30,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The employees have to complete the training by Friday.",
+      "sentence": "The employees have to complete the training by Friday.",
+      "options": [
+        "Do the employees have to complete the training by Friday?",
+        "Does the employees have to complete the training by Friday?",
+        "Have the employees to complete the training by Friday?",
+        "The employees have to complete the training by Friday?"
+      ],
+      "correctAnswer": "Do the employees have to complete the training by Friday?",
+      "correctAnswerIndex": 0,
+      "hint": "'The employees' is plural, so 'have to' takes 'Do'.",
+      "explanation": "Plural subjects take 'do' with the obligation phrase 'have to', consistent with earlier practice in this stage.",
+      "grammarRule": "Stage Checkpoint: Auxiliary Selection and Agreement",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l30_practice_q2",
+      "level": 30,
+      "instruction": "Turn the statement into a question.",
+      "statement": "A number of guests brought their own food.",
+      "sentence": "A number of guests brought their own food.",
+      "options": [
+        "Does a number of guests bring their own food?",
+        "Did a number of guests brought their own food?",
+        "Did a number of guests bring their own food?",
+        "A number of guests brought their own food?"
+      ],
+      "correctAnswer": "Did a number of guests bring their own food?",
+      "correctAnswerIndex": 2,
+      "hint": "'A number of' is plural, and 'brought' needs to return to its base form after 'did'.",
+      "explanation": "'A number of guests' is a plural subject, and the irregular verb 'brought' returns to its base form 'bring' after 'did'.",
+      "grammarRule": "Stage Checkpoint: Auxiliary Selection and Agreement",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l30_practice_q3",
+      "level": 30,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The information on the website matches the printed brochure.",
+      "sentence": "The information on the website matches the printed brochure.",
+      "options": [
+        "Do the information on the website match the printed brochure?",
+        "Does the information on the website matches the printed brochure?",
+        "The information on the website matches the printed brochure?",
+        "Does the information on the website match the printed brochure?"
+      ],
+      "correctAnswer": "Does the information on the website match the printed brochure?",
+      "correctAnswerIndex": 3,
+      "hint": "'Information' is uncountable and always singular, no matter what comes after it.",
+      "explanation": "'Information' takes singular agreement regardless of the prepositional phrase that follows, so 'does' is correct here.",
+      "grammarRule": "Stage Checkpoint: Auxiliary Selection and Agreement",
+      "questionType": "Yes/No Question"
+    }
+  ]
+}

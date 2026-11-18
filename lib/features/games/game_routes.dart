@@ -52,6 +52,8 @@ import 'package:vowl/features/grammar/subject_verb_agreement/presentation/pages/
 import 'package:vowl/features/grammar/subject_verb_agreement/presentation/pages/subject_verb_agreement_practice_screen.dart';
 import 'package:vowl/features/grammar/article_insertion/presentation/pages/article_insertion_learn_screen.dart';
 import 'package:vowl/features/grammar/article_insertion/presentation/pages/article_insertion_practice_screen.dart';
+import 'package:vowl/features/grammar/question_formatter/presentation/pages/question_formatter_learn_screen.dart';
+import 'package:vowl/features/grammar/question_formatter/presentation/pages/question_formatter_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -413,6 +415,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'questionformatter') {
+          return fadeTransitionPage(
+            child: QuestionFormatterLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -553,6 +561,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'articleinsertion') {
           return fadeTransitionPage(
             child: ArticleInsertionPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'questionformatter') {
+          return fadeTransitionPage(
+            child: QuestionFormatterPracticeScreen(level: level),
             state: state,
           );
         }

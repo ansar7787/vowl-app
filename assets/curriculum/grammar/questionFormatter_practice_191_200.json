@@ -1,0 +1,578 @@
+{
+  "gameType": "questionFormatter",
+  "phase": "practice",
+  "batchIndex": 20,
+  "levels": "191-200",
+  "quests": [
+    {
+      "id": "qf_l191_practice_q1",
+      "level": 191,
+      "instruction": "Form a Wh- question asking about the bracketed information.",
+      "statement": "The technician repaired [the printer] this morning.",
+      "sentence": "The technician repaired [the printer] this morning.",
+      "options": [
+        "What repaired the technician this morning?",
+        "What did the technician repair this morning?",
+        "What the technician did repair this morning?",
+        "The technician repaired the printer this morning?"
+      ],
+      "correctAnswer": "What did the technician repair this morning?",
+      "correctAnswerIndex": 1,
+      "hint": "The bracket marks the object - do-support is needed, and 'did' goes right after 'what', not later in the sentence.",
+      "explanation": "This tests wrong WH structure: the auxiliary 'did' must appear right after the WH-word and before the subject, not scrambled elsewhere in the sentence, and this object question does require do-support.",
+      "grammarRule": "Error Detection: Wrong WH Structure",
+      "questionType": "Wh- Question"
+    },
+    {
+      "id": "qf_l191_practice_q2",
+      "level": 191,
+      "instruction": "Form a Wh- question asking about the bracketed information.",
+      "statement": "The auditors are reviewing [the financial statements] this week.",
+      "sentence": "The auditors are reviewing [the financial statements] this week.",
+      "options": [
+        "What the auditors are reviewing this week?",
+        "What are reviewing the auditors this week?",
+        "The auditors are reviewing the financial statements this week?",
+        "What are the auditors reviewing this week?"
+      ],
+      "correctAnswer": "What are the auditors reviewing this week?",
+      "correctAnswerIndex": 3,
+      "hint": "Invert 'are' and the subject right after the WH-word - don't reverse the subject and verb order.",
+      "explanation": "This tests correct inversion order: after the WH-word, the auxiliary comes first, then the subject, then the main verb - not subject-verb-auxiliary in a scrambled order.",
+      "grammarRule": "Error Detection: Wrong WH Structure",
+      "questionType": "Wh- Question"
+    },
+    {
+      "id": "qf_l191_practice_q3",
+      "level": 191,
+      "instruction": "Form a Wh- question asking about the bracketed information.",
+      "statement": "She will present [the quarterly results] at the board meeting.",
+      "sentence": "She will present [the quarterly results] at the board meeting.",
+      "options": [
+        "What will she present at the board meeting?",
+        "What will present she at the board meeting?",
+        "What does she will present at the board meeting?",
+        "She will present the quarterly results at the board meeting?"
+      ],
+      "correctAnswer": "What will she present at the board meeting?",
+      "correctAnswerIndex": 0,
+      "hint": "The order after the WH-word is always: auxiliary, then subject, then verb.",
+      "explanation": "This reinforces the correct inversion order: 'will' comes before the subject 'she', not after it, and no extra 'does' is ever added alongside a modal.",
+      "grammarRule": "Error Detection: Wrong WH Structure",
+      "questionType": "Wh- Question"
+    },
+    {
+      "id": "qf_l192_practice_q1",
+      "level": 192,
+      "instruction": "Form a Wh- question asking about the bracketed information.",
+      "statement": "[The consultant] recommended the new strategy.",
+      "sentence": "[The consultant] recommended the new strategy.",
+      "options": [
+        "Who did the consultant recommend the new strategy?",
+        "Who did recommend the new strategy?",
+        "Who recommended the new strategy?",
+        "Recommended the new strategy?"
+      ],
+      "correctAnswer": "Who recommended the new strategy?",
+      "correctAnswerIndex": 2,
+      "hint": "The bracket marks the subject - subject questions never take do-support.",
+      "explanation": "This tests the classic subject/object confusion: since the bracket marks the subject (who did the recommending), no auxiliary should be added at all.",
+      "grammarRule": "Error Detection: Subject/Object Confusion",
+      "questionType": "Subject Question"
+    },
+    {
+      "id": "qf_l192_practice_q2",
+      "level": 192,
+      "instruction": "Form a Wh- question asking about the bracketed information.",
+      "statement": "The consultant recommended [the new strategy].",
+      "sentence": "The consultant recommended [the new strategy].",
+      "options": [
+        "What recommended the consultant?",
+        "What did the consultant recommend?",
+        "What recommended did the consultant?",
+        "The consultant recommended the new strategy?"
+      ],
+      "correctAnswer": "What did the consultant recommend?",
+      "correctAnswerIndex": 1,
+      "hint": "The bracket marks the object - this needs do-support, unlike the subject-question version.",
+      "explanation": "This is the direct minimal pair with the previous question: since the bracket marks the object here, 'did' is required, contrasting with the subject-question form.",
+      "grammarRule": "Error Detection: Subject/Object Confusion",
+      "questionType": "Object Question"
+    },
+    {
+      "id": "qf_l192_practice_q3",
+      "level": 192,
+      "instruction": "Form a Wh- question asking about the bracketed information.",
+      "statement": "[A faulty wire] caused the electrical fire.",
+      "sentence": "[A faulty wire] caused the electrical fire.",
+      "options": [
+        "What did a faulty wire cause the electrical fire?",
+        "What did cause the electrical fire?",
+        "Caused the electrical fire?",
+        "What caused the electrical fire?"
+      ],
+      "correctAnswer": "What caused the electrical fire?",
+      "correctAnswerIndex": 3,
+      "hint": "The bracket marks the subject (the cause) - no do-support is needed.",
+      "explanation": "This reinforces the subject/object discrimination skill one final time: correctly identifying the bracket as the subject determines that no auxiliary is added.",
+      "grammarRule": "Error Detection: Subject/Object Confusion",
+      "questionType": "Subject Question"
+    },
+    {
+      "id": "qf_l193_practice_q1",
+      "level": 193,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The applicant should submit the paperwork by Friday.",
+      "sentence": "The applicant should submit the paperwork by Friday.",
+      "options": [
+        "Should the applicant submit the paperwork by Friday?",
+        "Does the applicant should submit the paperwork by Friday?",
+        "Should the applicant submits the paperwork by Friday?",
+        "The applicant should submit the paperwork by Friday?"
+      ],
+      "correctAnswer": "Should the applicant submit the paperwork by Friday?",
+      "correctAnswerIndex": 0,
+      "hint": "Modals move to the front alone - never combine with 'does', and the verb after a modal never changes form.",
+      "explanation": "This tests the two classic modal errors together: adding an unnecessary 'does', and adding -s to the verb after the modal.",
+      "grammarRule": "Error Detection: Modal Errors",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l193_practice_q2",
+      "level": 193,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The inspector must have overlooked the crack in the foundation.",
+      "sentence": "The inspector must have overlooked the crack in the foundation.",
+      "options": [
+        "Does the inspector must have overlooked the crack in the foundation?",
+        "Must the inspector has overlooked the crack in the foundation?",
+        "Must the inspector have overlooked the crack in the foundation?",
+        "The inspector must have overlooked the crack in the foundation?"
+      ],
+      "correctAnswer": "Must the inspector have overlooked the crack in the foundation?",
+      "correctAnswerIndex": 2,
+      "hint": "Only the modal 'must' inverts - 'have' never changes to 'has' regardless of the subject.",
+      "explanation": "This tests modal + perfect combination errors: only the modal moves to the front, and 'have' always stays as 'have', never 'has', in this construction.",
+      "grammarRule": "Error Detection: Modal Errors",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l193_practice_q3",
+      "level": 193,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The results could indicate a serious problem.",
+      "sentence": "The results could indicate a serious problem.",
+      "options": [
+        "Should the results indicate a serious problem?",
+        "Could the results indicate a serious problem?",
+        "Does the results could indicate a serious problem?",
+        "The results could indicate a serious problem?"
+      ],
+      "correctAnswer": "Could the results indicate a serious problem?",
+      "correctAnswerIndex": 1,
+      "hint": "'Could' expresses possibility - swapping in 'should' would incorrectly suggest a recommendation instead.",
+      "explanation": "This tests modal meaning errors: 'could' expresses possibility here, and substituting 'should' would change the meaning to advice, which doesn't fit.",
+      "grammarRule": "Error Detection: Modal Errors",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l194_practice_q1",
+      "level": 194,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The scientists have discovered a new species.",
+      "sentence": "The scientists have discovered a new species.",
+      "options": [
+        "Do the scientists have discovered a new species?",
+        "Have the scientists discover a new species?",
+        "The scientists have discovered a new species?",
+        "Have the scientists discovered a new species?"
+      ],
+      "correctAnswer": "Have the scientists discovered a new species?",
+      "correctAnswerIndex": 3,
+      "hint": "Present perfect never combines with 'do' - and the verb after 'have' must stay in its participle form.",
+      "explanation": "This tests two classic perfect-tense errors together: adding unnecessary do-support, and using the base form instead of the participle.",
+      "grammarRule": "Error Detection: Incorrect Perfect Constructions",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l194_practice_q2",
+      "level": 194,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The delegation had already departed when the news broke.",
+      "sentence": "The delegation had already departed when the news broke.",
+      "options": [
+        "Had the delegation already departed when the news broke?",
+        "Did the delegation had already departed when the news broke?",
+        "Had the delegation already depart when the news broke?",
+        "The delegation had already departed when the news broke?"
+      ],
+      "correctAnswer": "Had the delegation already departed when the news broke?",
+      "correctAnswerIndex": 0,
+      "hint": "Past perfect never combines with 'did' - and the verb after 'had' must stay in its participle form.",
+      "explanation": "This reinforces the same two error types in the past perfect: 'did' should never appear alongside 'had', and the participle 'departed' must not be replaced with the base form.",
+      "grammarRule": "Error Detection: Incorrect Perfect Constructions",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l194_practice_q3",
+      "level": 194,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The board members have been discussing the merger for hours.",
+      "sentence": "The board members have been discussing the merger for hours.",
+      "options": [
+        "Do the board members have been discussing the merger for hours?",
+        "Have the board members been discuss the merger for hours?",
+        "Have the board members been discussing the merger for hours?",
+        "The board members have been discussing the merger for hours?"
+      ],
+      "correctAnswer": "Have the board members been discussing the merger for hours?",
+      "correctAnswerIndex": 2,
+      "hint": "Present perfect continuous never combines with 'do' - and the verb after 'been' must keep its -ing ending.",
+      "explanation": "This tests the perfect continuous version of the same error pattern: no unnecessary do-support, and the -ing form must be preserved after 'been'.",
+      "grammarRule": "Error Detection: Incorrect Perfect Constructions",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l195_practice_q1",
+      "level": 195,
+      "instruction": "Form a Wh- question asking about the bracketed information.",
+      "statement": "[The regulator] approved the merger after months of review.",
+      "sentence": "[The regulator] approved the merger after months of review.",
+      "options": [
+        "Who did the regulator approve the merger after months of review?",
+        "Who approved the merger after months of review?",
+        "Who does the regulator approve the merger after months of review?",
+        "Approved the merger after months of review?"
+      ],
+      "correctAnswer": "Who approved the merger after months of review?",
+      "correctAnswerIndex": 1,
+      "hint": "Combine two Stage 13 skills: recognize this as a subject question, and avoid unnecessary do-support entirely.",
+      "explanation": "This capstone question combines subject/object discrimination with the broader do-support error pattern reviewed throughout this stage.",
+      "grammarRule": "Stage 13 Final Capstone: Comprehensive Error Detection Review",
+      "questionType": "Subject Question"
+    },
+    {
+      "id": "qf_l195_practice_q2",
+      "level": 195,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The negotiators might have reached an agreement by tonight.",
+      "sentence": "The negotiators might have reached an agreement by tonight.",
+      "options": [
+        "Do the negotiators might have reached an agreement by tonight?",
+        "Might the negotiators has reached an agreement by tonight?",
+        "The negotiators might have reached an agreement by tonight?",
+        "Might the negotiators have reached an agreement by tonight?"
+      ],
+      "correctAnswer": "Might the negotiators have reached an agreement by tonight?",
+      "correctAnswerIndex": 3,
+      "hint": "Combine two Stage 13 skills: no double auxiliary with the modal, and 'have' never changes to 'has'.",
+      "explanation": "This capstone question combines modal errors with perfect-construction errors, reviewing two central skills from this stage together.",
+      "grammarRule": "Stage 13 Final Capstone: Comprehensive Error Detection Review",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l195_practice_q3",
+      "level": 195,
+      "instruction": "Form a Wh- question asking about the bracketed information.",
+      "statement": "The technicians have fixed [the network outage].",
+      "sentence": "The technicians have fixed [the network outage].",
+      "options": [
+        "What have the technicians fixed?",
+        "What did the technicians have fixed?",
+        "What has the technicians fixed?",
+        "The technicians have fixed the network outage?"
+      ],
+      "correctAnswer": "What have the technicians fixed?",
+      "correctAnswerIndex": 0,
+      "hint": "This combines three Stage 13 skills: correct WH-structure, correct perfect construction, and correct agreement.",
+      "explanation": "This final Stage 13 question combines WH-structure, perfect-tense formation, and subject-verb agreement into a single comprehensive review before Stage 14 begins.",
+      "grammarRule": "Stage 13 Final Capstone: Comprehensive Error Detection Review",
+      "questionType": "Object Question"
+    },
+    {
+      "id": "qf_l196_practice_q1",
+      "level": 196,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The new hire hasn't completed the mandatory training modules yet.",
+      "sentence": "The new hire hasn't completed the mandatory training modules yet.",
+      "options": [
+        "Hasn't the new hire completed the mandatory training modules yet?",
+        "Does the new hire hasn't completed the mandatory training modules yet?",
+        "Has the new hire completed the mandatory training modules yet?",
+        "The new hire completed the mandatory training modules yet?"
+      ],
+      "correctAnswer": "Has the new hire completed the mandatory training modules yet?",
+      "correctAnswerIndex": 2,
+      "hint": "Extract 'has' from 'hasn't', and keep 'yet' at the end - a skill from Stage 2 and Stage 5 combined.",
+      "explanation": "This integrates negative-auxiliary extraction with present perfect, two skills taught in earlier stages, applied here in a natural onboarding context.",
+      "grammarRule": "Final Mastery: Mixed Tenses and Auxiliaries",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l196_practice_q2",
+      "level": 196,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The proposal will have been reviewed by three departments before the final vote.",
+      "sentence": "The proposal will have been reviewed by three departments before the final vote.",
+      "options": [
+        "Does the proposal will have been reviewed by three departments before the final vote?",
+        "Will the proposal have being reviewed by three departments before the final vote?",
+        "The proposal will have been reviewed by three departments before the final vote?",
+        "Will the proposal have been reviewed by three departments before the final vote?"
+      ],
+      "correctAnswer": "Will the proposal have been reviewed by three departments before the final vote?",
+      "correctAnswerIndex": 3,
+      "hint": "Only 'will' inverts - 'have been reviewed' stays together as a single unit, combining future, perfect, and passive.",
+      "explanation": "This integrates future perfect with passive voice, a combination of two Stage 11 skills: only the modal 'will' inverts, while the rest of the auxiliary chain stays together.",
+      "grammarRule": "Final Mastery: Mixed Tenses and Auxiliaries",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l196_practice_q3",
+      "level": 196,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The suppliers weren't notified about the schedule change in advance.",
+      "sentence": "The suppliers weren't notified about the schedule change in advance.",
+      "options": [
+        "Weren't the suppliers notified about the schedule change in advance?",
+        "Were the suppliers notified about the schedule change in advance?",
+        "Did the suppliers weren't notified about the schedule change in advance?",
+        "The suppliers notified about the schedule change in advance?"
+      ],
+      "correctAnswer": "Were the suppliers notified about the schedule change in advance?",
+      "correctAnswerIndex": 1,
+      "hint": "Extract 'were' from 'weren't', and keep the passive participle unchanged.",
+      "explanation": "This integrates negative extraction with past passive voice, combining skills from Stage 2 and Stage 11.",
+      "grammarRule": "Final Mastery: Mixed Tenses and Auxiliaries",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l197_practice_q1",
+      "level": 197,
+      "instruction": "Form a Wh- question asking about the bracketed information.",
+      "statement": "[The regional manager] hasn't approved the budget increase.",
+      "sentence": "[The regional manager] hasn't approved the budget increase.",
+      "options": [
+        "Who hasn't approved the budget increase?",
+        "Who has approved the budget increase?",
+        "Who did the regional manager hasn't approve the budget increase?",
+        "The regional manager hasn't approved the budget increase?"
+      ],
+      "correctAnswer": "Who hasn't approved the budget increase?",
+      "correctAnswerIndex": 0,
+      "hint": "This is a subject question, so keep the negative 'hasn't' with no extra do-support.",
+      "explanation": "This integrates negative-auxiliary retention with the subject-question rule: since the bracket marks the subject, 'hasn't' stays as is, with no do-support added.",
+      "grammarRule": "Final Mastery: WH-Questions, Subject/Object, and Negatives",
+      "questionType": "Subject Question"
+    },
+    {
+      "id": "qf_l197_practice_q2",
+      "level": 197,
+      "instruction": "Form a Wh- question asking about the bracketed information.",
+      "statement": "The regional manager hasn't approved [the budget increase].",
+      "sentence": "The regional manager hasn't approved [the budget increase].",
+      "options": [
+        "What has the regional manager approved?",
+        "What hasn't the regional manager approve?",
+        "What hasn't the regional manager approved?",
+        "The regional manager hasn't approved the budget increase?"
+      ],
+      "correctAnswer": "What hasn't the regional manager approved?",
+      "correctAnswerIndex": 2,
+      "hint": "This is an object question, so 'hasn't' inverts with the subject.",
+      "explanation": "This is the direct minimal pair with the previous question: since the bracket now marks the object, 'hasn't' inverts with the subject rather than staying in place.",
+      "grammarRule": "Final Mastery: WH-Questions, Subject/Object, and Negatives",
+      "questionType": "Object Question"
+    },
+    {
+      "id": "qf_l197_practice_q3",
+      "level": 197,
+      "instruction": "Form a Wh- question asking about the bracketed information.",
+      "statement": "The vendor wasn't responsible for [the shipping delay].",
+      "sentence": "The vendor wasn't responsible for [the shipping delay].",
+      "options": [
+        "What was the vendor responsible for?",
+        "For what wasn't the vendor responsible?",
+        "The vendor wasn't responsible for the shipping delay?",
+        "What wasn't the vendor responsible for?"
+      ],
+      "correctAnswer": "What wasn't the vendor responsible for?",
+      "correctAnswerIndex": 3,
+      "hint": "Keep the negative 'wasn't', and strand the preposition 'for' at the end.",
+      "explanation": "This integrates three skills: negative retention, WH-question formation, and natural preposition stranding, all reviewed together in one question.",
+      "grammarRule": "Final Mastery: WH-Questions, Subject/Object, and Negatives",
+      "questionType": "Wh- Question"
+    },
+    {
+      "id": "qf_l198_practice_q1",
+      "level": 198,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The engineers should have been consulted before the redesign began.",
+      "sentence": "The engineers should have been consulted before the redesign began.",
+      "options": [
+        "Does the engineers should have been consulted before the redesign began?",
+        "Should the engineers have been consulted before the redesign began?",
+        "Should the engineers has been consulted before the redesign began?",
+        "The engineers should have been consulted before the redesign began?"
+      ],
+      "correctAnswer": "Should the engineers have been consulted before the redesign began?",
+      "correctAnswerIndex": 1,
+      "hint": "Only the modal 'should' inverts - 'have been consulted' stays together as one unit.",
+      "explanation": "This integrates modal, perfect, and passive voice into a single auxiliary chain: only 'should' inverts, while 'have been consulted' remains unchanged.",
+      "grammarRule": "Final Mastery: Modal and Perfect/Continuous Combinations",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l198_practice_q2",
+      "level": 198,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The analysts have been monitoring the market closely since the announcement.",
+      "sentence": "The analysts have been monitoring the market closely since the announcement.",
+      "options": [
+        "Have the analysts been monitoring the market closely since the announcement?",
+        "Do the analysts have been monitoring the market closely since the announcement?",
+        "Have the analysts been monitor the market closely since the announcement?",
+        "The analysts have been monitoring the market closely since the announcement?"
+      ],
+      "correctAnswer": "Have the analysts been monitoring the market closely since the announcement?",
+      "correctAnswerIndex": 0,
+      "hint": "Only 'have' inverts - 'been monitoring' stays together, keeping its -ing ending.",
+      "explanation": "This reinforces present perfect continuous formation, combined with the 'since' time marker from Stage 5, in a realistic financial context.",
+      "grammarRule": "Final Mastery: Modal and Perfect/Continuous Combinations",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l198_practice_q3",
+      "level": 198,
+      "instruction": "Form a Wh- question asking about the bracketed information.",
+      "statement": "The committee might not have considered [every possible outcome].",
+      "sentence": "The committee might not have considered [every possible outcome].",
+      "options": [
+        "What does the committee might not have considered?",
+        "What might the committee not have consider?",
+        "What might the committee not have considered?",
+        "The committee might not have considered every possible outcome?"
+      ],
+      "correctAnswer": "What might the committee not have considered?",
+      "correctAnswerIndex": 2,
+      "hint": "Move 'what' to the front, then invert only the modal 'might' - keep 'not have considered' together.",
+      "explanation": "This integrates modal, negative, and perfect construction into one WH-question: only 'might' inverts, and the rest of the auxiliary chain, including 'not', stays together.",
+      "grammarRule": "Final Mastery: Modal and Perfect/Continuous Combinations",
+      "questionType": "Wh- Question"
+    },
+    {
+      "id": "qf_l199_practice_q1",
+      "level": 199,
+      "instruction": "Turn the statement into a question.",
+      "statement": "If the merger is approved, the two companies will combine their operations by next spring.",
+      "sentence": "If the merger is approved, the two companies will combine their operations by next spring.",
+      "options": [
+        "Will the two companies combine their operations by next spring if the merger will be approved?",
+        "Does the two companies will combine their operations by next spring if the merger is approved?",
+        "The two companies combine their operations by next spring if the merger is approved?",
+        "Will the two companies combine their operations by next spring if the merger is approved?"
+      ],
+      "correctAnswer": "Will the two companies combine their operations by next spring if the merger is approved?",
+      "correctAnswerIndex": 3,
+      "hint": "Move the fronted 'if' clause to the end, keep it in present simple, and invert only 'will' in the main clause.",
+      "explanation": "This integrates the first conditional pattern with fronted-clause repositioning, both from Stage 11, in a realistic business scenario.",
+      "grammarRule": "Final Mastery: Complex Sentences with Multiple Clauses",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l199_practice_q2",
+      "level": 199,
+      "instruction": "Turn the statement into a question.",
+      "statement": "If the company had hired more staff earlier, the project wouldn't have fallen behind schedule.",
+      "sentence": "If the company had hired more staff earlier, the project wouldn't have fallen behind schedule.",
+      "options": [
+        "Would the project have fallen behind schedule if the company would have hired more staff earlier?",
+        "Would the project have fallen behind schedule if the company had hired more staff earlier?",
+        "Had the project fallen behind schedule if the company had hired more staff earlier?",
+        "If the company had hired more staff earlier, the project wouldn't have fallen behind schedule?"
+      ],
+      "correctAnswer": "Would the project have fallen behind schedule if the company had hired more staff earlier?",
+      "correctAnswerIndex": 1,
+      "hint": "The 'if' clause stays in past perfect - form a plain question with 'would' inverted, dropping the negative from the main clause.",
+      "explanation": "This integrates the third conditional with negative extraction: the hypothetical 'if' clause stays in past perfect, and 'would' inverts in the main clause after dropping 'not'.",
+      "grammarRule": "Final Mastery: Complex Sentences with Multiple Clauses",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l199_practice_q3",
+      "level": 199,
+      "instruction": "Turn the statement into a question.",
+      "statement": "The report that the analyst submitted last week hasn't been reviewed by the director yet.",
+      "sentence": "The report that the analyst submitted last week hasn't been reviewed by the director yet.",
+      "options": [
+        "Has the report that the analyst submitted last week been reviewed by the director yet?",
+        "Hasn't the report that the analyst submitted last week been reviewed by the director yet?",
+        "Does the report that the analyst submitted last week has been reviewed by the director yet?",
+        "The report that the analyst submitted last week been reviewed by the director yet?"
+      ],
+      "correctAnswer": "Has the report that the analyst submitted last week been reviewed by the director yet?",
+      "correctAnswerIndex": 0,
+      "hint": "Find the true subject ('the report') despite the embedded clause, then extract 'has' from 'hasn't' and keep the passive participle unchanged.",
+      "explanation": "This integrates embedded relative clauses, negative extraction, and present perfect passive - three separate Stage 11 skills combined into one sentence.",
+      "grammarRule": "Final Mastery: Complex Sentences with Multiple Clauses",
+      "questionType": "Yes/No Question"
+    },
+    {
+      "id": "qf_l200_practice_q1",
+      "level": 200,
+      "instruction": "Form a Wh- question asking about the bracketed information.",
+      "statement": "[The head chef], who has worked at the restaurant for over a decade, hasn't approved the new menu yet.",
+      "sentence": "[The head chef], who has worked at the restaurant for over a decade, hasn't approved the new menu yet.",
+      "options": [
+        "Who has approved the new menu yet?",
+        "Who did the head chef, who has worked at the restaurant for over a decade, hasn't approve the new menu yet?",
+        "Who hasn't approved the new menu yet?",
+        "The head chef, who has worked at the restaurant for over a decade, hasn't approved the new menu yet?"
+      ],
+      "correctAnswer": "Who hasn't approved the new menu yet?",
+      "correctAnswerIndex": 2,
+      "hint": "Ignore the embedded description of the chef - the bracket still marks the subject, so keep the negative with no do-support.",
+      "explanation": "This final capstone question combines subject-question formation, negative-auxiliary retention, and an embedded descriptive clause - a synthesis of skills from Stages 8, 9, and 11.",
+      "grammarRule": "Final Mastery Capstone: Complete Curriculum Integration",
+      "questionType": "Subject Question"
+    },
+    {
+      "id": "qf_l200_practice_q2",
+      "level": 200,
+      "instruction": "Form a Wh- question asking about the bracketed information.",
+      "statement": "By the time the auditors arrive next month, the finance team will have already corrected [every discrepancy] in the accounts.",
+      "sentence": "By the time the auditors arrive next month, the finance team will have already corrected [every discrepancy] in the accounts.",
+      "options": [
+        "What does the finance team will have already corrected in the accounts by the time the auditors arrive next month?",
+        "What will the finance team have already correct in the accounts by the time the auditors arrive next month?",
+        "By the time the auditors arrive next month, the finance team will have already corrected every discrepancy in the accounts?",
+        "What will the finance team have already corrected in the accounts by the time the auditors arrive next month?"
+      ],
+      "correctAnswer": "What will the finance team have already corrected in the accounts by the time the auditors arrive next month?",
+      "correctAnswerIndex": 3,
+      "hint": "Move the fronted 'by the time' clause to the end, move 'what' to the front, and invert only 'will' - the rest of the auxiliary chain stays together.",
+      "explanation": "This final review question combines future perfect, fronted time-clause repositioning, and WH-question formation - a synthesis of skills from Stage 6, Stage 7, and Stage 11, brought together in one comprehensive question.",
+      "grammarRule": "Final Mastery Capstone: Complete Curriculum Integration",
+      "questionType": "Wh- Question"
+    },
+    {
+      "id": "qf_l200_practice_q3",
+      "level": 200,
+      "instruction": "Form the negative question that best fits this situation.",
+      "statement": "The board members couldn't have anticipated how quickly the market would change, and they still haven't adjusted their long-term strategy.",
+      "sentence": "The board members couldn't have anticipated how quickly the market would change, and they still haven't adjusted their long-term strategy.",
+      "options": [
+        "Couldn't the board members have anticipated how quickly the market would change?",
+        "Could the board members have anticipated how quickly the market would change?",
+        "Does the board members couldn't have anticipated how quickly the market would change?",
+        "The board members couldn't have anticipated how quickly the market would change, and they still haven't adjusted their long-term strategy?"
+      ],
+      "correctAnswer": "Couldn't the board members have anticipated how quickly the market would change?",
+      "correctAnswerIndex": 0,
+      "hint": "Use the negative question 'couldn't' to express surprise or sympathy about something genuinely difficult to foresee - the final synthesis of everything this course has taught.",
+      "explanation": "This final question of the entire course combines modal + perfect construction with the negative-question confirmation function from Stage 9, closing the curriculum with a synthesis of mechanical accuracy and real communicative meaning - exactly what the 200 levels have built toward.",
+      "grammarRule": "Final Mastery Capstone: Complete Curriculum Integration",
+      "questionType": "Negative Question"
+    }
+  ]
+}
