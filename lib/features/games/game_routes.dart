@@ -138,6 +138,8 @@ import 'package:vowl/features/speaking/situation_speaking/presentation/pages/sit
 import 'package:vowl/features/speaking/situation_speaking/presentation/pages/situation_speaking_practice_screen.dart';
 import 'package:vowl/features/speaking/speak_opposite/presentation/pages/speak_opposite_learn_screen.dart';
 import 'package:vowl/features/speaking/speak_opposite/presentation/pages/speak_opposite_practice_screen.dart';
+import 'package:vowl/features/speaking/speak_synonym/presentation/pages/speak_synonym_learn_screen.dart';
+import 'package:vowl/features/speaking/speak_synonym/presentation/pages/speak_synonym_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -757,6 +759,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'speaksynonym') {
+          return fadeTransitionPage(
+            child: SpeakSynonymLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1155,6 +1163,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'speakopposite') {
           return fadeTransitionPage(
             child: SpeakOppositePracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'speaksynonym') {
+          return fadeTransitionPage(
+            child: SpeakSynonymPracticeScreen(level: level),
             state: state,
           );
         }
