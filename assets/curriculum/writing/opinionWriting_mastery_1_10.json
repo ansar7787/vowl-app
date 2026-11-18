@@ -1,0 +1,623 @@
+{
+  "gameType": "opinionWriting",
+  "phase": "mastery",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "WRT_OPINIONWRITING_L1_Q1",
+      "instruction": "Tap the sentence that is an opinion: something a person thinks or feels, not something you can check.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A classmate is describing the school cafeteria. Which sentence is an opinion?",
+      "options": [
+        "The cafeteria opens at 12:15 every day of the week.",
+        "The cafeteria pasta is the tastiest food in school.",
+        "There are twelve long tables in the main room.",
+        "Lunch costs three dollars for each student today."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Ask yourself: could someone measure or check this, or is it a personal judgement?",
+      "explanation": "'Tastiest' is a judgement; different people will disagree. The other sentences give times, prices and numbers that anyone can check. Facts can be checked; opinions express what someone thinks.",
+      "structureGuide": "Fact → Opinion",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L1_Q2",
+      "instruction": "Select the TWO sentences that are facts (they can be checked).",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Mia is talking about her city library. Which two things she says are facts?",
+      "options": [
+        "The library closes at 8 p.m. on weekdays.",
+        "The staff there are far too strict.",
+        "It has more than 20,000 books.",
+        "It is the nicest place in the city to study."
+      ],
+      "correctOrder": [
+        0,
+        2
+      ],
+      "hint": "A fact could be proved true or false by looking at a sign, a list or a record.",
+      "explanation": "Closing time and number of books can be checked. 'Nicest' and 'too strict' are judgements that depend on the speaker's feelings.",
+      "structureGuide": "Fact → Opinion",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L1_Q3",
+      "instruction": "Tap the sentence that states a fact rather than an opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "You are reading a travel blog about a train ride to the coast. Which sentence is a fact?",
+      "options": [
+        "The seats are far more comfortable than bus seats.",
+        "Nobody should miss the views from the left window.",
+        "It is the most relaxing way to travel.",
+        "The train takes about two hours to reach the coast."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Look for the sentence that would be the same no matter who was travelling.",
+      "explanation": "The journey time is something a timetable can confirm. The other three sentences (comfortable, should, most relaxing) express the blogger's personal view.",
+      "structureGuide": "Fact → Opinion",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L2_Q1",
+      "instruction": "Choose the sentence in which the writer clearly shares a personal opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Look carefully: a sentence can start with 'I' and still only report a fact. Which sentence gives a personal opinion?",
+      "options": [
+        "I read that most beaches here open in May.",
+        "In my opinion, summer is the best season for a holiday.",
+        "Many families travel in July and August.",
+        "Summer starts in June in many countries."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Check what comes after the opening words: a judgement, or information?",
+      "explanation": "'The best season' is a judgement. 'I read that...' only reports information the writer found, so it is not the writer's opinion even though it starts with 'I'.",
+      "structureGuide": "Opinion signal → Judgement",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L2_Q2",
+      "instruction": "Select the TWO phrases that could begin a sentence giving your own opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Complete the idea: '____ online classes are easier to fit into a busy week.'",
+      "options": [
+        "The timetable says that",
+        "I think",
+        "Last year's survey showed that",
+        "In my view"
+      ],
+      "correctOrder": [
+        1,
+        3
+      ],
+      "hint": "Which openings tell the reader 'this is what I believe'?",
+      "explanation": "'I think' and 'In my view' introduce a personal position. The other openings introduce information from someone else, so the sentence would sound like a report, not the writer's opinion.",
+      "structureGuide": "Opinion signal → Judgement",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L2_Q3",
+      "instruction": "Choose the message that gives an opinion about the film.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Ravi texts a friend after watching a film. Which message shares his opinion?",
+      "options": [
+        "The lead actor was also in a comedy series.",
+        "Honestly, I felt the ending was too rushed.",
+        "It came out in cinemas last spring.",
+        "The film is two hours and ten minutes long."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Which message tells you how Ravi felt, not what the film is?",
+      "explanation": "'Too rushed' is Ravi's judgement of the ending. Length, release date and cast are details anyone can look up.",
+      "structureGuide": "Opinion signal → Judgement",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L3_Q1",
+      "instruction": "Choose the sentence that uses a word showing the writer's judgement.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Four sentences describe a new bus stop. Which one includes a word of judgement?",
+      "options": [
+        "The new bus stop is convenient for everyone.",
+        "The new bus stop has a metal roof.",
+        "The new bus stop was built in March.",
+        "The new bus stop is 200 metres from the school."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Find the word that says whether something is good or bad, not what it is.",
+      "explanation": "'Convenient' says the stop is good for people, which is a judgement. Roof, distance and date simply describe or measure.",
+      "structureGuide": "Fact → Opinion",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L3_Q2",
+      "instruction": "Select the TWO words that express a judgement, not just a description.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A customer is describing a café. Which two words show what she thinks of it?",
+      "options": [
+        "overpriced",
+        "cosy",
+        "wooden",
+        "corner"
+      ],
+      "correctOrder": [
+        0,
+        1
+      ],
+      "hint": "Some words describe what you can see; others say how the writer rates it.",
+      "explanation": "'Cosy' and 'overpriced' tell us how the customer rates the place. 'Wooden' and 'corner' describe features without saying whether they are good or bad.",
+      "structureGuide": "Fact → Opinion",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L3_Q3",
+      "instruction": "Choose the sentence that shows a NEGATIVE opinion about the delivery service.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A customer is writing to a delivery company. Which sentence expresses a negative opinion?",
+      "options": [
+        "The parcel arrived faster than we had expected.",
+        "The delivery was frustrating because of the long delay.",
+        "The driver texted us just before arriving.",
+        "The package was left at the front door again."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Which sentence tells you the customer was unhappy?",
+      "explanation": "'Frustrating' clearly shows dissatisfaction. Leaving the parcel at the door is neutral, and the text message and the quick arrival are positive or neutral.",
+      "structureGuide": "Opinion → Reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L4_Q1",
+      "instruction": "Choose the sentence that gives an opinion about the topic.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Topic: Homework for young students. Which sentence gives an opinion about this topic?",
+      "options": [
+        "Homework is given on Mondays in Class 5.",
+        "Homework should be short for young students.",
+        "Some homework sheets have colourful pictures.",
+        "Many teachers check homework in the morning."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "The sentence must judge what should or should not happen, not just describe it.",
+      "explanation": "'Should be short' takes a position on homework. The remaining options describe how homework is currently given.",
+      "structureGuide": "Topic → Opinion",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L4_Q2",
+      "instruction": "Select the TWO sentences that give an opinion about the topic.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Topic: Cycling to work. Which two sentences give an opinion about it?",
+      "options": [
+        "A cycle lane runs along the river path.",
+        "Cycling to work is a great way to start the day.",
+        "The city should build wider bike lanes on the main road.",
+        "Helmets are sold at the shop near the station."
+      ],
+      "correctOrder": [
+        1,
+        2
+      ],
+      "hint": "You need a judgement about cycling, not a detail about where things are.",
+      "explanation": "Both correct sentences judge cycling ('great', 'should build'). The other two are facts about locations and shops.",
+      "structureGuide": "Topic → Opinion",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L4_Q3",
+      "instruction": "Choose the opinion that is about the topic.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Topic: Should the school have a swimming pool? All four sentences are opinions, but only one answers the topic. Which one?",
+      "options": [
+        "The school garden looks lovely in spring.",
+        "The lunch menu needs more vegetarian choices.",
+        "Our science teacher is the funniest person I know.",
+        "A swimming pool would give students a healthy way to exercise."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Reread the topic question, then ask which sentence actually answers it.",
+      "explanation": "Only the pool sentence responds to the question. The others are opinions about the garden, a teacher and the menu, so they are off topic.",
+      "structureGuide": "Topic → Opinion",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L5_Q1",
+      "instruction": "Choose the sentence that takes a clear position on the question.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Question: Should the town library open on Sundays? Which answer takes a clear side?",
+      "options": [
+        "The library should open on Sundays.",
+        "There are different views about when libraries open.",
+        "Sundays could be an option for the library, maybe.",
+        "People have many ideas about Sunday opening."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "A clear opinion says yes or no; it doesn't only mention that the question exists.",
+      "explanation": "The best sentence answers 'yes' directly. The alternatives avoid taking a side, so the reader still doesn't know what the writer thinks.",
+      "structureGuide": "Claim",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L5_Q2",
+      "instruction": "Select the TWO sentences that each take a clear side.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A class is discussing a four-day school week. Which two students state a clear position?",
+      "options": [
+        "Some countries are trying different school timetables.",
+        "A four-day week would give students more time to rest.",
+        "I disagree with a four-day week because the lessons would be too long.",
+        "The idea of a shorter week comes up often."
+      ],
+      "correctOrder": [
+        1,
+        2
+      ],
+      "hint": "Look for statements that say 'for' or 'against', not just 'this is being discussed'.",
+      "explanation": "The first two choose a side, one for and one against. The other two only mention the topic, so we can't tell what those students believe.",
+      "structureGuide": "Claim",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L5_Q3",
+      "instruction": "Choose the sentence that expresses the writer's idea most clearly.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A commuter posts: 'I sort of like the new bus route.' Which rewrite states the idea most clearly?",
+      "options": [
+        "There is a new bus route in town now.",
+        "Many people have opinions about the new bus route.",
+        "The new bus route has some things going for it.",
+        "The new bus route is better than the old one for commuters."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Which version tells the reader exactly what the writer thinks?",
+      "explanation": "Saying it is 'better than the old one' gives a specific judgement. The other versions are vague, or they only report that a route or opinions exist.",
+      "structureGuide": "Claim",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L6_Q1",
+      "instruction": "Choose the reason that best completes the opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'I like living near a park because ____.'",
+      "options": [
+        "Living near a park is something I like.",
+        "I can walk there and relax after work.",
+        "The park was built a long time ago.",
+        "My neighbours also live near the park."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "A reason should answer the question 'Why do you like it?'.",
+      "explanation": "Walking there and relaxing explains the writer's feeling. The first option just repeats the opinion, and the other two are facts that don't explain why.",
+      "structureGuide": "Opinion → Reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L6_Q2",
+      "instruction": "Choose the reason that best supports the opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Opinion: Reading before bed is better than watching TV.",
+      "options": [
+        "Reading is quiet and helps the mind slow down.",
+        "Many people own a television at home.",
+        "Books are sold in bookshops and online too.",
+        "Reading before bed is a habit I prefer."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Which sentence explains why reading is better, not just that it exists?",
+      "explanation": "The calming effect explains the 'better'. The other options mention TVs and bookshops without explaining, or restate the writer's preference.",
+      "structureGuide": "Opinion → Reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L6_Q3",
+      "instruction": "Select the TWO reasons that support the opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Opinion: Our office should have a quiet room.",
+      "options": [
+        "People can focus better on difficult tasks.",
+        "The office already has three meeting rooms.",
+        "Private phone calls are easier to make.",
+        "Rooms can be painted in many different colours."
+      ],
+      "correctOrder": [
+        0,
+        2
+      ],
+      "hint": "Which sentences say what a quiet room would do for the people who work there?",
+      "explanation": "Concentration and private calls are benefits of a quiet room. The number of existing rooms and paint colours don't explain why a quiet room is needed.",
+      "structureGuide": "Opinion → Reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L7_Q1",
+      "instruction": "Find the part of the sentence that gives the reason.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Our town should build more bike lanes because many cyclists feel unsafe on busy roads.' Which part is the reason?",
+      "options": [
+        "should build more bike lanes",
+        "many cyclists feel unsafe on busy roads",
+        "more bike lanes",
+        "our town should build more bike lanes"
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "The reason is the part that answers 'Why should the town do this?'.",
+      "explanation": "What comes after 'because' explains why. The part before it is the opinion itself.",
+      "structureGuide": "Opinion → Reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L7_Q2",
+      "instruction": "Choose the statement that is a reason for the opinion, not another opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Opinion: Schools should teach students how to cook.",
+      "options": [
+        "Cooking classes would be a great idea.",
+        "Some schools already have a kitchen room.",
+        "Schools should also teach gardening.",
+        "Students will need to feed themselves as adults."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "A reason gives a why. Another opinion only says more of what someone believes.",
+      "explanation": "Needing to feed themselves gives a real explanation. The other options restate the opinion, add a new opinion, or mention a fact that doesn't say why.",
+      "structureGuide": "Opinion → Reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L7_Q3",
+      "instruction": "Select the THREE statements that give reasons. One is only another opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A student argues that phones should stay in lockers during lessons.",
+      "options": [
+        "Notifications interrupt students' attention.",
+        "Class would be much better without phones.",
+        "Students can be tempted to text during lessons.",
+        "A phone can be used to cheat during a test."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        3
+      ],
+      "hint": "Which statements explain why phones cause problems in lessons?",
+      "explanation": "Interruptions, texting and cheating each explain a problem. 'Class would be much better without phones' repeats the opinion in different words without adding a reason.",
+      "structureGuide": "Opinion → Reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L8_Q1",
+      "instruction": "Select the TWO statements that SUPPORT the opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Opinion: Cities should have more public drinking fountains.",
+      "options": [
+        "Fountains let people refill bottles, not buy new ones.",
+        "Fountains cost a lot of money to install and clean.",
+        "Free water makes hot days easier for walkers.",
+        "Some fountains are rarely used and break down easily."
+      ],
+      "correctOrder": [
+        0,
+        2
+      ],
+      "hint": "Support means the statement helps the opinion. Sort out which ones argue for it.",
+      "explanation": "Refilling bottles and helping people in the heat argue for fountains. Cost and breakage are reasons against the idea.",
+      "structureGuide": "Opinion → Support / Oppose",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L8_Q2",
+      "instruction": "Tap the statement that argues AGAINST the opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Opinion: Shops should stay open late on Sundays.",
+      "options": [
+        "Late opening would bring more customers into town.",
+        "Families could shop together after a day out.",
+        "Staff would lose their only relaxed evening of the week.",
+        "Shoppers with weekday jobs could visit at a calmer time."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Three statements give benefits. One describes a cost.",
+      "explanation": "Losing a free evening is a downside for staff, so it opposes late opening. The others describe benefits that support it.",
+      "structureGuide": "Opinion → Support / Oppose",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L8_Q3",
+      "instruction": "Select the TWO statements that OPPOSE the opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Opinion: Every student should learn a musical instrument.",
+      "options": [
+        "Music practice helps students learn to focus better.",
+        "Lessons and instruments cost too much for some families.",
+        "Practice might take time away from other subjects.",
+        "Playing in a group builds teamwork and confidence."
+      ],
+      "correctOrder": [
+        1,
+        2
+      ],
+      "hint": "Find the two that give reasons why the idea might not work.",
+      "explanation": "Cost and time are drawbacks that argue against making it universal. Focus and teamwork are benefits that support the opinion.",
+      "structureGuide": "Opinion → Support / Oppose",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L9_Q1",
+      "instruction": "Choose the statement that does NOT relate to the opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Opinion: Our school should plant a vegetable garden. Three statements are reasons for it. Which one is off topic?",
+      "options": [
+        "Students could learn where food comes from.",
+        "Being outdoors is a nice break from lessons.",
+        "Fresh vegetables could be used in the canteen.",
+        "The school building was painted last summer."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Test each statement: does it help explain why a garden is a good idea?",
+      "explanation": "The paint job has nothing to do with a garden. The other three each give a benefit of growing vegetables at school.",
+      "structureGuide": "Opinion → Relevant reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L9_Q2",
+      "instruction": "Choose the statement that is a relevant reason for the opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Opinion: Buses should run more often at weekends.",
+      "options": [
+        "Many people without cars depend on buses to get to work and visit family.",
+        "Buses were first used in cities over a hundred years ago, long before most of today's routes were planned.",
+        "Our usual bus driver has a friendly smile and always says good morning to the passengers who board.",
+        "The bus station has a large clock above the entrance, which most passengers can see from the street."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Three statements are true, but only one explains why weekend buses matter.",
+      "explanation": "People who rely on buses need frequent weekend service. The other statements are true but have no link to how often buses run.",
+      "structureGuide": "Opinion → Relevant reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L9_Q3",
+      "instruction": "Select the TWO reasons that really support the opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Opinion: A company should offer free parking to its staff.",
+      "options": [
+        "The company has offices in three different cities.",
+        "Parking fees can take a large part of a low salary.",
+        "Many staff members enjoy walking at lunchtime.",
+        "Some employees have no other practical way to arrive on time."
+      ],
+      "correctOrder": [
+        1,
+        3
+      ],
+      "hint": "Ask whether each statement connects to the cost or need of parking.",
+      "explanation": "Need and cost are directly linked to parking. Office locations and lunchtime walks are true but don't explain why parking should be free.",
+      "structureGuide": "Opinion → Relevant reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L10_Q1",
+      "instruction": "Choose the sentence that gives both an opinion and a reason.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Which of these sentences contains an opinion AND a reason for it?",
+      "options": [
+        "Trains beat planes on short trips because there is no security queue.",
+        "Planes fly faster than trains over very long distances.",
+        "Trains leave from the central station every hour of the day.",
+        "Trains are better than planes for short trips overall."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Look for a sentence that says what the writer thinks and why.",
+      "explanation": "The first sentence says trains are better and explains why. The second gives only the opinion, and the last two are facts.",
+      "structureGuide": "Opinion → Reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L10_Q2",
+      "instruction": "Select the TWO sentences that would fit in a short paragraph supporting the opinion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Opinion: A neighbourhood should have a weekly farmers' market.",
+      "options": [
+        "The old town hall was rebuilt in the year 1990.",
+        "It gives neighbours a regular place to meet.",
+        "Supermarkets in the area open early in the morning.",
+        "Residents can buy fresh food from local growers."
+      ],
+      "correctOrder": [
+        1,
+        3
+      ],
+      "hint": "Choose sentences that would make a reader agree with the market idea.",
+      "explanation": "Fresh food and community contact are benefits of a market. The town hall and supermarket hours don't help the argument.",
+      "structureGuide": "Opinion → Relevant reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L10_Q3",
+      "instruction": "Put the sentences in the best order to make a short opinion text.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Arrange these four sentences into a clear opinion paragraph.",
+      "options": [
+        "That is why I think offices should welcome greenery.",
+        "I believe every office should have a plant or two.",
+        "For example, my team's area feels friendlier since we added a small fern.",
+        "Plants make a room feel fresher and more welcoming."
+      ],
+      "correctOrder": [
+        1,
+        3,
+        2,
+        0
+      ],
+      "hint": "Start with what the writer thinks. End with a sentence that returns to it.",
+      "explanation": "A clear text states the opinion first, gives a reason, shows a real example, then finishes by restating the opinion.",
+      "structureGuide": "Opinion → Reason → Example → Closing",
+      "phase": "mastery"
+    }
+  ]
+}

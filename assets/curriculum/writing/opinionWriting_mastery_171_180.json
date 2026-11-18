@@ -1,0 +1,617 @@
+{
+  "gameType": "opinionWriting",
+  "phase": "mastery",
+  "batchIndex": 18,
+  "levels": "171-180",
+  "quests": [
+    {
+      "id": "WRT_OPINIONWRITING_L171_Q1",
+      "instruction": "Choose the revision with the most logical transitions.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Digital receipts are convenient. Paper receipts fade and get lost. Digital receipts also cut paper waste. Some shoppers still want paper. Shops should offer both.'",
+      "options": [
+        "Digital receipts are convenient. Also, paper ones fade. Also, they cut waste. Also, some want paper. Also, shops should offer both.",
+        "Digital receipts are convenient. Therefore, paper ones fade and get lost. Moreover, they also cut paper waste. Nevertheless, some shoppers still want paper. Meanwhile, shops should offer both.",
+        "Digital receipts are convenient because paper ones fade and get lost. They also cut paper waste. However, some shoppers still want paper, so shops should offer both.",
+        "Digital receipts are convenient, but paper ones fade and get lost, but they also cut paper waste, and some shoppers want paper, so shops should offer both."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Each connector should show the real relationship between the ideas.",
+      "explanation": "This version uses 'because', 'also', 'however' and 'so' where they fit. The remaining options misuse connectors or repeat one word or chain clauses.",
+      "structureGuide": "Revision → Transitions",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L171_Q2",
+      "instruction": "Choose the best replacement for 'However'.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'The community fridge reduces food waste. However, it gives neighbours a way to share food.'",
+      "options": [
+        "The community fridge reduces food waste. Consequently, it gives neighbours a way to share food.",
+        "The community fridge reduces food waste. In contrast, it gives neighbours a way to share food.",
+        "The community fridge reduces food waste. Nevertheless, it gives neighbours a way to share food.",
+        "The community fridge reduces food waste. It also gives neighbours a way to share food."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Does the second sentence contrast, follow or add?",
+      "explanation": "The second sentence adds a second benefit, so 'also' is correct. 'However', 'in contrast' and 'consequently' suggest the wrong relationship.",
+      "structureGuide": "Revision → Transitions",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L171_Q3",
+      "instruction": "Choose the sentence with the most logical connector.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Staff language classes are expensive. They improve customer service.'",
+      "options": [
+        "Staff language classes are expensive, so they improve customer service.",
+        "Staff language classes are expensive, but they improve customer service.",
+        "Staff language classes are expensive, for example, they improve customer service.",
+        "Staff language classes are expensive, therefore they improve customer service."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "The second idea pushes against the first.",
+      "explanation": "'But' shows contrast between a cost and a benefit. The alternatives suggest cause or example, which doesn't fit.",
+      "structureGuide": "Revision → Transitions",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L172_Q1",
+      "instruction": "Put the sentences in the best order.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Repair the order of this paragraph about school assemblies.",
+      "options": [
+        "At present they last forty minutes, which is nearly a full lesson.",
+        "Students lose learning time, and the youngest children struggle to sit still.",
+        "Twenty minutes would keep the message while protecting lesson time.",
+        "Weekly assemblies should be shorter."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "hint": "Start with the claim, then the problem, then its effect, then the fix.",
+      "explanation": "The claim opens, the length is the evidence, the effect explains why it matters and the last sentence offers a solution.",
+      "structureGuide": "Claim → Evidence → Explanation → Recommendation",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L172_Q2",
+      "instruction": "Put the sentences in the best order.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Repair the order of this paragraph about benches.",
+      "options": [
+        "More benches would keep the street open to everyone.",
+        "Older shoppers often need to rest between shops.",
+        "One resident told the council she avoids the street because there is nowhere to sit.",
+        "Public benches should be added along the high street."
+      ],
+      "correctOrder": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "hint": "The example should follow the general reason it illustrates.",
+      "explanation": "The claim leads, the reason explains the need, the example supports the reason and the closing states the benefit.",
+      "structureGuide": "Claim → Reason → Example → Closing",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L172_Q3",
+      "instruction": "Put the sentences in the best order.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Repair the order of this paragraph about holiday homework.",
+      "options": [
+        "Families travel and rest during holidays, so fixed tasks cause stress.",
+        "Some teachers worry that students will forget material.",
+        "Holiday homework should be optional.",
+        "Optional reading lists and short review tasks can keep learning going without pressure."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "hint": "The reply to the worry should come after the worry.",
+      "explanation": "The claim opens, the reason follows, the objection comes next and the reply answers it.",
+      "structureGuide": "Claim → Reason → Objection → Reply",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L173_Q1",
+      "instruction": "Choose the sentence that completes the reasoning.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Late fees should be removed. Some families avoid the library because they owe fees. ____ Removing fees would bring them back.'",
+      "options": [
+        "Late fees are used by many kinds of libraries around the world.",
+        "Children in those families then lose access to books and study space.",
+        "Fees are usually charged for each day a book is overdue.",
+        "Some books are returned on time by their borrowers."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Fill the gap between 'avoid the library' and 'bring them back'.",
+      "explanation": "The best sentence explains the harm caused by avoiding the library. The others give facts unrelated to the harm.",
+      "structureGuide": "Reasoning → Missing Step",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L173_Q2",
+      "instruction": "Choose the best missing step.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Team-building days should be optional. Some staff have caring duties. ____'",
+      "options": [
+        "A fixed day can force them to choose between work and family responsibilities.",
+        "Companies usually plan such days several months in advance.",
+        "Activities on those days can include games and shared lunches.",
+        "Team-building days are held in many companies during the year."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Explain why caring duties matter to the claim.",
+      "explanation": "The best sentence links caring duties to the problem of compulsory days. The alternatives describe team-building days.",
+      "structureGuide": "Reasoning → Missing Step",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L173_Q3",
+      "instruction": "Choose the missing step.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Gyms should turn the music down. Loud music makes it hard to hear staff. ____ So members might get injured.'",
+      "options": [
+        "Injuries are painful and can take weeks to heal, and they may keep people away from the gym for months.",
+        "Gyms play many different types of music through their speakers, from pop to rock to dance tracks.",
+        "Some members prefer to work out to loud music, and many say it helps them to keep going.",
+        "Without clear instructions from staff, members may use equipment incorrectly."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "What connects 'can't hear staff' to 'injuries'?",
+      "explanation": "The correct sentence explains the link. The alternatives describe music, preferences or injuries without connecting them.",
+      "structureGuide": "Reasoning → Missing Step",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L174_Q1",
+      "instruction": "Choose the strongest revision of the conclusion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'That's why I think public benches are good, I guess.'",
+      "options": [
+        "Public benches are good, and I hope you agree with me, because they help many people in the town.",
+        "More public benches would let older and tired shoppers stay active in the town centre.",
+        "That is why benches are good for the high street, and that is my view on the matter as a resident.",
+        "In conclusion, benches are good, and that is what I think about them after looking at the evidence."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "A strong conclusion states the benefit clearly and confidently.",
+      "explanation": "This version restates the argument with a specific benefit. The others are weak or repeat.",
+      "structureGuide": "Conclusion → Revision",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L174_Q2",
+      "instruction": "Choose the best revision.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'To conclude, staff should also be given free parking.'",
+      "options": [
+        "In short, shorter meetings would return time to staff and improve results.",
+        "In short, meetings are long, and staff should have more perks.",
+        "To conclude, meetings and parking are both areas that need attention.",
+        "To conclude, shorter meetings help, and free parking would help too."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "The conclusion should return to the essay's argument.",
+      "explanation": "The correct revision returns to the main argument without adding a new one. The rest add an unrelated idea.",
+      "structureGuide": "Conclusion → Revision",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L174_Q3",
+      "instruction": "Choose the best conclusion.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'So that's it.'",
+      "options": [
+        "Taken together, the evidence shows that a four-week trial is a low-risk way to test the idea.",
+        "So, that is the end of my argument about the trial, and I hope it has been of some interest to you.",
+        "Anyway, that is all I have to say about the trial, so I will stop writing here and leave it there.",
+        "The trial idea is one that people might consider at some point, if they have the time and the budget."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Give the reader a final judgement.",
+      "explanation": "This conclusion gathers the evidence and recommends the trial. The others stop without conclusion.",
+      "structureGuide": "Conclusion → Revision",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L175_Q1",
+      "instruction": "Choose the most concise version.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'In my personal opinion, I think that it is my belief that meetings should possibly be shorter.'",
+      "options": [
+        "My personal belief is that meetings should be shorter.",
+        "I believe meetings should be shorter.",
+        "I think that in my view meetings ought to be shorter.",
+        "In my opinion, I believe that meetings should be shorter."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Remove repeated opinion markers.",
+      "explanation": "The correct version uses one opinion marker. The remaining options repeat.",
+      "structureGuide": "Revision → Concision",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L175_Q2",
+      "instruction": "Choose the best rewrite of the paragraph.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Bike racks should be added. Bike racks are useful. Bike racks help cyclists lock bikes. The town is nice. Cyclists would ride more.'",
+      "options": [
+        "Bike racks should be added. Bike racks are useful, and the town is nice. Cyclists would ride more.",
+        "Bike racks should be added, because bike racks are useful and help with bikes.",
+        "Bike racks should be added because they let cyclists lock their bikes safely and encourage more riding.",
+        "Bike racks, which are useful, should be added to the nice town."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Combine the useful ideas and drop the unnecessary ones.",
+      "explanation": "The best rewrite combines the claim, reason and result. The other choices keep repetition or irrelevant remarks.",
+      "structureGuide": "Revision → Concision",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L175_Q3",
+      "instruction": "Which sentence is unnecessary and could be cut without loss?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "'Staff language classes would improve customer service. Customers feel more welcome when staff speak their language. Language is a way to communicate. One shop reported fewer misunderstandings after its staff took basic classes.'",
+      "options": [
+        "Customers feel more welcome when staff speak their language.",
+        "One shop reported fewer misunderstandings after its staff took basic classes.",
+        "Language is a way to communicate.",
+        "Staff language classes would improve customer service."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "One sentence states something obvious that adds nothing to the argument.",
+      "explanation": "The definition of language adds nothing. The other sentences state the claim, a reason and evidence.",
+      "structureGuide": "Revision → Concision",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L176_Q1",
+      "instruction": "Which problem should be fixed first?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft: 'Cafés should ban laptops. Laptops are annoying, and everyone hates them. Sometimes they make noise. Also, my friend likes cafés.'",
+      "options": [
+        "There is no real reason or evidence supporting the claim.",
+        "The paragraph needs a longer title.",
+        "The sentences are slightly too short.",
+        "A comma is missing in the second sentence."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Fix the biggest weakness in the argument before small details.",
+      "explanation": "The draft lacks reasons and evidence. Punctuation, sentence length and titles are minor.",
+      "structureGuide": "Revision → Priority",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L176_Q2",
+      "instruction": "Which problem should be fixed first?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft: 'Later school start times would help students. Most students agree. Teachers agree too. Every study proves it.'",
+      "options": [
+        "The last sentence needs a full stop, and the paragraph would be clearer with a heading above it.",
+        "The second sentence should be longer, so that the paragraph has a better balance of sentence lengths.",
+        "The paragraph should use more formal words, because informal words make an argument sound weaker.",
+        "The claims about agreement and studies are unsupported and exaggerated."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Which problem affects the argument most?",
+      "explanation": "The paragraph makes strong claims without any evidence. The other problems are minor.",
+      "structureGuide": "Revision → Priority",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L176_Q3",
+      "instruction": "Which revision should the writer make first?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "An essay's third paragraph contradicts the thesis, and there are also small punctuation mistakes in paragraph two.",
+      "options": [
+        "Change 'however' to 'but' in paragraph two.",
+        "Add a comma after the first word of the introduction.",
+        "Replace 'good' with 'nice' in the conclusion.",
+        "Fix the contradiction between the thesis and the third paragraph."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Fix problems in the structure of the argument before small wording problems.",
+      "explanation": "A contradiction damages the whole argument. The other edits are small.",
+      "structureGuide": "Revision → Priority",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L177_Q1",
+      "instruction": "Choose the best rewrite.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft: 'Public benches are good. They are really good for old people and lots of others. Everyone loves benches. The council should put some in.'",
+      "options": [
+        "The council should add benches along the high street, because older shoppers often need to rest between shops.",
+        "The council should put in some benches, because benches are really good.",
+        "Benches are good for older people and everyone else, so the council should add some.",
+        "Everyone loves benches, so the council should add benches to the high street."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "The rewrite should be specific and supported.",
+      "explanation": "The best version states what, where and why. The other choices remain vague or unsupported.",
+      "structureGuide": "Revision → Multiple Problems",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L177_Q2",
+      "instruction": "Choose the best rewrite.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft: 'The disgusting new rota is a joke. It is rubbish and people hate it.'",
+      "options": [
+        "The new rota is a terrible idea that people dislike, and it was introduced without asking anyone.",
+        "The rota is bad for many staff in several ways, and it should be changed as soon as the manager can.",
+        "The new rota gives part-time staff most late shifts, which leaves them little time for study or family.",
+        "The new rota is unfair and upsets everyone in the team, which is why many people dread coming to work."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Replace insults with the actual problem.",
+      "explanation": "The best version explains the problem and its effect. The remaining options are still vague or emotional.",
+      "structureGuide": "Revision → Multiple Problems",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L177_Q3",
+      "instruction": "Choose the best rewrite.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft: 'Nobody enjoys team-building days, and they never work.'",
+      "options": [
+        "Very few people enjoy team-building days, and they rarely work, so the money would be better spent elsewhere.",
+        "Some staff find team-building days uncomfortable; offering optional activities could make them more useful.",
+        "Team-building days are generally unpopular and mostly ineffective, so the company should stop organising them.",
+        "Most staff dislike team-building days, so they should be cancelled and replaced with something more useful."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Remove absolute words and add a constructive idea.",
+      "explanation": "The best rewrite limits the claim and suggests improvement. The rest remain generalised or absolute.",
+      "structureGuide": "Revision → Multiple Problems",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L178_Q1",
+      "instruction": "Choose the best revision for parents.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Homework is stressful and useless, so we are scrapping it.'",
+      "options": [
+        "We are reviewing homework this term, aiming to keep tasks that support learning and reduce unnecessary stress.",
+        "Parents should understand that homework is being cancelled, and there is nothing more to discuss about it.",
+        "We are scrapping homework because it is stressful and useless, and we hope parents will support the change.",
+        "Homework is being changed, and parents do not need to worry, because the school has everything under control."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Parents need a measured, respectful explanation.",
+      "explanation": "The correct version explains the aim and stays respectful. The other choices are blunt or dismissive.",
+      "structureGuide": "Revision → Audience",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L178_Q2",
+      "instruction": "Choose the best revision for a manager.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Your lunch break policy is dumb.'",
+      "options": [
+        "I think the lunch break policy could be better, maybe, if somebody had the time to look into it.",
+        "The lunch break policy is not very good, and I think it should be looked at again by the management team.",
+        "Your lunch break policy has some problems, I think, and it might be a good idea to consider changing it.",
+        "I would like to raise a concern about the lunch break policy and suggest an alternative."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "The message should be polite, clear and constructive.",
+      "explanation": "The best version states a concern and offers a solution. The others are vague.",
+      "structureGuide": "Revision → Audience",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L178_Q3",
+      "instruction": "Choose the best revision for customers.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Original: 'Our app will be down as our servers are being upgraded.'",
+      "options": [
+        "Sorry, but the app will not work for a while, as the team needs to carry out some important work.",
+        "The app will be unavailable on Sunday from 2 to 4 a.m. while we improve its speed.",
+        "The app will be down while the servers are upgraded, and we are sorry for any trouble this may cause.",
+        "Server upgrades will affect the app on Sunday, so customers may find some features unavailable for a time."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "Customers want to know when, how long and why.",
+      "explanation": "The best version gives the time and reason in plain language. The other choices omit key details.",
+      "structureGuide": "Revision → Audience",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L179_Q1",
+      "instruction": "Which draft is stronger, and why?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft A: 'Public benches are important. Older people need them. They would use the high street more.' Draft B: 'The council should add benches along the high street. Last month, a resident told us she stopped shopping there because she could not rest between shops. Benches would help her and others stay active in the town centre.'",
+      "options": [
+        "Draft B, because it gives a specific example and explains its effect.",
+        "Draft A, because it is shorter and easier to read.",
+        "Draft B, because it contains more sentences.",
+        "Draft A, because it uses stronger emotional wording."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Compare specific evidence, explanation and clarity.",
+      "explanation": "Draft B has a clear claim, a real example and an explanation. Length and emotion don't make an argument stronger.",
+      "structureGuide": "Compare Drafts",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L179_Q2",
+      "instruction": "Which draft is stronger, and why?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft A: 'Working from home is always better. Everybody gets more done.' Draft B: 'Working from home can raise output for tasks that need focus, though teams should meet in person now and then.'",
+      "options": [
+        "Draft A, because it is shorter and gets straight to the point without any unnecessary detail.",
+        "Draft A, because it sounds more confident and does not use any careful or limiting words.",
+        "Draft B, because it is longer and gives the reader more words to think about than Draft A does.",
+        "Draft B, because its claim is specific and appropriately limited."
+      ],
+      "correctOrder": [
+        3
+      ],
+      "hint": "Look at how well each claim matches what can be shown.",
+      "explanation": "Draft B qualifies its claim and is more believable. Draft A overgeneralises.",
+      "structureGuide": "Compare Drafts",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L179_Q3",
+      "instruction": "Which draft suits a school board better, and why?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft A: 'The board's decision to cut music is a disgrace and shows contempt for our children.' Draft B: 'Cutting music will remove the only instrument lessons for 120 students, so I ask the board to consider a reduced programme instead.'",
+      "options": [
+        "Draft B, because it avoids mentioning the decision.",
+        "Draft A, because it is shorter and more direct.",
+        "Draft B, because it gives evidence and offers a respectful alternative.",
+        "Draft A, because it shows how strongly the writer feels."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Consider the audience and the writer's goal.",
+      "explanation": "The board is more likely to respond to evidence and a workable suggestion than to insults.",
+      "structureGuide": "Compare Drafts",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L180_Q1",
+      "instruction": "Choose the best revision of the paragraph.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft: 'Reading is good. It is really good for you. Everyone should read every day. It's the best thing ever. Schools should make reading time.'",
+      "options": [
+        "Schools should make reading time because reading is really good for everyone, and it is a lot of fun.",
+        "Schools should set aside twenty minutes of daily reading time because regular reading builds vocabulary and concentration.",
+        "Everyone should read every day, and schools should help with that by making sure that time is set aside.",
+        "Reading is the best thing ever, so schools should make time for it every day, and students will love it."
+      ],
+      "correctOrder": [
+        1
+      ],
+      "hint": "The best revision has a specific claim, a reason and no repetition.",
+      "explanation": "The correct version states what schools should do and why. The others repeat vague praise.",
+      "structureGuide": "Revision → Whole Paragraph",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L180_Q2",
+      "instruction": "Choose the best revision.",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "Draft: 'Casual dress should be allowed. Anyone who disagrees is stuck in the past. Casual clothes are comfy.'",
+      "options": [
+        "Casual dress should be allowed on days without client visits; staff report it is more comfortable, and clear guidelines can keep standards professional.",
+        "Casual dress should be allowed because it is comfy, and people who disagree are old-fashioned and out of touch.",
+        "Casual dress should be allowed because casual clothes are comfortable and good, and everyone is happier in them.",
+        "Casual dress should be allowed, and those who disagree should think again about how much clothes really matter."
+      ],
+      "correctOrder": [
+        0
+      ],
+      "hint": "Fix the tone, add a reason and acknowledge the other side.",
+      "explanation": "This version removes insults, adds a condition and answers a concern. The alternatives keep the insult or repeat.",
+      "structureGuide": "Revision → Whole Paragraph",
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_OPINIONWRITING_L180_Q3",
+      "instruction": "What is the most important improvement across the whole draft?",
+      "subtype": "opinionWriting",
+      "interactionType": "writing",
+      "prompt": "A draft essay has a vague thesis, a body paragraph with a claim but no evidence, a second body paragraph that repeats the first, and a conclusion that adds a new argument.",
+      "options": [
+        "Lengthen the conclusion with another argument, so that the essay finishes with the strongest point.",
+        "Change the font and layout of the title, so that the essay looks more professional on the page.",
+        "Clarify the thesis, then add evidence and new reasons in the body paragraphs.",
+        "Add more adjectives to the introduction, so that the reader is more impressed from the first line."
+      ],
+      "correctOrder": [
+        2
+      ],
+      "hint": "Fix the structure and content of the argument first.",
+      "explanation": "A clear thesis with evidence and distinct reasons improves the argument. Adjectives, layout and extra arguments in the conclusion don't fix the weaknesses.",
+      "structureGuide": "Revision → Priority",
+      "phase": "mastery"
+    }
+  ]
+}

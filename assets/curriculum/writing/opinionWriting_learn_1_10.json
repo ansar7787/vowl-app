@@ -1,0 +1,388 @@
+{
+  "gameType": "opinionWriting",
+  "phase": "learn",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "WRT_OPINIONWRITING_LEARN_L1_Q1",
+      "level": 1,
+      "phase": "learn",
+      "structureGuide": "Fact → Opinion",
+      "prompt": "A classmate is describing the school cafeteria. Which sentence is an opinion?",
+      "frameworkPillars": [
+        {
+          "label": "Claim Statement",
+          "role": "Takes a definitive stance on the topic.",
+          "example": "Schools should integrate practical life skills into the mandatory curriculum."
+        },
+        {
+          "label": "Logical Justification",
+          "role": "Provides the underlying reason why the claim is sound.",
+          "example": "Young adults face complex financial and civic obligations immediately upon graduation."
+        },
+        {
+          "label": "Signpost Transition",
+          "role": "Adding Support",
+          "signpost": "Furthermore",
+          "guidance": "Adds a complementary second reason to reinforce your claim."
+        },
+        {
+          "label": "Conclusive Synthesis",
+          "role": "Adding Support",
+          "signpost": "In addition",
+          "guidance": "Introduces supplementary factual evidence."
+        }
+      ],
+      "modelArgument": "In my view, schools should mandate financial literacy because teenagers need budgeting skills before entering college. Ultimately, early preparation prevents debt and empowers independent decisions.",
+      "signposts": [
+        "Furthermore",
+        "In addition"
+      ],
+      "teachingTip": "A persuasive opinion is never a bare preference. Pair your stance with a causal connector (\"because\", \"since\") and anchor the conclusion with a synthesis signpost.",
+      "explanation": "Effective argumentation relies on transparent signposts that tell the listener exactly how your reasons connect to your core position."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_LEARN_L2_Q1",
+      "level": 2,
+      "phase": "learn",
+      "structureGuide": "Opinion signal → Judgement",
+      "prompt": "Look carefully: a sentence can start with 'I' and still only report a fact. Which sentence gives a personal opinion?",
+      "frameworkPillars": [
+        {
+          "label": "Claim Statement",
+          "role": "Takes a definitive stance on the topic.",
+          "example": "Schools should integrate practical life skills into the mandatory curriculum."
+        },
+        {
+          "label": "Logical Justification",
+          "role": "Provides the underlying reason why the claim is sound.",
+          "example": "Young adults face complex financial and civic obligations immediately upon graduation."
+        },
+        {
+          "label": "Signpost Transition",
+          "role": "Showing Cause & Effect",
+          "signpost": "Consequently",
+          "guidance": "Demonstrates the logical outcome of a policy or decision."
+        },
+        {
+          "label": "Conclusive Synthesis",
+          "role": "Concession / Contrast",
+          "signpost": "On the other hand",
+          "guidance": "Acknowledges an opposing perspective before refuting it."
+        }
+      ],
+      "modelArgument": "In my view, schools should mandate financial literacy because teenagers need budgeting skills before entering college. Ultimately, early preparation prevents debt and empowers independent decisions.",
+      "signposts": [
+        "Consequently",
+        "On the other hand"
+      ],
+      "teachingTip": "A persuasive opinion is never a bare preference. Pair your stance with a causal connector (\"because\", \"since\") and anchor the conclusion with a synthesis signpost.",
+      "explanation": "Effective argumentation relies on transparent signposts that tell the listener exactly how your reasons connect to your core position."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_LEARN_L3_Q1",
+      "level": 3,
+      "phase": "learn",
+      "structureGuide": "Fact → Opinion",
+      "prompt": "Four sentences describe a new bus stop. Which one includes a word of judgement?",
+      "frameworkPillars": [
+        {
+          "label": "Claim Statement",
+          "role": "Takes a definitive stance on the topic.",
+          "example": "Schools should integrate practical life skills into the mandatory curriculum."
+        },
+        {
+          "label": "Logical Justification",
+          "role": "Provides the underlying reason why the claim is sound.",
+          "example": "Young adults face complex financial and civic obligations immediately upon graduation."
+        },
+        {
+          "label": "Signpost Transition",
+          "role": "Concession",
+          "signpost": "While it is true that",
+          "guidance": "Grants partial merit to the counter-argument to appear balanced."
+        },
+        {
+          "label": "Conclusive Synthesis",
+          "role": "Conclusion / Synthesis",
+          "signpost": "Ultimately",
+          "guidance": "Brings all arguments together into a decisive final judgement."
+        }
+      ],
+      "modelArgument": "In my view, schools should mandate financial literacy because teenagers need budgeting skills before entering college. Ultimately, early preparation prevents debt and empowers independent decisions.",
+      "signposts": [
+        "While it is true that",
+        "Ultimately"
+      ],
+      "teachingTip": "A persuasive opinion is never a bare preference. Pair your stance with a causal connector (\"because\", \"since\") and anchor the conclusion with a synthesis signpost.",
+      "explanation": "Effective argumentation relies on transparent signposts that tell the listener exactly how your reasons connect to your core position."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_LEARN_L4_Q1",
+      "level": 4,
+      "phase": "learn",
+      "structureGuide": "Topic → Opinion",
+      "prompt": "Topic: Homework for young students. Which sentence gives an opinion about this topic?",
+      "frameworkPillars": [
+        {
+          "label": "Claim Statement",
+          "role": "Takes a definitive stance on the topic.",
+          "example": "Schools should integrate practical life skills into the mandatory curriculum."
+        },
+        {
+          "label": "Logical Justification",
+          "role": "Provides the underlying reason why the claim is sound.",
+          "example": "Young adults face complex financial and civic obligations immediately upon graduation."
+        },
+        {
+          "label": "Signpost Transition",
+          "role": "Stating Position",
+          "signpost": "In my view",
+          "guidance": "Opens a formal opinion clearly and directly."
+        },
+        {
+          "label": "Conclusive Synthesis",
+          "role": "Primary Argument",
+          "signpost": "First and foremost",
+          "guidance": "Introduces your strongest opening point."
+        }
+      ],
+      "modelArgument": "In my view, schools should mandate financial literacy because teenagers need budgeting skills before entering college. Ultimately, early preparation prevents debt and empowers independent decisions.",
+      "signposts": [
+        "In my view",
+        "First and foremost"
+      ],
+      "teachingTip": "A persuasive opinion is never a bare preference. Pair your stance with a causal connector (\"because\", \"since\") and anchor the conclusion with a synthesis signpost.",
+      "explanation": "Effective argumentation relies on transparent signposts that tell the listener exactly how your reasons connect to your core position."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_LEARN_L5_Q1",
+      "level": 5,
+      "phase": "learn",
+      "structureGuide": "Claim",
+      "prompt": "Question: Should the town library open on Sundays? Which answer takes a clear side?",
+      "frameworkPillars": [
+        {
+          "label": "Claim Statement",
+          "role": "Takes a definitive stance on the topic.",
+          "example": "Schools should integrate practical life skills into the mandatory curriculum."
+        },
+        {
+          "label": "Logical Justification",
+          "role": "Provides the underlying reason why the claim is sound.",
+          "example": "Young adults face complex financial and civic obligations immediately upon graduation."
+        },
+        {
+          "label": "Signpost Transition",
+          "role": "Adding Support",
+          "signpost": "Furthermore",
+          "guidance": "Adds a complementary second reason to reinforce your claim."
+        },
+        {
+          "label": "Conclusive Synthesis",
+          "role": "Adding Support",
+          "signpost": "In addition",
+          "guidance": "Introduces supplementary factual evidence."
+        }
+      ],
+      "modelArgument": "In my view, schools should mandate financial literacy because teenagers need budgeting skills before entering college. Ultimately, early preparation prevents debt and empowers independent decisions.",
+      "signposts": [
+        "Furthermore",
+        "In addition"
+      ],
+      "teachingTip": "A persuasive opinion is never a bare preference. Pair your stance with a causal connector (\"because\", \"since\") and anchor the conclusion with a synthesis signpost.",
+      "explanation": "Effective argumentation relies on transparent signposts that tell the listener exactly how your reasons connect to your core position."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_LEARN_L6_Q1",
+      "level": 6,
+      "phase": "learn",
+      "structureGuide": "Opinion → Reason",
+      "prompt": "'I like living near a park because ____.'",
+      "frameworkPillars": [
+        {
+          "label": "Claim Statement",
+          "role": "Takes a definitive stance on the topic.",
+          "example": "Schools should integrate practical life skills into the mandatory curriculum."
+        },
+        {
+          "label": "Logical Justification",
+          "role": "Provides the underlying reason why the claim is sound.",
+          "example": "Young adults face complex financial and civic obligations immediately upon graduation."
+        },
+        {
+          "label": "Signpost Transition",
+          "role": "Showing Cause & Effect",
+          "signpost": "Consequently",
+          "guidance": "Demonstrates the logical outcome of a policy or decision."
+        },
+        {
+          "label": "Conclusive Synthesis",
+          "role": "Concession / Contrast",
+          "signpost": "On the other hand",
+          "guidance": "Acknowledges an opposing perspective before refuting it."
+        }
+      ],
+      "modelArgument": "In my view, schools should mandate financial literacy because teenagers need budgeting skills before entering college. Ultimately, early preparation prevents debt and empowers independent decisions.",
+      "signposts": [
+        "Consequently",
+        "On the other hand"
+      ],
+      "teachingTip": "A persuasive opinion is never a bare preference. Pair your stance with a causal connector (\"because\", \"since\") and anchor the conclusion with a synthesis signpost.",
+      "explanation": "Effective argumentation relies on transparent signposts that tell the listener exactly how your reasons connect to your core position."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_LEARN_L7_Q1",
+      "level": 7,
+      "phase": "learn",
+      "structureGuide": "Opinion → Reason",
+      "prompt": "'Our town should build more bike lanes because many cyclists feel unsafe on busy roads.' Which part is the reason?",
+      "frameworkPillars": [
+        {
+          "label": "Claim Statement",
+          "role": "Takes a definitive stance on the topic.",
+          "example": "Schools should integrate practical life skills into the mandatory curriculum."
+        },
+        {
+          "label": "Logical Justification",
+          "role": "Provides the underlying reason why the claim is sound.",
+          "example": "Young adults face complex financial and civic obligations immediately upon graduation."
+        },
+        {
+          "label": "Signpost Transition",
+          "role": "Concession",
+          "signpost": "While it is true that",
+          "guidance": "Grants partial merit to the counter-argument to appear balanced."
+        },
+        {
+          "label": "Conclusive Synthesis",
+          "role": "Conclusion / Synthesis",
+          "signpost": "Ultimately",
+          "guidance": "Brings all arguments together into a decisive final judgement."
+        }
+      ],
+      "modelArgument": "In my view, schools should mandate financial literacy because teenagers need budgeting skills before entering college. Ultimately, early preparation prevents debt and empowers independent decisions.",
+      "signposts": [
+        "While it is true that",
+        "Ultimately"
+      ],
+      "teachingTip": "A persuasive opinion is never a bare preference. Pair your stance with a causal connector (\"because\", \"since\") and anchor the conclusion with a synthesis signpost.",
+      "explanation": "Effective argumentation relies on transparent signposts that tell the listener exactly how your reasons connect to your core position."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_LEARN_L8_Q1",
+      "level": 8,
+      "phase": "learn",
+      "structureGuide": "Opinion → Support / Oppose",
+      "prompt": "Opinion: Cities should have more public drinking fountains.",
+      "frameworkPillars": [
+        {
+          "label": "Claim Statement",
+          "role": "Takes a definitive stance on the topic.",
+          "example": "Schools should integrate practical life skills into the mandatory curriculum."
+        },
+        {
+          "label": "Logical Justification",
+          "role": "Provides the underlying reason why the claim is sound.",
+          "example": "Young adults face complex financial and civic obligations immediately upon graduation."
+        },
+        {
+          "label": "Signpost Transition",
+          "role": "Stating Position",
+          "signpost": "In my view",
+          "guidance": "Opens a formal opinion clearly and directly."
+        },
+        {
+          "label": "Conclusive Synthesis",
+          "role": "Primary Argument",
+          "signpost": "First and foremost",
+          "guidance": "Introduces your strongest opening point."
+        }
+      ],
+      "modelArgument": "In my view, schools should mandate financial literacy because teenagers need budgeting skills before entering college. Ultimately, early preparation prevents debt and empowers independent decisions.",
+      "signposts": [
+        "In my view",
+        "First and foremost"
+      ],
+      "teachingTip": "A persuasive opinion is never a bare preference. Pair your stance with a causal connector (\"because\", \"since\") and anchor the conclusion with a synthesis signpost.",
+      "explanation": "Effective argumentation relies on transparent signposts that tell the listener exactly how your reasons connect to your core position."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_LEARN_L9_Q1",
+      "level": 9,
+      "phase": "learn",
+      "structureGuide": "Opinion → Relevant reason",
+      "prompt": "Opinion: Our school should plant a vegetable garden. Three statements are reasons for it. Which one is off topic?",
+      "frameworkPillars": [
+        {
+          "label": "Claim Statement",
+          "role": "Takes a definitive stance on the topic.",
+          "example": "Schools should integrate practical life skills into the mandatory curriculum."
+        },
+        {
+          "label": "Logical Justification",
+          "role": "Provides the underlying reason why the claim is sound.",
+          "example": "Young adults face complex financial and civic obligations immediately upon graduation."
+        },
+        {
+          "label": "Signpost Transition",
+          "role": "Adding Support",
+          "signpost": "Furthermore",
+          "guidance": "Adds a complementary second reason to reinforce your claim."
+        },
+        {
+          "label": "Conclusive Synthesis",
+          "role": "Adding Support",
+          "signpost": "In addition",
+          "guidance": "Introduces supplementary factual evidence."
+        }
+      ],
+      "modelArgument": "In my view, schools should mandate financial literacy because teenagers need budgeting skills before entering college. Ultimately, early preparation prevents debt and empowers independent decisions.",
+      "signposts": [
+        "Furthermore",
+        "In addition"
+      ],
+      "teachingTip": "A persuasive opinion is never a bare preference. Pair your stance with a causal connector (\"because\", \"since\") and anchor the conclusion with a synthesis signpost.",
+      "explanation": "Effective argumentation relies on transparent signposts that tell the listener exactly how your reasons connect to your core position."
+    },
+    {
+      "id": "WRT_OPINIONWRITING_LEARN_L10_Q1",
+      "level": 10,
+      "phase": "learn",
+      "structureGuide": "Opinion → Reason",
+      "prompt": "Which of these sentences contains an opinion AND a reason for it?",
+      "frameworkPillars": [
+        {
+          "label": "Claim Statement",
+          "role": "Takes a definitive stance on the topic.",
+          "example": "Schools should integrate practical life skills into the mandatory curriculum."
+        },
+        {
+          "label": "Logical Justification",
+          "role": "Provides the underlying reason why the claim is sound.",
+          "example": "Young adults face complex financial and civic obligations immediately upon graduation."
+        },
+        {
+          "label": "Signpost Transition",
+          "role": "Showing Cause & Effect",
+          "signpost": "Consequently",
+          "guidance": "Demonstrates the logical outcome of a policy or decision."
+        },
+        {
+          "label": "Conclusive Synthesis",
+          "role": "Concession / Contrast",
+          "signpost": "On the other hand",
+          "guidance": "Acknowledges an opposing perspective before refuting it."
+        }
+      ],
+      "modelArgument": "In my view, schools should mandate financial literacy because teenagers need budgeting skills before entering college. Ultimately, early preparation prevents debt and empowers independent decisions.",
+      "signposts": [
+        "Consequently",
+        "On the other hand"
+      ],
+      "teachingTip": "A persuasive opinion is never a bare preference. Pair your stance with a causal connector (\"because\", \"since\") and anchor the conclusion with a synthesis signpost.",
+      "explanation": "Effective argumentation relies on transparent signposts that tell the listener exactly how your reasons connect to your core position."
+    }
+  ]
+}
