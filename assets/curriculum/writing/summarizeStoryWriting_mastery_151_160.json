@@ -1,0 +1,788 @@
+{
+  "gameType": "summarizeStoryWriting",
+  "phase": "mastery",
+  "batchIndex": 16,
+  "levels": "151-160",
+  "quests": [
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L151_Q1",
+      "instruction": "Choose the three events the story cannot do without, and put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "On the morning of the regional debate, Jonna's team found the school gate locked, because the caretaker had changed the entry code the night before. Jonna phoned the office, and the secretary walked out to let them in. A pigeon knocked over the registration table inside, but the judges arrived and the debate started on time, with Jonna's team going first.",
+      "options": [
+        "Jonna phoned the office and the secretary came out to let them in.",
+        "The caretaker had changed the gate code the night before, so Jonna's team was locked out.",
+        "A pigeon knocked over the registration table inside the school.",
+        "The debate started on time with Jonna's team going first."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        3
+      ],
+      "hint": "Ask whether the story would still make sense if the event were deleted.",
+      "explanation": "The pigeon's mischief caused no delay and changed nothing that followed. The story depends on the changed code, the phone call that got the team in, and the on-time start.",
+      "storyKeyEvents": [
+        "The caretaker had changed the gate code the night before, so Jonna's team was locked out.",
+        "Jonna phoned the office and the secretary came out to let them in.",
+        "The debate started on time with Jonna's team going first."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L151_Q2",
+      "instruction": "One tempting event could be deleted without breaking the story. Arrange the other three.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Tomasz needed his report printed before his train. The office printer was out of toner, so he took the file to the copy shop across the road, where the owner printed it in ten minutes. The owner missed a call from a courier because of it and had to phone back later. Tomasz caught his train with the report in his bag.",
+      "options": [
+        "Tomasz took the file to the copy shop across the road, where it was printed in ten minutes.",
+        "The copy shop owner missed a courier's call and had to phone back later.",
+        "Tomasz caught his train with the report in his bag.",
+        "The office printer was out of toner."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        2
+      ],
+      "hint": "A real consequence for someone else may still be irrelevant to the main story.",
+      "explanation": "The missed call really happened, but it affects the shop owner, not Tomasz's problem or his train. The main chain is the empty toner, the copy shop, and the train.",
+      "storyKeyEvents": [
+        "The office printer was out of toner.",
+        "Tomasz took the file to the copy shop across the road, where it was printed in ten minutes.",
+        "Tomasz caught his train with the report in his bag."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L151_Q3",
+      "instruction": "Which three events are needed for the ending to make sense? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "A council survey of the park found that the pond was leaking into a nearby cellar. An engineer discovered that the pond's liner had cracked, and learned that the park had once been a quarry. The council relined the pond, and the cellar stayed dry.",
+      "options": [
+        "The council's survey found the pond leaking into a nearby cellar.",
+        "An engineer discovered that the pond's liner had cracked.",
+        "The engineer learned that the park had once been a quarry.",
+        "The council relined the pond and the cellar stayed dry."
+      ],
+      "correctOrder": [
+        0,
+        1,
+        3
+      ],
+      "hint": "Interesting facts aren't always needed to explain what happens.",
+      "explanation": "The quarry history is fascinating but has no bearing on the leak or the repair. The story runs from the survey, to the cracked liner, to the relined pond.",
+      "storyKeyEvents": [
+        "The council's survey found the pond leaking into a nearby cellar.",
+        "An engineer discovered that the pond's liner had cracked.",
+        "The council relined the pond and the cellar stayed dry."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L152_Q1",
+      "instruction": "One tempting event could be deleted without breaking the story. Arrange the other three.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Sofia's team had ten days to translate a three-hundred-page manual. Their software was licensed for only two users, so they took turns on two computers and worked in shifts. It was the longest manual the agency had ever handled. They delivered on the ninth day.",
+      "options": [
+        "It was the longest manual the agency had ever handled.",
+        "The team delivered the translation on the ninth day.",
+        "Because the software was licensed for only two users, they worked in shifts on two computers.",
+        "Sofia's team had ten days to translate a three-hundred-page manual."
+      ],
+      "correctOrder": [
+        3,
+        2,
+        1
+      ],
+      "hint": "An impressive fact can be memorable and still not carry the plot.",
+      "explanation": "Being the longest ever adds interest but doesn't explain the shifts or the delivery. The two-user licence, on the other hand, is why the team had to work in shifts.",
+      "storyKeyEvents": [
+        "Sofia's team had ten days to translate a three-hundred-page manual.",
+        "Because the software was licensed for only two users, they worked in shifts on two computers.",
+        "The team delivered the translation on the ninth day."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L152_Q2",
+      "instruction": "Which three events are needed for the ending to make sense? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The lights in the village hall flickered during the quiz night. The caretaker found that the main fuse had blown because too many heaters were plugged into one socket. He unplugged two heaters and replaced the fuse, and the lights steadied. The hall's wiring had been installed in the 1970s.",
+      "options": [
+        "The lights in the village hall flickered during the quiz night.",
+        "The hall's wiring had been installed in the 1970s.",
+        "The caretaker found that the main fuse had blown because too many heaters were on one socket.",
+        "He unplugged two heaters and replaced the fuse, and the lights steadied."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        3
+      ],
+      "hint": "Something that sounds like a cause isn't one unless the story treats it as one.",
+      "explanation": "The story gives the overloaded socket as the cause, and the age of the wiring is only background. The fix also addresses the heaters, not the wiring.",
+      "storyKeyEvents": [
+        "The lights in the village hall flickered during the quiz night.",
+        "The caretaker found that the main fuse had blown because too many heaters were on one socket.",
+        "He unplugged two heaters and replaced the fuse, and the lights steadied."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L152_Q3",
+      "instruction": "One tempting event could be deleted without breaking the story. Arrange the other three.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Kayode's laptop crashed repeatedly. A friend in IT suggested reinstalling the whole system, but Kayode first checked the storage and found it almost full. He deleted old videos, and the crashes stopped.",
+      "options": [
+        "Kayode deleted old videos and the crashes stopped.",
+        "Kayode checked the storage and found it almost full.",
+        "A friend in IT suggested reinstalling the whole system.",
+        "Kayode's laptop crashed repeatedly."
+      ],
+      "correctOrder": [
+        3,
+        1,
+        0
+      ],
+      "hint": "Advice that wasn't followed doesn't drive the story forward.",
+      "explanation": "The suggestion to reinstall was never carried out, so it plays no part in the solution. What fixed things was checking the storage and clearing the videos.",
+      "storyKeyEvents": [
+        "Kayode's laptop crashed repeatedly.",
+        "Kayode checked the storage and found it almost full.",
+        "Kayode deleted old videos and the crashes stopped."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L153_Q1",
+      "instruction": "Choose the three events the story cannot do without, and put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Anders took the 9:15 train to the conference. It left the first station twenty minutes late because of a signalling fault, but the driver made up the time on the fast section. Anders arrived at 11:00 as planned, checked in, and gave his talk at noon.",
+      "options": [
+        "The train left the first station twenty minutes late because of a signalling fault.",
+        "Anders arrived at 11:00 as planned and checked in.",
+        "Anders took the 9:15 train to the conference.",
+        "Anders gave his talk at noon."
+      ],
+      "correctOrder": [
+        2,
+        1,
+        3
+      ],
+      "hint": "A problem that was later made up for may not matter to the ending.",
+      "explanation": "The delay was recovered before Anders arrived on time, so it changes nothing about his talk. The story works without it.",
+      "storyKeyEvents": [
+        "Anders took the 9:15 train to the conference.",
+        "Anders arrived at 11:00 as planned and checked in.",
+        "Anders gave his talk at noon."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L153_Q2",
+      "instruction": "One tempting event could be deleted without breaking the story. Arrange the other three.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Brigid painted the first version of the club's banner in red, but the letters were uneven, so she redid it completely in blue. She hung the blue banner on Friday morning, and members said it was easier to read from the road.",
+      "options": [
+        "Brigid painted the first version of the banner in red.",
+        "Members said the banner was easier to read from the road.",
+        "Brigid redid the club's banner completely in blue because the letters were uneven.",
+        "Brigid hung the blue banner on Friday morning."
+      ],
+      "correctOrder": [
+        2,
+        3,
+        1
+      ],
+      "hint": "Ask whether the discarded version is part of the final result.",
+      "explanation": "The red banner was thrown away, and the story's outcome concerns the blue one. Redoing it is already covered by the first statement.",
+      "storyKeyEvents": [
+        "Brigid redid the club's banner completely in blue because the letters were uneven.",
+        "Brigid hung the blue banner on Friday morning.",
+        "Members said the banner was easier to read from the road."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L153_Q3",
+      "instruction": "Which three events are needed for the ending to make sense? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Ewa's presentation was moved from the seminar room to the hall at the last minute. One student arrived late, but slipped in quietly and missed nothing. Ewa's slides ran without problems, and the audience stayed for questions.",
+      "options": [
+        "Ewa's slides ran without problems.",
+        "Ewa's presentation was moved to the hall at the last minute.",
+        "One student arrived late but slipped in quietly and missed nothing.",
+        "The audience stayed for questions."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        3
+      ],
+      "hint": "Did the latecomer change anything for the presentation or its outcome?",
+      "explanation": "The latecomer missed nothing and the presentation went on as before, so the event adds nothing. The story is the move, the smooth slides, and the questions.",
+      "storyKeyEvents": [
+        "Ewa's presentation was moved to the hall at the last minute.",
+        "Ewa's slides ran without problems.",
+        "The audience stayed for questions."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L154_Q1",
+      "instruction": "Choose the three events the story cannot do without, and put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Ilona's bus to the interview broke down halfway, so she walked the last two kilometres and arrived ten minutes early. The receptionist, who happened to be an old school friend, recognised her and offered a glass of water. The panel was impressed by her punctuality despite the breakdown, and they offered her the job.",
+      "options": [
+        "Ilona's bus to the interview broke down halfway.",
+        "The panel was impressed by her punctuality and offered her the job.",
+        "The receptionist turned out to be Ilona's old school friend.",
+        "Ilona walked the last two kilometres and arrived ten minutes early."
+      ],
+      "correctOrder": [
+        0,
+        3,
+        1
+      ],
+      "hint": "A striking coincidence still has to affect something to belong.",
+      "explanation": "The friendly receptionist is a nice coincidence but has no effect on the panel's decision. The decision follows from the breakdown, the walk, and her punctuality.",
+      "storyKeyEvents": [
+        "Ilona's bus to the interview broke down halfway.",
+        "Ilona walked the last two kilometres and arrived ten minutes early.",
+        "The panel was impressed by her punctuality and offered her the job."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L154_Q2",
+      "instruction": "One tempting event could be deleted without breaking the story. Arrange the other three.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Rufus needed to move a sofa to the third floor. The stairwell was too narrow, so he hired a lift-hoist and took it in through the window. Halfway up, a gust of wind swung the sofa, but the operator steadied it at once. The sofa reached the third floor at two.",
+      "options": [
+        "A gust of wind swung the sofa halfway up, but the operator steadied it.",
+        "The stairwell was too narrow for the sofa.",
+        "Rufus hired a lift-hoist and took the sofa in through the window.",
+        "The sofa reached the third floor at two."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        3
+      ],
+      "hint": "A dramatic moment isn't necessarily a turning point.",
+      "explanation": "The gust was dealt with at once and left the sofa's journey unchanged. The story depends on the narrow stairwell, the hoist, and the arrival.",
+      "storyKeyEvents": [
+        "The stairwell was too narrow for the sofa.",
+        "Rufus hired a lift-hoist and took the sofa in through the window.",
+        "The sofa reached the third floor at two."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L154_Q3",
+      "instruction": "Which three events are needed for the ending to make sense? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Two groups booked the community centre's main hall for the same Saturday. The manager offered one of them the smaller hall and a free hour on Sunday. The Sunday caretaker had to change his shift because of this. Both groups met, and the arrangement was repeated the next month.",
+      "options": [
+        "The manager offered one group the smaller hall and a free hour on Sunday.",
+        "The Sunday caretaker had to change his shift.",
+        "Both groups met, and the arrangement was repeated the next month.",
+        "Two groups booked the main hall for the same Saturday."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        2
+      ],
+      "hint": "Someone else was affected. Is that person part of how the clash was solved?",
+      "explanation": "The caretaker's shift change is a side effect on someone outside the problem and its solution. The clash, the offer, and the repeated arrangement carry the story.",
+      "storyKeyEvents": [
+        "Two groups booked the main hall for the same Saturday.",
+        "The manager offered one group the smaller hall and a free hour on Sunday.",
+        "Both groups met, and the arrangement was repeated the next month."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L155_Q1",
+      "instruction": "One tempting event could be deleted without breaking the story. Arrange the other three.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Petra's job was to check the labels on a shipment of paint tins. She found that three pallets had the wrong colour code and sent a photo to the supplier. The supplier collected the pallets and replaced them within two days. Petra also learned that the supplier had been founded by two brothers in 1961.",
+      "options": [
+        "The supplier collected the pallets and replaced them within two days.",
+        "Petra found three pallets with the wrong colour code.",
+        "Petra sent a photo of the mistake to the supplier.",
+        "The supplier had been founded by two brothers in 1961."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0
+      ],
+      "hint": "A fact learned along the way may be interesting without being part of the fix.",
+      "explanation": "The supplier's history has no effect on the mislabelled pallets. The story is the discovery, the photo, and the replacement.",
+      "storyKeyEvents": [
+        "Petra found three pallets with the wrong colour code.",
+        "Petra sent a photo of the mistake to the supplier.",
+        "The supplier collected the pallets and replaced them within two days."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L155_Q2",
+      "instruction": "Choose the three events the story cannot do without, and put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The chess club, with twelve new sets from a sponsor, held its first open evening. Only fifteen people came, so the organisers gave a short lesson to each of them. Five joined the club that night. The sponsor's donation was the largest the club had ever received.",
+      "options": [
+        "Five people joined the club that night.",
+        "Only fifteen people came, so the organisers gave each a short lesson.",
+        "The sponsor's donation was the largest the club had ever received.",
+        "The chess club held its first open evening with its new sets."
+      ],
+      "correctOrder": [
+        3,
+        1,
+        0
+      ],
+      "hint": "A record can be worth noting without changing what happens.",
+      "explanation": "The size of the donation doesn't explain the lessons or the new members. The story runs from the open evening, to the lessons, to five joiners.",
+      "storyKeyEvents": [
+        "The chess club held its first open evening with its new sets.",
+        "Only fifteen people came, so the organisers gave each a short lesson.",
+        "Five people joined the club that night."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L155_Q3",
+      "instruction": "Which three events are needed for the ending to make sense? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The lunchtime queue at Anita's café had grown. She noticed that the card machine froze whenever the Wi-Fi was busy, so she connected it to a separate line. Payments took a few seconds again. A new menu had also been printed that week.",
+      "options": [
+        "The lunchtime queue at Anita's café had grown.",
+        "Anita noticed that the card machine froze whenever the Wi-Fi was busy.",
+        "A new menu had also been printed that week.",
+        "She connected the machine to a separate line and payments took a few seconds again."
+      ],
+      "correctOrder": [
+        0,
+        1,
+        3
+      ],
+      "hint": "Something else changed that week. Did it touch the slow payments?",
+      "explanation": "The new menu is unrelated to the frozen card machine, which the story presents as the real cause of the queue. The fix targets the connection, not the menu.",
+      "storyKeyEvents": [
+        "The lunchtime queue at Anita's café had grown.",
+        "Anita noticed that the card machine froze whenever the Wi-Fi was busy.",
+        "She connected the machine to a separate line and payments took a few seconds again."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L156_Q1",
+      "instruction": "One tempting event could be deleted without breaking the story. Arrange the other three.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Georg's landlord wanted to raise the rent by eight per cent. A neighbour said Georg should just move out, but Georg looked up local rents and found that similar flats cost more. He showed the landlord the figures, and they agreed on a three per cent rise.",
+      "options": [
+        "Georg looked up local rents and found that similar flats cost more.",
+        "Georg's landlord wanted to raise the rent by eight per cent.",
+        "Georg showed the landlord the figures and they agreed on a three per cent rise.",
+        "A neighbour said Georg should just move out."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        2
+      ],
+      "hint": "A neighbour's suggestion doesn't count unless it is acted upon.",
+      "explanation": "Georg didn't move out, and the advice had no effect on the agreement. What settled the rise was his research and the figures he showed.",
+      "storyKeyEvents": [
+        "Georg's landlord wanted to raise the rent by eight per cent.",
+        "Georg looked up local rents and found that similar flats cost more.",
+        "Georg showed the landlord the figures and they agreed on a three per cent rise."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L156_Q2",
+      "instruction": "Which three events are needed for the ending to make sense? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The film club's projector arrived an hour late because the van was stuck in traffic, but the volunteers set it up in ten minutes and the screening began on time. The film was well received, and the club decided to hold a second screening the following week.",
+      "options": [
+        "The volunteers set the projector up in ten minutes.",
+        "The club decided to hold a second screening the following week.",
+        "The screening began on time.",
+        "The projector arrived an hour late because the van was stuck in traffic."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1
+      ],
+      "hint": "Ask whether the delay was still a problem by the time the screening started.",
+      "explanation": "The late arrival was absorbed by the quick set-up, and the screening began on time regardless. The story is the set-up, the on-time start, and the plan for another screening.",
+      "storyKeyEvents": [
+        "The volunteers set the projector up in ten minutes.",
+        "The screening began on time.",
+        "The club decided to hold a second screening the following week."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L156_Q3",
+      "instruction": "Choose the three events the story cannot do without, and put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Maren wrote the first draft of her cover letter in an hour, but a friend said it sounded generic, so she rewrote it around one specific project. She sent the new version on Thursday and was invited to an interview on Monday.",
+      "options": [
+        "Maren was invited to an interview on Monday.",
+        "Maren wrote the first draft of her cover letter in an hour.",
+        "Maren sent the new version on Thursday.",
+        "Maren rewrote her cover letter around one specific project after a friend called it generic."
+      ],
+      "correctOrder": [
+        3,
+        2,
+        0
+      ],
+      "hint": "A draft that was replaced isn't part of what she sent.",
+      "explanation": "The first draft was replaced and never sent, so how quickly she wrote it doesn't matter. The story depends on the rewrite, the sending, and the invitation.",
+      "storyKeyEvents": [
+        "Maren rewrote her cover letter around one specific project after a friend called it generic.",
+        "Maren sent the new version on Thursday.",
+        "Maren was invited to an interview on Monday."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L157_Q1",
+      "instruction": "One tempting event could be deleted without breaking the story. Arrange the other three.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The canopy of Yasin's market stall blew loose in the morning wind, but a neighbouring stallholder tied it down within a minute. Yasin spent the day selling his hand-printed cards, and by four he had sold out. That evening he counted the takings and ordered more stock.",
+      "options": [
+        "Yasin spent the day selling his hand-printed cards.",
+        "Yasin had sold out by four.",
+        "That evening Yasin counted the takings and ordered more stock.",
+        "The canopy blew loose, but a neighbour tied it down within a minute."
+      ],
+      "correctOrder": [
+        0,
+        1,
+        2
+      ],
+      "hint": "A complication that was fixed at once may not matter later.",
+      "explanation": "The canopy trouble was solved in a minute and had no effect on sales. The story follows the day's selling, the sell-out, and the reorder.",
+      "storyKeyEvents": [
+        "Yasin spent the day selling his hand-printed cards.",
+        "Yasin had sold out by four.",
+        "That evening Yasin counted the takings and ordered more stock."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L157_Q2",
+      "instruction": "Which three events are needed for the ending to make sense? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Isolde's train was cancelled, so she took a bus and arrived at her friend's flat two hours late. On the bus she sat next to her friend's uncle. Her friend had already started dinner and kept her plate warm.",
+      "options": [
+        "Her friend had kept her plate of dinner warm.",
+        "On the bus Isolde sat next to her friend's uncle.",
+        "Isolde's train was cancelled.",
+        "Isolde took a bus and arrived at her friend's flat two hours late."
+      ],
+      "correctOrder": [
+        2,
+        3,
+        0
+      ],
+      "hint": "A coincidence can be memorable without shaping the ending.",
+      "explanation": "Meeting the uncle is a coincidence that has no effect on her arrival or the dinner. The story depends on the cancellation, the late arrival, and the warm plate.",
+      "storyKeyEvents": [
+        "Isolde's train was cancelled.",
+        "Isolde took a bus and arrived at her friend's flat two hours late.",
+        "Her friend had kept her plate of dinner warm."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L157_Q3",
+      "instruction": "Choose the three events the story cannot do without, and put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "The science fair judges arrived at ten. Ali's team had built a water filter, and a judge asked them to explain each layer. During the explanation the fire alarm went off by mistake, but it was cancelled in seconds. The judges awarded Ali's team second place for clarity.",
+      "options": [
+        "A judge asked them to explain each layer.",
+        "The judges awarded Ali's team second place for clarity.",
+        "Ali's team had built a water filter for the science fair.",
+        "The fire alarm went off by mistake but was cancelled in seconds."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        1
+      ],
+      "hint": "A dramatic interruption doesn't matter if the story carries on unchanged.",
+      "explanation": "The alarm was cancelled in seconds and the explanation continued, so it didn't affect the award. The chain is the filter, the explanation, and second place for clarity.",
+      "storyKeyEvents": [
+        "Ali's team had built a water filter for the science fair.",
+        "A judge asked them to explain each layer.",
+        "The judges awarded Ali's team second place for clarity."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L158_Q1",
+      "instruction": "One tempting event could be deleted without breaking the story. Arrange the other three.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Lisette's café lost its milk supplier when the dairy closed. She found a farm ten kilometres away that delivered twice a week, and she switched. The farmer's daughter began helping with deliveries on Saturdays. The café's flat whites tasted just as before.",
+      "options": [
+        "The café's flat whites tasted just as before.",
+        "Lisette switched to a farm ten kilometres away that delivered twice a week.",
+        "Lisette's café lost its milk supplier when the dairy closed.",
+        "The farmer's daughter began helping with deliveries on Saturdays."
+      ],
+      "correctOrder": [
+        2,
+        1,
+        0
+      ],
+      "hint": "A new detail about someone else doesn't change what happens at the café.",
+      "explanation": "The farmer's daughter joining the deliveries doesn't change the café's problem or its result. The story is the lost supplier, the switch, and the taste staying the same.",
+      "storyKeyEvents": [
+        "Lisette's café lost its milk supplier when the dairy closed.",
+        "Lisette switched to a farm ten kilometres away that delivered twice a week.",
+        "The café's flat whites tasted just as before."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L158_Q2",
+      "instruction": "Which three events are needed for the ending to make sense? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Casimir, a museum volunteer, catalogued a box of old letters. He noticed that several were addressed to the same house and put them in one folder, which helped the curator date the collection. One letter mentioned a famous painter. The collection was displayed the following spring.",
+      "options": [
+        "Casimir noticed that several were addressed to the same house and put them in one folder.",
+        "The collection was displayed the following spring.",
+        "One letter mentioned a famous painter.",
+        "Casimir catalogued a box of old letters."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        1
+      ],
+      "hint": "An exciting name doesn't matter unless the story uses it.",
+      "explanation": "The painter's name is a striking detail that the story doesn't build on. The story moves from cataloguing, to grouping the letters, to the display.",
+      "storyKeyEvents": [
+        "Casimir catalogued a box of old letters.",
+        "Casimir noticed that several were addressed to the same house and put them in one folder.",
+        "The collection was displayed the following spring."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L158_Q3",
+      "instruction": "One tempting event could be deleted without breaking the story. Arrange the other three.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Volunteers cleaned the beach on Saturday and filled sixty bags with litter. They found that most of it came from a single drain outside the car park, and the council fitted a grille on the drain within a month. The clean-up had a record turnout of two hundred volunteers.",
+      "options": [
+        "The clean-up had a record turnout of two hundred volunteers.",
+        "Volunteers cleaned the beach and filled sixty bags with litter.",
+        "The council fitted a grille on the drain within a month.",
+        "They found that most of the litter came from a single drain outside the car park."
+      ],
+      "correctOrder": [
+        1,
+        3,
+        2
+      ],
+      "hint": "A record turnout is impressive. Is it needed for the drain's story?",
+      "explanation": "The turnout number doesn't explain the litter source or the grille. The story runs from the bags, to the drain, to the fix.",
+      "storyKeyEvents": [
+        "Volunteers cleaned the beach and filled sixty bags with litter.",
+        "They found that most of the litter came from a single drain outside the car park.",
+        "The council fitted a grille on the drain within a month."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L159_Q1",
+      "instruction": "Choose the three events the story cannot do without, and put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Ravinder's shop sales rose sharply in December. He realised that customers were buying gifts for teachers, so he put a small display of cards near the till. Card sales tripled that month. It was also an unusually cold December.",
+      "options": [
+        "Ravinder's shop sales rose sharply in December.",
+        "It was an unusually cold December.",
+        "Ravinder realised that customers were buying gifts for teachers and put a display of cards near the till.",
+        "Card sales tripled that month."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        3
+      ],
+      "hint": "Ask which detail the story actually links to the rise in sales.",
+      "explanation": "The cold weather is only mentioned in passing, and the story links the growth to the teacher gifts and the card display. It isn't presented as a cause.",
+      "storyKeyEvents": [
+        "Ravinder's shop sales rose sharply in December.",
+        "Ravinder realised that customers were buying gifts for teachers and put a display of cards near the till.",
+        "Card sales tripled that month."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L159_Q2",
+      "instruction": "One tempting event could be deleted without breaking the story. Arrange the other three.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Isabel's team was behind on the website launch. The consultant advised delaying by a month, but the manager decided instead to cut two features and launch on time. The launch went ahead on the planned date, and the two features were added a fortnight later.",
+      "options": [
+        "The consultant advised delaying the launch by a month.",
+        "The manager decided to cut two features and launch on time.",
+        "The launch went ahead on the planned date.",
+        "Isabel's team was behind on the website launch."
+      ],
+      "correctOrder": [
+        3,
+        1,
+        2
+      ],
+      "hint": "The consultant's advice was rejected. Does it drive the story?",
+      "explanation": "The manager overruled the consultant, so the advice never became an action. The story turns on the decision to cut features and launch on time.",
+      "storyKeyEvents": [
+        "Isabel's team was behind on the website launch.",
+        "The manager decided to cut two features and launch on time.",
+        "The launch went ahead on the planned date."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L159_Q3",
+      "instruction": "Which three events are needed for the ending to make sense? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Enzo's coach to the mountain hostel was due to leave at six but arrived at the pick-up point twenty minutes late. The driver took a shortcut, and they reached the hostel by nine, as scheduled. Enzo checked in and joined the evening walk.",
+      "options": [
+        "Enzo joined the evening walk.",
+        "Enzo took the coach to the mountain hostel.",
+        "The coach arrived at the pick-up point twenty minutes late.",
+        "Enzo reached the hostel by nine, as scheduled, and checked in."
+      ],
+      "correctOrder": [
+        1,
+        3,
+        0
+      ],
+      "hint": "If the delay was made up, does it change anything later?",
+      "explanation": "The driver made up the twenty minutes with a shortcut, so the delay left no mark on Enzo's evening. The story depends on the journey, the on-time arrival, and the walk.",
+      "storyKeyEvents": [
+        "Enzo took the coach to the mountain hostel.",
+        "Enzo reached the hostel by nine, as scheduled, and checked in.",
+        "Enzo joined the evening walk."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L160_Q1",
+      "instruction": "Choose the three events the story cannot do without, and put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Lucia's team built a solar phone charger for a competition. The first circuit overheated. A smaller heat sink didn't help, so they rebuilt the circuit with a larger one, and it worked at the Monday demo. The judges chose their prototype as a finalist.",
+      "options": [
+        "The first circuit of Lucia's team's charger overheated.",
+        "A smaller heat sink didn't stop the circuit overheating.",
+        "It worked at the Monday demo and the judges chose it as a finalist.",
+        "The team rebuilt the circuit with a larger heat sink."
+      ],
+      "correctOrder": [
+        0,
+        3,
+        2
+      ],
+      "hint": "One attempt didn't work. Does the story depend on it?",
+      "explanation": "The smaller heat sink failed and was set aside, so it is a step that didn't lead anywhere. The chain is the overheating, the rebuild with a larger sink, and the finalist place.",
+      "storyKeyEvents": [
+        "The first circuit of Lucia's team's charger overheated.",
+        "The team rebuilt the circuit with a larger heat sink.",
+        "It worked at the Monday demo and the judges chose it as a finalist."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L160_Q2",
+      "instruction": "One tempting event could be deleted without breaking the story. Arrange the other three.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Jules organised a school reunion for two hundred former pupils. The caterer phoned to say a delivery was delayed, but it arrived before the guests did. Jules greeted the guests at the door, and by nine the hall was full of old friends reunited.",
+      "options": [
+        "The caterer said a delivery was delayed, but it arrived before the guests did.",
+        "By nine the hall was full of old friends reunited.",
+        "Jules greeted the guests at the door.",
+        "Jules organised a school reunion for two hundred former pupils."
+      ],
+      "correctOrder": [
+        3,
+        2,
+        1
+      ],
+      "hint": "A worry that was gone before the guests arrived doesn't belong in the summary.",
+      "explanation": "The delayed delivery arrived in time and had no effect on the evening. The story follows the organising, the welcome, and the full hall.",
+      "storyKeyEvents": [
+        "Jules organised a school reunion for two hundred former pupils.",
+        "Jules greeted the guests at the door.",
+        "By nine the hall was full of old friends reunited."
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SUMMARIZESTORYWRITING_L160_Q3",
+      "instruction": "Which three events are needed for the ending to make sense? Put them in order.",
+      "subtype": "summarizeStoryWriting",
+      "interactionType": "writing",
+      "story": "Mateo was learning to weave baskets from an online video. His first three baskets came apart, but the fourth held together after he soaked the cane first. His neighbour, who had been watching, turned out to have been a basket-maker's apprentice years ago. Mateo sold the fourth basket at the weekend market.",
+      "options": [
+        "The fourth basket held together after he soaked the cane first.",
+        "His watching neighbour turned out to have been a basket-maker's apprentice.",
+        "Mateo's first three baskets came apart.",
+        "Mateo sold the fourth basket at the weekend market."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        3
+      ],
+      "hint": "A surprising fact about a bystander must change something to belong.",
+      "explanation": "The neighbour's past is an interesting coincidence but doesn't affect how the fourth basket succeeded. The chain is the failures, the soaked cane, and the sale.",
+      "storyKeyEvents": [
+        "Mateo's first three baskets came apart.",
+        "The fourth basket held together after he soaked the cane first.",
+        "Mateo sold the fourth basket at the weekend market."
+      ],
+      "phase": "mastery"
+    }
+  ]
+}
