@@ -741,6 +741,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                             'modifierPlacement',
                             'modalsSelection',
                             'prepositionChoice',
+                            'pronounResolution',
                           };
                           final isPhasedGame = phasedGames.contains(widget.gameType);
 

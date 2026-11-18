@@ -1,0 +1,578 @@
+{
+  "gameType": "pronounResolution",
+  "phase": "practice",
+  "batchIndex": 12,
+  "levels": "111-120",
+  "quests": [
+    {
+      "id": "pr_l111_practice_q1",
+      "level": 111,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "I bought two mugs and a plate. These are for my sister.\nWhat is 'These' pointing back to?",
+      "sentence": "I bought two mugs and a plate. These are for my sister.",
+      "targetPronoun": "These",
+      "options": [
+        "the plate",
+        "the two mugs",
+        "my sister"
+      ],
+      "correctAnswer": "the two mugs",
+      "correctAnswerIndex": 1,
+      "hint": "'These' is plural. Which item was bought in twos?",
+      "explanation": "The pronoun 'these' is a plural demonstrative, so it cannot be the single plate. The two mugs are the plural items.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l111_practice_q2",
+      "level": 111,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Here are the keys and the parking pass. This has to be shown at the gate.\nWhat is 'This' pointing back to?",
+      "sentence": "Here are the keys and the parking pass. This has to be shown at the gate.",
+      "targetPronoun": "This",
+      "options": [
+        "the keys",
+        "the gate",
+        "the parking pass"
+      ],
+      "correctAnswer": "the parking pass",
+      "correctAnswerIndex": 2,
+      "hint": "'This' is singular. Which item is one thing shown at a gate?",
+      "explanation": "'This' is singular, so it cannot be the plural keys. What you show at a gate is the parking pass.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l111_practice_q3",
+      "level": 111,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The guide pointed to a statue in the square and said, 'This was carved in 1890.'\nWhat is meant by 'This'?",
+      "sentence": "The guide pointed to a statue in the square and said, 'This was carved in 1890.'",
+      "targetPronoun": "This",
+      "options": [
+        "the statue",
+        "the square",
+        "the guide"
+      ],
+      "correctAnswer": "the statue",
+      "correctAnswerIndex": 0,
+      "hint": "Something being pointed at can be carved.",
+      "explanation": "Remember that 'this' points to something near the speaker and physically indicated. The statue is what he pointed to and what can be carved.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l112_practice_q1",
+      "level": 112,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Those apples on the top shelf look fresher than the ones near the till.\nWhat does 'Those' point to?",
+      "sentence": "Those apples on the top shelf look fresher than the ones near the till.",
+      "targetPronoun": "Those",
+      "options": [
+        "the apples near the till",
+        "the apples on the top shelf",
+        "the top shelf"
+      ],
+      "correctAnswer": "the apples on the top shelf",
+      "correctAnswerIndex": 1,
+      "hint": "'Those' is followed by a noun and a location. Which apples are described?",
+      "explanation": "'Those' modifies 'apples on the top shelf', so it points to that group. The apples near the till are the ones being compared.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l112_practice_q2",
+      "level": 112,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Look at the mountain in the distance. That is where we camped last summer.\nWhat is meant by 'That'?",
+      "sentence": "Look at the mountain in the distance. That is where we camped last summer.",
+      "targetPronoun": "That",
+      "options": [
+        "the mountain",
+        "the distance",
+        "last summer"
+      ],
+      "correctAnswer": "the mountain",
+      "correctAnswerIndex": 0,
+      "hint": "Something far away can be called 'that'.",
+      "explanation": "'That' points to something distant. The mountain in the distance is the place they camped.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l112_practice_q3",
+      "level": 112,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "'Are these your bags?' asked the officer, pointing to the two suitcases by the door.\nWhat is meant by 'these'?",
+      "sentence": "'Are these your bags?' asked the officer, pointing to the two suitcases by the door.",
+      "targetPronoun": "these",
+      "options": [
+        "the officer",
+        "the two suitcases",
+        "the door"
+      ],
+      "correctAnswer": "the two suitcases",
+      "correctAnswerIndex": 1,
+      "hint": "'These' is plural. What is he pointing at?",
+      "explanation": "'These' is plural and points at the items indicated. The officer points to the two suitcases.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l113_practice_q1",
+      "level": 113,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The train was cancelled. That meant we had to take a taxi.\nWhat does 'That' refer to?",
+      "sentence": "The train was cancelled. That meant we had to take a taxi.",
+      "targetPronoun": "That",
+      "options": [
+        "the train's cancellation",
+        "the taxi",
+        "the journey"
+      ],
+      "correctAnswer": "the train's cancellation",
+      "correctAnswerIndex": 0,
+      "hint": "'That' can point back to a whole event. What forced the taxi?",
+      "explanation": "Here 'that' does not point to a single noun. It sums up the previous sentence, the cancellation, which caused the taxi.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l113_practice_q2",
+      "level": 113,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Ms. Ruiz announced a hiring freeze. This surprised the staff, who had expected new hires.\nWhat is 'This' pointing back to?",
+      "sentence": "Ms. Ruiz announced a hiring freeze. This surprised the staff, who had expected new hires.",
+      "targetPronoun": "This",
+      "options": [
+        "the new hires",
+        "the staff",
+        "the hiring freeze"
+      ],
+      "correctAnswer": "the hiring freeze",
+      "correctAnswerIndex": 2,
+      "hint": "What surprised the staff?",
+      "explanation": "Remember that 'this' refers back to the announcement in the previous sentence. The freeze contradicted their expectation.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l113_practice_q3",
+      "level": 113,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Our gym raised its fees by ten percent. That is why we are cancelling our membership.\nIn this text, what does 'That' stand for?",
+      "sentence": "Our gym raised its fees by ten percent. That is why we are cancelling our membership.",
+      "targetPronoun": "That",
+      "options": [
+        "our gym",
+        "the membership",
+        "the ten percent fee increase"
+      ],
+      "correctAnswer": "the ten percent fee increase",
+      "correctAnswerIndex": 2,
+      "hint": "What is the reason for cancelling?",
+      "explanation": "The pronoun 'that' sums up the previous sentence and gives the reason. The fee increase is what caused the cancellation.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l114_practice_q1",
+      "level": 114,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "At the counter, the customer held up a pen and said, 'I'd like this one, not that one over there.'\nWhat is being referred to by 'that'?",
+      "sentence": "At the counter, the customer held up a pen and said, 'I'd like this one, not that one over there.'",
+      "targetPronoun": "that",
+      "options": [
+        "the pen in the customer's hand",
+        "the counter",
+        "the pen over there"
+      ],
+      "correctAnswer": "the pen over there",
+      "correctAnswerIndex": 2,
+      "hint": "'This' is near the speaker. Where is 'that'?",
+      "explanation": "'This' marks the near item and 'that' marks the far one. So 'that one' is the pen over there.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l114_practice_q2",
+      "level": 114,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Two chairs stood by the window. Jo pulled out the nearer one and said, 'This one is comfier than that.'\nWhat is being referred to by 'that'?",
+      "sentence": "Two chairs stood by the window. Jo pulled out the nearer one and said, 'This one is comfier than that.'",
+      "targetPronoun": "that",
+      "options": [
+        "the farther chair",
+        "the nearer chair",
+        "the window"
+      ],
+      "correctAnswer": "the farther chair",
+      "correctAnswerIndex": 0,
+      "hint": "'This' is the nearer chair. What is the contrast?",
+      "explanation": "In this sentence, 'this' points to the chair Jo pulled out, so 'that' is the other, farther chair. The window is only where they are.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l114_practice_q3",
+      "level": 114,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "'These trainers are too tight,' said the shopper. 'Could I try those on the display?'\nWhat is meant by 'those'?",
+      "sentence": "'These trainers are too tight,' said the shopper. 'Could I try those on the display?'",
+      "targetPronoun": "those",
+      "options": [
+        "the trainers the shopper tried",
+        "the trainers on the display",
+        "the shopper"
+      ],
+      "correctAnswer": "the trainers on the display",
+      "correctAnswerIndex": 1,
+      "hint": "'These' is close. 'Those' is somewhere else.",
+      "explanation": "'These' names the pair already tried on. 'Those' points to a different pair, the ones on the display.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l115_practice_q1",
+      "level": 115,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Some of the exam questions were unclear. These will be reviewed next week.\nWhat is meant by 'These'?",
+      "sentence": "Some of the exam questions were unclear. These will be reviewed next week.",
+      "targetPronoun": "These",
+      "options": [
+        "the unclear questions",
+        "the exam",
+        "the students"
+      ],
+      "correctAnswer": "the unclear questions",
+      "correctAnswerIndex": 0,
+      "hint": "What will be reviewed?",
+      "explanation": "'These' is plural and follows the mention of unclear questions. The exam itself is singular.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l115_practice_q2",
+      "level": 115,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The gym is closed on Sundays. This will change when the new staff start.\nWhat is being referred to by 'This'?",
+      "sentence": "The gym is closed on Sundays. This will change when the new staff start.",
+      "targetPronoun": "This",
+      "options": [
+        "the Sunday closure",
+        "the gym",
+        "the new staff"
+      ],
+      "correctAnswer": "the Sunday closure",
+      "correctAnswerIndex": 0,
+      "hint": "What will change?",
+      "explanation": "Look closely: 'this' points to the situation described in the previous sentence, the closure. It is not the building or the people.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l115_practice_q3",
+      "level": 115,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "'What are these?' Amir asked, picking up two small metal discs from the desk.\nWhat does 'these' point back to?",
+      "sentence": "'What are these?' Amir asked, picking up two small metal discs from the desk.",
+      "targetPronoun": "these",
+      "options": [
+        "Amir",
+        "the two small metal discs",
+        "the desk"
+      ],
+      "correctAnswer": "the two small metal discs",
+      "correctAnswerIndex": 1,
+      "hint": "He is holding something close to him.",
+      "explanation": "Here, 'these' is plural and points to what he is holding. That is the pair of discs.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l116_practice_q1",
+      "level": 116,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The study measured sleep and stress levels. Those were tracked daily for a month.\nWhat does 'Those' point back to?",
+      "sentence": "The study measured sleep and stress levels. Those were tracked daily for a month.",
+      "targetPronoun": "Those",
+      "options": [
+        "the sleep and stress levels",
+        "the study",
+        "a month"
+      ],
+      "correctAnswer": "the sleep and stress levels",
+      "correctAnswerIndex": 0,
+      "hint": "What was tracked daily?",
+      "explanation": "Here, 'those' is plural, so it needs a plural referent. The levels that were measured are what was tracked.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l116_practice_q2",
+      "level": 116,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Users should not share passwords. That is the most common cause of account breaches.\nWhat is being referred to by 'That'?",
+      "sentence": "Users should not share passwords. That is the most common cause of account breaches.",
+      "targetPronoun": "That",
+      "options": [
+        "the passwords",
+        "account breaches",
+        "sharing passwords"
+      ],
+      "correctAnswer": "sharing passwords",
+      "correctAnswerIndex": 2,
+      "hint": "What is the cause of the breaches?",
+      "explanation": "'That' refers to the practice just mentioned, sharing passwords. The passwords themselves are not the cause.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l116_practice_q3",
+      "level": 116,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The contract allows early termination, but this requires thirty days' notice.\nWhat does 'this' refer to?",
+      "sentence": "The contract allows early termination, but this requires thirty days' notice.",
+      "targetPronoun": "this",
+      "options": [
+        "the contract",
+        "early termination",
+        "thirty days' notice"
+      ],
+      "correctAnswer": "early termination",
+      "correctAnswerIndex": 1,
+      "hint": "What requires notice?",
+      "explanation": "Note that 'this' points back to the thing the contract allows. It is terminating early that needs notice.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l117_practice_q1",
+      "level": 117,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Mira handed Omar a notebook and two pens. 'You can keep these, but return that by Tuesday.'\nWhat is 'that' pointing back to?",
+      "sentence": "Mira handed Omar a notebook and two pens. 'You can keep these, but return that by Tuesday.'",
+      "targetPronoun": "that",
+      "options": [
+        "the two pens",
+        "the notebook",
+        "Omar"
+      ],
+      "correctAnswer": "the notebook",
+      "correctAnswerIndex": 1,
+      "hint": "'That' is singular. Which item is single?",
+      "explanation": "The pronoun 'these' points to the plural pens, so 'that' must point to the single item: the notebook.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l117_practice_q2",
+      "level": 117,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The mechanic pointed at the worn tyres and the new spare. 'Those have to go; this can stay.'\nWhat does 'Those' refer to?",
+      "sentence": "The mechanic pointed at the worn tyres and the new spare. 'Those have to go; this can stay.'",
+      "targetPronoun": "Those",
+      "options": [
+        "the worn tyres",
+        "the new spare",
+        "the mechanic"
+      ],
+      "correctAnswer": "the worn tyres",
+      "correctAnswerIndex": 0,
+      "hint": "'Those' is plural. Which items are worn and need replacing?",
+      "explanation": "Note that 'those' is plural, so it does not fit the single spare. The worn tyres are the ones that have to go.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l117_practice_q3",
+      "level": 117,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Marta set the tea and the biscuits on the tray. 'These are still warm,' she said.\nIn this text, what does 'These' stand for?",
+      "sentence": "Marta set the tea and the biscuits on the tray. 'These are still warm,' she said.",
+      "targetPronoun": "These",
+      "options": [
+        "the tea",
+        "the tray",
+        "the biscuits"
+      ],
+      "correctAnswer": "the biscuits",
+      "correctAnswerIndex": 2,
+      "hint": "'These' is plural. Which item is plural?",
+      "explanation": "Look closely: 'these' is plural, so it does not fit the singular tea or tray. The biscuits are the plural item.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l118_practice_q1",
+      "level": 118,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The system rejects passwords shorter than eight characters. This prevents most simple attacks.\nWhat is meant by 'This'?",
+      "sentence": "The system rejects passwords shorter than eight characters. This prevents most simple attacks.",
+      "targetPronoun": "This",
+      "options": [
+        "rejecting short passwords",
+        "the system",
+        "the eight characters"
+      ],
+      "correctAnswer": "rejecting short passwords",
+      "correctAnswerIndex": 0,
+      "hint": "What prevents the attacks?",
+      "explanation": "Here, 'this' refers to the whole rule in the first sentence. The action of rejecting short passwords is what protects.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l118_practice_q2",
+      "level": 118,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Several patients missed their appointments. That has cost the clinic money.\nWhat is meant by 'That'?",
+      "sentence": "Several patients missed their appointments. That has cost the clinic money.",
+      "targetPronoun": "That",
+      "options": [
+        "the clinic",
+        "the missed appointments",
+        "the patients"
+      ],
+      "correctAnswer": "the missed appointments",
+      "correctAnswerIndex": 1,
+      "hint": "What has cost the clinic money?",
+      "explanation": "The pronoun 'that' refers to the event described, the missed appointments. Neither the clinic nor the patients cost money.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l118_practice_q3",
+      "level": 118,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Our neighbours play music until two a.m. That is why I've sent them a note.\nWhat is being referred to by 'That'?",
+      "sentence": "Our neighbours play music until two a.m. That is why I've sent them a note.",
+      "targetPronoun": "That",
+      "options": [
+        "our neighbours",
+        "the note",
+        "the late music"
+      ],
+      "correctAnswer": "the late music",
+      "correctAnswerIndex": 2,
+      "hint": "Why did the speaker send a note?",
+      "explanation": "In this sentence, 'that' points to the situation in the first sentence and explains the reason. The neighbours are the people playing, but the problem is the late music.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l119_practice_q1",
+      "level": 119,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "'Is this seat taken?' 'No, but that one by the window is better,' the usher said.\nIn this text, what does 'that' stand for?",
+      "sentence": "'Is this seat taken?' 'No, but that one by the window is better,' the usher said.",
+      "targetPronoun": "that",
+      "options": [
+        "this seat",
+        "the usher",
+        "the seat by the window"
+      ],
+      "correctAnswer": "the seat by the window",
+      "correctAnswerIndex": 2,
+      "hint": "'This' is the seat being asked about. What is 'that one'?",
+      "explanation": "'This seat' is the one near the speakers. 'That one' points to a different seat, by the window.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l119_practice_q2",
+      "level": 119,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "'We have these in blue and those in grey,' said the assistant. 'I'll take those,' said the customer.\nWhat is meant by 'those'?",
+      "sentence": "'We have these in blue and those in grey,' said the assistant. 'I'll take those,' said the customer.",
+      "targetPronoun": "those",
+      "options": [
+        "the items in blue",
+        "the items in grey",
+        "the assistant"
+      ],
+      "correctAnswer": "the items in grey",
+      "correctAnswerIndex": 1,
+      "hint": "Which group did the assistant call 'those'?",
+      "explanation": "The assistant separated 'these in blue' from 'those in grey'. The customer's 'those' repeats the second group.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l119_practice_q3",
+      "level": 119,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "'Don't touch those wires behind the panel,' said the electrician, 'and keep this switch off.'\nWhat is 'those' pointing back to?",
+      "sentence": "'Don't touch those wires behind the panel,' said the electrician, 'and keep this switch off.'",
+      "targetPronoun": "those",
+      "options": [
+        "the switch",
+        "the panel",
+        "the wires behind the panel"
+      ],
+      "correctAnswer": "the wires behind the panel",
+      "correctAnswerIndex": 2,
+      "hint": "'Those' is plural. What is behind the panel?",
+      "explanation": "'Those' is plural and points at something a little away. The wires are plural, while the switch and the panel are singular.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l120_practice_q1",
+      "level": 120,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The new policy limits overtime. That has upset some staff, who rely on the extra pay.\nWhat is 'That' pointing back to?",
+      "sentence": "The new policy limits overtime. That has upset some staff, who rely on the extra pay.",
+      "targetPronoun": "That",
+      "options": [
+        "some staff",
+        "the overtime limit",
+        "the extra pay"
+      ],
+      "correctAnswer": "the overtime limit",
+      "correctAnswerIndex": 1,
+      "hint": "What has upset staff?",
+      "explanation": "The pronoun 'that' sums up the policy just described. The limit on overtime is the source of the upset.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l120_practice_q2",
+      "level": 120,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Bea unpacked three jars and a bottle. These are pickles, and this is vinegar.\nWhat does 'this' refer to?",
+      "sentence": "Bea unpacked three jars and a bottle. These are pickles, and this is vinegar.",
+      "targetPronoun": "this",
+      "options": [
+        "the three jars",
+        "Bea",
+        "the bottle"
+      ],
+      "correctAnswer": "the bottle",
+      "correctAnswerIndex": 2,
+      "hint": "'This' is singular. Which item is one?",
+      "explanation": "'These' covers the plural jars, so the singular 'this' is the bottle.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l120_practice_q3",
+      "level": 120,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The builder fixed the roof last winter, but that did not stop it from leaking again.\nWhat does 'that' refer to?",
+      "sentence": "The builder fixed the roof last winter, but that did not stop it from leaking again.",
+      "targetPronoun": "that",
+      "options": [
+        "the builder's repair",
+        "the roof",
+        "last winter"
+      ],
+      "correctAnswer": "the builder's repair",
+      "correctAnswerIndex": 0,
+      "hint": "What did not prevent the leak?",
+      "explanation": "'That' summarises the fixing, an action, and follows a contrast with 'but'. The roof is 'it', a different word.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    }
+  ]
+}

@@ -1,0 +1,578 @@
+{
+  "gameType": "pronounResolution",
+  "phase": "practice",
+  "batchIndex": 18,
+  "levels": "171-180",
+  "quests": [
+    {
+      "id": "pr_l171_practice_q1",
+      "level": 171,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Hi Farah, Mr. Dunne asked me to forward you the vendor contract. He wants you to review it before Thursday's call and send comments on the payment terms.\nWhat is 'it' pointing back to?",
+      "sentence": "Hi Farah, Mr. Dunne asked me to forward you the vendor contract. He wants you to review it before Thursday's call and send comments on the payment terms.",
+      "targetPronoun": "it",
+      "options": [
+        "the vendor contract",
+        "Thursday's call",
+        "the payment terms"
+      ],
+      "correctAnswer": "the vendor contract",
+      "correctAnswerIndex": 0,
+      "hint": "What was forwarded to be reviewed?",
+      "explanation": "The pronoun 'it' is the object of 'review'. The item forwarded and needing review is the vendor contract; the payment terms are only part of the comments.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l171_practice_q2",
+      "level": 171,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Ms. Suarez told the two analysts that the client had rejected the forecast and that they would have to redo it before the board meeting.\nWho is 'they' pointing back to?",
+      "sentence": "Ms. Suarez told the two analysts that the client had rejected the forecast and that they would have to redo it before the board meeting.",
+      "targetPronoun": "they",
+      "options": [
+        "the client",
+        "Ms. Suarez",
+        "the two analysts"
+      ],
+      "correctAnswer": "the two analysts",
+      "correctAnswerIndex": 2,
+      "hint": "Who has to redo the work?",
+      "explanation": "'They' is plural, so it cannot be Ms. Suarez or the client. The analysts made the forecast and are the ones who must redo it.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l171_practice_q3",
+      "level": 171,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The HR team sent staff a survey about the new rota. Many said it was confusing, so they are drafting a clearer version.\nWho is meant by 'they'?",
+      "sentence": "The HR team sent staff a survey about the new rota. Many said it was confusing, so they are drafting a clearer version.",
+      "targetPronoun": "they",
+      "options": [
+        "staff",
+        "the HR team",
+        "the survey"
+      ],
+      "correctAnswer": "the HR team",
+      "correctAnswerIndex": 1,
+      "hint": "Who is responding to the complaints?",
+      "explanation": "Look closely: 'they' is drafting a new version, and the HR team owns the rota. Staff are the ones who complained.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l172_practice_q1",
+      "level": 172,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The tutor returned the essays to the students and asked them to read her comments before the next seminar.\nWho is meant by 'her'?",
+      "sentence": "The tutor returned the essays to the students and asked them to read her comments before the next seminar.",
+      "targetPronoun": "her",
+      "options": [
+        "the students",
+        "the tutor",
+        "the essays"
+      ],
+      "correctAnswer": "the tutor",
+      "correctAnswerIndex": 1,
+      "hint": "Whose comments are on the essays?",
+      "explanation": "'Her' is feminine singular, so it cannot be the plural students. The comments are the tutor's, since she marked the work.",
+      "grammarRule": "Possessive Determiners",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l172_practice_q2",
+      "level": 172,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Kai emailed his supervisor about the lab schedule, but she hadn't replied by Monday, so he asked the department secretary to check whether it had been updated.\nWhat is meant by 'it'?",
+      "sentence": "Kai emailed his supervisor about the lab schedule, but she hadn't replied by Monday, so he asked the department secretary to check whether it had been updated.",
+      "targetPronoun": "it",
+      "options": [
+        "his supervisor",
+        "the department secretary",
+        "the lab schedule"
+      ],
+      "correctAnswer": "the lab schedule",
+      "correctAnswerIndex": 2,
+      "hint": "What could be updated?",
+      "explanation": "'It' is singular and non-human. What might have been updated is the schedule he asked about.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l172_practice_q3",
+      "level": 172,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The library extended its hours during exams, but students said this didn't help those who lived off campus.\nWhat does 'this' refer to?",
+      "sentence": "The library extended its hours during exams, but students said this didn't help those who lived off campus.",
+      "targetPronoun": "this",
+      "options": [
+        "the exams",
+        "the library",
+        "the extended opening hours"
+      ],
+      "correctAnswer": "the extended opening hours",
+      "correctAnswerIndex": 2,
+      "hint": "What did students say didn't help?",
+      "explanation": "Remember that 'this' sums up what the library did in the first clause. It is the extension of hours that did not help.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l173_practice_q1",
+      "level": 173,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Customer: My blender stopped working after two weeks. I emailed the shop, but they haven't answered. Agent: I'm sorry. I'll ask them to send a replacement.\nWho is 'they' pointing back to?",
+      "sentence": "Customer: My blender stopped working after two weeks. I emailed the shop, but they haven't answered. Agent: I'm sorry. I'll ask them to send a replacement.",
+      "targetPronoun": "they",
+      "options": [
+        "the shop",
+        "the customer",
+        "the blender"
+      ],
+      "correctAnswer": "the shop",
+      "correctAnswerIndex": 0,
+      "hint": "Who was emailed?",
+      "explanation": "In this sentence, 'they' is the people or business that received the email and did not reply. The customer wrote the message.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l173_practice_q2",
+      "level": 173,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The agent told Mr. Reddy the parcel had left the depot, but he said he'd heard that once already and asked her to escalate the complaint.\nIn this text, who does 'her' stand for?",
+      "sentence": "The agent told Mr. Reddy the parcel had left the depot, but he said he'd heard that once already and asked her to escalate the complaint.",
+      "targetPronoun": "her",
+      "options": [
+        "Mr. Reddy",
+        "the depot",
+        "the agent"
+      ],
+      "correctAnswer": "the agent",
+      "correctAnswerIndex": 2,
+      "hint": "Who can escalate a complaint?",
+      "explanation": "Note that 'her' is feminine, and Mr. Reddy is male. The agent is the person who can escalate his complaint.",
+      "grammarRule": "Object Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l173_practice_q3",
+      "level": 173,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "If the seals are broken when your parcel arrives, please do not open it and contact us within forty-eight hours.\nWhat is being referred to by 'it'?",
+      "sentence": "If the seals are broken when your parcel arrives, please do not open it and contact us within forty-eight hours.",
+      "targetPronoun": "it",
+      "options": [
+        "your parcel",
+        "the seals",
+        "the courier"
+      ],
+      "correctAnswer": "your parcel",
+      "correctAnswerIndex": 0,
+      "hint": "What should not be opened?",
+      "explanation": "'It' is the object of 'open'. The seals are broken, but what you do not open is the parcel.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l174_practice_q1",
+      "level": 174,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Priya booked a room at the guesthouse for her parents. When they arrived, the owner said theirs hadn't been prepared yet.\nWhat is being referred to by 'theirs'?",
+      "sentence": "Priya booked a room at the guesthouse for her parents. When they arrived, the owner said theirs hadn't been prepared yet.",
+      "targetPronoun": "theirs",
+      "options": [
+        "the parents' room",
+        "the owner's room",
+        "Priya's room"
+      ],
+      "correctAnswer": "the parents' room",
+      "correctAnswerIndex": 0,
+      "hint": "'Theirs' means 'their ___'. Who arrived?",
+      "explanation": "Remember that 'theirs' is plural and refers to those who just arrived, her parents. It stands for the room booked for them.",
+      "grammarRule": "Possessive Pronouns",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l174_practice_q2",
+      "level": 174,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The conductor asked the couple to show their tickets, but he couldn't scan them because the barcodes were smudged.\nWhat is meant by 'them'?",
+      "sentence": "The conductor asked the couple to show their tickets, but he couldn't scan them because the barcodes were smudged.",
+      "targetPronoun": "them",
+      "options": [
+        "the couple",
+        "the conductor",
+        "their tickets"
+      ],
+      "correctAnswer": "their tickets",
+      "correctAnswerIndex": 2,
+      "hint": "What did he try to scan?",
+      "explanation": "Here, 'them' is the object of 'scan'. What was to be scanned is the tickets, since people and the conductor cannot be scanned.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l174_practice_q3",
+      "level": 174,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Our train was cancelled, so we asked the station manager for a refund. She said she couldn't authorise it herself and passed us to the regional office.\nWho is meant by 'herself'?",
+      "sentence": "Our train was cancelled, so we asked the station manager for a refund. She said she couldn't authorise it herself and passed us to the regional office.",
+      "targetPronoun": "herself",
+      "options": [
+        "the regional office",
+        "us",
+        "the station manager"
+      ],
+      "correctAnswer": "the station manager",
+      "correctAnswerIndex": 2,
+      "hint": "Who could not authorise the refund?",
+      "explanation": "Here, 'herself' is feminine singular and stresses who could not decide alone. That is the station manager who was asked.",
+      "grammarRule": "Reflexive Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l175_practice_q1",
+      "level": 175,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The nurse told Mr. Ferrari that the doctor would see him after the blood test and that he shouldn't eat until it was done.\nWhat is being referred to by 'it'?",
+      "sentence": "The nurse told Mr. Ferrari that the doctor would see him after the blood test and that he shouldn't eat until it was done.",
+      "targetPronoun": "it",
+      "options": [
+        "the doctor's visit",
+        "Mr. Ferrari",
+        "the blood test"
+      ],
+      "correctAnswer": "the blood test",
+      "correctAnswerIndex": 2,
+      "hint": "What must be finished before he eats?",
+      "explanation": "'It' is what must be done before he eats. A fast before a blood test ends when the test is over.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l175_practice_q2",
+      "level": 175,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Your test results are back. Your GP will call you if she needs to change your medication; otherwise, continue taking it as before.\nWhat does 'it' point back to?",
+      "sentence": "Your test results are back. Your GP will call you if she needs to change your medication; otherwise, continue taking it as before.",
+      "targetPronoun": "it",
+      "options": [
+        "your medication",
+        "your GP",
+        "the test results"
+      ],
+      "correctAnswer": "your medication",
+      "correctAnswerIndex": 0,
+      "hint": "What are you taking?",
+      "explanation": "In this sentence, 'it' is singular and is what you continue taking. Medication is taken; a GP and results are not.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l175_practice_q3",
+      "level": 175,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The pharmacist explained that the tablets should be taken with food and that patients who forget a dose shouldn't take two together, because that could cause side effects.\nWhat does 'that' point back to?",
+      "sentence": "The pharmacist explained that the tablets should be taken with food and that patients who forget a dose shouldn't take two together, because that could cause side effects.",
+      "targetPronoun": "that",
+      "options": [
+        "forgetting a dose",
+        "taking two doses together",
+        "taking the tablets with food"
+      ],
+      "correctAnswer": "taking two doses together",
+      "correctAnswerIndex": 1,
+      "hint": "What could cause side effects?",
+      "explanation": "'Because' gives the reason for the warning. The warning is about taking two together, so 'that' refers to that action.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l176_practice_q1",
+      "level": 176,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The update installed overnight, but the app it was meant to fix still crashes.\nWhat is being referred to by 'it'?",
+      "sentence": "The update installed overnight, but the app it was meant to fix still crashes.",
+      "targetPronoun": "it",
+      "options": [
+        "the update",
+        "the app",
+        "the night"
+      ],
+      "correctAnswer": "the update",
+      "correctAnswerIndex": 0,
+      "hint": "What was meant to fix something?",
+      "explanation": "Note that 'it' is the subject of 'was meant to fix'. The update is what was meant to fix the app, and the app is the thing being fixed.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l176_practice_q2",
+      "level": 176,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Log in with your email address and password. If you have forgotten it, choose 'Reset' and we will send a link to the address you registered.\nWhat does 'it' refer to?",
+      "sentence": "Log in with your email address and password. If you have forgotten it, choose 'Reset' and we will send a link to the address you registered.",
+      "targetPronoun": "it",
+      "options": [
+        "your email address",
+        "your password",
+        "the link"
+      ],
+      "correctAnswer": "your password",
+      "correctAnswerIndex": 1,
+      "hint": "What might you forget and need to reset?",
+      "explanation": "Look closely: 'it' is singular and is what you would reset. You have not forgotten the address, because the link is sent to it.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l176_practice_q3",
+      "level": 176,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The developers shipped the patch before the testers had finished their checks, which is why it introduced new bugs.\nWhat is 'it' pointing back to?",
+      "sentence": "The developers shipped the patch before the testers had finished their checks, which is why it introduced new bugs.",
+      "targetPronoun": "it",
+      "options": [
+        "the patch",
+        "the testers' checks",
+        "the testers"
+      ],
+      "correctAnswer": "the patch",
+      "correctAnswerIndex": 0,
+      "hint": "What introduced the bugs?",
+      "explanation": "The pronoun 'it' is the thing that was shipped too early. The patch is what introduced the bugs, while the checks were unfinished.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l177_practice_q1",
+      "level": 177,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "We have sent you a replacement card. Please destroy the old one and activate the new one as soon as it arrives.\nWhat does 'it' refer to?",
+      "sentence": "We have sent you a replacement card. Please destroy the old one and activate the new one as soon as it arrives.",
+      "targetPronoun": "it",
+      "options": [
+        "the old card",
+        "the new card",
+        "the bank"
+      ],
+      "correctAnswer": "the new card",
+      "correctAnswerIndex": 1,
+      "hint": "What is arriving?",
+      "explanation": "'It' arrives, and the sentence has just told you the replacement is on its way. The old card is already with you.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l177_practice_q2",
+      "level": 177,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The adviser told the couple they could send money abroad without a fee if they used the app, though she recommended they compare it with other services.\nIn this text, what does 'it' stand for?",
+      "sentence": "The adviser told the couple they could send money abroad without a fee if they used the app, though she recommended they compare it with other services.",
+      "targetPronoun": "it",
+      "options": [
+        "the fee",
+        "the money",
+        "the app"
+      ],
+      "correctAnswer": "the app",
+      "correctAnswerIndex": 2,
+      "hint": "What would be compared with other services?",
+      "explanation": "'Compare it with other services' needs a service. The app is the service being recommended and needing comparison.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l177_practice_q3",
+      "level": 177,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Mr. Wong asked the bank to freeze his account after his wallet was stolen. It agreed at once, but it warned him that standing orders would still go out.\nWhat does 'it' (the first one) refer to?",
+      "sentence": "Mr. Wong asked the bank to freeze his account after his wallet was stolen. It agreed at once, but it warned him that standing orders would still go out.",
+      "targetPronoun": "it",
+      "options": [
+        "his account",
+        "the bank",
+        "his wallet"
+      ],
+      "correctAnswer": "the bank",
+      "correctAnswerIndex": 1,
+      "hint": "Who agreed and gave a warning?",
+      "explanation": "Note that 'it' is the one who agreed and warned. Only the bank can act and speak; the account and wallet are objects.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l178_practice_q1",
+      "level": 178,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "I ordered a jacket and a pair of boots online. It arrived on Monday, but they are still on the way.\nWhat is meant by 'they'?",
+      "sentence": "I ordered a jacket and a pair of boots online. It arrived on Monday, but they are still on the way.",
+      "targetPronoun": "they",
+      "options": [
+        "the jacket",
+        "the boots",
+        "the order"
+      ],
+      "correctAnswer": "the boots",
+      "correctAnswerIndex": 1,
+      "hint": "'They' is plural. Which item is plural?",
+      "explanation": "Remember that 'they' is plural. The jacket is single and has already arrived, while the boots are the plural item still coming.",
+      "grammarRule": "Number Agreement",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l178_practice_q2",
+      "level": 178,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The label says the sweater must be washed by hand, but Elif put it in the machine, and it shrank.\nWhat does 'it' (the last one) refer to?",
+      "sentence": "The label says the sweater must be washed by hand, but Elif put it in the machine, and it shrank.",
+      "targetPronoun": "it",
+      "options": [
+        "the machine",
+        "the sweater",
+        "the label"
+      ],
+      "correctAnswer": "the sweater",
+      "correctAnswerIndex": 1,
+      "hint": "What could shrink?",
+      "explanation": "'It' is what shrank. A sweater can shrink in a wash, while the machine and the label cannot.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l178_practice_q3",
+      "level": 178,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The store will refund any item that is returned within thirty days, provided it is unworn and has its tags attached.\nWhat is meant by 'its'?",
+      "sentence": "The store will refund any item that is returned within thirty days, provided it is unworn and has its tags attached.",
+      "targetPronoun": "its",
+      "options": [
+        "the store",
+        "the refund",
+        "the returned item"
+      ],
+      "correctAnswer": "the returned item",
+      "correctAnswerIndex": 2,
+      "hint": "What has tags attached?",
+      "explanation": "'Its tags' belong to the item, and the condition 'unworn' also describes it. The store does not need tags on itself.",
+      "grammarRule": "Possessive Determiners",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l179_practice_q1",
+      "level": 179,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Residents must put their bins out by seven on collection day. The council will not take bags that are left beside them.\nWhat is being referred to by 'them'?",
+      "sentence": "Residents must put their bins out by seven on collection day. The council will not take bags that are left beside them.",
+      "targetPronoun": "them",
+      "options": [
+        "the bags",
+        "the residents",
+        "the bins"
+      ],
+      "correctAnswer": "the bins",
+      "correctAnswerIndex": 2,
+      "hint": "Where are bags left?",
+      "explanation": "'Beside them' names the place where bags are left. The bags are beside the bins, not beside the people.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l179_practice_q2",
+      "level": 179,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Applicants who submit the form online should keep the reference number, which they will need if they wish to check its status.\nIn this text, what does 'its' stand for?",
+      "sentence": "Applicants who submit the form online should keep the reference number, which they will need if they wish to check its status.",
+      "targetPronoun": "its",
+      "options": [
+        "the form",
+        "the reference number",
+        "the applicants"
+      ],
+      "correctAnswer": "the form",
+      "correctAnswerIndex": 0,
+      "hint": "What has a status that you check with a number?",
+      "explanation": "'Its status' is the status of the submitted form. The reference number is the key used to look it up.",
+      "grammarRule": "Possessive Determiners",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l179_practice_q3",
+      "level": 179,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Visitors are asked to hand in any object they find, and staff will contact whoever owns it.\nWhat is meant by 'it'?",
+      "sentence": "Visitors are asked to hand in any object they find, and staff will contact whoever owns it.",
+      "targetPronoun": "it",
+      "options": [
+        "the object",
+        "the staff",
+        "the visitors"
+      ],
+      "correctAnswer": "the object",
+      "correctAnswerIndex": 0,
+      "hint": "What could be owned?",
+      "explanation": "'It' is the thing owned by someone. Only the object handed in has an owner.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l180_practice_q1",
+      "level": 180,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Dr. Malik's assistant called Mr. Nwosu to say that his appointment had been moved because the doctor was needed at the hospital.\nWhose appointment does 'his' refer to?",
+      "sentence": "Dr. Malik's assistant called Mr. Nwosu to say that his appointment had been moved because the doctor was needed at the hospital.",
+      "targetPronoun": "his",
+      "options": [
+        "Mr. Nwosu",
+        "Dr. Malik",
+        "the assistant"
+      ],
+      "correctAnswer": "Mr. Nwosu",
+      "correctAnswerIndex": 0,
+      "hint": "Who has an appointment that can be moved?",
+      "explanation": "The person called about the change is the patient. The appointment is Mr. Nwosu's, and the doctor is the one being needed elsewhere.",
+      "grammarRule": "Possessive Determiners",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l180_practice_q2",
+      "level": 180,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "'Have you told Mum about the party?' 'Not yet. I'll ask Dad first, because he'll want to invite his colleagues, and then it will be too big for the flat.'\nWhat is 'it' pointing back to?",
+      "sentence": "'Have you told Mum about the party?' 'Not yet. I'll ask Dad first, because he'll want to invite his colleagues, and then it will be too big for the flat.'",
+      "targetPronoun": "it",
+      "options": [
+        "Dad",
+        "the party",
+        "Mum"
+      ],
+      "correctAnswer": "the party",
+      "correctAnswerIndex": 1,
+      "hint": "What could become too big once extra guests are invited?",
+      "explanation": "Notice that 'it' is singular and non-human, so it cannot be Mum or Dad. Inviting extra colleagues would make the party too big for the flat.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l180_practice_q3",
+      "level": 180,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Please bring your child's vaccination record and your own ID to the clinic. Staff will scan yours at the desk and return it before you leave.\nWhat is 'yours' pointing back to?",
+      "sentence": "Please bring your child's vaccination record and your own ID to the clinic. Staff will scan yours at the desk and return it before you leave.",
+      "targetPronoun": "yours",
+      "options": [
+        "your child's vaccination record",
+        "your own ID",
+        "the clinic"
+      ],
+      "correctAnswer": "your own ID",
+      "correctAnswerIndex": 1,
+      "hint": "'Yours' means 'your ___'. Which item is contrasted with the child's?",
+      "explanation": "'Yours' is set against 'your child's' record, so it refers to the parent's own item: the ID. The record belongs to the child.",
+      "grammarRule": "Possessive Pronouns",
+      "referentHighlight": "Target Noun Phrase"
+    }
+  ]
+}

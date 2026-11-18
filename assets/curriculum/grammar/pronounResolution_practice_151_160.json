@@ -1,0 +1,578 @@
+{
+  "gameType": "pronounResolution",
+  "phase": "practice",
+  "batchIndex": 16,
+  "levels": "151-160",
+  "quests": [
+    {
+      "id": "pr_l151_practice_q1",
+      "level": 151,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The professor asked the student to repeat the question because he hadn't heard it properly.\nWho is 'he' pointing back to?",
+      "sentence": "The professor asked the student to repeat the question because he hadn't heard it properly.",
+      "targetPronoun": "he",
+      "options": [
+        "the student",
+        "the question",
+        "the professor"
+      ],
+      "correctAnswer": "the professor",
+      "correctAnswerIndex": 2,
+      "hint": "Both are male. Who has a reason to ask for a repeat?",
+      "explanation": "People ask for something to be repeated when they missed it. The person who hadn't heard is the professor, and the student is only asked to repeat.",
+      "grammarRule": "Pronoun Ambiguity Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l151_practice_q2",
+      "level": 151,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The tenant emailed the landlord again because he still hadn't fixed the heating.\nWho is 'he' pointing back to?",
+      "sentence": "The tenant emailed the landlord again because he still hadn't fixed the heating.",
+      "targetPronoun": "he",
+      "options": [
+        "the landlord",
+        "the tenant",
+        "the heating"
+      ],
+      "correctAnswer": "the landlord",
+      "correctAnswerIndex": 0,
+      "hint": "Who is responsible for fixing the heating?",
+      "explanation": "Both men are possible grammatically. Meaning decides: the landlord is responsible for repairs, so the tenant emailed him again.",
+      "grammarRule": "Pronoun Ambiguity Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l151_practice_q3",
+      "level": 151,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The receptionist asked the visitor to wait because the doctor was still with another patient, and she offered her a magazine.\nWho is meant by 'her'?",
+      "sentence": "The receptionist asked the visitor to wait because the doctor was still with another patient, and she offered her a magazine.",
+      "targetPronoun": "her",
+      "options": [
+        "the visitor",
+        "the receptionist",
+        "the other patient"
+      ],
+      "correctAnswer": "the visitor",
+      "correctAnswerIndex": 0,
+      "hint": "Who offers, and who receives the offer?",
+      "explanation": "The pronoun 'she' is the one offering, so 'her' cannot be the same person. The receptionist offers the magazine to the visitor who is waiting.",
+      "grammarRule": "Pronoun Ambiguity Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l152_practice_q1",
+      "level": 152,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Ivan gave Tomas a lift because his car had broken down.\nWhose car does 'his' refer to?",
+      "sentence": "Ivan gave Tomas a lift because his car had broken down.",
+      "targetPronoun": "his",
+      "options": [
+        "Ivan",
+        "the lift",
+        "Tomas"
+      ],
+      "correctAnswer": "Tomas",
+      "correctAnswerIndex": 2,
+      "hint": "Why would someone need a lift?",
+      "explanation": "A person offers a lift when the other person cannot drive. The broken car is Tomas's, which is why Ivan gives him a lift.",
+      "grammarRule": "Pronoun Ambiguity Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l152_practice_q2",
+      "level": 152,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Leila asked Ms. Bhat to cover her class on Thursday because she had a dentist appointment.\nWho is meant by 'she'?",
+      "sentence": "Leila asked Ms. Bhat to cover her class on Thursday because she had a dentist appointment.",
+      "targetPronoun": "she",
+      "options": [
+        "Ms. Bhat",
+        "Leila",
+        "her class"
+      ],
+      "correctAnswer": "Leila",
+      "correctAnswerIndex": 1,
+      "hint": "Who needs someone to cover?",
+      "explanation": "A person asks for cover when they cannot be there. The person with the appointment is Leila, who made the request.",
+      "grammarRule": "Pronoun Ambiguity Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l152_practice_q3",
+      "level": 152,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Petra's tutor sent her the corrected essay after she complained about the mark.\nWho is meant by 'she'?",
+      "sentence": "Petra's tutor sent her the corrected essay after she complained about the mark.",
+      "targetPronoun": "she",
+      "options": [
+        "Petra",
+        "her tutor",
+        "the essay"
+      ],
+      "correctAnswer": "Petra",
+      "correctAnswerIndex": 0,
+      "hint": "Who would complain about a mark?",
+      "explanation": "Students receive marks and may complain about them. The one who complained and then got a corrected essay is Petra.",
+      "grammarRule": "Pronoun Ambiguity Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l153_practice_q1",
+      "level": 153,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The planning officer reviewed the objections to the scheme and decided that it should be revised.\nWhat does 'it' refer to?",
+      "sentence": "The planning officer reviewed the objections to the scheme and decided that it should be revised.",
+      "targetPronoun": "it",
+      "options": [
+        "the planning officer",
+        "the scheme",
+        "the objections"
+      ],
+      "correctAnswer": "the scheme",
+      "correctAnswerIndex": 1,
+      "hint": "'It' is singular. What can be revised?",
+      "explanation": "'It' cannot be the plural objections. The officer makes the decision, so what is revised must be the scheme that was objected to.",
+      "grammarRule": "Semantic Reference",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l153_practice_q2",
+      "level": 153,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The customers sent the returns to the warehouse, and they were logged the same day.\nWhat is 'they' pointing back to?",
+      "sentence": "The customers sent the returns to the warehouse, and they were logged the same day.",
+      "targetPronoun": "they",
+      "options": [
+        "the customers",
+        "the warehouse",
+        "the returns"
+      ],
+      "correctAnswer": "the returns",
+      "correctAnswerIndex": 2,
+      "hint": "The passive verb hides the doer. What is logged?",
+      "explanation": "'They were logged' is passive, so the subject is the thing that is recorded. Items that arrive are logged, not the customers who sent them.",
+      "grammarRule": "Semantic Reference",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l153_practice_q3",
+      "level": 153,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Ilya's parents told his teachers he had been ill, and they excused him from the test.\nIn this text, who does 'they' stand for?",
+      "sentence": "Ilya's parents told his teachers he had been ill, and they excused him from the test.",
+      "targetPronoun": "they",
+      "options": [
+        "his teachers",
+        "Ilya's parents",
+        "the test"
+      ],
+      "correctAnswer": "his teachers",
+      "correctAnswerIndex": 0,
+      "hint": "Who has the authority to excuse someone?",
+      "explanation": "Both groups are plural, so meaning decides. Teachers, not parents, excuse a pupil from a test.",
+      "grammarRule": "Role-Based Reference",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l154_practice_q1",
+      "level": 154,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Ms. Ruiz told Ms. Chen to send herself a copy of the file.\nWho is being referred to by 'herself'?",
+      "sentence": "Ms. Ruiz told Ms. Chen to send herself a copy of the file.",
+      "targetPronoun": "herself",
+      "options": [
+        "Ms. Ruiz",
+        "Ms. Chen",
+        "the file"
+      ],
+      "correctAnswer": "Ms. Chen",
+      "correctAnswerIndex": 1,
+      "hint": "Who is doing the sending?",
+      "explanation": "'Herself' returns to the subject of 'send'. Ms. Ruiz gives the instruction, but Ms. Chen is the one who is to send.",
+      "grammarRule": "Reflexive Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l154_practice_q2",
+      "level": 154,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Dario asked Hugo to help him move the sofa.\nWho is being referred to by 'him'?",
+      "sentence": "Dario asked Hugo to help him move the sofa.",
+      "targetPronoun": "him",
+      "options": [
+        "Dario",
+        "Hugo",
+        "the sofa"
+      ],
+      "correctAnswer": "Dario",
+      "correctAnswerIndex": 0,
+      "hint": "If it were Hugo, English would use 'himself'.",
+      "explanation": "Hugo is the subject of 'help', so an ordinary 'him' cannot mean Hugo. It is Dario, the one who needs the help.",
+      "grammarRule": "Object Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l154_practice_q3",
+      "level": 154,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Ann told Beth that Carol had promised to introduce herself to the board.\nWho is meant by 'herself'?",
+      "sentence": "Ann told Beth that Carol had promised to introduce herself to the board.",
+      "targetPronoun": "herself",
+      "options": [
+        "Beth",
+        "Carol",
+        "Ann"
+      ],
+      "correctAnswer": "Carol",
+      "correctAnswerIndex": 1,
+      "hint": "A reflexive stays close to its own clause's subject. Whose clause is it?",
+      "explanation": "'Herself' must return to the subject of 'to introduce', which is Carol, who made the promise. Ann and Beth are in the outer clause.",
+      "grammarRule": "Reflexive Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l155_practice_q1",
+      "level": 155,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The friends of the singer who are performing tonight brought flowers.\nWhat is meant by 'who'?",
+      "sentence": "The friends of the singer who are performing tonight brought flowers.",
+      "targetPronoun": "who",
+      "options": [
+        "the singer",
+        "tonight",
+        "the friends"
+      ],
+      "correctAnswer": "the friends",
+      "correctAnswerIndex": 2,
+      "hint": "Check the verb 'are'. Is it singular or plural?",
+      "explanation": "The verb 'are' is plural, so 'who' must refer to a plural noun. That is the friends, not the singer, who would need 'is'.",
+      "grammarRule": "Relative Pronouns",
+      "referentHighlight": "Antecedent"
+    },
+    {
+      "id": "pr_l155_practice_q2",
+      "level": 155,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The photograph of the twins that hangs in the hall was taken in 1998.\nWhat is being referred to by 'that'?",
+      "sentence": "The photograph of the twins that hangs in the hall was taken in 1998.",
+      "targetPronoun": "that",
+      "options": [
+        "the twins",
+        "the photograph",
+        "the hall"
+      ],
+      "correctAnswer": "the photograph",
+      "correctAnswerIndex": 1,
+      "hint": "'Hangs' is singular. What hangs in a hall?",
+      "explanation": "'Hangs' is a singular verb, so 'that' cannot be 'the twins'. The photograph hangs in the hall.",
+      "grammarRule": "Relative Pronouns",
+      "referentHighlight": "Antecedent"
+    },
+    {
+      "id": "pr_l155_practice_q3",
+      "level": 155,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The contract with the suppliers, which is due for renewal in March, includes a penalty clause.\nWhat does 'which' point back to?",
+      "sentence": "The contract with the suppliers, which is due for renewal in March, includes a penalty clause.",
+      "targetPronoun": "which",
+      "options": [
+        "the suppliers",
+        "March",
+        "the contract"
+      ],
+      "correctAnswer": "the contract",
+      "correctAnswerIndex": 2,
+      "hint": "'Is' is singular. What is being renewed?",
+      "explanation": "'Which is due' needs a singular referent. The suppliers are plural, and what is renewed is the contract.",
+      "grammarRule": "Relative Pronouns",
+      "referentHighlight": "Antecedent"
+    },
+    {
+      "id": "pr_l156_practice_q1",
+      "level": 156,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Rhea and Tara had both applied for the grant. Rhea's proposal was rejected, so she asked the panel for feedback.\nWhich person or group does 'she' point to?",
+      "sentence": "Rhea and Tara had both applied for the grant. Rhea's proposal was rejected, so she asked the panel for feedback.",
+      "targetPronoun": "she",
+      "options": [
+        "Rhea",
+        "Tara",
+        "the panel"
+      ],
+      "correctAnswer": "Rhea",
+      "correctAnswerIndex": 0,
+      "hint": "Who would ask for feedback after a rejection?",
+      "explanation": "Being rejected is the reason for asking for feedback. The one rejected is Rhea, and Tara is mentioned only as another applicant.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l156_practice_q2",
+      "level": 156,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Two candidates were shortlisted. The panel liked Sunita's experience but chose Grace, and she starts in May.\nWho is being referred to by 'she'?",
+      "sentence": "Two candidates were shortlisted. The panel liked Sunita's experience but chose Grace, and she starts in May.",
+      "targetPronoun": "she",
+      "options": [
+        "Grace",
+        "Sunita",
+        "the panel"
+      ],
+      "correctAnswer": "Grace",
+      "correctAnswerIndex": 0,
+      "hint": "'But' shows that Sunita was not chosen.",
+      "explanation": "'Chose Grace' tells you who got the job. The person who starts in May is the one chosen, Grace.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l156_practice_q3",
+      "level": 156,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The hotel replaced the boiler and the radiators in July. It broke down again within a month.\nWhat does 'it' refer to?",
+      "sentence": "The hotel replaced the boiler and the radiators in July. It broke down again within a month.",
+      "targetPronoun": "it",
+      "options": [
+        "the radiators",
+        "the hotel",
+        "the boiler"
+      ],
+      "correctAnswer": "the boiler",
+      "correctAnswerIndex": 2,
+      "hint": "'It' is singular. Which item is singular and can break down?",
+      "explanation": "Look closely: 'it' is singular, so it cannot be the plural radiators. A hotel could not 'break down' in this sense, so it is the boiler.",
+      "grammarRule": "Number Agreement",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l157_practice_q1",
+      "level": 157,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The residents wrote to the developers about the noise. They ignored the letters, so the residents contacted the newspaper.\nWho is 'They' pointing back to?",
+      "sentence": "The residents wrote to the developers about the noise. They ignored the letters, so the residents contacted the newspaper.",
+      "targetPronoun": "They",
+      "options": [
+        "the residents",
+        "the developers",
+        "the letters"
+      ],
+      "correctAnswer": "the developers",
+      "correctAnswerIndex": 1,
+      "hint": "Who received the letters?",
+      "explanation": "The residents are the ones who wrote, so they would not ignore their own letters. The developers received them and ignored them.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l157_practice_q2",
+      "level": 157,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "A small fire started in the restaurant kitchen, and the smoke alarm went off. It spread quickly to the storeroom, but the staff had it under control within ten minutes.\nWhat does 'it' (the first one) refer to?",
+      "sentence": "A small fire started in the restaurant kitchen, and the smoke alarm went off. It spread quickly to the storeroom, but the staff had it under control within ten minutes.",
+      "targetPronoun": "it",
+      "options": [
+        "the fire",
+        "the smoke alarm",
+        "the kitchen"
+      ],
+      "correctAnswer": "the fire",
+      "correctAnswerIndex": 0,
+      "hint": "What can spread to a storeroom?",
+      "explanation": "'It' is what spread to another room, and that is what is said to be under control. A fire spreads; an alarm goes off.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l157_practice_q3",
+      "level": 157,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The trainer told the team that Jamal was injured. He would miss the match, and they would need a replacement.\nWho does 'they' refer to?",
+      "sentence": "The trainer told the team that Jamal was injured. He would miss the match, and they would need a replacement.",
+      "targetPronoun": "they",
+      "options": [
+        "the trainer",
+        "the team",
+        "Jamal"
+      ],
+      "correctAnswer": "the team",
+      "correctAnswerIndex": 1,
+      "hint": "Who needs a replacement player?",
+      "explanation": "'They' is plural, so it is not Jamal or the trainer alone. The team would have to find a replacement for the injured player.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l158_practice_q1",
+      "level": 158,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Ms. Peters showed the inspectors her certificates and asked them to check their dates.\nIn this text, what does 'their' stand for?",
+      "sentence": "Ms. Peters showed the inspectors her certificates and asked them to check their dates.",
+      "targetPronoun": "their",
+      "options": [
+        "the inspectors",
+        "Ms. Peters",
+        "the certificates"
+      ],
+      "correctAnswer": "the certificates",
+      "correctAnswerIndex": 2,
+      "hint": "What has dates that can be checked?",
+      "explanation": "'Their dates' are the dates on the documents. Certificates carry dates, while inspectors are the ones checking.",
+      "grammarRule": "Possessive Determiners",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l158_practice_q2",
+      "level": 158,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The two clients disagreed with the accountant about the fees, but she pointed out that their contract allowed the increase.\nWho is meant by 'their'?",
+      "sentence": "The two clients disagreed with the accountant about the fees, but she pointed out that their contract allowed the increase.",
+      "targetPronoun": "their",
+      "options": [
+        "the accountant",
+        "the two clients",
+        "the fees"
+      ],
+      "correctAnswer": "the two clients",
+      "correctAnswerIndex": 1,
+      "hint": "'She' is the accountant. Whose contract is it?",
+      "explanation": "Consider the form of 'their': it is plural, so it cannot be the accountant. The contract is between the clients and the firm.",
+      "grammarRule": "Possessive Determiners",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l158_practice_q3",
+      "level": 158,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Kiran's cousins and his aunt stayed in his flat while their house was repainted.\nWho is meant by 'their'?",
+      "sentence": "Kiran's cousins and his aunt stayed in his flat while their house was repainted.",
+      "targetPronoun": "their",
+      "options": [
+        "Kiran's cousins and his aunt",
+        "Kiran",
+        "the flat"
+      ],
+      "correctAnswer": "Kiran's cousins and his aunt",
+      "correctAnswerIndex": 0,
+      "hint": "Whose house was being repainted?",
+      "explanation": "'His flat' is Kiran's, but 'their house' is a different place. The house belongs to the ones who had to move out, his cousins and his aunt.",
+      "grammarRule": "Possessive Determiners",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l159_practice_q1",
+      "level": 159,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The clinic offers a morning and an evening session; the latter is fully booked until March.\nWhat is being referred to by 'the latter'?",
+      "sentence": "The clinic offers a morning and an evening session; the latter is fully booked until March.",
+      "targetPronoun": "the latter",
+      "options": [
+        "the morning session",
+        "the evening session",
+        "the clinic"
+      ],
+      "correctAnswer": "the evening session",
+      "correctAnswerIndex": 1,
+      "hint": "'Latter' means the second of two things.",
+      "explanation": "'The latter' points to the second of the two items listed. The evening session is second in the list.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l159_practice_q2",
+      "level": 159,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Mr. Iqbal and his daughter run the shop, but the former handles the accounts.\nIn this text, who does 'the former' stand for?",
+      "sentence": "Mr. Iqbal and his daughter run the shop, but the former handles the accounts.",
+      "targetPronoun": "the former",
+      "options": [
+        "Mr. Iqbal",
+        "his daughter",
+        "the shop"
+      ],
+      "correctAnswer": "Mr. Iqbal",
+      "correctAnswerIndex": 0,
+      "hint": "'Former' means the first of two things.",
+      "explanation": "'The former' means the first-mentioned person of a pair. Mr. Iqbal is named before his daughter.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l159_practice_q3",
+      "level": 159,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Between the two proposals, the board favoured the cheaper one, though it had fewer safeguards.\nWhat is meant by 'it'?",
+      "sentence": "Between the two proposals, the board favoured the cheaper one, though it had fewer safeguards.",
+      "targetPronoun": "it",
+      "options": [
+        "the other proposal",
+        "the cheaper proposal",
+        "the board"
+      ],
+      "correctAnswer": "the cheaper proposal",
+      "correctAnswerIndex": 1,
+      "hint": "'Though' contrasts the board's choice with a weakness.",
+      "explanation": "'Though' introduces a drawback of the option the board favoured. That means 'it' is the cheaper proposal.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l160_practice_q1",
+      "level": 160,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The auditor told the finance director that he had found no irregularities, so she signed off the accounts herself.\nWho is 'he' pointing back to?",
+      "sentence": "The auditor told the finance director that he had found no irregularities, so she signed off the accounts herself.",
+      "targetPronoun": "he",
+      "options": [
+        "the finance director",
+        "the accounts",
+        "the auditor"
+      ],
+      "correctAnswer": "the auditor",
+      "correctAnswerIndex": 2,
+      "hint": "'She' is the finance director. Who found nothing wrong?",
+      "explanation": "The finance director is 'she', so 'he' is the other person. The auditor did the checking and reported the results.",
+      "grammarRule": "Pronoun-Antecedent Agreement",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l160_practice_q2",
+      "level": 160,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Both applicants met the recruiter and the hiring manager. The latter asked most of the questions, but she was friendly.\nWho is 'she' pointing back to?",
+      "sentence": "Both applicants met the recruiter and the hiring manager. The latter asked most of the questions, but she was friendly.",
+      "targetPronoun": "she",
+      "options": [
+        "the recruiter",
+        "one of the applicants",
+        "the hiring manager"
+      ],
+      "correctAnswer": "the hiring manager",
+      "correctAnswerIndex": 2,
+      "hint": "'The latter' points to the second of a pair. Who asked most questions?",
+      "explanation": "'She' continues the subject of the last sentence. The subject there is 'the latter', which is the hiring manager.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l160_practice_q3",
+      "level": 160,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Ms. Lam told the two interns that the client would email them, but neither of them had received anything, so she checked the server herself.\nWho does 'herself' refer to?",
+      "sentence": "Ms. Lam told the two interns that the client would email them, but neither of them had received anything, so she checked the server herself.",
+      "targetPronoun": "herself",
+      "options": [
+        "the client",
+        "the two interns",
+        "Ms. Lam"
+      ],
+      "correctAnswer": "Ms. Lam",
+      "correctAnswerIndex": 2,
+      "hint": "Who did the checking?",
+      "explanation": "In this sentence, 'herself' is feminine singular and stresses who checked. The interns had received nothing and are plural; Ms. Lam checked personally.",
+      "grammarRule": "Reflexive Pronouns",
+      "referentHighlight": "Target Noun"
+    }
+  ]
+}

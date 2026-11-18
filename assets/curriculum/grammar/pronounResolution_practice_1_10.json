@@ -1,0 +1,578 @@
+{
+  "gameType": "pronounResolution",
+  "phase": "practice",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "pr_l1_practice_q1",
+      "level": 1,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Mr. Osei waited while Priya filled in the form, and then she signed it at the bottom.\nWho is 'she' pointing back to?",
+      "sentence": "Mr. Osei waited while Priya filled in the form, and then she signed it at the bottom.",
+      "targetPronoun": "she",
+      "options": [
+        "Mr. Osei",
+        "the form",
+        "Priya"
+      ],
+      "correctAnswer": "Priya",
+      "correctAnswerIndex": 2,
+      "hint": "Only one of the people named can be a 'she'.",
+      "explanation": "The pronoun 'she' is feminine and singular, so it points to Priya. Mr. Osei is male, and a form cannot sign anything.",
+      "grammarRule": "Subject Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l1_practice_q2",
+      "level": 1,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Our neighbour, Mrs. Das, asked my brother to move the ladder, and he did it right away.\nWho is 'he'?",
+      "sentence": "Our neighbour, Mrs. Das, asked my brother to move the ladder, and he did it right away.",
+      "targetPronoun": "he",
+      "options": [
+        "Mrs. Das",
+        "my brother",
+        "the ladder"
+      ],
+      "correctAnswer": "my brother",
+      "correctAnswerIndex": 1,
+      "hint": "Match the pronoun's gender to the people in the sentence, then ask who received the request.",
+      "explanation": "'He' is masculine, so it cannot be Mrs. Das. It is my brother, the person who was asked and who then did the job.",
+      "grammarRule": "Subject Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l1_practice_q3",
+      "level": 1,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The nurses told the patient to rest, and they left the room quietly.\nWho is 'they' pointing back to?",
+      "sentence": "The nurses told the patient to rest, and they left the room quietly.",
+      "targetPronoun": "they",
+      "options": [
+        "the nurses",
+        "the patient",
+        "the room"
+      ],
+      "correctAnswer": "the nurses",
+      "correctAnswerIndex": 0,
+      "hint": "Is 'they' singular or plural? Then see which noun is plural and can leave a room.",
+      "explanation": "Look closely: 'they' is plural. The nurses are the plural group, while the patient and the room are both singular.",
+      "grammarRule": "Number Agreement",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l2_practice_q1",
+      "level": 2,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The dentist phoned Mr. Khan to confirm the time, then asked him to arrive ten minutes early.\nWho is meant by 'him'?",
+      "sentence": "The dentist phoned Mr. Khan to confirm the time, then asked him to arrive ten minutes early.",
+      "targetPronoun": "him",
+      "options": [
+        "the dentist",
+        "Mr. Khan",
+        "the time"
+      ],
+      "correctAnswer": "Mr. Khan",
+      "correctAnswerIndex": 1,
+      "hint": "Who is being asked, and who is doing the asking?",
+      "explanation": "'Him' is the object of 'asked', so it names the person being asked: Mr. Khan. The dentist is the one asking.",
+      "grammarRule": "Object Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l2_practice_q2",
+      "level": 2,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Ms. Rossi left the waiter a generous tip, and he thanked her twice.\nWho is meant by 'her'?",
+      "sentence": "Ms. Rossi left the waiter a generous tip, and he thanked her twice.",
+      "targetPronoun": "her",
+      "options": [
+        "the waiter",
+        "Ms. Rossi",
+        "the tip"
+      ],
+      "correctAnswer": "Ms. Rossi",
+      "correctAnswerIndex": 1,
+      "hint": "Who left the tip, and who said thank you?",
+      "explanation": "'Her' is the object of 'thanked'. The waiter thanked the person who gave him the tip, so it is Ms. Rossi.",
+      "grammarRule": "Object Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l2_practice_q3",
+      "level": 2,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "My cousin saw the new neighbours at the market and waved at them.\nWho is meant by 'them'?",
+      "sentence": "My cousin saw the new neighbours at the market and waved at them.",
+      "targetPronoun": "them",
+      "options": [
+        "the new neighbours",
+        "my cousin",
+        "the market"
+      ],
+      "correctAnswer": "the new neighbours",
+      "correctAnswerIndex": 0,
+      "hint": "'Them' is plural. Which noun is a group of people?",
+      "explanation": "Consider the form of 'them': it is a plural object pronoun. My cousin and the market are singular, so only the new neighbours fit.",
+      "grammarRule": "Number Agreement",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l3_practice_q1",
+      "level": 3,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The twins asked their coach for extra drills, and they trained until it got dark.\nWho does 'they' refer to?",
+      "sentence": "The twins asked their coach for extra drills, and they trained until it got dark.",
+      "targetPronoun": "they",
+      "options": [
+        "the twins",
+        "their coach",
+        "the extra drills"
+      ],
+      "correctAnswer": "the twins",
+      "correctAnswerIndex": 0,
+      "hint": "Which plural noun can actually train?",
+      "explanation": "'They' needs a plural subject that can train. The twins can; the drills are plural too, but drills cannot train anyone.",
+      "grammarRule": "Pronoun-Antecedent Agreement",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l3_practice_q2",
+      "level": 3,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The travellers found seats near the window, but the conductor told them to move.\nWho is 'them' pointing back to?",
+      "sentence": "The travellers found seats near the window, but the conductor told them to move.",
+      "targetPronoun": "them",
+      "options": [
+        "the conductor",
+        "the seats",
+        "the travellers"
+      ],
+      "correctAnswer": "the travellers",
+      "correctAnswerIndex": 2,
+      "hint": "Who received the instruction to move?",
+      "explanation": "In this sentence, 'them' is the object of 'told', so it names the people who were told. The travellers are that group, not the conductor who spoke.",
+      "grammarRule": "Object Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l3_practice_q3",
+      "level": 3,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Our neighbours were away, so I watered their plants for two weeks.\nIn this text, who does 'their' stand for?",
+      "sentence": "Our neighbours were away, so I watered their plants for two weeks.",
+      "targetPronoun": "their",
+      "options": [
+        "I",
+        "the plants",
+        "our neighbours"
+      ],
+      "correctAnswer": "our neighbours",
+      "correctAnswerIndex": 2,
+      "hint": "Whose plants were they, if 'I' was only helping?",
+      "explanation": "Note that 'their' is plural and possessive. It belongs to our neighbours, who own the plants; the speaker is only looking after them.",
+      "grammarRule": "Possessive Determiners",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l4_practice_q1",
+      "level": 4,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Kwame lent Sofia his umbrella because it was pouring.\nWhose umbrella is it? Who does 'his' refer to?",
+      "sentence": "Kwame lent Sofia his umbrella because it was pouring.",
+      "targetPronoun": "his",
+      "options": [
+        "Sofia",
+        "the umbrella",
+        "Kwame"
+      ],
+      "correctAnswer": "Kwame",
+      "correctAnswerIndex": 2,
+      "hint": "'His' is masculine. Which person in the sentence is male?",
+      "explanation": "'His' shows that the owner is male. Sofia is female, so Kwame is the one who owns and lends the umbrella.",
+      "grammarRule": "Possessive Determiners",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l4_practice_q2",
+      "level": 4,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Mr. Baker, the pharmacist, asked Mrs. Iyer to check her address on the form.\nWho is being referred to by 'her'?",
+      "sentence": "Mr. Baker, the pharmacist, asked Mrs. Iyer to check her address on the form.",
+      "targetPronoun": "her",
+      "options": [
+        "Mrs. Iyer",
+        "Mr. Baker",
+        "the form"
+      ],
+      "correctAnswer": "Mrs. Iyer",
+      "correctAnswerIndex": 0,
+      "hint": "Which person in the sentence is female?",
+      "explanation": "Remember that 'her' is feminine and possessive, so it belongs to Mrs. Iyer. The address being checked is hers.",
+      "grammarRule": "Possessive Determiners",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l4_practice_q3",
+      "level": 4,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The volunteers arrived early and put their bags behind the stage.\nWho is being referred to by 'their'?",
+      "sentence": "The volunteers arrived early and put their bags behind the stage.",
+      "targetPronoun": "their",
+      "options": [
+        "the stage",
+        "the bags",
+        "the volunteers"
+      ],
+      "correctAnswer": "the volunteers",
+      "correctAnswerIndex": 2,
+      "hint": "Who arrived and put things down?",
+      "explanation": "Notice that 'their' points back to the plural subject: the volunteers own the bags. A noun cannot be the owner of itself.",
+      "grammarRule": "Possessive Determiners",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l5_practice_q1",
+      "level": 5,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The printer jammed again, so Ali opened it and pulled out the crumpled page.\nWhat is meant by 'it'?",
+      "sentence": "The printer jammed again, so Ali opened it and pulled out the crumpled page.",
+      "targetPronoun": "it",
+      "options": [
+        "Ali",
+        "the page",
+        "the printer"
+      ],
+      "correctAnswer": "the printer",
+      "correctAnswerIndex": 2,
+      "hint": "What can be opened and jammed, with a page inside?",
+      "explanation": "Notice that 'it' refers to the thing that jammed. Ali is a person, and the page is pulled out of the printer rather than opened.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l5_practice_q2",
+      "level": 5,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The bakery closes early on Sundays, but its bread usually sells out by noon.\nWhat is meant by 'its'?",
+      "sentence": "The bakery closes early on Sundays, but its bread usually sells out by noon.",
+      "targetPronoun": "its",
+      "options": [
+        "the bakery",
+        "Sundays",
+        "the bread"
+      ],
+      "correctAnswer": "the bakery",
+      "correctAnswerIndex": 0,
+      "hint": "Who or what has bread to sell?",
+      "explanation": "'Its' is a possessive for a non-person. The bakery owns and sells the bread, so 'its' points back to the bakery.",
+      "grammarRule": "Possessive Determiners",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l5_practice_q3",
+      "level": 5,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Dana plugged the tablet into the wall socket overnight, but it still shut down after an hour.\nWhat is being referred to by 'it'?",
+      "sentence": "Dana plugged the tablet into the wall socket overnight, but it still shut down after an hour.",
+      "targetPronoun": "it",
+      "options": [
+        "Dana",
+        "the wall socket",
+        "the tablet"
+      ],
+      "correctAnswer": "the tablet",
+      "correctAnswerIndex": 2,
+      "hint": "Which thing has a battery that could run out?",
+      "explanation": "Note that 'it' refers to the tablet, the device that lost power. Dana is a person, and a wall socket does not shut down.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l6_practice_q1",
+      "level": 6,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The apples looked fresh, so Meera bought them for the trip.\nWhat does 'them' point back to?",
+      "sentence": "The apples looked fresh, so Meera bought them for the trip.",
+      "targetPronoun": "them",
+      "options": [
+        "the apples",
+        "Meera",
+        "the trip"
+      ],
+      "correctAnswer": "the apples",
+      "correctAnswerIndex": 0,
+      "hint": "Which noun is plural and can be bought?",
+      "explanation": "In this sentence, 'them' is plural, so it points to the apples. Meera and the trip are both singular.",
+      "grammarRule": "Number Agreement",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l6_practice_q2",
+      "level": 6,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The manual explains the settings, but it doesn't say anything about the battery.\nWhat does 'it' point back to?",
+      "sentence": "The manual explains the settings, but it doesn't say anything about the battery.",
+      "targetPronoun": "it",
+      "options": [
+        "the settings",
+        "the battery",
+        "the manual"
+      ],
+      "correctAnswer": "the manual",
+      "correctAnswerIndex": 2,
+      "hint": "Singular 'it' cannot replace a plural noun. Which noun explains and says things?",
+      "explanation": "Note that 'it' is singular, which rules out 'the settings'. The manual is the thing that explains and could fail to mention something.",
+      "grammarRule": "Number Agreement",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l6_practice_q3",
+      "level": 6,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "My sister found the shoes too tight, so she took them back to the shop on Monday.\nWhat is being referred to by 'them'?",
+      "sentence": "My sister found the shoes too tight, so she took them back to the shop on Monday.",
+      "targetPronoun": "them",
+      "options": [
+        "the shoes",
+        "my sister",
+        "the shop"
+      ],
+      "correctAnswer": "the shoes",
+      "correctAnswerIndex": 0,
+      "hint": "What did she return because it was too tight?",
+      "explanation": "Look closely: 'them' is plural, so it cannot be my sister or the shop. It refers to the shoes she took back.",
+      "grammarRule": "Pronoun-Antecedent Agreement",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l7_practice_q1",
+      "level": 7,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Tomás thanked Grace because she had saved him a seat.\nWho does 'she' refer to?",
+      "sentence": "Tomás thanked Grace because she had saved him a seat.",
+      "targetPronoun": "she",
+      "options": [
+        "Tomás",
+        "Grace",
+        "the seat"
+      ],
+      "correctAnswer": "Grace",
+      "correctAnswerIndex": 1,
+      "hint": "Who could be described as 'she', and who saved the seat?",
+      "explanation": "The pronoun 'she' is feminine, so it names Grace. She is the one who saved the seat, and Tomás is the one who thanked her.",
+      "grammarRule": "Subject Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l7_practice_q2",
+      "level": 7,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Nadia's father drove her to the station, and he waited until the train left.\nWho is 'he' pointing back to?",
+      "sentence": "Nadia's father drove her to the station, and he waited until the train left.",
+      "targetPronoun": "he",
+      "options": [
+        "Nadia",
+        "Nadia's father",
+        "the station"
+      ],
+      "correctAnswer": "Nadia's father",
+      "correctAnswerIndex": 1,
+      "hint": "Pick the male person who did the driving and waiting.",
+      "explanation": "Note that 'he' is masculine, so it points to Nadia's father. Nadia is referred to with 'her' in the same sentence.",
+      "grammarRule": "Subject Pronouns",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l7_practice_q3",
+      "level": 7,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Mr. Adeyemi phoned the front desk to say he would be late, and Ms. Lund moved his meeting.\nWho does 'he' refer to?",
+      "sentence": "Mr. Adeyemi phoned the front desk to say he would be late, and Ms. Lund moved his meeting.",
+      "targetPronoun": "he",
+      "options": [
+        "Ms. Lund",
+        "Mr. Adeyemi",
+        "the front desk"
+      ],
+      "correctAnswer": "Mr. Adeyemi",
+      "correctAnswerIndex": 1,
+      "hint": "Who phoned, and who is male?",
+      "explanation": "In this sentence, 'he' names the caller, Mr. Adeyemi, who would be late. Ms. Lund is female, and the front desk is a place.",
+      "grammarRule": "Subject Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l8_practice_q1",
+      "level": 8,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "My grandmother grows tomatoes by the fence and shares them with everyone on our street.\nIn this text, what does 'them' stand for?",
+      "sentence": "My grandmother grows tomatoes by the fence and shares them with everyone on our street.",
+      "targetPronoun": "them",
+      "options": [
+        "the tomatoes",
+        "the neighbours",
+        "my grandmother"
+      ],
+      "correctAnswer": "the tomatoes",
+      "correctAnswerIndex": 0,
+      "hint": "What does she grow and give away?",
+      "explanation": "'Them' is plural and is the thing being shared. What she grows is the tomatoes.",
+      "grammarRule": "Number Agreement",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l8_practice_q2",
+      "level": 8,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The flight attendant showed the passengers where the exits were and asked them to keep the aisle clear.\nWho is meant by 'them'?",
+      "sentence": "The flight attendant showed the passengers where the exits were and asked them to keep the aisle clear.",
+      "targetPronoun": "them",
+      "options": [
+        "the flight attendant",
+        "the passengers",
+        "the exits"
+      ],
+      "correctAnswer": "the passengers",
+      "correctAnswerIndex": 1,
+      "hint": "Who is being asked to keep the aisle clear?",
+      "explanation": "The pronoun 'them' names the people being asked, and the passengers are the ones sitting in the aisle. The exits are plural, but you cannot ask an exit to do something.",
+      "grammarRule": "Object Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l8_practice_q3",
+      "level": 8,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "After the plumber finished the repair, Mrs. Verma paid him and asked whether the tap would hold.\nWho is meant by 'him'?",
+      "sentence": "After the plumber finished the repair, Mrs. Verma paid him and asked whether the tap would hold.",
+      "targetPronoun": "him",
+      "options": [
+        "the plumber",
+        "Mrs. Verma",
+        "the tap"
+      ],
+      "correctAnswer": "the plumber",
+      "correctAnswerIndex": 0,
+      "hint": "Who did the work and got paid?",
+      "explanation": "'Him' is masculine and is the object of 'paid'. The person paid for the repair is the plumber, not Mrs. Verma.",
+      "grammarRule": "Object Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l9_practice_q1",
+      "level": 9,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The librarian found the book Leila had asked for and handed it to her.\nWho is being referred to by 'her'?",
+      "sentence": "The librarian found the book Leila had asked for and handed it to her.",
+      "targetPronoun": "her",
+      "options": [
+        "the librarian",
+        "Leila",
+        "the book"
+      ],
+      "correctAnswer": "Leila",
+      "correctAnswerIndex": 1,
+      "hint": "Who had asked for the book?",
+      "explanation": "Notice that 'her' is the person receiving the book, and that is Leila. The librarian is the giver, and a book cannot receive anything.",
+      "grammarRule": "Object Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l9_practice_q2",
+      "level": 9,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The bank clerk asked Mr. Petrov for photo ID and gave it back after checking.\nIn this text, what does 'it' stand for?",
+      "sentence": "The bank clerk asked Mr. Petrov for photo ID and gave it back after checking.",
+      "targetPronoun": "it",
+      "options": [
+        "Mr. Petrov",
+        "the bank clerk",
+        "the photo ID"
+      ],
+      "correctAnswer": "the photo ID",
+      "correctAnswerIndex": 2,
+      "hint": "What was checked and then returned?",
+      "explanation": "'It' is a singular thing that can be given back. The clerk returns the photo ID, not the person.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l9_practice_q3",
+      "level": 9,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Our guide met Ana and Ben at the gate and led them through the old town.\nWho is meant by 'them'?",
+      "sentence": "Our guide met Ana and Ben at the gate and led them through the old town.",
+      "targetPronoun": "them",
+      "options": [
+        "Ana and Ben",
+        "our guide",
+        "the gate"
+      ],
+      "correctAnswer": "Ana and Ben",
+      "correctAnswerIndex": 0,
+      "hint": "Who was led through the town?",
+      "explanation": "Remember that 'them' is plural, so it points to the two visitors together: Ana and Ben. The guide is the one leading.",
+      "grammarRule": "Number Agreement",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l10_practice_q1",
+      "level": 10,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The neighbours' dog dug up Mr. Bell's flowers, so he asked them to fix their fence.\nWho is 'them' pointing back to?",
+      "sentence": "The neighbours' dog dug up Mr. Bell's flowers, so he asked them to fix their fence.",
+      "targetPronoun": "them",
+      "options": [
+        "Mr. Bell",
+        "the flowers",
+        "the neighbours"
+      ],
+      "correctAnswer": "the neighbours",
+      "correctAnswerIndex": 2,
+      "hint": "Whom would Mr. Bell ask about the fence?",
+      "explanation": "Look closely: 'them' is plural and is the object of 'asked'. Mr. Bell is the one asking, so the people he asks are the neighbours.",
+      "grammarRule": "Pronoun-Antecedent Agreement",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l10_practice_q2",
+      "level": 10,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Rosa's phone slid off the desk, and she caught it before it hit the floor.\nWhat is 'it' pointing back to?",
+      "sentence": "Rosa's phone slid off the desk, and she caught it before it hit the floor.",
+      "targetPronoun": "it",
+      "options": [
+        "Rosa",
+        "the phone",
+        "the desk"
+      ],
+      "correctAnswer": "the phone",
+      "correctAnswerIndex": 1,
+      "hint": "What slid off, and what did she catch?",
+      "explanation": "In this sentence, 'it' is a thing, not a person. What slid off and was caught before hitting the floor is the phone.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l10_practice_q3",
+      "level": 10,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The coaches praised the girls after the match and told them to rest before the final.\nWho does 'them' refer to?",
+      "sentence": "The coaches praised the girls after the match and told them to rest before the final.",
+      "targetPronoun": "them",
+      "options": [
+        "the coaches",
+        "the girls",
+        "the match"
+      ],
+      "correctAnswer": "the girls",
+      "correctAnswerIndex": 1,
+      "hint": "Who was told to rest, the speakers or the listeners?",
+      "explanation": "Note that 'them' is the object of 'told'. The coaches gave the advice, so the ones told to rest are the girls.",
+      "grammarRule": "Object Pronouns",
+      "referentHighlight": "Referenced Group"
+    }
+  ]
+}

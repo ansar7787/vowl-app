@@ -66,6 +66,8 @@ import 'package:vowl/features/grammar/modals_selection/presentation/pages/modals
 import 'package:vowl/features/grammar/modals_selection/presentation/pages/modals_selection_practice_screen.dart';
 import 'package:vowl/features/grammar/preposition_choice/presentation/pages/preposition_choice_learn_screen.dart';
 import 'package:vowl/features/grammar/preposition_choice/presentation/pages/preposition_choice_practice_screen.dart';
+import 'package:vowl/features/grammar/pronoun_resolution/presentation/pages/pronoun_resolution_learn_screen.dart';
+import 'package:vowl/features/grammar/pronoun_resolution/presentation/pages/pronoun_resolution_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -469,6 +471,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'pronounresolution') {
+          return fadeTransitionPage(
+            child: PronounResolutionLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -651,6 +659,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'prepositionchoice') {
           return fadeTransitionPage(
             child: PrepositionChoicePracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'pronounresolution') {
+          return fadeTransitionPage(
+            child: PronounResolutionPracticeScreen(level: level),
             state: state,
           );
         }

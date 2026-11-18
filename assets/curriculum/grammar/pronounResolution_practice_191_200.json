@@ -1,0 +1,578 @@
+{
+  "gameType": "pronounResolution",
+  "phase": "practice",
+  "batchIndex": 20,
+  "levels": "191-200",
+  "quests": [
+    {
+      "id": "pr_l191_practice_q1",
+      "level": 191,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The museum lent the painting to a gallery in Osaka. It came back in March with a torn corner, and the museum has asked the gallery to cover the cost of restoring it.\nWhat does 'it' (the last one) refer to?",
+      "sentence": "The museum lent the painting to a gallery in Osaka. It came back in March with a torn corner, and the museum has asked the gallery to cover the cost of restoring it.",
+      "targetPronoun": "it",
+      "options": [
+        "the gallery",
+        "the painting",
+        "the museum"
+      ],
+      "correctAnswer": "the painting",
+      "correctAnswerIndex": 1,
+      "hint": "What was lent, damaged and needs restoring?",
+      "explanation": "The pronoun 'it' is what came back with a torn corner, so it is what needs restoring. The museum and the gallery are the two parties dealing with the cost.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l191_practice_q2",
+      "level": 191,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The two firms, which had competed for years, agreed to bid jointly, though each insisted that it would keep control of its own staff.\nWhat is 'its' pointing back to?",
+      "sentence": "The two firms, which had competed for years, agreed to bid jointly, though each insisted that it would keep control of its own staff.",
+      "targetPronoun": "its",
+      "options": [
+        "the two firms together",
+        "the joint bid",
+        "each firm"
+      ],
+      "correctAnswer": "each firm",
+      "correctAnswerIndex": 2,
+      "hint": "'Each' looks at the firms one at a time. Whose staff?",
+      "explanation": "'Each' is singular, and 'its own staff' means every firm keeps its own. It does not refer to the two firms as a pair.",
+      "grammarRule": "Indefinite Pronouns",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l191_practice_q3",
+      "level": 191,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Ilona told Mr. Bauer that the delay was not the courier's fault, which he accepted, but he still expected her to compensate him.\nWho is 'her' pointing back to?",
+      "sentence": "Ilona told Mr. Bauer that the delay was not the courier's fault, which he accepted, but he still expected her to compensate him.",
+      "targetPronoun": "her",
+      "options": [
+        "the courier",
+        "Mr. Bauer",
+        "Ilona"
+      ],
+      "correctAnswer": "Ilona",
+      "correctAnswerIndex": 2,
+      "hint": "Who told him the delay was not the courier's fault, and who could compensate?",
+      "explanation": "Look closely: 'her' is feminine, so it cannot be Mr. Bauer. Since he accepted that the courier was not at fault, the one he expects compensation from is Ilona.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l192_practice_q1",
+      "level": 192,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Neither the ministry nor the agencies it funds had published the figures, which is why the journalists who had requested them complained.\nWhat is meant by 'it'?",
+      "sentence": "Neither the ministry nor the agencies it funds had published the figures, which is why the journalists who had requested them complained.",
+      "targetPronoun": "it",
+      "options": [
+        "the ministry",
+        "the agencies",
+        "the journalists"
+      ],
+      "correctAnswer": "the ministry",
+      "correctAnswerIndex": 0,
+      "hint": "Who funds whom?",
+      "explanation": "'It' is singular, so it cannot be the plural agencies. The ministry is the one that funds the agencies.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l192_practice_q2",
+      "level": 192,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The tenants' solicitor advised them not to sign anything until she had seen it, and to send her any letters they received from the landlord.\nWho is meant by 'her'?",
+      "sentence": "The tenants' solicitor advised them not to sign anything until she had seen it, and to send her any letters they received from the landlord.",
+      "targetPronoun": "her",
+      "options": [
+        "the landlord",
+        "the tenants' solicitor",
+        "one of the tenants"
+      ],
+      "correctAnswer": "the tenants' solicitor",
+      "correctAnswerIndex": 1,
+      "hint": "Who gave the advice and would receive the letters?",
+      "explanation": "'She' had earlier been the one who wanted to see the documents. 'Her' points to the same person: the solicitor.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l192_practice_q3",
+      "level": 192,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "We asked to be moved because our room smelled of smoke. The receptionist said ours would be cleaned while we were out, but she offered us another one on the same floor.\nWhat is meant by 'ours'?",
+      "sentence": "We asked to be moved because our room smelled of smoke. The receptionist said ours would be cleaned while we were out, but she offered us another one on the same floor.",
+      "targetPronoun": "ours",
+      "options": [
+        "our room",
+        "the other room",
+        "the floor"
+      ],
+      "correctAnswer": "our room",
+      "correctAnswerIndex": 0,
+      "hint": "'Ours' means 'our ___'. What smelled of smoke?",
+      "explanation": "'Ours' is set against 'another one'. It is the room that smelled of smoke, so it refers to the guests' own room.",
+      "grammarRule": "Possessive Pronouns",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l193_practice_q1",
+      "level": 193,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The council promised residents it would consult them, but they later learned that the scheme, which it had described as provisional, had already been approved.\nWhat does 'it' refer to?",
+      "sentence": "The council promised residents it would consult them, but they later learned that the scheme, which it had described as provisional, had already been approved.",
+      "targetPronoun": "it",
+      "options": [
+        "the scheme",
+        "the council",
+        "the residents"
+      ],
+      "correctAnswer": "the council",
+      "correctAnswerIndex": 1,
+      "hint": "Who promised, and who described the scheme?",
+      "explanation": "Consider the form of 'it': it is the party that made the promise and gave the description. The scheme is the thing being described, so it cannot be 'it'.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l193_practice_q2",
+      "level": 193,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The interviewer asked the candidate whether her previous employer knew she was applying elsewhere, and she said it didn't, which she admitted was a risk.\nWhat is 'it' pointing back to?",
+      "sentence": "The interviewer asked the candidate whether her previous employer knew she was applying elsewhere, and she said it didn't, which she admitted was a risk.",
+      "targetPronoun": "it",
+      "options": [
+        "the application",
+        "the interviewer",
+        "her previous employer"
+      ],
+      "correctAnswer": "her previous employer",
+      "correctAnswerIndex": 2,
+      "hint": "Who might or might not have known?",
+      "explanation": "'It didn't' means 'didn't know'. The one who might not have known about the application is the previous employer.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l193_practice_q3",
+      "level": 193,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The witnesses told the officers that the two men who had left the bar had argued, and that one of them had threatened the other, though neither would say why.\nIn this text, who does 'them' stand for?",
+      "sentence": "The witnesses told the officers that the two men who had left the bar had argued, and that one of them had threatened the other, though neither would say why.",
+      "targetPronoun": "them",
+      "options": [
+        "the witnesses",
+        "the officers",
+        "the two men"
+      ],
+      "correctAnswer": "the two men",
+      "correctAnswerIndex": 2,
+      "hint": "'One of them... the other'. Who is the pair?",
+      "explanation": "'One of them' and 'the other' describe a pair. The pair is the two men who argued.",
+      "grammarRule": "Indefinite Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l194_practice_q1",
+      "level": 194,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The company lets employees choose between a bonus and extra leave. Those who take the former must decide by June, while those who prefer the latter can wait until December.\nWhat is being referred to by 'the former'?",
+      "sentence": "The company lets employees choose between a bonus and extra leave. Those who take the former must decide by June, while those who prefer the latter can wait until December.",
+      "targetPronoun": "the former",
+      "options": [
+        "a bonus",
+        "extra leave",
+        "employees"
+      ],
+      "correctAnswer": "a bonus",
+      "correctAnswerIndex": 0,
+      "hint": "Go back to the list of two options and see which one was named first.",
+      "explanation": "'The former' is the first item in 'a bonus and extra leave', which is the bonus. The latter is the leave.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l194_practice_q2",
+      "level": 194,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "'I asked the landlord about the flat, and he said the previous tenants had loved it, but he didn't mention that they had left because of the damp.'\nWho is being referred to by 'they'?",
+      "sentence": "'I asked the landlord about the flat, and he said the previous tenants had loved it, but he didn't mention that they had left because of the damp.'",
+      "targetPronoun": "they",
+      "options": [
+        "the landlord",
+        "the previous tenants",
+        "the damp"
+      ],
+      "correctAnswer": "the previous tenants",
+      "correctAnswerIndex": 1,
+      "hint": "Who left?",
+      "explanation": "In this sentence, 'they' is plural, so it cannot be the landlord, who is 'he'. The people who left because of the damp are the previous tenants.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l194_practice_q3",
+      "level": 194,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "In the letter, the bank explained that the fee applied only to accounts inactive for over a year, and that customers who wished to avoid it could either close theirs or make a small deposit.\nWhat is meant by 'theirs'?",
+      "sentence": "In the letter, the bank explained that the fee applied only to accounts inactive for over a year, and that customers who wished to avoid it could either close theirs or make a small deposit.",
+      "targetPronoun": "theirs",
+      "options": [
+        "the fee",
+        "the customers' accounts",
+        "the bank's accounts"
+      ],
+      "correctAnswer": "the customers' accounts",
+      "correctAnswerIndex": 1,
+      "hint": "'Theirs' means 'their ___'. What could customers close?",
+      "explanation": "'Theirs' belongs to the customers. It stands for their accounts, which they could close to avoid the fee.",
+      "grammarRule": "Possessive Pronouns",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l195_practice_q1",
+      "level": 195,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Whoever designed the interface clearly hadn't tested it with users, because those who tried it complained that they couldn't find the settings.\nWho is meant by 'those'?",
+      "sentence": "Whoever designed the interface clearly hadn't tested it with users, because those who tried it complained that they couldn't find the settings.",
+      "targetPronoun": "those",
+      "options": [
+        "the designers",
+        "the settings",
+        "the users who tried it"
+      ],
+      "correctAnswer": "the users who tried it",
+      "correctAnswerIndex": 2,
+      "hint": "Who tried the interface and complained?",
+      "explanation": "'Those who tried it' picks out people who used the interface. The designers had not tested it, so they are not the ones who complained.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l195_practice_q2",
+      "level": 195,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The government said the scheme would help families who could not afford heating, but charities argued that it excluded many of them, since the eligibility rules had been drafted quickly.\nWho is being referred to by 'them'?",
+      "sentence": "The government said the scheme would help families who could not afford heating, but charities argued that it excluded many of them, since the eligibility rules had been drafted quickly.",
+      "targetPronoun": "them",
+      "options": [
+        "the families who could not afford heating",
+        "the charities",
+        "the eligibility rules"
+      ],
+      "correctAnswer": "the families who could not afford heating",
+      "correctAnswerIndex": 0,
+      "hint": "Who might be excluded?",
+      "explanation": "'Many of them' picks some of a group of people. The group at risk of exclusion is the families the scheme was meant to help.",
+      "grammarRule": "Indefinite Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l195_practice_q3",
+      "level": 195,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The manager asked the two new hires to shadow the senior staff, though she made clear that they were not to interrupt them.\nWhich person or group does 'them' point to?",
+      "sentence": "The manager asked the two new hires to shadow the senior staff, though she made clear that they were not to interrupt them.",
+      "targetPronoun": "them",
+      "options": [
+        "the two new hires",
+        "the manager",
+        "the senior staff"
+      ],
+      "correctAnswer": "the senior staff",
+      "correctAnswerIndex": 2,
+      "hint": "'They' is the ones who must not interrupt. Who is 'them'?",
+      "explanation": "Note that 'they' is the pair told to shadow, so 'them' must be the other plural group. That is the senior staff who are being observed.",
+      "grammarRule": "Object Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l196_practice_q1",
+      "level": 196,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The two departments have never shared data, and each suspects that the other keeps its own records incomplete on purpose.\nWhat does 'its' point back to?",
+      "sentence": "The two departments have never shared data, and each suspects that the other keeps its own records incomplete on purpose.",
+      "targetPronoun": "its",
+      "options": [
+        "each department",
+        "the other department",
+        "the two departments"
+      ],
+      "correctAnswer": "the other department",
+      "correctAnswerIndex": 1,
+      "hint": "Who is the subject of 'keeps'?",
+      "explanation": "'Its' follows 'the other keeps', so it refers back to the subject of that clause, the other department. It is not the suspecting one.",
+      "grammarRule": "Possessive Determiners",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l196_practice_q2",
+      "level": 196,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The agency assured the couple that their deposit would be protected, and that if either of them changed their mind they would get it back within a week.\nWhat is being referred to by 'it'?",
+      "sentence": "The agency assured the couple that their deposit would be protected, and that if either of them changed their mind they would get it back within a week.",
+      "targetPronoun": "it",
+      "options": [
+        "the couple",
+        "their deposit",
+        "the agency"
+      ],
+      "correctAnswer": "their deposit",
+      "correctAnswerIndex": 1,
+      "hint": "Which thing could the couple hand over now and expect back within a week?",
+      "explanation": "Remember that 'it' is singular and non-human, so it cannot be the couple. What they would get back is the deposit.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l196_practice_q3",
+      "level": 196,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Ms. Kaur told the trainees that the supervisors would assess them individually, and that anyone who disagreed could ask for a second opinion, which she would arrange herself.\nWho does 'herself' refer to?",
+      "sentence": "Ms. Kaur told the trainees that the supervisors would assess them individually, and that anyone who disagreed could ask for a second opinion, which she would arrange herself.",
+      "targetPronoun": "herself",
+      "options": [
+        "the supervisors",
+        "Ms. Kaur",
+        "the trainees"
+      ],
+      "correctAnswer": "Ms. Kaur",
+      "correctAnswerIndex": 1,
+      "hint": "Who will arrange the second opinion?",
+      "explanation": "'Herself' matches the feminine 'she' in the same clause, and the only one who is 'she' is Ms. Kaur. The supervisors and trainees are plural.",
+      "grammarRule": "Reflexive Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l197_practice_q1",
+      "level": 197,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The author's editor loved the second chapter, but the author himself preferred the third, which he felt had been under-appreciated.\nWho is 'himself' pointing back to?",
+      "sentence": "The author's editor loved the second chapter, but the author himself preferred the third, which he felt had been under-appreciated.",
+      "targetPronoun": "himself",
+      "options": [
+        "the author",
+        "the editor",
+        "the third chapter"
+      ],
+      "correctAnswer": "the author",
+      "correctAnswerIndex": 0,
+      "hint": "'Himself' attaches to the noun right before it.",
+      "explanation": "Here, 'himself' is an intensive pronoun attached to 'the author'. It stresses that the author, not the editor, held the different view.",
+      "grammarRule": "Reflexive Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l197_practice_q2",
+      "level": 197,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The ministry told local businesses they would receive a grant if they could show that the lockdown had cut their income, though many said it would not cover what they had lost.\nWhat does 'it' refer to?",
+      "sentence": "The ministry told local businesses they would receive a grant if they could show that the lockdown had cut their income, though many said it would not cover what they had lost.",
+      "targetPronoun": "it",
+      "options": [
+        "the grant",
+        "the lockdown",
+        "the ministry"
+      ],
+      "correctAnswer": "the grant",
+      "correctAnswerIndex": 0,
+      "hint": "What could fail to cover losses?",
+      "explanation": "Here, 'it' is what might not cover what they lost. The grant is the payment offered, while the lockdown caused the losses.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l197_practice_q3",
+      "level": 197,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Kavya's mother asked Mr. Lim whether the class was ready for the exam, and he said most of them were, but that he was worried about a few.\nIn this text, who does 'them' stand for?",
+      "sentence": "Kavya's mother asked Mr. Lim whether the class was ready for the exam, and he said most of them were, but that he was worried about a few.",
+      "targetPronoun": "them",
+      "options": [
+        "Mr. Lim",
+        "Kavya's mother",
+        "the pupils in the class"
+      ],
+      "correctAnswer": "the pupils in the class",
+      "correctAnswerIndex": 2,
+      "hint": "'Most of them' takes a subset. Of whom?",
+      "explanation": "'Most of them' divides a group into parts. The group is the class, meaning the pupils who will sit the exam.",
+      "grammarRule": "Indefinite Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l198_practice_q1",
+      "level": 198,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The investors praised the app's speed but questioned why it needed so much data, and the developers, who had built it themselves, couldn't say.\nWho is meant by 'themselves'?",
+      "sentence": "The investors praised the app's speed but questioned why it needed so much data, and the developers, who had built it themselves, couldn't say.",
+      "targetPronoun": "themselves",
+      "options": [
+        "the developers",
+        "the investors",
+        "the app"
+      ],
+      "correctAnswer": "the developers",
+      "correctAnswerIndex": 0,
+      "hint": "Who built the app?",
+      "explanation": "'Who had built it themselves' relates to the developers, who are the subject of 'couldn't say'. Investors asked, but did not build.",
+      "grammarRule": "Reflexive Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l198_practice_q2",
+      "level": 198,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Ms. Rahman told her students that whoever finished early could help those who hadn't, provided they didn't simply give away the answers.\nWho is meant by 'those'?",
+      "sentence": "Ms. Rahman told her students that whoever finished early could help those who hadn't, provided they didn't simply give away the answers.",
+      "targetPronoun": "those",
+      "options": [
+        "the students who finished early",
+        "Ms. Rahman",
+        "the students who hadn't finished"
+      ],
+      "correctAnswer": "the students who hadn't finished",
+      "correctAnswerIndex": 2,
+      "hint": "'Those who hadn't' means those who hadn't done what?",
+      "explanation": "'Hadn't' echoes 'finished early', so those who hadn't finished are the ones receiving help. The early finishers are the helpers.",
+      "grammarRule": "Demonstrative Pronouns",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l198_practice_q3",
+      "level": 198,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The pharmacist told Mr. Idris that the two creams shouldn't be used together, and that if either irritated his skin he should stop using it and call her.\nWhat is being referred to by 'it'?",
+      "sentence": "The pharmacist told Mr. Idris that the two creams shouldn't be used together, and that if either irritated his skin he should stop using it and call her.",
+      "targetPronoun": "it",
+      "options": [
+        "the cream that irritates his skin",
+        "both creams together",
+        "his skin"
+      ],
+      "correctAnswer": "the cream that irritates his skin",
+      "correctAnswerIndex": 0,
+      "hint": "'Either' picks one cream. Which one should he stop?",
+      "explanation": "'Either' means one of the two creams. 'It' is whichever cream irritates his skin, not both creams and not the skin.",
+      "grammarRule": "Indefinite Pronouns",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l199_practice_q1",
+      "level": 199,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The committee asked the applicants to explain what they would do if funding were cut, and several admitted that they had never planned for it.\nIn this text, what does 'it' stand for?",
+      "sentence": "The committee asked the applicants to explain what they would do if funding were cut, and several admitted that they had never planned for it.",
+      "targetPronoun": "it",
+      "options": [
+        "the committee",
+        "the possibility of funding being cut",
+        "the applicants"
+      ],
+      "correctAnswer": "the possibility of funding being cut",
+      "correctAnswerIndex": 1,
+      "hint": "What had they not planned for?",
+      "explanation": "'It' does not point to a single noun. It sums up the situation raised by the committee, that funding might be cut.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l199_practice_q2",
+      "level": 199,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The regulator told the two banks that it would fine whichever of them had misreported, and that the other would only have to correct its filings.\nWhat is meant by 'its'?",
+      "sentence": "The regulator told the two banks that it would fine whichever of them had misreported, and that the other would only have to correct its filings.",
+      "targetPronoun": "its",
+      "options": [
+        "the other bank",
+        "the regulator",
+        "the bank that misreported"
+      ],
+      "correctAnswer": "the other bank",
+      "correctAnswerIndex": 0,
+      "hint": "'The other' is the subject. Whose filings?",
+      "explanation": "'Its filings' belongs to the subject of the clause, 'the other'. This is the bank that did not misreport and only has to correct filings.",
+      "grammarRule": "Possessive Determiners",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l199_practice_q3",
+      "level": 199,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Ms. Odum thanked the caterers, whom she had booked at short notice, and told the guests that anyone who wanted to hire them could ask her for the number.\nWho is 'them' pointing back to?",
+      "sentence": "Ms. Odum thanked the caterers, whom she had booked at short notice, and told the guests that anyone who wanted to hire them could ask her for the number.",
+      "targetPronoun": "them",
+      "options": [
+        "the guests",
+        "the caterers",
+        "Ms. Odum"
+      ],
+      "correctAnswer": "the caterers",
+      "correctAnswerIndex": 1,
+      "hint": "Who could be hired?",
+      "explanation": "'Them' is plural and refers to people who can be hired. The caterers are the ones she recommends; the guests are the audience.",
+      "grammarRule": "Object Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l200_practice_q1",
+      "level": 200,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "When they finally met, the founder and the investor, each of whom had been warned about the other, treated one another warily; neither trusted what they had heard, and both preferred to judge for themselves.\nWho is 'themselves' pointing back to?",
+      "sentence": "When they finally met, the founder and the investor, each of whom had been warned about the other, treated one another warily; neither trusted what they had heard, and both preferred to judge for themselves.",
+      "targetPronoun": "themselves",
+      "options": [
+        "the founder",
+        "the investor",
+        "the founder and the investor"
+      ],
+      "correctAnswer": "the founder and the investor",
+      "correctAnswerIndex": 2,
+      "hint": "'Both' points to a pair. Who preferred to judge?",
+      "explanation": "'Both preferred' includes the two people, so the plural 'themselves' returns to both the founder and the investor, not to one alone.",
+      "grammarRule": "Reflexive Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l200_practice_q2",
+      "level": 200,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Ms. Lindqvist told Mr. Achebe that the proposal, which he had drafted and she had revised, needed his signature before it could go to the board, whose approval, she warned him, could not be taken for granted.\nWhat does 'whose' refer to?",
+      "sentence": "Ms. Lindqvist told Mr. Achebe that the proposal, which he had drafted and she had revised, needed his signature before it could go to the board, whose approval, she warned him, could not be taken for granted.",
+      "targetPronoun": "whose",
+      "options": [
+        "the board",
+        "the proposal",
+        "Mr. Achebe"
+      ],
+      "correctAnswer": "the board",
+      "correctAnswerIndex": 0,
+      "hint": "Whose approval could not be taken for granted?",
+      "explanation": "Note that 'whose' follows 'the board' and introduces its possession. It is the board that must approve, not the proposal or Mr. Achebe, who only signs.",
+      "grammarRule": "Relative Pronouns",
+      "referentHighlight": "Antecedent"
+    },
+    {
+      "id": "pr_l200_practice_q3",
+      "level": 200,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Anyone who reads the two reports side by side will notice that the second contradicts the first on every point that matters, yet its authors, who cite the first as a source again and again, never acknowledge the conflict themselves.\nWhat does 'its' refer to?",
+      "sentence": "Anyone who reads the two reports side by side will notice that the second contradicts the first on every point that matters, yet its authors, who cite the first as a source again and again, never acknowledge the conflict themselves.",
+      "targetPronoun": "its",
+      "options": [
+        "the first report",
+        "anyone who reads them",
+        "the second report"
+      ],
+      "correctAnswer": "the second report",
+      "correctAnswerIndex": 2,
+      "hint": "The authors cite one report. Which report is theirs?",
+      "explanation": "Authors cite other people's work, so the authors who 'cite the first' must have written the second. 'Its' therefore refers to the second report.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun Phrase"
+    }
+  ]
+}

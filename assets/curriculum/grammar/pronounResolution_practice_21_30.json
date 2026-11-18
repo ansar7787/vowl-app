@@ -1,0 +1,578 @@
+{
+  "gameType": "pronounResolution",
+  "phase": "practice",
+  "batchIndex": 3,
+  "levels": "21-30",
+  "quests": [
+    {
+      "id": "pr_l21_practice_q1",
+      "level": 21,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Elena thanked Maria because she had covered the whole shift alone.\nWho is 'she' pointing back to?",
+      "sentence": "Elena thanked Maria because she had covered the whole shift alone.",
+      "targetPronoun": "she",
+      "options": [
+        "Elena",
+        "the shift",
+        "Maria"
+      ],
+      "correctAnswer": "Maria",
+      "correctAnswerIndex": 2,
+      "hint": "Both women could be 'she'. Who deserves thanks for the work?",
+      "explanation": "Both names fit grammatically, so meaning decides. People thank the one who did the favour, so 'she' is Maria, who covered the shift.",
+      "grammarRule": "Semantic Compatibility",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l21_practice_q2",
+      "level": 21,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The mechanic told the driver the engine needed a new gasket before it could be started again.\nWhat is 'it' pointing back to?",
+      "sentence": "The mechanic told the driver the engine needed a new gasket before it could be started again.",
+      "targetPronoun": "it",
+      "options": [
+        "the engine",
+        "the driver",
+        "the gasket"
+      ],
+      "correctAnswer": "the engine",
+      "correctAnswerIndex": 0,
+      "hint": "What could be started again?",
+      "explanation": "'It' must be something that can be started. That is the engine; the gasket is the part being replaced.",
+      "grammarRule": "Semantic Compatibility",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l21_practice_q3",
+      "level": 21,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Sunil apologised to his editor for the delay, and she said it was no problem since the deadline was Thursday.\nWhat is meant by 'it'?",
+      "sentence": "Sunil apologised to his editor for the delay, and she said it was no problem since the deadline was Thursday.",
+      "targetPronoun": "it",
+      "options": [
+        "the deadline",
+        "his editor",
+        "the delay"
+      ],
+      "correctAnswer": "the delay",
+      "correctAnswerIndex": 2,
+      "hint": "What did he apologise for?",
+      "explanation": "Here, 'it' points back to the thing he apologised for: the delay. The deadline is mentioned only as the reason it does not matter.",
+      "grammarRule": "Semantic Reference",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l22_practice_q1",
+      "level": 22,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The waiter carried the soup to the table while it was still steaming.\nWhat is meant by 'it'?",
+      "sentence": "The waiter carried the soup to the table while it was still steaming.",
+      "targetPronoun": "it",
+      "options": [
+        "the table",
+        "the soup",
+        "the waiter"
+      ],
+      "correctAnswer": "the soup",
+      "correctAnswerIndex": 1,
+      "hint": "Which of these can be steaming?",
+      "explanation": "'It' is something hot enough to steam. A table or a waiter would not be described that way, so it is the soup.",
+      "grammarRule": "Semantic Compatibility",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l22_practice_q2",
+      "level": 22,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Mr. Novak, the engineer, told Ms. Ruiz the software wasn't ready, but she wanted it delivered anyway.\nWhat is meant by 'it'?",
+      "sentence": "Mr. Novak, the engineer, told Ms. Ruiz the software wasn't ready, but she wanted it delivered anyway.",
+      "targetPronoun": "it",
+      "options": [
+        "the software",
+        "the engineer",
+        "Ms. Ruiz"
+      ],
+      "correctAnswer": "the software",
+      "correctAnswerIndex": 0,
+      "hint": "What can be delivered? Which noun is a thing?",
+      "explanation": "Look closely: 'it' is non-human and singular. What she wants delivered is the software, not either of the two people.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l22_practice_q3",
+      "level": 22,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The kitten ran under the sofa when the guests arrived, and they had to coax it out with food.\nWhat does 'it' refer to?",
+      "sentence": "The kitten ran under the sofa when the guests arrived, and they had to coax it out with food.",
+      "targetPronoun": "it",
+      "options": [
+        "the sofa",
+        "the kitten",
+        "the food"
+      ],
+      "correctAnswer": "the kitten",
+      "correctAnswerIndex": 1,
+      "hint": "Something hid, and something was used as bait. Which is 'it'?",
+      "explanation": "'It' is what they had to coax out. The kitten hid under the sofa, while the food was the tool they used.",
+      "grammarRule": "Semantic Compatibility",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l23_practice_q1",
+      "level": 23,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The chef told the intern to taste the sauce, because it needed more salt.\nWhat is 'it' pointing back to?",
+      "sentence": "The chef told the intern to taste the sauce, because it needed more salt.",
+      "targetPronoun": "it",
+      "options": [
+        "the intern",
+        "the sauce",
+        "the chef"
+      ],
+      "correctAnswer": "the sauce",
+      "correctAnswerIndex": 1,
+      "hint": "What would need salt?",
+      "explanation": "'It' refers to what needs seasoning. The sauce is tasted and can lack salt, but people do not need salt in this sense.",
+      "grammarRule": "Semantic Compatibility",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l23_practice_q2",
+      "level": 23,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The referee warned the player after the late tackle, and he was booked minutes later.\nIn this text, who does 'he' stand for?",
+      "sentence": "The referee warned the player after the late tackle, and he was booked minutes later.",
+      "targetPronoun": "he",
+      "options": [
+        "the referee",
+        "the tackle",
+        "the player"
+      ],
+      "correctAnswer": "the player",
+      "correctAnswerIndex": 2,
+      "hint": "Who would receive a booking?",
+      "explanation": "Both people are male, so meaning decides. A referee gives bookings and a player receives them, so 'he was booked' is the player.",
+      "grammarRule": "Role-Based Reference",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l23_practice_q3",
+      "level": 23,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The bank froze Mr. Ferreira's account after it detected an unusual payment.\nWhat is being referred to by 'it'?",
+      "sentence": "The bank froze Mr. Ferreira's account after it detected an unusual payment.",
+      "targetPronoun": "it",
+      "options": [
+        "the bank",
+        "the account",
+        "the payment"
+      ],
+      "correctAnswer": "the bank",
+      "correctAnswerIndex": 0,
+      "hint": "Which noun can detect something and take action?",
+      "explanation": "Consider the form of 'it': it is the one that detected the payment and froze the account. Only the bank can act on such a discovery.",
+      "grammarRule": "Role-Based Reference",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l24_practice_q1",
+      "level": 24,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Ayaan borrowed Kiran's charger because his battery was almost dead.\nWhose battery does 'his' refer to?",
+      "sentence": "Ayaan borrowed Kiran's charger because his battery was almost dead.",
+      "targetPronoun": "his",
+      "options": [
+        "Kiran",
+        "Ayaan",
+        "the charger"
+      ],
+      "correctAnswer": "Ayaan",
+      "correctAnswerIndex": 1,
+      "hint": "Who needed to borrow a charger?",
+      "explanation": "Both men fit grammatically. People borrow a charger when their own battery is low, so 'his' is Ayaan, the borrower.",
+      "grammarRule": "Possessive Determiners",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l24_practice_q2",
+      "level": 24,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Mr. Lund lent his neighbour a drill, and the neighbour returned it with a thank-you card.\nWhat is being referred to by 'it'?",
+      "sentence": "Mr. Lund lent his neighbour a drill, and the neighbour returned it with a thank-you card.",
+      "targetPronoun": "it",
+      "options": [
+        "the thank-you card",
+        "the drill",
+        "Mr. Lund"
+      ],
+      "correctAnswer": "the drill",
+      "correctAnswerIndex": 1,
+      "hint": "What was borrowed and then handed back?",
+      "explanation": "In this sentence, 'it' is the thing that was lent and returned. The card came along with it as a gesture.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l24_practice_q3",
+      "level": 24,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Marcus set the table for his parents and put their plates in the oven to keep warm.\nWho is meant by 'their'?",
+      "sentence": "Marcus set the table for his parents and put their plates in the oven to keep warm.",
+      "targetPronoun": "their",
+      "options": [
+        "his parents",
+        "Marcus",
+        "the table"
+      ],
+      "correctAnswer": "his parents",
+      "correctAnswerIndex": 0,
+      "hint": "'Their' is plural. Who is he serving?",
+      "explanation": "Note that 'their' is plural, so it cannot be Marcus alone. It refers to his parents, whom he is serving.",
+      "grammarRule": "Possessive Determiners",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l25_practice_q1",
+      "level": 25,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The letting agent gave Mr. Haddad a receipt after he paid the deposit.\nWho is meant by 'he'?",
+      "sentence": "The letting agent gave Mr. Haddad a receipt after he paid the deposit.",
+      "targetPronoun": "he",
+      "options": [
+        "the letting agent",
+        "the receipt",
+        "Mr. Haddad"
+      ],
+      "correctAnswer": "Mr. Haddad",
+      "correctAnswerIndex": 2,
+      "hint": "Who pays a deposit, and who receives it?",
+      "explanation": "'He' is the one who paid. A tenant pays a deposit, and the letting agent receives it and issues the receipt.",
+      "grammarRule": "Role-Based Reference",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l25_practice_q2",
+      "level": 25,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Beatriz sold her old bike to Omar, and he paid in cash.\nWho is being referred to by 'he'?",
+      "sentence": "Beatriz sold her old bike to Omar, and he paid in cash.",
+      "targetPronoun": "he",
+      "options": [
+        "Omar",
+        "Beatriz",
+        "the bike"
+      ],
+      "correctAnswer": "Omar",
+      "correctAnswerIndex": 0,
+      "hint": "Who paid: the seller or the buyer?",
+      "explanation": "Remember that 'he' is masculine, so it is Omar. Also, he is the buyer, and buyers pay.",
+      "grammarRule": "Subject Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l25_practice_q3",
+      "level": 25,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The airline refunded the passenger after it cancelled the flight.\nWhat does 'it' point back to?",
+      "sentence": "The airline refunded the passenger after it cancelled the flight.",
+      "targetPronoun": "it",
+      "options": [
+        "the passenger",
+        "the airline",
+        "the flight"
+      ],
+      "correctAnswer": "the airline",
+      "correctAnswerIndex": 1,
+      "hint": "Who has the power to cancel a flight?",
+      "explanation": "Here, 'it' is the party that cancelled. Passengers do not cancel flights for the airline; the airline itself does.",
+      "grammarRule": "Role-Based Reference",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l26_practice_q1",
+      "level": 26,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The gardeners trimmed the hedges before they grew over the path.\nWhat does 'they' point back to?",
+      "sentence": "The gardeners trimmed the hedges before they grew over the path.",
+      "targetPronoun": "they",
+      "options": [
+        "the hedges",
+        "the gardeners",
+        "the path"
+      ],
+      "correctAnswer": "the hedges",
+      "correctAnswerIndex": 0,
+      "hint": "Which plural noun grows?",
+      "explanation": "Here, 'they' is what grew over the path. Hedges grow, whereas gardeners do the trimming.",
+      "grammarRule": "Semantic Compatibility",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l26_practice_q2",
+      "level": 26,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The mechanics returned the cars to their owners after they finished the repairs.\nWho is being referred to by 'they'?",
+      "sentence": "The mechanics returned the cars to their owners after they finished the repairs.",
+      "targetPronoun": "they",
+      "options": [
+        "the mechanics",
+        "their owners",
+        "the cars"
+      ],
+      "correctAnswer": "the mechanics",
+      "correctAnswerIndex": 0,
+      "hint": "Who finished the repairs?",
+      "explanation": "'They' is the subject of 'finished the repairs'. The people who do repairs are the mechanics, not the owners or the cars.",
+      "grammarRule": "Role-Based Reference",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l26_practice_q3",
+      "level": 26,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The volunteers stacked the chairs so that the cleaners could sweep under them.\nWhat does 'them' refer to?",
+      "sentence": "The volunteers stacked the chairs so that the cleaners could sweep under them.",
+      "targetPronoun": "them",
+      "options": [
+        "the volunteers",
+        "the chairs",
+        "the cleaners"
+      ],
+      "correctAnswer": "the chairs",
+      "correctAnswerIndex": 1,
+      "hint": "What can be swept under?",
+      "explanation": "In this sentence, 'them' is the object of 'under'. Cleaners sweep the floor beneath the chairs, so the chairs are what 'them' names.",
+      "grammarRule": "Semantic Reference",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l27_practice_q1",
+      "level": 27,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The museum extended its opening hours after it received extra funding.\nWhat is 'it' pointing back to?",
+      "sentence": "The museum extended its opening hours after it received extra funding.",
+      "targetPronoun": "it",
+      "options": [
+        "the funding",
+        "the opening hours",
+        "the museum"
+      ],
+      "correctAnswer": "the museum",
+      "correctAnswerIndex": 2,
+      "hint": "Who received the money?",
+      "explanation": "Note that 'it' is the receiver of funding. The museum received it, while the funding cannot receive itself.",
+      "grammarRule": "Semantic Reference",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l27_practice_q2",
+      "level": 27,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The reviewer praised the report but criticised the appendix because it lacked evidence.\nWhat does 'it' refer to?",
+      "sentence": "The reviewer praised the report but criticised the appendix because it lacked evidence.",
+      "targetPronoun": "it",
+      "options": [
+        "the report",
+        "the reviewer",
+        "the appendix"
+      ],
+      "correctAnswer": "the appendix",
+      "correctAnswerIndex": 2,
+      "hint": "The criticism is the clue. Which part was criticised?",
+      "explanation": "'But' contrasts praise with criticism, and 'because' gives the reason for the criticism. That reason belongs to the appendix.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l27_practice_q3",
+      "level": 27,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The hotel offered the couple a free upgrade after they complained about the noise.\nIn this text, who does 'they' stand for?",
+      "sentence": "The hotel offered the couple a free upgrade after they complained about the noise.",
+      "targetPronoun": "they",
+      "options": [
+        "the couple",
+        "the hotel",
+        "the noise"
+      ],
+      "correctAnswer": "the couple",
+      "correctAnswerIndex": 0,
+      "hint": "Who would complain?",
+      "explanation": "Look closely: 'they' is the plural subject of 'complained'. The hotel is an institution taking action in return, and the noise is the thing complained about.",
+      "grammarRule": "Role-Based Reference",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l28_practice_q1",
+      "level": 28,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The tutor helped Kofi with the equation until he understood it.\nWho is meant by 'he'?",
+      "sentence": "The tutor helped Kofi with the equation until he understood it.",
+      "targetPronoun": "he",
+      "options": [
+        "the tutor",
+        "Kofi",
+        "the equation"
+      ],
+      "correctAnswer": "Kofi",
+      "correctAnswerIndex": 1,
+      "hint": "Who is learning, and who is teaching?",
+      "explanation": "'Until he understood it' describes the result of help. The learner who gains understanding is Kofi.",
+      "grammarRule": "Semantic Compatibility",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l28_practice_q2",
+      "level": 28,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The pharmacist told the customer to take the tablets with food, since they can upset the stomach.\nWhat is meant by 'they'?",
+      "sentence": "The pharmacist told the customer to take the tablets with food, since they can upset the stomach.",
+      "targetPronoun": "they",
+      "options": [
+        "the customer",
+        "the food",
+        "the tablets"
+      ],
+      "correctAnswer": "the tablets",
+      "correctAnswerIndex": 2,
+      "hint": "'They' is plural. Which noun is plural, and can upset a stomach?",
+      "explanation": "The pronoun 'they' is plural, so it must be the tablets. The advice to eat first makes sense because tablets are what can upset the stomach.",
+      "grammarRule": "Number Agreement",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l28_practice_q3",
+      "level": 28,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Lucía told her boss that the printer was broken, and he said he'd call someone to fix it.\nWhat is being referred to by 'it'?",
+      "sentence": "Lucía told her boss that the printer was broken, and he said he'd call someone to fix it.",
+      "targetPronoun": "it",
+      "options": [
+        "her boss",
+        "the printer",
+        "Lucía"
+      ],
+      "correctAnswer": "the printer",
+      "correctAnswerIndex": 1,
+      "hint": "What needs fixing?",
+      "explanation": "Note that 'it' is the thing that is broken. Neither person is being fixed.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l29_practice_q1",
+      "level": 29,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The neighbours complained to the caretaker because he never fixed the lift.\nIn this text, who does 'he' stand for?",
+      "sentence": "The neighbours complained to the caretaker because he never fixed the lift.",
+      "targetPronoun": "he",
+      "options": [
+        "the caretaker",
+        "the neighbours",
+        "the lift"
+      ],
+      "correctAnswer": "the caretaker",
+      "correctAnswerIndex": 0,
+      "hint": "Who is responsible for repairs?",
+      "explanation": "Remember that 'he' is singular and male. The one responsible for repairs and complained to is the caretaker.",
+      "grammarRule": "Role-Based Reference",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l29_practice_q2",
+      "level": 29,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The professor postponed the exam after she caught the flu.\nWho is meant by 'she'?",
+      "sentence": "The professor postponed the exam after she caught the flu.",
+      "targetPronoun": "she",
+      "options": [
+        "the students",
+        "the exam",
+        "the professor"
+      ],
+      "correctAnswer": "the professor",
+      "correctAnswerIndex": 2,
+      "hint": "Which noun can be 'she' and catch the flu?",
+      "explanation": "'She' is singular, so it cannot be the plural students, and an exam cannot catch a cold. She is the professor.",
+      "grammarRule": "Pronoun-Antecedent Agreement",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l29_practice_q3",
+      "level": 29,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The gym raised the membership fee because it hadn't changed since 2019.\nWhat is 'it' pointing back to?",
+      "sentence": "The gym raised the membership fee because it hadn't changed since 2019.",
+      "targetPronoun": "it",
+      "options": [
+        "the gym",
+        "the members",
+        "the membership fee"
+      ],
+      "correctAnswer": "the membership fee",
+      "correctAnswerIndex": 2,
+      "hint": "What could stay the same for years and then be raised?",
+      "explanation": "'It' is a thing that had not changed. The fee, not the gym, had stayed the same since 2019.",
+      "grammarRule": "Semantic Reference",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l30_practice_q1",
+      "level": 30,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The waiter told Mrs. Chatterjee that the fish was sold out, so she ordered the lamb instead.\nWho is 'she' pointing back to?",
+      "sentence": "The waiter told Mrs. Chatterjee that the fish was sold out, so she ordered the lamb instead.",
+      "targetPronoun": "she",
+      "options": [
+        "the waiter",
+        "Mrs. Chatterjee",
+        "the fish"
+      ],
+      "correctAnswer": "Mrs. Chatterjee",
+      "correctAnswerIndex": 1,
+      "hint": "Who places an order?",
+      "explanation": "Notice that 'she' is the one who chose the lamb. Customers order, and Mrs. Chatterjee is the customer.",
+      "grammarRule": "Role-Based Reference",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l30_practice_q2",
+      "level": 30,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Pedro replaced the tyre after the mechanic showed him where it had split.\nWhat does 'it' refer to?",
+      "sentence": "Pedro replaced the tyre after the mechanic showed him where it had split.",
+      "targetPronoun": "it",
+      "options": [
+        "the mechanic",
+        "Pedro",
+        "the tyre"
+      ],
+      "correctAnswer": "the tyre",
+      "correctAnswerIndex": 2,
+      "hint": "What can split?",
+      "explanation": "'It' names the part that had split. A tyre can split; neither person can.",
+      "grammarRule": "Semantic Compatibility",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l30_practice_q3",
+      "level": 30,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The school informed the parents that it would close early if the storm got worse.\nWhat does 'it' refer to?",
+      "sentence": "The school informed the parents that it would close early if the storm got worse.",
+      "targetPronoun": "it",
+      "options": [
+        "the school",
+        "the parents",
+        "the storm"
+      ],
+      "correctAnswer": "the school",
+      "correctAnswerIndex": 0,
+      "hint": "Which noun could 'close early'?",
+      "explanation": "Remember that 'it' is what would close. A school closes early because of weather, and that is different from the storm, which is the cause.",
+      "grammarRule": "Semantic Reference",
+      "referentHighlight": "Target Noun"
+    }
+  ]
+}

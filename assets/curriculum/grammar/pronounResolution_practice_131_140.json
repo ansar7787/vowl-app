@@ -1,0 +1,578 @@
+{
+  "gameType": "pronounResolution",
+  "phase": "practice",
+  "batchIndex": 14,
+  "levels": "131-140",
+  "quests": [
+    {
+      "id": "pr_l131_practice_q1",
+      "level": 131,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The two suppliers both sent samples, and they were delivered on the same day.\nWhat is 'they' pointing back to?",
+      "sentence": "The two suppliers both sent samples, and they were delivered on the same day.",
+      "targetPronoun": "they",
+      "options": [
+        "the two suppliers",
+        "the samples",
+        "the same day"
+      ],
+      "correctAnswer": "the samples",
+      "correctAnswerIndex": 1,
+      "hint": "The passive verb 'were delivered' points to what travels.",
+      "explanation": "The pronoun 'they' is plural, but the suppliers are people who sent things. What was delivered on the same day is the samples.",
+      "grammarRule": "Semantic Reference",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l131_practice_q2",
+      "level": 131,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Kabir and Anya both applied, but only he was invited to interview.\nWho is 'he' pointing back to?",
+      "sentence": "Kabir and Anya both applied, but only he was invited to interview.",
+      "targetPronoun": "he",
+      "options": [
+        "Kabir",
+        "Anya",
+        "the interview"
+      ],
+      "correctAnswer": "Kabir",
+      "correctAnswerIndex": 0,
+      "hint": "'Both' covers two people. Which is 'he'?",
+      "explanation": "'Both' covers Kabir and Anya, but 'he' picks out one. It is Kabir, the male applicant.",
+      "grammarRule": "Pronoun-Antecedent Agreement",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l131_practice_q3",
+      "level": 131,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Both of the printers ran out of toner, so neither of them worked until the caretaker replaced it.\nWhat is meant by 'them'?",
+      "sentence": "Both of the printers ran out of toner, so neither of them worked until the caretaker replaced it.",
+      "targetPronoun": "them",
+      "options": [
+        "the toner",
+        "the two printers",
+        "the caretaker"
+      ],
+      "correctAnswer": "the two printers",
+      "correctAnswerIndex": 1,
+      "hint": "'Neither of them' follows 'both of the ___'.",
+      "explanation": "'Both of the printers' establishes the pair. 'Neither of them' picks up the same pair.",
+      "grammarRule": "Indefinite Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l132_practice_q1",
+      "level": 132,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The guard told us that all the passengers had to have their seat belts checked before take-off.\nWhose seat belts does 'their' refer to?",
+      "sentence": "The guard told us that all the passengers had to have their seat belts checked before take-off.",
+      "targetPronoun": "their",
+      "options": [
+        "the guard",
+        "all the passengers",
+        "take-off"
+      ],
+      "correctAnswer": "all the passengers",
+      "correctAnswerIndex": 1,
+      "hint": "Whose belts are checked?",
+      "explanation": "'Their' is plural and belongs to those being checked. The passengers own the belts; the guard is not one.",
+      "grammarRule": "Possessive Determiners",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l132_practice_q2",
+      "level": 132,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Some of the tickets were sold online, and they cost less than those bought at the door.\nWhich tickets does 'they' refer to?",
+      "sentence": "Some of the tickets were sold online, and they cost less than those bought at the door.",
+      "targetPronoun": "they",
+      "options": [
+        "the tickets bought at the door",
+        "the tickets sold online",
+        "all the tickets"
+      ],
+      "correctAnswer": "the tickets sold online",
+      "correctAnswerIndex": 1,
+      "hint": "'Those bought at the door' is the comparison. What is cheaper?",
+      "explanation": "Look closely: 'they' is the subject compared with 'those bought at the door'. The comparison implies the online tickets.",
+      "grammarRule": "Discourse Reference",
+      "referentHighlight": "Discourse Referent"
+    },
+    {
+      "id": "pr_l132_practice_q3",
+      "level": 132,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Some of the milk had spilled, but it hadn't reached the floor.\nWhat is meant by 'it'?",
+      "sentence": "Some of the milk had spilled, but it hadn't reached the floor.",
+      "targetPronoun": "it",
+      "options": [
+        "the spilled milk",
+        "the floor",
+        "the carton"
+      ],
+      "correctAnswer": "the spilled milk",
+      "correctAnswerIndex": 0,
+      "hint": "What might reach the floor?",
+      "explanation": "'It' is singular and refers to the substance that spilled. The floor is where it might have gone, not what did the spilling.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l133_practice_q1",
+      "level": 133,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The guard reminded us that every employee must show their card at the gate.\nWho is meant by 'their'?",
+      "sentence": "The guard reminded us that every employee must show their card at the gate.",
+      "targetPronoun": "their",
+      "options": [
+        "the guard",
+        "the gate",
+        "every employee"
+      ],
+      "correctAnswer": "every employee",
+      "correctAnswerIndex": 2,
+      "hint": "Whose card must be shown?",
+      "explanation": "'Their' is the singular 'they', matching 'every employee'. The guard is giving the reminder.",
+      "grammarRule": "Indefinite Pronouns",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l133_practice_q2",
+      "level": 133,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Every dish on the menu comes with a side, and you can swap it for salad.\nWhat does 'it' refer to?",
+      "sentence": "Every dish on the menu comes with a side, and you can swap it for salad.",
+      "targetPronoun": "it",
+      "options": [
+        "every dish",
+        "the menu",
+        "the side"
+      ],
+      "correctAnswer": "the side",
+      "correctAnswerIndex": 2,
+      "hint": "What can be swapped for salad?",
+      "explanation": "Consider the form of 'it': it is singular and refers to the item that can be swapped. That is the side, not the whole dish or menu.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l133_practice_q3",
+      "level": 133,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Every student got a certificate, and each one was signed by the principal herself.\nWho is 'herself' pointing back to?",
+      "sentence": "Every student got a certificate, and each one was signed by the principal herself.",
+      "targetPronoun": "herself",
+      "options": [
+        "every student",
+        "the principal",
+        "each certificate"
+      ],
+      "correctAnswer": "the principal",
+      "correctAnswerIndex": 1,
+      "hint": "Who signed?",
+      "explanation": "'Herself' emphasises the person who signed. The principal is the singular, feminine noun who did it.",
+      "grammarRule": "Reflexive Pronouns",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l134_practice_q1",
+      "level": 134,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Many of the residents signed the petition, and several have since asked the organisers to remove their names.\nIn this text, who does 'their' stand for?",
+      "sentence": "Many of the residents signed the petition, and several have since asked the organisers to remove their names.",
+      "targetPronoun": "their",
+      "options": [
+        "the organisers",
+        "several of the residents",
+        "the petition"
+      ],
+      "correctAnswer": "several of the residents",
+      "correctAnswerIndex": 1,
+      "hint": "Whose names appear on the petition and are now being withdrawn?",
+      "explanation": "'Their names' are the names of the people who signed. Several of the residents are the ones asking for removal, whereas the organisers only receive the request.",
+      "grammarRule": "Possessive Determiners",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l134_practice_q2",
+      "level": 134,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Many tourists visit the temple, but few of them stay long enough to see the gardens behind it.\nWhat is being referred to by 'it'?",
+      "sentence": "Many tourists visit the temple, but few of them stay long enough to see the gardens behind it.",
+      "targetPronoun": "it",
+      "options": [
+        "the gardens",
+        "the temple",
+        "many tourists"
+      ],
+      "correctAnswer": "the temple",
+      "correctAnswerIndex": 1,
+      "hint": "'It' is singular. What are the gardens behind?",
+      "explanation": "In this sentence, 'it' is singular and non-human, so it is not 'many tourists'. The gardens are behind the temple.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l134_practice_q3",
+      "level": 134,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The nurse checked on the patients, and a few of them needed extra blankets.\nWho is being referred to by 'them'?",
+      "sentence": "The nurse checked on the patients, and a few of them needed extra blankets.",
+      "targetPronoun": "them",
+      "options": [
+        "the patients",
+        "the nurse",
+        "the blankets"
+      ],
+      "correctAnswer": "the patients",
+      "correctAnswerIndex": 0,
+      "hint": "Who could need blankets?",
+      "explanation": "'A few of them' picks a subset from a group. The group is the patients; the nurse is one person and blankets are needed by people.",
+      "grammarRule": "Indefinite Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l135_practice_q1",
+      "level": 135,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "We compared two offers. Either would work, but neither of them includes travel.\nWhat is meant by 'them'?",
+      "sentence": "We compared two offers. Either would work, but neither of them includes travel.",
+      "targetPronoun": "them",
+      "options": [
+        "the two offers",
+        "travel",
+        "we"
+      ],
+      "correctAnswer": "the two offers",
+      "correctAnswerIndex": 0,
+      "hint": "'Neither of them' picks from a pair.",
+      "explanation": "'Neither of them' refers back to the pair. The two offers are the things being compared.",
+      "grammarRule": "Indefinite Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l135_practice_q2",
+      "level": 135,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Neither Ivan nor Paula answered, but the message I left for them was clear.\nWho is meant by 'them'?",
+      "sentence": "Neither Ivan nor Paula answered, but the message I left for them was clear.",
+      "targetPronoun": "them",
+      "options": [
+        "Ivan and Paula",
+        "the message",
+        "the speaker"
+      ],
+      "correctAnswer": "Ivan and Paula",
+      "correctAnswerIndex": 0,
+      "hint": "Who was the message for?",
+      "explanation": "With 'neither... nor', the plural pronoun 'them' still refers to both people. The message was left for both.",
+      "grammarRule": "Object Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l135_practice_q3",
+      "level": 135,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "There are two candidates, and either could win if their supporters turn out.\nWho is being referred to by 'their'?",
+      "sentence": "There are two candidates, and either could win if their supporters turn out.",
+      "targetPronoun": "their",
+      "options": [
+        "their supporters",
+        "the election",
+        "the two candidates"
+      ],
+      "correctAnswer": "the two candidates",
+      "correctAnswerIndex": 2,
+      "hint": "'Either' can point to each candidate. Whose supporters?",
+      "explanation": "In this sentence, 'their' refers to the candidates, since it is they who have supporters. The supporters are the ones who turn out.",
+      "grammarRule": "Indefinite Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l136_practice_q1",
+      "level": 136,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The workshop had thirty participants, some of whom had travelled overnight.\nWhat does 'whom' point back to?",
+      "sentence": "The workshop had thirty participants, some of whom had travelled overnight.",
+      "targetPronoun": "whom",
+      "options": [
+        "the workshop",
+        "the overnight trip",
+        "the thirty participants"
+      ],
+      "correctAnswer": "the thirty participants",
+      "correctAnswerIndex": 2,
+      "hint": "Who might travel?",
+      "explanation": "'Some of whom' takes a subset from a group of people. The group is the participants.",
+      "grammarRule": "Relative Pronouns",
+      "referentHighlight": "Antecedent"
+    },
+    {
+      "id": "pr_l136_practice_q2",
+      "level": 136,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The library received two hundred donations, most of which were textbooks.\nWhat does 'which' point back to?",
+      "sentence": "The library received two hundred donations, most of which were textbooks.",
+      "targetPronoun": "which",
+      "options": [
+        "the library",
+        "textbooks",
+        "the two hundred donations"
+      ],
+      "correctAnswer": "the two hundred donations",
+      "correctAnswerIndex": 2,
+      "hint": "'Most of which' picks a majority. Of what?",
+      "explanation": "'Most of which' refers to the group just mentioned, the donations. Textbooks are what most of them were.",
+      "grammarRule": "Relative Pronouns",
+      "referentHighlight": "Antecedent"
+    },
+    {
+      "id": "pr_l136_practice_q3",
+      "level": 136,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The union represents drivers, all of whom must renew their licences every five years.\nWhat is being referred to by 'whom'?",
+      "sentence": "The union represents drivers, all of whom must renew their licences every five years.",
+      "targetPronoun": "whom",
+      "options": [
+        "the union",
+        "drivers",
+        "their licences"
+      ],
+      "correctAnswer": "drivers",
+      "correctAnswerIndex": 1,
+      "hint": "Which noun is a group of people?",
+      "explanation": "'All of whom' points to the group of people mentioned before. The union is an organisation, so it would need 'which'.",
+      "grammarRule": "Relative Pronouns",
+      "referentHighlight": "Antecedent"
+    },
+    {
+      "id": "pr_l137_practice_q1",
+      "level": 137,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The board is divided, but it has agreed to publish its report.\nWhat does 'it' refer to?",
+      "sentence": "The board is divided, but it has agreed to publish its report.",
+      "targetPronoun": "it",
+      "options": [
+        "the board",
+        "its report",
+        "the members"
+      ],
+      "correctAnswer": "the board",
+      "correctAnswerIndex": 0,
+      "hint": "A collective noun that takes a singular verb goes with a singular pronoun.",
+      "explanation": "A collective noun that takes 'is' is matched with singular 'it'. The board acts as one body here.",
+      "grammarRule": "Number Agreement",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l137_practice_q2",
+      "level": 137,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The team have all been given new laptops, and they are delighted.\nWho is 'they' pointing back to?",
+      "sentence": "The team have all been given new laptops, and they are delighted.",
+      "targetPronoun": "they",
+      "options": [
+        "the new laptops",
+        "the company",
+        "the team"
+      ],
+      "correctAnswer": "the team",
+      "correctAnswerIndex": 2,
+      "hint": "Who is delighted?",
+      "explanation": "'They' is plural and refers to the members of the team, who are the ones to be delighted.",
+      "grammarRule": "Number Agreement",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l137_practice_q3",
+      "level": 137,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "The jury has reached its verdict, but the judge asked it to reconsider.\nWhat does 'it' refer to?",
+      "sentence": "The jury has reached its verdict, but the judge asked it to reconsider.",
+      "targetPronoun": "it",
+      "options": [
+        "the jury",
+        "the verdict",
+        "the judge"
+      ],
+      "correctAnswer": "the jury",
+      "correctAnswerIndex": 0,
+      "hint": "Who reached the decision, and who was asked to reconsider?",
+      "explanation": "'It' is singular, and the jury is treated as one unit here. The judge is the one asking.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l138_practice_q1",
+      "level": 138,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Every participant received a name tag and was asked to wear it all day.\nIn this text, what does 'it' stand for?",
+      "sentence": "Every participant received a name tag and was asked to wear it all day.",
+      "targetPronoun": "it",
+      "options": [
+        "every participant",
+        "the event",
+        "the name tag"
+      ],
+      "correctAnswer": "the name tag",
+      "correctAnswerIndex": 2,
+      "hint": "What can be worn?",
+      "explanation": "Remember that 'it' is singular and non-human, so it is not the participant. A name tag is the thing you wear.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l138_practice_q2",
+      "level": 138,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Most of the staff are in on Fridays, but some work from home when they have deadlines.\nWho is meant by 'they'?",
+      "sentence": "Most of the staff are in on Fridays, but some work from home when they have deadlines.",
+      "targetPronoun": "they",
+      "options": [
+        "some of the staff",
+        "most of the staff",
+        "the deadlines"
+      ],
+      "correctAnswer": "some of the staff",
+      "correctAnswerIndex": 0,
+      "hint": "'But some' introduces a different group.",
+      "explanation": "'But' contrasts the majority with the minority. 'They' refers to the subject of that clause, some.",
+      "grammarRule": "Indefinite Pronouns",
+      "referentHighlight": "Target Noun Phrase"
+    },
+    {
+      "id": "pr_l138_practice_q3",
+      "level": 138,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "None of the trainees passed the test, but the examiner said all of them could retake it next month.\nWhat is meant by 'it'?",
+      "sentence": "None of the trainees passed the test, but the examiner said all of them could retake it next month.",
+      "targetPronoun": "it",
+      "options": [
+        "the examiner",
+        "the test",
+        "the trainees"
+      ],
+      "correctAnswer": "the test",
+      "correctAnswerIndex": 1,
+      "hint": "What can be retaken?",
+      "explanation": "Here, 'it' is singular and non-human. What is retaken is the test, not the people or the examiner.",
+      "grammarRule": "Antecedent Resolution",
+      "referentHighlight": "Target Noun"
+    },
+    {
+      "id": "pr_l139_practice_q1",
+      "level": 139,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "All of the guests had arrived except the Hendersons, who had sent word that they would be late.\nWho is being referred to by 'they'?",
+      "sentence": "All of the guests had arrived except the Hendersons, who had sent word that they would be late.",
+      "targetPronoun": "they",
+      "options": [
+        "all of the guests",
+        "the host",
+        "the Hendersons"
+      ],
+      "correctAnswer": "the Hendersons",
+      "correctAnswerIndex": 2,
+      "hint": "Who sent the message?",
+      "explanation": "Notice that 'who' points to the Hendersons, and 'they' is the subject of the message. The other guests had already arrived.",
+      "grammarRule": "Relative Pronouns",
+      "referentHighlight": "Antecedent"
+    },
+    {
+      "id": "pr_l139_practice_q2",
+      "level": 139,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Several of the interns asked their mentors for feedback, and most of them received it within days.\nIn this text, who does 'them' stand for?",
+      "sentence": "Several of the interns asked their mentors for feedback, and most of them received it within days.",
+      "targetPronoun": "them",
+      "options": [
+        "their mentors",
+        "the feedback",
+        "the interns"
+      ],
+      "correctAnswer": "the interns",
+      "correctAnswerIndex": 2,
+      "hint": "Who receives feedback?",
+      "explanation": "'Most of them' takes a subset of a group. The recipients of feedback are the interns.",
+      "grammarRule": "Indefinite Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l139_practice_q3",
+      "level": 139,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Several bidders submitted offers, and the seller accepted the highest, which was well above the estimate.\nWhat is meant by 'which'?",
+      "sentence": "Several bidders submitted offers, and the seller accepted the highest, which was well above the estimate.",
+      "targetPronoun": "which",
+      "options": [
+        "the highest offer",
+        "the seller",
+        "the estimate"
+      ],
+      "correctAnswer": "the highest offer",
+      "correctAnswerIndex": 0,
+      "hint": "What was above the estimate?",
+      "explanation": "'Which' comments on the phrase just before it, the highest offer. The seller did the accepting.",
+      "grammarRule": "Relative Pronouns",
+      "referentHighlight": "Antecedent"
+    },
+    {
+      "id": "pr_l140_practice_q1",
+      "level": 140,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Neither of the two banks would lend us money unless we could offer collateral, which we did not have.\nWhat is 'which' pointing back to?",
+      "sentence": "Neither of the two banks would lend us money unless we could offer collateral, which we did not have.",
+      "targetPronoun": "which",
+      "options": [
+        "the two banks",
+        "money",
+        "collateral"
+      ],
+      "correctAnswer": "collateral",
+      "correctAnswerIndex": 2,
+      "hint": "What did we not have?",
+      "explanation": "'Which' refers to the thing just before it, collateral. The banks and the money are not what was missing.",
+      "grammarRule": "Relative Pronouns",
+      "referentHighlight": "Antecedent"
+    },
+    {
+      "id": "pr_l140_practice_q2",
+      "level": 140,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Many of the visitors asked the guide questions, and she answered all of them patiently.\nWhat is 'them' pointing back to?",
+      "sentence": "Many of the visitors asked the guide questions, and she answered all of them patiently.",
+      "targetPronoun": "them",
+      "options": [
+        "the questions",
+        "the visitors",
+        "the guide"
+      ],
+      "correctAnswer": "the questions",
+      "correctAnswerIndex": 0,
+      "hint": "What can be answered?",
+      "explanation": "'All of them' takes a whole set. She answers questions, not people, so 'them' is the questions.",
+      "grammarRule": "Indefinite Pronouns",
+      "referentHighlight": "Referenced Group"
+    },
+    {
+      "id": "pr_l140_practice_q3",
+      "level": 140,
+      "instruction": "Resolve the pronoun to its correct antecedent",
+      "question": "Each of the co-authors read the draft, and every one of them suggested changes that the editor merged herself.\nWho does 'herself' refer to?",
+      "sentence": "Each of the co-authors read the draft, and every one of them suggested changes that the editor merged herself.",
+      "targetPronoun": "herself",
+      "options": [
+        "the co-authors",
+        "the editor",
+        "the draft"
+      ],
+      "correctAnswer": "the editor",
+      "correctAnswerIndex": 1,
+      "hint": "Who merged the changes?",
+      "explanation": "'Herself' emphasises the person who did the merging. The editor is the singular, female subject.",
+      "grammarRule": "Reflexive Pronouns",
+      "referentHighlight": "Target Noun"
+    }
+  ]
+}
