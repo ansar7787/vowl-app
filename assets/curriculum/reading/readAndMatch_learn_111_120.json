@@ -1,0 +1,1268 @@
+{
+  "gameType": "readAndMatch",
+  "phase": "learn",
+  "batchIndex": 12,
+  "levels": "111-120",
+  "quests": [
+    {
+      "id": "RDG_READANDMATCH_LEARN_L111_Q1",
+      "level": 111,
+      "title": "Summary Synapse",
+      "strategyBadge": "THEMATIC CORRELATION",
+      "techniqueTitle": "Distinguishing Synonymous Categories",
+      "coreRule": "Beware of near-synonyms: look for specific boundaries like time of day, intensity, or emotional state.",
+      "paragraphTopic": "Vocabulary about types of medical care",
+      "instruction": "Match each word with its meaning.",
+      "detailedPairs": [
+        {
+          "key": "[L111-Q1-0] Preventive",
+          "cleanKey": "Preventive",
+          "value": "Intended to stop a problem before it happens.",
+          "anchorKeywords": "Intended, problem, before",
+          "rationale": "Connects \"Preventive\" directly to the defining quality \"Intended, problem, before\"."
+        },
+        {
+          "key": "[L111-Q1-1] Curative",
+          "cleanKey": "Curative",
+          "value": "Intended to cure or treat an existing illness.",
+          "anchorKeywords": "Intended, treat, existing",
+          "rationale": "Connects \"Curative\" directly to the defining quality \"Intended, treat, existing\"."
+        },
+        {
+          "key": "[L111-Q1-2] Palliative",
+          "cleanKey": "Palliative",
+          "value": "Intended to relieve suffering rather than cure the underlying illness.",
+          "anchorKeywords": "Intended, relieve, suffering",
+          "rationale": "Connects \"Palliative\" directly to the defining quality \"Intended, relieve, suffering\"."
+        },
+        {
+          "key": "[L111-Q1-3] Elective",
+          "cleanKey": "Elective",
+          "value": "Chosen voluntarily rather than medically necessary.",
+          "anchorKeywords": "Chosen, voluntarily, rather",
+          "rationale": "Connects \"Elective\" directly to the defining quality \"Chosen, voluntarily, rather\"."
+        }
+      ],
+      "explanation": "Curative and preventive are related to treating illness, though preventive acts before a problem starts and curative treats it once it exists. Palliative and elective are different — one focuses on comfort rather than cure, one is a choice rather than a medical necessity.",
+      "hint": "Two of these describe treating illness directly, and two describe managing it differently."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L111_Q2",
+      "level": 111,
+      "title": "Summary Synapse",
+      "strategyBadge": "THEMATIC CORRELATION",
+      "techniqueTitle": "Distinguishing Synonymous Categories",
+      "coreRule": "Beware of near-synonyms: look for specific boundaries like time of day, intensity, or emotional state.",
+      "paragraphTopic": "A healthcare policy's coverage rules",
+      "instruction": "Match each sentence with what it means.",
+      "detailedPairs": [
+        {
+          "key": "[L111-Q2-0] The new policy expands coverage for preventive screenings.",
+          "cleanKey": "The new policy expands coverage for preventive screenings.",
+          "value": "The updated rules now include more early-detection tests as part of coverage.",
+          "anchorKeywords": "updated, rules, include",
+          "rationale": "Connects \"The new policy expands coverage for preventive screenings.\" directly to the defining quality \"updated, rules, include\"."
+        },
+        {
+          "key": "[L111-Q2-1] Curative treatments for chronic illness remain fully covered.",
+          "cleanKey": "Curative treatments for chronic illness remain fully covered.",
+          "value": "Treatments aimed at curing long-term conditions continue to be paid for in full.",
+          "anchorKeywords": "Treatments, aimed, curing",
+          "rationale": "Connects \"Curative treatments for chronic illness remain fully covered.\" directly to the defining quality \"Treatments, aimed, curing\"."
+        },
+        {
+          "key": "[L111-Q2-2] Palliative care is covered for patients with terminal diagnoses.",
+          "cleanKey": "Palliative care is covered for patients with terminal diagnoses.",
+          "value": "Care focused on comfort, rather than a cure, is covered for patients who aren't expected to recover.",
+          "anchorKeywords": "focused, comfort,, rather",
+          "rationale": "Connects \"Palliative care is covered for patients with terminal diagnoses.\" directly to the defining quality \"focused, comfort,, rather\"."
+        },
+        {
+          "key": "[L111-Q2-3] Elective procedures still require separate approval.",
+          "cleanKey": "Elective procedures still require separate approval.",
+          "value": "Optional medical procedures still need a different kind of authorization before they're covered.",
+          "anchorKeywords": "Optional, medical, procedures",
+          "rationale": "Connects \"Elective procedures still require separate approval.\" directly to the defining quality \"Optional, medical, procedures\"."
+        }
+      ],
+      "explanation": "The first two sentences describe coverage for prevention and cure. The third describes coverage for comfort care, while the fourth is different — it describes a category that needs extra approval rather than being automatically covered.",
+      "hint": "Each sentence describes coverage for a different kind of medical care under the same policy."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L111_Q3",
+      "level": 111,
+      "title": "Summary Synapse",
+      "strategyBadge": "THEMATIC CORRELATION",
+      "techniqueTitle": "Distinguishing Synonymous Categories",
+      "coreRule": "Beware of near-synonyms: look for specific boundaries like time of day, intensity, or emotional state.",
+      "paragraphTopic": "Stated facts versus conclusions in a healthcare passage",
+      "instruction": "Match each statement with how it relates to the passage above.",
+      "detailedPairs": [
+        {
+          "key": "[L111-Q3-0] Preventive screenings are now more widely covered.",
+          "cleanKey": "Preventive screenings are now more widely covered.",
+          "value": "This is directly stated in the passage.",
+          "anchorKeywords": "directly, stated, passage.",
+          "rationale": "Connects \"Preventive screenings are now more widely covered.\" directly to the defining quality \"directly, stated, passage.\"."
+        },
+        {
+          "key": "[L111-Q3-1] Every type of medical procedure is now automatically covered.",
+          "cleanKey": "Every type of medical procedure is now automatically covered.",
+          "value": "This contradicts the passage, since elective procedures still require separate approval.",
+          "anchorKeywords": "contradicts, passage,, since",
+          "rationale": "Connects \"Every type of medical procedure is now automatically covered.\" directly to the defining quality \"contradicts, passage,, since\"."
+        },
+        {
+          "key": "[L111-Q3-2] The policy distinguishes between treatments meant to cure and those meant to comfort.",
+          "cleanKey": "The policy distinguishes between treatments meant to cure and those meant to comfort.",
+          "value": "This is a reasonable conclusion, based on curative and palliative care being covered differently.",
+          "anchorKeywords": "reasonable, conclusion,, based",
+          "rationale": "Connects \"The policy distinguishes between treatments meant to cure and those meant to comfort.\" directly to the defining quality \"reasonable, conclusion,, based\"."
+        },
+        {
+          "key": "[L111-Q3-3] Chronic illness treatment remains fully covered.",
+          "cleanKey": "Chronic illness treatment remains fully covered.",
+          "value": "This is directly stated in the passage.",
+          "anchorKeywords": "directly, stated, passage.",
+          "rationale": "Connects \"Chronic illness treatment remains fully covered.\" directly to the defining quality \"directly, stated, passage.\"."
+        }
+      ],
+      "explanation": "The first statement is stated directly. The second contradicts the passage, since elective procedures still require separate approval. The third is a fair conclusion from curative and palliative care being covered differently. The fourth is stated directly.",
+      "hint": "Decide whether each statement is stated directly, a fair conclusion, or contradicted by the passage."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L112_Q4",
+      "level": 112,
+      "title": "Summary Synapse",
+      "strategyBadge": "SEMANTIC MAPPING",
+      "techniqueTitle": "Contextual Definition Pairing",
+      "coreRule": "Match each item by eliminating unmistakable anchors first, leaving subtler pairs for closer scrutiny.",
+      "paragraphTopic": "Vocabulary about cybersecurity",
+      "instruction": "Match each word with its meaning.",
+      "detailedPairs": [
+        {
+          "key": "[L112-Q1-0] Breach",
+          "cleanKey": "Breach",
+          "value": "An incident where security is broken and data is exposed or stolen.",
+          "anchorKeywords": "incident, where, security",
+          "rationale": "Connects \"Breach\" directly to the defining quality \"incident, where, security\"."
+        },
+        {
+          "key": "[L112-Q1-1] Encryption",
+          "cleanKey": "Encryption",
+          "value": "The process of converting information into a code to prevent unauthorized access.",
+          "anchorKeywords": "process, converting, information",
+          "rationale": "Connects \"Encryption\" directly to the defining quality \"process, converting, information\"."
+        },
+        {
+          "key": "[L112-Q1-2] Vulnerability",
+          "cleanKey": "Vulnerability",
+          "value": "A weakness in a system that could be exploited.",
+          "anchorKeywords": "weakness, system, could",
+          "rationale": "Connects \"Vulnerability\" directly to the defining quality \"weakness, system, could\"."
+        },
+        {
+          "key": "[L112-Q1-3] Firewall",
+          "cleanKey": "Firewall",
+          "value": "A security system that monitors and controls incoming and outgoing network activity.",
+          "anchorKeywords": "security, system, monitors",
+          "rationale": "Connects \"Firewall\" directly to the defining quality \"security, system, monitors\"."
+        }
+      ],
+      "explanation": "Breach and vulnerability are related, one the incident itself, one the weakness that made it possible. Encryption and firewall are different — both are protective measures, one scrambling data, one monitoring network activity.",
+      "hint": "One is an incident, one is a protection method, one is a weakness, and one is a monitoring system."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L112_Q5",
+      "level": 112,
+      "title": "Summary Synapse",
+      "strategyBadge": "SEMANTIC MAPPING",
+      "techniqueTitle": "Contextual Definition Pairing",
+      "coreRule": "Match each item by eliminating unmistakable anchors first, leaving subtler pairs for closer scrutiny.",
+      "paragraphTopic": "A cybersecurity incident and its cause",
+      "instruction": "Match each sentence with what it means.",
+      "detailedPairs": [
+        {
+          "key": "[L112-Q2-0] The breach exposed customer data stored without encryption.",
+          "cleanKey": "The breach exposed customer data stored without encryption.",
+          "value": "The security incident revealed customer information that hadn't been protected by any coding system.",
+          "anchorKeywords": "security, incident, revealed",
+          "rationale": "Connects \"The breach exposed customer data stored without encryption.\" directly to the defining quality \"security, incident, revealed\"."
+        },
+        {
+          "key": "[L112-Q2-1] Investigators traced the incident to an unpatched vulnerability.",
+          "cleanKey": "Investigators traced the incident to an unpatched vulnerability.",
+          "value": "Those looking into the incident found it happened because of a known weakness that hadn't been fixed.",
+          "anchorKeywords": "Those, looking, incident",
+          "rationale": "Connects \"Investigators traced the incident to an unpatched vulnerability.\" directly to the defining quality \"Those, looking, incident\"."
+        },
+        {
+          "key": "[L112-Q2-2] The company's firewall had failed to detect unusual activity.",
+          "cleanKey": "The company's firewall had failed to detect unusual activity.",
+          "value": "The system meant to monitor network traffic didn't catch the suspicious behavior.",
+          "anchorKeywords": "system, meant, monitor",
+          "rationale": "Connects \"The company's firewall had failed to detect unusual activity.\" directly to the defining quality \"system, meant, monitor\"."
+        },
+        {
+          "key": "[L112-Q2-3] Since then, all sensitive data has been fully encrypted.",
+          "cleanKey": "Since then, all sensitive data has been fully encrypted.",
+          "value": "From that point on, all important information has been converted into a protected code.",
+          "anchorKeywords": "point, important, information",
+          "rationale": "Connects \"Since then, all sensitive data has been fully encrypted.\" directly to the defining quality \"point, important, information\"."
+        }
+      ],
+      "explanation": "The first sentence describes what was exposed, and the second explains how it happened. The third describes a failure in defense, while the fourth is different — it describes the fix put in place afterward.",
+      "hint": "Each sentence follows the story of the same cybersecurity incident."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L112_Q6",
+      "level": 112,
+      "title": "Summary Synapse",
+      "strategyBadge": "SEMANTIC MAPPING",
+      "techniqueTitle": "Contextual Definition Pairing",
+      "coreRule": "Match each item by eliminating unmistakable anchors first, leaving subtler pairs for closer scrutiny.",
+      "paragraphTopic": "Stated facts versus conclusions in a cybersecurity passage",
+      "instruction": "Match each statement with how it relates to the passage above.",
+      "detailedPairs": [
+        {
+          "key": "[L112-Q3-0] The exposed customer data had not been encrypted.",
+          "cleanKey": "The exposed customer data had not been encrypted.",
+          "value": "This is directly stated in the passage.",
+          "anchorKeywords": "directly, stated, passage.",
+          "rationale": "Connects \"The exposed customer data had not been encrypted.\" directly to the defining quality \"directly, stated, passage.\"."
+        },
+        {
+          "key": "[L112-Q3-1] The breach happened because of a security weakness that was already known but not fixed.",
+          "cleanKey": "The breach happened because of a security weakness that was already known but not fixed.",
+          "value": "This is a reasonable conclusion, based on the mention of an unpatched vulnerability.",
+          "anchorKeywords": "reasonable, conclusion,, based",
+          "rationale": "Connects \"The breach happened because of a security weakness that was already known but not fixed.\" directly to the defining quality \"reasonable, conclusion,, based\"."
+        },
+        {
+          "key": "[L112-Q3-2] The company's firewall successfully stopped the attack.",
+          "cleanKey": "The company's firewall successfully stopped the attack.",
+          "value": "This contradicts the passage, which says the firewall failed to detect the unusual activity.",
+          "anchorKeywords": "contradicts, passage,, which",
+          "rationale": "Connects \"The company's firewall successfully stopped the attack.\" directly to the defining quality \"contradicts, passage,, which\"."
+        },
+        {
+          "key": "[L112-Q3-3] All sensitive data is now encrypted.",
+          "cleanKey": "All sensitive data is now encrypted.",
+          "value": "This is directly stated in the passage.",
+          "anchorKeywords": "directly, stated, passage.",
+          "rationale": "Connects \"All sensitive data is now encrypted.\" directly to the defining quality \"directly, stated, passage.\"."
+        }
+      ],
+      "explanation": "The first statement is stated directly. The second is a fair conclusion from the mention of an unpatched vulnerability. The third contradicts the passage, which says the firewall failed to detect the activity. The fourth is stated directly.",
+      "hint": "Decide whether each statement is stated directly, a fair conclusion, or contradicted by the passage."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L113_Q7",
+      "level": 113,
+      "title": "Summary Synapse",
+      "strategyBadge": "PARAGRAPH-HEADING PIVOT",
+      "techniqueTitle": "Filtering Superfluous Descriptions",
+      "coreRule": "A precise heading acts as an umbrella that covers every word in the definition.",
+      "paragraphTopic": "Vocabulary about university admissions",
+      "instruction": "Match each word with its meaning.",
+      "detailedPairs": [
+        {
+          "key": "[L113-Q1-0] Meritocratic",
+          "cleanKey": "Meritocratic",
+          "value": "Based purely on ability or achievement, rather than other factors.",
+          "anchorKeywords": "Based, purely, ability",
+          "rationale": "Connects \"Meritocratic\" directly to the defining quality \"Based, purely, ability\"."
+        },
+        {
+          "key": "[L113-Q1-1] Holistic",
+          "cleanKey": "Holistic",
+          "value": "Considering the whole picture, not just one measure, like a single test score.",
+          "anchorKeywords": "Considering, whole, picture,",
+          "rationale": "Connects \"Holistic\" directly to the defining quality \"Considering, whole, picture,\"."
+        },
+        {
+          "key": "[L113-Q1-2] Selective",
+          "cleanKey": "Selective",
+          "value": "Accepting only a small portion of applicants, based on strict standards.",
+          "anchorKeywords": "Accepting, small, portion",
+          "rationale": "Connects \"Selective\" directly to the defining quality \"Accepting, small, portion\"."
+        },
+        {
+          "key": "[L113-Q1-3] Inclusive",
+          "cleanKey": "Inclusive",
+          "value": "Designed to welcome a wide range of people, without unnecessary barriers.",
+          "anchorKeywords": "Designed, welcome, range",
+          "rationale": "Connects \"Inclusive\" directly to the defining quality \"Designed, welcome, range\"."
+        }
+      ],
+      "explanation": "Holistic and inclusive are related, one about considering the whole application, one about welcoming a wide range of people. Meritocratic and selective are different — one is about the basis for judging ability, one is about how few applicants are accepted.",
+      "hint": "Two of these describe how broadly a process looks at applicants, and two describe how many it accepts or on what basis."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L113_Q8",
+      "level": 113,
+      "title": "Summary Synapse",
+      "strategyBadge": "PARAGRAPH-HEADING PIVOT",
+      "techniqueTitle": "Filtering Superfluous Descriptions",
+      "coreRule": "A precise heading acts as an umbrella that covers every word in the definition.",
+      "paragraphTopic": "A university's changing admissions policy",
+      "instruction": "Match each sentence with what it means.",
+      "detailedPairs": [
+        {
+          "key": "[L113-Q2-0] The university moved from a purely test-based system to a holistic review.",
+          "cleanKey": "The university moved from a purely test-based system to a holistic review.",
+          "value": "The school switched away from judging applicants by test scores alone to considering their full application.",
+          "anchorKeywords": "school, switched, judging",
+          "rationale": "Connects \"The university moved from a purely test-based system to a holistic review.\" directly to the defining quality \"school, switched, judging\"."
+        },
+        {
+          "key": "[L113-Q2-1] Supporters say this creates a more inclusive process.",
+          "cleanKey": "Supporters say this creates a more inclusive process.",
+          "value": "People in favor of the change believe it opens the door to a wider range of applicants.",
+          "anchorKeywords": "People, favor, change",
+          "rationale": "Connects \"Supporters say this creates a more inclusive process.\" directly to the defining quality \"People, favor, change\"."
+        },
+        {
+          "key": "[L113-Q2-2] Critics argue it undermines meritocratic principles.",
+          "cleanKey": "Critics argue it undermines meritocratic principles.",
+          "value": "Some people believe this makes the process less about raw ability and more subjective.",
+          "anchorKeywords": "people, believe, makes",
+          "rationale": "Connects \"Critics argue it undermines meritocratic principles.\" directly to the defining quality \"people, believe, makes\"."
+        },
+        {
+          "key": "[L113-Q2-3] The university remains highly selective despite the change.",
+          "cleanKey": "The university remains highly selective despite the change.",
+          "value": "The school still only accepts a small fraction of applicants, even with the new approach.",
+          "anchorKeywords": "school, still, accepts",
+          "rationale": "Connects \"The university remains highly selective despite the change.\" directly to the defining quality \"school, still, accepts\"."
+        }
+      ],
+      "explanation": "The first sentence describes the change itself, and the second and third present opposing views on it. The fourth is different — it adds a fact that holds true regardless of which side is right.",
+      "hint": "Each sentence adds a point to the same discussion of a university's admissions change."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L113_Q9",
+      "level": 113,
+      "title": "Summary Synapse",
+      "strategyBadge": "PARAGRAPH-HEADING PIVOT",
+      "techniqueTitle": "Filtering Superfluous Descriptions",
+      "coreRule": "A precise heading acts as an umbrella that covers every word in the definition.",
+      "paragraphTopic": "Stated facts versus conclusions in an admissions passage",
+      "instruction": "Match each statement with how it relates to the passage above.",
+      "detailedPairs": [
+        {
+          "key": "[L113-Q3-0] The university now considers more than just test scores.",
+          "cleanKey": "The university now considers more than just test scores.",
+          "value": "This is directly stated in the passage.",
+          "anchorKeywords": "directly, stated, passage.",
+          "rationale": "Connects \"The university now considers more than just test scores.\" directly to the defining quality \"directly, stated, passage.\"."
+        },
+        {
+          "key": "[L113-Q3-1] Everyone agrees the new admissions process is an improvement.",
+          "cleanKey": "Everyone agrees the new admissions process is an improvement.",
+          "value": "This contradicts the passage, since critics specifically disagree with the change.",
+          "anchorKeywords": "contradicts, passage,, since",
+          "rationale": "Connects \"Everyone agrees the new admissions process is an improvement.\" directly to the defining quality \"contradicts, passage,, since\"."
+        },
+        {
+          "key": "[L113-Q3-2] A more holistic process might weigh factors that are harder to measure objectively.",
+          "cleanKey": "A more holistic process might weigh factors that are harder to measure objectively.",
+          "value": "This is a reasonable conclusion, based on critics' concern that the change undermines meritocratic principles.",
+          "anchorKeywords": "reasonable, conclusion,, based",
+          "rationale": "Connects \"A more holistic process might weigh factors that are harder to measure objectively.\" directly to the defining quality \"reasonable, conclusion,, based\"."
+        },
+        {
+          "key": "[L113-Q3-3] The school still accepts only a small percentage of applicants.",
+          "cleanKey": "The school still accepts only a small percentage of applicants.",
+          "value": "This is directly stated in the passage.",
+          "anchorKeywords": "directly, stated, passage.",
+          "rationale": "Connects \"The school still accepts only a small percentage of applicants.\" directly to the defining quality \"directly, stated, passage.\"."
+        }
+      ],
+      "explanation": "The first statement is stated directly. The second contradicts the passage, since critics specifically disagree. The third is a fair conclusion from critics' concern about undermining meritocratic principles. The fourth is stated directly.",
+      "hint": "Decide whether each statement is stated directly, a fair conclusion, or contradicted by the passage."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L114_Q10",
+      "level": 114,
+      "title": "Summary Synapse",
+      "strategyBadge": "CORE DISTINCTION RADAR",
+      "techniqueTitle": "Conceptual Contrast Mapping",
+      "coreRule": "Verify matches by testing whether the definition could apply to any other term in the list.",
+      "paragraphTopic": "Vocabulary about manufacturing quality",
+      "instruction": "Match each word with its meaning.",
+      "detailedPairs": [
+        {
+          "key": "[L114-Q1-0] Defect",
+          "cleanKey": "Defect",
+          "value": "A flaw or fault in a product, especially one that affects its function.",
+          "anchorKeywords": "fault, product,, especially",
+          "rationale": "Connects \"Defect\" directly to the defining quality \"fault, product,, especially\"."
+        },
+        {
+          "key": "[L114-Q1-1] Tolerance",
+          "cleanKey": "Tolerance",
+          "value": "The acceptable range of variation allowed in a manufactured part.",
+          "anchorKeywords": "acceptable, range, variation",
+          "rationale": "Connects \"Tolerance\" directly to the defining quality \"acceptable, range, variation\"."
+        },
+        {
+          "key": "[L114-Q1-2] Inspection",
+          "cleanKey": "Inspection",
+          "value": "A careful examination of a product to check for problems.",
+          "anchorKeywords": "careful, examination, product",
+          "rationale": "Connects \"Inspection\" directly to the defining quality \"careful, examination, product\"."
+        },
+        {
+          "key": "[L114-Q1-3] Recall",
+          "cleanKey": "Recall",
+          "value": "A request to return a faulty product, often issued by the manufacturer.",
+          "anchorKeywords": "request, return, faulty",
+          "rationale": "Connects \"Recall\" directly to the defining quality \"request, return, faulty\"."
+        }
+      ],
+      "explanation": "Defect and tolerance are related to a product's quality, one the flaw itself, one the acceptable range it fell outside of. Inspection and recall are different — one is the process that finds a problem, one is the action taken once it's found.",
+      "hint": "One is a flaw, one is an acceptable range, one is a check, and one is a request to return a product."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L114_Q11",
+      "level": 114,
+      "title": "Summary Synapse",
+      "strategyBadge": "CORE DISTINCTION RADAR",
+      "techniqueTitle": "Conceptual Contrast Mapping",
+      "coreRule": "Verify matches by testing whether the definition could apply to any other term in the list.",
+      "paragraphTopic": "A manufacturing defect and its recall",
+      "instruction": "Match each sentence with what it means.",
+      "detailedPairs": [
+        {
+          "key": "[L114-Q2-0] Routine inspection caught a defect in the braking mechanism.",
+          "cleanKey": "Routine inspection caught a defect in the braking mechanism.",
+          "value": "A regular check discovered a flaw in the part that controls braking.",
+          "anchorKeywords": "regular, check, discovered",
+          "rationale": "Connects \"Routine inspection caught a defect in the braking mechanism.\" directly to the defining quality \"regular, check, discovered\"."
+        },
+        {
+          "key": "[L114-Q2-1] The part fell outside the manufacturer's tolerance for safe operation.",
+          "cleanKey": "The part fell outside the manufacturer's tolerance for safe operation.",
+          "value": "The component didn't meet the range considered safe by the company that made it.",
+          "anchorKeywords": "component, didn't, range",
+          "rationale": "Connects \"The part fell outside the manufacturer's tolerance for safe operation.\" directly to the defining quality \"component, didn't, range\"."
+        },
+        {
+          "key": "[L114-Q2-2] A recall was issued for all affected vehicles.",
+          "cleanKey": "A recall was issued for all affected vehicles.",
+          "value": "The manufacturer asked owners of the vehicles involved to bring them in for the problem to be fixed.",
+          "anchorKeywords": "manufacturer, asked, owners",
+          "rationale": "Connects \"A recall was issued for all affected vehicles.\" directly to the defining quality \"manufacturer, asked, owners\"."
+        },
+        {
+          "key": "[L114-Q2-3] No injuries were reported before the issue was caught.",
+          "cleanKey": "No injuries were reported before the issue was caught.",
+          "value": "Fortunately, nobody was hurt before the problem was identified.",
+          "anchorKeywords": "Fortunately,, nobody, before",
+          "rationale": "Connects \"No injuries were reported before the issue was caught.\" directly to the defining quality \"Fortunately,, nobody, before\"."
+        }
+      ],
+      "explanation": "The first sentence describes how the defect was found, and the second explains why it mattered. The third describes the company's response, while the fourth is different — it adds a reassuring fact about safety outcomes.",
+      "hint": "Each sentence follows the discovery and handling of the same manufacturing defect."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L114_Q12",
+      "level": 114,
+      "title": "Summary Synapse",
+      "strategyBadge": "CORE DISTINCTION RADAR",
+      "techniqueTitle": "Conceptual Contrast Mapping",
+      "coreRule": "Verify matches by testing whether the definition could apply to any other term in the list.",
+      "paragraphTopic": "Stated facts versus conclusions in a manufacturing passage",
+      "instruction": "Match each statement with how it relates to the passage above.",
+      "detailedPairs": [
+        {
+          "key": "[L114-Q3-0] A routine inspection found the defect.",
+          "cleanKey": "A routine inspection found the defect.",
+          "value": "This is directly stated in the passage.",
+          "anchorKeywords": "directly, stated, passage.",
+          "rationale": "Connects \"A routine inspection found the defect.\" directly to the defining quality \"directly, stated, passage.\"."
+        },
+        {
+          "key": "[L114-Q3-1] The defect was serious enough to be outside the safe range for the part.",
+          "cleanKey": "The defect was serious enough to be outside the safe range for the part.",
+          "value": "This is a reasonable conclusion, based on the part falling outside the manufacturer's tolerance.",
+          "anchorKeywords": "reasonable, conclusion,, based",
+          "rationale": "Connects \"The defect was serious enough to be outside the safe range for the part.\" directly to the defining quality \"reasonable, conclusion,, based\"."
+        },
+        {
+          "key": "[L114-Q3-2] Several drivers were injured because of the defect before it was found.",
+          "cleanKey": "Several drivers were injured because of the defect before it was found.",
+          "value": "This contradicts the passage, which states no injuries were reported.",
+          "anchorKeywords": "contradicts, passage,, which",
+          "rationale": "Connects \"Several drivers were injured because of the defect before it was found.\" directly to the defining quality \"contradicts, passage,, which\"."
+        },
+        {
+          "key": "[L114-Q3-3] A recall was issued for the affected vehicles.",
+          "cleanKey": "A recall was issued for the affected vehicles.",
+          "value": "This is directly stated in the passage.",
+          "anchorKeywords": "directly, stated, passage.",
+          "rationale": "Connects \"A recall was issued for the affected vehicles.\" directly to the defining quality \"directly, stated, passage.\"."
+        }
+      ],
+      "explanation": "The first statement is stated directly. The second is a fair conclusion from the part falling outside the manufacturer's tolerance. The third contradicts the passage, which states no injuries were reported. The fourth is stated directly.",
+      "hint": "Decide whether each statement is stated directly, a fair conclusion, or contradicted by the passage."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L115_Q13",
+      "level": 115,
+      "title": "Summary Synapse",
+      "strategyBadge": "SUMMARY SYNAPSE",
+      "techniqueTitle": "Topic Sentence & Keyword Anchoring",
+      "coreRule": "Identify the core noun and action in each definition to connect it with its governing concept.",
+      "paragraphTopic": "Vocabulary about resolving labor disputes",
+      "instruction": "Match each word with its meaning.",
+      "detailedPairs": [
+        {
+          "key": "[L115-Q1-0] Negotiate",
+          "cleanKey": "Negotiate",
+          "value": "To discuss something formally in order to reach an agreement.",
+          "anchorKeywords": "discuss, something, formally",
+          "rationale": "Connects \"Negotiate\" directly to the defining quality \"discuss, something, formally\"."
+        },
+        {
+          "key": "[L115-Q1-1] Arbitrate",
+          "cleanKey": "Arbitrate",
+          "value": "To settle a dispute by having a neutral third party make a binding decision.",
+          "anchorKeywords": "settle, dispute, having",
+          "rationale": "Connects \"Arbitrate\" directly to the defining quality \"settle, dispute, having\"."
+        },
+        {
+          "key": "[L115-Q1-2] Mediate",
+          "cleanKey": "Mediate",
+          "value": "To help two sides reach an agreement, without making the final decision for them.",
+          "anchorKeywords": "sides, reach, agreement,",
+          "rationale": "Connects \"Mediate\" directly to the defining quality \"sides, reach, agreement,\"."
+        },
+        {
+          "key": "[L115-Q1-3] Strike",
+          "cleanKey": "Strike",
+          "value": "To stop working together, as a group, in order to demand better conditions.",
+          "anchorKeywords": "working, together,, group,",
+          "rationale": "Connects \"Strike\" directly to the defining quality \"working, together,, group,\"."
+        }
+      ],
+      "explanation": "Negotiate and mediate both involve discussion aimed at agreement, though mediate specifically involves a helper who doesn't decide for either side. Arbitrate and strike are different — one ends in a binding decision by a third party, one is a group action taken when no agreement is reached.",
+      "hint": "One means stopping work as a group, and three describe different ways of resolving a disagreement."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L115_Q14",
+      "level": 115,
+      "title": "Summary Synapse",
+      "strategyBadge": "SUMMARY SYNAPSE",
+      "techniqueTitle": "Topic Sentence & Keyword Anchoring",
+      "coreRule": "Identify the core noun and action in each definition to connect it with its governing concept.",
+      "paragraphTopic": "A labor dispute moving through resolution steps",
+      "instruction": "Match each sentence with what it means.",
+      "detailedPairs": [
+        {
+          "key": "[L115-Q2-0] The union and management failed to negotiate a new contract.",
+          "cleanKey": "The union and management failed to negotiate a new contract.",
+          "value": "The workers' group and the company couldn't reach an agreement on new terms through discussion.",
+          "anchorKeywords": "workers', group, company",
+          "rationale": "Connects \"The union and management failed to negotiate a new contract.\" directly to the defining quality \"workers', group, company\"."
+        },
+        {
+          "key": "[L115-Q2-1] A mediator was brought in to help both sides find common ground.",
+          "cleanKey": "A mediator was brought in to help both sides find common ground.",
+          "value": "A neutral helper joined the discussions to assist both sides in reaching an agreement, without deciding for them.",
+          "anchorKeywords": "neutral, helper, joined",
+          "rationale": "Connects \"A mediator was brought in to help both sides find common ground.\" directly to the defining quality \"neutral, helper, joined\"."
+        },
+        {
+          "key": "[L115-Q2-2] When that failed, the case moved to binding arbitration.",
+          "cleanKey": "When that failed, the case moved to binding arbitration.",
+          "value": "Once that didn't work, the dispute was handed to a neutral party whose decision both sides would have to accept.",
+          "anchorKeywords": "didn't, work,, dispute",
+          "rationale": "Connects \"When that failed, the case moved to binding arbitration.\" directly to the defining quality \"didn't, work,, dispute\"."
+        },
+        {
+          "key": "[L115-Q2-3] Workers had voted to strike if no agreement was reached by the deadline.",
+          "cleanKey": "Workers had voted to strike if no agreement was reached by the deadline.",
+          "value": "The employees had already agreed among themselves to stop working if a deal wasn't made by the set date.",
+          "anchorKeywords": "employees, already, agreed",
+          "rationale": "Connects \"Workers had voted to strike if no agreement was reached by the deadline.\" directly to the defining quality \"employees, already, agreed\"."
+        }
+      ],
+      "explanation": "The first sentence describes a failed negotiation, and the second describes an attempt to help. The third describes what happened when that failed, while the fourth is different — it adds information about what workers had already decided in advance.",
+      "hint": "Each sentence follows the next stage of the same labor dispute."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L115_Q15",
+      "level": 115,
+      "title": "Summary Synapse",
+      "strategyBadge": "SUMMARY SYNAPSE",
+      "techniqueTitle": "Topic Sentence & Keyword Anchoring",
+      "coreRule": "Identify the core noun and action in each definition to connect it with its governing concept.",
+      "paragraphTopic": "Stated facts versus conclusions in a labor dispute passage",
+      "instruction": "Match each statement with how it relates to the passage above.",
+      "detailedPairs": [
+        {
+          "key": "[L115-Q3-0] The union and management couldn't agree on a new contract through negotiation alone.",
+          "cleanKey": "The union and management couldn't agree on a new contract through negotiation alone.",
+          "value": "This is directly stated in the passage.",
+          "anchorKeywords": "directly, stated, passage.",
+          "rationale": "Connects \"The union and management couldn't agree on a new contract through negotiation alone.\" directly to the defining quality \"directly, stated, passage.\"."
+        },
+        {
+          "key": "[L115-Q3-1] The mediator made the final, binding decision for both sides.",
+          "cleanKey": "The mediator made the final, binding decision for both sides.",
+          "value": "This contradicts the passage, since mediation is described as helping both sides, not deciding for them.",
+          "anchorKeywords": "contradicts, passage,, since",
+          "rationale": "Connects \"The mediator made the final, binding decision for both sides.\" directly to the defining quality \"contradicts, passage,, since\"."
+        },
+        {
+          "key": "[L115-Q3-2] Arbitration involves a decision that both sides must accept, even if they disagree with it.",
+          "cleanKey": "Arbitration involves a decision that both sides must accept, even if they disagree with it.",
+          "value": "This is a reasonable conclusion, based on arbitration being described as binding.",
+          "anchorKeywords": "reasonable, conclusion,, based",
+          "rationale": "Connects \"Arbitration involves a decision that both sides must accept, even if they disagree with it.\" directly to the defining quality \"reasonable, conclusion,, based\"."
+        },
+        {
+          "key": "[L115-Q3-3] Workers had already agreed to stop working if no deal was reached in time.",
+          "cleanKey": "Workers had already agreed to stop working if no deal was reached in time.",
+          "value": "This is directly stated in the passage.",
+          "anchorKeywords": "directly, stated, passage.",
+          "rationale": "Connects \"Workers had already agreed to stop working if no deal was reached in time.\" directly to the defining quality \"directly, stated, passage.\"."
+        }
+      ],
+      "explanation": "The first statement is stated directly. The second contradicts the passage, since mediation is described as helping, not deciding. The third is a fair conclusion from arbitration being described as binding. The fourth is stated directly.",
+      "hint": "Decide whether each statement is stated directly, a fair conclusion, or contradicted by the passage."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L116_Q16",
+      "level": 116,
+      "title": "Summary Synapse",
+      "strategyBadge": "KEYWORD ANCHORING",
+      "techniqueTitle": "Isolating Thematic Identifiers",
+      "coreRule": "Topic sentences establish the framework; anchor definitions to their functional purpose rather than incidental words.",
+      "paragraphTopic": "Vocabulary about practicality",
+      "instruction": "Match each word with its meaning.",
+      "detailedPairs": [
+        {
+          "key": "[L116-Q1-0] Feasible",
+          "cleanKey": "Feasible",
+          "value": "Possible to do; achievable with available resources.",
+          "anchorKeywords": "Possible, achievable, available",
+          "rationale": "Connects \"Feasible\" directly to the defining quality \"Possible, achievable, available\"."
+        },
+        {
+          "key": "[L116-Q1-1] Viable",
+          "cleanKey": "Viable",
+          "value": "Capable of working successfully; practical enough to succeed.",
+          "anchorKeywords": "Capable, working, successfully;",
+          "rationale": "Connects \"Viable\" directly to the defining quality \"Capable, working, successfully;\"."
+        },
+        {
+          "key": "[L116-Q1-2] Impractical",
+          "cleanKey": "Impractical",
+          "value": "Not sensible or realistic to do, given the circumstances.",
+          "anchorKeywords": "sensible, realistic, given",
+          "rationale": "Connects \"Impractical\" directly to the defining quality \"sensible, realistic, given\"."
+        },
+        {
+          "key": "[L116-Q1-3] Untenable",
+          "cleanKey": "Untenable",
+          "value": "Not able to be defended or maintained; impossible to continue.",
+          "anchorKeywords": "defended, maintained;, impossible",
+          "rationale": "Connects \"Untenable\" directly to the defining quality \"defended, maintained;, impossible\"."
+        }
+      ],
+      "explanation": "Feasible and viable both describe something workable, though viable specifically points to long-term success, not just initial possibility. Impractical and untenable are different — both describe something that doesn't hold up, one simply unwise, one impossible to continue.",
+      "hint": "Two of these describe something realistic or workable, and two describe something that won't hold up."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L116_Q17",
+      "level": 116,
+      "title": "Summary Synapse",
+      "strategyBadge": "KEYWORD ANCHORING",
+      "techniqueTitle": "Isolating Thematic Identifiers",
+      "coreRule": "Topic sentences establish the framework; anchor definitions to their functional purpose rather than incidental words.",
+      "paragraphTopic": "A business plan that turns out to be unworkable",
+      "instruction": "Match each sentence with what it means.",
+      "detailedPairs": [
+        {
+          "key": "[L116-Q2-0] The initial plan seemed feasible, given the company's budget.",
+          "cleanKey": "The initial plan seemed feasible, given the company's budget.",
+          "value": "The original plan looked achievable, considering how much money the company had available.",
+          "anchorKeywords": "original, looked, achievable,",
+          "rationale": "Connects \"The initial plan seemed feasible, given the company's budget.\" directly to the defining quality \"original, looked, achievable,\"."
+        },
+        {
+          "key": "[L116-Q2-1] However, closer analysis revealed it wasn't truly viable long-term.",
+          "cleanKey": "However, closer analysis revealed it wasn't truly viable long-term.",
+          "value": "But a more careful look showed the plan wouldn't actually succeed over time.",
+          "anchorKeywords": "careful, showed, wouldn't",
+          "rationale": "Connects \"However, closer analysis revealed it wasn't truly viable long-term.\" directly to the defining quality \"careful, showed, wouldn't\"."
+        },
+        {
+          "key": "[L116-Q2-2] Expanding into five new markets at once proved impractical.",
+          "cleanKey": "Expanding into five new markets at once proved impractical.",
+          "value": "Trying to grow into five new areas all at the same time turned out not to be sensible.",
+          "anchorKeywords": "Trying, areas, turned",
+          "rationale": "Connects \"Expanding into five new markets at once proved impractical.\" directly to the defining quality \"Trying, areas, turned\"."
+        },
+        {
+          "key": "[L116-Q2-3] The original timeline quickly became untenable.",
+          "cleanKey": "The original timeline quickly became untenable.",
+          "value": "The original schedule soon became impossible to stick to.",
+          "anchorKeywords": "original, schedule, became",
+          "rationale": "Connects \"The original timeline quickly became untenable.\" directly to the defining quality \"original, schedule, became\"."
+        }
+      ],
+      "explanation": "The first sentence describes the plan looking workable at first, and the second reveals a longer-term problem. The third describes a specific part that failed, while the fourth is different — it describes the schedule itself becoming impossible to maintain.",
+      "hint": "Each sentence follows the same business plan as it becomes harder to carry out."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L116_Q18",
+      "level": 116,
+      "title": "Summary Synapse",
+      "strategyBadge": "KEYWORD ANCHORING",
+      "techniqueTitle": "Isolating Thematic Identifiers",
+      "coreRule": "Topic sentences establish the framework; anchor definitions to their functional purpose rather than incidental words.",
+      "paragraphTopic": "One word, several meanings: 'address'",
+      "instruction": "Match each sentence with what 'address' means there.",
+      "detailedPairs": [
+        {
+          "key": "[L116-Q3-0] The company plans to address customer concerns directly.",
+          "cleanKey": "The company plans to address customer concerns directly.",
+          "value": "Here, 'address' means to deal with or respond to something.",
+          "anchorKeywords": "Here,, 'address', means",
+          "rationale": "Connects \"The company plans to address customer concerns directly.\" directly to the defining quality \"Here,, 'address', means\"."
+        },
+        {
+          "key": "[L116-Q3-1] Please update your shipping address before checkout.",
+          "cleanKey": "Please update your shipping address before checkout.",
+          "value": "Here, 'address' means the location where mail or deliveries are sent.",
+          "anchorKeywords": "Here,, 'address', means",
+          "rationale": "Connects \"Please update your shipping address before checkout.\" directly to the defining quality \"Here,, 'address', means\"."
+        },
+        {
+          "key": "[L116-Q3-2] The CEO will address the shareholders at the annual meeting.",
+          "cleanKey": "The CEO will address the shareholders at the annual meeting.",
+          "value": "Here, 'address' means to formally speak to a group of people.",
+          "anchorKeywords": "Here,, 'address', means",
+          "rationale": "Connects \"The CEO will address the shareholders at the annual meeting.\" directly to the defining quality \"Here,, 'address', means\"."
+        },
+        {
+          "key": "[L116-Q3-3] You'll need to address the envelope before mailing it.",
+          "cleanKey": "You'll need to address the envelope before mailing it.",
+          "value": "Here, 'address' means to write the destination information on something being sent.",
+          "anchorKeywords": "Here,, 'address', means",
+          "rationale": "Connects \"You'll need to address the envelope before mailing it.\" directly to the defining quality \"Here,, 'address', means\"."
+        }
+      ],
+      "explanation": "In the first sentence, address means to deal with a concern, while in the second it means a mailing location. In the third, it means to formally speak to a group, and in the fourth, it means to write a destination on something being sent — four genuinely different meanings for the same word.",
+      "hint": "The word 'address' appears in all four sentences, but it means something different each time."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L117_Q19",
+      "level": 117,
+      "title": "Summary Synapse",
+      "strategyBadge": "THEMATIC CORRELATION",
+      "techniqueTitle": "Distinguishing Synonymous Categories",
+      "coreRule": "Beware of near-synonyms: look for specific boundaries like time of day, intensity, or emotional state.",
+      "paragraphTopic": "Vocabulary about business growth",
+      "instruction": "Match each word with its meaning.",
+      "detailedPairs": [
+        {
+          "key": "[L117-Q1-0] Scalable",
+          "cleanKey": "Scalable",
+          "value": "Able to grow larger without a proportional increase in cost or difficulty.",
+          "anchorKeywords": "larger, without, proportional",
+          "rationale": "Connects \"Scalable\" directly to the defining quality \"larger, without, proportional\"."
+        },
+        {
+          "key": "[L117-Q1-1] Unsustainable",
+          "cleanKey": "Unsustainable",
+          "value": "Not able to continue at the current rate without running into serious problems.",
+          "anchorKeywords": "continue, current, without",
+          "rationale": "Connects \"Unsustainable\" directly to the defining quality \"continue, current, without\"."
+        },
+        {
+          "key": "[L117-Q1-2] Bloated",
+          "cleanKey": "Bloated",
+          "value": "Larger or more complicated than necessary, often inefficient as a result.",
+          "anchorKeywords": "Larger, complicated, necessary,",
+          "rationale": "Connects \"Bloated\" directly to the defining quality \"Larger, complicated, necessary,\"."
+        },
+        {
+          "key": "[L117-Q1-3] Lean",
+          "cleanKey": "Lean",
+          "value": "Efficient and free of unnecessary cost or waste.",
+          "anchorKeywords": "Efficient, unnecessary, waste.",
+          "rationale": "Connects \"Lean\" directly to the defining quality \"Efficient, unnecessary, waste.\"."
+        }
+      ],
+      "explanation": "Scalable and lean both describe efficient growth, one about handling more without proportional cost, one about avoiding unnecessary size. Unsustainable and bloated are different — both describe problems, one about pace that can't continue, one about size and complexity.",
+      "hint": "One describes growing efficiently, one describes growth that can't continue, one describes being too complex, and one describes being efficiently simple."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L117_Q20",
+      "level": 117,
+      "title": "Summary Synapse",
+      "strategyBadge": "THEMATIC CORRELATION",
+      "techniqueTitle": "Distinguishing Synonymous Categories",
+      "coreRule": "Beware of near-synonyms: look for specific boundaries like time of day, intensity, or emotional state.",
+      "paragraphTopic": "A startup's growth and its costs",
+      "instruction": "Match each sentence with what it means.",
+      "detailedPairs": [
+        {
+          "key": "[L117-Q2-0] The startup grew quickly, but its costs grew even faster.",
+          "cleanKey": "The startup grew quickly, but its costs grew even faster.",
+          "value": "The new company expanded fast, though its expenses increased at an even quicker pace.",
+          "anchorKeywords": "company, expanded, fast,",
+          "rationale": "Connects \"The startup grew quickly, but its costs grew even faster.\" directly to the defining quality \"company, expanded, fast,\"."
+        },
+        {
+          "key": "[L117-Q2-1] Investors warned that this growth model was unsustainable.",
+          "cleanKey": "Investors warned that this growth model was unsustainable.",
+          "value": "Investors cautioned that this way of growing couldn't continue without causing problems.",
+          "anchorKeywords": "Investors, cautioned, growing",
+          "rationale": "Connects \"Investors warned that this growth model was unsustainable.\" directly to the defining quality \"Investors, cautioned, growing\"."
+        },
+        {
+          "key": "[L117-Q2-2] The company needed a more scalable approach to stay competitive.",
+          "cleanKey": "The company needed a more scalable approach to stay competitive.",
+          "value": "The company needed a way to grow that wouldn't cost proportionally more each time.",
+          "anchorKeywords": "company, needed, wouldn't",
+          "rationale": "Connects \"The company needed a more scalable approach to stay competitive.\" directly to the defining quality \"company, needed, wouldn't\"."
+        },
+        {
+          "key": "[L117-Q2-3] Eventually, the bloated organization had to cut several departments to become leaner.",
+          "cleanKey": "Eventually, the bloated organization had to cut several departments to become leaner.",
+          "value": "In the end, the overly large and complicated company had to eliminate a number of departments to run more efficiently.",
+          "anchorKeywords": "overly, large, complicated",
+          "rationale": "Connects \"Eventually, the bloated organization had to cut several departments to become leaner.\" directly to the defining quality \"overly, large, complicated\"."
+        }
+      ],
+      "explanation": "The first sentence describes fast growth alongside faster costs, and the second describes a warning about that pattern. The third describes what the company needed instead, while the fourth is different — it describes the eventual, difficult response to the problem.",
+      "hint": "Each sentence follows the financial story of the same startup as its growth becomes a problem."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L117_Q21",
+      "level": 117,
+      "title": "Summary Synapse",
+      "strategyBadge": "THEMATIC CORRELATION",
+      "techniqueTitle": "Distinguishing Synonymous Categories",
+      "coreRule": "Beware of near-synonyms: look for specific boundaries like time of day, intensity, or emotional state.",
+      "paragraphTopic": "One word, several meanings: 'run'",
+      "instruction": "Match each sentence with what 'run' means there.",
+      "detailedPairs": [
+        {
+          "key": "[L117-Q3-0] She decided to run for city council next year.",
+          "cleanKey": "She decided to run for city council next year.",
+          "value": "Here, 'run' means to be a candidate in an election.",
+          "anchorKeywords": "Here,, 'run', means",
+          "rationale": "Connects \"She decided to run for city council next year.\" directly to the defining quality \"Here,, 'run', means\"."
+        },
+        {
+          "key": "[L117-Q3-1] The new software runs on almost any device.",
+          "cleanKey": "The new software runs on almost any device.",
+          "value": "Here, 'run' means to operate or function.",
+          "anchorKeywords": "Here,, 'run', means",
+          "rationale": "Connects \"The new software runs on almost any device.\" directly to the defining quality \"Here,, 'run', means\"."
+        },
+        {
+          "key": "[L117-Q3-2] They run a small bakery downtown.",
+          "cleanKey": "They run a small bakery downtown.",
+          "value": "Here, 'run' means to manage or operate a business.",
+          "anchorKeywords": "Here,, 'run', means",
+          "rationale": "Connects \"They run a small bakery downtown.\" directly to the defining quality \"Here,, 'run', means\"."
+        },
+        {
+          "key": "[L117-Q3-3] Prices have run higher than expected this quarter.",
+          "cleanKey": "Prices have run higher than expected this quarter.",
+          "value": "Here, 'run' means to reach or extend to a certain level.",
+          "anchorKeywords": "Here,, 'run', means",
+          "rationale": "Connects \"Prices have run higher than expected this quarter.\" directly to the defining quality \"Here,, 'run', means\"."
+        }
+      ],
+      "explanation": "In the first sentence, run means to be a candidate for office, while in the second it means to operate or function. In the third, it means to manage a business, and in the fourth, it means to reach a certain level — four genuinely different meanings for the same word.",
+      "hint": "The word 'run' appears in all four sentences, but it means something different each time."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L118_Q22",
+      "level": 118,
+      "title": "Summary Synapse",
+      "strategyBadge": "SEMANTIC MAPPING",
+      "techniqueTitle": "Contextual Definition Pairing",
+      "coreRule": "Match each item by eliminating unmistakable anchors first, leaving subtler pairs for closer scrutiny.",
+      "paragraphTopic": "Vocabulary about business restructuring",
+      "instruction": "Match each word with its meaning.",
+      "detailedPairs": [
+        {
+          "key": "[L118-Q1-0] Diversify",
+          "cleanKey": "Diversify",
+          "value": "To expand into different areas, to reduce reliance on just one.",
+          "anchorKeywords": "expand, different, areas,",
+          "rationale": "Connects \"Diversify\" directly to the defining quality \"expand, different, areas,\"."
+        },
+        {
+          "key": "[L118-Q1-1] Consolidate",
+          "cleanKey": "Consolidate",
+          "value": "To combine separate things into a single, more unified whole.",
+          "anchorKeywords": "combine, separate, things",
+          "rationale": "Connects \"Consolidate\" directly to the defining quality \"combine, separate, things\"."
+        },
+        {
+          "key": "[L118-Q1-2] Streamline",
+          "cleanKey": "Streamline",
+          "value": "To make a process simpler and more efficient by removing unnecessary steps.",
+          "anchorKeywords": "process, simpler, efficient",
+          "rationale": "Connects \"Streamline\" directly to the defining quality \"process, simpler, efficient\"."
+        },
+        {
+          "key": "[L118-Q1-3] Fragment",
+          "cleanKey": "Fragment",
+          "value": "To break into smaller, separate, and often disconnected pieces.",
+          "anchorKeywords": "break, smaller,, separate,",
+          "rationale": "Connects \"Fragment\" directly to the defining quality \"break, smaller,, separate,\"."
+        }
+      ],
+      "explanation": "Diversify and consolidate are related changes to a business's structure, one spreading out, one combining together. Streamline and fragment are different — one simplifies a process, one describes something breaking into disconnected pieces, often as a side effect of other changes.",
+      "hint": "One means expanding into new areas, one means combining things, one means simplifying, and one means breaking apart."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L118_Q23",
+      "level": 118,
+      "title": "Summary Synapse",
+      "strategyBadge": "SEMANTIC MAPPING",
+      "techniqueTitle": "Contextual Definition Pairing",
+      "coreRule": "Match each item by eliminating unmistakable anchors first, leaving subtler pairs for closer scrutiny.",
+      "paragraphTopic": "A company's restructuring over time",
+      "instruction": "Match each sentence with what it means.",
+      "detailedPairs": [
+        {
+          "key": "[L118-Q2-0] The company diversified into three new industries to reduce risk.",
+          "cleanKey": "The company diversified into three new industries to reduce risk.",
+          "value": "The business expanded into three unrelated areas so it wouldn't depend so heavily on just one.",
+          "anchorKeywords": "business, expanded, three",
+          "rationale": "Connects \"The company diversified into three new industries to reduce risk.\" directly to the defining quality \"business, expanded, three\"."
+        },
+        {
+          "key": "[L118-Q2-1] Later, it consolidated several departments into a single division.",
+          "cleanKey": "Later, it consolidated several departments into a single division.",
+          "value": "Afterward, it merged a number of separate departments into one combined division.",
+          "anchorKeywords": "Afterward,, merged, number",
+          "rationale": "Connects \"Later, it consolidated several departments into a single division.\" directly to the defining quality \"Afterward,, merged, number\"."
+        },
+        {
+          "key": "[L118-Q2-2] This move helped streamline decision-making.",
+          "cleanKey": "This move helped streamline decision-making.",
+          "value": "This change made the process of making decisions simpler and quicker.",
+          "anchorKeywords": "change, process, making",
+          "rationale": "Connects \"This move helped streamline decision-making.\" directly to the defining quality \"change, process, making\"."
+        },
+        {
+          "key": "[L118-Q2-3] However, some employees felt the company's culture had become fragmented.",
+          "cleanKey": "However, some employees felt the company's culture had become fragmented.",
+          "value": "Even so, some workers felt the company's shared sense of identity had broken apart into disconnected pieces.",
+          "anchorKeywords": "workers, company's, shared",
+          "rationale": "Connects \"However, some employees felt the company's culture had become fragmented.\" directly to the defining quality \"workers, company's, shared\"."
+        }
+      ],
+      "explanation": "The first sentence describes expanding into new areas, and the second describes combining departments. The third describes a benefit of that combination, while the fourth is different — it describes an unintended cost of all the change.",
+      "hint": "Each sentence follows the same company through a series of structural changes."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L118_Q24",
+      "level": 118,
+      "title": "Summary Synapse",
+      "strategyBadge": "SEMANTIC MAPPING",
+      "techniqueTitle": "Contextual Definition Pairing",
+      "coreRule": "Match each item by eliminating unmistakable anchors first, leaving subtler pairs for closer scrutiny.",
+      "paragraphTopic": "One word, several meanings: 'cover'",
+      "instruction": "Match each sentence with what 'cover' means there.",
+      "detailedPairs": [
+        {
+          "key": "[L118-Q3-0] Her insurance policy doesn't cover water damage.",
+          "cleanKey": "Her insurance policy doesn't cover water damage.",
+          "value": "Here, 'cover' means to include as part of a protection or payment plan.",
+          "anchorKeywords": "Here,, 'cover', means",
+          "rationale": "Connects \"Her insurance policy doesn't cover water damage.\" directly to the defining quality \"Here,, 'cover', means\"."
+        },
+        {
+          "key": "[L118-Q3-1] Can you cover my shift on Friday?",
+          "cleanKey": "Can you cover my shift on Friday?",
+          "value": "Here, 'cover' means to take someone else's place or responsibility temporarily.",
+          "anchorKeywords": "Here,, 'cover', means",
+          "rationale": "Connects \"Can you cover my shift on Friday?\" directly to the defining quality \"Here,, 'cover', means\"."
+        },
+        {
+          "key": "[L118-Q3-2] The magazine's cover featured a well-known scientist.",
+          "cleanKey": "The magazine's cover featured a well-known scientist.",
+          "value": "Here, 'cover' means the outer front page of a publication.",
+          "anchorKeywords": "Here,, 'cover', means",
+          "rationale": "Connects \"The magazine's cover featured a well-known scientist.\" directly to the defining quality \"Here,, 'cover', means\"."
+        },
+        {
+          "key": "[L118-Q3-3] The journalist was sent to cover the election.",
+          "cleanKey": "The journalist was sent to cover the election.",
+          "value": "Here, 'cover' means to report on an event as a journalist.",
+          "anchorKeywords": "Here,, 'cover', means",
+          "rationale": "Connects \"The journalist was sent to cover the election.\" directly to the defining quality \"Here,, 'cover', means\"."
+        }
+      ],
+      "explanation": "In the first sentence, cover means to be included under an insurance policy, while in the second it means taking someone's place temporarily. In the third, it means the front page of a publication, and in the fourth, it means to report on an event — four genuinely different meanings for the same word.",
+      "hint": "The word 'cover' appears in all four sentences, but it means something different each time."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L119_Q25",
+      "level": 119,
+      "title": "Summary Synapse",
+      "strategyBadge": "PARAGRAPH-HEADING PIVOT",
+      "techniqueTitle": "Filtering Superfluous Descriptions",
+      "coreRule": "A precise heading acts as an umbrella that covers every word in the definition.",
+      "paragraphTopic": "Vocabulary about the status of an agreement",
+      "instruction": "Match each word with its meaning.",
+      "detailedPairs": [
+        {
+          "key": "[L119-Q1-0] Provisional",
+          "cleanKey": "Provisional",
+          "value": "Arranged for the present, likely to be changed later.",
+          "anchorKeywords": "Arranged, present,, likely",
+          "rationale": "Connects \"Provisional\" directly to the defining quality \"Arranged, present,, likely\"."
+        },
+        {
+          "key": "[L119-Q1-1] Finalized",
+          "cleanKey": "Finalized",
+          "value": "Completed and settled, with no more changes expected.",
+          "anchorKeywords": "Completed, settled,, changes",
+          "rationale": "Connects \"Finalized\" directly to the defining quality \"Completed, settled,, changes\"."
+        },
+        {
+          "key": "[L119-Q1-2] Tentative",
+          "cleanKey": "Tentative",
+          "value": "Not fully certain or fixed; subject to change.",
+          "anchorKeywords": "fully, certain, fixed;",
+          "rationale": "Connects \"Tentative\" directly to the defining quality \"fully, certain, fixed;\"."
+        },
+        {
+          "key": "[L119-Q1-3] Binding",
+          "cleanKey": "Binding",
+          "value": "Legally or formally required to be followed.",
+          "anchorKeywords": "Legally, formally, required",
+          "rationale": "Connects \"Binding\" directly to the defining quality \"Legally, formally, required\"."
+        }
+      ],
+      "explanation": "Provisional and tentative both describe something not yet finished, likely to change. Finalized and binding are different — both describe an agreement that's fully settled, though binding specifically means it must be legally followed.",
+      "hint": "Two of these describe an agreement that isn't finished yet, and two describe how firmly it must be followed."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L119_Q26",
+      "level": 119,
+      "title": "Summary Synapse",
+      "strategyBadge": "PARAGRAPH-HEADING PIVOT",
+      "techniqueTitle": "Filtering Superfluous Descriptions",
+      "coreRule": "A precise heading acts as an umbrella that covers every word in the definition.",
+      "paragraphTopic": "Reaching a contract agreement",
+      "instruction": "Match each sentence with what it means.",
+      "detailedPairs": [
+        {
+          "key": "[L119-Q2-0] Both sides reached a provisional agreement pending final review.",
+          "cleanKey": "Both sides reached a provisional agreement pending final review.",
+          "value": "The two sides came to a temporary agreement, waiting on one last check before it's official.",
+          "anchorKeywords": "sides, temporary, agreement,",
+          "rationale": "Connects \"Both sides reached a provisional agreement pending final review.\" directly to the defining quality \"sides, temporary, agreement,\"."
+        },
+        {
+          "key": "[L119-Q2-1] The terms remain tentative until the board approves them.",
+          "cleanKey": "The terms remain tentative until the board approves them.",
+          "value": "The conditions aren't fixed yet and could still change until the board says yes.",
+          "anchorKeywords": "conditions, aren't, fixed",
+          "rationale": "Connects \"The terms remain tentative until the board approves them.\" directly to the defining quality \"conditions, aren't, fixed\"."
+        },
+        {
+          "key": "[L119-Q2-2] Once signed, the contract becomes legally binding.",
+          "cleanKey": "Once signed, the contract becomes legally binding.",
+          "value": "After both sides sign, the contract must be followed by law.",
+          "anchorKeywords": "After, sides, sign,",
+          "rationale": "Connects \"Once signed, the contract becomes legally binding.\" directly to the defining quality \"After, sides, sign,\"."
+        },
+        {
+          "key": "[L119-Q2-3] The finalized version will be shared with both parties next week.",
+          "cleanKey": "The finalized version will be shared with both parties next week.",
+          "value": "The completed, settled version of the agreement will be sent to both sides the following week.",
+          "anchorKeywords": "completed,, settled, version",
+          "rationale": "Connects \"The finalized version will be shared with both parties next week.\" directly to the defining quality \"completed,, settled, version\"."
+        }
+      ],
+      "explanation": "The first sentence describes a temporary agreement, and the second describes it as still subject to change. The third describes what happens once it's signed, while the fourth is different — it describes when the completed version will actually be shared.",
+      "hint": "Each sentence follows the same contract as it moves from temporary to final."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L119_Q27",
+      "level": 119,
+      "title": "Summary Synapse",
+      "strategyBadge": "PARAGRAPH-HEADING PIVOT",
+      "techniqueTitle": "Filtering Superfluous Descriptions",
+      "coreRule": "A precise heading acts as an umbrella that covers every word in the definition.",
+      "paragraphTopic": "One word, several meanings: 'draft'",
+      "instruction": "Match each sentence with what 'draft' means there.",
+      "detailedPairs": [
+        {
+          "key": "[L119-Q3-0] Please review the first draft of the report before Friday.",
+          "cleanKey": "Please review the first draft of the report before Friday.",
+          "value": "Here, 'draft' means an early, unfinished version of a piece of writing.",
+          "anchorKeywords": "Here,, 'draft', means",
+          "rationale": "Connects \"Please review the first draft of the report before Friday.\" directly to the defining quality \"Here,, 'draft', means\"."
+        },
+        {
+          "key": "[L119-Q3-1] The team was excited about their top pick in the draft.",
+          "cleanKey": "The team was excited about their top pick in the draft.",
+          "value": "Here, 'draft' means a formal process of selecting new players for a sports team.",
+          "anchorKeywords": "Here,, 'draft', means",
+          "rationale": "Connects \"The team was excited about their top pick in the draft.\" directly to the defining quality \"Here,, 'draft', means\"."
+        },
+        {
+          "key": "[L119-Q3-2] Close the window; there's a draft coming through.",
+          "cleanKey": "Close the window; there's a draft coming through.",
+          "value": "Here, 'draft' means a current of cool air moving through a space.",
+          "anchorKeywords": "Here,, 'draft', means",
+          "rationale": "Connects \"Close the window; there's a draft coming through.\" directly to the defining quality \"Here,, 'draft', means\"."
+        },
+        {
+          "key": "[L119-Q3-3] He was drafted into military service at nineteen.",
+          "cleanKey": "He was drafted into military service at nineteen.",
+          "value": "Here, 'draft' means being formally required to join the military.",
+          "anchorKeywords": "Here,, 'draft', means",
+          "rationale": "Connects \"He was drafted into military service at nineteen.\" directly to the defining quality \"Here,, 'draft', means\"."
+        }
+      ],
+      "explanation": "In the first sentence, draft means an early, unfinished version of writing, while in the second it means a process of selecting sports players. In the third, it means a current of air, and in the fourth, it means being required to join the military — four genuinely different meanings for the same word.",
+      "hint": "The word 'draft' appears in all four sentences, but it means something different each time."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L120_Q28",
+      "level": 120,
+      "title": "Summary Synapse",
+      "strategyBadge": "CORE DISTINCTION RADAR",
+      "techniqueTitle": "Conceptual Contrast Mapping",
+      "coreRule": "Verify matches by testing whether the definition could apply to any other term in the list.",
+      "paragraphTopic": "Vocabulary about resolving a dispute",
+      "instruction": "Match each word with its meaning.",
+      "detailedPairs": [
+        {
+          "key": "[L120-Q1-0] Amicable",
+          "cleanKey": "Amicable",
+          "value": "Done in a friendly way, without serious conflict.",
+          "anchorKeywords": "friendly, without, serious",
+          "rationale": "Connects \"Amicable\" directly to the defining quality \"friendly, without, serious\"."
+        },
+        {
+          "key": "[L120-Q1-1] Contentious",
+          "cleanKey": "Contentious",
+          "value": "Likely to cause disagreement or argument.",
+          "anchorKeywords": "Likely, cause, disagreement",
+          "rationale": "Connects \"Contentious\" directly to the defining quality \"Likely, cause, disagreement\"."
+        },
+        {
+          "key": "[L120-Q1-2] Unresolved",
+          "cleanKey": "Unresolved",
+          "value": "Not yet settled or decided.",
+          "anchorKeywords": "settled, decided.",
+          "rationale": "Connects \"Unresolved\" directly to the defining quality \"settled, decided.\"."
+        },
+        {
+          "key": "[L120-Q1-3] Mutual",
+          "cleanKey": "Mutual",
+          "value": "Shared or felt equally by both sides.",
+          "anchorKeywords": "Shared, equally, sides.",
+          "rationale": "Connects \"Mutual\" directly to the defining quality \"Shared, equally, sides.\"."
+        }
+      ],
+      "explanation": "Amicable and contentious are opposites describing the tone of a disagreement, one friendly, one hostile. Unresolved and mutual are different — one is about whether something is settled at all, one is about whether an outcome is shared equally.",
+      "hint": "Two of these describe how a disagreement is handled, and two describe whether it's actually settled."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L120_Q29",
+      "level": 120,
+      "title": "Summary Synapse",
+      "strategyBadge": "CORE DISTINCTION RADAR",
+      "techniqueTitle": "Conceptual Contrast Mapping",
+      "coreRule": "Verify matches by testing whether the definition could apply to any other term in the list.",
+      "paragraphTopic": "A dispute between two companies reaches resolution",
+      "instruction": "Match each sentence with what it means.",
+      "detailedPairs": [
+        {
+          "key": "[L120-Q2-0] After months of contentious debate, the two companies reached an amicable settlement.",
+          "cleanKey": "After months of contentious debate, the two companies reached an amicable settlement.",
+          "value": "Following a long period of heated disagreement, the two companies came to a friendly agreement.",
+          "anchorKeywords": "Following, period, heated",
+          "rationale": "Connects \"After months of contentious debate, the two companies reached an amicable settlement.\" directly to the defining quality \"Following, period, heated\"."
+        },
+        {
+          "key": "[L120-Q2-1] Both sides described the outcome as a mutual win.",
+          "cleanKey": "Both sides described the outcome as a mutual win.",
+          "value": "Each side described the result as a benefit shared equally by both of them.",
+          "anchorKeywords": "described, result, benefit",
+          "rationale": "Connects \"Both sides described the outcome as a mutual win.\" directly to the defining quality \"described, result, benefit\"."
+        },
+        {
+          "key": "[L120-Q2-2] One smaller issue, however, remains unresolved.",
+          "cleanKey": "One smaller issue, however, remains unresolved.",
+          "value": "One minor matter, though, still hasn't been settled.",
+          "anchorKeywords": "minor, matter,, though,",
+          "rationale": "Connects \"One smaller issue, however, remains unresolved.\" directly to the defining quality \"minor, matter,, though,\"."
+        },
+        {
+          "key": "[L120-Q2-3] Lawyers expect it to be addressed in a separate agreement.",
+          "cleanKey": "Lawyers expect it to be addressed in a separate agreement.",
+          "value": "Legal representatives anticipate that this issue will be dealt with through a different, additional agreement.",
+          "anchorKeywords": "Legal, representatives, anticipate",
+          "rationale": "Connects \"Lawyers expect it to be addressed in a separate agreement.\" directly to the defining quality \"Legal, representatives, anticipate\"."
+        }
+      ],
+      "explanation": "The first sentence describes how a long disagreement ended, and the second describes how both sides viewed the outcome. The third introduces a remaining issue, while the fourth is different — it looks ahead to how that remaining issue will be handled.",
+      "hint": "Each sentence follows the resolution of the same dispute between two companies."
+    },
+    {
+      "id": "RDG_READANDMATCH_LEARN_L120_Q30",
+      "level": 120,
+      "title": "Summary Synapse",
+      "strategyBadge": "CORE DISTINCTION RADAR",
+      "techniqueTitle": "Conceptual Contrast Mapping",
+      "coreRule": "Verify matches by testing whether the definition could apply to any other term in the list.",
+      "paragraphTopic": "One word, several meanings: 'settle'",
+      "instruction": "Match each sentence with what 'settle' means there.",
+      "detailedPairs": [
+        {
+          "key": "[L120-Q3-0] The two companies agreed to settle out of court.",
+          "cleanKey": "The two companies agreed to settle out of court.",
+          "value": "Here, 'settle' means to resolve a legal dispute without going to trial.",
+          "anchorKeywords": "Here,, 'settle', means",
+          "rationale": "Connects \"The two companies agreed to settle out of court.\" directly to the defining quality \"Here,, 'settle', means\"."
+        },
+        {
+          "key": "[L120-Q3-1] After years of moving, they finally settled in one city.",
+          "cleanKey": "After years of moving, they finally settled in one city.",
+          "value": "Here, 'settle' means to establish a permanent home somewhere.",
+          "anchorKeywords": "Here,, 'settle', means",
+          "rationale": "Connects \"After years of moving, they finally settled in one city.\" directly to the defining quality \"Here,, 'settle', means\"."
+        },
+        {
+          "key": "[L120-Q3-2] Let the tea settle for a few minutes before drinking it.",
+          "cleanKey": "Let the tea settle for a few minutes before drinking it.",
+          "value": "Here, 'settle' means for particles or sediment to sink and become still.",
+          "anchorKeywords": "Here,, 'settle', means",
+          "rationale": "Connects \"Let the tea settle for a few minutes before drinking it.\" directly to the defining quality \"Here,, 'settle', means\"."
+        },
+        {
+          "key": "[L120-Q3-3] He couldn't settle on a single answer.",
+          "cleanKey": "He couldn't settle on a single answer.",
+          "value": "Here, 'settle' means to firmly decide on one option among several.",
+          "anchorKeywords": "Here,, 'settle', means",
+          "rationale": "Connects \"He couldn't settle on a single answer.\" directly to the defining quality \"Here,, 'settle', means\"."
+        }
+      ],
+      "explanation": "In the first sentence, settle means resolving a legal matter outside court, while in the second it means establishing a permanent home. In the third, it means particles sinking and becoming still, and in the fourth, it means firmly deciding on one option — four genuinely different meanings for the same word.",
+      "hint": "The word 'settle' appears in all four sentences, but it means something different each time."
+    }
+  ]
+}
