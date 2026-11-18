@@ -1,0 +1,298 @@
+{
+  "gameType": "completeSentence",
+  "phase": "learn",
+  "batchIndex": 6,
+  "levels": "51-60",
+  "quests": [
+    {
+      "id": "WRT_COMPLETESENTENCE_L51_LEARN_Q1",
+      "level": 51,
+      "title": "Clause & Predicate Guide",
+      "strategyBadge": "CLAUSE ARCHITECTURE",
+      "connector": "Although",
+      "subordinateClause": "Although the morning traffic was exceptionally heavy,",
+      "independentClause": "our delivery van reached the warehouse on schedule.",
+      "completeSentence": "Although the morning traffic was exceptionally heavy, our delivery van reached the warehouse on schedule.",
+      "coreRule": "A subordinate clause introduced by \"Although\" must be balanced by an independent clause containing its own subject and finite verb.",
+      "contrastExample": {
+        "incorrect": "Although the morning traffic was exceptionally heavy.",
+        "whyBroken": "Leaves a concessive condition without a main clause, creating a dangling sentence fragment."
+      },
+      "breakdown": [
+        {
+          "part": "Subordinate Clause (Dependent)",
+          "text": "Although the morning traffic was exceptionally heavy,",
+          "role": "Establishes context, condition, or cause. Cannot stand alone.",
+          "color": "indigo"
+        },
+        {
+          "part": "Independent Clause (Main Thought)",
+          "text": "our delivery van reached the warehouse on schedule.",
+          "role": "Contains its own subject and finite verb. Completes the thought.",
+          "color": "emerald"
+        }
+      ]
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L52_LEARN_Q1",
+      "level": 52,
+      "title": "Clause & Predicate Guide",
+      "strategyBadge": "CLAUSE ARCHITECTURE",
+      "connector": "Because",
+      "subordinateClause": "Because the laboratory team calibrated the sensors precisely,",
+      "independentClause": "the experimental data yielded remarkably consistent results.",
+      "completeSentence": "Because the laboratory team calibrated the sensors precisely, the experimental data yielded remarkably consistent results.",
+      "coreRule": "Causal subordinate clauses establish reasons that require a main result clause to form a complete grammatical thought.",
+      "contrastExample": {
+        "incorrect": "Because the laboratory team calibrated the sensors precisely.",
+        "whyBroken": "A causal conjunction demands an effect clause; isolated, it fails the independent clause test."
+      },
+      "breakdown": [
+        {
+          "part": "Subordinate Clause (Dependent)",
+          "text": "Because the laboratory team calibrated the sensors precisely,",
+          "role": "Establishes context, condition, or cause. Cannot stand alone.",
+          "color": "indigo"
+        },
+        {
+          "part": "Independent Clause (Main Thought)",
+          "text": "the experimental data yielded remarkably consistent results.",
+          "role": "Contains its own subject and finite verb. Completes the thought.",
+          "color": "emerald"
+        }
+      ]
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L53_LEARN_Q1",
+      "level": 53,
+      "title": "Clause & Predicate Guide",
+      "strategyBadge": "CLAUSE ARCHITECTURE",
+      "connector": "Unless",
+      "subordinateClause": "Unless the project committee approves the revised budget,",
+      "independentClause": "the construction phase cannot commence next month.",
+      "completeSentence": "Unless the project committee approves the revised budget, the construction phase cannot commence next month.",
+      "coreRule": "Negative conditional clauses (\"Unless\") govern the occurrence of an independent action in the main clause.",
+      "contrastExample": {
+        "incorrect": "Unless the project committee approves the revised budget.",
+        "whyBroken": "Sets a condition but withholds the consequence, resulting in an unresolved fragment."
+      },
+      "breakdown": [
+        {
+          "part": "Subordinate Clause (Dependent)",
+          "text": "Unless the project committee approves the revised budget,",
+          "role": "Establishes context, condition, or cause. Cannot stand alone.",
+          "color": "indigo"
+        },
+        {
+          "part": "Independent Clause (Main Thought)",
+          "text": "the construction phase cannot commence next month.",
+          "role": "Contains its own subject and finite verb. Completes the thought.",
+          "color": "emerald"
+        }
+      ]
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L54_LEARN_Q1",
+      "level": 54,
+      "title": "Clause & Predicate Guide",
+      "strategyBadge": "CLAUSE ARCHITECTURE",
+      "connector": "While",
+      "subordinateClause": "While the software engineers tested the payment gateway,",
+      "independentClause": "the design team finalized the user interface layouts.",
+      "completeSentence": "While the software engineers tested the payment gateway, the design team finalized the user interface layouts.",
+      "coreRule": "Temporal clauses of concurrence (\"While\") connect two simultaneous actions, each requiring its own full subject and predicate.",
+      "contrastExample": {
+        "incorrect": "While the software engineers tested the payment gateway.",
+        "whyBroken": "Subordinating conjunction \"While\" leaves the simultaneous event unresolved."
+      },
+      "breakdown": [
+        {
+          "part": "Subordinate Clause (Dependent)",
+          "text": "While the software engineers tested the payment gateway,",
+          "role": "Establishes context, condition, or cause. Cannot stand alone.",
+          "color": "indigo"
+        },
+        {
+          "part": "Independent Clause (Main Thought)",
+          "text": "the design team finalized the user interface layouts.",
+          "role": "Contains its own subject and finite verb. Completes the thought.",
+          "color": "emerald"
+        }
+      ]
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L55_LEARN_Q1",
+      "level": 55,
+      "title": "Clause & Predicate Guide",
+      "strategyBadge": "CLAUSE ARCHITECTURE",
+      "connector": "Since",
+      "subordinateClause": "Since the renewable energy grid became operational,",
+      "independentClause": "the municipal district has reduced its carbon footprint by forty percent.",
+      "completeSentence": "Since the renewable energy grid became operational, the municipal district has reduced its carbon footprint by forty percent.",
+      "coreRule": "Time-origin clauses (\"Since\") anchor past inception points that require present perfect main predicates.",
+      "contrastExample": {
+        "incorrect": "Since the renewable energy grid became operational.",
+        "whyBroken": "Establishes a starting timeframe without describing the ongoing historical effect."
+      },
+      "breakdown": [
+        {
+          "part": "Subordinate Clause (Dependent)",
+          "text": "Since the renewable energy grid became operational,",
+          "role": "Establishes context, condition, or cause. Cannot stand alone.",
+          "color": "indigo"
+        },
+        {
+          "part": "Independent Clause (Main Thought)",
+          "text": "the municipal district has reduced its carbon footprint by forty percent.",
+          "role": "Contains its own subject and finite verb. Completes the thought.",
+          "color": "emerald"
+        }
+      ]
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L56_LEARN_Q1",
+      "level": 56,
+      "title": "Clause & Predicate Guide",
+      "strategyBadge": "CLAUSE ARCHITECTURE",
+      "connector": "Even though",
+      "subordinateClause": "Even though the mountain expedition faced subzero temperatures,",
+      "independentClause": "every climber reached the summit safely before nightfall.",
+      "completeSentence": "Even though the mountain expedition faced subzero temperatures, every climber reached the summit safely before nightfall.",
+      "coreRule": "Strong concessive markers (\"Even though\") require an emphatic contrasting independent clause.",
+      "contrastExample": {
+        "incorrect": "Even though the mountain expedition faced subzero temperatures.",
+        "whyBroken": "Highlights obstacle without delivering the overcoming resolution."
+      },
+      "breakdown": [
+        {
+          "part": "Subordinate Clause (Dependent)",
+          "text": "Even though the mountain expedition faced subzero temperatures,",
+          "role": "Establishes context, condition, or cause. Cannot stand alone.",
+          "color": "indigo"
+        },
+        {
+          "part": "Independent Clause (Main Thought)",
+          "text": "every climber reached the summit safely before nightfall.",
+          "role": "Contains its own subject and finite verb. Completes the thought.",
+          "color": "emerald"
+        }
+      ]
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L57_LEARN_Q1",
+      "level": 57,
+      "title": "Clause & Predicate Guide",
+      "strategyBadge": "CLAUSE ARCHITECTURE",
+      "connector": "Before",
+      "subordinateClause": "Before the medical director authorized the trial rollout,",
+      "independentClause": "independent clinical reviewers verified the safety protocols.",
+      "completeSentence": "Before the medical director authorized the trial rollout, independent clinical reviewers verified the safety protocols.",
+      "coreRule": "Precedence clauses (\"Before\") establish sequential prerequisites that govern main clause actions.",
+      "contrastExample": {
+        "incorrect": "Before the medical director authorized the trial rollout.",
+        "whyBroken": "Missing the prerequisite action that occurred prior to the event."
+      },
+      "breakdown": [
+        {
+          "part": "Subordinate Clause (Dependent)",
+          "text": "Before the medical director authorized the trial rollout,",
+          "role": "Establishes context, condition, or cause. Cannot stand alone.",
+          "color": "indigo"
+        },
+        {
+          "part": "Independent Clause (Main Thought)",
+          "text": "independent clinical reviewers verified the safety protocols.",
+          "role": "Contains its own subject and finite verb. Completes the thought.",
+          "color": "emerald"
+        }
+      ]
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L58_LEARN_Q1",
+      "level": 58,
+      "title": "Clause & Predicate Guide",
+      "strategyBadge": "CLAUSE ARCHITECTURE",
+      "connector": "After",
+      "subordinateClause": "After the archivist cataloged the historical manuscripts,",
+      "independentClause": "the museum curator arranged a public exhibition.",
+      "completeSentence": "After the archivist cataloged the historical manuscripts, the museum curator arranged a public exhibition.",
+      "coreRule": "Succession clauses (\"After\") must lead into the subsequent event carried by an independent clause.",
+      "contrastExample": {
+        "incorrect": "After the archivist cataloged the historical manuscripts.",
+        "whyBroken": "Sets up a completed precondition but fails to specify the consequence."
+      },
+      "breakdown": [
+        {
+          "part": "Subordinate Clause (Dependent)",
+          "text": "After the archivist cataloged the historical manuscripts,",
+          "role": "Establishes context, condition, or cause. Cannot stand alone.",
+          "color": "indigo"
+        },
+        {
+          "part": "Independent Clause (Main Thought)",
+          "text": "the museum curator arranged a public exhibition.",
+          "role": "Contains its own subject and finite verb. Completes the thought.",
+          "color": "emerald"
+        }
+      ]
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L59_LEARN_Q1",
+      "level": 59,
+      "title": "Clause & Predicate Guide",
+      "strategyBadge": "CLAUSE ARCHITECTURE",
+      "connector": "Whenever",
+      "subordinateClause": "Whenever heavy storms threaten the coastal estuary,",
+      "independentClause": "the automated floodgates close within three minutes.",
+      "completeSentence": "Whenever heavy storms threaten the coastal estuary, the automated floodgates close within three minutes.",
+      "coreRule": "Habitual conditional clauses (\"Whenever\") connect recurring events to predictable main clause responses.",
+      "contrastExample": {
+        "incorrect": "Whenever heavy storms threaten the coastal estuary.",
+        "whyBroken": "Identifies recurring trigger condition without providing the response predicate."
+      },
+      "breakdown": [
+        {
+          "part": "Subordinate Clause (Dependent)",
+          "text": "Whenever heavy storms threaten the coastal estuary,",
+          "role": "Establishes context, condition, or cause. Cannot stand alone.",
+          "color": "indigo"
+        },
+        {
+          "part": "Independent Clause (Main Thought)",
+          "text": "the automated floodgates close within three minutes.",
+          "role": "Contains its own subject and finite verb. Completes the thought.",
+          "color": "emerald"
+        }
+      ]
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L60_LEARN_Q1",
+      "level": 60,
+      "title": "Clause & Predicate Guide",
+      "strategyBadge": "CLAUSE ARCHITECTURE",
+      "connector": "Provided that",
+      "subordinateClause": "Provided that all participants sign the liability waiver,",
+      "independentClause": "the flight instructor will grant access to the simulator.",
+      "completeSentence": "Provided that all participants sign the liability waiver, the flight instructor will grant access to the simulator.",
+      "coreRule": "Stipulative conditions (\"Provided that\") govern permission granted in an independent clause.",
+      "contrastExample": {
+        "incorrect": "Provided that all participants sign the liability waiver.",
+        "whyBroken": "Conditional prerequisite left suspended without authorization predicate."
+      },
+      "breakdown": [
+        {
+          "part": "Subordinate Clause (Dependent)",
+          "text": "Provided that all participants sign the liability waiver,",
+          "role": "Establishes context, condition, or cause. Cannot stand alone.",
+          "color": "indigo"
+        },
+        {
+          "part": "Independent Clause (Main Thought)",
+          "text": "the flight instructor will grant access to the simulator.",
+          "role": "Contains its own subject and finite verb. Completes the thought.",
+          "color": "emerald"
+        }
+      ]
+    }
+  ]
+}

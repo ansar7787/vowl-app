@@ -207,6 +207,7 @@ void main() {
     when(() => mockSoundService.playHint()).thenAnswer((_) async {});
     when(() => mockSoundService.playClick()).thenAnswer((_) async {});
     when(() => mockSoundService.playLevelComplete()).thenAnswer((_) async {});
+    when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
     when(() => mockSoundService.playFile(any())).thenAnswer((_) async {});
 
     // TTS mock
@@ -861,14 +862,13 @@ void main() {
       },
     );
 
-    testWidgets('shows exit confirmation dialog when back button is tapped', (
+    testWidgets('shows exit confirmation dialog when back navigation is triggered', (
       tester,
     ) async {
       await pumpScreen(tester);
 
-      final backButton = find.byIcon(Icons.arrow_back_ios_new_rounded);
-      expect(backButton, findsOneWidget);
-      await tester.tap(backButton);
+      final dynamic widgetsAppState = tester.state(find.byType(WidgetsApp));
+      await widgetsAppState.didPopRoute();
       await tester.pumpAndSettle();
 
       expect(find.text('QUIT GAME?'), findsOneWidget);

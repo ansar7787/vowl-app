@@ -1,0 +1,518 @@
+{
+  "gameType": "completeSentence",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "WRT_COMPLETESENTENCE_L1_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "I ____ a little nervous about my first day at the new school.",
+      "options": [
+        "am",
+        "be",
+        "is",
+        "are"
+      ],
+      "correctAnswer": "am",
+      "hint": "Find the subject first. One pronoun has its own special form of be.",
+      "explanation": "'I' is the only subject that takes 'am'. 'Is' belongs to he/she/it, 'are' to you/we/they, and bare 'be' cannot be the main verb of a present statement.",
+      "grammarFocus": "Verb Be: Am/Is/Are"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L1_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "Maya ____ at the library right now.",
+      "options": [
+        "was",
+        "are",
+        "is",
+        "am"
+      ],
+      "correctAnswer": "is",
+      "hint": "Ask whether the subject is one person or several, and check the time word.",
+      "explanation": "'Maya' is one person, so she takes 'is'. The words 'right now' also point to the present, which rules out 'was'.",
+      "grammarFocus": "Verb Be: Am/Is/Are"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L1_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "My keys ____ on the kitchen table, next to the fruit bowl.",
+      "options": [
+        "is",
+        "am",
+        "being",
+        "are"
+      ],
+      "correctAnswer": "are",
+      "hint": "Look at the noun 'keys' itself, not the singular nouns that come after it.",
+      "explanation": "'Keys' is plural, so the verb is 'are'. A nearby singular noun like 'bowl' does not change the subject.",
+      "grammarFocus": "Verb Be: Am/Is/Are"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L2_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "We ____ ready to order, thank you.",
+      "options": [
+        "been",
+        "are",
+        "is",
+        "am"
+      ],
+      "correctAnswer": "are",
+      "hint": "Pronouns like we, you and they share one form of be.",
+      "explanation": "'We' is plural, so it takes 'are'. The same form works for 'you' and 'they', which makes the pattern easy to reuse.",
+      "grammarFocus": "Verb Be: Plural Subjects"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L2_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "Ravi and his cousin ____ in the same cricket team this season.",
+      "options": [
+        "are",
+        "be",
+        "am",
+        "is"
+      ],
+      "correctAnswer": "are",
+      "hint": "Two people joined by 'and' make one plural subject.",
+      "explanation": "Two subjects joined by 'and' count as plural, so we use 'are'. 'Is' would only fit if Ravi were alone.",
+      "grammarFocus": "Verb Be: Plural Subjects"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L2_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "The two suitcases by the door ____ mine.",
+      "options": [
+        "been",
+        "is",
+        "are",
+        "be"
+      ],
+      "correctAnswer": "are",
+      "hint": "Find the real subject; the phrase after it only tells you where.",
+      "explanation": "The subject is 'suitcases', not 'door'. Plural subject, so 'are'. Prepositional phrases like 'by the door' never decide the verb.",
+      "grammarFocus": "Verb Be: Plural Subjects"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L3_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "We ____ on Saturdays.",
+      "options": [
+        "visit to my grandparents",
+        "my grandparents visit",
+        "visiting my grandparents",
+        "visit my grandparents"
+      ],
+      "correctAnswer": "visit my grandparents",
+      "hint": "English puts the doer first, then the action, then the receiver.",
+      "explanation": "English follows Subject + Verb + Object: 'We visit my grandparents.' Putting the object before the verb, or adding 'to' after 'visit', breaks the order.",
+      "grammarFocus": "Sentence Word Order (SVO)"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L3_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "The children ____ after school.",
+      "options": [
+        "playing football",
+        "play football",
+        "football play",
+        "plays football"
+      ],
+      "correctAnswer": "play football",
+      "hint": "Check that a real verb follows the subject and that it agrees.",
+      "explanation": "'The children' is plural, so the verb stays 'play', and the object 'football' comes after it. 'Plays' would need a singular subject, and 'playing' alone is not a complete verb.",
+      "grammarFocus": "Sentence Word Order (SVO)"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L3_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "Every morning, Nadia ____.",
+      "options": [
+        "drinking a cup of tea",
+        "a cup of tea drinks",
+        "drinks a cup of tea",
+        "drink a cup of tea"
+      ],
+      "correctAnswer": "drinks a cup of tea",
+      "hint": "After a time phrase, the sentence still needs subject, then verb, then object.",
+      "explanation": "The time phrase 'Every morning' can start the sentence, but the core stays Subject + Verb + Object. 'Nadia' is singular, so the verb takes -s: 'drinks'.",
+      "grammarFocus": "Sentence Word Order (SVO)"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L4_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "I ____ hungry yet, so let's wait for the others.",
+      "options": [
+        "not am",
+        "am no",
+        "amn't",
+        "am not"
+      ],
+      "correctAnswer": "am not",
+      "hint": "Negative with be: not goes after the verb. Which form of be goes with I?",
+      "explanation": "We make be negative by placing 'not' after it: 'I am not'. 'Amn't' is not used in standard English, so 'I'm not' is the usual short form.",
+      "grammarFocus": "Verb Be: Negatives"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L4_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "The shops ____ closed today; they open again tomorrow.",
+      "options": [
+        "not are",
+        "aren't",
+        "isn't",
+        "don't"
+      ],
+      "correctAnswer": "aren't",
+      "hint": "Is the subject singular or plural? Then decide how be becomes negative.",
+      "explanation": "'The shops' is plural, so 'are not' becomes 'aren't'. 'Don't' is used before a base verb, not before an adjective like 'closed'.",
+      "grammarFocus": "Verb Be: Negatives"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L4_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "My phone ____ working, so I can't check your message.",
+      "options": [
+        "isn't",
+        "don't",
+        "doesn't",
+        "aren't"
+      ],
+      "correctAnswer": "isn't",
+      "hint": "Look at the word after the blank: is it a base verb or an -ing form?",
+      "explanation": "'Working' here is an -ing form, so it needs a form of be. A singular subject gives 'isn't'. Do-forms would need the plain verb 'work'.",
+      "grammarFocus": "Verb Be: Negatives"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L5_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "____ your brother at home this afternoon?",
+      "options": [
+        "Am",
+        "Does",
+        "Are",
+        "Is"
+      ],
+      "correctAnswer": "Is",
+      "hint": "In a question with be, the verb moves in front of the subject.",
+      "explanation": "With be, we invert the verb and subject: 'Is your brother...?' The subject is singular, so 'Is' fits; 'Does' would need another verb after the subject.",
+      "grammarFocus": "Verb Be: Questions"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L5_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "____ we late for the meeting?",
+      "options": [
+        "Am",
+        "Are",
+        "Is",
+        "Do"
+      ],
+      "correctAnswer": "Are",
+      "hint": "Move be to the front and match it to 'we'.",
+      "explanation": "'We' takes 'are', and be goes before the subject in questions. 'Do we late' fails because 'late' is an adjective, not a verb.",
+      "grammarFocus": "Verb Be: Questions"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L5_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "Where ____ the nearest bus stop, please?",
+      "options": [
+        "is",
+        "do",
+        "does",
+        "are"
+      ],
+      "correctAnswer": "is",
+      "hint": "A wh-word starts the question, and then the verb usually comes before the subject.",
+      "explanation": "After 'Where' we use be in front of the subject. 'Bus stop' is singular, so 'is'. Do-forms need a main verb, which this question does not have.",
+      "grammarFocus": "Verb Be: Questions"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L6_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "My uncle ____ in a bank near the station.",
+      "options": [
+        "to work",
+        "work",
+        "works",
+        "working"
+      ],
+      "correctAnswer": "works",
+      "hint": "Present-tense verbs change form with he/she/it.",
+      "explanation": "'My uncle' is 'he', so the simple present verb takes -s: 'works'. Without an auxiliary, 'working' or 'to work' cannot be the main verb.",
+      "grammarFocus": "Simple Present: Third-Person -s"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L6_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "Our neighbour's dog ____ every time the doorbell rings.",
+      "options": [
+        "barks",
+        "is bark",
+        "bark",
+        "barking"
+      ],
+      "correctAnswer": "barks",
+      "hint": "One dog means singular. What does a singular subject add to the verb?",
+      "explanation": "A singular subject in the simple present needs the -s ending: 'barks'. 'Is bark' mixes be with a base verb, which is a common learner slip.",
+      "grammarFocus": "Simple Present: Third-Person -s"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L6_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "Kavya usually ____ her homework before dinner.",
+      "options": [
+        "finishs",
+        "finishes",
+        "finishing",
+        "finish"
+      ],
+      "correctAnswer": "finishes",
+      "hint": "Watch the ending: verbs ending in -sh do not just add -s.",
+      "explanation": "Verbs ending in -sh, -ch, -s, -x or -o take -es in the third person: 'finishes'. 'Usually' shows this is a routine, so we use the simple present.",
+      "grammarFocus": "Simple Present: Third-Person -s"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L7_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "Most of my classmates ____ to school by bike.",
+      "options": [
+        "rides",
+        "riding",
+        "are ride",
+        "ride"
+      ],
+      "correctAnswer": "ride",
+      "hint": "Is the subject plural? Then the verb keeps its plain form.",
+      "explanation": "'Classmates' is plural, so the verb has no -s: 'ride'. The -s belongs only to singular third-person subjects.",
+      "grammarFocus": "Simple Present: Base Form"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L7_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "You ____ very clearly on the phone, so I understand every word.",
+      "options": [
+        "to speak",
+        "speaks",
+        "speak",
+        "speaking"
+      ],
+      "correctAnswer": "speak",
+      "hint": "With 'you', the verb needs no ending.",
+      "explanation": "'You' takes the base form of the verb in the simple present, so 'speak'. Adding -s is reserved for he, she and it.",
+      "grammarFocus": "Simple Present: Base Form"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L7_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "The two buses on this route ____ every twenty minutes.",
+      "options": [
+        "leaves",
+        "leave",
+        "leaving",
+        "is leave"
+      ],
+      "correctAnswer": "leave",
+      "hint": "Identify the subject: it is not 'route'.",
+      "explanation": "The subject is 'the two buses', plural, so the verb stays 'leave'. 'Route' is only part of a phrase that says where the buses run.",
+      "grammarFocus": "Simple Present: Base Form"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L8_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "I ____ eat meat, but I love vegetables.",
+      "options": [
+        "don't",
+        "not",
+        "am not",
+        "doesn't"
+      ],
+      "correctAnswer": "don't",
+      "hint": "For negative present sentences with most verbs, you need a helper before the base verb.",
+      "explanation": "With 'I', the negative of a normal verb is 'don't' + base verb. 'Am not' belongs with be, and 'not' alone cannot stand before 'eat'.",
+      "grammarFocus": "Simple Present: Negatives"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L8_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "My sister ____ drive, so she takes the train to work.",
+      "options": [
+        "not",
+        "don't",
+        "isn't",
+        "doesn't"
+      ],
+      "correctAnswer": "doesn't",
+      "hint": "Match the helper to the subject: my sister is she.",
+      "explanation": "Third-person singular subjects use 'doesn't' plus the base form: 'doesn't drive'. The main verb then loses its -s.",
+      "grammarFocus": "Simple Present: Negatives"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L8_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "The café near my office ____ accept cards, so I bring cash.",
+      "options": [
+        "don't",
+        "not",
+        "doesn't",
+        "isn't"
+      ],
+      "correctAnswer": "doesn't",
+      "hint": "'Accept' is a full verb, so the negative needs a do-helper.",
+      "explanation": "'The café' is singular, so we use 'doesn't accept'. 'Isn't accept' would mix be with a base verb.",
+      "grammarFocus": "Simple Present: Negatives"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L9_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "____ you like spicy food?",
+      "options": [
+        "Do",
+        "Does",
+        "Is",
+        "Are"
+      ],
+      "correctAnswer": "Do",
+      "hint": "Questions with an ordinary verb start with a helper verb.",
+      "explanation": "'Like' is an action-type verb, so the question starts with 'Do' for 'you'. Forms of be are not used here.",
+      "grammarFocus": "Simple Present: Questions"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L9_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "____ your flight leave before noon?",
+      "options": [
+        "Is",
+        "Are",
+        "Do",
+        "Does"
+      ],
+      "correctAnswer": "Does",
+      "hint": "Is the subject singular? Choose the helper that matches, and keep the main verb plain.",
+      "explanation": "'Your flight' is singular, so 'Does' begins the question and 'leave' stays in its base form. Be would need 'leaving' or an adjective.",
+      "grammarFocus": "Simple Present: Questions"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L9_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "What time ____ the pharmacy close on Fridays?",
+      "options": [
+        "do",
+        "does",
+        "are",
+        "is"
+      ],
+      "correctAnswer": "does",
+      "hint": "After a question phrase, use a helper before the subject.",
+      "explanation": "After 'What time', the helper 'does' agrees with the singular 'pharmacy', and 'close' stays plain. 'Is' would need 'closing'.",
+      "grammarFocus": "Simple Present: Questions"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L10_Q1",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "Please put the ____ in the sink after dinner.",
+      "options": [
+        "dish",
+        "dishies",
+        "dishes",
+        "dishs"
+      ],
+      "correctAnswer": "dishes",
+      "hint": "Think about how nouns ending in -sh form their plural.",
+      "explanation": "Nouns ending in -sh, -ch, -s, -x and -z add -es, which is easier to say: 'dishes'. 'Dishs' is a common spelling slip.",
+      "grammarFocus": "Regular Plurals"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L10_Q2",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "Many ____ visit this museum together every summer.",
+      "options": [
+        "familyes",
+        "families",
+        "familes",
+        "familys"
+      ],
+      "correctAnswer": "families",
+      "hint": "When a noun ends in consonant + y, the y changes.",
+      "explanation": "Consonant + y becomes -ies in the plural: family → families. The other options invent endings that English does not use.",
+      "grammarFocus": "Regular Plurals"
+    },
+    {
+      "id": "WRT_COMPLETESENTENCE_L10_Q3",
+      "instruction": "Complete the sentence.",
+      "subtype": "completeSentence",
+      "interactionType": "typing",
+      "partialSentence": "The two ____ we met at the hostel were from Chile.",
+      "options": [
+        "boies",
+        "boyes",
+        "boys",
+        "boy"
+      ],
+      "correctAnswer": "boys",
+      "hint": "Vowel + y behaves differently from consonant + y.",
+      "explanation": "When y follows a vowel (boy, day, key), we simply add -s: 'boys'. Only consonant + y changes to -ies.",
+      "grammarFocus": "Regular Plurals"
+    }
+  ],
+  "phase": "mastery"
+}

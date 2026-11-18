@@ -759,6 +759,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                             'clozeTest',
                             'skimmingScanning',
                             'sentenceBuilder',
+                            'completeSentence',
                           };
                           final isPhasedGame = phasedGames.contains(widget.gameType);
 
