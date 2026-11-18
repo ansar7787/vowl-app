@@ -1,0 +1,848 @@
+{
+  "gameType": "sceneDescriptionSpeaking",
+  "phase": "mastery",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L1_Q1",
+      "interactionType": "narrator",
+      "instruction": "Find the object that gives light. Say what it is and where it is.",
+      "hint": "Name the object first, then add one short place word like on or next to.",
+      "explanation": "This is the first step in describing a scene: name one object, then say where it is with a short 'It is on...' sentence.",
+      "sceneText": "Bedroom Corner|blue pillow on the bed|lamp on the bedside table|pair of slippers on the floor",
+      "sampleAnswer": "It is a lamp. It is on the small table next to the bed.",
+      "options": [
+        "Blue pillow",
+        "Bedside lamp",
+        "Pair of slippers"
+      ],
+      "acceptedSynonyms": [
+        "pillow,blue pillow,cushion",
+        "lamp,bedside lamp,table lamp",
+        "slippers,pair of slippers,house shoes"
+      ],
+      "correctAnswer": "Bedside lamp",
+      "keyVocabulary": [
+        "lamp",
+        "bedside table",
+        "on",
+        "next to",
+        "small"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L1_Q2",
+      "interactionType": "narrator",
+      "instruction": "Find the fruit. Tell us what color it is and what it is in.",
+      "hint": "Use a color word before the noun, then say the container with 'in'.",
+      "explanation": "Putting a color adjective before a noun ('red apples') is the most basic way to make a description more precise, and 'in' shows where the objects are held.",
+      "sceneText": "Kitchen Counter|electric kettle by the sink|cutting board with bread|bowl of red apples",
+      "sampleAnswer": "The apples are red. They are in a white bowl on the counter.",
+      "options": [
+        "Electric kettle",
+        "Cutting board with bread",
+        "Bowl of red apples"
+      ],
+      "acceptedSynonyms": [
+        "kettle,electric kettle,water kettle",
+        "cutting board,chopping board,bread board",
+        "apples,red apples,bowl of apples,fruit bowl"
+      ],
+      "correctAnswer": "Bowl of red apples",
+      "keyVocabulary": [
+        "apples",
+        "red",
+        "bowl",
+        "in",
+        "counter"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L1_Q3",
+      "interactionType": "narrator",
+      "instruction": "Choose the thing that holds pens and pencils. Say what it looks like.",
+      "hint": "Begin with 'It is a...' and then give one color or one word about its shape.",
+      "explanation": "Learners practice the 'It is a + noun' pattern and follow it with one adjective, so the answer sounds like a complete spoken sentence.",
+      "sceneText": "Classroom Desk|open notebook|pencil case|water bottle",
+      "sampleAnswer": "It is a pencil case. It is green, and it is closed.",
+      "options": [
+        "Pencil case",
+        "Open notebook",
+        "Water bottle"
+      ],
+      "acceptedSynonyms": [
+        "pencil case,pencil box,pen case",
+        "notebook,open notebook,exercise book",
+        "water bottle,bottle,drink bottle"
+      ],
+      "correctAnswer": "Pencil case",
+      "keyVocabulary": [
+        "pencil case",
+        "green",
+        "closed",
+        "notebook",
+        "desk"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L2_Q1",
+      "interactionType": "narrator",
+      "instruction": "Say which object is for rubbish. Describe its size and color.",
+      "hint": "Put the size word first, then the color, and then the noun.",
+      "explanation": "English adjectives follow a natural order, and this question makes the learner say size before color ('big green bin') aloud.",
+      "sceneText": "Bus Stop|slatted bench|bus route sign|green trash bin",
+      "sampleAnswer": "There is a big green trash bin beside the bus stop.",
+      "options": [
+        "Slatted bench",
+        "Bus route sign",
+        "Green trash bin"
+      ],
+      "acceptedSynonyms": [
+        "slatted bench,bench,seat",
+        "route sign,bus sign,timetable sign",
+        "trash bin,garbage bin,rubbish bin,waste bin"
+      ],
+      "correctAnswer": "Green trash bin",
+      "keyVocabulary": [
+        "trash bin",
+        "big",
+        "green",
+        "beside",
+        "bus stop"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L2_Q2",
+      "interactionType": "narrator",
+      "instruction": "Find the thing you would use to carry bread home. Describe it.",
+      "hint": "Give two describing words about the object, then say what it is next to.",
+      "explanation": "The learner must describe an item by its purpose and then add appearance words, a common way to talk about things when you don't know the exact name.",
+      "sceneText": "Bakery Counter|brown paper bag|long loaf of bread|tray of small rolls",
+      "sampleAnswer": "That's a small brown paper bag. It's on the counter, next to the bread.",
+      "options": [
+        "Brown paper bag",
+        "Long loaf of bread",
+        "Tray of small rolls"
+      ],
+      "acceptedSynonyms": [
+        "paper bag,brown bag,bakery bag",
+        "loaf of bread,long loaf,baguette",
+        "tray of rolls,bread rolls,small rolls"
+      ],
+      "correctAnswer": "Brown paper bag",
+      "keyVocabulary": [
+        "paper bag",
+        "brown",
+        "small",
+        "counter",
+        "loaf"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L2_Q3",
+      "interactionType": "narrator",
+      "instruction": "Say what in the park has water coming out of it, and describe how it looks.",
+      "hint": "Say what it is made of and its shape, then where it is on the path.",
+      "explanation": "Material and shape words such as 'round' and 'stone' make a single noun sound specific, and they give the listener a picture of the object.",
+      "sceneText": "Park Path|red bicycle|stone fountain|bench with a backrest",
+      "sampleAnswer": "I can see a round stone fountain. It's gray, and it's in the middle of the path.",
+      "options": [
+        "Red bicycle",
+        "Stone fountain",
+        "Bench with a backrest"
+      ],
+      "acceptedSynonyms": [
+        "bicycle,bike,red bike",
+        "fountain,stone fountain,water fountain",
+        "bench with a backrest,park bench,bench"
+      ],
+      "correctAnswer": "Stone fountain",
+      "keyVocabulary": [
+        "fountain",
+        "round",
+        "stone",
+        "gray",
+        "in the middle"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L3_Q1",
+      "interactionType": "narrator",
+      "instruction": "Count the seats along the wall and tell us how many there are.",
+      "hint": "Start with 'There are' plus a number, then say how the seats are arranged.",
+      "explanation": "'There are + number + plural noun' is the main pattern for reporting quantity, and this task makes the learner use it with an arrangement word ('in a row').",
+      "sceneText": "Clinic Waiting Area|row of four chairs|magazine table|clock on the wall",
+      "sampleAnswer": "There are four chairs in a row against the wall. There is one clock above them.",
+      "options": [
+        "Row of four chairs",
+        "Magazine table",
+        "Clock on the wall"
+      ],
+      "acceptedSynonyms": [
+        "four chairs,row of chairs,seats",
+        "magazine table,side table,small table",
+        "wall clock,clock,clock on the wall"
+      ],
+      "correctAnswer": "Row of four chairs",
+      "keyVocabulary": [
+        "there are",
+        "four",
+        "in a row",
+        "against the wall",
+        "above"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L3_Q2",
+      "interactionType": "narrator",
+      "instruction": "Choose the things people push around the store, and say how many you can see.",
+      "hint": "Say the number before the plural noun, and add a word for where they are.",
+      "explanation": "Counting visible items and using a plural noun with 'are' helps learners separate one thing (is) from several things (are).",
+      "sceneText": "Supermarket Entrance|stack of shopping baskets|row of shopping carts|sale price sign",
+      "sampleAnswer": "There are three shopping carts in a row by the door.",
+      "options": [
+        "Stack of shopping baskets",
+        "Row of shopping carts",
+        "Sale price sign"
+      ],
+      "acceptedSynonyms": [
+        "shopping baskets,stack of baskets,hand baskets",
+        "shopping carts,carts,shopping trolleys",
+        "price sign,sale sign,sale price sign"
+      ],
+      "correctAnswer": "Row of shopping carts",
+      "keyVocabulary": [
+        "shopping carts",
+        "three",
+        "in a row",
+        "by the door",
+        "entrance"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L3_Q3",
+      "interactionType": "narrator",
+      "instruction": "Talk about the drinks on the table. How many are there?",
+      "hint": "Give the number and the container, then add one more item with 'There is also'.",
+      "explanation": "After one plural sentence, 'There is also...' adds a second object using singular grammar, which gives natural variety.",
+      "sceneText": "Breakfast Table|plate of toast|jar of strawberry jam|two glasses of orange juice",
+      "sampleAnswer": "There are two glasses of orange juice on the table. There is also a plate of toast.",
+      "options": [
+        "Plate of toast",
+        "Jar of strawberry jam",
+        "Two glasses of orange juice"
+      ],
+      "acceptedSynonyms": [
+        "toast,plate of toast,bread slices",
+        "jam,strawberry jam,jar of jam",
+        "orange juice,two glasses,glasses of juice"
+      ],
+      "correctAnswer": "Two glasses of orange juice",
+      "keyVocabulary": [
+        "glasses",
+        "orange juice",
+        "two",
+        "there is also",
+        "plate"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L4_Q1",
+      "interactionType": "narrator",
+      "instruction": "Find the bag on the floor and say exactly where it is.",
+      "hint": "Use one position word for the bag and a different one for the other object you mention.",
+      "explanation": "On and under are contrasting prepositions, so pairing them in two sentences teaches the learner to choose the right one for each object.",
+      "sceneText": "Home Study Desk|silver laptop on the desk|small dish for keys|black backpack under the desk",
+      "sampleAnswer": "The backpack is under the desk. The laptop is on the desk.",
+      "options": [
+        "Silver laptop",
+        "Black backpack",
+        "Small key dish"
+      ],
+      "acceptedSynonyms": [
+        "laptop,silver laptop,computer",
+        "backpack,rucksack,school bag,bag",
+        "key dish,dish for keys,small dish"
+      ],
+      "correctAnswer": "Black backpack",
+      "keyVocabulary": [
+        "backpack",
+        "under",
+        "on",
+        "desk",
+        "floor"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L4_Q2",
+      "interactionType": "narrator",
+      "instruction": "Say what is in the drawer at the bottom of the fridge.",
+      "hint": "Name what you see, then use in for the drawer and on for the shelf.",
+      "explanation": "In and on mean different things in the same picture (inside a drawer, on the surface of a shelf), and learners have to pick the right one each time.",
+      "sceneText": "Open Fridge|carton of milk on the top shelf|jar of pickles in the door|bag of carrots in the bottom drawer",
+      "sampleAnswer": "There is a bag of carrots in the bottom drawer. The milk is on the top shelf.",
+      "options": [
+        "Carton of milk",
+        "Jar of pickles",
+        "Bag of carrots"
+      ],
+      "acceptedSynonyms": [
+        "milk,carton of milk,milk carton",
+        "pickles,jar of pickles,pickle jar",
+        "carrots,bag of carrots,carrot bag"
+      ],
+      "correctAnswer": "Bag of carrots",
+      "keyVocabulary": [
+        "drawer",
+        "shelf",
+        "in",
+        "on",
+        "carrots"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L4_Q3",
+      "interactionType": "narrator",
+      "instruction": "Look at the floor and tell me what is under the coffee table.",
+      "hint": "Say what the item looks like first, then connect it to the table with a place word.",
+      "explanation": "This trains you to link an item to a piece of furniture with a preposition, and to contrast it with something that is on top.",
+      "sceneText": "Living Room Floor|cushion on the sofa|rug under the coffee table|magazine on the coffee table",
+      "sampleAnswer": "There is a striped rug under the coffee table. A magazine is on top of the table.",
+      "options": [
+        "Striped rug",
+        "Sofa cushion",
+        "Magazine on the table"
+      ],
+      "acceptedSynonyms": [
+        "rug,striped rug,carpet",
+        "cushion,sofa cushion,throw pillow",
+        "magazine,magazine on the table,reading magazine"
+      ],
+      "correctAnswer": "Striped rug",
+      "keyVocabulary": [
+        "rug",
+        "striped",
+        "under",
+        "on top of",
+        "coffee table"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L5_Q1",
+      "interactionType": "narrator",
+      "instruction": "Describe what people use to hang up their jackets. Give two sentences: one about how it looks, one about where it is.",
+      "hint": "Let sentence one be about appearance and sentence two about position.",
+      "explanation": "Learners build a two-sentence description with a clear job for each sentence, a simple structure for organizing spoken descriptions.",
+      "sceneText": "Apartment Entrance|pair of black boots|umbrella stand by the door|row of coat hooks",
+      "sampleAnswer": "There is a row of metal hooks on the wall. Two jackets are hanging from them.",
+      "options": [
+        "Pair of black boots",
+        "Umbrella stand",
+        "Row of coat hooks"
+      ],
+      "acceptedSynonyms": [
+        "black boots,pair of boots,boots",
+        "umbrella stand,umbrella holder,umbrella rack",
+        "coat hooks,row of hooks,wall hooks,coat rack"
+      ],
+      "correctAnswer": "Row of coat hooks",
+      "keyVocabulary": [
+        "hooks",
+        "metal",
+        "on the wall",
+        "hanging",
+        "jackets"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L5_Q2",
+      "interactionType": "narrator",
+      "instruction": "Tell a friend about the thing on the table that you read before you order.",
+      "hint": "Say what you see in the first sentence. Use the second sentence for its color and neighbor.",
+      "explanation": "The second sentence adds colors and a nearby object, which makes the description feel finished rather than one bare fact.",
+      "sceneText": "Cafe Table|small glass vase|paper menu|two coffee cups",
+      "sampleAnswer": "There is a paper menu on the table. It is white with black writing, and it is next to the vase.",
+      "options": [
+        "Small glass vase",
+        "Paper menu",
+        "Two coffee cups"
+      ],
+      "acceptedSynonyms": [
+        "vase,glass vase,small vase",
+        "menu,paper menu,cafe menu",
+        "coffee cups,two cups,cups"
+      ],
+      "correctAnswer": "Paper menu",
+      "keyVocabulary": [
+        "menu",
+        "writing",
+        "next to",
+        "vase",
+        "white"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L5_Q3",
+      "interactionType": "narrator",
+      "instruction": "Describe the place where students can read announcements. Say what is on it and where it is.",
+      "hint": "Say where the object is first, then add what is on it, using 'with' or 'has'.",
+      "explanation": "The learner adds detail about an object's contents ('with papers') and its location, turning a plain noun phrase into a full description.",
+      "sceneText": "School Hallway|row of blue lockers|drinking fountain|noticeboard with papers",
+      "sampleAnswer": "On the wall there is a noticeboard. It has a lot of papers pinned to it.",
+      "options": [
+        "Noticeboard with papers",
+        "Row of blue lockers",
+        "Drinking fountain"
+      ],
+      "acceptedSynonyms": [
+        "noticeboard,notice board,bulletin board",
+        "blue lockers,row of lockers,school lockers",
+        "drinking fountain,water fountain,water cooler"
+      ],
+      "correctAnswer": "Noticeboard with papers",
+      "keyVocabulary": [
+        "noticeboard",
+        "papers",
+        "pinned",
+        "on the wall",
+        "hallway"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L6_Q1",
+      "interactionType": "narrator",
+      "instruction": "Choose the container you can see through. Say what it is made of and what is inside.",
+      "hint": "Name the material before the container, then use 'full of' for the contents.",
+      "explanation": "Material words ('glass', 'steel') and 'full of' give the learner a compact way to describe both an object and its contents.",
+      "sceneText": "Garage Workbench|steel hammer|glass jar of screws|yellow tape measure",
+      "sampleAnswer": "There's a glass jar full of screws on the workbench. It's round and clear, so you can see the screws inside.",
+      "options": [
+        "Steel hammer",
+        "Glass jar of screws",
+        "Yellow tape measure"
+      ],
+      "acceptedSynonyms": [
+        "hammer,steel hammer,metal hammer",
+        "glass jar,jar of screws,screw jar",
+        "tape measure,yellow tape measure,measuring tape"
+      ],
+      "correctAnswer": "Glass jar of screws",
+      "keyVocabulary": [
+        "glass",
+        "jar",
+        "full of",
+        "screws",
+        "clear"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L6_Q2",
+      "interactionType": "narrator",
+      "instruction": "Describe the soft clothes that are folded on the shelf. Mention the material and the colors.",
+      "hint": "Give the material, then the colors, then where the clothes are.",
+      "explanation": "The learner combines material, color, and position in one short answer, so the description sounds like it belongs to a real shop.",
+      "sceneText": "Clothing Shop Shelf|folded wool sweaters|denim jacket on a hanger|leather belt",
+      "sampleAnswer": "These are wool sweaters. They're folded on the shelf, and they're gray and dark blue.",
+      "options": [
+        "Folded wool sweaters",
+        "Denim jacket on a hanger",
+        "Leather belt"
+      ],
+      "acceptedSynonyms": [
+        "wool sweaters,folded sweaters,jumpers",
+        "denim jacket,jean jacket,jacket on a hanger",
+        "leather belt,belt,brown belt"
+      ],
+      "correctAnswer": "Folded wool sweaters",
+      "keyVocabulary": [
+        "wool",
+        "sweaters",
+        "folded",
+        "shelf",
+        "dark blue"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L6_Q3",
+      "interactionType": "narrator",
+      "instruction": "Choose the square area where children can dig. Describe its shape and what it is made of.",
+      "hint": "Talk about the shape, the material, and one thing about its condition.",
+      "explanation": "Learners describe a common object using shape, material, and condition in one sentence, and they practice 'looks old' to describe wear.",
+      "sceneText": "Playground|metal slide|rubber swing|wooden sandbox",
+      "sampleAnswer": "There's a square wooden sandbox next to the swings. The wood looks old, and there's sand inside it.",
+      "options": [
+        "Metal slide",
+        "Rubber swing",
+        "Wooden sandbox"
+      ],
+      "acceptedSynonyms": [
+        "slide,metal slide,playground slide",
+        "swing,rubber swing,swing seat",
+        "sandbox,sandpit,wooden sandbox"
+      ],
+      "correctAnswer": "Wooden sandbox",
+      "keyVocabulary": [
+        "sandbox",
+        "square",
+        "wooden",
+        "looks old",
+        "inside"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L7_Q1",
+      "interactionType": "narrator",
+      "instruction": "Describe the things to read on the table, then say which side of the table they are on.",
+      "hint": "Say what the pile looks like first, then use left or right to place it.",
+      "explanation": "'On the left side of' is the first left-right phrase in the course, and the learner uses it here to tell a listener exactly where to look.",
+      "sceneText": "Library Table|stack of library books|green desk lamp|pair of reading glasses",
+      "sampleAnswer": "A stack of four thick books is on the left side of the table. The top one is red, and the others are dark brown.",
+      "options": [
+        "Stack of library books",
+        "Green desk lamp",
+        "Pair of reading glasses"
+      ],
+      "acceptedSynonyms": [
+        "library books,stack of books,pile of books",
+        "desk lamp,green lamp,table lamp",
+        "reading glasses,glasses,pair of glasses"
+      ],
+      "correctAnswer": "Stack of library books",
+      "keyVocabulary": [
+        "stack",
+        "thick",
+        "on the left side",
+        "top",
+        "dark brown"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L7_Q2",
+      "interactionType": "narrator",
+      "instruction": "Find the thing that shows the time, and tell someone where to look for it.",
+      "hint": "Say where to look first, then describe how it looks so they can recognize it.",
+      "explanation": "This is a real giving-directions task: the listener needs a location first and an appearance second to find an object without seeing it.",
+      "sceneText": "Train Platform|yellow line along the edge|luggage trolley near the stairs|clock hanging from the roof",
+      "sampleAnswer": "The clock is hanging from the roof, near the middle of the platform. It's round and white with black numbers.",
+      "options": [
+        "Yellow safety line",
+        "Luggage trolley",
+        "Platform clock"
+      ],
+      "acceptedSynonyms": [
+        "yellow line,safety line,platform edge line",
+        "luggage trolley,baggage cart,luggage cart",
+        "platform clock,clock,station clock"
+      ],
+      "correctAnswer": "Platform clock",
+      "keyVocabulary": [
+        "clock",
+        "hanging from",
+        "roof",
+        "platform",
+        "numbers"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L7_Q3",
+      "interactionType": "narrator",
+      "instruction": "Describe the products people can pick up next to the till. Say where they are and how the packaging looks.",
+      "hint": "Begin with the position, then give the color and the number of what you can see.",
+      "explanation": "This question begins with location ('Next to...') and then adds color and quantity, which gives the sentence a spoken, orderly flow.",
+      "sceneText": "Pharmacy Counter|cash register|display of hand cream|sign with opening hours",
+      "sampleAnswer": "Next to the cash register there's a small display of hand cream. The tubes are white and pink, and there are about ten of them.",
+      "options": [
+        "Cash register",
+        "Hand cream display",
+        "Opening hours sign"
+      ],
+      "acceptedSynonyms": [
+        "cash register,till,checkout register",
+        "hand cream,hand cream display,cream tubes",
+        "opening hours sign,hours sign,sign with opening times"
+      ],
+      "correctAnswer": "Hand cream display",
+      "keyVocabulary": [
+        "display",
+        "tubes",
+        "next to",
+        "about ten",
+        "pink"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L8_Q1",
+      "interactionType": "narrator",
+      "instruction": "Describe the vehicle at the side of the road. Use 'and' or 'but' to connect your ideas.",
+      "hint": "Say what you see, then join a second detail with 'and' or show a contrast with 'but'.",
+      "explanation": "Joining two ideas with 'and' or 'but' turns short separate sentences into a single flowing one, the first step toward connected speech.",
+      "sceneText": "Street Corner|red traffic light|parked delivery van|shop with a striped awning",
+      "sampleAnswer": "I can see a white delivery van parked by the curb, and it has a blue logo on the side. It isn't moving, but its back doors are open.",
+      "options": [
+        "Red traffic light",
+        "Parked delivery van",
+        "Striped shop awning"
+      ],
+      "acceptedSynonyms": [
+        "traffic light,red light,stoplight",
+        "delivery van,parked van,white van",
+        "shop awning,striped awning,shop canopy"
+      ],
+      "correctAnswer": "Parked delivery van",
+      "keyVocabulary": [
+        "van",
+        "parked",
+        "curb",
+        "logo",
+        "but"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L8_Q2",
+      "interactionType": "narrator",
+      "instruction": "Describe the weights on the rack. Use 'but' to show one way they are different.",
+      "hint": "Say what is the same about them first, then use 'but' for a difference you can see.",
+      "explanation": "A contrast with 'but' asks the learner to notice similarity and difference in the same scene, which prepares for comparison later in the course.",
+      "sceneText": "Gym Corner|rack of dumbbells|rolled yoga mat|treadmill",
+      "sampleAnswer": "I can see a rack of dumbbells. They're all black, but the ones on the left are smaller than the ones on the right.",
+      "options": [
+        "Rack of dumbbells",
+        "Rolled yoga mat",
+        "Treadmill"
+      ],
+      "acceptedSynonyms": [
+        "dumbbells,rack of dumbbells,hand weights",
+        "yoga mat,rolled mat,exercise mat",
+        "treadmill,running machine,exercise machine"
+      ],
+      "correctAnswer": "Rack of dumbbells",
+      "keyVocabulary": [
+        "dumbbells",
+        "rack",
+        "black",
+        "but",
+        "smaller"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L8_Q3",
+      "interactionType": "narrator",
+      "instruction": "Choose the machine that makes a snack and describe it. Add one more detail with 'and'.",
+      "hint": "Say what it is and where it stands, then add the extra detail after 'and'.",
+      "explanation": "Starting with 'I can see' and joining a second observation with 'and' gives the learner a natural way to open and extend a spoken description.",
+      "sceneText": "Cinema Lobby|movie poster display|ticket counter|popcorn machine",
+      "sampleAnswer": "I can see a popcorn machine next to the ticket counter, and it has a glass front. It's red and yellow.",
+      "options": [
+        "Movie poster display",
+        "Ticket counter",
+        "Popcorn machine"
+      ],
+      "acceptedSynonyms": [
+        "poster display,movie posters,film poster stand",
+        "ticket counter,ticket desk,box office",
+        "popcorn machine,popcorn maker,popcorn cart"
+      ],
+      "correctAnswer": "Popcorn machine",
+      "keyVocabulary": [
+        "popcorn machine",
+        "glass front",
+        "I can see",
+        "ticket counter",
+        "yellow"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L9_Q1",
+      "interactionType": "narrator",
+      "instruction": "Start by saying what kind of place this is. Then describe the object guests could ring for attention.",
+      "hint": "Give the place in the first sentence, then move to one object and where it is.",
+      "explanation": "An overview sentence followed by one detail is the basic shape of most spoken scene descriptions, and this is the first time the learner combines the two.",
+      "sceneText": "Hotel Lobby|luggage cart by the door|two armchairs near the window|silver bell on the front desk",
+      "sampleAnswer": "This is a hotel lobby. There's a silver bell on the front desk, and a luggage cart is standing by the door.",
+      "options": [
+        "Luggage cart",
+        "Lobby armchairs",
+        "Silver desk bell"
+      ],
+      "acceptedSynonyms": [
+        "luggage cart,baggage trolley,bag cart",
+        "armchairs,lobby armchairs,two chairs",
+        "desk bell,silver bell,service bell"
+      ],
+      "correctAnswer": "Silver desk bell",
+      "keyVocabulary": [
+        "lobby",
+        "front desk",
+        "bell",
+        "luggage cart",
+        "by the door"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L9_Q2",
+      "interactionType": "narrator",
+      "instruction": "Begin with the type of shop, then describe the tall thing leaning against the shelves.",
+      "hint": "Use 'It looks like' for the place, then choose a detail about material and position.",
+      "explanation": "'It looks like' is a natural way to identify a place from what you see, and it prepares the listener before you add a detail.",
+      "sceneText": "Hardware Store Aisle|shelf of paint cans|aluminum ladder|coil of rope",
+      "sampleAnswer": "It looks like a hardware store. An aluminum ladder is leaning against the shelves, and there are cans of paint on the shelf beside it.",
+      "options": [
+        "Aluminum ladder",
+        "Shelf of paint cans",
+        "Coil of rope"
+      ],
+      "acceptedSynonyms": [
+        "ladder,aluminum ladder,metal ladder",
+        "paint cans,shelf of paint,cans of paint",
+        "rope,coil of rope,rolled rope"
+      ],
+      "correctAnswer": "Aluminum ladder",
+      "keyVocabulary": [
+        "hardware store",
+        "ladder",
+        "leaning against",
+        "shelves",
+        "aluminum"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L9_Q3",
+      "interactionType": "narrator",
+      "instruction": "Give a quick overview of the place. Then describe the small structure near the water.",
+      "hint": "Say where you are in one short sentence, then choose one object and its position.",
+      "explanation": "The learner practices moving from a general overview to one specific object, and refers to a nearby second item to make the location clear.",
+      "sceneText": "Beach|striped beach umbrella|small sandcastle|pair of flip-flops",
+      "sampleAnswer": "This is a beach. There's a small sandcastle near the water, and two flip-flops are lying beside it.",
+      "options": [
+        "Striped beach umbrella",
+        "Small sandcastle",
+        "Pair of flip-flops"
+      ],
+      "acceptedSynonyms": [
+        "beach umbrella,striped umbrella,parasol",
+        "sandcastle,sand castle,small castle",
+        "flip-flops,pair of flip-flops,sandals"
+      ],
+      "correctAnswer": "Small sandcastle",
+      "keyVocabulary": [
+        "beach",
+        "sandcastle",
+        "near the water",
+        "flip-flops",
+        "lying"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L10_Q1",
+      "interactionType": "narrator",
+      "instruction": "Describe the whole table in three connected sentences. Start with the container for the tools.",
+      "hint": "Introduce the table, use 'also' for the second item, and finish with a position word.",
+      "explanation": "Level 10 asks for three linked sentences: an opening, a linking word ('First', 'Also'), and a final detail, which is the shape of a real mini-description.",
+      "sceneText": "Art Room Table|jar of paintbrushes|mixing palette|sheet of drawing paper",
+      "sampleAnswer": "This is an art table. First, there's a jar full of paintbrushes on the left. Also, there's a palette with red, yellow, and blue paint, and a drawing is lying next to it.",
+      "options": [
+        "Jar of paintbrushes",
+        "Mixing palette",
+        "Sheet of drawing paper"
+      ],
+      "acceptedSynonyms": [
+        "paintbrushes,jar of brushes,brush jar",
+        "palette,mixing palette,paint palette",
+        "drawing paper,sheet of paper,paper with a drawing"
+      ],
+      "correctAnswer": "Jar of paintbrushes",
+      "keyVocabulary": [
+        "paintbrushes",
+        "palette",
+        "first",
+        "also",
+        "next to"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L10_Q2",
+      "interactionType": "narrator",
+      "instruction": "Describe this stall in three sentences. Mention the thing used to weigh the fruit last.",
+      "hint": "Say what the stall sells, add two items in the middle, and save the last item for the end.",
+      "explanation": "Saving one detail for the end with 'Finally' teaches the learner to order information on purpose, not just list objects.",
+      "sceneText": "Outdoor Market Stall|crate of oranges|handwritten price sign|set of weighing scales",
+      "sampleAnswer": "This is a market stall selling fruit. There's a crate of oranges at the front, and a handwritten sign shows the price. Finally, I can see the scales on the right, beside the crates.",
+      "options": [
+        "Crate of oranges",
+        "Handwritten price sign",
+        "Weighing scales"
+      ],
+      "acceptedSynonyms": [
+        "crate of oranges,box of oranges,oranges",
+        "price sign,handwritten sign,price card",
+        "weighing scales,scales,weighing machine"
+      ],
+      "correctAnswer": "Weighing scales",
+      "keyVocabulary": [
+        "stall",
+        "crate",
+        "handwritten",
+        "finally",
+        "scales"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L10_Q3",
+      "interactionType": "narrator",
+      "instruction": "Give a three-sentence description of the balcony. Explain which things are along the railing.",
+      "hint": "Begin with the overall place, then describe the railing area, and end with a contrast using 'but'.",
+      "explanation": "The learner combines an overview, a location detail, and a 'but' contrast, so the final answer sounds like connected speech.",
+      "sceneText": "Apartment Balcony|clothes drying rack|row of plant pots|folding chair",
+      "sampleAnswer": "This is a small balcony. Along the railing there's a row of plant pots, and next to the door is a clothes drying rack. There's also a folding chair, but it's folded against the wall.",
+      "options": [
+        "Folding chair",
+        "Row of plant pots",
+        "Clothes drying rack"
+      ],
+      "acceptedSynonyms": [
+        "folding chair,foldable chair,folded chair",
+        "plant pots,row of plant pots,flower pots",
+        "drying rack,clothes drying rack,laundry rack"
+      ],
+      "correctAnswer": "Row of plant pots",
+      "keyVocabulary": [
+        "balcony",
+        "railing",
+        "plant pots",
+        "drying rack",
+        "folded"
+      ],
+      "phase": "mastery"
+    }
+  ]
+}

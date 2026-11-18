@@ -408,7 +408,7 @@ class _SpeakMissingWordPracticeScreenState
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: options.length,
-              separatorBuilder: (_, __) => SizedBox(height: 10.h),
+              separatorBuilder: (_, _) => SizedBox(height: 10.h),
               itemBuilder: (context, index) {
                 final optionText = options[index];
                 final isSelected = _selectedOptionIndex == index;

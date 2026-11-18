@@ -1,0 +1,848 @@
+{
+  "gameType": "sceneDescriptionSpeaking",
+  "phase": "mastery",
+  "batchIndex": 15,
+  "levels": "141-150",
+  "quests": [
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L141_Q1",
+      "interactionType": "narrator",
+      "instruction": "Find the biggest cup and compare it with the smallest.",
+      "hint": "Use 'larger than', 'taller than', and 'not as ... as' for the comparison.",
+      "explanation": "This is the first comparison task: 'larger than' and 'not as tall as' show how to compare two visible objects.",
+      "sceneText": "Cup Shelf|large ceramic mug|small espresso cup|medium soup bowl",
+      "sampleAnswer": "The ceramic mug is much larger than the espresso cup, and it's about twice as tall. The soup bowl is wider than both, but it's not as tall as the mug.",
+      "options": [
+        "Large ceramic mug",
+        "Small espresso cup",
+        "Medium soup bowl"
+      ],
+      "acceptedSynonyms": [
+        "ceramic mug,large mug,big mug",
+        "espresso cup,small cup,tiny cup",
+        "soup bowl,medium bowl,bowl"
+      ],
+      "correctAnswer": "Large ceramic mug",
+      "keyVocabulary": [
+        "larger than",
+        "about twice as tall",
+        "wider than",
+        "not as tall as",
+        "ceramic"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L141_Q2",
+      "interactionType": "narrator",
+      "instruction": "Find the tallest plant and compare it with the others.",
+      "hint": "Use 'the tallest', 'shorter than', and 'the lowest'.",
+      "explanation": "Superlatives ('the tallest', 'the lowest') and comparatives ('shorter than') are different forms, and the learner uses both in one answer.",
+      "sceneText": "Front Yard Plants|young birch|tall oak|low hedge",
+      "sampleAnswer": "The oak tree is the tallest, and it's much taller than the fence. The young birch is shorter, and the hedge is the lowest.",
+      "options": [
+        "Young birch",
+        "Tall oak",
+        "Low hedge"
+      ],
+      "acceptedSynonyms": [
+        "young birch,birch,small tree",
+        "tall oak,oak tree,oak",
+        "low hedge,hedge,short hedge"
+      ],
+      "correctAnswer": "Tall oak",
+      "keyVocabulary": [
+        "the tallest",
+        "much taller than",
+        "shorter",
+        "the lowest",
+        "young birch"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L141_Q3",
+      "interactionType": "narrator",
+      "instruction": "Find the shortest pencil and compare it with the longest.",
+      "hint": "Use 'much shorter than', 'about five times as long', and 'in between'.",
+      "explanation": "'About five times as long' gives a number to a comparison, which is more precise than 'much longer'.",
+      "sceneText": "Pencil Cup|brand-new pencil|pencil worn down to a stub|medium-length pencil",
+      "sampleAnswer": "The pencil worn down to a stub is much shorter than the new one, which is about five times as long. The medium-length pencil is in between.",
+      "options": [
+        "Brand-new pencil",
+        "Pencil worn down to a stub",
+        "Medium-length pencil"
+      ],
+      "acceptedSynonyms": [
+        "new pencil,brand-new pencil,long pencil",
+        "stub,short pencil,worn pencil",
+        "medium pencil,medium-length pencil,middle pencil"
+      ],
+      "correctAnswer": "Pencil worn down to a stub",
+      "keyVocabulary": [
+        "much shorter than",
+        "five times as long",
+        "in between",
+        "stub",
+        "worn down"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L142_Q1",
+      "interactionType": "narrator",
+      "instruction": "Find the basket with the most fruit and compare the amounts.",
+      "hint": "Use 'more ... than' and 'fewer ... than' with countable nouns.",
+      "explanation": "'More' and 'fewer' go with countable nouns (apples, pears), and the learner uses them to compare two baskets.",
+      "sceneText": "Fruit Baskets|basket of a few pears|basket of oranges|basket piled with apples",
+      "sampleAnswer": "The basket of apples has the most fruit, with far more apples than there are pears in the other basket. The orange basket has fewer than the apple basket, but more than the pear basket.",
+      "options": [
+        "Basket of a few pears",
+        "Basket of oranges",
+        "Basket piled with apples"
+      ],
+      "acceptedSynonyms": [
+        "pears,basket of pears,few pears",
+        "oranges,basket of oranges,orange basket",
+        "apples,basket of apples,piled apples"
+      ],
+      "correctAnswer": "Basket piled with apples",
+      "keyVocabulary": [
+        "more than",
+        "fewer than",
+        "the most",
+        "far more",
+        "piled with"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L142_Q2",
+      "interactionType": "narrator",
+      "instruction": "Compare how much water is in the two glasses. Start with the glass that has less.",
+      "hint": "Use 'less water' and 'more water', with 'about half full' for the second glass.",
+      "explanation": "'Less' goes with uncountable nouns (water), and the learner uses it with 'nearly empty' and 'half full' to compare amounts.",
+      "sceneText": "Water Glasses|nearly empty glass|half-full glass|full jug",
+      "sampleAnswer": "The first glass has less water than the second: it's nearly empty, while the second is about half full. The jug on the right has the most water of all.",
+      "options": [
+        "Nearly empty glass",
+        "Half-full glass",
+        "Full jug"
+      ],
+      "acceptedSynonyms": [
+        "empty glass,nearly empty glass,glass with a little water",
+        "half-full glass,half full glass,glass of water",
+        "full jug,jug,jug of water"
+      ],
+      "correctAnswer": "Nearly empty glass",
+      "keyVocabulary": [
+        "less water",
+        "nearly empty",
+        "about half full",
+        "the most",
+        "than"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L142_Q3",
+      "interactionType": "narrator",
+      "instruction": "Find the shelf with the least on it and compare it with the others.",
+      "hint": "Use 'the least', 'only a few', and 'many more'.",
+      "explanation": "'The least' and 'many more' compare amounts of items across three shelves, so the learner uses a ranking in the answer.",
+      "sceneText": "Storage Shelves|shelf crowded with tins|shelf with only a few jars|completely empty shelf",
+      "sampleAnswer": "The bottom shelf is completely empty, so it has the least. The middle shelf has only a few jars, and the top shelf has many more items, crowded with tins.",
+      "options": [
+        "Shelf crowded with tins",
+        "Shelf with only a few jars",
+        "Completely empty shelf"
+      ],
+      "acceptedSynonyms": [
+        "tins,shelf crowded with tins,crowded shelf",
+        "few jars,shelf with jars,jar shelf",
+        "empty shelf,bare shelf,completely empty shelf"
+      ],
+      "correctAnswer": "Completely empty shelf",
+      "keyVocabulary": [
+        "the least",
+        "only a few",
+        "many more",
+        "crowded with",
+        "completely empty"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L143_Q1",
+      "interactionType": "narrator",
+      "instruction": "Compare how far each lamppost is from the viewer; start with the one that is neither the nearest nor the farthest.",
+      "hint": "Use 'closer than', 'farther than', and 'the farthest'.",
+      "explanation": "'Closer' and 'farther' compare distance, and 'the farthest' marks the end of the row, so the learner can place three objects in one description.",
+      "sceneText": "Street Lamps|nearest lamppost|lamppost halfway down the street|farthest lamppost",
+      "sampleAnswer": "The first lamppost is the closest to us. The second is farther away, about halfway down the street, and the third is the farthest, almost at the end.",
+      "options": [
+        "Nearest lamppost",
+        "Lamppost halfway down the street",
+        "Farthest lamppost"
+      ],
+      "acceptedSynonyms": [
+        "nearest lamppost,closest lamppost,first lamppost",
+        "middle lamppost,second lamppost,lamppost halfway down",
+        "farthest lamppost,last lamppost,third lamppost"
+      ],
+      "correctAnswer": "Lamppost halfway down the street",
+      "keyVocabulary": [
+        "the closest",
+        "farther away",
+        "halfway down",
+        "the farthest",
+        "almost at the end"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L143_Q2",
+      "interactionType": "narrator",
+      "instruction": "Find the object that is farthest away and compare it with the others.",
+      "hint": "Use 'the farthest', 'closer', and 'the closest'.",
+      "explanation": "The learner compares three distances in one answer and uses 'tiny' to show how distance makes an object look small.",
+      "sceneText": "Lake Boats|rowboat near the shore|sailboat in the middle|ship at the horizon",
+      "sampleAnswer": "The ship at the horizon is the farthest away, and it looks tiny. The sailboat is closer, and the rowboat is the closest, just a few meters from the shore.",
+      "options": [
+        "Rowboat near the shore",
+        "Sailboat in the middle",
+        "Ship at the horizon"
+      ],
+      "acceptedSynonyms": [
+        "rowboat,boat near the shore,small boat",
+        "sailboat,boat in the middle,sailing boat",
+        "ship,ship at the horizon,distant ship"
+      ],
+      "correctAnswer": "Ship at the horizon",
+      "keyVocabulary": [
+        "the farthest",
+        "at the horizon",
+        "tiny",
+        "closer",
+        "the closest"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L143_Q3",
+      "interactionType": "narrator",
+      "instruction": "Find the person closest to the viewer and compare their distance with the others.",
+      "hint": "Use 'the closest', 'farther back', and 'much farther'.",
+      "explanation": "The learner uses three degrees of distance ('closest', 'farther back', 'much farther') to compare three people in a row.",
+      "sceneText": "Street Walkers|man close to the camera|woman a few meters behind|child far down the street",
+      "sampleAnswer": "The man is the closest to us, almost filling the frame. The woman is farther back, a few meters behind him, and the child is much farther down the street.",
+      "options": [
+        "Man close to the camera",
+        "Woman a few meters behind",
+        "Child far down the street"
+      ],
+      "acceptedSynonyms": [
+        "man close to the camera,closest man,man in front",
+        "woman behind,woman a few meters behind,second person",
+        "child far away,child down the street,small child"
+      ],
+      "correctAnswer": "Man close to the camera",
+      "keyVocabulary": [
+        "the closest",
+        "filling the frame",
+        "farther back",
+        "much farther",
+        "behind him"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L144_Q1",
+      "interactionType": "narrator",
+      "instruction": "Compare two chairs: say what they have in common and what is different. Focus on the chair that lacks something the other has.",
+      "hint": "Use 'both' for what they share and 'while' or 'whereas' for the difference.",
+      "explanation": "'Both ... but' and 'while' let the learner state similarities and differences in the same sentence.",
+      "sceneText": "Wooden Seats|chair with arms|chair without arms|stool with a round seat",
+      "sampleAnswer": "Both chairs are made of wood and have the same brown color, but one has arms, while the other doesn't. The stool is similar in height, but it has no back.",
+      "options": [
+        "Chair with arms",
+        "Chair without arms",
+        "Stool with a round seat"
+      ],
+      "acceptedSynonyms": [
+        "chair with arms,armchair,arm chair",
+        "chair without arms,armless chair,plain chair",
+        "stool,round stool,stool with a round seat"
+      ],
+      "correctAnswer": "Chair without arms",
+      "keyVocabulary": [
+        "both",
+        "but",
+        "while",
+        "similar in height",
+        "no back"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L144_Q2",
+      "interactionType": "narrator",
+      "instruction": "Compare the two dogs: how are they alike and how are they different? Focus on the dog that lacks something the other has.",
+      "hint": "Say what the dogs share and then what only one has.",
+      "explanation": "Similarity ('both brown, same size') and difference ('one has a collar') are two parts of a comparison, and the learner uses each one.",
+      "sceneText": "Two Brown Dogs|brown dog with a collar|brown dog without a collar|black cat in the corner",
+      "sampleAnswer": "Both dogs are brown and about the same size, but one is wearing a red collar and the other isn't. The cat in the corner is black.",
+      "options": [
+        "Brown dog with a collar",
+        "Brown dog without a collar",
+        "Black cat in the corner"
+      ],
+      "acceptedSynonyms": [
+        "dog with a collar,collared dog,dog with a red collar",
+        "dog without a collar,dog with no collar,other dog",
+        "black cat,cat,cat in the corner"
+      ],
+      "correctAnswer": "Brown dog without a collar",
+      "keyVocabulary": [
+        "both",
+        "about the same size",
+        "wearing",
+        "but",
+        "isn't"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L144_Q3",
+      "interactionType": "narrator",
+      "instruction": "Compare the two doorways: what is similar and what is different about their shape and material? Focus on the doorway with the plain shape.",
+      "hint": "Say the shared feature (height), then the shape and material differences.",
+      "explanation": "'Whereas' contrasts two properties (wooden versus glass), and the learner pairs it with a shared feature to give a balanced comparison.",
+      "sceneText": "Two Doors|arched wooden door|narrow side door|rectangular glass door",
+      "sampleAnswer": "Both doors are about the same height, but one has an arch at the top, while the other is a plain rectangle. The arched door is wooden, whereas the rectangular door is glass.",
+      "options": [
+        "Arched wooden door",
+        "Narrow side door",
+        "Rectangular glass door"
+      ],
+      "acceptedSynonyms": [
+        "arched door,wooden door,arched wooden door",
+        "side door,narrow door,small door",
+        "glass door,rectangular door,rectangular glass door"
+      ],
+      "correctAnswer": "Rectangular glass door",
+      "keyVocabulary": [
+        "both",
+        "about the same height",
+        "while",
+        "whereas",
+        "arch"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L145_Q1",
+      "interactionType": "narrator",
+      "instruction": "Compare the two runners: what they are wearing and how they are positioned. Start with the runner who is ahead.",
+      "hint": "Say who is ahead, then what each is wearing.",
+      "explanation": "Comparing people means comparing position and clothing in the same description.",
+      "sceneText": "Two Runners|runner in a red shirt|runner in a gray shirt|spectator holding a sign",
+      "sampleAnswer": "The runner in the red shirt is ahead, while the one in the gray shirt is a step behind. They are both wearing shorts, but the red shirt has long sleeves.",
+      "options": [
+        "Runner in a red shirt",
+        "Runner in a gray shirt",
+        "Spectator holding a sign"
+      ],
+      "acceptedSynonyms": [
+        "runner in red,runner in a red shirt,red runner",
+        "runner in gray,runner in a gray shirt,gray runner",
+        "spectator,person with a sign,sign holder"
+      ],
+      "correctAnswer": "Runner in a red shirt",
+      "keyVocabulary": [
+        "ahead",
+        "a step behind",
+        "both",
+        "but",
+        "long sleeves"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L145_Q2",
+      "interactionType": "narrator",
+      "instruction": "Compare the two adults: what are they carrying? Start with the person who is carrying the most.",
+      "hint": "Say what the woman is carrying, then what the man is not carrying.",
+      "explanation": "'Several' versus 'nothing' compares quantity with a person, and 'while' links the two.",
+      "sceneText": "Shop Doorway|man with empty hands|boy holding a toy|woman with several shopping bags",
+      "sampleAnswer": "The woman is carrying several shopping bags in both hands, while the man next to her has nothing in his hands. The boy is holding only a small toy.",
+      "options": [
+        "Man with empty hands",
+        "Boy holding a toy",
+        "Woman with several shopping bags"
+      ],
+      "acceptedSynonyms": [
+        "man with empty hands,man with nothing,empty-handed man",
+        "boy with a toy,boy,boy holding a toy",
+        "woman with shopping bags,woman with bags,woman carrying bags"
+      ],
+      "correctAnswer": "Woman with several shopping bags",
+      "keyVocabulary": [
+        "several",
+        "in both hands",
+        "while",
+        "nothing",
+        "only"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L145_Q3",
+      "interactionType": "narrator",
+      "instruction": "Compare how the two musicians are positioned and what they are playing. Start with the musician who is standing.",
+      "hint": "Say what each is doing, and then compare the sizes of the instruments.",
+      "explanation": "The learner compares posture ('standing' versus 'sitting') and instrument size in the same description.",
+      "sceneText": "Duet|woman standing with a violin|man sitting with a cello|music stand between them",
+      "sampleAnswer": "The woman is standing and playing a violin, while the man next to her is sitting and playing a much larger instrument, a cello. A music stand is between them.",
+      "options": [
+        "Woman standing with a violin",
+        "Man sitting with a cello",
+        "Music stand between them"
+      ],
+      "acceptedSynonyms": [
+        "woman with a violin,violinist,woman standing",
+        "man with a cello,cellist,man sitting",
+        "music stand,stand between them,stand"
+      ],
+      "correctAnswer": "Woman standing with a violin",
+      "keyVocabulary": [
+        "standing",
+        "sitting",
+        "while",
+        "much larger",
+        "between them"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L146_Q1",
+      "interactionType": "narrator",
+      "instruction": "Compare the two floors, starting with the one that has fewer people.",
+      "hint": "Use 'busier' for one floor and 'emptier' for the other.",
+      "explanation": "'Busier' and 'emptier' compare areas of the same building by how many people are in them.",
+      "sceneText": "Two Floors|crowded ground floor|nearly empty upper floor|glass staircase between them",
+      "sampleAnswer": "The ground floor is much busier, with people at almost every table. The upper floor is nearly empty, with just two people. A glass staircase connects them.",
+      "options": [
+        "Crowded ground floor",
+        "Nearly empty upper floor",
+        "Glass staircase between them"
+      ],
+      "acceptedSynonyms": [
+        "ground floor,crowded floor,busy floor",
+        "upper floor,empty floor,top floor",
+        "glass staircase,staircase,stairs between them"
+      ],
+      "correctAnswer": "Nearly empty upper floor",
+      "keyVocabulary": [
+        "much busier",
+        "almost every",
+        "nearly empty",
+        "just two",
+        "connects"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L146_Q2",
+      "interactionType": "narrator",
+      "instruction": "Compare the two dining rooms: which is fuller and which is emptier? Start with the fuller room.",
+      "hint": "Say which is full, which is empty, and what links them.",
+      "explanation": "Comparing two connected rooms by how full they are gives a simple structure: one is full, the other is empty, and a doorway connects them.",
+      "sceneText": "Two Dining Rooms|full front dining room|empty back dining room|open doorway between rooms",
+      "sampleAnswer": "The front dining room is full, with every table taken, while the back room is completely empty. An open doorway links the two.",
+      "options": [
+        "Full front dining room",
+        "Empty back dining room",
+        "Open doorway between rooms"
+      ],
+      "acceptedSynonyms": [
+        "front dining room,full room,busy room",
+        "back dining room,empty room,back room",
+        "doorway,open doorway,door between the rooms"
+      ],
+      "correctAnswer": "Full front dining room",
+      "keyVocabulary": [
+        "every table taken",
+        "while",
+        "completely empty",
+        "links",
+        "doorway"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L146_Q3",
+      "interactionType": "narrator",
+      "instruction": "Compare the two sides of the road, then end with what separates them.",
+      "hint": "Say what is on each side, then compare the width of the middle strip.",
+      "explanation": "The learner compares two sides and then a third area (the median) by width, which uses 'narrower than' for the first time.",
+      "sceneText": "Road Sides|side lined with parked cars|side with a wide bike lane|narrow median with trees",
+      "sampleAnswer": "One side is lined with parked cars, while the other has a wide bike lane. The strip in the middle has trees, and it's narrower than either side.",
+      "options": [
+        "Side lined with parked cars",
+        "Side with a wide bike lane",
+        "Narrow median with trees"
+      ],
+      "acceptedSynonyms": [
+        "parked cars,side with parked cars,car side",
+        "bike lane,wide bike lane,cycle lane",
+        "median,strip with trees,tree strip"
+      ],
+      "correctAnswer": "Narrow median with trees",
+      "keyVocabulary": [
+        "lined with",
+        "while",
+        "wide",
+        "narrower than",
+        "in the middle"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L147_Q1",
+      "interactionType": "narrator",
+      "instruction": "Describe the damage precisely: what is the difference between a crack, a chip, and a scratch? Start with the plate that is damaged but still in one piece.",
+      "hint": "Name each kind of damage and say what it looks like.",
+      "explanation": "'Crack', 'chip', and 'scratch' are three precise words for damage, and the learner chooses the right one for each plate.",
+      "sceneText": "Damaged Plates|plate with a hairline crack|plate with a chipped rim|plate with surface scratches",
+      "sampleAnswer": "The first plate has a thin crack running across it, but it's still in one piece. The second has a chip missing from the rim, and the third just has scratches on the surface.",
+      "options": [
+        "Plate with a hairline crack",
+        "Plate with a chipped rim",
+        "Plate with surface scratches"
+      ],
+      "acceptedSynonyms": [
+        "cracked plate,plate with a crack,hairline crack",
+        "chipped plate,plate with a chip,chipped rim",
+        "scratched plate,plate with scratches,surface scratches"
+      ],
+      "correctAnswer": "Plate with a hairline crack",
+      "keyVocabulary": [
+        "crack",
+        "chip",
+        "scratches",
+        "rim",
+        "in one piece"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L147_Q2",
+      "interactionType": "narrator",
+      "instruction": "Describe each kind of path precisely so a listener can tell them apart. Finish with the widest path.",
+      "hint": "Say what each path is made of and how wide or smooth it is.",
+      "explanation": "Precise words (paved, dirt, gravel) separate three kinds of path that a vague 'path' would not.",
+      "sceneText": "Park Paths|paved path|dirt trail|gravel track",
+      "sampleAnswer": "One is a smooth paved path, flat and good for strollers. Another is a dirt trail, narrow and uneven, and the third is a gravel track, wider and covered with small stones.",
+      "options": [
+        "Paved path",
+        "Dirt trail",
+        "Gravel track"
+      ],
+      "acceptedSynonyms": [
+        "paved path,smooth path,stone path",
+        "dirt trail,dirt path,earth track",
+        "gravel track,gravel path,stone track"
+      ],
+      "correctAnswer": "Gravel track",
+      "keyVocabulary": [
+        "paved",
+        "dirt trail",
+        "gravel track",
+        "uneven",
+        "covered with"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L147_Q3",
+      "interactionType": "narrator",
+      "instruction": "Distinguish the three light sources precisely: where each is and what it lights. Focus on the light that lights only one small area.",
+      "hint": "Say where each light is, then how much of the room it lights.",
+      "explanation": "The learner distinguishes similar objects (lamps) by position and function, which is the key to precise description.",
+      "sceneText": "Three Lights|ceiling lamp|desk lamp|string lights along the wall",
+      "sampleAnswer": "The ceiling lamp lights the whole room from above. The desk lamp lights only the desk, and the string lights hang along the wall and give a softer glow.",
+      "options": [
+        "Ceiling lamp",
+        "Desk lamp",
+        "String lights along the wall"
+      ],
+      "acceptedSynonyms": [
+        "ceiling lamp,ceiling light,overhead lamp",
+        "desk lamp,table lamp,reading lamp",
+        "string lights,fairy lights,lights along the wall"
+      ],
+      "correctAnswer": "Desk lamp",
+      "keyVocabulary": [
+        "from above",
+        "lights only",
+        "hang along",
+        "softer",
+        "whole room"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L148_Q1",
+      "interactionType": "narrator",
+      "instruction": "Name each tool precisely instead of saying 'thing', and compare the fork with the trowel.",
+      "hint": "Use the exact name of each tool and say what it is used for.",
+      "explanation": "Replacing vague words ('thing', 'stuff') with precise nouns ('trowel', 'fork') makes a description sound more fluent.",
+      "sceneText": "Gardening Tools|hand trowel|pruning shears|garden fork",
+      "sampleAnswer": "The garden fork has long prongs for breaking up soil, while the hand trowel has a single flat blade for digging small holes. The pruning shears are smaller than both.",
+      "options": [
+        "Hand trowel",
+        "Pruning shears",
+        "Garden fork"
+      ],
+      "acceptedSynonyms": [
+        "hand trowel,trowel,small spade",
+        "pruning shears,garden shears,secateurs",
+        "garden fork,fork,digging fork"
+      ],
+      "correctAnswer": "Garden fork",
+      "keyVocabulary": [
+        "prongs",
+        "blade",
+        "trowel",
+        "pruning shears",
+        "smaller than"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L148_Q2",
+      "interactionType": "narrator",
+      "instruction": "Describe each item precisely; avoid 'stuff' and 'things'. Start with the item you would use to pay.",
+      "hint": "Name each item and give one detail about it.",
+      "explanation": "Naming the exact object ('a leather wallet', 'a ring of keys') with one detail is more useful than 'some stuff'.",
+      "sceneText": "Handbag Contents|leather wallet|set of keys|pair of sunglasses",
+      "sampleAnswer": "There's a leather wallet that's about the size of a hand, a ring of three keys, and a pair of sunglasses with dark frames.",
+      "options": [
+        "Leather wallet",
+        "Set of keys",
+        "Pair of sunglasses"
+      ],
+      "acceptedSynonyms": [
+        "wallet,leather wallet,purse",
+        "keys,set of keys,ring of keys",
+        "sunglasses,pair of sunglasses,shades"
+      ],
+      "correctAnswer": "Leather wallet",
+      "keyVocabulary": [
+        "leather wallet",
+        "a ring of",
+        "a pair of",
+        "dark frames",
+        "the size of"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L148_Q3",
+      "interactionType": "narrator",
+      "instruction": "Name and compare the office tools without using vague words. Start with the heavy round item.",
+      "hint": "Say what each tool is and compare their size or shape.",
+      "explanation": "The learner uses exact names (stapler, tape dispenser, hole punch) and compares them, so the description is specific and balanced.",
+      "sceneText": "Office Desk Tools|desk stapler|tape dispenser|hole punch",
+      "sampleAnswer": "The tape dispenser is heavy and round, with a roll of clear tape. The stapler is longer and has a hinge, and the hole punch is the tallest, with two metal pins.",
+      "options": [
+        "Desk stapler",
+        "Tape dispenser",
+        "Hole punch"
+      ],
+      "acceptedSynonyms": [
+        "stapler,desk stapler,staple machine",
+        "tape dispenser,tape holder,sticky tape dispenser",
+        "hole punch,paper punch,two-hole punch"
+      ],
+      "correctAnswer": "Tape dispenser",
+      "keyVocabulary": [
+        "tape dispenser",
+        "stapler",
+        "hole punch",
+        "hinge",
+        "the tallest"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L149_Q1",
+      "interactionType": "narrator",
+      "instruction": "Say which element is the most noticeable and which is the least visible.",
+      "hint": "Use 'by far the most noticeable', 'less noticeable', and 'the hardest to see'.",
+      "explanation": "Emphasis words ('by far', 'the hardest') tell a listener what to look at first and what is easy to miss.",
+      "sceneText": "Sale Window|small price tags|huge red sale sign|row of dresses",
+      "sampleAnswer": "The sale sign is by far the most noticeable, because it's huge and red. The dresses are less noticeable, and the price tags are the hardest to see because they're very small.",
+      "options": [
+        "Small price tags",
+        "Huge red sale sign",
+        "Row of dresses"
+      ],
+      "acceptedSynonyms": [
+        "price tags,small tags,tags",
+        "sale sign,huge sign,red sign",
+        "dresses,row of dresses,clothes"
+      ],
+      "correctAnswer": "Huge red sale sign",
+      "keyVocabulary": [
+        "by far",
+        "the most noticeable",
+        "less noticeable",
+        "the hardest to see",
+        "huge"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L149_Q2",
+      "interactionType": "narrator",
+      "instruction": "Which element draws your eye first, and which one blends into the background?",
+      "hint": "Say what stands out the most, then what is much less noticeable.",
+      "explanation": "'Stand out' and 'blend in' are two opposite ideas for visual emphasis, and the learner applies both to one picture.",
+      "sceneText": "Flower Bed|gray stones|green leaves|bright red flowers",
+      "sampleAnswer": "The bright red flowers stand out the most against the green leaves. The leaves are much less noticeable, and the gray stones blend into the path.",
+      "options": [
+        "Gray stones",
+        "Green leaves",
+        "Bright red flowers"
+      ],
+      "acceptedSynonyms": [
+        "gray stones,stones,pebbles",
+        "green leaves,leaves,foliage",
+        "red flowers,bright flowers,bright red flowers"
+      ],
+      "correctAnswer": "Bright red flowers",
+      "keyVocabulary": [
+        "stand out",
+        "blend into",
+        "much less noticeable",
+        "against",
+        "bright"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L149_Q3",
+      "interactionType": "narrator",
+      "instruction": "Which item is the most prominent and which is somewhat easier to miss?",
+      "hint": "Use 'the most prominent', 'somewhat smaller', and 'easy to miss'.",
+      "explanation": "'Somewhat' and 'easy to miss' are softer emphasis words, so the learner can rank three items on a scale.",
+      "sceneText": "Classroom Wall|large world map|small paper notice|clock above the door",
+      "sampleAnswer": "The large world map is the most prominent item on the wall. The clock is somewhat smaller but still visible, while the paper notice is easy to miss.",
+      "options": [
+        "Large world map",
+        "Small paper notice",
+        "Clock above the door"
+      ],
+      "acceptedSynonyms": [
+        "world map,large map,wall map",
+        "paper notice,small notice,notice",
+        "clock,clock above the door,wall clock"
+      ],
+      "correctAnswer": "Large world map",
+      "keyVocabulary": [
+        "the most prominent",
+        "somewhat smaller",
+        "still visible",
+        "easy to miss",
+        "wall"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L150_Q1",
+      "interactionType": "narrator",
+      "instruction": "Compare the two stalls in five or six sentences: size, products, how busy, and how they are arranged. Start with the larger stall.",
+      "hint": "Compare size first, then products, then customers, then the awnings, then the walkway.",
+      "explanation": "Level 150 is a full comparison in five or six sentences: size, amount, crowd, similarity, and difference.",
+      "sceneText": "Two Market Stalls|fruit stall with tall piles|flower stall with buckets|narrow walkway between them",
+      "sampleAnswer": "The fruit stall is much larger than the flower stall, and its piles of fruit are stacked higher. The flower stall has fewer items, but they're arranged in buckets of different colors. There are more customers at the fruit stall: about six, compared with two at the flower stall. Both stalls have striped awnings, but the fruit stall's is red while the flower stall's is green. A narrow walkway separates them, and it's wide enough for just one person at a time.",
+      "options": [
+        "Fruit stall with tall piles",
+        "Flower stall with buckets",
+        "Narrow walkway between them"
+      ],
+      "acceptedSynonyms": [
+        "fruit stall,stall with fruit,larger stall",
+        "flower stall,stall with flowers,small stall",
+        "narrow walkway,walkway,path between them"
+      ],
+      "correctAnswer": "Fruit stall with tall piles",
+      "keyVocabulary": [
+        "much larger than",
+        "fewer",
+        "more customers",
+        "both",
+        "compared with"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L150_Q2",
+      "interactionType": "narrator",
+      "instruction": "Compare the two buildings in five or six sentences: height, materials, windows, and how they sit next to each other. Start with the taller building.",
+      "hint": "Compare the height, then the materials, then the windows, then how they sit next to each other.",
+      "explanation": "The learner compares two buildings from several angles (height, material, windows, position) in a planned order.",
+      "sceneText": "Old and New Buildings|brick row house|glass office tower|narrow street between them",
+      "sampleAnswer": "The glass office tower is much taller than the brick row house, with more than twenty floors. The tower is made of glass and steel, whereas the house is red brick with a tiled roof. The tower's windows are huge and uniform, but the house has small, separate windows. They stand next to each other with a narrow street between them. The house looks small in comparison.",
+      "options": [
+        "Brick row house",
+        "Glass office tower",
+        "Narrow street between them"
+      ],
+      "acceptedSynonyms": [
+        "brick house,row house,brick row house",
+        "glass tower,office tower,glass office tower",
+        "narrow street,street between them,street"
+      ],
+      "correctAnswer": "Glass office tower",
+      "keyVocabulary": [
+        "much taller than",
+        "whereas",
+        "uniform",
+        "separate",
+        "in comparison"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_SCENEDESCRIPTIONSPEAKING_L150_Q3",
+      "interactionType": "narrator",
+      "instruction": "Compare the two cars in five or six sentences: size, color, how they are parked, and what is different. Start with the larger car.",
+      "hint": "Compare the size, then the color, then the parking, then a detail that is different.",
+      "explanation": "The learner combines comparison of size, position, and a small difference in a six-sentence description.",
+      "sceneText": "Parked Cars|small red hatchback|painted parking line|large black SUV",
+      "sampleAnswer": "The black SUV is much larger than the red hatchback, and it sits higher off the ground. The hatchback has fewer seats, and its wheels are smaller. Both cars are parked within the lines, but the SUV is closer to the line on its left. The hatchback has shiny paint, whereas the SUV has some dust on its doors.",
+      "options": [
+        "Small red hatchback",
+        "Painted parking line",
+        "Large black SUV"
+      ],
+      "acceptedSynonyms": [
+        "red hatchback,small car,hatchback",
+        "parking line,painted line,white line",
+        "black SUV,large car,big black car"
+      ],
+      "correctAnswer": "Large black SUV",
+      "keyVocabulary": [
+        "much larger than",
+        "higher off the ground",
+        "fewer",
+        "both",
+        "whereas"
+      ],
+      "phase": "mastery"
+    }
+  ]
+}

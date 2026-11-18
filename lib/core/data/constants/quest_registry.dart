@@ -152,7 +152,7 @@ abstract class QuestRegistry {
     final endLevel = batchIndex * 10;
 
     final resolvedPhase =
-        phase ?? ((category == 'vocabulary' || category == 'grammar' || category == 'reading' || category == 'writing' || gameType == 'sentenceBuilder' || gameType == 'completeSentence' || gameType == 'describeSituationWriting' || gameType == 'fixTheSentence' || gameType == 'shortAnswerWriting' || gameType == 'opinionWriting' || gameType == 'dailyJournal' || gameType == 'summarizeStoryWriting' || gameType == 'writingEmail' || gameType == 'correctionWriting' || gameType == 'essayDrafting' || gameType == 'repeatSentence' || gameType == 'speakMissingWord' || gameType == 'pronunciationFocus' || gameType == 'dailyExpression' || gameType == 'dialogueRoleplay') ? 'mastery' : null);
+        phase ?? ((category == 'vocabulary' || category == 'grammar' || category == 'reading' || category == 'writing' || gameType == 'sentenceBuilder' || gameType == 'completeSentence' || gameType == 'describeSituationWriting' || gameType == 'fixTheSentence' || gameType == 'shortAnswerWriting' || gameType == 'opinionWriting' || gameType == 'dailyJournal' || gameType == 'summarizeStoryWriting' || gameType == 'writingEmail' || gameType == 'correctionWriting' || gameType == 'essayDrafting' || gameType == 'repeatSentence' || gameType == 'speakMissingWord' || gameType == 'pronunciationFocus' || gameType == 'dailyExpression' || gameType == 'dialogueRoleplay' || gameType == 'sceneDescriptionSpeaking') ? 'mastery' : null);
 
     if (resolvedPhase != null) {
       return 'assets/curriculum/$category/${gameType}_${resolvedPhase}_${startLevel}_$endLevel.json';

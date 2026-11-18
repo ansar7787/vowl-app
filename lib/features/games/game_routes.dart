@@ -132,6 +132,8 @@ import 'package:vowl/features/speaking/daily_expression/presentation/pages/daily
 import 'package:vowl/features/speaking/daily_expression/presentation/pages/daily_expression_practice_screen.dart';
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/pages/dialogue_roleplay_learn_screen.dart';
 import 'package:vowl/features/speaking/dialogue_roleplay/presentation/pages/dialogue_roleplay_practice_screen.dart';
+import 'package:vowl/features/speaking/scene_description_speaking/presentation/pages/scene_description_speaking_learn_screen.dart';
+import 'package:vowl/features/speaking/scene_description_speaking/presentation/pages/scene_description_speaking_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -733,6 +735,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'scenedescriptionspeaking') {
+          return fadeTransitionPage(
+            child: SceneDescriptionSpeakingLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1113,6 +1121,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'dialogueroleplay') {
           return fadeTransitionPage(
             child: DialogueRoleplayPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'scenedescriptionspeaking') {
+          return fadeTransitionPage(
+            child: SceneDescriptionSpeakingPracticeScreen(level: level),
             state: state,
           );
         }
