@@ -25,7 +25,6 @@ class GuessTitleLearnScreen extends StatefulWidget {
 class _GuessTitleLearnScreenState extends State<GuessTitleLearnScreen> {
   int _cardIndex = 0;
   late List<Map<String, dynamic>> _quests;
-  bool _isLoading = false;
 
   @override
   void initState() {
@@ -186,19 +185,6 @@ class _GuessTitleLearnScreenState extends State<GuessTitleLearnScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (_isLoading) {
-      return LearnPhaseScaffold(
-        title: 'Main Idea vs Detail Filter',
-        gameType: 'guessTitle',
-        level: widget.level,
-        actionLabel: 'Loading...',
-        onComplete: () {},
-        child: const Center(
-          child: CircularProgressIndicator(),
-        ),
-      );
-    }
-
     final quest = _quests.isNotEmpty ? _quests[_cardIndex] : _fallbackQuests.first;
     final isLastCard = _cardIndex >= _quests.length - 1;
 

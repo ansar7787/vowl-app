@@ -26,7 +26,6 @@ class GuessTitlePracticeScreen extends StatefulWidget {
 class _GuessTitlePracticeScreenState extends State<GuessTitlePracticeScreen> {
   int _questIndex = 0;
   late List<Map<String, dynamic>> _quests;
-  bool _isLoading = false;
 
   int? _selectedOptionIndex;
   bool _isChecked = false;
@@ -159,20 +158,6 @@ class _GuessTitlePracticeScreenState extends State<GuessTitlePracticeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (_isLoading) {
-      return PracticePhaseScaffold(
-        title: 'Headline Matcher Gym',
-        gameType: 'guessTitle',
-        level: widget.level,
-        currentExerciseIndex: 0,
-        totalExercises: 1,
-        onComplete: () {},
-        child: const Center(
-          child: CircularProgressIndicator(),
-        ),
-      );
-    }
-
     final quest = _quests.isNotEmpty ? _quests[_questIndex] : _fallbackQuests.first;
     final passage = quest['passage'] as String? ?? '';
     final options = (quest['options'] as List<dynamic>? ?? []).cast<String>();

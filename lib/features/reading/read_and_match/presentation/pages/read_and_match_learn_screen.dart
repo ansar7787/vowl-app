@@ -25,7 +25,6 @@ class ReadAndMatchLearnScreen extends StatefulWidget {
 class _ReadAndMatchLearnScreenState extends State<ReadAndMatchLearnScreen> {
   int _cardIndex = 0;
   late List<Map<String, dynamic>> _quests;
-  bool _isLoading = false;
 
   @override
   void initState() {
@@ -164,19 +163,6 @@ class _ReadAndMatchLearnScreenState extends State<ReadAndMatchLearnScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (_isLoading) {
-      return LearnPhaseScaffold(
-        title: 'Summary Synapse',
-        gameType: 'readAndMatch',
-        level: widget.level,
-        actionLabel: 'Loading...',
-        onComplete: () {},
-        child: const Center(
-          child: CircularProgressIndicator(),
-        ),
-      );
-    }
-
     final quest = _quests.isNotEmpty ? _quests[_cardIndex] : _fallbackQuests.first;
     final isLastCard = _cardIndex >= _quests.length - 1;
 

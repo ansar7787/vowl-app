@@ -26,7 +26,6 @@ class _ReadAndMatchPracticeScreenState
     extends State<ReadAndMatchPracticeScreen> {
   int _questIndex = 0;
   late List<Map<String, dynamic>> _quests;
-  bool _isLoading = false;
 
   String? _selectedSourceKey;
   final Map<String, String> _userMatches = {}; // sourceKey -> targetValue
@@ -195,20 +194,6 @@ class _ReadAndMatchPracticeScreenState
 
   @override
   Widget build(BuildContext context) {
-    if (_isLoading) {
-      return PracticePhaseScaffold(
-        title: 'Heading Matcher Gym',
-        gameType: 'readAndMatch',
-        level: widget.level,
-        currentExerciseIndex: 0,
-        totalExercises: 1,
-        onComplete: () {},
-        child: const Center(
-          child: CircularProgressIndicator(),
-        ),
-      );
-    }
-
     final quest = _quests.isNotEmpty ? _quests[_questIndex] : _fallbackQuests.first;
     final instruction = quest['instruction'] as String? ?? 'Match each term to its meaning.';
     final paragraphTopic = quest['paragraphTopic'] as String? ?? '';
