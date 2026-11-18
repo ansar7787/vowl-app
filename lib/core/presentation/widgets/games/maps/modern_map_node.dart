@@ -776,6 +776,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                             'dialogueRoleplay',
                             'sceneDescriptionSpeaking',
                             'situationSpeaking',
+                            'speakOpposite',
                           };
                           final isPhasedGame = phasedGames.contains(widget.gameType);
 
