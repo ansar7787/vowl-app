@@ -1,0 +1,728 @@
+{
+    "gameType": "partsOfSpeech",
+    "phase": "mastery",
+    "batchIndex": 9,
+    "levels": "81-90",
+    "quests": [
+        {
+            "id": "pos_l81_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which grammatical category best describes 'hard' here?",
+            "targetWord": "hard",
+            "sentence": "The exam was hard for most of the students.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Ask how it connects to the words near it. What quality does 'hard' give the exam?",
+            "explanation": "'Hard' is an adjective here, describing the difficulty of the exam after the linking verb 'was'.",
+            "grammarRule": "Predicate adjective after a linking verb",
+            "transformations": [
+                "adjective use",
+                "adverb use"
+            ]
+        },
+        {
+            "id": "pos_l81_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Now what part of speech is 'hard' in this sentence?",
+            "targetWord": "hard",
+            "sentence": "The students studied hard for the exam.",
+            "options": [
+                "Adverb",
+                "Verb",
+                "Adjective",
+                "Noun"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adverb",
+            "hint": "The same word can also describe how an action was performed. How did the students study?",
+            "explanation": "'Hard' functions as an adverb here, modifying the verb 'studied' and describing the intensity of their effort — notice it keeps the same spelling as its adjective form.",
+            "grammarRule": "Manner adverb modifying a verb",
+            "transformations": [
+                "adjective use",
+                "adverb use"
+            ]
+        },
+        {
+            "id": "pos_l81_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Based on how it is used here, 'exam' is a:",
+            "targetWord": "exam",
+            "sentence": "The exam covered three months of material.",
+            "options": [
+                "Adverb",
+                "Adjective",
+                "Verb",
+                "Noun"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Noun",
+            "hint": "Ask how it connects to the words near it. What covered three months of material?",
+            "explanation": "'Exam' is a noun here, naming the test that covered the material — it functions as the subject of the sentence.",
+            "grammarRule": "Common noun functioning as the subject",
+            "transformations": [
+                "singular form",
+                "plural form"
+            ]
+        },
+        {
+            "id": "pos_l82_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What part of speech is 'late' in this sentence?",
+            "targetWord": "late",
+            "sentence": "The late bus made everyone miss the connection.",
+            "options": [
+                "Noun",
+                "Adjective",
+                "Adverb",
+                "Verb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Set aside what you know about this word in general. What quality does 'late' give the bus?",
+            "explanation": "'Late' is an adjective here, modifying 'bus' and describing that it arrived behind schedule.",
+            "grammarRule": "Attributive adjective modifying a noun",
+            "transformations": [
+                "adjective use",
+                "adverb use"
+            ]
+        },
+        {
+            "id": "pos_l82_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "This time, what part of speech is 'late'?",
+            "targetWord": "late",
+            "sentence": "The bus arrived late and everyone missed the connection.",
+            "options": [
+                "Verb",
+                "Adjective",
+                "Noun",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adverb",
+            "hint": "The same word can also describe how an action happened in time. When did the bus arrive?",
+            "explanation": "'Late' functions as an adverb here, modifying the verb 'arrived' — like 'hard,' it keeps the same spelling in both its adjective and adverb forms.",
+            "grammarRule": "Time adverb modifying a verb",
+            "transformations": [
+                "adjective use",
+                "adverb use"
+            ]
+        },
+        {
+            "id": "pos_l82_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which part of speech is 'missed' as it is used here?",
+            "targetWord": "missed",
+            "sentence": "Everyone missed the connecting train by two minutes.",
+            "options": [
+                "Verb",
+                "Adjective",
+                "Noun",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Verb",
+            "hint": "Look at what this word does in this exact sentence. What did everyone fail to catch?",
+            "explanation": "'Missed' is a verb describing the action of failing to catch the train in time.",
+            "grammarRule": "Action verb in past tense",
+            "transformations": [
+                "base form",
+                "past-tense form"
+            ]
+        },
+        {
+            "id": "pos_l83_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "How is 'early' functioning in this sentence?",
+            "targetWord": "early",
+            "sentence": "The early train is usually less crowded.",
+            "options": [
+                "Adjective",
+                "Verb",
+                "Noun",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adjective",
+            "hint": "Ask how it connects to the words near it. What quality does 'early' give the train?",
+            "explanation": "'Early' is an adjective here, modifying 'train' and describing when it runs relative to other trains.",
+            "grammarRule": "Attributive adjective modifying a noun",
+            "transformations": [
+                "adjective use",
+                "adverb use"
+            ]
+        },
+        {
+            "id": "pos_l83_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Now look at 'early' here. What part of speech is it?",
+            "targetWord": "early",
+            "sentence": "The train left early today, catching several passengers off guard.",
+            "options": [
+                "Noun",
+                "Adverb",
+                "Verb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adverb",
+            "hint": "The same word can also describe when an action happened. When did the train leave?",
+            "explanation": "'Early' functions as an adverb here, modifying the verb 'left' — contrast this with the earlier sentence, where 'early' described the noun 'train' directly.",
+            "grammarRule": "Time adverb modifying a verb",
+            "transformations": [
+                "adjective use",
+                "adverb use"
+            ]
+        },
+        {
+            "id": "pos_l83_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What role does 'aboard' play in this sentence?",
+            "targetWord": "aboard",
+            "sentence": "Passengers were already aboard the train when the doors closed.",
+            "options": [
+                "Preposition",
+                "Adjective",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Preposition",
+            "hint": "Focus on its role in this sentence only. Where were the passengers?",
+            "explanation": "'Aboard' is a preposition here, introducing the phrase that shows the passengers' location inside the train.",
+            "grammarRule": "Preposition introducing a location phrase",
+            "transformations": [
+                "preposition use",
+                "related adverb use"
+            ]
+        },
+        {
+            "id": "pos_l84_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "The word 'high' is being used as which grammatical category?",
+            "targetWord": "high",
+            "sentence": "The shelf was too high for the child to reach.",
+            "options": [
+                "Verb",
+                "Adjective",
+                "Noun",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Ask how it connects to the words near it. What quality does 'high' give the shelf?",
+            "explanation": "'High' is an adjective here, describing the shelf's height after the linking verb 'was'.",
+            "grammarRule": "Predicate adjective after a linking verb",
+            "transformations": [
+                "adjective use",
+                "adverb use"
+            ]
+        },
+        {
+            "id": "pos_l84_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "This time, 'high' is functioning as a:",
+            "targetWord": "high",
+            "sentence": "The kite flew high above the trees.",
+            "options": [
+                "Noun",
+                "Adverb",
+                "Adjective",
+                "Verb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adverb",
+            "hint": "The same word can also describe how far up an action reaches. How did the kite fly?",
+            "explanation": "'High' functions as an adverb here, modifying the verb 'flew' and describing the altitude of the flight — it keeps the same spelling as its adjective form.",
+            "grammarRule": "Manner adverb modifying a verb",
+            "transformations": [
+                "adjective use",
+                "adverb use"
+            ]
+        },
+        {
+            "id": "pos_l84_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What grammatical job does 'though' do in this sentence?",
+            "targetWord": "though",
+            "sentence": "The hike was exhausting, though the view made it worthwhile.",
+            "options": [
+                "Conjunction",
+                "Preposition",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Conjunction",
+            "hint": "Focus on its role in this sentence only. What word signals that contrast here?",
+            "explanation": "'Though' is a subordinating conjunction introducing a clause that contrasts with the main idea — the hike was tiring, yet the view made it worth it.",
+            "grammarRule": "Subordinating conjunction introducing a contrast clause",
+            "transformations": [
+                "conjunction use",
+                "related conjunction (although)"
+            ]
+        },
+        {
+            "id": "pos_l85_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Identify the part of speech of 'This' in this context.",
+            "targetWord": "This",
+            "sentence": "This is exactly what the team needed.",
+            "options": [
+                "Adjective",
+                "Pronoun",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "Let the sentence, not the spelling, decide. What is 'this' replacing here?",
+            "explanation": "'This' is a demonstrative pronoun functioning as the subject of the sentence, standing in for something already understood from context.",
+            "grammarRule": "Demonstrative pronoun functioning as the subject",
+            "transformations": [
+                "pronoun use",
+                "adjective use"
+            ]
+        },
+        {
+            "id": "pos_l85_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Now, which category describes 'This' in this sentence?",
+            "targetWord": "This",
+            "sentence": "This laptop has been running slowly all week.",
+            "options": [
+                "Adjective",
+                "Verb",
+                "Noun",
+                "Pronoun"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adjective",
+            "hint": "The same word can also modify a noun directly instead of standing alone. What noun does 'this' describe here?",
+            "explanation": "'This' functions as an adjective here, modifying the noun 'laptop' directly — contrast this with the earlier sentence, where 'this' stood alone as the subject.",
+            "grammarRule": "Demonstrative adjective modifying a noun",
+            "transformations": [
+                "adjective use",
+                "pronoun use"
+            ]
+        },
+        {
+            "id": "pos_l85_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In this context, what part of speech is 'laptop'?",
+            "targetWord": "laptop",
+            "sentence": "The laptop overheated during the video call.",
+            "options": [
+                "Verb",
+                "Noun",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Noun",
+            "hint": "Notice what the word is attached to. What overheated during the call?",
+            "explanation": "'Laptop' is a noun here, naming the device that overheated — it functions as the subject of the sentence.",
+            "grammarRule": "Common noun functioning as the subject",
+            "transformations": [
+                "singular form",
+                "plural form"
+            ]
+        },
+        {
+            "id": "pos_l86_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which grammatical category best describes 'those' here?",
+            "targetWord": "those",
+            "sentence": "Of everything on display, those sold out first.",
+            "options": [
+                "Adjective",
+                "Verb",
+                "Noun",
+                "Pronoun"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Pronoun",
+            "hint": "Ask how it connects to the words near it. What is 'those' replacing here?",
+            "explanation": "'Those' is a demonstrative pronoun functioning as the subject, standing in for a specific group of items already mentioned.",
+            "grammarRule": "Demonstrative pronoun functioning as the subject",
+            "transformations": [
+                "pronoun use",
+                "adjective use"
+            ]
+        },
+        {
+            "id": "pos_l86_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "This time, what part of speech is 'those'?",
+            "targetWord": "those",
+            "sentence": "Those shoes look perfect for the hike.",
+            "options": [
+                "Verb",
+                "Noun",
+                "Pronoun",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "The same word can also modify a noun directly. What noun does 'those' describe here?",
+            "explanation": "'Those' functions as an adjective here, modifying the noun 'shoes' directly — contrast this with the earlier sentence, where 'those' stood alone as the subject.",
+            "grammarRule": "Demonstrative adjective modifying a noun",
+            "transformations": [
+                "adjective use",
+                "pronoun use"
+            ]
+        },
+        {
+            "id": "pos_l86_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In this sentence, 'look' is functioning as a:",
+            "targetWord": "look",
+            "sentence": "The hikers look forward to the summit view every year.",
+            "options": [
+                "Adverb",
+                "Noun",
+                "Verb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Verb",
+            "hint": "Think about the job it performs here. What do they look forward to?",
+            "explanation": "'Look' is a verb here, describing the hikers' anticipation of the summit view.",
+            "grammarRule": "Action verb in present tense",
+            "transformations": [
+                "base form",
+                "-s form"
+            ]
+        },
+        {
+            "id": "pos_l87_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which part of speech is 'kitchen' as it is used here?",
+            "targetWord": "kitchen",
+            "sentence": "Grandma polished the kitchen table until it gleamed.",
+            "options": [
+                "Verb",
+                "Adjective",
+                "Noun",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Notice what the word is attached to. What kind of table is being described?",
+            "explanation": "'Kitchen' functions as an adjective here, modifying 'table' to specify which table Grandma polished — even though 'kitchen' is usually a noun, as it was back in an earlier lesson.",
+            "grammarRule": "Noun functioning as an adjective modifying another noun",
+            "transformations": [
+                "noun use",
+                "adjective use"
+            ]
+        },
+        {
+            "id": "pos_l87_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Based on how it is used here, 'stone' is a:",
+            "targetWord": "stone",
+            "sentence": "The stone bridge has stood there for two centuries.",
+            "options": [
+                "Adverb",
+                "Verb",
+                "Adjective",
+                "Noun"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "The same pattern applies here. What material describes the bridge?",
+            "explanation": "'Stone' functions as an adjective here, modifying 'bridge' to describe what material it is made from — this is the same noun-as-adjective pattern seen with 'kitchen'.",
+            "grammarRule": "Noun functioning as an adjective modifying another noun",
+            "transformations": [
+                "noun use",
+                "adjective use"
+            ]
+        },
+        {
+            "id": "pos_l87_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which part of speech does 'carefully' represent in this sentence?",
+            "targetWord": "carefully",
+            "sentence": "The conservators carefully restored the stone bridge last year.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Adverb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Look at what this word does in this exact sentence. How did the conservators restore the bridge?",
+            "explanation": "'Carefully' is a manner adverb modifying the verb 'restored', describing how the conservators approached the work.",
+            "grammarRule": "Manner adverb modifying a verb",
+            "transformations": [
+                "adjective form",
+                "adverb form"
+            ]
+        },
+        {
+            "id": "pos_l88_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What part of speech is 'paper' in this sentence?",
+            "targetWord": "paper",
+            "sentence": "She grabbed a paper cup from the dispenser.",
+            "options": [
+                "Adverb",
+                "Verb",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "Remember the pattern where one noun modifies another. What material describes the cup?",
+            "explanation": "'Paper' functions as an adjective here, modifying 'cup' to describe what material it is made from.",
+            "grammarRule": "Noun functioning as an adjective modifying another noun",
+            "transformations": [
+                "noun use",
+                "adjective use"
+            ]
+        },
+        {
+            "id": "pos_l88_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Next, what role does 'paper' play in this sentence?",
+            "targetWord": "paper",
+            "sentence": "The recycling bin was full of paper by Friday.",
+            "options": [
+                "Verb",
+                "Adverb",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Noun",
+            "hint": "The same word can also stand alone as a regular word. What filled the recycling bin?",
+            "explanation": "'Paper' is a noun here, naming the material that filled the bin — contrast this with the earlier sentence, where 'paper' modified 'cup' as an adjective.",
+            "grammarRule": "Common noun functioning as the object of a preposition",
+            "transformations": [
+                "noun use",
+                "adjective use"
+            ]
+        },
+        {
+            "id": "pos_l88_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which category fits 'Everybody' in this sentence?",
+            "targetWord": "Everybody",
+            "sentence": "Everybody appreciated the fresh coffee in the break room.",
+            "options": [
+                "Pronoun",
+                "Verb",
+                "Adjective",
+                "Noun"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "Ask how it connects to the words near it. Who appreciated the coffee?",
+            "explanation": "'Everybody' is an indefinite pronoun referring to the whole group of people — it functions as the subject of the sentence.",
+            "grammarRule": "Indefinite pronoun functioning as the subject",
+            "transformations": [
+                "singular use",
+                "related pronoun (everyone)"
+            ]
+        },
+        {
+            "id": "pos_l89_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Classify 'late' as it appears in this sentence.",
+            "targetWord": "late",
+            "sentence": "Working late, Naledi finally fixed the paper jam in the office printer, and that quick repair saved the entire morning meeting.",
+            "options": [
+                "Noun",
+                "Adjective",
+                "Adverb",
+                "Verb"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "This word from earlier in the file can describe timing of an action. When was Naledi working?",
+            "explanation": "'Late' functions as an adverb here, modifying 'working' and describing when Naledi was still at work — the same word appeared earlier in this file as an adjective describing a noun directly.",
+            "grammarRule": "Time adverb modifying a verb",
+            "transformations": [
+                "adjective use",
+                "adverb use"
+            ]
+        },
+        {
+            "id": "pos_l89_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Staying with that sentence, which category describes 'paper'?",
+            "targetWord": "paper",
+            "sentence": "Working late, Naledi finally fixed the paper jam in the office printer, and that quick repair saved the entire morning meeting.",
+            "options": [
+                "Verb",
+                "Pronoun",
+                "Adjective",
+                "Noun"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Remember the pattern where one noun modifies another from earlier. What kind of jam is being described?",
+            "explanation": "'Paper' functions as an adjective here, modifying 'jam' to describe what caused the printer problem — the same noun-as-adjective pattern seen with 'kitchen' and 'stone' earlier in this file.",
+            "grammarRule": "Noun functioning as an adjective modifying another noun",
+            "transformations": [
+                "noun use",
+                "adjective use"
+            ]
+        },
+        {
+            "id": "pos_l89_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Back in that same sentence, what kind of word is 'that'?",
+            "targetWord": "that",
+            "sentence": "Working late, Naledi finally fixed the paper jam in the office printer, and that quick repair saved the entire morning meeting.",
+            "options": [
+                "Pronoun",
+                "Verb",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "This word modifies the noun right next to it instead of standing alone. What noun does 'that' describe here?",
+            "explanation": "'That' functions as an adjective here, modifying 'repair' directly — contrast this with its pronoun use when it stands alone, as seen with 'this' and 'those' earlier in this file.",
+            "grammarRule": "Demonstrative adjective modifying a noun",
+            "transformations": [
+                "adjective use",
+                "pronoun use"
+            ]
+        },
+        {
+            "id": "pos_l90_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What kind of word is 'This' in this sentence?",
+            "targetWord": "This",
+            "sentence": "This clinic keeps a strict morning schedule, but the reception desk still opens late because of yesterday's staffing shortage.",
+            "options": [
+                "Verb",
+                "Adjective",
+                "Pronoun",
+                "Noun"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "This word modifies the noun right next to it. What place does 'this' describe?",
+            "explanation": "'This' functions as an adjective here, modifying 'clinic' directly — just like 'those' and 'that' modified nouns earlier in this file.",
+            "grammarRule": "Demonstrative adjective modifying a noun",
+            "transformations": [
+                "adjective use",
+                "pronoun use"
+            ]
+        },
+        {
+            "id": "pos_l90_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Within that same sentence, 'morning' is functioning as a:",
+            "targetWord": "morning",
+            "sentence": "This clinic keeps a strict morning schedule, but the reception desk still opens late because of yesterday's staffing shortage.",
+            "options": [
+                "Adverb",
+                "Noun",
+                "Adjective",
+                "Verb"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Remember the pattern where one noun modifies another. What kind of schedule is being described?",
+            "explanation": "'Morning' functions as an adjective here, modifying 'schedule' to describe which part of the day it applies to — the same pattern as 'kitchen table' and 'paper jam' from earlier in this file.",
+            "grammarRule": "Noun functioning as an adjective modifying another noun",
+            "transformations": [
+                "noun use",
+                "adjective use"
+            ]
+        },
+        {
+            "id": "pos_l90_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Looking at the same sentence, how is 'late' functioning?",
+            "targetWord": "late",
+            "sentence": "This clinic keeps a strict morning schedule, but the reception desk still opens late because of yesterday's staffing shortage.",
+            "options": [
+                "Adjective",
+                "Adverb",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adverb",
+            "hint": "This word describes when the desk opens, not a quality of the desk itself. When does the desk open?",
+            "explanation": "'Late' functions as an adverb here, modifying the verb 'opens' — contrast this with its adjective use earlier in this file, where it modified a noun directly.",
+            "grammarRule": "Time adverb modifying a verb",
+            "transformations": [
+                "adjective use",
+                "adverb use"
+            ]
+        }
+    ]
+}

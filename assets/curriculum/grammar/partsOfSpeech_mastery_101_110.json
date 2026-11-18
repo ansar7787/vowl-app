@@ -1,0 +1,728 @@
+{
+    "gameType": "partsOfSpeech",
+    "phase": "mastery",
+    "batchIndex": 11,
+    "levels": "101-110",
+    "quests": [
+        {
+            "id": "pos_l101_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What grammatical job does 'report' do in this sentence?",
+            "targetWord": "report",
+            "sentence": "Although the quarterly report wasn't due until Friday, Devika submitted it a full three days early.",
+            "options": [
+                "Verb",
+                "Conjunction",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Noun",
+            "hint": "Notice what the word is attached to. What wasn't due until Friday?",
+            "explanation": "'Report' is a noun here, naming the document that had a deadline — it functions as the subject of the first clause.",
+            "grammarRule": "Common noun functioning as the subject",
+            "transformations": [
+                "singular form",
+                "plural form"
+            ]
+        },
+        {
+            "id": "pos_l101_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "And in that same sentence, what part of speech is 'submitted'?",
+            "targetWord": "submitted",
+            "sentence": "Although the quarterly report wasn't due until Friday, Devika submitted it a full three days early.",
+            "options": [
+                "Verb",
+                "Adjective",
+                "Adverb",
+                "Noun"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Verb",
+            "hint": "Focus on its role in this sentence only. What action did she take with the report?",
+            "explanation": "'Submitted' is a verb describing Devika's action of turning in the report ahead of schedule.",
+            "grammarRule": "Action verb in past tense",
+            "transformations": [
+                "base form",
+                "past-tense form"
+            ]
+        },
+        {
+            "id": "pos_l101_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Staying with that sentence, which category describes 'Although'?",
+            "targetWord": "Although",
+            "sentence": "Although the quarterly report wasn't due until Friday, Devika submitted it a full three days early.",
+            "options": [
+                "Conjunction",
+                "Verb",
+                "Preposition",
+                "Noun"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a clause that contrasts with the rest of the sentence. What contrast does it set up?",
+            "explanation": "'Although' is a subordinating conjunction introducing a clause that contrasts with what follows — the report wasn't due yet, but Devika submitted it early anyway.",
+            "grammarRule": "Subordinating conjunction introducing a contrast clause",
+            "transformations": [
+                "conjunction use",
+                "related preposition (despite)"
+            ]
+        },
+        {
+            "id": "pos_l102_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What kind of word is 'overwhelming' in this sentence?",
+            "targetWord": "overwhelming",
+            "sentence": "\"I know the assignment feels overwhelming,\" the teacher said, \"but if you break it into smaller steps, it becomes manageable.\"",
+            "options": [
+                "Verb",
+                "Adverb",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "Let the sentence, not the spelling, decide. What does 'overwhelming' describe about the assignment?",
+            "explanation": "'Overwhelming' is an adjective describing how the assignment feels to the student, following the linking verb 'feels'.",
+            "grammarRule": "Predicate adjective after a linking verb",
+            "transformations": [
+                "verb form",
+                "adjective form"
+            ]
+        },
+        {
+            "id": "pos_l102_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Looking at the same sentence, how is 'if' functioning?",
+            "targetWord": "if",
+            "sentence": "\"I know the assignment feels overwhelming,\" the teacher said, \"but if you break it into smaller steps, it becomes manageable.\"",
+            "options": [
+                "Noun",
+                "Preposition",
+                "Conjunction",
+                "Verb"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a condition. Under what condition does the assignment become manageable?",
+            "explanation": "'If' is a subordinating conjunction introducing a conditional clause — breaking the assignment into steps is the condition for it becoming manageable.",
+            "grammarRule": "Subordinating conjunction introducing a conditional clause",
+            "transformations": [
+                "conjunction use",
+                "related conjunction (unless)"
+            ]
+        },
+        {
+            "id": "pos_l102_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Within that same sentence, 'manageable' is functioning as a:",
+            "targetWord": "manageable",
+            "sentence": "\"I know the assignment feels overwhelming,\" the teacher said, \"but if you break it into smaller steps, it becomes manageable.\"",
+            "options": [
+                "Noun",
+                "Adverb",
+                "Verb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "Look at what this word does in this exact sentence. What does the assignment become?",
+            "explanation": "'Manageable' is an adjective describing the assignment's new state after being broken into steps, following the linking verb 'becomes'.",
+            "grammarRule": "Predicate adjective after a linking verb",
+            "transformations": [
+                "positive form",
+                "comparative form"
+            ]
+        },
+        {
+            "id": "pos_l103_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which grammatical category best describes 'asked' here?",
+            "targetWord": "asked",
+            "sentence": "Even though the twins had already eaten dinner, they still asked for dessert before bedtime, which made their mother laugh.",
+            "options": [
+                "Verb",
+                "Noun",
+                "Adverb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Verb",
+            "hint": "Let the sentence, not the spelling, decide. What did they ask for?",
+            "explanation": "'Asked' is a verb describing the twins' action of requesting dessert.",
+            "grammarRule": "Action verb in past tense",
+            "transformations": [
+                "base form",
+                "past-tense form"
+            ]
+        },
+        {
+            "id": "pos_l103_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which grammatical category fits 'which' in that same sentence?",
+            "targetWord": "which",
+            "sentence": "Even though the twins had already eaten dinner, they still asked for dessert before bedtime, which made their mother laugh.",
+            "options": [
+                "Pronoun",
+                "Verb",
+                "Noun",
+                "Conjunction"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "This word can refer back to an entire situation, not just one noun. What does 'which' refer to here?",
+            "explanation": "'Which' is a relative pronoun referring back to the whole idea of the twins asking for dessert — it introduces a clause commenting on that entire situation, not just a single noun.",
+            "grammarRule": "Relative pronoun referring to a whole clause",
+            "transformations": [
+                "relative use",
+                "interrogative use"
+            ]
+        },
+        {
+            "id": "pos_l103_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "And in that same sentence, what part of speech is 'before'?",
+            "targetWord": "before",
+            "sentence": "Even though the twins had already eaten dinner, they still asked for dessert before bedtime, which made their mother laugh.",
+            "options": [
+                "Verb",
+                "Preposition",
+                "Noun",
+                "Conjunction"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Preposition",
+            "hint": "Think about the job it performs here. What noun follows 'before' here?",
+            "explanation": "'Before' is a preposition here, introducing the noun phrase 'bedtime' rather than a full clause.",
+            "grammarRule": "Preposition introducing a time phrase",
+            "transformations": [
+                "preposition use",
+                "conjunction use"
+            ]
+        },
+        {
+            "id": "pos_l104_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In this sentence, 'exhausted' is functioning as a:",
+            "targetWord": "exhausted",
+            "sentence": "By the time the connecting flight boarded, most passengers, exhausted from the layover, had already found seats near the gate.",
+            "options": [
+                "Adverb",
+                "Adjective",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Think about the job it performs here. What state were the passengers in?",
+            "explanation": "'Exhausted' is an adjective describing the passengers' tired state — here it appears in an interrupting phrase, set off by commas, rather than after a linking verb.",
+            "grammarRule": "Participial adjective in an interrupting phrase",
+            "transformations": [
+                "verb form",
+                "adjective form"
+            ]
+        },
+        {
+            "id": "pos_l104_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Staying with that sentence, which category describes 'near'?",
+            "targetWord": "near",
+            "sentence": "By the time the connecting flight boarded, most passengers, exhausted from the layover, had already found seats near the gate.",
+            "options": [
+                "Preposition",
+                "Adjective",
+                "Verb",
+                "Noun"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Preposition",
+            "hint": "Ask how it connects to the words near it. Where did passengers find seats?",
+            "explanation": "'Near' is a preposition introducing the phrase that shows the seats' location relative to the gate.",
+            "grammarRule": "Preposition introducing a location phrase",
+            "transformations": [
+                "preposition use",
+                "related adverb use"
+            ]
+        },
+        {
+            "id": "pos_l104_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which grammatical category fits 'boarded' in that same sentence?",
+            "targetWord": "boarded",
+            "sentence": "By the time the connecting flight boarded, most passengers, exhausted from the layover, had already found seats near the gate.",
+            "options": [
+                "Noun",
+                "Adjective",
+                "Adverb",
+                "Verb"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Verb",
+            "hint": "Check the words directly around it for clues. What action did the flight take?",
+            "explanation": "'Boarded' is a verb describing the flight beginning to let passengers on.",
+            "grammarRule": "Action verb in past tense",
+            "transformations": [
+                "base form",
+                "past-tense form"
+            ]
+        },
+        {
+            "id": "pos_l105_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which part of speech is 'Whenever' as it is used here?",
+            "targetWord": "Whenever",
+            "sentence": "Whenever the app updates automatically, users sometimes lose their saved preferences, which frustrates long-time customers.",
+            "options": [
+                "Preposition",
+                "Verb",
+                "Noun",
+                "Conjunction"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a clause showing every time something happens. When do users lose their preferences?",
+            "explanation": "'Whenever' is a subordinating conjunction introducing a clause that applies every time the app updates automatically.",
+            "grammarRule": "Subordinating conjunction introducing a recurring time clause",
+            "transformations": [
+                "conjunction use",
+                "related conjunction (when)"
+            ]
+        },
+        {
+            "id": "pos_l105_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Back in that same sentence, what kind of word is 'automatically'?",
+            "targetWord": "automatically",
+            "sentence": "Whenever the app updates automatically, users sometimes lose their saved preferences, which frustrates long-time customers.",
+            "options": [
+                "Adverb",
+                "Adjective",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adverb",
+            "hint": "Ask how it connects to the words near it. How does the app update?",
+            "explanation": "'Automatically' is a manner adverb modifying the verb 'updates', describing that it happens without a person triggering it.",
+            "grammarRule": "Manner adverb modifying a verb",
+            "transformations": [
+                "adjective form",
+                "adverb form"
+            ]
+        },
+        {
+            "id": "pos_l105_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Within that same sentence, 'which' is functioning as a:",
+            "targetWord": "which",
+            "sentence": "Whenever the app updates automatically, users sometimes lose their saved preferences, which frustrates long-time customers.",
+            "options": [
+                "Pronoun",
+                "Conjunction",
+                "Verb",
+                "Noun"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "Like in an earlier lesson, this word can refer to a whole situation rather than one noun. What does 'which' refer to here?",
+            "explanation": "'Which' is a relative pronoun referring back to the entire situation of users losing their preferences — the same pattern seen in an earlier lesson about the twins.",
+            "grammarRule": "Relative pronoun referring to a whole clause",
+            "transformations": [
+                "relative use",
+                "interrogative use"
+            ]
+        },
+        {
+            "id": "pos_l106_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Based on how it is used here, 'fit' is a:",
+            "targetWord": "fit",
+            "sentence": "\"If the item doesn't fit,\" the clerk explained, \"you can exchange it within thirty days, provided you keep the receipt.\"",
+            "options": [
+                "Adverb",
+                "Noun",
+                "Verb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Verb",
+            "hint": "Set aside what you know about this word in general. What might the item fail to do?",
+            "explanation": "'Fit' is a verb here, describing whether the item matches the customer's size.",
+            "grammarRule": "Action verb in present tense",
+            "transformations": [
+                "base form",
+                "past-tense form"
+            ]
+        },
+        {
+            "id": "pos_l106_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In that same sentence, what part of speech is 'provided'?",
+            "targetWord": "provided",
+            "sentence": "\"If the item doesn't fit,\" the clerk explained, \"you can exchange it within thirty days, provided you keep the receipt.\"",
+            "options": [
+                "Preposition",
+                "Verb",
+                "Noun",
+                "Conjunction"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces a condition, similar to 'if.' Under what condition can the customer exchange the item?",
+            "explanation": "'Provided' functions as a subordinating conjunction here, meaning 'on the condition that' — it introduces the requirement of keeping the receipt.",
+            "grammarRule": "Subordinating conjunction introducing a condition",
+            "transformations": [
+                "conjunction use",
+                "related conjunction (if)"
+            ]
+        },
+        {
+            "id": "pos_l106_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In the same sentence, what role does 'receipt' play?",
+            "targetWord": "receipt",
+            "sentence": "\"If the item doesn't fit,\" the clerk explained, \"you can exchange it within thirty days, provided you keep the receipt.\"",
+            "options": [
+                "Adverb",
+                "Adjective",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Noun",
+            "hint": "Check the words directly around it for clues. What must the customer keep?",
+            "explanation": "'Receipt' is a noun here, naming the proof of purchase the customer must retain — it functions as the direct object of 'keep'.",
+            "grammarRule": "Common noun functioning as a direct object",
+            "transformations": [
+                "singular form",
+                "plural form"
+            ]
+        },
+        {
+            "id": "pos_l107_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In this context, what part of speech is 'inconclusive'?",
+            "targetWord": "inconclusive",
+            "sentence": "Because the results came back inconclusive, the doctor recommended a follow-up test, even though the patient was eager to avoid another appointment.",
+            "options": [
+                "Verb",
+                "Adjective",
+                "Noun",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Set aside what you know about this word in general. What quality did the results have?",
+            "explanation": "'Inconclusive' is an adjective describing the uncertain nature of the results, following the linking verb phrase 'came back'.",
+            "grammarRule": "Predicate adjective after a linking verb",
+            "transformations": [
+                "positive form",
+                "comparative form"
+            ]
+        },
+        {
+            "id": "pos_l107_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Looking at the same sentence, how is 'recommended' functioning?",
+            "targetWord": "recommended",
+            "sentence": "Because the results came back inconclusive, the doctor recommended a follow-up test, even though the patient was eager to avoid another appointment.",
+            "options": [
+                "Adverb",
+                "Adjective",
+                "Verb",
+                "Noun"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Verb",
+            "hint": "Set aside what you know about this word in general. What action did the doctor take?",
+            "explanation": "'Recommended' is a verb describing the doctor's suggestion of a follow-up test.",
+            "grammarRule": "Action verb in past tense",
+            "transformations": [
+                "base form",
+                "past-tense form"
+            ]
+        },
+        {
+            "id": "pos_l107_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Now consider 'even though' in that same sentence. What part of speech is it?",
+            "targetWord": "even though",
+            "sentence": "Because the results came back inconclusive, the doctor recommended a follow-up test, even though the patient was eager to avoid another appointment.",
+            "options": [
+                "Conjunction",
+                "Noun",
+                "Preposition",
+                "Verb"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Conjunction",
+            "hint": "This expression introduces a contrast at the end of the sentence. What contrast does it introduce here?",
+            "explanation": "'Even though' functions as a subordinating conjunction here, introducing a clause that contrasts with the doctor's recommendation — the patient wanted to avoid another visit, yet the test was still suggested.",
+            "grammarRule": "Subordinating conjunction introducing a contrast clause",
+            "transformations": [
+                "conjunction use",
+                "related conjunction (although)"
+            ]
+        },
+        {
+            "id": "pos_l108_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Identify the part of speech of 'who' in this context.",
+            "targetWord": "who",
+            "sentence": "Residents who missed the deadline can still apply online, but they will be charged a late fee unless they have a documented emergency.",
+            "options": [
+                "Conjunction",
+                "Pronoun",
+                "Verb",
+                "Noun"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "Set aside what you know about this word in general. Which residents can still apply?",
+            "explanation": "'Who' is a relative pronoun introducing the clause 'who missed the deadline', identifying which residents the sentence is about.",
+            "grammarRule": "Relative pronoun introducing a descriptive clause",
+            "transformations": [
+                "subject form",
+                "object form (whom)"
+            ]
+        },
+        {
+            "id": "pos_l108_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "And in that same sentence, what part of speech is 'unless'?",
+            "targetWord": "unless",
+            "sentence": "Residents who missed the deadline can still apply online, but they will be charged a late fee unless they have a documented emergency.",
+            "options": [
+                "Verb",
+                "Conjunction",
+                "Noun",
+                "Preposition"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Conjunction",
+            "hint": "This word introduces an exception to the late fee. Under what condition would the fee not apply?",
+            "explanation": "'Unless' is a subordinating conjunction introducing the one exception to being charged a late fee — having a documented emergency.",
+            "grammarRule": "Subordinating conjunction introducing a condition",
+            "transformations": [
+                "conjunction use",
+                "related conjunction (if)"
+            ]
+        },
+        {
+            "id": "pos_l108_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Back in that same sentence, what kind of word is 'documented'?",
+            "targetWord": "documented",
+            "sentence": "Residents who missed the deadline can still apply online, but they will be charged a late fee unless they have a documented emergency.",
+            "options": [
+                "Verb",
+                "Adverb",
+                "Adjective",
+                "Noun"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "This word from a verb form can describe a noun's quality. What kind of emergency qualifies for an exception?",
+            "explanation": "'Documented' functions as an adjective here, modifying 'emergency' and describing that it must be backed up with proof.",
+            "grammarRule": "Participial adjective modifying a noun",
+            "transformations": [
+                "verb form",
+                "adjective form"
+            ]
+        },
+        {
+            "id": "pos_l109_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What kind of word is 'As soon as' in this sentence?",
+            "targetWord": "As soon as",
+            "sentence": "As soon as the storm passed, the crew, who had been sheltering since early afternoon, cautiously stepped outside to assess the damage.",
+            "options": [
+                "Preposition",
+                "Conjunction",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Conjunction",
+            "hint": "This three-word expression introduces a clause showing that one event happened immediately after another. What happened right after the storm passed?",
+            "explanation": "'As soon as' functions as a compound subordinating conjunction here, introducing the clause 'the storm passed' to show the crew acted immediately afterward.",
+            "grammarRule": "Compound subordinating conjunction introducing an immediate time clause",
+            "transformations": [
+                "conjunction use",
+                "related conjunction (once)"
+            ]
+        },
+        {
+            "id": "pos_l109_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In the same sentence, what role does 'who' play?",
+            "targetWord": "who",
+            "sentence": "As soon as the storm passed, the crew, who had been sheltering since early afternoon, cautiously stepped outside to assess the damage.",
+            "options": [
+                "Verb",
+                "Pronoun",
+                "Noun",
+                "Conjunction"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "This word introduces a clause describing the crew. What had the crew been doing?",
+            "explanation": "'Who' is a relative pronoun introducing the clause 'who had been sheltering since early afternoon', describing the crew.",
+            "grammarRule": "Relative pronoun introducing a descriptive clause",
+            "transformations": [
+                "subject form",
+                "object form (whom)"
+            ]
+        },
+        {
+            "id": "pos_l109_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which grammatical category fits 'cautiously' in that same sentence?",
+            "targetWord": "cautiously",
+            "sentence": "As soon as the storm passed, the crew, who had been sheltering since early afternoon, cautiously stepped outside to assess the damage.",
+            "options": [
+                "Adverb",
+                "Noun",
+                "Verb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adverb",
+            "hint": "Set aside what you know about this word in general. How did the crew step outside?",
+            "explanation": "'Cautiously' is a manner adverb modifying the verb 'stepped', describing the careful way the crew moved after the storm.",
+            "grammarRule": "Manner adverb modifying a verb",
+            "transformations": [
+                "adjective form",
+                "adverb form"
+            ]
+        },
+        {
+            "id": "pos_l110_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Based on how it is used here, 'dragged on' is a:",
+            "targetWord": "dragged on",
+            "sentence": "Even though the negotiations had dragged on for hours, both sides finally reached an agreement that satisfied everyone in the room, which relieved the exhausted mediator.",
+            "options": [
+                "Adjective",
+                "Verb",
+                "Adverb",
+                "Noun"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Verb",
+            "hint": "This two-word expression describes something continuing longer than expected. What did the negotiations do?",
+            "explanation": "'Dragged on' is a phrasal verb describing the negotiations continuing tediously for a long time.",
+            "grammarRule": "Phrasal verb in past perfect",
+            "transformations": [
+                "base form (drag on)",
+                "past-participle form"
+            ]
+        },
+        {
+            "id": "pos_l110_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Within that same sentence, 'that' is functioning as a:",
+            "targetWord": "that",
+            "sentence": "Even though the negotiations had dragged on for hours, both sides finally reached an agreement that satisfied everyone in the room, which relieved the exhausted mediator.",
+            "options": [
+                "Adjective",
+                "Noun",
+                "Conjunction",
+                "Pronoun"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Pronoun",
+            "hint": "This word introduces a clause describing one specific noun just before it. What does the clause 'that satisfied everyone in the room' describe?",
+            "explanation": "'That' is a relative pronoun introducing a clause describing 'an agreement' specifically — this is a restrictive clause, telling us exactly which agreement is meant.",
+            "grammarRule": "Relative pronoun introducing a restrictive clause",
+            "transformations": [
+                "relative use",
+                "demonstrative use"
+            ]
+        },
+        {
+            "id": "pos_l110_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In that same sentence, what part of speech is 'which'?",
+            "targetWord": "which",
+            "sentence": "Even though the negotiations had dragged on for hours, both sides finally reached an agreement that satisfied everyone in the room, which relieved the exhausted mediator.",
+            "options": [
+                "Noun",
+                "Pronoun",
+                "Verb",
+                "Conjunction"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "Unlike the previous word, this word refers back to an entire situation rather than one specific noun. What does 'which' refer to here?",
+            "explanation": "'Which' is a relative pronoun referring back to the whole idea of both sides reaching an agreement — contrast this with 'that' earlier in the sentence, which described only the noun 'agreement' itself.",
+            "grammarRule": "Relative pronoun referring to a whole clause",
+            "transformations": [
+                "relative use",
+                "interrogative use"
+            ]
+        }
+    ]
+}

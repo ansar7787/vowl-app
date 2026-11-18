@@ -1,0 +1,898 @@
+{
+    "gameType": "partsOfSpeech",
+    "phase": "practice",
+    "batchIndex": 1,
+    "levels": "1-10",
+    "quests": [
+        {
+            "id": "pos_l1_practice_q1",
+            "level": 1,
+            "targetPartOfSpeech": "Noun",
+            "instruction": "Find the Noun in this sentence",
+            "sentence": "Grandma Rose is baking cookies in the kitchen right now.",
+            "targetWord": "kitchen",
+            "words": [
+                "Grandma",
+                "Rose",
+                "is",
+                "baking",
+                "cookies",
+                "in",
+                "the",
+                "kitchen",
+                "right",
+                "now"
+            ],
+            "options": [
+                "Adverb",
+                "Adjective",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswer": "Noun",
+            "hint": "Nouns name people, places, things, or ideas. What place is mentioned here?",
+            "explanation": "'Kitchen' is a noun because it names a place — the room where Grandma Rose is baking. Nouns identify people, places, things, or ideas."
+        },
+        {
+            "id": "pos_l1_practice_q2",
+            "level": 1,
+            "targetPartOfSpeech": "Verb",
+            "instruction": "Find the Verb in this sentence",
+            "sentence": "The referee whistled sharply to stop the game.",
+            "targetWord": "whistled",
+            "words": [
+                "The",
+                "referee",
+                "whistled",
+                "sharply",
+                "to",
+                "stop",
+                "the",
+                "game"
+            ],
+            "options": [
+                "Noun",
+                "Adverb",
+                "Adjective",
+                "Verb"
+            ],
+            "correctAnswer": "Verb",
+            "hint": "Verbs show actions. What did the referee do?",
+            "explanation": "'Whistled' is a verb — it names the action the referee performed to stop the game. Past-tense verbs describe completed actions."
+        },
+        {
+            "id": "pos_l1_practice_q3",
+            "level": 1,
+            "targetPartOfSpeech": "Adjective",
+            "instruction": "Find the Adjective in this sentence",
+            "sentence": "The lake felt icy cold after the autumn rain.",
+            "targetWord": "cold",
+            "words": [
+                "The",
+                "lake",
+                "felt",
+                "icy",
+                "cold",
+                "after",
+                "the",
+                "autumn",
+                "rain"
+            ],
+            "options": [
+                "Verb",
+                "Noun",
+                "Adverb",
+                "Adjective"
+            ],
+            "correctAnswer": "Adjective",
+            "hint": "Adjectives describe nouns or pronouns. What does 'cold' tell us about the lake?",
+            "explanation": "'Cold' is an adjective describing the lake's temperature. It follows the linking verb 'felt' and tells us what the lake was like."
+        },
+        {
+            "id": "pos_l2_practice_q1",
+            "level": 2,
+            "targetPartOfSpeech": "Adverb",
+            "instruction": "Find the Adverb in this sentence",
+            "sentence": "Satomi closed the door quietly so she wouldn't wake the baby.",
+            "targetWord": "quietly",
+            "words": [
+                "Satomi",
+                "closed",
+                "the",
+                "door",
+                "quietly",
+                "so",
+                "she",
+                "wouldn't",
+                "wake",
+                "the",
+                "baby"
+            ],
+            "options": [
+                "Verb",
+                "Adverb",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswer": "Adverb",
+            "hint": "Adverbs often tell us how an action is done. How did Satomi close the door?",
+            "explanation": "'Quietly' is an adverb describing how Satomi closed the door — it modifies the verb 'closed' and tells us the manner of the action."
+        },
+        {
+            "id": "pos_l2_practice_q2",
+            "level": 2,
+            "targetPartOfSpeech": "Noun",
+            "instruction": "Find the Noun in this sentence",
+            "sentence": "The accountant emailed the invoice before lunch.",
+            "targetWord": "invoice",
+            "words": [
+                "The",
+                "accountant",
+                "emailed",
+                "the",
+                "invoice",
+                "before",
+                "lunch"
+            ],
+            "options": [
+                "Verb",
+                "Adverb",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswer": "Noun",
+            "hint": "Nouns name things, including documents. What object was emailed?",
+            "explanation": "'Invoice' is a noun — it names the document the accountant sent, and it acts as the object of the verb 'emailed'."
+        },
+        {
+            "id": "pos_l2_practice_q3",
+            "level": 2,
+            "targetPartOfSpeech": "Verb",
+            "instruction": "Find the Verb in this sentence",
+            "sentence": "The passengers boarded the train just as the doors began to close.",
+            "targetWord": "boarded",
+            "words": [
+                "The",
+                "passengers",
+                "boarded",
+                "the",
+                "train",
+                "just",
+                "as",
+                "the",
+                "doors",
+                "began",
+                "to",
+                "close"
+            ],
+            "options": [
+                "Verb",
+                "Noun",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswer": "Verb",
+            "hint": "Verbs express what someone does. What did the passengers do?",
+            "explanation": "'Boarded' is a verb showing the action the passengers took — getting onto the train before it departed."
+        },
+        {
+            "id": "pos_l3_practice_q1",
+            "level": 3,
+            "targetPartOfSpeech": "Verb",
+            "instruction": "Find the Verb in this sentence",
+            "sentence": "Every quarter, Mr. Alvarez negotiates new contracts with suppliers.",
+            "targetWord": "negotiates",
+            "words": [
+                "Every",
+                "quarter",
+                "Mr",
+                "Alvarez",
+                "negotiates",
+                "new",
+                "contracts",
+                "with",
+                "suppliers"
+            ],
+            "options": [
+                "Verb",
+                "Adverb",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswer": "Verb",
+            "hint": "Verbs show what a subject regularly does. What does Mr. Alvarez do every quarter?",
+            "explanation": "'Negotiates' is a verb describing Mr. Alvarez's repeated professional action. Present-tense verbs like this one describe habitual actions."
+        },
+        {
+            "id": "pos_l3_practice_q2",
+            "level": 3,
+            "targetPartOfSpeech": "Adjective",
+            "instruction": "Find the Adjective in this sentence",
+            "sentence": "The new apartment felt spacious compared to their old one.",
+            "targetWord": "spacious",
+            "words": [
+                "The",
+                "new",
+                "apartment",
+                "felt",
+                "spacious",
+                "compared",
+                "to",
+                "their",
+                "old",
+                "one"
+            ],
+            "options": [
+                "Verb",
+                "Adverb",
+                "Adjective",
+                "Noun"
+            ],
+            "correctAnswer": "Adjective",
+            "hint": "Adjectives describe qualities. What quality does 'spacious' give to the apartment?",
+            "explanation": "'Spacious' is an adjective describing the apartment's size. It follows the linking verb 'felt' rather than naming an action."
+        },
+        {
+            "id": "pos_l3_practice_q3",
+            "level": 3,
+            "targetPartOfSpeech": "Noun",
+            "instruction": "Find the Noun in this sentence",
+            "sentence": "The forecast predicted heavy snow across the valley this weekend.",
+            "targetWord": "forecast",
+            "words": [
+                "The",
+                "forecast",
+                "predicted",
+                "heavy",
+                "snow",
+                "across",
+                "the",
+                "valley",
+                "this",
+                "weekend"
+            ],
+            "options": [
+                "Verb",
+                "Adjective",
+                "Adverb",
+                "Noun"
+            ],
+            "correctAnswer": "Noun",
+            "hint": "Nouns can name reports or ideas, not just objects. What is doing the predicting here?",
+            "explanation": "'Forecast' is a noun here — it names the weather report that predicted snow, and it acts as the subject of the sentence."
+        },
+        {
+            "id": "pos_l4_practice_q1",
+            "level": 4,
+            "targetPartOfSpeech": "Adjective",
+            "instruction": "Find the Adjective in this sentence",
+            "sentence": "Noah gave a quick answer before rushing out the door.",
+            "targetWord": "quick",
+            "words": [
+                "Noah",
+                "gave",
+                "a",
+                "quick",
+                "answer",
+                "before",
+                "rushing",
+                "out",
+                "the",
+                "door"
+            ],
+            "options": [
+                "Noun",
+                "Adjective",
+                "Verb",
+                "Adverb"
+            ],
+            "correctAnswer": "Adjective",
+            "hint": "Adjectives describe nouns directly. Which noun does 'quick' sit next to and describe?",
+            "explanation": "'Quick' is an adjective modifying the noun 'answer' — it appears directly before the noun it describes. Compare this with 'quickly,' which would modify a verb instead of a noun."
+        },
+        {
+            "id": "pos_l4_practice_q2",
+            "level": 4,
+            "targetPartOfSpeech": "Adverb",
+            "instruction": "Find the Adverb in this sentence",
+            "sentence": "Noah answered the question quickly before rushing out the door.",
+            "targetWord": "quickly",
+            "words": [
+                "Noah",
+                "answered",
+                "the",
+                "question",
+                "quickly",
+                "before",
+                "rushing",
+                "out",
+                "the",
+                "door"
+            ],
+            "options": [
+                "Verb",
+                "Adverb",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswer": "Adverb",
+            "hint": "Adverbs often modify verbs. What does 'quickly' tell us about how Noah answered?",
+            "explanation": "Here 'quickly' is an adverb modifying the verb 'answered' — it tells us how the action was performed. Compare this with the earlier sentence, where 'quick' described the noun 'answer' instead of the verb."
+        },
+        {
+            "id": "pos_l4_practice_q3",
+            "level": 4,
+            "targetPartOfSpeech": "Verb",
+            "instruction": "Find the Verb in this sentence",
+            "sentence": "By the time the alarm rang, everyone had already rushed toward the exits.",
+            "targetWord": "rushed",
+            "words": [
+                "By",
+                "the",
+                "time",
+                "the",
+                "alarm",
+                "rang",
+                "everyone",
+                "had",
+                "already",
+                "rushed",
+                "toward",
+                "the",
+                "exits"
+            ],
+            "options": [
+                "Verb",
+                "Adverb",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswer": "Verb",
+            "hint": "Verbs describe what people do. What action did everyone take once the alarm rang?",
+            "explanation": "'Rushed' is a verb describing the action everyone performed — moving quickly toward the exits after the alarm sounded."
+        },
+        {
+            "id": "pos_l5_practice_q1",
+            "level": 5,
+            "targetPartOfSpeech": "Noun",
+            "instruction": "Find the Noun in this sentence",
+            "sentence": "The meeting ran twenty minutes longer than scheduled.",
+            "targetWord": "meeting",
+            "words": [
+                "The",
+                "meeting",
+                "ran",
+                "twenty",
+                "minutes",
+                "longer",
+                "than",
+                "scheduled"
+            ],
+            "options": [
+                "Noun",
+                "Adjective",
+                "Verb",
+                "Adverb"
+            ],
+            "correctAnswer": "Noun",
+            "hint": "Nouns can name events. What event ran longer than expected?",
+            "explanation": "'Meeting' is a noun here — it names the event that ran long and functions as the subject of the sentence."
+        },
+        {
+            "id": "pos_l5_practice_q2",
+            "level": 5,
+            "targetPartOfSpeech": "Verb",
+            "instruction": "Find the Verb in this sentence",
+            "sentence": "Please email the client before five o'clock today.",
+            "targetWord": "email",
+            "words": [
+                "Please",
+                "email",
+                "the",
+                "client",
+                "before",
+                "five",
+                "o'clock",
+                "today"
+            ],
+            "options": [
+                "Adjective",
+                "Verb",
+                "Adverb",
+                "Noun"
+            ],
+            "correctAnswer": "Verb",
+            "hint": "Verbs can be command words in instructions. What action is the reader asked to perform?",
+            "explanation": "'Email' functions as a verb here — it is the action the reader is instructed to do. The same word can act as a noun in other sentences, such as 'I sent an email.'"
+        },
+        {
+            "id": "pos_l5_practice_q3",
+            "level": 5,
+            "targetPartOfSpeech": "Adverb",
+            "instruction": "Find the Adverb in this sentence",
+            "sentence": "The clinic will reopen tomorrow after the holiday.",
+            "targetWord": "tomorrow",
+            "words": [
+                "The",
+                "clinic",
+                "will",
+                "reopen",
+                "tomorrow",
+                "after",
+                "the",
+                "holiday"
+            ],
+            "options": [
+                "Adjective",
+                "Verb",
+                "Noun",
+                "Adverb"
+            ],
+            "correctAnswer": "Adverb",
+            "hint": "Some adverbs tell us when something happens. When will the clinic reopen?",
+            "explanation": "'Tomorrow' is an adverb of time telling us when the clinic will reopen — it modifies the verb 'reopen'."
+        },
+        {
+            "id": "pos_l6_practice_q1",
+            "level": 6,
+            "targetPartOfSpeech": "Adjective",
+            "instruction": "Find the Adjective in this sentence",
+            "sentence": "After the double shift, the nurses looked exhausted but relieved.",
+            "targetWord": "exhausted",
+            "words": [
+                "After",
+                "the",
+                "double",
+                "shift",
+                "the",
+                "nurses",
+                "looked",
+                "exhausted",
+                "but",
+                "relieved"
+            ],
+            "options": [
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswer": "Adjective",
+            "hint": "Adjectives can describe how someone appears. What did the nurses look like?",
+            "explanation": "'Exhausted' is an adjective describing the nurses' condition after the linking verb 'looked'. Although it comes from a verb form, here it describes a state rather than an action."
+        },
+        {
+            "id": "pos_l6_practice_q2",
+            "level": 6,
+            "targetPartOfSpeech": "Noun",
+            "instruction": "Find the Noun in this sentence",
+            "sentence": "A long queue had formed outside the bakery before it even opened.",
+            "targetWord": "queue",
+            "words": [
+                "A",
+                "long",
+                "queue",
+                "had",
+                "formed",
+                "outside",
+                "the",
+                "bakery",
+                "before",
+                "it",
+                "even",
+                "opened"
+            ],
+            "options": [
+                "Adjective",
+                "Noun",
+                "Verb",
+                "Adverb"
+            ],
+            "correctAnswer": "Noun",
+            "hint": "Nouns name things, including groups of people. What formed outside the bakery?",
+            "explanation": "'Queue' is a noun naming the line of people waiting — it is the subject that had formed outside the bakery."
+        },
+        {
+            "id": "pos_l6_practice_q3",
+            "level": 6,
+            "targetPartOfSpeech": "Adverb",
+            "instruction": "Find the Adverb in this sentence",
+            "sentence": "Aunt Teresa always brings dessert to the family gathering.",
+            "targetWord": "always",
+            "words": [
+                "Aunt",
+                "Teresa",
+                "always",
+                "brings",
+                "dessert",
+                "to",
+                "the",
+                "family",
+                "gathering"
+            ],
+            "options": [
+                "Verb",
+                "Adjective",
+                "Noun",
+                "Adverb"
+            ],
+            "correctAnswer": "Adverb",
+            "hint": "Some adverbs tell us how often something happens. How often does Aunt Teresa bring dessert?",
+            "explanation": "'Always' is a frequency adverb modifying the verb 'brings' — it tells us how often the action happens, not what is being brought."
+        },
+        {
+            "id": "pos_l7_practice_q1",
+            "level": 7,
+            "targetPartOfSpeech": "Verb",
+            "instruction": "Find the Verb in this sentence",
+            "sentence": "During the lecture, Priya sketched a quick diagram of the process.",
+            "targetWord": "sketched",
+            "words": [
+                "During",
+                "the",
+                "lecture",
+                "Priya",
+                "sketched",
+                "a",
+                "quick",
+                "diagram",
+                "of",
+                "the",
+                "process"
+            ],
+            "options": [
+                "Adjective",
+                "Adverb",
+                "Verb",
+                "Noun"
+            ],
+            "correctAnswer": "Verb",
+            "hint": "Verbs show the action someone performs. What did Priya do during the lecture?",
+            "explanation": "'Sketched' is a verb describing Priya's action — drawing a quick diagram while the lecture was happening."
+        },
+        {
+            "id": "pos_l7_practice_q2",
+            "level": 7,
+            "targetPartOfSpeech": "Adjective",
+            "instruction": "Find the Adjective in this sentence",
+            "sentence": "The museum staff handled the fragile vase with both hands.",
+            "targetWord": "fragile",
+            "words": [
+                "The",
+                "museum",
+                "staff",
+                "handled",
+                "the",
+                "fragile",
+                "vase",
+                "with",
+                "both",
+                "hands"
+            ],
+            "options": [
+                "Adverb",
+                "Noun",
+                "Verb",
+                "Adjective"
+            ],
+            "correctAnswer": "Adjective",
+            "hint": "Adjectives describe qualities of nouns. What quality does 'fragile' give the vase?",
+            "explanation": "'Fragile' is an adjective modifying 'vase', describing how easily it could break. It sits directly before the noun it describes."
+        },
+        {
+            "id": "pos_l7_practice_q3",
+            "level": 7,
+            "targetPartOfSpeech": "Noun",
+            "instruction": "Find the Noun in this sentence",
+            "sentence": "The cashier handed over the receipt along with a small discount coupon.",
+            "targetWord": "receipt",
+            "words": [
+                "The",
+                "cashier",
+                "handed",
+                "over",
+                "the",
+                "receipt",
+                "along",
+                "with",
+                "a",
+                "small",
+                "discount",
+                "coupon"
+            ],
+            "options": [
+                "Adverb",
+                "Adjective",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswer": "Noun",
+            "hint": "Nouns name objects we receive. What object did the cashier hand over?",
+            "explanation": "'Receipt' is a noun naming the paper given to the customer — it functions as the direct object of 'handed over'."
+        },
+        {
+            "id": "pos_l8_practice_q1",
+            "level": 8,
+            "targetPartOfSpeech": "Adverb",
+            "instruction": "Find the Adverb in this sentence",
+            "sentence": "The children played outside until the streetlights came on.",
+            "targetWord": "outside",
+            "words": [
+                "The",
+                "children",
+                "played",
+                "outside",
+                "until",
+                "the",
+                "streetlights",
+                "came",
+                "on"
+            ],
+            "options": [
+                "Verb",
+                "Adverb",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswer": "Adverb",
+            "hint": "Adverbs can tell us where something happens. Where did the children play?",
+            "explanation": "'Outside' is an adverb of place, telling us where the children played — it modifies the verb 'played' without naming a specific object."
+        },
+        {
+            "id": "pos_l8_practice_q2",
+            "level": 8,
+            "targetPartOfSpeech": "Verb",
+            "instruction": "Find the Verb in this sentence",
+            "sentence": "The porch light flickered twice before finally going out.",
+            "targetWord": "flickered",
+            "words": [
+                "The",
+                "porch",
+                "light",
+                "flickered",
+                "twice",
+                "before",
+                "finally",
+                "going",
+                "out"
+            ],
+            "options": [
+                "Verb",
+                "Noun",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswer": "Verb",
+            "hint": "Verbs describe what something does. What did the porch light do?",
+            "explanation": "'Flickered' is a verb showing the action of the light — it names what happened, not what the light looked like."
+        },
+        {
+            "id": "pos_l8_practice_q3",
+            "level": 8,
+            "targetPartOfSpeech": "Adjective",
+            "instruction": "Find the Adjective in this sentence",
+            "sentence": "The technician replaced the broken screen on the tablet.",
+            "targetWord": "broken",
+            "words": [
+                "The",
+                "technician",
+                "replaced",
+                "the",
+                "broken",
+                "screen",
+                "on",
+                "the",
+                "tablet"
+            ],
+            "options": [
+                "Noun",
+                "Verb",
+                "Adverb",
+                "Adjective"
+            ],
+            "correctAnswer": "Adjective",
+            "hint": "Some words that look like verbs can describe nouns instead. What condition was the screen in?",
+            "explanation": "'Broken' functions here as an adjective describing the screen's condition, even though it comes from the verb 'break'. It sits directly before the noun it modifies."
+        },
+        {
+            "id": "pos_l9_practice_q1",
+            "level": 9,
+            "targetPartOfSpeech": "Noun",
+            "instruction": "Find the Noun in this sentence",
+            "sentence": "Before buying the laptop, Mei asked the assistant about the warranty.",
+            "targetWord": "warranty",
+            "words": [
+                "Before",
+                "buying",
+                "the",
+                "laptop",
+                "Mei",
+                "asked",
+                "the",
+                "assistant",
+                "about",
+                "the",
+                "warranty"
+            ],
+            "options": [
+                "Verb",
+                "Adverb",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswer": "Noun",
+            "hint": "Nouns can name agreements or guarantees. What did Mei ask about?",
+            "explanation": "'Warranty' is a noun naming the guarantee Mei asked about — it functions as the object of the preposition 'about'."
+        },
+        {
+            "id": "pos_l9_practice_q2",
+            "level": 9,
+            "targetPartOfSpeech": "Adjective",
+            "instruction": "Find the Adjective in this sentence",
+            "sentence": "The hikers followed a narrow path that wound along the cliff, and the wind grew stronger as they climbed.",
+            "targetWord": "narrow",
+            "words": [
+                "The",
+                "hikers",
+                "followed",
+                "a",
+                "narrow",
+                "path",
+                "that",
+                "wound",
+                "along",
+                "the",
+                "cliff",
+                "and",
+                "the",
+                "wind",
+                "grew",
+                "stronger",
+                "as",
+                "they",
+                "climbed"
+            ],
+            "options": [
+                "Verb",
+                "Adjective",
+                "Noun",
+                "Adverb"
+            ],
+            "correctAnswer": "Adjective",
+            "hint": "Adjectives describe the noun right next to them. What does 'narrow' tell us about the path?",
+            "explanation": "'Narrow' is an adjective modifying 'path', describing its width. It appears directly before the noun it describes, even inside this longer, two-part sentence."
+        },
+        {
+            "id": "pos_l9_practice_q3",
+            "level": 9,
+            "targetPartOfSpeech": "Adverb",
+            "instruction": "Find the Adverb in this sentence",
+            "sentence": "The wind grew steadily stronger as the hikers climbed higher along the ridge.",
+            "targetWord": "steadily",
+            "words": [
+                "The",
+                "wind",
+                "grew",
+                "steadily",
+                "stronger",
+                "as",
+                "the",
+                "hikers",
+                "climbed",
+                "higher",
+                "along",
+                "the",
+                "ridge"
+            ],
+            "options": [
+                "Adjective",
+                "Adverb",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswer": "Adverb",
+            "hint": "Some adverbs describe how a change happens. How did the wind grow stronger?",
+            "explanation": "'Steadily' is an adverb modifying the adjective 'stronger', describing the manner of the change. Adverbs can modify adjectives as well as verbs."
+        },
+        {
+            "id": "pos_l10_practice_q1",
+            "level": 10,
+            "targetPartOfSpeech": "Adverb",
+            "instruction": "Find the Adverb in this sentence",
+            "sentence": "After three phone calls and a long wait, the technician eventually arrived to fix the internet connection.",
+            "targetWord": "eventually",
+            "words": [
+                "After",
+                "three",
+                "phone",
+                "calls",
+                "and",
+                "a",
+                "long",
+                "wait",
+                "the",
+                "technician",
+                "eventually",
+                "arrived",
+                "to",
+                "fix",
+                "the",
+                "internet",
+                "connection"
+            ],
+            "options": [
+                "Adverb",
+                "Noun",
+                "Verb",
+                "Adjective"
+            ],
+            "correctAnswer": "Adverb",
+            "hint": "Some adverbs tell us when something finally happens. When did the technician arrive?",
+            "explanation": "'Eventually' is a time adverb modifying the verb 'arrived' — it tells us when the action finally took place, after the delay described earlier in the sentence."
+        },
+        {
+            "id": "pos_l10_practice_q2",
+            "level": 10,
+            "targetPartOfSpeech": "Noun",
+            "instruction": "Find the Noun in this sentence",
+            "sentence": "The technician finally repaired the connection just before the video call started.",
+            "targetWord": "connection",
+            "words": [
+                "The",
+                "technician",
+                "finally",
+                "repaired",
+                "the",
+                "connection",
+                "just",
+                "before",
+                "the",
+                "video",
+                "call",
+                "started"
+            ],
+            "options": [
+                "Verb",
+                "Adverb",
+                "Adjective",
+                "Noun"
+            ],
+            "correctAnswer": "Noun",
+            "hint": "Nouns can name services or links, not just physical objects. What did the technician repair?",
+            "explanation": "'Connection' is a noun naming the internet link that was repaired — it functions as the direct object of 'repaired'."
+        },
+        {
+            "id": "pos_l10_practice_q3",
+            "level": 10,
+            "targetPartOfSpeech": "Verb",
+            "instruction": "Find the Verb in this sentence",
+            "sentence": "As soon as the connection was fixed, the meeting resumed without any further interruptions.",
+            "targetWord": "resumed",
+            "words": [
+                "As",
+                "soon",
+                "as",
+                "the",
+                "connection",
+                "was",
+                "fixed",
+                "the",
+                "meeting",
+                "resumed",
+                "without",
+                "any",
+                "further",
+                "interruptions"
+            ],
+            "options": [
+                "Adjective",
+                "Adverb",
+                "Verb",
+                "Noun"
+            ],
+            "correctAnswer": "Verb",
+            "hint": "Verbs show what happened next. What did the meeting do once the problem was fixed?",
+            "explanation": "'Resumed' is a verb describing the action of the meeting starting again after the interruption — compare it with 'meeting', which names the event itself as a noun."
+        }
+    ]
+}

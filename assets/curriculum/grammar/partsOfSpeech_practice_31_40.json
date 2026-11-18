@@ -1,0 +1,888 @@
+{
+    "gameType": "partsOfSpeech",
+    "phase": "practice",
+    "batchIndex": 4,
+    "levels": "31-40",
+    "quests": [
+        {
+            "id": "pos_l31_practice_q1",
+            "level": 31,
+            "targetPartOfSpeech": "Verb",
+            "instruction": "Find the Verb in this sentence",
+            "sentence": "Please book the conference room for Thursday afternoon.",
+            "targetWord": "book",
+            "words": [
+                "Please",
+                "book",
+                "the",
+                "conference",
+                "room",
+                "for",
+                "Thursday",
+                "afternoon"
+            ],
+            "options": [
+                "Adjective",
+                "Noun",
+                "Adverb",
+                "Verb"
+            ],
+            "correctAnswer": "Verb",
+            "hint": "Some words can act as either a noun or a word depending on the sentence. What is the reader being asked to do here?",
+            "explanation": "'Book' functions as a verb here — it's the action the reader is instructed to perform, meaning to reserve something. In other sentences, 'book' can be a noun naming an object to read."
+        },
+        {
+            "id": "pos_l31_practice_q2",
+            "level": 31,
+            "targetPartOfSpeech": "Noun",
+            "instruction": "Find the Noun in this sentence",
+            "sentence": "Elias left his book on the train seat by mistake.",
+            "targetWord": "book",
+            "words": [
+                "Elias",
+                "left",
+                "his",
+                "book",
+                "on",
+                "the",
+                "train",
+                "seat",
+                "by",
+                "mistake"
+            ],
+            "options": [
+                "Verb",
+                "Noun",
+                "Adverb",
+                "Adjective"
+            ],
+            "correctAnswer": "Noun",
+            "hint": "The same word can also name a physical object. What did Elias leave behind?",
+            "explanation": "Here 'book' is a noun naming the object Elias left on the train — unlike the previous example, there is no instruction or action attached to it."
+        },
+        {
+            "id": "pos_l31_practice_q3",
+            "level": 31,
+            "targetPartOfSpeech": "Pronoun",
+            "instruction": "Find the Pronoun in this sentence",
+            "sentence": "Wendy treated herself to a coffee after the long shift.",
+            "targetWord": "herself",
+            "words": [
+                "Wendy",
+                "treated",
+                "herself",
+                "to",
+                "a",
+                "coffee",
+                "after",
+                "the",
+                "long",
+                "shift"
+            ],
+            "options": [
+                "Pronoun",
+                "Noun",
+                "Verb",
+                "Adjective"
+            ],
+            "correctAnswer": "Pronoun",
+            "hint": "Check the words directly around it for clues. Who did Wendy treat?",
+            "explanation": "'Herself' is a reflexive pronoun referring back to the subject 'Wendy' — it shows that she was both the one giving and receiving the treat."
+        },
+        {
+            "id": "pos_l32_practice_q1",
+            "level": 32,
+            "targetPartOfSpeech": "Noun",
+            "instruction": "Find the Noun in this sentence",
+            "sentence": "Grandma switched off the light before leaving the room.",
+            "targetWord": "light",
+            "words": [
+                "Grandma",
+                "switched",
+                "off",
+                "the",
+                "light",
+                "before",
+                "leaving",
+                "the",
+                "room"
+            ],
+            "options": [
+                "Adverb",
+                "Adjective",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswer": "Noun",
+            "hint": "The same word can name an object, describe a quality, or show an action. What object did Grandma switch off?",
+            "explanation": "'Light' is a noun here, naming the lamp or fixture Grandma turned off — it functions as the direct object of 'switched off'."
+        },
+        {
+            "id": "pos_l32_practice_q2",
+            "level": 32,
+            "targetPartOfSpeech": "Adjective",
+            "instruction": "Find the Adjective in this sentence",
+            "sentence": "The recipe called for a light, fluffy sponge cake.",
+            "targetWord": "light",
+            "words": [
+                "The",
+                "recipe",
+                "called",
+                "for",
+                "a",
+                "light",
+                "fluffy",
+                "sponge",
+                "cake"
+            ],
+            "options": [
+                "Noun",
+                "Adverb",
+                "Adjective",
+                "Verb"
+            ],
+            "correctAnswer": "Adjective",
+            "hint": "Now the same word describes a quality of the cake rather than naming an object. What quality does 'light' describe?",
+            "explanation": "'Light' functions as an adjective here, describing the airy texture of the cake — a different role from the noun use in the earlier sentence."
+        },
+        {
+            "id": "pos_l32_practice_q3",
+            "level": 32,
+            "targetPartOfSpeech": "Verb",
+            "instruction": "Find the Verb in this sentence",
+            "sentence": "The campers struggled to light the fire in the wind.",
+            "targetWord": "light",
+            "words": [
+                "The",
+                "campers",
+                "struggled",
+                "to",
+                "light",
+                "the",
+                "fire",
+                "in",
+                "the",
+                "wind"
+            ],
+            "options": [
+                "Adverb",
+                "Adjective",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswer": "Verb",
+            "hint": "Here the same word names an action instead of an object or quality. What were the campers trying to do?",
+            "explanation": "'Light' functions as a verb here, meaning to ignite — a third possible role for this word, alongside the noun and adjective uses seen earlier."
+        },
+        {
+            "id": "pos_l33_practice_q1",
+            "level": 33,
+            "targetPartOfSpeech": "Noun",
+            "instruction": "Find the Noun in this sentence",
+            "sentence": "Diego received a silver watch for his graduation.",
+            "targetWord": "watch",
+            "words": [
+                "Diego",
+                "received",
+                "a",
+                "silver",
+                "watch",
+                "for",
+                "his",
+                "graduation"
+            ],
+            "options": [
+                "Adverb",
+                "Noun",
+                "Verb",
+                "Adjective"
+            ],
+            "correctAnswer": "Noun",
+            "hint": "Notice what the word is attached to. What gift did Diego receive?",
+            "explanation": "'Watch' is a noun here, naming the object Diego received as a gift — it functions as the direct object of 'received'."
+        },
+        {
+            "id": "pos_l33_practice_q2",
+            "level": 33,
+            "targetPartOfSpeech": "Verb",
+            "instruction": "Find the Verb in this sentence",
+            "sentence": "The lifeguards watch the pool closely during busy afternoons.",
+            "targetWord": "watch",
+            "words": [
+                "The",
+                "lifeguards",
+                "watch",
+                "the",
+                "pool",
+                "closely",
+                "during",
+                "busy",
+                "afternoons"
+            ],
+            "options": [
+                "Verb",
+                "Adjective",
+                "Noun",
+                "Adverb"
+            ],
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name an action of observing. What do the lifeguards do to the pool?",
+            "explanation": "'Watch' functions as a verb here, describing the lifeguards' ongoing action of observing the pool — unlike the earlier sentence, where it named an object."
+        },
+        {
+            "id": "pos_l33_practice_q3",
+            "level": 33,
+            "targetPartOfSpeech": "Preposition",
+            "instruction": "Find the Preposition in this sentence",
+            "sentence": "The lifeguard stood beside the diving board all morning.",
+            "targetWord": "beside",
+            "words": [
+                "The",
+                "lifeguard",
+                "stood",
+                "beside",
+                "the",
+                "diving",
+                "board",
+                "all",
+                "morning"
+            ],
+            "options": [
+                "Noun",
+                "Verb",
+                "Preposition",
+                "Adverb"
+            ],
+            "correctAnswer": "Preposition",
+            "hint": "Look at what this word does in this exact sentence. Where did the lifeguard stand?",
+            "explanation": "'Beside' is a preposition introducing the phrase that shows the lifeguard's position next to the diving board."
+        },
+        {
+            "id": "pos_l34_practice_q1",
+            "level": 34,
+            "targetPartOfSpeech": "Adjective",
+            "instruction": "Find the Adjective in this sentence",
+            "sentence": "The mechanic wiped the engine until it looked clean.",
+            "targetWord": "clean",
+            "words": [
+                "The",
+                "mechanic",
+                "wiped",
+                "the",
+                "engine",
+                "until",
+                "it",
+                "looked",
+                "clean"
+            ],
+            "options": [
+                "Verb",
+                "Adjective",
+                "Noun",
+                "Adverb"
+            ],
+            "correctAnswer": "Adjective",
+            "hint": "Some words can describe a state as well as name an action. What state was the engine in after wiping?",
+            "explanation": "'Clean' is an adjective here, describing the engine's condition after the linking verb 'looked' — it does not describe an action being performed."
+        },
+        {
+            "id": "pos_l34_practice_q2",
+            "level": 34,
+            "targetPartOfSpeech": "Verb",
+            "instruction": "Find the Verb in this sentence",
+            "sentence": "Every Friday, the interns clean the shared kitchen.",
+            "targetWord": "clean",
+            "words": [
+                "Every",
+                "Friday",
+                "the",
+                "interns",
+                "clean",
+                "the",
+                "shared",
+                "kitchen"
+            ],
+            "options": [
+                "Verb",
+                "Adjective",
+                "Adverb",
+                "Noun"
+            ],
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name a regular action. What do the interns do to the kitchen every Friday?",
+            "explanation": "'Clean' functions as a verb here, describing the interns' weekly action — contrast this with the earlier sentence, where 'clean' described a resulting state rather than an action."
+        },
+        {
+            "id": "pos_l34_practice_q3",
+            "level": 34,
+            "targetPartOfSpeech": "Conjunction",
+            "instruction": "Find the Conjunction in this sentence",
+            "sentence": "The interns tidied the kitchen, for the manager was hosting guests.",
+            "targetWord": "for",
+            "words": [
+                "The",
+                "interns",
+                "tidied",
+                "the",
+                "kitchen",
+                "for",
+                "the",
+                "manager",
+                "was",
+                "hosting",
+                "guests"
+            ],
+            "options": [
+                "Verb",
+                "Preposition",
+                "Noun",
+                "Conjunction"
+            ],
+            "correctAnswer": "Conjunction",
+            "hint": "This short word usually introduces a reason here. Why did the interns tidy the kitchen?",
+            "explanation": "'For' functions as a coordinating conjunction here, meaning 'because' — it introduces the reason the interns tidied the kitchen, joining two independent clauses."
+        },
+        {
+            "id": "pos_l35_practice_q1",
+            "level": 35,
+            "targetPartOfSpeech": "Adjective",
+            "instruction": "Find the Adjective in this sentence",
+            "sentence": "The courier rides a fast motorbike through the city center.",
+            "targetWord": "fast",
+            "words": [
+                "The",
+                "courier",
+                "rides",
+                "a",
+                "fast",
+                "motorbike",
+                "through",
+                "the",
+                "city",
+                "center"
+            ],
+            "options": [
+                "Adverb",
+                "Adjective",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswer": "Adjective",
+            "hint": "Ask how it connects to the words near it. What quality does 'fast' give to the motorbike?",
+            "explanation": "'Fast' is an adjective here, modifying the noun 'motorbike' and describing its speed."
+        },
+        {
+            "id": "pos_l35_practice_q2",
+            "level": 35,
+            "targetPartOfSpeech": "Adverb",
+            "instruction": "Find the Adverb in this sentence",
+            "sentence": "The courier rides fast through the city center every morning.",
+            "targetWord": "fast",
+            "words": [
+                "The",
+                "courier",
+                "rides",
+                "fast",
+                "through",
+                "the",
+                "city",
+                "center",
+                "every",
+                "morning"
+            ],
+            "options": [
+                "Adverb",
+                "Adjective",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswer": "Adverb",
+            "hint": "Now there's no noun directly after 'fast.' What does it describe instead?",
+            "explanation": "Here 'fast' is an adverb modifying the verb 'rides' — it describes how the courier rides rather than describing a noun. Notice that 'fast' keeps the same spelling in both its adjective and adverb forms."
+        },
+        {
+            "id": "pos_l35_practice_q3",
+            "level": 35,
+            "targetPartOfSpeech": "Verb",
+            "instruction": "Find the Verb in this sentence",
+            "sentence": "The courier navigates the narrow alleys before rush hour begins.",
+            "targetWord": "navigates",
+            "words": [
+                "The",
+                "courier",
+                "navigates",
+                "the",
+                "narrow",
+                "alleys",
+                "before",
+                "rush",
+                "hour",
+                "begins"
+            ],
+            "options": [
+                "Noun",
+                "Adjective",
+                "Verb",
+                "Adverb"
+            ],
+            "correctAnswer": "Verb",
+            "hint": "Look at what this word does in this exact sentence. What does the courier do with the narrow alleys?",
+            "explanation": "'Navigates' is a verb describing the courier's action of finding a way through the alleys."
+        },
+        {
+            "id": "pos_l36_practice_q1",
+            "level": 36,
+            "targetPartOfSpeech": "Noun",
+            "instruction": "Find the Noun in this sentence",
+            "sentence": "A sharp pain shot through her back after the long flight.",
+            "targetWord": "back",
+            "words": [
+                "A",
+                "sharp",
+                "pain",
+                "shot",
+                "through",
+                "her",
+                "back",
+                "after",
+                "the",
+                "long",
+                "flight"
+            ],
+            "options": [
+                "Adverb",
+                "Verb",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswer": "Noun",
+            "hint": "Think about the job it performs here. What body part is mentioned here?",
+            "explanation": "'Back' is a noun here, naming the part of the body where the pain occurred."
+        },
+        {
+            "id": "pos_l36_practice_q2",
+            "level": 36,
+            "targetPartOfSpeech": "Adverb",
+            "instruction": "Find the Adverb in this sentence",
+            "sentence": "The manager asked everyone to step back from the counter.",
+            "targetWord": "back",
+            "words": [
+                "The",
+                "manager",
+                "asked",
+                "everyone",
+                "to",
+                "step",
+                "back",
+                "from",
+                "the",
+                "counter"
+            ],
+            "options": [
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswer": "Adverb",
+            "hint": "The same word can also show direction of movement. Which way were people asked to step?",
+            "explanation": "'Back' functions as an adverb here, showing the direction of the requested movement — a different role from the noun use naming a body part."
+        },
+        {
+            "id": "pos_l36_practice_q3",
+            "level": 36,
+            "targetPartOfSpeech": "Adjective",
+            "instruction": "Find the Adjective in this sentence",
+            "sentence": "They used the back entrance because the front was locked.",
+            "targetWord": "back",
+            "words": [
+                "They",
+                "used",
+                "the",
+                "back",
+                "entrance",
+                "because",
+                "the",
+                "front",
+                "was",
+                "locked"
+            ],
+            "options": [
+                "Verb",
+                "Adjective",
+                "Noun",
+                "Adverb"
+            ],
+            "correctAnswer": "Adjective",
+            "hint": "Now the word directly describes which entrance is meant. What quality does 'back' give the entrance?",
+            "explanation": "'Back' functions as an adjective here, modifying 'entrance' and specifying which one is meant, in contrast to the front entrance."
+        },
+        {
+            "id": "pos_l37_practice_q1",
+            "level": 37,
+            "targetPartOfSpeech": "Noun",
+            "instruction": "Find the Noun in this sentence",
+            "sentence": "There was too much work left before the deadline.",
+            "targetWord": "work",
+            "words": [
+                "There",
+                "was",
+                "too",
+                "much",
+                "work",
+                "left",
+                "before",
+                "the",
+                "deadline"
+            ],
+            "options": [
+                "Noun",
+                "Adjective",
+                "Verb",
+                "Adverb"
+            ],
+            "correctAnswer": "Noun",
+            "hint": "Check the words directly around it for clues. What was left before the deadline?",
+            "explanation": "'Work' is a noun here, naming the tasks that remained — it is the thing said to exist in the 'There was...' construction."
+        },
+        {
+            "id": "pos_l37_practice_q2",
+            "level": 37,
+            "targetPartOfSpeech": "Verb",
+            "instruction": "Find the Verb in this sentence",
+            "sentence": "Both of them work night shifts at the hospital.",
+            "targetWord": "work",
+            "words": [
+                "Both",
+                "of",
+                "them",
+                "work",
+                "night",
+                "shifts",
+                "at",
+                "the",
+                "hospital"
+            ],
+            "options": [
+                "Adjective",
+                "Verb",
+                "Adverb",
+                "Noun"
+            ],
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name a regular action. What do both people do at the hospital?",
+            "explanation": "'Work' functions as a verb here, describing the regular action performed by both people — contrast this with the earlier noun use naming a quantity of tasks."
+        },
+        {
+            "id": "pos_l37_practice_q3",
+            "level": 37,
+            "targetPartOfSpeech": "Pronoun",
+            "instruction": "Find the Pronoun in this sentence",
+            "sentence": "They arrived early to prepare for the night shift.",
+            "targetWord": "They",
+            "words": [
+                "They",
+                "arrived",
+                "early",
+                "to",
+                "prepare",
+                "for",
+                "the",
+                "night",
+                "shift"
+            ],
+            "options": [
+                "Verb",
+                "Noun",
+                "Adjective",
+                "Pronoun"
+            ],
+            "correctAnswer": "Pronoun",
+            "hint": "Ask how it connects to the words near it. Who arrived early?",
+            "explanation": "'They' is a personal pronoun functioning as the subject of the sentence, referring to a group of people already known from context."
+        },
+        {
+            "id": "pos_l38_practice_q1",
+            "level": 38,
+            "targetPartOfSpeech": "Noun",
+            "instruction": "Find the Noun in this sentence",
+            "sentence": "The children's play received a standing ovation from parents.",
+            "targetWord": "play",
+            "words": [
+                "The",
+                "children's",
+                "play",
+                "received",
+                "a",
+                "standing",
+                "ovation",
+                "from",
+                "parents"
+            ],
+            "options": [
+                "Noun",
+                "Verb",
+                "Adverb",
+                "Adjective"
+            ],
+            "correctAnswer": "Noun",
+            "hint": "Look at what this word does in this exact sentence. What received the ovation?",
+            "explanation": "'Play' is a noun here, naming the performance the children put on — it functions as the subject of the sentence."
+        },
+        {
+            "id": "pos_l38_practice_q2",
+            "level": 38,
+            "targetPartOfSpeech": "Verb",
+            "instruction": "Find the Verb in this sentence",
+            "sentence": "After dinner, the kids play board games in the living room.",
+            "targetWord": "play",
+            "words": [
+                "After",
+                "dinner",
+                "the",
+                "kids",
+                "play",
+                "board",
+                "games",
+                "in",
+                "the",
+                "living",
+                "room"
+            ],
+            "options": [
+                "Verb",
+                "Noun",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name a regular action. What do the kids do after dinner?",
+            "explanation": "'Play' functions as a verb here, describing the kids' regular activity — contrast this with the earlier noun use naming a performance."
+        },
+        {
+            "id": "pos_l38_practice_q3",
+            "level": 38,
+            "targetPartOfSpeech": "Adverb",
+            "instruction": "Find the Adverb in this sentence",
+            "sentence": "The negotiations dragged on unnecessarily long.",
+            "targetWord": "unnecessarily",
+            "words": [
+                "The",
+                "negotiations",
+                "dragged",
+                "on",
+                "unnecessarily",
+                "long"
+            ],
+            "options": [
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswer": "Adverb",
+            "hint": "Let the sentence, not the spelling, decide. How long did the negotiations drag on, according to the speaker?",
+            "explanation": "'Unnecessarily' is a degree adverb modifying the adjective 'long', showing the speaker's judgment that the delay was excessive."
+        },
+        {
+            "id": "pos_l39_practice_q1",
+            "level": 39,
+            "targetPartOfSpeech": "Noun",
+            "instruction": "Find the Noun in this sentence",
+            "sentence": "Her answer surprised everyone on the panel.",
+            "targetWord": "answer",
+            "words": [
+                "Her",
+                "answer",
+                "surprised",
+                "everyone",
+                "on",
+                "the",
+                "panel"
+            ],
+            "options": [
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswer": "Noun",
+            "hint": "Think about the job it performs here. What surprised the panel?",
+            "explanation": "'Answer' is a noun here, naming the response that surprised the panel — it functions as the subject of the sentence."
+        },
+        {
+            "id": "pos_l39_practice_q2",
+            "level": 39,
+            "targetPartOfSpeech": "Verb",
+            "instruction": "Find the Verb in this sentence",
+            "sentence": "Please answer the question honestly.",
+            "targetWord": "answer",
+            "words": [
+                "Please",
+                "answer",
+                "the",
+                "question",
+                "honestly"
+            ],
+            "options": [
+                "Verb",
+                "Noun",
+                "Adverb",
+                "Adjective"
+            ],
+            "correctAnswer": "Verb",
+            "hint": "The same word can also name an action. What is the reader being asked to do?",
+            "explanation": "'Answer' functions as a verb here, the action the reader is instructed to perform — contrast this with the earlier noun use naming the response itself."
+        },
+        {
+            "id": "pos_l39_practice_q3",
+            "level": 39,
+            "targetPartOfSpeech": "Noun",
+            "instruction": "Find the Noun in this sentence",
+            "sentence": "A small change in the schedule caused confusion.",
+            "targetWord": "change",
+            "words": [
+                "A",
+                "small",
+                "change",
+                "in",
+                "the",
+                "schedule",
+                "caused",
+                "confusion"
+            ],
+            "options": [
+                "Verb",
+                "Adjective",
+                "Noun",
+                "Adverb"
+            ],
+            "correctAnswer": "Noun",
+            "hint": "Set aside what you know about this word in general. What caused the confusion?",
+            "explanation": "'Change' is a noun here, naming the modification to the schedule that caused confusion — it functions as the subject of the sentence."
+        },
+        {
+            "id": "pos_l40_practice_q1",
+            "level": 40,
+            "targetPartOfSpeech": "Verb",
+            "instruction": "Find the Verb in this sentence",
+            "sentence": "Before the game, Coach Lee called a quick team meeting, and everyone agreed to change the starting lineup at the last minute.",
+            "targetWord": "called",
+            "words": [
+                "Before",
+                "the",
+                "game",
+                "Coach",
+                "Lee",
+                "called",
+                "a",
+                "quick",
+                "team",
+                "meeting",
+                "and",
+                "everyone",
+                "agreed",
+                "to",
+                "change",
+                "the",
+                "starting",
+                "lineup",
+                "at",
+                "the",
+                "last",
+                "minute"
+            ],
+            "options": [
+                "Adjective",
+                "Adverb",
+                "Verb",
+                "Noun"
+            ],
+            "correctAnswer": "Verb",
+            "hint": "Check the words directly around it for clues. What action did Coach Lee take before the game?",
+            "explanation": "'Called' is a verb describing Coach Lee's action of gathering the team together for a meeting."
+        },
+        {
+            "id": "pos_l40_practice_q2",
+            "level": 40,
+            "targetPartOfSpeech": "Adjective",
+            "instruction": "Find the Adjective in this sentence",
+            "sentence": "Before the game, Coach Lee called a quick team meeting, and everyone agreed to change the starting lineup at the last minute.",
+            "targetWord": "quick",
+            "words": [
+                "Before",
+                "the",
+                "game",
+                "Coach",
+                "Lee",
+                "called",
+                "a",
+                "quick",
+                "team",
+                "meeting",
+                "and",
+                "everyone",
+                "agreed",
+                "to",
+                "change",
+                "the",
+                "starting",
+                "lineup",
+                "at",
+                "the",
+                "last",
+                "minute"
+            ],
+            "options": [
+                "Noun",
+                "Verb",
+                "Adverb",
+                "Adjective"
+            ],
+            "correctAnswer": "Adjective",
+            "hint": "Set aside what you know about this word in general. What kind of meeting did Coach Lee call?",
+            "explanation": "'Quick' is an adjective modifying 'meeting', describing how brief the gathering was — just as 'quick' modified 'answer' back in an earlier lesson."
+        },
+        {
+            "id": "pos_l40_practice_q3",
+            "level": 40,
+            "targetPartOfSpeech": "Verb",
+            "instruction": "Find the Verb in this sentence",
+            "sentence": "Before the game, Coach Lee called a quick team meeting, and everyone agreed to change the starting lineup at the last minute.",
+            "targetWord": "change",
+            "words": [
+                "Before",
+                "the",
+                "game",
+                "Coach",
+                "Lee",
+                "called",
+                "a",
+                "quick",
+                "team",
+                "meeting",
+                "and",
+                "everyone",
+                "agreed",
+                "to",
+                "change",
+                "the",
+                "starting",
+                "lineup",
+                "at",
+                "the",
+                "last",
+                "minute"
+            ],
+            "options": [
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswer": "Verb",
+            "hint": "Here the same word from an earlier lesson names an action instead of a thing. What did everyone agree to do to the lineup?",
+            "explanation": "'Change' functions as a verb here, meaning to alter the lineup — contrast this with the earlier sentence where 'change' was a noun naming the modification itself."
+        }
+    ]
+}

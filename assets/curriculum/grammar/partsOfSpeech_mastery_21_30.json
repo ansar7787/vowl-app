@@ -1,0 +1,728 @@
+{
+    "gameType": "partsOfSpeech",
+    "phase": "mastery",
+    "batchIndex": 3,
+    "levels": "21-30",
+    "quests": [
+        {
+            "id": "pos_l21_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which grammatical category best describes 'mine' here?",
+            "targetWord": "mine",
+            "sentence": "The blue jacket on the chair is mine, not Farah's.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Pronoun",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Pronoun",
+            "hint": "Focus on its role in this sentence only. Whose jacket is being identified?",
+            "explanation": "'Mine' is a possessive pronoun standing alone in place of 'my jacket' — it shows ownership without repeating the noun.",
+            "grammarRule": "Possessive pronoun standing alone as a predicate",
+            "transformations": [
+                "subject form",
+                "possessive form"
+            ]
+        },
+        {
+            "id": "pos_l21_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What grammatical job does 'chair' do in this sentence?",
+            "targetWord": "chair",
+            "sentence": "Farah pulled up a chair and joined the discussion.",
+            "options": [
+                "Noun",
+                "Adverb",
+                "Verb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Ask how it connects to the words near it. What object did Farah pull up?",
+            "explanation": "'Chair' is a noun naming the object Farah moved — it functions as the direct object of 'pulled up'.",
+            "grammarRule": "Common noun functioning as a direct object",
+            "transformations": [
+                "singular form",
+                "plural form"
+            ]
+        },
+        {
+            "id": "pos_l21_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "How is 'joined' functioning in this sentence?",
+            "targetWord": "joined",
+            "sentence": "Farah joined the discussion just as the topic shifted to budgets.",
+            "options": [
+                "Verb",
+                "Adverb",
+                "Adjective",
+                "Noun"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Verb",
+            "hint": "Let the sentence, not the spelling, decide. What action did Farah take?",
+            "explanation": "'Joined' is a verb describing Farah's action of entering the discussion.",
+            "grammarRule": "Action verb in past tense",
+            "transformations": [
+                "base form",
+                "past-tense form"
+            ]
+        },
+        {
+            "id": "pos_l22_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which part of speech does 'Who' represent in this sentence?",
+            "targetWord": "Who",
+            "sentence": "Who left the porch light on all night?",
+            "options": [
+                "Adjective",
+                "Verb",
+                "Noun",
+                "Pronoun"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Pronoun",
+            "hint": "Look at what this word does in this exact sentence. What word is asking about the person who did this?",
+            "explanation": "'Who' is an interrogative pronoun asking about the unknown person responsible for leaving the light on — it functions as the subject of the question.",
+            "grammarRule": "Interrogative pronoun functioning as the subject",
+            "transformations": [
+                "subject form",
+                "object form (whom)"
+            ]
+        },
+        {
+            "id": "pos_l22_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which Part of Speech is represented by 'beyond' here?",
+            "targetWord": "beyond",
+            "sentence": "The trail continued beyond the old wooden bridge.",
+            "options": [
+                "Verb",
+                "Preposition",
+                "Adjective",
+                "Noun"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Preposition",
+            "hint": "Ask how it connects to the words near it. Where did the trail continue to?",
+            "explanation": "'Beyond' is a preposition introducing a phrase that shows where the trail kept going, past the bridge.",
+            "grammarRule": "Preposition introducing a location phrase",
+            "transformations": [
+                "preposition use",
+                "related adverb use"
+            ]
+        },
+        {
+            "id": "pos_l22_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which part of speech is 'wooden' as it is used here?",
+            "targetWord": "wooden",
+            "sentence": "The carpenter repaired the wooden railing on the porch.",
+            "options": [
+                "Verb",
+                "Noun",
+                "Adverb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "Look at what this word does in this exact sentence. What material describes the railing?",
+            "explanation": "'Wooden' is an adjective modifying 'railing', telling us what material it is made of.",
+            "grammarRule": "Attributive adjective modifying a noun",
+            "transformations": [
+                "adjective form",
+                "related noun (wood)"
+            ]
+        },
+        {
+            "id": "pos_l23_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What role does 'up' play in this sentence?",
+            "targetWord": "up",
+            "sentence": "The kitten climbed up the bookshelf before anyone noticed.",
+            "options": [
+                "Preposition",
+                "Verb",
+                "Adverb",
+                "Noun"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Preposition",
+            "hint": "When a word like 'up' is followed by an object, it usually introduces a phrase. What does 'up' introduce here?",
+            "explanation": "'Up' functions as a preposition here because it introduces the noun phrase 'the bookshelf,' showing the direction of the climb relative to that object.",
+            "grammarRule": "Preposition introducing a direction phrase",
+            "transformations": [
+                "preposition use",
+                "adverb use"
+            ]
+        },
+        {
+            "id": "pos_l23_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Now what part of speech is 'up' in this sentence?",
+            "targetWord": "up",
+            "sentence": "The kitten looked up just as the door creaked open.",
+            "options": [
+                "Noun",
+                "Adjective",
+                "Adverb",
+                "Verb"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "When 'up' has no object after it, it usually modifies the verb instead. What does 'up' tell us here?",
+            "explanation": "Here 'up' is an adverb modifying 'looked' — there is no following noun phrase, so it simply describes the direction of the kitten's glance. Compare this with the earlier sentence, where 'up' introduced a phrase and acted as a preposition.",
+            "grammarRule": "Direction adverb modifying a verb",
+            "transformations": [
+                "preposition use",
+                "adverb use"
+            ]
+        },
+        {
+            "id": "pos_l23_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "The word 'creaked' is being used as which grammatical category?",
+            "targetWord": "creaked",
+            "sentence": "The old hinge creaked every time someone opened the gate.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Adverb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Verb",
+            "hint": "Let the sentence, not the spelling, decide. What did the hinge do?",
+            "explanation": "'Creaked' is a verb describing the sound the hinge made each time the gate opened.",
+            "grammarRule": "Action verb describing a physical process",
+            "transformations": [
+                "base form",
+                "past-tense form"
+            ]
+        },
+        {
+            "id": "pos_l24_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What part of speech is 'yet' in this sentence?",
+            "targetWord": "yet",
+            "sentence": "The proposal was risky, yet the board approved it unanimously.",
+            "options": [
+                "Verb",
+                "Conjunction",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Conjunction",
+            "hint": "Focus on its role in this sentence only. What word signals that surprise here?",
+            "explanation": "'Yet' is a coordinating conjunction joining two independent clauses that contrast — the risk of the proposal and the board's approval despite it.",
+            "grammarRule": "Coordinating conjunction showing contrast",
+            "transformations": [
+                "conjunction use",
+                "related conjunction (but)"
+            ]
+        },
+        {
+            "id": "pos_l24_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What role does 'nor' play in this sentence?",
+            "targetWord": "nor",
+            "sentence": "Naledi hadn't finished the report, nor had she started the presentation.",
+            "options": [
+                "Adjective",
+                "Noun",
+                "Verb",
+                "Conjunction"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Conjunction",
+            "hint": "This word pairs with a negative word earlier in the sentence to add a second negative idea. What links these two negatives?",
+            "explanation": "'Nor' is a coordinating conjunction that continues the negative idea from 'hadn't,' joining two things Naledi had not done.",
+            "grammarRule": "Coordinating conjunction continuing a negative statement",
+            "transformations": [
+                "conjunction use",
+                "related conjunction (or)"
+            ]
+        },
+        {
+            "id": "pos_l24_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which category fits 'presentation' in this sentence?",
+            "targetWord": "presentation",
+            "sentence": "Naledi rehearsed her presentation twice before the client call.",
+            "options": [
+                "Verb",
+                "Adverb",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Noun",
+            "hint": "Ask how it connects to the words near it. What did Naledi rehearse?",
+            "explanation": "'Presentation' is a noun naming the talk Naledi prepared — it functions as the direct object of 'rehearsed'.",
+            "grammarRule": "Common noun functioning as a direct object",
+            "transformations": [
+                "singular form",
+                "plural form"
+            ]
+        },
+        {
+            "id": "pos_l25_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Identify the part of speech of 'Ugh' in this context.",
+            "targetWord": "Ugh",
+            "sentence": "\"Ugh, the printer is jammed again,\" Oliver muttered under his breath.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Interjection"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Interjection",
+            "hint": "Focus on its role in this sentence only. What word shows Oliver's frustration?",
+            "explanation": "'Ugh' is an interjection expressing annoyance — it stands grammatically separate from the statement that follows it.",
+            "grammarRule": "Interjection expressing frustration",
+            "transformations": [
+                "interjection use",
+                "related exclamation"
+            ]
+        },
+        {
+            "id": "pos_l25_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which grammatical category best describes 'jammed' here?",
+            "targetWord": "jammed",
+            "sentence": "The hallway was narrow and jammed with boxes after the delivery.",
+            "options": [
+                "Verb",
+                "Adjective",
+                "Adverb",
+                "Noun"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Some words from verbs can describe a state or condition. What condition was the hallway in?",
+            "explanation": "'Jammed' functions here as an adjective describing the hallway's condition after the linking verb 'was' — paired with 'narrow', it describes a state rather than an ongoing action.",
+            "grammarRule": "Participial adjective following a linking verb",
+            "transformations": [
+                "verb form",
+                "adjective form"
+            ]
+        },
+        {
+            "id": "pos_l25_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In this context, what part of speech is 'hardly'?",
+            "targetWord": "hardly",
+            "sentence": "Ms. Bright could hardly hear the announcement over the noise.",
+            "options": [
+                "Noun",
+                "Adverb",
+                "Adjective",
+                "Verb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adverb",
+            "hint": "Think about the job it performs here. How well could Ms. Bright hear?",
+            "explanation": "'Hardly' is a degree adverb modifying the verb 'hear' — it shows that she was barely able to hear the announcement.",
+            "grammarRule": "Degree adverb modifying a verb",
+            "transformations": [
+                "adverb use",
+                "related adjective"
+            ]
+        },
+        {
+            "id": "pos_l26_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Based on how it is used here, 'across' is a:",
+            "targetWord": "across",
+            "sentence": "After the delivery driver dropped off the package, she waved to him from across the street.",
+            "options": [
+                "Preposition",
+                "Pronoun",
+                "Noun",
+                "Verb"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Preposition",
+            "hint": "Focus on its role in this sentence only. Where was he standing relative to her?",
+            "explanation": "'Across' is a preposition introducing the phrase that shows the spatial relationship between the two people — she was on the opposite side of the street from him.",
+            "grammarRule": "Preposition introducing a location phrase",
+            "transformations": [
+                "preposition use",
+                "related adverb use"
+            ]
+        },
+        {
+            "id": "pos_l26_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Back in that same sentence, what kind of word is 'him'?",
+            "targetWord": "him",
+            "sentence": "After the delivery driver dropped off the package, she waved to him from across the street.",
+            "options": [
+                "Preposition",
+                "Pronoun",
+                "Verb",
+                "Noun"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "Ask how it connects to the words near it. Who did she wave to?",
+            "explanation": "'Him' is a personal pronoun functioning as the object of the preposition 'to' — it refers back to the delivery driver without repeating his role.",
+            "grammarRule": "Personal pronoun functioning as the object of a preposition",
+            "transformations": [
+                "subject form",
+                "object form"
+            ]
+        },
+        {
+            "id": "pos_l26_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "And what part of speech is 'waved' in that sentence?",
+            "targetWord": "waved",
+            "sentence": "After the delivery driver dropped off the package, she waved to him from across the street.",
+            "options": [
+                "Noun",
+                "Adjective",
+                "Verb",
+                "Pronoun"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Verb",
+            "hint": "Notice what the word is attached to. What did she do to greet him?",
+            "explanation": "'Waved' is a verb describing her action of greeting the driver from a distance.",
+            "grammarRule": "Action verb in past tense",
+            "transformations": [
+                "base form",
+                "past-tense form"
+            ]
+        },
+        {
+            "id": "pos_l27_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Classify 'those' as it appears in this sentence.",
+            "targetWord": "those",
+            "sentence": "Of all the samples on the table, those are the freshest.",
+            "options": [
+                "Verb",
+                "Adjective",
+                "Noun",
+                "Pronoun"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Pronoun",
+            "hint": "Look at what this word does in this exact sentence. What is 'those' replacing?",
+            "explanation": "'Those' is a demonstrative pronoun referring back to a specific group of samples — it functions as the subject of the second clause.",
+            "grammarRule": "Demonstrative pronoun functioning as the subject",
+            "transformations": [
+                "singular form (that)",
+                "plural form"
+            ]
+        },
+        {
+            "id": "pos_l27_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What kind of word is 'freshly' in this sentence?",
+            "targetWord": "freshly",
+            "sentence": "Hana served the bread freshly baked from the oven.",
+            "options": [
+                "Adjective",
+                "Verb",
+                "Adverb",
+                "Noun"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Set aside what you know about this word in general. How recently was the bread baked?",
+            "explanation": "'Freshly' is a manner adverb modifying the participial adjective 'baked', describing how recently the bread came out of the oven.",
+            "grammarRule": "Manner adverb modifying a participial adjective",
+            "transformations": [
+                "adjective form",
+                "adverb form"
+            ]
+        },
+        {
+            "id": "pos_l27_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "How is 'oven' functioning in this sentence?",
+            "targetWord": "oven",
+            "sentence": "The oven overheated halfway through the baking class.",
+            "options": [
+                "Noun",
+                "Adjective",
+                "Adverb",
+                "Verb"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Ask how it connects to the words near it. What object overheated?",
+            "explanation": "'Oven' is a noun naming the appliance that overheated — it functions as the subject of the sentence.",
+            "grammarRule": "Common noun functioning as the subject",
+            "transformations": [
+                "singular form",
+                "plural form"
+            ]
+        },
+        {
+            "id": "pos_l28_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In this context, what part of speech is 'along'?",
+            "targetWord": "along",
+            "sentence": "Dr. Chen walked along the corridor, checking each patient's chart.",
+            "options": [
+                "Noun",
+                "Preposition",
+                "Adjective",
+                "Verb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Preposition",
+            "hint": "Think about the job it performs here. Where did Dr. Chen walk?",
+            "explanation": "'Along' is a preposition introducing the phrase that shows the path Dr. Chen followed through the corridor.",
+            "grammarRule": "Preposition introducing a location phrase",
+            "transformations": [
+                "preposition use",
+                "related adverb use"
+            ]
+        },
+        {
+            "id": "pos_l28_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Looking at the same sentence, how is 'corridor' functioning?",
+            "targetWord": "corridor",
+            "sentence": "Dr. Chen walked along the corridor, checking each patient's chart.",
+            "options": [
+                "Adjective",
+                "Noun",
+                "Verb",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Noun",
+            "hint": "Look at what this word does in this exact sentence. What place does 'along' refer to here?",
+            "explanation": "'Corridor' is a noun naming the hallway — it functions as the object of the preposition 'along' in this sentence.",
+            "grammarRule": "Common noun functioning as the object of a preposition",
+            "transformations": [
+                "singular form",
+                "plural form"
+            ]
+        },
+        {
+            "id": "pos_l28_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which part of speech does 'urgent' represent in this sentence?",
+            "targetWord": "urgent",
+            "sentence": "Dr. Chen reviewed every urgent case before the shift ended.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Adverb"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "Think about the job it performs here. What quality does 'urgent' give to the case?",
+            "explanation": "'Urgent' is an adjective modifying 'case', describing its priority level.",
+            "grammarRule": "Attributive adjective modifying a noun",
+            "transformations": [
+                "positive form",
+                "comparative form"
+            ]
+        },
+        {
+            "id": "pos_l29_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Based on how it is used here, 'and' is a:",
+            "targetWord": "and",
+            "sentence": "The market sold spices, fabric, and handmade jewelry every Saturday.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Conjunction"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Conjunction",
+            "hint": "Ask how it connects to the words near it. What word joins 'handmade jewelry' to the rest of the list?",
+            "explanation": "'And' is a coordinating conjunction connecting the final item in the list of things the market sold.",
+            "grammarRule": "Coordinating conjunction connecting items in a list",
+            "transformations": [
+                "conjunction use",
+                "related conjunction (or)"
+            ]
+        },
+        {
+            "id": "pos_l29_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "And in that same sentence, what part of speech is 'handmade'?",
+            "targetWord": "handmade",
+            "sentence": "The market sold spices, fabric, and handmade jewelry every Saturday.",
+            "options": [
+                "Adjective",
+                "Noun",
+                "Conjunction",
+                "Verb"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adjective",
+            "hint": "Think about the job it performs here. How was the jewelry made?",
+            "explanation": "'Handmade' is an adjective modifying 'jewelry', describing how it was produced rather than naming an action.",
+            "grammarRule": "Attributive adjective modifying a noun",
+            "transformations": [
+                "adjective form",
+                "related noun (hand)"
+            ]
+        },
+        {
+            "id": "pos_l29_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which grammatical category fits 'sold' in that same sentence?",
+            "targetWord": "sold",
+            "sentence": "The market sold spices, fabric, and handmade jewelry every Saturday.",
+            "options": [
+                "Adjective",
+                "Noun",
+                "Adverb",
+                "Verb"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Verb",
+            "hint": "Notice what the word is attached to. What action does the market perform?",
+            "explanation": "'Sold' is a verb describing the market's regular action of selling goods to customers.",
+            "grammarRule": "Action verb in past tense",
+            "transformations": [
+                "base form",
+                "past-tense form"
+            ]
+        },
+        {
+            "id": "pos_l30_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "How is 'near' functioning in this sentence?",
+            "targetWord": "near",
+            "sentence": "After the ferry docked, the tourists gathered near the entrance, and the guide counted them twice before leading everyone toward the old lighthouse.",
+            "options": [
+                "Conjunction",
+                "Noun",
+                "Preposition",
+                "Verb"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Preposition",
+            "hint": "Think about the job it performs here. Where did the tourists gather?",
+            "explanation": "'Near' is a preposition introducing the phrase that shows the tourists' position relative to the entrance.",
+            "grammarRule": "Preposition introducing a location phrase",
+            "transformations": [
+                "preposition use",
+                "related adverb use"
+            ]
+        },
+        {
+            "id": "pos_l30_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Now consider 'and' in that same sentence. What part of speech is it?",
+            "targetWord": "and",
+            "sentence": "After the ferry docked, the tourists gathered near the entrance, and the guide counted them twice before leading everyone toward the old lighthouse.",
+            "options": [
+                "Conjunction",
+                "Verb",
+                "Noun",
+                "Pronoun"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Conjunction",
+            "hint": "Notice what the word is attached to. What word links these two actions?",
+            "explanation": "'And' is a coordinating conjunction joining the clause about the tourists gathering with the clause about the guide counting them.",
+            "grammarRule": "Coordinating conjunction joining two independent clauses",
+            "transformations": [
+                "conjunction use",
+                "related conjunction (but)"
+            ]
+        },
+        {
+            "id": "pos_l30_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In that same sentence, what part of speech is 'them'?",
+            "targetWord": "them",
+            "sentence": "After the ferry docked, the tourists gathered near the entrance, and the guide counted them twice before leading everyone toward the old lighthouse.",
+            "options": [
+                "Verb",
+                "Pronoun",
+                "Noun",
+                "Preposition"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "Check the words directly around it for clues. Who did the guide count?",
+            "explanation": "'Them' is a personal pronoun referring back to 'the tourists' — it functions as the object of the verb 'counted' instead of repeating the noun.",
+            "grammarRule": "Personal pronoun functioning as the object",
+            "transformations": [
+                "subject form",
+                "object form"
+            ]
+        }
+    ]
+}

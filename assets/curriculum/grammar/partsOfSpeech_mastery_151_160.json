@@ -1,0 +1,728 @@
+{
+    "gameType": "partsOfSpeech",
+    "phase": "mastery",
+    "batchIndex": 16,
+    "levels": "151-160",
+    "quests": [
+        {
+            "id": "pos_l151_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In this context, what part of speech is 'Three'?",
+            "targetWord": "Three",
+            "sentence": "Three students left early.",
+            "options": [
+                "Adjective",
+                "Noun",
+                "Pronoun",
+                "Verb"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adjective",
+            "hint": "Numbers directly before a noun function as words. What noun does 'three' describe here?",
+            "explanation": "'Three' is an adjective here, modifying 'students' and telling us how many left early.",
+            "grammarRule": "Cardinal number functioning as an adjective",
+            "transformations": [
+                "adjective use",
+                "pronoun use"
+            ]
+        },
+        {
+            "id": "pos_l151_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Now what part of speech is 'Three' in this sentence?",
+            "targetWord": "Three",
+            "sentence": "Three of them left early.",
+            "options": [
+                "Verb",
+                "Adjective",
+                "Noun",
+                "Pronoun"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Pronoun",
+            "hint": "A common mistake is assuming numbers are always adjectives. Here, does 'three' sit directly before a noun, or does it stand alone as the subject?",
+            "explanation": "'Three' functions as a pronoun here, standing alone as the subject and representing an unspecified group of people — it is not directly followed by a noun.",
+            "grammarRule": "Cardinal number functioning as a pronoun",
+            "transformations": [
+                "pronoun use",
+                "adjective use"
+            ]
+        },
+        {
+            "id": "pos_l151_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Classify 'two' as it appears in this sentence.",
+            "targetWord": "two",
+            "sentence": "Only two remained after the meeting.",
+            "options": [
+                "Pronoun",
+                "Verb",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "Remember: numbers standing alone as the subject function as words, not adjectives. What does 'two' represent here?",
+            "explanation": "'Two' functions as a pronoun here, standing alone as the subject and representing an unspecified group — the same pattern as 'three' earlier in this file.",
+            "grammarRule": "Cardinal number functioning as a pronoun",
+            "transformations": [
+                "pronoun use",
+                "adjective use"
+            ]
+        },
+        {
+            "id": "pos_l152_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which part of speech is 'why' as it is used here?",
+            "targetWord": "why",
+            "sentence": "That's the reason why she left the company.",
+            "options": [
+                "Noun",
+                "Pronoun",
+                "Adverb",
+                "Conjunction"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "A common mistake is assuming this word only appears in questions. Here it introduces a clause explaining a reason, inside a statement. What role does it play?",
+            "explanation": "'Why' functions as a relative adverb here, introducing a clause that explains 'the reason' — even though it looks like a question word, it is simply connecting and modifying within a statement.",
+            "grammarRule": "Relative adverb introducing a reason clause",
+            "transformations": [
+                "relative use",
+                "interrogative use"
+            ]
+        },
+        {
+            "id": "pos_l152_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Based on how it is used here, 'when' is a:",
+            "targetWord": "when",
+            "sentence": "I still remember the day when we first met.",
+            "options": [
+                "Adverb",
+                "Conjunction",
+                "Pronoun",
+                "Noun"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adverb",
+            "hint": "Like 'why' in the previous sentence, this question word can also introduce a clause in a statement. What clause does it introduce here?",
+            "explanation": "'When' functions as a relative adverb here, introducing a clause that describes 'the day' — the same pattern as 'why' earlier in this file.",
+            "grammarRule": "Relative adverb introducing a time clause",
+            "transformations": [
+                "relative use",
+                "interrogative use"
+            ]
+        },
+        {
+            "id": "pos_l152_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What part of speech is 'where' in this sentence?",
+            "targetWord": "where",
+            "sentence": "This is the place where we got married.",
+            "options": [
+                "Noun",
+                "Adverb",
+                "Pronoun",
+                "Conjunction"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adverb",
+            "hint": "This question word can also introduce a descriptive clause in a statement. What clause does it introduce here?",
+            "explanation": "'Where' functions as a relative adverb here, introducing a clause that describes 'the place' — completing the pattern seen with 'why' and 'when' earlier in this file.",
+            "grammarRule": "Relative adverb introducing a place clause",
+            "transformations": [
+                "relative use",
+                "interrogative use"
+            ]
+        },
+        {
+            "id": "pos_l153_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In this context, what part of speech is 'means'?",
+            "targetWord": "means",
+            "sentence": "Public transportation remains the cheapest means of getting downtown.",
+            "options": [
+                "Noun",
+                "Adjective",
+                "Adverb",
+                "Verb"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "A common mistake is assuming any word ending in '-s' must be plural. This word is singular here, even though it ends in '-s.' What role does it play?",
+            "explanation": "'Means' is a singular noun here, naming a method — it looks plural because of the '-s' ending, but it takes a singular verb ('remains') and refers to one method.",
+            "grammarRule": "Uncountable noun ending in -s, used as a singular subject complement",
+            "transformations": [
+                "singular use",
+                "same plural form"
+            ]
+        },
+        {
+            "id": "pos_l153_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What role does 'news' play in this sentence?",
+            "targetWord": "news",
+            "sentence": "The news about the merger spread quickly.",
+            "options": [
+                "Noun",
+                "Adverb",
+                "Verb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Like 'means' in the previous sentence, this word ends in '-s' but is treated as singular. What is the subject of this sentence?",
+            "explanation": "'News' is a singular, uncountable noun here — despite ending in '-s,' it takes a singular meaning and is never used with 'a' or in a plural form.",
+            "grammarRule": "Uncountable noun ending in -s, functioning as the subject",
+            "transformations": [
+                "singular use",
+                "same plural form"
+            ]
+        },
+        {
+            "id": "pos_l153_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which category fits 'spread' in this sentence?",
+            "targetWord": "spread",
+            "sentence": "The news about the merger spread quickly.",
+            "options": [
+                "Noun",
+                "Adverb",
+                "Verb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Verb",
+            "hint": "Think about the job it performs here. Note that this word doesn't change form between present and past tense — what did the news do?",
+            "explanation": "'Spread' is a verb here, describing how the news traveled — it is a verb whose past-tense form is identical to its base form.",
+            "grammarRule": "Action verb with an unchanged past-tense form",
+            "transformations": [
+                "base form",
+                "same past-tense form"
+            ]
+        },
+        {
+            "id": "pos_l154_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What grammatical job does 'One' do in this sentence?",
+            "targetWord": "One",
+            "sentence": "One should always double-check important emails before sending.",
+            "options": [
+                "Verb",
+                "Pronoun",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "A common mistake is assuming 'one' is always a number. Here it refers to people in general, not a quantity. What does 'one' represent?",
+            "explanation": "'One' functions as an indefinite pronoun here, meaning 'a person in general' — it does not refer to a specific quantity.",
+            "grammarRule": "Indefinite pronoun functioning as the subject",
+            "transformations": [
+                "pronoun use",
+                "number use"
+            ]
+        },
+        {
+            "id": "pos_l154_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Now, which category describes 'one' in this sentence?",
+            "targetWord": "one",
+            "sentence": "I only need one more signature to finish the form.",
+            "options": [
+                "Adjective",
+                "Verb",
+                "Noun",
+                "Pronoun"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adjective",
+            "hint": "Now compare: this word sits directly before a noun and shows a quantity. What noun does it describe?",
+            "explanation": "'One' functions as an adjective here, modifying 'signature' and showing the exact quantity needed — contrast this with the indefinite pronoun use in the previous sentence.",
+            "grammarRule": "Cardinal number functioning as an adjective",
+            "transformations": [
+                "adjective use",
+                "pronoun use"
+            ]
+        },
+        {
+            "id": "pos_l154_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Now look at 'one' here. What part of speech is it?",
+            "targetWord": "one",
+            "sentence": "Would you prefer the blue one?",
+            "options": [
+                "Noun",
+                "Pronoun",
+                "Verb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "Here 'one' stands in for a noun already understood from context, rather than showing a quantity or people in general. What is 'one' replacing?",
+            "explanation": "'One' functions as a pronoun here, substituting for a specific item already understood from context (such as a particular pastry or product) — a third role for this word, alongside the indefinite and numeral adjective uses seen earlier.",
+            "grammarRule": "Pronoun substituting for a specific noun",
+            "transformations": [
+                "pronoun use",
+                "number use"
+            ]
+        },
+        {
+            "id": "pos_l155_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "How is 'took off' functioning in this sentence?",
+            "targetWord": "took off",
+            "sentence": "The plane took off ten minutes late.",
+            "options": [
+                "Noun",
+                "Adjective",
+                "Verb",
+                "Preposition"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Verb",
+            "hint": "This two-word expression has a meaning you can't guess just by combining the two words separately. What did the plane do?",
+            "explanation": "'Took off' is a phrasal verb here, meaning 'departed' — its meaning as a whole is different from 'took' and 'off' used separately.",
+            "grammarRule": "Phrasal verb in past tense",
+            "transformations": [
+                "base form (take off)",
+                "past-tense form"
+            ]
+        },
+        {
+            "id": "pos_l155_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Identify the part of speech of 'off' in this context.",
+            "targetWord": "off",
+            "sentence": "She took the book off the shelf.",
+            "options": [
+                "Adjective",
+                "Verb",
+                "Noun",
+                "Preposition"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Preposition",
+            "hint": "Now compare: does 'off' combine with 'took' to create a new meaning, or does it simply show where the book came from?",
+            "explanation": "'Off' functions as a preposition here, showing the book's original location — contrast this with 'took off' in the previous sentence, which formed a phrasal verb with an idiomatic meaning.",
+            "grammarRule": "Preposition introducing a location phrase",
+            "transformations": [
+                "preposition use",
+                "phrasal verb use"
+            ]
+        },
+        {
+            "id": "pos_l155_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Classify 'called off' as it appears in this sentence.",
+            "targetWord": "called off",
+            "sentence": "The meeting was called off due to rain.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Adjective",
+                "Preposition"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Verb",
+            "hint": "Like 'took off' earlier in this file, this two-word expression has an idiomatic meaning. What happened to the meeting?",
+            "explanation": "'Called off' is a phrasal verb here, meaning 'canceled' — the same pattern as 'took off' earlier in this file, where the two words together create a new meaning.",
+            "grammarRule": "Phrasal verb in the passive voice",
+            "transformations": [
+                "base form (call off)",
+                "past-participle form"
+            ]
+        },
+        {
+            "id": "pos_l156_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which part of speech does 'advice' represent in this sentence?",
+            "targetWord": "advice",
+            "sentence": "She gave me some useful advice before the interview.",
+            "options": [
+                "Verb",
+                "Adverb",
+                "Noun",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Noun",
+            "hint": "A common mistake is assuming this word needs 'a' or a plural form like other words. Is 'advice' countable or uncountable here?",
+            "explanation": "'Advice' is an uncountable noun here — it never takes 'a' or a plural '-s' ending, even though it names something real that was given.",
+            "grammarRule": "Uncountable noun functioning as a direct object",
+            "transformations": [
+                "uncountable use",
+                "related countable noun (tip)"
+            ]
+        },
+        {
+            "id": "pos_l156_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In this sentence, 'tip' is functioning as a:",
+            "targetWord": "tip",
+            "sentence": "She gave me a useful tip before the interview.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Adverb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Now compare: this word can take 'a' and can be pluralized. What kind of word is it?",
+            "explanation": "'Tip' is a countable noun here — unlike 'advice' in the previous sentence, it can be used with 'a' and pluralized as 'tips'.",
+            "grammarRule": "Countable noun functioning as a direct object",
+            "transformations": [
+                "singular form",
+                "plural form"
+            ]
+        },
+        {
+            "id": "pos_l156_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which grammatical category best describes 'equipment' here?",
+            "targetWord": "equipment",
+            "sentence": "The new equipment arrived yesterday.",
+            "options": [
+                "Noun",
+                "Verb",
+                "Adverb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Noun",
+            "hint": "Like 'advice' earlier in this file, this word cannot be pluralized even though it refers to multiple items. What arrived yesterday?",
+            "explanation": "'Equipment' is an uncountable noun here — it refers to a whole category of tools or machines but has no plural form.",
+            "grammarRule": "Uncountable noun functioning as the subject",
+            "transformations": [
+                "uncountable use",
+                "related countable noun (tool)"
+            ]
+        },
+        {
+            "id": "pos_l157_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What kind of word is 'Few' in this sentence?",
+            "targetWord": "Few",
+            "sentence": "Few people attended the early session.",
+            "options": [
+                "Noun",
+                "Adjective",
+                "Verb",
+                "Pronoun"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adjective",
+            "hint": "Quantity words directly before a noun function as words. What noun does 'few' describe here?",
+            "explanation": "'Few' is an adjective here, modifying 'people' and describing the small number who attended.",
+            "grammarRule": "Quantifier functioning as an adjective",
+            "transformations": [
+                "adjective use",
+                "pronoun use"
+            ]
+        },
+        {
+            "id": "pos_l157_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "This time, what part of speech is 'Few'?",
+            "targetWord": "Few",
+            "sentence": "Few attended the early session.",
+            "options": [
+                "Verb",
+                "Noun",
+                "Adjective",
+                "Pronoun"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Pronoun",
+            "hint": "A common mistake is assuming quantity words are always adjectives. Here, does 'few' sit directly before a noun, or does it stand alone?",
+            "explanation": "'Few' functions as a pronoun here, standing alone as the subject and representing an unspecified small group — contrast this with the adjective use in the previous sentence.",
+            "grammarRule": "Quantifier functioning as a pronoun",
+            "transformations": [
+                "pronoun use",
+                "adjective use"
+            ]
+        },
+        {
+            "id": "pos_l157_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "The word 'Much' is being used as which grammatical category?",
+            "targetWord": "Much",
+            "sentence": "Much of the budget went unused this year.",
+            "options": [
+                "Adjective",
+                "Pronoun",
+                "Verb",
+                "Noun"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Pronoun",
+            "hint": "Like 'few' earlier in this file, this quantity word can stand alone as a word. What does 'much' represent here?",
+            "explanation": "'Much' functions as a pronoun here, standing alone as the subject and representing an unspecified portion of the budget.",
+            "grammarRule": "Quantifier functioning as a pronoun",
+            "transformations": [
+                "pronoun use",
+                "adjective use"
+            ]
+        },
+        {
+            "id": "pos_l158_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Based on how it is used here, 'enough' is a:",
+            "targetWord": "enough",
+            "sentence": "We don't have enough time to finish today.",
+            "options": [
+                "Adverb",
+                "Noun",
+                "Pronoun",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "This word sits directly before a noun here, showing sufficiency. What noun does 'enough' describe?",
+            "explanation": "'Enough' is an adjective here, modifying 'time' and showing that the amount is insufficient.",
+            "grammarRule": "Quantifier functioning as an adjective",
+            "transformations": [
+                "adjective use",
+                "adverb use"
+            ]
+        },
+        {
+            "id": "pos_l158_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Now look at 'enough' here. What part of speech is it?",
+            "targetWord": "enough",
+            "sentence": "This coffee isn't strong enough for me.",
+            "options": [
+                "Adverb",
+                "Noun",
+                "Adjective",
+                "Pronoun"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adverb",
+            "hint": "A common mistake is expecting modifying words to always come before what they describe. Here, 'enough' comes after an adjective. What does it modify?",
+            "explanation": "'Enough' functions as an adverb here, modifying the adjective 'strong' — unusually, it comes after the word it modifies rather than before it.",
+            "grammarRule": "Degree adverb modifying an adjective, placed after it",
+            "transformations": [
+                "adverb use",
+                "adjective use"
+            ]
+        },
+        {
+            "id": "pos_l158_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Which category fits 'Enough' in this sentence?",
+            "targetWord": "Enough",
+            "sentence": "Enough of the guests arrived to start the toast.",
+            "options": [
+                "Noun",
+                "Adverb",
+                "Pronoun",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Pronoun",
+            "hint": "Like 'few' and 'much' earlier in this file, this quantity word can stand alone as a word. What does 'enough' represent here?",
+            "explanation": "'Enough' functions as a pronoun here, standing alone as the subject and representing a sufficient portion of the guests.",
+            "grammarRule": "Quantifier functioning as a pronoun",
+            "transformations": [
+                "pronoun use",
+                "adjective use"
+            ]
+        },
+        {
+            "id": "pos_l159_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What role does 'Few' play in this sentence?",
+            "targetWord": "Few",
+            "sentence": "Few managers had enough experience to handle the crisis well, so headquarters sent additional support immediately.",
+            "options": [
+                "Verb",
+                "Noun",
+                "Adjective",
+                "Pronoun"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adjective",
+            "hint": "This quantity word sits directly before a noun here. What noun does it describe?",
+            "explanation": "'Few' is an adjective here, modifying 'managers' and describing how small the qualified group was.",
+            "grammarRule": "Quantifier functioning as an adjective",
+            "transformations": [
+                "adjective use",
+                "pronoun use"
+            ]
+        },
+        {
+            "id": "pos_l159_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In the same sentence, what role does 'enough' play?",
+            "targetWord": "enough",
+            "sentence": "Few managers had enough experience to handle the crisis well, so headquarters sent additional support immediately.",
+            "options": [
+                "Noun",
+                "Pronoun",
+                "Adverb",
+                "Adjective"
+            ],
+            "correctAnswerIndex": 3,
+            "correctAnswer": "Adjective",
+            "hint": "This word also sits directly before a noun. What noun does 'enough' describe here?",
+            "explanation": "'Enough' is an adjective here, modifying 'experience' and showing that few managers had a sufficient amount.",
+            "grammarRule": "Quantifier functioning as an adjective",
+            "transformations": [
+                "adjective use",
+                "adverb use"
+            ]
+        },
+        {
+            "id": "pos_l159_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Looking at the same sentence, how is 'well' functioning?",
+            "targetWord": "well",
+            "sentence": "Few managers had enough experience to handle the crisis well, so headquarters sent additional support immediately.",
+            "options": [
+                "Adjective",
+                "Interjection",
+                "Adverb",
+                "Noun"
+            ],
+            "correctAnswerIndex": 2,
+            "correctAnswer": "Adverb",
+            "hint": "Remember from an earlier lesson that this word can be an adjective, word, or interjection. Here it modifies a verb. What does it describe?",
+            "explanation": "'Well' functions as an adverb here, modifying the verb 'handle' and describing the quality of managing the crisis — the genuine adverb use from an earlier lesson.",
+            "grammarRule": "Manner adverb modifying a verb",
+            "transformations": [
+                "adjective use",
+                "adverb use"
+            ]
+        },
+        {
+            "id": "pos_l160_q1",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "What kind of word is 'why' in this sentence?",
+            "targetWord": "why",
+            "sentence": "That's the reason why only three of the volunteers had enough information to answer questions confidently during the meeting.",
+            "options": [
+                "Adverb",
+                "Pronoun",
+                "Noun",
+                "Conjunction"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Adverb",
+            "hint": "Remember from earlier in this file: this question word can introduce a clause in a statement. What clause does it introduce here?",
+            "explanation": "'Why' functions as a relative adverb here, introducing a clause that explains 'the reason' — the same pattern taught earlier in this file.",
+            "grammarRule": "Relative adverb introducing a reason clause",
+            "transformations": [
+                "relative use",
+                "interrogative use"
+            ]
+        },
+        {
+            "id": "pos_l160_q2",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "In the same sentence, what role does 'three' play?",
+            "targetWord": "three",
+            "sentence": "That's the reason why only three of the volunteers had enough information to answer questions confidently during the meeting.",
+            "options": [
+                "Pronoun",
+                "Verb",
+                "Adjective",
+                "Noun"
+            ],
+            "correctAnswerIndex": 0,
+            "correctAnswer": "Pronoun",
+            "hint": "Remember: numbers standing alone, followed by 'of,' function as words rather than adjectives. What does 'three' represent here?",
+            "explanation": "'Three' functions as a pronoun here, standing alone as the subject and representing an unspecified group of volunteers — the same pattern as earlier in this file.",
+            "grammarRule": "Cardinal number functioning as a pronoun",
+            "transformations": [
+                "pronoun use",
+                "adjective use"
+            ]
+        },
+        {
+            "id": "pos_l160_q3",
+            "instruction": "IDENTIFY THE FUNCTION",
+            "subtype": "partsOfSpeech",
+            "interactionType": "choice",
+            "question": "Within that same sentence, 'confidently' is functioning as a:",
+            "targetWord": "confidently",
+            "sentence": "That's the reason why only three of the volunteers had enough information to answer questions confidently during the meeting.",
+            "options": [
+                "Noun",
+                "Adverb",
+                "Adjective",
+                "Verb"
+            ],
+            "correctAnswerIndex": 1,
+            "correctAnswer": "Adverb",
+            "hint": "Set aside what you know about this word in general. How did the volunteers answer questions?",
+            "explanation": "'Confidently' is a manner adverb modifying the verb 'answer', describing how the volunteers responded.",
+            "grammarRule": "Manner adverb modifying a verb",
+            "transformations": [
+                "adjective form",
+                "adverb form"
+            ]
+        }
+    ]
+}
