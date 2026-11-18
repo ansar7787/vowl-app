@@ -1,0 +1,600 @@
+{
+  "gameType": "sentenceBuilder",
+  "batchIndex": 6,
+  "levels": "51-60",
+  "quests": [
+    {
+      "id": "WRT_SENTENCEBUILDER_L51_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "flickering",
+        "evening",
+        "all",
+        "lights",
+        "The",
+        "were"
+      ],
+      "correctAnswer": "The lights were flickering all evening.",
+      "hint": "Two words make the verb. The plural subject decides the helper, and 'all evening' shows the length of the event.",
+      "explanation": "The past continuous is was/were + verb-ing and describes an action in progress in the past. 'Lights' is plural, so 'were' is needed.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L51_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "Two",
+        "at",
+        "bridge",
+        "engineers",
+        "the",
+        "midnight",
+        "inspecting",
+        "were"
+      ],
+      "correctAnswer": "Two engineers were inspecting the bridge at midnight.",
+      "hint": "A number word opens the subject. Match the helper to it, then add the exact time at the end.",
+      "explanation": "'Two engineers' is plural, so 'were inspecting' is used. 'At midnight' gives a specific point during which the action was in progress.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L51_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "Our",
+        "waiting",
+        "door",
+        "were",
+        "guests",
+        "at",
+        "still",
+        "the"
+      ],
+      "correctAnswer": "Our guests were still waiting at the door.",
+      "hint": "A word showing that something continues sits between two parts of the verb. Which one?",
+      "explanation": "'Still' comes after 'were' and before 'waiting'. The past continuous shows an action in progress, and 'at the door' gives the location.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L52_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "working",
+        "printer",
+        "Was",
+        "the",
+        "morning",
+        "this"
+      ],
+      "correctAnswer": "Was the printer working this morning?",
+      "hint": "A yes/no question in the past continuous begins with the helper.",
+      "explanation": "In questions the helper 'was' moves before the subject: Was + subject + verb-ing. 'This morning' finishes the question.",
+      "sentenceType": "question"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L52_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "near",
+        "What",
+        "doing",
+        "the",
+        "you",
+        "were",
+        "station"
+      ],
+      "correctAnswer": "What were you doing near the station?",
+      "hint": "The question word opens, then the helper, then the subject. The place phrase closes.",
+      "explanation": "In past continuous questions, the helper 'were' comes before 'you': What + were + you + doing. 'Near the station' gives the place.",
+      "sentenceType": "question"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L52_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "road",
+        "to",
+        "The",
+        "paying",
+        "the",
+        "attention",
+        "wasn't",
+        "driver"
+      ],
+      "correctAnswer": "The driver wasn't paying attention to the road.",
+      "hint": "The negative helper contracts with 'not'. 'Pay attention to' is a fixed expression.",
+      "explanation": "'Wasn't' is 'was not'. The negative past continuous shows something that was not in progress. 'Pay attention to' is followed by the thing you focus on.",
+      "sentenceType": "negative"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L53_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "open",
+        "next",
+        "new",
+        "The",
+        "will",
+        "spring",
+        "bridge"
+      ],
+      "correctAnswer": "The new bridge will open next spring.",
+      "hint": "A helper word before the base verb refers to the future. Where does the time phrase go?",
+      "explanation": "'Will' + base verb expresses a future fact or prediction. The verb does not take -s: 'will open'.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L53_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "you",
+        "I'll",
+        "lunch",
+        "the",
+        "after",
+        "send",
+        "link"
+      ],
+      "correctAnswer": "I'll send you the link after lunch.",
+      "hint": "The subject and 'will' are joined in one token. Then look at the two things after the verb.",
+      "explanation": "'I'll' is 'I will'. After 'send' come first the receiver ('you'), then the thing sent ('the link').",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L53_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "approve",
+        "this",
+        "extra",
+        "hours",
+        "The",
+        "won't",
+        "manager",
+        "month"
+      ],
+      "correctAnswer": "The manager won't approve extra hours this month.",
+      "hint": "A short form combines the future helper with 'not'. What does the main verb look like?",
+      "explanation": "'Won't' is the contraction of 'will not' and is followed by the base verb. 'Extra hours' is an adjective + noun object.",
+      "sentenceType": "negative"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L54_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "going",
+        "repaint",
+        "We're",
+        "this",
+        "to",
+        "hallway",
+        "the",
+        "weekend"
+      ],
+      "correctAnswer": "We're going to repaint the hallway this weekend.",
+      "hint": "Three words carry the future plan before the base verb. The first one includes the subject.",
+      "explanation": "'Be going to' + base verb shows a plan already decided. 'We're' is 'we are', and 'repaint' stays in base form.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L54_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "on",
+        "to",
+        "open",
+        "the",
+        "Is",
+        "shop",
+        "going",
+        "Sunday"
+      ],
+      "correctAnswer": "Is the shop going to open on Sunday?",
+      "hint": "The helper 'is' moves before the subject. The three-word future stays together after it.",
+      "explanation": "In a question, 'is' comes first, then the subject, then 'going to' + base verb.",
+      "sentenceType": "question"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L54_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "be",
+        "It's",
+        "tonight",
+        "very",
+        "cold",
+        "to",
+        "going"
+      ],
+      "correctAnswer": "It's going to be very cold tonight.",
+      "hint": "A prediction based on the situation now. The adjective comes with a degree word.",
+      "explanation": "'It's going to be' predicts what seems likely. 'Very' modifies the adjective 'cold', and 'tonight' is the time.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L55_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "the",
+        "results",
+        "will",
+        "arrive",
+        "When"
+      ],
+      "correctAnswer": "When will the results arrive?",
+      "hint": "The question word is first and 'will' precedes the subject.",
+      "explanation": "In future questions with 'will', the pattern is question word + will + subject + base verb.",
+      "sentenceType": "question"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L55_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "the",
+        "to",
+        "to",
+        "wear",
+        "wedding",
+        "going",
+        "are",
+        "What",
+        "you"
+      ],
+      "correctAnswer": "What are you going to wear to the wedding?",
+      "hint": "A plan question. The helper comes before 'you' and 'going to' follows.",
+      "explanation": "The order is What + are + you + going to + base verb. The final phrase 'to the wedding' says where.",
+      "sentenceType": "question"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L55_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "pharmacy",
+        "flat",
+        "deliver",
+        "medicine",
+        "Will",
+        "to",
+        "my",
+        "the"
+      ],
+      "correctAnswer": "Will the pharmacy deliver medicine to my flat?",
+      "hint": "A yes/no future question starts with the helper word.",
+      "explanation": "'Will' moves to the front, followed by the subject and the base verb. 'To my flat' shows where the delivery goes.",
+      "sentenceType": "question"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L56_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "Can",
+        "charger",
+        "I",
+        "a",
+        "your",
+        "use",
+        "moment",
+        "for"
+      ],
+      "correctAnswer": "Can I use your charger for a moment?",
+      "hint": "A modal verb moves before the subject in a request. What form does 'use' take?",
+      "explanation": "'Can' asks for permission and is followed by the base verb. The question is Can + I + verb + object.",
+      "sentenceType": "question"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L56_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "you",
+        "me",
+        "Could",
+        "send",
+        "again",
+        "address",
+        "the"
+      ],
+      "correctAnswer": "Could you send me the address again?",
+      "hint": "One modal is more polite than the other. Ask who receives the address.",
+      "explanation": "'Could' makes a request more polite. After 'send', the receiver ('me') comes before the object ('the address').",
+      "sentenceType": "question"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L56_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "at",
+        "five",
+        "Members",
+        "to",
+        "books",
+        "up",
+        "can",
+        "time",
+        "borrow",
+        "a"
+      ],
+      "correctAnswer": "Members can borrow up to five books at a time.",
+      "hint": "The modal verb goes directly before the base verb and never adds -s. Then find the limit.",
+      "explanation": "'Can' shows permission. 'Up to five books' expresses a maximum, and 'at a time' means on one occasion.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L57_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "You",
+        "keep",
+        "weeks",
+        "should",
+        "your",
+        "receipt",
+        "for",
+        "two"
+      ],
+      "correctAnswer": "You should keep your receipt for two weeks.",
+      "hint": "This advice contains no -s on the verb after the modal.",
+      "explanation": "'Should' gives advice and is followed by the base verb. 'For two weeks' shows the duration.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L57_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "at",
+        "all",
+        "Employees",
+        "wear",
+        "must",
+        "times",
+        "a",
+        "badge"
+      ],
+      "correctAnswer": "Employees must wear a badge at all times.",
+      "hint": "A strong obligation. The modal takes a base verb, and a fixed phrase ends the sentence.",
+      "explanation": "'Must' expresses a strong rule. 'At all times' means always and is a fixed expression.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L57_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "before",
+        "I",
+        "passport",
+        "renew",
+        "to",
+        "my",
+        "have",
+        "June"
+      ],
+      "correctAnswer": "I have to renew my passport before June.",
+      "hint": "Two words work together to show that something is necessary. Then a deadline.",
+      "explanation": "'Have to' + base verb expresses external necessity. 'Before June' sets the deadline.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L58_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "in",
+        "gate",
+        "of",
+        "front",
+        "park",
+        "You",
+        "mustn't",
+        "the"
+      ],
+      "correctAnswer": "You mustn't park in front of the gate.",
+      "hint": "One negative modal means 'it is forbidden'. Keep the multiword place phrase together.",
+      "explanation": "'Mustn't' expresses prohibition. 'In front of' acts as one preposition.",
+      "sentenceType": "negative"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L58_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "You",
+        "to",
+        "Sundays",
+        "on",
+        "don't",
+        "parking",
+        "pay",
+        "have",
+        "for"
+      ],
+      "correctAnswer": "You don't have to pay for parking on Sundays.",
+      "hint": "This negative means something is not necessary. Look at the helper and the form of 'have'.",
+      "explanation": "'Don't have to' means there is no obligation. Compare with 'mustn't', which forbids. 'Have' stays in base form after 'don't'.",
+      "sentenceType": "negative"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L58_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "their",
+        "Passengers",
+        "bags",
+        "shouldn't",
+        "unattended",
+        "leave"
+      ],
+      "correctAnswer": "Passengers shouldn't leave their bags unattended.",
+      "hint": "This is advice against something. Look at the adjective at the end.",
+      "explanation": "'Shouldn't' gives negative advice. 'Unattended' is an adjective describing the state of the bags after the object.",
+      "sentenceType": "negative"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L59_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "delayed",
+        "might",
+        "be",
+        "of",
+        "because",
+        "flight",
+        "fog",
+        "The"
+      ],
+      "correctAnswer": "The flight might be delayed because of fog.",
+      "hint": "A modal of possibility is followed by 'be'. What word describes the flight's state?",
+      "explanation": "'Might' + be + adjective expresses possibility. 'Because of fog' gives the reason and is followed by a noun.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L59_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "store",
+        "Christmas",
+        "The",
+        "close",
+        "on",
+        "early",
+        "Eve",
+        "may"
+      ],
+      "correctAnswer": "The store may close early on Christmas Eve.",
+      "hint": "One modal suggests something is possible. Find the word describing how soon and the special day.",
+      "explanation": "'May' shows possibility and is followed by the base verb. 'On Christmas Eve' names a specific day.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L59_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "not",
+        "He",
+        "meeting",
+        "tomorrow",
+        "attend",
+        "the",
+        "might"
+      ],
+      "correctAnswer": "He might not attend the meeting tomorrow.",
+      "hint": "The negative comes after the modal but before the verb.",
+      "explanation": "'Might not' expresses a possibility that something will not happen. The verb 'attend' has no -s.",
+      "sentenceType": "negative"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L60_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "night",
+        "my",
+        "weren't",
+        "Why",
+        "messages",
+        "answering",
+        "you",
+        "last"
+      ],
+      "correctAnswer": "Why weren't you answering my messages last night?",
+      "hint": "Past continuous, negative, and a question word. Which token contains the helper and 'not'?",
+      "explanation": "'Weren't' combines 'were not' and comes before the subject in a question. 'Answering' is the -ing form, and 'last night' gives the time.",
+      "sentenceType": "question"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L60_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "on",
+        "weather",
+        "forecast",
+        "rely",
+        "alone",
+        "shouldn't",
+        "You",
+        "the"
+      ],
+      "correctAnswer": "You shouldn't rely on the weather forecast alone.",
+      "hint": "Combine negative advice with a fixed verb pair and a word meaning 'only' at the end.",
+      "explanation": "'Rely on' is a verb + preposition pair. 'Alone' after a noun phrase means 'by itself'.",
+      "sentenceType": "negative"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L60_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "invite",
+        "many",
+        "people",
+        "to",
+        "party",
+        "you",
+        "the",
+        "going",
+        "are",
+        "to",
+        "How"
+      ],
+      "correctAnswer": "How many people are you going to invite to the party?",
+      "hint": "The question begins with a quantity phrase. Then the plan structure.",
+      "explanation": "'How many people' is a quantity question phrase and is followed by are + you + going to + base verb. The final phrase names the event.",
+      "sentenceType": "question"
+    }
+  ],
+  "phase": "mastery"
+}

@@ -1,0 +1,388 @@
+{
+  "gameType": "sentenceBuilder",
+  "phase": "practice",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "WRT_SENTENCEBUILDER_L101_PRAC_Q1",
+      "level": 101,
+      "instruction": "Assemble phrase blocks into syntactic order.",
+      "prompt": "Construct a fluent English sentence specifying who, action, what, and context.",
+      "targetSlots": [
+        {
+          "role": "Subject",
+          "label": "Who / What performs?"
+        },
+        {
+          "role": "Verb",
+          "label": "Action / State?"
+        },
+        {
+          "role": "Object",
+          "label": "Target / Recipient?"
+        },
+        {
+          "role": "Adverbial",
+          "label": "Context / Where / How?"
+        }
+      ],
+      "correctSequence": [
+        "The curious astronomer",
+        "observed",
+        "distant galaxies",
+        "through the observatory lens"
+      ],
+      "chips": [
+        "distant galaxies",
+        "through the observatory lens",
+        "observed",
+        "The curious astronomer"
+      ],
+      "completeSentence": "The curious astronomer observed distant galaxies through the observatory lens.",
+      "explanation": "Subject precedes transitive verb, followed by direct object and prepositional phrase of instrument."
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L102_PRAC_Q1",
+      "level": 102,
+      "instruction": "Assemble phrase blocks into syntactic order.",
+      "prompt": "Construct a fluent English sentence specifying who, action, what, and context.",
+      "targetSlots": [
+        {
+          "role": "Subject",
+          "label": "Who / What performs?"
+        },
+        {
+          "role": "Verb",
+          "label": "Action / State?"
+        },
+        {
+          "role": "Object",
+          "label": "Target / Recipient?"
+        },
+        {
+          "role": "Adverbial",
+          "label": "Context / Where / How?"
+        }
+      ],
+      "correctSequence": [
+        "Experienced engineers",
+        "designed",
+        "resilient bridges",
+        "for high-speed transit networks"
+      ],
+      "chips": [
+        "Experienced engineers",
+        "resilient bridges",
+        "designed",
+        "for high-speed transit networks"
+      ],
+      "completeSentence": "Experienced engineers designed resilient bridges for high-speed transit networks.",
+      "explanation": "Plural subject with past tense verb connects directly to purpose-driven prepositional adjuncts."
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L103_PRAC_Q1",
+      "level": 103,
+      "instruction": "Assemble phrase blocks into syntactic order.",
+      "prompt": "Construct a fluent English sentence specifying who, action, what, and context.",
+      "targetSlots": [
+        {
+          "role": "Subject",
+          "label": "Who / What performs?"
+        },
+        {
+          "role": "Verb",
+          "label": "Action / State?"
+        },
+        {
+          "role": "Object",
+          "label": "Target / Recipient?"
+        },
+        {
+          "role": "Adverbial",
+          "label": "Context / Where / How?"
+        }
+      ],
+      "correctSequence": [
+        "Dedicated researchers",
+        "published",
+        "pioneering studies",
+        "in peer-reviewed journals"
+      ],
+      "chips": [
+        "in peer-reviewed journals",
+        "pioneering studies",
+        "published",
+        "Dedicated researchers"
+      ],
+      "completeSentence": "Dedicated researchers published pioneering studies in peer-reviewed journals.",
+      "explanation": "Standard SVO structure anchors academic discourse with clear agent attribution."
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L104_PRAC_Q1",
+      "level": 104,
+      "instruction": "Assemble phrase blocks into syntactic order.",
+      "prompt": "Construct a fluent English sentence specifying who, action, what, and context.",
+      "targetSlots": [
+        {
+          "role": "Subject",
+          "label": "Who / What performs?"
+        },
+        {
+          "role": "Verb",
+          "label": "Action / State?"
+        },
+        {
+          "role": "Object",
+          "label": "Target / Recipient?"
+        },
+        {
+          "role": "Adverbial",
+          "label": "Context / Where / How?"
+        }
+      ],
+      "correctSequence": [
+        "Talented musicians",
+        "performed",
+        "classical symphonies",
+        "at the grand auditorium"
+      ],
+      "chips": [
+        "classical symphonies",
+        "Talented musicians",
+        "performed",
+        "at the grand auditorium"
+      ],
+      "completeSentence": "Talented musicians performed classical symphonies at the grand auditorium.",
+      "explanation": "Place adverbials naturally nest at sentence conclusion following core argument structure."
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L105_PRAC_Q1",
+      "level": 105,
+      "instruction": "Assemble phrase blocks into syntactic order.",
+      "prompt": "Construct a fluent English sentence specifying who, action, what, and context.",
+      "targetSlots": [
+        {
+          "role": "Subject",
+          "label": "Who / What performs?"
+        },
+        {
+          "role": "Verb",
+          "label": "Action / State?"
+        },
+        {
+          "role": "Object",
+          "label": "Target / Recipient?"
+        },
+        {
+          "role": "Adverbial",
+          "label": "Context / Where / How?"
+        }
+      ],
+      "correctSequence": [
+        "The creative architect",
+        "sketched",
+        "sustainable skyscrapers",
+        "with solar facade panels"
+      ],
+      "chips": [
+        "sketched",
+        "with solar facade panels",
+        "The creative architect",
+        "sustainable skyscrapers"
+      ],
+      "completeSentence": "The creative architect sketched sustainable skyscrapers with solar facade panels.",
+      "explanation": "Adjectival and prepositional modifiers cling to head nouns to preserve descriptive focus."
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L106_PRAC_Q1",
+      "level": 106,
+      "instruction": "Assemble phrase blocks into syntactic order.",
+      "prompt": "Construct a fluent English sentence specifying who, action, what, and context.",
+      "targetSlots": [
+        {
+          "role": "Subject",
+          "label": "Who / What performs?"
+        },
+        {
+          "role": "Verb",
+          "label": "Action / State?"
+        },
+        {
+          "role": "Object",
+          "label": "Target / Recipient?"
+        },
+        {
+          "role": "Adverbial",
+          "label": "Context / Where / How?"
+        }
+      ],
+      "correctSequence": [
+        "The marine biologist",
+        "tracked",
+        "whale migrations",
+        "across arctic currents"
+      ],
+      "chips": [
+        "across arctic currents",
+        "whale migrations",
+        "The marine biologist",
+        "tracked"
+      ],
+      "completeSentence": "The marine biologist tracked whale migrations across arctic currents.",
+      "explanation": "Direct objects immediately succeed active transitive verbs without intervening particles."
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L107_PRAC_Q1",
+      "level": 107,
+      "instruction": "Assemble phrase blocks into syntactic order.",
+      "prompt": "Construct a fluent English sentence specifying who, action, what, and context.",
+      "targetSlots": [
+        {
+          "role": "Subject",
+          "label": "Who / What performs?"
+        },
+        {
+          "role": "Verb",
+          "label": "Action / State?"
+        },
+        {
+          "role": "Object",
+          "label": "Target / Recipient?"
+        },
+        {
+          "role": "Adverbial",
+          "label": "Context / Where / How?"
+        }
+      ],
+      "correctSequence": [
+        "Skilled botanists",
+        "cultivated",
+        "rare orchids",
+        "inside controlled greenhouses"
+      ],
+      "chips": [
+        "inside controlled greenhouses",
+        "Skilled botanists",
+        "rare orchids",
+        "cultivated"
+      ],
+      "completeSentence": "Skilled botanists cultivated rare orchids inside controlled greenhouses.",
+      "explanation": "Location adverbials specify the spatial boundary of the predicate action."
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L108_PRAC_Q1",
+      "level": 108,
+      "instruction": "Assemble phrase blocks into syntactic order.",
+      "prompt": "Construct a fluent English sentence specifying who, action, what, and context.",
+      "targetSlots": [
+        {
+          "role": "Subject",
+          "label": "Who / What performs?"
+        },
+        {
+          "role": "Verb",
+          "label": "Action / State?"
+        },
+        {
+          "role": "Object",
+          "label": "Target / Recipient?"
+        },
+        {
+          "role": "Adverbial",
+          "label": "Context / Where / How?"
+        }
+      ],
+      "correctSequence": [
+        "The software team",
+        "deployed",
+        "cloud updates",
+        "without service interruption"
+      ],
+      "chips": [
+        "cloud updates",
+        "The software team",
+        "deployed",
+        "without service interruption"
+      ],
+      "completeSentence": "The software team deployed cloud updates without service interruption.",
+      "explanation": "Manner prepositional phrases round out transitive clauses without breaking cadence."
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L109_PRAC_Q1",
+      "level": 109,
+      "instruction": "Assemble phrase blocks into syntactic order.",
+      "prompt": "Construct a fluent English sentence specifying who, action, what, and context.",
+      "targetSlots": [
+        {
+          "role": "Subject",
+          "label": "Who / What performs?"
+        },
+        {
+          "role": "Verb",
+          "label": "Action / State?"
+        },
+        {
+          "role": "Object",
+          "label": "Target / Recipient?"
+        },
+        {
+          "role": "Adverbial",
+          "label": "Context / Where / How?"
+        }
+      ],
+      "correctSequence": [
+        "Ancient scholars",
+        "translated",
+        "philosophical texts",
+        "into universal languages"
+      ],
+      "chips": [
+        "philosophical texts",
+        "into universal languages",
+        "translated",
+        "Ancient scholars"
+      ],
+      "completeSentence": "Ancient scholars translated philosophical texts into universal languages.",
+      "explanation": "Verbs of transfer require both direct object and destination prepositional phrase."
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L110_PRAC_Q1",
+      "level": 110,
+      "instruction": "Assemble phrase blocks into syntactic order.",
+      "prompt": "Construct a fluent English sentence specifying who, action, what, and context.",
+      "targetSlots": [
+        {
+          "role": "Subject",
+          "label": "Who / What performs?"
+        },
+        {
+          "role": "Verb",
+          "label": "Action / State?"
+        },
+        {
+          "role": "Object",
+          "label": "Target / Recipient?"
+        },
+        {
+          "role": "Adverbial",
+          "label": "Context / Where / How?"
+        }
+      ],
+      "correctSequence": [
+        "Urban planners",
+        "mapped",
+        "green corridors",
+        "through metropolitan neighborhoods"
+      ],
+      "chips": [
+        "through metropolitan neighborhoods",
+        "green corridors",
+        "Urban planners",
+        "mapped"
+      ],
+      "completeSentence": "Urban planners mapped green corridors through metropolitan neighborhoods.",
+      "explanation": "Spatial path prepositions (`through`, `across`) attach naturally to mapped trajectories."
+    }
+  ]
+}

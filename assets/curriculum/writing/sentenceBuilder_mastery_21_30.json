@@ -1,0 +1,599 @@
+{
+  "gameType": "sentenceBuilder",
+  "batchIndex": 3,
+  "levels": "21-30",
+  "quests": [
+    {
+      "id": "WRT_SENTENCEBUILDER_L21_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "reliable",
+        "Priya",
+        "uses",
+        "online",
+        "calendar",
+        "a"
+      ],
+      "correctAnswer": "Priya uses a reliable online calendar.",
+      "hint": "Two describing words come before one noun. The word that gives your opinion usually comes before the word that names the type.",
+      "explanation": "When adjectives stack up, opinion words such as 'reliable' come before descriptive type words such as 'online'. Both stay between 'a' and the noun.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L21_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "wallet",
+        "a",
+        "leather",
+        "Sofia",
+        "carries",
+        "small"
+      ],
+      "correctAnswer": "Sofia carries a small leather wallet.",
+      "hint": "Size and material are both mentioned. Decide which one is closer to the noun.",
+      "explanation": "The usual order is size, then material, then the noun: 'small leather wallet'. Reversing the two adjectives would sound unnatural.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L21_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "paintings",
+        "displays",
+        "The",
+        "gallery",
+        "abstract",
+        "large"
+      ],
+      "correctAnswer": "The gallery displays large abstract paintings.",
+      "hint": "A plural object with two adjectives. Ask which describes the general shape of the thing and which describes its style.",
+      "explanation": "Adjectives before a noun follow a natural order (size before type). Because 'paintings' is plural and general, no article is needed.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L22_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "comes",
+        "Our",
+        "week",
+        "a",
+        "cleaner",
+        "twice"
+      ],
+      "correctAnswer": "Our cleaner comes twice a week.",
+      "hint": "A frequency phrase can be built from a number word and a time unit. The little word between them is essential.",
+      "explanation": "'Twice a week' is a frequency expression: number + a + time period. It goes after the verb because it tells how often the action happens.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L22_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "I",
+        "my",
+        "month",
+        "once",
+        "call",
+        "grandmother",
+        "a"
+      ],
+      "correctAnswer": "I call my grandmother once a month.",
+      "hint": "Find the phrase that answers 'how often?'. It has a fixed internal order.",
+      "explanation": "Like 'twice a week', 'once a month' stays together as one block. It follows the object rather than splitting the verb from it.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L22_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "every",
+        "opens",
+        "gym",
+        "except",
+        "day",
+        "Sunday",
+        "The"
+      ],
+      "correctAnswer": "The gym opens every day except Sunday.",
+      "hint": "One word introduces an exception. What does it separate?",
+      "explanation": "'Except' introduces the exception to 'every day'. The frequency phrase 'every day' comes after the verb, and the exception follows it.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L23_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "washes",
+        "my",
+        "On",
+        "car",
+        "father",
+        "Sundays,",
+        "the"
+      ],
+      "correctAnswer": "On Sundays, my father washes the car.",
+      "hint": "When a time phrase opens the sentence, it is followed by a comma. Check which token carries that comma.",
+      "explanation": "A time expression at the start is usually separated from the main clause by a comma. The word order that follows is the ordinary subject + verb + object.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L23_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "lake",
+        "skating",
+        "winter,",
+        "the",
+        "a",
+        "becomes",
+        "popular",
+        "In",
+        "spot"
+      ],
+      "correctAnswer": "In winter, the lake becomes a popular skating spot.",
+      "hint": "There is a signal at the start telling when. The second part of the sentence describes a change of state.",
+      "explanation": "The opening phrase 'In winter,' sets the time. 'Becomes' links the lake to a new description, 'a popular skating spot', which contains a compound noun.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L23_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "book",
+        "hosts",
+        "a",
+        "the",
+        "autumn,",
+        "Every",
+        "city",
+        "fair"
+      ],
+      "correctAnswer": "Every autumn, the city hosts a book fair.",
+      "hint": "The time phrase is set apart at the beginning. Identify who acts and what they organise afterwards.",
+      "explanation": "'Every autumn,' is a frequency and time phrase in first position. In the main clause, 'the city' is the subject and 'a book fair' is the object.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L24_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "wait",
+        "the",
+        "platform",
+        "Passengers",
+        "the",
+        "far",
+        "of",
+        "end",
+        "at"
+      ],
+      "correctAnswer": "Passengers wait at the far end of the platform.",
+      "hint": "A place phrase can contain a smaller place phrase inside it. Build the inner one first.",
+      "explanation": "'At the far end of the platform' contains two prepositional phrases: 'at ... end' and 'of the platform'. The adjective 'far' describes 'end'.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L24_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "whole",
+        "The",
+        "the",
+        "second",
+        "for",
+        "printer",
+        "department",
+        "is",
+        "the",
+        "on",
+        "floor"
+      ],
+      "correctAnswer": "The printer for the whole department is on the second floor.",
+      "hint": "The subject is long because it includes a purpose phrase. Locate the verb 'is' to know where that phrase must end.",
+      "explanation": "The subject phrase 'the printer for the whole department' comes before 'is'. Then 'on the second floor' is the location, with 'second' an ordinal adjective.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L24_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "the",
+        "the",
+        "behind",
+        "building",
+        "in",
+        "Our",
+        "works",
+        "dentist",
+        "station"
+      ],
+      "correctAnswer": "Our dentist works in the building behind the station.",
+      "hint": "One place is described using a second place. Keep the two apart and check which comes first.",
+      "explanation": "The first place phrase, 'in the building', is further specified by 'behind the station', which follows the noun it describes.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L25_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "every",
+        "before",
+        "goalkeeper",
+        "Our",
+        "match",
+        "hard",
+        "trains"
+      ],
+      "correctAnswer": "Our goalkeeper trains hard before every match.",
+      "hint": "The word for effort looks like an adjective but describes the action. It sits directly after the verb.",
+      "explanation": "'Hard' can be an adverb meaning 'with great effort'. It stays after the verb, and the time phrase 'before every match' comes afterwards.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L25_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "surprisingly",
+        "intern",
+        "fast",
+        "learns",
+        "The",
+        "new"
+      ],
+      "correctAnswer": "The new intern learns surprisingly fast.",
+      "hint": "A word that rates the speed is itself strengthened by another word. Keep those two together at the end.",
+      "explanation": "'Fast' is an adverb here, and 'surprisingly' modifies it. The subject 'the new intern' has an adjective before the noun.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L25_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "really",
+        "cooks",
+        "My",
+        "well",
+        "grandfather"
+      ],
+      "correctAnswer": "My grandfather cooks really well.",
+      "hint": "Only one word can finish this sentence naturally. Think about how skill is described after a verb.",
+      "explanation": "'Well' is the adverb form of 'good'. 'Really' intensifies it, and together they follow the verb.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L26_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "on",
+        "before",
+        "it",
+        "every",
+        "technician",
+        "The",
+        "lesson",
+        "switches"
+      ],
+      "correctAnswer": "The technician switches it on before every lesson.",
+      "hint": "The thing being switched is replaced by a pronoun. Decide whether the pronoun can be moved after the particle.",
+      "explanation": "With separable phrasal verbs, a pronoun object must go between the verb and the particle: 'switches it on', not 'switches on it'.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L26_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "new",
+        "Our",
+        "the",
+        "staff",
+        "looks",
+        "manager",
+        "after"
+      ],
+      "correctAnswer": "Our manager looks after the new staff.",
+      "hint": "This verb and its partner cannot be split, so the object comes after both.",
+      "explanation": "'Look after' means 'take care of' and is inseparable. The object 'the new staff' goes after 'after'.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L26_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "Friday",
+        "every",
+        "them",
+        "Ben",
+        "away",
+        "throws"
+      ],
+      "correctAnswer": "Ben throws them away every Friday.",
+      "hint": "Another pronoun-plus-phrasal-verb pattern. Check where 'them' should sit.",
+      "explanation": "'Throw away' can be separated, and pronouns like 'them' must sit inside the phrasal verb. 'Every Friday' shows the routine.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L27_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "library",
+        "next",
+        "The",
+        "new",
+        "school's",
+        "opens",
+        "month"
+      ],
+      "correctAnswer": "The school's new library opens next month.",
+      "hint": "The owner-and-possession phrase is part of the subject. Adjectives come between the possessive noun and the item.",
+      "explanation": "In 'the school's new library', the possessive comes first and 'new' sits before 'library'. 'Next month' is a future time phrase.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L27_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "season",
+        "breakfast",
+        "every",
+        "The",
+        "changes",
+        "menu",
+        "hotel's"
+      ],
+      "correctAnswer": "The hotel's breakfast menu changes every season.",
+      "hint": "A place owns a service. Decide how the two nouns that make one item ('breakfast menu') should stay together.",
+      "explanation": "Possessive 's can be used for organisations. 'Breakfast menu' is a compound noun: the first word tells what type of menu.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L27_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "run",
+        "parents",
+        "a",
+        "My",
+        "small",
+        "bakery",
+        "friend's",
+        "best"
+      ],
+      "correctAnswer": "My best friend's parents run a small bakery.",
+      "hint": "Build the long possessive subject before adding the verb. Two-word owner phrase.",
+      "explanation": "'My best friend's parents' means the parents of my best friend. The 's attaches to the last word of the owner phrase.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L28_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "drink",
+        "includes",
+        "The",
+        "ticket",
+        "the",
+        "price",
+        "a",
+        "of",
+        "free"
+      ],
+      "correctAnswer": "The price of the ticket includes a free drink.",
+      "hint": "A noun is followed by a phrase saying what it belongs to. Keep the whole subject together before the verb.",
+      "explanation": "'The price of the ticket' is a noun phrase with an 'of' phrase. The verb 'includes' agrees with 'price', not 'ticket'.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L28_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "of",
+        "entrance",
+        "group",
+        "the",
+        "waits",
+        "near",
+        "A",
+        "tourists"
+      ],
+      "correctAnswer": "A group of tourists waits near the entrance.",
+      "hint": "The first noun names the group. The verb form depends on it rather than on the people inside.",
+      "explanation": "'A group of tourists' is grammatically singular, so the verb is 'waits'. 'Near the entrance' says where.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L28_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "of",
+        "Fridays",
+        "team",
+        "on",
+        "the",
+        "from",
+        "rest",
+        "home",
+        "works",
+        "The"
+      ],
+      "correctAnswer": "The rest of the team works from home on Fridays.",
+      "hint": "One noun phrase names a portion of a larger set. After that, two more phrases describe location and time.",
+      "explanation": "'The rest of the team' is singular in structure, so 'works'. 'From home' shows location and 'on Fridays' shows repeated time.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L29_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "tickets",
+        "Most",
+        "by",
+        "buy",
+        "card",
+        "visitors"
+      ],
+      "correctAnswer": "Most visitors buy tickets by card.",
+      "hint": "A quantity word starts the subject, and the payment method needs a small word with no article.",
+      "explanation": "'By card' shows the method of payment without an article. 'Most visitors' is plural, so the verb 'buy' has no -s, and 'tickets' is a plural noun used without a determiner.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L29_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "fresh",
+        "soup",
+        "seasons",
+        "The",
+        "herbs",
+        "the",
+        "chef",
+        "with"
+      ],
+      "correctAnswer": "The chef seasons the soup with fresh herbs.",
+      "hint": "An ingredient is added with a small connecting word. Locate the object before the extra item.",
+      "explanation": "'With' introduces an added item or tool. The object 'the soup' comes right after the verb, then 'with fresh herbs'.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L29_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "gym",
+        "brother",
+        "to",
+        "the",
+        "go",
+        "Usually",
+        "my",
+        "with",
+        "I"
+      ],
+      "correctAnswer": "Usually I go to the gym with my brother.",
+      "hint": "A frequency word starts the sentence this time. Find the token that shows the companion.",
+      "explanation": "When 'usually' opens the sentence, the rest keeps the normal order. 'With my brother' names the companion and comes after the place phrase.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L30_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "the",
+        "floor",
+        "flatmate",
+        "brother's",
+        "whole",
+        "My",
+        "often",
+        "cooks",
+        "for",
+        "dinner"
+      ],
+      "correctAnswer": "My brother's flatmate often cooks dinner for the whole floor.",
+      "hint": "Layers: possessive owner, frequency word, verb and object, then who benefits. Stack them in that order.",
+      "explanation": "The possessive phrase 'my brother's flatmate' forms the subject. 'Often' is before the verb, 'dinner' is the object and 'for the whole floor' tells who benefits.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L30_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "for",
+        "summer,",
+        "the",
+        "classes",
+        "library",
+        "offers",
+        "the",
+        "In",
+        "beginners",
+        "city",
+        "free"
+      ],
+      "correctAnswer": "In the summer, the city library offers free classes for beginners.",
+      "hint": "A time opener needs a comma. Then identify the compound noun in the subject and the group that benefits.",
+      "explanation": "'In the summer,' opens the sentence with a comma. 'City library' is a compound noun, and 'for beginners' says who the classes are for.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L30_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "security",
+        "up",
+        "locks",
+        "guard",
+        "midnight",
+        "always",
+        "The",
+        "before"
+      ],
+      "correctAnswer": "The security guard always locks up before midnight.",
+      "hint": "A phrasal verb without an object sits next to a time limit. Decide where the frequency word goes.",
+      "explanation": "'Always' comes before the main verb 'locks'. 'Lock up' is a phrasal verb meaning 'secure the building', and 'before midnight' gives the deadline.",
+      "sentenceType": "statement"
+    }
+  ],
+  "phase": "mastery"
+}

@@ -1,0 +1,517 @@
+{
+  "gameType": "sentenceBuilder",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "WRT_SENTENCEBUILDER_L1_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "dinner",
+        "Dad",
+        "cooks"
+      ],
+      "correctAnswer": "Dad cooks dinner.",
+      "hint": "Ask who is doing something, then place the action before the meal it affects.",
+      "explanation": "A basic statement has a subject (who), a verb (what they do) and an object (what receives the action): Dad + cooks + dinner.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L1_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "museums",
+        "Tourists",
+        "visit"
+      ],
+      "correctAnswer": "Tourists visit museums.",
+      "hint": "Plural subjects need no article. Find the people first, then the action, then the places.",
+      "explanation": "Plural nouns like 'tourists' and 'museums' can stand alone. The verb sits between the subject and the object, and here it has no -s because the subject is plural.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L1_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "computers",
+        "Ravi",
+        "fixes"
+      ],
+      "correctAnswer": "Ravi fixes computers.",
+      "hint": "A name can be the subject. Look for the word that names the job being done.",
+      "explanation": "The verb 'fixes' ends in -s because 'Ravi' is one person. The object 'computers' comes after the verb because it shows what he repairs.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L2_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "repair",
+        "bicycles",
+        "They"
+      ],
+      "correctAnswer": "They repair bicycles.",
+      "hint": "One word can replace the people doing the action. Decide which token can do that.",
+      "explanation": "A pronoun ('They') can replace a noun phrase as the subject. It still comes first, and the verb 'repair' has no -s because 'they' is plural.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L2_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "volunteers",
+        "We",
+        "need"
+      ],
+      "correctAnswer": "We need volunteers.",
+      "hint": "The speaker is included in the group. What does the group want to find?",
+      "explanation": "'We' includes the speaker and others. Both 'need' and 'volunteers' follow the usual order: verb, then the thing that is needed.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L2_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "stamps",
+        "She",
+        "collects"
+      ],
+      "correctAnswer": "She collects stamps.",
+      "hint": "Only one word tells you who the sentence is about. The verb form with -s matches it.",
+      "explanation": "With 'she', a present-tense verb takes -s: collects. The object 'stamps' is plural, so it needs no determiner.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L3_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "The",
+        "late",
+        "train",
+        "arrives"
+      ],
+      "correctAnswer": "The train arrives late.",
+      "hint": "Locate the noun phrase that acts as the subject. The word describing how the arrival happens comes last.",
+      "explanation": "'Late' is an adverb that tells how or when the action happens. It follows the verb it describes.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L3_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "phone",
+        "rings",
+        "My",
+        "loudly"
+      ],
+      "correctAnswer": "My phone rings loudly.",
+      "hint": "A possessive word belongs directly in front of the noun it modifies. The sound description follows the verb.",
+      "explanation": "'My' is a possessive determiner and stays with 'phone' as one unit. The adverb 'loudly' describes how the phone rings, so it comes after 'rings'.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L3_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "work",
+        "outside",
+        "Farmers"
+      ],
+      "correctAnswer": "Farmers work outside.",
+      "hint": "This sentence has no object. Ask where the action takes place.",
+      "explanation": "'Work' is complete without an object here. 'Outside' is an adverb of place and comes after the verb.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L4_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "hot",
+        "The",
+        "is",
+        "soup"
+      ],
+      "correctAnswer": "The soup is hot.",
+      "hint": "The verb here links the subject to a description instead of an action. Put the description last.",
+      "explanation": "With 'is', the word after the verb describes the subject: this is a linking verb pattern (subject + is + adjective).",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L4_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "is",
+        "brother",
+        "a",
+        "nurse",
+        "My"
+      ],
+      "correctAnswer": "My brother is a nurse.",
+      "hint": "Work out the two parts joined by 'is': the person and what he does for a living.",
+      "explanation": "After 'is', a noun phrase can rename the subject. 'A' comes before 'nurse' because it is a singular job noun.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L4_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "shoes",
+        "expensive",
+        "These",
+        "are"
+      ],
+      "correctAnswer": "These shoes are expensive.",
+      "hint": "Check whether the subject is one thing or many, then choose the linking verb that matches it.",
+      "explanation": "'These shoes' is plural, so the linking verb is 'are'. The adjective 'expensive' describes the shoes and comes after the verb.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L5_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "Lena",
+        "in",
+        "a",
+        "bank",
+        "works"
+      ],
+      "correctAnswer": "Lena works in a bank.",
+      "hint": "Decide where the work happens. The place phrase begins with a small connecting word and ends with a noun phrase.",
+      "explanation": "A prepositional phrase ('in a bank') answers the question 'where?'. It follows the verb, and the article 'a' comes before the singular noun.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L5_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "keys",
+        "The",
+        "on",
+        "are",
+        "table",
+        "the"
+      ],
+      "correctAnswer": "The keys are on the table.",
+      "hint": "Two noun phrases start with the same small word. Each one needs its own article beside it.",
+      "explanation": "'On the table' tells the position of the keys. The preposition comes first, then the determiner, then the noun.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L5_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "Our",
+        "nine",
+        "at",
+        "starts",
+        "class"
+      ],
+      "correctAnswer": "Our class starts at nine.",
+      "hint": "Prepositions can introduce time as well as place. Which word introduces the exact hour?",
+      "explanation": "'At' is used before exact clock times. The time phrase comes after the verb because it tells when the class begins.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L6_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "a",
+        "quick",
+        "answer",
+        "I",
+        "need"
+      ],
+      "correctAnswer": "I need a quick answer.",
+      "hint": "The adjective sits between the article and the noun it describes.",
+      "explanation": "In a noun phrase, the order is determiner + adjective + noun: 'a quick answer'. Adjectives do not move after the noun in this pattern.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L6_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "backpack",
+        "a",
+        "carries",
+        "heavy",
+        "Tom"
+      ],
+      "correctAnswer": "Tom carries a heavy backpack.",
+      "hint": "Build the object as one block first, then decide where it goes relative to the action.",
+      "explanation": "The object 'a heavy backpack' is a single noun phrase. The adjective 'heavy' goes before the noun and after 'a'.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L6_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "repairs",
+        "buildings",
+        "Old",
+        "need",
+        "regular"
+      ],
+      "correctAnswer": "Old buildings need regular repairs.",
+      "hint": "Both the subject and the object have an adjective. Pair each adjective with its noun before ordering the sentence.",
+      "explanation": "Each noun has its own describing word before it: 'old buildings' and 'regular repairs'. No article is needed for these general plural nouns.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L7_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "rarely",
+        "Our",
+        "complain",
+        "neighbours"
+      ],
+      "correctAnswer": "Our neighbours rarely complain.",
+      "hint": "Frequency words say how often something happens. Where does the word for 'not often' fit between the two parts of the core sentence?",
+      "explanation": "A frequency adverb like 'rarely' goes before the main verb, after the subject.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L7_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "bus",
+        "is",
+        "late",
+        "The",
+        "never"
+      ],
+      "correctAnswer": "The bus is never late.",
+      "hint": "With 'is', a frequency adverb moves to a different spot than with an action verb. Think about what comes after 'is'.",
+      "explanation": "Frequency adverbs go after 'be': 'is never late'. This is the opposite of the pattern before action verbs, where they come before the verb.",
+      "sentenceType": "negative"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L7_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "messages",
+        "her",
+        "checks",
+        "always",
+        "She"
+      ],
+      "correctAnswer": "She always checks her messages.",
+      "hint": "Find the frequency word, then decide whether it is closer to the subject or to the object.",
+      "explanation": "'Always' sits before the main verb 'checks'. The possessive 'her' stays attached to 'messages'.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L8_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "go",
+        "year",
+        "Prices",
+        "every",
+        "up"
+      ],
+      "correctAnswer": "Prices go up every year.",
+      "hint": "'Go' and its partner word work together as one meaning. The time expression finishes the sentence.",
+      "explanation": "'Go up' is a phrasal verb meaning 'increase'. The particle 'up' stays right after the verb, and 'every year' says how often.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L8_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "new",
+        "for",
+        "Our",
+        "clients",
+        "team",
+        "looks"
+      ],
+      "correctAnswer": "Our team looks for new clients.",
+      "hint": "One verb needs a small partner word before its object. Together they mean 'search'.",
+      "explanation": "'Look for' means 'search for'. The preposition 'for' must stay next to 'looks', and the object 'new clients' comes after it.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L8_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "flight",
+        "at",
+        "noon",
+        "takes",
+        "off",
+        "The"
+      ],
+      "correctAnswer": "The flight takes off at noon.",
+      "hint": "The verb and particle describe what a plane does. The time phrase closes the sentence.",
+      "explanation": "'Take off' is a phrasal verb meaning 'leave the ground'. It has no object, so the time phrase 'at noon' follows directly.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L9_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "on",
+        "the",
+        "Her",
+        "sends",
+        "manager",
+        "Friday",
+        "report"
+      ],
+      "correctAnswer": "Her manager sends the report on Friday.",
+      "hint": "Sort the tokens into three groups: who acts, what is sent, and when. Then check which small word introduces the day.",
+      "explanation": "The subject 'her manager' comes first, the object 'the report' follows the verb, and 'on' introduces a day of the week.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L9_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "vegetables",
+        "My",
+        "behind",
+        "grandparents",
+        "house",
+        "their",
+        "grow"
+      ],
+      "correctAnswer": "My grandparents grow vegetables behind their house.",
+      "hint": "There are two possessive words. Each belongs beside the noun it describes, not next to the verb.",
+      "explanation": "'My' goes with 'grandparents' and 'their' goes with 'house'. The place phrase 'behind their house' comes after the object.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L9_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "the",
+        "hotel",
+        "Every",
+        "a",
+        "balcony",
+        "has",
+        "room",
+        "in"
+      ],
+      "correctAnswer": "Every room in the hotel has a balcony.",
+      "hint": "The subject is longer than one word. Keep 'every room' and the place phrase together before you look for the verb.",
+      "explanation": "The subject can include a prepositional phrase: 'every room in the hotel'. 'Every' goes with a singular noun, so the verb is 'has', not 'have'.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L10_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "in",
+        "students",
+        "class",
+        "speak",
+        "languages",
+        "Several",
+        "three",
+        "my"
+      ],
+      "correctAnswer": "Several students in my class speak three languages.",
+      "hint": "Quantity words come before nouns. Identify the two groups of people or things being counted.",
+      "explanation": "'Several' and 'three' are quantity words placed before plural nouns. 'In my class' says which students, and 'speak' has no -s because the subject is plural.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L10_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "pharmacy",
+        "office",
+        "sunscreen",
+        "my",
+        "sells",
+        "The",
+        "cheap",
+        "near"
+      ],
+      "correctAnswer": "The pharmacy near my office sells cheap sunscreen.",
+      "hint": "Find the subject, including the phrase that tells which place. The verb only comes after that whole phrase.",
+      "explanation": "The subject phrase 'the pharmacy near my office' can be long, but the verb 'sells' still follows it, and the adjective 'cheap' comes before its noun.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L10_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "buys",
+        "expensive",
+        "shoes",
+        "aunt",
+        "never",
+        "online",
+        "My"
+      ],
+      "correctAnswer": "My aunt never buys expensive shoes online.",
+      "hint": "Combine what you know: frequency word position, adjective position, and where the place-like word goes.",
+      "explanation": "'Never' comes before the main verb, 'expensive' comes before 'shoes', and 'online' comes last as an adverb telling how she buys.",
+      "sentenceType": "negative"
+    }
+  ],
+  "phase": "mastery"
+}

@@ -1,0 +1,590 @@
+{
+  "gameType": "sentenceBuilder",
+  "batchIndex": 5,
+  "levels": "41-50",
+  "quests": [
+    {
+      "id": "WRT_SENTENCEBUILDER_L41_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "technician",
+        "is",
+        "elevator",
+        "The",
+        "repairing",
+        "right",
+        "now",
+        "the"
+      ],
+      "correctAnswer": "The technician is repairing the elevator right now.",
+      "hint": "Right now signals an action in progress. The helping verb 'is' must stay before the -ing word.",
+      "explanation": "The present continuous uses am/is/are + verb-ing to show an action happening at this moment. 'Right now' confirms it.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L41_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "the",
+        "are",
+        "lecture",
+        "during",
+        "students",
+        "notes",
+        "The",
+        "taking"
+      ],
+      "correctAnswer": "The students are taking notes during the lecture.",
+      "hint": "Two words together form the verb. The plural subject decides which helper you need.",
+      "explanation": "'Students' is plural, so the helper is 'are'. The -ing verb 'taking' comes after the helper, followed by the object 'notes'.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L41_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "for",
+        "bank",
+        "I'm",
+        "reply",
+        "the",
+        "a",
+        "waiting",
+        "from"
+      ],
+      "correctAnswer": "I'm waiting for a reply from the bank.",
+      "hint": "One token combines the speaker and the helping verb. Then think about the fixed preposition after 'waiting'.",
+      "explanation": "'I'm' is the short form of 'I am'. 'Wait for' is a verb + preposition pair, and 'from the bank' says where the reply comes from.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L42_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "until",
+        "Saturday",
+        "staying",
+        "friends",
+        "with",
+        "Tariq",
+        "is"
+      ],
+      "correctAnswer": "Tariq is staying with friends until Saturday.",
+      "hint": "This describes a temporary arrangement. Find the time limit at the end.",
+      "explanation": "The present continuous can describe temporary situations. 'Until Saturday' gives the endpoint, which makes 'is staying' more natural than 'stays'.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L42_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "home",
+        "working",
+        "people",
+        "from",
+        "are",
+        "days",
+        "More",
+        "these"
+      ],
+      "correctAnswer": "More people are working from home these days.",
+      "hint": "A general change over time uses the same verb form. A quantity phrase opens the sentence.",
+      "explanation": "The present continuous also shows trends. 'These days' signals a current, changing pattern. 'More people' is a plural subject, so 'are' is needed.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L42_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "currently",
+        "is",
+        "a",
+        "testing",
+        "new",
+        "Our",
+        "app",
+        "team"
+      ],
+      "correctAnswer": "Our team is currently testing a new app.",
+      "hint": "An adverb meaning 'at this time' sits between the helper and the -ing verb.",
+      "explanation": "'Currently' goes after the auxiliary 'is' and before 'testing', emphasising that this is happening in the present period.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L43_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "work",
+        "paper",
+        "The",
+        "without",
+        "printer",
+        "doesn't"
+      ],
+      "correctAnswer": "The printer doesn't work without paper.",
+      "hint": "A negative uses a helper verb, and the main verb loses any -s. Which verb form is left?",
+      "explanation": "In present simple negatives, 'doesn't' or 'don't' comes before the base verb. 'Doesn't' is used with a singular subject like 'printer', and the main verb has no -s.",
+      "sentenceType": "negative"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L43_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "on",
+        "sale",
+        "don't",
+        "We",
+        "offer",
+        "refunds",
+        "items"
+      ],
+      "correctAnswer": "We don't offer refunds on sale items.",
+      "hint": "The helper verb changes with 'we'. What is the main verb form after it?",
+      "explanation": "With 'we', the negative helper is 'don't', followed by the base verb 'offer'. 'Sale items' is a compound noun that tells which items.",
+      "sentenceType": "negative"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L43_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "trains",
+        "don't",
+        "public",
+        "on",
+        "The",
+        "run",
+        "holidays"
+      ],
+      "correctAnswer": "The trains don't run on public holidays.",
+      "hint": "Decide between the two negative helpers by looking at the subject.",
+      "explanation": "'Trains' is plural, so the helper is 'don't'. The main verb 'run' stays in its base form, and 'on public holidays' says when.",
+      "sentenceType": "negative"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L44_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "station",
+        "bus",
+        "Does",
+        "the",
+        "stop",
+        "near",
+        "your"
+      ],
+      "correctAnswer": "Does your bus stop near the station?",
+      "hint": "A question begins with the helper verb, not the subject. The subject is 'your bus'.",
+      "explanation": "In present simple questions, do/does comes first, then the subject, then the base verb. Because 'bus' is singular, the helper is 'does' and 'stop' has no -s.",
+      "sentenceType": "question"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L44_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "need",
+        "a",
+        "purchase",
+        "this",
+        "you",
+        "for",
+        "receipt",
+        "Do"
+      ],
+      "correctAnswer": "Do you need a receipt for this purchase?",
+      "hint": "Which word starts a question that asks about you? The main verb is not conjugated.",
+      "explanation": "With 'you', the question helper is 'do'. The main verb 'need' is in base form, and 'for this purchase' says what the receipt is for.",
+      "sentenceType": "question"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L44_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "parents",
+        "Do",
+        "your",
+        "the",
+        "centre",
+        "live",
+        "in",
+        "city"
+      ],
+      "correctAnswer": "Do your parents live in the city centre?",
+      "hint": "Match the helper to a plural subject. The place phrase comes last.",
+      "explanation": "'Parents' is plural, so the helper is 'do'. The pattern is Do + subject + base verb + rest of the sentence.",
+      "sentenceType": "question"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L45_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "usually",
+        "you",
+        "groceries",
+        "buy",
+        "Where",
+        "your",
+        "do"
+      ],
+      "correctAnswer": "Where do you usually buy your groceries?",
+      "hint": "The question word is first, then the same helper pattern as before. Where does the frequency word go?",
+      "explanation": "The order is question word + do/does + subject + base verb. The frequency adverb 'usually' stays before the main verb, as in statements.",
+      "sentenceType": "question"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L45_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "What",
+        "pharmacy",
+        "close",
+        "does",
+        "the",
+        "time"
+      ],
+      "correctAnswer": "What time does the pharmacy close?",
+      "hint": "Two words together ask about the clock. The helper still comes before the subject.",
+      "explanation": "'What time' works as one question phrase. Then 'does' + subject + base verb: 'close' has no -s because 'does' already marks the third person.",
+      "sentenceType": "question"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L45_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "website",
+        "my",
+        "Why",
+        "number",
+        "ask",
+        "does",
+        "the",
+        "for",
+        "phone"
+      ],
+      "correctAnswer": "Why does the website ask for my phone number?",
+      "hint": "Find the word asking for a reason, then apply the helper + subject + base verb pattern.",
+      "explanation": "'Why' asks for a reason. After it comes the helper 'does' and the subject, with the base verb 'ask'. 'Phone number' is a compound noun.",
+      "sentenceType": "question"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L46_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "working",
+        "this",
+        "are",
+        "week",
+        "you",
+        "What",
+        "on"
+      ],
+      "correctAnswer": "What are you working on this week?",
+      "hint": "The question word is followed by the helper 'are'. The preposition stays at the end.",
+      "explanation": "In continuous questions, the helper comes before the subject: What + are + you + -ing. The preposition 'on' stays with the verb and finishes the phrase.",
+      "sentenceType": "question"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L46_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "they",
+        "are",
+        "closing",
+        "the",
+        "road",
+        "Why",
+        "main"
+      ],
+      "correctAnswer": "Why are they closing the main road?",
+      "hint": "The helper verb precedes the subject in a question with 'why'. Look for the -ing word.",
+      "explanation": "The order is Why + are + subject + verb-ing + object. 'Main road' is an adjective + noun phrase.",
+      "sentenceType": "question"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L46_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "my",
+        "The",
+        "Wi-Fi",
+        "in",
+        "isn't",
+        "working",
+        "room"
+      ],
+      "correctAnswer": "The Wi-Fi isn't working in my room.",
+      "hint": "A short negative form combines the helper and 'not'. Where does the -ing verb go?",
+      "explanation": "'Isn't' is 'is not'. The negative present continuous is subject + isn't/aren't + verb-ing, followed by the place phrase.",
+      "sentenceType": "negative"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L47_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "train",
+        "twenty",
+        "late",
+        "minutes",
+        "arrived",
+        "The"
+      ],
+      "correctAnswer": "The train arrived twenty minutes late.",
+      "hint": "The verb ends in -ed. A measured amount of time describes the delay.",
+      "explanation": "Regular past simple verbs add -ed. 'Twenty minutes' measures how late, and 'late' comes last as an adverb.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L47_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "a",
+        "through",
+        "booked",
+        "hotel",
+        "agent",
+        "We",
+        "the",
+        "travel"
+      ],
+      "correctAnswer": "We booked the hotel through a travel agent.",
+      "hint": "Choose the past form of the verb, then attach the way it was arranged.",
+      "explanation": "'Booked' is the regular past of 'book'. 'Through a travel agent' shows the method or channel used.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L47_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "Toronto",
+        "Marco",
+        "after",
+        "to",
+        "university",
+        "moved"
+      ],
+      "correctAnswer": "Marco moved to Toronto after university.",
+      "hint": "One verb tells you the event is complete. The end of the sentence marks when.",
+      "explanation": "'Moved' is regular past. 'To Toronto' shows direction, and 'after university' places the event in time.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L48_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "the",
+        "umbrella",
+        "train",
+        "her",
+        "left",
+        "She",
+        "on"
+      ],
+      "correctAnswer": "She left her umbrella on the train.",
+      "hint": "This past form does not end in -ed. Consider what happened to the umbrella and where.",
+      "explanation": "'Left' is the irregular past of 'leave'. The possessive 'her' goes with 'umbrella', and 'on the train' gives the place.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L48_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "I",
+        "jacket",
+        "during",
+        "bought",
+        "this",
+        "sale",
+        "a"
+      ],
+      "correctAnswer": "I bought this jacket during a sale.",
+      "hint": "An irregular past verb sits after 'I'. A word meaning 'in the period of' introduces the sale.",
+      "explanation": "'Bought' is the irregular past of 'buy'. 'This' shows a specific item, and 'during a sale' tells the circumstances.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L48_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "through",
+        "Ahmed",
+        "drove",
+        "night",
+        "the"
+      ],
+      "correctAnswer": "Ahmed drove through the night.",
+      "hint": "A short sentence where the past verb is irregular and the phrase describes a duration.",
+      "explanation": "'Drove' is the past of 'drive'. 'Through the night' means for the entire night.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L49_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "didn't",
+        "until",
+        "message",
+        "receive",
+        "I",
+        "your",
+        "morning",
+        "this"
+      ],
+      "correctAnswer": "I didn't receive your message until this morning.",
+      "hint": "The helper takes the past marking. The main verb goes back to its base form.",
+      "explanation": "In past negatives, 'didn't' + base verb is used: 'didn't receive', not 'didn't received'. 'Until this morning' marks when the message first arrived.",
+      "sentenceType": "negative"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L49_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "find",
+        "Did",
+        "the",
+        "the",
+        "in",
+        "documents",
+        "you",
+        "drawer"
+      ],
+      "correctAnswer": "Did you find the documents in the drawer?",
+      "hint": "Past questions start with one helper word. What form does the main verb take?",
+      "explanation": "'Did' begins a yes/no question in the past, and the main verb 'find' returns to its base form.",
+      "sentenceType": "question"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L49_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "park",
+        "they",
+        "van",
+        "did",
+        "the",
+        "Where"
+      ],
+      "correctAnswer": "Where did they park the van?",
+      "hint": "The question word is followed by the past helper. The main verb loses its past ending.",
+      "explanation": "After a question word, the past pattern is did + subject + base verb. 'Park' stays in base form because 'did' carries the past.",
+      "sentenceType": "question"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L50_Q1",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "Our",
+        "month",
+        "moving",
+        "the",
+        "the",
+        "end",
+        "of",
+        "at",
+        "are",
+        "neighbours",
+        "out"
+      ],
+      "correctAnswer": "Our neighbours are moving out at the end of the month.",
+      "hint": "This describes a plan already arranged. Work out which helper the plural subject needs.",
+      "explanation": "The present continuous can express a fixed future arrangement. 'Moving out' is a phrasal verb, and 'at the end of the month' gives the timing.",
+      "sentenceType": "statement"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L50_Q2",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "didn't",
+        "last",
+        "loan",
+        "week",
+        "approve",
+        "the",
+        "The",
+        "bank"
+      ],
+      "correctAnswer": "The bank didn't approve the loan last week.",
+      "hint": "Look for a past time marker. What negative helper goes before the base verb?",
+      "explanation": "'Didn't' + base verb makes the past negative. 'Last week' is a finished time period, which is why the past is needed.",
+      "sentenceType": "negative"
+    },
+    {
+      "id": "WRT_SENTENCEBUILDER_L50_Q3",
+      "instruction": "Build the sentence.",
+      "subtype": "sentenceBuilder",
+      "interactionType": "reorder",
+      "shuffledWords": [
+        "does",
+        "long",
+        "to",
+        "the",
+        "How",
+        "take",
+        "journey",
+        "the",
+        "airport"
+      ],
+      "correctAnswer": "How long does the journey to the airport take?",
+      "hint": "The question phrase measures duration. The subject includes a destination phrase.",
+      "explanation": "'How long' asks about duration. The subject 'the journey to the airport' separates 'does' from 'take', while 'take' stays in base form.",
+      "sentenceType": "question"
+    }
+  ],
+  "phase": "mastery"
+}
