@@ -78,6 +78,8 @@ import 'package:vowl/features/grammar/direct_indirect_speech/presentation/pages/
 import 'package:vowl/features/grammar/direct_indirect_speech/presentation/pages/direct_indirect_speech_practice_screen.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/pages/read_and_answer_learn_screen.dart';
 import 'package:vowl/features/reading/read_and_answer/presentation/pages/read_and_answer_practice_screen.dart';
+import 'package:vowl/features/reading/find_word_meaning/presentation/pages/find_word_meaning_learn_screen.dart';
+import 'package:vowl/features/reading/find_word_meaning/presentation/pages/find_word_meaning_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -517,6 +519,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'findwordmeaning') {
+          return fadeTransitionPage(
+            child: FindWordMeaningLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -735,6 +743,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'readandanswer') {
           return fadeTransitionPage(
             child: ReadAndAnswerPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'findwordmeaning') {
+          return fadeTransitionPage(
+            child: FindWordMeaningPracticeScreen(level: level),
             state: state,
           );
         }
