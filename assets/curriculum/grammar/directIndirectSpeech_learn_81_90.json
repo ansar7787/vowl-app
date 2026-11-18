@@ -1,0 +1,479 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "learn",
+  "batchIndex": 9,
+  "levels": "81-90",
+  "quests": [
+    {
+      "id": "dis_l81_learn_q1",
+      "level": 81,
+      "conceptTitle": "Speech Bubble to Report Converter: Universal Truth",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Universal Truth",
+      "directSpeech": "The teacher said, \"The sun rises in the east.\"",
+      "reportedSpeech": "The teacher said that the sun rises in the east.",
+      "changesList": [
+        "no tense change needed (universal truth)"
+      ],
+      "ruleExplanation": "Because this is a scientific fact, 'rises' does not need to backshift to 'rose'.",
+      "nativeTip": "This is a universal truth that is always true — it usually keeps its original tense in reported speech.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The teacher said, \"The sun rises in the east.\"\" ➔ \"The teacher said that the sun rises in the east.\""
+    },
+    {
+      "id": "dis_l81_learn_q2",
+      "level": 81,
+      "conceptTitle": "Speech Bubble to Report Converter: Universal Truth",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Universal Truth",
+      "directSpeech": "The professor said, \"Water boils at 100 degrees Celsius at sea level.\"",
+      "reportedSpeech": "The professor said that water boils at 100 degrees Celsius at sea level.",
+      "changesList": [
+        "no tense change needed (scientific fact)"
+      ],
+      "ruleExplanation": "'Boils' remains unchanged because it states a permanent scientific fact.",
+      "nativeTip": "Facts of physics don't change over time — they stay in the present tense even in reported speech.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The professor said, \"Water boils at 100 degrees Celsius at sea level.\"\" ➔ \"The professor said that water boils at 100 degrees Celsius at sea level.\""
+    },
+    {
+      "id": "dis_l81_learn_q3",
+      "level": 81,
+      "conceptTitle": "Speech Bubble to Report Converter: Universal Truth",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Universal Truth",
+      "directSpeech": "Grace said, \"Paris is the capital of France.\"",
+      "reportedSpeech": "Grace said that Paris is the capital of France.",
+      "changesList": [
+        "no tense change needed (permanent fact)"
+      ],
+      "ruleExplanation": "'Is' stays unchanged since this fact remains true regardless of when it is reported.",
+      "nativeTip": "A stable, unchanging fact about the world doesn't need the tense to move back.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Grace said, \"Paris is the capital of France.\"\" ➔ \"Grace said that Paris is the capital of France.\""
+    },
+    {
+      "id": "dis_l82_learn_q1",
+      "level": 82,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "Wei said, \"I go to the gym every morning.\"",
+      "reportedSpeech": "Wei said that he goes to the gym every morning.",
+      "changesList": [
+        "'I' → 'he'",
+        "'go' stays present (ongoing habit)"
+      ],
+      "ruleExplanation": "Since the habit is still current, 'go' can stay in the present tense as 'goes'; only 'I' changes to 'he'.",
+      "nativeTip": "If the habit is still true now, the present tense can be kept even though the pronoun still changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Wei said, \"I go to the gym every morning.\"\" ➔ \"Wei said that he goes to the gym every morning.\""
+    },
+    {
+      "id": "dis_l82_learn_q2",
+      "level": 82,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "Sofia said, \"I used to smoke, but I don't anymore.\"",
+      "reportedSpeech": "Sofia said that she used to smoke but didn't anymore.",
+      "changesList": [
+        "'used to smoke' stays unchanged",
+        "'don't' → 'didn't'"
+      ],
+      "ruleExplanation": "'Used to smoke' stays the same, but 'don't' backshifts to 'didn't' since it's part of the ongoing report.",
+      "nativeTip": "'Used to' already describes a finished past habit and doesn't change, but the second clause still needs to backshift.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Sofia said, \"I used to smoke, but I don't anymore.\"\" ➔ \"Sofia said that she used to smoke but didn't anymore.\""
+    },
+    {
+      "id": "dis_l82_learn_q3",
+      "level": 82,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "Diego said, \"The store closes at 9 PM.\"",
+      "reportedSpeech": "Diego said that the store closes at 9 PM.",
+      "changesList": [
+        "no tense change needed (still-true fact)"
+      ],
+      "ruleExplanation": "Because this is a standing fact about the store's hours, 'closes' does not need to backshift.",
+      "nativeTip": "If this is still the store's normal closing time, there's no need to move the tense back.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Diego said, \"The store closes at 9 PM.\"\" ➔ \"Diego said that the store closes at 9 PM.\""
+    },
+    {
+      "id": "dis_l83_learn_q1",
+      "level": 83,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "Layla said, \"I am starving.\"",
+      "reportedSpeech": "Layla said that she is starving.",
+      "changesList": [
+        "'I' → 'she'",
+        "'am' → 'is' (present relevance retained)"
+      ],
+      "ruleExplanation": "Because Layla's statement is being reported right away and still applies, 'am' can stay as 'is' rather than backshifting to 'was'.",
+      "nativeTip": "When you report something immediately, the present tense can often be kept to show it's still true right now.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Layla said, \"I am starving.\"\" ➔ \"Layla said that she is starving.\""
+    },
+    {
+      "id": "dis_l83_learn_q2",
+      "level": 83,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "Ravi said, \"I don't feel well.\"",
+      "reportedSpeech": "Ravi said that he doesn't feel well.",
+      "changesList": [
+        "'I' → 'he'",
+        "'don't feel' stays present (still true now)"
+      ],
+      "ruleExplanation": "Since Ravi's statement is still true at the moment of reporting, 'don't feel' can remain unchanged instead of backshifting to 'didn't feel'.",
+      "nativeTip": "If you're reporting this immediately and it's still true, you can keep the present tense in the reported clause.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Ravi said, \"I don't feel well.\"\" ➔ \"Ravi said that he doesn't feel well.\""
+    },
+    {
+      "id": "dis_l83_learn_q3",
+      "level": 83,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "The manager announced, \"The system is down.\"",
+      "reportedSpeech": "The manager announced that the system is down.",
+      "changesList": [
+        "no tense change needed (present relevance)"
+      ],
+      "ruleExplanation": "Since the system is still down at the moment of reporting, 'is' does not need to backshift to 'was'.",
+      "nativeTip": "An announcement being reported right away, about a situation still happening, can keep its original tense.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager announced, \"The system is down.\"\" ➔ \"The manager announced that the system is down.\""
+    },
+    {
+      "id": "dis_l84_learn_q1",
+      "level": 84,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "Fatima said, \"I have a doctor's appointment today.\"",
+      "reportedSpeech": "Fatima said that she has a doctor's appointment today.",
+      "changesList": [
+        "no tense change needed (still today)",
+        "'I' → 'she'"
+      ],
+      "ruleExplanation": "Because the situation is still current and being reported on the same day, 'have' and 'today' remain unchanged.",
+      "nativeTip": "Since the appointment is still happening today, both the tense and the time word can stay the same.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Fatima said, \"I have a doctor's appointment today.\"\" ➔ \"Fatima said that she has a doctor's appointment today.\""
+    },
+    {
+      "id": "dis_l84_learn_q2",
+      "level": 84,
+      "conceptTitle": "Speech Bubble to Report Converter: Time Expression Shift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Time Expression Shift",
+      "directSpeech": "Rafael said, \"I have an appointment with my accountant today.\"",
+      "reportedSpeech": "Rafael said that he had an appointment with his accountant that day.",
+      "changesList": [
+        "'have' → 'had'",
+        "'today' → 'that day'",
+        "'I' → 'he'"
+      ],
+      "ruleExplanation": "Because the appointment is no longer current, 'have' backshifts to 'had', and 'today' becomes 'that day'.",
+      "nativeTip": "Now that time has clearly passed, both the tense and the time word need to move back.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Rafael said, \"I have an appointment with my accountant today.\"\" ➔ \"Rafael said that he had an appointment with his accountant that day.\""
+    },
+    {
+      "id": "dis_l84_learn_q3",
+      "level": 84,
+      "conceptTitle": "Speech Bubble to Report Converter: Universal Truth",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Universal Truth",
+      "directSpeech": "The scientist said, \"Light travels faster than sound.\"",
+      "reportedSpeech": "The scientist said that light travels faster than sound.",
+      "changesList": [
+        "no tense change needed (universal truth)"
+      ],
+      "ruleExplanation": "Because this is a permanent scientific truth, the tense never needs to backshift, regardless of when it's reported.",
+      "nativeTip": "No matter when you report this, a scientific fact like this keeps its tense unchanged.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The scientist said, \"Light travels faster than sound.\"\" ➔ \"The scientist said that light travels faster than sound.\""
+    },
+    {
+      "id": "dis_l85_learn_q1",
+      "level": 85,
+      "conceptTitle": "Speech Bubble to Report Converter: Universal Truth",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Universal Truth",
+      "directSpeech": "The geography teacher said, \"The Amazon River flows through Brazil.\"",
+      "reportedSpeech": "The geography teacher said that the Amazon River flows through Brazil.",
+      "changesList": [
+        "no tense change needed (permanent fact)"
+      ],
+      "ruleExplanation": "'Flows' remains unchanged because it describes a permanent geographical fact.",
+      "nativeTip": "A geographical fact that hasn't changed doesn't need the tense to move back.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The geography teacher said, \"The Amazon River flows through Brazil.\"\" ➔ \"The geography teacher said that the Amazon River flows through Brazil.\""
+    },
+    {
+      "id": "dis_l85_learn_q2",
+      "level": 85,
+      "conceptTitle": "Speech Bubble to Report Converter: Universal Truth",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Universal Truth",
+      "directSpeech": "The guide said, \"Mount Everest is the tallest mountain in the world.\"",
+      "reportedSpeech": "The guide said that Mount Everest is the tallest mountain in the world.",
+      "changesList": [
+        "no tense change needed (permanent fact)"
+      ],
+      "ruleExplanation": "'Is' remains unchanged because Mount Everest's status as the tallest mountain is still true.",
+      "nativeTip": "This fact about the world hasn't changed, so there's no reason to shift the tense.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The guide said, \"Mount Everest is the tallest mountain in the world.\"\" ➔ \"The guide said that Mount Everest is the tallest mountain in the world.\""
+    },
+    {
+      "id": "dis_l85_learn_q3",
+      "level": 85,
+      "conceptTitle": "Speech Bubble to Report Converter: Universal Truth",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Universal Truth",
+      "directSpeech": "The teacher said, \"The Earth revolves around the Sun once a year.\"",
+      "reportedSpeech": "The teacher said that the Earth revolves around the Sun once a year.",
+      "changesList": [
+        "no tense change needed (scientific fact)"
+      ],
+      "ruleExplanation": "'Revolves' stays unchanged since this is a scientific fact that doesn't depend on the moment of speaking.",
+      "nativeTip": "This astronomical fact remains true regardless of when it is reported.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The teacher said, \"The Earth revolves around the Sun once a year.\"\" ➔ \"The teacher said that the Earth revolves around the Sun once a year.\""
+    },
+    {
+      "id": "dis_l86_learn_q1",
+      "level": 86,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "Isabella said, \"I practice yoga every day.\"",
+      "reportedSpeech": "Isabella said that she practices yoga every day.",
+      "changesList": [
+        "'I' → 'she'",
+        "'practice' stays present (ongoing habit)"
+      ],
+      "ruleExplanation": "Since the habit is still ongoing, 'practice' does not need to backshift to 'practiced'.",
+      "nativeTip": "If this habit is still part of her routine, the present tense can stay.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Isabella said, \"I practice yoga every day.\"\" ➔ \"Isabella said that she practices yoga every day.\""
+    },
+    {
+      "id": "dis_l86_learn_q2",
+      "level": 86,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "Kwame said, \"I used to play football on weekends.\"",
+      "reportedSpeech": "Kwame said that he used to play football on weekends.",
+      "changesList": [
+        "'used to play' stays unchanged",
+        "'I' → 'he'"
+      ],
+      "ruleExplanation": "'Used to play' remains unchanged, since it already indicates a habit that has stopped.",
+      "nativeTip": "'Used to' already expresses a discontinued past habit and stays exactly the same in reported speech.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Kwame said, \"I used to play football on weekends.\"\" ➔ \"Kwame said that he used to play football on weekends.\""
+    },
+    {
+      "id": "dis_l86_learn_q3",
+      "level": 86,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "The company said, \"We always prioritize customer satisfaction.\"",
+      "reportedSpeech": "The company said that they always prioritize customer satisfaction.",
+      "changesList": [
+        "'we' → 'they'",
+        "'prioritize' stays present (ongoing policy)"
+      ],
+      "ruleExplanation": "Since this is a continuing policy, 'prioritize' stays in the present tense; only 'we' becomes 'they'.",
+      "nativeTip": "An ongoing company policy that's still in effect doesn't need the tense to move back.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The company said, \"We always prioritize customer satisfaction.\"\" ➔ \"The company said that they always prioritize customer satisfaction.\""
+    },
+    {
+      "id": "dis_l87_learn_q1",
+      "level": 87,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "The handbook says, \"Employees must clock in by 9 AM.\"",
+      "reportedSpeech": "The handbook says that employees must clock in by 9 AM.",
+      "changesList": [
+        "no tense change needed (rule still in force)"
+      ],
+      "ruleExplanation": "Since the rule is still active, both the reporting verb and 'must' stay in the present tense.",
+      "nativeTip": "A rule that is still currently in force is usually reported with 'says', keeping the present tense.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The handbook says, \"Employees must clock in by 9 AM.\"\" ➔ \"The handbook says that employees must clock in by 9 AM.\""
+    },
+    {
+      "id": "dis_l87_learn_q2",
+      "level": 87,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "The law states, \"Drivers must wear seatbelts at all times.\"",
+      "reportedSpeech": "The law states that drivers must wear seatbelts at all times.",
+      "changesList": [
+        "no tense change needed (current law)"
+      ],
+      "ruleExplanation": "Because the law is still in effect, both 'states' and 'must' remain in the present tense.",
+      "nativeTip": "A current law is best reported in the present tense, since it still applies.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The law states, \"Drivers must wear seatbelts at all times.\"\" ➔ \"The law states that drivers must wear seatbelts at all times.\""
+    },
+    {
+      "id": "dis_l87_learn_q3",
+      "level": 87,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "The contract says, \"Payment is due within 30 days.\"",
+      "reportedSpeech": "The contract says that payment is due within 30 days.",
+      "changesList": [
+        "no tense change needed (current contract term)"
+      ],
+      "ruleExplanation": "Since this term of the contract is still in effect, 'says' and 'is' both stay in the present tense.",
+      "nativeTip": "As long as the contract term is still active, keep everything in the present tense.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The contract says, \"Payment is due within 30 days.\"\" ➔ \"The contract says that payment is due within 30 days.\""
+    },
+    {
+      "id": "dis_l88_learn_q1",
+      "level": 88,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Priya said, \"I am tired because I ran ten kilometers this morning.\"",
+      "reportedSpeech": "Priya said that she was tired because she had run ten kilometers that morning.",
+      "changesList": [
+        "'am' → 'was'",
+        "'ran' → 'had run'",
+        "'this morning' → 'that morning'"
+      ],
+      "ruleExplanation": "'Am tired' becomes 'was tired', and 'ran' (completed earlier) becomes 'had run'; 'this morning' becomes 'that morning'.",
+      "nativeTip": "Two different backshifts happen in one sentence: the main clause and the earlier reason both move one step back.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Priya said, \"I am tired because I ran ten kilometers this morning.\"\" ➔ \"Priya said that she was tired because she had run ten kilometers that morning.\""
+    },
+    {
+      "id": "dis_l88_learn_q2",
+      "level": 88,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The engineer said, \"The bridge is safe because it was inspected last month.\"",
+      "reportedSpeech": "The engineer said that the bridge was safe because it had been inspected the previous month.",
+      "changesList": [
+        "'is' → 'was'",
+        "'was inspected' → 'had been inspected'",
+        "'last month' → 'the previous month'"
+      ],
+      "ruleExplanation": "'Is safe' becomes 'was safe', 'was inspected' becomes 'had been inspected', and 'last month' becomes 'the previous month'.",
+      "nativeTip": "Notice that both clauses need separate treatment — the current state and the earlier action.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The engineer said, \"The bridge is safe because it was inspected last month.\"\" ➔ \"The engineer said that the bridge was safe because it had been inspected the previous month.\""
+    },
+    {
+      "id": "dis_l88_learn_q3",
+      "level": 88,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The chef said, \"This soup tastes better because I added fresh herbs.\"",
+      "reportedSpeech": "The chef said that that soup tasted better because he had added fresh herbs.",
+      "changesList": [
+        "'tastes' → 'tasted'",
+        "'added' → 'had added'",
+        "'this' → 'that'"
+      ],
+      "ruleExplanation": "'Tastes' becomes 'tasted' since it's a personal opinion, not a fact, and 'added' becomes 'had added'; 'this' becomes 'that'.",
+      "nativeTip": "This isn't a universal truth, so both the opinion and the earlier action need to backshift.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The chef said, \"This soup tastes better because I added fresh herbs.\"\" ➔ \"The chef said that that soup tasted better because he had added fresh herbs.\""
+    },
+    {
+      "id": "dis_l89_learn_q1",
+      "level": 89,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "My colleague said, \"My hometown is very small.\"",
+      "reportedSpeech": "My colleague said that her hometown is very small.",
+      "changesList": [
+        "'my' → 'her'",
+        "'is' stays present (lasting fact)"
+      ],
+      "ruleExplanation": "'My' becomes 'her', but 'is' stays unchanged since it's a lasting fact about her hometown.",
+      "nativeTip": "This is a lasting fact about a place, so the tense can stay, but the possessive still changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"My colleague said, \"My hometown is very small.\"\" ➔ \"My colleague said that her hometown is very small.\""
+    },
+    {
+      "id": "dis_l89_learn_q2",
+      "level": 89,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "The instructor said, \"I always start class with a warm-up.\"",
+      "reportedSpeech": "The instructor said that he always starts class with a warm-up.",
+      "changesList": [
+        "'I' → 'he'",
+        "'start' stays present (ongoing routine)"
+      ],
+      "ruleExplanation": "'I' becomes 'he', but 'start' stays present since this is his continuing routine.",
+      "nativeTip": "An ongoing routine that's still part of the instructor's teaching doesn't need the tense to shift.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The instructor said, \"I always start class with a warm-up.\"\" ➔ \"The instructor said that he always starts class with a warm-up.\""
+    },
+    {
+      "id": "dis_l89_learn_q3",
+      "level": 89,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "Grace said, \"My office overlooks the harbor.\"",
+      "reportedSpeech": "Grace said that her office overlooks the harbor.",
+      "changesList": [
+        "'my' → 'her'",
+        "'overlooks' stays present (unchanged fact)"
+      ],
+      "ruleExplanation": "'My' becomes 'her', and 'overlooks' stays unchanged because it describes a fact that hasn't changed.",
+      "nativeTip": "As long as the fact about the office is still true, keep the tense as it is.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Grace said, \"My office overlooks the harbor.\"\" ➔ \"Grace said that her office overlooks the harbor.\""
+    },
+    {
+      "id": "dis_l90_learn_q1",
+      "level": 90,
+      "conceptTitle": "Speech Bubble to Report Converter: Universal Truth",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Universal Truth",
+      "directSpeech": "The astronomer said, \"Stars produce their own light.\"",
+      "reportedSpeech": "The astronomer said that stars produce their own light.",
+      "changesList": [
+        "no tense change needed (universal truth)"
+      ],
+      "ruleExplanation": "'Produce' remains unchanged because this is a universal scientific truth.",
+      "nativeTip": "Recall the very first exception you learned: universal, scientific truths keep their tense.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The astronomer said, \"Stars produce their own light.\"\" ➔ \"The astronomer said that stars produce their own light.\""
+    },
+    {
+      "id": "dis_l90_learn_q2",
+      "level": 90,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "Omar said, \"I still go jogging every evening.\"",
+      "reportedSpeech": "Omar said that he still goes jogging every evening.",
+      "changesList": [
+        "'I' → 'he'",
+        "'go' stays present (ongoing habit)"
+      ],
+      "ruleExplanation": "Since the habit continues, 'go' stays as 'goes'; only the pronoun changes.",
+      "nativeTip": "Check whether this routine is still happening now before deciding on the tense.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Omar said, \"I still go jogging every evening.\"\" ➔ \"Omar said that he still goes jogging every evening.\""
+    },
+    {
+      "id": "dis_l90_learn_q3",
+      "level": 90,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "The notice on the door says, \"This office is closed for renovations.\"",
+      "reportedSpeech": "The notice on the door says that that office is closed for renovations.",
+      "changesList": [
+        "'this' → 'that'",
+        "no tense change needed (still-current notice)"
+      ],
+      "ruleExplanation": "Since the notice is still posted and current, 'says' and 'is' stay in the present tense, while 'this' becomes 'that' because we're referring to it from elsewhere.",
+      "nativeTip": "This final review item combines a still-current fact with a demonstrative change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The notice on the door says, \"This office is closed for renovations.\"\" ➔ \"The notice on the door says that that office is closed for renovations.\""
+    }
+  ]
+}

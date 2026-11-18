@@ -1,0 +1,697 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "practice",
+  "batchIndex": 15,
+  "levels": "141-150",
+  "quests": [
+    {
+      "id": "dis_l141_practice_q1",
+      "level": 141,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Chen said, \"I swim every weekend.\"",
+      "directSpeech": "Chen said, \"I swim every weekend.\"",
+      "options": [
+        "Chen said that he swam every weekend.",
+        "Chen said that he swimmed every weekend.",
+        "Chen said that he swims every weekend."
+      ],
+      "correctAnswer": "Chen said that he swam every weekend.",
+      "correctAnswerIndex": 0,
+      "hint": "'Swim' is an irregular verb — its past form doesn't follow the regular '-ed' pattern.",
+      "explanation": "'Swim' backshifts to 'swam', not 'swimmed'; 'I' becomes 'he'.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'swim' → 'swam'",
+        "'I' → 'he'"
+      ]
+    },
+    {
+      "id": "dis_l141_practice_q2",
+      "level": 141,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Aisha said, \"I catch the early train.\"",
+      "directSpeech": "Aisha said, \"I catch the early train.\"",
+      "options": [
+        "Aisha said that she caught the early train.",
+        "Aisha said that she catches the early train.",
+        "Aisha said that she catched the early train."
+      ],
+      "correctAnswer": "Aisha said that she caught the early train.",
+      "correctAnswerIndex": 0,
+      "hint": "Recall the irregular past form of 'catch' — it isn't formed by adding '-ed'.",
+      "explanation": "'Catch' backshifts to 'caught', not 'catched'; 'I' becomes 'she'.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'catch' → 'caught'",
+        "'I' → 'she'"
+      ]
+    },
+    {
+      "id": "dis_l141_practice_q3",
+      "level": 141,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Ollie said, \"I lay the table before guests arrive.\"",
+      "directSpeech": "Ollie said, \"I lay the table before guests arrive.\"",
+      "options": [
+        "Ollie said that he layed the table before guests arrived.",
+        "Ollie said that he lay the table before guests arrive.",
+        "Ollie said that he laid the table before guests arrived."
+      ],
+      "correctAnswer": "Ollie said that he laid the table before guests arrived.",
+      "correctAnswerIndex": 2,
+      "hint": "Both verbs in this sentence are irregular — check each one's correct past form.",
+      "explanation": "'Lay' backshifts to 'laid' (not 'layed'), and 'arrive' backshifts to 'arrived'; 'I' becomes 'he'.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'lay' → 'laid'",
+        "'arrive' → 'arrived'",
+        "'I' → 'he'"
+      ]
+    },
+    {
+      "id": "dis_l142_practice_q1",
+      "level": 142,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Sofia said, \"My sister's husband is coming to visit us.\"",
+      "directSpeech": "Sofia said, \"My sister's husband is coming to visit us.\"",
+      "options": [
+        "Sofia said that her sister's husband was coming to visit them.",
+        "Sofia said that my sister's husband was coming to visit us.",
+        "Sofia said that her sister's husband is coming to visit them."
+      ],
+      "correctAnswer": "Sofia said that her sister's husband was coming to visit them.",
+      "correctAnswerIndex": 0,
+      "hint": "Figure out who 'us' refers to — if the reporter isn't part of that group, it becomes 'them'.",
+      "explanation": "'My' becomes 'her', 'is coming' becomes 'was coming', and 'us' becomes 'them' since the reporter isn't included in that group.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'my' → 'her'",
+        "'is coming' → 'was coming'",
+        "'us' → 'them'"
+      ]
+    },
+    {
+      "id": "dis_l142_practice_q2",
+      "level": 142,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Elias told his brother, \"Our mother wants us to visit her more often.\"",
+      "directSpeech": "Elias told his brother, \"Our mother wants us to visit her more often.\"",
+      "options": [
+        "Elias told his brother that their mother wanted them to visit her more often.",
+        "Elias told his brother that our mother wanted us to visit her more often.",
+        "Elias told his brother that their mother wants them to visit her more often."
+      ],
+      "correctAnswer": "Elias told his brother that their mother wanted them to visit her more often.",
+      "correctAnswerIndex": 0,
+      "hint": "Since Elias is speaking to his own brother about their shared mother, 'us' includes the brother too — it becomes a group pronoun, not a singular one.",
+      "explanation": "'Our' becomes 'their', 'wants' becomes 'wanted', and 'us' becomes 'them' since it refers to both brothers; 'her' (referring to the mother) stays the same.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'our' → 'their'",
+        "'wants' → 'wanted'",
+        "'us' → 'them'"
+      ]
+    },
+    {
+      "id": "dis_l142_practice_q3",
+      "level": 142,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Ingeborg said to her colleague, \"Our boss gave me your project to review.\"",
+      "directSpeech": "Ingeborg said to her colleague, \"Our boss gave me your project to review.\"",
+      "options": [
+        "Ingeborg told her colleague that their boss had given her her project to review.",
+        "Ingeborg told her colleague that our boss gave me your project to review.",
+        "Ingeborg told her colleague that their boss had given her his project to review."
+      ],
+      "correctAnswer": "Ingeborg told her colleague that their boss had given her his project to review.",
+      "correctAnswerIndex": 2,
+      "hint": "There are two different people to track here — Ingeborg and her colleague — so 'me' and 'your' don't reverse to the same pronoun.",
+      "explanation": "'Our' becomes 'their', 'gave' becomes 'had given', 'me' becomes 'her' (Ingeborg), and 'your' becomes 'his' (the colleague).",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'our' → 'their'",
+        "'gave' → 'had given'",
+        "'me' → 'her'",
+        "'your' → 'his'"
+      ]
+    },
+    {
+      "id": "dis_l143_practice_q1",
+      "level": 143,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Nikolai said, \"I saw that movie a few days ago.\"",
+      "directSpeech": "Nikolai said, \"I saw that movie a few days ago.\"",
+      "options": [
+        "Nikolai said that he had seen that movie a few days ago.",
+        "Nikolai said that he saw that movie a few days before.",
+        "Nikolai said that he had seen that movie a few days before."
+      ],
+      "correctAnswer": "Nikolai said that he had seen that movie a few days before.",
+      "correctAnswerIndex": 2,
+      "hint": "'Ago' phrases reverse the same way 'yesterday' does — they shift to 'before'.",
+      "explanation": "'Saw' becomes 'had seen', and 'a few days ago' becomes 'a few days before'.",
+      "grammarRule": "Time Expression Shift",
+      "changesList": [
+        "'saw' → 'had seen'",
+        "'a few days ago' → 'a few days before'",
+        "'I' → 'he'"
+      ]
+    },
+    {
+      "id": "dis_l143_practice_q2",
+      "level": 143,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Priya said, \"I ran into her the other day.\"",
+      "directSpeech": "Priya said, \"I ran into her the other day.\"",
+      "options": [
+        "Priya said that she had run into her a few days earlier.",
+        "Priya said that she ran into her a few days earlier.",
+        "Priya said that she had run into her the other day."
+      ],
+      "correctAnswer": "Priya said that she had run into her a few days earlier.",
+      "correctAnswerIndex": 0,
+      "hint": "'The other day' is an idiom for a recent, unspecified day in the past — it shifts to a similar idea further back.",
+      "explanation": "'The other day' becomes 'a few days earlier', and 'ran' becomes 'had run'.",
+      "grammarRule": "Time Expression Shift",
+      "changesList": [
+        "'ran' → 'had run'",
+        "'the other day' → 'a few days earlier'",
+        "'I' → 'she'"
+      ]
+    },
+    {
+      "id": "dis_l143_practice_q3",
+      "level": 143,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The manager said, \"We reviewed this contract a while back.\"",
+      "directSpeech": "The manager said, \"We reviewed this contract a while back.\"",
+      "options": [
+        "The manager said that they had reviewed this contract a while back.",
+        "The manager said that they reviewed that contract a while earlier.",
+        "The manager said that they had reviewed that contract a while earlier."
+      ],
+      "correctAnswer": "The manager said that they had reviewed that contract a while earlier.",
+      "correctAnswerIndex": 2,
+      "hint": "'A while back' shifts the same way as other 'ago'-type phrases.",
+      "explanation": "'Reviewed' becomes 'had reviewed', 'this' becomes 'that', 'we' becomes 'they', and 'a while back' becomes 'a while earlier'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'reviewed' → 'had reviewed'",
+        "'this' → 'that'",
+        "'we' → 'they'",
+        "'a while back' → 'a while earlier'"
+      ]
+    },
+    {
+      "id": "dis_l144_practice_q1",
+      "level": 144,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The consultant said, \"We might revise our strategy next year.\"",
+      "directSpeech": "The consultant said, \"We might revise our strategy next year.\"",
+      "options": [
+        "The consultant said that they might revise their strategy the following year.",
+        "The consultant said that they may revise their strategy the following year.",
+        "The consultant said that we might revise our strategy next year."
+      ],
+      "correctAnswer": "The consultant said that they might revise their strategy the following year.",
+      "correctAnswerIndex": 0,
+      "hint": "'Might' stays the same, but check every other item in the sentence.",
+      "explanation": "'We' and 'our' become 'they'/'their', 'next year' becomes 'the following year', and 'might' remains unchanged.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'our' → 'their'",
+        "'next year' → 'the following year'",
+        "'might' stays unchanged"
+      ]
+    },
+    {
+      "id": "dis_l144_practice_q2",
+      "level": 144,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Youssef said, \"I can't make it to your place tomorrow, but I could come next week.\"",
+      "directSpeech": "Youssef said, \"I can't make it to your place tomorrow, but I could come next week.\"",
+      "options": [
+        "Youssef said that he can't make it to my place tomorrow but could come next week.",
+        "Youssef said that he couldn't make it to my place the next day but could come the following week.",
+        "Youssef said that he couldn't make it to your place the next day but might come the following week."
+      ],
+      "correctAnswer": "Youssef said that he couldn't make it to my place the next day but could come the following week.",
+      "correctAnswerIndex": 1,
+      "hint": "This sentence has two different modals — check whether each one needs to change.",
+      "explanation": "'Can't' becomes 'couldn't' (a genuine backshift), while 'could' stays the same (already a past-time form); 'your' becomes 'my', and both time words shift.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'can't' → 'couldn't'",
+        "'could' stays unchanged",
+        "'your' → 'my'",
+        "'tomorrow' → 'the next day'",
+        "'next week' → 'the following week'"
+      ]
+    },
+    {
+      "id": "dis_l144_practice_q3",
+      "level": 144,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The board said, \"We will need to reconsider this decision if the numbers don't improve by next quarter.\"",
+      "directSpeech": "The board said, \"We will need to reconsider this decision if the numbers don't improve by next quarter.\"",
+      "options": [
+        "The board said that they would need to reconsider that decision if the numbers didn't improve by the following quarter.",
+        "The board said that they will need to reconsider that decision if the numbers don't improve by the following quarter.",
+        "The board said that they would need to reconsider this decision if the numbers didn't improve by next quarter."
+      ],
+      "correctAnswer": "The board said that they would need to reconsider that decision if the numbers didn't improve by the following quarter.",
+      "correctAnswerIndex": 0,
+      "hint": "This conditional sentence has changes in both the main clause and the if-clause.",
+      "explanation": "'We'/'this'/'next quarter' shift to 'they'/'that'/'the following quarter', 'will need' becomes 'would need', and 'don't improve' becomes 'didn't improve' in the conditional clause.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'will need' → 'would need'",
+        "'this' → 'that'",
+        "'don't improve' → 'didn't improve'",
+        "'next quarter' → 'the following quarter'"
+      ]
+    },
+    {
+      "id": "dis_l145_practice_q1",
+      "level": 145,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "At the reunion, Miriam asked Thabo, \"Do you still live in the same city as your parents?\" Convert to reported speech.",
+      "directSpeech": "Miriam asked Thabo, \"Do you still live in the same city as your parents?\"",
+      "options": [
+        "Miriam asked Thabo whether he still lives in the same city as his parents.",
+        "Miriam asked Thabo do you still live in the same city as your parents.",
+        "Miriam asked Thabo whether he still lived in the same city as his parents."
+      ],
+      "correctAnswer": "Miriam asked Thabo whether he still lived in the same city as his parents.",
+      "correctAnswerIndex": 2,
+      "hint": "Since Thabo is the one being asked, both 'you' and 'your' refer to him, not to Miriam.",
+      "explanation": "'You' and 'your' both become 'he'/'his' since Thabo is the person addressed; 'live' backshifts to 'lived'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'you' → 'he'",
+        "'your' → 'his'",
+        "'live' → 'lived'",
+        "question word order → statement word order"
+      ]
+    },
+    {
+      "id": "dis_l145_practice_q2",
+      "level": 145,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "The interviewer asked two candidates together, \"Which of you has more experience with this software?\" Convert to reported speech.",
+      "directSpeech": "The interviewer asked, \"Which of you has more experience with this software?\"",
+      "options": [
+        "The interviewer asked the two candidates which of them has more experience with that software.",
+        "The interviewer asked the two candidates which of them had more experience with that software.",
+        "The interviewer asked the two candidates which of you have more experience with this software."
+      ],
+      "correctAnswer": "The interviewer asked the two candidates which of them had more experience with that software.",
+      "correctAnswerIndex": 1,
+      "hint": "Since 'you' here refers to both candidates as a group, it reverses to a plural pronoun, not a singular one.",
+      "explanation": "'You' becomes 'them' since it refers to both candidates, 'has' backshifts to 'had', and 'this' becomes 'that'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'you' → 'them'",
+        "'has' → 'had'",
+        "'this' → 'that'"
+      ]
+    },
+    {
+      "id": "dis_l145_practice_q3",
+      "level": 145,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Zainab said to her two children, \"Why don't you both help me clean up here?\" Convert to reported speech.",
+      "directSpeech": "Zainab said to her two children, \"Why don't you both help me clean up here?\"",
+      "options": [
+        "Zainab asked her two children why they don't help her clean up here.",
+        "Zainab asked her two children why you didn't help me clean up there.",
+        "Zainab asked her two children why they didn't help her clean up there."
+      ],
+      "correctAnswer": "Zainab asked her two children why they didn't help her clean up there.",
+      "correctAnswerIndex": 2,
+      "hint": "'You both' addressed to two children together becomes a plural third-person pronoun, and 'me' refers to Zainab.",
+      "explanation": "'You' becomes 'they', 'me' becomes 'her', 'don't help' becomes 'didn't help', and 'here' becomes 'there'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'you' → 'they'",
+        "'me' → 'her'",
+        "'don't help' → 'didn't help'",
+        "'here' → 'there'"
+      ]
+    },
+    {
+      "id": "dis_l146_practice_q1",
+      "level": 146,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The teacher said to two students, \"Both of you stay after class today.\"",
+      "directSpeech": "The teacher said to two students, \"Both of you stay after class today.\"",
+      "options": [
+        "The teacher told the two students to stay after class that day.",
+        "The teacher told the two students to stay after class today.",
+        "The teacher asked the two students staying after class that day."
+      ],
+      "correctAnswer": "The teacher told the two students to stay after class that day.",
+      "correctAnswerIndex": 0,
+      "hint": "'Both of you' addressed to two people becomes 'the two students' as the object of the reporting verb.",
+      "explanation": "The command becomes 'told...to stay', and 'today' becomes 'that day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'today' → 'that day'"
+      ]
+    },
+    {
+      "id": "dis_l146_practice_q2",
+      "level": 146,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The manager said to Hiroshi and Alessia, \"Don't submit your reports separately; combine them here by tomorrow.\"",
+      "directSpeech": "The manager said to Hiroshi and Alessia, \"Don't submit your reports separately; combine them here by tomorrow.\"",
+      "options": [
+        "The manager warned Hiroshi and Alessia not to submit their reports separately and to combine them there by the next day.",
+        "The manager told Hiroshi and Alessia not to submit your reports separately and to combine them here by tomorrow.",
+        "The manager told Hiroshi and Alessia not to submit their reports separately and to combine them there by the next day."
+      ],
+      "correctAnswer": "The manager told Hiroshi and Alessia not to submit their reports separately and to combine them there by the next day.",
+      "correctAnswerIndex": 2,
+      "hint": "This command has two parts — a negative instruction and a positive one — both addressed to two people.",
+      "explanation": "'Your' becomes 'their', 'here' becomes 'there', and 'tomorrow' becomes 'the next day', with both parts of the command kept in infinitive form.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "negative imperative → 'told + object + not to'",
+        "'your' → 'their'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'"
+      ]
+    },
+    {
+      "id": "dis_l146_practice_q3",
+      "level": 146,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The organizer said to the volunteers, \"Each of you bring your own water bottle here tomorrow.\"",
+      "directSpeech": "The organizer said to the volunteers, \"Each of you bring your own water bottle here tomorrow.\"",
+      "options": [
+        "The organizer told the volunteers to each bring their own water bottle there the next day.",
+        "The organizer asked the volunteers each bringing their own water bottle there the next day.",
+        "The organizer told the volunteers to each bring your own water bottle here tomorrow."
+      ],
+      "correctAnswer": "The organizer told the volunteers to each bring their own water bottle there the next day.",
+      "correctAnswerIndex": 0,
+      "hint": "'Each of you' addressed to a group becomes a group possessive when reversed.",
+      "explanation": "'Your' becomes 'their', 'here' becomes 'there', and 'tomorrow' becomes 'the next day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'your' → 'their'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'"
+      ]
+    },
+    {
+      "id": "dis_l147_practice_q1",
+      "level": 147,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Fatima said to Omar, \"I'll text you when I arrive.\"",
+      "directSpeech": "Fatima said to Omar, \"I'll text you when I arrive.\"",
+      "options": [
+        "Fatima told Omar that she would text him when he arrived.",
+        "Fatima told Omar that he would text her when he arrived.",
+        "Fatima told Omar that she would text him when she arrived."
+      ],
+      "correctAnswer": "Fatima told Omar that she would text him when she arrived.",
+      "correctAnswerIndex": 2,
+      "hint": "Track carefully who does the texting and who receives it — 'I' and 'you' point to different people.",
+      "explanation": "'I' (Fatima) becomes 'she', and 'you' (Omar) becomes 'him'; both instances of 'I' become 'she' since Fatima is the subject of both clauses.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'I' → 'she'",
+        "'you' → 'him'",
+        "'arrive' → 'arrived'"
+      ]
+    },
+    {
+      "id": "dis_l147_practice_q2",
+      "level": 147,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Omar replied to Thandiwe, \"I'll be waiting for you at the entrance.\"",
+      "directSpeech": "Omar replied to Thandiwe, \"I'll be waiting for you at the entrance.\"",
+      "options": [
+        "Omar told Thandiwe that he would be waiting for her at the entrance.",
+        "Omar told Thandiwe that he would be waiting for you at the entrance.",
+        "Omar told Thandiwe that she would be waiting for him at the entrance."
+      ],
+      "correctAnswer": "Omar told Thandiwe that he would be waiting for her at the entrance.",
+      "correctAnswerIndex": 0,
+      "hint": "Now the roles are reversed from the previous item — check carefully who 'I' and 'you' refer to this time.",
+      "explanation": "'I' (Omar) becomes 'he', and 'you' (Thandiwe) becomes 'her'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'I' → 'he'",
+        "'you' → 'her'"
+      ]
+    },
+    {
+      "id": "dis_l147_practice_q3",
+      "level": 147,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Esperanza said to her manager, \"You told me my proposal was approved.\"",
+      "directSpeech": "Esperanza said to her manager, \"You told me my proposal was approved.\"",
+      "options": [
+        "Esperanza told her manager that you told me that my proposal was approved.",
+        "Esperanza told her manager that he had told her that her proposal had been approved.",
+        "Esperanza told her manager that he had told her that his proposal had been approved."
+      ],
+      "correctAnswer": "Esperanza told her manager that he had told her that her proposal had been approved.",
+      "correctAnswerIndex": 1,
+      "hint": "This sentence has one pronoun reporting what another person said — track each 'you'/'me'/'my' back to the right person.",
+      "explanation": "'You' (the manager) becomes 'he', 'me' becomes 'her', and 'my' becomes 'her' since it still refers to Esperanza's own proposal; 'told' and 'was approved' both backshift further.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'you' → 'he'",
+        "'me' → 'her'",
+        "'my' → 'her'",
+        "'told' → 'had told'",
+        "'was approved' → 'had been approved'"
+      ]
+    },
+    {
+      "id": "dis_l148_practice_q1",
+      "level": 148,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Noelle said, \"Mateus told me that he was moving to Berlin.\"",
+      "directSpeech": "Noelle said, \"Mateus told me that he was moving to Berlin.\"",
+      "options": [
+        "Noelle said that Mateus had told her that she was moving to Berlin.",
+        "Noelle said that Mateus told her that he was moving to Berlin.",
+        "Noelle said that Mateus had told her that he was moving to Berlin."
+      ],
+      "correctAnswer": "Noelle said that Mateus had told her that he was moving to Berlin.",
+      "correctAnswerIndex": 2,
+      "hint": "There are two people mentioned here — track carefully which pronoun refers to Mateus and which refers to Noelle.",
+      "explanation": "'Me' (Noelle) becomes 'her', while 'he' (Mateus) stays as 'he' since it already refers to a third person; 'told' backshifts to 'had told'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'me' → 'her'",
+        "'told' → 'had told'"
+      ]
+    },
+    {
+      "id": "dis_l148_practice_q2",
+      "level": 148,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Gideon said, \"Marisol and her sister said they would help us move.\"",
+      "directSpeech": "Gideon said, \"Marisol and her sister said they would help us move.\"",
+      "options": [
+        "Gideon said that Marisol and her sister said they would help us move.",
+        "Gideon said that Marisol and her sister had said they would help them move.",
+        "Gideon said that Marisol and her sister had said they would help him move."
+      ],
+      "correctAnswer": "Gideon said that Marisol and her sister had said they would help them move.",
+      "correctAnswerIndex": 1,
+      "hint": "'Us' refers to Gideon's own group — if he's now reporting it to someone outside that group, it becomes 'them'.",
+      "explanation": "'Said' backshifts to 'had said', and 'us' becomes 'them' since the reporter's group is now being referred to from outside.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'said' → 'had said'",
+        "'us' → 'them'"
+      ]
+    },
+    {
+      "id": "dis_l148_practice_q3",
+      "level": 148,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Osei said, \"Aurelia asked me whether I had seen her keys.\"",
+      "directSpeech": "Osei said, \"Aurelia asked me whether I had seen her keys.\"",
+      "options": [
+        "Osei said that Aurelia had asked him whether he had seen his keys.",
+        "Osei said that Aurelia asked him whether he had seen her keys.",
+        "Osei said that Aurelia had asked him whether he had seen her keys."
+      ],
+      "correctAnswer": "Osei said that Aurelia had asked him whether he had seen her keys.",
+      "correctAnswerIndex": 2,
+      "hint": "Three different people appear here — make sure each pronoun stays attached to the right person.",
+      "explanation": "'Me'/'I' (Osei) become 'him'/'he', 'asked' becomes 'had asked', and 'her' (Aurelia's keys) stays the same since it still refers to Aurelia.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'me' → 'him'",
+        "'I' → 'he'",
+        "'asked' → 'had asked'"
+      ]
+    },
+    {
+      "id": "dis_l149_practice_q1",
+      "level": 149,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The CEO said, \"I'm pleased to announce that we exceeded our targets this year. I want to thank everyone for their hard work, and I promise we'll celebrate together next month.\"",
+      "directSpeech": "The CEO said, \"I'm pleased to announce that we exceeded our targets this year. I want to thank everyone for their hard work, and I promise we'll celebrate together next month.\"",
+      "options": [
+        "The CEO said that she was pleased to announce that they had exceeded their targets that year, that she wanted to thank everyone for their hard work, and promised that they would celebrate together the following month.",
+        "The CEO said that she was pleased to announce that they had exceeded their targets that year, that she wanted to thank everyone for your hard work, and promised that they would celebrate together next month.",
+        "The CEO said that she is pleased to announce that they exceeded their targets this year, that she wants to thank everyone for their hard work, and promises that they will celebrate together next month."
+      ],
+      "correctAnswer": "The CEO said that she was pleased to announce that they had exceeded their targets that year, that she wanted to thank everyone for their hard work, and promised that they would celebrate together the following month.",
+      "correctAnswerIndex": 0,
+      "hint": "This longer passage needs the same rules applied consistently across every clause — the pronoun, tense, possessive, modal, and time word.",
+      "explanation": "'I'/'we'/'our' shift to 'she'/'they'/'their' throughout, every verb backshifts one step, and 'this year'/'next month' become 'that year'/'the following month'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'I' → 'she'",
+        "'we' → 'they'",
+        "'our' → 'their'",
+        "'exceeded' → 'had exceeded'",
+        "'want' → 'wanted'",
+        "'will celebrate' → 'would celebrate'",
+        "'this year' → 'that year'",
+        "'next month' → 'the following month'"
+      ]
+    },
+    {
+      "id": "dis_l149_practice_q2",
+      "level": 149,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Ravi said, \"I've been thinking about our conversation, and I think you were right. I should apologize to you and your brother.\"",
+      "directSpeech": "Ravi said, \"I've been thinking about our conversation, and I think you were right. I should apologize to you and your brother.\"",
+      "options": [
+        "Ravi said that he had been thinking about their conversation, and that he thinks I was right, and that he should apologize to me and my brother.",
+        "Ravi said that he had been thinking about their conversation, and that he thought I had been right, and that he should apologize to me and my brother.",
+        "Ravi said that he had been thinking about our conversation, and that he thought you were right, and that he should apologize to you and your brother."
+      ],
+      "correctAnswer": "Ravi said that he had been thinking about their conversation, and that he thought I had been right, and that he should apologize to me and my brother.",
+      "correctAnswerIndex": 1,
+      "hint": "Track the pronouns across all three clauses — 'our', 'you', and 'your' all need to reverse to match the listener's perspective.",
+      "explanation": "'I' becomes 'he' throughout, 'our' becomes 'their', 'you were right' becomes 'I had been right', and 'you'/'your' become 'me'/'my'; 'should' stays unchanged.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'I' → 'he'",
+        "'our' → 'their'",
+        "'you were' → 'I had been'",
+        "'you' → 'me'",
+        "'your' → 'my'",
+        "'should' stays unchanged"
+      ]
+    },
+    {
+      "id": "dis_l149_practice_q3",
+      "level": 149,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The teacher said, \"I know this term has been difficult, but I believe you can all improve. Keep practicing, and don't give up.\"",
+      "directSpeech": "The teacher said, \"I know this term has been difficult, but I believe you can all improve. Keep practicing, and don't give up.\"",
+      "options": [
+        "The teacher said that she knows this term has been difficult but that she believes we can all improve, and told us to keep practicing and not to give up.",
+        "The teacher said that she knew that term had been difficult but that she believed you could all improve, and told us to keep practicing and to give up.",
+        "The teacher said that she knew that term had been difficult but that she believed we could all improve, and told us to keep practicing and not to give up."
+      ],
+      "correctAnswer": "The teacher said that she knew that term had been difficult but that she believed we could all improve, and told us to keep practicing and not to give up.",
+      "correctAnswerIndex": 2,
+      "hint": "This passage combines a statement, an opinion, and two commands — track the pronoun, tense, demonstrative, and negative meaning throughout.",
+      "explanation": "'This' becomes 'that', 'know'/'believe' backshift, 'you' becomes 'we'/'us', 'can' becomes 'could', and both imperatives become infinitives, with 'don't give up' correctly becoming 'not to give up'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'this' → 'that'",
+        "'know' → 'knew'",
+        "'believe' → 'believed'",
+        "'you' → 'we'",
+        "'can' → 'could'",
+        "imperative → 'told + object + to'",
+        "'don't give up' → 'not to give up'"
+      ]
+    },
+    {
+      "id": "dis_l150_practice_q1",
+      "level": 150,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Bianca said, \"I'll send you the files tonight, but I need your feedback by tomorrow.\"",
+      "directSpeech": "Bianca said, \"I'll send you the files tonight, but I need your feedback by tomorrow.\"",
+      "options": [
+        "Bianca said that she would send me the files that night but needed my feedback by the next day.",
+        "Bianca said that she will send me the files tonight but needs my feedback by tomorrow.",
+        "Bianca said that she would send you the files that night but needed your feedback by tomorrow."
+      ],
+      "correctAnswer": "Bianca said that she would send me the files that night but needed my feedback by the next day.",
+      "correctAnswerIndex": 0,
+      "hint": "This review question combines pronouns, possessives, modals, and two separate time expressions.",
+      "explanation": "'I'/'you'/'your' shift to 'she'/'me'/'my', 'will send' becomes 'would send', 'need' becomes 'needed', and 'tonight'/'tomorrow' become 'that night'/'the next day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'I' → 'she'",
+        "'you' → 'me'",
+        "'your' → 'my'",
+        "'will send' → 'would send'",
+        "'need' → 'needed'",
+        "'tonight' → 'that night'",
+        "'tomorrow' → 'the next day'"
+      ]
+    },
+    {
+      "id": "dis_l150_practice_q2",
+      "level": 150,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The board said to the two directors, \"Both of you must present your findings here at the meeting tomorrow.\"",
+      "directSpeech": "The board said to the two directors, \"Both of you must present your findings here at the meeting tomorrow.\"",
+      "options": [
+        "The board told the two directors that they must present their findings here at the meeting tomorrow.",
+        "The board told the two directors that they had to present their findings there at the meeting the next day.",
+        "The board told the two directors that they had to present your findings there at the meeting tomorrow."
+      ],
+      "correctAnswer": "The board told the two directors that they had to present their findings there at the meeting the next day.",
+      "correctAnswerIndex": 1,
+      "hint": "This combines the group pronoun, the obligation modal, the possessive, the place word, and the time word.",
+      "explanation": "'You'/'your' become 'they'/'their', 'must' becomes 'had to', 'here' becomes 'there', and 'tomorrow' becomes 'the next day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'you' → 'they'",
+        "'your' → 'their'",
+        "'must' → 'had to'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'"
+      ]
+    },
+    {
+      "id": "dis_l150_practice_q3",
+      "level": 150,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Luka said to Halima, \"I saw your brother a few days ago, and he told me he might visit us next week.\"",
+      "directSpeech": "Luka said to Halima, \"I saw your brother a few days ago, and he told me he might visit us next week.\"",
+      "options": [
+        "Luka told Halima that he had seen her brother a few days earlier, and that her brother had told him he might visit them the following week.",
+        "Luka told Halima that he had seen her brother a few days ago, and that her brother had told him he might visit us next week.",
+        "Luka told Halima that he saw her brother a few days earlier, and that her brother told him he might visit them the following week."
+      ],
+      "correctAnswer": "Luka told Halima that he had seen her brother a few days earlier, and that her brother had told him he might visit them the following week.",
+      "correctAnswerIndex": 0,
+      "hint": "This mastery-level question tracks three people across two time expressions, a possessive, and a modal that stays unchanged.",
+      "explanation": "'Your' becomes 'her', 'saw'/'told' backshift to 'had seen'/'had told', 'a few days ago' becomes 'a few days earlier', 'us' becomes 'them', 'next week' becomes 'the following week', and 'might' stays unchanged.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'your' → 'her'",
+        "'saw' → 'had seen'",
+        "'told' → 'had told'",
+        "'a few days ago' → 'a few days earlier'",
+        "'us' → 'them'",
+        "'next week' → 'the following week'",
+        "'might' stays unchanged"
+      ]
+    }
+  ]
+}

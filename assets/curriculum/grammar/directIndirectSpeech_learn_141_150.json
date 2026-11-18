@@ -1,0 +1,547 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "learn",
+  "batchIndex": 15,
+  "levels": "141-150",
+  "quests": [
+    {
+      "id": "dis_l141_learn_q1",
+      "level": 141,
+      "conceptTitle": "Speech Bubble to Report Converter: Tense Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Tense Backshift",
+      "directSpeech": "Chen said, \"I swim every weekend.\"",
+      "reportedSpeech": "Chen said that he swam every weekend.",
+      "changesList": [
+        "'swim' → 'swam'",
+        "'I' → 'he'"
+      ],
+      "ruleExplanation": "'Swim' backshifts to 'swam', not 'swimmed'; 'I' becomes 'he'.",
+      "nativeTip": "'Swim' is an irregular verb — its past form doesn't follow the regular '-ed' pattern.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Chen said, \"I swim every weekend.\"\" ➔ \"Chen said that he swam every weekend.\""
+    },
+    {
+      "id": "dis_l141_learn_q2",
+      "level": 141,
+      "conceptTitle": "Speech Bubble to Report Converter: Tense Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Tense Backshift",
+      "directSpeech": "Aisha said, \"I catch the early train.\"",
+      "reportedSpeech": "Aisha said that she caught the early train.",
+      "changesList": [
+        "'catch' → 'caught'",
+        "'I' → 'she'"
+      ],
+      "ruleExplanation": "'Catch' backshifts to 'caught', not 'catched'; 'I' becomes 'she'.",
+      "nativeTip": "Recall the irregular past form of 'catch' — it isn't formed by adding '-ed'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Aisha said, \"I catch the early train.\"\" ➔ \"Aisha said that she caught the early train.\""
+    },
+    {
+      "id": "dis_l141_learn_q3",
+      "level": 141,
+      "conceptTitle": "Speech Bubble to Report Converter: Tense Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Tense Backshift",
+      "directSpeech": "Ollie said, \"I lay the table before guests arrive.\"",
+      "reportedSpeech": "Ollie said that he laid the table before guests arrived.",
+      "changesList": [
+        "'lay' → 'laid'",
+        "'arrive' → 'arrived'",
+        "'I' → 'he'"
+      ],
+      "ruleExplanation": "'Lay' backshifts to 'laid' (not 'layed'), and 'arrive' backshifts to 'arrived'; 'I' becomes 'he'.",
+      "nativeTip": "Both verbs in this sentence are irregular — check each one's correct past form.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Ollie said, \"I lay the table before guests arrive.\"\" ➔ \"Ollie said that he laid the table before guests arrived.\""
+    },
+    {
+      "id": "dis_l142_learn_q1",
+      "level": 142,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Sofia said, \"My sister's husband is coming to visit us.\"",
+      "reportedSpeech": "Sofia said that her sister's husband was coming to visit them.",
+      "changesList": [
+        "'my' → 'her'",
+        "'is coming' → 'was coming'",
+        "'us' → 'them'"
+      ],
+      "ruleExplanation": "'My' becomes 'her', 'is coming' becomes 'was coming', and 'us' becomes 'them' since the reporter isn't included in that group.",
+      "nativeTip": "Figure out who 'us' refers to — if the reporter isn't part of that group, it becomes 'them'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Sofia said, \"My sister's husband is coming to visit us.\"\" ➔ \"Sofia said that her sister's husband was coming to visit them.\""
+    },
+    {
+      "id": "dis_l142_learn_q2",
+      "level": 142,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Elias told his brother, \"Our mother wants us to visit her more often.\"",
+      "reportedSpeech": "Elias told his brother that their mother wanted them to visit her more often.",
+      "changesList": [
+        "'our' → 'their'",
+        "'wants' → 'wanted'",
+        "'us' → 'them'"
+      ],
+      "ruleExplanation": "'Our' becomes 'their', 'wants' becomes 'wanted', and 'us' becomes 'them' since it refers to both brothers; 'her' (referring to the mother) stays the same.",
+      "nativeTip": "Since Elias is speaking to his own brother about their shared mother, 'us' includes the brother too — it becomes a group pronoun, not a singular one.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Elias told his brother, \"Our mother wants us to visit her more often.\"\" ➔ \"Elias told his brother that their mother wanted them to visit her more often.\""
+    },
+    {
+      "id": "dis_l142_learn_q3",
+      "level": 142,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Ingeborg said to her colleague, \"Our boss gave me your project to review.\"",
+      "reportedSpeech": "Ingeborg told her colleague that their boss had given her his project to review.",
+      "changesList": [
+        "'our' → 'their'",
+        "'gave' → 'had given'",
+        "'me' → 'her'",
+        "'your' → 'his'"
+      ],
+      "ruleExplanation": "'Our' becomes 'their', 'gave' becomes 'had given', 'me' becomes 'her' (Ingeborg), and 'your' becomes 'his' (the colleague).",
+      "nativeTip": "There are two different people to track here — Ingeborg and her colleague — so 'me' and 'your' don't reverse to the same pronoun.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Ingeborg said to her colleague, \"Our boss gave me your project to review.\"\" ➔ \"Ingeborg told her colleague that their boss had given her his project to review.\""
+    },
+    {
+      "id": "dis_l143_learn_q1",
+      "level": 143,
+      "conceptTitle": "Speech Bubble to Report Converter: Time Expression Shift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Time Expression Shift",
+      "directSpeech": "Nikolai said, \"I saw that movie a few days ago.\"",
+      "reportedSpeech": "Nikolai said that he had seen that movie a few days before.",
+      "changesList": [
+        "'saw' → 'had seen'",
+        "'a few days ago' → 'a few days before'",
+        "'I' → 'he'"
+      ],
+      "ruleExplanation": "'Saw' becomes 'had seen', and 'a few days ago' becomes 'a few days before'.",
+      "nativeTip": "'Ago' phrases reverse the same way 'yesterday' does — they shift to 'before'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Nikolai said, \"I saw that movie a few days ago.\"\" ➔ \"Nikolai said that he had seen that movie a few days before.\""
+    },
+    {
+      "id": "dis_l143_learn_q2",
+      "level": 143,
+      "conceptTitle": "Speech Bubble to Report Converter: Time Expression Shift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Time Expression Shift",
+      "directSpeech": "Priya said, \"I ran into her the other day.\"",
+      "reportedSpeech": "Priya said that she had run into her a few days earlier.",
+      "changesList": [
+        "'ran' → 'had run'",
+        "'the other day' → 'a few days earlier'",
+        "'I' → 'she'"
+      ],
+      "ruleExplanation": "'The other day' becomes 'a few days earlier', and 'ran' becomes 'had run'.",
+      "nativeTip": "'The other day' is an idiom for a recent, unspecified day in the past — it shifts to a similar idea further back.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Priya said, \"I ran into her the other day.\"\" ➔ \"Priya said that she had run into her a few days earlier.\""
+    },
+    {
+      "id": "dis_l143_learn_q3",
+      "level": 143,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The manager said, \"We reviewed this contract a while back.\"",
+      "reportedSpeech": "The manager said that they had reviewed that contract a while earlier.",
+      "changesList": [
+        "'reviewed' → 'had reviewed'",
+        "'this' → 'that'",
+        "'we' → 'they'",
+        "'a while back' → 'a while earlier'"
+      ],
+      "ruleExplanation": "'Reviewed' becomes 'had reviewed', 'this' becomes 'that', 'we' becomes 'they', and 'a while back' becomes 'a while earlier'.",
+      "nativeTip": "'A while back' shifts the same way as other 'ago'-type phrases.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager said, \"We reviewed this contract a while back.\"\" ➔ \"The manager said that they had reviewed that contract a while earlier.\""
+    },
+    {
+      "id": "dis_l144_learn_q1",
+      "level": 144,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The consultant said, \"We might revise our strategy next year.\"",
+      "reportedSpeech": "The consultant said that they might revise their strategy the following year.",
+      "changesList": [
+        "'we' → 'they'",
+        "'our' → 'their'",
+        "'next year' → 'the following year'",
+        "'might' stays unchanged"
+      ],
+      "ruleExplanation": "'We' and 'our' become 'they'/'their', 'next year' becomes 'the following year', and 'might' remains unchanged.",
+      "nativeTip": "'Might' stays the same, but check every other item in the sentence.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The consultant said, \"We might revise our strategy next year.\"\" ➔ \"The consultant said that they might revise their strategy the following year.\""
+    },
+    {
+      "id": "dis_l144_learn_q2",
+      "level": 144,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Youssef said, \"I can't make it to your place tomorrow, but I could come next week.\"",
+      "reportedSpeech": "Youssef said that he couldn't make it to my place the next day but could come the following week.",
+      "changesList": [
+        "'can't' → 'couldn't'",
+        "'could' stays unchanged",
+        "'your' → 'my'",
+        "'tomorrow' → 'the next day'",
+        "'next week' → 'the following week'"
+      ],
+      "ruleExplanation": "'Can't' becomes 'couldn't' (a genuine backshift), while 'could' stays the same (already a past-time form); 'your' becomes 'my', and both time words shift.",
+      "nativeTip": "This sentence has two different modals — check whether each one needs to change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Youssef said, \"I can't make it to your place tomorrow, but I could come next week.\"\" ➔ \"Youssef said that he couldn't make it to my place the next day but could come the following week.\""
+    },
+    {
+      "id": "dis_l144_learn_q3",
+      "level": 144,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The board said, \"We will need to reconsider this decision if the numbers don't improve by next quarter.\"",
+      "reportedSpeech": "The board said that they would need to reconsider that decision if the numbers didn't improve by the following quarter.",
+      "changesList": [
+        "'we' → 'they'",
+        "'will need' → 'would need'",
+        "'this' → 'that'",
+        "'don't improve' → 'didn't improve'",
+        "'next quarter' → 'the following quarter'"
+      ],
+      "ruleExplanation": "'We'/'this'/'next quarter' shift to 'they'/'that'/'the following quarter', 'will need' becomes 'would need', and 'don't improve' becomes 'didn't improve' in the conditional clause.",
+      "nativeTip": "This conditional sentence has changes in both the main clause and the if-clause.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The board said, \"We will need to reconsider this decision if the numbers don't improve by next quarter.\"\" ➔ \"The board said that they would need to reconsider that decision if the numbers didn't improve by the following quarter.\""
+    },
+    {
+      "id": "dis_l145_learn_q1",
+      "level": 145,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Miriam asked Thabo, \"Do you still live in the same city as your parents?\"",
+      "reportedSpeech": "Miriam asked Thabo whether he still lived in the same city as his parents.",
+      "changesList": [
+        "'you' → 'he'",
+        "'your' → 'his'",
+        "'live' → 'lived'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'You' and 'your' both become 'he'/'his' since Thabo is the person addressed; 'live' backshifts to 'lived'.",
+      "nativeTip": "Since Thabo is the one being asked, both 'you' and 'your' refer to him, not to Miriam.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Miriam asked Thabo, \"Do you still live in the same city as your parents?\"\" ➔ \"Miriam asked Thabo whether he still lived in the same city as his parents.\""
+    },
+    {
+      "id": "dis_l145_learn_q2",
+      "level": 145,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The interviewer asked, \"Which of you has more experience with this software?\"",
+      "reportedSpeech": "The interviewer asked the two candidates which of them had more experience with that software.",
+      "changesList": [
+        "'you' → 'them'",
+        "'has' → 'had'",
+        "'this' → 'that'"
+      ],
+      "ruleExplanation": "'You' becomes 'them' since it refers to both candidates, 'has' backshifts to 'had', and 'this' becomes 'that'.",
+      "nativeTip": "Since 'you' here refers to both candidates as a group, it reverses to a plural pronoun, not a singular one.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The interviewer asked, \"Which of you has more experience with this software?\"\" ➔ \"The interviewer asked the two candidates which of them had more experience with that software.\""
+    },
+    {
+      "id": "dis_l145_learn_q3",
+      "level": 145,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Zainab said to her two children, \"Why don't you both help me clean up here?\"",
+      "reportedSpeech": "Zainab asked her two children why they didn't help her clean up there.",
+      "changesList": [
+        "'you' → 'they'",
+        "'me' → 'her'",
+        "'don't help' → 'didn't help'",
+        "'here' → 'there'"
+      ],
+      "ruleExplanation": "'You' becomes 'they', 'me' becomes 'her', 'don't help' becomes 'didn't help', and 'here' becomes 'there'.",
+      "nativeTip": "'You both' addressed to two children together becomes a plural third-person pronoun, and 'me' refers to Zainab.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Zainab said to her two children, \"Why don't you both help me clean up here?\"\" ➔ \"Zainab asked her two children why they didn't help her clean up there.\""
+    },
+    {
+      "id": "dis_l146_learn_q1",
+      "level": 146,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The teacher said to two students, \"Both of you stay after class today.\"",
+      "reportedSpeech": "The teacher told the two students to stay after class that day.",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'today' → 'that day'"
+      ],
+      "ruleExplanation": "The command becomes 'told...to stay', and 'today' becomes 'that day'.",
+      "nativeTip": "'Both of you' addressed to two people becomes 'the two students' as the object of the reporting verb.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The teacher said to two students, \"Both of you stay after class today.\"\" ➔ \"The teacher told the two students to stay after class that day.\""
+    },
+    {
+      "id": "dis_l146_learn_q2",
+      "level": 146,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The manager said to Hiroshi and Alessia, \"Don't submit your reports separately; combine them here by tomorrow.\"",
+      "reportedSpeech": "The manager told Hiroshi and Alessia not to submit their reports separately and to combine them there by the next day.",
+      "changesList": [
+        "negative imperative → 'told + object + not to'",
+        "'your' → 'their'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'Your' becomes 'their', 'here' becomes 'there', and 'tomorrow' becomes 'the next day', with both parts of the command kept in infinitive form.",
+      "nativeTip": "This command has two parts — a negative instruction and a positive one — both addressed to two people.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager said to Hiroshi and Alessia, \"Don't submit your reports separately; combine them here by tomorrow.\"\" ➔ \"The manager told Hiroshi and Alessia not to submit their reports separately and to combine them there by the next day.\""
+    },
+    {
+      "id": "dis_l146_learn_q3",
+      "level": 146,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The organizer said to the volunteers, \"Each of you bring your own water bottle here tomorrow.\"",
+      "reportedSpeech": "The organizer told the volunteers to each bring their own water bottle there the next day.",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'your' → 'their'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'Your' becomes 'their', 'here' becomes 'there', and 'tomorrow' becomes 'the next day'.",
+      "nativeTip": "'Each of you' addressed to a group becomes a group possessive when reversed.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The organizer said to the volunteers, \"Each of you bring your own water bottle here tomorrow.\"\" ➔ \"The organizer told the volunteers to each bring their own water bottle there the next day.\""
+    },
+    {
+      "id": "dis_l147_learn_q1",
+      "level": 147,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Fatima said to Omar, \"I'll text you when I arrive.\"",
+      "reportedSpeech": "Fatima told Omar that she would text him when she arrived.",
+      "changesList": [
+        "'I' → 'she'",
+        "'you' → 'him'",
+        "'arrive' → 'arrived'"
+      ],
+      "ruleExplanation": "'I' (Fatima) becomes 'she', and 'you' (Omar) becomes 'him'; both instances of 'I' become 'she' since Fatima is the subject of both clauses.",
+      "nativeTip": "Track carefully who does the texting and who receives it — 'I' and 'you' point to different people.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Fatima said to Omar, \"I'll text you when I arrive.\"\" ➔ \"Fatima told Omar that she would text him when she arrived.\""
+    },
+    {
+      "id": "dis_l147_learn_q2",
+      "level": 147,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Omar replied to Thandiwe, \"I'll be waiting for you at the entrance.\"",
+      "reportedSpeech": "Omar told Thandiwe that he would be waiting for her at the entrance.",
+      "changesList": [
+        "'I' → 'he'",
+        "'you' → 'her'"
+      ],
+      "ruleExplanation": "'I' (Omar) becomes 'he', and 'you' (Thandiwe) becomes 'her'.",
+      "nativeTip": "Now the roles are reversed from the previous item — check carefully who 'I' and 'you' refer to this time.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Omar replied to Thandiwe, \"I'll be waiting for you at the entrance.\"\" ➔ \"Omar told Thandiwe that he would be waiting for her at the entrance.\""
+    },
+    {
+      "id": "dis_l147_learn_q3",
+      "level": 147,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Esperanza said to her manager, \"You told me my proposal was approved.\"",
+      "reportedSpeech": "Esperanza told her manager that he had told her that her proposal had been approved.",
+      "changesList": [
+        "'you' → 'he'",
+        "'me' → 'her'",
+        "'my' → 'her'",
+        "'told' → 'had told'",
+        "'was approved' → 'had been approved'"
+      ],
+      "ruleExplanation": "'You' (the manager) becomes 'he', 'me' becomes 'her', and 'my' becomes 'her' since it still refers to Esperanza's own proposal; 'told' and 'was approved' both backshift further.",
+      "nativeTip": "This sentence has one pronoun reporting what another person said — track each 'you'/'me'/'my' back to the right person.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Esperanza said to her manager, \"You told me my proposal was approved.\"\" ➔ \"Esperanza told her manager that he had told her that her proposal had been approved.\""
+    },
+    {
+      "id": "dis_l148_learn_q1",
+      "level": 148,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Noelle said, \"Mateus told me that he was moving to Berlin.\"",
+      "reportedSpeech": "Noelle said that Mateus had told her that he was moving to Berlin.",
+      "changesList": [
+        "'me' → 'her'",
+        "'told' → 'had told'"
+      ],
+      "ruleExplanation": "'Me' (Noelle) becomes 'her', while 'he' (Mateus) stays as 'he' since it already refers to a third person; 'told' backshifts to 'had told'.",
+      "nativeTip": "There are two people mentioned here — track carefully which pronoun refers to Mateus and which refers to Noelle.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Noelle said, \"Mateus told me that he was moving to Berlin.\"\" ➔ \"Noelle said that Mateus had told her that he was moving to Berlin.\""
+    },
+    {
+      "id": "dis_l148_learn_q2",
+      "level": 148,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Gideon said, \"Marisol and her sister said they would help us move.\"",
+      "reportedSpeech": "Gideon said that Marisol and her sister had said they would help them move.",
+      "changesList": [
+        "'said' → 'had said'",
+        "'us' → 'them'"
+      ],
+      "ruleExplanation": "'Said' backshifts to 'had said', and 'us' becomes 'them' since the reporter's group is now being referred to from outside.",
+      "nativeTip": "'Us' refers to Gideon's own group — if he's now reporting it to someone outside that group, it becomes 'them'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Gideon said, \"Marisol and her sister said they would help us move.\"\" ➔ \"Gideon said that Marisol and her sister had said they would help them move.\""
+    },
+    {
+      "id": "dis_l148_learn_q3",
+      "level": 148,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Osei said, \"Aurelia asked me whether I had seen her keys.\"",
+      "reportedSpeech": "Osei said that Aurelia had asked him whether he had seen her keys.",
+      "changesList": [
+        "'me' → 'him'",
+        "'I' → 'he'",
+        "'asked' → 'had asked'"
+      ],
+      "ruleExplanation": "'Me'/'I' (Osei) become 'him'/'he', 'asked' becomes 'had asked', and 'her' (Aurelia's keys) stays the same since it still refers to Aurelia.",
+      "nativeTip": "Three different people appear here — make sure each pronoun stays attached to the right person.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Osei said, \"Aurelia asked me whether I had seen her keys.\"\" ➔ \"Osei said that Aurelia had asked him whether he had seen her keys.\""
+    },
+    {
+      "id": "dis_l149_learn_q1",
+      "level": 149,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The CEO said, \"I'm pleased to announce that we exceeded our targets this year. I want to thank everyone for their hard work, and I promise we'll celebrate together next month.\"",
+      "reportedSpeech": "The CEO said that she was pleased to announce that they had exceeded their targets that year, that she wanted to thank everyone for their hard work, and promised that they would celebrate together the following month.",
+      "changesList": [
+        "'I' → 'she'",
+        "'we' → 'they'",
+        "'our' → 'their'",
+        "'exceeded' → 'had exceeded'",
+        "'want' → 'wanted'",
+        "'will celebrate' → 'would celebrate'",
+        "'this year' → 'that year'",
+        "'next month' → 'the following month'"
+      ],
+      "ruleExplanation": "'I'/'we'/'our' shift to 'she'/'they'/'their' throughout, every verb backshifts one step, and 'this year'/'next month' become 'that year'/'the following month'.",
+      "nativeTip": "This longer passage needs the same rules applied consistently across every clause — the pronoun, tense, possessive, modal, and time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The CEO said, \"I'm pleased to announce that we exceeded our targets this year. I want to thank everyone for their hard work, and I promise we'll celebrate together next month.\"\" ➔ \"The CEO said that she was pleased to announce that they had exceeded their targets that year, that she wanted to thank everyone for their hard work, and promised that they would celebrate together the following month.\""
+    },
+    {
+      "id": "dis_l149_learn_q2",
+      "level": 149,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Ravi said, \"I've been thinking about our conversation, and I think you were right. I should apologize to you and your brother.\"",
+      "reportedSpeech": "Ravi said that he had been thinking about their conversation, and that he thought I had been right, and that he should apologize to me and my brother.",
+      "changesList": [
+        "'I' → 'he'",
+        "'our' → 'their'",
+        "'you were' → 'I had been'",
+        "'you' → 'me'",
+        "'your' → 'my'",
+        "'should' stays unchanged"
+      ],
+      "ruleExplanation": "'I' becomes 'he' throughout, 'our' becomes 'their', 'you were right' becomes 'I had been right', and 'you'/'your' become 'me'/'my'; 'should' stays unchanged.",
+      "nativeTip": "Track the pronouns across all three clauses — 'our', 'you', and 'your' all need to reverse to match the listener's perspective.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Ravi said, \"I've been thinking about our conversation, and I think you were right. I should apologize to you and your brother.\"\" ➔ \"Ravi said that he had been thinking about their conversation, and that he thought I had been right, and that he should apologize to me and my brother.\""
+    },
+    {
+      "id": "dis_l149_learn_q3",
+      "level": 149,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The teacher said, \"I know this term has been difficult, but I believe you can all improve. Keep practicing, and don't give up.\"",
+      "reportedSpeech": "The teacher said that she knew that term had been difficult but that she believed we could all improve, and told us to keep practicing and not to give up.",
+      "changesList": [
+        "'this' → 'that'",
+        "'know' → 'knew'",
+        "'believe' → 'believed'",
+        "'you' → 'we'",
+        "'can' → 'could'",
+        "imperative → 'told + object + to'",
+        "'don't give up' → 'not to give up'"
+      ],
+      "ruleExplanation": "'This' becomes 'that', 'know'/'believe' backshift, 'you' becomes 'we'/'us', 'can' becomes 'could', and both imperatives become infinitives, with 'don't give up' correctly becoming 'not to give up'.",
+      "nativeTip": "This passage combines a statement, an opinion, and two commands — track the pronoun, tense, demonstrative, and negative meaning throughout.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The teacher said, \"I know this term has been difficult, but I believe you can all improve. Keep practicing, and don't give up.\"\" ➔ \"The teacher said that she knew that term had been difficult but that she believed we could all improve, and told us to keep practicing and not to give up.\""
+    },
+    {
+      "id": "dis_l150_learn_q1",
+      "level": 150,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Bianca said, \"I'll send you the files tonight, but I need your feedback by tomorrow.\"",
+      "reportedSpeech": "Bianca said that she would send me the files that night but needed my feedback by the next day.",
+      "changesList": [
+        "'I' → 'she'",
+        "'you' → 'me'",
+        "'your' → 'my'",
+        "'will send' → 'would send'",
+        "'need' → 'needed'",
+        "'tonight' → 'that night'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'I'/'you'/'your' shift to 'she'/'me'/'my', 'will send' becomes 'would send', 'need' becomes 'needed', and 'tonight'/'tomorrow' become 'that night'/'the next day'.",
+      "nativeTip": "This review question combines pronouns, possessives, modals, and two separate time expressions.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Bianca said, \"I'll send you the files tonight, but I need your feedback by tomorrow.\"\" ➔ \"Bianca said that she would send me the files that night but needed my feedback by the next day.\""
+    },
+    {
+      "id": "dis_l150_learn_q2",
+      "level": 150,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The board said to the two directors, \"Both of you must present your findings here at the meeting tomorrow.\"",
+      "reportedSpeech": "The board told the two directors that they had to present their findings there at the meeting the next day.",
+      "changesList": [
+        "'you' → 'they'",
+        "'your' → 'their'",
+        "'must' → 'had to'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'You'/'your' become 'they'/'their', 'must' becomes 'had to', 'here' becomes 'there', and 'tomorrow' becomes 'the next day'.",
+      "nativeTip": "This combines the group pronoun, the obligation modal, the possessive, the place word, and the time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The board said to the two directors, \"Both of you must present your findings here at the meeting tomorrow.\"\" ➔ \"The board told the two directors that they had to present their findings there at the meeting the next day.\""
+    },
+    {
+      "id": "dis_l150_learn_q3",
+      "level": 150,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Luka said to Halima, \"I saw your brother a few days ago, and he told me he might visit us next week.\"",
+      "reportedSpeech": "Luka told Halima that he had seen her brother a few days earlier, and that her brother had told him he might visit them the following week.",
+      "changesList": [
+        "'your' → 'her'",
+        "'saw' → 'had seen'",
+        "'told' → 'had told'",
+        "'a few days ago' → 'a few days earlier'",
+        "'us' → 'them'",
+        "'next week' → 'the following week'",
+        "'might' stays unchanged"
+      ],
+      "ruleExplanation": "'Your' becomes 'her', 'saw'/'told' backshift to 'had seen'/'had told', 'a few days ago' becomes 'a few days earlier', 'us' becomes 'them', 'next week' becomes 'the following week', and 'might' stays unchanged.",
+      "nativeTip": "This mastery-level question tracks three people across two time expressions, a possessive, and a modal that stays unchanged.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Luka said to Halima, \"I saw your brother a few days ago, and he told me he might visit us next week.\"\" ➔ \"Luka told Halima that he had seen her brother a few days earlier, and that her brother had told him he might visit them the following week.\""
+    }
+  ]
+}

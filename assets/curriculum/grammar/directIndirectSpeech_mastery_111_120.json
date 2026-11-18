@@ -1,0 +1,723 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "mastery",
+  "batchIndex": 12,
+  "levels": "111-120",
+  "quests": [
+    {
+      "id": "dis_l111_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The recruiter asked, \"Would you be willing to relocate for this role?\"",
+      "options": [
+        "The recruiter asked whether I will be willing to relocate for that role.",
+        "The recruiter asked would I be willing to relocate for this role.",
+        "The recruiter asked whether I would be willing to relocate for that role."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The recruiter asked whether I would be willing to relocate for that role.",
+      "sentence": "The recruiter asked, \"Would you be willing to relocate for this role?\"",
+      "hint": "'Would' stays the same since it's already a past-time form — focus on the demonstrative and the word order.",
+      "explanation": "'Would' stays the same since it's already a past-time form; 'this' becomes 'that', and inversion is removed.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'you' → 'I'",
+        "'this' → 'that'",
+        "question word order → statement word order"
+      ],
+      "level": 111
+    },
+    {
+      "id": "dis_l111_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The nurse asked, \"Might you be allergic to any medications?\"",
+      "options": [
+        "The nurse asked might I be allergic to any medications.",
+        "The nurse asked whether I might be allergic to any medications.",
+        "The nurse asked whether I may be allergic to any medications."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The nurse asked whether I might be allergic to any medications.",
+      "sentence": "The nurse asked, \"Might you be allergic to any medications?\"",
+      "hint": "'Might' stays unchanged — remove the inversion and update the pronoun.",
+      "explanation": "'Might' stays the same, 'you' becomes 'I', and the question order becomes a statement.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'might' stays unchanged",
+        "'you' → 'I'",
+        "question word order → statement word order"
+      ],
+      "level": 111
+    },
+    {
+      "id": "dis_l111_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The consultant asked, \"Should the company invest in new equipment this year?\"",
+      "options": [
+        "The consultant asked whether the company should invest in new equipment that year.",
+        "The consultant asked should the company invest in new equipment this year.",
+        "The consultant asked whether the company would invest in new equipment that year."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The consultant asked whether the company should invest in new equipment that year.",
+      "sentence": "The consultant asked, \"Should the company invest in new equipment this year?\"",
+      "hint": "'Should' doesn't change, but the time word and word order do.",
+      "explanation": "'Should' stays the same, and 'this year' becomes 'that year'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'should' stays unchanged",
+        "'this year' → 'that year'",
+        "question word order → statement word order"
+      ],
+      "level": 111
+    },
+    {
+      "id": "dis_l112_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The manager asked, \"Why did sales drop even though we increased advertising?\"",
+      "options": [
+        "The manager asked why sales dropped even though they increased advertising.",
+        "The manager asked why did sales drop even though they had increased advertising.",
+        "The manager asked why sales had dropped even though they had increased advertising."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The manager asked why sales had dropped even though they had increased advertising.",
+      "sentence": "The manager asked, \"Why did sales drop even though we increased advertising?\"",
+      "hint": "Both clauses in this question backshift, and the pronoun in the second clause changes too.",
+      "explanation": "'Did drop' becomes 'had dropped', and 'we increased' becomes 'they had increased', matching the earlier completed actions.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'did drop' → 'had dropped'",
+        "'we increased' → 'they had increased'"
+      ],
+      "level": 112
+    },
+    {
+      "id": "dis_l112_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The teacher asked, \"How can you improve if you don't practice?\"",
+      "options": [
+        "The teacher asked how I could improve if I didn't practice.",
+        "The teacher asked how could I improve if I didn't practice.",
+        "The teacher asked how I can improve if I don't practice."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The teacher asked how I could improve if I didn't practice.",
+      "sentence": "The teacher asked, \"How can you improve if you don't practice?\"",
+      "hint": "Backshift the modal and the conditional clause, and update both pronouns.",
+      "explanation": "'Can' becomes 'could', 'don't' becomes 'didn't', and 'you' becomes 'I' throughout.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'can' → 'could'",
+        "'don't' → 'didn't'",
+        "'you' → 'I'",
+        "question word order → statement word order"
+      ],
+      "level": 112
+    },
+    {
+      "id": "dis_l112_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The detective asked, \"Where were you when the alarm went off?\"",
+      "options": [
+        "The detective asked where I was when the alarm went off.",
+        "The detective asked where had I been when the alarm had gone off.",
+        "The detective asked where I had been when the alarm had gone off."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The detective asked where I had been when the alarm had gone off.",
+      "sentence": "The detective asked, \"Where were you when the alarm went off?\"",
+      "hint": "Both the main verb and the verb in the time clause backshift one more step.",
+      "explanation": "'Were' becomes 'had been', and 'went off' becomes 'had gone off'; 'you' becomes 'I'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'were' → 'had been'",
+        "'went off' → 'had gone off'",
+        "'you' → 'I'"
+      ],
+      "level": 112
+    },
+    {
+      "id": "dis_l113_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The auditor asked, \"Aren't these figures inconsistent with last quarter's report?\"",
+      "options": [
+        "The auditor asked whether these figures weren't inconsistent with last quarter's report.",
+        "The auditor asked whether those figures weren't inconsistent with the previous quarter's report.",
+        "The auditor asked aren't those figures inconsistent with the previous quarter's report."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The auditor asked whether those figures weren't inconsistent with the previous quarter's report.",
+      "sentence": "The auditor asked, \"Aren't these figures inconsistent with last quarter's report?\"",
+      "hint": "Keep the negative meaning, and update the demonstrative and time reference.",
+      "explanation": "'Aren't' becomes 'weren't', 'these' becomes 'those', and 'last quarter's' becomes 'the previous quarter's'.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'aren't' → 'weren't'",
+        "'these' → 'those'",
+        "'last quarter's' → 'the previous quarter's'",
+        "question word order → statement word order"
+      ],
+      "level": 113
+    },
+    {
+      "id": "dis_l113_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Layla asked, \"Haven't you finished packing yet?\"",
+      "options": [
+        "Layla asked whether I hadn't finished packing yet.",
+        "Layla asked whether I haven't finished packing yet.",
+        "Layla asked haven't I finished packing yet."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Layla asked whether I hadn't finished packing yet.",
+      "sentence": "Layla asked, \"Haven't you finished packing yet?\"",
+      "hint": "Negative present perfect backshifts the same way positive present perfect does.",
+      "explanation": "'Haven't finished' becomes 'hadn't finished', and 'you' becomes 'I'.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'haven't finished' → 'hadn't finished'",
+        "'you' → 'I'",
+        "question word order → statement word order"
+      ],
+      "level": 113
+    },
+    {
+      "id": "dis_l113_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The editor asked, \"Wasn't this article supposed to be shorter?\"",
+      "options": [
+        "The editor asked whether that article wasn't supposed to be shorter.",
+        "The editor asked wasn't that article supposed to be shorter.",
+        "The editor asked whether this article wasn't supposed to be shorter."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The editor asked whether that article wasn't supposed to be shorter.",
+      "sentence": "The editor asked, \"Wasn't this article supposed to be shorter?\"",
+      "hint": "Keep the negative form of 'was', and update the demonstrative.",
+      "explanation": "'Wasn't' stays as 'wasn't' since it's already past tense, and 'this' becomes 'that'.",
+      "grammarRule": "Reported Yes/No Question",
+      "changesList": [
+        "'this' → 'that'",
+        "question word order → statement word order"
+      ],
+      "level": 113
+    },
+    {
+      "id": "dis_l114_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Santiago said to himself, \"Did I lock the front door?\"",
+      "options": [
+        "Santiago wondered whether he locked the front door.",
+        "Santiago wondered whether he had locked the front door.",
+        "Santiago asked whether he had locked the front door."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Santiago wondered whether he had locked the front door.",
+      "sentence": "Santiago said to himself, \"Did I lock the front door?\"",
+      "hint": "A question someone asks themselves, silently, is best reported with 'wondered'.",
+      "explanation": "Since Santiago is questioning himself, 'wondered' fits better than 'asked'; 'did lock' becomes 'had locked'.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'did lock' → 'had locked'",
+        "'I' → 'he'"
+      ],
+      "level": 114
+    },
+    {
+      "id": "dis_l114_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "In a tense interview, the journalist demanded, \"What evidence do you have for these claims?\" Convert to reported speech.",
+      "options": [
+        "The journalist demanded to know what evidence do I have for those claims.",
+        "The journalist demanded to know what evidence I had for those claims.",
+        "The journalist asked what evidence I had for those claims."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The journalist demanded to know what evidence I had for those claims.",
+      "sentence": "The journalist said, \"What evidence do you have for these claims?\"",
+      "hint": "A forceful, challenging question like this can be reported with 'demanded to know' instead of a plain 'asked'.",
+      "explanation": "The confrontational tone matches 'demanded to know', and 'these' becomes 'those'.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'do you have' → 'had'",
+        "'these' → 'those'",
+        "'you' → 'I'"
+      ],
+      "level": 114
+    },
+    {
+      "id": "dis_l114_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The receptionist asked, \"Could you confirm your appointment time?\"",
+      "options": [
+        "The receptionist inquired could I confirm my appointment time.",
+        "The receptionist asked whether I could confirm my appointment time.",
+        "The receptionist inquired whether I could confirm my appointment time."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The receptionist inquired whether I could confirm my appointment time.",
+      "sentence": "The receptionist asked, \"Could you confirm your appointment time?\"",
+      "hint": "A polite, formal request for information like this can be reported with 'inquired'.",
+      "explanation": "'Inquired' suits the polite, formal tone here just as well as 'asked'; 'your' becomes 'my'.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'your' → 'my'",
+        "question word order → statement word order"
+      ],
+      "level": 114
+    },
+    {
+      "id": "dis_l115_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The doctor asked, \"How long have you been feeling this way?\"",
+      "options": [
+        "The doctor asked how long I have been feeling that way.",
+        "The doctor asked how long had I been feeling this way.",
+        "The doctor asked how long I had been feeling that way."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The doctor asked how long I had been feeling that way.",
+      "sentence": "The doctor asked, \"How long have you been feeling this way?\"",
+      "hint": "Present perfect continuous backshifts to past perfect continuous, plus a demonstrative change.",
+      "explanation": "'Have been feeling' becomes 'had been feeling', and 'this way' becomes 'that way'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'have been feeling' → 'had been feeling'",
+        "'this way' → 'that way'",
+        "'you' → 'I'"
+      ],
+      "level": 115
+    },
+    {
+      "id": "dis_l115_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The manager asked, \"How long has the team been working on this project?\"",
+      "options": [
+        "The manager asked how long had the team been working on this project.",
+        "The manager asked how long the team had been working on that project.",
+        "The manager asked how long the team has been working on that project."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The manager asked how long the team had been working on that project.",
+      "sentence": "The manager asked, \"How long has the team been working on this project?\"",
+      "hint": "No pronoun to change here — just the perfect continuous tense and the demonstrative.",
+      "explanation": "'Has been working' becomes 'had been working', and 'this' becomes 'that'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'has been working' → 'had been working'",
+        "'this' → 'that'"
+      ],
+      "level": 115
+    },
+    {
+      "id": "dis_l115_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The landlord asked, \"Have you been paying your utility bills on time?\"",
+      "options": [
+        "The landlord asked whether I have been paying my utility bills on time.",
+        "The landlord asked had I been paying your utility bills on time.",
+        "The landlord asked whether I had been paying my utility bills on time."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The landlord asked whether I had been paying my utility bills on time.",
+      "sentence": "The landlord asked, \"Have you been paying your utility bills on time?\"",
+      "hint": "Combine the perfect continuous backshift with the possessive and pronoun changes.",
+      "explanation": "'Have been paying' becomes 'had been paying', 'you' becomes 'I', and 'your' becomes 'my'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'have been paying' → 'had been paying'",
+        "'you' → 'I'",
+        "'your' → 'my'",
+        "question word order → statement word order"
+      ],
+      "level": 115
+    },
+    {
+      "id": "dis_l116_q1",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: The recruiter asked whether I would be willing to relocate for that role.",
+      "options": [
+        "The recruiter asked, \"Would you be willing to relocate for this role?\"",
+        "The recruiter asked, \"Would I be willing to relocate for that role?\"",
+        "The recruiter asked, \"Will you be willing to relocate for this role?\""
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The recruiter asked, \"Would you be willing to relocate for this role?\"",
+      "sentence": "The recruiter asked whether I would be willing to relocate for that role.",
+      "hint": "Reverse the demonstrative and pronoun; 'would' stays the same since it doesn't reverse any further.",
+      "explanation": "'That' reverses to 'this', and 'I' reverses to 'you'; 'would' remains unchanged.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'that' → 'this'",
+        "'I' → 'you'"
+      ],
+      "level": 116
+    },
+    {
+      "id": "dis_l116_q2",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: The doctor asked how long I had been feeling that way.",
+      "options": [
+        "The doctor asked, \"How long have I been feeling that way?\"",
+        "The doctor asked, \"How long had you been feeling this way?\"",
+        "The doctor asked, \"How long have you been feeling this way?\""
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The doctor asked, \"How long have you been feeling this way?\"",
+      "sentence": "The doctor asked how long I had been feeling that way.",
+      "hint": "Reverse the past perfect continuous to present perfect continuous, and reverse the demonstrative and pronoun.",
+      "explanation": "'Had been feeling' reverses to 'have been feeling', 'that way' reverses to 'this way', and 'I' reverses to 'you'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'had been feeling' → 'have been feeling'",
+        "'that way' → 'this way'",
+        "'I' → 'you'"
+      ],
+      "level": 116
+    },
+    {
+      "id": "dis_l116_q3",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: The auditor asked whether those figures weren't inconsistent with the previous quarter's report.",
+      "options": [
+        "The auditor asked, \"Aren't those figures inconsistent with the previous quarter's report?\"",
+        "The auditor asked, \"Are these figures inconsistent with last quarter's report?\"",
+        "The auditor asked, \"Aren't these figures inconsistent with last quarter's report?\""
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The auditor asked, \"Aren't these figures inconsistent with last quarter's report?\"",
+      "sentence": "The auditor asked whether those figures weren't inconsistent with the previous quarter's report.",
+      "hint": "Keep the negative meaning intact, and reverse the demonstrative and time expression.",
+      "explanation": "'Weren't' reverses to 'aren't', 'those' reverses to 'these', and 'the previous quarter's' reverses to 'last quarter's'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'weren't' → 'aren't'",
+        "'those' → 'these'",
+        "'the previous quarter's' → 'last quarter's'"
+      ],
+      "level": 116
+    },
+    {
+      "id": "dis_l117_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Nadia asked, \"Why did you tell them my secret?\"",
+      "options": [
+        "Nadia asked why I had told them her secret.",
+        "Nadia asked why I told them her secret.",
+        "Nadia asked why did I tell them my secret."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Nadia asked why I had told them her secret.",
+      "sentence": "Nadia asked, \"Why did you tell them my secret?\"",
+      "hint": "Three pronoun-type words change here: the subject, the possessive, and the tense.",
+      "explanation": "'Did tell' becomes 'had told', 'you' becomes 'I', and 'my' becomes 'her'; 'them' stays the same since it refers to a third group.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'did tell' → 'had told'",
+        "'you' → 'I'",
+        "'my' → 'her'"
+      ],
+      "level": 117
+    },
+    {
+      "id": "dis_l117_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The manager asked, \"Who gave you permission to leave early?\"",
+      "options": [
+        "The manager asked who had given me permission to leave early.",
+        "The manager asked who had given you permission to leave early.",
+        "The manager asked who gave me permission to leave early."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The manager asked who had given me permission to leave early.",
+      "sentence": "The manager asked, \"Who gave you permission to leave early?\"",
+      "hint": "'Who' as the subject means no word-order change, but the verb and object pronoun still shift.",
+      "explanation": "'Gave' backshifts to 'had given', and 'you' becomes 'me'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'gave' → 'had given'",
+        "'you' → 'me'"
+      ],
+      "level": 117
+    },
+    {
+      "id": "dis_l117_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Fatima asked, \"What did he tell you about our plans?\"",
+      "options": [
+        "Fatima asked what he had told you about our plans.",
+        "Fatima asked what he had told me about their plans.",
+        "Fatima asked what he told me about their plans."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Fatima asked what he had told me about their plans.",
+      "sentence": "Fatima asked, \"What did he tell you about our plans?\"",
+      "hint": "Three separate items change: the tense, one pronoun, and the possessive.",
+      "explanation": "'Did tell' becomes 'had told', 'you' becomes 'me', and 'our' becomes 'their'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'did tell' → 'had told'",
+        "'you' → 'me'",
+        "'our' → 'their'"
+      ],
+      "level": 117
+    },
+    {
+      "id": "dis_l118_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The teacher said, \"I noticed you were distracted. What's going on?\"",
+      "options": [
+        "The teacher said that she had noticed I was distracted and asked what was going on.",
+        "The teacher said that she noticed I was distracted and asked what is going on.",
+        "The teacher said that she had noticed you were distracted and asked what was going on."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The teacher said that she had noticed I was distracted and asked what was going on.",
+      "sentence": "The teacher said, \"I noticed you were distracted. What's going on?\"",
+      "hint": "This combines a reported statement and a reported question in one item — treat each part separately.",
+      "explanation": "'Noticed' becomes 'had noticed', 'you' becomes 'I', and 'what's going on' becomes 'what was going on'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'noticed' → 'had noticed'",
+        "'you' → 'I'",
+        "'what's going on' → 'what was going on'"
+      ],
+      "level": 118
+    },
+    {
+      "id": "dis_l118_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Kenji said, \"I'm running late. Can you start the meeting without me?\"",
+      "options": [
+        "Kenji said that he is running late and asked whether they can start the meeting without him.",
+        "Kenji said that he was running late and asked whether they could start the meeting without him.",
+        "Kenji said that he was running late and asked could they start the meeting without him."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Kenji said that he was running late and asked whether they could start the meeting without him.",
+      "sentence": "Kenji said, \"I'm running late. Can you start the meeting without me?\"",
+      "hint": "First backshift the statement, then convert the question into statement word order too.",
+      "explanation": "'Am running' becomes 'was running', 'you' becomes 'they', 'can' becomes 'could', and 'me' becomes 'him'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'am running' → 'was running'",
+        "'you' → 'they'",
+        "'can' → 'could'",
+        "'me' → 'him'",
+        "question word order → statement word order"
+      ],
+      "level": 118
+    },
+    {
+      "id": "dis_l118_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The client said, \"I received the invoice. Is the total amount correct?\"",
+      "options": [
+        "The client said that she had received the invoice and asked whether the total amount was correct.",
+        "The client said that she received the invoice and asked whether the total amount is correct.",
+        "The client said that she had received the invoice and asked was the total amount correct."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The client said that she had received the invoice and asked whether the total amount was correct.",
+      "sentence": "The client said, \"I received the invoice. Is the total amount correct?\"",
+      "hint": "Handle the statement and the question as two separate transformations joined together.",
+      "explanation": "'Received' becomes 'had received', and 'is' becomes 'was'; the question order becomes a statement.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'received' → 'had received'",
+        "'is' → 'was'",
+        "question word order → statement word order"
+      ],
+      "level": 118
+    },
+    {
+      "id": "dis_l119_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Priya thought to herself, \"Should I take this opportunity?\"",
+      "options": [
+        "Priya asked whether she should take that opportunity.",
+        "Priya wondered whether she should take that opportunity.",
+        "Priya wondered should she take that opportunity."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Priya wondered whether she should take that opportunity.",
+      "sentence": "Priya thought to herself, \"Should I take this opportunity?\"",
+      "hint": "A silent question to oneself is naturally reported with 'wondered', not 'asked'.",
+      "explanation": "Since this is an internal thought, 'wondered' fits better than 'asked'; 'this' becomes 'that'.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'this' → 'that'",
+        "question word order → statement word order"
+      ],
+      "level": 119
+    },
+    {
+      "id": "dis_l119_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Idris asked himself, \"Why does this always happen to me?\"",
+      "options": [
+        "Idris asked why that always happened to him.",
+        "Idris wondered why that always happened to him.",
+        "Idris wondered why this always happens to me."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Idris wondered why that always happened to him.",
+      "sentence": "Idris asked himself, \"Why does this always happen to me?\"",
+      "hint": "Combine the reporting-verb choice with the demonstrative, tense, and pronoun changes.",
+      "explanation": "'Wondered' matches a self-directed question, 'this' becomes 'that', 'happens' becomes 'happened', and 'me' becomes 'him'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'this' → 'that'",
+        "'happens' → 'happened'",
+        "'me' → 'him'"
+      ],
+      "level": 119
+    },
+    {
+      "id": "dis_l119_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Isabella thought, \"Is it too late to apologize?\"",
+      "options": [
+        "Isabella asked whether it was too late to apologize.",
+        "Isabella wondered was it too late to apologize.",
+        "Isabella wondered whether it was too late to apologize."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Isabella wondered whether it was too late to apologize.",
+      "sentence": "Isabella thought, \"Is it too late to apologize?\"",
+      "hint": "This internal reflection is best captured with 'wondered', matching its reflective tone.",
+      "explanation": "'Is' backshifts to 'was', and word order becomes a statement; 'wondered' matches the reflective tone of the original thought.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'is' → 'was'",
+        "question word order → statement word order"
+      ],
+      "level": 119
+    },
+    {
+      "id": "dis_l120_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The panel asked, \"Why should we choose you over other candidates?\"",
+      "options": [
+        "The panel asked why should they choose me over other candidates.",
+        "The panel asked why they should choose me over other candidates.",
+        "The panel asked why they should choose you over other candidates."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The panel asked why they should choose me over other candidates.",
+      "sentence": "The panel asked, \"Why should we choose you over other candidates?\"",
+      "hint": "'Should' stays the same, but the pronouns and word order still change.",
+      "explanation": "'We' becomes 'they', 'you' becomes 'me', and the question order becomes a statement; 'should' remains unchanged.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'you' → 'me'",
+        "'should' stays unchanged",
+        "question word order → statement word order"
+      ],
+      "level": 120
+    },
+    {
+      "id": "dis_l120_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Adaeze wondered, \"Have I made the right decision?\"",
+      "options": [
+        "Adaeze asked whether she had made the right decision.",
+        "Adaeze wondered whether she had made the right decision.",
+        "Adaeze wondered whether she has made the right decision."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Adaeze wondered whether she had made the right decision.",
+      "sentence": "Adaeze wondered, \"Have I made the right decision?\"",
+      "hint": "This item checks the reporting-verb choice along with the tense backshift.",
+      "explanation": "'Wondered' fits this reflective, self-directed question, and 'have made' becomes 'had made'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'have made' → 'had made'",
+        "'I' → 'she'"
+      ],
+      "level": 120
+    },
+    {
+      "id": "dis_l120_q3",
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to direct speech: The client asked whether the team could deliver the results by the following month.",
+      "options": [
+        "The client asked, \"Can the team deliver the results by next month?\"",
+        "The client asked, \"Can the team deliver the results by the following month?\"",
+        "The client asked, \"Could the team deliver the results by next month?\""
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The client asked, \"Can the team deliver the results by next month?\"",
+      "sentence": "The client asked whether the team could deliver the results by the following month.",
+      "hint": "This final question in the section reverses the modal and the time expression back to direct speech.",
+      "explanation": "'Could' reverses to 'can', and 'the following month' reverses to 'next month'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'could' → 'can'",
+        "'the following month' → 'next month'"
+      ],
+      "level": 120
+    }
+  ]
+}

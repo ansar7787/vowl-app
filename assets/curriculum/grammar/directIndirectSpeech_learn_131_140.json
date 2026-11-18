@@ -1,0 +1,491 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "learn",
+  "batchIndex": 14,
+  "levels": "131-140",
+  "quests": [
+    {
+      "id": "dis_l131_learn_q1",
+      "level": 131,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The waiter said, \"The special today is grilled salmon.\"",
+      "reportedSpeech": "The waiter said that the special that day was grilled salmon.",
+      "changesList": [
+        "'today' → 'that day'"
+      ],
+      "ruleExplanation": "Since this is a statement of fact, it's reported with 'said that', not 'asked whether'; 'today' becomes 'that day'.",
+      "nativeTip": "This is a statement, not a question — check the sentence type before picking the reporting structure.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The waiter said, \"The special today is grilled salmon.\"\" ➔ \"The waiter said that the special that day was grilled salmon.\""
+    },
+    {
+      "id": "dis_l131_learn_q2",
+      "level": 131,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "The waiter said, \"Is the salmon fresh today?\"",
+      "reportedSpeech": "The waiter asked whether the salmon was fresh that day.",
+      "changesList": [
+        "'is' → 'was'",
+        "'today' → 'that day'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "Since this is a yes/no question, it's reported with 'asked whether', not 'said that'; 'is' becomes 'was' and 'today' becomes 'that day'.",
+      "nativeTip": "This time it's a question — compare it carefully with the statement in the previous item.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The waiter said, \"Is the salmon fresh today?\"\" ➔ \"The waiter asked whether the salmon was fresh that day.\""
+    },
+    {
+      "id": "dis_l131_learn_q3",
+      "level": 131,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Callum said, \"I'll have the salmon, please.\"",
+      "reportedSpeech": "Callum said that he would have the salmon.",
+      "changesList": [
+        "'I'll have' → 'he would have'"
+      ],
+      "ruleExplanation": "'I'll have...' is a statement of intention, so it's reported with 'said that', and 'I' becomes 'he'.",
+      "nativeTip": "This is a simple statement of choice, not a question or a command.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Callum said, \"I'll have the salmon, please.\"\" ➔ \"Callum said that he would have the salmon.\""
+    },
+    {
+      "id": "dis_l132_learn_q1",
+      "level": 132,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "The coach said, \"Everyone runs three laps before practice.\"",
+      "reportedSpeech": "The coach said that everyone ran three laps before practice.",
+      "changesList": [
+        "'runs' → 'ran'"
+      ],
+      "ruleExplanation": "Since this is phrased as a statement describing the routine, not as an imperative, it's reported with 'said that', not 'told...to'.",
+      "nativeTip": "This describes a rule as a fact, not as a direct order — check the sentence structure carefully.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The coach said, \"Everyone runs three laps before practice.\"\" ➔ \"The coach said that everyone ran three laps before practice.\""
+    },
+    {
+      "id": "dis_l132_learn_q2",
+      "level": 132,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Command",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Command",
+      "directSpeech": "The coach said, \"Run three laps before practice!\"",
+      "reportedSpeech": "The coach told the team to run three laps before practice.",
+      "changesList": [
+        "imperative → 'told + object + to'"
+      ],
+      "ruleExplanation": "Since this is an imperative command, it's reported with 'told...to run', not 'said that'.",
+      "nativeTip": "This time it's phrased as a direct imperative — compare the verb form with the previous item.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The coach said, \"Run three laps before practice!\"\" ➔ \"The coach told the team to run three laps before practice.\""
+    },
+    {
+      "id": "dis_l132_learn_q3",
+      "level": 132,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "The coach said, \"I expect everyone to arrive on time.\"",
+      "reportedSpeech": "The coach said that he expected everyone to arrive on time.",
+      "changesList": [
+        "'expect' → 'expected'"
+      ],
+      "ruleExplanation": "Since the coach is stating his expectation, not issuing a direct command, it's reported with 'said that', and 'expect' backshifts to 'expected'.",
+      "nativeTip": "This is the coach describing his own expectation, not directly commanding — it stays a statement.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The coach said, \"I expect everyone to arrive on time.\"\" ➔ \"The coach said that he expected everyone to arrive on time.\""
+    },
+    {
+      "id": "dis_l133_learn_q1",
+      "level": 133,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The officer said, \"License and registration, please.\"",
+      "reportedSpeech": "The officer asked for the driver's license and registration.",
+      "changesList": [
+        "polite phrase → 'asked for'"
+      ],
+      "ruleExplanation": "A short, polite phrase like this is best reported as 'asked for', reflecting a request rather than a command.",
+      "nativeTip": "This brief phrase with 'please' is a polite request for documents, not a strong command.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The officer said, \"License and registration, please.\"\" ➔ \"The officer asked for the driver's license and registration.\""
+    },
+    {
+      "id": "dis_l133_learn_q2",
+      "level": 133,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Command",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Command",
+      "directSpeech": "The officer said, \"Step out of the vehicle now.\"",
+      "reportedSpeech": "The officer ordered the driver to step out of the vehicle immediately.",
+      "changesList": [
+        "imperative → 'ordered + object + to'",
+        "'now' → 'immediately'"
+      ],
+      "ruleExplanation": "The forceful tone matches 'ordered', and 'now' becomes 'immediately'.",
+      "nativeTip": "This is a firm, authoritative command — compare its tone with the polite request in the previous item.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The officer said, \"Step out of the vehicle now.\"\" ➔ \"The officer ordered the driver to step out of the vehicle immediately.\""
+    },
+    {
+      "id": "dis_l133_learn_q3",
+      "level": 133,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Request",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Request",
+      "directSpeech": "The officer said, \"Could you slow down a bit?\"",
+      "reportedSpeech": "The officer asked the driver to slow down a bit.",
+      "changesList": [
+        "polite question → 'asked + object + to'"
+      ],
+      "ruleExplanation": "The polite question 'Could you...?' becomes 'asked...to slow down', matching its softer tone.",
+      "nativeTip": "A polite 'could you...?' question functions as a request, not a strict order.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The officer said, \"Could you slow down a bit?\"\" ➔ \"The officer asked the driver to slow down a bit.\""
+    },
+    {
+      "id": "dis_l134_learn_q1",
+      "level": 134,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The mentor said, \"You should read more about the industry.\"",
+      "reportedSpeech": "The mentor advised me to read more about the industry.",
+      "changesList": [
+        "'you should read' → 'advised me to read'"
+      ],
+      "ruleExplanation": "'You should read' becomes 'advised me to read', following the 'advised + object + to' pattern.",
+      "nativeTip": "'You should...' directed at a specific person is advice — use the infinitive pattern after 'advised'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The mentor said, \"You should read more about the industry.\"\" ➔ \"The mentor advised me to read more about the industry.\""
+    },
+    {
+      "id": "dis_l134_learn_q2",
+      "level": 134,
+      "conceptTitle": "Speech Bubble to Report Converter: Gerund Structure",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Gerund Structure",
+      "directSpeech": "The mentor said, \"Why not read a few case studies together?\"",
+      "reportedSpeech": "The mentor suggested reading a few case studies together.",
+      "changesList": [
+        "'why not read' → 'suggested reading'"
+      ],
+      "ruleExplanation": "'Why not read...?' becomes 'suggested reading', not 'advised...to read', since it's a proposal rather than personal advice.",
+      "nativeTip": "'Why not...?' proposes an idea for the group — it fits the gerund pattern with 'suggested'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The mentor said, \"Why not read a few case studies together?\"\" ➔ \"The mentor suggested reading a few case studies together.\""
+    },
+    {
+      "id": "dis_l134_learn_q3",
+      "level": 134,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "The mentor said, \"You ought to network more at these events.\"",
+      "reportedSpeech": "The mentor said that I ought to network more at those events.",
+      "changesList": [
+        "'you' → 'I'",
+        "'these' → 'those'",
+        "'ought to' stays unchanged"
+      ],
+      "ruleExplanation": "'Ought to' remains the same in reported speech; only the pronoun and demonstrative shift.",
+      "nativeTip": "'Ought to' stays unchanged as a modal — this one doesn't need the 'advised...to' pattern since it already carries its own advice modal.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The mentor said, \"You ought to network more at these events.\"\" ➔ \"The mentor said that I ought to network more at those events.\""
+    },
+    {
+      "id": "dis_l135_learn_q1",
+      "level": 135,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The neighbor said, \"I can watch your house while you're away.\"",
+      "reportedSpeech": "The neighbor offered to watch my house while I was away.",
+      "changesList": [
+        "'I can watch' → 'offered to watch'",
+        "'your' → 'my'",
+        "'you're' → 'I was'"
+      ],
+      "ruleExplanation": "'I can watch...' becomes 'offered to watch', matching the spontaneous, helpful nature of the statement.",
+      "nativeTip": "This is a spontaneous favor, not a firm long-term commitment.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The neighbor said, \"I can watch your house while you're away.\"\" ➔ \"The neighbor offered to watch my house while I was away.\""
+    },
+    {
+      "id": "dis_l135_learn_q2",
+      "level": 135,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The contractor said, \"I guarantee the work will be finished by June.\"",
+      "reportedSpeech": "The contractor promised that the work would be finished by June.",
+      "changesList": [
+        "'I guarantee' → 'promised that'",
+        "'will' → 'would'"
+      ],
+      "ruleExplanation": "'I guarantee...' matches the strength of a promise, so 'promised that' is used, and 'will' becomes 'would'.",
+      "nativeTip": "A guarantee is a strong, binding commitment — this fits 'promised', not 'offered'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The contractor said, \"I guarantee the work will be finished by June.\"\" ➔ \"The contractor promised that the work would be finished by June.\""
+    },
+    {
+      "id": "dis_l135_learn_q3",
+      "level": 135,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Anton said, \"I'll cover the bill this time.\"",
+      "reportedSpeech": "Anton offered to cover the bill that time.",
+      "changesList": [
+        "'I'll cover' → 'offered to cover'",
+        "'this time' → 'that time'"
+      ],
+      "ruleExplanation": "'I'll cover...' becomes 'offered to cover', and 'this time' becomes 'that time'.",
+      "nativeTip": "This is a one-time spontaneous gesture, not a long-term promise.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Anton said, \"I'll cover the bill this time.\"\" ➔ \"Anton offered to cover the bill that time.\""
+    },
+    {
+      "id": "dis_l136_learn_q1",
+      "level": 136,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "Nadia said, \"Would you like to join us for lunch?\"",
+      "reportedSpeech": "Nadia invited me to join them for lunch.",
+      "changesList": [
+        "'would you like to join' → 'invited...to join'",
+        "'us' → 'them'"
+      ],
+      "ruleExplanation": "'Would you like to join...?' becomes 'invited me to join', matching the personal invitation.",
+      "nativeTip": "'Would you like to...?' directed at a specific person is an invitation, not a group suggestion.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Nadia said, \"Would you like to join us for lunch?\"\" ➔ \"Nadia invited me to join them for lunch.\""
+    },
+    {
+      "id": "dis_l136_learn_q2",
+      "level": 136,
+      "conceptTitle": "Speech Bubble to Report Converter: Gerund Structure",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Gerund Structure",
+      "directSpeech": "Nadia said, \"Why don't we all get lunch together sometime?\"",
+      "reportedSpeech": "Nadia suggested getting lunch together sometime.",
+      "changesList": [
+        "'why don't we get' → 'suggested getting'"
+      ],
+      "ruleExplanation": "'Why don't we get...?' becomes 'suggested getting', following the gerund pattern.",
+      "nativeTip": "'Why don't we...?' proposes an idea to the group — this is a suggestion, not a personal invitation.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Nadia said, \"Why don't we all get lunch together sometime?\"\" ➔ \"Nadia suggested getting lunch together sometime.\""
+    },
+    {
+      "id": "dis_l136_learn_q3",
+      "level": 136,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "Nadia said, \"Please come to my housewarming party on Saturday.\"",
+      "reportedSpeech": "Nadia invited me to her housewarming party on Saturday.",
+      "changesList": [
+        "imperative → 'invited...to'",
+        "'my' → 'her'"
+      ],
+      "ruleExplanation": "'Please come to my party' becomes 'invited me to her party', and 'my' becomes 'her'.",
+      "nativeTip": "A direct request to attend a specific event is an invitation, matching the possessive change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Nadia said, \"Please come to my housewarming party on Saturday.\"\" ➔ \"Nadia invited me to her housewarming party on Saturday.\""
+    },
+    {
+      "id": "dis_l137_learn_q1",
+      "level": 137,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The vendor said, \"I will not lower the price any further.\"",
+      "reportedSpeech": "The vendor refused to lower the price any further.",
+      "changesList": [
+        "'will not lower' → 'refused to lower'"
+      ],
+      "ruleExplanation": "'I will not lower...' becomes 'refused to lower', matching the firm rejection.",
+      "nativeTip": "This is a firm rejection of a request, not a commitment to do something.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The vendor said, \"I will not lower the price any further.\"\" ➔ \"The vendor refused to lower the price any further.\""
+    },
+    {
+      "id": "dis_l137_learn_q2",
+      "level": 137,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The vendor said, \"I promise to deliver the goods by Monday.\"",
+      "reportedSpeech": "The vendor promised to deliver the goods by Monday.",
+      "changesList": [
+        "'I promise to deliver' → 'promised to deliver'"
+      ],
+      "ruleExplanation": "'I promise to deliver...' becomes 'promised to deliver', keeping the infinitive structure.",
+      "nativeTip": "This is a clear commitment, opposite in meaning to the refusal in the previous item.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The vendor said, \"I promise to deliver the goods by Monday.\"\" ➔ \"The vendor promised to deliver the goods by Monday.\""
+    },
+    {
+      "id": "dis_l137_learn_q3",
+      "level": 137,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The vendor said, \"I won't negotiate on the delivery date, but I will honor the original price.\"",
+      "reportedSpeech": "The vendor refused to negotiate on the delivery date but promised to honor the original price.",
+      "changesList": [
+        "'won't negotiate' → 'refused to negotiate'",
+        "'will honor' → 'promised to honor'"
+      ],
+      "ruleExplanation": "'Won't negotiate' becomes 'refused to negotiate', and 'will honor' becomes 'promised to honor', reflecting the two different functions.",
+      "nativeTip": "This sentence has two contrasting functions — a refusal and a promise — so each clause needs its own reporting verb.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The vendor said, \"I won't negotiate on the delivery date, but I will honor the original price.\"\" ➔ \"The vendor refused to negotiate on the delivery date but promised to honor the original price.\""
+    },
+    {
+      "id": "dis_l138_learn_q1",
+      "level": 138,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The babysitter said, \"The kids ate dinner already.\"",
+      "reportedSpeech": "The babysitter said that the kids had already eaten dinner.",
+      "changesList": [
+        "'ate' → 'had eaten'"
+      ],
+      "ruleExplanation": "'Ate' becomes 'had eaten' since it's a completed action being reported; this is a statement, so 'said that' is correct.",
+      "nativeTip": "This is a statement reporting a completed action, not a command.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The babysitter said, \"The kids ate dinner already.\"\" ➔ \"The babysitter said that the kids had already eaten dinner.\""
+    },
+    {
+      "id": "dis_l138_learn_q2",
+      "level": 138,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Request",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Request",
+      "directSpeech": "The babysitter said, \"Please don't stay out too late tonight.\"",
+      "reportedSpeech": "The babysitter asked the parents not to stay out too late that night.",
+      "changesList": [
+        "negative imperative → 'asked + object + not to'",
+        "'tonight' → 'that night'"
+      ],
+      "ruleExplanation": "'Please don't stay out' becomes 'asked...not to stay out', and 'tonight' becomes 'that night'.",
+      "nativeTip": "'Please' signals a polite request, not a strong warning or plain command.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The babysitter said, \"Please don't stay out too late tonight.\"\" ➔ \"The babysitter asked the parents not to stay out too late that night.\""
+    },
+    {
+      "id": "dis_l138_learn_q3",
+      "level": 138,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "The babysitter said, \"Can I use your kitchen to make a snack?\"",
+      "reportedSpeech": "The babysitter asked whether she could use their kitchen to make a snack.",
+      "changesList": [
+        "'can' → 'could'",
+        "'I' → 'she'",
+        "'your' → 'their'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Can I use...?' becomes 'asked whether she could use', with 'your' becoming 'their'.",
+      "nativeTip": "This is a yes/no question requesting permission, distinct from the earlier statement and request.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The babysitter said, \"Can I use your kitchen to make a snack?\"\" ➔ \"The babysitter asked whether she could use their kitchen to make a snack.\""
+    },
+    {
+      "id": "dis_l139_learn_q1",
+      "level": 139,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The manager said, \"The deadline is Friday. Can everyone confirm they'll make it? Please let me know today.\"",
+      "reportedSpeech": "The manager said that the deadline was Friday, asked whether everyone could confirm they would make it, and asked to be told that day.",
+      "changesList": [
+        "'is' → 'was'",
+        "'can confirm' → 'could confirm'",
+        "'will make' → 'would make'",
+        "'today' → 'that day'"
+      ],
+      "ruleExplanation": "The statement backshifts normally, the question changes to statement word order with 'could'/'would', and the request becomes 'asked to be told'; 'today' becomes 'that day'.",
+      "nativeTip": "This passage has three separate functions — a statement, a question, and a request — each needing its own transformation.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager said, \"The deadline is Friday. Can everyone confirm they'll make it? Please let me know today.\"\" ➔ \"The manager said that the deadline was Friday, asked whether everyone could confirm they would make it, and asked to be told that day.\""
+    },
+    {
+      "id": "dis_l139_learn_q2",
+      "level": 139,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Farida said, \"I finished the design. Do you like it? Let me know your thoughts here tomorrow.\"",
+      "reportedSpeech": "Farida said that she had finished the design, asked whether I liked it, and asked me to let her know my thoughts there the next day.",
+      "changesList": [
+        "'finished' → 'had finished'",
+        "'do you like' → 'whether I liked'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'Finished' becomes 'had finished', 'do you like' becomes 'whether I liked', and 'here'/'tomorrow' become 'there'/'the next day'.",
+      "nativeTip": "Three functions again — a statement, a question, and a polite request — combined with place and time changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Farida said, \"I finished the design. Do you like it? Let me know your thoughts here tomorrow.\"\" ➔ \"Farida said that she had finished the design, asked whether I liked it, and asked me to let her know my thoughts there the next day.\""
+    },
+    {
+      "id": "dis_l139_learn_q3",
+      "level": 139,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The landlord said, \"The rent increases next month. Can you confirm you'll stay? Sign this lease here by Friday.\"",
+      "reportedSpeech": "The landlord said that the rent would increase the following month, asked whether I could confirm I would stay, and told me to sign that lease there by Friday.",
+      "changesList": [
+        "'increases' → 'would increase'",
+        "'can confirm' → 'could confirm'",
+        "'will stay' → 'would stay'",
+        "imperative → 'told + object + to'",
+        "'this' → 'that'",
+        "'here' → 'there'"
+      ],
+      "ruleExplanation": "'Increases' becomes 'would increase', 'can confirm'/'will stay' become 'could confirm'/'would stay', and the command 'Sign...' becomes 'told me to sign', with 'this'/'here' becoming 'that'/'there'.",
+      "nativeTip": "This passage combines a statement, a question, and a command — each with its own set of changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The landlord said, \"The rent increases next month. Can you confirm you'll stay? Sign this lease here by Friday.\"\" ➔ \"The landlord said that the rent would increase the following month, asked whether I could confirm I would stay, and told me to sign that lease there by Friday.\""
+    },
+    {
+      "id": "dis_l140_learn_q1",
+      "level": 140,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The doctor said, \"Your test results are normal. You should still schedule a follow-up.\"",
+      "reportedSpeech": "The doctor said that my test results were normal but that I should still schedule a follow-up.",
+      "changesList": [
+        "'are' → 'were'",
+        "'your' → 'my'",
+        "'should' stays unchanged"
+      ],
+      "ruleExplanation": "'Are' becomes 'were', 'your' becomes 'my', and 'should' remains the same since it's already a past-compatible modal.",
+      "nativeTip": "This combines a statement of fact with a piece of advice — treat them separately, but 'should' stays unchanged.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The doctor said, \"Your test results are normal. You should still schedule a follow-up.\"\" ➔ \"The doctor said that my test results were normal but that I should still schedule a follow-up.\""
+    },
+    {
+      "id": "dis_l140_learn_q2",
+      "level": 140,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The event host said, \"Thanks for coming! Would you like a drink? Feel free to mingle.\"",
+      "reportedSpeech": "The event host thanked us for coming, asked whether we would like a drink, and told us to feel free to mingle.",
+      "changesList": [
+        "'thanks for coming' → 'thanked us for coming'",
+        "question word order → statement word order",
+        "imperative → 'told + object + to'"
+      ],
+      "ruleExplanation": "'Thanks for coming' becomes 'thanked us for coming', the question becomes statement word order with 'would', and the imperative becomes 'told us to feel free'.",
+      "nativeTip": "This final review combines three distinct functions: thanks, a polite question, and an instruction.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The event host said, \"Thanks for coming! Would you like a drink? Feel free to mingle.\"\" ➔ \"The event host thanked us for coming, asked whether we would like a drink, and told us to feel free to mingle.\""
+    },
+    {
+      "id": "dis_l140_learn_q3",
+      "level": 140,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Rahim said, \"I won't be able to make it tonight, but I promise to join next time.\"",
+      "reportedSpeech": "Rahim said that he wouldn't be able to make it that night but promised to join the following time.",
+      "changesList": [
+        "'won't be able' → 'wouldn't be able'",
+        "'tonight' → 'that night'",
+        "'next time' → 'the following time'"
+      ],
+      "ruleExplanation": "'Won't be able' becomes 'wouldn't be able', 'tonight' becomes 'that night', and the second clause keeps its promise meaning with 'promised to join'; 'next time' becomes 'the following time'.",
+      "nativeTip": "This sentence combines a negative statement about the future with a promise — check that each part keeps its correct meaning.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Rahim said, \"I won't be able to make it tonight, but I promise to join next time.\"\" ➔ \"Rahim said that he wouldn't be able to make it that night but promised to join the following time.\""
+    }
+  ]
+}

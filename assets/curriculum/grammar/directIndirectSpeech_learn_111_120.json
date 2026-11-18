@@ -1,0 +1,513 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "learn",
+  "batchIndex": 12,
+  "levels": "111-120",
+  "quests": [
+    {
+      "id": "dis_l111_learn_q1",
+      "level": 111,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "The recruiter asked, \"Would you be willing to relocate for this role?\"",
+      "reportedSpeech": "The recruiter asked whether I would be willing to relocate for that role.",
+      "changesList": [
+        "'you' → 'I'",
+        "'this' → 'that'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Would' stays the same since it's already a past-time form; 'this' becomes 'that', and inversion is removed.",
+      "nativeTip": "'Would' stays the same since it's already a past-time form — focus on the demonstrative and the word order.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The recruiter asked, \"Would you be willing to relocate for this role?\"\" ➔ \"The recruiter asked whether I would be willing to relocate for that role.\""
+    },
+    {
+      "id": "dis_l111_learn_q2",
+      "level": 111,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "The nurse asked, \"Might you be allergic to any medications?\"",
+      "reportedSpeech": "The nurse asked whether I might be allergic to any medications.",
+      "changesList": [
+        "'might' stays unchanged",
+        "'you' → 'I'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Might' stays the same, 'you' becomes 'I', and the question order becomes a statement.",
+      "nativeTip": "'Might' stays unchanged — remove the inversion and update the pronoun.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The nurse asked, \"Might you be allergic to any medications?\"\" ➔ \"The nurse asked whether I might be allergic to any medications.\""
+    },
+    {
+      "id": "dis_l111_learn_q3",
+      "level": 111,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The consultant asked, \"Should the company invest in new equipment this year?\"",
+      "reportedSpeech": "The consultant asked whether the company should invest in new equipment that year.",
+      "changesList": [
+        "'should' stays unchanged",
+        "'this year' → 'that year'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Should' stays the same, and 'this year' becomes 'that year'.",
+      "nativeTip": "'Should' doesn't change, but the time word and word order do.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The consultant asked, \"Should the company invest in new equipment this year?\"\" ➔ \"The consultant asked whether the company should invest in new equipment that year.\""
+    },
+    {
+      "id": "dis_l112_learn_q1",
+      "level": 112,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The manager asked, \"Why did sales drop even though we increased advertising?\"",
+      "reportedSpeech": "The manager asked why sales had dropped even though they had increased advertising.",
+      "changesList": [
+        "'did drop' → 'had dropped'",
+        "'we increased' → 'they had increased'"
+      ],
+      "ruleExplanation": "'Did drop' becomes 'had dropped', and 'we increased' becomes 'they had increased', matching the earlier completed actions.",
+      "nativeTip": "Both clauses in this question backshift, and the pronoun in the second clause changes too.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager asked, \"Why did sales drop even though we increased advertising?\"\" ➔ \"The manager asked why sales had dropped even though they had increased advertising.\""
+    },
+    {
+      "id": "dis_l112_learn_q2",
+      "level": 112,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The teacher asked, \"How can you improve if you don't practice?\"",
+      "reportedSpeech": "The teacher asked how I could improve if I didn't practice.",
+      "changesList": [
+        "'can' → 'could'",
+        "'don't' → 'didn't'",
+        "'you' → 'I'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Can' becomes 'could', 'don't' becomes 'didn't', and 'you' becomes 'I' throughout.",
+      "nativeTip": "Backshift the modal and the conditional clause, and update both pronouns.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The teacher asked, \"How can you improve if you don't practice?\"\" ➔ \"The teacher asked how I could improve if I didn't practice.\""
+    },
+    {
+      "id": "dis_l112_learn_q3",
+      "level": 112,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The detective asked, \"Where were you when the alarm went off?\"",
+      "reportedSpeech": "The detective asked where I had been when the alarm had gone off.",
+      "changesList": [
+        "'were' → 'had been'",
+        "'went off' → 'had gone off'",
+        "'you' → 'I'"
+      ],
+      "ruleExplanation": "'Were' becomes 'had been', and 'went off' becomes 'had gone off'; 'you' becomes 'I'.",
+      "nativeTip": "Both the main verb and the verb in the time clause backshift one more step.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The detective asked, \"Where were you when the alarm went off?\"\" ➔ \"The detective asked where I had been when the alarm had gone off.\""
+    },
+    {
+      "id": "dis_l113_learn_q1",
+      "level": 113,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "The auditor asked, \"Aren't these figures inconsistent with last quarter's report?\"",
+      "reportedSpeech": "The auditor asked whether those figures weren't inconsistent with the previous quarter's report.",
+      "changesList": [
+        "'aren't' → 'weren't'",
+        "'these' → 'those'",
+        "'last quarter's' → 'the previous quarter's'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Aren't' becomes 'weren't', 'these' becomes 'those', and 'last quarter's' becomes 'the previous quarter's'.",
+      "nativeTip": "Keep the negative meaning, and update the demonstrative and time reference.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The auditor asked, \"Aren't these figures inconsistent with last quarter's report?\"\" ➔ \"The auditor asked whether those figures weren't inconsistent with the previous quarter's report.\""
+    },
+    {
+      "id": "dis_l113_learn_q2",
+      "level": 113,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "Layla asked, \"Haven't you finished packing yet?\"",
+      "reportedSpeech": "Layla asked whether I hadn't finished packing yet.",
+      "changesList": [
+        "'haven't finished' → 'hadn't finished'",
+        "'you' → 'I'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Haven't finished' becomes 'hadn't finished', and 'you' becomes 'I'.",
+      "nativeTip": "Negative present perfect backshifts the same way positive present perfect does.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Layla asked, \"Haven't you finished packing yet?\"\" ➔ \"Layla asked whether I hadn't finished packing yet.\""
+    },
+    {
+      "id": "dis_l113_learn_q3",
+      "level": 113,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "The editor asked, \"Wasn't this article supposed to be shorter?\"",
+      "reportedSpeech": "The editor asked whether that article wasn't supposed to be shorter.",
+      "changesList": [
+        "'this' → 'that'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Wasn't' stays as 'wasn't' since it's already past tense, and 'this' becomes 'that'.",
+      "nativeTip": "Keep the negative form of 'was', and update the demonstrative.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The editor asked, \"Wasn't this article supposed to be shorter?\"\" ➔ \"The editor asked whether that article wasn't supposed to be shorter.\""
+    },
+    {
+      "id": "dis_l114_learn_q1",
+      "level": 114,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "Santiago said to himself, \"Did I lock the front door?\"",
+      "reportedSpeech": "Santiago wondered whether he had locked the front door.",
+      "changesList": [
+        "'did lock' → 'had locked'",
+        "'I' → 'he'"
+      ],
+      "ruleExplanation": "Since Santiago is questioning himself, 'wondered' fits better than 'asked'; 'did lock' becomes 'had locked'.",
+      "nativeTip": "A question someone asks themselves, silently, is best reported with 'wondered'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Santiago said to himself, \"Did I lock the front door?\"\" ➔ \"Santiago wondered whether he had locked the front door.\""
+    },
+    {
+      "id": "dis_l114_learn_q2",
+      "level": 114,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The journalist said, \"What evidence do you have for these claims?\"",
+      "reportedSpeech": "The journalist demanded to know what evidence I had for those claims.",
+      "changesList": [
+        "'do you have' → 'had'",
+        "'these' → 'those'",
+        "'you' → 'I'"
+      ],
+      "ruleExplanation": "The confrontational tone matches 'demanded to know', and 'these' becomes 'those'.",
+      "nativeTip": "A forceful, challenging question like this can be reported with 'demanded to know' instead of a plain 'asked'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The journalist said, \"What evidence do you have for these claims?\"\" ➔ \"The journalist demanded to know what evidence I had for those claims.\""
+    },
+    {
+      "id": "dis_l114_learn_q3",
+      "level": 114,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The receptionist asked, \"Could you confirm your appointment time?\"",
+      "reportedSpeech": "The receptionist inquired whether I could confirm my appointment time.",
+      "changesList": [
+        "'your' → 'my'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Inquired' suits the polite, formal tone here just as well as 'asked'; 'your' becomes 'my'.",
+      "nativeTip": "A polite, formal request for information like this can be reported with 'inquired'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The receptionist asked, \"Could you confirm your appointment time?\"\" ➔ \"The receptionist inquired whether I could confirm my appointment time.\""
+    },
+    {
+      "id": "dis_l115_learn_q1",
+      "level": 115,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The doctor asked, \"How long have you been feeling this way?\"",
+      "reportedSpeech": "The doctor asked how long I had been feeling that way.",
+      "changesList": [
+        "'have been feeling' → 'had been feeling'",
+        "'this way' → 'that way'",
+        "'you' → 'I'"
+      ],
+      "ruleExplanation": "'Have been feeling' becomes 'had been feeling', and 'this way' becomes 'that way'.",
+      "nativeTip": "Present perfect continuous backshifts to past perfect continuous, plus a demonstrative change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The doctor asked, \"How long have you been feeling this way?\"\" ➔ \"The doctor asked how long I had been feeling that way.\""
+    },
+    {
+      "id": "dis_l115_learn_q2",
+      "level": 115,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The manager asked, \"How long has the team been working on this project?\"",
+      "reportedSpeech": "The manager asked how long the team had been working on that project.",
+      "changesList": [
+        "'has been working' → 'had been working'",
+        "'this' → 'that'"
+      ],
+      "ruleExplanation": "'Has been working' becomes 'had been working', and 'this' becomes 'that'.",
+      "nativeTip": "No pronoun to change here — just the perfect continuous tense and the demonstrative.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager asked, \"How long has the team been working on this project?\"\" ➔ \"The manager asked how long the team had been working on that project.\""
+    },
+    {
+      "id": "dis_l115_learn_q3",
+      "level": 115,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The landlord asked, \"Have you been paying your utility bills on time?\"",
+      "reportedSpeech": "The landlord asked whether I had been paying my utility bills on time.",
+      "changesList": [
+        "'have been paying' → 'had been paying'",
+        "'you' → 'I'",
+        "'your' → 'my'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Have been paying' becomes 'had been paying', 'you' becomes 'I', and 'your' becomes 'my'.",
+      "nativeTip": "Combine the perfect continuous backshift with the possessive and pronoun changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The landlord asked, \"Have you been paying your utility bills on time?\"\" ➔ \"The landlord asked whether I had been paying my utility bills on time.\""
+    },
+    {
+      "id": "dis_l116_learn_q1",
+      "level": 116,
+      "conceptTitle": "Speech Bubble to Report Converter: Indirect-to-Direct Reconstruction",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "directSpeech": "The recruiter asked whether I would be willing to relocate for that role.",
+      "reportedSpeech": "The recruiter asked, \"Would you be willing to relocate for this role?\"",
+      "changesList": [
+        "'that' → 'this'",
+        "'I' → 'you'"
+      ],
+      "ruleExplanation": "'That' reverses to 'this', and 'I' reverses to 'you'; 'would' remains unchanged.",
+      "nativeTip": "Reverse the demonstrative and pronoun; 'would' stays the same since it doesn't reverse any further.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The recruiter asked whether I would be willing to relocate for that role.\" ➔ \"The recruiter asked, \"Would you be willing to relocate for this role?\"\""
+    },
+    {
+      "id": "dis_l116_learn_q2",
+      "level": 116,
+      "conceptTitle": "Speech Bubble to Report Converter: Indirect-to-Direct Reconstruction",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "directSpeech": "The doctor asked how long I had been feeling that way.",
+      "reportedSpeech": "The doctor asked, \"How long have you been feeling this way?\"",
+      "changesList": [
+        "'had been feeling' → 'have been feeling'",
+        "'that way' → 'this way'",
+        "'I' → 'you'"
+      ],
+      "ruleExplanation": "'Had been feeling' reverses to 'have been feeling', 'that way' reverses to 'this way', and 'I' reverses to 'you'.",
+      "nativeTip": "Reverse the past perfect continuous to present perfect continuous, and reverse the demonstrative and pronoun.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The doctor asked how long I had been feeling that way.\" ➔ \"The doctor asked, \"How long have you been feeling this way?\"\""
+    },
+    {
+      "id": "dis_l116_learn_q3",
+      "level": 116,
+      "conceptTitle": "Speech Bubble to Report Converter: Indirect-to-Direct Reconstruction",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "directSpeech": "The auditor asked whether those figures weren't inconsistent with the previous quarter's report.",
+      "reportedSpeech": "The auditor asked, \"Aren't these figures inconsistent with last quarter's report?\"",
+      "changesList": [
+        "'weren't' → 'aren't'",
+        "'those' → 'these'",
+        "'the previous quarter's' → 'last quarter's'"
+      ],
+      "ruleExplanation": "'Weren't' reverses to 'aren't', 'those' reverses to 'these', and 'the previous quarter's' reverses to 'last quarter's'.",
+      "nativeTip": "Keep the negative meaning intact, and reverse the demonstrative and time expression.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The auditor asked whether those figures weren't inconsistent with the previous quarter's report.\" ➔ \"The auditor asked, \"Aren't these figures inconsistent with last quarter's report?\"\""
+    },
+    {
+      "id": "dis_l117_learn_q1",
+      "level": 117,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Nadia asked, \"Why did you tell them my secret?\"",
+      "reportedSpeech": "Nadia asked why I had told them her secret.",
+      "changesList": [
+        "'did tell' → 'had told'",
+        "'you' → 'I'",
+        "'my' → 'her'"
+      ],
+      "ruleExplanation": "'Did tell' becomes 'had told', 'you' becomes 'I', and 'my' becomes 'her'; 'them' stays the same since it refers to a third group.",
+      "nativeTip": "Three pronoun-type words change here: the subject, the possessive, and the tense.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Nadia asked, \"Why did you tell them my secret?\"\" ➔ \"Nadia asked why I had told them her secret.\""
+    },
+    {
+      "id": "dis_l117_learn_q2",
+      "level": 117,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The manager asked, \"Who gave you permission to leave early?\"",
+      "reportedSpeech": "The manager asked who had given me permission to leave early.",
+      "changesList": [
+        "'gave' → 'had given'",
+        "'you' → 'me'"
+      ],
+      "ruleExplanation": "'Gave' backshifts to 'had given', and 'you' becomes 'me'.",
+      "nativeTip": "'Who' as the subject means no word-order change, but the verb and object pronoun still shift.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager asked, \"Who gave you permission to leave early?\"\" ➔ \"The manager asked who had given me permission to leave early.\""
+    },
+    {
+      "id": "dis_l117_learn_q3",
+      "level": 117,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Fatima asked, \"What did he tell you about our plans?\"",
+      "reportedSpeech": "Fatima asked what he had told me about their plans.",
+      "changesList": [
+        "'did tell' → 'had told'",
+        "'you' → 'me'",
+        "'our' → 'their'"
+      ],
+      "ruleExplanation": "'Did tell' becomes 'had told', 'you' becomes 'me', and 'our' becomes 'their'.",
+      "nativeTip": "Three separate items change: the tense, one pronoun, and the possessive.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Fatima asked, \"What did he tell you about our plans?\"\" ➔ \"Fatima asked what he had told me about their plans.\""
+    },
+    {
+      "id": "dis_l118_learn_q1",
+      "level": 118,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The teacher said, \"I noticed you were distracted. What's going on?\"",
+      "reportedSpeech": "The teacher said that she had noticed I was distracted and asked what was going on.",
+      "changesList": [
+        "'noticed' → 'had noticed'",
+        "'you' → 'I'",
+        "'what's going on' → 'what was going on'"
+      ],
+      "ruleExplanation": "'Noticed' becomes 'had noticed', 'you' becomes 'I', and 'what's going on' becomes 'what was going on'.",
+      "nativeTip": "This combines a reported statement and a reported question in one item — treat each part separately.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The teacher said, \"I noticed you were distracted. What's going on?\"\" ➔ \"The teacher said that she had noticed I was distracted and asked what was going on.\""
+    },
+    {
+      "id": "dis_l118_learn_q2",
+      "level": 118,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Kenji said, \"I'm running late. Can you start the meeting without me?\"",
+      "reportedSpeech": "Kenji said that he was running late and asked whether they could start the meeting without him.",
+      "changesList": [
+        "'am running' → 'was running'",
+        "'you' → 'they'",
+        "'can' → 'could'",
+        "'me' → 'him'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Am running' becomes 'was running', 'you' becomes 'they', 'can' becomes 'could', and 'me' becomes 'him'.",
+      "nativeTip": "First backshift the statement, then convert the question into statement word order too.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Kenji said, \"I'm running late. Can you start the meeting without me?\"\" ➔ \"Kenji said that he was running late and asked whether they could start the meeting without him.\""
+    },
+    {
+      "id": "dis_l118_learn_q3",
+      "level": 118,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The client said, \"I received the invoice. Is the total amount correct?\"",
+      "reportedSpeech": "The client said that she had received the invoice and asked whether the total amount was correct.",
+      "changesList": [
+        "'received' → 'had received'",
+        "'is' → 'was'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Received' becomes 'had received', and 'is' becomes 'was'; the question order becomes a statement.",
+      "nativeTip": "Handle the statement and the question as two separate transformations joined together.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The client said, \"I received the invoice. Is the total amount correct?\"\" ➔ \"The client said that she had received the invoice and asked whether the total amount was correct.\""
+    },
+    {
+      "id": "dis_l119_learn_q1",
+      "level": 119,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "Priya thought to herself, \"Should I take this opportunity?\"",
+      "reportedSpeech": "Priya wondered whether she should take that opportunity.",
+      "changesList": [
+        "'this' → 'that'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "Since this is an internal thought, 'wondered' fits better than 'asked'; 'this' becomes 'that'.",
+      "nativeTip": "A silent question to oneself is naturally reported with 'wondered', not 'asked'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Priya thought to herself, \"Should I take this opportunity?\"\" ➔ \"Priya wondered whether she should take that opportunity.\""
+    },
+    {
+      "id": "dis_l119_learn_q2",
+      "level": 119,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Idris asked himself, \"Why does this always happen to me?\"",
+      "reportedSpeech": "Idris wondered why that always happened to him.",
+      "changesList": [
+        "'this' → 'that'",
+        "'happens' → 'happened'",
+        "'me' → 'him'"
+      ],
+      "ruleExplanation": "'Wondered' matches a self-directed question, 'this' becomes 'that', 'happens' becomes 'happened', and 'me' becomes 'him'.",
+      "nativeTip": "Combine the reporting-verb choice with the demonstrative, tense, and pronoun changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Idris asked himself, \"Why does this always happen to me?\"\" ➔ \"Idris wondered why that always happened to him.\""
+    },
+    {
+      "id": "dis_l119_learn_q3",
+      "level": 119,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "Isabella thought, \"Is it too late to apologize?\"",
+      "reportedSpeech": "Isabella wondered whether it was too late to apologize.",
+      "changesList": [
+        "'is' → 'was'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Is' backshifts to 'was', and word order becomes a statement; 'wondered' matches the reflective tone of the original thought.",
+      "nativeTip": "This internal reflection is best captured with 'wondered', matching its reflective tone.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Isabella thought, \"Is it too late to apologize?\"\" ➔ \"Isabella wondered whether it was too late to apologize.\""
+    },
+    {
+      "id": "dis_l120_learn_q1",
+      "level": 120,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The panel asked, \"Why should we choose you over other candidates?\"",
+      "reportedSpeech": "The panel asked why they should choose me over other candidates.",
+      "changesList": [
+        "'we' → 'they'",
+        "'you' → 'me'",
+        "'should' stays unchanged",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'We' becomes 'they', 'you' becomes 'me', and the question order becomes a statement; 'should' remains unchanged.",
+      "nativeTip": "'Should' stays the same, but the pronouns and word order still change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The panel asked, \"Why should we choose you over other candidates?\"\" ➔ \"The panel asked why they should choose me over other candidates.\""
+    },
+    {
+      "id": "dis_l120_learn_q2",
+      "level": 120,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Adaeze wondered, \"Have I made the right decision?\"",
+      "reportedSpeech": "Adaeze wondered whether she had made the right decision.",
+      "changesList": [
+        "'have made' → 'had made'",
+        "'I' → 'she'"
+      ],
+      "ruleExplanation": "'Wondered' fits this reflective, self-directed question, and 'have made' becomes 'had made'.",
+      "nativeTip": "This item checks the reporting-verb choice along with the tense backshift.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Adaeze wondered, \"Have I made the right decision?\"\" ➔ \"Adaeze wondered whether she had made the right decision.\""
+    },
+    {
+      "id": "dis_l120_learn_q3",
+      "level": 120,
+      "conceptTitle": "Speech Bubble to Report Converter: Indirect-to-Direct Reconstruction",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "directSpeech": "The client asked whether the team could deliver the results by the following month.",
+      "reportedSpeech": "The client asked, \"Can the team deliver the results by next month?\"",
+      "changesList": [
+        "'could' → 'can'",
+        "'the following month' → 'next month'"
+      ],
+      "ruleExplanation": "'Could' reverses to 'can', and 'the following month' reverses to 'next month'.",
+      "nativeTip": "This final question in the section reverses the modal and the time expression back to direct speech.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The client asked whether the team could deliver the results by the following month.\" ➔ \"The client asked, \"Can the team deliver the results by next month?\"\""
+    }
+  ]
+}

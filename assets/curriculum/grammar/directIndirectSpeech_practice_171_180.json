@@ -1,0 +1,635 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "practice",
+  "batchIndex": 18,
+  "levels": "171-180",
+  "quests": [
+    {
+      "id": "dis_l171_practice_q1",
+      "level": 171,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The economist said, \"Inflation has been rising steadily since January.\"",
+      "directSpeech": "The economist said, \"Inflation has been rising steadily since January.\"",
+      "options": [
+        "The economist said that inflation has been rising steadily since January.",
+        "The economist said that inflation had been rising steadily since January.",
+        "The economist said that inflation had risen steadily since January."
+      ],
+      "correctAnswer": "The economist said that inflation had been rising steadily since January.",
+      "correctAnswerIndex": 1,
+      "hint": "Compare 'had been rising' with 'had risen' carefully — one keeps the ongoing sense of the original, the other doesn't.",
+      "explanation": "'Has been rising' (present perfect continuous, an ongoing trend) backshifts to 'had been rising', preserving the continuous, ongoing meaning; 'had risen' loses that ongoing sense.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'has been rising' → 'had been rising'"
+      ]
+    },
+    {
+      "id": "dis_l171_practice_q2",
+      "level": 171,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Hiroshi said, \"I was writing the report when the power went out.\"",
+      "directSpeech": "Hiroshi said, \"I was writing the report when the power went out.\"",
+      "options": [
+        "Hiroshi said that he wrote the report when the power had gone out.",
+        "Hiroshi said that he was writing the report when the power went out.",
+        "Hiroshi said that he had been writing the report when the power had gone out."
+      ],
+      "correctAnswer": "Hiroshi said that he had been writing the report when the power had gone out.",
+      "correctAnswerIndex": 2,
+      "hint": "Compare all three options carefully — only one keeps both the background action and the interrupting event correctly distinguished.",
+      "explanation": "'Was writing' (background action) backshifts to 'had been writing', and 'went out' (the interrupting event) backshifts to 'had gone out'.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'was writing' → 'had been writing'",
+        "'went out' → 'had gone out'"
+      ]
+    },
+    {
+      "id": "dis_l171_practice_q3",
+      "level": 171,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Chidinma said, \"I have lived in this city for ten years.\"",
+      "directSpeech": "Chidinma said, \"I have lived in this city for ten years.\"",
+      "options": [
+        "Chidinma said that she has lived in that city for ten years.",
+        "Chidinma said that she had lived in that city for ten years.",
+        "Chidinma said that she lived in that city for ten years."
+      ],
+      "correctAnswer": "Chidinma said that she had lived in that city for ten years.",
+      "correctAnswerIndex": 1,
+      "hint": "Compare 'had lived' with the simple past 'lived' — one preserves the sense of an ongoing state up to a point, the other only suggests a finished period.",
+      "explanation": "'Have lived' (present perfect, ongoing up to now) backshifts to 'had lived', preserving that same sense one step further back in time.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'have lived' → 'had lived'",
+        "'this' → 'that'"
+      ]
+    },
+    {
+      "id": "dis_l172_practice_q1",
+      "level": 172,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Bianca told Farida, \"Your idea is better than mine.\"",
+      "directSpeech": "Bianca told Farida, \"Your idea is better than mine.\"",
+      "options": [
+        "Bianca told Farida that her idea was better than hers.",
+        "Bianca told Farida that Farida's idea was better than Bianca's.",
+        "Bianca told Farida that her idea was better than her own."
+      ],
+      "correctAnswer": "Bianca told Farida that her idea was better than hers.",
+      "correctAnswerIndex": 0,
+      "hint": "The pronoun 'her' appears twice with different meanings here — think about which idea belongs to whom.",
+      "explanation": "'Your' (Farida's idea) becomes 'her' referring to Farida, and 'mine' (Bianca's idea) becomes 'hers' referring to Bianca.",
+      "grammarRule": "Pronoun Reference Shift",
+      "changesList": [
+        "'your' → 'her' (Farida)",
+        "'mine' → 'hers' (Bianca)"
+      ]
+    },
+    {
+      "id": "dis_l172_practice_q2",
+      "level": 172,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Emeka told his father, \"You always believed in me, and I'll never forget that.\"",
+      "directSpeech": "Emeka told his father, \"You always believed in me, and I'll never forget that.\"",
+      "options": [
+        "Emeka told his father that he always believed in him and that he would never forget that.",
+        "Emeka told his father that his father had always believed in him and that Emeka would never forget that.",
+        "Emeka told his father that he had always believed in him and that he would never forget that."
+      ],
+      "correctAnswer": "Emeka told his father that he had always believed in him and that he would never forget that.",
+      "correctAnswerIndex": 2,
+      "hint": "Both 'he' pronouns need care — one refers to the father, the other to Emeka — but the natural way to report this uses pronouns for both, not repeated names.",
+      "explanation": "'You' (the father) becomes 'he', 'me' (Emeka) becomes 'him', and 'I' (Emeka) becomes 'he' again — natural reported speech uses pronouns once the context is clear, not repeated names.",
+      "grammarRule": "Pronoun Reference Shift",
+      "changesList": [
+        "'you' → 'he' (father)",
+        "'me' → 'him' (Emeka)",
+        "'I' → 'he' (Emeka)",
+        "'believed' → 'had believed'"
+      ]
+    },
+    {
+      "id": "dis_l172_practice_q3",
+      "level": 172,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Yuna said to her twin sister, \"People always confuse us for each other.\"",
+      "directSpeech": "Yuna said to her twin sister, \"People always confuse us for each other.\"",
+      "options": [
+        "Yuna told her twin sister that people always confused her for her sister.",
+        "Yuna told her twin sister that people always confused us for each other.",
+        "Yuna told her twin sister that people always confused them for each other."
+      ],
+      "correctAnswer": "Yuna told her twin sister that people always confused them for each other.",
+      "correctAnswerIndex": 2,
+      "hint": "'Us' refers to both twins together — when reported, it becomes a pronoun for that same pair, not a comparison between two separate people.",
+      "explanation": "'Us' becomes 'them', referring to both twins together, and 'confuse' backshifts to 'confused'.",
+      "grammarRule": "Pronoun Reference Shift",
+      "changesList": [
+        "'us' → 'them'",
+        "'confuse' → 'confused'"
+      ]
+    },
+    {
+      "id": "dis_l173_practice_q1",
+      "level": 173,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The trainer said, \"You should try doing squats before running.\"",
+      "directSpeech": "The trainer said, \"You should try doing squats before running.\"",
+      "options": [
+        "The trainer advised me trying doing squats before running.",
+        "The trainer advised me to try doing squats before running.",
+        "The trainer suggested me to try doing squats before running."
+      ],
+      "correctAnswer": "The trainer advised me to try doing squats before running.",
+      "correctAnswerIndex": 1,
+      "hint": "'Advised' takes an infinitive after the object, while 'suggested' never takes an object directly before an infinitive.",
+      "explanation": "'Advised' correctly takes 'me to try', while 'suggested me to try' is a common but incorrect pattern, since 'suggested' cannot be followed directly by an object and an infinitive.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'you should try' → 'advised me to try'"
+      ]
+    },
+    {
+      "id": "dis_l173_practice_q2",
+      "level": 173,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The coach said, \"Why don't you try stretching before the game?\"",
+      "directSpeech": "The coach said, \"Why don't you try stretching before the game?\"",
+      "options": [
+        "The coach suggested to try stretching before the game.",
+        "The coach advised trying stretching before the game.",
+        "The coach suggested trying stretching before the game."
+      ],
+      "correctAnswer": "The coach suggested trying stretching before the game.",
+      "correctAnswerIndex": 2,
+      "hint": "Recall which verb pattern fits 'suggested' — a gerund, not an infinitive.",
+      "explanation": "'Suggested' takes a gerund ('trying'), not an infinitive ('to try'), and this phrasing ('why don't you...?') fits 'suggested' rather than 'advised'.",
+      "grammarRule": "Gerund Structure",
+      "changesList": [
+        "'why don't you try' → 'suggested trying'"
+      ]
+    },
+    {
+      "id": "dis_l173_practice_q3",
+      "level": 173,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The dietitian said, \"I recommend eating more vegetables.\"",
+      "directSpeech": "The dietitian said, \"I recommend eating more vegetables.\"",
+      "options": [
+        "The dietitian recommended to eat more vegetables.",
+        "The dietitian recommended eating more vegetables.",
+        "The dietitian suggested to eat more vegetables."
+      ],
+      "correctAnswer": "The dietitian recommended eating more vegetables.",
+      "correctAnswerIndex": 1,
+      "hint": "'Recommended', like 'suggested', is followed by a gerund, not an infinitive.",
+      "explanation": "'Recommend eating' becomes 'recommended eating', keeping the gerund pattern; 'recommended to eat' is a common incorrect pattern.",
+      "grammarRule": "Gerund Structure",
+      "changesList": [
+        "'recommend eating' → 'recommended eating'"
+      ]
+    },
+    {
+      "id": "dis_l174_practice_q1",
+      "level": 174,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The tour guide said, \"We'll spend the morning here and the afternoon at the museum across town.\"",
+      "directSpeech": "The tour guide said, \"We'll spend the morning here and the afternoon at the museum across town.\"",
+      "options": [
+        "The tour guide said that they would spend the morning here and the afternoon at the museum across town.",
+        "The tour guide said that they would spend the morning there and the afternoon at the museum across town.",
+        "The tour guide said that they will spend the morning there and the afternoon at the museum across town."
+      ],
+      "correctAnswer": "The tour guide said that they would spend the morning there and the afternoon at the museum across town.",
+      "correctAnswerIndex": 1,
+      "hint": "Only the first 'here' refers to the current location — the second location ('across town') doesn't need a place-word change since it's already named.",
+      "explanation": "'Here' becomes 'there' since it refers to the guide's current location, while 'across town' stays the same because it's already a specific, named place.",
+      "grammarRule": "Place Expression Shift",
+      "changesList": [
+        "'we'll' → 'they would'",
+        "'here' → 'there'"
+      ]
+    },
+    {
+      "id": "dis_l174_practice_q2",
+      "level": 174,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The email said, \"Please arrive at the venue by 9 AM; doors open at 8:30.\"",
+      "directSpeech": "The email said, \"Please arrive at the venue by 9 AM; doors open at 8:30.\"",
+      "options": [
+        "The email asked attendees to arrive at the venue by 9 AM and said that doors opened at 8:30.",
+        "The email told attendees to arrive at the venue by 9 AM and said that doors open at 8:30.",
+        "The email asked attendees to arrive at the venue by 9 AM and said that doors would open at 8:30."
+      ],
+      "correctAnswer": "The email asked attendees to arrive at the venue by 9 AM and said that doors opened at 8:30.",
+      "correctAnswerIndex": 0,
+      "hint": "Compare backshifting 'open' to 'opened' versus using 'would open' — this describes a fixed schedule, not a future intention.",
+      "explanation": "'Open' backshifts to 'opened' as a simple fact about the schedule, not 'would open', which would suggest uncertainty about the future.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "imperative → 'asked + object + to'",
+        "'open' → 'opened'"
+      ]
+    },
+    {
+      "id": "dis_l174_practice_q3",
+      "level": 174,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Noelle said, \"I'll be at the office until 6, then home after that.\"",
+      "directSpeech": "Noelle said, \"I'll be at the office until 6, then home after that.\"",
+      "options": [
+        "Noelle said that she will be at the office until 6, then home after that.",
+        "Noelle said that she would be at the office until 6, then home after that.",
+        "Noelle said that she would be at the office until 6, then home after then."
+      ],
+      "correctAnswer": "Noelle said that she would be at the office until 6, then home after that.",
+      "correctAnswerIndex": 1,
+      "hint": "'After that' is already a general connector, not a specific time word like 'today' or 'now' — it doesn't need to change.",
+      "explanation": "'After that' stays the same since it's a general sequencing phrase, not a specific time reference that needs shifting.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'I'll' → 'she would'"
+      ]
+    },
+    {
+      "id": "dis_l175_practice_q1",
+      "level": 175,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The manager said, \"Let's avoid making the same mistake again.\"",
+      "directSpeech": "The manager said, \"Let's avoid making the same mistake again.\"",
+      "options": [
+        "The manager suggested avoid making the same mistake again.",
+        "The manager suggested to avoid making the same mistake again.",
+        "The manager suggested avoiding making the same mistake again."
+      ],
+      "correctAnswer": "The manager suggested avoiding making the same mistake again.",
+      "correctAnswerIndex": 2,
+      "hint": "'Avoid' itself is always followed by a gerund, and 'suggested' is too — check both verbs.",
+      "explanation": "'Suggested avoiding' is correct because 'suggested' takes a gerund; 'avoid' also always takes a gerund ('avoid making'), never an infinitive.",
+      "grammarRule": "Gerund Structure",
+      "changesList": [
+        "'let's avoid making' → 'suggested avoiding making'"
+      ]
+    },
+    {
+      "id": "dis_l175_practice_q2",
+      "level": 175,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The teacher said, \"I want everyone to finish the exercise by the end of class.\"",
+      "directSpeech": "The teacher said, \"I want everyone to finish the exercise by the end of class.\"",
+      "options": [
+        "The teacher said that she wanted everyone finishing the exercise by the end of class.",
+        "The teacher said that she wanted everyone to finish the exercise by the end of class.",
+        "The teacher suggested everyone to finish the exercise by the end of class."
+      ],
+      "correctAnswer": "The teacher said that she wanted everyone to finish the exercise by the end of class.",
+      "correctAnswerIndex": 1,
+      "hint": "'Want' takes an object plus an infinitive, unlike 'suggested', which never takes an object directly before a verb.",
+      "explanation": "'Want' correctly takes 'everyone to finish' (object + infinitive); 'suggested everyone to finish' is not a valid pattern for 'suggested'.",
+      "grammarRule": "Infinitive Structure",
+      "changesList": [
+        "'want' → 'wanted'"
+      ]
+    },
+    {
+      "id": "dis_l175_practice_q3",
+      "level": 175,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Anton said, \"I don't mind waiting a few extra minutes.\"",
+      "directSpeech": "Anton said, \"I don't mind waiting a few extra minutes.\"",
+      "options": [
+        "Anton said that he didn't mind waited a few extra minutes.",
+        "Anton said that he didn't mind to wait a few extra minutes.",
+        "Anton said that he didn't mind waiting a few extra minutes."
+      ],
+      "correctAnswer": "Anton said that he didn't mind waiting a few extra minutes.",
+      "correctAnswerIndex": 2,
+      "hint": "'Mind' is always followed by a gerund, never an infinitive.",
+      "explanation": "'Mind waiting' stays as a gerund structure after backshifting 'don't' to 'didn't'; 'mind to wait' is never correct.",
+      "grammarRule": "Gerund Structure",
+      "changesList": [
+        "'don't mind' → 'didn't mind'"
+      ]
+    },
+    {
+      "id": "dis_l176_practice_q1",
+      "level": 176,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Yuna said, \"Two plus two equals four.\"",
+      "directSpeech": "Yuna said, \"Two plus two equals four.\"",
+      "options": [
+        "Yuna said that two plus two equaled four.",
+        "Yuna said that two plus two equals four.",
+        "Yuna said that two plus two had equaled four."
+      ],
+      "correctAnswer": "Yuna said that two plus two equals four.",
+      "correctAnswerIndex": 1,
+      "hint": "This is a mathematical fact that never changes — compare it with something that actually needs to backshift.",
+      "explanation": "Since this is a mathematical truth, 'equals' stays in the present tense; it never needs to backshift.",
+      "grammarRule": "Universal Truth",
+      "changesList": [
+        "no tense change needed (mathematical fact)"
+      ]
+    },
+    {
+      "id": "dis_l176_practice_q2",
+      "level": 176,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Bashir said, \"I broke my arm skiing last winter, and it's still a bit stiff.\"",
+      "directSpeech": "Bashir said, \"I broke my arm skiing last winter, and it's still a bit stiff.\"",
+      "options": [
+        "Bashir said that he had broken his arm skiing the previous winter and that it was still a bit stiff.",
+        "Bashir said that he had broken his arm skiing last winter and that it is still a bit stiff.",
+        "Bashir said that he broke his arm skiing last winter and that it is still a bit stiff."
+      ],
+      "correctAnswer": "Bashir said that he had broken his arm skiing the previous winter and that it was still a bit stiff.",
+      "correctAnswerIndex": 0,
+      "hint": "Compare the two clauses carefully: one describes a finished past event, and the other describes a present, ongoing condition being reported.",
+      "explanation": "'Broke' (a completed event) becomes 'had broken', but 'is still stiff' (a current state) still backshifts to 'was still stiff' once fully reported, and 'last winter' becomes 'the previous winter'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'broke' → 'had broken'",
+        "'is' → 'was'",
+        "'last winter' → 'the previous winter'"
+      ]
+    },
+    {
+      "id": "dis_l176_practice_q3",
+      "level": 176,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The travel guide said, \"The museum is closed on Mondays.\"",
+      "directSpeech": "The travel guide said, \"The museum is closed on Mondays.\"",
+      "options": [
+        "The travel guide said that the museum had been closed on Mondays.",
+        "The travel guide said that the museum is closed on Mondays.",
+        "The travel guide said that the museum was closed on Mondays."
+      ],
+      "correctAnswer": "The travel guide said that the museum is closed on Mondays.",
+      "correctAnswerIndex": 1,
+      "hint": "This is a standing schedule that is still true — compare it with something that describes a one-time, finished event.",
+      "explanation": "Since this is a general, ongoing fact about the museum's schedule, 'is closed' does not need to backshift.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "no tense change needed (standing schedule)"
+      ]
+    },
+    {
+      "id": "dis_l177_practice_q1",
+      "level": 177,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The doctor said, \"You don't need surgery.\"",
+      "directSpeech": "The doctor said, \"You don't need surgery.\"",
+      "options": [
+        "The doctor said that I needed surgery.",
+        "The doctor said that I didn't need surgery.",
+        "The doctor said that I don't need surgery."
+      ],
+      "correctAnswer": "The doctor said that I didn't need surgery.",
+      "correctAnswerIndex": 1,
+      "hint": "Check carefully that the negative meaning of the original sentence is fully preserved.",
+      "explanation": "'Don't need' becomes 'didn't need'; dropping 'don't' would completely reverse the doctor's meaning.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'don't need' → 'didn't need'",
+        "'you' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l177_practice_q2",
+      "level": 177,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Yuna said, \"I can't guarantee the shipment will arrive by Friday.\"",
+      "directSpeech": "Yuna said, \"I can't guarantee the shipment will arrive by Friday.\"",
+      "options": [
+        "Yuna said that she could guarantee the shipment would arrive by Friday.",
+        "Yuna said that she couldn't guarantee the shipment will arrive by Friday.",
+        "Yuna said that she couldn't guarantee the shipment would arrive by Friday."
+      ],
+      "correctAnswer": "Yuna said that she couldn't guarantee the shipment would arrive by Friday.",
+      "correctAnswerIndex": 2,
+      "hint": "Losing the word 'not' here would completely change what Yuna actually promised.",
+      "explanation": "'Can't guarantee' becomes 'couldn't guarantee'; removing the negative would incorrectly suggest Yuna made a firm promise.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'can't guarantee' → 'couldn't guarantee'",
+        "'will arrive' → 'would arrive'"
+      ]
+    },
+    {
+      "id": "dis_l177_practice_q3",
+      "level": 177,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The manager said, \"I won't approve this budget unless we cut costs elsewhere.\"",
+      "directSpeech": "The manager said, \"I won't approve this budget unless we cut costs elsewhere.\"",
+      "options": [
+        "The manager said that he would approve that budget unless they cut costs elsewhere.",
+        "The manager said that he wouldn't approve that budget unless they cut costs elsewhere.",
+        "The manager said that he wouldn't approve this budget unless we cut costs elsewhere."
+      ],
+      "correctAnswer": "The manager said that he wouldn't approve that budget unless they cut costs elsewhere.",
+      "correctAnswerIndex": 1,
+      "hint": "Check that the conditional refusal is preserved exactly, not accidentally turned into an agreement.",
+      "explanation": "'Won't approve' becomes 'wouldn't approve'; dropping the negative would reverse the manager's actual position.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'won't approve' → 'wouldn't approve'",
+        "'this' → 'that'",
+        "'we' → 'they'"
+      ]
+    },
+    {
+      "id": "dis_l178_practice_q1",
+      "level": 178,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The supervisor said, \"Don't submit the form without a signature.\"",
+      "directSpeech": "The supervisor said, \"Don't submit the form without a signature.\"",
+      "options": [
+        "The supervisor warned the staff not submitting the form without a signature.",
+        "The supervisor warned the staff not to submit the form without a signature.",
+        "The supervisor warned the staff to submit the form without a signature."
+      ],
+      "correctAnswer": "The supervisor warned the staff not to submit the form without a signature.",
+      "correctAnswerIndex": 1,
+      "hint": "Check both the position of 'not' and whether the negative meaning survives the transformation.",
+      "explanation": "'Don't submit' becomes 'not to submit', keeping 'not' immediately before 'to' and preserving the warning's negative meaning.",
+      "grammarRule": "Reported Warning",
+      "changesList": [
+        "negative imperative → 'warned + object + not to'"
+      ]
+    },
+    {
+      "id": "dis_l178_practice_q2",
+      "level": 178,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Halima said, \"I don't think this plan will work.\"",
+      "directSpeech": "Halima said, \"I don't think this plan will work.\"",
+      "options": [
+        "Halima said that she didn't think that plan would work.",
+        "Halima said that she didn't think this plan will work.",
+        "Halima said that she thought that plan wouldn't work."
+      ],
+      "correctAnswer": "Halima said that she didn't think that plan would work.",
+      "correctAnswerIndex": 0,
+      "hint": "Only one option matches the exact structure of the original sentence, with the negative attached to the same verb.",
+      "explanation": "The negative attaches to 'think' in the original ('don't think'), so the most accurate transformation keeps 'didn't think' rather than moving the negative to the second clause.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'don't think' → 'didn't think'",
+        "'this' → 'that'",
+        "'will work' → 'would work'"
+      ]
+    },
+    {
+      "id": "dis_l178_practice_q3",
+      "level": 178,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The landlord said, \"Tenants shouldn't leave without giving notice.\"",
+      "directSpeech": "The landlord said, \"Tenants shouldn't leave without giving notice.\"",
+      "options": [
+        "The landlord said that tenants shouldn't have left without giving notice.",
+        "The landlord said that tenants should leave without giving notice.",
+        "The landlord said that tenants shouldn't leave without giving notice."
+      ],
+      "correctAnswer": "The landlord said that tenants shouldn't leave without giving notice.",
+      "correctAnswerIndex": 2,
+      "hint": "'Shouldn't' stays exactly the same here — check that the negative modal isn't accidentally dropped or over-backshifted.",
+      "explanation": "'Shouldn't' remains unchanged since it's already a past-compatible negative modal; it doesn't become 'shouldn't have left', which would refer to one specific completed action instead of a general rule.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'shouldn't' stays unchanged"
+      ]
+    },
+    {
+      "id": "dis_l179_practice_q1",
+      "level": 179,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The mechanic said, \"This could be a problem with the battery.\"",
+      "directSpeech": "The mechanic said, \"This could be a problem with the battery.\"",
+      "options": [
+        "The mechanic said that that could be a problem with the battery.",
+        "The mechanic said that this could be a problem with the battery.",
+        "The mechanic said that that had to be a problem with the battery."
+      ],
+      "correctAnswer": "The mechanic said that that could be a problem with the battery.",
+      "correctAnswerIndex": 0,
+      "hint": "'Could' expressing a guess or possibility is already a past-time form and stays the same — don't confuse it with 'had to', which implies certainty or obligation.",
+      "explanation": "'Could' (possibility) stays unchanged since it's already a past-time modal form, and 'this' becomes 'that'.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'this' → 'that'",
+        "'could' stays unchanged"
+      ]
+    },
+    {
+      "id": "dis_l179_practice_q2",
+      "level": 179,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The employee said, \"I can finish this task by myself.\"",
+      "directSpeech": "The employee said, \"I can finish this task by myself.\"",
+      "options": [
+        "The employee said that she could finish that task by herself.",
+        "The employee said that she must finish that task by herself.",
+        "The employee said that she could finish this task by herself."
+      ],
+      "correctAnswer": "The employee said that she could finish that task by herself.",
+      "correctAnswerIndex": 0,
+      "hint": "This 'can' expresses ability, not obligation — compare it with a modal that means something completely different.",
+      "explanation": "'Can' (ability) backshifts to 'could', and 'this' becomes 'that'; 'must' would incorrectly suggest an obligation rather than a capability.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'can' → 'could'",
+        "'this' → 'that'",
+        "'I' → 'she'"
+      ]
+    },
+    {
+      "id": "dis_l179_practice_q3",
+      "level": 179,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The teacher said, \"Students must submit their essays by Friday.\"",
+      "directSpeech": "The teacher said, \"Students must submit their essays by Friday.\"",
+      "options": [
+        "The teacher said that students must submit their essays by Friday.",
+        "The teacher said that students had to submit their essays by Friday.",
+        "The teacher said that students could submit their essays by Friday."
+      ],
+      "correctAnswer": "The teacher said that students had to submit their essays by Friday.",
+      "correctAnswerIndex": 1,
+      "hint": "This 'must' expresses a firm requirement — compare it with a modal that would suggest it's merely optional.",
+      "explanation": "'Must' (obligation) backshifts to 'had to'; 'could' would incorrectly suggest submitting was optional rather than required.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'must' → 'had to'"
+      ]
+    },
+    {
+      "id": "dis_l180_practice_q1",
+      "level": 180,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The scientist said, \"This theory has been tested repeatedly, and it still holds up.\"",
+      "directSpeech": "The scientist said, \"This theory has been tested repeatedly, and it still holds up.\"",
+      "options": [
+        "The scientist said that that theory has been tested repeatedly and that it still holds up.",
+        "The scientist said that that theory had been tested repeatedly and that it still held up.",
+        "The scientist said that this theory had been tested repeatedly and that it still holds up."
+      ],
+      "correctAnswer": "The scientist said that that theory had been tested repeatedly and that it still held up.",
+      "correctAnswerIndex": 1,
+      "hint": "Check every element carefully: the demonstrative, the present perfect, and the ongoing present-tense claim.",
+      "explanation": "'This' becomes 'that', 'has been tested' becomes 'had been tested', and 'holds up' backshifts to 'held up' since it's being reported as part of the scientist's overall claim.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'this' → 'that'",
+        "'has been tested' → 'had been tested'",
+        "'holds up' → 'held up'"
+      ]
+    },
+    {
+      "id": "dis_l180_practice_q2",
+      "level": 180,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The landlord said, \"You can't paint the walls without asking me first.\"",
+      "directSpeech": "The landlord said, \"You can't paint the walls without asking me first.\"",
+      "options": [
+        "The landlord said that I couldn't paint the walls without asking him first.",
+        "The landlord said that I couldn't paint the walls without asking you first.",
+        "The landlord said that I could paint the walls without asking him first."
+      ],
+      "correctAnswer": "The landlord said that I couldn't paint the walls without asking him first.",
+      "correctAnswerIndex": 0,
+      "hint": "Check both the negative meaning and every pronoun carefully in this review question.",
+      "explanation": "'Can't' becomes 'couldn't' (keeping the negative permission intact), 'you' becomes 'I', and 'me' becomes 'him'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'can't' → 'couldn't'",
+        "'you' → 'I'",
+        "'me' → 'him'"
+      ]
+    },
+    {
+      "id": "dis_l180_practice_q3",
+      "level": 180,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The advisor said, \"I recommend that you diversify your portfolio, though the final decision is yours.\"",
+      "directSpeech": "The advisor said, \"I recommend that you diversify your portfolio, though the final decision is yours.\"",
+      "options": [
+        "The advisor said that she recommended diversifying your portfolio, though the final decision is yours.",
+        "The advisor said that she recommended diversifying my portfolio, though the final decision was mine.",
+        "The advisor said that she recommended to diversify my portfolio, though the final decision was mine."
+      ],
+      "correctAnswer": "The advisor said that she recommended diversifying my portfolio, though the final decision was mine.",
+      "correctAnswerIndex": 1,
+      "hint": "This final review question checks the gerund pattern after 'recommended', the possessive changes, and the tense in the final clause.",
+      "explanation": "'Recommend that you diversify' becomes 'recommended diversifying' (gerund, not infinitive), 'your' becomes 'my', 'yours' becomes 'mine', and 'is' becomes 'was'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'recommend that you diversify' → 'recommended diversifying'",
+        "'your' → 'my'",
+        "'yours' → 'mine'",
+        "'is' → 'was'"
+      ]
+    }
+  ]
+}

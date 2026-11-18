@@ -1,0 +1,513 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "learn",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "quests": [
+    {
+      "id": "dis_l31_learn_q1",
+      "level": 31,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "Sofia asked, \"Do you like Italian food?\"",
+      "reportedSpeech": "Sofia asked whether I liked Italian food.",
+      "changesList": [
+        "question word order → statement word order",
+        "'do' removed",
+        "'like' → 'liked'",
+        "'you' → 'I'"
+      ],
+      "ruleExplanation": "The auxiliary 'do' disappears, 'like' backshifts to 'liked', and 'whether' introduces the reported question.",
+      "nativeTip": "Reported yes/no questions use 'if' or 'whether' instead of 'that', and drop the question word order.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Sofia asked, \"Do you like Italian food?\"\" ➔ \"Sofia asked whether I liked Italian food.\""
+    },
+    {
+      "id": "dis_l31_learn_q2",
+      "level": 31,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "The waiter asked, \"Would you like some water?\"",
+      "reportedSpeech": "The waiter asked whether I would like some water.",
+      "changesList": [
+        "question word order → statement word order",
+        "'you' → 'I'"
+      ],
+      "ruleExplanation": "'Would' does not need to backshift further, but the inverted question order becomes normal statement order, and 'you' becomes 'I'.",
+      "nativeTip": "Keep the modal 'would' as it is, but change the word order to a statement.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The waiter asked, \"Would you like some water?\"\" ➔ \"The waiter asked whether I would like some water.\""
+    },
+    {
+      "id": "dis_l31_learn_q3",
+      "level": 31,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "Marcus asked, \"Are you coming to the party?\"",
+      "reportedSpeech": "Marcus asked whether I was coming to the party.",
+      "changesList": [
+        "'are' → 'was'",
+        "question word order → statement word order",
+        "'you' → 'I'"
+      ],
+      "ruleExplanation": "'Are' backshifts to 'was', the inversion disappears, and 'you' becomes 'I'.",
+      "nativeTip": "'Are' is part of the question — think about its past form and remove the inversion.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Marcus asked, \"Are you coming to the party?\"\" ➔ \"Marcus asked whether I was coming to the party.\""
+    },
+    {
+      "id": "dis_l32_learn_q1",
+      "level": 32,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "The doctor asked, \"Are you feeling better?\"",
+      "reportedSpeech": "The doctor asked if I was feeling better.",
+      "changesList": [
+        "'are feeling' → 'was feeling'",
+        "question word order → statement word order",
+        "'you' → 'I'"
+      ],
+      "ruleExplanation": "'Are feeling' backshifts to 'was feeling', and the question order becomes a statement; 'you' becomes 'I'.",
+      "nativeTip": "Backshift the continuous tense and remove the inverted word order.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The doctor asked, \"Are you feeling better?\"\" ➔ \"The doctor asked if I was feeling better.\""
+    },
+    {
+      "id": "dis_l32_learn_q2",
+      "level": 32,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "Elena asked, \"Is he working today?\"",
+      "reportedSpeech": "Elena asked if he was working that day.",
+      "changesList": [
+        "'is working' → 'was working'",
+        "'today' → 'that day'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Is working' becomes 'was working', 'today' becomes 'that day', and normal word order replaces the inversion.",
+      "nativeTip": "Check the continuous tense, the time word, and the sentence order all at once.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Elena asked, \"Is he working today?\"\" ➔ \"Elena asked if he was working that day.\""
+    },
+    {
+      "id": "dis_l32_learn_q3",
+      "level": 32,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "The customer asked, \"Are these seats available?\"",
+      "reportedSpeech": "The customer asked if those seats were available.",
+      "changesList": [
+        "'are' → 'were'",
+        "'these' → 'those'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Are' becomes 'were', 'these' becomes 'those', and question order becomes statement order.",
+      "nativeTip": "The demonstrative changes too, alongside the tense and the word order.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The customer asked, \"Are these seats available?\"\" ➔ \"The customer asked if those seats were available.\""
+    },
+    {
+      "id": "dis_l33_learn_q1",
+      "level": 33,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "The teacher asked, \"Does she understand the lesson?\"",
+      "reportedSpeech": "The teacher asked if she understood the lesson.",
+      "changesList": [
+        "'does understand' → 'understood'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Does understand' becomes 'understood'; the auxiliary 'does' is removed and question order becomes statement order.",
+      "nativeTip": "'Does' disappears entirely — the main verb carries the backshift instead.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The teacher asked, \"Does she understand the lesson?\"\" ➔ \"The teacher asked if she understood the lesson.\""
+    },
+    {
+      "id": "dis_l33_learn_q2",
+      "level": 33,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "Hassan asked, \"Do they live nearby?\"",
+      "reportedSpeech": "Hassan asked whether they lived nearby.",
+      "changesList": [
+        "'do live' → 'lived'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Do live' becomes 'lived'; 'do' is dropped completely and the inversion disappears.",
+      "nativeTip": "Remove the auxiliary 'do' completely and backshift the main verb instead.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Hassan asked, \"Do they live nearby?\"\" ➔ \"Hassan asked whether they lived nearby.\""
+    },
+    {
+      "id": "dis_l33_learn_q3",
+      "level": 33,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "The officer asked, \"Does this bus stop at the station?\"",
+      "reportedSpeech": "The officer asked whether that bus stopped at the station.",
+      "changesList": [
+        "'does stop' → 'stopped'",
+        "'this' → 'that'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Does stop' becomes 'stopped', 'this' becomes 'that', and word order becomes a statement.",
+      "nativeTip": "Three items shift: the auxiliary disappears, the verb backshifts, and the demonstrative changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The officer asked, \"Does this bus stop at the station?\"\" ➔ \"The officer asked whether that bus stopped at the station.\""
+    },
+    {
+      "id": "dis_l34_learn_q1",
+      "level": 34,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "The manager asked, \"Have you finished the report?\"",
+      "reportedSpeech": "The manager asked whether I had finished the report.",
+      "changesList": [
+        "'have finished' → 'had finished'",
+        "question word order → statement word order",
+        "'you' → 'I'"
+      ],
+      "ruleExplanation": "'Have finished' becomes 'had finished', word order becomes a statement, and 'you' becomes 'I'.",
+      "nativeTip": "'Have' backshifts the same way it does in ordinary statements.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager asked, \"Have you finished the report?\"\" ➔ \"The manager asked whether I had finished the report.\""
+    },
+    {
+      "id": "dis_l34_learn_q2",
+      "level": 34,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "Grace asked, \"Has he called the client yet?\"",
+      "reportedSpeech": "Grace asked if he had called the client yet.",
+      "changesList": [
+        "'has called' → 'had called'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Has called' becomes 'had called'; the inversion disappears and normal statement order is used.",
+      "nativeTip": "Focus on the present perfect auxiliary and the sentence order.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Grace asked, \"Has he called the client yet?\"\" ➔ \"Grace asked if he had called the client yet.\""
+    },
+    {
+      "id": "dis_l34_learn_q3",
+      "level": 34,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The nurse asked, \"Have your symptoms improved?\"",
+      "reportedSpeech": "The nurse asked whether my symptoms had improved.",
+      "changesList": [
+        "'your' → 'my'",
+        "'have improved' → 'had improved'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Your' becomes 'my', and 'have improved' becomes 'had improved'.",
+      "nativeTip": "Along with the tense, notice the possessive pronoun change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The nurse asked, \"Have your symptoms improved?\"\" ➔ \"The nurse asked whether my symptoms had improved.\""
+    },
+    {
+      "id": "dis_l35_learn_q1",
+      "level": 35,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "The clerk asked, \"Can you show your ID?\"",
+      "reportedSpeech": "The clerk asked whether I could show my ID.",
+      "changesList": [
+        "'can' → 'could'",
+        "'you' → 'I'",
+        "'your' → 'my'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Can' becomes 'could', 'you'/'your' become 'I'/'my', and the order becomes a statement.",
+      "nativeTip": "'Can' backshifts to its past form even inside a question.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The clerk asked, \"Can you show your ID?\"\" ➔ \"The clerk asked whether I could show my ID.\""
+    },
+    {
+      "id": "dis_l35_learn_q2",
+      "level": 35,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Omar asked, \"Will you join us for dinner?\"",
+      "reportedSpeech": "Omar asked whether I would join them for dinner.",
+      "changesList": [
+        "'will' → 'would'",
+        "'you' → 'I'",
+        "'us' → 'them'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Will' becomes 'would', 'you' becomes 'I', and 'us' becomes 'them' since the reporter isn't part of that group.",
+      "nativeTip": "Both the modal and the object pronoun 'us' change here.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Omar asked, \"Will you join us for dinner?\"\" ➔ \"Omar asked whether I would join them for dinner.\""
+    },
+    {
+      "id": "dis_l35_learn_q3",
+      "level": 35,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "The teacher asked, \"Can anyone answer this question?\"",
+      "reportedSpeech": "The teacher asked whether anyone could answer that question.",
+      "changesList": [
+        "'can' → 'could'",
+        "'this' → 'that'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Can' becomes 'could', 'this' becomes 'that', and normal word order replaces the question form.",
+      "nativeTip": "Check the modal, the demonstrative, and the word order together.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The teacher asked, \"Can anyone answer this question?\"\" ➔ \"The teacher asked whether anyone could answer that question.\""
+    },
+    {
+      "id": "dis_l36_learn_q1",
+      "level": 36,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "Layla asked, \"Is it raining outside?\"",
+      "reportedSpeech": "Layla asked whether it was raining outside.",
+      "changesList": [
+        "'is' → 'was'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Is' becomes 'was', and the inverted order 'is it' becomes the statement order 'it was'.",
+      "nativeTip": "Move the verb 'to be' back into normal statement position and backshift it.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Layla asked, \"Is it raining outside?\"\" ➔ \"Layla asked whether it was raining outside.\""
+    },
+    {
+      "id": "dis_l36_learn_q2",
+      "level": 36,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The host asked, \"Are your parents joining us tonight?\"",
+      "reportedSpeech": "The host asked whether my parents were joining them that night.",
+      "changesList": [
+        "'your' → 'my'",
+        "'are joining' → 'were joining'",
+        "'us' → 'them'",
+        "'tonight' → 'that night'"
+      ],
+      "ruleExplanation": "'Your' becomes 'my', 'are joining' becomes 'were joining', 'us' becomes 'them', and 'tonight' becomes 'that night'.",
+      "nativeTip": "Four things shift together: the possessive, the verb, the object pronoun, and the time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The host asked, \"Are your parents joining us tonight?\"\" ➔ \"The host asked whether my parents were joining them that night.\""
+    },
+    {
+      "id": "dis_l36_learn_q3",
+      "level": 36,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "The inspector asked, \"Are the exits clearly marked?\"",
+      "reportedSpeech": "The inspector asked whether the exits were clearly marked.",
+      "changesList": [
+        "'are' → 'were'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Are' becomes 'were', and the inverted question becomes a statement.",
+      "nativeTip": "No pronoun here — just backshift the verb and remove the inversion.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The inspector asked, \"Are the exits clearly marked?\"\" ➔ \"The inspector asked whether the exits were clearly marked.\""
+    },
+    {
+      "id": "dis_l37_learn_q1",
+      "level": 37,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "Fatima asked, \"Don't you want any dessert?\"",
+      "reportedSpeech": "Fatima asked whether I didn't want any dessert.",
+      "changesList": [
+        "'don't want' → 'didn't want'",
+        "question word order → statement word order",
+        "'you' → 'I'"
+      ],
+      "ruleExplanation": "'Don't want' backshifts to 'didn't want', and inverted order becomes statement order; 'you' becomes 'I'.",
+      "nativeTip": "Negative questions keep their negative form — only the auxiliary tense and word order change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Fatima asked, \"Don't you want any dessert?\"\" ➔ \"Fatima asked whether I didn't want any dessert.\""
+    },
+    {
+      "id": "dis_l37_learn_q2",
+      "level": 37,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "The critic asked, \"Isn't this film too long?\"",
+      "reportedSpeech": "The critic asked whether that film wasn't too long.",
+      "changesList": [
+        "'isn't' → 'wasn't'",
+        "'this' → 'that'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Isn't' becomes 'wasn't', and 'this' becomes 'that'.",
+      "nativeTip": "Keep the negative meaning, but update the demonstrative and the verb tense.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The critic asked, \"Isn't this film too long?\"\" ➔ \"The critic asked whether that film wasn't too long.\""
+    },
+    {
+      "id": "dis_l37_learn_q3",
+      "level": 37,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "The teacher asked, \"Didn't you study for the test?\"",
+      "reportedSpeech": "The teacher asked whether I hadn't studied for the test.",
+      "changesList": [
+        "'didn't study' → 'hadn't studied'",
+        "question word order → statement word order",
+        "'you' → 'I'"
+      ],
+      "ruleExplanation": "'Didn't study' becomes 'hadn't studied', and the question word order becomes a statement; 'you' becomes 'I'.",
+      "nativeTip": "This negative past question backshifts one more step, just like ordinary past-simple statements do.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The teacher asked, \"Didn't you study for the test?\"\" ➔ \"The teacher asked whether I hadn't studied for the test.\""
+    },
+    {
+      "id": "dis_l38_learn_q1",
+      "level": 38,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The agent asked, \"Will you be available tomorrow?\"",
+      "reportedSpeech": "The agent asked whether I would be available the next day.",
+      "changesList": [
+        "'will' → 'would'",
+        "'you' → 'I'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'Will' becomes 'would', 'you' becomes 'I', and 'tomorrow' becomes 'the next day'.",
+      "nativeTip": "Combine the modal, the pronoun, and the time-word changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The agent asked, \"Will you be available tomorrow?\"\" ➔ \"The agent asked whether I would be available the next day.\""
+    },
+    {
+      "id": "dis_l38_learn_q2",
+      "level": 38,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Diego asked, \"Did you see this movie last week?\"",
+      "reportedSpeech": "Diego asked whether I had seen that movie the previous week.",
+      "changesList": [
+        "'did see' → 'had seen'",
+        "'this' → 'that'",
+        "'last week' → 'the previous week'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Did see' becomes 'had seen', 'this' becomes 'that', and 'last week' becomes 'the previous week'.",
+      "nativeTip": "Four separate items change: the tense, the demonstrative, and the time expression, plus the word order.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Diego asked, \"Did you see this movie last week?\"\" ➔ \"Diego asked whether I had seen that movie the previous week.\""
+    },
+    {
+      "id": "dis_l38_learn_q3",
+      "level": 38,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The coordinator asked, \"Can we meet here tomorrow?\"",
+      "reportedSpeech": "The coordinator asked whether they could meet there the next day.",
+      "changesList": [
+        "'we' → 'they'",
+        "'can' → 'could'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'We' becomes 'they', 'can' becomes 'could', 'here' becomes 'there', and 'tomorrow' becomes 'the next day'.",
+      "nativeTip": "Update the pronoun, the modal, the place word, and the time word all together.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The coordinator asked, \"Can we meet here tomorrow?\"\" ➔ \"The coordinator asked whether they could meet there the next day.\""
+    },
+    {
+      "id": "dis_l39_learn_q1",
+      "level": 39,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "Nadia asked herself, \"Should I take the job?\"",
+      "reportedSpeech": "Nadia wondered whether to take the job.",
+      "changesList": [
+        "'should I take' → 'to take'",
+        "'if' cannot precede an infinitive; 'whether' is used instead"
+      ],
+      "ruleExplanation": "Only 'whether' allows the pattern 'whether + to-infinitive'; 'if' is not used this way, and the question inversion must be removed.",
+      "nativeTip": "'Whether' can be directly followed by a 'to' infinitive, but 'if' cannot.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Nadia asked herself, \"Should I take the job?\"\" ➔ \"Nadia wondered whether to take the job.\""
+    },
+    {
+      "id": "dis_l39_learn_q2",
+      "level": 39,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "Marcus asked himself, \"Should I call her back?\"",
+      "reportedSpeech": "Marcus wondered whether to call her back.",
+      "changesList": [
+        "'should I call' → 'to call'"
+      ],
+      "ruleExplanation": "'Whether + to-infinitive' replaces 'should I...'; 'if' cannot be followed directly by an infinitive.",
+      "nativeTip": "Drop 'should' entirely and replace it with a bare 'to' infinitive after 'whether'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Marcus asked himself, \"Should I call her back?\"\" ➔ \"Marcus wondered whether to call her back.\""
+    },
+    {
+      "id": "dis_l39_learn_q3",
+      "level": 39,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "The team debated, \"Should we launch the product now or wait?\"",
+      "reportedSpeech": "The team debated whether to launch the product then or wait.",
+      "changesList": [
+        "'should we launch' → 'to launch'",
+        "'now' → 'then'"
+      ],
+      "ruleExplanation": "'Should we launch' becomes 'to launch', and 'now' becomes 'then', matching the required whether-infinitive pattern.",
+      "nativeTip": "Combine the infinitive pattern with the correct time-word change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The team debated, \"Should we launch the product now or wait?\"\" ➔ \"The team debated whether to launch the product then or wait.\""
+    },
+    {
+      "id": "dis_l40_learn_q1",
+      "level": 40,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "The interviewer asked, \"Have you ever managed a team?\"",
+      "reportedSpeech": "The interviewer asked whether I had ever managed a team.",
+      "changesList": [
+        "'have managed' → 'had managed'",
+        "question word order → statement word order",
+        "'you' → 'I'"
+      ],
+      "ruleExplanation": "'Have managed' becomes 'had managed', word order becomes a statement, and 'you' becomes 'I'.",
+      "nativeTip": "Recall how present perfect and question order both change together.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The interviewer asked, \"Have you ever managed a team?\"\" ➔ \"The interviewer asked whether I had ever managed a team.\""
+    },
+    {
+      "id": "dis_l40_learn_q2",
+      "level": 40,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Yes/No Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Yes/No Question",
+      "directSpeech": "The waiter asked, \"Would you like to see the dessert menu?\"",
+      "reportedSpeech": "The waiter asked whether I would like to see the dessert menu.",
+      "changesList": [
+        "question word order → statement word order",
+        "'you' → 'I'"
+      ],
+      "ruleExplanation": "'Would' stays the same, but the inverted question becomes a statement, and 'you' becomes 'I'.",
+      "nativeTip": "'Would' doesn't need to change again — focus on the word order and the pronoun.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The waiter asked, \"Would you like to see the dessert menu?\"\" ➔ \"The waiter asked whether I would like to see the dessert menu.\""
+    },
+    {
+      "id": "dis_l40_learn_q3",
+      "level": 40,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The recruiter asked, \"Can you start next month?\"",
+      "reportedSpeech": "The recruiter asked whether I could start the following month.",
+      "changesList": [
+        "'can' → 'could'",
+        "'you' → 'I'",
+        "'next month' → 'the following month'"
+      ],
+      "ruleExplanation": "'Can' becomes 'could', 'you' becomes 'I', and 'next month' becomes 'the following month'.",
+      "nativeTip": "This final review question combines the modal, the pronoun, and the time-word shift.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The recruiter asked, \"Can you start next month?\"\" ➔ \"The recruiter asked whether I could start the following month.\""
+    }
+  ]
+}

@@ -1,0 +1,717 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "mastery",
+  "batchIndex": 5,
+  "levels": "41-50",
+  "quests": [
+    {
+      "id": "dis_l41_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Sofia asked, \"What time does the train leave?\"",
+      "options": [
+        "Sofia asked what time the train left.",
+        "Sofia asked what time did the train leave.",
+        "Sofia asked what time the train leaves."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Sofia asked what time the train left.",
+      "sentence": "Sofia asked, \"What time does the train leave?\"",
+      "hint": "Wh-questions drop 'do/does/did' and use statement word order after the question word.",
+      "explanation": "'Does leave' becomes 'left'; the auxiliary disappears and the question word 'what time' stays at the front.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "'does leave' → 'left'",
+        "question word order → statement word order"
+      ],
+      "level": 41
+    },
+    {
+      "id": "dis_l41_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The waiter asked, \"What would you like to order?\"",
+      "options": [
+        "The waiter asked what I like to order.",
+        "The waiter asked what I would like to order.",
+        "The waiter asked what would I like to order."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The waiter asked what I would like to order.",
+      "sentence": "The waiter asked, \"What would you like to order?\"",
+      "hint": "'Would' doesn't need to change — fix the word order and the pronoun instead.",
+      "explanation": "'Would' stays the same, but inversion is removed and 'you' becomes 'I'.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "question word order → statement word order",
+        "'you' → 'I'"
+      ],
+      "level": 41
+    },
+    {
+      "id": "dis_l41_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Marcus asked, \"What are you doing this weekend?\"",
+      "options": [
+        "Marcus asked what I was doing that weekend.",
+        "Marcus asked what I was doing this weekend.",
+        "Marcus asked what was I doing that weekend."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Marcus asked what I was doing that weekend.",
+      "sentence": "Marcus asked, \"What are you doing this weekend?\"",
+      "hint": "Combine the continuous backshift, the pronoun, and the time-word change.",
+      "explanation": "'Are doing' becomes 'was doing', 'you' becomes 'I', and 'this weekend' becomes 'that weekend'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'are doing' → 'was doing'",
+        "'you' → 'I'",
+        "'this weekend' → 'that weekend'"
+      ],
+      "level": 41
+    },
+    {
+      "id": "dis_l42_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The tourist asked, \"Where is the nearest pharmacy?\"",
+      "options": [
+        "The tourist asked where the nearest pharmacy was.",
+        "The tourist asked where was the nearest pharmacy.",
+        "The tourist asked where is the nearest pharmacy."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The tourist asked where the nearest pharmacy was.",
+      "sentence": "The tourist asked, \"Where is the nearest pharmacy?\"",
+      "hint": "Backshift the verb 'to be' and put the subject before it, as in a normal statement.",
+      "explanation": "'Is' backshifts to 'was', and the question word 'where' is followed by normal statement order.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "'is' → 'was'",
+        "question word order → statement word order"
+      ],
+      "level": 42
+    },
+    {
+      "id": "dis_l42_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Elena asked, \"Where did you park the car?\"",
+      "options": [
+        "Elena asked where did I park the car.",
+        "Elena asked where I had parked the car.",
+        "Elena asked where I parked the car."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Elena asked where I had parked the car.",
+      "sentence": "Elena asked, \"Where did you park the car?\"",
+      "hint": "A finished past action reported later usually backshifts one more step.",
+      "explanation": "'Did park' becomes 'had parked', and 'you' becomes 'I'.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "'did park' → 'had parked'",
+        "'you' → 'I'",
+        "question word order → statement word order"
+      ],
+      "level": 42
+    },
+    {
+      "id": "dis_l42_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The manager asked, \"Where will the meeting be held?\"",
+      "options": [
+        "The manager asked where the meeting would be held.",
+        "The manager asked where the meeting will be held.",
+        "The manager asked where would the meeting be held."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The manager asked where the meeting would be held.",
+      "sentence": "The manager asked, \"Where will the meeting be held?\"",
+      "hint": "Backshift the modal, then place the subject before the verb.",
+      "explanation": "'Will' becomes 'would', and normal statement order follows 'where'.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "'will' → 'would'",
+        "question word order → statement word order"
+      ],
+      "level": 42
+    },
+    {
+      "id": "dis_l43_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Hassan asked, \"When does the store open?\"",
+      "options": [
+        "Hassan asked when the store opened.",
+        "Hassan asked when did the store open.",
+        "Hassan asked when the store opens."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Hassan asked when the store opened.",
+      "sentence": "Hassan asked, \"When does the store open?\"",
+      "hint": "Remove the auxiliary 'does' completely and backshift the main verb instead.",
+      "explanation": "'Does open' becomes 'opened'; the auxiliary is dropped.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "'does open' → 'opened'",
+        "question word order → statement word order"
+      ],
+      "level": 43
+    },
+    {
+      "id": "dis_l43_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Grace asked, \"When did you arrive?\"",
+      "options": [
+        "Grace asked when I arrived.",
+        "Grace asked when I had arrived.",
+        "Grace asked when did I arrive."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Grace asked when I had arrived.",
+      "sentence": "Grace asked, \"When did you arrive?\"",
+      "hint": "This past action moves one more step back, into the past perfect.",
+      "explanation": "'Did arrive' becomes 'had arrived', and 'you' becomes 'I'.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "'did arrive' → 'had arrived'",
+        "'you' → 'I'",
+        "question word order → statement word order"
+      ],
+      "level": 43
+    },
+    {
+      "id": "dis_l43_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The client asked, \"When can we expect a reply?\"",
+      "options": [
+        "The client asked when they could expect a reply.",
+        "The client asked when could we expect a reply.",
+        "The client asked when they can expect a reply."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The client asked when they could expect a reply.",
+      "sentence": "The client asked, \"When can we expect a reply?\"",
+      "hint": "Update both the pronoun and the modal verb.",
+      "explanation": "'We' becomes 'they', and 'can' becomes 'could'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'can' → 'could'",
+        "question word order → statement word order"
+      ],
+      "level": 43
+    },
+    {
+      "id": "dis_l44_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The teacher asked, \"Why are you late?\"",
+      "options": [
+        "The teacher asked why I was late.",
+        "The teacher asked why I am late.",
+        "The teacher asked why was I late."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The teacher asked why I was late.",
+      "sentence": "The teacher asked, \"Why are you late?\"",
+      "hint": "Backshift the verb, then fix the pronoun and the word order.",
+      "explanation": "'Are' backshifts to 'was', and 'you' becomes 'I'.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "'are' → 'was'",
+        "'you' → 'I'",
+        "question word order → statement word order"
+      ],
+      "level": 44
+    },
+    {
+      "id": "dis_l44_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Isabella asked, \"Why didn't you call me?\"",
+      "options": [
+        "Isabella asked why hadn't I called her.",
+        "Isabella asked why I didn't call her.",
+        "Isabella asked why I hadn't called her."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Isabella asked why I hadn't called her.",
+      "sentence": "Isabella asked, \"Why didn't you call me?\"",
+      "hint": "Three items change: the negative past tense, the subject pronoun, and the object pronoun.",
+      "explanation": "'Didn't call' becomes 'hadn't called', 'you' becomes 'I', and 'me' becomes 'her'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'didn't call' → 'hadn't called'",
+        "'you' → 'I'",
+        "'me' → 'her'",
+        "question word order → statement word order"
+      ],
+      "level": 44
+    },
+    {
+      "id": "dis_l44_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The editor asked, \"Why does this sentence sound odd?\"",
+      "options": [
+        "The editor asked why this sentence sounded odd.",
+        "The editor asked why does that sentence sound odd.",
+        "The editor asked why that sentence sounded odd."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The editor asked why that sentence sounded odd.",
+      "sentence": "The editor asked, \"Why does this sentence sound odd?\"",
+      "hint": "Remove the auxiliary and update the demonstrative pronoun.",
+      "explanation": "'Does sound' becomes 'sounded', and 'this' becomes 'that'.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "'does sound' → 'sounded'",
+        "'this' → 'that'",
+        "question word order → statement word order"
+      ],
+      "level": 44
+    },
+    {
+      "id": "dis_l45_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The detective asked, \"Who broke this window?\"",
+      "options": [
+        "The detective asked who broke that window.",
+        "The detective asked who had broken that window.",
+        "The detective asked who had broken this window."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The detective asked who had broken that window.",
+      "sentence": "The detective asked, \"Who broke this window?\"",
+      "hint": "Since 'who' is already the subject, word order stays the same — only the verb and the demonstrative change.",
+      "explanation": "Because 'who' is the subject, word order doesn't change, but 'broke' backshifts to 'had broken', and 'this' becomes 'that'.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "'broke' → 'had broken'",
+        "'this' → 'that'"
+      ],
+      "level": 45
+    },
+    {
+      "id": "dis_l45_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Diego asked, \"Who is calling at this hour?\"",
+      "options": [
+        "Diego asked who is calling at that hour.",
+        "Diego asked who was calling at this hour.",
+        "Diego asked who was calling at that hour."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Diego asked who was calling at that hour.",
+      "sentence": "Diego asked, \"Who is calling at this hour?\"",
+      "hint": "'Who' as the subject means no inversion to fix — just backshift the verb and the demonstrative.",
+      "explanation": "'Is calling' backshifts to 'was calling', and 'this' becomes 'that'.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "'is calling' → 'was calling'",
+        "'this' → 'that'"
+      ],
+      "level": 45
+    },
+    {
+      "id": "dis_l45_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The coach asked, \"Who wants to play first?\"",
+      "options": [
+        "The coach asked who wants to play first.",
+        "The coach asked who had wanted to play first.",
+        "The coach asked who wanted to play first."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The coach asked who wanted to play first.",
+      "sentence": "The coach asked, \"Who wants to play first?\"",
+      "hint": "This is a simple one-step backshift with no word-order change needed.",
+      "explanation": "'Wants' backshifts to 'wanted'; no word-order change is needed because 'who' is the subject.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "'wants' → 'wanted'"
+      ],
+      "level": 45
+    },
+    {
+      "id": "dis_l46_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The customer asked, \"Which color do you recommend?\"",
+      "options": [
+        "The customer asked which color I recommend.",
+        "The customer asked which color I recommended.",
+        "The customer asked which color did I recommend."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The customer asked which color I recommended.",
+      "sentence": "The customer asked, \"Which color do you recommend?\"",
+      "hint": "Drop the auxiliary 'do', then backshift the verb and update the pronoun.",
+      "explanation": "'Do recommend' becomes 'recommended', the auxiliary disappears, and 'you' becomes 'I'.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "'do recommend' → 'recommended'",
+        "'you' → 'I'",
+        "question word order → statement word order"
+      ],
+      "level": 46
+    },
+    {
+      "id": "dis_l46_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The examiner asked, \"Which answer is correct?\"",
+      "options": [
+        "The examiner asked which answer is correct.",
+        "The examiner asked which was answer correct.",
+        "The examiner asked which answer was correct."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The examiner asked which answer was correct.",
+      "sentence": "The examiner asked, \"Which answer is correct?\"",
+      "hint": "'Which answer' is the subject here, so only the verb needs to backshift.",
+      "explanation": "'Is' backshifts to 'was'; no inversion existed to remove since 'which answer' is the subject.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "'is' → 'was'"
+      ],
+      "level": 46
+    },
+    {
+      "id": "dis_l46_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The agent asked, \"Which flight will you take?\"",
+      "options": [
+        "The agent asked which flight would I take.",
+        "The agent asked which flight I will take.",
+        "The agent asked which flight I would take."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The agent asked which flight I would take.",
+      "sentence": "The agent asked, \"Which flight will you take?\"",
+      "hint": "Backshift the modal, fix the word order, and update the pronoun.",
+      "explanation": "'Will' becomes 'would', the order becomes a statement, and 'you' becomes 'I'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'will' → 'would'",
+        "'you' → 'I'",
+        "question word order → statement word order"
+      ],
+      "level": 46
+    },
+    {
+      "id": "dis_l47_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The stranger asked, \"How do I get to the museum?\"",
+      "options": [
+        "The stranger asked how he got to the museum.",
+        "The stranger asked how does he get to the museum.",
+        "The stranger asked how he gets to the museum."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The stranger asked how he got to the museum.",
+      "sentence": "The stranger asked, \"How do I get to the museum?\"",
+      "hint": "Drop the auxiliary 'do', backshift the verb, and update the pronoun.",
+      "explanation": "'Do get' becomes 'got', the auxiliary disappears, and 'I' becomes 'he'.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "'do get' → 'got'",
+        "'I' → 'he'",
+        "question word order → statement word order"
+      ],
+      "level": 47
+    },
+    {
+      "id": "dis_l47_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The instructor asked, \"How did you solve this problem?\"",
+      "options": [
+        "The instructor asked how I solved that problem.",
+        "The instructor asked how did I solve this problem.",
+        "The instructor asked how I had solved that problem."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The instructor asked how I had solved that problem.",
+      "sentence": "The instructor asked, \"How did you solve this problem?\"",
+      "hint": "This combines the past-perfect backshift with a pronoun and a demonstrative change.",
+      "explanation": "'Did solve' becomes 'had solved', 'you' becomes 'I', and 'this' becomes 'that'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'did solve' → 'had solved'",
+        "'you' → 'I'",
+        "'this' → 'that'",
+        "question word order → statement word order"
+      ],
+      "level": 47
+    },
+    {
+      "id": "dis_l47_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The parent asked, \"How do you feel today?\"",
+      "options": [
+        "The parent asked how I feel that day.",
+        "The parent asked how did I feel today.",
+        "The parent asked how I felt that day."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The parent asked how I felt that day.",
+      "sentence": "The parent asked, \"How do you feel today?\"",
+      "hint": "Combine the auxiliary removal, the backshift, the pronoun, and the time-word change.",
+      "explanation": "'Do feel' becomes 'felt', 'you' becomes 'I', and 'today' becomes 'that day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'do feel' → 'felt'",
+        "'you' → 'I'",
+        "'today' → 'that day'",
+        "question word order → statement word order"
+      ],
+      "level": 47
+    },
+    {
+      "id": "dis_l48_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The shopper asked, \"How much does this cost?\"",
+      "options": [
+        "The shopper asked how much does that cost.",
+        "The shopper asked how much that cost.",
+        "The shopper asked how much this cost."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The shopper asked how much that cost.",
+      "sentence": "The shopper asked, \"How much does this cost?\"",
+      "hint": "'Cost' is an irregular verb that doesn't change form in the past — only the auxiliary disappears.",
+      "explanation": "'Does cost' loses its auxiliary and becomes simply 'cost' (an irregular verb unchanged in the past), and 'this' becomes 'that'.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "'does cost' → 'cost'",
+        "'this' → 'that'",
+        "question word order → statement word order"
+      ],
+      "level": 48
+    },
+    {
+      "id": "dis_l48_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The organizer asked, \"How many people are coming?\"",
+      "options": [
+        "The organizer asked how many people are coming.",
+        "The organizer asked how many people was coming.",
+        "The organizer asked how many people were coming."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The organizer asked how many people were coming.",
+      "sentence": "The organizer asked, \"How many people are coming?\"",
+      "hint": "Match the past form of 'to be' to the plural subject.",
+      "explanation": "'Are coming' backshifts to 'were coming' because 'people' is plural.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "'are coming' → 'were coming'"
+      ],
+      "level": 48
+    },
+    {
+      "id": "dis_l48_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The manager asked, \"How much time do we have?\"",
+      "options": [
+        "The manager asked how much time we had.",
+        "The manager asked how much time they have.",
+        "The manager asked how much time they had."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The manager asked how much time they had.",
+      "sentence": "The manager asked, \"How much time do we have?\"",
+      "hint": "Update the pronoun and drop the auxiliary while backshifting the verb.",
+      "explanation": "'We' becomes 'they', and 'do have' becomes 'had'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'do have' → 'had'",
+        "question word order → statement word order"
+      ],
+      "level": 48
+    },
+    {
+      "id": "dis_l49_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The passenger asked, \"How long will the delay be?\"",
+      "options": [
+        "The passenger asked how long the delay would be.",
+        "The passenger asked how long the delay will be.",
+        "The passenger asked how long would the delay be."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The passenger asked how long the delay would be.",
+      "sentence": "The passenger asked, \"How long will the delay be?\"",
+      "hint": "Backshift the modal, then remove the inversion between the verb and the subject.",
+      "explanation": "'Will' becomes 'would', and the inverted question order becomes normal statement order.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "'will' → 'would'",
+        "question word order → statement word order"
+      ],
+      "level": 49
+    },
+    {
+      "id": "dis_l49_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The recruiter asked, \"How long have you worked here?\"",
+      "options": [
+        "The recruiter asked how long had I worked here.",
+        "The recruiter asked how long I had worked there.",
+        "The recruiter asked how long I have worked there."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The recruiter asked how long I had worked there.",
+      "sentence": "The recruiter asked, \"How long have you worked here?\"",
+      "hint": "Three changes together: the present perfect, the pronoun, and the place word.",
+      "explanation": "'Have worked' becomes 'had worked', 'you' becomes 'I', and 'here' becomes 'there'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'have worked' → 'had worked'",
+        "'you' → 'I'",
+        "'here' → 'there'",
+        "question word order → statement word order"
+      ],
+      "level": 49
+    },
+    {
+      "id": "dis_l49_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The doctor asked, \"How long has the pain lasted?\"",
+      "options": [
+        "The doctor asked how long the pain has lasted.",
+        "The doctor asked how long had the pain lasted.",
+        "The doctor asked how long the pain had lasted."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The doctor asked how long the pain had lasted.",
+      "sentence": "The doctor asked, \"How long has the pain lasted?\"",
+      "hint": "Backshift the present perfect, and place the subject before the verb.",
+      "explanation": "'Has lasted' becomes 'had lasted', and the inverted order becomes a statement.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "'has lasted' → 'had lasted'",
+        "question word order → statement word order"
+      ],
+      "level": 49
+    },
+    {
+      "id": "dis_l50_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The immigration officer asked, \"What is the purpose of your visit?\"",
+      "options": [
+        "The immigration officer asked what the purpose of my visit is.",
+        "The immigration officer asked what the purpose of my visit was.",
+        "The immigration officer asked what was the purpose of my visit."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The immigration officer asked what the purpose of my visit was.",
+      "sentence": "The immigration officer asked, \"What is the purpose of your visit?\"",
+      "hint": "Combine the tense backshift with the possessive pronoun change.",
+      "explanation": "'Is' becomes 'was', 'your' becomes 'my', and normal statement order follows the question word.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'is' → 'was'",
+        "'your' → 'my'",
+        "question word order → statement word order"
+      ],
+      "level": 50
+    },
+    {
+      "id": "dis_l50_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The journalist asked, \"Why did the company delay the announcement?\"",
+      "options": [
+        "The journalist asked why the company had delayed the announcement.",
+        "The journalist asked why did the company delay the announcement.",
+        "The journalist asked why the company delayed the announcement."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The journalist asked why the company had delayed the announcement.",
+      "sentence": "The journalist asked, \"Why did the company delay the announcement?\"",
+      "hint": "Recall how a completed past action backshifts one more step.",
+      "explanation": "'Did delay' becomes 'had delayed'; the auxiliary is dropped.",
+      "grammarRule": "Reported WH-Question",
+      "changesList": [
+        "'did delay' → 'had delayed'",
+        "question word order → statement word order"
+      ],
+      "level": 50
+    },
+    {
+      "id": "dis_l50_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The host asked, \"How many guests will you bring tomorrow?\"",
+      "options": [
+        "The host asked how many guests I would bring the next day.",
+        "The host asked how many guests I would bring tomorrow.",
+        "The host asked how many guests would I bring the next day."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The host asked how many guests I would bring the next day.",
+      "sentence": "The host asked, \"How many guests will you bring tomorrow?\"",
+      "hint": "This review question combines the modal, the pronoun, the time word, and the word order.",
+      "explanation": "'Will' becomes 'would', 'you' becomes 'I', 'tomorrow' becomes 'the next day', and the order becomes a statement.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'will' → 'would'",
+        "'you' → 'I'",
+        "'tomorrow' → 'the next day'",
+        "question word order → statement word order"
+      ],
+      "level": 50
+    }
+  ]
+}

@@ -1,0 +1,489 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "learn",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "dis_l1_learn_q1",
+      "level": 1,
+      "conceptTitle": "Speech Bubble to Report Converter: Tense Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Tense Backshift",
+      "directSpeech": "Maria said, \"I walk to school every day.\"",
+      "reportedSpeech": "Maria said that she walked to school every day.",
+      "changesList": [
+        "'walk' → 'walked'",
+        "'I' → 'she'"
+      ],
+      "ruleExplanation": "'Walk' backshifts to 'walked', and 'I' becomes 'she' because Maria is the speaker being reported.",
+      "nativeTip": "Check what happens to the verb tense and to the pronoun 'I' when Maria's own words are reported.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Maria said, \"I walk to school every day.\"\" ➔ \"Maria said that she walked to school every day.\""
+    },
+    {
+      "id": "dis_l1_learn_q2",
+      "level": 1,
+      "conceptTitle": "Speech Bubble to Report Converter: Tense Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Tense Backshift",
+      "directSpeech": "Daniel said, \"I play the guitar on weekends.\"",
+      "reportedSpeech": "Daniel said that he played the guitar on weekends.",
+      "changesList": [
+        "'play' → 'played'",
+        "'I' → 'he'"
+      ],
+      "ruleExplanation": "'Play' shifts back to 'played', and 'I' changes to 'he' since we are reporting Daniel's statement.",
+      "nativeTip": "Look for two changes: the verb moves one step into the past, and 'I' becomes a pronoun referring to Daniel.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Daniel said, \"I play the guitar on weekends.\"\" ➔ \"Daniel said that he played the guitar on weekends.\""
+    },
+    {
+      "id": "dis_l1_learn_q3",
+      "level": 1,
+      "conceptTitle": "Speech Bubble to Report Converter: Pronoun Reference Shift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Pronoun Reference Shift",
+      "directSpeech": "Grace said, \"I live near the station.\"",
+      "reportedSpeech": "Grace said that she lived near the station.",
+      "changesList": [
+        "'live' → 'lived'",
+        "'I' → 'she'"
+      ],
+      "ruleExplanation": "'Live' shifts to 'lived', and the subject pronoun 'I' becomes the subject pronoun 'she', not the possessive 'her'.",
+      "nativeTip": "Decide whether you need a subject pronoun ('she') or a possessive ('her'), and remember present simple moves one step back.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Grace said, \"I live near the station.\"\" ➔ \"Grace said that she lived near the station.\""
+    },
+    {
+      "id": "dis_l2_learn_q1",
+      "level": 2,
+      "conceptTitle": "Speech Bubble to Report Converter: Tense Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Tense Backshift",
+      "directSpeech": "Omar said, \"I am waiting for the bus.\"",
+      "reportedSpeech": "Omar said that he was waiting for the bus.",
+      "changesList": [
+        "'am waiting' → 'was waiting'",
+        "'I' → 'he'"
+      ],
+      "ruleExplanation": "'Am waiting' (present continuous) shifts to 'was waiting' (past continuous); 'I' becomes 'he' since Omar is being reported.",
+      "nativeTip": "'Am' is part of the present continuous — think about what it becomes in the past, and who 'I' refers to.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Omar said, \"I am waiting for the bus.\"\" ➔ \"Omar said that he was waiting for the bus.\""
+    },
+    {
+      "id": "dis_l2_learn_q2",
+      "level": 2,
+      "conceptTitle": "Speech Bubble to Report Converter: Tense Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Tense Backshift",
+      "directSpeech": "Fatima said, \"I am cooking dinner.\"",
+      "reportedSpeech": "Fatima said that she was cooking dinner.",
+      "changesList": [
+        "'am cooking' → 'was cooking'",
+        "'I' → 'she'"
+      ],
+      "ruleExplanation": "'Am cooking' becomes 'was cooking' — the auxiliary changes but the '-ing' form stays; 'I' becomes 'she'.",
+      "nativeTip": "The auxiliary 'am' must shift, but keep the '-ing' form of the verb.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Fatima said, \"I am cooking dinner.\"\" ➔ \"Fatima said that she was cooking dinner.\""
+    },
+    {
+      "id": "dis_l2_learn_q3",
+      "level": 2,
+      "conceptTitle": "Speech Bubble to Report Converter: Tense Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Tense Backshift",
+      "directSpeech": "Kwame said, \"I am reading a good book.\"",
+      "reportedSpeech": "Kwame said that he was reading a good book.",
+      "changesList": [
+        "'am reading' → 'was reading'",
+        "'I' → 'he'"
+      ],
+      "ruleExplanation": "'Am reading' shifts to 'was reading', and 'I' becomes 'he' because Kwame is the one being quoted.",
+      "nativeTip": "Two changes are needed: the continuous auxiliary and the pronoun referring to Kwame.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Kwame said, \"I am reading a good book.\"\" ➔ \"Kwame said that he was reading a good book.\""
+    },
+    {
+      "id": "dis_l3_learn_q1",
+      "level": 3,
+      "conceptTitle": "Speech Bubble to Report Converter: Possessive Shift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Possessive Shift",
+      "directSpeech": "Elena said, \"My brother works at the hospital.\"",
+      "reportedSpeech": "Elena said that her brother worked at the hospital.",
+      "changesList": [
+        "'my' → 'her'",
+        "'works' → 'worked'"
+      ],
+      "ruleExplanation": "'My' becomes 'her' because Elena is the speaker, and 'works' backshifts to 'worked'.",
+      "nativeTip": "'My' belongs to Elena, so think about which possessive pronoun refers to her; also check the verb tense.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Elena said, \"My brother works at the hospital.\"\" ➔ \"Elena said that her brother worked at the hospital.\""
+    },
+    {
+      "id": "dis_l3_learn_q2",
+      "level": 3,
+      "conceptTitle": "Speech Bubble to Report Converter: Possessive Shift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Possessive Shift",
+      "directSpeech": "Marcus said, \"My car needs a repair.\"",
+      "reportedSpeech": "Marcus said that his car needed a repair.",
+      "changesList": [
+        "'my' → 'his'",
+        "'needs' → 'needed'"
+      ],
+      "ruleExplanation": "'My' shifts to 'his' since Marcus owns the car, and 'needs' shifts to 'needed'.",
+      "nativeTip": "Identify who 'my' refers to before choosing the possessive pronoun.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Marcus said, \"My car needs a repair.\"\" ➔ \"Marcus said that his car needed a repair.\""
+    },
+    {
+      "id": "dis_l3_learn_q3",
+      "level": 3,
+      "conceptTitle": "Speech Bubble to Report Converter: Possessive Shift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Possessive Shift",
+      "directSpeech": "Nadia said, \"My parents live in Portugal.\"",
+      "reportedSpeech": "Nadia said that her parents lived in Portugal.",
+      "changesList": [
+        "'my' → 'her'",
+        "'live' → 'lived'"
+      ],
+      "ruleExplanation": "'My' refers to Nadia, so it becomes 'her' regardless of 'parents' being plural; 'live' backshifts to 'lived'.",
+      "nativeTip": "The possessive pronoun depends on who is speaking, not on whether the noun after it is plural.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Nadia said, \"My parents live in Portugal.\"\" ➔ \"Nadia said that her parents lived in Portugal.\""
+    },
+    {
+      "id": "dis_l4_learn_q1",
+      "level": 4,
+      "conceptTitle": "Speech Bubble to Report Converter: Tense Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Tense Backshift",
+      "directSpeech": "Victor said, \"I am tired after work.\"",
+      "reportedSpeech": "Victor said that he was tired after work.",
+      "changesList": [
+        "'am' → 'was'",
+        "'I' → 'he'"
+      ],
+      "ruleExplanation": "'Am' becomes 'was' with the singular pronoun 'he', and 'I' changes to 'he'.",
+      "nativeTip": "Match the pronoun to the correct past form of 'to be': was or were?",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Victor said, \"I am tired after work.\"\" ➔ \"Victor said that he was tired after work.\""
+    },
+    {
+      "id": "dis_l4_learn_q2",
+      "level": 4,
+      "conceptTitle": "Speech Bubble to Report Converter: Tense Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Tense Backshift",
+      "directSpeech": "Isabella said, \"The lake is very cold.\"",
+      "reportedSpeech": "Isabella said that the lake was very cold.",
+      "changesList": [
+        "'is' → 'was'"
+      ],
+      "ruleExplanation": "'Is' shifts to 'was' because the subject 'the lake' is singular; no pronoun change is needed here.",
+      "nativeTip": "This subject is not 'I' — focus only on the correct past form of 'to be'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Isabella said, \"The lake is very cold.\"\" ➔ \"Isabella said that the lake was very cold.\""
+    },
+    {
+      "id": "dis_l4_learn_q3",
+      "level": 4,
+      "conceptTitle": "Speech Bubble to Report Converter: Tense Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Tense Backshift",
+      "directSpeech": "Hassan said, \"I am ready for the interview.\"",
+      "reportedSpeech": "Hassan said that he was ready for the interview.",
+      "changesList": [
+        "'am' → 'was'",
+        "'I' → 'he'"
+      ],
+      "ruleExplanation": "'Am' becomes 'was', and 'I' becomes 'he' since Hassan is being reported.",
+      "nativeTip": "Apply both changes you have practiced: the verb 'to be' and the pronoun 'I'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Hassan said, \"I am ready for the interview.\"\" ➔ \"Hassan said that he was ready for the interview.\""
+    },
+    {
+      "id": "dis_l5_learn_q1",
+      "level": 5,
+      "conceptTitle": "Speech Bubble to Report Converter: Tense Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Tense Backshift",
+      "directSpeech": "Sofia said, \"I don't like spicy food.\"",
+      "reportedSpeech": "Sofia said that she didn't like spicy food.",
+      "changesList": [
+        "'don't like' → 'didn't like'",
+        "'I' → 'she'"
+      ],
+      "ruleExplanation": "'Don't like' shifts to 'didn't like', and 'I' becomes 'she'.",
+      "nativeTip": "Negative present simple uses 'don't' or 'doesn't' — what does this become in the past?",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Sofia said, \"I don't like spicy food.\"\" ➔ \"Sofia said that she didn't like spicy food.\""
+    },
+    {
+      "id": "dis_l5_learn_q2",
+      "level": 5,
+      "conceptTitle": "Speech Bubble to Report Converter: Possessive Shift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Possessive Shift",
+      "directSpeech": "Ravi said, \"My sister doesn't drive.\"",
+      "reportedSpeech": "Ravi said that his sister didn't drive.",
+      "changesList": [
+        "'my' → 'his'",
+        "'doesn't drive' → 'didn't drive'"
+      ],
+      "ruleExplanation": "'My' becomes 'his', and 'doesn't drive' becomes 'didn't drive'.",
+      "nativeTip": "Two things change here: the possessive pronoun and the negative auxiliary.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Ravi said, \"My sister doesn't drive.\"\" ➔ \"Ravi said that his sister didn't drive.\""
+    },
+    {
+      "id": "dis_l5_learn_q3",
+      "level": 5,
+      "conceptTitle": "Speech Bubble to Report Converter: Tense Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Tense Backshift",
+      "directSpeech": "Clara said, \"I don't understand the exercise.\"",
+      "reportedSpeech": "Clara said that she didn't understand the exercise.",
+      "changesList": [
+        "'don't understand' → 'didn't understand'",
+        "'I' → 'she'"
+      ],
+      "ruleExplanation": "'Don't understand' becomes 'didn't understand', and 'I' becomes 'she'.",
+      "nativeTip": "Combine the pronoun change with the negative backshift you just practiced.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Clara said, \"I don't understand the exercise.\"\" ➔ \"Clara said that she didn't understand the exercise.\""
+    },
+    {
+      "id": "dis_l6_learn_q1",
+      "level": 6,
+      "conceptTitle": "Speech Bubble to Report Converter: Pronoun Reference Shift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Pronoun Reference Shift",
+      "directSpeech": "The twins said, \"We enjoy hiking.\"",
+      "reportedSpeech": "The twins said that they enjoyed hiking.",
+      "changesList": [
+        "'we' → 'they'",
+        "'enjoy' → 'enjoyed'"
+      ],
+      "ruleExplanation": "'We' becomes 'they' because the twins are being referred to from outside, and 'enjoy' backshifts to 'enjoyed'.",
+      "nativeTip": "'We' refers to the twins themselves — what pronoun replaces it when their words are reported by someone else?",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The twins said, \"We enjoy hiking.\"\" ➔ \"The twins said that they enjoyed hiking.\""
+    },
+    {
+      "id": "dis_l6_learn_q2",
+      "level": 6,
+      "conceptTitle": "Speech Bubble to Report Converter: Pronoun Reference Shift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Pronoun Reference Shift",
+      "directSpeech": "My neighbors said, \"We are moving to a new apartment.\"",
+      "reportedSpeech": "My neighbors said that they were moving to a new apartment.",
+      "changesList": [
+        "'we' → 'they'",
+        "'are moving' → 'were moving'"
+      ],
+      "ruleExplanation": "'We' becomes 'they', and 'are moving' backshifts to 'were moving'.",
+      "nativeTip": "Apply the same 'we' → 'they' rule together with the present continuous backshift.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"My neighbors said, \"We are moving to a new apartment.\"\" ➔ \"My neighbors said that they were moving to a new apartment.\""
+    },
+    {
+      "id": "dis_l6_learn_q3",
+      "level": 6,
+      "conceptTitle": "Speech Bubble to Report Converter: Pronoun Reference Shift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Pronoun Reference Shift",
+      "directSpeech": "The coaches said, \"We train every morning.\"",
+      "reportedSpeech": "The coaches said that they trained every morning.",
+      "changesList": [
+        "'we' → 'they'",
+        "'train' → 'trained'"
+      ],
+      "ruleExplanation": "'We' becomes 'they', and 'train' backshifts to 'trained'.",
+      "nativeTip": "Third-person reporting always replaces 'we' with the same pronoun — which one?",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The coaches said, \"We train every morning.\"\" ➔ \"The coaches said that they trained every morning.\""
+    },
+    {
+      "id": "dis_l7_learn_q1",
+      "level": 7,
+      "conceptTitle": "Speech Bubble to Report Converter: Possessive Shift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Possessive Shift",
+      "directSpeech": "The students said, \"Our teacher is very patient.\"",
+      "reportedSpeech": "The students said that their teacher was very patient.",
+      "changesList": [
+        "'our' → 'their'",
+        "'is' → 'was'"
+      ],
+      "ruleExplanation": "'Our' becomes 'their', and 'is' backshifts to 'was'.",
+      "nativeTip": "'Our' belongs to the students — decide which possessive pronoun replaces it.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The students said, \"Our teacher is very patient.\"\" ➔ \"The students said that their teacher was very patient.\""
+    },
+    {
+      "id": "dis_l7_learn_q2",
+      "level": 7,
+      "conceptTitle": "Speech Bubble to Report Converter: Possessive Shift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Possessive Shift",
+      "directSpeech": "The players said, \"Our team plays well together.\"",
+      "reportedSpeech": "The players said that their team played well together.",
+      "changesList": [
+        "'our' → 'their'",
+        "'plays' → 'played'"
+      ],
+      "ruleExplanation": "'Our' becomes 'their', and 'plays' backshifts to 'played'.",
+      "nativeTip": "Keep both rules in mind: the possessive pronoun and the tense of 'play'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The players said, \"Our team plays well together.\"\" ➔ \"The players said that their team played well together.\""
+    },
+    {
+      "id": "dis_l7_learn_q3",
+      "level": 7,
+      "conceptTitle": "Speech Bubble to Report Converter: Possessive Shift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Possessive Shift",
+      "directSpeech": "The workers said, \"Our manager is very fair.\"",
+      "reportedSpeech": "The workers said that their manager was very fair.",
+      "changesList": [
+        "'our' → 'their'",
+        "'is' → 'was'"
+      ],
+      "ruleExplanation": "'Our' becomes 'their', and 'is' backshifts to 'was'.",
+      "nativeTip": "Same pattern again — check the possessive pronoun and the verb 'to be'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The workers said, \"Our manager is very fair.\"\" ➔ \"The workers said that their manager was very fair.\""
+    },
+    {
+      "id": "dis_l8_learn_q1",
+      "level": 8,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Yuki said, \"I lose my keys all the time.\"",
+      "reportedSpeech": "Yuki said that she lost her keys all the time.",
+      "changesList": [
+        "'I' → 'she'",
+        "'my' → 'her'",
+        "'lose' → 'lost'"
+      ],
+      "ruleExplanation": "'I' becomes 'she' and 'my' becomes 'her'; 'lose' backshifts to 'lost'.",
+      "nativeTip": "Both the pronoun and the possessive belong to Yuki — check each one separately.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Yuki said, \"I lose my keys all the time.\"\" ➔ \"Yuki said that she lost her keys all the time.\""
+    },
+    {
+      "id": "dis_l8_learn_q2",
+      "level": 8,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Liam said, \"I forget my umbrella every winter.\"",
+      "reportedSpeech": "Liam said that he forgot his umbrella every winter.",
+      "changesList": [
+        "'I' → 'he'",
+        "'my' → 'his'",
+        "'forget' → 'forgot'"
+      ],
+      "ruleExplanation": "'I' becomes 'he', 'my' becomes 'his', and 'forget' backshifts to 'forgot'.",
+      "nativeTip": "Two separate words need to change to match Liam: the subject pronoun and the possessive.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Liam said, \"I forget my umbrella every winter.\"\" ➔ \"Liam said that he forgot his umbrella every winter.\""
+    },
+    {
+      "id": "dis_l8_learn_q3",
+      "level": 8,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Aisha said, \"I love my job.\"",
+      "reportedSpeech": "Aisha said that she loved her job.",
+      "changesList": [
+        "'I' → 'she'",
+        "'my' → 'her'",
+        "'love' → 'loved'"
+      ],
+      "ruleExplanation": "'I' becomes 'she', 'my' becomes 'her', and 'love' backshifts to 'loved'.",
+      "nativeTip": "Change the pronoun, the possessive, and the tense — three small steps in one sentence.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Aisha said, \"I love my job.\"\" ➔ \"Aisha said that she loved her job.\""
+    },
+    {
+      "id": "dis_l9_learn_q1",
+      "level": 9,
+      "conceptTitle": "Speech Bubble to Report Converter: Tense Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Tense Backshift",
+      "directSpeech": "The manager said, \"The project is behind schedule.\"",
+      "reportedSpeech": "The manager said that the project was behind schedule.",
+      "changesList": [
+        "'is' → 'was'"
+      ],
+      "ruleExplanation": "Only the verb 'to be' backshifts from 'is' to 'was'; there is no pronoun to change here.",
+      "nativeTip": "Not every reported sentence needs a pronoun change — check only what actually needs to move.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager said, \"The project is behind schedule.\"\" ➔ \"The manager said that the project was behind schedule.\""
+    },
+    {
+      "id": "dis_l9_learn_q2",
+      "level": 9,
+      "conceptTitle": "Speech Bubble to Report Converter: Tense Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Tense Backshift",
+      "directSpeech": "Diego said, \"I am learning to swim.\"",
+      "reportedSpeech": "Diego said that he was learning to swim.",
+      "changesList": [
+        "'am learning' → 'was learning'",
+        "'I' → 'he'"
+      ],
+      "ruleExplanation": "'Am learning' becomes 'was learning', and 'I' becomes 'he'.",
+      "nativeTip": "Keep the continuous form intact — only the auxiliary and the pronoun move.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Diego said, \"I am learning to swim.\"\" ➔ \"Diego said that he was learning to swim.\""
+    },
+    {
+      "id": "dis_l9_learn_q3",
+      "level": 9,
+      "conceptTitle": "Speech Bubble to Report Converter: Possessive Shift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Possessive Shift",
+      "directSpeech": "Amara said, \"My flight leaves early.\"",
+      "reportedSpeech": "Amara said that her flight left early.",
+      "changesList": [
+        "'my' → 'her'",
+        "'leaves' → 'left'"
+      ],
+      "ruleExplanation": "'My' becomes 'her' and 'leaves' backshifts to 'left'.",
+      "nativeTip": "Whose flight is it? Choose the possessive that matches the speaker, and backshift the verb.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Amara said, \"My flight leaves early.\"\" ➔ \"Amara said that her flight left early.\""
+    },
+    {
+      "id": "dis_l10_learn_q1",
+      "level": 10,
+      "conceptTitle": "Speech Bubble to Report Converter: Tense Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Tense Backshift",
+      "directSpeech": "Felix said, \"I am the new manager.\"",
+      "reportedSpeech": "Felix said that he was the new manager.",
+      "changesList": [
+        "'am' → 'was'",
+        "'I' → 'he'"
+      ],
+      "ruleExplanation": "'Am' becomes 'was', and 'I' becomes 'he'.",
+      "nativeTip": "This combines two of the very first rules you learned — find both of them.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Felix said, \"I am the new manager.\"\" ➔ \"Felix said that he was the new manager.\""
+    },
+    {
+      "id": "dis_l10_learn_q2",
+      "level": 10,
+      "conceptTitle": "Speech Bubble to Report Converter: Pronoun Reference Shift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Pronoun Reference Shift",
+      "directSpeech": "The children said, \"We don't want to leave yet.\"",
+      "reportedSpeech": "The children said that they didn't want to leave yet.",
+      "changesList": [
+        "'we' → 'they'",
+        "'don't want' → 'didn't want'"
+      ],
+      "ruleExplanation": "'We' becomes 'they', and 'don't want' becomes 'didn't want'.",
+      "nativeTip": "Recall how 'we' changes when someone else reports a group's words, and how negatives shift tense.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The children said, \"We don't want to leave yet.\"\" ➔ \"The children said that they didn't want to leave yet.\""
+    },
+    {
+      "id": "dis_l10_learn_q3",
+      "level": 10,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Zara said, \"My phone is not working properly.\"",
+      "reportedSpeech": "Zara said that her phone was not working properly.",
+      "changesList": [
+        "'my' → 'her'",
+        "'is not working' → 'was not working'"
+      ],
+      "ruleExplanation": "'My' becomes 'her', and 'is not working' becomes 'was not working'.",
+      "nativeTip": "This question checks three things at once: the possessive, the verb 'to be', and the continuous form.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Zara said, \"My phone is not working properly.\"\" ➔ \"Zara said that her phone was not working properly.\""
+    }
+  ]
+}

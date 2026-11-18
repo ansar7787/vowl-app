@@ -1,0 +1,548 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "learn",
+  "batchIndex": 10,
+  "levels": "91-100",
+  "quests": [
+    {
+      "id": "dis_l91_learn_q1",
+      "level": 91,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Anika said to her manager, \"I sent you my report yesterday.\"",
+      "reportedSpeech": "Anika told her manager that she had sent him her report the day before.",
+      "changesList": [
+        "'sent' → 'had sent'",
+        "'you' → 'him'",
+        "'my' → 'her'",
+        "'yesterday' → 'the day before'"
+      ],
+      "ruleExplanation": "'Sent' becomes 'had sent' since it's a completed action reported later; 'you' becomes 'him', 'my' becomes 'her', and 'yesterday' becomes 'the day before'.",
+      "nativeTip": "This sentence combines four changes: the verb tense, the pronoun, the possessive, and the time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Anika said to her manager, \"I sent you my report yesterday.\"\" ➔ \"Anika told her manager that she had sent him her report the day before.\""
+    },
+    {
+      "id": "dis_l91_learn_q2",
+      "level": 91,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Tomás said to his team, \"We will finish our part of the project by Friday.\"",
+      "reportedSpeech": "Tomás told his team that they would finish their part of the project by Friday.",
+      "changesList": [
+        "'we' → 'they'",
+        "'our' → 'their'",
+        "'will' → 'would'"
+      ],
+      "ruleExplanation": "'We' and 'our' both become 'they'/'their', and 'will' becomes 'would'.",
+      "nativeTip": "Pronoun, possessive, and modal all change together here.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Tomás said to his team, \"We will finish our part of the project by Friday.\"\" ➔ \"Tomás told his team that they would finish their part of the project by Friday.\""
+    },
+    {
+      "id": "dis_l91_learn_q3",
+      "level": 91,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Freya said to her assistant, \"Can you print these documents for me here today?\"",
+      "reportedSpeech": "Freya asked her assistant to print those documents for her there that day.",
+      "changesList": [
+        "question → 'asked + object + to'",
+        "'these' → 'those'",
+        "'me' → 'her'",
+        "'here' → 'there'",
+        "'today' → 'that day'"
+      ],
+      "ruleExplanation": "The polite question becomes 'asked...to print', 'these' becomes 'those', 'for me' becomes 'for her', 'here' becomes 'there', and 'today' becomes 'that day'.",
+      "nativeTip": "This question turns into a request — check the demonstrative, place, time, and object pronoun all at once.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Freya said to her assistant, \"Can you print these documents for me here today?\"\" ➔ \"Freya asked her assistant to print those documents for her there that day.\""
+    },
+    {
+      "id": "dis_l92_learn_q1",
+      "level": 92,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Jamal said to his sister, \"I'll pick up your kids from school tomorrow.\"",
+      "reportedSpeech": "Jamal told his sister that he would pick up her kids from school the next day.",
+      "changesList": [
+        "'I'll pick up' → 'he would pick up'",
+        "'your' → 'her'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'I'll' becomes 'he would', 'your' becomes 'her', and 'tomorrow' becomes 'the next day'.",
+      "nativeTip": "Combine the modal, the possessive, and the time-word change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Jamal said to his sister, \"I'll pick up your kids from school tomorrow.\"\" ➔ \"Jamal told his sister that he would pick up her kids from school the next day.\""
+    },
+    {
+      "id": "dis_l92_learn_q2",
+      "level": 92,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Rosa said to her husband, \"I saw your mother here yesterday.\"",
+      "reportedSpeech": "Rosa told her husband that she had seen his mother there the day before.",
+      "changesList": [
+        "'saw' → 'had seen'",
+        "'your' → 'his'",
+        "'here' → 'there'",
+        "'yesterday' → 'the day before'"
+      ],
+      "ruleExplanation": "'Saw' becomes 'had seen', 'your' becomes 'his', 'here' becomes 'there', and 'yesterday' becomes 'the day before'.",
+      "nativeTip": "Four things move together in this sentence.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Rosa said to her husband, \"I saw your mother here yesterday.\"\" ➔ \"Rosa told her husband that she had seen his mother there the day before.\""
+    },
+    {
+      "id": "dis_l92_learn_q3",
+      "level": 92,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Ken said to his parents, \"We are moving into our new house next month.\"",
+      "reportedSpeech": "Ken told his parents that they were moving into their new house the following month.",
+      "changesList": [
+        "'we' → 'they'",
+        "'our' → 'their'",
+        "'are moving' → 'were moving'",
+        "'next month' → 'the following month'"
+      ],
+      "ruleExplanation": "'We' and 'our' become 'they'/'their', 'are moving' becomes 'were moving', and 'next month' becomes 'the following month'.",
+      "nativeTip": "Combine the pronoun, possessive, tense, and time-word changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Ken said to his parents, \"We are moving into our new house next month.\"\" ➔ \"Ken told his parents that they were moving into their new house the following month.\""
+    },
+    {
+      "id": "dis_l93_learn_q1",
+      "level": 93,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Amina said to the tour guide, \"Can we visit this temple tomorrow?\"",
+      "reportedSpeech": "Amina asked the tour guide whether they could visit that temple the next day.",
+      "changesList": [
+        "'can' → 'could'",
+        "'we' → 'they'",
+        "'this' → 'that'",
+        "'tomorrow' → 'the next day'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Can' becomes 'could', 'we' becomes 'they', 'this' becomes 'that', and 'tomorrow' becomes 'the next day'.",
+      "nativeTip": "This yes/no question needs the modal, pronoun, demonstrative, time word, and word order all adjusted.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Amina said to the tour guide, \"Can we visit this temple tomorrow?\"\" ➔ \"Amina asked the tour guide whether they could visit that temple the next day.\""
+    },
+    {
+      "id": "dis_l93_learn_q2",
+      "level": 93,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Pedro said to his travel companion, \"I lost my passport here yesterday.\"",
+      "reportedSpeech": "Pedro told his travel companion that he had lost his passport there the day before.",
+      "changesList": [
+        "'lost' → 'had lost'",
+        "'here' → 'there'",
+        "'yesterday' → 'the day before'"
+      ],
+      "ruleExplanation": "'Lost' becomes 'had lost', 'here' becomes 'there', and 'yesterday' becomes 'the day before'.",
+      "nativeTip": "Combine the past-perfect backshift with the place and time changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Pedro said to his travel companion, \"I lost my passport here yesterday.\"\" ➔ \"Pedro told his travel companion that he had lost his passport there the day before.\""
+    },
+    {
+      "id": "dis_l93_learn_q3",
+      "level": 93,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The airline representative said, \"Your flight will depart from here at noon tomorrow.\"",
+      "reportedSpeech": "The airline representative said that my flight would depart from there at noon the next day.",
+      "changesList": [
+        "'your' → 'my'",
+        "'will' → 'would'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'Your' becomes 'my', 'will' becomes 'would', 'here' becomes 'there', and 'tomorrow' becomes 'the next day'.",
+      "nativeTip": "This item combines the possessive, the modal, the place word, and the time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The airline representative said, \"Your flight will depart from here at noon tomorrow.\"\" ➔ \"The airline representative said that my flight would depart from there at noon the next day.\""
+    },
+    {
+      "id": "dis_l94_learn_q1",
+      "level": 94,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The doctor said to Ingrid, \"You should take this medicine twice a day starting today.\"",
+      "reportedSpeech": "The doctor told Ingrid that she should take that medicine twice a day starting that day.",
+      "changesList": [
+        "'you' → 'she'",
+        "'should' stays unchanged",
+        "'this' → 'that'",
+        "'today' → 'that day'"
+      ],
+      "ruleExplanation": "'Should' stays unchanged, 'this' becomes 'that', and 'today' becomes 'that day'; 'you' becomes 'she'.",
+      "nativeTip": "Recall that 'should' doesn't need to change further — but the demonstrative and time word still do.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The doctor said to Ingrid, \"You should take this medicine twice a day starting today.\"\" ➔ \"The doctor told Ingrid that she should take that medicine twice a day starting that day.\""
+    },
+    {
+      "id": "dis_l94_learn_q2",
+      "level": 94,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Sanjay said to the nurse, \"I have been feeling dizzy since this morning.\"",
+      "reportedSpeech": "Sanjay told the nurse that he had been feeling dizzy since that morning.",
+      "changesList": [
+        "'have been feeling' → 'had been feeling'",
+        "'this morning' → 'that morning'"
+      ],
+      "ruleExplanation": "'Have been feeling' becomes 'had been feeling', and 'this morning' becomes 'that morning'.",
+      "nativeTip": "Present perfect continuous backshifts to past perfect continuous, and the time reference shifts too.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Sanjay said to the nurse, \"I have been feeling dizzy since this morning.\"\" ➔ \"Sanjay told the nurse that he had been feeling dizzy since that morning.\""
+    },
+    {
+      "id": "dis_l94_learn_q3",
+      "level": 94,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The pharmacist said, \"You must finish this course of antibiotics.\"",
+      "reportedSpeech": "The pharmacist told me that I had to finish that course of antibiotics.",
+      "changesList": [
+        "'you' → 'I'",
+        "'must' → 'had to'",
+        "'this' → 'that'"
+      ],
+      "ruleExplanation": "'You' becomes 'I', 'must' (obligation) becomes 'had to', and 'this' becomes 'that'.",
+      "nativeTip": "This combines an obligation-modal backshift with a demonstrative and pronoun change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The pharmacist said, \"You must finish this course of antibiotics.\"\" ➔ \"The pharmacist told me that I had to finish that course of antibiotics.\""
+    },
+    {
+      "id": "dis_l95_learn_q1",
+      "level": 95,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The customer said to the manager, \"I bought this jacket here last week, but it doesn't fit.\"",
+      "reportedSpeech": "The customer told the manager that she had bought that jacket there the previous week, but it didn't fit.",
+      "changesList": [
+        "'bought' → 'had bought'",
+        "'this' → 'that'",
+        "'here' → 'there'",
+        "'last week' → 'the previous week'",
+        "'doesn't' → 'didn't'"
+      ],
+      "ruleExplanation": "'Bought' becomes 'had bought', 'this'/'here'/'last week' shift to 'that'/'there'/'the previous week', and 'doesn't' becomes 'didn't'.",
+      "nativeTip": "This sentence has two clauses — check whether each one needs to backshift.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The customer said to the manager, \"I bought this jacket here last week, but it doesn't fit.\"\" ➔ \"The customer told the manager that she had bought that jacket there the previous week, but it didn't fit.\""
+    },
+    {
+      "id": "dis_l95_learn_q2",
+      "level": 95,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The salesperson said, \"We can deliver your order here by tomorrow.\"",
+      "reportedSpeech": "The salesperson said that they could deliver my order there by the next day.",
+      "changesList": [
+        "'we' → 'they'",
+        "'your' → 'my'",
+        "'can' → 'could'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'We' becomes 'they', 'your' becomes 'my', 'can' becomes 'could', and 'tomorrow' becomes 'the next day'.",
+      "nativeTip": "Four items shift: the pronoun, the possessive, the modal, and the time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The salesperson said, \"We can deliver your order here by tomorrow.\"\" ➔ \"The salesperson said that they could deliver my order there by the next day.\""
+    },
+    {
+      "id": "dis_l95_learn_q3",
+      "level": 95,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Naledi said to the cashier, \"Do you have this in a smaller size?\"",
+      "reportedSpeech": "Naledi asked the cashier whether they had that in a smaller size.",
+      "changesList": [
+        "'do you have' → 'had'",
+        "'you' → 'they'",
+        "'this' → 'that'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Do you have' becomes 'had', 'you' becomes 'they', and 'this' becomes 'that'.",
+      "nativeTip": "Combine the do-question removal, the backshift, the pronoun, and the demonstrative.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Naledi said to the cashier, \"Do you have this in a smaller size?\"\" ➔ \"Naledi asked the cashier whether they had that in a smaller size.\""
+    },
+    {
+      "id": "dis_l96_learn_q1",
+      "level": 96,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The IT technician said to Ollie, \"Your computer will need a restart after this update.\"",
+      "reportedSpeech": "The IT technician told Ollie that his computer would need a restart after that update.",
+      "changesList": [
+        "'your' → 'his'",
+        "'will' → 'would'",
+        "'this' → 'that'"
+      ],
+      "ruleExplanation": "'Your' becomes 'his', 'will' becomes 'would', and 'this' becomes 'that'.",
+      "nativeTip": "Combine the possessive, the modal, and the demonstrative changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The IT technician said to Ollie, \"Your computer will need a restart after this update.\"\" ➔ \"The IT technician told Ollie that his computer would need a restart after that update.\""
+    },
+    {
+      "id": "dis_l96_learn_q2",
+      "level": 96,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Beatriz said, \"I've already reported this bug to the developers.\"",
+      "reportedSpeech": "Beatriz said that she had already reported that bug to the developers.",
+      "changesList": [
+        "'I've reported' → 'she had reported'",
+        "'this' → 'that'"
+      ],
+      "ruleExplanation": "'I've reported' becomes 'she had reported', and 'this' becomes 'that'.",
+      "nativeTip": "Combine the pronoun, the present perfect backshift, and the demonstrative.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Beatriz said, \"I've already reported this bug to the developers.\"\" ➔ \"Beatriz said that she had already reported that bug to the developers.\""
+    },
+    {
+      "id": "dis_l96_learn_q3",
+      "level": 96,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The support agent said, \"We are investigating your issue and will contact you here tomorrow.\"",
+      "reportedSpeech": "The support agent said that they were investigating my issue and would contact me there the next day.",
+      "changesList": [
+        "'we' → 'they'",
+        "'your' → 'my'",
+        "'you' → 'me'",
+        "'are investigating' → 'were investigating'",
+        "'will contact' → 'would contact'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'We'/'your'/'you' become 'they'/'my'/'me', 'are investigating' becomes 'were investigating', 'will contact' becomes 'would contact', 'here' becomes 'there', and 'tomorrow' becomes 'the next day'.",
+      "nativeTip": "Multiple changes across two clauses: pronoun, possessive, tense, modal, place, and time.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The support agent said, \"We are investigating your issue and will contact you here tomorrow.\"\" ➔ \"The support agent said that they were investigating my issue and would contact me there the next day.\""
+    },
+    {
+      "id": "dis_l97_learn_q1",
+      "level": 97,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The professor said to Arjun, \"You should submit your thesis draft here by next Friday.\"",
+      "reportedSpeech": "The professor told Arjun that he should submit his thesis draft there by the following Friday.",
+      "changesList": [
+        "'you' → 'he'",
+        "'your' → 'his'",
+        "'here' → 'there'",
+        "'next Friday' → 'the following Friday'",
+        "'should' stays unchanged"
+      ],
+      "ruleExplanation": "'You' becomes 'he', 'your' becomes 'his', 'here' becomes 'there', and 'next Friday' becomes 'the following Friday'; 'should' remains unchanged.",
+      "nativeTip": "'Should' stays the same, but the pronoun, possessive, place, and time all shift.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The professor said to Arjun, \"You should submit your thesis draft here by next Friday.\"\" ➔ \"The professor told Arjun that he should submit his thesis draft there by the following Friday.\""
+    },
+    {
+      "id": "dis_l97_learn_q2",
+      "level": 97,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Kiri said, \"I have been studying here since this morning.\"",
+      "reportedSpeech": "Kiri said that she had been studying there since that morning.",
+      "changesList": [
+        "'have been studying' → 'had been studying'",
+        "'here' → 'there'",
+        "'this morning' → 'that morning'"
+      ],
+      "ruleExplanation": "'Have been studying' becomes 'had been studying', 'here' becomes 'there', and 'this morning' becomes 'that morning'.",
+      "nativeTip": "Combine the present perfect continuous backshift with the place and time changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Kiri said, \"I have been studying here since this morning.\"\" ➔ \"Kiri said that she had been studying there since that morning.\""
+    },
+    {
+      "id": "dis_l97_learn_q3",
+      "level": 97,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The dean said to the students, \"You must complete this form and submit it here by tomorrow.\"",
+      "reportedSpeech": "The dean told the students that they had to complete that form and submit it there by the next day.",
+      "changesList": [
+        "'you' → 'they'",
+        "'must' → 'had to'",
+        "'this' → 'that'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'You' becomes 'they', 'must' becomes 'had to', 'this' becomes 'that', 'here' becomes 'there', and 'tomorrow' becomes 'the next day'.",
+      "nativeTip": "This review sentence combines a modal, a pronoun, a demonstrative, a place word, and a time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The dean said to the students, \"You must complete this form and submit it here by tomorrow.\"\" ➔ \"The dean told the students that they had to complete that form and submit it there by the next day.\""
+    },
+    {
+      "id": "dis_l98_learn_q1",
+      "level": 98,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The real estate agent said to Dmitri, \"This apartment will be available next month.\"",
+      "reportedSpeech": "The real estate agent told Dmitri that that apartment would be available the following month.",
+      "changesList": [
+        "'this' → 'that'",
+        "'will' → 'would'",
+        "'next month' → 'the following month'"
+      ],
+      "ruleExplanation": "'This' becomes 'that', 'will' becomes 'would', and 'next month' becomes 'the following month'.",
+      "nativeTip": "Combine the demonstrative, the modal, and the time-word changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The real estate agent said to Dmitri, \"This apartment will be available next month.\"\" ➔ \"The real estate agent told Dmitri that that apartment would be available the following month.\""
+    },
+    {
+      "id": "dis_l98_learn_q2",
+      "level": 98,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Wanjiru said to the landlord, \"I paid my rent here yesterday.\"",
+      "reportedSpeech": "Wanjiru told the landlord that she had paid her rent there the day before.",
+      "changesList": [
+        "'paid' → 'had paid'",
+        "'here' → 'there'",
+        "'yesterday' → 'the day before'"
+      ],
+      "ruleExplanation": "'Paid' becomes 'had paid', 'here' becomes 'there', and 'yesterday' becomes 'the day before'.",
+      "nativeTip": "Combine the past-perfect backshift with the possessive, place, and time changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Wanjiru said to the landlord, \"I paid my rent here yesterday.\"\" ➔ \"Wanjiru told the landlord that she had paid her rent there the day before.\""
+    },
+    {
+      "id": "dis_l98_learn_q3",
+      "level": 98,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The landlord said, \"You can move in here tomorrow if you sign the lease today.\"",
+      "reportedSpeech": "The landlord said that I could move in there the next day if I signed the lease that day.",
+      "changesList": [
+        "'you' → 'I'",
+        "'can' → 'could'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'",
+        "'today' → 'that day'"
+      ],
+      "ruleExplanation": "'You' becomes 'I' throughout, 'can' becomes 'could', 'here' becomes 'there', 'tomorrow' becomes 'the next day', and 'today' becomes 'that day'.",
+      "nativeTip": "This complex sentence has two clauses — both need their pronouns, place words, and time words updated.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The landlord said, \"You can move in here tomorrow if you sign the lease today.\"\" ➔ \"The landlord said that I could move in there the next day if I signed the lease that day.\""
+    },
+    {
+      "id": "dis_l99_learn_q1",
+      "level": 99,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The lawyer said to her client, \"You must sign these documents here before tomorrow.\"",
+      "reportedSpeech": "The lawyer told her client that he had to sign those documents there before the next day.",
+      "changesList": [
+        "'you' → 'he'",
+        "'must' → 'had to'",
+        "'these' → 'those'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'You' becomes 'he', 'must' becomes 'had to', 'these' becomes 'those', 'here' becomes 'there', and 'tomorrow' becomes 'the next day'.",
+      "nativeTip": "Combine the obligation-modal backshift with the demonstrative, place, and time changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The lawyer said to her client, \"You must sign these documents here before tomorrow.\"\" ➔ \"The lawyer told her client that he had to sign those documents there before the next day.\""
+    },
+    {
+      "id": "dis_l99_learn_q2",
+      "level": 99,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The judge said, \"This court will reconvene tomorrow morning.\"",
+      "reportedSpeech": "The judge said that that court would reconvene the next morning.",
+      "changesList": [
+        "'this' → 'that'",
+        "'will' → 'would'",
+        "'tomorrow morning' → 'the next morning'"
+      ],
+      "ruleExplanation": "'This' becomes 'that', 'will' becomes 'would', and 'tomorrow morning' becomes 'the next morning'.",
+      "nativeTip": "This one asks you to juggle three shifts at once: the demonstrative, the modal, and the time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The judge said, \"This court will reconvene tomorrow morning.\"\" ➔ \"The judge said that that court would reconvene the next morning.\""
+    },
+    {
+      "id": "dis_l99_learn_q3",
+      "level": 99,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The witness said, \"I saw the defendant here yesterday, and he was carrying a bag.\"",
+      "reportedSpeech": "The witness said that she had seen the defendant there the day before, and he had been carrying a bag.",
+      "changesList": [
+        "'saw' → 'had seen'",
+        "'was carrying' → 'had been carrying'",
+        "'here' → 'there'",
+        "'yesterday' → 'the day before'"
+      ],
+      "ruleExplanation": "'Saw' becomes 'had seen', 'was carrying' becomes 'had been carrying', 'here' becomes 'there', and 'yesterday' becomes 'the day before'.",
+      "nativeTip": "Both clauses in this testimony need to backshift, along with the place and time words.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The witness said, \"I saw the defendant here yesterday, and he was carrying a bag.\"\" ➔ \"The witness said that she had seen the defendant there the day before, and he had been carrying a bag.\""
+    },
+    {
+      "id": "dis_l100_learn_q1",
+      "level": 100,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Mireille said to her business partner, \"I will present our proposal here tomorrow, and I need your feedback today.\"",
+      "reportedSpeech": "Mireille told her business partner that she would present their proposal there the next day, and she needed his feedback that day.",
+      "changesList": [
+        "'I' → 'she'",
+        "'our' → 'their'",
+        "'your' → 'his'",
+        "'will present' → 'would present'",
+        "'need' → 'needed'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'",
+        "'today' → 'that day'"
+      ],
+      "ruleExplanation": "'I'/'our'/'your' become 'she'/'their'/'his', 'will present' becomes 'would present', 'need' becomes 'needed', 'here' becomes 'there', 'tomorrow' becomes 'the next day', and 'today' becomes 'that day'.",
+      "nativeTip": "This milestone question combines nearly everything you've learned: pronoun, possessive, modal, tense, place, and time changes across two clauses.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Mireille said to her business partner, \"I will present our proposal here tomorrow, and I need your feedback today.\"\" ➔ \"Mireille told her business partner that she would present their proposal there the next day, and she needed his feedback that day.\""
+    },
+    {
+      "id": "dis_l100_learn_q2",
+      "level": 100,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "Youssef said, \"This is a fact: water is essential for life, and I drink two liters every day.\"",
+      "reportedSpeech": "Youssef said that it was a fact that water is essential for life, and that he drinks two liters every day.",
+      "changesList": [
+        "'this' → 'it'",
+        "'is essential' stays present (universal truth)",
+        "'I drink' → 'he drinks' (ongoing habit)"
+      ],
+      "ruleExplanation": "'Water is essential' stays present as a universal truth, and 'I drink' can stay present as an ongoing habit, becoming 'he drinks'; 'this' becomes 'it'.",
+      "nativeTip": "One clause is a universal truth and stays unchanged; the other is a personal habit that's still true — think carefully about each.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Youssef said, \"This is a fact: water is essential for life, and I drink two liters every day.\"\" ➔ \"Youssef said that it was a fact that water is essential for life, and that he drinks two liters every day.\""
+    },
+    {
+      "id": "dis_l100_learn_q3",
+      "level": 100,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The CEO announced to the staff, \"We must adapt to these changes, and we will succeed together.\"",
+      "reportedSpeech": "The CEO announced to the staff that they had to adapt to those changes and that they would succeed together.",
+      "changesList": [
+        "'we' → 'they'",
+        "'must' → 'had to'",
+        "'these' → 'those'",
+        "'will succeed' → 'would succeed'"
+      ],
+      "ruleExplanation": "'We' becomes 'they', 'must' becomes 'had to', 'these' becomes 'those', and 'will succeed' becomes 'would succeed'.",
+      "nativeTip": "This final foundational review combines the pronoun, modal, and demonstrative changes across two connected clauses.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The CEO announced to the staff, \"We must adapt to these changes, and we will succeed together.\"\" ➔ \"The CEO announced to the staff that they had to adapt to those changes and that they would succeed together.\""
+    }
+  ]
+}

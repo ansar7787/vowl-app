@@ -1,0 +1,518 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "learn",
+  "batchIndex": 16,
+  "levels": "151-160",
+  "quests": [
+    {
+      "id": "dis_l151_learn_q1",
+      "level": 151,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Ezra said, \"I'm tired because I worked overtime all week.\"",
+      "reportedSpeech": "Ezra said that he was tired because he had worked overtime all week.",
+      "changesList": [
+        "'am' → 'was'",
+        "'worked' → 'had worked'"
+      ],
+      "ruleExplanation": "'Am tired' becomes 'was tired', and 'worked' (a finished action before the tiredness) becomes 'had worked'.",
+      "nativeTip": "Both the main clause and the reason clause need to backshift, and the reason describes something completed earlier.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Ezra said, \"I'm tired because I worked overtime all week.\"\" ➔ \"Ezra said that he was tired because he had worked overtime all week.\""
+    },
+    {
+      "id": "dis_l151_learn_q2",
+      "level": 151,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The company said, \"We are downsizing because sales have dropped this quarter.\"",
+      "reportedSpeech": "The company said that they were downsizing because sales had dropped that quarter.",
+      "changesList": [
+        "'are downsizing' → 'were downsizing'",
+        "'have dropped' → 'had dropped'",
+        "'this quarter' → 'that quarter'"
+      ],
+      "ruleExplanation": "'Are downsizing' becomes 'were downsizing', 'have dropped' becomes 'had dropped', and 'this quarter' becomes 'that quarter'.",
+      "nativeTip": "Two different tenses need separate treatment here: the ongoing action and the completed one.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The company said, \"We are downsizing because sales have dropped this quarter.\"\" ➔ \"The company said that they were downsizing because sales had dropped that quarter.\""
+    },
+    {
+      "id": "dis_l151_learn_q3",
+      "level": 151,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Simone said, \"I can't come to the party because I promised to help my parents move.\"",
+      "reportedSpeech": "Simone said that she couldn't come to the party because she had promised to help her parents move.",
+      "changesList": [
+        "'can't' → 'couldn't'",
+        "'promised' → 'had promised'",
+        "'my' → 'her'"
+      ],
+      "ruleExplanation": "'Can't' becomes 'couldn't', 'promised' becomes 'had promised', and 'my' becomes 'her'.",
+      "nativeTip": "The modal in the first clause and the verb in the reason clause both need to backshift.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Simone said, \"I can't come to the party because I promised to help my parents move.\"\" ➔ \"Simone said that she couldn't come to the party because she had promised to help her parents move.\""
+    },
+    {
+      "id": "dis_l152_learn_q1",
+      "level": 152,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Bertrand said, \"Although I'm exhausted, I'll finish the report tonight.\"",
+      "reportedSpeech": "Bertrand said that although he was exhausted, he would finish the report that night.",
+      "changesList": [
+        "'am' → 'was'",
+        "'will finish' → 'would finish'",
+        "'tonight' → 'that night'"
+      ],
+      "ruleExplanation": "'Am' becomes 'was', 'will finish' becomes 'would finish', and 'tonight' becomes 'that night'.",
+      "nativeTip": "This sentence has two clauses joined by 'although' — both need to backshift, and the time word changes too.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Bertrand said, \"Although I'm exhausted, I'll finish the report tonight.\"\" ➔ \"Bertrand said that although he was exhausted, he would finish the report that night.\""
+    },
+    {
+      "id": "dis_l152_learn_q2",
+      "level": 152,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The manager said, \"Even though we missed the deadline, the client is still satisfied.\"",
+      "reportedSpeech": "The manager said that even though they had missed the deadline, the client was still satisfied.",
+      "changesList": [
+        "'we missed' → 'they had missed'",
+        "'is' → 'was'"
+      ],
+      "ruleExplanation": "'Missed' becomes 'had missed' since it happened earlier, while 'is' simply backshifts to 'was'.",
+      "nativeTip": "The first clause describes a finished past action, so it backshifts one more step than the second clause.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager said, \"Even though we missed the deadline, the client is still satisfied.\"\" ➔ \"The manager said that even though they had missed the deadline, the client was still satisfied.\""
+    },
+    {
+      "id": "dis_l152_learn_q3",
+      "level": 152,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Odalys said, \"Though I don't agree with the decision, I will support the team.\"",
+      "reportedSpeech": "Odalys said that though she didn't agree with the decision, she would support the team.",
+      "changesList": [
+        "'don't agree' → 'didn't agree'",
+        "'will support' → 'would support'"
+      ],
+      "ruleExplanation": "'Don't agree' becomes 'didn't agree', and 'will support' becomes 'would support'.",
+      "nativeTip": "Both clauses backshift here — the present negative and the future modal.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Odalys said, \"Though I don't agree with the decision, I will support the team.\"\" ➔ \"Odalys said that though she didn't agree with the decision, she would support the team.\""
+    },
+    {
+      "id": "dis_l153_learn_q1",
+      "level": 153,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The teacher said, \"If you study hard, you will pass the exam.\"",
+      "reportedSpeech": "The teacher said that if I studied hard, I would pass the exam.",
+      "changesList": [
+        "'study' → 'studied'",
+        "'will pass' → 'would pass'",
+        "'you' → 'I'"
+      ],
+      "ruleExplanation": "'Study' becomes 'studied', and 'will pass' becomes 'would pass'; 'you' becomes 'I' throughout.",
+      "nativeTip": "Both parts of a first-conditional sentence backshift together: the if-clause and the result clause.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The teacher said, \"If you study hard, you will pass the exam.\"\" ➔ \"The teacher said that if I studied hard, I would pass the exam.\""
+    },
+    {
+      "id": "dis_l153_learn_q2",
+      "level": 153,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The mechanic said, \"If the part arrives on time, we can finish the repair today.\"",
+      "reportedSpeech": "The mechanic said that if the part arrived on time, they could finish the repair that day.",
+      "changesList": [
+        "'arrives' → 'arrived'",
+        "'can' → 'could'",
+        "'we' → 'they'",
+        "'today' → 'that day'"
+      ],
+      "ruleExplanation": "'Arrives' becomes 'arrived' (not 'had arrived', since this describes a general future condition, not an earlier completed action), 'can' becomes 'could', 'we' becomes 'they', and 'today' becomes 'that day'.",
+      "nativeTip": "Backshift the if-clause verb, the modal, the pronoun, and the time word, but don't over-backshift the if-clause into a past perfect.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The mechanic said, \"If the part arrives on time, we can finish the repair today.\"\" ➔ \"The mechanic said that if the part arrived on time, they could finish the repair that day.\""
+    },
+    {
+      "id": "dis_l153_learn_q3",
+      "level": 153,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Kenji said, \"If I get the promotion, I'll take you all out to celebrate.\"",
+      "reportedSpeech": "Kenji said that if he got the promotion, he would take us all out to celebrate.",
+      "changesList": [
+        "'get' → 'got'",
+        "'will take' → 'would take'",
+        "'you' → 'us'"
+      ],
+      "ruleExplanation": "'Get' becomes 'got', 'will take' becomes 'would take', and 'you' becomes 'us' since the reporter is among those being taken out.",
+      "nativeTip": "Backshift both clauses, and check who 'you' refers to if the listeners are the ones being reported to.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Kenji said, \"If I get the promotion, I'll take you all out to celebrate.\"\" ➔ \"Kenji said that if he got the promotion, he would take us all out to celebrate.\""
+    },
+    {
+      "id": "dis_l154_learn_q1",
+      "level": 154,
+      "conceptTitle": "Speech Bubble to Report Converter: Tense Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Tense Backshift",
+      "directSpeech": "Perpetua said, \"I always feel nervous before I give a presentation.\"",
+      "reportedSpeech": "Perpetua said that she always felt nervous before she gave a presentation.",
+      "changesList": [
+        "'feel' → 'felt'",
+        "'give' → 'gave'"
+      ],
+      "ruleExplanation": "'Feel' becomes 'felt', and 'give' becomes 'gave'; no further backshift to past perfect is needed since this is a repeated pattern, not a single earlier event.",
+      "nativeTip": "This describes a repeated habit, so both verbs backshift by just one step, not two.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Perpetua said, \"I always feel nervous before I give a presentation.\"\" ➔ \"Perpetua said that she always felt nervous before she gave a presentation.\""
+    },
+    {
+      "id": "dis_l154_learn_q2",
+      "level": 154,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Tobias said, \"I called you as soon as I heard the news.\"",
+      "reportedSpeech": "Tobias said that he had called me as soon as he had heard the news.",
+      "changesList": [
+        "'called' → 'had called'",
+        "'heard' → 'had heard'",
+        "'you' → 'me'"
+      ],
+      "ruleExplanation": "'Called' and 'heard' both become past perfect ('had called', 'had heard'), and 'you' becomes 'me'.",
+      "nativeTip": "Both actions happened before the moment of reporting, so both verbs move one more step back.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Tobias said, \"I called you as soon as I heard the news.\"\" ➔ \"Tobias said that he had called me as soon as he had heard the news.\""
+    },
+    {
+      "id": "dis_l154_learn_q3",
+      "level": 154,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The nurse said, \"While you were sleeping, your temperature went down.\"",
+      "reportedSpeech": "The nurse said that while I was sleeping, my temperature had gone down.",
+      "changesList": [
+        "'you' → 'I'",
+        "'your' → 'my'",
+        "'went down' → 'had gone down'"
+      ],
+      "ruleExplanation": "'Were sleeping' stays as 'was sleeping' (already past continuous, describing a background action), while 'went down' becomes 'had gone down'; 'you'/'your' become 'I'/'my'.",
+      "nativeTip": "The ongoing action stays as past continuous, but the completed result backshifts one more step.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The nurse said, \"While you were sleeping, your temperature went down.\"\" ➔ \"The nurse said that while I was sleeping, my temperature had gone down.\""
+    },
+    {
+      "id": "dis_l155_learn_q1",
+      "level": 155,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Ingrid2 said, \"The book that you recommended was excellent.\"",
+      "reportedSpeech": "Ingrid2 said that the book that I had recommended was excellent.",
+      "changesList": [
+        "'recommended' → 'had recommended'",
+        "'you' → 'I'"
+      ],
+      "ruleExplanation": "'Recommended' becomes 'had recommended' since it happened before the book was read, and 'you' becomes 'I'.",
+      "nativeTip": "The relative clause contains its own verb that needs to backshift, along with the pronoun.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Ingrid2 said, \"The book that you recommended was excellent.\"\" ➔ \"Ingrid2 said that the book that I had recommended was excellent.\""
+    },
+    {
+      "id": "dis_l155_learn_q2",
+      "level": 155,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The manager said, \"The employee who resigned yesterday was our best performer.\"",
+      "reportedSpeech": "The manager said that the employee who had resigned the day before had been their best performer.",
+      "changesList": [
+        "'resigned' → 'had resigned'",
+        "'was' → 'had been'",
+        "'yesterday' → 'the day before'",
+        "'our' → 'their'"
+      ],
+      "ruleExplanation": "'Resigned' becomes 'had resigned', 'was' becomes 'had been' (since it's describing a state before the resignation), 'yesterday' becomes 'the day before', and 'our' becomes 'their'.",
+      "nativeTip": "This sentence has two clauses, and both verbs need to backshift along with the time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager said, \"The employee who resigned yesterday was our best performer.\"\" ➔ \"The manager said that the employee who had resigned the day before had been their best performer.\""
+    },
+    {
+      "id": "dis_l155_learn_q3",
+      "level": 155,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Esperanza said, \"The house which we bought last year needs some repairs.\"",
+      "reportedSpeech": "Esperanza said that the house which they had bought the previous year needed some repairs.",
+      "changesList": [
+        "'bought' → 'had bought'",
+        "'we' → 'they'",
+        "'needs' → 'needed'",
+        "'last year' → 'the previous year'"
+      ],
+      "ruleExplanation": "'Bought' becomes 'had bought', 'we' becomes 'they', 'needs' becomes 'needed', and 'last year' becomes 'the previous year'.",
+      "nativeTip": "Combine the relative-clause backshift with the pronoun, the main-clause tense, and the time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Esperanza said, \"The house which we bought last year needs some repairs.\"\" ➔ \"Esperanza said that the house which they had bought the previous year needed some repairs.\""
+    },
+    {
+      "id": "dis_l156_learn_q1",
+      "level": 156,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The chef said, \"The kitchen was so busy that I couldn't take a break.\"",
+      "reportedSpeech": "The chef said that the kitchen had been so busy that he couldn't take a break.",
+      "changesList": [
+        "'was' → 'had been'",
+        "'I' → 'he'"
+      ],
+      "ruleExplanation": "'Was' becomes 'had been' since it's a completed state, while 'couldn't' stays the same since it's already a past-time modal form.",
+      "nativeTip": "The first clause describes a finished situation, so it backshifts one more step than the second clause.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The chef said, \"The kitchen was so busy that I couldn't take a break.\"\" ➔ \"The chef said that the kitchen had been so busy that he couldn't take a break.\""
+    },
+    {
+      "id": "dis_l156_learn_q2",
+      "level": 156,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Perpetua said, \"The traffic was so bad that I arrived an hour late.\"",
+      "reportedSpeech": "Perpetua said that the traffic had been so bad that she had arrived an hour late.",
+      "changesList": [
+        "'was' → 'had been'",
+        "'arrived' → 'had arrived'"
+      ],
+      "ruleExplanation": "'Was' becomes 'had been', and 'arrived' becomes 'had arrived'.",
+      "nativeTip": "Both clauses describe completed past events, so both backshift one more step.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Perpetua said, \"The traffic was so bad that I arrived an hour late.\"\" ➔ \"Perpetua said that the traffic had been so bad that she had arrived an hour late.\""
+    },
+    {
+      "id": "dis_l156_learn_q3",
+      "level": 156,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The teacher said, \"The students were so quiet that I thought no one was there.\"",
+      "reportedSpeech": "The teacher said that the students had been so quiet that she had thought no one was there.",
+      "changesList": [
+        "'were' → 'had been'",
+        "'thought' → 'had thought'"
+      ],
+      "ruleExplanation": "'Were' becomes 'had been', 'thought' becomes 'had thought', while 'was there' stays as 'was there' since it describes a simultaneous state, not an earlier one.",
+      "nativeTip": "This sentence has three verbs across two clauses — check each one for the correct level of backshift.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The teacher said, \"The students were so quiet that I thought no one was there.\"\" ➔ \"The teacher said that the students had been so quiet that she had thought no one was there.\""
+    },
+    {
+      "id": "dis_l157_learn_q1",
+      "level": 157,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Emeka said, \"I'm saving money so that I can travel next year.\"",
+      "reportedSpeech": "Emeka said that he was saving money so that he could travel the following year.",
+      "changesList": [
+        "'am saving' → 'was saving'",
+        "'can' → 'could'",
+        "'next year' → 'the following year'"
+      ],
+      "ruleExplanation": "'Am saving' becomes 'was saving', 'can' becomes 'could', and 'next year' becomes 'the following year'.",
+      "nativeTip": "Both the main clause and the purpose clause backshift, along with the time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Emeka said, \"I'm saving money so that I can travel next year.\"\" ➔ \"Emeka said that he was saving money so that he could travel the following year.\""
+    },
+    {
+      "id": "dis_l157_learn_q2",
+      "level": 157,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The company said, \"We are hiring more staff in order to meet demand.\"",
+      "reportedSpeech": "The company said that they were hiring more staff in order to meet demand.",
+      "changesList": [
+        "'are hiring' → 'were hiring'",
+        "'we' → 'they'"
+      ],
+      "ruleExplanation": "'Are hiring' becomes 'were hiring', and 'we' becomes 'they'; the purpose clause itself stays in its infinitive form.",
+      "nativeTip": "The purpose clause with 'in order to' doesn't change its structure — only the main clause backshifts.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The company said, \"We are hiring more staff in order to meet demand.\"\" ➔ \"The company said that they were hiring more staff in order to meet demand.\""
+    },
+    {
+      "id": "dis_l157_learn_q3",
+      "level": 157,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Isabella said, \"I'm learning Spanish so that I can talk to my grandmother here.\"",
+      "reportedSpeech": "Isabella said that she was learning Spanish so that she could talk to her grandmother there.",
+      "changesList": [
+        "'am learning' → 'was learning'",
+        "'can' → 'could'",
+        "'my' → 'her'",
+        "'here' → 'there'"
+      ],
+      "ruleExplanation": "'Am learning' becomes 'was learning', 'can' becomes 'could', 'my' becomes 'her', and 'here' becomes 'there'.",
+      "nativeTip": "This combines the tense, the modal, the pronoun, the possessive, and the place word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Isabella said, \"I'm learning Spanish so that I can talk to my grandmother here.\"\" ➔ \"Isabella said that she was learning Spanish so that she could talk to her grandmother there.\""
+    },
+    {
+      "id": "dis_l158_learn_q1",
+      "level": 158,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Wei said, \"Although I was late, I didn't miss the meeting because it started late too.\"",
+      "reportedSpeech": "Wei said that although he had been late, he hadn't missed the meeting because it had started late too.",
+      "changesList": [
+        "'was' → 'had been'",
+        "'didn't miss' → 'hadn't missed'",
+        "'started' → 'had started'"
+      ],
+      "ruleExplanation": "'Was' becomes 'had been', 'didn't miss' becomes 'hadn't missed', and 'started' becomes 'had started', since all three describe completed events before the moment of reporting.",
+      "nativeTip": "This sentence has three separate clauses joined by 'although' and 'because' — every verb needs to backshift one more step.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Wei said, \"Although I was late, I didn't miss the meeting because it started late too.\"\" ➔ \"Wei said that although he had been late, he hadn't missed the meeting because it had started late too.\""
+    },
+    {
+      "id": "dis_l158_learn_q2",
+      "level": 158,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The manager said, \"Even though sales dropped this month, we will keep our prices the same because our customers value quality.\"",
+      "reportedSpeech": "The manager said that even though sales had dropped that month, they would keep their prices the same because their customers valued quality.",
+      "changesList": [
+        "'dropped' → 'had dropped'",
+        "'will keep' → 'would keep'",
+        "'value' → 'valued'",
+        "'this month' → 'that month'",
+        "'our' → 'their'"
+      ],
+      "ruleExplanation": "'Dropped' becomes 'had dropped', 'will keep' becomes 'would keep', and 'value' becomes 'valued'; 'this month' becomes 'that month' and 'our' becomes 'their' throughout.",
+      "nativeTip": "This sentence has three clauses with three different verb changes — a completed action, a future plan, and an ongoing belief.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager said, \"Even though sales dropped this month, we will keep our prices the same because our customers value quality.\"\" ➔ \"The manager said that even though sales had dropped that month, they would keep their prices the same because their customers valued quality.\""
+    },
+    {
+      "id": "dis_l158_learn_q3",
+      "level": 158,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Halima said, \"Because I finished early, I offered to help you, even though you said you didn't need it.\"",
+      "reportedSpeech": "Halima said that because she had finished early, she had offered to help me, even though I had said I didn't need it.",
+      "changesList": [
+        "'finished' → 'had finished'",
+        "'offered' → 'had offered'",
+        "'said' → 'had said'",
+        "'you' → 'me'/'I'"
+      ],
+      "ruleExplanation": "'Finished'/'offered'/'said' all become past perfect since they describe a sequence of completed past events, and 'you' becomes 'me'/'I' since the listener is now the one reporting.",
+      "nativeTip": "This sentence has four separate clauses — track each pronoun and verb through the whole passage.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Halima said, \"Because I finished early, I offered to help you, even though you said you didn't need it.\"\" ➔ \"Halima said that because she had finished early, she had offered to help me, even though I had said I didn't need it.\""
+    },
+    {
+      "id": "dis_l159_learn_q1",
+      "level": 159,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The detective asked, \"Do you know the man who was standing near the door?\"",
+      "reportedSpeech": "The detective asked whether I knew the man who had been standing near the door.",
+      "changesList": [
+        "'do you know' → 'whether I knew'",
+        "'was standing' → 'had been standing'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Do you know' becomes 'whether I knew', and 'was standing' becomes 'had been standing'.",
+      "nativeTip": "Both the main question and the relative clause inside it need to backshift, plus the word order.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The detective asked, \"Do you know the man who was standing near the door?\"\" ➔ \"The detective asked whether I knew the man who had been standing near the door.\""
+    },
+    {
+      "id": "dis_l159_learn_q2",
+      "level": 159,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The teacher asked, \"Can you explain why the experiment that we did failed?\"",
+      "reportedSpeech": "The teacher asked whether I could explain why the experiment that they had done had failed.",
+      "changesList": [
+        "'can' → 'could'",
+        "'we' → 'they'",
+        "'did' → 'had done'",
+        "'failed' → 'had failed'"
+      ],
+      "ruleExplanation": "'Can' becomes 'could', 'we' becomes 'they', 'did' becomes 'had done', and 'failed' becomes 'had failed'.",
+      "nativeTip": "This nested question has three levels — the main question, an embedded 'why' clause, and a relative clause inside that.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The teacher asked, \"Can you explain why the experiment that we did failed?\"\" ➔ \"The teacher asked whether I could explain why the experiment that they had done had failed.\""
+    },
+    {
+      "id": "dis_l159_learn_q3",
+      "level": 159,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The interviewer asked, \"What would you do if the plan that you proposed didn't work?\"",
+      "reportedSpeech": "The interviewer asked what I would do if the plan that I had proposed didn't work.",
+      "changesList": [
+        "'you proposed' → 'I had proposed'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Proposed' becomes 'had proposed', while 'didn't work' stays the same since it describes a general hypothetical condition, not an earlier completed event.",
+      "nativeTip": "This combines a reported question, a conditional clause, and a relative clause all in one sentence.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The interviewer asked, \"What would you do if the plan that you proposed didn't work?\"\" ➔ \"The interviewer asked what I would do if the plan that I had proposed didn't work.\""
+    },
+    {
+      "id": "dis_l160_learn_q1",
+      "level": 160,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Rafael said, \"Even though I was nervous, I gave the presentation because my manager asked me to.\"",
+      "reportedSpeech": "Rafael said that even though he had been nervous, he had given the presentation because his manager had asked him to.",
+      "changesList": [
+        "'was' → 'had been'",
+        "'gave' → 'had given'",
+        "'asked' → 'had asked'"
+      ],
+      "ruleExplanation": "'Was', 'gave', and 'asked' all backshift to their past perfect forms since they describe a sequence of completed events.",
+      "nativeTip": "This review question has three clauses, each describing a completed action before the moment of reporting.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Rafael said, \"Even though I was nervous, I gave the presentation because my manager asked me to.\"\" ➔ \"Rafael said that even though he had been nervous, he had given the presentation because his manager had asked him to.\""
+    },
+    {
+      "id": "dis_l160_learn_q2",
+      "level": 160,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The scientist said, \"If we don't reduce emissions, the situation that we're facing today will get worse.\"",
+      "reportedSpeech": "The scientist said that if they didn't reduce emissions, the situation that they were facing that day would get worse.",
+      "changesList": [
+        "'don't reduce' → 'didn't reduce'",
+        "'are facing' → 'were facing'",
+        "'will get' → 'would get'",
+        "'today' → 'that day'"
+      ],
+      "ruleExplanation": "'Don't reduce' becomes 'didn't reduce', 'are facing' becomes 'were facing', 'will get' becomes 'would get', and 'today' becomes 'that day'.",
+      "nativeTip": "This combines a conditional clause, a relative clause, and a future modal — check the correct level of backshift for each.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The scientist said, \"If we don't reduce emissions, the situation that we're facing today will get worse.\"\" ➔ \"The scientist said that if they didn't reduce emissions, the situation that they were facing that day would get worse.\""
+    },
+    {
+      "id": "dis_l160_learn_q3",
+      "level": 160,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Thandiwe said, \"The colleague who helped me finish the project so that we could meet the deadline deserves recognition.\"",
+      "reportedSpeech": "Thandiwe said that the colleague who had helped her finish the project so that they could meet the deadline deserved recognition.",
+      "changesList": [
+        "'helped' → 'had helped'",
+        "'me' → 'her'",
+        "'we' → 'they'",
+        "'deserves' → 'deserved'"
+      ],
+      "ruleExplanation": "'Helped' becomes 'had helped' since it happened before the deadline, 'me' becomes 'her', 'we' becomes 'they', and 'deserves' becomes 'deserved'.",
+      "nativeTip": "This final review question combines a relative clause, a purpose clause, and the main verb — each needing its own backshift.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Thandiwe said, \"The colleague who helped me finish the project so that we could meet the deadline deserves recognition.\"\" ➔ \"Thandiwe said that the colleague who had helped her finish the project so that they could meet the deadline deserved recognition.\""
+    }
+  ]
+}

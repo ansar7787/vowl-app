@@ -74,6 +74,8 @@ import 'package:vowl/features/grammar/conditionals/presentation/pages/conditiona
 import 'package:vowl/features/grammar/conditionals/presentation/pages/conditionals_practice_screen.dart';
 import 'package:vowl/features/grammar/conjunctions/presentation/pages/conjunctions_learn_screen.dart';
 import 'package:vowl/features/grammar/conjunctions/presentation/pages/conjunctions_practice_screen.dart';
+import 'package:vowl/features/grammar/direct_indirect_speech/presentation/pages/direct_indirect_speech_learn_screen.dart';
+import 'package:vowl/features/grammar/direct_indirect_speech/presentation/pages/direct_indirect_speech_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -501,6 +503,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'directindirectspeech') {
+          return fadeTransitionPage(
+            child: DirectIndirectSpeechLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -707,6 +715,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'conjunctions') {
           return fadeTransitionPage(
             child: ConjunctionsPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'directindirectspeech') {
+          return fadeTransitionPage(
+            child: DirectIndirectSpeechPracticeScreen(level: level),
             state: state,
           );
         }

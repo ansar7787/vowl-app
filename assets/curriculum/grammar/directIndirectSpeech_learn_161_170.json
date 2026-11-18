@@ -1,0 +1,527 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "learn",
+  "batchIndex": 17,
+  "levels": "161-170",
+  "quests": [
+    {
+      "id": "dis_l161_learn_q1",
+      "level": 161,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Ken texted, \"Running 10 mins late, sorry!\"",
+      "reportedSpeech": "Ken texted that he was running 10 minutes late and apologized.",
+      "changesList": [
+        "'running' → 'was running'",
+        "'sorry' → 'apologized'"
+      ],
+      "ruleExplanation": "'Running late' becomes 'was running late', and the apology is captured with 'apologized'.",
+      "nativeTip": "Even casual texts follow the same backshift rules as spoken sentences.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Ken texted, \"Running 10 mins late, sorry!\"\" ➔ \"Ken texted that he was running 10 minutes late and apologized.\""
+    },
+    {
+      "id": "dis_l161_learn_q2",
+      "level": 161,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Beatriz texted her friend, \"Can you pick me up at 6 tonight?\"",
+      "reportedSpeech": "Beatriz texted her friend asking whether she could pick her up at 6 that night.",
+      "changesList": [
+        "'can' → 'could'",
+        "'tonight' → 'that night'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Can' becomes 'could', 'tonight' becomes 'that night', and the question order becomes a statement.",
+      "nativeTip": "Combine the modal backshift, the word order, and the time-word change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Beatriz texted her friend, \"Can you pick me up at 6 tonight?\"\" ➔ \"Beatriz texted her friend asking whether she could pick her up at 6 that night.\""
+    },
+    {
+      "id": "dis_l161_learn_q3",
+      "level": 161,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Wanjiru texted, \"On my way, be there in 15!\"",
+      "reportedSpeech": "Wanjiru texted that she was on her way and would be there in 15 minutes.",
+      "changesList": [
+        "'on my way' → 'was on her way'",
+        "'be there' → 'would be there'"
+      ],
+      "ruleExplanation": "The implied 'am' becomes 'was', and 'be there' (an implied future) becomes 'would be there'.",
+      "nativeTip": "Casual, fragmented texts still need full backshift when reported formally.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Wanjiru texted, \"On my way, be there in 15!\"\" ➔ \"Wanjiru texted that she was on her way and would be there in 15 minutes.\""
+    },
+    {
+      "id": "dis_l162_learn_q1",
+      "level": 162,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The email said, \"We regret to inform you that your application was unsuccessful this time.\"",
+      "reportedSpeech": "The email said that they regretted to inform me that my application had been unsuccessful that time.",
+      "changesList": [
+        "'regret' → 'regretted'",
+        "'was unsuccessful' → 'had been unsuccessful'",
+        "'your' → 'my'",
+        "'this time' → 'that time'"
+      ],
+      "ruleExplanation": "'Regret' becomes 'regretted', 'was unsuccessful' becomes 'had been unsuccessful', 'your' becomes 'my', and 'this time' becomes 'that time'.",
+      "nativeTip": "Formal email language backshifts the same way as spoken language, including the possessive and time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The email said, \"We regret to inform you that your application was unsuccessful this time.\"\" ➔ \"The email said that they regretted to inform me that my application had been unsuccessful that time.\""
+    },
+    {
+      "id": "dis_l162_learn_q2",
+      "level": 162,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Request",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Request",
+      "directSpeech": "The email said, \"Please find attached the invoice for last month's services.\"",
+      "reportedSpeech": "The email said to find attached the invoice for the previous month's services.",
+      "changesList": [
+        "imperative → 'said to'",
+        "'last month's' → 'the previous month's'"
+      ],
+      "ruleExplanation": "'Please find attached...' becomes 'said to find attached', and 'last month's' becomes 'the previous month's'.",
+      "nativeTip": "This polite instruction inside an email still backshifts the time expression.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The email said, \"Please find attached the invoice for last month's services.\"\" ➔ \"The email said to find attached the invoice for the previous month's services.\""
+    },
+    {
+      "id": "dis_l162_learn_q3",
+      "level": 162,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The email said, \"We will process your refund within 5 business days.\"",
+      "reportedSpeech": "The email said that they would process my refund within 5 business days.",
+      "changesList": [
+        "'we' → 'they'",
+        "'your' → 'my'",
+        "'will process' → 'would process'"
+      ],
+      "ruleExplanation": "'We' becomes 'they', 'your' becomes 'my', and 'will process' becomes 'would process'.",
+      "nativeTip": "Standard business language still follows the pronoun, possessive, and modal rules.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The email said, \"We will process your refund within 5 business days.\"\" ➔ \"The email said that they would process my refund within 5 business days.\""
+    },
+    {
+      "id": "dis_l163_learn_q1",
+      "level": 163,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The interviewer said, \"Tell me about a time when you solved a difficult problem.\"",
+      "reportedSpeech": "The interviewer asked me to tell her about a time when I had solved a difficult problem.",
+      "changesList": [
+        "imperative → 'asked + object + to'",
+        "'solved' → 'had solved'"
+      ],
+      "ruleExplanation": "The imperative 'Tell me...' becomes 'asked me to tell', and 'solved' becomes 'had solved' since it describes a past event within the story.",
+      "nativeTip": "This is a polite invitation to share an example, and the earlier event inside it backshifts one more step.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The interviewer said, \"Tell me about a time when you solved a difficult problem.\"\" ➔ \"The interviewer asked me to tell her about a time when I had solved a difficult problem.\""
+    },
+    {
+      "id": "dis_l163_learn_q2",
+      "level": 163,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The candidate said, \"I believe I would be a strong fit because I have five years of relevant experience.\"",
+      "reportedSpeech": "The candidate said that she believed she would be a strong fit because she had five years of relevant experience.",
+      "changesList": [
+        "'believe' → 'believed'",
+        "'have' → 'had'",
+        "'would' stays unchanged"
+      ],
+      "ruleExplanation": "'Believe' becomes 'believed', 'have' becomes 'had', and 'would' remains unchanged.",
+      "nativeTip": "'Would' stays the same since it's already a past-time form, but the other verbs still backshift.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The candidate said, \"I believe I would be a strong fit because I have five years of relevant experience.\"\" ➔ \"The candidate said that she believed she would be a strong fit because she had five years of relevant experience.\""
+    },
+    {
+      "id": "dis_l163_learn_q3",
+      "level": 163,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The recruiter said, \"We'll be in touch by the end of this week with our decision.\"",
+      "reportedSpeech": "The recruiter said that they would be in touch by the end of that week with their decision.",
+      "changesList": [
+        "'we' → 'they'",
+        "'our' → 'their'",
+        "'we'll be' → 'would be'",
+        "'this week' → 'that week'"
+      ],
+      "ruleExplanation": "'We'/'our' become 'they'/'their', 'we'll be' becomes 'would be', and 'this week' becomes 'that week'.",
+      "nativeTip": "Combine the pronoun, the possessive, the modal, and the time-word change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The recruiter said, \"We'll be in touch by the end of this week with our decision.\"\" ➔ \"The recruiter said that they would be in touch by the end of that week with their decision.\""
+    },
+    {
+      "id": "dis_l164_learn_q1",
+      "level": 164,
+      "conceptTitle": "Speech Bubble to Report Converter: Gerund Structure",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Gerund Structure",
+      "directSpeech": "The chair said, \"Let's move on to the next item on the agenda.\"",
+      "reportedSpeech": "The chair suggested moving on to the next item on the agenda.",
+      "changesList": [
+        "'let's move on' → 'suggested moving on'"
+      ],
+      "ruleExplanation": "'Let's move on...' becomes 'suggested moving on', following the gerund pattern.",
+      "nativeTip": "Recall the gerund pattern that follows 'suggested'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The chair said, \"Let's move on to the next item on the agenda.\"\" ➔ \"The chair suggested moving on to the next item on the agenda.\""
+    },
+    {
+      "id": "dis_l164_learn_q2",
+      "level": 164,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "A participant said, \"I think we should postpone this decision until we have more data.\"",
+      "reportedSpeech": "A participant said that she thought they should postpone that decision until they had more data.",
+      "changesList": [
+        "'think' → 'thought'",
+        "'we' → 'they'",
+        "'this' → 'that'",
+        "'have' → 'had'",
+        "'should' stays unchanged"
+      ],
+      "ruleExplanation": "'Think' becomes 'thought', 'we' becomes 'they', 'this' becomes 'that', 'have' becomes 'had', and 'should' stays the same.",
+      "nativeTip": "Combine the tense backshift, the pronoun, and the demonstrative, but leave 'should' unchanged.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"A participant said, \"I think we should postpone this decision until we have more data.\"\" ➔ \"A participant said that she thought they should postpone that decision until they had more data.\""
+    },
+    {
+      "id": "dis_l164_learn_q3",
+      "level": 164,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The manager said, \"Can everyone send me their updates here by end of day today?\"",
+      "reportedSpeech": "The manager asked whether everyone could send her their updates there by the end of that day.",
+      "changesList": [
+        "'can' → 'could'",
+        "'here' → 'there'",
+        "'today' → 'that day'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Can' becomes 'could', 'here' becomes 'there', and 'today' becomes 'that day'; the question order becomes a statement.",
+      "nativeTip": "This question combines the modal, the place word, the time word, and the correct word order.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager said, \"Can everyone send me their updates here by end of day today?\"\" ➔ \"The manager asked whether everyone could send her their updates there by the end of that day.\""
+    },
+    {
+      "id": "dis_l165_learn_q1",
+      "level": 165,
+      "conceptTitle": "Speech Bubble to Report Converter: Time Expression Shift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Time Expression Shift",
+      "directSpeech": "The receptionist said, \"Check-out is at 11 AM tomorrow.\"",
+      "reportedSpeech": "The receptionist said that check-out was at 11 AM the next day.",
+      "changesList": [
+        "'is' → 'was'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'Is' becomes 'was', and 'tomorrow' becomes 'the next day'.",
+      "nativeTip": "This standard hotel policy still backshifts like any other statement.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The receptionist said, \"Check-out is at 11 AM tomorrow.\"\" ➔ \"The receptionist said that check-out was at 11 AM the next day.\""
+    },
+    {
+      "id": "dis_l165_learn_q2",
+      "level": 165,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The guest said, \"Could you send someone to fix the air conditioning in my room?\"",
+      "reportedSpeech": "The guest asked whether someone could be sent to fix the air conditioning in her room.",
+      "changesList": [
+        "'could you send' → 'whether someone could be sent'",
+        "'my' → 'her'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "The request restructures around the person being sent, and 'my' becomes 'her'; the question order becomes a statement.",
+      "nativeTip": "Recall the passive structure needed here — 'send someone' becomes 'someone could be sent'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The guest said, \"Could you send someone to fix the air conditioning in my room?\"\" ➔ \"The guest asked whether someone could be sent to fix the air conditioning in her room.\""
+    },
+    {
+      "id": "dis_l165_learn_q3",
+      "level": 165,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The hotel manager said, \"We upgraded your room here for free because of the inconvenience.\"",
+      "reportedSpeech": "The hotel manager said that they had upgraded my room there for free because of the inconvenience.",
+      "changesList": [
+        "'we' → 'they'",
+        "'your' → 'my'",
+        "'upgraded' → 'had upgraded'",
+        "'here' → 'there'"
+      ],
+      "ruleExplanation": "'We' becomes 'they', 'your' becomes 'my', 'upgraded' becomes 'had upgraded', and 'here' becomes 'there'.",
+      "nativeTip": "Combine the past-perfect backshift with the pronoun, possessive, and place-word changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The hotel manager said, \"We upgraded your room here for free because of the inconvenience.\"\" ➔ \"The hotel manager said that they had upgraded my room there for free because of the inconvenience.\""
+    },
+    {
+      "id": "dis_l166_learn_q1",
+      "level": 166,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The host said, \"Your table will be ready in about ten minutes.\"",
+      "reportedSpeech": "The host said that my table would be ready in about ten minutes.",
+      "changesList": [
+        "'your' → 'my'",
+        "'will be' → 'would be'"
+      ],
+      "ruleExplanation": "'Your' becomes 'my', and 'will be' becomes 'would be'.",
+      "nativeTip": "Combine the possessive and modal changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The host said, \"Your table will be ready in about ten minutes.\"\" ➔ \"The host said that my table would be ready in about ten minutes.\""
+    },
+    {
+      "id": "dis_l166_learn_q2",
+      "level": 166,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The chef said, \"I hope you're enjoying the meal I prepared for you tonight.\"",
+      "reportedSpeech": "The chef said that he hoped we were enjoying the meal he had prepared for us that night.",
+      "changesList": [
+        "'hope' → 'hoped'",
+        "'are enjoying' → 'were enjoying'",
+        "'prepared' → 'had prepared'",
+        "'tonight' → 'that night'"
+      ],
+      "ruleExplanation": "'Hope' becomes 'hoped', 'are enjoying' becomes 'were enjoying', 'prepared' (a finished earlier action) becomes 'had prepared', and 'tonight' becomes 'that night'.",
+      "nativeTip": "Several verbs backshift here at different levels — check which ones move an extra step.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The chef said, \"I hope you're enjoying the meal I prepared for you tonight.\"\" ➔ \"The chef said that he hoped we were enjoying the meal he had prepared for us that night.\""
+    },
+    {
+      "id": "dis_l166_learn_q3",
+      "level": 166,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The waiter said, \"We're out of the salmon today, but the chef recommends the sea bass.\"",
+      "reportedSpeech": "The waiter said that they were out of the salmon that day but that the chef recommended the sea bass.",
+      "changesList": [
+        "'we're' → 'they were'",
+        "'recommends' → 'recommended'",
+        "'today' → 'that day'"
+      ],
+      "ruleExplanation": "'We're' becomes 'they were', 'recommends' becomes 'recommended', and 'today' becomes 'that day'.",
+      "nativeTip": "This combines the pronoun, the tense, and the time-word change across two connected clauses.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The waiter said, \"We're out of the salmon today, but the chef recommends the sea bass.\"\" ➔ \"The waiter said that they were out of the salmon that day but that the chef recommended the sea bass.\""
+    },
+    {
+      "id": "dis_l167_learn_q1",
+      "level": 167,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The store clerk said, \"This item is on sale until the end of the month.\"",
+      "reportedSpeech": "The store clerk said that that item was on sale until the end of the month.",
+      "changesList": [
+        "'this' → 'that'",
+        "'is' → 'was'"
+      ],
+      "ruleExplanation": "'This' becomes 'that', and 'is' becomes 'was'.",
+      "nativeTip": "Combine the demonstrative and tense changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The store clerk said, \"This item is on sale until the end of the month.\"\" ➔ \"The store clerk said that that item was on sale until the end of the month.\""
+    },
+    {
+      "id": "dis_l167_learn_q2",
+      "level": 167,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The customer said, \"I bought this here yesterday, and it's already broken.\"",
+      "reportedSpeech": "The customer said that she had bought that there the day before and that it was already broken.",
+      "changesList": [
+        "'bought' → 'had bought'",
+        "'this' → 'that'",
+        "'here' → 'there'",
+        "'yesterday' → 'the day before'",
+        "'is' → 'was'"
+      ],
+      "ruleExplanation": "'Bought' becomes 'had bought', 'this'/'here'/'yesterday' shift to 'that'/'there'/'the day before', and 'is' becomes 'was'.",
+      "nativeTip": "This combines a past-perfect backshift, a demonstrative, a place word, a time word, and a present-tense backshift.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The customer said, \"I bought this here yesterday, and it's already broken.\"\" ➔ \"The customer said that she had bought that there the day before and that it was already broken.\""
+    },
+    {
+      "id": "dis_l167_learn_q3",
+      "level": 167,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The manager said, \"We can offer you store credit or a full refund today.\"",
+      "reportedSpeech": "The manager said that they could offer me store credit or a full refund that day.",
+      "changesList": [
+        "'we' → 'they'",
+        "'you' → 'me'",
+        "'can' → 'could'",
+        "'today' → 'that day'"
+      ],
+      "ruleExplanation": "'We' becomes 'they', 'you' becomes 'me', 'can' becomes 'could', and 'today' becomes 'that day'.",
+      "nativeTip": "Combine the pronoun, the object pronoun, the modal, and the time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager said, \"We can offer you store credit or a full refund today.\"\" ➔ \"The manager said that they could offer me store credit or a full refund that day.\""
+    },
+    {
+      "id": "dis_l168_learn_q1",
+      "level": 168,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The conductor said, \"This train terminates here; please change here for connections.\"",
+      "reportedSpeech": "The conductor said that that train terminated there and asked passengers to change there for connections.",
+      "changesList": [
+        "'this' → 'that'",
+        "'terminates' → 'terminated'",
+        "'here' → 'there' (both instances)"
+      ],
+      "ruleExplanation": "'This' becomes 'that', 'terminates' becomes 'terminated', and both instances of 'here' become 'there'.",
+      "nativeTip": "Both instances of 'here' change, along with the demonstrative and the tense.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The conductor said, \"This train terminates here; please change here for connections.\"\" ➔ \"The conductor said that that train terminated there and asked passengers to change there for connections.\""
+    },
+    {
+      "id": "dis_l168_learn_q2",
+      "level": 168,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "The driver said, \"We should arrive at the station in about twenty minutes.\"",
+      "reportedSpeech": "The driver said that they should arrive at the station in about twenty minutes.",
+      "changesList": [
+        "'we' → 'they'",
+        "'should' stays unchanged"
+      ],
+      "ruleExplanation": "'We' becomes 'they', and 'should' remains unchanged since it's already a past-compatible modal.",
+      "nativeTip": "'Should' stays the same here — only the pronoun changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The driver said, \"We should arrive at the station in about twenty minutes.\"\" ➔ \"The driver said that they should arrive at the station in about twenty minutes.\""
+    },
+    {
+      "id": "dis_l168_learn_q3",
+      "level": 168,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The airline app said, \"Your flight has been delayed by two hours due to weather conditions today.\"",
+      "reportedSpeech": "The airline app said that my flight had been delayed by two hours due to weather conditions that day.",
+      "changesList": [
+        "'your' → 'my'",
+        "'has been delayed' → 'had been delayed'",
+        "'today' → 'that day'"
+      ],
+      "ruleExplanation": "'Your' becomes 'my', 'has been delayed' becomes 'had been delayed', and 'today' becomes 'that day'.",
+      "nativeTip": "Combine the possessive, the present-perfect backshift, and the time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The airline app said, \"Your flight has been delayed by two hours due to weather conditions today.\"\" ➔ \"The airline app said that my flight had been delayed by two hours due to weather conditions that day.\""
+    },
+    {
+      "id": "dis_l169_learn_q1",
+      "level": 169,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The app notification said, \"Your subscription will renew automatically tomorrow.\"",
+      "reportedSpeech": "The app notification said that my subscription would renew automatically the next day.",
+      "changesList": [
+        "'your' → 'my'",
+        "'will renew' → 'would renew'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'Your' becomes 'my', 'will renew' becomes 'would renew', and 'tomorrow' becomes 'the next day'.",
+      "nativeTip": "Combine the possessive, the modal, and the time-word change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The app notification said, \"Your subscription will renew automatically tomorrow.\"\" ➔ \"The app notification said that my subscription would renew automatically the next day.\""
+    },
+    {
+      "id": "dis_l169_learn_q2",
+      "level": 169,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The chatbot said, \"I'm unable to process your request right now; please try again later.\"",
+      "reportedSpeech": "The chatbot said that it was unable to process my request right then and asked me to try again later.",
+      "changesList": [
+        "'I' → 'it'",
+        "'your' → 'my'",
+        "'right now' → 'right then'",
+        "imperative → 'asked + object + to'"
+      ],
+      "ruleExplanation": "'I' becomes 'it', 'your' becomes 'my', 'right now' becomes 'right then', and 'please try again' becomes 'asked me to try again'.",
+      "nativeTip": "Combine the pronoun 'I'/'it', the possessive, the time word 'right now', and the reported instruction.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The chatbot said, \"I'm unable to process your request right now; please try again later.\"\" ➔ \"The chatbot said that it was unable to process my request right then and asked me to try again later.\""
+    },
+    {
+      "id": "dis_l169_learn_q3",
+      "level": 169,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The website said, \"We have updated our privacy policy; please review the changes here today.\"",
+      "reportedSpeech": "The website said that they had updated their privacy policy and asked users to review the changes there that day.",
+      "changesList": [
+        "'we' → 'they'",
+        "'our' → 'their'",
+        "'have updated' → 'had updated'",
+        "imperative → 'asked + object + to'",
+        "'here' → 'there'",
+        "'today' → 'that day'"
+      ],
+      "ruleExplanation": "'We'/'our' become 'they'/'their', 'have updated' becomes 'had updated', the request becomes 'asked...to review', and 'here'/'today' become 'there'/'that day'.",
+      "nativeTip": "Combine the present-perfect backshift, the pronoun, the possessive, the reporting-verb pattern, the place word, and the time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The website said, \"We have updated our privacy policy; please review the changes here today.\"\" ➔ \"The website said that they had updated their privacy policy and asked users to review the changes there that day.\""
+    },
+    {
+      "id": "dis_l170_learn_q1",
+      "level": 170,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The bank's text message said, \"A payment of $50 was made from your account today.\"",
+      "reportedSpeech": "The bank's text message said that a payment of $50 had been made from my account that day.",
+      "changesList": [
+        "'was made' → 'had been made'",
+        "'your' → 'my'",
+        "'today' → 'that day'"
+      ],
+      "ruleExplanation": "'Was made' becomes 'had been made', 'your' becomes 'my', and 'today' becomes 'that day'.",
+      "nativeTip": "This review question backshifts a completed past action one more step, along with the possessive and time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The bank's text message said, \"A payment of $50 was made from your account today.\"\" ➔ \"The bank's text message said that a payment of $50 had been made from my account that day.\""
+    },
+    {
+      "id": "dis_l170_learn_q2",
+      "level": 170,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The travel agent said, \"I can get you a better rate if you book here today instead of waiting.\"",
+      "reportedSpeech": "The travel agent said that she could get me a better rate if I booked there that day instead of waiting.",
+      "changesList": [
+        "'can' → 'could'",
+        "'you' → 'me'/'I'",
+        "'book' → 'booked'",
+        "'here' → 'there'",
+        "'today' → 'that day'"
+      ],
+      "ruleExplanation": "'Can' becomes 'could', 'you' becomes 'me'/'I', 'book' becomes 'booked', 'here' becomes 'there', and 'today' becomes 'that day'.",
+      "nativeTip": "This combines a modal, two pronouns, a conditional clause, a place word, and a time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The travel agent said, \"I can get you a better rate if you book here today instead of waiting.\"\" ➔ \"The travel agent said that she could get me a better rate if I booked there that day instead of waiting.\""
+    },
+    {
+      "id": "dis_l170_learn_q3",
+      "level": 170,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The customer support email said, \"Thank you for reaching out. We will investigate your issue and get back to you here within 48 hours.\"",
+      "reportedSpeech": "The customer support email thanked me for reaching out and said that they would investigate my issue and get back to me there within 48 hours.",
+      "changesList": [
+        "'thank you' → 'thanked me'",
+        "'we' → 'they'",
+        "'your' → 'my'",
+        "'you' → 'me'",
+        "'will investigate' → 'would investigate'",
+        "'here' → 'there'"
+      ],
+      "ruleExplanation": "'We'/'your'/'you' become 'they'/'my'/'me', 'will investigate' becomes 'would investigate', and 'here' becomes 'there'.",
+      "nativeTip": "This final review question combines a thanks, a modal, two pronoun sets, a possessive, and a place word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The customer support email said, \"Thank you for reaching out. We will investigate your issue and get back to you here within 48 hours.\"\" ➔ \"The customer support email thanked me for reaching out and said that they would investigate my issue and get back to me there within 48 hours.\""
+    }
+  ]
+}

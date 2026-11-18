@@ -1,0 +1,507 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "learn",
+  "batchIndex": 5,
+  "levels": "41-50",
+  "quests": [
+    {
+      "id": "dis_l41_learn_q1",
+      "level": 41,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "Sofia asked, \"What time does the train leave?\"",
+      "reportedSpeech": "Sofia asked what time the train left.",
+      "changesList": [
+        "'does leave' → 'left'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Does leave' becomes 'left'; the auxiliary disappears and the question word 'what time' stays at the front.",
+      "nativeTip": "Wh-questions drop 'do/does/did' and use statement word order after the question word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Sofia asked, \"What time does the train leave?\"\" ➔ \"Sofia asked what time the train left.\""
+    },
+    {
+      "id": "dis_l41_learn_q2",
+      "level": 41,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "The waiter asked, \"What would you like to order?\"",
+      "reportedSpeech": "The waiter asked what I would like to order.",
+      "changesList": [
+        "question word order → statement word order",
+        "'you' → 'I'"
+      ],
+      "ruleExplanation": "'Would' stays the same, but inversion is removed and 'you' becomes 'I'.",
+      "nativeTip": "'Would' doesn't need to change — fix the word order and the pronoun instead.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The waiter asked, \"What would you like to order?\"\" ➔ \"The waiter asked what I would like to order.\""
+    },
+    {
+      "id": "dis_l41_learn_q3",
+      "level": 41,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Marcus asked, \"What are you doing this weekend?\"",
+      "reportedSpeech": "Marcus asked what I was doing that weekend.",
+      "changesList": [
+        "'are doing' → 'was doing'",
+        "'you' → 'I'",
+        "'this weekend' → 'that weekend'"
+      ],
+      "ruleExplanation": "'Are doing' becomes 'was doing', 'you' becomes 'I', and 'this weekend' becomes 'that weekend'.",
+      "nativeTip": "Combine the continuous backshift, the pronoun, and the time-word change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Marcus asked, \"What are you doing this weekend?\"\" ➔ \"Marcus asked what I was doing that weekend.\""
+    },
+    {
+      "id": "dis_l42_learn_q1",
+      "level": 42,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "The tourist asked, \"Where is the nearest pharmacy?\"",
+      "reportedSpeech": "The tourist asked where the nearest pharmacy was.",
+      "changesList": [
+        "'is' → 'was'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Is' backshifts to 'was', and the question word 'where' is followed by normal statement order.",
+      "nativeTip": "Backshift the verb 'to be' and put the subject before it, as in a normal statement.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The tourist asked, \"Where is the nearest pharmacy?\"\" ➔ \"The tourist asked where the nearest pharmacy was.\""
+    },
+    {
+      "id": "dis_l42_learn_q2",
+      "level": 42,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "Elena asked, \"Where did you park the car?\"",
+      "reportedSpeech": "Elena asked where I had parked the car.",
+      "changesList": [
+        "'did park' → 'had parked'",
+        "'you' → 'I'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Did park' becomes 'had parked', and 'you' becomes 'I'.",
+      "nativeTip": "A finished past action reported later usually backshifts one more step.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Elena asked, \"Where did you park the car?\"\" ➔ \"Elena asked where I had parked the car.\""
+    },
+    {
+      "id": "dis_l42_learn_q3",
+      "level": 42,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "The manager asked, \"Where will the meeting be held?\"",
+      "reportedSpeech": "The manager asked where the meeting would be held.",
+      "changesList": [
+        "'will' → 'would'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Will' becomes 'would', and normal statement order follows 'where'.",
+      "nativeTip": "Backshift the modal, then place the subject before the verb.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager asked, \"Where will the meeting be held?\"\" ➔ \"The manager asked where the meeting would be held.\""
+    },
+    {
+      "id": "dis_l43_learn_q1",
+      "level": 43,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "Hassan asked, \"When does the store open?\"",
+      "reportedSpeech": "Hassan asked when the store opened.",
+      "changesList": [
+        "'does open' → 'opened'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Does open' becomes 'opened'; the auxiliary is dropped.",
+      "nativeTip": "Remove the auxiliary 'does' completely and backshift the main verb instead.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Hassan asked, \"When does the store open?\"\" ➔ \"Hassan asked when the store opened.\""
+    },
+    {
+      "id": "dis_l43_learn_q2",
+      "level": 43,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "Grace asked, \"When did you arrive?\"",
+      "reportedSpeech": "Grace asked when I had arrived.",
+      "changesList": [
+        "'did arrive' → 'had arrived'",
+        "'you' → 'I'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Did arrive' becomes 'had arrived', and 'you' becomes 'I'.",
+      "nativeTip": "This past action moves one more step back, into the past perfect.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Grace asked, \"When did you arrive?\"\" ➔ \"Grace asked when I had arrived.\""
+    },
+    {
+      "id": "dis_l43_learn_q3",
+      "level": 43,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The client asked, \"When can we expect a reply?\"",
+      "reportedSpeech": "The client asked when they could expect a reply.",
+      "changesList": [
+        "'we' → 'they'",
+        "'can' → 'could'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'We' becomes 'they', and 'can' becomes 'could'.",
+      "nativeTip": "Update both the pronoun and the modal verb.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The client asked, \"When can we expect a reply?\"\" ➔ \"The client asked when they could expect a reply.\""
+    },
+    {
+      "id": "dis_l44_learn_q1",
+      "level": 44,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "The teacher asked, \"Why are you late?\"",
+      "reportedSpeech": "The teacher asked why I was late.",
+      "changesList": [
+        "'are' → 'was'",
+        "'you' → 'I'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Are' backshifts to 'was', and 'you' becomes 'I'.",
+      "nativeTip": "Backshift the verb, then fix the pronoun and the word order.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The teacher asked, \"Why are you late?\"\" ➔ \"The teacher asked why I was late.\""
+    },
+    {
+      "id": "dis_l44_learn_q2",
+      "level": 44,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Isabella asked, \"Why didn't you call me?\"",
+      "reportedSpeech": "Isabella asked why I hadn't called her.",
+      "changesList": [
+        "'didn't call' → 'hadn't called'",
+        "'you' → 'I'",
+        "'me' → 'her'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Didn't call' becomes 'hadn't called', 'you' becomes 'I', and 'me' becomes 'her'.",
+      "nativeTip": "Three items change: the negative past tense, the subject pronoun, and the object pronoun.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Isabella asked, \"Why didn't you call me?\"\" ➔ \"Isabella asked why I hadn't called her.\""
+    },
+    {
+      "id": "dis_l44_learn_q3",
+      "level": 44,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "The editor asked, \"Why does this sentence sound odd?\"",
+      "reportedSpeech": "The editor asked why that sentence sounded odd.",
+      "changesList": [
+        "'does sound' → 'sounded'",
+        "'this' → 'that'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Does sound' becomes 'sounded', and 'this' becomes 'that'.",
+      "nativeTip": "Remove the auxiliary and update the demonstrative pronoun.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The editor asked, \"Why does this sentence sound odd?\"\" ➔ \"The editor asked why that sentence sounded odd.\""
+    },
+    {
+      "id": "dis_l45_learn_q1",
+      "level": 45,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "The detective asked, \"Who broke this window?\"",
+      "reportedSpeech": "The detective asked who had broken that window.",
+      "changesList": [
+        "'broke' → 'had broken'",
+        "'this' → 'that'"
+      ],
+      "ruleExplanation": "Because 'who' is the subject, word order doesn't change, but 'broke' backshifts to 'had broken', and 'this' becomes 'that'.",
+      "nativeTip": "Since 'who' is already the subject, word order stays the same — only the verb and the demonstrative change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The detective asked, \"Who broke this window?\"\" ➔ \"The detective asked who had broken that window.\""
+    },
+    {
+      "id": "dis_l45_learn_q2",
+      "level": 45,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "Diego asked, \"Who is calling at this hour?\"",
+      "reportedSpeech": "Diego asked who was calling at that hour.",
+      "changesList": [
+        "'is calling' → 'was calling'",
+        "'this' → 'that'"
+      ],
+      "ruleExplanation": "'Is calling' backshifts to 'was calling', and 'this' becomes 'that'.",
+      "nativeTip": "'Who' as the subject means no inversion to fix — just backshift the verb and the demonstrative.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Diego asked, \"Who is calling at this hour?\"\" ➔ \"Diego asked who was calling at that hour.\""
+    },
+    {
+      "id": "dis_l45_learn_q3",
+      "level": 45,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "The coach asked, \"Who wants to play first?\"",
+      "reportedSpeech": "The coach asked who wanted to play first.",
+      "changesList": [
+        "'wants' → 'wanted'"
+      ],
+      "ruleExplanation": "'Wants' backshifts to 'wanted'; no word-order change is needed because 'who' is the subject.",
+      "nativeTip": "This is a simple one-step backshift with no word-order change needed.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The coach asked, \"Who wants to play first?\"\" ➔ \"The coach asked who wanted to play first.\""
+    },
+    {
+      "id": "dis_l46_learn_q1",
+      "level": 46,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "The customer asked, \"Which color do you recommend?\"",
+      "reportedSpeech": "The customer asked which color I recommended.",
+      "changesList": [
+        "'do recommend' → 'recommended'",
+        "'you' → 'I'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Do recommend' becomes 'recommended', the auxiliary disappears, and 'you' becomes 'I'.",
+      "nativeTip": "Drop the auxiliary 'do', then backshift the verb and update the pronoun.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The customer asked, \"Which color do you recommend?\"\" ➔ \"The customer asked which color I recommended.\""
+    },
+    {
+      "id": "dis_l46_learn_q2",
+      "level": 46,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "The examiner asked, \"Which answer is correct?\"",
+      "reportedSpeech": "The examiner asked which answer was correct.",
+      "changesList": [
+        "'is' → 'was'"
+      ],
+      "ruleExplanation": "'Is' backshifts to 'was'; no inversion existed to remove since 'which answer' is the subject.",
+      "nativeTip": "'Which answer' is the subject here, so only the verb needs to backshift.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The examiner asked, \"Which answer is correct?\"\" ➔ \"The examiner asked which answer was correct.\""
+    },
+    {
+      "id": "dis_l46_learn_q3",
+      "level": 46,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The agent asked, \"Which flight will you take?\"",
+      "reportedSpeech": "The agent asked which flight I would take.",
+      "changesList": [
+        "'will' → 'would'",
+        "'you' → 'I'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Will' becomes 'would', the order becomes a statement, and 'you' becomes 'I'.",
+      "nativeTip": "Backshift the modal, fix the word order, and update the pronoun.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The agent asked, \"Which flight will you take?\"\" ➔ \"The agent asked which flight I would take.\""
+    },
+    {
+      "id": "dis_l47_learn_q1",
+      "level": 47,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "The stranger asked, \"How do I get to the museum?\"",
+      "reportedSpeech": "The stranger asked how he got to the museum.",
+      "changesList": [
+        "'do get' → 'got'",
+        "'I' → 'he'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Do get' becomes 'got', the auxiliary disappears, and 'I' becomes 'he'.",
+      "nativeTip": "Drop the auxiliary 'do', backshift the verb, and update the pronoun.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The stranger asked, \"How do I get to the museum?\"\" ➔ \"The stranger asked how he got to the museum.\""
+    },
+    {
+      "id": "dis_l47_learn_q2",
+      "level": 47,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The instructor asked, \"How did you solve this problem?\"",
+      "reportedSpeech": "The instructor asked how I had solved that problem.",
+      "changesList": [
+        "'did solve' → 'had solved'",
+        "'you' → 'I'",
+        "'this' → 'that'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Did solve' becomes 'had solved', 'you' becomes 'I', and 'this' becomes 'that'.",
+      "nativeTip": "This combines the past-perfect backshift with a pronoun and a demonstrative change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The instructor asked, \"How did you solve this problem?\"\" ➔ \"The instructor asked how I had solved that problem.\""
+    },
+    {
+      "id": "dis_l47_learn_q3",
+      "level": 47,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The parent asked, \"How do you feel today?\"",
+      "reportedSpeech": "The parent asked how I felt that day.",
+      "changesList": [
+        "'do feel' → 'felt'",
+        "'you' → 'I'",
+        "'today' → 'that day'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Do feel' becomes 'felt', 'you' becomes 'I', and 'today' becomes 'that day'.",
+      "nativeTip": "Combine the auxiliary removal, the backshift, the pronoun, and the time-word change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The parent asked, \"How do you feel today?\"\" ➔ \"The parent asked how I felt that day.\""
+    },
+    {
+      "id": "dis_l48_learn_q1",
+      "level": 48,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "The shopper asked, \"How much does this cost?\"",
+      "reportedSpeech": "The shopper asked how much that cost.",
+      "changesList": [
+        "'does cost' → 'cost'",
+        "'this' → 'that'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Does cost' loses its auxiliary and becomes simply 'cost' (an irregular verb unchanged in the past), and 'this' becomes 'that'.",
+      "nativeTip": "'Cost' is an irregular verb that doesn't change form in the past — only the auxiliary disappears.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The shopper asked, \"How much does this cost?\"\" ➔ \"The shopper asked how much that cost.\""
+    },
+    {
+      "id": "dis_l48_learn_q2",
+      "level": 48,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "The organizer asked, \"How many people are coming?\"",
+      "reportedSpeech": "The organizer asked how many people were coming.",
+      "changesList": [
+        "'are coming' → 'were coming'"
+      ],
+      "ruleExplanation": "'Are coming' backshifts to 'were coming' because 'people' is plural.",
+      "nativeTip": "Match the past form of 'to be' to the plural subject.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The organizer asked, \"How many people are coming?\"\" ➔ \"The organizer asked how many people were coming.\""
+    },
+    {
+      "id": "dis_l48_learn_q3",
+      "level": 48,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The manager asked, \"How much time do we have?\"",
+      "reportedSpeech": "The manager asked how much time they had.",
+      "changesList": [
+        "'we' → 'they'",
+        "'do have' → 'had'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'We' becomes 'they', and 'do have' becomes 'had'.",
+      "nativeTip": "Update the pronoun and drop the auxiliary while backshifting the verb.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager asked, \"How much time do we have?\"\" ➔ \"The manager asked how much time they had.\""
+    },
+    {
+      "id": "dis_l49_learn_q1",
+      "level": 49,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "The passenger asked, \"How long will the delay be?\"",
+      "reportedSpeech": "The passenger asked how long the delay would be.",
+      "changesList": [
+        "'will' → 'would'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Will' becomes 'would', and the inverted question order becomes normal statement order.",
+      "nativeTip": "Backshift the modal, then remove the inversion between the verb and the subject.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The passenger asked, \"How long will the delay be?\"\" ➔ \"The passenger asked how long the delay would be.\""
+    },
+    {
+      "id": "dis_l49_learn_q2",
+      "level": 49,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The recruiter asked, \"How long have you worked here?\"",
+      "reportedSpeech": "The recruiter asked how long I had worked there.",
+      "changesList": [
+        "'have worked' → 'had worked'",
+        "'you' → 'I'",
+        "'here' → 'there'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Have worked' becomes 'had worked', 'you' becomes 'I', and 'here' becomes 'there'.",
+      "nativeTip": "Three changes together: the present perfect, the pronoun, and the place word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The recruiter asked, \"How long have you worked here?\"\" ➔ \"The recruiter asked how long I had worked there.\""
+    },
+    {
+      "id": "dis_l49_learn_q3",
+      "level": 49,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "The doctor asked, \"How long has the pain lasted?\"",
+      "reportedSpeech": "The doctor asked how long the pain had lasted.",
+      "changesList": [
+        "'has lasted' → 'had lasted'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Has lasted' becomes 'had lasted', and the inverted order becomes a statement.",
+      "nativeTip": "Backshift the present perfect, and place the subject before the verb.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The doctor asked, \"How long has the pain lasted?\"\" ➔ \"The doctor asked how long the pain had lasted.\""
+    },
+    {
+      "id": "dis_l50_learn_q1",
+      "level": 50,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The immigration officer asked, \"What is the purpose of your visit?\"",
+      "reportedSpeech": "The immigration officer asked what the purpose of my visit was.",
+      "changesList": [
+        "'is' → 'was'",
+        "'your' → 'my'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Is' becomes 'was', 'your' becomes 'my', and normal statement order follows the question word.",
+      "nativeTip": "Combine the tense backshift with the possessive pronoun change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The immigration officer asked, \"What is the purpose of your visit?\"\" ➔ \"The immigration officer asked what the purpose of my visit was.\""
+    },
+    {
+      "id": "dis_l50_learn_q2",
+      "level": 50,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported WH-Question",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported WH-Question",
+      "directSpeech": "The journalist asked, \"Why did the company delay the announcement?\"",
+      "reportedSpeech": "The journalist asked why the company had delayed the announcement.",
+      "changesList": [
+        "'did delay' → 'had delayed'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Did delay' becomes 'had delayed'; the auxiliary is dropped.",
+      "nativeTip": "Recall how a completed past action backshifts one more step.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The journalist asked, \"Why did the company delay the announcement?\"\" ➔ \"The journalist asked why the company had delayed the announcement.\""
+    },
+    {
+      "id": "dis_l50_learn_q3",
+      "level": 50,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The host asked, \"How many guests will you bring tomorrow?\"",
+      "reportedSpeech": "The host asked how many guests I would bring the next day.",
+      "changesList": [
+        "'will' → 'would'",
+        "'you' → 'I'",
+        "'tomorrow' → 'the next day'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Will' becomes 'would', 'you' becomes 'I', 'tomorrow' becomes 'the next day', and the order becomes a statement.",
+      "nativeTip": "This review question combines the modal, the pronoun, the time word, and the word order.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The host asked, \"How many guests will you bring tomorrow?\"\" ➔ \"The host asked how many guests I would bring the next day.\""
+    }
+  ]
+}

@@ -1,0 +1,666 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "practice",
+  "batchIndex": 3,
+  "levels": "21-30",
+  "quests": [
+    {
+      "id": "dis_l21_practice_q1",
+      "level": 21,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Layla said, \"This chair is broken.\"",
+      "directSpeech": "Layla said, \"This chair is broken.\"",
+      "options": [
+        "Layla said that this chair was broken.",
+        "Layla said that that chair was broken.",
+        "Layla said that that chair is broken."
+      ],
+      "correctAnswer": "Layla said that that chair was broken.",
+      "correctAnswerIndex": 1,
+      "hint": "'This' refers to something near the speaker at that moment — what does it become once the moment has passed?",
+      "explanation": "'This' becomes 'that' in reported speech because the object is no longer tied to the moment of speaking; 'is' backshifts to 'was'.",
+      "grammarRule": "Demonstrative Shift",
+      "changesList": [
+        "'this' → 'that'",
+        "'is' → 'was'"
+      ]
+    },
+    {
+      "id": "dis_l21_practice_q2",
+      "level": 21,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The shop assistant said, \"These shoes are very popular.\"",
+      "directSpeech": "The shop assistant said, \"These shoes are very popular.\"",
+      "options": [
+        "The shop assistant said that those shoes are very popular.",
+        "The shop assistant said that these shoes were very popular.",
+        "The shop assistant said that those shoes were very popular."
+      ],
+      "correctAnswer": "The shop assistant said that those shoes were very popular.",
+      "correctAnswerIndex": 2,
+      "hint": "'These' is the plural version of 'this' — apply the same shift.",
+      "explanation": "'These' becomes 'those', and 'are' backshifts to 'were'.",
+      "grammarRule": "Demonstrative Shift",
+      "changesList": [
+        "'these' → 'those'",
+        "'are' → 'were'"
+      ]
+    },
+    {
+      "id": "dis_l21_practice_q3",
+      "level": 21,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Marcus said, \"I really like this idea.\"",
+      "directSpeech": "Marcus said, \"I really like this idea.\"",
+      "options": [
+        "Marcus said that he really liked that idea.",
+        "Marcus said that I really liked that idea.",
+        "Marcus said that he really liked this idea."
+      ],
+      "correctAnswer": "Marcus said that he really liked that idea.",
+      "correctAnswerIndex": 0,
+      "hint": "Three changes here: the pronoun, the verb tense, and the demonstrative.",
+      "explanation": "'I' becomes 'he', 'like' backshifts to 'liked', and 'this' becomes 'that'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'I' → 'he'",
+        "'like' → 'liked'",
+        "'this' → 'that'"
+      ]
+    },
+    {
+      "id": "dis_l22_practice_q1",
+      "level": 22,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Sofia said, \"I feel comfortable here.\"",
+      "directSpeech": "Sofia said, \"I feel comfortable here.\"",
+      "options": [
+        "Sofia said that she felt comfortable here.",
+        "Sofia said that she felt comfortable there.",
+        "Sofia said that she feels comfortable there."
+      ],
+      "correctAnswer": "Sofia said that she felt comfortable there.",
+      "correctAnswerIndex": 1,
+      "hint": "'Here' refers to the speaker's location at the time of speaking — what replaces it later?",
+      "explanation": "'Here' becomes 'there' since the report is made away from that place; 'feel' backshifts to 'felt'.",
+      "grammarRule": "Place Expression Shift",
+      "changesList": [
+        "'here' → 'there'",
+        "'I' → 'she'",
+        "'feel' → 'felt'"
+      ]
+    },
+    {
+      "id": "dis_l22_practice_q2",
+      "level": 22,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "The manager told a visitor, \"You can park here.\" Report this from the visitor's point of view.",
+      "directSpeech": "The manager said, \"You can park here.\"",
+      "options": [
+        "The manager said that you could park there.",
+        "The manager said that I could park here.",
+        "The manager said that I could park there."
+      ],
+      "correctAnswer": "The manager said that I could park there.",
+      "correctAnswerIndex": 2,
+      "hint": "If you are the one being spoken to, 'you' becomes 'I' — and the place word changes too.",
+      "explanation": "'You' becomes 'I', 'can' becomes 'could', and 'here' becomes 'there'.",
+      "grammarRule": "Place Expression Shift",
+      "changesList": [
+        "'you' → 'I'",
+        "'can' → 'could'",
+        "'here' → 'there'"
+      ]
+    },
+    {
+      "id": "dis_l22_practice_q3",
+      "level": 22,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The guide said, \"Tourists often get lost here.\"",
+      "directSpeech": "The guide said, \"Tourists often get lost here.\"",
+      "options": [
+        "The guide said that tourists often got lost there.",
+        "The guide said that tourists often got lost here.",
+        "The guide said that tourists often get lost there."
+      ],
+      "correctAnswer": "The guide said that tourists often got lost there.",
+      "correctAnswerIndex": 0,
+      "hint": "No pronoun changes this time — focus only on the verb and the place word.",
+      "explanation": "'Get' backshifts to 'got', and 'here' becomes 'there'.",
+      "grammarRule": "Place Expression Shift",
+      "changesList": [
+        "'get' → 'got'",
+        "'here' → 'there'"
+      ]
+    },
+    {
+      "id": "dis_l23_practice_q1",
+      "level": 23,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Diego said, \"I am busy now.\"",
+      "directSpeech": "Diego said, \"I am busy now.\"",
+      "options": [
+        "Diego said that he was busy then.",
+        "Diego said that he is busy then.",
+        "Diego said that he was busy now."
+      ],
+      "correctAnswer": "Diego said that he was busy then.",
+      "correctAnswerIndex": 0,
+      "hint": "'Now' refers to the moment of speaking — what word replaces it once time has passed?",
+      "explanation": "'Now' becomes 'then', 'am' becomes 'was', and 'I' becomes 'he'.",
+      "grammarRule": "Time Expression Shift",
+      "changesList": [
+        "'now' → 'then'",
+        "'am' → 'was'",
+        "'I' → 'he'"
+      ]
+    },
+    {
+      "id": "dis_l23_practice_q2",
+      "level": 23,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The receptionist said, \"The manager is busy today.\"",
+      "directSpeech": "The receptionist said, \"The manager is busy today.\"",
+      "options": [
+        "The receptionist said that the manager is busy that day.",
+        "The receptionist said that the manager was busy that day.",
+        "The receptionist said that the manager was busy today."
+      ],
+      "correctAnswer": "The receptionist said that the manager was busy that day.",
+      "correctAnswerIndex": 1,
+      "hint": "'Today' refers to the day of speaking — what phrase replaces it later?",
+      "explanation": "'Today' becomes 'that day', and 'is' backshifts to 'was'.",
+      "grammarRule": "Time Expression Shift",
+      "changesList": [
+        "'today' → 'that day'",
+        "'is' → 'was'"
+      ]
+    },
+    {
+      "id": "dis_l23_practice_q3",
+      "level": 23,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Amara said, \"I have a meeting today.\"",
+      "directSpeech": "Amara said, \"I have a meeting today.\"",
+      "options": [
+        "Amara said that she had a meeting that day.",
+        "Amara said that she had a meeting today.",
+        "Amara said that she has a meeting that day."
+      ],
+      "correctAnswer": "Amara said that she had a meeting that day.",
+      "correctAnswerIndex": 0,
+      "hint": "Combine the pronoun, the verb, and the time expression.",
+      "explanation": "'I' becomes 'she', 'have' backshifts to 'had', and 'today' becomes 'that day'.",
+      "grammarRule": "Time Expression Shift",
+      "changesList": [
+        "'I' → 'she'",
+        "'have' → 'had'",
+        "'today' → 'that day'"
+      ]
+    },
+    {
+      "id": "dis_l24_practice_q1",
+      "level": 24,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Hassan said, \"I will start my new job tomorrow.\"",
+      "directSpeech": "Hassan said, \"I will start my new job tomorrow.\"",
+      "options": [
+        "Hassan said that he would start his new job tomorrow.",
+        "Hassan said that he will start his new job the next day.",
+        "Hassan said that he would start his new job the next day."
+      ],
+      "correctAnswer": "Hassan said that he would start his new job the next day.",
+      "correctAnswerIndex": 2,
+      "hint": "'Tomorrow' points to the day after speaking — what phrase keeps that meaning once the reference point shifts?",
+      "explanation": "'Tomorrow' becomes 'the next day', 'will' becomes 'would', and 'my' becomes 'his'.",
+      "grammarRule": "Time Expression Shift",
+      "changesList": [
+        "'tomorrow' → 'the next day'",
+        "'will' → 'would'",
+        "'my' → 'his'"
+      ]
+    },
+    {
+      "id": "dis_l24_practice_q2",
+      "level": 24,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The airline said, \"The flight departs tomorrow.\"",
+      "directSpeech": "The airline said, \"The flight departs tomorrow.\"",
+      "options": [
+        "The airline said that the flight departed tomorrow.",
+        "The airline said that the flight departs the following day.",
+        "The airline said that the flight departed the following day."
+      ],
+      "correctAnswer": "The airline said that the flight departed the following day.",
+      "correctAnswerIndex": 2,
+      "hint": "'The following day' works here too — check which verb tense pairs with it.",
+      "explanation": "'Departs' backshifts to 'departed', and 'tomorrow' becomes 'the following day'.",
+      "grammarRule": "Time Expression Shift",
+      "changesList": [
+        "'tomorrow' → 'the following day'",
+        "'departs' → 'departed'"
+      ]
+    },
+    {
+      "id": "dis_l24_practice_q3",
+      "level": 24,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Isabella said, \"We are leaving tomorrow.\"",
+      "directSpeech": "Isabella said, \"We are leaving tomorrow.\"",
+      "options": [
+        "Isabella said that we were leaving the next day.",
+        "Isabella said that they were leaving the next day.",
+        "Isabella said that they were leaving tomorrow."
+      ],
+      "correctAnswer": "Isabella said that they were leaving the next day.",
+      "correctAnswerIndex": 1,
+      "hint": "Three changes: the pronoun, the continuous verb, and the time expression.",
+      "explanation": "'We' becomes 'they', 'are leaving' becomes 'were leaving', and 'tomorrow' becomes 'the next day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'are leaving' → 'were leaving'",
+        "'tomorrow' → 'the next day'"
+      ]
+    },
+    {
+      "id": "dis_l25_practice_q1",
+      "level": 25,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Ravi said, \"I sent the invoice yesterday.\"",
+      "directSpeech": "Ravi said, \"I sent the invoice yesterday.\"",
+      "options": [
+        "Ravi said that he sent the invoice yesterday.",
+        "Ravi said that he had sent the invoice yesterday.",
+        "Ravi said that he had sent the invoice the previous day."
+      ],
+      "correctAnswer": "Ravi said that he had sent the invoice the previous day.",
+      "correctAnswerIndex": 2,
+      "hint": "A completed action from 'yesterday' usually backshifts to the past perfect, and the time word changes too.",
+      "explanation": "'Sent' becomes 'had sent', 'I' becomes 'he', and 'yesterday' becomes 'the previous day'.",
+      "grammarRule": "Time Expression Shift",
+      "changesList": [
+        "'sent' → 'had sent'",
+        "'yesterday' → 'the previous day'",
+        "'I' → 'he'"
+      ]
+    },
+    {
+      "id": "dis_l25_practice_q2",
+      "level": 25,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "The teacher said to a student, \"You submitted your essay yesterday.\" Report this from the student's point of view.",
+      "directSpeech": "The teacher said, \"You submitted your essay yesterday.\"",
+      "options": [
+        "The teacher said that I submitted my essay the day before.",
+        "The teacher said that you had submitted your essay the day before.",
+        "The teacher said that I had submitted my essay the day before."
+      ],
+      "correctAnswer": "The teacher said that I had submitted my essay the day before.",
+      "correctAnswerIndex": 2,
+      "hint": "If you are the student being addressed, both 'you' and 'your' change to match you.",
+      "explanation": "'You' becomes 'I', 'your' becomes 'my', 'submitted' becomes 'had submitted', and 'yesterday' becomes 'the day before'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'you' → 'I'",
+        "'your' → 'my'",
+        "'submitted' → 'had submitted'",
+        "'yesterday' → 'the day before'"
+      ]
+    },
+    {
+      "id": "dis_l25_practice_q3",
+      "level": 25,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Clara said, \"The store was closed yesterday.\"",
+      "directSpeech": "Clara said, \"The store was closed yesterday.\"",
+      "options": [
+        "Clara said that the store was closed the day before.",
+        "Clara said that the store had been closed the day before.",
+        "Clara said that the store had been closed yesterday."
+      ],
+      "correctAnswer": "Clara said that the store had been closed the day before.",
+      "correctAnswerIndex": 1,
+      "hint": "This past-tense fact about a finished day usually shifts one step further back too.",
+      "explanation": "'Was closed' backshifts to 'had been closed', and 'yesterday' becomes 'the day before'.",
+      "grammarRule": "Time Expression Shift",
+      "changesList": [
+        "'was closed' → 'had been closed'",
+        "'yesterday' → 'the day before'"
+      ]
+    },
+    {
+      "id": "dis_l26_practice_q1",
+      "level": 26,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Felix said, \"I started this diet last week.\"",
+      "directSpeech": "Felix said, \"I started this diet last week.\"",
+      "options": [
+        "Felix said that he started that diet the previous week.",
+        "Felix said that he had started this diet last week.",
+        "Felix said that he had started that diet the previous week."
+      ],
+      "correctAnswer": "Felix said that he had started that diet the previous week.",
+      "correctAnswerIndex": 2,
+      "hint": "Three things shift together here: the verb, the demonstrative, and the time phrase.",
+      "explanation": "'Started' becomes 'had started', 'this' becomes 'that', and 'last week' becomes 'the previous week'.",
+      "grammarRule": "Time Expression Shift",
+      "changesList": [
+        "'started' → 'had started'",
+        "'this' → 'that'",
+        "'last week' → 'the previous week'"
+      ]
+    },
+    {
+      "id": "dis_l26_practice_q2",
+      "level": 26,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The landlord said, \"Rent increases next month.\"",
+      "directSpeech": "The landlord said, \"Rent increases next month.\"",
+      "options": [
+        "The landlord said that rent increased next month.",
+        "The landlord said that rent increases the following month.",
+        "The landlord said that rent increased the following month."
+      ],
+      "correctAnswer": "The landlord said that rent increased the following month.",
+      "correctAnswerIndex": 2,
+      "hint": "'Next month' shifts the same way that 'tomorrow' did earlier.",
+      "explanation": "'Increases' backshifts to 'increased', and 'next month' becomes 'the following month'.",
+      "grammarRule": "Time Expression Shift",
+      "changesList": [
+        "'next month' → 'the following month'",
+        "'increases' → 'increased'"
+      ]
+    },
+    {
+      "id": "dis_l26_practice_q3",
+      "level": 26,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Zara said, \"I am traveling next month.\"",
+      "directSpeech": "Zara said, \"I am traveling next month.\"",
+      "options": [
+        "Zara said that she was traveling next month.",
+        "Zara said that she was traveling the following month.",
+        "Zara said that she is traveling the following month."
+      ],
+      "correctAnswer": "Zara said that she was traveling the following month.",
+      "correctAnswerIndex": 1,
+      "hint": "Combine the pronoun, the continuous tense, and the time expression.",
+      "explanation": "'I' becomes 'she', 'am traveling' becomes 'was traveling', and 'next month' becomes 'the following month'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'I' → 'she'",
+        "'am traveling' → 'was traveling'",
+        "'next month' → 'the following month'"
+      ]
+    },
+    {
+      "id": "dis_l27_practice_q1",
+      "level": 27,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "An interviewer said to a candidate, \"You have strong qualifications.\" Report this from the candidate's point of view.",
+      "directSpeech": "The interviewer said, \"You have strong qualifications.\"",
+      "options": [
+        "The interviewer said that you had strong qualifications.",
+        "The interviewer said that I have strong qualifications.",
+        "The interviewer said that I had strong qualifications."
+      ],
+      "correctAnswer": "The interviewer said that I had strong qualifications.",
+      "correctAnswerIndex": 2,
+      "hint": "Since the candidate is now telling the story, who does 'you' refer to?",
+      "explanation": "'You' becomes 'I' because the person being addressed is now the one reporting; 'have' backshifts to 'had'.",
+      "grammarRule": "Pronoun Reference Shift",
+      "changesList": [
+        "'you' → 'I'",
+        "'have' → 'had'"
+      ]
+    },
+    {
+      "id": "dis_l27_practice_q2",
+      "level": 27,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Diego said to Elena, \"You forgot your badge.\" Report this to a colleague, referring to Elena.",
+      "directSpeech": "Diego said to Elena, \"You forgot your badge.\"",
+      "options": [
+        "Diego told Elena that she forgot her badge.",
+        "Diego told Elena that she had forgotten her badge.",
+        "Diego told Elena that you had forgotten your badge."
+      ],
+      "correctAnswer": "Diego told Elena that she had forgotten her badge.",
+      "correctAnswerIndex": 1,
+      "hint": "Here 'you' refers to Elena, so it becomes a third-person pronoun, not 'I'.",
+      "explanation": "'You' becomes 'she' because Elena was the one addressed, 'your' becomes 'her', and 'forgot' backshifts to 'had forgotten'.",
+      "grammarRule": "Pronoun Reference Shift",
+      "changesList": [
+        "'you' → 'she'",
+        "'your' → 'her'",
+        "'forgot' → 'had forgotten'"
+      ]
+    },
+    {
+      "id": "dis_l27_practice_q3",
+      "level": 27,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "The coach said to the players, \"You played well today.\" Report this to someone outside the team.",
+      "directSpeech": "The coach said to the players, \"You played well today.\"",
+      "options": [
+        "The coach told the players that they had played well that day.",
+        "The coach told the players that they played well that day.",
+        "The coach told the players that you had played well that day."
+      ],
+      "correctAnswer": "The coach told the players that they had played well that day.",
+      "correctAnswerIndex": 0,
+      "hint": "Since the players are a group being addressed, 'you' becomes a plural pronoun.",
+      "explanation": "'You' becomes 'they', 'played' becomes 'had played', and 'today' becomes 'that day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'you' → 'they'",
+        "'played' → 'had played'",
+        "'today' → 'that day'"
+      ]
+    },
+    {
+      "id": "dis_l28_practice_q1",
+      "level": 28,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Lucas said, \"I will meet you here tomorrow.\"",
+      "directSpeech": "Lucas said, \"I will meet you here tomorrow.\"",
+      "options": [
+        "Lucas said that he would meet me there the next day.",
+        "Lucas said that he will meet me there the next day.",
+        "Lucas said that he would meet me here the next day."
+      ],
+      "correctAnswer": "Lucas said that he would meet me there the next day.",
+      "correctAnswerIndex": 0,
+      "hint": "Four shifts at once: the modal, the object pronoun, the place word, and the time word.",
+      "explanation": "'Will' becomes 'would', 'here' becomes 'there', 'you' becomes 'me', and 'tomorrow' becomes 'the next day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'will' → 'would'",
+        "'here' → 'there'",
+        "'you' → 'me'",
+        "'tomorrow' → 'the next day'"
+      ]
+    },
+    {
+      "id": "dis_l28_practice_q2",
+      "level": 28,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The tour guide said, \"We will gather here at noon today.\"",
+      "directSpeech": "The tour guide said, \"We will gather here at noon today.\"",
+      "options": [
+        "The tour guide said that we would gather there at noon today.",
+        "The tour guide said that they would gather here at noon that day.",
+        "The tour guide said that they would gather there at noon that day."
+      ],
+      "correctAnswer": "The tour guide said that they would gather there at noon that day.",
+      "correctAnswerIndex": 2,
+      "hint": "Check the pronoun, the place word, the modal, and the time word — four changes in total.",
+      "explanation": "'We' becomes 'they', 'will' becomes 'would', 'here' becomes 'there', and 'today' becomes 'that day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'will' → 'would'",
+        "'here' → 'there'",
+        "'today' → 'that day'"
+      ]
+    },
+    {
+      "id": "dis_l28_practice_q3",
+      "level": 28,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Priya said, \"I moved here last year.\"",
+      "directSpeech": "Priya said, \"I moved here last year.\"",
+      "options": [
+        "Priya said that she had moved there the previous year.",
+        "Priya said that she moved there the previous year.",
+        "Priya said that she had moved here last year."
+      ],
+      "correctAnswer": "Priya said that she had moved there the previous year.",
+      "correctAnswerIndex": 0,
+      "hint": "Apply everything you know: the verb tense, the place word, and the time expression.",
+      "explanation": "'Moved' becomes 'had moved', 'here' becomes 'there', and 'last year' becomes 'the previous year'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'moved' → 'had moved'",
+        "'here' → 'there'",
+        "'last year' → 'the previous year'"
+      ]
+    },
+    {
+      "id": "dis_l29_practice_q1",
+      "level": 29,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "An email said, \"Your order will arrive tomorrow.\" Report this to a friend.",
+      "directSpeech": "The email said, \"Your order will arrive tomorrow.\"",
+      "options": [
+        "The email said that my order will arrive the next day.",
+        "The email said that your order would arrive the next day.",
+        "The email said that my order would arrive the next day."
+      ],
+      "correctAnswer": "The email said that my order would arrive the next day.",
+      "correctAnswerIndex": 2,
+      "hint": "If the reader is the one reporting this, how does 'your' change?",
+      "explanation": "'Your' becomes 'my', 'will' becomes 'would', and 'tomorrow' becomes 'the next day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'your' → 'my'",
+        "'will' → 'would'",
+        "'tomorrow' → 'the next day'"
+      ]
+    },
+    {
+      "id": "dis_l29_practice_q2",
+      "level": 29,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: Noor said, \"I saw them here yesterday.\"",
+      "directSpeech": "Noor said, \"I saw them here yesterday.\"",
+      "options": [
+        "Noor said that she had seen them there the day before.",
+        "Noor said that she had seen them here yesterday.",
+        "Noor said that she saw them there the day before."
+      ],
+      "correctAnswer": "Noor said that she had seen them there the day before.",
+      "correctAnswerIndex": 0,
+      "hint": "This sentence needs four separate updates — find each one.",
+      "explanation": "'I' becomes 'she', 'saw' becomes 'had seen', 'here' becomes 'there', and 'yesterday' becomes 'the day before'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'I' → 'she'",
+        "'saw' → 'had seen'",
+        "'here' → 'there'",
+        "'yesterday' → 'the day before'"
+      ]
+    },
+    {
+      "id": "dis_l29_practice_q3",
+      "level": 29,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "The manager said to an intern, \"You will start your new role next month.\" Report this about the intern.",
+      "directSpeech": "The manager said, \"You will start your new role next month.\"",
+      "options": [
+        "The manager told the intern that she would start her new role the following month.",
+        "The manager told the intern that you would start your new role the following month.",
+        "The manager told the intern that she started her new role the following month."
+      ],
+      "correctAnswer": "The manager told the intern that she would start her new role the following month.",
+      "correctAnswerIndex": 0,
+      "hint": "Combine the pronoun, possessive, modal, and time-word changes you've been practicing.",
+      "explanation": "'You'/'your' become 'she'/'her', 'will' becomes 'would', and 'next month' becomes 'the following month'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'you' → 'she'",
+        "'your' → 'her'",
+        "'will' → 'would'",
+        "'next month' → 'the following month'"
+      ]
+    },
+    {
+      "id": "dis_l30_practice_q1",
+      "level": 30,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The chef said, \"This recipe is my favorite.\"",
+      "directSpeech": "The chef said, \"This recipe is my favorite.\"",
+      "options": [
+        "The chef said that that recipe is his favorite.",
+        "The chef said that that recipe was his favorite.",
+        "The chef said that this recipe was his favorite."
+      ],
+      "correctAnswer": "The chef said that that recipe was his favorite.",
+      "correctAnswerIndex": 1,
+      "hint": "Two familiar shifts appear here: the demonstrative and the possessive.",
+      "explanation": "'This' becomes 'that', 'my' becomes 'his', and 'is' backshifts to 'was'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'this' → 'that'",
+        "'my' → 'his'",
+        "'is' → 'was'"
+      ]
+    },
+    {
+      "id": "dis_l30_practice_q2",
+      "level": 30,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "Convert to reported speech: The pilot said, \"We will land here in ten minutes.\"",
+      "directSpeech": "The pilot said, \"We will land here in ten minutes.\"",
+      "options": [
+        "The pilot said that we would land there in ten minutes.",
+        "The pilot said that they would land here in ten minutes.",
+        "The pilot said that they would land there in ten minutes."
+      ],
+      "correctAnswer": "The pilot said that they would land there in ten minutes.",
+      "correctAnswerIndex": 2,
+      "hint": "Recall the pronoun, modal, and place shifts you've studied throughout this section.",
+      "explanation": "'We' becomes 'they', 'will' becomes 'would', and 'here' becomes 'there'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'will' → 'would'",
+        "'here' → 'there'"
+      ]
+    },
+    {
+      "id": "dis_l30_practice_q3",
+      "level": 30,
+      "instruction": "TRANSFORM THE SPEECH",
+      "question": "A librarian said to a visitor, \"You can return these books tomorrow.\" Report this about the visitor.",
+      "directSpeech": "The librarian said, \"You can return these books tomorrow.\"",
+      "options": [
+        "The librarian told the visitor that you could return those books tomorrow.",
+        "The librarian told the visitor that she could return these books the next day.",
+        "The librarian told the visitor that she could return those books the next day."
+      ],
+      "correctAnswer": "The librarian told the visitor that she could return those books the next day.",
+      "correctAnswerIndex": 2,
+      "hint": "This review question has four changes — pronoun, modal, demonstrative, and time word.",
+      "explanation": "'You' becomes 'she', 'can' becomes 'could', 'these' becomes 'those', and 'tomorrow' becomes 'the next day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'you' → 'she'",
+        "'can' → 'could'",
+        "'these' → 'those'",
+        "'tomorrow' → 'the next day'"
+      ]
+    }
+  ]
+}

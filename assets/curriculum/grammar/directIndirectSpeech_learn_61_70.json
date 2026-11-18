@@ -1,0 +1,470 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "learn",
+  "batchIndex": 7,
+  "levels": "61-70",
+  "quests": [
+    {
+      "id": "dis_l61_learn_q1",
+      "level": 61,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "Marcus said to Elena, \"I'll carry your bags.\"",
+      "reportedSpeech": "Marcus offered to carry her bags.",
+      "changesList": [
+        "'I'll carry' → 'offered to carry'",
+        "'your' → 'her'"
+      ],
+      "ruleExplanation": "'I'll carry your bags' becomes 'offered to carry her bags'; the possessive changes to match Elena.",
+      "nativeTip": "'I'll do something for you' is a classic offer — use 'offered to' plus the base verb.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Marcus said to Elena, \"I'll carry your bags.\"\" ➔ \"Marcus offered to carry her bags.\""
+    },
+    {
+      "id": "dis_l61_learn_q2",
+      "level": 61,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The waiter said, \"I can bring you some more bread.\"",
+      "reportedSpeech": "The waiter offered to bring some more bread.",
+      "changesList": [
+        "'I can bring' → 'offered to bring'"
+      ],
+      "ruleExplanation": "'I can bring you...' becomes 'offered to bring'; 'suggested' would require a different structure.",
+      "nativeTip": "'Suggested' isn't followed by 'to' + verb — 'offered to' is the correct pattern here.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The waiter said, \"I can bring you some more bread.\"\" ➔ \"The waiter offered to bring some more bread.\""
+    },
+    {
+      "id": "dis_l61_learn_q3",
+      "level": 61,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "Priya said to her neighbor, \"Do you want me to water your plants while you're away?\"",
+      "reportedSpeech": "Priya offered to water her neighbor's plants while she was away.",
+      "changesList": [
+        "'do you want me to water' → 'offered to water'",
+        "'you're' → 'she was'"
+      ],
+      "ruleExplanation": "The offer 'Do you want me to water...?' becomes 'offered to water', and 'you're' becomes 'she was'.",
+      "nativeTip": "'Do you want me to...?' is a polite way of offering — report it with 'offered to'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Priya said to her neighbor, \"Do you want me to water your plants while you're away?\"\" ➔ \"Priya offered to water her neighbor's plants while she was away.\""
+    },
+    {
+      "id": "dis_l62_learn_q1",
+      "level": 62,
+      "conceptTitle": "Speech Bubble to Report Converter: Gerund Structure",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Gerund Structure",
+      "directSpeech": "Layla said, \"Let's try the new restaurant downtown.\"",
+      "reportedSpeech": "Layla suggested trying the new restaurant downtown.",
+      "changesList": [
+        "'let's try' → 'suggested trying'"
+      ],
+      "ruleExplanation": "'Let's try' becomes the gerund form 'suggested trying'; 'suggested to try' is a common but incorrect pattern.",
+      "nativeTip": "'Suggested' is followed by a gerund (-ing form), not 'to' + verb.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Layla said, \"Let's try the new restaurant downtown.\"\" ➔ \"Layla suggested trying the new restaurant downtown.\""
+    },
+    {
+      "id": "dis_l62_learn_q2",
+      "level": 62,
+      "conceptTitle": "Speech Bubble to Report Converter: Gerund Structure",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Gerund Structure",
+      "directSpeech": "The teacher said, \"Why don't we review the material together?\"",
+      "reportedSpeech": "The teacher suggested reviewing the material together.",
+      "changesList": [
+        "'why don't we review' → 'suggested reviewing'"
+      ],
+      "ruleExplanation": "'Why don't we review...?' becomes 'suggested reviewing', following the gerund pattern.",
+      "nativeTip": "'Why don't we...?' is a common way to suggest something — use the gerund after 'suggested'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The teacher said, \"Why don't we review the material together?\"\" ➔ \"The teacher suggested reviewing the material together.\""
+    },
+    {
+      "id": "dis_l62_learn_q3",
+      "level": 62,
+      "conceptTitle": "Speech Bubble to Report Converter: Gerund Structure",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Gerund Structure",
+      "directSpeech": "Diego said, \"How about taking a break?\"",
+      "reportedSpeech": "Diego suggested taking a break.",
+      "changesList": [
+        "'how about taking' → 'suggested taking'"
+      ],
+      "ruleExplanation": "'How about taking...?' becomes 'suggested taking', keeping the gerund form.",
+      "nativeTip": "'How about...?' is another suggestion phrase reported the same way.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Diego said, \"How about taking a break?\"\" ➔ \"Diego suggested taking a break.\""
+    },
+    {
+      "id": "dis_l63_learn_q1",
+      "level": 63,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The consultant said to Hassan, \"You should reduce your expenses.\"",
+      "reportedSpeech": "The consultant suggested that Hassan reduce his expenses.",
+      "changesList": [
+        "'should reduce' → 'reduce' (subjunctive)",
+        "'your' → 'his'"
+      ],
+      "ruleExplanation": "This is the subjunctive pattern 'suggested that + subject + base verb', so 'reduce' stays unconjugated even with a third-person subject.",
+      "nativeTip": "After 'suggested that', use the base form of the verb, not the past or present simple form.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The consultant said to Hassan, \"You should reduce your expenses.\"\" ➔ \"The consultant suggested that Hassan reduce his expenses.\""
+    },
+    {
+      "id": "dis_l63_learn_q2",
+      "level": 63,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The board said to the manager, \"You should submit the proposal by Monday.\"",
+      "reportedSpeech": "The board suggested that the manager submit the proposal by Monday.",
+      "changesList": [
+        "'should submit' → 'submit' (subjunctive)"
+      ],
+      "ruleExplanation": "'Submit' stays in its base form after 'suggested that', regardless of the subject.",
+      "nativeTip": "Same subjunctive rule applies here — don't add '-s' or '-ed' to the verb.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The board said to the manager, \"You should submit the proposal by Monday.\"\" ➔ \"The board suggested that the manager submit the proposal by Monday.\""
+    },
+    {
+      "id": "dis_l63_learn_q3",
+      "level": 63,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The doctor said to the patient, \"You should see a specialist.\"",
+      "reportedSpeech": "The doctor suggested that the patient see a specialist.",
+      "changesList": [
+        "'should see' → 'see' (subjunctive)"
+      ],
+      "ruleExplanation": "'See' remains unconjugated after 'suggested that the patient', following the subjunctive pattern.",
+      "nativeTip": "Apply the subjunctive rule one more time: base verb after 'suggested that'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The doctor said to the patient, \"You should see a specialist.\"\" ➔ \"The doctor suggested that the patient see a specialist.\""
+    },
+    {
+      "id": "dis_l64_learn_q1",
+      "level": 64,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "Isabella said to Marcus, \"Would you like to come to my birthday party?\"",
+      "reportedSpeech": "Isabella invited Marcus to come to her birthday party.",
+      "changesList": [
+        "'would you like to come' → 'invited...to come'",
+        "'my' → 'her'"
+      ],
+      "ruleExplanation": "'Would you like to come...?' becomes 'invited Marcus to come', and 'my' becomes 'her'.",
+      "nativeTip": "A polite invitation like 'Would you like to...?' is best reported with 'invited...to'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Isabella said to Marcus, \"Would you like to come to my birthday party?\"\" ➔ \"Isabella invited Marcus to come to her birthday party.\""
+    },
+    {
+      "id": "dis_l64_learn_q2",
+      "level": 64,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The company said to the candidates, \"Please join us for a final interview.\"",
+      "reportedSpeech": "The company invited the candidates to join them for a final interview.",
+      "changesList": [
+        "'please join us' → 'invited...to join them'"
+      ],
+      "ruleExplanation": "'Please join us' becomes 'invited...to join them', matching the tone of an invitation.",
+      "nativeTip": "Since this is a formal invitation, 'invited' fits better than a plain 'told'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The company said to the candidates, \"Please join us for a final interview.\"\" ➔ \"The company invited the candidates to join them for a final interview.\""
+    },
+    {
+      "id": "dis_l64_learn_q3",
+      "level": 64,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "Grace said to her colleagues, \"Why don't you all come over for dinner on Saturday?\"",
+      "reportedSpeech": "Grace invited her colleagues to come over for dinner on Saturday.",
+      "changesList": [
+        "'why don't you come' → 'invited...to come'"
+      ],
+      "ruleExplanation": "'Why don't you all come...?' becomes 'invited...to come', since this functions as an invitation.",
+      "nativeTip": "'Why don't you...?' used to invite someone is reported with 'invited...to', not 'suggested'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Grace said to her colleagues, \"Why don't you all come over for dinner on Saturday?\"\" ➔ \"Grace invited her colleagues to come over for dinner on Saturday.\""
+    },
+    {
+      "id": "dis_l65_learn_q1",
+      "level": 65,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "Hassan said, \"I will pay you back next week.\"",
+      "reportedSpeech": "Hassan promised to pay her back the following week.",
+      "changesList": [
+        "'I will pay' → 'promised to pay'",
+        "'you' → 'her'",
+        "'next week' → 'the following week'"
+      ],
+      "ruleExplanation": "'I will pay you back' becomes 'promised to pay her back', and 'next week' becomes 'the following week'.",
+      "nativeTip": "A firm commitment like 'I will...' is naturally reported with 'promised to'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Hassan said, \"I will pay you back next week.\"\" ➔ \"Hassan promised to pay her back the following week.\""
+    },
+    {
+      "id": "dis_l65_learn_q2",
+      "level": 65,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The contractor said, \"I'll finish the renovation by June.\"",
+      "reportedSpeech": "The contractor promised to finish the renovation by June.",
+      "changesList": [
+        "'I'll finish' → 'promised to finish'"
+      ],
+      "ruleExplanation": "'I'll finish...' becomes 'promised to finish', reflecting the commitment in the original statement.",
+      "nativeTip": "This is a firm commitment, not a favor — 'promised' fits better than 'offered'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The contractor said, \"I'll finish the renovation by June.\"\" ➔ \"The contractor promised to finish the renovation by June.\""
+    },
+    {
+      "id": "dis_l65_learn_q3",
+      "level": 65,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The children said, \"We won't make any noise.\"",
+      "reportedSpeech": "The children promised not to make any noise.",
+      "changesList": [
+        "'won't make' → 'promised not to make'"
+      ],
+      "ruleExplanation": "'Won't make' becomes 'promised not to make', keeping the negative-infinitive pattern.",
+      "nativeTip": "Keep 'not' directly before 'to' in this negative promise.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The children said, \"We won't make any noise.\"\" ➔ \"The children promised not to make any noise.\""
+    },
+    {
+      "id": "dis_l66_learn_q1",
+      "level": 66,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "Ravi said, \"Okay, I will help you move this weekend.\"",
+      "reportedSpeech": "Ravi agreed to help her move that weekend.",
+      "changesList": [
+        "'okay, I will help' → 'agreed to help'",
+        "'this weekend' → 'that weekend'"
+      ],
+      "ruleExplanation": "'Okay, I will help...' becomes 'agreed to help', and 'this weekend' becomes 'that weekend'.",
+      "nativeTip": "Saying 'okay' to a request or plan usually becomes 'agreed to'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Ravi said, \"Okay, I will help you move this weekend.\"\" ➔ \"Ravi agreed to help her move that weekend.\""
+    },
+    {
+      "id": "dis_l66_learn_q2",
+      "level": 66,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The union said, \"We accept the new terms.\"",
+      "reportedSpeech": "The union agreed to accept the new terms.",
+      "changesList": [
+        "'we accept' → 'agreed to accept'"
+      ],
+      "ruleExplanation": "'We accept the new terms' becomes 'agreed to accept the new terms'.",
+      "nativeTip": "'We accept...' as a decision reached is best reported with 'agreed to'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The union said, \"We accept the new terms.\"\" ➔ \"The union agreed to accept the new terms.\""
+    },
+    {
+      "id": "dis_l66_learn_q3",
+      "level": 66,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Both companies said, \"We will merge our operations.\"",
+      "reportedSpeech": "Both companies agreed to merge their operations.",
+      "changesList": [
+        "'we will merge' → 'agreed to merge'",
+        "'our' → 'their'"
+      ],
+      "ruleExplanation": "'Our' becomes 'their', and 'we will merge' becomes 'agreed to merge'.",
+      "nativeTip": "Update the possessive pronoun as well as the reporting verb pattern.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Both companies said, \"We will merge our operations.\"\" ➔ \"Both companies agreed to merge their operations.\""
+    },
+    {
+      "id": "dis_l67_learn_q1",
+      "level": 67,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The employee said, \"I won't work on weekends.\"",
+      "reportedSpeech": "The employee refused to work on weekends.",
+      "changesList": [
+        "'won't work' → 'refused to work'"
+      ],
+      "ruleExplanation": "'I won't work' becomes 'refused to work', capturing the firm rejection.",
+      "nativeTip": "A firm rejection like 'I won't...' is reported with 'refused to'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The employee said, \"I won't work on weekends.\"\" ➔ \"The employee refused to work on weekends.\""
+    },
+    {
+      "id": "dis_l67_learn_q2",
+      "level": 67,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The tenant said, \"I will not pay the extra fee.\"",
+      "reportedSpeech": "The tenant refused to pay the extra fee.",
+      "changesList": [
+        "'will not pay' → 'refused to pay'"
+      ],
+      "ruleExplanation": "'I will not pay' becomes 'refused to pay', matching the tenant's rejection.",
+      "nativeTip": "This is a rejection, not an agreement — check the meaning before picking the reporting verb.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The tenant said, \"I will not pay the extra fee.\"\" ➔ \"The tenant refused to pay the extra fee.\""
+    },
+    {
+      "id": "dis_l67_learn_q3",
+      "level": 67,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The witness said, \"I won't answer that question.\"",
+      "reportedSpeech": "The witness refused to answer that question.",
+      "changesList": [
+        "'won't answer' → 'refused to answer'"
+      ],
+      "ruleExplanation": "'I won't answer' becomes 'refused to answer'; the refusal itself already carries the negative meaning.",
+      "nativeTip": "Keep the infinitive form 'to answer' — don't add an extra negative.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The witness said, \"I won't answer that question.\"\" ➔ \"The witness refused to answer that question.\""
+    },
+    {
+      "id": "dis_l68_learn_q1",
+      "level": 68,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The manager said, \"I will cover your shift tomorrow.\"",
+      "reportedSpeech": "The manager offered to cover her shift the next day.",
+      "changesList": [
+        "'I will cover' → 'offered to cover'",
+        "'your' → 'her'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "Offering to do something as a favor fits 'offered to', while 'promised' suggests a stronger, longer commitment.",
+      "nativeTip": "This is a spontaneous favor, not a firm long-term commitment — which reporting verb fits best?",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager said, \"I will cover your shift tomorrow.\"\" ➔ \"The manager offered to cover her shift the next day.\""
+    },
+    {
+      "id": "dis_l68_learn_q2",
+      "level": 68,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The board members said, \"We accept your resignation.\"",
+      "reportedSpeech": "The board members agreed to accept the resignation.",
+      "changesList": [
+        "'we accept' → 'agreed to accept'"
+      ],
+      "ruleExplanation": "'We accept...' reflects a decision, matching the pattern 'agreed to accept'.",
+      "nativeTip": "This is a formal decision that was reached, not a favor or a suggestion.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The board members said, \"We accept your resignation.\"\" ➔ \"The board members agreed to accept the resignation.\""
+    },
+    {
+      "id": "dis_l68_learn_q3",
+      "level": 68,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The union leader said, \"We will not accept a pay cut.\"",
+      "reportedSpeech": "The union leader refused to accept a pay cut.",
+      "changesList": [
+        "'will not accept' → 'refused to accept'"
+      ],
+      "ruleExplanation": "'We will not accept' becomes 'refused to accept', matching the firm rejection.",
+      "nativeTip": "This is a firm rejection, not an agreement or a suggestion.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The union leader said, \"We will not accept a pay cut.\"\" ➔ \"The union leader refused to accept a pay cut.\""
+    },
+    {
+      "id": "dis_l69_learn_q1",
+      "level": 69,
+      "conceptTitle": "Speech Bubble to Report Converter: Gerund Structure",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Gerund Structure",
+      "directSpeech": "Sofia said, \"Let's postpone the launch.\"",
+      "reportedSpeech": "Sofia suggested postponing the launch.",
+      "changesList": [
+        "'let's postpone' → 'suggested postponing'"
+      ],
+      "ruleExplanation": "'Let's postpone' becomes 'suggested postponing'; 'suggested to postpone' is a common learner error.",
+      "nativeTip": "'Let's...' proposals use the gerund pattern after 'suggested'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Sofia said, \"Let's postpone the launch.\"\" ➔ \"Sofia suggested postponing the launch.\""
+    },
+    {
+      "id": "dis_l69_learn_q2",
+      "level": 69,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "Andres said, \"I'll handle the client communication.\"",
+      "reportedSpeech": "Andres offered to handle the client communication.",
+      "changesList": [
+        "'I'll handle' → 'offered to handle'"
+      ],
+      "ruleExplanation": "'I'll handle...' becomes 'offered to handle', since Andres is volunteering, not proposing an idea to others.",
+      "nativeTip": "This is a spontaneous offer to take on a task, not a suggestion for the group.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Andres said, \"I'll handle the client communication.\"\" ➔ \"Andres offered to handle the client communication.\""
+    },
+    {
+      "id": "dis_l69_learn_q3",
+      "level": 69,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The whole team said, \"We accept this new plan.\"",
+      "reportedSpeech": "The whole team agreed to accept the new plan.",
+      "changesList": [
+        "'we accept this' → 'agreed to accept the'"
+      ],
+      "ruleExplanation": "'We accept this new plan' becomes 'agreed to accept the new plan'; 'this' becomes 'the' since it's now a shared reference.",
+      "nativeTip": "This final decision by the group fits the same pattern you practiced earlier for reaching agreement.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The whole team said, \"We accept this new plan.\"\" ➔ \"The whole team agreed to accept the new plan.\""
+    },
+    {
+      "id": "dis_l70_learn_q1",
+      "level": 70,
+      "conceptTitle": "Speech Bubble to Report Converter: Gerund Structure",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Gerund Structure",
+      "directSpeech": "The host said, \"Why don't you stay for one more drink?\"",
+      "reportedSpeech": "The host suggested staying for one more drink.",
+      "changesList": [
+        "'why don't you stay' → 'suggested staying'"
+      ],
+      "ruleExplanation": "'Why don't you stay?' becomes 'suggested staying', following the gerund structure.",
+      "nativeTip": "Recall the gerund pattern for 'suggested', not the infinitive.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The host said, \"Why don't you stay for one more drink?\"\" ➔ \"The host suggested staying for one more drink.\""
+    },
+    {
+      "id": "dis_l70_learn_q2",
+      "level": 70,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Nadia said, \"I'll drive you to the airport tomorrow.\"",
+      "reportedSpeech": "Nadia offered to drive him to the airport the next day.",
+      "changesList": [
+        "'I'll drive' → 'offered to drive'",
+        "'you' → 'him'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'I'll drive you...' becomes 'offered to drive him', and 'tomorrow' becomes 'the next day'.",
+      "nativeTip": "Think about whether this is a spontaneous favor or a firm long-term commitment.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Nadia said, \"I'll drive you to the airport tomorrow.\"\" ➔ \"Nadia offered to drive him to the airport the next day.\""
+    },
+    {
+      "id": "dis_l70_learn_q3",
+      "level": 70,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The committee said, \"We will not approve this budget.\"",
+      "reportedSpeech": "The committee refused to approve the budget.",
+      "changesList": [
+        "'will not approve' → 'refused to approve'"
+      ],
+      "ruleExplanation": "'We will not approve' becomes 'refused to approve', matching the committee's firm rejection.",
+      "nativeTip": "This final review question checks a firm rejection — which reporting verb captures that meaning?",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The committee said, \"We will not approve this budget.\"\" ➔ \"The committee refused to approve the budget.\""
+    }
+  ]
+}

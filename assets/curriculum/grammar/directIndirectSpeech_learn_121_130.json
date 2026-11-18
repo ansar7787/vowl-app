@@ -1,0 +1,502 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "learn",
+  "batchIndex": 13,
+  "levels": "121-130",
+  "quests": [
+    {
+      "id": "dis_l121_learn_q1",
+      "level": 121,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Command",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Command",
+      "directSpeech": "The supervisor said to the new hire, \"Shadow Maria for your first week.\"",
+      "reportedSpeech": "The supervisor told the new hire to shadow Maria for his first week.",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'your' → 'his'"
+      ],
+      "ruleExplanation": "The imperative 'Shadow...' becomes 'to shadow', and 'your' becomes 'his'.",
+      "nativeTip": "Reporting a command still needs the infinitive structure, and the possessive still matches the person addressed.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The supervisor said to the new hire, \"Shadow Maria for your first week.\"\" ➔ \"The supervisor told the new hire to shadow Maria for his first week.\""
+    },
+    {
+      "id": "dis_l121_learn_q2",
+      "level": 121,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Request",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Request",
+      "directSpeech": "The HR manager said to the team, \"Please complete this survey before Friday.\"",
+      "reportedSpeech": "The HR manager asked the team to complete that survey before Friday.",
+      "changesList": [
+        "imperative → 'asked + object + to'",
+        "'this' → 'that'"
+      ],
+      "ruleExplanation": "'Please complete...' becomes 'asked...to complete', and 'this' becomes 'that'.",
+      "nativeTip": "'Please' signals a request rather than a strict command.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The HR manager said to the team, \"Please complete this survey before Friday.\"\" ➔ \"The HR manager asked the team to complete that survey before Friday.\""
+    },
+    {
+      "id": "dis_l121_learn_q3",
+      "level": 121,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Command",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Command",
+      "directSpeech": "The director said to the department, \"Don't approve any expenses over $500 without my sign-off.\"",
+      "reportedSpeech": "The director told the department not to approve any expenses over $500 without his sign-off.",
+      "changesList": [
+        "negative imperative → 'told + object + not to'",
+        "'my' → 'his'"
+      ],
+      "ruleExplanation": "'Don't approve' becomes 'not to approve', and 'my' becomes 'his'.",
+      "nativeTip": "Keep 'not' before 'to', and update the possessive pronoun.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The director said to the department, \"Don't approve any expenses over $500 without my sign-off.\"\" ➔ \"The director told the department not to approve any expenses over $500 without his sign-off.\""
+    },
+    {
+      "id": "dis_l122_learn_q1",
+      "level": 122,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Request",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Request",
+      "directSpeech": "The support agent said to the caller, \"Please restart your device and try again.\"",
+      "reportedSpeech": "The support agent asked the caller to restart her device and try again.",
+      "changesList": [
+        "imperative → 'asked + object + to'",
+        "'your' → 'her'"
+      ],
+      "ruleExplanation": "'Please restart...' becomes 'asked...to restart', and 'your' becomes 'her'.",
+      "nativeTip": "This is a polite instruction over the phone — check which reporting verb fits.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The support agent said to the caller, \"Please restart your device and try again.\"\" ➔ \"The support agent asked the caller to restart her device and try again.\""
+    },
+    {
+      "id": "dis_l122_learn_q2",
+      "level": 122,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Warning",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Warning",
+      "directSpeech": "The airline agent said to the passengers, \"Do not leave your bags unattended.\"",
+      "reportedSpeech": "The airline agent warned the passengers not to leave their bags unattended.",
+      "changesList": [
+        "negative imperative → 'warned + object + not to'",
+        "'your' → 'their'"
+      ],
+      "ruleExplanation": "'Do not leave' becomes 'not to leave', and 'your' becomes 'their'.",
+      "nativeTip": "This safety-related instruction fits 'warned', and keep 'not' before 'to'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The airline agent said to the passengers, \"Do not leave your bags unattended.\"\" ➔ \"The airline agent warned the passengers not to leave their bags unattended.\""
+    },
+    {
+      "id": "dis_l122_learn_q3",
+      "level": 122,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The technician said to the client, \"Send me a screenshot of the error here today.\"",
+      "reportedSpeech": "The technician asked the client to send him a screenshot of the error there that day.",
+      "changesList": [
+        "imperative → 'asked + object + to'",
+        "'me' → 'him'",
+        "'here' → 'there'",
+        "'today' → 'that day'"
+      ],
+      "ruleExplanation": "'Send me...' becomes 'asked...to send him', and 'here'/'today' become 'there'/'that day'.",
+      "nativeTip": "This request combines a reporting-verb pattern with an object pronoun, a place word, and a time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The technician said to the client, \"Send me a screenshot of the error here today.\"\" ➔ \"The technician asked the client to send him a screenshot of the error there that day.\""
+    },
+    {
+      "id": "dis_l123_learn_q1",
+      "level": 123,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Command",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Command",
+      "directSpeech": "The teacher said to the class, \"Turn to page 42 and read the first paragraph.\"",
+      "reportedSpeech": "The teacher told the class to turn to page 42 and read the first paragraph.",
+      "changesList": [
+        "imperative → 'told + object + to'"
+      ],
+      "ruleExplanation": "The two commands 'Turn...' and 'read...' both become infinitives after 'told the class'.",
+      "nativeTip": "This is a straightforward classroom instruction, so 'told' fits better than a polite 'asked'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The teacher said to the class, \"Turn to page 42 and read the first paragraph.\"\" ➔ \"The teacher told the class to turn to page 42 and read the first paragraph.\""
+    },
+    {
+      "id": "dis_l123_learn_q2",
+      "level": 123,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Warning",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Warning",
+      "directSpeech": "The professor said to Arjun, \"Don't hand in your assignment late again.\"",
+      "reportedSpeech": "The professor warned Arjun not to hand in his assignment late again.",
+      "changesList": [
+        "negative imperative → 'warned + object + not to'",
+        "'your' → 'his'"
+      ],
+      "ruleExplanation": "'Don't hand in' becomes 'not to hand in', and 'your' becomes 'his'.",
+      "nativeTip": "The stern tone here suggests 'warned' rather than a neutral 'told'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The professor said to Arjun, \"Don't hand in your assignment late again.\"\" ➔ \"The professor warned Arjun not to hand in his assignment late again.\""
+    },
+    {
+      "id": "dis_l123_learn_q3",
+      "level": 123,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The examiner said to the students, \"Please put your phones away before the exam starts.\"",
+      "reportedSpeech": "The examiner asked the students to put their phones away before the exam started.",
+      "changesList": [
+        "imperative → 'asked + object + to'",
+        "'your' → 'their'",
+        "'starts' → 'started'"
+      ],
+      "ruleExplanation": "'Please put...' becomes 'asked...to put', 'your' becomes 'their', and 'starts' backshifts to 'started'.",
+      "nativeTip": "Combine the polite reporting verb, the possessive change, and the tense in the time clause.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The examiner said to the students, \"Please put your phones away before the exam starts.\"\" ➔ \"The examiner asked the students to put their phones away before the exam started.\""
+    },
+    {
+      "id": "dis_l124_learn_q1",
+      "level": 124,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Request",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Request",
+      "directSpeech": "The flight attendant said to the passengers, \"Please return your seats to the upright position.\"",
+      "reportedSpeech": "The flight attendant asked the passengers to return their seats to the upright position.",
+      "changesList": [
+        "imperative → 'asked + object + to'",
+        "'your' → 'their'"
+      ],
+      "ruleExplanation": "'Please return...' becomes 'asked...to return', and 'your' becomes 'their'.",
+      "nativeTip": "This polite in-flight instruction is best reported with 'asked'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The flight attendant said to the passengers, \"Please return your seats to the upright position.\"\" ➔ \"The flight attendant asked the passengers to return their seats to the upright position.\""
+    },
+    {
+      "id": "dis_l124_learn_q2",
+      "level": 124,
+      "conceptTitle": "Speech Bubble to Report Converter: Reporting Verb Pattern",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reporting Verb Pattern",
+      "directSpeech": "The border officer said to Youssef, \"Don't forget to declare any items over the limit.\"",
+      "reportedSpeech": "The border officer reminded Youssef to declare any items over the limit.",
+      "changesList": [
+        "imperative → 'reminded + object + to'"
+      ],
+      "ruleExplanation": "'Don't forget to declare' becomes 'reminded...to declare', since both phrases mean the same thing.",
+      "nativeTip": "'Don't forget to...' is best reported with 'reminded', matching its meaning exactly.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The border officer said to Youssef, \"Don't forget to declare any items over the limit.\"\" ➔ \"The border officer reminded Youssef to declare any items over the limit.\""
+    },
+    {
+      "id": "dis_l124_learn_q3",
+      "level": 124,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The tour operator said to the group, \"Meet here at 7 AM tomorrow, and bring your passports.\"",
+      "reportedSpeech": "The tour operator told the group to meet there at 7 AM the next day and bring their passports.",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'",
+        "'your' → 'their'"
+      ],
+      "ruleExplanation": "'Here' becomes 'there', 'tomorrow' becomes 'the next day', and 'your' becomes 'their'.",
+      "nativeTip": "This combines the place word, the time word, and the possessive across two joined commands.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The tour operator said to the group, \"Meet here at 7 AM tomorrow, and bring your passports.\"\" ➔ \"The tour operator told the group to meet there at 7 AM the next day and bring their passports.\""
+    },
+    {
+      "id": "dis_l125_learn_q1",
+      "level": 125,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Warning",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Warning",
+      "directSpeech": "The safety sign said, \"Keep this door closed at all times.\"",
+      "reportedSpeech": "The safety sign warned staff to keep that door closed at all times.",
+      "changesList": [
+        "imperative → 'warned + object + to'",
+        "'this' → 'that'"
+      ],
+      "ruleExplanation": "The command 'Keep...' becomes 'to keep', and 'this' becomes 'that'; there's no negative here, so 'warned...to' is used, not 'warned...not to'.",
+      "nativeTip": "A safety instruction like this is best reported with 'warned'; check the meaning before adding 'not'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The safety sign said, \"Keep this door closed at all times.\"\" ➔ \"The safety sign warned staff to keep that door closed at all times.\""
+    },
+    {
+      "id": "dis_l125_learn_q2",
+      "level": 125,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Warning",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Warning",
+      "directSpeech": "The factory supervisor said to the workers, \"Never operate this machine without gloves.\"",
+      "reportedSpeech": "The factory supervisor warned the workers never to operate that machine without gloves.",
+      "changesList": [
+        "negative imperative → 'warned + object + never to'",
+        "'this' → 'that'"
+      ],
+      "ruleExplanation": "'Never operate' becomes 'never to operate', and 'this' becomes 'that'.",
+      "nativeTip": "'Never' functions like 'not' here — keep it directly before 'to'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The factory supervisor said to the workers, \"Never operate this machine without gloves.\"\" ➔ \"The factory supervisor warned the workers never to operate that machine without gloves.\""
+    },
+    {
+      "id": "dis_l125_learn_q3",
+      "level": 125,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Command",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Command",
+      "directSpeech": "The park ranger said to the hikers, \"Stay on the marked trail here.\"",
+      "reportedSpeech": "The park ranger told the hikers to stay on the marked trail there.",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'here' → 'there'"
+      ],
+      "ruleExplanation": "The positive command 'Stay...' becomes 'to stay', and 'here' becomes 'there'.",
+      "nativeTip": "This is a positive instruction, not a prohibition — watch out for accidentally adding a negative.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The park ranger said to the hikers, \"Stay on the marked trail here.\"\" ➔ \"The park ranger told the hikers to stay on the marked trail there.\""
+    },
+    {
+      "id": "dis_l126_learn_q1",
+      "level": 126,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Command",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Command",
+      "directSpeech": "Rosa said to her teenage son, \"Be home by 10 tonight.\"",
+      "reportedSpeech": "Rosa told her son to be home by 10 that night.",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'tonight' → 'that night'"
+      ],
+      "ruleExplanation": "'Be home...' becomes 'to be home', and 'tonight' becomes 'that night'.",
+      "nativeTip": "This is a parental instruction, so 'told' fits, and the time word shifts too.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Rosa said to her teenage son, \"Be home by 10 tonight.\"\" ➔ \"Rosa told her son to be home by 10 that night.\""
+    },
+    {
+      "id": "dis_l126_learn_q2",
+      "level": 126,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Command",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Command",
+      "directSpeech": "Jamal said to his younger brother, \"Don't touch my things without asking.\"",
+      "reportedSpeech": "Jamal told his brother not to touch his things without asking.",
+      "changesList": [
+        "negative imperative → 'told + object + not to'",
+        "'my' → 'his'"
+      ],
+      "ruleExplanation": "'Don't touch' becomes 'not to touch', and 'my' becomes 'his'.",
+      "nativeTip": "Keep the negative meaning, and update the possessive to refer to Jamal.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Jamal said to his younger brother, \"Don't touch my things without asking.\"\" ➔ \"Jamal told his brother not to touch his things without asking.\""
+    },
+    {
+      "id": "dis_l126_learn_q3",
+      "level": 126,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Ingrid said to her daughter, \"Remember to call your grandmother today.\"",
+      "reportedSpeech": "Ingrid reminded her daughter to call her grandmother that day.",
+      "changesList": [
+        "imperative → 'reminded + object + to'",
+        "'your' → 'her'",
+        "'today' → 'that day'"
+      ],
+      "ruleExplanation": "'Remember to call' becomes 'reminded...to call', 'your' becomes 'her', and 'today' becomes 'that day'.",
+      "nativeTip": "Combine the reporting-verb pattern with the possessive and time-word changes.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Ingrid said to her daughter, \"Remember to call your grandmother today.\"\" ➔ \"Ingrid reminded her daughter to call her grandmother that day.\""
+    },
+    {
+      "id": "dis_l127_learn_q1",
+      "level": 127,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The project lead said to the team, \"Update the shared document here by tomorrow.\"",
+      "reportedSpeech": "The project lead told the team to update the shared document there by the next day.",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'Here' becomes 'there', and 'tomorrow' becomes 'the next day'.",
+      "nativeTip": "Combine the place and time changes inside this command.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The project lead said to the team, \"Update the shared document here by tomorrow.\"\" ➔ \"The project lead told the team to update the shared document there by the next day.\""
+    },
+    {
+      "id": "dis_l127_learn_q2",
+      "level": 127,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The scrum master said to the developers, \"Don't merge this branch until it's reviewed.\"",
+      "reportedSpeech": "The scrum master warned the developers not to merge that branch until it was reviewed.",
+      "changesList": [
+        "negative imperative → 'warned + object + not to'",
+        "'this' → 'that'",
+        "'is reviewed' → 'was reviewed'"
+      ],
+      "ruleExplanation": "'Don't merge' becomes 'not to merge', 'this' becomes 'that', and 'is reviewed' becomes 'was reviewed'.",
+      "nativeTip": "This cautionary instruction fits 'warned', and don't forget the demonstrative and the tense in the time clause.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The scrum master said to the developers, \"Don't merge this branch until it's reviewed.\"\" ➔ \"The scrum master warned the developers not to merge that branch until it was reviewed.\""
+    },
+    {
+      "id": "dis_l127_learn_q3",
+      "level": 127,
+      "conceptTitle": "Speech Bubble to Report Converter: Gerund Structure",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Gerund Structure",
+      "directSpeech": "The team lead said, \"Let's finalize the roadmap by next week.\"",
+      "reportedSpeech": "The team lead suggested finalizing the roadmap by the following week.",
+      "changesList": [
+        "'let's finalize' → 'suggested finalizing'",
+        "'next week' → 'the following week'"
+      ],
+      "ruleExplanation": "'Let's finalize' becomes 'suggested finalizing', and 'next week' becomes 'the following week'.",
+      "nativeTip": "Recall the gerund pattern for suggestions, and update the time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The team lead said, \"Let's finalize the roadmap by next week.\"\" ➔ \"The team lead suggested finalizing the roadmap by the following week.\""
+    },
+    {
+      "id": "dis_l128_learn_q1",
+      "level": 128,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The receptionist said to the patient, \"Arrive here 15 minutes early tomorrow.\"",
+      "reportedSpeech": "The receptionist told the patient to arrive there 15 minutes early the next day.",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'Here' becomes 'there', and 'tomorrow' becomes 'the next day'.",
+      "nativeTip": "Combine the place and time changes inside this instruction.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The receptionist said to the patient, \"Arrive here 15 minutes early tomorrow.\"\" ➔ \"The receptionist told the patient to arrive there 15 minutes early the next day.\""
+    },
+    {
+      "id": "dis_l128_learn_q2",
+      "level": 128,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Request",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Request",
+      "directSpeech": "The dentist said to Kiri, \"Please don't eat anything for two hours before your appointment.\"",
+      "reportedSpeech": "The dentist asked Kiri not to eat anything for two hours before her appointment.",
+      "changesList": [
+        "negative imperative → 'asked + object + not to'",
+        "'your' → 'her'"
+      ],
+      "ruleExplanation": "'Please don't eat' becomes 'asked...not to eat', and 'your' becomes 'her'.",
+      "nativeTip": "The word 'please' signals a request; keep 'not' directly before 'to'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The dentist said to Kiri, \"Please don't eat anything for two hours before your appointment.\"\" ➔ \"The dentist asked Kiri not to eat anything for two hours before her appointment.\""
+    },
+    {
+      "id": "dis_l128_learn_q3",
+      "level": 128,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The clinic said, \"Please confirm your appointment by replying to this message today.\"",
+      "reportedSpeech": "The clinic asked me to confirm my appointment by replying to that message that day.",
+      "changesList": [
+        "imperative → 'asked + object + to'",
+        "'your' → 'my'",
+        "'this' → 'that'",
+        "'today' → 'that day'"
+      ],
+      "ruleExplanation": "'Please confirm...' becomes 'asked...to confirm', 'your' becomes 'my', 'this' becomes 'that', and 'today' becomes 'that day'.",
+      "nativeTip": "This combines the reporting verb, the possessive, the demonstrative, and the time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The clinic said, \"Please confirm your appointment by replying to this message today.\"\" ➔ \"The clinic asked me to confirm my appointment by replying to that message that day.\""
+    },
+    {
+      "id": "dis_l129_learn_q1",
+      "level": 129,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The event planner said to the vendors, \"Set up your stalls here by 8 AM.\"",
+      "reportedSpeech": "The event planner told the vendors to set up their stalls there by 8 AM.",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'your' → 'their'",
+        "'here' → 'there'"
+      ],
+      "ruleExplanation": "'Your' becomes 'their', and 'here' becomes 'there'.",
+      "nativeTip": "Combine the possessive and the place-word changes inside this instruction.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The event planner said to the vendors, \"Set up your stalls here by 8 AM.\"\" ➔ \"The event planner told the vendors to set up their stalls there by 8 AM.\""
+    },
+    {
+      "id": "dis_l129_learn_q2",
+      "level": 129,
+      "conceptTitle": "Speech Bubble to Report Converter: Reported Request",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Reported Request",
+      "directSpeech": "Beatriz said to the guests, \"Please don't bring gifts to the party.\"",
+      "reportedSpeech": "Beatriz asked the guests not to bring gifts to the party.",
+      "changesList": [
+        "negative imperative → 'asked + object + not to'"
+      ],
+      "ruleExplanation": "'Please don't bring' becomes 'asked...not to bring', keeping the negative meaning.",
+      "nativeTip": "'Please' marks this as a polite request, and don't lose the negative meaning.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Beatriz said to the guests, \"Please don't bring gifts to the party.\"\" ➔ \"Beatriz asked the guests not to bring gifts to the party.\""
+    },
+    {
+      "id": "dis_l129_learn_q3",
+      "level": 129,
+      "conceptTitle": "Speech Bubble to Report Converter: Gerund Structure",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Gerund Structure",
+      "directSpeech": "The organizer said, \"Why don't we move the event indoors in case it rains?\"",
+      "reportedSpeech": "The organizer suggested moving the event indoors in case it rained.",
+      "changesList": [
+        "'why don't we move' → 'suggested moving'",
+        "'rains' → 'rained'"
+      ],
+      "ruleExplanation": "'Why don't we move...?' becomes 'suggested moving', and 'rains' backshifts to 'rained'.",
+      "nativeTip": "Combine the gerund pattern with the tense backshift in the conditional clause.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The organizer said, \"Why don't we move the event indoors in case it rains?\"\" ➔ \"The organizer suggested moving the event indoors in case it rained.\""
+    },
+    {
+      "id": "dis_l130_learn_q1",
+      "level": 130,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The IT support said to the user, \"Clear your browser cache and restart the app here today.\"",
+      "reportedSpeech": "The IT support told the user to clear his browser cache and restart the app there that day.",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'your' → 'his'",
+        "'here' → 'there'",
+        "'today' → 'that day'"
+      ],
+      "ruleExplanation": "'Your' becomes 'his', 'here' becomes 'there', and 'today' becomes 'that day'.",
+      "nativeTip": "This review question combines a possessive, a place word, and a time word inside a two-part instruction.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The IT support said to the user, \"Clear your browser cache and restart the app here today.\"\" ➔ \"The IT support told the user to clear his browser cache and restart the app there that day.\""
+    },
+    {
+      "id": "dis_l130_learn_q2",
+      "level": 130,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The security guard said to the visitors, \"Don't leave your badges here when you go.\"",
+      "reportedSpeech": "The security guard warned the visitors not to leave their badges there when they went.",
+      "changesList": [
+        "negative imperative → 'warned + object + not to'",
+        "'your' → 'their'",
+        "'here' → 'there'",
+        "'you go' → 'they went'"
+      ],
+      "ruleExplanation": "'Don't leave' becomes 'not to leave', 'your' becomes 'their', 'here' becomes 'there', and 'you go' becomes 'they went'.",
+      "nativeTip": "This safety-related instruction fits 'warned' — keep the negative and check every pronoun.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The security guard said to the visitors, \"Don't leave your badges here when you go.\"\" ➔ \"The security guard warned the visitors not to leave their badges there when they went.\""
+    },
+    {
+      "id": "dis_l130_learn_q3",
+      "level": 130,
+      "conceptTitle": "Speech Bubble to Report Converter: Gerund Structure",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Gerund Structure",
+      "directSpeech": "The manager said, \"Let's review this policy again next quarter.\"",
+      "reportedSpeech": "The manager suggested reviewing that policy again the following quarter.",
+      "changesList": [
+        "'let's review' → 'suggested reviewing'",
+        "'this' → 'that'",
+        "'next quarter' → 'the following quarter'"
+      ],
+      "ruleExplanation": "'Let's review' becomes 'suggested reviewing', 'this' becomes 'that', and 'next quarter' becomes 'the following quarter'.",
+      "nativeTip": "This final review question in the section combines the gerund suggestion pattern with a demonstrative and a time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager said, \"Let's review this policy again next quarter.\"\" ➔ \"The manager suggested reviewing that policy again the following quarter.\""
+    }
+  ]
+}

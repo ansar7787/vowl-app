@@ -1,0 +1,650 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "practice",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "dis_l101_practice_q1",
+      "level": 101,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: Maria said that she liked her job.",
+      "directSpeech": "Maria said that she liked her job.",
+      "options": [
+        "Maria said, \"I like my job.\"",
+        "Maria said, \"She likes her job.\"",
+        "Maria said, \"I liked my job.\""
+      ],
+      "correctAnswer": "Maria said, \"I like my job.\"",
+      "correctAnswerIndex": 0,
+      "hint": "Reverse the backshift: past tense in reported speech usually came from present tense in the original words.",
+      "explanation": "'Liked' reverses to 'like', and 'she'/'her' reverse to 'I'/'my', since Maria was speaking about herself.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'liked' → 'like'",
+        "'she' → 'I'",
+        "'her' → 'my'"
+      ]
+    },
+    {
+      "id": "dis_l101_practice_q2",
+      "level": 101,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: Daniel said that he was tired.",
+      "directSpeech": "Daniel said that he was tired.",
+      "options": [
+        "Daniel said, \"He was tired.\"",
+        "Daniel said, \"I was tired.\"",
+        "Daniel said, \"I am tired.\""
+      ],
+      "correctAnswer": "Daniel said, \"I am tired.\"",
+      "correctAnswerIndex": 2,
+      "hint": "Think about what tense and pronoun Daniel would have actually used when speaking about himself.",
+      "explanation": "'Was' reverses to 'am', and 'he' reverses to 'I'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'was' → 'am'",
+        "'he' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l101_practice_q3",
+      "level": 101,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: The manager said that the meeting was important.",
+      "directSpeech": "The manager said that the meeting was important.",
+      "options": [
+        "The manager said, \"This meeting is important.\"",
+        "The manager said, \"The meeting was important.\"",
+        "The manager said, \"The meeting is important.\""
+      ],
+      "correctAnswer": "The manager said, \"The meeting is important.\"",
+      "correctAnswerIndex": 2,
+      "hint": "There's no pronoun to reverse here — focus only on the verb tense.",
+      "explanation": "'Was' reverses to 'is'; there's no pronoun change needed since the subject is 'the meeting'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'was' → 'is'"
+      ]
+    },
+    {
+      "id": "dis_l102_practice_q1",
+      "level": 102,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: Valentina said that she was cooking dinner.",
+      "directSpeech": "Valentina said that she was cooking dinner.",
+      "options": [
+        "Valentina said, \"I am cooking dinner.\"",
+        "Valentina said, \"She was cooking dinner.\"",
+        "Valentina said, \"I was cooking dinner.\""
+      ],
+      "correctAnswer": "Valentina said, \"I am cooking dinner.\"",
+      "correctAnswerIndex": 0,
+      "hint": "Reverse both the auxiliary and the pronoun.",
+      "explanation": "'Was cooking' reverses to 'am cooking', and 'she' reverses to 'I'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'was cooking' → 'am cooking'",
+        "'she' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l102_practice_q2",
+      "level": 102,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: Tobias said that his colleagues were working late.",
+      "directSpeech": "Tobias said that his colleagues were working late.",
+      "options": [
+        "Tobias said, \"His colleagues are working late.\"",
+        "Tobias said, \"My colleagues were working late.\"",
+        "Tobias said, \"My colleagues are working late.\""
+      ],
+      "correctAnswer": "Tobias said, \"My colleagues are working late.\"",
+      "correctAnswerIndex": 2,
+      "hint": "Reverse the possessive and the auxiliary together.",
+      "explanation": "'His' reverses to 'my', and 'were working' reverses to 'are working'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'his' → 'my'",
+        "'were working' → 'are working'"
+      ]
+    },
+    {
+      "id": "dis_l102_practice_q3",
+      "level": 102,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: The nurse said that the patient was resting comfortably.",
+      "directSpeech": "The nurse said that the patient was resting comfortably.",
+      "options": [
+        "The nurse said, \"The patient was resting comfortably.\"",
+        "The nurse said, \"The patient rests comfortably.\"",
+        "The nurse said, \"The patient is resting comfortably.\""
+      ],
+      "correctAnswer": "The nurse said, \"The patient is resting comfortably.\"",
+      "correctAnswerIndex": 2,
+      "hint": "Only the tense reverses here — keep the continuous '-ing' form intact.",
+      "explanation": "'Was resting' reverses to 'is resting'; the '-ing' form doesn't change.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'was resting' → 'is resting'"
+      ]
+    },
+    {
+      "id": "dis_l103_practice_q1",
+      "level": 103,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: Sofia said that she had finished her homework.",
+      "directSpeech": "Sofia said that she had finished her homework.",
+      "options": [
+        "Sofia said, \"She had finished her homework.\"",
+        "Sofia said, \"I have finished my homework.\"",
+        "Sofia said, \"I finished my homework.\""
+      ],
+      "correctAnswer": "Sofia said, \"I have finished my homework.\"",
+      "correctAnswerIndex": 1,
+      "hint": "Past perfect in reported speech usually reverses to present perfect in the original words.",
+      "explanation": "'Had finished' reverses to 'have finished', and 'she'/'her' reverse to 'I'/'my'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'had finished' → 'have finished'",
+        "'she' → 'I'",
+        "'her' → 'my'"
+      ]
+    },
+    {
+      "id": "dis_l103_practice_q2",
+      "level": 103,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: The technician said that he had already fixed the printer.",
+      "directSpeech": "The technician said that he had already fixed the printer.",
+      "options": [
+        "The technician said, \"He has already fixed the printer.\"",
+        "The technician said, \"I already fixed the printer.\"",
+        "The technician said, \"I have already fixed the printer.\""
+      ],
+      "correctAnswer": "The technician said, \"I have already fixed the printer.\"",
+      "correctAnswerIndex": 2,
+      "hint": "Keep the perfect structure — just move the auxiliary and pronoun back to the original speaker's words.",
+      "explanation": "'Had fixed' reverses to 'have fixed', and 'he' reverses to 'I'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'had fixed' → 'have fixed'",
+        "'he' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l103_practice_q3",
+      "level": 103,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: Hassan said that he had locked the door before he left.",
+      "directSpeech": "Hassan said that he had locked the door before he left.",
+      "options": [
+        "Hassan said, \"I have locked the door before I left.\"",
+        "Hassan said, \"I locked the door before I left.\"",
+        "Hassan said, \"I had locked the door before I left.\""
+      ],
+      "correctAnswer": "Hassan said, \"I had locked the door before I left.\"",
+      "correctAnswerIndex": 2,
+      "hint": "Not every past perfect reverses — this one describes an action completed before another past action, so it stays as past perfect.",
+      "explanation": "Since 'had locked' happened before 'left' (also past), the past perfect stays the same in direct speech; only the pronoun reverses.",
+      "grammarRule": "Backshift Exception",
+      "changesList": [
+        "'he' → 'I'",
+        "'had locked' stays unchanged (earlier past action)"
+      ]
+    },
+    {
+      "id": "dis_l104_practice_q1",
+      "level": 104,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: Chidinma said that she would call me later.",
+      "directSpeech": "Chidinma said that she would call me later.",
+      "options": [
+        "Chidinma said, \"She will call me later.\"",
+        "Chidinma said, \"I will call you later.\"",
+        "Chidinma said, \"I would call you later.\""
+      ],
+      "correctAnswer": "Chidinma said, \"I will call you later.\"",
+      "correctAnswerIndex": 1,
+      "hint": "'Would' in reported speech usually reverses to 'will' in the original words.",
+      "explanation": "'Would' reverses to 'will', 'she' reverses to 'I', and 'me' reverses to 'you'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'would' → 'will'",
+        "'she' → 'I'",
+        "'me' → 'you'"
+      ]
+    },
+    {
+      "id": "dis_l104_practice_q2",
+      "level": 104,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: Amir said that he could speak French.",
+      "directSpeech": "Amir said that he could speak French.",
+      "options": [
+        "Amir said, \"He could speak French.\"",
+        "Amir said, \"I can speak French.\"",
+        "Amir said, \"I could speak French.\""
+      ],
+      "correctAnswer": "Amir said, \"I can speak French.\"",
+      "correctAnswerIndex": 1,
+      "hint": "Reverse the modal to its present form, along with the pronoun.",
+      "explanation": "'Could' reverses to 'can', and 'he' reverses to 'I'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'could' → 'can'",
+        "'he' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l104_practice_q3",
+      "level": 104,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: The teacher said that we had to submit the assignment by Friday.",
+      "directSpeech": "The teacher said that we had to submit the assignment by Friday.",
+      "options": [
+        "The teacher said, \"You have to submit the assignment by Friday.\"",
+        "The teacher said, \"We have to submit the assignment by Friday.\"",
+        "The teacher said, \"You had to submit the assignment by Friday.\""
+      ],
+      "correctAnswer": "The teacher said, \"You have to submit the assignment by Friday.\"",
+      "correctAnswerIndex": 0,
+      "hint": "Reverse both the pronoun and the modal-like phrase 'had to' back to the teacher's original words.",
+      "explanation": "'We' reverses to 'you', and 'had to' reverses to 'have to' since the teacher originally used present obligation.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'we' → 'you'",
+        "'had to' → 'have to'"
+      ]
+    },
+    {
+      "id": "dis_l105_practice_q1",
+      "level": 105,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: Layla said that her brother had borrowed her car.",
+      "directSpeech": "Layla said that her brother had borrowed her car.",
+      "options": [
+        "Layla said, \"Her brother has borrowed her car.\"",
+        "Layla said, \"My brother has borrowed my car.\"",
+        "Layla said, \"My brother borrowed my car.\""
+      ],
+      "correctAnswer": "Layla said, \"My brother has borrowed my car.\"",
+      "correctAnswerIndex": 1,
+      "hint": "Reverse both possessives to match Layla as the original speaker.",
+      "explanation": "Both instances of 'her' reverse to 'my', and 'had borrowed' reverses to 'has borrowed'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'her' → 'my' (both instances)",
+        "'had borrowed' → 'has borrowed'"
+      ]
+    },
+    {
+      "id": "dis_l105_practice_q2",
+      "level": 105,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: The twins said that their parents were proud of them.",
+      "directSpeech": "The twins said that their parents were proud of them.",
+      "options": [
+        "The twins said, \"Their parents are proud of them.\"",
+        "The twins said, \"Our parents are proud of us.\"",
+        "The twins said, \"Our parents were proud of us.\""
+      ],
+      "correctAnswer": "The twins said, \"Our parents are proud of us.\"",
+      "correctAnswerIndex": 1,
+      "hint": "Reverse the possessive, the object pronoun, and the tense together.",
+      "explanation": "'Their' reverses to 'our', 'them' reverses to 'us', and 'were' reverses to 'are'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'their' → 'our'",
+        "'them' → 'us'",
+        "'were' → 'are'"
+      ]
+    },
+    {
+      "id": "dis_l105_practice_q3",
+      "level": 105,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: Omar told Yuna that he had seen her at the conference.",
+      "directSpeech": "Omar told Yuna that he had seen her at the conference.",
+      "options": [
+        "Omar said to Yuna, \"I have seen you at the conference.\"",
+        "Omar said to Yuna, \"He saw her at the conference.\"",
+        "Omar said to Yuna, \"I saw you at the conference.\""
+      ],
+      "correctAnswer": "Omar said to Yuna, \"I saw you at the conference.\"",
+      "correctAnswerIndex": 2,
+      "hint": "This past perfect reverses to simple past, and both pronouns switch back to first and second person.",
+      "explanation": "'Had seen' reverses to 'saw', 'he' reverses to 'I', and 'her' reverses to 'you'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'had seen' → 'saw'",
+        "'he' → 'I'",
+        "'her' → 'you'"
+      ]
+    },
+    {
+      "id": "dis_l106_practice_q1",
+      "level": 106,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: Priya said that she was leaving the next day.",
+      "directSpeech": "Priya said that she was leaving the next day.",
+      "options": [
+        "Priya said, \"I am leaving tomorrow.\"",
+        "Priya said, \"She is leaving tomorrow.\"",
+        "Priya said, \"I was leaving tomorrow.\""
+      ],
+      "correctAnswer": "Priya said, \"I am leaving tomorrow.\"",
+      "correctAnswerIndex": 0,
+      "hint": "'The next day' reverses to 'tomorrow' in the original words.",
+      "explanation": "'The next day' reverses to 'tomorrow', 'was leaving' reverses to 'am leaving', and 'she' reverses to 'I'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'the next day' → 'tomorrow'",
+        "'was leaving' → 'am leaving'",
+        "'she' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l106_practice_q2",
+      "level": 106,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: Julius said that he had arrived there the day before.",
+      "directSpeech": "Julius said that he had arrived there the day before.",
+      "options": [
+        "Julius said, \"I arrived here yesterday.\"",
+        "Julius said, \"I had arrived here yesterday.\"",
+        "Julius said, \"He arrived there the day before.\""
+      ],
+      "correctAnswer": "Julius said, \"I arrived here yesterday.\"",
+      "correctAnswerIndex": 0,
+      "hint": "Reverse the place word, the time word, and the tense together.",
+      "explanation": "'There' reverses to 'here', 'the day before' reverses to 'yesterday', and 'had arrived' reverses to 'arrived'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'there' → 'here'",
+        "'the day before' → 'yesterday'",
+        "'had arrived' → 'arrived'"
+      ]
+    },
+    {
+      "id": "dis_l106_practice_q3",
+      "level": 106,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: The manager said that the report was due that day.",
+      "directSpeech": "The manager said that the report was due that day.",
+      "options": [
+        "The manager said, \"The report is due that day.\"",
+        "The manager said, \"The report is due today.\"",
+        "The manager said, \"The report was due today.\""
+      ],
+      "correctAnswer": "The manager said, \"The report is due today.\"",
+      "correctAnswerIndex": 1,
+      "hint": "Two changes here: the time word and the verb tense.",
+      "explanation": "'That day' reverses to 'today', and 'was' reverses to 'is'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'that day' → 'today'",
+        "'was' → 'is'"
+      ]
+    },
+    {
+      "id": "dis_l107_practice_q1",
+      "level": 107,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: Fatima asked whether I liked spicy food.",
+      "directSpeech": "Fatima asked whether I liked spicy food.",
+      "options": [
+        "Fatima asked, \"Did you like spicy food?\"",
+        "Fatima asked, \"You like spicy food?\"",
+        "Fatima asked, \"Do you like spicy food?\""
+      ],
+      "correctAnswer": "Fatima asked, \"Do you like spicy food?\"",
+      "correctAnswerIndex": 2,
+      "hint": "Reverse the statement word order back into a question, and add the auxiliary 'do'.",
+      "explanation": "'Liked' reverses to 'like', the auxiliary 'do' is added back, and word order becomes a question again; 'I' reverses to 'you'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'liked' → 'do...like'",
+        "'I' → 'you'",
+        "statement word order → question word order"
+      ]
+    },
+    {
+      "id": "dis_l107_practice_q2",
+      "level": 107,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: The officer asked whether I had a valid ticket.",
+      "directSpeech": "The officer asked whether I had a valid ticket.",
+      "options": [
+        "The officer asked, \"Did you have a valid ticket?\"",
+        "The officer asked, \"Do you have a valid ticket?\"",
+        "The officer asked, \"Have you a valid ticket?\""
+      ],
+      "correctAnswer": "The officer asked, \"Do you have a valid ticket?\"",
+      "correctAnswerIndex": 1,
+      "hint": "Reverse 'had' to its present form and rebuild the question with 'do'.",
+      "explanation": "'Had' reverses to 'do...have', and 'I' reverses to 'you'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'had' → 'do...have'",
+        "'I' → 'you'",
+        "statement word order → question word order"
+      ]
+    },
+    {
+      "id": "dis_l107_practice_q3",
+      "level": 107,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: Bashir asked whether they would attend the wedding.",
+      "directSpeech": "Bashir asked whether they would attend the wedding.",
+      "options": [
+        "Bashir asked, \"Would you attend the wedding?\"",
+        "Bashir asked, \"Will they attend the wedding?\"",
+        "Bashir asked, \"Will you attend the wedding?\""
+      ],
+      "correctAnswer": "Bashir asked, \"Will you attend the wedding?\"",
+      "correctAnswerIndex": 2,
+      "hint": "Reverse the modal and the pronoun, then rebuild the question order.",
+      "explanation": "'Would' reverses to 'will', 'they' reverses to 'you', and inversion is restored.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'would' → 'will'",
+        "'they' → 'you'",
+        "statement word order → question word order"
+      ]
+    },
+    {
+      "id": "dis_l108_practice_q1",
+      "level": 108,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: Camila asked where I had parked the car.",
+      "directSpeech": "Camila asked where I had parked the car.",
+      "options": [
+        "Camila asked, \"Where you parked the car?\"",
+        "Camila asked, \"Where did you park the car?\"",
+        "Camila asked, \"Where do you park the car?\""
+      ],
+      "correctAnswer": "Camila asked, \"Where did you park the car?\"",
+      "correctAnswerIndex": 1,
+      "hint": "Reverse the past perfect to past simple, add 'did', and rebuild the question.",
+      "explanation": "'Had parked' reverses to 'did park', and 'I' reverses to 'you'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'had parked' → 'did park'",
+        "'I' → 'you'",
+        "statement word order → question word order"
+      ]
+    },
+    {
+      "id": "dis_l108_practice_q2",
+      "level": 108,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: The interviewer asked what my greatest weakness was.",
+      "directSpeech": "The interviewer asked what my greatest weakness was.",
+      "options": [
+        "The interviewer asked, \"What is your greatest weakness?\"",
+        "The interviewer asked, \"What was your greatest weakness?\"",
+        "The interviewer asked, \"What is my greatest weakness?\""
+      ],
+      "correctAnswer": "The interviewer asked, \"What is your greatest weakness?\"",
+      "correctAnswerIndex": 0,
+      "hint": "Reverse the possessive and the tense, and restore the inverted question order.",
+      "explanation": "'My' reverses to 'your', and 'was' reverses to 'is'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'my' → 'your'",
+        "'was' → 'is'",
+        "statement word order → question word order"
+      ]
+    },
+    {
+      "id": "dis_l108_practice_q3",
+      "level": 108,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: The coach asked why the players hadn't practiced harder.",
+      "directSpeech": "The coach asked why the players hadn't practiced harder.",
+      "options": [
+        "The coach asked, \"Why don't the players practice harder?\"",
+        "The coach asked, \"Why didn't the players practice harder?\"",
+        "The coach asked, \"Why haven't the players practiced harder?\""
+      ],
+      "correctAnswer": "The coach asked, \"Why didn't the players practice harder?\"",
+      "correctAnswerIndex": 1,
+      "hint": "Reverse the negative past perfect to a negative past simple question.",
+      "explanation": "'Hadn't practiced' reverses to 'didn't practice', and inversion is restored.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'hadn't practiced' → 'didn't practice'",
+        "statement word order → question word order"
+      ]
+    },
+    {
+      "id": "dis_l109_practice_q1",
+      "level": 109,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: The teacher told the students to close their books.",
+      "directSpeech": "The teacher told the students to close their books.",
+      "options": [
+        "The teacher said, \"Close their books.\"",
+        "The teacher said, \"Close your books.\"",
+        "The teacher told, \"Close your books.\""
+      ],
+      "correctAnswer": "The teacher said, \"Close your books.\"",
+      "correctAnswerIndex": 1,
+      "hint": "Reverse the infinitive back into an imperative, and reverse the possessive pronoun.",
+      "explanation": "'To close' reverses to the imperative 'Close', and 'their' reverses to 'your'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'to close' → 'close' (imperative)",
+        "'their' → 'your'"
+      ]
+    },
+    {
+      "id": "dis_l109_practice_q2",
+      "level": 109,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: The lifeguard warned the swimmers not to swim past the flags.",
+      "directSpeech": "The lifeguard warned the swimmers not to swim past the flags.",
+      "options": [
+        "The lifeguard said, \"Don't swim past the flags.\"",
+        "The lifeguard said, \"Swim past the flags.\"",
+        "The lifeguard said, \"Not swim past the flags.\""
+      ],
+      "correctAnswer": "The lifeguard said, \"Don't swim past the flags.\"",
+      "correctAnswerIndex": 0,
+      "hint": "Reverse 'not to' back into the negative imperative 'don't'.",
+      "explanation": "'Not to swim' reverses to 'don't swim', keeping the negative meaning intact.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'not to swim' → 'don't swim' (negative imperative)"
+      ]
+    },
+    {
+      "id": "dis_l109_practice_q3",
+      "level": 109,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: Selin asked her assistant to send the invoice that day.",
+      "directSpeech": "Selin asked her assistant to send the invoice that day.",
+      "options": [
+        "Selin said, \"Please send the invoice that day.\"",
+        "Selin said, \"Please send the invoice today.\"",
+        "Selin said, \"Send the invoice that day.\""
+      ],
+      "correctAnswer": "Selin said, \"Please send the invoice today.\"",
+      "correctAnswerIndex": 1,
+      "hint": "Reverse the request back into an imperative with 'please', and reverse the time word.",
+      "explanation": "'Asked...to send' reverses to the polite imperative 'Please send', and 'that day' reverses to 'today'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'asked...to send' → 'please send' (polite imperative)",
+        "'that day' → 'today'"
+      ]
+    },
+    {
+      "id": "dis_l110_practice_q1",
+      "level": 110,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: Milo said that he had been working there for five years.",
+      "directSpeech": "Milo said that he had been working there for five years.",
+      "options": [
+        "Milo said, \"He has been working there for five years.\"",
+        "Milo said, \"I was working here for five years.\"",
+        "Milo said, \"I have been working here for five years.\""
+      ],
+      "correctAnswer": "Milo said, \"I have been working here for five years.\"",
+      "correctAnswerIndex": 2,
+      "hint": "Reverse the past perfect continuous to present perfect continuous, and reverse the pronoun and place word.",
+      "explanation": "'Had been working' reverses to 'have been working', 'there' reverses to 'here', and 'he' reverses to 'I'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'had been working' → 'have been working'",
+        "'there' → 'here'",
+        "'he' → 'I'"
+      ]
+    },
+    {
+      "id": "dis_l110_practice_q2",
+      "level": 110,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: The client asked whether the team could deliver the project by the following Friday.",
+      "directSpeech": "The client asked whether the team could deliver the project by the following Friday.",
+      "options": [
+        "The client asked, \"Could you deliver the project by next Friday?\"",
+        "The client asked, \"Can the team deliver the project by the following Friday?\"",
+        "The client asked, \"Can you deliver the project by next Friday?\""
+      ],
+      "correctAnswer": "The client asked, \"Can you deliver the project by next Friday?\"",
+      "correctAnswerIndex": 2,
+      "hint": "Reverse the modal, the time expression, and rebuild the question order.",
+      "explanation": "'Could' reverses to 'can', 'the following Friday' reverses to 'next Friday', and 'the team' reverses to 'you'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'could' → 'can'",
+        "'the following Friday' → 'next Friday'",
+        "'the team' → 'you'",
+        "statement word order → question word order"
+      ]
+    },
+    {
+      "id": "dis_l110_practice_q3",
+      "level": 110,
+      "instruction": "RECONSTRUCT THE DIRECT SPEECH",
+      "question": "Convert to direct speech: The manager told the staff not to leave their workstations without permission.",
+      "directSpeech": "The manager told the staff not to leave their workstations without permission.",
+      "options": [
+        "The manager said, \"Leave your workstations without permission.\"",
+        "The manager said, \"Don't leave your workstations without permission.\"",
+        "The manager said, \"Don't leave their workstations without permission.\""
+      ],
+      "correctAnswer": "The manager said, \"Don't leave your workstations without permission.\"",
+      "correctAnswerIndex": 1,
+      "hint": "This final review item reverses a negative command along with its possessive pronoun.",
+      "explanation": "'Not to leave' reverses to 'don't leave', and 'their' reverses to 'your'.",
+      "grammarRule": "Indirect-to-Direct Reconstruction",
+      "changesList": [
+        "'not to leave' → 'don't leave' (negative imperative)",
+        "'their' → 'your'"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,685 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "mastery",
+  "batchIndex": 6,
+  "levels": "51-60",
+  "quests": [
+    {
+      "id": "dis_l51_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The manager said to Diego, \"Submit the report by Friday.\"",
+      "options": [
+        "The manager told Diego submitting the report by Friday.",
+        "The manager told Diego to submit the report by Friday.",
+        "The manager told Diego that he submit the report by Friday."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The manager told Diego to submit the report by Friday.",
+      "sentence": "The manager said to Diego, \"Submit the report by Friday.\"",
+      "hint": "Commands become 'told + person + to + base verb' in reported speech.",
+      "explanation": "The imperative 'Submit...' becomes the infinitive structure 'to submit', following the pattern 'told someone to do something'.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "imperative → 'told + object + to'"
+      ],
+      "level": 51
+    },
+    {
+      "id": "dis_l51_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The coach said to the players, \"Warm up before the match.\"",
+      "options": [
+        "The coach told the players to warm up before the match.",
+        "The coach told the players warm up before the match.",
+        "The coach told the players that they warm up before the match."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The coach told the players to warm up before the match.",
+      "sentence": "The coach said to the players, \"Warm up before the match.\"",
+      "hint": "Keep the infinitive form 'to warm up' — don't just copy the base verb.",
+      "explanation": "The command 'Warm up...' becomes the infinitive 'to warm up' after 'told the players'.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "imperative → 'told + object + to'"
+      ],
+      "level": 51
+    },
+    {
+      "id": "dis_l51_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The pilot said to the passengers, \"Fasten your seatbelts.\"",
+      "options": [
+        "The pilot told the passengers to fasten their seatbelts.",
+        "The pilot told the passengers to fasten your seatbelts.",
+        "The pilot told the passengers fasten their seatbelts."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The pilot told the passengers to fasten their seatbelts.",
+      "sentence": "The pilot said to the passengers, \"Fasten your seatbelts.\"",
+      "hint": "Don't forget the possessive pronoun also needs to match the object.",
+      "explanation": "'Your' becomes 'their' to match 'the passengers', and the imperative becomes 'to fasten'.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'your' → 'their'"
+      ],
+      "level": 51
+    },
+    {
+      "id": "dis_l52_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Elena said to her assistant, \"Please send the invoice today.\"",
+      "options": [
+        "Elena asked her assistant sending the invoice that day.",
+        "Elena told her assistant to send the invoice today.",
+        "Elena asked her assistant to send the invoice that day."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Elena asked her assistant to send the invoice that day.",
+      "sentence": "Elena said to her assistant, \"Please send the invoice today.\"",
+      "hint": "Polite requests with 'please' use 'asked' instead of 'told'.",
+      "explanation": "'Please' signals a polite request, so 'asked' is used, and 'today' becomes 'that day'.",
+      "grammarRule": "Reported Request",
+      "changesList": [
+        "imperative → 'asked + object + to'",
+        "'today' → 'that day'"
+      ],
+      "level": 52
+    },
+    {
+      "id": "dis_l52_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The librarian said to the visitors, \"Please keep your voices down.\"",
+      "options": [
+        "The librarian asked the visitors to keep their voices down.",
+        "The librarian asked the visitors keeping their voices down.",
+        "The librarian told the visitors to keep their voices down."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The librarian asked the visitors to keep their voices down.",
+      "sentence": "The librarian said to the visitors, \"Please keep your voices down.\"",
+      "hint": "'Please' marks this as a polite request rather than a plain command.",
+      "explanation": "'Please' marks this as a polite request, and 'your' becomes 'their'.",
+      "grammarRule": "Reported Request",
+      "changesList": [
+        "imperative → 'asked + object + to'",
+        "'your' → 'their'"
+      ],
+      "level": 52
+    },
+    {
+      "id": "dis_l52_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The customer said to the waiter, \"Could you bring the bill, please?\"",
+      "options": [
+        "The customer asked the waiter to bring the bill.",
+        "The customer asked the waiter could you bring the bill.",
+        "The customer told the waiter to bring the bill."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The customer asked the waiter to bring the bill.",
+      "sentence": "The customer said to the waiter, \"Could you bring the bill, please?\"",
+      "hint": "Polite questions with 'could you...' also become 'asked + object + to'.",
+      "explanation": "The polite question 'Could you...?' becomes the infinitive structure 'asked the waiter to bring'.",
+      "grammarRule": "Reported Request",
+      "changesList": [
+        "polite question → 'asked + object + to'"
+      ],
+      "level": 52
+    },
+    {
+      "id": "dis_l53_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The officer said to the driver, \"Pull over immediately!\"",
+      "options": [
+        "The officer asked the driver to pull over immediately.",
+        "The officer ordered the driver pulling over immediately.",
+        "The officer ordered the driver to pull over immediately."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The officer ordered the driver to pull over immediately.",
+      "sentence": "The officer said to the driver, \"Pull over immediately!\"",
+      "hint": "A strong, authoritative command is best reported with 'ordered', not 'asked'.",
+      "explanation": "The forceful command becomes 'ordered the driver to pull over', reflecting the authority in the original tone.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "imperative → 'ordered + object + to'"
+      ],
+      "level": 53
+    },
+    {
+      "id": "dis_l53_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The general said to the troops, \"Hold your positions!\"",
+      "options": [
+        "The general ordered the troops to hold their positions.",
+        "The general told the troops to hold your positions.",
+        "The general ordered the troops hold their positions."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The general ordered the troops to hold their positions.",
+      "sentence": "The general said to the troops, \"Hold your positions!\"",
+      "hint": "Keep the infinitive form and match the possessive to the object.",
+      "explanation": "'Your' becomes 'their', and the command becomes 'to hold'.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "imperative → 'ordered + object + to'",
+        "'your' → 'their'"
+      ],
+      "level": 53
+    },
+    {
+      "id": "dis_l53_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The judge said to the defendant, \"Answer the question.\"",
+      "options": [
+        "The judge ordered the defendant to answer the question.",
+        "The judge asked the defendant to answer the question.",
+        "The judge ordered the defendant answer the question."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The judge ordered the defendant to answer the question.",
+      "sentence": "The judge said to the defendant, \"Answer the question.\"",
+      "hint": "A judge's command in court is forceful enough to use 'ordered' rather than a softer verb.",
+      "explanation": "The judge's authority makes 'ordered' the appropriate reporting verb, with the infinitive 'to answer'.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "imperative → 'ordered + object + to'"
+      ],
+      "level": 53
+    },
+    {
+      "id": "dis_l54_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The lifeguard said to the swimmers, \"Don't swim past the flags.\"",
+      "options": [
+        "The lifeguard told the swimmers don't swim past the flags.",
+        "The lifeguard warned the swimmers not to swim past the flags.",
+        "The lifeguard warned the swimmers to not swim past the flags."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The lifeguard warned the swimmers not to swim past the flags.",
+      "sentence": "The lifeguard said to the swimmers, \"Don't swim past the flags.\"",
+      "hint": "Negative commands use 'not to' directly before the verb, not 'to not'.",
+      "explanation": "'Don't swim' becomes 'not to swim' after 'warned', keeping 'not' immediately before 'to'.",
+      "grammarRule": "Reported Warning",
+      "changesList": [
+        "negative imperative → 'warned + object + not to'"
+      ],
+      "level": 54
+    },
+    {
+      "id": "dis_l54_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The electrician said to the homeowner, \"Don't touch the wires.\"",
+      "options": [
+        "The electrician warned the homeowner not to touch the wires.",
+        "The electrician warned the homeowner to touch the wires.",
+        "The electrician warned the homeowner don't touch the wires."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The electrician warned the homeowner not to touch the wires.",
+      "sentence": "The electrician said to the homeowner, \"Don't touch the wires.\"",
+      "hint": "Make sure the negative meaning survives the transformation.",
+      "explanation": "'Don't touch' becomes 'not to touch'; losing 'not' would reverse the meaning entirely.",
+      "grammarRule": "Reported Warning",
+      "changesList": [
+        "negative imperative → 'warned + object + not to'"
+      ],
+      "level": 54
+    },
+    {
+      "id": "dis_l54_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The sign said, \"Do not feed the animals.\"",
+      "options": [
+        "The sign warned visitors not to feed the animals.",
+        "The sign warned visitors to not feed the animals.",
+        "The sign told visitors not feed the animals."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The sign warned visitors not to feed the animals.",
+      "sentence": "The sign said, \"Do not feed the animals.\"",
+      "hint": "Keep 'not' directly before 'to', and don't forget the infinitive base verb.",
+      "explanation": "'Do not feed' becomes 'not to feed', following the standard negative-infinitive pattern.",
+      "grammarRule": "Reported Warning",
+      "changesList": [
+        "negative imperative → 'warned + object + not to'"
+      ],
+      "level": 54
+    },
+    {
+      "id": "dis_l55_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Grace said to her brother, \"Remember to lock the door.\"",
+      "options": [
+        "Grace told her brother remember to lock the door.",
+        "Grace reminded her brother to lock the door.",
+        "Grace reminded her brother locking the door."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Grace reminded her brother to lock the door.",
+      "sentence": "Grace said to her brother, \"Remember to lock the door.\"",
+      "hint": "'Remember to...' as an instruction is naturally reported with 'reminded'.",
+      "explanation": "'Remember to lock' becomes 'reminded...to lock', a natural match for this kind of instruction.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "imperative → 'reminded + object + to'"
+      ],
+      "level": 55
+    },
+    {
+      "id": "dis_l55_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The dentist said to the patient, \"Don't forget to floss every day.\"",
+      "options": [
+        "The dentist reminded the patient to floss every day.",
+        "The dentist reminded the patient not forgetting to floss every day.",
+        "The dentist warned the patient to floss every day."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The dentist reminded the patient to floss every day.",
+      "sentence": "The dentist said to the patient, \"Don't forget to floss every day.\"",
+      "hint": "'Don't forget to...' means the same as 'remember to...', so it's reported the same way.",
+      "explanation": "'Don't forget to floss' becomes 'reminded...to floss', since both phrases mean the same thing.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "imperative → 'reminded + object + to'"
+      ],
+      "level": 55
+    },
+    {
+      "id": "dis_l55_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The teacher said to the class, \"Remember to bring your textbooks tomorrow.\"",
+      "options": [
+        "The teacher reminded the class to bring their textbooks the next day.",
+        "The teacher reminded the class to bring your textbooks tomorrow.",
+        "The teacher told the class to remember to bring their textbooks the next day."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The teacher reminded the class to bring their textbooks the next day.",
+      "sentence": "The teacher said to the class, \"Remember to bring your textbooks tomorrow.\"",
+      "hint": "Three changes at once: the reporting verb pattern, the possessive, and the time word.",
+      "explanation": "'Remember to bring' becomes 'reminded...to bring', 'your' becomes 'their', and 'tomorrow' becomes 'the next day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "imperative → 'reminded + object + to'",
+        "'your' → 'their'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "level": 55
+    },
+    {
+      "id": "dis_l56_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The doctor said to the patient, \"You should drink more water.\"",
+      "options": [
+        "The doctor advised the patient drink more water.",
+        "The doctor advised the patient to drink more water.",
+        "The doctor told the patient should drink more water."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The doctor advised the patient to drink more water.",
+      "sentence": "The doctor said to the patient, \"You should drink more water.\"",
+      "hint": "'You should...' as advice is reported with 'advised...to'.",
+      "explanation": "'You should drink' becomes the infinitive structure 'advised the patient to drink'.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'should' + verb → 'advised + object + to'"
+      ],
+      "level": 56
+    },
+    {
+      "id": "dis_l56_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The financial advisor said to the couple, \"You should save more each month.\"",
+      "options": [
+        "The financial advisor told the couple should save more each month.",
+        "The financial advisor advised the couple that saving more each month.",
+        "The financial advisor advised the couple to save more each month."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The financial advisor advised the couple to save more each month.",
+      "sentence": "The financial advisor said to the couple, \"You should save more each month.\"",
+      "hint": "Convert the advice directly into the infinitive structure after 'advised'.",
+      "explanation": "'You should save' becomes 'advised the couple to save'.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'should' + verb → 'advised + object + to'"
+      ],
+      "level": 56
+    },
+    {
+      "id": "dis_l56_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The trainer said to Marcus, \"You shouldn't skip breakfast.\"",
+      "options": [
+        "The trainer advised Marcus to not skip breakfast.",
+        "The trainer advised Marcus to skip breakfast.",
+        "The trainer advised Marcus not to skip breakfast."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The trainer advised Marcus not to skip breakfast.",
+      "sentence": "The trainer said to Marcus, \"You shouldn't skip breakfast.\"",
+      "hint": "Negative advice follows the same 'not to' pattern as negative commands.",
+      "explanation": "'Shouldn't skip' becomes 'advised...not to skip', keeping 'not' directly before 'to'.",
+      "grammarRule": "Reporting Verb Pattern",
+      "changesList": [
+        "'shouldn't' + verb → 'advised + object + not to'"
+      ],
+      "level": 56
+    },
+    {
+      "id": "dis_l57_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The manager said to the staff, \"Don't use your phones during meetings.\"",
+      "options": [
+        "The manager told the staff to not use their phones during meetings.",
+        "The manager told the staff not to use their phones during meetings.",
+        "The manager told the staff don't use their phones during meetings."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The manager told the staff not to use their phones during meetings.",
+      "sentence": "The manager said to the staff, \"Don't use your phones during meetings.\"",
+      "hint": "Keep 'not' immediately before 'to', and update the possessive to match the group.",
+      "explanation": "'Don't use' becomes 'not to use', and 'your' becomes 'their'.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "negative imperative → 'told + object + not to'",
+        "'your' → 'their'"
+      ],
+      "level": 57
+    },
+    {
+      "id": "dis_l57_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Fatima said to her son, \"Please don't stay up too late.\"",
+      "options": [
+        "Fatima asked her son to not stay up too late.",
+        "Fatima told her son not to stay up too late.",
+        "Fatima asked her son not to stay up too late."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Fatima asked her son not to stay up too late.",
+      "sentence": "Fatima said to her son, \"Please don't stay up too late.\"",
+      "hint": "'Please' signals a request, so 'asked' fits better than 'told'.",
+      "explanation": "Because of 'please', 'asked' is the appropriate reporting verb, and 'don't stay' becomes 'not to stay'.",
+      "grammarRule": "Reported Request",
+      "changesList": [
+        "negative imperative → 'asked + object + not to'"
+      ],
+      "level": 57
+    },
+    {
+      "id": "dis_l57_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The sign at the pool said, \"Do not run near the water.\"",
+      "options": [
+        "The lifeguard warned everyone to not run near the water.",
+        "The lifeguard warned everyone not to run near the water.",
+        "The lifeguard told everyone not run near the water."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The lifeguard warned everyone not to run near the water.",
+      "sentence": "The sign at the pool said, \"Do not run near the water.\"",
+      "hint": "A safety notice like this is best reported with 'warned', keeping the negative infinitive intact.",
+      "explanation": "'Do not run' becomes 'not to run' after 'warned', preserving the safety meaning.",
+      "grammarRule": "Reported Warning",
+      "changesList": [
+        "negative imperative → 'warned + object + not to'"
+      ],
+      "level": 57
+    },
+    {
+      "id": "dis_l58_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The technician said to the customer, \"Restart the router if it stops working.\"",
+      "options": [
+        "The technician warned the customer not to restart the router if it stopped working.",
+        "The technician told the customer restart the router if it stops working.",
+        "The technician told the customer to restart the router if it stopped working."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The technician told the customer to restart the router if it stopped working.",
+      "sentence": "The technician said to the customer, \"Restart the router if it stops working.\"",
+      "hint": "This is neutral guidance, not a warning about danger — 'told' fits better than 'warned'.",
+      "explanation": "'Restart...if it stops' becomes the infinitive 'to restart...if it stopped', reported with 'told' since it's an instruction, not a danger warning.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'stops' → 'stopped'"
+      ],
+      "level": 58
+    },
+    {
+      "id": "dis_l58_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The safety officer said to the workers, \"Wear your helmets at all times.\"",
+      "options": [
+        "The safety officer told the workers to wear their helmets at all times.",
+        "The safety officer warned the workers not to wear their helmets at all times.",
+        "The safety officer told the workers to wear your helmets at all times."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The safety officer told the workers to wear their helmets at all times.",
+      "sentence": "The safety officer said to the workers, \"Wear your helmets at all times.\"",
+      "hint": "This is a positive instruction, not a negative warning — check the meaning carefully before choosing 'not to'.",
+      "explanation": "The positive command 'Wear...' becomes 'to wear', and 'your' becomes 'their'.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'your' → 'their'"
+      ],
+      "level": 58
+    },
+    {
+      "id": "dis_l58_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The nurse said to the visitors, \"Please don't touch the equipment.\"",
+      "options": [
+        "The nurse asked the visitors to touch the equipment.",
+        "The nurse warned the visitors not to touch the equipment.",
+        "The nurse warned the visitors to touch the equipment."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The nurse warned the visitors not to touch the equipment.",
+      "sentence": "The nurse said to the visitors, \"Please don't touch the equipment.\"",
+      "hint": "'Please don't...' about hospital equipment is closer to a safety warning than a simple request — and don't drop 'not'.",
+      "explanation": "Given the safety context, 'warned' is more suitable, and 'don't touch' becomes 'not to touch'.",
+      "grammarRule": "Reported Warning",
+      "changesList": [
+        "negative imperative → 'warned + object + not to'"
+      ],
+      "level": 58
+    },
+    {
+      "id": "dis_l59_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The manager said to Layla, \"Finish this by tomorrow.\"",
+      "options": [
+        "The manager told Layla to finish that by the next day.",
+        "The manager told Layla to finish this by tomorrow.",
+        "The manager asked Layla finish that by the next day."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The manager told Layla to finish that by the next day.",
+      "sentence": "The manager said to Layla, \"Finish this by tomorrow.\"",
+      "hint": "Update the demonstrative and the time word inside the infinitive clause.",
+      "explanation": "'This' becomes 'that', and 'tomorrow' becomes 'the next day', while the command becomes 'to finish'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'this' → 'that'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "level": 59
+    },
+    {
+      "id": "dis_l59_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The coach said to the team, \"Meet here at 6 a.m. tomorrow.\"",
+      "options": [
+        "The coach told the team to meet there at 6 a.m. the next day.",
+        "The coach told the team to meet here at 6 a.m. the next day.",
+        "The coach warned the team not to meet there at 6 a.m. the next day."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The coach told the team to meet there at 6 a.m. the next day.",
+      "sentence": "The coach said to the team, \"Meet here at 6 a.m. tomorrow.\"",
+      "hint": "Both the place word and the time word change inside this command.",
+      "explanation": "'Here' becomes 'there', and 'tomorrow' becomes 'the next day', with 'meet' becoming 'to meet'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "level": 59
+    },
+    {
+      "id": "dis_l59_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The doctor said to Omar, \"Take your medicine twice a day.\"",
+      "options": [
+        "The doctor told Omar to take your medicine twice a day.",
+        "The doctor told Omar to take his medicine twice a day.",
+        "The doctor advised Omar taking his medicine twice a day."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The doctor told Omar to take his medicine twice a day.",
+      "sentence": "The doctor said to Omar, \"Take your medicine twice a day.\"",
+      "hint": "The possessive pronoun changes to match Omar.",
+      "explanation": "'Your' becomes 'his', and 'take' becomes 'to take'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'your' → 'his'"
+      ],
+      "level": 59
+    },
+    {
+      "id": "dis_l60_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The captain said to the crew, \"Prepare for landing.\"",
+      "options": [
+        "The captain told the crew prepare for landing.",
+        "The captain warned the crew not to prepare for landing.",
+        "The captain told the crew to prepare for landing."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The captain told the crew to prepare for landing.",
+      "sentence": "The captain said to the crew, \"Prepare for landing.\"",
+      "hint": "A neutral instruction like this uses 'told', not 'warned'.",
+      "explanation": "'Prepare for landing' becomes 'to prepare for landing' after 'told the crew'.",
+      "grammarRule": "Reported Command",
+      "changesList": [
+        "imperative → 'told + object + to'"
+      ],
+      "level": 60
+    },
+    {
+      "id": "dis_l60_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Nadia said to her roommate, \"Please don't leave dishes in the sink.\"",
+      "options": [
+        "Nadia told her roommate not to leave dishes in the sink.",
+        "Nadia asked her roommate not to leave dishes in the sink.",
+        "Nadia asked her roommate to leave dishes in the sink."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Nadia asked her roommate not to leave dishes in the sink.",
+      "sentence": "Nadia said to her roommate, \"Please don't leave dishes in the sink.\"",
+      "hint": "Recall which verb fits a polite negative request, and keep the negative meaning intact.",
+      "explanation": "'Please don't leave' becomes 'asked...not to leave', preserving both the politeness and the negative meaning.",
+      "grammarRule": "Reported Request",
+      "changesList": [
+        "negative imperative → 'asked + object + not to'"
+      ],
+      "level": 60
+    },
+    {
+      "id": "dis_l60_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The instructor said to the students, \"Submit your assignments here by tomorrow.\"",
+      "options": [
+        "The instructor told the students to submit your assignments here by tomorrow.",
+        "The instructor warned the students not to submit their assignments there by the next day.",
+        "The instructor told the students to submit their assignments there by the next day."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The instructor told the students to submit their assignments there by the next day.",
+      "sentence": "The instructor said to the students, \"Submit your assignments here by tomorrow.\"",
+      "hint": "This final review question combines the possessive, the place word, and the time word inside a command.",
+      "explanation": "'Your' becomes 'their', 'here' becomes 'there', and 'tomorrow' becomes 'the next day'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "imperative → 'told + object + to'",
+        "'your' → 'their'",
+        "'here' → 'there'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "level": 60
+    }
+  ]
+}

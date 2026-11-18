@@ -1,0 +1,708 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "mastery",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "id": "dis_l11_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Noor said, \"I have finished my homework.\"",
+      "options": [
+        "Noor said that she has finished her homework.",
+        "Noor said that she had finished her homework.",
+        "Noor said that she had finished my homework."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Noor said that she had finished her homework.",
+      "sentence": "Noor said, \"I have finished my homework.\"",
+      "hint": "Present perfect 'have finished' moves two steps back — what tense is that?",
+      "explanation": "'Have finished' (present perfect) backshifts to 'had finished' (past perfect); 'I' and 'my' become 'she' and 'her'.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'have finished' → 'had finished'",
+        "'I' → 'she'",
+        "'my' → 'her'"
+      ],
+      "level": 11
+    },
+    {
+      "id": "dis_l11_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Lucas said, \"I have already eaten lunch.\"",
+      "options": [
+        "Lucas said that he has already eaten lunch.",
+        "Lucas said that he had already eaten lunch.",
+        "Lucas said that he had already ate lunch."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Lucas said that he had already eaten lunch.",
+      "sentence": "Lucas said, \"I have already eaten lunch.\"",
+      "hint": "The auxiliary 'have' changes, but the past participle 'eaten' stays the same.",
+      "explanation": "'Have eaten' becomes 'had eaten' — only the auxiliary shifts, not the participle; 'I' becomes 'he'.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'have eaten' → 'had eaten'",
+        "'I' → 'he'"
+      ],
+      "level": 11
+    },
+    {
+      "id": "dis_l11_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Mei said, \"My brother has never visited Japan.\"",
+      "options": [
+        "Mei said that her brother had never visited Japan.",
+        "Mei said that her brother has never visited Japan.",
+        "Mei said that my brother had never visited Japan."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Mei said that her brother had never visited Japan.",
+      "sentence": "Mei said, \"My brother has never visited Japan.\"",
+      "hint": "Check the possessive first, then the present perfect auxiliary.",
+      "explanation": "'My' becomes 'her', and 'has visited' backshifts to 'had visited'.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'my' → 'her'",
+        "'has visited' → 'had visited'"
+      ],
+      "level": 11
+    },
+    {
+      "id": "dis_l12_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Ines said, \"I finished the report already.\"",
+      "options": [
+        "Ines said that she finished the report already.",
+        "Ines said that she had finished the report already.",
+        "Ines said that she has finished the report already."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Ines said that she had finished the report already.",
+      "sentence": "Ines said, \"I finished the report already.\"",
+      "hint": "A completed past action reported later often shifts one more step back — into the past perfect.",
+      "explanation": "'Finished' (simple past) backshifts to 'had finished' (past perfect) because it happened before the moment of reporting; 'I' becomes 'she'.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'finished' → 'had finished'",
+        "'I' → 'she'"
+      ],
+      "level": 12
+    },
+    {
+      "id": "dis_l12_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Chen said, \"I locked the door.\"",
+      "options": [
+        "Chen said that he has locked the door.",
+        "Chen said that he had locked the door.",
+        "Chen said that he locked the door."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Chen said that he had locked the door.",
+      "sentence": "Chen said, \"I locked the door.\"",
+      "hint": "Same pattern as before: a completed past action moves back one more step.",
+      "explanation": "'Locked' shifts to 'had locked', and 'I' becomes 'he'.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'locked' → 'had locked'",
+        "'I' → 'he'"
+      ],
+      "level": 12
+    },
+    {
+      "id": "dis_l12_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Grace said, \"The train left without me.\"",
+      "options": [
+        "Grace said that the train had left without me.",
+        "Grace said that the train left without her.",
+        "Grace said that the train had left without her."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Grace said that the train had left without her.",
+      "sentence": "Grace said, \"The train left without me.\"",
+      "hint": "Notice two changes here — the verb tense and the object pronoun referring to Grace.",
+      "explanation": "'Left' backshifts to 'had left', and 'me' becomes 'her' since Grace is the one being reported.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'left' → 'had left'",
+        "'me' → 'her'"
+      ],
+      "level": 12
+    },
+    {
+      "id": "dis_l13_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Marcus said, \"I will call you later.\"",
+      "options": [
+        "Marcus said that he will call me later.",
+        "Marcus said that he would call me later.",
+        "Marcus said that he would call you later."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Marcus said that he would call me later.",
+      "sentence": "Marcus said, \"I will call you later.\"",
+      "hint": "'Will' has a special past-time replacement — it isn't 'willed'.",
+      "explanation": "'Will' becomes 'would', and 'you' becomes 'me' because Marcus was speaking to the person now reporting it.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'will' → 'would'",
+        "'you' → 'me'"
+      ],
+      "level": 13
+    },
+    {
+      "id": "dis_l13_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Priya said, \"I will help you with the move.\"",
+      "options": [
+        "Priya said that she will help me with the move.",
+        "Priya said that she would help me with the move.",
+        "Priya said that she would help you with the move."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Priya said that she would help me with the move.",
+      "sentence": "Priya said, \"I will help you with the move.\"",
+      "hint": "Apply the same modal change again, and think about who 'you' refers to.",
+      "explanation": "'Will' shifts to 'would', 'I' becomes 'she', and 'you' becomes 'me'.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'will' → 'would'",
+        "'I' → 'she'",
+        "'you' → 'me'"
+      ],
+      "level": 13
+    },
+    {
+      "id": "dis_l13_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The airline said, \"Flights will be delayed.\"",
+      "options": [
+        "The airline said that flights would been delayed.",
+        "The airline said that flights will be delayed.",
+        "The airline said that flights would be delayed."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The airline said that flights would be delayed.",
+      "sentence": "The airline said, \"Flights will be delayed.\"",
+      "hint": "There is no pronoun to change here — focus only on the modal verb.",
+      "explanation": "'Will be' backshifts to 'would be'; no pronoun change is required.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'will be' → 'would be'"
+      ],
+      "level": 13
+    },
+    {
+      "id": "dis_l14_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Hassan said, \"I can speak three languages.\"",
+      "options": [
+        "Hassan said that he could speak three languages.",
+        "Hassan said that he can speak three languages.",
+        "Hassan said that he could spoke three languages."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Hassan said that he could speak three languages.",
+      "sentence": "Hassan said, \"I can speak three languages.\"",
+      "hint": "'Can' has its own past form — it isn't a regular verb ending.",
+      "explanation": "'Can' becomes 'could', and 'I' becomes 'he'.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'can' → 'could'",
+        "'I' → 'he'"
+      ],
+      "level": 14
+    },
+    {
+      "id": "dis_l14_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Sofia said, \"My father can fix anything.\"",
+      "options": [
+        "Sofia said that her father could fix anything.",
+        "Sofia said that her father can fix anything.",
+        "Sofia said that my father could fix anything."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Sofia said that her father could fix anything.",
+      "sentence": "Sofia said, \"My father can fix anything.\"",
+      "hint": "Two changes: the possessive pronoun and the modal verb.",
+      "explanation": "'My' becomes 'her', and 'can' becomes 'could'.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'my' → 'her'",
+        "'can' → 'could'"
+      ],
+      "level": 14
+    },
+    {
+      "id": "dis_l14_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The technician said, \"We can fix it quickly.\"",
+      "options": [
+        "The technician said that we could fix it quickly.",
+        "The technician said that they can fix it quickly.",
+        "The technician said that they could fix it quickly."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The technician said that they could fix it quickly.",
+      "sentence": "The technician said, \"We can fix it quickly.\"",
+      "hint": "Recall the 'we' → 'they' rule together with the modal change.",
+      "explanation": "'We' becomes 'they', and 'can' becomes 'could'.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'we' → 'they'",
+        "'can' → 'could'"
+      ],
+      "level": 14
+    },
+    {
+      "id": "dis_l15_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Ravi said, \"I may be late.\"",
+      "options": [
+        "Ravi said that he might be late.",
+        "Ravi said that he may be late.",
+        "Ravi said that he must be late."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Ravi said that he might be late.",
+      "sentence": "Ravi said, \"I may be late.\"",
+      "hint": "'May' shifts to a specific past-time modal — not 'must'.",
+      "explanation": "'May' becomes 'might', and 'I' becomes 'he'.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'may' → 'might'",
+        "'I' → 'he'"
+      ],
+      "level": 15
+    },
+    {
+      "id": "dis_l15_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Elena said, \"I must leave early.\"",
+      "options": [
+        "Elena said that she must leave early.",
+        "Elena said that she has to leave early.",
+        "Elena said that she had to leave early."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Elena said that she had to leave early.",
+      "sentence": "Elena said, \"I must leave early.\"",
+      "hint": "Obligation 'must' about a specific occasion usually becomes a phrase with 'had to'.",
+      "explanation": "'Must' (necessity for this occasion) shifts to 'had to'; 'I' becomes 'she'.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'must' → 'had to'",
+        "'I' → 'she'"
+      ],
+      "level": 15
+    },
+    {
+      "id": "dis_l15_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Kwame said, \"I may need help with the box.\"",
+      "options": [
+        "Kwame said that he may need help with the box.",
+        "Kwame said that he might need help with the box.",
+        "Kwame said that he might needed help with the box."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Kwame said that he might need help with the box.",
+      "sentence": "Kwame said, \"I may need help with the box.\"",
+      "hint": "Keep the base form of the verb after the modal — don't add '-ed'.",
+      "explanation": "'May' becomes 'might', 'I' becomes 'he', and the verb stays as 'need', not 'needed'.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'may' → 'might'",
+        "'I' → 'he'"
+      ],
+      "level": 15
+    },
+    {
+      "id": "dis_l16_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Layla said, \"My colleagues are working on the update.\"",
+      "options": [
+        "Layla said that her colleagues were working on the update.",
+        "Layla said that her colleagues are working on the update.",
+        "Layla said that my colleagues were working on the update."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Layla said that her colleagues were working on the update.",
+      "sentence": "Layla said, \"My colleagues are working on the update.\"",
+      "hint": "Check the possessive pronoun and the continuous tense together.",
+      "explanation": "'My' becomes 'her', and 'are working' backshifts to 'were working'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'my' → 'her'",
+        "'are working' → 'were working'"
+      ],
+      "level": 16
+    },
+    {
+      "id": "dis_l16_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Theo said, \"I am still waiting for my results.\"",
+      "options": [
+        "Theo said that he was still waiting for his results.",
+        "Theo said that he was still waiting for my results.",
+        "Theo said that he is still waiting for his results."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Theo said that he was still waiting for his results.",
+      "sentence": "Theo said, \"I am still waiting for my results.\"",
+      "hint": "Three items need attention: the pronoun, the possessive, and the continuous tense.",
+      "explanation": "'I' becomes 'he', 'my' becomes 'his', and 'am waiting' becomes 'was waiting'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'I' → 'he'",
+        "'my' → 'his'",
+        "'am waiting' → 'was waiting'"
+      ],
+      "level": 16
+    },
+    {
+      "id": "dis_l16_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The nurses said, \"We are taking care of our patients.\"",
+      "options": [
+        "The nurses said that they are taking care of their patients.",
+        "The nurses said that they were taking care of their patients.",
+        "The nurses said that we were taking care of our patients."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The nurses said that they were taking care of their patients.",
+      "sentence": "The nurses said, \"We are taking care of our patients.\"",
+      "hint": "Both 'we' and 'our' change the same way — to which pronoun?",
+      "explanation": "'We' and 'our' both become 'they'/'their', and 'are taking' backshifts to 'were taking'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'our' → 'their'",
+        "'are taking' → 'were taking'"
+      ],
+      "level": 16
+    },
+    {
+      "id": "dis_l17_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Nadia said, \"I have lost my passport.\"",
+      "options": [
+        "Nadia said that she had lost my passport.",
+        "Nadia said that she had lost her passport.",
+        "Nadia said that she has lost her passport."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Nadia said that she had lost her passport.",
+      "sentence": "Nadia said, \"I have lost my passport.\"",
+      "hint": "Backshift the present perfect and update both the pronoun and the possessive.",
+      "explanation": "'Have lost' becomes 'had lost'; 'I' becomes 'she' and 'my' becomes 'her'.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'have lost' → 'had lost'",
+        "'I' → 'she'",
+        "'my' → 'her'"
+      ],
+      "level": 17
+    },
+    {
+      "id": "dis_l17_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The mechanics said, \"We have already checked the engine.\"",
+      "options": [
+        "The mechanics said that they have already checked the engine.",
+        "The mechanics said that we had already checked the engine.",
+        "The mechanics said that they had already checked the engine."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The mechanics said that they had already checked the engine.",
+      "sentence": "The mechanics said, \"We have already checked the engine.\"",
+      "hint": "Recall the 'we' → 'they' rule and combine it with present perfect backshift.",
+      "explanation": "'We' becomes 'they', and 'have checked' becomes 'had checked'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'have checked' → 'had checked'"
+      ],
+      "level": 17
+    },
+    {
+      "id": "dis_l17_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Victor said, \"My team has won the tournament.\"",
+      "options": [
+        "Victor said that his team has won the tournament.",
+        "Victor said that his team had won the tournament.",
+        "Victor said that my team had won the tournament."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Victor said that his team had won the tournament.",
+      "sentence": "Victor said, \"My team has won the tournament.\"",
+      "hint": "Check the possessive pronoun, and then look at how far back the present perfect needs to move.",
+      "explanation": "'My' becomes 'his', and 'has won' becomes 'had won'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'my' → 'his'",
+        "'has won' → 'had won'"
+      ],
+      "level": 17
+    },
+    {
+      "id": "dis_l18_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Isabella said, \"I will bring my laptop to the meeting.\"",
+      "options": [
+        "Isabella said that she will bring her laptop to the meeting.",
+        "Isabella said that she would bring her laptop to the meeting.",
+        "Isabella said that she would bring my laptop to the meeting."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Isabella said that she would bring her laptop to the meeting.",
+      "sentence": "Isabella said, \"I will bring my laptop to the meeting.\"",
+      "hint": "Three items change together: the modal, the pronoun, and the possessive.",
+      "explanation": "'Will' becomes 'would', 'I' becomes 'she', and 'my' becomes 'her'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'will' → 'would'",
+        "'I' → 'she'",
+        "'my' → 'her'"
+      ],
+      "level": 18
+    },
+    {
+      "id": "dis_l18_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The committee said, \"We will announce our decision soon.\"",
+      "options": [
+        "The committee said that we would announce our decision soon.",
+        "The committee said that they will announce their decision soon.",
+        "The committee said that they would announce their decision soon."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The committee said that they would announce their decision soon.",
+      "sentence": "The committee said, \"We will announce our decision soon.\"",
+      "hint": "Both 'we' and 'our' shift the same way, alongside the modal.",
+      "explanation": "'We' and 'our' become 'they'/'their', and 'will announce' becomes 'would announce'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'our' → 'their'",
+        "'will announce' → 'would announce'"
+      ],
+      "level": 18
+    },
+    {
+      "id": "dis_l18_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Omar said, \"My brother will drive us to the airport.\"",
+      "options": [
+        "Omar said that his brother will drive them to the airport.",
+        "Omar said that his brother would drive them to the airport.",
+        "Omar said that his brother would drive us to the airport."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Omar said that his brother would drive them to the airport.",
+      "sentence": "Omar said, \"My brother will drive us to the airport.\"",
+      "hint": "Notice three changes: the possessive, the modal, and the object pronoun 'us'.",
+      "explanation": "'My' becomes 'his', 'will' becomes 'would', and 'us' becomes 'them' since the reporter is not part of that group.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'my' → 'his'",
+        "'will' → 'would'",
+        "'us' → 'them'"
+      ],
+      "level": 18
+    },
+    {
+      "id": "dis_l19_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Fatima said, \"I can finish my thesis by June.\"",
+      "options": [
+        "Fatima said that she could finish her thesis by June.",
+        "Fatima said that she can finish her thesis by June.",
+        "Fatima said that she could finish my thesis by June."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Fatima said that she could finish her thesis by June.",
+      "sentence": "Fatima said, \"I can finish my thesis by June.\"",
+      "hint": "Combine the modal change with the pronoun and possessive changes.",
+      "explanation": "'Can' becomes 'could', 'I' becomes 'she', and 'my' becomes 'her'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'can' → 'could'",
+        "'I' → 'she'",
+        "'my' → 'her'"
+      ],
+      "level": 19
+    },
+    {
+      "id": "dis_l19_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "The doctor said to a patient, \"You must rest for a few days.\" Convert the patient's report to reported speech.",
+      "options": [
+        "The doctor said that you had to rest for a few days.",
+        "The doctor said that I had to rest for a few days.",
+        "The doctor said that I must rest for a few days."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The doctor said that I had to rest for a few days.",
+      "sentence": "The doctor said, \"You must rest for a few days.\"",
+      "hint": "Think about who 'you' refers to if the patient is the one reporting this later.",
+      "explanation": "Because the patient is now reporting it, 'you' becomes 'I', and 'must' becomes 'had to'.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'you' → 'I'",
+        "'must' → 'had to'"
+      ],
+      "level": 19
+    },
+    {
+      "id": "dis_l19_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The players said, \"We must train harder.\"",
+      "options": [
+        "The players said that we had to train harder.",
+        "The players said that they must train harder.",
+        "The players said that they had to train harder."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The players said that they had to train harder.",
+      "sentence": "The players said, \"We must train harder.\"",
+      "hint": "Apply the 'we' → 'they' rule together with the modal change.",
+      "explanation": "'We' becomes 'they', and 'must' becomes 'had to'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'must' → 'had to'"
+      ],
+      "level": 19
+    },
+    {
+      "id": "dis_l20_q1",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Chen said, \"I have already sent the email.\"",
+      "options": [
+        "Chen said that he has already sent the email.",
+        "Chen said that he had already sent the email.",
+        "Chen said that he had already send the email."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Chen said that he had already sent the email.",
+      "sentence": "Chen said, \"I have already sent the email.\"",
+      "hint": "This is present perfect — it moves two steps back, into the past perfect.",
+      "explanation": "'Have sent' becomes 'had sent', and 'I' becomes 'he'.",
+      "grammarRule": "Tense Backshift",
+      "changesList": [
+        "'have sent' → 'had sent'",
+        "'I' → 'he'"
+      ],
+      "level": 20
+    },
+    {
+      "id": "dis_l20_q2",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: The organizers said, \"We will provide our own equipment.\"",
+      "options": [
+        "The organizers said that they would provide their own equipment.",
+        "The organizers said that we would provide our own equipment.",
+        "The organizers said that they will provide their own equipment."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The organizers said that they would provide their own equipment.",
+      "sentence": "The organizers said, \"We will provide our own equipment.\"",
+      "hint": "This combines three earlier rules — the pronoun, the possessive, and the future modal.",
+      "explanation": "'We' and 'our' become 'they'/'their', and 'will provide' becomes 'would provide'.",
+      "grammarRule": "Mixed Reported Speech",
+      "changesList": [
+        "'we' → 'they'",
+        "'our' → 'their'",
+        "'will provide' → 'would provide'"
+      ],
+      "level": 20
+    },
+    {
+      "id": "dis_l20_q3",
+      "instruction": "TRANSFORM THE SPEECH",
+      "subtype": "directIndirectSpeech",
+      "interactionType": "choice",
+      "question": "Convert to reported speech: Priya said, \"I can't find my notes.\"",
+      "options": [
+        "Priya said that she couldn't find my notes.",
+        "Priya said that she couldn't find her notes.",
+        "Priya said that she can't find her notes."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Priya said that she couldn't find her notes.",
+      "sentence": "Priya said, \"I can't find my notes.\"",
+      "hint": "Negative modals shift too — 'can't' has its own past form.",
+      "explanation": "'Can't' becomes 'couldn't', 'I' becomes 'she', and 'my' becomes 'her'.",
+      "grammarRule": "Modal Backshift",
+      "changesList": [
+        "'can't' → 'couldn't'",
+        "'I' → 'she'",
+        "'my' → 'her'"
+      ],
+      "level": 20
+    }
+  ]
+}

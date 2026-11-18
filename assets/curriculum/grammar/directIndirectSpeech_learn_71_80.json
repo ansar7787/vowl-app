@@ -1,0 +1,494 @@
+{
+  "gameType": "directIndirectSpeech",
+  "phase": "learn",
+  "batchIndex": 8,
+  "levels": "71-80",
+  "quests": [
+    {
+      "id": "dis_l71_learn_q1",
+      "level": 71,
+      "conceptTitle": "Speech Bubble to Report Converter: Modal Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Modal Backshift",
+      "directSpeech": "Elena said, \"I can't attend the meeting.\"",
+      "reportedSpeech": "Elena said that she couldn't attend the meeting.",
+      "changesList": [
+        "'can't' → 'couldn't'",
+        "'I' → 'she'"
+      ],
+      "ruleExplanation": "'Can't' becomes 'couldn't'; modals never take 'did' or 'didn't' in front of them.",
+      "nativeTip": "Negative modals shift too — 'can't' has a specific past form.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Elena said, \"I can't attend the meeting.\"\" ➔ \"Elena said that she couldn't attend the meeting.\""
+    },
+    {
+      "id": "dis_l71_learn_q2",
+      "level": 71,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The scientist said, \"This method can produce faster results.\"",
+      "reportedSpeech": "The scientist said that that method could produce faster results.",
+      "changesList": [
+        "'can' → 'could'",
+        "'this' → 'that'"
+      ],
+      "ruleExplanation": "'Can' becomes 'could', and 'this' becomes 'that'.",
+      "nativeTip": "Combine the modal backshift with the demonstrative change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The scientist said, \"This method can produce faster results.\"\" ➔ \"The scientist said that that method could produce faster results.\""
+    },
+    {
+      "id": "dis_l71_learn_q3",
+      "level": 71,
+      "conceptTitle": "Speech Bubble to Report Converter: Modal Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Modal Backshift",
+      "directSpeech": "The witness said, \"I can identify the man in the photo.\"",
+      "reportedSpeech": "The witness said that he could identify the man in the photo.",
+      "changesList": [
+        "'can' → 'could'",
+        "'I' → 'he'"
+      ],
+      "ruleExplanation": "'Can' becomes 'could', and 'identify' stays in its base form, not 'identified'.",
+      "nativeTip": "Remember to keep the base form of the verb after the modal.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The witness said, \"I can identify the man in the photo.\"\" ➔ \"The witness said that he could identify the man in the photo.\""
+    },
+    {
+      "id": "dis_l72_learn_q1",
+      "level": 72,
+      "conceptTitle": "Speech Bubble to Report Converter: Modal Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Modal Backshift",
+      "directSpeech": "The forecaster said, \"It may rain later this week.\"",
+      "reportedSpeech": "The forecaster said that it might rain later that week.",
+      "changesList": [
+        "'may' → 'might'",
+        "'this week' → 'that week'"
+      ],
+      "ruleExplanation": "'May' becomes 'might', and 'this week' becomes 'that week'; the verb stays as 'rain'.",
+      "nativeTip": "Backshift the modal, adjust the time word, and keep the base verb form.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The forecaster said, \"It may rain later this week.\"\" ➔ \"The forecaster said that it might rain later that week.\""
+    },
+    {
+      "id": "dis_l72_learn_q2",
+      "level": 72,
+      "conceptTitle": "Speech Bubble to Report Converter: Modal Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Modal Backshift",
+      "directSpeech": "Diego said, \"I may not be able to attend.\"",
+      "reportedSpeech": "Diego said that he might not be able to attend.",
+      "changesList": [
+        "'may not' → 'might not'",
+        "'I' → 'he'"
+      ],
+      "ruleExplanation": "'May not' becomes 'might not', and 'I' becomes 'he'.",
+      "nativeTip": "Keep 'not' in its position after the modal, and the verb form after 'be able to' unchanged.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Diego said, \"I may not be able to attend.\"\" ➔ \"Diego said that he might not be able to attend.\""
+    },
+    {
+      "id": "dis_l72_learn_q3",
+      "level": 72,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The manager said, \"Sales may improve next quarter.\"",
+      "reportedSpeech": "The manager said that sales might improve the following quarter.",
+      "changesList": [
+        "'may' → 'might'",
+        "'next quarter' → 'the following quarter'"
+      ],
+      "ruleExplanation": "'May' becomes 'might', and 'next quarter' becomes 'the following quarter'.",
+      "nativeTip": "Combine the modal backshift with the time-word change.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager said, \"Sales may improve next quarter.\"\" ➔ \"The manager said that sales might improve the following quarter.\""
+    },
+    {
+      "id": "dis_l73_learn_q1",
+      "level": 73,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The CEO said, \"This company will not fail.\"",
+      "reportedSpeech": "The CEO said that that company would not fail.",
+      "changesList": [
+        "'will not' → 'would not'",
+        "'this' → 'that'"
+      ],
+      "ruleExplanation": "'Will not' becomes 'would not', and 'this' becomes 'that'.",
+      "nativeTip": "Two shifts happen together here: the demonstrative pronoun and the future modal.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The CEO said, \"This company will not fail.\"\" ➔ \"The CEO said that that company would not fail.\""
+    },
+    {
+      "id": "dis_l73_learn_q2",
+      "level": 73,
+      "conceptTitle": "Speech Bubble to Report Converter: Modal Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Modal Backshift",
+      "directSpeech": "Fatima said, \"I will definitely finish by Friday.\"",
+      "reportedSpeech": "Fatima said that she would definitely finish by Friday.",
+      "changesList": [
+        "'will' → 'would'",
+        "'I' → 'she'"
+      ],
+      "ruleExplanation": "'Will' becomes 'would', and 'I' becomes 'she'; the verb 'finish' stays unchanged.",
+      "nativeTip": "Backshift the modal and update the pronoun; the base verb stays the same.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Fatima said, \"I will definitely finish by Friday.\"\" ➔ \"Fatima said that she would definitely finish by Friday.\""
+    },
+    {
+      "id": "dis_l73_learn_q3",
+      "level": 73,
+      "conceptTitle": "Speech Bubble to Report Converter: Modal Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Modal Backshift",
+      "directSpeech": "The airline said, \"Passengers will receive a full refund.\"",
+      "reportedSpeech": "The airline said that passengers would receive a full refund.",
+      "changesList": [
+        "'will' → 'would'"
+      ],
+      "ruleExplanation": "'Will' backshifts to 'would'; no pronoun or possessive needs to change.",
+      "nativeTip": "No pronoun changes here — just backshift the modal.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The airline said, \"Passengers will receive a full refund.\"\" ➔ \"The airline said that passengers would receive a full refund.\""
+    },
+    {
+      "id": "dis_l74_learn_q1",
+      "level": 74,
+      "conceptTitle": "Speech Bubble to Report Converter: Modal Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Modal Backshift",
+      "directSpeech": "The manager said, \"You must complete this training by Friday.\"",
+      "reportedSpeech": "The manager said that I had to complete that training by Friday.",
+      "changesList": [
+        "'must' → 'had to'",
+        "'you' → 'I'",
+        "'this' → 'that'"
+      ],
+      "ruleExplanation": "'Must' (obligation for this occasion) becomes 'had to', 'you' becomes 'I', and 'this' becomes 'that'.",
+      "nativeTip": "This 'must' expresses a specific obligation, so it backshifts to 'had to'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager said, \"You must complete this training by Friday.\"\" ➔ \"The manager said that I had to complete that training by Friday.\""
+    },
+    {
+      "id": "dis_l74_learn_q2",
+      "level": 74,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "Emeka said, \"She must be exhausted after that flight.\"",
+      "reportedSpeech": "Emeka said that she must be exhausted after that flight.",
+      "changesList": [
+        "'must' (deduction) stays unchanged"
+      ],
+      "ruleExplanation": "'Must' expressing certainty/deduction doesn't backshift to 'had to'; it stays as 'must' in reported speech.",
+      "nativeTip": "This 'must' expresses a logical conclusion, not an obligation — such modals of deduction usually stay the same.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Emeka said, \"She must be exhausted after that flight.\"\" ➔ \"Emeka said that she must be exhausted after that flight.\""
+    },
+    {
+      "id": "dis_l74_learn_q3",
+      "level": 74,
+      "conceptTitle": "Speech Bubble to Report Converter: Modal Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Modal Backshift",
+      "directSpeech": "The sign said, \"Visitors must wear a badge at all times.\"",
+      "reportedSpeech": "The sign said that visitors had to wear a badge at all times.",
+      "changesList": [
+        "'must' → 'had to'"
+      ],
+      "ruleExplanation": "This 'must' expresses an obligation or rule, so it backshifts to 'had to', unlike a 'must' of deduction.",
+      "nativeTip": "Compare this to the deduction example — this 'must' expresses a rule, so it does backshift.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The sign said, \"Visitors must wear a badge at all times.\"\" ➔ \"The sign said that visitors had to wear a badge at all times.\""
+    },
+    {
+      "id": "dis_l75_learn_q1",
+      "level": 75,
+      "conceptTitle": "Speech Bubble to Report Converter: Modal Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Modal Backshift",
+      "directSpeech": "The waiter asked, \"Shall I bring the menu?\"",
+      "reportedSpeech": "The waiter asked whether he should bring the menu.",
+      "changesList": [
+        "'shall' → 'should'",
+        "'I' → 'he'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Shall I...?' as an offer becomes 'should he', and 'I' becomes 'he'.",
+      "nativeTip": "'Shall' in offers or suggestions usually becomes 'should' in reported speech.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The waiter asked, \"Shall I bring the menu?\"\" ➔ \"The waiter asked whether he should bring the menu.\""
+    },
+    {
+      "id": "dis_l75_learn_q2",
+      "level": 75,
+      "conceptTitle": "Speech Bubble to Report Converter: Modal Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Modal Backshift",
+      "directSpeech": "Grace said, \"I shall return within the hour.\"",
+      "reportedSpeech": "Grace said that she would return within the hour.",
+      "changesList": [
+        "'shall' → 'would'",
+        "'I' → 'she'"
+      ],
+      "ruleExplanation": "'Shall' (future intention) becomes 'would', while 'should' would only be used for suggestions.",
+      "nativeTip": "'Shall' used for future intention becomes 'would', not 'should'.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Grace said, \"I shall return within the hour.\"\" ➔ \"Grace said that she would return within the hour.\""
+    },
+    {
+      "id": "dis_l75_learn_q3",
+      "level": 75,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The teacher asked, \"Shall we begin the lesson?\"",
+      "reportedSpeech": "The teacher asked whether they should begin the lesson.",
+      "changesList": [
+        "'shall' → 'should'",
+        "'we' → 'they'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Shall we...?' becomes 'should they', matching the suggestion use of 'shall'.",
+      "nativeTip": "Combine the suggestion-modal change with the pronoun shift.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The teacher asked, \"Shall we begin the lesson?\"\" ➔ \"The teacher asked whether they should begin the lesson.\""
+    },
+    {
+      "id": "dis_l76_learn_q1",
+      "level": 76,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "The advisor said, \"You should diversify your investments.\"",
+      "reportedSpeech": "The advisor said that I should diversify my investments.",
+      "changesList": [
+        "'should' stays unchanged",
+        "'you' → 'I'",
+        "'your' → 'my'"
+      ],
+      "ruleExplanation": "'Should' does not backshift further; it remains 'should' even in reported speech, unlike 'will' or 'can'.",
+      "nativeTip": "'Should' already functions as a past-time-compatible modal — it usually stays the same in reported speech.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The advisor said, \"You should diversify your investments.\"\" ➔ \"The advisor said that I should diversify my investments.\""
+    },
+    {
+      "id": "dis_l76_learn_q2",
+      "level": 76,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "The mechanic said, \"This part ought to last for years.\"",
+      "reportedSpeech": "The mechanic said that that part ought to last for years.",
+      "changesList": [
+        "'ought to' stays unchanged",
+        "'this' → 'that'"
+      ],
+      "ruleExplanation": "'Ought to' remains unchanged; only the demonstrative 'this' becomes 'that'.",
+      "nativeTip": "'Ought to' behaves like 'should' — it doesn't change to a different modal.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The mechanic said, \"This part ought to last for years.\"\" ➔ \"The mechanic said that that part ought to last for years.\""
+    },
+    {
+      "id": "dis_l76_learn_q3",
+      "level": 76,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "The teacher said, \"Students should ask questions if they are confused.\"",
+      "reportedSpeech": "The teacher said that students should ask questions if they were confused.",
+      "changesList": [
+        "'should' stays unchanged",
+        "'are' → 'were'"
+      ],
+      "ruleExplanation": "'Should' remains unchanged, but 'are' backshifts to 'were' in the conditional clause.",
+      "nativeTip": "'Should' stays the same, but check whether any other verb in the sentence still needs to backshift.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The teacher said, \"Students should ask questions if they are confused.\"\" ➔ \"The teacher said that students should ask questions if they were confused.\""
+    },
+    {
+      "id": "dis_l77_learn_q1",
+      "level": 77,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "Priya said, \"I could help you move on Saturday.\"",
+      "reportedSpeech": "Priya said that she could help me move on Saturday.",
+      "changesList": [
+        "'could' stays unchanged",
+        "'I' → 'she'",
+        "'you' → 'me'"
+      ],
+      "ruleExplanation": "'Could' stays the same in reported speech since it's already a backshifted form; only the pronouns change.",
+      "nativeTip": "'Could' is already a past-time modal form — it doesn't need to change any further.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Priya said, \"I could help you move on Saturday.\"\" ➔ \"Priya said that she could help me move on Saturday.\""
+    },
+    {
+      "id": "dis_l77_learn_q2",
+      "level": 77,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "The waiter asked, \"Might I suggest the soup?\"",
+      "reportedSpeech": "The waiter asked whether he might suggest the soup.",
+      "changesList": [
+        "'might' stays unchanged",
+        "'I' → 'he'",
+        "question word order → statement word order"
+      ],
+      "ruleExplanation": "'Might' stays unchanged; only the question order and pronoun shift.",
+      "nativeTip": "'Might' is already a past-time form of 'may' — leave it as it is.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The waiter asked, \"Might I suggest the soup?\"\" ➔ \"The waiter asked whether he might suggest the soup.\""
+    },
+    {
+      "id": "dis_l77_learn_q3",
+      "level": 77,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "Omar said, \"I would love to visit Japan someday.\"",
+      "reportedSpeech": "Omar said that he would love to visit Japan someday.",
+      "changesList": [
+        "'would' stays unchanged",
+        "'I' → 'he'"
+      ],
+      "ruleExplanation": "'Would' remains the same; only the pronoun 'I' changes to 'he'.",
+      "nativeTip": "'Would' is already the backshifted form of 'will' — it doesn't change again.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Omar said, \"I would love to visit Japan someday.\"\" ➔ \"Omar said that he would love to visit Japan someday.\""
+    },
+    {
+      "id": "dis_l78_learn_q1",
+      "level": 78,
+      "conceptTitle": "Speech Bubble to Report Converter: Modal Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Modal Backshift",
+      "directSpeech": "The inspector said, \"This wiring must be replaced.\"",
+      "reportedSpeech": "The inspector said that that wiring had to be replaced.",
+      "changesList": [
+        "'must' → 'had to'",
+        "'this' → 'that'"
+      ],
+      "ruleExplanation": "'Must' (necessity) backshifts to 'had to', and 'this' becomes 'that'.",
+      "nativeTip": "This is a necessity based on inspection, not a mere suggestion — which modal expresses that?",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The inspector said, \"This wiring must be replaced.\"\" ➔ \"The inspector said that that wiring had to be replaced.\""
+    },
+    {
+      "id": "dis_l78_learn_q2",
+      "level": 78,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "Layla said, \"He must be the new director.\"",
+      "reportedSpeech": "Layla said that he must be the new director.",
+      "changesList": [
+        "'must' (deduction) stays unchanged"
+      ],
+      "ruleExplanation": "This 'must' expresses deduction, so it stays as 'must' rather than becoming 'had to'.",
+      "nativeTip": "This is a guess based on evidence, not an obligation — recall the exception you learned earlier.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Layla said, \"He must be the new director.\"\" ➔ \"Layla said that he must be the new director.\""
+    },
+    {
+      "id": "dis_l78_learn_q3",
+      "level": 78,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "The trainer said, \"You could try a lighter weight.\"",
+      "reportedSpeech": "The trainer said that I could try a lighter weight.",
+      "changesList": [
+        "'could' stays unchanged",
+        "'you' → 'I'"
+      ],
+      "ruleExplanation": "'Could' stays unchanged since it's already a past-time modal form; only the pronoun changes.",
+      "nativeTip": "Recall that 'could' used for a suggestion doesn't need to backshift any further.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The trainer said, \"You could try a lighter weight.\"\" ➔ \"The trainer said that I could try a lighter weight.\""
+    },
+    {
+      "id": "dis_l79_learn_q1",
+      "level": 79,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The forecaster said, \"Temperatures will drop sharply tomorrow.\"",
+      "reportedSpeech": "The forecaster said that temperatures would drop sharply the next day.",
+      "changesList": [
+        "'will' → 'would'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'Will' becomes 'would', and 'tomorrow' becomes 'the next day'.",
+      "nativeTip": "Notice how the modal and the time expression both move back together.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The forecaster said, \"Temperatures will drop sharply tomorrow.\"\" ➔ \"The forecaster said that temperatures would drop sharply the next day.\""
+    },
+    {
+      "id": "dis_l79_learn_q2",
+      "level": 79,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "Hassan said, \"I might see you here next week.\"",
+      "reportedSpeech": "Hassan said that he might see me there the following week.",
+      "changesList": [
+        "'might' stays unchanged",
+        "'you' → 'me'",
+        "'here' → 'there'",
+        "'next week' → 'the following week'"
+      ],
+      "ruleExplanation": "'Might' stays the same, but 'you' becomes 'me', 'here' becomes 'there', and 'next week' becomes 'the following week'.",
+      "nativeTip": "Three things change here: the object pronoun, the place word, and the time word — the modal itself stays the same.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Hassan said, \"I might see you here next week.\"\" ➔ \"Hassan said that he might see me there the following week.\""
+    },
+    {
+      "id": "dis_l79_learn_q3",
+      "level": 79,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The manager said, \"We will need your feedback by tomorrow.\"",
+      "reportedSpeech": "The manager said that they would need my feedback by the next day.",
+      "changesList": [
+        "'we' → 'they'",
+        "'your' → 'my'",
+        "'will' → 'would'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'We' becomes 'they', 'your' becomes 'my', 'will' becomes 'would', and 'tomorrow' becomes 'the next day'.",
+      "nativeTip": "Four items shift together here: the pronoun, the possessive, the modal, and the time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The manager said, \"We will need your feedback by tomorrow.\"\" ➔ \"The manager said that they would need my feedback by the next day.\""
+    },
+    {
+      "id": "dis_l80_learn_q1",
+      "level": 80,
+      "conceptTitle": "Speech Bubble to Report Converter: Modal Backshift",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Modal Backshift",
+      "directSpeech": "The landlord said, \"Tenants must pay rent by the first of the month.\"",
+      "reportedSpeech": "The landlord said that tenants had to pay rent by the first of the month.",
+      "changesList": [
+        "'must' → 'had to'"
+      ],
+      "ruleExplanation": "'Must' (obligation) becomes 'had to'.",
+      "nativeTip": "This is a firm rule — recall how obligation-type 'must' backshifts.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The landlord said, \"Tenants must pay rent by the first of the month.\"\" ➔ \"The landlord said that tenants had to pay rent by the first of the month.\""
+    },
+    {
+      "id": "dis_l80_learn_q2",
+      "level": 80,
+      "conceptTitle": "Speech Bubble to Report Converter: Backshift Exception",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Backshift Exception",
+      "directSpeech": "Elena said, \"That noise must be the neighbor's dog.\"",
+      "reportedSpeech": "Elena said that that noise must be the neighbor's dog.",
+      "changesList": [
+        "'must' (deduction) stays unchanged"
+      ],
+      "ruleExplanation": "This 'must' expresses deduction, so it does not change to 'had to'.",
+      "nativeTip": "This is a guess, not a rule — remember the exception.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"Elena said, \"That noise must be the neighbor's dog.\"\" ➔ \"Elena said that that noise must be the neighbor's dog.\""
+    },
+    {
+      "id": "dis_l80_learn_q3",
+      "level": 80,
+      "conceptTitle": "Speech Bubble to Report Converter: Mixed Reported Speech",
+      "instruction": "SPEECH BUBBLE TO REPORT CONVERTER",
+      "grammarRule": "Mixed Reported Speech",
+      "directSpeech": "The assistant said, \"I will confirm your reservation tomorrow.\"",
+      "reportedSpeech": "The assistant said that she would confirm my reservation the next day.",
+      "changesList": [
+        "'I' → 'she'",
+        "'your' → 'my'",
+        "'will' → 'would'",
+        "'tomorrow' → 'the next day'"
+      ],
+      "ruleExplanation": "'I' becomes 'she', 'your' becomes 'my', 'will' becomes 'would', and 'tomorrow' becomes 'the next day'.",
+      "nativeTip": "This final review item combines the pronoun, the possessive, the modal, and the time word.",
+      "backshiftSummary": "🔄 Quote ➔ Report: \"The assistant said, \"I will confirm your reservation tomorrow.\"\" ➔ \"The assistant said that she would confirm my reservation the next day.\""
+    }
+  ]
+}
