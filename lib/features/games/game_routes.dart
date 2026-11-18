@@ -58,6 +58,8 @@ import 'package:vowl/features/grammar/clause_connector/presentation/pages/clause
 import 'package:vowl/features/grammar/clause_connector/presentation/pages/clause_connector_practice_screen.dart';
 import 'package:vowl/features/grammar/voice_swap/presentation/pages/voice_swap_learn_screen.dart';
 import 'package:vowl/features/grammar/voice_swap/presentation/pages/voice_swap_practice_screen.dart';
+import 'package:vowl/features/grammar/punctuation_mastery/presentation/pages/punctuation_mastery_learn_screen.dart';
+import 'package:vowl/features/grammar/punctuation_mastery/presentation/pages/punctuation_mastery_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -437,6 +439,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'punctuationmastery') {
+          return fadeTransitionPage(
+            child: PunctuationMasteryLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -595,6 +603,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'voiceswap') {
           return fadeTransitionPage(
             child: VoiceSwapPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'punctuationmastery') {
+          return fadeTransitionPage(
+            child: PunctuationMasteryPracticeScreen(level: level),
             state: state,
           );
         }

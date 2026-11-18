@@ -737,6 +737,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                             'questionFormatter',
                             'clauseConnector',
                             'voiceSwap',
+                            'punctuationMastery',
                           };
                           final isPhasedGame = phasedGames.contains(widget.gameType);
 
