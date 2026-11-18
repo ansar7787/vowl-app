@@ -108,6 +108,8 @@ import 'package:vowl/features/writing/describe_situation_writing/presentation/pa
 import 'package:vowl/features/writing/describe_situation_writing/presentation/pages/describe_situation_writing_practice_screen.dart';
 import 'package:vowl/features/writing/fix_the_sentence/presentation/pages/fix_the_sentence_learn_screen.dart';
 import 'package:vowl/features/writing/fix_the_sentence/presentation/pages/fix_the_sentence_practice_screen.dart';
+import 'package:vowl/features/writing/short_answer_writing/presentation/pages/short_answer_writing_learn_screen.dart';
+import 'package:vowl/features/writing/short_answer_writing/presentation/pages/short_answer_writing_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -637,6 +639,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'shortanswerwriting') {
+          return fadeTransitionPage(
+            child: ShortAnswerWritingLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -945,6 +953,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'fixthesentence') {
           return fadeTransitionPage(
             child: FixTheSentencePracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'shortanswerwriting') {
+          return fadeTransitionPage(
+            child: ShortAnswerWritingPracticeScreen(level: level),
             state: state,
           );
         }

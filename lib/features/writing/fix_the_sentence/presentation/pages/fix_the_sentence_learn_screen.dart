@@ -450,7 +450,7 @@ class _FixTheSentenceLearnScreenState extends State<FixTheSentenceLearnScreen> {
     );
   }
 
-  List<InlineSpan> _buildPassageSpans(
+  List<TextSpan> _buildPassageSpans(
     String passage,
     String missingWord,
     bool isDark,
@@ -521,3 +521,4 @@ class _FixTheSentenceLearnScreenState extends State<FixTheSentenceLearnScreen> {
     ];
   }
 }
+

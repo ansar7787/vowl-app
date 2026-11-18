@@ -366,8 +366,7 @@ class _DescribeSituationWritingPracticeScreenState
                   ),
                   if (emojis.isNotEmpty) ...[
                     SizedBox(height: 12.h),
-                    Wrap(
-                      crossAxisAlignment: WrapCrossAlignment.center,
+                    Row(
                       children: [
                         Text(
                           'Key scene anchors: ',
@@ -417,7 +416,7 @@ class _DescribeSituationWritingPracticeScreenState
                 if (idx == correctIndex) {
                   borderColor = AppColors.emerald500;
                   bgColor = AppColors.emerald500.withValues(alpha: 0.12);
-                } else if (isSelected && !_isCorrect) {
+                } else if (isSelected && !isCorrect) {
                   borderColor = AppColors.rose500;
                   bgColor = AppColors.rose500.withValues(alpha: 0.12);
                 }
@@ -572,3 +571,4 @@ class _DescribeSituationWritingPracticeScreenState
     );
   }
 }
+

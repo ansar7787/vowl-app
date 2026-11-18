@@ -1,0 +1,638 @@
+{
+  "gameType": "shortAnswerWriting",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "WRT_SHORTANSWERWRITING_L1_Q1",
+      "instruction": "Reply as you would in a real conversation. Each word should appear in your answer.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "A new classmate smiles and asks who you are. Introduce yourself in one sentence.",
+      "options": [
+        "hello",
+        "from",
+        "name"
+      ],
+      "sampleAnswer": "Hello, my name is Rita and I am from Brazil.",
+      "hint": "Begin with a greeting, then use the fixed pattern 'my name is' before your name.",
+      "explanation": "'My name is...' and 'I am from...' are the two most common introduction patterns, and 'and' joins them into one smooth sentence.",
+      "keywordsExpected": [
+        "from",
+        "hello",
+        "name"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L1_Q2",
+      "instruction": "Write a description in one sentence that a stranger could picture. Work in each of the three words.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "You are at the lost-and-found desk. Describe your bag so the clerk can find it.",
+      "options": [
+        "color",
+        "small",
+        "bag"
+      ],
+      "sampleAnswer": "My bag is small, and the color is dark green.",
+      "hint": "Name the object first. After 'is', put the describing word, then use 'and' for a second detail.",
+      "explanation": "'Is' connects a noun to its description. Giving two details, such as size and color, makes a description useful and not just correct.",
+      "keywordsExpected": [
+        "bag",
+        "color",
+        "small"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L1_Q3",
+      "instruction": "Explain it in a single sentence so the other person understands. Each word should appear in your answer.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "Your friend cannot find her keys. Tell her where they are.",
+      "options": [
+        "table",
+        "keys",
+        "on"
+      ],
+      "sampleAnswer": "Your keys are on the table.",
+      "hint": "Keys is plural, so choose 'are'. End with the place.",
+      "explanation": "A place word like 'on' tells the listener exactly where to look, and the verb must agree with the noun: one key is, two keys are.",
+      "keywordsExpected": [
+        "keys",
+        "on",
+        "table"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L2_Q1",
+      "instruction": "Give a clear, direct answer in one clear sentence. Include the three key words.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "A friend asks when your weekday starts. Give the time.",
+      "options": [
+        "at",
+        "get up",
+        "weekdays"
+      ],
+      "sampleAnswer": "I get up at six thirty on weekdays.",
+      "hint": "Follow the pattern: I + action + at + time.",
+      "explanation": "Use 'at' with clock times and 'on' with days. The simple present ('I get up') describes something that repeats.",
+      "keywordsExpected": [
+        "at",
+        "get up",
+        "weekdays"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L2_Q2",
+      "instruction": "Reply as you would in a real conversation in a single sentence. Use the three words meaningfully.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "Someone asks who you usually have lunch with.",
+      "options": [
+        "usually",
+        "with",
+        "lunch"
+      ],
+      "sampleAnswer": "I usually have lunch with two friends from my class.",
+      "hint": "Frequency words like 'usually' go before the main verb, not after it.",
+      "explanation": "The frequency adverb sits between the subject and the verb: 'I usually have', not 'I have usually'.",
+      "keywordsExpected": [
+        "lunch",
+        "usually",
+        "with"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L2_Q3",
+      "instruction": "Answer in one clear sentence, adding one useful detail. Work in each of the three words.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "A visitor asks how you get to work or school. Say how, and how long it takes.",
+      "options": [
+        "bus",
+        "minutes",
+        "take"
+      ],
+      "sampleAnswer": "I take the bus, and it takes about twenty minutes.",
+      "hint": "Give two facts: the transport first, then the time. 'It takes' is the natural way to give a duration.",
+      "explanation": "'Take' works for both the vehicle (take the bus) and the duration (it takes twenty minutes), so one verb covers two useful ideas.",
+      "keywordsExpected": [
+        "bus",
+        "minutes",
+        "take"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L3_Q1",
+      "instruction": "Paint a clear, concrete picture in one clear sentence. Fit the three key words into your answer naturally.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "A friend is meeting your neighbor at the station. Describe how he or she looks.",
+      "options": [
+        "tall",
+        "glasses",
+        "hair"
+      ],
+      "sampleAnswer": "She is tall, has short dark hair, and wears glasses.",
+      "hint": "Use 'is' for height, 'has' for hair, and 'wears' for things people put on.",
+      "explanation": "Each verb fits a different kind of information: be for general description, have for features, wear for clothes and accessories.",
+      "keywordsExpected": [
+        "glasses",
+        "hair",
+        "tall"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L3_Q2",
+      "instruction": "Reply as you would in a real conversation in a single sentence. Your answer should contain all three key words.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "A new teammate asks what your friend does for a living.",
+      "options": [
+        "works",
+        "company",
+        "as"
+      ],
+      "sampleAnswer": "My friend Omar works as a driver for a delivery company.",
+      "hint": "Name the person, then 'works as' plus the job. Do not forget the -s on 'works'.",
+      "explanation": "Third-person singular verbs need -s. 'Work as' names the job, while 'work for' names the employer.",
+      "keywordsExpected": [
+        "as",
+        "company",
+        "works"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L3_Q3",
+      "instruction": "Describe it clearly in one clear sentence. Include the three key words.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "Your friend cannot see you in a busy train station. Tell her what you are wearing.",
+      "options": [
+        "black",
+        "jacket",
+        "wearing"
+      ],
+      "sampleAnswer": "I'm wearing a black jacket, and I'm standing next to the coffee stand.",
+      "hint": "Use 'I'm wearing' for clothes right now. Put the color before the clothing word.",
+      "explanation": "The present continuous describes what is true at this moment, and adjectives such as colors come before the noun: a black jacket.",
+      "keywordsExpected": [
+        "black",
+        "jacket",
+        "wearing"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L4_Q1",
+      "instruction": "Answer in a single sentence, adding one useful detail. Each word should appear in your answer.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "A friend wants to visit and asks what is near your home. Name one place.",
+      "options": [
+        "there",
+        "park",
+        "near"
+      ],
+      "sampleAnswer": "There is a small park near my home.",
+      "hint": "Use 'there is' with one thing, then say where it is.",
+      "explanation": "'There is' introduces something for the first time, so it fits any answer to 'What is near...?'",
+      "keywordsExpected": [
+        "near",
+        "park",
+        "there"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L4_Q2",
+      "instruction": "Paint a clear, concrete picture in one clear sentence. Work in each of the three words.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "A new housemate asks what furniture is in the living room. Mention two kinds.",
+      "options": [
+        "chairs",
+        "there",
+        "sofa"
+      ],
+      "sampleAnswer": "There is a sofa, and there are two chairs by the window.",
+      "hint": "Use 'there is' for one thing and 'there are' for more than one. Both can appear in one sentence.",
+      "explanation": "The verb after 'there' agrees with what comes next: there is a sofa, there are two chairs.",
+      "keywordsExpected": [
+        "chairs",
+        "sofa",
+        "there"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L4_Q3",
+      "instruction": "Write a natural reply in one clear sentence. Include the three key words.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "A visitor asks if your street has a supermarket. Say it does not, and offer another option.",
+      "options": [
+        "but",
+        "supermarket",
+        "isn't"
+      ],
+      "sampleAnswer": "There isn't a supermarket on my street, but there is one near the station.",
+      "hint": "Start with the negative, then use 'but' to give a helpful alternative.",
+      "explanation": "A negative answer plus 'but' lets you be honest and still helpful, which is what a good reply to a visitor needs.",
+      "keywordsExpected": [
+        "but",
+        "isn't",
+        "supermarket"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L5_Q1",
+      "instruction": "Reply as you would in a real conversation in a single sentence. Fit the three key words into your answer naturally.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "A coach asks what you can do well. Give one skill you have and one you don't have yet.",
+      "options": [
+        "yet",
+        "can",
+        "but"
+      ],
+      "sampleAnswer": "I can cook simple meals, but I can't bake bread yet.",
+      "hint": "Use 'can' with a base verb. Put 'yet' at the end of the negative part.",
+      "explanation": "'Can't ... yet' shows that a skill is still developing, so it sounds more positive than just 'I can't'.",
+      "keywordsExpected": [
+        "but",
+        "can",
+        "yet"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L5_Q2",
+      "instruction": "Reply in two short sentences as you would in real life. Work in each of the three words.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "A stranger on a train asks if he can sit next to you. Say yes.",
+      "options": [
+        "sure",
+        "free",
+        "sit"
+      ],
+      "sampleAnswer": "Sure, please sit down. This seat is free.",
+      "hint": "Answer the question first, then add a short comment about the seat.",
+      "explanation": "A quick answer word followed by one short detail sounds friendly and natural in everyday speech.",
+      "keywordsExpected": [
+        "free",
+        "sit",
+        "sure"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L5_Q3",
+      "instruction": "Reply in one sentence as you would in real life. Include all three key words.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "A friend invites you to the cinema tonight, but you are busy. Reply politely and suggest another time.",
+      "options": [
+        "tomorrow",
+        "sorry",
+        "can't"
+      ],
+      "sampleAnswer": "Sorry, I can't come tonight, but I'm free tomorrow.",
+      "hint": "Say sorry first, give the refusal, then offer a new time with 'but'.",
+      "explanation": "A polite refusal has three parts: apology, refusal, alternative. 'But' connects the refusal to the new offer.",
+      "keywordsExpected": [
+        "can't",
+        "sorry",
+        "tomorrow"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L6_Q1",
+      "instruction": "Say what you think in one sentence, and support it. Include the three key words.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "Which day of the week do you like best? Give a short reason.",
+      "options": [
+        "like",
+        "because",
+        "best"
+      ],
+      "sampleAnswer": "I like Friday best because the work week is almost over.",
+      "hint": "Answer with the day first. 'Because' introduces your reason.",
+      "explanation": "'Because' answers 'why?' inside the same sentence, so the listener gets your choice and your reason together.",
+      "keywordsExpected": [
+        "because",
+        "best",
+        "like"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L6_Q2",
+      "instruction": "State your opinion and give a reason in a single sentence. Fit the three key words into your answer naturally.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "A friend loves rainy days. Tell her one thing you don't like about them.",
+      "options": [
+        "because",
+        "wet",
+        "don't"
+      ],
+      "sampleAnswer": "I don't like rainy days because my shoes always get wet.",
+      "hint": "Use 'don't like' plus a noun, then give a specific reason.",
+      "explanation": "A specific reason ('my shoes get wet') is more convincing than a general one ('it's bad').",
+      "keywordsExpected": [
+        "because",
+        "don't",
+        "wet"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L6_Q3",
+      "instruction": "Say why in one clear sentence, with the reason stated clearly. Work in each of the three words.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "A friend asks why you keep going to the same café, gym, or barber.",
+      "options": [
+        "staff",
+        "because",
+        "friendly"
+      ],
+      "sampleAnswer": "I keep going there because the staff are friendly.",
+      "hint": "'Keep going' shows a habit. Give one concrete reason after 'because'.",
+      "explanation": "Staff is a group word and takes 'are' in most English. A concrete reason makes the answer sound sincere.",
+      "keywordsExpected": [
+        "because",
+        "friendly",
+        "staff"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L7_Q1",
+      "instruction": "Write a brief account in one sentence. Fit the three key words into your answer naturally.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "A colleague asks how your weekend was. Say one place you went and one thing you did there.",
+      "options": [
+        "walked",
+        "weekend",
+        "went"
+      ],
+      "sampleAnswer": "Last weekend I went to the lake and walked around it twice.",
+      "hint": "Start with a time word, then two past verbs joined by 'and'. 'Go' becomes 'went'.",
+      "explanation": "Irregular verbs (go, went) must be memorized, while regular verbs simply add -ed (walk, walked).",
+      "keywordsExpected": [
+        "walked",
+        "weekend",
+        "went"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L7_Q2",
+      "instruction": "Write a brief account in one sentence. Each word should appear in your answer.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "Tell a friend what you bought the last time you went shopping and how you felt about the price.",
+      "options": [
+        "last",
+        "bought",
+        "cost"
+      ],
+      "sampleAnswer": "Last week I bought a new jacket, and it cost less than I expected.",
+      "hint": "'Buy' becomes 'bought'. Add your feeling about the price after 'and'.",
+      "explanation": "Past-tense verbs place the story firmly in the past. 'Cost' does not change in the past, which is one more irregular form to notice.",
+      "keywordsExpected": [
+        "bought",
+        "cost",
+        "last"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L7_Q3",
+      "instruction": "Share the experience in one sentence. Include the three key words.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "Tell a friend one interesting thing you saw on your way to work or school today.",
+      "options": [
+        "saw",
+        "street",
+        "way"
+      ],
+      "sampleAnswer": "I saw a street musician playing a violin on my way to work.",
+      "hint": "Use 'saw', the past of 'see', and finish with 'on my way to...'.",
+      "explanation": "'On my way to' is a natural phrase for anything you notice during a journey.",
+      "keywordsExpected": [
+        "saw",
+        "street",
+        "way"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L8_Q1",
+      "instruction": "Describe it clearly in a single sentence. Use all three words naturally.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "A friend wants to know what the weather was like yesterday where you live.",
+      "options": [
+        "yesterday",
+        "was",
+        "cloudy"
+      ],
+      "sampleAnswer": "It was cloudy yesterday, but it wasn't cold.",
+      "hint": "Use 'it was' for weather and add a contrast with 'but'.",
+      "explanation": "'Was' and 'were' are the past of 'am/is/are'. Weather descriptions always use 'it was'.",
+      "keywordsExpected": [
+        "cloudy",
+        "was",
+        "yesterday"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L8_Q2",
+      "instruction": "Write a brief account in one clear sentence. Fit the three key words into your answer naturally.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "Tell a friend how your first day at a new school, job, or class was.",
+      "options": [
+        "nervous",
+        "was",
+        "first"
+      ],
+      "sampleAnswer": "My first day was exciting, but I was nervous in the morning.",
+      "hint": "Use 'was' for the day and again for your feeling. 'But' shows the change.",
+      "explanation": "'Was' can describe events (the day was exciting) and feelings (I was nervous), and 'but' shows how the feeling changed.",
+      "keywordsExpected": [
+        "first",
+        "nervous",
+        "was"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L8_Q3",
+      "instruction": "Reply in one sentence as you would in real life. Include all three key words.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "Your friend says she called you at eight last night and you did not answer. Tell her where you were.",
+      "options": [
+        "sorry",
+        "was",
+        "phone"
+      ],
+      "sampleAnswer": "Sorry, I was at the gym, and my phone was in my locker.",
+      "hint": "Apologize first, then use 'was' for both your location and the phone's location.",
+      "explanation": "'I was at + place' answers 'Where were you?', and a second 'was' explains why the call was missed.",
+      "keywordsExpected": [
+        "phone",
+        "sorry",
+        "was"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L9_Q1",
+      "instruction": "Say what will happen in one clear sentence. Use the three words meaningfully.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "A friend asks what you are going to do tomorrow morning. Give one plan.",
+      "options": [
+        "going to",
+        "morning",
+        "tomorrow"
+      ],
+      "sampleAnswer": "Tomorrow morning I'm going to clean the kitchen and do the laundry.",
+      "hint": "Use 'am going to' plus a base verb for something you have already decided.",
+      "explanation": "'Going to' is the natural choice for plans that already exist in your mind.",
+      "keywordsExpected": [
+        "going to",
+        "morning",
+        "tomorrow"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L9_Q2",
+      "instruction": "Write the message in one clear sentence in a polite tone. Make sure all three words fit the meaning.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "Invite a friend to do something together next Saturday. Write it as a question.",
+      "options": [
+        "together",
+        "want",
+        "Saturday"
+      ],
+      "sampleAnswer": "Do you want to go hiking together on Saturday?",
+      "hint": "Start with 'Do you want to' and add the activity and the day.",
+      "explanation": "'Do you want to...?' is a friendly, low-pressure way to invite someone.",
+      "keywordsExpected": [
+        "Saturday",
+        "together",
+        "want"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L9_Q3",
+      "instruction": "Describe the plan in one clear sentence. Fit the three key words into your answer naturally.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "Dark clouds are moving in. Tell a friend what you think will happen and what to do.",
+      "options": [
+        "will",
+        "umbrella",
+        "rain"
+      ],
+      "sampleAnswer": "It will rain soon, so take an umbrella.",
+      "hint": "Use 'will' for a prediction based on what you can see, then give a short instruction.",
+      "explanation": "'Will' expresses a prediction, and 'so' plus a command turns the prediction into useful advice.",
+      "keywordsExpected": [
+        "rain",
+        "umbrella",
+        "will"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L10_Q1",
+      "instruction": "Reply as you would in a real conversation in a single sentence. Work in each of the three words.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "Say which day of your week is the busiest and why.",
+      "options": [
+        "classes",
+        "because",
+        "busiest"
+      ],
+      "sampleAnswer": "Tuesday is my busiest day because I have classes in the morning and work in the evening.",
+      "hint": "Choose the day, then give the reason with 'because'. The reason can have two parts.",
+      "explanation": "The superlative 'busiest' compares one day with all the others, and 'because' explains the comparison.",
+      "keywordsExpected": [
+        "because",
+        "busiest",
+        "classes"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L10_Q2",
+      "instruction": "Share the experience in one clear sentence. Include all three key words.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "Tell a friend something you finished yesterday that you are happy about.",
+      "options": [
+        "yesterday",
+        "proud",
+        "finished"
+      ],
+      "sampleAnswer": "Yesterday I finished the report I was working on, and I'm proud of it.",
+      "hint": "Use a past verb for the finished action, then switch to the present for how you feel now.",
+      "explanation": "Notice the change of tense: the action is finished (past), but the feeling still exists now (present).",
+      "keywordsExpected": [
+        "finished",
+        "proud",
+        "yesterday"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "WRT_SHORTANSWERWRITING_L10_Q3",
+      "instruction": "Say what will happen in a single sentence. Use the three words meaningfully.",
+      "subtype": "shortAnswerWriting",
+      "interactionType": "writing",
+      "prompt": "Say how you will rest once this week is over.",
+      "options": [
+        "after",
+        "rest",
+        "will"
+      ],
+      "sampleAnswer": "After this week, I will rest by staying home and watching old films.",
+      "hint": "Begin with 'After' plus a time, then describe your plan with 'will'.",
+      "explanation": "Starting with 'After...' puts the future plan in order. 'By + -ing' explains how you will do something.",
+      "keywordsExpected": [
+        "after",
+        "rest",
+        "will"
+      ],
+      "phase": "mastery"
+    }
+  ],
+  "phase": "mastery"
+}
