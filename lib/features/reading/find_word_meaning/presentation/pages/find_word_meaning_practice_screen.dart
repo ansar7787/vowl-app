@@ -148,7 +148,6 @@ class _FindWordMeaningPracticeScreenState
   int _selectedOptionIndex = -1;
   bool _hasChecked = false;
   bool _isCorrect = false;
-  int _score = 0;
   bool _showHint = false;
   bool _isLoading = false;
 
@@ -222,7 +221,6 @@ class _FindWordMeaningPracticeScreenState
       _hasChecked = true;
       _isCorrect = isRight;
       if (isRight) {
-        _score++;
         _soundService?.playCorrect();
         _hapticService?.success();
       } else {
@@ -304,9 +302,9 @@ class _FindWordMeaningPracticeScreenState
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
                   decoration: BoxDecoration(
-                    color: clueColor.withOpacity(0.15),
+                    color: clueColor.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(20.r),
-                    border: Border.all(color: clueColor.withOpacity(0.4)),
+                    border: Border.all(color: clueColor.withValues(alpha: 0.4)),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -371,10 +369,10 @@ class _FindWordMeaningPracticeScreenState
                 padding: EdgeInsets.all(12.r),
                 margin: EdgeInsets.only(bottom: 12.h),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFFBBF24).withOpacity(0.15),
+                  color: const Color(0xFFFBBF24).withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(12.r),
                   border: Border.all(
-                    color: const Color(0xFFFBBF24).withOpacity(0.5),
+                    color: const Color(0xFFFBBF24).withValues(alpha: 0.5),
                   ),
                 ),
                 child: Row(
@@ -415,7 +413,7 @@ class _FindWordMeaningPracticeScreenState
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.04),
+                    color: Colors.black.withValues(alpha: 0.04),
                     blurRadius: 10,
                     offset: const Offset(0, 4),
                   ),
@@ -454,7 +452,7 @@ class _FindWordMeaningPracticeScreenState
                           child: Container(
                             padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
                             decoration: BoxDecoration(
-                              color: const Color(0xFF34D399).withOpacity(0.2),
+                              color: const Color(0xFF34D399).withValues(alpha: 0.2),
                               borderRadius: BorderRadius.circular(12.r),
                             ),
                             child: Row(
@@ -517,13 +515,13 @@ class _FindWordMeaningPracticeScreenState
                 padding: EdgeInsets.all(14.r),
                 decoration: BoxDecoration(
                   color: _isCorrect
-                      ? const Color(0xFF34D399).withOpacity(0.12)
-                      : const Color(0xFFF87171).withOpacity(0.12),
+                      ? const Color(0xFF34D399).withValues(alpha: 0.12)
+                      : const Color(0xFFF87171).withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(16.r),
                   border: Border.all(
                     color: _isCorrect
-                        ? const Color(0xFF34D399).withOpacity(0.4)
-                        : const Color(0xFFF87171).withOpacity(0.4),
+                        ? const Color(0xFF34D399).withValues(alpha: 0.4)
+                        : const Color(0xFFF87171).withValues(alpha: 0.4),
                   ),
                 ),
                 child: Column(
@@ -641,7 +639,7 @@ class _FindWordMeaningPracticeScreenState
                 padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
                 margin: EdgeInsets.symmetric(horizontal: 2.w),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF34D399).withOpacity(0.2),
+                  color: const Color(0xFF34D399).withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(6.r),
                   border: Border.all(color: const Color(0xFF34D399), width: 1.5),
                 ),
@@ -692,7 +690,7 @@ class _FindWordMeaningPracticeScreenState
                 padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
                 margin: EdgeInsets.symmetric(horizontal: 2.w),
                 decoration: BoxDecoration(
-                  color: clueColor.withOpacity(0.18),
+                  color: clueColor.withValues(alpha: 0.18),
                   borderRadius: BorderRadius.circular(6.r),
                   border: Border.all(color: clueColor, width: 1.5),
                 ),
@@ -731,18 +729,18 @@ class _FindWordMeaningPracticeScreenState
 
     if (_hasChecked) {
       if (isCorrectOption) {
-        bgColor = const Color(0xFF34D399).withOpacity(0.15);
+        bgColor = const Color(0xFF34D399).withValues(alpha: 0.15);
         borderColor = const Color(0xFF34D399);
         textColor = const Color(0xFF34D399);
         trailingIcon = const Icon(Icons.check_circle_rounded, color: Color(0xFF34D399));
       } else if (isSelected) {
-        bgColor = const Color(0xFFF87171).withOpacity(0.15);
+        bgColor = const Color(0xFFF87171).withValues(alpha: 0.15);
         borderColor = const Color(0xFFF87171);
         textColor = const Color(0xFFF87171);
         trailingIcon = const Icon(Icons.cancel_rounded, color: Color(0xFFF87171));
       }
     } else if (isSelected) {
-      bgColor = AppColors.indigo500.withOpacity(0.15);
+      bgColor = AppColors.indigo500.withValues(alpha: 0.15);
       borderColor = AppColors.indigo500;
     }
 
@@ -766,7 +764,7 @@ class _FindWordMeaningPracticeScreenState
               boxShadow: [
                 if (!_hasChecked)
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.02),
+                    color: Colors.black.withValues(alpha: 0.02),
                     blurRadius: 4,
                     offset: const Offset(0, 2),
                   ),
@@ -778,7 +776,7 @@ class _FindWordMeaningPracticeScreenState
                   width: 28.r,
                   height: 28.r,
                   decoration: BoxDecoration(
-                    color: borderColor.withOpacity(0.2),
+                    color: borderColor.withValues(alpha: 0.2),
                     shape: BoxShape.circle,
                   ),
                   child: Center(

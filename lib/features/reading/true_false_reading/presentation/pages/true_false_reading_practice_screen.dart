@@ -150,7 +150,6 @@ class _TrueFalseReadingPracticeScreenState
   int? _selectedSentenceIndex;
   bool _hasChecked = false;
   bool _isCorrect = false;
-  int _score = 0;
   bool _showHint = false;
   String? _validationWarning;
   bool _isLoading = false;
@@ -256,7 +255,6 @@ class _TrueFalseReadingPracticeScreenState
       _isCorrect = overallCorrect;
       _validationWarning = null;
       if (overallCorrect) {
-        _score++;
         _soundService?.playCorrect();
         _hapticService?.success();
       } else {
@@ -327,9 +325,9 @@ class _TrueFalseReadingPracticeScreenState
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
                   decoration: BoxDecoration(
-                    color: AppColors.teal500.withOpacity(0.15),
+                    color: AppColors.teal500.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(20.r),
-                    border: Border.all(color: AppColors.teal500.withOpacity(0.4)),
+                    border: Border.all(color: AppColors.teal500.withValues(alpha: 0.4)),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -394,10 +392,10 @@ class _TrueFalseReadingPracticeScreenState
                 padding: EdgeInsets.all(12.r),
                 margin: EdgeInsets.only(bottom: 12.h),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFFBBF24).withOpacity(0.15),
+                  color: const Color(0xFFFBBF24).withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(12.r),
                   border: Border.all(
-                    color: const Color(0xFFFBBF24).withOpacity(0.5),
+                    color: const Color(0xFFFBBF24).withValues(alpha: 0.5),
                   ),
                 ),
                 child: Row(
@@ -438,7 +436,7 @@ class _TrueFalseReadingPracticeScreenState
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.04),
+                    color: Colors.black.withValues(alpha: 0.04),
                     blurRadius: 10,
                     offset: const Offset(0, 4),
                   ),
@@ -561,10 +559,10 @@ class _TrueFalseReadingPracticeScreenState
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF59E0B).withOpacity(0.15),
+                  color: const Color(0xFFF59E0B).withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(12.r),
                   border: Border.all(
-                    color: const Color(0xFFF59E0B).withOpacity(0.5),
+                    color: const Color(0xFFF59E0B).withValues(alpha: 0.5),
                   ),
                 ),
                 child: Row(
@@ -594,13 +592,13 @@ class _TrueFalseReadingPracticeScreenState
                 padding: EdgeInsets.all(14.r),
                 decoration: BoxDecoration(
                   color: _isCorrect
-                      ? const Color(0xFF34D399).withOpacity(0.12)
-                      : const Color(0xFFF87171).withOpacity(0.12),
+                      ? const Color(0xFF34D399).withValues(alpha: 0.12)
+                      : const Color(0xFFF87171).withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(16.r),
                   border: Border.all(
                     color: _isCorrect
-                        ? const Color(0xFF34D399).withOpacity(0.4)
-                        : const Color(0xFFF87171).withOpacity(0.4),
+                        ? const Color(0xFF34D399).withValues(alpha: 0.4)
+                        : const Color(0xFFF87171).withValues(alpha: 0.4),
                   ),
                 ),
                 child: Column(
@@ -688,16 +686,16 @@ class _TrueFalseReadingPracticeScreenState
 
     if (_hasChecked) {
       if (isCorrectChoice) {
-        bgColor = color.withOpacity(0.2);
+        bgColor = color.withValues(alpha: 0.2);
         borderColor = color;
         textColor = color;
       } else if (isSelected) {
-        bgColor = const Color(0xFFF87171).withOpacity(0.2);
+        bgColor = const Color(0xFFF87171).withValues(alpha: 0.2);
         borderColor = const Color(0xFFF87171);
         textColor = const Color(0xFFF87171);
       }
     } else if (isSelected) {
-      bgColor = color.withOpacity(0.18);
+      bgColor = color.withValues(alpha: 0.18);
       borderColor = color;
       textColor = color;
     }
@@ -751,14 +749,14 @@ class _TrueFalseReadingPracticeScreenState
 
     if (_hasChecked) {
       if (isCorrectEvidence) {
-        bgColor = const Color(0xFF34D399).withOpacity(0.18);
+        bgColor = const Color(0xFF34D399).withValues(alpha: 0.18);
         borderColor = const Color(0xFF34D399);
       } else if (isSelected) {
-        bgColor = const Color(0xFFF87171).withOpacity(0.15);
+        bgColor = const Color(0xFFF87171).withValues(alpha: 0.15);
         borderColor = const Color(0xFFF87171);
       }
     } else if (isSelected) {
-      bgColor = AppColors.teal500.withOpacity(0.15);
+      bgColor = AppColors.teal500.withValues(alpha: 0.15);
       borderColor = AppColors.teal500;
     }
 
@@ -784,7 +782,7 @@ class _TrueFalseReadingPracticeScreenState
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
                 decoration: BoxDecoration(
-                  color: borderColor.withOpacity(0.2),
+                  color: borderColor.withValues(alpha: 0.2),
                   borderRadius: BorderRadius.circular(6.r),
                 ),
                 child: Text(

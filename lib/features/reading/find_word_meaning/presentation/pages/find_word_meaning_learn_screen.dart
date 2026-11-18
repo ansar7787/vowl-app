@@ -264,16 +264,16 @@ class _FindWordMeaningLearnScreenState extends State<FindWordMeaningLearnScreen>
             Container(
               padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
               decoration: BoxDecoration(
-                color: clueColor.withOpacity(0.12),
+                color: clueColor.withValues(alpha: 0.12),
                 borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(color: clueColor.withOpacity(0.4)),
+                border: Border.all(color: clueColor.withValues(alpha: 0.4)),
               ),
               child: Row(
                 children: [
                   Container(
                     padding: EdgeInsets.all(8.r),
                     decoration: BoxDecoration(
-                      color: clueColor.withOpacity(0.2),
+                      color: clueColor.withValues(alpha: 0.2),
                       shape: BoxShape.circle,
                     ),
                     child: Icon(clueIcon, color: clueColor, size: 22.sp),
@@ -326,7 +326,7 @@ class _FindWordMeaningLearnScreenState extends State<FindWordMeaningLearnScreen>
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.04),
+                    color: Colors.black.withValues(alpha: 0.04),
                     blurRadius: 10,
                     offset: const Offset(0, 4),
                   ),
@@ -517,9 +517,9 @@ class _FindWordMeaningLearnScreenState extends State<FindWordMeaningLearnScreen>
             Container(
               padding: EdgeInsets.all(14.r),
               decoration: BoxDecoration(
-                color: clueColor.withOpacity(0.08),
+                color: clueColor.withValues(alpha: 0.08),
                 borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(color: clueColor.withOpacity(0.3)),
+                border: Border.all(color: clueColor.withValues(alpha: 0.3)),
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -601,7 +601,7 @@ class _FindWordMeaningLearnScreenState extends State<FindWordMeaningLearnScreen>
               padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
               margin: EdgeInsets.symmetric(horizontal: 2.w),
               decoration: BoxDecoration(
-                color: clueColor.withOpacity(0.25),
+                color: clueColor.withValues(alpha: 0.25),
                 borderRadius: BorderRadius.circular(6.r),
                 border: Border.all(color: clueColor, width: 1.5),
               ),

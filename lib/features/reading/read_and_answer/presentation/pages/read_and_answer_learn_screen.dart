@@ -150,7 +150,6 @@ class _ReadAndAnswerLearnScreenState extends State<ReadAndAnswerLearnScreen> {
   ];
 
   int _currentIndex = 0;
-  bool _isLoading = false;
   TtsService? _ttsService;
 
   @override
@@ -218,15 +217,6 @@ class _ReadAndAnswerLearnScreenState extends State<ReadAndAnswerLearnScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (_isLoading) {
-      return Scaffold(
-        backgroundColor: AppColors.slate950,
-        body: const Center(
-          child: CircularProgressIndicator(color: AppColors.teal500),
-        ),
-      );
-    }
-
     final quest = _quests[_currentIndex];
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
