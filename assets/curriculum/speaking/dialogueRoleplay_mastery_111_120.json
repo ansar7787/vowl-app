@@ -1,0 +1,693 @@
+{
+  "gameType": "dialogueRoleplay",
+  "phase": "mastery",
+  "batchIndex": 12,
+  "levels": "111-120",
+  "quests": [
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L111_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Give an honest but cautious assessment.",
+      "hint": "The deadline looks risky. Say so without alarming your manager.",
+      "explanation": "Hedging words like \"a bit\" and \"might\" let you deliver bad news while leaving room for solutions.",
+      "partnerDialogue": "Do you think the deadline is realistic?",
+      "sampleAnswer": "Probably not, unless we get more help.",
+      "acceptedSynonyms": [
+        "probably not, unless we get more help",
+        "i'm not sure. it'd be tight, but perhaps possible with fewer features",
+        "it's a bit ambitious, to be honest. we might manage if we drop one feature",
+        "it's a bit ambitious, to be honest"
+      ],
+      "smartReplies": [
+        "I'm not sure. It'd be tight, but perhaps possible with fewer features.",
+        "It's a bit ambitious, to be honest. We might manage if we drop one feature.",
+        "Probably not, unless we get more help."
+      ],
+      "correctAnswer": "Probably not, unless we get more help.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L111_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Give honest food feedback.",
+      "hint": "Your friend asks for honesty. Balance kindness with truth.",
+      "explanation": "\"Be honest\" invites the good first, then one specific improvement.",
+      "partnerDialogue": "I made this myself. Be honest.",
+      "sampleAnswer": "It's really good. Maybe a touch more salt, but I'd definitely eat it again.",
+      "acceptedSynonyms": [
+        "it's really good. maybe a touch more salt, but i'd definitely eat it again",
+        "i like it a lot. it could use a little more flavor, that's all",
+        "honestly, it's tasty. the sauce is slightly thin, though",
+        "it is really good. maybe a touch more salt, but i would definitely eat it again"
+      ],
+      "smartReplies": [
+        "It's really good. Maybe a touch more salt, but I'd definitely eat it again.",
+        "I like it a lot. It could use a little more flavor, that's all.",
+        "Honestly, it's tasty. The sauce is slightly thin, though."
+      ],
+      "correctAnswer": "It's really good. Maybe a touch more salt, but I'd definitely eat it again.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L111_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Disagree with an idea gently.",
+      "hint": "Reassure them without pretending the idea is perfect.",
+      "explanation": "Separate the person from the idea: \"I'm wondering if...\" questions the plan, not them.",
+      "partnerDialogue": "Is my idea stupid?",
+      "sampleAnswer": "Not at all. I'm just wondering if the timing is right.",
+      "acceptedSynonyms": [
+        "not at all. i'm just wondering if the timing is right",
+        "no, it's interesting. i'm not sure it fits this project",
+        "i wouldn't say that. i'd want to test it first",
+        "not at all, i'm just wondering if the timing is right",
+        "not at all. i am just wondering if the timing is right"
+      ],
+      "smartReplies": [
+        "No, it's interesting. I'm not sure it fits this project.",
+        "I wouldn't say that. I'd want to test it first.",
+        "Not at all. I'm just wondering if the timing is right."
+      ],
+      "correctAnswer": "Not at all. I'm just wondering if the timing is right.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L112_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Explain a technical fault.",
+      "hint": "Describe what changed and what you observe.",
+      "explanation": "A good problem description says what used to work, what changed, and what you see now.",
+      "partnerDialogue": "So what's the problem with the heating?",
+      "sampleAnswer": "It turns off by itself in the evenings, and the flat gets freezing.",
+      "acceptedSynonyms": [
+        "it turns off by itself in the evenings, and the flat gets freezing",
+        "it worked fine until last week. now it only comes on in the morning, and the radiators stay cold",
+        "it's stopped responding to the thermostat. the radiators are barely warm"
+      ],
+      "smartReplies": [
+        "It turns off by itself in the evenings, and the flat gets freezing.",
+        "It worked fine until last week. Now it only comes on in the morning, and the radiators stay cold.",
+        "It's stopped responding to the thermostat. The radiators are barely warm."
+      ],
+      "correctAnswer": "It turns off by itself in the evenings, and the flat gets freezing.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L112_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Describe symptoms over time.",
+      "hint": "Give the pattern and how long it's been going on.",
+      "explanation": "Doctors listen for patterns and duration. Sleep problems are described by \"when\" and \"how often\".",
+      "partnerDialogue": "How have you been sleeping?",
+      "sampleAnswer": "Not great. I wake at three and can't get back to sleep. It's been about a month.",
+      "acceptedSynonyms": [
+        "not great. i wake at three and can't get back to sleep. it's been about a month",
+        "poorly, mostly. it's been going on for weeks",
+        "badly. i fall asleep easily but wake up several times",
+        "not great. i wake at three and cannot get back to sleep. it is been about a month"
+      ],
+      "smartReplies": [
+        "Poorly, mostly. It's been going on for weeks.",
+        "Badly. I fall asleep easily but wake up several times.",
+        "Not great. I wake at three and can't get back to sleep. It's been about a month."
+      ],
+      "correctAnswer": "Not great. I wake at three and can't get back to sleep. It's been about a month.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L112_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Give a factual account.",
+      "hint": "Recount what you found, in order, without speculating.",
+      "explanation": "For incidents, stick to facts in order. Save guesses about causes for later.",
+      "partnerDialogue": "Can you walk me through what happened?",
+      "sampleAnswer": "I was parked on Elm Street. When I came back, there was a dent and no note.",
+      "acceptedSynonyms": [
+        "i was parked on elm street. when i came back, there was a dent and no note",
+        "i came out of the shop and found a scratch along the door. nobody was around",
+        "i left the car outside my office at nine. by noon, the wing mirror was broken"
+      ],
+      "smartReplies": [
+        "I was parked on Elm Street. When I came back, there was a dent and no note.",
+        "I came out of the shop and found a scratch along the door. Nobody was around.",
+        "I left the car outside my office at nine. By noon, the wing mirror was broken."
+      ],
+      "correctAnswer": "I was parked on Elm Street. When I came back, there was a dent and no note.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L113_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Disagree with an approach.",
+      "hint": "Acknowledge, then object with experience.",
+      "explanation": "\"I see your point, but...\" shows respect. A personal experience is harder to argue with than a general statement.",
+      "partnerDialogue": "This is the best way to do it.",
+      "sampleAnswer": "Maybe. Have you considered doing it the other way?",
+      "acceptedSynonyms": [
+        "maybe. have you considered doing it the other way",
+        "it's one way. i'd try something different",
+        "i see your point, but i've had trouble with that approach before"
+      ],
+      "smartReplies": [
+        "Maybe. Have you considered doing it the other way?",
+        "It's one way. I'd try something different.",
+        "I see your point, but I've had trouble with that approach before."
+      ],
+      "correctAnswer": "Maybe. Have you considered doing it the other way?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L113_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Defend keeping a meeting.",
+      "hint": "Argue for a shorter meeting instead of none.",
+      "explanation": "Offering an alternative (\"shorter, not skipped\") is easier for others to accept than a flat no.",
+      "partnerDialogue": "We should just skip the meeting.",
+      "sampleAnswer": "I'm not sure. If we skip, the client might feel ignored.",
+      "acceptedSynonyms": [
+        "i'm not sure. if we skip, the client might feel ignored",
+        "could we shorten it instead? i think some points can't wait",
+        "i'd rather keep it short than skip it. there are a couple of decisions to make",
+        "i am not sure. if we skip, the client might feel ignored"
+      ],
+      "smartReplies": [
+        "Could we shorten it instead? I think some points can't wait.",
+        "I'd rather keep it short than skip it. There are a couple of decisions to make.",
+        "I'm not sure. If we skip, the client might feel ignored."
+      ],
+      "correctAnswer": "I'm not sure. If we skip, the client might feel ignored.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L113_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Challenge a generalization.",
+      "hint": "Show that the rule has exceptions.",
+      "explanation": "\"Not always\" is a mild disagreement that opens a conversation instead of ending it.",
+      "partnerDialogue": "Everybody knows it's cheaper to buy in bulk.",
+      "sampleAnswer": "Not always. If you throw half of it away, it isn't cheaper.",
+      "acceptedSynonyms": [
+        "not always. if you throw half of it away, it isn't cheaper",
+        "sometimes, but i've wasted money that way",
+        "that depends. for food, it often isn't",
+        "not always. if you throw half of it away, it is not cheaper"
+      ],
+      "smartReplies": [
+        "Sometimes, but I've wasted money that way.",
+        "That depends. For food, it often isn't.",
+        "Not always. If you throw half of it away, it isn't cheaper."
+      ],
+      "correctAnswer": "Not always. If you throw half of it away, it isn't cheaper.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L114_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Give constructive feedback.",
+      "hint": "Praise one thing, then suggest one change.",
+      "explanation": "Two points are enough. Too many suggestions feel like an attack.",
+      "partnerDialogue": "How was my presentation? Be honest.",
+      "sampleAnswer": "The content was strong. The slides were a bit crowded, so I'd simplify them.",
+      "acceptedSynonyms": [
+        "the content was strong. the slides were a bit crowded, so i'd simplify them",
+        "overall very good. your ending was a little rushed, that's all",
+        "you spoke clearly, which i liked. maybe fewer numbers on each slide",
+        "the content was strong. the slides were a bit crowded, so i would simplify them"
+      ],
+      "smartReplies": [
+        "Overall very good. Your ending was a little rushed, that's all.",
+        "The content was strong. The slides were a bit crowded, so I'd simplify them.",
+        "You spoke clearly, which I liked. Maybe fewer numbers on each slide."
+      ],
+      "correctAnswer": "The content was strong. The slides were a bit crowded, so I'd simplify them.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L114_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Give feedback as a manager.",
+      "hint": "Comment on the report as the reviewer.",
+      "explanation": "Managers should be specific and forward-looking: \"Next time...\" beats \"This was wrong\".",
+      "partnerDialogue": "Do you have any feedback on my report?",
+      "sampleAnswer": "Solid work. The charts helped. Add a summary at the start.",
+      "acceptedSynonyms": [
+        "solid work. the charts helped. add a summary at the start",
+        "it's thorough, which i appreciate. next time, put the conclusion up front",
+        "good analysis. i'd shorten the introduction",
+        "it's thorough, next time put the conclusion up front"
+      ],
+      "smartReplies": [
+        "It's thorough, which I appreciate. Next time, put the conclusion up front.",
+        "Good analysis. I'd shorten the introduction.",
+        "Solid work. The charts helped. Add a summary at the start."
+      ],
+      "correctAnswer": "Solid work. The charts helped. Add a summary at the start.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L114_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Respond to self-criticism.",
+      "hint": "Agree lightly and add a friendly suggestion.",
+      "explanation": "Self-criticism deserves honesty mixed with warmth. Don't just say \"No, you don't.\"",
+      "partnerDialogue": "I know I talk too much sometimes.",
+      "sampleAnswer": "You do get carried away, but people enjoy your stories. Maybe watch the time in meetings.",
+      "acceptedSynonyms": [
+        "you do get carried away, but people enjoy your stories. maybe watch the time in meetings",
+        "sometimes, yes. just check whether others want to speak",
+        "it's part of your charm, but a pause now and then would help"
+      ],
+      "smartReplies": [
+        "Sometimes, yes. Just check whether others want to speak.",
+        "You do get carried away, but people enjoy your stories. Maybe watch the time in meetings.",
+        "It's part of your charm, but a pause now and then would help."
+      ],
+      "correctAnswer": "You do get carried away, but people enjoy your stories. Maybe watch the time in meetings.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L115_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Uncover what a customer wants.",
+      "hint": "Ask open questions to narrow a vague request.",
+      "explanation": "Vague requests need friendly discovery questions. Offer a few examples to help them decide.",
+      "partnerDialogue": "I want something, you know, for my mum. Not too expensive.",
+      "sampleAnswer": "Certainly. Is it for a special occasion, or just a nice gift?",
+      "acceptedSynonyms": [
+        "certainly. is it for a special occasion, or just a nice gift",
+        "happy to help. can you tell me a little about her",
+        "of course. what does she enjoy? cooking, gardening, reading"
+      ],
+      "smartReplies": [
+        "Happy to help. Can you tell me a little about her?",
+        "Of course. What does she enjoy? Cooking, gardening, reading?",
+        "Certainly. Is it for a special occasion, or just a nice gift?"
+      ],
+      "correctAnswer": "Certainly. Is it for a special occasion, or just a nice gift?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L115_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Investigate an order issue.",
+      "hint": "Ask for a document to compare.",
+      "explanation": "Before you agree there's a mistake, ask for proof. It keeps you polite and accurate.",
+      "partnerDialogue": "I'm not sure this is what I ordered.",
+      "sampleAnswer": "I'm sorry about that. Could I see the packing slip?",
+      "acceptedSynonyms": [
+        "i'm sorry about that. could i see the packing slip",
+        "can you tell me what you expected? i'll compare it",
+        "let me check. do you have your confirmation email",
+        "let me check, do you have your confirmation email",
+        "i am sorry about that. could i see the packing slip"
+      ],
+      "smartReplies": [
+        "Can you tell me what you expected? I'll compare it.",
+        "Let me check. Do you have your confirmation email?",
+        "I'm sorry about that. Could I see the packing slip?"
+      ],
+      "correctAnswer": "I'm sorry about that. Could I see the packing slip?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L115_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Say no but offer value.",
+      "hint": "Refuse a price cut but offer something else.",
+      "explanation": "If you can't lower the price, offer something that costs you less: delivery, a gift, extra time.",
+      "partnerDialogue": "Could you do it cheaper?",
+      "sampleAnswer": "I can't lower it, sorry, but we could remove the extras.",
+      "acceptedSynonyms": [
+        "i can't lower it, sorry, but we could remove the extras",
+        "i'm afraid the price is fixed, but i can include free delivery",
+        "that's already our best price, but i can add a free service",
+        "i cannot lower it, sorry, but we could remove the extras"
+      ],
+      "smartReplies": [
+        "I'm afraid the price is fixed, but I can include free delivery.",
+        "I can't lower it, sorry, but we could remove the extras.",
+        "That's already our best price, but I can add a free service."
+      ],
+      "correctAnswer": "I can't lower it, sorry, but we could remove the extras.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L116_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Respond to small talk before a meeting.",
+      "hint": "Reply briefly and return the courtesy.",
+      "explanation": "Business small talk is short: answer in one sentence and turn the question back.",
+      "partnerDialogue": "Thanks for coming all this way. Did the trip go smoothly?",
+      "sampleAnswer": "Fine, thank you. A bit of traffic, but nothing bad. How about you?",
+      "acceptedSynonyms": [
+        "fine, thank you. a bit of traffic, but nothing bad. how about you",
+        "smooth, thanks. the train was on time for once. and yours",
+        "pretty easy. thanks for asking. shall we get started"
+      ],
+      "smartReplies": [
+        "Fine, thank you. A bit of traffic, but nothing bad. How about you?",
+        "Smooth, thanks. The train was on time for once. And yours?",
+        "Pretty easy. Thanks for asking. Shall we get started?"
+      ],
+      "correctAnswer": "Fine, thank you. A bit of traffic, but nothing bad. How about you?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L116_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Suggest an agenda.",
+      "hint": "Propose where to begin and why.",
+      "explanation": "Suggesting a starting point shows leadership without being bossy. Add a reason.",
+      "partnerDialogue": "We've got about forty minutes. Where should we start?",
+      "sampleAnswer": "If you don't mind, I'd start with the results and come to the plan later.",
+      "acceptedSynonyms": [
+        "if you don't mind, i'd start with the results and come to the plan later",
+        "how about the main issue first, then the details",
+        "perhaps with the timeline. then we can decide the budget",
+        "if you do not mind, i would start with the results and come to the plan later"
+      ],
+      "smartReplies": [
+        "How about the main issue first, then the details?",
+        "If you don't mind, I'd start with the results and come to the plan later.",
+        "Perhaps with the timeline. Then we can decide the budget."
+      ],
+      "correctAnswer": "If you don't mind, I'd start with the results and come to the plan later.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L116_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Decline alcohol politely.",
+      "hint": "Decline the wine and give a light reason.",
+      "explanation": "A short, honest reason avoids questions. Don't make others feel awkward about drinking.",
+      "partnerDialogue": "Shall we order some wine for the table?",
+      "sampleAnswer": "Not for me, thanks. I've got a meeting later. Please go ahead.",
+      "acceptedSynonyms": [
+        "not for me, thanks. i've got a meeting later. please go ahead",
+        "i'll stick with water, but do have some",
+        "just a glass for me, thanks. i'm driving",
+        "not for me, thanks, i've got a meeting later",
+        "not for me, thanks. i have got a meeting later. please go ahead"
+      ],
+      "smartReplies": [
+        "I'll stick with water, but do have some.",
+        "Just a glass for me, thanks. I'm driving.",
+        "Not for me, thanks. I've got a meeting later. Please go ahead."
+      ],
+      "correctAnswer": "Not for me, thanks. I've got a meeting later. Please go ahead.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L117_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Apologize to a client.",
+      "hint": "Give a clear reason and a specific follow-up time.",
+      "explanation": "Client apologies work when they include reason plus next step with a date.",
+      "partnerDialogue": "The delivery's a week late. What's happening?",
+      "sampleAnswer": "I apologize. There was a customs delay. I'll get you a firm date by tomorrow.",
+      "acceptedSynonyms": [
+        "i apologize. there was a customs delay. i'll get you a firm date by tomorrow",
+        "you're right to ask. the supplier had a delay. i'll follow up today",
+        "i'm sorry. the shipment is held at customs. i'll update you tomorrow morning",
+        "i apologize. there was a customs delay. i will get you a firm date by tomorrow"
+      ],
+      "smartReplies": [
+        "You're right to ask. The supplier had a delay. I'll follow up today.",
+        "I apologize. There was a customs delay. I'll get you a firm date by tomorrow.",
+        "I'm sorry. The shipment is held at customs. I'll update you tomorrow morning."
+      ],
+      "correctAnswer": "I apologize. There was a customs delay. I'll get you a firm date by tomorrow.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L117_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Handle a lost email.",
+      "hint": "Resend and suggest checking a hidden folder.",
+      "explanation": "Simple problem, simple fix: offer to resend and suggest a reason it went missing.",
+      "partnerDialogue": "Can you send the invoice again? I can't find it.",
+      "sampleAnswer": "Sure. Sending it right now. Please check your junk folder too.",
+      "acceptedSynonyms": [
+        "sure. sending it right now. please check your junk folder too",
+        "of course. i'll resend it now. it might have gone to your spam",
+        "no problem. i'll send it to a second address, if you like"
+      ],
+      "smartReplies": [
+        "Of course. I'll resend it now. It might have gone to your spam.",
+        "No problem. I'll send it to a second address, if you like.",
+        "Sure. Sending it right now. Please check your junk folder too."
+      ],
+      "correctAnswer": "Sure. Sending it right now. Please check your junk folder too.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L117_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Explain stress without complaining.",
+      "hint": "Answer honestly but keep it light.",
+      "explanation": "You can admit stress without sounding negative by focusing on the task, not the people.",
+      "partnerDialogue": "You look stressed. Did the meeting go badly?",
+      "sampleAnswer": "It went okay. It's the deadline that worries me.",
+      "acceptedSynonyms": [
+        "it went okay. it's the deadline that worries me",
+        "not badly, just long. i have to rewrite the whole plan by tomorrow",
+        "not really. i'm just under time pressure",
+        "it went okay. it is the deadline that worries me"
+      ],
+      "smartReplies": [
+        "Not badly, just long. I have to rewrite the whole plan by tomorrow.",
+        "Not really. I'm just under time pressure.",
+        "It went okay. It's the deadline that worries me."
+      ],
+      "correctAnswer": "It went okay. It's the deadline that worries me.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L118_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Talk about a fallback plan.",
+      "hint": "Say what you would do if it fails.",
+      "explanation": "Real-life answers to \"What if...?\" include a positive action. Avoid dwelling on failure.",
+      "partnerDialogue": "What will you do if you don't get the job?",
+      "sampleAnswer": "I'll keep applying. Perhaps I'll do a course in the meantime.",
+      "acceptedSynonyms": [
+        "i'll keep applying. perhaps i'll do a course in the meantime",
+        "i'd be disappointed, but i'd try again. maybe somewhere smaller",
+        "find another one. i'm not too worried",
+        "i will keep applying. perhaps i will do a course in the meantime"
+      ],
+      "smartReplies": [
+        "I'll keep applying. Perhaps I'll do a course in the meantime.",
+        "I'd be disappointed, but I'd try again. Maybe somewhere smaller.",
+        "Find another one. I'm not too worried."
+      ],
+      "correctAnswer": "I'll keep applying. Perhaps I'll do a course in the meantime.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L118_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Plan around weather.",
+      "hint": "Offer a backup plan.",
+      "explanation": "A good \"if\" plan is specific: name the alternative, not just \"we'll see\".",
+      "partnerDialogue": "If it rains on Saturday, what shall we do?",
+      "sampleAnswer": "We could go to the museum instead, or just move the picnic to Sunday.",
+      "acceptedSynonyms": [
+        "we could go to the museum instead, or just move the picnic to sunday",
+        "let's decide on friday. if the forecast's bad, we'll postpone",
+        "we'll have lunch indoors somewhere. i know a place"
+      ],
+      "smartReplies": [
+        "Let's decide on Friday. If the forecast's bad, we'll postpone.",
+        "We could go to the museum instead, or just move the picnic to Sunday.",
+        "We'll have lunch indoors somewhere. I know a place."
+      ],
+      "correctAnswer": "We could go to the museum instead, or just move the picnic to Sunday.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L118_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Discuss a hypothetical trade-off.",
+      "hint": "Answer conditionally without committing.",
+      "explanation": "\"It depends\" plus the conditions is a mature way to answer hypothetical questions.",
+      "partnerDialogue": "Would you take the job if they offered less money?",
+      "sampleAnswer": "I might, if the growth potential were good. I'd want it in writing.",
+      "acceptedSynonyms": [
+        "i might, if the growth potential were good. i'd want it in writing",
+        "only if it were a small difference",
+        "depends how much less. if the role were interesting, maybe",
+        "i might, if the growth potential were good. i would want it in writing"
+      ],
+      "smartReplies": [
+        "Only if it were a small difference.",
+        "Depends how much less. If the role were interesting, maybe.",
+        "I might, if the growth potential were good. I'd want it in writing."
+      ],
+      "correctAnswer": "I might, if the growth potential were good. I'd want it in writing.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L119_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Decline a big favor but help.",
+      "hint": "Refuse the early drive and offer an alternative.",
+      "explanation": "A good \"no\" contains a \"but I can...\". The person still leaves with help.",
+      "partnerDialogue": "Could you do me a huge favor? I need someone to drive me to the airport at five a.m.",
+      "sampleAnswer": "Five a.m. is too early for me, I'm afraid. Could I help you book a taxi instead?",
+      "acceptedSynonyms": [
+        "five a.m. is too early for me, i'm afraid. could i help you book a taxi instead",
+        "i'd help, but i can't at that time. i could lend you money for a taxi",
+        "i wish i could, but i have to be at work at six. what about the night before",
+        "i wish i could, but i have to be at work at six",
+        "five a.m. is too early for me, i am afraid. could i help you book a taxi instead"
+      ],
+      "smartReplies": [
+        "I'd help, but I can't at that time. I could lend you money for a taxi.",
+        "I wish I could, but I have to be at work at six. What about the night before?",
+        "Five a.m. is too early for me, I'm afraid. Could I help you book a taxi instead?"
+      ],
+      "correctAnswer": "Five a.m. is too early for me, I'm afraid. Could I help you book a taxi instead?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L119_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Counter a final offer.",
+      "hint": "Show interest but ask for an extra.",
+      "explanation": "A \"final offer\" can still be accepted with a small extra request on the side.",
+      "partnerDialogue": "Take it or leave it. That's my final offer.",
+      "sampleAnswer": "I understand. Let me think. Could you include the roof rack?",
+      "acceptedSynonyms": [
+        "i understand. let me think. could you include the roof rack",
+        "hmm. i'll take it if you add the spare tyre",
+        "that's a little more than i planned. would you come down slightly"
+      ],
+      "smartReplies": [
+        "Hmm. I'll take it if you add the spare tyre.",
+        "I understand. Let me think. Could you include the roof rack?",
+        "That's a little more than I planned. Would you come down slightly?"
+      ],
+      "correctAnswer": "I understand. Let me think. Could you include the roof rack?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L119_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Negotiate extras.",
+      "hint": "Accept the discount and ask for one more benefit.",
+      "explanation": "Accept what's offered before asking for more. It shows you're reasonable.",
+      "partnerDialogue": "We can offer you ten percent off, nothing more.",
+      "sampleAnswer": "I'd hoped for fifteen, but I'll accept ten if delivery is free.",
+      "acceptedSynonyms": [
+        "i'd hoped for fifteen, but i'll accept ten if delivery is free",
+        "okay, that's reasonable. could you include delivery",
+        "ten's fair, but is there anything else, like free delivery",
+        "i would hoped for fifteen, but i will accept ten if delivery is free"
+      ],
+      "smartReplies": [
+        "Okay, that's reasonable. Could you include delivery?",
+        "I'd hoped for fifteen, but I'll accept ten if delivery is free.",
+        "Ten's fair, but is there anything else, like free delivery?"
+      ],
+      "correctAnswer": "I'd hoped for fifteen, but I'll accept ten if delivery is free.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L120_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Reassure a worried friend.",
+      "hint": "Explain why you didn't reply without making it a big deal.",
+      "explanation": "Answer a friend's worry first (\"nothing's wrong\"), then explain briefly.",
+      "partnerDialogue": "You didn't reply to my message. Is something wrong?",
+      "sampleAnswer": "No, nothing's wrong. I was busy and forgot. Sorry to worry you.",
+      "acceptedSynonyms": [
+        "no, nothing's wrong. i was busy and forgot. sorry to worry you",
+        "nothing, honestly. i meant to reply, and then the day disappeared",
+        "not at all. i've been swamped and didn't see it. sorry"
+      ],
+      "smartReplies": [
+        "No, nothing's wrong. I was busy and forgot. Sorry to worry you.",
+        "Nothing, honestly. I meant to reply, and then the day disappeared.",
+        "Not at all. I've been swamped and didn't see it. Sorry!"
+      ],
+      "correctAnswer": "No, nothing's wrong. I was busy and forgot. Sorry to worry you.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L120_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Explain not eating.",
+      "hint": "Reassure the host you like the food.",
+      "explanation": "If you can't eat, pre-empt worry: compliment the food and reassure that you're fine.",
+      "partnerDialogue": "I couldn't help noticing you didn't touch your food.",
+      "sampleAnswer": "It's lovely, but I'm not very hungry today. Please don't worry.",
+      "acceptedSynonyms": [
+        "it's lovely, but i'm not very hungry today. please don't worry",
+        "i ate before i came, sorry. it smells wonderful",
+        "i'm not feeling too well, but it's nothing serious",
+        "it is lovely, but i am not very hungry today. please do not worry"
+      ],
+      "smartReplies": [
+        "It's lovely, but I'm not very hungry today. Please don't worry.",
+        "I ate before I came, sorry. It smells wonderful.",
+        "I'm not feeling too well, but it's nothing serious."
+      ],
+      "correctAnswer": "It's lovely, but I'm not very hungry today. Please don't worry.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L120_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Turn warmth into a plan.",
+      "hint": "Agree and make it concrete.",
+      "explanation": "Vague \"we should\" statements often disappear. A concrete step makes them real.",
+      "partnerDialogue": "We should do this more often.",
+      "sampleAnswer": "I'd like that. Let's put something in the calendar before we forget.",
+      "acceptedSynonyms": [
+        "i'd like that. let's put something in the calendar before we forget",
+        "agreed. let's not wait too long next time",
+        "definitely. how about next month? i'll book it",
+        "i'd like that, let's put something in the calendar",
+        "i would like that. let's put something in the calendar before we forget"
+      ],
+      "smartReplies": [
+        "Agreed. Let's not wait too long next time.",
+        "I'd like that. Let's put something in the calendar before we forget.",
+        "Definitely. How about next month? I'll book it."
+      ],
+      "correctAnswer": "I'd like that. Let's put something in the calendar before we forget.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    }
+  ]
+}

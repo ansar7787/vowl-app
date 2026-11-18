@@ -1,0 +1,692 @@
+{
+  "gameType": "dialogueRoleplay",
+  "phase": "mastery",
+  "batchIndex": 5,
+  "levels": "41-50",
+  "quests": [
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L41_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Answer a check-in question.",
+      "hint": "Think about which bag goes in the hold and which stays with you.",
+      "explanation": "Separate the two bags clearly: one goes in the hold, one stays with you.",
+      "partnerDialogue": "Are you checking any bags today?",
+      "sampleAnswer": "Only this suitcase. The backpack stays with me.",
+      "acceptedSynonyms": [
+        "only this suitcase. the backpack stays with me",
+        "one suitcase. i'll keep the backpack with me",
+        "just this one. the small one is my carry-on"
+      ],
+      "smartReplies": [
+        "Only this suitcase. The backpack stays with me.",
+        "One suitcase. I'll keep the backpack with me.",
+        "Just this one. The small one is my carry-on."
+      ],
+      "correctAnswer": "Only this suitcase. The backpack stays with me.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L41_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Solve a baggage problem.",
+      "hint": "Look for a way to solve this yourself before paying extra.",
+      "explanation": "Ask a question that offers a solution. Staff prefer \"Can I...?\" to complaints.",
+      "partnerDialogue": "I'm sorry, your suitcase is two kilos over the limit.",
+      "sampleAnswer": "Oh no. Can I take a few things out and carry them?",
+      "acceptedSynonyms": [
+        "oh no. can i take a few things out and carry them",
+        "can i take some things out and put them in my backpack",
+        "could i move some things into my hand luggage"
+      ],
+      "smartReplies": [
+        "Oh no. Can I take a few things out and carry them?",
+        "Can I take some things out and put them in my backpack?",
+        "Could I move some things into my hand luggage?"
+      ],
+      "correctAnswer": "Oh no. Can I take a few things out and carry them?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L41_Q3",
+      "interactionType": "dialogue",
+      "instruction": "React to travel news.",
+      "hint": "React to the news first, then think about who is affected by it.",
+      "explanation": "Show your feeling (\"That's annoying\") and then say what you'll do. That sounds natural.",
+      "partnerDialogue": "Did you hear that? Our flight's been delayed by an hour.",
+      "sampleAnswer": "That's annoying. I should let my sister know.",
+      "acceptedSynonyms": [
+        "that's annoying. i should let my sister know",
+        "oh no. i need to text my sister. she's picking me up",
+        "really? i'd better tell my sister. she's picking me up",
+        "that is annoying. i should let my sister know"
+      ],
+      "smartReplies": [
+        "That's annoying. I should let my sister know.",
+        "Oh no. I need to text my sister. She's picking me up.",
+        "Really? I'd better tell my sister. She's picking me up."
+      ],
+      "correctAnswer": "That's annoying. I should let my sister know.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L42_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Give a destination.",
+      "hint": "Give the landmark first, then the exact location.",
+      "explanation": "Give the name first, then the street. It helps a driver find it faster.",
+      "partnerDialogue": "Where to?",
+      "sampleAnswer": "The Grand Hotel, on Mill Street.",
+      "acceptedSynonyms": [
+        "the grand hotel, on mill street",
+        "could you take me to the grand hotel on mill street",
+        "to the grand hotel on mill street, please",
+        "the grand hotel on mill street"
+      ],
+      "smartReplies": [
+        "Could you take me to the Grand Hotel on Mill Street?",
+        "To the Grand Hotel on Mill Street, please.",
+        "The Grand Hotel, on Mill Street."
+      ],
+      "correctAnswer": "The Grand Hotel, on Mill Street.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L42_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Agree with a reason.",
+      "hint": "Agree, but give the driver a reason that shows urgency.",
+      "explanation": "A reason (\"I have a train\") helps the driver understand how urgent it is.",
+      "partnerDialogue": "There's a lot of traffic on the main road. Want me to take a side street?",
+      "sampleAnswer": "Sure, whatever's faster. I have a train at six.",
+      "acceptedSynonyms": [
+        "sure, whatever's faster. i have a train at six",
+        "yes, please, if it's quicker. my train leaves at six",
+        "if it saves time, yes. i need to catch a six o'clock train"
+      ],
+      "smartReplies": [
+        "Yes, please, if it's quicker. My train leaves at six.",
+        "Sure, whatever's faster. I have a train at six.",
+        "If it saves time, yes. I need to catch a six o'clock train."
+      ],
+      "correctAnswer": "Sure, whatever's faster. I have a train at six.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L42_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Pay and tip.",
+      "hint": "Think about what you do when you don't want the change back.",
+      "explanation": "\"Keep the change\" is a simple way to give a tip in cash. Many countries expect it in taxis.",
+      "partnerDialogue": "That's twenty-two fifty.",
+      "sampleAnswer": "Here's thirty. Keep the change, thanks.",
+      "acceptedSynonyms": [
+        "here's thirty. keep the change, thanks",
+        "here you go. you can keep the change",
+        "thirty, please. no change needed",
+        "keep the change"
+      ],
+      "smartReplies": [
+        "Here's thirty. Keep the change, thanks.",
+        "Here you go. You can keep the change.",
+        "Thirty, please. No change needed."
+      ],
+      "correctAnswer": "Here's thirty. Keep the change, thanks.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L43_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Point out a mistake.",
+      "hint": "Correct the waiter without sounding like you're accusing him.",
+      "explanation": "\"I think...\" softens the correction and gives staff a chance to check before they apologize.",
+      "partnerDialogue": "Here's your burger.",
+      "sampleAnswer": "Excuse me, I asked for the chicken sandwich.",
+      "acceptedSynonyms": [
+        "excuse me, i asked for the chicken sandwich",
+        "i think there's a mistake. i ordered the chicken",
+        "sorry, i think i ordered the chicken sandwich",
+        "i think i ordered the chicken sandwich"
+      ],
+      "smartReplies": [
+        "I think there's a mistake. I ordered the chicken.",
+        "Excuse me, I asked for the chicken sandwich.",
+        "Sorry, I think I ordered the chicken sandwich."
+      ],
+      "correctAnswer": "Excuse me, I asked for the chicken sandwich.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L43_Q2",
+      "interactionType": "dialogue",
+      "instruction": "React to bad news.",
+      "hint": "Show mild disappointment, then keep the conversation moving.",
+      "explanation": "Show you're disappointed briefly, then move to a question. That keeps things friendly.",
+      "partnerDialogue": "We're out of the lamb, I'm afraid. Sorry about that.",
+      "sampleAnswer": "That's a shame. What would you recommend instead?",
+      "acceptedSynonyms": [
+        "that's a shame. what would you recommend instead",
+        "pity. what do you suggest instead",
+        "oh, that's disappointing. what else is good today",
+        "that is a shame. what would you recommend instead"
+      ],
+      "smartReplies": [
+        "Pity. What do you suggest instead?",
+        "That's a shame. What would you recommend instead?",
+        "Oh, that's disappointing. What else is good today?"
+      ],
+      "correctAnswer": "That's a shame. What would you recommend instead?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L43_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Give honest feedback.",
+      "hint": "Acknowledge the waiter's polite check, then mention what you noticed.",
+      "explanation": "\"It's fine, but...\" acknowledges the waiter's politeness before your complaint.",
+      "partnerDialogue": "Everything all right here?",
+      "sampleAnswer": "Yes, though our drinks still haven't come.",
+      "acceptedSynonyms": [
+        "yes, though our drinks still haven't come",
+        "mostly. the drinks are taking quite long",
+        "it's fine, but we've been waiting a while for our drinks",
+        "it's fine, but we're still waiting for our drinks",
+        "yes, though our drinks still have not come"
+      ],
+      "smartReplies": [
+        "Mostly. The drinks are taking quite long.",
+        "It's fine, but we've been waiting a while for our drinks.",
+        "Yes, though our drinks still haven't come."
+      ],
+      "correctAnswer": "Yes, though our drinks still haven't come.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L44_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Report a problem.",
+      "hint": "State the fault plainly, then say what you want done about it.",
+      "explanation": "State the problem in one sentence, then request an action. Simple and effective.",
+      "partnerDialogue": "Front desk, how can I help?",
+      "sampleAnswer": "Hi, my air conditioning is broken. Could you send someone?",
+      "acceptedSynonyms": [
+        "hi, my air conditioning is broken. could you send someone",
+        "my air conditioning isn't working. can someone look at it",
+        "the air conditioner in my room doesn't work. could someone check it"
+      ],
+      "smartReplies": [
+        "Hi, my air conditioning is broken. Could you send someone?",
+        "My air conditioning isn't working. Can someone look at it?",
+        "The air conditioner in my room doesn't work. Could someone check it?"
+      ],
+      "correctAnswer": "Hi, my air conditioning is broken. Could you send someone?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L44_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Accept with a condition.",
+      "hint": "Agree, but is there one condition that would matter to you?",
+      "explanation": "\"As long as\" lets you agree and state one condition in a single sentence.",
+      "partnerDialogue": "I can move you to another room, but it's on the ground floor.",
+      "sampleAnswer": "That would be okay if it's not near the street.",
+      "acceptedSynonyms": [
+        "that would be okay if it's not near the street",
+        "that's fine, as long as it's quiet",
+        "i don't mind, but is it a quiet room",
+        "that would be okay if it is not near the street"
+      ],
+      "smartReplies": [
+        "That would be okay if it's not near the street.",
+        "That's fine, as long as it's quiet.",
+        "I don't mind, but is it a quiet room?"
+      ],
+      "correctAnswer": "That would be okay if it's not near the street.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L44_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Plan checkout.",
+      "hint": "Give staff a time, then think about what you'll need afterwards.",
+      "explanation": "Giving your time first helps staff plan. Then ask for what you need after checkout.",
+      "partnerDialogue": "What time would you like to check out tomorrow?",
+      "sampleAnswer": "About eleven. Can I leave my bags here until evening?",
+      "acceptedSynonyms": [
+        "about eleven. can i leave my bags here until evening",
+        "around eleven. could i leave my luggage here afterwards",
+        "eleven is fine. could you store my bags until my flight"
+      ],
+      "smartReplies": [
+        "Around eleven. Could I leave my luggage here afterwards?",
+        "About eleven. Can I leave my bags here until evening?",
+        "Eleven is fine. Could you store my bags until my flight?"
+      ],
+      "correctAnswer": "About eleven. Can I leave my bags here until evening?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L45_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Accept a wait.",
+      "hint": "You have time. Which short phrase tells her that?",
+      "explanation": "On the phone, a short \"I'll hold, thanks\" is enough. Long answers slow the receptionist down.",
+      "partnerDialogue": "Ms. Kim's office. She's on another call. Would you like to hold?",
+      "sampleAnswer": "Sure, I'll hold. It won't take long.",
+      "acceptedSynonyms": [
+        "sure, i'll hold. it won't take long",
+        "i can hold for a few minutes, thanks",
+        "yes, please. i'll wait",
+        "i'll hold",
+        "sure, i will hold. it will not take long"
+      ],
+      "smartReplies": [
+        "Sure, I'll hold. It won't take long.",
+        "I can hold for a few minutes, thanks.",
+        "Yes, please. I'll wait."
+      ],
+      "correctAnswer": "Sure, I'll hold. It won't take long.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L45_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Leave a clear message.",
+      "hint": "A good message has three parts: who, why, and what next.",
+      "explanation": "A good message has three parts: who you are, why you called, and what you want them to do.",
+      "partnerDialogue": "Would you like to leave a message?",
+      "sampleAnswer": "Yes. Could you say Sam Reyes rang about the invoice?",
+      "acceptedSynonyms": [
+        "yes. could you say sam reyes rang about the invoice",
+        "yes, please tell her that sam reyes called about the invoice",
+        "please. just tell her sam reyes called about the invoice",
+        "yes, please tell her sam reyes called about the invoice"
+      ],
+      "smartReplies": [
+        "Yes. Could you say Sam Reyes rang about the invoice?",
+        "Yes, please tell her that Sam Reyes called about the invoice.",
+        "Please. Just tell her Sam Reyes called about the invoice."
+      ],
+      "correctAnswer": "Yes. Could you say Sam Reyes rang about the invoice?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L45_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Repeat a phone number.",
+      "hint": "How can you make a string of digits easy to write down?",
+      "explanation": "Break numbers into short groups and pause. Repeating the last digits again helps the listener check.",
+      "partnerDialogue": "Could you repeat your number? I didn't catch the last digits.",
+      "sampleAnswer": "Yes, 555-0142. The last four are zero, one, four, two.",
+      "acceptedSynonyms": [
+        "yes, 555-0142. the last four are zero, one, four, two",
+        "of course. it's 555-0142, ending in four-two",
+        "sure. it's 555-0142. that's zero-one-four-two at the end"
+      ],
+      "smartReplies": [
+        "Of course. It's 555-0142, ending in four-two.",
+        "Yes, 555-0142. The last four are zero, one, four, two.",
+        "Sure. It's 555-0142. That's zero-one-four-two at the end."
+      ],
+      "correctAnswer": "Yes, 555-0142. The last four are zero, one, four, two.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L46_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Introduce yourself at work.",
+      "hint": "You're being welcomed. Confirm who you are and mention what's new for you.",
+      "explanation": "On your first day, saying so gets patience and help. It's a friendly opener.",
+      "partnerDialogue": "You must be the new designer. I'm Chen, from marketing.",
+      "sampleAnswer": "Nice to meet you. I'm Lucia, and it's my first day.",
+      "acceptedSynonyms": [
+        "nice to meet you. i'm lucia, and it's my first day",
+        "hi, chen. yes, i'm lucia. i started today",
+        "that's me! i'm lucia. it's my first day",
+        "nice to meet you. i am lucia, and it is my first day"
+      ],
+      "smartReplies": [
+        "Hi, Chen. Yes, I'm Lucia. I started today.",
+        "Nice to meet you. I'm Lucia, and it's my first day.",
+        "That's me! I'm Lucia. It's my first day."
+      ],
+      "correctAnswer": "Nice to meet you. I'm Lucia, and it's my first day.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L46_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Ask a colleague for help.",
+      "hint": "Admit what you can't do without sounding helpless.",
+      "explanation": "\"Not yet\" is a positive way to say \"I don't know how\", because it suggests you will learn.",
+      "partnerDialogue": "Do you know how to use the printer?",
+      "sampleAnswer": "Not yet. Could you show me?",
+      "acceptedSynonyms": [
+        "not yet. could you show me",
+        "no, i don't. would you mind showing me",
+        "i haven't used this one. can you show me how it works",
+        "not yet, could you show me"
+      ],
+      "smartReplies": [
+        "No, I don't. Would you mind showing me?",
+        "Not yet. Could you show me?",
+        "I haven't used this one. Can you show me how it works?"
+      ],
+      "correctAnswer": "Not yet. Could you show me?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L46_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Promise a deadline.",
+      "hint": "Think about when your colleague really needs it, not only the deadline.",
+      "explanation": "Promising slightly earlier than the deadline gives your colleague time to read it.",
+      "partnerDialogue": "Can you send me the report by Friday?",
+      "sampleAnswer": "Sure. I'll send it on Thursday afternoon.",
+      "acceptedSynonyms": [
+        "sure. i'll send it on thursday afternoon",
+        "no problem. i'll send it thursday, so you have time to read it",
+        "yes, of course. you'll have it by thursday evening",
+        "sure, i'll send it on thursday",
+        "sure. i will send it on thursday afternoon"
+      ],
+      "smartReplies": [
+        "No problem. I'll send it Thursday, so you have time to read it.",
+        "Yes, of course. You'll have it by Thursday evening.",
+        "Sure. I'll send it on Thursday afternoon."
+      ],
+      "correctAnswer": "Sure. I'll send it on Thursday afternoon.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L47_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Approach a teacher.",
+      "hint": "Show respect for the teacher's time before you ask anything.",
+      "explanation": "Asking \"Do you have a minute?\" is polite and lets the teacher say if it's a bad moment.",
+      "partnerDialogue": "Can I help you? You're waiting outside my office.",
+      "sampleAnswer": "Hi. Do you have a moment? I have a question about the homework.",
+      "acceptedSynonyms": [
+        "hi. do you have a moment? i have a question about the homework",
+        "sorry to bother you. could i ask about the homework",
+        "yes, i'd like to ask about the homework. do you have a minute"
+      ],
+      "smartReplies": [
+        "Sorry to bother you. Could I ask about the homework?",
+        "Hi. Do you have a moment? I have a question about the homework.",
+        "Yes, I'd like to ask about the homework. Do you have a minute?"
+      ],
+      "correctAnswer": "Hi. Do you have a moment? I have a question about the homework.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L47_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Ask for an extension.",
+      "hint": "Give a short reason, then a clear request with a limit.",
+      "explanation": "Give the reason briefly, then ask a clear question. Long apologies don't help.",
+      "partnerDialogue": "Your essay is due tomorrow.",
+      "sampleAnswer": "I've been ill. Is it possible to get an extension?",
+      "acceptedSynonyms": [
+        "i've been ill. is it possible to get an extension",
+        "could i hand it in on friday? i've been sick",
+        "i know. could i have one more day, please? i was ill",
+        "i have been ill. is it possible to get an extension"
+      ],
+      "smartReplies": [
+        "Could I hand it in on Friday? I've been sick.",
+        "I know. Could I have one more day, please? I was ill.",
+        "I've been ill. Is it possible to get an extension?"
+      ],
+      "correctAnswer": "I've been ill. Is it possible to get an extension?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L47_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Suggest studying together.",
+      "hint": "Be honest about what you didn't understand, and propose a joint solution.",
+      "explanation": "Honest about limits plus an offer to work together sounds cooperative, not weak.",
+      "partnerDialogue": "Did you understand the lecture?",
+      "sampleAnswer": "Only parts. Do you want to review it together?",
+      "acceptedSynonyms": [
+        "only parts. do you want to review it together",
+        "some of it. could we compare notes later",
+        "not all of it. can we go through the notes together"
+      ],
+      "smartReplies": [
+        "Some of it. Could we compare notes later?",
+        "Not all of it. Can we go through the notes together?",
+        "Only parts. Do you want to review it together?"
+      ],
+      "correctAnswer": "Only parts. Do you want to review it together?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L48_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Change a time.",
+      "hint": "Soften the change with a reason and a question, not a demand.",
+      "explanation": "\"Could we make it...?\" is a light way to change a time without making a big deal.",
+      "partnerDialogue": "Are we still on for dinner at seven?",
+      "sampleAnswer": "Can we move it to eight? I can't leave work yet.",
+      "acceptedSynonyms": [
+        "can we move it to eight? i can't leave work yet",
+        "sorry, could we do eight? i'll be late from work",
+        "actually, could we make it eight? i'm stuck at work",
+        "can we move it to eight? i cannot leave work yet"
+      ],
+      "smartReplies": [
+        "Can we move it to eight? I can't leave work yet.",
+        "Sorry, could we do eight? I'll be late from work.",
+        "Actually, could we make it eight? I'm stuck at work."
+      ],
+      "correctAnswer": "Can we move it to eight? I can't leave work yet.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L48_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Respond to a cancellation.",
+      "hint": "Respond to the person's situation before proposing anything.",
+      "explanation": "Show understanding first, then move quickly to a new plan.",
+      "partnerDialogue": "Something's come up. I can't make tomorrow.",
+      "sampleAnswer": "Don't worry. Which day works for you?",
+      "acceptedSynonyms": [
+        "don't worry. which day works for you",
+        "no worries. when would be better for you",
+        "that's okay. let's find another day. what suits you",
+        "no worries, when would be better",
+        "do not worry. which day works for you"
+      ],
+      "smartReplies": [
+        "No worries. When would be better for you?",
+        "That's okay. Let's find another day. What suits you?",
+        "Don't worry. Which day works for you?"
+      ],
+      "correctAnswer": "Don't worry. Which day works for you?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L48_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Solve a problem with a new plan.",
+      "hint": "Agree, then move the plan forward with an idea of your own.",
+      "explanation": "Offering to do the checking yourself makes you a helpful partner.",
+      "partnerDialogue": "The restaurant is full tonight. Want to try somewhere else?",
+      "sampleAnswer": "Okay. I know a Thai place close by. Should I call them?",
+      "acceptedSynonyms": [
+        "okay. i know a thai place close by. should i call them",
+        "fine by me. what about the thai place near the station",
+        "sure. there's a thai place nearby. shall i check it"
+      ],
+      "smartReplies": [
+        "Fine by me. What about the Thai place near the station?",
+        "Sure. There's a Thai place nearby. Shall I check it?",
+        "Okay. I know a Thai place close by. Should I call them?"
+      ],
+      "correctAnswer": "Okay. I know a Thai place close by. Should I call them?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L49_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Explain a delivery problem.",
+      "hint": "Give the agent the two facts that contradict each other.",
+      "explanation": "Facts first: what the system says, and what really happened. That helps the agent solve it.",
+      "partnerDialogue": "Customer service. What seems to be the problem?",
+      "sampleAnswer": "The tracking says it arrived, but nothing came.",
+      "acceptedSynonyms": [
+        "the tracking says it arrived, but nothing came",
+        "my parcel says delivered, but i haven't received it",
+        "my order shows as delivered, but it isn't here",
+        "my parcel says delivered but i haven't received it"
+      ],
+      "smartReplies": [
+        "The tracking says it arrived, but nothing came.",
+        "My parcel says delivered, but I haven't received it.",
+        "My order shows as delivered, but it isn't here."
+      ],
+      "correctAnswer": "The tracking says it arrived, but nothing came.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L49_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Help find something.",
+      "hint": "Help by taking an action first, then tell them what to do.",
+      "explanation": "Offer an action (\"Let me call it\") and give instructions (\"Listen for it\").",
+      "partnerDialogue": "I can't find my phone. Can you call it?",
+      "sampleAnswer": "Of course. I'll ring it. Listen for the sound.",
+      "acceptedSynonyms": [
+        "of course. i'll ring it. listen for the sound",
+        "sure. let me call it now. can you hear anything",
+        "yes, hold on. i'm calling it now",
+        "of course. i will ring it. listen for the sound"
+      ],
+      "smartReplies": [
+        "Sure. Let me call it now. Can you hear anything?",
+        "Yes, hold on. I'm calling it now.",
+        "Of course. I'll ring it. Listen for the sound."
+      ],
+      "correctAnswer": "Of course. I'll ring it. Listen for the sound.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L49_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Apologize and fix.",
+      "hint": "An apology alone won't fix wet paper. What else can you offer?",
+      "explanation": "A real apology plus a quick solution ends the problem faster than a long explanation.",
+      "partnerDialogue": "You've spilled coffee on the report!",
+      "sampleAnswer": "I'm so sorry! Let me clean it up. I can print another copy.",
+      "acceptedSynonyms": [
+        "i'm so sorry! let me clean it up. i can print another copy",
+        "sorry about that. i'll get a cloth and print it again",
+        "oh no, sorry! i'll wipe it and print a new one",
+        "i am so sorry! let me clean it up. i can print another copy"
+      ],
+      "smartReplies": [
+        "Sorry about that. I'll get a cloth and print it again.",
+        "I'm so sorry! Let me clean it up. I can print another copy.",
+        "Oh no, sorry! I'll wipe it and print a new one."
+      ],
+      "correctAnswer": "I'm so sorry! Let me clean it up. I can print another copy.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L50_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Say what you need.",
+      "hint": "Tell the clerk your situation, then ask what comes next.",
+      "explanation": "\"I don't have one yet\" sounds hopeful and open. It invites help.",
+      "partnerDialogue": "Library card, please.",
+      "sampleAnswer": "Not yet. What do I need to get one?",
+      "acceptedSynonyms": [
+        "not yet. what do i need to get one",
+        "i don't have a card. can i sign up today",
+        "i don't have one yet. how do i get one"
+      ],
+      "smartReplies": [
+        "I don't have a card. Can I sign up today?",
+        "I don't have one yet. How do I get one?",
+        "Not yet. What do I need to get one?"
+      ],
+      "correctAnswer": "Not yet. What do I need to get one?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L50_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Ask about time.",
+      "hint": "Give the clerk what she needs to answer, then ask your question.",
+      "explanation": "State the destination, then ask about time, so the clerk can answer directly.",
+      "partnerDialogue": "Next, please.",
+      "sampleAnswer": "Hi, I'd like to send this parcel to Canada. How long will it take?",
+      "acceptedSynonyms": [
+        "hi, i'd like to send this parcel to canada. how long will it take",
+        "hello. this is going to canada. how many days does it usually take",
+        "good morning. could you tell me how long it takes to canada",
+        "hi, i would like to send this parcel to canada. how long will it take"
+      ],
+      "smartReplies": [
+        "Hello. This is going to Canada. How many days does it usually take?",
+        "Hi, I'd like to send this parcel to Canada. How long will it take?",
+        "Good morning. Could you tell me how long it takes to Canada?"
+      ],
+      "correctAnswer": "Hi, I'd like to send this parcel to Canada. How long will it take?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L50_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Check what's acceptable.",
+      "hint": "Offer one option and check it, instead of asking what's accepted.",
+      "explanation": "Offering one option and asking if it works is faster than asking \"What ID do you accept?\"",
+      "partnerDialogue": "Can I see some ID, please?",
+      "sampleAnswer": "Of course. Will my driving licence do?",
+      "acceptedSynonyms": [
+        "of course. will my driving licence do",
+        "yes. do you accept a driving licence",
+        "sure. is a driving licence okay",
+        "will my driving licence do"
+      ],
+      "smartReplies": [
+        "Of course. Will my driving licence do?",
+        "Yes. Do you accept a driving licence?",
+        "Sure. Is a driving licence okay?"
+      ],
+      "correctAnswer": "Of course. Will my driving licence do?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    }
+  ]
+}

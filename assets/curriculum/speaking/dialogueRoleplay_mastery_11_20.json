@@ -1,0 +1,698 @@
+{
+  "gameType": "dialogueRoleplay",
+  "phase": "mastery",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L11_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Accept warmly.",
+      "hint": "Accept the food and say something nice about it.",
+      "explanation": "Adding a compliment after \"thank you\" is a small habit that makes hosts feel appreciated.",
+      "partnerDialogue": "There's some rice left. Help yourself!",
+      "sampleAnswer": "Thank you. It smells delicious.",
+      "acceptedSynonyms": [
+        "thank you. it smells delicious",
+        "thanks! it smells really good",
+        "oh, thank you. it smells great",
+        "thank you"
+      ],
+      "smartReplies": [
+        "Thank you. It smells delicious.",
+        "Thanks! It smells really good.",
+        "Oh, thank you. It smells great."
+      ],
+      "correctAnswer": "Thank you. It smells delicious.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L11_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Decline without offending.",
+      "hint": "Say no thanks because you are full.",
+      "explanation": "A refusal sounds kinder when it ends with a reason the host can accept, like \"I'm full\".",
+      "partnerDialogue": "Want some more cake? There's plenty.",
+      "sampleAnswer": "I'm full, thank you. It was great.",
+      "acceptedSynonyms": [
+        "i'm full, thank you. it was great",
+        "no, thanks. i'm full",
+        "no more for me, thanks. i'm full",
+        "no, thank you",
+        "i am full, thank you. it was great"
+      ],
+      "smartReplies": [
+        "No, thanks. I'm full.",
+        "I'm full, thank you. It was great.",
+        "No more for me, thanks. I'm full."
+      ],
+      "correctAnswer": "I'm full, thank you. It was great.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L11_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Explain a food problem.",
+      "hint": "Tell them you can't eat peanuts.",
+      "explanation": "\"Sorry\" plus the reason shows you're not being difficult. Use \"allergic to\" for a real medical problem.",
+      "partnerDialogue": "I made this soup with peanuts. Is that okay?",
+      "sampleAnswer": "Sorry, I can't eat peanuts. I'm allergic.",
+      "acceptedSynonyms": [
+        "sorry, i can't eat peanuts. i'm allergic",
+        "peanuts are a problem for me. i'm allergic",
+        "oh, i'm allergic to peanuts. sorry",
+        "i'm allergic to peanuts",
+        "sorry, i cannot eat peanuts. i am allergic"
+      ],
+      "smartReplies": [
+        "Sorry, I can't eat peanuts. I'm allergic.",
+        "Peanuts are a problem for me. I'm allergic.",
+        "Oh, I'm allergic to peanuts. Sorry."
+      ],
+      "correctAnswer": "Sorry, I can't eat peanuts. I'm allergic.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L12_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Ask them to repeat.",
+      "hint": "The speaker was too fast. Ask for it again.",
+      "explanation": "Start with \"Sorry\" so it sounds like your listening was the problem, not their speech.",
+      "partnerDialogue": "The meeting's at nine fifteen in room twelve.",
+      "sampleAnswer": "I'm sorry, one more time, please?",
+      "acceptedSynonyms": [
+        "i'm sorry, one more time, please",
+        "sorry, can you repeat that",
+        "sorry, could you say that again, please",
+        "sorry, say that again please",
+        "i am sorry, one more time, please"
+      ],
+      "smartReplies": [
+        "I'm sorry, one more time, please?",
+        "Sorry, can you repeat that?",
+        "Sorry, could you say that again, please?"
+      ],
+      "correctAnswer": "I'm sorry, one more time, please?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L12_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Check one detail.",
+      "hint": "You are not sure of the bus number. Check it.",
+      "explanation": "Checking one detail is faster and more polite than asking for the whole message again.",
+      "partnerDialogue": "Take the number forty-four bus, then get off at the library.",
+      "sampleAnswer": "Sorry, was that forty-four?",
+      "acceptedSynonyms": [
+        "sorry, was that forty-four",
+        "sorry, which bus number",
+        "was it the forty-four bus",
+        "the forty-four"
+      ],
+      "smartReplies": [
+        "Sorry, which bus number?",
+        "Sorry, was that forty-four?",
+        "Was it the forty-four bus?"
+      ],
+      "correctAnswer": "Sorry, was that forty-four?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L12_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Ask for spelling.",
+      "hint": "Ask them to spell the email address.",
+      "explanation": "For names and emails, asking someone to spell is normal and never rude.",
+      "partnerDialogue": "My email is jkowalski at mail dot com.",
+      "sampleAnswer": "Sorry, how do you spell that?",
+      "acceptedSynonyms": [
+        "sorry, how do you spell that",
+        "could you spell that, please",
+        "can you spell that slowly for me",
+        "can you spell that"
+      ],
+      "smartReplies": [
+        "Sorry, how do you spell that?",
+        "Could you spell that, please?",
+        "Can you spell that slowly for me?"
+      ],
+      "correctAnswer": "Sorry, how do you spell that?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L13_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Accept and get details.",
+      "hint": "Accept and ask about the time.",
+      "explanation": "Accepting and asking one practical question at once shows real interest.",
+      "partnerDialogue": "We're having a small dinner on Friday. Do you want to come?",
+      "sampleAnswer": "I'd love to. What time?",
+      "acceptedSynonyms": [
+        "i'd love to. what time",
+        "yes, sure! what time should i come",
+        "that sounds great. what time",
+        "yes, i'd love to",
+        "i would love to. what time"
+      ],
+      "smartReplies": [
+        "Yes, sure! What time should I come?",
+        "I'd love to. What time?",
+        "That sounds great. What time?"
+      ],
+      "correctAnswer": "I'd love to. What time?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L13_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Decline kindly.",
+      "hint": "You can't join. Refuse and give the reason.",
+      "explanation": "\"I'd like to, but...\" softens a refusal because it shows you want to be kind.",
+      "partnerDialogue": "A few of us are going swimming tomorrow morning. Are you in?",
+      "sampleAnswer": "Not this time, sorry. I have class tomorrow.",
+      "acceptedSynonyms": [
+        "not this time, sorry. i have class tomorrow",
+        "i'd like to, but i have class",
+        "sorry, i can't. i have class"
+      ],
+      "smartReplies": [
+        "Not this time, sorry. I have class tomorrow.",
+        "I'd like to, but I have class.",
+        "Sorry, I can't. I have class."
+      ],
+      "correctAnswer": "Not this time, sorry. I have class tomorrow.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L13_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Suggest another option.",
+      "hint": "Thursday doesn't work. Suggest Friday.",
+      "explanation": "Saying no and offering a different day tells the person you still want to meet.",
+      "partnerDialogue": "Do you want to get lunch on Thursday?",
+      "sampleAnswer": "Thursday's hard for me. How about Friday?",
+      "acceptedSynonyms": [
+        "thursday's hard for me. how about friday",
+        "i can't on thursday. is friday okay",
+        "not thursday, sorry. can we do friday",
+        "how about friday"
+      ],
+      "smartReplies": [
+        "I can't on Thursday. Is Friday okay?",
+        "Not Thursday, sorry. Can we do Friday?",
+        "Thursday's hard for me. How about Friday?"
+      ],
+      "correctAnswer": "Thursday's hard for me. How about Friday?",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L14_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Describe your routine.",
+      "hint": "Say when you start work and when you leave home.",
+      "explanation": "Linking two times (\"start at eight, leave at seven\") turns a list of facts into a real routine.",
+      "partnerDialogue": "What time do you usually start work?",
+      "sampleAnswer": "I start at eight, so I leave at seven.",
+      "acceptedSynonyms": [
+        "i start at eight, so i leave at seven",
+        "at eight, usually. i take the bus at seven",
+        "around eight. i leave home at seven"
+      ],
+      "smartReplies": [
+        "At eight, usually. I take the bus at seven.",
+        "Around eight. I leave home at seven.",
+        "I start at eight, so I leave at seven."
+      ],
+      "correctAnswer": "I start at eight, so I leave at seven.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L14_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Answer with how and how long.",
+      "hint": "Say how you get to school and how long it takes.",
+      "explanation": "\"It takes about...\" is the standard way to talk about travel time.",
+      "partnerDialogue": "How do you get to school?",
+      "sampleAnswer": "On foot. It's only ten minutes.",
+      "acceptedSynonyms": [
+        "on foot. it's only ten minutes",
+        "i walk. it takes about ten minutes",
+        "i usually walk, about ten minutes",
+        "i walk",
+        "on foot. it is only ten minutes"
+      ],
+      "smartReplies": [
+        "I walk. It takes about ten minutes.",
+        "On foot. It's only ten minutes.",
+        "I usually walk, about ten minutes."
+      ],
+      "correctAnswer": "On foot. It's only ten minutes.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L14_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Correct the assumption.",
+      "hint": "Tell them you don't cook every day.",
+      "explanation": "\"Not every day\" is a gentle no that keeps the door open for \"sometimes\".",
+      "partnerDialogue": "Do you cook dinner every day?",
+      "sampleAnswer": "Not really. Two or three times a week.",
+      "acceptedSynonyms": [
+        "not really. two or three times a week",
+        "not every day. sometimes i eat at my parents' house",
+        "no, only a few days a week"
+      ],
+      "smartReplies": [
+        "Not really. Two or three times a week.",
+        "Not every day. Sometimes I eat at my parents' house.",
+        "No, only a few days a week."
+      ],
+      "correctAnswer": "Not really. Two or three times a week.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L15_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Answer with names of people.",
+      "hint": "Say who you live with.",
+      "explanation": "A list with \"and\" gives a clear picture in one sentence.",
+      "partnerDialogue": "Who do you live with?",
+      "sampleAnswer": "I live with my sister and her husband.",
+      "acceptedSynonyms": [
+        "i live with my sister and her husband",
+        "i share an apartment with my sister and her husband",
+        "with my sister and her husband"
+      ],
+      "smartReplies": [
+        "I share an apartment with my sister and her husband.",
+        "With my sister and her husband.",
+        "I live with my sister and her husband."
+      ],
+      "correctAnswer": "I live with my sister and her husband.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L15_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Describe with \"but\".",
+      "hint": "Say the apartment is small but has one good thing.",
+      "explanation": "\"Small, but...\" balances a negative and a positive, which is how people naturally describe places.",
+      "partnerDialogue": "Is your apartment big or small?",
+      "sampleAnswer": "It's small, but it has a nice balcony.",
+      "acceptedSynonyms": [
+        "it's small, but it has a nice balcony",
+        "small, but the balcony is lovely",
+        "pretty small, but i like the balcony",
+        "it is small, but it has a nice balcony"
+      ],
+      "smartReplies": [
+        "Small, but the balcony is lovely.",
+        "It's small, but it has a nice balcony.",
+        "Pretty small, but I like the balcony."
+      ],
+      "correctAnswer": "It's small, but it has a nice balcony.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L15_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Give family information.",
+      "hint": "Say you have one younger brother.",
+      "explanation": "Extra facts (\"he's younger than me\") make an answer memorable and invite the next question.",
+      "partnerDialogue": "Do you have any brothers or sisters?",
+      "sampleAnswer": "Yes, one brother. He's younger than me.",
+      "acceptedSynonyms": [
+        "yes, one brother. he's younger than me",
+        "one brother, and he's younger",
+        "just one younger brother",
+        "yes, one brother"
+      ],
+      "smartReplies": [
+        "One brother, and he's younger.",
+        "Just one younger brother.",
+        "Yes, one brother. He's younger than me."
+      ],
+      "correctAnswer": "Yes, one brother. He's younger than me.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L16_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Be modest and honest.",
+      "hint": "Say you play the guitar a little.",
+      "explanation": "\"A little\" and \"not very good\" are common modest phrases. Nobody expects you to be perfect.",
+      "partnerDialogue": "Can you play any instruments?",
+      "sampleAnswer": "A little guitar. I'm not very good.",
+      "acceptedSynonyms": [
+        "a little guitar. i'm not very good",
+        "i can play the guitar a little",
+        "just the guitar, and not well",
+        "a little guitar",
+        "a little guitar. i am not very good"
+      ],
+      "smartReplies": [
+        "I can play the guitar a little.",
+        "A little guitar. I'm not very good.",
+        "Just the guitar, and not well."
+      ],
+      "correctAnswer": "A little guitar. I'm not very good.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L16_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Describe a usual habit.",
+      "hint": "Say what you usually do on Sundays.",
+      "explanation": "\"Usually\" tells the listener it's your normal habit and not a one-time event.",
+      "partnerDialogue": "What do you do on Sundays?",
+      "sampleAnswer": "I usually relax at home and call my parents.",
+      "acceptedSynonyms": [
+        "i usually relax at home and call my parents",
+        "mostly i rest, and i call my family",
+        "not much. i call my parents and relax"
+      ],
+      "smartReplies": [
+        "I usually relax at home and call my parents.",
+        "Mostly I rest, and I call my family.",
+        "Not much. I call my parents and relax."
+      ],
+      "correctAnswer": "I usually relax at home and call my parents.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L16_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Answer and tell a small story.",
+      "hint": "Say you can swim and who taught you.",
+      "explanation": "A short \"when and who\" detail turns \"Yes, I can\" into a small story.",
+      "partnerDialogue": "I'm learning to swim. Can you swim?",
+      "sampleAnswer": "Yes. My father taught me when I was seven.",
+      "acceptedSynonyms": [
+        "yes. my father taught me when i was seven",
+        "yes, i can. my father taught me when i was little",
+        "yes, i swim well. i learned as a child"
+      ],
+      "smartReplies": [
+        "Yes. My father taught me when I was seven.",
+        "Yes, I can. My father taught me when I was little.",
+        "Yes, I swim well. I learned as a child."
+      ],
+      "correctAnswer": "Yes. My father taught me when I was seven.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L17_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Agree naturally.",
+      "hint": "Agree that it is hot and say what you want.",
+      "explanation": "\"It really is\" is a natural agreement that avoids just repeating \"yes\".",
+      "partnerDialogue": "It's so hot today, isn't it?",
+      "sampleAnswer": "It really is. I need some cold water.",
+      "acceptedSynonyms": [
+        "it really is. i need some cold water",
+        "yes, it's terrible. i'm so thirsty",
+        "very hot! i want a cold drink"
+      ],
+      "smartReplies": [
+        "Yes, it's terrible. I'm so thirsty.",
+        "It really is. I need some cold water.",
+        "Very hot! I want a cold drink."
+      ],
+      "correctAnswer": "It really is. I need some cold water.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L17_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Say what you don't have.",
+      "hint": "Answer the question and say where the thing is.",
+      "explanation": "\"I left it at home\" is more natural than \"I forgot\" when you know where the thing is.",
+      "partnerDialogue": "Looks like rain. Do you have an umbrella?",
+      "sampleAnswer": "No, I forgot mine at home.",
+      "acceptedSynonyms": [
+        "no, i forgot mine at home",
+        "sadly, no. i left it at home",
+        "no, i left it at home"
+      ],
+      "smartReplies": [
+        "Sadly, no. I left it at home.",
+        "No, I left it at home.",
+        "No, I forgot mine at home."
+      ],
+      "correctAnswer": "No, I forgot mine at home.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L17_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Share a plan.",
+      "hint": "Say you're going to the market and maybe the park.",
+      "explanation": "\"Just\" makes plans sound casual, and \"maybe\" shows they are not fixed.",
+      "partnerDialogue": "Beautiful morning! Are you going anywhere nice?",
+      "sampleAnswer": "Just the market. I might go to the park after.",
+      "acceptedSynonyms": [
+        "just the market. i might go to the park after",
+        "just to the market. then maybe the park",
+        "to the market first, then maybe the park"
+      ],
+      "smartReplies": [
+        "Just the market. I might go to the park after.",
+        "Just to the market. Then maybe the park.",
+        "To the market first, then maybe the park."
+      ],
+      "correctAnswer": "Just the market. I might go to the park after.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L18_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Explain what happened.",
+      "hint": "Say you lost your keys and you've searched everywhere.",
+      "explanation": "After \"I can't find...\", \"I've looked everywhere\" shows how much effort you've already made.",
+      "partnerDialogue": "You look upset. What happened?",
+      "sampleAnswer": "I can't find my keys. I've looked everywhere.",
+      "acceptedSynonyms": [
+        "i can't find my keys. i've looked everywhere",
+        "my keys are gone. i searched everywhere",
+        "i lost my keys. i've looked everywhere",
+        "i cannot find my keys. i have looked everywhere"
+      ],
+      "smartReplies": [
+        "My keys are gone. I searched everywhere.",
+        "I lost my keys. I've looked everywhere.",
+        "I can't find my keys. I've looked everywhere."
+      ],
+      "correctAnswer": "I can't find my keys. I've looked everywhere.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L18_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Apologize and explain.",
+      "hint": "Apologize for being late and give the reason.",
+      "explanation": "\"Sorry! I...\" then the reason is a short, natural way to explain lateness.",
+      "partnerDialogue": "You're late! What happened?",
+      "sampleAnswer": "Sorry, I missed my bus.",
+      "acceptedSynonyms": [
+        "sorry, i missed my bus",
+        "sorry! i missed the bus",
+        "i'm so sorry. my bus was late",
+        "sorry, i missed the bus"
+      ],
+      "smartReplies": [
+        "Sorry! I missed the bus.",
+        "I'm so sorry. My bus was late.",
+        "Sorry, I missed my bus."
+      ],
+      "correctAnswer": "Sorry, I missed my bus.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L18_Q3",
+      "interactionType": "dialogue",
+      "instruction": "React to help from a stranger.",
+      "hint": "A stranger returns your wallet. Thank them and identify it.",
+      "explanation": "Confirming \"That's mine\" tells them you got the right owner, and thanks closes it.",
+      "partnerDialogue": "Excuse me, you dropped this.",
+      "sampleAnswer": "Oh, thank you! That's my wallet.",
+      "acceptedSynonyms": [
+        "oh, thank you! that's my wallet",
+        "thank you! that's my wallet. i didn't notice",
+        "oh! thank you so much. that's mine",
+        "thank you, that's my wallet",
+        "oh, thank you! that is my wallet"
+      ],
+      "smartReplies": [
+        "Thank you! That's my wallet. I didn't notice.",
+        "Oh, thank you! That's my wallet.",
+        "Oh! Thank you so much. That's mine."
+      ],
+      "correctAnswer": "Oh, thank you! That's my wallet.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L19_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Order two things.",
+      "hint": "Order a small latte and a muffin.",
+      "explanation": "Use \"and\" for two items, and say the size right after \"a\".",
+      "partnerDialogue": "Hi, what can I get you?",
+      "sampleAnswer": "A small latte and a chocolate muffin, please.",
+      "acceptedSynonyms": [
+        "a small latte and a chocolate muffin, please",
+        "a small latte, please. and one chocolate muffin",
+        "could i have a small latte and a muffin",
+        "a small latte and a muffin"
+      ],
+      "smartReplies": [
+        "A small latte, please. And one chocolate muffin.",
+        "Could I have a small latte and a muffin?",
+        "A small latte and a chocolate muffin, please."
+      ],
+      "correctAnswer": "A small latte and a chocolate muffin, please.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L19_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Answer a service question.",
+      "hint": "Say it's takeaway because you're in a hurry.",
+      "explanation": "\"To go\" (US) and \"takeaway\" (UK) both mean you won't sit down. Both are widely understood.",
+      "partnerDialogue": "For here or to go?",
+      "sampleAnswer": "To go, please. I'm in a hurry.",
+      "acceptedSynonyms": [
+        "to go, please. i'm in a hurry",
+        "to take away, please. i have to run",
+        "takeaway, please. i'm in a hurry",
+        "to go please",
+        "to go, please. i am in a hurry"
+      ],
+      "smartReplies": [
+        "To go, please. I'm in a hurry.",
+        "To take away, please. I have to run.",
+        "Takeaway, please. I'm in a hurry."
+      ],
+      "correctAnswer": "To go, please. I'm in a hurry.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L19_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Close the order.",
+      "hint": "Say that's everything.",
+      "explanation": "\"That's all\" is the normal way to close an order politely.",
+      "partnerDialogue": "That'll be six fifty. Anything else?",
+      "sampleAnswer": "That's everything, thanks.",
+      "acceptedSynonyms": [
+        "that's everything, thanks",
+        "no, that's all for now",
+        "no, that's all. thank you",
+        "no, that's all",
+        "that is everything, thanks"
+      ],
+      "smartReplies": [
+        "That's everything, thanks.",
+        "No, that's all for now.",
+        "No, that's all. Thank you."
+      ],
+      "correctAnswer": "That's everything, thanks.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L20_Q1",
+      "interactionType": "dialogue",
+      "instruction": "Accept a compliment.",
+      "hint": "Say thanks and tell who gave you the jacket.",
+      "explanation": "Adding one fact after \"Thanks!\" is more natural than just replying \"Thank you.\"",
+      "partnerDialogue": "I love your jacket! Where did you get it?",
+      "sampleAnswer": "Thanks! My sister gave it to me.",
+      "acceptedSynonyms": [
+        "thanks! my sister gave it to me",
+        "thanks so much! it's a present from my sister",
+        "thank you! it was a gift from my sister",
+        "thanks, my sister gave it to me"
+      ],
+      "smartReplies": [
+        "Thanks! My sister gave it to me.",
+        "Thanks so much! It's a present from my sister.",
+        "Thank you! It was a gift from my sister."
+      ],
+      "correctAnswer": "Thanks! My sister gave it to me.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L20_Q2",
+      "interactionType": "dialogue",
+      "instruction": "Accept praise modestly.",
+      "hint": "Accept the compliment with a little modesty.",
+      "explanation": "English speakers often accept a compliment and add a little modesty. It sounds friendly, not fake.",
+      "partnerDialogue": "Your English is really good.",
+      "sampleAnswer": "That's kind of you. I study a lot.",
+      "acceptedSynonyms": [
+        "that's kind of you. i study a lot",
+        "thanks! i practice every day",
+        "thank you. i'm still learning, though",
+        "that is kind of you. i study a lot"
+      ],
+      "smartReplies": [
+        "That's kind of you. I study a lot.",
+        "Thanks! I practice every day.",
+        "Thank you. I'm still learning, though."
+      ],
+      "correctAnswer": "That's kind of you. I study a lot.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "SPK_DIALOGUEROLEPLAY_L20_Q3",
+      "interactionType": "dialogue",
+      "instruction": "Accept praise for work.",
+      "hint": "Thank them and say you were nervous.",
+      "explanation": "Admitting nerves after a success makes people warm to you.",
+      "partnerDialogue": "Great job on the presentation today!",
+      "sampleAnswer": "Thanks a lot. I practiced for days.",
+      "acceptedSynonyms": [
+        "thanks a lot. i practiced for days",
+        "thank you. i was really nervous",
+        "thanks! i was so nervous",
+        "thanks"
+      ],
+      "smartReplies": [
+        "Thank you. I was really nervous.",
+        "Thanks! I was so nervous.",
+        "Thanks a lot. I practiced for days."
+      ],
+      "correctAnswer": "Thanks a lot. I practiced for days.",
+      "emotionTag": "Neutral",
+      "phase": "mastery"
+    }
+  ]
+}
