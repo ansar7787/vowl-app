@@ -86,6 +86,8 @@ import 'package:vowl/features/reading/sentence_order_reading/presentation/pages/
 import 'package:vowl/features/reading/sentence_order_reading/presentation/pages/sentence_order_reading_practice_screen.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/pages/reading_speed_check_learn_screen.dart';
 import 'package:vowl/features/reading/reading_speed_check/presentation/pages/reading_speed_check_practice_screen.dart';
+import 'package:vowl/features/reading/guess_title/presentation/pages/guess_title_learn_screen.dart';
+import 'package:vowl/features/reading/guess_title/presentation/pages/guess_title_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -549,6 +551,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'guesstitle') {
+          return fadeTransitionPage(
+            child: GuessTitleLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -791,6 +799,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'readingspeedcheck') {
           return fadeTransitionPage(
             child: ReadingSpeedCheckPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'guesstitle') {
+          return fadeTransitionPage(
+            child: GuessTitlePracticeScreen(level: level),
             state: state,
           );
         }
