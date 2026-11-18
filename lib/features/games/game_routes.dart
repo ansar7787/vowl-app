@@ -90,6 +90,8 @@ import 'package:vowl/features/reading/guess_title/presentation/pages/guess_title
 import 'package:vowl/features/reading/guess_title/presentation/pages/guess_title_practice_screen.dart';
 import 'package:vowl/features/reading/read_and_match/presentation/pages/read_and_match_learn_screen.dart';
 import 'package:vowl/features/reading/read_and_match/presentation/pages/read_and_match_practice_screen.dart';
+import 'package:vowl/features/reading/paragraph_summary/presentation/pages/paragraph_summary_learn_screen.dart';
+import 'package:vowl/features/reading/paragraph_summary/presentation/pages/paragraph_summary_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -565,6 +567,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'paragraphsummary') {
+          return fadeTransitionPage(
+            child: ParagraphSummaryLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -819,6 +827,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'readandmatch') {
           return fadeTransitionPage(
             child: ReadAndMatchPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'paragraphsummary') {
+          return fadeTransitionPage(
+            child: ParagraphSummaryPracticeScreen(level: level),
             state: state,
           );
         }

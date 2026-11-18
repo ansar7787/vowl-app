@@ -753,6 +753,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                             'readingSpeedCheck',
                             'guessTitle',
                             'readAndMatch',
+                            'paragraphSummary',
                           };
                           final isPhasedGame = phasedGames.contains(widget.gameType);
 

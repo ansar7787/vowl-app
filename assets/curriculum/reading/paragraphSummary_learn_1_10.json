@@ -1,0 +1,1983 @@
+{
+  "gameType": "paragraphSummary",
+  "phase": "learn",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L1_Q1",
+      "level": 1,
+      "title": "80/20 Distiller",
+      "strategyBadge": "80/20 DISTILLER",
+      "techniqueTitle": "80/20 Distillation Framework",
+      "coreRule": "A summary is not a collection of details; it captures the unified takeaway that every sentence builds toward.",
+      "passage": "Amara gets up early on school days. She packs her bag, eats rice and eggs, and catches the bus at seven. By half past seven, she is sitting at her desk.",
+      "keywords": [
+        "School Morning",
+        "Getting Ready",
+        "Bus to School"
+      ],
+      "keyPoints": [
+        "Amara has a regular morning routine on school days.",
+        "She packs her bag, eats breakfast and takes the bus.",
+        "The routine gets her to her desk by half past seven."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Amara gets up early on school days.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "She packs her bag, eats rice and eggs, and catches the bus at seven.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "By half past seven, she is sitting at her desk.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Amara gets ready and travels to school in the morning.",
+      "optionAnalysis": [
+        {
+          "text": "Amara is often late for the school bus in the mornings.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Amara gets ready and travels to school in the morning.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The paragraph follows Amara from waking up to sitting at her desk, so the main idea is her whole morning journey to school. Breakfast is only one small step inside that routine."
+        },
+        {
+          "text": "Amara studies quietly at her desk after school ends.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Amara eats rice and eggs for breakfast before she leaves home.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "The paragraph follows Amara from waking up to sitting at her desk, so the main idea is her whole morning journey to school. Breakfast is only one small step inside that routine.",
+      "hint": "Ask what the whole paragraph is about, not what happens in just one sentence."
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L1_Q2",
+      "level": 1,
+      "title": "80/20 Distiller",
+      "strategyBadge": "80/20 DISTILLER",
+      "techniqueTitle": "80/20 Distillation Framework",
+      "coreRule": "A summary is not a collection of details; it captures the unified takeaway that every sentence builds toward.",
+      "passage": "Biscuit is a small brown dog. Every afternoon he waits by the door for the children to come home from school. When they arrive, he jumps up and wags his tail.",
+      "keywords": [
+        "Pet Dog",
+        "After-School Greeting",
+        "Excited Welcome"
+      ],
+      "keyPoints": [
+        "Biscuit is a family dog who waits for the children each afternoon.",
+        "He waits by the door until they come home from school.",
+        "When they arrive, he jumps up and wags his tail happily."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Biscuit is a small brown dog.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "Every afternoon he waits by the door for the children to come home from school.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "When they arrive, he jumps up and wags his tail.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "A dog is always excited to greet the children after school.",
+      "optionAnalysis": [
+        {
+          "text": "Biscuit waits by the door because he wants his dinner.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "The children take Biscuit for a long walk every afternoon.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "A dog is always excited to greet the children after school.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "Each sentence shows the dog's daily welcome: waiting, then jumping and wagging when the children arrive. The colour and size of the dog are just description, not the main point."
+        },
+        {
+          "text": "Biscuit is a small brown dog who likes to sit by the door.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "Each sentence shows the dog's daily welcome: waiting, then jumping and wagging when the children arrive. The colour and size of the dog are just description, not the main point.",
+      "hint": "Some options describe one true detail. Look for the idea that the sentences share."
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L1_Q3",
+      "level": 1,
+      "title": "80/20 Distiller",
+      "strategyBadge": "80/20 DISTILLER",
+      "techniqueTitle": "80/20 Distillation Framework",
+      "coreRule": "A summary is not a collection of details; it captures the unified takeaway that every sentence builds toward.",
+      "passage": "On Sundays, Mr. Osei makes soup for his family. He cuts carrots and onions while the water boils. Everyone sits down to eat at one o'clock.",
+      "keywords": [
+        "Sunday Cooking",
+        "Family Meal",
+        "Homemade Soup"
+      ],
+      "keyPoints": [
+        "Mr. Osei cooks soup for his family on Sundays.",
+        "He cuts the vegetables while the water boils.",
+        "The whole family sits down to eat together at one o'clock."
+      ],
+      "distilledSentences": [
+        {
+          "text": "On Sundays, Mr.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "Osei makes soup for his family.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "He cuts carrots and onions while the water boils.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "Everyone sits down to eat at one o'clock.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Mr. Osei cooks Sunday soup for his family.",
+      "optionAnalysis": [
+        {
+          "text": "Mr. Osei cooks Sunday soup for his family.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The paragraph shows a Sunday habit: Mr. Osei cooks soup and the family eats together. Cutting vegetables is just one step in that larger activity."
+        },
+        {
+          "text": "Mr. Osei is teaching his children how to make soup.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "On Sundays, the Osei family eats out at a restaurant.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Mr. Osei carefully cuts carrots and onions in the kitchen.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "The paragraph shows a Sunday habit: Mr. Osei cooks soup and the family eats together. Cutting vegetables is just one step in that larger activity.",
+      "hint": "Picture the paragraph from start to finish. What is the whole activity?"
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L2_Q4",
+      "level": 2,
+      "title": "80/20 Distiller",
+      "strategyBadge": "SENTENCE PRUNER",
+      "techniqueTitle": "Pruning Supporting Fluff & Examples",
+      "coreRule": "Identify and prune examples, parenthetical remarks, and descriptive filler to expose the core thesis.",
+      "passage": "The market near Kenji's home opens at eight. Farmers bring fresh fruit, vegetables and flowers in their trucks. By nine, many neighbours are already shopping.",
+      "keywords": [
+        "Local Market",
+        "Fresh Produce",
+        "Morning Shoppers"
+      ],
+      "keyPoints": [
+        "A local market opens early in the morning.",
+        "Farmers bring fresh fruit, vegetables and flowers by truck.",
+        "By nine o'clock, many neighbours are already shopping there."
+      ],
+      "distilledSentences": [
+        {
+          "text": "The market near Kenji's home opens at eight.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "Farmers bring fresh fruit, vegetables and flowers in their trucks.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "By nine, many neighbours are already shopping.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Neighbours shop at a busy morning market.",
+      "optionAnalysis": [
+        {
+          "text": "Farmers drive their trucks into the city every day.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Kenji sells flowers to shoppers at the market.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Neighbours shop at a busy morning market.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "Farmers bring goods and neighbours arrive to buy them, which makes the market itself the central idea. The trucks and flowers are supporting details."
+        },
+        {
+          "text": "The market closes at nine each morning.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "Farmers bring goods and neighbours arrive to buy them, which makes the market itself the central idea. The trucks and flowers are supporting details.",
+      "hint": "Pay attention to who is in the paragraph and what they are all doing together."
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L2_Q5",
+      "level": 2,
+      "title": "80/20 Distiller",
+      "strategyBadge": "SENTENCE PRUNER",
+      "techniqueTitle": "Pruning Supporting Fluff & Examples",
+      "coreRule": "Identify and prune examples, parenthetical remarks, and descriptive filler to expose the core thesis.",
+      "passage": "The town library has a quiet room for studying. Students go there after school to do their homework. The librarian keeps the room calm and tidy.",
+      "keywords": [
+        "Library Study Room",
+        "Homework Space",
+        "Quiet Environment"
+      ],
+      "keyPoints": [
+        "The library has a quiet room made for studying.",
+        "Students use it after school to do homework.",
+        "The librarian keeps the room calm and tidy."
+      ],
+      "distilledSentences": [
+        {
+          "text": "The town library has a quiet room for studying.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "Students go there after school to do their homework.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "The librarian keeps the room calm and tidy.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "The library's quiet room helps students study.",
+      "optionAnalysis": [
+        {
+          "text": "The librarian works at the town library all day long.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Students borrow the most books after school each day.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "The library is closed to students in the afternoon.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        },
+        {
+          "text": "The library's quiet room helps students study.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The room, the students and the librarian all connect to one idea: a calm place where students can study. An option about the librarian alone leaves out why the room matters."
+        }
+      ],
+      "explanation": "The room, the students and the librarian all connect to one idea: a calm place where students can study. An option about the librarian alone leaves out why the room matters.",
+      "hint": "Cross out options that mention only one person or one action from the paragraph."
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L2_Q6",
+      "level": 2,
+      "title": "80/20 Distiller",
+      "strategyBadge": "SENTENCE PRUNER",
+      "techniqueTitle": "Pruning Supporting Fluff & Examples",
+      "coreRule": "Identify and prune examples, parenthetical remarks, and descriptive filler to expose the core thesis.",
+      "passage": "Bus 12 goes from the train station to the hospital. It stops at the park and the post office on the way. Buses run every ten minutes.",
+      "keywords": [
+        "Bus Route",
+        "Useful Stops",
+        "Frequent Service"
+      ],
+      "keyPoints": [
+        "Bus 12 is a route that links important places in town.",
+        "It goes from the train station to the hospital.",
+        "It stops at the park and post office, and a bus comes every ten minutes."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Bus 12 goes from the train station to the hospital.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "It stops at the park and the post office on the way.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "Buses run every ten minutes.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Bus 12 links several useful places and runs often.",
+      "optionAnalysis": [
+        {
+          "text": "The hospital is building a brand-new bus station.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Bus 12 links several useful places and runs often.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The paragraph describes a route linking the station, park, post office and hospital, plus how frequently it runs. The park stop is only one piece of that route."
+        },
+        {
+          "text": "Bus 12 stops at the town park and the post office.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Bus 12 only runs in the evening, every ten minutes.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "The paragraph describes a route linking the station, park, post office and hospital, plus how frequently it runs. The park stop is only one piece of that route.",
+      "hint": "Which option covers the route, the stops and how often the bus comes?"
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L3_Q7",
+      "level": 3,
+      "title": "80/20 Distiller",
+      "strategyBadge": "THESIS CONDENSER",
+      "techniqueTitle": "Synthesizing Umbrella Takeaways",
+      "coreRule": "A good summary covers the beginning, middle, and outcome without zooming in on a single step.",
+      "passage": "Ravi is wearing a warm coat and boots today. Snow fell all night, and the streets are white and slippery. He walks slowly to the bus stop.",
+      "keywords": [
+        "Snowy Morning",
+        "Warm Clothes",
+        "Careful Walking"
+      ],
+      "keyPoints": [
+        "Snow has covered the streets overnight.",
+        "Ravi wears a warm coat and boots in response.",
+        "He walks slowly to the bus stop because the ground is slippery."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Ravi is wearing a warm coat and boots today.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "Snow fell all night, and the streets are white and slippery.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "He walks slowly to the bus stop.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Ravi dresses warmly and walks carefully because of the snow.",
+      "optionAnalysis": [
+        {
+          "text": "Ravi misses his bus because the snow is so heavy.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Ravi buys a new warm coat and boots for the winter.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "The streets in Ravi's town are white and slippery.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        },
+        {
+          "text": "Ravi dresses warmly and walks carefully because of the snow.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The snow explains both his warm clothes and his slow walk. The paragraph is about how Ravi responds to the weather, not about one item he is wearing."
+        }
+      ],
+      "explanation": "The snow explains both his warm clothes and his slow walk. The paragraph is about how Ravi responds to the weather, not about one item he is wearing.",
+      "hint": "Think about why Ravi does each thing. What single reason connects them?"
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L3_Q8",
+      "level": 3,
+      "title": "80/20 Distiller",
+      "strategyBadge": "THESIS CONDENSER",
+      "techniqueTitle": "Synthesizing Umbrella Takeaways",
+      "coreRule": "A good summary covers the beginning, middle, and outcome without zooming in on a single step.",
+      "passage": "Leila's phone stopped working this morning. She took it to a repair shop near her school. The worker fixed it in one hour, and Leila went home happy.",
+      "keywords": [
+        "Broken Phone",
+        "Repair Shop",
+        "Problem Solved"
+      ],
+      "keyPoints": [
+        "Leila's phone suddenly stopped working this morning.",
+        "She took it to a repair shop near her school.",
+        "The phone was fixed in an hour, so she went home happy."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Leila's phone stopped working this morning.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "She took it to a repair shop near her school.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "The worker fixed it in one hour, and Leila went home happy.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Leila got her broken phone repaired at a nearby shop.",
+      "optionAnalysis": [
+        {
+          "text": "Leila's phone suddenly stopped working this morning.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Leila got her broken phone repaired at a nearby shop.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The paragraph gives a problem, a repair shop, and a solved problem. Saying only that the phone stopped working leaves out what Leila did about it."
+        },
+        {
+          "text": "A repair worker gives a phone lesson at Leila's school.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Leila buys a new phone at a shop near her school.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "The paragraph gives a problem, a repair shop, and a solved problem. Saying only that the phone stopped working leaves out what Leila did about it.",
+      "hint": "A good summary usually covers how a paragraph begins and how it ends."
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L3_Q9",
+      "level": 3,
+      "title": "80/20 Distiller",
+      "strategyBadge": "THESIS CONDENSER",
+      "techniqueTitle": "Synthesizing Umbrella Takeaways",
+      "coreRule": "A good summary covers the beginning, middle, and outcome without zooming in on a single step.",
+      "passage": "Ines waters her plants every evening. Her tomatoes need a lot of water, but her flowers need only a little. She checks each one before going inside.",
+      "keywords": [
+        "Evening Watering",
+        "Plant Care",
+        "Daily Habit"
+      ],
+      "keyPoints": [
+        "Ines has an evening habit of watering her plants.",
+        "She gives each kind of plant the amount of water it needs.",
+        "She checks every plant before she goes inside."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Ines waters her plants every evening.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "Her tomatoes need a lot of water, but her flowers need only a little.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "She checks each one before going inside.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Ines looks after her plants every evening.",
+      "optionAnalysis": [
+        {
+          "text": "Tomatoes need much more water than flowers do.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Ines grows tomatoes in her garden to sell at the market.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Ines looks after her plants every evening.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "Ines has a regular habit of looking after her plants, and the water needs of tomatoes and flowers are examples of how careful she is. The comparison is a detail, not the whole paragraph."
+        },
+        {
+          "text": "Ines is planting a brand-new garden this week.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "Ines has a regular habit of looking after her plants, and the water needs of tomatoes and flowers are examples of how careful she is. The comparison is a detail, not the whole paragraph.",
+      "hint": "Ask yourself: is this option about the whole habit, or about one comparison inside it?"
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L4_Q10",
+      "level": 4,
+      "title": "80/20 Distiller",
+      "strategyBadge": "DETAIL DELETION MATRIX",
+      "techniqueTitle": "Filtering Incidental Descriptions",
+      "coreRule": "Beware of \"True but Incomplete\" options: just because a sentence was stated doesn't mean it summarizes the text.",
+      "passage": "Nadia is saving money every week. She puts five dollars in a jar and does not buy snacks at school. She wants a new bicycle for her birthday.",
+      "keywords": [
+        "Weekly Saving",
+        "Skipping Snacks",
+        "New Bicycle"
+      ],
+      "keyPoints": [
+        "Nadia is saving money every week.",
+        "She puts money in a jar and skips buying snacks.",
+        "Her goal is to get a new bicycle for her birthday."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Nadia is saving money every week.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "She puts five dollars in a jar and does not buy snacks at school.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "She wants a new bicycle for her birthday.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Nadia saves her money because she wants a bicycle.",
+      "optionAnalysis": [
+        {
+          "text": "Nadia puts five dollars in a jar every week.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Nadia sells snacks at school to pay for a bicycle.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Nadia gives her school snacks to hungry classmates.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        },
+        {
+          "text": "Nadia saves her money because she wants a bicycle.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The paragraph explains what Nadia does and why she does it. Because the bicycle gives the purpose, it must be part of a strong summary."
+        }
+      ],
+      "explanation": "The paragraph explains what Nadia does and why she does it. Because the bicycle gives the purpose, it must be part of a strong summary.",
+      "hint": "Look for the reason behind Nadia's actions, not only the actions themselves."
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L4_Q11",
+      "level": 4,
+      "title": "80/20 Distiller",
+      "strategyBadge": "DETAIL DELETION MATRIX",
+      "techniqueTitle": "Filtering Incidental Descriptions",
+      "coreRule": "Beware of \"True but Incomplete\" options: just because a sentence was stated doesn't mean it summarizes the text.",
+      "passage": "The school has put a recycling box in every classroom. Students put paper and plastic bottles inside. The class with the fullest box wins a small prize.",
+      "keywords": [
+        "Classroom Recycling",
+        "Recycling Boxes",
+        "Class Prize"
+      ],
+      "keyPoints": [
+        "The school has started a recycling programme.",
+        "Each classroom has a box for paper and plastic bottles.",
+        "The class with the fullest box gets a small prize."
+      ],
+      "distilledSentences": [
+        {
+          "text": "The school has put a recycling box in every classroom.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "Students put paper and plastic bottles inside.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "The class with the fullest box wins a small prize.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "A school encourages recycling through a class competition.",
+      "optionAnalysis": [
+        {
+          "text": "Every classroom receives a brand-new box each week.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "A school encourages recycling through a class competition.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The boxes, the items collected and the prize all support one plan: getting students to recycle. The prize is part of that plan, but the plan itself is the main idea."
+        },
+        {
+          "text": "Students in the school recycle only plastic bottles and cans.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Students win small prizes for cleaning the playground.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "The boxes, the items collected and the prize all support one plan: getting students to recycle. The prize is part of that plan, but the plan itself is the main idea.",
+      "hint": "Find the idea that ties the boxes, the students and the prize together."
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L4_Q12",
+      "level": 4,
+      "title": "80/20 Distiller",
+      "strategyBadge": "DETAIL DELETION MATRIX",
+      "techniqueTitle": "Filtering Incidental Descriptions",
+      "coreRule": "Beware of \"True but Incomplete\" options: just because a sentence was stated doesn't mean it summarizes the text.",
+      "passage": "Emeka takes the stairs instead of the elevator at work. His office is on the sixth floor, so it is good exercise. He feels stronger and has more energy.",
+      "keywords": [
+        "Taking the Stairs",
+        "Daily Exercise",
+        "More Energy"
+      ],
+      "keyPoints": [
+        "Emeka chooses the stairs instead of the elevator.",
+        "Climbing six floors gives him regular exercise.",
+        "As a result, he feels stronger and has more energy."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Emeka takes the stairs instead of the elevator at work.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "His office is on the sixth floor, so it is good exercise.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "He feels stronger and has more energy.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Emeka takes the stairs at work to stay healthy.",
+      "optionAnalysis": [
+        {
+          "text": "The elevator in Emeka's office building is often broken.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Emeka's office is on the sixth floor of a tall building.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Emeka takes the stairs at work to stay healthy.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The paragraph links a choice (stairs), a reason (exercise) and a result (more energy). The floor number is a fact that only supports the story."
+        },
+        {
+          "text": "Emeka goes to the gym before he starts work each day.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "The paragraph links a choice (stairs), a reason (exercise) and a result (more energy). The floor number is a fact that only supports the story.",
+      "hint": "Notice the choice, the reason for it, and the result. Which option holds all three?"
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L5_Q13",
+      "level": 5,
+      "title": "80/20 Distiller",
+      "strategyBadge": "CORE MESSAGE RADAR",
+      "techniqueTitle": "Isolating Central Controlling Ideas",
+      "coreRule": "Test each candidate: If you delete everything except this sentence, does the core purpose of the paragraph survive?",
+      "passage": "The Rossi family had a picnic by the lake on Sunday. Grandpa brought sandwiches, and the children played football on the grass. Everyone stayed until the sun went down.",
+      "keywords": [
+        "Family Picnic",
+        "Lakeside Sunday",
+        "Playing Outdoors"
+      ],
+      "keyPoints": [
+        "The Rossi family had a picnic at the lake on Sunday.",
+        "Grandpa brought food and the children played football.",
+        "They all stayed until sunset."
+      ],
+      "distilledSentences": [
+        {
+          "text": "The Rossi family had a picnic by the lake on Sunday.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "Grandpa brought sandwiches, and the children played football on the grass.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "Everyone stayed until the sun went down.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "A family spent Sunday enjoying a picnic by the lake.",
+      "optionAnalysis": [
+        {
+          "text": "The children played a football match at a big stadium.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Grandpa brought sandwiches for the whole family to share.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "A family spent Sunday enjoying a picnic by the lake.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "Grandpa, the children and the lake are all parts of one family picnic. A summary about only Grandpa's sandwiches would miss the event as a whole."
+        },
+        {
+          "text": "Grandpa spent the whole day fishing at the lake.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "Grandpa, the children and the lake are all parts of one family picnic. A summary about only Grandpa's sandwiches would miss the event as a whole.",
+      "hint": "When a paragraph describes an event, ask what the event was, not what one person did."
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L5_Q14",
+      "level": 5,
+      "title": "80/20 Distiller",
+      "strategyBadge": "CORE MESSAGE RADAR",
+      "techniqueTitle": "Isolating Central Controlling Ideas",
+      "coreRule": "Test each candidate: If you delete everything except this sentence, does the core purpose of the paragraph survive?",
+      "passage": "Ms. Petrov's class held a bake sale on Friday. Students brought cookies and cakes from home and sold them in the hallway. They raised money for new books.",
+      "keywords": [
+        "Bake Sale",
+        "Fundraising",
+        "New Books"
+      ],
+      "keyPoints": [
+        "Ms. Petrov's class held a bake sale on Friday.",
+        "Students sold cookies and cakes they brought from home.",
+        "The money they raised will buy new books."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Ms.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "Petrov's class held a bake sale on Friday.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "Students brought cookies and cakes from home and sold them in the hallway.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "They raised money for new books.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "A class sold baked goods to raise money for books.",
+      "optionAnalysis": [
+        {
+          "text": "A class sold baked goods to raise money for books.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The class sold food, and the reason was to raise money for books. Saying only that students brought cakes leaves out the purpose that makes the event meaningful."
+        },
+        {
+          "text": "Students brought cakes and cookies from home on Friday.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Ms. Petrov sold cakes to pay for a new car.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Students learned to bake cakes in Ms. Petrov's class.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "The class sold food, and the reason was to raise money for books. Saying only that students brought cakes leaves out the purpose that makes the event meaningful.",
+      "hint": "Who did what, and what was the goal? A good summary answers both questions."
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L5_Q15",
+      "level": 5,
+      "title": "80/20 Distiller",
+      "strategyBadge": "CORE MESSAGE RADAR",
+      "techniqueTitle": "Isolating Central Controlling Ideas",
+      "coreRule": "Test each candidate: If you delete everything except this sentence, does the core purpose of the paragraph survive?",
+      "passage": "There was a small concert in the park on Saturday. A local band played for two hours while people sat on blankets. Many families stayed to listen.",
+      "keywords": [
+        "Park Concert",
+        "Local Band",
+        "Families Listening"
+      ],
+      "keyPoints": [
+        "A concert took place in the park on Saturday.",
+        "A local band played for two hours.",
+        "Many families sat on blankets and stayed to listen."
+      ],
+      "distilledSentences": [
+        {
+          "text": "There was a small concert in the park on Saturday.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "A local band played for two hours while people sat on blankets.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "Many families stayed to listen.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Families listened to a local band play in the park.",
+      "optionAnalysis": [
+        {
+          "text": "A famous band played a concert at a big school.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "People sat on blankets on the grass in the park.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "The park closed early because of heavy rain.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        },
+        {
+          "text": "Families listened to a local band play in the park.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The paragraph is about a concert and the people who came to hear it. The blankets are only a small detail about how the audience was sitting."
+        }
+      ],
+      "explanation": "The paragraph is about a concert and the people who came to hear it. The blankets are only a small detail about how the audience was sitting.",
+      "hint": "Look for the option that describes the whole event instead of one small scene."
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L6_Q16",
+      "level": 6,
+      "title": "80/20 Distiller",
+      "strategyBadge": "ESSENTIAL ESSENCE FILTER",
+      "techniqueTitle": "Distinguishing Fact from Focus",
+      "coreRule": "Eliminate summaries that introduce outside assumptions not directly supported by the written words.",
+      "passage": "Yuki loves drawing. She draws animals in her notebook on the train, and she sketches her friends at lunch. On weekends, she paints bigger pictures at home.",
+      "keywords": [
+        "Love of Drawing",
+        "Different Places",
+        "Weekend Painting"
+      ],
+      "keyPoints": [
+        "Yuki has a strong love of drawing.",
+        "She draws on the train, at lunch and at home.",
+        "On weekends, she makes larger paintings."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Yuki loves drawing.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "She draws animals in her notebook on the train, and she sketches her friends at lunch.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "On weekends, she paints bigger pictures at home.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Yuki enjoys drawing and does it in many places.",
+      "optionAnalysis": [
+        {
+          "text": "Yuki paints large pictures to sell online on weekends.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Yuki draws only pictures of her friends at lunch.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Yuki goes to an art class every weekend afternoon.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        },
+        {
+          "text": "Yuki enjoys drawing and does it in many places.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The train, the lunch table and home are different places, but Yuki is doing the same thing in all of them. The repeated idea is her love of drawing."
+        }
+      ],
+      "explanation": "The train, the lunch table and home are different places, but Yuki is doing the same thing in all of them. The repeated idea is her love of drawing.",
+      "hint": "Which idea appears again and again, even though the places change?"
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L6_Q17",
+      "level": 6,
+      "title": "80/20 Distiller",
+      "strategyBadge": "ESSENTIAL ESSENCE FILTER",
+      "techniqueTitle": "Distinguishing Fact from Focus",
+      "coreRule": "Eliminate summaries that introduce outside assumptions not directly supported by the written words.",
+      "passage": "Mateo runs before breakfast three days a week. On Tuesdays he runs with a neighbour, and on Saturdays he joins a local running club. He says running helps him feel calm.",
+      "keywords": [
+        "Regular Running",
+        "Running with Others",
+        "Feeling Calm"
+      ],
+      "keyPoints": [
+        "Mateo runs three mornings a week.",
+        "Sometimes he runs with a neighbour or a club.",
+        "He says running makes him feel calm."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Mateo runs before breakfast three days a week.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "On Tuesdays he runs with a neighbour, and on Saturdays he joins a local running club.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "He says running helps him feel calm.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Mateo runs often because it helps him feel calm.",
+      "optionAnalysis": [
+        {
+          "text": "Mateo eats breakfast with his neighbour every day.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Mateo runs often because it helps him feel calm.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The days and running partners show how often and with whom he runs, but the paragraph ends on what running does for him. A good summary joins the habit with its benefit."
+        },
+        {
+          "text": "Mateo runs only on Saturdays with a group of people.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Mateo joins a local running club so that he can win races.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "The days and running partners show how often and with whom he runs, but the paragraph ends on what running does for him. A good summary joins the habit with its benefit.",
+      "hint": "Separate the reason from the schedule. What does Mateo get from all these runs?"
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L6_Q18",
+      "level": 6,
+      "title": "80/20 Distiller",
+      "strategyBadge": "ESSENTIAL ESSENCE FILTER",
+      "techniqueTitle": "Distinguishing Fact from Focus",
+      "coreRule": "Eliminate summaries that introduce outside assumptions not directly supported by the written words.",
+      "passage": "Kofi practises the guitar every evening after dinner. He learns new songs from videos. Before bed, he plays for his little sister, and she always asks for one more.",
+      "keywords": [
+        "Guitar Practice",
+        "Learning Songs",
+        "Playing for Family"
+      ],
+      "keyPoints": [
+        "Kofi practises the guitar every evening.",
+        "He learns new songs from videos.",
+        "He plays for his little sister, who always wants more."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Kofi practises the guitar every evening after dinner.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "He learns new songs from videos.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "Before bed, he plays for his little sister, and she always asks for one more.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Kofi enjoys practising the guitar and playing for his sister.",
+      "optionAnalysis": [
+        {
+          "text": "Kofi enjoys practising the guitar and playing for his sister.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "Kofi's practice leads to playing for his sister, so the paragraph is about both practising and sharing. Learning from videos is only one way he practises."
+        },
+        {
+          "text": "Kofi plays the guitar in a school band with friends.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Kofi's little sister is learning how to play the guitar too.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Kofi learns new songs by watching guitar videos every evening.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "Kofi's practice leads to playing for his sister, so the paragraph is about both practising and sharing. Learning from videos is only one way he practises.",
+      "hint": "Think about how the paragraph ends. Does your choice include that ending?"
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L7_Q19",
+      "level": 7,
+      "title": "80/20 Distiller",
+      "strategyBadge": "80/20 DISTILLER",
+      "techniqueTitle": "80/20 Distillation Framework",
+      "coreRule": "A summary is not a collection of details; it captures the unified takeaway that every sentence builds toward.",
+      "passage": "Elena is making a list before she goes to the supermarket. She checks the fridge and writes down milk, eggs and rice. This way, she will not forget anything.",
+      "keywords": [
+        "Shopping List",
+        "Checking the Fridge",
+        "Not Forgetting"
+      ],
+      "keyPoints": [
+        "Elena makes a list before shopping.",
+        "She checks the fridge and writes down what she needs.",
+        "The list helps her remember everything at the supermarket."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Elena is making a list before she goes to the supermarket.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "She checks the fridge and writes down milk, eggs and rice.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "This way, she will not forget anything.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Elena makes a list so she will not forget anything.",
+      "optionAnalysis": [
+        {
+          "text": "Elena forgets her list and leaves it at the supermarket.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Elena buys milk, eggs and rice for a birthday party.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Elena makes a list so she will not forget anything.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The paragraph explains an action (writing a list) and its purpose (not forgetting anything). The specific foods are examples of what goes on the list."
+        },
+        {
+          "text": "Elena's fridge is empty, so she rushes out to shop.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "The paragraph explains an action (writing a list) and its purpose (not forgetting anything). The specific foods are examples of what goes on the list.",
+      "hint": "The last sentence often gives the reason behind an action. Did your choice use it?"
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L7_Q20",
+      "level": 7,
+      "title": "80/20 Distiller",
+      "strategyBadge": "80/20 DISTILLER",
+      "techniqueTitle": "80/20 Distillation Framework",
+      "coreRule": "A summary is not a collection of details; it captures the unified takeaway that every sentence builds toward.",
+      "passage": "A sign at the swimming pool says children must wear a swim cap. Adults can choose to wear one, but everyone must shower first. These rules keep the water clean.",
+      "keywords": [
+        "Pool Rules",
+        "Swim Caps",
+        "Clean Water"
+      ],
+      "keyPoints": [
+        "The swimming pool has rules for visitors.",
+        "Children need swim caps, and everyone must shower first.",
+        "The rules exist to keep the water clean."
+      ],
+      "distilledSentences": [
+        {
+          "text": "A sign at the swimming pool says children must wear a swim cap.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "Adults can choose to wear one, but everyone must shower first.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "These rules keep the water clean.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "The pool has rules that keep its water clean.",
+      "optionAnalysis": [
+        {
+          "text": "All adults at the pool must wear a swim cap.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "The pool has rules that keep its water clean.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The rules about caps and showers all serve one purpose: clean water. One wrong option turns an adult's choice into a requirement, which the paragraph does not say."
+        },
+        {
+          "text": "The pool staff clean all the showers every morning.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Children cannot swim in the pool without an adult.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "The rules about caps and showers all serve one purpose: clean water. One wrong option turns an adult's choice into a requirement, which the paragraph does not say.",
+      "hint": "Watch for options that change a small word, like 'can' or 'must'. Check them against the paragraph."
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L7_Q21",
+      "level": 7,
+      "title": "80/20 Distiller",
+      "strategyBadge": "80/20 DISTILLER",
+      "techniqueTitle": "80/20 Distillation Framework",
+      "coreRule": "A summary is not a collection of details; it captures the unified takeaway that every sentence builds toward.",
+      "passage": "Mr. Silva is learning to use a tablet. His granddaughter shows him how to send messages and take photos. He practises a little every day so he can talk to his family far away.",
+      "keywords": [
+        "Learning Technology",
+        "Family Contact",
+        "Daily Practice"
+      ],
+      "keyPoints": [
+        "Mr. Silva is learning to use a tablet.",
+        "His granddaughter teaches him messaging and photos.",
+        "He practises daily so he can stay in touch with far-away family."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Mr.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "Silva is learning to use a tablet.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "His granddaughter shows him how to send messages and take photos.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "He practises a little every day so he can talk to his family far away.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Mr. Silva learns tablet skills to stay in touch with family.",
+      "optionAnalysis": [
+        {
+          "text": "Mr. Silva is learning how to take good photos with it.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Mr. Silva's granddaughter wants a tablet of her own too.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Mr. Silva takes his tablet on a trip to see his family.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        },
+        {
+          "text": "Mr. Silva learns tablet skills to stay in touch with family.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "Sending messages and taking photos are the skills; talking with faraway family is the goal. The best summary joins the learning with the reason for it."
+        }
+      ],
+      "explanation": "Sending messages and taking photos are the skills; talking with faraway family is the goal. The best summary joins the learning with the reason for it.",
+      "hint": "Look for the person's goal. It usually explains why the small actions matter."
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L8_Q22",
+      "level": 8,
+      "title": "80/20 Distiller",
+      "strategyBadge": "SENTENCE PRUNER",
+      "techniqueTitle": "Pruning Supporting Fluff & Examples",
+      "coreRule": "Identify and prune examples, parenthetical remarks, and descriptive filler to expose the core thesis.",
+      "passage": "It rained heavily during the football match. The field became muddy, and the players kept slipping. In the end, the referee stopped the game and sent everyone home.",
+      "keywords": [
+        "Rainy Match",
+        "Muddy Field",
+        "Game Stopped"
+      ],
+      "keyPoints": [
+        "Heavy rain fell during a football match.",
+        "The mud made the players slip.",
+        "The referee finally stopped the game."
+      ],
+      "distilledSentences": [
+        {
+          "text": "It rained heavily during the football match.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "The field became muddy, and the players kept slipping.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "In the end, the referee stopped the game and sent everyone home.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Heavy rain made a football match end early.",
+      "optionAnalysis": [
+        {
+          "text": "The football field was closed for repairs last week.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Heavy rain made a football match end early.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "Rain caused the mud, the mud caused the slipping, and the slipping led to the game stopping. The slipping is a middle step, not the outcome."
+        },
+        {
+          "text": "The referee changed the rules during the rainy match.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "The players kept slipping on the muddy field.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "Rain caused the mud, the mud caused the slipping, and the slipping led to the game stopping. The slipping is a middle step, not the outcome.",
+      "hint": "Follow the chain: what started the trouble, and what did it lead to?"
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L8_Q23",
+      "level": 8,
+      "title": "80/20 Distiller",
+      "strategyBadge": "SENTENCE PRUNER",
+      "techniqueTitle": "Pruning Supporting Fluff & Examples",
+      "coreRule": "Identify and prune examples, parenthetical remarks, and descriptive filler to expose the core thesis.",
+      "passage": "Lucas forgot his umbrella and got wet on the way to work. At the office, he hung his coat near the heater and drank hot tea. By lunchtime, he felt warm and dry again.",
+      "keywords": [
+        "Forgotten Umbrella",
+        "Warming Up",
+        "Feeling Better"
+      ],
+      "keyPoints": [
+        "Lucas got wet because he forgot his umbrella.",
+        "At the office, he used the heater and hot tea to warm up.",
+        "By lunchtime, he felt warm and dry."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Lucas forgot his umbrella and got wet on the way to work.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "At the office, he hung his coat near the heater and drank hot tea.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "By lunchtime, he felt warm and dry again.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Lucas got wet in the rain but warmed up at work.",
+      "optionAnalysis": [
+        {
+          "text": "Lucas bought a new umbrella when he got to work.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Lucas warmed up by drinking hot tea at the office.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Lucas caught a bad cold after walking in the rain.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        },
+        {
+          "text": "Lucas got wet in the rain but warmed up at work.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The paragraph begins with Lucas getting wet and ends with him feeling warm and dry. The tea is only one thing he did to solve the problem."
+        }
+      ],
+      "explanation": "The paragraph begins with Lucas getting wet and ends with him feeling warm and dry. The tea is only one thing he did to solve the problem.",
+      "hint": "Good summaries often show a problem and how it ended. Check that yours does both."
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L8_Q24",
+      "level": 8,
+      "title": "80/20 Distiller",
+      "strategyBadge": "SENTENCE PRUNER",
+      "techniqueTitle": "Pruning Supporting Fluff & Examples",
+      "coreRule": "Identify and prune examples, parenthetical remarks, and descriptive filler to expose the core thesis.",
+      "passage": "The power went out on the whole street last night. Neighbours lit candles and sat outside to talk. When the lights came back at ten, everyone said goodnight.",
+      "keywords": [
+        "Power Cut",
+        "Neighbours Talking",
+        "Lights Returning"
+      ],
+      "keyPoints": [
+        "The power went out on the whole street.",
+        "Neighbours lit candles and talked outside together.",
+        "Everyone went home when the lights returned at ten."
+      ],
+      "distilledSentences": [
+        {
+          "text": "The power went out on the whole street last night.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "Neighbours lit candles and sat outside to talk.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "When the lights came back at ten, everyone said goodnight.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "During a power cut, neighbours spent the evening talking outside.",
+      "optionAnalysis": [
+        {
+          "text": "During a power cut, neighbours spent the evening talking outside.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The power cut is the situation, and the neighbours' conversation is what the paragraph shows happening. The time the lights returned is a small detail."
+        },
+        {
+          "text": "The lights came back on at ten o'clock that night.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "A storm damaged several houses on the street.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Neighbours lit candles to save electricity in the street.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "The power cut is the situation, and the neighbours' conversation is what the paragraph shows happening. The time the lights returned is a small detail.",
+      "hint": "Decide what the paragraph is mostly about: the event, the people, or the time."
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L9_Q25",
+      "level": 9,
+      "title": "80/20 Distiller",
+      "strategyBadge": "THESIS CONDENSER",
+      "techniqueTitle": "Synthesizing Umbrella Takeaways",
+      "coreRule": "A good summary covers the beginning, middle, and outcome without zooming in on a single step.",
+      "passage": "Dr. Chen works at a small clinic. She sees about twenty patients each day and listens carefully to each one. After the last patient leaves, she writes her notes.",
+      "keywords": [
+        "Clinic Work",
+        "Listening to Patients",
+        "Writing Notes"
+      ],
+      "keyPoints": [
+        "Dr. Chen works at a small clinic.",
+        "She sees around twenty patients and listens closely to each.",
+        "She finishes the day by writing her notes."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Dr.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "Chen works at a small clinic.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "She sees about twenty patients each day and listens carefully to each one.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "After the last patient leaves, she writes her notes.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Dr. Chen spends a busy day seeing her patients.",
+      "optionAnalysis": [
+        {
+          "text": "Dr. Chen is opening a new clinic near her home.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Dr. Chen spends a busy day seeing her patients.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The twenty patients, the careful listening and the final notes all describe one working day. An option about the exact number turns an approximate detail into the main point."
+        },
+        {
+          "text": "Dr. Chen sees exactly twenty patients on every working day.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Dr. Chen teaches other doctors how to write good notes.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "The twenty patients, the careful listening and the final notes all describe one working day. An option about the exact number turns an approximate detail into the main point.",
+      "hint": "A number in a paragraph is usually a detail. Decide what it is a detail of."
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L9_Q26",
+      "level": 9,
+      "title": "80/20 Distiller",
+      "strategyBadge": "THESIS CONDENSER",
+      "techniqueTitle": "Synthesizing Umbrella Takeaways",
+      "coreRule": "A good summary covers the beginning, middle, and outcome without zooming in on a single step.",
+      "passage": "Sipho delivers packages by motorbike. He starts at eight, checks his list, and rides to a different street each hour. Customers often thank him with a smile.",
+      "keywords": [
+        "Package Delivery",
+        "Motorbike Rider",
+        "Customer Thanks"
+      ],
+      "keyPoints": [
+        "Sipho delivers packages by motorbike.",
+        "He follows a list and visits a different street each hour.",
+        "Customers often thank him with a smile."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Sipho delivers packages by motorbike.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "He starts at eight, checks his list, and rides to a different street each hour.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "Customers often thank him with a smile.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Sipho's job is riding around delivering packages to customers.",
+      "optionAnalysis": [
+        {
+          "text": "Sipho repairs motorbikes every morning before eight o'clock.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Sipho delivers packages to only one street each day.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Customers give Sipho small gifts for his good service.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        },
+        {
+          "text": "Sipho's job is riding around delivering packages to customers.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "Every sentence describes part of Sipho's delivery work: his schedule, his routes and the customers. The smiles are a pleasant detail, not the central idea."
+        }
+      ],
+      "explanation": "Every sentence describes part of Sipho's delivery work: his schedule, his routes and the customers. The smiles are a pleasant detail, not the central idea.",
+      "hint": "Ask what the person's job is, then see which option describes it best."
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L9_Q27",
+      "level": 9,
+      "title": "80/20 Distiller",
+      "strategyBadge": "THESIS CONDENSER",
+      "techniqueTitle": "Synthesizing Umbrella Takeaways",
+      "coreRule": "A good summary covers the beginning, middle, and outcome without zooming in on a single step.",
+      "passage": "Mrs. Dube sells vegetables at a market stall. She picks them from her own farm at dawn and arranges them by colour. People enjoy buying from her because everything is fresh.",
+      "keywords": [
+        "Market Stall",
+        "Own Farm",
+        "Fresh Vegetables"
+      ],
+      "keyPoints": [
+        "Mrs. Dube runs a vegetable stall at the market.",
+        "She picks the vegetables from her own farm at dawn.",
+        "Customers like buying from her because everything is fresh."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Mrs.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "Dube sells vegetables at a market stall.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "She picks them from her own farm at dawn and arranges them by colour.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "People enjoy buying from her because everything is fresh.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Mrs. Dube sells fresh vegetables from her own farm.",
+      "optionAnalysis": [
+        {
+          "text": "Mrs. Dube sells fresh vegetables from her own farm.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "Picking at dawn, arranging the stall and pleasing customers all connect to selling fresh vegetables. The colour arrangement is an interesting detail but not the point."
+        },
+        {
+          "text": "Mrs. Dube has the biggest stall in the market.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Mrs. Dube buys vegetables from other farms every day.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Mrs. Dube arranges her vegetables by colour.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "Picking at dawn, arranging the stall and pleasing customers all connect to selling fresh vegetables. The colour arrangement is an interesting detail but not the point.",
+      "hint": "Which option explains both what she sells and why customers like it?"
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L10_Q28",
+      "level": 10,
+      "title": "80/20 Distiller",
+      "strategyBadge": "DETAIL DELETION MATRIX",
+      "techniqueTitle": "Filtering Incidental Descriptions",
+      "coreRule": "Beware of \"True but Incomplete\" options: just because a sentence was stated doesn't mean it summarizes the text.",
+      "passage": "Anh uses a language app every morning on the bus. It gives her a short lesson and a small quiz. She now knows enough English to order food in a café.",
+      "keywords": [
+        "Language App",
+        "Daily Practice",
+        "English Progress"
+      ],
+      "keyPoints": [
+        "Anh studies English with an app every morning.",
+        "Each session has a short lesson and a small quiz.",
+        "Her English is now good enough to order in a café."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Anh uses a language app every morning on the bus.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "It gives her a short lesson and a small quiz.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "She now knows enough English to order food in a café.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Anh practises English daily with an app and is making progress.",
+      "optionAnalysis": [
+        {
+          "text": "Anh quizzes her friends on the bus every morning.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Anh practises English daily with an app and is making progress.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "Regular practice on the bus led to a real ability: ordering in English. A summary that only names the app or the quiz misses that progress."
+        },
+        {
+          "text": "Anh takes a quiz to get a job at a café.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "The app teaches only the words that people use for food.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "Regular practice on the bus led to a real ability: ordering in English. A summary that only names the app or the quiz misses that progress.",
+      "hint": "Look for what she does regularly and what has changed because of it."
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L10_Q29",
+      "level": 10,
+      "title": "80/20 Distiller",
+      "strategyBadge": "DETAIL DELETION MATRIX",
+      "techniqueTitle": "Filtering Incidental Descriptions",
+      "coreRule": "Beware of \"True but Incomplete\" options: just because a sentence was stated doesn't mean it summarizes the text.",
+      "passage": "A neighbourhood group cleans the beach on the first Sunday of each month. Volunteers bring gloves and bags to collect rubbish. The beach looks much better, and more people come to help each time.",
+      "keywords": [
+        "Beach Cleanup",
+        "Volunteer Group",
+        "Growing Support"
+      ],
+      "keyPoints": [
+        "A neighbourhood group cleans the beach every month.",
+        "Volunteers use gloves and bags to collect rubbish.",
+        "The beach looks better and more people join each time."
+      ],
+      "distilledSentences": [
+        {
+          "text": "A neighbourhood group cleans the beach on the first Sunday of each month.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "Volunteers bring gloves and bags to collect rubbish.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "The beach looks much better, and more people come to help each time.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "Volunteers regularly clean a beach, and their group is growing.",
+      "optionAnalysis": [
+        {
+          "text": "Volunteers bring gloves and bags to the beach.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "The beach is closed on the first Sunday of every month.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "Volunteers are paid to collect rubbish from the beach.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        },
+        {
+          "text": "Volunteers regularly clean a beach, and their group is growing.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The paragraph describes a regular activity and its good results: a cleaner beach and more helpers. Gloves and bags are supplies, so they are minor details."
+        }
+      ],
+      "explanation": "The paragraph describes a regular activity and its good results: a cleaner beach and more helpers. Gloves and bags are supplies, so they are minor details.",
+      "hint": "Skip the objects mentioned and ask what result the volunteers are getting."
+    },
+    {
+      "id": "RDG_PARAGRAPHSUMMARY_LEARN_L10_Q30",
+      "level": 10,
+      "title": "80/20 Distiller",
+      "strategyBadge": "DETAIL DELETION MATRIX",
+      "techniqueTitle": "Filtering Incidental Descriptions",
+      "coreRule": "Beware of \"True but Incomplete\" options: just because a sentence was stated doesn't mean it summarizes the text.",
+      "passage": "Riverside School wants students to drink more water. New water stations have been placed near the gym and the cafeteria. Teachers say water helps students think more clearly in class.",
+      "keywords": [
+        "School Water Plan",
+        "Water Stations",
+        "Clear Thinking"
+      ],
+      "keyPoints": [
+        "The school wants students to drink more water.",
+        "It has added water stations near the gym and cafeteria.",
+        "Teachers say water helps students think more clearly."
+      ],
+      "distilledSentences": [
+        {
+          "text": "Riverside School wants students to drink more water.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        },
+        {
+          "text": "New water stations have been placed near the gym and the cafeteria.",
+          "role": "SUPPORTING DETAIL",
+          "action": "PRUNE"
+        },
+        {
+          "text": "Teachers say water helps students think more clearly in class.",
+          "role": "CORE THESIS ANCHOR",
+          "action": "KEEP"
+        }
+      ],
+      "targetSummary": "The school encourages students to drink more water.",
+      "optionAnalysis": [
+        {
+          "text": "Water stations are found only near the school gym.",
+          "isCorrect": false,
+          "category": "TOO NARROW (ONE DETAIL)",
+          "rationale": "Accurately mentions one step or description, but fails to summarize the whole paragraph."
+        },
+        {
+          "text": "Teachers ask students to stop using the cafeteria.",
+          "isCorrect": false,
+          "category": "UNSUPPORTED CONTRADICTION",
+          "rationale": "Contradicts or twists the facts stated in the passage."
+        },
+        {
+          "text": "The school encourages students to drink more water.",
+          "isCorrect": true,
+          "category": "BEST SUMMARY (DISTILLED THESIS)",
+          "rationale": "The school has a goal, a new way to reach it and a reason for it. One option limits the stations to the gym, which shrinks the paragraph's information."
+        },
+        {
+          "text": "Students think more clearly right after gym class.",
+          "isCorrect": false,
+          "category": "OUTSIDE THE SCOPE",
+          "rationale": "Speculates on events before or after what is explicitly written."
+        }
+      ],
+      "explanation": "The school has a goal, a new way to reach it and a reason for it. One option limits the stations to the gym, which shrinks the paragraph's information.",
+      "hint": "Check the scope of each option. Does it say more or less than the paragraph does?"
+    }
+  ]
+}
