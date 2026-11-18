@@ -1,0 +1,1530 @@
+{
+  "gameType": "readingConclusion",
+  "phase": "practice",
+  "batchIndex": 15,
+  "levels": "141-150",
+  "quests": [
+    {
+      "id": "RDG_READINGCONCLUSION_L141_Q1_PRACTICE",
+      "level": 141,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A regional bakery chain's weekday breakfast sales rose 20 percent the month after a new cafe opened directly across the street. The new cafe drew a steady stream of morning customers with its own coffee and pastries, and a local news article covered the cafe's grand opening with photos of a long line outside.",
+      "options": [
+        "The new cafe definitely referred its customers directly to the bakery. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+        "The bakery's sales dropped because of the new competing cafe.",
+        "The bakery and the new cafe have no possible connection to each other.",
+        "It is more likely that the bakery's sales grew from increased overall foot traffic in the area than from the new cafe directly sending customers its way."
+      ],
+      "correctAnswer": "It is more likely that the bakery's sales grew from increased overall foot traffic in the area than from the new cafe directly sending customers its way.",
+      "hint": "Consider two possible explanations for the sales rise, and weigh which one the passage's details better support.",
+      "explanation": "Since the passage describes a popular new cafe drawing crowds nearby, with no mention of any direct referral relationship, it's more plausible that general increased foot traffic in the area, not a direct cafe-to-bakery pipeline, explains the bakery's own sales growth.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "New cafe opens across the street, draws morning crowds -> bakery sales rise 20% -> no evidence of direct referral -> general increased foot traffic is the more likely explanation than direct referral"
+      ],
+      "logicChainSteps": [
+        "New cafe opens across the street, draws morning crowds",
+        "bakery sales rise 20%",
+        "no evidence of direct referral",
+        "general increased foot traffic is the more likely explanation than direct referral"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The new cafe definitely referred its customers directly to the bakery. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The bakery's sales dropped because of the new competing cafe.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The bakery and the new cafe have no possible connection to each other.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "It is more likely that the bakery's sales grew from increased overall foot traffic in the area than from the new cafe directly sending customers its way.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L141_Q2_PRACTICE",
+      "level": 141,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A tech company's employee survey showed that engineers who used the company's new project management software reported higher job satisfaction. The survey also showed that the software was rolled out team by team, starting with the engineering teams working on the company's newest, most exciting product lines, while older, more routine projects were the last to receive the update.",
+      "options": [
+        "The software itself is definitely and solely responsible for the satisfaction difference. This would be expected to hold across the entire situation as described.",
+        "It is more likely that satisfaction differences reflect which projects teams were working on than the software itself.",
+        "Teams working on routine projects received the software first.",
+        "There is no plausible explanation at all for the satisfaction pattern."
+      ],
+      "correctAnswer": "It is more likely that satisfaction differences reflect which projects teams were working on than the software itself.",
+      "hint": "Consider two possible explanations, the software and the project assignment pattern, and weigh which the passage better supports.",
+      "explanation": "Since the rollout specifically began with teams on exciting new projects, a factor already linked to higher satisfaction independent of software, the passage's detail supports project type as the more plausible explanation over the software alone.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Software rolled out first to teams on exciting new projects -> those teams report higher satisfaction -> project excitement is a plausible independent factor -> project type is the more likely explanation than the software alone"
+      ],
+      "logicChainSteps": [
+        "Software rolled out first to teams on exciting new projects",
+        "those teams report higher satisfaction",
+        "project excitement is a plausible independent factor",
+        "project type is the more likely explanation than the software alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The software itself is definitely and solely responsible for the satisfaction difference. This would be expected to hold across the entire situation as described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "It is more likely that satisfaction differences reflect which projects teams were working on than the software itself.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Teams working on routine projects received the software first.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "There is no plausible explanation at all for the satisfaction pattern.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L141_Q3_PRACTICE",
+      "level": 141,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's downtown crime statistics showed a drop in reported theft the same year a new large parking structure opened. City officials had also increased the downtown police patrol budget that same year, a change announced separately from the parking structure project and unrelated in planning.",
+      "options": [
+        "The parking structure is definitely and solely responsible for the drop in theft. The passage's account gives no reason to think this differed at any stage.",
+        "The increased police budget had no possible connection to the drop in theft. Nothing described in the passage points to any exception to this pattern.",
+        "Since both changes happened independently in the same year, either or both could plausibly explain the drop in theft.",
+        "Crime statistics actually rose that year despite what the passage states. This reading would hold true across the full sequence of events described."
+      ],
+      "correctAnswer": "Since both changes happened independently in the same year, either or both could plausibly explain the drop in theft.",
+      "hint": "Notice that two unrelated changes happened in the same year, and consider what that means for identifying a single cause.",
+      "explanation": "Because the parking structure and the increased police patrols were separate, unrelated changes occurring in the same year, the passage supports both as plausible contributors rather than confidently crediting just one.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Parking structure opens -> police patrol budget also increased, unrelated change -> theft drops that year -> both changes happened independently, so either or both could plausibly explain the drop"
+      ],
+      "logicChainSteps": [
+        "Parking structure opens",
+        "police patrol budget also increased, unrelated change",
+        "theft drops that year",
+        "both changes happened independently, so either or both could plausibly explain the drop"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The parking structure is definitely and solely responsible for the drop in theft. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The increased police budget had no possible connection to the drop in theft. Nothing described in the passage points to any exception to this pattern.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Since both changes happened independently in the same year, either or both could plausibly explain the drop in theft.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Crime statistics actually rose that year despite what the passage states. This reading would hold true across the full sequence of events described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L142_Q1_PRACTICE",
+      "level": 142,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A children's hospital saw a drop in emergency room visits for bicycle-related injuries the same summer the city installed new bike lanes on major streets. That same summer also happened to have significantly more rainy days than usual, which typically keeps children indoors and off bikes.",
+      "options": [
+        "The bike lanes are definitely and solely responsible for the drop in injuries.",
+        "Given the unusually rainy summer, it is difficult to confidently attribute the drop in injuries to the bike lanes alone.",
+        "The rainy weather had no possible connection to fewer bicycle injuries.",
+        "Bicycle-related injuries actually increased that summer according to the passage."
+      ],
+      "correctAnswer": "Given the unusually rainy summer, it is difficult to confidently attribute the drop in injuries to the bike lanes alone.",
+      "hint": "Weigh the bike lane explanation against the separately mentioned unusual weather pattern.",
+      "explanation": "Since the summer also had unusually more rain, a factor independently known to reduce outdoor biking, the passage supports weather as a competing explanation that makes it hard to credit the bike lanes with full confidence.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Bike lanes installed -> bicycle injuries drop that summer -> same summer had unusually more rainy days -> rain is a plausible competing factor, making it hard to credit lanes alone with confidence"
+      ],
+      "logicChainSteps": [
+        "Bike lanes installed",
+        "bicycle injuries drop that summer",
+        "same summer had unusually more rainy days",
+        "rain is a plausible competing factor, making it hard to credit lanes alone with confidence"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The bike lanes are definitely and solely responsible for the drop in injuries.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Given the unusually rainy summer, it is difficult to confidently attribute the drop in injuries to the bike lanes alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The rainy weather had no possible connection to fewer bicycle injuries.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Bicycle-related injuries actually increased that summer according to the passage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L142_Q2_PRACTICE",
+      "level": 142,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A university reported that students who lived in the newly renovated dormitory had higher average GPAs than students in older dormitories. Housing assignments for the renovated dorm were based on a lottery system open to all students regardless of academic standing, with no special selection criteria applied.",
+      "options": [
+        "Students with the highest GPAs were specifically selected for the renovated dorm. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+        "Since housing was assigned by an open lottery, the renovated dorm itself is a more plausible explanation than students self-selecting based on academic ability.",
+        "The lottery system definitely had no connection to housing assignments at all. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+        "GPA differences between dorms have no possible explanation whatsoever."
+      ],
+      "correctAnswer": "Since housing was assigned by an open lottery, the renovated dorm itself is a more plausible explanation than students self-selecting based on academic ability.",
+      "hint": "Consider what the random lottery detail rules out as a competing explanation.",
+      "explanation": "Because the passage specifically states housing was assigned by an open lottery with no academic criteria, this detail rules out the competing explanation that academically stronger students selected themselves into the dorm, making the dorm environment itself the more plausible factor.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Renovated dorm residents: higher average GPAs -> housing assigned via open lottery, no academic criteria -> self-selection by academic ability is ruled out -> dorm environment itself becomes the more plausible explanation"
+      ],
+      "logicChainSteps": [
+        "Renovated dorm residents: higher average GPAs",
+        "housing assigned via open lottery, no academic criteria",
+        "self-selection by academic ability is ruled out",
+        "dorm environment itself becomes the more plausible explanation"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Students with the highest GPAs were specifically selected for the renovated dorm. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Since housing was assigned by an open lottery, the renovated dorm itself is a more plausible explanation than students self-selecting based on academic ability.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The lottery system definitely had no connection to housing assignments at all. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "GPA differences between dorms have no possible explanation whatsoever.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L142_Q3_PRACTICE",
+      "level": 142,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A retail company found that stores with a specific in-store playlist of upbeat music had higher average sales than stores playing a standard playlist. The stores playing the upbeat playlist were also, according to the company's internal records, generally the newest and most recently renovated locations in the chain.",
+      "options": [
+        "The playlist alone is definitely and solely responsible for the higher sales. No part of the passage's account suggests otherwise.",
+        "Store renovation status had no possible connection to sales figures.",
+        "Sales figures were identical across all store types according to the passage. The passage gives no indication that this varied across the circumstances described.",
+        "Given that the upbeat-playlist stores were also newer and renovated, it is difficult to credit the playlist alone for the higher sales."
+      ],
+      "correctAnswer": "Given that the upbeat-playlist stores were also newer and renovated, it is difficult to credit the playlist alone for the higher sales.",
+      "hint": "Weigh the playlist explanation against the separately mentioned detail about store age and renovation status.",
+      "explanation": "Since the playlist stores were also newer and recently renovated, a factor independently likely to boost customer experience and sales, the passage supports renovation status as a competing explanation that makes crediting the playlist alone difficult.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Upbeat-playlist stores: higher sales -> those stores also newer, recently renovated -> renovation status is a plausible competing factor, making it hard to credit the playlist alone"
+      ],
+      "logicChainSteps": [
+        "Upbeat-playlist stores: higher sales",
+        "those stores also newer, recently renovated",
+        "renovation status is a plausible competing factor, making it hard to credit the playlist alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The playlist alone is definitely and solely responsible for the higher sales. No part of the passage's account suggests otherwise.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Store renovation status had no possible connection to sales figures.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Sales figures were identical across all store types according to the passage. The passage gives no indication that this varied across the circumstances described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Given that the upbeat-playlist stores were also newer and renovated, it is difficult to credit the playlist alone for the higher sales.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L143_Q1_PRACTICE",
+      "level": 143,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's health department noted a decline in flu-related hospital visits the same winter a new public awareness campaign about handwashing launched. That same winter, the seasonal flu strain circulating was also identified by health officials as milder than in previous years, based on national surveillance data.",
+      "options": [
+        "The handwashing campaign is definitely and solely responsible for the decline. Every relevant detail included in the passage is consistent with treating this as a complete and accurate account, without further qualification being necessary.",
+        "Because the circulating flu strain was independently identified as milder, it is difficult to confidently credit the handwashing campaign alone for the decline.",
+        "The mildness of the flu strain had no possible connection to hospital visits. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+        "Flu-related hospital visits actually increased that winter according to the passage. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation."
+      ],
+      "correctAnswer": "Because the circulating flu strain was independently identified as milder, it is difficult to confidently credit the handwashing campaign alone for the decline.",
+      "hint": "Weigh the campaign explanation against the separately confirmed detail about strain severity.",
+      "explanation": "Since national data independently confirmed a milder strain that winter, a factor unrelated to the awareness campaign, the passage supports strain mildness as a competing explanation that complicates crediting the campaign alone.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Handwashing campaign launches -> flu hospital visits decline -> that winter's strain independently confirmed as milder nationally -> strain mildness is a competing factor, complicating credit to the campaign alone"
+      ],
+      "logicChainSteps": [
+        "Handwashing campaign launches",
+        "flu hospital visits decline",
+        "that winter's strain independently confirmed as milder nationally",
+        "strain mildness is a competing factor, complicating credit to the campaign alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The handwashing campaign is definitely and solely responsible for the decline. Every relevant detail included in the passage is consistent with treating this as a complete and accurate account, without further qualification being necessary.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Because the circulating flu strain was independently identified as milder, it is difficult to confidently credit the handwashing campaign alone for the decline.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The mildness of the flu strain had no possible connection to hospital visits. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Flu-related hospital visits actually increased that winter according to the passage. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L143_Q2_PRACTICE",
+      "level": 143,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A furniture retailer found that customers who used its augmented reality app to preview furniture in their homes before buying reported higher satisfaction with their purchases. Customers who used the app were also, based on account data, more likely to be repeat customers who had already purchased from the company at least once before.",
+      "options": [
+        "The app alone is definitely and solely responsible for the higher satisfaction. Nothing in the passage suggests this changed at any point during the period described.",
+        "Since app users were also more often repeat customers, prior familiarity with the company may be a competing explanation for the higher satisfaction.",
+        "First-time customers were more likely to use the app than repeat customers. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+        "Satisfaction levels were identical between app users and non-users. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported."
+      ],
+      "correctAnswer": "Since app users were also more often repeat customers, prior familiarity with the company may be a competing explanation for the higher satisfaction.",
+      "hint": "Weigh the app explanation against the separately mentioned detail about repeat customer status.",
+      "explanation": "Since app users were also disproportionately repeat customers, who may already trust the brand and know what to expect, this detail offers a competing explanation that makes it difficult to credit the app alone for the satisfaction difference.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "App users: higher satisfaction -> app users also more likely repeat customers -> prior brand familiarity is a competing explanation, complicating credit to the app alone"
+      ],
+      "logicChainSteps": [
+        "App users: higher satisfaction",
+        "app users also more likely repeat customers",
+        "prior brand familiarity is a competing explanation, complicating credit to the app alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The app alone is definitely and solely responsible for the higher satisfaction. Nothing in the passage suggests this changed at any point during the period described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Since app users were also more often repeat customers, prior familiarity with the company may be a competing explanation for the higher satisfaction.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "First-time customers were more likely to use the app than repeat customers. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Satisfaction levels were identical between app users and non-users. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L143_Q3_PRACTICE",
+      "level": 143,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A regional airline found that flights it rebranded with a new, more comfortable-sounding name for its economy class ('Comfort Plus' instead of 'Economy') received higher passenger satisfaction ratings. The actual seats, legroom, and amenities in that class were not changed in any way during the rebrand.",
+      "options": [
+        "The seats and legroom were significantly improved during the rebrand.",
+        "The name change had no possible connection to passenger satisfaction ratings.",
+        "Since nothing physically changed except the name, the rebrand itself, rather than any real improvement, is the more plausible explanation for the higher ratings.",
+        "Satisfaction ratings actually decreased after the rebrand according to the passage."
+      ],
+      "correctAnswer": "Since nothing physically changed except the name, the rebrand itself, rather than any real improvement, is the more plausible explanation for the higher ratings.",
+      "hint": "Consider what the passage explicitly rules out about physical changes to the seating.",
+      "explanation": "Because the passage explicitly states the physical seats and amenities were unchanged, the only plausible explanation left for the ratings increase is the psychological effect of the new, more appealing name itself.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Economy renamed 'Comfort Plus' -> physical seats, legroom, amenities unchanged -> satisfaction ratings rise -> since nothing physical changed, the name itself is the more plausible explanation"
+      ],
+      "logicChainSteps": [
+        "Economy renamed 'Comfort Plus'",
+        "physical seats, legroom, amenities unchanged",
+        "satisfaction ratings rise",
+        "since nothing physical changed, the name itself is the more plausible explanation"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The seats and legroom were significantly improved during the rebrand.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The name change had no possible connection to passenger satisfaction ratings.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Since nothing physically changed except the name, the rebrand itself, rather than any real improvement, is the more plausible explanation for the higher ratings.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Satisfaction ratings actually decreased after the rebrand according to the passage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L144_Q1_PRACTICE",
+      "level": 144,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's downtown revitalization report noted that pedestrian foot traffic increased significantly the same year several new murals were painted on building walls throughout downtown. That same year, the city also completed a major repaving project on the main downtown street, replacing cracked, uneven sidewalks with smooth new pavement.",
+      "options": [
+        "The murals alone are definitely and solely responsible for the foot traffic increase. The passage offers no detail suggesting this changed over the period discussed.",
+        "Since improved sidewalks were also completed that year, it is difficult to confidently credit the murals alone for the increase in foot traffic.",
+        "The sidewalk repaving had no possible connection to foot traffic. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+        "Pedestrian foot traffic actually decreased that year according to the passage. This reading would hold true across the full sequence of events described."
+      ],
+      "correctAnswer": "Since improved sidewalks were also completed that year, it is difficult to confidently credit the murals alone for the increase in foot traffic.",
+      "hint": "Weigh the murals explanation against the separately mentioned sidewalk repaving project.",
+      "explanation": "Since smoother, safer sidewalks were also completed the same year, a factor independently likely to encourage walking, the passage supports the repaving as a competing explanation that complicates crediting the murals alone.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Murals painted downtown -> sidewalks also repaved same year -> foot traffic increases -> repaving is a competing explanation, complicating credit to the murals alone"
+      ],
+      "logicChainSteps": [
+        "Murals painted downtown",
+        "sidewalks also repaved same year",
+        "foot traffic increases",
+        "repaving is a competing explanation, complicating credit to the murals alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The murals alone are definitely and solely responsible for the foot traffic increase. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Since improved sidewalks were also completed that year, it is difficult to confidently credit the murals alone for the increase in foot traffic.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The sidewalk repaving had no possible connection to foot traffic. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Pedestrian foot traffic actually decreased that year according to the passage. This reading would hold true across the full sequence of events described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L144_Q2_PRACTICE",
+      "level": 144,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A software company found that customers who upgraded to its newest app version reported fewer crashes. The upgrade was released as a mandatory update pushed automatically to all users' devices, with no option to decline or delay installation, and it coincided with several phone manufacturers releasing operating system updates around the same time.",
+      "options": [
+        "The app update alone is definitely and solely responsible for the reduced crashes. The passage's account gives no reason to think this differed at any stage.",
+        "Since phone operating system updates happened around the same time, it is difficult to confidently attribute the reduced crashes to the app update alone.",
+        "Phone operating system updates had no possible connection to app crash rates. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+        "Crash reports actually increased after the update according to the passage. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place."
+      ],
+      "correctAnswer": "Since phone operating system updates happened around the same time, it is difficult to confidently attribute the reduced crashes to the app update alone.",
+      "hint": "Weigh the app update explanation against the separately mentioned phone OS updates happening at the same time.",
+      "explanation": "Because the app update coincided with unrelated phone operating system updates, which could independently affect app stability, the passage supports these OS changes as a competing explanation that complicates crediting the app update alone.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Mandatory app update pushed to all users -> phone OS updates released around the same time -> crashes decrease -> OS updates are a competing explanation, complicating credit to the app update alone"
+      ],
+      "logicChainSteps": [
+        "Mandatory app update pushed to all users",
+        "phone OS updates released around the same time",
+        "crashes decrease",
+        "OS updates are a competing explanation, complicating credit to the app update alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The app update alone is definitely and solely responsible for the reduced crashes. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Since phone operating system updates happened around the same time, it is difficult to confidently attribute the reduced crashes to the app update alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Phone operating system updates had no possible connection to app crash rates. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Crash reports actually increased after the update according to the passage. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L144_Q3_PRACTICE",
+      "level": 144,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A regional hospital's patient survey showed higher satisfaction scores for nurses who wore a new style of uniform introduced that year. The hospital also implemented a new electronic charting system that year, which nurses reported saved them significant time previously spent on paperwork, giving them more time for direct patient interaction.",
+      "options": [
+        "Since the charting system gave nurses more time with patients, this change is a plausible competing explanation for the higher satisfaction scores, alongside or instead of the uniforms.",
+        "The new uniforms alone are definitely and solely responsible for the higher scores.",
+        "The electronic charting system had no possible connection to patient satisfaction.",
+        "Patient satisfaction scores actually decreased that year according to the passage."
+      ],
+      "correctAnswer": "Since the charting system gave nurses more time with patients, this change is a plausible competing explanation for the higher satisfaction scores, alongside or instead of the uniforms.",
+      "hint": "Weigh the uniform explanation against the separately mentioned charting system and its effect on nurses' time.",
+      "explanation": "Since the new charting system freed up significant nursing time for patient interaction, a factor with a clear, direct link to patient experience, the passage supports this as a strong competing explanation alongside the uniform change.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "New uniforms introduced -> new charting system also introduced, frees up nurse time for patients -> patient satisfaction rises -> charting system's effect on patient interaction is a strong competing explanation"
+      ],
+      "logicChainSteps": [
+        "New uniforms introduced",
+        "new charting system also introduced, frees up nurse time for patients",
+        "patient satisfaction rises",
+        "charting system's effect on patient interaction is a strong competing explanation"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Since the charting system gave nurses more time with patients, this change is a plausible competing explanation for the higher satisfaction scores, alongside or instead of the uniforms.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The new uniforms alone are definitely and solely responsible for the higher scores.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The electronic charting system had no possible connection to patient satisfaction.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Patient satisfaction scores actually decreased that year according to the passage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L145_Q1_PRACTICE",
+      "level": 145,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's parks department found that a public park with a newly installed fitness trail saw increased usage by older adults. The fitness trail was installed the same year the park also added better lighting and repaved the main walking path, both improvements aimed at general park safety and accessibility rather than fitness specifically.",
+      "options": [
+        "Since general safety and accessibility improvements happened at the same time, it is difficult to confidently credit the fitness trail alone for the increased use by older adults.",
+        "The fitness trail alone is definitely and solely responsible for the increased use.",
+        "The lighting and path improvements had no possible connection to park usage.",
+        "Usage by older adults actually decreased that year according to the passage."
+      ],
+      "correctAnswer": "Since general safety and accessibility improvements happened at the same time, it is difficult to confidently credit the fitness trail alone for the increased use by older adults.",
+      "hint": "Weigh the fitness trail explanation against the separately mentioned safety and accessibility improvements.",
+      "explanation": "Since better lighting and a repaved path, both general safety improvements particularly relevant to older adults' comfort and confidence, happened simultaneously, the passage supports these as a competing explanation that complicates crediting the fitness trail alone.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Fitness trail installed -> lighting and path also improved for general safety/accessibility -> older adult park usage increases -> safety/accessibility improvements are a competing explanation, complicating credit to the trail alone"
+      ],
+      "logicChainSteps": [
+        "Fitness trail installed",
+        "lighting and path also improved for general safety/accessibility",
+        "older adult park usage increases",
+        "safety/accessibility improvements are a competing explanation, complicating credit to the trail alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Since general safety and accessibility improvements happened at the same time, it is difficult to confidently credit the fitness trail alone for the increased use by older adults.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The fitness trail alone is definitely and solely responsible for the increased use.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The lighting and path improvements had no possible connection to park usage.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Usage by older adults actually decreased that year according to the passage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L145_Q2_PRACTICE",
+      "level": 145,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A national coffee chain found that its stores offering a new oat milk option saw higher overall beverage sales. Those same stores had also recently been remodeled with more comfortable seating and additional electrical outlets for laptops, part of a chain-wide store redesign initiative unrelated to the oat milk rollout timing.",
+      "options": [
+        "The oat milk option alone is definitely and solely responsible for the higher sales. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+        "The store remodeling had no possible connection to beverage sales. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+        "Since the stores were also remodeled with more comfortable seating around the same time, it is difficult to confidently credit the oat milk option alone for higher sales.",
+        "Beverage sales actually decreased in those stores according to the passage. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place."
+      ],
+      "correctAnswer": "Since the stores were also remodeled with more comfortable seating around the same time, it is difficult to confidently credit the oat milk option alone for higher sales.",
+      "hint": "Weigh the oat milk explanation against the separately mentioned store remodeling happening around the same time.",
+      "explanation": "Since these stores were also remodeled with more comfortable, laptop-friendly seating, a factor independently likely to encourage customers to stay longer and order more, the passage supports the remodel as a competing explanation.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Oat milk option added -> stores also remodeled with comfortable seating, outlets -> beverage sales rise -> remodel is a competing explanation, complicating credit to oat milk alone"
+      ],
+      "logicChainSteps": [
+        "Oat milk option added",
+        "stores also remodeled with comfortable seating, outlets",
+        "beverage sales rise",
+        "remodel is a competing explanation, complicating credit to oat milk alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The oat milk option alone is definitely and solely responsible for the higher sales. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The store remodeling had no possible connection to beverage sales. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Since the stores were also remodeled with more comfortable seating around the same time, it is difficult to confidently credit the oat milk option alone for higher sales.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Beverage sales actually decreased in those stores according to the passage. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L145_Q3_PRACTICE",
+      "level": 145,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's public library reported that branches offering extended weekend hours saw higher overall visitor counts. Those same branches happened to be located in neighborhoods that had experienced significant new housing development and population growth over the previous two years, according to city planning records.",
+      "options": [
+        "Extended weekend hours alone are definitely and solely responsible for the higher counts.",
+        "Since these branches were also in rapidly growing neighborhoods, population growth is a plausible competing explanation for the higher visitor counts, alongside or instead of the extended hours.",
+        "Neighborhood population growth had no possible connection to library visitor counts.",
+        "Visitor counts actually decreased at those branches according to the passage."
+      ],
+      "correctAnswer": "Since these branches were also in rapidly growing neighborhoods, population growth is a plausible competing explanation for the higher visitor counts, alongside or instead of the extended hours.",
+      "hint": "Weigh the extended hours explanation against the separately mentioned neighborhood population growth.",
+      "explanation": "Since these branches were also located in neighborhoods with significant recent population growth, a factor independently likely to increase visitor counts regardless of library hours, the passage supports growth as a strong competing explanation.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Extended weekend hours offered -> those branches also in rapidly growing neighborhoods -> visitor counts rise -> population growth is a plausible competing explanation for the increase"
+      ],
+      "logicChainSteps": [
+        "Extended weekend hours offered",
+        "those branches also in rapidly growing neighborhoods",
+        "visitor counts rise",
+        "population growth is a plausible competing explanation for the increase"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Extended weekend hours alone are definitely and solely responsible for the higher counts.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Since these branches were also in rapidly growing neighborhoods, population growth is a plausible competing explanation for the higher visitor counts, alongside or instead of the extended hours.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Neighborhood population growth had no possible connection to library visitor counts.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Visitor counts actually decreased at those branches according to the passage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L146_Q1_PRACTICE",
+      "level": 146,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A regional airline found that flights it began serving a free snack on had higher customer satisfaction ratings than flights without the snack. The snack was introduced specifically on the airline's longer routes, over three hours, while shorter routes continued without any snack service.",
+      "options": [
+        "The free snack alone is definitely and solely responsible for the satisfaction difference. This pattern would hold steady across the entire situation the passage lays out.",
+        "Flight length had no possible connection to passenger satisfaction. As far as the passage's description goes, nothing about the surrounding details would suggest this needs to be treated as an incomplete picture.",
+        "Since the snack was introduced specifically on longer flights, flight length itself is a plausible competing explanation for the satisfaction difference.",
+        "Shorter flights received higher satisfaction ratings than longer flights. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred."
+      ],
+      "correctAnswer": "Since the snack was introduced specifically on longer flights, flight length itself is a plausible competing explanation for the satisfaction difference.",
+      "hint": "Weigh the snack explanation against the detail about which specific flights received it.",
+      "explanation": "Because the snack was specifically tied to longer flights, and passengers on longer flights may rate their experience differently for reasons related to flight length itself, this detail offers flight length as a competing explanation alongside the snack.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Free snack introduced on flights over 3 hours -> those flights show higher satisfaction -> flight length itself is a plausible competing factor, alongside or instead of the snack"
+      ],
+      "logicChainSteps": [
+        "Free snack introduced on flights over 3 hours",
+        "those flights show higher satisfaction",
+        "flight length itself is a plausible competing factor, alongside or instead of the snack"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The free snack alone is definitely and solely responsible for the satisfaction difference. This pattern would hold steady across the entire situation the passage lays out.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Flight length had no possible connection to passenger satisfaction. As far as the passage's description goes, nothing about the surrounding details would suggest this needs to be treated as an incomplete picture.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Since the snack was introduced specifically on longer flights, flight length itself is a plausible competing explanation for the satisfaction difference.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Shorter flights received higher satisfaction ratings than longer flights. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L146_Q2_PRACTICE",
+      "level": 146,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's animal shelter found that dogs featured with professionally shot photos on their adoption profiles were adopted faster than dogs with photos taken on a staff member's phone. The shelter's volunteer photography program specifically selected calmer, more photogenic dogs for professional photo sessions, since anxious dogs were harder to photograph well.",
+      "options": [
+        "The professional photos alone are definitely and solely responsible for faster adoption. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+        "Anxious dogs were specifically selected for the professional photo program. The way the events are described throughout the passage offers no clear signal that this particular reading should be treated with any extra caution.",
+        "Since calmer, more photogenic dogs were specifically selected for professional photos, the dogs' temperament itself is a plausible competing explanation for faster adoption.",
+        "Adoption speed had no possible connection to any photo quality. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation."
+      ],
+      "correctAnswer": "Since calmer, more photogenic dogs were specifically selected for professional photos, the dogs' temperament itself is a plausible competing explanation for faster adoption.",
+      "hint": "Weigh the photo quality explanation against the detail about which dogs were selected for the program.",
+      "explanation": "Since the program specifically selected calmer dogs, and temperament independently affects how appealing and easy to interact with a dog seems to adopters, this detail offers dog temperament as a competing explanation for the faster adoption pattern.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Professional photos taken only of calmer, photogenic dogs -> those dogs adopted faster -> temperament itself is a plausible competing explanation, alongside or instead of photo quality"
+      ],
+      "logicChainSteps": [
+        "Professional photos taken only of calmer, photogenic dogs",
+        "those dogs adopted faster",
+        "temperament itself is a plausible competing explanation, alongside or instead of photo quality"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The professional photos alone are definitely and solely responsible for faster adoption. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Anxious dogs were specifically selected for the professional photo program. The way the events are described throughout the passage offers no clear signal that this particular reading should be treated with any extra caution.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Since calmer, more photogenic dogs were specifically selected for professional photos, the dogs' temperament itself is a plausible competing explanation for faster adoption.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Adoption speed had no possible connection to any photo quality. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L146_Q3_PRACTICE",
+      "level": 146,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A software company found that customers who contacted support on weekday mornings reported higher satisfaction with their support experience than customers who contacted support in the evening. The company's most experienced support staff, who had been with the company the longest, worked exclusively weekday morning shifts, while newer hires typically covered evening shifts.",
+      "options": [
+        "The time of day alone is definitely and solely responsible for the satisfaction difference. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+        "Newer hires worked exclusively during weekday morning shifts.",
+        "Satisfaction levels showed no relationship to any staffing factor.",
+        "Since more experienced staff worked mornings, staff experience level is a plausible competing explanation for the satisfaction difference, alongside or instead of the time of day itself."
+      ],
+      "correctAnswer": "Since more experienced staff worked mornings, staff experience level is a plausible competing explanation for the satisfaction difference, alongside or instead of the time of day itself.",
+      "hint": "Weigh the time-of-day explanation against the detail about which staff worked which shifts.",
+      "explanation": "Since the most experienced staff specifically worked mornings, and experience level independently affects how well support issues get resolved, this detail offers staff experience as a competing explanation for the satisfaction pattern beyond just the time of day.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Experienced staff work mornings, newer hires work evenings -> morning contacts show higher satisfaction -> staff experience is a plausible competing explanation, alongside or instead of time of day"
+      ],
+      "logicChainSteps": [
+        "Experienced staff work mornings, newer hires work evenings",
+        "morning contacts show higher satisfaction",
+        "staff experience is a plausible competing explanation, alongside or instead of time of day"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The time of day alone is definitely and solely responsible for the satisfaction difference. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Newer hires worked exclusively during weekday morning shifts.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Satisfaction levels showed no relationship to any staffing factor.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Since more experienced staff worked mornings, staff experience level is a plausible competing explanation for the satisfaction difference, alongside or instead of the time of day itself.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L147_Q1_PRACTICE",
+      "level": 147,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A university found that students who attended office hours regularly earned higher final grades than students who never attended. The professor who taught the course held office hours at 4 p.m. on Thursdays, a time slot that conflicted with a popular introductory chemistry lab required for many first-year pre-med students, meaning students with heavier, more demanding course loads were less likely to attend.",
+      "options": [
+        "Attending office hours alone is definitely and solely responsible for the grade difference. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+        "Since the office hours time conflicted with a demanding required lab, students' overall course load difficulty is a plausible competing explanation for the grade difference.",
+        "Students with the lightest course loads were unable to attend office hours. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+        "Final grades showed no relationship to any scheduling factor."
+      ],
+      "correctAnswer": "Since the office hours time conflicted with a demanding required lab, students' overall course load difficulty is a plausible competing explanation for the grade difference.",
+      "hint": "Weigh the office hours explanation against the detail about which students the time slot excluded.",
+      "explanation": "Since the specific time slot excluded students juggling a demanding required lab, and heavier overall course loads could independently affect grades regardless of office hours, this detail offers course load as a plausible competing explanation.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Office hours at 4pm Thursday -> conflicts with a demanding required lab -> students with heavier course loads less likely to attend -> course load difficulty is a plausible competing explanation for the grade difference"
+      ],
+      "logicChainSteps": [
+        "Office hours at 4pm Thursday",
+        "conflicts with a demanding required lab",
+        "students with heavier course loads less likely to attend",
+        "course load difficulty is a plausible competing explanation for the grade difference"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Attending office hours alone is definitely and solely responsible for the grade difference. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Since the office hours time conflicted with a demanding required lab, students' overall course load difficulty is a plausible competing explanation for the grade difference.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Students with the lightest course loads were unable to attend office hours. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Final grades showed no relationship to any scheduling factor.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L147_Q2_PRACTICE",
+      "level": 147,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A regional grocery chain found that stores with a dedicated 'local produce' section had higher overall produce sales than stores without one. Stores with the dedicated section were also, according to internal records, located in neighborhoods with significantly higher average household incomes than stores without the section.",
+      "options": [
+        "The local produce section alone is definitely and solely responsible for the higher sales. The passage's account gives no reason to think this differed at any stage.",
+        "Since these stores were also in higher-income neighborhoods, household income is a plausible competing explanation for the higher produce sales.",
+        "Stores without the section were located in higher-income neighborhoods. This would be expected to hold across the entire situation as described.",
+        "Produce sales showed no relationship to any neighborhood factor."
+      ],
+      "correctAnswer": "Since these stores were also in higher-income neighborhoods, household income is a plausible competing explanation for the higher produce sales.",
+      "hint": "Weigh the local produce section explanation against the detail about neighborhood income levels.",
+      "explanation": "Since stores with the dedicated section were also in wealthier neighborhoods, and income independently affects how much households spend on produce, this detail offers neighborhood income as a plausible competing explanation for the sales difference.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Stores with local produce section: higher produce sales -> those stores also in higher-income neighborhoods -> income level is a plausible competing explanation for the sales difference"
+      ],
+      "logicChainSteps": [
+        "Stores with local produce section: higher produce sales",
+        "those stores also in higher-income neighborhoods",
+        "income level is a plausible competing explanation for the sales difference"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The local produce section alone is definitely and solely responsible for the higher sales. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Since these stores were also in higher-income neighborhoods, household income is a plausible competing explanation for the higher produce sales.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Stores without the section were located in higher-income neighborhoods. This would be expected to hold across the entire situation as described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Produce sales showed no relationship to any neighborhood factor.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L147_Q3_PRACTICE",
+      "level": 147,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's public transit agency found that bus routes with real-time arrival tracking displayed at stops had higher ridership than routes without the displays. The displays were installed first on the agency's busiest, most frequently used routes, based on a prioritization plan the agency published before installation began.",
+      "options": [
+        "The real-time displays alone are definitely and solely responsible for the higher ridership. Every relevant detail included in the passage is consistent with treating this as a complete and accurate account, without further qualification being necessary.",
+        "The displays were installed first on the agency's least-used routes. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+        "Ridership levels showed no relationship to any prioritization plan. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+        "Since the displays were specifically installed first on already-busy routes, existing ridership levels are a plausible competing explanation for the ridership pattern."
+      ],
+      "correctAnswer": "Since the displays were specifically installed first on already-busy routes, existing ridership levels are a plausible competing explanation for the ridership pattern.",
+      "hint": "Weigh the display explanation against the detail about which routes were prioritized for installation.",
+      "explanation": "Since the agency specifically prioritized its busiest routes for display installation, based on a published plan, the routes' already-high ridership is a plausible competing explanation for why display-equipped routes show higher ridership.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Displays installed first on already-busiest routes, per published plan -> those routes show higher ridership -> pre-existing ridership levels are a plausible competing explanation for the pattern"
+      ],
+      "logicChainSteps": [
+        "Displays installed first on already-busiest routes, per published plan",
+        "those routes show higher ridership",
+        "pre-existing ridership levels are a plausible competing explanation for the pattern"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The real-time displays alone are definitely and solely responsible for the higher ridership. Every relevant detail included in the passage is consistent with treating this as a complete and accurate account, without further qualification being necessary.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The displays were installed first on the agency's least-used routes. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Ridership levels showed no relationship to any prioritization plan. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Since the displays were specifically installed first on already-busy routes, existing ridership levels are a plausible competing explanation for the ridership pattern.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L148_Q1_PRACTICE",
+      "level": 148,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A hospital found that surgical patients assigned to private recovery rooms had shorter average hospital stays than patients in shared rooms. The hospital's private rooms were reserved primarily for patients undergoing less invasive procedures with historically shorter typical recovery times, while patients recovering from more extensive surgeries were routinely assigned to shared rooms due to the need for closer monitoring equipment.",
+      "options": [
+        "Private rooms alone are definitely and solely responsible for the shorter stays. Nothing in the passage suggests this changed at any point during the period described.",
+        "Shared rooms were reserved specifically for less invasive procedures.",
+        "Since private rooms were reserved for less invasive procedures, procedure type itself is a plausible competing explanation for the shorter stays.",
+        "Hospital stay length showed no relationship to any assignment policy."
+      ],
+      "correctAnswer": "Since private rooms were reserved for less invasive procedures, procedure type itself is a plausible competing explanation for the shorter stays.",
+      "hint": "Weigh the private room explanation against the detail about which types of procedures were assigned to which room type.",
+      "explanation": "Since private rooms were specifically reserved for less invasive procedures with inherently shorter typical recovery times, procedure type itself is a plausible competing explanation for the difference in stay length, separate from the room type alone.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Private rooms reserved for less invasive procedures -> those patients: shorter average stays -> procedure type itself is a plausible competing explanation, not the room type alone"
+      ],
+      "logicChainSteps": [
+        "Private rooms reserved for less invasive procedures",
+        "those patients: shorter average stays",
+        "procedure type itself is a plausible competing explanation, not the room type alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Private rooms alone are definitely and solely responsible for the shorter stays. Nothing in the passage suggests this changed at any point during the period described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Shared rooms were reserved specifically for less invasive procedures.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Since private rooms were reserved for less invasive procedures, procedure type itself is a plausible competing explanation for the shorter stays.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Hospital stay length showed no relationship to any assignment policy.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L148_Q2_PRACTICE",
+      "level": 148,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A national retailer found that stores using a new digital price-tag system, which updates prices electronically instead of requiring manual paper tag changes, reported fewer pricing errors at checkout. The digital system was rolled out first to the company's newest stores, which also had newly trained staff who had recently completed an updated employee onboarding program covering pricing procedures in detail.",
+      "options": [
+        "The digital price tags alone are definitely and solely responsible for fewer errors. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+        "Staff at digital-tag stores had not received any pricing-related training.",
+        "Pricing errors showed no relationship to any store characteristic.",
+        "Since the digital-tag stores also had newly trained staff on an updated program, staff training is a plausible competing explanation for the fewer pricing errors."
+      ],
+      "correctAnswer": "Since the digital-tag stores also had newly trained staff on an updated program, staff training is a plausible competing explanation for the fewer pricing errors.",
+      "hint": "Weigh the digital tag explanation against the detail about staff training at those same stores.",
+      "explanation": "Since the digital-tag stores also had staff freshly trained on updated pricing procedures, this recent, detailed training is a plausible competing explanation for the fewer errors, separate from the technology itself.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Digital tags rolled out to newest stores -> those stores also have newly trained staff on updated pricing procedures -> fewer pricing errors -> staff training is a plausible competing explanation for the improvement"
+      ],
+      "logicChainSteps": [
+        "Digital tags rolled out to newest stores",
+        "those stores also have newly trained staff on updated pricing procedures",
+        "fewer pricing errors",
+        "staff training is a plausible competing explanation for the improvement"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The digital price tags alone are definitely and solely responsible for fewer errors. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Staff at digital-tag stores had not received any pricing-related training.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Pricing errors showed no relationship to any store characteristic.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Since the digital-tag stores also had newly trained staff on an updated program, staff training is a plausible competing explanation for the fewer pricing errors.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L148_Q3_PRACTICE",
+      "level": 148,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's fire department found that households that completed a free home safety inspection had fewer reported fire incidents over the following year. Households that voluntarily scheduled the free inspection were also, according to a brief survey conducted at sign-up, more likely to already own working smoke detectors and to describe themselves as 'very safety-conscious' compared to households that never signed up.",
+      "options": [
+        "The home safety inspection alone is definitely and solely responsible for fewer incidents. This reading would hold true across the full sequence of events described.",
+        "Households that never signed up were more safety-conscious than those who did. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+        "Since households that signed up were already more safety-conscious, this pre-existing attitude is a plausible competing explanation for the fewer fire incidents.",
+        "Fire incident rates showed no relationship to any household characteristic. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation."
+      ],
+      "correctAnswer": "Since households that signed up were already more safety-conscious, this pre-existing attitude is a plausible competing explanation for the fewer fire incidents.",
+      "hint": "Weigh the inspection explanation against the detail about the households who chose to sign up in the first place.",
+      "explanation": "Since households that voluntarily signed up were already more safety-conscious and more likely to have working smoke detectors, this existing mindset is a plausible competing explanation for the lower incident rate, separate from the inspection's direct effect.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Households sign up for free inspection voluntarily -> those households already more safety-conscious, more likely to have smoke detectors -> fewer fire incidents -> pre-existing safety-consciousness is a plausible competing explanation"
+      ],
+      "logicChainSteps": [
+        "Households sign up for free inspection voluntarily",
+        "those households already more safety-conscious, more likely to have smoke detectors",
+        "fewer fire incidents",
+        "pre-existing safety-consciousness is a plausible competing explanation"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The home safety inspection alone is definitely and solely responsible for fewer incidents. This reading would hold true across the full sequence of events described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Households that never signed up were more safety-conscious than those who did. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Since households that signed up were already more safety-conscious, this pre-existing attitude is a plausible competing explanation for the fewer fire incidents.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Fire incident rates showed no relationship to any household characteristic. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L149_Q1_PRACTICE",
+      "level": 149,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A regional airline found that passengers who booked through its mobile app reported higher overall satisfaction with the booking process than passengers who booked by phone with a call center agent. App bookings were processed instantly with no wait time, while phone bookings during the period studied often involved hold times due to a temporary staffing shortage at the call center, a shortage the airline has since resolved.",
+      "options": [
+        "Since phone bookings were affected by a temporary staffing shortage during this period, this issue is a plausible competing explanation for the satisfaction gap, rather than the booking method alone.",
+        "The mobile app alone is definitely and solely responsible for the satisfaction gap. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+        "The call center staffing shortage had no possible connection to hold times. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+        "Phone booking satisfaction was higher than app booking satisfaction. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred."
+      ],
+      "correctAnswer": "Since phone bookings were affected by a temporary staffing shortage during this period, this issue is a plausible competing explanation for the satisfaction gap, rather than the booking method alone.",
+      "hint": "Weigh the app explanation against the detail about the temporary call center staffing issue.",
+      "explanation": "Since a temporary staffing shortage specifically caused phone booking hold times during this period, and that shortage has since been resolved, this situational issue is a plausible competing explanation for the satisfaction gap rather than something inherent to the booking method itself.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "App bookings: instant, no wait -> phone bookings: hold times due to temporary staffing shortage -> app users report higher satisfaction -> the temporary shortage is a plausible competing explanation, not something inherent to phone booking"
+      ],
+      "logicChainSteps": [
+        "App bookings: instant, no wait",
+        "phone bookings: hold times due to temporary staffing shortage",
+        "app users report higher satisfaction",
+        "the temporary shortage is a plausible competing explanation, not something inherent to phone booking"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Since phone bookings were affected by a temporary staffing shortage during this period, this issue is a plausible competing explanation for the satisfaction gap, rather than the booking method alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The mobile app alone is definitely and solely responsible for the satisfaction gap. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The call center staffing shortage had no possible connection to hold times. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Phone booking satisfaction was higher than app booking satisfaction. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L149_Q2_PRACTICE",
+      "level": 149,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's school district found that students enrolled in its new dual-language immersion program scored higher on standardized reading tests than students in the standard curriculum. Enrollment in the immersion program required a parent application and interview process, and program staff noted that applying families were disproportionately those already reading regularly with their children at home before enrollment.",
+      "options": [
+        "Since applying families were already more likely to read regularly at home, this pre-existing home reading habit is a plausible competing explanation for the higher scores.",
+        "The immersion program alone is definitely and solely responsible for the higher scores. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+        "Families who did not apply read more regularly at home than those who did. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+        "Reading test scores showed no relationship to any family characteristic."
+      ],
+      "correctAnswer": "Since applying families were already more likely to read regularly at home, this pre-existing home reading habit is a plausible competing explanation for the higher scores.",
+      "hint": "Weigh the immersion program explanation against the detail about the families who chose to apply.",
+      "explanation": "Since families applying to the program were already more likely to read with their children regularly at home, a factor independently linked to reading scores, this pre-existing habit is a plausible competing explanation for part of the score difference.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Immersion program requires application/interview -> applying families already read regularly at home -> immersion students score higher -> pre-existing home reading habits are a plausible competing explanation"
+      ],
+      "logicChainSteps": [
+        "Immersion program requires application/interview",
+        "applying families already read regularly at home",
+        "immersion students score higher",
+        "pre-existing home reading habits are a plausible competing explanation"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Since applying families were already more likely to read regularly at home, this pre-existing home reading habit is a plausible competing explanation for the higher scores.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The immersion program alone is definitely and solely responsible for the higher scores. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Families who did not apply read more regularly at home than those who did. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Reading test scores showed no relationship to any family characteristic.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L149_Q3_PRACTICE",
+      "level": 149,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A hospital network found that patients whose surgeries were performed at its newest facility had shorter average recovery times than patients whose surgeries were performed at its older facilities. The newest facility, opened two years ago, also has a policy of only performing surgeries during a surgeon's first two scheduled procedures of the day, before fatigue from a long shift becomes a factor, a policy not yet implemented at the older facilities.",
+      "options": [
+        "The newest facility alone is definitely and solely responsible for the shorter recovery times. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+        "Since the newest facility limits surgeries to a surgeon's earliest procedures of the day, surgeon fatigue is a plausible competing explanation for the shorter recovery times, alongside facility differences.",
+        "The older facilities also limit surgeries to a surgeon's first two procedures. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+        "Recovery times showed no relationship to any scheduling policy."
+      ],
+      "correctAnswer": "Since the newest facility limits surgeries to a surgeon's earliest procedures of the day, surgeon fatigue is a plausible competing explanation for the shorter recovery times, alongside facility differences.",
+      "hint": "Weigh the newest-facility explanation against the specific scheduling policy detail mentioned.",
+      "explanation": "Since the newest facility specifically limits surgeries to a surgeon's earliest, least fatigued procedures of the day, and fatigue could independently affect surgical outcomes, this scheduling policy is a plausible competing explanation for the shorter recovery times.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Newest facility limits surgeries to surgeon's first two procedures of the day -> reduces fatigue factor -> patients there recover faster -> fatigue-reducing scheduling is a plausible competing explanation, alongside general facility differences"
+      ],
+      "logicChainSteps": [
+        "Newest facility limits surgeries to surgeon's first two procedures of the day",
+        "reduces fatigue factor",
+        "patients there recover faster",
+        "fatigue-reducing scheduling is a plausible competing explanation, alongside general facility differences"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The newest facility alone is definitely and solely responsible for the shorter recovery times. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Since the newest facility limits surgeries to a surgeon's earliest procedures of the day, surgeon fatigue is a plausible competing explanation for the shorter recovery times, alongside facility differences.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The older facilities also limit surgeries to a surgeon's first two procedures. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Recovery times showed no relationship to any scheduling policy.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L150_Q1_PRACTICE",
+      "level": 150,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A national gym chain found that members who used its app-based workout tracking feature had higher membership renewal rates than members who did not use the feature. The app feature launched the same year the company also introduced a significantly lower monthly membership price to compete with a new budget gym chain entering the market, a price change announced and applied to all members regardless of app usage.",
+      "options": [
+        "The price reduction alone is definitely and solely responsible for the renewal difference between the two groups. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+        "The app feature had no possible connection to renewal rates.",
+        "Since the price reduction applied to all members regardless of app usage, it cannot fully explain why app users specifically renewed at higher rates, making app usage itself remain a plausible contributing factor.",
+        "Renewal rates were identical between app users and non-users."
+      ],
+      "correctAnswer": "Since the price reduction applied to all members regardless of app usage, it cannot fully explain why app users specifically renewed at higher rates, making app usage itself remain a plausible contributing factor.",
+      "hint": "Consider that the price change affected everyone equally, and think about what that means for explaining a difference specifically between app users and non-users.",
+      "explanation": "Since the price cut applied uniformly to all members, it cannot by itself explain why app users specifically renewed more than non-users; a uniform change cannot account for a difference between subgroups, so app usage remains a plausible explanation for that specific gap.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "App feature launches -> price reduction applied to ALL members equally -> app users show higher renewal than non-users -> since the price cut affected everyone equally, it can't explain the specific gap between the two groups -> app usage remains a plausible factor for that gap"
+      ],
+      "logicChainSteps": [
+        "App feature launches",
+        "price reduction applied to ALL members equally",
+        "app users show higher renewal than non-users",
+        "since the price cut affected everyone equally, it can't explain the specific gap between the two groups",
+        "app usage remains a plausible factor for that gap"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The price reduction alone is definitely and solely responsible for the renewal difference between the two groups. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The app feature had no possible connection to renewal rates.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Since the price reduction applied to all members regardless of app usage, it cannot fully explain why app users specifically renewed at higher rates, making app usage itself remain a plausible contributing factor.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Renewal rates were identical between app users and non-users.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L150_Q2_PRACTICE",
+      "level": 150,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's library system found that branches with a 'quiet study zone' had higher overall visitor satisfaction scores than branches without one. All branches in the system received the same annual operating budget and staffing levels that year, and the quiet zones were installed based purely on available unused floor space in older building layouts, unrelated to any other branch characteristic.",
+      "options": [
+        "Budget differences between branches are definitely responsible for the satisfaction gap.",
+        "Staffing levels varied significantly between branches with and without quiet zones.",
+        "Visitor satisfaction showed no relationship to any branch feature.",
+        "Since budget, staffing, and the reason for installation were unrelated to other branch differences, the quiet zone itself remains a plausible explanation for the satisfaction difference."
+      ],
+      "correctAnswer": "Since budget, staffing, and the reason for installation were unrelated to other branch differences, the quiet zone itself remains a plausible explanation for the satisfaction difference.",
+      "hint": "Notice that the passage explicitly rules out budget and staffing as differences, and explains installation was based on unrelated floor space availability.",
+      "explanation": "Since the passage explicitly states budget and staffing were identical across branches, and quiet zone installation was based on floor space unrelated to any other characteristic, these common alternative explanations are ruled out, leaving the quiet zone itself as the more plausible remaining explanation.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "All branches: same budget, same staffing -> quiet zones installed based on unrelated floor space availability -> quiet-zone branches: higher satisfaction -> budget/staffing explanations ruled out, leaving the quiet zone as the more plausible remaining explanation"
+      ],
+      "logicChainSteps": [
+        "All branches: same budget, same staffing",
+        "quiet zones installed based on unrelated floor space availability",
+        "quiet-zone branches: higher satisfaction",
+        "budget/staffing explanations ruled out, leaving the quiet zone as the more plausible remaining explanation"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Budget differences between branches are definitely responsible for the satisfaction gap.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Staffing levels varied significantly between branches with and without quiet zones.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Visitor satisfaction showed no relationship to any branch feature.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Since budget, staffing, and the reason for installation were unrelated to other branch differences, the quiet zone itself remains a plausible explanation for the satisfaction difference.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L150_Q3_PRACTICE",
+      "level": 150,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A regional airline found that flights operated with its newest aircraft model had higher on-time departure rates than flights using older aircraft models. Both aircraft types were flown on similar routes, by similarly experienced pilot crews, and departed from the same gates at the same airports, according to the airline's fleet assignment records.",
+      "options": [
+        "Crew experience differences are definitely responsible for the on-time rate difference.",
+        "The newer aircraft were flown on entirely different routes than the older ones.",
+        "On-time departure rates showed no relationship to any aircraft characteristic.",
+        "Since routes, crew experience, and gate locations were similar for both aircraft types, the aircraft model itself remains a plausible explanation for the difference in on-time rates."
+      ],
+      "correctAnswer": "Since routes, crew experience, and gate locations were similar for both aircraft types, the aircraft model itself remains a plausible explanation for the difference in on-time rates.",
+      "hint": "Notice how many common competing factors, routes, crew experience, and gates, the passage explicitly describes as similar between the two aircraft types.",
+      "explanation": "Since the passage explicitly rules out route, crew experience, and gate differences as explanations by stating they were similar for both aircraft types, this leaves the aircraft model itself, perhaps through newer technology or fewer mechanical issues, as the more plausible remaining explanation.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Similar routes, similar crew experience, same gates for both aircraft types -> newer aircraft: higher on-time rates -> common competing factors ruled out, leaving aircraft model itself as the more plausible remaining explanation"
+      ],
+      "logicChainSteps": [
+        "Similar routes, similar crew experience, same gates for both aircraft types",
+        "newer aircraft: higher on-time rates",
+        "common competing factors ruled out, leaving aircraft model itself as the more plausible remaining explanation"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Crew experience differences are definitely responsible for the on-time rate difference.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The newer aircraft were flown on entirely different routes than the older ones.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "On-time departure rates showed no relationship to any aircraft characteristic.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Since routes, crew experience, and gate locations were similar for both aircraft types, the aircraft model itself remains a plausible explanation for the difference in on-time rates.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    }
+  ]
+}

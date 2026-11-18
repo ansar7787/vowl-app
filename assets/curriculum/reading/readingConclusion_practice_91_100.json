@@ -1,0 +1,1508 @@
+{
+  "gameType": "readingConclusion",
+  "phase": "practice",
+  "batchIndex": 10,
+  "levels": "91-100",
+  "quests": [
+    {
+      "id": "RDG_READINGCONCLUSION_L91_Q1_PRACTICE",
+      "level": 91,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "After the city opened a new bike-share dock outside the train station, morning ridership on that dock rose quickly. Local business owners nearby noted increased foot traffic in their shops during the same weeks the dock opened.",
+      "options": [
+        "The new dock directly caused every nearby shop's foot traffic to increase. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+        "The new dock's ridership growth coincided with more nearby foot traffic, though the passage does not confirm the dock caused the increase in shop visits.",
+        "The bike-share dock had no connection to changes near the train station. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+        "Foot traffic near the shops decreased after the dock opened."
+      ],
+      "correctAnswer": "The new dock's ridership growth coincided with more nearby foot traffic, though the passage does not confirm the dock caused the increase in shop visits.",
+      "hint": "Notice that the passage describes two things happening around the same time without stating that one definitely caused the other.",
+      "explanation": "The passage only shows the two trends occurring together, not that the dock definitely caused the shop traffic increase; claiming certainty about causation overstates what a simple timing coincidence supports.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Bike dock opens, ridership grows -> nearby shops see more foot traffic in same weeks -> passage shows correlation in timing, not confirmed causation"
+      ],
+      "logicChainSteps": [
+        "Bike dock opens, ridership grows",
+        "nearby shops see more foot traffic in same weeks",
+        "passage shows correlation in timing, not confirmed causation"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The new dock directly caused every nearby shop's foot traffic to increase. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The new dock's ridership growth coincided with more nearby foot traffic, though the passage does not confirm the dock caused the increase in shop visits.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The bike-share dock had no connection to changes near the train station. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Foot traffic near the shops decreased after the dock opened.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L91_Q2_PRACTICE",
+      "level": 91,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A mid-size tech company noticed that engineers who used the company's new code-review tool submitted fewer bugs to production. The engineers who adopted the tool early were also generally the most senior members of the team.",
+      "options": [
+        "It is unclear from the passage whether the tool or the engineers' seniority explains the lower bug rate.",
+        "The code-review tool is definitely the sole reason for fewer bugs. This pattern would hold steady across the entire situation the passage lays out.",
+        "Seniority has no possible connection to the lower bug rate. This would be expected to hold across the entire situation as described.",
+        "Junior engineers were the first to adopt the new tool. Nothing described in the passage points to any exception to this pattern."
+      ],
+      "correctAnswer": "It is unclear from the passage whether the tool or the engineers' seniority explains the lower bug rate.",
+      "hint": "Notice that two possible explanations are mentioned together, and the passage doesn't rule either one out.",
+      "explanation": "Since senior engineers were also the early adopters, the passage leaves open whether the tool, their experience, or both explain the lower bug rate, so crediting the tool alone with certainty goes beyond the evidence.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Tool adopted early by senior engineers -> those engineers submit fewer bugs -> tool and seniority are both possible explanations, and the passage does not distinguish between them"
+      ],
+      "logicChainSteps": [
+        "Tool adopted early by senior engineers",
+        "those engineers submit fewer bugs",
+        "tool and seniority are both possible explanations, and the passage does not distinguish between them"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "It is unclear from the passage whether the tool or the engineers' seniority explains the lower bug rate.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The code-review tool is definitely the sole reason for fewer bugs. This pattern would hold steady across the entire situation the passage lays out.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Seniority has no possible connection to the lower bug rate. This would be expected to hold across the entire situation as described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Junior engineers were the first to adopt the new tool. Nothing described in the passage points to any exception to this pattern.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L91_Q3_PRACTICE",
+      "level": 91,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A study found that students who ate breakfast at school scored slightly higher on morning quizzes than students who skipped breakfast. The school breakfast program is free and available to all students, while students who skip breakfast come from a range of different households and schedules.",
+      "options": [
+        "The passage supports a link between eating breakfast and quiz scores, though it does not identify the specific reason for the difference.",
+        "Eating breakfast at school guarantees a perfect quiz score.",
+        "Students who skip breakfast always come from the same type of household.",
+        "The quiz scores were identical regardless of breakfast habits."
+      ],
+      "correctAnswer": "The passage supports a link between eating breakfast and quiz scores, though it does not identify the specific reason for the difference.",
+      "hint": "Look at what the passage actually confirms about the score difference and what it says about the backgrounds of breakfast-skippers.",
+      "explanation": "The passage supports only a modest link between breakfast and slightly higher scores, without identifying a specific mechanism, so claims of guaranteed outcomes or a single shared background for all breakfast-skippers go beyond what's stated.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Breakfast eaters: slightly higher quiz scores -> breakfast-skippers: varied households and schedules -> passage supports a link, without pinpointing a specific reason"
+      ],
+      "logicChainSteps": [
+        "Breakfast eaters: slightly higher quiz scores",
+        "breakfast-skippers: varied households and schedules",
+        "passage supports a link, without pinpointing a specific reason"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The passage supports a link between eating breakfast and quiz scores, though it does not identify the specific reason for the difference.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Eating breakfast at school guarantees a perfect quiz score.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Students who skip breakfast always come from the same type of household.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The quiz scores were identical regardless of breakfast habits.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L92_Q1_PRACTICE",
+      "level": 92,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A national retailer found that stores with brighter lighting had slightly higher average sales than stores with dimmer lighting. However, the brighter stores were also newer buildings with larger parking lots and more visible street frontage.",
+      "options": [
+        "Lighting alone is definitely responsible for the entire sales difference, as the passage presents the situation.",
+        "The dimmer stores had larger parking lots than the brighter stores. This would apply consistently across every detail the passage provides.",
+        "Several factors besides lighting could explain the sales difference between the two groups of stores.",
+        "Sales were identical between the two groups of stores."
+      ],
+      "correctAnswer": "Several factors besides lighting could explain the sales difference between the two groups of stores.",
+      "hint": "Notice how many differences exist between the two groups of stores besides lighting.",
+      "explanation": "Since the brighter stores also differed in building age, parking, and visibility, the passage supports the idea that multiple factors could account for the sales gap, not lighting alone with certainty.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Brighter stores: newer, bigger parking, more visible -> slightly higher sales -> multiple differing factors make it hard to credit lighting alone"
+      ],
+      "logicChainSteps": [
+        "Brighter stores: newer, bigger parking, more visible",
+        "slightly higher sales",
+        "multiple differing factors make it hard to credit lighting alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Lighting alone is definitely responsible for the entire sales difference, as the passage presents the situation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The dimmer stores had larger parking lots than the brighter stores. This would apply consistently across every detail the passage provides.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Several factors besides lighting could explain the sales difference between the two groups of stores.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Sales were identical between the two groups of stores.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L92_Q2_PRACTICE",
+      "level": 92,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A fitness app found that users who set a daily step goal walked more on average than users who did not set a goal. Users who chose to set goals were also more likely to have paid for the app's premium subscription.",
+      "options": [
+        "Setting a step goal is definitely the only explanation for the higher counts. The passage offers no detail suggesting this changed over the period discussed.",
+        "It is unclear whether setting a goal or being a premium subscriber better explains the higher step counts.",
+        "Premium subscribers never set daily step goals.",
+        "Users without goals walked more than users with goals."
+      ],
+      "correctAnswer": "It is unclear whether setting a goal or being a premium subscriber better explains the higher step counts.",
+      "hint": "Notice that goal-setters and premium subscribers overlap significantly in this passage.",
+      "explanation": "Because goal-setters were also more likely to be paying subscribers, a group possibly more motivated to begin with, the passage leaves it unclear whether the goal itself or the underlying motivation explains the difference.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Goal-setters walk more on average -> goal-setters also more likely to be premium subscribers -> unclear whether the goal or underlying motivation explains the difference"
+      ],
+      "logicChainSteps": [
+        "Goal-setters walk more on average",
+        "goal-setters also more likely to be premium subscribers",
+        "unclear whether the goal or underlying motivation explains the difference"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Setting a step goal is definitely the only explanation for the higher counts. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "It is unclear whether setting a goal or being a premium subscriber better explains the higher step counts.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Premium subscribers never set daily step goals.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Users without goals walked more than users with goals.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L92_Q3_PRACTICE",
+      "level": 92,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A university found that students who joined at least one club reported higher overall satisfaction with their college experience than students who joined no clubs. Club membership requires students to have time available outside of coursework and part-time jobs.",
+      "options": [
+        "Students with more available time may be more likely both to join clubs and to report higher satisfaction, making the exact cause unclear.",
+        "Joining a club is guaranteed to increase any student's satisfaction. Such a pattern would remain constant throughout the scenario being described.",
+        "Students with jobs are more likely to join multiple clubs.",
+        "Satisfaction scores were the same regardless of club membership."
+      ],
+      "correctAnswer": "Students with more available time may be more likely both to join clubs and to report higher satisfaction, making the exact cause unclear.",
+      "hint": "Notice the detail about what club membership requires and how that might relate to who joins in the first place.",
+      "explanation": "Since joining clubs requires available time, students with lighter workloads or fewer job hours may be more likely to both join and report higher satisfaction, leaving the exact cause of the satisfaction gap unclear.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Club members: higher satisfaction -> club membership requires available time -> time availability may explain both club joining and satisfaction, making a single cause unclear"
+      ],
+      "logicChainSteps": [
+        "Club members: higher satisfaction",
+        "club membership requires available time",
+        "time availability may explain both club joining and satisfaction, making a single cause unclear"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Students with more available time may be more likely both to join clubs and to report higher satisfaction, making the exact cause unclear.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Joining a club is guaranteed to increase any student's satisfaction. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Students with jobs are more likely to join multiple clubs.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Satisfaction scores were the same regardless of club membership.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L93_Q1_PRACTICE",
+      "level": 93,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A restaurant chain found that locations near universities had higher weekday lunch sales than locations in suburban areas. University-area locations are also generally smaller and located closer to public transit stops.",
+      "options": [
+        "Proximity to universities may be linked to higher lunch sales, though the passage does not rule out other differences like size or transit access.",
+        "Store size definitely explains the entire difference in lunch sales. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+        "Suburban locations always outsell university-area locations. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+        "Public transit access has no relationship to any of the sales data mentioned. This would remain the case regardless of any other detail in the passage."
+      ],
+      "correctAnswer": "Proximity to universities may be linked to higher lunch sales, though the passage does not rule out other differences like size or transit access.",
+      "hint": "Notice all the differences mentioned between university-area and suburban locations, not just proximity to campus.",
+      "explanation": "The passage links university proximity to higher sales but also mentions other differences like size and transit access, so it doesn't rule out that these other factors, not proximity to campus alone, might contribute.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "University-area stores: higher weekday lunch sales -> also smaller, closer to transit -> proximity may be linked to sales, but other differences aren't ruled out"
+      ],
+      "logicChainSteps": [
+        "University-area stores: higher weekday lunch sales",
+        "also smaller, closer to transit",
+        "proximity may be linked to sales, but other differences aren't ruled out"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Proximity to universities may be linked to higher lunch sales, though the passage does not rule out other differences like size or transit access.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Store size definitely explains the entire difference in lunch sales. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Suburban locations always outsell university-area locations. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Public transit access has no relationship to any of the sales data mentioned. This would remain the case regardless of any other detail in the passage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L93_Q2_PRACTICE",
+      "level": 93,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A survey found that remote employees who used video calls for team meetings reported feeling more connected to their coworkers than employees who used audio-only calls. Teams that chose video calls also tended to have managers who scheduled more frequent one-on-one check-ins.",
+      "options": [
+        "Video calls are definitely the only reason for the stronger connection. This would remain the case regardless of any other detail in the passage.",
+        "Managers who scheduled check-ins never used video calls with their teams. The passage's account gives no reason to think this differed at any stage.",
+        "It is unclear whether video calls themselves or more frequent check-ins from managers better explain the stronger sense of connection.",
+        "Audio-only teams reported feeling more connected than video-call teams."
+      ],
+      "correctAnswer": "It is unclear whether video calls themselves or more frequent check-ins from managers better explain the stronger sense of connection.",
+      "hint": "Notice that video-call teams and frequent check-ins tend to occur together in this passage.",
+      "explanation": "Since video-call teams also had managers who checked in more often, the passage leaves open whether the video format or the extra manager attention drives the stronger sense of connection.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Video-call teams: feel more connected -> also have managers with more frequent check-ins -> unclear whether video calls or check-in frequency explains the connection"
+      ],
+      "logicChainSteps": [
+        "Video-call teams: feel more connected",
+        "also have managers with more frequent check-ins",
+        "unclear whether video calls or check-in frequency explains the connection"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Video calls are definitely the only reason for the stronger connection. This would remain the case regardless of any other detail in the passage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Managers who scheduled check-ins never used video calls with their teams. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "It is unclear whether video calls themselves or more frequent check-ins from managers better explain the stronger sense of connection.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Audio-only teams reported feeling more connected than video-call teams.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L93_Q3_PRACTICE",
+      "level": 93,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city found that parks with community gardens had lower reported vandalism than parks without gardens. Parks with gardens also tend to have more regular daytime visitors tending their garden plots throughout the week.",
+      "options": [
+        "Lower vandalism in garden parks may be linked to more regular visitor presence, though the passage does not confirm the garden itself is the direct cause.",
+        "Community gardens are guaranteed to eliminate vandalism in any park. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+        "Parks without gardens have no visitors at any time of day. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+        "Vandalism rates were the same in parks with and without gardens. The way the events are described throughout the passage offers no clear signal that this particular reading should be treated with any extra caution."
+      ],
+      "correctAnswer": "Lower vandalism in garden parks may be linked to more regular visitor presence, though the passage does not confirm the garden itself is the direct cause.",
+      "hint": "Notice the detail about regular visitor presence and how that might relate to lower vandalism.",
+      "explanation": "The passage links gardens to lower vandalism but also mentions increased daytime visitor presence, suggesting that the regular presence of people, not necessarily the garden itself, could be part of the explanation.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Garden parks: lower vandalism -> also more regular daytime visitors -> presence of visitors may explain part of the link, not confirmed as the garden alone"
+      ],
+      "logicChainSteps": [
+        "Garden parks: lower vandalism",
+        "also more regular daytime visitors",
+        "presence of visitors may explain part of the link, not confirmed as the garden alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Lower vandalism in garden parks may be linked to more regular visitor presence, though the passage does not confirm the garden itself is the direct cause.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Community gardens are guaranteed to eliminate vandalism in any park. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Parks without gardens have no visitors at any time of day. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Vandalism rates were the same in parks with and without gardens. The way the events are described throughout the passage offers no clear signal that this particular reading should be treated with any extra caution.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L94_Q1_PRACTICE",
+      "level": 94,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A hospital found that patients treated by doctors who graduated from a specific residency program had slightly shorter recovery times. Doctors from that program also tend to be assigned to patients with less complex cases, based on the hospital's scheduling system.",
+      "options": [
+        "The residency program alone definitely explains the shorter recovery times, given the specific information included in the passage.",
+        "Doctors from that program are always assigned the most complex cases.",
+        "Recovery times were identical regardless of which doctors treated patients.",
+        "Case complexity may partly explain the shorter recovery times, rather than the residency program alone."
+      ],
+      "correctAnswer": "Case complexity may partly explain the shorter recovery times, rather than the residency program alone.",
+      "hint": "Notice the detail about how patients are assigned to doctors from this particular program.",
+      "explanation": "Since doctors from this program tend to handle less complex cases, the passage suggests case complexity could be part of the explanation for the shorter recovery times, not the training alone.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Doctors from program X: patients recover slightly faster -> those doctors assigned less complex cases -> case complexity may partly explain the shorter recovery, not training alone"
+      ],
+      "logicChainSteps": [
+        "Doctors from program X: patients recover slightly faster",
+        "those doctors assigned less complex cases",
+        "case complexity may partly explain the shorter recovery, not training alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The residency program alone definitely explains the shorter recovery times, given the specific information included in the passage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Doctors from that program are always assigned the most complex cases.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Recovery times were identical regardless of which doctors treated patients.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Case complexity may partly explain the shorter recovery times, rather than the residency program alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L94_Q2_PRACTICE",
+      "level": 94,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's transit survey found that riders who used a mobile ticketing app reported shorter perceived wait times than riders who used paper tickets. App users were also more likely to check real-time bus tracking before leaving home.",
+      "options": [
+        "The mobile app alone is definitely responsible for the entire perception difference. The passage offers no detail suggesting this changed over the period discussed.",
+        "Checking real-time tracking, not just using the app itself, may explain part of the shorter perceived wait times.",
+        "Paper ticket users always check real-time tracking before leaving.",
+        "Perceived wait times were identical between the two groups."
+      ],
+      "correctAnswer": "Checking real-time tracking, not just using the app itself, may explain part of the shorter perceived wait times.",
+      "hint": "Notice the additional habit mentioned alongside app use.",
+      "explanation": "Since app users were also more likely to check real-time tracking, a habit that could reduce actual waiting by better timing arrivals, the passage suggests this habit, not the app alone, may explain part of the perception gap.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "App users: report shorter perceived wait times -> also more likely to check real-time tracking -> tracking habit may partly explain the difference, not the app alone"
+      ],
+      "logicChainSteps": [
+        "App users: report shorter perceived wait times",
+        "also more likely to check real-time tracking",
+        "tracking habit may partly explain the difference, not the app alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The mobile app alone is definitely responsible for the entire perception difference. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Checking real-time tracking, not just using the app itself, may explain part of the shorter perceived wait times.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Paper ticket users always check real-time tracking before leaving.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Perceived wait times were identical between the two groups.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L94_Q3_PRACTICE",
+      "level": 94,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A company found that employees who took the optional public-speaking workshop received higher performance review scores the following year. Employees who signed up for the workshop had also, on average, received strong performance reviews the year before it was offered.",
+      "options": [
+        "Employees with already-strong performance may have been more likely to sign up, making it unclear how much the workshop itself contributed.",
+        "The workshop is definitely the sole reason for the higher review scores.",
+        "Employees who signed up had weak performance reviews the year before.",
+        "Performance review scores were unrelated to workshop attendance in any way."
+      ],
+      "correctAnswer": "Employees with already-strong performance may have been more likely to sign up, making it unclear how much the workshop itself contributed.",
+      "hint": "Notice the detail about workshop sign-ups and prior performance history.",
+      "explanation": "Since workshop attendees already had strong reviews the year before, the passage suggests these employees may have already been higher performers, making it unclear how much of the improvement is due to the workshop itself.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Workshop attendees: higher reviews the following year -> also had strong reviews the year before signing up -> prior performance may explain part of the pattern, not the workshop alone"
+      ],
+      "logicChainSteps": [
+        "Workshop attendees: higher reviews the following year",
+        "also had strong reviews the year before signing up",
+        "prior performance may explain part of the pattern, not the workshop alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Employees with already-strong performance may have been more likely to sign up, making it unclear how much the workshop itself contributed.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The workshop is definitely the sole reason for the higher review scores.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Employees who signed up had weak performance reviews the year before.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Performance review scores were unrelated to workshop attendance in any way.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L95_Q1_PRACTICE",
+      "level": 95,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A study of home sales found that houses with solar panels sold for a higher average price than houses without them. Houses with solar panels in the study were also, on average, larger and located in newer developments.",
+      "options": [
+        "Size and neighborhood age may account for some of the price difference, in addition to the solar panels themselves.",
+        "Solar panels are definitely the only reason for the entire price difference. The passage gives no indication that this varied across the circumstances described.",
+        "Houses with solar panels were smaller than houses without them. The passage's account gives no reason to think this differed at any stage.",
+        "Home prices were identical regardless of solar panels. This would apply consistently across every detail the passage provides."
+      ],
+      "correctAnswer": "Size and neighborhood age may account for some of the price difference, in addition to the solar panels themselves.",
+      "hint": "Notice the other differences mentioned between solar and non-solar homes.",
+      "explanation": "Because solar-panel homes were also larger and in newer developments, the passage suggests these factors, not the panels alone, likely contribute to at least part of the price difference.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Solar-panel homes: higher average sale price -> also larger, in newer developments -> size and neighborhood age may account for part of the price gap, not panels alone"
+      ],
+      "logicChainSteps": [
+        "Solar-panel homes: higher average sale price",
+        "also larger, in newer developments",
+        "size and neighborhood age may account for part of the price gap, not panels alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Size and neighborhood age may account for some of the price difference, in addition to the solar panels themselves.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Solar panels are definitely the only reason for the entire price difference. The passage gives no indication that this varied across the circumstances described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Houses with solar panels were smaller than houses without them. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Home prices were identical regardless of solar panels. This would apply consistently across every detail the passage provides.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L95_Q2_PRACTICE",
+      "level": 95,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A survey found that employees who worked at standing desks reported less afternoon fatigue than employees at traditional seated desks. Employees who requested standing desks also tended to report exercising regularly outside of work, according to a separate survey question.",
+      "options": [
+        "The standing desk is definitely the only cause of reduced fatigue. Such a pattern would remain constant throughout the scenario being described.",
+        "Employees who exercise regularly never request standing desks. No part of the passage's account suggests otherwise.",
+        "Regular exercise outside of work may partly explain the lower fatigue, rather than the standing desk alone.",
+        "Fatigue levels were identical regardless of desk type."
+      ],
+      "correctAnswer": "Regular exercise outside of work may partly explain the lower fatigue, rather than the standing desk alone.",
+      "hint": "Notice the detail about exercise habits among employees who requested standing desks.",
+      "explanation": "Since standing-desk employees also reported exercising more regularly, a habit independently linked to energy levels, the passage suggests exercise may partly explain the fatigue difference, not the desk alone.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Standing-desk employees: less afternoon fatigue -> also report exercising regularly outside work -> exercise habit may partly explain the fatigue difference, not the desk alone"
+      ],
+      "logicChainSteps": [
+        "Standing-desk employees: less afternoon fatigue",
+        "also report exercising regularly outside work",
+        "exercise habit may partly explain the fatigue difference, not the desk alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The standing desk is definitely the only cause of reduced fatigue. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Employees who exercise regularly never request standing desks. No part of the passage's account suggests otherwise.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Regular exercise outside of work may partly explain the lower fatigue, rather than the standing desk alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Fatigue levels were identical regardless of desk type.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L95_Q3_PRACTICE",
+      "level": 95,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city found that neighborhoods with a higher density of coffee shops had lower average commute times to downtown. These neighborhoods also tend to be located closer to downtown overall, based on the city's zoning map.",
+      "options": [
+        "Coffee shops are definitely the direct cause of shorter commute times. The passage's account gives no reason to think this differed at any stage.",
+        "Proximity to downtown itself may explain both the coffee shop density and the shorter commutes, rather than one causing the other.",
+        "Neighborhoods far from downtown have the most coffee shops.",
+        "Commute times were the same regardless of coffee shop density."
+      ],
+      "correctAnswer": "Proximity to downtown itself may explain both the coffee shop density and the shorter commutes, rather than one causing the other.",
+      "hint": "Notice the geographic detail about where these coffee-shop-dense neighborhoods are actually located.",
+      "explanation": "Since these neighborhoods are simply closer to downtown, that proximity likely explains both the higher coffee shop density and the shorter commutes, rather than one factor causing the other.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Neighborhoods with more coffee shops: shorter commutes -> those neighborhoods also closer to downtown -> proximity to downtown may explain both patterns rather than coffee shops causing shorter commutes"
+      ],
+      "logicChainSteps": [
+        "Neighborhoods with more coffee shops: shorter commutes",
+        "those neighborhoods also closer to downtown",
+        "proximity to downtown may explain both patterns rather than coffee shops causing shorter commutes"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Coffee shops are definitely the direct cause of shorter commute times. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Proximity to downtown itself may explain both the coffee shop density and the shorter commutes, rather than one causing the other.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Neighborhoods far from downtown have the most coffee shops.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Commute times were the same regardless of coffee shop density.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L96_Q1_PRACTICE",
+      "level": 96,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A research team found that patients who used a particular meditation app reported lower stress levels after eight weeks. Patients who chose to use the app were recruited through a stress-management clinic where they were already receiving other forms of counseling.",
+      "options": [
+        "The meditation app is definitely the sole reason for the lower stress levels. The passage's account gives no reason to think this differed at any stage.",
+        "The counseling patients were already receiving may account for some of the reported improvement, not the app alone.",
+        "Patients using the app received no other treatment of any kind.",
+        "Stress levels were unchanged after eight weeks of app use."
+      ],
+      "correctAnswer": "The counseling patients were already receiving may account for some of the reported improvement, not the app alone.",
+      "hint": "Notice where the patients were recruited from and what else they were receiving at the same time.",
+      "explanation": "Because participants were already receiving counseling through the clinic, the passage suggests that ongoing treatment could account for part of the stress reduction, not the app in isolation.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "App users report lower stress after 8 weeks -> recruited through a clinic where they also receive counseling -> counseling may account for part of the improvement, not the app alone"
+      ],
+      "logicChainSteps": [
+        "App users report lower stress after 8 weeks",
+        "recruited through a clinic where they also receive counseling",
+        "counseling may account for part of the improvement, not the app alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The meditation app is definitely the sole reason for the lower stress levels. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The counseling patients were already receiving may account for some of the reported improvement, not the app alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Patients using the app received no other treatment of any kind.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Stress levels were unchanged after eight weeks of app use.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L96_Q2_PRACTICE",
+      "level": 96,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A school district found that classrooms with newer computers had higher average test scores than classrooms with older computers. Schools that received the newer computers were selected based on having recently completed broader building renovations, including improved lighting and heating systems.",
+      "options": [
+        "The broader renovations, not just the newer computers, may have contributed to the higher test scores.",
+        "The newer computers are definitely the sole reason for the higher scores. This would be expected to hold across the entire situation as described.",
+        "Schools with newer computers had no other renovations at all. Nothing described in the passage points to any exception to this pattern.",
+        "Test scores were the same regardless of computer age. The passage offers no detail suggesting this changed over the period discussed."
+      ],
+      "correctAnswer": "The broader renovations, not just the newer computers, may have contributed to the higher test scores.",
+      "hint": "Notice what other renovations happened at the same schools that got the newer computers.",
+      "explanation": "Since the schools with newer computers also underwent broader renovations like improved lighting and heating, the passage suggests these other improvements may have contributed to the higher scores as well.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Newer-computer classrooms: higher test scores -> those schools also had broader renovations -> renovations may have contributed alongside or instead of the computers alone"
+      ],
+      "logicChainSteps": [
+        "Newer-computer classrooms: higher test scores",
+        "those schools also had broader renovations",
+        "renovations may have contributed alongside or instead of the computers alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The broader renovations, not just the newer computers, may have contributed to the higher test scores.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The newer computers are definitely the sole reason for the higher scores. This would be expected to hold across the entire situation as described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Schools with newer computers had no other renovations at all. Nothing described in the passage points to any exception to this pattern.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Test scores were the same regardless of computer age. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L96_Q3_PRACTICE",
+      "level": 96,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A gym chain found that members who attended group fitness classes had higher membership renewal rates than members who only used the gym's equipment individually. Members who attended group classes were also more likely to have joined the gym with a friend or family member.",
+      "options": [
+        "Group fitness classes are definitely the sole reason for higher renewal. Such a pattern would remain constant throughout the scenario being described.",
+        "Members who used equipment alone always joined with a friend. This would apply consistently across every detail the passage provides.",
+        "Joining with a friend or family member may partly explain the higher renewal rate, not group classes alone.",
+        "Renewal rates were the same for both groups of members."
+      ],
+      "correctAnswer": "Joining with a friend or family member may partly explain the higher renewal rate, not group classes alone.",
+      "hint": "Notice the detail about who these group-class members tended to join the gym with.",
+      "explanation": "Since group-class attendees were also more likely to have joined with someone else, a factor independently linked to sticking with a gym membership, the passage suggests this social element may partly explain the renewal difference.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Group-class members: higher renewal rate -> also more likely to have joined with a friend or family member -> social connection may partly explain the higher renewal, not classes alone"
+      ],
+      "logicChainSteps": [
+        "Group-class members: higher renewal rate",
+        "also more likely to have joined with a friend or family member",
+        "social connection may partly explain the higher renewal, not classes alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Group fitness classes are definitely the sole reason for higher renewal. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Members who used equipment alone always joined with a friend. This would apply consistently across every detail the passage provides.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Joining with a friend or family member may partly explain the higher renewal rate, not group classes alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Renewal rates were the same for both groups of members.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L97_Q1_PRACTICE",
+      "level": 97,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A financial firm found that clients who used its budgeting app saved more money on average than clients who did not use the app. Clients who chose to download the app had also, on average, expressed a stronger interest in saving money on an initial intake survey before ever using the app.",
+      "options": [
+        "Clients' initial interest in saving money may explain part of the difference, not the app alone.",
+        "The budgeting app is definitely the sole reason for the greater savings.",
+        "Clients who did not use the app expressed the strongest interest in saving, as the passage presents the situation.",
+        "Savings amounts were identical regardless of app use."
+      ],
+      "correctAnswer": "Clients' initial interest in saving money may explain part of the difference, not the app alone.",
+      "hint": "Notice what the intake survey revealed about app users before they even started using it.",
+      "explanation": "Since app users already expressed stronger interest in saving before using the app, the passage suggests this pre-existing motivation could explain part of the savings gap, not the app alone.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "App users: save more on average -> those users showed stronger saving interest even before downloading -> prior motivation may explain part of the gap, not the app alone"
+      ],
+      "logicChainSteps": [
+        "App users: save more on average",
+        "those users showed stronger saving interest even before downloading",
+        "prior motivation may explain part of the gap, not the app alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Clients' initial interest in saving money may explain part of the difference, not the app alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The budgeting app is definitely the sole reason for the greater savings.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Clients who did not use the app expressed the strongest interest in saving, as the passage presents the situation.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Savings amounts were identical regardless of app use.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L97_Q2_PRACTICE",
+      "level": 97,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A publisher found that books with a particular cover design style sold better than books with other cover styles. Books using that design style were also more frequently written by already well-known authors, based on the publisher's sales records.",
+      "options": [
+        "Author recognition, not the cover design alone, may explain part of the sales difference.",
+        "The cover design style is definitely the sole reason for higher sales, as the passage lays out the sequence of events.",
+        "Books with that cover style were always written by unknown authors, based on the details the passage provides.",
+        "Sales were the same regardless of which cover design was used, given how the events unfolded."
+      ],
+      "correctAnswer": "Author recognition, not the cover design alone, may explain part of the sales difference.",
+      "hint": "Notice who tended to have books published with this particular design style.",
+      "explanation": "Since books with this cover style were also more often written by well-known authors, a factor independently linked to higher sales, the passage suggests author recognition may account for part of the difference.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Books with design style X: sell better -> those books more often written by well-known authors -> author recognition may explain part of the sales difference, not the cover alone"
+      ],
+      "logicChainSteps": [
+        "Books with design style X: sell better",
+        "those books more often written by well-known authors",
+        "author recognition may explain part of the sales difference, not the cover alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Author recognition, not the cover design alone, may explain part of the sales difference.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The cover design style is definitely the sole reason for higher sales, as the passage lays out the sequence of events.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Books with that cover style were always written by unknown authors, based on the details the passage provides.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Sales were the same regardless of which cover design was used, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L97_Q3_PRACTICE",
+      "level": 97,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's health department found that residents in neighborhoods with more grocery stores selling fresh produce had lower rates of certain diet-related health conditions. Those same neighborhoods also had, on average, higher household incomes than neighborhoods with fewer grocery stores.",
+      "options": [
+        "Grocery store access is definitely the sole reason for the health outcome difference, based on what the passage actually says.",
+        "Neighborhoods with more grocery stores had lower household incomes. Such a pattern would remain constant throughout the scenario being described.",
+        "Health outcomes were identical across all neighborhoods studied. This would be expected to hold across the entire situation as described.",
+        "Household income differences may partly explain the health outcome gap, not grocery store access alone."
+      ],
+      "correctAnswer": "Household income differences may partly explain the health outcome gap, not grocery store access alone.",
+      "hint": "Notice the additional demographic detail mentioned about these neighborhoods.",
+      "explanation": "Since neighborhoods with more grocery access also had higher incomes, a factor independently linked to health outcomes, the passage suggests income differences may account for part of the gap, not access to produce alone.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Neighborhoods with more fresh produce access: lower rates of diet-related conditions -> also higher household incomes -> income may partly explain the gap, not grocery access alone"
+      ],
+      "logicChainSteps": [
+        "Neighborhoods with more fresh produce access: lower rates of diet-related conditions",
+        "also higher household incomes",
+        "income may partly explain the gap, not grocery access alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Grocery store access is definitely the sole reason for the health outcome difference, based on what the passage actually says.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Neighborhoods with more grocery stores had lower household incomes. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Health outcomes were identical across all neighborhoods studied. This would be expected to hold across the entire situation as described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Household income differences may partly explain the health outcome gap, not grocery store access alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L98_Q1_PRACTICE",
+      "level": 98,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's police department found that neighborhoods that participated in a citizen patrol program had lower burglary rates than neighborhoods without the program. Neighborhoods that chose to start the program were also, on average, neighborhoods where residents already reported strong existing social ties and frequent neighbor interaction.",
+      "options": [
+        "The citizen patrol program is definitely the sole reason for the lower burglary rates.",
+        "Pre-existing social ties among neighbors may partly explain the lower burglary rates, not the patrol program alone.",
+        "Neighborhoods without the program had the strongest social ties.",
+        "Burglary rates were identical across all neighborhoods studied."
+      ],
+      "correctAnswer": "Pre-existing social ties among neighbors may partly explain the lower burglary rates, not the patrol program alone.",
+      "hint": "Notice what these program-participating neighborhoods already had in common before the program began.",
+      "explanation": "Since neighborhoods that started the program already had strong social ties, a factor independently linked to lower crime, the passage suggests those ties may account for part of the lower burglary rate, not the program alone.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Patrol-program neighborhoods: lower burglary rates -> those neighborhoods already had strong social ties before the program -> social ties may partly explain the lower rate, not the program alone"
+      ],
+      "logicChainSteps": [
+        "Patrol-program neighborhoods: lower burglary rates",
+        "those neighborhoods already had strong social ties before the program",
+        "social ties may partly explain the lower rate, not the program alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The citizen patrol program is definitely the sole reason for the lower burglary rates.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Pre-existing social ties among neighbors may partly explain the lower burglary rates, not the patrol program alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Neighborhoods without the program had the strongest social ties.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Burglary rates were identical across all neighborhoods studied.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L98_Q2_PRACTICE",
+      "level": 98,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A theater company found that plays performed with live orchestral music received higher audience ratings than plays performed with recorded music. Plays that used live music were also generally longer-running productions with bigger overall budgets.",
+      "options": [
+        "Live orchestral music is definitely the sole reason for the higher ratings.",
+        "Bigger production budgets may partly explain the higher ratings, not the live music alone.",
+        "Plays with live music always had smaller budgets than others.",
+        "Audience ratings were identical regardless of music type."
+      ],
+      "correctAnswer": "Bigger production budgets may partly explain the higher ratings, not the live music alone.",
+      "hint": "Notice the other production details mentioned about plays that used live music.",
+      "explanation": "Since plays with live music also tended to have bigger budgets and longer runs, factors that could independently improve production quality, the passage suggests these may account for part of the higher ratings.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Plays with live music: higher audience ratings -> also bigger budgets, longer runs -> production budget may partly explain the higher ratings, not live music alone"
+      ],
+      "logicChainSteps": [
+        "Plays with live music: higher audience ratings",
+        "also bigger budgets, longer runs",
+        "production budget may partly explain the higher ratings, not live music alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Live orchestral music is definitely the sole reason for the higher ratings.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Bigger production budgets may partly explain the higher ratings, not the live music alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Plays with live music always had smaller budgets than others.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Audience ratings were identical regardless of music type.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L98_Q3_PRACTICE",
+      "level": 98,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A university found that students who studied in the campus library had higher average GPAs than students who studied primarily in their dorm rooms. Students who chose to study in the library were also, on average, students who had reported fewer work hours per week on a separate housing survey.",
+      "options": [
+        "Studying in the library is definitely the sole reason for the higher GPAs, based on the details the passage provides.",
+        "Students who studied in their dorms always worked fewer hours, given the specific information included in the passage.",
+        "GPAs were identical regardless of where students studied, according to how the passage describes the situation.",
+        "Fewer work hours may partly explain the higher GPAs, not studying location alone."
+      ],
+      "correctAnswer": "Fewer work hours may partly explain the higher GPAs, not studying location alone.",
+      "hint": "Notice the detail about work hours among students who preferred the library.",
+      "explanation": "Since library-studying students also worked fewer hours, a factor that could independently allow more time for studying, the passage suggests work hours may account for part of the GPA difference, not location alone.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Library-studying students: higher average GPA -> also report fewer work hours per week -> fewer work hours may partly explain the GPA gap, not study location alone"
+      ],
+      "logicChainSteps": [
+        "Library-studying students: higher average GPA",
+        "also report fewer work hours per week",
+        "fewer work hours may partly explain the GPA gap, not study location alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Studying in the library is definitely the sole reason for the higher GPAs, based on the details the passage provides.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Students who studied in their dorms always worked fewer hours, given the specific information included in the passage.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "GPAs were identical regardless of where students studied, according to how the passage describes the situation.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Fewer work hours may partly explain the higher GPAs, not studying location alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L99_Q1_PRACTICE",
+      "level": 99,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A regional airline found that flights departing before 8 a.m. had a higher on-time rate than flights departing later in the day. Early morning flights also generally face lighter air traffic at both departure and arrival airports, according to the airline's scheduling data.",
+      "options": [
+        "The departure time alone is definitely unrelated to the higher on-time rate. This would remain the case regardless of any other detail in the passage.",
+        "Later flights always face lighter air traffic than early flights. This would be expected to hold across the entire situation as described.",
+        "On-time rates were identical regardless of departure time.",
+        "Lighter air traffic conditions likely play a role in the higher on-time rate, alongside the early departure time itself."
+      ],
+      "correctAnswer": "Lighter air traffic conditions likely play a role in the higher on-time rate, alongside the early departure time itself.",
+      "hint": "Notice the additional detail about air traffic conditions specific to early flights.",
+      "explanation": "Since early flights specifically benefit from lighter air traffic, a factor closely tied to the timing itself, the passage supports both the departure time and the traffic conditions as related contributors, rather than ruling out the connection between them.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Early flights: higher on-time rate -> also face lighter air traffic at both ends -> traffic conditions and early timing appear related contributors to the on-time rate"
+      ],
+      "logicChainSteps": [
+        "Early flights: higher on-time rate",
+        "also face lighter air traffic at both ends",
+        "traffic conditions and early timing appear related contributors to the on-time rate"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The departure time alone is definitely unrelated to the higher on-time rate. This would remain the case regardless of any other detail in the passage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Later flights always face lighter air traffic than early flights. This would be expected to hold across the entire situation as described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "On-time rates were identical regardless of departure time.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Lighter air traffic conditions likely play a role in the higher on-time rate, alongside the early departure time itself.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L99_Q2_PRACTICE",
+      "level": 99,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's parks department found that trails with mile-marker signs had higher reported user satisfaction than trails without signs. Trails with mile markers were also generally the newer trails in the park system, built with wider paths and better drainage.",
+      "options": [
+        "Mile-marker signs are definitely the sole reason for the higher satisfaction, according to how the passage describes the situation.",
+        "Newer trail construction features, not just the mile markers, may contribute to the higher satisfaction.",
+        "Older trails in the system always had mile markers installed. This would apply consistently across every detail the passage provides.",
+        "Satisfaction ratings were identical regardless of trail age."
+      ],
+      "correctAnswer": "Newer trail construction features, not just the mile markers, may contribute to the higher satisfaction.",
+      "hint": "Notice the other construction differences mentioned about trails with mile markers.",
+      "explanation": "Since trails with mile markers were also newer, with wider paths and better drainage, the passage suggests these construction improvements may contribute to satisfaction alongside or instead of the markers alone.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Trails with mile markers: higher satisfaction -> also newer, wider, better drainage -> construction features may contribute alongside the markers, not markers alone"
+      ],
+      "logicChainSteps": [
+        "Trails with mile markers: higher satisfaction",
+        "also newer, wider, better drainage",
+        "construction features may contribute alongside the markers, not markers alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Mile-marker signs are definitely the sole reason for the higher satisfaction, according to how the passage describes the situation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Newer trail construction features, not just the mile markers, may contribute to the higher satisfaction.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Older trails in the system always had mile markers installed. This would apply consistently across every detail the passage provides.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Satisfaction ratings were identical regardless of trail age.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L99_Q3_PRACTICE",
+      "level": 99,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A software company found that customers who contacted support through live chat resolved their issues faster on average than customers who used email support. Customers who chose live chat also tended to have simpler, more common issues, based on a review of ticket categories.",
+      "options": [
+        "Live chat is definitely the sole reason for faster issue resolution.",
+        "Customers using live chat always had the most complex issues.",
+        "Resolution times were identical between chat and email support.",
+        "The simplicity of the issues themselves may partly explain the faster resolution, not the chat format alone."
+      ],
+      "correctAnswer": "The simplicity of the issues themselves may partly explain the faster resolution, not the chat format alone.",
+      "hint": "Notice the detail about the types of issues that tended to come through live chat.",
+      "explanation": "Since live chat users tended to have simpler, more common issues, which are naturally faster to resolve, the passage suggests issue complexity may explain part of the speed difference, not the chat format alone.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Live chat customers: faster resolution -> also tend to have simpler, more common issues -> issue simplicity may partly explain the speed, not chat format alone"
+      ],
+      "logicChainSteps": [
+        "Live chat customers: faster resolution",
+        "also tend to have simpler, more common issues",
+        "issue simplicity may partly explain the speed, not chat format alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Live chat is definitely the sole reason for faster issue resolution.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Customers using live chat always had the most complex issues.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Resolution times were identical between chat and email support.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The simplicity of the issues themselves may partly explain the faster resolution, not the chat format alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L100_Q1_PRACTICE",
+      "level": 100,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A national bank found that customers who opened accounts through its mobile app had higher average account balances than customers who opened accounts in person at a branch. Customers who used the mobile app also skewed younger and were more likely to be enrolled in direct deposit through an employer.",
+      "options": [
+        "Opening an account through the app is definitely the sole reason for higher balances. This would apply consistently across every detail the passage provides.",
+        "Branch customers were more likely to be enrolled in direct deposit.",
+        "Account balances were identical regardless of how the account was opened. The passage's account gives no reason to think this differed at any stage.",
+        "Age and direct deposit enrollment may both contribute to the balance difference, not the account-opening method alone."
+      ],
+      "correctAnswer": "Age and direct deposit enrollment may both contribute to the balance difference, not the account-opening method alone.",
+      "hint": "Notice the two additional characteristics mentioned about mobile app customers.",
+      "explanation": "Since mobile app customers also skewed younger and were more often enrolled in direct deposit, both factors that could independently affect account balances, the passage suggests these may contribute alongside the account-opening method.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Mobile app customers: higher average balances -> also younger, more likely on direct deposit -> age and direct deposit may contribute to the balance gap, not the app alone"
+      ],
+      "logicChainSteps": [
+        "Mobile app customers: higher average balances",
+        "also younger, more likely on direct deposit",
+        "age and direct deposit may contribute to the balance gap, not the app alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Opening an account through the app is definitely the sole reason for higher balances. This would apply consistently across every detail the passage provides.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Branch customers were more likely to be enrolled in direct deposit.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Account balances were identical regardless of how the account was opened. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Age and direct deposit enrollment may both contribute to the balance difference, not the account-opening method alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L100_Q2_PRACTICE",
+      "level": 100,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A hospital found that patients discharged with a follow-up appointment already scheduled had lower readmission rates than patients discharged without one. Patients who received a pre-scheduled appointment were also, on average, patients treated by physicians who had more years of experience at that hospital.",
+      "options": [
+        "The pre-scheduled appointment is definitely the sole reason for lower readmissions.",
+        "Patients without pre-scheduled appointments were treated by the most experienced physicians.",
+        "Physician experience may partly explain the lower readmission rates, not the pre-scheduled appointment alone.",
+        "Readmission rates were identical regardless of appointment scheduling."
+      ],
+      "correctAnswer": "Physician experience may partly explain the lower readmission rates, not the pre-scheduled appointment alone.",
+      "hint": "Notice the detail about which physicians tended to schedule follow-up appointments before discharge.",
+      "explanation": "Since patients with pre-scheduled appointments were also treated by more experienced physicians, a factor that could independently affect readmission rates, the passage suggests experience may account for part of the difference.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Patients with pre-scheduled follow-ups: lower readmission rates -> also treated by more experienced physicians -> physician experience may partly explain the difference, not scheduling alone"
+      ],
+      "logicChainSteps": [
+        "Patients with pre-scheduled follow-ups: lower readmission rates",
+        "also treated by more experienced physicians",
+        "physician experience may partly explain the difference, not scheduling alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The pre-scheduled appointment is definitely the sole reason for lower readmissions.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Patients without pre-scheduled appointments were treated by the most experienced physicians.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Physician experience may partly explain the lower readmission rates, not the pre-scheduled appointment alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Readmission rates were identical regardless of appointment scheduling.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L100_Q3_PRACTICE",
+      "level": 100,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's transportation office found that commuters who used carpool lanes reported shorter commute times than commuters who did not. Commuters who used carpool lanes were also required to have at least one passenger, meaning they had already coordinated their schedules with a co-worker or neighbor before leaving.",
+      "options": [
+        "The carpool lane is definitely unrelated to the shorter commute times reported.",
+        "Commuters without passengers were required to use the carpool lane.",
+        "Commute times were identical regardless of lane choice.",
+        "The requirement to coordinate schedules with a passenger may relate to who chooses carpool lanes, alongside the lane's time-saving effect."
+      ],
+      "correctAnswer": "The requirement to coordinate schedules with a passenger may relate to who chooses carpool lanes, alongside the lane's time-saving effect.",
+      "hint": "Notice the requirement mentioned for using the carpool lane and what that implies about these commuters' planning.",
+      "explanation": "Since carpool lane use requires having a passenger and pre-coordinated schedules, the passage suggests this planning, together with the lane's typical traffic advantage, is consistent with the shorter reported commute times rather than ruling out a connection.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Carpool lane users: shorter commute times -> lane requires a coordinated passenger -> coordination and lane access both appear consistent with the shorter commute times"
+      ],
+      "logicChainSteps": [
+        "Carpool lane users: shorter commute times",
+        "lane requires a coordinated passenger",
+        "coordination and lane access both appear consistent with the shorter commute times"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The carpool lane is definitely unrelated to the shorter commute times reported.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Commuters without passengers were required to use the carpool lane.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Commute times were identical regardless of lane choice.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The requirement to coordinate schedules with a passenger may relate to who chooses carpool lanes, alongside the lane's time-saving effect.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    }
+  ]
+}

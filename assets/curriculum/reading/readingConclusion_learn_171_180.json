@@ -1,0 +1,1380 @@
+{
+  "gameType": "readingConclusion",
+  "phase": "learn",
+  "batchIndex": 18,
+  "levels": "171-180",
+  "quests": [
+    {
+      "id": "RDG_READINGCONCLUSION_L171_Q1_LEARN",
+      "level": 171,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A pharmaceutical company's trial for a new sleep aid showed that 68 percent of participants reported falling asleep faster, compared to 31 percent in the placebo group. However, the trial only included adults aged 25-40 without any diagnosed sleep disorders, and participants were aware of which group they were assigned to, since the trial was not blinded.",
+      "logicChain": [
+        "68% vs 31% report faster sleep -> trial unblinded, narrow age range, no sleep disorders included -> results suggestive for this group, but limitations restrict broader generalization"
+      ],
+      "logicChainSteps": [
+        "68% vs 31% report faster sleep",
+        "trial unblinded, narrow age range, no sleep disorders included",
+        "results suggestive for this group, but limitations restrict broader generalization"
+      ],
+      "conclusion": "The results suggest the medication may help this specific age group fall asleep faster, though the lack of blinding and narrow participant pool limit how confidently this can be generalized.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The medication has been proven effective for all adults regardless of age or sleep condition. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The trial's design provides the strongest possible evidence available for approving the medication. Every relevant detail included in the passage is consistent with treating this as a complete and accurate account, without further qualification being necessary.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The results suggest the medication may help this specific age group fall asleep faster, though the lack of blinding and narrow participant pool limit how confidently this can be generalized.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The results show the placebo group fell asleep faster than the medication group.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "While the percentage difference is notable, the trial's lack of blinding and narrow age range without sleep disorders are real limitations that should temper how broadly the results can be applied, making the qualified conclusion the best-supported one."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L171_Q2_LEARN",
+      "level": 171,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A city's economic development office reported that a $2 million investment in a downtown revitalization grant program 'was associated with' 340 new jobs created in the target area over three years. The report did not specify how many of these jobs might have been created anyway due to regional economic growth during the same period, nor did it include a comparison area that did not receive the grant.",
+      "logicChain": [
+        "Grant program 'associated with' 340 jobs -> no comparison area included -> no accounting for regional economic growth -> difficult to confidently attribute the jobs specifically to the grant program"
+      ],
+      "logicChainSteps": [
+        "Grant program 'associated with' 340 jobs",
+        "no comparison area included",
+        "no accounting for regional economic growth",
+        "difficult to confidently attribute the jobs specifically to the grant program"
+      ],
+      "conclusion": "Without a comparison area or an estimate of jobs that might have occurred regardless, it is difficult to know how many of the 340 jobs are actually attributable to the grant program itself.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The grant program is definitely responsible for all 340 jobs created. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The report proves the grant program had no effect on job creation. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Without a comparison area or an estimate of jobs that might have occurred regardless, it is difficult to know how many of the 340 jobs are actually attributable to the grant program itself.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Regional economic growth was definitely unrelated to any of the new jobs. As far as the passage's description goes, nothing about the surrounding details would suggest this needs to be treated as an incomplete picture.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Without a comparison area or an accounting for broader regional growth, the report's association between the grant and the jobs doesn't rule out that some or many of those jobs would have appeared regardless, making a cautious conclusion the best-supported one."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L171_Q3_LEARN",
+      "level": 171,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A university study found that students who took a for-credit 'financial literacy' course reported higher confidence in managing personal budgets one year after graduation than students who didn't take the course. However, the course was an elective that required an additional tuition fee, meaning enrolled students may have already had more financial resources or interest in the subject than non-enrolled students.",
+      "logicChain": [
+        "Elective course, extra tuition fee -> enrolled students may already have more financial interest/resources -> course-takers report higher confidence -> self-selection limits how confidently the course alone explains the gap"
+      ],
+      "logicChainSteps": [
+        "Elective course, extra tuition fee",
+        "enrolled students may already have more financial interest/resources",
+        "course-takers report higher confidence",
+        "self-selection limits how confidently the course alone explains the gap"
+      ],
+      "conclusion": "Because enrollment required extra cost and was voluntary, students' pre-existing financial interest or resources may account for some of the confidence difference, not the course content alone.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The course is definitely and solely responsible for the entire confidence difference. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Students who did not take the course reported higher confidence than those who did. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The extra tuition fee had no possible connection to which students enrolled. The way the events are described throughout the passage offers no clear signal that this particular reading should be treated with any extra caution.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Because enrollment required extra cost and was voluntary, students' pre-existing financial interest or resources may account for some of the confidence difference, not the course content alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Since the course required extra payment and voluntary enrollment, students choosing to take it may have already had more financial interest or resources, a self-selection factor that limits how confidently the confidence gap can be attributed to the course content itself."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L172_Q1_LEARN",
+      "level": 172,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A city's police department reported that a new predictive policing software, which analyzes historical crime data to suggest patrol locations, was followed by a 15 percent reduction in reported burglaries in the neighborhoods where it was deployed. Critics noted that the software was deployed specifically in neighborhoods that had already seen burglary rates declining slightly for two years prior to the software's introduction, for reasons unrelated to policing.",
+      "logicChain": [
+        "Software deployed in neighborhoods with already-declining burglary rates for 2 prior years -> burglaries drop 15% further -> pre-existing trend makes it difficult to confidently credit the software alone"
+      ],
+      "logicChainSteps": [
+        "Software deployed in neighborhoods with already-declining burglary rates for 2 prior years",
+        "burglaries drop 15% further",
+        "pre-existing trend makes it difficult to confidently credit the software alone"
+      ],
+      "conclusion": "Since burglaries were already declining in these neighborhoods before the software was introduced, it is difficult to confidently credit the software alone for the continued reduction.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The software is definitely and solely responsible for the entire 15 percent reduction.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Burglary rates in these neighborhoods had been rising for two years before the software was introduced. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Since burglaries were already declining in these neighborhoods before the software was introduced, it is difficult to confidently credit the software alone for the continued reduction.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The software was deployed randomly across all neighborhoods in the city.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Because these neighborhoods already had a declining burglary trend before the software arrived, the reported reduction may partly reflect the continuation of that existing trend rather than something entirely attributable to the software itself."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L172_Q2_LEARN",
+      "level": 172,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A workplace wellness program reported that employees who participated in its optional weekly mindfulness sessions took an average of 2.1 fewer sick days per year than non-participants. The program was offered during the lunch hour, and participation required employees to have enough flexibility in their workload to step away for 45 minutes without falling behind.",
+      "logicChain": [
+        "Participation requires 45 min of workload flexibility -> participants likely have more manageable workloads already -> participants: fewer sick days -> workload flexibility may explain part of the difference, not sessions alone"
+      ],
+      "logicChainSteps": [
+        "Participation requires 45 min of workload flexibility",
+        "participants likely have more manageable workloads already",
+        "participants: fewer sick days",
+        "workload flexibility may explain part of the difference, not sessions alone"
+      ],
+      "conclusion": "Since participation required having flexible enough workloads to step away, employees with lighter or more manageable workloads, a factor independently linked to less work-related stress, may explain part of the difference in sick days.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The mindfulness sessions are definitely and solely responsible for the entire difference in sick days. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Since participation required having flexible enough workloads to step away, employees with lighter or more manageable workloads, a factor independently linked to less work-related stress, may explain part of the difference in sick days.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Employees with the heaviest workloads were the most likely to participate. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Sick day usage showed no relationship to any workplace factor.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since only employees with flexible enough workloads could realistically participate, and workload flexibility could independently relate to stress and sick day usage, this self-selection factor limits how confidently the sick day difference can be attributed to the sessions alone."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L172_Q3_LEARN",
+      "level": 172,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A national survey found that adults who reported reading physical books regularly scored higher on a general knowledge quiz than adults who reported not reading regularly. The survey also found that regular readers had, on average, three more years of formal education than non-readers, and education level was independently correlated with quiz performance in the same survey.",
+      "logicChain": [
+        "Regular readers: higher quiz scores -> regular readers also have more years of education -> education independently correlated with quiz scores in this survey -> education overlap makes it difficult to credit reading habits alone"
+      ],
+      "logicChainSteps": [
+        "Regular readers: higher quiz scores",
+        "regular readers also have more years of education",
+        "education independently correlated with quiz scores in this survey",
+        "education overlap makes it difficult to credit reading habits alone"
+      ],
+      "conclusion": "Since regular readers also had more years of formal education, a factor independently linked to quiz performance, it is difficult to credit reading habits alone for the score difference.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Reading physical books alone is definitely and solely responsible for the score difference.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Since regular readers also had more years of formal education, a factor independently linked to quiz performance, it is difficult to credit reading habits alone for the score difference.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Non-readers had more years of formal education than regular readers.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Education level showed no independent relationship to quiz performance in this survey.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since the survey itself found education level independently correlated with quiz performance, and regular readers also had more education on average, this overlapping factor makes it difficult to confidently attribute the score difference to reading habits alone."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L173_Q1_LEARN",
+      "level": 173,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "A city's transportation department found that intersections where 'no right turn on red' signs were installed had a 40 percent reduction in pedestrian collisions the following year, compared to a citywide average reduction of 8 percent for the same period, attributed by officials to a broader public safety campaign running that year.",
+      "logicChain": [
+        "Citywide reduction (general campaign): 8% -> sign intersections: 40% reduction -> gap between the two suggests signs have an effect beyond the general campaign alone"
+      ],
+      "logicChainSteps": [
+        "Citywide reduction (general campaign): 8%",
+        "sign intersections: 40% reduction",
+        "gap between the two suggests signs have an effect beyond the general campaign alone"
+      ],
+      "conclusion": "Since the campaign's effect (8 percent citywide) is much smaller than the improvement at sign intersections (40 percent), the signs appear to have an effect beyond what the general campaign alone would explain.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The 40 percent reduction is entirely due to the citywide safety campaign, with the signs having no additional effect. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Pedestrian collisions increased at intersections with the new signs.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The citywide safety campaign had no measurable effect on collision rates anywhere. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Since the campaign's effect (8 percent citywide) is much smaller than the improvement at sign intersections (40 percent), the signs appear to have an effect beyond what the general campaign alone would explain.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Since the citywide campaign alone is associated with an 8 percent reduction, but sign intersections saw a much larger 40 percent reduction, the gap between these two figures suggests the signs contributed an effect beyond what the general campaign explains on its own."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L173_Q2_LEARN",
+      "level": 173,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "A hospital's surgical department reported that patients who received a new pre-surgery breathing exercise protocol had a post-surgery pneumonia rate of 3 percent, compared to a historical rate of 11 percent for similar surgeries at the same hospital in prior years. No other significant changes to surgical procedures, staff, or patient population were reported during this period.",
+      "logicChain": [
+        "Historical pneumonia rate: 11% -> breathing protocol introduced -> new rate: 3%, no other significant changes reported -> absence of other changes strengthens the case for the protocol as the explanation"
+      ],
+      "logicChainSteps": [
+        "Historical pneumonia rate: 11%",
+        "breathing protocol introduced",
+        "new rate: 3%, no other significant changes reported",
+        "absence of other changes strengthens the case for the protocol as the explanation"
+      ],
+      "conclusion": "Given that no other significant changes were reported during this period, the breathing protocol appears to be a strong candidate for explaining the reduced pneumonia rate.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The breathing protocol had no possible connection to the reduced pneumonia rate.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Given that no other significant changes were reported during this period, the breathing protocol appears to be a strong candidate for explaining the reduced pneumonia rate.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The reduction is definitely explained by unreported changes to the surgical staff. Every relevant detail included in the passage is consistent with treating this as a complete and accurate account, without further qualification being necessary.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Post-surgery pneumonia rates increased after the protocol was introduced.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since the passage explicitly states no other significant changes occurred, this substantially strengthens the case that the breathing protocol itself is responsible for the notable drop in pneumonia rates, compared to the more common situation where multiple explanations are equally plausible."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L173_Q3_LEARN",
+      "level": 173,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "A city's public library reported that its 'one book, one city' community reading program, where all branches promoted the same book for a month, coincided with a 25 percent rise in overall library card sign-ups that month, compared to the same month in each of the previous three years, which showed consistent sign-up numbers with little variation.",
+      "logicChain": [
+        "Same month, prior 3 years: consistent sign-up numbers -> reading program launches -> that month: sign-ups rise 25% -> consistency in prior years makes the program a plausible explanation for this unusual increase"
+      ],
+      "logicChainSteps": [
+        "Same month, prior 3 years: consistent sign-up numbers",
+        "reading program launches",
+        "that month: sign-ups rise 25%",
+        "consistency in prior years makes the program a plausible explanation for this unusual increase"
+      ],
+      "conclusion": "Since sign-ups had been consistent in this same month for three prior years, the reading program is a plausible explanation for this particular month's unusual increase.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Library card sign-ups had always fluctuated significantly during this month in past years.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The reading program definitely had no connection to the sign-up increase.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Since sign-ups had been consistent in this same month for three prior years, the reading program is a plausible explanation for this particular month's unusual increase.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Sign-ups decreased during the month of the reading program.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Because this same month showed consistent, stable sign-up numbers in the three years before the program, the sudden 25 percent jump during the program month stands out as unusual, making the reading program a plausible explanation for that specific deviation."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L174_Q1_LEARN",
+      "level": 174,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A regional bank's internal audit found that branches using a new customer greeting script had higher customer satisfaction scores than branches using the old script. However, the new script was piloted exclusively at branches that had recently undergone full renovations with updated interiors, while branches using the old script were generally older locations awaiting renovation.",
+      "logicChain": [
+        "New script piloted only at renovated branches -> old script only at older, unrenovated branches -> satisfaction higher at new-script branches -> script and renovation are fully overlapping, making it impossible to isolate one factor"
+      ],
+      "logicChainSteps": [
+        "New script piloted only at renovated branches",
+        "old script only at older, unrenovated branches",
+        "satisfaction higher at new-script branches",
+        "script and renovation are fully overlapping, making it impossible to isolate one factor"
+      ],
+      "conclusion": "Because the new script was tied specifically to recently renovated branches, it is difficult to separate the script's effect from the effect of the renovated environment itself.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Because the new script was tied specifically to recently renovated branches, it is difficult to separate the script's effect from the effect of the renovated environment itself.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The new script alone is definitely and solely responsible for the higher satisfaction scores. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The renovated branches all used the old greeting script.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Satisfaction scores showed no relationship to any branch characteristic.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since the new script was piloted only at renovated branches, with no renovated branches using the old script for comparison, it's impossible to isolate whether the script itself or the renovated environment explains the satisfaction difference."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L174_Q2_LEARN",
+      "level": 174,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A software company found that customers who completed its optional onboarding tutorial had a 30-day product retention rate of 78 percent, compared to 45 percent for customers who skipped the tutorial. A/B testing data showed that customers were randomly assigned to see or not see a prompt encouraging tutorial completion, and among those shown the prompt, those who chose to complete the tutorial still had substantially higher retention than those who saw the prompt but declined.",
+      "logicChain": [
+        "Prompt randomly shown to some customers -> among those shown it, completers have higher retention than decliners -> since prompt exposure was random but choice still predicts retention, the choice itself likely reflects some other explanatory factor"
+      ],
+      "logicChainSteps": [
+        "Prompt randomly shown to some customers",
+        "among those shown it, completers have higher retention than decliners",
+        "since prompt exposure was random but choice still predicts retention, the choice itself likely reflects some other explanatory factor"
+      ],
+      "conclusion": "Since the prompt itself was randomly assigned but retention differences still appeared based on the choice to complete or decline the tutorial, factors other than random assignment likely explain part of the retention gap.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The random assignment of the prompt fully explains the entire retention difference. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Customers who declined the tutorial had higher retention than those who completed it. As far as the passage's description goes, nothing about the surrounding details would suggest this needs to be treated as an incomplete picture.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Retention rates showed no relationship to tutorial completion in this data. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Since the prompt itself was randomly assigned but retention differences still appeared based on the choice to complete or decline the tutorial, factors other than random assignment likely explain part of the retention gap.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Since the prompt itself was randomly shown, but a retention gap still existed between those who chose to complete versus decline the tutorial after seeing it, this suggests something about the customers' choice itself, not just random prompt exposure, relates to the retention difference."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L174_Q3_LEARN",
+      "level": 174,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A city's parks department found that a newly installed public art sculpture in a downtown plaza coincided with a reported 12 percent increase in plaza visitors over the following six months. During roughly the same period, a popular new restaurant also opened directly adjacent to the plaza, and a nearby office building completed a major renovation that added several hundred new workers to the area.",
+      "logicChain": [
+        "Sculpture installed -> restaurant also opens nearby -> office renovation adds workers to area -> plaza visitors rise 12% -> three simultaneous changes make it difficult to attribute the increase specifically to the sculpture"
+      ],
+      "logicChainSteps": [
+        "Sculpture installed",
+        "restaurant also opens nearby",
+        "office renovation adds workers to area",
+        "plaza visitors rise 12%",
+        "three simultaneous changes make it difficult to attribute the increase specifically to the sculpture"
+      ],
+      "conclusion": "With multiple changes happening in the same area around the same time, it is difficult to confidently attribute the visitor increase specifically to the sculpture.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The sculpture is definitely and solely responsible for the entire visitor increase.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The restaurant opening and office renovation had no possible connection to plaza visitors.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "With multiple changes happening in the same area around the same time, it is difficult to confidently attribute the visitor increase specifically to the sculpture.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Plaza visitor numbers actually decreased over this six-month period.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "With three separate changes, the sculpture, a new restaurant, and an office renovation adding workers, all occurring around the same time in the same area, the passage does not provide enough information to isolate which change, or combination, explains the visitor increase."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L175_Q1_LEARN",
+      "level": 175,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "A national fitness chain found that members who used its app to log workouts had a gym attendance rate 35 percent higher than members who didn't use the app. The company's data science team also found that this pattern held consistently even when comparing only members who joined in the same month, paid for the same membership tier, and lived within the same distance range from their home gym.",
+      "logicChain": [
+        "App users: 35% higher attendance -> pattern holds even after controlling for join date, tier, distance -> app usage appears meaningfully linked to attendance independent of these other factors"
+      ],
+      "logicChainSteps": [
+        "App users: 35% higher attendance",
+        "pattern holds even after controlling for join date, tier, distance",
+        "app usage appears meaningfully linked to attendance independent of these other factors"
+      ],
+      "conclusion": "Since the pattern held even after accounting for join date, membership tier, and distance, the app usage itself appears to be a meaningful factor in the attendance difference, independent of these other variables.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The attendance difference is entirely explained by differences in membership tier.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The attendance difference is entirely explained by how far members live from the gym. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Since the pattern held even after accounting for join date, membership tier, and distance, the app usage itself appears to be a meaningful factor in the attendance difference, independent of these other variables.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The pattern disappeared once join date, tier, and distance were accounted for.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Because the data science team specifically controlled for join date, membership tier, and distance, and the attendance gap persisted anyway, this strengthens the case that app usage itself relates meaningfully to attendance, beyond what these other factors alone would explain."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L175_Q2_LEARN",
+      "level": 175,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "A city's school district found that students who attended a summer reading program had, on average, less 'summer learning loss' (measured by comparing spring and fall test scores) than students who didn't attend. Enrollment in the program was based on a lottery among all students who applied, with far more applicants than available spots, and the lottery numbers had no connection to any student's prior academic performance.",
+      "logicChain": [
+        "Program enrollment via lottery, unrelated to prior performance -> program attendees show less summer learning loss -> lottery detail rules out self-selection by high performers, strengthening the program as the explanation"
+      ],
+      "logicChainSteps": [
+        "Program enrollment via lottery, unrelated to prior performance",
+        "program attendees show less summer learning loss",
+        "lottery detail rules out self-selection by high performers, strengthening the program as the explanation"
+      ],
+      "conclusion": "Since enrollment was determined by a lottery unrelated to prior performance, the program itself is a more plausible explanation than self-selection by already high-performing students.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Only students with the highest prior test scores were selected for the program. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The lottery system was specifically designed to select struggling students only. Every relevant detail included in the passage is consistent with treating this as a complete and accurate account, without further qualification being necessary.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Summer learning loss showed no relationship to program attendance. The way the events are described throughout the passage offers no clear signal that this particular reading should be treated with any extra caution.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Since enrollment was determined by a lottery unrelated to prior performance, the program itself is a more plausible explanation than self-selection by already high-performing students.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Because the passage explicitly states the lottery was unrelated to prior academic performance, this detail rules out the common concern that only already high-performing or motivated students enrolled, strengthening the case that the program itself, not self-selection, explains the difference."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L175_Q3_LEARN",
+      "level": 175,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "A regional airline reported that flights it operated using a new fuel-efficient aircraft model had 18 percent lower fuel costs per flight than flights using its older aircraft model on the same routes, with similar passenger loads, similar weather conditions logged for both groups, and pilots rotating between both aircraft types rather than being assigned exclusively to one model.",
+      "logicChain": [
+        "Similar routes, loads, weather, pilot rotation between old and new aircraft -> new aircraft: 18% lower fuel costs -> common competing factors ruled out, leaving aircraft model as the most plausible explanation"
+      ],
+      "logicChainSteps": [
+        "Similar routes, loads, weather, pilot rotation between old and new aircraft",
+        "new aircraft: 18% lower fuel costs",
+        "common competing factors ruled out, leaving aircraft model as the most plausible explanation"
+      ],
+      "conclusion": "Given that routes, passenger loads, weather, and pilot assignment were all similar between the two aircraft types, the aircraft model itself appears to be the most plausible explanation for the fuel cost difference.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Passenger load differences are definitely responsible for the fuel cost difference. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Given that routes, passenger loads, weather, and pilot assignment were all similar between the two aircraft types, the aircraft model itself appears to be the most plausible explanation for the fuel cost difference.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Pilots were assigned exclusively to one aircraft type or the other. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Fuel costs showed no relationship to which aircraft model was used.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since the passage explicitly states routes, passenger loads, weather, and pilot rotation were all similar between the two aircraft groups, these common competing explanations are ruled out, leaving the aircraft model itself as the most plausible remaining explanation for the fuel cost difference."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L176_Q1_LEARN",
+      "level": 176,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "A hospital network's study found that patients who received a specific post-surgical medication had a complication rate of 4 percent, compared to 9 percent for patients who received a standard alternative medication. The study was double-blinded, meaning neither patients nor treating physicians knew which medication a patient received, and patients were randomly assigned to each group at the start of the study.",
+      "logicChain": [
+        "Patients randomly assigned, study double-blinded -> medication group: 4% complications, alternative group: 9% -> randomization and blinding rule out selection bias and observer bias -> medication itself well-supported as the explanation"
+      ],
+      "logicChainSteps": [
+        "Patients randomly assigned, study double-blinded",
+        "medication group: 4% complications, alternative group: 9%",
+        "randomization and blinding rule out selection bias and observer bias",
+        "medication itself well-supported as the explanation"
+      ],
+      "conclusion": "Given the random assignment and double-blinding, the medication itself is a well-supported explanation for the difference in complication rates.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The difference in complication rates is definitely explained by physician bias in treatment. This would remain the case regardless of any other detail in the passage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Patients who knew which medication they received had fewer complications.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Given the random assignment and double-blinding, the medication itself is a well-supported explanation for the difference in complication rates.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The complication rate was identical between the two medication groups.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Random assignment rules out that healthier patients were more likely to receive one medication, and double-blinding rules out bias from patients or physicians knowing the assignment, together making the medication itself a well-supported explanation for the observed difference."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L176_Q2_LEARN",
+      "level": 176,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "A city's utility company found that households enrolled in a peer-comparison program, which included a monthly note showing how a household's energy use compared to similar-sized neighboring homes, reduced energy consumption by an average of 8 percent. Enrollment was automatic for all households in a randomly selected set of zip codes, with no opt-in or opt-out choice offered to residents, and neighboring zip codes not selected served as a comparison group showing no significant change in energy use over the same period.",
+      "logicChain": [
+        "Random, automatic enrollment (no self-selection) -> comparison zip codes: no significant change -> program zip codes: 8% reduction -> self-selection and regional trends ruled out, leaving the program well-supported as the explanation"
+      ],
+      "logicChainSteps": [
+        "Random, automatic enrollment (no self-selection)",
+        "comparison zip codes: no significant change",
+        "program zip codes: 8% reduction",
+        "self-selection and regional trends ruled out, leaving the program well-supported as the explanation"
+      ],
+      "conclusion": "Given the random zip code selection and the lack of any comparison group change, the peer-comparison program itself appears well-supported as the explanation for the energy reduction.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Households chose to enroll in the program based on their existing environmental interest. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Given the random zip code selection and the lack of any comparison group change, the peer-comparison program itself appears well-supported as the explanation for the energy reduction.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The comparison zip codes also showed an 8 percent reduction in energy use.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Energy use increased in the zip codes that received the peer-comparison notes. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since enrollment was random and automatic, ruling out self-selection by already environmentally motivated households, and the comparison zip codes showed no change, ruling out broader regional trends, these details together make the program itself the well-supported explanation."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L176_Q3_LEARN",
+      "level": 176,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "A manufacturing company reported that a new employee safety training program was followed by a 60 percent drop in workplace injuries over the following year. However, the company also replaced several pieces of aging equipment with newer, safer models during the same year, and hired a new safety compliance officer whose sole job was monitoring and correcting unsafe practices in real time.",
+      "logicChain": [
+        "Training program introduced -> equipment also replaced -> safety officer also hired -> injuries drop 60% -> three simultaneous safety changes make it difficult to isolate the training program's specific contribution"
+      ],
+      "logicChainSteps": [
+        "Training program introduced",
+        "equipment also replaced",
+        "safety officer also hired",
+        "injuries drop 60%",
+        "three simultaneous safety changes make it difficult to isolate the training program's specific contribution"
+      ],
+      "conclusion": "With multiple safety-related changes occurring simultaneously, it is difficult to confidently attribute the injury reduction specifically to the training program alone.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "With multiple safety-related changes occurring simultaneously, it is difficult to confidently attribute the injury reduction specifically to the training program alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The training program is definitely and solely responsible for the entire injury reduction. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The equipment replacement and new safety officer had no possible connection to injury rates. Every relevant detail included in the passage is consistent with treating this as a complete and accurate account, without further qualification being necessary.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Workplace injuries actually increased over the course of the year. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "With three separate safety-related changes, the training program, equipment replacement, and a new safety officer, all occurring in the same year, the passage does not provide enough information to isolate the training program's specific contribution from the other two changes."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L177_Q1_LEARN",
+      "level": 177,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A regional grocery chain's marketing team found that a new loyalty app, which sent personalized weekly coupons based on past purchases, was followed by a 22 percent increase in average customer spending among app users. The company's finance team, running a separate analysis, found that the increase in spending closely tracked seasonal grocery price inflation that year and was similar in size to the spending increase seen among non-app-using customers over the same period.",
+      "logicChain": [
+        "App users: spending up 22% -> non-app users: similar spending increase over same period -> increase tracks seasonal price inflation -> similar increase in both groups weakens the case for the app as a specific driver"
+      ],
+      "logicChainSteps": [
+        "App users: spending up 22%",
+        "non-app users: similar spending increase over same period",
+        "increase tracks seasonal price inflation",
+        "similar increase in both groups weakens the case for the app as a specific driver"
+      ],
+      "conclusion": "Since non-app users showed a similarly sized spending increase, likely due to price inflation, it is difficult to credit the loyalty app specifically for the spending rise among app users.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Since non-app users showed a similarly sized spending increase, likely due to price inflation, it is difficult to credit the loyalty app specifically for the spending rise among app users.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The loyalty app is definitely and solely responsible for the entire spending increase. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Non-app-using customers showed a much smaller spending increase than app users. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Seasonal price inflation had no possible connection to customer spending.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Because non-app users showed a similarly sized spending increase over the same period, likely explained by general price inflation, this comparison significantly weakens the case that the loyalty app specifically drove the spending increase among its users."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L177_Q2_LEARN",
+      "level": 177,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A city's transit agency found that a new express bus route between a suburban area and downtown had an average ridership of 1,200 passengers per day within its first month, well above the agency's initial projection of 400 daily riders. The route launched the same week that a major highway serving the same suburb closed indefinitely for a bridge replacement project expected to last at least a year.",
+      "logicChain": [
+        "Express route launches -> highway serving same suburb closes same week for at least a year -> ridership far exceeds projections -> timing makes it unclear how much reflects lasting interest versus a temporary lack of alternatives"
+      ],
+      "logicChainSteps": [
+        "Express route launches",
+        "highway serving same suburb closes same week for at least a year",
+        "ridership far exceeds projections",
+        "timing makes it unclear how much reflects lasting interest versus a temporary lack of alternatives"
+      ],
+      "conclusion": "Given the timing of the highway closure, it is difficult to know how much of the route's ridership reflects lasting interest in the bus service versus a temporary response to having no highway alternative.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The express route's popularity is definitely permanent and unrelated to the highway closure.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Given the timing of the highway closure, it is difficult to know how much of the route's ridership reflects lasting interest in the bus service versus a temporary response to having no highway alternative.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The highway closure had no possible connection to the route's ridership numbers.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Ridership on the new route was actually below the agency's projections.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since the route launched the same week a major highway alternative closed, the unusually high ridership could partly or largely reflect a temporary response to reduced alternatives rather than durable interest that would continue once the highway reopens."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L177_Q3_LEARN",
+      "level": 177,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A university found that first-generation college students who participated in a peer mentorship program had a four-year graduation rate of 71 percent, compared to 52 percent for first-generation students who did not participate. The program had unlimited available spots and was promoted to all first-generation students through mandatory freshman orientation, with participation entirely voluntary and based only on whether a student chose to sign up during orientation.",
+      "logicChain": [
+        "Program open to all, voluntary sign-up at orientation -> participants: 71% graduation, non-participants: 52% -> voluntary nature means participants may already differ in motivation/engagement -> difficult to fully credit the program alone"
+      ],
+      "logicChainSteps": [
+        "Program open to all, voluntary sign-up at orientation",
+        "participants: 71% graduation, non-participants: 52%",
+        "voluntary nature means participants may already differ in motivation/engagement",
+        "difficult to fully credit the program alone"
+      ],
+      "conclusion": "Since participation was voluntary, students who chose to enroll in mentorship may have already been more engaged or motivated in ways that also relate to graduation, making it difficult to fully credit the program alone.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Since participation was voluntary, students who chose to enroll in mentorship may have already been more engaged or motivated in ways that also relate to graduation, making it difficult to fully credit the program alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The mentorship program is definitely and solely responsible for the entire graduation rate difference. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Participation was determined by random assignment rather than student choice.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Graduation rates showed no relationship to program participation in this data.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Because participation depended entirely on a student's own choice to sign up rather than random assignment, students who opted in may have already been more engaged or motivated in ways that independently relate to graduation, complicating a confident, full credit to the program alone."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L178_Q1_LEARN",
+      "level": 178,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A national retailer's data science team found that stores which received a new employee scheduling algorithm, designed to better match staffing levels to predicted customer traffic, saw a 14 percent increase in same-store sales compared to the prior year. The algorithm was rolled out to stores in a randomized order determined by a computer-generated schedule, with store managers unable to request early or delayed implementation, and the retailer's overall regional sales trends were flat during the same period across stores that had not yet received the algorithm.",
+      "logicChain": [
+        "Algorithm rollout randomized, managers cannot choose timing -> stores without algorithm yet: flat sales -> stores with algorithm: sales up 14% -> randomization and flat comparison group rule out alternative explanations, supporting the algorithm as the cause"
+      ],
+      "logicChainSteps": [
+        "Algorithm rollout randomized, managers cannot choose timing",
+        "stores without algorithm yet: flat sales",
+        "stores with algorithm: sales up 14%",
+        "randomization and flat comparison group rule out alternative explanations, supporting the algorithm as the cause"
+      ],
+      "conclusion": "Given the randomized rollout order and the flat sales trend at stores without the algorithm yet, the algorithm itself appears to be a well-supported explanation for the sales increase.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Given the randomized rollout order and the flat sales trend at stores without the algorithm yet, the algorithm itself appears to be a well-supported explanation for the sales increase.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Store managers were able to choose exactly when their store received the algorithm.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Stores without the algorithm also saw a 14 percent sales increase during this period.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Same-store sales decreased at stores that received the new algorithm.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since the rollout order was randomized and outside manager control, ruling out that better-performing stores got the algorithm first, and stores without it yet showed flat sales, ruling out a broader company-wide trend, these details together make the algorithm well-supported as the explanation."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L178_Q2_LEARN",
+      "level": 178,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A hospital's infection control team found that a new hand hygiene monitoring system, which used sensors to track and anonymously report staff handwashing compliance rates on a public dashboard, was followed by hospital-acquired infection rates dropping from 3.8 to 1.9 per 1,000 patient days. The dashboard was installed hospital-wide on a single date, with no other infection control policies, staffing changes, or patient population changes reported during the study period.",
+      "logicChain": [
+        "Infection rate: 3.8 per 1,000 patient days -> dashboard installed hospital-wide, no other changes reported -> infection rate: 1.9 per 1,000 -> absence of other changes strengthens the dashboard as the explanation"
+      ],
+      "logicChainSteps": [
+        "Infection rate: 3.8 per 1,000 patient days",
+        "dashboard installed hospital-wide, no other changes reported",
+        "infection rate: 1.9 per 1,000",
+        "absence of other changes strengthens the dashboard as the explanation"
+      ],
+      "conclusion": "Given that no other relevant changes were reported during this period, the hand hygiene monitoring system is a well-supported explanation for the drop in infection rates.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The infection rate drop is definitely explained by an unrelated change in patient population. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Hospital-acquired infection rates increased after the dashboard was installed. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The dashboard had no possible connection to staff handwashing behavior.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Given that no other relevant changes were reported during this period, the hand hygiene monitoring system is a well-supported explanation for the drop in infection rates.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Since the passage explicitly states no other infection control policies, staffing, or patient population changes occurred during this period, this absence of alternative explanations substantially strengthens the case that the monitoring system itself explains the infection rate drop."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L178_Q3_LEARN",
+      "level": 178,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A city's parks department found that a new online reservation system for picnic shelters, replacing a first-come-first-served policy, coincided with a 45 percent increase in shelter usage revenue. The change was implemented at the same time the department also raised shelter rental fees by 20 percent to fund park maintenance, a fee increase applied uniformly regardless of whether reservations were made online or by phone.",
+      "logicChain": [
+        "Reservation system introduced -> fee also raised 20% uniformly, regardless of reservation method -> revenue rises 45% -> uniform fee increase likely explains part of the rise, complicating full credit to the reservation system alone"
+      ],
+      "logicChainSteps": [
+        "Reservation system introduced",
+        "fee also raised 20% uniformly, regardless of reservation method",
+        "revenue rises 45%",
+        "uniform fee increase likely explains part of the rise, complicating full credit to the reservation system alone"
+      ],
+      "conclusion": "Since the fee increase applied to all reservation methods, it likely accounts for at least part of the revenue increase, making it difficult to credit the reservation system alone.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Since the fee increase applied to all reservation methods, it likely accounts for at least part of the revenue increase, making it difficult to credit the reservation system alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The reservation system alone is definitely and solely responsible for the entire revenue increase. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The fee increase applied only to online reservations, not phone reservations. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Shelter usage revenue decreased after the reservation system was introduced. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since the fee increase applied uniformly to all reservations regardless of method, a portion of the revenue increase would occur even without the new system simply due to higher prices, making it difficult to credit the reservation system alone for the full 45 percent increase."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L179_Q1_LEARN",
+      "level": 179,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "A national coffee chain's research team found that stores that switched to compostable cups saw a 3 percent increase in customer visits over the following year. The switch was implemented company-wide on the same date at every store, and the company's overall same-store sales trend for the year, driven primarily by a new loyalty rewards program launched the same month as the cup switch, showed a 9 percent increase across the entire chain.",
+      "logicChain": [
+        "Cups switched company-wide, same date -> loyalty program also launched same month, drives 9% chain-wide increase -> visits up 3% -> no way to isolate the cup switch's effect from the loyalty program's broader, larger impact"
+      ],
+      "logicChainSteps": [
+        "Cups switched company-wide, same date",
+        "loyalty program also launched same month, drives 9% chain-wide increase",
+        "visits up 3%",
+        "no way to isolate the cup switch's effect from the loyalty program's broader, larger impact"
+      ],
+      "conclusion": "Since the loyalty program launched at the same time and drove a larger chain-wide increase, it is difficult to isolate what portion, if any, of the visit increase is specifically due to the compostable cups.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The compostable cups are definitely and solely responsible for the entire visit increase. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The loyalty rewards program had no possible connection to customer visits.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Customer visits decreased after the switch to compostable cups.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Since the loyalty program launched at the same time and drove a larger chain-wide increase, it is difficult to isolate what portion, if any, of the visit increase is specifically due to the compostable cups.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Since the cup switch happened company-wide with no separate comparison group, and a larger chain-wide increase is attributed to the simultaneously launched loyalty program, it becomes very difficult to isolate any specific effect of the cups from the loyalty program's broader impact."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L179_Q2_LEARN",
+      "level": 179,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "A regional hospital system found that patients treated by physicians who completed an advanced communication skills workshop had higher patient satisfaction scores than patients treated by physicians who had not completed the workshop. The hospital system specifically selected physicians for the voluntary workshop based on department leadership's assessment of 'physicians most likely to benefit and engage fully' with the training.",
+      "logicChain": [
+        "Physicians selected by leadership based on predicted engagement, not randomly -> selected physicians complete workshop -> their patients report higher satisfaction -> selection process itself may explain part of the difference, not workshop content alone"
+      ],
+      "logicChainSteps": [
+        "Physicians selected by leadership based on predicted engagement, not randomly",
+        "selected physicians complete workshop",
+        "their patients report higher satisfaction",
+        "selection process itself may explain part of the difference, not workshop content alone"
+      ],
+      "conclusion": "Since physicians were specifically selected based on leadership's assessment of likely engagement, this selection process may account for some of the satisfaction difference, not the workshop content alone.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The workshop content alone is definitely and solely responsible for the entire satisfaction difference. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Since physicians were specifically selected based on leadership's assessment of likely engagement, this selection process may account for some of the satisfaction difference, not the workshop content alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Physicians were randomly assigned to attend the workshop or not. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Patient satisfaction scores showed no relationship to any physician characteristic. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since physicians were deliberately chosen based on an assessment of who would likely engage well with the training, rather than randomly selected, this selection process itself may explain part of the satisfaction difference, separate from the workshop's actual content."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L179_Q3_LEARN",
+      "level": 179,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "A city's building department found that construction projects using a new digital permit tracking system were completed an average of 18 days faster than projects using the previous paper-based tracking system. The digital system was made available to all contractors on the same date, with contractors free to choose either the digital or paper system for each project, and department records show contractors who chose digital tracking had, on average, completed more total projects with the department historically than contractors who continued using paper tracking.",
+      "logicChain": [
+        "Contractors choose digital or paper freely -> digital-choosing contractors also more experienced historically -> digital projects complete 18 days faster -> experience difference may explain part of the time savings, not the system alone"
+      ],
+      "logicChainSteps": [
+        "Contractors choose digital or paper freely",
+        "digital-choosing contractors also more experienced historically",
+        "digital projects complete 18 days faster",
+        "experience difference may explain part of the time savings, not the system alone"
+      ],
+      "conclusion": "Since contractors choosing digital tracking were also more experienced overall, this experience difference may account for some of the faster completion times, not the tracking system alone.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The digital tracking system alone is definitely and solely responsible for the entire time difference.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Since contractors choosing digital tracking were also more experienced overall, this experience difference may account for some of the faster completion times, not the tracking system alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Contractors were required to use the digital system for all projects.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Project completion times showed no relationship to any contractor characteristic.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since contractors who chose the digital system were also more experienced with the department overall, a factor that could independently relate to faster project completion, this pre-existing experience difference may account for part of the time savings, not the system alone."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L180_Q1_LEARN",
+      "level": 180,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A large employer's HR department found that employees who used the company's new anonymous internal feedback tool reported higher job satisfaction in the annual engagement survey than employees who did not use the tool. Tool usage data was collected anonymously, meaning HR could not identify which specific employees used it, so the satisfaction comparison relied on employees self-reporting their own tool usage within the same anonymous survey.",
+      "logicChain": [
+        "Tool usage and satisfaction both self-reported in same anonymous survey, no independent verification -> tool users: report higher satisfaction -> generally positive employees may be more likely to report both using tools and being satisfied, complicating the comparison"
+      ],
+      "logicChainSteps": [
+        "Tool usage and satisfaction both self-reported in same anonymous survey, no independent verification",
+        "tool users: report higher satisfaction",
+        "generally positive employees may be more likely to report both using tools and being satisfied, complicating the comparison"
+      ],
+      "conclusion": "Since both tool usage and satisfaction were self-reported within the same anonymous survey, employees with generally more positive views of the company may have been more likely to both use the tool and report higher satisfaction.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The feedback tool is definitely and solely responsible for the entire satisfaction difference.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "HR was able to directly verify exactly which employees used the tool.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Since both tool usage and satisfaction were self-reported within the same anonymous survey, employees with generally more positive views of the company may have been more likely to both use the tool and report higher satisfaction.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Job satisfaction showed no relationship to tool usage in this survey.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since both tool usage and satisfaction levels were self-reported within the same survey with no independent verification, employees who generally feel more positively about their workplace may simply be more likely to report using company tools and to report higher satisfaction, complicating a clean causal read."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L180_Q2_LEARN",
+      "level": 180,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A national parcel company found that delivery drivers who completed a defensive driving refresher course had 28 percent fewer reported vehicle incidents over the following year than drivers who had not yet completed the course. The course was mandatory for all drivers and was scheduled in waves based on each driver's employee ID number, an assignment method with no relationship to prior driving record, route type, or years of experience.",
+      "logicChain": [
+        "Course mandatory, scheduled by employee ID number, unrelated to driving record or experience -> completers: 28% fewer incidents -> arbitrary scheduling rules out that safer drivers went first, strengthening the course as the explanation"
+      ],
+      "logicChainSteps": [
+        "Course mandatory, scheduled by employee ID number, unrelated to driving record or experience",
+        "completers: 28% fewer incidents",
+        "arbitrary scheduling rules out that safer drivers went first, strengthening the course as the explanation"
+      ],
+      "conclusion": "Since course scheduling was based on employee ID number, unrelated to prior driving record or experience, the course itself is a well-supported explanation for the reduced incident rate.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Drivers with the worst prior driving records were scheduled for the course first.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Drivers who had not yet completed the course showed the same 28 percent reduction.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Vehicle incident rates showed no relationship to course completion in this data.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Since course scheduling was based on employee ID number, unrelated to prior driving record or experience, the course itself is a well-supported explanation for the reduced incident rate.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Since assignment to the course waves was based on an arbitrary employee ID number with no connection to prior driving record, route type, or experience, this detail rules out the concern that safer drivers were simply scheduled first, strengthening the case for the course itself as the explanation."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L180_Q3_LEARN",
+      "level": 180,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A city's water utility found that neighborhoods that received a mailed brochure explaining proper disposal of cooking grease had a 22 percent reduction in grease-related sewer blockages over the following year, compared to neighborhoods that did not receive the brochure. Neighborhoods were selected to receive the brochure based on an alphabetical rotation of street names, a method the utility's engineering team confirmed had no relationship to a neighborhood's housing age, income level, or prior blockage history.",
+      "logicChain": [
+        "Neighborhoods selected by alphabetical rotation, confirmed unrelated to housing age/income/prior blockages -> brochure neighborhoods: 22% fewer blockages -> confirmed unrelated selection method rules out competing explanations, supporting the brochure as the cause"
+      ],
+      "logicChainSteps": [
+        "Neighborhoods selected by alphabetical rotation, confirmed unrelated to housing age/income/prior blockages",
+        "brochure neighborhoods: 22% fewer blockages",
+        "confirmed unrelated selection method rules out competing explanations, supporting the brochure as the cause"
+      ],
+      "conclusion": "Since neighborhoods were selected by an alphabetical rotation unrelated to housing age, income, or prior blockage history, the brochure itself is a well-supported explanation for the reduction in blockages.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Neighborhoods with the worst prior blockage history were specifically chosen to receive the brochure. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Neighborhoods that did not receive the brochure also saw a 22 percent reduction. The way the events are described throughout the passage offers no clear signal that this particular reading should be treated with any extra caution.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Blockage rates showed no relationship to which neighborhoods received the brochure. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Since neighborhoods were selected by an alphabetical rotation unrelated to housing age, income, or prior blockage history, the brochure itself is a well-supported explanation for the reduction in blockages.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Since the utility's own engineering team confirmed the alphabetical selection method had no relationship to housing age, income, or prior blockage history, this rules out common competing explanations, strengthening the case that the brochure itself explains the reduced blockage rate."
+    }
+  ]
+}

@@ -1,0 +1,1382 @@
+{
+  "gameType": "readingConclusion",
+  "phase": "learn",
+  "batchIndex": 14,
+  "levels": "131-140",
+  "quests": [
+    {
+      "id": "RDG_READINGCONCLUSION_L131_Q1_LEARN",
+      "level": 131,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "Subject: Re: Project Timeline Update. Hi team, I wanted to follow up on our conversation from Monday. After reviewing the client's revised requirements, I think we need to push our internal review date from the 15th to the 22nd. This isn't ideal, since it compresses the time before the final client presentation, but I'd rather we have a thorough review than rush through it. I've already spoken with the design team, and they're on board with the new timeline. Please let me know by Friday if this creates any conflicts on your end. Thanks, Priya.",
+      "logicChain": [
+        "Requirements revised -> internal review date pushed back -> design team already agreed -> recipient's confirmation still needed by Friday -> change proposed, not yet fully confirmed"
+      ],
+      "logicChainSteps": [
+        "Requirements revised",
+        "internal review date pushed back",
+        "design team already agreed",
+        "recipient's confirmation still needed by Friday",
+        "change proposed, not yet fully confirmed"
+      ],
+      "conclusion": "Priya is proposing a schedule change that still needs confirmation from some team members.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The client's requirements have not changed at all. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The design team refused to accept the new timeline. Nothing described in the passage points to any exception to this pattern.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The final client presentation has already taken place. This would be expected to hold across the entire situation as described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Priya is proposing a schedule change that still needs confirmation from some team members.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Priya explains the design team already agreed, but she is still asking the recipient to confirm by Friday, showing the change is proposed but not yet fully confirmed by everyone involved."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L131_Q2_LEARN",
+      "level": 131,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "Notice posted at the community pool entrance: 'Due to ongoing filtration system repairs, the pool will operate at reduced capacity (50 swimmers maximum) through the end of the month. Lap swim hours will remain unchanged, but open recreational swim sessions will now require a free timed ticket, available at the front desk starting 30 minutes before each session. We appreciate your patience as we complete these necessary repairs to keep the water quality safe for everyone.'",
+      "logicChain": [
+        "Filtration repairs limit capacity to 50 -> lap swim unaffected -> recreational swim now requires a same-day ticket, available 30 min before -> visitors must plan ahead to get in"
+      ],
+      "logicChainSteps": [
+        "Filtration repairs limit capacity to 50",
+        "lap swim unaffected",
+        "recreational swim now requires a same-day ticket, available 30 min before",
+        "visitors must plan ahead to get in"
+      ],
+      "conclusion": "Visitors hoping to swim during open recreational sessions will need to plan ahead to secure a ticket.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Lap swim hours have been cancelled for the rest of the month.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The pool has closed completely until repairs are finished.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Tickets for recreational swim can be purchased weeks in advance online. This reading would hold true across the full sequence of events described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Visitors hoping to swim during open recreational sessions will need to plan ahead to secure a ticket.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "The notice states tickets are only available at the front desk starting 30 minutes before each session and capacity is capped, meaning recreational swimmers need to plan their arrival carefully rather than simply showing up."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L131_Q3_LEARN",
+      "level": 131,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "Text message thread: Landlord: 'Hi Tomás, just a heads up that the plumber will be at the building tomorrow between 9 and 11 am to check the water heater in unit 4B, which is right above your apartment. He may need brief access to your bathroom to check the pipes from below if there's an issue. I'll knock first, but wanted to give you notice in case you need to plan around it.' Tomás: 'Thanks for letting me know. I have a work call until 10, but should be free after that.'",
+      "logicChain": [
+        "Plumber arrives 9-11am, may need bathroom access if needed -> Tomás has a call until 10 -> Tomás notes he'll be free after -> Tomás adjusting his morning to be available if needed"
+      ],
+      "logicChainSteps": [
+        "Plumber arrives 9-11am, may need bathroom access if needed",
+        "Tomás has a call until 10",
+        "Tomás notes he'll be free after",
+        "Tomás adjusting his morning to be available if needed"
+      ],
+      "conclusion": "Tomás may need to adjust when he is available at home tomorrow morning.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Tomás may need to adjust when he is available at home tomorrow morning.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Tomás confirmed he will not be home at all tomorrow.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The plumber is scheduled to work in Tomás's apartment for certain.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The water heater issue has already been completely resolved.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since the plumber's window overlaps partly with Tomás's work call, and access to his bathroom is only a possibility depending on what's found upstairs, Tomás's reply shows he's adjusting his expectations around being available after 10."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L132_Q1_LEARN",
+      "level": 132,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "From a company-wide memo: 'As part of our commitment to sustainability, starting next month we will be transitioning away from single-use plastic cups in the break rooms. Reusable mugs will be provided to all employees, and a dishwasher will be installed in each kitchenette. We recognize this is a change to daily habits, so we're asking team leads to help remind their groups during the first few weeks. Feedback on how this transition is going can be shared through the usual suggestion box.'",
+      "logicChain": [
+        "Reusable mugs replace plastic cups -> team leads asked to remind groups for first few weeks -> request implies the company expects an adjustment period"
+      ],
+      "logicChainSteps": [
+        "Reusable mugs replace plastic cups",
+        "team leads asked to remind groups for first few weeks",
+        "request implies the company expects an adjustment period"
+      ],
+      "conclusion": "The company anticipates the change may take some adjustment for employees at first.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Employees will be required to bring their own dishes from home, based on the passage's account of what happened.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The suggestion box has been removed as part of this change.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The company anticipates the change may take some adjustment for employees at first.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Single-use cups will remain available alongside the new mugs indefinitely, according to the specific details given.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Asking team leads to help with reminders 'during the first few weeks' suggests the company expects the habit change to take some getting used to, rather than assuming it will happen instantly and smoothly."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L132_Q2_LEARN",
+      "level": 132,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "From a course syllabus: 'Late Work Policy: Assignments submitted within 24 hours of the deadline will receive a 10% grade deduction. Assignments submitted between 24 and 72 hours late will receive a 25% deduction. No assignments will be accepted after 72 hours past the deadline, except in documented cases of medical or family emergency, which must be communicated to the instructor as soon as reasonably possible.'",
+      "logicChain": [
+        "24-72 hours late: 25% deduction tier -> 50 hours falls within that window -> student without emergency documentation would lose 25% of the points"
+      ],
+      "logicChainSteps": [
+        "24-72 hours late: 25% deduction tier",
+        "50 hours falls within that window",
+        "student without emergency documentation would lose 25% of the points"
+      ],
+      "conclusion": "A student who submits an assignment 50 hours late, without an emergency, would lose a quarter of the possible points.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "A student who submits an assignment 50 hours late would lose all possible points. No part of the passage's account suggests otherwise.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "A student who submits an assignment 50 hours late, without an emergency, would lose a quarter of the possible points.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Emergency documentation must be submitted before the original deadline.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Assignments submitted after 72 hours are always accepted with a larger penalty. Nothing described in the passage points to any exception to this pattern.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Fifty hours falls within the 24-to-72-hour window, which the policy states carries a 25 percent deduction, not the smaller 10 percent tier or a complete loss of points reserved for submissions past 72 hours."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L132_Q3_LEARN",
+      "level": 132,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "Voicemail transcript: 'Hi, this is Denise calling from Brightview Dental. I wanted to follow up on the estimate we sent over for your upcoming procedure. Your insurance will cover about 60 percent of the cost, which leaves an estimated out-of-pocket amount of $340. We do offer a payment plan that splits this into three monthly installments if that would be helpful. Give us a call back whenever you get a chance to let us know how you'd like to proceed.'",
+      "logicChain": [
+        "Insurance covers 60% -> out-of-pocket estimate: $340 -> payment plan offered as an alternative option -> patient has more than one way to handle the remaining cost"
+      ],
+      "logicChainSteps": [
+        "Insurance covers 60%",
+        "out-of-pocket estimate: $340",
+        "payment plan offered as an alternative option",
+        "patient has more than one way to handle the remaining cost"
+      ],
+      "conclusion": "The patient has more than one option for how to handle the remaining cost.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Insurance will cover the entire cost of the procedure, as the passage presents the situation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The payment plan is the only way to pay for the procedure, based on the passage's account of what happened.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The patient has more than one option for how to handle the remaining cost.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The out-of-pocket cost has already been paid in full, based on what the passage actually says.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Denise mentions the $340 out-of-pocket estimate and then separately offers a three-month payment plan as something that 'would be helpful,' showing the patient can choose between paying the full amount or splitting it up."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L133_Q1_LEARN",
+      "level": 133,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "From a homeowner association newsletter: 'Reminder: Pool passes for the 2024 season must be renewed by May 1st to guarantee your household's spot in the system before the summer rush. Passes renewed after May 1st will still be processed, but access may be delayed by up to two weeks during peak renewal season, as our small volunteer committee works through the backlog by hand each year.'",
+      "logicChain": [
+        "Deadline: May 1st for guaranteed processing -> after May 1st: still processed but may be delayed up to two weeks -> small volunteer committee causes the backlog -> late renewal likely means waiting for access"
+      ],
+      "logicChainSteps": [
+        "Deadline: May 1st for guaranteed processing",
+        "after May 1st: still processed but may be delayed up to two weeks",
+        "small volunteer committee causes the backlog",
+        "late renewal likely means waiting for access"
+      ],
+      "conclusion": "Renewing after May 1st could mean waiting before gaining pool access.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Passes renewed after May 1st will be rejected entirely.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Renewing after May 1st could mean waiting before gaining pool access.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The pool committee processes renewals instantly regardless of timing, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "There is no deadline at all for renewing pool passes.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The newsletter explicitly states that late renewals 'may be delayed by up to two weeks' due to the volunteer committee's backlog, meaning late renewers should expect a wait rather than an outright rejection."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L133_Q2_LEARN",
+      "level": 133,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "From a used car listing description: 'One owner, non-smoker, garage kept. Regular maintenance records available upon request, including all oil changes and the timing belt replacement at 90,000 miles. Currently at 112,000 miles. Minor cosmetic wear on the rear bumper from a low-speed parking incident; does not affect drivability. Priced to sell quickly given the detailed maintenance history.'",
+      "logicChain": [
+        "Detailed maintenance history provided -> listing states price reflects that history -> seller is using the maintenance records to justify the asking price"
+      ],
+      "logicChainSteps": [
+        "Detailed maintenance history provided",
+        "listing states price reflects that history",
+        "seller is using the maintenance records to justify the asking price"
+      ],
+      "conclusion": "The seller is presenting the car's maintenance history as a reason to justify the asking price.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The car has never had any maintenance performed on it.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The seller is presenting the car's maintenance history as a reason to justify the asking price.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The rear bumper damage affects the car's ability to drive. This would apply consistently across every detail the passage provides.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The car has had multiple previous owners.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The listing explicitly ties the phrase 'priced to sell quickly' to the phrase 'given the detailed maintenance history,' showing the seller is using the documented upkeep as justification for the price being set the way it is."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L133_Q3_LEARN",
+      "level": 133,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "From a city council meeting summary: 'The proposed ordinance to restrict overnight parking on Elm Street passed with a 4-3 vote after nearly two hours of public comment. Several residents spoke in favor, citing safety concerns about street width and emergency vehicle access. Several other residents opposed the measure, arguing it would create a hardship for households without off-street parking. The ordinance will take effect in 60 days, giving affected residents time to make alternate arrangements.'",
+      "logicChain": [
+        "Vote: 4-3, not unanimous -> residents spoke both for and against -> ordinance takes effect in 60 days -> decision was contested, with differing resident opinions"
+      ],
+      "logicChainSteps": [
+        "Vote: 4-3, not unanimous",
+        "residents spoke both for and against",
+        "ordinance takes effect in 60 days",
+        "decision was contested, with differing resident opinions"
+      ],
+      "conclusion": "The council's decision was not unanimous, and residents held differing opinions on the issue.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Every resident who spoke supported the new ordinance.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The ordinance takes effect immediately upon the vote.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The council's decision was not unanimous, and residents held differing opinions on the issue.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The vote resulted in a tie that required a revote.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "A 4-3 vote, along with the passage's description of residents speaking on both sides of the issue, shows the decision was contested rather than a clear consensus."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L134_Q1_LEARN",
+      "level": 134,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "From an internal IT help desk ticket log: 'Ticket #4471 - Reported: printer on 3rd floor jamming repeatedly. Diagnosis: paper tray sensor malfunctioning, causing feed misalignment. Replacement part ordered, ETA 5-7 business days. Temporary fix applied: printer set to manual feed mode, which resolves jamming but requires staff to feed paper one sheet at a time. Status: Open, pending part arrival.'",
+      "logicChain": [
+        "Sensor malfunctioning -> replacement part ordered, 5-7 day ETA -> temporary fix: manual feed mode resolves jamming -> printer usable now, but not in normal automatic mode"
+      ],
+      "logicChainSteps": [
+        "Sensor malfunctioning",
+        "replacement part ordered, 5-7 day ETA",
+        "temporary fix: manual feed mode resolves jamming",
+        "printer usable now, but not in normal automatic mode"
+      ],
+      "conclusion": "Staff on the 3rd floor can currently use the printer, but not in its normal automatic mode.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The printer is completely unusable until the replacement part arrives, according to the account given.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Staff on the 3rd floor can currently use the printer, but not in its normal automatic mode.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The paper tray sensor has already been fully repaired. This would apply consistently across every detail the passage provides.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The printer will remain broken for at least a month. This would remain the case regardless of any other detail in the passage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The ticket describes a temporary fix, manual feed mode, that resolves the jamming for now, meaning the printer works but requires a slower, hands-on process until the part arrives in 5 to 7 days."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L134_Q2_LEARN",
+      "level": 134,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "From a restaurant's online order confirmation: 'Your order has been received and is being prepared. Estimated ready time: 6:15 PM. Please note: due to a temporary staffing shortage in our kitchen this evening, wait times may run 10-15 minutes longer than usual. We appreciate your patience and have added a complimentary drink to your order as a thank you.'",
+      "logicChain": [
+        "Kitchen understaffed tonight -> wait times may run 10-15 min longer than usual -> complimentary drink added proactively -> restaurant managing customer expectations about the delay"
+      ],
+      "logicChainSteps": [
+        "Kitchen understaffed tonight",
+        "wait times may run 10-15 min longer than usual",
+        "complimentary drink added proactively",
+        "restaurant managing customer expectations about the delay"
+      ],
+      "conclusion": "The restaurant is proactively managing customer expectations about a possible delay.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The restaurant is proactively managing customer expectations about a possible delay.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The order has been cancelled due to the staffing shortage, based on the passage's account of what happened.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The complimentary drink was requested by the customer. Nothing in the passage suggests this changed at any point during the period described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The kitchen is fully staffed as usual this evening.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "By flagging the likely delay in advance and adding a free drink without being asked, the restaurant is taking steps to manage the customer's expectations and soften the impact of the staffing shortage."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L134_Q3_LEARN",
+      "level": 134,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "From a landlord's move-out inspection report: 'Overall condition: good, consistent with normal wear and tear expected over a two-year tenancy. Minor scuff marks on living room walls, within normal range. Carpet in bedroom shows staining beyond normal wear, estimated cleaning cost $120, to be deducted from security deposit. Kitchen and bathroom fixtures in working order, no deductions warranted.'",
+      "logicChain": [
+        "Wall scuffs: normal wear, no deduction -> fixtures: fine, no deduction -> carpet staining: beyond normal wear, $120 deduction -> tenant will likely receive less than the full deposit"
+      ],
+      "logicChainSteps": [
+        "Wall scuffs: normal wear, no deduction",
+        "fixtures: fine, no deduction",
+        "carpet staining: beyond normal wear, $120 deduction",
+        "tenant will likely receive less than the full deposit"
+      ],
+      "conclusion": "The tenant will likely receive back less than the full security deposit.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The tenant will likely receive back less than the full security deposit.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The tenant will receive the entire security deposit back with no deductions, as the passage presents the situation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The landlord found no issues anywhere in the apartment.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The living room wall scuffs will result in a deduction from the deposit.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "While most of the apartment is described as normal wear with no deductions, the report specifically calls out the bedroom carpet staining as beyond normal wear and assigns a $120 deduction, meaning the tenant won't get the full deposit back."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L135_Q1_LEARN",
+      "level": 135,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "From a company's quarterly earnings call transcript: 'Our subscription revenue grew 14 percent year over year, driven primarily by strong retention among enterprise customers. However, our consumer segment saw a 6 percent decline in new sign-ups compared to the same quarter last year, which we attribute to increased competition in that space. We're actively reworking our consumer pricing strategy and expect to share updates next quarter.'",
+      "logicChain": [
+        "Enterprise segment: revenue +14% -> consumer segment: sign-ups -6% -> segments performed very differently this quarter"
+      ],
+      "logicChainSteps": [
+        "Enterprise segment: revenue +14%",
+        "consumer segment: sign-ups -6%",
+        "segments performed very differently this quarter"
+      ],
+      "conclusion": "The company's two main customer segments performed differently this quarter.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Both the enterprise and consumer segments grew at the same rate.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The company has already finalized its new consumer pricing strategy.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The company's two main customer segments performed differently this quarter.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Overall subscription revenue declined this quarter.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Enterprise revenue grew 14 percent while consumer sign-ups declined 6 percent, clearly showing the two segments moved in opposite directions this quarter rather than performing similarly."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L135_Q2_LEARN",
+      "level": 135,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "From a doctor's office after-visit summary: 'Blood pressure reading today: 142/91, elevated compared to your last three visits, which averaged around 128/82. Recommend monitoring at home twice daily for the next two weeks and keeping a log. If readings remain consistently elevated, we may discuss medication options at your follow-up appointment. In the meantime, reducing sodium intake and increasing physical activity may help.'",
+      "logicChain": [
+        "Past average: 128/82 -> today: 142/91, elevated -> doctor recommends home monitoring for two weeks -> medication only discussed if readings stay elevated -> monitoring first, not immediate treatment change"
+      ],
+      "logicChainSteps": [
+        "Past average: 128/82",
+        "today: 142/91, elevated",
+        "doctor recommends home monitoring for two weeks",
+        "medication only discussed if readings stay elevated",
+        "monitoring first, not immediate treatment change"
+      ],
+      "conclusion": "Today's reading is a change from the patient's recent pattern, prompting closer monitoring rather than an immediate treatment decision.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The doctor has already prescribed medication for high blood pressure. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Today's reading is a change from the patient's recent pattern, prompting closer monitoring rather than an immediate treatment decision.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Today's reading is consistent with the patient's readings from previous visits. This pattern would hold steady across the entire situation the passage lays out.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The doctor recommended no further monitoring or follow-up of any kind. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Today's elevated reading stands out against a clearly different average from the past three visits, and the doctor's response is to recommend monitoring first, with medication only a possible future discussion, not an immediate step."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L135_Q3_LEARN",
+      "level": 135,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "From a city's public transit rider alert: 'Effective this Saturday, the Blue Line will operate on a modified schedule due to track maintenance between Central Station and Riverside. Trains will run every 20 minutes instead of the usual 10, and riders traveling between these two stations should expect an additional bus shuttle to cover the affected segment. All other stations on the Blue Line will continue operating on the normal schedule.'",
+      "logicChain": [
+        "Maintenance affects only Central Station to Riverside segment -> trains every 20 min, shuttle bus added there -> all other stations: normal schedule continues -> impact is localized, not line-wide"
+      ],
+      "logicChainSteps": [
+        "Maintenance affects only Central Station to Riverside segment",
+        "trains every 20 min, shuttle bus added there",
+        "all other stations: normal schedule continues",
+        "impact is localized, not line-wide"
+      ],
+      "conclusion": "Only riders traveling through a specific segment of the Blue Line will be significantly affected by the maintenance.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The entire Blue Line will be shut down for the maintenance period.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Trains will run more frequently than usual during the maintenance.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The modified schedule will remain in effect permanently.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Only riders traveling through a specific segment of the Blue Line will be significantly affected by the maintenance.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "The alert specifies that only the segment between Central Station and Riverside gets the reduced frequency and shuttle bus, while it explicitly states all other stations continue on the normal schedule, showing the impact is localized rather than line-wide."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L136_Q1_LEARN",
+      "level": 136,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "From a nonprofit's annual impact report: 'This year, our after-school tutoring program served 340 students across six schools, an increase from 210 students last year. Average reading level improvement was 1.2 grade levels among students who attended at least 20 sessions, compared to 0.4 grade levels among students who attended fewer than 10 sessions. We are grateful to our 85 volunteer tutors who made this growth possible.'",
+      "logicChain": [
+        "20+ sessions attended: 1.2 grade level improvement -> fewer than 10 sessions: 0.4 grade level improvement -> more consistent attendance appears linked to greater improvement"
+      ],
+      "logicChainSteps": [
+        "20+ sessions attended: 1.2 grade level improvement",
+        "fewer than 10 sessions: 0.4 grade level improvement",
+        "more consistent attendance appears linked to greater improvement"
+      ],
+      "conclusion": "Students who attended the program more consistently tended to show greater reading improvement.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Students who attended the program more consistently tended to show greater reading improvement.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Students who attended fewer sessions showed greater reading improvement, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The number of students served decreased compared to last year.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Volunteer tutors were responsible for a decline in program quality, according to the specific details given.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Students attending 20 or more sessions showed a much larger average improvement (1.2 grade levels) than those attending fewer than 10 sessions (0.4 grade levels), directly supporting a link between attendance consistency and reading gains."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L136_Q2_LEARN",
+      "level": 136,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "From a small business owner's message to loyal customers: 'After eight wonderful years on Maple Street, I've made the difficult decision to close our storefront at the end of this month. Rising rent costs in the neighborhood have made it unsustainable to continue in this location. The good news is that our online shop will remain open, and we're exploring a smaller shared retail space downtown for next year. Thank you for eight incredible years of support.'",
+      "logicChain": [
+        "Storefront closing due to rising rent -> online shop will remain open -> smaller shared space being explored for next year -> business continues in a different form, not disappearing entirely"
+      ],
+      "logicChainSteps": [
+        "Storefront closing due to rising rent",
+        "online shop will remain open",
+        "smaller shared space being explored for next year",
+        "business continues in a different form, not disappearing entirely"
+      ],
+      "conclusion": "The business is ending its current physical location but is not necessarily disappearing entirely.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The business is closing permanently with no future plans. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The business is ending its current physical location but is not necessarily disappearing entirely.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Rent costs at the current location have decreased significantly. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The online shop will also close at the end of the month. This reading would hold true across the full sequence of events described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "While the physical Maple Street store is closing due to rent costs, the owner explicitly states the online shop will remain open and mentions exploring a new shared space, showing the business continues in a different form rather than disappearing."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L136_Q3_LEARN",
+      "level": 136,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "From a city's building inspection notice: 'During our routine inspection, we identified a code violation regarding the exterior fire escape on the north side of the building, which requires reinforcement to meet current safety standards. Property owner has 45 days to complete repairs or file for an extension with documented proof of a scheduled contractor. Failure to address this within the given timeframe may result in daily fines.'",
+      "logicChain": [
+        "Violation found: north-side fire escape -> owner has 45 days to repair -> extension option available with proof of scheduled contractor -> owner has more than one way to respond before fines apply"
+      ],
+      "logicChainSteps": [
+        "Violation found: north-side fire escape",
+        "owner has 45 days to repair",
+        "extension option available with proof of scheduled contractor",
+        "owner has more than one way to respond before fines apply"
+      ],
+      "conclusion": "The property owner has options for how to respond to the violation within the deadline.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The property owner must complete repairs within 24 hours or face immediate fines, according to the specific details given.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Extensions are not available under any circumstances. No part of the passage's account suggests otherwise.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The violation applies to the entire building, not a specific area, as the passage lays out the sequence of events.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The property owner has options for how to respond to the violation within the deadline.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "The notice specifies the owner can either complete repairs within 45 days or file for an extension with proof of a scheduled contractor, showing there is more than one acceptable way to respond before fines would apply."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L137_Q1_LEARN",
+      "level": 137,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "From an employee's internal message to HR: 'I wanted to formally request to transition from full-time to a 4-day, 32-hour schedule starting next quarter, if possible. I've discussed this informally with my manager, who is supportive of the idea in principle, but she mentioned the final decision would need to go through HR's flexible work policy review process, which typically takes about three weeks. I wanted to get this request in early given that timeline.'",
+      "logicChain": [
+        "Manager supportive in principle -> final decision requires HR's flexible work review -> review process takes ~3 weeks -> manager's support alone doesn't finalize the change"
+      ],
+      "logicChainSteps": [
+        "Manager supportive in principle",
+        "final decision requires HR's flexible work review",
+        "review process takes ~3 weeks",
+        "manager's support alone doesn't finalize the change"
+      ],
+      "conclusion": "The employee's manager supports the idea, but the change still requires a separate formal approval process.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The employee's schedule change has already been fully approved.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The employee's manager supports the idea, but the change still requires a separate formal approval process.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The employee's manager rejected the request outright.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "HR's review process typically takes less than a day to complete. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The message shows the manager is supportive 'in principle,' but explicitly states the final decision still requires HR's review process, which takes about three weeks, meaning support alone doesn't guarantee the change is finalized yet."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L137_Q2_LEARN",
+      "level": 137,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "From a parent's email to a school counselor: 'I wanted to reach out because my daughter mentioned she's been having some trouble keeping up with the new online homework portal since the switch last month. She's not complaining about the workload itself, just the technical side of submitting assignments. I'm wondering if there's a quick tutorial or support session available for students who are still getting used to the new system.'",
+      "logicChain": [
+        "New online portal introduced last month -> daughter struggles with submission process -> parent clarifies workload itself isn't the issue -> difficulty appears tied to the technology, not the schoolwork"
+      ],
+      "logicChainSteps": [
+        "New online portal introduced last month",
+        "daughter struggles with submission process",
+        "parent clarifies workload itself isn't the issue",
+        "difficulty appears tied to the technology, not the schoolwork"
+      ],
+      "conclusion": "The parent believes the difficulty is related to using the technology rather than the schoolwork itself.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The daughter is struggling because the homework assignments are too difficult, as the situation is described here.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The parent believes the difficulty is related to using the technology rather than the schoolwork itself.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The school has not made any changes to its homework system recently.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The parent is requesting a reduction in her daughter's overall workload.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The parent explicitly separates the two issues, stating her daughter isn't complaining about the workload, only the technical side of submitting assignments through the new portal, pointing to a technology adjustment issue rather than academic difficulty."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L137_Q3_LEARN",
+      "level": 137,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "From a moving company's confirmation email: 'Your move is confirmed for Saturday, June 8th, with a 3-hour arrival window between 9 AM and 12 PM. Please note that our final quote assumes standard access, meaning ground-floor loading or elevator access at both locations. If either location requires carrying items up or down more than one flight of stairs, additional stair fees will apply and will be calculated on-site by the moving crew.'",
+      "logicChain": [
+        "Quote assumes standard ground-floor or elevator access -> stairs beyond one flight trigger additional fees -> fees calculated on-site, not in advance -> final cost could change depending on moving-day conditions"
+      ],
+      "logicChainSteps": [
+        "Quote assumes standard ground-floor or elevator access",
+        "stairs beyond one flight trigger additional fees",
+        "fees calculated on-site, not in advance",
+        "final cost could change depending on moving-day conditions"
+      ],
+      "conclusion": "The final cost of the move could change depending on conditions the company won't confirm until moving day.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The final cost of the move could change depending on conditions the company won't confirm until moving day.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The quoted price is guaranteed regardless of any stairs involved. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The move has been rescheduled to a different date.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The company will not move any items that require stairs.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The email explains that additional stair fees apply if standard access isn't available and states these fees are calculated on-site by the crew, meaning the final price isn't fully locked in until the move actually happens."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L138_Q1_LEARN",
+      "level": 138,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "From a museum's membership renewal letter: 'Your annual membership is set to expire on the 30th of this month. As a thank-you for being a member for over five consecutive years, you're eligible for our loyalty renewal rate, which is 15% below the standard renewal price. This discounted rate is only available if you renew before your current membership expires; after that date, renewals will be processed at the standard rate.'",
+      "logicChain": [
+        "Membership expires end of month -> loyalty discount available only if renewed before expiration -> after expiration, standard rate applies -> waiting past the deadline means paying more"
+      ],
+      "logicChainSteps": [
+        "Membership expires end of month",
+        "loyalty discount available only if renewed before expiration",
+        "after expiration, standard rate applies",
+        "waiting past the deadline means paying more"
+      ],
+      "conclusion": "Waiting until after the expiration date to renew would mean paying more than renewing before it.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Waiting until after the expiration date to renew would mean paying more than renewing before it.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The discounted rate applies no matter when the member chooses to renew, as the passage lays out the sequence of events.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Members who have belonged for fewer than five years pay more than five-year members regardless of timing, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The membership has already expired and cannot be renewed at all. This would be expected to hold across the entire situation as described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The letter states the 15% discount is 'only available if you renew before your current membership expires,' directly implying that renewing after that date results in paying the higher standard rate instead."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L138_Q2_LEARN",
+      "level": 138,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "From a tenant's maintenance request follow-up: 'I submitted a request last Tuesday about the kitchen faucet leaking, and someone came by Thursday to look at it. They said they needed to order a replacement cartridge, which should arrive early this week. In the meantime, they showed me how to keep the shutoff valve partially closed to slow the drip until the part arrives, which has helped a lot.'",
+      "logicChain": [
+        "Leak reported Tuesday -> technician visits Thursday, orders replacement cartridge -> temporary fix (partial shutoff) provided, helping in the meantime -> permanent repair still pending part arrival"
+      ],
+      "logicChainSteps": [
+        "Leak reported Tuesday",
+        "technician visits Thursday, orders replacement cartridge",
+        "temporary fix (partial shutoff) provided, helping in the meantime",
+        "permanent repair still pending part arrival"
+      ],
+      "conclusion": "The tenant has a temporary workaround while waiting for a permanent repair.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The faucet has already been completely repaired.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "No one has responded to the maintenance request yet, as the situation is described here.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The leak has gotten significantly worse since the request was submitted, according to how the passage describes the situation.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The tenant has a temporary workaround while waiting for a permanent repair.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "The tenant describes a visit that diagnosed the issue and provided a temporary fix, the partially closed shutoff valve, while the actual replacement part is still on order, showing a workaround is in place but the permanent repair hasn't happened yet."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L138_Q3_LEARN",
+      "level": 138,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "From a city recreation department's summer camp waitlist notice: 'Thank you for your interest in our Adventure Camp program. All sessions are currently full, and you have been placed on the waitlist at position 12 for your preferred session. Waitlist movement typically occurs as families finalize other summer plans; historically, about 30% of waitlisted families receive a spot by early June.'",
+      "logicChain": [
+        "Family placed at waitlist position 12 -> historically ~30% of waitlisted families get a spot by early June -> spot not guaranteed, but a reasonable chance exists based on past patterns"
+      ],
+      "logicChainSteps": [
+        "Family placed at waitlist position 12",
+        "historically ~30% of waitlisted families get a spot by early June",
+        "spot not guaranteed, but a reasonable chance exists based on past patterns"
+      ],
+      "conclusion": "Being on the waitlist does not guarantee a spot, though there is a reasonable chance of getting in based on past patterns.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Being on the waitlist does not guarantee a spot, though there is a reasonable chance of getting in based on past patterns.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Waitlisted families are guaranteed a spot before the camp begins.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The camp has never had any spots open up from the waitlist before.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Position 12 on the waitlist means the family is certain not to get in. This pattern would hold steady across the entire situation the passage lays out.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The notice explains that about 30 percent of waitlisted families historically get a spot, showing there's a real but uncertain chance, neither guaranteed nor impossible, based on how things have gone in past years."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L139_Q1_LEARN",
+      "level": 139,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "From a freelancer's project proposal email to a client: 'Based on our call, I've outlined two possible approaches. Option A is a simpler design delivered within two weeks at $1,200, using our existing template library. Option B is a fully custom design delivered within five weeks at $2,800, built from scratch to match your brand more precisely. Let me know which direction feels right, or if you'd like to discuss a hybrid approach.'",
+      "logicChain": [
+        "Option A: 2 weeks, $1,200, template-based -> Option B: 5 weeks, $2,800, fully custom -> client's decision likely depends on weighing cost/timeline against customization needs"
+      ],
+      "logicChainSteps": [
+        "Option A: 2 weeks, $1,200, template-based",
+        "Option B: 5 weeks, $2,800, fully custom",
+        "client's decision likely depends on weighing cost/timeline against customization needs"
+      ],
+      "conclusion": "The client's decision will likely involve weighing cost and timeline against how customized they want the final design to be.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The client's decision will likely involve weighing cost and timeline against how customized they want the final design to be.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Option A is guaranteed to take longer than Option B.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The freelancer has already chosen Option B on the client's behalf. This reading would hold true across the full sequence of events described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "A hybrid approach is not something the client could request. This pattern would hold steady across the entire situation the passage lays out.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The email lays out a clear trade-off, Option A is faster and cheaper but more generic, while Option B costs more and takes longer but offers more customization, meaning the client's choice depends on balancing those factors."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L139_Q2_LEARN",
+      "level": 139,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "From a city's building permit office notice: 'Applications submitted through our online portal are typically reviewed within 10 business days. Applications submitted by mail take an average of 3-4 weeks due to additional processing steps, including manual data entry and physical document scanning. We strongly encourage applicants to use the online portal whenever possible to reduce wait times.'",
+      "logicChain": [
+        "Online submission: ~10 business days -> mail submission: 3-4 weeks, extra manual steps -> submission method meaningfully affects review speed"
+      ],
+      "logicChainSteps": [
+        "Online submission: ~10 business days",
+        "mail submission: 3-4 weeks, extra manual steps",
+        "submission method meaningfully affects review speed"
+      ],
+      "conclusion": "Choosing how to submit an application could meaningfully affect how quickly it gets reviewed.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Mail submissions are always processed faster than online submissions, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The office no longer accepts applications submitted by mail.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Choosing how to submit an application could meaningfully affect how quickly it gets reviewed.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Both submission methods take exactly the same amount of time. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Online applications take about 10 business days while mailed applications take 3-4 weeks due to extra manual steps, showing the submission method itself has a real, significant effect on how quickly an application gets reviewed."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L139_Q3_LEARN",
+      "level": 139,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "From a nonprofit's grant application update: 'We're pleased to inform you that your application has advanced to the second review round out of three total rounds. This round involves a more detailed budget review and typically eliminates about half of the remaining applicants. Finalists from this round will be invited to a brief interview before final funding decisions are announced next month.'",
+      "logicChain": [
+        "Advanced to round 2 of 3 -> round 2 typically eliminates ~half of remaining applicants -> finalists face an interview before final decisions -> advancement improves chances, but funding is not guaranteed"
+      ],
+      "logicChainSteps": [
+        "Advanced to round 2 of 3",
+        "round 2 typically eliminates ~half of remaining applicants",
+        "finalists face an interview before final decisions",
+        "advancement improves chances, but funding is not guaranteed"
+      ],
+      "conclusion": "Advancing to this round improves the applicant's chances but does not guarantee they will ultimately receive funding.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Advancing to this round improves the applicant's chances but does not guarantee they will ultimately receive funding.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Reaching the second round guarantees the applicant will receive funding.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "This is the final round before funding decisions are made.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "No further review or interview steps remain in the process.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The passage describes a multi-step process where this round eliminates about half of applicants, and successful applicants still face an interview before final decisions, showing advancement is a positive sign but not a guarantee of funding."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L140_Q1_LEARN",
+      "level": 140,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "From a physical therapist's discharge summary: 'Patient has met 4 of 5 initial treatment goals, including full range of motion in the shoulder and return to normal daily activities without pain. The remaining goal, full strength restoration for overhead lifting, is progressing but not yet complete. Recommend a home exercise program to continue building strength over the next 6-8 weeks, with a follow-up visit only if strength plateaus or pain returns.'",
+      "logicChain": [
+        "4 of 5 goals met, including range of motion and daily activities -> 1 goal (overhead lifting strength) still progressing -> home program recommended for continued strength building -> significant progress made, not yet fully complete"
+      ],
+      "logicChainSteps": [
+        "4 of 5 goals met, including range of motion and daily activities",
+        "1 goal (overhead lifting strength) still progressing",
+        "home program recommended for continued strength building",
+        "significant progress made, not yet fully complete"
+      ],
+      "conclusion": "The patient has made significant progress but has not yet fully recovered in every area.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The patient has met all treatment goals and needs no further exercise, as the passage lays out the sequence of events.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The patient has made no meaningful progress in physical therapy, according to the account given.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "A follow-up visit has already been scheduled regardless of outcome, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The patient has made significant progress but has not yet fully recovered in every area.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "The summary shows four of five goals fully met, with the fifth, overhead lifting strength, specifically noted as still progressing, capturing both the substantial progress made and the area still incomplete."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L140_Q2_LEARN",
+      "level": 140,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "From a city's water quality annual report summary: 'All required water quality tests met federal safety standards this year, with lead levels well below the action threshold at 98% of tested homes. However, 2% of tested homes, primarily older properties with original lead service lines, showed levels above the threshold, and the city has begun a targeted line replacement program for those specific properties.'",
+      "logicChain": [
+        "98% of tested homes: lead levels well below threshold -> 2% of homes, mostly older with original lead lines: above threshold -> targeted replacement program begun for those properties -> mostly safe overall, with a specific ongoing exception"
+      ],
+      "logicChainSteps": [
+        "98% of tested homes: lead levels well below threshold",
+        "2% of homes, mostly older with original lead lines: above threshold",
+        "targeted replacement program begun for those properties",
+        "mostly safe overall, with a specific ongoing exception"
+      ],
+      "conclusion": "Most homes tested show safe water quality, though a small number of specific properties need further action.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Most homes tested show safe water quality, though a small number of specific properties need further action.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Every single tested home showed lead levels above the safety threshold.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The city has decided not to take any action regarding elevated lead levels. This would be expected to hold across the entire situation as described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "All homes with elevated lead levels have already had their pipes replaced. Nothing described in the passage points to any exception to this pattern.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The report shows the vast majority (98%) of tested homes meet safety standards, while a small, specific group of older properties (2%) exceeded the threshold and are now part of a targeted replacement program, showing overall safety with a specific, ongoing exception."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L140_Q3_LEARN",
+      "level": 140,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "From a small manufacturing company's supplier notice: 'Due to a regional shortage of a key raw material, we anticipate a temporary increase in lead times for orders placed in the next 60 days, from our standard 2 weeks to approximately 4-5 weeks. We are actively working with alternate suppliers to shorten this gap and will notify customers immediately if timelines improve. Orders already in production are not affected by this delay.'",
+      "logicChain": [
+        "Raw material shortage -> new orders (next 60 days): lead time extends from 2 to 4-5 weeks -> orders already in production: explicitly not affected -> delay is temporary and limited to new orders"
+      ],
+      "logicChainSteps": [
+        "Raw material shortage",
+        "new orders (next 60 days): lead time extends from 2 to 4-5 weeks",
+        "orders already in production: explicitly not affected",
+        "delay is temporary and limited to new orders"
+      ],
+      "conclusion": "Customers placing new orders soon should expect a longer wait than usual, but existing orders in production will proceed on the normal timeline.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "All orders, including those already in production, will now take 4-5 weeks. Nothing in the passage suggests this changed at any point during the period described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The company has permanently changed its standard lead time to 4-5 weeks.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Customers placing new orders soon should expect a longer wait than usual, but existing orders in production will proceed on the normal timeline.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The raw material shortage has already been fully resolved.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The notice specifies the extended lead time applies to orders placed in the next 60 days, while explicitly stating orders already in production are not affected, showing the delay is temporary and limited to new orders rather than everything company-wide."
+    }
+  ]
+}

@@ -1,0 +1,1403 @@
+{
+  "gameType": "readingConclusion",
+  "phase": "learn",
+  "batchIndex": 17,
+  "levels": "161-170",
+  "quests": [
+    {
+      "id": "RDG_READINGCONCLUSION_L161_Q1_LEARN",
+      "level": 161,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "When the Ferreira family opened their small hardware store in 1998, the neighborhood was mostly industrial, with few residential buildings nearby. For years, their main customers were contractors buying supplies in bulk for commercial jobs.\n\nOver the past decade, the area has changed considerably. Several old warehouses were converted into apartment buildings, and new residents began moving in. The Ferreiras noticed more individual customers coming in for small home-repair items rather than bulk contractor orders.\n\nLast year, the store reorganized its floor plan, adding a section specifically for household tools and small-batch paint mixing, while reducing shelf space previously dedicated to bulk contractor materials.",
+      "logicChain": [
+        "1998: industrial neighborhood, mostly contractor customers -> decade of residential conversion -> individual customers increase -> store reorganizes for household items, reduces bulk space -> changes reflect adapting to the shifting customer base"
+      ],
+      "logicChainSteps": [
+        "1998: industrial neighborhood, mostly contractor customers",
+        "decade of residential conversion",
+        "individual customers increase",
+        "store reorganizes for household items, reduces bulk space",
+        "changes reflect adapting to the shifting customer base"
+      ],
+      "conclusion": "The store's changes reflect an effort to adapt to a shifting customer base in the neighborhood.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The neighborhood has remained entirely industrial with no residential growth, according to the account given.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The store's changes reflect an effort to adapt to a shifting customer base in the neighborhood.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The store has stopped selling any household tools or paint.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Contractor customers now make up a larger share of the store's business than before, according to the specific details given.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The passage traces a clear arc: an industrial neighborhood shifting to residential, customers shifting from bulk contractors to individual homeowners, and the store's floor plan changing to match, all pointing to a deliberate adaptation to the changing customer base."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L161_Q2_LEARN",
+      "level": 161,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "A regional airline began the year with an on-time departure rate of 71 percent, below the industry average of 80 percent. Executives attributed part of the problem to an aging fleet requiring frequent unscheduled maintenance.\n\nIn the spring, the airline retired its oldest five aircraft and introduced three new planes, while also renegotiating its gate-sharing agreement at its busiest hub airport to reduce gate conflicts with other airlines.\n\nBy the end of the year, the airline's on-time departure rate had risen to 84 percent, now above the industry average, and maintenance-related delays had dropped by more than half compared to the start of the year.",
+      "logicChain": [
+        "Start of year: 71% on-time, aging fleet cited as a factor -> spring: old planes retired, new planes added, gate agreement renegotiated -> year end: 84% on-time, maintenance delays down over half -> both changes appear to have contributed to the improvement"
+      ],
+      "logicChainSteps": [
+        "Start of year: 71% on-time, aging fleet cited as a factor",
+        "spring: old planes retired, new planes added, gate agreement renegotiated",
+        "year end: 84% on-time, maintenance delays down over half",
+        "both changes appear to have contributed to the improvement"
+      ],
+      "conclusion": "Both the fleet changes and the gate agreement likely contributed to the airline's improved on-time performance.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The airline's on-time rate fell further behind the industry average by year's end.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The gate-sharing agreement was the airline's only change made during the year.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Maintenance-related delays increased significantly over the course of the year.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Both the fleet changes and the gate agreement likely contributed to the airline's improved on-time performance.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "The passage describes two separate changes, retiring old aircraft and renegotiating gate access, both plausibly linked to the described improvements: fewer maintenance delays tied to the newer fleet, and better overall performance possibly aided by reduced gate conflicts."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L161_Q3_LEARN",
+      "level": 161,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "A small nonprofit theater had struggled for several seasons with declining ticket sales, dropping from an average of 65 percent capacity five years ago to just 38 percent capacity last season. The theater's board debated closing entirely.\n\nInstead, the board decided to shift programming toward more contemporary, locally written plays instead of classic revivals, and lowered ticket prices for the first preview performance of each production to build word-of-mouth interest.\n\nThis season, average capacity rose to 58 percent, with the strongest attendance for the two contemporary plays featuring local playwrights, while a classic revival included in the season's lineup drew only 41 percent capacity.",
+      "logicChain": [
+        "5 years ago: 65% capacity -> last season: 38% capacity -> board shifts toward contemporary local plays, lowers preview prices -> this season: 58% average capacity, contemporary plays draw strongest, classic revival only 41% -> contemporary shift appears more closely linked to the recovery"
+      ],
+      "logicChainSteps": [
+        "5 years ago: 65% capacity",
+        "last season: 38% capacity",
+        "board shifts toward contemporary local plays, lowers preview prices",
+        "this season: 58% average capacity, contemporary plays draw strongest, classic revival only 41%",
+        "contemporary shift appears more closely linked to the recovery"
+      ],
+      "conclusion": "The shift toward contemporary, locally written plays appears more closely linked to the attendance recovery than the classic revival.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The shift toward contemporary, locally written plays appears more closely linked to the attendance recovery than the classic revival.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The classic revival drew the highest attendance of the season.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Ticket sales continued declining even after the board made changes.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The theater closed permanently due to the ongoing decline in sales.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Within this season's overall recovery, the contemporary local plays drew notably higher attendance (implied above the 58 percent season average) than the classic revival's 41 percent, suggesting the programming shift specifically toward contemporary work is more closely tied to the improvement."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L162_Q1_LEARN",
+      "level": 162,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A mid-size hospital's nursing staff turnover rate had climbed steadily for three years, reaching 28 percent annually, well above the national average of 17 percent. Exit interviews consistently cited scheduling unpredictability and limited input into shift assignments as top concerns.\n\nIn response, hospital administration introduced a self-scheduling system that let nurses select preferred shifts within certain constraints, and created a nurse advisory council that met monthly with leadership to discuss workplace concerns.\n\nOne year later, turnover had dropped to 19 percent, and a follow-up survey found that 74 percent of nursing staff reported feeling their input was now valued, compared to 31 percent in the survey conducted before the changes.",
+      "logicChain": [
+        "Turnover at 28%, exit interviews cite scheduling and lack of input -> self-scheduling system and advisory council introduced -> one year later: turnover 19%, feeling valued rises from 31% to 74% -> changes appear closely linked to both improvements"
+      ],
+      "logicChainSteps": [
+        "Turnover at 28%, exit interviews cite scheduling and lack of input",
+        "self-scheduling system and advisory council introduced",
+        "one year later: turnover 19%, feeling valued rises from 31% to 74%",
+        "changes appear closely linked to both improvements"
+      ],
+      "conclusion": "The scheduling and advisory council changes appear closely linked to both lower turnover and improved feelings of being valued.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Turnover continued rising even after the changes were introduced. This reading would hold true across the full sequence of events described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The scheduling and advisory council changes appear closely linked to both lower turnover and improved feelings of being valued.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The survey found no change in how valued nursing staff felt.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Scheduling unpredictability was never identified as a concern by staff. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The changes directly targeted the concerns raised in exit interviews (scheduling input), and both turnover and the specific survey measure about feeling valued improved substantially afterward, supporting a close link between the changes and the improvements."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L162_Q2_LEARN",
+      "level": 162,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A city's downtown business district had seen foot traffic decline for several years as more residents shopped online. Local business owners reported that weekday afternoons were especially quiet, with many storefronts nearly empty between 2 and 5 p.m.\n\nThe district's business association organized a series of free weekday afternoon events, including live music, food trucks, and a rotating pop-up market featuring local artisans, funded through a small assessment on member businesses.\n\nSix months into the initiative, weekday afternoon foot traffic counters showed a 40 percent increase compared to the same period the previous year, though weekend foot traffic, which had remained relatively strong throughout, showed no significant change.",
+      "logicChain": [
+        "Weekday afternoons (2-5pm) identified as quiet -> free weekday afternoon events introduced -> six months later: weekday afternoon traffic up 40% -> weekend traffic (already strong) unchanged -> events appear specifically linked to the weekday afternoon increase"
+      ],
+      "logicChainSteps": [
+        "Weekday afternoons (2-5pm) identified as quiet",
+        "free weekday afternoon events introduced",
+        "six months later: weekday afternoon traffic up 40%",
+        "weekend traffic (already strong) unchanged",
+        "events appear specifically linked to the weekday afternoon increase"
+      ],
+      "conclusion": "The afternoon events appear specifically linked to increased foot traffic during the previously quiet weekday hours.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Weekend foot traffic increased more than weekday foot traffic after the events began.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Foot traffic declined across the entire week after the events were introduced.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The events were funded entirely by the city government rather than local businesses.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The afternoon events appear specifically linked to increased foot traffic during the previously quiet weekday hours.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "The events were specifically scheduled during the previously quiet weekday afternoons, and foot traffic increased specifically during that period, while weekend traffic, unaffected by the new events, stayed the same, supporting a targeted link between the events and the afternoon increase."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L162_Q3_LEARN",
+      "level": 162,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A university's introductory statistics course had a historical failure rate of 24 percent, the highest of any required course in the math department. Faculty noted that the course was traditionally taught through large lectures with a single midterm and final exam determining most of the grade.\n\nA new instructor redesigned the course to include weekly low-stakes quizzes, optional review sessions, and a mix of smaller assignments contributing to the final grade alongside the exams. The redesign was piloted in two of the six course sections, while the other four sections continued with the traditional format taught by other instructors.\n\nAt the end of the semester, the failure rate in the redesigned sections was 9 percent, compared to 23 percent in the sections still using the traditional format.",
+      "logicChain": [
+        "Historical failure rate: 24% -> two sections redesigned, four remain traditional -> redesigned sections: 9% failure -> traditional sections this semester: 23%, close to historical average -> redesign appears specifically linked to the improvement"
+      ],
+      "logicChainSteps": [
+        "Historical failure rate: 24%",
+        "two sections redesigned, four remain traditional",
+        "redesigned sections: 9% failure",
+        "traditional sections this semester: 23%, close to historical average",
+        "redesign appears specifically linked to the improvement"
+      ],
+      "conclusion": "The course redesign appears specifically linked to a lower failure rate, since sections without the redesign performed similarly to the historical average.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The course redesign appears specifically linked to a lower failure rate, since sections without the redesign performed similarly to the historical average.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "All six sections of the course used the identical redesigned format. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The traditional sections had a lower failure rate than the redesigned sections. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The historical failure rate was lower than the failure rate in either type of section this semester. Nothing in the passage suggests this changed at any point during the period described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The redesigned sections' 9 percent failure rate stands far below both the historical 24 percent average and the 23 percent rate in this semester's traditional sections, which closely matches history, supporting the redesign itself, not some other semester-wide factor, as the likely explanation."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L163_Q1_LEARN",
+      "level": 163,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "A regional grocery chain had struggled for years with high rates of food waste, particularly in its produce sections, where an estimated 18 percent of stocked produce was discarded weekly due to spoilage before sale.\n\nThe chain piloted a dynamic pricing program in ten stores, using digital price tags that automatically reduced prices on produce nearing its estimated spoilage date, based on an algorithm factoring in purchase history and typical shelf life for each item.\n\nAfter four months, the pilot stores reported produce waste had dropped to 7 percent weekly, while a comparison group of ten similar stores without the program continued to report waste rates close to 17 percent. Customer surveys in pilot stores also showed increased satisfaction with produce pricing and freshness.",
+      "logicChain": [
+        "Baseline: 18% weekly produce waste -> dynamic pricing piloted in 10 stores -> after 4 months: pilot stores at 7% waste, comparison stores at ~17% -> program appears closely linked to the reduced waste"
+      ],
+      "logicChainSteps": [
+        "Baseline: 18% weekly produce waste",
+        "dynamic pricing piloted in 10 stores",
+        "after 4 months: pilot stores at 7% waste, comparison stores at ~17%",
+        "program appears closely linked to the reduced waste"
+      ],
+      "conclusion": "The dynamic pricing program appears closely linked to reduced produce waste, based on the comparison with similar stores that lacked the program.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Produce waste increased in the pilot stores after the program began.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The comparison stores also used the dynamic pricing program.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Customer satisfaction decreased in the pilot stores during the trial.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The dynamic pricing program appears closely linked to reduced produce waste, based on the comparison with similar stores that lacked the program.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Pilot stores saw waste drop from an estimated 18 percent to 7 percent, while similar comparison stores without the program stayed near 17 percent, closely matching the original baseline, strongly supporting the pricing program as the reason for the improvement."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L163_Q2_LEARN",
+      "level": 163,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "A city's public school district had long struggled with chronic absenteeism, particularly among high school students, with district-wide rates around 19 percent. A task force identified transportation gaps as a leading factor, noting that students in certain neighborhoods faced bus routes with long wait times or unreliable schedules.\n\nThe district redesigned bus routes serving the three most affected high schools, adding more direct routes and reducing average wait times from 35 minutes to 12 minutes. Meanwhile, the district's other five high schools, whose bus routes were not part of the redesign, continued operating on their existing schedules.\n\nAfter one school year, chronic absenteeism at the three redesigned-route schools dropped to 11 percent, while the rate at the five unchanged schools remained close to 18 percent.",
+      "logicChain": [
+        "District-wide absenteeism: 19%, transportation gaps identified as a factor -> 3 schools get redesigned routes, wait times drop 35 to 12 min -> after one year: those 3 schools at 11% absenteeism -> 5 unchanged schools: still ~18% -> redesign appears specifically linked to the improvement"
+      ],
+      "logicChainSteps": [
+        "District-wide absenteeism: 19%, transportation gaps identified as a factor",
+        "3 schools get redesigned routes, wait times drop 35 to 12 min",
+        "after one year: those 3 schools at 11% absenteeism",
+        "5 unchanged schools: still ~18%",
+        "redesign appears specifically linked to the improvement"
+      ],
+      "conclusion": "The bus route redesign appears specifically linked to reduced absenteeism at the schools where it was implemented.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Absenteeism increased at the schools with redesigned bus routes. This pattern would hold steady across the entire situation the passage lays out.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "All eight high schools received the same redesigned bus routes.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Wait times increased after the routes were redesigned.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The bus route redesign appears specifically linked to reduced absenteeism at the schools where it was implemented.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Only the three schools with redesigned routes saw absenteeism drop significantly, from a district-wide baseline near 19 percent down to 11 percent, while the five unchanged schools stayed close to the original rate, supporting a specific link to the route redesign."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L163_Q3_LEARN",
+      "level": 163,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "A manufacturing company had experienced a rising rate of repetitive strain injuries among assembly line workers over several years, reaching 42 reported cases per year across its main facility. An ergonomics consultant identified workstation height and repetitive reaching motions as primary contributing factors.\n\nThe company redesigned workstations on two of its four assembly lines to include adjustable-height platforms and rotating task assignments that reduced repetitive single-motion work. The other two lines continued with the original fixed-height stations and single-task assignments.\n\nOver the following year, reported injuries on the redesigned lines dropped to 6 cases combined, while the two unchanged lines reported 19 cases combined, roughly consistent with their historical injury rate.",
+      "logicChain": [
+        "42 injuries/year across facility, workstation height and repetitive motion identified as factors -> 2 lines redesigned, 2 remain unchanged -> after one year: redesigned lines at 6 combined injuries, unchanged lines at 19, near historical rate -> redesign appears closely linked to the improvement"
+      ],
+      "logicChainSteps": [
+        "42 injuries/year across facility, workstation height and repetitive motion identified as factors",
+        "2 lines redesigned, 2 remain unchanged",
+        "after one year: redesigned lines at 6 combined injuries, unchanged lines at 19, near historical rate",
+        "redesign appears closely linked to the improvement"
+      ],
+      "conclusion": "The workstation redesign appears closely linked to fewer injuries, based on the comparison with the unchanged assembly lines.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Injuries increased on the redesigned lines compared to the unchanged lines. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The workstation redesign appears closely linked to fewer injuries, based on the comparison with the unchanged assembly lines.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "All four assembly lines received the ergonomic redesign.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The unchanged lines showed a significant drop in injuries as well. Nothing in the passage suggests this changed at any point during the period described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The redesigned lines saw injuries drop sharply to 6 combined cases, while the unchanged lines stayed close to their historical pattern at 19 cases, strongly supporting the redesign as the reason for the improvement on the lines where it was applied."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L164_Q1_LEARN",
+      "level": 164,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "A city's public library system noticed that its teen programming, including book clubs and study groups, had seen declining attendance for several years, dropping from an average of 45 teens per week system-wide to just 18 per week.\n\nLibrary staff surveyed local teens and found that many worked part-time jobs or had extracurricular commitments that conflicted with the library's traditional after-school program times. In response, the system piloted evening programming, from 6 to 8 p.m., at three of its twelve branches, while the other nine branches kept their existing after-school schedule.\n\nAfter three months, the three pilot branches reported average weekly teen attendance of 31, compared to 14 at the nine branches that kept the original schedule.",
+      "logicChain": [
+        "Teen attendance drops from 45 to 18/week system-wide -> survey finds scheduling conflicts with jobs/activities -> 3 branches pilot evening hours (6-8pm), 9 keep after-school schedule -> pilot branches: 31/week -> unchanged branches: 14/week -> evening schedule appears better aligned with teen availability"
+      ],
+      "logicChainSteps": [
+        "Teen attendance drops from 45 to 18/week system-wide",
+        "survey finds scheduling conflicts with jobs/activities",
+        "3 branches pilot evening hours (6-8pm), 9 keep after-school schedule",
+        "pilot branches: 31/week",
+        "unchanged branches: 14/week",
+        "evening schedule appears better aligned with teen availability"
+      ],
+      "conclusion": "The evening programming schedule appears more closely aligned with teens' availability than the traditional after-school schedule.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Teen attendance dropped further at the branches that switched to evening programming.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "All twelve branches switched to the new evening programming schedule.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The evening programming schedule appears more closely aligned with teens' availability than the traditional after-school schedule.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The survey found no scheduling conflicts affecting teen attendance.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Branches offering evening programming, timed around the scheduling conflicts teens reported in the survey, saw notably higher attendance than branches keeping the original after-school time slot, supporting the new schedule as better aligned with teens' actual availability."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L164_Q2_LEARN",
+      "level": 164,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "A regional trucking company had experienced a steady rise in fuel costs as a share of overall operating expenses, growing from 22 percent five years ago to 34 percent this year. An internal audit found that many drivers were taking longer, less efficient routes due to outdated GPS software that didn't account for current traffic patterns or road construction.\n\nThe company upgraded its fleet's navigation systems to a route-optimization platform that updates in real time and also introduced a driver bonus program rewarding fuel-efficient driving habits like reduced idling and smoother acceleration.\n\nSix months after the changes, average fuel cost per mile driven had dropped by 15 percent, and driver surveys indicated that most drivers found the new navigation software 'noticeably more accurate' than the previous system.",
+      "logicChain": [
+        "Fuel costs rise from 22% to 34% of expenses -> outdated GPS causes inefficient routes -> navigation upgraded AND bonus program introduced together -> fuel cost per mile drops 15% -> both changes appear as plausible contributors to the improvement"
+      ],
+      "logicChainSteps": [
+        "Fuel costs rise from 22% to 34% of expenses",
+        "outdated GPS causes inefficient routes",
+        "navigation upgraded AND bonus program introduced together",
+        "fuel cost per mile drops 15%",
+        "both changes appear as plausible contributors to the improvement"
+      ],
+      "conclusion": "Both the navigation upgrade and the driver bonus program appear to be plausible contributors to the reduction in fuel costs.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Both the navigation upgrade and the driver bonus program appear to be plausible contributors to the reduction in fuel costs.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Fuel costs continued rising at the same rate after both changes were introduced. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The navigation upgrade was the company's only change during this period.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Drivers reported the new navigation software was less accurate than before. Nothing in the passage suggests this changed at any point during the period described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since both the navigation upgrade and the bonus program were introduced around the same time, and both plausibly relate to fuel efficiency, the passage supports both as contributors to the reduction rather than confidently isolating just one."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L164_Q3_LEARN",
+      "level": 164,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "A children's hospital had observed rising rates of missed follow-up appointments among patients discharged after surgery, with a no-show rate of 27 percent for scheduled follow-ups. A review of patient records found that families living more than 30 miles from the hospital had a notably higher no-show rate than families living closer.\n\nThe hospital introduced a telehealth option for routine post-surgical follow-ups, allowing families to complete the appointment via video call instead of an in-person visit, while continuing to offer traditional in-person appointments for families who preferred them.\n\nOne year later, the overall no-show rate had dropped to 13 percent. Among families living more than 30 miles away, the no-show rate had dropped from 41 percent to 15 percent, nearly matching the rate for families living closer to the hospital.",
+      "logicChain": [
+        "Overall no-show rate: 27%, distant families notably higher -> telehealth follow-up option introduced -> after one year: overall rate 13%, distant families drop from 41% to 15%, nearly matching closer families -> telehealth appears to have specifically closed the distance-related gap"
+      ],
+      "logicChainSteps": [
+        "Overall no-show rate: 27%, distant families notably higher",
+        "telehealth follow-up option introduced",
+        "after one year: overall rate 13%, distant families drop from 41% to 15%, nearly matching closer families",
+        "telehealth appears to have specifically closed the distance-related gap"
+      ],
+      "conclusion": "The telehealth option appears to have specifically helped close the gap in follow-up attendance for families living farther from the hospital.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The telehealth option appears to have specifically helped close the gap in follow-up attendance for families living farther from the hospital.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The no-show rate for distant families increased after telehealth was introduced. The passage gives no indication that this varied across the circumstances described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Families living closer to the hospital were the only ones offered telehealth.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The overall no-show rate stayed the same after telehealth was introduced.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Distant families, who previously had a much higher no-show rate, saw the sharpest improvement after telehealth was introduced, nearly closing the gap with closer families, supporting the idea that telehealth specifically addressed the distance-related barrier."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L165_Q1_LEARN",
+      "level": 165,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A city's transit agency had faced years of declining ridership on its late-night bus routes, which operated between midnight and 5 a.m. with buses running only once per hour. Rider surveys indicated that the biggest complaint was unpredictability, since buses were frequently five to fifteen minutes off schedule, making the hourly service feel unreliable for time-sensitive trips like getting to overnight shifts.\n\nThe agency installed GPS-based real-time tracking displayed through a mobile app, allowing riders to see exactly when the next bus would arrive rather than relying on the printed schedule alone. No changes were made to the actual frequency or timing of the buses themselves.\n\nSix months later, late-night ridership had increased by 22 percent, even though the buses were arriving at the same average frequency and with the same degree of schedule variation as before the app was introduced.",
+      "logicChain": [
+        "Late-night ridership declining, complaints about unpredictability -> real-time tracking app added, no change to actual bus frequency or reliability -> ridership rises 22% despite unchanged service itself -> visibility into arrival times appears linked to the increase, not a service change"
+      ],
+      "logicChainSteps": [
+        "Late-night ridership declining, complaints about unpredictability",
+        "real-time tracking app added, no change to actual bus frequency or reliability",
+        "ridership rises 22% despite unchanged service itself",
+        "visibility into arrival times appears linked to the increase, not a service change"
+      ],
+      "conclusion": "Being able to see real-time arrival information, rather than any change in actual service frequency, appears linked to the ridership increase.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The agency increased how frequently late-night buses ran.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Ridership decreased after the real-time tracking app was introduced. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Being able to see real-time arrival information, rather than any change in actual service frequency, appears linked to the ridership increase.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The buses became perfectly on-time after the app was introduced. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since the buses' actual frequency and reliability stayed exactly the same, but ridership still rose after the tracking app was added, the passage points to the information itself, not any real change to the service, as the likely explanation for the increase."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L165_Q2_LEARN",
+      "level": 165,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A national retailer had struggled with high employee turnover in its warehouse operations, averaging 58 percent annually, well above the industry average of 40 percent. Exit surveys consistently pointed to physically demanding tasks and limited opportunities for advancement as top reasons for leaving.\n\nThe company introduced two changes simultaneously: robotic assistance for the most physically demanding lifting tasks, and a structured internal promotion pathway with clear skill benchmarks employees could work toward. Neither change was piloted separately; both rolled out company-wide at the same time.\n\nOne year later, turnover had dropped to 34 percent, below the industry average, and an internal survey found that 61 percent of employees cited 'clearer growth opportunities' as a reason for staying, while 48 percent specifically mentioned reduced physical strain.",
+      "logicChain": [
+        "Turnover at 58%, exit surveys cite physical demands and lack of advancement -> robotic assistance AND promotion pathway launched together, company-wide -> turnover drops to 34% -> survey: 61% cite growth opportunities, 48% cite reduced strain -> both changes appear as plausible contributors"
+      ],
+      "logicChainSteps": [
+        "Turnover at 58%, exit surveys cite physical demands and lack of advancement",
+        "robotic assistance AND promotion pathway launched together, company-wide",
+        "turnover drops to 34%",
+        "survey: 61% cite growth opportunities, 48% cite reduced strain",
+        "both changes appear as plausible contributors"
+      ],
+      "conclusion": "Both the robotic assistance and the new promotion pathway appear to be plausible contributors to the lower turnover rate.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Both the robotic assistance and the new promotion pathway appear to be plausible contributors to the lower turnover rate.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Turnover increased after the two changes were introduced.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The robotic assistance was piloted for six months before the promotion pathway was added.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Employees did not mention physical strain as a reason for staying.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since both changes launched simultaneously and the follow-up survey shows meaningful percentages of employees citing each specific factor, growth opportunities and reduced strain, as reasons for staying, both appear to be plausible contributors to the turnover improvement."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L165_Q3_LEARN",
+      "level": 165,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A city's parking authority had received growing complaints about downtown parking availability, with a survey showing 68 percent of downtown workers reporting difficulty finding parking within a reasonable walk of their workplace. An internal study found that many parking garages were operating well under capacity during the day because permit pricing didn't distinguish between peak and off-peak demand.\n\nThe authority introduced dynamic permit pricing, charging more for guaranteed spots during peak morning hours and less for spots with more flexible arrival windows. It also added a real-time app showing which garages had available spots, updated every five minutes.\n\nSix months later, the same survey found complaints about parking difficulty had dropped to 31 percent, and garage utilization during peak hours had become significantly more even across previously underused and overused garages.",
+      "logicChain": [
+        "68% report parking difficulty -> study finds garages underused due to flat pricing -> dynamic pricing and real-time app introduced -> complaints drop to 31%, garage usage becomes more evenly distributed -> changes appear linked to resolving the underlying imbalance"
+      ],
+      "logicChainSteps": [
+        "68% report parking difficulty",
+        "study finds garages underused due to flat pricing",
+        "dynamic pricing and real-time app introduced",
+        "complaints drop to 31%, garage usage becomes more evenly distributed",
+        "changes appear linked to resolving the underlying imbalance"
+      ],
+      "conclusion": "The combination of dynamic pricing and the real-time availability app appears linked to a more balanced use of parking garages downtown.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Complaints about parking difficulty increased after the changes were introduced. This would be expected to hold across the entire situation as described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Garage utilization became more uneven after the pricing changes.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The combination of dynamic pricing and the real-time availability app appears linked to a more balanced use of parking garages downtown.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The city removed all parking fees as part of this initiative.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The original problem was framed as garages being underused despite complaints of scarcity, a pricing and information mismatch, and after introducing dynamic pricing and a real-time app, both the complaint rate improved and garage usage became more evenly distributed, supporting the changes as linked to solving that underlying imbalance."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L166_Q1_LEARN",
+      "level": 166,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A community college had seen its evening course completion rate lag behind daytime courses for years, with evening students completing courses at a rate of 61 percent compared to 82 percent for daytime students. Advisors noted that many evening students worked full-time and often described feeling disconnected from campus resources like tutoring and advising, which mostly operated during standard daytime business hours.\n\nThe college extended tutoring center and advising office hours to include evenings until 9 p.m. twice a week, and created a dedicated evening-student liaison position to help coordinate support specifically for this group.\n\nThe following year, evening course completion rose to 74 percent, though it still remained somewhat below the daytime rate of 83 percent, which had stayed roughly stable.",
+      "logicChain": [
+        "Evening completion: 61% -> daytime: 82%, gap of 21 points -> evening support extended (tutoring, advising, liaison) -> next year: evening rises to 74%, daytime stable at 83%, gap narrows to ~9 points -> changes narrowed but did not eliminate the gap"
+      ],
+      "logicChainSteps": [
+        "Evening completion: 61%",
+        "daytime: 82%, gap of 21 points",
+        "evening support extended (tutoring, advising, liaison)",
+        "next year: evening rises to 74%, daytime stable at 83%, gap narrows to ~9 points",
+        "changes narrowed but did not eliminate the gap"
+      ],
+      "conclusion": "The support changes appear to have narrowed, though not eliminated, the completion gap between evening and daytime students.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The support changes appear to have narrowed, though not eliminated, the completion gap between evening and daytime students.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The completion gap between evening and daytime students disappeared entirely. This would apply consistently across every detail the passage provides.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Evening student completion rates decreased after the changes were made.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Daytime student completion rates also rose significantly during this period.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Evening completion rose substantially, from 61 to 74 percent, narrowing the previous 21-point gap with daytime students to about 9 points, while daytime rates stayed roughly stable, showing meaningful but incomplete progress toward closing the gap."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L166_Q2_LEARN",
+      "level": 166,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A regional bank had noticed a decline in small business loan approvals over several years, dropping from 58 percent of applications approved five years ago to just 34 percent last year, even as the overall number of applications remained fairly stable. An internal review found that loan officers had become increasingly cautious following a period of higher-than-expected defaults several years earlier, often requiring documentation beyond what official policy technically required.\n\nThe bank introduced standardized underwriting guidelines with clear, specific documentation requirements, along with additional training for loan officers on the bank's actual risk tolerance policies.\n\nThe following year, approval rates rose to 49 percent, and the bank's default rate on newly approved loans remained within the same acceptable range as loans approved during the higher-approval period five years earlier.",
+      "logicChain": [
+        "Approvals drop from 58% to 34% over years, officers overly cautious after past defaults -> standardized guidelines and officer training introduced -> approvals rise to 49%, default rate stays within acceptable range -> guidelines appear to have reduced over-caution without increasing actual risk"
+      ],
+      "logicChainSteps": [
+        "Approvals drop from 58% to 34% over years, officers overly cautious after past defaults",
+        "standardized guidelines and officer training introduced",
+        "approvals rise to 49%, default rate stays within acceptable range",
+        "guidelines appear to have reduced over-caution without increasing actual risk"
+      ],
+      "conclusion": "The standardized guidelines appear to have addressed officer over-caution without increasing the actual default risk on approved loans.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The standardized guidelines appear to have addressed officer over-caution without increasing the actual default risk on approved loans.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The default rate on new loans rose significantly above the acceptable range. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Approval rates returned to their exact level from five years ago.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The number of loan applications submitted dropped sharply after the changes.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Approval rates recovered substantially after the standardized guidelines were introduced, while the default rate on these newly approved loans stayed within the same acceptable range as before, showing the improvement addressed unnecessary caution without introducing added risk."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L166_Q3_LEARN",
+      "level": 166,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A city's animal control department had struggled for years with a high euthanasia rate at its shelter, around 45 percent of intake animals, well above the rates reported by similar-sized cities. A review found that limited kennel space forced difficult decisions when intake exceeded capacity, and that the shelter's adoption hours, only weekday mornings, made it hard for working residents to visit.\n\nThe department partnered with several local veterinary clinics to host off-site adoption events on weekends, and began a foster program allowing community members to temporarily house animals when the shelter neared capacity, effectively expanding available space without new construction.\n\nTwo years later, the euthanasia rate had dropped to 12 percent, and shelter staff reported the foster program alone was housing an average of 40 animals per month that would previously have strained kennel capacity.",
+      "logicChain": [
+        "Euthanasia rate 45%, limited kennel space and weekday-only hours identified as factors -> foster program (expands effective space) and weekend adoption events (improves accessibility) introduced -> two years later: euthanasia rate 12%, foster program housing ~40 animals/month -> both changes appear to have significantly contributed to the improvement"
+      ],
+      "logicChainSteps": [
+        "Euthanasia rate 45%, limited kennel space and weekday-only hours identified as factors",
+        "foster program (expands effective space) and weekend adoption events (improves accessibility) introduced",
+        "two years later: euthanasia rate 12%, foster program housing ~40 animals/month",
+        "both changes appear to have significantly contributed to the improvement"
+      ],
+      "conclusion": "The foster program and weekend adoption events together appear to have significantly reduced the euthanasia rate by addressing both capacity and accessibility issues.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The euthanasia rate increased after these programs were introduced.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The shelter built new kennel facilities to increase physical capacity. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The foster program and weekend adoption events together appear to have significantly reduced the euthanasia rate by addressing both capacity and accessibility issues.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Weekend adoption events had no measurable effect on shelter operations. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The foster program directly addressed the capacity problem by effectively expanding space, while weekend adoption events addressed the accessibility problem for working residents, and both changes preceded a dramatic drop in euthanasia, supporting both as significant contributors."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L167_Q1_LEARN",
+      "level": 167,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "A national coffee chain had noticed that its mobile app's in-app ordering feature, while popular, was leading to longer in-store pickup wait times during morning rush hours, since baristas were preparing mobile orders alongside walk-in orders without any prioritization system. Customer complaints about pickup delays had risen 35 percent year over year.\n\nThe company introduced a dedicated mobile pickup counter separate from the walk-in ordering line in 200 of its busiest stores, along with a feature letting customers schedule their mobile order for a specific pickup time rather than 'as soon as possible.'\n\nThree months later, the 200 updated stores reported a 60 percent drop in pickup-related complaints, while the remaining stores nationwide, which did not receive the changes, saw complaints continue rising at roughly the same rate as before.",
+      "logicChain": [
+        "Complaints about pickup delays rising 35% year over year -> 200 busiest stores get dedicated pickup counter and scheduling feature -> after 3 months: those 200 stores see 60% drop in complaints -> unchanged stores: complaints continue rising at prior rate -> changes appear specifically linked to the improvement"
+      ],
+      "logicChainSteps": [
+        "Complaints about pickup delays rising 35% year over year",
+        "200 busiest stores get dedicated pickup counter and scheduling feature",
+        "after 3 months: those 200 stores see 60% drop in complaints",
+        "unchanged stores: complaints continue rising at prior rate",
+        "changes appear specifically linked to the improvement"
+      ],
+      "conclusion": "The dedicated pickup counter and scheduling feature appear specifically linked to fewer complaints at the stores that received them.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The dedicated pickup counter and scheduling feature appear specifically linked to fewer complaints at the stores that received them.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Complaints decreased equally at every store nationwide, including those without the changes. This pattern would hold steady across the entire situation the passage lays out.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The remaining stores nationwide also received the dedicated pickup counter.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Pickup-related complaints increased at the 200 updated stores.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Only the 200 stores with the new pickup counter and scheduling feature saw a sharp drop in complaints, while unchanged stores continued their prior complaint trend, strongly supporting a specific link between the changes and the improvement."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L167_Q2_LEARN",
+      "level": 167,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "A state's department of motor vehicles had faced growing criticism over long wait times at its branch offices, with average visit times reaching 95 minutes and customer satisfaction scores falling to their lowest recorded level. An internal analysis found that a significant portion of visits, about 40 percent, were for simple transactions like address updates or registration renewals that didn't require in-person processing at all.\n\nThe department launched an online portal allowing residents to complete these simple transactions remotely, and reorganized in-branch staffing to reduce the number of window clerks handling general inquiries while adding more clerks trained specifically for complex transactions like license exams and title transfers.\n\nSix months later, average in-branch wait times had dropped to 38 minutes, and customer satisfaction scores had risen to their highest recorded level, even though total foot traffic at branches had decreased by roughly the same percentage of transactions that had been simple, routine ones.",
+      "logicChain": [
+        "95-minute average wait, 40% of visits are simple transactions not requiring in-person visits -> online portal launched for simple transactions, staffing reorganized -> wait times drop to 38 min, satisfaction reaches highest level, foot traffic drops roughly matching the simple-transaction percentage -> online portal appears closely linked to both improvements"
+      ],
+      "logicChainSteps": [
+        "95-minute average wait, 40% of visits are simple transactions not requiring in-person visits",
+        "online portal launched for simple transactions, staffing reorganized",
+        "wait times drop to 38 min, satisfaction reaches highest level, foot traffic drops roughly matching the simple-transaction percentage",
+        "online portal appears closely linked to both improvements"
+      ],
+      "conclusion": "Moving routine transactions online appears closely linked to both the reduced wait times and the improved satisfaction scores.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Wait times increased after the online portal was introduced.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Moving routine transactions online appears closely linked to both the reduced wait times and the improved satisfaction scores.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Foot traffic at branches increased significantly after the changes.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The online portal was designed specifically for complex transactions like license exams.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since the transactions moved online matched roughly the same percentage as the foot traffic decrease, and both wait times and satisfaction improved substantially afterward, the passage supports a close link between routing simple transactions away from in-person visits and the overall improvement."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L167_Q3_LEARN",
+      "level": 167,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "A regional health insurer had experienced a rising rate of customer calls to its support line specifically about claim denials, with 22 percent of all support calls related to denied claims, and internal data showing that 60 percent of appealed denials were ultimately approved, suggesting many initial denials may have resulted from avoidable documentation errors rather than genuine coverage issues.\n\nThe insurer introduced an automated pre-submission review tool that flagged common documentation errors before a claim was formally submitted, along with a simplified claim form with clearer instructions for the fields most often filled out incorrectly.\n\nOne year later, the overall claim denial rate had dropped by 45 percent, and denial-related support calls had fallen to 9 percent of all calls, while the percentage of appealed denials that were ultimately approved had also dropped, from 60 percent to 22 percent.",
+      "logicChain": [
+        "22% of calls about denials, 60% of appeals succeed, suggesting documentation errors cause many denials -> pre-submission review tool and simplified form introduced -> denial rate drops 45%, denial calls fall to 9%, but appeal success rate also drops to 22% -> tool appears to have filtered out easily-fixed denials, leaving harder, genuine-issue denials among what remains"
+      ],
+      "logicChainSteps": [
+        "22% of calls about denials, 60% of appeals succeed, suggesting documentation errors cause many denials",
+        "pre-submission review tool and simplified form introduced",
+        "denial rate drops 45%, denial calls fall to 9%, but appeal success rate also drops to 22%",
+        "tool appears to have filtered out easily-fixed denials, leaving harder, genuine-issue denials among what remains"
+      ],
+      "conclusion": "The pre-submission review tool appears to have reduced denials caused by documentation errors, leaving mostly harder-to-resolve denials among those still appealed.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The pre-submission review tool appears to have reduced denials caused by documentation errors, leaving mostly harder-to-resolve denials among those still appealed.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The overall claim denial rate increased after the tool was introduced. The way the events are described throughout the passage offers no clear signal that this particular reading should be treated with any extra caution.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The percentage of successful appeals rose after the tool was introduced. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Denial-related support calls increased as a share of all calls. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since overall denials and denial-related calls both dropped sharply, but the appeal success rate also fell, this pattern suggests the tool successfully filtered out easily fixable, documentation-based denials, leaving a smaller pool of remaining denials that are harder to overturn because they reflect genuine coverage issues rather than paperwork errors."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L168_Q1_LEARN",
+      "level": 168,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A metropolitan school district had struggled for years with uneven access to advanced placement courses, with students at wealthier schools in the district taking an average of 3.2 AP courses by graduation compared to 0.8 at the district's lower-income schools, even though standardized test scores suggested comparable academic readiness among many students at both types of schools.\n\nThe district launched an online AP course platform allowing students at any school to enroll in courses not offered locally, provided transportation to and from a testing site for the AP exams, and created a dedicated counselor position at each lower-income school specifically focused on identifying and encouraging eligible students to enroll.\n\nThree years later, AP course-taking at the previously underserved schools had risen to an average of 2.1 courses per graduating student, while AP course-taking at wealthier schools had remained essentially unchanged at 3.3 courses per student.",
+      "logicChain": [
+        "Original gap: wealthier schools 3.2 AP courses, lower-income schools 0.8 (gap of 2.4) -> online platform, exam transportation, dedicated counselors introduced -> 3 years later: lower-income schools 2.1, wealthier schools 3.3 (gap of 1.2) -> gap narrowed considerably, though not fully closed"
+      ],
+      "logicChainSteps": [
+        "Original gap: wealthier schools 3.2 AP courses, lower-income schools 0.8 (gap of 2.4)",
+        "online platform, exam transportation, dedicated counselors introduced",
+        "3 years later: lower-income schools 2.1, wealthier schools 3.3 (gap of 1.2)",
+        "gap narrowed considerably, though not fully closed"
+      ],
+      "conclusion": "The gap in AP course access between the two types of schools has narrowed considerably, though it has not been fully closed.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "AP course-taking at wealthier schools increased at the same rate as at lower-income schools. This would apply consistently across every detail the passage provides.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The gap between the two types of schools has been completely eliminated. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The gap in AP course access between the two types of schools has narrowed considerably, though it has not been fully closed.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "AP course-taking decreased at the previously underserved schools.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The original 2.4-course gap (3.2 minus 0.8) narrowed to about 1.2 courses (3.3 minus 2.1) after the district's changes, showing considerable progress in closing the gap even though a real difference remained."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L168_Q2_LEARN",
+      "level": 168,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A city's fire department had documented an increasing number of structure fires in older residential neighborhoods traced back to outdated electrical wiring, accounting for 31 percent of all residential fires in the city despite those neighborhoods containing only about 18 percent of the city's housing stock. A task force found that many homeowners in these neighborhoods were unaware of available low-cost inspection and rewiring assistance programs, or found the application process too complex to navigate.\n\nThe city partnered with community organizations to conduct door-to-door outreach in the affected neighborhoods, simplified the assistance application to a single page, and waived inspection fees for homes built before a certain year.\n\nTwo years after these changes, wiring-related fires in these neighborhoods had dropped by 52 percent, and program enrollment in the affected neighborhoods had increased more than fivefold compared to the two years before the outreach began.",
+      "logicChain": [
+        "31% of residential fires from wiring issues, task force finds low awareness and complex applications as barriers -> door-to-door outreach, simplified application, waived fees introduced -> 2 years later: wiring fires down 52%, enrollment up fivefold -> awareness and simplification appear closely linked to the improved outcomes"
+      ],
+      "logicChainSteps": [
+        "31% of residential fires from wiring issues, task force finds low awareness and complex applications as barriers",
+        "door-to-door outreach, simplified application, waived fees introduced",
+        "2 years later: wiring fires down 52%, enrollment up fivefold",
+        "awareness and simplification appear closely linked to the improved outcomes"
+      ],
+      "conclusion": "Improved awareness and a simplified application process appear closely linked to increased program enrollment and, in turn, fewer wiring-related fires.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Wiring-related fires increased in these neighborhoods after the outreach began.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Improved awareness and a simplified application process appear closely linked to increased program enrollment and, in turn, fewer wiring-related fires.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Program enrollment decreased after the application was simplified.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The affected neighborhoods contained the majority of the city's total housing stock.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The task force specifically identified awareness and application complexity as barriers, the city's changes directly addressed both, and the resulting sharp rise in enrollment alongside the drop in fires supports a close link between the outreach and simplification efforts and the improved outcomes."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L168_Q3_LEARN",
+      "level": 168,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A national parcel delivery company had seen a rising number of 'delivery attempted, recipient not available' notices, accounting for 14 percent of all delivery attempts and requiring costly redelivery trips. An internal review found that most failed deliveries occurred between 10 a.m. and 2 p.m. on weekdays, when many residential customers were away at work, and that the company's routing software did not account for this pattern when scheduling delivery windows.\n\nThe company updated its routing software to prioritize residential deliveries for early morning, evening, or weekend windows when historical data showed higher likelihood of someone being home, while shifting business-address deliveries, largely unaffected by this pattern, to the previous mid-day scheduling.\n\nSix months later, failed residential delivery attempts had dropped to 5 percent, while the rate for business-address deliveries remained essentially unchanged, since those deliveries had not required rescheduling in the first place.",
+      "logicChain": [
+        "14% of deliveries fail, mostly mid-day residential attempts when people are at work -> routing software updated to shift residential deliveries to mornings/evenings/weekends, business deliveries kept mid-day -> residential failures drop to 5%, business rate unchanged -> targeted change addressed the specific residential timing mismatch"
+      ],
+      "logicChainSteps": [
+        "14% of deliveries fail, mostly mid-day residential attempts when people are at work",
+        "routing software updated to shift residential deliveries to mornings/evenings/weekends, business deliveries kept mid-day",
+        "residential failures drop to 5%, business rate unchanged",
+        "targeted change addressed the specific residential timing mismatch"
+      ],
+      "conclusion": "The routing changes appear to have specifically addressed the timing mismatch for residential deliveries without needing to change business delivery scheduling.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Business-address delivery failure rates dropped significantly after the changes. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The company stopped delivering to residential addresses entirely. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Failed residential deliveries increased after the routing software was updated. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The routing changes appear to have specifically addressed the timing mismatch for residential deliveries without needing to change business delivery scheduling.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Since the underlying problem, mid-day deliveries missing residents at work, specifically affected residential addresses, and business deliveries were explicitly unaffected by this pattern, the targeted routing change appropriately improved residential outcomes without needing to alter business delivery scheduling."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L169_Q1_LEARN",
+      "level": 169,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "A large urban hospital system had observed that patients discharged on weekends were readmitted within 30 days at a rate of 23 percent, compared to 14 percent for patients discharged on weekdays. An investigation found that weekend discharges often occurred without a scheduled follow-up appointment already in place, since the scheduling office was closed on weekends, whereas weekday discharges typically included a confirmed follow-up appointment before the patient left the hospital.\n\nThe hospital extended its scheduling office hours to include weekend coverage and required that no patient be discharged without a confirmed follow-up appointment, regardless of the day of the week.\n\nOne year later, the weekend readmission rate had dropped to 15 percent, nearly matching the weekday rate, which had remained stable at 13 percent over the same period.",
+      "logicChain": [
+        "Weekend readmissions: 23% -> weekday: 14%, gap of 9 points, weekend discharges often lack confirmed follow-ups -> scheduling office extended to weekends, follow-up required before any discharge -> one year later: weekend 15%, weekday 13%, gap narrows to ~2 points -> change appears closely linked to closing the gap"
+      ],
+      "logicChainSteps": [
+        "Weekend readmissions: 23%",
+        "weekday: 14%, gap of 9 points, weekend discharges often lack confirmed follow-ups",
+        "scheduling office extended to weekends, follow-up required before any discharge",
+        "one year later: weekend 15%, weekday 13%, gap narrows to ~2 points",
+        "change appears closely linked to closing the gap"
+      ],
+      "conclusion": "Ensuring confirmed follow-up appointments before discharge appears closely linked to closing the gap between weekend and weekday readmission rates.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The weekday readmission rate rose to match the weekend rate.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Weekend readmission rates increased after the scheduling changes. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The hospital eliminated weekend discharges entirely as part of this change. This would remain the case regardless of any other detail in the passage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Ensuring confirmed follow-up appointments before discharge appears closely linked to closing the gap between weekend and weekday readmission rates.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "The original 9-point gap (23 versus 14 percent) between weekend and weekday readmissions narrowed to about 2 points (15 versus 13 percent) after ensuring all patients had confirmed follow-ups regardless of discharge day, closely linking the specific change to the near-closing of the gap."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L169_Q2_LEARN",
+      "level": 169,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "A regional utility company had documented a rising number of customer complaints about unexpectedly high monthly bills, with complaint volume increasing 60 percent over two years even though the company's actual rate structure had not changed during that period. An investigation found that the increase coincided with a shift toward estimated billing, where meters were read remotely only every third month, with the two intervening months' bills calculated based on estimated usage.\n\nThe company invested in upgraded smart meters providing accurate, real-time monthly readings for all customers, eliminating the need for estimated billing entirely.\n\nOne year after full smart meter deployment, billing complaints had dropped by 71 percent, even though average monthly bill amounts across the customer base had not changed significantly compared to before the meter upgrade.",
+      "logicChain": [
+        "Complaints rise 60% over two years, rate structure unchanged, estimated billing introduced during this period -> smart meters installed, providing accurate monthly readings -> complaints drop 71%, average bill amounts stay essentially the same -> complaints appear more closely tied to billing accuracy/predictability than to actual cost"
+      ],
+      "logicChainSteps": [
+        "Complaints rise 60% over two years, rate structure unchanged, estimated billing introduced during this period",
+        "smart meters installed, providing accurate monthly readings",
+        "complaints drop 71%, average bill amounts stay essentially the same",
+        "complaints appear more closely tied to billing accuracy/predictability than to actual cost"
+      ],
+      "conclusion": "Complaints appear more closely linked to the accuracy and predictability of billing than to the actual dollar amount customers were paying.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Customers were paying significantly more after the smart meters were installed.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The company's rate structure changed at the same time as the meter upgrade.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Complaints appear more closely linked to the accuracy and predictability of billing than to the actual dollar amount customers were paying.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Billing complaints increased after the smart meters were installed.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since average bill amounts stayed essentially the same before and after the meter upgrade, but complaints dropped sharply once billing became accurate and predictable rather than estimated, the passage supports billing accuracy and predictability, not the actual cost, as the more likely driver of customer complaints."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L169_Q3_LEARN",
+      "level": 169,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "A large retail chain had noticed that its customer loyalty program, while popular with 2.3 million enrolled members, was generating relatively little additional spending, with enrolled members spending only 4 percent more on average than similar non-enrolled customers. An analysis of program usage found that most members primarily used the program to check point balances but rarely redeemed points for the available rewards, many of which required accumulating points over many months before reaching a usable threshold.\n\nThe company restructured the rewards tiers to include smaller, more frequent rewards achievable within a few weeks of typical shopping, alongside the existing larger rewards for long-term accumulation, and sent personalized notifications when members were close to reaching a reward threshold.\n\nSix months later, average spending among enrolled members had risen to 19 percent above similar non-members, and the percentage of members redeeming at least one reward per quarter rose from 12 percent to 58 percent.",
+      "logicChain": [
+        "2.3M members, only 4% extra spending, most rarely redeem due to slow-to-reach thresholds -> smaller, more frequent rewards added, personalized notifications introduced -> 6 months later: spending rises to 19% above non-members, redemption rises from 12% to 58% -> more attainable rewards appear closely linked to the increased engagement"
+      ],
+      "logicChainSteps": [
+        "2.3M members, only 4% extra spending, most rarely redeem due to slow-to-reach thresholds",
+        "smaller, more frequent rewards added, personalized notifications introduced",
+        "6 months later: spending rises to 19% above non-members, redemption rises from 12% to 58%",
+        "more attainable rewards appear closely linked to the increased engagement"
+      ],
+      "conclusion": "Making rewards more frequently attainable appears closely linked to increased member spending and redemption rates.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Member spending decreased after the rewards tiers were restructured. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Redemption rates stayed the same after the changes were made.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Making rewards more frequently attainable appears closely linked to increased member spending and redemption rates.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The company removed all long-term reward options from the program. The passage gives no indication that this varied across the circumstances described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The original issue was that rewards required too long a wait to become usable, and after introducing more frequent, quickly attainable rewards alongside the existing options, both spending and redemption rates rose substantially, supporting a close link between attainability and increased engagement."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L170_Q1_LEARN",
+      "level": 170,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "A state's unemployment insurance office had faced growing backlogs in processing claims, with average processing time reaching 21 days, well beyond the federally recommended 14-day standard, during a period when claim volume had also risen 35 percent due to broader economic conditions. An internal review found that claims requiring manual verification, roughly 40 percent of all claims, took disproportionately longer, while claims that could be automatically verified through existing wage records typically processed within 3 days.\n\nThe office expanded the categories of claims eligible for automatic verification by integrating additional data sources, including state tax records and unemployment records from neighboring states for claimants who had recently relocated, reducing the share of claims requiring manual review to about 15 percent.\n\nSix months later, despite claim volume remaining elevated at roughly the same level as before the changes, average processing time had dropped to 9 days, below the federal standard.",
+      "logicChain": [
+        "Processing time: 21 days, above 14-day standard, claim volume up 35% -> 40% of claims require manual review, slower than automated ones -> automatic verification expanded, manual review share drops to 15% -> 6 months later: processing time 9 days, despite volume staying elevated -> verification expansion appears closely linked to the improvement, volume increase ruled out as the explanation"
+      ],
+      "logicChainSteps": [
+        "Processing time: 21 days, above 14-day standard, claim volume up 35%",
+        "40% of claims require manual review, slower than automated ones",
+        "automatic verification expanded, manual review share drops to 15%",
+        "6 months later: processing time 9 days, despite volume staying elevated",
+        "verification expansion appears closely linked to the improvement, volume increase ruled out as the explanation"
+      ],
+      "conclusion": "Expanding automatic verification appears closely linked to the improved processing time, despite claim volume staying elevated throughout.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Claim volume decreased significantly after the changes were made.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The percentage of claims requiring manual review increased after the changes.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Processing times remained above the federal standard after the changes.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Expanding automatic verification appears closely linked to the improved processing time, despite claim volume staying elevated throughout.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Since claim volume remained just as high after the changes as before, ruling out reduced demand as an explanation, the sharp drop in processing time despite that steady volume strongly supports the expanded automatic verification system as the reason for the improvement."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L170_Q2_LEARN",
+      "level": 170,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "A city's public housing authority had documented persistently long wait times for maintenance requests, averaging 12 days for non-emergency repairs across its properties, with tenant satisfaction surveys showing maintenance response as the lowest-rated category for three consecutive years. An analysis found that maintenance requests were assigned to technicians based on which property they were originally hired to service, regardless of whether a nearer technician from a different property might be available and less busy.\n\nThe authority switched to a centralized dispatch system that assigned each new request to whichever qualified technician was geographically closest and had current availability, regardless of which property they were formally assigned to.\n\nOne year later, average non-emergency repair time had dropped to 4 days, and maintenance response had risen from the lowest-rated category to the second-highest-rated category in the annual tenant satisfaction survey.",
+      "logicChain": [
+        "Maintenance wait time: 12 days, lowest-rated satisfaction category for 3 years -> technicians assigned by original property regardless of proximity or availability -> centralized dispatch introduced, assigns by proximity and availability -> one year later: repair time 4 days, satisfaction rises to second-highest category -> dispatch change appears closely linked to both improvements"
+      ],
+      "logicChainSteps": [
+        "Maintenance wait time: 12 days, lowest-rated satisfaction category for 3 years",
+        "technicians assigned by original property regardless of proximity or availability",
+        "centralized dispatch introduced, assigns by proximity and availability",
+        "one year later: repair time 4 days, satisfaction rises to second-highest category",
+        "dispatch change appears closely linked to both improvements"
+      ],
+      "conclusion": "The centralized dispatch system appears closely linked to both faster repair times and improved tenant satisfaction with maintenance.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Maintenance response remained the lowest-rated category after the change.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Repair times increased after the centralized dispatch system was introduced. Nothing described in the passage points to any exception to this pattern.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Technicians continued being assigned only to their original properties.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The centralized dispatch system appears closely linked to both faster repair times and improved tenant satisfaction with maintenance.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "The original system's inefficiency, assigning technicians by property rather than availability or proximity, was directly addressed by the centralized dispatch change, and both the repair time and the satisfaction ranking improved substantially afterward, supporting a close link between the change and the improvements."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L170_Q3_LEARN",
+      "level": 170,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "A national pharmacy chain had observed that its automated prescription refill reminder system, sending text messages when a prescription was due for refill, had a relatively low response rate of 22 percent, meaning most reminders did not result in the customer actually picking up their refill within a week. A review of the messages found they were sent at a single fixed time, 9 a.m., regardless of when individual customers had historically picked up previous refills, and that the message text was identical for all medication types, including both routine maintenance medications and more urgent, short-course prescriptions.\n\nThe company updated the system to send reminders based on each customer's individual historical pickup time patterns rather than a fixed time, and adjusted message wording to reflect urgency, with more time-sensitive language used for medications where delayed refills posed greater health risks.\n\nThree months later, the overall response rate rose to 41 percent, with the largest improvement seen among customers receiving reminders for higher-urgency medications, where response rates rose from 19 percent to 52 percent.",
+      "logicChain": [
+        "Overall reminder response rate: 22%, fixed timing and generic wording for all medication types -> timing personalized, wording adjusted for urgency -> overall response rises to 41%, higher-urgency medications rise from 19% to 52% -> personalization appears especially linked to the improvement for higher-urgency reminders"
+      ],
+      "logicChainSteps": [
+        "Overall reminder response rate: 22%, fixed timing and generic wording for all medication types",
+        "timing personalized, wording adjusted for urgency",
+        "overall response rises to 41%, higher-urgency medications rise from 19% to 52%",
+        "personalization appears especially linked to the improvement for higher-urgency reminders"
+      ],
+      "conclusion": "Personalizing timing and urgency in the reminder messages appears especially linked to improved response for higher-urgency medications.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Response rates for higher-urgency medications decreased after the changes. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Personalizing timing and urgency in the reminder messages appears especially linked to improved response for higher-urgency medications.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "All reminder messages remained identical regardless of medication type.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The overall response rate decreased after the changes were introduced.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "While the overall response rate improved from 22 to 41 percent, the higher-urgency medication group saw an especially large jump, from 19 to 52 percent, showing the urgency-tailored wording had a particularly strong effect for that specific group of messages."
+    }
+  ]
+}

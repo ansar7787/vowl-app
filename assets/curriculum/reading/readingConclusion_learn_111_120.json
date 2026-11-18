@@ -1,0 +1,1368 @@
+{
+  "gameType": "readingConclusion",
+  "phase": "learn",
+  "batchIndex": 12,
+  "levels": "111-120",
+  "quests": [
+    {
+      "id": "RDG_READINGCONCLUSION_L111_Q1_LEARN",
+      "level": 111,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A city noticed that ice cream sales and drowning incidents both rose during the same summer months every year. Public health officials pointed out that both trends actually track with warmer weather, since more people swim and buy ice cream when temperatures rise.",
+      "logicChain": [
+        "Ice cream sales rise in summer -> drownings also rise in summer -> officials point to warm weather as the shared cause -> weather explains both, not one causing the other"
+      ],
+      "logicChainSteps": [
+        "Ice cream sales rise in summer",
+        "drownings also rise in summer",
+        "officials point to warm weather as the shared cause",
+        "weather explains both, not one causing the other"
+      ],
+      "conclusion": "Warmer weather appears to be the shared factor behind both trends, rather than one trend causing the other.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Ice cream sales directly cause an increase in drowning incidents.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Drowning incidents directly cause an increase in ice cream sales.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The two trends have no possible relationship to each other at all.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Warmer weather appears to be the shared factor behind both trends, rather than one trend causing the other.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "The passage explicitly states both trends track with warm weather, showing a shared underlying cause rather than one trend causing the other, a classic example of correlation without direct causation."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L111_Q2_LEARN",
+      "level": 111,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A school district found that students who owned a graphing calculator scored higher on average in advanced math courses than students who did not own one. However, calculator ownership was optional and cost money, meaning families who could afford one were also more likely to afford tutoring and other academic resources.",
+      "logicChain": [
+        "Calculator owners: higher average scores -> calculator ownership requires disposable income -> such families also more likely to afford tutoring -> financial resources may explain part of the gap, not the calculator alone"
+      ],
+      "logicChainSteps": [
+        "Calculator owners: higher average scores",
+        "calculator ownership requires disposable income",
+        "such families also more likely to afford tutoring",
+        "financial resources may explain part of the gap, not the calculator alone"
+      ],
+      "conclusion": "Family financial resources may explain part of the score difference, rather than calculator ownership alone.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Owning a graphing calculator is definitely the sole reason for higher scores. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Families who could not afford calculators had access to more tutoring. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Family financial resources may explain part of the score difference, rather than calculator ownership alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Math scores were completely unrelated to family income in every case.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since calculator ownership requires disposable income, and such families were also more likely to afford tutoring, the passage suggests financial resources broadly, not the calculator itself, may explain part of the score gap."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L111_Q3_LEARN",
+      "level": 111,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A hospital noticed that patients admitted on weekends had slightly worse outcomes on average than patients admitted on weekdays. Hospital administrators noted that weekend shifts typically have fewer specialists on call, since most specialists work standard weekday schedules.",
+      "logicChain": [
+        "Weekend admissions: slightly worse outcomes -> weekend shifts have fewer specialists on call -> reduced staffing may explain part of the outcome difference, not the day itself"
+      ],
+      "logicChainSteps": [
+        "Weekend admissions: slightly worse outcomes",
+        "weekend shifts have fewer specialists on call",
+        "reduced staffing may explain part of the outcome difference, not the day itself"
+      ],
+      "conclusion": "Reduced specialist availability on weekends may help explain the difference in patient outcomes.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The day of the week directly and physically worsens a patient's medical condition, based on the details the passage provides.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Weekend admissions have identical specialist coverage to weekday admissions.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Reduced specialist availability on weekends may help explain the difference in patient outcomes.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Patient outcomes have no possible connection to staffing levels.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The passage points to reduced specialist availability on weekends as a plausible explanation, showing the outcome difference is likely linked to staffing rather than something inherent to the calendar day itself."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L112_Q1_LEARN",
+      "level": 112,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A researcher found that towns with more churches per capita also had more bars per capita. Further analysis showed both numbers were simply related to town population size: larger towns had more of both, while smaller towns had fewer of both.",
+      "logicChain": [
+        "Churches per capita and bars per capita rise together -> further analysis: both tied to population size -> population size explains the relationship, not one causing the other"
+      ],
+      "logicChainSteps": [
+        "Churches per capita and bars per capita rise together",
+        "further analysis: both tied to population size",
+        "population size explains the relationship, not one causing the other"
+      ],
+      "conclusion": "Town population size appears to explain the relationship between the number of churches and bars, rather than one causing the other.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "More churches in a town directly causes more bars to open. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Town population size appears to explain the relationship between the number of churches and bars, rather than one causing the other.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "More bars in a town directly causes more churches to open. Every relevant detail included in the passage is consistent with treating this as a complete and accurate account, without further qualification being necessary.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "There is no explanation at all for why the two numbers relate. This reading would hold true across the full sequence of events described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The passage explicitly states population size explains both counts, showing this is a case where two things move together because of a third shared factor rather than one causing the other."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L112_Q2_LEARN",
+      "level": 112,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A fitness researcher found that people who regularly attended a particular gym's early morning classes had lower average body fat percentages than people who attended evening classes. The researcher noted that early morning classes required waking up significantly earlier, a habit already associated with other disciplined routines like consistent sleep schedules and meal planning.",
+      "logicChain": [
+        "Early-morning class attendees: lower body fat -> early rising also linked to disciplined sleep and meal habits -> broader lifestyle discipline may explain part of the difference, not just class timing"
+      ],
+      "logicChainSteps": [
+        "Early-morning class attendees: lower body fat",
+        "early rising also linked to disciplined sleep and meal habits",
+        "broader lifestyle discipline may explain part of the difference, not just class timing"
+      ],
+      "conclusion": "Broader lifestyle discipline linked to early rising may help explain the difference, not just the class timing itself.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Attending classes before a certain hour directly and physically burns more fat. This pattern would hold steady across the entire situation the passage lays out.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Evening class attendees had no other daily habits of any kind. Nothing in the passage suggests this changed at any point during the period described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Body fat percentage has no relationship to any lifestyle factor. This would apply consistently across every detail the passage provides.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Broader lifestyle discipline linked to early rising may help explain the difference, not just the class timing itself.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "The passage links early rising to broader disciplined habits like sleep and meal planning, suggesting these related lifestyle factors, not simply the class time itself, may help explain the difference in outcomes."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L112_Q3_LEARN",
+      "level": 112,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A city found that neighborhoods with more streetlights had lower crime rates. However, the neighborhoods with more streetlights were also the ones that had received the most recent city investment overall, including new sidewalks, updated parks, and increased police patrols.",
+      "logicChain": [
+        "More-streetlight neighborhoods: lower crime -> those neighborhoods also got sidewalks, parks, extra patrols -> broader investment may explain the lower crime, not streetlights alone"
+      ],
+      "logicChainSteps": [
+        "More-streetlight neighborhoods: lower crime",
+        "those neighborhoods also got sidewalks, parks, extra patrols",
+        "broader investment may explain the lower crime, not streetlights alone"
+      ],
+      "conclusion": "Broader city investment in these neighborhoods may explain the lower crime rates, not streetlights specifically.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Streetlights alone are definitely the entire explanation for the lower crime rates. Nothing in the passage suggests this changed at any point during the period described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Broader city investment in these neighborhoods may explain the lower crime rates, not streetlights specifically.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Neighborhoods with fewer streetlights received more city investment overall. This reading would hold true across the full sequence of events described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Crime rates have no connection to any city investment of any kind. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since these neighborhoods also received sidewalks, parks, and increased patrols, the passage suggests the broader investment package, not streetlights specifically, may explain the lower crime rates."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L113_Q1_LEARN",
+      "level": 113,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "An economist found that countries with more registered patents per capita also had higher average incomes. The economist cautioned that wealthier countries typically have more resources to fund research, universities, and legal systems that support patent filing in the first place.",
+      "logicChain": [
+        "More patents per capita correlates with higher income -> economist notes wealth funds research, universities, legal systems -> wealth may enable patent filing, rather than patents causing wealth"
+      ],
+      "logicChainSteps": [
+        "More patents per capita correlates with higher income",
+        "economist notes wealth funds research, universities, legal systems",
+        "wealth may enable patent filing, rather than patents causing wealth"
+      ],
+      "conclusion": "Higher income may enable more patent filing, rather than patents directly causing higher income.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Filing more patents directly and immediately raises a country's average income, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Countries with fewer patents always have higher average incomes. This pattern would hold steady across the entire situation the passage lays out.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Higher income may enable more patent filing, rather than patents directly causing higher income.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "There is no relationship of any kind between patents and income. This would remain the case regardless of any other detail in the passage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The economist's caution points to wealth enabling more patent activity through better-funded research and legal systems, suggesting the causal direction may run opposite to a simple 'patents cause wealth' explanation."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L113_Q2_LEARN",
+      "level": 113,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "A study found that employees who brought lunch from home rather than buying it reported saving more money by year's end. However, employees who brought lunch from home were also disproportionately those with longer commutes, who had more time in the morning due to not needing to plan a lunch stop during a shorter workday.",
+      "logicChain": [
+        "Lunch-from-home employees: save more money -> also tend to have longer commutes, different morning schedules -> scheduling differences may partly explain the savings, not lunch choice alone"
+      ],
+      "logicChainSteps": [
+        "Lunch-from-home employees: save more money",
+        "also tend to have longer commutes, different morning schedules",
+        "scheduling differences may partly explain the savings, not lunch choice alone"
+      ],
+      "conclusion": "Commute length and related scheduling differences may partly explain the savings pattern, not simply the lunch choice alone.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Bringing lunch from home is definitely the only possible explanation for the savings. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Employees with shorter commutes always brought lunch from home.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Savings by year's end had no relationship to any employee habit. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Commute length and related scheduling differences may partly explain the savings pattern, not simply the lunch choice alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Since lunch-bringers also tended to have longer commutes and different daily scheduling, the passage suggests broader lifestyle and scheduling differences, not the lunch choice in isolation, may explain part of the savings."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L113_Q3_LEARN",
+      "level": 113,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "A city's parks department found that parks with community events scheduled monthly had less vandalism than parks with no scheduled events. The department noted that parks hosting events also tended to be the newest parks in the system, built in the last five years with modern lighting and design.",
+      "logicChain": [
+        "Parks with monthly events: less vandalism -> those parks also newer, modern lighting/design -> newer infrastructure may partly explain the lower vandalism, not events alone"
+      ],
+      "logicChainSteps": [
+        "Parks with monthly events: less vandalism",
+        "those parks also newer, modern lighting/design",
+        "newer infrastructure may partly explain the lower vandalism, not events alone"
+      ],
+      "conclusion": "Newer park design and infrastructure may partly explain the lower vandalism, not just the events themselves.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Scheduled events alone are definitely the only reason vandalism is lower. This pattern would hold steady across the entire situation the passage lays out.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Older parks in the system always host more monthly events. The passage gives no indication that this varied across the circumstances described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Newer park design and infrastructure may partly explain the lower vandalism, not just the events themselves.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Vandalism rates showed no relationship to any park feature. This would apply consistently across every detail the passage provides.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since event-hosting parks were also newer with modern design and lighting, the passage suggests these infrastructure differences, not the events alone, may contribute to the lower vandalism rates."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L114_Q1_LEARN",
+      "level": 114,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A researcher studying reading habits found that children who were read to daily by a parent scored higher on vocabulary tests. The researcher noted that daily reading time requires a parent to have consistent, unstructured time available in the evening, something more common in households where at least one parent works fewer hours or has a flexible schedule.",
+      "logicChain": [
+        "Daily-read-to children: higher vocabulary scores -> daily reading requires flexible parental time -> schedule flexibility may partly explain the difference, not the reading habit alone"
+      ],
+      "logicChainSteps": [
+        "Daily-read-to children: higher vocabulary scores",
+        "daily reading requires flexible parental time",
+        "schedule flexibility may partly explain the difference, not the reading habit alone"
+      ],
+      "conclusion": "Parental schedule flexibility may partly explain the vocabulary score difference, not just the reading itself.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Being read to daily is definitely the sole explanation for the score difference. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Parents who work the most hours always read to their children daily. The passage gives no indication that this varied across the circumstances described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Parental schedule flexibility may partly explain the vocabulary score difference, not just the reading itself.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Vocabulary scores showed no relationship to any family circumstance.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since daily reading requires flexible parental time, and that flexibility could independently relate to a household's broader resources and involvement, the passage suggests schedule flexibility may account for part of the score difference."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L114_Q2_LEARN",
+      "level": 114,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A workplace study found that employees who took all their allotted vacation days reported higher productivity scores than employees who took fewer vacation days. Researchers noted that employees who feel comfortable taking full vacation time often work at companies with lower overall workloads and more supportive management practices.",
+      "logicChain": [
+        "Full-vacation employees: higher productivity -> full vacation use linked to lower workloads, supportive management -> broader workplace culture may partly explain the difference, not vacation days alone"
+      ],
+      "logicChainSteps": [
+        "Full-vacation employees: higher productivity",
+        "full vacation use linked to lower workloads, supportive management",
+        "broader workplace culture may partly explain the difference, not vacation days alone"
+      ],
+      "conclusion": "Broader workplace culture and workload may partly explain the productivity difference, not vacation usage alone.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Taking all vacation days is definitely the sole cause of higher productivity. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Employees at high-workload companies always take all their vacation days. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Productivity scores showed no relationship to any workplace factor. The passage gives no indication that this varied across the circumstances described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Broader workplace culture and workload may partly explain the productivity difference, not vacation usage alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Since comfortably taking full vacation is linked to lower workloads and supportive management, the passage suggests these broader workplace conditions, not vacation usage alone, may explain part of the productivity difference."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L114_Q3_LEARN",
+      "level": 114,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A public health study found that regions with higher rates of recreational running also had lower rates of a certain chronic illness. The researchers noted that regions with more running culture also tended to have more accessible parks, safer streets, and generally higher average incomes.",
+      "logicChain": [
+        "High-running regions: lower chronic illness rates -> those regions also have more parks, safer streets, higher incomes -> broader regional factors may partly explain the difference, not running alone"
+      ],
+      "logicChainSteps": [
+        "High-running regions: lower chronic illness rates",
+        "those regions also have more parks, safer streets, higher incomes",
+        "broader regional factors may partly explain the difference, not running alone"
+      ],
+      "conclusion": "Broader regional factors like park access and income may partly explain the lower illness rates, not running alone.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Running alone is definitely the entire explanation for the lower illness rates. The passage gives no indication that this varied across the circumstances described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Regions with the least running had the most accessible parks.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Broader regional factors like park access and income may partly explain the lower illness rates, not running alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Illness rates showed no relationship to any regional factor.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since regions with more running also had better parks, safer streets, and higher incomes, the passage suggests these broader regional conditions, not running in isolation, likely contribute to part of the lower illness rates."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L115_Q1_LEARN",
+      "level": 115,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "A marketing analyst found that companies with more active social media accounts tended to have higher quarterly revenue. The analyst noted that companies with larger marketing budgets overall tended to invest more in social media as just one part of a broader marketing strategy that also included advertising, public relations, and sponsorships.",
+      "logicChain": [
+        "More active social media: higher quarterly revenue -> social media is one part of a broader, well-funded marketing strategy -> overall budget size may better explain the link than social media alone"
+      ],
+      "logicChainSteps": [
+        "More active social media: higher quarterly revenue",
+        "social media is one part of a broader, well-funded marketing strategy",
+        "overall budget size may better explain the link than social media alone"
+      ],
+      "conclusion": "Overall marketing budget size may better explain the revenue link than social media activity alone.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Social media activity alone is definitely the sole driver of higher revenue, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Companies with the smallest marketing budgets had the most active social media, based on the details the passage provides.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Overall marketing budget size may better explain the revenue link than social media activity alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Revenue showed no relationship to any marketing activity. This would remain the case regardless of any other detail in the passage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The passage frames social media activity as one piece of a broader, better-funded marketing strategy, suggesting overall budget size, not social media specifically, may better explain the revenue relationship."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L115_Q2_LEARN",
+      "level": 115,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "A study of college students found that those who joined study groups had higher final exam scores. Researchers noted that students who sought out study groups were also disproportionately students who had already demonstrated strong time-management skills through their participation in other structured extracurricular activities.",
+      "logicChain": [
+        "Study group members: higher final exam scores -> those students already showed strong time management via extracurriculars -> pre-existing time-management skill may partly explain the score difference"
+      ],
+      "logicChainSteps": [
+        "Study group members: higher final exam scores",
+        "those students already showed strong time management via extracurriculars",
+        "pre-existing time-management skill may partly explain the score difference"
+      ],
+      "conclusion": "Pre-existing time-management skills may partly explain the higher exam scores, not study group participation alone.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Joining a study group is definitely the sole reason for higher exam scores. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Pre-existing time-management skills may partly explain the higher exam scores, not study group participation alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Students in structured extracurriculars always avoided study groups.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Exam scores showed no relationship to any student characteristic.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since study group members already showed strong time-management skills through other activities, the passage suggests this pre-existing trait, not study groups alone, may account for part of the higher scores."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L115_Q3_LEARN",
+      "level": 115,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "A city's economic office found that neighborhoods with more locally owned small businesses had stronger community trust scores in resident surveys. The office noted that neighborhoods able to support many small businesses also tended to have more stable, long-term residents who had lived there for over a decade.",
+      "logicChain": [
+        "More small businesses: higher community trust scores -> those neighborhoods also have more long-term residents -> resident stability may partly explain the trust scores, not business count alone"
+      ],
+      "logicChainSteps": [
+        "More small businesses: higher community trust scores",
+        "those neighborhoods also have more long-term residents",
+        "resident stability may partly explain the trust scores, not business count alone"
+      ],
+      "conclusion": "Long-term resident stability may partly explain the trust scores, not the number of small businesses alone.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The number of small businesses is definitely the sole reason for higher trust scores, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Neighborhoods with the newest residents had the most small businesses.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Long-term resident stability may partly explain the trust scores, not the number of small businesses alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Trust scores showed no relationship to any neighborhood characteristic.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since neighborhoods supporting many small businesses also had more long-term, stable residents, the passage suggests this resident stability, not the business count alone, may contribute to part of the trust scores."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L116_Q1_LEARN",
+      "level": 116,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "A researcher studying employee wellness programs found that employees who used the company's on-site gym reported fewer sick days. However, gym access required employees to arrive at least 30 minutes before their shift, meaning gym users were also naturally employees who already had less restrictive personal schedules in the morning.",
+      "logicChain": [
+        "Gym users: fewer sick days -> gym use requires 30 extra minutes before shift -> gym users likely have more flexible mornings overall -> broader lifestyle flexibility may partly explain the pattern, not gym use alone"
+      ],
+      "logicChainSteps": [
+        "Gym users: fewer sick days",
+        "gym use requires 30 extra minutes before shift",
+        "gym users likely have more flexible mornings overall",
+        "broader lifestyle flexibility may partly explain the pattern, not gym use alone"
+      ],
+      "conclusion": "Employees with more flexible morning schedules may already differ in ways that explain part of the sick-day pattern, not gym use alone.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Using the on-site gym is definitely the sole reason for fewer sick days. Nothing in the passage suggests this changed at any point during the period described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Employees with more flexible morning schedules may already differ in ways that explain part of the sick-day pattern, not gym use alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Employees with the most restrictive schedules used the gym most often.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Sick days showed no relationship to any employee characteristic.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since gym access required extra morning time, and employees with that flexibility likely differ from those without it in other ways too, the passage suggests broader lifestyle differences may explain part of the sick-day pattern."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L116_Q2_LEARN",
+      "level": 116,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "A nonprofit found that donors who attended its annual gala gave larger average donations than donors who did not attend. The nonprofit's development staff noted that gala tickets cost $250, meaning attendees were already a group with greater discretionary income than the average donor list.",
+      "logicChain": [
+        "Gala attendees: larger average donations -> gala tickets cost $250, limiting attendance to wealthier donors -> discretionary income may better explain the donation pattern, not the gala itself"
+      ],
+      "logicChainSteps": [
+        "Gala attendees: larger average donations",
+        "gala tickets cost $250, limiting attendance to wealthier donors",
+        "discretionary income may better explain the donation pattern, not the gala itself"
+      ],
+      "conclusion": "Attendees' greater discretionary income, not the gala itself, may better explain the larger average donations.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Attending the gala is definitely the sole reason donors gave more. This reading would hold true across the full sequence of events described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Attendees' greater discretionary income, not the gala itself, may better explain the larger average donations.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Donors with the least discretionary income attended the gala most often. The passage gives no indication that this varied across the circumstances described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Donation size showed no relationship to any donor characteristic.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since the $250 ticket price limited attendance to donors with more discretionary income, the passage suggests that income level, not the gala event itself, may better explain why attendees gave larger donations."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L116_Q3_LEARN",
+      "level": 116,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "A regional transit study found that riders who used monthly passes reported higher satisfaction with the transit system than riders who paid per trip. Researchers noted that monthly pass holders were disproportionately daily commuters who used transit frequently enough to become familiar with the system's routes and schedules.",
+      "logicChain": [
+        "Monthly pass holders: higher satisfaction -> pass holders tend to be frequent, daily commuters -> familiarity from frequent use may partly explain the satisfaction, not pass type alone"
+      ],
+      "logicChainSteps": [
+        "Monthly pass holders: higher satisfaction",
+        "pass holders tend to be frequent, daily commuters",
+        "familiarity from frequent use may partly explain the satisfaction, not pass type alone"
+      ],
+      "conclusion": "Greater familiarity from frequent use may partly explain the satisfaction difference, not the pass type alone.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Greater familiarity from frequent use may partly explain the satisfaction difference, not the pass type alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Using a monthly pass is definitely the sole reason for higher satisfaction. This pattern would hold steady across the entire situation the passage lays out.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Per-trip riders were more frequent transit users than monthly pass holders. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Satisfaction levels showed no relationship to how riders used transit.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since monthly pass holders tend to be frequent riders who become familiar with the system, the passage suggests this familiarity, not the pass type itself, may account for part of the satisfaction difference."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L117_Q1_LEARN",
+      "level": 117,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A wildlife biologist observed that areas with more owl sightings also had fewer reported rodent problems on nearby farms. The biologist explained that owls prey on rodents, and farms with more surrounding natural habitat tend to support both larger owl populations and, independently, use less rodent-attracting pesticide runoff from nearby unfarmed land.",
+      "logicChain": [
+        "More owl sightings correlate with fewer rodent problems -> owls prey on rodents directly -> natural habitat also independently reduces pesticide runoff -> both factors may contribute to fewer rodent problems"
+      ],
+      "logicChainSteps": [
+        "More owl sightings correlate with fewer rodent problems",
+        "owls prey on rodents directly",
+        "natural habitat also independently reduces pesticide runoff",
+        "both factors may contribute to fewer rodent problems"
+      ],
+      "conclusion": "Owl predation and the presence of more natural habitat may both contribute to fewer rodent problems.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Owl sightings have no possible connection to rodent problems on farms. Nothing described in the passage points to any exception to this pattern.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Owl predation and the presence of more natural habitat may both contribute to fewer rodent problems.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Fewer rodent problems directly cause more owls to appear in an area.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Pesticide runoff is the only factor affecting rodent populations.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The passage describes two related factors, owl predation and broader habitat differences affecting pesticide runoff, both plausibly contributing to fewer rodent problems, rather than a single simple explanation."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L117_Q2_LEARN",
+      "level": 117,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "An economist found that cities with more bicycle commuters had lower rates of a certain respiratory illness. The economist noted that cities supporting significant bicycle commuting typically also have stricter vehicle emissions regulations, which independently improve air quality regardless of how many people actually bike.",
+      "logicChain": [
+        "More bicycle commuters: lower respiratory illness rates -> those cities also have stricter emissions regulations, independently improving air quality -> regulations may better explain the lower rates than cycling alone"
+      ],
+      "logicChainSteps": [
+        "More bicycle commuters: lower respiratory illness rates",
+        "those cities also have stricter emissions regulations, independently improving air quality",
+        "regulations may better explain the lower rates than cycling alone"
+      ],
+      "conclusion": "Stricter emissions regulations may better explain the lower illness rates than bicycle commuting itself.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Stricter emissions regulations may better explain the lower illness rates than bicycle commuting itself.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Bicycle commuting alone is definitely the entire explanation for the lower illness rates, as the passage lays out the sequence of events.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Cities with the loosest emissions regulations had the most bicycle commuters, as the situation is described here.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Respiratory illness rates showed no relationship to any city policy.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since cities that support cycling also tend to have stricter emissions regulations that independently improve air quality, the passage suggests these regulations, not cycling rates alone, may better explain the lower illness rates."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L117_Q3_LEARN",
+      "level": 117,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A researcher studying academic performance found that students who participated in a school orchestra had higher overall GPAs. The researcher noted that orchestra participation required maintaining a minimum GPA to remain enrolled in the program, meaning only academically strong students could join or stay in orchestra in the first place.",
+      "logicChain": [
+        "Orchestra participants: higher GPAs -> orchestra requires a minimum GPA to remain enrolled -> only academically strong students can stay -> requirement, not orchestra participation, likely explains most of the link"
+      ],
+      "logicChainSteps": [
+        "Orchestra participants: higher GPAs",
+        "orchestra requires a minimum GPA to remain enrolled",
+        "only academically strong students can stay",
+        "requirement, not orchestra participation, likely explains most of the link"
+      ],
+      "conclusion": "The GPA requirement for staying in orchestra likely explains most of the link between orchestra and higher GPAs.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Playing in the orchestra directly causes a student's GPA to rise. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The GPA requirement for staying in orchestra likely explains most of the link between orchestra and higher GPAs.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Students with the lowest GPAs were most likely to join orchestra.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "GPA showed no relationship to orchestra participation at all.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since the program required a minimum GPA just to remain enrolled, the passage strongly suggests the relationship reflects selection into the program by already strong students, rather than orchestra causing better grades."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L118_Q1_LEARN",
+      "level": 118,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A public health office found that towns with more farmers markets had lower obesity rates. Officials cautioned that towns able to sustain a regular farmers market also tend to have denser town centers where walking to shops and errands is more common than driving.",
+      "logicChain": [
+        "More farmers markets: lower obesity rates -> those towns also have denser, more walkable layouts -> walkability may contribute to the lower rates, alongside or instead of the market itself"
+      ],
+      "logicChainSteps": [
+        "More farmers markets: lower obesity rates",
+        "those towns also have denser, more walkable layouts",
+        "walkability may contribute to the lower rates, alongside or instead of the market itself"
+      ],
+      "conclusion": "Denser, more walkable town layouts may contribute to the lower obesity rates alongside or instead of the farmers markets themselves.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Denser, more walkable town layouts may contribute to the lower obesity rates alongside or instead of the farmers markets themselves.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Farmers markets alone are definitely the entire explanation for lower obesity rates. No part of the passage's account suggests otherwise.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Towns with sparse, spread-out layouts had the most farmers markets.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Obesity rates showed no relationship to any town characteristic.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since towns that sustain farmers markets also tend to have walkable layouts, the passage suggests walkability may independently contribute to lower obesity rates, alongside or instead of the market itself."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L118_Q2_LEARN",
+      "level": 118,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A researcher found that employees who parked in the farthest section of a large corporate lot had slightly better cardiovascular health markers than employees who parked closest to the entrance. The researcher noted that the farthest section was also reserved for employees who carpooled, meaning those employees may have had other health-conscious habits related to their carpool arrangements.",
+      "logicChain": [
+        "Farthest-parking employees: better cardiovascular markers -> farthest section reserved for carpoolers -> carpooling may be linked to other health-conscious habits -> broader habits may partly explain the difference, not the walk alone"
+      ],
+      "logicChainSteps": [
+        "Farthest-parking employees: better cardiovascular markers",
+        "farthest section reserved for carpoolers",
+        "carpooling may be linked to other health-conscious habits",
+        "broader habits may partly explain the difference, not the walk alone"
+      ],
+      "conclusion": "Other habits associated with carpooling, not just the longer walk, may partly explain the health difference.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Parking farther away is definitely the sole reason for the health difference. This reading would hold true across the full sequence of events described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Employees who parked closest to the entrance were the ones who carpooled. No part of the passage's account suggests otherwise.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Other habits associated with carpooling, not just the longer walk, may partly explain the health difference.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Cardiovascular health showed no relationship to any employee habit.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since the farthest parking section was reserved for carpoolers, and carpooling could be linked to other health-conscious habits, the passage suggests these broader habits, not just the longer walk, may explain part of the difference."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L118_Q3_LEARN",
+      "level": 118,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A city's education department found that schools with more student clubs and extracurricular activities had higher graduation rates. The department noted that schools able to offer many extracurricular activities typically also have larger overall budgets, allowing for smaller class sizes and more academic support staff.",
+      "logicChain": [
+        "More clubs offered: higher graduation rates -> offering many clubs requires larger budgets -> larger budgets also fund smaller classes, more support staff -> broader resources may better explain the difference than clubs alone"
+      ],
+      "logicChainSteps": [
+        "More clubs offered: higher graduation rates",
+        "offering many clubs requires larger budgets",
+        "larger budgets also fund smaller classes, more support staff",
+        "broader resources may better explain the difference than clubs alone"
+      ],
+      "conclusion": "Larger school budgets, reflected in class size and support staff, may better explain the graduation rate difference than club offerings alone.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Larger school budgets, reflected in class size and support staff, may better explain the graduation rate difference than club offerings alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Having more clubs alone is definitely the sole reason for higher graduation rates.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Schools with the smallest budgets offered the most extracurricular activities.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Graduation rates showed no relationship to any school resource.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since offering many clubs requires a larger budget, which also funds smaller classes and more support staff, the passage suggests these broader resources, not the clubs themselves, may better explain the graduation rate difference."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L119_Q1_LEARN",
+      "level": 119,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "A sleep researcher found that people who slept with a pet in the bedroom reported slightly more nighttime awakenings, but also reported higher overall feelings of comfort and reduced anxiety before falling asleep, based on survey data from 1,000 participants.",
+      "logicChain": [
+        "Pet in bedroom: more nighttime awakenings -> also: higher comfort, reduced pre-sleep anxiety -> based on 1,000 participants -> pattern suggests a trade-off, not a purely positive or negative effect"
+      ],
+      "logicChainSteps": [
+        "Pet in bedroom: more nighttime awakenings",
+        "also: higher comfort, reduced pre-sleep anxiety",
+        "based on 1,000 participants",
+        "pattern suggests a trade-off, not a purely positive or negative effect"
+      ],
+      "conclusion": "Sleeping with a pet appears linked to a trade-off between more nighttime awakenings and greater pre-sleep comfort.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Sleeping with a pet is proven to improve every single aspect of sleep quality.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Sleeping with a pet eliminated nighttime awakenings entirely for these participants.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Sleeping with a pet appears linked to a trade-off between more nighttime awakenings and greater pre-sleep comfort.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Comfort levels and anxiety showed no relationship to having a pet in the room.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The passage reports two different outcomes moving in opposite directions, more awakenings but also more comfort and less anxiety, supporting a nuanced trade-off rather than a simple universal improvement."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L119_Q2_LEARN",
+      "level": 119,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "A city's transportation department found that adding a new express bus route reduced average commute times for riders along that specific corridor, but slightly increased congestion on the cross streets where the express buses merged back into regular traffic, based on six months of traffic data.",
+      "logicChain": [
+        "Express route added -> corridor commute times drop -> cross-street congestion at merge points rises slightly -> route improved the corridor with a minor trade-off elsewhere"
+      ],
+      "logicChainSteps": [
+        "Express route added",
+        "corridor commute times drop",
+        "cross-street congestion at merge points rises slightly",
+        "route improved the corridor with a minor trade-off elsewhere"
+      ],
+      "conclusion": "The express route appears to have improved commute times along its corridor while creating a minor trade-off at merge points.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The express route improved traffic conditions everywhere in the city with no downsides.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The express route made every commute in the city slower.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Cross-street congestion had no relationship to the new express route.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The express route appears to have improved commute times along its corridor while creating a minor trade-off at merge points.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Six months of data show two distinct, connected outcomes: improved commute times on the main corridor alongside slightly increased congestion at merge points, supporting a conclusion that captures both the benefit and its localized trade-off."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L119_Q3_LEARN",
+      "level": 119,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "A workplace study found that employees who switched to a four-day workweek reported higher job satisfaction and similar total output, but also reported working longer daily hours to compress the same workload, based on surveys from 500 employees across ten companies.",
+      "logicChain": [
+        "Four-day workweek adopted -> satisfaction rises, output stays similar -> daily hours lengthen to compress the workload -> schedule appears to improve satisfaction while requiring longer individual days"
+      ],
+      "logicChainSteps": [
+        "Four-day workweek adopted",
+        "satisfaction rises, output stays similar",
+        "daily hours lengthen to compress the workload",
+        "schedule appears to improve satisfaction while requiring longer individual days"
+      ],
+      "conclusion": "The four-day workweek appears to have improved satisfaction while requiring longer individual workdays to maintain output.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The four-day workweek appears to have improved satisfaction while requiring longer individual workdays to maintain output.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The four-day workweek reduced both daily hours and total output for every employee. This would remain the case regardless of any other detail in the passage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Employees reported lower satisfaction after switching to four days. This pattern would hold steady across the entire situation the passage lays out.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Daily working hours had no relationship to the schedule change. This would apply consistently across every detail the passage provides.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The passage reports improved satisfaction and maintained output, but explicitly notes longer daily hours were needed to compress the workload, supporting a conclusion that reflects both the benefit and the accompanying trade-off."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L120_Q1_LEARN",
+      "level": 120,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A researcher studying online learning found that students who used a particular study app scored higher on unit tests. Further investigation revealed that the app's premium features required a paid subscription, and students who could afford the subscription also tended to have quieter, more private study spaces at home, according to a supplementary housing survey.",
+      "logicChain": [
+        "App users (paid subscription): higher test scores -> paying for the app linked to having quieter home study spaces -> study environment differences may partly explain the score gap, not the app alone"
+      ],
+      "logicChainSteps": [
+        "App users (paid subscription): higher test scores",
+        "paying for the app linked to having quieter home study spaces",
+        "study environment differences may partly explain the score gap, not the app alone"
+      ],
+      "conclusion": "Differences in home study environment, related to what families could afford, may partly explain the score difference, not the app alone.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Differences in home study environment, related to what families could afford, may partly explain the score difference, not the app alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The study app alone is definitely the sole reason for the higher test scores.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Students with the noisiest study spaces were the most likely to use the app.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Test scores showed no relationship to any factor besides the app.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since paying for the app was linked to having quieter, more private study spaces, the passage suggests these environmental differences, tied to family resources, may explain part of the score gap alongside the app itself."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L120_Q2_LEARN",
+      "level": 120,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A city's public safety office found that neighborhoods with active neighborhood watch programs had lower burglary rates. However, further review showed that neighborhoods able to sustain a volunteer watch program also tended to have higher rates of homeownership, meaning more residents had a long-term stake in living there and were more likely to know their neighbors.",
+      "logicChain": [
+        "Watch-program neighborhoods: lower burglary rates -> those neighborhoods also have higher homeownership, more resident stability -> stability factors may partly explain the lower rate, not the watch program alone"
+      ],
+      "logicChainSteps": [
+        "Watch-program neighborhoods: lower burglary rates",
+        "those neighborhoods also have higher homeownership, more resident stability",
+        "stability factors may partly explain the lower rate, not the watch program alone"
+      ],
+      "conclusion": "Higher homeownership and long-term resident stability may partly explain the lower burglary rates, not the watch program alone.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The neighborhood watch program alone is definitely the sole reason for lower burglary rates.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Neighborhoods with the lowest homeownership rates had the most active watch programs.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Burglary rates showed no relationship to any neighborhood factor besides the watch program.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Higher homeownership and long-term resident stability may partly explain the lower burglary rates, not the watch program alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Since neighborhoods sustaining watch programs also had higher homeownership and more long-term, connected residents, the passage suggests these underlying stability factors may account for part of the lower burglary rates, not the program alone."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L120_Q3_LEARN",
+      "level": 120,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A hospital's quality improvement team found that patients treated in private rooms reported higher satisfaction than patients treated in shared rooms. Further review showed that private rooms were more often assigned to patients undergoing less severe procedures, since patients recovering from more complex surgeries typically required rooms near specialized monitoring equipment located in the shared-room wing.",
+      "logicChain": [
+        "Private-room patients: higher satisfaction -> private rooms more often assigned for less severe procedures -> procedure severity may partly explain the satisfaction difference, not room type alone"
+      ],
+      "logicChainSteps": [
+        "Private-room patients: higher satisfaction",
+        "private rooms more often assigned for less severe procedures",
+        "procedure severity may partly explain the satisfaction difference, not room type alone"
+      ],
+      "conclusion": "The severity of a patient's procedure, not the room type alone, may explain part of the satisfaction difference.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Private rooms alone are definitely the sole reason for higher satisfaction.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The severity of a patient's procedure, not the room type alone, may explain part of the satisfaction difference.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Patients with the most complex surgeries were always assigned private rooms.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Satisfaction levels showed no relationship to any hospital factor besides room type.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Since private rooms were more often given to patients with less severe procedures, the passage suggests procedure severity itself, not the room type in isolation, may account for part of the satisfaction difference."
+    }
+  ]
+}

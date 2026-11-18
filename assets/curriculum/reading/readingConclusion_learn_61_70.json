@@ -1,0 +1,1371 @@
+{
+  "gameType": "readingConclusion",
+  "phase": "learn",
+  "batchIndex": 7,
+  "levels": "61-70",
+  "quests": [
+    {
+      "id": "RDG_READINGCONCLUSION_L61_Q1_LEARN",
+      "level": 61,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "Before the big presentation, Wen printed a backup copy of her slides on paper and saved a second copy on a USB drive, even though her laptop was fully charged and working fine.",
+      "logicChain": [
+        "Laptop working fine -> paper copy printed -> USB backup saved -> goal appears to be avoiding technical failure risk"
+      ],
+      "logicChainSteps": [
+        "Laptop working fine",
+        "paper copy printed",
+        "USB backup saved",
+        "goal appears to be avoiding technical failure risk"
+      ],
+      "conclusion": "Wen wanted to be prepared in case her laptop failed during the presentation.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Wen wanted to be prepared in case her laptop failed during the presentation.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Wen wanted to avoid using her laptop entirely.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Wen forgot she already had her slides saved.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Wen was trying to make her presentation longer. This reading would hold true across the full sequence of events described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Making a paper copy and a USB backup despite a working laptop shows Wen's goal was to avoid being stuck without her slides if something unexpected happened."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L61_Q2_LEARN",
+      "level": 61,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "Every Sunday afternoon, Mr. Odom calls his elderly neighbor, asks about her week, and offers to pick up anything she needs from the pharmacy before he runs his own errands.",
+      "logicChain": [
+        "Weekly call to ask about her week -> offers to run errands for her -> purpose appears to be checking on her wellbeing"
+      ],
+      "logicChainSteps": [
+        "Weekly call to ask about her week",
+        "offers to run errands for her",
+        "purpose appears to be checking on her wellbeing"
+      ],
+      "conclusion": "Mr. Odom appears to be checking on his neighbor's wellbeing.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Mr. Odom is trying to avoid speaking with his neighbor, according to the specific details given.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Mr. Odom works as a paid caregiver for his neighbor, given the specific information included in the passage.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Mr. Odom only calls when he needs something from her, as the passage lays out the sequence of events.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Mr. Odom appears to be checking on his neighbor's wellbeing.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "A weekly call to ask about her week and an offer to help with errands both suggest Mr. Odom's purpose is to look out for his neighbor's wellbeing."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L61_Q3_LEARN",
+      "level": 61,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "The nonprofit sent personalized thank-you letters to every donor, listed each person's exact contribution, and included a photo from the program their money had funded.",
+      "logicChain": [
+        "Letters personalized with exact contribution -> photo of funded program included -> goal appears to be showing visible impact"
+      ],
+      "logicChainSteps": [
+        "Letters personalized with exact contribution",
+        "photo of funded program included",
+        "goal appears to be showing visible impact"
+      ],
+      "conclusion": "The nonprofit wanted donors to feel their contributions made a visible difference.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The nonprofit wanted donors to feel their contributions made a visible difference.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The nonprofit wanted to discourage future donations. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The nonprofit was trying to hide how the money was spent, given the specific information included in the passage.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The letters were sent to people who had never donated, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Personalizing each letter with the exact contribution and a photo of the funded program shows an intent to help donors see the concrete impact of their giving."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L62_Q1_LEARN",
+      "level": 62,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "During the restaurant's slow winter months, the owner began offering a discounted 'lunch special' menu only on weekdays between 11 a.m. and 2 p.m.",
+      "logicChain": [
+        "Winter months are slow -> discount targets weekday lunch hours specifically -> goal appears to be attracting more customers during the slow period"
+      ],
+      "logicChainSteps": [
+        "Winter months are slow",
+        "discount targets weekday lunch hours specifically",
+        "goal appears to be attracting more customers during the slow period"
+      ],
+      "conclusion": "The owner likely wanted to attract more customers during a quiet period.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The owner wanted fewer customers to visit during winter, as the situation is described here.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The owner was planning to close the restaurant permanently, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The discount applied to every meal at any time of day, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The owner likely wanted to attract more customers during a quiet period.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Introducing a discount specifically during slow winter weekday lunch hours suggests the owner's goal was to bring in more business during that quiet period."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L62_Q2_LEARN",
+      "level": 62,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "Before the neighborhood watch meeting, Mrs. Ferreira went door to door introducing herself to new residents and inviting them personally instead of only posting a flyer.",
+      "logicChain": [
+        "Flyer alone would be less personal -> Mrs. Ferreira visits door to door -> personal introductions suggest a goal of making residents feel welcomed"
+      ],
+      "logicChainSteps": [
+        "Flyer alone would be less personal",
+        "Mrs. Ferreira visits door to door",
+        "personal introductions suggest a goal of making residents feel welcomed"
+      ],
+      "conclusion": "Mrs. Ferreira wanted new residents to feel personally welcomed to the meeting.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Mrs. Ferreira wanted to prevent new residents from attending, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Mrs. Ferreira was trying to avoid meeting her neighbors.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Mrs. Ferreira had no involvement in organizing the meeting.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Mrs. Ferreira wanted new residents to feel personally welcomed to the meeting.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Choosing to personally visit and introduce herself, rather than relying only on a flyer, suggests her purpose was to make new residents feel genuinely welcomed."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L62_Q3_LEARN",
+      "level": 62,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "The airline began sending a short survey immediately after each flight, asking passengers to rate boarding, comfort, and staff friendliness on a simple five-point scale.",
+      "logicChain": [
+        "Survey sent right after flight -> covers boarding, comfort, staff -> simple five-point scale -> goal appears to be quick, direct feedback"
+      ],
+      "logicChainSteps": [
+        "Survey sent right after flight",
+        "covers boarding, comfort, staff",
+        "simple five-point scale",
+        "goal appears to be quick, direct feedback"
+      ],
+      "conclusion": "The airline likely wanted quick, direct feedback on the passenger experience.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The airline wanted to discourage passengers from giving feedback, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The airline likely wanted quick, direct feedback on the passenger experience.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The survey was unrelated to passenger experience.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The airline stopped caring about passenger opinions.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "A brief, specific survey sent immediately after flying, covering key parts of the experience, suggests the airline's goal was to gather quick and direct feedback while it was still fresh."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L63_Q1_LEARN",
+      "level": 63,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "Instead of announcing the surprise party details in the group chat, Delphine called each guest individually and asked them to keep the date a secret from the guest of honor.",
+      "logicChain": [
+        "Group chat avoided -> individual calls made -> secrecy explicitly requested -> goal is keeping the party a surprise"
+      ],
+      "logicChainSteps": [
+        "Group chat avoided",
+        "individual calls made",
+        "secrecy explicitly requested",
+        "goal is keeping the party a surprise"
+      ],
+      "conclusion": "Delphine wanted to prevent the guest of honor from finding out about the party in advance.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Delphine wanted to prevent the guest of honor from finding out about the party in advance.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Delphine wanted everyone to know about the party except the guests, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Delphine was trying to cancel the party altogether.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Delphine had no interest in keeping the party a secret. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Calling guests individually instead of using a group chat, and explicitly asking for secrecy, both point to Delphine's goal of keeping the party a surprise."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L63_Q2_LEARN",
+      "level": 63,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "Before publishing the article, the editor sent it to two outside experts for review and asked them to flag any factual errors before the print deadline.",
+      "logicChain": [
+        "Article sent to outside experts -> review requested for factual errors -> goal appears to be verifying accuracy before publishing"
+      ],
+      "logicChainSteps": [
+        "Article sent to outside experts",
+        "review requested for factual errors",
+        "goal appears to be verifying accuracy before publishing"
+      ],
+      "conclusion": "The editor wanted to verify the article's accuracy before it was published.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The editor wanted to delay the article indefinitely.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The editor had already decided the article was inaccurate.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The outside experts were reviewing an unrelated document.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The editor wanted to verify the article's accuracy before it was published.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Sending the article to outside experts specifically to check for factual errors before the deadline shows the editor's goal was to confirm accuracy before publication."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L63_Q3_LEARN",
+      "level": 63,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "The city planted rows of trees along the newly widened highway median and installed a watering system timed for early morning hours before the summer heat set in.",
+      "logicChain": [
+        "Trees planted along median -> watering timed for early morning -> scheduled before summer heat -> goal appears to be helping trees survive the heat"
+      ],
+      "logicChainSteps": [
+        "Trees planted along median",
+        "watering timed for early morning",
+        "scheduled before summer heat",
+        "goal appears to be helping trees survive the heat"
+      ],
+      "conclusion": "The city wanted to help the new trees survive through the hot months.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The city wanted the trees to die during the summer, as the passage lays out the sequence of events.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The city wanted to help the new trees survive through the hot months.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The watering system had no connection to the trees, according to the specific details given.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The trees were planted after summer had already ended, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Timing the watering system for early morning hours right before summer heat suggests the city's goal was to give the newly planted trees the best chance of surviving the hot season."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L64_Q1_LEARN",
+      "level": 64,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "Rather than emailing the entire staff about the policy change, the HR director scheduled small group sessions so employees could ask questions in person.",
+      "logicChain": [
+        "Email would be one-way communication -> small group sessions chosen instead -> questions can be asked directly -> goal is enabling employee questions"
+      ],
+      "logicChainSteps": [
+        "Email would be one-way communication",
+        "small group sessions chosen instead",
+        "questions can be asked directly",
+        "goal is enabling employee questions"
+      ],
+      "conclusion": "The HR director wanted employees to have a chance to ask questions directly.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The HR director wanted to avoid answering any employee questions, based on the passage's account of what happened.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The HR director wanted employees to have a chance to ask questions directly.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The HR director decided not to explain the policy change at all, as the situation is described here.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The small group sessions were unrelated to the policy change.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Choosing small in-person sessions over a mass email specifically allows for direct questions, suggesting the HR director's goal was to give employees that opportunity."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L64_Q2_LEARN",
+      "level": 64,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "Before the marathon, the race organizers placed water stations every two miles along the route and stocked each one with extra cups, ice, and electrolyte drinks.",
+      "logicChain": [
+        "Water stations every two miles -> stocked with water, ice, electrolytes -> goal appears to be supporting runner hydration"
+      ],
+      "logicChainSteps": [
+        "Water stations every two miles",
+        "stocked with water, ice, electrolytes",
+        "goal appears to be supporting runner hydration"
+      ],
+      "conclusion": "The organizers wanted to help keep runners hydrated throughout the race.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The organizers wanted runners to avoid drinking water during the race, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The water stations were placed for spectators, not runners.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The race had no plan for supporting runners along the route, according to the account given.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The organizers wanted to help keep runners hydrated throughout the race.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Placing water stations at regular intervals and stocking them with hydration supplies shows the organizers' clear goal of supporting runners' hydration during the race."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L64_Q3_LEARN",
+      "level": 64,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "The museum added large-print labels and audio descriptions to every exhibit and widened the pathways between displays to accommodate wheelchairs.",
+      "logicChain": [
+        "Large-print labels added -> audio descriptions added -> pathways widened for wheelchairs -> goal appears to be improving accessibility"
+      ],
+      "logicChainSteps": [
+        "Large-print labels added",
+        "audio descriptions added",
+        "pathways widened for wheelchairs",
+        "goal appears to be improving accessibility"
+      ],
+      "conclusion": "The museum wanted to make its exhibits more accessible to a wider range of visitors.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The museum wanted to reduce the number of visitors it received, as the situation is described here.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The changes had nothing to do with visitor experience.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The museum wanted to make its exhibits more accessible to a wider range of visitors.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The museum removed all its exhibits during this process, according to how the passage describes the situation.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Large-print labels, audio descriptions, and wider pathways are all accessibility features, suggesting the museum's goal was to accommodate visitors with different needs."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L65_Q1_LEARN",
+      "level": 65,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "Instead of scheduling the team meeting during regular work hours, the manager set it for right after lunch, when the office is usually less busy with client calls.",
+      "logicChain": [
+        "Regular hours often busy with client calls -> meeting scheduled right after lunch instead -> goal appears to be minimizing interruptions"
+      ],
+      "logicChainSteps": [
+        "Regular hours often busy with client calls",
+        "meeting scheduled right after lunch instead",
+        "goal appears to be minimizing interruptions"
+      ],
+      "conclusion": "The manager likely chose that time to minimize interruptions during the meeting.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The manager wanted to make the meeting as inconvenient as possible.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The manager scheduled the meeting to conflict with client calls.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The manager likely chose that time to minimize interruptions during the meeting.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The timing had nothing to do with client call schedules.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Deliberately scheduling the meeting during a period usually free of client calls suggests the manager wanted to reduce the chance of interruptions."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L65_Q2_LEARN",
+      "level": 65,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "After noticing several students struggling with a math concept, Ms. Patel created a short video explaining the topic step by step and posted it to the class portal for anyone to rewatch at home.",
+      "logicChain": [
+        "Students struggle with concept -> step-by-step video created -> posted for repeat viewing -> goal is extra, self-paced support"
+      ],
+      "logicChainSteps": [
+        "Students struggle with concept",
+        "step-by-step video created",
+        "posted for repeat viewing",
+        "goal is extra, self-paced support"
+      ],
+      "conclusion": "Ms. Patel wanted students to have extra support they could review at their own pace.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Ms. Patel wanted to make the concept more confusing. No part of the passage's account suggests otherwise.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Ms. Patel wanted students to have extra support they could review at their own pace.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Ms. Patel decided to stop teaching the concept in class, based on what the passage actually says.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The video was unrelated to the students' struggles.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Creating a step-by-step video specifically after noticing student struggles, and making it available to rewatch, shows the goal was giving students extra, flexible support."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L65_Q3_LEARN",
+      "level": 65,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "The landlord installed motion-sensor lights in the parking garage and added a second security camera near the stairwell after several tenants mentioned feeling unsafe at night.",
+      "logicChain": [
+        "Tenants mention feeling unsafe at night -> motion-sensor lights installed -> extra camera added -> goal appears to be addressing safety concerns"
+      ],
+      "logicChainSteps": [
+        "Tenants mention feeling unsafe at night",
+        "motion-sensor lights installed",
+        "extra camera added",
+        "goal appears to be addressing safety concerns"
+      ],
+      "conclusion": "The landlord wanted to address tenants' safety concerns.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The landlord wanted to make tenants feel less safe, as the passage presents the situation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The safety upgrades were completely unrelated to tenant feedback, as the passage lays out the sequence of events.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "No tenants had ever raised concerns about safety, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The landlord wanted to address tenants' safety concerns.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Adding motion-sensor lights and an extra camera right after tenants raised safety concerns shows the landlord's goal was to respond directly to those worries."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L66_Q1_LEARN",
+      "level": 66,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "The nonprofit's newsletter began including a 'behind the scenes' section showing photos of staff packing donation boxes and volunteers sorting supplies at the warehouse.",
+      "logicChain": [
+        "Behind-the-scenes section added -> photos show packing and sorting -> goal appears to be transparency about donation handling"
+      ],
+      "logicChainSteps": [
+        "Behind-the-scenes section added",
+        "photos show packing and sorting",
+        "goal appears to be transparency about donation handling"
+      ],
+      "conclusion": "The nonprofit wanted supporters to see how their donations were being handled.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The nonprofit wanted to hide its daily operations from supporters.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The photos were unrelated to the nonprofit's work.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The newsletter stopped mentioning any of the nonprofit's activities, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The nonprofit wanted supporters to see how their donations were being handled.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Adding a section that visually shows staff and volunteers handling donations suggests the nonprofit's goal was transparency about how contributions are processed."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L66_Q2_LEARN",
+      "level": 66,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "Before opening a second location, the cafe owner spent a month training two employees from the original shop to become managers, having them shadow every role in the kitchen and front counter.",
+      "logicChain": [
+        "Second location planned -> two employees trained across every role -> goal appears to be preparing capable managers"
+      ],
+      "logicChainSteps": [
+        "Second location planned",
+        "two employees trained across every role",
+        "goal appears to be preparing capable managers"
+      ],
+      "conclusion": "The owner wanted experienced staff ready to lead the new location.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The owner wanted to prevent any employees from being promoted.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The owner wanted experienced staff ready to lead the new location.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The training had nothing to do with the new location.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The owner planned to close the original shop instead.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Training employees across every role in preparation for a second location shows the owner's goal of having capable, well-rounded managers ready to lead it."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L66_Q3_LEARN",
+      "level": 66,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "After several customers complained about long hold times, the phone company added a callback option so customers could keep their place in line without staying on the phone.",
+      "logicChain": [
+        "Customers complain about long hold times -> callback option introduced -> goal appears to be reducing wait-related frustration"
+      ],
+      "logicChainSteps": [
+        "Customers complain about long hold times",
+        "callback option introduced",
+        "goal appears to be reducing wait-related frustration"
+      ],
+      "conclusion": "The company wanted to reduce the frustration customers felt about long hold times.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The company wanted to reduce the frustration customers felt about long hold times.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The company wanted customers to wait even longer on hold, as the passage lays out the sequence of events.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The callback option was unrelated to customer complaints, based on the passage's account of what happened.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The company stopped taking customer calls entirely.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Introducing a callback option specifically after complaints about hold times shows the company's goal was to ease that particular frustration for customers."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L67_Q1_LEARN",
+      "level": 67,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "The city library began hosting a monthly 'silent book club' where members read individually in the same room, followed by twenty minutes of casual conversation about what they'd read.",
+      "logicChain": [
+        "Members read silently together -> conversation period follows -> goal appears to be a relaxed way to connect over reading"
+      ],
+      "logicChainSteps": [
+        "Members read silently together",
+        "conversation period follows",
+        "goal appears to be a relaxed way to connect over reading"
+      ],
+      "conclusion": "The library wanted to create a relaxed way for readers to connect with each other.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The library wanted to create a relaxed way for readers to connect with each other.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The library wanted to discourage people from talking to each other, as the passage lays out the sequence of events.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The event had no social component at all.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The library wanted members to stop reading books. This would apply consistently across every detail the passage provides.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Structuring the event around shared quiet reading followed by casual conversation suggests the library's goal was to offer a low-pressure way for readers to socialize."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L67_Q2_LEARN",
+      "level": 67,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "Instead of raising prices across the board, the grocery store began offering a loyalty discount specifically on staple items like bread, milk, and eggs.",
+      "logicChain": [
+        "Prices could have risen broadly -> discount targeted at staples instead -> goal appears to be keeping essentials affordable"
+      ],
+      "logicChainSteps": [
+        "Prices could have risen broadly",
+        "discount targeted at staples instead",
+        "goal appears to be keeping essentials affordable"
+      ],
+      "conclusion": "The store likely wanted to keep essential items more affordable for regular shoppers.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The store wanted to make essential items more expensive. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The discount applied to luxury items instead of staples. Nothing in the passage suggests this changed at any point during the period described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The loyalty program was unrelated to pricing decisions. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The store likely wanted to keep essential items more affordable for regular shoppers.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Choosing to discount essential staple items rather than raising prices generally suggests the store's goal was to keep everyday necessities affordable for loyal shoppers."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L67_Q3_LEARN",
+      "level": 67,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "The technology company released detailed documentation, sample code, and a community forum alongside its new software tool, rather than keeping the tool's inner workings private.",
+      "logicChain": [
+        "Documentation released -> sample code provided -> community forum created -> goal appears to be easing developer adoption"
+      ],
+      "logicChainSteps": [
+        "Documentation released",
+        "sample code provided",
+        "community forum created",
+        "goal appears to be easing developer adoption"
+      ],
+      "conclusion": "The company wanted developers to be able to understand and use the tool easily.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The company wanted to make the tool as difficult to use as possible, as the passage lays out the sequence of events.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The company wanted developers to be able to understand and use the tool easily.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The documentation was unrelated to helping developers.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The company planned to discontinue the tool immediately, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Releasing documentation, sample code, and a support forum alongside the tool shows the company's goal was to make it accessible and understandable for developers."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L68_Q1_LEARN",
+      "level": 68,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "Rather than posting the exam results on the classroom door, Professor Liang emailed each student their individual score privately and offered office hours to discuss any concerns.",
+      "logicChain": [
+        "Public posting avoided -> scores emailed individually -> office hours offered privately -> goal appears to be protecting student privacy"
+      ],
+      "logicChainSteps": [
+        "Public posting avoided",
+        "scores emailed individually",
+        "office hours offered privately",
+        "goal appears to be protecting student privacy"
+      ],
+      "conclusion": "Professor Liang wanted to keep each student's results private.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Professor Liang wanted every student's score displayed publicly, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Professor Liang refused to share any exam results, according to the account given.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Professor Liang wanted to keep each student's results private.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The office hours were unrelated to the exam results, according to how the passage describes the situation.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Sending scores individually by email rather than posting them publicly, along with offering private office hours, shows the professor's goal of protecting each student's privacy."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L68_Q2_LEARN",
+      "level": 68,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "Before launching the new app feature to all users, the company released it to just 5 percent of accounts first and closely monitored crash reports and user feedback for two weeks.",
+      "logicChain": [
+        "Feature released to 5% of accounts first -> crash reports and feedback monitored for two weeks -> goal appears to be catching problems before wide release"
+      ],
+      "logicChainSteps": [
+        "Feature released to 5% of accounts first",
+        "crash reports and feedback monitored for two weeks",
+        "goal appears to be catching problems before wide release"
+      ],
+      "conclusion": "The company wanted to catch problems before rolling the feature out widely.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The company wanted to release the feature to everyone immediately, given the specific information included in the passage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The company wanted to catch problems before rolling the feature out widely.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The company had no interest in user feedback. Nothing in the passage suggests this changed at any point during the period described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The small release group was unrelated to testing the feature, as the situation is described here.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Releasing the feature to a small percentage first and closely watching for crashes and feedback suggests the company's goal was to identify and fix issues before a wider rollout."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L68_Q3_LEARN",
+      "level": 68,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "Coach Belanger scheduled an extra practice focused only on free throws after the team missed several critical shots in their last game, and had players track their own shooting percentage during drills.",
+      "logicChain": [
+        "Team misses critical free throws -> extra practice scheduled focused on free throws -> shooting percentages tracked -> goal is improving that specific skill"
+      ],
+      "logicChainSteps": [
+        "Team misses critical free throws",
+        "extra practice scheduled focused on free throws",
+        "shooting percentages tracked",
+        "goal is improving that specific skill"
+      ],
+      "conclusion": "Coach Belanger wanted the team to improve its free-throw shooting specifically.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Coach Belanger wanted the team to stop practicing free throws, according to the specific details given.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The extra practice focused on an unrelated skill.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Coach Belanger wanted the team to improve its free-throw shooting specifically.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Coach Belanger had no reaction to the missed shots.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Scheduling a practice focused only on free throws right after missed critical shots, and tracking shooting percentages, shows the coach's clear goal of targeting that specific weakness."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L69_Q1_LEARN",
+      "level": 69,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "Before the merger was finalized, both companies' HR departments held joint town halls, published a shared FAQ document, and set up an anonymous question box for employees.",
+      "logicChain": [
+        "Town halls held jointly -> FAQ document published -> anonymous question box set up -> goal appears to be keeping employees informed"
+      ],
+      "logicChainSteps": [
+        "Town halls held jointly",
+        "FAQ document published",
+        "anonymous question box set up",
+        "goal appears to be keeping employees informed"
+      ],
+      "conclusion": "The HR departments wanted to keep employees informed and address their concerns during the merger.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The HR departments wanted to keep employees uninformed about the merger, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The town halls were unrelated to the merger process. Nothing in the passage suggests this changed at any point during the period described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Employees were prevented from asking any questions. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The HR departments wanted to keep employees informed and address their concerns during the merger.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Holding joint town halls, publishing an FAQ, and offering an anonymous question box together suggest a clear goal of keeping employees informed and giving them a way to voice concerns during an uncertain time."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L69_Q2_LEARN",
+      "level": 69,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "Rather than requiring a full application for the small business grant, the city created a two-page simplified form and offered free workshops to help owners fill it out correctly.",
+      "logicChain": [
+        "Application simplified to two pages -> free workshops offered -> goal appears to be easing the application process for owners"
+      ],
+      "logicChainSteps": [
+        "Application simplified to two pages",
+        "free workshops offered",
+        "goal appears to be easing the application process for owners"
+      ],
+      "conclusion": "The city wanted to make it easier for small business owners to apply for the grant.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The city wanted to discourage small business owners from applying.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The simplified form made the application process longer.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The city wanted to make it easier for small business owners to apply for the grant.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The workshops were unrelated to the grant application.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Reducing the application to two pages and offering free workshops to assist owners both point to the city's goal of making the grant more accessible."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L69_Q3_LEARN",
+      "level": 69,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "Instead of relying only on written instructions, the appliance manufacturer included a QR code on the box linking to a short setup video, along with a printed diagram of each part.",
+      "logicChain": [
+        "QR code links to setup video -> printed diagram also included -> goal appears to be accommodating different learning preferences"
+      ],
+      "logicChainSteps": [
+        "QR code links to setup video",
+        "printed diagram also included",
+        "goal appears to be accommodating different learning preferences"
+      ],
+      "conclusion": "The manufacturer wanted to make setup easier for customers with different learning preferences.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The manufacturer wanted setup to be as confusing as possible. The passage gives no indication that this varied across the circumstances described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The QR code was unrelated to the appliance's setup. This would be expected to hold across the entire situation as described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The manufacturer wanted to make setup easier for customers with different learning preferences.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The company removed all instructions from the box. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Providing a video, a diagram, and written instructions together suggests the manufacturer's goal was to accommodate customers who learn best in different ways during setup."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L70_Q1_LEARN",
+      "level": 70,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "Before the community garden opened to the public, organizers built raised beds at wheelchair height along one row and left the ground-level beds elsewhere for other gardeners.",
+      "logicChain": [
+        "Raised beds built at wheelchair height -> ground-level beds also included -> goal appears to be accessibility for varied mobility needs"
+      ],
+      "logicChainSteps": [
+        "Raised beds built at wheelchair height",
+        "ground-level beds also included",
+        "goal appears to be accessibility for varied mobility needs"
+      ],
+      "conclusion": "The organizers wanted the garden to be usable by people with mobility needs.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The organizers wanted the garden to be usable by people with mobility needs.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The organizers wanted to exclude people with mobility needs, given the specific information included in the passage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The raised beds were built for decoration only.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The garden was never intended to open to the public, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "Building raised beds at wheelchair height alongside standard ground-level beds shows the organizers' goal of making the garden accessible to gardeners with different mobility needs."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L70_Q2_LEARN",
+      "level": 70,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "Rather than announcing the store closure with a single sign, the owner personally called longtime customers, thanked them for their support, and let them know about the final week of sales.",
+      "logicChain": [
+        "Sign alone would be impersonal -> longtime customers called individually -> thanks given directly -> goal is personal acknowledgment before closing"
+      ],
+      "logicChainSteps": [
+        "Sign alone would be impersonal",
+        "longtime customers called individually",
+        "thanks given directly",
+        "goal is personal acknowledgment before closing"
+      ],
+      "conclusion": "The owner wanted to personally acknowledge loyal customers before closing.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The owner wanted to avoid contacting any customers.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The phone calls were unrelated to the store's closure, as the passage lays out the sequence of events.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The owner planned to keep the store open indefinitely.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The owner wanted to personally acknowledge loyal customers before closing.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Personally calling longtime customers to thank them, rather than relying only on a sign, shows the owner's goal was to acknowledge their loyalty directly before closing."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L70_Q3_LEARN",
+      "level": 70,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "Before the wildlife sanctuary opened its new viewing platform, staff installed one-way glass and kept visitor noise levels monitored, aiming to observe the animals without disturbing their natural behavior.",
+      "logicChain": [
+        "One-way glass installed -> visitor noise monitored -> goal appears to be observing animals without disturbing natural behavior"
+      ],
+      "logicChainSteps": [
+        "One-way glass installed",
+        "visitor noise monitored",
+        "goal appears to be observing animals without disturbing natural behavior"
+      ],
+      "conclusion": "The sanctuary wanted visitors to observe the animals without affecting their behavior.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The sanctuary wanted the animals to interact directly with visitors.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The one-way glass was installed for an unrelated reason.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The sanctuary wanted to stop all visitor observation entirely.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The sanctuary wanted visitors to observe the animals without affecting their behavior.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "Installing one-way glass and monitoring noise levels are both measures aimed at keeping the animals undisturbed while still allowing visitors to watch them."
+    }
+  ]
+}

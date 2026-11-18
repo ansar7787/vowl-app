@@ -1,0 +1,1390 @@
+{
+  "gameType": "readingConclusion",
+  "phase": "learn",
+  "batchIndex": 19,
+  "levels": "181-190",
+  "quests": [
+    {
+      "id": "RDG_READINGCONCLUSION_L181_Q1_LEARN",
+      "level": 181,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "A senior engineer's peer review of a colleague's code included the note: 'The core logic here is genuinely clever, and I can tell a lot of thought went into the edge cases. That said, I'd push back on the decision to handle all of this in a single function; it's going to make this hard for the next person to modify safely. Worth splitting before merging, I think.' The review was marked 'approved with requested changes.'",
+      "logicChain": [
+        "Reviewer praises core logic and edge case handling -> raises specific concern about single-function structure -> approved with requested changes -> concern is specific and structural, not a rejection of the underlying work"
+      ],
+      "logicChainSteps": [
+        "Reviewer praises core logic and edge case handling",
+        "raises specific concern about single-function structure",
+        "approved with requested changes",
+        "concern is specific and structural, not a rejection of the underlying work"
+      ],
+      "conclusion": "The reviewer respects the underlying thinking behind the code but has a specific, substantive concern about its long-term maintainability.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The reviewer believes the code's core logic is fundamentally flawed. This would apply consistently across every detail the passage provides.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The reviewer approved the code with no reservations of any kind.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The reviewer respects the underlying thinking behind the code but has a specific, substantive concern about its long-term maintainability.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The reviewer is primarily concerned about the code's edge case handling. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The review genuinely praises the logic and edge case handling, singling out structure, not the underlying thinking, as the specific issue, and the 'approved with requested changes' status reflects a substantive but bounded concern rather than a broader rejection."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L181_Q2_LEARN",
+      "level": 181,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "A patient's discharge instructions read: 'Continue current medication as prescribed. Follow up with primary care physician within 2 weeks. If you experience fever above 101°F, worsening pain, or any drainage from the incision site, seek care immediately rather than waiting for your scheduled follow-up.' The instructions did not specify what to do about mild, expected post-surgical discomfort.",
+      "logicChain": [
+        "Specific urgent symptoms -> seek care immediately -> otherwise: follow up in 2 weeks -> mild expected discomfort not specifically addressed -> instructions cover two clear categories, leaving a gap for ordinary discomfort"
+      ],
+      "logicChainSteps": [
+        "Specific urgent symptoms",
+        "seek care immediately",
+        "otherwise: follow up in 2 weeks",
+        "mild expected discomfort not specifically addressed",
+        "instructions cover two clear categories, leaving a gap for ordinary discomfort"
+      ],
+      "conclusion": "The instructions distinguish between symptoms requiring immediate attention and the routine follow-up timeline, without directly addressing how to manage ordinary discomfort in between.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The instructions state that any pain at all requires an immediate emergency visit.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The instructions distinguish between symptoms requiring immediate attention and the routine follow-up timeline, without directly addressing how to manage ordinary discomfort in between.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The instructions indicate the patient should not follow up with their doctor at all. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The instructions specify exactly how to manage mild expected discomfort.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The instructions clearly separate urgent warning signs from the standard follow-up timeline, but the passage explicitly notes ordinary, expected discomfort isn't addressed, showing a gap between the two clearly defined categories."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L181_Q3_LEARN",
+      "level": 181,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "A city planning commission's staff report on a proposed apartment complex noted that 'the project meets all current zoning requirements' but also stated that 'several nearby residents have raised concerns about increased traffic on Willow Street, which the traffic study found would see a projected 12 percent increase in volume during peak hours, within the range the study characterized as manageable but noticeable.'",
+      "logicChain": [
+        "Project meets zoning requirements -> traffic study finds 12% increase, called 'manageable but noticeable' -> resident concerns are grounded in a real, quantified finding -> project is compliant while still carrying an acknowledged impact"
+      ],
+      "logicChainSteps": [
+        "Project meets zoning requirements",
+        "traffic study finds 12% increase, called 'manageable but noticeable'",
+        "resident concerns are grounded in a real, quantified finding",
+        "project is compliant while still carrying an acknowledged impact"
+      ],
+      "conclusion": "The project satisfies formal zoning rules while also carrying a traffic impact that residents and the study both acknowledge, even if it falls within an accepted range.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The project satisfies formal zoning rules while also carrying a traffic impact that residents and the study both acknowledge, even if it falls within an accepted range.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The project fails to meet the city's current zoning requirements.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The traffic study found no measurable change in traffic volume at all.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Resident concerns about traffic were dismissed as entirely baseless by the report.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The report holds two things true at once: the project is technically compliant with zoning, and there is a real, quantified traffic increase that the study itself describes as 'noticeable' even while calling it 'manageable,' showing a nuanced picture rather than a simple pass or fail."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L182_Q1_LEARN",
+      "level": 182,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "A university professor's syllabus note on participation grading read: 'Participation is not simply about how often you speak in class. I'm looking for evidence that you're engaging with the material thoughtfully, whether that's through insightful comments, good questions, or careful listening reflected in your written reflections. Students who speak frequently but without much substance should not expect a high participation grade.'",
+      "logicChain": [
+        "Participation not just about frequency of speaking -> professor values thoughtful comments, questions, or written reflections -> frequent but low-substance speaking explicitly should not expect a high grade -> speaking often is neither sufficient nor necessary alone"
+      ],
+      "logicChainSteps": [
+        "Participation not just about frequency of speaking",
+        "professor values thoughtful comments, questions, or written reflections",
+        "frequent but low-substance speaking explicitly should not expect a high grade",
+        "speaking often is neither sufficient nor necessary alone"
+      ],
+      "conclusion": "A student who speaks often but superficially may not necessarily earn a higher participation grade than a quieter student who engages thoughtfully in other ways.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The professor grades participation solely based on how many times a student speaks.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Students who remain silent throughout the semester will receive full participation credit.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Written reflections have no bearing on the participation grade whatsoever.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "A student who speaks often but superficially may not necessarily earn a higher participation grade than a quieter student who engages thoughtfully in other ways.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "The professor explicitly states that frequent, low-substance speaking should not lead to a high grade, while listing several other ways, including written reflections, to demonstrate engagement, showing that speaking often is not itself sufficient nor necessary for a good participation grade."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L182_Q2_LEARN",
+      "level": 182,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "A city's environmental office issued a statement on a local creek's water quality: 'Recent testing shows bacteria levels within safe swimming limits for the third consecutive week, a notable improvement from earlier this season. We caution, however, that levels can rise quickly after heavy rainfall due to stormwater runoff, so we recommend checking our online dashboard before swimming, particularly within 48 hours of significant rain.'",
+      "logicChain": [
+        "Bacteria levels safe for 3 consecutive weeks -> office notes levels can rise quickly after heavy rain -> recommends checking dashboard, especially after rain -> message balances current good conditions with a specific caution about change"
+      ],
+      "logicChainSteps": [
+        "Bacteria levels safe for 3 consecutive weeks",
+        "office notes levels can rise quickly after heavy rain",
+        "recommends checking dashboard, especially after rain",
+        "message balances current good conditions with a specific caution about change"
+      ],
+      "conclusion": "Current conditions are good, but the office is flagging that this could change quickly under certain weather conditions, so ongoing checking is advised.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The creek's water quality has been unsafe for swimming for the past three weeks. This reading would hold true across the full sequence of events described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Current conditions are good, but the office is flagging that this could change quickly under certain weather conditions, so ongoing checking is advised.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The office guarantees the water will remain safe regardless of weather conditions. This pattern would hold steady across the entire situation the passage lays out.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Bacteria levels are entirely unrelated to rainfall according to this statement.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The statement genuinely reports three weeks of safe conditions while specifically flagging rainfall as a factor that could quickly change that status, showing a nuanced message of 'currently good, but stay alert' rather than an unconditional guarantee."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L182_Q3_LEARN",
+      "level": 182,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "A financial analyst's report on a company's quarterly earnings stated: 'Revenue grew 6 percent year-over-year, in line with analyst expectations. However, the growth was driven almost entirely by a one-time licensing deal; core subscription revenue, the company's primary long-term growth driver, grew only 1 percent, its slowest pace in three years.'",
+      "logicChain": [
+        "Headline revenue growth: 6%, meets expectations -> growth driven almost entirely by one-time deal -> core subscription revenue: only 1% growth, slowest in 3 years -> underlying business shows a weaker trend than the headline number suggests"
+      ],
+      "logicChainSteps": [
+        "Headline revenue growth: 6%, meets expectations",
+        "growth driven almost entirely by one-time deal",
+        "core subscription revenue: only 1% growth, slowest in 3 years",
+        "underlying business shows a weaker trend than the headline number suggests"
+      ],
+      "conclusion": "While headline revenue growth appears solid, the underlying core business shows a notably weaker growth trend than the overall number suggests.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Core subscription revenue grew faster than it has in the past three years. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The company's overall revenue declined compared to the previous year. The way the events are described throughout the passage offers no clear signal that this particular reading should be treated with any extra caution.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The one-time licensing deal had no impact on the reported revenue growth. This would be expected to hold across the entire situation as described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "While headline revenue growth appears solid, the underlying core business shows a notably weaker growth trend than the overall number suggests.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "The report reveals that the solid-looking 6 percent headline growth is largely attributable to a one-time deal, while the more telling core subscription metric grew much more slowly than the headline number would suggest, painting a more cautious underlying picture."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L183_Q1_LEARN",
+      "level": 183,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A manager's message to a team after a project's delayed launch read: 'I want to be clear: this delay isn't about anyone's individual performance. The scope changed significantly midway through, and I should have pushed back harder on the timeline when that happened. I take responsibility for that. Let's talk as a team about how we handle scope changes better going forward.'",
+      "logicChain": [
+        "Manager states delay 'isn't about anyone's individual performance' -> explicitly says 'I should have pushed back... I take responsibility' -> manager is taking personal responsibility, not blaming the team"
+      ],
+      "logicChainSteps": [
+        "Manager states delay 'isn't about anyone's individual performance'",
+        "explicitly says 'I should have pushed back... I take responsibility'",
+        "manager is taking personal responsibility, not blaming the team"
+      ],
+      "conclusion": "The manager is taking personal responsibility for the delay rather than attributing it to the team's performance.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The manager is blaming individual team members for the delayed launch. This would apply consistently across every detail the passage provides.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The manager is taking personal responsibility for the delay rather than attributing it to the team's performance.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The manager believes the delay was caused entirely by external factors beyond anyone's control, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The manager refuses to discuss how the team could improve going forward. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The manager explicitly rules out individual team performance as the cause and instead explicitly claims personal responsibility for not pushing back on the timeline, directly stating a self-attribution rather than blaming the team or vague outside forces."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L183_Q2_LEARN",
+      "level": 183,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A landlord's response to a tenant's request to install a small window air conditioning unit read: 'I don't have an issue with the AC unit itself, but our building's lease specifically prohibits units that require permanent modifications to the window frame. If you can find a model that installs without drilling or permanent alteration, I'm happy to approve it.'",
+      "logicChain": [
+        "Landlord: 'no issue with the AC unit itself' -> objection specifically to permanent window modification -> offers approval for non-permanent installation methods -> concern is narrowly about installation method, not AC units generally"
+      ],
+      "logicChainSteps": [
+        "Landlord: 'no issue with the AC unit itself'",
+        "objection specifically to permanent window modification",
+        "offers approval for non-permanent installation methods",
+        "concern is narrowly about installation method, not AC units generally"
+      ],
+      "conclusion": "The landlord's objection is specifically about the installation method, not about air conditioning units in general.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The landlord is refusing to allow any type of air conditioning unit under any circumstances, according to the specific details given.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The landlord's objection is specifically about the installation method, not about air conditioning units in general.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The lease specifically prohibits all window-installed appliances of any kind. No part of the passage's account suggests otherwise.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The landlord has not yet made a decision about the request. This would be expected to hold across the entire situation as described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "By explicitly stating no issue with the AC unit itself and offering conditional approval for a non-permanent installation method, the landlord makes clear the objection is narrowly about permanent window modification, not air conditioning as a category."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L183_Q3_LEARN",
+      "level": 183,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A city council's transportation committee report on a proposed bike lane stated: 'Traffic modeling suggests minimal impact on overall vehicle travel times along this corridor. However, the modeling did not account for the temporary construction period, during which some lane closures and increased congestion should be expected for approximately three months.'",
+      "logicChain": [
+        "Traffic modeling: minimal long-term impact -> modeling explicitly does not account for construction period -> construction period: lane closures, increased congestion expected for ~3 months -> two distinct timeframes with different expected outcomes"
+      ],
+      "logicChainSteps": [
+        "Traffic modeling: minimal long-term impact",
+        "modeling explicitly does not account for construction period",
+        "construction period: lane closures, increased congestion expected for ~3 months",
+        "two distinct timeframes with different expected outcomes"
+      ],
+      "conclusion": "The long-term projected impact appears minimal, but a distinct, temporary period of disruption during construction is separately anticipated.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The long-term projected impact appears minimal, but a distinct, temporary period of disruption during construction is separately anticipated.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The traffic modeling found the bike lane would permanently worsen vehicle travel times. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "No disruption of any kind is expected at any point during this project. This would remain the case regardless of any other detail in the passage.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The three-month construction period was fully accounted for in the traffic modeling. This would be expected to hold across the entire situation as described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The report distinguishes between the modeled long-term impact, which appears minimal, and a separate, explicitly unmodeled construction period where disruption is expected, showing two different timeframes with two different expected outcomes."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L184_Q1_LEARN",
+      "level": 184,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A restaurant owner's response to a scathing online review read: 'I appreciate you taking the time to share your experience, and I'm sorry the service didn't meet your expectations that night. I do want to note that the evening you visited, we had two servers call out sick unexpectedly, which affected wait times across the restaurant. That's not an excuse, just context, and we're working on better backup staffing plans.'",
+      "logicChain": [
+        "Owner apologizes for service issue -> explains staffing shortage that night -> explicitly states 'that's not an excuse, just context' -> owner provides explanation without dismissing the complaint's legitimacy"
+      ],
+      "logicChainSteps": [
+        "Owner apologizes for service issue",
+        "explains staffing shortage that night",
+        "explicitly states 'that's not an excuse, just context'",
+        "owner provides explanation without dismissing the complaint's legitimacy"
+      ],
+      "conclusion": "The owner acknowledges the legitimate problem with service while also providing context about an unusual staffing situation that night, without using it to dismiss the complaint.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The owner is arguing that the reviewer's complaint was entirely unjustified. The way the events are described throughout the passage offers no clear signal that this particular reading should be treated with any extra caution.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The owner acknowledges the legitimate problem with service while also providing context about an unusual staffing situation that night, without using it to dismiss the complaint.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The owner denies that any service problems occurred that evening. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The owner blames the reviewer for the restaurant's understaffing that night. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The owner explicitly labels the staffing detail as 'context,' not an 'excuse,' while still apologizing for the service issue, showing an attempt to explain the situation honestly without dismissing the legitimacy of the complaint."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L184_Q2_LEARN",
+      "level": 184,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A pediatric specialist's note in a child's chart read: 'Growth curve shows a slight downward shift over the past two visits, though still within the normal range. Given the family history discussed and the otherwise healthy exam, I'm not concerned at this stage, but I'd like to recheck growth at the next visit in three months rather than the usual six-month interval, just to confirm the pattern isn't continuing.'",
+      "logicChain": [
+        "Growth curve: slight downward shift, still within normal range -> doctor states 'not concerned at this stage' -> follow-up interval shortened from 6 to 3 months, specifically to confirm the pattern isn't continuing -> cautious monitoring, not dismissal or alarm"
+      ],
+      "logicChainSteps": [
+        "Growth curve: slight downward shift, still within normal range",
+        "doctor states 'not concerned at this stage'",
+        "follow-up interval shortened from 6 to 3 months, specifically to confirm the pattern isn't continuing",
+        "cautious monitoring, not dismissal or alarm"
+      ],
+      "conclusion": "The doctor sees the current data as not alarming but wants closer monitoring specifically to watch whether a pattern develops over time.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The doctor believes the child's growth is dangerously outside the normal range.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The doctor has ruled out any need for future monitoring of growth.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The doctor sees the current data as not alarming but wants closer monitoring specifically to watch whether a pattern develops over time.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The doctor is recommending immediate specialist referral due to serious concern.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The doctor explicitly states the current findings are within normal range and not concerning, yet still shortens the follow-up interval specifically to check whether the slight downward trend continues, showing a cautious, watchful approach rather than either dismissal or alarm."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L184_Q3_LEARN",
+      "level": 184,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A city's public works director, responding to questions at a town hall about a delayed road repair project, said: 'I understand the frustration, and I share it. We underestimated how much the underlying pipe damage would complicate this repair once we started digging. I can't give you an exact new completion date tonight because we're still assessing the extent of it, but I can commit to a written update within two weeks with a firm timeline.'",
+      "logicChain": [
+        "Director acknowledges delay, explains cause (pipe damage) -> explicitly states cannot give exact new date tonight -> commits to written update with firm timeline within two weeks -> honest acknowledgment without overpromising a date not yet known"
+      ],
+      "logicChainSteps": [
+        "Director acknowledges delay, explains cause (pipe damage)",
+        "explicitly states cannot give exact new date tonight",
+        "commits to written update with firm timeline within two weeks",
+        "honest acknowledgment without overpromising a date not yet known"
+      ],
+      "conclusion": "The director acknowledges the delay and its cause but is not yet able to provide a specific new completion date.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The director provided a specific new completion date during the town hall. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The director denies that the project has experienced any delay. This pattern would hold steady across the entire situation the passage lays out.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The director stated the project would never be completed. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The director acknowledges the delay and its cause but is not yet able to provide a specific new completion date.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "The director explicitly states he 'can't give an exact new completion date tonight,' while explaining the reason for the delay and committing to a specific, near-term written update, showing honest acknowledgment without overpromising a timeline he isn't ready to give."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L185_Q1_LEARN",
+      "level": 185,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "A hiring manager's internal notes after a final-round interview read: 'Strong technical skills, clearly the most qualified candidate on paper. Some hesitation about team fit; came across as somewhat dismissive when the junior team member asked a clarifying question during the technical exercise. Worth a follow-up conversation specifically about collaborative style before making a final call.'",
+      "logicChain": [
+        "'Strong technical skills, most qualified on paper' -> separate concern noted about one dismissive interaction -> 'worth a follow-up conversation' before final call -> technical strength is clear; interpersonal concern is specific and still being evaluated"
+      ],
+      "logicChainSteps": [
+        "'Strong technical skills, most qualified on paper'",
+        "separate concern noted about one dismissive interaction",
+        "'worth a follow-up conversation' before final call",
+        "technical strength is clear; interpersonal concern is specific and still being evaluated"
+      ],
+      "conclusion": "The candidate's technical qualifications are not in question, but the manager has a specific, separate concern about interpersonal style that warrants further exploration.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The candidate's technical qualifications are not in question, but the manager has a specific, separate concern about interpersonal style that warrants further exploration.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The manager doubts the candidate's technical qualifications for the role.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The manager has already decided to reject the candidate entirely.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The manager found no concerns of any kind during the interview.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The notes clearly affirm strong technical skills without qualification, while raising a distinct, specific concern about one interpersonal moment, and explicitly frame this as something needing more exploration rather than a settled disqualifying issue."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L185_Q2_LEARN",
+      "level": 185,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "A city's public health department's statement on a recent cluster of illness reports at a local school read: 'We've identified 14 confirmed cases linked to this cluster, consistent with a common seasonal illness circulating in the wider community. There is no evidence at this time linking the cluster to the school's food service or water supply, both of which have been tested and returned normal results.'",
+      "logicChain": [
+        "14 cases, consistent with seasonal illness circulating in the community -> food service and water supply tested, normal results, no link found -> cluster appears tied to broader seasonal pattern, not school-specific facilities"
+      ],
+      "logicChainSteps": [
+        "14 cases, consistent with seasonal illness circulating in the community",
+        "food service and water supply tested, normal results, no link found",
+        "cluster appears tied to broader seasonal pattern, not school-specific facilities"
+      ],
+      "conclusion": "The illness cluster appears connected to a broader seasonal pattern rather than to something specific to the school's facilities.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Testing confirmed the school's food service was the direct source of the illness.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The department found no connection between the cluster and any illness circulating elsewhere. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The illness cluster appears connected to a broader seasonal pattern rather than to something specific to the school's facilities.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The water supply tests came back with results indicating contamination.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The statement explicitly rules out the school's food service and water supply as sources, having tested both with normal results, while explicitly connecting the cluster to a seasonal illness already circulating more broadly, pointing away from a school-specific cause."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L185_Q3_LEARN",
+      "level": 185,
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "techniqueTitle": "Filtering Premature Leaps and Baseless Generalizations",
+      "coreRule": "Discard options that require external speculation; valid conclusions stay grounded in the passage.",
+      "passage": "A nonprofit's board meeting minutes recorded a discussion about the executive director's proposed budget: 'Several board members expressed support for the overall direction of the proposal, particularly the expanded outreach program. Two members raised concerns about the proposed reduction in the emergency reserve fund from 6 months to 3 months of operating expenses, questioning whether this level of risk was appropriate given recent revenue volatility. The board voted to approve the outreach expansion while tabling the reserve fund question for further discussion next month.'",
+      "logicChain": [
+        "Board supports outreach expansion generally -> two members raise specific concern about reserve fund reduction -> outreach expansion: approved -> reserve fund question: tabled for further discussion -> board approved one element while deferring the more contested one"
+      ],
+      "logicChainSteps": [
+        "Board supports outreach expansion generally",
+        "two members raise specific concern about reserve fund reduction",
+        "outreach expansion: approved",
+        "reserve fund question: tabled for further discussion",
+        "board approved one element while deferring the more contested one"
+      ],
+      "conclusion": "The board approved part of the proposal while specifically deferring a decision on a different, more contested part.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The board approved part of the proposal while specifically deferring a decision on a different, more contested part.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The board rejected the entire budget proposal without approving any part of it. The passage gives no indication that this varied across the circumstances described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Every board member agreed unanimously on all aspects of the proposal.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The reserve fund reduction was approved along with the outreach expansion.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The minutes clearly separate two distinct outcomes: the outreach expansion was approved with general support, while the more contested reserve fund reduction was specifically tabled for further discussion, showing a split rather than a single up-or-down vote on the whole proposal."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L186_Q1_LEARN",
+      "level": 186,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A software engineer's post-incident report on a service outage read: 'The immediate trigger was a misconfigured deployment script, which our on-call engineer corrected within 12 minutes of the alert firing. However, the outage lasted 47 minutes total because our monitoring system didn't flag the downstream effects on the payment processing service for another 35 minutes, a gap we're treating as the more significant finding from this incident.'",
+      "logicChain": [
+        "Deployment script error: corrected within 12 minutes -> monitoring gap for payment effects: 35 additional minutes -> total outage: 47 minutes -> report explicitly identifies the detection gap, not the original error, as the more significant finding"
+      ],
+      "logicChainSteps": [
+        "Deployment script error: corrected within 12 minutes",
+        "monitoring gap for payment effects: 35 additional minutes",
+        "total outage: 47 minutes",
+        "report explicitly identifies the detection gap, not the original error, as the more significant finding"
+      ],
+      "conclusion": "While the initial technical error was resolved quickly, the report identifies a delay in detecting broader effects as the more significant issue overall.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "While the initial technical error was resolved quickly, the report identifies a delay in detecting broader effects as the more significant issue overall.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The misconfigured deployment script was never actually fixed. Every relevant detail included in the passage is consistent with treating this as a complete and accurate account, without further qualification being necessary.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The monitoring system detected the payment processing issue immediately. The passage's own account of what happened offers no particular reason to think this reading needs to be limited or qualified in any specific way.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The report identifies the deployment script error as the most significant finding. This would apply consistently across every detail the passage provides.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The report explicitly distinguishes between the quickly-resolved initial trigger and the much longer detection gap for downstream effects, and explicitly states the team considers the detection gap, not the original error, to be the more significant finding."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L186_Q2_LEARN",
+      "level": 186,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A college admissions officer's notes on an applicant read: 'Academic record is solid but not exceptional relative to our applicant pool. What stands out is the personal essay, which describes founding a small tutoring collective in a underserved area of their hometown, sustained over two years with clear evidence of growth and problem-solving. Recommend moving forward primarily on the strength of this demonstrated initiative.'",
+      "logicChain": [
+        "Academic record: 'solid but not exceptional' -> personal essay describes sustained, two-year tutoring initiative -> recommendation explicitly based 'primarily on the strength of this demonstrated initiative' -> decision hinges more on the extracurricular accomplishment than academics alone"
+      ],
+      "logicChainSteps": [
+        "Academic record: 'solid but not exceptional'",
+        "personal essay describes sustained, two-year tutoring initiative",
+        "recommendation explicitly based 'primarily on the strength of this demonstrated initiative'",
+        "decision hinges more on the extracurricular accomplishment than academics alone"
+      ],
+      "conclusion": "The admissions officer's recommendation is based more on a specific extracurricular accomplishment than on academic performance alone.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The admissions officer's recommendation is based entirely on the applicant's exceptional academic record. Nothing described in the passage points to any exception to this pattern.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The admissions officer recommends against moving the applicant forward. No part of the passage's account suggests otherwise.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The personal essay described a project that lasted only a few weeks.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The admissions officer's recommendation is based more on a specific extracurricular accomplishment than on academic performance alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "The notes explicitly describe the academic record as merely 'solid but not exceptional,' while explicitly citing the sustained tutoring initiative as the specific reason for recommending the applicant move forward, showing the decision hinges more on the extracurricular accomplishment."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L186_Q3_LEARN",
+      "level": 186,
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "techniqueTitle": "Enforcing Deductive Rigor Without Unfounded Assumptions",
+      "coreRule": "Test every candidate against the final link of the logic chain.",
+      "passage": "A city's transit rider survey report stated: 'Overall satisfaction with bus service rose to 71 percent this year, up from 63 percent last year. This improvement was concentrated almost entirely among riders on routes that received new buses this year; satisfaction among riders on routes still using older buses remained essentially flat at 62 percent, nearly identical to last year's system-wide average.'",
+      "logicChain": [
+        "Overall satisfaction: 63% to 71% -> improvement 'concentrated almost entirely' among new-bus route riders -> old-bus route riders: flat at 62%, close to last year's average -> increase driven specifically by new-bus routes, not a general system-wide trend"
+      ],
+      "logicChainSteps": [
+        "Overall satisfaction: 63% to 71%",
+        "improvement 'concentrated almost entirely' among new-bus route riders",
+        "old-bus route riders: flat at 62%, close to last year's average",
+        "increase driven specifically by new-bus routes, not a general system-wide trend"
+      ],
+      "conclusion": "The overall satisfaction increase appears driven specifically by riders on routes with new buses, rather than reflecting a general system-wide improvement.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Satisfaction improved equally across all bus routes regardless of bus age. Every relevant detail included in the passage is consistent with treating this as a complete and accurate account, without further qualification being necessary.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Riders on routes with older buses showed the largest satisfaction increase. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Overall satisfaction declined compared to the previous year.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The overall satisfaction increase appears driven specifically by riders on routes with new buses, rather than reflecting a general system-wide improvement.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "The report explicitly attributes the overall improvement to riders on new-bus routes, while riders on old-bus routes stayed essentially flat at close to last year's overall average, showing the improvement is concentrated in one group rather than reflecting a broad system-wide change."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L187_Q1_LEARN",
+      "level": 187,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "A wildlife biologist's field report on a regional deer population read: 'Population estimates suggest a 15 percent increase over the past three years, consistent with what we'd expect given the mild winters during this period, which reduce winter mortality. However, this growth is not uniform, herd density in the eastern habitat zone actually declined slightly, likely due to a separate, ongoing habitat fragmentation issue from new road construction in that specific area.'",
+      "logicChain": [
+        "Overall population: +15% over 3 years, attributed to mild winters -> eastern zone: slight decline, attributed to separate road construction/fragmentation issue -> two distinct trends with two distinct, separately identified causes"
+      ],
+      "logicChainSteps": [
+        "Overall population: +15% over 3 years, attributed to mild winters",
+        "eastern zone: slight decline, attributed to separate road construction/fragmentation issue",
+        "two distinct trends with two distinct, separately identified causes"
+      ],
+      "conclusion": "While the overall population grew, likely due to milder winters, one specific area shows a different pattern tied to a distinct, local cause.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The deer population declined uniformly across the entire region over three years. This would be expected to hold across the entire situation as described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "While the overall population grew, likely due to milder winters, one specific area shows a different pattern tied to a distinct, local cause.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Milder winters caused the population decline in the eastern habitat zone. This would remain the case regardless of any other detail in the passage.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Road construction was the primary cause of the overall regional population increase. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The report attributes overall growth to milder winters but explicitly separates out the eastern zone's decline as tied to a distinct local cause, habitat fragmentation from road construction, showing two different trends with two different explanations rather than one uniform pattern."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L187_Q2_LEARN",
+      "level": 187,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "A workplace safety consultant's audit report on a warehouse read: 'Overall compliance with safety protocols is strong, at 94 percent across observed procedures. The one notable exception is proper use of fall protection equipment on the elevated storage platforms, where compliance was observed at only 61 percent, an area we recommend prioritizing for targeted retraining given the severity of potential injury if standards aren't met there specifically.'",
+      "logicChain": [
+        "Overall compliance: 94%, strong -> fall protection compliance specifically: 61%, 'notable exception' -> recommended as priority due to both low compliance and high potential severity -> report singles out one specific area within an otherwise strong overall picture"
+      ],
+      "logicChainSteps": [
+        "Overall compliance: 94%, strong",
+        "fall protection compliance specifically: 61%, 'notable exception'",
+        "recommended as priority due to both low compliance and high potential severity",
+        "report singles out one specific area within an otherwise strong overall picture"
+      ],
+      "conclusion": "While general safety compliance is high, the report singles out one specific procedure as needing focused attention because of both lower compliance and higher potential severity.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Overall safety compliance across the warehouse was found to be poor. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Fall protection equipment compliance was found to be the strongest area observed. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "While general safety compliance is high, the report singles out one specific procedure as needing focused attention because of both lower compliance and higher potential severity.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The report found no areas in need of any additional training. Every relevant detail included in the passage is consistent with treating this as a complete and accurate account, without further qualification being necessary.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The report explicitly frames fall protection compliance as 'the one notable exception' to an otherwise strong 94 percent overall rate, and specifically recommends prioritizing it due to both the lower compliance rate and the higher severity of potential consequences in that particular area."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L187_Q3_LEARN",
+      "level": 187,
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "techniqueTitle": "Tracing Premise Chains to Sound Inevitable Outcomes",
+      "coreRule": "A sound conclusion must follow necessarily from the sequence of established premises.",
+      "passage": "A marketing team's post-campaign analysis read: 'The campaign generated a 45 percent increase in website traffic, exceeding our target of 30 percent. However, conversion rate, the percentage of visitors who actually made a purchase, dropped from 3.2 percent to 2.1 percent during the same period, suggesting the campaign attracted a large volume of visitors who were less likely to buy than our typical audience.'",
+      "logicChain": [
+        "Traffic: +45%, exceeds 30% target -> conversion rate: drops from 3.2% to 2.1% during same period -> team interprets this as new visitors being less likely to convert than typical audience -> success in one metric paired with decline in a related metric"
+      ],
+      "logicChainSteps": [
+        "Traffic: +45%, exceeds 30% target",
+        "conversion rate: drops from 3.2% to 2.1% during same period",
+        "team interprets this as new visitors being less likely to convert than typical audience",
+        "success in one metric paired with decline in a related metric"
+      ],
+      "conclusion": "The campaign succeeded at bringing in more visitors than expected, but those visitors appear to have been less likely to convert into buyers than the site's usual audience.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The campaign succeeded at bringing in more visitors than expected, but those visitors appear to have been less likely to convert into buyers than the site's usual audience.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The campaign failed to increase website traffic at all.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Conversion rate improved significantly during the campaign period.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The campaign brought in fewer visitors than the team had originally targeted.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The analysis reports two outcomes moving in opposite directions: traffic exceeded its target substantially, while conversion rate dropped notably during the same period, and the team's own interpretation links these two facts to suggest the new visitors were less likely to buy than the typical audience."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L188_Q1_LEARN",
+      "level": 188,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "A high school counselor's note in a student's file read: 'Grades have improved significantly this semester, from a 2.1 to a 3.4 GPA. Worth noting this coincides with the student joining a new peer study group and, separately, with the family's report that their part-time work hours were reduced from 25 to 10 hours per week due to a schedule change at their employer. Both factors seem plausible contributors.'",
+      "logicChain": [
+        "GPA rises from 2.1 to 3.4 -> student joins new study group -> separately, work hours reduced from 25 to 10/week -> counselor: 'both factors seem plausible contributors' -> two changes explicitly identified as both plausible, neither singled out"
+      ],
+      "logicChainSteps": [
+        "GPA rises from 2.1 to 3.4",
+        "student joins new study group",
+        "separately, work hours reduced from 25 to 10/week",
+        "counselor: 'both factors seem plausible contributors'",
+        "two changes explicitly identified as both plausible, neither singled out"
+      ],
+      "conclusion": "The counselor identifies two separate changes happening around the same time, both of which could plausibly explain the improvement, without singling out just one.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The counselor attributes the entire improvement solely to the new study group.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The counselor attributes the entire improvement solely to reduced work hours.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The counselor identifies two separate changes happening around the same time, both of which could plausibly explain the improvement, without singling out just one.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The student's grades declined this semester according to the note.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The counselor's note explicitly lists two distinct changes, the study group and reduced work hours, and explicitly states 'both factors seem plausible contributors,' showing an intentional refusal to credit just one over the other."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L188_Q2_LEARN",
+      "level": 188,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "A city's air quality monitoring report stated: 'Particulate matter readings have improved 18 percent over the past five years across most monitoring stations. The station located near the industrial corridor, however, shows readings that have remained essentially unchanged over the same period, suggesting the citywide improvement may be driven by factors, such as reduced regional wildfire smoke and cleaner vehicle emissions standards, that have less direct effect on this specific industrial-adjacent area.'",
+      "logicChain": [
+        "Citywide particulate matter: -18% over 5 years, most stations -> industrial corridor station: essentially unchanged -> report suggests citywide factors (wildfire smoke reduction, vehicle standards) may not directly affect this specific area -> improvement does not extend evenly to the industrial corridor"
+      ],
+      "logicChainSteps": [
+        "Citywide particulate matter: -18% over 5 years, most stations",
+        "industrial corridor station: essentially unchanged",
+        "report suggests citywide factors (wildfire smoke reduction, vehicle standards) may not directly affect this specific area",
+        "improvement does not extend evenly to the industrial corridor"
+      ],
+      "conclusion": "The citywide air quality improvement does not appear to extend evenly to the area near the industrial corridor.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The citywide air quality improvement does not appear to extend evenly to the area near the industrial corridor.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Air quality improved most dramatically at the station near the industrial corridor.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "All monitoring stations across the city, including the industrial corridor station, showed identical improvement, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The report found no measurable air quality improvement anywhere in the city.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "While most stations show notable improvement, the report specifically identifies the industrial corridor station as an exception with essentially unchanged readings, and offers a specific explanation for why broader improvements might not reach that particular area equally."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L188_Q3_LEARN",
+      "level": 188,
+      "strategyBadge": "PREMISE LINK RADAR",
+      "techniqueTitle": "Linking Intermediary Evidence to Core Deductions",
+      "coreRule": "Do not leap past the evidence: each link in the logic chain must be physically or causally verified.",
+      "passage": "A retail analytics report on a chain's holiday season performance read: 'Total holiday sales grew 4 percent year-over-year, a modest but positive result. Breaking this down by channel, in-store sales declined 7 percent, continuing a multi-year trend, while online sales grew 22 percent, more than offsetting the in-store decline. This pattern is consistent with the broader shift toward online shopping seen across the retail sector in recent years.'",
+      "logicChain": [
+        "Total sales: +4%, modest -> in-store: -7%, continuing multi-year trend -> online: +22%, more than offsetting the in-store decline -> overall modest figure masks a larger underlying shift between channels"
+      ],
+      "logicChainSteps": [
+        "Total sales: +4%, modest",
+        "in-store: -7%, continuing multi-year trend",
+        "online: +22%, more than offsetting the in-store decline",
+        "overall modest figure masks a larger underlying shift between channels"
+      ],
+      "conclusion": "The modest overall growth figure obscures a larger shift happening beneath it, with online growth compensating for a continuing decline in physical store sales.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Both in-store and online sales grew at roughly the same rate this holiday season. As far as the passage's description goes, nothing about the surrounding details would suggest this needs to be treated as an incomplete picture.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "In-store sales grew while online sales declined during this period.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Total holiday sales declined compared to the previous year.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The modest overall growth figure obscures a larger shift happening beneath it, with online growth compensating for a continuing decline in physical store sales.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "While the headline 4 percent growth figure sounds modest and steady, the breakdown reveals a much larger underlying shift, a declining in-store trend being more than offset by strong online growth, a more dynamic and specific pattern than the single overall number suggests."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L189_Q1_LEARN",
+      "level": 189,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A psychologist's assessment note read: 'Client presents with clear insight into the patterns being discussed and demonstrates strong verbal processing of difficult material during sessions. Progress in reducing the frequency of the reported behavior has been slower than the client's insight would suggest is possible, which is common and not necessarily indicative of resistance; insight and behavior change often develop on different timelines.'",
+      "logicChain": [
+        "Client shows strong insight, verbal processing -> behavior change progress slower than insight would suggest -> psychologist explicitly frames this as common, not resistance -> gap between insight and behavior is presented as a normal pattern, not a problem"
+      ],
+      "logicChainSteps": [
+        "Client shows strong insight, verbal processing",
+        "behavior change progress slower than insight would suggest",
+        "psychologist explicitly frames this as common, not resistance",
+        "gap between insight and behavior is presented as a normal pattern, not a problem"
+      ],
+      "conclusion": "The client understands the issue well, but the psychologist notes that this understanding hasn't yet translated into behavior change at the same pace, and frames this as a normal pattern rather than a problem.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The client shows no understanding of the patterns being discussed in sessions.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The psychologist believes the slower behavior change indicates the client is being resistant to treatment. The way the events are described throughout the passage offers no clear signal that this particular reading should be treated with any extra caution.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The client's behavior has changed faster than their level of insight.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The client understands the issue well, but the psychologist notes that this understanding hasn't yet translated into behavior change at the same pace, and frames this as a normal pattern rather than a problem.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ],
+      "explanation": "The note explicitly praises the client's insight while noting behavior change is lagging behind it, and explicitly frames this gap as 'common' and 'not necessarily indicative of resistance,' showing a normalizing rather than a concerned interpretation of the pattern."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L189_Q2_LEARN",
+      "level": 189,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A city budget analyst's memo on a proposed park renovation read: 'The $4.2 million estimate assumes current material costs hold through the project's 18-month timeline. Given that lumber and steel prices have shown volatility of up to 15 percent in either direction over similar timeframes in recent years, I'd recommend the council approve a contingency reserve of at least 10 percent rather than treating this estimate as fixed.'",
+      "logicChain": [
+        "Estimate assumes stable material costs over 18 months -> historical volatility up to 15% in similar timeframes -> analyst recommends 10% contingency reserve -> flagging real cost uncertainty and recommending planning for it, not rejecting the project"
+      ],
+      "logicChainSteps": [
+        "Estimate assumes stable material costs over 18 months",
+        "historical volatility up to 15% in similar timeframes",
+        "analyst recommends 10% contingency reserve",
+        "flagging real cost uncertainty and recommending planning for it, not rejecting the project"
+      ],
+      "conclusion": "The analyst is flagging that the project's cost estimate carries real uncertainty due to material price volatility, and is recommending the council plan for that possibility rather than treat the number as final.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The analyst is certain that material costs will remain completely stable throughout the project. Reading through everything the passage lays out, there is no specific detail that would push against treating this as the straightforward explanation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The analyst is flagging that the project's cost estimate carries real uncertainty due to material price volatility, and is recommending the council plan for that possibility rather than treat the number as final.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The analyst recommends the council reject the park renovation proposal entirely. The way the events are described throughout the passage offers no clear signal that this particular reading should be treated with any extra caution.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The $4.2 million estimate already includes a built-in contingency reserve. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The analyst explicitly grounds the concern in historical price volatility data and recommends a specific contingency reserve precisely because the current estimate assumes stable prices that history suggests may not hold, a measured caution rather than outright rejection of the project."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L189_Q3_LEARN",
+      "level": 189,
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "techniqueTitle": "Predicting Logical Next Steps from Observable Trajectories",
+      "coreRule": "When two facts collide, the conclusion must explain both without contradicting either.",
+      "passage": "A regional airline's pilot union statement on a proposed schedule change read: 'We recognize management's stated goal of improving on-time performance metrics, and we don't dispute that current scheduling has room for improvement. Our concern is specifically with the proposed reduction in minimum rest time between certain shift pairings, which we believe introduces a safety consideration that should be evaluated independently of the scheduling efficiency goals.'",
+      "logicChain": [
+        "Union: 'we don't dispute current scheduling has room for improvement' -> raises specific concern about reduced rest time between certain shifts -> frames this as a distinct safety consideration -> agreement with general goal, paired with a specific, narrower concern"
+      ],
+      "logicChainSteps": [
+        "Union: 'we don't dispute current scheduling has room for improvement'",
+        "raises specific concern about reduced rest time between certain shifts",
+        "frames this as a distinct safety consideration",
+        "agreement with general goal, paired with a specific, narrower concern"
+      ],
+      "conclusion": "The union agrees with the general goal of the schedule change but raises a specific, separate concern about one particular element of the proposal.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The union disputes that current scheduling has any room for improvement. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The union opposes the entire concept of improving on-time performance. Nothing about how the passage frames the surrounding circumstances would suggest this conclusion needs any further qualification or limitation.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The union agrees with the general goal of the schedule change but raises a specific, separate concern about one particular element of the proposal.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The union's statement contains no specific concerns about the proposal. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The statement explicitly agrees with the broader goal and acknowledges room for scheduling improvement, while raising a distinct, specific concern about rest time reduction that it explicitly frames as a separate safety issue rather than a rejection of the overall proposal."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L190_Q1_LEARN",
+      "level": 190,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A museum curator's exhibition proposal memo read: 'This exhibition would require relocating three permanent collection pieces to storage for approximately six months, which I recognize is not an ideal trade-off. However, given the rarity of securing loans for these particular works, and the strong visitor interest our surveys show for this era of art, I believe the temporary trade-off is justified. I'd like the board's input on this specific balance before proceeding.'",
+      "logicChain": [
+        "Relocating 3 pieces for 6 months -> curator explicitly calls this 'not ideal' -> explains reasoning: rarity of loan, strong visitor interest -> requests board input on this specific balance -> transparent trade-off acknowledgment, decision not yet finalized"
+      ],
+      "logicChainSteps": [
+        "Relocating 3 pieces for 6 months",
+        "curator explicitly calls this 'not ideal'",
+        "explains reasoning: rarity of loan, strong visitor interest",
+        "requests board input on this specific balance",
+        "transparent trade-off acknowledgment, decision not yet finalized"
+      ],
+      "conclusion": "The curator acknowledges a genuine downside to the proposal while explaining the specific reasoning for believing it's worthwhile, and is seeking further input rather than treating the decision as already made.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The curator believes there are no downsides at all to the proposed exhibition. Taken together, the details the passage provides give no specific reason to treat this as anything other than a complete account of what occurred.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The curator acknowledges a genuine downside to the proposal while explaining the specific reasoning for believing it's worthwhile, and is seeking further input rather than treating the decision as already made.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The curator has decided to proceed with the exhibition regardless of board input. Nothing in the way the passage lays out these events gives any real reason to treat this as an incomplete or qualified reading of what took place.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Visitor surveys showed no particular interest in this era of art. The full account given in the passage offers no particular basis for reading this any differently than as a plain, straightforward description of events.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The curator explicitly acknowledges the trade-off as 'not ideal,' explains specific reasons for believing it's justified, and explicitly requests board input on 'this specific balance,' showing a transparent weighing of costs and benefits rather than a done deal or a claim of no downsides."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L190_Q2_LEARN",
+      "level": 190,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A regional utility's rate proposal filing stated: 'The proposed 6 percent rate increase reflects rising infrastructure maintenance costs, which have grown 22 percent over the past five years due to aging equipment. We acknowledge this increase will create hardship for some customers, and we are simultaneously proposing an expanded low-income assistance program, funded separately from this rate increase, to help offset the impact for qualifying households.'",
+      "logicChain": [
+        "6% rate increase justified by 22% rise in maintenance costs over 5 years -> utility explicitly acknowledges hardship for some customers -> proposes separately funded low-income assistance program -> increase justified with specific data, paired with a distinct hardship-mitigation measure"
+      ],
+      "logicChainSteps": [
+        "6% rate increase justified by 22% rise in maintenance costs over 5 years",
+        "utility explicitly acknowledges hardship for some customers",
+        "proposes separately funded low-income assistance program",
+        "increase justified with specific data, paired with a distinct hardship-mitigation measure"
+      ],
+      "conclusion": "The utility is proposing a rate increase justified by specific rising costs while also introducing a separate measure aimed at reducing the impact on lower-income customers.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The utility is proposing a rate increase justified by specific rising costs while also introducing a separate measure aimed at reducing the impact on lower-income customers.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The utility claims the rate increase will have no negative effect on any customers.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The low-income assistance program is being funded directly by this specific rate increase. There is nothing in how the passage presents the sequence of events that would call for treating this conclusion as only partly supported.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Infrastructure maintenance costs have decreased over the past five years.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The filing explicitly justifies the increase with specific cost data, explicitly acknowledges resulting hardship rather than denying it, and introduces a separately funded assistance program specifically designed to offset that acknowledged impact for qualifying households."
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L190_Q3_LEARN",
+      "level": 190,
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "techniqueTitle": "Validating Causal Progressions and Evidence Bridges",
+      "coreRule": "Beware of plausible-sounding distractions: if the text did not imply it, it is not a valid conclusion.",
+      "passage": "A tech startup's investor update read: 'User growth remains strong at 18 percent month-over-month, ahead of our projections. I want to be transparent, though, that our burn rate has also increased faster than user growth would suggest is necessary, largely due to infrastructure costs scaling less efficiently than we modeled. We're actively addressing this and expect to have a revised cost model to share next quarter.'",
+      "logicChain": [
+        "User growth: 18% month-over-month, ahead of projections -> founder transparently flags burn rate growing faster than growth would suggest necessary -> infrastructure costs scaling inefficiently -> actively addressing, revised model expected next quarter -> balanced update: strong growth paired with an acknowledged, still-unresolved cost issue"
+      ],
+      "logicChainSteps": [
+        "User growth: 18% month-over-month, ahead of projections",
+        "founder transparently flags burn rate growing faster than growth would suggest necessary",
+        "infrastructure costs scaling inefficiently",
+        "actively addressing, revised model expected next quarter",
+        "balanced update: strong growth paired with an acknowledged, still-unresolved cost issue"
+      ],
+      "conclusion": "While user growth is exceeding expectations, the company is being transparent about a related cost problem that isn't scaling as efficiently as anticipated.",
+      "goldenRule": "A valid conclusion is the natural destination of the premise chain; if any link breaks, the conclusion collapses.",
+      "candidatesDiagnosis": [
+        {
+          "option": "While user growth is exceeding expectations, the company is being transparent about a related cost problem that isn't scaling as efficiently as anticipated.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "User growth has fallen significantly behind the company's original projections.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The company denies any issue with how costs are scaling relative to growth.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The company has already fully resolved the infrastructure cost issue.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ],
+      "explanation": "The update genuinely reports strong, above-projection growth while explicitly and transparently flagging a related but distinct problem, inefficient cost scaling, and explicitly states this is still being addressed rather than already solved, showing a balanced, honest update rather than either pure good news or a hidden problem."
+    }
+  ]
+}

@@ -1,0 +1,1530 @@
+{
+  "gameType": "readingConclusion",
+  "phase": "practice",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "quests": [
+    {
+      "id": "RDG_READINGCONCLUSION_L31_Q1_PRACTICE",
+      "level": 31,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Last year, the marathon had 2,400 registered runners. This year, registration closed with 3,600 runners signed up, and organizers had to add a second starting wave to handle the crowd.",
+      "options": [
+        "Interest in the marathon declined compared to last year, based on the passage's account of what happened.",
+        "The marathon had the same number of runners as last year, according to the specific details given.",
+        "Interest in the marathon grew compared to last year.",
+        "The marathon was cancelled this year, given the way the passage frames things."
+      ],
+      "correctAnswer": "Interest in the marathon grew compared to last year.",
+      "hint": "Compare the two years' registration numbers.",
+      "explanation": "Registration rose from 2,400 to 3,600 runners, and a second wave was needed, both showing clear growth in interest compared to last year.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Last year: 2,400 runners -> this year: 3,600 runners -> second wave added -> interest increased"
+      ],
+      "logicChainSteps": [
+        "Last year: 2,400 runners",
+        "this year: 3,600 runners",
+        "second wave added",
+        "interest increased"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Interest in the marathon declined compared to last year, based on the passage's account of what happened.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The marathon had the same number of runners as last year, according to the specific details given.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Interest in the marathon grew compared to last year.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The marathon was cancelled this year, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L31_Q2_PRACTICE",
+      "level": 31,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Five years ago, the small clinic saw about twenty patients a day. Today, with the same number of doctors on staff, it sees closer to forty-five patients daily, and the waiting room is rarely empty.",
+      "options": [
+        "The clinic's patient load has grown significantly over five years.",
+        "The clinic's patient load has shrunk over five years, as the situation is described here.",
+        "The clinic now has far more doctors than before, according to the account given.",
+        "The clinic sees fewer patients than it did five years ago, according to how the passage describes the situation."
+      ],
+      "correctAnswer": "The clinic's patient load has grown significantly over five years.",
+      "hint": "Compare the daily patient numbers from five years ago to today.",
+      "explanation": "Daily patients more than doubled, from about twenty to forty-five, even with the same staff size, showing a significant growth in patient load.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Five years ago: 20 patients/day -> today: 45 patients/day -> same staff size -> patient load has grown significantly"
+      ],
+      "logicChainSteps": [
+        "Five years ago: 20 patients/day",
+        "today: 45 patients/day",
+        "same staff size",
+        "patient load has grown significantly"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The clinic's patient load has grown significantly over five years.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The clinic's patient load has shrunk over five years, as the situation is described here.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The clinic now has far more doctors than before, according to the account given.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The clinic sees fewer patients than it did five years ago, according to how the passage describes the situation.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L31_Q3_PRACTICE",
+      "level": 31,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "In its first month, the food truck sold about 30 meals a day. By its sixth month at the same location, it was regularly selling over 100 meals a day, and a line often formed before opening.",
+      "options": [
+        "The food truck's business has grown steadily since it opened.",
+        "The food truck's business has declined since it opened.",
+        "The food truck sells the same number of meals now as it did at first, according to how the passage describes the situation.",
+        "The food truck closed after its first month."
+      ],
+      "correctAnswer": "The food truck's business has grown steadily since it opened.",
+      "hint": "Compare the daily sales numbers from the first month to the sixth month.",
+      "explanation": "Daily sales tripled from about 30 to over 100 meals, and a line now forms early, showing steady business growth since opening.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Month 1: ~30 meals/day -> month 6: 100+ meals/day -> line forms before opening -> business has grown steadily"
+      ],
+      "logicChainSteps": [
+        "Month 1: ~30 meals/day",
+        "month 6: 100+ meals/day",
+        "line forms before opening",
+        "business has grown steadily"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The food truck's business has grown steadily since it opened.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The food truck's business has declined since it opened.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The food truck sells the same number of meals now as it did at first, according to how the passage describes the situation.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The food truck closed after its first month.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L32_Q1_PRACTICE",
+      "level": 32,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Before switching to a standing desk, Dario reported neck pain nearly every afternoon. Three months after the switch, he says the afternoon pain has become rare, though it still appears occasionally after long meetings.",
+      "options": [
+        "Dario's afternoon neck pain has become more frequent since switching desks, based on what the passage actually says.",
+        "Dario no longer experiences any neck pain at all.",
+        "Dario's afternoon neck pain has become less frequent since switching desks.",
+        "Dario switched back to his old desk after one week, given how the events unfolded."
+      ],
+      "correctAnswer": "Dario's afternoon neck pain has become less frequent since switching desks.",
+      "hint": "Compare how often Dario experienced pain before and after the switch.",
+      "explanation": "Pain that used to occur nearly every afternoon is now rare, though not entirely gone, showing a clear reduction in frequency rather than a complete disappearance.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Before: near-daily afternoon pain -> after: rare pain, occasional after meetings -> frequency decreased but did not vanish"
+      ],
+      "logicChainSteps": [
+        "Before: near-daily afternoon pain",
+        "after: rare pain, occasional after meetings",
+        "frequency decreased but did not vanish"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Dario's afternoon neck pain has become more frequent since switching desks, based on what the passage actually says.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Dario no longer experiences any neck pain at all.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Dario's afternoon neck pain has become less frequent since switching desks.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Dario switched back to his old desk after one week, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L32_Q2_PRACTICE",
+      "level": 32,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Two years ago, the neighborhood recycling program collected about 200 pounds of material per week. After the city added curbside pickup, weekly collections rose to nearly 800 pounds, though a few streets still show little participation.",
+      "options": [
+        "Curbside pickup decreased recycling collection overall. The passage offers no detail suggesting this changed over the period discussed.",
+        "Every street in the neighborhood now recycles at the same high rate, given how the events unfolded.",
+        "The recycling program was cancelled after curbside pickup began. The passage gives no indication that this varied across the circumstances described.",
+        "Curbside pickup significantly increased recycling collection overall, though not in every area."
+      ],
+      "correctAnswer": "Curbside pickup significantly increased recycling collection overall, though not in every area.",
+      "hint": "Compare the overall totals while also noting the detail about certain streets.",
+      "explanation": "Weekly totals quadrupled after curbside pickup began, showing a large overall increase, but the mention of low participation on some streets shows the improvement was not uniform everywhere.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Before: 200 lbs/week -> after curbside pickup: 800 lbs/week -> some streets still low -> overall increase, but uneven"
+      ],
+      "logicChainSteps": [
+        "Before: 200 lbs/week",
+        "after curbside pickup: 800 lbs/week",
+        "some streets still low",
+        "overall increase, but uneven"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Curbside pickup decreased recycling collection overall. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Every street in the neighborhood now recycles at the same high rate, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The recycling program was cancelled after curbside pickup began. The passage gives no indication that this varied across the circumstances described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Curbside pickup significantly increased recycling collection overall, though not in every area.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L32_Q3_PRACTICE",
+      "level": 32,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Before the museum added audio guides, the average visitor stayed for about 40 minutes. After the guides were introduced, average visit time rose to 75 minutes, though staff noted the increase was smaller on days with large school groups.",
+      "options": [
+        "Audio guides generally increased visit times, but the effect varied by day.",
+        "Audio guides decreased visit times on every day.",
+        "Audio guides had no effect on how long visitors stayed, according to the account given.",
+        "The museum removed the audio guides after visitors complained, based on what the passage actually says."
+      ],
+      "correctAnswer": "Audio guides generally increased visit times, but the effect varied by day.",
+      "hint": "Compare the average times while also noting the detail about school group days.",
+      "explanation": "Average visit time nearly doubled after audio guides were added, but the smaller increase on school group days shows the effect was not the same in every situation.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Before: 40 min average -> after: 75 min average -> smaller effect on school group days -> increase generally, with variation"
+      ],
+      "logicChainSteps": [
+        "Before: 40 min average",
+        "after: 75 min average",
+        "smaller effect on school group days",
+        "increase generally, with variation"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Audio guides generally increased visit times, but the effect varied by day.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Audio guides decreased visit times on every day.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Audio guides had no effect on how long visitors stayed, according to the account given.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The museum removed the audio guides after visitors complained, based on what the passage actually says.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L33_Q1_PRACTICE",
+      "level": 33,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Ten years ago, most deliveries to the rural town took three days by mail truck. Today, with a new regional distribution center, most packages arrive within 24 hours.",
+      "options": [
+        "Delivery times to the town have gotten worse over ten years.",
+        "Delivery times to the town have stayed exactly the same.",
+        "Delivery times to the town have improved considerably over ten years.",
+        "The town no longer receives any deliveries."
+      ],
+      "correctAnswer": "Delivery times to the town have improved considerably over ten years.",
+      "hint": "Compare the delivery times from ten years ago to today.",
+      "explanation": "Delivery time dropped from three days to within 24 hours after a new distribution center was added, showing a considerable improvement over the decade.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Ten years ago: 3-day delivery -> today: under 24 hours -> new distribution center -> delivery times improved considerably"
+      ],
+      "logicChainSteps": [
+        "Ten years ago: 3-day delivery",
+        "today: under 24 hours",
+        "new distribution center",
+        "delivery times improved considerably"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Delivery times to the town have gotten worse over ten years.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Delivery times to the town have stayed exactly the same.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Delivery times to the town have improved considerably over ten years.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The town no longer receives any deliveries.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L33_Q2_PRACTICE",
+      "level": 33,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "In its early seasons, the community theater group performed to audiences of about fifty people per show. This season, most performances are drawing close to 300 people, and additional seating has been added twice.",
+      "options": [
+        "The theater group's audience has shrunk substantially since its early seasons.",
+        "The theater group now performs to the same size audience as before.",
+        "The theater group stopped performing after its early seasons.",
+        "The theater group's audience has grown substantially since its early seasons."
+      ],
+      "correctAnswer": "The theater group's audience has grown substantially since its early seasons.",
+      "hint": "Compare the early audience sizes to this season's numbers.",
+      "explanation": "Audience size grew from about fifty to nearly 300 people, and seating had to be expanded twice, showing substantial growth since the group's early seasons.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Early seasons: ~50 people/show -> this season: ~300 people/show -> seating expanded twice -> audience grew substantially"
+      ],
+      "logicChainSteps": [
+        "Early seasons: ~50 people/show",
+        "this season: ~300 people/show",
+        "seating expanded twice",
+        "audience grew substantially"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The theater group's audience has shrunk substantially since its early seasons.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The theater group now performs to the same size audience as before.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The theater group stopped performing after its early seasons.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The theater group's audience has grown substantially since its early seasons.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L33_Q3_PRACTICE",
+      "level": 33,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "When the app first launched, users spent an average of two minutes per session before closing it. After a redesign focused on simplifying navigation, the average session length rose to eleven minutes.",
+      "options": [
+        "The redesign appears to have made users leave the app faster.",
+        "Session length stayed exactly the same after the redesign.",
+        "The app was removed from stores after the redesign.",
+        "The redesign appears to have made users spend more time in the app."
+      ],
+      "correctAnswer": "The redesign appears to have made users spend more time in the app.",
+      "hint": "Compare the average session times before and after the redesign.",
+      "explanation": "Average session length increased more than fivefold after the redesign focused on easier navigation, supporting the idea that the change kept users engaged longer.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Before redesign: 2-minute average session -> after redesign: 11-minute average session -> redesign appears to have increased engagement"
+      ],
+      "logicChainSteps": [
+        "Before redesign: 2-minute average session",
+        "after redesign: 11-minute average session",
+        "redesign appears to have increased engagement"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The redesign appears to have made users leave the app faster.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Session length stayed exactly the same after the redesign.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The app was removed from stores after the redesign.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The redesign appears to have made users spend more time in the app.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L34_Q1_PRACTICE",
+      "level": 34,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Before the factory installed noise-reducing equipment, nearby residents filed an average of twelve noise complaints per month. In the two years since, complaints have dropped to about one per month, though a few residents still mention occasional loud nights.",
+      "options": [
+        "The noise-reducing equipment greatly reduced complaints, though not entirely.",
+        "The noise-reducing equipment increased complaints overall.",
+        "Complaints stopped completely after the equipment was installed, based on what the passage actually says.",
+        "The factory removed the noise-reducing equipment after one year."
+      ],
+      "correctAnswer": "The noise-reducing equipment greatly reduced complaints, though not entirely.",
+      "hint": "Compare the complaint numbers while noting the detail about occasional loud nights.",
+      "explanation": "Complaints dropped from twelve to about one per month, a major reduction, but the mention of occasional loud nights shows the problem was not fully eliminated.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Before: 12 complaints/month -> after: ~1 complaint/month -> occasional loud nights still mentioned -> major reduction, not complete elimination"
+      ],
+      "logicChainSteps": [
+        "Before: 12 complaints/month",
+        "after: ~1 complaint/month",
+        "occasional loud nights still mentioned",
+        "major reduction, not complete elimination"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The noise-reducing equipment greatly reduced complaints, though not entirely.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The noise-reducing equipment increased complaints overall.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Complaints stopped completely after the equipment was installed, based on what the passage actually says.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The factory removed the noise-reducing equipment after one year.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L34_Q2_PRACTICE",
+      "level": 34,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Three years ago, the small publishing house released about six new titles a year. After partnering with a distribution company, they now release around eighteen titles a year, though their revenue per title has stayed roughly the same.",
+      "options": [
+        "The publishing house is now releasing far fewer titles than before, according to the account given.",
+        "The publishing house's revenue per title has increased dramatically, according to the specific details given.",
+        "The distribution partnership ended after one year, based on the passage's account of what happened.",
+        "The publishing house is now releasing far more titles per year than before."
+      ],
+      "correctAnswer": "The publishing house is now releasing far more titles per year than before.",
+      "hint": "Compare the number of titles released before and after the partnership, and note what stayed the same.",
+      "explanation": "Titles released per year tripled after the distribution partnership began, though revenue per title staying steady shows the growth was in volume, not necessarily in per-title profit.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Before partnership: ~6 titles/year -> after: ~18 titles/year -> revenue per title roughly unchanged -> growth was in volume of titles"
+      ],
+      "logicChainSteps": [
+        "Before partnership: ~6 titles/year",
+        "after: ~18 titles/year",
+        "revenue per title roughly unchanged",
+        "growth was in volume of titles"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The publishing house is now releasing far fewer titles than before, according to the account given.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The publishing house's revenue per title has increased dramatically, according to the specific details given.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The distribution partnership ended after one year, based on the passage's account of what happened.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The publishing house is now releasing far more titles per year than before.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L34_Q3_PRACTICE",
+      "level": 34,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Before the school added a peer-tutoring program, the average student in struggling math classes scored 62 percent on midterm exams. After one semester with peer tutoring, the average rose to 74 percent, though a handful of students showed little change.",
+      "options": [
+        "Peer tutoring appears to have raised average scores, though results varied among students.",
+        "Peer tutoring lowered average scores for most students. Such a pattern would remain constant throughout the scenario being described.",
+        "Every student improved by the exact same amount.",
+        "The school cancelled the peer-tutoring program after one semester, as the passage lays out the sequence of events."
+      ],
+      "correctAnswer": "Peer tutoring appears to have raised average scores, though results varied among students.",
+      "hint": "Compare the average scores while noting the detail about students who showed little change.",
+      "explanation": "The average score rose from 62 to 74 percent after peer tutoring began, but the note about some students showing little change shows the improvement was not identical for everyone.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Before: 62% average -> after one semester: 74% average -> some students show little change -> average rose, but results varied"
+      ],
+      "logicChainSteps": [
+        "Before: 62% average",
+        "after one semester: 74% average",
+        "some students show little change",
+        "average rose, but results varied"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Peer tutoring appears to have raised average scores, though results varied among students.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Peer tutoring lowered average scores for most students. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Every student improved by the exact same amount.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The school cancelled the peer-tutoring program after one semester, as the passage lays out the sequence of events.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L35_Q1_PRACTICE",
+      "level": 35,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Under the old scheduling system, warehouse workers averaged 45 minutes of unpaid overtime per week due to shift overlaps. After a new scheduling software was introduced, that average dropped to under five minutes.",
+      "options": [
+        "The new scheduling software increased unpaid overtime.",
+        "Unpaid overtime stayed exactly the same after the change.",
+        "The warehouse stopped tracking overtime after the software was introduced.",
+        "The new scheduling software greatly reduced unpaid overtime."
+      ],
+      "correctAnswer": "The new scheduling software greatly reduced unpaid overtime.",
+      "hint": "Compare the average unpaid overtime before and after the software was introduced.",
+      "explanation": "Unpaid overtime dropped from 45 minutes to under five minutes per week after the new software was introduced, showing a major improvement in scheduling accuracy.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Old system: 45 min unpaid overtime/week -> new software: under 5 min/week -> scheduling accuracy greatly improved"
+      ],
+      "logicChainSteps": [
+        "Old system: 45 min unpaid overtime/week",
+        "new software: under 5 min/week",
+        "scheduling accuracy greatly improved"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The new scheduling software increased unpaid overtime.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Unpaid overtime stayed exactly the same after the change.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The warehouse stopped tracking overtime after the software was introduced.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The new scheduling software greatly reduced unpaid overtime.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L35_Q2_PRACTICE",
+      "level": 35,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Before the city widened the bike lanes downtown, bicycle commuting made up about 4 percent of downtown trips. After the widening project finished, that share rose to 11 percent within a year, while the number of cars entering downtown stayed about the same.",
+      "options": [
+        "The wider bike lanes appear linked to fewer people commuting by bicycle.",
+        "The wider bike lanes appear linked to more people commuting by bicycle.",
+        "Car traffic downtown increased sharply after the bike lanes were widened, based on the details the passage provides.",
+        "Bicycle commuting stayed at 4 percent after the project finished."
+      ],
+      "correctAnswer": "The wider bike lanes appear linked to more people commuting by bicycle.",
+      "hint": "Compare bicycle commuting rates before and after the lanes were widened, and note the detail about car traffic.",
+      "explanation": "Bicycle commuting nearly tripled after the lanes were widened, while car traffic held steady, supporting a link between the wider lanes and more cycling rather than a broader shift away from cars.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Before: 4% bike commuting -> after widening: 11% bike commuting -> car traffic unchanged -> wider lanes appear linked to more cycling"
+      ],
+      "logicChainSteps": [
+        "Before: 4% bike commuting",
+        "after widening: 11% bike commuting",
+        "car traffic unchanged",
+        "wider lanes appear linked to more cycling"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The wider bike lanes appear linked to fewer people commuting by bicycle.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The wider bike lanes appear linked to more people commuting by bicycle.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Car traffic downtown increased sharply after the bike lanes were widened, based on the details the passage provides.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Bicycle commuting stayed at 4 percent after the project finished.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L35_Q3_PRACTICE",
+      "level": 35,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "In the year before a new fire code was enforced, the city recorded nine building fires caused by faulty wiring. In the year after enforcement began, that number fell to two, while fires from other causes stayed about the same.",
+      "options": [
+        "The new fire code appears to have specifically reduced wiring-related fires.",
+        "The new fire code appears to have increased wiring-related fires, according to how the passage describes the situation.",
+        "The new fire code reduced all types of fires equally, based on the details the passage provides.",
+        "The city stopped enforcing the fire code after one year, given the way the passage frames things."
+      ],
+      "correctAnswer": "The new fire code appears to have specifically reduced wiring-related fires.",
+      "hint": "Compare the wiring-related fire numbers, and note that other fire causes stayed steady.",
+      "explanation": "Wiring-related fires dropped sharply after the new code began, while fires from other causes remained unchanged, pointing specifically to the code's effect on wiring safety rather than fire prevention overall.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Before code: 9 wiring fires -> after code: 2 wiring fires -> other fire causes unchanged -> code specifically reduced wiring fires"
+      ],
+      "logicChainSteps": [
+        "Before code: 9 wiring fires",
+        "after code: 2 wiring fires",
+        "other fire causes unchanged",
+        "code specifically reduced wiring fires"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The new fire code appears to have specifically reduced wiring-related fires.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The new fire code appears to have increased wiring-related fires, according to how the passage describes the situation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The new fire code reduced all types of fires equally, based on the details the passage provides.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The city stopped enforcing the fire code after one year, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L36_Q1_PRACTICE",
+      "level": 36,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Five years ago, the orchestra's subscription base was mostly listeners over age 60. This season's subscriber survey shows nearly 40 percent of subscribers are now under 40, following the addition of a modern music series two years ago.",
+      "options": [
+        "The orchestra's audience has become noticeably younger since adding the modern music series.",
+        "The orchestra's audience has become noticeably older since adding the series, given how the events unfolded.",
+        "The orchestra's audience age has stayed exactly the same. This would remain the case regardless of any other detail in the passage.",
+        "The orchestra cancelled the modern music series after one season, according to the specific details given."
+      ],
+      "correctAnswer": "The orchestra's audience has become noticeably younger since adding the modern music series.",
+      "hint": "Compare the age makeup of the audience before and after the new series began.",
+      "explanation": "A subscriber base once mostly over 60 now includes nearly 40 percent under 40, and this shift followed the addition of a modern music series, suggesting the audience has grown younger.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Five years ago: mostly subscribers over 60 -> modern series added -> now: ~40% under 40 -> audience has become younger"
+      ],
+      "logicChainSteps": [
+        "Five years ago: mostly subscribers over 60",
+        "modern series added",
+        "now: ~40% under 40",
+        "audience has become younger"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The orchestra's audience has become noticeably younger since adding the modern music series.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The orchestra's audience has become noticeably older since adding the series, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The orchestra's audience age has stayed exactly the same. This would remain the case regardless of any other detail in the passage.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The orchestra cancelled the modern music series after one season, according to the specific details given.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L36_Q2_PRACTICE",
+      "level": 36,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Before a nonprofit switched its donation page to a mobile-friendly design, only 15 percent of donations came from phones. A year after the redesign, phone donations made up 52 percent of all gifts, while total donation amounts also grew.",
+      "options": [
+        "The mobile-friendly redesign appears linked to fewer donations coming from phones.",
+        "Total donation amounts fell after the redesign.",
+        "The nonprofit reverted to its old donation page after the redesign.",
+        "The mobile-friendly redesign appears linked to more donations coming from phones."
+      ],
+      "correctAnswer": "The mobile-friendly redesign appears linked to more donations coming from phones.",
+      "hint": "Compare the share of phone donations before and after the redesign.",
+      "explanation": "Phone donations grew from 15 to 52 percent of all gifts after the mobile-friendly redesign, and total donations also increased, supporting a link between the redesign and more phone-based giving.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Before redesign: 15% donations from phones -> after redesign: 52% from phones -> total donations also grew -> redesign appears linked to more phone donations"
+      ],
+      "logicChainSteps": [
+        "Before redesign: 15% donations from phones",
+        "after redesign: 52% from phones",
+        "total donations also grew",
+        "redesign appears linked to more phone donations"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The mobile-friendly redesign appears linked to fewer donations coming from phones.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Total donation amounts fell after the redesign.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The nonprofit reverted to its old donation page after the redesign.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The mobile-friendly redesign appears linked to more donations coming from phones.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L36_Q3_PRACTICE",
+      "level": 36,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Before the library began offering e-book loans, print book checkouts averaged 1,200 per month. Five years after e-books were introduced, print checkouts had dropped to about 900 per month, while e-book checkouts reached 1,500 per month.",
+      "options": [
+        "Total checkouts at the library have grown, even though print checkouts have declined.",
+        "Total checkouts at the library have shrunk since e-books were introduced, according to the account given.",
+        "Print checkouts have grown since e-books were introduced.",
+        "The library stopped offering print books after adding e-books, as the passage presents the situation."
+      ],
+      "correctAnswer": "Total checkouts at the library have grown, even though print checkouts have declined.",
+      "hint": "Compare print checkouts alone with the combined total of print and e-book checkouts.",
+      "explanation": "Print checkouts fell from 1,200 to 900, but e-book checkouts added 1,500 more, meaning total checkouts actually rose even though print alone declined.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Before: 1,200 print checkouts/month -> after: 900 print + 1,500 e-book -> total checkouts increased despite the print decline"
+      ],
+      "logicChainSteps": [
+        "Before: 1,200 print checkouts/month",
+        "after: 900 print + 1,500 e-book",
+        "total checkouts increased despite the print decline"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Total checkouts at the library have grown, even though print checkouts have declined.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Total checkouts at the library have shrunk since e-books were introduced, according to the account given.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Print checkouts have grown since e-books were introduced.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The library stopped offering print books after adding e-books, as the passage presents the situation.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L37_Q1_PRACTICE",
+      "level": 37,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "At the start of the training program, new hires took an average of six weeks to reach full productivity. After the company introduced a mentorship pairing system, that average dropped to three and a half weeks, and turnover among new hires also declined.",
+      "options": [
+        "The mentorship pairing system appears linked to faster productivity and better retention.",
+        "The mentorship pairing system appears linked to slower productivity and worse retention, as the passage presents the situation.",
+        "Turnover among new hires increased after the mentorship system began.",
+        "The company removed the mentorship system after it was introduced."
+      ],
+      "correctAnswer": "The mentorship pairing system appears linked to faster productivity and better retention.",
+      "hint": "Compare productivity time and turnover before and after the mentorship system began.",
+      "explanation": "Time to full productivity was nearly cut in half, and turnover also declined after the mentorship system was introduced, supporting the system as linked to both improvements.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Before: 6 weeks to productivity -> after mentorship: 3.5 weeks, lower turnover -> system appears linked to both improvements"
+      ],
+      "logicChainSteps": [
+        "Before: 6 weeks to productivity",
+        "after mentorship: 3.5 weeks, lower turnover",
+        "system appears linked to both improvements"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The mentorship pairing system appears linked to faster productivity and better retention.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The mentorship pairing system appears linked to slower productivity and worse retention, as the passage presents the situation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Turnover among new hires increased after the mentorship system began.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The company removed the mentorship system after it was introduced.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L37_Q2_PRACTICE",
+      "level": 37,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Before a highway added a carpool lane, average commute times during rush hour were 52 minutes for solo drivers and 50 minutes for carpoolers. A year after the carpool lane opened, solo drivers averaged 58 minutes, while carpoolers averaged 34 minutes.",
+      "options": [
+        "The carpool lane appears to have benefited solo drivers the most.",
+        "Commute times became identical for both groups after the lane opened. This would remain the case regardless of any other detail in the passage.",
+        "The carpool lane appears to have specifically benefited carpoolers while solo drivers' commutes got slightly worse.",
+        "The carpool lane was removed a year after it opened."
+      ],
+      "correctAnswer": "The carpool lane appears to have specifically benefited carpoolers while solo drivers' commutes got slightly worse.",
+      "hint": "Compare the changes for solo drivers separately from the changes for carpoolers.",
+      "explanation": "Carpoolers saw a large drop in commute time while solo drivers' times slightly increased, showing the new lane's benefit was concentrated among carpoolers rather than all drivers.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Before: solo 52 min, carpool 50 min -> after lane: solo 58 min, carpool 34 min -> benefit concentrated among carpoolers"
+      ],
+      "logicChainSteps": [
+        "Before: solo 52 min, carpool 50 min",
+        "after lane: solo 58 min, carpool 34 min",
+        "benefit concentrated among carpoolers"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The carpool lane appears to have benefited solo drivers the most.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Commute times became identical for both groups after the lane opened. This would remain the case regardless of any other detail in the passage.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The carpool lane appears to have specifically benefited carpoolers while solo drivers' commutes got slightly worse.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The carpool lane was removed a year after it opened.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L37_Q3_PRACTICE",
+      "level": 37,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Before a clothing brand switched its size charts to include more body measurements, customer returns due to poor fit made up 30 percent of all returns. After the new size charts were published, fit-related returns fell to 12 percent, while returns for other reasons stayed about the same.",
+      "options": [
+        "The updated size charts appear to have specifically reduced fit-related returns.",
+        "The updated size charts appear to have increased fit-related returns, according to how the passage describes the situation.",
+        "The updated size charts reduced all types of returns equally, based on the details the passage provides.",
+        "The brand removed its size charts after customer complaints, given the way the passage frames things."
+      ],
+      "correctAnswer": "The updated size charts appear to have specifically reduced fit-related returns.",
+      "hint": "Compare the share of fit-related returns before and after the new size charts, and note the detail about other return reasons.",
+      "explanation": "Fit-related returns dropped sharply after the size charts were updated, while other return reasons stayed steady, pointing specifically to the size chart change as the reason for fewer fit-related returns.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Before: fit-related returns 30% -> after size chart update: 12% -> other return reasons unchanged -> update specifically addressed fit issues"
+      ],
+      "logicChainSteps": [
+        "Before: fit-related returns 30%",
+        "after size chart update: 12%",
+        "other return reasons unchanged",
+        "update specifically addressed fit issues"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The updated size charts appear to have specifically reduced fit-related returns.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The updated size charts appear to have increased fit-related returns, according to how the passage describes the situation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The updated size charts reduced all types of returns equally, based on the details the passage provides.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The brand removed its size charts after customer complaints, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L38_Q1_PRACTICE",
+      "level": 38,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "When the community center first opened its evening art classes, enrollment averaged eight students per session. After word spread through local schools, enrollment climbed to around twenty-five students per session, and the center added a second instructor.",
+      "options": [
+        "Interest in the evening art classes grew after word spread through local schools.",
+        "Interest in the evening art classes declined after word spread through local schools.",
+        "Enrollment stayed at eight students throughout the program.",
+        "The community center cancelled the evening art classes."
+      ],
+      "correctAnswer": "Interest in the evening art classes grew after word spread through local schools.",
+      "hint": "Compare enrollment numbers from when the classes started to after word spread.",
+      "explanation": "Enrollment more than tripled and a second instructor was added after word spread through schools, showing growing interest in the evening classes.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Classes start: 8 students/session -> word spreads through schools -> enrollment: ~25 students/session -> second instructor added -> interest grew"
+      ],
+      "logicChainSteps": [
+        "Classes start: 8 students/session",
+        "word spreads through schools",
+        "enrollment: ~25 students/session",
+        "second instructor added",
+        "interest grew"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Interest in the evening art classes grew after word spread through local schools.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Interest in the evening art classes declined after word spread through local schools.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Enrollment stayed at eight students throughout the program.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The community center cancelled the evening art classes.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L38_Q2_PRACTICE",
+      "level": 38,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Before a startup began offering remote work options, employee turnover was about 22 percent per year. Two years after remote work was introduced, turnover fell to 9 percent, though the company also raised salaries during that same period.",
+      "options": [
+        "Remote work definitely caused the entire drop in turnover by itself. This reading would hold true across the full sequence of events described.",
+        "Remote work had no possible connection to the drop in turnover. The passage's account gives no reason to think this differed at any stage.",
+        "Turnover increased after remote work was introduced. Nothing in the passage suggests this changed at any point during the period described.",
+        "Remote work may have contributed to lower turnover, though it was not the only change during that period."
+      ],
+      "correctAnswer": "Remote work may have contributed to lower turnover, though it was not the only change during that period.",
+      "hint": "Notice both changes mentioned during the same period and consider what each might imply.",
+      "explanation": "Turnover dropped significantly after remote work began, but since salaries also rose during that time, the passage supports remote work as a possible contributor rather than the sole cause.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Before: 22% turnover -> remote work introduced, salaries also raised -> after: 9% turnover -> remote work may have contributed, but not certainly alone"
+      ],
+      "logicChainSteps": [
+        "Before: 22% turnover",
+        "remote work introduced, salaries also raised",
+        "after: 9% turnover",
+        "remote work may have contributed, but not certainly alone"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Remote work definitely caused the entire drop in turnover by itself. This reading would hold true across the full sequence of events described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Remote work had no possible connection to the drop in turnover. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Turnover increased after remote work was introduced. Nothing in the passage suggests this changed at any point during the period described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Remote work may have contributed to lower turnover, though it was not the only change during that period.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L38_Q3_PRACTICE",
+      "level": 38,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Before a city installed water-efficient fixtures in public buildings, monthly water use averaged 2.1 million gallons. Eighteen months after installation, average monthly use had dropped to 1.4 million gallons, even as the number of public buildings in use grew by 10 percent.",
+      "options": [
+        "The water-efficient fixtures appear to have reduced water use despite more buildings being in operation.",
+        "The water-efficient fixtures appear to have increased water use. This would remain the case regardless of any other detail in the passage.",
+        "Water use stayed exactly the same despite the new fixtures.",
+        "The city removed the water-efficient fixtures after installation. This would be expected to hold across the entire situation as described."
+      ],
+      "correctAnswer": "The water-efficient fixtures appear to have reduced water use despite more buildings being in operation.",
+      "hint": "Compare the water use change while noting that the number of buildings actually grew.",
+      "explanation": "Water use fell by about a third even though more buildings were added, strengthening the case that the efficient fixtures were responsible for the reduction rather than fewer buildings being in use.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Before: 2.1M gallons/month -> buildings increase 10% -> after fixtures: 1.4M gallons/month -> fixtures likely drove the reduction despite growth"
+      ],
+      "logicChainSteps": [
+        "Before: 2.1M gallons/month",
+        "buildings increase 10%",
+        "after fixtures: 1.4M gallons/month",
+        "fixtures likely drove the reduction despite growth"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The water-efficient fixtures appear to have reduced water use despite more buildings being in operation.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The water-efficient fixtures appear to have increased water use. This would remain the case regardless of any other detail in the passage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Water use stayed exactly the same despite the new fixtures.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The city removed the water-efficient fixtures after installation. This would be expected to hold across the entire situation as described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L39_Q1_PRACTICE",
+      "level": 39,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "In its first year, the app-based tutoring service matched about 500 students with tutors monthly. By its third year, after expanding to include video sessions, monthly matches reached 4,000, though the company also faced a rise in customer complaints about tutor availability during peak hours.",
+      "options": [
+        "The tutoring service grew substantially, though the growth also created new challenges.",
+        "The tutoring service shrank substantially over three years.",
+        "The tutoring service had no complaints of any kind by its third year, as the situation is described here.",
+        "The company removed video sessions after complaints arose."
+      ],
+      "correctAnswer": "The tutoring service grew substantially, though the growth also created new challenges.",
+      "hint": "Compare the growth numbers with the detail about complaints during peak hours.",
+      "explanation": "Monthly matches grew eightfold, showing substantial growth, but the mention of complaints about tutor availability shows the expansion also brought new operational challenges.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Year 1: ~500 matches/month -> year 3 with video sessions: 4,000 matches/month -> complaints about availability rise -> growth came with new challenges"
+      ],
+      "logicChainSteps": [
+        "Year 1: ~500 matches/month",
+        "year 3 with video sessions: 4,000 matches/month",
+        "complaints about availability rise",
+        "growth came with new challenges"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The tutoring service grew substantially, though the growth also created new challenges.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The tutoring service shrank substantially over three years.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The tutoring service had no complaints of any kind by its third year, as the situation is described here.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The company removed video sessions after complaints arose.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L39_Q2_PRACTICE",
+      "level": 39,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Before a hospital switched to electronic patient records, nurses spent an average of 90 minutes per shift on paperwork. One year after the switch, that average dropped to 35 minutes, though nurses reported spending more time troubleshooting the new software during the first three months.",
+      "options": [
+        "Electronic records increased paperwork time overall.",
+        "Nurses had no difficulties at any point after the switch.",
+        "Electronic records reduced paperwork time overall, despite some early difficulties adjusting to the new system.",
+        "The hospital abandoned electronic records after three months. No part of the passage's account suggests otherwise."
+      ],
+      "correctAnswer": "Electronic records reduced paperwork time overall, despite some early difficulties adjusting to the new system.",
+      "hint": "Compare the long-term time savings with the detail about the first three months.",
+      "explanation": "Paperwork time dropped significantly over the full year, showing an overall improvement, but the early troubleshooting period shows the transition was not immediately smooth.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Before: 90 min paperwork/shift -> after one year: 35 min/shift -> early troubleshooting in first 3 months -> overall improvement despite rocky start"
+      ],
+      "logicChainSteps": [
+        "Before: 90 min paperwork/shift",
+        "after one year: 35 min/shift",
+        "early troubleshooting in first 3 months",
+        "overall improvement despite rocky start"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Electronic records increased paperwork time overall.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Nurses had no difficulties at any point after the switch.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Electronic records reduced paperwork time overall, despite some early difficulties adjusting to the new system.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The hospital abandoned electronic records after three months. No part of the passage's account suggests otherwise.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L39_Q3_PRACTICE",
+      "level": 39,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Before a nonprofit changed its volunteer sign-up process to a single-page online form, only 40 percent of people who started the sign-up actually completed it. After the change, completion rose to 85 percent, and the average number of new volunteers per month nearly tripled.",
+      "options": [
+        "Simplifying the sign-up process appears to have decreased volunteer completion. The passage offers no detail suggesting this changed over the period discussed.",
+        "The number of new volunteers stayed the same after the change.",
+        "Simplifying the sign-up process appears to have significantly increased volunteer completion and recruitment.",
+        "The nonprofit reverted to its old sign-up process after the change. The passage's account gives no reason to think this differed at any stage."
+      ],
+      "correctAnswer": "Simplifying the sign-up process appears to have significantly increased volunteer completion and recruitment.",
+      "hint": "Compare completion rates and new volunteer numbers before and after the form was simplified.",
+      "explanation": "Both completion rates and monthly new volunteers rose sharply after the sign-up process was simplified, supporting the change as a strong contributor to increased recruitment.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Before: 40% completion -> after simplified form: 85% completion, volunteers nearly triple -> simplification appears to have driven the increase"
+      ],
+      "logicChainSteps": [
+        "Before: 40% completion",
+        "after simplified form: 85% completion, volunteers nearly triple",
+        "simplification appears to have driven the increase"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Simplifying the sign-up process appears to have decreased volunteer completion. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The number of new volunteers stayed the same after the change.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Simplifying the sign-up process appears to have significantly increased volunteer completion and recruitment.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The nonprofit reverted to its old sign-up process after the change. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L40_Q1_PRACTICE",
+      "level": 40,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Before a small airline added extra legroom seating to its planes, customer satisfaction surveys averaged 3.1 out of 5 for comfort. After the change, comfort ratings rose to 4.2 out of 5, though on-time performance ratings dropped slightly during the same period due to longer boarding times.",
+      "options": [
+        "The extra legroom seating improved comfort ratings but may have added a slight trade-off in on-time performance.",
+        "The extra legroom seating improved both comfort and on-time performance equally. This pattern would hold steady across the entire situation the passage lays out.",
+        "The extra legroom seating had no effect on any customer ratings.",
+        "The airline removed the extra legroom seating after customer complaints. This would remain the case regardless of any other detail in the passage."
+      ],
+      "correctAnswer": "The extra legroom seating improved comfort ratings but may have added a slight trade-off in on-time performance.",
+      "hint": "Compare the comfort ratings with the separate detail about on-time performance.",
+      "explanation": "Comfort ratings rose clearly after the change, but the drop in on-time ratings due to longer boarding shows the improvement came with a trade-off rather than being purely positive.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Before: comfort 3.1/5 -> after legroom added: comfort 4.2/5, on-time ratings slightly drop -> improvement came with a trade-off"
+      ],
+      "logicChainSteps": [
+        "Before: comfort 3.1/5",
+        "after legroom added: comfort 4.2/5, on-time ratings slightly drop",
+        "improvement came with a trade-off"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The extra legroom seating improved comfort ratings but may have added a slight trade-off in on-time performance.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The extra legroom seating improved both comfort and on-time performance equally. This pattern would hold steady across the entire situation the passage lays out.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The extra legroom seating had no effect on any customer ratings.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The airline removed the extra legroom seating after customer complaints. This would remain the case regardless of any other detail in the passage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L40_Q2_PRACTICE",
+      "level": 40,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Ten years ago, the town's volunteer fire department responded to calls in an average of 11 minutes. After a new station was built closer to the town's growing residential area, average response time dropped to 6 minutes, even though the number of calls per year had also increased by 60 percent.",
+      "options": [
+        "The new station appears to have improved response times despite handling significantly more calls.",
+        "The new station appears to have worsened response times.",
+        "The number of calls per year decreased after the new station was built, according to how the passage describes the situation.",
+        "The fire department closed its original station without replacing it. The passage gives no indication that this varied across the circumstances described."
+      ],
+      "correctAnswer": "The new station appears to have improved response times despite handling significantly more calls.",
+      "hint": "Compare the response time change while noting that call volume actually grew.",
+      "explanation": "Response time nearly dropped in half even as the department handled 60 percent more calls, strengthening the case that the new station's location was responsible for the improvement.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Ten years ago: 11 min response, fewer calls -> new station built -> now: 6 min response, calls up 60% -> station location likely drove the improvement"
+      ],
+      "logicChainSteps": [
+        "Ten years ago: 11 min response, fewer calls",
+        "new station built",
+        "now: 6 min response, calls up 60%",
+        "station location likely drove the improvement"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The new station appears to have improved response times despite handling significantly more calls.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The new station appears to have worsened response times.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The number of calls per year decreased after the new station was built, according to how the passage describes the situation.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The fire department closed its original station without replacing it. The passage gives no indication that this varied across the circumstances described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L40_Q3_PRACTICE",
+      "level": 40,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Before a university redesigned its introductory chemistry course around small group labs, the course failure rate was 28 percent. Two years after the redesign, the failure rate fell to 14 percent, while enrollment in the course also grew as more students chose to major in chemistry.",
+      "options": [
+        "The redesigned course appears linked to more failures and less interest in chemistry.",
+        "The failure rate stayed exactly the same after the redesign.",
+        "The redesigned course appears linked to both fewer failures and growing interest in chemistry as a major.",
+        "The university reverted to the old course format after two years."
+      ],
+      "correctAnswer": "The redesigned course appears linked to both fewer failures and growing interest in chemistry as a major.",
+      "hint": "Compare the failure rate and enrollment trends before and after the redesign.",
+      "explanation": "The failure rate was cut in half, and rising enrollment in chemistry as a major followed the redesign, supporting a link between the new course format and both better outcomes and increased interest.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Before redesign: 28% failure rate -> after redesign: 14% failure rate, enrollment grows -> redesign appears linked to both outcomes"
+      ],
+      "logicChainSteps": [
+        "Before redesign: 28% failure rate",
+        "after redesign: 14% failure rate, enrollment grows",
+        "redesign appears linked to both outcomes"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The redesigned course appears linked to more failures and less interest in chemistry.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The failure rate stayed exactly the same after the redesign.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The redesigned course appears linked to both fewer failures and growing interest in chemistry as a major.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The university reverted to the old course format after two years.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1524 @@
+{
+  "gameType": "readingConclusion",
+  "phase": "practice",
+  "batchIndex": 3,
+  "levels": "21-30",
+  "quests": [
+    {
+      "id": "RDG_READINGCONCLUSION_L21_Q1_PRACTICE",
+      "level": 21,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "The warehouse temporarily switched to a new packing method last quarter. Since then, the number of damaged items reported by customers has dropped by nearly half.",
+      "options": [
+        "The new packing method increased the number of damaged items, given the way the passage frames things.",
+        "Customer reports about damaged items stopped completely.",
+        "The new packing method appears to have reduced damage to shipments.",
+        "The warehouse abandoned the new packing method immediately."
+      ],
+      "correctAnswer": "The new packing method appears to have reduced damage to shipments.",
+      "hint": "Compare the number of damage reports before and after the packing method changed.",
+      "explanation": "Damage reports fell by nearly half only after the packing method changed, which supports the idea that the new method is responsible for the improvement.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Packing method changed -> damage reports drop by half -> change appears linked to fewer damaged shipments"
+      ],
+      "logicChainSteps": [
+        "Packing method changed",
+        "damage reports drop by half",
+        "change appears linked to fewer damaged shipments"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The new packing method increased the number of damaged items, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Customer reports about damaged items stopped completely.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The new packing method appears to have reduced damage to shipments.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The warehouse abandoned the new packing method immediately.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L21_Q2_PRACTICE",
+      "level": 21,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city intersection had three accidents in six months. After traffic engineers installed a new left-turn signal, the intersection went eight months without a single accident.",
+      "options": [
+        "The new signal made the intersection more dangerous.",
+        "The intersection was closed after the signal was installed, based on the details the passage provides.",
+        "Accidents at the intersection increased after the signal was added.",
+        "The new signal likely made the intersection safer."
+      ],
+      "correctAnswer": "The new signal likely made the intersection safer.",
+      "hint": "Compare accident frequency before and after the signal was installed.",
+      "explanation": "Frequent accidents stopped happening after the new signal was installed, which supports the conclusion that the signal improved safety at the intersection.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Three accidents in six months -> left-turn signal installed -> zero accidents in following eight months -> signal likely improved safety"
+      ],
+      "logicChainSteps": [
+        "Three accidents in six months",
+        "left-turn signal installed",
+        "zero accidents in following eight months",
+        "signal likely improved safety"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The new signal made the intersection more dangerous.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The intersection was closed after the signal was installed, based on the details the passage provides.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Accidents at the intersection increased after the signal was added.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The new signal likely made the intersection safer.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L21_Q3_PRACTICE",
+      "level": 21,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "The call center reduced average wait times after redesigning its phone menu to route callers directly to the right department. Customer satisfaction scores rose the following month.",
+      "options": [
+        "The redesigned phone menu caused satisfaction scores to fall.",
+        "Wait times increased after the redesign.",
+        "The redesigned phone menu may have contributed to higher satisfaction scores.",
+        "Customer satisfaction scores were unrelated to wait times."
+      ],
+      "correctAnswer": "The redesigned phone menu may have contributed to higher satisfaction scores.",
+      "hint": "Look at what changed in the call routing and what happened to satisfaction scores afterward.",
+      "explanation": "Shorter wait times followed the menu redesign, and satisfaction scores rose the next month, suggesting the redesign played a role in the improvement.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Phone menu redesigned -> wait times drop -> satisfaction scores rise next month -> redesign may have contributed"
+      ],
+      "logicChainSteps": [
+        "Phone menu redesigned",
+        "wait times drop",
+        "satisfaction scores rise next month",
+        "redesign may have contributed"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The redesigned phone menu caused satisfaction scores to fall.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Wait times increased after the redesign.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The redesigned phone menu may have contributed to higher satisfaction scores.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Customer satisfaction scores were unrelated to wait times.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L22_Q1_PRACTICE",
+      "level": 22,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A local river's fish population had been declining for years. After a factory upstream closed and stopped releasing wastewater, biologists recorded a steady increase in fish counts over the next two years.",
+      "options": [
+        "The factory's closure caused the fish population to decline further, as the passage lays out the sequence of events.",
+        "The fish population had nothing to do with the factory.",
+        "The factory's closure may have contributed to the recovery of the fish population.",
+        "Fish counts stayed exactly the same after the factory closed, as the situation is described here."
+      ],
+      "correctAnswer": "The factory's closure may have contributed to the recovery of the fish population.",
+      "hint": "Notice what changed upstream right before the fish counts began rising.",
+      "explanation": "Fish counts began climbing only after the polluting factory closed, which supports the idea that removing the wastewater source helped the population recover.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Factory releases wastewater -> fish decline -> factory closes -> fish counts rise over two years -> closure likely helped recovery"
+      ],
+      "logicChainSteps": [
+        "Factory releases wastewater",
+        "fish decline",
+        "factory closes",
+        "fish counts rise over two years",
+        "closure likely helped recovery"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The factory's closure caused the fish population to decline further, as the passage lays out the sequence of events.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The fish population had nothing to do with the factory.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The factory's closure may have contributed to the recovery of the fish population.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Fish counts stayed exactly the same after the factory closed, as the situation is described here.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L22_Q2_PRACTICE",
+      "level": 22,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A school introduced a ten-minute recess break in the middle of long afternoon classes. Teachers later reported that students seemed more attentive during the last class period than before the break was added.",
+      "options": [
+        "The added recess break may have improved students' attentiveness.",
+        "The recess break made students less attentive overall, according to how the passage describes the situation.",
+        "Teachers reported no change in student attentiveness.",
+        "The school removed the recess break after one week."
+      ],
+      "correctAnswer": "The added recess break may have improved students' attentiveness.",
+      "hint": "Compare student attentiveness before and after the recess break was introduced.",
+      "explanation": "Attentiveness in the last class period improved after the recess break was added, suggesting the short break helped students refocus for the rest of the day.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Recess break added mid-afternoon -> attentiveness improves in last class period -> break may explain the improvement"
+      ],
+      "logicChainSteps": [
+        "Recess break added mid-afternoon",
+        "attentiveness improves in last class period",
+        "break may explain the improvement"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The added recess break may have improved students' attentiveness.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The recess break made students less attentive overall, according to how the passage describes the situation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Teachers reported no change in student attentiveness.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The school removed the recess break after one week.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L22_Q3_PRACTICE",
+      "level": 22,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "After a grocery chain rearranged its produce section to place fruit near the entrance instead of at the back, weekly fruit sales rose across all its stores.",
+      "options": [
+        "Placing fruit near the entrance decreased fruit sales, based on the details the passage provides.",
+        "Fruit sales stayed the same regardless of placement.",
+        "Placing fruit near the entrance likely increased fruit sales.",
+        "The grocery chain stopped selling fruit after the change, according to the specific details given."
+      ],
+      "correctAnswer": "Placing fruit near the entrance likely increased fruit sales.",
+      "hint": "Compare fruit sales before and after the produce section was rearranged.",
+      "explanation": "Fruit sales rose across all stores right after fruit was moved to a more visible location, supporting the idea that the placement change boosted sales.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Fruit moved near entrance -> weekly sales rise across stores -> placement change likely boosted sales"
+      ],
+      "logicChainSteps": [
+        "Fruit moved near entrance",
+        "weekly sales rise across stores",
+        "placement change likely boosted sales"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Placing fruit near the entrance decreased fruit sales, based on the details the passage provides.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Fruit sales stayed the same regardless of placement.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Placing fruit near the entrance likely increased fruit sales.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The grocery chain stopped selling fruit after the change, according to the specific details given.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L23_Q1_PRACTICE",
+      "level": 23,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Traffic near the stadium was unusually heavy on Saturday. A concert had just ended at the arena next door, and both venues share the same parking garage and exit road.",
+      "options": [
+        "The traffic had nothing to do with the concert, according to the account given.",
+        "The stadium and the arena share no roads at all, based on what the passage actually says.",
+        "Traffic near the stadium was lighter than usual that day, given the way the passage frames things.",
+        "The concert's ending likely contributed to the heavy traffic."
+      ],
+      "correctAnswer": "The concert's ending likely contributed to the heavy traffic.",
+      "hint": "Consider what the shared parking garage and exit road suggest about the traffic's cause.",
+      "explanation": "Heavy traffic appeared right as a concert ended nearby, and both venues share exits, which supports the concert as a likely contributor to the congestion.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Concert ends nearby -> shared parking and exit road -> heavy traffic near stadium -> concert likely contributed"
+      ],
+      "logicChainSteps": [
+        "Concert ends nearby",
+        "shared parking and exit road",
+        "heavy traffic near stadium",
+        "concert likely contributed"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The traffic had nothing to do with the concert, according to the account given.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The stadium and the arena share no roads at all, based on what the passage actually says.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Traffic near the stadium was lighter than usual that day, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The concert's ending likely contributed to the heavy traffic.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L23_Q2_PRACTICE",
+      "level": 23,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A bakery's sourdough bread sales dropped sharply the same week a new bakery opened two blocks away offering a similar loaf at a lower price.",
+      "options": [
+        "The new bakery had no effect on sourdough sales, given the way the passage frames things.",
+        "Sourdough bread sales increased that week, based on what the passage actually says.",
+        "The new bakery's opening may have drawn some customers away.",
+        "The original bakery stopped making sourdough bread, based on the passage's account of what happened."
+      ],
+      "correctAnswer": "The new bakery's opening may have drawn some customers away.",
+      "hint": "Consider what changed nearby right before the sales drop.",
+      "explanation": "Sales fell in the same week a competing bakery opened with a similar, cheaper product, suggesting some customers may have shifted their purchases there.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "New bakery opens with cheaper similar bread -> sourdough sales drop that week -> new competitor likely drew customers away"
+      ],
+      "logicChainSteps": [
+        "New bakery opens with cheaper similar bread",
+        "sourdough sales drop that week",
+        "new competitor likely drew customers away"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The new bakery had no effect on sourdough sales, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Sourdough bread sales increased that week, based on what the passage actually says.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The new bakery's opening may have drawn some customers away.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The original bakery stopped making sourdough bread, based on the passage's account of what happened.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L23_Q3_PRACTICE",
+      "level": 23,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A greenhouse switched its grow lights from standard bulbs to LED lights to save on electricity. The following season, several plant varieties grew noticeably taller than in previous years.",
+      "options": [
+        "The new LED lights may have contributed to the taller plant growth.",
+        "The LED lights stunted the plants' growth.",
+        "Plant height stayed exactly the same after the switch, based on the passage's account of what happened.",
+        "The greenhouse removed all its grow lights that season, according to the account given."
+      ],
+      "correctAnswer": "The new LED lights may have contributed to the taller plant growth.",
+      "hint": "Notice what changed in the greenhouse right before the plants grew taller.",
+      "explanation": "Taller growth appeared in the season right after the lights were switched, which supports the LED lights as a possible reason for the change, though other factors could also play a role.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Grow lights switched to LED -> plants grow taller next season -> lighting change may have contributed"
+      ],
+      "logicChainSteps": [
+        "Grow lights switched to LED",
+        "plants grow taller next season",
+        "lighting change may have contributed"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The new LED lights may have contributed to the taller plant growth.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The LED lights stunted the plants' growth.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Plant height stayed exactly the same after the switch, based on the passage's account of what happened.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The greenhouse removed all its grow lights that season, according to the account given.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L24_Q1_PRACTICE",
+      "level": 24,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's downtown had struggled with empty storefronts for years. After the city reduced parking fees near the shopping district, several previously vacant shops reopened within six months.",
+      "options": [
+        "Lower parking fees caused more shops to close.",
+        "The number of vacant storefronts increased after the fee change.",
+        "Lower parking fees may have encouraged more shoppers and new businesses.",
+        "Parking fees had no connection to the shopping district's activity."
+      ],
+      "correctAnswer": "Lower parking fees may have encouraged more shoppers and new businesses.",
+      "hint": "Notice what changed about parking right before the vacant shops began reopening.",
+      "explanation": "Vacant shops began reopening only after parking fees were lowered, suggesting easier, cheaper parking may have brought in more shoppers and encouraged new businesses.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Parking fees reduced -> more foot traffic likely -> vacant shops reopen within six months -> fee change may have helped"
+      ],
+      "logicChainSteps": [
+        "Parking fees reduced",
+        "more foot traffic likely",
+        "vacant shops reopen within six months",
+        "fee change may have helped"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Lower parking fees caused more shops to close.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The number of vacant storefronts increased after the fee change.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Lower parking fees may have encouraged more shoppers and new businesses.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Parking fees had no connection to the shopping district's activity.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L24_Q2_PRACTICE",
+      "level": 24,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A hospital introduced a mandatory hand-washing checkpoint at every ward entrance. Over the following year, the rate of hospital-acquired infections fell noticeably compared to the year before.",
+      "options": [
+        "The hand-washing checkpoints increased infection rates.",
+        "Infection rates stayed exactly the same as the year before.",
+        "The hospital removed all hand-washing stations that year.",
+        "The hand-washing checkpoints likely helped reduce infection rates."
+      ],
+      "correctAnswer": "The hand-washing checkpoints likely helped reduce infection rates.",
+      "hint": "Compare infection rates before and after the checkpoints were introduced.",
+      "explanation": "A noticeable drop in infections followed the introduction of mandatory hand-washing checkpoints, supporting the idea that the new policy helped lower infection rates.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Checkpoints introduced at ward entrances -> infection rates drop over the year -> checkpoints likely contributed to the decline"
+      ],
+      "logicChainSteps": [
+        "Checkpoints introduced at ward entrances",
+        "infection rates drop over the year",
+        "checkpoints likely contributed to the decline"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The hand-washing checkpoints increased infection rates.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Infection rates stayed exactly the same as the year before.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The hospital removed all hand-washing stations that year.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The hand-washing checkpoints likely helped reduce infection rates.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L24_Q3_PRACTICE",
+      "level": 24,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A software company started requiring code reviews before any update could be released. In the months since, the number of bugs reported by users after each update has dropped significantly.",
+      "options": [
+        "The code review requirement may have reduced the number of bugs released.",
+        "The code review requirement increased the number of bugs, as the situation is described here.",
+        "Bug reports stayed the same after the new requirement.",
+        "The company stopped releasing updates after the change, given the specific information included in the passage."
+      ],
+      "correctAnswer": "The code review requirement may have reduced the number of bugs released.",
+      "hint": "Compare bug reports before and after code reviews became mandatory.",
+      "explanation": "Bug reports dropped significantly after code reviews became required, which supports the reviews as a likely reason updates now contain fewer errors.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Code reviews required before release -> bug reports drop significantly -> reviews may have caught issues before release"
+      ],
+      "logicChainSteps": [
+        "Code reviews required before release",
+        "bug reports drop significantly",
+        "reviews may have caught issues before release"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The code review requirement may have reduced the number of bugs released.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The code review requirement increased the number of bugs, as the situation is described here.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Bug reports stayed the same after the new requirement.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The company stopped releasing updates after the change, given the specific information included in the passage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L25_Q1_PRACTICE",
+      "level": 25,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A youth center added a free tutoring program on weekday afternoons. Local school records later showed that the neighborhood's average homework completion rate rose that semester.",
+      "options": [
+        "The tutoring program caused homework completion to fall.",
+        "Homework completion rates were unaffected by the program.",
+        "The youth center cancelled the tutoring program after one week.",
+        "The tutoring program may have contributed to more homework being completed."
+      ],
+      "correctAnswer": "The tutoring program may have contributed to more homework being completed.",
+      "hint": "Notice what changed in the neighborhood right before homework rates improved.",
+      "explanation": "Homework completion rose during the same semester the tutoring program began, which supports the program as a possible contributor, though it is not the only explanation.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Tutoring program introduced -> homework completion rate rises that semester -> program may have contributed"
+      ],
+      "logicChainSteps": [
+        "Tutoring program introduced",
+        "homework completion rate rises that semester",
+        "program may have contributed"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The tutoring program caused homework completion to fall.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Homework completion rates were unaffected by the program.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The youth center cancelled the tutoring program after one week.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The tutoring program may have contributed to more homework being completed.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L25_Q2_PRACTICE",
+      "level": 25,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "An airline changed its boarding process to load passengers by window, middle, and aisle seat groups instead of by row number. Average boarding times across its flights dropped by several minutes.",
+      "options": [
+        "The new boarding process likely made boarding faster.",
+        "The new boarding process made boarding slower.",
+        "Boarding times stayed exactly the same after the change.",
+        "The airline stopped using organized boarding groups."
+      ],
+      "correctAnswer": "The new boarding process likely made boarding faster.",
+      "hint": "Compare boarding times before and after the new seating groups were introduced.",
+      "explanation": "Boarding times dropped after the airline switched to grouping passengers by seat type, supporting the idea that the new method reduced congestion in the aisle.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Boarding changed to seat-type groups -> average boarding time drops -> new method likely reduced aisle congestion"
+      ],
+      "logicChainSteps": [
+        "Boarding changed to seat-type groups",
+        "average boarding time drops",
+        "new method likely reduced aisle congestion"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The new boarding process likely made boarding faster.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The new boarding process made boarding slower.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Boarding times stayed exactly the same after the change.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The airline stopped using organized boarding groups.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L25_Q3_PRACTICE",
+      "level": 25,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A farm switched from flood irrigation to drip irrigation for its orchard. Over the next two growing seasons, the farm used less water overall while the trees produced a similar amount of fruit.",
+      "options": [
+        "Drip irrigation caused the farm to use more water than before. The passage offers no detail suggesting this changed over the period discussed.",
+        "Fruit production dropped sharply after the irrigation change. This would remain the case regardless of any other detail in the passage.",
+        "The farm abandoned drip irrigation after one season.",
+        "Drip irrigation likely allowed the farm to use less water without reducing fruit production."
+      ],
+      "correctAnswer": "Drip irrigation likely allowed the farm to use less water without reducing fruit production.",
+      "hint": "Compare water use and fruit production before and after the irrigation method changed.",
+      "explanation": "Water use dropped while fruit production stayed similar after switching irrigation methods, supporting drip irrigation as an efficient alternative for this farm.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Irrigation switched to drip -> water use decreases -> fruit production stays similar -> drip irrigation appears more efficient"
+      ],
+      "logicChainSteps": [
+        "Irrigation switched to drip",
+        "water use decreases",
+        "fruit production stays similar",
+        "drip irrigation appears more efficient"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Drip irrigation caused the farm to use more water than before. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Fruit production dropped sharply after the irrigation change. This would remain the case regardless of any other detail in the passage.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The farm abandoned drip irrigation after one season.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Drip irrigation likely allowed the farm to use less water without reducing fruit production.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L26_Q1_PRACTICE",
+      "level": 26,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city bus route added a dedicated bus lane during rush hour. In the months that followed, on-time performance for that route improved, while nearby routes without a bus lane showed no change.",
+      "options": [
+        "The dedicated bus lane made the route less reliable, according to the specific details given.",
+        "On-time performance improved equally on every route in the city, given the way the passage frames things.",
+        "The dedicated bus lane likely improved the route's on-time performance.",
+        "The bus lane was removed shortly after being added."
+      ],
+      "correctAnswer": "The dedicated bus lane likely improved the route's on-time performance.",
+      "hint": "Compare the route with the bus lane to the nearby routes without one.",
+      "explanation": "Only the route with the new bus lane showed improved on-time performance, while similar routes without the lane stayed the same, which strengthens the case that the lane was responsible.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Bus lane added to one route -> that route's performance improves -> other routes without lane show no change -> lane likely caused improvement"
+      ],
+      "logicChainSteps": [
+        "Bus lane added to one route",
+        "that route's performance improves",
+        "other routes without lane show no change",
+        "lane likely caused improvement"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The dedicated bus lane made the route less reliable, according to the specific details given.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "On-time performance improved equally on every route in the city, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The dedicated bus lane likely improved the route's on-time performance.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The bus lane was removed shortly after being added.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L26_Q2_PRACTICE",
+      "level": 26,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Two neighboring farms grow the same crop under similar weather conditions. The farm that rotates its crops each season has reported healthier soil for the past five years, while the farm that plants the same crop every year has seen declining soil quality.",
+      "options": [
+        "Crop rotation appears to be linked to worse soil quality, based on the details the passage provides.",
+        "Crop rotation appears to be linked to healthier soil in this comparison.",
+        "Both farms have reported identical soil quality, given the specific information included in the passage.",
+        "Soil quality has nothing to do with farming practices, as the situation is described here."
+      ],
+      "correctAnswer": "Crop rotation appears to be linked to healthier soil in this comparison.",
+      "hint": "Compare the practices and outcomes at the two farms.",
+      "explanation": "Under similar conditions, the rotating farm maintained healthier soil while the non-rotating farm's soil declined, supporting a link between rotation and soil health.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Similar conditions at both farms -> rotating farm: healthier soil -> non-rotating farm: declining soil -> rotation appears linked to healthier soil"
+      ],
+      "logicChainSteps": [
+        "Similar conditions at both farms",
+        "rotating farm: healthier soil",
+        "non-rotating farm: declining soil",
+        "rotation appears linked to healthier soil"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Crop rotation appears to be linked to worse soil quality, based on the details the passage provides.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Crop rotation appears to be linked to healthier soil in this comparison.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Both farms have reported identical soil quality, given the specific information included in the passage.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Soil quality has nothing to do with farming practices, as the situation is described here.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L26_Q3_PRACTICE",
+      "level": 26,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A retail chain tested a self-checkout kiosk in half of its stores while leaving the other half unchanged. After six months, the stores with kiosks reported shorter average checkout times than the stores without them.",
+      "options": [
+        "The self-checkout kiosks increased checkout times in those stores, based on the passage's account of what happened.",
+        "Checkout times were identical across all stores.",
+        "The retail chain removed the kiosks after the test. The passage gives no indication that this varied across the circumstances described.",
+        "The self-checkout kiosks likely reduced checkout times in the stores that had them."
+      ],
+      "correctAnswer": "The self-checkout kiosks likely reduced checkout times in the stores that had them.",
+      "hint": "Compare checkout times between stores with and without the kiosks.",
+      "explanation": "Only the stores that added kiosks saw shorter checkout times, while the unchanged stores did not, which supports the kiosks as the likely reason for the improvement.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Kiosks added to half the stores -> those stores show shorter checkout times -> unchanged stores show no difference -> kiosks likely responsible"
+      ],
+      "logicChainSteps": [
+        "Kiosks added to half the stores",
+        "those stores show shorter checkout times",
+        "unchanged stores show no difference",
+        "kiosks likely responsible"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The self-checkout kiosks increased checkout times in those stores, based on the passage's account of what happened.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Checkout times were identical across all stores.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The retail chain removed the kiosks after the test. The passage gives no indication that this varied across the circumstances described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The self-checkout kiosks likely reduced checkout times in the stores that had them.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L27_Q1_PRACTICE",
+      "level": 27,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A small town's library extended its Saturday hours by three hours. Attendance data for Saturdays rose that season, while attendance on other days of the week stayed about the same as before.",
+      "options": [
+        "The extended hours reduced Saturday attendance.",
+        "Attendance rose equally on every day of the week.",
+        "The extended Saturday hours likely contributed to higher Saturday attendance.",
+        "The library reverted to its original hours immediately."
+      ],
+      "correctAnswer": "The extended Saturday hours likely contributed to higher Saturday attendance.",
+      "hint": "Compare Saturday attendance changes to attendance on other days.",
+      "explanation": "Only Saturday attendance increased after the hours were extended, while other days remained steady, supporting the extended hours as the likely cause of the Saturday increase.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Saturday hours extended -> Saturday attendance rises -> other days unchanged -> extension likely caused the rise"
+      ],
+      "logicChainSteps": [
+        "Saturday hours extended",
+        "Saturday attendance rises",
+        "other days unchanged",
+        "extension likely caused the rise"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The extended hours reduced Saturday attendance.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Attendance rose equally on every day of the week.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The extended Saturday hours likely contributed to higher Saturday attendance.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The library reverted to its original hours immediately.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L27_Q2_PRACTICE",
+      "level": 27,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A manufacturer began inspecting each product twice instead of once before shipping. Customer complaints about defective items dropped in the following quarter, while shipping times stayed roughly the same.",
+      "options": [
+        "The additional inspection step increased defective shipments.",
+        "The additional inspection step likely reduced the number of defective shipments.",
+        "Customer complaints rose sharply after the change.",
+        "Shipping times increased dramatically after the change."
+      ],
+      "correctAnswer": "The additional inspection step likely reduced the number of defective shipments.",
+      "hint": "Compare defect complaints before and after the second inspection was added.",
+      "explanation": "Complaints about defects fell after a second inspection was introduced, while other factors like shipping time stayed constant, supporting the inspection as the likely reason for fewer defects.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Second inspection added -> defect complaints drop next quarter -> shipping times unchanged -> inspection likely reduced defects"
+      ],
+      "logicChainSteps": [
+        "Second inspection added",
+        "defect complaints drop next quarter",
+        "shipping times unchanged",
+        "inspection likely reduced defects"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The additional inspection step increased defective shipments.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The additional inspection step likely reduced the number of defective shipments.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Customer complaints rose sharply after the change.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Shipping times increased dramatically after the change.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L27_Q3_PRACTICE",
+      "level": 27,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A gym replaced its old ventilation system with a stronger one. Members began leaving longer reviews specifically praising the air quality, something that had rarely appeared in reviews before.",
+      "options": [
+        "The new ventilation system made the air quality worse.",
+        "Members stopped writing reviews after the change.",
+        "The ventilation system had no connection to member reviews, given the way the passage frames things.",
+        "The new ventilation system likely improved members' experience at the gym."
+      ],
+      "correctAnswer": "The new ventilation system likely improved members' experience at the gym.",
+      "hint": "Notice what changed in the reviews right after the ventilation system was replaced.",
+      "explanation": "Reviews specifically praising air quality became common only after the new ventilation system was installed, supporting the system as the likely reason for the positive feedback.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Ventilation system upgraded -> reviews begin praising air quality -> praise appears only after upgrade -> system likely improved experience"
+      ],
+      "logicChainSteps": [
+        "Ventilation system upgraded",
+        "reviews begin praising air quality",
+        "praise appears only after upgrade",
+        "system likely improved experience"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The new ventilation system made the air quality worse.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Members stopped writing reviews after the change.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The ventilation system had no connection to member reviews, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The new ventilation system likely improved members' experience at the gym.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L28_Q1_PRACTICE",
+      "level": 28,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city park removed several trash cans near its walking paths to cut maintenance costs. Park rangers later reported an increase in litter found along those same paths.",
+      "options": [
+        "Removing the trash cans reduced litter along the paths.",
+        "Litter levels stayed exactly the same after the cans were removed, given how the events unfolded.",
+        "The park added more trash cans instead of removing them, according to the account given.",
+        "Removing the trash cans likely contributed to more litter along the paths."
+      ],
+      "correctAnswer": "Removing the trash cans likely contributed to more litter along the paths.",
+      "hint": "Compare litter levels before and after the trash cans were removed.",
+      "explanation": "Litter increased along the same paths where trash cans were removed, supporting the idea that fewer disposal options led to more litter.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Trash cans removed from paths -> litter increases along those paths -> removal likely contributed to more litter"
+      ],
+      "logicChainSteps": [
+        "Trash cans removed from paths",
+        "litter increases along those paths",
+        "removal likely contributed to more litter"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Removing the trash cans reduced litter along the paths.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Litter levels stayed exactly the same after the cans were removed, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The park added more trash cans instead of removing them, according to the account given.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Removing the trash cans likely contributed to more litter along the paths.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L28_Q2_PRACTICE",
+      "level": 28,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A hospital's pediatric ward introduced a rule requiring visitors to use hand sanitizer before entering. Over the next flu season, the ward reported fewer patient illness transfers than in previous years.",
+      "options": [
+        "The hand sanitizer rule increased the spread of illness.",
+        "Illness transfers stayed exactly the same as previous years.",
+        "The hand sanitizer rule may have helped reduce the spread of illness in the ward.",
+        "The hospital removed the hand sanitizer rule after one month, given the way the passage frames things."
+      ],
+      "correctAnswer": "The hand sanitizer rule may have helped reduce the spread of illness in the ward.",
+      "hint": "Compare illness transfer rates before and after the sanitizer rule began.",
+      "explanation": "Fewer illness transfers occurred during the first flu season after the sanitizer rule started, supporting the rule as a possible factor in reducing the spread of illness.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Sanitizer rule introduced -> fewer illness transfers that flu season -> rule may have reduced spread"
+      ],
+      "logicChainSteps": [
+        "Sanitizer rule introduced",
+        "fewer illness transfers that flu season",
+        "rule may have reduced spread"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The hand sanitizer rule increased the spread of illness.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Illness transfers stayed exactly the same as previous years.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The hand sanitizer rule may have helped reduce the spread of illness in the ward.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The hospital removed the hand sanitizer rule after one month, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L28_Q3_PRACTICE",
+      "level": 28,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A furniture company switched to recyclable packaging materials. Within a year, the company received a noticeable rise in customer emails specifically mentioning the packaging in a positive way.",
+      "options": [
+        "The switch to recyclable packaging likely improved how some customers viewed the company.",
+        "The switch to recyclable packaging upset most customers.",
+        "Customer emails about packaging stopped completely.",
+        "The company reversed its decision after switching materials. This reading would hold true across the full sequence of events described."
+      ],
+      "correctAnswer": "The switch to recyclable packaging likely improved how some customers viewed the company.",
+      "hint": "Notice what changed in customer emails right after the packaging switch.",
+      "explanation": "Positive mentions of packaging in customer emails rose after the switch to recyclable materials, supporting the change as a likely factor in improved customer perception.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Packaging switched to recyclable materials -> positive emails about packaging increase -> switch likely improved perception"
+      ],
+      "logicChainSteps": [
+        "Packaging switched to recyclable materials",
+        "positive emails about packaging increase",
+        "switch likely improved perception"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The switch to recyclable packaging likely improved how some customers viewed the company.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The switch to recyclable packaging upset most customers.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Customer emails about packaging stopped completely.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The company reversed its decision after switching materials. This reading would hold true across the full sequence of events described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L29_Q1_PRACTICE",
+      "level": 29,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A software team began holding a fifteen-minute stand-up meeting each morning instead of a weekly one-hour meeting. Team members reported catching scheduling conflicts earlier, and fewer tasks were delayed that quarter.",
+      "options": [
+        "The switch to daily short meetings likely helped the team catch problems sooner.",
+        "The switch to daily meetings caused more delays. The passage gives no indication that this varied across the circumstances described.",
+        "The team stopped holding meetings altogether. This would apply consistently across every detail the passage provides.",
+        "Scheduling conflicts increased after the meeting change, as the situation is described here."
+      ],
+      "correctAnswer": "The switch to daily short meetings likely helped the team catch problems sooner.",
+      "hint": "Compare how quickly problems were caught before and after the meeting schedule changed.",
+      "explanation": "Problems began surfacing earlier and delays decreased after the team switched to shorter, more frequent meetings, supporting the new format as a likely reason for the improvement.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Weekly meeting replaced by daily short meetings -> conflicts caught earlier -> fewer delayed tasks -> format change likely helped"
+      ],
+      "logicChainSteps": [
+        "Weekly meeting replaced by daily short meetings",
+        "conflicts caught earlier",
+        "fewer delayed tasks",
+        "format change likely helped"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The switch to daily short meetings likely helped the team catch problems sooner.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The switch to daily meetings caused more delays. The passage gives no indication that this varied across the circumstances described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The team stopped holding meetings altogether. This would apply consistently across every detail the passage provides.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Scheduling conflicts increased after the meeting change, as the situation is described here.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L29_Q2_PRACTICE",
+      "level": 29,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city replaced its street lamps with brighter LED lights along a stretch of road known for pedestrian accidents. Over the following year, that stretch recorded fewer nighttime accidents than in previous years, while a similar unlit stretch nearby saw no change.",
+      "options": [
+        "The brighter street lamps increased nighttime accidents.",
+        "Nighttime accidents rose equally on every stretch of road in the city, according to the specific details given.",
+        "The city removed the LED lights shortly after installing them.",
+        "The brighter street lamps likely reduced nighttime accidents on that stretch."
+      ],
+      "correctAnswer": "The brighter street lamps likely reduced nighttime accidents on that stretch.",
+      "hint": "Compare the road with new lighting to the similar road without changes.",
+      "explanation": "Only the stretch with new LED lighting saw fewer accidents, while a similar unlit stretch remained unchanged, supporting the lighting as the likely reason for the improvement.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "LED lights installed on one stretch -> accidents drop on that stretch -> similar unlit stretch unchanged -> lighting likely reduced accidents"
+      ],
+      "logicChainSteps": [
+        "LED lights installed on one stretch",
+        "accidents drop on that stretch",
+        "similar unlit stretch unchanged",
+        "lighting likely reduced accidents"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The brighter street lamps increased nighttime accidents.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Nighttime accidents rose equally on every stretch of road in the city, according to the specific details given.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The city removed the LED lights shortly after installing them.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The brighter street lamps likely reduced nighttime accidents on that stretch.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L29_Q3_PRACTICE",
+      "level": 29,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A dental clinic began sending text reminders the day before each appointment. The rate of missed appointments dropped noticeably in the months after the reminders started, compared to the months before.",
+      "options": [
+        "The text reminders likely reduced the number of missed appointments.",
+        "The text reminders increased the number of missed appointments.",
+        "Missed appointments stayed the same after reminders began.",
+        "The clinic stopped scheduling appointments in advance."
+      ],
+      "correctAnswer": "The text reminders likely reduced the number of missed appointments.",
+      "hint": "Compare missed appointment rates before and after the reminders began.",
+      "explanation": "Missed appointments dropped in the months right after reminders were introduced, supporting the reminders as a likely reason patients were less likely to forget.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Text reminders introduced -> missed appointments drop in following months -> reminders likely reduced no-shows"
+      ],
+      "logicChainSteps": [
+        "Text reminders introduced",
+        "missed appointments drop in following months",
+        "reminders likely reduced no-shows"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The text reminders likely reduced the number of missed appointments.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The text reminders increased the number of missed appointments.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Missed appointments stayed the same after reminders began.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The clinic stopped scheduling appointments in advance.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L30_Q1_PRACTICE",
+      "level": 30,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A publishing company shortened its average book cover design process from three weeks to one week by hiring a second designer. That same year, the company released twice as many titles as the year before.",
+      "options": [
+        "The faster design process may have allowed the company to release more titles.",
+        "The faster design process caused the company to release fewer titles.",
+        "The number of titles released stayed exactly the same.",
+        "The company stopped designing covers altogether."
+      ],
+      "correctAnswer": "The faster design process may have allowed the company to release more titles.",
+      "hint": "Consider how a shorter design process might affect how many books can be released.",
+      "explanation": "The number of released titles doubled the same year the design process became faster, supporting a link between the shorter process and increased output, alongside other possible factors.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Design process shortened from three weeks to one -> titles released double that year -> faster process may have enabled more releases"
+      ],
+      "logicChainSteps": [
+        "Design process shortened from three weeks to one",
+        "titles released double that year",
+        "faster process may have enabled more releases"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The faster design process may have allowed the company to release more titles.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The faster design process caused the company to release fewer titles.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The number of titles released stayed exactly the same.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The company stopped designing covers altogether.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L30_Q2_PRACTICE",
+      "level": 30,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city swimming pool introduced a lifeguard rotation schedule that gave each lifeguard a ten-minute break every hour. Over the following summer, the pool reported fewer safety incidents than in previous summers with the old schedule.",
+      "options": [
+        "The new rotation schedule caused more safety incidents.",
+        "Safety incidents stayed exactly the same as previous summers.",
+        "The new rotation schedule may have helped lifeguards stay more alert.",
+        "The pool removed all lifeguards after adopting the new schedule, given how the events unfolded."
+      ],
+      "correctAnswer": "The new rotation schedule may have helped lifeguards stay more alert.",
+      "hint": "Compare safety incident rates before and after the new break schedule began.",
+      "explanation": "Safety incidents dropped during the first summer with the new break schedule, supporting the idea that regular breaks may have helped lifeguards stay more attentive.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Break schedule introduced -> fewer safety incidents that summer -> schedule may have improved alertness"
+      ],
+      "logicChainSteps": [
+        "Break schedule introduced",
+        "fewer safety incidents that summer",
+        "schedule may have improved alertness"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The new rotation schedule caused more safety incidents.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Safety incidents stayed exactly the same as previous summers.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The new rotation schedule may have helped lifeguards stay more alert.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The pool removed all lifeguards after adopting the new schedule, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L30_Q3_PRACTICE",
+      "level": 30,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "An online store began offering free returns on all orders. In the following quarter, the store's overall sales rose, even though the number of returned items also increased slightly.",
+      "options": [
+        "Offering free returns caused sales to fall sharply.",
+        "The number of returned items decreased after the policy began.",
+        "The store removed the free returns policy immediately.",
+        "Offering free returns may have encouraged more customers to make purchases."
+      ],
+      "correctAnswer": "Offering free returns may have encouraged more customers to make purchases.",
+      "hint": "Consider how removing the risk of paying for returns might affect customer buying decisions.",
+      "explanation": "Sales rose after free returns were introduced, even with a slight increase in returns, suggesting the policy may have made customers more comfortable buying in the first place.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Free returns policy introduced -> sales rise next quarter -> some increase in returns too -> policy may have encouraged more purchases"
+      ],
+      "logicChainSteps": [
+        "Free returns policy introduced",
+        "sales rise next quarter",
+        "some increase in returns too",
+        "policy may have encouraged more purchases"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Offering free returns caused sales to fall sharply.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The number of returned items decreased after the policy began.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The store removed the free returns policy immediately.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Offering free returns may have encouraged more customers to make purchases.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    }
+  ]
+}

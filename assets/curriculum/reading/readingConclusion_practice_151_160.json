@@ -1,0 +1,1512 @@
+{
+  "gameType": "readingConclusion",
+  "phase": "practice",
+  "batchIndex": 16,
+  "levels": "151-160",
+  "quests": [
+    {
+      "id": "RDG_READINGCONCLUSION_L151_Q1_PRACTICE",
+      "level": 151,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "In the quarterly board meeting minutes, the CFO's budget proposal was described as receiving 'extended discussion' before being 'approved with minor revisions requested by two board members.' The minutes for the previous quarter's proposal simply read 'approved unanimously.'",
+      "options": [
+        "This quarter's proposal was rejected entirely by the board.",
+        "The previous quarter's proposal faced more scrutiny than this quarter's.",
+        "This quarter's budget proposal likely faced more scrutiny than the previous quarter's.",
+        "Both proposals were approved under identical circumstances."
+      ],
+      "correctAnswer": "This quarter's budget proposal likely faced more scrutiny than the previous quarter's.",
+      "hint": "Compare the specific wording used to describe each quarter's approval process.",
+      "explanation": "The phrases 'extended discussion' and 'minor revisions requested' suggest a more involved review process than the brief 'approved unanimously' language used for the prior quarter, pointing to greater scrutiny this time.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Previous quarter: 'approved unanimously' -> this quarter: 'extended discussion,' 'revisions requested' -> wording differences suggest greater scrutiny this quarter"
+      ],
+      "logicChainSteps": [
+        "Previous quarter: 'approved unanimously'",
+        "this quarter: 'extended discussion,' 'revisions requested'",
+        "wording differences suggest greater scrutiny this quarter"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "This quarter's proposal was rejected entirely by the board.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The previous quarter's proposal faced more scrutiny than this quarter's.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "This quarter's budget proposal likely faced more scrutiny than the previous quarter's.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Both proposals were approved under identical circumstances.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L151_Q2_PRACTICE",
+      "level": 151,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "In her retirement speech, the longtime office manager thanked 'everyone who made the last twenty years feel like more than just a job,' and specifically mentioned three colleagues by name for 'always making time to listen, even during the hardest weeks.'",
+      "options": [
+        "The office manager likely valued the personal relationships at work as much as the job itself.",
+        "The office manager disliked her job for the entire twenty years. This would be expected to hold across the entire situation as described.",
+        "The office manager never formed any close relationships at work.",
+        "The three colleagues mentioned had recently joined the company."
+      ],
+      "correctAnswer": "The office manager likely valued the personal relationships at work as much as the job itself.",
+      "hint": "Consider what phrases like 'more than just a job' and specific gratitude for listening during hard weeks suggest about her priorities.",
+      "explanation": "Describing the workplace as 'more than just a job' and specifically thanking colleagues for emotional support during hard times suggests personal connections mattered to her as much as, or more than, the work itself.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Speech describes work as 'more than just a job' -> specific thanks for listening during hard weeks -> suggests personal relationships were highly valued alongside the job"
+      ],
+      "logicChainSteps": [
+        "Speech describes work as 'more than just a job'",
+        "specific thanks for listening during hard weeks",
+        "suggests personal relationships were highly valued alongside the job"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The office manager likely valued the personal relationships at work as much as the job itself.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The office manager disliked her job for the entire twenty years. This would be expected to hold across the entire situation as described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The office manager never formed any close relationships at work.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The three colleagues mentioned had recently joined the company.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L151_Q3_PRACTICE",
+      "level": 151,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A restaurant critic's review noted the pasta dish was 'competent, if unremarkable,' while devoting three full paragraphs to describing the restaurant's dessert course, including phrases like 'a genuinely surprising balance of textures' and 'the kind of dish worth returning for.'",
+      "options": [
+        "The critic disliked every dish served at the restaurant.",
+        "The critic found the pasta more impressive than the dessert, as the passage presents the situation.",
+        "The critic was likely far more impressed by the dessert than by the pasta.",
+        "The review gave equal attention and praise to both dishes."
+      ],
+      "correctAnswer": "The critic was likely far more impressed by the dessert than by the pasta.",
+      "hint": "Compare the brief, lukewarm description of the pasta with the length and tone of the dessert description.",
+      "explanation": "A brief, lukewarm phrase like 'competent, if unremarkable' paired with three enthusiastic paragraphs specifically praising the dessert shows a clear difference in the critic's actual level of enthusiasm between the two dishes.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Pasta described briefly as 'competent, if unremarkable' -> dessert given three enthusiastic paragraphs -> difference in length and tone shows dessert impressed the critic far more"
+      ],
+      "logicChainSteps": [
+        "Pasta described briefly as 'competent, if unremarkable'",
+        "dessert given three enthusiastic paragraphs",
+        "difference in length and tone shows dessert impressed the critic far more"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The critic disliked every dish served at the restaurant.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The critic found the pasta more impressive than the dessert, as the passage presents the situation.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The critic was likely far more impressed by the dessert than by the pasta.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The review gave equal attention and praise to both dishes.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L152_Q1_PRACTICE",
+      "level": 152,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "After the merger was announced, the smaller company's founder posted a company-wide message thanking the team for 'an incredible journey' and expressing excitement for 'this next exciting chapter,' though she notably did not mention whether she would remain with the combined company going forward.",
+      "options": [
+        "It is unclear from the message whether the founder plans to stay on after the merger.",
+        "The founder explicitly confirmed she would stay on after the merger, according to how the passage describes the situation.",
+        "The founder explicitly confirmed she would leave immediately after the merger, as the passage lays out the sequence of events.",
+        "The message expressed strong disapproval of the merger."
+      ],
+      "correctAnswer": "It is unclear from the message whether the founder plans to stay on after the merger.",
+      "hint": "Notice what the message specifically does not address, despite covering other emotional territory.",
+      "explanation": "While the message expresses gratitude and excitement, it noticeably avoids any statement about her own future role, an omission that leaves her post-merger plans genuinely unclear rather than implying either outcome.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Message thanks team, expresses excitement for the future -> notably omits any mention of her own future role -> absence of this detail leaves her plans unclear"
+      ],
+      "logicChainSteps": [
+        "Message thanks team, expresses excitement for the future",
+        "notably omits any mention of her own future role",
+        "absence of this detail leaves her plans unclear"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "It is unclear from the message whether the founder plans to stay on after the merger.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The founder explicitly confirmed she would stay on after the merger, according to how the passage describes the situation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The founder explicitly confirmed she would leave immediately after the merger, as the passage lays out the sequence of events.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The message expressed strong disapproval of the merger.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L152_Q2_PRACTICE",
+      "level": 152,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city council member's public statement on the proposed tax increase read, in full: 'I understand residents have real concerns, and I've heard from many of you directly. I look forward to continuing this conversation as we move forward.' The statement did not indicate how she planned to vote.",
+      "options": [
+        "The council member's statement does not reveal her actual position on the tax increase.",
+        "The council member clearly stated she would vote in favor of the increase.",
+        "The council member clearly stated she would vote against the increase.",
+        "The statement confirms residents have no concerns about the tax increase."
+      ],
+      "correctAnswer": "The council member's statement does not reveal her actual position on the tax increase.",
+      "hint": "Notice that the statement acknowledges concerns and promises continued conversation without committing to a position.",
+      "explanation": "The statement carefully acknowledges concerns and promises further dialogue but stops short of stating a voting position, showing a deliberately noncommittal response rather than revealing her actual stance.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Statement acknowledges concerns, promises continued conversation -> no mention of an actual voting position -> statement does not reveal her real stance on the increase"
+      ],
+      "logicChainSteps": [
+        "Statement acknowledges concerns, promises continued conversation",
+        "no mention of an actual voting position",
+        "statement does not reveal her real stance on the increase"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The council member's statement does not reveal her actual position on the tax increase.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The council member clearly stated she would vote in favor of the increase.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The council member clearly stated she would vote against the increase.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The statement confirms residents have no concerns about the tax increase.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L152_Q3_PRACTICE",
+      "level": 152,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "In a performance review, a manager wrote that an employee 'consistently meets expectations' and 'is a reliable member of the team,' while a colleague's review in the same file described that person as someone who 'regularly exceeds expectations' and 'has quickly become someone others look to for guidance.'",
+      "options": [
+        "Both reviews describe employees performing at an identical level.",
+        "The first employee's review describes stronger performance than the second's, based on the passage's account of what happened.",
+        "Neither review contains any meaningful information about performance. Such a pattern would remain constant throughout the scenario being described.",
+        "The second employee's review suggests notably stronger performance than the first employee's review."
+      ],
+      "correctAnswer": "The second employee's review suggests notably stronger performance than the first employee's review.",
+      "hint": "Compare the specific phrases used in each review, noting the difference between 'meets' and 'exceeds' expectations.",
+      "explanation": "'Consistently meets expectations' describes solid, standard performance, while 'regularly exceeds expectations' and being looked to for guidance describes performance clearly above that standard, showing a meaningful gap between the two.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Employee 1: 'consistently meets expectations,' 'reliable' -> Employee 2: 'regularly exceeds expectations,' 'others look to for guidance' -> phrasing shows Employee 2's review reflects notably stronger performance"
+      ],
+      "logicChainSteps": [
+        "Employee 1: 'consistently meets expectations,' 'reliable'",
+        "Employee 2: 'regularly exceeds expectations,' 'others look to for guidance'",
+        "phrasing shows Employee 2's review reflects notably stronger performance"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Both reviews describe employees performing at an identical level.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The first employee's review describes stronger performance than the second's, based on the passage's account of what happened.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Neither review contains any meaningful information about performance. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The second employee's review suggests notably stronger performance than the first employee's review.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L153_Q1_PRACTICE",
+      "level": 153,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A wedding photographer's contract stated that the couple would receive their final edited photos 'within 8-12 weeks of the wedding date.' Six weeks after their wedding, the couple received an email from the photographer that read: 'Thank you so much for your patience as I work through this busy season. I'll be in touch soon with an update.'",
+      "options": [
+        "The photographer's email confirms the photos are ready ahead of schedule, according to how the passage describes the situation.",
+        "The photographer's email suggests the photos may take longer than the couple originally expected.",
+        "The contract guaranteed delivery within exactly 8 weeks with no flexibility, given the way the passage frames things.",
+        "The email confirms the photos will arrive within the next few days. This would be expected to hold across the entire situation as described."
+      ],
+      "correctAnswer": "The photographer's email suggests the photos may take longer than the couple originally expected.",
+      "hint": "Consider what phrases like 'thank you for your patience' and 'I'll be in touch soon' suggest, especially at only the six-week mark of a 8-12 week window.",
+      "explanation": "Thanking the couple for patience and promising an update 'soon' rather than confirming delivery, at only six weeks into an 8-12 week window, subtly suggests the timeline may be running toward or past the later end of the original estimate.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Contract promises delivery in 8-12 weeks -> at 6 weeks, email thanks couple for 'patience,' promises update 'soon' -> tone suggests the delivery may run toward the later end of the estimate"
+      ],
+      "logicChainSteps": [
+        "Contract promises delivery in 8-12 weeks",
+        "at 6 weeks, email thanks couple for 'patience,' promises update 'soon'",
+        "tone suggests the delivery may run toward the later end of the estimate"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The photographer's email confirms the photos are ready ahead of schedule, according to how the passage describes the situation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The photographer's email suggests the photos may take longer than the couple originally expected.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The contract guaranteed delivery within exactly 8 weeks with no flexibility, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The email confirms the photos will arrive within the next few days. This would be expected to hold across the entire situation as described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L153_Q2_PRACTICE",
+      "level": 153,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A job candidate's thank-you email after an interview read: 'Thank you for taking the time to meet with me today. I really enjoyed learning more about the team's approach to collaboration.' The email did not mention the specific role, the company by name, or any detail from the actual conversation.",
+      "options": [
+        "The email's generic wording may suggest it was not carefully tailored to this specific interview.",
+        "The email demonstrates the candidate paid extremely close attention to the interview details.",
+        "The email confirms the candidate was offered the position immediately.",
+        "The interview did not actually take place as described."
+      ],
+      "correctAnswer": "The email's generic wording may suggest it was not carefully tailored to this specific interview.",
+      "hint": "Notice what specific details the email is missing compared to what a highly tailored thank-you note might include.",
+      "explanation": "The absence of the role, company name, or any specific conversation detail, replaced with a generic phrase about 'collaboration,' subtly suggests the email may not have been carefully customized for this particular interview.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Email thanks interviewer, mentions 'collaboration' generically -> no mention of role, company name, or specific details -> generic wording suggests the note may not have been carefully tailored"
+      ],
+      "logicChainSteps": [
+        "Email thanks interviewer, mentions 'collaboration' generically",
+        "no mention of role, company name, or specific details",
+        "generic wording suggests the note may not have been carefully tailored"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The email's generic wording may suggest it was not carefully tailored to this specific interview.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The email demonstrates the candidate paid extremely close attention to the interview details.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The email confirms the candidate was offered the position immediately.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The interview did not actually take place as described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L153_Q3_PRACTICE",
+      "level": 153,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A restaurant's online reservation confirmation read: 'We look forward to seeing you! Please note that tables are held for 15 minutes past your reservation time.' A friend's reservation confirmation from the same restaurant, made for a party of eight, included an additional line: 'For larger parties, please call ahead to confirm, as availability can be limited.'",
+      "options": [
+        "The restaurant guarantees seating for parties of any size without exception, given how the events unfolded.",
+        "The restaurant only accepts reservations for parties of eight or more.",
+        "Both confirmations contained identical information with no differences, according to how the passage describes the situation.",
+        "The restaurant may have less certainty about accommodating larger parties than smaller ones."
+      ],
+      "correctAnswer": "The restaurant may have less certainty about accommodating larger parties than smaller ones.",
+      "hint": "Notice what extra instruction appears specifically on the larger party's confirmation.",
+      "explanation": "The additional line asking larger parties to 'call ahead to confirm' because 'availability can be limited' suggests the restaurant has less confidence in guaranteeing space for bigger groups compared to standard reservations.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Standard confirmation: table held 15 min -> party-of-8 confirmation: extra line about calling ahead due to limited availability -> extra caution suggests less certainty for larger parties"
+      ],
+      "logicChainSteps": [
+        "Standard confirmation: table held 15 min",
+        "party-of-8 confirmation: extra line about calling ahead due to limited availability",
+        "extra caution suggests less certainty for larger parties"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The restaurant guarantees seating for parties of any size without exception, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The restaurant only accepts reservations for parties of eight or more.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Both confirmations contained identical information with no differences, according to how the passage describes the situation.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The restaurant may have less certainty about accommodating larger parties than smaller ones.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L154_Q1_PRACTICE",
+      "level": 154,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's economic development report described a proposed new stadium project as one that 'could bring significant benefits to the surrounding area' and noted that 'several similar projects in other cities have shown mixed results depending on local circumstances.'",
+      "options": [
+        "The report guarantees the stadium will bring significant economic benefits.",
+        "The report guarantees the stadium will have no economic impact at all.",
+        "The report's language suggests the stadium's actual economic impact is genuinely uncertain.",
+        "Every similar stadium project in other cities has failed completely."
+      ],
+      "correctAnswer": "The report's language suggests the stadium's actual economic impact is genuinely uncertain.",
+      "hint": "Weigh the hedged language 'could bring' against the specific mention of 'mixed results' elsewhere.",
+      "explanation": "Phrases like 'could bring' rather than 'will bring,' combined with an explicit acknowledgment of 'mixed results' in similar projects, together suggest the report is being genuinely cautious about predicting the stadium's actual impact.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Report says stadium 'could bring' benefits, not 'will bring' -> also notes similar projects show 'mixed results' -> language suggests genuine uncertainty about actual impact"
+      ],
+      "logicChainSteps": [
+        "Report says stadium 'could bring' benefits, not 'will bring'",
+        "also notes similar projects show 'mixed results'",
+        "language suggests genuine uncertainty about actual impact"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The report guarantees the stadium will bring significant economic benefits.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The report guarantees the stadium will have no economic impact at all.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The report's language suggests the stadium's actual economic impact is genuinely uncertain.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Every similar stadium project in other cities has failed completely.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L154_Q2_PRACTICE",
+      "level": 154,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "An author's book jacket described her debut novel as 'a bold, unflinching exploration of family and memory.' A review of the same book in a major newspaper called it 'an ambitious attempt that occasionally loses its footing amid overly complex plotting.'",
+      "options": [
+        "The newspaper review is more enthusiastic about the book than the jacket description, based on what the passage actually says.",
+        "Both the jacket and the review describe the book in identical terms. The passage gives no indication that this varied across the circumstances described.",
+        "The newspaper review appears more critical of the book than the promotional description on the jacket.",
+        "The review confirms the book received no criticism whatsoever."
+      ],
+      "correctAnswer": "The newspaper review appears more critical of the book than the promotional description on the jacket.",
+      "hint": "Compare the purely positive jacket language to the more mixed language used in the actual review.",
+      "explanation": "The jacket's unreservedly positive language ('bold, unflinching') contrasts with the review's more measured, critical phrasing ('ambitious attempt that occasionally loses its footing'), showing the review takes a more critical stance than the promotional copy.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Jacket: 'bold, unflinching exploration' (purely positive) -> review: 'ambitious attempt that occasionally loses its footing' (mixed) -> review is more critical than the promotional description"
+      ],
+      "logicChainSteps": [
+        "Jacket: 'bold, unflinching exploration' (purely positive)",
+        "review: 'ambitious attempt that occasionally loses its footing' (mixed)",
+        "review is more critical than the promotional description"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The newspaper review is more enthusiastic about the book than the jacket description, based on what the passage actually says.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Both the jacket and the review describe the book in identical terms. The passage gives no indication that this varied across the circumstances described.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The newspaper review appears more critical of the book than the promotional description on the jacket.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The review confirms the book received no criticism whatsoever.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L154_Q3_PRACTICE",
+      "level": 154,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's annual budget summary described funding for the public library system as 'maintained at current levels for the coming fiscal year,' while funding for the parks department was described as 'increased by 12 percent to support new capital improvements.'",
+      "options": [
+        "The parks department appears to be receiving a funding increase this year, unlike the library system.",
+        "Both departments are receiving identical funding increases this year. This would remain the case regardless of any other detail in the passage.",
+        "The library system is receiving a larger funding increase than the parks department, as the passage presents the situation.",
+        "The parks department's funding is being cut this year."
+      ],
+      "correctAnswer": "The parks department appears to be receiving a funding increase this year, unlike the library system.",
+      "hint": "Compare the specific language used to describe each department's funding change.",
+      "explanation": "'Maintained at current levels' indicates no change for the library, while '12 percent increase' explicitly describes new funding for parks, showing a clear difference in how each department's budget is changing this year.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Library funding: 'maintained at current levels' -> parks funding: 'increased by 12 percent' -> parks receiving a real increase this year, unlike the library"
+      ],
+      "logicChainSteps": [
+        "Library funding: 'maintained at current levels'",
+        "parks funding: 'increased by 12 percent'",
+        "parks receiving a real increase this year, unlike the library"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The parks department appears to be receiving a funding increase this year, unlike the library system.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Both departments are receiving identical funding increases this year. This would remain the case regardless of any other detail in the passage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The library system is receiving a larger funding increase than the parks department, as the passage presents the situation.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The parks department's funding is being cut this year.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L155_Q1_PRACTICE",
+      "level": 155,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A therapist's client intake notes described one client as someone who 'speaks readily about work stress but redirects the conversation whenever family topics arise, often with a brief laugh before changing the subject.'",
+      "options": [
+        "The client refuses to discuss any topic during sessions, according to how the passage describes the situation.",
+        "The client is completely at ease discussing family topics, as the situation is described here.",
+        "The client may feel more comfortable discussing work than discussing family matters.",
+        "Work stress is not a significant topic for this client. This reading would hold true across the full sequence of events described."
+      ],
+      "correctAnswer": "The client may feel more comfortable discussing work than discussing family matters.",
+      "hint": "Consider what a pattern of readily discussing one topic while deflecting another, especially with a nervous laugh, might suggest.",
+      "explanation": "Speaking freely about work while consistently redirecting and laughing off family topics suggests a difference in comfort level between the two subjects, with family appearing to be the more sensitive area.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Client speaks readily about work stress -> redirects with a laugh whenever family arises -> pattern suggests more comfort discussing work than family matters"
+      ],
+      "logicChainSteps": [
+        "Client speaks readily about work stress",
+        "redirects with a laugh whenever family arises",
+        "pattern suggests more comfort discussing work than family matters"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The client refuses to discuss any topic during sessions, according to how the passage describes the situation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The client is completely at ease discussing family topics, as the situation is described here.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The client may feel more comfortable discussing work than discussing family matters.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Work stress is not a significant topic for this client. This reading would hold true across the full sequence of events described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L155_Q2_PRACTICE",
+      "level": 155,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city planner's memo about a proposed housing development noted that 'community feedback sessions drew significant turnout, with attendees raising a range of questions about traffic, school capacity, and environmental impact,' before stating that 'the planning commission will take this input under advisement as the proposal moves to its next review stage.'",
+      "options": [
+        "The memo confirms the proposal will be rejected because of resident concerns. No part of the passage's account suggests otherwise.",
+        "The memo confirms the proposal will be approved regardless of resident concerns. The passage offers no detail suggesting this changed over the period discussed.",
+        "Residents raised multiple specific concerns, though the memo does not confirm how these concerns will affect the final decision.",
+        "No residents attended the community feedback sessions."
+      ],
+      "correctAnswer": "Residents raised multiple specific concerns, though the memo does not confirm how these concerns will affect the final decision.",
+      "hint": "Separate what the memo confirms happened (the concerns raised) from what remains unclear (how the commission will actually respond).",
+      "explanation": "The memo confirms specific concerns were raised about traffic, schools, and environment, but the vague phrase 'take this input under advisement' does not reveal what the commission will actually decide, leaving the outcome unclear.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Feedback sessions draw significant turnout, specific concerns raised -> commission will 'take input under advisement' -> concerns are confirmed, but the actual effect on the decision remains unclear"
+      ],
+      "logicChainSteps": [
+        "Feedback sessions draw significant turnout, specific concerns raised",
+        "commission will 'take input under advisement'",
+        "concerns are confirmed, but the actual effect on the decision remains unclear"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The memo confirms the proposal will be rejected because of resident concerns. No part of the passage's account suggests otherwise.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The memo confirms the proposal will be approved regardless of resident concerns. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Residents raised multiple specific concerns, though the memo does not confirm how these concerns will affect the final decision.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "No residents attended the community feedback sessions.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L155_Q3_PRACTICE",
+      "level": 155,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A veterinarian's notes on a dog's checkup read: 'Patient appears alert and responsive. Owner reports decreased appetite over the past week and some reluctance to climb stairs, though patient shows no obvious signs of pain on physical exam today.' Blood work was ordered for further evaluation.",
+      "options": [
+        "The physical exam definitively identified the cause of the dog's symptoms, given the way the passage frames things.",
+        "The veterinarian found no clear cause for the reported symptoms during today's physical exam alone.",
+        "The owner reported no changes in the dog's behavior or appetite.",
+        "The veterinarian found clear signs of significant pain during the exam, given how the events unfolded."
+      ],
+      "correctAnswer": "The veterinarian found no clear cause for the reported symptoms during today's physical exam alone.",
+      "hint": "Notice the specific wording distinguishing what the owner reported from what the physical exam itself showed, and what was ordered next.",
+      "explanation": "The notes explicitly state the physical exam showed 'no obvious signs of pain' despite the reported symptoms, and the decision to order blood work suggests the cause remains unclear from today's exam alone, requiring further investigation.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Owner reports decreased appetite, stair reluctance -> physical exam: no obvious signs of pain -> blood work ordered for further evaluation -> exam alone did not reveal a clear cause"
+      ],
+      "logicChainSteps": [
+        "Owner reports decreased appetite, stair reluctance",
+        "physical exam: no obvious signs of pain",
+        "blood work ordered for further evaluation",
+        "exam alone did not reveal a clear cause"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The physical exam definitively identified the cause of the dog's symptoms, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The veterinarian found no clear cause for the reported symptoms during today's physical exam alone.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The owner reported no changes in the dog's behavior or appetite.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The veterinarian found clear signs of significant pain during the exam, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L156_Q1_PRACTICE",
+      "level": 156,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A company's internal memo about a delayed product launch stated: 'We remain committed to delivering a product that meets our quality standards, and we believe the additional time will result in a stronger launch.' The memo did not provide a new specific launch date.",
+      "options": [
+        "The company has not yet committed to a specific new timeline for the launch.",
+        "The memo confirms a specific new launch date one month later, given the specific information included in the passage.",
+        "The product launch has been cancelled entirely.",
+        "The delay was caused by a lack of company commitment to quality, given the way the passage frames things."
+      ],
+      "correctAnswer": "The company has not yet committed to a specific new timeline for the launch.",
+      "hint": "Notice what the memo emphasizes (quality, commitment) versus what it conspicuously does not provide.",
+      "explanation": "While the memo emphasizes commitment to quality and frames the delay positively, it notably provides no specific new date, indicating the company either hasn't finalized one or isn't ready to share it.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Memo emphasizes commitment to quality, frames delay positively -> no specific new launch date provided -> company has not yet committed to a specific new timeline"
+      ],
+      "logicChainSteps": [
+        "Memo emphasizes commitment to quality, frames delay positively",
+        "no specific new launch date provided",
+        "company has not yet committed to a specific new timeline"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The company has not yet committed to a specific new timeline for the launch.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The memo confirms a specific new launch date one month later, given the specific information included in the passage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The product launch has been cancelled entirely.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The delay was caused by a lack of company commitment to quality, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L156_Q2_PRACTICE",
+      "level": 156,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A teacher's note home to parents read: 'Your child has been a wonderful addition to our classroom community this year. I've noticed they sometimes need extra encouragement to share their ideas during group discussions, but they clearly have a lot of thoughtful insights when given the chance to speak.'",
+      "options": [
+        "The teacher sees value in the student's contributions but has noticed some hesitation to participate openly.",
+        "The teacher believes the student has no valuable ideas to contribute. This would remain the case regardless of any other detail in the passage.",
+        "The teacher believes the student dominates every group discussion. This pattern would hold steady across the entire situation the passage lays out.",
+        "The note contains only criticism with no positive observations."
+      ],
+      "correctAnswer": "The teacher sees value in the student's contributions but has noticed some hesitation to participate openly.",
+      "hint": "Weigh the positive framing about the student's insights against the specific, gentle mention of needing encouragement.",
+      "explanation": "The note balances genuine praise for the student's 'thoughtful insights' with a gentle, specific observation about needing 'extra encouragement' to share, showing the teacher values the student while noting a specific area of hesitation.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Teacher praises student's 'thoughtful insights' -> also notes need for 'extra encouragement' to share in groups -> balanced note shows value placed on contributions alongside noticed hesitation"
+      ],
+      "logicChainSteps": [
+        "Teacher praises student's 'thoughtful insights'",
+        "also notes need for 'extra encouragement' to share in groups",
+        "balanced note shows value placed on contributions alongside noticed hesitation"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The teacher sees value in the student's contributions but has noticed some hesitation to participate openly.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The teacher believes the student has no valuable ideas to contribute. This would remain the case regardless of any other detail in the passage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The teacher believes the student dominates every group discussion. This pattern would hold steady across the entire situation the passage lays out.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The note contains only criticism with no positive observations.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L156_Q3_PRACTICE",
+      "level": 156,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A financial advisor's quarterly letter to clients described the past quarter's market performance as 'a period of notable volatility' and recommended that clients 'review their risk tolerance and consider whether their current allocation still aligns with their long-term goals.'",
+      "options": [
+        "The advisor is confirming that no changes to any client's portfolio are necessary.",
+        "The advisor is suggesting clients may want to reconsider their investment approach given recent market conditions.",
+        "The advisor is guaranteeing strong returns for the next quarter.",
+        "The letter indicates the market experienced no notable changes this quarter."
+      ],
+      "correctAnswer": "The advisor is suggesting clients may want to reconsider their investment approach given recent market conditions.",
+      "hint": "Consider what recommending clients 'review' their risk tolerance and allocation suggests about the advisor's underlying message.",
+      "explanation": "Describing the quarter as volatile and specifically recommending a review of risk tolerance and allocation suggests the advisor believes market conditions may warrant clients reconsidering their current approach, without stating this directly as a demand.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Quarter described as 'notable volatility' -> advisor recommends reviewing risk tolerance and allocation -> suggests clients may want to reconsider their approach given the conditions"
+      ],
+      "logicChainSteps": [
+        "Quarter described as 'notable volatility'",
+        "advisor recommends reviewing risk tolerance and allocation",
+        "suggests clients may want to reconsider their approach given the conditions"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The advisor is confirming that no changes to any client's portfolio are necessary.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The advisor is suggesting clients may want to reconsider their investment approach given recent market conditions.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The advisor is guaranteeing strong returns for the next quarter.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The letter indicates the market experienced no notable changes this quarter.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L157_Q1_PRACTICE",
+      "level": 157,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A nonprofit's grant rejection letter to an applicant read: 'While your proposal demonstrated clear passion and thoughtful planning, we were unable to fund it in this cycle given the volume of strong applications we received. We encourage you to apply again in a future cycle.'",
+      "options": [
+        "The letter confirms the proposal was poorly written and unfocused. The passage's account gives no reason to think this differed at any stage.",
+        "The letter suggests the rejection may reflect limited funding rather than a weakness in the proposal itself.",
+        "The letter guarantees funding will be provided in the next cycle.",
+        "The nonprofit received very few applications this cycle."
+      ],
+      "correctAnswer": "The letter suggests the rejection may reflect limited funding rather than a weakness in the proposal itself.",
+      "hint": "Weigh the specific praise given against the stated reason for the rejection.",
+      "explanation": "The letter explicitly praises the proposal's passion and planning while attributing the rejection to a high volume of strong competing applications, suggesting the decision reflects limited funding capacity rather than flaws in this specific proposal.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Letter praises proposal's passion and planning -> attributes rejection to high volume of strong applications -> suggests limited funding, not proposal weakness, as the reason"
+      ],
+      "logicChainSteps": [
+        "Letter praises proposal's passion and planning",
+        "attributes rejection to high volume of strong applications",
+        "suggests limited funding, not proposal weakness, as the reason"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The letter confirms the proposal was poorly written and unfocused. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The letter suggests the rejection may reflect limited funding rather than a weakness in the proposal itself.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The letter guarantees funding will be provided in the next cycle.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The nonprofit received very few applications this cycle.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L157_Q2_PRACTICE",
+      "level": 157,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city council candidate's campaign website described her opponent's record as 'a mixed legacy that residents will need to evaluate carefully,' while describing her own record as 'a consistent track record of delivering results for working families.'",
+      "options": [
+        "The candidate is describing both records in equally positive terms.",
+        "The candidate is describing her opponent's record more favorably than her own, given the specific information included in the passage.",
+        "The candidate is framing her own record more favorably than her opponent's in this description.",
+        "The website contains no comparison between the two candidates' records, based on the details the passage provides."
+      ],
+      "correctAnswer": "The candidate is framing her own record more favorably than her opponent's in this description.",
+      "hint": "Compare the specific word choices used to describe each candidate's record.",
+      "explanation": "Describing her own record with unreserved positive language ('consistent track record of delivering results') while describing her opponent's with cautious, ambiguous language ('mixed legacy...need to evaluate carefully') shows a clear favorable framing toward herself.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Opponent's record: 'mixed legacy,' needs 'careful evaluation' -> her own record: 'consistent track record of delivering results' -> language clearly frames her own record more favorably"
+      ],
+      "logicChainSteps": [
+        "Opponent's record: 'mixed legacy,' needs 'careful evaluation'",
+        "her own record: 'consistent track record of delivering results'",
+        "language clearly frames her own record more favorably"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The candidate is describing both records in equally positive terms.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The candidate is describing her opponent's record more favorably than her own, given the specific information included in the passage.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The candidate is framing her own record more favorably than her opponent's in this description.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The website contains no comparison between the two candidates' records, based on the details the passage provides.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L157_Q3_PRACTICE",
+      "level": 157,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A restaurant owner responded to a negative online review by writing: 'We're sorry to hear your visit didn't meet expectations. We've shared your feedback with our kitchen team and would welcome the chance to make things right on a future visit.' The owner did not address the reviewer's specific complaint about a long wait time.",
+      "options": [
+        "The owner directly addressed and explained the reason for the long wait time. This would apply consistently across every detail the passage provides.",
+        "The owner's response acknowledges the general feedback without directly addressing the specific issue raised.",
+        "The owner denied that the customer's visit occurred at all.",
+        "The response confirms the restaurant will refund the customer's payment."
+      ],
+      "correctAnswer": "The owner's response acknowledges the general feedback without directly addressing the specific issue raised.",
+      "hint": "Notice that the response is generally apologetic but does not mention the specific complaint detail from the passage.",
+      "explanation": "The response offers a general apology and invitation to return but never specifically mentions or explains the wait time issue the reviewer raised, showing the reply addresses the feedback broadly without engaging with the particular complaint.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Reviewer complains about long wait time -> owner's response: general apology, invites return visit -> no specific mention of wait time -> response addresses feedback generally without engaging the specific issue"
+      ],
+      "logicChainSteps": [
+        "Reviewer complains about long wait time",
+        "owner's response: general apology, invites return visit",
+        "no specific mention of wait time",
+        "response addresses feedback generally without engaging the specific issue"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The owner directly addressed and explained the reason for the long wait time. This would apply consistently across every detail the passage provides.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The owner's response acknowledges the general feedback without directly addressing the specific issue raised.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The owner denied that the customer's visit occurred at all.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The response confirms the restaurant will refund the customer's payment.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L158_Q1_PRACTICE",
+      "level": 158,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A job posting for a marketing coordinator role listed the salary range as '$48,000-$62,000, commensurate with experience,' while a similar posting from a competing company for the same role listed a flat rate of '$55,000.'",
+      "options": [
+        "The first company definitely pays more than the second company for this role. Such a pattern would remain constant throughout the scenario being described.",
+        "The first company's compensation for this role could end up higher or lower than the second company's, depending on the candidate's experience.",
+        "The first company definitely pays less than the second company for this role. The passage's account gives no reason to think this differed at any stage.",
+        "Both postings guarantee the exact same salary regardless of experience."
+      ],
+      "correctAnswer": "The first company's compensation for this role could end up higher or lower than the second company's, depending on the candidate's experience.",
+      "hint": "Consider the range of the first posting relative to the fixed number of the second, and what 'commensurate with experience' implies.",
+      "explanation": "Since the first posting's range spans from below to above the second company's flat rate, and the exact figure depends on experience, the actual comparison between the two salaries could go either way for any individual candidate.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Company A: $48k-$62k range, based on experience -> Company B: flat $55k -> A's range spans both below and above B's rate -> actual comparison depends on where a candidate falls within A's range"
+      ],
+      "logicChainSteps": [
+        "Company A: $48k-$62k range, based on experience",
+        "Company B: flat $55k",
+        "A's range spans both below and above B's rate",
+        "actual comparison depends on where a candidate falls within A's range"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The first company definitely pays more than the second company for this role. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The first company's compensation for this role could end up higher or lower than the second company's, depending on the candidate's experience.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The first company definitely pays less than the second company for this role. The passage's account gives no reason to think this differed at any stage.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Both postings guarantee the exact same salary regardless of experience.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L158_Q2_PRACTICE",
+      "level": 158,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A product's online listing described its battery life as 'up to 12 hours of use,' while a competitor's listing for a similar product described its battery life as 'a full 12 hours of continuous use, tested under standard conditions.'",
+      "options": [
+        "Both listings provide identically specific and verifiable claims. This reading would hold true across the full sequence of events described.",
+        "The first product's listing provides more testing detail than the competitor's. The passage offers no detail suggesting this changed over the period discussed.",
+        "Neither listing makes any claim about battery life at all.",
+        "The competitor's listing provides a more specific and possibly more reliable claim about battery performance."
+      ],
+      "correctAnswer": "The competitor's listing provides a more specific and possibly more reliable claim about battery performance.",
+      "hint": "Compare the vague phrase 'up to' with the competitor's more specific claim about testing conditions.",
+      "explanation": "'Up to 12 hours' is a maximum estimate that could vary significantly in practice, while the competitor's mention of 'tested under standard conditions' suggests a more specific, verified claim, making it a more reliable indicator of actual performance.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Product A: 'up to 12 hours' (vague maximum) -> Product B: '12 hours, tested under standard conditions' (specific claim) -> B's claim appears more specific and possibly more reliable"
+      ],
+      "logicChainSteps": [
+        "Product A: 'up to 12 hours' (vague maximum)",
+        "Product B: '12 hours, tested under standard conditions' (specific claim)",
+        "B's claim appears more specific and possibly more reliable"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Both listings provide identically specific and verifiable claims. This reading would hold true across the full sequence of events described.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The first product's listing provides more testing detail than the competitor's. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Neither listing makes any claim about battery life at all.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The competitor's listing provides a more specific and possibly more reliable claim about battery performance.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L158_Q3_PRACTICE",
+      "level": 158,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's transit survey asked riders to rate their satisfaction on a scale of 1 to 5. The average rating for bus service was 3.4, described in the report as 'moderate satisfaction with room for improvement,' while the average rating for the light rail service was 4.6, described as 'strong satisfaction across most respondents.'",
+      "options": [
+        "Riders are equally satisfied with both the bus and light rail services, according to the account given.",
+        "Riders appear notably more satisfied with the light rail service than with the bus service.",
+        "Riders are more satisfied with the bus service than the light rail service, given how the events unfolded.",
+        "The survey found no meaningful difference between the two services, as the situation is described here."
+      ],
+      "correctAnswer": "Riders appear notably more satisfied with the light rail service than with the bus service.",
+      "hint": "Compare both the numerical averages and the descriptive language used for each service.",
+      "explanation": "A rating of 4.6 described as 'strong satisfaction' stands clearly above a 3.4 rating described as having 'room for improvement,' both the numbers and the report's own characterization point to notably higher satisfaction with light rail.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Bus: 3.4 average, 'room for improvement' -> light rail: 4.6 average, 'strong satisfaction' -> both numbers and descriptions show notably higher satisfaction with light rail"
+      ],
+      "logicChainSteps": [
+        "Bus: 3.4 average, 'room for improvement'",
+        "light rail: 4.6 average, 'strong satisfaction'",
+        "both numbers and descriptions show notably higher satisfaction with light rail"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Riders are equally satisfied with both the bus and light rail services, according to the account given.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Riders appear notably more satisfied with the light rail service than with the bus service.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Riders are more satisfied with the bus service than the light rail service, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The survey found no meaningful difference between the two services, as the situation is described here.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L159_Q1_PRACTICE",
+      "level": 159,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "An author's editor left a margin note on a manuscript draft that read: 'This chapter has strong emotional beats, but I found myself a little lost tracking who was in the room during the confrontation scene. Might be worth a light pass for clarity here.'",
+      "options": [
+        "The editor found the entire chapter confusing and emotionally flat.",
+        "The editor felt the confrontation scene was somewhat difficult to follow, despite finding the emotional content effective.",
+        "The editor requested that the confrontation scene be deleted entirely. The passage offers no detail suggesting this changed over the period discussed.",
+        "The editor had no concerns about any part of the chapter."
+      ],
+      "correctAnswer": "The editor felt the confrontation scene was somewhat difficult to follow, despite finding the emotional content effective.",
+      "hint": "Weigh the specific praise for 'emotional beats' against the specific, gently worded concern about clarity.",
+      "explanation": "The note balances genuine praise for the chapter's emotional impact with a specific, softly worded concern about tracking characters during one scene, suggesting a targeted clarity issue rather than a broader problem with the chapter.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Editor praises 'strong emotional beats' -> also notes feeling 'a little lost' tracking characters in one scene -> suggests a specific clarity issue, not a broader problem with the chapter"
+      ],
+      "logicChainSteps": [
+        "Editor praises 'strong emotional beats'",
+        "also notes feeling 'a little lost' tracking characters in one scene",
+        "suggests a specific clarity issue, not a broader problem with the chapter"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The editor found the entire chapter confusing and emotionally flat.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The editor felt the confrontation scene was somewhat difficult to follow, despite finding the emotional content effective.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The editor requested that the confrontation scene be deleted entirely. The passage offers no detail suggesting this changed over the period discussed.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The editor had no concerns about any part of the chapter.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L159_Q2_PRACTICE",
+      "level": 159,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's water utility sent a notice stating: 'Recent testing shows water quality within all required safety standards. Some residents in the northern service area may notice a temporary change in taste or odor due to routine seasonal maintenance of the treatment system, which is expected to resolve within two weeks.'",
+      "options": [
+        "The notice confirms the water currently fails to meet safety standards.",
+        "The taste or odor change is expected to be permanent going forward.",
+        "The notice indicates no residents will notice any change at all.",
+        "The utility is reassuring residents that a noticeable change is expected to be temporary and not a safety concern."
+      ],
+      "correctAnswer": "The utility is reassuring residents that a noticeable change is expected to be temporary and not a safety concern.",
+      "hint": "Separate the safety confirmation from the specific, time-limited explanation given for the taste and odor change.",
+      "explanation": "The notice explicitly confirms safety standards are met while separately explaining the taste or odor issue as a temporary, routine maintenance effect expected to resolve within two weeks, framing it as noticeable but not concerning.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Water confirmed within safety standards -> temporary taste/odor change explained as routine seasonal maintenance -> expected to resolve within two weeks -> change framed as noticeable but not a safety concern"
+      ],
+      "logicChainSteps": [
+        "Water confirmed within safety standards",
+        "temporary taste/odor change explained as routine seasonal maintenance",
+        "expected to resolve within two weeks",
+        "change framed as noticeable but not a safety concern"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The notice confirms the water currently fails to meet safety standards.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The taste or odor change is expected to be permanent going forward.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The notice indicates no residents will notice any change at all.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The utility is reassuring residents that a noticeable change is expected to be temporary and not a safety concern.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L159_Q3_PRACTICE",
+      "level": 159,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A hiring manager's feedback to a rejected candidate read: 'Your technical skills were impressive, and the team enjoyed speaking with you. We ultimately moved forward with a candidate whose experience aligned more closely with the specific needs of this particular role.'",
+      "options": [
+        "The rejection appears to reflect a difference in specific role fit rather than a lack of overall ability.",
+        "The feedback indicates the candidate's technical skills were considered weak, as the passage presents the situation.",
+        "The feedback indicates the team did not enjoy the interview conversation.",
+        "The rejection confirms no other candidates were considered for the role."
+      ],
+      "correctAnswer": "The rejection appears to reflect a difference in specific role fit rather than a lack of overall ability.",
+      "hint": "Weigh the specific praise given against the specific reason stated for choosing someone else.",
+      "explanation": "The feedback explicitly praises technical skills and the interview experience while attributing the decision to another candidate's closer alignment with 'specific needs,' suggesting the rejection reflects role fit rather than a shortfall in the candidate's actual ability.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Feedback praises technical skills, positive interview experience -> attributes decision to another candidate's closer fit with specific role needs -> rejection reflects role fit, not a lack of overall ability"
+      ],
+      "logicChainSteps": [
+        "Feedback praises technical skills, positive interview experience",
+        "attributes decision to another candidate's closer fit with specific role needs",
+        "rejection reflects role fit, not a lack of overall ability"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The rejection appears to reflect a difference in specific role fit rather than a lack of overall ability.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The feedback indicates the candidate's technical skills were considered weak, as the passage presents the situation.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The feedback indicates the team did not enjoy the interview conversation.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The rejection confirms no other candidates were considered for the role.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L160_Q1_PRACTICE",
+      "level": 160,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A company's internal announcement about a reorganization stated: 'This restructuring reflects our commitment to positioning the company for long-term growth.' Three paragraphs later, the announcement mentioned that 'approximately 8 percent of roles across the organization will be affected as part of this transition.'",
+      "options": [
+        "The reorganization involves no changes to any employee's role.",
+        "The reorganization involves some job losses, framed within a broader narrative about company growth.",
+        "The announcement confirms the company is shrinking its overall operations, given the specific information included in the passage.",
+        "All employees at the company will be affected by this restructuring. This reading would hold true across the full sequence of events described."
+      ],
+      "correctAnswer": "The reorganization involves some job losses, framed within a broader narrative about company growth.",
+      "hint": "Combine the growth-focused framing at the start of the announcement with the specific percentage mentioned later.",
+      "explanation": "While the announcement opens with positive, growth-focused language, it later reveals that about 8 percent of roles will be 'affected,' a common euphemism connected to job losses, showing the full announcement combines optimistic framing with a real, if partial, workforce reduction.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Announcement opens with growth-focused language -> later states 8% of roles will be 'affected' -> combination shows real, partial job losses framed within a broader growth narrative"
+      ],
+      "logicChainSteps": [
+        "Announcement opens with growth-focused language",
+        "later states 8% of roles will be 'affected'",
+        "combination shows real, partial job losses framed within a broader growth narrative"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The reorganization involves no changes to any employee's role.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The reorganization involves some job losses, framed within a broader narrative about company growth.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The announcement confirms the company is shrinking its overall operations, given the specific information included in the passage.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "All employees at the company will be affected by this restructuring. This reading would hold true across the full sequence of events described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L160_Q2_PRACTICE",
+      "level": 160,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A hospital's patient satisfaction summary noted that 'communication with nursing staff' received an average score of 4.7 out of 5, while 'wait time for test results' received an average score of 3.1 out of 5, with the report specifically flagging the latter category as 'an area identified for targeted improvement efforts next year.'",
+      "options": [
+        "Patients rated both categories at roughly the same level of satisfaction.",
+        "Patients were more satisfied with wait times than with staff communication.",
+        "The hospital identified staff communication as needing improvement.",
+        "Patients appear notably more satisfied with staff communication than with the speed of receiving test results."
+      ],
+      "correctAnswer": "Patients appear notably more satisfied with staff communication than with the speed of receiving test results.",
+      "hint": "Compare both the numerical scores and which category the report specifically flags for improvement.",
+      "explanation": "A 4.7 score for communication stands well above a 3.1 score for test result wait times, and the report itself specifically flags the wait time category, not communication, for targeted improvement, confirming which area patients found less satisfying.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Staff communication: 4.7/5 -> test result wait time: 3.1/5, flagged for improvement -> scores and the report's own flag confirm greater satisfaction with communication than wait times"
+      ],
+      "logicChainSteps": [
+        "Staff communication: 4.7/5",
+        "test result wait time: 3.1/5, flagged for improvement",
+        "scores and the report's own flag confirm greater satisfaction with communication than wait times"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Patients rated both categories at roughly the same level of satisfaction.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Patients were more satisfied with wait times than with staff communication.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The hospital identified staff communication as needing improvement.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Patients appear notably more satisfied with staff communication than with the speed of receiving test results.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L160_Q3_PRACTICE",
+      "level": 160,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "A city's annual sustainability report described its recycling program as having 'made measurable progress toward our long-term waste reduction goals,' while describing its composting initiative, launched the same year, as 'still in an early phase, with participation rates lower than initially projected.'",
+      "options": [
+        "Both programs are described as performing exactly as expected.",
+        "The composting initiative is described as exceeding its projected participation rates, given the specific information included in the passage.",
+        "The recycling program is described as falling short of its goals. Such a pattern would remain constant throughout the scenario being described.",
+        "The recycling program appears to be performing closer to expectations than the newer composting initiative."
+      ],
+      "correctAnswer": "The recycling program appears to be performing closer to expectations than the newer composting initiative.",
+      "hint": "Compare the positive, confident language for recycling with the more hesitant language used for composting.",
+      "explanation": "'Measurable progress toward goals' reflects a positive assessment for recycling, while 'still in an early phase, with participation lower than projected' explicitly signals the composting initiative is underperforming relative to expectations, showing a clear contrast between the two programs.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Recycling: 'measurable progress toward goals' -> composting: 'early phase, participation lower than projected' -> language shows recycling closer to expectations than the newer composting initiative"
+      ],
+      "logicChainSteps": [
+        "Recycling: 'measurable progress toward goals'",
+        "composting: 'early phase, participation lower than projected'",
+        "language shows recycling closer to expectations than the newer composting initiative"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Both programs are described as performing exactly as expected.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The composting initiative is described as exceeding its projected participation rates, given the specific information included in the passage.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The recycling program is described as falling short of its goals. Such a pattern would remain constant throughout the scenario being described.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The recycling program appears to be performing closer to expectations than the newer composting initiative.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    }
+  ]
+}

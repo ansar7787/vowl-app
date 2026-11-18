@@ -1,0 +1,1520 @@
+{
+  "gameType": "readingConclusion",
+  "phase": "practice",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "RDG_READINGCONCLUSION_L1_Q1_PRACTICE",
+      "level": 1,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Maya left her bicycle outside overnight. In the morning, the seat and handlebars were covered in tiny drops of water, even though no one had touched the bike.",
+      "options": [
+        "It rained during the night.",
+        "Maya washed her bicycle before going to bed.",
+        "The bicycle was stored inside a garage.",
+        "Someone poured water on the bicycle on purpose."
+      ],
+      "correctAnswer": "It rained during the night.",
+      "hint": "Think about what could leave water on a bike that sat outside all night.",
+      "explanation": "The bike was left outside, and water appeared on it overnight without anyone touching it. Rain is the simplest explanation for water covering an untouched outdoor object.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Bike left outside overnight -> water found on bike -> no one touched it -> rain fell overnight"
+      ],
+      "logicChainSteps": [
+        "Bike left outside overnight",
+        "water found on bike",
+        "no one touched it",
+        "rain fell overnight"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "It rained during the night.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Maya washed her bicycle before going to bed.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The bicycle was stored inside a garage.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Someone poured water on the bicycle on purpose.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L1_Q2_PRACTICE",
+      "level": 1,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Mrs. Ortiz baked a tray of cookies and left them on the counter to cool. When she came back, half the cookies were gone, and her young son had chocolate smudges around his mouth.",
+      "options": [
+        "Mrs. Ortiz ate the cookies herself, based on the details the passage provides.",
+        "The cookies were never baked at all, as the passage presents the situation.",
+        "The neighbors came inside and ate the cookies.",
+        "Her son ate some of the cookies."
+      ],
+      "correctAnswer": "Her son ate some of the cookies.",
+      "hint": "Look at what was found on the boy's face.",
+      "explanation": "Cookies went missing, and the boy's mouth had chocolate smudges on it. This detail connects him directly to the missing cookies.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Cookies disappear -> son has chocolate on his mouth -> son ate the cookies"
+      ],
+      "logicChainSteps": [
+        "Cookies disappear",
+        "son has chocolate on his mouth",
+        "son ate the cookies"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Mrs. Ortiz ate the cookies herself, based on the details the passage provides.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The cookies were never baked at all, as the passage presents the situation.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The neighbors came inside and ate the cookies.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Her son ate some of the cookies.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L1_Q3_PRACTICE",
+      "level": 1,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Every evening, Mr. Nakamura's porch light comes on automatically at sunset. Tonight, a neighbor knocked on his door and found a note taped to it that read, 'Back by 8 p.m.'",
+      "options": [
+        "Mr. Nakamura was not home when the neighbor knocked.",
+        "Mr. Nakamura answered the door right away, according to the specific details given.",
+        "The porch light had stopped working.",
+        "The neighbor lived in the same house as Mr. Nakamura, given the way the passage frames things."
+      ],
+      "correctAnswer": "Mr. Nakamura was not home when the neighbor knocked.",
+      "hint": "Think about why someone would leave a note like this on their own door.",
+      "explanation": "A note saying 'Back by 8 p.m.' is left by someone who has stepped out, which explains why no one answered when the neighbor knocked.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Note on door says 'back by 8' -> neighbor knocks -> no answer -> Mr. Nakamura is currently out"
+      ],
+      "logicChainSteps": [
+        "Note on door says 'back by 8'",
+        "neighbor knocks",
+        "no answer",
+        "Mr. Nakamura is currently out"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Mr. Nakamura was not home when the neighbor knocked.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Mr. Nakamura answered the door right away, according to the specific details given.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The porch light had stopped working.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The neighbor lived in the same house as Mr. Nakamura, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L2_Q1_PRACTICE",
+      "level": 2,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Every player on the youth soccer team ran an extra lap without complaining at practice. Afterward, the coach handed out water bottles and told the team he was impressed.",
+      "options": [
+        "The team practiced with strong effort that day.",
+        "The coach was disappointed in the team, as the passage lays out the sequence of events.",
+        "Only one player showed up to practice, according to the specific details given.",
+        "Practice was cancelled before it began, given how the events unfolded."
+      ],
+      "correctAnswer": "The team practiced with strong effort that day.",
+      "hint": "Notice how the players behaved and how the coach reacted afterward.",
+      "explanation": "Every player ran the extra lap willingly, and the coach said he was impressed. Both details point to a strong, effortful practice session.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "All players run extra lap without complaint -> coach expresses being impressed -> team showed strong effort"
+      ],
+      "logicChainSteps": [
+        "All players run extra lap without complaint",
+        "coach expresses being impressed",
+        "team showed strong effort"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The team practiced with strong effort that day.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The coach was disappointed in the team, as the passage lays out the sequence of events.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Only one player showed up to practice, according to the specific details given.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Practice was cancelled before it began, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L2_Q2_PRACTICE",
+      "level": 2,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "The jacket Farah wanted cost $95 in September. When she checked the same store's website in December, the price had changed to $60.",
+      "options": [
+        "The jacket is more expensive than in September.",
+        "The store stopped selling jackets entirely.",
+        "Farah already purchased the jacket in September.",
+        "The jacket now costs less than it did before."
+      ],
+      "correctAnswer": "The jacket now costs less than it did before.",
+      "hint": "Compare the two prices Farah saw.",
+      "explanation": "The price dropped from $95 to $60, so the jacket is now cheaper than it was in September.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "September price $95 -> December price $60 -> $60 is less than $95 -> jacket is now cheaper"
+      ],
+      "logicChainSteps": [
+        "September price $95",
+        "December price $60",
+        "$60 is less than $95",
+        "jacket is now cheaper"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The jacket is more expensive than in September.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The store stopped selling jackets entirely.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Farah already purchased the jacket in September.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The jacket now costs less than it did before.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L2_Q3_PRACTICE",
+      "level": 2,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Tomas usually finishes charging his tablet overnight without any trouble. Last night, after he left three apps running in the background, the battery was only at 15 percent by breakfast.",
+      "options": [
+        "The tablet charged completely as usual, given how the events unfolded.",
+        "The apps running overnight likely drained the battery.",
+        "Tomas forgot to plug in his tablet at all, based on the details the passage provides.",
+        "The tablet's charger stopped working permanently, given the way the passage frames things."
+      ],
+      "correctAnswer": "The apps running overnight likely drained the battery.",
+      "hint": "Think about what was different about last night compared to Tomas's usual routine.",
+      "explanation": "Charging usually goes smoothly, but this time apps were running in the background and the battery ended up low, suggesting those apps used extra power overnight.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Normal charging works fine -> apps left running overnight -> battery unusually low -> apps likely drained it"
+      ],
+      "logicChainSteps": [
+        "Normal charging works fine",
+        "apps left running overnight",
+        "battery unusually low",
+        "apps likely drained it"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The tablet charged completely as usual, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The apps running overnight likely drained the battery.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Tomas forgot to plug in his tablet at all, based on the details the passage provides.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The tablet's charger stopped working permanently, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L3_Q1_PRACTICE",
+      "level": 3,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "The Alvarez family planned to leave for their beach trip at 7 a.m. When they checked the traffic app, it showed the highway was closed for repairs until noon.",
+      "options": [
+        "The family will arrive at the beach earlier than planned.",
+        "The highway was open the entire morning.",
+        "The family will need to wait or find another route.",
+        "The beach trip has already finished."
+      ],
+      "correctAnswer": "The family will need to wait or find another route.",
+      "hint": "Think about what a closed highway means for a family that planned to leave early.",
+      "explanation": "With the highway closed until noon, the family cannot use their planned route, so they must either wait or take a different path.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Planned early departure -> highway closed until noon -> original route unavailable -> family must adjust"
+      ],
+      "logicChainSteps": [
+        "Planned early departure",
+        "highway closed until noon",
+        "original route unavailable",
+        "family must adjust"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The family will arrive at the beach earlier than planned.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The highway was open the entire morning.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The family will need to wait or find another route.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The beach trip has already finished.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L3_Q2_PRACTICE",
+      "level": 3,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Jun practiced the piano for only ten minutes before her recital, while her sister Mei practiced for an hour every day that week. During the recital, Mei played without a single mistake.",
+      "options": [
+        "Mei's extra practice likely helped her perform well.",
+        "Jun practiced more than Mei did that week, as the situation is described here.",
+        "Mei did not take part in the recital.",
+        "Practice time makes no difference to a performance, based on the details the passage provides."
+      ],
+      "correctAnswer": "Mei's extra practice likely helped her perform well.",
+      "hint": "Think about the connection between how much Mei practiced and how she performed.",
+      "explanation": "Mei practiced far more than Jun and played flawlessly, suggesting her extra practice contributed to her strong performance.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Mei practices an hour daily -> Jun practices ten minutes -> Mei performs without mistakes -> extra practice likely helped"
+      ],
+      "logicChainSteps": [
+        "Mei practices an hour daily",
+        "Jun practices ten minutes",
+        "Mei performs without mistakes",
+        "extra practice likely helped"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Mei's extra practice likely helped her perform well.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Jun practiced more than Mei did that week, as the situation is described here.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Mei did not take part in the recital.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Practice time makes no difference to a performance, based on the details the passage provides.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L3_Q3_PRACTICE",
+      "level": 3,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Advance tickets for the city's fireworks festival usually go on sale for a full week. This year, every ticket was gone within two days, and organizers announced an extra viewing area to handle the crowd.",
+      "options": [
+        "Interest in the festival was higher than in previous years.",
+        "Almost no one wanted tickets this year.",
+        "The festival was cancelled due to low interest, as the situation is described here.",
+        "Tickets were given away for free this year, given the specific information included in the passage."
+      ],
+      "correctAnswer": "Interest in the festival was higher than in previous years.",
+      "hint": "Notice how quickly tickets sold and what the organizers had to do afterward.",
+      "explanation": "Tickets that normally take a week to sell out disappeared in two days, and organizers added extra space for visitors, both signs of unusually high interest.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Tickets usually last a week -> sold out in two days -> extra viewing area added -> demand was higher than usual"
+      ],
+      "logicChainSteps": [
+        "Tickets usually last a week",
+        "sold out in two days",
+        "extra viewing area added",
+        "demand was higher than usual"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Interest in the festival was higher than in previous years.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Almost no one wanted tickets this year.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The festival was cancelled due to low interest, as the situation is described here.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Tickets were given away for free this year, given the specific information included in the passage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L4_Q1_PRACTICE",
+      "level": 4,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Every night, Mr. Douglas locks the front door and checks it twice before bed. Last night he checked the lock as usual, yet he still woke up to find the door unlocked and slightly open.",
+      "options": [
+        "Mr. Douglas forgot to check the door at all.",
+        "The door stayed locked all night as expected.",
+        "Something happened to the door after Mr. Douglas checked it.",
+        "Mr. Douglas decided to leave the door open on purpose, according to the account given."
+      ],
+      "correctAnswer": "Something happened to the door after Mr. Douglas checked it.",
+      "hint": "Compare what Mr. Douglas did before bed with what he found in the morning.",
+      "explanation": "He checked the lock twice, yet the door was found unlocked in the morning, showing that despite his routine, something changed the door's state during the night.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Door checked and locked before bed -> door found unlocked in morning -> lock did not stay as it was checked"
+      ],
+      "logicChainSteps": [
+        "Door checked and locked before bed",
+        "door found unlocked in morning",
+        "lock did not stay as it was checked"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Mr. Douglas forgot to check the door at all.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The door stayed locked all night as expected.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Something happened to the door after Mr. Douglas checked it.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Mr. Douglas decided to leave the door open on purpose, according to the account given.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L4_Q2_PRACTICE",
+      "level": 4,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Two experienced cooks joined a small restaurant's kitchen staff in April. By July, the number of daily customer orders had nearly doubled.",
+      "options": [
+        "The new cooks may have contributed to the rise in orders.",
+        "The restaurant lost most of its regular customers.",
+        "The restaurant closed its kitchen in July.",
+        "The number of orders stayed exactly the same."
+      ],
+      "correctAnswer": "The new cooks may have contributed to the rise in orders.",
+      "hint": "Think about what changed in the kitchen right before orders increased.",
+      "explanation": "Orders nearly doubled soon after two experienced cooks joined, suggesting their skills may have played a role in the restaurant's growth.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "New cooks join in April -> orders nearly double by July -> timing suggests the cooks contributed"
+      ],
+      "logicChainSteps": [
+        "New cooks join in April",
+        "orders nearly double by July",
+        "timing suggests the cooks contributed"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The new cooks may have contributed to the rise in orders.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The restaurant lost most of its regular customers.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The restaurant closed its kitchen in July.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The number of orders stayed exactly the same.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L4_Q3_PRACTICE",
+      "level": 4,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "The clinic switched to an online appointment system last month. Since then, the front desk staff say they receive far fewer phone calls asking to reschedule.",
+      "options": [
+        "Phone calls to the clinic increased sharply, given the specific information included in the passage.",
+        "The online system may have reduced the need for phone calls.",
+        "The clinic stopped taking appointments altogether, according to the account given.",
+        "The online system has nothing to do with phone calls, based on what the passage actually says."
+      ],
+      "correctAnswer": "The online system may have reduced the need for phone calls.",
+      "hint": "Notice what changed at the clinic right before the phone calls decreased.",
+      "explanation": "Fewer rescheduling calls started coming in right after the clinic introduced online booking, suggesting the new system is handling what used to require a phone call.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Online system introduced -> phone calls for rescheduling drop -> system likely replaced some phone calls"
+      ],
+      "logicChainSteps": [
+        "Online system introduced",
+        "phone calls for rescheduling drop",
+        "system likely replaced some phone calls"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Phone calls to the clinic increased sharply, given the specific information included in the passage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The online system may have reduced the need for phone calls.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The clinic stopped taking appointments altogether, according to the account given.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The online system has nothing to do with phone calls, based on what the passage actually says.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L5_Q1_PRACTICE",
+      "level": 5,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "The Petrov sisters usually disagree about which movie to watch every Friday night. Last Friday, they sat together for three hours choosing snacks and picking a film they both wanted to see.",
+      "options": [
+        "The sisters argued more than they normally do.",
+        "The sisters cooperated more smoothly than usual that Friday.",
+        "The sisters refused to watch any movie together.",
+        "The sisters stopped speaking to each other completely."
+      ],
+      "correctAnswer": "The sisters cooperated more smoothly than usual that Friday.",
+      "hint": "Compare their usual Friday behavior with what happened last Friday.",
+      "explanation": "Instead of their usual disagreements, the sisters spent Friday choosing snacks and a movie together peacefully, showing smoother cooperation than usual.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Usual pattern: disagreement over movies -> last Friday: calm shared decision -> cooperation was unusually smooth"
+      ],
+      "logicChainSteps": [
+        "Usual pattern: disagreement over movies",
+        "last Friday: calm shared decision",
+        "cooperation was unusually smooth"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The sisters argued more than they normally do.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The sisters cooperated more smoothly than usual that Friday.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The sisters refused to watch any movie together.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The sisters stopped speaking to each other completely.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L5_Q2_PRACTICE",
+      "level": 5,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "The downtown bakery typically sells out of croissants by 9 a.m. On the morning of the city's transit strike, there were still croissants left on the shelf at noon.",
+      "options": [
+        "Fewer customers than usual visited the bakery that morning.",
+        "More customers than usual visited the bakery that morning.",
+        "The bakery baked far more croissants than normal.",
+        "The transit strike had no effect on the bakery's customers, given how the events unfolded."
+      ],
+      "correctAnswer": "Fewer customers than usual visited the bakery that morning.",
+      "hint": "Think about how a transit strike might affect how many people can reach the bakery.",
+      "explanation": "Croissants that normally sell out early were still available at noon, and the strike likely made it harder for people to travel, resulting in fewer customers.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Croissants usually gone by 9 a.m. -> transit strike occurs -> croissants remain at noon -> fewer customers reached the bakery"
+      ],
+      "logicChainSteps": [
+        "Croissants usually gone by 9 a.m.",
+        "transit strike occurs",
+        "croissants remain at noon",
+        "fewer customers reached the bakery"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Fewer customers than usual visited the bakery that morning.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "More customers than usual visited the bakery that morning.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The bakery baked far more croissants than normal.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The transit strike had no effect on the bakery's customers, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L5_Q3_PRACTICE",
+      "level": 5,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Before the renovation, the community pool closed for repairs almost every other month. Since the new filtration system was installed a year ago, the pool has not closed for repairs even once.",
+      "options": [
+        "The pool now closes for repairs more often than before.",
+        "The pool has been closed continuously for the past year.",
+        "The filtration system has no connection to the pool's reliability, based on what the passage actually says.",
+        "The new filtration system has made the pool more reliable."
+      ],
+      "correctAnswer": "The new filtration system has made the pool more reliable.",
+      "hint": "Compare how often the pool closed before and after the new system was installed.",
+      "explanation": "Frequent closures stopped happening after the new filtration system was installed, suggesting the upgrade improved the pool's reliability.",
+      "strategyBadge": "FALLACY EXCLUSION FILTER",
+      "logicChain": [
+        "Before: frequent closures -> after new system: zero closures in a year -> system appears to have improved reliability"
+      ],
+      "logicChainSteps": [
+        "Before: frequent closures",
+        "after new system: zero closures in a year",
+        "system appears to have improved reliability"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The pool now closes for repairs more often than before.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The pool has been closed continuously for the past year.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The filtration system has no connection to the pool's reliability, based on what the passage actually says.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The new filtration system has made the pool more reliable.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L6_Q1_PRACTICE",
+      "level": 6,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "After the parking app added a feature showing real-time open spaces, drivers began finding parking in city garages nearly twice as fast as before.",
+      "options": [
+        "The new feature likely helped drivers find parking more quickly.",
+        "The new feature made it harder for drivers to find parking, as the passage lays out the sequence of events.",
+        "The app removed the parking feature shortly after adding it, given how the events unfolded.",
+        "Parking times stayed exactly the same after the update."
+      ],
+      "correctAnswer": "The new feature likely helped drivers find parking more quickly.",
+      "hint": "Notice what changed in the app right before parking times improved.",
+      "explanation": "Parking times dropped sharply right after the real-time space feature was added, suggesting the update helped drivers locate spots faster.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Feature added -> parking search time drops -> feature likely caused the improvement"
+      ],
+      "logicChainSteps": [
+        "Feature added",
+        "parking search time drops",
+        "feature likely caused the improvement"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The new feature likely helped drivers find parking more quickly.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The new feature made it harder for drivers to find parking, as the passage lays out the sequence of events.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The app removed the parking feature shortly after adding it, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Parking times stayed exactly the same after the update.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L6_Q2_PRACTICE",
+      "level": 6,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "The bridge connecting the two towns was shut down for structural repairs all month. Commuters who once crossed in fifteen minutes now had to drive forty minutes around the lake.",
+      "options": [
+        "Commuting between the towns became quicker that month, according to the specific details given.",
+        "The bridge remained fully open the entire month, given the specific information included in the passage.",
+        "Commuters stopped traveling between the towns altogether, based on the details the passage provides.",
+        "Commuting between the towns took longer than usual that month."
+      ],
+      "correctAnswer": "Commuting between the towns took longer than usual that month.",
+      "hint": "Compare the usual crossing time with the new route's travel time.",
+      "explanation": "With the bridge closed, commuters had to take a much longer route around the lake, meaning their trips took far more time than usual.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Bridge closed for repairs -> commuters take longer route around lake -> travel time increased"
+      ],
+      "logicChainSteps": [
+        "Bridge closed for repairs",
+        "commuters take longer route around lake",
+        "travel time increased"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Commuting between the towns became quicker that month, according to the specific details given.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The bridge remained fully open the entire month, given the specific information included in the passage.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Commuters stopped traveling between the towns altogether, based on the details the passage provides.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Commuting between the towns took longer than usual that month.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L6_Q3_PRACTICE",
+      "level": 6,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Since Hassan began taking a short walk after dinner instead of watching television, his doctor has noted that his resting heart rate has slowly dropped into a healthier range.",
+      "options": [
+        "The after-dinner walks may have improved Hassan's heart health.",
+        "Hassan's heart rate worsened after he began walking.",
+        "Hassan stopped visiting his doctor entirely.",
+        "Watching television always lowers a person's heart rate, given how the events unfolded."
+      ],
+      "correctAnswer": "The after-dinner walks may have improved Hassan's heart health.",
+      "hint": "Look at what changed in Hassan's evening routine and what his doctor observed afterward.",
+      "explanation": "After Hassan replaced television time with a walk, his heart rate improved, suggesting the new habit contributed to his better health.",
+      "strategyBadge": "DEDUCTIVE SOUNDNESS CHECK",
+      "logicChain": [
+        "Evening walk replaces TV time -> resting heart rate improves over time -> walking habit may explain the change"
+      ],
+      "logicChainSteps": [
+        "Evening walk replaces TV time",
+        "resting heart rate improves over time",
+        "walking habit may explain the change"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The after-dinner walks may have improved Hassan's heart health.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Hassan's heart rate worsened after he began walking.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Hassan stopped visiting his doctor entirely.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Watching television always lowers a person's heart rate, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L7_Q1_PRACTICE",
+      "level": 7,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "The photography club's first exhibition drew only a handful of visitors and no press coverage. Their second exhibition, held two years later, filled the gallery and was featured in the local newspaper.",
+      "options": [
+        "The club's popularity grew between the two exhibitions.",
+        "The club never held a second exhibition, based on what the passage actually says.",
+        "Both exhibitions attracted the exact same number of visitors, according to the account given.",
+        "The club disbanded after its first exhibition, according to the specific details given."
+      ],
+      "correctAnswer": "The club's popularity grew between the two exhibitions.",
+      "hint": "Compare how each exhibition was received.",
+      "explanation": "The first exhibition drew little attention, while the second filled the gallery and made the news, showing the club's popularity increased over time.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "First exhibition: few visitors, no coverage -> second exhibition: full gallery, newspaper feature -> popularity increased"
+      ],
+      "logicChainSteps": [
+        "First exhibition: few visitors, no coverage",
+        "second exhibition: full gallery, newspaper feature",
+        "popularity increased"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The club's popularity grew between the two exhibitions.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The club never held a second exhibition, based on what the passage actually says.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Both exhibitions attracted the exact same number of visitors, according to the account given.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The club disbanded after its first exhibition, according to the specific details given.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L7_Q2_PRACTICE",
+      "level": 7,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Every morning, Aroha takes her horse out for training. For months, the horse would refuse to jump over even the lowest bar. This week, it cleared every jump in the course on the first try.",
+      "options": [
+        "The horse still refuses to jump at all.",
+        "Aroha stopped training the horse months ago, based on the details the passage provides.",
+        "The horse's jumping ability has improved.",
+        "The training course was removed this week, as the passage lays out the sequence of events."
+      ],
+      "correctAnswer": "The horse's jumping ability has improved.",
+      "hint": "Think about how the horse's jumping changed compared to before.",
+      "explanation": "The horse used to refuse even low jumps but now clears every jump on the first attempt, showing a clear improvement in its ability.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Horse previously refused low jumps -> this week clears every jump easily -> jumping ability has improved"
+      ],
+      "logicChainSteps": [
+        "Horse previously refused low jumps",
+        "this week clears every jump easily",
+        "jumping ability has improved"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The horse still refuses to jump at all.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Aroha stopped training the horse months ago, based on the details the passage provides.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The horse's jumping ability has improved.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The training course was removed this week, as the passage lays out the sequence of events.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L7_Q3_PRACTICE",
+      "level": 7,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Deshawn used to submit his weekly reports two days late almost every time. After his supervisor sat down with him to review his workload, he has turned in every report early for the past six weeks.",
+      "options": [
+        "Deshawn still submits every report late.",
+        "Deshawn's supervisor no longer reviews his work.",
+        "Turning in reports early made no difference to Deshawn.",
+        "The conversation with his supervisor likely changed Deshawn's habit."
+      ],
+      "correctAnswer": "The conversation with his supervisor likely changed Deshawn's habit.",
+      "hint": "Notice what happened right before Deshawn's habit changed.",
+      "explanation": "Deshawn's lateness stopped right after his supervisor reviewed his workload with him, suggesting that conversation contributed to his improved habit.",
+      "strategyBadge": "LOGICAL EXTRAPOLATION MATRIX",
+      "logicChain": [
+        "Deshawn often late -> supervisor reviews workload with him -> reports now early for six weeks -> conversation likely caused the change"
+      ],
+      "logicChainSteps": [
+        "Deshawn often late",
+        "supervisor reviews workload with him",
+        "reports now early for six weeks",
+        "conversation likely caused the change"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Deshawn still submits every report late.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Deshawn's supervisor no longer reviews his work.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Turning in reports early made no difference to Deshawn.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The conversation with his supervisor likely changed Deshawn's habit.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L8_Q1_PRACTICE",
+      "level": 8,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "The bookstore used to close at 5 p.m. every day. After adding a quiet reading corner and staying open until 9 p.m., the owner noticed the shop was often crowded during the evening hours.",
+      "options": [
+        "The bookstore closed down completely after the change, given the way the passage frames things.",
+        "Extending the hours likely attracted more evening customers.",
+        "Customers stopped visiting the bookstore in the evening, according to how the passage describes the situation.",
+        "The bookstore went back to closing at 5 p.m. immediately, given the specific information included in the passage."
+      ],
+      "correctAnswer": "Extending the hours likely attracted more evening customers.",
+      "hint": "Think about who the bookstore attracted after changing its hours.",
+      "explanation": "After staying open later with a new reading corner, the shop became crowded in the evenings, suggesting the longer hours brought in more customers.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Hours extended and reading corner added -> shop crowded in evenings -> change likely attracted more customers"
+      ],
+      "logicChainSteps": [
+        "Hours extended and reading corner added",
+        "shop crowded in evenings",
+        "change likely attracted more customers"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The bookstore closed down completely after the change, given the way the passage frames things.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Extending the hours likely attracted more evening customers.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Customers stopped visiting the bookstore in the evening, according to how the passage describes the situation.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The bookstore went back to closing at 5 p.m. immediately, given the specific information included in the passage.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L8_Q2_PRACTICE",
+      "level": 8,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Uncle Femi used to mix up his nieces' and nephews' birthdays every single year. This year, he added reminders to his phone for each birthday and sent every gift exactly on time.",
+      "options": [
+        "Uncle Femi forgot every birthday again this year.",
+        "Using phone reminders helped Uncle Femi remember the birthdays.",
+        "Uncle Femi stopped sending birthday gifts altogether.",
+        "Phone reminders do not help people remember important dates."
+      ],
+      "correctAnswer": "Using phone reminders helped Uncle Femi remember the birthdays.",
+      "hint": "Look at what Uncle Femi did differently this year.",
+      "explanation": "By setting reminders on his phone, Uncle Femi managed to send every gift on time, unlike his usual pattern of mixing up dates.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Past pattern: mixed-up birthdays -> this year: phone reminders added -> every gift sent on time -> reminders likely helped"
+      ],
+      "logicChainSteps": [
+        "Past pattern: mixed-up birthdays",
+        "this year: phone reminders added",
+        "every gift sent on time",
+        "reminders likely helped"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Uncle Femi forgot every birthday again this year.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Using phone reminders helped Uncle Femi remember the birthdays.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "Uncle Femi stopped sending birthday gifts altogether.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Phone reminders do not help people remember important dates.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L8_Q3_PRACTICE",
+      "level": 8,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "The university's study hall was nearly silent the week before final exams. Almost every table was occupied, and students sat with textbooks, laptops, and color-coded notes spread out in front of them.",
+      "options": [
+        "The study hall was completely empty that week, given the specific information included in the passage.",
+        "Students ignored their exams that week, given how the events unfolded.",
+        "Many students were using the study hall to prepare for exams.",
+        "The study hall closed during exam week."
+      ],
+      "correctAnswer": "Many students were using the study hall to prepare for exams.",
+      "hint": "Think about why the study hall would be full and quiet right before exams.",
+      "explanation": "A full, silent study hall with students surrounded by notes and textbooks during exam week shows that many students gathered there specifically to prepare for their exams.",
+      "strategyBadge": "PREMISE LINK RADAR",
+      "logicChain": [
+        "Exam week approaching -> study hall full and silent -> students surrounded by study materials -> hall used for exam prep"
+      ],
+      "logicChainSteps": [
+        "Exam week approaching",
+        "study hall full and silent",
+        "students surrounded by study materials",
+        "hall used for exam prep"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The study hall was completely empty that week, given the specific information included in the passage.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Students ignored their exams that week, given how the events unfolded.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Many students were using the study hall to prepare for exams.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The study hall closed during exam week.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L9_Q1_PRACTICE",
+      "level": 9,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "The hardware store began offering a discount for customers who make five purchases in a month. Since then, cashiers have noticed the same faces returning to the store several times a week.",
+      "options": [
+        "The discount program made customers shop less often.",
+        "The discount program may be encouraging customers to shop more often.",
+        "The store removed the discount program shortly after starting it.",
+        "Customers never returned to the store after the program began."
+      ],
+      "correctAnswer": "The discount program may be encouraging customers to shop more often.",
+      "hint": "Think about how the discount might affect how often people shop.",
+      "explanation": "Customers began visiting more frequently after the discount program started, suggesting the offer is encouraging repeat visits.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Discount for five purchases introduced -> same customers return several times a week -> program may be driving repeat visits"
+      ],
+      "logicChainSteps": [
+        "Discount for five purchases introduced",
+        "same customers return several times a week",
+        "program may be driving repeat visits"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The discount program made customers shop less often.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The discount program may be encouraging customers to shop more often.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The store removed the discount program shortly after starting it.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Customers never returned to the store after the program began.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L9_Q2_PRACTICE",
+      "level": 9,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "After installing new software, several office workers reported that their computers now open large spreadsheet files in about three seconds, compared to nearly a minute before the update.",
+      "options": [
+        "The new software made the computers open files more slowly, according to the account given.",
+        "The computers stopped opening files completely.",
+        "File-opening speed was not affected by the software update.",
+        "The new software made the computers open files faster."
+      ],
+      "correctAnswer": "The new software made the computers open files faster.",
+      "hint": "Compare the file-opening times before and after the update.",
+      "explanation": "Opening time dropped from nearly a minute to about three seconds after the update, showing a clear improvement in speed.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Before: files take nearly a minute -> after software update: files open in three seconds -> update caused the speed increase"
+      ],
+      "logicChainSteps": [
+        "Before: files take nearly a minute",
+        "after software update: files open in three seconds",
+        "update caused the speed increase"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The new software made the computers open files more slowly, according to the account given.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The computers stopped opening files completely.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "File-opening speed was not affected by the software update.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The new software made the computers open files faster.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L9_Q3_PRACTICE",
+      "level": 9,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "The small mountain village rarely saw visitors outside of ski season. After a well-known hiking trail was added to a popular travel app, guided tour groups began arriving even during the summer months.",
+      "options": [
+        "The hiking trail was closed shortly after being listed, based on the details the passage provides.",
+        "The new listing likely brought more visitors to the village.",
+        "The village stopped allowing visitors during summer, as the situation is described here.",
+        "Tour groups avoided the village completely after the listing, based on the passage's account of what happened."
+      ],
+      "correctAnswer": "The new listing likely brought more visitors to the village.",
+      "hint": "Notice what changed right before summer visitors began arriving.",
+      "explanation": "Summer visitors started arriving only after the trail was added to the travel app, suggesting the listing played a role in attracting them.",
+      "strategyBadge": "CAUSE-EFFECT TRAJECTORY",
+      "logicChain": [
+        "Trail added to travel app -> summer tour groups begin arriving -> listing likely caused the increase in visitors"
+      ],
+      "logicChainSteps": [
+        "Trail added to travel app",
+        "summer tour groups begin arriving",
+        "listing likely caused the increase in visitors"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The hiking trail was closed shortly after being listed, based on the details the passage provides.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The new listing likely brought more visitors to the village.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The village stopped allowing visitors during summer, as the situation is described here.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Tour groups avoided the village completely after the listing, based on the passage's account of what happened.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L10_Q1_PRACTICE",
+      "level": 10,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Owen used to skip lunch most workdays and often felt shaky and unfocused by mid-afternoon. Since he started packing a proper lunch each morning, the afternoon shakiness has not returned.",
+      "options": [
+        "Eating lunch made Owen feel shakier than before, based on what the passage actually says.",
+        "Owen stopped eating lunch completely this month, based on the details the passage provides.",
+        "Owen's shakiness had no connection to his eating habits, according to how the passage describes the situation.",
+        "Eating lunch regularly likely helped stop Owen's shakiness."
+      ],
+      "correctAnswer": "Eating lunch regularly likely helped stop Owen's shakiness.",
+      "hint": "Compare what happened before and after Owen changed his lunch routine.",
+      "explanation": "Owen's afternoon shakiness stopped once he began eating lunch consistently, suggesting the meal was helping his energy levels through the afternoon.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Before: skips lunch, feels shaky -> after: eats lunch daily -> shakiness stops -> lunch likely explains the change"
+      ],
+      "logicChainSteps": [
+        "Before: skips lunch, feels shaky",
+        "after: eats lunch daily",
+        "shakiness stops",
+        "lunch likely explains the change"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "Eating lunch made Owen feel shakier than before, based on what the passage actually says.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "Owen stopped eating lunch completely this month, based on the details the passage provides.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Owen's shakiness had no connection to his eating habits, according to how the passage describes the situation.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "Eating lunch regularly likely helped stop Owen's shakiness.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L10_Q2_PRACTICE",
+      "level": 10,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "The neighborhood theater's last two dramas played to rows of empty seats. Their newest production, a mystery, has already sold out for its opening three nights.",
+      "options": [
+        "The new mystery is selling fewer tickets than earlier plays.",
+        "The theater cancelled the mystery's opening nights.",
+        "The new mystery is attracting more interest than the theater's recent plays.",
+        "The theater has stopped producing plays altogether."
+      ],
+      "correctAnswer": "The new mystery is attracting more interest than the theater's recent plays.",
+      "hint": "Compare ticket sales for the new play with the previous ones.",
+      "explanation": "While earlier dramas left many seats empty, the new mystery has already sold out three nights, showing much stronger audience interest.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Previous plays: many empty seats -> new mystery: sold out three nights -> interest is clearly stronger now"
+      ],
+      "logicChainSteps": [
+        "Previous plays: many empty seats",
+        "new mystery: sold out three nights",
+        "interest is clearly stronger now"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The new mystery is selling fewer tickets than earlier plays.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The theater cancelled the mystery's opening nights.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "The new mystery is attracting more interest than the theater's recent plays.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        },
+        {
+          "option": "The theater has stopped producing plays altogether.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGCONCLUSION_L10_Q3_PRACTICE",
+      "level": 10,
+      "instruction": "Read the passage and select the correct conclusion.",
+      "passage": "Each spring, the Nakagawa family plants peppers in their garden. This year, after switching to a different watering schedule, their pepper plants produced almost double the usual harvest.",
+      "options": [
+        "The new watering schedule reduced the size of the harvest, as the passage lays out the sequence of events.",
+        "The Nakagawa family did not plant peppers this year, according to the specific details given.",
+        "Watering schedules have no effect on how plants grow, as the situation is described here.",
+        "The new watering schedule likely helped increase the harvest."
+      ],
+      "correctAnswer": "The new watering schedule likely helped increase the harvest.",
+      "hint": "Think about what changed in the garden this year compared to previous years.",
+      "explanation": "The pepper harvest nearly doubled only after the family changed their watering schedule, suggesting the new routine helped the plants grow better.",
+      "strategyBadge": "CAUSAL CHAIN ANCHORING",
+      "logicChain": [
+        "Watering schedule changed -> harvest nearly doubles compared to usual years -> new schedule likely improved the yield"
+      ],
+      "logicChainSteps": [
+        "Watering schedule changed",
+        "harvest nearly doubles compared to usual years",
+        "new schedule likely improved the yield"
+      ],
+      "candidatesDiagnosis": [
+        {
+          "option": "The new watering schedule reduced the size of the harvest, as the passage lays out the sequence of events.",
+          "isCorrect": false,
+          "category": "DIRECT CONTRADICTION (REVERSED PREMISE)",
+          "diagnosis": "Directly conflicts with one or more observed facts in the passage."
+        },
+        {
+          "option": "The Nakagawa family did not plant peppers this year, according to the specific details given.",
+          "isCorrect": false,
+          "category": "IRRELEVANT DISTRACTION (UNRELATED TOPIC)",
+          "diagnosis": "Focuses on incidental topics not causally linked to the core premise chain."
+        },
+        {
+          "option": "Watering schedules have no effect on how plants grow, as the situation is described here.",
+          "isCorrect": false,
+          "category": "PREMATURE LEAP (UNFOUNDED SPECULATION)",
+          "diagnosis": "Leaps beyond the verified chain of evidence; introduces unstated assumptions."
+        },
+        {
+          "option": "The new watering schedule likely helped increase the harvest.",
+          "isCorrect": true,
+          "category": "SOUND CONCLUSION (INEVITABLE OUTCOME)",
+          "diagnosis": "Necessarily follows from the established premises in the logic chain."
+        }
+      ]
+    }
+  ]
+}
