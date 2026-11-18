@@ -1,0 +1,458 @@
+{
+    "gameType": "situationSpeaking",
+    "phase": "practice",
+    "batchIndex": 9,
+    "levels": "81-90",
+    "quests": [
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L81_Q1",
+            "interactionType": "practice",
+            "situationText": "At an airport counter, you hand over your passport for the afternoon flight to Madrid. You like to be able to stretch your legs.",
+            "options": [
+                "I'd like to check in for the flight to Madrid. Could I have an aisle seat, please?",
+                "My bag is a bit over the limit. Can I move some things to my hand luggage, or would I have to pay extra?",
+                "I demand you resolve this issue immediately.",
+                "Please you give that for me fast because I need."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "I'd like to check in for the flight to Madrid. Could I have an aisle seat, please?",
+            "explanation": "Check-in agents work through a routine: flight, documents, seat. Volunteering your flight and seat preference makes the process quicker and shows you know what to expect.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L81_Q2",
+            "interactionType": "practice",
+            "situationText": "The scale at check-in shows your suitcase is two kilos over the limit. You have space in your hand luggage.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "My name isn't showing on your list, but I have a confirmation email. Could you check my booking again?",
+                "I demand you resolve this issue immediately.",
+                "My bag is a bit over the limit. Can I move some things to my hand luggage, or would I have to pay extra?"
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "My bag is a bit over the limit. Can I move some things to my hand luggage, or would I have to pay extra?",
+            "explanation": "Airlines often let you reorganize your bags on the spot. Asking about repacking or paying gives the agent choices, which is more efficient than arguing about the rule.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L81_Q3",
+            "interactionType": "practice",
+            "situationText": "The airline agent says she can't find your name on the passenger list. You have a confirmation email on your phone.",
+            "options": [
+                "I demand you resolve this issue immediately.",
+                "Do I need to take my laptop out of the bag?",
+                "My name isn't showing on your list, but I have a confirmation email. Could you check my booking again?",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "My name isn't showing on your list, but I have a confirmation email. Could you check my booking again?",
+            "explanation": "Mentioning the confirmation email gives the agent something to work with. Asking to check again is more effective than repeating that you have a ticket.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L82_Q1",
+            "interactionType": "practice",
+            "situationText": "You're in the security line at an airport you don't know, holding a bag with a laptop and a water bottle. The officer is explaining the rules quickly.",
+            "options": [
+                "The board says gate 12, but my app says gate 20. Which one is right?",
+                "Do I need to take my laptop out of the bag?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "Do I need to take my laptop out of the bag?",
+            "explanation": "Security rules vary between airports. Asking before you unpack prevents delays for you and the people behind you, and officers are used to the question.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L82_Q2",
+            "interactionType": "practice",
+            "situationText": "The departure board shows gate 12 for your flight, but your airline app says gate 20. Boarding starts in fifteen minutes and a gate agent is nearby.",
+            "options": [
+                "The board says gate 12, but my app says gate 20. Which one is right?",
+                "I think I've lost my boarding pass. Is it possible to print a new one at the gate?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "The board says gate 12, but my app says gate 20. Which one is right?",
+            "explanation": "Naming both sources ('the board' and 'the app') helps the staff member spot the problem immediately. It also shows you've made an effort before asking.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L82_Q3",
+            "interactionType": "practice",
+            "situationText": "Just before boarding, you realize your boarding pass isn't in your bag or your phone. The gate is about to close.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "My flight has been delayed by three hours. Could you tell me if I'm entitled to a meal voucher?",
+                "I demand you resolve this issue immediately.",
+                "I think I've lost my boarding pass. Is it possible to print a new one at the gate?"
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "I think I've lost my boarding pass. Is it possible to print a new one at the gate?",
+            "explanation": "In a rush, state the problem in one sentence and ask for a solution in the next. 'Is it possible to…?' invites the agent to check options without saying no.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L83_Q1",
+            "interactionType": "practice",
+            "situationText": "Your flight has been delayed by three hours, and you've been waiting since lunchtime. You go to the airline desk and hope for a meal.",
+            "options": [
+                "I demand you resolve this issue immediately.",
+                "My flight was cancelled. What are my options for getting to Rome today?",
+                "My flight has been delayed by three hours. Could you tell me if I'm entitled to a meal voucher?",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "My flight has been delayed by three hours. Could you tell me if I'm entitled to a meal voucher?",
+            "explanation": "'Am I entitled to…?' is a polite, formal way to ask about your rights, and it sounds informed. Giving the delay length shows why you're asking.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L83_Q2",
+            "interactionType": "practice",
+            "situationText": "The airline has just cancelled your flight to Rome, and you need to get there today for a meeting. The queue at the desk is long, but you've reached the front.",
+            "options": [
+                "Because my first flight was late, I've missed my connection to Athens. Could you put me on the next available flight?",
+                "My flight was cancelled. What are my options for getting to Rome today?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "My flight was cancelled. What are my options for getting to Rome today?",
+            "explanation": "'What are my options?' is open, letting the agent explain the possible solutions. Adding your destination and 'today' tells them what matters most.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L83_Q3",
+            "interactionType": "practice",
+            "situationText": "Your first flight landed forty minutes late, and you missed your connection to Athens. You're now at the transfer desk.",
+            "options": [
+                "Because my first flight was late, I've missed my connection to Athens. Could you put me on the next available flight?",
+                "My suitcase didn't arrive. It's a large blue one with a yellow ribbon on the handle.",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "Because my first flight was late, I've missed my connection to Athens. Could you put me on the next available flight?",
+            "explanation": "Explaining that the delay caused your missed connection shows it isn't your fault, and asking to be rebooked is a clear, actionable request.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L84_Q1",
+            "interactionType": "practice",
+            "situationText": "After waiting at the baggage carousel until it stops, your suitcase hasn't appeared. You approach the airline's baggage desk.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "I'd like to report my bag as missing. Could you deliver it to my hotel when it's found?",
+                "I demand you resolve this issue immediately.",
+                "My suitcase didn't arrive. It's a large blue one with a yellow ribbon on the handle."
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "My suitcase didn't arrive. It's a large blue one with a yellow ribbon on the handle.",
+            "explanation": "Baggage staff see hundreds of black suitcases. A distinctive detail, such as the yellow ribbon, makes your bag identifiable in a system or on a conveyor.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L84_Q2",
+            "interactionType": "practice",
+            "situationText": "The baggage desk has confirmed your bag is not in the system. You're staying at a hotel for the next four nights and want it sent there.",
+            "options": [
+                "I demand you resolve this issue immediately.",
+                "The wheel of my suitcase is broken. It wasn't like this when I checked it in.",
+                "I'd like to report my bag as missing. Could you deliver it to my hotel when it's found?",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "I'd like to report my bag as missing. Could you deliver it to my hotel when it's found?",
+            "explanation": "In a lost luggage report, the delivery address is the most useful piece of information. Asking about the process tells you what to expect and when to follow up.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L84_Q3",
+            "interactionType": "practice",
+            "situationText": "At the airport carousel, you notice your suitcase has a broken wheel. It was fine when you gave it to the airline. You speak to the baggage service.",
+            "options": [
+                "Hello, I have a reservation under the name Silva for three nights.",
+                "The wheel of my suitcase is broken. It wasn't like this when I checked it in.",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "The wheel of my suitcase is broken. It wasn't like this when I checked it in.",
+            "explanation": "'It wasn't like this when I checked it in' establishes responsibility without accusing anyone. Staff can then start the claims procedure.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L85_Q1",
+            "interactionType": "practice",
+            "situationText": "Late in the afternoon, you reach the front desk of a hotel after a long journey. Your surname is Silva and you're staying three nights.",
+            "options": [
+                "Hello, I have a reservation under the name Silva for three nights.",
+                "Could you tell me what time breakfast is, and how I connect to the wifi?",
+                "I don't have time to chat with you right now.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "Hello, I have a reservation under the name Silva for three nights.",
+            "explanation": "Reception needs a name to find your reservation. Adding the number of nights confirms you have the right booking and prevents mistakes.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L85_Q2",
+            "interactionType": "practice",
+            "situationText": "You've just received your key card at a hotel and want to plan the next morning. You'd also like to be online right away.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "Our flight lands early. Would it be possible to check in before two, or could we leave our luggage here?",
+                "I demand you resolve this issue immediately.",
+                "Could you tell me what time breakfast is, and how I connect to the wifi?"
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "Could you tell me what time breakfast is, and how I connect to the wifi?",
+            "explanation": "Breakfast time and wifi are the two most common questions at check-in, so asking both at once saves you a trip back to the desk.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L85_Q3",
+            "interactionType": "practice",
+            "situationText": "Your flight lands at 8 a.m., so you arrive at the hotel in the morning, but standard check-in is at two o'clock in the afternoon.",
+            "options": [
+                "I demand you resolve this issue immediately.",
+                "The air conditioning in my room isn't working and it's very hot. Could someone come and check it?",
+                "Our flight lands early. Would it be possible to check in before two, or could we leave our luggage here?",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "Our flight lands early. Would it be possible to check in before two, or could we leave our luggage here?",
+            "explanation": "Suggesting an alternative (leaving luggage) means the hotel can still help if the room isn't ready. It shows consideration for their schedule.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L86_Q1",
+            "interactionType": "practice",
+            "situationText": "It's ten p.m. in summer and the air conditioning in your hotel room only blows warm air. You phone reception from your room. You're in room 412.",
+            "options": [
+                "The room next door is really noisy. Could you ask them to keep it down, or move me to a different room?",
+                "The air conditioning in my room isn't working and it's very hot. Could someone come and check it?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "The air conditioning in my room isn't working and it's very hot. Could someone come and check it?",
+            "explanation": "Hotel staff respond faster when they understand the effect ('it's very hot'). Asking for someone to 'take a look' sounds cooperative and it's likely to get action.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L86_Q2",
+            "interactionType": "practice",
+            "situationText": "It's midnight and guests next door are talking loudly and playing music. You've got an early train and can't sleep. You call the front desk.",
+            "options": [
+                "The room next door is really noisy. Could you ask them to keep it down, or move me to a different room?",
+                "I booked a room with a sea view, but this one faces the car park. Do you have a different room available?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "The room next door is really noisy. Could you ask them to keep it down, or move me to a different room?",
+            "explanation": "Offering two options makes it easier for staff to resolve the situation quickly. Asking them to speak to the neighbors first is polite, and a room change is your backup.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L86_Q3",
+            "interactionType": "practice",
+            "situationText": "You booked a room with a sea view for your anniversary, but the room you were given overlooks the car park. You call the front desk.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "I need to cancel my booking for next weekend. Would I get a refund?",
+                "I demand you resolve this issue immediately.",
+                "I booked a room with a sea view, but this one faces the car park. Do you have a different room available?"
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "I booked a room with a sea view, but this one faces the car park. Do you have a different room available?",
+            "explanation": "Comparing what you paid for with what you received is the most convincing argument. Asking about other rooms encourages a solution rather than a complaint.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L87_Q1",
+            "interactionType": "practice",
+            "situationText": "You must cancel your hotel booking for next weekend because of a family issue. You call the hotel.",
+            "options": [
+                "I demand you resolve this issue immediately.",
+                "I'd like to move my city tour from Tuesday to Wednesday. Is there any space?",
+                "I need to cancel my booking for next weekend. Would I get a refund?",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "I need to cancel my booking for next weekend. Would I get a refund?",
+            "explanation": "Asking 'Will I get a refund?' in the same sentence as the cancellation helps you find out the cost before you commit. Most booking policies depend on timing.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L87_Q2",
+            "interactionType": "practice",
+            "situationText": "You booked a city tour for Tuesday, but heavy rain is forecast. You'd like to do it on Wednesday and call the tour company.",
+            "options": [
+                "There's a spelling mistake in my name on the ticket. Can you correct it without charging me?",
+                "I'd like to move my city tour from Tuesday to Wednesday. Is there any space?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "I'd like to move my city tour from Tuesday to Wednesday. Is there any space?",
+            "explanation": "Companies need to see the old and new dates to check availability and price. Asking 'Is there space?' shows you're aware it might not be possible.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L87_Q3",
+            "interactionType": "practice",
+            "situationText": "You notice on your flight ticket that your surname is missing a letter. The flight is in two weeks and you phone the airline.",
+            "options": [
+                "There's a spelling mistake in my name on the ticket. Can you correct it without charging me?",
+                "I think I got on the wrong train. I need to get to Central Station. Where should I change?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "There's a spelling mistake in my name on the ticket. Can you correct it without charging me?",
+            "explanation": "Being precise about the error (a spelling in your name) and asking for a free fix opens a fair discussion. Airlines often charge for changes, so it's worth asking early.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L88_Q1",
+            "interactionType": "practice",
+            "situationText": "You realize on the train that the announcements don't include your stop. You've got on the wrong line and need to reach Central Station.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "I missed my stop. What's the quickest way to get back?",
+                "I demand you resolve this issue immediately.",
+                "I think I got on the wrong train. I need to get to Central Station. Where should I change?"
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "I think I got on the wrong train. I need to get to Central Station. Where should I change?",
+            "explanation": "Explaining the mistake and naming your destination lets the staff give a precise route. It's better than only asking 'Where am I?'.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L88_Q2",
+            "interactionType": "practice",
+            "situationText": "You were looking at your phone on the bus and only noticed after several stops that you passed your stop. You ask the driver.",
+            "options": [
+                "I demand you resolve this issue immediately.",
+                "The ticket machine wouldn't accept my card, so I couldn't buy a ticket. Can I pay you here?",
+                "I missed my stop. What's the quickest way to get back?",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "I missed my stop. What's the quickest way to get back?",
+            "explanation": "'What's the quickest way…?' makes the helper prioritize. It's better than asking about all possible ways, because you're already running late.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L88_Q3",
+            "interactionType": "practice",
+            "situationText": "You got on a tram without a ticket because the machine refused your card. An inspector checks tickets and you explain.",
+            "options": [
+                "I think this is a longer route than usual. Could you use the main road instead?",
+                "The ticket machine wouldn't accept my card, so I couldn't buy a ticket. Can I pay you here?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "The ticket machine wouldn't accept my card, so I couldn't buy a ticket. Can I pay you here?",
+            "explanation": "Inspectors respond well when you say what stopped you and offer to pay at once. It proves you didn't intend to avoid the fare.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L89_Q1",
+            "interactionType": "practice",
+            "situationText": "You're in a taxi to the airport and the driver is taking small streets while you know a main road that's usually faster. You have a flight in ninety minutes.",
+            "options": [
+                "I think this is a longer route than usual. Could you use the main road instead?",
+                "Would you mind waiting here for five minutes? I'll be right back.",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "I think this is a longer route than usual. Could you use the main road instead?",
+            "explanation": "'I think this is a longer route than usual' expresses concern without accusing the driver. Suggesting the main road gives him an easy way to change.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L89_Q2",
+            "interactionType": "practice",
+            "situationText": "You've reached a friend's flat and need to fetch a package from inside. You'd like the taxi to wait so you can continue to the station. You'll only be five minutes.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "The meter says forty, but the app quoted twenty-five for this trip. Can you explain why it's higher?",
+                "Give me this immediately without making me wait.",
+                "Would you mind waiting here for five minutes? I'll be right back."
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "Would you mind waiting here for five minutes? I'll be right back.",
+            "explanation": "Drivers hesitate when they don't know how long they'll wait. Giving the exact time and saying you'll be right back shows the request is small and clear.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L89_Q3",
+            "interactionType": "practice",
+            "situationText": "The ride-hailing app said your trip would cost about twenty-five, but the driver's meter shows forty when you arrive.",
+            "options": [
+                "I demand you resolve this issue immediately.",
+                "I'm calling because my internet has been very slow for three days. It was fine before that.",
+                "The meter says forty, but the app quoted twenty-five for this trip. Can you explain why it's higher?",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "The meter says forty, but the app quoted twenty-five for this trip. Can you explain why it's higher?",
+            "explanation": "Saying 'the app quoted twenty-five' makes the difference clear and puts the burden of explanation on the driver, without accusation. Asking 'why' politely often reveals a reason such as tolls.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L90_Q1",
+            "interactionType": "practice",
+            "situationText": "You phone your internet provider because your connection has become extremely slow. It started three days ago and had been working normally before.",
+            "options": [
+                "My bill this month is much higher than usual. I'd like to know what the extra charge is for.",
+                "I'm calling because my internet has been very slow for three days. It was fine before that.",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "I'm calling because my internet has been very slow for three days. It was fine before that.",
+            "explanation": "A timeline ('for three days', 'it was fine before') helps the agent decide between a local problem and a network one, and stops them from starting with basic questions.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L90_Q2",
+            "interactionType": "practice",
+            "situationText": "Your monthly phone bill is sixty euros, though it's usually around thirty. You call the company to ask why.",
+            "options": [
+                "My bill this month is much higher than usual. I'd like to know what the extra charge is for.",
+                "I've explained this three times already. Could I speak to someone who can decide this?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "My bill this month is much higher than usual. I'd like to know what the extra charge is for.",
+            "explanation": "Saying what you expected ('usually about thirty') shows the agent exactly where the difference is. Asking what the extra charge is for is neutral, not aggressive.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L90_Q3",
+            "interactionType": "practice",
+            "situationText": "You've been transferred three times on a company helpline, each time repeating your problem to a new person. The current agent can't resolve it either.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "I'd like to check in for the flight to Madrid. Could I have an aisle seat, please?",
+                "I demand you resolve this issue immediately.",
+                "I've explained this three times already. Could I speak to someone who can decide this?"
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "I've explained this three times already. Could I speak to someone who can decide this?",
+            "explanation": "Saying how many times you've explained something shows why you're asking. 'Someone who can decide' is a polite way to ask for a supervisor without criticizing the agent.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        }
+    ]
+}

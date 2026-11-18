@@ -1,0 +1,458 @@
+{
+    "gameType": "situationSpeaking",
+    "phase": "practice",
+    "batchIndex": 10,
+    "levels": "91-100",
+    "quests": [
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L91_Q1",
+            "interactionType": "practice",
+            "situationText": "A vegetarian sandwich was on your order, but the one the waiter has just brought contains chicken. You don't eat meat, and you want to explain the mistake without sounding angry.",
+            "options": [
+                "Excuse me, I ordered the vegetarian sandwich, but this one has chicken. Could you change it, please? I don't eat meat.",
+                "I ordered a black jacket, but I received a gray one. What can we do?",
+                "Hey you, listen to me and fix this right now.",
+                "Please you give that for me fast because I need."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "Excuse me, I ordered the vegetarian sandwich, but this one has chicken. Could you change it, please? I don't eat meat.",
+            "explanation": "The mistake matters because of a dietary need, so mentioning it ('I don't eat meat') explains the urgency. Asking for a change is more constructive than complaining.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L91_Q2",
+            "interactionType": "practice",
+            "situationText": "You ordered a black jacket from an online shop, but a gray one arrived. You write to the customer service chat.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "Half of my order is missing. There's no rice and no drink in the bag.",
+                "I demand you resolve this issue immediately.",
+                "I ordered a black jacket, but I received a gray one. What can we do?"
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "I ordered a black jacket, but I received a gray one. What can we do?",
+            "explanation": "Stating the two facts ('black' versus 'gray') makes the error clear. 'What can we do?' invites the company to propose a solution instead of putting them on the defensive.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L91_Q3",
+            "interactionType": "practice",
+            "situationText": "Your delivered meal arrives in a bag, but half the order is missing: no rice and no drink. You call the restaurant.",
+            "options": [
+                "I demand you resolve this issue immediately.",
+                "I left my umbrella in Screen 3 about an hour ago. Has anyone handed one in?",
+                "Half of my order is missing. There's no rice and no drink in the bag.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "Half of my order is missing. There's no rice and no drink in the bag.",
+            "explanation": "Listing exactly what's missing helps the restaurant see the size of the problem. Naming the items lets them check against your order and decide between a refund and a replacement.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L92_Q1",
+            "interactionType": "practice",
+            "situationText": "After a film in Screen 3 ended, you left the cinema and realized on the street that you forgot your umbrella. You went back, and you're now at the ticket desk.",
+            "options": [
+                "Hello, I think I lost my wallet on the number 14 bus this morning. Who should I contact about it?",
+                "I left my umbrella in Screen 3 about an hour ago. Has anyone handed one in?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "I left my umbrella in Screen 3 about an hour ago. Has anyone handed one in?",
+            "explanation": "Lost-and-found staff can't search without location, time, and item. Giving all three in the first sentence lets them look at once.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L92_Q2",
+            "interactionType": "practice",
+            "situationText": "You realize your wallet is missing after getting off the number 14 bus this morning. You call the transport office.",
+            "options": [
+                "Hello, I think I lost my wallet on the number 14 bus this morning. Who should I contact about it?",
+                "I found this phone on a bench. Could you hold it in case someone comes to ask?",
+                "I don't have time to chat with you right now.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "Hello, I think I lost my wallet on the number 14 bus this morning. Who should I contact about it?",
+            "explanation": "The route number and time help the transport company narrow the search. Asking who to contact avoids being sent from department to department.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L92_Q3",
+            "interactionType": "practice",
+            "situationText": "On a park bench, you discover a phone that isn't yours. You take it to the reception of a nearby hotel.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "I booked a table for eight. Can you check again? I have the confirmation email.",
+                "I demand you resolve this issue immediately.",
+                "I found this phone on a bench. Could you hold it in case someone comes to ask?"
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "I found this phone on a bench. Could you hold it in case someone comes to ask?",
+            "explanation": "Explaining where you found the item gives the owner a way to identify it. Asking them to 'hold it' leaves the decision on the follow-up to the staff.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L93_Q1",
+            "interactionType": "practice",
+            "situationText": "You arrive at a restaurant at eight for your reservation, but the host says nothing is booked under your name. You have your confirmation email on your phone.",
+            "options": [
+                "I demand you resolve this issue immediately.",
+                "I'd prefer to keep my seat. I could only give it up for a later flight today, with compensation.",
+                "I booked a table for eight. Can you check again? I have the confirmation email.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "I booked a table for eight. Can you check again? I have the confirmation email.",
+            "explanation": "Offering your confirmation email gives the restaurant something to check, which is more productive than arguing. Saying the time again helps them find the entry.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L93_Q2",
+            "interactionType": "practice",
+            "situationText": "At the gate, the flight is overbooked and the agent asks if you'd give up your seat for the next flight tomorrow. You have a meeting in the evening.",
+            "options": [
+                "I booked a compact car, but this one costs more. Could I have the car I reserved?",
+                "I'd prefer to keep my seat. I could only give it up for a later flight today, with compensation.",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "I'd prefer to keep my seat. I could only give it up for a later flight today, with compensation.",
+            "explanation": "You have the right to say no or negotiate. Stating conditions ('a later flight and compensation') turns a demand into a fair deal, and it stays polite.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L93_Q3",
+            "interactionType": "practice",
+            "situationText": "At a rental desk, the agent says the compact car you reserved isn't available and offers a bigger one at a higher price.",
+            "options": [
+                "I booked a compact car, but this one costs more. Could I have the car I reserved?",
+                "I don't have my receipt, but I paid by card last week. Could you look up the purchase?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "I booked a compact car, but this one costs more. Could I have the car I reserved?",
+            "explanation": "'I reserved' plus the price difference states your position clearly. Offering to wait for the right car is a practical alternative to arguing.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L94_Q1",
+            "interactionType": "practice",
+            "situationText": "You want to return a pair of trainers that were too small, but you've lost the receipt. You bought them last week and paid by card.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "This was a gift and it doesn't fit, and I don't have a receipt. Could I get store credit instead?",
+                "I demand you resolve this issue immediately.",
+                "I don't have my receipt, but I paid by card last week. Could you look up the purchase?"
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "I don't have my receipt, but I paid by card last week. Could you look up the purchase?",
+            "explanation": "Stores can often find purchases by card number and date. Saying how you paid gives them an alternative to the receipt, which turns the problem into a task.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L94_Q2",
+            "interactionType": "practice",
+            "situationText": "Your aunt gave you a sweater as a gift, but it doesn't fit and there's no receipt. You go to the shop she bought it from.",
+            "options": [
+                "I demand you resolve this issue immediately.",
+                "I know it's been more than thirty days, but they stopped working after three weeks. Is there anything you can do?",
+                "This was a gift and it doesn't fit, and I don't have a receipt. Could I get store credit instead?",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "This was a gift and it doesn't fit, and I don't have a receipt. Could I get store credit instead?",
+            "explanation": "Gifts have no receipt, so asking for store credit is a realistic and polite solution. Explaining that it doesn't fit shows an honest reason.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L94_Q3",
+            "interactionType": "practice",
+            "situationText": "A pair of headphones you bought stopped working after three weeks, but the shop's return period was thirty days and it's now forty. You go to the store.",
+            "options": [
+                "This blender stopped working after a week. I'd like a replacement, please.",
+                "I know it's been more than thirty days, but they stopped working after three weeks. Is there anything you can do?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "I know it's been more than thirty days, but they stopped working after three weeks. Is there anything you can do?",
+            "explanation": "Acknowledging the rule ('I know it's been over thirty days') shows respect. Explaining the fault appeared within a normal use period gives a reason for making an exception.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L95_Q1",
+            "interactionType": "practice",
+            "situationText": "You bought a blender that stopped working after one week. You have the receipt with you at the customer service desk.",
+            "options": [
+                "This blender stopped working after a week. I'd like a replacement, please.",
+                "The photo showed a leather case, but this is plastic. I'd like to exchange it.",
+                "I demand you resolve this issue immediately.",
+                "Please you give that for me fast because I need."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "This blender stopped working after a week. I'd like a replacement, please.",
+            "explanation": "'After a week' tells the shop the product failed too soon. Asking for a replacement directly saves time compared with a general complaint.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L95_Q2",
+            "interactionType": "practice",
+            "situationText": "The online picture showed a leather phone case, but the one delivered feels like cheap plastic. You return to the shop.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "The box didn't have a charger in it. Could you send me one, or replace the whole set?",
+                "I demand you resolve this issue immediately.",
+                "The photo showed a leather case, but this is plastic. I'd like to exchange it."
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "The photo showed a leather case, but this is plastic. I'd like to exchange it.",
+            "explanation": "Comparing what was advertised with what arrived is a strong basis for an exchange. Being calm and specific ('leather versus plastic') keeps the discussion factual.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L95_Q3",
+            "interactionType": "practice",
+            "situationText": "You open a new tablet at home and find the box has no charger. You call the shop that sold it.",
+            "options": [
+                "I demand you resolve this issue immediately.",
+                "You said someone would come between nine and twelve, and it's now one o'clock. Could you tell me where he is?",
+                "The box didn't have a charger in it. Could you send me one, or replace the whole set?",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "The box didn't have a charger in it. Could you send me one, or replace the whole set?",
+            "explanation": "Offering two options ('send a charger or replace the set') lets the shop select the cheaper one, which makes them more likely to agree.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L96_Q1",
+            "interactionType": "practice",
+            "situationText": "A technician promised to visit your flat between nine and twelve to repair the boiler. It's now one o'clock and nobody has come.",
+            "options": [
+                "The washing machine broke again two days after the repair. I'd like someone to come back at no charge.",
+                "You said someone would come between nine and twelve, and it's now one o'clock. Could you tell me where he is?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "You said someone would come between nine and twelve, and it's now one o'clock. Could you tell me where he is?",
+            "explanation": "Quoting the agreed time window ('between nine and twelve') makes the problem objective. Asking 'where is he?' is a practical question the company can answer.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L96_Q2",
+            "interactionType": "practice",
+            "situationText": "Your washing machine was repaired on Monday, but on Wednesday it stopped again with the same error. You call the repair company.",
+            "options": [
+                "The washing machine broke again two days after the repair. I'd like someone to come back at no charge.",
+                "That's shorter than I asked for. Is there anything you can do to even it out?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "The washing machine broke again two days after the repair. I'd like someone to come back at no charge.",
+            "explanation": "Pointing out the time since the repair ('two days') shows the fault is related to the earlier work. Asking for no charge is reasonable because the job wasn't done properly.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L96_Q3",
+            "interactionType": "practice",
+            "situationText": "Halfway through your haircut, you see it's much shorter on one side than you asked. The hairdresser is still cutting.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "My order is two days late. Can you tell me exactly when it will arrive?",
+                "I demand you resolve this issue immediately.",
+                "That's shorter than I asked for. Is there anything you can do to even it out?"
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "That's shorter than I asked for. Is there anything you can do to even it out?",
+            "explanation": "Speaking up during the service is much more effective than complaining after you leave. 'Is there anything you can do?' invites a fix and keeps a good relationship.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L97_Q1",
+            "interactionType": "practice",
+            "situationText": "A sofa you ordered was due on Monday, and it's now Wednesday. The store's website says 'in transit'. You call customer service.",
+            "options": [
+                "I demand you resolve this issue immediately.",
+                "The work was meant to be finished on Friday, but it looks like it will take longer. Could you give me a realistic new date?",
+                "My order is two days late. Can you tell me exactly when it will arrive?",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "My order is two days late. Can you tell me exactly when it will arrive?",
+            "explanation": "'Can you tell me exactly when…' asks the company to commit. Vague answers such as 'soon' don't help you plan your day.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L97_Q2",
+            "interactionType": "practice",
+            "situationText": "A builder promised your kitchen renovation would finish on Friday, but you can see there's still a lot to do. You talk to him on site.",
+            "options": [
+                "We've been waiting forty minutes for our food. Could you check on our order, please?",
+                "The work was meant to be finished on Friday, but it looks like it will take longer. Could you give me a realistic new date?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "The work was meant to be finished on Friday, but it looks like it will take longer. Could you give me a realistic new date?",
+            "explanation": "Acknowledging that delays are possible ('it looks like') keeps things civil. Asking for a 'realistic' date makes them commit to a date they can meet.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L97_Q3",
+            "interactionType": "practice",
+            "situationText": "In a busy restaurant, your table has been waiting forty minutes for the main course, while the table beside yours, who arrived later, is already eating.",
+            "options": [
+                "We've been waiting forty minutes for our food. Could you check on our order, please?",
+                "I heard the concert has been moved to Sunday, and I can't go then. Can I get a refund?",
+                "I demand you resolve this issue immediately.",
+                "Please you give that for me fast because I need."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "We've been waiting forty minutes for our food. Could you check on our order, please?",
+            "explanation": "Mentioning the wait ('forty minutes') gives a neutral fact. Asking the waiter to 'check' presents him as an ally who can help rather than an enemy.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L98_Q1",
+            "interactionType": "practice",
+            "situationText": "You bought tickets for a Saturday concert, but the organizers moved it to Sunday. You have a flight home on Sunday morning.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "We came all this way and the castle is closed today. Is there something similar nearby that you'd recommend?",
+                "I demand you resolve this issue immediately.",
+                "I heard the concert has been moved to Sunday, and I can't go then. Can I get a refund?"
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "I heard the concert has been moved to Sunday, and I can't go then. Can I get a refund?",
+            "explanation": "Naming the cause of your problem (the new date) makes your refund request logical. Companies often allow refunds when the event changes significantly.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L98_Q2",
+            "interactionType": "practice",
+            "situationText": "You traveled two hours to visit a castle, but it's closed today for repairs. You go to the tourist information office nearby.",
+            "options": [
+                "I demand you resolve this issue immediately.",
+                "We were told the tour would include the museum. Why was that changed, and what will we see instead?",
+                "We came all this way and the castle is closed today. Is there something similar nearby that you'd recommend?",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "We came all this way and the castle is closed today. Is there something similar nearby that you'd recommend?",
+            "explanation": "Sharing the effort you made ('we came all this way') explains your feelings. Then asking for a similar alternative shows you're solution-focused.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L98_Q3",
+            "interactionType": "practice",
+            "situationText": "Your city tour was advertised with a visit to the museum, but at the start the guide says the museum isn't included. You ask the guide.",
+            "options": [
+                "It's raining all day. What do you suggest we do that's indoors?",
+                "We were told the tour would include the museum. Why was that changed, and what will we see instead?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "We were told the tour would include the museum. Why was that changed, and what will we see instead?",
+            "explanation": "Two questions ('why' and 'what instead') make the response specific. Referring to the original promise shows that you're seeking fairness, not merely complaining.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L99_Q1",
+            "interactionType": "practice",
+            "situationText": "It's pouring rain in a new city, and you and your partner have a free day. You ask the tourist office worker what to do.",
+            "options": [
+                "It's raining all day. What do you suggest we do that's indoors?",
+                "We'll be here for three days. Is there a travel pass that covers the buses and the metro?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "It's raining all day. What do you suggest we do that's indoors?",
+            "explanation": "Giving the constraint first (rain) means the advice can fit your day. Asking 'what do you suggest' invites more than a single place.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L99_Q2",
+            "interactionType": "practice",
+            "situationText": "You'll be in a city for three days and plan to use both the bus and the metro a lot. You want to know if a pass would be cheaper than single tickets.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "Where could we try traditional food, but not somewhere too touristy?",
+                "I demand you resolve this issue immediately.",
+                "We'll be here for three days. Is there a travel pass that covers the buses and the metro?"
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "We'll be here for three days. Is there a travel pass that covers the buses and the metro?",
+            "explanation": "Tourist passes depend on the number of days and types of transport. Giving both details helps staff recommend the right option instead of a general list.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L99_Q3",
+            "interactionType": "practice",
+            "situationText": "You're at a hotel reception in a small city and want to eat local food, but you're tired of tourist restaurants with photo menus.",
+            "options": [
+                "I demand you resolve this issue immediately.",
+                "I understand the hotel is full, but I have a confirmed booking. Could you find me a room nearby and cover the cost?",
+                "Where could we try traditional food, but not somewhere too touristy?",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "Where could we try traditional food, but not somewhere too touristy?",
+            "explanation": "Saying what you want ('traditional food') and what you don't ('too touristy') makes the local's job easier and the advice more useful.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L100_Q1",
+            "interactionType": "practice",
+            "situationText": "You arrive at midnight after a long journey. The hotel says it has overbooked and gives your room away, even though your booking is confirmed. The receptionist looks apologetic.",
+            "options": [
+                "The host cancelled my booking for tonight at the last minute. Could you give me a full refund and help me find another place to stay?",
+                "I understand the hotel is full, but I have a confirmed booking. Could you find me a room nearby and cover the cost?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "I understand the hotel is full, but I have a confirmed booking. Could you find me a room nearby and cover the cost?",
+            "explanation": "Beginning with 'I understand' lowers the tension, and 'but' introduces your priorities. Requesting both a room and cost coverage is clear, reasonable, and specific.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L100_Q2",
+            "interactionType": "practice",
+            "situationText": "You've arrived in a town for a wedding weekend. The host of your rented apartment texts that he has to cancel your stay tonight. You call the platform's support line.",
+            "options": [
+                "The host cancelled my booking for tonight at the last minute. Could you give me a full refund and help me find another place to stay?",
+                "I missed my train because of a taxi delay. Can I use the same ticket on the next train, or do I need a new one?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "The host cancelled my booking for tonight at the last minute. Could you give me a full refund and help me find another place to stay?",
+            "explanation": "A last-minute cancellation is the company's or host's responsibility. Asking for a refund and help with a replacement covers both your money and your practical need.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L100_Q3",
+            "interactionType": "practice",
+            "situationText": "Your taxi arrived late, so you missed your train by two minutes. You're now at the ticket office with a non-refundable ticket.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "Excuse me, I ordered the vegetarian sandwich, but this one has chicken. Could you change it, please? I don't eat meat.",
+                "I demand you resolve this issue immediately.",
+                "I missed my train because of a taxi delay. Can I use the same ticket on the next train, or do I need a new one?"
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "I missed my train because of a taxi delay. Can I use the same ticket on the next train, or do I need a new one?",
+            "explanation": "When several things went wrong, focus on the decision that matters most. Asking whether the same ticket is valid gets to the practical point quickly, without a long story.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        }
+    ]
+}

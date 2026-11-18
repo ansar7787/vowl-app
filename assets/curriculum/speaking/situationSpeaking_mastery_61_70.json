@@ -1,0 +1,488 @@
+{
+    "gameType": "situationSpeaking",
+    "phase": "mastery",
+    "batchIndex": 7,
+    "levels": "61-70",
+    "quests": [
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L61_Q1",
+            "interactionType": "narrator",
+            "hint": "Keep a self-introduction to three parts: name and role, a bit of background, and a friendly closing line.",
+            "explanation": "A short team introduction works because it gives people something to connect with (your background) and ends warmly. Anything longer than about twenty seconds loses attention in a meeting.",
+            "situationText": "It's Monday morning and you've just joined a company as a data analyst. Your team lead says, 'Yara, would you like to say a few words to everyone?'",
+            "sampleAnswer": "Hello everyone. I'm Yara, and I'm the new data analyst. I worked in banking before this, and I'm looking forward to working with you all.",
+            "correctAnswer": "Hi everyone, I'm Yara. I've joined as a data analyst, and I previously worked in banking. I'm looking forward to working with you.",
+            "acceptedSynonyms": [
+                "Hi everyone, I'm Yara. I've joined as a data analyst, and I previously worked in banking. I'm looking forward to working with you.",
+                "Good morning, everyone. My name's Yara and I'm the new data analyst. I come from a banking background, and I'm glad to be part of the team.",
+                "Hello, I'm Yara. I'm your new data analyst. I spent a few years in banking, and I'm really looking forward to getting to know you.",
+                "Hi all, I'm Yara. I'm joining as a data analyst after some years in banking. I'm excited to start working with you."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L61_Q2",
+            "interactionType": "narrator",
+            "hint": "Introduce yourself to someone informally, mention your team, and ask about their role so the conversation is equal.",
+            "explanation": "In a kitchen or corridor, the tone is lighter than in a meeting. Saying which team you're on helps the person place you, and asking about their role keeps the conversation two-sided.",
+            "situationText": "In the office kitchen on your second day, a person you haven't met is making tea. You decide to say hello. Your name is Yara.",
+            "sampleAnswer": "Hi there, I'm new here. My name's Yara, and I work in finance. And you?",
+            "correctAnswer": "Hi, I don't think we've met. I'm Yara, I just started on the finance team. What do you do here?",
+            "acceptedSynonyms": [
+                "Hello, I'm Yara. I've just joined the finance team. Which team are you in?",
+                "Hi there, I'm new here. My name's Yara, and I work in finance. And you?",
+                "Hi, I don't think we've met. I'm Yara, I just started on the finance team. What do you do here?",
+                "I don't think we've been introduced. I'm Yara from finance. What's your role?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L61_Q3",
+            "interactionType": "narrator",
+            "hint": "At the end of an orientation, ask one practical question. Name who you should contact.",
+            "explanation": "Asking a practical question ('who should I contact?') helps you work independently faster. It also shows initiative, which managers notice during the first week.",
+            "situationText": "HR has just finished the orientation session and asks whether anyone has questions. You've noticed you don't know where to go for laptop problems.",
+            "sampleAnswer": "I do have a question. Where should I go if I need IT support?",
+            "correctAnswer": "Yes, one question. Who should I contact if I have problems with my laptop?",
+            "acceptedSynonyms": [
+                "Yes, one question. Who should I contact if I have problems with my laptop?",
+                "Yes, please. Who do I contact if my laptop stops working?",
+                "I do have a question. Where should I go if I need IT support?",
+                "Yes. If I have a technical problem with my computer, who should I speak to?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L62_Q1",
+            "interactionType": "narrator",
+            "hint": "Describe the problem in detail before asking, so the colleague doesn't need to guess. Mention what you've already tried.",
+            "explanation": "Colleagues help fastest when you tell them what's wrong and what you've tried. 'It says paper jam, but I can't find it' gives the helper the symptoms right away.",
+            "situationText": "The office printer displays a paper jam message, but you've checked all the trays and can't see any paper stuck. A colleague is walking past.",
+            "sampleAnswer": "Do you know how to fix this printer? It says there's a paper jam, but I can't find it.",
+            "correctAnswer": "Do you know how to fix the printer? It keeps saying there's a paper jam, but I can't find it.",
+            "acceptedSynonyms": [
+                "Sorry, could you help me with the printer? It says there's a paper jam, but I can't see one.",
+                "Have you got a second? The printer says it's jammed, but I've checked everywhere.",
+                "Do you know how to fix the printer? It keeps saying there's a paper jam, but I can't find it.",
+                "Could you take a look at this printer with me? It shows a paper jam, and I can't find it."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L62_Q2",
+            "interactionType": "narrator",
+            "hint": "Ask for a specific amount of time and say what you need to learn. Most people are happy to help when the request is limited.",
+            "explanation": "'A few minutes' limits the favor, and naming the system tells the colleague exactly what to teach. 'I've only used it once' shows your honest starting point.",
+            "situationText": "You've been asked to make a client booking using the company system, which you have used only once. You'd like an experienced colleague to show you again.",
+            "sampleAnswer": "I'm still not confident with the booking system. Could you show me how it works when you're free?",
+            "correctAnswer": "Do you have a few minutes to show me how the booking system works? I've only used it once.",
+            "acceptedSynonyms": [
+                "Do you have a few minutes to show me how the booking system works? I've only used it once.",
+                "Could you spare a few minutes to walk me through the booking system? I've only done it once.",
+                "I'm still not confident with the booking system. Could you show me how it works when you're free?",
+                "When you have a moment, would you mind showing me how to make a booking? I've only tried it once."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L62_Q3",
+            "interactionType": "narrator",
+            "hint": "When you need someone to cover a task, state the duration and the reason.",
+            "explanation": "Covering a task works when the time is exact ('ten minutes') and the reason is clear ('an urgent call'). The colleague can decide quickly and doesn't feel used.",
+            "situationText": "You're working the front desk alone and your manager just called with something urgent. You need to step out for about ten minutes, and a colleague from the next office is nearby.",
+            "sampleAnswer": "Could you cover the front desk for ten minutes? I have to take an urgent call.",
+            "correctAnswer": "Could you watch the front desk for ten minutes? I need to take an urgent call.",
+            "acceptedSynonyms": [
+                "Would you mind covering the front desk for ten minutes? I have an urgent call.",
+                "Is there any chance you could sit at reception for ten minutes? I have to take an important call.",
+                "Could you watch the front desk for ten minutes? I need to take an urgent call.",
+                "I have an urgent call to take. Could you cover for me for about ten minutes?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L63_Q1",
+            "interactionType": "narrator",
+            "hint": "With your manager, start with 'Do you have a moment?' and give the topic. This respects their time.",
+            "explanation": "Managers are often busy, so 'Do you have a moment?' checks if the timing is right. Naming the topic lets your manager decide whether to talk now or later.",
+            "situationText": "You see your manager walking to her desk and you need to speak to her about the schedule for a client visit.",
+            "sampleAnswer": "Sorry to interrupt. Could I talk to you briefly about the client visit schedule?",
+            "correctAnswer": "Do you have a moment? I'd like to discuss the client visit schedule.",
+            "acceptedSynonyms": [
+                "Sorry to interrupt. Could I talk to you briefly about the client visit schedule?",
+                "Do you have a couple of minutes? I need to go through the client visit schedule with you.",
+                "Excuse me, when would be a good time to discuss the schedule for the client visit?",
+                "Do you have a moment? I'd like to discuss the client visit schedule."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L63_Q2",
+            "interactionType": "narrator",
+            "hint": "With a close teammate, you can drop the formality. Short phrases and a joke work.",
+            "explanation": "Register means matching your language to the relationship. With a friendly teammate, 'Want to grab lunch?' is perfect, while the same sentence to a director may feel too casual.",
+            "situationText": "It's twelve-thirty and your desk neighbor, with whom you work closely and joke often, is still typing away.",
+            "sampleAnswer": "Hey, fancy some lunch? I'm starving.",
+            "correctAnswer": "Hey, do you want to grab lunch? I'm starving.",
+            "acceptedSynonyms": [
+                "Want to get some lunch? I'm so hungry.",
+                "Hey, do you want to grab lunch? I'm starving.",
+                "I'm starving. Shall we go and grab something to eat?",
+                "Hey, are you coming for lunch? I could eat a horse."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L63_Q3",
+            "interactionType": "narrator",
+            "hint": "With customers by phone, use full, formal phrases and offer a reason for the pause.",
+            "explanation": "Formal phrases such as 'Could you hold for a moment?' fit a customer call. Adding what you'll do ('I'll check that for you') tells the caller the wait has a purpose.",
+            "situationText": "You're on the phone with a customer who asks whether an item is in stock. You need to look in the system for a minute.",
+            "sampleAnswer": "Would you mind waiting a moment? Let me look that up for you.",
+            "correctAnswer": "Could you hold for a moment, please? I'll check that for you.",
+            "acceptedSynonyms": [
+                "One moment, please. I'll just check the system for you.",
+                "May I put you on hold for a minute while I check that?",
+                "Would you mind waiting a moment? Let me look that up for you.",
+                "Could you hold for a moment, please? I'll check that for you."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L64_Q1",
+            "interactionType": "narrator",
+            "hint": "Propose a specific time and ask if it suits the other person. 'Would…suit you?' sounds professional.",
+            "explanation": "Offering a specific slot moves the scheduling forward faster than 'When are you free?'. 'Suit you' is a common business expression for checking availability.",
+            "situationText": "You need thirty minutes with a colleague to review a project. You suggest a meeting for next Tuesday at ten.",
+            "sampleAnswer": "Does Tuesday at ten work for you? I'd like to go through the review together.",
+            "correctAnswer": "Would Tuesday at ten suit you for the review meeting?",
+            "acceptedSynonyms": [
+                "Are you free on Tuesday at ten for the review? Does that work for you?",
+                "How does Tuesday at ten sound for our review meeting?",
+                "Would Tuesday at ten suit you for the review meeting?",
+                "Could we schedule the review meeting for Tuesday at ten, if that's convenient?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L64_Q2",
+            "interactionType": "narrator",
+            "hint": "Give a reason briefly and offer a specific new time. Avoid making the other person choose.",
+            "explanation": "'Something's come up' explains the change without oversharing. Offering a concrete new time saves the other person the effort of proposing one.",
+            "situationText": "A client meeting has appeared in your diary at the same time as your planned team meeting on Wednesday. You want to move the team meeting to Thursday afternoon.",
+            "sampleAnswer": "Apologies, but I have a clash on Wednesday. Would Thursday afternoon work for you instead?",
+            "correctAnswer": "Something's come up. Could we push our meeting to Thursday afternoon?",
+            "acceptedSynonyms": [
+                "Something's come up. Could we push our meeting to Thursday afternoon?",
+                "Apologies, but I have a clash on Wednesday. Would Thursday afternoon work for you instead?",
+                "I'm afraid I need to reschedule. Could we move it to Thursday afternoon?",
+                "Sorry to change things, but can we meet on Thursday afternoon instead?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L64_Q3",
+            "interactionType": "narrator",
+            "hint": "Lead with your constraint ('booked until three'), and then offer a slot that fits. Others see why you suggest it.",
+            "explanation": "Sharing your constraint ('I'm booked until three') helps others understand why you suggest a certain time. A slot with a clear question ('would that work for you both?') closes the discussion.",
+            "situationText": "You're arranging a meeting with two colleagues. Your Wednesday is full until three, but Thursday morning is free.",
+            "sampleAnswer": "Wednesday is full for me until three. Could we do Thursday morning instead?",
+            "correctAnswer": "I'm booked until three on Wednesday. Would Thursday morning work for both of you?",
+            "acceptedSynonyms": [
+                "Wednesday is full for me until three. Could we do Thursday morning instead?",
+                "I can't do Wednesday before three. Is Thursday morning good for the two of you?",
+                "I'm booked until three on Wednesday. Would Thursday morning work for both of you?",
+                "My Wednesday is packed until three. How would Thursday morning be for you both?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L65_Q1",
+            "interactionType": "narrator",
+            "hint": "Confirm the deadline by proposing a day. It's a polite way to find out what's expected.",
+            "explanation": "Asking 'When do you need it by?' and proposing a day at the same time shows you're organized. The manager can either confirm or correct you.",
+            "situationText": "Your manager asks you to write a short report but doesn't say when it's needed. You'd like to know. You're thinking of Friday.",
+            "sampleAnswer": "When do you need the report by? Would Friday be okay?",
+            "correctAnswer": "When do you need the report by? Is Friday okay?",
+            "acceptedSynonyms": [
+                "What's the deadline for the report? Would Friday work?",
+                "Could you tell me when you'd like the report? Is Friday fine?",
+                "By when do you need it? I was thinking of sending it on Friday.",
+                "When do you need the report by? Is Friday okay?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L65_Q2",
+            "interactionType": "narrator",
+            "hint": "Warn early, give a new date, and ask if it's acceptable. Don't just say you're late.",
+            "explanation": "Telling your manager early that you need more time, with a specific date, shows accountability. Asking 'Is that all right?' invites a discussion instead of a surprise.",
+            "situationText": "It's Wednesday. Your report is due Thursday, but you're waiting for figures from another team, and you realize you'll need until Monday.",
+            "sampleAnswer": "I'm going to need until Monday to finish the report. Is that all right?",
+            "correctAnswer": "I'm going to need until Monday to finish the report. Would that be all right?",
+            "acceptedSynonyms": [
+                "Unfortunately I won't be able to finish the report by Thursday. Could I send it on Monday?",
+                "I'm going to need until Monday to finish the report. Would that be all right?",
+                "I'm still waiting for some figures, so I'd like to deliver on Monday. Is that acceptable?",
+                "I need a little more time for the report. Would Monday be possible?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L65_Q3",
+            "interactionType": "narrator",
+            "hint": "If two dates were mentioned, ask which one is real by naming both. Avoid guessing.",
+            "explanation": "'Just to check' politely marks a clarifying question. Naming both possibilities makes it very quick for your colleague to answer.",
+            "situationText": "A colleague says the sales figures are needed 'by the end of the week', but another person mentioned Thursday night. You aren't sure which one is right. The other possibility would be Friday morning.",
+            "sampleAnswer": "Just to check, is the deadline Thursday evening or Friday morning?",
+            "correctAnswer": "Just to check, is the deadline end of day Thursday, or Friday morning?",
+            "acceptedSynonyms": [
+                "Sorry, I want to be sure. Do you need the figures on Thursday night, or is Friday morning fine?",
+                "Could you confirm the deadline? Is it Thursday evening or first thing on Friday?",
+                "Quick question: is the cut-off Thursday night, or can it wait until Friday morning?",
+                "Just to check, is the deadline end of day Thursday, or Friday morning?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L66_Q1",
+            "interactionType": "narrator",
+            "hint": "Repeat the unclear phrase and offer two possible meanings. It shows you're thinking, not just confused.",
+            "explanation": "Offering two interpretations ('new prices or just dates?') makes it easier for the manager to answer and shows you've already tried to understand.",
+            "situationText": "Your manager tells you to 'update the list' before a client meeting, but you have several lists and don't know what she means.",
+            "sampleAnswer": "Could you be a bit more specific about the update? Are the prices included, or only the dates?",
+            "correctAnswer": "Could you clarify what you mean by 'update the list'? Do you want new prices, or just the dates?",
+            "acceptedSynonyms": [
+                "I want to make sure I understand. When you say 'update the list', do you mean the prices or only the dates?",
+                "Could you clarify what you mean by 'update the list'? Do you want new prices, or just the dates?",
+                "Which list do you mean? And should I change the prices as well as the dates?",
+                "Could you be a bit more specific about the update? Are the prices included, or only the dates?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L66_Q2",
+            "interactionType": "narrator",
+            "hint": "To confirm you have understood, summarize the task back to the speaker. 'So…' begins a check.",
+            "explanation": "Restating instructions catches misunderstandings before they cost time. Phrases like 'to make sure I've got this right' make the check sound like careful work, not doubt.",
+            "situationText": "In a rushed conversation, your supervisor gives you three instructions about a summary. You want to be sure you understood correctly.",
+            "sampleAnswer": "So, to make sure I've got this right, you want me to send the summary to the whole team by noon?",
+            "correctAnswer": "So, to make sure I've got this right, you'd like me to send the summary to the whole team by noon?",
+            "acceptedSynonyms": [
+                "Let me check I understand. I should email the summary to everyone before noon, is that right?",
+                "Just to confirm: the summary goes to the whole team by noon?",
+                "So I'm sending the summary to the entire team by midday. Have I understood correctly?",
+                "So, to make sure I've got this right, you'd like me to send the summary to the whole team by noon?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L66_Q3",
+            "interactionType": "narrator",
+            "hint": "Ask for an example when instructions are abstract. It's faster than guessing and redoing.",
+            "explanation": "Asking for a sample of the expected result saves time on both sides. 'The format you'd like' shows you want to match the manager's standards.",
+            "situationText": "Your boss asks you to prepare a weekly status report in 'the usual format', but you've never seen the usual format.",
+            "sampleAnswer": "Could you show me an example of the format you'd like?",
+            "correctAnswer": "Would you be able to show me an example of the format you'd like?",
+            "acceptedSynonyms": [
+                "Do you have a previous report I could use as a model?",
+                "Would you be able to show me an example of the format you'd like?",
+                "Sorry, I haven't seen the usual format. Could you send me a sample?",
+                "Is there an example I could look at, so I know what you expect?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L67_Q1",
+            "interactionType": "narrator",
+            "hint": "To add a point in a meeting, use a short signal phrase before your idea. It prepares the group to listen.",
+            "explanation": "Phrases like 'If I could add something' signal that you're joining the discussion without stopping it. They sound more polished than starting your point without warning.",
+            "situationText": "In a team meeting about a product launch, everyone is discussing the marketing plan, but nobody has mentioned delivery times, which worry you.",
+            "sampleAnswer": "If I could add something, I think we should also look at the delivery times.",
+            "correctAnswer": "If I could add something, I think we should also check the delivery times.",
+            "acceptedSynonyms": [
+                "If I could add something, I think we should also check the delivery times.",
+                "Can I add a point here? We ought to consider the delivery times as well.",
+                "I'd like to add something. Have we thought about the delivery times?",
+                "May I make a suggestion? I think delivery times need checking too."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L67_Q2",
+            "interactionType": "narrator",
+            "hint": "An interruption needs an apology, a request to speak, and a very short topic. Keep it brief so people don't lose the thread.",
+            "explanation": "Interrupting politely means recognizing the disruption ('Sorry to interrupt') and promising that your question will be short ('quickly'). Naming the topic helps the room stay oriented.",
+            "situationText": "During a budget presentation, the speaker moves to the next slide before you've been able to ask about a number on the previous one.",
+            "sampleAnswer": "Sorry to interrupt, but could I quickly ask something about the budget?",
+            "correctAnswer": "Sorry to interrupt, but could I quickly ask a question about the budget?",
+            "acceptedSynonyms": [
+                "Excuse me, before we move on, may I ask a quick question about the budget?",
+                "Sorry, could I go back to the last slide? I have a quick question about the budget.",
+                "Sorry to interrupt, but could I quickly ask a question about the budget?",
+                "Apologies for interrupting. I have a brief question on the budget figures."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L67_Q3",
+            "interactionType": "narrator",
+            "hint": "Ask for repetition of a specific point and explain the reason. It's normal in online meetings.",
+            "explanation": "In video meetings, technical problems are common and nobody blames you. Naming the specific point ('the last point') is more efficient than asking the speaker to repeat everything.",
+            "situationText": "During a video call, your connection freezes for a few seconds while a colleague explains a new schedule. When it returns, he's on the next topic.",
+            "sampleAnswer": "Sorry, my connection dropped for a moment. Could you repeat that last point?",
+            "correctAnswer": "Could you repeat the last point? The connection dropped for a moment.",
+            "acceptedSynonyms": [
+                "Could you repeat the last point? The connection dropped for a moment.",
+                "I'm sorry, I missed that because of my connection. Could you go over the last point again?",
+                "Sorry, I lost you for a second. Would you mind repeating what you just said?",
+                "My internet froze briefly. Could you say the last part again, please?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L68_Q1",
+            "interactionType": "narrator",
+            "hint": "A good update has three parts: progress, a next step, and a date. Give numbers when you can.",
+            "explanation": "Managers want to know where you are, what's next, and when. A percentage ('80 percent') is clearer than 'nearly done', and a date sets a clear expectation.",
+            "situationText": "Your manager stops by your desk and asks how the new website design is going. It's about 80 percent finished, and you can send him the draft on Wednesday.",
+            "sampleAnswer": "It's going well. The design is about 80 percent done, and I'll send you the draft on Wednesday.",
+            "correctAnswer": "The design is about 80 percent done. I'll send you the draft on Wednesday.",
+            "acceptedSynonyms": [
+                "Good progress. I'm around 80 percent through, and you'll get the draft on Wednesday.",
+                "Nearly there. It's about 80 percent finished, and I can send it by Wednesday.",
+                "The design is about 80 percent done. I'll send you the draft on Wednesday.",
+                "I've finished most of the design, about 80 percent. I'll send the draft on Wednesday."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L68_Q2",
+            "interactionType": "narrator",
+            "hint": "When there's a risk, say the good news first, then the problem, then its effect.",
+            "explanation": "Giving bad news wrapped in context ('going well overall, but…') is more professional than hiding it or panicking. Stating the effect ('a day') helps the manager plan.",
+            "situationText": "You're preparing a client proposal on schedule. However, you're waiting for the client's approval on one section, which could slow you down.",
+            "sampleAnswer": "Overall, it's going well. I'm just waiting for the client's approval on one part, which might delay us by a day.",
+            "correctAnswer": "Things are going well overall, but I'm waiting on the client's approval, which might delay us by a day.",
+            "acceptedSynonyms": [
+                "Things are going well overall, but I'm waiting on the client's approval, which might delay us by a day.",
+                "We're mostly on track, but the client hasn't approved one section yet. That could push us back a day.",
+                "It's fine so far, apart from one thing. The client still needs to approve a section, so we might lose a day.",
+                "Progress is good. The only risk is the client's approval, which could delay us by a day."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L68_Q3",
+            "interactionType": "narrator",
+            "hint": "To ask a colleague for an update, say why you need it and by when. This creates urgency without pressure.",
+            "explanation": "The reason ('for tomorrow's meeting') shows the other person that the request has a purpose. It's more effective and friendlier than 'Where is it?'.",
+            "situationText": "You need the supplier list from your colleague Ivan for a meeting tomorrow morning. You haven't heard from him for two days.",
+            "sampleAnswer": "Hi Ivan, how's the supplier list coming along? I need it for tomorrow's meeting.",
+            "correctAnswer": "Hi, how's the supplier list going? I need it for tomorrow's meeting.",
+            "acceptedSynonyms": [
+                "Hi Ivan, could you give me an update on the supplier list? I'll need it for the meeting tomorrow.",
+                "Just checking in on the supplier list. Do you think it will be ready before tomorrow's meeting?",
+                "Hi, how's the supplier list going? I need it for tomorrow's meeting.",
+                "How far have you got with the supplier list? It's for the meeting tomorrow morning."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L69_Q1",
+            "interactionType": "narrator",
+            "hint": "Ask for feedback on a specific piece of work and say what you want to improve. It makes the feedback easier to give.",
+            "explanation": "Asking about a specific thing and framing it as 'what I could improve' encourages honest, useful feedback. Vague requests often get vague answers like 'It was fine.'",
+            "situationText": "You gave your first presentation to the department this morning. Now you find your manager in the corridor.",
+            "sampleAnswer": "Do you have a few minutes to tell me how the presentation went? I'd welcome any suggestions.",
+            "correctAnswer": "Would you mind giving me some feedback on my presentation? I'd like to know what I could improve.",
+            "acceptedSynonyms": [
+                "Do you have a few minutes to tell me how the presentation went? I'd welcome any suggestions.",
+                "Could I ask for your thoughts on my presentation? I want to improve for next time.",
+                "I'd appreciate any feedback on today's presentation, especially what I could do better.",
+                "Would you mind giving me some feedback on my presentation? I'd like to know what I could improve."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L69_Q2",
+            "interactionType": "narrator",
+            "hint": "When you receive criticism, thank the person and say what you'll do. Don't defend yourself immediately.",
+            "explanation": "Thanking someone for critical feedback shows maturity, and stating a next step ('I'll simplify the slides') proves you listened. Defending yourself right away usually stops useful feedback.",
+            "situationText": "After your presentation, your manager tells you that your slides were too crowded and hard to read.",
+            "sampleAnswer": "Thanks for telling me. I'll work on making the slides simpler next time.",
+            "correctAnswer": "Thank you for being honest. I'll simplify the slides next time.",
+            "acceptedSynonyms": [
+                "That's useful to know. I'll reduce the amount of text on my slides.",
+                "Thank you for being honest. I'll simplify the slides next time.",
+                "Thanks for the feedback. I'll make the slides clearer and less crowded.",
+                "I appreciate you saying that. Next time I'll keep the slides simpler."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L69_Q3",
+            "interactionType": "narrator",
+            "hint": "For a peer review before you send something, ask for honesty and say what you're worried about.",
+            "explanation": "Saying 'honestly' invites a real opinion, and naming your worry ('too direct') helps the colleague focus. Peer feedback before sending can prevent mistakes.",
+            "situationText": "You've written an email to a customer about a late payment and you're worried it might sound rude. A colleague sits next to you.",
+            "sampleAnswer": "Could you tell me honestly what you think of this email before I send it? I'm worried it sounds too direct.",
+            "correctAnswer": "Could you read this email and tell me honestly what you think? I'm worried it sounds too direct.",
+            "acceptedSynonyms": [
+                "Would you mind reading this email before I send it? I'm not sure about the tone.",
+                "Can you have a look at this email? I'd like to know if it sounds too harsh.",
+                "Before I send this, could you check it? I'm afraid it sounds a bit blunt.",
+                "Could you read this email and tell me honestly what you think? I'm worried it sounds too direct."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L70_Q1",
+            "interactionType": "narrator",
+            "hint": "Open with 'I wanted to let you know' to signal news. State the problem and its consequence together.",
+            "explanation": "'I wanted to let you know' is a professional way to report a problem without sounding like you're panicking. Stating the consequence ('customers can't reserve') tells your manager how urgent it is.",
+            "situationText": "The company's online booking system stopped working at nine, and customers cannot make reservations. You find your manager at her desk.",
+            "sampleAnswer": "There's a problem with the booking system. It's been down since nine, and nobody can reserve.",
+            "correctAnswer": "I wanted to let you know the booking system has been down since nine, so customers can't make reservations.",
+            "acceptedSynonyms": [
+                "Just so you're aware, the booking system hasn't worked since nine, and customers can't book.",
+                "I wanted to let you know the booking system has been down since nine, so customers can't make reservations.",
+                "There's a problem with the booking system. It's been down since nine, and nobody can reserve.",
+                "I need to report an issue. The booking system has been offline since nine, so no reservations can be made."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L70_Q2",
+            "interactionType": "narrator",
+            "hint": "When you report your own mistake, be direct, say what you've done, and say why you're informing them.",
+            "explanation": "Owning a mistake and mentioning what you've already done ('I told finance') shows responsibility. Reporting it yourself builds more trust than being discovered.",
+            "situationText": "While checking accounts, you notice a mistake in last month's invoice that you prepared. You've already informed the finance team.",
+            "sampleAnswer": "I made an error on last month's invoice. Finance are aware, and I wanted to tell you too.",
+            "correctAnswer": "I found a mistake in last month's invoice. I've already told finance, but I wanted you to know.",
+            "acceptedSynonyms": [
+                "I made an error on last month's invoice. Finance are aware, and I wanted to tell you too.",
+                "I need to mention an error I found in last month's invoice. I've informed finance already.",
+                "There was a mistake in last month's invoice. I've let finance know, and I thought you should also be told.",
+                "I found a mistake in last month's invoice. I've already told finance, but I wanted you to know."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L70_Q3",
+            "interactionType": "narrator",
+            "hint": "If you find a problem that's not yours, describe it and ask whether to act. Don't assume you're responsible.",
+            "explanation": "Asking 'Should I contact them?' respects who owns the decision. It also lets your manager give a clear instruction rather than deal with a half-solved problem.",
+            "situationText": "While using the booking calendar, you notice two teams have reserved the same conference room for tomorrow at ten. It's not your job to manage bookings.",
+            "sampleAnswer": "I've noticed two teams are booked into the same room tomorrow. Should I contact them?",
+            "correctAnswer": "I noticed that two teams are booked for the same room tomorrow. Should I contact them?",
+            "acceptedSynonyms": [
+                "There's a double booking for the conference room tomorrow at ten. Would you like me to speak to the teams?",
+                "I noticed that two teams are booked for the same room tomorrow. Should I contact them?",
+                "Two groups have reserved the same room for tomorrow. Do you want me to sort it out?",
+                "I think there's a clash with the meeting room tomorrow. Shall I let the teams know?"
+            ],
+            "instruction": "Respond to the situation."
+        }
+    ]
+}

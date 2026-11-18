@@ -1,0 +1,488 @@
+{
+    "gameType": "situationSpeaking",
+    "phase": "mastery",
+    "batchIndex": 9,
+    "levels": "81-90",
+    "quests": [
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L81_Q1",
+            "interactionType": "narrator",
+            "hint": "At check-in, state your flight and one preference. An aisle or window choice is a normal request.",
+            "explanation": "Check-in agents work through a routine: flight, documents, seat. Volunteering your flight and seat preference makes the process quicker and shows you know what to expect.",
+            "situationText": "At an airport counter, you hand over your passport for the afternoon flight to Madrid. You like to be able to stretch your legs.",
+            "sampleAnswer": "Hi, I'm checking in for the flight to Madrid. Could I have an aisle seat if there's one available?",
+            "correctAnswer": "I'd like to check in for the flight to Madrid. Could I have an aisle seat, please?",
+            "acceptedSynonyms": [
+                "I'm on the Madrid flight. Is it possible to get an aisle seat?",
+                "I'd like to check in for the flight to Madrid. Could I have an aisle seat, please?",
+                "Checking in for Madrid, please. Do you have any aisle seats left?",
+                "I'm flying to Madrid today. Could I sit in an aisle seat, if possible?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L81_Q2",
+            "interactionType": "narrator",
+            "hint": "If you're over the weight limit, ask about two solutions. It shows you're prepared to be flexible.",
+            "explanation": "Airlines often let you reorganize your bags on the spot. Asking about repacking or paying gives the agent choices, which is more efficient than arguing about the rule.",
+            "situationText": "The scale at check-in shows your suitcase is two kilos over the limit. You have space in your hand luggage.",
+            "sampleAnswer": "Oh, it's a little over. Could I move some things into my hand luggage, or would I have to pay extra?",
+            "correctAnswer": "My bag is a bit over the limit. Can I move some things to my hand luggage, or would I have to pay extra?",
+            "acceptedSynonyms": [
+                "It's two kilos too heavy. Could I put a few items in my carry-on, or is there a fee?",
+                "Sorry, the bag's slightly overweight. May I take some things out, or do I need to pay for it?",
+                "I'm a little over the weight limit. Would it be okay if I repacked, or should I pay the extra charge?",
+                "My bag is a bit over the limit. Can I move some things to my hand luggage, or would I have to pay extra?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L81_Q3",
+            "interactionType": "narrator",
+            "hint": "When the system can't find you, calmly state what you have as proof and ask for a second search.",
+            "explanation": "Mentioning the confirmation email gives the agent something to work with. Asking to check again is more effective than repeating that you have a ticket.",
+            "situationText": "The airline agent says she can't find your name on the passenger list. You have a confirmation email on your phone.",
+            "sampleAnswer": "That's strange. I have a confirmation email here. Could you look for my booking again, please?",
+            "correctAnswer": "My name isn't showing on your list, but I have a confirmation email. Could you check my booking again?",
+            "acceptedSynonyms": [
+                "I do have a booking. Here's the confirmation email. Could you try searching again?",
+                "My name isn't showing on your list, but I have a confirmation email. Could you check my booking again?",
+                "There must be a mistake. I have an email confirming the flight. Would you mind checking once more?",
+                "I can show you my confirmation email. Could you look up the reservation again, please?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L82_Q1",
+            "interactionType": "narrator",
+            "hint": "At security, ask a short practical question before you take anything out. The staff hear it all day.",
+            "explanation": "Security rules vary between airports. Asking before you unpack prevents delays for you and the people behind you, and officers are used to the question.",
+            "situationText": "You're in the security line at an airport you don't know, holding a bag with a laptop and a water bottle. The officer is explaining the rules quickly.",
+            "sampleAnswer": "Sorry, do I need to take my laptop out of the bag? And what about this water bottle?",
+            "correctAnswer": "Do I need to take my laptop out of the bag?",
+            "acceptedSynonyms": [
+                "Excuse me, does the laptop have to come out of my bag?",
+                "Sorry, should I take my laptop out here?",
+                "Could you tell me whether I need to remove my laptop from the bag?",
+                "Do I need to take my laptop out of the bag?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L82_Q2",
+            "interactionType": "narrator",
+            "hint": "If two sources give different information, state both and ask which one is right. Don't guess.",
+            "explanation": "Naming both sources ('the board' and 'the app') helps the staff member spot the problem immediately. It also shows you've made an effort before asking.",
+            "situationText": "The departure board shows gate 12 for your flight, but your airline app says gate 20. Boarding starts in fifteen minutes and a gate agent is nearby.",
+            "sampleAnswer": "Excuse me, the board says gate 12, but my app says gate 20. Which one is correct?",
+            "correctAnswer": "The board says gate 12, but my app says gate 20. Which one is right?",
+            "acceptedSynonyms": [
+                "Sorry, I'm confused. The screen shows gate 12, but the app shows gate 20. Which gate should I go to?",
+                "The board says gate 12, but my app says gate 20. Which one is right?",
+                "There's a difference between the board and my app. Is my flight leaving from gate 12 or 20?",
+                "Could you tell me the right gate? The board says 12 and my app says 20."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L82_Q3",
+            "interactionType": "narrator",
+            "hint": "Explain the problem and ask what's possible right now. Time is short, so be direct.",
+            "explanation": "In a rush, state the problem in one sentence and ask for a solution in the next. 'Is it possible to…?' invites the agent to check options without saying no.",
+            "situationText": "Just before boarding, you realize your boarding pass isn't in your bag or your phone. The gate is about to close.",
+            "sampleAnswer": "I think I've lost my boarding pass. Could you print a new one for me here at the gate?",
+            "correctAnswer": "I think I've lost my boarding pass. Is it possible to print a new one at the gate?",
+            "acceptedSynonyms": [
+                "Excuse me, I can't find my boarding pass anywhere. Can you reissue it?",
+                "I've misplaced my boarding pass. Could you print another one, please?",
+                "I've lost my boarding pass. Would you be able to issue a new one so I can board?",
+                "I think I've lost my boarding pass. Is it possible to print a new one at the gate?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L83_Q1",
+            "interactionType": "narrator",
+            "hint": "Ask about your rights using the situation as the reason. 'Entitled to' is useful for asking what you should receive.",
+            "explanation": "'Am I entitled to…?' is a polite, formal way to ask about your rights, and it sounds informed. Giving the delay length shows why you're asking.",
+            "situationText": "Your flight has been delayed by three hours, and you've been waiting since lunchtime. You go to the airline desk and hope for a meal.",
+            "sampleAnswer": "Excuse me, my flight has been delayed by three hours. Am I entitled to a meal voucher?",
+            "correctAnswer": "My flight has been delayed by three hours. Could you tell me if I'm entitled to a meal voucher?",
+            "acceptedSynonyms": [
+                "The flight's been delayed for three hours now. Does the airline provide a meal voucher?",
+                "With a three-hour delay, do I qualify for food vouchers?",
+                "My flight has been delayed by three hours. Could you tell me if I'm entitled to a meal voucher?",
+                "I've been waiting three hours because of the delay. Are meals covered?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L83_Q2",
+            "interactionType": "narrator",
+            "hint": "After a cancellation, ask about your options and state your destination and timing needs.",
+            "explanation": "'What are my options?' is open, letting the agent explain the possible solutions. Adding your destination and 'today' tells them what matters most.",
+            "situationText": "The airline has just cancelled your flight to Rome, and you need to get there today for a meeting. The queue at the desk is long, but you've reached the front.",
+            "sampleAnswer": "My flight to Rome has been cancelled. What are my options for getting there today?",
+            "correctAnswer": "My flight was cancelled. What are my options for getting to Rome today?",
+            "acceptedSynonyms": [
+                "My flight was cancelled. What are my options for getting to Rome today?",
+                "I heard my Rome flight is cancelled. Can you tell me what else is available for today?",
+                "The Rome flight was cancelled. Is there any way I can still arrive today?",
+                "My flight to Rome isn't running. What alternatives do I have for today?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L83_Q3",
+            "interactionType": "narrator",
+            "hint": "For a missed connection, explain the chain of events and request a specific solution.",
+            "explanation": "Explaining that the delay caused your missed connection shows it isn't your fault, and asking to be rebooked is a clear, actionable request.",
+            "situationText": "Your first flight landed forty minutes late, and you missed your connection to Athens. You're now at the transfer desk.",
+            "sampleAnswer": "Because of the delay, I missed my connecting flight to Athens. Could you rebook me on the next one?",
+            "correctAnswer": "Because my first flight was late, I've missed my connection to Athens. Could you put me on the next available flight?",
+            "acceptedSynonyms": [
+                "My first flight was delayed, so I missed the Athens connection. Can you rebook me, please?",
+                "I've missed my flight to Athens because the previous one arrived late. What is the next option?",
+                "Because my first flight was late, I've missed my connection to Athens. Could you put me on the next available flight?",
+                "The late arrival made me miss my connection to Athens. Could you find me another flight?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L84_Q1",
+            "interactionType": "narrator",
+            "hint": "Describe luggage with color, size, and a unique detail. The unique detail is the one staff can use to find it.",
+            "explanation": "Baggage staff see hundreds of black suitcases. A distinctive detail, such as the yellow ribbon, makes your bag identifiable in a system or on a conveyor.",
+            "situationText": "After waiting at the baggage carousel until it stops, your suitcase hasn't appeared. You approach the airline's baggage desk.",
+            "sampleAnswer": "My suitcase hasn't come out. It's a large blue one with a yellow ribbon on the handle.",
+            "correctAnswer": "My suitcase didn't arrive. It's a large blue one with a yellow ribbon on the handle.",
+            "acceptedSynonyms": [
+                "I can't find my luggage. It's a big blue suitcase, and there's a yellow ribbon on the handle.",
+                "My bag didn't come through. It's large and blue, with a yellow ribbon tied to the handle.",
+                "My suitcase seems to be missing. It's blue and quite big, with a yellow ribbon on the handle.",
+                "My suitcase didn't arrive. It's a large blue one with a yellow ribbon on the handle."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L84_Q2",
+            "interactionType": "narrator",
+            "hint": "A lost-bag report is only useful with a delivery address. Then ask what happens next, so you know when to follow up.",
+            "explanation": "In a lost luggage report, the delivery address is the most useful piece of information. Asking about the process tells you what to expect and when to follow up.",
+            "situationText": "The baggage desk has confirmed your bag is not in the system. You're staying at a hotel for the next four nights and want it sent there.",
+            "sampleAnswer": "I'd like to report my luggage as missing. Could you deliver it to my hotel once it's found?",
+            "correctAnswer": "I'd like to report my bag as missing. Could you deliver it to my hotel when it's found?",
+            "acceptedSynonyms": [
+                "Please file a report for my lost suitcase. When you find it, could it be sent to my hotel?",
+                "I'd like to report my bag as missing. Could you deliver it to my hotel when it's found?",
+                "I need to report a missing bag. Can it be delivered to my hotel once you locate it?",
+                "Could I make a lost luggage report? I'd like the bag sent to my hotel when you find it."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L84_Q3",
+            "interactionType": "narrator",
+            "hint": "With damaged property, explain what's broken and that it's new since the flight. Facts, not anger.",
+            "explanation": "'It wasn't like this when I checked it in' establishes responsibility without accusing anyone. Staff can then start the claims procedure.",
+            "situationText": "At the airport carousel, you notice your suitcase has a broken wheel. It was fine when you gave it to the airline. You speak to the baggage service.",
+            "sampleAnswer": "Excuse me, one wheel on my suitcase is broken. It wasn't like this when I checked it in.",
+            "correctAnswer": "The wheel of my suitcase is broken. It wasn't like this when I checked it in.",
+            "acceptedSynonyms": [
+                "My suitcase has been damaged. A wheel is broken, and it was fine when I handed it over.",
+                "Look at this wheel. It's broken, and it wasn't when I checked in. How do I make a claim?",
+                "Someone has broken a wheel on my suitcase during the flight. What can I do about it?",
+                "The wheel of my suitcase is broken. It wasn't like this when I checked it in."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L85_Q1",
+            "interactionType": "narrator",
+            "hint": "Give your surname, the type of booking, and the length of stay. Reception can find you faster.",
+            "explanation": "Reception needs a name to find your reservation. Adding the number of nights confirms you have the right booking and prevents mistakes.",
+            "situationText": "Late in the afternoon, you reach the front desk of a hotel after a long journey. Your surname is Silva and you're staying three nights.",
+            "sampleAnswer": "Good evening. I have a reservation under Silva for three nights.",
+            "correctAnswer": "Hello, I have a reservation under the name Silva for three nights.",
+            "acceptedSynonyms": [
+                "Hi, the booking is in the name of Silva, for three nights.",
+                "I'm checking in. The reservation is under Silva, three nights.",
+                "Hello, I have a reservation under the name Silva for three nights.",
+                "Good evening, I booked a room under Silva for three nights."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L85_Q2",
+            "interactionType": "narrator",
+            "hint": "Ask about two practical details together. Most guests want to know these two things first.",
+            "explanation": "Breakfast time and wifi are the two most common questions at check-in, so asking both at once saves you a trip back to the desk.",
+            "situationText": "You've just received your key card at a hotel and want to plan the next morning. You'd also like to be online right away.",
+            "sampleAnswer": "Thanks. What time is breakfast, and how do I connect to the wifi?",
+            "correctAnswer": "Could you tell me what time breakfast is, and how I connect to the wifi?",
+            "acceptedSynonyms": [
+                "Could you tell me what time breakfast is, and how I connect to the wifi?",
+                "What time do you serve breakfast? And what's the wifi password?",
+                "When does breakfast start, and how can I get on the wifi?",
+                "Could you tell me the breakfast hours and how to log on to the internet?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L85_Q3",
+            "interactionType": "narrator",
+            "hint": "Offer two options: an early room or luggage storage. Your flexibility gives the hotel something it can say yes to.",
+            "explanation": "Suggesting an alternative (leaving luggage) means the hotel can still help if the room isn't ready. It shows consideration for their schedule.",
+            "situationText": "Your flight lands at 8 a.m., so you arrive at the hotel in the morning, but standard check-in is at two o'clock in the afternoon.",
+            "sampleAnswer": "Our flight landed early. Would it be possible to check in earlier, or could we leave our luggage with you?",
+            "correctAnswer": "Our flight lands early. Would it be possible to check in before two, or could we leave our luggage here?",
+            "acceptedSynonyms": [
+                "We've arrived much earlier than expected. Is any room ready, or can we store our bags?",
+                "Is there a chance of an early check-in? If not, could you look after our luggage until two?",
+                "Our flight lands early. Would it be possible to check in before two, or could we leave our luggage here?",
+                "We're a bit early. Could we check in now, or leave our bags with you?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L86_Q1",
+            "interactionType": "narrator",
+            "hint": "Describe the problem, the effect on you, and ask for someone to fix it. Be specific to get a fast response.",
+            "explanation": "Hotel staff respond faster when they understand the effect ('it's very hot'). Asking for someone to 'take a look' sounds cooperative and it's likely to get action.",
+            "situationText": "It's ten p.m. in summer and the air conditioning in your hotel room only blows warm air. You phone reception from your room. You're in room 412.",
+            "sampleAnswer": "Hello, the air conditioning in my room isn't working, and it's very hot. Could someone take a look?",
+            "correctAnswer": "The air conditioning in my room isn't working and it's very hot. Could someone come and check it?",
+            "acceptedSynonyms": [
+                "The air conditioning in my room isn't working and it's very hot. Could someone come and check it?",
+                "The AC in room 412 only blows warm air. Could you send someone to fix it?",
+                "I'm calling about my room. The air conditioning isn't cooling and it's really warm. Can someone look at it?",
+                "My air conditioning has stopped working. Could someone come up to repair it, please?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L86_Q2",
+            "interactionType": "narrator",
+            "hint": "For noise, propose two solutions so reception can choose the easiest.",
+            "explanation": "Offering two options makes it easier for staff to resolve the situation quickly. Asking them to speak to the neighbors first is polite, and a room change is your backup.",
+            "situationText": "It's midnight and guests next door are talking loudly and playing music. You've got an early train and can't sleep. You call the front desk.",
+            "sampleAnswer": "The room next door is very noisy. Could you ask them to keep it down, or move me to another room?",
+            "correctAnswer": "The room next door is really noisy. Could you ask them to keep it down, or move me to a different room?",
+            "acceptedSynonyms": [
+                "There's a lot of noise from next door. Could you speak to them, or find me a quieter room?",
+                "I can't sleep because of the party next door. Would you please ask them to be quieter or change my room?",
+                "The room next door is really noisy. Could you ask them to keep it down, or move me to a different room?",
+                "The guests next to me are very loud. Can you deal with it, or offer me another room?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L86_Q3",
+            "interactionType": "narrator",
+            "hint": "When the room doesn't match what you booked, mention what you booked and ask about alternatives.",
+            "explanation": "Comparing what you paid for with what you received is the most convincing argument. Asking about other rooms encourages a solution rather than a complaint.",
+            "situationText": "You booked a room with a sea view for your anniversary, but the room you were given overlooks the car park. You call the front desk.",
+            "sampleAnswer": "I booked a room with a sea view, but mine faces the car park. Is there another room available?",
+            "correctAnswer": "I booked a room with a sea view, but this one faces the car park. Do you have a different room available?",
+            "acceptedSynonyms": [
+                "I booked a room with a sea view, but this one faces the car park. Do you have a different room available?",
+                "My reservation was for a sea-view room, but the window looks out on the car park. Is there anything else free?",
+                "This isn't the room I booked. I asked for a view of the sea. Could I change to one?",
+                "I was expecting a sea view, but my room overlooks the car park. Can you offer me another room?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L87_Q1",
+            "interactionType": "narrator",
+            "hint": "Ask about the refund while cancelling, so you understand the consequence before you confirm.",
+            "explanation": "Asking 'Will I get a refund?' in the same sentence as the cancellation helps you find out the cost before you commit. Most booking policies depend on timing.",
+            "situationText": "You must cancel your hotel booking for next weekend because of a family issue. You call the hotel.",
+            "sampleAnswer": "Hello, I need to cancel my booking for next weekend. Will I get a refund?",
+            "correctAnswer": "I need to cancel my booking for next weekend. Would I get a refund?",
+            "acceptedSynonyms": [
+                "I have to cancel my reservation for next weekend. Is it refundable?",
+                "I need to cancel my booking for next weekend. Would I get a refund?",
+                "Could I cancel my booking for next weekend? Will I be charged?",
+                "I'd like to cancel my stay next weekend. Do I get my money back?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L87_Q2",
+            "interactionType": "narrator",
+            "hint": "For a date change, name the original date, the new one, and ask about availability.",
+            "explanation": "Companies need to see the old and new dates to check availability and price. Asking 'Is there space?' shows you're aware it might not be possible.",
+            "situationText": "You booked a city tour for Tuesday, but heavy rain is forecast. You'd like to do it on Wednesday and call the tour company.",
+            "sampleAnswer": "Would it be possible to switch my tour to Wednesday instead of Tuesday?",
+            "correctAnswer": "I'd like to move my city tour from Tuesday to Wednesday. Is there any space?",
+            "acceptedSynonyms": [
+                "Could I change my city tour booking from Tuesday to Wednesday, if there are places?",
+                "Would it be possible to switch my tour to Wednesday instead of Tuesday?",
+                "I booked the Tuesday city tour. Is it possible to move it to Wednesday?",
+                "I'd like to move my city tour from Tuesday to Wednesday. Is there any space?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L87_Q3",
+            "interactionType": "narrator",
+            "hint": "If the mistake was made in the booking, ask for a free correction. State the exact error.",
+            "explanation": "Being precise about the error (a spelling in your name) and asking for a free fix opens a fair discussion. Airlines often charge for changes, so it's worth asking early.",
+            "situationText": "You notice on your flight ticket that your surname is missing a letter. The flight is in two weeks and you phone the airline.",
+            "sampleAnswer": "There's a spelling mistake in my surname on the ticket. Could you correct it without a fee?",
+            "correctAnswer": "There's a spelling mistake in my name on the ticket. Can you correct it without charging me?",
+            "acceptedSynonyms": [
+                "My name is misspelled on my booking. Can you fix it for free, please?",
+                "There's a spelling mistake in my name on the ticket. Can you correct it without charging me?",
+                "I've spotted an error in my surname on the ticket. Would you be able to correct it at no cost?",
+                "The name on my ticket is wrong by one letter. Could it be corrected without a charge?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L88_Q1",
+            "interactionType": "narrator",
+            "hint": "Explain what happened and ask a practical question. 'I think I…' is a soft way to admit a mistake.",
+            "explanation": "Explaining the mistake and naming your destination lets the staff give a precise route. It's better than only asking 'Where am I?'.",
+            "situationText": "You realize on the train that the announcements don't include your stop. You've got on the wrong line and need to reach Central Station.",
+            "sampleAnswer": "Excuse me, does this train go to Central Station? If not, where do I switch?",
+            "correctAnswer": "I think I got on the wrong train. I need to get to Central Station. Where should I change?",
+            "acceptedSynonyms": [
+                "Sorry, I'm on the wrong train, I think. How do I get to Central Station from here?",
+                "I've taken the wrong line by mistake. Which station should I change at for Central Station?",
+                "Excuse me, does this train go to Central Station? If not, where do I switch?",
+                "I think I got on the wrong train. I need to get to Central Station. Where should I change?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L88_Q2",
+            "interactionType": "narrator",
+            "hint": "Say what happened, then ask for the quickest option. Time matters more than detail here.",
+            "explanation": "'What's the quickest way…?' makes the helper prioritize. It's better than asking about all possible ways, because you're already running late.",
+            "situationText": "You were looking at your phone on the bus and only noticed after several stops that you passed your stop. You ask the driver.",
+            "sampleAnswer": "Excuse me, I missed my stop. What's the quickest way to go back?",
+            "correctAnswer": "I missed my stop. What's the quickest way to get back?",
+            "acceptedSynonyms": [
+                "I've gone past my stop. What's the fastest way to return?",
+                "I missed my stop. What's the quickest way to get back?",
+                "Sorry, I didn't notice my stop. How can I get back there quickly?",
+                "I went past my stop by mistake. Should I get off here and take a bus back?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L88_Q3",
+            "interactionType": "narrator",
+            "hint": "Explain the circumstances that stopped you from paying. Offer to pay another way immediately.",
+            "explanation": "Inspectors respond well when you say what stopped you and offer to pay at once. It proves you didn't intend to avoid the fare.",
+            "situationText": "You got on a tram without a ticket because the machine refused your card. An inspector checks tickets and you explain.",
+            "sampleAnswer": "I'm sorry, the ticket machine wouldn't take my card, so I couldn't buy a ticket. Can I pay you here?",
+            "correctAnswer": "The ticket machine wouldn't accept my card, so I couldn't buy a ticket. Can I pay you here?",
+            "acceptedSynonyms": [
+                "The machine at the stop didn't work with my card. I'd be happy to pay now if you can sell me a ticket.",
+                "I tried to buy a ticket, but the machine refused my card. Could I pay you directly?",
+                "Sorry, I wasn't trying to avoid paying. The machine rejected my card. Is it possible to buy a ticket from you?",
+                "The ticket machine wouldn't accept my card, so I couldn't buy a ticket. Can I pay you here?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L89_Q1",
+            "interactionType": "narrator",
+            "hint": "Ask about the route indirectly. 'I think' allows the driver to explain without feeling attacked.",
+            "explanation": "'I think this is a longer route than usual' expresses concern without accusing the driver. Suggesting the main road gives him an easy way to change.",
+            "situationText": "You're in a taxi to the airport and the driver is taking small streets while you know a main road that's usually faster. You have a flight in ninety minutes.",
+            "sampleAnswer": "Excuse me, I think this is a longer way than usual. Could you take the main road instead?",
+            "correctAnswer": "I think this is a longer route than usual. Could you use the main road instead?",
+            "acceptedSynonyms": [
+                "Would you mind taking the main road? I think it's quicker, and I don't want to be late.",
+                "Sorry, is this the fastest way? I usually go by the main road.",
+                "I think this is a longer route than usual. Could you use the main road instead?",
+                "Could we go via the main road? I'm worried about my flight time."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L89_Q2",
+            "interactionType": "narrator",
+            "hint": "Ask for a favor with a specific time, and say you'll return. It reassures the driver about payment.",
+            "explanation": "Drivers hesitate when they don't know how long they'll wait. Giving the exact time and saying you'll be right back shows the request is small and clear.",
+            "situationText": "You've reached a friend's flat and need to fetch a package from inside. You'd like the taxi to wait so you can continue to the station. You'll only be five minutes.",
+            "sampleAnswer": "Could you wait here for five minutes? I'll be right back.",
+            "correctAnswer": "Would you mind waiting here for five minutes? I'll be right back.",
+            "acceptedSynonyms": [
+                "Would you mind waiting here for five minutes? I'll be right back.",
+                "Could you stay here for five minutes? I just need to pick something up and then go on.",
+                "Please wait for me here. I'll be back in about five minutes.",
+                "Do you mind waiting for five minutes? I'm just collecting something from inside."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L89_Q3",
+            "interactionType": "narrator",
+            "hint": "Compare the numbers and ask for an explanation. Keep the tone curious so the conversation stays calm.",
+            "explanation": "Saying 'the app quoted twenty-five' makes the difference clear and puts the burden of explanation on the driver, without accusation. Asking 'why' politely often reveals a reason such as tolls.",
+            "situationText": "The ride-hailing app said your trip would cost about twenty-five, but the driver's meter shows forty when you arrive.",
+            "sampleAnswer": "Excuse me, the meter says forty, but the app said twenty-five for this trip. Why is it higher?",
+            "correctAnswer": "The meter says forty, but the app quoted twenty-five for this trip. Can you explain why it's higher?",
+            "acceptedSynonyms": [
+                "I don't understand the price. The app quoted twenty-five, but you're asking forty. Could you explain?",
+                "The app said twenty-five for this ride. Why does the meter show forty?",
+                "The meter says forty, but the app quoted twenty-five for this trip. Can you explain why it's higher?",
+                "There's a big difference between the app price of twenty-five and the meter's forty. What happened?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L90_Q1",
+            "interactionType": "narrator",
+            "hint": "Explain the problem with a timeline: how long, what changed. Agents solve faster with a clear timeline.",
+            "explanation": "A timeline ('for three days', 'it was fine before') helps the agent decide between a local problem and a network one, and stops them from starting with basic questions.",
+            "situationText": "You phone your internet provider because your connection has become extremely slow. It started three days ago and had been working normally before.",
+            "sampleAnswer": "Hello, my internet has been very slow for the past three days. It was working fine before that.",
+            "correctAnswer": "I'm calling because my internet has been very slow for three days. It was fine before that.",
+            "acceptedSynonyms": [
+                "I'm calling because my internet has been very slow for three days. It was fine before that.",
+                "Hi, I'm having trouble with my internet speed. It's been slow for three days, and before that it was normal.",
+                "My connection has been really slow for the last three days. It didn't have any issues before then.",
+                "I'm phoning about my broadband. For three days it has been very slow, but it used to be fine."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L90_Q2",
+            "interactionType": "narrator",
+            "hint": "Ask about the unexpected charge clearly, and say what you expected. Numbers help.",
+            "explanation": "Saying what you expected ('usually about thirty') shows the agent exactly where the difference is. Asking what the extra charge is for is neutral, not aggressive.",
+            "situationText": "Your monthly phone bill is sixty euros, though it's usually around thirty. You call the company to ask why.",
+            "sampleAnswer": "Hello, my bill this month is sixty euros, but it's usually around thirty. What's the extra charge for?",
+            "correctAnswer": "My bill this month is much higher than usual. I'd like to know what the extra charge is for.",
+            "acceptedSynonyms": [
+                "I've received a bill of sixty euros, and normally I pay thirty. Could you explain the difference?",
+                "My phone bill is double what it usually is. Can you tell me what I'm being charged for?",
+                "My bill this month is much higher than usual. I'd like to know what the extra charge is for.",
+                "Why is my bill so much higher this month? I'd like to understand the extra charges."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L90_Q3",
+            "interactionType": "narrator",
+            "hint": "If you've been passed around, calmly describe what has happened and ask for someone with authority.",
+            "explanation": "Saying how many times you've explained something shows why you're asking. 'Someone who can decide' is a polite way to ask for a supervisor without criticizing the agent.",
+            "situationText": "You've been transferred three times on a company helpline, each time repeating your problem to a new person. The current agent can't resolve it either.",
+            "sampleAnswer": "I've already explained this three times. Could I speak to someone who can make a decision about it?",
+            "correctAnswer": "I've explained this three times already. Could I speak to someone who can decide this?",
+            "acceptedSynonyms": [
+                "I've explained this three times already. Could I speak to someone who can decide this?",
+                "I'm sorry, but I've told this story three times now. May I speak to a supervisor, please?",
+                "Could you connect me to someone with the authority to resolve this? I've already repeated it three times.",
+                "I've been transferred three times. Is there a manager who can help me with this?"
+            ],
+            "instruction": "Respond to the situation."
+        }
+    ]
+}

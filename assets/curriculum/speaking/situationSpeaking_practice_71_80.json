@@ -1,0 +1,458 @@
+{
+    "gameType": "situationSpeaking",
+    "phase": "practice",
+    "batchIndex": 8,
+    "levels": "71-80",
+    "quests": [
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L71_Q1",
+            "interactionType": "practice",
+            "situationText": "You spend most of the day comparing large spreadsheets on a single small laptop screen. You'd like a second monitor and you're speaking to your manager.",
+            "options": [
+                "Could I get a second monitor? I'm working with large spreadsheets, and it's hard on one screen.",
+                "I'm locked out of my account. Could you reset my password, please? I have a client call in half an hour.",
+                "Give me this immediately without making me wait.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "Could I get a second monitor? I'm working with large spreadsheets, and it's hard on one screen.",
+            "explanation": "A request tied to a work problem ('large spreadsheets') is easier to approve than 'I would like a second monitor'. Explaining the benefit makes it a business need.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L71_Q2",
+            "interactionType": "practice",
+            "situationText": "You can't log in to your account and you have a client call in thirty minutes. You've phoned the IT helpdesk.",
+            "options": [
+                "Please you give that for me fast because I need.",
+                "Would it be possible to attend the Excel training next month? It would help with my reporting.",
+                "I demand you resolve this issue immediately.",
+                "I'm locked out of my account. Could you reset my password, please? I have a client call in half an hour."
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "I'm locked out of my account. Could you reset my password, please? I have a client call in half an hour.",
+            "explanation": "IT teams get many requests, so the deadline ('a client call in half an hour') tells them why yours is urgent. The word 'locked out' identifies the problem precisely.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L71_Q3",
+            "interactionType": "practice",
+            "situationText": "There's an Excel course next month, and you often struggle to create the reports your team needs. You go to your manager.",
+            "options": [
+                "I demand you resolve this issue immediately.",
+                "I have an idea. What if we sent the reminders by email instead of calling everyone?",
+                "Would it be possible to attend the Excel training next month? It would help with my reporting.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "Would it be possible to attend the Excel training next month? It would help with my reporting.",
+            "explanation": "Training requests are accepted when they clearly benefit your job. 'It would help with my reporting' links your interest to a result the company values.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L72_Q1",
+            "interactionType": "practice",
+            "situationText": "Your team calls each client by phone to remind them about appointments, which takes hours each week. You think an email would be faster.",
+            "options": [
+                "Would it be worth trying a shorter meeting? Half of us seem to lose focus after thirty minutes.",
+                "I have an idea. What if we sent the reminders by email instead of calling everyone?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "I have an idea. What if we sent the reminders by email instead of calling everyone?",
+            "explanation": "'What if we…?' invites discussion without attacking the current method. Naming the benefit is important: an idea without a reason is easy to ignore.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L72_Q2",
+            "interactionType": "practice",
+            "situationText": "Weekly team meetings last an hour, and you notice people lose focus and start checking their phones after about half an hour.",
+            "options": [
+                "Would it be worth trying a shorter meeting? Half of us seem to lose focus after thirty minutes.",
+                "I've noticed that we enter the same data in two places. Could we use one shared spreadsheet instead?",
+                "I demand you resolve this issue immediately.",
+                "I am person here. We are meeting now."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "Would it be worth trying a shorter meeting? Half of us seem to lose focus after thirty minutes.",
+            "explanation": "Beginning with 'seems' and a shared observation makes the suggestion collaborative. Phrasing it as a test ('worth trying') feels low-risk to the group.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L72_Q3",
+            "interactionType": "practice",
+            "situationText": "You realize the team enters the same customer data into two systems each week. You'd like to propose one shared sheet to your manager.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "I agree with Sam. I'd just add that we'll need more time for testing.",
+                "I demand you resolve this issue immediately.",
+                "I've noticed that we enter the same data in two places. Could we use one shared spreadsheet instead?"
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "I've noticed that we enter the same data in two places. Could we use one shared spreadsheet instead?",
+            "explanation": "'I've noticed' introduces an observation politely, and a single clear solution makes it actionable. Ending with a question lets your manager decide.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L73_Q1",
+            "interactionType": "practice",
+            "situationText": "In a meeting, Sam suggests launching the app in March. You agree, but you know that testing usually takes longer than planned.",
+            "options": [
+                "I demand you resolve this issue immediately.",
+                "I see your point, but I'm worried that timeline is too tight for our budget.",
+                "I agree with Sam. I'd just add that we'll need more time for testing.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "I agree with Sam. I'd just add that we'll need more time for testing.",
+            "explanation": "Referring to a colleague's idea by name gives credit and builds alliances. 'I'd just add' shows you agree while offering something new.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L73_Q2",
+            "interactionType": "practice",
+            "situationText": "A colleague proposes finishing the whole project in four weeks. You believe the budget doesn't cover the extra staff this would require.",
+            "options": [
+                "I partly agree. The design is strong, but I don't think the launch date is realistic.",
+                "I see your point, but I'm worried that timeline is too tight for our budget.",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "I see your point, but I'm worried that timeline is too tight for our budget.",
+            "explanation": "'I see your point, but…' protects the relationship while you disagree. Focusing on 'my concern' rather than 'your mistake' keeps the debate about the problem, not the person.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L73_Q3",
+            "interactionType": "practice",
+            "situationText": "A manager presents a new product plan. You like the design but doubt the launch date is realistic.",
+            "options": [
+                "I partly agree. The design is strong, but I don't think the launch date is realistic.",
+                "I think we might have misunderstood each other. I thought you meant next Friday, not this one.",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "I partly agree. The design is strong, but I don't think the launch date is realistic.",
+            "explanation": "Saying 'I partly agree' shows you've evaluated the whole proposal. Separating the strong points from the doubtful one makes your criticism specific and constructive.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L74_Q1",
+            "interactionType": "practice",
+            "situationText": "Your colleague expects the report this Friday, but you've planned to finish it next Friday. You realize this when she asks for it.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "Sorry, that's not quite what I meant. I was asking about the cost, not the timing.",
+                "I demand you resolve this issue immediately.",
+                "I think we might have misunderstood each other. I thought you meant next Friday, not this one."
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "I think we might have misunderstood each other. I thought you meant next Friday, not this one.",
+            "explanation": "'We might have misunderstood each other' shares the responsibility, so nobody loses face. Stating what you thought gives the other person the chance to correct it.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L74_Q2",
+            "interactionType": "practice",
+            "situationText": "You emailed a colleague asking about the project. She replied about the deadline, but you were asking about the cost.",
+            "options": [
+                "Hey you, listen to me and fix this right now.",
+                "I thought Sam was handling the client call. Was that supposed to be me?",
+                "Sorry, that's not quite what I meant. I was asking about the cost, not the timing.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "Sorry, that's not quite what I meant. I was asking about the cost, not the timing.",
+            "explanation": "'That's not quite what I meant' is gentler than 'You misunderstood'. Restating your original intention ('the cost, not the timing') clarifies the point without arguing.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L74_Q3",
+            "interactionType": "practice",
+            "situationText": "You believed your colleague Sam would call an important client, but the client says nobody has called. You speak to your manager.",
+            "options": [
+                "Good morning, Bright Solutions. Maya speaking. How can I help you?",
+                "I thought Sam was handling the client call. Was that supposed to be me?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "I thought Sam was handling the client call. Was that supposed to be me?",
+            "explanation": "Asking 'Was that meant to be me?' takes the blame away from anyone and helps to solve unclear responsibilities. It avoids a bigger problem later, such as a missed client call.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L75_Q1",
+            "interactionType": "practice",
+            "situationText": "You work at the front desk of a company called Bright Solutions, and the phone rings at nine o'clock in the morning. Your name is Maya.",
+            "options": [
+                "Good morning, Bright Solutions. Maya speaking. How can I help you?",
+                "Let me put you through to the sales department. One moment, please.",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "Good morning, Bright Solutions. Maya speaking. How can I help you?",
+            "explanation": "The standard call-opening sequence identifies the company, the speaker, and offers help. This gives the caller everything they need without asking questions.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L75_Q2",
+            "interactionType": "practice",
+            "situationText": "A caller asks about buying a bulk order, which the sales team deals with. You need to transfer him.",
+            "options": [
+                "Please you give that for me fast because I need.",
+                "I'm afraid I don't have that information to hand. I'll find out and call you back this afternoon.",
+                "I demand you resolve this issue immediately.",
+                "Let me put you through to the sales department. One moment, please."
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "Let me put you through to the sales department. One moment, please.",
+            "explanation": "Explaining a transfer prevents the caller from thinking they've been disconnected. Saying 'one moment' signals a short delay.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L75_Q3",
+            "interactionType": "practice",
+            "situationText": "A customer asks about the warranty period on a product, and you don't know it. You need to check with the technical department.",
+            "options": [
+                "I demand you resolve this issue immediately.",
+                "I sent you the invoice on Monday. Did you get it?",
+                "I'm afraid I don't have that information to hand. I'll find out and call you back this afternoon.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "I'm afraid I don't have that information to hand. I'll find out and call you back this afternoon.",
+            "explanation": "Being honest about not knowing, then promising a time for a reply, builds trust. 'I'll find out' and 'this afternoon' turn a limit into a commitment.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L76_Q1",
+            "interactionType": "practice",
+            "situationText": "You emailed an invoice to a client on Monday. It's now Thursday and you haven't heard back. You meet the client by chance in the corridor.",
+            "options": [
+                "I wanted to check on the request I sent last week. Have you had a chance to look at it?",
+                "I sent you the invoice on Monday. Did you get it?",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "I sent you the invoice on Monday. Did you get it?",
+            "explanation": "Giving the day and item makes the person's search easier. A simple question 'Did you get it?' is polite and neutral, while 'You didn't reply' would sound accusing.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L76_Q2",
+            "interactionType": "practice",
+            "situationText": "A week ago, you sent a colleague in another department a request for approval. You haven't heard back and you'd like a response.",
+            "options": [
+                "I wanted to check on the request I sent last week. Have you had a chance to look at it?",
+                "Thank you for sending the files. They've arrived, and I'll go through them today.",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "I wanted to check on the request I sent last week. Have you had a chance to look at it?",
+            "explanation": "'Have you had a chance to look at it?' assumes the person is busy, not careless. It reminds them about the request while leaving room for their situation.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L76_Q3",
+            "interactionType": "practice",
+            "situationText": "A supplier has just sent you five files you were waiting for. You reply over the phone to say you have them.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "I'd like to take Friday off. Would that be okay?",
+                "Whatever, that is just your job anyway.",
+                "Thank you for sending the files. They've arrived, and I'll go through them today."
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "Thank you for sending the files. They've arrived, and I'll go through them today.",
+            "explanation": "Confirming receipt with a next step ('I'll review them today') gives the sender peace of mind and shows reliability.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L77_Q1",
+            "interactionType": "practice",
+            "situationText": "You want to take next Friday off for a personal matter. You speak to your manager at the start of the week.",
+            "options": [
+                "I demand you resolve this issue immediately.",
+                "Could I take the last week of August off? I'll have my project finished before I leave.",
+                "I'd like to take Friday off. Would that be okay?",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "I'd like to take Friday off. Would that be okay?",
+            "explanation": "For a single day off, a short polite request is enough. Stating the date and asking 'Would that be okay?' leaves the decision with your manager.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L77_Q2",
+            "interactionType": "practice",
+            "situationText": "You'd like to take the last week of August for a family holiday. You have an important project due in mid-August.",
+            "options": [
+                "Would it be all right if I left an hour early today? I have a doctor's appointment, and I can make up the time.",
+                "Could I take the last week of August off? I'll have my project finished before I leave.",
+                "Give me this immediately without making me wait.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "Could I take the last week of August off? I'll have my project finished before I leave.",
+            "explanation": "A week off requires more consideration from a manager. Promising to finish your project first shows you're thinking about the team, not only yourself.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L77_Q3",
+            "interactionType": "practice",
+            "situationText": "You have a doctor's appointment at four o'clock and you'd need to leave at three. You find your manager before lunch.",
+            "options": [
+                "Would it be all right if I left an hour early today? I have a doctor's appointment, and I can make up the time.",
+                "Sorry I'm late, everyone. Please carry on. I'll catch up.",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "Would it be all right if I left an hour early today? I have a doctor's appointment, and I can make up the time.",
+            "explanation": "Leaving early is a small request, so keep it short. A brief reason and an offer ('I'll make up the time') keep the tone respectful.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L78_Q1",
+            "interactionType": "practice",
+            "situationText": "You're ten minutes late for a team meeting because of a previous call. Everyone is already discussing the agenda as you enter the room.",
+            "options": [
+                "Please you give that for me fast because I need.",
+                "Sorry to bother you, but I'm trying to finish a report. Would you mind taking that call in the meeting room?",
+                "Hey you, listen to me and fix this right now.",
+                "Sorry I'm late, everyone. Please carry on. I'll catch up."
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "Sorry I'm late, everyone. Please carry on. I'll catch up.",
+            "explanation": "A short apology and 'please carry on' show respect without disrupting the meeting. It's better than a long explanation that draws attention to you.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L78_Q2",
+            "interactionType": "practice",
+            "situationText": "A coworker is speaking loudly on the phone at his desk next to yours, and you have a deadline for a report in one hour.",
+            "options": [
+                "Hey you, listen to me and fix this right now.",
+                "Excuse me, I think that sandwich might be mine. It has my name on it.",
+                "Sorry to bother you, but I'm trying to finish a report. Would you mind taking that call in the meeting room?",
+                "I am person here. We are meeting now."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "Sorry to bother you, but I'm trying to finish a report. Would you mind taking that call in the meeting room?",
+            "explanation": "Requests for quiet are more successful when they describe your situation ('I'm trying to finish a report') and offer a solution ('the meeting room'). It avoids saying the person is being rude.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L78_Q3",
+            "interactionType": "practice",
+            "situationText": "In the office fridge, you see a coworker about to take a sandwich with your name on the wrapper, thinking it's the one she brought.",
+            "options": [
+                "I'm a graphic designer with five years of experience. I enjoy working with small teams.",
+                "Excuse me, I think that sandwich might be mine. It has my name on it.",
+                "Hey you, listen to me and fix this right now.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "Excuse me, I think that sandwich might be mine. It has my name on it.",
+            "explanation": "Assuming an honest mistake ('I think that might be mine') avoids accusing the person of stealing. Mentioning a name label gives evidence without confrontation.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L79_Q1",
+            "interactionType": "practice",
+            "situationText": "In a job interview, the interviewer smiles and says, 'So, tell me a little about yourself.' You're a graphic designer. You have five years of experience and enjoy working in small teams.",
+            "options": [
+                "I'm a graphic designer with five years of experience. I enjoy working with small teams.",
+                "I'm interested in this role because I'd like to work on bigger projects, and your company has an excellent reputation.",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "I'm a graphic designer with five years of experience. I enjoy working with small teams.",
+            "explanation": "Interviewers use this question to see how you organize your thoughts. A concise structure (role, experience, strength) shows clarity and focuses on what matters for the job.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L79_Q2",
+            "interactionType": "practice",
+            "situationText": "The interviewer asks why you applied for this role. You want to work on bigger projects, and you admire the company's reputation.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "Could you tell me what a typical day in this role looks like?",
+                "I demand you resolve this issue immediately.",
+                "I'm interested in this role because I'd like to work on bigger projects, and your company has an excellent reputation."
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "I'm interested in this role because I'd like to work on bigger projects, and your company has an excellent reputation.",
+            "explanation": "A strong answer connects your growth to what the employer offers. It shows you have researched the company and aren't just applying anywhere.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L79_Q3",
+            "interactionType": "practice",
+            "situationText": "At the end of the interview, the interviewer asks, 'Do you have any questions for us?' You'd like to know more about the daily work.",
+            "options": [
+                "I demand you resolve this issue immediately.",
+                "I've finished the report and I'm halfway through the presentation, but I need Sam's figures to complete it.",
+                "Could you tell me what a typical day in this role looks like?",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 2,
+            "correctAnswer": "Could you tell me what a typical day in this role looks like?",
+            "explanation": "A question about a typical day shows you're thinking about doing the job well. It's much more useful than asking about holidays too early.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L80_Q1",
+            "interactionType": "practice",
+            "situationText": "It's Friday afternoon and your manager asks for a quick status update on your project before the weekend. You're waiting for figures from your colleague Sam.",
+            "options": [
+                "I can cover your calls on Monday and Tuesday, but I'm out on Wednesday.",
+                "I've finished the report and I'm halfway through the presentation, but I need Sam's figures to complete it.",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 1,
+            "correctAnswer": "I've finished the report and I'm halfway through the presentation, but I need Sam's figures to complete it.",
+            "explanation": "Listing done, in progress, and blocked tells your manager exactly where the project stands, and it highlights what you need from others. It's a summary structure you can use every week.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L80_Q2",
+            "interactionType": "practice",
+            "situationText": "A colleague going on holiday asks if you can answer her customer calls while she's away this week. You can help on Monday and Tuesday only.",
+            "options": [
+                "I can cover your calls on Monday and Tuesday, but I'm out on Wednesday.",
+                "I'm heading off now. If anything urgent comes up, you can call me on my mobile.",
+                "I demand you resolve this issue immediately.",
+                "Where is thing? I need it now because problem."
+            ],
+            "correctIndex": 0,
+            "correctAnswer": "I can cover your calls on Monday and Tuesday, but I'm out on Wednesday.",
+            "explanation": "Saying what you can and can't do avoids problems later. Stating your limit ('I'm out on Wednesday') isn't refusing; it's protecting both of you from false expectations.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_PRACTICE_L80_Q3",
+            "interactionType": "practice",
+            "situationText": "It's Friday at five and your team is still in the office. You're leaving, but a client issue could arise during the evening.",
+            "options": [
+                "Where is thing? I need it now because problem.",
+                "Could I get a second monitor? I'm working with large spreadsheets, and it's hard on one screen.",
+                "I demand you resolve this issue immediately.",
+                "I'm heading off now. If anything urgent comes up, you can call me on my mobile."
+            ],
+            "correctIndex": 3,
+            "correctAnswer": "I'm heading off now. If anything urgent comes up, you can call me on my mobile.",
+            "explanation": "Ending the day with clear availability prevents confusion. 'If anything urgent comes up' limits interruptions to real emergencies and shows professionalism.",
+            "instruction": "Choose the most natural and appropriate spoken response for this situation."
+        }
+    ]
+}

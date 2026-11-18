@@ -1,0 +1,488 @@
+{
+    "gameType": "situationSpeaking",
+    "phase": "mastery",
+    "batchIndex": 11,
+    "levels": "101-110",
+    "quests": [
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L101_Q1",
+            "interactionType": "narrator",
+            "hint": "Lead with the request, then hand over the reason. The reason turns a favor into something sensible.",
+            "explanation": "Requests with reasons are accepted more often, because the listener can judge whether it's fair. Placing the request first tells the listener what you need, and the reason follows naturally.",
+            "situationText": "You have an online exam this afternoon, and the noise in your open-plan office would make it impossible. The meeting room is empty. You go to the office manager.",
+            "sampleAnswer": "Would it be possible to book the meeting room for this afternoon? I'm taking an exam online and need silence.",
+            "correctAnswer": "Could I use the meeting room this afternoon? I have an online exam and need somewhere quiet.",
+            "acceptedSynonyms": [
+                "Would it be possible to book the meeting room for this afternoon? I'm taking an exam online and need silence.",
+                "Is the meeting room free this afternoon? I have an exam to take online and it has to be quiet.",
+                "Could I use the meeting room this afternoon? I have an online exam and need somewhere quiet.",
+                "I wonder if I could borrow the meeting room this afternoon for an online exam."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L101_Q2",
+            "interactionType": "narrator",
+            "hint": "With neighbors, showing the temporary nature of a request makes it sound less like an imposition.",
+            "explanation": "'Just tonight' limits the request in time, and the visiting relatives explain why. Together these make it easy for a neighbor to agree without worrying about the future.",
+            "situationText": "Your relatives are coming for dinner, and there's no space to park on the street. Your neighbor across the corridor has a parking spot that she usually leaves empty in the evening.",
+            "sampleAnswer": "Hi, would you mind if I parked in your spot tonight? My relatives are visiting, and there's no space on the street.",
+            "correctAnswer": "Would you mind if I used your parking space tonight? My relatives are visiting, and there's nowhere else to park.",
+            "acceptedSynonyms": [
+                "Would you mind if I used your parking space tonight? My relatives are visiting, and there's nowhere else to park.",
+                "I have a favor to ask. Could I use your parking spot just for tonight? I have family coming and the street is full.",
+                "Is your parking space free this evening? My relatives are coming over and I can't find anywhere to park.",
+                "Do you need your parking spot tonight? If not, could my relatives use it? The street is full."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L101_Q3",
+            "interactionType": "narrator",
+            "hint": "A good reason for a loan extension is that you need more time and nobody else is affected.",
+            "explanation": "Adding 'nobody has requested it' anticipates the librarian's main concern. Preparing for their objection in your request makes agreement much likelier.",
+            "situationText": "The library book you borrowed is due tomorrow, but you're only halfway through your research. You check the system and see no one has reserved it.",
+            "sampleAnswer": "Excuse me, could I keep this book a week longer? I haven't finished my research, and nobody else has requested it.",
+            "correctAnswer": "Could I keep this book a week longer? I haven't finished my research, and nobody has reserved it.",
+            "acceptedSynonyms": [
+                "Is it possible to extend the loan on this book by a week? My research isn't finished, and I see that there's no waiting list.",
+                "I need this book a little longer. Could you extend it for another week? I don't think anyone else has asked for it.",
+                "Could I keep this book a week longer? I haven't finished my research, and nobody has reserved it.",
+                "Would you be able to renew this for another week? I'm still working on my research and no one has reserved it."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L102_Q1",
+            "interactionType": "narrator",
+            "hint": "State the obstacle and your solution in one breath. Present the problem as a small thing you're already handling.",
+            "explanation": "Offering a solution with the problem shows responsibility. Leaving a bag as a sort of guarantee reassures the café owner that you'll return.",
+            "situationText": "You finish your meal at a small café, and the card machine isn't working. You only have a little cash, and you'll have to go to the ATM down the street.",
+            "sampleAnswer": "Your card machine seems to be down, so I'll pay cash, but I need to go to the ATM first. Could I leave my bag here while I go?",
+            "correctAnswer": "Your card machine is down, so I'll pay cash, but I need to go to the ATM. Can I leave my bag here while I do?",
+            "acceptedSynonyms": [
+                "Your card machine is down, so I'll pay cash, but I need to go to the ATM. Can I leave my bag here while I do?",
+                "I can't pay by card, so I'll withdraw some cash. Would you mind holding my bag until I'm back?",
+                "Since the machine isn't working, I'll go and get cash from the ATM. I'll leave my bag here so you know I'll return.",
+                "I'll need to fetch some cash from the ATM, as the card reader is out of order. Can I leave my coat here?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L102_Q2",
+            "interactionType": "narrator",
+            "hint": "For technical problems in a class, say what doesn't work and propose a workaround right away.",
+            "explanation": "Suggesting an alternative (sending notes) shows commitment to participate even with the problem. Teachers are more flexible when you offer a substitute.",
+            "situationText": "You've joined an online class, but your laptop's camera isn't working. The teacher likes students to be visible.",
+            "sampleAnswer": "Sorry, my camera won't turn on. Is it all right if I stay off camera and email you my notes after class?",
+            "correctAnswer": "My camera isn't working. Could I keep it off today and send you my notes afterwards?",
+            "acceptedSynonyms": [
+                "Sorry, my camera won't turn on. Is it all right if I stay off camera and email you my notes after class?",
+                "I'm having trouble with my camera. May I attend without video today and send you my notes later?",
+                "My camera isn't working. Could I keep it off today and send you my notes afterwards?",
+                "My webcam isn't working, so would it be okay to join with audio only? I can send you my notes afterwards."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L102_Q3",
+            "interactionType": "narrator",
+            "hint": "When your equipment doesn't work at a presentation, tell them what you have to fix it. Be calm and ready.",
+            "explanation": "Explaining that you have a backup ('slides on a USB drive') shows preparation. Organizers can then quickly take a decision without stopping the whole event.",
+            "situationText": "You're about to give a talk at a small conference, but the projector won't recognize your laptop. You have your slides on a USB drive.",
+            "sampleAnswer": "I can't get my laptop to show on the screen. Could I plug my USB drive into your machine and present from that?",
+            "correctAnswer": "The projector isn't recognizing my laptop. Could I present from your computer? I have the slides on a USB drive.",
+            "acceptedSynonyms": [
+                "The projector isn't recognizing my laptop. Could I present from your computer? I have the slides on a USB drive.",
+                "My laptop doesn't connect to the projector. May I use your computer instead? My slides are on a USB stick.",
+                "I can't get my laptop to show on the screen. Could I plug my USB drive into your machine and present from that?",
+                "There's a connection problem with my laptop. I have a copy of the slides on a memory stick. Could I use your computer?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L103_Q1",
+            "interactionType": "narrator",
+            "hint": "A price question usually leads to a second question about what's included. Ask both.",
+            "explanation": "Knowing the price without knowing what's included leads to surprises. A follow-up such as 'or is it extra?' uncovers hidden costs quickly.",
+            "situationText": "At the entrance of a museum, you read a sign that gives the price of a day ticket. You aren't sure whether the audio guide is part of it.",
+            "sampleAnswer": "How much is the day ticket? And is the audio guide included, or is that extra?",
+            "correctAnswer": "How much is the day ticket, and does that include the audio guide, or is it extra?",
+            "acceptedSynonyms": [
+                "What does a day ticket cost, and is the audio guide part of the price?",
+                "How much is the day ticket, and does that include the audio guide, or is it extra?",
+                "Could you tell me the price of the day ticket? Does it cover the audio guide as well?",
+                "How much for a full-day ticket? I'd also like to know if the audio guide costs more."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L103_Q2",
+            "interactionType": "narrator",
+            "hint": "If two pieces of information conflict, mention both and ask which is right. This avoids mistakes.",
+            "explanation": "Quoting both versions gives the receptionist a chance to see what happened. It's more effective than saying 'I'm confused', because it points to the specific issue.",
+            "situationText": "Your clinic's text message says your appointment is on Monday at ten, but you noted nine o'clock when you booked. You phone reception.",
+            "sampleAnswer": "Is my appointment on Monday at nine or ten? I wrote down nine, but the message says ten.",
+            "correctAnswer": "Is the appointment on Monday at nine or at ten? I wrote down nine, but your message said ten.",
+            "acceptedSynonyms": [
+                "Could you confirm the time? My notes say nine on Monday, but the text says ten.",
+                "I'm not sure which time is right, nine or ten. What does your system say for Monday?",
+                "There's a difference between my note and your message. Is my Monday appointment at nine or ten?",
+                "Is the appointment on Monday at nine or at ten? I wrote down nine, but your message said ten."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L103_Q3",
+            "interactionType": "narrator",
+            "hint": "Ask about the limits of something before you prepare. It stops you from wasting effort.",
+            "explanation": "'Only…or does it include…?' is a very useful clarification frame because it defines what is inside or outside. Preparing for an exam depends on exactly this scope.",
+            "situationText": "Your teacher mentions an exam next Friday. You want to know whether you should study only the textbook or the additional articles as well. The textbook has chapters one to five.",
+            "sampleAnswer": "Is the exam only on chapters one to five, or does it include the extra reading list as well?",
+            "correctAnswer": "Is the exam only on chapters one to five, or will it include the reading list too?",
+            "acceptedSynonyms": [
+                "Could you tell us if the exam covers just chapters one to five, or the additional readings as well?",
+                "Is the exam only on chapters one to five, or will it include the reading list too?",
+                "Will the exam be limited to the first five chapters, or should we study the extra articles too?",
+                "What's covered in the exam? Only the first five chapters, or the reading list also?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L104_Q1",
+            "interactionType": "narrator",
+            "hint": "A sincere apology combines what you did, why it happened, and your feelings. Don't make the reason sound like an excuse.",
+            "explanation": "The reason ('work was hectic') makes the mistake understandable, while 'I'm really sorry' comes first, so your friend hears the apology before the explanation.",
+            "situationText": "You forgot to call your best friend on her birthday, and you're phoning her the next morning.",
+            "sampleAnswer": "I'm so sorry I didn't call yesterday. Work was crazy, and I completely lost track of the date.",
+            "correctAnswer": "I'm really sorry I forgot to call on your birthday. Work was so hectic that I completely lost track of the date.",
+            "acceptedSynonyms": [
+                "I'm really sorry I forgot to call on your birthday. Work was so hectic that I completely lost track of the date.",
+                "I feel terrible about missing your birthday. This week has been so busy that I forgot what day it was.",
+                "Sorry I didn't call yesterday. I got caught up at work and totally lost track of time.",
+                "I'm so sorry about your birthday. Work has been mad, and the date just slipped past me."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L104_Q2",
+            "interactionType": "narrator",
+            "hint": "When you apologize to neighbors, promise it won't happen again and accept responsibility.",
+            "explanation": "'It won't happen again' gives the neighbor a reason to forgive. Saying that you 'didn't realize the time' shows you understand the problem, which matters more than a long apology.",
+            "situationText": "Your party ran until 2 a.m. last night, and your neighbor looked annoyed when you passed him on the stairs this morning.",
+            "sampleAnswer": "I'm sorry about the noise last night. We didn't realize how late it was. It won't happen again.",
+            "correctAnswer": "I wanted to apologize for the noise last night. We didn't realize how late it was, and it won't happen again.",
+            "acceptedSynonyms": [
+                "Sorry if we kept you awake last night. We lost track of the time. We'll be quieter in the future.",
+                "I owe you an apology for the party noise. It went on too late, and I'll make sure it doesn't happen again.",
+                "I wanted to apologize for the noise last night. We didn't realize how late it was, and it won't happen again.",
+                "I'm sorry about last night. It was too loud and too late. We'll make sure it doesn't happen again."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L104_Q3",
+            "interactionType": "narrator",
+            "hint": "In a professional apology for a late reply, be brief and move to the solution.",
+            "explanation": "Business apologies are short: acknowledge the delay, give the reason in a few words, and continue with the matter. A long apology can distract from the actual message.",
+            "situationText": "You've come back from a business trip and see a client's message from three days ago that you haven't answered. You start your reply.",
+            "sampleAnswer": "Apologies for the delay in replying. I was traveling, and I've only just seen your message.",
+            "correctAnswer": "Sorry for the late reply. I was traveling and only just saw your message.",
+            "acceptedSynonyms": [
+                "Sorry for the late reply. I was traveling and only just saw your message.",
+                "Thank you for your patience. I was away on a trip and have only just read your email.",
+                "I apologize for not replying sooner. I was traveling and didn't see your message until now.",
+                "Sorry to keep you waiting. I was away and I've only just seen your message."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L105_Q1",
+            "interactionType": "narrator",
+            "hint": "A request with a fallback shows flexibility. 'If not' introduces the second choice.",
+            "explanation": "Offering a fallback lets the restaurant say no to your first idea without saying no to you. It also lets everyone move on faster.",
+            "situationText": "You arrive at a busy restaurant with two friends on a warm evening. You'd love to sit on the terrace, but inside is fine too.",
+            "sampleAnswer": "Could we have a table outside, please? If it's full, inside is fine.",
+            "correctAnswer": "Could we sit outside, please? If there's no space, inside is fine.",
+            "acceptedSynonyms": [
+                "Do you have a table on the terrace? If not, we're happy to sit inside.",
+                "Could we sit outside, please? If there's no space, inside is fine.",
+                "We'd prefer outside if possible, but we'll take a table inside if not.",
+                "Is there space outside? If it's full, we don't mind sitting indoors."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L105_Q2",
+            "interactionType": "narrator",
+            "hint": "Offer a preferred time plus a backup. Two options show you respect their schedule.",
+            "explanation": "'If that's too early' acknowledges the other person's preferences, and having two options reduces the chance of a back-and-forth message chain.",
+            "situationText": "You'd like to meet a colleague tomorrow morning for a quick planning session. You know she's not a morning person. You'd suggest nine o'clock, with ten-thirty as a backup.",
+            "sampleAnswer": "Could we meet at nine? If that's too early, ten-thirty works for me too.",
+            "correctAnswer": "Could we meet at nine tomorrow? If that's too early, ten-thirty works as well.",
+            "acceptedSynonyms": [
+                "How about nine o'clock? If that's too early for you, I could do ten-thirty.",
+                "Would nine suit you? Otherwise, I'm also free at ten-thirty.",
+                "I was thinking nine tomorrow, but ten-thirty is fine if you'd rather have a later start.",
+                "Could we meet at nine tomorrow? If that's too early, ten-thirty works as well."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L105_Q3",
+            "interactionType": "narrator",
+            "hint": "Ask a shop to hold an item and say what you'll do if they can't. It makes the request easy to answer.",
+            "explanation": "Giving an alternative plan ('I'll come back this afternoon') tells the shop you're serious and flexible. A serious customer is more likely to receive the favor.",
+            "situationText": "You love a jacket in a shop, but you can't buy it until you get paid on Friday. You're leaving town tomorrow, so you'd need to come back today if the shop can't hold it.",
+            "sampleAnswer": "Could you hold this jacket until Friday? If not, I'll come back this afternoon before I leave.",
+            "correctAnswer": "Could you hold this jacket for me until Friday? If you can't, I'll come back this afternoon.",
+            "acceptedSynonyms": [
+                "Is it possible to put this jacket aside until Friday? Otherwise, I'll return this afternoon.",
+                "Could you hold this jacket for me until Friday? If you can't, I'll come back this afternoon.",
+                "Would you be able to keep this jacket for me until Friday? If that's not possible, I'll be back later today.",
+                "Could you save this jacket until Friday? If not, I can come back this afternoon to pay."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L106_Q1",
+            "interactionType": "narrator",
+            "hint": "For a billing error, state the item and the fix you want. Give the staff the exact action you need.",
+            "explanation": "Naming what's wrong (breakfast charged twice) and what you want (removal and corrected receipt) turns a complaint into a to-do list for the staff member.",
+            "situationText": "While checking out of a hotel, you notice your breakfast has been charged twice on the bill.",
+            "sampleAnswer": "Excuse me, breakfast has been charged twice on my bill. Could you remove the second charge and give me a corrected receipt?",
+            "correctAnswer": "The breakfast was charged twice on my bill. Could you remove the second charge and send me a corrected receipt?",
+            "acceptedSynonyms": [
+                "There's a duplicate charge for breakfast here. Could you take one off and print a new bill?",
+                "I've been charged for breakfast twice. Please could you remove one and give me an updated receipt?",
+                "My bill shows the breakfast two times. Can you correct it and hand me a new copy?",
+                "The breakfast was charged twice on my bill. Could you remove the second charge and send me a corrected receipt?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L106_Q2",
+            "interactionType": "narrator",
+            "hint": "For a service that isn't delivered, link your payment to what you expect. Ask for a fair compensation.",
+            "explanation": "The complaint is stronger because you connect what you pay for ('full access') to what isn't working. A discount request is a proportionate solution, not an overreaction.",
+            "situationText": "The sauna at your gym has been out of order for two weeks, but the membership fee hasn't changed. You speak to the manager.",
+            "sampleAnswer": "The sauna has been broken for two weeks. As I pay for full access, I'd like a discount this month.",
+            "correctAnswer": "The sauna has been broken for two weeks. Since I'm paying for full access, I'd like a discount for this month.",
+            "acceptedSynonyms": [
+                "I pay for full access, but the sauna hasn't worked for two weeks. Could you reduce my fee this month?",
+                "The sauna has been broken for two weeks. Since I'm paying for full access, I'd like a discount for this month.",
+                "With the sauna out of use for a fortnight, I don't think I should pay the full price. Could you offer a discount?",
+                "The sauna has been closed for two weeks. Would it be possible to get some money off my membership?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L106_Q3",
+            "interactionType": "narrator",
+            "hint": "Give the company two solutions and let them choose the quickest. It shows you want a practical result.",
+            "explanation": "Naming two acceptable options ('replacement or refund') shows flexibility. The phrase 'whichever is quicker' helps the company choose the easiest solution for both sides.",
+            "situationText": "A parcel you ordered arrived with a cracked screen on the lamp inside. You're chatting with the seller through the website.",
+            "sampleAnswer": "The item arrived damaged. I'd like either a replacement or a refund, whichever is quicker for you.",
+            "correctAnswer": "The delivery arrived damaged. I'd like either a replacement or a refund, whichever is quicker.",
+            "acceptedSynonyms": [
+                "My order came broken. Could you send another, or refund me, whichever is faster?",
+                "The lamp is damaged. I'd be happy with a new one or my money back, whichever you can do sooner.",
+                "It arrived with a cracked screen. Can you replace it or refund the payment, whichever is easier?",
+                "The delivery arrived damaged. I'd like either a replacement or a refund, whichever is quicker."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L107_Q1",
+            "interactionType": "narrator",
+            "hint": "Extend an invitation with a fallback date. It shows you want them there, not just on your schedule.",
+            "explanation": "Giving an alternative date ('the following weekend') makes a decline less likely. It communicates flexibility and real interest in their presence.",
+            "situationText": "A group of friends is planning a hike on the 12th. You're inviting a friend from another city and you'd like her to come.",
+            "sampleAnswer": "A few of us are going hiking on the 12th. Can you make it, or would the weekend after suit you better?",
+            "correctAnswer": "We're planning a hike on the 12th. Are you free that weekend? If not, we could go the following one.",
+            "acceptedSynonyms": [
+                "A few of us are going hiking on the 12th. Can you make it, or would the weekend after suit you better?",
+                "Would you like to join our hike on the 12th? We could always move it a week if that's easier for you.",
+                "We're planning a hike on the 12th. Are you free that weekend? If not, we could go the following one.",
+                "We've got a hike planned for the 12th. Are you around? If not, we can go the following weekend."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L107_Q2",
+            "interactionType": "narrator",
+            "hint": "For a work-related invitation, give a purpose and offer two days. It makes it easy to say yes.",
+            "explanation": "Explaining why you invite ('to hear your ideas') gives the lunch a purpose. Offering two days is quicker than asking 'When are you free?'.",
+            "situationText": "You'd like to have lunch with a colleague from another team to discuss a shared project. You catch her at the coffee machine. You could do Wednesday or Thursday.",
+            "sampleAnswer": "Are you free for lunch on Wednesday or Thursday? I'd like to talk through the project with you.",
+            "correctAnswer": "Would you like to have lunch this week? I'd love to hear your ideas about the new project. Wednesday or Thursday?",
+            "acceptedSynonyms": [
+                "Would you like to have lunch this week? I'd love to hear your ideas about the new project. Wednesday or Thursday?",
+                "Are you free for lunch on Wednesday or Thursday? I'd like to talk through the project with you.",
+                "I'd like to hear your thoughts on the project. Could we do lunch on Wednesday or Thursday?",
+                "Let's have lunch one day this week to go over the project. Does Wednesday or Thursday suit you?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L107_Q3",
+            "interactionType": "narrator",
+            "hint": "To a friend you haven't seen for a long time, show you're excited and offer availability.",
+            "explanation": "Expressing enthusiasm ('I heard you're in town') makes the invitation personal. Telling them when you're free lets the friend suggest details without the pressure to explain their own schedule first.",
+            "situationText": "You hear that an old friend from school will be visiting your city in March. You haven't seen him for years and want to meet. You're free most evenings after Tuesday.",
+            "sampleAnswer": "Someone told me you're visiting in March. Could we get dinner together? Most evenings after Tuesday work for me.",
+            "correctAnswer": "I heard you're coming to town in March! Do you have time for dinner one evening? I'm free most nights after Tuesday.",
+            "acceptedSynonyms": [
+                "I'm so glad you'll be here in March. Would you like to have dinner? I can do any evening after Tuesday.",
+                "Someone told me you're visiting in March. Could we get dinner together? Most evenings after Tuesday work for me.",
+                "I heard you're coming to town in March! Do you have time for dinner one evening? I'm free most nights after Tuesday.",
+                "Great news that you're coming in March! Let's have dinner one night. I'm free from Wednesday onward."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L108_Q1",
+            "interactionType": "narrator",
+            "hint": "Recommend with practical reasons. A colleague choosing lunch cares about price and portions.",
+            "explanation": "A recommendation that names the place and why ('big portions', 'reasonable') helps the listener decide immediately. Practical facts are more persuasive than 'It's great'.",
+            "situationText": "A colleague asks where she could go for a cheap and filling lunch. You know a good Lebanese restaurant nearby on Baker Street.",
+            "sampleAnswer": "You should try the Lebanese place on Baker Street. The portions are big, and it's very reasonable at lunchtime.",
+            "correctAnswer": "You should try the Lebanese place on Baker Street. The portions are big, and it's very reasonable for lunch.",
+            "acceptedSynonyms": [
+                "You should try the Lebanese place on Baker Street. The portions are big, and it's very reasonable for lunch.",
+                "There's a great Lebanese restaurant on Baker Street. You get a lot of food for a fair price.",
+                "I'd go to the Lebanese restaurant on Baker Street. It's good value and the portions are generous.",
+                "Try the Lebanese place on Baker Street. It's cheap at lunchtime, and you'll leave full."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L108_Q2",
+            "interactionType": "narrator",
+            "hint": "Match your recommendation to the person's taste and lifestyle. Explain the fit.",
+            "explanation": "Linking your suggestion ('perfect for commuting') to how the person lives proves you thought about them. It's more convincing than saying a book is good.",
+            "situationText": "A friend who takes a long train every day asks for a book recommendation. She likes short stories and doesn't have long stretches of time. Each story takes about ten minutes to read.",
+            "sampleAnswer": "This might be perfect for you. It's a set of short stories that you can finish in a single commute.",
+            "correctAnswer": "If you like short stories, I'd suggest this collection. Each one takes about ten minutes, so it's perfect for the train.",
+            "acceptedSynonyms": [
+                "Try this collection of short stories. You can read one in ten minutes, which suits a daily commute.",
+                "I think you'd enjoy this book. The stories are short, around ten minutes each, so it's ideal for your train rides.",
+                "If you like short stories, I'd suggest this collection. Each one takes about ten minutes, so it's perfect for the train.",
+                "This might be perfect for you. It's a set of short stories that you can finish in a single commute."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L108_Q3",
+            "interactionType": "narrator",
+            "hint": "A recommendation against something should be honest and based on evidence. Give your source.",
+            "explanation": "Saying you wouldn't buy something needs support. Mentioning that 'several people I know' had problems moves the advice from personal opinion to evidence, without being negative about the product's appearance.",
+            "situationText": "A friend is about to buy a stylish laptop online. Several people you know have had battery problems with that model.",
+            "sampleAnswer": "I'd avoid that one if I were you. Some of my friends have had battery issues with it.",
+            "correctAnswer": "I wouldn't buy that model. It looks great, but several people I know have had battery problems.",
+            "acceptedSynonyms": [
+                "I wouldn't buy that model. It looks great, but several people I know have had battery problems.",
+                "I'd think twice about that laptop. It's beautiful, but a lot of people I know had trouble with the battery.",
+                "I'd avoid that one if I were you. Some of my friends have had battery issues with it.",
+                "That laptop looks nice, but I've heard of several battery problems. I'd look at another model."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L109_Q1",
+            "interactionType": "narrator",
+            "hint": "After thanking, move straight to the second request. It keeps the conversation efficient and polite.",
+            "explanation": "Thanking before a further request shows gratitude, and it prepares the person to hear something more. A single, specific additional request is easy to accept.",
+            "situationText": "An official at the local council has replied quickly to your question about an application. You need one more thing: the form as a PDF.",
+            "sampleAnswer": "Thank you for the quick reply. Could you also send me the form as a PDF, please?",
+            "correctAnswer": "Thank you for the quick answer. Could you also send me the form in PDF format?",
+            "acceptedSynonyms": [
+                "That's very helpful, thanks. Would it be possible to receive the form as a PDF?",
+                "Thank you for the quick answer. Could you also send me the form in PDF format?",
+                "Many thanks for replying so fast. May I ask you to send the form in PDF format too?",
+                "Thanks for getting back to me so soon. Could you also email the form as a PDF?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L109_Q2",
+            "interactionType": "narrator",
+            "hint": "Thank a friend for help and show you want to repay it. Suggest something concrete and a date.",
+            "explanation": "'I owe you dinner' offers a fair exchange, and a proposed date makes it real. Vague offers like 'I'll repay you someday' often never happen.",
+            "situationText": "Your friend spent all Saturday helping you carry boxes to your new flat. The next day you phone to thank her. You'd like to suggest Friday.",
+            "sampleAnswer": "Thank you for all your help with the move. I'd like to make you dinner. Are you around on Friday?",
+            "correctAnswer": "Thank you so much for helping yesterday. I owe you dinner. Are you free on Friday?",
+            "acceptedSynonyms": [
+                "I really can't thank you enough for yesterday. Let me take you to dinner. Would Friday work?",
+                "You were a lifesaver yesterday. Could I treat you to dinner on Friday?",
+                "Thank you for all your help with the move. I'd like to make you dinner. Are you around on Friday?",
+                "Thank you so much for helping yesterday. I owe you dinner. Are you free on Friday?"
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L109_Q3",
+            "interactionType": "narrator",
+            "hint": "With a teacher, thank them, then ask for time. Show you respect their schedule.",
+            "explanation": "Making the second question conditional ('when you have a minute') respects the teacher's time and gives them control. It's better than presenting it as urgent.",
+            "situationText": "Your teacher has just cleared up a grammar point you were confused about after class. You also want advice on choosing your essay topic.",
+            "sampleAnswer": "I appreciate the explanation. If you have time, I'd like some advice on the topic of my essay.",
+            "correctAnswer": "Thank you for explaining that. Could I ask you about the essay topic when you have a minute?",
+            "acceptedSynonyms": [
+                "That makes sense now, thanks. Would you have a moment later to talk about my essay topic?",
+                "Thank you for explaining that. Could I ask you about the essay topic when you have a minute?",
+                "Thanks, that was really clear. When you're free, could I ask you something about the essay topic?",
+                "I appreciate the explanation. If you have time, I'd like some advice on the topic of my essay."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L110_Q1",
+            "interactionType": "narrator",
+            "hint": "Say what you can't do, then what you can. The offer shows that the refusal isn't about not caring.",
+            "explanation": "'I can't…, but I could…' is a very useful pattern for refusing while staying helpful. The offer keeps the relationship positive.",
+            "situationText": "It's your family's turn to host the annual dinner, but this year your flat is being painted. Your sister asks if you can still host.",
+            "sampleAnswer": "I can't host this year because of the painting, but I could bring the dessert.",
+            "correctAnswer": "I can't host this year, but I could bring the dessert.",
+            "acceptedSynonyms": [
+                "Sorry, it isn't possible for me to have everyone here this time, but I'll make dessert.",
+                "I won't be able to host, unfortunately, but I'm happy to bring something to eat.",
+                "I'm afraid not this year. Could I contribute by making the dessert?",
+                "I can't host this year, but I could bring the dessert."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L110_Q2",
+            "interactionType": "narrator",
+            "hint": "A refusal with a future date is very effective at work. It shows you're not avoiding the task.",
+            "explanation": "Saying 'not this week' while offering a specific day tells your colleague exactly what to expect. It's more useful than a vague refusal.",
+            "situationText": "A coworker asks you to take over a report this week, but your schedule is full until Friday. You could help on Monday.",
+            "sampleAnswer": "I can't take on the report this week, but I could look at it next Monday.",
+            "correctAnswer": "I'm not able to take on the report this week, but I can look at it next Monday.",
+            "acceptedSynonyms": [
+                "I'm too busy to take it over this week. Could I have a look next Monday?",
+                "I'm not able to take on the report this week, but I can look at it next Monday.",
+                "This week is impossible for me, but I'd be glad to help on Monday.",
+                "I can't manage it now, though I could pick it up on Monday if that's any use."
+            ],
+            "instruction": "Respond to the situation."
+        },
+        {
+            "id": "SPK_SITUATIONSPEAKING_MASTERY_L110_Q3",
+            "interactionType": "narrator",
+            "hint": "Decline the specific event but keep the friendship alive. Suggest another way to meet.",
+            "explanation": "Turning down an event and proposing a new plan tells the friend that the refusal is about timing, not about them. It reduces disappointment.",
+            "situationText": "A friend has invited you to a big party on Saturday, but you're exhausted after a hard week and want a quiet weekend.",
+            "sampleAnswer": "I can't make Saturday's party, but I'd love to catch up. Could we get coffee next week?",
+            "correctAnswer": "I won't be able to make Saturday's party, but I'd really like to catch up. Could we have coffee next week?",
+            "acceptedSynonyms": [
+                "Thanks for inviting me, but I'll skip the party. How about coffee together next week?",
+                "I'm not up to a party on Saturday, but let's meet for coffee next week. I'd love to hear your news.",
+                "Sorry, Saturday isn't good for me. Could we meet for a coffee next week instead?",
+                "I won't be able to make Saturday's party, but I'd really like to catch up. Could we have coffee next week?"
+            ],
+            "instruction": "Respond to the situation."
+        }
+    ]
+}
