@@ -92,6 +92,8 @@ import 'package:vowl/features/reading/read_and_match/presentation/pages/read_and
 import 'package:vowl/features/reading/read_and_match/presentation/pages/read_and_match_practice_screen.dart';
 import 'package:vowl/features/reading/paragraph_summary/presentation/pages/paragraph_summary_learn_screen.dart';
 import 'package:vowl/features/reading/paragraph_summary/presentation/pages/paragraph_summary_practice_screen.dart';
+import 'package:vowl/features/reading/reading_inference/presentation/pages/reading_inference_learn_screen.dart';
+import 'package:vowl/features/reading/reading_inference/presentation/pages/reading_inference_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -573,6 +575,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'readinginference') {
+          return fadeTransitionPage(
+            child: ReadingInferenceLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -833,6 +841,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'paragraphsummary') {
           return fadeTransitionPage(
             child: ParagraphSummaryPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'readinginference') {
+          return fadeTransitionPage(
+            child: ReadingInferencePracticeScreen(level: level),
             state: state,
           );
         }

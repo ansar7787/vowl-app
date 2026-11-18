@@ -1,0 +1,1358 @@
+{
+  "gameType": "readingInference",
+  "phase": "learn",
+  "batchIndex": 20,
+  "levels": "191-200",
+  "quests": [
+    {
+      "id": "RDG_READINGINFERENCE_L191_Q1_LEARN",
+      "level": 191,
+      "strategyBadge": "CAUSE-AND-EFFECT TRAIL RADAR",
+      "techniqueTitle": "Connecting Subtle Action to Underlying Motive",
+      "coreRule": "A valid inference requires evidence from the text; if no sentence points toward it, it is a wild guess.",
+      "passageTopic": "Critical Thinking",
+      "passage": "[Critical Thinking] The new curriculum promises to teach \"critical thinking.\" It also introduces fourteen standardised tests, each with a fixed marking scheme that rewards the \"correct\" answer. Teachers, asked whether the two goals fit together, tended to reply with a short laugh.",
+      "cleanPassage": "The new curriculum promises to teach \"critical thinking.\" It also introduces fourteen standardised tests, each with a fixed marking scheme that rewards the \"correct\" answer. Teachers, asked whether the two goals fit together, tended to reply with a short laugh.",
+      "question": "What conflict do teachers see?",
+      "clueWords": [
+        "critical thinking",
+        "short laugh"
+      ],
+      "explicitStatement": "Observable words: \"critical thinking\".",
+      "implicitSubtext": "Underlying reality: Teachers see a conflict between the stated aim and the testing system.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Teachers are worried about the number of tests but not about the marking.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "Teachers think the tests will improve critical thinking over time.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "Teachers see a conflict between the stated aim and the testing system.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"critical thinking, short laugh\")."
+        },
+        {
+          "option": "Teachers found the question funny because it was badly worded.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "The curriculum's aim and its tests pull in opposite directions, and teachers respond to that with a laugh rather than an answer. The quotation marks on \"correct\" hint at the same tension."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L191_Q2_LEARN",
+      "level": 191,
+      "strategyBadge": "CAUSE-AND-EFFECT TRAIL RADAR",
+      "techniqueTitle": "Connecting Subtle Action to Underlying Motive",
+      "coreRule": "A valid inference requires evidence from the text; if no sentence points toward it, it is a wild guess.",
+      "passageTopic": "Quiet Charm",
+      "passage": "[Quiet Charm] Visitors are often struck by the town's \"quiet charm.\" Residents, who have watched the last three cafés and the bookshop close, prefer to use only the word \"quiet.\"",
+      "cleanPassage": "Visitors are often struck by the town's \"quiet charm.\" Residents, who have watched the last three cafés and the bookshop close, prefer to use only the word \"quiet.\"",
+      "question": "How do residents' views differ from visitors'?",
+      "clueWords": [
+        "quiet charm",
+        "bookshop close"
+      ],
+      "explicitStatement": "Observable words: \"quiet charm\".",
+      "implicitSubtext": "Underlying reality: Residents feel the town has declined, not gained charm.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Residents feel the town has declined, not gained charm.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"quiet charm, bookshop close\")."
+        },
+        {
+          "option": "Residents are proud of the town's calm and want visitors to respect it.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "Residents agree with the visitors but prefer a shorter description.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "Residents think the town is probably too quiet for young families to live in.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "Visitors add \"charm\"; residents keep \"quiet\" only. Their view is shaped by the closures they have seen."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L191_Q3_LEARN",
+      "level": 191,
+      "strategyBadge": "CAUSE-AND-EFFECT TRAIL RADAR",
+      "techniqueTitle": "Connecting Subtle Action to Underlying Motive",
+      "coreRule": "A valid inference requires evidence from the text; if no sentence points toward it, it is a wild guess.",
+      "passageTopic": "Other Departments",
+      "passage": "[Other Departments] \"I would never tell you how to run your department,\" the director said, placing a spreadsheet on the table. \"I only thought you might like to see how the other departments manage their overtime.\"",
+      "cleanPassage": "\"I would never tell you how to run your department,\" the director said, placing a spreadsheet on the table. \"I only thought you might like to see how the other departments manage their overtime.\"",
+      "question": "What is the director really doing?",
+      "clueWords": [
+        "would never tell you",
+        "other departments"
+      ],
+      "explicitStatement": "Observable words: \"would never tell you\".",
+      "implicitSubtext": "Underlying reality: Suggesting indirectly that the overtime should be reduced.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Praising the department's overtime figures compared with the others.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "Suggesting indirectly that the overtime should be reduced.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"would never tell you, other departments\")."
+        },
+        {
+          "option": "Asking for help with a spreadsheet that shows all departments' data.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "Offering to take over the department's overtime planning for a month.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "She says she will not give advice, then provides a comparison that implies the department is doing worse. The statement is a polite cover."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L192_Q1_LEARN",
+      "level": 192,
+      "strategyBadge": "TEXTUAL ANCHOR VS ASSUMPTION RADAR",
+      "techniqueTitle": "Anchoring Hypotheses to Verifiable Clues",
+      "coreRule": "Never choose an option that requires inventing background facts outside the provided passage.",
+      "passageTopic": "Consistent With",
+      "passage": "[Consistent With] The authors write that their results \"are consistent with\" a link between the chemical and the condition, adding that \"further work is needed to exclude alternative explanations.\" The press release announces: \"Chemical linked to condition.\"",
+      "cleanPassage": "The authors write that their results \"are consistent with\" a link between the chemical and the condition, adding that \"further work is needed to exclude alternative explanations.\" The press release announces: \"Chemical linked to condition.\"",
+      "question": "How does the press release compare with the authors' claim?",
+      "clueWords": [
+        "consistent with",
+        "Chemical linked to condition"
+      ],
+      "explicitStatement": "Observable words: \"consistent with\".",
+      "implicitSubtext": "Underlying reality: The press release is more definite than the authors were.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The press release is probably more careful than the authors' own conclusion.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The authors proved the link, and the press release repeats it correctly.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The press release and the authors agree that further work is not needed.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        },
+        {
+          "option": "The press release is more definite than the authors were.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"consistent with, Chemical linked to condition\")."
+        }
+      ],
+      "explanation": "\"Consistent with\" plus a call for further work is tentative. \"Linked\" in a headline states the link as fact."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L192_Q2_LEARN",
+      "level": 192,
+      "strategyBadge": "TEXTUAL ANCHOR VS ASSUMPTION RADAR",
+      "techniqueTitle": "Anchoring Hypotheses to Verifiable Clues",
+      "coreRule": "Never choose an option that requires inventing background facts outside the provided passage.",
+      "passageTopic": "The Drawer",
+      "passage": "[The Drawer] Elena kept the letter for a week before opening it. When she did, she read it standing at the window, folded it into four with great care, and put it in the drawer where she kept the things she did not intend to answer.",
+      "cleanPassage": "Elena kept the letter for a week before opening it. When she did, she read it standing at the window, folded it into four with great care, and put it in the drawer where she kept the things she did not intend to answer.",
+      "question": "What has Elena decided about the letter?",
+      "clueWords": [
+        "folded it into four with great care",
+        "did not intend to answer"
+      ],
+      "explicitStatement": "Observable words: \"folded it into four with great care\".",
+      "implicitSubtext": "Underlying reality: She has decided not to reply, although the letter mattered to her.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "She did not read the letter and has put it away for later.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "She will reply as soon as she has decided what to say.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "She has thrown the letter away and wants to forget it.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        },
+        {
+          "option": "She has decided not to reply, although the letter mattered to her.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"folded it into four with great care, did not intend to answer\")."
+        }
+      ],
+      "explanation": "The care with which she folds the letter shows it matters. Putting it in the drawer of unanswered things shows she will not reply."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L192_Q3_LEARN",
+      "level": 192,
+      "strategyBadge": "TEXTUAL ANCHOR VS ASSUMPTION RADAR",
+      "techniqueTitle": "Anchoring Hypotheses to Verifiable Clues",
+      "coreRule": "Never choose an option that requires inventing background facts outside the provided passage.",
+      "passageTopic": "At an Appropriate Time",
+      "passage": "[At an Appropriate Time] The board \"welcomed\" the auditor's report and \"agreed that the recommendations merited careful consideration.\" It was agreed that the report would be reviewed \"at an appropriate time.\" The recommendations concerned safety.",
+      "cleanPassage": "The board \"welcomed\" the auditor's report and \"agreed that the recommendations merited careful consideration.\" It was agreed that the report would be reviewed \"at an appropriate time.\" The recommendations concerned safety.",
+      "question": "How urgently is the board treating safety?",
+      "clueWords": [
+        "at an appropriate time",
+        "concerned safety"
+      ],
+      "explicitStatement": "Observable words: \"at an appropriate time\".",
+      "implicitSubtext": "Underlying reality: The board is not treating the recommendations as urgent.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The board is not treating the recommendations as urgent.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"at an appropriate time, concerned safety\")."
+        },
+        {
+          "option": "The board rejected the recommendations after reading the report.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The board has begun acting on the safety recommendations.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The board is waiting for the auditor to change the report.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "The board offers welcome and consideration but no date. A safety matter reviewed \"at an appropriate time\" is not being treated as urgent."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L193_Q1_LEARN",
+      "level": 193,
+      "strategyBadge": "EXPLICIT VS IMPLICIT RADAR",
+      "techniqueTitle": "Distinguishing Direct Fact From Unspoken Subtext",
+      "coreRule": "Look past literal definitions: what circumstance or emotional reality makes this statement true?",
+      "passageTopic": "Raising His Voice",
+      "passage": "[Raising His Voice] \"Twenty-six years,\" said the head of department, \"and in all that time I never once heard him raise his voice.\" She paused. \"Or, for that matter, offer an opinion in a meeting.\"",
+      "cleanPassage": "\"Twenty-six years,\" said the head of department, \"and in all that time I never once heard him raise his voice.\" She paused. \"Or, for that matter, offer an opinion in a meeting.\"",
+      "question": "What is the head of department doing in her speech?",
+      "clueWords": [
+        "never once heard him raise his voice",
+        "offer an opinion"
+      ],
+      "explicitStatement": "Observable words: \"never once heard him raise his voice\".",
+      "implicitSubtext": "Underlying reality: Affectionate teasing that includes a real criticism of his passivity.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Harsh criticism of a colleague who never worked well with others.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "A joke about his quiet voice that has no serious point.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "Warm praise for a colleague who never lost his temper or gave his opinions.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        },
+        {
+          "option": "Affectionate teasing that includes a real criticism of his passivity.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"never once heard him raise his voice, offer an opinion\")."
+        }
+      ],
+      "explanation": "The opening sounds like praise for calm, and the second half shows the same quietness meant he never contributed."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L193_Q2_LEARN",
+      "level": 193,
+      "strategyBadge": "EXPLICIT VS IMPLICIT RADAR",
+      "techniqueTitle": "Distinguishing Direct Fact From Unspoken Subtext",
+      "coreRule": "Look past literal definitions: what circumstance or emotional reality makes this statement true?",
+      "passageTopic": "Strength of Feeling",
+      "passage": "[Strength of Feeling] The council \"recognises the strength of feeling\" about the library closure and \"will continue to engage with stakeholders.\" The library will close on 30 September as planned.",
+      "cleanPassage": "The council \"recognises the strength of feeling\" about the library closure and \"will continue to engage with stakeholders.\" The library will close on 30 September as planned.",
+      "question": "What will the council actually do?",
+      "clueWords": [
+        "recognises the strength of feeling",
+        "as planned"
+      ],
+      "explicitStatement": "Observable words: \"recognises the strength of feeling\".",
+      "implicitSubtext": "Underlying reality: The council acknowledges the objections but will not change its decision.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The council agrees with the protesters and will look for another building.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The council is unsure about the closure and has asked for more time.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The council will consult stakeholders again and may delay the closure.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        },
+        {
+          "option": "The council acknowledges the objections but will not change its decision.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"recognises the strength of feeling, as planned\")."
+        }
+      ],
+      "explanation": "The first sentence expresses sympathy. The last sentence shows the decision is unaffected, so the sympathy has no effect."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L193_Q3_LEARN",
+      "level": 193,
+      "strategyBadge": "EXPLICIT VS IMPLICIT RADAR",
+      "techniqueTitle": "Distinguishing Direct Fact From Unspoken Subtext",
+      "coreRule": "Look past literal definitions: what circumstance or emotional reality makes this statement true?",
+      "passageTopic": "You're Welcome",
+      "passage": "[You're Welcome] Every year Dad thanks Mum for the dinner as though it were a surprise. Every year she says, \"You're welcome,\" in exactly the tone that means \"You could have helped.\"",
+      "cleanPassage": "Every year Dad thanks Mum for the dinner as though it were a surprise. Every year she says, \"You're welcome,\" in exactly the tone that means \"You could have helped.\"",
+      "question": "What lies behind Mum's tone?",
+      "clueWords": [
+        "as though it were a surprise",
+        "You could have helped"
+      ],
+      "explicitStatement": "Observable words: \"as though it were a surprise\".",
+      "implicitSubtext": "Underlying reality: Mum feels resentment about who does the work, and does not say it directly.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Mum is annoyed that Dad pretends not to know who cooked the dinner.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "Mum feels resentment about who does the work, and does not say it directly.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"as though it were a surprise, You could have helped\")."
+        },
+        {
+          "option": "Dad does the cooking most days, and Mum is grateful for the change.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "Mum enjoys cooking and is pleased to be thanked each year.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "\"You're welcome\" is polite, but the tone carries the message. The repeated pattern suggests long-standing resentment."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L194_Q1_LEARN",
+      "level": 194,
+      "strategyBadge": "BEHAVIORAL EVIDENCE RADAR",
+      "techniqueTitle": "Decoding Behavioral Clues and Habit Patterns",
+      "coreRule": "Actions and habits reveal priorities and unstated emotions far more reliably than spoken claims.",
+      "passageTopic": "Sixty Pages",
+      "passage": "[Sixty Pages] The reviewer calls the book's argument \"bold\" and its evidence \"wide-ranging.\" She adds that the footnotes \"run to sixty pages and will reward anyone who reads them, which excludes, I suspect, the author.\"",
+      "cleanPassage": "The reviewer calls the book's argument \"bold\" and its evidence \"wide-ranging.\" She adds that the footnotes \"run to sixty pages and will reward anyone who reads them, which excludes, I suspect, the author.\"",
+      "question": "What does the reviewer suspect about the author?",
+      "clueWords": [
+        "bold",
+        "excludes, I suspect, the author"
+      ],
+      "explicitStatement": "Observable words: \"bold\".",
+      "implicitSubtext": "Underlying reality: The reviewer doubts that the author read the sources carefully.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The reviewer doubts that the author read the sources carefully.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"bold, excludes, I suspect, the author\")."
+        },
+        {
+          "option": "The reviewer loved the book and recommends reading every footnote.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The reviewer thinks the sources are outdated and poorly chosen.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The reviewer thinks the footnotes are too long for most readers.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "The first praise is mild. The final clause claims the author did not read the footnotes, which questions the care behind the evidence."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L194_Q2_LEARN",
+      "level": 194,
+      "strategyBadge": "BEHAVIORAL EVIDENCE RADAR",
+      "techniqueTitle": "Decoding Behavioral Clues and Habit Patterns",
+      "coreRule": "Actions and habits reveal priorities and unstated emotions far more reliably than spoken claims.",
+      "passageTopic": "Excluded",
+      "passage": "[Excluded] The team repeated the experiment five times. Four results agreed. The fifth, which showed the opposite, was \"excluded because of equipment error.\" No details of the error were given.",
+      "cleanPassage": "The team repeated the experiment five times. Four results agreed. The fifth, which showed the opposite, was \"excluded because of equipment error.\" No details of the error were given.",
+      "question": "Why might the exclusion be questionable?",
+      "clueWords": [
+        "Four results agreed",
+        "No details of the error"
+      ],
+      "explicitStatement": "Observable words: \"Four results agreed\".",
+      "implicitSubtext": "Underlying reality: The exclusion may be convenient, and the claimed error is not demonstrated.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The exclusion may be convenient, and the claimed error is not demonstrated.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"Four results agreed, No details of the error\")."
+        },
+        {
+          "option": "The equipment was described in detail, so the error is well documented.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The fifth result was clearly wrong, so the team was right to exclude it.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The team should have excluded the other four results, not the fifth.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "Excluding the only contradictory result without evidence of the error makes the four agreeing results look better than the evidence justifies."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L194_Q3_LEARN",
+      "level": 194,
+      "strategyBadge": "BEHAVIORAL EVIDENCE RADAR",
+      "techniqueTitle": "Decoding Behavioral Clues and Habit Patterns",
+      "coreRule": "Actions and habits reveal priorities and unstated emotions far more reliably than spoken claims.",
+      "passageTopic": "A Wonderful Opportunity",
+      "passage": "[A Wonderful Opportunity] \"This is a wonderful opportunity for you,\" the manager said, handing over the client nobody else wanted. \"Nobody else has the patience.\"",
+      "cleanPassage": "\"This is a wonderful opportunity for you,\" the manager said, handing over the client nobody else wanted. \"Nobody else has the patience.\"",
+      "question": "What is the manager really doing?",
+      "clueWords": [
+        "wonderful opportunity",
+        "nobody else has the patience"
+      ],
+      "explicitStatement": "Observable words: \"wonderful opportunity\".",
+      "implicitSubtext": "Underlying reality: The client is difficult, and the flattery disguises an unwelcome task.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The manager wants the client for herself but is pretending to be generous.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The client is difficult, and the flattery disguises an unwelcome task.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"wonderful opportunity, nobody else has the patience\")."
+        },
+        {
+          "option": "The client is important, and the manager trusts the employee with the account.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The manager is offering a promotion, but only to someone who has patience.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "The flattery and the description of the client do not match, which shows the manager is giving away a difficult task."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L195_Q1_LEARN",
+      "level": 195,
+      "strategyBadge": "CONDITIONAL HESITATION RADAR",
+      "techniqueTitle": "Analyzing Linguistic Hedges and Hesitation Markers",
+      "coreRule": "Words like \"suppose\", \"if possible\", and \"well...\" signal hesitation, politeness, or reluctance.",
+      "passageTopic": "Thirty Percent",
+      "passage": "[Thirty Percent] Since the new ticketing system began, average queue time is \"down 30 percent.\" The company has not mentioned that it closed two of its five desks, or that the count now excludes anyone who leaves the queue.",
+      "cleanPassage": "Since the new ticketing system began, average queue time is \"down 30 percent.\" The company has not mentioned that it closed two of its five desks, or that the count now excludes anyone who leaves the queue.",
+      "question": "How trustworthy is the queue-time figure?",
+      "clueWords": [
+        "down 30 percent",
+        "leaves the queue"
+      ],
+      "explicitStatement": "Observable words: \"down 30 percent\".",
+      "implicitSubtext": "Underlying reality: The figure is probably misleading about customers' experience.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The figure is accurate, but it does not include customers who buy online.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The system has cut queue times, and customers are waiting less than before.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The figure is probably misleading about customers' experience.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"down 30 percent, leaves the queue\")."
+        },
+        {
+          "option": "The company closed desks to save money, and queue times fell as a result.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "If frustrated customers leave and are not counted, the average falls without an improvement in service. Fewer desks makes things worse, not better."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L195_Q2_LEARN",
+      "level": 195,
+      "strategyBadge": "CONDITIONAL HESITATION RADAR",
+      "techniqueTitle": "Analyzing Linguistic Hedges and Hesitation Markers",
+      "coreRule": "Words like \"suppose\", \"if possible\", and \"well...\" signal hesitation, politeness, or reluctance.",
+      "passageTopic": "Working Families",
+      "passage": "[Working Families] Asked whether she would raise taxes, the candidate said, \"I will not raise taxes on working families.\" She did not define \"working families,\" and her advisers declined to say.",
+      "cleanPassage": "Asked whether she would raise taxes, the candidate said, \"I will not raise taxes on working families.\" She did not define \"working families,\" and her advisers declined to say.",
+      "question": "What is the candidate leaving open?",
+      "clueWords": [
+        "working families",
+        "declined to say"
+      ],
+      "explicitStatement": "Observable words: \"working families\".",
+      "implicitSubtext": "Underlying reality: She is leaving room to raise taxes on some groups.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "She is leaving room to raise taxes on some groups.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"working families, declined to say\")."
+        },
+        {
+          "option": "She has defined working families as those earning below the average wage.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "She has promised that no group will pay higher taxes.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "She is waiting for her advisers to write a detailed tax plan.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "A promise limited to one group with no definition of the group gives her flexibility."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L195_Q3_LEARN",
+      "level": 195,
+      "strategyBadge": "CONDITIONAL HESITATION RADAR",
+      "techniqueTitle": "Analyzing Linguistic Hedges and Hesitation Markers",
+      "coreRule": "Words like \"suppose\", \"if possible\", and \"well...\" signal hesitation, politeness, or reluctance.",
+      "passageTopic": "October",
+      "passage": "[October] Thanks for meeting me. I now understand what I did not understand before, and I wish I had asked in October.",
+      "cleanPassage": "Thanks for meeting me. I now understand what I did not understand before, and I wish I had asked in October.",
+      "question": "What does the last sentence reveal?",
+      "clueWords": [
+        "what I did not understand",
+        "wish I had asked in October"
+      ],
+      "explicitStatement": "Observable words: \"what I did not understand\".",
+      "implicitSubtext": "Underlying reality: He struggled for months without asking for help.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "He struggled for months without asking for help.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"what I did not understand, wish I had asked in October\")."
+        },
+        {
+          "option": "He is grateful for the meeting because he understood everything in October.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "He only began to study in November and has to catch up quickly.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "He is annoyed that the meeting did not happen earlier in the year.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "He regrets not asking earlier, which shows the confusion had lasted for some time."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L196_Q1_LEARN",
+      "level": 196,
+      "strategyBadge": "TONE & EMOTIONAL SUBTEXT RADAR",
+      "techniqueTitle": "Sensing Emotional Atmosphere and Unstated Feelings",
+      "coreRule": "Pay close attention to adjectives and setting descriptions; they set the emotional stakes.",
+      "passageTopic": "A Planned Redeployment",
+      "passage": "[A Planned Redeployment] The general's memoir describes the retreat as \"a planned redeployment.\" A junior officer's diary, written at the time, records: \"No orders. The colonel wept. We left the guns.\"",
+      "cleanPassage": "The general's memoir describes the retreat as \"a planned redeployment.\" A junior officer's diary, written at the time, records: \"No orders. The colonel wept. We left the guns.\"",
+      "question": "How does the memoir treat the retreat?",
+      "clueWords": [
+        "planned redeployment",
+        "No orders"
+      ],
+      "explicitStatement": "Observable words: \"planned redeployment\".",
+      "implicitSubtext": "Underlying reality: The memoir recasts a disorderly retreat in flattering terms.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The diary was written years later and is less reliable than the memoir.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The memoir is accurate, and the diary shows how carefully the retreat was planned.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The general was absent, and the memoir repeats what other officers told him.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        },
+        {
+          "option": "The memoir recasts a disorderly retreat in flattering terms.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"planned redeployment, No orders\")."
+        }
+      ],
+      "explanation": "The diary was written at the time and describes confusion and abandoned guns. The memoir is a later, more flattering account."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L196_Q2_LEARN",
+      "level": 196,
+      "strategyBadge": "TONE & EMOTIONAL SUBTEXT RADAR",
+      "techniqueTitle": "Sensing Emotional Atmosphere and Unstated Feelings",
+      "coreRule": "Pay close attention to adjectives and setting descriptions; they set the emotional stakes.",
+      "passageTopic": "A Delight",
+      "passage": "[A Delight] Dear Ms. Mbeki, thank you for your report. Both of us were moved to read that Kofi is \"a delight in the classroom.\" We hope, in the light of this, that you might feel able to reconsider his grade.",
+      "cleanPassage": "Dear Ms. Mbeki, thank you for your report. Both of us were moved to read that Kofi is \"a delight in the classroom.\" We hope, in the light of this, that you might feel able to reconsider his grade.",
+      "question": "Why do the parents quote the report?",
+      "clueWords": [
+        "a delight in the classroom",
+        "reconsider his grade"
+      ],
+      "explicitStatement": "Observable words: \"a delight in the classroom\".",
+      "implicitSubtext": "Underlying reality: The parents are using praise as a reason to ask for a higher grade.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The parents are asking for Kofi to be moved to a more advanced class.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The parents are using praise as a reason to ask for a higher grade.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"a delight in the classroom, reconsider his grade\")."
+        },
+        {
+          "option": "The parents believe the report is too positive and want the grade lowered.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The parents are pleased with the report and want Kofi to stay in the class.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "The compliment is quoted, then linked to a request. The parents present good behaviour as a reason for a better mark."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L196_Q3_LEARN",
+      "level": 196,
+      "strategyBadge": "TONE & EMOTIONAL SUBTEXT RADAR",
+      "techniqueTitle": "Sensing Emotional Atmosphere and Unstated Feelings",
+      "coreRule": "Pay close attention to adjectives and setting descriptions; they set the emotional stakes.",
+      "passageTopic": "Say What I Can",
+      "passage": "[Say What I Can] The professor's email said: \"I am happy to write your reference. I will, of course, say what I can.\"",
+      "cleanPassage": "The professor's email said: \"I am happy to write your reference. I will, of course, say what I can.\"",
+      "question": "How strong will the reference be?",
+      "clueWords": [
+        "happy to write your reference",
+        "say what I can"
+      ],
+      "explicitStatement": "Observable words: \"happy to write your reference\".",
+      "implicitSubtext": "Underlying reality: The reference may not be strongly positive.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The reference will be excellent, because the professor is happy to write it.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The professor is uncertain about the student and will refuse to write it.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The reference will be short, since the professor is very busy.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        },
+        {
+          "option": "The reference may not be strongly positive.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"happy to write your reference, say what I can\")."
+        }
+      ],
+      "explanation": "\"Say what I can\" implies that there are things the professor cannot honestly say. The reference may be modest."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L197_Q1_LEARN",
+      "level": 197,
+      "strategyBadge": "CAUSE-AND-EFFECT TRAIL RADAR",
+      "techniqueTitle": "Connecting Subtle Action to Underlying Motive",
+      "coreRule": "A valid inference requires evidence from the text; if no sentence points toward it, it is a wild guess.",
+      "passageTopic": "Reimagine",
+      "passage": "[Reimagine] The new plan will \"reimagine the collection for a modern audience.\" The consultation documents list \"space efficiency\" as a key objective and identify \"objects with limited public engagement\" for review.",
+      "cleanPassage": "The new plan will \"reimagine the collection for a modern audience.\" The consultation documents list \"space efficiency\" as a key objective and identify \"objects with limited public engagement\" for review.",
+      "question": "What might happen to some objects?",
+      "clueWords": [
+        "space efficiency",
+        "limited public engagement"
+      ],
+      "explicitStatement": "Observable words: \"space efficiency\".",
+      "implicitSubtext": "Underlying reality: Some items may be removed from display or disposed of.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The museum will move to a larger building with more space.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The museum plans to lend its most popular objects to other museums.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "Some items may be removed from display or disposed of.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"space efficiency, limited public engagement\")."
+        },
+        {
+          "option": "More objects will be placed on display to attract visitors.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "Efficiency of space and a review of unpopular objects suggest that some may be put in storage or sold."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L197_Q2_LEARN",
+      "level": 197,
+      "strategyBadge": "CAUSE-AND-EFFECT TRAIL RADAR",
+      "techniqueTitle": "Connecting Subtle Action to Underlying Motive",
+      "coreRule": "A valid inference requires evidence from the text; if no sentence points toward it, it is a wild guess.",
+      "passageTopic": "Wisdom of Ordinary People",
+      "passage": "[Wisdom of Ordinary People] It is odd that the councillors who are most eager to praise \"the wisdom of ordinary people\" are so unwilling to ask them anything.",
+      "cleanPassage": "It is odd that the councillors who are most eager to praise \"the wisdom of ordinary people\" are so unwilling to ask them anything.",
+      "question": "What is the writer's complaint about the councillors?",
+      "clueWords": [
+        "wisdom of ordinary people",
+        "unwilling to ask them anything"
+      ],
+      "explicitStatement": "Observable words: \"wisdom of ordinary people\".",
+      "implicitSubtext": "Underlying reality: The councillors praise residents without consulting them.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The councillors consult residents often but ignore the answers.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The councillors praise residents without consulting them.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"wisdom of ordinary people, unwilling to ask them anything\")."
+        },
+        {
+          "option": "The writer admires the councillors for praising ordinary people.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The writer wants councillors to ask fewer questions of residents.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "The sentence contrasts praise with a failure to ask. The writer believes the praise is empty."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L197_Q3_LEARN",
+      "level": 197,
+      "strategyBadge": "CAUSE-AND-EFFECT TRAIL RADAR",
+      "techniqueTitle": "Connecting Subtle Action to Underlying Motive",
+      "coreRule": "A valid inference requires evidence from the text; if no sentence points toward it, it is a wild guess.",
+      "passageTopic": "Fifty Thousand",
+      "passage": "[Fifty Thousand] The start-up's pitch says the app has \"50,000 downloads.\" The investor asks how many people use it each week. The founder says the team \"focuses on downloads.\"",
+      "cleanPassage": "The start-up's pitch says the app has \"50,000 downloads.\" The investor asks how many people use it each week. The founder says the team \"focuses on downloads.\"",
+      "question": "What does the founder's answer suggest?",
+      "clueWords": [
+        "50,000 downloads",
+        "focuses on downloads"
+      ],
+      "explicitStatement": "Observable words: \"50,000 downloads\".",
+      "implicitSubtext": "Underlying reality: The number of active users is probably low.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The founder cannot answer because the team has not counted the downloads.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The investor is satisfied, since fifty thousand downloads is a large number.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The number of active users is probably low.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"50,000 downloads, focuses on downloads\")."
+        },
+        {
+          "option": "The app has thousands of weekly users, but the founder does not know how many.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "The investor asks about weekly use, but the founder repeats the download number. Avoiding the direct answer suggests it is not impressive."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L198_Q1_LEARN",
+      "level": 198,
+      "strategyBadge": "TEXTUAL ANCHOR VS ASSUMPTION RADAR",
+      "techniqueTitle": "Anchoring Hypotheses to Verifiable Clues",
+      "coreRule": "Never choose an option that requires inventing background facts outside the provided passage.",
+      "passageTopic": "The Boys Showed Character",
+      "passage": "[The Boys Showed Character] The manager's post-match comments, \"the boys showed character\" and \"we will go again,\" were identical to those he gave after last week's defeat and after the 5-0 loss before it.",
+      "cleanPassage": "The manager's post-match comments, \"the boys showed character\" and \"we will go again,\" were identical to those he gave after last week's defeat and after the 5-0 loss before it.",
+      "question": "What do the identical comments show?",
+      "clueWords": [
+        "identical to those",
+        "5-0 loss"
+      ],
+      "explicitStatement": "Observable words: \"identical to those\".",
+      "implicitSubtext": "Underlying reality: He uses stock phrases and avoids analysing the results.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "He wants to protect the players by blaming the referee in private.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "He was quoted wrongly, and the comments came from the assistant coach.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "He gives the same encouragement each week because the team is improving.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        },
+        {
+          "option": "He uses stock phrases and avoids analysing the results.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"identical to those, 5-0 loss\")."
+        }
+      ],
+      "explanation": "The same phrases after different results suggest a formula, not an honest assessment."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L198_Q2_LEARN",
+      "level": 198,
+      "strategyBadge": "TEXTUAL ANCHOR VS ASSUMPTION RADAR",
+      "techniqueTitle": "Anchoring Hypotheses to Verifiable Clues",
+      "coreRule": "Never choose an option that requires inventing background facts outside the provided passage.",
+      "passageTopic": "Ten Thousand Trees",
+      "passage": "[Ten Thousand Trees] The company says it has \"planted 10,000 trees.\" The report does not say how many survived, or how many trees were felled at its quarry over the same period.",
+      "cleanPassage": "The company says it has \"planted 10,000 trees.\" The report does not say how many survived, or how many trees were felled at its quarry over the same period.",
+      "question": "What does the report leave out?",
+      "clueWords": [
+        "planted 10,000 trees",
+        "felled at its quarry"
+      ],
+      "explicitStatement": "Observable words: \"planted 10,000 trees\".",
+      "implicitSubtext": "Underlying reality: The claim leaves out information needed to judge the company's net effect.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "All the trees survived, and the quarry has closed since the report.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The company planted far fewer trees than it says, since the report gives no photos.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The company has cut down more trees than it planted, and the report admits it.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        },
+        {
+          "option": "The claim leaves out information needed to judge the company's net effect.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"planted 10,000 trees, felled at its quarry\")."
+        }
+      ],
+      "explanation": "Survival rates and trees felled are needed to assess the balance. Without them, \"10,000\" is not enough to judge."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L198_Q3_LEARN",
+      "level": 198,
+      "strategyBadge": "TEXTUAL ANCHOR VS ASSUMPTION RADAR",
+      "techniqueTitle": "Anchoring Hypotheses to Verifiable Clues",
+      "coreRule": "Never choose an option that requires inventing background facts outside the provided passage.",
+      "passageTopic": "Not Upset",
+      "passage": "[Not Upset] \"Mum says you have not called.\" \"I was going to.\" \"She says she is not upset.\" \"Then why did she tell you?\" \"Exactly.\"",
+      "cleanPassage": "\"Mum says you have not called.\" \"I was going to.\" \"She says she is not upset.\" \"Then why did she tell you?\" \"Exactly.\"",
+      "question": "How does Mum really feel?",
+      "clueWords": [
+        "she is not upset",
+        "Exactly"
+      ],
+      "explicitStatement": "Observable words: \"she is not upset\".",
+      "implicitSubtext": "Underlying reality: Mum is upset but expresses it indirectly.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "Neither speaker knows whether Mum is upset or not.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "Mum is upset but expresses it indirectly.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"she is not upset, Exactly\")."
+        },
+        {
+          "option": "Mum is angry with the speaker and wants him to call at once.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "Mum does not mind and only mentioned the calls in passing.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "Someone who is not upset would not mention the missing call. The two speakers agree on this with \"Exactly.\""
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L199_Q1_LEARN",
+      "level": 199,
+      "strategyBadge": "EXPLICIT VS IMPLICIT RADAR",
+      "techniqueTitle": "Distinguishing Direct Fact From Unspoken Subtext",
+      "coreRule": "Look past literal definitions: what circumstance or emotional reality makes this statement true?",
+      "passageTopic": "The Secret Everyone Kept",
+      "passage": "[The Secret Everyone Kept] The historian is careful to say that the letters \"suggest\" rather than \"prove\" that the treaty was known in advance. Yet the chapter's title is \"The Secret Everyone Kept.\"",
+      "cleanPassage": "The historian is careful to say that the letters \"suggest\" rather than \"prove\" that the treaty was known in advance. Yet the chapter's title is \"The Secret Everyone Kept.\"",
+      "question": "How does the title compare with the text?",
+      "clueWords": [
+        "suggest",
+        "The Secret Everyone Kept"
+      ],
+      "explicitStatement": "Observable words: \"suggest\".",
+      "implicitSubtext": "Underlying reality: The chapter title claims more than the historian's cautious wording supports.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The letters prove that the treaty was known, and the title is accurate.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The title is more cautious than the historian's opinion in the text.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The chapter title claims more than the historian's cautious wording supports.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"suggest, The Secret Everyone Kept\")."
+        },
+        {
+          "option": "The historian denies that there was any secret about the treaty.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "\"Suggest\" is tentative, yet the title states that everyone kept a secret. The title goes beyond the evidence."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L199_Q2_LEARN",
+      "level": 199,
+      "strategyBadge": "EXPLICIT VS IMPLICIT RADAR",
+      "techniqueTitle": "Distinguishing Direct Fact From Unspoken Subtext",
+      "coreRule": "Look past literal definitions: what circumstance or emotional reality makes this statement true?",
+      "passageTopic": "Step Back",
+      "passage": "[Step Back] The chair announced that she would \"step back from day-to-day duties,\" remain on the board, and \"mentor her successor.\" She has also asked that her portrait remain in the boardroom.",
+      "cleanPassage": "The chair announced that she would \"step back from day-to-day duties,\" remain on the board, and \"mentor her successor.\" She has also asked that her portrait remain in the boardroom.",
+      "question": "How does the chair feel about leaving?",
+      "clueWords": [
+        "remain on the board",
+        "portrait remain"
+      ],
+      "explicitStatement": "Observable words: \"remain on the board\".",
+      "implicitSubtext": "Underlying reality: She is reluctant to give up influence completely.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "She dislikes her successor and hopes to replace him soon.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "She is reluctant to give up influence completely.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"remain on the board, portrait remain\")."
+        },
+        {
+          "option": "She is retiring to spend more time with her family.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "She is leaving the company entirely and wants a memento.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "Staying on the board, mentoring, and asking for the portrait to remain all keep her present."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L199_Q3_LEARN",
+      "level": 199,
+      "strategyBadge": "EXPLICIT VS IMPLICIT RADAR",
+      "techniqueTitle": "Distinguishing Direct Fact From Unspoken Subtext",
+      "coreRule": "Look past literal definitions: what circumstance or emotional reality makes this statement true?",
+      "passageTopic": "Please Excuse Brevity",
+      "passage": "[Please Excuse Brevity] Every email from the CEO ends with \"Sent from my phone. Please excuse brevity.\" The staff have noticed that the emails are never brief, and that they are always sent at midnight.",
+      "cleanPassage": "Every email from the CEO ends with \"Sent from my phone. Please excuse brevity.\" The staff have noticed that the emails are never brief, and that they are always sent at midnight.",
+      "question": "What do the staff's observations show?",
+      "clueWords": [
+        "never brief",
+        "midnight"
+      ],
+      "explicitStatement": "Observable words: \"never brief\".",
+      "implicitSubtext": "Underlying reality: The phrase is a habit, and the CEO works late.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The phrase is a habit, and the CEO works late.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"never brief, midnight\")."
+        },
+        {
+          "option": "The staff write the emails on behalf of the CEO at midnight.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The CEO sends short emails and uses the phrase to sound modest.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The phrase is probably a joke shared between the CEO and the staff.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "The signature claims brevity, but the emails are long. Midnight shows the working hours, and the phrase is only a formula."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L200_Q1_LEARN",
+      "level": 200,
+      "strategyBadge": "BEHAVIORAL EVIDENCE RADAR",
+      "techniqueTitle": "Decoding Behavioral Clues and Habit Patterns",
+      "coreRule": "Actions and habits reveal priorities and unstated emotions far more reliably than spoken claims.",
+      "passageTopic": "Experts",
+      "passage": "[Experts] We often say we trust experts, and then we search for the expert who agrees with us. The habit is harmless when the question is which restaurant to visit. It is less harmless when the question concerns a diagnosis, a contract, or a bridge.",
+      "cleanPassage": "We often say we trust experts, and then we search for the expert who agrees with us. The habit is harmless when the question is which restaurant to visit. It is less harmless when the question concerns a diagnosis, a contract, or a bridge.",
+      "question": "What is the writer's main concern?",
+      "clueWords": [
+        "expert who agrees with us",
+        "a diagnosis, a contract, or a bridge"
+      ],
+      "explicitStatement": "Observable words: \"expert who agrees with us\".",
+      "implicitSubtext": "Underlying reality: That choosing only agreeable experts becomes risky when the stakes are high.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "That experts often disagree, so nobody should trust them at all.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "That people should ask several experts and choose the cheapest.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "That choosing only agreeable experts becomes risky when the stakes are high.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"expert who agrees with us, a diagnosis, a contract, or a bridge\")."
+        },
+        {
+          "option": "That restaurants matter as much as diagnoses, contracts and bridges.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "The writer says the habit is harmless with restaurants but not with diagnoses or bridges, so the concern is about consequences."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L200_Q2_LEARN",
+      "level": 200,
+      "strategyBadge": "BEHAVIORAL EVIDENCE RADAR",
+      "techniqueTitle": "Decoding Behavioral Clues and Habit Patterns",
+      "coreRule": "Actions and habits reveal priorities and unstated emotions far more reliably than spoken claims.",
+      "passageTopic": "Frank Contributions",
+      "passage": "[Frank Contributions] The chair is grateful to all members for their frank contributions at the last meeting. In the interests of progress, further frank contributions will be welcome in writing, in advance.",
+      "cleanPassage": "The chair is grateful to all members for their frank contributions at the last meeting. In the interests of progress, further frank contributions will be welcome in writing, in advance.",
+      "question": "What does the chair want to avoid?",
+      "clueWords": [
+        "frank contributions",
+        "in writing, in advance"
+      ],
+      "explicitStatement": "Observable words: \"frank contributions\".",
+      "implicitSubtext": "Underlying reality: The chair wants to avoid open disagreement during meetings.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The chair wants to avoid open disagreement during meetings.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"frank contributions, in writing, in advance\")."
+        },
+        {
+          "option": "The chair enjoyed the frank contributions and hopes for more of them.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The chair wants members to bring more written comments to every meeting.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The chair wants a record of every comment for the minutes.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "\"Frank\" hints at disagreement, and the chair asks for future contributions in writing beforehand. This keeps disagreement out of the meeting."
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L200_Q3_LEARN",
+      "level": 200,
+      "strategyBadge": "BEHAVIORAL EVIDENCE RADAR",
+      "techniqueTitle": "Decoding Behavioral Clues and Habit Patterns",
+      "coreRule": "Actions and habits reveal priorities and unstated emotions far more reliably than spoken claims.",
+      "passageTopic": "Recommended",
+      "passage": "[Recommended] The bookshop's \"Recommended\" shelf held novels by local authors last month. This week it holds books from a single publisher, and the owner's handwritten cards have been replaced by printed ones. The shop has also begun accepting \"promotional partnerships.\"",
+      "cleanPassage": "The bookshop's \"Recommended\" shelf held novels by local authors last month. This week it holds books from a single publisher, and the owner's handwritten cards have been replaced by printed ones. The shop has also begun accepting \"promotional partnerships.\"",
+      "question": "What may now drive the shelf's recommendations?",
+      "clueWords": [
+        "single publisher",
+        "promotional partnerships"
+      ],
+      "explicitStatement": "Observable words: \"single publisher\".",
+      "implicitSubtext": "Underlying reality: The recommendations may now reflect commercial arrangements rather than the owner's taste.",
+      "goldenRule": "A valid inference is never a guess: it is the only deduction that ties all clue words together without adding unstated facts.",
+      "candidatesDiagnosis": [
+        {
+          "option": "The owner has started to promote local authors more strongly and now writes longer cards.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The printed cards are easier to read than the owner's handwriting.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The recommendations may now reflect commercial arrangements rather than the owner's taste.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"single publisher, promotional partnerships\")."
+        },
+        {
+          "option": "The shop is closing and selling books from a single publisher.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ],
+      "explanation": "A shelf from one publisher, impersonal cards, and a new partnerships policy together suggest that paid arrangements now shape the recommendations."
+    }
+  ]
+}

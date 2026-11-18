@@ -1,0 +1,668 @@
+{
+  "gameType": "readingInference",
+  "phase": "mastery",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "RDG_READINGINFERENCE_L101_Q1",
+      "level": 101,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Every Ten Minutes] The press release says the bus now runs \"every ten minutes.\" The timetable at the stop, updated the same week, lists departures at 8:00, 8:12, 8:20, 8:35 and 8:44.",
+      "question": "How should \"every ten minutes\" be understood?",
+      "options": [
+        "The company has changed its plans since the press release, so the timetable is now wrong.",
+        "The buses are timed to run every ten minutes but are delayed by traffic at this stop.",
+        "The press release counts the buses on all routes, while the timetable covers only one stop.",
+        "It describes an average, and the actual gaps between buses vary."
+      ],
+      "correctAnswer": "It describes an average, and the actual gaps between buses vary.",
+      "hint": "Work out the gaps between the listed times.",
+      "explanation": "The gaps are 12, 8, 15 and 9 minutes. They average roughly ten, so the claim is an average, not a promise. The timetable is stated to be recent.",
+      "clueWords": [
+        "every ten minutes",
+        "8:12, 8:20, 8:35"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L101_Q2",
+      "level": 101,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Printed Cards] Every online review of the guesthouse praises the view and the breakfast. The owner's replies are identical: \"Thank you for your kind words!\" Two guests mention that they wrote their reviews on printed cards handed out at reception.",
+      "question": "What weakness might the reviews have?",
+      "options": [
+        "The owner has written the reviews herself and signed them with guests' names.",
+        "Guests who disliked the view or the breakfast were not allowed to leave reviews online.",
+        "The guesthouse pays guests to write reviews, which explains why all of them are positive.",
+        "Some reviews may have been gathered in a way that favours positive feedback."
+      ],
+      "correctAnswer": "Some reviews may have been gathered in a way that favours positive feedback.",
+      "hint": "Where were some reviews written, and who handed out the cards?",
+      "explanation": "Cards handed out at reception may reach satisfied guests more than others. Combined with uniformly positive comments and copy-and-paste replies, this weakens the evidence.",
+      "clueWords": [
+        "printed cards",
+        "identical"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L101_Q3",
+      "level": 101,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Left Before the Rain] Mr. Okoro says he was at the library from two until five. The librarian remembers him arriving \"in the afternoon\" and leaving \"before the rain.\" The weather record shows the rain began at 3:40.",
+      "question": "What does the weather record suggest about his story?",
+      "options": [
+        "He came back to the library after the rain had stopped.",
+        "He left the library earlier than five.",
+        "He stayed until five, since the librarian only remembers the start of his visit.",
+        "The librarian is mistaken about the weather, because rain is hard to notice indoors."
+      ],
+      "correctAnswer": "He left the library earlier than five.",
+      "hint": "Which clues can be checked against the weather record?",
+      "explanation": "He left before the rain, which started at 3:40, so he could not have stayed until five.",
+      "clueWords": [
+        "before the rain",
+        "3:40"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L102_Q1",
+      "level": 102,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Unique Sweater] Dear Aunt Vera, thank you for the sweater. It is certainly unique, and I can tell how much thought you put into the colour. I look forward to seeing you at Christmas. Love, Nils",
+      "question": "What does Nils probably think of the sweater?",
+      "options": [
+        "He likes the colour but finds the sweater too big to wear.",
+        "He is puzzled by the sweater and hopes his aunt will explain why she chose it.",
+        "He is delighted by the colour and is looking forward to wearing it at Christmas.",
+        "He does not like it but wants to be kind."
+      ],
+      "correctAnswer": "He does not like it but wants to be kind.",
+      "hint": "Which words praise the effort rather than the sweater itself?",
+      "explanation": "\"Unique\" and praise for her thought and the colour avoid saying he likes the sweater. Praising the giver's effort instead suggests polite disappointment.",
+      "clueWords": [
+        "certainly unique",
+        "how much thought"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L102_Q2",
+      "level": 102,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Candid Contribution] The chair thanked Mr. Dube for his \"candid contribution.\" Several members looked at the table. The next item was taken without any discussion of his points.",
+      "question": "How were Mr. Dube's comments received?",
+      "options": [
+        "The chair wanted his points to be discussed in writing after the meeting.",
+        "His comments were unwelcome to many members.",
+        "His comments were valued, but there was no time to discuss them.",
+        "The members were tired and wanted the meeting to end."
+      ],
+      "correctAnswer": "His comments were unwelcome to many members.",
+      "hint": "What do the members do, and what does the committee skip?",
+      "explanation": "\"Candid\" can be a polite word for uncomfortable, and the committee looks away and moves on. This shows the points were not welcomed.",
+      "clueWords": [
+        "candid contribution",
+        "looked at the table"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L102_Q3",
+      "level": 102,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Suits Her] Ms. Fry is efficient, punctual and thorough. She has never missed a deadline. I do not doubt that she will find a position that suits her.",
+      "question": "How enthusiastic is the recommendation?",
+      "options": [
+        "It is a warning that Ms. Fry may struggle with deadlines in future.",
+        "It is a strong recommendation for the role, because she has never missed a deadline.",
+        "It is respectful but not enthusiastic.",
+        "It is neutral, because the writer does not know her well enough to comment."
+      ],
+      "correctAnswer": "It is respectful but not enthusiastic.",
+      "hint": "Which qualities are missing from the list, and what is the final sentence about?",
+      "explanation": "All the praise is about reliability. The final sentence does not say she suits this job. It suggests warm enthusiasm is missing.",
+      "clueWords": [
+        "never missed a deadline",
+        "a position that suits her"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L103_Q1",
+      "level": 103,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[The Bridge] When the old bridge closed for repairs, traffic moved to the ring road. Congestion there pushed some drivers onto village lanes, where a primary school stands. That month the school reported two near-misses and moved its opening time by fifteen minutes.",
+      "question": "Why did the school change its opening time?",
+      "options": [
+        "It is probably a response to the school's growing number of pupils since the bridge closed.",
+        "It is a response to a new rule from the council about school opening hours.",
+        "It is a response to the extra traffic caused by the bridge closure.",
+        "It is a way of avoiding the ring road, which the school has asked drivers to use."
+      ],
+      "correctAnswer": "It is a response to the extra traffic caused by the bridge closure.",
+      "hint": "Follow the chain: closure, ring road, lanes, school.",
+      "explanation": "Each event leads to the next: the closure moved traffic, the traffic entered lanes near the school, and the school then changed its hours after near-misses.",
+      "clueWords": [
+        "village lanes",
+        "near-misses"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L103_Q2",
+      "level": 103,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Refills] A drought in coffee-growing regions cut harvests. Bean prices rose. Several cafés replaced \"unlimited refills\" with \"first refill free,\" and one chain reduced the size of its \"medium\" cup.",
+      "question": "How are the cafés responding to the price of beans?",
+      "options": [
+        "Cafés are responding to complaints from customers who drank too much coffee.",
+        "Cafés are adapting to higher costs without simply raising headline prices.",
+        "Cafés are hoping to attract customers who want smaller portions and lower prices.",
+        "Cafés are trying to win new customers by offering better deals than their rivals."
+      ],
+      "correctAnswer": "Cafés are adapting to higher costs without simply raising headline prices.",
+      "hint": "What did the cafés change, and what did they leave alone?",
+      "explanation": "The offers and cup sizes changed rather than the prices on the menu. This is a way of managing costs after bean prices rose.",
+      "clueWords": [
+        "Bean prices rose",
+        "first refill free"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L103_Q3",
+      "level": 103,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Seat Selection] After the airline began charging for seat selection, more passengers reached the gate without assigned seats. Boarding slowed, and the airline announced that gate staff would \"assist families in finding seats together.\"",
+      "question": "What has the charge caused?",
+      "options": [
+        "Passengers have started to arrive later at the gate because seat selection now costs extra.",
+        "The new charge created problems that the airline is now trying to manage.",
+        "The airline is helping families because it plans to introduce a family fare.",
+        "The airline has stopped assigning seats to families and leaves them to the gate staff."
+      ],
+      "correctAnswer": "The new charge created problems that the airline is now trying to manage.",
+      "hint": "What happened at the gate after the charge began?",
+      "explanation": "More people without seats slowed boarding, and staff are now asked to help families. The airline is dealing with side effects of its own policy.",
+      "clueWords": [
+        "without assigned seats",
+        "Boarding slowed"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L104_Q1",
+      "level": 104,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[One Number] The council calls the new arrangement a \"simplification.\" For residents, it means one phone number instead of six, and one queue instead of six shorter ones. The council has not published waiting times.",
+      "question": "What is the writer's viewpoint?",
+      "options": [
+        "Approving, since a single number is easier for residents to remember.",
+        "Neutral, simply describing how the council changed its telephone system.",
+        "Sceptical that the change benefits residents.",
+        "Angry that the council has cut the number of staff answering the phones."
+      ],
+      "correctAnswer": "Sceptical that the change benefits residents.",
+      "hint": "Look at the word in quotation marks and what the writer adds about queues.",
+      "explanation": "The quotation marks around \"simplification,\" the \"one queue instead of six shorter ones\" remark, and the missing waiting times all suggest doubt.",
+      "clueWords": [
+        "simplification",
+        "not published waiting times"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L104_Q2",
+      "level": 104,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Unspoilt] The tourist board's brochure describes the village as \"unspoilt and peaceful.\" It does not mention that the only bus leaves at seven in the morning and that the single café closes on Sundays.",
+      "question": "What does the brochure leave out?",
+      "options": [
+        "It leaves out practical difficulties visitors might face.",
+        "It was written by someone who has never visited the village.",
+        "It is aimed at residents, who already know about the bus and the café.",
+        "It gives an accurate picture, since visitors expect a village to be quiet."
+      ],
+      "correctAnswer": "It leaves out practical difficulties visitors might face.",
+      "hint": "What does the writer mention that the brochure does not?",
+      "explanation": "The brochure uses attractive words, but the writer identifies details that would matter to visitors. The passage suggests selective description.",
+      "clueWords": [
+        "unspoilt and peaceful",
+        "only bus"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L104_Q3",
+      "level": 104,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Whole Grains] The cereal box says \"Made with whole grains\" in large letters. In small print, the ingredient list starts with sugar and mentions whole grain flour in fourth place.",
+      "question": "What is misleading about the box?",
+      "options": [
+        "The claim is accurate, since an ingredient listed fourth is still a main part of the cereal.",
+        "The claim is untrue, since whole grain flour is only the fourth item listed.",
+        "The large print shows the ingredients in order of importance to health.",
+        "The claim is technically true but emphasises a minor ingredient."
+      ],
+      "correctAnswer": "The claim is technically true but emphasises a minor ingredient.",
+      "hint": "Where do the words appear on the box, and where is the ingredient list?",
+      "explanation": "Ingredients are listed by quantity, so sugar is greater than the whole grain. The large print highlights something that is only a small part.",
+      "clueWords": [
+        "in large letters",
+        "fourth place"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L105_Q1",
+      "level": 105,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Three Emails] Monday: \"Confirming delivery for Thursday.\" Wednesday: \"Could you confirm delivery is still Thursday? Nobody here has heard from the driver.\" Thursday, 4 p.m.: \"I'm sorry, your order missed the van.\"",
+      "question": "What do the three emails show about Wednesday's worry?",
+      "options": [
+        "The worry expressed on Wednesday turned out to be justified.",
+        "The driver had confirmed the delivery, but the van left without the order.",
+        "The supplier failed because the buyer's Wednesday message arrived too late.",
+        "The buyer should have confirmed the delivery earlier in the week."
+      ],
+      "correctAnswer": "The worry expressed on Wednesday turned out to be justified.",
+      "hint": "Read the three messages as one story.",
+      "explanation": "The first message expects delivery, the second shows doubt, and the third confirms the failure. The order of the emails shows the concern was well founded.",
+      "clueWords": [
+        "Nobody here has heard from the driver",
+        "missed the van"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L105_Q2",
+      "level": 105,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Forty Pages] The museum's new visitor guide is forty pages long. Staff say most visitors read only the map on the back. Since the guide was introduced, requests at the information desk for \"what to see first\" have increased.",
+      "question": "Why do visitors ignore the guide?",
+      "options": [
+        "It is too long for visitors to use easily.",
+        "It is probably too expensive, so few visitors buy it at the entrance.",
+        "It lacks information about opening times, so visitors ask staff instead.",
+        "It is written in language that most visitors find too difficult."
+      ],
+      "correctAnswer": "It is too long for visitors to use easily.",
+      "hint": "What do most visitors read, and what questions do they still ask?",
+      "explanation": "Visitors skip most of the guide and keep asking basic questions, which suggests the length hides useful advice.",
+      "clueWords": [
+        "only the map",
+        "what to see first"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L105_Q3",
+      "level": 105,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Solid Now] The club sold its two best players in August and bought a goalkeeper. By October it had conceded fewer goals, but scored six fewer than last year. The manager said, \"We are solid now.\"",
+      "question": "What have the club's changes done to its performance?",
+      "options": [
+        "The team plays more defensively because the manager wants to avoid injuries.",
+        "The team has improved overall because it now concedes fewer goals than before.",
+        "The team is now weaker in defence because the new goalkeeper is inexperienced.",
+        "The team defends better but attacks less effectively."
+      ],
+      "correctAnswer": "The team defends better but attacks less effectively.",
+      "hint": "Compare goals conceded with goals scored.",
+      "explanation": "Fewer goals against but six fewer scored means a gain in defence and a loss in attack. \"Solid\" describes only the first.",
+      "clueWords": [
+        "conceded fewer goals",
+        "six fewer"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L106_Q1",
+      "level": 106,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Energetic Dog] \"It's a lovely dog,\" said Mrs. Okon, moving her flowerpot out of reach. \"And so energetic. It was in my garden again this morning.\"",
+      "question": "What is Mrs. Okon really saying?",
+      "options": [
+        "She wants the owner to bring the dog to visit the garden more often.",
+        "She is teasing the owner about how much energy the dog has.",
+        "She wants the owner to keep the dog under control.",
+        "She admires the dog and is thinking of getting one herself."
+      ],
+      "correctAnswer": "She wants the owner to keep the dog under control.",
+      "hint": "What action accompanies her compliment, and what does \"again\" tell you?",
+      "explanation": "The compliment is polite, but moving the pot and saying \"again\" show a repeated problem she wants solved.",
+      "clueWords": [
+        "moving her flowerpot",
+        "again this morning"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L106_Q2",
+      "level": 106,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[No Pressure] \"No pressure,\" said the manager, dropping a folder on Ramon's desk at five, \"but the client will want it by nine tomorrow.\"",
+      "question": "What does the manager expect of Ramon?",
+      "options": [
+        "Ramon can take his time, because the client is flexible about the deadline.",
+        "The manager will check the work herself before it is sent to the client.",
+        "Ramon is expected to work that evening.",
+        "Ramon should ask the manager for help if he cannot finish."
+      ],
+      "correctAnswer": "Ramon is expected to work that evening.",
+      "hint": "Compare \"no pressure\" with the time given.",
+      "explanation": "Delivery at five and a deadline at nine the next morning leaves the evening as the working time, whatever the manager says about pressure.",
+      "clueWords": [
+        "No pressure",
+        "at five"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L106_Q3",
+      "level": 106,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Last Year's Essays] \"I am not going to tell you what to write,\" said Ms. Vega, \"but the essays that did best last year all used the interview data.\"",
+      "question": "What is Ms. Vega hinting?",
+      "options": [
+        "That students should avoid the sources used in last year's essays.",
+        "That students should use the interview data.",
+        "That students may choose any data but should follow last year's essay format.",
+        "That the best essays last year were the longest ones."
+      ],
+      "correctAnswer": "That students should use the interview data.",
+      "hint": "What does \"but\" do after the first statement?",
+      "explanation": "She begins by saying she will not instruct, then gives a strong hint. \"But\" introduces the hint she really wants to make.",
+      "clueWords": [
+        "not going to tell you",
+        "did best"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L107_Q1",
+      "level": 107,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Two Applicants] Applicant A has ten years' experience but has changed employer every year. Applicant B has five years' experience, all with one firm, and was promoted twice. The manager says she is \"looking for someone to grow with us.\"",
+      "question": "Which applicant does her comment favour?",
+      "options": [
+        "Applicant A, because ten years of experience shows wider knowledge.",
+        "Applicant A, because changing employers shows a willingness to learn.",
+        "Applicant B, because of steady growth with one firm.",
+        "Neither, because the manager wants someone with more than ten years' experience."
+      ],
+      "correctAnswer": "Applicant B, because of steady growth with one firm.",
+      "hint": "What does \"grow with us\" imply about how long the person should stay?",
+      "explanation": "\"Grow with us\" suggests long-term commitment. B's record shows staying and rising, while A's shows frequent moves.",
+      "clueWords": [
+        "changed employer every year",
+        "grow with us"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L107_Q2",
+      "level": 107,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Two Towns] In Marlow everyone knows their neighbours, but there is no cinema and teenagers leave at eighteen. Riverton has two cinemas and a university, but residents say they hardly know the people on their street.",
+      "question": "How do the two towns compare?",
+      "options": [
+        "Each town has strengths that the other lacks.",
+        "Marlow will lose its residents because it has no cinema.",
+        "Riverton is the better place to live because it has more facilities.",
+        "Both towns have the same problems, but Marlow's are easier to solve."
+      ],
+      "correctAnswer": "Each town has strengths that the other lacks.",
+      "hint": "Match each town's positive with the other's negative.",
+      "explanation": "Marlow has community but few amenities. Riverton has amenities but little community. They mirror each other.",
+      "clueWords": [
+        "knows their neighbours",
+        "hardly know"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L107_Q3",
+      "level": 107,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Game-Changer] In March the manager described the software as \"a game-changer.\" In July, in a memo about its problems, he called it \"a useful tool.\"",
+      "question": "What has happened to the manager's view of the software?",
+      "options": [
+        "He has stopped using the software because of its problems.",
+        "He changed his description because the software was updated in July.",
+        "His opinion of the software has become more moderate.",
+        "He always thought the software was useful but did not want to say so."
+      ],
+      "correctAnswer": "His opinion of the software has become more moderate.",
+      "hint": "Compare the two phrases and their dates.",
+      "explanation": "\"Game-changer\" is stronger than \"useful tool.\" The July memo concerns problems, which suggests experience has cooled his view.",
+      "clueWords": [
+        "game-changer",
+        "useful tool"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L108_Q1",
+      "level": 108,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Next Quarter] The director listed the year's achievements in detail, then said, \"As for finances, we will share more next quarter.\" Nobody asked a question. The finance manager studied his notes.",
+      "question": "Why might the finance manager study his notes?",
+      "options": [
+        "The financial situation may be uncomfortable to discuss.",
+        "The director forgot the figures and hopes to find them before the next quarter.",
+        "The finance manager is preparing to present the figures at the next meeting.",
+        "The finances are good, but the director wants to announce them at a separate event."
+      ],
+      "correctAnswer": "The financial situation may be uncomfortable to discuss.",
+      "hint": "Compare how the achievements and the finances are treated.",
+      "explanation": "Achievements get detail while finances are postponed, and the room falls silent. This suggests the topic is uncomfortable.",
+      "clueWords": [
+        "next quarter",
+        "studied his notes"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L108_Q2",
+      "level": 108,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Best Man] The best man talked about the groom's love of football, his terrible cooking, and his \"creative\" driving. He did not mention the bride until the toast.",
+      "question": "What do the best man's stories show about him?",
+      "options": [
+        "He knows the groom far better than he knows the bride.",
+        "He is nervous and has forgotten what he planned to say about the bride.",
+        "He is jealous of the groom's success.",
+        "He does not like the bride and wants to avoid talking about her."
+      ],
+      "correctAnswer": "He knows the groom far better than he knows the bride.",
+      "hint": "When does he mention the bride?",
+      "explanation": "All the stories concern the groom, and the bride appears only at the toast. That suggests a closer friendship with the groom.",
+      "clueWords": [
+        "terrible cooking",
+        "until the toast"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L108_Q3",
+      "level": 108,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Flexibility] The advertisement lists \"flexibility\" among the qualities required of candidates. It describes the benefits at length, but it does not mention working hours.",
+      "question": "What might \"flexibility\" imply about the job?",
+      "options": [
+        "The advertisement avoids working hours because they are the same as in every other company.",
+        "Working hours may vary and could be demanding.",
+        "The job offers flexible hours that employees can choose for themselves.",
+        "The job is part-time and the company has not yet decided how many hours."
+      ],
+      "correctAnswer": "Working hours may vary and could be demanding.",
+      "hint": "What is asked of candidates, and what is not stated about hours?",
+      "explanation": "\"Flexibility\" is a requirement and the hours are missing, so the ad may be hiding variable or long hours.",
+      "clueWords": [
+        "flexibility",
+        "does not mention working hours"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L109_Q1",
+      "level": 109,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Introductory Rate] Your introductory rate of 1.9% applies for the first six months. After that, the standard rate will apply. To keep your introductory rate, you must pay at least $200 each month.",
+      "question": "What will probably happen once six months have passed?",
+      "options": [
+        "The rate will stay the same as long as the customer pays $200 every month.",
+        "The introductory rate will apply for the whole contract if the customer requests it.",
+        "The rate will be reviewed after six months and may be lower for large payments.",
+        "The rate will probably be higher after six months."
+      ],
+      "correctAnswer": "The rate will probably be higher after six months.",
+      "hint": "What does the word \"introductory\" suggest about the normal rate?",
+      "explanation": "An introductory rate is a special offer, so the standard rate is likely higher. There is also a condition on payments.",
+      "clueWords": [
+        "introductory rate",
+        "standard rate"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L109_Q2",
+      "level": 109,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Estimated Bill] Your estimated bill is $87. Estimates are based on previous usage. If you send a meter reading before the 15th, we will issue a corrected bill.",
+      "question": "How reliable is the bill figure?",
+      "options": [
+        "The bill is correct unless the company's meter has been read wrongly.",
+        "The bill may not match what you actually used.",
+        "The bill will be reduced if the customer sends a reading after the 15th.",
+        "The bill is based on last year's total and cannot be changed."
+      ],
+      "correctAnswer": "The bill may not match what you actually used.",
+      "hint": "What does an estimate rely on, and what can change it?",
+      "explanation": "The bill is based on past usage, and a real reading leads to a corrected bill. So the figure may differ from the actual use.",
+      "clueWords": [
+        "Estimates are based on previous usage",
+        "corrected bill"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L109_Q3",
+      "level": 109,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Written Notice] The lease renews automatically for another twelve months unless written notice is given at least sixty days before the end date. Notice given by phone is not valid.",
+      "question": "What could happen to a tenant who only phones to give notice?",
+      "options": [
+        "The lease would end on the date set, since phone notice is accepted as a courtesy.",
+        "The lease could renew for another year.",
+        "The landlord would need to phone the tenant to confirm the end of the lease.",
+        "The tenant would owe the landlord a fee for not using the correct form."
+      ],
+      "correctAnswer": "The lease could renew for another year.",
+      "hint": "What two conditions does the lease place on notice?",
+      "explanation": "Only written notice counts. A phone call is not valid, so the automatic renewal would apply.",
+      "clueWords": [
+        "automatically",
+        "not valid"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L110_Q1",
+      "level": 110,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Stable] This quarter's report describes customer satisfaction as \"stable.\" The previous report said \"improving.\" The chart shows 78%, 79%, 79%, 78%.",
+      "question": "What does the change from \"improving\" to \"stable\" suggest?",
+      "options": [
+        "Satisfaction has fallen slightly over the past year.",
+        "The company is no longer measuring satisfaction in the same way.",
+        "The report has changed its wording because the chart contains an error.",
+        "The earlier improvement has stalled."
+      ],
+      "correctAnswer": "The earlier improvement has stalled.",
+      "hint": "Compare the two reports' words, then read the numbers.",
+      "explanation": "The numbers barely move, which matches \"stable.\" The change of word from \"improving\" suggests improvement has stopped.",
+      "clueWords": [
+        "stable",
+        "improving"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L110_Q2",
+      "level": 110,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Empty Chairs] Twenty chairs were set out for the talk, and fourteen were filled. The speaker thanked \"everyone who came.\" Before the next event, the organiser removed six chairs from the hall.",
+      "question": "Why did the organiser remove chairs?",
+      "options": [
+        "The speaker complained about the low turnout and the organiser agreed.",
+        "The organiser thinks a smaller hall would make the talk feel more lively.",
+        "The organiser needs the chairs for another room on the same day.",
+        "The organiser expects a smaller audience next time."
+      ],
+      "correctAnswer": "The organiser expects a smaller audience next time.",
+      "hint": "What did the organiser do after seeing the numbers?",
+      "explanation": "Fourteen of twenty chairs were used, and the organiser removed six, matching the number of unused chairs.",
+      "clueWords": [
+        "fourteen were filled",
+        "removed six chairs"
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L110_Q3",
+      "level": 110,
+      "instruction": "Read the passage and select the correct inference.",
+      "subtype": "readingInference",
+      "interactionType": "choice",
+      "passage": "[Serving on the Committee] \"I would like to thank the committee for the opportunity to serve,\" she said. \"I have learned a great deal, mostly about patience.\"",
+      "question": "What does her mention of patience suggest?",
+      "options": [
+        "The role was often frustrating.",
+        "The role was mostly calm and required little effort.",
+        "She learned to be patient because she was the youngest member.",
+        "She is thanking the committee politely without meaning much by it."
+      ],
+      "correctAnswer": "The role was often frustrating.",
+      "hint": "What did she learn, and what does that quality suggest?",
+      "explanation": "People learn patience by having to wait or cope with delays. Saying that this is what she mostly learned suggests a frustrating experience.",
+      "clueWords": [
+        "a great deal",
+        "patience"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1478 @@
+{
+  "gameType": "readingInference",
+  "phase": "practice",
+  "batchIndex": 6,
+  "levels": "51-60",
+  "quests": [
+    {
+      "id": "RDG_READINGINFERENCE_L51_Q1_PRACTICE",
+      "level": 51,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Two Reviews",
+      "passage": "[Two Reviews] Reviewer A: \"The film runs two hours, and it has some interesting moments.\" Reviewer B: \"Two hours? It felt like twenty minutes. Unforgettable moments from the first scene to the last.\"",
+      "cleanPassage": "Reviewer A: \"The film runs two hours, and it has some interesting moments.\" Reviewer B: \"Two hours? It felt like twenty minutes. Unforgettable moments from the first scene to the last.\"",
+      "question": "How do the two reviewers differ?",
+      "options": [
+        "Reviewer A hated the film.",
+        "Reviewer B did not finish the film.",
+        "Reviewer B is far more enthusiastic than Reviewer A.",
+        "They watched different films."
+      ],
+      "correctAnswer": "Reviewer B is far more enthusiastic than Reviewer A.",
+      "clueWords": [
+        "some interesting moments",
+        "Unforgettable moments"
+      ],
+      "hint": "Compare how each describes the same running time.",
+      "explanation": "Both mention two hours, but A says \"some interesting moments,\" while B says it felt like twenty minutes and calls the moments unforgettable. B's language is much warmer.",
+      "strategyBadge": "CONDITIONAL HESITATION RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "Reviewer A hated the film.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "Reviewer B did not finish the film.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "Reviewer B is far more enthusiastic than Reviewer A.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"some interesting moments, Unforgettable moments\")."
+        },
+        {
+          "option": "They watched different films.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L51_Q2_PRACTICE",
+      "level": 51,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Will Be Considered",
+      "passage": "[Will Be Considered] \"Thank you for your feedback,\" the manager wrote. \"It will be considered.\" Two months later the process was unchanged, and nobody had heard anything further.",
+      "cleanPassage": "\"Thank you for your feedback,\" the manager wrote. \"It will be considered.\" Two months later the process was unchanged, and nobody had heard anything further.",
+      "question": "What did \"It will be considered\" most likely mean?",
+      "options": [
+        "A request for more detailed feedback.",
+        "A promise to make the change next week.",
+        "An invitation to discuss the feedback in person.",
+        "A polite way of not promising any change."
+      ],
+      "correctAnswer": "A polite way of not promising any change.",
+      "clueWords": [
+        "will be considered",
+        "unchanged"
+      ],
+      "hint": "Compare the manager's words with what happened afterwards.",
+      "explanation": "The phrase does not commit to any action, and nothing followed. Events after the message show it was a polite reply, not a plan.",
+      "strategyBadge": "CONDITIONAL HESITATION RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "A request for more detailed feedback.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "A promise to make the change next week.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "An invitation to discuss the feedback in person.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        },
+        {
+          "option": "A polite way of not promising any change.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"will be considered, unchanged\")."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L51_Q3_PRACTICE",
+      "level": 51,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Thorough",
+      "passage": "[Thorough] \"Your presentation was... thorough,\" Mr. Bass said, glancing at his watch. \"Very thorough.\"",
+      "cleanPassage": "\"Your presentation was... thorough,\" Mr. Bass said, glancing at his watch. \"Very thorough.\"",
+      "question": "What is Mr. Bass most likely implying?",
+      "options": [
+        "The presentation began too late.",
+        "The presentation was probably the best he had seen.",
+        "The presentation was too long.",
+        "The presentation was full of errors."
+      ],
+      "correctAnswer": "The presentation was too long.",
+      "clueWords": [
+        "thorough",
+        "glancing at his watch"
+      ],
+      "hint": "Look at what he does while he speaks, and notice the pause.",
+      "explanation": "The pause, the repeated word \"thorough,\" and the glance at his watch show that the quality he is praising is also a complaint about length.",
+      "strategyBadge": "CONDITIONAL HESITATION RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "The presentation began too late.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The presentation was probably the best he had seen.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The presentation was too long.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"thorough, glancing at his watch\")."
+        },
+        {
+          "option": "The presentation was full of errors.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L52_Q1_PRACTICE",
+      "level": 52,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "The Lift",
+      "passage": "[The Lift] \"Do you want a lift?\" \"It's only ten minutes on foot.\" \"I know,\" said Kemal, holding the car door open. \"It's raining.\"",
+      "cleanPassage": "\"Do you want a lift?\" \"It's only ten minutes on foot.\" \"I know,\" said Kemal, holding the car door open. \"It's raining.\"",
+      "question": "What does Kemal's reply suggest?",
+      "options": [
+        "He does not know how far it is.",
+        "He wants to speak to her privately in the car, so he has invented the offer of a lift.",
+        "He would rather walk himself.",
+        "He thinks she should accept the ride because of the weather."
+      ],
+      "correctAnswer": "He thinks she should accept the ride because of the weather.",
+      "clueWords": [
+        "holding the car door open",
+        "It's raining"
+      ],
+      "hint": "What does \"I know\" accept, and what does he add?",
+      "explanation": "He accepts her point about distance but adds a reason to ride. Holding the door open shows he means the offer.",
+      "strategyBadge": "TONE & EMOTIONAL SUBTEXT RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "He does not know how far it is.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "He wants to speak to her privately in the car, so he has invented the offer of a lift.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "He would rather walk himself.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        },
+        {
+          "option": "He thinks she should accept the ride because of the weather.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"holding the car door open, It's raining\")."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L52_Q2_PRACTICE",
+      "level": 52,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Door Closed",
+      "passage": "[Door Closed] \"I'm afraid Mr. Lund isn't available,\" the assistant said. \"He's in his office with the door closed, but I can take a message.\"",
+      "cleanPassage": "\"I'm afraid Mr. Lund isn't available,\" the assistant said. \"He's in his office with the door closed, but I can take a message.\"",
+      "question": "What does the assistant imply?",
+      "options": [
+        "Mr. Lund does not want to be disturbed.",
+        "Mr. Lund has left the building.",
+        "Mr. Lund is looking forward to a visitor.",
+        "Mr. Lund has a new assistant."
+      ],
+      "correctAnswer": "Mr. Lund does not want to be disturbed.",
+      "clueWords": [
+        "isn't available",
+        "door closed"
+      ],
+      "hint": "What does a closed door usually communicate in an office?",
+      "explanation": "\"Isn't available\" plus the closed door indicates Mr. Lund is present but not to be interrupted. The offer to take a message shows the visitor should not knock.",
+      "strategyBadge": "TONE & EMOTIONAL SUBTEXT RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "Mr. Lund does not want to be disturbed.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"isn't available, door closed\")."
+        },
+        {
+          "option": "Mr. Lund has left the building.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "Mr. Lund is looking forward to a visitor.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "Mr. Lund has a new assistant.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L52_Q3_PRACTICE",
+      "level": 52,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Acquired Taste",
+      "passage": "[Acquired Taste] \"The soup is... an acquired taste,\" Grandpa said, moving the bowl an inch further away.",
+      "cleanPassage": "\"The soup is... an acquired taste,\" Grandpa said, moving the bowl an inch further away.",
+      "question": "What does Grandpa probably think of the soup?",
+      "options": [
+        "He is saving it for later.",
+        "He finds it too hot to eat.",
+        "He wants to try it again soon.",
+        "He does not enjoy it."
+      ],
+      "correctAnswer": "He does not enjoy it.",
+      "clueWords": [
+        "an acquired taste",
+        "moving the bowl"
+      ],
+      "hint": "Compare the phrase with the small movement of the bowl.",
+      "explanation": "\"An acquired taste\" is a gentle way of saying something is hard to like, and pushing the bowl away confirms it.",
+      "strategyBadge": "TONE & EMOTIONAL SUBTEXT RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "He is saving it for later.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "He finds it too hot to eat.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "He wants to try it again soon.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        },
+        {
+          "option": "He does not enjoy it.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"an acquired taste, moving the bowl\")."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L53_Q1_PRACTICE",
+      "level": 53,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Free Week",
+      "passage": "[Free Week] The gym offered a free week. Sadiq signed up, went twice, and used the towel service each time. On day eight a message arrived: \"Your card has been charged $49.\"",
+      "cleanPassage": "The gym offered a free week. Sadiq signed up, went twice, and used the towel service each time. On day eight a message arrived: \"Your card has been charged $49.\"",
+      "question": "What does the charge on day eight most likely mean?",
+      "options": [
+        "The free trial ended and turned into a paid membership.",
+        "He upgraded on purpose.",
+        "The gym charged him for the towels only.",
+        "The gym charged him for two extra visits and the towel service without telling him."
+      ],
+      "correctAnswer": "The free trial ended and turned into a paid membership.",
+      "clueWords": [
+        "free week",
+        "day eight"
+      ],
+      "hint": "When did the charge appear compared with the free period?",
+      "explanation": "The message arrived on day eight, right after the free week. That timing suggests the trial converted automatically into a paid plan.",
+      "strategyBadge": "CAUSE-AND-EFFECT TRAIL RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "The free trial ended and turned into a paid membership.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"free week, day eight\")."
+        },
+        {
+          "option": "He upgraded on purpose.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The gym charged him for the towels only.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The gym charged him for two extra visits and the towel service without telling him.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L53_Q2_PRACTICE",
+      "level": 53,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Cold Snap",
+      "passage": "[Cold Snap] Because the tenant never reported the cracked window, the landlord could not repair it. When the cold weather arrived, the room became so chilly that the tenant moved his bed into the kitchen.",
+      "cleanPassage": "Because the tenant never reported the cracked window, the landlord could not repair it. When the cold weather arrived, the room became so chilly that the tenant moved his bed into the kitchen.",
+      "question": "What is the most likely reason the room became cold?",
+      "options": [
+        "The unrepaired window was letting cold air into the room.",
+        "The tenant wanted to be closer to the fridge.",
+        "The heating had been turned off by the landlord.",
+        "The kitchen was recently repainted."
+      ],
+      "correctAnswer": "The unrepaired window was letting cold air into the room.",
+      "clueWords": [
+        "cracked window",
+        "moved his bed into the kitchen"
+      ],
+      "hint": "Which problem was mentioned first, and which change followed it?",
+      "explanation": "An unreported cracked window, then cold weather, then a move to a warmer room form a chain. The window is the likely reason the room is cold.",
+      "strategyBadge": "CAUSE-AND-EFFECT TRAIL RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "The unrepaired window was letting cold air into the room.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"cracked window, moved his bed into the kitchen\")."
+        },
+        {
+          "option": "The tenant wanted to be closer to the fridge.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The heating had been turned off by the landlord.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The kitchen was recently repainted.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L53_Q3_PRACTICE",
+      "level": 53,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Parking Charges",
+      "passage": "[Parking Charges] Since the town began charging for parking, High Street shops have handed out discount stickers. On Saturday the street market had only half its usual stalls.",
+      "cleanPassage": "Since the town began charging for parking, High Street shops have handed out discount stickers. On Saturday the street market had only half its usual stalls.",
+      "question": "What is a reasonable inference?",
+      "options": [
+        "The market is closing permanently.",
+        "The charges may be discouraging visitors and traders.",
+        "The shops are making more money than before.",
+        "The town has banned cars altogether."
+      ],
+      "correctAnswer": "The charges may be discouraging visitors and traders.",
+      "clueWords": [
+        "charging for parking",
+        "half its usual stalls"
+      ],
+      "hint": "Why would shops offer stickers, and what is happening to the market?",
+      "explanation": "Discount stickers suggest shops are trying to keep customers after the charge, and fewer stalls suggest fewer people are willing to come. This supports a link, though it is not certain.",
+      "strategyBadge": "CAUSE-AND-EFFECT TRAIL RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "The market is closing permanently.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The charges may be discouraging visitors and traders.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"charging for parking, half its usual stalls\")."
+        },
+        {
+          "option": "The shops are making more money than before.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The town has banned cars altogether.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L54_Q1_PRACTICE",
+      "level": 54,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Progress Report",
+      "passage": "[Progress Report] Mr. Kovač's report described the team's three successes in detail. Of everything else, it said only, \"Other tasks continue.\"",
+      "cleanPassage": "Mr. Kovač's report described the team's three successes in detail. Of everything else, it said only, \"Other tasks continue.\"",
+      "question": "What might the report's silence about the other tasks be hiding?",
+      "options": [
+        "The team has no other tasks.",
+        "Some tasks may not have gone well, and he is avoiding detail.",
+        "The report was written in a hurry.",
+        "The team has completed its main tasks and the writer wants to move on to the next project quickly."
+      ],
+      "correctAnswer": "Some tasks may not have gone well, and he is avoiding detail.",
+      "clueWords": [
+        "three successes in detail",
+        "Other tasks continue"
+      ],
+      "hint": "Compare how much space the successes get with what the rest receives.",
+      "explanation": "Great detail on the successes and a vague phrase for everything else suggest the writer is not eager to explain the rest.",
+      "strategyBadge": "TEXTUAL ANCHOR VS ASSUMPTION RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "The team has no other tasks.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "Some tasks may not have gone well, and he is avoiding detail.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"three successes in detail, Other tasks continue\")."
+        },
+        {
+          "option": "The report was written in a hurry.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The team has completed its main tasks and the writer wants to move on to the next project quickly.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L54_Q2_PRACTICE",
+      "level": 54,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "No Number",
+      "passage": "[No Number] When she asked about the salary, the recruiter talked about the free lunches, the gym discount, and the friendly team. She never gave a figure.",
+      "cleanPassage": "When she asked about the salary, the recruiter talked about the free lunches, the gym discount, and the friendly team. She never gave a figure.",
+      "question": "What does the recruiter's choice of topics suggest?",
+      "options": [
+        "The salary may not be a strong selling point.",
+        "The job has no salary.",
+        "The salary is unusually high.",
+        "The recruiter does not know the company."
+      ],
+      "correctAnswer": "The salary may not be a strong selling point.",
+      "clueWords": [
+        "asked about the salary",
+        "never gave a figure"
+      ],
+      "hint": "What does the recruiter talk about instead of the number?",
+      "explanation": "Talking about perks rather than pay suggests the pay is not what would attract her.",
+      "strategyBadge": "TEXTUAL ANCHOR VS ASSUMPTION RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "The salary may not be a strong selling point.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"asked about the salary, never gave a figure\")."
+        },
+        {
+          "option": "The job has no salary.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The salary is unusually high.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The recruiter does not know the company.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L54_Q3_PRACTICE",
+      "level": 54,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Best Quality",
+      "passage": "[Best Quality] Asked what she liked most about her manager, Talia said, \"He's very punctual.\" After a pause, she added, \"And he always replies to emails.\"",
+      "cleanPassage": "Asked what she liked most about her manager, Talia said, \"He's very punctual.\" After a pause, she added, \"And he always replies to emails.\"",
+      "question": "What does Talia's hesitation suggest about her view of her manager?",
+      "options": [
+        "She dislikes emails.",
+        "She wants a different job.",
+        "She struggles to find much to praise.",
+        "She admires him greatly."
+      ],
+      "correctAnswer": "She struggles to find much to praise.",
+      "clueWords": [
+        "very punctual",
+        "After a pause"
+      ],
+      "hint": "Notice what she chooses to mention and how she pauses.",
+      "explanation": "The qualities she names are minor, and the pause shows she searched for something to say. This suggests limited enthusiasm.",
+      "strategyBadge": "TEXTUAL ANCHOR VS ASSUMPTION RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "She dislikes emails.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "She wants a different job.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "She struggles to find much to praise.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"very punctual, After a pause\")."
+        },
+        {
+          "option": "She admires him greatly.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L55_Q1_PRACTICE",
+      "level": 55,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Two Bakers",
+      "passage": "[Two Bakers] Baker A's loaves are cheaper but are all gone by evening. Baker B's loaves cost more, and there are always some left at closing time.",
+      "cleanPassage": "Baker A's loaves are cheaper but are all gone by evening. Baker B's loaves cost more, and there are always some left at closing time.",
+      "question": "What does Baker A's early sell-out suggest?",
+      "options": [
+        "Baker A makes fewer loaves.",
+        "Baker B's bread is much tastier.",
+        "Customers do not care about price.",
+        "Baker A's loaves sell faster than Baker B's."
+      ],
+      "correctAnswer": "Baker A's loaves sell faster than Baker B's.",
+      "clueWords": [
+        "cheaper",
+        "always some left"
+      ],
+      "hint": "What does selling out early say about demand?",
+      "explanation": "Baker A's bread is all gone by evening, while Baker B always has loaves left at closing. That shows A's loaves sell faster. The passage does not say why, so price is only one possible reason.",
+      "strategyBadge": "EXPLICIT VS IMPLICIT RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "Baker A makes fewer loaves.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "Baker B's bread is much tastier.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "Customers do not care about price.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        },
+        {
+          "option": "Baker A's loaves sell faster than Baker B's.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"cheaper, always some left\")."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L55_Q2_PRACTICE",
+      "level": 55,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Faster Train",
+      "passage": "[Faster Train] The new express is twelve minutes faster than the old train. But it stops only at the city centre, and Amit's office is at the far end of the suburb.",
+      "cleanPassage": "The new express is twelve minutes faster than the old train. But it stops only at the city centre, and Amit's office is at the far end of the suburb.",
+      "question": "Why might Amit still prefer the old train?",
+      "options": [
+        "The old train is cheaper, and the express is often cancelled in the evening.",
+        "The express may not save him time overall.",
+        "The express is more expensive.",
+        "The old train is faster."
+      ],
+      "correctAnswer": "The express may not save him time overall.",
+      "clueWords": [
+        "only at the city centre",
+        "far end of the suburb"
+      ],
+      "hint": "Think about the whole journey, not only the train time.",
+      "explanation": "The express saves time on the train, but if Amit's office is far from the city centre he may lose that time getting there.",
+      "strategyBadge": "EXPLICIT VS IMPLICIT RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "The old train is cheaper, and the express is often cancelled in the evening.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The express may not save him time overall.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"only at the city centre, far end of the suburb\")."
+        },
+        {
+          "option": "The express is more expensive.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The old train is faster.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L55_Q3_PRACTICE",
+      "level": 55,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Ten Years On",
+      "passage": "[Ten Years On] Ten years ago, the village had a bakery, a bank, a pharmacy, and a post office. Now there is only the pharmacy, and the noticeboard advertises a mobile post service on Thursdays.",
+      "cleanPassage": "Ten years ago, the village had a bakery, a bank, a pharmacy, and a post office. Now there is only the pharmacy, and the noticeboard advertises a mobile post service on Thursdays.",
+      "question": "What has happened to the village over ten years?",
+      "options": [
+        "It has grown much larger.",
+        "It has moved to a new site.",
+        "It has lost many of its services.",
+        "The pharmacy has closed."
+      ],
+      "correctAnswer": "It has lost many of its services.",
+      "clueWords": [
+        "a bakery, a bank",
+        "mobile post service"
+      ],
+      "hint": "Compare the two lists.",
+      "explanation": "Four services became one, and a mobile post service replaced a post office. The village has fewer services now.",
+      "strategyBadge": "EXPLICIT VS IMPLICIT RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "It has grown much larger.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "It has moved to a new site.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "It has lost many of its services.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"a bakery, a bank, mobile post service\")."
+        },
+        {
+          "option": "The pharmacy has closed.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L56_Q1_PRACTICE",
+      "level": 56,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Blue Paper",
+      "passage": "[Blue Paper] The letter to \"Mrs. E. Turner\" is written in ink on thin blue paper. Inside, a shopkeeper asks her to collect the telegram waiting at the post office.",
+      "cleanPassage": "The letter to \"Mrs. E. Turner\" is written in ink on thin blue paper. Inside, a shopkeeper asks her to collect the telegram waiting at the post office.",
+      "question": "When was the letter probably written?",
+      "options": [
+        "Last week.",
+        "Yesterday.",
+        "At about the time when the first emails were being sent between companies.",
+        "Long before mobile phones and email."
+      ],
+      "correctAnswer": "Long before mobile phones and email.",
+      "clueWords": [
+        "telegram",
+        "ink"
+      ],
+      "hint": "What technology does the letter mention?",
+      "explanation": "Telegrams, ink, and letters are signs of an earlier period, before instant electronic messaging.",
+      "strategyBadge": "BEHAVIORAL EVIDENCE RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "Last week.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "Yesterday.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "At about the time when the first emails were being sent between companies.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        },
+        {
+          "option": "Long before mobile phones and email.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"telegram, ink\")."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L56_Q2_PRACTICE",
+      "level": 56,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Ten Minutes",
+      "passage": "[Ten Minutes] \"Attention shoppers: the store will close in ten minutes. Please bring your final purchases to the registers. Fresh bread is now half price.\"",
+      "cleanPassage": "\"Attention shoppers: the store will close in ten minutes. Please bring your final purchases to the registers. Fresh bread is now half price.\"",
+      "question": "Why is the fresh bread half price?",
+      "options": [
+        "It is a special holiday.",
+        "The store wants to sell it before closing.",
+        "The store is opening a bakery.",
+        "The bread is poor quality."
+      ],
+      "correctAnswer": "The store wants to sell it before closing.",
+      "clueWords": [
+        "close in ten minutes",
+        "half price"
+      ],
+      "hint": "Link the price reduction to the time announced.",
+      "explanation": "The reduction comes with a closing announcement. Bread that will not keep is discounted to clear it before the day ends.",
+      "strategyBadge": "BEHAVIORAL EVIDENCE RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "It is a special holiday.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The store wants to sell it before closing.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"close in ten minutes, half price\")."
+        },
+        {
+          "option": "The store is opening a bakery.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The bread is poor quality.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L56_Q3_PRACTICE",
+      "level": 56,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Before Noon",
+      "passage": "[Before Noon] Woke at six to the smell of pine. Packed a sleeping bag, stove, and two litres of water. The forecast for the summit is clear until noon, so we will start at once.",
+      "cleanPassage": "Woke at six to the smell of pine. Packed a sleeping bag, stove, and two litres of water. The forecast for the summit is clear until noon, so we will start at once.",
+      "question": "What is the writer's plan?",
+      "options": [
+        "To wait until noon and then decide whether the weather is good enough to climb.",
+        "To stay in the camp all day.",
+        "To reach the summit before the weather changes.",
+        "To go back home at noon."
+      ],
+      "correctAnswer": "To reach the summit before the weather changes.",
+      "clueWords": [
+        "clear until noon",
+        "start at once"
+      ],
+      "hint": "Which time does the writer mention, and why does it matter?",
+      "explanation": "Clear weather only until noon and a decision to start at once suggest they want to finish the climb in good conditions.",
+      "strategyBadge": "BEHAVIORAL EVIDENCE RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "To wait until noon and then decide whether the weather is good enough to climb.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "To stay in the camp all day.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "To reach the summit before the weather changes.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"clear until noon, start at once\")."
+        },
+        {
+          "option": "To go back home at noon.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L57_Q1_PRACTICE",
+      "level": 57,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "The Workshop",
+      "passage": "[The Workshop] Shelves are labelled by size, tools hang inside painted outlines, and the sawdust has been swept into a tidy pile. On the bench, a half-finished chair is clamped in place.",
+      "cleanPassage": "Shelves are labelled by size, tools hang inside painted outlines, and the sawdust has been swept into a tidy pile. On the bench, a half-finished chair is clamped in place.",
+      "question": "What kind of person works in this workshop?",
+      "options": [
+        "They rarely use the tools.",
+        "They are orderly and in the middle of a project.",
+        "They only use the workshop occasionally and have left the chair unfinished for years.",
+        "They are probably a beginner."
+      ],
+      "correctAnswer": "They are orderly and in the middle of a project.",
+      "clueWords": [
+        "labelled by size",
+        "half-finished chair"
+      ],
+      "hint": "Look at both the state of the room and the object on the bench.",
+      "explanation": "Labelled shelves and outlined tools show order, and the clamped chair shows work in progress. The tidy pile suggests regular cleaning.",
+      "strategyBadge": "CONDITIONAL HESITATION RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "They rarely use the tools.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "They are orderly and in the middle of a project.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"labelled by size, half-finished chair\")."
+        },
+        {
+          "option": "They only use the workshop occasionally and have left the chair unfinished for years.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "They are probably a beginner.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L57_Q2_PRACTICE",
+      "level": 57,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Frozen Bottle",
+      "passage": "[Frozen Bottle] Inside the tent, Lin can see her breath. Her boots are stiff, and there is ice on the surface of her water bottle.",
+      "cleanPassage": "Inside the tent, Lin can see her breath. Her boots are stiff, and there is ice on the surface of her water bottle.",
+      "question": "What were conditions like overnight?",
+      "options": [
+        "It was below freezing overnight.",
+        "The bottle was leaking.",
+        "The tent was being heated.",
+        "It was probably a warm night."
+      ],
+      "correctAnswer": "It was below freezing overnight.",
+      "clueWords": [
+        "see her breath",
+        "ice"
+      ],
+      "hint": "What must be true for water to turn to ice indoors?",
+      "explanation": "Breath visible, stiff boots, and ice in a bottle all point to freezing temperatures outside and inside the tent.",
+      "strategyBadge": "CONDITIONAL HESITATION RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "It was below freezing overnight.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"see her breath, ice\")."
+        },
+        {
+          "option": "The bottle was leaking.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "The tent was being heated.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "It was probably a warm night.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L57_Q3_PRACTICE",
+      "level": 57,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "After the Parade",
+      "passage": "[After the Parade] Shutters are down on every shop. Flags still hang between the balconies, and confetti drifts along the gutters.",
+      "cleanPassage": "Shutters are down on every shop. Flags still hang between the balconies, and confetti drifts along the gutters.",
+      "question": "What has just happened in the street?",
+      "options": [
+        "The shops are being rebuilt.",
+        "A celebration is probably about to begin.",
+        "A celebration has just ended.",
+        "A storm is approaching."
+      ],
+      "correctAnswer": "A celebration has just ended.",
+      "clueWords": [
+        "Flags still hang",
+        "confetti"
+      ],
+      "hint": "What has been left behind, and what is closed?",
+      "explanation": "Confetti and flags remain, while the shops are shut. This suggests a party has taken place and people have gone home.",
+      "strategyBadge": "CONDITIONAL HESITATION RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "The shops are being rebuilt.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "A celebration is probably about to begin.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "A celebration has just ended.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"Flags still hang, confetti\")."
+        },
+        {
+          "option": "A storm is approaching.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L58_Q1_PRACTICE",
+      "level": 58,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Second Week",
+      "passage": "[Second Week] In her second week, Rania asked her colleague Ivo for help three times. Each time he stopped what he was doing, explained slowly, and wrote the steps down for her.",
+      "cleanPassage": "In her second week, Rania asked her colleague Ivo for help three times. Each time he stopped what he was doing, explained slowly, and wrote the steps down for her.",
+      "question": "What kind of colleague is Ivo?",
+      "options": [
+        "He is trying to avoid work.",
+        "He is patient and supportive.",
+        "He does not trust her.",
+        "He is her supervisor."
+      ],
+      "correctAnswer": "He is patient and supportive.",
+      "clueWords": [
+        "stopped what he was doing",
+        "wrote the steps down"
+      ],
+      "hint": "What does he do each time, not just once?",
+      "explanation": "He stops his own work, explains slowly, and writes steps down. Doing this every time shows patience and willingness to help.",
+      "strategyBadge": "TONE & EMOTIONAL SUBTEXT RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "He is trying to avoid work.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "He is patient and supportive.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"stopped what he was doing, wrote the steps down\")."
+        },
+        {
+          "option": "He does not trust her.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "He is her supervisor.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L58_Q2_PRACTICE",
+      "level": 58,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Pizza and Time Off",
+      "passage": "[Pizza and Time Off] Mr. Dunn's team stayed late three nights running. On Friday he ordered pizza, left at four himself, and told everyone to come in late on Monday.",
+      "cleanPassage": "Mr. Dunn's team stayed late three nights running. On Friday he ordered pizza, left at four himself, and told everyone to come in late on Monday.",
+      "question": "Why did Mr. Dunn act this way?",
+      "options": [
+        "To hide a problem from management.",
+        "To punish the team for missing a deadline.",
+        "To celebrate his own birthday.",
+        "To thank the team for their extra effort."
+      ],
+      "correctAnswer": "To thank the team for their extra effort.",
+      "clueWords": [
+        "stayed late three nights running",
+        "come in late on Monday"
+      ],
+      "hint": "What did the team give, and what did he give back?",
+      "explanation": "The team gave extra hours, and he offered food and a late start. Rewards after effort suggest gratitude.",
+      "strategyBadge": "TONE & EMOTIONAL SUBTEXT RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "To hide a problem from management.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "To punish the team for missing a deadline.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "To celebrate his own birthday.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        },
+        {
+          "option": "To thank the team for their extra effort.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"stayed late three nights running, come in late on Monday\")."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L58_Q3_PRACTICE",
+      "level": 58,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Reply All",
+      "passage": "[Reply All] Ayşe accidentally sent her complaint about the printer to the whole department. Within ten minutes, four colleagues had replied to her privately: \"Thank you. Someone had to say it.\"",
+      "cleanPassage": "Ayşe accidentally sent her complaint about the printer to the whole department. Within ten minutes, four colleagues had replied to her privately: \"Thank you. Someone had to say it.\"",
+      "question": "What do the private replies reveal?",
+      "options": [
+        "The complaint was about a colleague.",
+        "Her colleagues are angry with her.",
+        "Many colleagues share her complaint.",
+        "The printer has probably been repaired."
+      ],
+      "correctAnswer": "Many colleagues share her complaint.",
+      "clueWords": [
+        "whole department",
+        "Someone had to say it"
+      ],
+      "hint": "Read the replies.",
+      "explanation": "Four people responded within minutes and thanked her, which shows they agree. They replied privately, perhaps to avoid drawing attention.",
+      "strategyBadge": "TONE & EMOTIONAL SUBTEXT RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "The complaint was about a colleague.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "Her colleagues are angry with her.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "Many colleagues share her complaint.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"whole department, Someone had to say it\")."
+        },
+        {
+          "option": "The printer has probably been repaired.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L59_Q1_PRACTICE",
+      "level": 59,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Glass Days",
+      "passage": "[Glass Days] From 1 March, glass will be collected on the first Monday of each month. Paper and plastics will continue to be collected weekly. Please put glass in the green box, not in the blue one.",
+      "cleanPassage": "From 1 March, glass will be collected on the first Monday of each month. Paper and plastics will continue to be collected weekly. Please put glass in the green box, not in the blue one.",
+      "question": "What can residents infer about glass collection?",
+      "options": [
+        "It will be less frequent than paper and plastics.",
+        "It will be collected on the same day as paper, but in a different box.",
+        "It will stop altogether.",
+        "It will happen every week."
+      ],
+      "correctAnswer": "It will be less frequent than paper and plastics.",
+      "clueWords": [
+        "first Monday of each month",
+        "weekly"
+      ],
+      "hint": "Compare the two schedules.",
+      "explanation": "Once a month is less often than weekly. The notice also points to a specific box for glass.",
+      "strategyBadge": "CAUSE-AND-EFFECT TRAIL RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "It will be less frequent than paper and plastics.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"first Monday of each month, weekly\")."
+        },
+        {
+          "option": "It will be collected on the same day as paper, but in a different box.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "It will stop altogether.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "It will happen every week.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L59_Q2_PRACTICE",
+      "level": 59,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Study Rooms",
+      "passage": "[Study Rooms] Study rooms must be booked in advance. Any booking not confirmed by a staff member within fifteen minutes of the start time will be released.",
+      "cleanPassage": "Study rooms must be booked in advance. Any booking not confirmed by a staff member within fifteen minutes of the start time will be released.",
+      "question": "Why is there a fifteen-minute rule?",
+      "options": [
+        "To punish students who are late.",
+        "To free unused rooms for other students.",
+        "To reduce noise in the library.",
+        "To collect fees."
+      ],
+      "correctAnswer": "To free unused rooms for other students.",
+      "clueWords": [
+        "booked in advance",
+        "will be released"
+      ],
+      "hint": "What happens to a room that nobody confirms?",
+      "explanation": "Releasing unconfirmed bookings means unused rooms become available to others.",
+      "strategyBadge": "CAUSE-AND-EFFECT TRAIL RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "To punish students who are late.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "To free unused rooms for other students.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"booked in advance, will be released\")."
+        },
+        {
+          "option": "To reduce noise in the library.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "To collect fees.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L59_Q3_PRACTICE",
+      "level": 59,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Invoice 4471",
+      "passage": "[Invoice 4471] Subject: Re: Re: Re: Invoice 4471. Dear Mr. Roy, please find the same invoice attached again. Payment is now two weeks overdue.",
+      "cleanPassage": "Subject: Re: Re: Re: Invoice 4471. Dear Mr. Roy, please find the same invoice attached again. Payment is now two weeks overdue.",
+      "question": "What does the message history suggest about earlier reminders?",
+      "options": [
+        "Mr. Roy has asked for a new invoice.",
+        "Earlier reminders received no reply.",
+        "The invoice number has changed.",
+        "The invoice was paid two weeks ago."
+      ],
+      "correctAnswer": "Earlier reminders received no reply.",
+      "clueWords": [
+        "Re: Re: Re:",
+        "two weeks overdue"
+      ],
+      "hint": "What does \"Re: Re: Re:\" show about the message history?",
+      "explanation": "Three \"Re:\" tags and the same invoice suggest repeated attempts. The sender's tone implies frustration.",
+      "strategyBadge": "CAUSE-AND-EFFECT TRAIL RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "Mr. Roy has asked for a new invoice.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "Earlier reminders received no reply.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"Re: Re: Re:, two weeks overdue\")."
+        },
+        {
+          "option": "The invoice number has changed.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "The invoice was paid two weeks ago.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L60_Q1_PRACTICE",
+      "level": 60,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Gate Closed",
+      "passage": "[Gate Closed] Ruth stands at the gate holding her boarding pass. The board changed from \"Boarding\" to \"Gate closed\" while she was still in the security queue. Now she is asking the desk about the next flight.",
+      "cleanPassage": "Ruth stands at the gate holding her boarding pass. The board changed from \"Boarding\" to \"Gate closed\" while she was still in the security queue. Now she is asking the desk about the next flight.",
+      "question": "Why did Ruth miss her flight?",
+      "options": [
+        "The airline cancelled her flight.",
+        "She is on the wrong flight.",
+        "She lost her passport.",
+        "She missed her flight because of the security queue."
+      ],
+      "correctAnswer": "She missed her flight because of the security queue.",
+      "clueWords": [
+        "Gate closed",
+        "next flight"
+      ],
+      "hint": "Put the queue and the board change in order.",
+      "explanation": "The status changed while she was in the queue, and she now asks about the next flight. This shows she missed it because of the queue.",
+      "strategyBadge": "TEXTUAL ANCHOR VS ASSUMPTION RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "The airline cancelled her flight.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "She is on the wrong flight.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "She lost her passport.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        },
+        {
+          "option": "She missed her flight because of the security queue.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"Gate closed, next flight\")."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L60_Q2_PRACTICE",
+      "level": 60,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Quiz Night",
+      "passage": "[Quiz Night] On the sign-up sheet, Arjun's name is written clearly. Under \"Team members,\" he has written \"TBC, TBC, TBC.\"",
+      "cleanPassage": "On the sign-up sheet, Arjun's name is written clearly. Under \"Team members,\" he has written \"TBC, TBC, TBC.\"",
+      "question": "What does \"TBC, TBC, TBC\" suggest about Arjun's team?",
+      "options": [
+        "He has not yet found his teammates.",
+        "The quiz is cancelled.",
+        "He wants to play alone.",
+        "He forgot his own name."
+      ],
+      "correctAnswer": "He has not yet found his teammates.",
+      "clueWords": [
+        "written clearly",
+        "TBC"
+      ],
+      "hint": "What does \"TBC\" mean to a reader?",
+      "explanation": "TBC means \"to be confirmed.\" Three of them show he has not yet decided or asked people.",
+      "strategyBadge": "TEXTUAL ANCHOR VS ASSUMPTION RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "He has not yet found his teammates.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"written clearly, TBC\")."
+        },
+        {
+          "option": "The quiz is cancelled.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "He wants to play alone.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "He forgot his own name.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    },
+    {
+      "id": "RDG_READINGINFERENCE_L60_Q3_PRACTICE",
+      "level": 60,
+      "instruction": "Read the passage and select the correct inference.",
+      "passageTopic": "Free to a Good Home",
+      "passage": "[Free to a Good Home] Free to a good home: sofa, two chairs, dining table. Must be collected by Sunday. Serious callers only. And no, I cannot deliver.",
+      "cleanPassage": "Free to a good home: sofa, two chairs, dining table. Must be collected by Sunday. Serious callers only. And no, I cannot deliver.",
+      "question": "What has the writer's experience of giving furniture away been?",
+      "options": [
+        "They have a deadline and have received many casual enquiries.",
+        "They are selling the furniture for profit.",
+        "They are moving in.",
+        "They plan to keep the furniture."
+      ],
+      "correctAnswer": "They have a deadline and have received many casual enquiries.",
+      "clueWords": [
+        "collected by Sunday",
+        "Serious callers only"
+      ],
+      "hint": "Which phrases look like answers to earlier questions?",
+      "explanation": "\"By Sunday\" is a deadline, \"Serious callers only\" suggests time-wasters, and \"no, I cannot deliver\" reads like an answer to repeated requests.",
+      "strategyBadge": "TEXTUAL ANCHOR VS ASSUMPTION RADAR",
+      "candidatesDiagnosis": [
+        {
+          "option": "They have a deadline and have received many casual enquiries.",
+          "isCorrect": true,
+          "category": "GROUNDED INFERENCE (EVIDENCE-ANCHORED)",
+          "diagnosis": "Directly deduced from the textual evidence (\"collected by Sunday, Serious callers only\")."
+        },
+        {
+          "option": "They are selling the furniture for profit.",
+          "isCorrect": false,
+          "category": "LITERAL TRAP (SURFACE REPETITION)",
+          "diagnosis": "Focuses on literal wording without discerning the underlying attitude or unstated implication."
+        },
+        {
+          "option": "They are moving in.",
+          "isCorrect": false,
+          "category": "CONTRADICTION (OPPOSITE SUBTEXT)",
+          "diagnosis": "Conflicts with the tone or physical evidence established in the passage."
+        },
+        {
+          "option": "They plan to keep the furniture.",
+          "isCorrect": false,
+          "category": "WILD ASSUMPTION (UNFOUNDED LEAP)",
+          "diagnosis": "Extrapolates beyond what the passage directly supports; introduces unverified details."
+        }
+      ]
+    }
+  ]
+}
