@@ -1,0 +1,1418 @@
+{
+  "gameType": "clozeTest",
+  "phase": "learn",
+  "batchIndex": 20,
+  "levels": "191-200",
+  "quests": [
+    {
+      "id": "RDG_CLOZETEST_L191_Q1_LEARN",
+      "level": 191,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "CONTEXTUAL SEMANTIC FIT",
+      "techniqueTitle": "Resolving Ambiguities via Broader Semantic Tone and Context",
+      "coreRule": "Read beyond the blank: trailing clauses and punctuation provide vital semantic anchors.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The tribunal's careful insistence that its findings apply only to 'the specific conduct described herein' is best read not as modesty but as an implicit acknowledgment that the broader pattern it declines to name would be far harder to ____.",
+      "missingWord": "contain",
+      "correctAnswer": "contain",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"harder to ____ .\"]",
+      "precedingCue": "harder to",
+      "followingCue": ".",
+      "distractorAnalysis": [
+        {
+          "word": "document",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "publicize",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "contain",
+          "status": "VALID",
+          "reason": "Accurately completes \"The tribunal's careful insistence that its findings apply only to 'the specific conduct described herein' is best read not as modesty but as an implicit acknowledgment that the broader pattern it declines to name would be far harder to ____.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "predict",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "document",
+        "publicize",
+        "contain",
+        "predict"
+      ],
+      "explanation": "'Contain' fits the implication that a broader pattern, left unnamed, would be too large and unmanageable to address.",
+      "hint": "This verb means to keep something within limits, here suggesting a wider pattern the tribunal avoids fully addressing because it would be unmanageable."
+    },
+    {
+      "id": "RDG_CLOZETEST_L191_Q2_LEARN",
+      "level": 191,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "CONTEXTUAL SEMANTIC FIT",
+      "techniqueTitle": "Resolving Ambiguities via Broader Semantic Tone and Context",
+      "coreRule": "Read beyond the blank: trailing clauses and punctuation provide vital semantic anchors.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The essay's quiet radicalism lies in its refusal to treat objectivity and compassion as opposing virtues, insisting instead that the clearest-eyed account of suffering is very often also the most ____ one.",
+      "missingWord": "humane",
+      "correctAnswer": "humane",
+      "wordCategory": "adjective",
+      "grammarConstraint": "[adjective: fits \"the most ____ one.\"]",
+      "precedingCue": "the most",
+      "followingCue": "one.",
+      "distractorAnalysis": [
+        {
+          "word": "clinical",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "detached",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "impartial",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "humane",
+          "status": "VALID",
+          "reason": "Accurately completes \"The essay's quiet radicalism lies in its refusal to treat objectivity and compassion as opposing virtues, insisting instead that the clearest-eyed account of suffering is very often also the most ____ one.\" with precise grammatical agreement and natural collocation."
+        }
+      ],
+      "options": [
+        "clinical",
+        "detached",
+        "impartial",
+        "humane"
+      ],
+      "explanation": "'Humane' completes the essay's argument that clarity and compassion reinforce rather than undermine each other.",
+      "hint": "This adjective describes writing marked by deep concern for human wellbeing, argued here to coexist with, not oppose, clarity."
+    },
+    {
+      "id": "RDG_CLOZETEST_L191_Q3_LEARN",
+      "level": 191,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "CONTEXTUAL SEMANTIC FIT",
+      "techniqueTitle": "Resolving Ambiguities via Broader Semantic Tone and Context",
+      "coreRule": "Read beyond the blank: trailing clauses and punctuation provide vital semantic anchors.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "What the correspondence ultimately reveals is not a conspiracy, which would at least have the grim coherence of intention, but something more unsettling still: a slow, unremarkable drift into catastrophe, ____ by nobody in particular.",
+      "missingWord": "willed",
+      "correctAnswer": "willed",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"into catastrophe, ____ by nobody\"]",
+      "precedingCue": "into catastrophe,",
+      "followingCue": "by nobody",
+      "distractorAnalysis": [
+        {
+          "word": "willed",
+          "status": "VALID",
+          "reason": "Accurately completes \"What the correspondence ultimately reveals is not a conspiracy, which would at least have the grim coherence of intention, but something more unsettling still: a slow, unremarkable drift into catastrophe, ____ by nobody in particular.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "documented",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "predicted",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "publicized",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "willed",
+        "documented",
+        "predicted",
+        "publicized"
+      ],
+      "explanation": "'Willed' negates deliberate intention, matching the unsettling idea of catastrophe with no single responsible author.",
+      "hint": "This past participle means deliberately intended, negated here to contrast a conspiracy with an unplanned, diffuse failure."
+    },
+    {
+      "id": "RDG_CLOZETEST_L192_Q1_LEARN",
+      "level": 192,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "IDIOMATIC PHRASE COHESION",
+      "techniqueTitle": "Applying Idiomatic Constraints to Eliminate Subtle Distractors",
+      "coreRule": "Confirm that the substituted word preserves the sentence’s logical meaning and tone.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The court's reluctance to assign a precise dollar figure to the harm done is, on one reading, admirable caution; on another, it is simply institutional language finding a dignified way to ____ a question it has no confident answer to.",
+      "missingWord": "sidestep",
+      "correctAnswer": "sidestep",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"way to ____ a question\"]",
+      "precedingCue": "way to",
+      "followingCue": "a question",
+      "distractorAnalysis": [
+        {
+          "word": "resolve",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "confront",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "answer",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "sidestep",
+          "status": "VALID",
+          "reason": "Accurately completes \"The court's reluctance to assign a precise dollar figure to the harm done is, on one reading, admirable caution; on another, it is simply institutional language finding a dignified way to ____ a question it has no confident answer to.\" with precise grammatical agreement and natural collocation."
+        }
+      ],
+      "options": [
+        "resolve",
+        "confront",
+        "answer",
+        "sidestep"
+      ],
+      "explanation": "'Sidestep' means to avoid, offering the less charitable reading of caution as evasion dressed in dignity.",
+      "hint": "This verb means to avoid dealing with directly, here through the appearance of principled caution."
+    },
+    {
+      "id": "RDG_CLOZETEST_L192_Q2_LEARN",
+      "level": 192,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "IDIOMATIC PHRASE COHESION",
+      "techniqueTitle": "Applying Idiomatic Constraints to Eliminate Subtle Distractors",
+      "coreRule": "Confirm that the substituted word preserves the sentence’s logical meaning and tone.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The novel's late revelation lands with force precisely because the author has spent three hundred pages training the reader not to expect it — a patience that, in retrospect, looks less like restraint than like ____.",
+      "missingWord": "architecture",
+      "correctAnswer": "architecture",
+      "wordCategory": "noun",
+      "grammarConstraint": "[noun: fits \"than like ____ .\"]",
+      "precedingCue": "than like",
+      "followingCue": ".",
+      "distractorAnalysis": [
+        {
+          "word": "accident",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "architecture",
+          "status": "VALID",
+          "reason": "Accurately completes \"The novel's late revelation lands with force precisely because the author has spent three hundred pages training the reader not to expect it — a patience that, in retrospect, looks less like restraint than like ____.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "confusion",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "improvisation",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "accident",
+        "architecture",
+        "confusion",
+        "improvisation"
+      ],
+      "explanation": "'Architecture' figuratively means deliberate structural design, reframing the patience as planned craft, not restraint alone.",
+      "hint": "This noun, used figuratively, describes something carefully and deliberately structured, not left to chance."
+    },
+    {
+      "id": "RDG_CLOZETEST_L192_Q3_LEARN",
+      "level": 192,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "IDIOMATIC PHRASE COHESION",
+      "techniqueTitle": "Applying Idiomatic Constraints to Eliminate Subtle Distractors",
+      "coreRule": "Confirm that the substituted word preserves the sentence’s logical meaning and tone.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "It would flatter the institution to call what happened a failure of oversight; a more precise word might be ____, since the relevant warnings were not merely missed but actively set aside.",
+      "missingWord": "negligence",
+      "correctAnswer": "negligence",
+      "wordCategory": "noun",
+      "grammarConstraint": "[noun: fits \"might be ____ , since\"]",
+      "precedingCue": "might be",
+      "followingCue": ", since",
+      "distractorAnalysis": [
+        {
+          "word": "ignorance",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "misfortune",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "negligence",
+          "status": "VALID",
+          "reason": "Accurately completes \"It would flatter the institution to call what happened a failure of oversight; a more precise word might be ____, since the relevant warnings were not merely missed but actively set aside.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "coincidence",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "ignorance",
+        "misfortune",
+        "negligence",
+        "coincidence"
+      ],
+      "explanation": "'Negligence' implies culpable fault, matching warnings actively dismissed rather than innocently overlooked.",
+      "hint": "This noun implies a degree of fault beyond simple accident, matching warnings deliberately dismissed rather than overlooked."
+    },
+    {
+      "id": "RDG_CLOZETEST_L193_Q1_LEARN",
+      "level": 193,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "COLLOCATION & GRAMMAR FILTER",
+      "techniqueTitle": "Filtering Candidates by Surrounding Prepositions and Articles",
+      "coreRule": "Analyze preceding articles (\"a\", \"an\", \"the\") and prepositions to narrow down the syntactic class.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The biographer resists the two easiest paths available to her — hagiography and takedown — choosing instead the far harder task of letting a genuinely admirable life sit uncomfortably alongside genuinely ____ conduct, without resolving the tension for the reader.",
+      "missingWord": "indefensible",
+      "correctAnswer": "indefensible",
+      "wordCategory": "adjective",
+      "grammarConstraint": "[adjective: fits \"alongside genuinely ____ conduct, without\"]",
+      "precedingCue": "alongside genuinely",
+      "followingCue": "conduct, without",
+      "distractorAnalysis": [
+        {
+          "word": "ambiguous",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "unremarkable",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "indefensible",
+          "status": "VALID",
+          "reason": "Accurately completes \"The biographer resists the two easiest paths available to her — hagiography and takedown — choosing instead the far harder task of letting a genuinely admirable life sit uncomfortably alongside genuinely ____ conduct, without resolving the tension for the reader.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "premature",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "ambiguous",
+        "unremarkable",
+        "indefensible",
+        "premature"
+      ],
+      "explanation": "'Indefensible' contrasts sharply with 'admirable,' preserving the deliberate, unresolved moral tension the biographer wants.",
+      "hint": "This adjective means impossible to justify, contrasted directly with 'genuinely admirable' to preserve unresolved moral tension."
+    },
+    {
+      "id": "RDG_CLOZETEST_L193_Q2_LEARN",
+      "level": 193,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "COLLOCATION & GRAMMAR FILTER",
+      "techniqueTitle": "Filtering Candidates by Surrounding Prepositions and Articles",
+      "coreRule": "Analyze preceding articles (\"a\", \"an\", \"the\") and prepositions to narrow down the syntactic class.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The paper's quiet confidence is, in the end, its most persuasive quality: it makes no claim to have settled the debate, only to have narrowed, by a small but genuine margin, the space in which reasonable disagreement can still ____.",
+      "missingWord": "operate",
+      "correctAnswer": "operate",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"can still ____ .\"]",
+      "precedingCue": "can still",
+      "followingCue": ".",
+      "distractorAnalysis": [
+        {
+          "word": "originate",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "operate",
+          "status": "VALID",
+          "reason": "Accurately completes \"The paper's quiet confidence is, in the end, its most persuasive quality: it makes no claim to have settled the debate, only to have narrowed, by a small but genuine margin, the space in which reasonable disagreement can still ____.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "expire",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "publicize",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "originate",
+        "operate",
+        "expire",
+        "publicize"
+      ],
+      "explanation": "'Operate' means to function within a space, fitting a modest claim about narrowing, not eliminating, legitimate debate.",
+      "hint": "This verb means to function or exist within a defined space, here the shrinking room left for legitimate disagreement."
+    },
+    {
+      "id": "RDG_CLOZETEST_L193_Q3_LEARN",
+      "level": 193,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "COLLOCATION & GRAMMAR FILTER",
+      "techniqueTitle": "Filtering Candidates by Surrounding Prepositions and Articles",
+      "coreRule": "Analyze preceding articles (\"a\", \"an\", \"the\") and prepositions to narrow down the syntactic class.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The distinction the philosopher draws between guilt and shame is not merely academic: guilt, she argues, attaches to what one has done, while shame attaches, far more corrosively, to who one is ____ to be.",
+      "missingWord": "believed",
+      "correctAnswer": "believed",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"one is ____ to be.\"]",
+      "precedingCue": "one is",
+      "followingCue": "to be.",
+      "distractorAnalysis": [
+        {
+          "word": "believed",
+          "status": "VALID",
+          "reason": "Accurately completes \"The distinction the philosopher draws between guilt and shame is not merely academic: guilt, she argues, attaches to what one has done, while shame attaches, far more corrosively, to who one is ____ to be.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "forbidden",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "expected",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "hired",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "believed",
+        "forbidden",
+        "expected",
+        "hired"
+      ],
+      "explanation": "'Believed to be' completes the definition of shame as tied to perceived identity, not merely to actions taken.",
+      "hint": "This past participle completes a phrase about identity as perceived by oneself or others, central to the definition of shame."
+    },
+    {
+      "id": "RDG_CLOZETEST_L194_Q1_LEARN",
+      "level": 194,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PART-OF-SPEECH CONSTRAINTS",
+      "techniqueTitle": "Enforcing Exact Part-of-Speech and Inflectional Requirements",
+      "coreRule": "Examine verb tenses and plural markers in the clause to demand matching inflection.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The report's authors seem to understand, better than most of their critics, that the most dangerous failures are rarely the dramatic ones; it is the slow accumulation of small, individually defensible compromises that ____ institutions from within.",
+      "missingWord": "hollow out",
+      "correctAnswer": "hollow out",
+      "wordCategory": "phrasal verb",
+      "grammarConstraint": "[phrasal verb: fits \"compromises that ____ institutions from\"]",
+      "precedingCue": "compromises that",
+      "followingCue": "institutions from",
+      "distractorAnalysis": [
+        {
+          "word": "strengthen",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "publicize",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "restore",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "hollow out",
+          "status": "VALID",
+          "reason": "Accurately completes \"The report's authors seem to understand, better than most of their critics, that the most dangerous failures are rarely the dramatic ones; it is the slow accumulation of small, individually defensible compromises that ____ institutions from within.\" with precise grammatical agreement and natural collocation."
+        }
+      ],
+      "options": [
+        "strengthen",
+        "publicize",
+        "restore",
+        "hollow out"
+      ],
+      "explanation": "'Hollow out' means to remove substance while leaving the outer shell, matching gradual institutional decay from small compromises.",
+      "hint": "This phrasal verb means to gradually remove the substance from something while leaving its outward form intact."
+    },
+    {
+      "id": "RDG_CLOZETEST_L194_Q2_LEARN",
+      "level": 194,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PART-OF-SPEECH CONSTRAINTS",
+      "techniqueTitle": "Enforcing Exact Part-of-Speech and Inflectional Requirements",
+      "coreRule": "Examine verb tenses and plural markers in the clause to demand matching inflection.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "What the memoir refuses to offer, and what makes it so much more valuable than the genre's usual output, is the comforting fiction that the author's later wisdom somehow ____ her earlier cruelty.",
+      "missingWord": "excuses",
+      "correctAnswer": "excuses",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"wisdom somehow ____ her earlier\"]",
+      "precedingCue": "wisdom somehow",
+      "followingCue": "her earlier",
+      "distractorAnalysis": [
+        {
+          "word": "documents",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "excuses",
+          "status": "VALID",
+          "reason": "Accurately completes \"What the memoir refuses to offer, and what makes it so much more valuable than the genre's usual output, is the comforting fiction that the author's later wisdom somehow ____ her earlier cruelty.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "predicts",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "publicizes",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "documents",
+        "excuses",
+        "predicts",
+        "publicizes"
+      ],
+      "explanation": "'Excuses' means removes blame, rejected by a memoir unwilling to let later insight erase earlier wrongdoing.",
+      "hint": "This verb means to provide justification that removes blame, rejected here as too comforting a resolution."
+    },
+    {
+      "id": "RDG_CLOZETEST_L194_Q3_LEARN",
+      "level": 194,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PART-OF-SPEECH CONSTRAINTS",
+      "techniqueTitle": "Enforcing Exact Part-of-Speech and Inflectional Requirements",
+      "coreRule": "Examine verb tenses and plural markers in the clause to demand matching inflection.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The tragedy of the negotiation was not that either side acted in bad faith, but that both, trapped by the expectations of the constituencies they represented, found themselves defending positions neither privately still ____.",
+      "missingWord": "held",
+      "correctAnswer": "held",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"privately still ____ .\"]",
+      "precedingCue": "privately still",
+      "followingCue": ".",
+      "distractorAnalysis": [
+        {
+          "word": "announced",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "documented",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "held",
+          "status": "VALID",
+          "reason": "Accurately completes \"The tragedy of the negotiation was not that either side acted in bad faith, but that both, trapped by the expectations of the constituencies they represented, found themselves defending positions neither privately still ____.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "funded",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "announced",
+        "documented",
+        "held",
+        "funded"
+      ],
+      "explanation": "'Held' means genuinely believed, contrasting private doubt with the public positions both sides felt trapped defending.",
+      "hint": "This verb means to genuinely maintain a belief, contrasted here with publicly defending a position no longer truly believed."
+    },
+    {
+      "id": "RDG_CLOZETEST_L195_Q1_LEARN",
+      "level": 195,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PREPOSITIONAL COLLOCATION",
+      "techniqueTitle": "Identifying Fixed Collocations and Natural Word Pairings",
+      "coreRule": "Test collocations: native English favors specific verb-noun or adjective-noun bonds.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The essay's final, devastating move is to suggest that the question everyone has been asking — whether the policy worked — was never really the point; the far more uncomfortable question is whether anyone in power ever seriously wanted it to ____.",
+      "missingWord": "succeed",
+      "correctAnswer": "succeed",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"it to ____ .\"]",
+      "precedingCue": "it to",
+      "followingCue": ".",
+      "distractorAnalysis": [
+        {
+          "word": "succeed",
+          "status": "VALID",
+          "reason": "Accurately completes \"The essay's final, devastating move is to suggest that the question everyone has been asking — whether the policy worked — was never really the point; the far more uncomfortable question is whether anyone in power ever seriously wanted it to ____.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "expire",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "spread",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "persist",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "succeed",
+        "expire",
+        "spread",
+        "persist"
+      ],
+      "explanation": "'Succeed' echoes 'worked,' completing the essay's provocative suggestion that success was never truly the actual goal.",
+      "hint": "This verb echoes 'worked' from earlier in the sentence, forming the essay's provocative rhetorical challenge."
+    },
+    {
+      "id": "RDG_CLOZETEST_L195_Q2_LEARN",
+      "level": 195,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PREPOSITIONAL COLLOCATION",
+      "techniqueTitle": "Identifying Fixed Collocations and Natural Word Pairings",
+      "coreRule": "Test collocations: native English favors specific verb-noun or adjective-noun bonds.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "It is a mark of how thoroughly the institution has internalized its own defensiveness that even this report, ostensibly independent, reads at times less like an investigation and more like a document quietly engineered to ____ blame across as many parties as possible.",
+      "missingWord": "diffuse",
+      "correctAnswer": "diffuse",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"engineered to ____ blame across\"]",
+      "precedingCue": "engineered to",
+      "followingCue": "blame across",
+      "distractorAnalysis": [
+        {
+          "word": "concentrate",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "document",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "assign",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "diffuse",
+          "status": "VALID",
+          "reason": "Accurately completes \"It is a mark of how thoroughly the institution has internalized its own defensiveness that even this report, ostensibly independent, reads at times less like an investigation and more like a document quietly engineered to ____ blame across as many parties as possible.\" with precise grammatical agreement and natural collocation."
+        }
+      ],
+      "options": [
+        "concentrate",
+        "document",
+        "assign",
+        "diffuse"
+      ],
+      "explanation": "'Diffuse' means to spread out, matching a suspicion that the report exists to dilute, not clarify, accountability.",
+      "hint": "This verb means to spread thinly across many points, weakening the focus on any single responsible party."
+    },
+    {
+      "id": "RDG_CLOZETEST_L195_Q3_LEARN",
+      "level": 195,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PREPOSITIONAL COLLOCATION",
+      "techniqueTitle": "Identifying Fixed Collocations and Natural Word Pairings",
+      "coreRule": "Test collocations: native English favors specific verb-noun or adjective-noun bonds.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The playwright's refusal to give her most sympathetic character a single redeeming monologue is not cruelty but discipline: she trusts the audience to find their own way to compassion, rather than having it ____ to them in a closing speech.",
+      "missingWord": "delivered",
+      "correctAnswer": "delivered",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"having it ____ to them\"]",
+      "precedingCue": "having it",
+      "followingCue": "to them",
+      "distractorAnalysis": [
+        {
+          "word": "withheld",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "documented",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "delivered",
+          "status": "VALID",
+          "reason": "Accurately completes \"The playwright's refusal to give her most sympathetic character a single redeeming monologue is not cruelty but discipline: she trusts the audience to find their own way to compassion, rather than having it ____ to them in a closing speech.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "postponed",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "withheld",
+        "documented",
+        "delivered",
+        "postponed"
+      ],
+      "explanation": "'Delivered' fits the easier, avoided option of spoon-feeding compassion through a monologue rather than earning it.",
+      "hint": "This past participle describes compassion handed to the audience directly, the easier path the playwright deliberately avoids."
+    },
+    {
+      "id": "RDG_CLOZETEST_L196_Q1_LEARN",
+      "level": 196,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "SYNTACTIC HARMONY",
+      "techniqueTitle": "Harmonizing Subject-Verb-Object Syntactic Agreements",
+      "coreRule": "Distractors often fit grammatically but fail contextual logic or natural idiomatic usage.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The historian's central claim, stripped of its careful qualifications, is a simple and uncomfortable one: that the catastrophe was not merely permitted by the institutions responsible for preventing it, but was, in a meaningful sense, ____ by the very incentives those institutions had been built to reward.",
+      "missingWord": "produced",
+      "correctAnswer": "produced",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"meaningful sense, ____ by the\"]",
+      "precedingCue": "meaningful sense,",
+      "followingCue": "by the",
+      "distractorAnalysis": [
+        {
+          "word": "postponed",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "documented",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "predicted",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "produced",
+          "status": "VALID",
+          "reason": "Accurately completes \"The historian's central claim, stripped of its careful qualifications, is a simple and uncomfortable one: that the catastrophe was not merely permitted by the institutions responsible for preventing it, but was, in a meaningful sense, ____ by the very incentives those institutions had been built to reward.\" with precise grammatical agreement and natural collocation."
+        }
+      ],
+      "options": [
+        "postponed",
+        "documented",
+        "predicted",
+        "produced"
+      ],
+      "explanation": "'Produced' fits the stronger claim that flawed incentives actively caused the outcome, not simply failed to prevent it.",
+      "hint": "This verb means actively caused or generated, arguing the institutions' own incentive structures created rather than merely failed to stop the outcome."
+    },
+    {
+      "id": "RDG_CLOZETEST_L196_Q2_LEARN",
+      "level": 196,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "SYNTACTIC HARMONY",
+      "techniqueTitle": "Harmonizing Subject-Verb-Object Syntactic Agreements",
+      "coreRule": "Distractors often fit grammatically but fail contextual logic or natural idiomatic usage.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "What separates a genuinely difficult book from a merely obscure one is that the former rewards the effort it demands, while the latter mistakes the reader's confusion for a sign of its own ____.",
+      "missingWord": "depth",
+      "correctAnswer": "depth",
+      "wordCategory": "noun",
+      "grammarConstraint": "[noun: fits \"its own ____ .\"]",
+      "precedingCue": "its own",
+      "followingCue": ".",
+      "distractorAnalysis": [
+        {
+          "word": "brevity",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "depth",
+          "status": "VALID",
+          "reason": "Accurately completes \"What separates a genuinely difficult book from a merely obscure one is that the former rewards the effort it demands, while the latter mistakes the reader's confusion for a sign of its own ____.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "popularity",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "accuracy",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "brevity",
+        "depth",
+        "popularity",
+        "accuracy"
+      ],
+      "explanation": "'Depth' names the quality merely obscure writing falsely claims, mistaking confusion for genuine profundity.",
+      "hint": "This noun means intellectual profundity, ironically claimed by obscure books that merely confuse rather than genuinely challenge."
+    },
+    {
+      "id": "RDG_CLOZETEST_L196_Q3_LEARN",
+      "level": 196,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "SYNTACTIC HARMONY",
+      "techniqueTitle": "Harmonizing Subject-Verb-Object Syntactic Agreements",
+      "coreRule": "Distractors often fit grammatically but fail contextual logic or natural idiomatic usage.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The board's decision, framed publicly as a matter of principle, becomes considerably easier to understand once one notices how closely it happens to ____ with the financial interests of its largest shareholder.",
+      "missingWord": "align",
+      "correctAnswer": "align",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"happens to ____ with the\"]",
+      "precedingCue": "happens to",
+      "followingCue": "with the",
+      "distractorAnalysis": [
+        {
+          "word": "align",
+          "status": "VALID",
+          "reason": "Accurately completes \"The board's decision, framed publicly as a matter of principle, becomes considerably easier to understand once one notices how closely it happens to ____ with the financial interests of its largest shareholder.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "conflict",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "diverge",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "compete",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "align",
+        "conflict",
+        "diverge",
+        "compete"
+      ],
+      "explanation": "'Align' means to match closely, fitting a cynical reading that principle conveniently coincides with self-interest.",
+      "hint": "This verb means to match up closely with something else, here suggesting the 'principled' decision conveniently serves self-interest."
+    },
+    {
+      "id": "RDG_CLOZETEST_L197_Q1_LEARN",
+      "level": 197,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "CONTEXTUAL SEMANTIC FIT",
+      "techniqueTitle": "Resolving Ambiguities via Broader Semantic Tone and Context",
+      "coreRule": "Read beyond the blank: trailing clauses and punctuation provide vital semantic anchors.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The paper's most quietly radical suggestion is not that the prevailing model is wrong, exactly, but that its very usefulness — its capacity to generate clean, testable predictions — may have made researchers reluctant to notice how much of the messier reality it was built to ____.",
+      "missingWord": "exclude",
+      "correctAnswer": "exclude",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"built to ____ .\"]",
+      "precedingCue": "built to",
+      "followingCue": ".",
+      "distractorAnalysis": [
+        {
+          "word": "capture",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "exclude",
+          "status": "VALID",
+          "reason": "Accurately completes \"The paper's most quietly radical suggestion is not that the prevailing model is wrong, exactly, but that its very usefulness — its capacity to generate clean, testable predictions — may have made researchers reluctant to notice how much of the messier reality it was built to ____.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "document",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "simplify",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "capture",
+        "exclude",
+        "document",
+        "simplify"
+      ],
+      "explanation": "'Exclude' means to leave out, matching the critique that a useful, tidy model was built by omitting inconvenient complexity.",
+      "hint": "This verb means to leave out or omit, here suggesting a model's tidiness came at the cost of ignoring inconvenient complexity."
+    },
+    {
+      "id": "RDG_CLOZETEST_L197_Q2_LEARN",
+      "level": 197,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "CONTEXTUAL SEMANTIC FIT",
+      "techniqueTitle": "Resolving Ambiguities via Broader Semantic Tone and Context",
+      "coreRule": "Read beyond the blank: trailing clauses and punctuation provide vital semantic anchors.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "There is something almost admirable about the consistency of the spokesperson's evasions: asked six different questions over the course of the interview, she managed to return, without once repeating herself verbatim, to precisely the same ____ non-answer each time.",
+      "missingWord": "rehearsed",
+      "correctAnswer": "rehearsed",
+      "wordCategory": "adjective",
+      "grammarConstraint": "[adjective: fits \"the same ____ non-answer each\"]",
+      "precedingCue": "the same",
+      "followingCue": "non-answer each",
+      "distractorAnalysis": [
+        {
+          "word": "rehearsed",
+          "status": "VALID",
+          "reason": "Accurately completes \"There is something almost admirable about the consistency of the spokesperson's evasions: asked six different questions over the course of the interview, she managed to return, without once repeating herself verbatim, to precisely the same ____ non-answer each time.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "spontaneous",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "candid",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "improvised",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "rehearsed",
+        "spontaneous",
+        "candid",
+        "improvised"
+      ],
+      "explanation": "'Rehearsed' fits an answer clearly prepared beforehand, despite the surface variation masking its repetition.",
+      "hint": "This adjective describes an answer that has been carefully prepared in advance, despite superficial variation in wording."
+    },
+    {
+      "id": "RDG_CLOZETEST_L197_Q3_LEARN",
+      "level": 197,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "CONTEXTUAL SEMANTIC FIT",
+      "techniqueTitle": "Resolving Ambiguities via Broader Semantic Tone and Context",
+      "coreRule": "Read beyond the blank: trailing clauses and punctuation provide vital semantic anchors.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The memoir's unusual honesty extends even to its own limitations: the author acknowledges, more than once, that memory itself is an unreliable ____, and that the version of events she offers is, inevitably, a reconstruction rather than a record.",
+      "missingWord": "narrator",
+      "correctAnswer": "narrator",
+      "wordCategory": "noun",
+      "grammarConstraint": "[noun: fits \"an unreliable ____ , and\"]",
+      "precedingCue": "an unreliable",
+      "followingCue": ", and",
+      "distractorAnalysis": [
+        {
+          "word": "archive",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "witness",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "narrator",
+          "status": "VALID",
+          "reason": "Accurately completes \"The memoir's unusual honesty extends even to its own limitations: the author acknowledges, more than once, that memory itself is an unreliable ____, and that the version of events she offers is, inevitably, a reconstruction rather than a record.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "translator",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "archive",
+        "witness",
+        "narrator",
+        "translator"
+      ],
+      "explanation": "'Narrator' personifies memory as the story's teller, extending the literary concept of unreliability to memory itself.",
+      "hint": "This noun personifies memory as the entity telling the story, echoing the literary concept of an unreliable storyteller."
+    },
+    {
+      "id": "RDG_CLOZETEST_L198_Q1_LEARN",
+      "level": 198,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "IDIOMATIC PHRASE COHESION",
+      "techniqueTitle": "Applying Idiomatic Constraints to Eliminate Subtle Distractors",
+      "coreRule": "Confirm that the substituted word preserves the sentence’s logical meaning and tone.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "It would be too simple to say the institution lied; what it did, more precisely, was construct a version of events so selectively accurate that every individual statement could survive scrutiny while the overall impression it created ____ almost everything that mattered.",
+      "missingWord": "misrepresented",
+      "correctAnswer": "misrepresented",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"it created ____ almost everything\"]",
+      "precedingCue": "it created",
+      "followingCue": "almost everything",
+      "distractorAnalysis": [
+        {
+          "word": "documented",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "publicized",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "confirmed",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "misrepresented",
+          "status": "VALID",
+          "reason": "Accurately completes \"It would be too simple to say the institution lied; what it did, more precisely, was construct a version of events so selectively accurate that every individual statement could survive scrutiny while the overall impression it created ____ almost everything that mattered.\" with precise grammatical agreement and natural collocation."
+        }
+      ],
+      "options": [
+        "documented",
+        "publicized",
+        "confirmed",
+        "misrepresented"
+      ],
+      "explanation": "'Misrepresented' captures how technically true statements combined to create a fundamentally false overall impression.",
+      "hint": "This verb means to give a false or misleading impression, even while individual technically true statements remain defensible."
+    },
+    {
+      "id": "RDG_CLOZETEST_L198_Q2_LEARN",
+      "level": 198,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "IDIOMATIC PHRASE COHESION",
+      "techniqueTitle": "Applying Idiomatic Constraints to Eliminate Subtle Distractors",
+      "coreRule": "Confirm that the substituted word preserves the sentence’s logical meaning and tone.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The philosopher's late work is often dismissed as a retreat from her earlier, more combative style, but a more careful reading suggests something closer to a hard-won recognition that certain arguments are better ____ than won.",
+      "missingWord": "lived",
+      "correctAnswer": "lived",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"are better ____ than won.\"]",
+      "precedingCue": "are better",
+      "followingCue": "than won.",
+      "distractorAnalysis": [
+        {
+          "word": "published",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "translated",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "lived",
+          "status": "VALID",
+          "reason": "Accurately completes \"The philosopher's late work is often dismissed as a retreat from her earlier, more combative style, but a more careful reading suggests something closer to a hard-won recognition that certain arguments are better ____ than won.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "documented",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "published",
+        "translated",
+        "lived",
+        "documented"
+      ],
+      "explanation": "'Lived' contrasts with 'won,' suggesting some philosophical positions are better embodied than argued into submission.",
+      "hint": "This past participle contrasts intellectual victory with embodying a position through action, a subtler philosophical stance."
+    },
+    {
+      "id": "RDG_CLOZETEST_L198_Q3_LEARN",
+      "level": 198,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "IDIOMATIC PHRASE COHESION",
+      "techniqueTitle": "Applying Idiomatic Constraints to Eliminate Subtle Distractors",
+      "coreRule": "Confirm that the substituted word preserves the sentence’s logical meaning and tone.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "What the correspondence between the two scientists reveals is not simply a disagreement about data, but a far deeper and more interesting rift over what science is even ____ to accomplish in the first place.",
+      "missingWord": "meant",
+      "correctAnswer": "meant",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"is even ____ to accomplish\"]",
+      "precedingCue": "is even",
+      "followingCue": "to accomplish",
+      "distractorAnalysis": [
+        {
+          "word": "funded",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "hired",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "scheduled",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "meant",
+          "status": "VALID",
+          "reason": "Accurately completes \"What the correspondence between the two scientists reveals is not simply a disagreement about data, but a far deeper and more interesting rift over what science is even ____ to accomplish in the first place.\" with precise grammatical agreement and natural collocation."
+        }
+      ],
+      "options": [
+        "funded",
+        "hired",
+        "scheduled",
+        "meant"
+      ],
+      "explanation": "'Meant to' means intended to, framing the deeper dispute as one over science's fundamental purpose, not just its data.",
+      "hint": "This past participle, paired with 'to,' means intended or designed, framing a philosophical dispute about science's fundamental purpose."
+    },
+    {
+      "id": "RDG_CLOZETEST_L199_Q1_LEARN",
+      "level": 199,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "COLLOCATION & GRAMMAR FILTER",
+      "techniqueTitle": "Filtering Candidates by Surrounding Prepositions and Articles",
+      "coreRule": "Analyze preceding articles (\"a\", \"an\", \"the\") and prepositions to narrow down the syntactic class.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The court's ruling will likely be remembered less for its narrow legal holding than for a single, almost offhand observation buried in a footnote: that the entire legal framework under which the case was argued may itself rest on a distinction that no longer meaningfully ____.",
+      "missingWord": "applies",
+      "correctAnswer": "applies",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"longer meaningfully ____ .\"]",
+      "precedingCue": "longer meaningfully",
+      "followingCue": ".",
+      "distractorAnalysis": [
+        {
+          "word": "applies",
+          "status": "VALID",
+          "reason": "Accurately completes \"The court's ruling will likely be remembered less for its narrow legal holding than for a single, almost offhand observation buried in a footnote: that the entire legal framework under which the case was argued may itself rest on a distinction that no longer meaningfully ____.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "exists",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "circulates",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "originates",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "applies",
+        "exists",
+        "circulates",
+        "originates"
+      ],
+      "explanation": "'Applies' means remains relevant, fitting a footnote suggesting an entire legal distinction has become outdated.",
+      "hint": "This verb means to be relevant or valid in a given context, questioned here as outdated by changed circumstances."
+    },
+    {
+      "id": "RDG_CLOZETEST_L199_Q2_LEARN",
+      "level": 199,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "COLLOCATION & GRAMMAR FILTER",
+      "techniqueTitle": "Filtering Candidates by Surrounding Prepositions and Articles",
+      "coreRule": "Analyze preceding articles (\"a\", \"an\", \"the\") and prepositions to narrow down the syntactic class.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The critic's final assessment is deliberately withheld until the essay's last line, and even then it arrives hedged with enough qualification that a careless reader could be forgiven for missing that it is, in fact, a ____.",
+      "missingWord": "condemnation",
+      "correctAnswer": "condemnation",
+      "wordCategory": "noun",
+      "grammarConstraint": "[noun: fits \"fact, a ____ .\"]",
+      "precedingCue": "fact, a",
+      "followingCue": ".",
+      "distractorAnalysis": [
+        {
+          "word": "celebration",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "condemnation",
+          "status": "VALID",
+          "reason": "Accurately completes \"The critic's final assessment is deliberately withheld until the essay's last line, and even then it arrives hedged with enough qualification that a careless reader could be forgiven for missing that it is, in fact, a ____.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "summary",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "apology",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "celebration",
+        "condemnation",
+        "summary",
+        "apology"
+      ],
+      "explanation": "'Condemnation' names the harsh judgment hidden beneath careful hedging, missed by readers not paying close attention.",
+      "hint": "This noun means a strong, formal expression of disapproval, disguised here beneath layers of careful, understated qualification."
+    },
+    {
+      "id": "RDG_CLOZETEST_L199_Q3_LEARN",
+      "level": 199,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "COLLOCATION & GRAMMAR FILTER",
+      "techniqueTitle": "Filtering Candidates by Surrounding Prepositions and Articles",
+      "coreRule": "Analyze preceding articles (\"a\", \"an\", \"the\") and prepositions to narrow down the syntactic class.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "Perhaps the cruelest irony of the entire affair is that the very qualities that made the whistleblower's account so credible — its caution, its refusal to overstate, its careful hedging — were later cited by the institution as evidence that even she herself seemed ____ about her own claims.",
+      "missingWord": "uncertain",
+      "correctAnswer": "uncertain",
+      "wordCategory": "adjective",
+      "grammarConstraint": "[adjective: fits \"herself seemed ____ about her\"]",
+      "precedingCue": "herself seemed",
+      "followingCue": "about her",
+      "distractorAnalysis": [
+        {
+          "word": "confident",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "vindictive",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "uncertain",
+          "status": "VALID",
+          "reason": "Accurately completes \"Perhaps the cruelest irony of the entire affair is that the very qualities that made the whistleblower's account so credible — its caution, its refusal to overstate, its careful hedging — were later cited by the institution as evidence that even she herself seemed ____ about her own claims.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "reckless",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "confident",
+        "vindictive",
+        "uncertain",
+        "reckless"
+      ],
+      "explanation": "'Uncertain' captures the bitter irony of honest caution being twisted into evidence of doubt, undermining credibility.",
+      "hint": "This adjective describes doubt, cynically weaponized here to discredit exactly the careful honesty that should have earned trust."
+    },
+    {
+      "id": "RDG_CLOZETEST_L200_Q1_LEARN",
+      "level": 200,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PART-OF-SPEECH CONSTRAINTS",
+      "techniqueTitle": "Enforcing Exact Part-of-Speech and Inflectional Requirements",
+      "coreRule": "Examine verb tenses and plural markers in the clause to demand matching inflection.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "If there is a single lesson to be drawn from this long and often dispiriting history, it may be the simplest and hardest one: that institutions rarely fail all at once, in a single dramatic collapse, but rather ____, in a thousand small moments when someone with the power to say something chose, instead, not to.",
+      "missingWord": "erode",
+      "correctAnswer": "erode",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"but rather ____ , in\"]",
+      "precedingCue": "but rather",
+      "followingCue": ", in",
+      "distractorAnalysis": [
+        {
+          "word": "flourish",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "expand",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "recover",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "erode",
+          "status": "VALID",
+          "reason": "Accurately completes \"If there is a single lesson to be drawn from this long and often dispiriting history, it may be the simplest and hardest one: that institutions rarely fail all at once, in a single dramatic collapse, but rather ____, in a thousand small moments when someone with the power to say something chose, instead, not to.\" with precise grammatical agreement and natural collocation."
+        }
+      ],
+      "options": [
+        "flourish",
+        "expand",
+        "recover",
+        "erode"
+      ],
+      "explanation": "'Erode' captures gradual decay through countless small failures, the essay's final, hard-won thesis about institutional collapse.",
+      "hint": "This verb means to wear away gradually over time, matching the essay's closing argument about slow institutional decay through countless small silences."
+    },
+    {
+      "id": "RDG_CLOZETEST_L200_Q2_LEARN",
+      "level": 200,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PART-OF-SPEECH CONSTRAINTS",
+      "techniqueTitle": "Enforcing Exact Part-of-Speech and Inflectional Requirements",
+      "coreRule": "Examine verb tenses and plural markers in the clause to demand matching inflection.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "What makes the final chapter so quietly devastating is not any new revelation, but the accumulated weight of everything that came before it, arriving all at once in a single, unadorned sentence that the author, uncharacteristically, allows to stand entirely ____ commentary.",
+      "missingWord": "without",
+      "correctAnswer": "without",
+      "wordCategory": "preposition",
+      "grammarConstraint": "[preposition: fits \"stand entirely ____ commentary.\"]",
+      "precedingCue": "stand entirely",
+      "followingCue": "commentary.",
+      "distractorAnalysis": [
+        {
+          "word": "despite",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "without",
+          "status": "VALID",
+          "reason": "Accurately completes \"What makes the final chapter so quietly devastating is not any new revelation, but the accumulated weight of everything that came before it, arriving all at once in a single, unadorned sentence that the author, uncharacteristically, allows to stand entirely ____ commentary.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "beyond",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "beneath",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "despite",
+        "without",
+        "beyond",
+        "beneath"
+      ],
+      "explanation": "'Without commentary' means left unexplained, matching a rare moment where the usually analytical author lets a fact speak for itself.",
+      "hint": "This preposition shows the sentence is left alone, unexplained by the author's usual interpretive voice."
+    },
+    {
+      "id": "RDG_CLOZETEST_L200_Q3_LEARN",
+      "level": 200,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PART-OF-SPEECH CONSTRAINTS",
+      "techniqueTitle": "Enforcing Exact Part-of-Speech and Inflectional Requirements",
+      "coreRule": "Examine verb tenses and plural markers in the clause to demand matching inflection.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "In the end, the book does not ask to be agreed with so much as it asks to be sat with — its author seemingly less interested in winning the reader over than in ensuring that whatever conclusion the reader eventually reaches has been genuinely ____, rather than simply inherited.",
+      "missingWord": "earned",
+      "correctAnswer": "earned",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"been genuinely ____ , rather\"]",
+      "precedingCue": "been genuinely",
+      "followingCue": ", rather",
+      "distractorAnalysis": [
+        {
+          "word": "earned",
+          "status": "VALID",
+          "reason": "Accurately completes \"In the end, the book does not ask to be agreed with so much as it asks to be sat with — its author seemingly less interested in winning the reader over than in ensuring that whatever conclusion the reader eventually reaches has been genuinely ____, rather than simply inherited.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "announced",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "assumed",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "predicted",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "earned",
+        "announced",
+        "assumed",
+        "predicted"
+      ],
+      "explanation": "'Earned' contrasts with 'inherited,' completing the book's final demand that readers think for themselves rather than absorb ready-made conclusions.",
+      "hint": "This past participle means arrived at through real effort and thought, contrasted with a belief passively received from someone else."
+    }
+  ]
+}

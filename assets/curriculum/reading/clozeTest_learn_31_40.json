@@ -1,0 +1,1418 @@
+{
+  "gameType": "clozeTest",
+  "phase": "learn",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "quests": [
+    {
+      "id": "RDG_CLOZETEST_L31_Q1_LEARN",
+      "level": 31,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "COLLOCATION & GRAMMAR FILTER",
+      "techniqueTitle": "Filtering Candidates by Surrounding Prepositions and Articles",
+      "coreRule": "Analyze preceding articles (\"a\", \"an\", \"the\") and prepositions to narrow down the syntactic class.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "First, chop the onions; ____, add them to the hot oil.",
+      "missingWord": "then",
+      "correctAnswer": "then",
+      "wordCategory": "adverb",
+      "grammarConstraint": "[adverb: fits \"the onions; ____ , add\"]",
+      "precedingCue": "the onions;",
+      "followingCue": ", add",
+      "distractorAnalysis": [
+        {
+          "word": "meanwhile",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "then",
+          "status": "VALID",
+          "reason": "Accurately completes \"First, chop the onions; ____, add them to the hot oil.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "otherwise",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "therefore",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "meanwhile",
+        "then",
+        "otherwise",
+        "therefore"
+      ],
+      "explanation": "'Then' signals the next step in a sequence of instructions.",
+      "hint": "This word shows the next step in a sequence."
+    },
+    {
+      "id": "RDG_CLOZETEST_L31_Q2_LEARN",
+      "level": 31,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "COLLOCATION & GRAMMAR FILTER",
+      "techniqueTitle": "Filtering Candidates by Surrounding Prepositions and Articles",
+      "coreRule": "Analyze preceding articles (\"a\", \"an\", \"the\") and prepositions to narrow down the syntactic class.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The road was closed for repairs, ____ we took a different route to work.",
+      "missingWord": "so",
+      "correctAnswer": "so",
+      "wordCategory": "conjunction",
+      "grammarConstraint": "[conjunction: fits \"for repairs, ____ we took\"]",
+      "precedingCue": "for repairs,",
+      "followingCue": "we took",
+      "distractorAnalysis": [
+        {
+          "word": "yet",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "because",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "unless",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "so",
+          "status": "VALID",
+          "reason": "Accurately completes \"The road was closed for repairs, ____ we took a different route to work.\" with precise grammatical agreement and natural collocation."
+        }
+      ],
+      "options": [
+        "yet",
+        "because",
+        "unless",
+        "so"
+      ],
+      "explanation": "'So' introduces a result — the closure caused them to take another route.",
+      "hint": "This word introduces the result of the closed road."
+    },
+    {
+      "id": "RDG_CLOZETEST_L31_Q3_LEARN",
+      "level": 31,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "COLLOCATION & GRAMMAR FILTER",
+      "techniqueTitle": "Filtering Candidates by Surrounding Prepositions and Articles",
+      "coreRule": "Analyze preceding articles (\"a\", \"an\", \"the\") and prepositions to narrow down the syntactic class.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "She practiced the piano every day, and ____ she improved quickly.",
+      "missingWord": "as a result",
+      "correctAnswer": "as a result",
+      "wordCategory": "adverb",
+      "grammarConstraint": "[adverb: fits \"day, and ____ she improved\"]",
+      "precedingCue": "day, and",
+      "followingCue": "she improved",
+      "distractorAnalysis": [
+        {
+          "word": "in case",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "on the other hand",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "for instance",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "as a result",
+          "status": "VALID",
+          "reason": "Accurately completes \"She practiced the piano every day, and ____ she improved quickly.\" with precise grammatical agreement and natural collocation."
+        }
+      ],
+      "options": [
+        "in case",
+        "on the other hand",
+        "for instance",
+        "as a result"
+      ],
+      "explanation": "'As a result' links daily practice (cause) with quick improvement (effect).",
+      "hint": "This phrase links a cause with its outcome."
+    },
+    {
+      "id": "RDG_CLOZETEST_L32_Q1_LEARN",
+      "level": 32,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PART-OF-SPEECH CONSTRAINTS",
+      "techniqueTitle": "Enforcing Exact Part-of-Speech and Inflectional Requirements",
+      "coreRule": "Examine verb tenses and plural markers in the clause to demand matching inflection.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "I was cooking dinner when the phone suddenly ____.",
+      "missingWord": "rang",
+      "correctAnswer": "rang",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"phone suddenly ____ .\"]",
+      "precedingCue": "phone suddenly",
+      "followingCue": ".",
+      "distractorAnalysis": [
+        {
+          "word": "was ringing",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "rings",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "rang",
+          "status": "VALID",
+          "reason": "Accurately completes \"I was cooking dinner when the phone suddenly ____.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "had rung",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "was ringing",
+        "rings",
+        "rang",
+        "had rung"
+      ],
+      "explanation": "A sudden interrupting event uses the simple past 'rang,' against the ongoing 'was cooking.'",
+      "hint": "This interrupts an ongoing past action, so it needs the simple past."
+    },
+    {
+      "id": "RDG_CLOZETEST_L32_Q2_LEARN",
+      "level": 32,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PART-OF-SPEECH CONSTRAINTS",
+      "techniqueTitle": "Enforcing Exact Part-of-Speech and Inflectional Requirements",
+      "coreRule": "Examine verb tenses and plural markers in the clause to demand matching inflection.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "By the time we reached the station, the train had already ____.",
+      "missingWord": "left",
+      "correctAnswer": "left",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"had already ____ .\"]",
+      "precedingCue": "had already",
+      "followingCue": ".",
+      "distractorAnalysis": [
+        {
+          "word": "leaves",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "left",
+          "status": "VALID",
+          "reason": "Accurately completes \"By the time we reached the station, the train had already ____.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "was leaving",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "leave",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "leaves",
+        "left",
+        "was leaving",
+        "leave"
+      ],
+      "explanation": "'Had already left' shows an action completed before another past action, requiring past perfect.",
+      "hint": "One past action finished before another — this needs the past perfect."
+    },
+    {
+      "id": "RDG_CLOZETEST_L32_Q3_LEARN",
+      "level": 32,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PART-OF-SPEECH CONSTRAINTS",
+      "techniqueTitle": "Enforcing Exact Part-of-Speech and Inflectional Requirements",
+      "coreRule": "Examine verb tenses and plural markers in the clause to demand matching inflection.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "Right now, the technicians ____ the server, so the website may be slow.",
+      "missingWord": "are updating",
+      "correctAnswer": "are updating",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"the technicians ____ the server,\"]",
+      "precedingCue": "the technicians",
+      "followingCue": "the server,",
+      "distractorAnalysis": [
+        {
+          "word": "are updating",
+          "status": "VALID",
+          "reason": "Accurately completes \"Right now, the technicians ____ the server, so the website may be slow.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "update",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "updated",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "had updated",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "are updating",
+        "update",
+        "updated",
+        "had updated"
+      ],
+      "explanation": "'Are updating' shows an ongoing action right now, matching 'right now' and present effects.",
+      "hint": "This describes an action happening at this exact moment."
+    },
+    {
+      "id": "RDG_CLOZETEST_L33_Q1_LEARN",
+      "level": 33,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PREPOSITIONAL COLLOCATION",
+      "techniqueTitle": "Identifying Fixed Collocations and Natural Word Pairings",
+      "coreRule": "Test collocations: native English favors specific verb-noun or adjective-noun bonds.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The children are ____ excited about the trip than their parents are.",
+      "missingWord": "far more",
+      "correctAnswer": "far more",
+      "wordCategory": "adverb",
+      "grammarConstraint": "[adverb: fits \"children are ____ excited about\"]",
+      "precedingCue": "children are",
+      "followingCue": "excited about",
+      "distractorAnalysis": [
+        {
+          "word": "quite less",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "far more",
+          "status": "VALID",
+          "reason": "Accurately completes \"The children are ____ excited about the trip than their parents are.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "rather fewer",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "very little",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "quite less",
+        "far more",
+        "rather fewer",
+        "very little"
+      ],
+      "explanation": "'Far more' intensifies a comparative, showing a strong difference between the two groups.",
+      "hint": "This phrase strongly emphasizes a comparison."
+    },
+    {
+      "id": "RDG_CLOZETEST_L33_Q2_LEARN",
+      "level": 33,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PREPOSITIONAL COLLOCATION",
+      "techniqueTitle": "Identifying Fixed Collocations and Natural Word Pairings",
+      "coreRule": "Test collocations: native English favors specific verb-noun or adjective-noun bonds.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "This laptop is nowhere near as ____ as the one I had last year.",
+      "missingWord": "reliable",
+      "correctAnswer": "reliable",
+      "wordCategory": "adjective",
+      "grammarConstraint": "[adjective: fits \"near as ____ as the\"]",
+      "precedingCue": "near as",
+      "followingCue": "as the",
+      "distractorAnalysis": [
+        {
+          "word": "reliable",
+          "status": "VALID",
+          "reason": "Accurately completes \"This laptop is nowhere near as ____ as the one I had last year.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "assumed",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "delayed",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "isolated",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "reliable",
+        "assumed",
+        "delayed",
+        "isolated"
+      ],
+      "explanation": "'Reliable' describes consistent, trustworthy performance, fitting a comparison between laptops.",
+      "hint": "This adjective describes something you can trust to work consistently."
+    },
+    {
+      "id": "RDG_CLOZETEST_L33_Q3_LEARN",
+      "level": 33,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PREPOSITIONAL COLLOCATION",
+      "techniqueTitle": "Identifying Fixed Collocations and Natural Word Pairings",
+      "coreRule": "Test collocations: native English favors specific verb-noun or adjective-noun bonds.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "Of all the applicants, she had by ____ the most relevant experience.",
+      "missingWord": "far",
+      "correctAnswer": "far",
+      "wordCategory": "adverb",
+      "grammarConstraint": "[adverb: fits \"had by ____ the most\"]",
+      "precedingCue": "had by",
+      "followingCue": "the most",
+      "distractorAnalysis": [
+        {
+          "word": "much",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "very",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "quite",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "far",
+          "status": "VALID",
+          "reason": "Accurately completes \"Of all the applicants, she had by ____ the most relevant experience.\" with precise grammatical agreement and natural collocation."
+        }
+      ],
+      "options": [
+        "much",
+        "very",
+        "quite",
+        "far"
+      ],
+      "explanation": "'By far' intensifies a superlative, showing she stood clearly above all applicants.",
+      "hint": "This word intensifies a superlative comparison among many people."
+    },
+    {
+      "id": "RDG_CLOZETEST_L34_Q1_LEARN",
+      "level": 34,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "SYNTACTIC HARMONY",
+      "techniqueTitle": "Harmonizing Subject-Verb-Object Syntactic Agreements",
+      "coreRule": "Distractors often fit grammatically but fail contextual logic or natural idiomatic usage.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The garden needs watering twice a week ____ the weather is unusually cool.",
+      "missingWord": "unless",
+      "correctAnswer": "unless",
+      "wordCategory": "conjunction",
+      "grammarConstraint": "[conjunction: fits \"a week ____ the weather\"]",
+      "precedingCue": "a week",
+      "followingCue": "the weather",
+      "distractorAnalysis": [
+        {
+          "word": "so that",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "in order to",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "unless",
+          "status": "VALID",
+          "reason": "Accurately completes \"The garden needs watering twice a week ____ the weather is unusually cool.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "as long as",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "so that",
+        "in order to",
+        "unless",
+        "as long as"
+      ],
+      "explanation": "'Unless' introduces an exception — watering stops being needed only if it's cool.",
+      "hint": "This word introduces an exception to the usual rule."
+    },
+    {
+      "id": "RDG_CLOZETEST_L34_Q2_LEARN",
+      "level": 34,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "SYNTACTIC HARMONY",
+      "techniqueTitle": "Harmonizing Subject-Verb-Object Syntactic Agreements",
+      "coreRule": "Distractors often fit grammatically but fail contextual logic or natural idiomatic usage.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "We left extra early ____ we wouldn't get stuck in traffic.",
+      "missingWord": "so that",
+      "correctAnswer": "so that",
+      "wordCategory": "conjunction",
+      "grammarConstraint": "[conjunction: fits \"extra early ____ we wouldn't\"]",
+      "precedingCue": "extra early",
+      "followingCue": "we wouldn't",
+      "distractorAnalysis": [
+        {
+          "word": "so that",
+          "status": "VALID",
+          "reason": "Accurately completes \"We left extra early ____ we wouldn't get stuck in traffic.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "unless",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "even though",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "in spite of",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "so that",
+        "unless",
+        "even though",
+        "in spite of"
+      ],
+      "explanation": "'So that' introduces purpose — leaving early in order to avoid traffic.",
+      "hint": "This phrase introduces the purpose behind an earlier action."
+    },
+    {
+      "id": "RDG_CLOZETEST_L34_Q3_LEARN",
+      "level": 34,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "SYNTACTIC HARMONY",
+      "techniqueTitle": "Harmonizing Subject-Verb-Object Syntactic Agreements",
+      "coreRule": "Distractors often fit grammatically but fail contextual logic or natural idiomatic usage.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "____ the heavy rain, the outdoor concert went ahead as planned.",
+      "missingWord": "Despite",
+      "correctAnswer": "Despite",
+      "wordCategory": "preposition",
+      "grammarConstraint": "[preposition: fits \" ____ the heavy\"]",
+      "precedingCue": "",
+      "followingCue": "the heavy",
+      "distractorAnalysis": [
+        {
+          "word": "Because of",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "Despite",
+          "status": "VALID",
+          "reason": "Accurately completes \"____ the heavy rain, the outdoor concert went ahead as planned.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "Due to",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "Owing to",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "Because of",
+        "Despite",
+        "Due to",
+        "Owing to"
+      ],
+      "explanation": "'Despite' shows a contrast between the rain and the concert still happening.",
+      "hint": "This word shows the concert happened even though there was a reason to cancel it."
+    },
+    {
+      "id": "RDG_CLOZETEST_L35_Q1_LEARN",
+      "level": 35,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "CONTEXTUAL SEMANTIC FIT",
+      "techniqueTitle": "Resolving Ambiguities via Broader Semantic Tone and Context",
+      "coreRule": "Read beyond the blank: trailing clauses and punctuation provide vital semantic anchors.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The teacher divided the class ____ four groups for the project.",
+      "missingWord": "into",
+      "correctAnswer": "into",
+      "wordCategory": "preposition",
+      "grammarConstraint": "[preposition: fits \"the class ____ four groups\"]",
+      "precedingCue": "the class",
+      "followingCue": "four groups",
+      "distractorAnalysis": [
+        {
+          "word": "among",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "between",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "into",
+          "status": "VALID",
+          "reason": "Accurately completes \"The teacher divided the class ____ four groups for the project.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "within",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "among",
+        "between",
+        "into",
+        "within"
+      ],
+      "explanation": "'Divide into' is the correct pairing for splitting a group into smaller parts.",
+      "hint": "This preposition shows a whole being separated into new parts."
+    },
+    {
+      "id": "RDG_CLOZETEST_L35_Q2_LEARN",
+      "level": 35,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "CONTEXTUAL SEMANTIC FIT",
+      "techniqueTitle": "Resolving Ambiguities via Broader Semantic Tone and Context",
+      "coreRule": "Read beyond the blank: trailing clauses and punctuation provide vital semantic anchors.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The prize will be shared equally ____ the top three finishers.",
+      "missingWord": "among",
+      "correctAnswer": "among",
+      "wordCategory": "preposition",
+      "grammarConstraint": "[preposition: fits \"shared equally ____ the top\"]",
+      "precedingCue": "shared equally",
+      "followingCue": "the top",
+      "distractorAnalysis": [
+        {
+          "word": "between",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "into",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "within",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "among",
+          "status": "VALID",
+          "reason": "Accurately completes \"The prize will be shared equally ____ the top three finishers.\" with precise grammatical agreement and natural collocation."
+        }
+      ],
+      "options": [
+        "between",
+        "into",
+        "within",
+        "among"
+      ],
+      "explanation": "'Among' is used for three or more people, unlike 'between,' which is for two.",
+      "hint": "This preposition is used for sharing something between three or more people."
+    },
+    {
+      "id": "RDG_CLOZETEST_L35_Q3_LEARN",
+      "level": 35,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "CONTEXTUAL SEMANTIC FIT",
+      "techniqueTitle": "Resolving Ambiguities via Broader Semantic Tone and Context",
+      "coreRule": "Read beyond the blank: trailing clauses and punctuation provide vital semantic anchors.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The negotiation was ultimately ____ both companies, though talks were slow.",
+      "missingWord": "between",
+      "correctAnswer": "between",
+      "wordCategory": "preposition",
+      "grammarConstraint": "[preposition: fits \"was ultimately ____ both companies,\"]",
+      "precedingCue": "was ultimately",
+      "followingCue": "both companies,",
+      "distractorAnalysis": [
+        {
+          "word": "among",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "into",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "within",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "between",
+          "status": "VALID",
+          "reason": "Accurately completes \"The negotiation was ultimately ____ both companies, though talks were slow.\" with precise grammatical agreement and natural collocation."
+        }
+      ],
+      "options": [
+        "among",
+        "into",
+        "within",
+        "between"
+      ],
+      "explanation": "'Between' is correct for exactly two parties, here the two companies.",
+      "hint": "This preposition is used when exactly two parties are involved."
+    },
+    {
+      "id": "RDG_CLOZETEST_L36_Q1_LEARN",
+      "level": 36,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "IDIOMATIC PHRASE COHESION",
+      "techniqueTitle": "Applying Idiomatic Constraints to Eliminate Subtle Distractors",
+      "coreRule": "Confirm that the substituted word preserves the sentence’s logical meaning and tone.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The instructor demonstrated the technique slowly so that everyone could ____ along.",
+      "missingWord": "follow",
+      "correctAnswer": "follow",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"everyone could ____ along.\"]",
+      "precedingCue": "everyone could",
+      "followingCue": "along.",
+      "distractorAnalysis": [
+        {
+          "word": "listen",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "watch",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "follow",
+          "status": "VALID",
+          "reason": "Accurately completes \"The instructor demonstrated the technique slowly so that everyone could ____ along.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "practice",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "listen",
+        "watch",
+        "follow",
+        "practice"
+      ],
+      "explanation": "'Follow along' means to copy each step in order, matching a slow demonstration.",
+      "hint": "This verb means to do the same actions as someone else, step by step."
+    },
+    {
+      "id": "RDG_CLOZETEST_L36_Q2_LEARN",
+      "level": 36,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "IDIOMATIC PHRASE COHESION",
+      "techniqueTitle": "Applying Idiomatic Constraints to Eliminate Subtle Distractors",
+      "coreRule": "Confirm that the substituted word preserves the sentence’s logical meaning and tone.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The two designs look similar at first, but they differ ____ in price.",
+      "missingWord": "significantly",
+      "correctAnswer": "significantly",
+      "wordCategory": "adverb",
+      "grammarConstraint": "[adverb: fits \"they differ ____ in price.\"]",
+      "precedingCue": "they differ",
+      "followingCue": "in price.",
+      "distractorAnalysis": [
+        {
+          "word": "significantly",
+          "status": "VALID",
+          "reason": "Accurately completes \"The two designs look similar at first, but they differ ____ in price.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "marginally",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "superficially",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "occasionally",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "significantly",
+        "marginally",
+        "superficially",
+        "occasionally"
+      ],
+      "explanation": "'Significantly' shows a large, noticeable difference, fitting the contrast in price.",
+      "hint": "This adverb shows the difference is large, not small."
+    },
+    {
+      "id": "RDG_CLOZETEST_L36_Q3_LEARN",
+      "level": 36,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "IDIOMATIC PHRASE COHESION",
+      "techniqueTitle": "Applying Idiomatic Constraints to Eliminate Subtle Distractors",
+      "coreRule": "Confirm that the substituted word preserves the sentence’s logical meaning and tone.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The café changed its opening hours to ____ commuters during rush hour.",
+      "missingWord": "accommodate",
+      "correctAnswer": "accommodate",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"hours to ____ commuters during\"]",
+      "precedingCue": "hours to",
+      "followingCue": "commuters during",
+      "distractorAnalysis": [
+        {
+          "word": "avoid",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "accommodate",
+          "status": "VALID",
+          "reason": "Accurately completes \"The café changed its opening hours to ____ commuters during rush hour.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "limit",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "discourage",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "avoid",
+        "accommodate",
+        "limit",
+        "discourage"
+      ],
+      "explanation": "'Accommodate' means to adjust for someone's needs, fitting commuter schedules.",
+      "hint": "This verb means to adjust something to meet people's needs."
+    },
+    {
+      "id": "RDG_CLOZETEST_L37_Q1_LEARN",
+      "level": 37,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "COLLOCATION & GRAMMAR FILTER",
+      "techniqueTitle": "Filtering Candidates by Surrounding Prepositions and Articles",
+      "coreRule": "Analyze preceding articles (\"a\", \"an\", \"the\") and prepositions to narrow down the syntactic class.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The results were surprising, ____ the team had predicted a very different outcome.",
+      "missingWord": "since",
+      "correctAnswer": "since",
+      "wordCategory": "conjunction",
+      "grammarConstraint": "[conjunction: fits \"were surprising, ____ the team\"]",
+      "precedingCue": "were surprising,",
+      "followingCue": "the team",
+      "distractorAnalysis": [
+        {
+          "word": "though",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "provided that",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "given that",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "since",
+          "status": "VALID",
+          "reason": "Accurately completes \"The results were surprising, ____ the team had predicted a very different outcome.\" with precise grammatical agreement and natural collocation."
+        }
+      ],
+      "options": [
+        "though",
+        "provided that",
+        "given that",
+        "since"
+      ],
+      "explanation": "'Since' here gives a reason — the prediction differed, making the result surprising.",
+      "hint": "This word gives the reason the result felt surprising."
+    },
+    {
+      "id": "RDG_CLOZETEST_L37_Q2_LEARN",
+      "level": 37,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "COLLOCATION & GRAMMAR FILTER",
+      "techniqueTitle": "Filtering Candidates by Surrounding Prepositions and Articles",
+      "coreRule": "Analyze preceding articles (\"a\", \"an\", \"the\") and prepositions to narrow down the syntactic class.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "Sales in the north region grew steadily, ____ the south saw a slight drop.",
+      "missingWord": "whereas",
+      "correctAnswer": "whereas",
+      "wordCategory": "conjunction",
+      "grammarConstraint": "[conjunction: fits \"grew steadily, ____ the south\"]",
+      "precedingCue": "grew steadily,",
+      "followingCue": "the south",
+      "distractorAnalysis": [
+        {
+          "word": "because",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "since",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "whereas",
+          "status": "VALID",
+          "reason": "Accurately completes \"Sales in the north region grew steadily, ____ the south saw a slight drop.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "so that",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "because",
+        "since",
+        "whereas",
+        "so that"
+      ],
+      "explanation": "'Whereas' introduces a contrast between two situations, here two regions' sales.",
+      "hint": "This word contrasts two different regional results."
+    },
+    {
+      "id": "RDG_CLOZETEST_L37_Q3_LEARN",
+      "level": 37,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "COLLOCATION & GRAMMAR FILTER",
+      "techniqueTitle": "Filtering Candidates by Surrounding Prepositions and Articles",
+      "coreRule": "Analyze preceding articles (\"a\", \"an\", \"the\") and prepositions to narrow down the syntactic class.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The plan looked simple on paper; ____, putting it into practice took months.",
+      "missingWord": "however",
+      "correctAnswer": "however",
+      "wordCategory": "adverb",
+      "grammarConstraint": "[adverb: fits \"on paper; ____ , putting\"]",
+      "precedingCue": "on paper;",
+      "followingCue": ", putting",
+      "distractorAnalysis": [
+        {
+          "word": "moreover",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "however",
+          "status": "VALID",
+          "reason": "Accurately completes \"The plan looked simple on paper; ____, putting it into practice took months.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "consequently",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "similarly",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "moreover",
+        "however",
+        "consequently",
+        "similarly"
+      ],
+      "explanation": "'However' contrasts the simple plan with the difficult, lengthy practice.",
+      "hint": "This connector introduces a contrast with the previous sentence."
+    },
+    {
+      "id": "RDG_CLOZETEST_L38_Q1_LEARN",
+      "level": 38,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PART-OF-SPEECH CONSTRAINTS",
+      "techniqueTitle": "Enforcing Exact Part-of-Speech and Inflectional Requirements",
+      "coreRule": "Examine verb tenses and plural markers in the clause to demand matching inflection.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The conference organizers ____ postponed the event due to low registration.",
+      "missingWord": "reluctantly",
+      "correctAnswer": "reluctantly",
+      "wordCategory": "adverb",
+      "grammarConstraint": "[adverb: fits \"conference organizers ____ postponed the\"]",
+      "precedingCue": "conference organizers",
+      "followingCue": "postponed the",
+      "distractorAnalysis": [
+        {
+          "word": "reluctantly",
+          "status": "VALID",
+          "reason": "Accurately completes \"The conference organizers ____ postponed the event due to low registration.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "abruptly",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "publicly",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "indefinitely",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "reluctantly",
+        "abruptly",
+        "publicly",
+        "indefinitely"
+      ],
+      "explanation": "'Reluctantly' shows the decision was unwelcome, fitting a forced postponement.",
+      "hint": "This adverb shows the decision was made unwillingly."
+    },
+    {
+      "id": "RDG_CLOZETEST_L38_Q2_LEARN",
+      "level": 38,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PART-OF-SPEECH CONSTRAINTS",
+      "techniqueTitle": "Enforcing Exact Part-of-Speech and Inflectional Requirements",
+      "coreRule": "Examine verb tenses and plural markers in the clause to demand matching inflection.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The committee will ____ the proposal further before making a final decision.",
+      "missingWord": "review",
+      "correctAnswer": "review",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"committee will ____ the proposal\"]",
+      "precedingCue": "committee will",
+      "followingCue": "the proposal",
+      "distractorAnalysis": [
+        {
+          "word": "review",
+          "status": "VALID",
+          "reason": "Accurately completes \"The committee will ____ the proposal further before making a final decision.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "approve",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "reject",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "publish",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "review",
+        "approve",
+        "reject",
+        "publish"
+      ],
+      "explanation": "'Review' means to examine again, fitting a decision-making process.",
+      "hint": "This verb means to examine something carefully again."
+    },
+    {
+      "id": "RDG_CLOZETEST_L38_Q3_LEARN",
+      "level": 38,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PART-OF-SPEECH CONSTRAINTS",
+      "techniqueTitle": "Enforcing Exact Part-of-Speech and Inflectional Requirements",
+      "coreRule": "Examine verb tenses and plural markers in the clause to demand matching inflection.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "Employees who work night shifts receive a small ____ in their monthly pay.",
+      "missingWord": "bonus",
+      "correctAnswer": "bonus",
+      "wordCategory": "noun",
+      "grammarConstraint": "[noun: fits \"a small ____ in their\"]",
+      "precedingCue": "a small",
+      "followingCue": "in their",
+      "distractorAnalysis": [
+        {
+          "word": "deduction",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "penalty",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "refund",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "bonus",
+          "status": "VALID",
+          "reason": "Accurately completes \"Employees who work night shifts receive a small ____ in their monthly pay.\" with precise grammatical agreement and natural collocation."
+        }
+      ],
+      "options": [
+        "deduction",
+        "penalty",
+        "refund",
+        "bonus"
+      ],
+      "explanation": "A 'bonus' is extra pay, matching compensation for working night shifts.",
+      "hint": "This noun names extra money added to a normal salary."
+    },
+    {
+      "id": "RDG_CLOZETEST_L39_Q1_LEARN",
+      "level": 39,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PREPOSITIONAL COLLOCATION",
+      "techniqueTitle": "Identifying Fixed Collocations and Natural Word Pairings",
+      "coreRule": "Test collocations: native English favors specific verb-noun or adjective-noun bonds.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The volunteers worked tirelessly, ____ never once complaining about the long hours.",
+      "missingWord": "yet",
+      "correctAnswer": "yet",
+      "wordCategory": "conjunction",
+      "grammarConstraint": "[conjunction: fits \"worked tirelessly, ____ never once\"]",
+      "precedingCue": "worked tirelessly,",
+      "followingCue": "never once",
+      "distractorAnalysis": [
+        {
+          "word": "so",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "yet",
+          "status": "VALID",
+          "reason": "Accurately completes \"The volunteers worked tirelessly, ____ never once complaining about the long hours.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "for",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "nor",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "so",
+        "yet",
+        "for",
+        "nor"
+      ],
+      "explanation": "'Yet' introduces a contrast — hard work without complaint, which is notable.",
+      "hint": "This word introduces a surprising contrast about their behavior."
+    },
+    {
+      "id": "RDG_CLOZETEST_L39_Q2_LEARN",
+      "level": 39,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PREPOSITIONAL COLLOCATION",
+      "techniqueTitle": "Identifying Fixed Collocations and Natural Word Pairings",
+      "coreRule": "Test collocations: native English favors specific verb-noun or adjective-noun bonds.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The bridge remained closed ____ engineers completed a full safety inspection.",
+      "missingWord": "until",
+      "correctAnswer": "until",
+      "wordCategory": "conjunction",
+      "grammarConstraint": "[conjunction: fits \"remained closed ____ engineers completed\"]",
+      "precedingCue": "remained closed",
+      "followingCue": "engineers completed",
+      "distractorAnalysis": [
+        {
+          "word": "unless",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "once",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "until",
+          "status": "VALID",
+          "reason": "Accurately completes \"The bridge remained closed ____ engineers completed a full safety inspection.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "before",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "unless",
+        "once",
+        "until",
+        "before"
+      ],
+      "explanation": "'Until' shows the closure continued up to the inspection's completion.",
+      "hint": "This word shows the closure lasted up to a specific point."
+    },
+    {
+      "id": "RDG_CLOZETEST_L39_Q3_LEARN",
+      "level": 39,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "PREPOSITIONAL COLLOCATION",
+      "techniqueTitle": "Identifying Fixed Collocations and Natural Word Pairings",
+      "coreRule": "Test collocations: native English favors specific verb-noun or adjective-noun bonds.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The charity relies almost entirely ____ public donations to fund its programs.",
+      "missingWord": "on",
+      "correctAnswer": "on",
+      "wordCategory": "preposition",
+      "grammarConstraint": "[preposition: fits \"almost entirely ____ public donations\"]",
+      "precedingCue": "almost entirely",
+      "followingCue": "public donations",
+      "distractorAnalysis": [
+        {
+          "word": "in",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "toward",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "on",
+          "status": "VALID",
+          "reason": "Accurately completes \"The charity relies almost entirely ____ public donations to fund its programs.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "for",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "in",
+        "toward",
+        "on",
+        "for"
+      ],
+      "explanation": "'Rely on' is the fixed collocation showing dependence on donations.",
+      "hint": "This preposition follows 'rely' to show dependence."
+    },
+    {
+      "id": "RDG_CLOZETEST_L40_Q1_LEARN",
+      "level": 40,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "SYNTACTIC HARMONY",
+      "techniqueTitle": "Harmonizing Subject-Verb-Object Syntactic Agreements",
+      "coreRule": "Distractors often fit grammatically but fail contextual logic or natural idiomatic usage.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The survey, which included over a thousand responses, ____ several unexpected trends.",
+      "missingWord": "revealed",
+      "correctAnswer": "revealed",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"thousand responses, ____ several unexpected\"]",
+      "precedingCue": "thousand responses,",
+      "followingCue": "several unexpected",
+      "distractorAnalysis": [
+        {
+          "word": "revealed",
+          "status": "VALID",
+          "reason": "Accurately completes \"The survey, which included over a thousand responses, ____ several unexpected trends.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "concealed",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "predicted",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "summarized",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "revealed",
+        "concealed",
+        "predicted",
+        "summarized"
+      ],
+      "explanation": "'Revealed' means to make known, fitting a survey uncovering new trends.",
+      "hint": "This verb means to make something previously unknown become known."
+    },
+    {
+      "id": "RDG_CLOZETEST_L40_Q2_LEARN",
+      "level": 40,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "SYNTACTIC HARMONY",
+      "techniqueTitle": "Harmonizing Subject-Verb-Object Syntactic Agreements",
+      "coreRule": "Distractors often fit grammatically but fail contextual logic or natural idiomatic usage.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "The new regulations, once approved, will ____ affect small businesses the most.",
+      "missingWord": "likely",
+      "correctAnswer": "likely",
+      "wordCategory": "adverb",
+      "grammarConstraint": "[adverb: fits \"approved, will ____ affect small\"]",
+      "precedingCue": "approved, will",
+      "followingCue": "affect small",
+      "distractorAnalysis": [
+        {
+          "word": "rarely",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "occasionally",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "unpredictably",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "likely",
+          "status": "VALID",
+          "reason": "Accurately completes \"The new regulations, once approved, will ____ affect small businesses the most.\" with precise grammatical agreement and natural collocation."
+        }
+      ],
+      "options": [
+        "rarely",
+        "occasionally",
+        "unpredictably",
+        "likely"
+      ],
+      "explanation": "'Likely' expresses probability, matching a prediction about future effects.",
+      "hint": "This adverb expresses probability, not a negative meaning."
+    },
+    {
+      "id": "RDG_CLOZETEST_L40_Q3_LEARN",
+      "level": 40,
+      "phase": "learn",
+      "subtype": "clozeTest",
+      "strategyBadge": "SYNTACTIC HARMONY",
+      "techniqueTitle": "Harmonizing Subject-Verb-Object Syntactic Agreements",
+      "coreRule": "Distractors often fit grammatically but fail contextual logic or natural idiomatic usage.",
+      "instruction": "Examine the collocation and grammatical constraints governing this sentence blank.",
+      "passage": "Although the budget was tight, the team managed to ____ the project on schedule.",
+      "missingWord": "complete",
+      "correctAnswer": "complete",
+      "wordCategory": "verb",
+      "grammarConstraint": "[verb: fits \"managed to ____ the project\"]",
+      "precedingCue": "managed to",
+      "followingCue": "the project",
+      "distractorAnalysis": [
+        {
+          "word": "launch",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "complete",
+          "status": "VALID",
+          "reason": "Accurately completes \"Although the budget was tight, the team managed to ____ the project on schedule.\" with precise grammatical agreement and natural collocation."
+        },
+        {
+          "word": "approve",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        },
+        {
+          "word": "fund",
+          "status": "INVALID",
+          "reason": "Fails the semantic and collocational requirement of the surrounding sentence."
+        }
+      ],
+      "options": [
+        "launch",
+        "complete",
+        "approve",
+        "fund"
+      ],
+      "explanation": "'Complete' means to finish, fitting the project reaching its deadline.",
+      "hint": "This verb means to finish something fully."
+    }
+  ]
+}
