@@ -1,0 +1,518 @@
+{
+  "gameType": "subjectVerbAgreement",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "sva_l1_q1",
+      "instruction": "COMPLETE THE SENTENCE",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The bakery ___ fresh croissants at dawn.",
+      "hint": "Find the one thing performing the action here, then decide if it needs the -s ending.",
+      "explanation": "'The bakery' names one single business, so it counts as a third-person singular subject. In the simple present, singular subjects take a verb ending in -s or -es, which is why 'bakes' is correct here.",
+      "options": [
+        "bake",
+        "bakes"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "bakes",
+      "grammarRule": "Third-person singular subject in the simple present",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l1_q2",
+      "instruction": "COMPLETE THE SENTENCE",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "My neighbor ___ his lawn every Saturday.",
+      "hint": "Ask yourself how many neighbors are doing the action before choosing the verb form.",
+      "explanation": "'My neighbor' refers to one person, so the sentence needs the singular verb form. 'Mows' carries the -s ending that marks agreement with a singular, third-person subject.",
+      "options": [
+        "mows",
+        "mow"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "mows",
+      "grammarRule": "Third-person singular subject in the simple present",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l1_q3",
+      "instruction": "COMPLETE THE SENTENCE",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The printer ___ documents for the whole office.",
+      "hint": "Decide whether 'the printer' is one machine or several before picking the verb.",
+      "explanation": "'The printer' is a single machine, which makes it a singular subject. Singular subjects in the simple present need the -s form of the verb, so 'prints' is correct.",
+      "options": [
+        "print",
+        "prints"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "prints",
+      "grammarRule": "Third-person singular subject in the simple present",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l2_q1",
+      "instruction": "COMPLETE THE SENTENCE",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The interns ___ coffee for the team every afternoon.",
+      "hint": "Notice that 'interns' already ends in -s as a noun - that's a clue about how many people we're talking about.",
+      "explanation": "'The interns' is a plural subject, since more than one intern is involved. Plural subjects in the simple present use the base form of the verb, so 'make' is correct, not 'makes'.",
+      "options": [
+        "makes",
+        "make"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "make",
+      "grammarRule": "Plural subject in the simple present",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l2_q2",
+      "instruction": "COMPLETE THE SENTENCE",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "Local farmers ___ their vegetables at the weekend market.",
+      "hint": "Check whether the subject names one farmer or a group of them.",
+      "explanation": "'Local farmers' describes more than one person, so it's a plural subject. Plural subjects take the base verb form in the simple present, which makes 'sell' the right choice.",
+      "options": [
+        "sell",
+        "sells"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "sell",
+      "grammarRule": "Plural subject in the simple present",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l2_q3",
+      "instruction": "COMPLETE THE SENTENCE",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The passengers ___ their tickets before boarding.",
+      "hint": "Look at the noun right before the blank and decide if it's one person or many.",
+      "explanation": "'The passengers' is plural, referring to multiple travelers. Because the subject is plural, the verb keeps its base form: 'show', without an -s ending.",
+      "options": [
+        "shows",
+        "show"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "show",
+      "grammarRule": "Plural subject in the simple present",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l3_q1",
+      "instruction": "CHOOSE THE CORRECT VERB",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "She ___ the accounts for a small business.",
+      "hint": "'She' always refers to one person - think about what that means for the verb ending.",
+      "explanation": "'She' is a third-person singular pronoun, so the verb must take the -s ending in the simple present. 'Manages' is correct; 'manage' would only work with a plural subject.",
+      "options": [
+        "manage",
+        "manages"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "manages",
+      "grammarRule": "Third-person singular pronoun (he/she) in the simple present",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l3_q2",
+      "instruction": "CHOOSE THE CORRECT VERB",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "He ___ his bike to campus most days.",
+      "hint": "Remember that 'he' behaves the same way as 'she' for verb endings.",
+      "explanation": "'He' is singular and third-person, so the verb needs the -s form: 'rides'. Without the -s, the sentence would no longer agree with the subject.",
+      "options": [
+        "rides",
+        "ride"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "rides",
+      "grammarRule": "Third-person singular pronoun (he/she) in the simple present",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l3_q3",
+      "instruction": "CHOOSE THE CORRECT VERB",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "After the meeting, she ___ a short summary to the team.",
+      "hint": "Don't let the introductory phrase distract you - focus on who 'she' is.",
+      "explanation": "The opening phrase 'after the meeting' doesn't affect agreement; the subject is still 'she', which is singular. That means the verb needs -s: 'sends'.",
+      "options": [
+        "send",
+        "sends"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "sends",
+      "grammarRule": "Third-person singular pronoun (he/she) in the simple present",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l4_q1",
+      "instruction": "CHOOSE THE CORRECT VERB",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "This clinic sees many patients. It ___ appointments online too.",
+      "hint": "'It' stands in for a single place or thing already mentioned - treat it like 'he' or 'she'.",
+      "explanation": "'It' refers back to 'this clinic', a singular subject, so the verb takes the -s ending: 'accepts'. Pronouns like 'it' follow the same singular agreement pattern as 'he' and 'she'.",
+      "options": [
+        "accept",
+        "accepts"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "accepts",
+      "grammarRule": "Third-person singular pronoun 'it' in the simple present",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l4_q2",
+      "instruction": "CHOOSE THE CORRECT VERB",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The washing machine broke last week. It ___ strange noises now.",
+      "hint": "Identify what 'it' is replacing before deciding on the verb form.",
+      "explanation": "'It' refers to 'the washing machine', a single object, so the subject is singular. Singular subjects require the -s ending, which is why 'makes' is correct here.",
+      "options": [
+        "makes",
+        "make"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "makes",
+      "grammarRule": "Third-person singular pronoun 'it' in the simple present",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l4_q3",
+      "instruction": "CHOOSE THE CORRECT VERB",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "It ___ heavily during the monsoon season here.",
+      "hint": "This 'it' doesn't replace a noun at all - it's the weather subject, and it still counts as singular.",
+      "explanation": "In weather expressions, 'it' is a fixed singular subject with no real-world referent. It still follows the singular agreement rule, so the verb takes -s: 'rains'.",
+      "options": [
+        "rain",
+        "rains"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "rains",
+      "grammarRule": "Third-person singular pronoun 'it' in the simple present",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l5_q1",
+      "instruction": "MATCH THE SUBJECT TO THE VERB",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "We ___ groceries online to save time.",
+      "hint": "'We' always includes more than one person, no matter the context.",
+      "explanation": "'We' is a plural pronoun, so the verb stays in its base form: 'order'. Adding -s would incorrectly treat the subject as singular.",
+      "options": [
+        "orders",
+        "order"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "order",
+      "grammarRule": "Plural pronoun (we/they) in the simple present",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l5_q2",
+      "instruction": "MATCH THE SUBJECT TO THE VERB",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "They ___ the museum every year during the school trip.",
+      "hint": "'They' is never singular, so check which verb form matches a plural subject.",
+      "explanation": "'They' is a plural pronoun, so it pairs with the base verb form: 'visit'. 'Visits' would only be correct with a singular subject like 'he' or 'she'.",
+      "options": [
+        "visit",
+        "visits"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "visit",
+      "grammarRule": "Plural pronoun (we/they) in the simple present",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l5_q3",
+      "instruction": "MATCH THE SUBJECT TO THE VERB",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "After work, we ___ a short walk around the block.",
+      "hint": "The phrase at the start doesn't change who the subject is - look at the pronoun.",
+      "explanation": "The subject here is still 'we', a plural pronoun, regardless of the introductory phrase. Plural subjects use the base verb form, so 'take' is correct.",
+      "options": [
+        "take",
+        "takes"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "take",
+      "grammarRule": "Plural pronoun (we/they) in the simple present",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l6_q1",
+      "instruction": "CHECK THE VERB ENDING",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The security guard ___ the entrance at night.",
+      "hint": "This verb ends in a sound that needs an extra syllable before adding -s - think -es, not just -s.",
+      "explanation": "'The security guard' is singular, and the verb 'watch' ends in -ch, so it takes -es instead of just -s: 'watches'. This spelling rule applies to verbs ending in -ch, -sh, -x, -s, or -o.",
+      "options": [
+        "watch",
+        "watches"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "watches",
+      "grammarRule": "Verbs ending in -ch, -sh, -x, or -s add -es for singular subjects",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l6_q2",
+      "instruction": "CHECK THE VERB ENDING",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The chef ___ the vegetables before every dinner service.",
+      "hint": "Look at how the verb ends, then decide whether -s alone is enough.",
+      "explanation": "'The chef' is a singular subject, and since 'wash' ends in -sh, it needs the -es ending rather than a simple -s: 'washes'.",
+      "options": [
+        "washes",
+        "wash"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "washes",
+      "grammarRule": "Verbs ending in -ch, -sh, -x, or -s add -es for singular subjects",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l6_q3",
+      "instruction": "CHECK THE VERB ENDING",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The mechanic ___ engine problems quickly.",
+      "hint": "Check the last letter of the verb before choosing between -s and -es.",
+      "explanation": "'The mechanic' is singular, and 'fix' ends in -x, so the singular form adds -es: 'fixes'. Just adding -s would be spelled incorrectly for this verb.",
+      "options": [
+        "fixes",
+        "fix"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "fixes",
+      "grammarRule": "Verbs ending in -ch, -sh, -x, or -s add -es for singular subjects",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l7_q1",
+      "instruction": "MATCH THE SUBJECT TO THE VERB",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The children ___ board games after school.",
+      "hint": "'Children' looks nothing like a regular plural noun, but it still behaves like one for the verb.",
+      "explanation": "'Children' is the irregular plural form of 'child'. Even though it doesn't end in -s, it's still a plural subject, so the verb stays in its base form: 'play'.",
+      "options": [
+        "plays",
+        "play"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "play",
+      "grammarRule": "Irregular plural nouns take the plural (base) verb form",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l7_q2",
+      "instruction": "MATCH THE SUBJECT TO THE VERB",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "Many people ___ this park for morning runs.",
+      "hint": "'People' is already plural in meaning, even without an -s ending.",
+      "explanation": "'People' is the irregular plural of 'person' and always takes a plural verb form. That's why 'use' is correct instead of 'uses'.",
+      "options": [
+        "use",
+        "uses"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "use",
+      "grammarRule": "Irregular plural nouns take the plural (base) verb form",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l7_q3",
+      "instruction": "MATCH THE SUBJECT TO THE VERB",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The women in this club ___ marathons together every spring.",
+      "hint": "Think about what 'women' is the plural of, and match the verb accordingly.",
+      "explanation": "'Women' is the irregular plural of 'woman', so it's a plural subject and needs the base verb form: 'run', not 'runs'.",
+      "options": [
+        "runs",
+        "run"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "run",
+      "grammarRule": "Irregular plural nouns take the plural (base) verb form",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l8_q1",
+      "instruction": "CHECK THE VERB ENDING",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The delivery driver ___ packages across the city.",
+      "hint": "This verb ends in a consonant plus -y - that spelling changes in the singular form.",
+      "explanation": "'The delivery driver' is singular, and 'carry' ends in a consonant + y, so the singular form changes the y to i and adds -es: 'carries'.",
+      "options": [
+        "carry",
+        "carries"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "carries",
+      "grammarRule": "Verbs ending in consonant + y change to -ies for singular subjects",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l8_q2",
+      "instruction": "CHECK THE VERB ENDING",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "My cousin ___ for a scholarship every year.",
+      "hint": "Check the ending of 'apply' before deciding how the singular form is spelled.",
+      "explanation": "'My cousin' is a singular subject, and since 'apply' ends in consonant + y, the singular form is 'applies', with the y changed to i before -es.",
+      "options": [
+        "applies",
+        "apply"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "applies",
+      "grammarRule": "Verbs ending in consonant + y change to -ies for singular subjects",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l8_q3",
+      "instruction": "CHECK THE VERB ENDING",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "This bakery chain ___ new recipes every season.",
+      "hint": "Notice the -y ending on the verb, and remember how that changes for singular subjects.",
+      "explanation": "'This bakery chain' functions as one singular entity, and 'try' ends in consonant + y, so the singular form is 'tries', not 'try'.",
+      "options": [
+        "try",
+        "tries"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "tries",
+      "grammarRule": "Verbs ending in consonant + y change to -ies for singular subjects",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l9_q1",
+      "instruction": "FIND THE CORRECT AGREEMENT",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The volunteers at the shelter ___ the animals twice a day.",
+      "hint": "Don't stop at the first noun - find the word that's actually doing the action.",
+      "explanation": "The subject is 'the volunteers', a plural noun, even though 'the shelter' appears nearby. Plural subjects take the base verb form, so 'feed' is correct.",
+      "options": [
+        "feeds",
+        "feed"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "feed",
+      "grammarRule": "Subject-verb agreement based on singular vs. plural noun form",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l9_q2",
+      "instruction": "FIND THE CORRECT AGREEMENT",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The volunteer at the front desk ___ visitors with a smile.",
+      "hint": "Compare this subject carefully with a similar-looking plural one - singular or plural this time?",
+      "explanation": "Here 'the volunteer' is singular, unlike the plural 'volunteers' in a similar sentence. A singular subject needs the -s ending, so 'greets' is correct.",
+      "options": [
+        "greets",
+        "greet"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "greets",
+      "grammarRule": "Subject-verb agreement based on singular vs. plural noun form",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l9_q3",
+      "instruction": "FIND THE CORRECT AGREEMENT",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "Local museums ___ free admission on the first Sunday of the month.",
+      "hint": "Look for the plural ending on the subject noun before choosing the verb.",
+      "explanation": "'Local museums' is plural, so the verb takes the base form: 'offer'. The -s ending would incorrectly suggest a singular subject.",
+      "options": [
+        "offer",
+        "offers"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "offer",
+      "grammarRule": "Subject-verb agreement based on singular vs. plural noun form",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l10_q1",
+      "instruction": "FIND THE CORRECT AGREEMENT",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The tourists ___ photos of the old lighthouse every summer.",
+      "hint": "Review what you've learned so far: is this subject one person or several?",
+      "explanation": "'The tourists' is a plural subject, so it takes the base verb form: 'take'. This combines the noun-recognition and plural-verb rules covered throughout this stage.",
+      "options": [
+        "takes",
+        "take"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "take",
+      "grammarRule": "Plural subject in the simple present",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l10_q2",
+      "instruction": "FIND THE CORRECT AGREEMENT",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "She ___ the lighthouse tours on weekends.",
+      "hint": "Bring back what you know about singular pronouns to choose the verb here.",
+      "explanation": "'She' is singular and third-person, so the verb needs the -s ending: 'leads'. This is the same rule you practiced with 'he' and 'she' earlier.",
+      "options": [
+        "leads",
+        "lead"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "leads",
+      "grammarRule": "Third-person singular pronoun (he/she) in the simple present",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l10_q3",
+      "instruction": "FIND THE CORRECT AGREEMENT",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "Local guides ___ visitors about the lighthouse's history.",
+      "hint": "As a final check, decide if 'guides' here is doing the action as one person or many.",
+      "explanation": "'Local guides' is a plural subject, so the verb stays in its base form: 'teach'. Recognizing plural nouns like this is the foundation for every stage ahead.",
+      "options": [
+        "teach",
+        "teaches"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "teach",
+      "grammarRule": "Plural subject in the simple present",
+      "subjectType": "Plural"
+    }
+  ],
+  "phase": "mastery"
+}

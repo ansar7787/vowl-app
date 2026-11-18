@@ -1,0 +1,518 @@
+{
+  "gameType": "subjectVerbAgreement",
+  "batchIndex": 15,
+  "levels": "141-150",
+  "quests": [
+    {
+      "id": "sva_l141_q1",
+      "instruction": "COMPLETE THE QUESTION",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "___ your colleague who joined last month need any help with onboarding?",
+      "hint": "Look past the description of when your colleague joined to find the true subject.",
+      "explanation": "'Your colleague' is singular, even with 'who joined last month' in between. The question needs 'does'.",
+      "options": [
+        "Do",
+        "Does"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Does",
+      "grammarRule": "Auxiliary 'do/does' agreement follows the true subject, even with an interrupting phrase",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l141_q2",
+      "instruction": "COMPLETE THE QUESTION",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "___ the students who missed the lecture need to catch up on notes?",
+      "hint": "The clause about missing the lecture doesn't change how many students there are.",
+      "explanation": "'The students' is plural, so the question needs 'do'.",
+      "options": [
+        "Does",
+        "Do"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Do",
+      "grammarRule": "Auxiliary 'do/does' agreement follows the true subject, even with an interrupting phrase",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l141_q3",
+      "instruction": "COMPLETE THE QUESTION",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The report ___ not include the data from last quarter.",
+      "hint": "Consider how many documents 'the report' names, then think about which negative form fits.",
+      "explanation": "'The report' is singular, so the negative form uses 'does': 'does not include'.",
+      "options": [
+        "do",
+        "does"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "does",
+      "grammarRule": "Auxiliary 'do/does' agreement follows the true subject, even with an interrupting phrase",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l142_q1",
+      "instruction": "CHECK THE VERB FORM",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "Did the landlord ___ the request yesterday?",
+      "hint": "'Did' already shows the question is in the past - the main verb doesn't need its own ending.",
+      "explanation": "After 'did', the main verb always stays in its base form, so 'approve' is correct, not 'approves'.",
+      "options": [
+        "approve",
+        "approves"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "approve",
+      "grammarRule": "The main verb stays in its base form after 'did' / 'didn't', regardless of the subject",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l142_q2",
+      "instruction": "CHECK THE VERB FORM",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "Did the students ___ their homework before class?",
+      "hint": "Even with a plural subject, the verb after 'did' still doesn't take an ending.",
+      "explanation": "After 'did', the main verb stays in its base form: 'finish', not 'finishes'.",
+      "options": [
+        "finish",
+        "finishes"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "finish",
+      "grammarRule": "The main verb stays in its base form after 'did' / 'didn't', regardless of the subject",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l142_q3",
+      "instruction": "CHECK THE VERB FORM",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The team didn't ___ enough time to prepare.",
+      "hint": "'Didn't' already carries the negative and the past tense - the main verb stays plain.",
+      "explanation": "After 'didn't', the main verb stays in its base form: 'have', not 'has'.",
+      "options": [
+        "have",
+        "has"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "have",
+      "grammarRule": "The main verb stays in its base form after 'did' / 'didn't', regardless of the subject",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l143_q1",
+      "instruction": "CHECK THE VERB FORM",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "She can ___ five languages fluently.",
+      "hint": "Modals like 'can' never add -s, and neither does the verb that follows them.",
+      "explanation": "After 'can', the main verb always stays in its base form: 'speak', not 'speaks' - this is true no matter who the subject is.",
+      "options": [
+        "speaks",
+        "speak"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "speak",
+      "grammarRule": "The verb after 'can/could' always stays in its base form, regardless of the subject",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l143_q2",
+      "instruction": "CHECK THE VERB FORM",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The workers could ___ overtime if needed.",
+      "hint": "'Could' behaves the same way as 'can' - the verb after it never changes.",
+      "explanation": "After 'could', the main verb stays in its base form: 'work'.",
+      "options": [
+        "work",
+        "works"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "work",
+      "grammarRule": "The verb after 'can/could' always stays in its base form, regardless of the subject",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l143_q3",
+      "instruction": "CHECK THE VERB FORM",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "He can ___ the piano beautifully.",
+      "hint": "Even with a singular subject like 'he', the verb after 'can' still doesn't take -s.",
+      "explanation": "After 'can', the main verb stays in its base form: 'play', not 'plays'.",
+      "options": [
+        "play",
+        "plays"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "play",
+      "grammarRule": "The verb after 'can/could' always stays in its base form, regardless of the subject",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l144_q1",
+      "instruction": "CHECK THE VERB FORM",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The company will ___ its new product next month.",
+      "hint": "'Will' never changes form, and neither does the verb that follows it.",
+      "explanation": "After 'will', the main verb stays in its base form: 'launch', not 'launches'.",
+      "options": [
+        "launch",
+        "launches"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "launch",
+      "grammarRule": "The verb after 'will/would' always stays in its base form, regardless of the subject",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l144_q2",
+      "instruction": "CHECK THE VERB FORM",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "She would ___ the offer if she had more time.",
+      "hint": "'Would' works the same way as 'will' - the verb after it stays plain.",
+      "explanation": "After 'would', the main verb stays in its base form: 'consider', not 'considers'.",
+      "options": [
+        "considers",
+        "consider"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "consider",
+      "grammarRule": "The verb after 'will/would' always stays in its base form, regardless of the subject",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l144_q3",
+      "instruction": "CHECK THE VERB FORM",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The students will ___ their exams next week.",
+      "hint": "Even with a plural subject, the rule for the verb after 'will' doesn't change.",
+      "explanation": "After 'will', the main verb stays in its base form: 'take'.",
+      "options": [
+        "take",
+        "takes"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "take",
+      "grammarRule": "The verb after 'will/would' always stays in its base form, regardless of the subject",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l145_q1",
+      "instruction": "CHECK THE VERB FORM",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "He should ___ his manager about the schedule change.",
+      "hint": "'Should' never changes form, and the verb after it stays in its base form too.",
+      "explanation": "After 'should', the main verb stays in its base form: 'tell', not 'tells'.",
+      "options": [
+        "tell",
+        "tells"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "tell",
+      "grammarRule": "The verb after 'should' always stays in its base form, regardless of the subject",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l145_q2",
+      "instruction": "CHECK THE VERB FORM",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The employees should ___ their timesheets by Friday.",
+      "hint": "Even with a plural subject, the verb after 'should' still doesn't take -s.",
+      "explanation": "After 'should', the main verb stays in its base form: 'submit'.",
+      "options": [
+        "submit",
+        "submits"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "submit",
+      "grammarRule": "The verb after 'should' always stays in its base form, regardless of the subject",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l145_q3",
+      "instruction": "CHECK THE VERB FORM",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "This machine should ___ regular maintenance.",
+      "hint": "Don't let a singular subject like 'this machine' tempt you into adding -s here.",
+      "explanation": "After 'should', the main verb stays in its base form: 'receive', not 'receives'.",
+      "options": [
+        "receives",
+        "receive"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "receive",
+      "grammarRule": "The verb after 'should' always stays in its base form, regardless of the subject",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l146_q1",
+      "instruction": "CHECK THE VERB FORM",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The weather may ___ suddenly this afternoon.",
+      "hint": "'May' never changes form, and the verb after it stays in its base form.",
+      "explanation": "After 'may', the main verb stays in its base form: 'change', not 'changes'.",
+      "options": [
+        "change",
+        "changes"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "change",
+      "grammarRule": "The verb after 'may/might' always stays in its base form, regardless of the subject",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l146_q2",
+      "instruction": "CHECK THE VERB FORM",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "She might ___ to the party if she finishes work early.",
+      "hint": "'Might' works the same way as 'may' - the verb after it stays plain.",
+      "explanation": "After 'might', the main verb stays in its base form: 'come', not 'comes'.",
+      "options": [
+        "come",
+        "comes"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "come",
+      "grammarRule": "The verb after 'may/might' always stays in its base form, regardless of the subject",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l146_q3",
+      "instruction": "CHECK THE VERB FORM",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The prices might ___ again next year.",
+      "hint": "Even with a plural subject, the verb after 'might' doesn't take -s.",
+      "explanation": "After 'might', the main verb stays in its base form: 'rise'.",
+      "options": [
+        "rise",
+        "rises"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "rise",
+      "grammarRule": "The verb after 'may/might' always stays in its base form, regardless of the subject",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l147_q1",
+      "instruction": "COMPLETE THE QUESTION",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "___ she often work late on Fridays?",
+      "hint": "This question has no modal, so 'do' needs to change based on the subject.",
+      "explanation": "'She' is singular, so the question needs 'does'.",
+      "options": [
+        "Do",
+        "Does"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Does",
+      "grammarRule": "'Do' becomes 'does' for singular subjects in questions; modals like 'can' and 'will' never change",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l147_q2",
+      "instruction": "COMPLETE THE QUESTION",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "___ the interns start next Monday?",
+      "hint": "Check whether 'the interns' is singular or plural before choosing the question word.",
+      "explanation": "'The interns' is plural, so the question needs 'do'.",
+      "options": [
+        "Does",
+        "Do"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Do",
+      "grammarRule": "'Do' becomes 'does' for singular subjects in questions; modals like 'can' and 'will' never change",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l147_q3",
+      "instruction": "COMPLETE THE QUESTION",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "___ the principal and the assistant both attend the meeting?",
+      "hint": "Two people joined by 'and' always form a plural subject - which question word matches?",
+      "explanation": "'The principal and the assistant' is a compound subject, so it's plural. The question needs 'do'.",
+      "options": [
+        "Does",
+        "Do"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Do",
+      "grammarRule": "'Do' becomes 'does' for singular subjects in questions; modals like 'can' and 'will' never change",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l148_q1",
+      "instruction": "CHECK THE VERB",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The printer ___ work when it's out of paper.",
+      "hint": "'The printer' is one machine - check how that affects the negative form.",
+      "explanation": "'The printer' is singular, so the negative form is 'doesn't'.",
+      "options": [
+        "doesn't",
+        "don't"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "doesn't",
+      "grammarRule": "'Don't' / 'doesn't' agreement follows the subject, just like the positive form",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l148_q2",
+      "instruction": "CHECK THE VERB",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The employees ___ have access to that folder.",
+      "hint": "Look at the subject before the blank and let its number decide between the two negative forms.",
+      "explanation": "'The employees' is plural, so the negative form is 'don't'.",
+      "options": [
+        "doesn't",
+        "don't"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "don't",
+      "grammarRule": "'Don't' / 'doesn't' agreement follows the subject, just like the positive form",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l148_q3",
+      "instruction": "CHECK THE VERB",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "My brother ___ enjoy spicy food at all.",
+      "hint": "'My brother' is one person - keep the negative form singular.",
+      "explanation": "'My brother' is singular, so the negative form is 'doesn't'.",
+      "options": [
+        "don't",
+        "doesn't"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "doesn't",
+      "grammarRule": "'Don't' / 'doesn't' agreement follows the subject, just like the positive form",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l149_q1",
+      "instruction": "CHOOSE THE CORRECT VERB",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "She ___ like coffee, even though she rarely drinks it in front of others.",
+      "hint": "Emphasis doesn't switch off agreement - look at the subject before choosing the form.",
+      "explanation": "'She' is singular, so the emphatic form is 'does': 'She does like coffee'.",
+      "options": [
+        "do",
+        "does"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "does",
+      "grammarRule": "Emphatic 'do/does' agreement follows the subject, just like the question and negative forms",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l149_q2",
+      "instruction": "CHOOSE THE CORRECT VERB",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "They ___ appreciate your help, even if they don't always say so.",
+      "hint": "Check what 'they' tells you about the subject before choosing the emphatic form.",
+      "explanation": "'They' is plural, so the emphatic form is 'do': 'They do appreciate your help'.",
+      "options": [
+        "does",
+        "do"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "do",
+      "grammarRule": "Emphatic 'do/does' agreement follows the subject, just like the question and negative forms",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l149_q3",
+      "instruction": "CHOOSE THE CORRECT VERB",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "He ___ know the answer, but he's too nervous to say it out loud.",
+      "hint": "Use the same reasoning as in the previous sentence: what does this subject call for?",
+      "explanation": "'He' is singular, so the emphatic form is 'does': 'He does know the answer'.",
+      "options": [
+        "do",
+        "does"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "does",
+      "grammarRule": "Emphatic 'do/does' agreement follows the subject, just like the question and negative forms",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l150_q1",
+      "instruction": "FIND THE CORRECT AGREEMENT",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "___ the new employees need any additional training?",
+      "hint": "Bring back the do/does question rule: check if the subject is singular or plural.",
+      "explanation": "'The new employees' is plural, so the question needs 'do'.",
+      "options": [
+        "Does",
+        "Do"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Do",
+      "grammarRule": "'Do' becomes 'does' for singular subjects in questions; modals like 'can' and 'will' never change",
+      "subjectType": "Plural"
+    },
+    {
+      "id": "sva_l150_q2",
+      "instruction": "FIND THE CORRECT AGREEMENT",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The device ___ turn on properly, no matter how many times I try.",
+      "hint": "Remember the negative form rule: match 'doesn't' or 'don't' to the subject.",
+      "explanation": "'The device' is singular, so the negative form is 'doesn't'.",
+      "options": [
+        "doesn't",
+        "don't"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "doesn't",
+      "grammarRule": "'Don't' / 'doesn't' agreement follows the subject, just like the positive form",
+      "subjectType": "Singular"
+    },
+    {
+      "id": "sva_l150_q3",
+      "instruction": "FIND THE CORRECT AGREEMENT",
+      "interactionType": "choice",
+      "subtype": "subjectVerbAgreement",
+      "question": "The manager could ___ the meeting to next week if needed.",
+      "hint": "As a final check, recall that the verb after a modal like 'could' never takes -s.",
+      "explanation": "After 'could', the main verb stays in its base form: 'move', not 'moves'.",
+      "options": [
+        "move",
+        "moves"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "move",
+      "grammarRule": "The verb after 'can/could' always stays in its base form, regardless of the subject",
+      "subjectType": "Singular"
+    }
+  ],
+  "phase": "mastery"
+}
