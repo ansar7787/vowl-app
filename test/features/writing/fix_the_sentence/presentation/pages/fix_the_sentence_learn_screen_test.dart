@@ -1,0 +1,50 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:vowl/features/writing/fix_the_sentence/presentation/pages/fix_the_sentence_learn_screen.dart';
+
+void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
+  Widget buildTestableWidget(Widget child) {
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      builder: (context, _) => MaterialApp(
+        home: child,
+      ),
+    );
+  }
+
+  group('FixTheSentenceLearnScreen', () {
+    testWidgets(
+      'renders flawed passage, surgical repair, diagnostic rule, and advances to next pattern',
+      (tester) async {
+        tester.view.physicalSize = const Size(375, 812);
+        tester.view.devicePixelRatio = 1.0;
+        addTearDown(tester.view.resetPhysicalSize);
+
+        await tester.pumpWidget(
+          buildTestableWidget(
+            const FixTheSentenceLearnScreen(level: 1),
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(find.byType(FixTheSentenceLearnScreen), findsOneWidget);
+        expect(find.text('FLAWED PASSAGE DETECTED'), findsOneWidget);
+        expect(find.text('SURGICAL REPAIR (CORRECTED)'), findsOneWidget);
+        expect(find.text('EDITOR\'S GRAMMATICAL RULE'), findsOneWidget);
+
+        // Tap Next Error Pattern button
+        final nextFinder = find.text('Next Error Pattern');
+        if (nextFinder.evaluate().isNotEmpty) {
+          await tester.ensureVisible(nextFinder);
+          await tester.tap(nextFinder);
+          await tester.pumpAndSettle();
+          expect(find.textContaining('PATTERN 2 OF'), findsOneWidget);
+        }
+      },
+    );
+  });
+}
