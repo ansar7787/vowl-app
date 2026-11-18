@@ -648,13 +648,10 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
                                                         ),
                                                       ],
                                                     ),
-                                                  )
-                                                  .animate()
-                                                  .shake(
-                                                    hz: 3,
-                                                    curve: Curves.easeInOut,
-                                                  )
-                                                  .fadeIn(),
+                                                   ).animateIf(
+                                                    context,
+                                                    (target) => target.animate().shake(hz: 3, curve: Curves.easeInOut).fadeIn(),
+                                                  ),
                                             ],
                                           ],
                                         ),
@@ -858,7 +855,10 @@ class _ShadowPlaybackCompareState extends State<ShadowPlaybackCompare> {
             ),
           ),
         ),
-      ).animate().slideY(begin: 1.0, end: 0, duration: 400.ms, curve: Curves.easeOut).fadeIn(duration: 300.ms),
+      ).animateIf(
+        context,
+        (target) => target.animate().slideY(begin: 1.0, end: 0, duration: 400.ms, curve: Curves.easeOut).fadeIn(duration: 300.ms),
+      ),
     );
 
     if (widget.isPositioned) {
