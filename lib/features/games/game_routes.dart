@@ -146,6 +146,8 @@ import 'package:vowl/features/listening/audio_fill_blanks/presentation/pages/aud
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/pages/audio_fill_blanks_practice_screen.dart';
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/pages/audio_multiple_choice_learn_screen.dart';
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/pages/audio_multiple_choice_practice_screen.dart';
+import 'package:vowl/features/listening/audio_sentence_order/presentation/pages/audio_sentence_order_learn_screen.dart';
+import 'package:vowl/features/listening/audio_sentence_order/presentation/pages/audio_sentence_order_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -789,6 +791,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'audiosentenceorder') {
+          return fadeTransitionPage(
+            child: AudioSentenceOrderLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1211,6 +1219,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'audiomultiplechoice') {
           return fadeTransitionPage(
             child: AudioMultipleChoicePracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'audiosentenceorder') {
+          return fadeTransitionPage(
+            child: AudioSentenceOrderPracticeScreen(level: level),
             state: state,
           );
         }

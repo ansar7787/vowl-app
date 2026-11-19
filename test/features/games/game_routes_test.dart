@@ -23,6 +23,8 @@ import 'package:vowl/features/listening/audio_fill_blanks/presentation/pages/aud
 import 'package:vowl/features/listening/audio_fill_blanks/presentation/pages/audio_fill_blanks_practice_screen.dart';
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/pages/audio_multiple_choice_learn_screen.dart';
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/pages/audio_multiple_choice_practice_screen.dart';
+import 'package:vowl/features/listening/audio_sentence_order/presentation/pages/audio_sentence_order_learn_screen.dart';
+import 'package:vowl/features/listening/audio_sentence_order/presentation/pages/audio_sentence_order_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -577,6 +579,22 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<AudioMultipleChoicePracticeScreen>());
+    });
+
+    test('resolves /learn route for audioSentenceOrder', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state = createMockState('/learn?category=listening&gameType=audioSentenceOrder&level=4');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<AudioSentenceOrderLearnScreen>());
+    });
+
+    test('resolves /practice route for audioSentenceOrder', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state = createMockState('/practice?category=listening&gameType=audioSentenceOrder&level=4');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<AudioSentenceOrderPracticeScreen>());
     });
   });
 }
