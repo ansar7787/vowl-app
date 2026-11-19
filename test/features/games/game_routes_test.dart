@@ -59,6 +59,8 @@ import 'package:vowl/features/accent/speed_variance/presentation/pages/speed_var
 import 'package:vowl/features/accent/speed_variance/presentation/pages/speed_variance_practice_screen.dart';
 import 'package:vowl/features/accent/dialect_drill/presentation/pages/dialect_drill_learn_screen.dart';
 import 'package:vowl/features/accent/dialect_drill/presentation/pages/dialect_drill_practice_screen.dart';
+import 'package:vowl/features/accent/connected_speech/presentation/pages/connected_speech_learn_screen.dart';
+import 'package:vowl/features/accent/connected_speech/presentation/pages/connected_speech_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -913,6 +915,24 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<DialectDrillPracticeScreen>());
+    });
+
+    test('resolves /learn route for connectedSpeech', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state =
+          createMockState('/learn?category=accent&gameType=connectedSpeech&level=5');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<ConnectedSpeechLearnScreen>());
+    });
+
+    test('resolves /practice route for connectedSpeech', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state =
+          createMockState('/practice?category=accent&gameType=connectedSpeech&level=5');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<ConnectedSpeechPracticeScreen>());
     });
   });
 }
