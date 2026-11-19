@@ -1,0 +1,878 @@
+{
+  "gameType": "emotionRecognition",
+  "phase": "practice",
+  "batchIndex": 12,
+  "levels": "111-120",
+  "quests": [
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L111_Q1",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 111,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "I've replaced the washer, watched three videos, and borrowed a wrench. The tap still drips, and now it drips louder.",
+      "options": [
+        "frustrated",
+        "bored",
+        "angry",
+        "tired"
+      ],
+      "optionEmojis": [
+        "😤",
+        "🥱",
+        "😠",
+        "😴"
+      ],
+      "correctIndex": 0,
+      "correctAnswerIndex": 0,
+      "correctAnswer": "frustrated",
+      "correctEmoji": "😤",
+      "emoji": "😤",
+      "hint": "Who or what is the speaker struggling against?",
+      "explanation": "Every fix has failed, and there's no one to blame. Everything points to frustration.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L111_Q2",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 111,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "I got to the recital with minutes to spare because a stranger saw me struggling with the bus map and just walked me to the stop. She waited until my bus arrived.",
+      "options": [
+        "relieved",
+        "grateful",
+        "embarrassed",
+        "surprised"
+      ],
+      "optionEmojis": [
+        "😌",
+        "🙏",
+        "😳",
+        "😲"
+      ],
+      "correctIndex": 1,
+      "correctAnswerIndex": 1,
+      "correctAnswer": "grateful",
+      "correctEmoji": "🙏",
+      "emoji": "🙏",
+      "hint": "What did the stranger do beyond simply pointing the way?",
+      "explanation": "A stranger's generosity made the difference. That's gratitude.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L111_Q3",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 111,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "I was so proud of my Japanese, until the waiter smiled and said, 'Thank you, but you just ordered a bicycle.'",
+      "options": [
+        "annoyed",
+        "confused",
+        "embarrassed",
+        "proud"
+      ],
+      "optionEmojis": [
+        "🙄",
+        "😕",
+        "😳",
+        "🙌"
+      ],
+      "correctIndex": 2,
+      "correctAnswerIndex": 2,
+      "correctAnswer": "embarrassed",
+      "correctEmoji": "😳",
+      "emoji": "😳",
+      "hint": "What happens to the speaker's confidence in the second half of the sentence?",
+      "explanation": "Pride collapses when the mistake is pointed out to them. So embarrassed is the best fit.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L112_Q4",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 112,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "I found my aunt's last voicemail while clearing my phone. Twelve seconds, mostly her laughing. I didn't delete it. I put the phone down and looked at the wall for a bit.",
+      "options": [
+        "sad",
+        "embarrassed",
+        "bored",
+        "tired"
+      ],
+      "optionEmojis": [
+        "😢",
+        "😳",
+        "🥱",
+        "😴"
+      ],
+      "correctIndex": 0,
+      "correctAnswerIndex": 0,
+      "correctAnswer": "sad",
+      "correctEmoji": "😢",
+      "emoji": "😢",
+      "hint": "Notice what the speaker chooses not to do, and what they do instead.",
+      "explanation": "Keeping the recording and staring at the wall show the speaker holding on to someone they've lost. Sadness is the natural reading.",
+      "vocalClue": "Lower baseline pitch, slower tempo, downward terminal pitch glide, and soft volume signify sadness or sorrow.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L112_Q5",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 112,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "For years I've dreamed of seeing the northern lights. We stayed up until three, watching the sky, and there was nothing but cloud.",
+      "options": [
+        "disappointed",
+        "bored",
+        "tired",
+        "angry"
+      ],
+      "optionEmojis": [
+        "😞",
+        "🥱",
+        "😴",
+        "😠"
+      ],
+      "correctIndex": 0,
+      "correctAnswerIndex": 0,
+      "correctAnswer": "disappointed",
+      "correctEmoji": "😞",
+      "emoji": "😞",
+      "hint": "What did the speaker invest in this night?",
+      "explanation": "Years of longing and a late night led to nothing. Everything points to disappointment.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L112_Q6",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 112,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "Grandpa says he'll take the train home alone. It's fine, he's done it a hundred times. But he's ninety now, and the snow's heavy tonight.",
+      "options": [
+        "nervous",
+        "worried",
+        "angry",
+        "curious"
+      ],
+      "optionEmojis": [
+        "😬",
+        "😟",
+        "😠",
+        "🤔"
+      ],
+      "correctIndex": 1,
+      "correctAnswerIndex": 1,
+      "correctAnswer": "worried",
+      "correctEmoji": "😟",
+      "emoji": "😟",
+      "hint": "Notice the 'but' and what comes after it.",
+      "explanation": "The speaker knows it's usually fine but fears tonight might not be. This is worry.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L113_Q7",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 113,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "Last year I couldn't cook an egg. This week I cooked a whole holiday dinner for twelve people, and nobody asked for ketchup.",
+      "options": [
+        "relieved",
+        "happy",
+        "proud",
+        "embarrassed"
+      ],
+      "optionEmojis": [
+        "😌",
+        "😊",
+        "🙌",
+        "😳"
+      ],
+      "correctIndex": 2,
+      "correctAnswerIndex": 2,
+      "correctAnswer": "proud",
+      "correctEmoji": "🙌",
+      "emoji": "🙌",
+      "hint": "What is the speaker comparing?",
+      "explanation": "The speaker measures their progress against their earlier self. The speaker is proud.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L113_Q8",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 113,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "He drove me to the airport at five in the morning, and I didn't even say thank you. I just jumped out and ran. I've thought about it all week.",
+      "options": [
+        "guilty",
+        "annoyed",
+        "embarrassed",
+        "grateful"
+      ],
+      "optionEmojis": [
+        "😔",
+        "🙄",
+        "😳",
+        "🙏"
+      ],
+      "correctIndex": 0,
+      "correctAnswerIndex": 0,
+      "correctAnswer": "guilty",
+      "correctEmoji": "😔",
+      "emoji": "😔",
+      "hint": "What does the speaker feel they owed him, and how long has it bothered them?",
+      "explanation": "The speaker has spent a week dwelling on a favor they never thanked him for. That's guilt.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L113_Q9",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 113,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "The seeds were tiny, and I didn't think anything would grow on that balcony. But this morning there's one green shoot in the corner. Just one. Let's see what next week brings.",
+      "options": [
+        "proud",
+        "relieved",
+        "surprised",
+        "hopeful"
+      ],
+      "optionEmojis": [
+        "🙌",
+        "😌",
+        "😲",
+        "🤞"
+      ],
+      "correctIndex": 3,
+      "correctAnswerIndex": 3,
+      "correctAnswer": "hopeful",
+      "correctEmoji": "🤞",
+      "emoji": "🤞",
+      "hint": "Notice how carefully the speaker describes what has happened so far.",
+      "explanation": "One small sign of life makes the speaker look ahead with hope.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L114_Q10",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 114,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "I said I'd meet them at eight. It's ten past, and my phone says they've only just left home. They always do this.",
+      "options": [
+        "angry",
+        "worried",
+        "tired",
+        "annoyed"
+      ],
+      "optionEmojis": [
+        "😠",
+        "😟",
+        "😴",
+        "🙄"
+      ],
+      "correctIndex": 3,
+      "correctAnswerIndex": 3,
+      "correctAnswer": "annoyed",
+      "correctEmoji": "🙄",
+      "emoji": "🙄",
+      "hint": "How does the speaker describe the pattern?",
+      "explanation": "Their lateness is a small, predictable disrespect of the speaker's time. That's annoyance.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L114_Q11",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 114,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "I told my grandmother I never learned her recipe. This morning I found a notebook in my bag, and every page was her handwriting, in my language.",
+      "options": [
+        "touched",
+        "surprised",
+        "grateful",
+        "sad"
+      ],
+      "optionEmojis": [
+        "🥹",
+        "😲",
+        "🙏",
+        "😢"
+      ],
+      "correctIndex": 0,
+      "correctAnswerIndex": 0,
+      "correctAnswer": "touched",
+      "correctEmoji": "🥹",
+      "emoji": "🥹",
+      "hint": "What did she do that she hadn't been asked to do?",
+      "explanation": "The notebook shows how much thought she put into it. Everything points to being touched.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L114_Q12",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 114,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "We finished painting the fence this morning, the neighbors brought lemonade, and the kids chased the dog through the wet grass. I sat on the step and thought, this is a good day.",
+      "options": [
+        "relieved",
+        "proud",
+        "happy",
+        "tired"
+      ],
+      "optionEmojis": [
+        "😌",
+        "🙌",
+        "😊",
+        "😴"
+      ],
+      "correctIndex": 2,
+      "correctAnswerIndex": 2,
+      "correctAnswer": "happy",
+      "correctEmoji": "😊",
+      "emoji": "😊",
+      "hint": "Listen to how the speaker sums up the moment at the end.",
+      "explanation": "Nothing dramatic is happening. The speaker simply enjoys a warm, ordinary scene and says so. Happiness.",
+      "vocalClue": "High dynamic pitch range, quick rhythmic tempo, and upward intonation contours reflect happiness and excitement.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L115_Q13",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 115,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "This is my fifth attempt at the recipe, and it still collapses in the middle. I've followed every step exactly.",
+      "options": [
+        "angry",
+        "disappointed",
+        "tired",
+        "frustrated"
+      ],
+      "optionEmojis": [
+        "😠",
+        "😞",
+        "😴",
+        "😤"
+      ],
+      "correctIndex": 3,
+      "correctAnswerIndex": 3,
+      "correctAnswer": "frustrated",
+      "correctEmoji": "😤",
+      "emoji": "😤",
+      "hint": "Pay attention to what the speaker says about their own effort.",
+      "explanation": "They've done everything right and it still fails. The speaker is frustrated.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L115_Q14",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 115,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "That's my daughter up there. She stayed calm the whole time, spoke clearly, and answered every question. She's fifteen.",
+      "options": [
+        "happy",
+        "impressed",
+        "proud",
+        "relieved"
+      ],
+      "optionEmojis": [
+        "😊",
+        "😮",
+        "🙌",
+        "😌"
+      ],
+      "correctIndex": 2,
+      "correctAnswerIndex": 2,
+      "correctAnswer": "proud",
+      "correctEmoji": "🙌",
+      "emoji": "🙌",
+      "hint": "How is the speaker connected to the person on stage?",
+      "explanation": "A parent watching their child succeed feels pride.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L115_Q15",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 115,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "My roommates are out every night, and the apartment has been quiet since I got home at six. I made dinner and ate it standing at the counter, just to hear something.",
+      "options": [
+        "lonely",
+        "tired",
+        "bored",
+        "sad"
+      ],
+      "optionEmojis": [
+        "🥺",
+        "😴",
+        "🥱",
+        "😢"
+      ],
+      "correctIndex": 0,
+      "correctAnswerIndex": 0,
+      "correctAnswer": "lonely",
+      "correctEmoji": "🥺",
+      "emoji": "🥺",
+      "hint": "Track what the speaker says they wanted to hear.",
+      "explanation": "Loneliness fits because the speaker misses company and human sound.",
+      "vocalClue": "Lower baseline pitch, slower tempo, downward terminal pitch glide, and soft volume signify sadness or sorrow.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L116_Q16",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 116,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "She said she'd read my draft over the weekend. On Monday I asked how it was. She said, 'Oh, I haven't had time.'",
+      "options": [
+        "sad",
+        "embarrassed",
+        "angry",
+        "disappointed"
+      ],
+      "optionEmojis": [
+        "😢",
+        "😳",
+        "😠",
+        "😞"
+      ],
+      "correctIndex": 3,
+      "correctAnswerIndex": 3,
+      "correctAnswer": "disappointed",
+      "correctEmoji": "😞",
+      "emoji": "😞",
+      "hint": "What did the speaker expect on Monday?",
+      "explanation": "The promise wasn't kept and the speaker's effort wasn't valued. This is disappointment.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L116_Q17",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 116,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "It wasn't a big thing, I know. But when everyone else went quiet about my idea, you were the one who said, 'Let's hear the rest.' That mattered.",
+      "options": [
+        "touched",
+        "relieved",
+        "grateful",
+        "proud"
+      ],
+      "optionEmojis": [
+        "🥹",
+        "😌",
+        "🙏",
+        "🙌"
+      ],
+      "correctIndex": 2,
+      "correctAnswerIndex": 2,
+      "correctAnswer": "grateful",
+      "correctEmoji": "🙏",
+      "emoji": "🙏",
+      "hint": "What did the other person do at a difficult moment?",
+      "explanation": "The other person gave a small act of support at exactly the right moment. The speaker is grateful.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L116_Q18",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 116,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "The dog hasn't eaten since morning, and she's been standing at the door, looking back at me. She's never done that.",
+      "options": [
+        "sad",
+        "annoyed",
+        "curious",
+        "worried"
+      ],
+      "optionEmojis": [
+        "😢",
+        "🙄",
+        "🤔",
+        "😟"
+      ],
+      "correctIndex": 3,
+      "correctAnswerIndex": 3,
+      "correctAnswer": "worried",
+      "correctEmoji": "😟",
+      "emoji": "😟",
+      "hint": "What is different from the dog's usual behavior?",
+      "explanation": "A change in behavior suggests something is wrong.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L117_Q19",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 117,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "I checked the oven, the lights, the door, and the windows twice. Then at the airport I realized I'd left my passport at home. Except I hadn't. It was in my other pocket.",
+      "options": [
+        "anxious",
+        "embarrassed",
+        "annoyed",
+        "relieved"
+      ],
+      "optionEmojis": [
+        "😰",
+        "😳",
+        "🙄",
+        "😌"
+      ],
+      "correctIndex": 3,
+      "correctAnswerIndex": 3,
+      "correctAnswer": "relieved",
+      "correctEmoji": "😌",
+      "emoji": "😌",
+      "hint": "What happens in the last two sentences?",
+      "explanation": "A moment of panic turns out to be a false alarm. Everything points to relief.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L117_Q20",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 117,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "I confidently told the tour group the statue was by Michelangelo. The guide behind me cleared his throat and said it was from the nineteenth century.",
+      "options": [
+        "embarrassed",
+        "annoyed",
+        "nervous",
+        "guilty"
+      ],
+      "optionEmojis": [
+        "😳",
+        "🙄",
+        "😬",
+        "😔"
+      ],
+      "correctIndex": 0,
+      "correctAnswerIndex": 0,
+      "correctAnswer": "embarrassed",
+      "correctEmoji": "😳",
+      "emoji": "😳",
+      "hint": "Who corrected the speaker, and in front of whom?",
+      "explanation": "The speaker made a confident mistake in public and was corrected in front of a group. That's embarrassment.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L117_Q21",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 117,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "The flight's delayed until tomorrow, the hotel's full, and the airline says it's the weather. So, the floor near gate seven it is.",
+      "options": [
+        "tired",
+        "resigned",
+        "annoyed",
+        "angry"
+      ],
+      "optionEmojis": [
+        "😴",
+        "😑",
+        "🙄",
+        "😠"
+      ],
+      "correctIndex": 1,
+      "correctAnswerIndex": 1,
+      "correctAnswer": "resigned",
+      "correctEmoji": "😑",
+      "emoji": "😑",
+      "hint": "Does the speaker argue with the situation or adapt to it?",
+      "explanation": "The speaker sees no way around it and makes the best of it.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L118_Q22",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 118,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "After the flood, the whole street came to my door with soup and blankets. People I'd never even spoken to. One of them just held my hand for a moment and left.",
+      "options": [
+        "sad",
+        "touched",
+        "relieved",
+        "grateful"
+      ],
+      "optionEmojis": [
+        "😢",
+        "🥹",
+        "😌",
+        "🙏"
+      ],
+      "correctIndex": 1,
+      "correctAnswerIndex": 1,
+      "correctAnswer": "touched",
+      "correctEmoji": "🥹",
+      "emoji": "🥹",
+      "hint": "Who came to help, and what did they say?",
+      "explanation": "The kindness of strangers moves the speaker. Everything points to being touched.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L118_Q23",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 118,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "I've told the team what I want, I've sent examples, and every draft comes back with the same problem. It's like we're speaking different languages.",
+      "options": [
+        "disappointed",
+        "angry",
+        "confused",
+        "frustrated"
+      ],
+      "optionEmojis": [
+        "😞",
+        "😠",
+        "😕",
+        "😤"
+      ],
+      "correctIndex": 3,
+      "correctAnswerIndex": 3,
+      "correctAnswer": "frustrated",
+      "correctEmoji": "😤",
+      "emoji": "😤",
+      "hint": "What does the speaker say about their attempts to communicate?",
+      "explanation": "The speaker has explained again and again and made no progress. Frustration is the feeling here.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L118_Q24",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 118,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "I'd been counting on the scholarship. When the letter said 'unsuccessful,' I read it twice, then folded it and put it in a drawer.",
+      "options": [
+        "embarrassed",
+        "disappointed",
+        "nervous",
+        "angry"
+      ],
+      "optionEmojis": [
+        "😳",
+        "😞",
+        "😬",
+        "😠"
+      ],
+      "correctIndex": 1,
+      "correctAnswerIndex": 1,
+      "correctAnswer": "disappointed",
+      "correctEmoji": "😞",
+      "emoji": "😞",
+      "hint": "What did the speaker expect from this letter?",
+      "explanation": "They'd built their plans around the result. That's why disappointed fits best.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L119_Q25",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 119,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "After the storm, our whole team stayed to fix the school roof. Nobody asked us to. I looked around and thought, that's who we are.",
+      "options": [
+        "proud",
+        "tired",
+        "relieved",
+        "grateful"
+      ],
+      "optionEmojis": [
+        "🙌",
+        "😴",
+        "😌",
+        "🙏"
+      ],
+      "correctIndex": 0,
+      "correctAnswerIndex": 0,
+      "correctAnswer": "proud",
+      "correctEmoji": "🙌",
+      "emoji": "🙌",
+      "hint": "What does the speaker conclude from what they saw?",
+      "explanation": "The speaker sees their team's values in action. That's pride.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L119_Q26",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 119,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "The letter says my account has been closed and reopened, and I didn't do either. I've read it four times. It doesn't get clearer when I read it again.",
+      "options": [
+        "angry",
+        "confused",
+        "annoyed",
+        "worried"
+      ],
+      "optionEmojis": [
+        "😠",
+        "😕",
+        "🙄",
+        "😟"
+      ],
+      "correctIndex": 1,
+      "correctAnswerIndex": 1,
+      "correctAnswer": "confused",
+      "correctEmoji": "😕",
+      "emoji": "😕",
+      "hint": "What happens each time the speaker rereads it?",
+      "explanation": "The speaker isn't alarmed or blaming anyone; they just can't work out what the letter means. Rereading doesn't help, which is the heart of confusion.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L119_Q27",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 119,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "I told her the meeting was optional. It wasn't. She found out at the door, in front of the client. She hasn't mentioned it since.",
+      "options": [
+        "nervous",
+        "annoyed",
+        "embarrassed",
+        "guilty"
+      ],
+      "optionEmojis": [
+        "😬",
+        "🙄",
+        "😳",
+        "😔"
+      ],
+      "correctIndex": 3,
+      "correctAnswerIndex": 3,
+      "correctAnswer": "guilty",
+      "correctEmoji": "😔",
+      "emoji": "😔",
+      "hint": "Whose mistake caused the problem?",
+      "explanation": "The speaker's error caused someone else's embarrassment.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L120_Q28",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 120,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "When I moved here, I didn't know anyone. Mrs. Chen from upstairs left soup outside my door every Sunday for a year. I've tried to pass it on, but I could never really repay her.",
+      "options": [
+        "proud",
+        "guilty",
+        "grateful",
+        "touched"
+      ],
+      "optionEmojis": [
+        "🙌",
+        "😔",
+        "🙏",
+        "🥹"
+      ],
+      "correctIndex": 2,
+      "correctAnswerIndex": 2,
+      "correctAnswer": "grateful",
+      "correctEmoji": "🙏",
+      "emoji": "🙏",
+      "hint": "Track what the speaker says about repaying her.",
+      "explanation": "The speaker feels indebted to someone for lasting kindness. That's why grateful fits best.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L120_Q29",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 120,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "We booked this restaurant three months ago. The review said 'unforgettable.' We got cold bread and a bill for three hundred.",
+      "options": [
+        "annoyed",
+        "angry",
+        "disappointed",
+        "embarrassed"
+      ],
+      "optionEmojis": [
+        "🙄",
+        "😠",
+        "😞",
+        "😳"
+      ],
+      "correctIndex": 2,
+      "correctAnswerIndex": 2,
+      "correctAnswer": "disappointed",
+      "correctEmoji": "😞",
+      "emoji": "😞",
+      "hint": "What did the review promise, and what happened?",
+      "explanation": "The experience fell far below the promise. Disappointment is the natural reading.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L120_Q30",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 120,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "I know the odds aren't good. But my niece has beaten them before, and the doctor said her numbers moved the right way this week.",
+      "options": [
+        "worried",
+        "hopeful",
+        "relieved",
+        "sad"
+      ],
+      "optionEmojis": [
+        "😟",
+        "🤞",
+        "😌",
+        "😢"
+      ],
+      "correctIndex": 1,
+      "correctAnswerIndex": 1,
+      "correctAnswer": "hopeful",
+      "correctEmoji": "🤞",
+      "emoji": "🤞",
+      "hint": "Listen to which fact the speaker chooses to hold on to.",
+      "explanation": "The speaker focuses on encouraging signs despite uncertainty. That's hope.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    }
+  ]
+}

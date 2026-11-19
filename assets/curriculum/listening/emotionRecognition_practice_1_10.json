@@ -1,0 +1,878 @@
+{
+  "gameType": "emotionRecognition",
+  "phase": "practice",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L1_Q1",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 1,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "Yes! We won! We actually won the game!",
+      "options": [
+        "bored",
+        "sad",
+        "angry",
+        "happy"
+      ],
+      "optionEmojis": [
+        "🥱",
+        "😢",
+        "😠",
+        "😊"
+      ],
+      "correctIndex": 3,
+      "correctAnswerIndex": 3,
+      "correctAnswer": "happy",
+      "correctEmoji": "😊",
+      "emoji": "😊",
+      "hint": "Listen to how the speaker reacts to the final result.",
+      "explanation": "Cheering and repeating the good news shows joy about the win.",
+      "vocalClue": "High dynamic pitch range, quick rhythmic tempo, and upward intonation contours reflect happiness and excitement.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L1_Q2",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 1,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "My best friend is moving to another country tomorrow. I'm going to miss her so much.",
+      "options": [
+        "happy",
+        "angry",
+        "excited",
+        "sad"
+      ],
+      "optionEmojis": [
+        "😊",
+        "😠",
+        "🤩",
+        "😢"
+      ],
+      "correctIndex": 3,
+      "correctAnswerIndex": 3,
+      "correctAnswer": "sad",
+      "correctEmoji": "😢",
+      "emoji": "😢",
+      "hint": "Think about what tomorrow will change in the speaker's daily life.",
+      "explanation": "Losing everyday time with a close friend, and saying how much they'll miss her, points to sadness.",
+      "vocalClue": "Lower baseline pitch, slower tempo, downward terminal pitch glide, and soft volume signify sadness or sorrow.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L1_Q3",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 1,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "Hey! That's my seat. I was sitting there first!",
+      "options": [
+        "angry",
+        "curious",
+        "sad",
+        "happy"
+      ],
+      "optionEmojis": [
+        "😠",
+        "🤔",
+        "😢",
+        "😊"
+      ],
+      "correctIndex": 0,
+      "correctAnswerIndex": 0,
+      "correctAnswer": "angry",
+      "correctEmoji": "😠",
+      "emoji": "😠",
+      "hint": "Notice how the speaker reacts to what someone just did.",
+      "explanation": "The speaker feels treated unfairly and speaks sharply to defend the seat. Anger is the natural reading.",
+      "vocalClue": "Sharp vocal attacks, tense glottal stops, elevated loudness, and staccato cadence signify anger.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L2_Q4",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 2,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "My first day at the new school is tomorrow. My hands are cold and my stomach feels strange.",
+      "options": [
+        "nervous",
+        "angry",
+        "bored",
+        "happy"
+      ],
+      "optionEmojis": [
+        "😬",
+        "😠",
+        "🥱",
+        "😊"
+      ],
+      "correctIndex": 0,
+      "correctAnswerIndex": 0,
+      "correctAnswer": "nervous",
+      "correctEmoji": "😬",
+      "emoji": "😬",
+      "hint": "Listen to what the speaker's body is doing before something new.",
+      "explanation": "Cold hands and an unsettled stomach before a new experience are classic signs of nervousness.",
+      "vocalClue": "Shaky pitch jitter, rapid shallow cadence, and breathless phonation indicate anxiety or fear.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L2_Q5",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 2,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "We're going to the beach tomorrow! I already packed my sunglasses and my towel!",
+      "options": [
+        "bored",
+        "excited",
+        "angry",
+        "sad"
+      ],
+      "optionEmojis": [
+        "🥱",
+        "🤩",
+        "😠",
+        "😢"
+      ],
+      "correctIndex": 1,
+      "correctAnswerIndex": 1,
+      "correctAnswer": "excited",
+      "correctEmoji": "🤩",
+      "emoji": "🤩",
+      "hint": "Notice how early the speaker is getting ready.",
+      "explanation": "Packing a day early and sounding full of energy shows the speaker is looking forward to it. The speaker is excited.",
+      "vocalClue": "High dynamic pitch range, quick rhythmic tempo, and upward intonation contours reflect happiness and excitement.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L2_Q6",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 2,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "Oh! You're here already? I thought your plane didn't land until tonight!",
+      "options": [
+        "bored",
+        "sad",
+        "surprised",
+        "angry"
+      ],
+      "optionEmojis": [
+        "🥱",
+        "😢",
+        "😲",
+        "😠"
+      ],
+      "correctIndex": 2,
+      "correctAnswerIndex": 2,
+      "correctAnswer": "surprised",
+      "correctEmoji": "😲",
+      "emoji": "😲",
+      "hint": "Compare what the speaker expected with what is happening now.",
+      "explanation": "Surprise fits because the speaker expected the visitor much later, so seeing them now is unexpected.",
+      "vocalClue": "Sudden abrupt high-pitch spike, widened pitch excursion, and abrupt gasping pauses reveal surprise.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L3_Q7",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 3,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "What's inside that big box? Can we open it? Please, can we?",
+      "options": [
+        "curious",
+        "sad",
+        "angry",
+        "bored"
+      ],
+      "optionEmojis": [
+        "🤔",
+        "😢",
+        "😠",
+        "🥱"
+      ],
+      "correctIndex": 0,
+      "correctAnswerIndex": 0,
+      "correctAnswer": "curious",
+      "correctEmoji": "🤔",
+      "emoji": "🤔",
+      "hint": "Listen to the kind of questions the speaker keeps asking.",
+      "explanation": "Repeated questions and a wish to open the box show a strong desire to find out.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L3_Q8",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 3,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "This movie is so long, and nothing is happening. What time is it now?",
+      "options": [
+        "nervous",
+        "bored",
+        "surprised",
+        "excited"
+      ],
+      "optionEmojis": [
+        "😬",
+        "🥱",
+        "😲",
+        "🤩"
+      ],
+      "correctIndex": 1,
+      "correctAnswerIndex": 1,
+      "correctAnswer": "bored",
+      "correctEmoji": "🥱",
+      "emoji": "🥱",
+      "hint": "Ask yourself why the speaker is thinking about the clock.",
+      "explanation": "Nothing interesting is happening and the speaker keeps checking the time. That's why bored fits best.",
+      "vocalClue": "Monotone pitch trajectory, flat intonation contour, elongated vowels, and sluggish pace indicate boredom.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L3_Q9",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 3,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "My grandma just called. She's coming to stay with us for the whole summer!",
+      "options": [
+        "bored",
+        "angry",
+        "happy",
+        "sad"
+      ],
+      "optionEmojis": [
+        "🥱",
+        "😠",
+        "😊",
+        "😢"
+      ],
+      "correctIndex": 2,
+      "correctAnswerIndex": 2,
+      "correctAnswer": "happy",
+      "correctEmoji": "😊",
+      "emoji": "😊",
+      "hint": "Decide whether the news is good or bad for the speaker.",
+      "explanation": "A long summer visit from a loved one is welcome news, and the speaker's voice lifts. This is happiness.",
+      "vocalClue": "High dynamic pitch range, quick rhythmic tempo, and upward intonation contours reflect happiness and excitement.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L4_Q10",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 4,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "I studied so hard, but I still didn't pass. I don't want to talk about it.",
+      "options": [
+        "sad",
+        "curious",
+        "angry",
+        "happy"
+      ],
+      "optionEmojis": [
+        "😢",
+        "🤔",
+        "😠",
+        "😊"
+      ],
+      "correctIndex": 0,
+      "correctAnswerIndex": 0,
+      "correctAnswer": "sad",
+      "correctEmoji": "😢",
+      "emoji": "😢",
+      "hint": "Listen to the result, and to what the speaker wants to do afterward.",
+      "explanation": "Failing after real effort, and wanting to stay quiet about it, shows sadness.",
+      "vocalClue": "Lower baseline pitch, slower tempo, downward terminal pitch glide, and soft volume signify sadness or sorrow.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L4_Q11",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 4,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "You broke my phone and you didn't even say sorry? Seriously?",
+      "options": [
+        "bored",
+        "sad",
+        "angry",
+        "nervous"
+      ],
+      "optionEmojis": [
+        "🥱",
+        "😢",
+        "😠",
+        "😬"
+      ],
+      "correctIndex": 2,
+      "correctAnswerIndex": 2,
+      "correctAnswer": "angry",
+      "correctEmoji": "😠",
+      "emoji": "😠",
+      "hint": "Notice what the speaker is complaining about, and how sharply.",
+      "explanation": "The speaker is upset about the damage and about the missing apology, and the sharp 'Seriously?' shows anger.",
+      "vocalClue": "Sharp vocal attacks, tense glottal stops, elevated loudness, and staccato cadence signify anger.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L4_Q12",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 4,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "The doctor is calling with my test results in an hour. What if it's bad news?",
+      "options": [
+        "angry",
+        "bored",
+        "happy",
+        "nervous"
+      ],
+      "optionEmojis": [
+        "😠",
+        "🥱",
+        "😊",
+        "😬"
+      ],
+      "correctIndex": 3,
+      "correctAnswerIndex": 3,
+      "correctAnswer": "nervous",
+      "correctEmoji": "😬",
+      "emoji": "😬",
+      "hint": "Think about what kind of news the speaker is waiting for.",
+      "explanation": "Waiting for important results and imagining the worst is a typical source of nervousness.",
+      "vocalClue": "Shaky pitch jitter, rapid shallow cadence, and breathless phonation indicate anxiety or fear.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L5_Q13",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 5,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "Only three more hours until the concert! I'm going to scream when they walk on stage!",
+      "options": [
+        "sad",
+        "nervous",
+        "excited",
+        "bored"
+      ],
+      "optionEmojis": [
+        "😢",
+        "😬",
+        "🤩",
+        "🥱"
+      ],
+      "correctIndex": 2,
+      "correctAnswerIndex": 2,
+      "correctAnswer": "excited",
+      "correctEmoji": "🤩",
+      "emoji": "🤩",
+      "hint": "Listen to what the speaker imagines will happen.",
+      "explanation": "Counting down the hours and imagining screaming with joy shows high-energy excitement.",
+      "vocalClue": "High dynamic pitch range, quick rhythmic tempo, and upward intonation contours reflect happiness and excitement.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L5_Q14",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 5,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "What? A hundred people came? We only invited ten friends!",
+      "options": [
+        "surprised",
+        "curious",
+        "sad",
+        "bored"
+      ],
+      "optionEmojis": [
+        "😲",
+        "🤔",
+        "😢",
+        "🥱"
+      ],
+      "correctIndex": 0,
+      "correctAnswerIndex": 0,
+      "correctAnswer": "surprised",
+      "correctEmoji": "😲",
+      "emoji": "😲",
+      "hint": "Compare the number the speaker expected with the number they see.",
+      "explanation": "The crowd is ten times bigger than planned, and the speaker reacts with 'What?' The speaker is surprised.",
+      "vocalClue": "Sudden abrupt high-pitch spike, widened pitch excursion, and abrupt gasping pauses reveal surprise.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L5_Q15",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 5,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "That's a strange sound. Where is it coming from? Let's go and look.",
+      "options": [
+        "angry",
+        "sad",
+        "bored",
+        "curious"
+      ],
+      "optionEmojis": [
+        "😠",
+        "😢",
+        "🥱",
+        "🤔"
+      ],
+      "correctIndex": 3,
+      "correctAnswerIndex": 3,
+      "correctAnswer": "curious",
+      "correctEmoji": "🤔",
+      "emoji": "🤔",
+      "hint": "Listen to what the speaker wants to do about the sound.",
+      "explanation": "Asking where the sound comes from and wanting to look shows a desire to find out. Curiosity is the natural reading.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L6_Q16",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 6,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "Another meeting about the same thing. Wake me up when it's over.",
+      "options": [
+        "nervous",
+        "bored",
+        "excited",
+        "angry"
+      ],
+      "optionEmojis": [
+        "😬",
+        "🥱",
+        "🤩",
+        "😠"
+      ],
+      "correctIndex": 1,
+      "correctAnswerIndex": 1,
+      "correctAnswer": "bored",
+      "correctEmoji": "🥱",
+      "emoji": "🥱",
+      "hint": "Listen to how interested the speaker sounds in the topic.",
+      "explanation": "A repeated topic and a joking wish to sleep through it show boredom.",
+      "vocalClue": "Monotone pitch trajectory, flat intonation contour, elongated vowels, and sluggish pace indicate boredom.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L6_Q17",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 6,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "Look at this! My little brother drew it for me. It's so cute. It's going on my wall.",
+      "options": [
+        "angry",
+        "bored",
+        "sad",
+        "happy"
+      ],
+      "optionEmojis": [
+        "😠",
+        "🥱",
+        "😢",
+        "😊"
+      ],
+      "correctIndex": 3,
+      "correctAnswerIndex": 3,
+      "correctAnswer": "happy",
+      "correctEmoji": "😊",
+      "emoji": "😊",
+      "hint": "Notice what the speaker plans to do with the gift.",
+      "explanation": "Enjoying the drawing and wanting to display it shows warm happiness.",
+      "vocalClue": "High dynamic pitch range, quick rhythmic tempo, and upward intonation contours reflect happiness and excitement.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L6_Q18",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 6,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "Everyone left already. It's so quiet in this house without them.",
+      "options": [
+        "curious",
+        "angry",
+        "excited",
+        "sad"
+      ],
+      "optionEmojis": [
+        "🤔",
+        "😠",
+        "🤩",
+        "😢"
+      ],
+      "correctIndex": 3,
+      "correctAnswerIndex": 3,
+      "correctAnswer": "sad",
+      "correctEmoji": "😢",
+      "emoji": "😢",
+      "hint": "Think about the difference between the house before and now.",
+      "explanation": "Noticing the silence after people leave conveys sadness at being alone.",
+      "vocalClue": "Lower baseline pitch, slower tempo, downward terminal pitch glide, and soft volume signify sadness or sorrow.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L7_Q19",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 7,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "Who spilled juice on my homework? Look at it! It's ruined!",
+      "options": [
+        "sad",
+        "angry",
+        "curious",
+        "bored"
+      ],
+      "optionEmojis": [
+        "😢",
+        "😠",
+        "🤔",
+        "🥱"
+      ],
+      "correctIndex": 1,
+      "correctAnswerIndex": 1,
+      "correctAnswer": "angry",
+      "correctEmoji": "😠",
+      "emoji": "😠",
+      "hint": "Listen to the question the speaker asks about the person responsible.",
+      "explanation": "Demanding to know who did it, while pointing at the ruined page, shows anger.",
+      "vocalClue": "Sharp vocal attacks, tense glottal stops, elevated loudness, and staccato cadence signify anger.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L7_Q20",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 7,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "Please don't look at me. I'm next in line for the audition, and my legs feel like jelly.",
+      "options": [
+        "angry",
+        "excited",
+        "nervous",
+        "bored"
+      ],
+      "optionEmojis": [
+        "😠",
+        "🤩",
+        "😬",
+        "🥱"
+      ],
+      "correctIndex": 2,
+      "correctAnswerIndex": 2,
+      "correctAnswer": "nervous",
+      "correctEmoji": "😬",
+      "emoji": "😬",
+      "hint": "Notice what the speaker wants other people to do, and why.",
+      "explanation": "Wanting to hide and feeling weak-legged before performing are signs of nervousness.",
+      "vocalClue": "Shaky pitch jitter, rapid shallow cadence, and breathless phonation indicate anxiety or fear.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L7_Q21",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 7,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "They said yes! We're getting a puppy on Saturday! Can we go buy a little bed today?",
+      "options": [
+        "excited",
+        "angry",
+        "sad",
+        "bored"
+      ],
+      "optionEmojis": [
+        "🤩",
+        "😠",
+        "😢",
+        "🥱"
+      ],
+      "correctIndex": 0,
+      "correctAnswerIndex": 0,
+      "correctAnswer": "excited",
+      "correctEmoji": "🤩",
+      "emoji": "🤩",
+      "hint": "Listen to how quickly the speaker wants to start preparing.",
+      "explanation": "Wanting to shop right away for something that hasn't arrived yet shows excitement.",
+      "vocalClue": "High dynamic pitch range, quick rhythmic tempo, and upward intonation contours reflect happiness and excitement.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L8_Q22",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 8,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "Wait, that's my old teacher? I didn't recognize her at all. She looks completely different!",
+      "options": [
+        "sad",
+        "angry",
+        "bored",
+        "surprised"
+      ],
+      "optionEmojis": [
+        "😢",
+        "😠",
+        "🥱",
+        "😲"
+      ],
+      "correctIndex": 3,
+      "correctAnswerIndex": 3,
+      "correctAnswer": "surprised",
+      "correctEmoji": "😲",
+      "emoji": "😲",
+      "hint": "Compare what the speaker remembers with what they see now.",
+      "explanation": "A familiar person looks very different from what the speaker expected. Everything points to surprise.",
+      "vocalClue": "Sudden abrupt high-pitch spike, widened pitch excursion, and abrupt gasping pauses reveal surprise.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L8_Q23",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 8,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "Your grandfather's stories are amazing. What did he do after he left the village?",
+      "options": [
+        "sad",
+        "curious",
+        "bored",
+        "angry"
+      ],
+      "optionEmojis": [
+        "😢",
+        "🤔",
+        "🥱",
+        "😠"
+      ],
+      "correctIndex": 1,
+      "correctAnswerIndex": 1,
+      "correctAnswer": "curious",
+      "correctEmoji": "🤔",
+      "emoji": "🤔",
+      "hint": "Listen for what the speaker wants to know next.",
+      "explanation": "Asking a follow-up question because they want more of the story shows curiosity.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L8_Q24",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 8,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "I've been on this bus for two hours. I've counted every tree. There's nothing to do.",
+      "options": [
+        "angry",
+        "bored",
+        "nervous",
+        "excited"
+      ],
+      "optionEmojis": [
+        "😠",
+        "🥱",
+        "😬",
+        "🤩"
+      ],
+      "correctIndex": 1,
+      "correctAnswerIndex": 1,
+      "correctAnswer": "bored",
+      "correctEmoji": "🥱",
+      "emoji": "🥱",
+      "hint": "Listen to how the speaker is filling the time.",
+      "explanation": "Counting trees to pass the time means nothing interests them. Everything points to boredom.",
+      "vocalClue": "Monotone pitch trajectory, flat intonation contour, elongated vowels, and sluggish pace indicate boredom.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L9_Q25",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 9,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "My sister called this morning. We talked for an hour, and I laughed the whole time.",
+      "options": [
+        "angry",
+        "sad",
+        "happy",
+        "nervous"
+      ],
+      "optionEmojis": [
+        "😠",
+        "😢",
+        "😊",
+        "😬"
+      ],
+      "correctIndex": 2,
+      "correctAnswerIndex": 2,
+      "correctAnswer": "happy",
+      "correctEmoji": "😊",
+      "emoji": "😊",
+      "hint": "Listen to what the speaker did during the call.",
+      "explanation": "Laughing through a long call shows enjoyment and warmth. That's why happy fits best.",
+      "vocalClue": "High dynamic pitch range, quick rhythmic tempo, and upward intonation contours reflect happiness and excitement.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L9_Q26",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 9,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "Her chair is empty at lunch now. We used to eat together every day before she moved.",
+      "options": [
+        "angry",
+        "bored",
+        "sad",
+        "excited"
+      ],
+      "optionEmojis": [
+        "😠",
+        "🥱",
+        "😢",
+        "🤩"
+      ],
+      "correctIndex": 2,
+      "correctAnswerIndex": 2,
+      "correctAnswer": "sad",
+      "correctEmoji": "😢",
+      "emoji": "😢",
+      "hint": "Think about what the empty chair stands for.",
+      "explanation": "The empty chair reminds the speaker of a friend who is gone. That's sadness.",
+      "vocalClue": "Lower baseline pitch, slower tempo, downward terminal pitch glide, and soft volume signify sadness or sorrow.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L9_Q27",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 9,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "The plane is shaking again. Is that normal? Please tell me that's normal.",
+      "options": [
+        "nervous",
+        "happy",
+        "angry",
+        "bored"
+      ],
+      "optionEmojis": [
+        "😬",
+        "😊",
+        "😠",
+        "🥱"
+      ],
+      "correctIndex": 0,
+      "correctAnswerIndex": 0,
+      "correctAnswer": "nervous",
+      "correctEmoji": "😬",
+      "emoji": "😬",
+      "hint": "Listen to what the speaker is asking someone to promise.",
+      "explanation": "Asking to be reassured about a shaking plane shows nervousness.",
+      "vocalClue": "Shaky pitch jitter, rapid shallow cadence, and breathless phonation indicate anxiety or fear.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L10_Q28",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 10,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "I just found twenty dollars in my old jacket! I totally forgot it was there!",
+      "options": [
+        "surprised",
+        "sad",
+        "angry",
+        "bored"
+      ],
+      "optionEmojis": [
+        "😲",
+        "😢",
+        "😠",
+        "🥱"
+      ],
+      "correctIndex": 0,
+      "correctAnswerIndex": 0,
+      "correctAnswer": "surprised",
+      "correctEmoji": "😲",
+      "emoji": "😲",
+      "hint": "Listen to whether the speaker expected to find it.",
+      "explanation": "Finding something they'd forgotten about is unexpected. The speaker is surprised.",
+      "vocalClue": "Sudden abrupt high-pitch spike, widened pitch excursion, and abrupt gasping pauses reveal surprise.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L10_Q29",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 10,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "He read my private message out loud in front of the whole class. How could he do that?",
+      "options": [
+        "sad",
+        "angry",
+        "nervous",
+        "curious"
+      ],
+      "optionEmojis": [
+        "😢",
+        "😠",
+        "😬",
+        "🤔"
+      ],
+      "correctIndex": 1,
+      "correctAnswerIndex": 1,
+      "correctAnswer": "angry",
+      "correctEmoji": "😠",
+      "emoji": "😠",
+      "hint": "Think about how the speaker was treated, and by whom.",
+      "explanation": "A private message was shared without permission, and the speaker asks how anyone could do that. That's why angry fits best.",
+      "vocalClue": "Sharp vocal attacks, tense glottal stops, elevated loudness, and staccato cadence signify anger.",
+      "emotionScale": 3
+    },
+    {
+      "id": "LIS_EMOTIONRECOGNITION_PRACTICE_L10_Q30",
+      "gameType": "emotionRecognition",
+      "phase": "practice",
+      "level": 10,
+      "instruction": "Listen to the speaker's vocal tone and select the matching emotion:",
+      "textToSpeak": "My cousin's coming from Japan next week. I want to ask her everything about it. What's the food like? Is it really that clean?",
+      "options": [
+        "bored",
+        "sad",
+        "nervous",
+        "curious"
+      ],
+      "optionEmojis": [
+        "🥱",
+        "😢",
+        "😬",
+        "🤔"
+      ],
+      "correctIndex": 3,
+      "correctAnswerIndex": 3,
+      "correctAnswer": "curious",
+      "correctEmoji": "🤔",
+      "emoji": "🤔",
+      "hint": "Count how many questions the speaker wants to ask.",
+      "explanation": "A long list of questions about a place they've never seen shows curiosity.",
+      "vocalClue": "Pitch modulation and rhythm reflect the inner emotion.",
+      "emotionScale": 3
+    }
+  ]
+}
