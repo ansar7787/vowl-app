@@ -1,0 +1,818 @@
+{
+  "gameType": "branchingDialogue",
+  "phase": "practice",
+  "batchIndex": 18,
+  "levels": "171-180",
+  "quests": [
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your manager",
+      "scene": "You send a draft to your manager. She replies: 'Interesting approach. Let's see how the client reacts.' She usually gives detailed praise when she likes something.",
+      "options": [
+        "Great, thanks! I'm glad you like the approach. I'll send it to the client this afternoon.",
+        "Thanks for looking at it. I get the sense you may have some reservations. Would it help if I prepared a more conventional version alongside, so we have both for the client?",
+        "You don't sound very positive. Do you think it's bad? Does that seem right to you? Honestly, I hadn't fully worked out how it'd play out — and honestly the whole situation caught me a bit off guard."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When someone's reply is cooler than usual, treat the gap as information and offer a low-pressure way to surface the concern.",
+      "explanation": "'Interesting' plus a change from her usual detail suggests hesitation. Naming a gentle possibility and offering a second version lets her say what she thinks without conflict. Assuming approval ignores the signal, and a blunt challenge forces her to reject it openly.",
+      "id": "bd_practice_l171_q1",
+      "consequencePreviews": [
+        "Here, you take a lukewarm reply as approval and may send something she has doubts about.",
+        "As a result, you read the muted tone correctly and offer a practical way to respond to it.",
+        "Realistically, the direct challenge may put her on the spot and make her defensive."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend planning a dinner",
+      "scene": "You invite a friend to dinner on Friday. She says, 'Friday's going to be a bit hectic, but I'll try.'",
+      "options": [
+        "What exactly is going on on Friday that's so hectic? Is that the right way to look at it? Honestly, I hadn't weighed all the details.",
+        "Great, so I'll book a table for two at seven and count you in.",
+        "No pressure at all. Shall we pick a different night, or just leave it and see how the week goes?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "'I'll try' and 'a bit hectic' are often polite ways of declining; offer an exit, don't cross-examine.",
+      "explanation": "People soften refusals to protect friendships. Offering an alternative respects that. Booking the table ignores the hint, and probing demands an excuse she may not have.",
+      "id": "bd_practice_l171_q2",
+      "consequencePreviews": [
+        "In this moment, questioning her schedule feels intrusive and forces her to justify a polite hedge.",
+        "As a result, you treat 'I'll try' as a yes, which puts her under pressure she was trying to avoid.",
+        "Realistically, you hear the soft no and give her an easy way out without making her say it."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a job interviewer",
+      "scene": "At the end of an interview, the interviewer says, 'We have a few more people to see, so we'll be in touch.'",
+      "options": [
+        "Thank you, I appreciate your time. I remain very interested, and I'm happy to send anything that might help your decision, for example the work sample we discussed.",
+        "I understand. I'm sure there are many stronger candidates than me, if I'm being honest, I said that fairly quickly, but that could easily change — and I'm honestly still working out how I feel about the whole thing.",
+        "Great, so when should I expect your decision? I'd like to know as soon as possible, to be honest, I hadn't really thought it through, so there might be a better way to handle it."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Read polite closing lines as a signal to end well, not as a cue to press for information.",
+      "explanation": "'We'll be in touch' is neutral, not negative. A gracious close with a helpful offer leaves a good impression. Pushing for a date and self-deprecation both waste that last moment.",
+      "id": "bd_practice_l171_q3",
+      "consequencePreviews": [
+        "In this moment, you accept the standard close, restate interest and offer something useful without pressing.",
+        "Undermining yourself at the last moment leaves a weaker final impression.",
+        "You may notice that pressing for a date after a polite close can feel pushy and add nothing."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague sharing a project update",
+      "scene": "A colleague says, with a dry smile, 'Oh yes, another meeting that could have been an email.' You organised this meeting.",
+      "options": [
+        "Fair point, and I'll keep it short. If it turns out an email would do, I'll switch to that next time.",
+        "Yes, absolutely, this could totally have been an email. I'm not sure why we're all here.",
+        "Ha, very funny. You're welcome to skip the next one if you find them so useless."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Jokes often carry real feedback; answer the feedback with humour and a small commitment.",
+      "explanation": "The dry remark suggests she thinks meetings are wasteful. Acknowledging that and promising brevity defuses it. Sarcasm escalates, and blanket agreement makes you look unprepared.",
+      "id": "bd_practice_l172_q1",
+      "consequencePreviews": [
+        "Here, you hear the criticism inside the joke and respond lightly while committing to improve.",
+        "You may notice that agreeing without reflection undermines your own meeting and doesn't address the point.",
+        "Realistically, the sarcastic reply escalates a mild dig into a small argument."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who looks away when you ask about her job",
+      "scene": "You ask a friend how her new job is going. She says 'It's fine' quickly, looks at her phone and changes the subject to the weather.",
+      "options": [
+        "Come on, I can tell something is wrong. You have to tell me what happened, I guess, I hadn't really thought it through, so take it with a grain of salt.",
+        "Good to hear. Let me know if you ever want to talk about it, I'm around. Anyway, it has been grey all week, hasn't it?",
+        "That's great! I'm so glad it's going well. You must be so relieved, I mean, I hadn't checked how that would actually land, but that could easily change."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When someone deflects, respect it but leave the door open.",
+      "explanation": "A rushed 'fine' and a topic change mean she's not ready. Offering support without demanding an answer lets her return when ready. Forcing her to talk backfires, and cheering ignores what you saw.",
+      "id": "bd_practice_l172_q2",
+      "consequencePreviews": [
+        "Here, insisting overrides her signal that she isn't ready to talk.",
+        "As a result, you notice the avoidance, leave an open door and follow her lead on the topic.",
+        "As a result, taking 'fine' at face value misses the signs, and the enthusiasm may make it harder for her to open up."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a client on a call",
+      "scene": "You present a proposal. The client says, 'That's certainly ambitious.' He doesn't say more and the line goes quiet.",
+      "options": [
+        "Thanks, we're glad you think so. Shall we move on to the next steps?",
+        "Are you saying it's unrealistic? If so, please tell me directly, I suppose, I was going more on instinct than anything, but that could easily change.",
+        "Thank you. Ambitious can mean many things, so I'm curious which parts feel most stretching to you, the timeline, the budget or the scope?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Ambiguous evaluative words like 'ambitious' invite a follow-up question about what specifically concerns them.",
+      "explanation": "'Ambitious' can hide doubt. A neutral question with options makes it easy to answer honestly. Ignoring it risks a later objection, and confronting him may make him guarded.",
+      "id": "bd_practice_l172_q3",
+      "consequencePreviews": [
+        "You hear a compliment where there may be a warning and rush past his hesitation.",
+        "Here, the direct accusation puts words in his mouth and may make him retreat.",
+        "Realistically, you treat the polite word as a possible doubt and invite him to be specific."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a neighbour",
+      "scene": "A neighbour says, 'I wonder if your dog gets enough exercise, he seems to be quite vocal these days.'",
+      "options": [
+        "Yes, he gets plenty of exercise. He's a dog, so he barks sometimes.",
+        "Thanks for telling me. Is his barking keeping you awake? I'll take him out earlier and see whether that helps.",
+        "Are you complaining about my dog? Just say so if you are, admittedly, I hadn't really planned past that point, so I could be wrong."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When someone raises a topic indirectly, respond to the likely concern, not just the words.",
+      "explanation": "She's actually saying the barking bothers her. Asking about it and acting shows you understood. A literal answer dismisses her, and a confrontation makes future contact harder.",
+      "id": "bd_practice_l173_q1",
+      "consequencePreviews": [
+        "As a result, you answer the literal question and miss the complaint underneath it.",
+        "As a result, you decode the indirect complaint, ask the real question and commit to an action.",
+        "Here, calling out the indirectness may embarrass her and turn a mild remark into a dispute."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a teacher at parents' evening",
+      "scene": "A teacher says of your son: 'He's a very sociable boy.' She says nothing about his marks, and you know they've dropped.",
+      "options": [
+        "Thank you, we're very proud of how friendly he is, actually, I hadn't checked how that would actually land, but I'm not totally set on it.",
+        "Why didn't you tell me his marks have dropped? What am I missing here? Honestly, I was going more on instinct than anything.",
+        "He is. I wonder whether that's affecting his concentration. How are his marks compared with earlier in the term?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "In feedback conversations, notice what is left out and ask about it directly but neutrally.",
+      "explanation": "Teachers often lead with positives when the news is mixed. Linking sociability to concentration invites her to be specific. Accepting the praise stops the conversation, and blaming her closes her off.",
+      "id": "bd_practice_l173_q2",
+      "consequencePreviews": [
+        "Realistically, you take the compliment at face value and miss the missing information about his work.",
+        "Realistically, the accusation may make her defensive when you haven't yet heard what she wanted to say.",
+        "Here, you hear the implied concern and steer to what she may be hesitant to say."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "your landlord",
+      "scene": "Your landlord texts: 'Just a reminder, the lease is up for renewal at the end of next month.' He hasn't mentioned renewing on the same terms.",
+      "options": [
+        "Thanks for the reminder. I'd like to stay. Could you let me know whether the rent will stay the same, or if there are any changes you're planning?",
+        "Are you planning to raise the rent? Because I won't pay any more.",
+        "Thanks, noted. I'll wait to hear from you."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "A vague reminder about a contract may signal a change; ask a specific, calm question.",
+      "explanation": "The absence of 'same terms' is informative. Stating your wish to stay and asking about rent brings the issue out politely. Passivity gives up your position, and hostility is premature.",
+      "id": "bd_practice_l173_q3",
+      "consequencePreviews": [
+        "In this moment, you read the reminder as a possible prelude to a change and ask directly.",
+        "In this moment, assuming the worst and threatening early may spoil a negotiation you haven't started.",
+        "As a result, waiting passively leaves you exposed to a surprise rent increase."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague who says 'with all due respect'",
+      "scene": "In a meeting, a colleague begins, 'With all due respect, I think your estimate is optimistic.' Others look at you.",
+      "options": [
+        "I appreciate you saying it directly. Which assumptions do you think are optimistic? If you can show me where, I'm happy to revise the estimate.",
+        "If you have a problem with my work, you can say it in private, to be fair, it wasn't a fully considered answer, so there might be a better way to handle it.",
+        "Thank you for your respect. I stand by my numbers, and I doubt they need changing."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "'With all due respect' usually introduces a disagreement, so respond to the content it introduces.",
+      "explanation": "The phrase signals criticism. Asking which assumptions are the problem converts it into something you can evaluate. Defending immediately or moving it offline both look guarded.",
+      "id": "bd_practice_l174_q1",
+      "consequencePreviews": [
+        "Here, you decode the phrase as a coming disagreement, stay calm and ask for specifics.",
+        "Realistically, deflecting a professional challenge to a private setting looks defensive.",
+        "In this moment, treating the phrase as a compliment misses that a challenge is coming, and it shuts down discussion."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend saying 'no offence, but'",
+      "scene": "A friend says, 'No offence, but that colour really doesn't suit you.' You had just bought the jacket you're wearing.",
+      "options": [
+        "Wow, that's rude. I can't believe you'd say that about my clothes.",
+        "Thanks for being honest. I like it though, so I'll keep it. What is it about the colour that doesn't work for you?",
+        "Oh, really? You're right, I probably shouldn't have bought it. I'll take it back."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "You can accept someone's honesty without accepting their opinion.",
+      "explanation": "'No offence' often precedes offence, but the friend is voicing taste. Acknowledging it and standing by your choice keeps things calm. Overreacting escalates, and caving loses your own judgement.",
+      "id": "bd_practice_l174_q2",
+      "consequencePreviews": [
+        "In this moment, the strong reaction turns a small opinion into an argument.",
+        "Here, you accept the opinion without agreeing and stay in control of your own choice.",
+        "As a result, giving up a purchase because of one comment undervalues your own taste."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a senior partner at a law firm",
+      "scene": "A senior partner says to you in front of the team, 'I'm sure you've got a plan for the Hendricks filing.' You haven't finished it, and the deadline is tomorrow.",
+      "options": [
+        "I'm sure you know how busy everyone is at the moment. There are so many filings, in fairness, that was more of a first reaction, though I'd want to think it over more.",
+        "Yes, of course, it's all in hand. There's nothing to worry about, to be honest, I wasn't considering every angle, but I'm not totally set on it.",
+        "I'm partway through. I'll have a full draft to you by four this afternoon, and I'll flag anything I'm unsure of before then."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When authority phrases a demand as an assumption, answer the real question: status and timing.",
+      "explanation": "She's asking 'where is it?' politely. Precise status and a time meet her real need and protect your credibility. False confidence is risky, and complaints about workload deflect.",
+      "id": "bd_practice_l174_q3",
+      "consequencePreviews": [
+        "You may notice that talking about workload sounds like an excuse and doesn't answer the implied question.",
+        "Realistically, claiming it's under control when it isn't puts you at real risk if she checks.",
+        "Here, you hear the pointed reminder inside the polite remark, and give a specific timeline and honesty about progress."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague you're texting",
+      "scene": "You text a colleague: 'Are we still on for lunch?' She replies with only: 'K.' Normally she writes long, friendly messages.",
+      "options": [
+        "Why are you being so short with me? Did I do something wrong?",
+        "Great, see you at 1. By the way, if you're swamped today I'm happy to move it, just say.",
+        "Great, see you at 1."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A change in someone's usual style may mean stress rather than anger; check gently without accusing.",
+      "explanation": "The short reply is likely rushed. Offering flexibility respects that. Interrogating turns an ordinary moment into a conflict, and ignoring the change misses an opportunity for kindness.",
+      "id": "bd_practice_l175_q1",
+      "consequencePreviews": [
+        "Realistically, reading it as hostility and demanding an explanation may create tension out of a rushed reply.",
+        "Here, you confirm and gently offer flexibility in case the curtness signals stress.",
+        "In this moment, the plain reply is fine but misses a chance to check on someone who may be under pressure."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "an email from your client",
+      "scene": "A client's email says: 'Please see the attached. As previously discussed.' It has no greeting or thanks, which is unlike his earlier messages.",
+      "options": [
+        "There's no need to be so short with me. I'm doing my best on this project.",
+        "Hi Mark! Hope you're having a fantastic day! Thanks so much for the lovely email, I suppose, I hadn't really planned past that point, but that could easily change — and I haven't really run it past anyone else yet.",
+        "Thanks, received. I'll go through it today and send a summary of the changes. If anything in the attachment differs from what you expected, let me know and I'll fix it promptly."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When someone's tone turns curt, respond calmly with efficiency and reassurance rather than reacting to the tone.",
+      "explanation": "A brisk tone often signals pressure. Efficient, reassuring replies reduce it. Defensiveness escalates, and forced cheer ignores what the client is experiencing.",
+      "id": "bd_practice_l175_q2",
+      "consequencePreviews": [
+        "As a result, responding to tone with defensiveness could damage the relationship for little reason.",
+        "You may notice that the cheerful mismatch may read as oblivious to his obvious irritation.",
+        "Realistically, you respond professionally and pre-empt the possible frustration behind the brusque tone."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who seems distant after a disagreement",
+      "scene": "After a tense conversation last week, a friend replies to your message with a single thumbs-up emoji, and she hasn't replied properly since.",
+      "options": [
+        "I've been thinking about our chat, and I'd like to clear the air. No pressure, but I'd love to talk when you feel up for it. Coffee this week?",
+        "Okay, if you're going to ignore me, I won't bother you anymore, I suppose, I hadn't weighed all the details, though I'd want to think it over more — and to be fair I only heard about this a few minutes ago myself.",
+        "Thanks for the thumbs-up! Anyway, did you see the match yesterday? What am I missing here? Honestly, that was more of a first reaction — and I haven't really run it past anyone else yet."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When silence follows conflict, name your wish to talk without pressure.",
+      "explanation": "A minimal emoji after a tense talk probably signals hurt or avoidance. A gentle, open invitation shows care. Ultimatums push her away and pretending nothing happened leaves the issue.",
+      "id": "bd_practice_l175_q3",
+      "consequencePreviews": [
+        "In this moment, you address the silence directly but kindly and give her time to respond.",
+        "Here, the wounded ultimatum punishes her for the silence and closes the door.",
+        "You may notice that acting as if nothing happened avoids the tension that she is signalling."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague who often overpromises",
+      "scene": "A colleague says, 'Of course, I'll have it done by Monday, no problem at all.' She said similar things twice before and missed the date.",
+      "options": [
+        "That would be great. To make sure we can plan around it, would it help if we checked in on Friday, so we can adjust early if it's slipping?",
+        "You said that last time and didn't deliver. I don't believe you, I guess, I said that fairly quickly, though I'd want to think it over more — and honestly the whole situation caught me a bit off guard.",
+        "Perfect, I'll tell the client to expect it on Monday morning, if I'm being honest, I hadn't fully worked out how it'd play out, but that could easily change."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When a promise has proven unreliable before, add a checkpoint instead of challenging the person.",
+      "explanation": "A Friday check-in protects the deadline and lets her ask for help without losing face. Accusing damages the relationship, and repeating the promise to the client transfers risk to you.",
+      "id": "bd_practice_l176_q1",
+      "consequencePreviews": [
+        "You accept her promise but add a natural checkpoint without accusing her.",
+        "Realistically, the accusation may be true but turns a planning question into a personal attack.",
+        "Passing on the promise without a safeguard exposes you to another missed date."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a vendor's salesperson",
+      "scene": "A salesperson says, 'Most of our customers see results within a week.' You'd like to know what that means in practice.",
+      "options": [
+        "That sounds fantastic. Where do I sign up? Does that seem right to you? Honestly, I hadn't checked how that would actually land — and a lot depends on details I haven't really looked into yet.",
+        "That's helpful. What proportion is 'most', and what counted as a result? And could I speak to one customer with a similar setup to mine?",
+        "Salespeople always exaggerate, so I don't believe a word you're saying."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Vague quantifiers such as 'most' or 'many' deserve polite questions for numbers and examples.",
+      "explanation": "'Most' and 'results' can mean almost anything. Asking for definitions and a reference tests the claim without hostility. Accepting it blindly is risky, and dismissing everything gets you nothing.",
+      "id": "bd_practice_l176_q2",
+      "consequencePreviews": [
+        "As a result, you accept a vague claim without examining it.",
+        "In this moment, you question vague quantifiers politely and ask for evidence you can check.",
+        "Here, the blanket distrust insults him and ends the chance to get real information."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a politician at a town hall",
+      "scene": "At a town hall, a politician answers your question about school funding by talking for two minutes about jobs and safety, without mentioning schools.",
+      "options": [
+        "Thank you for your answer. That's all I wanted to ask.",
+        "So you're not going to answer the question, are you? Typical.",
+        "Thank you. I appreciate that, but my question was specifically about school funding. Will the budget for schools go up, stay the same or go down next year?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "If a question is dodged, restate it briefly and make it answerable in a few words.",
+      "explanation": "Narrowing to 'up, same or down' leaves little room for evasion and keeps you credible. Sarcasm lets him play victim, and thanking him accepts the dodge.",
+      "id": "bd_practice_l176_q3",
+      "consequencePreviews": [
+        "In this moment, accepting a non-answer lets the evasion succeed.",
+        "In this moment, the accusation gives him an easy way to dismiss you as hostile.",
+        "In this moment, you politely restate the question and narrow it to a checkable answer."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague who is being subtly excluded from a project",
+      "scene": "A colleague mentions, 'We had a quick catch-up on the launch this morning, only the core group.' You're not in the core group and would like to be.",
+      "options": [
+        "So you all met without me. I see how it is here.",
+        "Thanks for letting me know. I'd like to be more involved in the launch. Would it be possible to join future catch-ups, or at least get the notes?",
+        "No worries at all. I'm sure you know best who needs to be there."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "If you're left out, say what you'd like rather than showing hurt or pretending not to mind.",
+      "explanation": "A clear, polite request gives her something to say yes to. Sarcasm creates conflict, and false ease means nothing changes.",
+      "id": "bd_practice_l177_q1",
+      "consequencePreviews": [
+        "You may notice that the wounded sarcasm puts her on the defensive and doesn't ask for anything.",
+        "Realistically, you calmly state what you want without accusation, making it easy to fix.",
+        "Hiding your interest leaves the exclusion in place."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who compliments you in a backhanded way",
+      "scene": "A friend says, 'You look great, so much better than last month. You looked really tired then!'",
+      "options": [
+        "Thanks, I've been sleeping better. I'd rather we didn't compare, though. I hadn't realised it showed that much!",
+        "Oh, thanks a lot. So I looked terrible before, did I? Does that make sense given everything? Honestly, I hadn't really planned past that point.",
+        "Thank you so much, that's really kind of you to say, actually, I was going more on instinct than anything, though I'm open to changing my mind."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "With a backhanded compliment, thank them for the kind part and lightly note the unkind part.",
+      "explanation": "A gentle note about comparison lets the friend adjust without shame. Sarcasm is hostile, and full acceptance teaches her the remark was fine.",
+      "id": "bd_practice_l177_q2",
+      "consequencePreviews": [
+        "As a result, you accept the compliment, softly mark the comparison and keep a light tone.",
+        "In this moment, the sarcasm makes the friend feel attacked when she may not have meant harm.",
+        "Here, accepting it without comment ignores the sting and invites more of the same."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a manager whose praise comes with a sting",
+      "scene": "Your manager says in a review, 'You've done really well this year, considering your background.' You aren't sure what she means by 'considering'.",
+      "options": [
+        "What do you mean by my background? That sounds like an insult, I guess, I said that fairly quickly, so there might be a better way to handle it — and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "Thank you very much. That's really kind of you, to be honest, I hadn't weighed all the details, so let me know if that's off — and to be fair I only heard about this a few minutes ago myself.",
+        "Thank you. I'm glad the results show. Could you clarify what you mean by 'considering my background'? I want to be sure I understand the feedback."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When praise carries an unclear qualifier, ask for clarification neutrally.",
+      "explanation": "Neutral clarification lets her reveal whether she meant something harmless or a bias you should address. Assuming insult may be wrong and combative, and silence risks accepting an unfair framing.",
+      "id": "bd_practice_l177_q3",
+      "consequencePreviews": [
+        "Realistically, assuming an insult forces her to defend herself before you know what she meant.",
+        "In this moment, letting a possibly loaded phrase pass may leave a real issue unaddressed.",
+        "Here, you accept the praise and calmly ask her to clarify the ambiguous phrase."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who asks 'Do you mind if I ask...?'",
+      "scene": "A friend says, 'Do you mind if I ask how much you paid for your flat?' You'd rather not say.",
+      "options": [
+        "I'd rather keep that one to myself, if that's okay. I'm happy to talk about how the buying process went, though.",
+        "Yes, I do mind. That's a very rude question to ask someone.",
+        "No, I don't mind at all. It was three hundred and forty thousand."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "'Do you mind if I...' asks for permission; if you'd prefer not, say so kindly and offer a substitute.",
+      "explanation": "The question invites you to set a limit. Politely declining and offering something else protects privacy and the friendship. Answering in full ignores your own comfort, and accusing her of rudeness overreacts.",
+      "id": "bd_practice_l178_q1",
+      "consequencePreviews": [
+        "As a result, you answer the real question (may I ask?), decline politely and offer an alternative.",
+        "Here, calling the question rude is harsher than needed for a friend and may hurt her.",
+        "In this moment, the literal reading of 'do you mind' leads you to disclose what you wanted to keep private."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague who asks 'Would you be able to...'",
+      "scene": "A colleague says, 'Would you be able to cover my desk for a few minutes?' You're in the middle of finishing an urgent report.",
+      "options": [
+        "Can't, sorry, I'm busy.",
+        "Yes, I'm able to, looking back, I hadn't weighed all the details, though I'd want to think it over more.",
+        "I'm mid-way through something urgent. Could it wait until three, or is it something you need now?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "'Would you be able to...' is a request, not a question about ability; respond with your actual availability.",
+      "explanation": "She's asking for help, so an honest limit plus a question about timing finds a workable solution. A literal 'yes' overcommits, and a flat 'no' offers nothing.",
+      "id": "bd_practice_l178_q2",
+      "consequencePreviews": [
+        "Realistically, the bare refusal is clear but curt and offers no route for her real need.",
+        "As a result, the literal answer commits you to a task you can't fit in.",
+        "As a result, you answer the request rather than the literal ability and check the urgency."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a manager who says 'It might be worth considering...'",
+      "scene": "Your manager says, 'It might be worth considering adding a section on risks to your report.' The report is due tomorrow and you haven't included one.",
+      "options": [
+        "That's a good idea, I'll think about it for future reports, thinking about it now, I wasn't considering every angle.",
+        "Understood, I'll add a risks section before I send it and let you see it first.",
+        "Do you want me to add it, or is it just a suggestion?"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "From a manager, 'It might be worth considering' usually means 'please do it'.",
+      "explanation": "Softened directives are common with authority. Confirming the action shows you read the intent. Postponing it ignores the signal, and asking whether it's an order is awkward.",
+      "id": "bd_practice_l178_q3",
+      "consequencePreviews": [
+        "You treat a direction as optional and deliver something she has effectively asked to change.",
+        "As a result, you understand the polite phrasing as an instruction and confirm the action.",
+        "You may notice that asking whether it's an order sounds like you missed the obvious, and it forces her to be blunt."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a meeting chair who lets a long speaker continue",
+      "scene": "A colleague has been speaking for ten minutes and the chair keeps glancing at her watch. You're next and have a short update.",
+      "options": [
+        "I'll start whenever this is finished. I have a lot to say, and it's important.",
+        "Thank you, that's really useful. In the interest of time, I'll keep my update to two minutes, and I'm happy to send the details afterwards.",
+        "Could you wrap this up? We're all running out of time, if I'm honest, that was more of a first reaction, but that could easily change — and honestly the whole situation caught me a bit off guard."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Notice body language such as watch-checking and adjust your contribution to help without criticising others.",
+      "explanation": "The chair's glances are a request. Volunteering to be brief solves the problem gracefully. Adding length worsens it, and interrupting a peer causes friction.",
+      "id": "bd_practice_l179_q1",
+      "consequencePreviews": [
+        "Ignoring the chair's cues and claiming importance adds to the overrun.",
+        "Realistically, you read the chair's signal and help the meeting without criticising anyone.",
+        "Here, cutting off a colleague publicly is likely to cause offence."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a dinner guest whose host keeps yawning",
+      "scene": "You're visiting a friend at her flat. It's late. She yawns for the third time and says, 'Wow, is that the time already?'",
+      "options": [
+        "Don't worry, I'm not tired at all. Shall we open another bottle? What would you do instead? Honestly, that was more of a first reaction.",
+        "Are you telling me to leave? Does that make sense given everything? Honestly, I hadn't weighed all the details.",
+        "It's getting late, isn't it? I should head off and let you get some rest. Thanks so much for having me."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Yawns and comments about the time are polite ways to end a visit; take the hint kindly.",
+      "explanation": "Hosts often avoid saying 'please go'. Leaving on your own initiative preserves comfort on both sides. Staying overlooks the cue, and confronting her is awkward.",
+      "id": "bd_practice_l179_q2",
+      "consequencePreviews": [
+        "As a result, you interpret the comment literally and ignore that she wants the evening to end.",
+        "You may notice that the challenge embarrasses her and makes her say something she was trying not to say.",
+        "As a result, you pick up the hint and leave gracefully, sparing her from having to ask."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a negotiating counterpart who goes silent",
+      "scene": "In a negotiation, you name your price. The other side stays silent for almost a minute and looks at their notes.",
+      "options": [
+        "I'll leave that with you. If there's a part of the number that doesn't work, tell me which part and we can look at it together.",
+        "Hello? Are you still there? Have you got an answer for me?",
+        "Of course, if that's too high, I could probably lower it by ten percent, to be fair, it wasn't a fully considered answer, so feel free to push back."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "In negotiation, silence is often thinking time; don't fill it with concessions.",
+      "explanation": "Silence gives them room to weigh your offer. Inviting them to name the difficulty keeps things constructive. Conceding early weakens your position, and pressing them reveals discomfort.",
+      "id": "bd_practice_l179_q3",
+      "consequencePreviews": [
+        "As a result, you tolerate the silence and invite specifics, which keeps you from bidding against yourself.",
+        "In this moment, pushing for a reply breaks the pause and looks anxious.",
+        "Realistically, filling the silence with a concession gives up value you may not need to give."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a manager delivering restructuring news",
+      "scene": "Your manager says gravely, 'There will be some changes to the team structure. Nothing is decided yet, but I wanted you to hear it from me.' She won't meet your eye.",
+      "options": [
+        "So am I going to lose my job? Just tell me the truth.",
+        "Oh, that's fine. Changes are always good, they keep things fresh.",
+        "Thank you for telling me early. Is there anything you can share about the timeline, and is there anything I could do now that would be useful?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When someone senior tells you unfinished, uncertain news ahead of time, express appreciation and ask what information is available, rather than demanding a firm promise.",
+      "explanation": "Her tone signals it's serious, but she's told you what she can. Practical questions respect the limits. Demanding certainty pressures her, and optimism ignores what her body language says.",
+      "id": "bd_practice_l180_q1",
+      "consequencePreviews": [
+        "Realistically, demanding a verdict she has said she doesn't have puts her in a corner.",
+        "As a result, cheery dismissal ignores the seriousness of the news and misses a chance to learn more.",
+        "As a result, you appreciate the openness, read the seriousness and ask practical questions without pressing for what she can't say."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who says 'I'm fine' three times",
+      "scene": "You meet a friend, who says 'I'm fine' when you ask how she is. A few minutes later she says 'Really, I'm fine' and then, 'Honestly, don't worry about me.'",
+      "options": [
+        "Great! I'm so pleased you're fine. Let's talk about my holiday, in hindsight, I said that fairly quickly, though I'd want to think it over more.",
+        "Okay, I believe you're managing. I'm not going to push, but I'd like to sit with you a while anyway. Should we walk or have tea?",
+        "You've said 'fine' three times, which means you aren't. Tell me what's wrong, if I'm honest, that was more of a first reaction, but I'm not totally set on it."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Repeated reassurance may signal the opposite; offer presence rather than demanding an explanation.",
+      "explanation": "Insisting on being fine three times suggests she isn't, but pushing may cause her to close up. Company without pressure lets her open up if she wants. Ignoring it or forcing it both miss the mark.",
+      "id": "bd_practice_l180_q2",
+      "consequencePreviews": [
+        "In this moment, taking it literally when the repetition suggests otherwise leaves her alone.",
+        "Realistically, you respect her words, acknowledge that something may be wrong and offer quiet company.",
+        "In this moment, the analysis feels like an interrogation and may make her withdraw."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a job offer negotiation",
+      "scene": "A recruiter says, 'We really want you on board. The salary is what we can do at this stage.' You notice the phrase 'at this stage'.",
+      "options": [
+        "I'm excited about the role. When you say 'at this stage', do you mean there's a review point? For example, could we agree to revisit salary after six months?",
+        "Great, I accept. Thank you so much for the offer, in fairness, I hadn't weighed all the details, but that could easily change — and I probably should have asked a few more questions before saying anything.",
+        "That's too low. I'm not interested unless you can do better right now."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Softening phrases in an offer can hint that terms might loosen with time; ask what they imply and suggest revisiting the number later.",
+      "explanation": "The phrase leaves space for change, and asking about it costs nothing. A review clause secures your interest. Accepting immediately or refusing outright both ignore that nuance.",
+      "id": "bd_practice_l180_q3",
+      "consequencePreviews": [
+        "Here, you notice the qualifier and ask whether it hides flexibility, offering a concrete way forward.",
+        "As a result, you accept quickly and miss the hint that there's room to negotiate.",
+        "In this moment, the ultimatum ignores the softer language and might close a door that was open."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    }
+  ]
+}

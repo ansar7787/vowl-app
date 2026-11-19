@@ -63,6 +63,8 @@ import 'package:vowl/features/accent/connected_speech/presentation/pages/connect
 import 'package:vowl/features/accent/connected_speech/presentation/pages/connected_speech_practice_screen.dart';
 import 'package:vowl/features/accent/pitch_modulation/presentation/pages/pitch_modulation_learn_screen.dart';
 import 'package:vowl/features/accent/pitch_modulation/presentation/pages/pitch_modulation_practice_screen.dart';
+import 'package:vowl/features/roleplay/branching_dialogue/presentation/pages/branching_dialogue_learn_screen.dart';
+import 'package:vowl/features/roleplay/branching_dialogue/presentation/pages/branching_dialogue_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -953,6 +955,24 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<PitchModulationPracticeScreen>());
+    });
+
+    test('resolves /learn route for branchingDialogue', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state =
+          createMockState('/learn?category=roleplay&gameType=branchingDialogue&level=5');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<BranchingDialogueLearnScreen>());
+    });
+
+    test('resolves /practice route for branchingDialogue', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state =
+          createMockState('/practice?category=roleplay&gameType=branchingDialogue&level=5');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<BranchingDialoguePracticeScreen>());
     });
   });
 }

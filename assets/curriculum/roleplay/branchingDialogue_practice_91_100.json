@@ -1,0 +1,818 @@
+{
+  "gameType": "branchingDialogue",
+  "phase": "practice",
+  "batchIndex": 10,
+  "levels": "91-100",
+  "quests": [
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend deciding between two job offers",
+      "scene": "A friend says: 'I got two job offers — one pays more but has a long commute, the other pays less but is five minutes from home. What would you do?'",
+      "options": [
+        "Take the one that pays more, money matters most in the long run.",
+        "I'd probably weigh how much that extra commute time would actually cost you day to day — what matters more to you right now, the money or the time back?",
+        "Both have pros and cons, it's really up to you."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Good advice often helps someone think through their own priorities, rather than pushing a specific answer or stating the obvious.",
+      "explanation": "Helping your friend think through their own priorities gives genuinely useful guidance without deciding for them. Pushing a specific answer assumes what matters most to them, which may not actually be true. Saying it's 'up to you' is technically true but doesn't offer any real help in a decision your friend is clearly struggling with.",
+      "id": "bd_practice_l91_q1",
+      "consequencePreviews": [
+        "In this moment, the advice pushes a specific answer without considering what your friend actually values or what their situation calls for.",
+        "Realistically, you offer a genuinely useful way to think about the decision while leaving the actual choice to them.",
+        "Here, the comment states the obvious without actually helping your friend think through the decision."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a classmate deciding which elective to take",
+      "scene": "A classmate says: 'I can't decide between the photography elective and the coding elective. What should I do?'",
+      "options": [
+        "Which one sounds more interesting to actually go to every week — sometimes that matters more than which looks better on paper.",
+        "Coding's definitely more useful for your future career, if I'm honest, I said that fairly quickly, though I'd want to think it over more.",
+        "I don't know, they're both good options I guess."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Helpful advice for a personal decision often works better as a useful question than a firm directive.",
+      "explanation": "Offering a useful angle, framed as a question, helps your classmate think it through without assuming what they should prioritize. Assuming career usefulness is the deciding factor may not reflect what your classmate actually cares about. Saying they're 'both good options' doesn't give your classmate anything to actually work with.",
+      "id": "bd_practice_l91_q2",
+      "consequencePreviews": [
+        "As a result, you offer a genuinely useful angle for the decision, framed as a question that helps them think it through.",
+        "You may notice that the advice assumes a career-focused priority that your classmate hasn't actually stated they have.",
+        "Realistically, the comment doesn't actually offer any perspective that would help your classmate make the decision."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend deciding whether to confront a family member about a longstanding issue",
+      "scene": "A friend says: 'I've been thinking about finally telling my brother how his comments about my job have been bothering me for years. Should I say something, or just let it go?'",
+      "options": [
+        "You should definitely tell him, holding it in isn't healthy, admittedly, I hadn't stopped to think it all the way through, so there might be a better way to handle it — and there's a decent chance I'd see it differently after sleeping on it.",
+        "Family stuff is always complicated, it's really your call, to be fair, I hadn't weighed all the details, so there might be a better way to handle it — and I know that's not the most thought-out response, but it's where my head's at right now.",
+        "That sounds like it's been weighing on you for a while. What do you think would feel worse in the long run — saying something and risking an awkward conversation, or staying quiet and carrying this feeling longer?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "For a genuinely personal, emotionally weighted decision, help the person weigh their own real trade-offs rather than directing them toward one option or stating the obvious.",
+      "explanation": "Acknowledging the weight of the situation and helping your friend weigh the real trade-off gives them a genuinely useful way to think it through, without you deciding for them. Confidently telling them what to do assumes you know what's best for a deeply personal family situation you don't fully understand. Saying it's 'really your call' is true but offers no actual help to someone clearly wrestling with a hard decision.",
+      "id": "bd_practice_l91_q3",
+      "consequencePreviews": [
+        "You may notice that the confident directive pushes a specific action without exploring what actually matters most to your friend in this situation.",
+        "Realistically, the comment is true but doesn't help your friend actually think through a decision they're clearly struggling with.",
+        "You acknowledge the emotional weight and help your friend weigh the real trade-off themselves, without pushing either direction."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker unsure how to approach a difficult client",
+      "scene": "A coworker says: 'This client keeps changing requirements every meeting, I don't know how to handle it. Any advice?'",
+      "options": [
+        "Clients like that are always tricky to deal with, thinking about it now, I hadn't really planned past that point, though I'd want to think it over more — and honestly the whole situation caught me a bit off guard.",
+        "You should just tell them to stop changing things so much.",
+        "Maybe try summarizing agreed requirements in writing after each meeting — that way changes become visible and you both have to actually confirm them."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Useful advice for a practical work problem usually includes a specific, actionable step the person can actually try.",
+      "explanation": "A specific, actionable suggestion gives your coworker a real strategy to try in their next meeting. Generalizing about difficult clients doesn't give them anything they can actually act on. Suggesting they simply tell the client to stop is blunt and doesn't account for the real difficulty of managing that conversation professionally.",
+      "id": "bd_practice_l92_q1",
+      "consequencePreviews": [
+        "Realistically, the general observation doesn't give your coworker anything specific they could actually try.",
+        "In this moment, the blunt suggestion might work in theory but ignores the practical difficulty of actually saying that to a client.",
+        "Realistically, you give a specific, practical suggestion your coworker can actually try right away."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend struggling to stay motivated while job hunting",
+      "scene": "A friend says: 'I've sent out so many applications and haven't heard back from most of them. I don't know what to do differently.'",
+      "options": [
+        "Have you had anyone look over your resume for this specific type of role? Sometimes small tweaks to match the job description can make a real difference.",
+        "Job hunting is tough for everyone right now.",
+        "You should probably just apply to way more jobs, if I'm honest, I hadn't really planned past that point, though I'm open to changing my mind — and I haven't really run it past anyone else yet."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Practical advice on a stuck situation often works best when it targets a possible specific cause, not just general sympathy or volume.",
+      "explanation": "Suggesting a review of the resume targets a possible specific cause of the low response rate, which is genuinely actionable. Sympathizing about job hunting being tough doesn't give your friend anything new to try. Suggesting more applications assumes volume is the issue, when the real problem might actually be about targeting or presentation.",
+      "id": "bd_practice_l92_q2",
+      "consequencePreviews": [
+        "As a result, you offer a specific, practical suggestion that directly addresses a possible cause of the problem.",
+        "Here, the comment is sympathetic but doesn't offer anything your friend could actually try differently.",
+        "The suggestion addresses volume but ignores that the real issue might be about quality or targeting, not just quantity."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a colleague who feels stuck in their career but isn't sure why",
+      "scene": "A colleague says: 'I feel like I've plateaued in my career, but I can't quite figure out what's actually holding me back. Any thoughts?'",
+      "options": [
+        "You probably just need to work harder and be more visible.",
+        "That's a hard thing to pin down from the outside — have you thought about asking your manager directly what they see as the gap between where you are and where you want to be?",
+        "Career plateaus happen to everyone at some point, I guess, I hadn't really thought it through, so take it with a grain of salt — and to be fair I only heard about this a few minutes ago myself."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When you don't have enough information to diagnose someone's specific problem, pointing them toward a good source of real insight is often more useful than guessing.",
+      "explanation": "Acknowledging you can't fully diagnose it from outside, while pointing to a concrete, useful source of insight (their manager), respects the limits of what you actually know. Confidently diagnosing the cause assumes things about their situation you don't actually have enough information to know. General reassurance that plateaus happen to everyone doesn't give your colleague anything specific they could actually do about theirs.",
+      "id": "bd_practice_l92_q3",
+      "consequencePreviews": [
+        "In this moment, the confident diagnosis assumes a cause without actually knowing enough about their specific situation to be sure.",
+        "As a result, you acknowledge the difficulty honestly while pointing toward a specific, practical source of insight they haven't mentioned trying.",
+        "Here, the general reassurance doesn't offer your colleague anything specific they could actually do about it."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend considering two apartments",
+      "scene": "A friend says: 'One apartment is bigger but further from work, the other is smaller but a ten-minute walk. I keep going back and forth.'",
+      "options": [
+        "I'd take the one closer to work, commuting is the worst, to be honest, it wasn't a fully considered answer, though I'm open to changing my mind.",
+        "How much is the commute really worth to you day to day? For some people that ten minutes each way adds up to a lot over a year.",
+        "Apartment hunting is always stressful, it's hard to know what's right, I suppose, I hadn't stopped to think it all the way through, but I'm not totally set on it."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Helping someone see the real, personal cost of a trade-off is often more useful than stating your own preference or offering only sympathy.",
+      "explanation": "Framing the trade-off in terms of what it actually costs them personally helps your friend think it through for themselves. Stating your own preference for a shorter commute assumes it matters the same way to them, which may not be true. Sympathizing about apartment hunting being stressful doesn't actually help move the decision forward.",
+      "id": "bd_practice_l93_q1",
+      "consequencePreviews": [
+        "Realistically, the advice pushes your own personal preference without considering what actually matters most to your friend.",
+        "Realistically, you offer a genuinely useful way to weigh the trade-off, which helps your friend think it through for themselves.",
+        "The sympathetic comment doesn't actually help your friend weigh the real trade-off they're facing."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker weighing whether to take on a stretch project",
+      "scene": "A coworker says: 'I've been offered a chance to lead a big project, but I'm worried I'm not ready. What do you think?'",
+      "options": [
+        "What specifically makes you feel not ready — is it a skill gap you could close before it starts, or more general nerves about a first big project?",
+        "You should definitely take it, opportunities like that don't come around often, if I'm honest, I hadn't stopped to think it all the way through, so feel free to push back.",
+        "That's a tough call, big projects can be risky, if I'm being honest, I hadn't really thought it through, so there might be a better way to handle it — and I haven't really run it past anyone else yet."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When someone shares a vague worry, helping them get specific about the actual concern is often more useful than pushing a decision or agreeing it's hard.",
+      "explanation": "Asking a question that helps your coworker get specific about the source of their worry leads to more useful thinking than a general push either way. Pushing them to take it doesn't actually engage with the specific concern they raised about readiness. Agreeing that big projects are risky doesn't help your coworker move any closer to understanding their own hesitation.",
+      "id": "bd_practice_l93_q2",
+      "consequencePreviews": [
+        "As a result, you help your coworker get more specific about the actual source of their hesitation, which leads to more useful thinking.",
+        "As a result, the confident push doesn't actually address the specific worry your coworker raised about feeling unready.",
+        "The comment acknowledges the difficulty but doesn't help your coworker actually think through their specific concern."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a sibling deciding whether to move abroad for a relationship",
+      "scene": "Your sibling says: 'I'm thinking about moving abroad to be with my partner, but it means leaving my whole support system here. I don't know if I'm making the right call.'",
+      "options": [
+        "You should go, love is worth taking risks for.",
+        "That's a really big decision, only you can know what's right.",
+        "That's a huge decision, and I don't think there's a clean right answer here. What would you regret more in five years — not trying, or trying and it not working out?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "For a major, values-based life decision, a well-chosen reflective question often helps more than a confident directive or a true but unhelpful platitude.",
+      "explanation": "Acknowledging the real weight of the decision and offering a genuinely reflective question helps your sibling access what they actually value most, without you deciding for them. Pushing a romantic 'love is worth it' framing doesn't engage with the very real loss of their support system that they specifically raised. Saying it's 'really their call' is true but doesn't offer the kind of thoughtful help that a decision this significant probably calls for.",
+      "id": "bd_practice_l93_q3",
+      "consequencePreviews": [
+        "Here, the confident romantic framing pushes a specific answer without engaging with the real, practical loss of their support system.",
+        "In this moment, the comment is true but doesn't actually help your sibling think through a decision they're genuinely struggling with.",
+        "In this moment, you acknowledge the genuine weight of the decision and offer a framing that helps them access their own deeper priorities."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who wants to start exercising but doesn't know where to begin",
+      "scene": "A friend says: 'I really want to start exercising but I have no idea where to begin and it feels overwhelming.'",
+      "options": [
+        "You should get a gym membership and start going regularly.",
+        "Exercise is important, you should really try to prioritize it.",
+        "Starting small usually helps with that overwhelmed feeling — maybe just committing to a 15-minute walk a few times a week to start, rather than a big plan all at once?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When a big goal feels intimidating to someone, offering one modest, concrete first move tends to help more than repeating the goal or pushing for a large commitment.",
+      "explanation": "Suggesting a small, specific starting point directly addresses the overwhelmed feeling your friend actually described. Suggesting a gym membership jumps to a bigger commitment that might make the overwhelm worse, not better. Simply saying exercise is important restates something your friend already knows, without offering any practical way to begin.",
+      "id": "bd_practice_l94_q1",
+      "consequencePreviews": [
+        "Realistically, the suggestion jumps to a bigger commitment, which may not actually address the overwhelmed feeling your friend described.",
+        "The comment restates the goal without offering any practical way to actually get started.",
+        "Here, you offer a specific, manageable starting point that directly addresses the feeling of being overwhelmed."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a classmate who wants to improve their writing but doesn't know how",
+      "scene": "A classmate says: 'I know my essays need work but I don't really know what to focus on to actually get better.'",
+      "options": [
+        "You should read more books, that always helps with writing.",
+        "Maybe start by picking one thing at a time, like clearer topic sentences, and focus just on that for your next couple of essays.",
+        "Writing takes a lot of practice, you'll get better over time."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When someone doesn't know where to start improving at something broad, suggesting one specific, focused area to work on is often the most useful advice.",
+      "explanation": "Suggesting one specific, focused area to work on turns a vague goal into something genuinely actionable. Suggesting they read more is reasonable general advice but doesn't address the specific question of what to focus on right now. Saying it takes practice is true but doesn't give your classmate anything concrete to actually do differently.",
+      "id": "bd_practice_l94_q2",
+      "consequencePreviews": [
+        "The general suggestion is reasonable but doesn't address the specific, immediate problem of what to actually focus on.",
+        "As a result, you offer a specific, focused starting point that makes an overwhelming goal feel manageable.",
+        "As a result, the comment is true but doesn't offer anything specific your classmate could actually do to improve faster."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend trying to rebuild trust in a relationship after a difficult period",
+      "scene": "A friend says: 'My partner and I are trying to rebuild trust after a rough patch, but I genuinely don't know where to even start.'",
+      "options": [
+        "That's a real process, not a quick fix — sometimes starting with small, consistent things, like following through on little promises, can rebuild trust more than any single big gesture.",
+        "You should have a big, honest conversation about everything that happened, in fairness, that was more of a first reaction, but I'm not totally set on it — and to be fair I only heard about this a few minutes ago myself.",
+        "Trust takes time to rebuild, these things work themselves out eventually, to be fair, I was just going with my gut on that one, so it's worth double-checking — and I haven't really run it past anyone else yet."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "For a difficult, ongoing issue between people, one modest, repeatable action is usually more genuinely helpful than either a dramatic gesture or a vague promise that it'll get better eventually.",
+      "explanation": "Acknowledging the real difficulty and offering a specific, sustainable starting point gives your friend something genuinely useful and manageable to actually try. Suggesting one big, honest conversation may eventually help, but it's a large, difficult step rather than a manageable starting point for someone who said they don't know where to begin. Saying trust rebuilds with time is true but doesn't give your friend anything concrete to actually do in the meantime.",
+      "id": "bd_practice_l94_q3",
+      "consequencePreviews": [
+        "Realistically, you acknowledge the real difficulty while offering a genuinely useful, specific starting point grounded in how trust actually rebuilds.",
+        "Here, the suggestion may be part of the process eventually, but it jumps to something large and difficult rather than offering a manageable starting point.",
+        "Here, the comment is true in general but doesn't offer your friend anything specific or actionable to actually start doing."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend deciding between renting and buying",
+      "scene": "A friend says: 'Everyone keeps telling me buying is always better than renting long-term. Do you think that's true?'",
+      "options": [
+        "Yeah, buying is definitely always the smarter move financially, actually, it wasn't a fully considered answer, so there might be a better way to handle it — and a lot depends on details I haven't really looked into yet.",
+        "It really depends on your situation — how long you plan to stay in one place, and the market where you are, both matter a lot more than a blanket rule like that.",
+        "Housing decisions are really personal, there's no right answer."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When someone repeats a common but oversimplified claim, gently offering the more nuanced reality is often more useful than confirming or dismissing it entirely.",
+      "explanation": "Offering the more nuanced reality — that it depends on real, specific factors — directly answers your friend's actual question. Simply confirming the blanket claim doesn't hold up well in many real situations and doesn't actually help your friend think it through. Saying housing decisions are personal avoids engaging with the specific question your friend asked about whether that common claim is actually true.",
+      "id": "bd_practice_l95_q1",
+      "consequencePreviews": [
+        "You may notice that repeating the blanket claim doesn't actually help your friend think through their own specific situation.",
+        "You offer a more nuanced, genuinely useful perspective that helps your friend think beyond a common oversimplification.",
+        "Here, the comment avoids engaging with the actual question your friend asked about whether the common claim is true."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a younger cousin asking whether college is worth it",
+      "scene": "A younger cousin asks: 'Everyone says you need a college degree to succeed. Do you actually think that's true?'",
+      "options": [
+        "Yeah, you pretty much need one these days to get anywhere, actually, I hadn't checked how that would actually land, so it's worth double-checking — and to be fair I only heard about this a few minutes ago myself.",
+        "It's a big decision, you'll have to figure out what's right for you.",
+        "It really depends on the field — some careers genuinely need a degree, others value skills or experience just as much. What are you actually interested in?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When someone asks whether a common belief is actually true, engaging honestly with the nuance is more useful than repeating the claim or deflecting the question entirely.",
+      "explanation": "Offering the more accurate, nuanced answer, and inviting your cousin to think about their own interests, directly engages with their actual question. Repeating the blanket claim doesn't reflect how much this genuinely varies and doesn't give your cousin anything useful to think about. Saying it's a big decision they'll have to figure out avoids actually answering the honest question they asked you.",
+      "id": "bd_practice_l95_q2",
+      "consequencePreviews": [
+        "Realistically, repeating the blanket claim doesn't reflect how much this actually varies by field and doesn't help your cousin think it through.",
+        "In this moment, the comment avoids actually answering the question your cousin specifically asked.",
+        "You offer a more accurate, nuanced view and invite your cousin to think about their own specific goals."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend who's been told by several people that a certain diet trend is 'the only way' to get healthy",
+      "scene": "A friend says: 'A bunch of people keep telling me this one specific diet is basically the only way to actually get healthy. Is that true?'",
+      "options": [
+        "Honestly, there's no single diet that works the same for everyone — it really depends on your body, your goals, and what you can actually sustain long term. It might be worth talking to a doctor or dietitian who knows your specific situation.",
+        "Yeah, that diet's pretty popular, it's probably worth trying.",
+        "Diets are all kind of a scam if you ask me, if I'm being honest, I was going more on instinct than anything, so feel free to push back — and I'm honestly still working out how I feel about the whole thing, and there's a decent chance I'd see it differently after sleeping on it."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "For questions with real health implications, honest, appropriately cautious answers that point toward qualified guidance are more responsible than confidently endorsing or dismissing a trend.",
+      "explanation": "Giving an honest, appropriately cautious answer, and pointing toward a qualified professional, respects both the nuance of the topic and your own limits as a non-expert. Endorsing the diet's popularity doesn't reflect that individual health needs vary significantly, which matters for something with real consequences. Dismissing all diets as a scam is just as much an oversimplification as the original claim, and it doesn't actually help your friend get good guidance.",
+      "id": "bd_practice_l95_q3",
+      "consequencePreviews": [
+        "As a result, you give an honest, appropriately cautious answer and point your friend toward genuinely qualified guidance for something with real health implications.",
+        "Realistically, endorsing the trend based on popularity alone doesn't reflect that what works varies significantly between individuals, especially for something with real health implications.",
+        "Realistically, the dismissive, sweeping claim isn't actually more accurate than the original claim, and it doesn't help your friend get genuinely useful guidance."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend upset about a fight with their partner",
+      "scene": "A friend calls, clearly upset: 'We had a huge fight and I don't even know what to do, I'm just so frustrated right now.'",
+      "options": [
+        "Here's what I think you should do: you need to talk to them calmly and explain your side clearly, in hindsight, I was going more on instinct than anything.",
+        "Relationships are hard, you'll figure it out, I guess, I hadn't checked how that would actually land, so there might be a better way to handle it.",
+        "That sounds really frustrating. Do you want to just vent for a bit, or would it help to talk through some options together?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When someone's upset, checking what kind of support they actually want (venting or advice) usually helps more than jumping straight to solutions or vague reassurance.",
+      "explanation": "Acknowledging their feelings and asking what kind of support they want respects where they are emotionally and gets you both on the same page. Jumping straight into advice, before checking what they actually need, may feel dismissive of how upset they clearly are. A vague reassurance that they'll 'figure it out' doesn't actually engage with what your friend is going through right now.",
+      "id": "bd_practice_l96_q1",
+      "consequencePreviews": [
+        "Jumping straight to advice, without acknowledging their feelings first, may feel dismissive of how upset they clearly are right now.",
+        "Here, the comment is meant to be reassuring but doesn't actually engage with what your friend is feeling or needs right now.",
+        "You acknowledge their feelings first and let them choose what kind of support they actually need right now."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker venting about a frustrating meeting",
+      "scene": "A coworker says, clearly frustrated: 'That meeting was a disaster, I'm so annoyed right now, nobody was listening to anything I said.'",
+      "options": [
+        "You should bring it up again at the next meeting and be more assertive.",
+        "That does sound frustrating, especially if you felt unheard. Want to talk through it, or do you just need a minute to vent first?",
+        "Meetings can be like that sometimes."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Validating someone's frustration before offering advice, and letting them choose what they need, usually lands better than jumping straight to a fix.",
+      "explanation": "Validating the specific frustration and asking what kind of support they want respects what your coworker is actually feeling right now. Jumping straight to advice about being more assertive skips past acknowledging their frustration first. Saying meetings 'can be like that' brushes off the specific, real frustration your coworker just shared with you.",
+      "id": "bd_practice_l96_q2",
+      "consequencePreviews": [
+        "Jumping to advice before acknowledging the frustration may feel like you're skipping past what your coworker is actually feeling.",
+        "In this moment, you validate the frustration and let your coworker choose what kind of support actually helps right now.",
+        "You may notice that the comment is dismissive of the specific frustration your coworker just expressed, rather than actually engaging with it."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a sibling who just received difficult medical news about a family member",
+      "scene": "Your sibling calls, visibly shaken: 'The doctors just told us Dad's diagnosis is more serious than we thought. I don't even know what to think right now.'",
+      "options": [
+        "I'm so sorry, that's a lot to take in all at once. I'm here, whatever you need right now — whether that's just talking, or figuring out next steps together.",
+        "Okay, so what did the doctors actually say about treatment options?",
+        "Everything's going to be fine, try not to worry too much."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "For genuinely difficult, emotionally heavy news, acknowledging the weight of it and offering open presence is usually more supportive than moving straight to logistics or offering reassurance you can't actually guarantee.",
+      "explanation": "Acknowledging the weight of the news and offering genuine, open presence meets your sibling where they actually are in this difficult moment. Moving straight into practical questions about treatment, without first acknowledging the emotional impact, may feel jarring, even if those questions matter eventually. Promising that everything will be fine isn't something you can actually guarantee, and it risks minimizing how serious this moment genuinely is for your sibling.",
+      "id": "bd_practice_l96_q3",
+      "consequencePreviews": [
+        "Realistically, you acknowledge the gravity of the news, offer genuine presence, and let your sibling lead on what kind of support they need in this moment.",
+        "Moving straight to practical questions, without first acknowledging the emotional weight of the news, may feel jarring for your sibling in this moment.",
+        "Realistically, the reassurance, while well-intentioned, isn't something you can actually promise, and it may minimize how serious this news genuinely is."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker considering leaving a stable job for a risky startup opportunity",
+      "scene": "A coworker says: 'I've been offered a role at a startup — way more exciting, but way less stable than here. I keep going back and forth on the risk.'",
+      "options": [
+        "Startups are way too risky, I'd stick with something stable, actually, it wasn't a fully considered answer, though I'm open to changing my mind — and honestly the whole situation caught me a bit off guard.",
+        "What would the real impact be if it didn't work out — financially and otherwise? Sometimes mapping out the actual worst case makes the risk feel more manageable to weigh.",
+        "That sounds like an exciting opportunity, you should go for it, in hindsight, I hadn't weighed all the details, though I'd want to think it over more — and to be fair I only heard about this a few minutes ago myself."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "For a genuine risk-versus-reward decision, helping someone concretely assess the actual downside is often more useful than pushing caution or encouragement either way.",
+      "explanation": "Helping your coworker concretely assess the actual downside gives them a genuinely useful tool for weighing the real trade-off. Pushing your own preference for stability assumes your risk tolerance matches theirs, which may not be true. Simply encouraging them to go for it doesn't actually engage with the real risk they're trying to weigh.",
+      "id": "bd_practice_l97_q1",
+      "consequencePreviews": [
+        "Here, the advice pushes your own risk tolerance onto your coworker without exploring what would actually work for their situation.",
+        "Realistically, you offer a genuinely useful way to concretely assess the risk, rather than a vague opinion either way.",
+        "In this moment, the encouragement is warm but doesn't actually engage with the real risk your coworker is genuinely weighing."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend considering whether to invest their savings in a friend's business venture",
+      "scene": "A friend says: 'My cousin wants me to invest my savings in his new business. I believe in him, but I'm nervous about the money.'",
+      "options": [
+        "If you believe in him, you should support him, in fairness, I hadn't stopped to think it all the way through, so it's worth double-checking — and I'm honestly still working out how I feel about the whole thing.",
+        "Family investments are usually a bad idea, I wouldn't do it.",
+        "Believing in someone and being financially ready to lose that money if it doesn't work out are two different things — have you thought about only investing an amount you'd be okay never seeing again?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "For a financial decision involving someone you care about, a practical principle for managing risk is often more useful than a blanket rule or emotional encouragement alone.",
+      "explanation": "Offering the practical principle of only risking what they can afford to lose gives your friend a genuinely useful way to think about both the relationship and the money. A blanket rule against family investments doesn't engage with your friend's specific situation or feelings. Simply encouraging support doesn't address the very real financial nervousness your friend explicitly mentioned.",
+      "id": "bd_practice_l97_q2",
+      "consequencePreviews": [
+        "In this moment, the encouragement doesn't address the real financial risk your friend specifically said they were nervous about.",
+        "As a result, the blanket advice doesn't actually engage with your friend's specific situation or help them think it through for themselves.",
+        "You offer a genuinely useful, practical principle for weighing a real financial risk involving someone they care about."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend considering quitting a stable career to pursue a long-held creative dream, with a family to support",
+      "scene": "A friend says: 'I've wanted to pursue music seriously my whole life, but I have a family to support now. I don't know if it's still possible or if I'm just being unrealistic.'",
+      "options": [
+        "That's not an all-or-nothing choice necessarily — is there a version where you build toward it gradually, alongside your current stability, rather than an immediate full leap?",
+        "That sounds pretty unrealistic honestly, with a family to support.",
+        "You should follow your dream, life's too short not to."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "For a decision that pits a real dream against real responsibilities, exploring whether a middle path exists is often more useful than encouraging the leap or dismissing it outright.",
+      "explanation": "Reframing the decision as potentially gradual, rather than all-or-nothing, respects both your friend's real dream and their genuine family responsibilities. Simply encouraging them to follow their dream doesn't engage with the very real obligation to their family that they explicitly raised. Calling it unrealistic dismisses the dream entirely, without exploring whether a more careful, gradual path might genuinely be possible.",
+      "id": "bd_practice_l97_q3",
+      "consequencePreviews": [
+        "Realistically, you offer a genuinely useful reframe that respects both their real dream and their real, practical responsibilities.",
+        "As a result, the dismissive framing shuts down the dream entirely without exploring whether a more gradual, realistic path might actually exist.",
+        "As a result, the encouragement doesn't engage with the very real responsibility to their family that your friend specifically raised."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend struggling to choose between two good options for a home renovation",
+      "scene": "A friend says: 'I can't decide between hardwood or tile for the kitchen floor. Both seem fine, I just can't pick.'",
+      "options": [
+        "Hardwood is definitely the better choice for a kitchen, I suppose, I hadn't checked how that would actually land, so it's worth double-checking.",
+        "Either one would probably look great, hard to go wrong.",
+        "Since both are genuinely good options, maybe think about maintenance — how do you feel about the upkeep each one needs, day to day?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When someone can't decide between two solid choices, offering one concrete, practical angle to weigh helps break the tie better than a firm opinion or empty reassurance.",
+      "explanation": "Offering a specific, practical angle — maintenance — gives your friend a real way to break a tie between two options that are otherwise equally good. Claiming hardwood is definitely better overstates the case, since your friend described both as genuinely reasonable choices. Saying either would look great is friendly but doesn't actually help resolve the indecision your friend is stuck in.",
+      "id": "bd_practice_l98_q1",
+      "consequencePreviews": [
+        "You may notice that the confident, one-sided claim overstates the case when your friend described both as genuinely good options.",
+        "You may notice that the comment is friendly but doesn't actually help your friend break the tie they're genuinely stuck on.",
+        "As a result, you offer a specific, practical angle that helps break a tie between two options that are otherwise equally good."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker stuck choosing between two solid candidates for a role",
+      "scene": "A coworker says: 'Both candidates for this role are really strong, I genuinely can't decide who to recommend.'",
+      "options": [
+        "Since they're both genuinely strong, maybe think about which one's specific strengths better match what the team actually needs right now.",
+        "Just go with your gut, it's usually right, if I'm honest, I was just going with my gut on that one, so take it with a grain of salt — and I'm honestly still working out how I feel about the whole thing.",
+        "That's a tough one, hiring decisions are always hard, to be honest, I said that fairly quickly, though I'm open to changing my mind — and I'm honestly still working out how I feel about the whole thing."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "When two candidates or choices are both clearly solid, helping someone pinpoint the one factor that matters most for their particular need beats empty reassurance.",
+      "explanation": "Suggesting they weigh each candidate against the team's actual, current needs gives a specific, useful way to break the tie. Suggesting they go with their gut doesn't offer any actual reasoning to help distinguish between two candidates described as equally strong. Acknowledging that hiring decisions are hard is true but doesn't help your coworker actually move toward a decision.",
+      "id": "bd_practice_l98_q2",
+      "consequencePreviews": [
+        "As a result, you offer a specific, useful way to break the tie based on an actual, relevant factor.",
+        "As a result, the advice doesn't offer any actual reasoning to help distinguish between two candidates your coworker described as equally strong.",
+        "You may notice that the comment acknowledges the difficulty but doesn't help your coworker actually think through how to decide."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend choosing between two universities that are both excellent for different reasons",
+      "scene": "A friend says: 'I got into both programs and they're both genuinely excellent, just really different in feel. I don't know how to choose between two great options.'",
+      "options": [
+        "Go with whichever one has the better reputation, that matters most in the end.",
+        "Since the academics are both strong, maybe it comes down to fit — have you thought about which environment would actually help you do your best work day to day?",
+        "Both are great schools, you really can't go wrong either way."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "When two options are both excellent but different in 'feel,' helping someone focus on daily fit is often more useful than defaulting to prestige or offering only reassurance.",
+      "explanation": "Focusing on daily fit and environment directly engages with the exact thing your friend said they were struggling to weigh — the difference in feel between two strong options. Suggesting they go by reputation narrows the decision to a factor your friend didn't actually raise as their sticking point. Saying they can't go wrong either way is reassuring but doesn't help your friend make any actual progress on their decision.",
+      "id": "bd_practice_l98_q3",
+      "consequencePreviews": [
+        "As a result, the advice narrows the decision to one factor your friend didn't actually mention, when 'feel' was the thing they said they were struggling with.",
+        "As a result, you offer a genuinely useful angle, based on daily experience rather than prestige, to help break a genuine tie between two strong options.",
+        "Here, the comment is reassuring but doesn't help your friend actually make progress on a decision they're genuinely stuck on."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend asking for advice on a message to send an ex",
+      "scene": "A friend says: 'I want to text my ex to apologize for how things ended, but I'm scared it'll come across the wrong way. Can you help me think this through?'",
+      "options": [
+        "Just say sorry, keep it short and simple.",
+        "What specifically are you hoping the message accomplishes — closure for you, or actually repairing things with them? That might change how you'd want to word it.",
+        "Texting an ex is usually a bad idea, I'd just leave it alone."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Before helping with the wording of a sensitive message, it often helps to first clarify what the person is actually trying to achieve with it.",
+      "explanation": "Helping your friend clarify their actual goal first sets up a much more useful conversation about how to actually word the message. Jumping straight to 'keep it short' skips understanding what your friend is really trying to achieve. Dismissing the idea entirely doesn't actually help your friend think through a situation they're clearly still processing.",
+      "id": "bd_practice_l99_q1",
+      "consequencePreviews": [
+        "Here, the advice jumps to wording before actually understanding what your friend is hoping the message will accomplish.",
+        "Realistically, you help your friend clarify their real goal first, which will make the actual message much easier to get right.",
+        "Realistically, the advice dismisses the idea entirely rather than actually helping your friend think through what they're trying to do."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker asking for help wording a sensitive email to a client",
+      "scene": "A coworker says: 'I need to email a client about a mistake we made, but I don't know how to word it without sounding defensive. Any advice?'",
+      "options": [
+        "Just be honest, clients usually appreciate honesty.",
+        "That's a tricky email to write, good luck with it.",
+        "Starting with a clear, direct acknowledgment of the mistake, before any explanation, usually reads as more confident than defensive. Want to draft the first line together?"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "For a sensitive piece of writing, offering a specific structural principle, and an offer to help apply it, is more useful than general encouragement.",
+      "explanation": "Offering a specific principle — acknowledgment before explanation — plus an offer to help draft it gives your coworker real, practical support. Saying 'just be honest' is true but doesn't address the specific wording challenge your coworker raised. Wishing them good luck acknowledges the difficulty but doesn't actually help solve the problem.",
+      "id": "bd_practice_l99_q2",
+      "consequencePreviews": [
+        "Realistically, the general advice is true but doesn't give your coworker anything specific about how to actually word the email.",
+        "In this moment, the comment acknowledges the difficulty but doesn't offer any actual help with the specific writing challenge.",
+        "In this moment, you offer a specific, actionable principle and a concrete way to help put it into practice right away."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend asking for help writing a difficult message to a parent about setting a boundary",
+      "scene": "A friend says: 'I need to tell my mom I can't keep lending her money, but I don't know how to say it without it turning into a huge fight. Can you help me figure out how to approach this?'",
+      "options": [
+        "That's a hard one to get right. What if you led with how much you care about the relationship, then stated the boundary clearly, without over-explaining or over-apologizing for it?",
+        "Money and family are always complicated, that's a tough situation.",
+        "Just tell her straight up you can't keep doing it."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "For a sensitive boundary-setting conversation with someone close, offering a specific structure that balances warmth and clarity is more useful than a blunt suggestion or general sympathy.",
+      "explanation": "Offering a specific structure — care first, then a clear boundary, without over-apologizing — gives your friend genuinely useful guidance for a delicate conversation. Suggesting she 'just tell her straight up' doesn't account for the relational sensitivity your friend specifically said they were worried about. Sympathizing that money and family are complicated doesn't actually help your friend figure out how to approach the conversation itself.",
+      "id": "bd_practice_l99_q3",
+      "consequencePreviews": [
+        "Realistically, you acknowledge the real difficulty and offer a specific, thoughtful structure that helps protect both the relationship and the boundary.",
+        "The sympathetic comment doesn't actually help your friend figure out how to approach the specific, difficult conversation.",
+        "The blunt suggestion doesn't account for the relational sensitivity your friend specifically flagged as their main concern."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend overwhelmed trying to plan an entire wedding at once",
+      "scene": "A friend says: 'There's just so much to plan for the wedding, venue, catering, guest list, flowers — I don't even know where to start.'",
+      "options": [
+        "Weddings are always stressful to plan, that's totally normal, if I'm honest, I hadn't stopped to think it all the way through, so let me know if that's off.",
+        "You should hire a wedding planner to handle all of it, I suppose, I said that fairly quickly, but I'm not totally set on it — and there's a decent chance I'd see it differently after sleeping on it.",
+        "That's a lot all at once — maybe start with the venue and date, since almost everything else depends on those two things being settled first."
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "When someone's overwhelmed by a big, multi-part task, identifying the logical first step is usually more useful than normalizing the stress or suggesting they hand it off entirely.",
+      "explanation": "Identifying venue and date as the logical starting point breaks the overwhelming task into something concrete and manageable. Normalizing the stress is kind but doesn't actually help your friend figure out where to begin. Suggesting they hire a planner may be a fine option eventually, but it skips past actually helping them think through the process, which is what they seemed to be asking for.",
+      "id": "bd_practice_l100_q1",
+      "consequencePreviews": [
+        "Realistically, the comment normalizes the stress but doesn't actually give your friend a practical way to start moving forward.",
+        "The suggestion may be reasonable for some, but it skips past actually helping your friend think through the planning process themselves.",
+        "As a result, you offer a specific, logical starting point that reduces the overwhelm by breaking the big task into a clear first step."
+      ],
+      "consequenceScores": [
+        -1,
+        -1,
+        1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a coworker overwhelmed by a large, multi-part project with a tight deadline",
+      "scene": "A coworker says: 'This whole project feels impossible, there are so many moving parts and the deadline is in two weeks. I don't know how to even approach it.'",
+      "options": [
+        "You've got this, just take it one step at a time.",
+        "Two weeks is tight, but let's break it down — what are the two or three things that absolutely have to happen first before anything else can move forward?",
+        "Two weeks really isn't much time for something this big."
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "For a genuinely overwhelming project, helping someone identify the real dependencies and sequence is more useful than encouragement or stating the obvious time pressure.",
+      "explanation": "Helping identify the real dependencies and sequence turns an overwhelming project into a concrete, actionable plan. Saying 'you've got this' is kind but doesn't actually help your coworker figure out what to do next. Pointing out that two weeks isn't much time restates something your coworker already knows, without moving them any closer to an actual plan.",
+      "id": "bd_practice_l100_q2",
+      "consequencePreviews": [
+        "As a result, the encouragement is kind but doesn't actually help your coworker figure out what the concrete first step should be.",
+        "As a result, you help your coworker turn an overwhelming project into a concrete, sequenced set of first steps.",
+        "In this moment, the comment states the obvious pressure without offering any actual help in figuring out how to approach the project."
+      ],
+      "consequenceScores": [
+        -1,
+        1,
+        -1
+      ],
+      "phase": "practice"
+    },
+    {
+      "instruction": "Select the most effective strategic response.",
+      "subtype": "branchingDialogue",
+      "interactionType": "dialogue",
+      "persona": "a friend overwhelmed after being told they need to care for an aging parent while also managing their own family and career",
+      "scene": "A friend says, clearly exhausted: 'Between my parents needing more care, my own kids, and work, I genuinely don't know how I'm supposed to do all of this. I feel like I'm failing at everything.'",
+      "options": [
+        "That's an enormous amount to be carrying at once, and it makes complete sense that you're feeling stretched this thin. Would it help to talk through which parts feel most urgent right now, so we can think about where you might actually get some real support?",
+        "You really need to start delegating more, you can't do everything yourself.",
+        "That sounds really hard, I'm sorry you're going through that, actually, I was going more on instinct than anything, so it's worth double-checking — and I know that's not the most thought-out response, but it's where my head's at right now, and I haven't really run it past anyone else yet."
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "For someone shouldering a lot at once across different parts of their life, acknowledging how heavy that is before gently offering to work out practical steps together tends to land better than issuing instructions or only offering condolences.",
+      "explanation": "Validating the genuine weight of the situation, then gently offering to help think through practical next steps, meets your friend both emotionally and practically, without rushing either. Jumping straight to 'delegate more,' without acknowledging how overwhelmed they feel, risks sounding like criticism rather than support, even if the advice itself has some truth to it. Sympathizing alone is genuine and kind, but it may leave your friend without any of the practical help they could actually use right now.",
+      "id": "bd_practice_l100_q3",
+      "consequencePreviews": [
+        "You validate the genuine weight of the situation first, then offer to help think through practical next steps at a pace that respects how overwhelmed they actually are.",
+        "The advice may be true in principle, but jumping straight to a directive, without acknowledging how overwhelmed your friend actually feels, risks landing as criticism rather than support.",
+        "The sympathy is genuine but stops short of offering the kind of practical help your friend might actually benefit from in this moment."
+      ],
+      "consequenceScores": [
+        1,
+        -1,
+        -1
+      ],
+      "phase": "practice"
+    }
+  ]
+}
