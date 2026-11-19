@@ -37,6 +37,8 @@ import 'package:vowl/features/listening/detail_spotlight/presentation/pages/deta
 import 'package:vowl/features/listening/detail_spotlight/presentation/pages/detail_spotlight_practice_screen.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/pages/listening_inference_learn_screen.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/pages/listening_inference_practice_screen.dart';
+import 'package:vowl/features/listening/ambient_id/presentation/pages/ambient_id_learn_screen.dart';
+import 'package:vowl/features/listening/ambient_id/presentation/pages/ambient_id_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -703,6 +705,22 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<ListeningInferencePracticeScreen>());
+    });
+
+    test('resolves /learn route for ambientId', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state = createMockState('/learn?category=listening&gameType=ambientId&level=2');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<AmbientIdLearnScreen>());
+    });
+
+    test('resolves /practice route for ambientId', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state = createMockState('/practice?category=listening&gameType=ambientId&level=2');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<AmbientIdPracticeScreen>());
     });
   });
 }

@@ -160,6 +160,8 @@ import 'package:vowl/features/listening/detail_spotlight/presentation/pages/deta
 import 'package:vowl/features/listening/detail_spotlight/presentation/pages/detail_spotlight_practice_screen.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/pages/listening_inference_learn_screen.dart';
 import 'package:vowl/features/listening/listening_inference/presentation/pages/listening_inference_practice_screen.dart';
+import 'package:vowl/features/listening/ambient_id/presentation/pages/ambient_id_learn_screen.dart';
+import 'package:vowl/features/listening/ambient_id/presentation/pages/ambient_id_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -845,6 +847,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'ambientid') {
+          return fadeTransitionPage(
+            child: AmbientIdLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1309,6 +1317,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'listeninginference') {
           return fadeTransitionPage(
             child: ListeningInferencePracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'ambientid') {
+          return fadeTransitionPage(
+            child: AmbientIdPracticeScreen(level: level),
             state: state,
           );
         }

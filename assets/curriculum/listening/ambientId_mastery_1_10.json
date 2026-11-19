@@ -1,0 +1,698 @@
+{
+  "gameType": "ambientId",
+  "phase": "mastery",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "LIS_AMBIENTID_L1_Q1",
+      "instruction": "What place does this soundscape suggest?",
+      "interactionType": "choice",
+      "hint": "Focus on the repeated beep and what happens right after each one.",
+      "explanation": "A steady scanner beep followed by items sliding and a cart wheel squeak points to a checkout lane — no single sound proves it, but together they do.",
+      "textToSpeak": "A scanner beeps again and again as items slide over the counter, and somewhere behind you a cart wheel squeaks on the tile.",
+      "options": [
+        "Pharmacy",
+        "Print Shop",
+        "Supermarket",
+        "Video Game Arcade"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "ambientId",
+      "locationContext": "Retail checkout area",
+      "vocabularyWords": [
+        "scanner",
+        "checkout",
+        "aisle"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L1_Q2",
+      "instruction": "Which setting best matches what you hear?",
+      "interactionType": "choice",
+      "hint": "Listen for what happens right before the doors close.",
+      "explanation": "A platform announcement, rolling suitcase wheels, and a chime before the doors shut form a train-station sequence, not just any transit stop.",
+      "textToSpeak": "A recorded voice announces the next stop, suitcase wheels clatter over a gap in the floor, and a soft chime signals the doors are closing.",
+      "options": [
+        "Ferry Dock",
+        "Airport Terminal",
+        "Train Station",
+        "Subway Platform"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "ambientId",
+      "locationContext": "Train platform, public transit",
+      "vocabularyWords": [
+        "platform",
+        "announcement",
+        "suitcase"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L1_Q3",
+      "instruction": "Where would you most likely hear this?",
+      "interactionType": "choice",
+      "hint": "Notice how quiet everything is except for one soft, official sound.",
+      "explanation": "Hushed voices, soft page turns, and a stamp landing on paper suggest a library, where quiet is expected and the stamp marks a specific process.",
+      "textToSpeak": "Pages turn softly, someone whispers a question, and a librarian brings a stamp down onto a due-date card.",
+      "options": [
+        "Study Hall",
+        "Public Library",
+        "Classroom",
+        "Bookstore"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "ambientId",
+      "locationContext": "Quiet public reading space",
+      "vocabularyWords": [
+        "librarian",
+        "whisper",
+        "due date"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L2_Q1",
+      "instruction": "Listen to the scene. What is the setting?",
+      "interactionType": "choice",
+      "hint": "Listen for how a name is called and what people are doing while they wait.",
+      "explanation": "A staff member calling a patient's name, over rustling paper and a vending machine hum, points to a clinical waiting area rather than a general office.",
+      "textToSpeak": "A nurse calls a patient's name from a clipboard, a vending machine hums nearby, and someone flips through an old magazine.",
+      "options": [
+        "Pharmacy Counter",
+        "Dentist's Office",
+        "Government Office",
+        "Hospital Waiting Room"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "ambientId",
+      "locationContext": "Healthcare waiting area",
+      "vocabularyWords": [
+        "clipboard",
+        "patient",
+        "waiting area"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L2_Q2",
+      "instruction": "Which place fits these sounds?",
+      "interactionType": "choice",
+      "hint": "Listen for the announcement's purpose, not just that one is playing.",
+      "explanation": "A gate-specific boarding call combined with rolling luggage and a passing stroller is typical of an airport departure gate rather than a general station.",
+      "textToSpeak": "A boarding call for a specific gate plays overhead, suitcase wheels roll across a polished floor, and a stroller squeaks past.",
+      "options": [
+        "Bus Terminal",
+        "Airport Departure Gate",
+        "Train Station",
+        "Hotel Lobby"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "ambientId",
+      "locationContext": "Air travel departure area",
+      "vocabularyWords": [
+        "boarding",
+        "gate",
+        "luggage"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L2_Q3",
+      "instruction": "What environment are you hearing?",
+      "interactionType": "choice",
+      "hint": "Listen for the adult voice's instruction and what the group does right after.",
+      "explanation": "A teacher giving instructions, chairs scraping as children move, and a pencil sharpener grinding all point to an elementary classroom.",
+      "textToSpeak": "A teacher asks the class to open their books, chairs scrape against the floor, and a pencil sharpener grinds in the corner.",
+      "options": [
+        "Music Lesson",
+        "Daycare Center",
+        "Library Reading Corner",
+        "Elementary Classroom"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "ambientId",
+      "locationContext": "Primary school setting",
+      "vocabularyWords": [
+        "instructions",
+        "sharpener",
+        "classroom"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L3_Q1",
+      "instruction": "Based on these sounds, where are you?",
+      "interactionType": "choice",
+      "hint": "Listen for the rhythm of calls between people, not just the cooking sounds.",
+      "explanation": "A chef calling out an order, oil sizzling on a hot pan, and pots clanging together capture the working rhythm of a restaurant kitchen.",
+      "textToSpeak": "A chef calls out an order number, oil sizzles sharply on a hot pan, and a stack of pots clangs against the counter.",
+      "options": [
+        "Cafeteria Line",
+        "Home Kitchen",
+        "Restaurant Kitchen",
+        "Food Truck"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "ambientId",
+      "locationContext": "Commercial food-preparation area",
+      "vocabularyWords": [
+        "order",
+        "sizzle",
+        "kitchen"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L3_Q2",
+      "instruction": "Listen carefully. Where are you?",
+      "interactionType": "choice",
+      "hint": "Listen for the sound that happens each time someone gets on.",
+      "explanation": "A driver announcing a stop, the hydraulic hiss of the doors, and a card reader beeping as passengers board are signature sounds of a city bus.",
+      "textToSpeak": "The driver calls out the next stop, the doors hiss open, and a card reader beeps as someone steps on board.",
+      "options": [
+        "School Bus",
+        "Subway Car",
+        "City Bus",
+        "Taxi"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "ambientId",
+      "locationContext": "Public transit, city bus",
+      "vocabularyWords": [
+        "hiss",
+        "fare",
+        "driver"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L3_Q3",
+      "instruction": "What place does this soundscape suggest?",
+      "interactionType": "choice",
+      "hint": "Listen for what's happening in the background, behind the closer sounds.",
+      "explanation": "A dog barking, distant children playing, and a ball bouncing on pavement suggest an open outdoor park rather than a private yard.",
+      "textToSpeak": "A dog barks somewhere off to the side, children laugh in the distance, and a basketball bounces steadily on the pavement.",
+      "options": [
+        "Neighborhood Park",
+        "Backyard",
+        "Sports Stadium",
+        "Schoolyard"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "ambientId",
+      "locationContext": "Outdoor recreation setting",
+      "vocabularyWords": [
+        "distant",
+        "bounce",
+        "outdoor"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L4_Q1",
+      "instruction": "Which setting best matches what you hear?",
+      "interactionType": "choice",
+      "hint": "Listen for what's repeating steadily underneath the voice.",
+      "explanation": "A steady clanking of weights, a treadmill's rhythmic hum, and someone counting reps out loud point to a gym rather than a sports field.",
+      "textToSpeak": "Weights clank down onto a rack, a treadmill hums at a steady pace, and someone counts out loud, \"seven, eight, nine.\"",
+      "options": [
+        "Fitness Gym",
+        "Sports Stadium",
+        "Physical Therapy Clinic",
+        "Dance Studio"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "ambientId",
+      "locationContext": "Indoor fitness setting",
+      "vocabularyWords": [
+        "treadmill",
+        "weights",
+        "instructor"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L4_Q2",
+      "instruction": "Where would you most likely hear this?",
+      "interactionType": "choice",
+      "hint": "Listen for the kitchen tool that tells you baking is underway, not just cooking.",
+      "explanation": "A mixer running, an oven timer buzzing, and dough being kneaded together point to a bakery rather than a general kitchen.",
+      "textToSpeak": "A stand mixer whirs steadily, an oven timer buzzes, and dough gets pressed and folded again and again on the counter.",
+      "options": [
+        "Home Kitchen",
+        "Restaurant Kitchen",
+        "Café Counter",
+        "Bakery"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "ambientId",
+      "locationContext": "Commercial baking area",
+      "vocabularyWords": [
+        "dough",
+        "mixer",
+        "timer"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L4_Q3",
+      "instruction": "Listen to the scene. What is the setting?",
+      "interactionType": "choice",
+      "hint": "Listen for the sound of something official being stamped or weighed.",
+      "explanation": "A stamp hitting an envelope, a package being weighed, and a question about delivery speed are typical of a post office counter.",
+      "textToSpeak": "A stamp thumps down on an envelope, a package sits on a scale, and a clerk asks how quickly the letter needs to arrive.",
+      "options": [
+        "Post Office",
+        "Shipping Warehouse",
+        "Bank Counter",
+        "Print Shop"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "ambientId",
+      "locationContext": "Public postal service counter",
+      "vocabularyWords": [
+        "stamp",
+        "package",
+        "scale"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L5_Q1",
+      "instruction": "Which place fits these sounds?",
+      "interactionType": "choice",
+      "hint": "Listen for the specific kind of question the person behind the counter asks.",
+      "explanation": "A pharmacist asking about a prescription, a label printing, and pill bottles being bagged point to a pharmacy counter rather than a doctor's office or general store.",
+      "textToSpeak": "A pharmacist asks if this is the first time filling this prescription, a small printer spits out a label, and pill bottles clatter into a paper bag.",
+      "options": [
+        "Supermarket Aisle",
+        "Pharmacy Counter",
+        "Hospital Pharmacy Ward",
+        "Doctor's Office"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "ambientId",
+      "locationContext": "Pharmacy service counter",
+      "vocabularyWords": [
+        "prescription",
+        "label",
+        "pharmacist"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L5_Q2",
+      "instruction": "What environment are you hearing?",
+      "interactionType": "choice",
+      "hint": "Listen for the sound that's muffled, as if it's coming through a wall.",
+      "explanation": "Popping popcorn, a ticket being processed, and a muffled trailer playing behind a door are typical of a cinema lobby, not the screening room itself.",
+      "textToSpeak": "Popcorn pops steadily behind the counter, a machine crunches through a ticket, and a trailer booms faintly through a distant door.",
+      "options": [
+        "Bowling Alley",
+        "Video Game Arcade",
+        "Concert Hall Entrance",
+        "Movie Theater Lobby"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "ambientId",
+      "locationContext": "Cinema entrance area",
+      "vocabularyWords": [
+        "ticket",
+        "trailer",
+        "lobby"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L5_Q3",
+      "instruction": "Based on these sounds, where are you?",
+      "interactionType": "choice",
+      "hint": "Listen for the coin sound and how many machines seem to be running at once.",
+      "explanation": "Coins dropping into a slot, a washing machine mid-cycle, and a dryer door closing suggest a self-service laundromat rather than a home laundry room.",
+      "textToSpeak": "Coins drop into a slot one by one, a washing machine sloshes through its cycle, and a dryer door clangs shut nearby.",
+      "options": [
+        "Home Laundry Room",
+        "Dry Cleaner",
+        "Laundromat",
+        "Public Restroom"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "ambientId",
+      "locationContext": "Self-service laundry facility",
+      "vocabularyWords": [
+        "cycle",
+        "coin slot",
+        "dryer"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L6_Q1",
+      "instruction": "Listen carefully. Where are you?",
+      "interactionType": "choice",
+      "hint": "Listen for the tool sound that repeats in short bursts.",
+      "explanation": "Scissors snipping in bursts, a hair dryer roaring, and a question about length are common exchanges specific to a hair salon.",
+      "textToSpeak": "Scissors snip in quick short bursts, a hair dryer roars from the next chair, and someone asks how much shorter to go.",
+      "options": [
+        "Hair Salon",
+        "Spa",
+        "Clothing Fitting Room",
+        "Photography Studio"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "ambientId",
+      "locationContext": "Hair care service setting",
+      "vocabularyWords": [
+        "scissors",
+        "trim",
+        "salon"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L6_Q2",
+      "instruction": "What place does this soundscape suggest?",
+      "interactionType": "choice",
+      "hint": "Listen for the sound of food being handled, not just the animals.",
+      "explanation": "Barking, a bubbling fish tank, and kibble being poured together suggest a pet store rather than a shelter or clinic, which would sound different.",
+      "textToSpeak": "A dog barks from a back cage, water bubbles inside a fish tank, and a bag of kibble crinkles as it's poured into a bowl.",
+      "options": [
+        "Farm",
+        "Pet Store",
+        "Veterinary Clinic",
+        "Animal Shelter"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "ambientId",
+      "locationContext": "Retail pet supply store",
+      "vocabularyWords": [
+        "kibble",
+        "tank",
+        "cage"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L6_Q3",
+      "instruction": "Which setting best matches what you hear?",
+      "interactionType": "choice",
+      "hint": "Listen for the human voice calling out information, not a machine.",
+      "explanation": "A vendor's spoken price, a manual scale, and a cash box are typical of an open-air market rather than a supermarket, where prices are usually scanned.",
+      "textToSpeak": "A vendor calls out today's price for tomatoes, a scale clicks as it settles, and coins jingle in a metal cash box.",
+      "options": [
+        "Grocery Warehouse",
+        "Convenience Store",
+        "Supermarket",
+        "Farmers Market"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "ambientId",
+      "locationContext": "Outdoor food market",
+      "vocabularyWords": [
+        "vendor",
+        "scale",
+        "market"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L7_Q1",
+      "instruction": "Where would you most likely hear this?",
+      "interactionType": "choice",
+      "hint": "Listen for the short, repeated signal that comes before the instruction.",
+      "explanation": "A lifeguard's whistle, a diving splash, and a safety reminder point to a supervised swimming pool rather than an open beach.",
+      "textToSpeak": "A whistle blasts twice, water splashes as someone dives in, and a lifeguard calls out a reminder to walk, not run.",
+      "options": [
+        "Swimming Pool",
+        "Bathhouse",
+        "Beach",
+        "Water Park"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "ambientId",
+      "locationContext": "Indoor swimming facility",
+      "vocabularyWords": [
+        "whistle",
+        "dive",
+        "lifeguard"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L7_Q2",
+      "instruction": "Listen to the scene. What is the setting?",
+      "interactionType": "choice",
+      "hint": "Listen for the specific equipment sounds, not just the children's voices.",
+      "explanation": "A creaking swing chain and quick footsteps on a slide are equipment-specific sounds that point to a playground.",
+      "textToSpeak": "Children shriek with laughter as a swing chain creaks back and forth, and a slide rings with quick footsteps.",
+      "options": [
+        "Daycare Center",
+        "Backyard",
+        "Schoolyard During Recess",
+        "Playground"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "ambientId",
+      "locationContext": "Outdoor children's play area",
+      "vocabularyWords": [
+        "swing",
+        "slide",
+        "creak"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L7_Q3",
+      "instruction": "Which place fits these sounds?",
+      "interactionType": "choice",
+      "hint": "Listen for the tone of the conversation, not just the typing.",
+      "explanation": "Typing, a ringing desk phone, and a casual question about a meeting suggest an office rather than a call center, where calls would dominate.",
+      "textToSpeak": "A keyboard clicks steadily, a phone rings two desks away, and someone asks quietly if the meeting has moved.",
+      "options": [
+        "Internet Café",
+        "Open-Plan Office",
+        "Call Center",
+        "Library Study Room"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "ambientId",
+      "locationContext": "Shared workplace environment",
+      "vocabularyWords": [
+        "keyboard",
+        "meeting",
+        "desk"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L8_Q1",
+      "instruction": "What environment are you hearing?",
+      "interactionType": "choice",
+      "hint": "Listen for what happens right after the chime.",
+      "explanation": "A chime followed by sliding doors and a floor announcement is specific to an elevator, not an escalator or hallway.",
+      "textToSpeak": "A soft chime rings, the doors slide open, and a recorded voice announces the third floor.",
+      "options": [
+        "Elevator",
+        "Escalator Landing",
+        "Subway Car",
+        "Hotel Corridor"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "ambientId",
+      "locationContext": "Building elevator interior",
+      "vocabularyWords": [
+        "chime",
+        "floor",
+        "doors"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L8_Q2",
+      "instruction": "Based on these sounds, where are you?",
+      "interactionType": "choice",
+      "hint": "Listen for the specific question being asked at the desk.",
+      "explanation": "A rolling suitcase, a front-desk bell, and a checkout question point to a hotel lobby rather than an apartment lobby, which wouldn't have checkout times.",
+      "textToSpeak": "A suitcase wheel rolls across marble, a bell rings once at the front desk, and someone asks about checkout time.",
+      "options": [
+        "Conference Center",
+        "Apartment Building Lobby",
+        "Hotel Lobby",
+        "Airport Terminal"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "ambientId",
+      "locationContext": "Hotel reception area",
+      "vocabularyWords": [
+        "checkout",
+        "front desk",
+        "lobby"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L8_Q3",
+      "instruction": "Listen carefully. Where are you?",
+      "interactionType": "choice",
+      "hint": "Listen for how customers seem to be organized before being served.",
+      "explanation": "A called number, a teller's counter, and a stamped document suggest a bank branch's queue system rather than a government office.",
+      "textToSpeak": "A number is called from a screen, a teller slides a receipt across the counter, and a stamp presses down once.",
+      "options": [
+        "Post Office",
+        "Bank Branch",
+        "Government Office",
+        "Currency Exchange Counter"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "ambientId",
+      "locationContext": "Retail banking branch",
+      "vocabularyWords": [
+        "teller",
+        "receipt",
+        "counter"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L9_Q1",
+      "instruction": "What place does this soundscape suggest?",
+      "interactionType": "choice",
+      "hint": "Listen for what arrives before any sound of the train itself.",
+      "explanation": "A rush of air before the train, screeching brakes, and a \"mind the gap\" warning are cues specific to an underground subway platform.",
+      "textToSpeak": "A rush of air arrives before the train does, brakes screech to a stop, and a recorded voice warns to mind the gap.",
+      "options": [
+        "Airport Tram",
+        "Elevator Shaft",
+        "Train Station Platform",
+        "Subway Platform"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "ambientId",
+      "locationContext": "Underground transit platform",
+      "vocabularyWords": [
+        "brakes",
+        "platform",
+        "gap"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L9_Q2",
+      "instruction": "Which setting best matches what you hear?",
+      "interactionType": "choice",
+      "hint": "Listen for the sound that counts something automatically.",
+      "explanation": "A clicking meter, a radio confirmation of an address, and a turn signal are specific to a metered taxi rather than a rideshare app car.",
+      "textToSpeak": "A meter clicks upward, the driver confirms an address over the radio, and a turn signal ticks steadily.",
+      "options": [
+        "Taxi Cab",
+        "Rideshare Car",
+        "City Bus",
+        "Delivery Van"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "ambientId",
+      "locationContext": "Inside a taxi",
+      "vocabularyWords": [
+        "meter",
+        "radio",
+        "address"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L9_Q3",
+      "instruction": "Where would you most likely hear this?",
+      "interactionType": "choice",
+      "hint": "Listen for the instruction being given to vehicles, not people.",
+      "explanation": "A ship's horn, gulls overhead, and directions for cars boarding a ramp point to a ferry terminal rather than a harbor or cruise deck.",
+      "textToSpeak": "A horn sounds low and long, gulls call overhead, and a crew member directs cars onto the ramp.",
+      "options": [
+        "Cruise Ship Deck",
+        "Ferry Terminal",
+        "Fishing Harbor",
+        "Airport Runway"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "ambientId",
+      "locationContext": "Ferry boarding area",
+      "vocabularyWords": [
+        "horn",
+        "ramp",
+        "crew"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L10_Q1",
+      "instruction": "Listen to the scene. What is the setting?",
+      "interactionType": "choice",
+      "hint": "Listen for the combination of setup sounds, not just the fire.",
+      "explanation": "A tent zipper, a crackling fire, and wood being chopped together suggest an active campsite rather than a backyard fire pit.",
+      "textToSpeak": "A tent zipper drags open, a fire crackles nearby, and someone chops wood with slow, steady strikes.",
+      "options": [
+        "Campsite",
+        "Cabin Porch",
+        "National Park Trailhead",
+        "Backyard Barbecue"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "ambientId",
+      "locationContext": "Outdoor camping area",
+      "vocabularyWords": [
+        "zipper",
+        "crackle",
+        "firewood"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L10_Q2",
+      "instruction": "Which place fits these sounds?",
+      "interactionType": "choice",
+      "hint": "Listen for what's moving the car, not just what's cleaning it.",
+      "explanation": "Spinning brushes, bursts of spray, and a humming conveyor system point to an automated car wash rather than a repair shop.",
+      "textToSpeak": "Brushes spin against metal, a hose sprays in bursts, and a machine hums as it pulls the car slowly forward.",
+      "options": [
+        "Driveway",
+        "Garage Repair Shop",
+        "Car Wash",
+        "Gas Station"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "ambientId",
+      "locationContext": "Automated vehicle wash",
+      "vocabularyWords": [
+        "brushes",
+        "hose",
+        "conveyor"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L10_Q3",
+      "instruction": "What environment are you hearing?",
+      "interactionType": "choice",
+      "hint": "Listen for the specific request being made, not just the serving sounds.",
+      "explanation": "A scoop scraping a tub, a freezer door closing, and a request for sprinkles are specific to an ice cream counter.",
+      "textToSpeak": "A metal scoop scrapes against the tub, a freezer door thuds shut, and a child asks for extra sprinkles.",
+      "options": [
+        "Café Counter",
+        "Grocery Freezer Aisle",
+        "Bakery",
+        "Ice Cream Parlor"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "ambientId",
+      "locationContext": "Ice cream retail counter",
+      "vocabularyWords": [
+        "scoop",
+        "freezer",
+        "sprinkles"
+      ],
+      "phase": "mastery"
+    }
+  ]
+}

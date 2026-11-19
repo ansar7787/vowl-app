@@ -1,0 +1,698 @@
+{
+  "gameType": "ambientId",
+  "phase": "mastery",
+  "batchIndex": 17,
+  "levels": "161-170",
+  "quests": [
+    {
+      "id": "LIS_AMBIENTID_L161_Q1",
+      "instruction": "What place does this soundscape suggest?",
+      "interactionType": "choice",
+      "hint": "Listen for what happens after the pan drops — is there yelling, or something else entirely?",
+      "explanation": "An instantly silenced timer, a precise flavor correction, a wiped plate rim, and disciplined silence after a mistake — rather than shouting — describe an elite kitchen's exacting standards beyond an ordinary restaurant kitchen.",
+      "textToSpeak": "A timer beeps and is silenced within a single second by someone already moving, a chef tastes from a spoon and immediately calls for more acid rather than more salt, a plate gets wiped clean along its rim with a folded cloth before it's allowed to leave the pass, and absolute silence follows a dropped pan rather than any shouting.",
+      "options": [
+        "Home Kitchen",
+        "Fine Dining Restaurant",
+        "Michelin-Starred Kitchen",
+        "Restaurant Kitchen"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "ambientId",
+      "locationContext": "Michelin-starred restaurant kitchen",
+      "vocabularyWords": [
+        "pass",
+        "acid correction",
+        "discipline"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L161_Q2",
+      "instruction": "Which setting best matches what you hear?",
+      "interactionType": "choice",
+      "hint": "Listen for what gets erased before anyone reacts, and why a recess gets called so quickly.",
+      "explanation": "An immediately erased number, a silent lawyer exchange, a deliberately face-down phone, and a fast-called recess at the first sign of tension describe a high-stakes negotiation rather than a routine meeting.",
+      "textToSpeak": "A number gets written on a whiteboard and immediately erased before anyone can react to it, two lawyers on opposite sides of the table trade a look that says more than either has said aloud, a phone gets turned face-down deliberately rather than just silenced, and a fifteen-minute recess gets called the moment voices start to rise even slightly.",
+      "options": [
+        "Corporate Meeting Room",
+        "Salary Negotiation Meeting",
+        "Client Sales Pitch Meeting",
+        "High-Stakes Boardroom Negotiation"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "ambientId",
+      "locationContext": "Corporate high-stakes negotiation",
+      "vocabularyWords": [
+        "erased number",
+        "recess",
+        "face-down"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L161_Q3",
+      "instruction": "Where would you most likely hear this?",
+      "interactionType": "choice",
+      "hint": "Listen for how formal the oath sounds, and who's standing rather than sitting.",
+      "explanation": "A standing marshal, an extended formal oath, a curt sustained objection, and visible case law volumes describe the heightened formality of a federal courtroom rather than a local or small claims hearing.",
+      "textToSpeak": "A marshal stands motionless near a door rather than seated at a desk, a witness is sworn in using a longer, more formal oath than a casual hearing would use, an objection gets sustained with a single sharp word and no further explanation, and a stack of case law volumes sits untouched but visibly ready on the counsel table.",
+      "options": [
+        "Federal Courtroom",
+        "Courtroom",
+        "Court Sentencing Hearing",
+        "Small Claims Court Waiting Area"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "ambientId",
+      "locationContext": "Federal courtroom proceeding",
+      "vocabularyWords": [
+        "marshal",
+        "formal oath",
+        "sustained"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L162_Q1",
+      "instruction": "Listen to the scene. What is the setting?",
+      "interactionType": "choice",
+      "hint": "Listen for how the bill actually gets settled, or doesn't.",
+      "explanation": "A name recognized without checking, tonged ice, an undisturbed reading armchair, and a house account instead of payment describe an exclusive private members' club rather than a public bar.",
+      "textToSpeak": "A staff member greets someone by name without needing to check any list at all, ice is placed into a glass with a single silver tong rather than scooped by hand, a newspaper page turns in a leather armchair with no other conversation nearby competing for attention, and a house account gets mentioned instead of any actual payment changing hands.",
+      "options": [
+        "A Rooftop Bar at Sunset",
+        "Private Members' Club Lounge",
+        "Neighborhood Pub",
+        "Hotel Lobby"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "ambientId",
+      "locationContext": "Private members' club lounge",
+      "vocabularyWords": [
+        "house account",
+        "silver tong",
+        "recognized by name"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L162_Q2",
+      "instruction": "Which place fits these sounds?",
+      "interactionType": "choice",
+      "hint": "Listen for how loud the engine actually is, and how casually the next destination gets mentioned.",
+      "explanation": "Uniformed crew polishing already-clean brass, a spill-free pour, an unusually quiet engine, and casual talk of the next port describe a private luxury yacht rather than a commercial ferry or cruise ship.",
+      "textToSpeak": "A crew member in matching uniform polishes brass fittings that already gleam, champagne is poured without a single drop spilling onto teak decking, an engine hums so quietly underfoot that conversation never has to rise above a normal volume, and someone remarks casually about the next port as if changing countries were as simple as changing rooms.",
+      "options": [
+        "Luxury Yacht Deck",
+        "Ferry Terminal",
+        "Sailboat Deck",
+        "Cruise Ship Deck"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "ambientId",
+      "locationContext": "Luxury private yacht deck",
+      "vocabularyWords": [
+        "brass fittings",
+        "teak decking",
+        "quiet engine"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L162_Q3",
+      "instruction": "What environment are you hearing?",
+      "interactionType": "choice",
+      "hint": "Listen for what gets remembered from before, without anyone having to ask.",
+      "explanation": "A remembered preference, an effortlessly secured reservation through personal connections, anticipatory bag-carrying, and a personalized reply describe five-star concierge service rather than a standard hotel front desk.",
+      "textToSpeak": "A guest's preference for a specific newspaper gets remembered from a stay months earlier without being asked again, a reservation at a fully booked restaurant gets secured with one quiet phone call and a first name used on both ends, a bag is carried by staff before the guest has even fully noticed it's missing from their hand, and a simple thank-you gets answered with a guest's own name rather than a generic reply.",
+      "options": [
+        "Hotel Concierge Desk",
+        "Hotel Lobby",
+        "Budget Motel Room",
+        "Airport Lounge"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "ambientId",
+      "locationContext": "Five-star hotel concierge desk",
+      "vocabularyWords": [
+        "remembered preference",
+        "secured reservation",
+        "anticipatory service"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L163_Q1",
+      "instruction": "Based on these sounds, where are you?",
+      "interactionType": "choice",
+      "hint": "Listen for what gets covered up when an unfamiliar person walks by.",
+      "explanation": "A guarded source call, cross-referenced documents, a hastily covered whiteboard, and a demand for a second source describe an investigative newsroom working a sensitive story.",
+      "textToSpeak": "A source's voice comes through a phone held slightly away from other ears in the room, a reporter cross-references two documents side by side without looking up even once, a whiteboard timeline gets a name added and then quickly covered when someone unfamiliar walks past, and an editor asks quietly whether a claim can survive a second confirmed source before it goes anywhere further.",
+      "options": [
+        "Customer Service Call Center",
+        "Podcast Studio",
+        "Investigative Newsroom",
+        "Radio Station Booth"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "ambientId",
+      "locationContext": "Investigative newsroom",
+      "vocabularyWords": [
+        "source",
+        "cross-reference",
+        "second source"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L163_Q2",
+      "instruction": "Listen carefully. Where are you?",
+      "interactionType": "choice",
+      "hint": "Listen for how precisely everyone reacts to a single instruction, and how rarely anything needs repeating.",
+      "explanation": "A mid-phrase stop, an instantly located measure number, an imperceptibly fine tuning adjustment, and instructions that never need repeating describe a highly skilled professional orchestra rehearsal.",
+      "textToSpeak": "A conductor stops an entire section with a single raised hand mid-phrase rather than letting it finish, a specific measure number gets called out and every musician turns to the same page within a second, a string player adjusts a tuning peg by a fraction that most ears in the room couldn't detect, and a note about dynamics gets given once and is never repeated for the rest of the run-through.",
+      "options": [
+        "Community Theater Rehearsal",
+        "School Talent Show",
+        "Professional Orchestra Rehearsal",
+        "Piano Recital"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "ambientId",
+      "locationContext": "Professional orchestra rehearsal",
+      "vocabularyWords": [
+        "measure number",
+        "tuning peg",
+        "dynamics note"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L163_Q3",
+      "instruction": "What place does this soundscape suggest?",
+      "interactionType": "choice",
+      "hint": "Listen for how many separate checks happen before anyone even reaches the actual servers.",
+      "explanation": "Double badge scans, a deliberate biometric pause, servers behind glass rather than open access, and a written-reason visitor log describe a high-security data facility beyond a standard server room.",
+      "textToSpeak": "A badge gets scanned twice at two separate doors before anyone actually reaches the server floor, a biometric scanner beeps and pauses just slightly longer than a normal door lock would, rows of servers hum behind a wall of glass rather than being freely walkable, and a visitor log gets signed with a specific reason required in writing rather than just a name.",
+      "options": [
+        "Data Center Server Room",
+        "Bank Branch",
+        "IT Server Room",
+        "High-Security Data Center"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "ambientId",
+      "locationContext": "High-security data center",
+      "vocabularyWords": [
+        "biometric scanner",
+        "visitor log",
+        "behind glass"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L164_Q1",
+      "instruction": "Which setting best matches what you hear?",
+      "interactionType": "choice",
+      "hint": "Listen for how small the class seems to be, and how unhurried the teacher's response is.",
+      "explanation": "Fluid bilingual discussion, a first-name philosopher reference, an unhurried five-minute exploration, and a tiny advanced class describe an elite private school's small, resource-rich classroom.",
+      "textToSpeak": "A discussion moves fluidly between two languages without anyone pausing to translate, a teacher references a philosopher by first name as though continuing yesterday's casual conversation, a student's question gets a full five minutes of unhurried exploration rather than a quick answer, and a class of only eight students all seem to have already read material well beyond their grade level.",
+      "options": [
+        "High School Chemistry Lab",
+        "Middle School Classroom",
+        "Elite Private School Classroom",
+        "University Seminar Room"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "ambientId",
+      "locationContext": "Elite private school classroom",
+      "vocabularyWords": [
+        "bilingual discussion",
+        "unhurried exploration",
+        "small class"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L164_Q2",
+      "instruction": "Where would you most likely hear this?",
+      "interactionType": "choice",
+      "hint": "Listen for how the chairs are arranged, and what happens when the scheduled time is actually up.",
+      "explanation": "A circular chair arrangement, a professor's patient silence, respectful student pushback, and a discussion running past its scheduled end describe a small, participatory graduate seminar rather than a large lecture.",
+      "textToSpeak": "A dozen chairs form a single circle rather than facing forward toward any lectern, a professor asks a question and then waits in comfortable silence for several long seconds without answering it themselves, a student pushes back respectfully on a point from an assigned reading, and a discussion continues past the scheduled end time with no one seeming to mind.",
+      "options": [
+        "Elite Private School Classroom",
+        "Community College Registration Desk",
+        "University Lecture Hall",
+        "University Seminar Room"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "ambientId",
+      "locationContext": "University graduate seminar room",
+      "vocabularyWords": [
+        "circle of chairs",
+        "patient silence",
+        "running past time"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L164_Q3",
+      "instruction": "Listen to the scene. What is the setting?",
+      "interactionType": "choice",
+      "hint": "Listen for who's translating, and why the small flags were arranged so carefully.",
+      "explanation": "Real-time translation behind a handshake, an anthem prompting an instinctive stand, timed photography, and carefully ordered flags describe the choreographed formality of a diplomatic reception.",
+      "textToSpeak": "Two languages get quietly translated in real time by someone standing just slightly behind two shaking hands, a national anthem plays briefly and everyone in the room stands without needing any instruction, a photographer's shutter clicks in careful bursts timed to specific handshakes rather than continuously, and small flags on a table get arranged in an order that clearly followed careful negotiation of its own.",
+      "options": [
+        "Citizenship Ceremony",
+        "Diplomatic Reception",
+        "Corporate Shareholders Meeting",
+        "Wedding Reception"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "ambientId",
+      "locationContext": "Diplomatic reception",
+      "vocabularyWords": [
+        "real-time translation",
+        "instinctive stand",
+        "carefully ordered"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L165_Q1",
+      "instruction": "Which place fits these sounds?",
+      "interactionType": "choice",
+      "hint": "Listen for what's illuminated and what isn't, and what one player is actually watching.",
+      "explanation": "A silently pushed chip stack, a deliberately flat dealer voice, a tell-seeking glance at hands rather than a face, and a spotlighted table in an otherwise dim room describe a serious high-stakes poker game.",
+      "textToSpeak": "Chips click together in a stack that gets pushed forward in complete silence rather than any announcement of the amount, a dealer's voice stays perfectly flat regardless of the size of the pot, one player's eyes flick briefly to another's hands rather than their face, and a single overhead light illuminates the table while the rest of the room stays deliberately dim.",
+      "options": [
+        "High-Stakes Poker Room",
+        "Trivia Night at a Bar",
+        "Casino Floor",
+        "Chess Club Meeting"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "ambientId",
+      "locationContext": "High-stakes private poker room",
+      "vocabularyWords": [
+        "chip stack",
+        "flat voice",
+        "tell"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L165_Q2",
+      "instruction": "What environment are you hearing?",
+      "interactionType": "choice",
+      "hint": "Listen for how many different games seem to be creating sound at once, and how they contrast with a poker table.",
+      "explanation": "Overlapping slot machine melodies, a persistent general hum, complimentary drinks, and a cheering craps crowd describe an open casino floor rather than the hushed intensity of a serious poker room.",
+      "textToSpeak": "Dozens of slot machines chime in overlapping, unrelated melodies from every direction at once, a dealer calls out a game's next round over a general hum that never really quiets down, free drinks arrive at a table without anyone having to ask, and a small crowd gathers loosely around a craps table erupting in a cheer that has nothing to do with the quieter poker tables nearby.",
+      "options": [
+        "Video Game Arcade",
+        "Casino Floor",
+        "Bowling Alley",
+        "High-Stakes Poker Room"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "ambientId",
+      "locationContext": "Casino gaming floor",
+      "vocabularyWords": [
+        "slot machines",
+        "complimentary drinks",
+        "craps table"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L165_Q3",
+      "instruction": "Based on these sounds, where are you?",
+      "interactionType": "choice",
+      "hint": "Listen for what's already crossed out on the whiteboard, and what that implies about decisions already made.",
+      "explanation": "A rapidly flipped deck, an early burn-rate interruption, casual term sheet talk, and a whiteboard of already-decided names describe the fast, high-volume evaluation style of a venture capital office.",
+      "textToSpeak": "A pitch deck gets flipped through faster than any presenter could actually explain each slide, a partner interrupts to ask about a burn rate before the founder finishes their second sentence, a term sheet gets mentioned casually as though it were already a foregone conclusion, and a whiteboard in the corner lists company names with some crossed out and others circled in a different colored marker.",
+      "options": [
+        "Client Sales Pitch Meeting",
+        "Small Business Loan Pitch",
+        "Startup Investor Pitch Meeting",
+        "Venture Capital Firm Office"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "ambientId",
+      "locationContext": "Venture capital firm office",
+      "vocabularyWords": [
+        "burn rate",
+        "term sheet",
+        "crossed out"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L166_Q1",
+      "instruction": "Listen carefully. Where are you?",
+      "interactionType": "choice",
+      "hint": "Listen for what gets examined before anyone actually tastes anything.",
+      "explanation": "A pre-taste cork inspection, held-up color study, a confident vintage debate, and casual cellar temperature talk describe a serious connoisseur's tasting rather than a casual winery visit.",
+      "textToSpeak": "A cork is examined and smelled before the wine itself is even poured, a glass gets held up to a single dim light to study color rather than taste yet, a vintage year gets debated between two people who both seem certain they're right, and a temperature reading from the cellar itself gets mentioned as casually as most people would mention the weather.",
+      "options": [
+        "Wine Tasting Room",
+        "Restaurant",
+        "Distillery Tasting Bar",
+        "Wine Cellar Connoisseur Tasting"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "ambientId",
+      "locationContext": "Wine cellar connoisseur tasting",
+      "vocabularyWords": [
+        "cork inspection",
+        "vintage debate",
+        "cellar temperature"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L166_Q2",
+      "instruction": "What place does this soundscape suggest?",
+      "interactionType": "choice",
+      "hint": "Listen for the size of the jumps between numbers, and how a phone bidder actually participates.",
+      "explanation": "A barely visible paddle raise, enormous bid increments, an assistant relaying a phone bid, and formal rather than excited applause describe a major fine art auction rather than a smaller antique sale.",
+      "textToSpeak": "A paddle number gets raised with the smallest possible motion, almost imperceptible from a distance, an auctioneer's voice climbs through numbers that jump by amounts most people would consider a house payment, a phone bidder's presence gets announced by an assistant standing at the side rather than the bidder ever speaking directly, and a final gavel drop is met with applause that sounds almost formal rather than excited.",
+      "options": [
+        "Charity Silent Auction",
+        "High-End Art Auction House",
+        "Livestock Auction",
+        "Antique Auction House"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "ambientId",
+      "locationContext": "High-end fine art auction house",
+      "vocabularyWords": [
+        "paddle raise",
+        "phone bidder",
+        "bid increment"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L166_Q3",
+      "instruction": "Which setting best matches what you hear?",
+      "interactionType": "choice",
+      "hint": "Listen for how quickly the flight actually leaves after arrival, and how the meal gets decided without a menu.",
+      "explanation": "A name-only attendant, a menu-free custom meal, a closer engine whine in a small cabin, and an almost immediate departure describe a private jet rather than any commercial cabin, however luxurious.",
+      "textToSpeak": "A single flight attendant addresses only two or three passengers by name throughout the entire flight, a request for a specific meal gets prepared without any printed menu ever being shown, an engine's whine feels closer and more present than on any commercial flight despite the smaller cabin, and a departure happens within minutes of arriving at the airport rather than any long wait.",
+      "options": [
+        "Private Jet Cabin",
+        "Airport Lounge",
+        "Long-Haul International Flight Cabin",
+        "Business Class Flight Cabin"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "ambientId",
+      "locationContext": "Private jet cabin",
+      "vocabularyWords": [
+        "addressed by name",
+        "no printed menu",
+        "immediate departure"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L167_Q1",
+      "instruction": "Where would you most likely hear this?",
+      "interactionType": "choice",
+      "hint": "Listen for what machine seems to be temporarily doing a job the body usually does itself.",
+      "explanation": "A steady monitored rhythm, specialized instrument names, a machine temporarily taking over a bodily function, and a calmly announced restart describe cardiac surgery specifically, distinct from other operating rooms.",
+      "textToSpeak": "A steady electronic rhythm from a heart monitor gets called out in numbers by a voice that never rises in pitch even slightly, a specific instrument gets requested by a name that means nothing outside this room, a machine's mechanical pulse briefly takes over a function the body would normally handle on its own, and a countdown to restarting something gets announced with the same flat calm as everything else.",
+      "options": [
+        "Neurosurgery Operating Room",
+        "Veterinary Surgery Room",
+        "Emergency Room",
+        "Cardiac Surgery Operating Room"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "ambientId",
+      "locationContext": "Cardiac surgery operating room",
+      "vocabularyWords": [
+        "instrument request",
+        "mechanical pulse",
+        "flat calm"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L167_Q2",
+      "instruction": "Listen to the scene. What is the setting?",
+      "interactionType": "choice",
+      "hint": "Listen for who's still able to speak, and why that would be surprising during surgery.",
+      "explanation": "A patient responding during the procedure, a non-cardiac monitored reading, held stillness, and a rarely-repeated silence request describe an awake neurosurgical procedure distinct from cardiac surgery.",
+      "textToSpeak": "A patient's voice occasionally answers a quiet question from the surgical team despite the procedure clearly still being underway, a specific number gets read off a monitor tracking something entirely different from a heartbeat, an unusual stillness in the room suggests everyone is holding a position rather than actively moving, and a request for absolute silence gets made in a tone that implies it's rarely needed to be said twice.",
+      "options": [
+        "Cardiac Surgery Operating Room",
+        "Neurosurgery Operating Room",
+        "Emergency Room",
+        "Radiology X-ray Room"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "ambientId",
+      "locationContext": "Neurosurgery operating room",
+      "vocabularyWords": [
+        "patient responds",
+        "held stillness",
+        "rarely repeated"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L167_Q3",
+      "instruction": "Which place fits these sounds?",
+      "interactionType": "choice",
+      "hint": "Listen for how many voices are talking at once, and how fast the whole scene is moving.",
+      "explanation": "Overlapping urgent voices, a fast squealing cart, rapid role-based introductions, and a seconds-long countdown describe an unscheduled trauma prep rather than a calm, planned surgery.",
+      "textToSpeak": "Multiple voices call out different numbers at once rather than one calm voice at a time, a cart gets wheeled in fast enough that its wheels squeal slightly on the turn, a team introduces themselves by role rather than name in rapid single words, and a countdown to starting happens in seconds rather than the unhurried pace of a scheduled procedure.",
+      "options": [
+        "Cardiac Surgery Operating Room",
+        "Emergency Room",
+        "Trauma Surgery Prep",
+        "Ambulance Bay"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "ambientId",
+      "locationContext": "Trauma surgery preparation",
+      "vocabularyWords": [
+        "overlapping voices",
+        "role introduction",
+        "seconds-long countdown"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L168_Q1",
+      "instruction": "What environment are you hearing?",
+      "interactionType": "choice",
+      "hint": "Listen for what happens during the break, and how much time gets spent on one single word.",
+      "explanation": "Mismatched document stacks, a challenged valuation, separate-room caucusing, and an hour spent on one word describe the granular, adversarial pace of a corporate merger negotiation.",
+      "textToSpeak": "Two separate legal teams occupy opposite ends of a long table with their own stacks of documents that don't quite match each other, a specific valuation number gets repeated by one side and immediately challenged by the other without raised voices, a break gets called specifically so each side can caucus separately in different rooms, and a single word change to a contract clause takes an hour of discussion on its own.",
+      "options": [
+        "Real Estate Closing",
+        "Legal Deposition Room",
+        "Corporate Boardroom High-Stakes Negotiation",
+        "Corporate Merger Negotiation"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "ambientId",
+      "locationContext": "Corporate merger negotiation",
+      "vocabularyWords": [
+        "valuation",
+        "caucus separately",
+        "clause"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L168_Q2",
+      "instruction": "Based on these sounds, where are you?",
+      "interactionType": "choice",
+      "hint": "Listen for the reminder given during a pause that doesn't feel like it should need saying.",
+      "explanation": "Neutral steady transcription, a three-times rephrased question, an oath reminder during a casual pause, and an ignored running camera describe a formal legal deposition rather than a courtroom trial.",
+      "textToSpeak": "A court reporter's keys click steadily and neutrally no matter what's being said, a lawyer rephrases the same question three different ways after an answer that didn't quite satisfy them, a witness is reminded that they're still under oath even during what feels like a casual pause, and a video camera in the corner runs the entire time without anyone seeming to react to it anymore.",
+      "options": [
+        "Courtroom",
+        "Union Meeting Hall",
+        "Legal Deposition Room",
+        "Small Claims Court Waiting Area"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "ambientId",
+      "locationContext": "Legal deposition room",
+      "vocabularyWords": [
+        "court reporter",
+        "rephrase",
+        "under oath"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L168_Q3",
+      "instruction": "Listen carefully. Where are you?",
+      "interactionType": "choice",
+      "hint": "Listen for what's missing from the room that a courtroom would normally have.",
+      "explanation": "An agreed private process, a directly questioning arbitrator, the absence of a jury box, and a faster promised decision describe arbitration rather than a courtroom trial or deposition.",
+      "textToSpeak": "Both sides agree at the outset to a private, faster process rather than a public trial, an arbitrator asks pointed questions directly rather than waiting for objections to guide the discussion, no jury box sits anywhere in the room at all, and a decision gets promised within weeks rather than the months a full court case might take.",
+      "options": [
+        "Arbitration Hearing",
+        "Small Claims Court Waiting Area",
+        "Legal Deposition Room",
+        "Divorce Mediation"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "ambientId",
+      "locationContext": "Private arbitration hearing",
+      "vocabularyWords": [
+        "arbitrator",
+        "private process",
+        "no jury"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L169_Q1",
+      "instruction": "What place does this soundscape suggest?",
+      "interactionType": "choice",
+      "hint": "Listen for the size and formality suggested by the clothing being adjusted.",
+      "explanation": "Overlapping individual warm-ups, a final clipboard check, a hurried tuxedo button, and a rippling dimming countdown describe the final minutes backstage before a formal symphony performance.",
+      "textToSpeak": "Dozens of individual warm-up phrases overlap into something between music and noise, a stage manager checks a running order against a clipboard for what must be the final time, a tuxedo jacket gets buttoned in a hurry just seconds before a name gets called toward the stage door, and a hushed countdown to house lights dimming ripples quietly through the wings.",
+      "options": [
+        "Community Theater Rehearsal",
+        "Piano Recital",
+        "Concert Encore",
+        "Symphony Backstage Before a Concert"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "ambientId",
+      "locationContext": "Symphony hall backstage before a concert",
+      "vocabularyWords": [
+        "warm-up overlap",
+        "running order",
+        "house lights"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L169_Q2",
+      "instruction": "Which setting best matches what you hear?",
+      "interactionType": "choice",
+      "hint": "Listen for the screen that's slightly behind, and what that tells you about what's being tested.",
+      "explanation": "A full-volume note stopped mid-phrase, mid-scene costume adjustment, a slightly delayed supertitle screen, and a full orchestra despite no real audience describe an opera dress rehearsal rather than an actual performance.",
+      "textToSpeak": "A singer holds a note at full volume and then stops abruptly mid-phrase at a director's raised hand, a full costume gets adjusted mid-scene without breaking the flow of the music entirely, a supertitle screen flickers with a translation that's a beat behind the actual singing, and a full orchestra plays underneath despite this clearly not being an actual performance night.",
+      "options": [
+        "Opera House Dress Rehearsal",
+        "Piano Recital",
+        "Community Theater Rehearsal",
+        "Symphony Hall Backstage Before a Concert"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "ambientId",
+      "locationContext": "Opera house dress rehearsal",
+      "vocabularyWords": [
+        "supertitle",
+        "mid-scene adjustment",
+        "dress rehearsal"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L169_Q3",
+      "instruction": "Where would you most likely hear this?",
+      "interactionType": "choice",
+      "hint": "Listen for the specific footwear sound, and the foreign terms mixed into ordinary sentences.",
+      "explanation": "Distinctive pointe shoe sounds, mixed French terminology, a paused group watching one correction, and a repeated sixteen-bar phrase describe a professional ballet rehearsal rather than a general dance class.",
+      "textToSpeak": "Pointe shoes tap and scrape against a hard floor in a rhythm distinct from any regular dance class, a choreographer counts out a phrase in French terms tossed in among ordinary sentences, a mirror wall reflects a correction being applied to just one dancer's arm angle while everyone else pauses to watch, and a pianist plays the same sixteen bars for what must be the tenth consecutive time.",
+      "options": [
+        "Dance Class Studio",
+        "Symphony Hall Backstage Before a Concert",
+        "Gymnastics Practice",
+        "Ballet Company Rehearsal"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "ambientId",
+      "locationContext": "Ballet company rehearsal",
+      "vocabularyWords": [
+        "pointe shoes",
+        "French terminology",
+        "repeated phrase"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L170_Q1",
+      "instruction": "Listen to the scene. What is the setting?",
+      "interactionType": "choice",
+      "hint": "Listen for how many different stations seem to be confirming the same kind of thing in sequence.",
+      "explanation": "Overlapping non-interrupting status reports, a sequentially repeated 'nominal' confirmation, a barely-shifting trajectory line, and a practiced, almost bored countdown describe a space mission control room's disciplined procedure.",
+      "textToSpeak": "Dozens of quiet voices report status updates into headsets almost simultaneously without ever seeming to interrupt each other, a single phrase confirming a system is nominal gets repeated by several different stations in sequence, a large screen at the front updates a trajectory line by a barely visible amount, and a controlled countdown proceeds in a tone so practiced it sounds almost bored despite the stakes.",
+      "options": [
+        "Air Traffic Control Tower",
+        "Space Mission Control Room",
+        "High-Security Data Center",
+        "IT Server Room"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "ambientId",
+      "locationContext": "Space mission control room",
+      "vocabularyWords": [
+        "nominal",
+        "trajectory line",
+        "status update"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L170_Q2",
+      "instruction": "Which place fits these sounds?",
+      "interactionType": "choice",
+      "hint": "Listen for the rhythm of the speech itself, and how quickly different call signs get handled.",
+      "explanation": "Clipped runway-and-heading phrasing, rapid back-to-back call sign acknowledgments, a sweeping radar reflection, and a deliberately measured clearance pause describe an air traffic control tower's precise procedure.",
+      "textToSpeak": "A controller reads out a runway and heading combination in a clipped, rapid rhythm distinct from ordinary conversation, multiple aircraft call signs get acknowledged back to back within seconds of each other, a radar screen sweeps in a steady rotation reflected faintly in the glass, and a brief pause before a landing clearance feels deliberately measured rather than hesitant.",
+      "options": [
+        "Airport Security Checkpoint",
+        "Airport Boarding Process",
+        "Air Traffic Control Tower",
+        "Space Mission Control Room"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "ambientId",
+      "locationContext": "Air traffic control tower",
+      "vocabularyWords": [
+        "call sign",
+        "runway heading",
+        "landing clearance"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AMBIENTID_L170_Q3",
+      "instruction": "What environment are you hearing?",
+      "interactionType": "choice",
+      "hint": "Listen for what gets repeated back word for word, and why that matters before any change is made.",
+      "explanation": "A repeated-back heading confirmation, a watched radar blip, a required signal horn, and open-water sway describe active bridge navigation on a moving ship rather than a docked vessel or terminal.",
+      "textToSpeak": "A compass heading gets read aloud and repeated back word for word by a second officer before any course change happens, a radar screen pings occasionally with a faint blip that gets watched rather than reacted to right away, a horn sounds two long blasts as a required signal rather than any kind of alarm, and the gentle sway underfoot suggests open water rather than a docked or moored position.",
+      "options": [
+        "Ship's Bridge Navigation",
+        "Ferry Terminal",
+        "Cruise Ship Deck",
+        "Space Mission Control Room"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "ambientId",
+      "locationContext": "Ship's bridge during navigation",
+      "vocabularyWords": [
+        "heading repeated back",
+        "required signal",
+        "open water sway"
+      ],
+      "phase": "mastery"
+    }
+  ]
+}
