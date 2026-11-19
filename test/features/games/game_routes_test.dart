@@ -85,6 +85,8 @@ import 'package:vowl/features/roleplay/emergency_hub/presentation/pages/emergenc
 import 'package:vowl/features/roleplay/emergency_hub/presentation/pages/emergency_hub_practice_screen.dart';
 import 'package:vowl/features/elite_mastery/story_builder/presentation/pages/story_builder_learn_screen.dart';
 import 'package:vowl/features/elite_mastery/story_builder/presentation/pages/story_builder_practice_screen.dart';
+import 'package:vowl/features/elite_mastery/idiom_match/presentation/pages/idiom_match_learn_screen.dart';
+import 'package:vowl/features/elite_mastery/idiom_match/presentation/pages/idiom_match_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -1173,6 +1175,24 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<StoryBuilderPracticeScreen>());
+    });
+
+    test('resolves /learn route for idiomMatch', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state =
+          createMockState('/learn?category=elite_mastery&gameType=idiomMatch&level=5');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<IdiomMatchLearnScreen>());
+    });
+
+    test('resolves /practice route for idiomMatch', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state =
+          createMockState('/practice?category=elite_mastery&gameType=idiomMatch&level=5');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<IdiomMatchPracticeScreen>());
     });
   });
 }

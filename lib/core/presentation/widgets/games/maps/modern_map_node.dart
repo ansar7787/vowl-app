@@ -812,6 +812,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                             'socialSpark',
                             'emergencyHub',
                             'storyBuilder',
+                            'idiomMatch',
                           };
                           final isPhasedGame = phasedGames.contains(widget.gameType);
 
