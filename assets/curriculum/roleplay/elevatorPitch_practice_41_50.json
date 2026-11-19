@@ -1,0 +1,548 @@
+{
+  "gameType": "elevatorPitch",
+  "phase": "practice",
+  "batchIndex": 5,
+  "levels": "41-50",
+  "quests": [
+    {
+      "id": "ep_practice_l41_q1",
+      "level": 41,
+      "pitchContext": "CAREER PITCH & HIRING CONVERSATION",
+      "scenarioScene": "List the feature and the benefit separately in this sentence: 'Our thermostat learns your schedule and adjusts automatically, so you save on heating without thinking about it.'",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "Our core competency resides in orchestrating scalable hyper-converged architectures that dynamically monetize bleeding-edge cloud native vectors.",
+        "I know you are super busy and probably do not care, but my co-founder and I have been coding for three years and really hope someone tests it out.",
+        "Feature: it learns your schedule and adjusts automatically. Benefit: you save money without having to think about it."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Feature: it learns your schedule and adjusts automatically. Benefit: you save money without having to think about it.",
+      "explanation": "Separating the two clearly, even just as an exercise, makes it easier to catch when a pitch has accidentally led with the feature.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ep_practice_l41_q2",
+      "level": 41,
+      "pitchContext": "CROSS-FUNCTIONAL INTERNAL ADVOCACY",
+      "scenarioScene": "This pitch leads with three features and no benefit: 'It has voice control, a mobile app, and geofencing.' Rewrite it leading with the single strongest benefit those features add up to.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "It knows when you've left the house and turns the heat down before you've even reached the corner.",
+        "By disintermediating fragmented cross-functional silos, our turnkey platform unlocks exponential frictionless throughput.",
+        "Well, it does a lot of different stuff, like twelve different features, and we have not really decided on the main one yet, but it is pretty cool."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "It knows when you've left the house and turns the heat down before you've even reached the corner.",
+      "explanation": "Multiple features often collapse into one real benefit - naming that benefit is more useful than listing the features that produce it.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 60
+    },
+    {
+      "id": "ep_practice_l41_q3",
+      "level": 41,
+      "pitchContext": "COMMUNITY & NON-PROFIT INITIATIVE",
+      "scenarioScene": "A candidate keeps listing features about themselves in an interview: 'I know Python, SQL, and Tableau.' Turn that list into a benefit-led pitch for a hiring manager who mentioned messy reporting.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "We execute deep bespoke alignment routines maximizing end-to-end mission-critical deliverables.",
+        "I can take your messiest spreadsheet and turn it into a report your team actually trusts by Friday.",
+        "I guess our idea is sort of like trying to fix how meetings work, but we are still figuring out what the actual pricing or product is."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "I can take your messiest spreadsheet and turn it into a report your team actually trusts by Friday.",
+      "explanation": "Skills are features. What a manager hires for is the outcome those skills produce for their specific problem.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 60
+    },
+    {
+      "id": "ep_practice_l42_q1",
+      "level": 42,
+      "pitchContext": "INNOVATION LAB & HACKATHON PITCH",
+      "scenarioScene": "When is it stronger to open with the solution instead of the problem?",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "We leverage next-generation synergistic AI paradigms to optimize omnichannel holistic bandwidth across decentralized stakeholder touchpoints.",
+        "So um, basically, we kind of built this thing that maybe people might like if they have ten or fifteen minutes to sit through our 50-slide deck.",
+        "When the listener already clearly feels the problem, and stating it again would waste time they don't need to spend."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "When the listener already clearly feels the problem, and stating it again would waste time they don't need to spend.",
+      "explanation": "Problem-first isn't always the right order - if the problem is already obvious to the listener, leading with the solution respects their time.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ep_practice_l42_q2",
+      "level": 42,
+      "pitchContext": "E-COMMERCE & CONSUMER PRODUCT LAUNCH",
+      "scenarioScene": "A parent at a pediatrician's waiting room clearly already knows the problem of never remembering vaccination schedules. Pitch a reminder app to them solution-first.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "This tracks every shot your kid needs and texts you a week before it's due, so you're never caught off guard at a checkup.",
+        "Our core competency resides in orchestrating scalable hyper-converged architectures that dynamically monetize bleeding-edge cloud native vectors.",
+        "I know you are super busy and probably do not care, but my co-founder and I have been coding for three years and really hope someone tests it out."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "This tracks every shot your kid needs and texts you a week before it's due, so you're never caught off guard at a checkup.",
+      "explanation": "Restating an obvious problem back to someone who's living it can feel patronizing - solution-first respects what they already know.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 60
+    },
+    {
+      "id": "ep_practice_l42_q3",
+      "level": 42,
+      "pitchContext": "VENTURE CAPITAL & SEED FUNDING",
+      "scenarioScene": "Now pitch the same reminder app problem-first, to a listener at a networking event who has no kids and no prior context about vaccination schedules.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "By disintermediating fragmented cross-functional silos, our turnkey platform unlocks exponential frictionless throughput.",
+        "Parents lose track of which shots their kid's actually had - our app tracks it automatically and reminds you before every appointment.",
+        "Well, it does a lot of different stuff, like twelve different features, and we have not really decided on the main one yet, but it is pretty cool."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Parents lose track of which shots their kid's actually had - our app tracks it automatically and reminds you before every appointment.",
+      "explanation": "The same product needs opposite structures for two different listeners - context, not a fixed rule, decides which order to use.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 60
+    },
+    {
+      "id": "ep_practice_l43_q1",
+      "level": 43,
+      "pitchContext": "EXECUTIVE BRIEFING & BOARDROOM",
+      "scenarioScene": "A pitch about a fitness app mentions the app's color scheme and its founding date. Does either detail serve the core message? Explain.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "We execute deep bespoke alignment routines maximizing end-to-end mission-critical deliverables.",
+        "I guess our idea is sort of like trying to fix how meetings work, but we are still figuring out what the actual pricing or product is.",
+        "No - neither one changes what a listener understands about whether the app will actually help them, so both are safe to cut."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "No - neither one changes what a listener understands about whether the app will actually help them, so both are safe to cut.",
+      "explanation": "A useful filter for any detail: if cutting it changes nothing about the listener's understanding of the value, it wasn't serving the message.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ep_practice_l43_q2",
+      "level": 43,
+      "pitchContext": "NETWORKING AT INDUSTRY EXPO",
+      "scenarioScene": "This pitch has one detail that doesn't serve the message: 'Our app was founded in a small apartment two years ago and helps you track workouts with a friend for accountability.' Remove it and deliver the tightened pitch.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "It helps you track workouts with a friend, so on the days you'd rather skip it, someone's actually expecting you to show up.",
+        "We leverage next-generation synergistic AI paradigms to optimize omnichannel holistic bandwidth across decentralized stakeholder touchpoints.",
+        "So um, basically, we kind of built this thing that maybe people might like if they have ten or fifteen minutes to sit through our 50-slide deck."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "It helps you track workouts with a friend, so on the days you'd rather skip it, someone's actually expecting you to show up.",
+      "explanation": "The founding story might be a nice detail in a longer conversation, but here it's competing for time against the actual value.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 60
+    },
+    {
+      "id": "ep_practice_l43_q3",
+      "level": 43,
+      "pitchContext": "CLIENT DISCOVERY & PROPOSAL",
+      "scenarioScene": "Write a pitch for a freelance photography business that includes zero details about camera gear or years of experience - only what changes for the client.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "Our core competency resides in orchestrating scalable hyper-converged architectures that dynamically monetize bleeding-edge cloud native vectors.",
+        "Your event gets photos back within a week, already edited, so you're not waiting a month to relive the day.",
+        "I know you are super busy and probably do not care, but my co-founder and I have been coding for three years and really hope someone tests it out."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Your event gets photos back within a week, already edited, so you're not waiting a month to relive the day.",
+      "explanation": "Gear and experience are often assumed table stakes - what actually differentiates a pitch is what the client experiences differently.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 60
+    },
+    {
+      "id": "ep_practice_l44_q1",
+      "level": 44,
+      "pitchContext": "PRODUCT DEMO & SAAS SHOWCASE",
+      "scenarioScene": "A pitch tries to cover five loosely related benefits of a productivity app in fifteen seconds. What's the likely result?",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "By disintermediating fragmented cross-functional silos, our turnkey platform unlocks exponential frictionless throughput.",
+        "Well, it does a lot of different stuff, like twelve different features, and we have not really decided on the main one yet, but it is pretty cool.",
+        "The listener retains almost none of it - five competing ideas in fifteen seconds usually crowd each other out entirely."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The listener retains almost none of it - five competing ideas in fifteen seconds usually crowd each other out entirely.",
+      "explanation": "Trying to say everything in too little time usually means saying nothing memorably - one clear idea beats five blurred ones.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ep_practice_l44_q2",
+      "level": 44,
+      "pitchContext": "CAREER PITCH & HIRING CONVERSATION",
+      "scenarioScene": "From these five true benefits of a language app - offline mode, native speaker audio, gamified lessons, progress tracking, and a community forum - choose one and build a fifteen-second pitch around it for a business traveler.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "Offline mode means you can practice on a flight with no wifi and still land ready to order dinner in the local language.",
+        "We execute deep bespoke alignment routines maximizing end-to-end mission-critical deliverables.",
+        "I guess our idea is sort of like trying to fix how meetings work, but we are still figuring out what the actual pricing or product is."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Offline mode means you can practice on a flight with no wifi and still land ready to order dinner in the local language.",
+      "explanation": "Choosing one benefit and matching it precisely to the listener beats trying to cover the whole feature set.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ep_practice_l44_q3",
+      "level": 44,
+      "pitchContext": "CROSS-FUNCTIONAL INTERNAL ADVOCACY",
+      "scenarioScene": "From that same list of five, choose a different benefit and build a new fifteen-second pitch for a parent hoping their teenager sticks with a language habit.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "We leverage next-generation synergistic AI paradigms to optimize omnichannel holistic bandwidth across decentralized stakeholder touchpoints.",
+        "The gamified lessons turn practice into something they actually want to finish, not something you have to remind them about.",
+        "So um, basically, we kind of built this thing that maybe people might like if they have ten or fifteen minutes to sit through our 50-slide deck."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The gamified lessons turn practice into something they actually want to finish, not something you have to remind them about.",
+      "explanation": "The same five true benefits can each become the right single message, depending entirely on who's listening.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ep_practice_l45_q1",
+      "level": 45,
+      "pitchContext": "COMMUNITY & NON-PROFIT INITIATIVE",
+      "scenarioScene": "A pitch for a supply-chain tool says 'we optimize SKU-level inventory turnover through predictive demand forecasting.' Who might actually understand this language, and who wouldn't?",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "Our core competency resides in orchestrating scalable hyper-converged architectures that dynamically monetize bleeding-edge cloud native vectors.",
+        "I know you are super busy and probably do not care, but my co-founder and I have been coding for three years and really hope someone tests it out.",
+        "A warehouse operations manager might follow it; a small retail shop owner almost certainly wouldn't."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "A warehouse operations manager might follow it; a small retail shop owner almost certainly wouldn't.",
+      "explanation": "Jargon isn't wrong in every context - the test is whether this particular listener actually shares the vocabulary, not whether the term is technically correct.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ep_practice_l45_q2",
+      "level": 45,
+      "pitchContext": "INNOVATION LAB & HACKATHON PITCH",
+      "scenarioScene": "Translate that supply-chain jargon for the small retail shop owner who wouldn't follow it.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "We predict what you'll actually sell next month, so you stop running out of your bestsellers and stop being stuck with things that don't move.",
+        "By disintermediating fragmented cross-functional silos, our turnkey platform unlocks exponential frictionless throughput.",
+        "Well, it does a lot of different stuff, like twelve different features, and we have not really decided on the main one yet, but it is pretty cool."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "We predict what you'll actually sell next month, so you stop running out of your bestsellers and stop being stuck with things that don't move.",
+      "explanation": "Translating for the listener who doesn't share the jargon is what actually makes the pitch usable, not a simplification that loses accuracy.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 60
+    },
+    {
+      "id": "ep_practice_l45_q3",
+      "level": 45,
+      "pitchContext": "E-COMMERCE & CONSUMER PRODUCT LAUNCH",
+      "scenarioScene": "Now pitch the same predictive tool to the warehouse operations manager who does understand supply-chain terms, using appropriately technical language this time.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "We execute deep bespoke alignment routines maximizing end-to-end mission-critical deliverables.",
+        "We forecast SKU-level demand a full quarter out, so reorder points adjust automatically instead of someone manually recalculating them every week.",
+        "I guess our idea is sort of like trying to fix how meetings work, but we are still figuring out what the actual pricing or product is."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "We forecast SKU-level demand a full quarter out, so reorder points adjust automatically instead of someone manually recalculating them every week.",
+      "explanation": "Simplifying for an expert audience can actually undersell you - matching the listener's real fluency is part of audience awareness too.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 60
+    },
+    {
+      "id": "ep_practice_l46_q1",
+      "level": 46,
+      "pitchContext": "VENTURE CAPITAL & SEED FUNDING",
+      "scenarioScene": "A pitch packs three numbers, two comparisons, and a technical term into one sentence. What's the risk to the listener?",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "We leverage next-generation synergistic AI paradigms to optimize omnichannel holistic bandwidth across decentralized stakeholder touchpoints.",
+        "So um, basically, we kind of built this thing that maybe people might like if they have ten or fifteen minutes to sit through our 50-slide deck.",
+        "The listener has to work hard just to follow the sentence, and that effort gets spent on parsing instead of on actually being persuaded."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The listener has to work hard just to follow the sentence, and that effort gets spent on parsing instead of on actually being persuaded.",
+      "explanation": "Every extra thing a listener has to track reduces how much attention is left for actually being convinced.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ep_practice_l46_q2",
+      "level": 46,
+      "pitchContext": "EXECUTIVE BRIEFING & BOARDROOM",
+      "scenarioScene": "Simplify this cognitively heavy pitch: 'Our plan saves you 23% compared to Plan A and 17% compared to Plan B, with a 12-month lock-in versus their 24-month terms.' Keep only the clearest, strongest comparison.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "You'll pay noticeably less than what you're paying now, and you're never locked in for more than a year.",
+        "Our core competency resides in orchestrating scalable hyper-converged architectures that dynamically monetize bleeding-edge cloud native vectors.",
+        "I know you are super busy and probably do not care, but my co-founder and I have been coding for three years and really hope someone tests it out."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "You'll pay noticeably less than what you're paying now, and you're never locked in for more than a year.",
+      "explanation": "One easy-to-hold comparison beats three precise ones a listener can't actually retain while standing in an elevator.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 60
+    },
+    {
+      "id": "ep_practice_l46_q3",
+      "level": 46,
+      "pitchContext": "NETWORKING AT INDUSTRY EXPO",
+      "scenarioScene": "Simplify this pitch for a nonprofit's impact: 'We've served 4,213 families across 6 counties through 3 core programs since 2019.' Reduce it to the single clearest, most memorable idea.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "By disintermediating fragmented cross-functional silos, our turnkey platform unlocks exponential frictionless throughput.",
+        "Since we started, we've helped over four thousand families get through a hard stretch a little more easily.",
+        "Well, it does a lot of different stuff, like twelve different features, and we have not really decided on the main one yet, but it is pretty cool."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Since we started, we've helped over four thousand families get through a hard stretch a little more easily.",
+      "explanation": "Precision for its own sake can overload a listener - one well-chosen number usually does more work than four stacked together.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 60
+    },
+    {
+      "id": "ep_practice_l47_q1",
+      "level": 47,
+      "pitchContext": "CLIENT DISCOVERY & PROPOSAL",
+      "scenarioScene": "'We streamline your operations' is abstract even after simplification. What's still missing to make it concrete?",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "We execute deep bespoke alignment routines maximizing end-to-end mission-critical deliverables.",
+        "I guess our idea is sort of like trying to fix how meetings work, but we are still figuring out what the actual pricing or product is.",
+        "A specific example of one operation, before and after, showing exactly what 'streamline' means in practice."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "A specific example of one operation, before and after, showing exactly what 'streamline' means in practice.",
+      "explanation": "Even after removing jargon, a claim can stay abstract - concreteness requires a specific before-and-after moment, not just simpler words.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ep_practice_l47_q2",
+      "level": 47,
+      "pitchContext": "PRODUCT DEMO & SAAS SHOWCASE",
+      "scenarioScene": "Make 'we streamline your operations' concrete for a small logistics company, using one specific before-and-after moment.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "Right now, confirming a delivery means three phone calls. With this, the driver taps once and everyone who needs to know already does.",
+        "We leverage next-generation synergistic AI paradigms to optimize omnichannel holistic bandwidth across decentralized stakeholder touchpoints.",
+        "So um, basically, we kind of built this thing that maybe people might like if they have ten or fifteen minutes to sit through our 50-slide deck."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Right now, confirming a delivery means three phone calls. With this, the driver taps once and everyone who needs to know already does.",
+      "explanation": "The concreteness comes from picking exactly one task and following it all the way through, rather than gesturing at operations broadly.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 60
+    },
+    {
+      "id": "ep_practice_l47_q3",
+      "level": 47,
+      "pitchContext": "CAREER PITCH & HIRING CONVERSATION",
+      "scenarioScene": "A city council candidate says 'I'll improve government efficiency.' Make that concrete with one specific, believable example a resident would recognize.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "Our core competency resides in orchestrating scalable hyper-converged architectures that dynamically monetize bleeding-edge cloud native vectors.",
+        "Right now, a pothole report takes six weeks and three phone calls to even get logged. I'd make it one form, tracked publicly, start to finish.",
+        "I know you are super busy and probably do not care, but my co-founder and I have been coding for three years and really hope someone tests it out."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Right now, a pothole report takes six weeks and three phone calls to even get logged. I'd make it one form, tracked publicly, start to finish.",
+      "explanation": "Political pitches are just as prone to abstraction as product pitches - the same concreteness technique fixes both.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 60
+    },
+    {
+      "id": "ep_practice_l48_q1",
+      "level": 48,
+      "pitchContext": "CROSS-FUNCTIONAL INTERNAL ADVOCACY",
+      "scenarioScene": "A pitch for a car has a true but potentially distracting fact: 'it comes in eleven colors.' In a fifteen-second pitch to someone who just said they need better fuel economy, should that fact be included? Why or why not?",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "By disintermediating fragmented cross-functional silos, our turnkey platform unlocks exponential frictionless throughput.",
+        "Well, it does a lot of different stuff, like twelve different features, and we have not really decided on the main one yet, but it is pretty cool.",
+        "No - it's true but irrelevant to this listener's stated priority, and including it dilutes the pitch instead of strengthening it."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "No - it's true but irrelevant to this listener's stated priority, and including it dilutes the pitch instead of strengthening it.",
+      "explanation": "Not every true thing belongs in every pitch. Choosing what to leave out, deliberately, is as much a skill as choosing what to say.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ep_practice_l48_q2",
+      "level": 48,
+      "pitchContext": "COMMUNITY & NON-PROFIT INITIATIVE",
+      "scenarioScene": "A pitch for a job candidate includes a true but weaker credential alongside a much stronger one: 'I ran the campus coffee cart for a summer, and I also led a twelve-person team that shipped a product used by ten thousand people.' Cut the weaker detail and deliver the stronger pitch alone.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "I led a twelve-person team that shipped a product now used by ten thousand people.",
+        "We execute deep bespoke alignment routines maximizing end-to-end mission-critical deliverables.",
+        "I guess our idea is sort of like trying to fix how meetings work, but we are still figuring out what the actual pricing or product is."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "I led a twelve-person team that shipped a product now used by ten thousand people.",
+      "explanation": "A weaker true fact placed next to a strong one doesn't add credibility - it can actually make the listener wonder why it needed mentioning.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 60
+    },
+    {
+      "id": "ep_practice_l48_q3",
+      "level": 48,
+      "pitchContext": "INNOVATION LAB & HACKATHON PITCH",
+      "scenarioScene": "A pitch for a therapy practice could mention both 'we accept most major insurance plans' and 'our founder has an unrelated hobby of woodworking.' Decide which to keep for a pitch aimed at someone hesitant about cost, and deliver it.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "We leverage next-generation synergistic AI paradigms to optimize omnichannel holistic bandwidth across decentralized stakeholder touchpoints.",
+        "We accept most major insurance plans, so cost usually isn't the barrier people expect it to be.",
+        "So um, basically, we kind of built this thing that maybe people might like if they have ten or fifteen minutes to sit through our 50-slide deck."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "We accept most major insurance plans, so cost usually isn't the barrier people expect it to be.",
+      "explanation": "Irrelevant personal color, even if charming, can crowd out the one fact that would have actually addressed the listener's real concern.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 60
+    },
+    {
+      "id": "ep_practice_l49_q1",
+      "level": 49,
+      "pitchContext": "E-COMMERCE & CONSUMER PRODUCT LAUNCH",
+      "scenarioScene": "A job candidate is asked to explain a career gap in fifteen seconds. What should the answer prioritize: full detail, or a concise, confident framing?",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "Our core competency resides in orchestrating scalable hyper-converged architectures that dynamically monetize bleeding-edge cloud native vectors.",
+        "I know you are super busy and probably do not care, but my co-founder and I have been coding for three years and really hope someone tests it out.",
+        "A concise, confident framing - fifteen seconds isn't enough room for full detail, and over-explaining can read as defensive."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "A concise, confident framing - fifteen seconds isn't enough room for full detail, and over-explaining can read as defensive.",
+      "explanation": "Brevity on a sensitive topic often reads as confidence, while over-explaining can unintentionally signal insecurity about it.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ep_practice_l49_q2",
+      "level": 49,
+      "pitchContext": "VENTURE CAPITAL & SEED FUNDING",
+      "scenarioScene": "Write a concise, confident answer to 'so what were you doing during that year off?' for someone who spent it caring for a family member.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "I took a year to care for a family member - it's part of why I'm particular now about actually finishing what I start.",
+        "By disintermediating fragmented cross-functional silos, our turnkey platform unlocks exponential frictionless throughput.",
+        "Well, it does a lot of different stuff, like twelve different features, and we have not really decided on the main one yet, but it is pretty cool."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "I took a year to care for a family member - it's part of why I'm particular now about actually finishing what I start.",
+      "explanation": "A short, matter-of-fact answer that pivots to a strength usually lands better than a long, apologetic justification.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 60
+    },
+    {
+      "id": "ep_practice_l49_q3",
+      "level": 49,
+      "pitchContext": "EXECUTIVE BRIEFING & BOARDROOM",
+      "scenarioScene": "A founder is asked why their first startup failed, in a fifteen-second answer during an investor meeting. Write a concise answer that's honest without spiraling into every detail.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "We execute deep bespoke alignment routines maximizing end-to-end mission-critical deliverables.",
+        "We built for a market that turned out to be too small - I learned to validate demand before writing a line of code, and that's exactly what we did this time.",
+        "I guess our idea is sort of like trying to fix how meetings work, but we are still figuring out what the actual pricing or product is."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "We built for a market that turned out to be too small - I learned to validate demand before writing a line of code, and that's exactly what we did this time.",
+      "explanation": "Concise explanations of past failure work best when they name the lesson learned, not just the failure itself.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 60
+    },
+    {
+      "id": "ep_practice_l50_q1",
+      "level": 50,
+      "pitchContext": "NETWORKING AT INDUSTRY EXPO",
+      "scenarioScene": "You're mid-pitch for a subscription meal service when the listener glances at their phone. What's the strongest way to regain their attention without being pushy?",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "We leverage next-generation synergistic AI paradigms to optimize omnichannel holistic bandwidth across decentralized stakeholder touchpoints.",
+        "So um, basically, we kind of built this thing that maybe people might like if they have ten or fifteen minutes to sit through our 50-slide deck.",
+        "Shorten what's left to the single most relevant sentence, rather than repeating yourself or raising your volume."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Shorten what's left to the single most relevant sentence, rather than repeating yourself or raising your volume.",
+      "explanation": "When attention starts slipping, the instinct to add more usually backfires - cutting to the sharpest remaining point works better.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ep_practice_l50_q2",
+      "level": 50,
+      "pitchContext": "CLIENT DISCOVERY & PROPOSAL",
+      "scenarioScene": "Deliver a tightly controlled pitch for a plant-based meal delivery service in exactly two sentences, as if you know you only have that much attention left.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "Dinner's already decided and half-cooked by the time you get home. No more staring into the fridge at seven o'clock wondering what to make.",
+        "Our core competency resides in orchestrating scalable hyper-converged architectures that dynamically monetize bleeding-edge cloud native vectors.",
+        "I know you are super busy and probably do not care, but my co-founder and I have been coding for three years and really hope someone tests it out."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Dinner's already decided and half-cooked by the time you get home. No more staring into the fridge at seven o'clock wondering what to make.",
+      "explanation": "This level tests whether you can control the whole message down to its essential shape, on demand, under real attention pressure.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ep_practice_l50_q3",
+      "level": 50,
+      "pitchContext": "PRODUCT DEMO & SAAS SHOWCASE",
+      "scenarioScene": "The listener looks back up and says 'sorry, what was that?' Recover smoothly by restating your strongest single sentence, without sounding annoyed or starting over from scratch.",
+      "targetAudience": "Decision Maker / Stakeholder",
+      "question": "Which pitch articulates the strongest hook and clearest value proposition?",
+      "options": [
+        "By disintermediating fragmented cross-functional silos, our turnkey platform unlocks exponential frictionless throughput.",
+        "No worries - dinner shows up already half-cooked, so you're not stuck staring into the fridge at seven wondering what to make.",
+        "Well, it does a lot of different stuff, like twelve different features, and we have not really decided on the main one yet, but it is pretty cool."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "No worries - dinner shows up already half-cooked, so you're not stuck staring into the fridge at seven wondering what to make.",
+      "explanation": "Controlling the message means you can recover a distracted moment gracefully, because you already know exactly which sentence matters most.",
+      "hookPowerScore": 0.9,
+      "timeLimit": 30
+    }
+  ]
+}
