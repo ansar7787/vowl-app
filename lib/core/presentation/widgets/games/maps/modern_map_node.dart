@@ -802,6 +802,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                             'connectedSpeech',
                             'pitchModulation',
                             'branchingDialogue',
+                            'situationalResponse',
                           };
                           final isPhasedGame = phasedGames.contains(widget.gameType);
 

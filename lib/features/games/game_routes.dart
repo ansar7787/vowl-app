@@ -188,6 +188,8 @@ import 'package:vowl/features/accent/pitch_modulation/presentation/pages/pitch_m
 import 'package:vowl/features/accent/pitch_modulation/presentation/pages/pitch_modulation_practice_screen.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/pages/branching_dialogue_learn_screen.dart';
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/pages/branching_dialogue_practice_screen.dart';
+import 'package:vowl/features/roleplay/situational_response/presentation/pages/situational_response_learn_screen.dart';
+import 'package:vowl/features/roleplay/situational_response/presentation/pages/situational_response_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -957,6 +959,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'situationalresponse') {
+          return fadeTransitionPage(
+            child: SituationalResponseLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1505,6 +1513,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'branchingdialogue') {
           return fadeTransitionPage(
             child: BranchingDialoguePracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'situationalresponse') {
+          return fadeTransitionPage(
+            child: SituationalResponsePracticeScreen(level: level),
             state: state,
           );
         }
