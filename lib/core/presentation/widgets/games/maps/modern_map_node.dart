@@ -813,6 +813,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                             'emergencyHub',
                             'storyBuilder',
                             'idiomMatch',
+                            'speedSpelling',
                           };
                           final isPhasedGame = phasedGames.contains(widget.gameType);
 
