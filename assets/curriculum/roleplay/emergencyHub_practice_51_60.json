@@ -1,0 +1,548 @@
+{
+  "gameType": "emergencyHub",
+  "phase": "practice",
+  "batchIndex": 6,
+  "levels": "51-60",
+  "quests": [
+    {
+      "id": "eh_practice_l51_q1",
+      "level": 51,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "A house fire call comes in: parents say their baby is still inside upstairs, while they stand safely outside. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "GET THE BABY'S EXACT LOCATION IMMEDIATELY",
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "GET THE BABY'S EXACT LOCATION IMMEDIATELY",
+      "explanation": "An exact location lets firefighters go straight to the baby instead of searching the whole house room by room.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l51_q2",
+      "level": 51,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "The parents say the baby's room is at the back of the house, the side the fire hasn't reached yet. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "PASS THIS ON, IT MAY CHANGE THE ENTRY POINT",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "PASS THIS ON, IT MAY CHANGE THE ENTRY POINT",
+      "explanation": "Knowing the fire hasn't reached that side yet may let firefighters enter through a safer route to reach the baby faster.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l51_q3",
+      "level": 51,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A neighbor reports smoke from the same house but confirms no one else was home at the time. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training.",
+        "CONFIRM NO ONE ELSE IS INSIDE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CONFIRM NO ONE ELSE IS INSIDE",
+      "explanation": "Confirming no one else is inside lets firefighters focus entirely on reaching the baby without searching for anyone else.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l52_q1",
+      "level": 52,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "At a construction site, one worker has a broken arm and another has been exposed to fumes and is coughing hard. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "TREAT THE FUME EXPOSURE AS HIGHER PRIORITY",
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "TREAT THE FUME EXPOSURE AS HIGHER PRIORITY",
+      "explanation": "Fume exposure risks the airway and lungs, which is more urgent than a broken arm, even though the fracture looks more dramatic.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l52_q2",
+      "level": 52,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "The coughing worker suddenly can't catch his breath at all. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "ESCALATE HIS CASE TO THE HIGHEST URGENCY",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "ESCALATE HIS CASE TO THE HIGHEST URGENCY",
+      "explanation": "Being completely unable to breathe is immediately life-threatening, so this now becomes the single highest priority on the scene.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l52_q3",
+      "level": 52,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "A third worker at the same site has only mild dust irritation in his eyes. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization.",
+        "TREAT THIS AS THE LOWEST PRIORITY HERE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "TREAT THIS AS THE LOWEST PRIORITY HERE",
+      "explanation": "Mild eye irritation is far less urgent than a breathing emergency or fracture, so it can wait until the others are handled.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l53_q1",
+      "level": 53,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "A woman reports a mild, familiar headache along with unrelated back pain from gardening. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "NEITHER NEEDS EMERGENCY SERVICES RIGHT NOW",
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "NEITHER NEEDS EMERGENCY SERVICES RIGHT NOW",
+      "explanation": "A familiar mild headache and ordinary back pain are both non-urgent, so neither needs to be prioritized for emergency care.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l53_q2",
+      "level": 53,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "The same woman's headache suddenly becomes the worst she's ever felt, unlike the back pain which hasn't changed. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "PRIORITIZE THE HEADACHE, IT HAS CHANGED CHARACTER",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "PRIORITIZE THE HEADACHE, IT HAS CHANGED CHARACTER",
+      "explanation": "A sudden, severe change in a familiar headache is a warning sign, unlike the back pain which has stayed exactly the same.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l53_q3",
+      "level": 53,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "A different caller has both mild back pain and a mild, familiar headache, with neither changing at all. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire.",
+        "RECOMMEND HER USUAL REMEDIES AND A DOCTOR'S VISIT IF EITHER LASTS"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "RECOMMEND HER USUAL REMEDIES AND A DOCTOR'S VISIT IF EITHER LASTS",
+      "explanation": "Both symptoms are mild and familiar, so routine remedies and a doctor's visit if either lasts are enough.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l54_q1",
+      "level": 54,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "A caller reports a multi-car pileup on a foggy highway but hasn't gotten out to check anyone yet. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "GET THE LOCATION FIRST, THEN ASK ABOUT INJURIES",
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "GET THE LOCATION FIRST, THEN ASK ABOUT INJURIES",
+      "explanation": "Confirming the exact location first ensures responders are already moving, even while injury details are still being gathered.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l54_q2",
+      "level": 54,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "The caller then reports seeing at least one person moving between two of the wrecked cars. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "WARN THAT PERSON TO STAY OFF THE ROAD",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "WARN THAT PERSON TO STAY OFF THE ROAD",
+      "explanation": "Someone walking between wrecked cars on a foggy highway risks being hit by another vehicle, so they need an immediate warning.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l54_q3",
+      "level": 54,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "A different caller reports a single stalled car on the highway shoulder, driver safely inside with hazards on. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils.",
+        "REPORT IT AS A LOW-PRIORITY BREAKDOWN"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "REPORT IT AS A LOW-PRIORITY BREAKDOWN",
+      "explanation": "A safely stopped car with hazards on is a routine breakdown, not comparable in urgency to an active multi-car pileup.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l55_q1",
+      "level": 55,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A caller reports a slow leak dripping from their ceiling that's gotten a little worse over the past week. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "ARRANGE A REPAIR AND PLACE A BUCKET UNDER THE LEAK",
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "ARRANGE A REPAIR AND PLACE A BUCKET UNDER THE LEAK",
+      "explanation": "A slow, gradually worsening leak is a maintenance issue, not an emergency, since it hasn't created sudden danger.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l55_q2",
+      "level": 55,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "The same ceiling suddenly collapses, and part of it falls near where a child was playing. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "GET HELP NOW AND KEEP THE CHILD CLEAR OF THE COLLAPSED AREA",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "GET HELP NOW AND KEEP THE CHILD CLEAR OF THE COLLAPSED AREA",
+      "explanation": "A sudden structural collapse near a child is now an emergency, even though the leak itself had built up slowly.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l55_q3",
+      "level": 55,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "A different caller reports a ceiling stain that has looked exactly the same for months. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow.",
+        "HAVE A ROOFER OR PLUMBER LOOK AT IT WHEN CONVENIENT"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "HAVE A ROOFER OR PLUMBER LOOK AT IT WHEN CONVENIENT",
+      "explanation": "An unchanging stain with no progression isn't an emergency and can be handled through routine home repair.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l56_q1",
+      "level": 56,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "A man insists he's 'totally fine' after a fall, but he can't remember what day it is. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "TRUST THE SYMPTOM, NOT HIS OWN ASSESSMENT",
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "TRUST THE SYMPTOM, NOT HIS OWN ASSESSMENT",
+      "explanation": "Confusion about the day is a concrete warning sign that outweighs his own claim of feeling fine after a fall.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l56_q2",
+      "level": 56,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "The same man then correctly answers several more questions and seems to be thinking clearly again. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "REASSESS, BUT STILL RECOMMEND A CHECKUP",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "REASSESS, BUT STILL RECOMMEND A CHECKUP",
+      "explanation": "Recovering some clarity is reassuring, but a head injury still deserves a checkup, since confusion can return.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l56_q3",
+      "level": 56,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "A different caller after a minor bump confidently and consistently answers every question correctly. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats.",
+        "NO EMERGENCY, SUGGEST HE WATCH FOR HEADACHE OR DROWSINESS FOR A DAY"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "NO EMERGENCY, SUGGEST HE WATCH FOR HEADACHE OR DROWSINESS FOR A DAY",
+      "explanation": "When someone's own claim of feeling fine matches consistent, clear answers, there's no conflicting evidence to override it.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l57_q1",
+      "level": 57,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "A kitchen fire has injured the cook with burns, and grease has spread flaming onto the floor. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "REQUEST FIRE AND MEDICAL RESPONSE TOGETHER",
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "REQUEST FIRE AND MEDICAL RESPONSE TOGETHER",
+      "explanation": "Both the spreading fire and the burn injury need immediate, simultaneous responses, since neither can safely wait.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l57_q2",
+      "level": 57,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "The cook is now trying to put the fire out himself despite his burns. Input fire code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "TELL HIM TO GET OUT, NOT FIGHT THE FIRE",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "TELL HIM TO GET OUT, NOT FIGHT THE FIRE",
+      "explanation": "An injured person fighting a spreading fire risks worse harm, so getting him to safety matters more than saving the kitchen.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l57_q3",
+      "level": 57,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "A small kitchen fire has been put out with a pot lid, but the oil pan is still smoking. Input code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic.",
+        "LEAVE THE LID ON, TURN OFF THE HEAT, AND LET THE PAN COOL"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "LEAVE THE LID ON, TURN OFF THE HEAT, AND LET THE PAN COOL",
+      "explanation": "Oil can reignite if the lid is lifted early. Keeping the lid on and the heat off lets it cool safely.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l58_q1",
+      "level": 58,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "Two people fall on an icy sidewalk moments apart: a healthy young adult and an elderly man. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "CHECK THE ELDERLY MAN FIRST, THEN THE OTHER",
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "CHECK THE ELDERLY MAN FIRST, THEN THE OTHER",
+      "explanation": "An elderly person is generally more vulnerable to serious injury from the same kind of fall, so checking him first makes sense.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l58_q2",
+      "level": 58,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "The young adult then says his wrist is bent at an unnatural angle. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "TREAT BOTH AS EQUAL PRIORITY NOW",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "TREAT BOTH AS EQUAL PRIORITY NOW",
+      "explanation": "A visibly deformed wrist is a clear, serious injury that now makes both cases equally urgent, regardless of age.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l58_q3",
+      "level": 58,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "In a separate incident, two healthy adults of similar age both have minor bruises from a slip. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright.",
+        "CHECK THEM IN THE ORDER THEY ARRIVED, NEITHER NEEDS PRIORITY"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CHECK THEM IN THE ORDER THEY ARRIVED, NEITHER NEEDS PRIORITY",
+      "explanation": "With similar ages and similarly minor injuries, nothing justifies putting one person ahead of the other.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l59_q1",
+      "level": 59,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "While reporting a car crash, the caller remembers the driver mentioned chest pain just before the crash happened. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "VOLUNTEER THIS DETAIL, EVEN IF NOT ASKED",
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "VOLUNTEER THIS DETAIL, EVEN IF NOT ASKED",
+      "explanation": "Chest pain before the crash could mean a medical event caused it, which matters for how paramedics treat him.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l59_q2",
+      "level": 59,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "The caller also remembers the driver's radio was playing loudly, which seems unrelated. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "LEAVE IT OUT OF THE REPORT",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "LEAVE IT OUT OF THE REPORT",
+      "explanation": "A loud radio has no bearing on his medical condition or the crash response, so it doesn't need to be passed on.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l59_q3",
+      "level": 59,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "A different caller remembers the crash happened right after the driver swerved to avoid a dog in the road. Input code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training.",
+        "MENTION THE SWERVE, IT EXPLAINS THE CRASH"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "MENTION THE SWERVE, IT EXPLAINS THE CRASH",
+      "explanation": "Mentioning the swerve gives responders a clearer picture of the crash, which can be useful, unlike the irrelevant radio detail.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l60_q1",
+      "level": 60,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "A caller reports a collapsed scaffold at a construction site, with one worker pinned and another shouting that gas cylinders nearby have started hissing. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "REPORT THE GAS HAZARD AND THE PINNED WORKER TOGETHER",
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "REPORT THE GAS HAZARD AND THE PINNED WORKER TOGETHER",
+      "explanation": "Both the pinned worker and the hissing gas need immediate attention, since one threatens him directly and the other threatens everyone nearby.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l60_q2",
+      "level": 60,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "Responders ask which of the two problems needs the first team on scene. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "SEND THE HAZARD TEAM FIRST TO SECURE THE SCENE",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "SEND THE HAZARD TEAM FIRST TO SECURE THE SCENE",
+      "explanation": "Securing the gas hazard first makes it safe for rescuers to then reach and free the pinned worker without added risk.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l60_q3",
+      "level": 60,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "A second, unrelated call reports a minor two-car fender bender with no injuries, in a different part of town. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization.",
+        "TREAT THIS AS FAR LOWER PRIORITY"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "TREAT THIS AS FAR LOWER PRIORITY",
+      "explanation": "A minor fender-bender with no injuries is far less urgent than an active multi-hazard rescue and can wait for available responders.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    }
+  ]
+}

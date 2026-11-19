@@ -1,0 +1,548 @@
+{
+  "gameType": "emergencyHub",
+  "phase": "practice",
+  "batchIndex": 17,
+  "levels": "161-170",
+  "quests": [
+    {
+      "id": "eh_practice_l161_q1",
+      "level": 161,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "A caller whispers 'I need help' and hangs up. The number shows no address. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils.",
+        "CALL BACK, AND IF THERE'S NO ANSWER TREAT IT AS A POSSIBLE EMERGENCY AND TRY TO LOCATE THE PHONE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CALL BACK, AND IF THERE'S NO ANSWER TREAT IT AS A POSSIBLE EMERGENCY AND TRY TO LOCATE THE PHONE",
+      "explanation": "A whisper and a dropped call may mean danger. Trying to reconnect and locate the phone is the safest reasoning.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l161_q2",
+      "level": 161,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "The callback goes to voicemail. A neighbor reports a woman shouting from an apartment in the same area. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "SEND RESPONDERS TO CHECK, THE TWO REPORTS FIT TOGETHER",
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "SEND RESPONDERS TO CHECK, THE TWO REPORTS FIT TOGETHER",
+      "explanation": "Two unrelated sources pointing to the same place raise the likelihood of a real problem.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l161_q3",
+      "level": 161,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "A child says 'my mom won't wake up' but doesn't know the address. The phone's location is available. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "USE THE PHONE LOCATION, KEEP HIM ON THE LINE, AND SEND AN AMBULANCE",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "USE THE PHONE LOCATION, KEEP HIM ON THE LINE, AND SEND AN AMBULANCE",
+      "explanation": "Location data fills the gap, and keeping him on the line supports him and any guidance.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l162_q1",
+      "level": 162,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "Two witnesses to a crash disagree on who ran the light. The cyclist is lying unconscious. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow.",
+        "SEND AN AMBULANCE FIRST, FAULT CAN BE SORTED OUT LATER"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "SEND AN AMBULANCE FIRST, FAULT CAN BE SORTED OUT LATER",
+      "explanation": "The patient's condition is urgent, and fault is something for police to decide afterward.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l162_q2",
+      "level": 162,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "A third witness insists the cyclist just stumbled and is fine. He is clearly not moving now. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "RELY ON HIS CURRENT CONDITION, NOT THE DISPUTED ACCOUNTS",
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "RELY ON HIS CURRENT CONDITION, NOT THE DISPUTED ACCOUNTS",
+      "explanation": "Present observations outweigh accounts of what happened earlier.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l162_q3",
+      "level": 162,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "The driver says he never saw the cyclist. He's shaking and refuses treatment. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "HAVE HIM CHECKED ANYWAY, SHOCK CAN HIDE INJURIES",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "HAVE HIM CHECKED ANYWAY, SHOCK CAN HIDE INJURIES",
+      "explanation": "Shock can mask injuries, so a check is sensible even if he insists he's fine.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l163_q1",
+      "level": 163,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "A caller in a park says she's 'near the big oak, past the playground'. She doesn't know the park's name and there are three parks nearby. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats.",
+        "ASK FOR VISIBLE STREET NAMES OR BUILDINGS AND USE PHONE LOCATION IF AVAILABLE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "ASK FOR VISIBLE STREET NAMES OR BUILDINGS AND USE PHONE LOCATION IF AVAILABLE",
+      "explanation": "Street names and buildings are more reliable than trees or playgrounds, and phone location can confirm.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l163_q2",
+      "level": 163,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "She reads a street sign, but the same street name exists in two towns. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "CONFIRM THE TOWN QUICKLY WHILE ALERTING RESPONDERS TO BOTH POSSIBLE AREAS",
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "CONFIRM THE TOWN QUICKLY WHILE ALERTING RESPONDERS TO BOTH POSSIBLE AREAS",
+      "explanation": "Preparing both possibilities saves time while one question resolves which is right.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l163_q3",
+      "level": 163,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "A driver reports a crash 'somewhere between exits 12 and 14'. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "ASK FOR DIRECTION OF TRAVEL, LANDMARKS, AND THE LAST EXIT PASSED",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "ASK FOR DIRECTION OF TRAVEL, LANDMARKS, AND THE LAST EXIT PASSED",
+      "explanation": "Direction and last exit passed narrow a long stretch of road to a smaller area.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l164_q1",
+      "level": 164,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "A man says he's 'not sure if it's bad'. A cut on his forearm has stopped bleeding but looks deep. Input medical code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic.",
+        "GET IT SEEN PROMPTLY AT A CLINIC OR URGENT CARE, NO AMBULANCE NEEDED"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "GET IT SEEN PROMPTLY AT A CLINIC OR URGENT CARE, NO AMBULANCE NEEDED",
+      "explanation": "A deep cut may need stitches even when bleeding stops, but it doesn't need an ambulance if he's stable.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l164_q2",
+      "level": 164,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "The same man now says his fingers feel numb. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "TREAT IT AS URGENT, NUMBNESS MAY MEAN NERVE OR TENDON DAMAGE",
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "TREAT IT AS URGENT, NUMBNESS MAY MEAN NERVE OR TENDON DAMAGE",
+      "explanation": "Numbness suggests deeper damage and raises urgency.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l164_q3",
+      "level": 164,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A woman feels 'off' with mild stomach pain and dizziness but can't describe it further. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "ASK WHEN IT STARTED, HOW LONG, AND ABOUT CHEST PAIN OR BREATHING TROUBLE",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "ASK WHEN IT STARTED, HOW LONG, AND ABOUT CHEST PAIN OR BREATHING TROUBLE",
+      "explanation": "Specific questions turn a vague description into information that shows whether it's urgent.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l165_q1",
+      "level": 165,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "A man finds his neighbor unresponsive on his porch. He has no idea how long he's been there. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright.",
+        "CALL FOR AN AMBULANCE, REPORT WHAT YOU SEE, AND SAY YOU DON'T KNOW HOW LONG"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CALL FOR AN AMBULANCE, REPORT WHAT YOU SEE, AND SAY YOU DON'T KNOW HOW LONG",
+      "explanation": "The unknown time doesn't delay the call, but it should be stated honestly.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l165_q2",
+      "level": 165,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "The neighbor's skin is cold and stiff. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "REPORT THE COLD AND STIFF SKIN AND LET THE OPERATOR DECIDE WHAT COMES NEXT",
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "REPORT THE COLD AND STIFF SKIN AND LET THE OPERATOR DECIDE WHAT COMES NEXT",
+      "explanation": "Callers shouldn't assume the outcome. The operator will give the next instructions.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l165_q3",
+      "level": 165,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "A caller says he heard a loud bang, but he sees no smoke and no people. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "REPORT WHAT YOU HEARD AND WHERE, WHAT YOU CAN'T SEE, AND STAY SAFE",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "REPORT WHAT YOU HEARD AND WHERE, WHAT YOU CAN'T SEE, AND STAY SAFE",
+      "explanation": "An honest account of what was heard and not seen lets responders decide how to check.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l166_q1",
+      "level": 166,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "A man on a bench slurs his words and staggers. A stranger says he's drunk, but his medical bracelet says he has diabetes. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training.",
+        "REPORT THE BRACELET, DIABETES CAN LOOK LIKE INTOXICATION"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "REPORT THE BRACELET, DIABETES CAN LOOK LIKE INTOXICATION",
+      "explanation": "The bracelet points to a medical cause that needs treating, not assuming intoxication.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l166_q2",
+      "level": 166,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "A bystander offers him orange juice. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "OFFER SUGAR ONLY IF HE'S ALERT AND SWALLOWING NORMALLY, AND KEEP HELP COMING",
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "OFFER SUGAR ONLY IF HE'S ALERT AND SWALLOWING NORMALLY, AND KEEP HELP COMING",
+      "explanation": "If he can't swallow safely, drinks could cause choking. Either way, help should still be on the way.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l166_q3",
+      "level": 166,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "A teenager has a sudden severe headache, a stiff neck, and a spreading rash. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "CALL FOR AN AMBULANCE, THE COMBINATION IS SERIOUS EVEN WITHOUT A KNOWN CAUSE",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "CALL FOR AN AMBULANCE, THE COMBINATION IS SERIOUS EVEN WITHOUT A KNOWN CAUSE",
+      "explanation": "Some symptom combinations are urgent by themselves, and waiting for a cause can be dangerous.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l167_q1",
+      "level": 167,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "From her window, a woman saw a man fall from scaffolding across the street, but she can't see him now. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization.",
+        "CALL FOR AN AMBULANCE AND SAY WHAT YOU SAW AND WHAT YOU CAN'T SEE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CALL FOR AN AMBULANCE AND SAY WHAT YOU SAW AND WHAT YOU CAN'T SEE",
+      "explanation": "A witnessed fall is enough to act on, and honesty about limits helps crews prepare.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l167_q2",
+      "level": 167,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "She isn't sure whether he got up afterward. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "REPORT IT AS UNCERTAIN, DON'T SAY HE'S FINE",
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "REPORT IT AS UNCERTAIN, DON'T SAY HE'S FINE",
+      "explanation": "Treating unknown as fine can cancel help someone needs.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l167_q3",
+      "level": 167,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "The site manager says all workers are accounted for, but the witness saw a fall. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "STILL SEND HELP TO CHECK, THE WITNESS SAW A FALL",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "STILL SEND HELP TO CHECK, THE WITNESS SAW A FALL",
+      "explanation": "A direct observation of a fall outweighs a general headcount that might be mistaken.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l168_q1",
+      "level": 168,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A small grass fire beside a road has been reported. Wind picks up and the fire jumps the road. Input fire code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire.",
+        "UPDATE FIREFIGHTERS ON THE JUMP, THE WIND, AND WHAT'S NOW THREATENED"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "UPDATE FIREFIGHTERS ON THE JUMP, THE WIND, AND WHAT'S NOW THREATENED",
+      "explanation": "A wind-driven jump means the situation is larger, and firefighters need the update immediately.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l168_q2",
+      "level": 168,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "Residents on the far side of the road ask whether to stay. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "GET READY TO EVACUATE AND FOLLOW OFFICIAL INSTRUCTIONS",
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "GET READY TO EVACUATE AND FOLLOW OFFICIAL INSTRUCTIONS",
+      "explanation": "Preparing now means they can leave quickly if told to.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l168_q3",
+      "level": 168,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "The wind drops and the fire seems to slow down. Input fire code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "KEEP REPORTING AND DON'T STAND DOWN UNTIL FIREFIGHTERS SAY IT'S CONTAINED",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "KEEP REPORTING AND DON'T STAND DOWN UNTIL FIREFIGHTERS SAY IT'S CONTAINED",
+      "explanation": "Fires can flare again, so containment must be confirmed by firefighters.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l169_q1",
+      "level": 169,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "A caller sees smoke from a neighbor's chimney and thinks it might be a house fire. It's winter and the family is home. Input fire code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils.",
+        "ASK IF THERE'S SMOKE INSIDE OR FLAMES OUTSIDE THE FIREPLACE, AND SEND HELP IF ANY SIGN OF FIRE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "ASK IF THERE'S SMOKE INSIDE OR FLAMES OUTSIDE THE FIREPLACE, AND SEND HELP IF ANY SIGN OF FIRE",
+      "explanation": "Smoke from a chimney is normal in winter, but smoke inside or flames outside the fireplace aren't.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l169_q2",
+      "level": 169,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "The caller then says the roof near the chimney is glowing orange. Input fire code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "SEND FIREFIGHTERS NOW, THIS IS NO LONGER A NORMAL FIREPLACE",
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "SEND FIREFIGHTERS NOW, THIS IS NO LONGER A NORMAL FIREPLACE",
+      "explanation": "A glowing roof suggests a chimney or roof fire, which can spread fast.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l169_q3",
+      "level": 169,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "A neighbor says a smoke alarm next door has been chirping for days, with no other signs. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "SUGGEST CHECKING THE BATTERY, NO EMERGENCY UNLESS THERE'S SMOKE OR HEAT",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "SUGGEST CHECKING THE BATTERY, NO EMERGENCY UNLESS THERE'S SMOKE OR HEAT",
+      "explanation": "A chirp with no smoke or heat is commonly a low battery.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l170_q1",
+      "level": 170,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "A man's brother texted 'help' and then stopped responding. He lives in another city and the caller doesn't know his exact address. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow.",
+        "GIVE THE BEST ADDRESS DETAILS, REPORT THE TEXT, AND ASK FOR A WELFARE CHECK"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "GIVE THE BEST ADDRESS DETAILS, REPORT THE TEXT, AND ASK FOR A WELFARE CHECK",
+      "explanation": "Local responders can check on someone, and the caller should give what he knows.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l170_q2",
+      "level": 170,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "He remembers the building's color and the name of a shop at the corner. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "PASS ON THOSE LANDMARKS TO THE LOCAL RESPONDERS",
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "PASS ON THOSE LANDMARKS TO THE LOCAL RESPONDERS",
+      "explanation": "Landmarks help responders locate the right building.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l170_q3",
+      "level": 170,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "The brother calls back saying he texted by mistake. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "CONFIRM IT'S REALLY HIM AND THAT HE'S SAFE, THEN UPDATE RESPONDERS",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "CONFIRM IT'S REALLY HIM AND THAT HE'S SAFE, THEN UPDATE RESPONDERS",
+      "explanation": "A verified update lets responders stand down safely.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    }
+  ]
+}

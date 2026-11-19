@@ -1,0 +1,548 @@
+{
+  "gameType": "emergencyHub",
+  "phase": "practice",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "quests": [
+    {
+      "id": "eh_practice_l31_q1",
+      "level": 31,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "A farmer finds a hand caught in machinery on a rural property with no close neighbors. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "CALL FOR AN AMBULANCE AND STAY WITH HIM",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "CALL FOR AN AMBULANCE AND STAY WITH HIM",
+      "explanation": "The response is the same as anywhere else: get medical help moving and stay to reassure him, even though the setting is unfamiliar.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l31_q2",
+      "level": 31,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "The farmer says the nearest hospital is over an hour away by road. Input rescue code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright.",
+        "ASK IF AIR RESCUE IS AVAILABLE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "ASK IF AIR RESCUE IS AVAILABLE",
+      "explanation": "In remote areas, air rescue can reach a patient and a hospital far faster than a ground ambulance alone.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l31_q3",
+      "level": 31,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "A different caller in a dense city reports the same kind of hand injury at a small workshop. Input medical code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "CALL FOR AN AMBULANCE, A NEARBY HOSPITAL CAN RESPOND FAST",
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "CALL FOR AN AMBULANCE, A NEARBY HOSPITAL CAN RESPOND FAST",
+      "explanation": "In a city, nearby hospitals and traffic-free response routes mean a standard ambulance call is usually fast enough.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l32_q1",
+      "level": 32,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "A caller reports a house fire, a family pet trapped inside, and a neighbor's car blocking the driveway. Input fire code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "REPORT THE FIRE AND TRAPPED ANIMAL, THE CAR CAN WAIT",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "REPORT THE FIRE AND TRAPPED ANIMAL, THE CAR CAN WAIT",
+      "explanation": "The fire and the trapped animal are the life-and-property risks; the blocked driveway is a logistics issue that can be solved after help arrives.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l32_q2",
+      "level": 32,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A caller then adds that the blocked driveway means the fire engine can't actually get close. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training.",
+        "REPORT THE BLOCKED ACCESS RIGHT AWAY TOO"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "REPORT THE BLOCKED ACCESS RIGHT AWAY TOO",
+      "explanation": "Blocked access changes how quickly the fire engine can actually help, so it now needs to be reported immediately, not left for later.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l32_q3",
+      "level": 32,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "A different fire is reported with clear road access and no trapped animals or people. Input fire code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "CALL THE FIRE BRIGADE WITH THE ADDRESS",
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "CALL THE FIRE BRIGADE WITH THE ADDRESS",
+      "explanation": "With no access issues or lives at immediate risk, a straightforward address and fire report is all that's needed.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l33_q1",
+      "level": 33,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "A man has had a mild, dull stomach ache for two days that comes and goes. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "SUGGEST A DOCTOR'S VISIT SOON AND WATCH FOR SUDDEN WORSENING",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "SUGGEST A DOCTOR'S VISIT SOON AND WATCH FOR SUDDEN WORSENING",
+      "explanation": "A mild, ongoing stomach ache is usually better suited to a regular doctor visit than emergency services.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l33_q2",
+      "level": 33,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "The same man now has sudden, severe pain on his lower right side and a fever. Input medical code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization.",
+        "CALL FOR AN AMBULANCE, THIS COULD BE SERIOUS"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CALL FOR AN AMBULANCE, THIS COULD BE SERIOUS",
+      "explanation": "Sudden severe pain with fever can indicate a condition like appendicitis, which needs prompt medical evaluation.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l33_q3",
+      "level": 33,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "A woman has period-related cramping that is uncomfortable but matches her usual monthly pattern. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "SUGGEST HER USUAL PAIN RELIEF AND REST, SEE A DOCTOR IF IT CHANGES",
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "SUGGEST HER USUAL PAIN RELIEF AND REST, SEE A DOCTOR IF IT CHANGES",
+      "explanation": "Pain that matches a known, normal pattern doesn't need emergency care, unlike pain that's sudden or unusually severe.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l34_q1",
+      "level": 34,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "A passenger on a train has a severe nosebleed that won't stop between stations. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "TELL STAFF TO ALERT THE NEXT STATION",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "TELL STAFF TO ALERT THE NEXT STATION",
+      "explanation": "Alerting the next station lets paramedics meet the train the moment it arrives, instead of waiting for it to reach the final stop.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l34_q2",
+      "level": 34,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "The same train is now stopped between stations with no clear timeline to move. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire.",
+        "REPORT THE EXACT LOCATION OF THE TRAIN"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "REPORT THE EXACT LOCATION OF THE TRAIN",
+      "explanation": "Knowing the train's exact stopped location lets responders reach the patient directly, rather than waiting at a station.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l34_q3",
+      "level": 34,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "A passenger on a bus reports feeling dizzy but the bus is only two minutes from the next stop. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "HAVE THE DRIVER STOP AT THE NEAREST SAFE POINT",
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "HAVE THE DRIVER STOP AT THE NEAREST SAFE POINT",
+      "explanation": "Stopping at the nearest safe point, not the scheduled stop, gets help to the passenger sooner if her condition changes.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l35_q1",
+      "level": 35,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "A store clerk reports a shoplifter who has already left the store with a small item. Input code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "REPORT IT AS A NON-URGENT THEFT",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "REPORT IT AS A NON-URGENT THEFT",
+      "explanation": "A theft that's already over and involves a small item can be reported as non-urgent, without needing an immediate rush response.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l35_q2",
+      "level": 35,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "The same clerk now says the shoplifter pulled out a knife when confronted by staff. Input police code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils.",
+        "CALL POLICE IMMEDIATELY, THIS IS NOW URGENT"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CALL POLICE IMMEDIATELY, THIS IS NOW URGENT",
+      "explanation": "A weapon being shown changes this from a property crime into an immediate danger to people, requiring an urgent police response.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l35_q3",
+      "level": 35,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A different clerk reports someone walked out without paying, then returned five minutes later to pay in full. Input police code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "NO POLICE RESPONSE NEEDED, NOTE IT WITH STORE STAFF",
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "NO POLICE RESPONSE NEEDED, NOTE IT WITH STORE STAFF",
+      "explanation": "The customer came back and paid, so no one is at risk and nothing is left for police to act on.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l36_q1",
+      "level": 36,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "You've already called for an ambulance, and now the patient starts vomiting. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "CALL BACK AND UPDATE THEM ON THE VOMITING",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "CALL BACK AND UPDATE THEM ON THE VOMITING",
+      "explanation": "Vomiting can be an important sign, so updating the call lets paramedics prepare rather than being surprised on arrival.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l36_q2",
+      "level": 36,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "While waiting, the patient's breathing becomes noticeably slower and shallower. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow.",
+        "CALL BACK IMMEDIATELY, THIS IS A CRITICAL CHANGE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CALL BACK IMMEDIATELY, THIS IS A CRITICAL CHANGE",
+      "explanation": "Slowing, shallow breathing is a critical warning sign, so this update needs to be reported immediately, not just mentioned later.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l36_q3",
+      "level": 36,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "A different patient's condition has stayed exactly the same while waiting for the ambulance. Input code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "NO NEED TO CALL BACK, JUST KEEP WAITING SAFELY",
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "NO NEED TO CALL BACK, JUST KEEP WAITING SAFELY",
+      "explanation": "If nothing has changed, there's no new information to report, so it's fine to simply keep waiting for the ambulance.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l37_q1",
+      "level": 37,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "A school fire alarm is sounding, and it's the scheduled monthly drill according to the posted schedule. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "CONFIRM IT'S THE DRILL AND CARRY OUT THE EVACUATION AS PRACTICED",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "CONFIRM IT'S THE DRILL AND CARRY OUT THE EVACUATION AS PRACTICED",
+      "explanation": "A scheduled, known drill doesn't need an emergency response, since there's no real danger behind the alarm.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l37_q2",
+      "level": 37,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "The same alarm is sounding, but staff confirm no drill was scheduled today. Input fire code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats.",
+        "TREAT IT AS REAL AND CALL THE FIRE BRIGADE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "TREAT IT AS REAL AND CALL THE FIRE BRIGADE",
+      "explanation": "Without a known scheduled reason, an alarm should be treated as real until firefighters confirm otherwise.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l37_q3",
+      "level": 37,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "Moments later, students report seeing actual smoke near the cafeteria. Input fire code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "CONFIRM THE SMOKE LOCATION TO THE FIRE BRIGADE",
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "CONFIRM THE SMOKE LOCATION TO THE FIRE BRIGADE",
+      "explanation": "Naming the smoke's specific location lets firefighters head straight to the danger instead of searching the whole building.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l38_q1",
+      "level": 38,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "You see a car crash and assume someone else has already called for help. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "CALL ANYWAY, DON'T ASSUME SOMEONE ELSE DID",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "CALL ANYWAY, DON'T ASSUME SOMEONE ELSE DID",
+      "explanation": "If everyone assumes someone else called, no one actually does, so it's safest to call yourself and let dispatch sort out duplicates.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l38_q2",
+      "level": 38,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "At the same scene, another bystander confirms out loud that they already spoke to dispatch. Input code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic.",
+        "CONFIRM WHAT WAS REPORTED, DON'T DUPLICATE UNNECESSARILY"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CONFIRM WHAT WAS REPORTED, DON'T DUPLICATE UNNECESSARILY",
+      "explanation": "Once you have real confirmation, briefly checking what was reported is more useful than making a second, separate call.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l38_q3",
+      "level": 38,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "A different bystander insists 'someone always calls' at a busy accident scene, but no one has confirmed it. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "CALL ANYWAY TO BE SURE",
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "CALL ANYWAY TO BE SURE",
+      "explanation": "Assuming based on habit, without confirmation, is exactly the gap that leaves genuine emergencies unreported.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l39_q1",
+      "level": 39,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A tourist who speaks little English is trying to report a theft using simple words and pointing. Input code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "USE SIMPLE WORDS AND CONFIRM KEY DETAILS SLOWLY",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "USE SIMPLE WORDS AND CONFIRM KEY DETAILS SLOWLY",
+      "explanation": "Simple words and slow confirmation still get the location and problem across, even without a shared language.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l39_q2",
+      "level": 39,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "The same tourist manages to say the word 'blood' and points to his arm repeatedly. Input medical code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright.",
+        "TREAT THIS AS A MEDICAL EMERGENCY AND SEND HELP"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "TREAT THIS AS A MEDICAL EMERGENCY AND SEND HELP",
+      "explanation": "A single clear word like 'blood' paired with pointing is enough information to dispatch medical help right away.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l39_q3",
+      "level": 39,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "A local resident offers to translate for the tourist over the phone. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "USE THE TRANSLATOR TO CONFIRM THE FULL DETAILS",
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "USE THE TRANSLATOR TO CONFIRM THE FULL DETAILS",
+      "explanation": "A translator lets you confirm the complete picture, making sure no important detail was missed through gestures alone.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l40_q1",
+      "level": 40,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "A caller reports a two-car crash on a rural road, one driver trapped, and says the nearest hospital is far away. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "CALL FOR AN AMBULANCE AND ASK ABOUT AIR RESCUE",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "CALL FOR AN AMBULANCE AND ASK ABOUT AIR RESCUE",
+      "explanation": "Combining a standard ambulance call with an air rescue request covers both the injury and the distance problem at once.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l40_q2",
+      "level": 40,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "While waiting, the trapped driver's condition worsens and he becomes difficult to rouse. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training.",
+        "CALL BACK IMMEDIATELY TO UPDATE HIS CONDITION"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CALL BACK IMMEDIATELY TO UPDATE HIS CONDITION",
+      "explanation": "A worsening, hard-to-rouse patient is a critical change that responders need to know about before they even arrive.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l40_q3",
+      "level": 40,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "A second caller reports smoke from the wreck, though no flames are visible yet. Input fire code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "REPORT THE SMOKE, THIS MAY BECOME A FIRE RISK TOO",
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "REPORT THE SMOKE, THIS MAY BECOME A FIRE RISK TOO",
+      "explanation": "Reporting the smoke lets responders prepare for a possible fire risk, not just the medical emergency already known.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    }
+  ]
+}

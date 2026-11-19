@@ -1,0 +1,548 @@
+{
+  "gameType": "emergencyHub",
+  "phase": "practice",
+  "batchIndex": 18,
+  "levels": "171-180",
+  "quests": [
+    {
+      "id": "eh_practice_l171_q1",
+      "level": 171,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A parent says her daughter texted from school, 'someone has a gun', with no other detail. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "REPORT IT SERIOUSLY WITH THE SCHOOL, THE TEXT, AND THAT DETAILS ARE UNCONFIRMED",
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "REPORT IT SERIOUSLY WITH THE SCHOOL, THE TEXT, AND THAT DETAILS ARE UNCONFIRMED",
+      "explanation": "A potential threat to many people needs a fast response, and the report should be clear that it's unconfirmed.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l171_q2",
+      "level": 171,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "School staff say they don't see anything unusual. Input police code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "SEND POLICE TO VERIFY, NO VISIBLE SIGNS DOESN'T MEAN NO THREAT",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "SEND POLICE TO VERIFY, NO VISIBLE SIGNS DOESN'T MEAN NO THREAT",
+      "explanation": "Staff may not know what a student has hidden, so police should check.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l171_q3",
+      "level": 171,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "Police confirm it was a toy in a student's bag and there's no threat. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow.",
+        "ACKNOWLEDGE IT, CLOSE THE INCIDENT, AND NOTE THE REPORT WAS MADE IN GOOD FAITH"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "ACKNOWLEDGE IT, CLOSE THE INCIDENT, AND NOTE THE REPORT WAS MADE IN GOOD FAITH",
+      "explanation": "Good-faith reports should be encouraged even if the outcome is harmless.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l172_q1",
+      "level": 172,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "A resident smells gas at a building's entrance. A neighbor says it's probably from the restaurant next door. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "REPORT IT AND KEEP PEOPLE AWAY FROM IGNITION SOURCES UNTIL CHECKED",
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "REPORT IT AND KEEP PEOPLE AWAY FROM IGNITION SOURCES UNTIL CHECKED",
+      "explanation": "A gas smell should be treated as a real hazard until the source is confirmed.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l172_q2",
+      "level": 172,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "The meter reader says the meter is fine, but the smell persists. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "STILL REPORT IT, THE LEAK MAY BE ELSEWHERE",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "STILL REPORT IT, THE LEAK MAY BE ELSEWHERE",
+      "explanation": "A clear meter only rules out that source. A lasting smell needs further investigation.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l172_q3",
+      "level": 172,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "The smell only seems to appear after someone runs the bathroom exhaust fan. Input code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats.",
+        "REPORT THE PATTERN AND LET RESPONDERS IDENTIFY THE SOURCE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "REPORT THE PATTERN AND LET RESPONDERS IDENTIFY THE SOURCE",
+      "explanation": "The pattern is a useful clue, but diagnosing it is for the responders.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l173_q1",
+      "level": 173,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "A woman says her husband has chest tightness. He says it's heartburn, but he's pale and sweaty. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "GO WITH THE OBSERVED SIGNS AND CALL FOR AN AMBULANCE",
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "GO WITH THE OBSERVED SIGNS AND CALL FOR AN AMBULANCE",
+      "explanation": "Pale, sweaty skin with chest tightness are objective warning signs that override his own guess.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l173_q2",
+      "level": 173,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "He refuses to go to the hospital. Input medical code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "EXPLAIN THE RISK, KEEP THE CALL OPEN, AND LET PARAMEDICS ASSESS HIM",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "EXPLAIN THE RISK, KEEP THE CALL OPEN, AND LET PARAMEDICS ASSESS HIM",
+      "explanation": "Paramedics can assess and explain, and the operator can stay on the line.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l173_q3",
+      "level": 173,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "A young man has sharp chest pain after a hard gym session. It's worse when pressing on his breastbone and his breathing is normal. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic.",
+        "ASK ABOUT OTHER SYMPTOMS AND ARRANGE PROMPT ASSESSMENT, ESCALATE IF BREATHLESS OR SWEATY"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "ASK ABOUT OTHER SYMPTOMS AND ARRANGE PROMPT ASSESSMENT, ESCALATE IF BREATHLESS OR SWEATY",
+      "explanation": "The pattern suggests muscle strain but can't be assumed. Extra warning signs would escalate it.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l174_q1",
+      "level": 174,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "One witness says a suspect ran west, another says east. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "REPORT BOTH DIRECTIONS AND ASK WHICH WITNESS SAW HIM LAST",
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "REPORT BOTH DIRECTIONS AND ASK WHICH WITNESS SAW HIM LAST",
+      "explanation": "Recording both and identifying the latest sighting gives police a starting point.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l174_q2",
+      "level": 174,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A store camera shows him getting into a car headed south. Input police code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "UPDATE POLICE WITH THE VERIFIED DIRECTION",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "UPDATE POLICE WITH THE VERIFIED DIRECTION",
+      "explanation": "Camera evidence can outweigh witnesses' recollection.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l174_q3",
+      "level": 174,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "A witness says she's 'almost sure' the car was blue. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright.",
+        "REPORT IT AS 'ALMOST SURE', NOT AS CERTAIN"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "REPORT IT AS 'ALMOST SURE', NOT AS CERTAIN",
+      "explanation": "Overstating certainty could send police after the wrong vehicle.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l175_q1",
+      "level": 175,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "A caller reports her mother has stomach pain. During the call she becomes pale, sweaty, and drowsy. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "TELL THE OPERATOR IT'S GETTING WORSE AND REQUEST HIGHER URGENCY",
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "TELL THE OPERATOR IT'S GETTING WORSE AND REQUEST HIGHER URGENCY",
+      "explanation": "Worsening during the call means the initial urgency no longer fits.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l175_q2",
+      "level": 175,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "The mother vomits blood. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "REPORT THE BLOOD IMMEDIATELY",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "REPORT THE BLOOD IMMEDIATELY",
+      "explanation": "Vomiting blood suggests serious internal bleeding and must be relayed immediately.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l175_q3",
+      "level": 175,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "The daughter says she thinks her mother ate old food and feels better now. Input medical code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training.",
+        "LET PARAMEDICS DECIDE, DON'T CANCEL ON A GUESS"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "LET PARAMEDICS DECIDE, DON'T CANCEL ON A GUESS",
+      "explanation": "A feeling of improvement doesn't cancel the earlier warning signs.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l176_q1",
+      "level": 176,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "A driver passes a leaking truck with a hazard placard but can't read the number. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "REPORT THE PLACARD'S COLOR AND SHAPE AND WHAT YOU SEE FROM A SAFE DISTANCE",
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "REPORT THE PLACARD'S COLOR AND SHAPE AND WHAT YOU SEE FROM A SAFE DISTANCE",
+      "explanation": "Even partial placard information helps responders identify the hazard class.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l176_q2",
+      "level": 176,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "He asks whether to move closer to read the number. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "NO, STAY BACK, AN INCOMPLETE REPORT IS SAFER THAN A RISKY ONE",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "NO, STAY BACK, AN INCOMPLETE REPORT IS SAFER THAN A RISKY ONE",
+      "explanation": "Responders can identify the substance properly. Getting closer risks exposure.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l176_q3",
+      "level": 176,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "Another driver zooms a photo from far away. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization.",
+        "SHARE THE PHOTO WITH RESPONDERS IF THEY CAN USE IT"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "SHARE THE PHOTO WITH RESPONDERS IF THEY CAN USE IT",
+      "explanation": "A zoomed photo may capture placard details the callers couldn't read.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l177_q1",
+      "level": 177,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "Students in a classroom complain of headaches and a strange smell. The teacher can't find a source. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "MOVE EVERYONE OUT AND REPORT THE SYMPTOMS AND THE SMELL",
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "MOVE EVERYONE OUT AND REPORT THE SYMPTOMS AND THE SMELL",
+      "explanation": "Removing people from a possible exposure protects them while the source is identified.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l177_q2",
+      "level": 177,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "Another classroom in the same corridor reports similar symptoms. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "REPORT THAT MORE ROOMS ARE AFFECTED, SUGGESTING A BUILDING-WIDE SOURCE",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "REPORT THAT MORE ROOMS ARE AFFECTED, SUGGESTING A BUILDING-WIDE SOURCE",
+      "explanation": "More rooms affected points to a shared source, such as ventilation.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l177_q3",
+      "level": 177,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A custodian says he used a strong cleaner in the corridor earlier. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire.",
+        "TELL RESPONDERS ABOUT THE CLEANER, IT MAY BE THE SOURCE BUT LET THEM CONFIRM"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "TELL RESPONDERS ABOUT THE CLEANER, IT MAY BE THE SOURCE BUT LET THEM CONFIRM",
+      "explanation": "It's a useful clue, but only responders can confirm whether it explains the symptoms.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l178_q1",
+      "level": 178,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "A mother says her four-year-old went to the yard 'a minute ago' and can't be found. The yard has a gate and a pool. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "CALL FOR HELP AND CHECK THE POOL AND WATER FIRST",
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "CALL FOR HELP AND CHECK THE POOL AND WATER FIRST",
+      "explanation": "Water is the fastest danger for a toddler, so it's checked first while help is called.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l178_q2",
+      "level": 178,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "The gate is open. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "REPORT THE OPEN GATE AND ASK RESPONDERS TO SEARCH THE STREET TOO",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "REPORT THE OPEN GATE AND ASK RESPONDERS TO SEARCH THE STREET TOO",
+      "explanation": "An open gate means the child may have left the property, so the search area is larger.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l178_q3",
+      "level": 178,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "A neighbor calls to say the child is with her and safe. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils.",
+        "CONFIRM THE CHILD IS THERE AND SAFE BEFORE TELLING RESPONDERS"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CONFIRM THE CHILD IS THERE AND SAFE BEFORE TELLING RESPONDERS",
+      "explanation": "Confirming the child in person prevents a false stand-down.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l179_q1",
+      "level": 179,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "During a storm, calls report downed trees, blackouts, flooding, and one person trapped in a car in floodwater. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "PRIORITIZE THE TRAPPED PERSON, THEN OTHER LIFE-THREATENING HAZARDS",
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "PRIORITIZE THE TRAPPED PERSON, THEN OTHER LIFE-THREATENING HAZARDS",
+      "explanation": "A person trapped in rising water is the most time-critical.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l179_q2",
+      "level": 179,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "A caller reports a tree on a road, and no one is hurt. Input code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "LOG IT AS A NON-URGENT HAZARD",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "LOG IT AS A NON-URGENT HAZARD",
+      "explanation": "With no injuries, it's a hazard for road crews rather than an urgent emergency.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l179_q3",
+      "level": 179,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "A caller reports a sparking transformer next to a bus stop with people waiting. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow.",
+        "TREAT IT AS URGENT, A LIVE ELECTRICAL HAZARD NEAR PEOPLE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "TREAT IT AS URGENT, A LIVE ELECTRICAL HAZARD NEAR PEOPLE",
+      "explanation": "Sparking electrical equipment near people is a serious hazard.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l180_q1",
+      "level": 180,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "A caller reports a man lying in a parking lot, maybe sleeping. A guard says he moved a little earlier. It's raining and cold. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "SEND HELP TO CHECK HIM, THE UNCERTAINTY IS ITSELF THE RISK",
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "SEND HELP TO CHECK HIM, THE UNCERTAINTY IS ITSELF THE RISK",
+      "explanation": "The cold and uncertain condition make a check the safest choice.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l180_q2",
+      "level": 180,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "Paramedics arrive. He's conscious but disoriented and cold. He says he took medication earlier. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "RELAY WHAT HE SAID ABOUT THE MEDICATION EXACTLY WITHOUT ADDING GUESSES",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "RELAY WHAT HE SAID ABOUT THE MEDICATION EXACTLY WITHOUT ADDING GUESSES",
+      "explanation": "The exact statement helps paramedics, and guesses could mislead them.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l180_q3",
+      "level": 180,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "The guard wants to tell them the man 'is probably an addict'. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats.",
+        "STICK TO OBSERVATIONS, NOT ASSUMPTIONS ABOUT THE PERSON"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "STICK TO OBSERVATIONS, NOT ASSUMPTIONS ABOUT THE PERSON",
+      "explanation": "Assumptions can bias care. Observations help paramedics assess him.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    }
+  ]
+}

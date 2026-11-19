@@ -1,0 +1,548 @@
+{
+  "gameType": "emergencyHub",
+  "phase": "practice",
+  "batchIndex": 7,
+  "levels": "61-70",
+  "quests": [
+    {
+      "id": "eh_practice_l61_q1",
+      "level": 61,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "A car has crashed into a pole and is now smoking heavily, with the driver still trying to get out. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "TELL HIM TO MOVE AWAY IF HE CAN, THEN CALL FOR HELP",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "TELL HIM TO MOVE AWAY IF HE CAN, THEN CALL FOR HELP",
+      "explanation": "Getting him clear of a smoking car reduces the risk if it catches fire, and this matters just as much as the call itself.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l61_q2",
+      "level": 61,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "Bystanders want to rush toward the smoking car to help him out. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training.",
+        "WARN THEM TO KEEP A SAFE DISTANCE TOO"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "WARN THEM TO KEEP A SAFE DISTANCE TOO",
+      "explanation": "Keeping bystanders back prevents them from becoming additional casualties if the smoking car catches fire.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l61_q3",
+      "level": 61,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "A separate car has a small amount of steam coming from under the hood after overheating, with no smell of smoke. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "LET THE ENGINE COOL BEFORE OPENING THE HOOD, NO EMERGENCY",
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "LET THE ENGINE COOL BEFORE OPENING THE HOOD, NO EMERGENCY",
+      "explanation": "Steam from an overheated engine is common and not a fire risk, unlike smoke, so it doesn't need an emergency response.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l62_q1",
+      "level": 62,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "A pedestrian has been hit by a car on a busy road at night with no streetlights nearby. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "WARN TRAFFIC BEFORE APPROACHING HIM",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "WARN TRAFFIC BEFORE APPROACHING HIM",
+      "explanation": "Warning oncoming traffic first, using hazard lights or a safe signal, prevents a second person from being struck in the dark.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l62_q2",
+      "level": 62,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "A bystander wants to stand in the middle of the road to direct traffic around the scene. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization.",
+        "HAVE THEM SIGNAL FROM THE ROADSIDE, NOT THE ROAD"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "HAVE THEM SIGNAL FROM THE ROADSIDE, NOT THE ROAD",
+      "explanation": "Signaling from the roadside still helps traffic slow down, without putting the bystander directly in danger.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l62_q3",
+      "level": 62,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "A different pedestrian trips on a curb in a quiet, well-lit pedestrian area with no traffic nearby. Input code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "CHECK ON HIM DIRECTLY, THERE'S NO TRAFFIC RISK HERE",
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "CHECK ON HIM DIRECTLY, THERE'S NO TRAFFIC RISK HERE",
+      "explanation": "Without any traffic nearby, there's no added risk to approaching him directly and checking how he is.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l63_q1",
+      "level": 63,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "A washing machine has caught fire and water is pooling on the floor around it. Input safety code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "CUT THE POWER IF SAFE, DON'T TOUCH THE WATER",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "CUT THE POWER IF SAFE, DON'T TOUCH THE WATER",
+      "explanation": "Water near an electrical fire can conduct electricity, so power should be cut at the source and the water avoided until then.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l63_q2",
+      "level": 63,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "The fuse box is in a locked room and no one has the key readily available. Input fire code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire.",
+        "STAY CLEAR AND WAIT FOR FIREFIGHTERS TO CUT POWER"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "STAY CLEAR AND WAIT FOR FIREFIGHTERS TO CUT POWER",
+      "explanation": "Without safe access to the power source, the safest choice is to stay clear and let trained firefighters handle it.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l63_q3",
+      "level": 63,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "A different washing machine has stopped working with a small trip of the breaker, no fire or water leak. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "RESET THE BREAKER AND CALL AN ELECTRICIAN IF IT TRIPS AGAIN",
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "RESET THE BREAKER AND CALL AN ELECTRICIAN IF IT TRIPS AGAIN",
+      "explanation": "A simple tripped breaker with no fire or leaking water is a routine electrical issue, not an emergency.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l64_q1",
+      "level": 64,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "A strong gas smell fills a garage, and someone reaches for a light switch to see better. Input safety code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "STOP THEM, DON'T USE ANY SWITCHES OR FLAMES",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "STOP THEM, DON'T USE ANY SWITCHES OR FLAMES",
+      "explanation": "A light switch can create a spark, which could ignite built-up gas, so no switches or flames should be used near a suspected leak.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l64_q2",
+      "level": 64,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "Everyone is now safely outside, but a neighbor wants to go back in to grab their phone charger. Input safety code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils.",
+        "DON'T LET ANYONE RETURN UNTIL IT'S CLEARED"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "DON'T LET ANYONE RETURN UNTIL IT'S CLEARED",
+      "explanation": "The gas hazard remains until professionals confirm it's safe, so no one should go back in for any reason, however minor.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l64_q3",
+      "level": 64,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A separate caller reports a faint gas smell only when standing directly next to their gas stove while it's on. Input code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "THIS MAY BE NORMAL, BUT REPORT IT TO BE SAFE",
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "THIS MAY BE NORMAL, BUT REPORT IT TO BE SAFE",
+      "explanation": "A faint smell right at the stove during use can be normal, but it's still worth a non-urgent report to rule out a real leak.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l65_q1",
+      "level": 65,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "A building damaged by an earthquake is leaning, and someone wants to go inside to retrieve important documents. Input safety code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "STOP THEM, THE BUILDING MAY COLLAPSE",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "STOP THEM, THE BUILDING MAY COLLAPSE",
+      "explanation": "A visibly leaning building could collapse at any moment, so no possession is worth the risk of going back inside.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l65_q2",
+      "level": 65,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "Engineers confirm part of the building is now stable enough for a brief, supervised entry. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow.",
+        "ALLOW ENTRY ONLY UNDER SUPERVISION"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "ALLOW ENTRY ONLY UNDER SUPERVISION",
+      "explanation": "A professional assessment changes the risk calculation, so supervised entry can now be allowed where it couldn't before.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l65_q3",
+      "level": 65,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "A different building shows no visible damage after the same earthquake, and residents want to go back inside. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "STILL WAIT FOR OFFICIAL CLEARANCE FIRST",
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "STILL WAIT FOR OFFICIAL CLEARANCE FIRST",
+      "explanation": "Hidden structural damage isn't always visible from outside, so official clearance is still safer than assuming it's fine.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l66_q1",
+      "level": 66,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "A truck has overturned on a highway, spilling unknown cargo, and drivers are stopping to take photos nearby. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "TELL THEM TO LEAVE, THE CARGO MAY BE HAZARDOUS",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "TELL THEM TO LEAVE, THE CARGO MAY BE HAZARDOUS",
+      "explanation": "Unknown spilled cargo could be hazardous, so bystanders should leave the area until responders confirm what it is.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l66_q2",
+      "level": 66,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "Responders confirm the cargo is just packaged furniture, not hazardous material. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats.",
+        "ALLOW NORMAL TRAFFIC FLOW TO RESUME NEARBY"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "ALLOW NORMAL TRAFFIC FLOW TO RESUME NEARBY",
+      "explanation": "Once the cargo is confirmed harmless, there's no longer a reason to keep the wider area restricted.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l66_q3",
+      "level": 66,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "A different truck rollover has a strong chemical smell coming from the wreckage. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "KEEP EVERYONE WELL BACK AND CALL HAZMAT",
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "KEEP EVERYONE WELL BACK AND CALL HAZMAT",
+      "explanation": "A chemical smell is a real warning sign, so specialist hazmat responders should be called and bystanders kept well back.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l67_q1",
+      "level": 67,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "A swimmer is struggling far from shore, and a bystander who isn't a strong swimmer wants to swim out to help. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "THROW A FLOTATION DEVICE INSTEAD OF SWIMMING OUT",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "THROW A FLOTATION DEVICE INSTEAD OF SWIMMING OUT",
+      "explanation": "Throwing something that floats can reach the swimmer without putting an untrained rescuer at risk of drowning too.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l67_q2",
+      "level": 67,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "No flotation device is available, but a long pole or rope is nearby on the dock. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic.",
+        "USE THE POLE OR ROPE TO REACH HIM FROM SHORE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "USE THE POLE OR ROPE TO REACH HIM FROM SHORE",
+      "explanation": "Reaching him with a pole or rope from shore still helps without requiring anyone to enter the water themselves.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l67_q3",
+      "level": 67,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "A confident lifeguard is already on duty and responding to the same swimmer. Input rescue code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "LET THE TRAINED LIFEGUARD HANDLE THE RESCUE",
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "LET THE TRAINED LIFEGUARD HANDLE THE RESCUE",
+      "explanation": "A trained lifeguard has the skills and equipment to rescue safely, so untrained bystanders should let them take the lead.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l68_q1",
+      "level": 68,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "An outdoor race continues on a day with extreme heat warnings in effect. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "ALERT ORGANIZERS TO ADD COOLING STATIONS OR PAUSE IT",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "ALERT ORGANIZERS TO ADD COOLING STATIONS OR PAUSE IT",
+      "explanation": "Alerting organizers to add cooling measures or pause the event protects everyone from heat-related collapse, not just treats it after it happens.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l68_q2",
+      "level": 68,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "A runner has now collapsed, feels hot to the touch, and isn't sweating despite the heat. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright.",
+        "CALL FOR AN AMBULANCE AND START COOLING HIM WHILE YOU WAIT"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CALL FOR AN AMBULANCE AND START COOLING HIM WHILE YOU WAIT",
+      "explanation": "Hot skin with no sweating can signal heatstroke, a life-threatening condition that needs immediate medical treatment.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l68_q3",
+      "level": 68,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "A different runner just says he's a little tired and slows down to walk the rest of the way. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "LET HIM WALK IT OUT AND DRINK WATER, WATCH FOR CONFUSION",
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "LET HIM WALK IT OUT AND DRINK WATER, WATCH FOR CONFUSION",
+      "explanation": "Ordinary tiredness that resolves by slowing down doesn't match the warning signs of a heat emergency.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l69_q1",
+      "level": 69,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "A worker has collapsed inside a storage tank, and a coworker wants to climb down immediately to help. Input safety code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "STOP HIM, CONFINED SPACES CAN HAVE NO OXYGEN",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "STOP HIM, CONFINED SPACES CAN HAVE NO OXYGEN",
+      "explanation": "If the air inside caused the first collapse, a second untrained person entering could be overcome the same way.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l69_q2",
+      "level": 69,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "A trained rescue team arrives with breathing equipment and proper harnesses. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training.",
+        "LET THE EQUIPPED TEAM HANDLE THE ENTRY"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "LET THE EQUIPPED TEAM HANDLE THE ENTRY",
+      "explanation": "Proper breathing equipment and harnesses let trained rescuers enter safely, which is exactly what made the earlier attempt so dangerous.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l69_q3",
+      "level": 69,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "A worker has simply dropped his phone into an empty, ventilated storage tank. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "ASK MAINTENANCE TO RETRIEVE IT, NO ONE SHOULD ENTER THE TANK",
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "ASK MAINTENANCE TO RETRIEVE IT, NO ONE SHOULD ENTER THE TANK",
+      "explanation": "An empty, ventilated tank with no one overcome inside carries none of the danger that made the earlier scenario an emergency.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l70_q1",
+      "level": 70,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "A multi-vehicle crash has debris scattered across a highway lane, with traffic still moving nearby, one driver trapped, and a strong fuel smell. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "WARN TRAFFIC, REPORT THE FUEL SMELL, AND THE TRAPPED DRIVER",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "WARN TRAFFIC, REPORT THE FUEL SMELL, AND THE TRAPPED DRIVER",
+      "explanation": "Traffic, fuel, and a trapped person are three separate dangers on the same scene, and all three need to reach responders together.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l70_q2",
+      "level": 70,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "A bystander, unaware of the fuel smell, lights a cigarette near the wreck. Input safety code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization.",
+        "STOP HIM IMMEDIATELY, THIS COULD IGNITE THE FUEL"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "STOP HIM IMMEDIATELY, THIS COULD IGNITE THE FUEL",
+      "explanation": "An open flame near spilled fuel could ignite it instantly, so this needs an immediate stop, not just a mention in a report.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l70_q3",
+      "level": 70,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "Once the trapped driver is freed and the fuel is contained, traffic is rerouted safely around the scene. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "THIS IS NOW LOWER PRIORITY, MONITOR AND CLEAR UP",
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "THIS IS NOW LOWER PRIORITY, MONITOR AND CLEAR UP",
+      "explanation": "With the person freed, the fuel contained, and traffic rerouted, the scene has moved into routine cleanup rather than active emergency.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    }
+  ]
+}

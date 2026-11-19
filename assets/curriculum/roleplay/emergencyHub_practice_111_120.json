@@ -1,0 +1,548 @@
+{
+  "gameType": "emergencyHub",
+  "phase": "practice",
+  "batchIndex": 12,
+  "levels": "111-120",
+  "quests": [
+    {
+      "id": "eh_practice_l111_q1",
+      "level": 111,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "An elderly woman fell from a step stool. She's conscious, her hip hurts badly, and her leg is turned outward. Input medical code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "KEEP HER STILL AND WARM AND CALL FOR AN AMBULANCE",
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "KEEP HER STILL AND WARM AND CALL FOR AN AMBULANCE",
+      "explanation": "A hip injury with a turned leg suggests a fracture. Moving her could worsen it, so stay still and keep her warm.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l111_q2",
+      "level": 111,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "She asks you to help her stand so she can 'walk it off'. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "TELL HER NOT TO GET UP, MOVING COULD MAKE IT WORSE",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "TELL HER NOT TO GET UP, MOVING COULD MAKE IT WORSE",
+      "explanation": "People often underestimate fractures. Standing can displace a broken bone and cause more damage.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l111_q3",
+      "level": 111,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "A toddler rolls off the sofa onto a carpet, cries straight away, then goes back to playing. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire.",
+        "WATCH HIM OVER THE NEXT FEW HOURS FOR CHANGES IN BEHAVIOR"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "WATCH HIM OVER THE NEXT FEW HOURS FOR CHANGES IN BEHAVIOR",
+      "explanation": "Immediate crying and normal play are reassuring. Vomiting, drowsiness, or unusual behavior would change the picture.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l112_q1",
+      "level": 112,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "A man fell three meters from a ladder onto concrete. His feet are tingling and he can't feel his legs properly. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "TELL HIM TO STAY STILL AND CALL FOR AN AMBULANCE",
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "TELL HIM TO STAY STILL AND CALL FOR AN AMBULANCE",
+      "explanation": "Tingling or numbness after a big fall can mean spinal damage. Movement could make it permanent.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l112_q2",
+      "level": 112,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "He's lying in a puddle and it begins to rain hard. A bystander wants to roll him to a dry spot. Input safety code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "DON'T MOVE HIM, COVER AND SHELTER HIM WHERE HE LIES",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "DON'T MOVE HIM, COVER AND SHELTER HIM WHERE HE LIES",
+      "explanation": "Being wet is uncomfortable. Being moved with a suspected spinal injury can cause lasting harm.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l112_q3",
+      "level": 112,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "A cyclist hit by a car has neck pain and wants to take off his helmet and get up. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils.",
+        "ASK HIM TO STAY STILL AND LEAVE THE HELMET FOR THE CREW"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "ASK HIM TO STAY STILL AND LEAVE THE HELMET FOR THE CREW",
+      "explanation": "Removing a helmet can move the neck. Trained crews have the technique.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l113_q1",
+      "level": 113,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A football player takes a hard knock to the head, stands up, then vomits twice and seems sleepy. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "CALL FOR AN AMBULANCE, VOMITING AND DROWSINESS ARE WARNING SIGNS",
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "CALL FOR AN AMBULANCE, VOMITING AND DROWSINESS ARE WARNING SIGNS",
+      "explanation": "Vomiting and sleepiness after a head blow can point to bleeding or swelling inside the skull.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l113_q2",
+      "level": 113,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "A mother says her child bumped his head an hour ago and is now unusually sleepy, though he answers when woken. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "GET HIM MEDICALLY ASSESSED URGENTLY",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "GET HIM MEDICALLY ASSESSED URGENTLY",
+      "explanation": "New drowsiness after a head bump needs assessment even if he answers, because his condition can worsen.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l113_q3",
+      "level": 113,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "A man bumps his head on a cupboard door. There's a small bump, and he's chatting normally. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow.",
+        "APPLY A COLD PACK AND WATCH FOR CHANGES"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "APPLY A COLD PACK AND WATCH FOR CHANGES",
+      "explanation": "A small bump with normal behavior can be managed at home, while watching for delayed symptoms.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l114_q1",
+      "level": 114,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "A roofer working at midday is confused and flushed and has stopped sweating. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "MOVE HIM TO SHADE, START COOLING, AND CALL FOR AN AMBULANCE",
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "MOVE HIM TO SHADE, START COOLING, AND CALL FOR AN AMBULANCE",
+      "explanation": "Confusion with no sweating suggests heatstroke, which can be fatal. Cool him actively while help comes.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l114_q2",
+      "level": 114,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "A coworker on the same site sweats heavily and has cramps but is alert and talking normally. Input safety code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "MOVE HIM TO A COOL PLACE, GIVE WATER IN SMALL SIPS, AND MONITOR",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "MOVE HIM TO A COOL PLACE, GIVE WATER IN SMALL SIPS, AND MONITOR",
+      "explanation": "He's alert and sweating, which suggests heat exhaustion. Rest, cooling, and fluids help, but he should be monitored.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l114_q3",
+      "level": 114,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "A child left in a parked car on a warm day is red-faced and limp. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats.",
+        "GET HIM OUT OF THE CAR NOW AND CALL FOR AN AMBULANCE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "GET HIM OUT OF THE CAR NOW AND CALL FOR AN AMBULANCE",
+      "explanation": "Parked cars heat rapidly. Removing the child from the heat and getting an ambulance are both immediate priorities.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l115_q1",
+      "level": 115,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "A hiker found in the snow was shivering violently, but has stopped shivering and is drowsy. Input rescue code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "TREAT THE END OF SHIVERING AS WORSENING AND CALL FOR RESCUE",
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "TREAT THE END OF SHIVERING AS WORSENING AND CALL FOR RESCUE",
+      "explanation": "Shivering ceasing while drowsy can mean the body is losing the ability to warm itself, a sign of severe cold.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l115_q2",
+      "level": 115,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "Rescuers ask how to keep him warm until they arrive. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "WRAP HIM IN DRY LAYERS, INSULATE FROM THE GROUND, DON'T RUB HIS LIMBS",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "WRAP HIM IN DRY LAYERS, INSULATE FROM THE GROUND, DON'T RUB HIS LIMBS",
+      "explanation": "Dry insulation and ground barriers preserve heat. Rubbing limbs can push cold blood to the core.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l115_q3",
+      "level": 115,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "A man's fingertips are white and numb after hours in freezing weather. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic.",
+        "GET HIM INDOORS AND WARM THEM GENTLY, DON'T RUB THE SKIN"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "GET HIM INDOORS AND WARM THEM GENTLY, DON'T RUB THE SKIN",
+      "explanation": "Frostbitten skin is fragile. Gentle rewarming indoors is best, and rubbing causes tissue damage.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l116_q1",
+      "level": 116,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "A boy pulled from a pool coughs and breathes normally, but he was underwater for about a minute. Input medical code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "CALL FOR AN AMBULANCE, HE NEEDS CHECKING EVEN IF HE SEEMS OK",
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "CALL FOR AN AMBULANCE, HE NEEDS CHECKING EVEN IF HE SEEMS OK",
+      "explanation": "Water in the lungs can cause breathing trouble hours later, so anyone who was submerged should be assessed.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l116_q2",
+      "level": 116,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A man pulled from a lake isn't breathing. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "CALL FOR AN AMBULANCE AND START BREATHS AND COMPRESSIONS AS GUIDED",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "CALL FOR AN AMBULANCE AND START BREATHS AND COMPRESSIONS AS GUIDED",
+      "explanation": "Drowning causes lack of oxygen, so breaths as well as compressions matter. Follow the operator's guidance.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l116_q3",
+      "level": 116,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "A swimmer says he inhaled a little water, coughed a few times, and now feels fine. Input medical code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright.",
+        "MONITOR HIM AND SEEK MEDICAL ADVICE IF BREATHING TROUBLE OR TIREDNESS DEVELOPS"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "MONITOR HIM AND SEEK MEDICAL ADVICE IF BREATHING TROUBLE OR TIREDNESS DEVELOPS",
+      "explanation": "A brief cough with full recovery isn't an emergency, but delayed symptoms would need attention.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l117_q1",
+      "level": 117,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "A skateboarder's forearm is bent at an angle it shouldn't be. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "SUPPORT THE ARM IN THE POSITION FOUND AND CALL FOR HELP",
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "SUPPORT THE ARM IN THE POSITION FOUND AND CALL FOR HELP",
+      "explanation": "Trying to straighten a broken limb can damage nerves and vessels. Support it as it lies.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l117_q2",
+      "level": 117,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "In another case, the bone is poking through the skin and bleeding. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "COVER WITH A CLEAN DRESSING, CONTROL BLEEDING AROUND IT, DON'T PUSH IT BACK",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "COVER WITH A CLEAN DRESSING, CONTROL BLEEDING AROUND IT, DON'T PUSH IT BACK",
+      "explanation": "Infection and blood loss both matter. Cover it, press around the wound, and don't push the bone in.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l117_q3",
+      "level": 117,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "A girl twists her ankle playing. It's swollen, but she can hobble on it. Input code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training.",
+        "REST, ICE, AND ELEVATE IT, AND HAVE IT CHECKED IF IT DOESN'T IMPROVE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "REST, ICE, AND ELEVATE IT, AND HAVE IT CHECKED IF IT DOESN'T IMPROVE",
+      "explanation": "Being able to hobble suggests a sprain, not a fracture, so home care is reasonable with follow-up.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l118_q1",
+      "level": 118,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "A lab worker gets a splash of cleaning chemical in his eye. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "RINSE WITH RUNNING WATER FOR SEVERAL MINUTES AND CALL FOR HELP",
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "RINSE WITH RUNNING WATER FOR SEVERAL MINUTES AND CALL FOR HELP",
+      "explanation": "Immediate, prolonged flushing limits damage. Medical follow-up is still needed.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l118_q2",
+      "level": 118,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "A worker mixes two cleaning products and now coughs while his eyes burn. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "GET HIM TO FRESH AIR, CALL FOR HELP, AND NAME THE PRODUCTS",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "GET HIM TO FRESH AIR, CALL FOR HELP, AND NAME THE PRODUCTS",
+      "explanation": "Some products react to produce harmful gas. Fresh air and product names help responders treat him.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l118_q3",
+      "level": 118,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "A woman gets a chemical powder on her skin and clothes. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization.",
+        "BRUSH OFF DRY POWDER, REMOVE CLOTHING, AND FLUSH WITH WATER"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "BRUSH OFF DRY POWDER, REMOVE CLOTHING, AND FLUSH WITH WATER",
+      "explanation": "Brushing off dry powder first prevents activating it with water. Then remove clothing and flush.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l119_q1",
+      "level": 119,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "A woman 34 weeks pregnant has heavy vaginal bleeding and abdominal pain. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "REQUEST AN AMBULANCE NOW AND HAVE HER LIE DOWN",
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "REQUEST AN AMBULANCE NOW AND HAVE HER LIE DOWN",
+      "explanation": "Heavy bleeding with pain in late pregnancy can threaten both mother and baby.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l119_q2",
+      "level": 119,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "A woman in labor says the baby is coming and she feels the urge to push. The ambulance is ten minutes away. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "STAY WITH HER, KEEP HER CALM, AND FOLLOW THE OPERATOR'S GUIDANCE",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "STAY WITH HER, KEEP HER CALM, AND FOLLOW THE OPERATOR'S GUIDANCE",
+      "explanation": "The operator can talk a caller through a delivery. A calm helper matters more than perfect technique.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l119_q3",
+      "level": 119,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A woman 30 weeks pregnant has occasional irregular, painless tightening. Input code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire.",
+        "NOTE HOW OFTEN IT HAPPENS AND CONTACT HER MIDWIFE OR DOCTOR"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "NOTE HOW OFTEN IT HAPPENS AND CONTACT HER MIDWIFE OR DOCTOR",
+      "explanation": "Irregular, painless tightening is often benign, but tracking it helps a professional judge.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l120_q1",
+      "level": 120,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "At a family barbecue an older man clutches his chest and collapses. The grill is still burning next to him and people are panicking. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "CALL FOR AN AMBULANCE, START COMPRESSIONS, AND KEEP PEOPLE AWAY FROM THE GRILL",
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "CALL FOR AN AMBULANCE, START COMPRESSIONS, AND KEEP PEOPLE AWAY FROM THE GRILL",
+      "explanation": "The medical emergency comes first, but a burning grill next to the patient is a second hazard that someone should manage.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l120_q2",
+      "level": 120,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "The operator asks about his age, medicines, and history, and his wife answers in a rush. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "GIVE HIS HEART HISTORY AND MEDICINES CLEARLY FIRST",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "GIVE HIS HEART HISTORY AND MEDICINES CLEARLY FIRST",
+      "explanation": "Heart history and medicines guide treatment most. Extra detail can follow.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l120_q3",
+      "level": 120,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "Two other guests report symptoms: one feels dizzy after standing in the sun, the other has a small cut from a plate. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils.",
+        "MOVE THE DIZZY GUEST TO SHADE AND MONITOR, COVER THE CUT AFTER"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "MOVE THE DIZZY GUEST TO SHADE AND MONITOR, COVER THE CUT AFTER",
+      "explanation": "Dizziness in heat can escalate. A small cut can wait for a dressing once the patient with dizziness is safe.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    }
+  ]
+}

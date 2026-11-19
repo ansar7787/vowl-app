@@ -1,0 +1,548 @@
+{
+  "gameType": "emergencyHub",
+  "phase": "practice",
+  "batchIndex": 20,
+  "levels": "191-200",
+  "quests": [
+    {
+      "id": "eh_practice_l191_q1",
+      "level": 191,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "A fire starts in a cabin on a passenger ship far from shore. The nearest help is hours away. Input fire code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow.",
+        "REPORT THE SHIP'S POSITION, THE FIRE, AND HOW MANY PEOPLE ARE ABOARD, AND REQUEST MARITIME ASSISTANCE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "REPORT THE SHIP'S POSITION, THE FIRE, AND HOW MANY PEOPLE ARE ABOARD, AND REQUEST MARITIME ASSISTANCE",
+      "explanation": "Position, fire, and headcount are what remote responders need, and the crew must fight the fire in the meantime.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l191_q2",
+      "level": 191,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "Passengers ask whether to launch lifeboats. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "FOLLOW THE SHIP'S EMERGENCY PLAN AND ABANDON ONLY IF THE CAPTAIN ORDERS IT",
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "FOLLOW THE SHIP'S EMERGENCY PLAN AND ABANDON ONLY IF THE CAPTAIN ORDERS IT",
+      "explanation": "Abandoning ship early can be more dangerous than staying. The captain decides.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l191_q3",
+      "level": 191,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "A passenger on the same ship shows signs of a stroke. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "GET REMOTE MEDICAL ADVICE AND ARRANGE MEDICAL EVACUATION IF POSSIBLE",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "GET REMOTE MEDICAL ADVICE AND ARRANGE MEDICAL EVACUATION IF POSSIBLE",
+      "explanation": "Remote advice guides care, and evacuation may be needed for definitive treatment.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l192_q1",
+      "level": 192,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "In a heat wave, a power cut hits a city block with many elderly residents. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats.",
+        "CHECK ON VULNERABLE RESIDENTS, OPEN COOLING SPACES, AND WATCH FOR HEAT ILLNESS"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CHECK ON VULNERABLE RESIDENTS, OPEN COOLING SPACES, AND WATCH FOR HEAT ILLNESS",
+      "explanation": "Elderly residents can deteriorate quickly without cooling, so proactive checks matter.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l192_q2",
+      "level": 192,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "A resident is confused and hot, with dry skin. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "TREAT IT AS HEATSTROKE, COOL HIM AND CALL AN AMBULANCE",
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "TREAT IT AS HEATSTROKE, COOL HIM AND CALL AN AMBULANCE",
+      "explanation": "Confusion with hot, dry skin is a life-threatening heat emergency.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l192_q3",
+      "level": 192,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "The lifts are out, and a bedridden woman lives on the sixth floor. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "FLAG HER FOR ASSISTED EVACUATION AND GIVE CREWS THE FLOOR AND UNIT",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "FLAG HER FOR ASSISTED EVACUATION AND GIVE CREWS THE FLOOR AND UNIT",
+      "explanation": "People who can't move need targeted help, and crews need exact details.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l193_q1",
+      "level": 193,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "An evacuation road is jammed as a wildfire approaches, and cars are overheating. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic.",
+        "REPORT THE JAM AND OPEN AN ALTERNATE ROUTE OR SAFE ZONE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "REPORT THE JAM AND OPEN AN ALTERNATE ROUTE OR SAFE ZONE",
+      "explanation": "A stuck line of cars near fire is a trap, so an alternative route or refuge is essential.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l193_q2",
+      "level": 193,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "A car stalls and blocks the only lane. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "GET THE PASSENGERS OUT AND MOVE THE VEHICLE OR LEAVE IT OFF THE ROAD",
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "GET THE PASSENGERS OUT AND MOVE THE VEHICLE OR LEAVE IT OFF THE ROAD",
+      "explanation": "Getting the lane open matters more than the vehicle.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l193_q3",
+      "level": 193,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A family is trapped in a car as the fire front reaches a corner of the road. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "GIVE THEIR POSITION TO CREWS AND TELL THEM TO STAY IN THE VEHICLE, WINDOWS UP, LOW AND COVERED",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "GIVE THEIR POSITION TO CREWS AND TELL THEM TO STAY IN THE VEHICLE, WINDOWS UP, LOW AND COVERED",
+      "explanation": "A closed vehicle with people down low offers some protection from heat while crews are directed to them.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l194_q1",
+      "level": 194,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "At a marathon, many runners collapse from heat, and the first-aid tent is full. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright.",
+        "REQUEST MORE MEDICAL UNITS, SET UP COOLING, AND TRIAGE THE PATIENTS"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "REQUEST MORE MEDICAL UNITS, SET UP COOLING, AND TRIAGE THE PATIENTS",
+      "explanation": "More capacity, cooling, and triage let the sickest be treated first.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l194_q2",
+      "level": 194,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "A runner is unconscious near the finish line and complained of chest pain earlier. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "TREAT IT AS A POSSIBLE CARDIAC ARREST, SEND FOR AN AED, AND START COMPRESSIONS",
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "TREAT IT AS A POSSIBLE CARDIAC ARREST, SEND FOR AN AED, AND START COMPRESSIONS",
+      "explanation": "An unresponsive runner may need immediate resuscitation regardless of the crowd.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l194_q3",
+      "level": 194,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "Organizers ask whether to continue the race. Input medical code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "PAUSE OR STOP IT UNTIL COOLING AND MEDICAL CAPACITY ARE IN PLACE",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "PAUSE OR STOP IT UNTIL COOLING AND MEDICAL CAPACITY ARE IN PLACE",
+      "explanation": "Continuing adds more patients to an overloaded system.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l195_q1",
+      "level": 195,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "A tanker collides near a river, spilling fuel toward the water. A school bus is stopped nearby. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training.",
+        "REPORT THE SPILL, THE BUS AND CHILDREN, AND THE RIVER RISK"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "REPORT THE SPILL, THE BUS AND CHILDREN, AND THE RIVER RISK",
+      "explanation": "Children, fuel, and water each need a response, so all three must be reported.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l195_q2",
+      "level": 195,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "The bus driver asks whether to evacuate the children. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "MOVE THEM UPWIND AND UPHILL AWAY FROM THE SPILL AND KEEP THEM TOGETHER",
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "MOVE THEM UPWIND AND UPHILL AWAY FROM THE SPILL AND KEEP THEM TOGETHER",
+      "explanation": "Upwind and uphill reduces exposure, and staying together prevents anyone going missing.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l195_q3",
+      "level": 195,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "An environmental team asks about drainage nearby. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "REPORT THE STORM DRAINS AND THE WATER PATH TO THE RIVER",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "REPORT THE STORM DRAINS AND THE WATER PATH TO THE RIVER",
+      "explanation": "Drain locations let crews block the fuel before it reaches the river.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l196_q1",
+      "level": 196,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "At 3 a.m., a woman whispers from a bedroom with two children. Smoke is under the door and she can only say she's on 'Maple something'. Input fire code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization.",
+        "USE THE PHONE LOCATION AND ASK FOR THE BUILDING NAME OR CROSS STREET WHILE FIREFIGHTERS ARE SENT"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "USE THE PHONE LOCATION AND ASK FOR THE BUILDING NAME OR CROSS STREET WHILE FIREFIGHTERS ARE SENT",
+      "explanation": "Help should start moving while more location details are gathered.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l196_q2",
+      "level": 196,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "She wants to open the door to see how bad it is. Input safety code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "DON'T OPEN IT, STAY LOW, SEAL THE GAPS, AND GO TO THE WINDOW TO BE SEEN",
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "DON'T OPEN IT, STAY LOW, SEAL THE GAPS, AND GO TO THE WINDOW TO BE SEEN",
+      "explanation": "Opening could expose them to fire and smoke. Sealing and signaling gives firefighters time.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l196_q3",
+      "level": 196,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "Firefighters arrive and ask where she is in the building. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "GIVE THE FLOOR, UNIT, WINDOW SIDE, AND THAT TWO CHILDREN ARE WITH HER",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "GIVE THE FLOOR, UNIT, WINDOW SIDE, AND THAT TWO CHILDREN ARE WITH HER",
+      "explanation": "Exact position and number of people let crews plan the fastest rescue.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l197_q1",
+      "level": 197,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A driver reports a crash on a mountain road. A car is off the edge, and a truck driver says something smells sweet from his load. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire.",
+        "REPORT THE LOCATION, THE CAR AND THE ODOR, AND KEEP EVERYONE BACK WHILE ASKING ABOUT ANY PLACARD"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "REPORT THE LOCATION, THE CAR AND THE ODOR, AND KEEP EVERYONE BACK WHILE ASKING ABOUT ANY PLACARD",
+      "explanation": "An unexplained odor means the load could be hazardous, so crews need to know and people should keep away.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l197_q2",
+      "level": 197,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "The car's passenger is conscious but says she can't feel her legs. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "TELL HER TO STAY STILL AND REPORT A POSSIBLE SPINAL INJURY",
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "TELL HER TO STAY STILL AND REPORT A POSSIBLE SPINAL INJURY",
+      "explanation": "Loss of sensation suggests spinal damage. Movement could worsen it.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l197_q3",
+      "level": 197,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "Rain starts, and the slope beside the wreck looks like it could slip. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "WARN RESPONDERS ABOUT THE UNSTABLE SLOPE AND KEEP CALLERS BACK",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "WARN RESPONDERS ABOUT THE UNSTABLE SLOPE AND KEEP CALLERS BACK",
+      "explanation": "Responders must know about ground stability before approaching.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l198_q1",
+      "level": 198,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "A mall escalator collapse injures many people. The phone network is overloaded and you have one bar. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils.",
+        "SEND A SHORT MESSAGE WITH THE LOCATION, HAZARD, AND ESTIMATED NUMBER OF INJURED"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "SEND A SHORT MESSAGE WITH THE LOCATION, HAZARD, AND ESTIMATED NUMBER OF INJURED",
+      "explanation": "A brief message gets through overloaded networks and gives the key facts.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l198_q2",
+      "level": 198,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "A woman near the collapse isn't breathing and others are screaming for help. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "ASSIGN SPECIFIC PEOPLE TO CALL, FETCH AN AED, AND START COMPRESSIONS",
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "ASSIGN SPECIFIC PEOPLE TO CALL, FETCH AN AED, AND START COMPRESSIONS",
+      "explanation": "Specific assignments prevent everyone assuming someone else will act.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l198_q3",
+      "level": 198,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "Paramedics arrive and ask you to describe the scene. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "GIVE A BRIEF REPORT: WHERE, WHO IS WORST, AND WHAT HAZARDS REMAIN",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "GIVE A BRIEF REPORT: WHERE, WHO IS WORST, AND WHAT HAZARDS REMAIN",
+      "explanation": "A structured report lets crews go to the most critical patients and avoid hazards.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l199_q1",
+      "level": 199,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "A text arrives: 'lost, cold, one hurt, low battery', with a rough location pin. Input rescue code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow.",
+        "SEND THE PIN TO RESCUE, KEEP THE THREAD OPEN, AND ASK SHORT QUESTIONS"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "SEND THE PIN TO RESCUE, KEEP THE THREAD OPEN, AND ASK SHORT QUESTIONS",
+      "explanation": "The pin can start the search while brief questions fill in details.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l199_q2",
+      "level": 199,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "They report the injured member is shivering and confused. Input rescue code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "TELL THEM TO SHELTER, INSULATE HIM, STAY TOGETHER, AND UPDATE RESCUE",
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "TELL THEM TO SHELTER, INSULATE HIM, STAY TOGETHER, AND UPDATE RESCUE",
+      "explanation": "Confusion with shivering suggests worsening cold exposure. Shelter and insulation are priorities.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l199_q3",
+      "level": 199,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "Fog prevents a helicopter and the ground team is four hours away. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "GIVE SURVIVAL GUIDANCE AND SET CHECK-IN TIMES TO SAVE BATTERY",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "GIVE SURVIVAL GUIDANCE AND SET CHECK-IN TIMES TO SAVE BATTERY",
+      "explanation": "Scheduled contact preserves battery and keeps the group supported.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l200_q1",
+      "level": 200,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "A bus has crashed into a fuel station. There's a fire at the pumps, people are screaming on the bus, and a woman on the pavement isn't moving. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats.",
+        "CALL FIRE, MEDICAL AND POLICE, REPORT THE FUEL FIRE, THE BUS AND THE INJURED, AND WARN PEOPLE TO STAY BACK"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CALL FIRE, MEDICAL AND POLICE, REPORT THE FUEL FIRE, THE BUS AND THE INJURED, AND WARN PEOPLE TO STAY BACK",
+      "explanation": "Fire, fuel, casualties, and bystander safety must all be reported together.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l200_q2",
+      "level": 200,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A bystander says two more fuel tanks are underground near the fire. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "REPORT THE TANKS IMMEDIATELY AND WIDEN THE SAFE DISTANCE",
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "REPORT THE TANKS IMMEDIATELY AND WIDEN THE SAFE DISTANCE",
+      "explanation": "Hidden tanks raise the explosion risk, so crews and bystanders need to be told at once.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l200_q3",
+      "level": 200,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "Command asks you to state the order of priorities. Input fire code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "SAVE LIVES FIRST, THEN CONTAIN THE FIRE AND FUEL, THEN CONTROL THE CROWD AND TRAFFIC",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "SAVE LIVES FIRST, THEN CONTAIN THE FIRE AND FUEL, THEN CONTROL THE CROWD AND TRAFFIC",
+      "explanation": "Life comes first, and controlling the fire and fuel makes the rest safe to manage.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    }
+  ]
+}

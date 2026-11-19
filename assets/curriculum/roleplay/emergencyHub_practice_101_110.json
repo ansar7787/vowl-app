@@ -1,0 +1,548 @@
+{
+  "gameType": "emergencyHub",
+  "phase": "practice",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "eh_practice_l101_q1",
+      "level": 101,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "A man at a bus stop is gasping with his hands on his knees, and his lips look bluish. He says he can't get air. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization.",
+        "CALL FOR AN AMBULANCE AND KEEP HIM SITTING UPRIGHT"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CALL FOR AN AMBULANCE AND KEEP HIM SITTING UPRIGHT",
+      "explanation": "Blue-tinged lips suggest low oxygen, so this is urgent. Sitting upright usually eases breathing while the ambulance is on the way.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l101_q2",
+      "level": 101,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "A woman with asthma has used her inhaler twice and says it isn't helping. She's getting worse. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "TELL THEM THE INHALER HAS FAILED AND ESCALATE",
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "TELL THEM THE INHALER HAS FAILED AND ESCALATE",
+      "explanation": "Failure of a familiar treatment is a key warning sign. Reporting it tells responders this is worse than her usual attacks.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l101_q3",
+      "level": 101,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "A parent says her toddler is breathing very fast, and the skin between his ribs pulls in with every breath. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "DESCRIBE THE FAST BREATHING AND THE RIB PULLING TO THE CREW",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "DESCRIBE THE FAST BREATHING AND THE RIB PULLING TO THE CREW",
+      "explanation": "Skin pulling in between the ribs shows the child is working hard to breathe. Passing this on helps the crew prepare before arriving.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l102_q1",
+      "level": 102,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "A woman is slumped over her office desk. A coworker taps her shoulder and shouts, but she doesn't respond and her chest doesn't seem to move. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire.",
+        "REQUEST AN AMBULANCE AND FOLLOW THE OPERATOR'S CPR INSTRUCTIONS"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "REQUEST AN AMBULANCE AND FOLLOW THE OPERATOR'S CPR INSTRUCTIONS",
+      "explanation": "An unresponsive person who isn't breathing normally needs help immediately. The operator can guide untrained callers through CPR.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l102_q2",
+      "level": 102,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "A man has passed out at a party. He's snoring and breathing, and friends say he's just drunk. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "CALL FOR HELP AND PLACE HIM ON HIS SIDE",
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "CALL FOR HELP AND PLACE HIM ON HIS SIDE",
+      "explanation": "Assuming alcohol may hide an injury or illness. Lying him on his side helps keep his airway clear if he vomits.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l102_q3",
+      "level": 102,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "A teenager faints during a school assembly, wakes within seconds, and is pale but talking clearly. Input code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "LAY HIM DOWN, WATCH CLOSELY, AND CALL IF HE DOESN'T RECOVER FULLY",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "LAY HIM DOWN, WATCH CLOSELY, AND CALL IF HE DOESN'T RECOVER FULLY",
+      "explanation": "A quick recovery is reassuring, so lying down and monitoring is reasonable. Slow recovery, confusion, or chest pain would change that.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l103_q1",
+      "level": 103,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "A man's forearm is cut by a saw. Blood is spurting and soaking through the towel he's holding on it. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils.",
+        "PRESS FIRMLY ON THE WOUND AND CALL FOR AN AMBULANCE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "PRESS FIRMLY ON THE WOUND AND CALL FOR AN AMBULANCE",
+      "explanation": "Firm direct pressure is the most effective immediate control. Spurting suggests a major vessel, so an ambulance is needed too.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l103_q2",
+      "level": 103,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "The towel is soaked through after two minutes of pressing. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "ADD MORE CLOTH ON TOP AND KEEP PRESSING",
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "ADD MORE CLOTH ON TOP AND KEEP PRESSING",
+      "explanation": "Removing the soaked layer can pull off forming clots and restart bleeding. Adding cloth on top keeps pressure steady.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l103_q3",
+      "level": 103,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "A child has a scraped knee that oozes a little blood and stops by itself. Input medical code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "CLEAN IT AND COVER IT, NO AMBULANCE NEEDED",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "CLEAN IT AND COVER IT, NO AMBULANCE NEEDED",
+      "explanation": "Bleeding that stops on its own from a surface scrape is basic first aid, not an emergency.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l104_q1",
+      "level": 104,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "A man's smile looks lopsided and his words are slightly slurred. His wife insists he's fine and it's nothing. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow.",
+        "CALL FOR AN AMBULANCE DESPITE THE REASSURANCE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CALL FOR AN AMBULANCE DESPITE THE REASSURANCE",
+      "explanation": "Facial droop and slurred speech are stroke warning signs. People close to the patient often minimize them, so the signs should win.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l104_q2",
+      "level": 104,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "The man's symptoms clear after five minutes, and he says he feels normal now. Input medical code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "STILL GET MEDICAL HELP, SYMPTOMS THAT CLEAR CAN RETURN",
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "STILL GET MEDICAL HELP, SYMPTOMS THAT CLEAR CAN RETURN",
+      "explanation": "Temporary stroke-like symptoms can be a warning of a bigger event. He still needs to be assessed.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l104_q3",
+      "level": 104,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "While waiting for paramedics, the caller asks whether to give the man a glass of water and an aspirin. Input medical code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "DON'T GIVE FOOD, DRINK OR MEDICINE, WAIT FOR PARAMEDICS",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "DON'T GIVE FOOD, DRINK OR MEDICINE, WAIT FOR PARAMEDICS",
+      "explanation": "Swallowing can be impaired after a stroke, and medicine may be wrong for the type of stroke. Paramedics decide.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l105_q1",
+      "level": 105,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "A woman in her sixties has pressure in her chest, is sweaty and nauseous, and says it's just indigestion. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats.",
+        "CALL FOR AN AMBULANCE, DON'T ACCEPT INDIGESTION AS THE ANSWER"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CALL FOR AN AMBULANCE, DON'T ACCEPT INDIGESTION AS THE ANSWER",
+      "explanation": "Chest pressure with sweating and nausea fits a heart attack. It can't be safely ruled out by guessing.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l105_q2",
+      "level": 105,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "A man collapses at a gym and doesn't respond. A defibrillator is mounted on the wall nearby. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "SEND SOMEONE FOR THE DEFIBRILLATOR WHILE COMPRESSIONS START",
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "SEND SOMEONE FOR THE DEFIBRILLATOR WHILE COMPRESSIONS START",
+      "explanation": "Compressions shouldn't stop while someone fetches the defibrillator. Assigning a specific person saves time.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l105_q3",
+      "level": 105,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "Paramedics ask what happened right before the man collapsed. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "TELL THEM WHAT HE WAS DOING AND ANY COMPLAINTS BEFORE",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "TELL THEM WHAT HE WAS DOING AND ANY COMPLAINTS BEFORE",
+      "explanation": "Activity and complaints just before collapse help crews judge likely causes, such as chest pain during exertion.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l106_q1",
+      "level": 106,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "A toddler is found beside an open bottle of cleaning liquid, with some around his mouth. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic.",
+        "CALL EMERGENCY HELP AND KEEP THE BOTTLE TO SHOW THEM"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CALL EMERGENCY HELP AND KEEP THE BOTTLE TO SHOW THEM",
+      "explanation": "The product label tells responders exactly what he may have swallowed, which determines treatment.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l106_q2",
+      "level": 106,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "A bystander suggests making the toddler vomit to get the liquid out. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "DON'T INDUCE VOMITING UNLESS PROFESSIONALS TELL YOU TO",
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "DON'T INDUCE VOMITING UNLESS PROFESSIONALS TELL YOU TO",
+      "explanation": "Vomiting can burn the throat again or cause inhaling into the lungs. Only professionals should direct that.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l106_q3",
+      "level": 106,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A man feels dizzy and has a headache in a closed garage with a car engine running. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "OPEN THE DOOR, GET HIM TO FRESH AIR, AND CALL FOR HELP",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "OPEN THE DOOR, GET HIM TO FRESH AIR, AND CALL FOR HELP",
+      "explanation": "Exhaust contains carbon monoxide, which builds up quickly indoors. Fresh air first, then medical help.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l107_q1",
+      "level": 107,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "A boy stung by a wasp at a picnic has hives across his chest and says his throat feels tight. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright.",
+        "CALL FOR AN AMBULANCE, THE THROAT TIGHTNESS IS THE WARNING"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CALL FOR AN AMBULANCE, THE THROAT TIGHTNESS IS THE WARNING",
+      "explanation": "Throat tightness after a sting suggests a severe allergic reaction that can block breathing.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l107_q2",
+      "level": 107,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "The boy's mother has a prescribed auto-injector in her bag. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "USE IT AS DIRECTED AND STILL CALL FOR AN AMBULANCE",
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "USE IT AS DIRECTED AND STILL CALL FOR AN AMBULANCE",
+      "explanation": "An auto-injector gives temporary relief, but symptoms can return, so medical care is still needed.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l107_q3",
+      "level": 107,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "A woman has a single itchy red bump where a bee stung her, with no other symptoms. Input code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "WATCH HER FOR NEW SYMPTOMS, NO EMERGENCY YET",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "WATCH HER FOR NEW SYMPTOMS, NO EMERGENCY YET",
+      "explanation": "A local reaction with nothing spreading is expected. Watching for new symptoms keeps it safe.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l108_q1",
+      "level": 108,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "A man in a restaurant grips his throat and can't cough or speak. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training.",
+        "CALL FOR HELP AND USE BACK BLOWS THEN ABDOMINAL THRUSTS"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CALL FOR HELP AND USE BACK BLOWS THEN ABDOMINAL THRUSTS",
+      "explanation": "A person who can't cough or speak is fully blocked. Back blows then abdominal thrusts are the standard adult response.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l108_q2",
+      "level": 108,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "A man is coughing loudly and can speak between coughs after swallowing wrongly. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "ENCOURAGE HIM TO KEEP COUGHING, DON'T STRIKE HIS BACK",
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "ENCOURAGE HIM TO KEEP COUGHING, DON'T STRIKE HIS BACK",
+      "explanation": "A strong cough shows air is moving. Hitting his back could dislodge the object badly.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l108_q3",
+      "level": 108,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "An infant has gone silent while eating, and his face is turning red. The caller is alone. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "CALL AND USE BACK BLOWS AND CHEST THRUSTS, NOT ABDOMINAL THRUSTS",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "CALL AND USE BACK BLOWS AND CHEST THRUSTS, NOT ABDOMINAL THRUSTS",
+      "explanation": "Abdominal thrusts can injure infants. Back blows and chest thrusts are the safer technique.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l109_q1",
+      "level": 109,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "A cook splashes boiling oil across his forearm, and the skin is blistering. Input medical code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization.",
+        "COOL IT UNDER RUNNING WATER AND CALL FOR MEDICAL HELP"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "COOL IT UNDER RUNNING WATER AND CALL FOR MEDICAL HELP",
+      "explanation": "Cooling with running water limits burn depth. Blistering over a large area needs medical assessment.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l109_q2",
+      "level": 109,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "A bystander wants to spread butter on the burn. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "DON'T APPLY BUTTER OR OINTMENTS",
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "DON'T APPLY BUTTER OR OINTMENTS",
+      "explanation": "Greasy products trap heat and raise infection risk. Cool running water is the right choice.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l109_q3",
+      "level": 109,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "A man's sleeve is on fire after a fuel spill at a barbecue. Input code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "GET HIM TO THE GROUND AND SMOTHER THE FLAMES WITH A BLANKET",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "GET HIM TO THE GROUND AND SMOTHER THE FLAMES WITH A BLANKET",
+      "explanation": "Smothering cuts off oxygen. Keeping him moving and upright would fan the flames.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l110_q1",
+      "level": 110,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A woman on a bus starts convulsing, and passengers crowd around. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire.",
+        "CLEAR SPACE AND PROTECT HER HEAD, DON'T RESTRAIN HER"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CLEAR SPACE AND PROTECT HER HEAD, DON'T RESTRAIN HER",
+      "explanation": "Restraining can cause injury. Clearing space and cushioning her head lowers the risk.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l110_q2",
+      "level": 110,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "The convulsions have continued for over five minutes. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "CALL FOR AN AMBULANCE NOW, LONG SEIZURES ARE AN EMERGENCY",
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "CALL FOR AN AMBULANCE NOW, LONG SEIZURES ARE AN EMERGENCY",
+      "explanation": "A seizure lasting more than about five minutes is a medical emergency regardless of history.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l110_q3",
+      "level": 110,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "The seizure has stopped. She's drowsy and confused and says she has epilepsy, and this is normal for her. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "PLACE HER ON HER SIDE, STAY WITH HER, AND CHECK HER BREATHING",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "PLACE HER ON HER SIDE, STAY WITH HER, AND CHECK HER BREATHING",
+      "explanation": "Recovery position and calm company are the right steps. If she doesn't recover or breathing is poor, escalate.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    }
+  ]
+}

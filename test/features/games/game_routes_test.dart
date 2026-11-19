@@ -81,6 +81,8 @@ import 'package:vowl/features/roleplay/elevator_pitch/presentation/pages/elevato
 import 'package:vowl/features/roleplay/elevator_pitch/presentation/pages/elevator_pitch_practice_screen.dart';
 import 'package:vowl/features/roleplay/social_spark/presentation/pages/social_spark_learn_screen.dart';
 import 'package:vowl/features/roleplay/social_spark/presentation/pages/social_spark_practice_screen.dart';
+import 'package:vowl/features/roleplay/emergency_hub/presentation/pages/emergency_hub_learn_screen.dart';
+import 'package:vowl/features/roleplay/emergency_hub/presentation/pages/emergency_hub_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -1133,6 +1135,24 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<SocialSparkPracticeScreen>());
+    });
+
+    test('resolves /learn route for emergencyHub', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state =
+          createMockState('/learn?category=roleplay&gameType=emergencyHub&level=5');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<EmergencyHubLearnScreen>());
+    });
+
+    test('resolves /practice route for emergencyHub', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state =
+          createMockState('/practice?category=roleplay&gameType=emergencyHub&level=5');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<EmergencyHubPracticeScreen>());
     });
   });
 }

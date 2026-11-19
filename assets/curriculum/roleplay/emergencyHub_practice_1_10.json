@@ -1,0 +1,548 @@
+{
+  "gameType": "emergencyHub",
+  "phase": "practice",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "eh_practice_l1_q1",
+      "level": 1,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "A neighbor's dog has been barking loudly for the past twenty minutes. Input code!",
+      "urgencyLevel": 1,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "THIS IS NOT AN EMERGENCY",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "THIS IS NOT AN EMERGENCY",
+      "explanation": "Noise alone isn't a danger to life or safety, so it doesn't need police, fire, or medical help.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l1_q2",
+      "level": 1,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "A man is lying motionless on the sidewalk and does not respond when people call out to him. Input medical code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic.",
+        "CALL FOR AN AMBULANCE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CALL FOR AN AMBULANCE",
+      "explanation": "An unresponsive person needs paramedics right away, since they can check breathing and start treatment on the spot.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l1_q3",
+      "level": 1,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "Flames are rising from a trash can outside a shop, and the plastic bin is starting to melt. Input fire code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "CALL THE FIRE BRIGADE",
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "CALL THE FIRE BRIGADE",
+      "explanation": "Even a small outdoor fire can spread to the shop front, so trained firefighters should handle it.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l2_q1",
+      "level": 2,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "A child is choking on a piece of food at the dinner table and cannot speak. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "CALL AN AMBULANCE NOW",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "CALL AN AMBULANCE NOW",
+      "explanation": "A choking child needs paramedics immediately, since they're trained to clear an airway safely.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l2_q2",
+      "level": 2,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "Someone is trying to force open the back door of the house next door. Input police code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright.",
+        "SEND A PATROL CAR"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "SEND A PATROL CAR",
+      "explanation": "A break-in in progress needs police to arrive quickly, before the intruder gets inside or leaves the area.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l2_q3",
+      "level": 2,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "A small fire has started in an office wastebasket and is producing smoke. Input fire code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "SEND A FIRE ENGINE",
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "SEND A FIRE ENGINE",
+      "explanation": "Even a small fire can grow quickly, so a fire engine should be sent before it spreads.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l3_q1",
+      "level": 3,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "A woman's face and lips are swelling quickly after eating at a restaurant. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "REQUEST MEDICAL HELP URGENTLY",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "REQUEST MEDICAL HELP URGENTLY",
+      "explanation": "A severe allergic reaction can block breathing fast, so medical help must be requested urgently, not just noted.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l3_q2",
+      "level": 3,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A strong smell of gas is filling the kitchen, and no one can find the source. Input safety code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training.",
+        "GET EVERYONE OUT OF THE HOUSE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "GET EVERYONE OUT OF THE HOUSE",
+      "explanation": "Getting everyone outside first removes the risk of explosion or breathing in gas while waiting for help.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l3_q3",
+      "level": 3,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "A student has fainted in a school hallway and is slowly waking up. Input medical code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "CALL FOR PARAMEDICS",
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "CALL FOR PARAMEDICS",
+      "explanation": "Even if she's waking up, paramedics should check why she fainted, since the cause isn't always obvious.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l4_q1",
+      "level": 4,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "You're reporting a car crash with an injured driver, but you don't know the street name. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "GIVE THE NEAREST LANDMARK OR CROSS STREET",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "GIVE THE NEAREST LANDMARK OR CROSS STREET",
+      "explanation": "A nearby landmark or cross street lets responders find the scene even without a house number.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l4_q2",
+      "level": 4,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "The caller is panicking and keeps repeating himself instead of answering questions. Input code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization.",
+        "ANSWER ONE QUESTION AT A TIME, CALMLY"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "ANSWER ONE QUESTION AT A TIME, CALMLY",
+      "explanation": "Focusing on one question at a time helps a panicked caller give clear, useful answers instead of repeating themselves.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l4_q3",
+      "level": 4,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "A witness saw a theft happen but doesn't know the exact address, only which shops are nearby. Input code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "DESCRIBE THE NEAREST SHOPS AS LANDMARKS",
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "DESCRIBE THE NEAREST SHOPS AS LANDMARKS",
+      "explanation": "Naming nearby shops gives police a clear starting point, even without a precise address.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l5_q1",
+      "level": 5,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "A worker has fallen from a short ladder and can't stand up on his own. Input medical code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "CALL FOR MEDICAL HELP AND KEEP HIM STILL",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "CALL FOR MEDICAL HELP AND KEEP HIM STILL",
+      "explanation": "Keeping him still avoids worsening a possible injury while paramedics are on the way.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l5_q2",
+      "level": 5,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "Someone is shouting for help from inside a locked room that is filling with smoke. Input fire code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire.",
+        "CALL THE FIRE BRIGADE, DO NOT OPEN THE DOOR"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CALL THE FIRE BRIGADE, DO NOT OPEN THE DOOR",
+      "explanation": "Opening the door can feed the fire more oxygen, so trained firefighters should open it safely instead.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l5_q3",
+      "level": 5,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "A man has collapsed in a bathroom and is not responding. Input code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "CALL FOR HELP AND AVOID MOVING HIM",
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "CALL FOR HELP AND AVOID MOVING HIM",
+      "explanation": "Avoiding unnecessary movement protects him from further injury until trained help arrives.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l6_q1",
+      "level": 6,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "Sparks are coming from an electrical socket in a bedroom. Input fire code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "CALL THE FIRE DEPARTMENT",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "CALL THE FIRE DEPARTMENT",
+      "explanation": "Firefighters can check for hidden wiring damage and safely handle any fire risk before it spreads.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l6_q2",
+      "level": 6,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "A masked person is seen climbing through a neighbor's window. Input police code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils.",
+        "DISPATCH A POLICE UNIT"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "DISPATCH A POLICE UNIT",
+      "explanation": "A masked person entering through a window strongly suggests a break-in, so police should respond quickly.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l6_q3",
+      "level": 6,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "There's a burning smell in the house but no smoke or flames are visible yet. Input code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "GET EVERYONE OUTSIDE AND REPORT THE SMELL",
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "GET EVERYONE OUTSIDE AND REPORT THE SMELL",
+      "explanation": "Acting on the smell alone, before flames appear, gives everyone the best chance to stay safe.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l7_q1",
+      "level": 7,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "An elderly man has fallen at home and cannot get up on his own. Input medical code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "GET AN AMBULANCE HERE",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "GET AN AMBULANCE HERE",
+      "explanation": "A fall in an older adult can cause a fracture that isn't obvious, so paramedics should check him.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l7_q2",
+      "level": 7,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "A bin fire outside a restaurant is spreading toward the wall of the building. Input fire code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "Offer an unconscious person a glass of water and force them to swallow.",
+        "SEND FIRE ENGINES NOW"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "SEND FIRE ENGINES NOW",
+      "explanation": "Acting quickly stops a small outdoor fire from spreading and damaging the building.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l7_q3",
+      "level": 7,
+      "emergencyCategory": "FIRE & STRUCTURAL HAZARD",
+      "crisisScene": "A woman reports her purse was grabbed by a passing cyclist moments ago. Input police code!",
+      "urgencyLevel": 2,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "CALL THE POLICE AND DESCRIBE THE CYCLIST",
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "CALL THE POLICE AND DESCRIBE THE CYCLIST",
+      "explanation": "Describing the cyclist gives police something to look for while they're still nearby.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l8_q1",
+      "level": 8,
+      "emergencyCategory": "POLICE & ACTIVE THREAT",
+      "crisisScene": "A boy has a deep cut on his leg from broken glass and it's bleeding steadily. Input medical code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Send an informal email to customer service and go about your daily routine.",
+        "APPLY PRESSURE AND CALL FOR AN AMBULANCE",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "APPLY PRESSURE AND CALL FOR AN AMBULANCE",
+      "explanation": "Applying pressure slows the bleeding immediately, while the ambulance call gets trained help on the way.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l8_q2",
+      "level": 8,
+      "emergencyCategory": "DOMESTIC RESCUE & HAZMAT",
+      "crisisScene": "Curtains have caught fire from a candle in a living room. Input fire code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Tell the affected individuals to calm down and walk away without rendering aid.",
+        "Confront armed suspects alone while shouting threats.",
+        "GET EVERYONE OUT AND CALL THE FIRE BRIGADE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "GET EVERYONE OUT AND CALL THE FIRE BRIGADE",
+      "explanation": "Getting everyone out first protects lives, while the call brings trained help to stop the fire spreading.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l8_q3",
+      "level": 8,
+      "emergencyCategory": "TRAFFIC COLLISION & ROAD RESCUE",
+      "crisisScene": "A car window has been smashed and someone is seen reaching inside in a parking lot. Input police code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "REPORT THE VEHICLE AND DESCRIPTION TO POLICE",
+        "Wait until tomorrow morning to see if the situation resolves itself naturally.",
+        "Rush blindly into the active danger zone without any safety gear or training."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "REPORT THE VEHICLE AND DESCRIPTION TO POLICE",
+      "explanation": "A vehicle and description give police something concrete to act on, not just a report that a break-in happened.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l9_q1",
+      "level": 9,
+      "emergencyCategory": "SEVERE WEATHER & NATURAL DISASTER",
+      "crisisScene": "A woman is wheezing badly and struggling to catch her breath during an asthma attack. Input medical code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Post on a neighborhood social forum to ask bystanders what they think you should do.",
+        "CALL FOR PARAMEDICS RIGHT AWAY",
+        "Attempt invasive emergency surgery on the spot using unsterilized kitchen utensils."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "CALL FOR PARAMEDICS RIGHT AWAY",
+      "explanation": "Difficulty breathing can worsen fast, so paramedics need to be called right away, not just noted as a concern.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l9_q2",
+      "level": 9,
+      "emergencyCategory": "PUBLIC INFRASTRUCTURE EMERGENCY",
+      "crisisScene": "A small kitchen fire has spread from the stove to a nearby towel. Input fire code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Ignore the situation completely since it is taking place outside your own property.",
+        "Scream loudly in the street while running in circles to incite mass panic.",
+        "GET FIREFIGHTERS THERE FAST"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "GET FIREFIGHTERS THERE FAST",
+      "explanation": "Fire spreading to a second object shows it's growing, so it needs a fast response, not a routine one.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l9_q3",
+      "level": 9,
+      "emergencyCategory": "ACCIDENTAL POISONING & TOXIN",
+      "crisisScene": "A young child has been missing from the playground for several minutes. Input police code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "GET POLICE TO THE SCENE AND DESCRIBE THE CHILD",
+        "Take a smartphone video from across the street and wait for someone else to call.",
+        "Pull the entire municipal electrical transformer lever without authorization."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "GET POLICE TO THE SCENE AND DESCRIBE THE CHILD",
+      "explanation": "A clear description lets police start searching right away, and every early minute matters for a missing child.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l10_q1",
+      "level": 10,
+      "emergencyCategory": "WATER RESCUE & FLOODING EVENT",
+      "crisisScene": "A man is clutching his chest and says the pain feels like crushing pressure. Input medical code!",
+      "urgencyLevel": 5,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Search online medical blogs for an hour before taking any physical action.",
+        "CALL FOR AN AMBULANCE IMMEDIATELY",
+        "Offer an unconscious person a glass of water and force them to swallow."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "CALL FOR AN AMBULANCE IMMEDIATELY",
+      "explanation": "Crushing chest pain can be a heart attack, so an ambulance must be called immediately, without waiting to see if it passes.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l10_q2",
+      "level": 10,
+      "emergencyCategory": "CRISIS INTERVENTION & SAFETY",
+      "crisisScene": "Flames are climbing the outside wall of a garden shed just a few meters from the house. Input fire code!",
+      "urgencyLevel": 4,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "Assume emergency services are already on their way without verifying.",
+        "Move a victim with a potential spinal injury abruptly to sit them upright.",
+        "CALL FIREFIGHTERS NOW, BEFORE IT REACHES THE HOUSE"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "CALL FIREFIGHTERS NOW, BEFORE IT REACHES THE HOUSE",
+      "explanation": "A shed fire this close to a house can spread within minutes, so firefighters need to know immediately.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    },
+    {
+      "id": "eh_practice_l10_q3",
+      "level": 10,
+      "emergencyCategory": "MEDICAL EMERGENCY & FIRST RESPONDER",
+      "crisisScene": "A driver reports that another car has been following her closely and aggressively for several minutes. Input police code!",
+      "urgencyLevel": 3,
+      "question": "Select the correct emergency dispatch action for this situation:",
+      "options": [
+        "CALL POLICE AND STAY ON A MAIN ROAD",
+        "Send an informal email to customer service and go about your daily routine.",
+        "Throw cold water directly onto an active electrical or grease fire."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "CALL POLICE AND STAY ON A MAIN ROAD",
+      "explanation": "Staying on a busy, well-lit road keeps her safer until police can respond, rather than driving somewhere isolated.",
+      "urgencyScore": 0.95,
+      "timeLimit": 30
+    }
+  ]
+}
