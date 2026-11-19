@@ -1,0 +1,578 @@
+{
+  "gameType": "listeningInference",
+  "phase": "mastery",
+  "batchIndex": 13,
+  "levels": "121-130",
+  "quests": [
+    {
+      "id": "LIS_LISTENINGINFERENCE_L121_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen closely and infer what is really happening.",
+      "hint": "Think about what she really wants when she comments on the temperature of the room.",
+      "explanation": "Mentioning that a room feels a bit cold, rather than directly asking, is a common indirect way of requesting that a window be closed or the heat turned up.",
+      "textToSpeak": "\"It's a little cold in here, isn't it?\" she said, glancing toward the open window.",
+      "question": "What is she most likely asking for?",
+      "options": [
+        "For someone to open the window further",
+        "For the window to be closed"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "listeningInference",
+      "emoji": "🪟",
+      "literalMeaning": "She commented that the room felt cold.",
+      "impliedMeaning": "She is most likely indirectly asking for the window to be closed.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L121_Q2",
+      "interactionType": "choice",
+      "instruction": "What does the situation suggest? Make your best guess.",
+      "hint": "Think about what he really wants when he mentions how heavy the boxes look.",
+      "explanation": "Commenting on how heavy something looks, rather than asking directly, is a common indirect way of requesting help carrying it.",
+      "textToSpeak": "\"Wow, those boxes look really heavy,\" he said, standing near the stack without moving.",
+      "question": "What is he most likely asking for?",
+      "options": [
+        "Help carrying the boxes",
+        "Permission to leave the boxes there"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "listeningInference",
+      "emoji": "📦",
+      "literalMeaning": "He commented that the boxes looked heavy.",
+      "impliedMeaning": "He is most likely indirectly asking for help carrying them.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L121_Q3",
+      "interactionType": "choice",
+      "instruction": "Use the clues to work out the meaning.",
+      "hint": "Think about what she really wants when she mentions that she hasn't eaten since breakfast.",
+      "explanation": "Mentioning not having eaten since breakfast, especially near mealtime, is a common indirect way of suggesting it might be time to eat.",
+      "textToSpeak": "\"I haven't eaten anything since breakfast,\" she said, checking the clock on the wall.",
+      "question": "What is she most likely suggesting?",
+      "options": [
+        "That it might be time to eat",
+        "That she isn't hungry at all"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "listeningInference",
+      "emoji": "🍽️",
+      "literalMeaning": "She mentioned not eating since breakfast while checking the clock.",
+      "impliedMeaning": "She is most likely suggesting it's time to eat.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L122_Q1",
+      "interactionType": "choice",
+      "instruction": "What can you infer from what you hear?",
+      "hint": "Think about what he really means when he says 'I don't suppose there's any coffee left.'",
+      "explanation": "Phrasing a request as 'I don't suppose there's any coffee left' is a polite, indirect way of asking whether coffee is available, without directly demanding some.",
+      "textToSpeak": "\"I don't suppose there's any coffee left, is there?\" he asked, peeking into the kitchen.",
+      "question": "What is he most likely asking?",
+      "options": [
+        "Whether there is coffee available",
+        "Whether the kitchen is being cleaned"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "listeningInference",
+      "emoji": "☕",
+      "literalMeaning": "He asked if there was any coffee left, indirectly.",
+      "impliedMeaning": "He is most likely asking whether coffee is available.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L122_Q2",
+      "interactionType": "choice",
+      "instruction": "Listen for the clues behind the words.",
+      "hint": "Think about what she really means when she says 'I wish I knew how to use this software better.'",
+      "explanation": "Saying she wishes she understood the software better, while working nearby someone who does, is a common indirect way of asking for help.",
+      "textToSpeak": "\"I wish I knew how to use this software better,\" she said, glancing over at her coworker.",
+      "question": "What is she most likely asking for?",
+      "options": [
+        "A different assignment entirely",
+        "Help using the software"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "listeningInference",
+      "emoji": "💻",
+      "literalMeaning": "She said she wished she understood the software better.",
+      "impliedMeaning": "She is most likely indirectly asking for help using it.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L122_Q3",
+      "interactionType": "choice",
+      "instruction": "What is most likely true here?",
+      "hint": "Think about what he really means when he mentions the parking lot is far from the entrance.",
+      "explanation": "Mentioning that the parking lot is far from the entrance, while carrying several bags, is a common indirect way of hinting that a ride closer would help.",
+      "textToSpeak": "\"The parking lot is pretty far from the entrance,\" he said, adjusting the bags in his arms.",
+      "question": "What is he most likely hinting at?",
+      "options": [
+        "That he enjoys the long walk",
+        "That a closer ride or drop-off would help"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "listeningInference",
+      "emoji": "🚗",
+      "literalMeaning": "He mentioned the distant parking lot while carrying bags.",
+      "impliedMeaning": "He is most likely hinting that a closer ride would help.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L123_Q1",
+      "interactionType": "choice",
+      "instruction": "What is the speaker implying?",
+      "hint": "Think about what she really means when she says 'I'm not sure I can make it work with my schedule.'",
+      "explanation": "Saying she's 'not sure' she can make something work, rather than a clear no, is a common way of softening a refusal.",
+      "textToSpeak": "\"Could you help with the event this weekend?\" \"I'm not sure I can make it work with my schedule,\" she said.",
+      "question": "What is she most likely communicating?",
+      "options": [
+        "An enthusiastic yes",
+        "A polite way of declining"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "listeningInference",
+      "emoji": "🗓️",
+      "literalMeaning": "She said she wasn't sure it would work with her schedule.",
+      "impliedMeaning": "She is most likely politely declining the request.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L123_Q2",
+      "interactionType": "choice",
+      "instruction": "What does this situation point to?",
+      "hint": "Think about what he really means when he says 'that's an interesting idea' without adding anything else.",
+      "explanation": "Calling an idea 'interesting' without any further comment or enthusiasm is often a polite, indirect way of expressing doubt or disagreement.",
+      "textToSpeak": "\"What do you think of moving the deadline up?\" \"That's an interesting idea,\" he said, and said nothing more.",
+      "question": "What is he most likely communicating?",
+      "options": [
+        "Polite doubt about the idea",
+        "Strong enthusiasm for the idea"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "listeningInference",
+      "emoji": "🤔",
+      "literalMeaning": "He called the idea 'interesting' and added nothing else.",
+      "impliedMeaning": "He is most likely expressing polite doubt about the idea.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L123_Q3",
+      "interactionType": "choice",
+      "instruction": "Read between the lines and choose the best answer.",
+      "hint": "Think about what she really means when she says 'I might need to check with a few people first.'",
+      "explanation": "Saying she needs to 'check with a few people' before committing is often a polite way of delaying or avoiding a direct commitment.",
+      "textToSpeak": "\"Can we count on your team for the extra shift?\" \"I might need to check with a few people first,\" she said.",
+      "question": "What is she most likely communicating?",
+      "options": [
+        "A polite way of delaying commitment",
+        "An immediate firm agreement"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "listeningInference",
+      "emoji": "👥",
+      "literalMeaning": "She said she needed to check with others first.",
+      "impliedMeaning": "She is most likely delaying a firm commitment.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L124_Q1",
+      "interactionType": "choice",
+      "instruction": "Piece the clues together to find the real meaning.",
+      "hint": "Think about what he really means when he says 'I really shouldn't, but maybe just one.'",
+      "explanation": "Saying 'I really shouldn't, but maybe just one' when offered something is a common way of politely accepting while showing mild hesitation.",
+      "textToSpeak": "\"Want some cake?\" \"I really shouldn't, but maybe just one slice,\" he said, already reaching for a plate.",
+      "question": "What is he most likely communicating?",
+      "options": [
+        "A polite acceptance with mild hesitation",
+        "A firm refusal of the offer"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "listeningInference",
+      "emoji": "🍰",
+      "literalMeaning": "He said he shouldn't but then reached for a plate.",
+      "impliedMeaning": "He is most likely politely accepting despite mild hesitation.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L124_Q2",
+      "interactionType": "choice",
+      "instruction": "What's really going on? Trust the evidence.",
+      "hint": "Think about what she really means when she says 'don't go to any trouble on my account.'",
+      "explanation": "Saying 'don't go to any trouble' when someone offers to help is often a polite phrase said even when the help would actually be appreciated.",
+      "textToSpeak": "\"I can drive you to the airport if you want.\" \"Oh, don't go to any trouble on my account,\" she said.",
+      "question": "What is she most likely communicating?",
+      "options": [
+        "A firm refusal of any help at all",
+        "Polite hesitation, though help may still be welcome"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "listeningInference",
+      "emoji": "🚕",
+      "literalMeaning": "She said not to go to any trouble over her.",
+      "impliedMeaning": "She is most likely showing polite hesitation, though help may still be welcome.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L124_Q3",
+      "interactionType": "choice",
+      "instruction": "Think it through — what do the clues add up to?",
+      "hint": "Think about what he really means when he says 'I wouldn't want to impose.'",
+      "explanation": "Saying 'I wouldn't want to impose' when invited somewhere is a polite phrase that often leaves room for further encouragement to accept.",
+      "textToSpeak": "\"You should join us for dinner tonight.\" \"I wouldn't want to impose,\" he said, glancing hopefully at the group.",
+      "question": "What is he most likely communicating?",
+      "options": [
+        "Polite hesitation while hoping to be invited further",
+        "A definite decision not to come"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "listeningInference",
+      "emoji": "🍽️",
+      "literalMeaning": "He said he wouldn't want to impose while glancing hopefully at the group.",
+      "impliedMeaning": "He is most likely hoping to be encouraged to join, despite the polite hesitation.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L125_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen closely and infer what is really happening.",
+      "hint": "Think about what she really means when she says 'I have a bit of a headache' after being asked to stay longer.",
+      "explanation": "Mentioning a headache right after being asked to stay for an extended meeting is often an indirect, polite way of declining without a direct refusal.",
+      "textToSpeak": "\"Can you stay for another hour to finish this?\" \"I have a bit of a headache,\" she said, rubbing her temples.",
+      "question": "What is she most likely communicating?",
+      "options": [
+        "Full enthusiasm about staying longer",
+        "A polite way of declining to stay"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "listeningInference",
+      "emoji": "🤕",
+      "literalMeaning": "She mentioned a headache right after being asked to stay.",
+      "impliedMeaning": "She is most likely using this as a polite way to decline.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L125_Q2",
+      "interactionType": "choice",
+      "instruction": "What does the situation suggest? Make your best guess.",
+      "hint": "Think about what he really means when he says 'I'll try my best to make it.'",
+      "explanation": "Saying 'I'll try my best' rather than a firm commitment often signals genuine uncertainty about attending, even while sounding hopeful.",
+      "textToSpeak": "\"Can we count on you for the wedding?\" \"I'll try my best to make it,\" he said.",
+      "question": "What is he most likely communicating?",
+      "options": [
+        "A guaranteed, firm attendance",
+        "Genuine uncertainty about attending"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "listeningInference",
+      "emoji": "💍",
+      "literalMeaning": "He said he would 'try his best' rather than confirming.",
+      "impliedMeaning": "He is most likely genuinely uncertain about attending.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L125_Q3",
+      "interactionType": "choice",
+      "instruction": "Use the clues to work out the meaning.",
+      "hint": "Think about what she really means when she says 'that's certainly one option' about a suggestion she was given.",
+      "explanation": "Responding to a suggestion with 'that's certainly one option' rather than agreement suggests the speaker isn't fully convinced it's the best choice.",
+      "textToSpeak": "\"We could just wing the presentation without slides.\" \"That's certainly one option,\" she said, raising an eyebrow.",
+      "question": "What is she most likely communicating?",
+      "options": [
+        "Skepticism about the suggestion",
+        "Full agreement with the suggestion"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "listeningInference",
+      "emoji": "📊",
+      "literalMeaning": "She called it 'one option' while raising an eyebrow.",
+      "impliedMeaning": "She is most likely skeptical about the suggestion.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L126_Q1",
+      "interactionType": "choice",
+      "instruction": "What can you infer from what you hear?",
+      "hint": "Think about what he really means when he says 'I know it's short notice, but...' before making a request.",
+      "explanation": "Opening a request with 'I know it's short notice, but...' is a common way of softening an ask that the speaker suspects may be inconvenient.",
+      "textToSpeak": "\"I know it's short notice, but could you cover my shift tomorrow?\" he asked.",
+      "question": "What is he most likely aware of?",
+      "options": [
+        "That the request may be inconvenient",
+        "That the request is very easy to grant"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "listeningInference",
+      "emoji": "🕐",
+      "literalMeaning": "He acknowledged the short notice before making the request.",
+      "impliedMeaning": "He is most likely aware that the request may be inconvenient.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L126_Q2",
+      "interactionType": "choice",
+      "instruction": "Listen for the clues behind the words.",
+      "hint": "Think about what she really means when she says 'far be it from me to tell you what to do, but...'",
+      "explanation": "Starting with 'far be it from me to tell you what to do' before giving advice anyway is a common way of softening unsolicited advice.",
+      "textToSpeak": "\"Far be it from me to tell you what to do, but maybe reconsider the budget,\" she said gently.",
+      "question": "What is she most likely doing?",
+      "options": [
+        "Refusing to share any opinion at all",
+        "Giving advice while softening how it sounds"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "listeningInference",
+      "emoji": "💡",
+      "literalMeaning": "She softened her advice with a common opening phrase.",
+      "impliedMeaning": "She is giving advice while trying to soften how it sounds.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L126_Q3",
+      "interactionType": "choice",
+      "instruction": "What is most likely true here?",
+      "hint": "Think about what he really means when he says 'this might be a silly question, but...'",
+      "explanation": "Prefacing a question with 'this might be a silly question' is a common way of easing into something the speaker feels unsure or self-conscious about asking.",
+      "textToSpeak": "\"This might be a silly question, but how does this feature actually work?\" he asked.",
+      "question": "What is he most likely feeling?",
+      "options": [
+        "Completely confident about the topic",
+        "Self-conscious about asking the question"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "listeningInference",
+      "emoji": "❓",
+      "literalMeaning": "He softened his question by calling it possibly silly.",
+      "impliedMeaning": "He most likely feels self-conscious about asking the question.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L127_Q1",
+      "interactionType": "choice",
+      "instruction": "What is the speaker implying?",
+      "hint": "Think about what she really wants when she mentions that the last train leaves soon.",
+      "explanation": "Mentioning that the last train leaves soon, while still deep in conversation, is a common indirect way of suggesting it's time to wrap things up.",
+      "textToSpeak": "\"The last train leaves in fifteen minutes,\" she mentioned, still mid-conversation.",
+      "question": "What is she most likely suggesting?",
+      "options": [
+        "That there is plenty of time left",
+        "That it's time to wrap up the conversation"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "listeningInference",
+      "emoji": "🚆",
+      "literalMeaning": "She mentioned the train time while still talking.",
+      "impliedMeaning": "She is most likely suggesting it's time to wrap up.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L127_Q2",
+      "interactionType": "choice",
+      "instruction": "What does this situation point to?",
+      "hint": "Think about what he really means when he says 'far be it from me to complain, but this room is freezing.'",
+      "explanation": "Combining a polite disclaimer with a direct complaint about the temperature is a way of softening the complaint while still communicating a real request.",
+      "textToSpeak": "\"Far be it from me to complain, but this room is absolutely freezing,\" he said, rubbing his arms.",
+      "question": "What is he most likely asking for?",
+      "options": [
+        "For the room to be made warmer",
+        "For the air conditioning to be turned up"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "listeningInference",
+      "emoji": "🥶",
+      "literalMeaning": "He softened a complaint about the cold room.",
+      "impliedMeaning": "He is most likely asking for the room to be made warmer.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L127_Q3",
+      "interactionType": "choice",
+      "instruction": "Read between the lines and choose the best answer.",
+      "hint": "Think about what she really means when she says 'I hate to be that person, but...'",
+      "explanation": "Saying 'I hate to be that person, but...' before a request or complaint is a common way of softening something the speaker feels might be seen as bothersome.",
+      "textToSpeak": "\"I hate to be that person, but could you keep it down a little?\" she asked.",
+      "question": "What is she most likely feeling?",
+      "options": [
+        "Completely unconcerned about asking",
+        "Slightly uncomfortable making the request"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "listeningInference",
+      "emoji": "🤫",
+      "literalMeaning": "She softened her request by calling herself 'that person.'",
+      "impliedMeaning": "She most likely feels slightly uncomfortable making the request.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L128_Q1",
+      "interactionType": "choice",
+      "instruction": "Piece the clues together to find the real meaning.",
+      "hint": "Think about what he really means when he says 'you don't have to, but it would really help.'",
+      "explanation": "Saying 'you don't have to, but it would really help' is a way of making a request feel optional while still clearly hoping the person will agree.",
+      "textToSpeak": "\"You don't have to, but it would really help if you could proofread this,\" he said.",
+      "question": "What is he most likely hoping for?",
+      "options": [
+        "That the person will agree to help",
+        "That the person will definitely say no"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "listeningInference",
+      "emoji": "📝",
+      "literalMeaning": "He softened his request while still hoping for agreement.",
+      "impliedMeaning": "He is most likely hoping the person will agree to help.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L128_Q2",
+      "interactionType": "choice",
+      "instruction": "What's really going on? Trust the evidence.",
+      "hint": "Think about what she really means when she says 'I could be wrong, but I think we're going the wrong way.'",
+      "explanation": "Saying 'I could be wrong, but...' before pointing out a possible mistake is a way of softening a correction to avoid sounding too certain or blunt.",
+      "textToSpeak": "\"I could be wrong, but I think we're going the wrong way,\" she said, glancing at the map.",
+      "question": "What is she most likely doing?",
+      "options": [
+        "Gently pointing out a possible mistake",
+        "Confidently confirming they're on the right path"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "listeningInference",
+      "emoji": "🗺️",
+      "literalMeaning": "She softened a possible correction with 'I could be wrong.'",
+      "impliedMeaning": "She is likely gently pointing out a possible mistake.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L128_Q3",
+      "interactionType": "choice",
+      "instruction": "Think it through — what do the clues add up to?",
+      "hint": "Think about what he really means when he says 'no pressure, but the deadline is tomorrow.'",
+      "explanation": "Saying 'no pressure' right before mentioning a deadline is a common ironic way of applying gentle pressure while sounding relaxed about it.",
+      "textToSpeak": "\"No pressure, but the deadline is tomorrow morning,\" he said with a small smile.",
+      "question": "What is he most likely doing?",
+      "options": [
+        "Removing all urgency from the situation",
+        "Applying gentle pressure while sounding relaxed"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "listeningInference",
+      "emoji": "⏰",
+      "literalMeaning": "He said 'no pressure' right before mentioning the deadline.",
+      "impliedMeaning": "He is most likely applying gentle pressure while sounding relaxed.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L129_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen closely and infer what is really happening.",
+      "hint": "Think about what she really means when she says 'it's not my place to say, but...'",
+      "explanation": "Saying 'it's not my place to say' before offering an opinion anyway is a way of softening advice or criticism that might otherwise seem too direct.",
+      "textToSpeak": "\"It's not my place to say, but maybe you should talk to him about it,\" she said gently.",
+      "question": "What is she most likely doing?",
+      "options": [
+        "Softening advice she still wants to give",
+        "Refusing to offer any opinion"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "listeningInference",
+      "emoji": "💬",
+      "literalMeaning": "She softened her advice with a common disclaimer.",
+      "impliedMeaning": "She is likely softening advice she still wants to give.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L129_Q2",
+      "interactionType": "choice",
+      "instruction": "What does the situation suggest? Make your best guess.",
+      "hint": "Think about what he really means when he says 'I'll leave it up to you, but personally I'd go with the first option.'",
+      "explanation": "Saying 'I'll leave it up to you' while immediately stating a personal preference reveals a real opinion despite the appearance of neutrality.",
+      "textToSpeak": "\"I'll leave it up to you, but personally I'd go with the first option,\" he said.",
+      "question": "What is he most likely revealing?",
+      "options": [
+        "Complete indifference to the outcome",
+        "A real preference despite claiming neutrality"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "listeningInference",
+      "emoji": "🗳️",
+      "literalMeaning": "He claimed neutrality but stated a clear preference.",
+      "impliedMeaning": "He is most likely revealing a real preference despite claiming neutrality.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L129_Q3",
+      "interactionType": "choice",
+      "instruction": "Use the clues to work out the meaning.",
+      "hint": "Think about what she really means when she says 'I'm sure it's nothing, but the noise from upstairs has been constant.'",
+      "explanation": "Saying 'I'm sure it's nothing' before describing a persistent problem is a way of softening a complaint that is, in fact, genuinely bothering her.",
+      "textToSpeak": "\"I'm sure it's nothing, but the noise from upstairs has been constant lately,\" she told the building manager.",
+      "question": "What is she most likely doing?",
+      "options": [
+        "Softening a complaint that genuinely bothers her",
+        "Reporting something that doesn't bother her at all"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "listeningInference",
+      "emoji": "🔊",
+      "literalMeaning": "She softened a complaint about ongoing noise.",
+      "impliedMeaning": "She is most likely softening a complaint that genuinely bothers her.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L130_Q1",
+      "interactionType": "choice",
+      "instruction": "What can you infer from what you hear?",
+      "hint": "Think about what he really means when he says 'far be it from me to rush you, but the taxi's waiting.'",
+      "explanation": "Combining a polite disclaimer with a direct fact about the waiting taxi is a way of gently urging someone to hurry without sounding demanding.",
+      "textToSpeak": "\"Far be it from me to rush you, but the taxi's been waiting outside,\" he said, checking the door.",
+      "question": "What is he most likely asking for?",
+      "options": [
+        "For the person to hurry up",
+        "For the taxi to be canceled"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "listeningInference",
+      "emoji": "🚕",
+      "literalMeaning": "He softened a request to hurry by mentioning the waiting taxi.",
+      "impliedMeaning": "He is most likely asking the person to hurry up.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L130_Q2",
+      "interactionType": "choice",
+      "instruction": "Listen for the clues behind the words.",
+      "hint": "Think about what she really means when she says 'you know your schedule better than I do, but Friday might work well.'",
+      "explanation": "Deferring to someone's own judgment while still suggesting a specific day is a polite way of proposing an option without seeming pushy.",
+      "textToSpeak": "\"You know your schedule better than I do, but Friday might work well for the meeting,\" she said.",
+      "question": "What is she most likely doing?",
+      "options": [
+        "Refusing to suggest any day at all",
+        "Politely proposing a specific option"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "listeningInference",
+      "emoji": "📅",
+      "literalMeaning": "She proposed Friday while deferring to the other person's judgment.",
+      "impliedMeaning": "She is most likely politely proposing a specific option.",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_LISTENINGINFERENCE_L130_Q3",
+      "interactionType": "choice",
+      "instruction": "What is most likely true here?",
+      "hint": "Think about what he really means when he says 'far be it from me to judge, but that's a lot of coffee today.'",
+      "explanation": "Combining a disclaimer about not judging with a direct comment about someone's coffee intake is a lighthearted, indirect way of expressing mild concern.",
+      "textToSpeak": "\"Far be it from me to judge, but that's your fourth coffee today,\" he said with a small grin.",
+      "question": "What is he most likely expressing?",
+      "options": [
+        "Complete disapproval and anger",
+        "Mild concern in a lighthearted way"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "listeningInference",
+      "emoji": "☕",
+      "literalMeaning": "He softened a comment about the coffee count with a grin.",
+      "impliedMeaning": "He is most likely expressing mild concern in a lighthearted way.",
+      "phase": "mastery"
+    }
+  ]
+}

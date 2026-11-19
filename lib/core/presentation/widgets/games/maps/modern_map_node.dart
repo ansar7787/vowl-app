@@ -787,6 +787,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                             'fastSpeechDecoder',
                             'emotionRecognition',
                             'detailSpotlight',
+                            'listeningInference',
                           };
                           final isPhasedGame = phasedGames.contains(widget.gameType);
 
