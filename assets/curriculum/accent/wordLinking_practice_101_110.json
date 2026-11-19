@@ -1,0 +1,920 @@
+{
+  "gameType": "wordLinking",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "phase": "practice",
+  "quests": [
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 101,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "the",
+        "tests",
+        "are",
+        "tomorrow"
+      ],
+      "sentence": "the tests are tomorrow",
+      "textToSpeak": "the tests are tomorrow",
+      "linkedPair": "tests are",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“the” ➔ “tests”",
+        "“tests” ➔ “are”",
+        "“are” ➔ “tomorrow”",
+        "No connected boundary (Full Pause)"
+      ],
+      "correctAnswer": "“tests” ➔ “are”",
+      "correctAnswerIndex": 1,
+      "explanation": "In fast speech the middle /t/ of 'tests' (/tɛsts/) is often very light, but whatever remains still lands on the vowel of 'are', so the cluster does not stop the link. 'Are tomorrow' meets /r/ and /t/ and does not link.",
+      "hint": "Only one boundary here is a consonant followed by a vowel. The word before it ends in a stack of consonants.",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 101,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "Tom",
+        "asks",
+        "us",
+        "every",
+        "week"
+      ],
+      "sentence": "Tom asks us every week",
+      "textToSpeak": "Tom asks us every week",
+      "linkedPair": "asks us",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“Tom” ➔ “asks”",
+        "“asks” ➔ “us”",
+        "“us” ➔ “every”",
+        "“every” ➔ “week”"
+      ],
+      "correctAnswer": "“asks” ➔ “us”",
+      "correctAnswerIndex": 1,
+      "explanation": "Long clusters tend to shrink a little in conversation, but the link survives: the /sks/ of 'asks' ends in an /s/ that runs into the vowel of 'us'. 'Tom asks' and 'us every' link through single consonants, so this is the cluster link.",
+      "hint": "One word ends in three consonants. Find it before a vowel.",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 101,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "the",
+        "show",
+        "lasts",
+        "about",
+        "two",
+        "hours"
+      ],
+      "sentence": "the show lasts about two hours",
+      "textToSpeak": "the show lasts about two hours",
+      "linkedPair": "lasts about",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“the” ➔ “show”",
+        "“lasts” ➔ “about”",
+        "“about” ➔ “two”",
+        "“two” ➔ “hours”"
+      ],
+      "correctAnswer": "“lasts” ➔ “about”",
+      "correctAnswerIndex": 1,
+      "explanation": "The /sts/ at the end of 'lasts' keeps its final /s/, which glides into the weak /ə/ of 'about', with the middle /t/ barely there. Event listings are often read this way.",
+      "hint": "Three consonant sounds in a row end one word. Which boundary follows it?",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 102,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "I",
+        "think",
+        "about",
+        "it",
+        "all",
+        "the",
+        "time"
+      ],
+      "sentence": "I think about it all the time",
+      "textToSpeak": "I think about it all the time",
+      "linkedPair": "think about",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“think” ➔ “about”",
+        "“about” ➔ “it”",
+        "“it” ➔ “all”",
+        "“all” ➔ “the”"
+      ],
+      "correctAnswer": "“think” ➔ “about”",
+      "correctAnswerIndex": 0,
+      "explanation": "Few phrases are used more in spoken English. The /ŋk/ of 'think' hands its /k/ to the weak /ə/ of 'about', so the pair is heard as one chunk. 'About it' and 'it all' use a single /t/.",
+      "hint": "One word ends in a pile of consonants. Which one still lands on a vowel?",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 102,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "she",
+        "quietly",
+        "held",
+        "up",
+        "an",
+        "old",
+        "photo"
+      ],
+      "sentence": "she quietly held up an old photo",
+      "textToSpeak": "she quietly held up an old photo",
+      "linkedPair": "held up",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“held” ➔ “up”",
+        "“up” ➔ “an”",
+        "“an” ➔ “old”",
+        "“old” ➔ “photo”"
+      ],
+      "correctAnswer": "“held” ➔ “up”",
+      "correctAnswerIndex": 0,
+      "explanation": "In fast speech the /d/ of 'held' sometimes disappears, but the /l/ still carries into 'up'. 'Up an' and 'an old' are single-consonant links, so the cluster is what sets 'held up' apart.",
+      "hint": "Find the word whose last two sounds are both consonants and that is followed by a vowel.",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 102,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "we",
+        "camped",
+        "at",
+        "the",
+        "lake"
+      ],
+      "sentence": "we camped at the lake",
+      "textToSpeak": "we camped at the lake",
+      "linkedPair": "camped at",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“we” ➔ “camped”",
+        "“camped” ➔ “at”",
+        "“at” ➔ “the”",
+        "“the” ➔ “lake”"
+      ],
+      "correctAnswer": "“camped” ➔ “at”",
+      "correctAnswerIndex": 1,
+      "explanation": "If you drop the /t/ of 'camped' (/kæmpt/), the past tense fades. Here it lands on the weak /ət/ of 'at', so the cluster is carried across. 'At the' does not link, because 'the' begins with a consonant.",
+      "hint": "Count the final consonants of each word. Only one has three.",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 103,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "she",
+        "kindly",
+        "helped",
+        "us",
+        "out"
+      ],
+      "sentence": "she kindly helped us out",
+      "textToSpeak": "she kindly helped us out",
+      "linkedPair": "helped us",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“she” ➔ “kindly”",
+        "“kindly” ➔ “helped”",
+        "“helped” ➔ “us”",
+        "“us” ➔ “out”"
+      ],
+      "correctAnswer": "“helped” ➔ “us”",
+      "correctAnswerIndex": 2,
+      "explanation": "The /t/ in 'helped' (/lpt/) signals the past tense, and it lands on the weak /əs/ of 'us'. 'Us out' is the other link, through /s/.",
+      "hint": "A long cluster is carried into the next vowel. Which word has the longest ending?",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 103,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "he",
+        "mixed",
+        "up",
+        "the",
+        "orders"
+      ],
+      "sentence": "he mixed up the orders",
+      "textToSpeak": "he mixed up the orders",
+      "linkedPair": "mixed up",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“he” ➔ “mixed”",
+        "“mixed” ➔ “up”",
+        "“up” ➔ “the”",
+        "“the” ➔ “orders”"
+      ],
+      "correctAnswer": "“mixed” ➔ “up”",
+      "correctAnswerIndex": 1,
+      "explanation": "The /kst/ ending of 'mixed' hands its /t/ to the vowel of 'up'. 'The orders' also links, but it is a vowel-to-vowel link with a faint /j/, so it does not count here.",
+      "hint": "Say it slowly: which word piles up three consonant sounds at its end?",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 103,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "we",
+        "finally",
+        "finished",
+        "everything",
+        "by",
+        "noon"
+      ],
+      "sentence": "we finally finished everything by noon",
+      "textToSpeak": "we finally finished everything by noon",
+      "linkedPair": "finished everything",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“we” ➔ “finally”",
+        "“finished” ➔ “everything”",
+        "“everything” ➔ “by”",
+        "“by” ➔ “noon”"
+      ],
+      "correctAnswer": "“finished” ➔ “everything”",
+      "correctAnswerIndex": 1,
+      "explanation": "A long word like 'everything' makes the link feel stretched, but the join is the same: the /t/ of 'finished' runs into its first vowel. 'Everything by' does not link, because /ŋ/ meets /b/.",
+      "hint": "Say each word alone: one ends in a cluster. In the sentence, the cluster is carried into the next vowel.",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 104,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "the",
+        "sixth",
+        "of",
+        "June"
+      ],
+      "sentence": "the sixth of June",
+      "textToSpeak": "the sixth of June",
+      "linkedPair": "sixth of",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“the” ➔ “sixth”",
+        "“sixth” ➔ “of”",
+        "“of” ➔ “June”",
+        "No connected boundary (Full Pause)"
+      ],
+      "correctAnswer": "“sixth” ➔ “of”",
+      "correctAnswerIndex": 1,
+      "explanation": "A date like this is said fast, so the pair can sound like one word. 'Sixth' ends in a hard cluster (/ksθ/) that speakers often simplify; whatever is left lands on the weak /əv/ of 'of'. 'Of June' does not link, because /v/ meets /dʒ/.",
+      "hint": "A date. The ordinal ends in a cluster of three consonants.",
+      "flowRule": "Consonant-to-Vowel Linking (/θ/ and /ð/): The 'th' sounds at the end of a word stay in the airflow and connect to a following vowel instead of stopping.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 104,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "it",
+        "took",
+        "months",
+        "of",
+        "planning"
+      ],
+      "sentence": "it took months of planning",
+      "textToSpeak": "it took months of planning",
+      "linkedPair": "months of",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“it” ➔ “took”",
+        "“took” ➔ “months”",
+        "“months” ➔ “of”",
+        "“of” ➔ “planning”"
+      ],
+      "correctAnswer": "“months” ➔ “of”",
+      "correctAnswerIndex": 2,
+      "explanation": "Why trust your ears less here? 'Months' is /mʌnθs/, a hard cluster, so the /θ/ often drops out. The /s/ still runs into the weak /əv/ of 'of', which is why you cannot rely on hearing every consonant.",
+      "hint": "Skip the shorter endings. Which is the longest cluster before a vowel?",
+      "flowRule": "Consonant-to-Vowel Linking (/θ/ and /ð/): The 'th' sounds at the end of a word stay in the airflow and connect to a following vowel instead of stopping.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 104,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "a",
+        "wealth",
+        "of",
+        "experience"
+      ],
+      "sentence": "a wealth of experience",
+      "textToSpeak": "a wealth of experience",
+      "linkedPair": "wealth of",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“a” ➔ “wealth”",
+        "“wealth” ➔ “of”",
+        "“of” ➔ “experience”",
+        "No connected boundary (Full Pause)"
+      ],
+      "correctAnswer": "“wealth” ➔ “of”",
+      "correctAnswerIndex": 1,
+      "explanation": "In a CV or a job interview this is a typical link. 'Wealth' (/welθ/) hands its breathy /θ/ to the weak /əv/ of 'of'; 'of experience' also links, but through /v/ alone.",
+      "hint": "A cluster makes this link harder to hear. Which boundary has one?",
+      "flowRule": "Consonant-to-Vowel Linking (/θ/ and /ð/): The 'th' sounds at the end of a word stay in the airflow and connect to a following vowel instead of stopping.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 105,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "six",
+        "of",
+        "them",
+        "were",
+        "late"
+      ],
+      "sentence": "six of them were late",
+      "textToSpeak": "six of them were late",
+      "linkedPair": "six of",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“six” ➔ “of”",
+        "“of” ➔ “them”",
+        "“them” ➔ “were”",
+        "“were” ➔ “late”"
+      ],
+      "correctAnswer": "“six” ➔ “of”",
+      "correctAnswerIndex": 0,
+      "explanation": "A number and a weak word make one beat. The /ks/ of 'six' runs into the weak /əv/, so 'six of' is heard as a single chunk. 'Of them' and 'them were' do not link.",
+      "hint": "Look for a word ending in something like /st/, /nd/, /lt/ or /nz/ before a vowel.",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 105,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "drink",
+        "up",
+        "and",
+        "go",
+        "home"
+      ],
+      "sentence": "drink up and go home",
+      "textToSpeak": "drink up and go home",
+      "linkedPair": "drink up",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“drink” ➔ “up”",
+        "“up” ➔ “and”",
+        "“and” ➔ “go”",
+        "“go” ➔ “home”"
+      ],
+      "correctAnswer": "“drink” ➔ “up”",
+      "correctAnswerIndex": 0,
+      "explanation": "Last orders in a bar are said like this, without breaks. The /ŋk/ of 'drink' hands its /k/ to the vowel of 'up', and 'up and' follows through /p/.",
+      "hint": "Skip the single consonants. Which ending has two or more?",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 105,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "I'll",
+        "just",
+        "text",
+        "everyone",
+        "after",
+        "lunch"
+      ],
+      "sentence": "I'll just text everyone after lunch",
+      "textToSpeak": "I'll just text everyone after lunch",
+      "linkedPair": "text everyone",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“I'll” ➔ “just”",
+        "“text” ➔ “everyone”",
+        "“everyone” ➔ “after”",
+        "“after” ➔ “lunch”"
+      ],
+      "correctAnswer": "“text” ➔ “everyone”",
+      "correctAnswerIndex": 1,
+      "explanation": "A message read aloud is said as one phrase. The /kst/ of 'text' loses nothing here: its /t/ lands on the /e/ of 'everyone', and 'everyone after' follows through /n/.",
+      "hint": "One word ends in three consonants. Find it before a vowel.",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 106,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "she",
+        "told",
+        "us",
+        "about",
+        "it"
+      ],
+      "sentence": "she told us about it",
+      "textToSpeak": "she told us about it",
+      "linkedPair": "told us",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“she” ➔ “told”",
+        "“told” ➔ “us”",
+        "“us” ➔ “about”",
+        "“about” ➔ “it”"
+      ],
+      "correctAnswer": "“told” ➔ “us”",
+      "correctAnswerIndex": 1,
+      "explanation": "In fast speech 'told' may keep only its /l/, but either way it runs into the weak /əs/ of 'us'. 'Us about' and 'about it' follow, so the sentence is a chain.",
+      "hint": "Say it slowly from the start and stop at the first run-on.",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 106,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "last",
+        "year",
+        "we",
+        "built",
+        "a",
+        "new",
+        "office"
+      ],
+      "sentence": "last year we built a new office",
+      "textToSpeak": "last year we built a new office",
+      "linkedPair": "built a",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“last” ➔ “year”",
+        "“built” ➔ “a”",
+        "“a” ➔ “new”",
+        "“new” ➔ “office”"
+      ],
+      "correctAnswer": "“built” ➔ “a”",
+      "correctAnswerIndex": 1,
+      "explanation": "'New office' is a vowel-to-vowel link, with a faint /w/, so it is not the cluster link. The cluster link is 'built a': the /t/ of /lt/ lands on the weak /ə/.",
+      "hint": "Of the links in this sentence, one follows a word ending in two consonants.",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 106,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "he",
+        "really",
+        "felt",
+        "overwhelmed",
+        "today"
+      ],
+      "sentence": "he really felt overwhelmed today",
+      "textToSpeak": "he really felt overwhelmed today",
+      "linkedPair": "felt overwhelmed",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“he” ➔ “really”",
+        "“really” ➔ “felt”",
+        "“felt” ➔ “overwhelmed”",
+        "“overwhelmed” ➔ “today”"
+      ],
+      "correctAnswer": "“felt” ➔ “overwhelmed”",
+      "correctAnswerIndex": 2,
+      "explanation": "A longer word with a weak start makes the link easy to miss, because you expect a gap before a new syllable. The /t/ of 'felt' lands on the /əʊ/ of 'overwhelmed' instead.",
+      "hint": "The last sound of the cluster joins the vowel. Which word has such an ending?",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 107,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "bring",
+        "us",
+        "a",
+        "menu"
+      ],
+      "sentence": "bring us a menu",
+      "textToSpeak": "bring us a menu",
+      "linkedPair": "bring us",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“bring” ➔ “us”",
+        "“us” ➔ “a”",
+        "“a” ➔ “menu”",
+        "No connected boundary (Full Pause)"
+      ],
+      "correctAnswer": "“bring” ➔ “us”",
+      "correctAnswerIndex": 0,
+      "explanation": "Asking a server for a menu is polite and quick. The /ŋ/ of 'bring' keeps the voice on into the vowel of 'us', and 'us a' links through /s/.",
+      "hint": "Say the candidates with and without a pause. The nasal link is the one that sounds odd when split.",
+      "flowRule": "Consonant-to-Vowel Linking (nasals): A word ending in /m/ or /n/ keeps your voice running, so the nasal sound flows directly into a following vowel with no gap.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 107,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "then",
+        "he",
+        "jumped",
+        "up",
+        "and",
+        "ran"
+      ],
+      "sentence": "then he jumped up and ran",
+      "textToSpeak": "then he jumped up and ran",
+      "linkedPair": "jumped up",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“then” ➔ “he”",
+        "“jumped” ➔ “up”",
+        "“up” ➔ “and”",
+        "“and” ➔ “ran”"
+      ],
+      "correctAnswer": "“jumped” ➔ “up”",
+      "correctAnswerIndex": 1,
+      "explanation": "A story told quickly runs these together. The /mpt/ of 'jumped' hands its /t/ to the vowel of 'up', and 'up and' links through /p/.",
+      "hint": "Three consonant sounds in a row end one word. Which boundary follows it?",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 107,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "the",
+        "gym",
+        "opens",
+        "at",
+        "six"
+      ],
+      "sentence": "the gym opens at six",
+      "textToSpeak": "the gym opens at six",
+      "linkedPair": "opens at",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“the” ➔ “gym”",
+        "“gym” ➔ “opens”",
+        "“opens” ➔ “at”",
+        "“at” ➔ “six”"
+      ],
+      "correctAnswer": "“opens” ➔ “at”",
+      "correctAnswerIndex": 2,
+      "explanation": "Opening hours are said quickly, so the cluster loses some force. The /nz/ of 'opens' lets its /z/ glide into the weak /ət/ of 'at'; 'gym opens' links through /m/ alone.",
+      "hint": "Which link ends in a heavier consonant group than the others?",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 108,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "he",
+        "picked",
+        "it",
+        "up",
+        "and",
+        "asked",
+        "us"
+      ],
+      "sentence": "he picked it up and asked us",
+      "textToSpeak": "he picked it up and asked us",
+      "linkedPair": "asked us",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“he” ➔ “picked”",
+        "“picked” ➔ “it”",
+        "“it” ➔ “up”",
+        "“asked” ➔ “us”"
+      ],
+      "correctAnswer": "“asked” ➔ “us”",
+      "correctAnswerIndex": 3,
+      "explanation": "The final link is the hardest to hear. 'Asked' ends in /skt/, and its /t/ lands on the weak /əs/ of 'us'. 'Picked it up and' is a chain of links before it.",
+      "hint": "Count the final consonants of each word. Only one has three.",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 108,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "what's",
+        "the",
+        "best",
+        "option",
+        "available"
+      ],
+      "sentence": "what's the best option available",
+      "textToSpeak": "what's the best option available",
+      "linkedPair": "best option",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“what's” ➔ “the”",
+        "“the” ➔ “best”",
+        "“best” ➔ “option”",
+        "“option” ➔ “available”"
+      ],
+      "correctAnswer": "“best” ➔ “option”",
+      "correctAnswerIndex": 2,
+      "explanation": "Comparing choices is a very common situation for this phrase. The /st/ of 'best' hands its /t/ to the /ɒ/ of 'option', and 'option available' links through /n/.",
+      "hint": "Listen for a lighter, quicker consonant group running into a vowel.",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 108,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "I",
+        "just",
+        "want",
+        "a",
+        "quick",
+        "answer"
+      ],
+      "sentence": "I just want a quick answer",
+      "textToSpeak": "I just want a quick answer",
+      "linkedPair": "quick answer",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“I” ➔ “just”",
+        "“just” ➔ “want”",
+        "“want” ➔ “a”",
+        "“quick” ➔ “answer”"
+      ],
+      "correctAnswer": "“quick” ➔ “answer”",
+      "correctAnswerIndex": 3,
+      "explanation": "A request like this is said fast, so the final link is the most reduced. The /k/ of 'quick' is released into the vowel of 'answer', while 'want a' comes first.",
+      "hint": "Count from the end: which link comes last?",
+      "flowRule": "Thought groups: Fluent speakers connect words across a whole phrase, so one sentence can contain several links. The instruction tells you which one to find; listen to the sounds on each side of a boundary.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 109,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "it's",
+        "far",
+        "away",
+        "from",
+        "here"
+      ],
+      "sentence": "it's far away from here",
+      "textToSpeak": "it's far away from here",
+      "linkedPair": "far away",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“it's” ➔ “far”",
+        "“far” ➔ “away”",
+        "“away” ➔ “from”",
+        "“from” ➔ “here”"
+      ],
+      "correctAnswer": "“far” ➔ “away”",
+      "correctAnswerIndex": 1,
+      "explanation": "In 'far away' an /r/ is heard between the words in most accents. In rhotic accents (most of North America, Scotland, Ireland) the /r/ is always pronounced; in non-rhotic ones (for example most of England, Australia, New Zealand) it appears because a vowel follows. Either way, the two words connect.",
+      "hint": "A written r at the end of a word and a vowel sound right after it. Find the pair.",
+      "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 109,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "I",
+        "really",
+        "prefer",
+        "it",
+        "this",
+        "way"
+      ],
+      "sentence": "I really prefer it this way",
+      "textToSpeak": "I really prefer it this way",
+      "linkedPair": "prefer it",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“I” ➔ “really”",
+        "“prefer” ➔ “it”",
+        "“it” ➔ “this”",
+        "“this” ➔ “way”"
+      ],
+      "correctAnswer": "“prefer” ➔ “it”",
+      "correctAnswerIndex": 1,
+      "explanation": "Speakers who drop a final r, as in much of England, bring it back before a vowel: /prɪˈfɜːr ɪt/. Speakers who always say it just link it. If your own accent is rhotic, you are already doing this without thinking.",
+      "hint": "Check the spelling of the first word of each link. One ends in a letter the others do not.",
+      "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 109,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "four",
+        "of",
+        "us",
+        "are",
+        "coming"
+      ],
+      "sentence": "four of us are coming",
+      "textToSpeak": "four of us are coming",
+      "linkedPair": "four of",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“four” ➔ “of”",
+        "“of” ➔ “us”",
+        "“us” ➔ “are”",
+        "“are” ➔ “coming”"
+      ],
+      "correctAnswer": "“four” ➔ “of”",
+      "correctAnswerIndex": 0,
+      "explanation": "For rhotic speakers 'four' always ends in /r/, and non-rhotic speakers add it back before a vowel, so 'four of' is a link everywhere. The /r/ runs into the weak /əv/. 'Of us' and 'us are' link through /v/ and /s/.",
+      "hint": "Numbers can end in r too. Which one is followed by a weak vowel?",
+      "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 110,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "let's",
+        "meet",
+        "after",
+        "eight"
+      ],
+      "sentence": "let's meet after eight",
+      "textToSpeak": "let's meet after eight",
+      "linkedPair": "after eight",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“let's” ➔ “meet”",
+        "“meet” ➔ “after”",
+        "“after” ➔ “eight”",
+        "No connected boundary (Full Pause)"
+      ],
+      "correctAnswer": "“after” ➔ “eight”",
+      "correctAnswerIndex": 2,
+      "explanation": "Non-rhotic speakers say 'after' without an /r/ before a consonant ('after lunch') but add one before 'eight': /ˈɑːftər eɪt/. Rhotic speakers pronounce it each time. 'Meet after' is the other link, through /t/.",
+      "hint": "A word is spelled with a final r (or re) before a vowel sound. Find the pair.",
+      "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 110,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "a",
+        "glass",
+        "of",
+        "water",
+        "and",
+        "a",
+        "towel"
+      ],
+      "sentence": "a glass of water and a towel",
+      "textToSpeak": "a glass of water and a towel",
+      "linkedPair": "water and",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“a” ➔ “glass”",
+        "“water” ➔ “and”",
+        "“and” ➔ “a”",
+        "“a” ➔ “towel”"
+      ],
+      "correctAnswer": "“water” ➔ “and”",
+      "correctAnswerIndex": 1,
+      "explanation": "The r at the end of 'water' is pronounced before the weak /ən/ of 'and' in both kinds of accent. 'Glass of' and 'and a' link through /s/ and /d/. The r link is the one asked for.",
+      "hint": "Check the spelling: which word ends in r or re and is followed by a vowel?",
+      "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
+      "emoji": "🔗"
+    },
+    {
+      "id": "ACC_WORDLINKING_PRACTICE_L$1_Q$2",
+      "gameType": "wordLinking",
+      "phase": "practice",
+      "level": 110,
+      "instruction": "Listen to the sentence and identify where the words link together.",
+      "words": [
+        "I",
+        "still",
+        "never",
+        "ask",
+        "for",
+        "help"
+      ],
+      "sentence": "I still never ask for help",
+      "textToSpeak": "I still never ask for help",
+      "linkedPair": "never ask",
+      "linkingType": "consonant_to_vowel",
+      "options": [
+        "“I” ➔ “still”",
+        "“never” ➔ “ask”",
+        "“ask” ➔ “for”",
+        "“for” ➔ “help”"
+      ],
+      "correctAnswer": "“never” ➔ “ask”",
+      "correctAnswerIndex": 1,
+      "explanation": "Rhotic speakers always pronounce the r of 'never', and non-rhotic speakers bring it back before the vowel of 'ask'. 'For help' does not link, because /r/ meets /h/. Leaving a gap in 'never ask' sounds clipped.",
+      "hint": "Two words in the sentence end in r. Which one is followed by a vowel?",
+      "flowRule": "Linking /r/ (accent-dependent): In rhotic accents (most of North America, Scotland, Ireland) a word-final r is always pronounced, so it simply connects to a following vowel. In non-rhotic accents (for example most of England, Australia, New Zealand) the r is silent before a consonant or a pause but usually returns before a vowel, as in 'far away'. Either way, the two words connect.",
+      "emoji": "🔗"
+    }
+  ]
+}

@@ -1,0 +1,633 @@
+{
+  "gameType": "wordLinking",
+  "batchIndex": 9,
+  "levels": "81-90",
+  "phase": "mastery",
+  "quests": [
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which link joins a vowel straight to a vowel?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "we",
+        "all",
+        "agree"
+      ],
+      "textToSpeak": "we all agree",
+      "correctAnswer": "we all",
+      "hint": "Two words meet with a vowel on each side of the boundary. Which pair?",
+      "explanation": "Both words touch at a vowel: 'we' finishes on /iː/ and 'all' starts on /ɔː/, so there is no consonant to link through. The voice keeps going, and many speakers add a faint /j/ between them. 'All agree' is the familiar consonant-to-vowel kind, so it is not the answer here.",
+      "flowRule": "Vowel-to-Vowel Linking: When one word ends in a vowel sound and the next begins with a vowel sound, the voice flows straight from one to the other with no pause. Many speakers add a faint glide between them, but the transition is smooth either way.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Find the connection between two vowel sounds",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "I",
+        "agree",
+        "with",
+        "that"
+      ],
+      "textToSpeak": "I agree with that",
+      "correctAnswer": "I agree",
+      "hint": "Look at where one word ends and the next begins, and check for a vowel on both sides.",
+      "explanation": "No consonant sits between 'I' and 'agree': /aɪ/ flows straight into /ə/. A faint glide may appear, but nothing stops the voice. Every other boundary in the sentence has a consonant on one side.",
+      "flowRule": "Vowel-to-Vowel Linking: When one word ends in a vowel sound and the next begins with a vowel sound, the voice flows straight from one to the other with no pause. Many speakers add a faint glide between them, but the transition is smooth either way.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Spot the place where two vowel sounds touch",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "see",
+        "you",
+        "at",
+        "nine"
+      ],
+      "textToSpeak": "see you at nine",
+      "correctAnswer": "you at",
+      "hint": "A pronoun looks as if it could link, but it starts with a consonant sound. Find the pair where two real vowels meet.",
+      "explanation": "Rounded lips at the end of 'you' (/uː/) lead into the /æ/ of 'at', and a faint /w/ often appears between them. The start of 'you' is /j/, a consonant, so 'see you' is not a vowel-to-vowel link.",
+      "flowRule": "Vowel-to-Vowel Linking: When one word ends in a vowel sound and the next begins with a vowel sound, the voice flows straight from one to the other with no pause. Many speakers add a faint glide between them, but the transition is smooth either way.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which link has a light /j/ ('y') glide between two vowels?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "tea",
+        "or",
+        "coffee",
+        "please"
+      ],
+      "textToSpeak": "tea or coffee please",
+      "correctAnswer": "tea or",
+      "hint": "Two vowel sounds touch with no consonant between. After a high, smiling vowel, listen for a faint 'y'.",
+      "explanation": "After the high, smiling vowel /iː/ of 'tea', many speakers slide through a faint /j/ before the /ɔː/ of 'or', giving something like 'tea-yor'. It is a transition rather than an extra letter, and some people simply run the vowels together.",
+      "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Find the link that slides through a 'y' sound",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "it's",
+        "free",
+        "of",
+        "charge"
+      ],
+      "textToSpeak": "it's free of charge",
+      "correctAnswer": "free of",
+      "hint": "The word before the link ends in the sound of the letter 'e'. Find what follows it.",
+      "explanation": "The tongue stays high and forward after the /iː/ of 'free', so a light /j/ slips in before 'of'. 'Of charge' has no link, because /v/ meets /tʃ/. A shop sign read aloud keeps this smooth.",
+      "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Where does a faint 'y' appear between two vowels?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "please",
+        "be",
+        "on",
+        "time"
+      ],
+      "textToSpeak": "please be on time",
+      "correctAnswer": "be on",
+      "hint": "Say the short verb and notice that your mouth ends in a smile. What does the next word begin with?",
+      "explanation": "Say 'be' and your mouth ends in a smile; keep it there as 'on' begins and a light /j/ glides across. 'Please be' and 'on time' do not link, because each has a consonant on one side.",
+      "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Spot the vowel-to-vowel link that takes a 'y' glide",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "let",
+        "me",
+        "try",
+        "on",
+        "a",
+        "jacket"
+      ],
+      "textToSpeak": "let me try on a jacket",
+      "correctAnswer": "try on",
+      "hint": "There are two links. One has a consonant on the left, the other a vowel. Find the vowel one.",
+      "explanation": "The diphthong /aɪ/ in 'try' finishes moving towards /ɪ/, so a light /j/ often follows before the vowel of 'on'. 'On a' is the consonant-to-vowel link in this sentence, so it is not the answer.",
+      "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which link has a light /j/ ('y') glide between two vowels?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "they",
+        "all",
+        "enjoyed",
+        "it"
+      ],
+      "textToSpeak": "they all enjoyed it",
+      "correctAnswer": "they all",
+      "hint": "Say each candidate slowly. A light /j/ appears between two vowels only once.",
+      "explanation": "'They' finishes with /eɪ/ gliding towards /ɪ/, and 'all' begins with /ɔː/; a light /j/ eases the move. The other two links are consonant to vowel: 'all enjoyed' through /l/ and 'enjoyed it' through /d/.",
+      "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Find the link that slides through a 'y' sound",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "you",
+        "can",
+        "pay",
+        "in",
+        "cash"
+      ],
+      "textToSpeak": "you can pay in cash",
+      "correctAnswer": "pay in",
+      "hint": "'Can pay' is consonant to consonant. Find the link with vowels on both sides.",
+      "explanation": "Many learners separate 'pay' and 'in' with a pause, which makes the sentence slower than it needs to be. The /eɪ/ ends high and forward, so a faint /j/ slides straight into the /ɪ/ of 'in'.",
+      "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which link has a light /w/ glide between two vowels?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "who",
+        "is",
+        "coming",
+        "tonight"
+      ],
+      "textToSpeak": "who is coming tonight",
+      "correctAnswer": "who is",
+      "hint": "After rounded lips, a faint 'w' often appears. Which link joins two vowels?",
+      "explanation": "Rounded lips at the end of /uː/ ('who') lead into /ɪ/, and a light /w/ often appears, so it can sound like 'who-wis'. It is a transition, not a letter, and speakers differ in how clear it is.",
+      "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Find the link that slides through a 'w' sound",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "go",
+        "on",
+        "I'm",
+        "listening"
+      ],
+      "textToSpeak": "go on I'm listening",
+      "correctAnswer": "go on",
+      "hint": "Two vowel sounds touch with no consonant between. After rounded lips, listen for a faint 'w'.",
+      "explanation": "'Go' finishes with the lips rounding (/əʊ/), and 'on' begins with a vowel, so a light /w/ eases the transition. 'On I'm' is a consonant-to-vowel link through the /n/, so it is not what the question wants.",
+      "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Where does a faint 'w' appear between two vowels?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "I",
+        "visit",
+        "her",
+        "now",
+        "and",
+        "then"
+      ],
+      "textToSpeak": "I visit her now and then",
+      "correctAnswer": "now and",
+      "hint": "The first word ends with your lips rounding. What follows it?",
+      "explanation": "The /aʊ/ in 'now' finishes with rounded lips, so a light /w/ glides across into 'and'. The weak form of 'and' makes it even easier to run the words together.",
+      "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Spot the vowel-to-vowel link that takes a 'w' glide",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "we",
+        "asked",
+        "a",
+        "few",
+        "of",
+        "them"
+      ],
+      "textToSpeak": "we asked a few of them",
+      "correctAnswer": "few of",
+      "hint": "Say each candidate slowly. A light /w/ appears between two vowels only once.",
+      "explanation": "A rounded vowel, /uː/, ends 'few', and 'of' starts with a vowel, so a light /w/ eases across. 'We asked' joins vowels too, but after /iː/, which calls for /j/ instead. Telling the two glides apart is the point of this question.",
+      "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which link joins a consonant to a vowel, not a vowel to a vowel?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "they",
+        "ate",
+        "lunch",
+        "at",
+        "one"
+      ],
+      "textToSpeak": "they ate lunch at one",
+      "correctAnswer": "lunch at",
+      "hint": "One link is vowel to vowel and one is consonant to vowel. Choose the consonant one.",
+      "explanation": "Of the two links here, 'lunch at' is the consonant-to-vowel one: the 'ch' is released into 'at'. 'They ate' joins two vowels, and 'at one' does not link at all, because 'one' begins with /w/.",
+      "flowRule": "Vowel-to-Vowel Linking: When one word ends in a vowel sound and the next begins with a vowel sound, the voice flows straight from one to the other with no pause. Many speakers add a faint glide between them, but the transition is smooth either way.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which pair has no consonant between its two sounds?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "he",
+        "knew",
+        "it",
+        "at",
+        "once"
+      ],
+      "textToSpeak": "he knew it at once",
+      "correctAnswer": "knew it",
+      "hint": "A vowel-to-vowel link and a consonant-to-vowel link both appear. Take the vowel one.",
+      "explanation": "A faint /w/ often slides between the /uː/ of 'knew' and the /ɪ/ of 'it'. 'It at' is the consonant-to-vowel link, and 'at once' is a trap: 'once' begins with /w/, so there is nothing to join.",
+      "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which connection of any kind comes first?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "he",
+        "is",
+        "on",
+        "holiday",
+        "until",
+        "Friday"
+      ],
+      "textToSpeak": "he is on holiday until Friday",
+      "correctAnswer": "he is",
+      "hint": "Say the sentence and take the earliest link of any kind, vowel or consonant.",
+      "explanation": "A faint /j/ often links 'he' (/iː/) and 'is' (/ɪ/). 'Is on' is the next link, then 'holiday until'. This sentence has both kinds of link, which is why the question has to say which one it wants.",
+      "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which link has a light /w/ glide between two vowels?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "I'd",
+        "like",
+        "to",
+        "go",
+        "away",
+        "on",
+        "holiday"
+      ],
+      "textToSpeak": "I'd like to go away on holiday",
+      "correctAnswer": "go away",
+      "hint": "The first word ends with the lips rounded, like 'oo', 'oh' or 'ow'. What comes next?",
+      "explanation": "'Go' ends in /əʊ/ with the lips rounding, and 'away' begins with /ə/, so a faint /w/ eases across. 'Away on' joins vowels too, but 'away' ends in /eɪ/, which calls for /j/. Telling the two apart is the point of this question.",
+      "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Where does a faint 'y' appear between two vowels?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "I",
+        "do",
+        "enjoy",
+        "it"
+      ],
+      "textToSpeak": "I do enjoy it",
+      "correctAnswer": "enjoy it",
+      "hint": "Look for a vowel sound ending a word and another starting the next. One of them ends like 'ee' or 'eye'.",
+      "explanation": "Say 'enjoy it' fast and it becomes one beat: /ɔɪ/ ends high and forward, so a light /j/ eases into the vowel of 'it'. 'Do enjoy' is the other link, after /uː/, which calls for /w/.",
+      "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Spot the vowel-to-vowel link that takes a 'y' glide",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "we",
+        "should",
+        "agree",
+        "on",
+        "a",
+        "date"
+      ],
+      "textToSpeak": "we should agree on a date",
+      "correctAnswer": "agree on",
+      "hint": "No consonant is released here. The tongue just glides from one vowel to the next.",
+      "explanation": "Planning phrases often include a link like this. The /iː/ at the end of 'agree' calls for a light /j/ before 'on', and 'on a' follows as a consonant-to-vowel link.",
+      "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Find the link that slides through a 'w' sound",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "who",
+        "else",
+        "is",
+        "joining",
+        "us"
+      ],
+      "textToSpeak": "who else is joining us",
+      "correctAnswer": "who else",
+      "hint": "No consonant is released here. The lips just relax from one vowel into the next.",
+      "explanation": "Rounded lips at the end of 'who' lead into the /ɛ/ of 'else', so a light /w/ may slide in. 'Else is' and 'joining us' are consonant-to-vowel links. A host asking this would say it in one breath.",
+      "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which link joins a vowel straight to a vowel?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "I'll",
+        "do",
+        "it",
+        "as",
+        "soon",
+        "as",
+        "I",
+        "can"
+      ],
+      "textToSpeak": "I'll do it as soon as I can",
+      "correctAnswer": "do it",
+      "hint": "Skip the consonant links. Where does one vowel run straight into another?",
+      "explanation": "After the /uː/ of 'do', a light /w/ often slides into the /ɪ/ of 'it', so 'do it' is heard as one beat. 'It as', 'soon as' and 'as I' are consonant-to-vowel links, which is why the question has to say which kind you want.",
+      "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which link has a light /j/ ('y') glide between two vowels?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "the",
+        "fee",
+        "is",
+        "included"
+      ],
+      "textToSpeak": "the fee is included",
+      "correctAnswer": "fee is",
+      "hint": "Which pair has a vowel on both sides and a high front vowel on the left?",
+      "explanation": "A faint /j/ slips between the /iː/ of 'fee' and the /ɪ/ of 'is'. 'Is included' links through /z/ instead. Customer-service lines about fees are said quickly and smoothly.",
+      "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Where does a faint 'w' appear between two vowels?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "we'll",
+        "refund",
+        "you",
+        "in",
+        "full"
+      ],
+      "textToSpeak": "we'll refund you in full",
+      "correctAnswer": "you in",
+      "hint": "A pronoun looks as if it links to the verb before it, but it begins with a consonant sound. Find the real vowel link.",
+      "explanation": "'Refund you' looks like it links, but 'you' begins with /j/, a consonant. The real link is the /uː/ of 'you' into the /ɪ/ of 'in', with a light /w/ between. A friendly reassurance runs on without a break.",
+      "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Find the connection between two vowel sounds",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "so",
+        "I",
+        "rang",
+        "a",
+        "manager"
+      ],
+      "textToSpeak": "so I rang a manager",
+      "correctAnswer": "so I",
+      "hint": "A short vowel-to-vowel link opens the sentence. Find it.",
+      "explanation": "The lips round for the /əʊ/ of 'so' and relax into /aɪ/, so a faint /w/ is common. 'Rang a' is the consonant-to-vowel link later in the sentence.",
+      "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Find the link that slides through a 'y' sound",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "the",
+        "taxi",
+        "is",
+        "outside"
+      ],
+      "textToSpeak": "the taxi is outside",
+      "correctAnswer": "taxi is",
+      "hint": "The first word ends in a sound like 'ee'. What comes after it?",
+      "explanation": "'Taxi' ends in a sound close to /iː/, so a light /j/ may appear before 'is'. 'Is outside' links through /z/. A hotel porter might say this in one breath.",
+      "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Spot the vowel-to-vowel link that takes a 'w' glide",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "I'm",
+        "so",
+        "excited",
+        "about",
+        "it"
+      ],
+      "textToSpeak": "I'm so excited about it",
+      "correctAnswer": "so excited",
+      "hint": "Which pair has a vowel on both sides and a rounded vowel on the left?",
+      "explanation": "Excitement speeds speech up, which makes glides more audible. The /əʊ/ of 'so' leads into the /ɪ/ of 'excited' with a light /w/. 'Excited about' and 'about it' are consonant-to-vowel links.",
+      "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Spot the place where two vowel sounds touch",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "we",
+        "flew",
+        "out",
+        "on",
+        "Tuesday"
+      ],
+      "textToSpeak": "we flew out on Tuesday",
+      "correctAnswer": "flew out",
+      "hint": "A vowel-to-vowel link and a consonant-to-vowel link both appear. Take the vowel one.",
+      "explanation": "A faint /w/ often slides between the /uː/ of 'flew' and the /aʊ/ of 'out'. 'Out on' is the consonant-to-vowel link. The two links give this sentence a smooth glide followed by a release.",
+      "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Where does a faint 'y' appear between two vowels?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "the",
+        "movie",
+        "ended",
+        "early"
+      ],
+      "textToSpeak": "the movie ended early",
+      "correctAnswer": "movie ended",
+      "hint": "The first word ends in a sound like 'ee', 'ay' or 'eye'. What comes next?",
+      "explanation": "Talking about films is casual, so the glide is quick: the /i/ at the end of 'movie' leads into /ɛ/ with a light /j/. 'Ended early' is a consonant-to-vowel link through /d/.",
+      "flowRule": "Vowel-to-Vowel Linking with a /j/ glide: After vowels made with the tongue high and forward (/iː/, /eɪ/, /aɪ/, /ɔɪ/), many speakers slide through a light /j/ ('y') before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which link has a light /w/ glide between two vowels?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "I",
+        "know",
+        "all",
+        "about",
+        "it"
+      ],
+      "textToSpeak": "I know all about it",
+      "correctAnswer": "know all",
+      "hint": "Lips rounded, then straight into a new vowel. Where?",
+      "explanation": "People say this phrase very fast, which blends three links together. The vowel link is the /əʊ/ of 'know' into the /ɔː/ of 'all', with a faint /w/. 'All about' and 'about it' are consonant-to-vowel links.",
+      "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Find the link that slides through a 'w' sound",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "prices",
+        "grow",
+        "every",
+        "year"
+      ],
+      "textToSpeak": "prices grow every year",
+      "correctAnswer": "grow every",
+      "hint": "Which link has rounded lips on one side and a vowel on the other?",
+      "explanation": "A news sentence like this is read steadily, but the link still holds: the /əʊ/ in 'grow' relaxes into the /e/ of 'every' with a light /w/. 'Every year' does not link as vowel to vowel, because 'year' begins with /j/.",
+      "flowRule": "Vowel-to-Vowel Linking with a /w/ glide: After vowels made with rounded lips (/uː/, /əʊ/, /aʊ/), many speakers slide through a light /w/ before the next vowel. It is a natural transition, not a written letter, and it is subtle.",
+      "linkingType": "vowel_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    }
+  ]
+}

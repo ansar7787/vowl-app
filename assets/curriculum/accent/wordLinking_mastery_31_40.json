@@ -1,0 +1,616 @@
+{
+  "gameType": "wordLinking",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "phase": "mastery",
+  "quests": [
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which pair is spoken continuously?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "next",
+        "on",
+        "the",
+        "list"
+      ],
+      "textToSpeak": "next on the list",
+      "correctAnswer": "next on",
+      "hint": "A cluster ends the first word. Say it quickly. What survives at the end?",
+      "explanation": "In quick speech the final /t/ of 'next' is light, so what you hear connecting is the /s/ moving into 'on'. Queues and agendas use this phrase constantly.",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which pair is spoken as one smooth unit?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "the",
+        "last",
+        "answer",
+        "was",
+        "wrong"
+      ],
+      "textToSpeak": "the last answer was wrong",
+      "correctAnswer": "last answer",
+      "hint": "Quiz time. What is the final sound of the adjective, and what begins the next word?",
+      "explanation": "Reading a list, you would say 'last' and 'answer' separately. In real speech the /s/ (and /t/ if pronounced) runs into the opening vowel of 'answer'.",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which pair blends so tightly it could be heard as a name?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "we're",
+        "just",
+        "in",
+        "time"
+      ],
+      "textToSpeak": "we're just in time",
+      "correctAnswer": "just in",
+      "hint": "Which pair blends so tightly it could be heard as a name?",
+      "explanation": "This one fools people into hearing a name. 'Just in' is heard as 'Justin' because the final consonant of 'just' flows into the vowel of 'in', which shows how completely a link can blend two words.",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which two words run together?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "it's",
+        "worth",
+        "a",
+        "try"
+      ],
+      "textToSpeak": "it's worth a try",
+      "correctAnswer": "worth a",
+      "hint": "A sound spelled 'th' ends the first word. What happens when a vowel follows?",
+      "explanation": "The breathy /θ/ at the end of 'worth' continues straight into the weak /ə/ of 'a'. A gap there would turn easy encouragement into something much heavier.",
+      "flowRule": "Consonant-to-Vowel Linking (/θ/ and /ð/): The 'th' sounds at the end of a word stay in the airflow and connect to a following vowel instead of stopping.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Find the natural transition",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "you",
+        "can",
+        "sit",
+        "with",
+        "Anna"
+      ],
+      "textToSpeak": "you can sit with Anna",
+      "correctAnswer": "with Anna",
+      "hint": "People's names count. Look for the one that starts with a vowel.",
+      "explanation": "Names are not exempt. 'With' ends in /ð/ (or /θ/ in some accents), and the airflow carries on into the /æ/ of 'Anna'.",
+      "flowRule": "Consonant-to-Vowel Linking (/θ/ and /ð/): The 'th' sounds at the end of a word stay in the airflow and connect to a following vowel instead of stopping.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Find the pair that blends into one chunk",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "the",
+        "fourth",
+        "of",
+        "July"
+      ],
+      "textToSpeak": "the fourth of July",
+      "correctAnswer": "fourth of",
+      "hint": "A date. The ordinal ends with a breathy 'th'.",
+      "explanation": "Dates are said quickly. The /θ/ of 'fourth' slides into the weak /əv/, and then 'of July' cannot link, because /v/ meets /dʒ/.",
+      "flowRule": "Consonant-to-Vowel Linking (/θ/ and /ð/): The 'th' sounds at the end of a word stay in the airflow and connect to a following vowel instead of stopping.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Spot the linking point",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "my",
+        "sister",
+        "lives",
+        "alone"
+      ],
+      "textToSpeak": "my sister lives alone",
+      "correctAnswer": "lives alone",
+      "hint": "Think of the verb ending spelled 's' that sounds like a buzz.",
+      "explanation": "The verb ending is a /z/, and you keep your voice on it as you move into the weak /ə/ at the start of 'alone'. Turning it into a /s/ would sound off.",
+      "flowRule": "Consonant-to-Vowel Linking (continuous sounds): Sounds you can hold, such as /s/, /z/, /f/, /v/ and /ʃ/, glide directly into a following vowel without restarting.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Say it aloud: which words join up?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "my",
+        "brother",
+        "teaches",
+        "English"
+      ],
+      "textToSpeak": "my brother teaches English",
+      "correctAnswer": "teaches English",
+      "hint": "A job-related verb ends in a syllable that sounds like 'iz'.",
+      "explanation": "Job talk: 'teaches' ends in /ɪz/ and 'English' starts with another /ɪ/, so the last /z/ is the bridge. 'Brother teaches' does not link, because 'teaches' starts with /t/.",
+      "flowRule": "Consonant-to-Vowel Linking (continuous sounds): Sounds you can hold, such as /s/, /z/, /f/, /v/ and /ʃ/, glide directly into a following vowel without restarting.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which pair would a fluent speaker say in one breath?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "all",
+        "the",
+        "buses",
+        "are",
+        "late"
+      ],
+      "textToSpeak": "all the buses are late",
+      "correctAnswer": "buses are",
+      "hint": "Plural nouns end in a buzzing sound. Which one is followed by a weak vowel?",
+      "explanation": "Plural nouns end in a buzz, and 'are' is weak, /ə/. So the /z/ of 'buses' lands on it. 'Are late' offers no link at all.",
+      "flowRule": "Consonant-to-Vowel Linking (continuous sounds): Sounds you can hold, such as /s/, /z/, /f/, /v/ and /ʃ/, glide directly into a following vowel without restarting.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Skip the tempting boundary and find the real link",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "get",
+        "back",
+        "in",
+        "line"
+      ],
+      "textToSpeak": "get back in line",
+      "correctAnswer": "back in",
+      "hint": "The first two words might look linked. Check the first sound of the second one.",
+      "explanation": "'Get back' looks as if it could link, but /t/ meets /b/. The real link is the next one: the /k/ of 'back' goes straight into the vowel of 'in'.",
+      "flowRule": "Consonant-to-Vowel Linking (stops): When a word ends in a stop consonant (/p/, /t/, /k/, /b/, /d/, /g/) and the next word starts with a vowel sound, the stop is released straight into that vowel with no pause between the words.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which boundary has no pause?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "he",
+        "came",
+        "home",
+        "and",
+        "slept"
+      ],
+      "textToSpeak": "he came home and slept",
+      "correctAnswer": "home and",
+      "hint": "A place word meets a short connector. What does the place word end with?",
+      "explanation": "'Home' ends in /m/, so your lips are closed when 'and' begins, and the weak /ən/ rolls out of the hum. 'Came home' cannot link because 'home' starts with /h/.",
+      "flowRule": "Consonant-to-Vowel Linking (nasals): A word ending in /m/ or /n/ keeps your voice running, so the nasal sound flows directly into a following vowel with no gap.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which words melt together when you say this naturally?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "look",
+        "up",
+        "the",
+        "number",
+        "later"
+      ],
+      "textToSpeak": "look up the number later",
+      "correctAnswer": "look up",
+      "hint": "The particle here is part of the verb. What does the verb end with?",
+      "explanation": "'Up' is part of the verb here, so it belongs to 'look': the /k/ goes directly into /ʌ/. 'Up the' cannot link: /p/ + /ð/.",
+      "flowRule": "Phrasal verbs: In a verb plus particle (log in, fill out, look up), the particle usually starts with a vowel, so the two words are spoken as one smooth unit.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Listen for the connected words",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "cash",
+        "or",
+        "card",
+        "please"
+      ],
+      "textToSpeak": "cash or card please",
+      "correctAnswer": "cash or",
+      "hint": "Choice questions at the till link the alternatives. What is the very small word in the middle?",
+      "explanation": "'Or' is usually just /ə/ in a choice question, and /ʃ/ flows into it easily, so 'cash or card' is heard as one smooth chunk.",
+      "flowRule": "Weak Function Words: Short grammar words such as a, an, of, at, and, or and it are normally unstressed and begin with a vowel sound, so they attach to the word before them.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Identify the linked pair",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "this",
+        "week",
+        "or",
+        "next"
+      ],
+      "textToSpeak": "this week or next",
+      "correctAnswer": "week or",
+      "hint": "'This week' does not link. Why not?",
+      "explanation": "'This week' looks tempting, but /s/ meets /w/. The /k/ of 'week' is the one that links, into the weak 'or'.",
+      "flowRule": "Weak Function Words: Short grammar words such as a, an, of, at, and, or and it are normally unstressed and begin with a vowel sound, so they attach to the word before them.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Read the line aloud and join the right pair",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "is",
+        "that",
+        "good",
+        "or",
+        "bad"
+      ],
+      "textToSpeak": "is that good or bad",
+      "correctAnswer": "good or",
+      "hint": "The question offers two options. Which boundary goes into the little word between them?",
+      "explanation": "'Good or bad' is a three-beat chunk, and linking is why: the /d/ is released into 'or', so the two options are heard as a pair.",
+      "flowRule": "Weak Function Words: Short grammar words such as a, an, of, at, and, or and it are normally unstressed and begin with a vowel sound, so they attach to the word before them.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which pair is spoken as one smooth unit?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "okay",
+        "got",
+        "it",
+        "thanks"
+      ],
+      "textToSpeak": "okay got it thanks",
+      "correctAnswer": "got it",
+      "hint": "A quick acknowledgement. Which word links into the final word?",
+      "explanation": "People say 'got it' as one word. The /t/ is released straight onto /ɪ/, so the whole phrase lasts barely longer than 'got' on its own.",
+      "flowRule": "Consonant-to-Vowel Linking (stops): When a word ends in a stop consonant (/p/, /t/, /k/, /b/, /d/, /g/) and the next word starts with a vowel sound, the stop is released straight into that vowel with no pause between the words.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which pair would sound choppy if you stopped between them?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "I'll",
+        "ask",
+        "Sam",
+        "later"
+      ],
+      "textToSpeak": "I'll ask Sam later",
+      "correctAnswer": "I'll ask",
+      "hint": "A short future contraction runs into the verb after it.",
+      "explanation": "'I'll' contains the /l/ that links, and 'ask' has an open vowel start, so the pair runs on. 'Ask Sam' cannot link, since /k/ meets /s/.",
+      "flowRule": "Consonant-to-Vowel Linking (/l/): A word-final /l/ stays voiced and slides into the vowel of the next word, so the two words sound like one continuous stretch.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Tap the pair that sounds like one word",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "good",
+        "luck",
+        "on",
+        "Monday"
+      ],
+      "textToSpeak": "good luck on Monday",
+      "correctAnswer": "luck on",
+      "hint": "Wishing someone well. What does the noun end with?",
+      "explanation": "Wishes are said quickly and warmly. The /k/ of 'luck' lands on 'on'. 'Good luck' has /d/ + /l/ and does not link.",
+      "flowRule": "Consonant-to-Vowel Linking (stops): When a word ends in a stop consonant (/p/, /t/, /k/, /b/, /d/, /g/) and the next word starts with a vowel sound, the stop is released straight into that vowel with no pause between the words.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Find the natural transition",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "the",
+        "website",
+        "crashed",
+        "again"
+      ],
+      "textToSpeak": "the website crashed again",
+      "correctAnswer": "crashed again",
+      "hint": "Technology trouble. Which past-tense verb runs into the last word?",
+      "explanation": "Technology complaints often end with 'again'. The /t/ of 'crashed' goes into the weak /ə/ at the start of 'again'. 'Website crashed' does not link, because /t/ meets /k/.",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Find the pair that blends into one chunk",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "it",
+        "keeps",
+        "asking",
+        "me"
+      ],
+      "textToSpeak": "it keeps asking me",
+      "correctAnswer": "keeps asking",
+      "hint": "A software complaint. Which verb ends with a sound that can run into the next word?",
+      "explanation": "The /s/ after /p/ ends 'keeps', and it flows into the opening vowel of 'asking'. 'Asking me' offers /ŋ/ + /m/, so no vowel there.",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Find the smooth connection",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "you",
+        "should",
+        "download",
+        "it"
+      ],
+      "textToSpeak": "you should download it",
+      "correctAnswer": "download it",
+      "hint": "Advice from IT support. Find the verb followed by a short pronoun.",
+      "explanation": "'It' is weak and attaches to the verb before it: the /d/ of 'download' flows into it. 'Should download' cannot link, because /d/ meets /d/.",
+      "flowRule": "Consonant-to-Vowel Linking (stops): When a word ends in a stop consonant (/p/, /t/, /k/, /b/, /d/, /g/) and the next word starts with a vowel sound, the stop is released straight into that vowel with no pause between the words.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Say it aloud: which words join up?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "can",
+        "you",
+        "read",
+        "aloud"
+      ],
+      "textToSpeak": "can you read aloud",
+      "correctAnswer": "read aloud",
+      "hint": "A teacher's request. Which word before 'aloud' ends in a consonant?",
+      "explanation": "A teacher says 'read aloud' as one unit. 'Aloud' begins with /ə/, so the /d/ of 'read' fills the gap. 'Can you' cannot link: /n/ + /j/.",
+      "flowRule": "Consonant-to-Vowel Linking (stops): When a word ends in a stop consonant (/p/, /t/, /k/, /b/, /d/, /g/) and the next word starts with a vowel sound, the stop is released straight into that vowel with no pause between the words.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which pair would a fluent speaker say in one breath?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "look",
+        "at",
+        "page",
+        "ten"
+      ],
+      "textToSpeak": "look at page ten",
+      "correctAnswer": "look at",
+      "hint": "Classroom instruction. A very common verb meets a very weak word.",
+      "explanation": "'At' is weak, so the /k/ of 'look' glides onto it. 'At page' then goes /t/ + /p/, with no vowel.",
+      "flowRule": "Weak Function Words: Short grammar words such as a, an, of, at, and, or and it are normally unstressed and begin with a vowel sound, so they attach to the word before them.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which pair is spoken continuously?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "who",
+        "has",
+        "a",
+        "question"
+      ],
+      "textToSpeak": "who has a question",
+      "correctAnswer": "has a",
+      "hint": "Two small words sit side by side. Which pair connects?",
+      "explanation": "Two small words side by side: the /z/ of 'has' lands on the /ə/ of 'a'. 'Who has' has no link, because /h/ is a consonant.",
+      "flowRule": "Weak Function Words: Short grammar words such as a, an, of, at, and, or and it are normally unstressed and begin with a vowel sound, so they attach to the word before them.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which boundary has no pause?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "Jack's",
+        "parents",
+        "arrive",
+        "tonight"
+      ],
+      "textToSpeak": "Jack's parents arrive tonight",
+      "correctAnswer": "parents arrive",
+      "hint": "A family visit. Which noun ends in a cluster before a verb that starts with a vowel?",
+      "explanation": "'Parents' ends in a cluster, and the /s/ at the end is what links, into the weak /ə/ at the start of 'arrive'. 'Jack's parents' cannot link, since /s/ meets /p/.",
+      "flowRule": "Linking after consonant clusters: When a word ends in two or three consonants, the last one still connects into a following vowel, so the ending is carried across the boundary smoothly.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which words melt together when you say this naturally?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "help",
+        "me",
+        "clean",
+        "up"
+      ],
+      "textToSpeak": "help me clean up",
+      "correctAnswer": "clean up",
+      "hint": "Housework. Find the verb followed by a particle.",
+      "explanation": "Housework talk. 'Clean' ends in /n/ and 'up' starts with a vowel, so they flow together. 'Help me' offers /p/ + /m/, so no link there.",
+      "flowRule": "Phrasal verbs: In a verb plus particle (log in, fill out, look up), the particle usually starts with a vowel, so the two words are spoken as one smooth unit.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Which two words run together?",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "the",
+        "dog",
+        "ate",
+        "my",
+        "shoe"
+      ],
+      "textToSpeak": "the dog ate my shoe",
+      "correctAnswer": "dog ate",
+      "hint": "Someone's pet has been naughty. Which noun ends in a voiced stop before a vowel?",
+      "explanation": "'Dog' ends in /g/ and 'ate' begins with /eɪ/, so the /g/ links into it. 'Ate my' does not link, because /t/ meets /m/.",
+      "flowRule": "Consonant-to-Vowel Linking (stops): When a word ends in a stop consonant (/p/, /t/, /k/, /b/, /d/, /g/) and the next word starts with a vowel sound, the stop is released straight into that vowel with no pause between the words.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Identify the linked pair",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "let's",
+        "catch",
+        "up",
+        "soon"
+      ],
+      "textToSpeak": "let's catch up soon",
+      "correctAnswer": "catch up",
+      "hint": "Making plans with a friend. Which verb ends in 'ch' before a vowel?",
+      "explanation": "Friends say this loosely and fast. The 'ch' of 'catch' flows into 'up'. 'Up soon' cannot link: /p/ + /s/.",
+      "flowRule": "Phrasal verbs: In a verb plus particle (log in, fill out, look up), the particle usually starts with a vowel, so the two words are spoken as one smooth unit.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Read the line aloud and join the right pair",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "I'm",
+        "running",
+        "a",
+        "bit",
+        "late"
+      ],
+      "textToSpeak": "I'm running a bit late",
+      "correctAnswer": "running a",
+      "hint": "A text you might send. Which -ing word runs into a weak vowel?",
+      "explanation": "A late text, read aloud, would run as one phrase. The /ŋ/ bridges into the weak /ə/, and 'a bit' and 'bit late' each have a consonant on one side.",
+      "flowRule": "Linking after -ing: The -ing ending is the single nasal /ŋ/. It stays voiced and flows into a following vowel, with no pause and no added /g/.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_WORDLINKING_MASTERY_L$1_Q$2",
+      "instruction": "Spot the linking point",
+      "subtype": "wordLinking",
+      "interactionType": "speaking",
+      "words": [
+        "good",
+        "morning",
+        "everyone",
+        "welcome"
+      ],
+      "textToSpeak": "good morning everyone welcome",
+      "correctAnswer": "morning everyone",
+      "hint": "A presenter opens a meeting. Which pair does not pause?",
+      "explanation": "A presenter opening a meeting wants to sound warm and confident. The /ŋ/ of 'morning' flows into the vowel of 'everyone', and then 'everyone welcome' does not link (/n/ + /w/).",
+      "flowRule": "Linking after -ing: The -ing ending is the single nasal /ŋ/. It stays voiced and flows into a following vowel, with no pause and no added /g/.",
+      "linkingType": "consonant_to_vowel",
+      "gameType": "wordLinking",
+      "phase": "mastery"
+    }
+  ]
+}
