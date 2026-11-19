@@ -1,0 +1,578 @@
+{
+    "gameType": "shadowingChallenge",
+    "batchIndex": 20,
+    "phase": "mastery",
+    "levels": "191-200",
+    "quests": [
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L191_Q1",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "We've gotta warn her about the delay.",
+            "textToSpeak": "We've gotta warn her about the delay.",
+            "options": [
+                "'gotta' is reduced and the 'h' in 'her' drops.",
+                "'gotta' is reduced but the 'h' in 'her' stays."
+            ],
+            "correctAnswer": "'gotta' is reduced and the 'h' in 'her' drops.",
+            "correctAnswerIndex": 0,
+            "ipa": "/wiːv ˈgɒtə wɔːn ə əˈbaʊt ðə dɪˈleɪ/",
+            "hint": "One part of each option is always true here — the trick is checking whether the second part is also accurate.",
+            "explanation": "Fluent speech often stacks multiple features in one sentence, and both named here are correct for this specific sentence.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L191_Q2",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Whatcha doing this weekend?",
+            "textToSpeak": "Whatcha doing this weekend?",
+            "options": [
+                "'Whatcha' = 'what are you'",
+                "'Whatcha' = 'what did you'"
+            ],
+            "correctAnswer": "'Whatcha' = 'what are you'",
+            "correctAnswerIndex": 0,
+            "ipa": "/ˈwɒtʃə ˈduːɪŋ ðɪs ˈwiːkend/",
+            "hint": "Casual writing sometimes spells out how words actually sound in fast speech — reverse-engineer the original words.",
+            "explanation": "'Whatcha' is a casual spelling of the fast-speech version of 'what are you' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L191_Q3",
+            "instruction": "Identify where the pause falls",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Before the guests arrive, we're gonna set out the plates.",
+            "textToSpeak": "Before the guests arrive, we're gonna set out the plates.",
+            "options": [
+                "The natural pause falls after 'arrive', and 'set out' links smoothly.",
+                "The natural pause falls after 'we're', and 'set out' links smoothly."
+            ],
+            "correctAnswer": "The natural pause falls after 'arrive', and 'set out' links smoothly.",
+            "correctAnswerIndex": 0,
+            "ipa": "/bɪˈfɔː ðə gests əˈraɪv wɪə ˈgənə set‿aʊt ðə pleɪts/",
+            "hint": "One half of each option describes the pause location; the other half describes a speech reduction. Verify both are accurate together.",
+            "explanation": "The pause genuinely falls right after 'arrive', at the end of the opening phrase, not after 'we're' mid-clause; and 'set out' links smoothly exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L192_Q1",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "He should've checked on him earlier.",
+            "textToSpeak": "He should've checked on him earlier.",
+            "options": [
+                "'should've' blends together but 'checked on' stays separate.",
+                "'should've' blends together and 'checked on' links smoothly."
+            ],
+            "correctAnswer": "'should've' blends together and 'checked on' links smoothly.",
+            "correctAnswerIndex": 1,
+            "ipa": "/hi ˈʃʊdəv tʃekt‿ɒn ɪm ˈɜːliə/",
+            "hint": "Don't just check the reduction — verify the other feature named alongside it too.",
+            "explanation": "Every part of the correct option matches natural speech here; the other option gets one of the two features wrong.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L192_Q2",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Gotcha, I'll be there at five.",
+            "textToSpeak": "Gotcha, I'll be there at five.",
+            "options": [
+                "'Gotcha' = 'I got there'",
+                "'Gotcha' = 'I understand (got you)'"
+            ],
+            "correctAnswer": "'Gotcha' = 'I understand (got you)'",
+            "correctAnswerIndex": 1,
+            "ipa": "/ˈgɒtʃə aɪl bi ðeər ət faɪv/",
+            "hint": "Think about what phrase, said quickly and casually, would naturally come out sounding like this.",
+            "explanation": "'Gotcha' is a casual spelling of the fast-speech version of 'I understand (got you)' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L192_Q3",
+            "instruction": "Identify where the pause falls",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Once the plane lands, I'm gonna call her immediately.",
+            "textToSpeak": "Once the plane lands, I'm gonna call her immediately.",
+            "options": [
+                "The natural pause falls after 'I'm', and the 'h' in 'her' drops.",
+                "The natural pause falls after 'lands', and the 'h' in 'her' drops."
+            ],
+            "correctAnswer": "The natural pause falls after 'lands', and the 'h' in 'her' drops.",
+            "correctAnswerIndex": 1,
+            "ipa": "/wʌns ðə pleɪn lændz aɪm ˈgənə kɔːl ər ɪˈmiːdiətli/",
+            "hint": "Read the whole sentence naturally first, then check that the described pause point matches where you actually paused.",
+            "explanation": "The pause genuinely falls right after 'lands', at the end of the opening phrase, not after 'I'm' mid-clause; and the 'h' in 'her' drops exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L193_Q1",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I'm gonna text her before the meeting.",
+            "textToSpeak": "I'm gonna text her before the meeting.",
+            "options": [
+                "'gonna' is reduced and the 'h' in 'her' drops.",
+                "'gonna' is reduced but the 'h' in 'her' stays."
+            ],
+            "correctAnswer": "'gonna' is reduced and the 'h' in 'her' drops.",
+            "correctAnswerIndex": 0,
+            "ipa": "/aɪm ˈgənə tekst ə bɪˈfɔː ðə ˈmiːtɪŋ/",
+            "hint": "This sentence has two things happening at once — a casual reduction AND another connected-speech feature. Check that both parts of the description match.",
+            "explanation": "Both parts of this description are accurate: casual speech reduces the modal phrase, and the connected-speech feature named alongside it happens exactly as described.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L193_Q2",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I betcha he forgets again.",
+            "textToSpeak": "I betcha he forgets again.",
+            "options": [
+                "'betcha' = 'bet you'",
+                "'betcha' = 'better'"
+            ],
+            "correctAnswer": "'betcha' = 'bet you'",
+            "correctAnswerIndex": 0,
+            "ipa": "/aɪ ˈbetʃə hi fəˈgets əˈgen/",
+            "hint": "Sound this word out slowly. What two or more full words is it blending together?",
+            "explanation": "'betcha' is a casual spelling of the fast-speech version of 'bet you' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L193_Q3",
+            "instruction": "Identify where the pause falls",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "After the workshop ends, you oughta ask him directly.",
+            "textToSpeak": "After the workshop ends, you oughta ask him directly.",
+            "options": [
+                "The natural pause falls after 'ends', and the 'h' in 'him' drops.",
+                "The natural pause falls after 'you', and the 'h' in 'him' drops."
+            ],
+            "correctAnswer": "The natural pause falls after 'ends', and the 'h' in 'him' drops.",
+            "correctAnswerIndex": 0,
+            "ipa": "/ˈɑːftə ðə ˈwɜːkʃɒp endz juː ˈɔːtə ɑːsk ɪm dəˈrektli/",
+            "hint": "Check two things here: where the natural pause falls, and whether the reduced form is described correctly.",
+            "explanation": "The pause genuinely falls right after 'ends', at the end of the opening phrase, not after 'you' mid-clause; and the 'h' in 'him' drops exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L194_Q1",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "We could've packed up an hour earlier.",
+            "textToSpeak": "We could've packed up an hour earlier.",
+            "options": [
+                "'could've' blends together but 'packed up' stays separate.",
+                "'could've' blends together and 'packed up' links smoothly."
+            ],
+            "correctAnswer": "'could've' blends together and 'packed up' links smoothly.",
+            "correctAnswerIndex": 1,
+            "ipa": "/wiː ˈkʊdəv pækt‿ʌp ən ˈaʊər ˈɜːliə/",
+            "hint": "Read the sentence at natural, fast speed. Does every part of this description match what you'd actually hear?",
+            "explanation": "This sentence genuinely shows both features together — the casual reduction and the linking or dropped sound both occur exactly as this option states.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L194_Q2",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "There's lotsa food left over.",
+            "textToSpeak": "There's lotsa food left over.",
+            "options": [
+                "'lotsa' = 'lately'",
+                "'lotsa' = 'lots of'"
+            ],
+            "correctAnswer": "'lotsa' = 'lots of'",
+            "correctAnswerIndex": 1,
+            "ipa": "/ðeəz ˈlɒtsə fuːd left ˈəʊvə/",
+            "hint": "This is a fast-speech spelling of a common phrase. Say it slowly to unpack what it really stands for.",
+            "explanation": "'lotsa' is a casual spelling of the fast-speech version of 'lots of' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L194_Q3",
+            "instruction": "Identify where the pause falls",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Once the deadline passes, we coulda missed our chance.",
+            "textToSpeak": "Once the deadline passes, we coulda missed our chance.",
+            "options": [
+                "The natural pause falls after 'we', and 'coulda' means 'could have'.",
+                "The natural pause falls after 'passes', and 'coulda' means 'could have'."
+            ],
+            "correctAnswer": "The natural pause falls after 'passes', and 'coulda' means 'could have'.",
+            "correctAnswerIndex": 1,
+            "ipa": "/wʌns ðə ˈdedlaɪn ˈpɑːsɪz wiː ˈkʊdə mɪst ˈaʊə tʃɑːns/",
+            "hint": "The pause should fall at the end of the introductory phrase, not in the middle of the main clause — check both halves of each option.",
+            "explanation": "The pause genuinely falls right after 'passes', at the end of the opening phrase, not after 'we' mid-clause; and 'coulda' means 'could have' exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L195_Q1",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "She's gonna remind him about the appointment.",
+            "textToSpeak": "She's gonna remind him about the appointment.",
+            "options": [
+                "'gonna' is reduced and the 'h' in 'him' drops.",
+                "'gonna' is reduced but the 'h' in 'him' stays."
+            ],
+            "correctAnswer": "'gonna' is reduced and the 'h' in 'him' drops.",
+            "correctAnswerIndex": 0,
+            "ipa": "/ʃiz ˈgənə rɪˈmaɪnd ɪm əˈbaʊt ði əˈpɔɪntmənt/",
+            "hint": "One part of each option is always true here — the trick is checking whether the second part is also accurate.",
+            "explanation": "Fluent speech often stacks multiple features in one sentence, and both named here are correct for this specific sentence.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L195_Q2",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Let's get outta here before it rains.",
+            "textToSpeak": "Let's get outta here before it rains.",
+            "options": [
+                "'outta' = 'out of'",
+                "'outta' = 'out at'"
+            ],
+            "correctAnswer": "'outta' = 'out of'",
+            "correctAnswerIndex": 0,
+            "ipa": "/lets get ˈaʊtə hɪə bɪˈfɔːr ɪt reɪnz/",
+            "hint": "Casual writing sometimes spells out how words actually sound in fast speech — reverse-engineer the original words.",
+            "explanation": "'outta' is a casual spelling of the fast-speech version of 'out of' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L195_Q3",
+            "instruction": "Identify where the pause falls",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Before the trip starts, we gotta pack up the car.",
+            "textToSpeak": "Before the trip starts, we gotta pack up the car.",
+            "options": [
+                "The natural pause falls after 'starts', and 'pack up' links smoothly.",
+                "The natural pause falls after 'we', and 'pack up' links smoothly."
+            ],
+            "correctAnswer": "The natural pause falls after 'starts', and 'pack up' links smoothly.",
+            "correctAnswerIndex": 0,
+            "ipa": "/bɪˈfɔː ðə trɪp stɑːts wiː ˈgɒtə pæk‿ʌp ðə kɑː/",
+            "hint": "One half of each option describes the pause location; the other half describes a speech reduction. Verify both are accurate together.",
+            "explanation": "The pause genuinely falls right after 'starts', at the end of the opening phrase, not after 'we' mid-clause; and 'pack up' links smoothly exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L196_Q1",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I would've backed away immediately.",
+            "textToSpeak": "I would've backed away immediately.",
+            "options": [
+                "'would've' blends together but 'backed away' stays separate.",
+                "'would've' blends together and 'backed away' links smoothly."
+            ],
+            "correctAnswer": "'would've' blends together and 'backed away' links smoothly.",
+            "correctAnswerIndex": 1,
+            "ipa": "/aɪ ˈwʊdəv bækt‿əˈweɪ ɪˈmiːdiətli/",
+            "hint": "Don't just check the reduction — verify the other feature named alongside it too.",
+            "explanation": "Every part of the correct option matches natural speech here; the other option gets one of the two features wrong.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L196_Q2",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Want a cuppa before you leave?",
+            "textToSpeak": "Want a cuppa before you leave?",
+            "options": [
+                "'cuppa' = 'copy of'",
+                "'cuppa' = 'cup of'"
+            ],
+            "correctAnswer": "'cuppa' = 'cup of'",
+            "correctAnswerIndex": 1,
+            "ipa": "/wɒnt ə ˈkʌpə bɪˈfɔː juː liːv/",
+            "hint": "Think about what phrase, said quickly and casually, would naturally come out sounding like this.",
+            "explanation": "'cuppa' is a casual spelling of the fast-speech version of 'cup of' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L196_Q3",
+            "instruction": "Identify where the pause falls",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "When the bell rings, I'm gonna hand in my paper.",
+            "textToSpeak": "When the bell rings, I'm gonna hand in my paper.",
+            "options": [
+                "The natural pause falls after 'I'm', and 'hand in' links smoothly.",
+                "The natural pause falls after 'rings', and 'hand in' links smoothly."
+            ],
+            "correctAnswer": "The natural pause falls after 'rings', and 'hand in' links smoothly.",
+            "correctAnswerIndex": 1,
+            "ipa": "/wen ðə bel rɪŋz aɪm ˈgənə hænd‿ɪn maɪ ˈpeɪpə/",
+            "hint": "Read the whole sentence naturally first, then check that the described pause point matches where you actually paused.",
+            "explanation": "The pause genuinely falls right after 'rings', at the end of the opening phrase, not after 'I'm' mid-clause; and 'hand in' links smoothly exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L197_Q1",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "We're gonna call him about an update.",
+            "textToSpeak": "We're gonna call him about an update.",
+            "options": [
+                "'gonna' is reduced and the 'h' in 'him' drops.",
+                "'gonna' is reduced but the 'h' in 'him' stays."
+            ],
+            "correctAnswer": "'gonna' is reduced and the 'h' in 'him' drops.",
+            "correctAnswerIndex": 0,
+            "ipa": "/wɪə ˈgənə kɔːl ɪm əˈbaʊt ən ˈʌpdeɪt/",
+            "hint": "This sentence has two things happening at once — a casual reduction AND another connected-speech feature. Check that both parts of the description match.",
+            "explanation": "Both parts of this description are accurate: casual speech reduces the modal phrase, and the connected-speech feature named alongside it happens exactly as described.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L197_Q2",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I'm gonna need more time.",
+            "textToSpeak": "I'm gonna need more time.",
+            "options": [
+                "'gonna' = 'going to'",
+                "'gonna' = 'got to'"
+            ],
+            "correctAnswer": "'gonna' = 'going to'",
+            "correctAnswerIndex": 0,
+            "ipa": "/aɪm ˈgənə niːd mɔː taɪm/",
+            "hint": "Sound this word out slowly. What two or more full words is it blending together?",
+            "explanation": "'gonna' is a casual spelling of the fast-speech version of 'going to' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L197_Q3",
+            "instruction": "Identify where the pause falls",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Once the movie starts, we oughta turn off our phones.",
+            "textToSpeak": "Once the movie starts, we oughta turn off our phones.",
+            "options": [
+                "The natural pause falls after 'starts', and 'turn off' links smoothly.",
+                "The natural pause falls after 'we', and 'turn off' links smoothly."
+            ],
+            "correctAnswer": "The natural pause falls after 'starts', and 'turn off' links smoothly.",
+            "correctAnswerIndex": 0,
+            "ipa": "/wʌns ðə ˈmuːvi stɑːts wiː ˈɔːtə tɜːn‿ɒf ˈaʊə fəʊnz/",
+            "hint": "Check two things here: where the natural pause falls, and whether the reduced form is described correctly.",
+            "explanation": "The pause genuinely falls right after 'starts', at the end of the opening phrase, not after 'we' mid-clause; and 'turn off' links smoothly exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L198_Q1",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "He might've handed in the wrong form.",
+            "textToSpeak": "He might've handed in the wrong form.",
+            "options": [
+                "'might've' blends together but 'handed in' stays separate.",
+                "'might've' blends together and 'handed in' links smoothly."
+            ],
+            "correctAnswer": "'might've' blends together and 'handed in' links smoothly.",
+            "correctAnswerIndex": 1,
+            "ipa": "/hi ˈmaɪtəv ˈhændɪd‿ɪn ðə rɒŋ fɔːm/",
+            "hint": "Read the sentence at natural, fast speed. Does every part of this description match what you'd actually hear?",
+            "explanation": "This sentence genuinely shows both features together — the casual reduction and the linking or dropped sound both occur exactly as this option states.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L198_Q2",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "You gotta see this video.",
+            "textToSpeak": "You gotta see this video.",
+            "options": [
+                "'gotta' = 'going to'",
+                "'gotta' = 'got to'"
+            ],
+            "correctAnswer": "'gotta' = 'got to'",
+            "correctAnswerIndex": 1,
+            "ipa": "/juː ˈgɒtə siː ðɪs ˈvɪdiəʊ/",
+            "hint": "This is a fast-speech spelling of a common phrase. Say it slowly to unpack what it really stands for.",
+            "explanation": "'gotta' is a casual spelling of the fast-speech version of 'got to' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L198_Q3",
+            "instruction": "Identify where the pause falls",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "After the ceremony ends, they're gonna thank him publicly.",
+            "textToSpeak": "After the ceremony ends, they're gonna thank him publicly.",
+            "options": [
+                "The natural pause falls after 'they're', and the 'h' in 'him' drops.",
+                "The natural pause falls after 'ends', and the 'h' in 'him' drops."
+            ],
+            "correctAnswer": "The natural pause falls after 'ends', and the 'h' in 'him' drops.",
+            "correctAnswerIndex": 1,
+            "ipa": "/ˈɑːftə ðə ˈserɪməʊni endz ðeə ˈgənə θæŋk ɪm ˈpʌblɪkli/",
+            "hint": "The pause should fall at the end of the introductory phrase, not in the middle of the main clause — check both halves of each option.",
+            "explanation": "The pause genuinely falls right after 'ends', at the end of the opening phrase, not after 'they're' mid-clause; and the 'h' in 'him' drops exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L199_Q1",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "I'm gonna thank her for everything.",
+            "textToSpeak": "I'm gonna thank her for everything.",
+            "options": [
+                "'gonna' is reduced and the 'h' in 'her' drops.",
+                "'gonna' is reduced but the 'h' in 'her' stays."
+            ],
+            "correctAnswer": "'gonna' is reduced and the 'h' in 'her' drops.",
+            "correctAnswerIndex": 0,
+            "ipa": "/aɪm ˈgənə θæŋk ə fər ˈevriθɪŋ/",
+            "hint": "One part of each option is always true here — the trick is checking whether the second part is also accurate.",
+            "explanation": "Fluent speech often stacks multiple features in one sentence, and both named here are correct for this specific sentence.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L199_Q2",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Do you wanna come with us?",
+            "textToSpeak": "Do you wanna come with us?",
+            "options": [
+                "'wanna' = 'want to'",
+                "'wanna' = 'went to'"
+            ],
+            "correctAnswer": "'wanna' = 'want to'",
+            "correctAnswerIndex": 0,
+            "ipa": "/dʒə ˈwɒnə kʌm wɪð ʌs/",
+            "hint": "Casual writing sometimes spells out how words actually sound in fast speech — reverse-engineer the original words.",
+            "explanation": "'wanna' is a casual spelling of the fast-speech version of 'want to' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L199_Q3",
+            "instruction": "Identify where the pause falls",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Once the flight boards, we gotta check in our bags.",
+            "textToSpeak": "Once the flight boards, we gotta check in our bags.",
+            "options": [
+                "The natural pause falls after 'boards', and 'check in' links smoothly.",
+                "The natural pause falls after 'we', and 'check in' links smoothly."
+            ],
+            "correctAnswer": "The natural pause falls after 'boards', and 'check in' links smoothly.",
+            "correctAnswerIndex": 0,
+            "ipa": "/wʌns ðə flaɪt bɔːdz wiː ˈgɒtə tʃek‿ɪn ˈaʊə bægz/",
+            "hint": "One half of each option describes the pause location; the other half describes a speech reduction. Verify both are accurate together.",
+            "explanation": "The pause genuinely falls right after 'boards', at the end of the opening phrase, not after 'we' mid-clause; and 'check in' links smoothly exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L200_Q1",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "We should've signed up earlier.",
+            "textToSpeak": "We should've signed up earlier.",
+            "options": [
+                "'should've' blends together but 'signed up' stays separate.",
+                "'should've' blends together and 'signed up' links smoothly."
+            ],
+            "correctAnswer": "'should've' blends together and 'signed up' links smoothly.",
+            "correctAnswerIndex": 1,
+            "ipa": "/wiː ˈʃʊdəv saɪnd‿ʌp ˈɜːliə/",
+            "hint": "Don't just check the reduction — verify the other feature named alongside it too.",
+            "explanation": "Every part of the correct option matches natural speech here; the other option gets one of the two features wrong.",
+            "flowRule": "Combined Features: fluent, natural speech regularly stacks multiple connected-speech features — reductions, links, and dropped sounds — together in the same sentence.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L200_Q2",
+            "instruction": "Identify the natural speech pattern",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "D'you know what time it starts?",
+            "textToSpeak": "D'you know what time it starts?",
+            "options": [
+                "'D'you' = 'did you'",
+                "'D'you' = 'do you'"
+            ],
+            "correctAnswer": "'D'you' = 'do you'",
+            "correctAnswerIndex": 1,
+            "ipa": "/dʒə nəʊ wɒt taɪm ɪt stɑːts/",
+            "hint": "Think about what phrase, said quickly and casually, would naturally come out sounding like this.",
+            "explanation": "'D'you' is a casual spelling of the fast-speech version of 'do you' — that's the phrase it actually represents in natural speech.",
+            "flowRule": "Fast-Speech Spellings: casual writing sometimes spells out how phrases actually sound when reduced in natural speech (like 'gonna' for 'going to'); recognizing these helps you understand fast, casual speech.",
+            "speedLevel": 1.25
+        },
+        {
+            "id": "ACC_SHADOWINGCHALLENGE_MASTERY_L200_Q3",
+            "instruction": "Identify where the pause falls",
+            "subtype": "shadowingChallenge",
+            "interactionType": "speaking",
+            "word": "Before the concert ends, I woulda liked to say goodbye.",
+            "textToSpeak": "Before the concert ends, I woulda liked to say goodbye.",
+            "options": [
+                "The natural pause falls after 'I', and 'woulda' means 'would have'.",
+                "The natural pause falls after 'ends', and 'woulda' means 'would have'."
+            ],
+            "correctAnswer": "The natural pause falls after 'ends', and 'woulda' means 'would have'.",
+            "correctAnswerIndex": 1,
+            "ipa": "/bɪˈfɔː ðə ˈkɒnsət endz aɪ ˈwʊdə laɪkt tə seɪ ˌgʊdˈbaɪ/",
+            "hint": "Read the whole sentence naturally first, then check that the described pause point matches where you actually paused.",
+            "explanation": "The pause genuinely falls right after 'ends', at the end of the opening phrase, not after 'I' mid-clause; and 'woulda' means 'would have' exactly as described.",
+            "flowRule": "Mastery Integration: real fluent speech combines thought-group pausing with casual reductions and linking all at once — shadowing well means tracking all of these together.",
+            "speedLevel": 1.25
+        }
+    ]
+}

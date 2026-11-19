@@ -170,6 +170,8 @@ import 'package:vowl/features/accent/syllable_stress/presentation/pages/syllable
 import 'package:vowl/features/accent/syllable_stress/presentation/pages/syllable_stress_practice_screen.dart';
 import 'package:vowl/features/accent/word_linking/presentation/pages/word_linking_learn_screen.dart';
 import 'package:vowl/features/accent/word_linking/presentation/pages/word_linking_practice_screen.dart';
+import 'package:vowl/features/accent/shadowing_challenge/presentation/pages/shadowing_challenge_learn_screen.dart';
+import 'package:vowl/features/accent/shadowing_challenge/presentation/pages/shadowing_challenge_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -885,6 +887,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'shadowingchallenge') {
+          return fadeTransitionPage(
+            child: ShadowingChallengeLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1379,6 +1387,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'wordlinking') {
           return fadeTransitionPage(
             child: WordLinkingPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'shadowingchallenge') {
+          return fadeTransitionPage(
+            child: ShadowingChallengePracticeScreen(level: level),
             state: state,
           );
         }
