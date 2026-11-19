@@ -19,6 +19,10 @@ import 'package:vowl/features/grammar/grammar_quest/presentation/pages/grammar_q
 import 'package:vowl/features/grammar/presentation/bloc/grammar_bloc.dart';
 import 'package:vowl/features/home/presentation/pages/category_games_page.dart';
 import 'package:vowl/features/listening/audio_multiple_choice/presentation/pages/audio_multiple_choice_screen.dart';
+import 'package:vowl/features/listening/audio_fill_blanks/presentation/pages/audio_fill_blanks_learn_screen.dart';
+import 'package:vowl/features/listening/audio_fill_blanks/presentation/pages/audio_fill_blanks_practice_screen.dart';
+import 'package:vowl/features/listening/audio_multiple_choice/presentation/pages/audio_multiple_choice_learn_screen.dart';
+import 'package:vowl/features/listening/audio_multiple_choice/presentation/pages/audio_multiple_choice_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -541,6 +545,38 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<Widget>());
+    });
+
+    test('resolves /learn route for audioFillBlanks', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state = createMockState('/learn?category=listening&gameType=audioFillBlanks&level=2');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<AudioFillBlanksLearnScreen>());
+    });
+
+    test('resolves /practice route for audioFillBlanks', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state = createMockState('/practice?category=listening&gameType=audioFillBlanks&level=2');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<AudioFillBlanksPracticeScreen>());
+    });
+
+    test('resolves /learn route for audioMultipleChoice', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state = createMockState('/learn?category=listening&gameType=audioMultipleChoice&level=3');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<AudioMultipleChoiceLearnScreen>());
+    });
+
+    test('resolves /practice route for audioMultipleChoice', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state = createMockState('/practice?category=listening&gameType=audioMultipleChoice&level=3');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<AudioMultipleChoicePracticeScreen>());
     });
   });
 }
