@@ -39,6 +39,8 @@ import 'package:vowl/features/listening/listening_inference/presentation/pages/l
 import 'package:vowl/features/listening/listening_inference/presentation/pages/listening_inference_practice_screen.dart';
 import 'package:vowl/features/listening/ambient_id/presentation/pages/ambient_id_learn_screen.dart';
 import 'package:vowl/features/listening/ambient_id/presentation/pages/ambient_id_practice_screen.dart';
+import 'package:vowl/features/accent/minimal_pairs/presentation/pages/minimal_pairs_learn_screen.dart';
+import 'package:vowl/features/accent/minimal_pairs/presentation/pages/minimal_pairs_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -721,6 +723,22 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<AmbientIdPracticeScreen>());
+    });
+
+    test('resolves /learn route for minimalPairs', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state = createMockState('/learn?category=accent&gameType=minimalPairs&level=3');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<MinimalPairsLearnScreen>());
+    });
+
+    test('resolves /practice route for minimalPairs', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state = createMockState('/practice?category=accent&gameType=minimalPairs&level=3');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<MinimalPairsPracticeScreen>());
     });
   });
 }

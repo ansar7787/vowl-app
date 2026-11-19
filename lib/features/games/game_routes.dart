@@ -162,6 +162,8 @@ import 'package:vowl/features/listening/listening_inference/presentation/pages/l
 import 'package:vowl/features/listening/listening_inference/presentation/pages/listening_inference_practice_screen.dart';
 import 'package:vowl/features/listening/ambient_id/presentation/pages/ambient_id_learn_screen.dart';
 import 'package:vowl/features/listening/ambient_id/presentation/pages/ambient_id_practice_screen.dart';
+import 'package:vowl/features/accent/minimal_pairs/presentation/pages/minimal_pairs_learn_screen.dart';
+import 'package:vowl/features/accent/minimal_pairs/presentation/pages/minimal_pairs_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -853,6 +855,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'minimalpairs') {
+          return fadeTransitionPage(
+            child: MinimalPairsLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1323,6 +1331,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'ambientid') {
           return fadeTransitionPage(
             child: AmbientIdPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'minimalpairs') {
+          return fadeTransitionPage(
+            child: MinimalPairsPracticeScreen(level: level),
             state: state,
           );
         }
