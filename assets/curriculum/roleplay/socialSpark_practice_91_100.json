@@ -1,0 +1,518 @@
+{
+  "gameType": "socialSpark",
+  "phase": "practice",
+  "batchIndex": 10,
+  "levels": "91-100",
+  "quests": [
+    {
+      "id": "ss_practice_l91_q1",
+      "level": 91,
+      "socialContext": "Lab Meeting",
+      "situationPrompt": "A colleague states a surprising result. Show interest and ask how she got there.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Whatever. I have other things on my mind.",
+        "That's interesting . What made you come to that conclusion ?",
+        "May I inquire regarding the physiological status of your bodily health today?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "That's interesting . What made you come to that conclusion ?",
+      "explanation": "\"What made you come to that conclusion?\" invites reasoning and treats the other person's view as worth exploring, which extends the discussion.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l91_q2",
+      "level": 91,
+      "socialContext": "Product Meeting",
+      "situationPrompt": "Your teammate proposed a new feature. Add to the idea instead of replacing it.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I am entirely too busy to waste time on trivial small talk.",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol.",
+        "Building on that , maybe we could try a small pilot first ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Building on that , maybe we could try a small pilot first .",
+      "explanation": "\"Building on that\" credits the earlier suggestion and adds something new, which keeps the atmosphere collaborative.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l91_q3",
+      "level": 91,
+      "socialContext": "Late Night Kitchen Table",
+      "situationPrompt": "Your flatmate has shared a strong opinion about moving abroad. Encourage her to explain.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Can you say more about that ? I'd like to understand your reasoning .",
+        "That is none of your business.",
+        "Commencing casual human interaction sequence: How is your day progressing?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Can you say more about that ? I'd like to understand your reasoning .",
+      "explanation": "\"Say more about that\" is a warm way to invite someone to elaborate, and mentioning that you want to understand shows you're not challenging her.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l92_q1",
+      "level": 92,
+      "socialContext": "Gym Café",
+      "situationPrompt": "You claimed commuting by bike is faster. A friend looks doubtful. Give an example.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Why would anyone care about that?",
+        "For example , my brother switched to cycling and saves nearly an hour a day .",
+        "I confirm receipt of your salutation and reciprocate with standard politeness."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "For example , my brother switched to cycling and saves nearly an hour a day .",
+      "explanation": "\"For example\" prepares the listener for evidence, and a personal example makes an abstract claim more believable.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l92_q2",
+      "level": 92,
+      "socialContext": "Career Fair",
+      "situationPrompt": "A student doubts that a company can run without meetings. Use your experience as evidence.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I really prefer being left completely alone.",
+        "Data indicates the ambient weather conditions are currently within standard ranges.",
+        "Take my old job , for instance . We never had meetings and it worked fine ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Take my old job , for instance . We never had meetings and it worked fine .",
+      "explanation": "\"Take X, for instance\" is a conversational way of offering evidence. The specific detail makes it more persuasive than a general statement.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l92_q3",
+      "level": 92,
+      "socialContext": "Neighborhood Meeting",
+      "situationPrompt": "The group is debating shorter opening hours for local shops. Give a real example that supports your side.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "A good example is the café near my flat . They started closing early and business actually improved .",
+        "Do not look at me or address me in public.",
+        "Acknowledged. Terminating current conversational exchange to resume transit."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "A good example is the café near my flat . They started closing early and business actually improved .",
+      "explanation": "Using a local example makes an argument more convincing, and \"actually\" points out that the result was unexpected.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l93_q1",
+      "level": 93,
+      "socialContext": "Kitchen Table",
+      "situationPrompt": "You argued about where to spend the holidays, and your sister has made a fair point. Concede.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "No. Why are you even asking me that right now?",
+        "Actually , now that you mention it , I think you're right .",
+        "Greetings fellow inhabitant. I formally acknowledge your presence at this coordinate."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Actually , now that you mention it , I think you're right .",
+      "explanation": "\"Now that you mention it\" shows that the other person's idea prompted your change of mind, so you don't lose face.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l93_q2",
+      "level": 93,
+      "socialContext": "Car Dealership",
+      "situationPrompt": "The salesperson explained why the cheaper car may cost more later. Tell him he changed your mind.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I do not know you, so please do not try to speak with me.",
+        "Salutations. My emotional state is operating within nominal parameters today.",
+        "You've convinced me . I hadn't considered the maintenance costs ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "You've convinced me . I hadn't considered the maintenance costs .",
+      "explanation": "Openly saying what changed your mind is honest, and it tells the other person that the discussion was useful.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l93_q3",
+      "level": 93,
+      "socialContext": "Reunion Dinner",
+      "situationPrompt": "An old friend insists that social media is harmless. You once agreed. Share your shift without lecturing.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I used to think so too , but I've changed my mind lately .",
+        "Whatever. I have other things on my mind.",
+        "May I inquire regarding the physiological status of your bodily health today?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "I used to think so too , but I've changed my mind lately .",
+      "explanation": "\"I used to think so too\" creates common ground and makes your different opinion sound like personal growth, not criticism.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l94_q1",
+      "level": 94,
+      "socialContext": "Committee Meeting",
+      "situationPrompt": "Two people are speaking and you have an important point. Interrupt politely.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I am entirely too busy to waste time on trivial small talk.",
+        "Sorry , can I just add something quickly ?",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Sorry , can I just add something quickly ?",
+      "explanation": "\"Just\" and \"quickly\" reduce the size of your request, which makes it easy for people to give you the floor.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l94_q2",
+      "level": 94,
+      "socialContext": "Group Project Call",
+      "situationPrompt": "Amira hasn't said anything for twenty minutes. Invite her in without putting her on the spot.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "That is none of your business.",
+        "Commencing casual human interaction sequence: How is your day progressing?",
+        "I'd like to hear what Amira thinks about this ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "I'd like to hear what Amira thinks about this .",
+      "explanation": "Inviting a quiet person by name is respectful, and \"I'd like to hear\" makes it sound like interest, not pressure.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l94_q3",
+      "level": 94,
+      "socialContext": "Volunteer Briefing",
+      "situationPrompt": "You accidentally spoke over a fellow volunteer. Give the floor back.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Please go ahead , I didn't mean to cut you off .",
+        "Why would anyone care about that?",
+        "I confirm receipt of your salutation and reciprocate with standard politeness."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Please go ahead , I didn't mean to cut you off .",
+      "explanation": "\"Go ahead\" returns the turn immediately, and \"cut you off\" is the natural phrase for interrupting someone.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l95_q1",
+      "level": 95,
+      "socialContext": "Lab Bench",
+      "situationPrompt": "A lab partner asks when the report is due and you only half remember. Answer honestly.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I really prefer being left completely alone.",
+        "I'm not completely sure , but I think the deadline is Friday .",
+        "Data indicates the ambient weather conditions are currently within standard ranges."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "I'm not completely sure , but I think the deadline is Friday .",
+      "explanation": "\"Not completely sure, but I think\" tells the listener how much to rely on the information, which is honest and helps them decide if they need to check.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l95_q2",
+      "level": 95,
+      "socialContext": "Bus Queue",
+      "situationPrompt": "A stranger asks whether the pharmacy is still open. Share what you recall.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Do not look at me or address me in public.",
+        "Acknowledged. Terminating current conversational exchange to resume transit.",
+        "If I remember correctly , the shop closes at six on Sundays ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "If I remember correctly , the shop closes at six on Sundays .",
+      "explanation": "\"If I remember correctly\" is a polite way to share information that may be out of date, and it prevents you from sounding overconfident.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l95_q3",
+      "level": 95,
+      "socialContext": "Project Sync",
+      "situationPrompt": "The team is about to change something you think was already decided. Raise it gently.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I could be mistaken , but wasn't that the plan last month ?",
+        "No. Why are you even asking me that right now?",
+        "Greetings fellow inhabitant. I formally acknowledge your presence at this coordinate."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "I could be mistaken , but wasn't that the plan last month ?",
+      "explanation": "Admitting you might be mistaken lets you challenge a decision without accusing anyone. The negative question sounds curious instead of critical.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l96_q1",
+      "level": 96,
+      "socialContext": "Community Board Meeting",
+      "situationPrompt": "The chair asks if you'd join the new planning committee, and you're excited. Answer with enthusiasm.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I do not know you, so please do not try to speak with me.",
+        "Yes , absolutely . I'd be thrilled to be part of it .",
+        "Salutations. My emotional state is operating within nominal parameters today."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Yes , absolutely . I'd be thrilled to be part of it .",
+      "explanation": "Strong agreement words like \"absolutely\" and \"thrilled\" show real enthusiasm, which is what the organizer wants to hear.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l96_q2",
+      "level": 96,
+      "socialContext": "Kitchen Table",
+      "situationPrompt": "Your roommates want to rotate cooking duties. You're not keen but will go along. Say so honestly.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Whatever. I have other things on my mind.",
+        "May I inquire regarding the physiological status of your bodily health today?",
+        "Yeah , I suppose that would work , if we have to ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Yeah , I suppose that would work , if we have to .",
+      "explanation": "\"I suppose\" and \"if we have to\" signal reluctant agreement. It's honest, and it lets others know you're not fully happy.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l96_q3",
+      "level": 96,
+      "socialContext": "Friends Trip Planning",
+      "situationPrompt": "Your friends are arguing over the itinerary and you have no strong preference. Say so.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I'm happy to go along with whatever the group decides .",
+        "I am entirely too busy to waste time on trivial small talk.",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "I'm happy to go along with whatever the group decides .",
+      "explanation": "\"Go along with\" tells the group you're easy-going, which can help settle a disagreement.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l97_q1",
+      "level": 97,
+      "socialContext": "Design Review",
+      "situationPrompt": "A designer proposes a layout that looks great but may be hard to use. Express doubt carefully.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "That is none of your business.",
+        "I'm not so sure that would work in practice .",
+        "Commencing casual human interaction sequence: How is your day progressing?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "I'm not so sure that would work in practice .",
+      "explanation": "\"In practice\" refers to real-world use, so your objection sounds practical instead of personal.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l97_q2",
+      "level": 97,
+      "socialContext": "Finance Meeting",
+      "situationPrompt": "Your team wants to spend a large amount on an event. Raise a question about the decision.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Why would anyone care about that?",
+        "I confirm receipt of your salutation and reciprocate with standard politeness.",
+        "Are we sure that's the best use of our budget ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Are we sure that's the best use of our budget ?",
+      "explanation": "Phrasing doubt as a question invites discussion and sounds less confrontational than saying \"That's a bad idea\".",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l97_q3",
+      "level": 97,
+      "socialContext": "School Parent Meeting",
+      "situationPrompt": "The school proposes a new homework policy that worries you. Say so, and ask for a discussion.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I have a few reservations , to be honest . Could we talk it through ?",
+        "I really prefer being left completely alone.",
+        "Data indicates the ambient weather conditions are currently within standard ranges."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "I have a few reservations , to be honest . Could we talk it through ?",
+      "explanation": "\"Reservations\" is a polite word for doubts. Asking to \"talk it through\" shows you're willing to cooperate.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l98_q1",
+      "level": 98,
+      "socialContext": "Staff Briefing",
+      "situationPrompt": "Management has announced a change without explaining it. Ask for the logic respectfully.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Do not look at me or address me in public.",
+        "What's the reasoning behind that decision ?",
+        "Acknowledged. Terminating current conversational exchange to resume transit."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "What's the reasoning behind that decision ?",
+      "explanation": "\"The reasoning behind\" sounds professional and curious, so you can ask for an explanation without sounding hostile.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l98_q2",
+      "level": 98,
+      "socialContext": "Dinner Table",
+      "situationPrompt": "A friend keeps returning to a small seaside town. Ask what draws her there.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "No. Why are you even asking me that right now?",
+        "Greetings fellow inhabitant. I formally acknowledge your presence at this coordinate.",
+        "What is it about that place that you love so much ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "What is it about that place that you love so much ?",
+      "explanation": "\"What is it about\" invites an emotional, descriptive answer instead of a list of facts.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l98_q3",
+      "level": 98,
+      "socialContext": "Client Call",
+      "situationPrompt": "A client insists on a detail that seems minor. Ask about its importance without sounding dismissive.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Could you help me understand why that matters ?",
+        "I do not know you, so please do not try to speak with me.",
+        "Salutations. My emotional state is operating within nominal parameters today."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Could you help me understand why that matters ?",
+      "explanation": "\"Help me understand\" frames you as the learner. It's a diplomatic way of asking for reasons.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l99_q1",
+      "level": 99,
+      "socialContext": "Planning Meeting",
+      "situationPrompt": "The meeting has gone in circles. Summarize where things stand.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Whatever. I have other things on my mind.",
+        "So , to sum up , we agree on the date but not on the budget .",
+        "May I inquire regarding the physiological status of your bodily health today?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "So , to sum up , we agree on the date but not on the budget .",
+      "explanation": "\"To sum up\" prepares people for a concise recap, and stating what is agreed and not agreed shows what's left to discuss.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l99_q2",
+      "level": 99,
+      "socialContext": "Research Debrief",
+      "situationPrompt": "Your team has finished user interviews. Give the key finding in one sentence.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I am entirely too busy to waste time on trivial small talk.",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol.",
+        "The main thing we've learned is that people want flexibility ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The main thing we've learned is that people want flexibility .",
+      "explanation": "\"The main thing\" focuses attention on one point, which is useful in busy conversations where people can lose track.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l99_q3",
+      "level": 99,
+      "socialContext": "Friends Dinner Plans",
+      "situationPrompt": "A friend has spent five minutes describing what she doesn't like about noisy venues. Restate it simply.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "In other words , you'd prefer a quieter place .",
+        "That is none of your business.",
+        "Commencing casual human interaction sequence: How is your day progressing?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "In other words , you'd prefer a quieter place .",
+      "explanation": "\"In other words\" shows that you've understood the idea and can express it simply. It also lets the speaker correct you if needed.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l100_q1",
+      "level": 100,
+      "socialContext": "Community Forum",
+      "situationPrompt": "Another resident claims the new bus route is a failure. You ride it daily. Disagree respectfully.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Why would anyone care about that?",
+        "I get why you'd say that , but my experience has been quite different .",
+        "I confirm receipt of your salutation and reciprocate with standard politeness."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "I get why you'd say that , but my experience has been quite different .",
+      "explanation": "\"I get why\" recognizes the logic of their view, and \"my experience\" bases your disagreement on personal evidence, not criticism.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l100_q2",
+      "level": 100,
+      "socialContext": "Community Forum",
+      "situationPrompt": "The argument is getting heated. Point out common ground.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I really prefer being left completely alone.",
+        "Data indicates the ambient weather conditions are currently within standard ranges.",
+        "Maybe we're closer than we think . We both want the same outcome ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Maybe we're closer than we think . We both want the same outcome .",
+      "explanation": "Naming a common goal reduces tension and reminds people that they're on the same side, even if their methods differ.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l100_q3",
+      "level": 100,
+      "socialContext": "Community Forum",
+      "situationPrompt": "Neither side will budge and time is running out. Close the topic and continue the meeting.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Let's agree to disagree on that one and move on to the schedule .",
+        "Do not look at me or address me in public.",
+        "Acknowledged. Terminating current conversational exchange to resume transit."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Let's agree to disagree on that one and move on to the schedule .",
+      "explanation": "\"Agree to disagree\" ends a stalemate without anyone losing. Moving to the next item keeps the meeting productive.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    }
+  ]
+}

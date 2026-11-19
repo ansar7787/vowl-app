@@ -1,0 +1,518 @@
+{
+  "gameType": "socialSpark",
+  "phase": "practice",
+  "batchIndex": 6,
+  "levels": "51-60",
+  "quests": [
+    {
+      "id": "ss_practice_l51_q1",
+      "level": 51,
+      "socialContext": "Office Front Entrance",
+      "situationPrompt": "You're leaving the office with some colleagues and notice a teammate who usually goes home alone. Include them.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "A few of us are grabbing pizza after work . Do you want to join ?",
+        "I really prefer being left completely alone.",
+        "Data indicates the ambient weather conditions are currently within standard ranges."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "A few of us are grabbing pizza after work . Do you want to join ?",
+      "explanation": "Describing the plan before asking makes the invitation feel casual and low-pressure, as if the person is welcome to fit in.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l51_q2",
+      "level": 51,
+      "socialContext": "Community Garden",
+      "situationPrompt": "You've been getting to know a fellow gardener and want to invite them to your place. Invite them warmly.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Do not look at me or address me in public.",
+        "I'm having a small get-together on Friday . It'd be great if you could make it .",
+        "Acknowledged. Terminating current conversational exchange to resume transit."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "I'm having a small get-together on Friday . It'd be great if you could make it .",
+      "explanation": "\"It'd be great if you could make it\" sounds friendly but leaves them a way out, which suits a newer acquaintance.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l51_q3",
+      "level": 51,
+      "socialContext": "Bike Shop",
+      "situationPrompt": "The mechanic mentioned he loves the outdoors. Invite him along and make it easy to say no.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "No. Why are you even asking me that right now?",
+        "Greetings fellow inhabitant. I formally acknowledge your presence at this coordinate.",
+        "We're going hiking on Sunday if you're free . No pressure , though ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "We're going hiking on Sunday if you're free . No pressure , though .",
+      "explanation": "Adding \"no pressure\" removes the obligation to accept. That makes an invitation to someone you don't know well feel safer.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l52_q1",
+      "level": 52,
+      "socialContext": "Sidewalk Outside Office",
+      "situationPrompt": "You and a friend are deciding on a meeting spot for dinner. Ask and suggest at the same time.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Where should we meet ? Maybe somewhere close to the station would be easiest .",
+        "I do not know you, so please do not try to speak with me.",
+        "Salutations. My emotional state is operating within nominal parameters today."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Where should we meet ? Maybe somewhere close to the station would be easiest .",
+      "explanation": "Following a question with your own suggestion saves time and stops the other person from having to make every decision.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l52_q2",
+      "level": 52,
+      "socialContext": "Theater Foyer",
+      "situationPrompt": "You need to agree on a time and spot before the show. Propose both.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Whatever. I have other things on my mind.",
+        "Shall we say seven , outside the main entrance ?",
+        "May I inquire regarding the physiological status of your bodily health today?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Shall we say seven , outside the main entrance ?",
+      "explanation": "\"Shall we say...\" is a neat way to propose a time and invites a quick yes or a counter-offer. It suits arrangements between friends or colleagues.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l52_q3",
+      "level": 52,
+      "socialContext": "Cinema Queue",
+      "situationPrompt": "Your friend suggested a time, but you know the theater fills up quickly. Suggest a change with a reason.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I am entirely too busy to waste time on trivial small talk.",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol.",
+        "Let's meet a bit earlier so we can get good seats ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Let's meet a bit earlier so we can get good seats .",
+      "explanation": "Explaining your reason makes a change of plan easier to accept, since the other person understands the benefit.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l53_q1",
+      "level": 53,
+      "socialContext": "Phone Call",
+      "situationPrompt": "You have to cancel a coffee meeting at the last minute. Apologize and suggest a new time.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I'm really sorry , but something's come up . Can we move it to next week ?",
+        "That is none of your business.",
+        "Commencing casual human interaction sequence: How is your day progressing?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "I'm really sorry , but something's come up . Can we move it to next week ?",
+      "explanation": "\"Something's come up\" explains without over-sharing, and offering another time shows you still value the meeting.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l53_q2",
+      "level": 53,
+      "socialContext": "Video Call",
+      "situationPrompt": "A client call is scheduled for two, but your earlier meeting is running long. Ask to delay.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Why would anyone care about that?",
+        "Would it be okay if we pushed it back an hour ?",
+        "I confirm receipt of your salutation and reciprocate with standard politeness."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Would it be okay if we pushed it back an hour ?",
+      "explanation": "\"Push back\" means to delay, and \"Would it be okay if\" is a gentle way to request a change that inconveniences someone.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l53_q3",
+      "level": 53,
+      "socialContext": "Library",
+      "situationPrompt": "A study partner asks to reschedule to Thursday. Agree and stay flexible.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I really prefer being left completely alone.",
+        "Data indicates the ambient weather conditions are currently within standard ranges.",
+        "That works for me , and just let me know if anything changes ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "That works for me , and just let me know if anything changes .",
+      "explanation": "\"That works for me\" is a clear, friendly yes. The clause that follows signals that you're understanding if plans change again.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l54_q1",
+      "level": 54,
+      "socialContext": "Break Room",
+      "situationPrompt": "You need a colleague's help but want to check they're willing before you explain. Ask.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Could I ask you a quick favor ?",
+        "Do not look at me or address me in public.",
+        "Acknowledged. Terminating current conversational exchange to resume transit."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Could I ask you a quick favor ?",
+      "explanation": "Checking first with \"Could I ask you a favor?\" prepares the listener and lets them agree before hearing the details.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l54_q2",
+      "level": 54,
+      "socialContext": "Mailroom",
+      "situationPrompt": "You're traveling and meet a neighbor at the mailboxes. Ask them to help with your plants.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "No. Why are you even asking me that right now?",
+        "Would you be able to water my plants while I'm away next week ?",
+        "Greetings fellow inhabitant. I formally acknowledge your presence at this coordinate."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Would you be able to water my plants while I'm away next week ?",
+      "explanation": "\"Would you be able to...\" sounds more considerate than \"Can you...\" because it acknowledges they might not have time.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l54_q3",
+      "level": 54,
+      "socialContext": "Weekend Market",
+      "situationPrompt": "A friend of a friend mentions they have a car. Ask them for a big favor, politely.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I do not know you, so please do not try to speak with me.",
+        "Salutations. My emotional state is operating within nominal parameters today.",
+        "I hate to ask , but could you give me a lift to the airport on Friday ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "I hate to ask , but could you give me a lift to the airport on Friday ?",
+      "explanation": "\"I hate to ask, but...\" recognizes that you're imposing. It's a good way to make a bigger request sound respectful.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l55_q1",
+      "level": 55,
+      "socialContext": "Airport Arrivals Hall",
+      "situationPrompt": "An elderly traveler is struggling with two heavy suitcases. Offer help.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Do you need a hand with those bags ?",
+        "Whatever. I have other things on my mind.",
+        "May I inquire regarding the physiological status of your bodily health today?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Do you need a hand with those bags ?",
+      "explanation": "\"Do you need a hand?\" is a natural, polite offer. It asks about their need instead of assuming they can't cope.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l55_q2",
+      "level": 55,
+      "socialContext": "Hallway Outside Meeting Room",
+      "situationPrompt": "A teammate looks nervous about their presentation. Offer to review it.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I am entirely too busy to waste time on trivial small talk.",
+        "Let me know if you want me to look over your slides before the meeting .",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Let me know if you want me to look over your slides before the meeting .",
+      "explanation": "\"Let me know if\" places the choice with the other person, which makes the offer sound helpful rather than intrusive.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l55_q3",
+      "level": 55,
+      "socialContext": "Computer Lab",
+      "situationPrompt": "A student is confused by the printer system. Offer to explain it.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "That is none of your business.",
+        "Commencing casual human interaction sequence: How is your day progressing?",
+        "I can walk you through it if you like . It only takes five minutes ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "I can walk you through it if you like . It only takes five minutes .",
+      "explanation": "Saying it only takes five minutes reduces the person's worry about wasting your time, which makes them more likely to accept.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l56_q1",
+      "level": 56,
+      "socialContext": "Grocery Store Parking Lot",
+      "situationPrompt": "A stranger offers to help carry your shopping to the car. Accept gratefully.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "That would be amazing , thank you . I'd really appreciate it .",
+        "Why would anyone care about that?",
+        "I confirm receipt of your salutation and reciprocate with standard politeness."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "That would be amazing , thank you . I'd really appreciate it .",
+      "explanation": "\"I'd really appreciate it\" is a warm, natural way of accepting help. It sounds more sincere than a bare \"thanks\".",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l56_q2",
+      "level": 56,
+      "socialContext": "Moving Day",
+      "situationPrompt": "A friend offers to carry the heavier boxes. Accept while showing consideration.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I really prefer being left completely alone.",
+        "If you don't mind , that'd be a huge help .",
+        "Data indicates the ambient weather conditions are currently within standard ranges."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "If you don't mind , that'd be a huge help .",
+      "explanation": "\"If you don't mind\" shows courtesy, and \"a huge help\" tells them their effort matters.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l56_q3",
+      "level": 56,
+      "socialContext": "Community Center",
+      "situationPrompt": "A volunteer offers to drive you home. Accept, but check that you're not imposing.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Do not look at me or address me in public.",
+        "Acknowledged. Terminating current conversational exchange to resume transit.",
+        "Sure , that'd be great . Are you sure it's not too much trouble ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Sure , that'd be great . Are you sure it's not too much trouble ?",
+      "explanation": "Checking whether it's too much trouble shows you care about the other person, which is polite even if they insist it's fine.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l57_q1",
+      "level": 57,
+      "socialContext": "Garage Sale",
+      "situationPrompt": "A neighbor offers to help you load a table into your car, but you can manage. Decline warmly.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Thanks , but I think I've got it . I'll shout if I get stuck .",
+        "No. Why are you even asking me that right now?",
+        "Greetings fellow inhabitant. I formally acknowledge your presence at this coordinate."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Thanks , but I think I've got it . I'll shout if I get stuck .",
+      "explanation": "\"Thanks, but\" softens a refusal, and \"I'll shout if I get stuck\" leaves the offer open in case you do need help.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l57_q2",
+      "level": 57,
+      "socialContext": "Home Improvement Store",
+      "situationPrompt": "A staff member offers to assemble your shelf. You want to do it yourself. Decline politely.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I do not know you, so please do not try to speak with me.",
+        "That's really kind , but I'd prefer to do it myself . Thanks , though .",
+        "Salutations. My emotional state is operating within nominal parameters today."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "That's really kind , but I'd prefer to do it myself . Thanks , though .",
+      "explanation": "Stating a preference, not a reason, is honest and polite. \"Thanks, though\" ends on a positive note after a refusal.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l57_q3",
+      "level": 57,
+      "socialContext": "Potluck Dinner",
+      "situationPrompt": "Someone offers to bring dessert to your potluck, but you've already arranged it. Decline kindly.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Whatever. I have other things on my mind.",
+        "May I inquire regarding the physiological status of your bodily health today?",
+        "I appreciate the offer , but I've already got it covered ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "I appreciate the offer , but I've already got it covered .",
+      "explanation": "\"Got it covered\" is an idiomatic way to say something is handled. Thanking them first shows the offer was noticed and valued.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l58_q1",
+      "level": 58,
+      "socialContext": "Shared Kitchen",
+      "situationPrompt": "Your roommate is watching a loud video while you have an important call. Ask politely.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Would you mind turning the volume down a bit ? I'm on a call .",
+        "I am entirely too busy to waste time on trivial small talk.",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Would you mind turning the volume down a bit ? I'm on a call .",
+      "explanation": "Giving a reason immediately makes the request feel fair. \"A bit\" keeps it small, so your roommate won't feel criticized.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l58_q2",
+      "level": 58,
+      "socialContext": "Living Room",
+      "situationPrompt": "Dirty plates have been piling up and you want to prevent a disagreement. Raise it calmly.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "That is none of your business.",
+        "Can we sort out who's doing the dishes this week ?",
+        "Commencing casual human interaction sequence: How is your day progressing?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Can we sort out who's doing the dishes this week ?",
+      "explanation": "\"We\" turns a complaint into a joint task, and \"sort out\" is a casual verb for organizing something practical.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l58_q3",
+      "level": 58,
+      "socialContext": "Living Room",
+      "situationPrompt": "You don't mind guests but dislike surprises. Ask your roommate for advance notice.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Why would anyone care about that?",
+        "I confirm receipt of your salutation and reciprocate with standard politeness.",
+        "Would it be okay if you gave me a heads-up before you have people over ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Would it be okay if you gave me a heads-up before you have people over ?",
+      "explanation": "\"Heads-up\" means a warning in advance. Framing it as a request, not a rule, keeps the relationship comfortable.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l59_q1",
+      "level": 59,
+      "socialContext": "Study Lounge",
+      "situationPrompt": "Your phone is at two percent and the person beside you has a charger. Ask.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Do you mind if I borrow your charger for a minute ?",
+        "I really prefer being left completely alone.",
+        "Data indicates the ambient weather conditions are currently within standard ranges."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Do you mind if I borrow your charger for a minute ?",
+      "explanation": "\"Do you mind if I...\" asks for permission in a way that acknowledges you're using their property. \"For a minute\" limits the request.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l59_q2",
+      "level": 59,
+      "socialContext": "Campus Bus",
+      "situationPrompt": "You missed a lecture and a classmate has good notes. Ask to borrow them and promise their return.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Do not look at me or address me in public.",
+        "Could I borrow your notes from Tuesday ? I'll give them back tomorrow .",
+        "Acknowledged. Terminating current conversational exchange to resume transit."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Could I borrow your notes from Tuesday ? I'll give them back tomorrow .",
+      "explanation": "Promising to return something quickly helps the other person say yes and shows that you're responsible.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l59_q3",
+      "level": 59,
+      "socialContext": "Coworker's Desk",
+      "situationPrompt": "Your own printer isn't working and a colleague's is right there. Ask permission.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "No. Why are you even asking me that right now?",
+        "Greetings fellow inhabitant. I formally acknowledge your presence at this coordinate.",
+        "Is it okay if I use your printer ? It'll only take a second ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Is it okay if I use your printer ? It'll only take a second .",
+      "explanation": "\"It'll only take a second\" reassures the person that the interruption is small, which is why it's so common in workplace requests.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l60_q1",
+      "level": 60,
+      "socialContext": "Voice Message",
+      "situationPrompt": "You're leaving a message for a friend to confirm dinner plans. Keep it light.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Just checking we're still on for tomorrow at eight .",
+        "I do not know you, so please do not try to speak with me.",
+        "Salutations. My emotional state is operating within nominal parameters today."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Just checking we're still on for tomorrow at eight .",
+      "explanation": "\"Still on\" means the plan hasn't changed. \"Just checking\" sounds casual and avoids implying that you doubt your friend.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l60_q2",
+      "level": 60,
+      "socialContext": "Taxi Back Seat",
+      "situationPrompt": "Traffic is bad and you'll be late for a dinner with friends. Tell them and be considerate.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Whatever. I have other things on my mind.",
+        "I'm running about ten minutes behind . Start without me if you like .",
+        "May I inquire regarding the physiological status of your bodily health today?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "I'm running about ten minutes behind . Start without me if you like .",
+      "explanation": "\"Running behind\" is the natural phrase for being late, and offering to let them start shows you don't want to hold everyone up.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l60_q3",
+      "level": 60,
+      "socialContext": "Cafe Terrace",
+      "situationPrompt": "Your friend texts that they're late, and you've already arrived. Reassure them.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I am entirely too busy to waste time on trivial small talk.",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol.",
+        "We're already here , so take your time . There's no rush ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "We're already here , so take your time . There's no rush .",
+      "explanation": "Saying \"take your time\" prevents your friend from feeling stressed and shows you're patient, which keeps a small delay from becoming an issue.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    }
+  ]
+}

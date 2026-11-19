@@ -1,0 +1,518 @@
+{
+  "gameType": "socialSpark",
+  "phase": "practice",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "ss_practice_l101_q1",
+      "level": 101,
+      "socialContext": "Conference Call",
+      "situationPrompt": "The audio was patchy and you only missed the end of your manager's sentence. Ask for just that part.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I am entirely too busy to waste time on trivial small talk.",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol.",
+        "Sorry , I didn't quite catch that . Could you repeat the last part ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Sorry , I didn't quite catch that . Could you repeat the last part ?",
+      "explanation": "Naming \"the last part\" saves the speaker from repeating everything, and \"didn't quite catch\" sounds gentler than \"I couldn't hear you\".",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l101_q2",
+      "level": 101,
+      "socialContext": "Music Festival Food Stand",
+      "situationPrompt": "The vendor's answer was drowned out by the crowd. Ask for a repeat and explain why.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Would you mind saying that again ? It's very loud in here .",
+        "That is none of your business.",
+        "Commencing casual human interaction sequence: How is your day progressing?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Would you mind saying that again ? It's very loud in here .",
+      "explanation": "Blaming the noise, not the speaker, keeps things friendly and gets you the repeat you need.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l101_q3",
+      "level": 101,
+      "socialContext": "Software Training Session",
+      "situationPrompt": "The instructor moved on too quickly. Ask to return to the point where you got confused.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Why would anyone care about that?",
+        "Sorry , could you go back to the second step ? I lost you there .",
+        "I confirm receipt of your salutation and reciprocate with standard politeness."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Sorry , could you go back to the second step ? I lost you there .",
+      "explanation": "\"Go back to\" plus a specific point is much more useful than \"Can you repeat?\", and \"I lost you\" takes the blame on yourself.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l102_q1",
+      "level": 102,
+      "socialContext": "Phone Call",
+      "situationPrompt": "The signal is bad and you're not sure if the other person can hear you. Check.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I really prefer being left completely alone.",
+        "Data indicates the ambient weather conditions are currently within standard ranges.",
+        "I think the line is breaking up . Can you hear me okay ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "I think the line is breaking up . Can you hear me okay ?",
+      "explanation": "\"Breaking up\" is the everyday way to describe a poor connection, and checking \"hear me okay\" helps both sides adjust.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l102_q2",
+      "level": 102,
+      "socialContext": "Video Call",
+      "situationPrompt": "Your colleague froze mid-sentence. Tell her and ask her to pick up where it stopped.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "You cut out for a second . What was the last thing you said ?",
+        "Do not look at me or address me in public.",
+        "Acknowledged. Terminating current conversational exchange to resume transit."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "You cut out for a second . What was the last thing you said ?",
+      "explanation": "\"Cut out\" describes a sudden loss of sound. Asking for \"the last thing you said\" tells her exactly where to restart.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l102_q3",
+      "level": 102,
+      "socialContext": "Ferry Terminal",
+      "situationPrompt": "You joined a group conversation late and only heard the end of a sentence. Ask what's going on.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "No. Why are you even asking me that right now?",
+        "Sorry , I missed the start of that . Who are we waiting for ?",
+        "Greetings fellow inhabitant. I formally acknowledge your presence at this coordinate."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Sorry , I missed the start of that . Who are we waiting for ?",
+      "explanation": "Admitting you missed the beginning is more comfortable than pretending to follow, and a direct question gets you back in the conversation.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l103_q1",
+      "level": 103,
+      "socialContext": "Office Hallway",
+      "situationPrompt": "A colleague rushed through a schedule change. Check what you heard.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I do not know you, so please do not try to speak with me.",
+        "Salutations. My emotional state is operating within nominal parameters today.",
+        "So if I understand correctly , the meeting has moved to Thursday ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "So if I understand correctly , the meeting has moved to Thursday ?",
+      "explanation": "\"If I understand correctly\" invites correction politely. Repeating the information in your own words makes misunderstandings visible early.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l103_q2",
+      "level": 103,
+      "socialContext": "Roadside",
+      "situationPrompt": "A driver gave you quick directions. Repeat them back for confirmation.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Just to make sure I've got this right , I turn left after the bridge ?",
+        "Whatever. I have other things on my mind.",
+        "May I inquire regarding the physiological status of your bodily health today?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Just to make sure I've got this right , I turn left after the bridge ?",
+      "explanation": "\"Got this right\" is casual and practical. Rising intonation at the end of a statement turns it into a question.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l103_q3",
+      "level": 103,
+      "socialContext": "Committee Room",
+      "situationPrompt": "The chair's comments were vague, but you think she's suggesting a delay. Ask directly and politely.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I am entirely too busy to waste time on trivial small talk.",
+        "Are you saying that we should wait until next month ?",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Are you saying that we should wait until next month ?",
+      "explanation": "\"Are you saying...\" makes an indirect message explicit. It's useful when someone hasn't said exactly what they mean.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l104_q1",
+      "level": 104,
+      "socialContext": "Language Exchange Meetup",
+      "situationPrompt": "Your partner used an idiom you don't know. Ask for the meaning.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "That is none of your business.",
+        "Commencing casual human interaction sequence: How is your day progressing?",
+        "What does that mean exactly ? I haven't heard that expression before ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "What does that mean exactly ? I haven't heard that expression before .",
+      "explanation": "Saying you haven't heard it before shows that you're not criticizing their English, and it invites a friendly explanation.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l104_q2",
+      "level": 104,
+      "socialContext": "New Job Orientation",
+      "situationPrompt": "Your trainer keeps using business jargon. Ask what one term means.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Sorry , what do you mean when you say we'll touch base ?",
+        "Why would anyone care about that?",
+        "I confirm receipt of your salutation and reciprocate with standard politeness."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Sorry , what do you mean when you say we'll touch base ?",
+      "explanation": "\"What do you mean when you say...\" is a polite way to ask about a specific word, especially jargon that outsiders don't know.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l104_q3",
+      "level": 104,
+      "socialContext": "Registration Office",
+      "situationPrompt": "The clerk says a form is \"recommended\". You need to know if it's required. Clarify by paraphrasing.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I really prefer being left completely alone.",
+        "Is that the same as saying it's optional ?",
+        "Data indicates the ambient weather conditions are currently within standard ranges."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Is that the same as saying it's optional ?",
+      "explanation": "Testing your interpretation with \"Is that the same as...\" often clears up ambiguity faster than asking for a definition.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l105_q1",
+      "level": 105,
+      "socialContext": "Pharmacy Counter",
+      "situationPrompt": "The pharmacist is explaining how to take your medicine too quickly. Ask her to slow down.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Do not look at me or address me in public.",
+        "Acknowledged. Terminating current conversational exchange to resume transit.",
+        "Could you speak a little more slowly , please , since my English is still improving ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Could you speak a little more slowly , please , since my English is still improving ?",
+      "explanation": "Giving a reason with \"still improving\" is positive and clear, and most people respond kindly and slow down.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l105_q2",
+      "level": 105,
+      "socialContext": "Bank Branch",
+      "situationPrompt": "The advisor is explaining a complicated account. Ask him to break it down.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Sorry , you lost me . Could we go through it step by step ?",
+        "No. Why are you even asking me that right now?",
+        "Greetings fellow inhabitant. I formally acknowledge your presence at this coordinate."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Sorry , you lost me . Could we go through it step by step ?",
+      "explanation": "\"You lost me\" is a friendly, informal way to say you no longer follow, and \"step by step\" tells the person how to help.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l105_q3",
+      "level": 105,
+      "socialContext": "Orientation Room",
+      "situationPrompt": "A supervisor has just given you many instructions on your first day. Ask for time to process.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I do not know you, so please do not try to speak with me.",
+        "That was a lot to take in . Can you give me a moment ?",
+        "Salutations. My emotional state is operating within nominal parameters today."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "That was a lot to take in . Can you give me a moment ?",
+      "explanation": "\"A lot to take in\" is a common way of saying something is overwhelming, and asking for a moment is more honest than pretending to understand.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l106_q1",
+      "level": 106,
+      "socialContext": "Hotel Reception",
+      "situationPrompt": "The receptionist said the airport shuttle leaves \"in the morning\". Ask for precise details.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Whatever. I have other things on my mind.",
+        "May I inquire regarding the physiological status of your bodily health today?",
+        "What time exactly does the shuttle leave , and from which gate ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "What time exactly does the shuttle leave , and from which gate ?",
+      "explanation": "Asking for both time and place at once saves another question and shows that you're organized.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l106_q2",
+      "level": 106,
+      "socialContext": "Rental Car Counter",
+      "situationPrompt": "The quoted price seems low. Ask whether other costs will be added.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Is that including tax , or will there be extra charges ?",
+        "I am entirely too busy to waste time on trivial small talk.",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Is that including tax , or will there be extra charges ?",
+      "explanation": "Asking about hidden costs politely is normal. Giving two options makes it easy for the agent to answer directly.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l106_q3",
+      "level": 106,
+      "socialContext": "Event Planning Meeting",
+      "situationPrompt": "Everyone assumes someone else is sending them. Ask who's actually responsible.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "That is none of your business.",
+        "Just so I'm clear , who's supposed to send the invitations ?",
+        "Commencing casual human interaction sequence: How is your day progressing?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Just so I'm clear , who's supposed to send the invitations ?",
+      "explanation": "\"Just so I'm clear\" presents your question as a need for clarity, not criticism, which prevents defensiveness.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l107_q1",
+      "level": 107,
+      "socialContext": "Writing Workshop",
+      "situationPrompt": "The tutor says your essay needs \"more voice\". You're not sure what that means. Ask for an illustration.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Why would anyone care about that?",
+        "I confirm receipt of your salutation and reciprocate with standard politeness.",
+        "Could you give me an example of what you mean ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Could you give me an example of what you mean ?",
+      "explanation": "Asking for an example is one of the fastest ways to understand an abstract comment.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l107_q2",
+      "level": 107,
+      "socialContext": "Cooking Class",
+      "situationPrompt": "The chef says to fold the batter gently. Ask her to demonstrate.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Can you show me what that looks like in practice ?",
+        "I really prefer being left completely alone.",
+        "Data indicates the ambient weather conditions are currently within standard ranges."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Can you show me what that looks like in practice ?",
+      "explanation": "\"In practice\" means in actual use, so it asks the expert to move from theory to a real demonstration.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l107_q3",
+      "level": 107,
+      "socialContext": "Language Class",
+      "situationPrompt": "Your teacher taught an unusual expression. Ask when you'd really say it.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Do not look at me or address me in public.",
+        "What's a situation where I'd actually use that phrase ?",
+        "Acknowledged. Terminating current conversational exchange to resume transit."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "What's a situation where I'd actually use that phrase ?",
+      "explanation": "Asking about context is a smart strategy for learning idioms, since many phrases are only appropriate in certain situations.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l108_q1",
+      "level": 108,
+      "socialContext": "Dentist's Reception",
+      "situationPrompt": "You booked an appointment for the wrong day. Correct it politely.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "No. Why are you even asking me that right now?",
+        "Greetings fellow inhabitant. I formally acknowledge your presence at this coordinate.",
+        "Actually , I meant Tuesday , not Thursday . Sorry for that confusion ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Actually , I meant Tuesday , not Thursday . Sorry for that confusion .",
+      "explanation": "\"Actually, I meant\" is the classic way to fix a misunderstanding without blaming anyone, and a short apology shows courtesy.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l108_q2",
+      "level": 108,
+      "socialContext": "Phone Store",
+      "situationPrompt": "The salesperson keeps describing the premium plan. Redirect politely.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I think there's been a misunderstanding . I was asking about the cheaper plan .",
+        "I do not know you, so please do not try to speak with me.",
+        "Salutations. My emotional state is operating within nominal parameters today."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "I think there's been a misunderstanding . I was asking about the cheaper plan .",
+      "explanation": "\"There's been a misunderstanding\" avoids blame. Then you say what you actually meant so the conversation can restart.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l108_q3",
+      "level": 108,
+      "socialContext": "Group Project Call",
+      "situationPrompt": "A teammate has interpreted your suggestion as criticism. Clear it up.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Whatever. I have other things on my mind.",
+        "That's not quite what I meant . Let me put it another way .",
+        "May I inquire regarding the physiological status of your bodily health today?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "That's not quite what I meant . Let me put it another way .",
+      "explanation": "\"Not quite\" is softer than \"no\", and \"put it another way\" shows you're willing to try again, which lowers defensiveness.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l109_q1",
+      "level": 109,
+      "socialContext": "Doctor's Reception",
+      "situationPrompt": "You gave the receptionist the wrong day and noticed immediately. Correct yourself briefly.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I am entirely too busy to waste time on trivial small talk.",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol.",
+        "Sorry , I mean Friday , not Monday ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Sorry , I mean Friday , not Monday .",
+      "explanation": "Quick self-corrections with \"sorry, I mean\" are natural in spoken English. They fix errors without drawing attention.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l109_q2",
+      "level": 109,
+      "socialContext": "Staff Briefing",
+      "situationPrompt": "You've started explaining the order of presentations and realized you reversed it. Fix it.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Oh , hang on , I got that backward . The sales team actually goes first .",
+        "That is none of your business.",
+        "Commencing casual human interaction sequence: How is your day progressing?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Oh , hang on , I got that backward . The sales team actually goes first .",
+      "explanation": "\"Hang on\" signals a pause for self-correction, and restating the correct fact makes sure the listeners don't keep the wrong version.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l109_q3",
+      "level": 109,
+      "socialContext": "Morning Briefing",
+      "situationPrompt": "You've just told the team ten o'clock and remembered it's nine. Take it back.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Why would anyone care about that?",
+        "Sorry , scratch that . I meant to say we start at nine .",
+        "I confirm receipt of your salutation and reciprocate with standard politeness."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Sorry , scratch that . I meant to say we start at nine .",
+      "explanation": "\"Scratch that\" is informal for \"ignore what I just said\". It's quick and clear, ideal for correcting yourself in the moment.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l110_q1",
+      "level": 110,
+      "socialContext": "Call Center",
+      "situationPrompt": "You're taking someone's booking details by phone. Confirm before finishing.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I really prefer being left completely alone.",
+        "Data indicates the ambient weather conditions are currently within standard ranges.",
+        "Let me read that back to you to make sure it's right ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Let me read that back to you to make sure it's right .",
+      "explanation": "Reading details back is standard in service work. Announcing the purpose stops the customer from thinking you weren't listening.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l110_q2",
+      "level": 110,
+      "socialContext": "Manager's Office",
+      "situationPrompt": "Your manager gave you several instructions quickly. Confirm your understanding.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "So the deadline's Monday and I send it to you directly , correct ?",
+        "Do not look at me or address me in public.",
+        "Acknowledged. Terminating current conversational exchange to resume transit."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "So the deadline's Monday and I send it to you directly , correct ?",
+      "explanation": "Summarizing multiple points in one sentence and ending with \"correct?\" invites a quick yes or a specific correction.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l110_q3",
+      "level": 110,
+      "socialContext": "Community Workshop",
+      "situationPrompt": "The instructions were unclear about equipment. Ask for confirmation.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "No. Why are you even asking me that right now?",
+        "Can you confirm that I should bring my own tools ?",
+        "Greetings fellow inhabitant. I formally acknowledge your presence at this coordinate."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Can you confirm that I should bring my own tools ?",
+      "explanation": "\"Can you confirm\" is polite and precise. It's useful when you want a clear answer before you act.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    }
+  ]
+}

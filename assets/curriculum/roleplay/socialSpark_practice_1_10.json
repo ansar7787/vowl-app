@@ -1,0 +1,518 @@
+{
+  "gameType": "socialSpark",
+  "phase": "practice",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "ss_practice_l1_q1",
+      "level": 1,
+      "socialContext": "Apartment Hallway",
+      "situationPrompt": "Your neighbor is heading out to work as you step into the hallway at 8 a.m. Build your greeting.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I do not know you, so please do not try to speak with me.",
+        "Good morning , how are you ?",
+        "Salutations. My emotional state is operating within nominal parameters today."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Good morning , how are you ?",
+      "explanation": "Pairing a time-of-day greeting with a check-in sounds warmer than a bare \"hi\" and gives the other person an easy way to answer.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l1_q2",
+      "level": 1,
+      "socialContext": "Video Call",
+      "situationPrompt": "You've just joined an online meeting at 7 p.m. and want to greet the whole group.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Whatever. I have other things on my mind.",
+        "May I inquire regarding the physiological status of your bodily health today?",
+        "Good evening , everyone ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Good evening , everyone .",
+      "explanation": "\"Everyone\" greets a group in one go, and \"good evening\" sounds a little more polished than \"hi\", which suits a meeting.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l1_q3",
+      "level": 1,
+      "socialContext": "Bus Stop",
+      "situationPrompt": "A classmate asks how it's going and you're doing okay. Build a reply that keeps things balanced.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Not bad , thanks . How about you ?",
+        "I am entirely too busy to waste time on trivial small talk.",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Not bad , thanks . How about you ?",
+      "explanation": "Replying and then returning the question stops the exchange from feeling one-sided. \"Not bad\" is a relaxed way of saying things are fine.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l2_q1",
+      "level": 2,
+      "socialContext": "Community Event",
+      "situationPrompt": "You're at a street festival and want to introduce yourself to a stranger. Say it naturally.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "That is none of your business.",
+        "Hi , I'm Daniel . I'm new to the neighborhood .",
+        "Commencing casual human interaction sequence: How is your day progressing?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Hi , I'm Daniel . I'm new to the neighborhood .",
+      "explanation": "A name alone can end the conversation. Adding a small fact, like being new here, gives the listener an easy next question.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l2_q2",
+      "level": 2,
+      "socialContext": "Networking Event",
+      "situationPrompt": "At a professional mixer, introduce yourself and say what you do.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Why would anyone care about that?",
+        "I confirm receipt of your salutation and reciprocate with standard politeness.",
+        "Hi , I'm Mei . I work in marketing ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Hi , I'm Mei . I work in marketing .",
+      "explanation": "Two short sentences sound clearer and more natural than one long one, and \"I work in...\" is the standard way to mention your field.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l2_q3",
+      "level": 2,
+      "socialContext": "Office Kitchen",
+      "situationPrompt": "It's your first week and you spot someone you haven't spoken to. Introduce yourself without assuming anything.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I don't think we've met . I'm Sam .",
+        "I really prefer being left completely alone.",
+        "Data indicates the ambient weather conditions are currently within standard ranges."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "I don't think we've met . I'm Sam .",
+      "explanation": "\"I don't think we've met\" is a polite way to start when you aren't sure. It avoids the awkwardness of introducing yourself to someone who already knows you.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l3_q1",
+      "level": 3,
+      "socialContext": "Birthday Gathering",
+      "situationPrompt": "Someone told you their name over loud music, but you missed it. Ask for it again politely.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Do not look at me or address me in public.",
+        "Sorry , I didn't catch your name .",
+        "Acknowledged. Terminating current conversational exchange to resume transit."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Sorry , I didn't catch your name .",
+      "explanation": "Apologizing and saying \"catch\" (meaning to hear) is the natural way to ask for a repeated name without sounding careless.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l3_q2",
+      "level": 3,
+      "socialContext": "Classroom",
+      "situationPrompt": "Your new teacher has an unfamiliar name and you want to say it correctly. Ask about it.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "No. Why are you even asking me that right now?",
+        "Greetings fellow inhabitant. I formally acknowledge your presence at this coordinate.",
+        "How do you pronounce your name ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "How do you pronounce your name ?",
+      "explanation": "Asking about pronunciation shows respect. Most people appreciate the effort and would rather correct you once than hear it wrong for months.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l3_q3",
+      "level": 3,
+      "socialContext": "Study Group",
+      "situationPrompt": "You've just pronounced a classmate's name for the first time and you're not sure you got it. Check.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Did I say your name right ?",
+        "I do not know you, so please do not try to speak with me.",
+        "Salutations. My emotional state is operating within nominal parameters today."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Did I say your name right ?",
+      "explanation": "The past tense \"Did I say...\" checks something that just happened. It invites a quick correction without making a big deal of it.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l4_q1",
+      "level": 4,
+      "socialContext": "Coworking Space",
+      "situationPrompt": "A colleague introduces you to your new deskmate. Give a warm, natural response.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Whatever. I have other things on my mind.",
+        "It's really nice to meet you .",
+        "May I inquire regarding the physiological status of your bodily health today?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "It's really nice to meet you .",
+      "explanation": "Adding \"really\" turns a routine phrase into something warmer, which matters when you'll see this person every day.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l4_q2",
+      "level": 4,
+      "socialContext": "Dinner With Friends",
+      "situationPrompt": "Your friend's partner says it's nice to meet you. You've heard plenty about them already. Reply.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I am entirely too busy to waste time on trivial small talk.",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol.",
+        "Nice to meet you too . I've heard a lot about you ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Nice to meet you too . I've heard a lot about you .",
+      "explanation": "\"Too\" mirrors the greeting, and \"I've heard a lot about you\" adds a friendly detail that signals interest.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l4_q3",
+      "level": 4,
+      "socialContext": "Conference",
+      "situationPrompt": "Someone says nice to meet you at a conference. Reply briefly and steer the conversation forward.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Likewise . Is this your first time at one of these ?",
+        "That is none of your business.",
+        "Commencing casual human interaction sequence: How is your day progressing?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Likewise . Is this your first time at one of these ?",
+      "explanation": "\"Likewise\" is a short, neutral reply to \"nice to meet you\". Following it with a question about the event gives you common ground right away.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l5_q1",
+      "level": 5,
+      "socialContext": "Birthday Gathering",
+      "situationPrompt": "You want two of your friends to get to know each other. Introduce Tom to Ana.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Why would anyone care about that?",
+        "Ana , this is my friend Tom .",
+        "I confirm receipt of your salutation and reciprocate with standard politeness."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Ana , this is my friend Tom .",
+      "explanation": "Addressing the first person by name before introducing the second makes it clear who you're talking to and feels smooth in a group.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l5_q2",
+      "level": 5,
+      "socialContext": "Office Kitchen",
+      "situationPrompt": "Two colleagues are standing near you and you're not sure they know each other. Check, then introduce.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I really prefer being left completely alone.",
+        "Data indicates the ambient weather conditions are currently within standard ranges.",
+        "Have you two met ? This is Priya , from accounting ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Have you two met ? This is Priya , from accounting .",
+      "explanation": "\"Have you two met?\" avoids introducing people who already know each other. Adding where someone works gives them something to talk about.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l5_q3",
+      "level": 5,
+      "socialContext": "Company Picnic",
+      "situationPrompt": "A family member is meeting your boss for the first time. Introduce them in a slightly more respectful way.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Let me introduce you to my manager , Carla .",
+        "Do not look at me or address me in public.",
+        "Acknowledged. Terminating current conversational exchange to resume transit."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Let me introduce you to my manager , Carla .",
+      "explanation": "\"Let me introduce you to...\" is a good step up in politeness. It shows respect for both people, especially when one has authority.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l6_q1",
+      "level": 6,
+      "socialContext": "Coffee Shop",
+      "situationPrompt": "The café is full and there's an empty chair at a stranger's table. Ask before you sit.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "No. Why are you even asking me that right now?",
+        "Excuse me , is this seat taken ?",
+        "Greetings fellow inhabitant. I formally acknowledge your presence at this coordinate."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Excuse me , is this seat taken ?",
+      "explanation": "\"Excuse me\" gets someone's attention without sounding demanding. A direct question then lets them answer with a simple yes or no.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l6_q2",
+      "level": 6,
+      "socialContext": "Bus Stop",
+      "situationPrompt": "You forgot your phone and need to know the time. Ask the person next to you.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I do not know you, so please do not try to speak with me.",
+        "Salutations. My emotional state is operating within nominal parameters today.",
+        "Sorry to bother you , do you have the time ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Sorry to bother you , do you have the time ?",
+      "explanation": "\"Sorry to bother you\" acknowledges that you're interrupting a stranger. This kind of softener makes strangers more willing to help.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l6_q3",
+      "level": 6,
+      "socialContext": "Shopping Mall",
+      "situationPrompt": "You're lost in a mall and need directions from a passerby. Ask politely.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Excuse me , could you tell me where the pharmacy is ?",
+        "Whatever. I have other things on my mind.",
+        "May I inquire regarding the physiological status of your bodily health today?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Excuse me , could you tell me where the pharmacy is ?",
+      "explanation": "Embedded questions like \"where the pharmacy is\" keep normal statement order, and \"could you tell me\" sounds more courteous than asking \"Where is...\" straight out.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l7_q1",
+      "level": 7,
+      "socialContext": "Bus Stop",
+      "situationPrompt": "Your bus has arrived and the friendly conversation with a stranger has to end. Say goodbye.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I am entirely too busy to waste time on trivial small talk.",
+        "It was nice talking to you .",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "It was nice talking to you .",
+      "explanation": "A past-tense closing signals that the chat was enjoyable and that you're leaving on a warm note.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l7_q2",
+      "level": 7,
+      "socialContext": "University Corridor",
+      "situationPrompt": "Your next class starts in two minutes and you're leaving a classmate you'll see again. Say goodbye.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "That is none of your business.",
+        "Commencing casual human interaction sequence: How is your day progressing?",
+        "I have to run , but see you tomorrow ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "I have to run , but see you tomorrow .",
+      "explanation": "\"I have to run\" is a natural, friendly way to explain why you're leaving quickly. Adding \"see you tomorrow\" shows that this isn't a rejection.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l7_q3",
+      "level": 7,
+      "socialContext": "Friend's Home",
+      "situationPrompt": "You're leaving a dinner at a friend's house. Thank the host as you go.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Thanks for having me . I had a great time .",
+        "Why would anyone care about that?",
+        "I confirm receipt of your salutation and reciprocate with standard politeness."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Thanks for having me . I had a great time .",
+      "explanation": "\"Thanks for having me\" is the standard way for a guest to thank a host. The second sentence adds genuine appreciation.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l8_q1",
+      "level": 8,
+      "socialContext": "Break Room",
+      "situationPrompt": "A coworker says she's going hiking this weekend. Show a bit of enthusiasm.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I really prefer being left completely alone.",
+        "Oh , that sounds like fun !",
+        "Data indicates the ambient weather conditions are currently within standard ranges."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Oh , that sounds like fun !",
+      "explanation": "A short reaction like \"Oh\" makes you sound spontaneous, and \"sounds like fun\" is a flexible way of responding to plans.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l8_q2",
+      "level": 8,
+      "socialContext": "Classroom",
+      "situationPrompt": "A classmate tells you the exam has been moved to Friday, and this is news to you. React.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Do not look at me or address me in public.",
+        "Acknowledged. Terminating current conversational exchange to resume transit.",
+        "Oh really ? I had no idea ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Oh really ? I had no idea .",
+      "explanation": "\"I had no idea\" is a natural way to show surprise about new information. Beginning with \"Oh really?\" keeps the reaction light.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l8_q3",
+      "level": 8,
+      "socialContext": "Office Kitchen",
+      "situationPrompt": "A coworker tells you the team lunch is canceled. Express your disappointment kindly.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Oh no , that's a shame . I was looking forward to it .",
+        "No. Why are you even asking me that right now?",
+        "Greetings fellow inhabitant. I formally acknowledge your presence at this coordinate."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Oh no , that's a shame . I was looking forward to it .",
+      "explanation": "\"That's a shame\" is a gentle, sympathetic reaction. Adding what you were expecting explains your feeling without complaining.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l9_q1",
+      "level": 9,
+      "socialContext": "Hotel Lobby",
+      "situationPrompt": "A hotel receptionist has just helped you find your room key. Thank them warmly.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I do not know you, so please do not try to speak with me.",
+        "Thank you so much for your help .",
+        "Salutations. My emotional state is operating within nominal parameters today."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Thank you so much for your help .",
+      "explanation": "\"So much\" turns a simple thanks into an emphatic one. That extra warmth matters when someone has gone out of their way for you.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l9_q2",
+      "level": 9,
+      "socialContext": "Office Kitchen",
+      "situationPrompt": "A colleague thanks you for showing them how the coffee machine works. Respond.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Whatever. I have other things on my mind.",
+        "May I inquire regarding the physiological status of your bodily health today?",
+        "No problem , I'm happy to help ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "No problem , I'm happy to help .",
+      "explanation": "\"No problem\" keeps things casual and tells the person the favor wasn't a burden. \"Happy to help\" adds warmth.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l9_q3",
+      "level": 9,
+      "socialContext": "Street Corner",
+      "situationPrompt": "It starts to rain and a stranger offers to share their umbrella. Accept and thank them.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Thanks , that's really kind of you .",
+        "I am entirely too busy to waste time on trivial small talk.",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Thanks , that's really kind of you .",
+      "explanation": "\"That's really kind of you\" praises the person's character, not just the action. It fits a favor from someone you don't know.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l10_q1",
+      "level": 10,
+      "socialContext": "Language Class",
+      "situationPrompt": "On the first day of class, you're curious about a new classmate's background. Ask.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "That is none of your business.",
+        "Where are you from originally ?",
+        "Commencing casual human interaction sequence: How is your day progressing?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Where are you from originally ?",
+      "explanation": "\"Originally\" tells the listener you mean where they were born or grew up. Without it, the question could sound like you're asking where they live.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l10_q2",
+      "level": 10,
+      "socialContext": "Networking Event",
+      "situationPrompt": "Someone asks where you're from. Give your hometown and mention how long you've been here.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Why would anyone care about that?",
+        "I confirm receipt of your salutation and reciprocate with standard politeness.",
+        "I'm from Lisbon , but I've lived here for two years ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "I'm from Lisbon , but I've lived here for two years .",
+      "explanation": "Giving your origin and then your current situation answers more than was asked, which keeps the conversation moving.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l10_q3",
+      "level": 10,
+      "socialContext": "Hostel Common Room",
+      "situationPrompt": "You're chatting with a fellow traveler and want to know why they came. Ask casually.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "So , what brings you here ?",
+        "I really prefer being left completely alone.",
+        "Data indicates the ambient weather conditions are currently within standard ranges."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "So , what brings you here ?",
+      "explanation": "\"What brings you here?\" is warmer than \"Why are you here?\" and invites a story instead of a short answer. \"So\" makes it feel like a natural continuation.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    }
+  ]
+}

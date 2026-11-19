@@ -1,0 +1,518 @@
+{
+  "gameType": "socialSpark",
+  "phase": "practice",
+  "batchIndex": 3,
+  "levels": "21-30",
+  "quests": [
+    {
+      "id": "ss_practice_l21_q1",
+      "level": 21,
+      "socialContext": "Train Carriage",
+      "situationPrompt": "The person beside you says, \"I work at a hospital.\" Respond by showing interest and asking a follow-up.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Oh , that must be a busy job . Do you enjoy it ?",
+        "I am entirely too busy to waste time on trivial small talk.",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Oh , that must be a busy job . Do you enjoy it ?",
+      "explanation": "Reacting to the information first shows you were listening. The follow-up then keeps the conversation on their topic instead of changing it.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l21_q2",
+      "level": 21,
+      "socialContext": "Language Exchange Meetup",
+      "situationPrompt": "Your partner says, \"I've just started learning Spanish.\" React and ask about their motivation.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "That is none of your business.",
+        "That's great . What made you want to learn it ?",
+        "Commencing casual human interaction sequence: How is your day progressing?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "That's great . What made you want to learn it ?",
+      "explanation": "\"What made you...\" invites a story, not a yes or no, so the person is more likely to open up.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l21_q3",
+      "level": 21,
+      "socialContext": "Building Lobby",
+      "situationPrompt": "A new neighbor says, \"We moved here last month.\" Show you understand where they are in the process, then ask about their experience.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Why would anyone care about that?",
+        "I confirm receipt of your salutation and reciprocate with standard politeness.",
+        "So you're still settling in . How are you finding it so far ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "So you're still settling in . How are you finding it so far ?",
+      "explanation": "Restating what someone said in your own words shows you understood. \"How are you finding it?\" is a friendly way to ask for their impressions.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l22_q1",
+      "level": 22,
+      "socialContext": "Climbing Gym",
+      "situationPrompt": "A regular at the gym mentions they've climbed for years. Ask how it started.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "How did you get into rock climbing ?",
+        "I really prefer being left completely alone.",
+        "Data indicates the ambient weather conditions are currently within standard ranges."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "How did you get into rock climbing ?",
+      "explanation": "\"Get into\" is the natural phrasal verb for how someone begins a hobby. The question invites a personal story.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l22_q2",
+      "level": 22,
+      "socialContext": "Riverside Path",
+      "situationPrompt": "A jogger you've met a few times says she runs every morning. Ask about her routine.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Do not look at me or address me in public.",
+        "Do you usually run on your own , or with a group ?",
+        "Acknowledged. Terminating current conversational exchange to resume transit."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Do you usually run on your own , or with a group ?",
+      "explanation": "Offering two choices makes it easier for someone to respond, and the answer tells you something about how they approach the hobby.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l22_q3",
+      "level": 22,
+      "socialContext": "Pottery Studio",
+      "situationPrompt": "A woman at the next table says she makes pottery. Show interest and ask whether beginners can join.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "No. Why are you even asking me that right now?",
+        "Greetings fellow inhabitant. I formally acknowledge your presence at this coordinate.",
+        "I'd love to try that someday . Is it easy to get started ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "I'd love to try that someday . Is it easy to get started ?",
+      "explanation": "Saying you'd like to try it turns simple politeness into real interest. The question that follows gives the other person a natural way to explain.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l23_q1",
+      "level": 23,
+      "socialContext": "Video Call",
+      "situationPrompt": "A new remote teammate has just joined your team. Ask about their typical workday to get to know them.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "What's a normal day like for you these days ?",
+        "I do not know you, so please do not try to speak with me.",
+        "Salutations. My emotional state is operating within nominal parameters today."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "What's a normal day like for you these days ?",
+      "explanation": "An open question like \"What's a normal day like?\" lets the other person choose what to share, which builds rapport more effectively than narrow questions.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l23_q2",
+      "level": 23,
+      "socialContext": "Shared Apartment",
+      "situationPrompt": "Your new roommate has just moved in and you're trying to work out how to share the space. Ask about their rhythm.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Whatever. I have other things on my mind.",
+        "Are you more of a morning person , or a night owl ?",
+        "May I inquire regarding the physiological status of your bodily health today?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Are you more of a morning person , or a night owl ?",
+      "explanation": "Everyday labels like \"morning person\" and \"night owl\" make personal questions sound light, and the answer helps you plan around each other.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l23_q3",
+      "level": 23,
+      "socialContext": "Bus Stop",
+      "situationPrompt": "A colleague from another department is waiting for the same bus. Start a conversation about their journey.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I am entirely too busy to waste time on trivial small talk.",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol.",
+        "Is your commute long , or do you live close to the office ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Is your commute long , or do you live close to the office ?",
+      "explanation": "When you give two likely answers, you show you've thought about their situation, and the person can pick one and add detail.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l24_q1",
+      "level": 24,
+      "socialContext": "Coworking Space",
+      "situationPrompt": "A stranger at a shared desk says she's a designer. Ask about her current project.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "What are you working on at the moment ?",
+        "That is none of your business.",
+        "Commencing casual human interaction sequence: How is your day progressing?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "What are you working on at the moment ?",
+      "explanation": "\"At the moment\" sounds more natural than \"now\" and asks about current work in a way people are usually happy to explain.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l24_q2",
+      "level": 24,
+      "socialContext": "Company Picnic",
+      "situationPrompt": "You're at a company picnic and chatting with someone from another team. Find out about their history there.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Why would anyone care about that?",
+        "How long have you been with the company ?",
+        "I confirm receipt of your salutation and reciprocate with standard politeness."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "How long have you been with the company ?",
+      "explanation": "\"Been with the company\" is the natural way to talk about employment. Asking about length of time is a reliable follow-up because people enjoy sharing their story.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l24_q3",
+      "level": 24,
+      "socialContext": "Orientation Week",
+      "situationPrompt": "During orientation, another student mentions their program. Ask how it's going.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I really prefer being left completely alone.",
+        "Data indicates the ambient weather conditions are currently within standard ranges.",
+        "Are you enjoying the course , or is it a lot of work ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Are you enjoying the course , or is it a lot of work ?",
+      "explanation": "Balanced questions like this one make it easy for the other person to be honest about their experience, including the difficult parts.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l25_q1",
+      "level": 25,
+      "socialContext": "Office Elevator",
+      "situationPrompt": "It's Friday afternoon and you're in the elevator with a colleague. Ask about their weekend.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Got any plans for the weekend ?",
+        "Do not look at me or address me in public.",
+        "Acknowledged. Terminating current conversational exchange to resume transit."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Got any plans for the weekend ?",
+      "explanation": "Casual questions often leave out the subject and auxiliary verb. \"Got any plans...?\" is the everyday form of \"Do you have any plans...?\"",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l25_q2",
+      "level": 25,
+      "socialContext": "Lunch Break",
+      "situationPrompt": "A teammate asks what you're doing this weekend. Share your loose plan and return the question.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "No. Why are you even asking me that right now?",
+        "We're thinking of going to the lake if the weather's nice . What about you ?",
+        "Greetings fellow inhabitant. I formally acknowledge your presence at this coordinate."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "We're thinking of going to the lake if the weather's nice . What about you ?",
+      "explanation": "Sharing a plan and then asking \"What about you?\" keeps the exchange balanced and makes the conversation feel mutual.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l25_q3",
+      "level": 25,
+      "socialContext": "Parking Lot",
+      "situationPrompt": "A neighbor asks what you're doing this weekend and you don't have anything special planned. Answer.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I do not know you, so please do not try to speak with me.",
+        "Salutations. My emotional state is operating within nominal parameters today.",
+        "Nothing big , just catching up on sleep and maybe a movie ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Nothing big , just catching up on sleep and maybe a movie .",
+      "explanation": "\"Nothing big\" tells the listener that your plans are low-key. It's a normal answer, and listing small things makes it sound natural.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l26_q1",
+      "level": 26,
+      "socialContext": "Open Mic Night",
+      "situationPrompt": "You're chatting with a stranger at a small music event. Share your hobby and turn the conversation toward them.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I've been learning the guitar lately . Do you play anything ?",
+        "Whatever. I have other things on my mind.",
+        "May I inquire regarding the physiological status of your bodily health today?"
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "I've been learning the guitar lately . Do you play anything ?",
+      "explanation": "Sharing before asking makes the question feel less like an interview, so the conversation is more comfortable for both people.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l26_q2",
+      "level": 26,
+      "socialContext": "Gym",
+      "situationPrompt": "The person on the next treadmill asks what you're training for. Answer and ask a related question.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I am entirely too busy to waste time on trivial small talk.",
+        "I'm training for a 10K in March . Have you ever run one ?",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "I'm training for a 10K in March . Have you ever run one ?",
+      "explanation": "\"Have you ever...?\" asks about experience without a specific time, which is the normal way to find out whether someone has done something.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l26_q3",
+      "level": 26,
+      "socialContext": "Board Game Night",
+      "situationPrompt": "At a game night, someone asks what you do outside work. Tell them about a habit and ask about theirs.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "That is none of your business.",
+        "Commencing casual human interaction sequence: How is your day progressing?",
+        "I tend to cook a lot on weekends . What do you do to unwind ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "I tend to cook a lot on weekends . What do you do to unwind ?",
+      "explanation": "\"I tend to...\" describes a pattern rather than a one-time event, and \"unwind\" is a natural way of saying relax after a busy week.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l27_q1",
+      "level": 27,
+      "socialContext": "Bake Sale",
+      "situationPrompt": "A volunteer tells you she bakes for sixty people every month. Show surprise and ask for more.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "No way ! How long have you been doing that ?",
+        "Why would anyone care about that?",
+        "I confirm receipt of your salutation and reciprocate with standard politeness."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "No way ! How long have you been doing that ?",
+      "explanation": "An informal reaction like \"No way!\" shows real surprise. The question about duration then turns interest into conversation.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l27_q2",
+      "level": 27,
+      "socialContext": "Volunteer Event",
+      "situationPrompt": "Someone tells you they trained for a marathon while working full-time. Show admiration and ask how they managed.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I really prefer being left completely alone.",
+        "That's amazing . How did you find the time ?",
+        "Data indicates the ambient weather conditions are currently within standard ranges."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "That's amazing . How did you find the time ?",
+      "explanation": "Praise followed by a \"how\" question shows respect for the effort, which makes people happy to explain.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l27_q3",
+      "level": 27,
+      "socialContext": "Airport Gate",
+      "situationPrompt": "While waiting for your flight, the person beside you mentions they used to live in Japan. React and ask about it.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Do not look at me or address me in public.",
+        "Acknowledged. Terminating current conversational exchange to resume transit.",
+        "Wait , you lived in Japan ? What was that like ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Wait , you lived in Japan ? What was that like ?",
+      "explanation": "Repeating part of someone's statement as a question shows surprise and interest. \"What was that like?\" is a natural way to invite a story.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l28_q1",
+      "level": 28,
+      "socialContext": "Office Hallway",
+      "situationPrompt": "You ask a coworker about their weekend and they say only, \"Fine.\" Try again to get a fuller answer.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Just fine ? Did you do anything fun , or was it a quiet one ?",
+        "No. Why are you even asking me that right now?",
+        "Greetings fellow inhabitant. I formally acknowledge your presence at this coordinate."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Just fine ? Did you do anything fun , or was it a quiet one ?",
+      "explanation": "Echoing a short answer and offering specific alternatives makes it easier for the person to continue without feeling pressured.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l28_q2",
+      "level": 28,
+      "socialContext": "Break Room",
+      "situationPrompt": "You ask a new colleague how the job is going and they say, \"It's okay.\" Ask something more specific.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "I do not know you, so please do not try to speak with me.",
+        "Anything about it that surprised you ?",
+        "Salutations. My emotional state is operating within nominal parameters today."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Anything about it that surprised you ?",
+      "explanation": "Short answers often come from broad questions. A more specific one gives the other person something to actually think about.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l28_q3",
+      "level": 28,
+      "socialContext": "Stairwell",
+      "situationPrompt": "You've tried chatting with a neighbor twice but they only say, \"Not much.\" Close the exchange in a friendly way.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Whatever. I have other things on my mind.",
+        "May I inquire regarding the physiological status of your bodily health today?",
+        "Fair enough . If you ever need a hand , just ask ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Fair enough . If you ever need a hand , just ask .",
+      "explanation": "Knowing when to stop is a social skill. Offering help at the end leaves the door open without pushing.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l29_q1",
+      "level": 29,
+      "socialContext": "Concert Queue",
+      "situationPrompt": "The person in the line says they love the band you came to see. Share your enthusiasm and ask a follow-up.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Oh , I'm a huge fan of theirs too . Have you seen them live ?",
+        "I am entirely too busy to waste time on trivial small talk.",
+        "I am executing mandatory verbal greeting subroutines to satisfy social protocol."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Oh , I'm a huge fan of theirs too . Have you seen them live ?",
+      "explanation": "Shared interests are the fastest way to build rapport. Confirming yours and asking about their experience keeps the conversation going.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l29_q2",
+      "level": 29,
+      "socialContext": "Airport Gate",
+      "situationPrompt": "A traveler mentions the small town they're from, and you realize it's close to your hometown. Share the connection.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "That is none of your business.",
+        "That's funny , I grew up near there .",
+        "Commencing casual human interaction sequence: How is your day progressing?"
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "That's funny , I grew up near there .",
+      "explanation": "\"That's funny\" doesn't mean something is humorous. It signals an interesting coincidence, and a shared background gives you plenty to discuss.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l29_q3",
+      "level": 29,
+      "socialContext": "Food Truck Queue",
+      "situationPrompt": "Someone says they've been trying every food truck in the city. You have too. Suggest sharing recommendations.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Why would anyone care about that?",
+        "I confirm receipt of your salutation and reciprocate with standard politeness.",
+        "Same here . We should compare notes on the best places ."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Same here . We should compare notes on the best places .",
+      "explanation": "\"Compare notes\" is a friendly idiom for exchanging information. It turns a chance meeting into a small collaboration.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l30_q1",
+      "level": 30,
+      "socialContext": "Break Room",
+      "situationPrompt": "The conversation with a coworker about deadlines has died down. Move to a lighter topic.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "By the way , did you see the game last night ?",
+        "I really prefer being left completely alone.",
+        "Data indicates the ambient weather conditions are currently within standard ranges."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "By the way , did you see the game last night ?",
+      "explanation": "\"By the way\" prepares the listener for something slightly unrelated, so the shift feels smooth rather than abrupt.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l30_q2",
+      "level": 30,
+      "socialContext": "Club Meeting",
+      "situationPrompt": "Someone mentions they're hungry at a club meeting. Use it to bring up a new restaurant.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "Do not look at me or address me in public.",
+        "Speaking of food , have you tried the new place downtown ?",
+        "Acknowledged. Terminating current conversational exchange to resume transit."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Speaking of food , have you tried the new place downtown ?",
+      "explanation": "\"Speaking of...\" uses the previous comment as a bridge, so the topic change feels natural instead of random.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    },
+    {
+      "id": "ss_practice_l30_q3",
+      "level": 30,
+      "socialContext": "After-Work Drinks",
+      "situationPrompt": "You and a colleague have been discussing a project for a long time. Steer the chat to something more personal.",
+      "question": "Choose the most natural, engaging response for this social situation:",
+      "options": [
+        "No. Why are you even asking me that right now?",
+        "Greetings fellow inhabitant. I formally acknowledge your presence at this coordinate.",
+        "Anyway , enough about work . How's your family doing ?"
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Anyway , enough about work . How's your family doing ?",
+      "explanation": "\"Anyway\" marks the end of a topic, and \"enough about work\" makes the change of subject feel deliberate and friendly.",
+      "rapportScore": 0.9,
+      "timeLimit": 30
+    }
+  ]
+}

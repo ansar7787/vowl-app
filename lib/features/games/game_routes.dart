@@ -202,6 +202,8 @@ import 'package:vowl/features/roleplay/conflict_resolver/presentation/pages/conf
 import 'package:vowl/features/roleplay/conflict_resolver/presentation/pages/conflict_resolver_practice_screen.dart';
 import 'package:vowl/features/roleplay/elevator_pitch/presentation/pages/elevator_pitch_learn_screen.dart';
 import 'package:vowl/features/roleplay/elevator_pitch/presentation/pages/elevator_pitch_practice_screen.dart';
+import 'package:vowl/features/roleplay/social_spark/presentation/pages/social_spark_learn_screen.dart';
+import 'package:vowl/features/roleplay/social_spark/presentation/pages/social_spark_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -1013,6 +1015,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'socialspark') {
+          return fadeTransitionPage(
+            child: SocialSparkLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1603,6 +1611,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'elevatorpitch') {
           return fadeTransitionPage(
             child: ElevatorPitchPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'socialspark') {
+          return fadeTransitionPage(
+            child: SocialSparkPracticeScreen(level: level),
             state: state,
           );
         }
