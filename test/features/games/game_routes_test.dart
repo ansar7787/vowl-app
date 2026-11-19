@@ -49,6 +49,8 @@ import 'package:vowl/features/accent/word_linking/presentation/pages/word_linkin
 import 'package:vowl/features/accent/word_linking/presentation/pages/word_linking_practice_screen.dart';
 import 'package:vowl/features/accent/shadowing_challenge/presentation/pages/shadowing_challenge_learn_screen.dart';
 import 'package:vowl/features/accent/shadowing_challenge/presentation/pages/shadowing_challenge_practice_screen.dart';
+import 'package:vowl/features/accent/vowel_distinction/presentation/pages/vowel_distinction_learn_screen.dart';
+import 'package:vowl/features/accent/vowel_distinction/presentation/pages/vowel_distinction_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -813,6 +815,24 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<ShadowingChallengePracticeScreen>());
+    });
+
+    test('resolves /learn route for vowelDistinction', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state =
+          createMockState('/learn?category=accent&gameType=vowelDistinction&level=5');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<VowelDistinctionLearnScreen>());
+    });
+
+    test('resolves /practice route for vowelDistinction', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state =
+          createMockState('/practice?category=accent&gameType=vowelDistinction&level=5');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<VowelDistinctionPracticeScreen>());
     });
   });
 }

@@ -1,0 +1,698 @@
+{
+    "gameType": "vowelDistinction",
+    "batchIndex": 14,
+    "phase": "practice",
+    "levels": "131-140",
+    "quests": [
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L131_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "reduce",
+            "textToSpeak": "reduce",
+            "options": [
+                "/aɪ/",
+                "/ɔɪ/",
+                "/uː/",
+                "/ʊ/"
+            ],
+            "correctAnswer": "/uː/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.9,
+                "y": 0.1
+            },
+            "hint": "The re- prefix is weak. The target is the stressed second syllable, with a /j/ glide before it.",
+            "explanation": "The long rounded vowel sits in the stressed second syllable, preceded by /j/. The re- prefix keeps a weak vowel that is not part of this choice.",
+            "vowelTensionRule": "/ʊ/ is lax with loosely rounded lips and a tongue pulled slightly forward; /uː/ is tense, high and back with tightly rounded, protruded lips."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L131_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "decide",
+            "textToSpeak": "decide",
+            "options": [
+                "/eɪ/",
+                "/aɪ/",
+                "/aʊ/",
+                "/ʊ/"
+            ],
+            "correctAnswer": "/aɪ/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "The prefix de- is quick. The stressed syllable begins with /s/ and opens wide.",
+            "explanation": "The stressed second syllable holds the open-start diphthong, spelled i_e. Prefixes like de- and re- are usually weak.",
+            "vowelTensionRule": "Listen to the start point: an open, ah-like beginning means /aɪ/, an eh-like beginning means /eɪ/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L131_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "repeat",
+            "textToSpeak": "repeat",
+            "options": [
+                "/ɪ/",
+                "/e/",
+                "/iː/",
+                "/aʊ/"
+            ],
+            "correctAnswer": "/iː/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.1,
+                "y": 0.1
+            },
+            "hint": "The same weak-prefix idea, but the strong syllable now has the spread-lip vowel.",
+            "explanation": "Prefix and stem hold different vowels from the same pair: a weak /ɪ/ in re- and the long vowel in the stressed -peat.",
+            "vowelTensionRule": "Check the corners of the mouth: they pull back for /iː/ but stay roughly neutral for /ɪ/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L132_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "prefer",
+            "textToSpeak": "prefer",
+            "options": [
+                "/aɪ/",
+                "/e/",
+                "/ɜː/",
+                "/ɔː/"
+            ],
+            "correctAnswer": "/ɜː/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "The last syllable holds a long steady vowel, with the lips neutral.",
+            "explanation": "The er here is a full vowel, not a weak schwa, because the final syllable is stressed.",
+            "vowelTensionRule": "Check your lips: still and unrounded for /ɜː/, a clear oval for /ɔː/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L132_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "unusual",
+            "textToSpeak": "unusual",
+            "options": [
+                "/əʊ/",
+                "/ʌ/",
+                "/ɑː/",
+                "/ɒ/"
+            ],
+            "correctAnswer": "/ʌ/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.6,
+                "y": 0.8
+            },
+            "hint": "The un- prefix is the first syllable itself. Judge it: short and central.",
+            "explanation": "Unlike re- and de-, the prefix un- keeps a full vowel, so the first syllable holds the central vowel.",
+            "vowelTensionRule": "Both are short, so don't wait for a length difference. Wait for darkness (rounding) versus neutrality."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L132_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "protect",
+            "textToSpeak": "protect",
+            "options": [
+                "/æ/",
+                "/iː/",
+                "/e/",
+                "/aɪ/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
+            },
+            "hint": "The pro- prefix is weak, so the strong vowel comes later. Half-open jaw.",
+            "explanation": "The weak pro- reduces to schwa, and the stressed second syllable carries the half-open vowel.",
+            "vowelTensionRule": "Before nasals and voiced stops /æ/ tends to lengthen while /e/ stays brief, but the jaw gap is still the deciding cue."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L133_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "education",
+            "textToSpeak": "education",
+            "options": [
+                "/e/",
+                "/əʊ/",
+                "/eɪ/",
+                "/ʌ/"
+            ],
+            "correctAnswer": "/eɪ/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "Four syllables. Find the stressed one, -ca-, and let it glide.",
+            "explanation": "An e also appears at the start, which is why the stress is specified: the glide sits in -ca-.",
+            "vowelTensionRule": "Time the vowel: /e/ is over quickly, while /eɪ/ carries on and ends with the tongue rising."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L133_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "solution",
+            "textToSpeak": "solution",
+            "options": [
+                "/uː/",
+                "/ɪə/",
+                "/ɜː/",
+                "/ʊ/"
+            ],
+            "correctAnswer": "/uː/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.9,
+                "y": 0.1
+            },
+            "hint": "The -tion is weak. The target is the stressed syllable before it.",
+            "explanation": "The -tion ending is just /ʃn/ with no vowel of its own, so the target is the stressed syllable before it.",
+            "vowelTensionRule": "Push the lips into a small circle for /uː/. For /ʊ/ the rounding is slack and the tongue sits lower and further forward."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L133_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "nation",
+            "textToSpeak": "nation",
+            "options": [
+                "/ə/",
+                "/eɪ/",
+                "/ɪə/",
+                "/e/"
+            ],
+            "correctAnswer": "/eɪ/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "The first vowel glides upward, and the -tion ending is just /ʃn/.",
+            "explanation": "The -tion ending never gets a full vowel, and the stressed first syllable has the glide.",
+            "vowelTensionRule": "The end of /eɪ/ is a tiny /ɪ/. If the word finishes with a faint 'ee', it is /eɪ/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L134_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "dangerous",
+            "textToSpeak": "dangerous",
+            "options": [
+                "/eɪ/",
+                "/ɪ/",
+                "/ɔː/",
+                "/e/"
+            ],
+            "correctAnswer": "/eɪ/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "The a is long and gliding in the first syllable, and the ending is weak.",
+            "explanation": "The -ous ending is weak, so the stressed first syllable carries the glide.",
+            "vowelTensionRule": "Many learners shorten /eɪ/ to /e/. Extend it and feel the jaw close."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L134_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "active",
+            "textToSpeak": "active",
+            "options": [
+                "/æ/",
+                "/əʊ/",
+                "/ɒ/",
+                "/e/"
+            ],
+            "correctAnswer": "/æ/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.2,
+                "y": 0.9
+            },
+            "hint": "A wide-open first syllable, then a short weak ending.",
+            "explanation": "The -ive ending is weak and short, and the wide vowel is in the first syllable.",
+            "vowelTensionRule": "/e/ and /æ/ differ by about one step of tongue height on the vowel chart: mid-front versus near-open front."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L134_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "positive",
+            "textToSpeak": "positive",
+            "options": [
+                "/ɪə/",
+                "/eə/",
+                "/ɒ/",
+                "/ʌ/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "In the first syllable, round the lips and keep it short.",
+            "explanation": "The first syllable is stressed and rounded, and the -ive ending reduces to a weak vowel.",
+            "vowelTensionRule": "If /ʌ/ keeps coming out as /ɒ/, relax the lips completely and let the tongue rest in the middle."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L135_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "payment",
+            "textToSpeak": "payment",
+            "options": [
+                "/aɪ/",
+                "/aʊ/",
+                "/ʌ/",
+                "/eɪ/"
+            ],
+            "correctAnswer": "/eɪ/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "The pay- part is stressed, with a rising glide.",
+            "explanation": "The pay- part carries the stress, and the -ment ending is weak.",
+            "vowelTensionRule": "Spelling traps: i_e, igh and y give /aɪ/, while a_e, ai and ay give /eɪ/. Words like eight and height show the exceptions."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L135_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "kindness",
+            "textToSpeak": "kindness",
+            "options": [
+                "/aɪ/",
+                "/eə/",
+                "/ɒ/",
+                "/eɪ/"
+            ],
+            "correctAnswer": "/aɪ/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "The open start and forward glide are in the first syllable.",
+            "explanation": "The nd cluster doesn't change the diphthong, which sits in the stressed first syllable.",
+            "vowelTensionRule": "Both end in a glide towards /ɪ/, but /aɪ/ starts wide open and /eɪ/ starts mid-front."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L135_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "powerful",
+            "textToSpeak": "powerful",
+            "options": [
+                "/əʊ/",
+                "/aʊ/",
+                "/ɔɪ/",
+                "/æ/"
+            ],
+            "correctAnswer": "/aʊ/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "The first syllable begins wide open; the -ful ending is weak.",
+            "explanation": "The -ful ending is weak and short, and the wide start is in the first syllable.",
+            "vowelTensionRule": "Both finish with lips rounding. The beginnings differ: ah-like for /aʊ/, schwa-like for /əʊ/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L136_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "feel",
+            "textToSpeak": "feel",
+            "options": [
+                "/ɪ/",
+                "/ɑː/",
+                "/iː/",
+                "/ʌ/"
+            ],
+            "correctAnswer": "/iː/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.1,
+                "y": 0.1
+            },
+            "hint": "Before dark /l/ the vowel can seem less tense. Keep the lips spread.",
+            "explanation": "The dark /l/ pulls the tongue back and can make the vowel sound less pure, but the lips stay spread.",
+            "vowelTensionRule": "Weak -ing, -ish and -ic endings carry /ɪ/ and are never lengthened. Save the long, tense vowel for stressed syllables."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L136_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "milk",
+            "textToSpeak": "milk",
+            "options": [
+                "/ɜː/",
+                "/iː/",
+                "/ɪ/",
+                "/eɪ/"
+            ],
+            "correctAnswer": "/ɪ/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.25,
+                "y": 0.2
+            },
+            "hint": "A short vowel before /lk/. The tongue stays relaxed and a little low.",
+            "explanation": "Learners often over-tense it before the dark /l/, making 'meelk'. Keep it short and lax.",
+            "vowelTensionRule": "Spelling is mixed: ee and ea usually spell /iː/, i and y spell /ɪ/ in most words, with exceptions such as 'machine'."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L136_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "bull",
+            "textToSpeak": "bull",
+            "options": [
+                "/uː/",
+                "/ʌ/",
+                "/ɒ/",
+                "/ʊ/"
+            ],
+            "correctAnswer": "/ʊ/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.75,
+                "y": 0.2
+            },
+            "hint": "The vowel is short and rounded before dark /l/.",
+            "explanation": "Rounded lips and a quick vowel. A tense 'bool' would sound like a different word.",
+            "vowelTensionRule": "Both vowels are rounded, so rounding alone will not separate them: /uː/ is purer and longer, /ʊ/ brief and a little more open."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L137_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "ring",
+            "textToSpeak": "ring",
+            "options": [
+                "/iː/",
+                "/ɔː/",
+                "/ɪ/",
+                "/aɪ/"
+            ],
+            "correctAnswer": "/ɪ/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.25,
+                "y": 0.2
+            },
+            "hint": "Before /ŋ/ the vowel stays short and the tongue stays lower than for 'reen'.",
+            "explanation": "Before /ŋ/ the vowel stays short and the tongue relaxes, so 'reeng' would be wrong.",
+            "vowelTensionRule": "Try whispering: even without voice the difference in tongue height is audible, which shows that quality, not just length, carries the contrast."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L137_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "bang",
+            "textToSpeak": "bang",
+            "options": [
+                "/e/",
+                "/æ/",
+                "/eə/",
+                "/iː/"
+            ],
+            "correctAnswer": "/æ/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.2,
+                "y": 0.9
+            },
+            "hint": "The jaw opens wide before /ŋ/. Some nasal colour is natural.",
+            "explanation": "Nasals often colour the vowel, but the wide jaw stays.",
+            "vowelTensionRule": "Spelling won't tell you: a gives /e/ in 'many' and /æ/ in 'cat', and ea gives /e/ in 'head'. Decide with ears and jaw."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L137_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "long",
+            "textToSpeak": "long",
+            "options": [
+                "/əʊ/",
+                "/ɒ/",
+                "/ɑː/",
+                "/ɔː/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "Short and rounded before the nasal /ŋ/.",
+            "explanation": "Although it looks like 'lawn', the vowel is shorter, and the -ng does not lengthen it.",
+            "vowelTensionRule": "The tongue rises from open /ɒ/ to mid-high /ɔː/, and the lips tighten from a slight oval to a clear one."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L138_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "leaf",
+            "textToSpeak": "leaf",
+            "options": [
+                "/iː/",
+                "/ɪ/",
+                "/ɔɪ/",
+                "/əʊ/"
+            ],
+            "correctAnswer": "/iː/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.1,
+                "y": 0.1
+            },
+            "hint": "Before voiceless /f/ the vowel shortens a little but stays tense.",
+            "explanation": "A little shorter before /f/, yet still bright and tense.",
+            "vowelTensionRule": "A voiceless consonant after the vowel shortens both. If duration seems to vanish, rely on the tense quality of /iː/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L138_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "rope",
+            "textToSpeak": "rope",
+            "options": [
+                "/aɪ/",
+                "/uː/",
+                "/ɒ/",
+                "/əʊ/"
+            ],
+            "correctAnswer": "/əʊ/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "The lips close in a glide and /p/ ends it.",
+            "explanation": "The o_e spelling is regular. The voiceless /p/ shortens the glide but doesn't remove it.",
+            "vowelTensionRule": "o_e and oa mostly spell /əʊ/, while a single o in a short closed syllable (hot, shop) is usually /ɒ/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L138_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "tight",
+            "textToSpeak": "tight",
+            "options": [
+                "/aɪ/",
+                "/ʊ/",
+                "/eɪ/",
+                "/ɜː/"
+            ],
+            "correctAnswer": "/aɪ/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "The glide is shortened by /t/ but still starts open.",
+            "explanation": "A clipped glide still begins with an open jaw, unlike the higher-starting one.",
+            "vowelTensionRule": "The jaw starts lower for /aɪ/ and visibly closes. /eɪ/ starts nearly half closed and moves less."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L139_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "hurry",
+            "textToSpeak": "hurry",
+            "options": [
+                "/ʌ/",
+                "/eə/",
+                "/aʊ/",
+                "/ɜː/"
+            ],
+            "correctAnswer": "/ʌ/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.6,
+                "y": 0.8
+            },
+            "hint": "When r is followed by a vowel, this stressed vowel stays short.",
+            "explanation": "Unlike 'hurt', an r followed by a vowel usually keeps the preceding vowel short, though the ur spelling is the same.",
+            "vowelTensionRule": "Spelling will not decide: ir, er, ur, ear and wor- give /ɜː/, while u, o and ou usually give /ʌ/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L139_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "carry",
+            "textToSpeak": "carry",
+            "options": [
+                "/ʊ/",
+                "/æ/",
+                "/eɪ/",
+                "/e/"
+            ],
+            "correctAnswer": "/æ/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.2,
+                "y": 0.9
+            },
+            "hint": "A wide jaw. The r joins the second syllable.",
+            "explanation": "When r is followed by a vowel, the preceding vowel is usually short, unlike in 'car'.",
+            "vowelTensionRule": "The contrast is clearest in stressed syllables; in weak syllables both tend to drift towards a neutral vowel."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L139_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "sorry",
+            "textToSpeak": "sorry",
+            "options": [
+                "/ɒ/",
+                "/əʊ/",
+                "/ɔː/",
+                "/uː/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "Short and rounded. The rr spelling marks a short vowel.",
+            "explanation": "The rr signals a short vowel. Compare 'sore', which has the long one.",
+            "vowelTensionRule": "After the vowel, -or before a consonant (fork, short) usually means /ɔː/, while o before a stop (top, stop) means /ɒ/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L140_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "sunrise",
+            "textToSpeak": "sunrise",
+            "options": [
+                "/ɒ/",
+                "/ɔɪ/",
+                "/ʌ/",
+                "/eə/"
+            ],
+            "correctAnswer": "/ʌ/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.6,
+                "y": 0.8
+            },
+            "hint": "The sun- part is short and central.",
+            "explanation": "The first part has the central vowel. The second syllable has a diphthong that is not part of this choice.",
+            "vowelTensionRule": "/ɒ/ is back and open with slightly rounded lips; /ʌ/ is central and unrounded with neutral lips."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L140_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "moonlight",
+            "textToSpeak": "moonlight",
+            "options": [
+                "/aʊ/",
+                "/uː/",
+                "/ʊ/",
+                "/ɔɪ/"
+            ],
+            "correctAnswer": "/uː/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.9,
+                "y": 0.1
+            },
+            "hint": "Oo before n is long.",
+            "explanation": "In compounds each part keeps its own vowel, and the first part here is long and rounded.",
+            "vowelTensionRule": "The quality gap is larger than the length gap. /ʊ/ is not simply a shortened /uː/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L140_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "headache",
+            "textToSpeak": "headache",
+            "options": [
+                "/e/",
+                "/iː/",
+                "/aʊ/",
+                "/æ/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
+            },
+            "hint": "Ea is short here; the second part has a glide.",
+            "explanation": "The 'head' part keeps the short vowel while 'ache' glides. In compounds the two parts keep separate vowels.",
+            "vowelTensionRule": "A self-check: rest a hand under your chin. The jaw should drop noticeably further for /æ/."
+        }
+    ]
+}

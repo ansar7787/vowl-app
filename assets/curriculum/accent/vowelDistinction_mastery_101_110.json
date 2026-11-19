@@ -1,0 +1,638 @@
+{
+    "gameType": "vowelDistinction",
+    "batchIndex": 11,
+    "phase": "mastery",
+    "levels": "101-110",
+    "quests": [
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L101_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE STRESSED SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "meeting",
+            "textToSpeak": "meeting",
+            "options": [
+                "/ɪ/",
+                "/iː/"
+            ],
+            "correctAnswer": "/iː/",
+            "correctAnswerIndex": 1,
+            "hint": "Two vowels from the pair share this word. The stressed first syllable is the one that counts.",
+            "explanation": "Only the stressed first syllable counts. The -ing ending holds a short weak /ɪ/, which is why the question points to the stressed syllable.",
+            "vowelTensionRule": "Try whispering: even without voice the difference in tongue height is audible, which shows that quality, not just length, carries the contrast.",
+            "vowelChart": {
+                "x": 0.1,
+                "y": 0.1
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L101_Q2",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "budget",
+            "textToSpeak": "budget",
+            "options": [
+                "/ʌ/",
+                "/ɒ/"
+            ],
+            "correctAnswer": "/ʌ/",
+            "correctAnswerIndex": 0,
+            "hint": "Keep the lips neutral in the first syllable, since b-u-d usually gives the lazy central vowel.",
+            "explanation": "Central and unrounded. Rounded lips would give 'bodge'.",
+            "vowelTensionRule": "Lip rounding is the clearest cue: /ɒ/ has it, /ʌ/ does not.",
+            "vowelChart": {
+                "x": 0.6,
+                "y": 0.8
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L101_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "sponsor",
+            "textToSpeak": "sponsor",
+            "options": [
+                "/ɒ/",
+                "/ʌ/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 0,
+            "hint": "Round the lips lightly in the stressed first syllable; this o is short and open, not the o of 'son'.",
+            "explanation": "The stressed first syllable has a short, lightly rounded vowel. The second syllable is a weak schwa, so only the first needs attention.",
+            "vowelTensionRule": "A plain o before a consonant cluster is usually the short, lightly rounded /ɒ/. Compare the o in 'son', which is spelled the same but is /ʌ/.",
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L102_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "passport",
+            "textToSpeak": "passport",
+            "options": [
+                "/æ/",
+                "/ɑː/"
+            ],
+            "correctAnswer": "/ɑː/",
+            "correctAnswerIndex": 1,
+            "hint": "A BATH word: the a before ss is long in RP. Jaw wide, lips neutral.",
+            "explanation": "A BATH word in RP, like 'pass' and 'class'. Don't copy the short vowel of 'passenger'.",
+            "vowelTensionRule": "In RP, BATH words such as pass, class and last take /ɑː/. 'Passenger' keeps /æ/ because the next syllable changes the pattern.",
+            "vowelChart": {
+                "x": 0.9,
+                "y": 0.95
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L102_Q2",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "luggage",
+            "textToSpeak": "luggage",
+            "options": [
+                "/ʌ/",
+                "/ɒ/"
+            ],
+            "correctAnswer": "/ʌ/",
+            "correctAnswerIndex": 0,
+            "hint": "No lip rounding in the stressed first syllable. Think 'lug', as in lugging a bag.",
+            "explanation": "The u spelling is regular. The second syllable is weak and not part of this choice.",
+            "vowelTensionRule": "Think of the lips first: a small rounded gap for /ɒ/, a loose unrounded one for /ʌ/.",
+            "vowelChart": {
+                "x": 0.6,
+                "y": 0.8
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L102_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "ticket",
+            "textToSpeak": "ticket",
+            "options": [
+                "/ɪ/",
+                "/e/"
+            ],
+            "correctAnswer": "/ɪ/",
+            "correctAnswerIndex": 0,
+            "hint": "Keep the mouth gap small in both syllables. 'Ticket' is not 'tecket'.",
+            "explanation": "Both syllables hold the short vowel. Opening the jaw in the first would sound wrong in RP.",
+            "vowelTensionRule": "Both are short front vowels, but /e/ is lower and more open. Let the jaw drop a little further for /e/.",
+            "vowelChart": {
+                "x": 0.25,
+                "y": 0.2
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L103_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "lecture",
+            "textToSpeak": "lecture",
+            "options": [
+                "/æ/",
+                "/e/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 1,
+            "hint": "Half-open jaw in the stressed first syllable; the ending is just /tʃə/.",
+            "explanation": "The jaw stays half open, and the weak ending changes nothing.",
+            "vowelTensionRule": "Check the mouth opening: roughly one finger-width for /e/, closer to two stacked fingers for /æ/.",
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L103_Q2",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "exam",
+            "textToSpeak": "exam",
+            "options": [
+                "/e/",
+                "/æ/"
+            ],
+            "correctAnswer": "/æ/",
+            "correctAnswerIndex": 1,
+            "hint": "The weak first syllable is quick. Drop the jaw wide for the second.",
+            "explanation": "The stress is on the second syllable. The first is weak, so don't let it pull the stress forward.",
+            "vowelTensionRule": "/æ/ is longer and more spread than /e/. Learners often use /e/ for both, so exaggerate the jaw drop at first.",
+            "vowelChart": {
+                "x": 0.2,
+                "y": 0.9
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L103_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "term",
+            "textToSpeak": "term",
+            "options": [
+                "/ɜː/",
+                "/ɔː/"
+            ],
+            "correctAnswer": "/ɜː/",
+            "correctAnswerIndex": 0,
+            "hint": "Hold one steady vowel with relaxed lips. The er spelling is not or.",
+            "explanation": "Er in a stressed syllable spells the steady central vowel. Rounding the lips would drift towards the vowel of 'torn'.",
+            "vowelTensionRule": "Check your lips: still and unrounded for /ɜː/, a clear oval for /ɔː/.",
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L104_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "screen",
+            "textToSpeak": "screen",
+            "options": [
+                "/iː/",
+                "/ɪ/"
+            ],
+            "correctAnswer": "/iː/",
+            "correctAnswerIndex": 0,
+            "hint": "Three consonants first, then a held vowel with spread lips.",
+            "explanation": "After the /skr/ cluster the vowel must still be tense and long.",
+            "vowelTensionRule": "A voiceless consonant after the vowel shortens both. If duration seems to vanish, rely on the tense quality of /iː/.",
+            "vowelChart": {
+                "x": 0.1,
+                "y": 0.1
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L104_Q2",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "website",
+            "textToSpeak": "website",
+            "options": [
+                "/æ/",
+                "/e/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 1,
+            "hint": "Half-open jaw in the stressed first syllable.",
+            "explanation": "The jaw is half open, not as wide as in 'wax'.",
+            "vowelTensionRule": "Tongue height is the cue: it falls from mid-front /e/ to low-front /æ/. Lips are slightly spread for both.",
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L104_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FIRST SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "download",
+            "textToSpeak": "download",
+            "options": [
+                "/aʊ/",
+                "/əʊ/"
+            ],
+            "correctAnswer": "/aʊ/",
+            "correctAnswerIndex": 0,
+            "hint": "This word holds both diphthongs of the pair. Judge the first syllable only.",
+            "explanation": "It begins wide open and the second syllable closes with a different diphthong. Which syllable you listen to decides the answer.",
+            "vowelTensionRule": "Spelling traps: ow can be /aʊ/ (cow) or /əʊ/ (slow), and ou is /aʊ/ in out but /əʊ/ in soul.",
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L105_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "medicine",
+            "textToSpeak": "medicine",
+            "options": [
+                "/e/",
+                "/æ/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 0,
+            "hint": "Often two syllables in RP: 'med-sin'. Half-open jaw.",
+            "explanation": "Many speakers drop the middle vowel, which doesn't alter the first.",
+            "vowelTensionRule": "Spread the lips slightly for both, but let the jaw do the work: /e/ stops about halfway, /æ/ keeps going.",
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L105_Q2",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "fever",
+            "textToSpeak": "fever",
+            "options": [
+                "/ɪ/",
+                "/iː/"
+            ],
+            "correctAnswer": "/iː/",
+            "correctAnswerIndex": 1,
+            "hint": "Hold the first vowel with spread lips and a tense tongue.",
+            "explanation": "Spread lips and a long vowel. A short vowel would sound like 'fivver'.",
+            "vowelTensionRule": "/ɪ/ is lower and more central than /iː/ on the chart, so the tongue shifts slightly down and back.",
+            "vowelChart": {
+                "x": 0.1,
+                "y": 0.1
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L105_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "surgeon",
+            "textToSpeak": "surgeon",
+            "options": [
+                "/ʌ/",
+                "/ɜː/"
+            ],
+            "correctAnswer": "/ɜː/",
+            "correctAnswerIndex": 1,
+            "hint": "The ur spelling signals a long central vowel in RP.",
+            "explanation": "Ur gives the long central vowel in the first syllable, and the second syllable is weak.",
+            "vowelTensionRule": "Hold /ɜː/ steadily with the tongue mid-central. /ʌ/ is lower and clipped.",
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L106_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "salad",
+            "textToSpeak": "salad",
+            "options": [
+                "/æ/",
+                "/e/"
+            ],
+            "correctAnswer": "/æ/",
+            "correctAnswerIndex": 0,
+            "hint": "A wide jaw in the first syllable. It isn't 'seled'.",
+            "explanation": "A wide vowel in the first syllable and a weak schwa in the second.",
+            "vowelTensionRule": "If a word with /æ/ is coming out as /e/, check that the front of the tongue is low, not hovering at mid-height.",
+            "vowelChart": {
+                "x": 0.2,
+                "y": 0.9
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L106_Q2",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "chicken",
+            "textToSpeak": "chicken",
+            "options": [
+                "/ɪ/",
+                "/iː/"
+            ],
+            "correctAnswer": "/ɪ/",
+            "correctAnswerIndex": 0,
+            "hint": "Both vowels are short and loose. Your lips should never spread.",
+            "explanation": "Spreading the lips would turn it into 'cheeken', so keep them neutral.",
+            "vowelTensionRule": "/ɪ/ is lax and slightly lowered; /iː/ is higher and tenser with spread lips. Quality carries the contrast, and length only reinforces it.",
+            "vowelChart": {
+                "x": 0.25,
+                "y": 0.2
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L106_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "roast",
+            "textToSpeak": "roast",
+            "options": [
+                "/ɒ/",
+                "/əʊ/"
+            ],
+            "correctAnswer": "/əʊ/",
+            "correctAnswerIndex": 1,
+            "hint": "The oa spelling signals closing lips. It isn't 'rost'.",
+            "explanation": "The glide to a rounded ending is what separates it from the short vowel.",
+            "vowelTensionRule": "/əʊ/ glides from central to a rounded back position; /ɒ/ is a short, steady, open rounded vowel.",
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L107_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "discount",
+            "textToSpeak": "discount",
+            "options": [
+                "/aʊ/",
+                "/əʊ/"
+            ],
+            "correctAnswer": "/aʊ/",
+            "correctAnswerIndex": 0,
+            "hint": "In the noun, the first syllable is stressed; the diphthong sits in the second.",
+            "explanation": "The ou spelling is typical, and the glide opens wide before closing.",
+            "vowelTensionRule": "/aʊ/ starts wide open and closes to a rounded back position; /əʊ/ starts mid-central and closes to the same rounded place.",
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L107_Q2",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE STRESSED SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "receipt",
+            "textToSpeak": "receipt",
+            "options": [
+                "/iː/",
+                "/ɪ/"
+            ],
+            "correctAnswer": "/iː/",
+            "correctAnswerIndex": 0,
+            "hint": "Silent p. The stress is on the second syllable.",
+            "explanation": "A weak /ɪ/ at the start, but the long vowel in the stressed syllable. The silent p is pure spelling.",
+            "vowelTensionRule": "Smile and press the tongue high behind the lower teeth for /iː/. For /ɪ/ let tongue and jaw relax a touch lower, lips neutral.",
+            "vowelChart": {
+                "x": 0.1,
+                "y": 0.1
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L107_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "brand",
+            "textToSpeak": "brand",
+            "options": [
+                "/e/",
+                "/æ/"
+            ],
+            "correctAnswer": "/æ/",
+            "correctAnswerIndex": 1,
+            "hint": "A wide jaw after /br/, then /nd/ closes it.",
+            "explanation": "The /nd/ ending keeps the vowel wide, so the jaw stays open until the tongue closes.",
+            "vowelTensionRule": "Before nasals and voiced stops /æ/ tends to lengthen while /e/ stays brief, but the jaw gap is still the deciding cue.",
+            "vowelChart": {
+                "x": 0.2,
+                "y": 0.9
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L108_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "party",
+            "textToSpeak": "party",
+            "options": [
+                "/æ/",
+                "/ɑː/"
+            ],
+            "correctAnswer": "/ɑː/",
+            "correctAnswerIndex": 1,
+            "hint": "The ar spelling signals a long open vowel.",
+            "explanation": "The short wide vowel would turn it into 'patty', so hold the vowel long and open.",
+            "vowelTensionRule": "In RP many words with a before f, s, th or n plus a consonant take /ɑː/ (the BATH set). That is a vocabulary fact, not a spelling rule.",
+            "vowelChart": {
+                "x": 0.9,
+                "y": 0.95
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L108_Q2",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "invite",
+            "textToSpeak": "invite",
+            "options": [
+                "/aɪ/",
+                "/eɪ/"
+            ],
+            "correctAnswer": "/aɪ/",
+            "correctAnswerIndex": 0,
+            "hint": "After the quick first syllable, open the jaw wide for the vowel that carries the stress.",
+            "explanation": "The i_e spelling gives this open-start diphthong regularly.",
+            "vowelTensionRule": "Listen to the start point: an open, ah-like beginning means /aɪ/, an eh-like beginning means /eɪ/.",
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L108_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "together",
+            "textToSpeak": "together",
+            "options": [
+                "/æ/",
+                "/e/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 1,
+            "hint": "After a quick, weak start, keep the jaw half open on the stressed vowel.",
+            "explanation": "The first syllable is weak and quick, and the stressed vowel comes after it.",
+            "vowelTensionRule": "/e/ and /æ/ differ by about one step of tongue height on the vowel chart: mid-front versus near-open front.",
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L109_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "train",
+            "textToSpeak": "train",
+            "options": [
+                "/eɪ/",
+                "/aɪ/"
+            ],
+            "correctAnswer": "/eɪ/",
+            "correctAnswerIndex": 0,
+            "hint": "Start at mid height and rise. The ai spelling again.",
+            "explanation": "A word with an open start would sound like 'trine'.",
+            "vowelTensionRule": "Spelling traps: i_e, igh and y give /aɪ/, while a_e, ai and ay give /eɪ/. Words like eight and height show the exceptions.",
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L109_Q2",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "taxi",
+            "textToSpeak": "taxi",
+            "options": [
+                "/æ/",
+                "/e/"
+            ],
+            "correctAnswer": "/æ/",
+            "correctAnswerIndex": 0,
+            "hint": "A wide first syllable, then a light /i/ at the end.",
+            "explanation": "The x spells /ks/ and follows a wide vowel.",
+            "vowelTensionRule": "Spelling won't tell you: a gives /e/ in 'many' and /æ/ in 'cat', and ea gives /e/ in 'head'. Decide with ears and jaw.",
+            "vowelChart": {
+                "x": 0.2,
+                "y": 0.9
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L109_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE VOWEL IN THE FIRST SYLLABLE",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "engine",
+            "textToSpeak": "engine",
+            "options": [
+                "/ɪ/",
+                "/e/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 1,
+            "hint": "Judge the stressed first syllable. Half-open jaw.",
+            "explanation": "The half-open vowel sits in the stressed first syllable. The weak vowel in the second syllable is not what is being asked.",
+            "vowelTensionRule": "Tongue height is the cue: /ɪ/ sits close to high front, /e/ is mid-front with the jaw about half open.",
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L110_Q1",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "library",
+            "textToSpeak": "library",
+            "options": [
+                "/eɪ/",
+                "/aɪ/"
+            ],
+            "correctAnswer": "/aɪ/",
+            "correctAnswerIndex": 1,
+            "hint": "Open start in the first syllable. Many speakers squeeze the middle.",
+            "explanation": "The following syllables are weak and often squeezed together.",
+            "vowelTensionRule": "Both end in a glide towards /ɪ/, but /aɪ/ starts wide open and /eɪ/ starts mid-front.",
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L110_Q2",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "post",
+            "textToSpeak": "post",
+            "options": [
+                "/əʊ/",
+                "/ɒ/"
+            ],
+            "correctAnswer": "/əʊ/",
+            "correctAnswerIndex": 0,
+            "hint": "Closing lips and a relaxed start.",
+            "explanation": "An o before st is a hazard. 'Lost' is short, but 'post' glides.",
+            "vowelTensionRule": "The lips close up through /əʊ/ and finish in a small round. For /ɒ/ the jaw stays open and the lips stable.",
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_MASTERY_L110_Q3",
+            "instruction": "SLIDE OR TAP TO MATCH THE TARGET VOWEL SOUND",
+            "subtype": "vowelDistinction",
+            "interactionType": "speaking",
+            "word": "council",
+            "textToSpeak": "council",
+            "options": [
+                "/əʊ/",
+                "/aʊ/"
+            ],
+            "correctAnswer": "/aʊ/",
+            "correctAnswerIndex": 1,
+            "hint": "A wide start. The ou spelling.",
+            "explanation": "It sounds the same as 'counsel' in RP, though the spelling differs.",
+            "vowelTensionRule": "Only /aʊ/ opens the jaw wide at the start. /əʊ/ begins relaxed and rounds the lips more steadily.",
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }
+    ]
+}

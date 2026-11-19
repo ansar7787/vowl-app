@@ -1,0 +1,698 @@
+{
+    "gameType": "vowelDistinction",
+    "batchIndex": 17,
+    "phase": "practice",
+    "levels": "161-170",
+    "quests": [
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L161_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "laughter",
+            "textToSpeak": "laughter",
+            "options": [
+                "/ɑː/",
+                "/e/",
+                "/əʊ/",
+                "/ʌ/"
+            ],
+            "correctAnswer": "/ɑː/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.9,
+                "y": 0.95
+            },
+            "hint": "The gh is /f/ and the au is long and open. Open wide, with no clipping.",
+            "explanation": "Like 'laugh', it follows the BATH pattern: a long, open, back vowel in the first syllable.",
+            "vowelTensionRule": "Both vowels sit in the open region, but /ɑː/ is back, long and fully open while /ʌ/ is central and short. Don't clip /ɑː/ before /f/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L161_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "worship",
+            "textToSpeak": "worship",
+            "options": [
+                "/ɔː/",
+                "/ɪ/",
+                "/əʊ/",
+                "/ɜː/"
+            ],
+            "correctAnswer": "/ɜː/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "The wor- spelling is the trap: lips stay unrounded and the tongue still.",
+            "explanation": "Wor- after a w gives the steady central vowel, as in 'work', 'world' and 'worth'. Rounding the lips would give a different vowel.",
+            "vowelTensionRule": "/ɜː/ is central with neutral lips; /ɔː/ is back with clearly rounded lips. Check the lip shape in a mirror."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L161_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "steer",
+            "textToSpeak": "steer",
+            "options": [
+                "/ɪə/",
+                "/eə/",
+                "/aʊ/",
+                "/ʊ/"
+            ],
+            "correctAnswer": "/ɪə/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "Both options end in schwa. Compare the start: high and relaxed, or half open?",
+            "explanation": "The eer spelling signals the glide that starts high, while the glide that starts half open belongs in 'stair'.",
+            "vowelTensionRule": "Both glide to schwa, so listen to where the glide begins: just below high-front for /ɪə/, half open for /eə/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L162_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "spare",
+            "textToSpeak": "spare",
+            "options": [
+                "/ɔɪ/",
+                "/eə/",
+                "/iː/",
+                "/ɪə/"
+            ],
+            "correctAnswer": "/eə/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "Which of the two begins with the jaw half open?",
+            "explanation": "The are spelling is a good signal for this half-open-start glide, as in 'care' and 'share'. The other glide would start higher.",
+            "vowelTensionRule": "The are spelling is dependable for /eə/, but ere is mixed: 'where' has /eə/ while 'here' has /ɪə/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L162_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "portion",
+            "textToSpeak": "portion",
+            "options": [
+                "/aʊ/",
+                "/əʊ/",
+                "/ɒ/",
+                "/ɔː/"
+            ],
+            "correctAnswer": "/ɔː/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.6
+            },
+            "hint": "Hold one steady rounded shape. If the lips travel, it is the wrong vowel.",
+            "explanation": "The lips round and stay rounded without gliding. A closing glide would belong to a different vowel.",
+            "vowelTensionRule": "/ɔː/ keeps one rounded shape throughout, while /əʊ/ moves from a relaxed start to rounded lips."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L162_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "recipe",
+            "textToSpeak": "recipe",
+            "options": [
+                "/aʊ/",
+                "/iː/",
+                "/ɪ/",
+                "/e/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
+            },
+            "hint": "Half open on the first vowel. The i in the spelling isn't where the stress is.",
+            "explanation": "The stressed first syllable is half open. The final -pe is an unusual spelling of a light /i/.",
+            "vowelTensionRule": "Both are short front vowels: /e/ needs a half-open jaw and /ɪ/ only a narrow gap."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L163_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "grown",
+            "textToSpeak": "grown",
+            "options": [
+                "/ʌ/",
+                "/ɔː/",
+                "/əʊ/",
+                "/eɪ/"
+            ],
+            "correctAnswer": "/əʊ/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "The vowel moves; the lips close up at the end.",
+            "explanation": "A closing glide, not the steady rounded vowel of 'torn'.",
+            "vowelTensionRule": "A glide towards rounded lips (/əʊ/) is not a steady rounded vowel (/ɔː/). Check whether your tongue travels."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L163_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "loud",
+            "textToSpeak": "loud",
+            "options": [
+                "/aɪ/",
+                "/əʊ/",
+                "/ɒ/",
+                "/aʊ/"
+            ],
+            "correctAnswer": "/aʊ/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "Open wide first. Does the jaw then close back and rounded, or forward and spread?",
+            "explanation": "It closes back and round towards /ʊ/, while the other diphthong would close forward with spread lips.",
+            "vowelTensionRule": "Both start with the same open jaw. /aɪ/ ends with spread lips and a forward tongue; /aʊ/ ends with rounded lips and a back tongue."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L163_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "sneeze",
+            "textToSpeak": "sneeze",
+            "options": [
+                "/eɪ/",
+                "/ʊ/",
+                "/iː/",
+                "/ɔɪ/"
+            ],
+            "correctAnswer": "/iː/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.1,
+                "y": 0.1
+            },
+            "hint": "Is there any movement at all? A pure vowel stays put.",
+            "explanation": "Steady and high. The gliding vowel would start lower and slide upward.",
+            "vowelTensionRule": "/iː/ is steady and high. /eɪ/ travels, starting at mid-height; only /eɪ/ takes you through a jaw movement."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L164_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "vague",
+            "textToSpeak": "vague",
+            "options": [
+                "/iː/",
+                "/eɪ/",
+                "/əʊ/",
+                "/ʊ/"
+            ],
+            "correctAnswer": "/eɪ/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "The ague spelling hides a glide that begins mid-height.",
+            "explanation": "The final -ague spells a gliding vowel in 'vague' and 'plague'.",
+            "vowelTensionRule": "Both end near the same high-front place, but /eɪ/ starts lower and moves, while /iː/ stays steady and high."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L164_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "barn",
+            "textToSpeak": "barn",
+            "options": [
+                "/ɔː/",
+                "/ɑː/",
+                "/aɪ/",
+                "/e/"
+            ],
+            "correctAnswer": "/ɑː/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.9,
+                "y": 0.95
+            },
+            "hint": "Lips neutral and jaw wide. A rounded, raised vowel would be the wrong one.",
+            "explanation": "Ar before a consonant gives the long open vowel, with a silent r in RP.",
+            "vowelTensionRule": "Both are long back vowels. /ɑː/ has the jaw wide and lips neutral; /ɔː/ raises the tongue and rounds the lips."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L164_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "courtesy",
+            "textToSpeak": "courtesy",
+            "options": [
+                "/ɒ/",
+                "/ɔː/",
+                "/ɜː/",
+                "/ʌ/"
+            ],
+            "correctAnswer": "/ɜː/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "Despite the ou spelling, the lips stay neutral.",
+            "explanation": "'Court' takes the long rounded vowel but 'courtesy' takes the steady central one: same letters, different words.",
+            "vowelTensionRule": "The our spelling is unreliable: /ɔː/ in 'court' and 'four', /ɜː/ in 'courtesy' and 'journey'. Check lip rounding to decide."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L165_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "cloth",
+            "textToSpeak": "cloth",
+            "options": [
+                "/æ/",
+                "/ɔː/",
+                "/ɑː/",
+                "/ɒ/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "Short and open; the lips round only slightly.",
+            "explanation": "The o before th is short, as in 'moth'.",
+            "vowelTensionRule": "/ɒ/ is short, open and slightly rounded; /ɔː/ is longer, higher and tightly rounded. Duration helps but quality decides."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L165_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "slice",
+            "textToSpeak": "slice",
+            "options": [
+                "/aʊ/",
+                "/ə/",
+                "/ʊ/",
+                "/aɪ/"
+            ],
+            "correctAnswer": "/aɪ/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "Which way does the vowel close: forward and spread?",
+            "explanation": "Open start and a forward glide with spread lips. The other diphthong would end rounded.",
+            "vowelTensionRule": "Watch the lips at the end of the glide: spread for /aɪ/, rounded for /aʊ/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L165_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "blood",
+            "textToSpeak": "blood",
+            "options": [
+                "/ɪ/",
+                "/ə/",
+                "/ʌ/",
+                "/ɑː/"
+            ],
+            "correctAnswer": "/ʌ/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.6,
+                "y": 0.8
+            },
+            "hint": "The oo spelling is deceptive: the vowel is short and central.",
+            "explanation": "Oo normally gives a long or short rounded vowel, but 'blood' and 'flood' take the central one.",
+            "vowelTensionRule": "The oo spelling normally gives /uː/ or /ʊ/, but 'blood' and 'flood' take /ʌ/. /ɑː/ would be long, wide and back."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L166_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "refer",
+            "textToSpeak": "refer",
+            "options": [
+                "/ɑː/",
+                "/ɜː/",
+                "/e/",
+                "/ɔː/"
+            ],
+            "correctAnswer": "/ɜː/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "Keep the lips neutral through the last syllable, which carries the stress.",
+            "explanation": "The weak re- doesn't matter. The stressed second syllable has the steady central vowel.",
+            "vowelTensionRule": "Unrounded /ɜː/ versus rounded /ɔː/. The stressed syllable is long, so keep the lips flat for the whole vowel."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L166_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "adore",
+            "textToSpeak": "adore",
+            "options": [
+                "/ɔɪ/",
+                "/əʊ/",
+                "/aʊ/",
+                "/ɔː/"
+            ],
+            "correctAnswer": "/ɔː/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.6
+            },
+            "hint": "One steady rounded vowel, with no glide.",
+            "explanation": "Before r, o_e gives the long rounded vowel, as in 'more' and 'store', instead of the usual closing glide.",
+            "vowelTensionRule": "The lips hold one rounded shape for /ɔː/. /əʊ/ would begin relaxed and then close."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L166_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "severe",
+            "textToSpeak": "severe",
+            "options": [
+                "/əʊ/",
+                "/aʊ/",
+                "/ɪə/",
+                "/eə/"
+            ],
+            "correctAnswer": "/ɪə/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "The stress is at the end. The ere spelling can begin high or half open.",
+            "explanation": "Ere spells this glide in 'here' and 'severe' but the other one in 'where'.",
+            "vowelTensionRule": "The glide starts high for /ɪə/ and half open for /eə/. The ere spelling can give either."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L167_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "affair",
+            "textToSpeak": "affair",
+            "options": [
+                "/æ/",
+                "/eə/",
+                "/ɪə/",
+                "/ʊ/"
+            ],
+            "correctAnswer": "/eə/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "The air spelling starts half open. The stress is on the second syllable.",
+            "explanation": "The air spelling is dependable for this glide.",
+            "vowelTensionRule": "A half-open start signals /eə/, while a narrow gap signals /ɪə/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L167_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "peace",
+            "textToSpeak": "peace",
+            "options": [
+                "/eɪ/",
+                "/ɪə/",
+                "/iː/",
+                "/ɜː/"
+            ],
+            "correctAnswer": "/iː/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.1,
+                "y": 0.1
+            },
+            "hint": "Ea and ce, but the vowel is steady and tense.",
+            "explanation": "Ea spells the long vowel in 'peace' but the glide in 'steak' and 'break'.",
+            "vowelTensionRule": "Ea spells /iː/ in 'peace' and /eɪ/ in 'great'. The ear alone distinguishes them: steady versus gliding."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L167_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "afraid",
+            "textToSpeak": "afraid",
+            "options": [
+                "/əʊ/",
+                "/eɪ/",
+                "/uː/",
+                "/iː/"
+            ],
+            "correctAnswer": "/eɪ/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "Ai spelling, stressed second syllable. Is the vowel steady?",
+            "explanation": "The glide rises from mid-height in the stressed syllable.",
+            "vowelTensionRule": "Listen for movement: /eɪ/ travels upward, while /iː/ stays at the top."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L168_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "orchard",
+            "textToSpeak": "orchard",
+            "options": [
+                "/ɔː/",
+                "/ɑː/",
+                "/ɪ/",
+                "/e/"
+            ],
+            "correctAnswer": "/ɔː/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.6
+            },
+            "hint": "Or before a consonant: round the lips.",
+            "explanation": "Oval lips and a long vowel. The open vowel would be flatter and wider.",
+            "vowelTensionRule": "Round the lips for /ɔː/; keep them spread or neutral for /ɑː/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L168_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "scarce",
+            "textToSpeak": "scarce",
+            "options": [
+                "/iː/",
+                "/ɪə/",
+                "/eə/",
+                "/ɔː/"
+            ],
+            "correctAnswer": "/eə/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "The arc spelling is deceptive: the vowel starts half open.",
+            "explanation": "A half-open start glides to schwa, and the spelling hides it.",
+            "vowelTensionRule": "A wider start for /eə/ than for /ɪə/. Both end the same way."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L168_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "mouse",
+            "textToSpeak": "mouse",
+            "options": [
+                "/aɪ/",
+                "/ɪə/",
+                "/aʊ/",
+                "/eə/"
+            ],
+            "correctAnswer": "/aʊ/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "The ou spelling and a back, rounded glide.",
+            "explanation": "Switch the glide direction and you get 'mice'.",
+            "vowelTensionRule": "'Mouse' and 'mice' differ only in the glide direction: back and rounded for /aʊ/, forward and spread for /aɪ/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L169_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "rotten",
+            "textToSpeak": "rotten",
+            "options": [
+                "/ɒ/",
+                "/əʊ/",
+                "/e/",
+                "/uː/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "The o is short here, whereas 'rote' would be a glide.",
+            "explanation": "The doubled t signals a short vowel before it.",
+            "vowelTensionRule": "Don't glide: /ɒ/ keeps the lips in one slightly rounded position."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L169_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "glow",
+            "textToSpeak": "glow",
+            "options": [
+                "/ə/",
+                "/ɔː/",
+                "/əʊ/",
+                "/eə/"
+            ],
+            "correctAnswer": "/əʊ/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "Final ow with a glide.",
+            "explanation": "A closing glide. The steady rounded vowel would belong in 'law'.",
+            "vowelTensionRule": "A glide to rounded lips (/əʊ/) versus a steady rounded vowel (/ɔː/)."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L169_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "smart",
+            "textToSpeak": "smart",
+            "options": [
+                "/ɑː/",
+                "/æ/",
+                "/eə/",
+                "/ʌ/"
+            ],
+            "correctAnswer": "/ɑː/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.9,
+                "y": 0.95
+            },
+            "hint": "The ar spelling: long and open, with no clipping.",
+            "explanation": "The central vowel would be short, as in 'smut'.",
+            "vowelTensionRule": "Mouth wide and back for /ɑː/. For /ʌ/ the jaw is more closed and the vowel is short."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L170_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "nervous",
+            "textToSpeak": "nervous",
+            "options": [
+                "/aɪ/",
+                "/ɜː/",
+                "/ɔː/",
+                "/ʊ/"
+            ],
+            "correctAnswer": "/ɜː/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "The er is in the stressed first syllable.",
+            "explanation": "The -ous ending is weak, and the stressed first syllable holds the steady vowel.",
+            "vowelTensionRule": "Lips stay neutral for /ɜː/; rounding would give /ɔː/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L170_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "allow",
+            "textToSpeak": "allow",
+            "options": [
+                "/aʊ/",
+                "/aɪ/",
+                "/ʊ/",
+                "/eɪ/"
+            ],
+            "correctAnswer": "/aʊ/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "After the quick first syllable, the ow is the open type, with a wide start.",
+            "explanation": "The ow closes back and round, as in 'cow', and the stress is on the second syllable.",
+            "vowelTensionRule": "End the glide with rounded lips for /aʊ/. Spread lips would signal /aɪ/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L170_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "cheerful",
+            "textToSpeak": "cheerful",
+            "options": [
+                "/ɪə/",
+                "/ɪ/",
+                "/eə/",
+                "/ɔɪ/"
+            ],
+            "correctAnswer": "/ɪə/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.5,
+                "y": 0.5
+            },
+            "hint": "The eer spelling signals a glide from high.",
+            "explanation": "The -ful ending is weak, and the eer spelling signals the glide that starts high.",
+            "vowelTensionRule": "Start the glide high for /ɪə/ and half open for /eə/."
+        }
+    ]
+}

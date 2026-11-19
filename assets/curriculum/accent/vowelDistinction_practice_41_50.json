@@ -1,0 +1,698 @@
+{
+    "gameType": "vowelDistinction",
+    "batchIndex": 5,
+    "phase": "practice",
+    "levels": "41-50",
+    "quests": [
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L41_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "hot",
+            "textToSpeak": "hot",
+            "options": [
+                "/aɪ/",
+                "/ʌ/",
+                "/ɒ/",
+                "/iː/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "Drop the jaw and round the lips slightly: 'hot' feels back and open.",
+            "explanation": "The tongue pulls back and the lips round slightly, giving a back, open vowel. The central vowel of 'hut' would be too forward.",
+            "vowelTensionRule": "/ɒ/ is back and open with slightly rounded lips; /ʌ/ is central and unrounded with neutral lips."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L41_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "run",
+            "textToSpeak": "run",
+            "options": [
+                "/ɒ/",
+                "/ʊ/",
+                "/ɪə/",
+                "/ʌ/"
+            ],
+            "correctAnswer": "/ʌ/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.6,
+                "y": 0.8
+            },
+            "hint": "Lips stay flat and the tongue stays in the middle. 'Run' is a lazy, quick vowel.",
+            "explanation": "Central and unrounded. Rounding the lips would drag it towards the vowel of 'hot'.",
+            "vowelTensionRule": "Round the lips a little and drop the jaw for /ɒ/. Keep them flat and relaxed for /ʌ/, with the tongue further forward."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L41_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "clock",
+            "textToSpeak": "clock",
+            "options": [
+                "/iː/",
+                "/ʌ/",
+                "/aʊ/",
+                "/ɒ/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "After the /kl/ cluster the vowel is open and slightly rounded, like the one in 'cloth'.",
+            "explanation": "The lips make a slight oval at the vowel, and the /kl/ cluster before it does not remove that rounding.",
+            "vowelTensionRule": "Lip rounding is the clearest cue: /ɒ/ has it, /ʌ/ does not."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L42_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "dog",
+            "textToSpeak": "dog",
+            "options": [
+                "/ʌ/",
+                "/ɒ/",
+                "/aʊ/",
+                "/eə/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "Round the lips a touch and open the jaw. 'Dog' sounds darker than 'dug'.",
+            "explanation": "Back and slightly rounded. Swap in the central vowel and you get 'dug'.",
+            "vowelTensionRule": "Both are short and fairly open, so duration gives no help. Listen for the darker, back quality of /ɒ/ against the brighter, more central /ʌ/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L42_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "bug",
+            "textToSpeak": "bug",
+            "options": [
+                "/eə/",
+                "/ɒ/",
+                "/aʊ/",
+                "/ʌ/"
+            ],
+            "correctAnswer": "/ʌ/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.6,
+                "y": 0.8
+            },
+            "hint": "Neutral lips, tongue in the middle. It should sound like a brief grunt.",
+            "explanation": "Keep the lips flat. Round them and you will say 'bog'.",
+            "vowelTensionRule": "Think of the lips first: a small rounded gap for /ɒ/, a loose unrounded one for /ʌ/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L42_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "box",
+            "textToSpeak": "box",
+            "options": [
+                "/ʌ/",
+                "/aʊ/",
+                "/ɒ/",
+                "/ɜː/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "A voiceless /ks/ ends the word, keeping the vowel short and rounded.",
+            "explanation": "The /ks/ follows quickly, so the rounded vowel is brief.",
+            "vowelTensionRule": "/ɒ/ sits further back and a little lower; /ʌ/ is more central. The tongue moves forward and slightly up from /ɒ/ to /ʌ/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L43_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "son",
+            "textToSpeak": "son",
+            "options": [
+                "/ɒ/",
+                "/uː/",
+                "/ʌ/",
+                "/ə/"
+            ],
+            "correctAnswer": "/ʌ/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.6,
+                "y": 0.8
+            },
+            "hint": "The o spelling is misleading. 'Son' sounds identical to 'sun'.",
+            "explanation": "A homophone of 'sun'. An o before n, m or v often hides this central vowel.",
+            "vowelTensionRule": "Spelling o can give either: 'son' has /ʌ/ and 'sock' has /ɒ/. After w, a gives /ɒ/ (want) while o often gives /ʌ/ (wonder)."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L43_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "shop",
+            "textToSpeak": "shop",
+            "options": [
+                "/ɔː/",
+                "/ɒ/",
+                "/ʌ/",
+                "/aʊ/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "Same letter o, but this time the lips round and the jaw opens.",
+            "explanation": "Same letter o as in 'son' but a completely different vowel. Only the ear can sort them.",
+            "vowelTensionRule": "In a mirror /ɒ/ shows a round opening and /ʌ/ a relaxed one, with the jaw at about the same height."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L43_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "brother",
+            "textToSpeak": "brother",
+            "options": [
+                "/ɒ/",
+                "/ɜː/",
+                "/iː/",
+                "/ʌ/"
+            ],
+            "correctAnswer": "/ʌ/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.6,
+                "y": 0.8
+            },
+            "hint": "Hear it as 'bruth-'. The o in the spelling doesn't mean rounded lips.",
+            "explanation": "Like 'mother' and 'other', the stressed o is central and unrounded.",
+            "vowelTensionRule": "Both are short, so don't wait for a length difference. Wait for darkness (rounding) versus neutrality."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L44_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "want",
+            "textToSpeak": "want",
+            "options": [
+                "/eɪ/",
+                "/ɒ/",
+                "/ɪə/",
+                "/ʌ/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "After /w/, the letter a can sound like 'o'. Round the lips and open the jaw.",
+            "explanation": "After /w/ the vowel pulls back and rounds, as in 'want', 'watch' and 'what'.",
+            "vowelTensionRule": "If /ʌ/ keeps coming out as /ɒ/, relax the lips completely and let the tongue rest in the middle."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L44_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "wonder",
+            "textToSpeak": "wonder",
+            "options": [
+                "/ɒ/",
+                "/əʊ/",
+                "/ʌ/",
+                "/uː/"
+            ],
+            "correctAnswer": "/ʌ/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.6,
+                "y": 0.8
+            },
+            "hint": "The o after w is the opposite trap. Here it is central and relaxed.",
+            "explanation": "'Won', 'wonder' and 'worry' take the central vowel, while 'want' and 'watch' take the rounded one.",
+            "vowelTensionRule": "/ɒ/ is back and open with slightly rounded lips; /ʌ/ is central and unrounded with neutral lips."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L44_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "watch",
+            "textToSpeak": "watch",
+            "options": [
+                "/ʌ/",
+                "/eɪ/",
+                "/uː/",
+                "/ɒ/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "Think of the word 'what': back and rounded.",
+            "explanation": "Another a after /w/ that sounds like o. The /tʃ/ stays short and sharp.",
+            "vowelTensionRule": "Round the lips a little and drop the jaw for /ɒ/. Keep them flat and relaxed for /ʌ/, with the tongue further forward."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L45_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "tough",
+            "textToSpeak": "tough",
+            "options": [
+                "/ʌ/",
+                "/ɔː/",
+                "/ə/",
+                "/ɒ/"
+            ],
+            "correctAnswer": "/ʌ/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.6,
+                "y": 0.8
+            },
+            "hint": "Ou plus gh looks complex, but the vowel is short and central and the ending is just /f/.",
+            "explanation": "Ough spells /ʌf/ here, as in 'rough' and 'enough'.",
+            "vowelTensionRule": "Lip rounding is the clearest cue: /ɒ/ has it, /ʌ/ does not."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L45_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "coffee",
+            "textToSpeak": "coffee",
+            "options": [
+                "/ɔː/",
+                "/eə/",
+                "/ʌ/",
+                "/ɒ/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "Round the lips lightly on the first vowel. It isn't 'cuffy'.",
+            "explanation": "The lips round slightly in the stressed syllable. The final -ee is only a light /i/.",
+            "vowelTensionRule": "Both are short and fairly open, so duration gives no help. Listen for the darker, back quality of /ɒ/ against the brighter, more central /ʌ/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L45_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "catch",
+            "textToSpeak": "catch",
+            "options": [
+                "/ʌ/",
+                "/ɑː/",
+                "/æ/",
+                "/ɪə/"
+            ],
+            "correctAnswer": "/æ/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.2,
+                "y": 0.9
+            },
+            "hint": "Back to the front-versus-central pair: this one stretches the mouth wide.",
+            "explanation": "The tch is just /tʃ/. The vowel is low and front with a wide jaw.",
+            "vowelTensionRule": "Mouth shape separates them: /æ/ stretches sideways, while /ʌ/ stays neutral and unrounded, like a short relaxed grunt."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L46_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "doctor",
+            "textToSpeak": "doctor",
+            "options": [
+                "/ʌ/",
+                "/aʊ/",
+                "/əʊ/",
+                "/ɒ/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "Round the lips lightly and keep the vowel quick. The ending is only a murmur.",
+            "explanation": "The rounded vowel is in the stressed first syllable. The final -or is a weak schwa.",
+            "vowelTensionRule": "Think of the lips first: a small rounded gap for /ɒ/, a loose unrounded one for /ʌ/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L46_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "nothing",
+            "textToSpeak": "nothing",
+            "options": [
+                "/ɒ/",
+                "/ɔː/",
+                "/ʌ/",
+                "/uː/"
+            ],
+            "correctAnswer": "/ʌ/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.6,
+                "y": 0.8
+            },
+            "hint": "It isn't 'no-thing'. The first syllable is short and central.",
+            "explanation": "O plus th suggests a diphthong, but 'nothing', 'another' and 'other' all use the central vowel.",
+            "vowelTensionRule": "/ɒ/ sits further back and a little lower; /ʌ/ is more central. The tongue moves forward and slightly up from /ɒ/ to /ʌ/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L46_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "hospital",
+            "textToSpeak": "hospital",
+            "options": [
+                "/ɔɪ/",
+                "/aɪ/",
+                "/ɒ/",
+                "/ʌ/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "The lips round slightly on the first vowel and the rest of the word shrinks.",
+            "explanation": "The rounded vowel sits in the first syllable, and the later syllables are weak and quick.",
+            "vowelTensionRule": "Spelling o can give either: 'son' has /ʌ/ and 'sock' has /ɒ/. After w, a gives /ɒ/ (want) while o often gives /ʌ/ (wonder)."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L47_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "colour",
+            "textToSpeak": "colour",
+            "options": [
+                "/ɜː/",
+                "/ɔː/",
+                "/ʌ/",
+                "/ɒ/"
+            ],
+            "correctAnswer": "/ʌ/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.6,
+                "y": 0.8
+            },
+            "hint": "The first syllable sounds like 'cull'. No lip rounding.",
+            "explanation": "'Come', 'colour' and 'comfort' all share the central vowel, spelled with o.",
+            "vowelTensionRule": "In a mirror /ɒ/ shows a round opening and /ʌ/ a relaxed one, with the jaw at about the same height."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L47_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "orange",
+            "textToSpeak": "orange",
+            "options": [
+                "/əʊ/",
+                "/ʊ/",
+                "/ʌ/",
+                "/ɒ/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "Two syllables, the first strong. Open and rounded.",
+            "explanation": "The lips round in the stressed first syllable, and then a quick weak syllable follows.",
+            "vowelTensionRule": "Both are short, so don't wait for a length difference. Wait for darkness (rounding) versus neutrality."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L47_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "luck",
+            "textToSpeak": "luck",
+            "options": [
+                "/ʌ/",
+                "/æ/",
+                "/ə/",
+                "/ɔɪ/"
+            ],
+            "correctAnswer": "/ʌ/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.6,
+                "y": 0.8
+            },
+            "hint": "Compare 'lack' and 'luck'. One stretches the mouth, the other stays neutral.",
+            "explanation": "Central and relaxed. 'Lack' would need a much wider, more forward vowel.",
+            "vowelTensionRule": "These two sit close on the chart: /æ/ is lower and further forward. Keep the tongue tip behind the lower teeth for /æ/ only."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L48_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "cousin",
+            "textToSpeak": "cousin",
+            "options": [
+                "/əʊ/",
+                "/aɪ/",
+                "/ɒ/",
+                "/ʌ/"
+            ],
+            "correctAnswer": "/ʌ/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.6,
+                "y": 0.8
+            },
+            "hint": "The ou in 'cousin' sounds like the u in 'cut', not like 'cow'.",
+            "explanation": "Ou here sounds like the u in 'cut'. The unstressed -in reduces to a syllabic /n/.",
+            "vowelTensionRule": "If /ʌ/ keeps coming out as /ɒ/, relax the lips completely and let the tongue rest in the middle."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L48_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "wallet",
+            "textToSpeak": "wallet",
+            "options": [
+                "/ɪ/",
+                "/ɒ/",
+                "/ʌ/",
+                "/ʊ/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "After /w/ the a is rounded and open again.",
+            "explanation": "The same /w/ plus a pattern as in 'want' and 'watch', and dependable in RP.",
+            "vowelTensionRule": "/ɒ/ is back and open with slightly rounded lips; /ʌ/ is central and unrounded with neutral lips."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L48_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "problem",
+            "textToSpeak": "problem",
+            "options": [
+                "/ʌ/",
+                "/ɑː/",
+                "/ə/",
+                "/ɒ/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 3,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "A rounded, open vowel after /pr/. The second syllable almost disappears.",
+            "explanation": "The second syllable is weak, so the first vowel is the only strong one.",
+            "vowelTensionRule": "Round the lips a little and drop the jaw for /ɒ/. Keep them flat and relaxed for /ʌ/, with the tongue further forward."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L49_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "Monday",
+            "textToSpeak": "Monday",
+            "options": [
+                "/ə/",
+                "/ʌ/",
+                "/iː/",
+                "/ɒ/"
+            ],
+            "correctAnswer": "/ʌ/",
+            "correctAnswerIndex": 1,
+            "vowelChart": {
+                "x": 0.6,
+                "y": 0.8
+            },
+            "hint": "The first syllable sounds like 'mun-'. The second syllable has a different vowel.",
+            "explanation": "The first syllable is central. The second contains a diphthong that is not part of this contrast.",
+            "vowelTensionRule": "Lip rounding is the clearest cue: /ɒ/ has it, /ʌ/ does not."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L49_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "honest",
+            "textToSpeak": "honest",
+            "options": [
+                "/ɒ/",
+                "/ʌ/",
+                "/aʊ/",
+                "/əʊ/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "The h is silent, so the word starts on a vowel sound. It is rounded and open.",
+            "explanation": "The h is silent, so the word begins directly on the rounded vowel, just as 'hour' begins on a vowel.",
+            "vowelTensionRule": "Both are short and fairly open, so duration gives no help. Listen for the darker, back quality of /ɒ/ against the brighter, more central /ʌ/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L49_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "cookie",
+            "textToSpeak": "cookie",
+            "options": [
+                "/ʊ/",
+                "/aʊ/",
+                "/uː/",
+                "/ə/"
+            ],
+            "correctAnswer": "/ʊ/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.75,
+                "y": 0.2
+            },
+            "hint": "Short, loose oo. 'Cookie' is quick and relaxed, with only slight lip rounding.",
+            "explanation": "Short and loose, like 'book' and 'good'. Tense, protruded lips would give 'kooky'.",
+            "vowelTensionRule": "Before dark /l/ the contrast gets muddy ('pull' versus 'pool'), so use lip protrusion and length together."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L50_Q1",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "popular",
+            "textToSpeak": "popular",
+            "options": [
+                "/ʌ/",
+                "/e/",
+                "/ɒ/",
+                "/ɑː/"
+            ],
+            "correctAnswer": "/ɒ/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.95,
+                "y": 0.8
+            },
+            "hint": "The lips round and the jaw opens on the first vowel only.",
+            "explanation": "Stress and rounding fall on the first syllable. The later syllables are weak.",
+            "vowelTensionRule": "Think of the lips first: a small rounded gap for /ɒ/, a loose unrounded one for /ʌ/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L50_Q2",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "husband",
+            "textToSpeak": "husband",
+            "options": [
+                "/ʌ/",
+                "/ɒ/",
+                "/ɪ/",
+                "/e/"
+            ],
+            "correctAnswer": "/ʌ/",
+            "correctAnswerIndex": 0,
+            "vowelChart": {
+                "x": 0.6,
+                "y": 0.8
+            },
+            "hint": "A strong first syllable, ignoring the h. A central, relaxed vowel.",
+            "explanation": "U is the typical spelling for this vowel, and the second syllable is a weak schwa.",
+            "vowelTensionRule": "/ɒ/ sits further back and a little lower; /ʌ/ is more central. The tongue moves forward and slightly up from /ɒ/ to /ʌ/."
+        },
+        {
+            "id": "ACC_VOWELDISTINCTION_PRACTICE_L50_Q3",
+            "instruction": "Identify the vowel sound in this word",
+            "subtype": "vowelDistinction",
+            "interactionType": "multipleChoice",
+            "word": "gentle",
+            "textToSpeak": "gentle",
+            "options": [
+                "/ɪə/",
+                "/æ/",
+                "/e/",
+                "/ɔɪ/"
+            ],
+            "correctAnswer": "/e/",
+            "correctAnswerIndex": 2,
+            "vowelChart": {
+                "x": 0.15,
+                "y": 0.4
+            },
+            "hint": "Back to the half-open vowel. The word starts with /dʒ/ and a short vowel.",
+            "explanation": "The ge spells /dʒe/ and the final -tle is a syllabic /l/.",
+            "vowelTensionRule": "If a word with /æ/ is coming out as /e/, check that the front of the tongue is low, not hovering at mid-height."
+        }
+    ]
+}
