@@ -150,6 +150,8 @@ import 'package:vowl/features/listening/audio_sentence_order/presentation/pages/
 import 'package:vowl/features/listening/audio_sentence_order/presentation/pages/audio_sentence_order_practice_screen.dart';
 import 'package:vowl/features/listening/audio_true_false/presentation/pages/audio_true_false_learn_screen.dart';
 import 'package:vowl/features/listening/audio_true_false/presentation/pages/audio_true_false_practice_screen.dart';
+import 'package:vowl/features/listening/sound_image_match/presentation/pages/sound_image_match_learn_screen.dart';
+import 'package:vowl/features/listening/sound_image_match/presentation/pages/sound_image_match_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -805,6 +807,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'soundimagematch') {
+          return fadeTransitionPage(
+            child: SoundImageMatchLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1239,6 +1247,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'audiotruefalse') {
           return fadeTransitionPage(
             child: AudioTrueFalsePracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'soundimagematch') {
+          return fadeTransitionPage(
+            child: SoundImageMatchPracticeScreen(level: level),
             state: state,
           );
         }

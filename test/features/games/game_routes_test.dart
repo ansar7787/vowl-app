@@ -27,6 +27,8 @@ import 'package:vowl/features/listening/audio_sentence_order/presentation/pages/
 import 'package:vowl/features/listening/audio_sentence_order/presentation/pages/audio_sentence_order_practice_screen.dart';
 import 'package:vowl/features/listening/audio_true_false/presentation/pages/audio_true_false_learn_screen.dart';
 import 'package:vowl/features/listening/audio_true_false/presentation/pages/audio_true_false_practice_screen.dart';
+import 'package:vowl/features/listening/sound_image_match/presentation/pages/sound_image_match_learn_screen.dart';
+import 'package:vowl/features/listening/sound_image_match/presentation/pages/sound_image_match_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -613,6 +615,22 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<AudioTrueFalsePracticeScreen>());
+    });
+
+    test('resolves /learn route for soundImageMatch', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state = createMockState('/learn?category=listening&gameType=soundImageMatch&level=4');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<SoundImageMatchLearnScreen>());
+    });
+
+    test('resolves /practice route for soundImageMatch', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state = createMockState('/practice?category=listening&gameType=soundImageMatch&level=4');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<SoundImageMatchPracticeScreen>());
     });
   });
 }

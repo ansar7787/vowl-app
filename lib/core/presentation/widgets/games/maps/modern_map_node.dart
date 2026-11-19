@@ -783,6 +783,7 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                             'audioMultipleChoice',
                             'audioSentenceOrder',
                             'audioTrueFalse',
+                            'soundImageMatch',
                           };
                           final isPhasedGame = phasedGames.contains(widget.gameType);
 
