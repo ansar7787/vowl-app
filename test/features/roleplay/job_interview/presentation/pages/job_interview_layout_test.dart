@@ -12,7 +12,7 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 import 'package:vowl/core/presentation/widgets/game_briefing_layer.dart';
-import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
+import 'package:vowl/core/presentation/widgets/games/headers/vowl_universal_game_header.dart';
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
@@ -457,7 +457,7 @@ void main() {
       tester,
     ) async {
       await pumpJobInterviewScreen(tester);
-      expect(find.byType(GameProgressHeader), findsOneWidget);
+      expect(find.byType(VowlUniversalGameHeader), findsOneWidget);
       expect(find.byType(QuestHintButton), findsOneWidget);
     });
   });

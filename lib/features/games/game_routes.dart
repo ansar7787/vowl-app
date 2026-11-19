@@ -190,6 +190,8 @@ import 'package:vowl/features/roleplay/branching_dialogue/presentation/pages/bra
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/pages/branching_dialogue_practice_screen.dart';
 import 'package:vowl/features/roleplay/situational_response/presentation/pages/situational_response_learn_screen.dart';
 import 'package:vowl/features/roleplay/situational_response/presentation/pages/situational_response_practice_screen.dart';
+import 'package:vowl/features/roleplay/job_interview/presentation/pages/job_interview_learn_screen.dart';
+import 'package:vowl/features/roleplay/job_interview/presentation/pages/job_interview_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -965,6 +967,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'jobinterview') {
+          return fadeTransitionPage(
+            child: JobInterviewLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1519,6 +1527,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'situationalresponse') {
           return fadeTransitionPage(
             child: SituationalResponsePracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'jobinterview') {
+          return fadeTransitionPage(
+            child: JobInterviewPracticeScreen(level: level),
             state: state,
           );
         }

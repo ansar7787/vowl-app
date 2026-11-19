@@ -67,6 +67,8 @@ import 'package:vowl/features/roleplay/branching_dialogue/presentation/pages/bra
 import 'package:vowl/features/roleplay/branching_dialogue/presentation/pages/branching_dialogue_practice_screen.dart';
 import 'package:vowl/features/roleplay/situational_response/presentation/pages/situational_response_learn_screen.dart';
 import 'package:vowl/features/roleplay/situational_response/presentation/pages/situational_response_practice_screen.dart';
+import 'package:vowl/features/roleplay/job_interview/presentation/pages/job_interview_learn_screen.dart';
+import 'package:vowl/features/roleplay/job_interview/presentation/pages/job_interview_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -993,6 +995,24 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<SituationalResponsePracticeScreen>());
+    });
+
+    test('resolves /learn route for jobInterview', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state =
+          createMockState('/learn?category=roleplay&gameType=jobInterview&level=5');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<JobInterviewLearnScreen>());
+    });
+
+    test('resolves /practice route for jobInterview', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state =
+          createMockState('/practice?category=roleplay&gameType=jobInterview&level=5');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<JobInterviewPracticeScreen>());
     });
   });
 }
