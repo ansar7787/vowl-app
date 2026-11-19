@@ -1,0 +1,518 @@
+{
+  "gameType": "audioFillBlanks",
+  "phase": "mastery",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L1_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Listen for the room where people go to sleep.",
+      "explanation": "All three options are rooms in a home, so only the audio tells you which one. A bedroom is where people sleep; a bathroom is where you wash.",
+      "textToSpeak": "The baby is asleep in the bedroom.",
+      "textWithBlanks": "The baby is asleep in the ___.",
+      "missingWord": "bedroom",
+      "correctAnswer": "bedroom",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "bathroom",
+        "kitchen"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L1_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "You wear these on your feet.",
+      "explanation": "Shoes, books and keys are all things people drop by the door on the way in, so the sentence works with any of them. Catch the first sound: shoes begins with a 'sh' sound.",
+      "textToSpeak": "My little brother left his shoes by the door.",
+      "textWithBlanks": "My little brother left his ___ by the door.",
+      "missingWord": "shoes",
+      "correctAnswer": "shoes",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "keys",
+        "books"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L1_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "A container with straight sides and a lid.",
+      "explanation": "Box, bag and book all start with the same 'b' sound, so listen past it to the vowel and the ending. Old photos are very often kept in a box.",
+      "textToSpeak": "Grandma keeps her old photos in a small box.",
+      "textWithBlanks": "Grandma keeps her old photos in a small ___.",
+      "missingWord": "box",
+      "correctAnswer": "box",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "bag",
+        "book"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L2_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "A hot drink made from leaves.",
+      "explanation": "Tea, milk and juice are all drinks that fit this sentence perfectly, so the meaning gives nothing away. Tea is a short, quick word in speech, so it is easy to miss.",
+      "textToSpeak": "I drink tea with my breakfast every day.",
+      "textWithBlanks": "I drink ___ with my breakfast every day.",
+      "missingWord": "tea",
+      "correctAnswer": "tea",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "milk",
+        "juice"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L2_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "This way of cooking uses hot water.",
+      "explanation": "You can boil, bake or fry an egg, so all three verbs make sense here. Boil means to cook something in very hot water.",
+      "textToSpeak": "He boils the eggs for about five minutes.",
+      "textWithBlanks": "He ___ the eggs for about five minutes.",
+      "missingWord": "boils",
+      "correctAnswer": "boils",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "fries",
+        "bakes"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L2_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Small white grains that many people eat with dinner.",
+      "explanation": "We say a bowl of rice, a bowl of soup or a bowl of fruit, so every option is natural English. Only the sound of the word separates them.",
+      "textToSpeak": "There's a bowl of rice on the table.",
+      "textWithBlanks": "There's a bowl of ___ on the table.",
+      "missingWord": "rice",
+      "correctAnswer": "rice",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "soup",
+        "fruit"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L3_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "You look through this to see outside.",
+      "explanation": "Close the window, close the door and close the curtains are all things people say when a room is cold. The audio is the only clue.",
+      "textToSpeak": "Please close the window. It's cold in here.",
+      "textWithBlanks": "Please close the ___. It's cold in here.",
+      "missingWord": "window",
+      "correctAnswer": "window",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "door",
+        "curtains"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L3_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "One person sits on this.",
+      "explanation": "Chair and stairs sound similar, and a cat could sleep under either one. Listen for the 'ch' at the start of chair.",
+      "textToSpeak": "The cat is sleeping under the chair.",
+      "textWithBlanks": "The cat is sleeping under the ___.",
+      "missingWord": "chair",
+      "correctAnswer": "chair",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "stairs",
+        "table"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L3_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "This makes a dark room bright.",
+      "explanation": "Turn on is the normal verb for starting any electrical thing, so it works with all three options. Turn on the light is one of the most useful phrases at home.",
+      "textToSpeak": "Can you turn on the light, please?",
+      "textWithBlanks": "Can you turn on the ___, please?",
+      "missingWord": "light",
+      "correctAnswer": "light",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "fan",
+        "radio"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L4_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "The number between six and eight.",
+      "explanation": "Numbers are said quickly and are easy to lose in a sentence. Six, seven and nine are all normal times to get up, so you have to catch the number itself.",
+      "textToSpeak": "I wake up at seven every morning.",
+      "textWithBlanks": "I wake up at ___ every morning.",
+      "missingWord": "seven",
+      "correctAnswer": "seven",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "six",
+        "nine"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L4_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "The first working day of the week.",
+      "explanation": "Monday, Sunday and Thursday are all days classes could plausibly restart on, so only the day name itself carries the information. Monday is the day most people associate with things starting again.",
+      "textToSpeak": "Our English class starts again on Monday.",
+      "textWithBlanks": "Our English class starts again on ___.",
+      "missingWord": "Monday",
+      "correctAnswer": "Monday",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "Sunday",
+        "Thursday"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L4_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "You stand under water to get clean.",
+      "explanation": "Take a shower, take a break and take a nap are all real phrases with take, so grammar will not help you here. Take a shower is the usual way to say this.",
+      "textToSpeak": "He usually takes a quick shower before work.",
+      "textWithBlanks": "He usually takes a quick ___ before work.",
+      "missingWord": "shower",
+      "correctAnswer": "shower",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "break",
+        "nap"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L5_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "School work you have to do at home.",
+      "explanation": "Homework is one word with the stress on the first part: HOME-work. Reading and a project are also things a student could finish on the bus.",
+      "textToSpeak": "I finished my homework on the bus this morning.",
+      "textWithBlanks": "I finished my ___ on the bus this morning.",
+      "missingWord": "homework",
+      "correctAnswer": "homework",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "reading",
+        "project"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L5_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "You write with this, and you can rub the writing out.",
+      "explanation": "Pen and pencil sound alike at the start, and both can break. Listen for the extra syllable at the end of pencil.",
+      "textToSpeak": "Can I borrow a pencil? Mine just broke.",
+      "textWithBlanks": "Can I borrow a ___? Mine just broke.",
+      "missingWord": "pencil",
+      "correctAnswer": "pencil",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "pen",
+        "ruler"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L5_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "A test that shows how much you have learned.",
+      "explanation": "The missing word is right at the start of the sentence, before you are ready. Lessons, meetings and exams can all start at nine, so nothing but the sound helps.",
+      "textToSpeak": "The exam starts at nine, so don't be late.",
+      "textWithBlanks": "The ___ starts at nine, so don't be late.",
+      "missingWord": "exam",
+      "correctAnswer": "exam",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "lesson",
+        "meeting"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L6_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "The place where people keep their money.",
+      "explanation": "Bank and bakery begin with the same sound, and both are found on a street next to a post office. The word bank is short and finishes quickly.",
+      "textToSpeak": "The bank is right next to the post office.",
+      "textWithBlanks": "The ___ is right next to the post office.",
+      "missingWord": "bank",
+      "correctAnswer": "bank",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "bakery",
+        "park"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L6_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Trains stop here.",
+      "explanation": "People arrange to meet outside a station, a cinema or a museum, so all three fit. Notice how outside the runs together in natural speech.",
+      "textToSpeak": "We're meeting outside the station at six.",
+      "textWithBlanks": "We're meeting outside the ___ at six.",
+      "missingWord": "station",
+      "correctAnswer": "station",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "cinema",
+        "museum"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L6_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "On the other side of the road, facing it.",
+      "explanation": "This time the missing word is not a thing but a position word. Opposite means directly across from something, while behind and near put you somewhere else entirely.",
+      "textToSpeak": "The pharmacy is opposite the bus stop.",
+      "textWithBlanks": "The pharmacy is ___ the bus stop.",
+      "missingWord": "opposite",
+      "correctAnswer": "opposite",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "behind",
+        "near"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L7_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Weather with a lot of moving air.",
+      "explanation": "Sunny, cloudy and windy all end the same way, so the first syllable is what you need. Only wind would make you hold on to a hat, but you still have to hear it.",
+      "textToSpeak": "It's windy today, so hold on to your hat.",
+      "textWithBlanks": "It's ___ today, so hold on to your hat.",
+      "missingWord": "windy",
+      "correctAnswer": "windy",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "sunny",
+        "cloudy"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L7_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "You wrap this around your neck when it's cold.",
+      "explanation": "Scarf, skirt and shirt are easy to confuse because they share the same 's' plus consonant start. Focus on the vowel in the middle.",
+      "textToSpeak": "She's wearing a red scarf and black gloves.",
+      "textWithBlanks": "She's wearing a red ___ and black gloves.",
+      "missingWord": "scarf",
+      "correctAnswer": "scarf",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "skirt",
+        "shirt"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L7_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Covered in water.",
+      "explanation": "After a night of rain, roads can be wet, muddy or slippery, so meaning alone will not decide it. Wet is short and unstressed here, which makes it easy to miss.",
+      "textToSpeak": "It rained all night, so the roads are still wet.",
+      "textWithBlanks": "It rained all night, so the roads are still ___.",
+      "missingWord": "wet",
+      "correctAnswer": "wet",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "muddy",
+        "slippery"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L8_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Lower in price.",
+      "explanation": "Cheaper, bigger and better are all comparative forms ending in -er, so they sound alike at the end. The difference is in the first part of the word.",
+      "textToSpeak": "That one's cheaper than the bag I saw yesterday.",
+      "textWithBlanks": "That one's ___ than the bag I saw yesterday.",
+      "missingWord": "cheaper",
+      "correctAnswer": "cheaper",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "bigger",
+        "better"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L8_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Paper money and coins, not a card.",
+      "explanation": "Cash, coins and change are all money words that would fit this question in a shop. Cash only is the set phrase shops use on their signs.",
+      "textToSpeak": "Do you take cards, or is it cash only?",
+      "textWithBlanks": "Do you take cards, or is it ___ only?",
+      "missingWord": "cash",
+      "correctAnswer": "cash",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "coins",
+        "change"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L8_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Stops being open for business.",
+      "explanation": "Opens and closes are opposites, and both are completely normal in this sentence, so mishearing one word changes the whole meaning. This is why shop opening times need careful listening.",
+      "textToSpeak": "The shop closes at eight on Saturdays.",
+      "textWithBlanks": "The shop ___ at eight on Saturdays.",
+      "missingWord": "closes",
+      "correctAnswer": "closes",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "opens",
+        "delivers"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L9_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Someone who looks after patients in a hospital.",
+      "explanation": "Work as a nurse, a driver or a cleaner are all natural job phrases, so the sentence stays correct either way. Listen for the single syllable in nurse.",
+      "textToSpeak": "My uncle works as a nurse at the city hospital.",
+      "textWithBlanks": "My uncle works as a ___ at the city hospital.",
+      "missingWord": "nurse",
+      "correctAnswer": "nurse",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "driver",
+        "cleaner"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L9_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Kind and easy to talk to.",
+      "explanation": "Friendly, quiet and funny are all common ways to describe a neighbour, and all three follow really comfortably. Nothing but the audio decides it.",
+      "textToSpeak": "Her new neighbour is really friendly.",
+      "textWithBlanks": "Her new neighbour is really ___.",
+      "missingWord": "friendly",
+      "correctAnswer": "friendly",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "quiet",
+        "funny"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L9_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "The person in charge of you at work.",
+      "explanation": "The man in the blue shirt could be anyone, so boss, cousin and neighbour are equally possible endings. Boss is short and comes at the very end, where attention often drops.",
+      "textToSpeak": "The man in the blue shirt is my boss.",
+      "textWithBlanks": "The man in the blue shirt is my ___.",
+      "missingWord": "boss",
+      "correctAnswer": "boss",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "cousin",
+        "neighbour"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L10_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "The number of fingers on two hands.",
+      "explanation": "In real speech, numbers arrive fast and nobody repeats them. Seven, ten and twenty are all normal answers, so the number itself is the information you need.",
+      "textToSpeak": "I'll call you back in ten minutes, okay?",
+      "textWithBlanks": "I'll call you back in ___ minutes, okay?",
+      "missingWord": "ten",
+      "correctAnswer": "ten",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "seven",
+        "twenty"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L10_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Prepared, and waiting for you now.",
+      "explanation": "Staff in a restaurant might say your table's ready, your table's free or your table's booked, and each one means something different. Notice table's, a short way of saying table is.",
+      "textToSpeak": "Thanks for waiting. Your table's ready now.",
+      "textWithBlanks": "Thanks for waiting. Your table's ___ now.",
+      "missingWord": "ready",
+      "correctAnswer": "ready",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "free",
+        "booked"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L10_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Still at work after normal finishing time.",
+      "explanation": "This sentence has two short forms in it, isn't and he's, which makes it fast. Working late, working today and working alone are all possible reasons, so hold on until the last word.",
+      "textToSpeak": "He isn't coming tonight. He's working late.",
+      "textWithBlanks": "He isn't coming tonight. He's working ___.",
+      "missingWord": "late",
+      "correctAnswer": "late",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "today",
+        "alone"
+      ],
+      "phase": "mastery"
+    }
+  ]
+}

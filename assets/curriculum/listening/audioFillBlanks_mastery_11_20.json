@@ -1,0 +1,518 @@
+{
+  "gameType": "audioFillBlanks",
+  "phase": "mastery",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L11_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "A big road vehicle that stops to pick up passengers.",
+      "explanation": "A bus, a train and a coach can all take you to an airport, so the route tells you nothing. Bus is one short syllable and disappears fast in the middle of a sentence.",
+      "textToSpeak": "The next bus to the airport leaves at half past four.",
+      "textWithBlanks": "The next ___ to the airport leaves at half past four.",
+      "missingWord": "bus",
+      "correctAnswer": "bus",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "train",
+        "coach"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L11_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "You arrived too late and it had already gone.",
+      "explanation": "Missed and caught are opposites, and both sound natural before my train. If you mishear this word, you understand the opposite of what the speaker said.",
+      "textToSpeak": "I missed my train because the traffic was so bad.",
+      "textWithBlanks": "I ___ my train because the traffic was so bad.",
+      "missingWord": "missed",
+      "correctAnswer": "missed",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "caught",
+        "booked"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L11_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "This small piece of paper proves you paid for your journey.",
+      "explanation": "An inspector could reasonably ask to see any of these three documents, so the sentence stays sensible either way. A ticket is for travel, a receipt is proof of payment, and a passport is for identity.",
+      "textToSpeak": "Keep your ticket. The inspector might ask to see it.",
+      "textWithBlanks": "Keep your ___. The inspector might ask to see it.",
+      "missingWord": "ticket",
+      "correctAnswer": "ticket",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "receipt",
+        "passport"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L12_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "She travelled there on foot.",
+      "explanation": "All three verbs end in -ed, but the ending is pronounced as a quick 't' sound here, not an extra syllable: walkt, not walk-ed. The start of the word is where the meaning lives.",
+      "textToSpeak": "She walked to the office because the buses weren't running.",
+      "textWithBlanks": "She ___ to the office because the buses weren't running.",
+      "missingWord": "walked",
+      "correctAnswer": "walked",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "cycled",
+        "rushed"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L12_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "They stayed there, doing nothing, until a table was free.",
+      "explanation": "Here the -ed ending does add a syllable, because the verb ends in a 't' sound: wait-ed. Compare it with queued, which stays one syllable.",
+      "textToSpeak": "They waited nearly an hour for a table.",
+      "textWithBlanks": "They ___ nearly an hour for a table.",
+      "missingWord": "waited",
+      "correctAnswer": "waited",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "queued",
+        "asked"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L12_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "They sat and looked at it as it happened.",
+      "explanation": "Watched, missed and recorded are all things people do with a match, and each one tells a different story about the evening. Watched ends in a sharp 't' sound.",
+      "textToSpeak": "We watched the match at my cousin's flat.",
+      "textWithBlanks": "We ___ the match at my cousin's flat.",
+      "missingWord": "watched",
+      "correctAnswer": "watched",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "missed",
+        "recorded"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L13_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Written notes that someone sends to your phone.",
+      "explanation": "Messages ends with an extra 'iz' syllable because of the 's' sound before it: mess-ag-iz. Voicemails and notifications take a simpler ending.",
+      "textToSpeak": "There are two messages on your phone.",
+      "textWithBlanks": "There are two ___ on your phone.",
+      "missingWord": "messages",
+      "correctAnswer": "messages",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "voicemails",
+        "notifications"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L13_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "You wear these to see better.",
+      "explanation": "A pair of works with all three, because these things come in twos in English. Glasses has that same extra 'iz' ending you heard in messages.",
+      "textToSpeak": "She bought a new pair of glasses last week.",
+      "textWithBlanks": "She bought a new pair of ___ last week.",
+      "missingWord": "glasses",
+      "correctAnswer": "glasses",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "gloves",
+        "boots"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L13_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Flat boards fixed to a wall for keeping books or plates on.",
+      "explanation": "The singular is shelf, but the plural changes the 'f' to a 'v' sound: shelves. Drawers and cupboards would fit the corner of a room just as well.",
+      "textToSpeak": "The shelves in the corner are completely empty.",
+      "textWithBlanks": "The ___ in the corner are completely empty.",
+      "missingWord": "shelves",
+      "correctAnswer": "shelves",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "drawers",
+        "cupboards"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L14_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "The digits you dial to reach someone.",
+      "explanation": "You can have the wrong number, the wrong address or the wrong extension, so wrong gives no clue at all. This is the standard polite phrase when someone calls you by mistake.",
+      "textToSpeak": "Sorry, I think you've got the wrong number.",
+      "textWithBlanks": "Sorry, I think you've got the wrong ___.",
+      "missingWord": "number",
+      "correctAnswer": "number",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "address",
+        "extension"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L14_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "This little word means returning the call you missed.",
+      "explanation": "Ring me back means return my call, while ring me again and ring me tomorrow mean something different. Small words like back carry a lot of meaning and are said very quickly.",
+      "textToSpeak": "Could you ask him to ring me back after lunch?",
+      "textWithBlanks": "Could you ask him to ring me ___ after lunch?",
+      "missingWord": "back",
+      "correctAnswer": "back",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "again",
+        "tomorrow"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L14_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "The telephone connection itself.",
+      "explanation": "On a bad call people say the line's bad, the signal's bad or the connection's bad, and all three are completely normal. Listen for line's, which is line plus is squeezed together.",
+      "textToSpeak": "The line's really bad. I can hardly hear you.",
+      "textWithBlanks": "The ___'s really bad. I can hardly hear you.",
+      "missingWord": "line",
+      "correctAnswer": "line",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "signal",
+        "connection"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L15_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Keep going forward without turning.",
+      "explanation": "Go straight on, go left and go back are three completely different instructions, and one wrong word sends you the wrong way. This is why directions need careful listening.",
+      "textToSpeak": "Go straight on past the roundabout.",
+      "textWithBlanks": "Go ___ on past the roundabout.",
+      "missingWord": "straight",
+      "correctAnswer": "straight",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "left",
+        "back"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L15_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Not the one after this, but the one after that.",
+      "explanation": "First, second and third all fit perfectly here, so you have to catch the ordinal itself. Second ends with a 'nd' sound that is easy to lose before the next word.",
+      "textToSpeak": "Take the second turning on your right.",
+      "textWithBlanks": "Take the ___ turning on your right.",
+      "missingWord": "second",
+      "correctAnswer": "second",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "first",
+        "third"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L15_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Going there on foot will take that long.",
+      "explanation": "A ten-minute walk, drive or ride are all normal ways to describe a distance, but they mean very different journeys. Walk is short and unstressed at the end of the phrase.",
+      "textToSpeak": "It's about a ten-minute walk from here.",
+      "textWithBlanks": "It's about a ten-minute ___ from here.",
+      "missingWord": "walk",
+      "correctAnswer": "walk",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "drive",
+        "ride"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L16_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Fifteen minutes.",
+      "explanation": "Quarter past three, half past three and ten past three are all real times, so the sentence cannot help you. Getting this word wrong means arriving fifteen or twenty minutes out.",
+      "textToSpeak": "Your appointment's at quarter past three.",
+      "textWithBlanks": "Your appointment's at ___ past three.",
+      "missingWord": "quarter",
+      "correctAnswer": "quarter",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "half",
+        "ten"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L16_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "To tell them you are not coming at all.",
+      "explanation": "Cancel, confirm and move are the three things you can do with an appointment, and they are opposites in effect. Notice that confirm has stress on the second part, while cancel has it on the first.",
+      "textToSpeak": "I need to cancel my appointment on Friday.",
+      "textWithBlanks": "I need to ___ my appointment on Friday.",
+      "missingWord": "cancel",
+      "correctAnswer": "cancel",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "confirm",
+        "move"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L16_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "The part of the day before twelve o'clock.",
+      "explanation": "Morning, afternoon and evening are all times a dentist could offer, so the whole sentence depends on catching this one word. All three share a similar unstressed ending, so listen to the front of the word.",
+      "textToSpeak": "The dentist can fit you in on Thursday morning.",
+      "textWithBlanks": "The dentist can fit you in on Thursday ___.",
+      "missingWord": "morning",
+      "correctAnswer": "morning",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "afternoon",
+        "evening"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L17_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "A hot drink made from dark roasted beans.",
+      "explanation": "To take away means you want it to go rather than sitting in, and it works with any order. Coffee, a smoothie and a sandwich are equally normal things to ask for.",
+      "textToSpeak": "Can I get a coffee to take away, please?",
+      "textWithBlanks": "Can I get a ___ to take away, please?",
+      "missingWord": "coffee",
+      "correctAnswer": "coffee",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "smoothie",
+        "sandwich"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L17_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "A small extra dish served next to the main one.",
+      "explanation": "A side salad, a green salad and a small salad are all things you can order, so only the sound decides it. Side salad is the usual way to say you want it with your meal.",
+      "textToSpeak": "I'll have the soup and a side salad.",
+      "textWithBlanks": "I'll have the soup and a ___ salad.",
+      "missingWord": "side",
+      "correctAnswer": "side",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "green",
+        "small"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L17_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "The piece of paper telling you what you owe.",
+      "explanation": "You can ask a waiter for the bill, the menu or your change, and all three are polite requests. The bill is what British speakers say at the end of a meal.",
+      "textToSpeak": "Could we have the bill when you're ready?",
+      "textWithBlanks": "Could we have the ___ when you're ready?",
+      "missingWord": "bill",
+      "correctAnswer": "bill",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "menu",
+        "change"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L18_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "This word points back to the day the waiting started.",
+      "explanation": "Since names the starting point, while for names the length of time and until names the end. All three are tiny unstressed words that speakers rush through.",
+      "textToSpeak": "I've been waiting for the results since Monday.",
+      "textWithBlanks": "I've been waiting for the results ___ Monday.",
+      "missingWord": "since",
+      "correctAnswer": "since",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "for",
+        "until"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L18_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "A short negative form, talking about the past.",
+      "explanation": "Were and weren't sound almost identical in fast speech, but they mean opposite things. Catching that little 'n' sound is one of the most useful listening skills in English.",
+      "textToSpeak": "They weren't expecting so many people.",
+      "textWithBlanks": "They ___ expecting so many people.",
+      "missingWord": "weren't",
+      "correctAnswer": "weren't",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "were",
+        "aren't"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L18_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "A negative helping word about now, not the past.",
+      "explanation": "Doesn't and didn't differ by a single vowel, but one is present and one is past. Does would turn the sentence into the opposite meaning entirely.",
+      "textToSpeak": "He doesn't need the car until next week.",
+      "textWithBlanks": "He ___ need the car until next week.",
+      "missingWord": "doesn't",
+      "correctAnswer": "doesn't",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "didn't",
+        "does"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L19_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Almost never.",
+      "explanation": "Rarely, often and always sit in exactly the same place in the sentence but describe completely different lives. Frequency words are easy to miss because they are squeezed between the subject and the verb.",
+      "textToSpeak": "My parents rarely go out during the week.",
+      "textWithBlanks": "My parents ___ go out during the week.",
+      "missingWord": "rarely",
+      "correctAnswer": "rarely",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "often",
+        "always"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L19_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "The month that comes after February.",
+      "explanation": "Months are pure information: nothing in the sentence hints at which one it is. March is a single short syllable, unlike the longer August.",
+      "textToSpeak": "My older sister's expecting a baby in March.",
+      "textWithBlanks": "My older sister's expecting a baby in ___.",
+      "missingWord": "March",
+      "correctAnswer": "March",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "May",
+        "August"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L19_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "First one person does it, then the other.",
+      "explanation": "Take turns means to do something one after another, and it is fixed in the plural. Take shifts and take breaks are also real phrases, which is why you need the audio.",
+      "textToSpeak": "We take turns cooking at the weekend.",
+      "textWithBlanks": "We take ___ cooking at the weekend.",
+      "missingWord": "turns",
+      "correctAnswer": "turns",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "shifts",
+        "breaks"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L20_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "A word people add when they are correcting an idea or being a bit tentative.",
+      "explanation": "Actually, anyway and either can all close this sentence, and each changes the speaker's attitude slightly. These little words are spoken quickly and are often the first thing learners stop hearing.",
+      "textToSpeak": "I don't think she's coming, actually.",
+      "textWithBlanks": "I don't think she's coming, ___.",
+      "missingWord": "actually",
+      "correctAnswer": "actually",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "anyway",
+        "either"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L20_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "To look at something quickly to make sure.",
+      "explanation": "Hang on means wait a moment, and after it you might check, grab or update a calendar. I'll just runs together into something like 'ull-jus' in real speech.",
+      "textToSpeak": "Hang on, I'll just check the calendar.",
+      "textWithBlanks": "Hang on, I'll just ___ the calendar.",
+      "missingWord": "check",
+      "correctAnswer": "check",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "grab",
+        "update"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L20_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "A negative short form meaning it is unlikely to happen.",
+      "explanation": "Should and shouldn't are separated by one quiet 'n' sound, yet they give opposite predictions about the journey. Wouldn't would make the sentence about an imagined situation instead.",
+      "textToSpeak": "It shouldn't take long if we leave now.",
+      "textWithBlanks": "It ___ take long if we leave now.",
+      "missingWord": "shouldn't",
+      "correctAnswer": "shouldn't",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "should",
+        "wouldn't"
+      ],
+      "phase": "mastery"
+    }
+  ]
+}

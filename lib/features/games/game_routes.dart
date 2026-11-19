@@ -142,6 +142,8 @@ import 'package:vowl/features/speaking/speak_synonym/presentation/pages/speak_sy
 import 'package:vowl/features/speaking/speak_synonym/presentation/pages/speak_synonym_practice_screen.dart';
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/pages/yes_no_speaking_learn_screen.dart';
 import 'package:vowl/features/speaking/yes_no_speaking/presentation/pages/yes_no_speaking_practice_screen.dart';
+import 'package:vowl/features/listening/audio_fill_blanks/presentation/pages/audio_fill_blanks_learn_screen.dart';
+import 'package:vowl/features/listening/audio_fill_blanks/presentation/pages/audio_fill_blanks_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -773,6 +775,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'audiofillblanks') {
+          return fadeTransitionPage(
+            child: AudioFillBlanksLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1183,6 +1191,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'yesnospeaking') {
           return fadeTransitionPage(
             child: YesNoSpeakingPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'audiofillblanks') {
+          return fadeTransitionPage(
+            child: AudioFillBlanksPracticeScreen(level: level),
             state: state,
           );
         }

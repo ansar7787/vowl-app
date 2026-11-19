@@ -1,0 +1,518 @@
+{
+  "gameType": "audioFillBlanks",
+  "phase": "mastery",
+  "batchIndex": 3,
+  "levels": "21-30",
+  "quests": [
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L21_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Changed to a different day, not stopped.",
+      "explanation": "Moved and postponed both mean the meeting will still happen, while shifted is a looser way of saying the same thing. Been moved is a passive form, and been is barely audible in natural speech.",
+      "textToSpeak": "The meeting's been moved to Wednesday afternoon, so you've got a bit more time.",
+      "textWithBlanks": "The meeting's been ___ to Wednesday afternoon, so you've got a bit more time.",
+      "missingWord": "moved",
+      "correctAnswer": "moved",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "postponed",
+        "shifted"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L21_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "To pass an email you received on to someone else.",
+      "explanation": "Forward me, resend me and print me are all things you can ask a colleague to do with an email, so grammar gives nothing away. Forward is stressed on the first syllable: FOR-ward.",
+      "textToSpeak": "Could you forward me the email she sent this morning?",
+      "textWithBlanks": "Could you ___ me the email she sent this morning?",
+      "missingWord": "forward",
+      "correctAnswer": "forward",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "resend",
+        "print"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L21_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "The blocks of working hours somebody is scheduled for.",
+      "explanation": "If a colleague is off sick, you might cover their shifts, their calls or their classes depending on the job. Shifts ends in a cluster of three consonants that is genuinely hard to hear.",
+      "textToSpeak": "Daniel's off sick, so I'll be covering his shifts this week.",
+      "textWithBlanks": "Daniel's off sick, so I'll be covering his ___ this week.",
+      "missingWord": "shifts",
+      "correctAnswer": "shifts",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "calls",
+        "classes"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L22_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "The size between small and large.",
+      "explanation": "Clothing sizes are pure information, and the question works identically with any of them. Medium has three syllables, so listen for its longer shape.",
+      "textToSpeak": "Do you have this jacket in a medium?",
+      "textWithBlanks": "Do you have this jacket in a ___?",
+      "missingWord": "medium",
+      "correctAnswer": "medium",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "small",
+        "large"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L22_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Roughly two or three of something.",
+      "explanation": "A couple of things, a load of things and a box of things are all natural, and each suggests a different amount. In speech, a couple of is usually squashed into something like 'a coupla'.",
+      "textToSpeak": "I picked up a couple of things for the flat while I was out.",
+      "textWithBlanks": "I picked up a ___ of things for the flat while I was out.",
+      "missingWord": "couple",
+      "correctAnswer": "couple",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "load",
+        "box"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L22_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "There are none left because customers bought them all.",
+      "explanation": "Sold out and run out both mean there are none left, and been out of is close too, so all three make sense. This is a case where only the audio separates three real answers.",
+      "textToSpeak": "They've sold out of the blue ones, unfortunately.",
+      "textWithBlanks": "They've ___ out of the blue ones, unfortunately.",
+      "missingWord": "sold",
+      "correctAnswer": "sold",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "run",
+        "been"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L23_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Periods of time spent sleeping somewhere.",
+      "explanation": "A room for two nights, two weeks or two people are all normal bookings, so the number tells you nothing. Hotels always count stays in nights, not days.",
+      "textToSpeak": "I've booked a room for two nights, checking in on Friday.",
+      "textWithBlanks": "I've booked a room for two ___, checking in on Friday.",
+      "missingWord": "nights",
+      "correctAnswer": "nights",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "weeks",
+        "people"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L23_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "It left much later than it should have.",
+      "explanation": "Delayed means late, cancelled means it never left at all, and overbooked means too many tickets were sold. At an airport, mishearing this word costs you a day.",
+      "textToSpeak": "The flight was delayed by nearly three hours.",
+      "textWithBlanks": "The flight was ___ by nearly three hours.",
+      "missingWord": "delayed",
+      "correctAnswer": "delayed",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "cancelled",
+        "overbooked"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L23_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Already part of the price you paid.",
+      "explanation": "Included means you have already paid for it, while served and free describe it differently. Notice the contrast with pay separately in the second half of the question.",
+      "textToSpeak": "Is breakfast included, or do we pay separately?",
+      "textWithBlanks": "Is breakfast ___, or do we pay separately?",
+      "missingWord": "included",
+      "correctAnswer": "included",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "served",
+        "free"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L24_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "It weighs a little more.",
+      "explanation": "Heavier, smaller and louder all end in the same unstressed -er, so the difference is at the front of the word. Slightly softens the comparison, and much strengthens the one that follows.",
+      "textToSpeak": "This one's slightly heavier, but it's much more comfortable.",
+      "textWithBlanks": "This one's slightly ___, but it's much more comfortable.",
+      "missingWord": "heavier",
+      "correctAnswer": "heavier",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "smaller",
+        "louder"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L24_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "No other route takes less time.",
+      "explanation": "The quickest, safest and cheapest way are three different pieces of advice about the same journey. Superlatives end in -est, which is reduced to a quick 'ist' sound in speech.",
+      "textToSpeak": "That's the quickest way to get there at this time of day.",
+      "textWithBlanks": "That's the ___ way to get there at this time of day.",
+      "missingWord": "quickest",
+      "correctAnswer": "quickest",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "safest",
+        "cheapest"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L24_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "More pleasant overall.",
+      "explanation": "Far nicer, far darker and far warmer are all fair descriptions of a flat, and only one was said. Far is used here to strengthen the comparison, the same way much did earlier.",
+      "textToSpeak": "The second flat was far nicer, but it was miles from the station.",
+      "textWithBlanks": "The second flat was far ___, but it was miles from the station.",
+      "missingWord": "nicer",
+      "correctAnswer": "nicer",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "darker",
+        "warmer"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L25_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Doing your job here.",
+      "explanation": "How long have you been working, living or studying here are three questions people are genuinely asked, and the -ing ending hides the difference at the end. The auxiliary chain have you been is almost swallowed in natural speech.",
+      "textToSpeak": "How long have you been working here?",
+      "textWithBlanks": "How long have you been ___ here?",
+      "missingWord": "working",
+      "correctAnswer": "working",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "living",
+        "studying"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L25_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Before the time you had originally agreed.",
+      "explanation": "Why don't we is a friendly way to suggest something, and meeting earlier, later or outside are all reasonable suggestions. Earlier and later are opposites hiding behind the same -er ending.",
+      "textToSpeak": "Why don't we meet a bit earlier and grab something to eat?",
+      "textWithBlanks": "Why don't we meet a bit ___ and grab something to eat?",
+      "missingWord": "earlier",
+      "correctAnswer": "earlier",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "later",
+        "outside"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L25_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "The final one of the night, with nothing after it.",
+      "explanation": "The last train, the next train and the first train are all things people ask about at a station. Get in means arrive, which is worth remembering for timetables.",
+      "textToSpeak": "What time does the last train get in?",
+      "textWithBlanks": "What time does the ___ train get in?",
+      "missingWord": "last",
+      "correctAnswer": "last",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "next",
+        "first"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L26_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "A pain in the part of your body above your neck.",
+      "explanation": "Have a headache, have a cough and have a temperature are the three most common ways to say you feel ill. Headache is two words joined into one, stressed on HEAD.",
+      "textToSpeak": "I've had a headache all day, so I'm going to lie down.",
+      "textWithBlanks": "I've had a ___ all day, so I'm going to lie down.",
+      "missingWord": "headache",
+      "correctAnswer": "headache",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "cough",
+        "temperature"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L26_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Something you hear, not something you see or smell.",
+      "explanation": "A machine can make a strange noise, a strange smell or a strange mess, and each one means a different problem. Making a strange links together so the next word arrives fast.",
+      "textToSpeak": "The washing machine's making a strange noise again.",
+      "textWithBlanks": "The washing machine's making a strange ___ again.",
+      "missingWord": "noise",
+      "correctAnswer": "noise",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "smell",
+        "mess"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L26_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Further in the wrong direction than it is right now.",
+      "explanation": "Get that looked at means have a professional examine it, and the warning could be about it getting worse, painful or serious. Worse is irregular: we never say more bad.",
+      "textToSpeak": "You should get that looked at before it gets worse.",
+      "textWithBlanks": "You should get that looked at before it gets ___.",
+      "missingWord": "worse",
+      "correctAnswer": "worse",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "painful",
+        "serious"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L27_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "The clothes that need cleaning.",
+      "explanation": "Put the washing on, put the kettle on and put the heating on are three everyday household phrases built the same way. The verb stays the same, so only the noun tells you what is happening.",
+      "textToSpeak": "I'll put the washing on before we leave.",
+      "textWithBlanks": "I'll put the ___ on before we leave.",
+      "missingWord": "washing",
+      "correctAnswer": "washing",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "kettle",
+        "heating"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L27_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "The containers where rubbish goes.",
+      "explanation": "Take the bins out, take the dog out and take the recycling out are all normal evening jobs. Bins is short, and the s runs straight into the next word.",
+      "textToSpeak": "Someone needs to take the bins out tonight.",
+      "textWithBlanks": "Someone needs to take the ___ out tonight.",
+      "missingWord": "bins",
+      "correctAnswer": "bins",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "dog",
+        "recycling"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L27_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Put things back where they belong.",
+      "explanation": "Tidied up, hoovered and unpacked are all jobs that would explain a messy flat. Tidied has that extra -id syllable, while hoovered and unpacked do not.",
+      "textToSpeak": "The flat's a mess. I haven't tidied up since the weekend.",
+      "textWithBlanks": "The flat's a mess. I haven't ___ up since the weekend.",
+      "missingWord": "tidied",
+      "correctAnswer": "tidied",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "hoovered",
+        "unpacked"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L28_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "To go away from a place before you normally would.",
+      "explanation": "Going to have to is heavily reduced in speech, often sounding like 'gonna hafta', which makes the verb after it hard to catch. Leave, finish and start early are all things people say at work.",
+      "textToSpeak": "I'm going to have to leave a bit early today.",
+      "textWithBlanks": "I'm going to have to ___ a bit early today.",
+      "missingWord": "leave",
+      "correctAnswer": "leave",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "finish",
+        "start"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L28_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "To stay somewhere until the other person is ready.",
+      "explanation": "Do you want me to often sounds like 'd'you wanna me to' at speed, so the main verb arrives sooner than you expect. Wait for you, look for you and park for you are all possible offers.",
+      "textToSpeak": "Do you want me to wait for you outside?",
+      "textWithBlanks": "Do you want me to ___ for you outside?",
+      "missingWord": "wait",
+      "correctAnswer": "wait",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "look",
+        "park"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L28_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "To deal with a problem and fix it.",
+      "explanation": "Sort this out, figure this out and work this out are all real phrases with slightly different meanings: sort means fix, while figure and work mean understand. I've got to is usually reduced to 'I've gotta'.",
+      "textToSpeak": "I've got to sort this out before the end of the week.",
+      "textWithBlanks": "I've got to ___ this out before the end of the week.",
+      "missingWord": "sort",
+      "correctAnswer": "sort",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "figure",
+        "work"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L29_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Officially saying in advance what the weather will do.",
+      "explanation": "Forecasting is the specific word for weather predictions, though expecting and reporting would both fit the sentence. They're is reduced almost to nothing before the long verb.",
+      "textToSpeak": "They're forecasting heavy rain for the rest of the week.",
+      "textWithBlanks": "They're ___ heavy rain for the rest of the week.",
+      "missingWord": "forecasting",
+      "correctAnswer": "forecasting",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "expecting",
+        "reporting"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L29_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "The clouds and rain go away.",
+      "explanation": "Clear up, warm up and dry up are three weather phrases that all use the same little word up, so the verb in front of it carries the meaning. If it clears up introduces a condition about the future.",
+      "textToSpeak": "If it clears up later, we could eat outside.",
+      "textWithBlanks": "If it ___ up later, we could eat outside.",
+      "missingWord": "clears",
+      "correctAnswer": "clears",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "warms",
+        "dries"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L29_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Violent weather with strong wind and rain.",
+      "explanation": "Called off means cancelled, and a match can be called off because of a storm, the weather in general, or flooding. Because of the runs together into one quick block of sound.",
+      "textToSpeak": "The match was called off because of the storm.",
+      "textWithBlanks": "The match was called off because of the ___.",
+      "missingWord": "storm",
+      "correctAnswer": "storm",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "weather",
+        "flooding"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L30_Q1",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Offering this means offering your help.",
+      "explanation": "Give you a hand means help you, give you a lift means drive you, and give you a call means phone you. Three fixed phrases, the same frame, and only one word to separate them.",
+      "textToSpeak": "Do you want me to give you a hand with those bags?",
+      "textWithBlanks": "Do you want me to give you a ___ with those bags?",
+      "missingWord": "hand",
+      "correctAnswer": "hand",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "lift",
+        "call"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L30_Q2",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "Not going out at all this evening.",
+      "explanation": "Stay in, eat in and order in are all evening options, and would you rather offers a choice between them. Rather is often shortened so that the verb comes almost immediately.",
+      "textToSpeak": "Shall I book a table, or would you rather stay in?",
+      "textWithBlanks": "Shall I book a table, or would you rather ___ in?",
+      "missingWord": "stay",
+      "correctAnswer": "stay",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "eat",
+        "order"
+      ],
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_AUDIOFILLBLANKS_MASTERY_L30_Q3",
+      "instruction": "Something's missing! Grab the right brick to fix the sentence.",
+      "interactionType": "choice",
+      "hint": "An informal word for visiting quickly.",
+      "explanation": "Pop round, come round and call round all mean visit, and all three are things a friendly neighbour might say. Pop is casual and warm, and very common in spoken British English.",
+      "textToSpeak": "Let me know if you need anything and I'll pop round.",
+      "textWithBlanks": "Let me know if you need anything and I'll ___ round.",
+      "missingWord": "pop",
+      "correctAnswer": "pop",
+      "subtype": "audioFillBlanks",
+      "distractorWords": [
+        "come",
+        "call"
+      ],
+      "phase": "mastery"
+    }
+  ]
+}
