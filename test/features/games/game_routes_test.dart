@@ -55,6 +55,8 @@ import 'package:vowl/features/accent/consonant_clarity/presentation/pages/conson
 import 'package:vowl/features/accent/consonant_clarity/presentation/pages/consonant_clarity_practice_screen.dart';
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/pages/pitch_pattern_match_learn_screen.dart';
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/pages/pitch_pattern_match_practice_screen.dart';
+import 'package:vowl/features/accent/speed_variance/presentation/pages/speed_variance_learn_screen.dart';
+import 'package:vowl/features/accent/speed_variance/presentation/pages/speed_variance_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -873,6 +875,24 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<PitchPatternMatchPracticeScreen>());
+    });
+
+    test('resolves /learn route for speedVariance', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state =
+          createMockState('/learn?category=accent&gameType=speedVariance&level=5');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<SpeedVarianceLearnScreen>());
+    });
+
+    test('resolves /practice route for speedVariance', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state =
+          createMockState('/practice?category=accent&gameType=speedVariance&level=5');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<SpeedVariancePracticeScreen>());
     });
   });
 }
