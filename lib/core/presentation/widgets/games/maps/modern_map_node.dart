@@ -436,17 +436,13 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                         ),
                         if (isCompleted) ...[
                           SizedBox(height: 2.h),
-                          Builder(
-                            builder: (context) {
-                              final earnedStars =
-                                  context
-                                      .watch<AuthBloc>()
-                                      .state
-                                      .user
-                                      ?.starRatings[widget.gameType]?[widget
-                                      .levelNumber
-                                      .toString()] ??
-                                  0;
+                          BlocSelector<AuthBloc, AuthState, int>(
+                            selector: (state) =>
+                                state.user?.starRatings[widget.gameType]?[widget
+                                    .levelNumber
+                                    .toString()] ??
+                                0,
+                            builder: (context, earnedStars) {
                               return Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: List.generate(3, (index) {
@@ -462,22 +458,24 @@ class _ModernMapNodeState extends State<ModernMapNode> {
                               );
                             },
                           ),
-                        ],
-                        Builder(
-                          builder: (context) {
-                            final user = context.watch<AuthBloc>().state.user;
-                            final completedPhases = user?.getCompletedPhases(
+                        ] else ...[
+                          SizedBox(height: 2.h),
+                          BlocSelector<AuthBloc, AuthState, Set<String>>(
+                            selector: (state) =>
+                                state.user?.getCompletedPhases(
                                   widget.gameType,
                                   widget.levelNumber,
                                 ) ??
-                                const {};
-                            return PhaseProgressIndicator(
-                              completedPhases: completedPhases,
-                              hideIfEmpty: true,
-                              activeColor: tierColor,
-                            );
-                          },
-                        ),
+                                const {},
+                            builder: (context, completedPhases) {
+                              return PhaseProgressIndicator(
+                                completedPhases: completedPhases,
+                                hideIfEmpty: false,
+                                activeColor: tierColor,
+                              );
+                            },
+                          ),
+                        ],
                       ],
                     ),
                   ),

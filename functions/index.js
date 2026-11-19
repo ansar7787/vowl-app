@@ -645,6 +645,31 @@ exports.sendWeeklyRankings = onSchedule({
     console.error('Error persisting weekly previousRank batch:', err);
   }
 
+  // 1.6 Persist top 10 winners into leaderboard_cache so all users can view them via the (i) info modal
+  const top10Winners = top100.slice(0, 10).map((item, index) => {
+    const rank = index + 1;
+    return {
+      id: item.id,
+      rank: rank,
+      displayName: resolveDisplayName(item.user),
+      photoUrl: item.user.photoUrl || null,
+      weeklyXp: item.weeklyXp || 0,
+      currentStreak: item.currentStreak || 0,
+      weekKey: currentWeekKey,
+    };
+  });
+
+  try {
+    await db.collection('metadata').doc('leaderboard_cache').set({
+      lastWeekWinners: top10Winners,
+      lastWeekKey: currentWeekKey,
+      lastWeekUpdatedAt: admin.firestore.FieldValue.serverTimestamp(),
+    }, { merge: true });
+    console.log(`Successfully persisted ${top10Winners.length} lastWeekWinners into metadata/leaderboard_cache.`);
+  } catch (err) {
+    console.error('Error persisting lastWeekWinners into metadata:', err);
+  }
+
   // Deduplicate tokens by prioritizing the user who logged in most recently.
   // Cleans up stale tokens from older accounts to prevent cross-account notification bleeding.
   const tokenOwners = new Map();

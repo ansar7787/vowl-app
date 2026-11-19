@@ -84,8 +84,10 @@ class _LeaderboardScreenState extends State<LeaderboardScreen> {
         : (isDark ? AppColors.slate900 : AppColors.white);
 
     return BlocProvider(
-      create: (_) =>
-          di.sl<LeaderboardBloc>()..add(const LoadLeaderboard()),
+      create: (ctx) {
+        ctx.read<AuthBloc>().add(const AuthRefreshUser());
+        return di.sl<LeaderboardBloc>()..add(const LoadLeaderboard());
+      },
       child: Scaffold(
         backgroundColor: bgColor,
         body: BlocBuilder<LeaderboardBloc, LeaderboardState>(
@@ -422,7 +424,7 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
       vipDays: vipDays,
       coins: coins,
       weekKey: weekKey,
-      showCelebrationDialog: false,
+      showCelebrationDialog: true,
     );
   }
 
@@ -621,6 +623,8 @@ class _LeaderboardContentState extends State<_LeaderboardContent> {
                 SliverToBoxAdapter(
                   child: WeeklyLeagueRewardsBanner(
                     currentUser: widget.currentUser,
+                    lastWeekWinners: widget.state.lastWeekWinners,
+                    allUsers: users,
                     onClaimReward: _handleClaimWeeklyLeagueReward,
                   ),
                 ),

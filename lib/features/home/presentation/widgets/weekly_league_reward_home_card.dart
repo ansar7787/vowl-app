@@ -75,9 +75,7 @@ class _WeeklyLeagueRewardHomeCardState
     final rank = widget.user.previousRank ?? 10;
     final vipDays = WeeklyLeagueRewardHelper.getVipDays(rank);
     final coins = WeeklyLeagueRewardHelper.getCoins(rank);
-    final weekKey =
-        widget.user.previousRankWeekKey ??
-        WeeklyLeagueRewardHelper.getPreviousWeekKey();
+    final weekKey = WeeklyLeagueRewardHelper.getTargetWeekKey(widget.user);
 
     final title = WeeklyLeagueRewardHelper.getRankTitle(rank);
     final subtitle =

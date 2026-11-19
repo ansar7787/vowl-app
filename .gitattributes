@@ -7,6 +7,9 @@
 *.arb text eol=lf
 *.txt text eol=lf
 
+# Generated curriculum data — exclude from IDE indexing, diffs, and language stats
+assets/curriculum/**/*.json linguist-generated=true -diff
+
 # Binary assets
 *.png binary
 *.jpg binary

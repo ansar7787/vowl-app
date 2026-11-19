@@ -63,11 +63,18 @@ class LeaderboardLoaded extends LeaderboardState {
   /// The timestamp of the last successful rank cache update.
   final DateTime lastUpdated;
 
+  /// Optional list of last week's top 10 champions.
+  final List<Map<String, dynamic>> lastWeekWinners;
+
   /// Creates a [LeaderboardLoaded] state.
-  const LeaderboardLoaded(this.users, this.lastUpdated);
+  const LeaderboardLoaded(
+    this.users,
+    this.lastUpdated, {
+    this.lastWeekWinners = const [],
+  });
 
   @override
-  List<Object?> get props => [users, lastUpdated];
+  List<Object?> get props => [users, lastUpdated, lastWeekWinners];
 }
 
 /// Failure state containing a diagnostic error message.

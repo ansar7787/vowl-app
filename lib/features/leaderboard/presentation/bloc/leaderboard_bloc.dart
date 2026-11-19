@@ -36,6 +36,7 @@ class LeaderboardBloc extends Bloc<LeaderboardEvent, LeaderboardState> {
           LeaderboardLoaded(
             sortedUsers,
             data.lastUpdated,
+            lastWeekWinners: data.lastWeekWinners,
           ),
         );
       });

@@ -47,7 +47,20 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
             )
             .toList();
 
-        return Right(LeaderboardResult(users: users, lastUpdated: lastUpdated));
+        final List<dynamic> winnersJson = data['lastWeekWinners'] ?? [];
+        final lastWeekWinners = winnersJson
+            .map(
+              (json) => Map<String, dynamic>.from(json as Map),
+            )
+            .toList();
+
+        return Right(
+          LeaderboardResult(
+            users: users,
+            lastUpdated: lastUpdated,
+            lastWeekWinners: lastWeekWinners,
+          ),
+        );
       }
 
       // ======================================================================

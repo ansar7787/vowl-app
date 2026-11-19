@@ -71,15 +71,15 @@ class VowlUniversalGameHeader extends StatelessWidget {
   /// Optional phase badge label (e.g. '⚔️ TEST' or 'PRACTICE').
   final String? phaseBadge;
 
-  /// Optional custom color for the phase badge. Defaults to rose.
+  /// Optional custom color for the phase badge. Defaults to emerald.
   final Color? phaseBadgeColor;
 
   const VowlUniversalGameHeader({
     super.key,
     required this.level,
     required this.category,
-    this.phaseBadge,
-    this.phaseBadgeColor,
+    this.phaseBadge = '🏆 MASTERY',
+    this.phaseBadgeColor = AppColors.emerald500,
     this.progress = 0.0,
     this.lives = 3,
     this.progressNotifier,

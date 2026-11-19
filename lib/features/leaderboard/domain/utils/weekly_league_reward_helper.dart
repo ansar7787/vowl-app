@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -15,32 +14,47 @@ import 'package:vowl/features/leaderboard/presentation/widgets/weekly_league_cha
 final class WeeklyLeagueRewardHelper {
   const WeeklyLeagueRewardHelper._();
 
-  /// Calculates ISO-8601 week key (e.g., '2026-W45') for the given [date].
+  /// Calculates ISO-8601 week key (e.g., '2026-W45') matching standard ISO-8601 and Cloud Functions.
   static String getCurrentWeekKey([DateTime? date]) {
     final now = (date ?? DateTime.now()).toUtc();
-    final dayOfYear = int.parse(DateFormat('D').format(now));
-    final week = ((dayOfYear - now.weekday + 10) / 7).floor();
-    return '${now.year}-W${week.toString().padLeft(2, '0')}';
+    final thursday = now.add(Duration(days: 4 - now.weekday));
+    final firstDayOfYear = DateTime.utc(thursday.year, 1, 1);
+    final dayOfYear = thursday.difference(firstDayOfYear).inDays;
+    final weekNumber = ((dayOfYear / 7).floor()) + 1;
+    return '${thursday.year}-W${weekNumber.toString().padLeft(2, '0')}';
   }
 
-  /// Calculates previous ISO-8601 week key for the given [date].
+  /// Calculates previous ISO-8601 week key matching standard ISO-8601 and Cloud Functions.
   static String getPreviousWeekKey([DateTime? date]) {
     final now = (date ?? DateTime.now()).toUtc();
-    final prev = now.subtract(const Duration(days: 7));
-    final dayOfYear = int.parse(DateFormat('D').format(prev));
-    final week = ((dayOfYear - prev.weekday + 10) / 7).floor();
-    return '${prev.year}-W${week.toString().padLeft(2, '0')}';
+    return getCurrentWeekKey(now.subtract(const Duration(days: 7)));
   }
 
-  /// Checks if [user] finished in top 10 last week and has an unclaimed reward.
+  /// Returns the relevant week key for claiming the reward.
+  static String getTargetWeekKey(UserEntity? user, [DateTime? now]) {
+    return user?.previousRankWeekKey ?? getPreviousWeekKey(now);
+  }
+
+  /// Checks if [user] finished in top 10 and has an unclaimed reward.
+  /// Validates that the reward is from the immediately completed league cycle
+  /// (either current week or previous week to seamlessly bridge Sunday reset and Monday rollout)
+  /// and has not yet been claimed.
   static bool hasUnclaimedReward(UserEntity? user, [DateTime? now]) {
     if (user == null) return false;
+    final rank = user.previousRank;
+    if (rank == null || rank < 1 || rank > 10) return false;
+
     final prevWeekKey = getPreviousWeekKey(now);
-    final targetWeekKey = user.previousRankWeekKey ?? prevWeekKey;
-    return (user.previousRank != null && user.previousRank! <= 10) &&
-        (user.previousRankWeekKey == null ||
-            user.previousRankWeekKey == prevWeekKey) &&
-        !user.claimedWeeklyRewardWeekKeys.contains(targetWeekKey);
+    final curWeekKey = getCurrentWeekKey(now);
+    final targetWeekKey = getTargetWeekKey(user, now);
+
+    final isEligibleWeek = user.previousRankWeekKey == null ||
+        user.previousRankWeekKey == prevWeekKey ||
+        user.previousRankWeekKey == curWeekKey;
+
+    if (!isEligibleWeek) return false;
+
+    return !user.claimedWeeklyRewardWeekKeys.contains(targetWeekKey);
   }
 
   /// Resolves VIP trial days for [rank].
@@ -106,6 +120,11 @@ final class WeeklyLeagueRewardHelper {
     required String weekKey,
     bool showCelebrationDialog = true,
   }) async {
+    // Prevent duplicate claim submissions
+    if (user.claimedWeeklyRewardWeekKeys.contains(weekKey)) {
+      return true;
+    }
+
     final now = DateTime.now();
     final DateTime? newExpiry;
     if (vipDays > 0) {

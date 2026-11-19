@@ -7,8 +7,13 @@ import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 class LeaderboardResult {
   final List<UserEntity> users;
   final DateTime lastUpdated;
+  final List<Map<String, dynamic>> lastWeekWinners;
 
-  const LeaderboardResult({required this.users, required this.lastUpdated});
+  const LeaderboardResult({
+    required this.users,
+    required this.lastUpdated,
+    this.lastWeekWinners = const [],
+  });
 }
 
 /// Contract that any leaderboard data source must fulfil.

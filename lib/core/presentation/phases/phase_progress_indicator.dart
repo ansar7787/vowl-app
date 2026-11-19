@@ -24,7 +24,7 @@ class PhaseProgressIndicator extends StatelessWidget {
   const PhaseProgressIndicator({
     super.key,
     required this.completedPhases,
-    this.hideIfEmpty = true,
+    this.hideIfEmpty = false,
     this.activeColor,
     this.dotSize = 6.0,
   });
