@@ -1,0 +1,758 @@
+{
+  "gameType": "intonationMimic",
+  "batchIndex": 6,
+  "levels": "51-60",
+  "phase": "mastery",
+  "quests": [
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "After the meeting, I'll email you.",
+      "textToSpeak": "After the meeting, I'll email you.",
+      "options": [
+        "Rise on 'meeting', fall on 'you'",
+        "Fall on 'meeting', fall on 'you'"
+      ],
+      "correctAnswer": "Rise on 'meeting', fall on 'you'",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "The sentence has an opening phrase and a main clause. Listen for the boundary between them.",
+      "explanation": "The opening phrase 'after the meeting' prepares the main idea, so the voice lifts slightly on 'meeting'. Falling there would split the sentence into two statements.",
+      "pitchRule": "↗️📉 Introductory phrases lift; the main clause falls.",
+      "emotionContext": "Helpful",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A colleague explains the plan for Thursday. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "On Thursday morning, we'll meet the clients.",
+      "textToSpeak": "On Thursday morning, we'll meet the clients.",
+      "options": [
+        "Fall on 'morning', fall on 'clients'",
+        "Rise on 'morning', fall on 'clients'"
+      ],
+      "correctAnswer": "Rise on 'morning', fall on 'clients'",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "A time phrase begins the sentence. Notice how the voice treats the end of the phrase.",
+      "explanation": "The time phrase is only the setup, so it lifts on 'morning'. The plan itself falls on 'clients', where the thought is complete.",
+      "pitchRule": "↗️📉 A time phrase at the start does not end the thought.",
+      "emotionContext": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You want to sound organized in a presentation. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "In this section, I'll explain the process.",
+      "textToSpeak": "In this section, I'll explain the process.",
+      "options": [
+        "Fall on 'section', fall on 'process'",
+        "Rise on 'section', fall on 'process'"
+      ],
+      "correctAnswer": "Rise on 'section', fall on 'process'",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "The opener tells listeners where you are. Decide where your voice should pause.",
+      "explanation": "Lift on 'section' to hold the listeners, then fall on 'process' to finish the point. It sounds structured and clear.",
+      "pitchRule": "↗️📉 Signposting phrases lift before the main message.",
+      "emotionContext": "Confident",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "I'll call you when I land,",
+      "textToSpeak": "I'll call you when I land,",
+      "options": [
+        "Falling — thought complete",
+        "Rising — more to say"
+      ],
+      "correctAnswer": "Rising — more to say",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "hint": "The sentence ends with a comma. Consider whether the speaker is done.",
+      "explanation": "With a lift on 'land', the speaker signals they are adding something, such as 'and then we can eat'. A fall would close the thought.",
+      "pitchRule": "↗️ A rise at a comma shows the thought continues.",
+      "emotionContext": "Reassuring",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A friend gives you a complete answer about their plan. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "I'll message you once I'm through customs.",
+      "textToSpeak": "I'll message you once I'm through customs.",
+      "options": [
+        "Falling — thought complete",
+        "Rising — more to say"
+      ],
+      "correctAnswer": "Falling — thought complete",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        2,
+        1,
+        0
+      ],
+      "hint": "This time there is no comma or continuation. What does the fall communicate?",
+      "explanation": "The thought is complete, so the pitch falls on 'customs'. The listener knows they can respond.",
+      "pitchRule": "📉 A completed thought falls, and the listener may respond.",
+      "emotionContext": "Reassuring",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You need to tell a colleague what you'll do first, but you have more to say. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Once I've reviewed the numbers,",
+      "textToSpeak": "Once I've reviewed the numbers,",
+      "options": [
+        "Rising — more to say",
+        "Falling — thought complete"
+      ],
+      "correctAnswer": "Rising — more to say",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "hint": "You started a sentence that isn't finished. Decide what the voice should do.",
+      "explanation": "'Once I've reviewed the numbers' needs a result clause, so the pitch stays up on 'numbers'. Falling would leave the listener waiting.",
+      "pitchRule": "↗️ Dependent clauses rise because the main clause is still to come.",
+      "emotionContext": "Thoughtful",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "I called my brother, Tom.",
+      "textToSpeak": "I called my brother, Tom.",
+      "options": [
+        "Rise on 'brother' — the speaker is addressing Tom",
+        "Level on 'brother' — Tom is the brother"
+      ],
+      "correctAnswer": "Rise on 'brother' — the speaker is addressing Tom",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "Listen closely to the pause after 'brother'. It changes who is being talked to.",
+      "explanation": "A pause and a lift after 'brother' can make 'Tom' a person spoken to. Without that boundary, 'Tom' is just the name of the brother.",
+      "pitchRule": "↗️ A boundary can change who a name refers to.",
+      "emotionContext": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A teacher is reading aloud a sentence to a class. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Let's eat, Grandma.",
+      "textToSpeak": "Let's eat, Grandma.",
+      "options": [
+        "No boundary — eating Grandma",
+        "Rise on 'eat' — speaking to Grandma"
+      ],
+      "correctAnswer": "Rise on 'eat' — speaking to Grandma",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "This sentence is famous for a reason. Listen for whether there is a break before 'Grandma'.",
+      "explanation": "A lift and pause after 'eat' separate the invitation from the name. Without the boundary, the meaning becomes dramatically different.",
+      "pitchRule": "↗️ The boundary tells us who is being addressed.",
+      "emotionContext": "Amused",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You want to mention a friend's name in a group message. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "I saw the director, Nadia, yesterday.",
+      "textToSpeak": "I saw the director, Nadia, yesterday.",
+      "options": [
+        "Fall on 'director', fall on 'Nadia'",
+        "Lift on 'director', lift on 'Nadia'"
+      ],
+      "correctAnswer": "Lift on 'director', lift on 'Nadia'",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        2,
+        3
+      ],
+      "hint": "The name in the middle is extra information. Decide how to fit it into the sentence.",
+      "explanation": "'Nadia' is an aside, so the voice lifts slightly before and after it. The final fall on 'yesterday' closes the sentence.",
+      "pitchRule": "↗️📉 Extra information sits inside its own group and lifts before and after it.",
+      "emotionContext": "Casual",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "My sister, who lives in Oslo, is visiting.",
+      "textToSpeak": "My sister, who lives in Oslo, is visiting.",
+      "options": [
+        "Lift on 'sister', lift on 'Oslo', fall on 'visiting'",
+        "Fall on 'sister', fall on 'Oslo', fall on 'visiting'"
+      ],
+      "correctAnswer": "Lift on 'sister', lift on 'Oslo', fall on 'visiting'",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        2,
+        0
+      ],
+      "hint": "The middle phrase is extra detail. Listen to how the voice enters and exits it.",
+      "explanation": "The extra clause is spoken as a side note, so both edges lift slightly. The final fall on 'visiting' belongs to the main sentence.",
+      "pitchRule": "↗️📉 A side note lifts at its edges and doesn't take the final fall.",
+      "emotionContext": "Excited",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A manager mentions a change with extra information in the middle. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "The office, which we rent from the university, is closing.",
+      "textToSpeak": "The office, which we rent from the university, is closing.",
+      "options": [
+        "Lift on 'office', lift on 'university', fall on 'closing'",
+        "Fall on 'office', fall on 'university', fall on 'closing'"
+      ],
+      "correctAnswer": "Lift on 'office', lift on 'university', fall on 'closing'",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        2,
+        0
+      ],
+      "hint": "The extra detail is 'which we rent from the university'. Find where the main message continues.",
+      "explanation": "Two lifts frame the detail and one fall finishes the news. The main message is only complete on 'closing'.",
+      "pitchRule": "↗️📉 The main clause waits for the fall until its last word.",
+      "emotionContext": "Concerned",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You describe a coworker to a new hire. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Amira, who runs the design team, will show you around.",
+      "textToSpeak": "Amira, who runs the design team, will show you around.",
+      "options": [
+        "Fall on 'Amira', fall on 'team', fall on 'around'",
+        "Lift on 'Amira', lift on 'team', fall on 'around'"
+      ],
+      "correctAnswer": "Lift on 'Amira', lift on 'team', fall on 'around'",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        2,
+        0
+      ],
+      "hint": "A name, some detail, then an action. Decide where the sentence is really complete.",
+      "explanation": "The detail about the design team is background, so it stays lifted. The fall on 'around' gives the main information.",
+      "pitchRule": "↗️📉 Background information lifts; the main action falls.",
+      "emotionContext": "Welcoming",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Honestly, I think we should wait.",
+      "textToSpeak": "Honestly, I think we should wait.",
+      "options": [
+        "Fall on 'Honestly', fall on 'wait'",
+        "Lift on 'Honestly', fall on 'wait'"
+      ],
+      "correctAnswer": "Lift on 'Honestly', fall on 'wait'",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "One word opens the sentence before the main message. Listen to it separately.",
+      "explanation": "'Honestly' is a small thought group of its own, so it lifts slightly. It signals a candid opinion, and the main clause falls on 'wait'.",
+      "pitchRule": "↗️📉 Discourse markers lift and hand over to the main clause.",
+      "emotionContext": "Serious",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Someone starts a story in a meeting. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Actually, that reminds me of something.",
+      "textToSpeak": "Actually, that reminds me of something.",
+      "options": [
+        "Fall on 'Actually', fall on 'something'",
+        "Lift on 'Actually', fall on 'something'"
+      ],
+      "correctAnswer": "Lift on 'Actually', fall on 'something'",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "The first word is a signal that a new thought is starting. How does it end?",
+      "explanation": "'Actually' lifts to introduce the new point. The fall on 'something' closes the idea and invites a follow-up.",
+      "pitchRule": "↗️📉 A lifted opener keeps the sentence linked.",
+      "emotionContext": "Thoughtful",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You want to give a mild correction politely. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Well, it depends on the budget.",
+      "textToSpeak": "Well, it depends on the budget.",
+      "options": [
+        "Lift on 'Well', fall on 'budget'",
+        "Fall on 'Well', fall on 'budget'"
+      ],
+      "correctAnswer": "Lift on 'Well', fall on 'budget'",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "The word 'well' softens what follows. Decide how much separation it needs.",
+      "explanation": "'Well' works as a soft start, and a slight lift keeps it attached to the main clause. It sounds thoughtful rather than dismissive.",
+      "pitchRule": "↗️📉 A lifted 'well' sounds careful; a fall on it sounds abrupt.",
+      "emotionContext": "Careful",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "The woman in the red coat is waiting at the door.",
+      "textToSpeak": "The woman in the red coat is waiting at the door.",
+      "options": [
+        "Group: 'the woman' | 'in the red coat is waiting at the door'",
+        "Group: 'the woman in the red coat' | 'is waiting at the door'"
+      ],
+      "correctAnswer": "Group: 'the woman in the red coat' | 'is waiting at the door'",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        2,
+        0
+      ],
+      "hint": "Find the subject. It is long, so it helps to imagine where a speaker takes a breath.",
+      "explanation": "A long subject sits in its own thought group, which ends slightly lifted at 'coat'. The predicate is a second group that ends with the fall.",
+      "pitchRule": "↗️📉 Long subjects are grouped as one chunk before the verb.",
+      "emotionContext": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "An announcer reads a message at the airport. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Passengers travelling to Madrid should proceed to gate twelve.",
+      "textToSpeak": "Passengers travelling to Madrid should proceed to gate twelve.",
+      "options": [
+        "Group: 'Passengers' | 'travelling to Madrid should proceed to gate twelve'",
+        "Group: 'Passengers travelling to Madrid' | 'should proceed to gate twelve'"
+      ],
+      "correctAnswer": "Group: 'Passengers travelling to Madrid' | 'should proceed to gate twelve'",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        2,
+        0
+      ],
+      "hint": "The announcement names a group of people, then an instruction. Where is the natural break?",
+      "explanation": "The description of the group is one chunk, followed by the instruction. This helps the audience understand who the message is for.",
+      "pitchRule": "↗️📉 Group the 'who' first, then the 'what to do'.",
+      "emotionContext": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You are giving a colleague a status update. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "The document we sent last week needs one more review.",
+      "textToSpeak": "The document we sent last week needs one more review.",
+      "options": [
+        "Group: 'The document we sent last week' | 'needs one more review'",
+        "Group: 'The document' | 'we sent last week needs one more review'"
+      ],
+      "correctAnswer": "Group: 'The document we sent last week' | 'needs one more review'",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        2,
+        0
+      ],
+      "hint": "The subject includes a small relative clause. Decide how to keep it together.",
+      "explanation": "'The document we sent last week' stays as one unit, then a short lift, then the main verb phrase falls. Breaking after 'document' makes the meaning hard to follow.",
+      "pitchRule": "↗️📉 Keep a modified subject in one chunk.",
+      "emotionContext": "Businesslike",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "I wanted to go, but I was too tired.",
+      "textToSpeak": "I wanted to go, but I was too tired.",
+      "options": [
+        "Fall on 'go', fall on 'tired'",
+        "Lift on 'go', fall on 'tired'"
+      ],
+      "correctAnswer": "Lift on 'go', fall on 'tired'",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "The two parts contrast with each other. Listen to how the first part hands over to the second.",
+      "explanation": "The first clause lifts on 'go' because 'but' is coming. The fall on 'tired' completes the contrast.",
+      "pitchRule": "↗️📉 A clause before 'but' lifts because the contrast follows.",
+      "emotionContext": "Apologetic",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A friend explains why plans fell through. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "We could try again next week, or maybe skip it.",
+      "textToSpeak": "We could try again next week, or maybe skip it.",
+      "options": [
+        "Fall on 'week', fall on 'it'",
+        "Lift on 'week', fall on 'it'"
+      ],
+      "correctAnswer": "Lift on 'week', fall on 'it'",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "'Or maybe' introduces a second possibility. Notice how the first half ends.",
+      "explanation": "The first idea lifts on 'week' because an alternative follows. The fall on 'it' finishes the decision-making.",
+      "pitchRule": "↗️📉 The first alternative lifts, the last falls.",
+      "emotionContext": "Uncertain",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You're explaining a delay to a customer. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "The order shipped on time, but it got stuck at customs.",
+      "textToSpeak": "The order shipped on time, but it got stuck at customs.",
+      "options": [
+        "Fall on 'time', fall on 'customs'",
+        "Lift on 'time', fall on 'customs'"
+      ],
+      "correctAnswer": "Lift on 'time', fall on 'customs'",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "The message has good news and bad news. Decide which part ends the sentence.",
+      "explanation": "The good news lifts on 'time' because the problem follows. The bad news falls on 'customs', which is the key point.",
+      "pitchRule": "↗️📉 Lift after the good news, drop on the problem.",
+      "emotionContext": "Apologetic",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "The train, as usual, was late.",
+      "textToSpeak": "The train, as usual, was late.",
+      "options": [
+        "Lift on 'train', lift on 'usual', fall on 'late'",
+        "Fall on 'train', fall on 'usual', fall on 'late'"
+      ],
+      "correctAnswer": "Lift on 'train', lift on 'usual', fall on 'late'",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        2,
+        0
+      ],
+      "hint": "The middle phrase adds attitude. Listen to how the voice steps in and out of it.",
+      "explanation": "'As usual' is a side comment that carries irritation. It has its own small group, and the fall on 'late' finishes the main message.",
+      "pitchRule": "↗️📉 Side comments sit between lifts and let the main clause finish with a fall.",
+      "emotionContext": "Annoyed",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A coworker shares mixed news. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "The results, surprisingly, were better than expected.",
+      "textToSpeak": "The results, surprisingly, were better than expected.",
+      "options": [
+        "Lift on 'results', lift on 'surprisingly', fall on 'expected'",
+        "Fall on 'results', fall on 'surprisingly', fall on 'expected'"
+      ],
+      "correctAnswer": "Lift on 'results', lift on 'surprisingly', fall on 'expected'",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        2,
+        0
+      ],
+      "hint": "'Surprisingly' interrupts the sentence. Decide how strongly it separates from the rest.",
+      "explanation": "The interruptor is short and lifted at both sides. The fall on 'expected' closes the news.",
+      "pitchRule": "↗️📉 Interrupting adverbs create a mini group inside the sentence.",
+      "emotionContext": "Pleased",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You want to add a personal comment inside a statement. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "My flight, if I'm honest, was terrible.",
+      "textToSpeak": "My flight, if I'm honest, was terrible.",
+      "options": [
+        "Lift on 'flight', lift on 'honest', fall on 'terrible'",
+        "Fall on 'flight', fall on 'honest', fall on 'terrible'"
+      ],
+      "correctAnswer": "Lift on 'flight', lift on 'honest', fall on 'terrible'",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        2,
+        0
+      ],
+      "hint": "The comment 'if I'm honest' is extra. Decide where the sentence is really done.",
+      "explanation": "The aside is spoken lower and lifted at its edges. The word 'terrible' carries the fall and the main emotion.",
+      "pitchRule": "↗️📉 Asides don't take the final fall; the main clause does.",
+      "emotionContext": "Frank",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "She said she'd call me back.",
+      "textToSpeak": "She said she'd call me back.",
+      "options": [
+        "Break after 'said' — lifts on 'said'",
+        "Single group — falls on 'back'"
+      ],
+      "correctAnswer": "Single group — falls on 'back'",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        2,
+        1,
+        0
+      ],
+      "hint": "Notice how quickly the reported speech follows the word 'said'. Is there a break?",
+      "explanation": "Reported speech has no boundary after 'said', so the sentence flows as a single group. The fall on 'back' finishes it.",
+      "pitchRule": "📉 Reported speech usually flows as one unit.",
+      "emotionContext": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A friend quotes what someone said. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "He said, \"I'm leaving tomorrow.\"",
+      "textToSpeak": "He said, \"I'm leaving tomorrow.\"",
+      "options": [
+        "Lift on 'said', fall on 'tomorrow'",
+        "Single group — falls on 'tomorrow'"
+      ],
+      "correctAnswer": "Lift on 'said', fall on 'tomorrow'",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "Direct quotation often includes a tiny pause. Listen for it.",
+      "explanation": "Directly quoted speech is introduced by a short lifted phrase, then the quote falls on 'tomorrow'. The lift sets up the quote.",
+      "pitchRule": "↗️📉 A lifted 'he said' introduces a quotation.",
+      "emotionContext": "Serious",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You want to add a doubtful comment. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "I think, though, that we should ask first.",
+      "textToSpeak": "I think, though, that we should ask first.",
+      "options": [
+        "Fall on 'think', fall on 'though', fall on 'first'",
+        "Lift on 'think', lift on 'though', fall on 'first'"
+      ],
+      "correctAnswer": "Lift on 'think', lift on 'though', fall on 'first'",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        2,
+        0
+      ],
+      "hint": "Two small pieces open the sentence. Decide how to keep them attached to the main idea.",
+      "explanation": "'I think' and 'though' are small groups that lift and prepare the main message. It sounds diplomatic rather than blunt.",
+      "pitchRule": "↗️📉 Diplomatic sentences use several small lifts before the main idea.",
+      "emotionContext": "Tactful",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "When the alarm went off, everyone left the building.",
+      "textToSpeak": "When the alarm went off, everyone left the building.",
+      "options": [
+        "Lift on 'off', fall on 'building'",
+        "Fall on 'off', fall on 'building'"
+      ],
+      "correctAnswer": "Lift on 'off', fall on 'building'",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "There are two events. Listen to how the first is presented.",
+      "explanation": "The first clause lifts on 'off' as the setup, and the fall on 'building' finishes the main event.",
+      "pitchRule": "↗️📉 Time clauses at the start lift before the main event.",
+      "emotionContext": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A friend gives a long explanation. Which pattern fits the middle of it?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "If you leave now, you'll miss the traffic, but you won't get breakfast.",
+      "textToSpeak": "If you leave now, you'll miss the traffic, but you won't get breakfast.",
+      "options": [
+        "Lift on 'now', lift on 'traffic', fall on 'breakfast'",
+        "Fall on 'now', fall on 'traffic', fall on 'breakfast'"
+      ],
+      "correctAnswer": "Lift on 'now', lift on 'traffic', fall on 'breakfast'",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        2,
+        0
+      ],
+      "hint": "Three parts appear in one sentence. Find which ones are waiting for the next.",
+      "explanation": "The first two parts lift because each leads into the next. Only the final part, 'breakfast', closes the thought.",
+      "pitchRule": "↗️📉 Long sentences use small lifts to keep the listener oriented.",
+      "emotionContext": "Practical",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You tell a colleague your decision after considering the options. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "After thinking it over, I've decided to accept the offer.",
+      "textToSpeak": "After thinking it over, I've decided to accept the offer.",
+      "options": [
+        "Lift on 'over', fall on 'offer'",
+        "Fall on 'over', fall on 'offer'"
+      ],
+      "correctAnswer": "Lift on 'over', fall on 'offer'",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "You have an opening phrase and a decision. Decide which part carries the news.",
+      "explanation": "'After thinking it over' lifts to introduce your decision. The fall on 'offer' announces it with clarity.",
+      "pitchRule": "↗️📉 Let the news land on the fall, not on the setup.",
+      "emotionContext": "Decisive",
+      "phase": "mastery"
+    }
+  ]
+}

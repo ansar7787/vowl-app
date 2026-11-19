@@ -1,0 +1,758 @@
+{
+  "gameType": "intonationMimic",
+  "batchIndex": 8,
+  "levels": "71-80",
+  "phase": "mastery",
+  "quests": [
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Could you give me a hand with this?",
+      "textToSpeak": "Could you give me a hand with this?",
+      "options": [
+        "Falling — firm instruction",
+        "Rising — polite request"
+      ],
+      "correctAnswer": "Rising — polite request",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        3
+      ],
+      "hint": "A colleague is struggling with a heavy box. Listen to whether the speaker sounds like they are giving an order or asking a favor.",
+      "explanation": "A rising ending leaves the listener free to say yes or no, which is what makes the request polite. A falling ending would sound more direct, like an instruction.",
+      "pitchRule": "📈 A rise at the end of a request hands the decision to the listener.",
+      "emotionContext": "Polite",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You want a stranger at a café to watch your bag while you order. You want to sound as polite as possible. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Would you mind keeping an eye on my bag?",
+      "textToSpeak": "Would you mind keeping an eye on my bag?",
+      "options": [
+        "Falling — firm instruction",
+        "Rising — polite request"
+      ],
+      "correctAnswer": "Rising — polite request",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "You barely know this person. Choose the ending that makes it easy for them to refuse.",
+      "explanation": "With a stranger, an open rise makes refusing easy, which is the essence of politeness. A falling ending would sound like you were giving directions.",
+      "pitchRule": "📈 The more you need to respect the listener's freedom, the more open the ending.",
+      "emotionContext": "Polite",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A coworker is leaving for the day and you need a quick favor. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Can you cover my shift on Thursday?",
+      "textToSpeak": "Can you cover my shift on Thursday?",
+      "options": [
+        "Falling — firm instruction",
+        "Rising — polite request"
+      ],
+      "correctAnswer": "Rising — polite request",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        3
+      ],
+      "hint": "This is a real favor, not an order. Decide how much freedom you want to give.",
+      "explanation": "A favor should end with a rise so your coworker feels free to say no. Falling would sound as if you were assigning the shift.",
+      "pitchRule": "📈 Rise on the last stressed word when you're asking for a favor.",
+      "emotionContext": "Hopeful",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Please close the door behind you.",
+      "textToSpeak": "Please close the door behind you.",
+      "options": [
+        "Falling — firm instruction",
+        "Rising — polite request"
+      ],
+      "correctAnswer": "Falling — firm instruction",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        2,
+        1,
+        0
+      ],
+      "hint": "A teacher speaks to a class just before a test. Does the voice stay open or does it land?",
+      "explanation": "Even with 'please', a falling ending sounds firm and clear. The teacher isn't asking for a favor but giving a clear direction.",
+      "pitchRule": "📉 'Please' softens the words, but a fall still marks an instruction.",
+      "emotionContext": "Firm",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A friend asks you to be quiet because the baby is asleep. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Could you keep it down, please?",
+      "textToSpeak": "Could you keep it down, please?",
+      "options": [
+        "Rising — polite request",
+        "Falling — firm instruction"
+      ],
+      "correctAnswer": "Rising — polite request",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "The request is gentle, and the speaker hopes you'll cooperate willingly. Notice the ending.",
+      "explanation": "A rise on 'please' makes the request softer and more hopeful. A fall would sound like a warning.",
+      "pitchRule": "📈 A rise on 'please' softens a request and asks for cooperation.",
+      "emotionContext": "Gentle",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You need a colleague to send the file today, and it's urgent. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "I need that file by five, please.",
+      "textToSpeak": "I need that file by five, please.",
+      "options": [
+        "Rising — polite request",
+        "Falling — firm instruction"
+      ],
+      "correctAnswer": "Falling — firm instruction",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "You are telling, not asking, because of the time pressure. Decide how your voice should sound.",
+      "explanation": "The deadline is fixed, so the voice falls on 'please' to show it's firm. The fall stays polite because of the word 'please'.",
+      "pitchRule": "📉 Urgency is heard in a firm fall, even when the words are polite.",
+      "emotionContext": "Urgent",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Shall I carry that for you?",
+      "textToSpeak": "Shall I carry that for you?",
+      "options": [
+        "Rising — friendly offer",
+        "Falling — flat announcement"
+      ],
+      "correctAnswer": "Rising — friendly offer",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "Someone sees you with heavy shopping. Listen to whether the offer feels open.",
+      "explanation": "A rise makes the offer sound genuine, as if the speaker will take 'no' as an answer. A fall might sound like an announcement that they're about to take the bag.",
+      "pitchRule": "📈 A rise makes an offer sound open and sincere.",
+      "emotionContext": "Kind",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A host is welcoming you into her home. Which pattern fits her offer?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Can I get you anything while you wait?",
+      "textToSpeak": "Can I get you anything while you wait?",
+      "options": [
+        "Falling — flat announcement",
+        "Rising — friendly offer"
+      ],
+      "correctAnswer": "Rising — friendly offer",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "The host wants you to feel welcome. Which ending feels warmer?",
+      "explanation": "A rise on 'wait' invites you to accept, and it also feels friendly. A falling ending would make it sound like routine.",
+      "pitchRule": "📈 A hospitality offer rises so guests feel free to accept.",
+      "emotionContext": "Warm",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You see a colleague trying to fix a projector. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Let me get the technician for you.",
+      "textToSpeak": "Let me get the technician for you.",
+      "options": [
+        "Rising — friendly offer",
+        "Falling — flat announcement"
+      ],
+      "correctAnswer": "Falling — flat announcement",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        2,
+        1,
+        0
+      ],
+      "hint": "You are not asking permission; you are stating what you'll do. Decide how firm your voice should be.",
+      "explanation": "'Let me' plus a decided action falls to show you have already decided to help. A rise would make it sound like a question.",
+      "pitchRule": "📉 A firm helpful statement lands with a fall, not a rise.",
+      "emotionContext": "Helpful",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Is it okay if I sit here?",
+      "textToSpeak": "Is it okay if I sit here?",
+      "options": [
+        "Rising — polite request",
+        "Falling — firm instruction"
+      ],
+      "correctAnswer": "Rising — polite request",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "A stranger points to a seat. Listen to how open the ending sounds.",
+      "explanation": "The voice rises to invite a response and to show respect. A fall would sound like a demand.",
+      "pitchRule": "📈 A permission request rises because the listener has the right to refuse.",
+      "emotionContext": "Polite",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You need to leave the meeting early. Which pattern fits your request to the chair?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "May I be excused at four?",
+      "textToSpeak": "May I be excused at four?",
+      "options": [
+        "Falling — firm instruction",
+        "Rising — polite request"
+      ],
+      "correctAnswer": "Rising — polite request",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "You are asking someone in authority. Which ending shows respect?",
+      "explanation": "The rise on 'four' invites the chair to grant or refuse. It also sounds formal and courteous.",
+      "pitchRule": "📈 With people in authority, a rise shows you're asking, not telling.",
+      "emotionContext": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You are a guest at a stranger's flat and need the bathroom.",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Could I use your bathroom, please?",
+      "textToSpeak": "Could I use your bathroom, please?",
+      "options": [
+        "Rising — polite request",
+        "Falling — firm instruction"
+      ],
+      "correctAnswer": "Rising — polite request",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "You are asking for something personal in someone else's home. Which ending shows respect?",
+      "explanation": "The rise on 'please' leaves the host free to decline or direct you, which fits a guest's position. A fall would sound like an instruction.",
+      "pitchRule": "📈 A guest's request rises, leaving the host in charge.",
+      "emotionContext": "Polite",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "I was wondering if you had a minute?",
+      "textToSpeak": "I was wondering if you had a minute?",
+      "options": [
+        "Rising — polite request",
+        "Falling — firm instruction"
+      ],
+      "correctAnswer": "Rising — polite request",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "The speaker is starting a delicate conversation. Notice how tentative it sounds.",
+      "explanation": "The past tense and the rise soften the request. The speaker sounds hesitant and careful, which is polite when approaching a busy person.",
+      "pitchRule": "📈 A tentative rise softens an approach to a busy person.",
+      "emotionContext": "Hesitant",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A stranger stops you in the street. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Sorry to bother you, but is this the way to the station?",
+      "textToSpeak": "Sorry to bother you, but is this the way to the station?",
+      "options": [
+        "Rising — polite request",
+        "Falling — firm instruction"
+      ],
+      "correctAnswer": "Rising — polite request",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "The speaker begins by apologizing, then asks. Which ending fits an apology?",
+      "explanation": "The rise fits the apology and the question. If the voice fell, the apology would sound insincere.",
+      "pitchRule": "📈 Apologetic questions rise, not fall.",
+      "emotionContext": "Apologetic",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You want to gently ask your neighbor about noise. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "I hope this isn't a bad time, but could we talk about the music?",
+      "textToSpeak": "I hope this isn't a bad time, but could we talk about the music?",
+      "options": [
+        "Falling — firm instruction",
+        "Rising — polite request"
+      ],
+      "correctAnswer": "Rising — polite request",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "You want to raise an issue without causing offense. Decide what tone this needs.",
+      "explanation": "Every softening phrase and the final rise show that you respect your neighbor. A fall would sound like you were accusing them.",
+      "pitchRule": "📈 Stacked softeners sound sincere when the last word rises.",
+      "emotionContext": "Diplomatic",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Sit down.",
+      "textToSpeak": "Sit down.",
+      "options": [
+        "Rising — polite request",
+        "Falling — firm instruction"
+      ],
+      "correctAnswer": "Falling — firm instruction",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "hint": "A teacher speaks to a noisy class. Listen to the single fall.",
+      "explanation": "A bare command falls sharply because there's no room for discussion. A rise would turn it into a friendly suggestion.",
+      "pitchRule": "📉 Bare commands fall sharply and leave no room for a reply.",
+      "emotionContext": "Firm",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A friend has been standing for an hour at a party. Which pattern fits their host?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Have a seat!",
+      "textToSpeak": "Have a seat!",
+      "options": [
+        "Falling — firm instruction",
+        "Rising — friendly offer"
+      ],
+      "correctAnswer": "Rising — friendly offer",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "The host wants the guest to feel welcome. Decide whether it sounds like an order.",
+      "explanation": "With a friendly rise, the same imperative sounds like an invitation. The words are direct but the melody is generous.",
+      "pitchRule": "📈 A rise can turn an imperative into an invitation.",
+      "emotionContext": "Welcoming",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A colleague is about to enter a restricted room. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Stop, don't go in there.",
+      "textToSpeak": "Stop, don't go in there.",
+      "options": [
+        "Falling — firm instruction",
+        "Rising — polite request"
+      ],
+      "correctAnswer": "Falling — firm instruction",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "hint": "The situation could be dangerous. Choose the voice that matches the urgency.",
+      "explanation": "A drop in pitch on 'there' stresses urgency and authority. A rising ending would sound like a hesitant suggestion.",
+      "pitchRule": "📉 Safety warnings use firm falls to avoid confusion.",
+      "emotionContext": "Urgent",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Sure, I can do that.",
+      "textToSpeak": "Sure, I can do that.",
+      "options": [
+        "Rising — hesitant, unsure",
+        "Falling — warm and definite"
+      ],
+      "correctAnswer": "Falling — warm and definite",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        2,
+        1,
+        0
+      ],
+      "hint": "A colleague has asked you for a favor. Listen to whether the answer sounds confident.",
+      "explanation": "A falling ending on 'that' makes the agreement sound sincere and reliable. A rise would sound like you were unsure.",
+      "pitchRule": "📉 A confident yes lands with a fall.",
+      "emotionContext": "Cooperative",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A friend asks you to help move on Saturday, and you're not sure about your schedule. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Well, I could try to make it?",
+      "textToSpeak": "Well, I could try to make it?",
+      "options": [
+        "Rising — hesitant, unsure",
+        "Falling — warm and definite"
+      ],
+      "correctAnswer": "Rising — hesitant, unsure",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        3
+      ],
+      "hint": "The speaker is not fully committed. Listen for a rise that leaves things open.",
+      "explanation": "The rise on 'it' shows uncertainty and leaves room for negotiation. A falling ending would sound like a promise.",
+      "pitchRule": "📈 A rising reply shows you are not fully committing.",
+      "emotionContext": "Hesitant",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A customer asks if you can extend the deadline. You agree. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Of course, that's no trouble at all.",
+      "textToSpeak": "Of course, that's no trouble at all.",
+      "options": [
+        "Falling — warm and definite",
+        "Rising — hesitant, unsure"
+      ],
+      "correctAnswer": "Falling — warm and definite",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "hint": "You want the customer to feel reassured. Which ending sounds settled?",
+      "explanation": "A wide, falling contour on 'all' sounds warm and definite. It communicates that the favor is easy.",
+      "pitchRule": "📉 Warm reassurance uses a wide fall that lands firmly.",
+      "emotionContext": "Reassuring",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Thank you so much.",
+      "textToSpeak": "Thank you so much.",
+      "options": [
+        "Falling — warm and definite",
+        "Falling — flat announcement"
+      ],
+      "correctAnswer": "Falling — warm and definite",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "hint": "The speaker has just received a big favor. Listen to how the pitch moves on 'much.'",
+      "explanation": "A wide fall makes thanks sound sincere. A narrow, low fall would sound flat or like a routine.",
+      "pitchRule": "📉 A wide fall on 'much' makes thanks sound heartfelt.",
+      "emotionContext": "Grateful",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A stranger holds a door for you and you barely have a second. Which pattern fits your quick reply?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Thanks a lot.",
+      "textToSpeak": "Thanks a lot.",
+      "options": [
+        "Falling — flat announcement",
+        "Falling — warm and definite"
+      ],
+      "correctAnswer": "Falling — warm and definite",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        2,
+        1,
+        0
+      ],
+      "hint": "This is a short, casual thank-you. Which version sounds friendly?",
+      "explanation": "Even a brief thanks should start high and fall to sound warm. If the pitch stays flat, it sounds automatic.",
+      "pitchRule": "📉 A small step down from a high start sounds friendly.",
+      "emotionContext": "Friendly",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You bump into someone in a crowded train. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Oh, I'm so sorry.",
+      "textToSpeak": "Oh, I'm so sorry.",
+      "options": [
+        "Falling — warm and definite",
+        "Falling — flat announcement"
+      ],
+      "correctAnswer": "Falling — warm and definite",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "hint": "A quick apology should sound sincere. Compare a wide fall with a flat one.",
+      "explanation": "A wide fall shows you truly regret the bump. A flat fall could sound as if you didn't care.",
+      "pitchRule": "📉 Sincere apologies begin high and fall with feeling.",
+      "emotionContext": "Apologetic",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Could I get the bill, please?",
+      "textToSpeak": "Could I get the bill, please?",
+      "options": [
+        "Falling — firm instruction",
+        "Rising — polite request"
+      ],
+      "correctAnswer": "Rising — polite request",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "A diner catches the waiter's eye. Listen to how open the ending is.",
+      "explanation": "A rise on 'please' keeps the request light, and the waiter can respond when convenient. Falling would sound clipped.",
+      "pitchRule": "📈 In restaurants, a rising request sounds relaxed and polite.",
+      "emotionContext": "Polite",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You call an airline about a seat change. Which pattern fits the agent's question?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Would you be able to change my seat?",
+      "textToSpeak": "Would you be able to change my seat?",
+      "options": [
+        "Rising — polite request",
+        "Falling — firm instruction"
+      ],
+      "correctAnswer": "Rising — polite request",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "You need help from someone who can say no. Which contour shows respect?",
+      "explanation": "The rise on 'seat' shows you are asking rather than demanding, which also makes the agent more likely to help.",
+      "pitchRule": "📈 A rise gives the agent room to solve the problem.",
+      "emotionContext": "Polite",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A hotel guest reports a problem at the desk. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "I'd like to report a problem with my room.",
+      "textToSpeak": "I'd like to report a problem with my room.",
+      "options": [
+        "Falling — firm instruction",
+        "Rising — polite request"
+      ],
+      "correctAnswer": "Falling — firm instruction",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "You are stating what you need and want it handled. Decide how firm you want to sound.",
+      "explanation": "A polite statement of purpose falls on 'room'. The words are polite, and the fall makes the purpose clear.",
+      "pitchRule": "📉 A polite but clear statement of need falls at the end.",
+      "emotionContext": "Calm",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Could you send me the final invoice?",
+      "textToSpeak": "Could you send me the final invoice?",
+      "options": [
+        "Rising — polite request",
+        "Falling — firm instruction"
+      ],
+      "correctAnswer": "Rising — polite request",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "This mixes polite words with a request for action. Listen for how it leaves room for a reply.",
+      "explanation": "The rise on 'invoice' turns the request into a polite question that a professional can answer with yes or no.",
+      "pitchRule": "📈 Professional politeness often uses a final rise.",
+      "emotionContext": "Polite",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A colleague asks whether you'd like help with a presentation. Which pattern fits their offer?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Want me to look over your slides?",
+      "textToSpeak": "Want me to look over your slides?",
+      "options": [
+        "Falling — flat announcement",
+        "Rising — friendly offer"
+      ],
+      "correctAnswer": "Rising — friendly offer",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "The colleague is offering, not insisting. Which ending suggests choice?",
+      "explanation": "A rise makes the offer feel optional, so you can decline without awkwardness. A fall would sound like they were going to do it anyway.",
+      "pitchRule": "📈 An optional offer rises at the end.",
+      "emotionContext": "Helpful",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You are giving a friend directions and telling them to hurry. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Come on, we're going to miss the train.",
+      "textToSpeak": "Come on, we're going to miss the train.",
+      "options": [
+        "Rising — friendly offer",
+        "Falling — firm instruction"
+      ],
+      "correctAnswer": "Falling — firm instruction",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "hint": "You need to hurry them. Decide what the voice must sound like.",
+      "explanation": "A high start and a falling ending communicate urgency. A rising ending would sound as though you were unsure about the train.",
+      "pitchRule": "📉 Urgency uses a high start and a firm fall.",
+      "emotionContext": "Urgent",
+      "phase": "mastery"
+    }
+  ]
+}

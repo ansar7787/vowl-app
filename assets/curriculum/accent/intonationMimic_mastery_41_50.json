@@ -1,0 +1,758 @@
+{
+  "gameType": "intonationMimic",
+  "batchIndex": 5,
+  "levels": "41-50",
+  "phase": "mastery",
+  "quests": [
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "We're out of rice, oil, and salt.",
+      "textToSpeak": "We're out of rice, oil, and salt.",
+      "options": [
+        "Rise, rise, fall — list complete",
+        "Fall on every item — separate statements"
+      ],
+      "correctAnswer": "Rise, rise, fall — list complete",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        3,
+        0
+      ],
+      "hint": "Count the three items. Listen for whether the first two sound finished or as if something is still coming.",
+      "explanation": "The first two items lift slightly because more is coming, and only 'salt' falls to close the list. If each item fell, they would sound like three separate complaints.",
+      "pitchRule": "↗️📉 Non-final items stay up; the last item brings the fall.",
+      "emotionContext": "Concerned",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You are reading a packing list aloud to a friend and haven't reached the end. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Passport, phone charger,",
+      "textToSpeak": "Passport, phone charger,",
+      "options": [
+        "Rise, rise, rise — list continues",
+        "Falling on last item — list complete"
+      ],
+      "correctAnswer": "Rise, rise, rise — list continues",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "hint": "The line ends with a comma and no 'and'. Ask yourself whether the speaker has finished.",
+      "explanation": "The list is unfinished, so the pitch stays up after 'charger'. A fall would announce that you had nothing left to pack.",
+      "pitchRule": "↗️ A rise on the last word spoken says: more to come.",
+      "emotionContext": "Focused",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You tell a colleague what to bring on a rainy site visit. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Bring a jacket, an umbrella, and boots.",
+      "textToSpeak": "Bring a jacket, an umbrella, and boots.",
+      "options": [
+        "Fall on every item — separate statements",
+        "Rise, rise, fall — list complete"
+      ],
+      "correctAnswer": "Rise, rise, fall — list complete",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        3,
+        0
+      ],
+      "hint": "You are naming three things in one breath. Decide which item should sound like the last.",
+      "explanation": "Keep 'jacket' and 'umbrella' slightly lifted, then fall on 'boots'. The fall tells your colleague the list is complete.",
+      "pitchRule": "↗️📉 In a spoken list, only the last item drops.",
+      "emotionContext": "Helpful",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "I'll have the soup, a salad, and sparkling water.",
+      "textToSpeak": "I'll have the soup, a salad, and sparkling water.",
+      "options": [
+        "Rise, rise, fall — list complete",
+        "Fall on every item — separate statements"
+      ],
+      "correctAnswer": "Rise, rise, fall — list complete",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        3,
+        0
+      ],
+      "hint": "A customer is placing an order. Compare how 'soup' and 'water' end.",
+      "explanation": "The customer lifts through 'soup' and 'salad' to show the order continues, then falls on 'water'. The waiter knows it's safe to write it down.",
+      "pitchRule": "↗️📉 A waiter listens for the fall to know the order is done.",
+      "emotionContext": "Polite",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A receptionist explains what your hotel room includes and pauses mid-list. Which pattern fits her pause?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "The room has a desk, a fridge,",
+      "textToSpeak": "The room has a desk, a fridge,",
+      "options": [
+        "Rise, rise, rise — list continues",
+        "Falling on last item — list complete"
+      ],
+      "correctAnswer": "Rise, rise, rise — list continues",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "hint": "She stops after 'fridge' but you know she isn't finished. What in the voice tells you this?",
+      "explanation": "The pitch stays up after 'fridge', which signals that more amenities follow. A fall would mean the list ended after two items.",
+      "pitchRule": "↗️ A held-up ending tells the listener to keep waiting.",
+      "emotionContext": "Helpful",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You're describing your day-off routine to a new colleague. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "I usually cook, clean, and call my parents.",
+      "textToSpeak": "I usually cook, clean, and call my parents.",
+      "options": [
+        "Rise, rise, fall — list complete",
+        "Fall on every item — separate statements"
+      ],
+      "correctAnswer": "Rise, rise, fall — list complete",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        3,
+        0
+      ],
+      "hint": "These are three short activities in a row. Think about which word sounds final.",
+      "explanation": "Lift lightly on 'cook' and 'clean', then fall on 'parents'. The fall gives a sense of a finished, natural routine.",
+      "pitchRule": "↗️📉 Short verbs in a list are lifted, and the last phrase falls.",
+      "emotionContext": "Relaxed",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "My number is 0-7-3, 5-5-2, 9-1-4.",
+      "textToSpeak": "My number is 0-7-3, 5-5-2, 9-1-4.",
+      "options": [
+        "Fall at the end of every single group",
+        "Rise on each group, fall on the last"
+      ],
+      "correctAnswer": "Rise on each group, fall on the last",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        3,
+        0
+      ],
+      "hint": "Phone numbers are read in small groups. Listen for what happens at the end of each group.",
+      "explanation": "Each group ends with a slight rise so the listener knows more digits are coming. The final group falls, signaling that the number is done.",
+      "pitchRule": "↗️📉 Digit groups lift, and the last group falls to close the number.",
+      "emotionContext": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You're on the phone with a booking agent who is reading you a reference code. Which pattern fits the agent's voice?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "The code is K-T-4, 9-2, R-M.",
+      "textToSpeak": "The code is K-T-4, 9-2, R-M.",
+      "options": [
+        "Level on each group, rise on the last group",
+        "Rise on each group, fall on the last"
+      ],
+      "correctAnswer": "Rise on each group, fall on the last",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        3,
+        0
+      ],
+      "hint": "Letters and numbers are given in chunks. Compare the group endings with the final group.",
+      "explanation": "Grouping helps memory, so each chunk lifts a little. The last chunk falls to show the code is over.",
+      "pitchRule": "↗️📉 Chunks lift to say 'continue'; the last chunk falls to say 'stop'.",
+      "emotionContext": "Careful",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You give your home address to a courier over the phone. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "It's 14 Harbour Road, Unit 6, Cape Town.",
+      "textToSpeak": "It's 14 Harbour Road, Unit 6, Cape Town.",
+      "options": [
+        "Fall, fall, fall — three separate facts",
+        "Rise, rise, fall — address complete"
+      ],
+      "correctAnswer": "Rise, rise, fall — address complete",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        3,
+        0
+      ],
+      "hint": "An address has several parts. Decide which part closes it.",
+      "explanation": "'Harbour Road' and 'Unit 6' lift because the address is still going. 'Cape Town' falls to finish it. The courier hears each part as belonging to one address.",
+      "pitchRule": "↗️📉 Parts of an address lift until the final place name.",
+      "emotionContext": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "The flat has two bedrooms, a small balcony, a shared garden, and a parking space.",
+      "textToSpeak": "The flat has two bedrooms, a small balcony, a shared garden, and a parking space.",
+      "options": [
+        "Rise, rise, fall — list complete",
+        "Fall on every item — separate statements"
+      ],
+      "correctAnswer": "Rise, rise, fall — list complete",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        4,
+        0
+      ],
+      "hint": "Four items are named. Notice whether the speaker sounds like they've finished after the third one.",
+      "explanation": "In longer lists, each item keeps a small lift so the listener expects more. The fall comes only on 'space', which ends the description.",
+      "pitchRule": "↗️📉 Longer lists need a steady lift all the way to the last item.",
+      "emotionContext": "Interested",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A friend is describing a new job while you wait for the last benefit. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "They offer health insurance, extra holidays, a gym pass,",
+      "textToSpeak": "They offer health insurance, extra holidays, a gym pass,",
+      "options": [
+        "Rise, rise, rise — list continues",
+        "Falling on last item — list complete"
+      ],
+      "correctAnswer": "Rise, rise, rise — list continues",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "hint": "The list is unfinished, and you can hear it. Which item sounds like it isn't the last?",
+      "explanation": "The speaker keeps the pitch up after 'pass' because a fourth benefit is coming. A fall would sound like the whole list had ended.",
+      "pitchRule": "↗️ Hold the pitch on the last item you say if you're not done.",
+      "emotionContext": "Pleased",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You list what you learned on a training course. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "I learned about budgeting, forecasting, reporting, and team planning.",
+      "textToSpeak": "I learned about budgeting, forecasting, reporting, and team planning.",
+      "options": [
+        "Rise, rise, fall — list complete",
+        "Fall on every item — separate statements"
+      ],
+      "correctAnswer": "Rise, rise, fall — list complete",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        4,
+        0
+      ],
+      "hint": "Four topics in a row. Decide which of them should end the sequence.",
+      "explanation": "Lift each of the first three topics, then fall on 'planning'. The steady lifts keep the listener expecting more, and the final fall closes it.",
+      "pitchRule": "↗️📉 With four items, keep the small lifts even and drop on the last.",
+      "emotionContext": "Proud",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "They sell notebooks, pens, folders, that sort of thing.",
+      "textToSpeak": "They sell notebooks, pens, folders, that sort of thing.",
+      "options": [
+        "Falling on last item — list complete",
+        "Rising on last item — list left open"
+      ],
+      "correctAnswer": "Rising on last item — list left open",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "hint": "The speaker ends with a general phrase, not a final item. Listen for how open the ending sounds.",
+      "explanation": "'That sort of thing' means the list isn't exhaustive, so the pitch stays up and open. A firm fall would sound as if these four were the only items.",
+      "pitchRule": "↗️ A left-open list keeps a lifted ending.",
+      "emotionContext": "Casual",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A manager lists what a project needs and leaves it open. Which pattern fits her last words?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "We'll need budgets, timelines, resources, and so on.",
+      "textToSpeak": "We'll need budgets, timelines, resources, and so on.",
+      "options": [
+        "Rising on last item — list left open",
+        "Falling on last item — list complete"
+      ],
+      "correctAnswer": "Rising on last item — list left open",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "hint": "'And so on' suggests there are more items not mentioned. Consider how the voice sounds when it is unfinished.",
+      "explanation": "The final phrase invites the listener to imagine other things, so the pitch stays up. It's a way of saying 'you know what I mean'.",
+      "pitchRule": "↗️ 'And so on' calls for a lifted or level ending.",
+      "emotionContext": "Casual",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You're telling a friend about weekend plans that are not fixed. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "We might go hiking, visit the market, see a film, whatever.",
+      "textToSpeak": "We might go hiking, visit the market, see a film, whatever.",
+      "options": [
+        "Rising on last item — list left open",
+        "Falling on last item — list complete"
+      ],
+      "correctAnswer": "Rising on last item — list left open",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "hint": "'Whatever' shows the plans are loose. Decide whether your voice should sound decided.",
+      "explanation": "With loose plans, the pitch doesn't close on 'whatever'. It stays level or slightly up, which shows you're flexible.",
+      "pitchRule": "↗️ Relaxed, open plans rarely end with a hard fall.",
+      "emotionContext": "Relaxed",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Today I'll finish the report, reply to emails, and prepare for the call.",
+      "textToSpeak": "Today I'll finish the report, reply to emails, and prepare for the call.",
+      "options": [
+        "Fall on every item — separate statements",
+        "Rise, rise, fall — list complete"
+      ],
+      "correctAnswer": "Rise, rise, fall — list complete",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        3,
+        0
+      ],
+      "hint": "These are three tasks in a plan. Ask which one closes the list.",
+      "explanation": "Each task before the last lifts so the plan keeps going. 'Call' falls, giving a confident sense of closure.",
+      "pitchRule": "↗️📉 A work plan sounds organized when only the last task falls.",
+      "emotionContext": "Determined",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Your teammate is reviewing what remains. She hasn't finished. Which pattern fits her pause?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Still to do: the slides, the handout,",
+      "textToSpeak": "Still to do: the slides, the handout,",
+      "options": [
+        "Falling on last item — list complete",
+        "Rise, rise, rise — list continues"
+      ],
+      "correctAnswer": "Rise, rise, rise — list continues",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "hint": "She lists items and stops mid-thought. What does the raised ending tell you?",
+      "explanation": "The lifted ending on 'handout' suggests she has more to add. A fall would be understood as 'nothing else'.",
+      "pitchRule": "↗️ Mid-list pauses keep the pitch up.",
+      "emotionContext": "Focused",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You explain what the customer complained about. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "They complained about the delay, the noise, and the price.",
+      "textToSpeak": "They complained about the delay, the noise, and the price.",
+      "options": [
+        "Fall on every item — separate statements",
+        "Rise, rise, fall — list complete"
+      ],
+      "correctAnswer": "Rise, rise, fall — list complete",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        3,
+        0
+      ],
+      "hint": "Three separate complaints appear in one sentence. Decide which word should fall.",
+      "explanation": "Lift on 'delay' and 'noise' to show more complaints follow. Fall on 'price' to show that was the last.",
+      "pitchRule": "↗️📉 Grouped complaints sound like one report when only the last falls.",
+      "emotionContext": "Concerned",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Could you bring plates, glasses, and napkins?",
+      "textToSpeak": "Could you bring plates, glasses, and napkins?",
+      "options": [
+        "Rise, rise, rise — request ends open",
+        "Rise, rise, fall — list complete"
+      ],
+      "correctAnswer": "Rise, rise, rise — request ends open",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        3,
+        4
+      ],
+      "hint": "This is a request, not a plain statement. Compare the ending with a normal list.",
+      "explanation": "Because this is a yes/no request, the final item also rises. The listener answers yes or no. A falling last item would sound like an order.",
+      "pitchRule": "📈 In a list-question, the last item rises because the sentence is a question.",
+      "emotionContext": "Polite",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A friend is asking what they should buy for the party. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Do we need chips, drinks, or dessert?",
+      "textToSpeak": "Do we need chips, drinks, or dessert?",
+      "options": [
+        "Rise, rise, rise — open question",
+        "Rise, rise, fall — choose among items"
+      ],
+      "correctAnswer": "Rise, rise, fall — choose among items",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "hint": "'Or' offers items to choose from. Think about whether the friend wants to hear about all of them.",
+      "explanation": "With 'or' and a set of options, the pitch falls on the last item. The friend picks from what they hear.",
+      "pitchRule": "↗️📉 An 'or' list in a question ends with a fall.",
+      "emotionContext": "Curious",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You want to know if your neighbor has any of these tools. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Do you have a hammer, nails, or a screwdriver?",
+      "textToSpeak": "Do you have a hammer, nails, or a screwdriver?",
+      "options": [
+        "Rise, rise, fall — choose one",
+        "Rise, rise, rise — any of these?"
+      ],
+      "correctAnswer": "Rise, rise, rise — any of these?",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "hint": "You are hoping for a yes to any of them. Decide whether you're asking about a single choice.",
+      "explanation": "You are asking whether the neighbor has any of the tools, not to pick one, so the last item also rises.",
+      "pitchRule": "📈 If any answer is welcome, every item keeps the lift.",
+      "emotionContext": "Hopeful",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "First open the app, then tap Settings, and finally choose Language.",
+      "textToSpeak": "First open the app, then tap Settings, and finally choose Language.",
+      "options": [
+        "Rise, rise, fall — list complete",
+        "Fall on every item — separate statements"
+      ],
+      "correctAnswer": "Rise, rise, fall — list complete",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        3,
+        0
+      ],
+      "hint": "These are steps in a process. Notice how the speaker signals that 'Language' is the last step.",
+      "explanation": "Sequence words like 'then' keep steps linked. The lift on earlier steps and the fall on 'Language' show the process is done.",
+      "pitchRule": "↗️📉 In instructions, steps lift; the last step falls.",
+      "emotionContext": "Helpful",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A friend is guiding you through a recipe over the phone and pauses. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Chop the onions, add the garlic,",
+      "textToSpeak": "Chop the onions, add the garlic,",
+      "options": [
+        "Falling on last item — list complete",
+        "Rise, rise, rise — list continues"
+      ],
+      "correctAnswer": "Rise, rise, rise — list continues",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "hint": "The speaker is mid-instruction. Listen to whether it feels like the end.",
+      "explanation": "The pitch stays up after 'garlic', so you know there is another step. A fall would suggest you should start cooking.",
+      "pitchRule": "↗️ Mid-instruction pauses lift so the listener waits.",
+      "emotionContext": "Focused",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You explain how to reach your office to a visitor. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Turn left at the bank, walk past the cafe, and we're on the right.",
+      "textToSpeak": "Turn left at the bank, walk past the cafe, and we're on the right.",
+      "options": [
+        "Rise, rise, fall — list complete",
+        "Fall on every item — separate statements"
+      ],
+      "correctAnswer": "Rise, rise, fall — list complete",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        3,
+        0
+      ],
+      "hint": "There are three parts to these directions. Decide which part should sound final.",
+      "explanation": "Lift on 'bank' and 'cafe' to keep the directions connected, then fall on 'right'. The visitor knows they've heard everything.",
+      "pitchRule": "↗️📉 Directions chain together with lifts and close with one fall.",
+      "emotionContext": "Helpful",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "It's cheap, it's close, and it's quiet.",
+      "textToSpeak": "It's cheap, it's close, and it's quiet.",
+      "options": [
+        "Fall on every item — separate statements",
+        "Rise, rise, fall — list complete"
+      ],
+      "correctAnswer": "Rise, rise, fall — list complete",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        3,
+        0
+      ],
+      "hint": "Three short reasons for choosing an apartment. Listen for the point where the argument closes.",
+      "explanation": "Each reason lifts to build the case, and the fall on 'quiet' closes the argument. The listener hears one persuasive list.",
+      "pitchRule": "↗️📉 Reasons build with lifts and land on a fall.",
+      "emotionContext": "Persuasive",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Your friend is convincing you to join a gym and hasn't finished. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "It's affordable, it's open late,",
+      "textToSpeak": "It's affordable, it's open late,",
+      "options": [
+        "Falling on last item — list complete",
+        "Rise, rise, rise — list continues"
+      ],
+      "correctAnswer": "Rise, rise, rise — list continues",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "hint": "This is an argument in progress. Ask yourself whether more points are coming.",
+      "explanation": "The pitch stays up after 'late' because another reason is coming. A fall would end the argument.",
+      "pitchRule": "↗️ A persuasive list keeps the pitch up until the final point.",
+      "emotionContext": "Persuasive",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You're asked to describe your last manager. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "She was organized, patient, and always fair.",
+      "textToSpeak": "She was organized, patient, and always fair.",
+      "options": [
+        "Rise, rise, fall — list complete",
+        "Fall on every item — separate statements"
+      ],
+      "correctAnswer": "Rise, rise, fall — list complete",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        3,
+        0
+      ],
+      "hint": "The adjectives are compliments in a row. Decide which adjective completes the description.",
+      "explanation": "Lift on 'organized' and 'patient' to keep praising, then fall on 'fair'. The fall gives the last compliment weight.",
+      "pitchRule": "↗️📉 The last adjective gets the fall and the strongest impact.",
+      "emotionContext": "Warm",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "I bought apples, bananas, oranges, and some grapes.",
+      "textToSpeak": "I bought apples, bananas, oranges, and some grapes.",
+      "options": [
+        "Fall on every item — separate statements",
+        "Rise, rise, fall — list complete"
+      ],
+      "correctAnswer": "Rise, rise, fall — list complete",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        4,
+        0
+      ],
+      "hint": "Four fruits are named. Notice which one sounds like the last.",
+      "explanation": "Each fruit lifts slightly, and the last one falls. The steady rising steps keep the listener following the list.",
+      "pitchRule": "↗️📉 Lifts through the list, then one fall at the end.",
+      "emotionContext": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A doctor is asking about symptoms and leaves the list open. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Any fever, cough, headache, anything like that?",
+      "textToSpeak": "Any fever, cough, headache, anything like that?",
+      "options": [
+        "Falling on the last phrase — closed list",
+        "Rising on the last phrase — open question"
+      ],
+      "correctAnswer": "Rising on the last phrase — open question",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "hint": "The doctor wants a yes to any symptom. Decide whether the list is closed.",
+      "explanation": "'Anything like that' keeps the question open, so the pitch rises to the end. The doctor wants to hear about any symptom.",
+      "pitchRule": "📈 An open-ended list-question ends with a rise.",
+      "emotionContext": "Concerned",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You are ending a long email summary out loud. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "So that covers pricing, timing, and next steps.",
+      "textToSpeak": "So that covers pricing, timing, and next steps.",
+      "options": [
+        "Rise, rise, fall — list complete",
+        "Rising on last item — list left open"
+      ],
+      "correctAnswer": "Rise, rise, fall — list complete",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        3,
+        0
+      ],
+      "hint": "You're wrapping up. Decide whether you want to sound finished or leave the door open.",
+      "explanation": "'Next steps' falls to show the summary is complete. A rise would invite more topics, which you don't want here.",
+      "pitchRule": "📉 A summary closes with a firm fall on the last item.",
+      "emotionContext": "Confident",
+      "phase": "mastery"
+    }
+  ]
+}

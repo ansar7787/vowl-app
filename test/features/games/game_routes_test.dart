@@ -41,6 +41,8 @@ import 'package:vowl/features/listening/ambient_id/presentation/pages/ambient_id
 import 'package:vowl/features/listening/ambient_id/presentation/pages/ambient_id_practice_screen.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/pages/minimal_pairs_learn_screen.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/pages/minimal_pairs_practice_screen.dart';
+import 'package:vowl/features/accent/intonation_mimic/presentation/pages/intonation_mimic_learn_screen.dart';
+import 'package:vowl/features/accent/intonation_mimic/presentation/pages/intonation_mimic_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -739,6 +741,22 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<MinimalPairsPracticeScreen>());
+    });
+
+    test('resolves /learn route for intonationMimic', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state = createMockState('/learn?category=accent&gameType=intonationMimic&level=5');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<IntonationMimicLearnScreen>());
+    });
+
+    test('resolves /practice route for intonationMimic', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state = createMockState('/practice?category=accent&gameType=intonationMimic&level=5');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<IntonationMimicPracticeScreen>());
     });
   });
 }

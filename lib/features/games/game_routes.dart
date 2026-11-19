@@ -164,6 +164,8 @@ import 'package:vowl/features/listening/ambient_id/presentation/pages/ambient_id
 import 'package:vowl/features/listening/ambient_id/presentation/pages/ambient_id_practice_screen.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/pages/minimal_pairs_learn_screen.dart';
 import 'package:vowl/features/accent/minimal_pairs/presentation/pages/minimal_pairs_practice_screen.dart';
+import 'package:vowl/features/accent/intonation_mimic/presentation/pages/intonation_mimic_learn_screen.dart';
+import 'package:vowl/features/accent/intonation_mimic/presentation/pages/intonation_mimic_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -861,6 +863,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'intonationmimic') {
+          return fadeTransitionPage(
+            child: IntonationMimicLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1337,6 +1345,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'minimalpairs') {
           return fadeTransitionPage(
             child: MinimalPairsPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'intonationmimic') {
+          return fadeTransitionPage(
+            child: IntonationMimicPracticeScreen(level: level),
             state: state,
           );
         }

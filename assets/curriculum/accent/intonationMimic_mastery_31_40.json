@@ -1,0 +1,758 @@
+{
+  "gameType": "intonationMimic",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "phase": "mastery",
+  "quests": [
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Would you like tea or coffee?",
+      "textToSpeak": "Would you like tea or coffee?",
+      "options": [
+        "Rise on both (Open Yes/No Question)",
+        "Rise on A, fall on B (Choice Question)"
+      ],
+      "correctAnswer": "Rise on A, fall on B (Choice Question)",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        3,
+        1,
+        0
+      ],
+      "hint": "The speaker offers two specific drinks. Listen to 'tea' and 'coffee' separately: do they end the same way?",
+      "explanation": "With a choice between two named items, the voice lifts on the first option and falls on the last. The fall on 'coffee' tells you the list is complete.",
+      "pitchRule": "↗️📉 In a choice question, lift on the first option and drop on the last.",
+      "emotionContext": "Friendly",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A new classmate wants to know whether you have any siblings at all. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Do you have any brothers or sisters?",
+      "textToSpeak": "Do you have any brothers or sisters?",
+      "options": [
+        "Rise on both (Open Yes/No Question)",
+        "Rise on A, fall on B (Choice Question)"
+      ],
+      "correctAnswer": "Rise on both (Open Yes/No Question)",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "The speaker doesn't offer two fixed answers. They ask whether you have any brothers or sisters in general.",
+      "explanation": "This is a general question and 'yes' or 'no' is the answer, so both nouns keep the voice up. The rise on 'sisters' shows the question is still open.",
+      "pitchRule": "📈 If a yes-or-no answer is expected, keep the pitch up on both items.",
+      "emotionContext": "Curious",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You and a friend are deciding how to travel to another city. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Should we take the train or drive?",
+      "textToSpeak": "Should we take the train or drive?",
+      "options": [
+        "Rise on both (Open Yes/No Question)",
+        "Rise on A, fall on B (Choice Question)"
+      ],
+      "correctAnswer": "Rise on A, fall on B (Choice Question)",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        3,
+        1,
+        0
+      ],
+      "hint": "You are asking your friend to pick one of two options. Decide how your voice should mark the second option.",
+      "explanation": "You offer two ways to travel and expect one choice, so the pitch rises on 'train' and falls on 'drive'. The fall shows there are no other options.",
+      "pitchRule": "↗️📉 A fall on the second option tells the listener to pick one.",
+      "emotionContext": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Is the meeting on Monday or Tuesday?",
+      "textToSpeak": "Is the meeting on Monday or Tuesday?",
+      "options": [
+        "Rise on A, fall on B (Choice Question)",
+        "Rise on both (Open Yes/No Question)"
+      ],
+      "correctAnswer": "Rise on A, fall on B (Choice Question)",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        1,
+        3,
+        1,
+        0
+      ],
+      "hint": "The speaker knows it's one of two days. Follow the voice on 'Monday' and on 'Tuesday'.",
+      "explanation": "Two named days are offered as options, so the pitch rises on 'Monday' and falls on 'Tuesday'. The answer will be one of them.",
+      "pitchRule": "↗️📉 A fall on the last option marks the alternatives as complete.",
+      "emotionContext": "Uncertain",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A café waiter asks a general question about refreshments. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Would you like something to eat or drink?",
+      "textToSpeak": "Would you like something to eat or drink?",
+      "options": [
+        "Rise on both (Open Yes/No Question)",
+        "Rise on A, fall on B (Choice Question)"
+      ],
+      "correctAnswer": "Rise on both (Open Yes/No Question)",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "The waiter isn't limiting you to one thing. Think about whether 'eat' and 'drink' are opposed choices.",
+      "explanation": "Here 'eat or drink' covers anything you might want, so both parts rise and the sentence stays open. The waiter is asking whether you want anything at all.",
+      "pitchRule": "📈 Keep both parts rising when the question is about 'any of these'.",
+      "emotionContext": "Polite",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You are booking a table by phone and the host asks how you'll pay the deposit. Which pattern will you use to repeat the options?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Will you pay by card or transfer?",
+      "textToSpeak": "Will you pay by card or transfer?",
+      "options": [
+        "Rise on both (Open Yes/No Question)",
+        "Rise on A, fall on B (Choice Question)"
+      ],
+      "correctAnswer": "Rise on A, fall on B (Choice Question)",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        3,
+        1,
+        0
+      ],
+      "hint": "The host mentions two payment options and needs one answer. Listen for the drop on the last word.",
+      "explanation": "Two payment methods are named and you must pick one. The rise on 'card' and the fall on 'transfer' mark them as the only two options.",
+      "pitchRule": "↗️📉 Two options, one answer: rise on the first, fall on the second.",
+      "emotionContext": "Formal",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "I meant to call you yesterday,",
+      "textToSpeak": "I meant to call you yesterday,",
+      "options": [
+        "Rising — thought continues",
+        "Falling — thought finished"
+      ],
+      "correctAnswer": "Rising — thought continues",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "hint": "The sentence ends with a comma and clearly has something to follow. Listen for how the speaker leaves the thought open.",
+      "explanation": "A rise or level ending after 'yesterday' signals that the speaker has more to say, probably an excuse. A falling ending would end the thought.",
+      "pitchRule": "↗️ A non-final rise tells the listener: wait, I'm not finished.",
+      "emotionContext": "Apologetic",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A colleague asks if the report is done. Which pattern fits your reply?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "I finished the report before lunch.",
+      "textToSpeak": "I finished the report before lunch.",
+      "options": [
+        "Falling — thought finished",
+        "Rising — thought continues"
+      ],
+      "correctAnswer": "Falling — thought finished",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        2,
+        1,
+        0
+      ],
+      "hint": "This reply gives a complete answer. Notice whether the speaker seems to have more to say.",
+      "explanation": "The reply is complete, so the pitch falls on 'lunch'. Nothing else is expected.",
+      "pitchRule": "📉 A finished answer ends with a fall.",
+      "emotionContext": "Calm",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You want to start a plan for tomorrow but you're not done speaking. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "If it rains tomorrow,",
+      "textToSpeak": "If it rains tomorrow,",
+      "options": [
+        "Rising — thought continues",
+        "Falling — thought finished"
+      ],
+      "correctAnswer": "Rising — thought continues",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        3
+      ],
+      "hint": "This is the opening part of a longer sentence. Decide whether you're finished speaking.",
+      "explanation": "The 'if' clause needs a result, so the pitch stays up on 'tomorrow'. The listener waits for what will happen.",
+      "pitchRule": "↗️ A conditional opening ends with a rise because the result is still to come.",
+      "emotionContext": "Thoughtful",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "When I get home, I'll call you.",
+      "textToSpeak": "When I get home, I'll call you.",
+      "options": [
+        "Fall on 'home', fall on 'you'",
+        "Rise on 'home', fall on 'you'"
+      ],
+      "correctAnswer": "Rise on 'home', fall on 'you'",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "There are two parts here. Listen to the pause after 'home' and how the voice sounds before it.",
+      "explanation": "The first clause is only the setup, so the voice rises on 'home'. The final fall on 'you' finishes the sentence. Treating both as finished would sound like two separate sentences.",
+      "pitchRule": "↗️📉 Lift at the end of the first clause, fall at the end of the second.",
+      "emotionContext": "Reassuring",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Your colleague plans the afternoon schedule. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "After the presentation, we can grab lunch.",
+      "textToSpeak": "After the presentation, we can grab lunch.",
+      "options": [
+        "Fall on 'presentation', fall on 'lunch'",
+        "Rise on 'presentation', fall on 'lunch'"
+      ],
+      "correctAnswer": "Rise on 'presentation', fall on 'lunch'",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "A time phrase comes first, then the main plan. Compare how each part ends.",
+      "explanation": "The opening phrase 'after the presentation' is not the whole idea, so the pitch rises on 'presentation'. It falls on 'lunch', where the plan is complete.",
+      "pitchRule": "↗️📉 A time phrase at the start ends with a lift before the main clause.",
+      "emotionContext": "Friendly",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You explain why the office lights were still on. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Although it was late, they kept working.",
+      "textToSpeak": "Although it was late, they kept working.",
+      "options": [
+        "Fall on 'late', fall on 'working'",
+        "Rise on 'late', fall on 'working'"
+      ],
+      "correctAnswer": "Rise on 'late', fall on 'working'",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "The first part sets up a contrast. Decide whether you stop there or continue.",
+      "explanation": "'Although it was late' leads into the main point, so the pitch rises on 'late'. Falling there would break the contrast in two.",
+      "pitchRule": "↗️ The 'although' clause rises, because the surprise is still coming.",
+      "emotionContext": "Neutral",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "That's everything on my list.",
+      "textToSpeak": "That's everything on my list.",
+      "options": [
+        "Falling — thought finished",
+        "Rising — thought continues"
+      ],
+      "correctAnswer": "Falling — thought finished",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "hint": "The speaker has just finished a long errand. Listen to how definite the ending sounds.",
+      "explanation": "The speaker is closing the topic, so the pitch falls on 'list'. The fall sounds like a small sigh of relief.",
+      "pitchRule": "📉 A full fall says 'that is all', with nothing to follow.",
+      "emotionContext": "Relieved",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You start listing your plan at a meeting. Which pattern fits your opening?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "First, I need to check the schedule,",
+      "textToSpeak": "First, I need to check the schedule,",
+      "options": [
+        "Falling — thought finished",
+        "Rising — thought continues"
+      ],
+      "correctAnswer": "Rising — thought continues",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "hint": "The sentence starts with 'first', which promises more. Notice how the voice keeps going.",
+      "explanation": "'First' opens a sequence, so the voice stays up on 'schedule'. The listener knows other steps are coming.",
+      "pitchRule": "↗️ 'First' signals more to come, and the pitch stays open to match.",
+      "emotionContext": "Determined",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A cashier hands you your bag and asks a final question. Which pattern will you use to say it?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Anything else?",
+      "textToSpeak": "Anything else?",
+      "options": [
+        "Rising — invites more",
+        "Falling — closes the sale"
+      ],
+      "correctAnswer": "Rising — invites more",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        1,
+        1,
+        2,
+        4
+      ],
+      "hint": "The cashier is offering one last chance to buy. Choose the ending that sounds like an open invitation.",
+      "explanation": "A rise on 'else' makes it a friendly offer to add something. Falling can sound as if the cashier wants to end the sale immediately.",
+      "pitchRule": "📈 A rise keeps the offer open, while a fall closes the conversation.",
+      "emotionContext": "Polite",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Do you prefer the fish or the chicken?",
+      "textToSpeak": "Do you prefer the fish or the chicken?",
+      "options": [
+        "Rise on A, fall on B (Choice Question)",
+        "Rise on both (Open Yes/No Question)"
+      ],
+      "correctAnswer": "Rise on A, fall on B (Choice Question)",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        1,
+        3,
+        1,
+        0
+      ],
+      "hint": "There are two dishes on the table. Pay attention to how 'fish' ends compared with 'chicken'.",
+      "explanation": "Two dishes are presented and one must be chosen. The lift after 'fish' and the fall on 'chicken' mark the two alternatives.",
+      "pitchRule": "↗️📉 Alternatives are contrasted by a rise and a fall.",
+      "emotionContext": "Friendly",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A waiter offers you general help. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Can I get you some water or anything?",
+      "textToSpeak": "Can I get you some water or anything?",
+      "options": [
+        "Rise on both (Open Yes/No Question)",
+        "Rise on A, fall on B (Choice Question)"
+      ],
+      "correctAnswer": "Rise on both (Open Yes/No Question)",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "The waiter doesn't mean two exact options. 'Or anything' suggests any drink or extra.",
+      "explanation": "'Or anything' is a soft add-on, so the voice stays high on both parts. It invites you to ask for whatever you like.",
+      "pitchRule": "📈 'Or anything' keeps the ending open; the pitch does not fall.",
+      "emotionContext": "Helpful",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You are choosing seats at a busy restaurant. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Would you rather stay here or move to the balcony?",
+      "textToSpeak": "Would you rather stay here or move to the balcony?",
+      "options": [
+        "Rise on both (Open Yes/No Question)",
+        "Rise on A, fall on B (Choice Question)"
+      ],
+      "correctAnswer": "Rise on A, fall on B (Choice Question)",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        3,
+        1,
+        0
+      ],
+      "hint": "You are asking your friend to pick one of two places. Choose the ending that marks the second place as final.",
+      "explanation": "You name two clear places, so the pitch rises on 'here' and falls on 'balcony'. The friend knows to pick one.",
+      "pitchRule": "↗️📉 The final fall shows the friend that no third option exists.",
+      "emotionContext": "Friendly",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "I stayed home because I felt sick.",
+      "textToSpeak": "I stayed home because I felt sick.",
+      "options": [
+        "Rising — thought continues",
+        "Falling — thought finished"
+      ],
+      "correctAnswer": "Falling — thought finished",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "This is a reason given for an action. Notice whether the explanation feels complete.",
+      "explanation": "The reason completes the story, so the pitch falls on 'sick'. There is nothing left to add.",
+      "pitchRule": "📉 Once the reason is given, the thought is complete and the voice falls.",
+      "emotionContext": "Sympathetic",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A friend asks why you missed the trip. You start to explain. Which pattern fits your first words?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "I stayed home,",
+      "textToSpeak": "I stayed home,",
+      "options": [
+        "Falling — thought finished",
+        "Rising — thought continues"
+      ],
+      "correctAnswer": "Rising — thought continues",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "hint": "You have not yet given the reason. Consider how a speaker sounds when about to explain.",
+      "explanation": "The pitch stays up on 'home' because the reason is about to follow. A fall would suggest you had nothing more to say.",
+      "pitchRule": "↗️ A short opening followed by a rise promises an explanation.",
+      "emotionContext": "Hesitant",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You're suggesting two ideas to a group. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "We could go now, or we could wait until it stops raining.",
+      "textToSpeak": "We could go now, or we could wait until it stops raining.",
+      "options": [
+        "Rise on 'now', fall on 'raining'",
+        "Fall on 'now', fall on 'raining'"
+      ],
+      "correctAnswer": "Rise on 'now', fall on 'raining'",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        1,
+        3,
+        2,
+        0
+      ],
+      "hint": "The sentence offers two courses of action. Listen for the break after 'now.'",
+      "explanation": "The first option is only half of the choice, so it rises on 'now'. The whole sentence ends with a fall on 'raining' to mark the second option as final.",
+      "pitchRule": "↗️📉 In a two-part suggestion, the first half rises and the last half falls.",
+      "emotionContext": "Thoughtful",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Is that Sara with an H or without?",
+      "textToSpeak": "Is that Sara with an H or without?",
+      "options": [
+        "Rise on both (Open Yes/No Question)",
+        "Rise on A, fall on B (Choice Question)"
+      ],
+      "correctAnswer": "Rise on A, fall on B (Choice Question)",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        3,
+        1,
+        0
+      ],
+      "hint": "A receptionist wants to spell your name correctly. Follow the voice on 'H' and on 'without.'",
+      "explanation": "Two spellings are offered, so the voice lifts on 'H' and falls on 'without'. The receptionist wants you to pick one.",
+      "pitchRule": "↗️📉 Spelling checks use a choice pattern: rise first, fall last.",
+      "emotionContext": "Careful",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A friend asks you to volunteer, and you begin to decline politely. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Well, I'd love to help,",
+      "textToSpeak": "Well, I'd love to help,",
+      "options": [
+        "Rising — thought continues",
+        "Falling — thought finished"
+      ],
+      "correctAnswer": "Rising — thought continues",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "hint": "The sentence sounds like the start of something. Ask yourself whether a refusal is coming.",
+      "explanation": "The rise on 'help' signals that a 'but' is coming. A falling ending would sound as if the speaker were simply agreeing.",
+      "pitchRule": "↗️ A warm opening with a rise prepares the listener for a refusal.",
+      "emotionContext": "Apologetic",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You are giving the start time for a training day. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "We'll start at nine sharp.",
+      "textToSpeak": "We'll start at nine sharp.",
+      "options": [
+        "Falling — thought finished",
+        "Rising — thought continues"
+      ],
+      "correctAnswer": "Falling — thought finished",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "The time is fixed, and you want people to arrive on time. Decide how your voice should end.",
+      "explanation": "The time is decided, so the pitch falls on 'sharp'. A rise would leave room for argument.",
+      "pitchRule": "📉 A fall on 'sharp' makes the time sound firm.",
+      "emotionContext": "Firm",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Would you like to pay now or later?",
+      "textToSpeak": "Would you like to pay now or later?",
+      "options": [
+        "Rise on both (Open Yes/No Question)",
+        "Rise on A, fall on B (Choice Question)"
+      ],
+      "correctAnswer": "Rise on A, fall on B (Choice Question)",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        3,
+        1,
+        0
+      ],
+      "hint": "There are two timing options. Compare the ending of 'now' with the ending of 'later'.",
+      "explanation": "The clerk is asking for a single choice, so the voice rises on 'now' and falls on 'later'. The fall closes the option list.",
+      "pitchRule": "↗️📉 Two clear options need a rise and a fall to signal a choice.",
+      "emotionContext": "Polite",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A teacher ends an explanation and turns to the class. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Have you got any questions or concerns?",
+      "textToSpeak": "Have you got any questions or concerns?",
+      "options": [
+        "Rise on both (Open Yes/No Question)",
+        "Rise on A, fall on B (Choice Question)"
+      ],
+      "correctAnswer": "Rise on both (Open Yes/No Question)",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "The teacher isn't asking for one or the other. Think about the friendly invitation.",
+      "explanation": "The teacher is inviting any kind of question, so the voice stays up on both nouns. Falling on 'concerns' would sound like a choice between two.",
+      "pitchRule": "📈 'Questions or concerns' works as one open invitation and stays up.",
+      "emotionContext": "Encouraging",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You tell a friend what you saw when you arrived. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "By the time I got there, everyone had left.",
+      "textToSpeak": "By the time I got there, everyone had left.",
+      "options": [
+        "Rise on 'there', fall on 'left'",
+        "Fall on 'there', fall on 'left'"
+      ],
+      "correctAnswer": "Rise on 'there', fall on 'left'",
+      "correctAnswerIndex": 0,
+      "intonationMap": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "hint": "The first part sets the time; the second part gives the surprise. Listen for the change after 'there.'",
+      "explanation": "The opening phrase gives the setting, so the pitch rises on 'there'. The falling ending on 'left' delivers the main point.",
+      "pitchRule": "↗️📉 Setting first with a rise, news second with a fall.",
+      "emotionContext": "Disappointed",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "Identify the intonation",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Are you in the mood for pizza or pasta?",
+      "textToSpeak": "Are you in the mood for pizza or pasta?",
+      "options": [
+        "Rise on both (Open Yes/No Question)",
+        "Rise on A, fall on B (Choice Question)"
+      ],
+      "correctAnswer": "Rise on A, fall on B (Choice Question)",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        3,
+        1,
+        0
+      ],
+      "hint": "Two foods are named. Notice how the voice treats the second food.",
+      "explanation": "The two foods are alternatives, so the voice lifts on 'pizza' and falls on 'pasta'. The listener chooses one.",
+      "pitchRule": "↗️📉 The last item in a choice falls, showing it is the final option.",
+      "emotionContext": "Friendly",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "You are describing what you have read so far and there is more to say. Which pattern fits?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "I've read the first chapter,",
+      "textToSpeak": "I've read the first chapter,",
+      "options": [
+        "Falling — thought finished",
+        "Rising — thought continues"
+      ],
+      "correctAnswer": "Rising — thought continues",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        2,
+        2,
+        3,
+        3
+      ],
+      "hint": "The sentence sounds unfinished. Decide what the speaker is likely to add.",
+      "explanation": "The rise on 'chapter' signals that the speaker will continue, perhaps with 'but not the rest'. A fall would close the topic.",
+      "pitchRule": "↗️ A rise on the last word hints at a 'but' or 'and' still to come.",
+      "emotionContext": "Hesitant",
+      "phase": "mastery"
+    },
+    {
+      "id": "ACC_INTONATIONMIMIC_MASTERY_L$1_Q$2",
+      "instruction": "A friend has just arrived at your place after a long trip. Which pattern will you use?",
+      "subtype": "intonationMimic",
+      "interactionType": "speaking",
+      "word": "Do you want to grab a snack or something?",
+      "textToSpeak": "Do you want to grab a snack or something?",
+      "options": [
+        "Rise on A, fall on B (Choice Question)",
+        "Rise on both (Open Yes/No Question)"
+      ],
+      "correctAnswer": "Rise on both (Open Yes/No Question)",
+      "correctAnswerIndex": 1,
+      "intonationMap": [
+        1,
+        2,
+        2,
+        4
+      ],
+      "hint": "You're making a general offer, not naming two options. Decide how open you want to sound.",
+      "explanation": "'Or something' opens the offer to anything, so both parts rise. It sounds relaxed and welcoming.",
+      "pitchRule": "📈 'Or something' keeps the offer open and casual.",
+      "emotionContext": "Warm",
+      "phase": "mastery"
+    }
+  ]
+}
