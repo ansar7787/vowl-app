@@ -1,0 +1,548 @@
+{
+    "gameType": "pitchModulation",
+    "batchIndex": 18,
+    "phase": "mastery",
+    "levels": "171-180",
+    "quests": [
+        {
+            "id": "ACC_PITCHMODULATION_L171_Q1",
+            "instruction": "A friend has just had bad news at work.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I'm fine, honestly. Don't worry about me.",
+            "textToSpeak": "I'm fine, honestly. Don't worry about me.",
+            "options": [
+                "Not fine, hoping you'll ask again",
+                "Genuinely fine, wanting space"
+            ],
+            "correctAnswer": "Not fine, hoping you'll ask again",
+            "correctAnswerIndex": 0,
+            "hint": "Pay attention to whether the voice sounds light, or controlled.",
+            "explanation": "Tight, level delivery with weight on 'honestly' suggests the speaker is holding something back, and the quick fall on 'me' closes the topic without resolving it. When someone really is fine, the pitch moves freely and the words sound unforced. Hearing the difference helps you decide whether to give the friend space or ask once more.",
+            "modulationPattern": "Level, tight contour with weight on 'honestly'.",
+            "meaningShift": "A tight, level delivery hides distress; a free, unforced one would mean the friend is fine."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L171_Q2",
+            "instruction": "A friend mentions a party you weren't invited to.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Oh, I didn't realise you were doing that.",
+            "textToSpeak": "Oh, I didn't realise you were doing that.",
+            "options": [
+                "Neutral, passing surprise",
+                "Hurt, kept under control"
+            ],
+            "correctAnswer": "Hurt, kept under control",
+            "correctAnswerIndex": 1,
+            "hint": "Which word does the speaker lean on, and how does the sentence end?",
+            "explanation": "Leaning on 'you' and letting 'that' fall flatly gives the sentence a restrained, wounded edge. Neutral surprise would keep 'oh' bright and move on quickly. Recognising hurt gives you the chance to reply kindly instead of treating it as small talk.",
+            "modulationPattern": "Weight on 'you', flat fall on 'that'.",
+            "meaningShift": "Weight on 'you' with a flat fall hides hurt; a bright, quick delivery would be plain surprise."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L171_Q3",
+            "instruction": "You have thanked a friend for helping you move house.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "You'd do the same for me.",
+            "textToSpeak": "You'd do the same for me.",
+            "options": [
+                "Reminding you of a debt",
+                "Reassuring warmth"
+            ],
+            "correctAnswer": "Reassuring warmth",
+            "correctAnswerIndex": 1,
+            "hint": "Is 'would' pressed, or is the whole line soft?",
+            "explanation": "Letting 'me' fall gently and leaving 'would' unstressed makes the line a way of saying 'don't worry about it'. Pressing 'would' would make it a reminder that you now owe something. In friendships, this is how favours are kept light.",
+            "modulationPattern": "Soft contour, no weight on 'would', gentle fall on 'me'.",
+            "meaningShift": "A soft, even line reassures; a pressed 'would' would turn it into a reminder."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L172_Q1",
+            "instruction": "A parent greets an adult child who has just arrived home.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Have you eaten?",
+            "textToSpeak": "Have you eaten?",
+            "options": [
+                "A request for information",
+                "Care, not a real enquiry"
+            ],
+            "correctAnswer": "Care, not a real enquiry",
+            "correctAnswerIndex": 1,
+            "hint": "Decide whether the voice waits for facts, or sounds warm.",
+            "explanation": "Warmth and a softly lifted rise on 'eaten' show that the question is a way of saying 'I'm glad you're here and I care'. A real enquiry would be crisper and quicker, with attention to the answer. Knowing this makes it easier to respond to the feeling, not just the words.",
+            "modulationPattern": "Soft, warm rise on 'eaten'.",
+            "meaningShift": "A warm, soft rise expresses care; a crisp, quick one would seek information."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L172_Q2",
+            "instruction": "A parent speaks to a teenager who broke a promise.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I'm not angry, I'm just disappointed.",
+            "textToSpeak": "I'm not angry, I'm just disappointed.",
+            "options": [
+                "Heavy guilt trip",
+                "Calm acceptance"
+            ],
+            "correctAnswer": "Heavy guilt trip",
+            "correctAnswerIndex": 0,
+            "hint": "How slowly does the last word arrive?",
+            "explanation": "Slowing down and putting weight on 'disappointed', with a long fall, lets the teenager feel the weight of the words. Calm acceptance would be level and quicker, with no extra weight. Recognising this helps you hear what the parent really wants.",
+            "modulationPattern": "Slow tempo, weight and long fall on 'disappointed'.",
+            "meaningShift": "A slow, weighted fall adds guilt; a level, quick delivery would be calm."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L172_Q3",
+            "instruction": "A child is in bed, hoping for more.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Go on, one more story.",
+            "textToSpeak": "Go on, one more story.",
+            "options": [
+                "Demanding",
+                "Coaxing"
+            ],
+            "correctAnswer": "Coaxing",
+            "correctAnswerIndex": 1,
+            "hint": "Judge whether the voice is playful, or sharp.",
+            "explanation": "Bouncing up on 'go on' and falling softly, sing-song style, on 'story' suggests coaxing and relies on charm. A demand would be flat and pushed, with weight on 'one' and a hard landing. Learning to hear the difference helps parents and teachers respond appropriately.",
+            "modulationPattern": "Bouncy lift on 'go on', soft fall on 'story'.",
+            "meaningShift": "A bouncy, soft contour coaxes; a flat, pushed one would demand."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L173_Q1",
+            "instruction": "A friend is retelling an argument and gets the details wrong.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "That's not how I remember it.",
+            "textToSpeak": "That's not how I remember it.",
+            "options": [
+                "Polite challenge",
+                "Accepting her version"
+            ],
+            "correctAnswer": "Polite challenge",
+            "correctAnswerIndex": 0,
+            "hint": "Find the word that carries weight.",
+            "explanation": "Emphasis on 'I' or 'remember' with a firm fall on 'it' presents the speaker's version as a counter-claim while keeping the tone civil. Accepting would be flatter, with no stress and a gentle trail. In arguments, this phrase lets you disagree without accusing the other person of lying.",
+            "modulationPattern": "Weight on 'remember', firm fall on 'it'.",
+            "meaningShift": "A weighted 'remember' with a firm fall challenges politely; a flat, trailing one would concede."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L173_Q2",
+            "instruction": "A debate is getting heated.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "You've made your point.",
+            "textToSpeak": "You've made your point.",
+            "options": [
+                "Asking for it to stop",
+                "Acknowledging warmly"
+            ],
+            "correctAnswer": "Asking for it to stop",
+            "correctAnswerIndex": 0,
+            "hint": "How cold is the fall on 'point'?",
+            "explanation": "Cooling the tone and putting weight on 'made' signals that the speaker has heard enough. Warm acknowledgement would lift on 'point' and sound appreciative. If you hear the cooler version, it's wise to wrap up.",
+            "modulationPattern": "Cool fall on 'point' with weight on 'made'.",
+            "meaningShift": "A cool, falling delivery asks for an end; a warm lift would acknowledge generously."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L173_Q3",
+            "instruction": "An argument breaks out at a family dinner.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Let's not make this personal.",
+            "textToSpeak": "Let's not make this personal.",
+            "options": [
+                "Calming, with an edge",
+                "Pleading with them to stop"
+            ],
+            "correctAnswer": "Calming, with an edge",
+            "correctAnswerIndex": 0,
+            "hint": "Decide whether the voice is firm or begging.",
+            "explanation": "Falling steadily on 'personal' at a measured pace shows that the speaker is in control and expects it to stop. A pleading tone would lift and speed up, hoping for agreement. Understanding the edge helps you know when to back off.",
+            "modulationPattern": "Steady pace, firm fall on 'personal'.",
+            "meaningShift": "A firm, measured fall calms with authority; a rising, hurried one would plead."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L174_Q1",
+            "instruction": "A colleague wants to change a meeting.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Would it be possible to move the meeting to Thursday?",
+            "textToSpeak": "Would it be possible to move the meeting to Thursday?",
+            "options": [
+                "A polite order you must obey",
+                "A real request: you can say no"
+            ],
+            "correctAnswer": "A real request: you can say no",
+            "correctAnswerIndex": 1,
+            "hint": "Hear whether the voice leaves space at the end.",
+            "explanation": "Lifting on 'Thursday' and slowing slightly give the listener room to decline. A polite order would fall on 'Thursday' and expect a yes. This difference tells you how much freedom you actually have.",
+            "modulationPattern": "Rise on 'Thursday' with slowing tempo.",
+            "meaningShift": "A rise leaves room to refuse; a falling finish would expect agreement."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L174_Q2",
+            "instruction": "A manager has a deadline.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I need this by five.",
+            "textToSpeak": "I need this by five.",
+            "options": [
+                "A friendly request",
+                "A firm instruction"
+            ],
+            "correctAnswer": "A firm instruction",
+            "correctAnswerIndex": 1,
+            "hint": "Find the word that takes the weight.",
+            "explanation": "Weight on 'need' and a firm fall on 'five' remove any room for negotiating. A friendly request would be softer, with a lift on 'five' and perhaps a 'could you'. Recognising the firm version tells you to prioritise it.",
+            "modulationPattern": "Weight on 'need', firm fall on 'five'.",
+            "meaningShift": "Weight on 'need' with a firm fall instructs; a soft lift would request."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L174_Q3",
+            "instruction": "A friend wants a favour on Friday.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Any chance you could cover for me on Friday?",
+            "textToSpeak": "Any chance you could cover for me on Friday?",
+            "options": [
+                "Hopeful and sheepish",
+                "Confident and expecting yes"
+            ],
+            "correctAnswer": "Hopeful and sheepish",
+            "correctAnswerIndex": 0,
+            "hint": "How high does the voice start, and how does it end?",
+            "explanation": "Lifting 'any chance' and rising hesitantly on 'Friday' sounds hopeful and slightly embarrassed. Confidence would be flatter and fall on 'Friday', expecting agreement. Hearing the sheepishness makes it easier to say yes or no kindly.",
+            "modulationPattern": "Lifted 'any chance', hesitant rise on 'Friday'.",
+            "meaningShift": "A lifted, hesitant contour sounds sheepish; a flat, falling one would be confident."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L175_Q1",
+            "instruction": "A friend arrives two hours late.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I'm so sorry, I should have called.",
+            "textToSpeak": "I'm so sorry, I should have called.",
+            "options": [
+                "Moving past it quickly",
+                "Taking responsibility"
+            ],
+            "correctAnswer": "Taking responsibility",
+            "correctAnswerIndex": 1,
+            "hint": "Does 'should' get weight?",
+            "explanation": "Weight on 'should' and a slow fall on 'called' show that the speaker accepts the fault. Moving on would be brisk and light, with a quick 'sorry'. The first is the model for a genuine apology.",
+            "modulationPattern": "Weight on 'should', slow fall on 'called'.",
+            "meaningShift": "A weighted 'should' with a slow fall accepts blame; a brisk, light delivery would brush it off."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L175_Q2",
+            "instruction": "A shop assistant bumps into you.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Sorry about that.",
+            "textToSpeak": "Sorry about that.",
+            "options": [
+                "Deeply apologetic",
+                "Casual, trivial"
+            ],
+            "correctAnswer": "Casual, trivial",
+            "correctAnswerIndex": 1,
+            "hint": "How long does the word 'sorry' last?",
+            "explanation": "Saying 'sorry' quickly and falling lightly on 'that' shows the speaker thinks it was minor. A deep apology would slow down and lower on 'sorry'. The size of the delivery tells you how seriously to take it.",
+            "modulationPattern": "Quick 'sorry', light fall.",
+            "meaningShift": "A quick, light 'sorry' is casual; a slow, low one is a real apology."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L175_Q3",
+            "instruction": "A colleague has been told they upset someone.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I'm sorry if you felt that way.",
+            "textToSpeak": "I'm sorry if you felt that way.",
+            "options": [
+                "A genuine apology",
+                "A non-apology, defensive"
+            ],
+            "correctAnswer": "A non-apology, defensive",
+            "correctAnswerIndex": 1,
+            "hint": "Pinpoint which word is pushed.",
+            "explanation": "Weight on 'if' and a flat finish on 'way' suggest the speaker doubts they did anything wrong. A genuine apology would put weight on 'sorry' and drop the 'if'. Hearing the defensiveness helps you judge whether the matter is resolved.",
+            "modulationPattern": "Weight on 'if', flat fall on 'way'.",
+            "meaningShift": "A weighted 'if' with a flat finish deflects; weight on 'sorry' would apologise."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L176_Q1",
+            "instruction": "A group is stuck on a problem.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "We could always ask Ben.",
+            "textToSpeak": "We could always ask Ben.",
+            "options": [
+                "A tentative, open idea",
+                "A preferred, settled plan"
+            ],
+            "correctAnswer": "A tentative, open idea",
+            "correctAnswerIndex": 0,
+            "hint": "Does 'always' sound relaxed or pressed?",
+            "explanation": "Keeping 'always' light and lifting slightly on 'Ben' presents the idea as one among several. A preferred plan would land firmly on 'Ben'. This tells you whether the speaker wants discussion or agreement.",
+            "modulationPattern": "Light 'always', small lift on 'Ben'.",
+            "meaningShift": "A light, lifted suggestion stays open; a firm fall on 'Ben' would be a plan."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L176_Q2",
+            "instruction": "An advisor is giving a recommendation.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I'd suggest we wait until Monday.",
+            "textToSpeak": "I'd suggest we wait until Monday.",
+            "options": [
+                "A confident recommendation",
+                "A hesitant, tentative idea"
+            ],
+            "correctAnswer": "A confident recommendation",
+            "correctAnswerIndex": 0,
+            "hint": "How does the sentence finish?",
+            "explanation": "Peaking clearly on 'wait' and falling firmly on 'Monday' shows that the speaker has thought it through. A hesitant idea would lift on 'Monday' and trail off. This helps you decide whether it is advice you should follow.",
+            "modulationPattern": "Peak on 'wait', firm fall on 'Monday'.",
+            "meaningShift": "A peak and firm fall recommend with authority; a lift would be a tentative idea."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L176_Q3",
+            "instruction": "A team is stuck, and a colleague tries to move things on.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "How about we start with the easy part?",
+            "textToSpeak": "How about we start with the easy part?",
+            "options": [
+                "Practical encouragement",
+                "Doubting the whole plan"
+            ],
+            "correctAnswer": "Practical encouragement",
+            "correctAnswerIndex": 0,
+            "hint": "Check whether the rise is bright, or flat.",
+            "explanation": "Lifting brightly on 'easy' and rising at the end invites the team to join in a small step. Doubt would be flat, with a sinking finish. In a stuck meeting, the encouraging version helps the group get going.",
+            "modulationPattern": "Bright lift on 'easy', rise at the end.",
+            "meaningShift": "A bright lift encourages a small step; a flat, sinking finish would doubt."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L177_Q1",
+            "instruction": "Colleagues are heading to lunch.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Do you fancy joining us for lunch?",
+            "textToSpeak": "Do you fancy joining us for lunch?",
+            "options": [
+                "An obligatory, polite offer",
+                "A genuine, relaxed invitation"
+            ],
+            "correctAnswer": "A genuine, relaxed invitation",
+            "correctAnswerIndex": 1,
+            "hint": "Is there warmth in the lift?",
+            "explanation": "Lifting warmly on 'lunch' at an easy pace suggests the speaker would like the company. An obligatory offer would be flatter and quicker. Recognising genuine invitations lets you accept with confidence.",
+            "modulationPattern": "Warm lift on 'lunch', easy pace.",
+            "meaningShift": "A warm, easy lift invites; a flat, quick one is an obligation."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L177_Q2",
+            "instruction": "An acquaintance says goodbye at the end of an event.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Maybe we'll see you there.",
+            "textToSpeak": "Maybe we'll see you there.",
+            "options": [
+                "Casual, no commitment",
+                "A firm hope of meeting"
+            ],
+            "correctAnswer": "Casual, no commitment",
+            "correctAnswerIndex": 0,
+            "hint": "Does 'maybe' carry weight?",
+            "explanation": "Keeping 'maybe' light and letting 'there' fall loosely shows that the speaker is not making a plan. A firm hope would stress 'see' or 'you'. Hearing the casual version means you do not need to confirm anything.",
+            "modulationPattern": "Light 'maybe', loose fall on 'there'.",
+            "meaningShift": "A light, loose delivery makes no commitment; a stressed 'see you' would hope for it."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L177_Q3",
+            "instruction": "A host sees you hesitating at the door.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "You're very welcome to join us, if you'd like.",
+            "textToSpeak": "You're very welcome to join us, if you'd like.",
+            "options": [
+                "A hint that you decline",
+                "Genuine and low pressure"
+            ],
+            "correctAnswer": "Genuine and low pressure",
+            "correctAnswerIndex": 1,
+            "hint": "Notice whether the voice sounds welcoming, or distant.",
+            "explanation": "Warmth on 'welcome' and an open rise on 'like' show the offer is real, and the pace remains relaxed. A hint to decline would be cooler and drop at the end. This tells you it's safe to accept.",
+            "modulationPattern": "Warm 'welcome', open rise on 'like'.",
+            "meaningShift": "A warm, open delivery invites; a cool, dropping one would hint at declining."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L178_Q1",
+            "instruction": "A technician is explaining a machine.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Whatever you do, don't touch the red switch.",
+            "textToSpeak": "Whatever you do, don't touch the red switch.",
+            "options": [
+                "Casual advice",
+                "An urgent warning"
+            ],
+            "correctAnswer": "An urgent warning",
+            "correctAnswerIndex": 1,
+            "hint": "How much weight does 'don't' have?",
+            "explanation": "Heavy stress on 'don't' and a firm fall on 'switch' show that the warning is serious. Casual advice would be even and quick. Hearing the urgency tells you to follow the instruction exactly.",
+            "modulationPattern": "Heavy stress on 'don't', firm fall on 'switch'.",
+            "meaningShift": "Heavy stress with a firm fall warns; an even, quick delivery would be casual advice."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L178_Q2",
+            "instruction": "Someone is giving cooking instructions.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Just give it a quick stir and you're done.",
+            "textToSpeak": "Just give it a quick stir and you're done.",
+            "options": [
+                "Reassuring simplicity",
+                "Urgent instruction"
+            ],
+            "correctAnswer": "Reassuring simplicity",
+            "correctAnswerIndex": 0,
+            "hint": "Is the pace hurried, or relaxed?",
+            "explanation": "Keeping 'just' light and falling easily on 'done' promises that this step is simple. An urgent instruction would be faster and press 'stir'. Hearing the relaxed version lets you cook calmly.",
+            "modulationPattern": "Light 'just', easy fall on 'done'.",
+            "meaningShift": "A light, easy delivery reassures; a pressed, fast one would be urgent."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L178_Q3",
+            "instruction": "A trainer begins a session.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Right, so, first of all, we need to talk about safety.",
+            "textToSpeak": "Right, so, first of all, we need to talk about safety.",
+            "options": [
+                "Setting a serious tone",
+                "Casual chat about it"
+            ],
+            "correctAnswer": "Setting a serious tone",
+            "correctAnswerIndex": 0,
+            "hint": "Does the voice slow down at 'safety'?",
+            "explanation": "Slowing down and putting weight on 'safety' signal the topic is not optional. A casual chat would stay level and quick. This tells you to pay full attention to what follows.",
+            "modulationPattern": "Slowing tempo, peak on 'safety'.",
+            "meaningShift": "A slow peak sets a serious tone; a level, quick delivery would be casual."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L179_Q1",
+            "instruction": "A host offers you an expensive gift.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "That's very kind, but I couldn't possibly.",
+            "textToSpeak": "That's very kind, but I couldn't possibly.",
+            "options": [
+                "A firm, final refusal of it",
+                "Polite refusal, open to insistence"
+            ],
+            "correctAnswer": "Polite refusal, open to insistence",
+            "correctAnswerIndex": 1,
+            "hint": "Check whether the voice closes the door, or leaves it ajar.",
+            "explanation": "Lifting on 'possibly' leaves the matter open, which is how people let others insist. A firm refusal would fall on 'possibly' and stop. Recognising the open version helps you know whether to press.",
+            "modulationPattern": "Lift on 'possibly'.",
+            "meaningShift": "A lifted ending leaves room for persuasion; a firm fall would close it."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L179_Q2",
+            "instruction": "A friend is thinking about texting an ex.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I'm not sure that's a good idea.",
+            "textToSpeak": "I'm not sure that's a good idea.",
+            "options": [
+                "A gentle warning",
+                "Real uncertainty"
+            ],
+            "correctAnswer": "A gentle warning",
+            "correctAnswerIndex": 0,
+            "hint": "Does 'sure' sound searching or settled?",
+            "explanation": "Weight on 'good' and a soft fall on 'idea' show that the speaker already has a view and is softening it. Real uncertainty would lift on 'idea' and invite discussion. This tells you the speaker is advising against it.",
+            "modulationPattern": "Weight on 'good', soft fall on 'idea'.",
+            "meaningShift": "A weighted 'good' with a soft fall warns gently; a lift on 'idea' would be real doubt."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L179_Q3",
+            "instruction": "A colleague is asked about a possible future problem.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "We'll cross that bridge when we come to it.",
+            "textToSpeak": "We'll cross that bridge when we come to it.",
+            "options": [
+                "An actual detailed plan",
+                "Putting it off kindly"
+            ],
+            "correctAnswer": "Putting it off kindly",
+            "correctAnswerIndex": 1,
+            "hint": "Judge whether the speaker gives any detail.",
+            "explanation": "Falling in a relaxed way on 'it', with no detail, shows that the speaker does not want to discuss it now. A real plan would stress a particular step. This tells you not to expect specifics.",
+            "modulationPattern": "Relaxed fall on 'it', no stressed detail.",
+            "meaningShift": "A relaxed fall defers the problem; a stressed step would show a plan."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L180_Q1",
+            "instruction": "A manager phones you on a Sunday.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Sorry to bother you on a weekend, but have you got a second?",
+            "textToSpeak": "Sorry to bother you on a weekend, but have you got a second?",
+            "options": [
+                "A casual catch-up chat",
+                "An apology, but it matters"
+            ],
+            "correctAnswer": "An apology, but it matters",
+            "correctAnswerIndex": 1,
+            "hint": "Hear whether the second half sounds light, or serious.",
+            "explanation": "Apologising briefly and softly, then slowing into a more serious lift on 'second', shows the matter is important. A casual chat would be light throughout. This tells you to take it seriously, not as small talk.",
+            "modulationPattern": "Soft 'sorry', slower rise on 'second'.",
+            "meaningShift": "A soft apology with a slower rise signals importance; a light delivery would be a casual chat."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L180_Q2",
+            "instruction": "A colleague gives you feedback in a one-to-one.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "That went really well. There's just one thing I'd change.",
+            "textToSpeak": "That went really well. There's just one thing I'd change.",
+            "options": [
+                "Praise, then the real point",
+                "Equal praise and criticism"
+            ],
+            "correctAnswer": "Praise, then the real point",
+            "correctAnswerIndex": 0,
+            "hint": "Find the word that gets the biggest peak.",
+            "explanation": "The peak on 'one' sets up the actual message, which comes after the praise. If both parts were equal, the contour would be balanced. Hearing this tells you where to look for the change you need to make.",
+            "modulationPattern": "Warm opener, peak on 'one'.",
+            "meaningShift": "A peak on 'one' puts the real point after the praise; a balanced contour would weigh them equally."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L180_Q3",
+            "instruction": "A teacher is talking to a parent at parents' evening.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "He's a lovely boy. He just needs to focus a bit more.",
+            "textToSpeak": "He's a lovely boy. He just needs to focus a bit more.",
+            "options": [
+                "Gentle but serious concern",
+                "A light, passing remark"
+            ],
+            "correctAnswer": "Gentle but serious concern",
+            "correctAnswerIndex": 0,
+            "hint": "How does the second sentence sound compared with the first?",
+            "explanation": "Starting warmly, then slowing and weighting the second sentence with a fall on 'more', shows that the concern is real. A light remark would be quick and bright throughout. This tells you to take the second sentence seriously.",
+            "modulationPattern": "Warm first sentence, slower second with a fall on 'more'.",
+            "meaningShift": "A warm start with a slow, weighted second sentence is serious concern; a quick, bright one would be light."
+        }
+    ]
+}

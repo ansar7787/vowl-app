@@ -1,0 +1,608 @@
+{
+    "gameType": "pitchModulation",
+    "batchIndex": 12,
+    "phase": "practice",
+    "levels": "111-120",
+    "quests": [
+        {
+            "id": "ACC_PITCHMODULATION_L111_Q1",
+            "instruction": "A colleague reacts to your new office decoration.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Well, it's certainly different.",
+            "textToSpeak": "Well, it's certainly different.",
+            "options": [
+                "A neutral observation",
+                "A polite put-down",
+                "Sarcastic, dry-voiced",
+                "Politely glad"
+            ],
+            "correctAnswer": "A polite put-down",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Lengthened 'certainly', low flat fall on 'different'.",
+            "meaningShift": "A stretched, low contour hides a criticism; a quick, even one would just observe.",
+            "hint": "Pay attention to 'certainly'. Does it stretch, or stay brief?",
+            "explanation": "Stretching 'certainly' and dropping onto a low, flat 'different' is a common way to say something unflattering without saying it. If the speaker only meant 'it's not like the others', the sentence would move along quickly with no special weight on either word."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L111_Q2",
+            "instruction": "A new team member says this after a month of working with you.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "You're much nicer than I expected.",
+            "textToSpeak": "You're much nicer than I expected.",
+            "options": [
+                "A compliment with a sting",
+                "Impatient: speed it up",
+                "Politely hurrying you",
+                "Simple, edge-free kindness"
+            ],
+            "correctAnswer": "A compliment with a sting",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Prominence on 'expected', flat fall.",
+            "meaningShift": "Weight on 'expected' implies a poor starting opinion; weight on 'nicer' would simply praise.",
+            "hint": "Find the word that carries most of the weight.",
+            "explanation": "Weight on 'expected' reminds the listener that the speaker had a low opinion first, so the praise comes with a sting attached. Kindness without edges would lean on 'nicer' and sound warmer on the way down."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L111_Q3",
+            "instruction": "A manager watches you fix a problem nobody else could solve.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I'm impressed you managed that.",
+            "textToSpeak": "I'm impressed you managed that.",
+            "options": [
+                "Surprised you could",
+                "Genuinely impressed",
+                "Politely glad",
+                "Closed to the idea"
+            ],
+            "correctAnswer": "Genuinely impressed",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Peak on 'impressed', smooth fall on 'managed'.",
+            "meaningShift": "A peak on 'impressed' praises; a peak on 'you' would hint at doubt that it was possible.",
+            "hint": "Does 'you' stand out, or does 'impressed' carry the energy?",
+            "explanation": "Energy on 'impressed' with a smooth fall makes the praise sound wholehearted. Pushing 'you' and 'managed' turns it into a remark about the speaker's low expectations, which changes the compliment completely."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L112_Q1",
+            "instruction": "A colleague at the next desk is on a long call and you are trying to focus.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I can hardly hear myself think.",
+            "textToSpeak": "I can hardly hear myself think.",
+            "options": [
+                "A simple observation",
+                "Enthusiastic agreement",
+                "A hint to be quieter",
+                "A firm promise to act on it"
+            ],
+            "correctAnswer": "A hint to be quieter",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Lowered, lingering fall on 'think'.",
+            "meaningShift": "A lingering, lowered fall invites action; a light, quick fall just comments.",
+            "hint": "Is the remark meant for everyone, or aimed at a person?",
+            "explanation": "Hints are often delivered with a slightly lowered, lingering fall on the final word, as the speaker doesn't want to accuse. A casual remark about noise would sound lighter and move on quickly, with no waiting afterwards."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L112_Q2",
+            "instruction": "Someone asks a favour at work.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Would you mind helping me with this?",
+            "textToSpeak": "Would you mind helping me with this?",
+            "options": [
+                "Politely glad",
+                "A genuine request",
+                "Warm",
+                "A command in disguise"
+            ],
+            "correctAnswer": "A genuine request",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Open rise on 'this'.",
+            "meaningShift": "An open rise leaves room to decline; a falling finish with weight on 'help' expects agreement.",
+            "hint": "What happens to the pitch at the end?",
+            "explanation": "Real requests give the listener room to say no, so the voice lifts on 'this' and stays open. A disguised order drops at the end with weight on 'help', leaving only one reasonable answer."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L112_Q3",
+            "instruction": "A shy colleague asks to borrow your charger.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I don't suppose you could lend me a charger?",
+            "textToSpeak": "I don't suppose you could lend me a charger?",
+            "options": [
+                "Sarcastic and mocking",
+                "'Can't' stands out: a firm, flat refusal",
+                "Genuinely leaving it open",
+                "Tentative and deferential"
+            ],
+            "correctAnswer": "Tentative and deferential",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Soft onset, high hesitant rise on 'charger'.",
+            "meaningShift": "A high, hesitant rise sounds deferential; a flat, sharp contour would sound mocking.",
+            "hint": "Hear whether the speaker sounds unsure, or mocking.",
+            "explanation": "Softer pitch and a high, hesitant rise at the end signal that the speaker expects a no and would accept it. Sarcasm would be flatter and sharper, with a bite on 'you could'."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L113_Q1",
+            "instruction": "Your printer jams as you start a big print job.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Oh, brilliant.",
+            "textToSpeak": "Oh, brilliant.",
+            "options": [
+                "Pleased",
+                "A solemn promise",
+                "Sarcastic",
+                "A casual quip"
+            ],
+            "correctAnswer": "Sarcastic",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Flat, drawn-out 'brilliant' with a low fall.",
+            "meaningShift": "A flat, low delivery turns praise into complaint; a bright peak would be real pleasure.",
+            "hint": "How bright is 'brilliant'?",
+            "explanation": "Sarcasm usually flattens 'brilliant' and lengthens it, and the pitch drops low instead of climbing. Real pleasure would spring up on the first syllable and sound bright."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L113_Q2",
+            "instruction": "A presentation has just collapsed in front of a client.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Well, that went well.",
+            "textToSpeak": "Well, that went well.",
+            "options": [
+                "Satisfied",
+                "Ironic",
+                "Enthusiastic agreement",
+                "Bored acknowledgement"
+            ],
+            "correctAnswer": "Ironic",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Low, dry contour with weight on 'well'.",
+            "meaningShift": "A low, dry delivery contradicts the words; a settled, warm one would agree with them.",
+            "hint": "Does anything in the voice match the words?",
+            "explanation": "Irony depends on a mismatch, and the pitch provides it: a low, dry delivery with weight on 'well'. If the speaker were satisfied, the sentence would be easy and settled with a smile in the voice."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L113_Q3",
+            "instruction": "A colleague has just shared a shortcut that saved you an hour.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "That's actually really helpful.",
+            "textToSpeak": "That's actually really helpful.",
+            "options": [
+                "A neutral observation",
+                "Sarcastic, dry-voiced",
+                "Politely glad",
+                "Pleasantly surprised"
+            ],
+            "correctAnswer": "Pleasantly surprised",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Bright peak on 'actually', warm fall on 'helpful'.",
+            "meaningShift": "A bright peak on 'actually' shows real surprise; a flat, stretched 'really' would be sarcasm.",
+            "hint": "Find the word that carries the lift: 'actually' or 'helpful'.",
+            "explanation": "Brightness on 'actually' tells the listener that the usefulness exceeded expectations, and the rest of the sentence falls warmly. Sarcasm would sound flatter, stretching 'really' with a low, dry finish."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L114_Q1",
+            "instruction": "A colleague is explaining a process you already know well.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Yeah, yeah.",
+            "textToSpeak": "Yeah, yeah.",
+            "options": [
+                "Truly unhurried",
+                "Enthusiastic agreement",
+                "Blunt and unsoftened",
+                "Impatient: speed it up"
+            ],
+            "correctAnswer": "Impatient: speed it up",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Fast, flat repetition with a falling pattern.",
+            "meaningShift": "Quick, flat repeats hurry the speaker; a slower, lifted one would show real interest.",
+            "hint": "Listen to how quickly the two words come, and how they sit against each other.",
+            "explanation": "Rapid, flat repetition is a way of saying 'I've got it, move on'. Enthusiasm would slow down, stretch the first 'yeah' upward and stay warm."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L114_Q2",
+            "instruction": "A friend is telling you about a bereavement.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Mm.",
+            "textToSpeak": "Mm.",
+            "options": [
+                "Bored acknowledgement",
+                "Sympathetic listening",
+                "A genuine request",
+                "A command in disguise"
+            ],
+            "correctAnswer": "Sympathetic listening",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Low, slow, slightly falling 'mm'.",
+            "meaningShift": "A slow, low 'mm' shows attention; a short, flat one shows indifference.",
+            "hint": "How long does it last, and does it sound alert?",
+            "explanation": "In a sad moment, a low, slow 'mm' that stays with the listener tells the speaker they're being heard. A bored version would be short, with less pitch variation, giving the impression the listener was somewhere else."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L114_Q3",
+            "instruction": "A colleague makes the point you were about to make.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Exactly.",
+            "textToSpeak": "Exactly.",
+            "options": [
+                "A firm promise to act on it",
+                "Ending the debate politely",
+                "Warm agreement",
+                "Impatient agreement"
+            ],
+            "correctAnswer": "Warm agreement",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Lift on 'exact-', smooth fall.",
+            "meaningShift": "A lift then fall shares the point warmly; a quick drop sounds hurried.",
+            "hint": "Does 'exactly' rise before falling, or just drop?",
+            "explanation": "Lifting on 'exact-' and then falling smoothly expresses enthusiasm that the speaker has put the thought into words. Impatience would drop sharply and quickly, as if the speaker wanted them to get on with it."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L115_Q1",
+            "instruction": "A salesperson is closing a sale.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "You won't regret it.",
+            "textToSpeak": "You won't regret it.",
+            "options": [
+                "Sarcastic, dry-voiced",
+                "Sincere assurance",
+                "Truly unhurried",
+                "Sales pressure"
+            ],
+            "correctAnswer": "Sincere assurance",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Slower pace, soft fall on 'regret'.",
+            "meaningShift": "A slower, softer fall sounds sincere; a hard, quick emphasis sounds pushy.",
+            "hint": "Does the speaker slow down, or push?",
+            "explanation": "Sincerity usually slows the pace and lets 'regret' fall softly. Pressure speeds up and places a hard emphasis on 'won't', as if closing a door."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L115_Q2",
+            "instruction": "A salesperson stands back while you decide.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "It's up to you, of course.",
+            "textToSpeak": "It's up to you, of course.",
+            "options": [
+                "Genuinely leaving it open",
+                "Applying gentle pressure",
+                "Sales pressure",
+                "'Only' stands out: defending a small request"
+            ],
+            "correctAnswer": "Genuinely leaving it open",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Light fall on 'of course'.",
+            "meaningShift": "A light ending leaves the choice free; a weighted one steers you.",
+            "hint": "How does the voice treat 'of course'?",
+            "explanation": "If the speaker wants you to choose freely, the sentence ends lightly, with 'of course' dropping away gently. A hint of pressure would add weight to 'you' and a firm landing on 'course', as if the answer were obvious."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L115_Q3",
+            "instruction": "A host sees you checking your watch.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "No rush at all.",
+            "textToSpeak": "No rush at all.",
+            "options": [
+                "Politely hurrying you",
+                "Truly unhurried",
+                "Sincere assurance",
+                "Sarcastic, dry-voiced"
+            ],
+            "correctAnswer": "Truly unhurried",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Slow tempo, long soft fall on 'all'.",
+            "meaningShift": "A slow, soft contour sounds relaxed; a brisk, clipped one hints at a deadline.",
+            "hint": "Decide whether the speaker sounds relaxed, or watchful.",
+            "explanation": "Slow tempo plus a long, soft fall on 'all' gives the impression of ample time. Hurrying you politely would involve a brisk pace and a clipped finish that tells you time is, in fact, short."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L116_Q1",
+            "instruction": "A colleague argues strongly for a plan you doubt.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I can see why you'd say that.",
+            "textToSpeak": "I can see why you'd say that.",
+            "options": [
+                "Disagreeing gently",
+                "Agreeing wholeheartedly",
+                "Genuinely impressed",
+                "Enthusiastic agreement"
+            ],
+            "correctAnswer": "Disagreeing gently",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Weight on 'see', fall on 'say'.",
+            "meaningShift": "A leaning 'see' sets up a polite 'but'; weight on 'why' would sound like agreement.",
+            "hint": "Which word does the speaker lean on?",
+            "explanation": "Leaning on 'see' and falling on 'say' acknowledges the argument while stepping back from it, which is a classic opening to a disagreement. Agreement would put the weight on 'why' and sound warmer, with no hint of a 'but' to come."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L116_Q2",
+            "instruction": "A negotiator hears a proposal for the first time.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I'm not convinced yet.",
+            "textToSpeak": "I'm not convinced yet.",
+            "options": [
+                "A casual quip",
+                "A defensive, blaming excuse",
+                "Closed to the idea",
+                "Open to persuasion"
+            ],
+            "correctAnswer": "Open to persuasion",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Slight lift on 'yet'.",
+            "meaningShift": "A lifted 'yet' leaves room to persuade; a hard 'not' would close the topic.",
+            "hint": "What does the stress on 'yet' do?",
+            "explanation": "Letting 'yet' rise slightly makes the sentence sound as though the door is open, because the speaker is promising to keep listening. A closed mind would stress 'not' and fall hard on 'convinced'."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L116_Q3",
+            "instruction": "A long debate between two colleagues is going in circles.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "We'll have to agree to differ.",
+            "textToSpeak": "We'll have to agree to differ.",
+            "options": [
+                "Reaching real agreement",
+                "Ending the debate politely",
+                "Gentle honesty",
+                "Warm"
+            ],
+            "correctAnswer": "Ending the debate politely",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Steady fall on 'differ'.",
+            "meaningShift": "A final fall closes the debate; a lift on 'agree' would indicate a real meeting of minds.",
+            "hint": "Is there warmth, or finality?",
+            "explanation": "Closing with a steady fall on 'differ' at a quick pace gives the line a conclusive feel, and it signals that further debate won't change anything. Reaching agreement would be warmer, with a lift on 'agree'."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L117_Q1",
+            "instruction": "A colleague asks, 'Did you speak to Dan or Mia?'",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I spoke to Mia.",
+            "textToSpeak": "I spoke to Mia.",
+            "options": [
+                "'Spoke' stands out: not a message",
+                "Gentle and sympathetic",
+                "Ending the debate politely",
+                "'Mia' stands out: it fills the gap"
+            ],
+            "correctAnswer": "'Mia' stands out: it fills the gap",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Prominence on 'Mia'.",
+            "meaningShift": "A peak on 'Mia' picks the person; a peak on 'spoke' would contrast the means of contact.",
+            "hint": "The question names two people. Hear which part of the reply makes the choice.",
+            "explanation": "Dan and Mia were the options, so the name decides the answer. Pushing 'spoke' would only make sense if someone had wondered whether it was a conversation or a message."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L117_Q2",
+            "instruction": "You are replying to a colleague who suggested a meeting day.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I can't do Tuesday.",
+            "textToSpeak": "I can't do Tuesday.",
+            "options": [
+                "'Can't' stands out: a firm, flat refusal",
+                "'Only' stands out: defending a small request",
+                "A neutral observation",
+                "'Tuesday' stands out: other days may work"
+            ],
+            "correctAnswer": "'Tuesday' stands out: other days may work",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Prominence on 'Tuesday'.",
+            "meaningShift": "A peak on 'Tuesday' signals other days could work; a peak on 'can't' stresses the refusal.",
+            "hint": "Which word hints at what remains possible?",
+            "explanation": "Putting the peak on 'Tuesday' singles that day out as the problem, and listeners usually hear an unspoken 'but another day could work'. Weight on 'can't' would stress the impossibility, as in 'there's no way'."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L117_Q3",
+            "instruction": "A colleague says you should have prepared a full analysis.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I only asked for a quick opinion.",
+            "textToSpeak": "I only asked for a quick opinion.",
+            "options": [
+                "Wholehearted",
+                "Reaching real agreement",
+                "'Only' stands out: defending a small request",
+                "'Opinion' stands out: stating what was asked"
+            ],
+            "correctAnswer": "'Only' stands out: defending a small request",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Prominence on 'only'.",
+            "meaningShift": "A peak on 'only' shrinks the request; a peak on 'opinion' would specify its type.",
+            "hint": "What is the speaker pushing back against?",
+            "explanation": "The complaint is about the amount of work, so 'only' takes the peak and presents the request as modest. 'Opinion' would be stressed if the speaker were correcting what was wanted, not how much."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L118_Q1",
+            "instruction": "A friend asks whether you want to go to the gig.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Honestly, I'd rather not.",
+            "textToSpeak": "Honestly, I'd rather not.",
+            "options": [
+                "Gentle honesty",
+                "Ending the debate politely",
+                "Bored acknowledgement",
+                "Blunt refusal"
+            ],
+            "correctAnswer": "Gentle honesty",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Soft 'honestly', easy fall on 'not'.",
+            "meaningShift": "A soft, easy contour sounds like candid warmth; a clipped one sounds blunt.",
+            "hint": "Does 'honestly' sound warm or sharp?",
+            "explanation": "Softening 'honestly' slightly and then easing down on 'not' sounds like the speaker is trusting the friend with the truth. Bluntness would cut 'honestly' short and clip the end."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L118_Q2",
+            "instruction": "A colleague asks what you think of the draft.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Frankly, it's a mess.",
+            "textToSpeak": "Frankly, it's a mess.",
+            "options": [
+                "Blunt and unsoftened",
+                "Gentle and sympathetic",
+                "Genuinely glad",
+                "Simple, edge-free kindness"
+            ],
+            "correctAnswer": "Blunt and unsoftened",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Firm, flat fall on 'mess'.",
+            "meaningShift": "A firm fall with no cushioning is blunt; a softened contour would cushion the news.",
+            "hint": "Is there any cushioning in the sentence?",
+            "explanation": "Falling firmly and flatly on 'mess', with no softening on 'frankly', leaves the criticism exposed. A gentle version would lift slightly, spreading the weight and sounding apologetic."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L118_Q3",
+            "instruction": "Your colleague missed a deadline, but a warning had been given to the team.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "To be fair, she did warn us.",
+            "textToSpeak": "To be fair, she did warn us.",
+            "options": [
+                "Genuinely impressed",
+                "A defensive, blaming excuse",
+                "Sales pressure",
+                "A fair-minded concession"
+            ],
+            "correctAnswer": "A fair-minded concession",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Slower 'fair', calm peak on 'warn'.",
+            "meaningShift": "A calm peak on 'warn' reads as fair-minded; a pushed 'she' would deflect blame.",
+            "hint": "How do the words 'to be fair' sound?",
+            "explanation": "Slowing down on 'fair' and letting 'warn' stand out calmly signals a speaker who wants to be accurate. A defensive tone would speed up and push 'she' as if shifting blame."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L119_Q1",
+            "instruction": "A friend announces she is getting married.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I'm so happy for you.",
+            "textToSpeak": "I'm so happy for you.",
+            "options": [
+                "'Can't' stands out: a firm, flat refusal",
+                "Tinged with envy",
+                "Wholehearted",
+                "A simple observation"
+            ],
+            "correctAnswer": "Wholehearted",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Lift and sustain on 'happy', warm fall on 'you'.",
+            "meaningShift": "A lifted, lingering 'happy' sounds wholehearted; a flat, heavy contour would sound strained.",
+            "hint": "Does 'happy' lift and linger, or sink?",
+            "explanation": "Lifting and sustaining 'happy', then falling warmly on 'you', makes the feeling sound complete. A thread of envy would flatten 'happy' and make 'you' land a little heavily, as though the words took effort."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L119_Q2",
+            "instruction": "A colleague has been given a promotion you wanted.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Well, good for her.",
+            "textToSpeak": "Well, good for her.",
+            "options": [
+                "Impatient agreement",
+                "Grudging",
+                "Applying gentle pressure",
+                "Warm"
+            ],
+            "correctAnswer": "Grudging",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Low 'good', trailing fall on 'her'.",
+            "meaningShift": "A low, trailing contour sounds grudging; a high, round one sounds warm.",
+            "hint": "Where does the voice sit on 'good'?",
+            "explanation": "Dropping 'good' to a low pitch and letting 'her' trail off gives the line a grudging edge. Warmth would use a high, round 'good' that rises before falling."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L119_Q3",
+            "instruction": "A neighbour tells you their son has won a place at university.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "That's wonderful news.",
+            "textToSpeak": "That's wonderful news.",
+            "options": [
+                "A hint to be quieter",
+                "Politely glad",
+                "Genuinely glad",
+                "A compliment with a sting"
+            ],
+            "correctAnswer": "Genuinely glad",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Wide range on 'wonderful', long fall on 'news'.",
+            "meaningShift": "A wide, long contour sounds glad; a narrow, quick one sounds courteous.",
+            "hint": "How much range does 'wonderful' get?",
+            "explanation": "Range on 'wonderful', maybe a lift on the first syllable and a long fall, makes the gladness sound unforced. Polite gladness uses a narrower range and arrives faster, with the words doing most of the work."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L120_Q1",
+            "instruction": "You ask your manager about a pay rise.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I'll see what I can do.",
+            "textToSpeak": "I'll see what I can do.",
+            "options": [
+                "A solemn promise",
+                "A firm promise to act on it",
+                "Truly unhurried",
+                "Noncommittal, probably no"
+            ],
+            "correctAnswer": "Noncommittal, probably no",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Flat fall on 'do' with no weight on 'can'.",
+            "meaningShift": "A flat finish is a polite deflection; a weighted, firm one would be a commitment.",
+            "hint": "Does the end feel like a commitment?",
+            "explanation": "Finishing flat on 'do', with no emphasis on 'can', sounds like a polite way of avoiding a decision. A promise would give 'will' or 'do' weight and a firm landing."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L120_Q2",
+            "instruction": "A friend has just heard a secret from you.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Your secret's safe with me.",
+            "textToSpeak": "Your secret's safe with me.",
+            "options": [
+                "A casual quip",
+                "Truly unhurried",
+                "A solemn promise",
+                "Pleasantly surprised"
+            ],
+            "correctAnswer": "A solemn promise",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Slow pace, firm low fall on 'me'.",
+            "meaningShift": "A slow, low fall promises; a brisk, bouncy one jokes.",
+            "hint": "How serious is the pace?",
+            "explanation": "Slowing down and landing firmly low on 'me' gives the line the seriousness of a vow. A casual quip would be brisk and bouncy, with a smile in the voice."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L120_Q3",
+            "instruction": "A colleague listens to your weak rehearsal and answers kindly.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "It's coming along.",
+            "textToSpeak": "It's coming along.",
+            "options": [
+                "Sarcastic",
+                "Genuinely pleased",
+                "Kind but reserved",
+                "A fair-minded concession"
+            ],
+            "correctAnswer": "Kind but reserved",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Level 'coming', settled fall on 'along'.",
+            "meaningShift": "A level, settled contour is kind but reserved; a lift on 'coming' would be pleased.",
+            "hint": "Does 'along' lift, or settle?",
+            "explanation": "Keeping 'coming' level and settling on 'along' gives the sentence a tone of encouragement without enthusiasm. Real pleasure would lift on 'coming' and sound more energetic."
+        }
+    ]
+}

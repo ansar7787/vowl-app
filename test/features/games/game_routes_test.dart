@@ -61,6 +61,8 @@ import 'package:vowl/features/accent/dialect_drill/presentation/pages/dialect_dr
 import 'package:vowl/features/accent/dialect_drill/presentation/pages/dialect_drill_practice_screen.dart';
 import 'package:vowl/features/accent/connected_speech/presentation/pages/connected_speech_learn_screen.dart';
 import 'package:vowl/features/accent/connected_speech/presentation/pages/connected_speech_practice_screen.dart';
+import 'package:vowl/features/accent/pitch_modulation/presentation/pages/pitch_modulation_learn_screen.dart';
+import 'package:vowl/features/accent/pitch_modulation/presentation/pages/pitch_modulation_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -933,6 +935,24 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<ConnectedSpeechPracticeScreen>());
+    });
+
+    test('resolves /learn route for pitchModulation', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state =
+          createMockState('/learn?category=accent&gameType=pitchModulation&level=5');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<PitchModulationLearnScreen>());
+    });
+
+    test('resolves /practice route for pitchModulation', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state =
+          createMockState('/practice?category=accent&gameType=pitchModulation&level=5');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<PitchModulationPracticeScreen>());
     });
   });
 }

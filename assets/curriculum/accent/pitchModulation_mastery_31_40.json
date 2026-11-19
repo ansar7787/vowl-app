@@ -1,0 +1,548 @@
+{
+    "gameType": "pitchModulation",
+    "batchIndex": 4,
+    "phase": "mastery",
+    "levels": "31-40",
+    "quests": [
+        {
+            "id": "ACC_PITCHMODULATION_L31_Q1",
+            "instruction": "Someone reads out a shopping list.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Milk, eggs, and a loaf of bread.",
+            "textToSpeak": "Milk, eggs, and a loaf of bread.",
+            "options": [
+                "Lifts on each item, falls on the last",
+                "Falls on every item, one by one"
+            ],
+            "correctAnswer": "Lifts on each item, falls on the last",
+            "correctAnswerIndex": 0,
+            "hint": "Listen to what happens after 'milk' and after 'eggs'. Does the voice sound finished?",
+            "explanation": "Items in a list normally lift slightly at each comma to say the list isn't done, and the last item falls to close it. Falling on every item would make each one sound like a separate, finished sentence.",
+            "modulationPattern": "Rising at list-internal boundaries, falling on the final item.",
+            "meaningShift": "Lifts join the items into one list; falls on each would split them into unrelated statements."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L31_Q2",
+            "instruction": "You are dictating a phone number so someone can write it down.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "It's five five five, oh one four seven.",
+            "textToSpeak": "It's five five five, oh one four seven.",
+            "options": [
+                "The same fall after every group",
+                "Small lifts after each group, a fall at the end"
+            ],
+            "correctAnswer": "Small lifts after each group, a fall at the end",
+            "correctAnswerIndex": 1,
+            "hint": "The listener has to keep writing. Which groups sound as if more is coming?",
+            "explanation": "When you dictate numbers in groups, a slight rise after each group tells the writer to hold on because there are more digits. The fall on the last group signals the end. Falling on every group would make the listener think the number had finished.",
+            "modulationPattern": "Rising at group boundaries with a final fall.",
+            "meaningShift": "Small lifts show the number is still going; repeated falls would signal an early ending."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L31_Q3",
+            "instruction": "A countdown at a starting line.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Ready, steady, go!",
+            "textToSpeak": "Ready, steady, go!",
+            "options": [
+                "Builds on the first two, 'go' peaks and falls",
+                "Falls on the first two, 'go' rises"
+            ],
+            "correctAnswer": "Builds on the first two, 'go' peaks and falls",
+            "correctAnswerIndex": 0,
+            "hint": "Where does the strongest energy land: at the start or on the last word?",
+            "explanation": "Tension builds as the first two words carry the pitch upward, and 'go' is the release: a high start that drops. Falling on the first two would make them sound like they're winding down before the signal.",
+            "modulationPattern": "Rising across the first two words, then a peak and fall on 'go'.",
+            "meaningShift": "A build-up followed by a peak on 'go' creates a signal; a fall then rise would sound anticlimactic."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L32_Q1",
+            "instruction": "Someone across the street has dropped their wallet.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Excuse me!",
+            "textToSpeak": "Excuse me!",
+            "options": [
+                "High start, projected: getting attention",
+                "Low, close start: a quiet interruption"
+            ],
+            "correctAnswer": "High start, projected: getting attention",
+            "correctAnswerIndex": 0,
+            "hint": "How far does the voice seem to travel?",
+            "explanation": "To reach someone at a distance, speakers raise the starting pitch and make it carry, so the voice begins near the top. A low, close start is for someone standing next to you and wouldn't get across the street.",
+            "modulationPattern": "High pitch onset with a wide, projected contour on 'excuse'.",
+            "meaningShift": "A high start reaches across distance; a low start works for someone nearby."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L32_Q2",
+            "instruction": "You lean over to ask a stranger on a quiet train.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Sorry to bother you.",
+            "textToSpeak": "Sorry to bother you.",
+            "options": [
+                "A high, sharp start: attention-grabbing",
+                "A lower, gentler start: discreet"
+            ],
+            "correctAnswer": "A lower, gentler start: discreet",
+            "correctAnswerIndex": 1,
+            "hint": "Consider what the speaker is trying to avoid doing to the other passengers.",
+            "explanation": "In a quiet carriage a lower and softer start keeps the interruption private and polite. A high, sharp start would draw glances from everyone and could sound alarming instead of considerate.",
+            "modulationPattern": "Lower pitch onset with a narrow range across the phrase.",
+            "meaningShift": "A gentle start keeps the apology private; a sharp start would call attention to it."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L32_Q3",
+            "instruction": "You see a cyclist about to hit a pothole.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Look out!",
+            "textToSpeak": "Look out!",
+            "options": [
+                "Jumps high at once",
+                "Builds up gradually"
+            ],
+            "correctAnswer": "Jumps high at once",
+            "correctAnswerIndex": 0,
+            "hint": "How long does the voice take to reach its top?",
+            "explanation": "Warnings need to register instantly, so pitch leaps to its high point on the first word. A gradual build would waste the moment the listener needs to react.",
+            "modulationPattern": "Abrupt high onset with immediate peak on 'look'.",
+            "meaningShift": "An immediate leap signals urgency; a slow build would sound calm and too late."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L33_Q1",
+            "instruction": "A stranger holds the door open.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Thanks, that's very kind.",
+            "textToSpeak": "Thanks, that's very kind.",
+            "options": [
+                "Small, tidy movement: polite routine",
+                "Big, warm movement: heartfelt gratitude"
+            ],
+            "correctAnswer": "Small, tidy movement: polite routine",
+            "correctAnswerIndex": 0,
+            "hint": "Judge whether the voice puts any extra effort into 'kind'.",
+            "explanation": "Everyday politeness typically uses a modest, controlled range, where the words carry the meaning and the tune stays tidy. Wide movement would suggest the gesture had touched the speaker more than a held door normally does.",
+            "modulationPattern": "Narrow range with a small fall on 'kind'.",
+            "meaningShift": "Small movement sounds courteous and routine; big movement sounds deeply grateful."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L33_Q2",
+            "instruction": "A friend has covered your shift for a week.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "You're the best!",
+            "textToSpeak": "You're the best!",
+            "options": [
+                "A slight fall: casual thanks",
+                "A big hill: real gratitude"
+            ],
+            "correctAnswer": "A big hill: real gratitude",
+            "correctAnswerIndex": 1,
+            "hint": "How much of the voice's range does this use?",
+            "explanation": "Big appreciation tends to use big movement, so the pitch rises high on 'best' and drops back. A slight fall could be a friendly throwaway line, but it would undersell what the friend has done.",
+            "modulationPattern": "Wide rising-falling on 'best'.",
+            "meaningShift": "A big hill matches heartfelt thanks; a slight fall would sound offhand."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L33_Q3",
+            "instruction": "You are leaving a colleague you will see tomorrow.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "See you tomorrow.",
+            "textToSpeak": "See you tomorrow.",
+            "options": [
+                "Narrow, falling: ordinary goodbye",
+                "Wide, lifted: looking forward to it"
+            ],
+            "correctAnswer": "Narrow, falling: ordinary goodbye",
+            "correctAnswerIndex": 0,
+            "hint": "Would the speaker sound any different if they said this every day?",
+            "explanation": "An everyday goodbye needs very little pitch movement. The narrow fall on 'tomorrow' treats the meeting as a given. A wide, lifted version would suggest something special is planned.",
+            "modulationPattern": "Narrow fall on 'tomorrow'.",
+            "meaningShift": "A narrow fall sounds routine; a wide lift would suggest anticipation."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L34_Q1",
+            "instruction": "You are checking your calendar out loud.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Let me see.",
+            "textToSpeak": "Let me see.",
+            "options": [
+                "Fully dropped: finished speaking",
+                "Held steady: keeping the floor"
+            ],
+            "correctAnswer": "Held steady: keeping the floor",
+            "correctAnswerIndex": 1,
+            "hint": "Decide whether the voice sounds like it has finished, or like it is still busy.",
+            "explanation": "When speakers are thinking aloud, the pitch tends to stay level or lightly rise, which tells others not to jump in. A full drop would signal a complete thought and invite a response.",
+            "modulationPattern": "Level or slightly rising contour holding the turn.",
+            "meaningShift": "A held pitch says 'I'm still working'; a full fall says 'that's all'."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L34_Q2",
+            "instruction": "A presenter begins a list of steps.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Okay, so first, we log in.",
+            "textToSpeak": "Okay, so first, we log in.",
+            "options": [
+                "Falls on 'first': item finished",
+                "Lifts on 'first': more to come"
+            ],
+            "correctAnswer": "Lifts on 'first': more to come",
+            "correctAnswerIndex": 1,
+            "hint": "Listen at the comma after 'first'.",
+            "explanation": "The lift on 'first' works like a promise that a sequence has started, and it holds the listener's attention. Dropping there would make 'first' sound like a complete statement, leaving 'we log in' oddly detached.",
+            "modulationPattern": "Rise at the boundary after 'first', final fall on 'in'.",
+            "meaningShift": "A lift sets up a sequence; a fall would cut the ordinal off from its step."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L34_Q3",
+            "instruction": "A cashier hands over your change.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Right, that's everything.",
+            "textToSpeak": "Right, that's everything.",
+            "options": [
+                "Held level: still working it out",
+                "Deep fall: handing the turn back"
+            ],
+            "correctAnswer": "Deep fall: handing the turn back",
+            "correctAnswerIndex": 1,
+            "hint": "Where does the voice rest by the end?",
+            "explanation": "That deep fall on 'everything' says the transaction is complete and it's the customer's turn to move on. A held level would hang, leaving the customer waiting for the next piece of information.",
+            "modulationPattern": "Falling to a low finish on 'everything'.",
+            "meaningShift": "A deep fall closes the exchange; a held pitch leaves it unfinished."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L35_Q1",
+            "instruction": "Someone finally explains why the train is delayed.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Oh, I see.",
+            "textToSpeak": "Oh, I see.",
+            "options": [
+                "Falls: understanding lands",
+                "Rises: still not clear"
+            ],
+            "correctAnswer": "Falls: understanding lands",
+            "correctAnswerIndex": 0,
+            "hint": "Notice whether the speaker sounds like the mystery is now solved.",
+            "explanation": "On 'see', the fall shows that the information has been received and makes sense. A rise would suggest the speaker is still working it out or hoping for more detail.",
+            "modulationPattern": "Falling on 'see' in a reactive phrase.",
+            "meaningShift": "A fall shows the penny has dropped; a rise suggests it hasn't."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L35_Q2",
+            "instruction": "A colleague says, 'I've got some news.'",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Oh?",
+            "textToSpeak": "Oh?",
+            "options": [
+                "Falling: closing it off",
+                "Rising: inviting more"
+            ],
+            "correctAnswer": "Rising: inviting more",
+            "correctAnswerIndex": 1,
+            "hint": "Would the speaker like to hear the rest?",
+            "explanation": "Said with a lift, 'oh' invites the colleague to go on, and shows curiosity. A falling 'oh' can sound like a shrug, as though the news was of little interest.",
+            "modulationPattern": "Rising on a one-word interjection used as a prompt.",
+            "meaningShift": "A rise shows curiosity; a fall would sound uninterested."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L35_Q3",
+            "instruction": "A friend tells you her flight has been cancelled.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Oh no!",
+            "textToSpeak": "Oh no!",
+            "options": [
+                "Slow slide: resigned sigh",
+                "Quick hill: real dismay"
+            ],
+            "correctAnswer": "Quick hill: real dismay",
+            "correctAnswerIndex": 1,
+            "hint": "Listen to how fast the pitch changes at the start.",
+            "explanation": "Quick movement up and down suits an immediate emotional reaction, since sympathy comes out in a burst. A slow slide suggests the speaker has been expecting bad news and has accepted it.",
+            "modulationPattern": "Rapid rising-falling on 'no'.",
+            "meaningShift": "A quick hill sounds like an instant reaction; a slow slide sounds worn down."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L36_Q1",
+            "instruction": "You lent someone a pen and they thank you.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "No problem.",
+            "textToSpeak": "No problem.",
+            "options": [
+                "Light fall: easy, unbothered",
+                "Dip and lift: a bit begrudging"
+            ],
+            "correctAnswer": "Light fall: easy, unbothered",
+            "correctAnswerIndex": 0,
+            "hint": "Does the reply feel completely finished?",
+            "explanation": "Light falls close the exchange with no fuss, so the speaker seems relaxed. A dip and lift can leave a shadow of doubt, as if there had been a problem after all.",
+            "modulationPattern": "Falling on 'problem' with a narrow range.",
+            "meaningShift": "A light fall sounds easygoing; a dip and lift can hint at reluctance."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L36_Q2",
+            "instruction": "A delivery driver hands you a parcel.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Thanks a lot.",
+            "textToSpeak": "Thanks a lot.",
+            "options": [
+                "Wide hill: warm thanks",
+                "Brisk fall: routine thanks"
+            ],
+            "correctAnswer": "Brisk fall: routine thanks",
+            "correctAnswerIndex": 1,
+            "hint": "Would you expect the driver to remember this reply?",
+            "explanation": "Everyday transactions call for a quick, tidy fall, since the thanks is a courtesy and not an expression of deep feeling. A wide hill would be more suited to a favour, something that cost the other person effort.",
+            "modulationPattern": "Narrow falling contour across the phrase.",
+            "meaningShift": "A brisk fall suits a routine courtesy; a wide hill would sound more personal."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L36_Q3",
+            "instruction": "A friend thanks you for a lift to the airport at 5 a.m.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Any time.",
+            "textToSpeak": "Any time.",
+            "options": [
+                "Warm hill: sincerely means it",
+                "Brisk fall: closing the exchange"
+            ],
+            "correctAnswer": "Warm hill: sincerely means it",
+            "correctAnswerIndex": 0,
+            "hint": "Check whether the pitch puts a little extra into 'any'.",
+            "explanation": "Extra movement on 'any' suggests the offer is meant, and the listener hears 'call me again'. A brisk fall would be accurate but perfunctory and could sound like a reflex reply.",
+            "modulationPattern": "Rising-falling with a peak on 'any'.",
+            "meaningShift": "A warm hill sounds like a real offer; a brisk fall sounds like a habit."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L37_Q1",
+            "instruction": "Listen to where the main peak of this everyday remark falls.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I need a coffee.",
+            "textToSpeak": "I need a coffee.",
+            "options": [
+                "Highest on 'coffee'",
+                "Highest on 'need'"
+            ],
+            "correctAnswer": "Highest on 'coffee'",
+            "correctAnswerIndex": 0,
+            "hint": "Ask which word tells the listener what is needed.",
+            "explanation": "In a neutral statement the pitch peak sits on the last content word, which carries the new information. A peak on 'need' would sound like a reply to someone who said 'you don't need one'.",
+            "modulationPattern": "Main pitch peak on the final content word 'coffee'.",
+            "meaningShift": "A peak on 'coffee' gives the new information; a peak on 'need' would stress the need itself."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L37_Q2",
+            "instruction": "Someone hears their team has won.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "We won!",
+            "textToSpeak": "We won!",
+            "options": [
+                "A steady, narrow hum",
+                "A quick, wide peak then a drop"
+            ],
+            "correctAnswer": "A quick, wide peak then a drop",
+            "correctAnswerIndex": 1,
+            "hint": "Is there any sense of a jump in this word?",
+            "explanation": "Excited news pushes the pitch high and fast, and then it falls away. A narrow, steady delivery would suit calm reporting, not a celebration.",
+            "modulationPattern": "Wide rising-falling on a single stressed syllable.",
+            "meaningShift": "A wide peak conveys excitement; a narrow hum would sound like an update."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L37_Q3",
+            "instruction": "Someone sees you talking to a stranger and asks who it is.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "He's my brother.",
+            "textToSpeak": "He's my brother.",
+            "options": [
+                "Highest on 'brother'",
+                "Highest on 'my'"
+            ],
+            "correctAnswer": "Highest on 'brother'",
+            "correctAnswerIndex": 0,
+            "hint": "Which word gives the answer to the question that was asked?",
+            "explanation": "Because the question asks who he is, and the answer is 'brother', that is where the pitch peaks. A peak on 'my' would emphasise ownership, as if someone had suggested he belonged to someone else.",
+            "modulationPattern": "Peak on 'brother' as the new information.",
+            "meaningShift": "A peak on 'brother' answers the question; a peak on 'my' would correct a claim about who he belongs to."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L38_Q1",
+            "instruction": "You have been waiting at the station and see your friend step off the train.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "She's here!",
+            "textToSpeak": "She's here!",
+            "options": [
+                "Level fall: routine report",
+                "Rise-fall: pleased discovery"
+            ],
+            "correctAnswer": "Rise-fall: pleased discovery",
+            "correctAnswerIndex": 1,
+            "hint": "Judge whether the sentence sounds like news to the speaker.",
+            "explanation": "That peak on 'here', then a fall, gives the sentence the lift of a pleased discovery. A level, low fall would suit a flat report, like ticking someone off a list.",
+            "modulationPattern": "Rising-falling with a peak on 'here'.",
+            "meaningShift": "Rise-fall sounds like relief and delight; a level fall sounds like a check-list."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L38_Q2",
+            "instruction": "You were told Tom had already left, then see him at his desk.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "He's still here?",
+            "textToSpeak": "He's still here?",
+            "options": [
+                "Falling: matter-of-fact remark",
+                "Rising: surprised, checking"
+            ],
+            "correctAnswer": "Rising: surprised, checking",
+            "correctAnswerIndex": 1,
+            "hint": "Would the speaker be startled by a 'yes'?",
+            "explanation": "The lift on 'here' turns the phrase into a check that shows surprise, because it contradicts what the speaker was told. A fall would treat his presence as unremarkable.",
+            "modulationPattern": "Rising on 'here' in a declarative-form question.",
+            "meaningShift": "A rise questions a surprising fact; a fall just states it."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L38_Q3",
+            "instruction": "You glance at the clock in an empty meeting room.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "They're late.",
+            "textToSpeak": "They're late.",
+            "options": [
+                "A firm fall on 'late': mild annoyance",
+                "A light fall on 'late': neutral remark"
+            ],
+            "correctAnswer": "A firm fall on 'late': mild annoyance",
+            "correctAnswerIndex": 0,
+            "hint": "How weighty does 'late' sound?",
+            "explanation": "Deeper, firmer falls on 'late' give weight to the observation and can suggest the speaker is a little bothered. A light fall makes the same words sound like a passing note.",
+            "modulationPattern": "Falling on 'late' with a deep drop.",
+            "meaningShift": "A firm fall implies irritation; a light fall stays neutral."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L39_Q1",
+            "instruction": "A colleague passes you at the lift.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "How are you doing?",
+            "textToSpeak": "How are you doing?",
+            "options": [
+                "Quick, light fall: a greeting formula",
+                "Slow rise: a real enquiry"
+            ],
+            "correctAnswer": "Quick, light fall: a greeting formula",
+            "correctAnswerIndex": 0,
+            "hint": "Would the speaker stop walking to hear the answer?",
+            "explanation": "Passing greetings are usually quick, with a light fall, because they work as a social gesture. A slower, lifted delivery would invite an answer and give the listener time to give one.",
+            "modulationPattern": "Fast, falling contour with minimal range.",
+            "meaningShift": "A quick fall works as a hello; a slow rise asks for an actual answer."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L39_Q2",
+            "instruction": "You know your friend's father was in hospital last week.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "How's your dad doing?",
+            "textToSpeak": "How's your dad doing?",
+            "options": [
+                "Quick, falling: routine chat",
+                "Softer, rising: real concern"
+            ],
+            "correctAnswer": "Softer, rising: real concern",
+            "correctAnswerIndex": 1,
+            "hint": "Would the speaker be listening carefully to the answer?",
+            "explanation": "With the context making the question meaningful, a softer lift on 'doing' leaves space for a real answer. A quick fall would sound like a formula and might feel dismissive when the father has been ill.",
+            "modulationPattern": "Rising on 'doing' with slower pace.",
+            "meaningShift": "A soft rise signals care and time to answer; a quick fall would feel casual."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L39_Q3",
+            "instruction": "You are leaving the office on a Friday.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Have a good one.",
+            "textToSpeak": "Have a good one.",
+            "options": [
+                "Unhurried fall: warm and settled",
+                "Sharp lift: bright and rushed"
+            ],
+            "correctAnswer": "Unhurried fall: warm and settled",
+            "correctAnswerIndex": 0,
+            "hint": "Notice whether the voice sounds like it is hurrying out of the door.",
+            "explanation": "Slow, unhurried falls give the wish a relaxed, friendly finish. A sharp lift would sound eager to leave and slightly hurried, which could make the good wishes sound automatic.",
+            "modulationPattern": "Slow falling contour ending on 'one'.",
+            "meaningShift": "An unhurried fall sounds warm; a sharp lift sounds hurried."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L40_Q1",
+            "instruction": "Politely asking permission in a shared room.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Would you mind if I opened the window?",
+            "textToSpeak": "Would you mind if I opened the window?",
+            "options": [
+                "Falls at the end: decision already made",
+                "Lifts near the end: leaves you free to say no"
+            ],
+            "correctAnswer": "Lifts near the end: leaves you free to say no",
+            "correctAnswerIndex": 1,
+            "hint": "Consider how much room the listener is given to refuse.",
+            "explanation": "Near the end, a lift makes the question feel open, so the other person is free to say no. A fall would sound as if the speaker were informing, not asking.",
+            "modulationPattern": "Rising at the end of a polite yes/no request.",
+            "meaningShift": "A lift leaves room to decline; a fall sounds like an announcement."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L40_Q2",
+            "instruction": "A hotel receptionist declines a booking.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I'm afraid we're fully booked.",
+            "textToSpeak": "I'm afraid we're fully booked.",
+            "options": [
+                "Lifts: leaving the door open",
+                "Falls: regretful but final"
+            ],
+            "correctAnswer": "Falls: regretful but final",
+            "correctAnswerIndex": 1,
+            "hint": "Hear whether the speaker sounds as if a different answer is possible.",
+            "explanation": "'I'm afraid' already carries regret, so a fall on 'booked' finishes the sentence firmly. A lifted ending would keep the topic open and could imply that rooms might appear.",
+            "modulationPattern": "Falling on 'booked' after a softening opener.",
+            "meaningShift": "A fall gives a polite but final no; a lift would suggest room to negotiate."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L40_Q3",
+            "instruction": "A friend describes a terrible journey home.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "It could have been worse.",
+            "textToSpeak": "It could have been worse.",
+            "options": [
+                "Dip and lift: consoling, yet it still wasn't good",
+                "Peak and fall: relieved, it was fine"
+            ],
+            "correctAnswer": "Dip and lift: consoling, yet it still wasn't good",
+            "correctAnswerIndex": 0,
+            "hint": "Judge whether the speaker is really saying everything was fine.",
+            "explanation": "On 'worse', the dip and lift hint at reservations, so the listener hears sympathy without dismissal. A peak and fall would sound relieved and satisfied that things went well.",
+            "modulationPattern": "Falling-rising on 'worse'.",
+            "meaningShift": "A dip and lift offers comfort but acknowledges the difficulty; a peak and fall reads as relief."
+        }
+    ]
+}

@@ -1,0 +1,548 @@
+{
+    "gameType": "pitchModulation",
+    "batchIndex": 2,
+    "phase": "mastery",
+    "levels": "11-20",
+    "quests": [
+        {
+            "id": "ACC_PITCHMODULATION_L11_Q1",
+            "instruction": "You need to borrow something. Listen to where the question finishes.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Do you have a pen?",
+            "textToSpeak": "Do you have a pen?",
+            "options": [
+                "Lifts through the last word",
+                "Drops through the last word"
+            ],
+            "correctAnswer": "Lifts through the last word",
+            "correctAnswerIndex": 0,
+            "hint": "Follow 'pen' from its first sound to its last. Is the voice heading up or coming to rest?",
+            "explanation": "Yes/no questions typically climb on the final stressed word, and that lift invites a quick answer. If 'pen' dropped instead, the sentence would sound cool and businesslike, closer to a demand than a request.",
+            "modulationPattern": "Rising: pitch climbs on 'pen' at the end of a yes/no question.",
+            "meaningShift": "A lifted finish sounds open and easy to answer; a dropped finish would sound flat, almost like a demand."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L11_Q2",
+            "instruction": "A student asks about the schedule. Listen to the ending.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "What time does it start?",
+            "textToSpeak": "What time does it start?",
+            "options": [
+                "Ends by climbing up",
+                "Ends by settling down"
+            ],
+            "correctAnswer": "Ends by settling down",
+            "correctAnswerIndex": 1,
+            "hint": "Wait for 'start' and decide whether the voice lands there or stays hopeful.",
+            "explanation": "Questions built around a word like 'what' already announce themselves, so the voice is free to fall and land on 'start'. Speakers do sometimes lift the end to sound friendlier, but the falling version is the neutral, direct one.",
+            "modulationPattern": "Falling: pitch drops on 'start' at the end of a question-word question.",
+            "meaningShift": "A fall sounds direct and neutral; a lift would sound softer and more casual."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L11_Q3",
+            "instruction": "You are waiting at the door while a friend looks for their keys.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Ready when you are.",
+            "textToSpeak": "Ready when you are.",
+            "options": [
+                "It lifts and hangs in the air",
+                "It comes down and settles"
+            ],
+            "correctAnswer": "It comes down and settles",
+            "correctAnswerIndex": 1,
+            "hint": "Judge whether the last word sounds like a full stop, or like a light prompt.",
+            "explanation": "Relaxed statements like this usually land with a low fall on 'are', which sounds patient and unhurried. Lifting the ending would turn it into a nudge, almost asking whether the friend is ready yet.",
+            "modulationPattern": "Falling: pitch drops through 'are' to a low finish.",
+            "meaningShift": "A fall sounds calm and patient; a lift would sound like a gentle prompt."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L12_Q1",
+            "instruction": "Someone knocks on your office door. Listen to how you answer.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Yes?",
+            "textToSpeak": "Yes?",
+            "options": [
+                "Falling: confirming an answer",
+                "Rising: inviting them to speak"
+            ],
+            "correctAnswer": "Rising: inviting them to speak",
+            "correctAnswerIndex": 1,
+            "hint": "It is only one word. What does the speaker hope happens next?",
+            "explanation": "Lifted, 'yes?' works like an open door: the speaker hands the turn to the visitor. A falling 'yes.' would be a reply to something already asked, such as 'Are you the manager?'",
+            "modulationPattern": "Rising on a one-word prompt that hands over the turn.",
+            "meaningShift": "Rising 'yes?' means 'go ahead, what is it?'; falling 'yes.' means 'that's right'."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L12_Q2",
+            "instruction": "A friend explains how to log in. You want them to know it landed.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Got it.",
+            "textToSpeak": "Got it.",
+            "options": [
+                "Falling: closing the point",
+                "Rising: asking for a check"
+            ],
+            "correctAnswer": "Falling: closing the point",
+            "correctAnswerIndex": 0,
+            "hint": "Hear whether the speaker wants another explanation, or is the speaker ready to move on.",
+            "explanation": "Acknowledgements like 'got it' normally fall, because the listener is signalling that nothing more is needed. A rising version would turn it into a question about whether the explanation was understood.",
+            "modulationPattern": "Falling: pitch drops through 'it' to close the exchange.",
+            "meaningShift": "A fall shows the message has landed; a rise would ask the other person to confirm."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L12_Q3",
+            "instruction": "A cashier has just scanned your last item.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Anything else?",
+            "textToSpeak": "Anything else?",
+            "options": [
+                "Lifts at the end, staying open",
+                "Falls at the end, sounding final"
+            ],
+            "correctAnswer": "Lifts at the end, staying open",
+            "correctAnswerIndex": 0,
+            "hint": "Pay attention to whether the question sounds like it is still hoping for more, or ready to wrap up.",
+            "explanation": "Shop assistants asking 'anything else?' often lift on 'else' to keep the offer open and friendly. A fall would sound brisk, as if the speaker were ready to end the sale.",
+            "modulationPattern": "Rising on 'else' at the end of a short offer.",
+            "meaningShift": "A lift sounds welcoming and open; a fall sounds brisk and ready to finish."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L13_Q1",
+            "instruction": "You walk into a room where a friend is being celebrated.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Happy birthday!",
+            "textToSpeak": "Happy birthday!",
+            "options": [
+                "Dips first, then rises",
+                "Peaks early, then falls away"
+            ],
+            "correctAnswer": "Peaks early, then falls away",
+            "correctAnswerIndex": 1,
+            "hint": "Which syllable sounds tallest, and what happens right after it?",
+            "explanation": "This warm greeting peaks on 'hap-' and falls through 'birthday', a hill shape that carries goodwill. A valley shape would make the wish sound uncertain, as if the speaker were holding something back.",
+            "modulationPattern": "Rising-falling: peak on 'hap-' followed by a descent through 'birthday'.",
+            "meaningShift": "A hill shape sounds wholehearted; a valley shape would sound reserved."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L13_Q2",
+            "instruction": "A teammate has just finished a hard task.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Well done!",
+            "textToSpeak": "Well done!",
+            "options": [
+                "Climbs on 'well', falls on 'done'",
+                "Falls on 'well', climbs on 'done'"
+            ],
+            "correctAnswer": "Climbs on 'well', falls on 'done'",
+            "correctAnswerIndex": 0,
+            "hint": "Focus on the first word. Where does the voice go?",
+            "explanation": "Praise sounds sincere when the pitch rises into 'well' and comes down across 'done'. Reversed, the praise would feel lukewarm, as though a 'but' were on the way.",
+            "modulationPattern": "Rising-falling across two words: lift on 'well', descent on 'done'.",
+            "meaningShift": "Rise then fall sounds like real praise; fall then rise would sound half-hearted."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L13_Q3",
+            "instruction": "Someone steps off a plane and you meet them at arrivals.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Good to see you!",
+            "textToSpeak": "Good to see you!",
+            "options": [
+                "A hill: up on 'good', down after",
+                "A slope: down from the first word"
+            ],
+            "correctAnswer": "A hill: up on 'good', down after",
+            "correctAnswerIndex": 0,
+            "hint": "Notice whether the very first word is already at the bottom.",
+            "explanation": "Jumping up on 'good' and easing down through 'see you' gives the greeting some lift and warmth. Sloping down from the first word would make it sound calmer and more subdued, like a quiet reunion.",
+            "modulationPattern": "Rising-falling: initial peak on 'good' followed by a gradual descent.",
+            "meaningShift": "A hill shape sounds bright and pleased; a slope sounds quiet and subdued."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L14_Q1",
+            "instruction": "You are asked whether the plan will work.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I'm not sure.",
+            "textToSpeak": "I'm not sure.",
+            "options": [
+                "Rises, then falls at the end",
+                "Dips, then lifts at the end"
+            ],
+            "correctAnswer": "Dips, then lifts at the end",
+            "correctAnswerIndex": 1,
+            "hint": "Follow 'sure' specifically. Does it finish where it began?",
+            "explanation": "Using a fall-rise on 'sure' keeps the answer open: the speaker isn't saying no, only leaving room for doubt. A rise-fall would sound closed and definite, like the last word on the matter.",
+            "modulationPattern": "Falling-rising on 'sure': dip, then a lift at the end.",
+            "meaningShift": "Dip and lift leaves the doubt open; rise and fall would sound settled."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L14_Q2",
+            "instruction": "A friend asks whether the restaurant is expensive.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "It depends.",
+            "textToSpeak": "It depends.",
+            "options": [
+                "Down on 'de-', up through 'pends'",
+                "Up on 'de-', down through 'pends'"
+            ],
+            "correctAnswer": "Down on 'de-', up through 'pends'",
+            "correctAnswerIndex": 0,
+            "hint": "The stressed syllable is the first one. Which way does the voice go after it?",
+            "explanation": "The dip and rise signals that more information is coming, like 'it depends on what you order'. A hill would make 'it depends' sound like a full answer, with nothing left to add.",
+            "modulationPattern": "Falling-rising: dip on 'de-', lift through 'pends'.",
+            "meaningShift": "A dip and lift promises an explanation; a hill shape would close the answer."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L14_Q3",
+            "instruction": "Asked whether you have finished the book.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Sort of.",
+            "textToSpeak": "Sort of.",
+            "options": [
+                "A small dip and lift, ending open",
+                "Level all the way, ending flat"
+            ],
+            "correctAnswer": "A small dip and lift, ending open",
+            "correctAnswerIndex": 0,
+            "hint": "Decide whether the voice finishes where it began, or bounces back a little.",
+            "explanation": "On 'sort of', a slight dip and lift leaves the sentence hanging, so the listener senses a 'but' coming. A level voice would sound uninterested, not partial.",
+            "modulationPattern": "Falling-rising with a narrow range: slight dip, slight lift.",
+            "meaningShift": "A small lift signals 'partly, and there's more'; a flat finish would sound indifferent."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L15_Q1",
+            "instruction": "You are pointing at a bag in a café, checking politely.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Is that yours?",
+            "textToSpeak": "Is that yours?",
+            "options": [
+                "A sharp, high jump",
+                "A gentle rise"
+            ],
+            "correctAnswer": "A gentle rise",
+            "correctAnswerIndex": 1,
+            "hint": "Would you call the lift a nudge or a leap?",
+            "explanation": "Courteous checks use a modest lift, enough to mark the question without pressing. A sharp jump would make the speaker sound shocked or accusing, which is not what a polite check needs.",
+            "modulationPattern": "Rising with a small pitch excursion on 'yours'.",
+            "meaningShift": "A gentle rise sounds courteous; a sharp jump would sound shocked or accusatory."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L15_Q2",
+            "instruction": "Something amazing just happened at a football match.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Did you see that?",
+            "textToSpeak": "Did you see that?",
+            "options": [
+                "A mild, low rise",
+                "A big, high rise"
+            ],
+            "correctAnswer": "A big, high rise",
+            "correctAnswerIndex": 1,
+            "hint": "How far above its starting point does the voice end up?",
+            "explanation": "Excitement stretches the pitch range, so 'that' lands far above where the sentence started. A mild rise would sound merely curious, as if the speaker were checking a small fact.",
+            "modulationPattern": "Rising with a wide pitch excursion on 'that'.",
+            "meaningShift": "A big rise shares excitement; a mild rise would sound like a routine check."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L15_Q3",
+            "instruction": "A colleague describes a training workshop.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "It was okay.",
+            "textToSpeak": "It was okay.",
+            "options": [
+                "A slight fall that barely dips",
+                "A deep fall that plunges"
+            ],
+            "correctAnswer": "A slight fall that barely dips",
+            "correctAnswerIndex": 0,
+            "hint": "Listen to how far 'okay' sits below the start of the sentence.",
+            "explanation": "Slight falls suit lukewarm evaluations: 'okay' rests just below where it began. A deep fall carries more weight and can sound like a firm negative opinion.",
+            "modulationPattern": "Falling with a small pitch drop on 'okay'.",
+            "meaningShift": "A slight fall sounds lukewarm and easygoing; a deep fall would sound weightier and more negative."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L16_Q1",
+            "instruction": "You are giving directions to a driver. Listen for what happens at each pause.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Straight ahead, left at the light, then the second door.",
+            "textToSpeak": "Straight ahead, left at the light, then the second door.",
+            "options": [
+                "Falls at each comma, including the end",
+                "Lifts at each comma, falls at the end"
+            ],
+            "correctAnswer": "Lifts at each comma, falls at the end",
+            "correctAnswerIndex": 1,
+            "hint": "Count the pauses. Does the speaker sound finished after each one?",
+            "explanation": "In a sequence of steps the voice tends to lift at each comma, telling the listener that more is coming. Only the last step falls. Dropping at every pause would make each step sound like a separate, finished instruction.",
+            "modulationPattern": "Repeated rises at phrase boundaries, with a final fall.",
+            "meaningShift": "Rises link the steps into one journey; falls at every pause would chop them into separate sentences."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L16_Q2",
+            "instruction": "You are about to board and update a friend.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I'll call you when we land.",
+            "textToSpeak": "I'll call you when we land.",
+            "options": [
+                "One smooth fall across the sentence",
+                "A lift on 'you' before the final fall"
+            ],
+            "correctAnswer": "One smooth fall across the sentence",
+            "correctAnswerIndex": 0,
+            "hint": "Is there a point midway where the voice sounds like it pauses to breathe?",
+            "explanation": "With no comma and no clause break the speaker can run the whole sentence together and let a single fall arrive on 'land'. A lift on 'you' would make the sentence sound as if it were split in two.",
+            "modulationPattern": "One nuclear fall on 'land' with no internal boundary rise.",
+            "meaningShift": "One smooth fall sounds fluent and unified; a mid-sentence lift would sound like two thoughts."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L16_Q3",
+            "instruction": "A host opens a meeting.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Good morning, everyone. Let's begin.",
+            "textToSpeak": "Good morning, everyone. Let's begin.",
+            "options": [
+                "One long fall stretched over both",
+                "Two separate falls, one per sentence"
+            ],
+            "correctAnswer": "Two separate falls, one per sentence",
+            "correctAnswerIndex": 1,
+            "hint": "Compare the pitch at the very end of the first sentence with the pitch at the start of 'let's'.",
+            "explanation": "Each sentence is a separate thought, so each one settles at its end and pitch resets before 'let's'. A single stretched fall would blur them together and make the greeting sound like part of the instruction.",
+            "modulationPattern": "Falling at the end of each sentence with a pitch reset between them.",
+            "meaningShift": "Two falls mark two clear thoughts; one long fall would blur the greeting and the instruction."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L17_Q1",
+            "instruction": "Your manager says the deadline is tomorrow. You react.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Tomorrow?",
+            "textToSpeak": "Tomorrow?",
+            "options": [
+                "Falling: stating when it happens",
+                "Rising: surprised, checking the date"
+            ],
+            "correctAnswer": "Rising: surprised, checking the date",
+            "correctAnswerIndex": 1,
+            "hint": "Ask yourself whether the speaker already accepts the information or is testing it.",
+            "explanation": "Lifted, 'tomorrow' repeats the word back as a question and can show surprise or a need to double-check. A falling 'tomorrow.' would simply answer a question like 'when is it due?'.",
+            "modulationPattern": "Rising on a repeated single word used as an echo check.",
+            "meaningShift": "Rising echoes the word to check it; falling would just state the answer."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L17_Q2",
+            "instruction": "You are asked which folder is yours and you are guessing.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "The blue one.",
+            "textToSpeak": "The blue one.",
+            "options": [
+                "Lifts, offering a guess",
+                "Falls, giving a firm answer"
+            ],
+            "correctAnswer": "Lifts, offering a guess",
+            "correctAnswerIndex": 0,
+            "hint": "Would this speaker be surprised to hear 'yes, that's right'?",
+            "explanation": "At the end of a statement, a rise can turn it into an offered guess, as if the speaker were asking 'is it the blue one?'. A fall would sound certain and would suit someone who knows.",
+            "modulationPattern": "Rising at the end of a declarative used as a tentative answer.",
+            "meaningShift": "A lift asks for confirmation; a fall states the answer as fact."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L17_Q3",
+            "instruction": "A stall-holder quotes you a price.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Five dollars.",
+            "textToSpeak": "Five dollars.",
+            "options": [
+                "Rising: doubting the price",
+                "Falling: quoting a price"
+            ],
+            "correctAnswer": "Falling: quoting a price",
+            "correctAnswerIndex": 1,
+            "hint": "Would the seller sound sure, or would this sound like a reaction to a surprise?",
+            "explanation": "Sellers quoting a price say it as information, so the pitch falls on 'dollars'. A rise would suggest that the speaker finds the amount hard to believe, for example the customer repeating it.",
+            "modulationPattern": "Falling on 'dollars' in a plain informational statement.",
+            "meaningShift": "A fall states the price as a fact; a rise would question or react to it."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L18_Q1",
+            "instruction": "A friend has shown you a painting they made.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "It's interesting.",
+            "textToSpeak": "It's interesting.",
+            "options": [
+                "Dips and lifts, leaving room for reservations",
+                "Peaks and falls, closing with approval"
+            ],
+            "correctAnswer": "Dips and lifts, leaving room for reservations",
+            "correctAnswerIndex": 0,
+            "hint": "Notice what 'interesting' does after its stressed syllable.",
+            "explanation": "On 'interesting', a dip and a lift can sound careful, hinting that the speaker has more to say and may not be fully convinced. A peak and fall closes the comment and generally sounds more settled and appreciative.",
+            "modulationPattern": "Falling-rising on 'interesting': a lift after the stressed syllable.",
+            "meaningShift": "In this context the dip and lift can hint at reservations; a peak and fall would sound like plain approval."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L18_Q2",
+            "instruction": "You are asked whether you can make the 8 a.m. meeting.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I'll try.",
+            "textToSpeak": "I'll try.",
+            "options": [
+                "Down, then up: sounds unsure",
+                "Down all the way: sounds firm"
+            ],
+            "correctAnswer": "Down, then up: sounds unsure",
+            "correctAnswerIndex": 0,
+            "hint": "Check whether the voice bounces back after 'try'.",
+            "explanation": "After the drop, a slight lift leaves the promise open, so the listener may doubt it will be kept. A drop that keeps going down sounds committed and would suit someone making a real promise.",
+            "modulationPattern": "Falling-rising on 'try': dip followed by a small lift.",
+            "meaningShift": "A dip and lift makes the promise sound uncertain; a full fall sounds committed."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L18_Q3",
+            "instruction": "A shop can't help you find what you need.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Thanks anyway.",
+            "textToSpeak": "Thanks anyway.",
+            "options": [
+                "Steady fall: plain, closed thanks",
+                "Dip and lift: polite, a little disappointed"
+            ],
+            "correctAnswer": "Dip and lift: polite, a little disappointed",
+            "correctAnswerIndex": 1,
+            "hint": "Compare how 'anyway' finishes with how 'thanks' began.",
+            "explanation": "In this situation a lift on 'anyway' can carry a trace of disappointment while staying polite, since the speaker doesn't fully close the exchange. A steady fall would sound neutral, simply ending the conversation.",
+            "modulationPattern": "Falling-rising: dip on 'thanks', gentle lift through 'anyway'.",
+            "meaningShift": "A dip and lift softens the thanks with a hint of let-down; a steady fall just ends the conversation."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L19_Q1",
+            "instruction": "You are on a video call and the audio keeps cutting out.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Can you hear me?",
+            "textToSpeak": "Can you hear me?",
+            "options": [
+                "Falls on 'me'",
+                "Rises on 'me'"
+            ],
+            "correctAnswer": "Rises on 'me'",
+            "correctAnswerIndex": 1,
+            "hint": "Decide whether the speaker is hoping for a yes, or announcing something.",
+            "explanation": "Yes/no checks like this typically climb through the last word, and the listener knows they are meant to answer. A falling finish would sound more like a complaint about the connection.",
+            "modulationPattern": "Rising on the final word of a yes/no check.",
+            "meaningShift": "A rise asks for confirmation; a fall would sound like a statement or complaint."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L19_Q2",
+            "instruction": "Asked whether the parcel has arrived.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Not yet.",
+            "textToSpeak": "Not yet.",
+            "options": [
+                "Dip and lift: still waiting",
+                "Falls to a stop: flat no"
+            ],
+            "correctAnswer": "Dip and lift: still waiting",
+            "correctAnswerIndex": 0,
+            "hint": "Ask whether the voice sounds closed or leaves a door ajar.",
+            "explanation": "Listeners hear a slight rise on 'yet' as suggesting the situation might change, which fits waiting for a delivery. A plain fall would sound blunt, as though the speaker had no expectation of it arriving.",
+            "modulationPattern": "Falling-rising on 'yet': the final lift keeps the topic open.",
+            "meaningShift": "A dip and lift implies 'but soon'; a fall implies a plain no."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L19_Q3",
+            "instruction": "You are hoping your neighbour will help.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Could you hold the door?",
+            "textToSpeak": "Could you hold the door?",
+            "options": [
+                "Falls, sounding like an instruction",
+                "Rises, sounding like a polite request"
+            ],
+            "correctAnswer": "Rises, sounding like a polite request",
+            "correctAnswerIndex": 1,
+            "hint": "How much freedom does the listener seem to have to say no?",
+            "explanation": "On 'door', a rise offers a choice, which is why it feels polite. A falling ending is possible, but it makes the sentence sound more like a direction than a favour.",
+            "modulationPattern": "Rising on 'door' at the end of a polite request.",
+            "meaningShift": "A rise leaves room to refuse and sounds courteous; a fall sounds directive."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L20_Q1",
+            "instruction": "This sentence is longer. Focus only on how the last stretch moves.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Could you send me the address again?",
+            "textToSpeak": "Could you send me the address again?",
+            "options": [
+                "The end lifts",
+                "The end falls"
+            ],
+            "correctAnswer": "The end lifts",
+            "correctAnswerIndex": 0,
+            "hint": "Wait for 'again'. Is it higher or lower than 'address'?",
+            "explanation": "In a polite request, the voice often lifts across the last words, and here 'again' carries that lift. Falling on 'again' would sound flatter and could hint at impatience, as though it were the second time asking.",
+            "modulationPattern": "Rising at the end of a longer polite request.",
+            "meaningShift": "A lift sounds courteous and open; a fall could sound impatient."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L20_Q2",
+            "instruction": "Listen for the highest point in this statement.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I'll be there by half past six.",
+            "textToSpeak": "I'll be there by half past six.",
+            "options": [
+                "Highest on 'six'",
+                "Highest on 'there'"
+            ],
+            "correctAnswer": "Highest on 'six'",
+            "correctAnswerIndex": 0,
+            "hint": "The important piece of information is the time, not the place.",
+            "explanation": "In a neutral statement the pitch peaks on the last key word, which is the time expression. Putting the peak on 'there' would suggest a contrast, such as 'I'll be there, even if I can't be somewhere else'.",
+            "modulationPattern": "Main pitch peak on the final content word 'six', then a fall.",
+            "meaningShift": "A peak on 'six' gives the time as news; a peak on 'there' would highlight the place."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L20_Q3",
+            "instruction": "A colleague suggests moving the deadline.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "That could work.",
+            "textToSpeak": "That could work.",
+            "options": [
+                "Fall to the end: agreed and settled",
+                "Dip and lift: interested, not committed"
+            ],
+            "correctAnswer": "Dip and lift: interested, not committed",
+            "correctAnswerIndex": 1,
+            "hint": "Notice whether the voice sounds like it has made a decision.",
+            "explanation": "What follows the dip, a lift, leaves the door open, so the listener hears interest and further thought, not agreement. A falling contour is more final and would suit someone who has already decided.",
+            "modulationPattern": "Falling-rising on 'work': dip followed by a lift.",
+            "meaningShift": "A dip and lift sounds like considering; a full fall sounds like agreeing."
+        }
+    ]
+}

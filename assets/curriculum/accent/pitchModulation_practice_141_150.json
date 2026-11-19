@@ -1,0 +1,608 @@
+{
+    "gameType": "pitchModulation",
+    "batchIndex": 15,
+    "phase": "practice",
+    "levels": "141-150",
+    "quests": [
+        {
+            "id": "ACC_PITCHMODULATION_L141_Q1",
+            "instruction": "Two clauses, one sentence. Follow where the voice pauses and where it comes to rest.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "We finished the survey, but nobody has analysed the results yet.",
+            "textToSpeak": "We finished the survey, but nobody has analysed the results yet.",
+            "options": [
+                "Falls after 'survey', lifts on 'yet'",
+                "Lifts after 'survey', falls on 'yet'",
+                "Adds a side detail about her",
+                "Peaks on 'Hi', 'clinic' and 'calling': the framing"
+            ],
+            "correctAnswer": "Lifts after 'survey', falls on 'yet'",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Rise at the clause boundary, fall on 'yet'.",
+            "meaningShift": "A lift after 'survey' joins the clauses; a fall there would split them into two separate statements.",
+            "hint": "Listen at the comma: does the voice sound as if more is coming?",
+            "explanation": "Stopping at the comma, the first clause lifts, and that tells the listener the sentence isn't over. The fall on 'yet' then closes the whole thought. If the voice fell at 'survey' it would sound like a complete statement, and 'but nobody...' would feel tacked on."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L141_Q2",
+            "instruction": "A manager is chasing a signature.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "The report I sent you yesterday still needs your signature.",
+            "textToSpeak": "The report I sent you yesterday still needs your signature.",
+            "options": [
+                "'Yesterday' carries the peak; the timing is the news",
+                "Falls after 'survey', lifts on 'yet'",
+                "Lifts after 'tonight', falls on 'it'",
+                "'Signature' carries the peak; 'I sent you' stays low"
+            ],
+            "correctAnswer": "'Signature' carries the peak; 'I sent you' stays low",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Reduced pitch on the relative clause, peak on 'signature'.",
+            "meaningShift": "A peak on 'signature' tells the listener what to do; a peak on 'yesterday' would turn the sentence into a remark about timing.",
+            "hint": "Which part of the sentence would the listener already know about?",
+            "explanation": "Everything about the report and its sending is background, so that stretch is spoken lower and quicker. The new point is what the report still needs, so 'signature' takes the peak. Pushing 'yesterday' would suggest the timing was the issue, like a complaint about how old the email was."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L141_Q3",
+            "instruction": "A colleague is wrapping up a message.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Call me when you're done, whenever that is.",
+            "textToSpeak": "Call me when you're done, whenever that is.",
+            "options": [
+                "'Whenever that is' peaks: it is the main request itself",
+                "'Whenever that is' is low and quick: an afterthought",
+                "Pause before 'because': anger is why I didn't call",
+                "Lifts on 'me': a tentative, hopeful ask"
+            ],
+            "correctAnswer": "'Whenever that is' is low and quick: an afterthought",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Low, compressed tail after the main peak on 'done'.",
+            "meaningShift": "A low tail keeps the focus on the request; a peaked tail would turn the add-on into the point.",
+            "hint": "Which part of the sentence would you drop if you were in a hurry?",
+            "explanation": "By 'done' the request is complete, and the final phrase is a casual add-on, so it is spoken quickly, at a lower pitch and with little movement. If it had a peak, the listener would treat 'whenever that is' as the key piece of instruction, which makes little sense."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L142_Q1",
+            "instruction": "Someone asks whether you like the new phone.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I like the design, but I don't like the price.",
+            "textToSpeak": "I like the design, but I don't like the price.",
+            "options": [
+                "'Design' and 'price' stand out: setting up a contrast",
+                "'Texted' stands out; 'him' is given",
+                "'Like' and 'don't like' stand out: stressing attitude",
+                "'No' is brief; 'blue' stands out"
+            ],
+            "correctAnswer": "'Design' and 'price' stand out: setting up a contrast",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Peaks on 'design' and 'price' with a rise then a fall.",
+            "meaningShift": "Peaks on the nouns compare two features; peaks on the verbs would compare two attitudes.",
+            "hint": "What exactly is being weighed against what?",
+            "explanation": "With the attitude already clear from the grammar, the contrast the listener needs is between the two things being assessed. 'Design' and 'price' carry the peaks, with 'design' typically rising and 'price' falling. Stressing the verbs would make it sound like an argument about whether the speaker has feelings at all."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L142_Q2",
+            "instruction": "Someone asks, 'Does your family like city life?'",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "My brother loves the city, but I prefer the countryside.",
+            "textToSpeak": "My brother loves the city, but I prefer the countryside.",
+            "options": [
+                "'City' and 'countryside' stand out: comparing places",
+                "'Brother' and 'I' stand out: comparing people",
+                "Peaks on 'Priya', 'tomorrow' and 'ten': the new facts",
+                "Falls on 'me': a direct request for advice"
+            ],
+            "correctAnswer": "'Brother' and 'I' stand out: comparing people",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Primary peaks on 'brother' and 'I', secondary on the places.",
+            "meaningShift": "Peaks on the people compare family members; peaks on the places would compare locations.",
+            "hint": "The question was about people's preferences. Who is being compared?",
+            "explanation": "Because the question asks about family members, the contrast that answers it is between people: 'brother' versus 'I'. The places are secondary, though they still get some movement. If the question were 'Which do you prefer, city or countryside?', the place names would lead."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L142_Q3",
+            "instruction": "A teammate has misunderstood your question.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I didn't ask whether you could do it, I asked whether you would.",
+            "textToSpeak": "I didn't ask whether you could do it, I asked whether you would.",
+            "options": [
+                "'Could' and 'would' stand out",
+                "'Ask' and 'asked' stand out",
+                "Slow, building tempo: adding suspense and detail",
+                "'No' is brief; 'blue' stands out"
+            ],
+            "correctAnswer": "'Could' and 'would' stand out",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Contrastive peaks on 'could' and 'would'; repeated 'ask' deaccented.",
+            "meaningShift": "Peaks on 'could' and 'would' set ability against willingness; peaks on 'ask' would argue about asking.",
+            "hint": "Which pair of words does the misunderstanding turn on?",
+            "explanation": "Ability versus willingness is the whole misunderstanding, so those two modal verbs carry the peaks. 'Ask' and 'asked' are repeated, which marks them as given information. Stressing them would sound as though the argument were about whether a question had been asked at all."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L143_Q1",
+            "instruction": "Two turns. Listen to how the answer treats the question's words.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Is it the red folder? No, the blue one.",
+            "textToSpeak": "Is it the red folder? No, the blue one.",
+            "options": [
+                "'Coming' stands out; 'Saturday' is given",
+                "'Texted' stands out; 'him' is given",
+                "'No' stands out; 'blue' is light",
+                "'No' is brief; 'blue' stands out"
+            ],
+            "correctAnswer": "'No' is brief; 'blue' stands out",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Brief 'no', peak on 'blue', reduced 'one'.",
+            "meaningShift": "A peak on 'blue' fixes the detail; a heavy 'no' would sound irritated and weaken the correction.",
+            "hint": "What did the answerer change from the question?",
+            "explanation": "Only the colour has changed, so 'blue' carries the peak and 'folder' is reduced into 'one'. The 'no' is just a quick signal of correction. If 'no' were heavy it would suggest an annoyed rebuttal and 'blue' would lose its place as the new information."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L143_Q2",
+            "instruction": "Two turns. Listen to what the answer picks out.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Did you call him? I texted him.",
+            "textToSpeak": "Did you call him? I texted him.",
+            "options": [
+                "'Texted' stands out; 'him' is given",
+                "'One o'clock' stands out, 'twelve thirty' is lighter",
+                "'Him' stands out; 'texted' is given",
+                "'Whenever that is' is low and quick: an afterthought"
+            ],
+            "correctAnswer": "'Texted' stands out; 'him' is given",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Peak on 'texted', deaccented 'him'.",
+            "meaningShift": "A peak on 'texted' replaces 'call' with a different action; a peak on 'him' would correct the person.",
+            "hint": "The same person is in both turns. What changed?",
+            "explanation": "'Him' has already been named, so it shrinks to a quick, low word. The new information is the method, 'texted', which takes the peak. A peak on 'him' would suggest there had been confusion over who it was."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L143_Q3",
+            "instruction": "Two turns. The second one gives a different day.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Is she coming on Friday? She's coming on Saturday.",
+            "textToSpeak": "Is she coming on Friday? She's coming on Saturday.",
+            "options": [
+                "'Saturday' stands out; 'coming' is given",
+                "'Coming' stands out; 'Saturday' is given",
+                "'Whenever that is' is low and quick: an afterthought",
+                "Peaks on 'Priya', 'tomorrow' and 'ten': the new facts"
+            ],
+            "correctAnswer": "'Saturday' stands out; 'coming' is given",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Peak on 'Saturday', reduced 'coming'.",
+            "meaningShift": "A peak on 'Saturday' corrects the day; a peak on 'coming' would insist that she is arriving.",
+            "hint": "Decide whether the speaker is disagreeing about her arrival or about its timing.",
+            "explanation": "Her coming is not in dispute, so the verb is reduced and 'Saturday' takes the peak. 'Coming' would carry the peak if somebody had doubted that she would come at all."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L144_Q1",
+            "instruction": "You have two sisters. Listen to how the phrase is grouped.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "My sister who lives in Leeds called.",
+            "textToSpeak": "My sister who lives in Leeds called.",
+            "options": [
+                "Falls at each beat: each point is closed",
+                "Picks out one sister from several",
+                "Adds a side detail about her",
+                "No break: the man was holding the telescope"
+            ],
+            "correctAnswer": "Picks out one sister from several",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "No boundary around the relative clause; continuous phrasing.",
+            "meaningShift": "Continuous phrasing identifies which sister; a separated, lowered clause would add background.",
+            "hint": "Is there a pause around 'who lives in Leeds'?",
+            "explanation": "With no break around the relative clause, it works as part of the identification: this is the sister in Leeds, as opposed to the other one. If it were set apart with pauses and a lowered pitch, it would just be an aside, and the listener would assume one sister."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L144_Q2",
+            "instruction": "A friend is explaining why a call never happened.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I didn't call her, because I was angry.",
+            "textToSpeak": "I didn't call her, because I was angry.",
+            "options": [
+                "No pause: anger isn't the reason I called her",
+                "Pause before 'because': anger is why I didn't call",
+                "Encouraging: 'lot' and 'better' lifted",
+                "'One o'clock' stands out, 'twelve thirty' is lighter"
+            ],
+            "correctAnswer": "Pause before 'because': anger is why I didn't call",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Boundary and lift after 'her', then 'because' clause.",
+            "meaningShift": "A break before 'because' explains the non-call; no break would negate the reason itself.",
+            "hint": "Where does the voice break, and where does it stay joined?",
+            "explanation": "Placing a boundary before 'because' separates the negative from the reason, so the reason belongs to not calling. If 'because' joined directly to 'call her', it would be the 'calling' that is negated, and the reason would be something else, like 'I called her for another reason'."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L144_Q3",
+            "instruction": "Someone describes an incident at the observatory.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "We saw the man with the telescope.",
+            "textToSpeak": "We saw the man with the telescope.",
+            "options": [
+                "Lifts after 'tonight', falls on 'it'",
+                "Break before 'with': we used the telescope",
+                "No break: the man was holding the telescope",
+                "Even pace, no peak: a plain report"
+            ],
+            "correctAnswer": "Break before 'with': we used the telescope",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Boundary before 'with', separating the prepositional phrase.",
+            "meaningShift": "A break before 'with' makes the telescope the instrument; running on makes it the man's possession.",
+            "hint": "Does 'with the telescope' sound attached to 'man', or separate?",
+            "explanation": "Breaking briefly before 'with' attaches the phrase to the verb, so the telescope is the means of seeing. Without any break, 'the man with the telescope' becomes one description, and the listener pictures him holding it."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L145_Q1",
+            "instruction": "A colleague is checking whether you can look over a draft tonight.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "If I send the draft tonight, will you be able to look at it?",
+            "textToSpeak": "If I send the draft tonight, will you be able to look at it?",
+            "options": [
+                "Lifts after 'tonight', lifts again on 'it'",
+                "Peaks on 'sure' and 'before': the general rule",
+                "Lifts after 'tonight', falls on 'it'",
+                "'Ask' and 'asked' stand out"
+            ],
+            "correctAnswer": "Lifts after 'tonight', lifts again on 'it'",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Rise at the end of the if-clause, second rise on 'it' in a yes/no question.",
+            "meaningShift": "A second lift keeps it a real yes/no question; a fall would sound like an assumption that the answer is yes.",
+            "hint": "Treat the sentence as two parts and compare the way each one ends.",
+            "explanation": "Conditional clauses lift at their boundary to show that the sentence continues, and since the main clause is a yes/no question it lifts again at the end. A fall on 'it' would turn the main clause into a statement of expectation, as if the colleague had already agreed."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L145_Q2",
+            "instruction": "A junior colleague asks for advice.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "What would you do if you were me?",
+            "textToSpeak": "What would you do if you were me?",
+            "options": [
+                "Lifts after 'survey', falls on 'yet'",
+                "'No' is brief; 'blue' stands out",
+                "Lifts on 'me': a tentative, hopeful ask",
+                "Falls on 'me': a direct request for advice"
+            ],
+            "correctAnswer": "Falls on 'me': a direct request for advice",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Falling at the end of a wh-question.",
+            "meaningShift": "A fall asks directly; a lift softens it into a hopeful appeal.",
+            "hint": "Check whether the voice settles, or reach for a response.",
+            "explanation": "Because a question word starts the sentence, the voice can fall at the end and the question reads as a straight request. Lifting on 'me' adds a note of hope or nervousness, which may be appropriate if the speaker is anxious."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L145_Q3",
+            "instruction": "You can't find the manual and a colleague might know.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "You wouldn't happen to know where the manual is, would you?",
+            "textToSpeak": "You wouldn't happen to know where the manual is, would you?",
+            "options": [
+                "Falls on each early clause, peak on 'rained'",
+                "Rises on the tag: a real, tentative ask",
+                "Falls on the tag: expecting a 'no'",
+                "Quick, lowered aside, then a drop: wrapping up"
+            ],
+            "correctAnswer": "Rises on the tag: a real, tentative ask",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Rising tag after a negative statement.",
+            "meaningShift": "A rising tag asks in earnest; a falling tag expects the answer to be no.",
+            "hint": "Judge whether the speaker sounds as though they hope for an answer.",
+            "explanation": "Rising on the tag opens the question for a reply and leaves room for 'actually, yes'. A falling tag with a drop in tone would expect negative agreement and sound as if the speaker had given up."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L146_Q1",
+            "instruction": "A manager is replying to a critique of her proposal.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I appreciate your honesty, but I think you're missing the point.",
+            "textToSpeak": "I appreciate your honesty, but I think you're missing the point.",
+            "options": [
+                "Cool opening, soft landing: ready to give way to you",
+                "Warm opening, firm landing: courteous, not budging",
+                "Falls after 'survey', lifts on 'yet'",
+                "'Coming' stands out; 'Saturday' is given"
+            ],
+            "correctAnswer": "Warm opening, firm landing: courteous, not budging",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Lifted first clause, firm fall on 'point'.",
+            "meaningShift": "A warm start with a firm end disagrees courteously; a cool start with a soft end gives way.",
+            "hint": "Compare how the first clause starts with how the sentence ends.",
+            "explanation": "Lifting warmly on 'appreciate' establishes goodwill, and the firm fall on 'point' shows that the disagreement stands. A cool opening with a soft, rising landing would suggest the speaker was ready to be persuaded."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L146_Q2",
+            "instruction": "A colleague asks for an extra review.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I know it's late, but could you take one more look?",
+            "textToSpeak": "I know it's late, but could you take one more look?",
+            "options": [
+                "Apologetic, lifting at the end: asking a favour",
+                "Pressing, falling at the end: leaning on you",
+                "Slow, building tempo: adding suspense and detail",
+                "Peaks on 'off' and 'open': the key conditions"
+            ],
+            "correctAnswer": "Apologetic, lifting at the end: asking a favour",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Lift on 'look' after a conceding first clause.",
+            "meaningShift": "A lifted end asks a favour; a falling end presumes agreement.",
+            "hint": "Hear whether the voice leaves you free to refuse.",
+            "explanation": "Conceding the problem first, then lifting on 'look', leaves a real choice. A pressing tone would drop on 'look' and treat the favour as already agreed."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L146_Q3",
+            "instruction": "A mentor reviews your second draft.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "It's not perfect, but it's a lot better than last time.",
+            "textToSpeak": "It's not perfect, but it's a lot better than last time.",
+            "options": [
+                "Encouraging: 'lot' and 'better' lifted",
+                "Falls after 'unplug' and 'seconds', and falls on 'in'",
+                "Faint praise: the clause even and low",
+                "Falls after 'survey', lifts on 'yet'"
+            ],
+            "correctAnswer": "Encouraging: 'lot' and 'better' lifted",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Lifts on 'lot' and 'better' in the second clause.",
+            "meaningShift": "A lifted second clause encourages; an even, low one damns with faint praise.",
+            "hint": "Does the second clause have more energy than the first?",
+            "explanation": "Lifting 'lot' and 'better' puts the weight on the improvement, so the praise is felt. If the second clause were even and low, 'not perfect' would be the headline and the praise would sound like a courtesy."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L147_Q1",
+            "instruction": "A friend is telling a story about a trip.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "So we get to the airport, right, and the gate's closed.",
+            "textToSpeak": "So we get to the airport, right, and the gate's closed.",
+            "options": [
+                "Pause before 'because': anger is why I didn't call",
+                "Rises at each beat: the story is building",
+                "Falls at each beat: each point is closed",
+                "'City' and 'countryside' stand out: comparing places"
+            ],
+            "correctAnswer": "Rises at each beat: the story is building",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Rises at 'airport' and 'right', fall on 'closed'.",
+            "meaningShift": "Rises keep the story moving; falls would halt it at every beat.",
+            "hint": "Pay attention to whether the voice sounds finished after 'airport' and 'right'.",
+            "explanation": "Storytellers lift at the end of each beat so the listener knows there is more to come. Falling at each beat would make each phrase sound complete, which would break the story into disconnected statements."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L147_Q2",
+            "instruction": "A storyteller reaches the dramatic moment.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "And then, out of nowhere, the lights go out.",
+            "textToSpeak": "And then, out of nowhere, the lights go out.",
+            "options": [
+                "Even pace, no peak: a plain report",
+                "Falls at each beat: each point is closed",
+                "Slow build, peak on 'out': suspense",
+                "Faint praise: the clause even and low"
+            ],
+            "correctAnswer": "Slow build, peak on 'out': suspense",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Slowing tempo, peak on 'out'.",
+            "meaningShift": "A slow build and a peak create suspense; an even pace states a fact.",
+            "hint": "Compare the speed of the first half of the sentence with the speed just before the key word.",
+            "explanation": "Storytellers slow down before the key moment and let the peak land on 'out'. A plain report would run at one speed, and the lights going out would sound like any other fact."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L147_Q3",
+            "instruction": "A friend is wrapping up a long story.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Anyway, long story short, we missed the flight.",
+            "textToSpeak": "Anyway, long story short, we missed the flight.",
+            "options": [
+                "Quick, lowered aside, then a drop: wrapping up",
+                "Rises on the tag: a real, tentative ask",
+                "Slow, building tempo: adding suspense and detail",
+                "'Brother' and 'I' stand out: comparing people"
+            ],
+            "correctAnswer": "Quick, lowered aside, then a drop: wrapping up",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Fast, low opener; firm fall on 'flight'.",
+            "meaningShift": "A fast, low opener signals a summary; a slow build would prolong the story.",
+            "hint": "Decide whether the speaker wants to prolong or hurries the story.",
+            "explanation": "'Anyway, long story short' is delivered fast and low because it signals the speaker is skipping details. The fall on 'flight' then delivers the result. A slow build would add detail and suspense, which is the opposite of the intent."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L148_Q1",
+            "instruction": "Someone is explaining how to restart a router.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "First, unplug it, then wait ten seconds, then plug it back in.",
+            "textToSpeak": "First, unplug it, then wait ten seconds, then plug it back in.",
+            "options": [
+                "Falls after 'unplug' and 'seconds', and falls on 'in'",
+                "No break: the man was holding the telescope",
+                "Rises on each early clause, peak on 'three days'",
+                "Lifts after 'unplug' and 'seconds', falls on 'in'"
+            ],
+            "correctAnswer": "Lifts after 'unplug' and 'seconds', falls on 'in'",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Rises at step boundaries, final fall on 'in'.",
+            "meaningShift": "Rises link the steps; falls on each would make them separate commands.",
+            "hint": "Listen to what happens at each comma.",
+            "explanation": "Steps in a sequence lift at the end of each, signalling that more instructions follow. The final step falls to mark the end of the list. Falling at every comma would make each step sound like a complete instruction on its own, and the sequence would lose its flow."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L148_Q2",
+            "instruction": "A technician is warning a new employee.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Don't press the red button, press the green one.",
+            "textToSpeak": "Don't press the red button, press the green one.",
+            "options": [
+                "'Texted' stands out; 'him' is given",
+                "'Press' and 'press' stand out: stressing the action",
+                "'Red' and 'green' stand out: sorting the buttons",
+                "Pressing, falling at the end: leaning on you"
+            ],
+            "correctAnswer": "'Red' and 'green' stand out: sorting the buttons",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Contrastive peaks on 'red' and 'green'.",
+            "meaningShift": "Peaks on the colours separate wrong from right; peaks on 'press' would draw attention to something shared.",
+            "hint": "Which words separate the correct action from the mistake?",
+            "explanation": "Since the action is identical in both clauses, the difference lies in the colours, and those carry the peaks. Stressing 'press' would make little sense since both clauses involve pressing."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L148_Q3",
+            "instruction": "A supervisor gives a safety reminder.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Make sure it's switched off before you open it.",
+            "textToSpeak": "Make sure it's switched off before you open it.",
+            "options": [
+                "Peaks on 'off' and 'open': the key conditions",
+                "Peaks on 'sure' and 'before': the general rule",
+                "Warm lifts early, firm fall on 'thing'",
+                "Lifts after 'unplug' and 'seconds', falls on 'in'"
+            ],
+            "correctAnswer": "Peaks on 'off' and 'open': the key conditions",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Peaks on 'off' and 'open'.",
+            "meaningShift": "Peaks on 'off' and 'open' mark what to check and do; peaks on 'sure' and 'before' would stress the framing.",
+            "hint": "Which words describe the actions that matter?",
+            "explanation": "In safety instructions, the words that name the critical condition and action carry the peaks, so 'off' and 'open' stand out. 'Make sure' is a framing phrase, and a peak on 'before' would only make sense if the order were in doubt."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L149_Q1",
+            "instruction": "A clinic receptionist leaves a voicemail.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Hi Sam, it's Priya from the clinic, calling to confirm your appointment tomorrow at ten.",
+            "textToSpeak": "Hi Sam, it's Priya from the clinic, calling to confirm your appointment tomorrow at ten.",
+            "options": [
+                "Peaks on 'Hi', 'clinic' and 'calling': the framing",
+                "Warm, open start; 'Friday' carries the peak",
+                "Lifts after 'tonight', falls on 'it'",
+                "Peaks on 'Priya', 'tomorrow' and 'ten': the new facts"
+            ],
+            "correctAnswer": "Peaks on 'Priya', 'tomorrow' and 'ten': the new facts",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Peaks on 'Priya', 'tomorrow' and 'ten'.",
+            "meaningShift": "Peaks on the facts help the listener remember; peaks on the framing would hide them.",
+            "hint": "Imagine writing this message down. Which details would you need to note?",
+            "explanation": "Voicemail is a stream of information, and the listener should be able to jot down the new facts: who, when, and what time. Those get the peaks, and the framing words stay low and quick."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L149_Q2",
+            "instruction": "A conference host makes an announcement.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Lunch will be served at twelve thirty, not one o'clock as previously stated.",
+            "textToSpeak": "Lunch will be served at twelve thirty, not one o'clock as previously stated.",
+            "options": [
+                "'Twelve thirty' stands out, 'one o'clock' is lighter",
+                "Falls after 'survey', lifts on 'yet'",
+                "Rises at each beat: the story is building",
+                "'One o'clock' stands out, 'twelve thirty' is lighter"
+            ],
+            "correctAnswer": "'Twelve thirty' stands out, 'one o'clock' is lighter",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Primary peak on 'twelve thirty', reduced 'one o'clock'.",
+            "meaningShift": "A peak on the new time fixes the correct one; a peak on the old time would confuse the audience.",
+            "hint": "Which time is the listener asked to remember?",
+            "explanation": "What matters is the corrected time, so 'twelve thirty' carries the peak. The old time is mentioned only to cancel it, so its pitch is lower and falls away."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L149_Q3",
+            "instruction": "An airline agent speaks over the loudspeaker.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Passengers for Madrid, please proceed to gate fourteen.",
+            "textToSpeak": "Passengers for Madrid, please proceed to gate fourteen.",
+            "options": [
+                "Lifts after 'Madrid', falls on 'fourteen'",
+                "Cool, clipped start; 'no' carries the peak",
+                "Falls after 'Madrid', lifts on 'fourteen'",
+                "'No' stands out; 'blue' is light"
+            ],
+            "correctAnswer": "Lifts after 'Madrid', falls on 'fourteen'",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Rise after 'Madrid', fall on 'fourteen'.",
+            "meaningShift": "A lift after 'Madrid' sets up the instruction; a fall on 'fourteen' closes the announcement.",
+            "hint": "Which part of the message is left open, and which closes it?",
+            "explanation": "'Passengers for Madrid' is the opening, so it rises slightly because the instruction is still to come. The fall on 'fourteen' signals the end of the announcement, giving the final detail a clear landing."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L150_Q1",
+            "instruction": "A manager responds to a team member's request for more time, in a meeting.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I understand the pressure, and I'm not saying no, but I need something by Friday.",
+            "textToSpeak": "I understand the pressure, and I'm not saying no, but I need something by Friday.",
+            "options": [
+                "Warm, open start; 'Friday' carries the peak",
+                "Flat early clauses, lift on 'thing'",
+                "'Coming' stands out; 'Saturday' is given",
+                "Cool, clipped start; 'no' carries the peak"
+            ],
+            "correctAnswer": "Warm, open start; 'Friday' carries the peak",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Lifted concessions, strongest peak on 'Friday'.",
+            "meaningShift": "A strong peak on 'Friday' shows the real condition; a strong 'no' would turn the message into a refusal.",
+            "hint": "Which of the three ideas does the speaker most need you to remember?",
+            "explanation": "Both opening clauses concede, so they are spoken with a warm lift. The final clause delivers the actual constraint, and 'Friday' carries the strongest peak. If 'no' carried it, the manager would sound as though they were refusing."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L150_Q2",
+            "instruction": "A friend is describing a disappointing weekend.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "We planned the whole trip, we booked everything, and then it rained for three days.",
+            "textToSpeak": "We planned the whole trip, we booked everything, and then it rained for three days.",
+            "options": [
+                "Falls on each early clause, peak on 'rained'",
+                "'Saturday' stands out; 'coming' is given",
+                "'Whenever that is' is low and quick: an afterthought",
+                "Rises on each early clause, peak on 'three days'"
+            ],
+            "correctAnswer": "Rises on each early clause, peak on 'three days'",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Rises on clause boundaries, final peak on 'three days'.",
+            "meaningShift": "Rises and a final peak on the detail deliver the punch line; falls would flatten the build-up.",
+            "hint": "Pinpoint which part is the punch line.",
+            "explanation": "In a build-up, each early clause lifts to show the story is still unfolding, and the final peak lands on the surprising detail, 'three days'. Falling on each early clause would turn the planning and booking into separate statements."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L150_Q3",
+            "instruction": "A colleague politely disagrees in a meeting.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I take your point, I really do, but I think we're overlooking one thing.",
+            "textToSpeak": "I take your point, I really do, but I think we're overlooking one thing.",
+            "options": [
+                "Falls on each early clause, peak on 'rained'",
+                "Flat early clauses, lift on 'thing'",
+                "'Him' stands out; 'texted' is given",
+                "Warm lifts early, firm fall on 'thing'"
+            ],
+            "correctAnswer": "Warm lifts early, firm fall on 'thing'",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Lifted concessions, firm fall on 'thing'.",
+            "meaningShift": "A firm fall after warm lifts states the objection politely but clearly; a lift would make it sound unsure.",
+            "hint": "Which end of the sentence sounds more certain?",
+            "explanation": "'I take your point' and 'I really do' use lifts to soften the disagreement, and the firm fall on 'thing' shows that the speaker has a clear objection. A lift on 'thing' would make the objection sound tentative."
+        }
+    ]
+}

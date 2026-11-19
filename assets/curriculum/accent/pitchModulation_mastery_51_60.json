@@ -1,0 +1,548 @@
+{
+    "gameType": "pitchModulation",
+    "batchIndex": 6,
+    "phase": "mastery",
+    "levels": "51-60",
+    "quests": [
+        {
+            "id": "ACC_PITCHMODULATION_L51_Q1",
+            "instruction": "You are at a bakery. You want exactly two, not three.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Can I have two croissants?",
+            "textToSpeak": "Can I have two croissants?",
+            "options": [
+                "Strongest on 'two': the quantity matters",
+                "Strongest on 'croissants': the item matters"
+            ],
+            "correctAnswer": "Strongest on 'two': the quantity matters",
+            "correctAnswerIndex": 0,
+            "hint": "Think about what the assistant might get wrong. Item, or amount?",
+            "explanation": "If the customer has already pointed at the croissants, the only thing that can go wrong is the number, so 'two' carries the peak. Without any context, the peak would land on 'croissants', the last content word.",
+            "modulationPattern": "Contrastive prominence on the numeral 'two'.",
+            "meaningShift": "A peak on 'two' fixes the amount; a peak on 'croissants' would name the item."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L51_Q2",
+            "instruction": "The clerk has picked up the wrong size.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I need the large.",
+            "textToSpeak": "I need the large.",
+            "options": [
+                "'Large' stands out: size is the issue",
+                "'Need' stands out: urgency is the point"
+            ],
+            "correctAnswer": "'Large' stands out: size is the issue",
+            "correctAnswerIndex": 0,
+            "hint": "The clerk has already offered a garment. What is wrong with it?",
+            "explanation": "Because the clerk brought a size, the customer corrects the size, and 'large' takes the peak. 'Need' would be prominent if the customer were showing urgency, or contrasting need with want.",
+            "modulationPattern": "Prominence on the size word 'large' as a correction.",
+            "meaningShift": "A peak on 'large' corrects the size; a peak on 'need' would express urgency."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L51_Q3",
+            "instruction": "You are returning a jumper you were given as a gift.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I'm not buying it, I'm returning it.",
+            "textToSpeak": "I'm not buying it, I'm returning it.",
+            "options": [
+                "'Buying' and 'returning' stand out",
+                "'Not' and 'it' are the strongest words"
+            ],
+            "correctAnswer": "'Buying' and 'returning' stand out",
+            "correctAnswerIndex": 0,
+            "hint": "Which words separate the two actions?",
+            "explanation": "Since the sentence sets one action against another, the verbs carry the peaks. 'It' is repeated, given information, and stays light. Making 'not' the peak would just stress the negative and blur the contrast.",
+            "modulationPattern": "Contrastive prominence on two verbs.",
+            "meaningShift": "Peaks on both verbs sort the actions; peaks on 'not' and 'it' would miss the point."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L52_Q1",
+            "instruction": "Listen to which word is pushed. What is the speaker saying?",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Only Marco knew about the party.",
+            "textToSpeak": "Only Marco knew about the party.",
+            "options": [
+                "Marco knew nothing else",
+                "No one else knew"
+            ],
+            "correctAnswer": "No one else knew",
+            "correctAnswerIndex": 1,
+            "hint": "The word 'only' can attach to different things. Which word gets the peak?",
+            "explanation": "Stress on 'Marco' ties 'only' to him: nobody else knew. A peak on 'party' would tie 'only' to the topic: the party was all he knew about. The sentence is identical; the peak decides its scope.",
+            "modulationPattern": "Prominence on 'Marco' determines the scope of 'only'.",
+            "meaningShift": "A peak on 'Marco' means he was alone in knowing; a peak on 'party' would mean he knew just that."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L52_Q2",
+            "instruction": "A customer walks into a repair shop.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "We don't sell shoes here.",
+            "textToSpeak": "We don't sell shoes here.",
+            "options": [
+                "Shoes are handled here, but not sold",
+                "Other goods are sold, just not shoes"
+            ],
+            "correctAnswer": "Other goods are sold, just not shoes",
+            "correctAnswerIndex": 1,
+            "hint": "Pinpoint which word is held up as the exception.",
+            "explanation": "Putting the peak on 'shoes' makes them the excluded item in a shop that sells other things. A peak on 'sell' would mean shoes come in for some other purpose, like repair.",
+            "modulationPattern": "Prominence on 'shoes' as the excluded item.",
+            "meaningShift": "A peak on 'shoes' excludes one product; a peak on 'sell' would exclude one activity."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L52_Q3",
+            "instruction": "A friend feels left out of a group.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "He's not talking to me.",
+            "textToSpeak": "He's not talking to me.",
+            "options": [
+                "He speaks to others, just not me",
+                "He's silent with everyone"
+            ],
+            "correctAnswer": "He speaks to others, just not me",
+            "correctAnswerIndex": 0,
+            "hint": "Would the friend have said this if he were silent with everybody?",
+            "explanation": "The peak on 'me' sets the speaker apart from everyone else he does speak to, which is why it sounds hurt. If the person was silent with everyone, the peak would rest on 'talking'.",
+            "modulationPattern": "Contrastive prominence on the object pronoun 'me'.",
+            "meaningShift": "A peak on 'me' singles the speaker out; a peak on 'talking' would describe a general silence."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L53_Q1",
+            "instruction": "A colleague suggests a risky plan.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I don't think that's a good idea.",
+            "textToSpeak": "I don't think that's a good idea.",
+            "options": [
+                "'Good' stands out: a direct attack on the plan",
+                "'Think' stands out: softening the disagreement"
+            ],
+            "correctAnswer": "'Think' stands out: softening the disagreement",
+            "correctAnswerIndex": 1,
+            "hint": "Which word makes this sound like an opinion and not a verdict?",
+            "explanation": "Here the peak on 'think' frames the sentence as the speaker's opinion, leaving room for the colleague to respond. A peak on 'good' would be a direct judgment on the plan's quality and would sound sharper.",
+            "modulationPattern": "Prominence on the epistemic verb 'think'.",
+            "meaningShift": "A peak on 'think' hedges; a peak on 'good' evaluates."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L53_Q2",
+            "instruction": "A friend thinks you were criticising them.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "That's not what I meant.",
+            "textToSpeak": "That's not what I meant.",
+            "options": [
+                "'Not' stands out: a flat, defensive denial",
+                "'Meant' stands out: intention vs interpretation"
+            ],
+            "correctAnswer": "'Meant' stands out: intention vs interpretation",
+            "correctAnswerIndex": 1,
+            "hint": "Decide whether the speaker is denying, or clarifying.",
+            "explanation": "Putting the peak on 'meant' shifts the conversation to what the speaker intended versus what the friend heard. A peak on 'not' would sound like a bare denial, which can feel more defensive.",
+            "modulationPattern": "Prominence on 'meant' in a clarification.",
+            "meaningShift": "A peak on 'meant' separates intention from interpretation; a peak on 'not' would simply deny."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L53_Q3",
+            "instruction": "A colleague asks where to find a spare cable.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "You could try the other office.",
+            "textToSpeak": "You could try the other office.",
+            "options": [
+                "'Try' stands out: worth attempting",
+                "'Could' stands out: only a possibility"
+            ],
+            "correctAnswer": "'Could' stands out: only a possibility",
+            "correctAnswerIndex": 1,
+            "hint": "Which word tells you how confident the advice is?",
+            "explanation": "The strongest pitch on 'could' marks the suggestion as one option among others, without a promise it will work. A peak on 'try' would encourage the attempt and sound more hopeful.",
+            "modulationPattern": "Prominence on the modal 'could'.",
+            "meaningShift": "A peak on 'could' offers a tentative option; a peak on 'try' encourages the effort."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L54_Q1",
+            "instruction": "You misheard a day and are checking.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Did you say Tuesday?",
+            "textToSpeak": "Did you say Tuesday?",
+            "options": [
+                "'Tuesday' stands out: checking the day",
+                "'Say' stands out: checking whether it was spoken"
+            ],
+            "correctAnswer": "'Tuesday' stands out: checking the day",
+            "correctAnswerIndex": 0,
+            "hint": "What is the speaker unsure of?",
+            "explanation": "Nobody is disputing that something was said; the speaker wants to confirm the day, so 'Tuesday' carries the peak. Putting it on 'say' would ask whether the word had been spoken at all, which would be an odd thing to doubt.",
+            "modulationPattern": "Prominence on 'Tuesday' with a rise at the end of a confirmation question.",
+            "meaningShift": "A peak on 'Tuesday' checks the day; a peak on 'say' would doubt whether it was mentioned."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L54_Q2",
+            "instruction": "A travel agent is planning your seat.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Do you want the window seat?",
+            "textToSpeak": "Do you want the window seat?",
+            "options": [
+                "'Want' stands out: asking about willingness",
+                "'Window' stands out: choosing seat type"
+            ],
+            "correctAnswer": "'Window' stands out: choosing seat type",
+            "correctAnswerIndex": 1,
+            "hint": "What options might the agent have in mind?",
+            "explanation": "Because the agent is offering a specific seat from a range, 'window' carries the peak, as opposed to 'aisle'. A peak on 'want' would be for someone who might say they don't care or don't have to.",
+            "modulationPattern": "Prominence on 'window', the item being offered.",
+            "meaningShift": "A peak on 'window' picks among seats; a peak on 'want' asks whether the customer wants anything."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L54_Q3",
+            "instruction": "A friend has just quoted a shaky statistic.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Are you sure?",
+            "textToSpeak": "Are you sure?",
+            "options": [
+                "'Sure' stands out: doubting the certainty",
+                "'You' stands out: questioning that person"
+            ],
+            "correctAnswer": "'Sure' stands out: doubting the certainty",
+            "correctAnswerIndex": 0,
+            "hint": "Is the doubt about the fact or about the speaker?",
+            "explanation": "Placing the peak on 'sure' asks about the level of certainty, and is a common way to double-check. A peak on 'you' would put the friend, and not the fact, in the spotlight, as if someone else were more reliable.",
+            "modulationPattern": "Prominence on 'sure' in a short yes/no question.",
+            "meaningShift": "A peak on 'sure' challenges certainty; a peak on 'you' would challenge the person."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L55_Q1",
+            "instruction": "A passenger gives directions at a roundabout.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Take the second exit.",
+            "textToSpeak": "Take the second exit.",
+            "options": [
+                "'Second' stands out: which exit",
+                "'Exit' stands out: what to take"
+            ],
+            "correctAnswer": "'Second' stands out: which exit",
+            "correctAnswerIndex": 0,
+            "hint": "The driver knows what an exit is. What might they get wrong?",
+            "explanation": "In directions, the word that distinguishes the correct choice from wrong ones takes the peak. The driver already knows to take an exit; the number is what could cause a mistake.",
+            "modulationPattern": "Prominence on the ordinal 'second'.",
+            "meaningShift": "A peak on 'second' guards against taking the wrong exit; a peak on 'exit' would name a thing the driver knows."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L55_Q2",
+            "instruction": "Someone is explaining how to reset a device.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Press and hold the button for five seconds.",
+            "textToSpeak": "Press and hold the button for five seconds.",
+            "options": [
+                "'Hold' stands out: hold, don't tap",
+                "'Five' stands out: how long to hold"
+            ],
+            "correctAnswer": "'Five' stands out: how long to hold",
+            "correctAnswerIndex": 1,
+            "hint": "Which piece of information is easiest to get wrong?",
+            "explanation": "Listeners probably follow the instruction already, but the duration is the detail they could miss, so 'five' takes the peak. Highlighting 'hold' would warn against tapping instead.",
+            "modulationPattern": "Prominence on the numeral 'five'.",
+            "meaningShift": "A peak on 'five' stresses the duration; a peak on 'hold' would stress the manner."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L55_Q3",
+            "instruction": "A colleague is handing you a wrapped gift for someone else.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Don't open it until Friday.",
+            "textToSpeak": "Don't open it until Friday.",
+            "options": [
+                "'Friday' stands out: when it's allowed",
+                "'Open' stands out: what's forbidden"
+            ],
+            "correctAnswer": "'Friday' stands out: when it's allowed",
+            "correctAnswerIndex": 0,
+            "hint": "What is the listener already likely to do?",
+            "explanation": "Since the listener is tempted to open the gift early, the useful information is when opening is allowed, and 'Friday' takes the peak. A peak on 'open' would contrast opening with other things, such as shaking it.",
+            "modulationPattern": "Prominence on the time expression 'Friday'.",
+            "meaningShift": "A peak on 'Friday' sets the date; a peak on 'open' would restrict the action."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L56_Q1",
+            "instruction": "A friend describes a colleague's kindness.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "She even remembered my birthday.",
+            "textToSpeak": "She even remembered my birthday.",
+            "options": [
+                "'Even' stands out: more than expected",
+                "'Remembered' stands out: memory vs forgetting"
+            ],
+            "correctAnswer": "'Even' stands out: more than expected",
+            "correctAnswerIndex": 0,
+            "hint": "Which small word tells you the birthday is surprising?",
+            "explanation": "'Even' pushes the listener to see the birthday as the top of a scale of thoughtful gestures. A peak on 'remembered' would set remembering against forgetting, which isn't the point here.",
+            "modulationPattern": "Prominence on the scalar word 'even'.",
+            "meaningShift": "A peak on 'even' signals an unexpected gesture; a peak on 'remembered' would contrast with forgetting."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L56_Q2",
+            "instruction": "You are starting a short voicemail.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I just wanted to say thanks.",
+            "textToSpeak": "I just wanted to say thanks.",
+            "options": [
+                "'Just' stands out: minimising the message",
+                "'Thanks' stands out: the purpose of the call"
+            ],
+            "correctAnswer": "'Thanks' stands out: the purpose of the call",
+            "correctAnswerIndex": 1,
+            "hint": "What should the listener take away from the message?",
+            "explanation": "'Just' is present in the sentence but is normally light, so the peak belongs on 'thanks', the reason for calling. Stressing 'just' would spotlight how small the call is and could sound apologetic.",
+            "modulationPattern": "Prominence on 'thanks', with 'just' kept light.",
+            "meaningShift": "A peak on 'thanks' delivers the message; a peak on 'just' would draw attention to how small it is."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L56_Q3",
+            "instruction": "A colleague is already helping with a task. You offer more.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "I can also help with that.",
+            "textToSpeak": "I can also help with that.",
+            "options": [
+                "'Help' stands out: offering assistance, no addition",
+                "'Also' stands out: in addition to someone else"
+            ],
+            "correctAnswer": "'Also' stands out: in addition to someone else",
+            "correctAnswerIndex": 1,
+            "hint": "Notice whether the speaker is adding to something, or just offering.",
+            "explanation": "The peak on 'also' places the speaker alongside someone who is already helping. If the speaker were simply offering, the peak would fall on 'help'.",
+            "modulationPattern": "Prominence on the additive 'also'.",
+            "meaningShift": "A peak on 'also' adds to existing help; a peak on 'help' would be a standalone offer."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L57_Q1",
+            "instruction": "A waiter is checking whether to clear your plate.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Are you still working on that?",
+            "textToSpeak": "Are you still working on that?",
+            "options": [
+                "Falls at the end: hurrying you",
+                "Rises at the end: a polite check"
+            ],
+            "correctAnswer": "Rises at the end: a polite check",
+            "correctAnswerIndex": 1,
+            "hint": "Consider how much choice the customer seems to have.",
+            "explanation": "Yes/no checks rise, and that lift lets the diner say 'yes, I'm still eating' without pressure. A falling ending would treat the question as a hint that the plate should go.",
+            "modulationPattern": "Rising at the end of a yes/no service question.",
+            "meaningShift": "A rise leaves the diner in control; a fall would sound impatient."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L57_Q2",
+            "instruction": "Someone says the party is at Jo's. It's at her parents'.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "It's at her parents' house.",
+            "textToSpeak": "It's at her parents' house.",
+            "options": [
+                "'Parents'' stands out",
+                "'House' stands out"
+            ],
+            "correctAnswer": "'Parents'' stands out",
+            "correctAnswerIndex": 0,
+            "hint": "Which word corrects the earlier version?",
+            "explanation": "With the venue nearly right, the difference is whose place it is. 'Parents'' takes the peak, and 'house' is given information that remains low.",
+            "modulationPattern": "Contrastive prominence on 'parents'' in a correction.",
+            "meaningShift": "A peak on 'parents'' changes the owner; a peak on 'house' would keep the focus on the type of place."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L57_Q3",
+            "instruction": "A speaker finishes a talk.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Thank you all so much for coming.",
+            "textToSpeak": "Thank you all so much for coming.",
+            "options": [
+                "Wide, warm movement on 'so much'",
+                "Narrow, businesslike movement throughout"
+            ],
+            "correctAnswer": "Wide, warm movement on 'so much'",
+            "correctAnswerIndex": 0,
+            "hint": "How much effort does the voice put into the middle of the sentence?",
+            "explanation": "'So much' is an intensifier, and pitch movement helps it carry warmth. A narrow contour would sound like ordinary closing politeness, with no particular feeling behind it.",
+            "modulationPattern": "Wide range with a lift on 'so much', falling on 'coming'.",
+            "meaningShift": "A wide contour communicates real appreciation; a narrow one sounds like routine courtesy."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L58_Q1",
+            "instruction": "A colleague asks, 'What happened?'",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Someone's parked in my space.",
+            "textToSpeak": "Someone's parked in my space.",
+            "options": [
+                "Peak on 'someone's': the person is the point",
+                "Peak on 'space': the whole event is news"
+            ],
+            "correctAnswer": "Peak on 'space': the whole event is news",
+            "correctAnswerIndex": 1,
+            "hint": "The question is open-ended. Does one word need to be singled out?",
+            "explanation": "When the whole event is news, the peak lands towards the end of the sentence, so 'space' carries it and the rest is reported. A peak on 'someone's' would emphasise who did it, as a reply to a question about the culprit.",
+            "modulationPattern": "Broad focus with the peak at the end of the clause.",
+            "meaningShift": "A peak on 'space' reports the event; a peak on 'someone's' would question who."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L58_Q2",
+            "instruction": "A colleague asks, 'Was it the cleaner who parked there?'",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "It was a delivery driver.",
+            "textToSpeak": "It was a delivery driver.",
+            "options": [
+                "'Delivery' stands out: correcting who",
+                "'Driver' stands out: the role itself"
+            ],
+            "correctAnswer": "'Delivery' stands out: correcting who",
+            "correctAnswerIndex": 0,
+            "hint": "The cleaner and the driver are both roles. What separates them?",
+            "explanation": "In compound noun phrases, the first element normally takes the stronger stress, and here it also carries the contrast with the cleaner. A peak on 'driver' would treat the job title as the whole answer.",
+            "modulationPattern": "Prominence on 'delivery' as compound stress and correction.",
+            "meaningShift": "A peak on 'delivery' corrects the identity; a peak on 'driver' would state the role."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L58_Q3",
+            "instruction": "A colleague asks, 'How long has the heating been off?'",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "It's been off since Monday.",
+            "textToSpeak": "It's been off since Monday.",
+            "options": [
+                "'Off' stands out: what state it's in",
+                "'Monday' stands out: when it started"
+            ],
+            "correctAnswer": "'Monday' stands out: when it started",
+            "correctAnswerIndex": 1,
+            "hint": "The colleague already knows it's off. What are they asking about?",
+            "explanation": "'Off' is given by the question, so it stays lower, while 'Monday' answers how long. A peak on 'off' would suggest someone had doubted that it was off.",
+            "modulationPattern": "Prominence on 'Monday' as the answer to a duration question.",
+            "meaningShift": "A peak on 'Monday' gives the start date; a peak on 'off' would insist that it is off."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L59_Q1",
+            "instruction": "A colleague has the wrong day for a meeting.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Actually, I think it's on Thursday.",
+            "textToSpeak": "Actually, I think it's on Thursday.",
+            "options": [
+                "'Thursday' stands out gently: a polite fix",
+                "'Think' stands out: real doubt"
+            ],
+            "correctAnswer": "'Thursday' stands out gently: a polite fix",
+            "correctAnswerIndex": 0,
+            "hint": "Judge whether the speaker is unsure, or being careful.",
+            "explanation": "Since the fix is 'Thursday', the peak there delivers it, while 'actually' and 'I think' cushion the correction. A peak on 'think' would suggest the speaker genuinely doubted the date.",
+            "modulationPattern": "Prominence on 'Thursday' with softening openers.",
+            "meaningShift": "A peak on 'Thursday' gives a courteous correction; a peak on 'think' would express doubt."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L59_Q2",
+            "instruction": "A colleague has the wrong day again.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "No, it's Thursday.",
+            "textToSpeak": "No, it's Thursday.",
+            "options": [
+                "'Thursday' stands out: a blunt correction",
+                "'No' stands out: rejecting the claim"
+            ],
+            "correctAnswer": "'Thursday' stands out: a blunt correction",
+            "correctAnswerIndex": 0,
+            "hint": "Does the speaker spend more effort on the refusal or on the fix?",
+            "explanation": "With a clear, strong peak on 'Thursday' the speaker gives the correct answer and leaves no room for another guess. A peak on 'no' would spotlight the rejection, which could sound colder.",
+            "modulationPattern": "Strong prominence on the corrected item 'Thursday'.",
+            "meaningShift": "A peak on 'Thursday' fixes the fact; a peak on 'no' stresses the disagreement."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L59_Q3",
+            "instruction": "Someone has picked up your bag at a café.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Sorry, that's mine.",
+            "textToSpeak": "Sorry, that's mine.",
+            "options": [
+                "'Sorry' stands out: apologising",
+                "'Mine' stands out: claiming the bag"
+            ],
+            "correctAnswer": "'Mine' stands out: claiming the bag",
+            "correctAnswerIndex": 1,
+            "hint": "Spot which word is doing the main work of this sentence.",
+            "explanation": "'Sorry' is a courtesy here, softening the interruption, and 'mine' carries the actual message. A peak on 'sorry' would sound as if the speaker were apologising for taking it.",
+            "modulationPattern": "Prominence on 'mine' with a light 'sorry'.",
+            "meaningShift": "A peak on 'mine' claims the bag politely; a peak on 'sorry' would centre the apology."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L60_Q1",
+            "instruction": "A colleague says you are presenting on Wednesday. You thought Thursday.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "Wednesday? I thought it was Thursday.",
+            "textToSpeak": "Wednesday? I thought it was Thursday.",
+            "options": [
+                "Both days stand out: a clash of expectations",
+                "Only 'thought' stands out: unsure memory"
+            ],
+            "correctAnswer": "Both days stand out: a clash of expectations",
+            "correctAnswerIndex": 0,
+            "hint": "Which words would a confused speaker want you to compare?",
+            "explanation": "Because the speaker is setting the day they were told against the day they expected, 'Wednesday' and 'Thursday' both stand out. A peak on 'thought' would suggest the speaker was unsure about their own memory.",
+            "modulationPattern": "Contrastive prominence on two day names, with a rising echo on 'Wednesday'.",
+            "meaningShift": "Peaks on both days set two expectations against each other; a peak on 'thought' would flag uncertainty."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L60_Q2",
+            "instruction": "A tour guide finishes a stop and moves the group along.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "If you'd all like to follow me.",
+            "textToSpeak": "If you'd all like to follow me.",
+            "options": [
+                "Falls at the end: a firm instruction",
+                "Lifts near the end: a friendly invitation"
+            ],
+            "correctAnswer": "Lifts near the end: a friendly invitation",
+            "correctAnswerIndex": 1,
+            "hint": "Does the guide expect the group to think about it?",
+            "explanation": "The lift on 'me' makes the request sound like an invitation, which is how guides keep a group relaxed. A falling ending would sound like a direct order, and would sound less sociable.",
+            "modulationPattern": "Rising at the end of a polite directive.",
+            "meaningShift": "A lift softens the instruction into an invitation; a fall makes it more authoritative."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L60_Q3",
+            "instruction": "You have already explained something twice.",
+            "subtype": "pitchModulation",
+            "interactionType": "speaking",
+            "word": "That's what I said.",
+            "textToSpeak": "That's what I said.",
+            "options": [
+                "'That's' stands out: a contrast",
+                "'Said' stands out: mild impatience"
+            ],
+            "correctAnswer": "'Said' stands out: mild impatience",
+            "correctAnswerIndex": 1,
+            "hint": "What does the speaker want the listener to notice about the words?",
+            "explanation": "The peak on 'said' points to the fact that the message was delivered, and can convey a little impatience when it is used after being misunderstood. A peak on 'that's' would compare this item with another.",
+            "modulationPattern": "Prominence on 'said' in a repeated-claim reply.",
+            "meaningShift": "A peak on 'said' points to the earlier statement; a peak on 'that's' would contrast it with something else."
+        }
+    ]
+}

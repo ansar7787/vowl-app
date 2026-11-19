@@ -184,6 +184,8 @@ import 'package:vowl/features/accent/dialect_drill/presentation/pages/dialect_dr
 import 'package:vowl/features/accent/dialect_drill/presentation/pages/dialect_drill_practice_screen.dart';
 import 'package:vowl/features/accent/connected_speech/presentation/pages/connected_speech_learn_screen.dart';
 import 'package:vowl/features/accent/connected_speech/presentation/pages/connected_speech_practice_screen.dart';
+import 'package:vowl/features/accent/pitch_modulation/presentation/pages/pitch_modulation_learn_screen.dart';
+import 'package:vowl/features/accent/pitch_modulation/presentation/pages/pitch_modulation_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -941,6 +943,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'pitchmodulation') {
+          return fadeTransitionPage(
+            child: PitchModulationLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1477,6 +1485,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'connectedspeech') {
           return fadeTransitionPage(
             child: ConnectedSpeechPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'pitchmodulation') {
+          return fadeTransitionPage(
+            child: PitchModulationPracticeScreen(level: level),
             state: state,
           );
         }

@@ -1,0 +1,608 @@
+{
+    "gameType": "pitchModulation",
+    "batchIndex": 16,
+    "phase": "practice",
+    "levels": "151-160",
+    "quests": [
+        {
+            "id": "ACC_PITCHMODULATION_L151_Q1",
+            "instruction": "A colleague asks, 'Why didn't the shipment arrive?'",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "The courier said they couldn't find the address.",
+            "textToSpeak": "The courier said they couldn't find the address.",
+            "options": [
+                "'Couldn't find' carries the peak: the reason",
+                "'Cheaper' lifted, 'last' falls: a warning",
+                "'Courier' carries the peak: who reported it",
+                "'Smaller' lifted, 'nicer' takes the peak: net positive"
+            ],
+            "correctAnswer": "'Couldn't find' carries the peak: the reason",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Prominence on 'couldn't find' as the answer to a why-question.",
+            "meaningShift": "A peak on 'couldn't find' supplies the reason; a peak on 'courier' would identify the source.",
+            "hint": "The question asks why. Which part of the sentence answers it?",
+            "explanation": "Whatever the question asks for gets the strongest pitch, and here that is a reason, so 'couldn't find' takes the peak. The courier is already part of the story, which makes the name background. Moving the peak onto 'courier' would answer 'Who told you that?' instead."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L151_Q2",
+            "instruction": "A friend asks, 'Who told you about the strike?'",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "My cousin heard it from someone at the depot.",
+            "textToSpeak": "My cousin heard it from someone at the depot.",
+            "options": [
+                "'Cousin' carries the main peak: the answer",
+                "'Depot' carries the main peak: the origin",
+                "'Courier' carries the peak: who reported it",
+                "Peaks on 'me' and 'regret': advice, then reason"
+            ],
+            "correctAnswer": "'Cousin' carries the main peak: the answer",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Primary peak on 'cousin', secondary peak on 'depot'.",
+            "meaningShift": "A main peak on 'cousin' answers who; a main peak on 'depot' would answer where it began.",
+            "hint": "Match the question word to the part of the answer that supplies it.",
+            "explanation": "Because the friend asked who, the first person named gives the answer and takes the strongest peak. 'Depot' adds detail about where the news began and earns only a smaller peak. The reverse would answer a different question, such as 'Where did the rumour start?'."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L151_Q3",
+            "instruction": "A manager asks, 'When can you start?'",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I can start as soon as the contract's signed.",
+            "textToSpeak": "I can start as soon as the contract's signed.",
+            "options": [
+                "'Said' and 'did' stand out: promise against action",
+                "'Start' stands out: the action itself",
+                "'Signed' stands out: it sets the date",
+                "Falls on 'everything', lifts on 'questions'"
+            ],
+            "correctAnswer": "'Signed' stands out: it sets the date",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Prominence on 'signed'; 'start' is deaccented as given.",
+            "meaningShift": "A peak on 'signed' names the condition for the date; a peak on 'start' would insist that the speaker will begin.",
+            "hint": "Which word was already in the question?",
+            "explanation": "'Start' came from the manager's own question, so it is spoken lightly, while 'signed' is the new condition that determines when the answer applies. Pushing 'start' would suggest somebody had questioned whether the speaker would begin at all."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L152_Q1",
+            "instruction": "Someone asks, 'Was the timing good for everything?'",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "We booked the flights early, but we left the hotel until the last minute.",
+            "textToSpeak": "We booked the flights early, but we left the hotel until the last minute.",
+            "options": [
+                "'Waiting' and 'said' stand out: the bare actions described",
+                "Warm 'thanks', firm fall on 'pass'",
+                "'Flights' and 'hotel' stand out",
+                "'Early' and 'last minute' stand out"
+            ],
+            "correctAnswer": "'Early' and 'last minute' stand out",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Contrastive peaks on 'early' and 'last minute'.",
+            "meaningShift": "Peaks on the time words answer a question about timing; peaks on the nouns would answer one about which items were booked.",
+            "hint": "The question is about timing. Which words describe timing?",
+            "explanation": "Since the topic is timing, the two time expressions carry the peaks and set the clauses against each other. The nouns, flights and hotel, are the things being timed and take a lower profile. With a question like 'Which parts did you sort out?', the nouns would lead instead."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L152_Q2",
+            "instruction": "Someone asks, 'Where does he cause trouble?'",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "He's polite in the meetings, but rude in the emails.",
+            "textToSpeak": "He's polite in the meetings, but rude in the emails.",
+            "options": [
+                "Falls on 'eight', peak on 'thought'",
+                "'Cousin' carries the main peak: the answer",
+                "'Meetings' and 'emails' stand out: the places",
+                "'Polite' and 'rude' stand out: the manner"
+            ],
+            "correctAnswer": "'Meetings' and 'emails' stand out: the places",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Contrastive peaks on 'meetings' and 'emails'.",
+            "meaningShift": "Peaks on the settings answer where; peaks on the manner words would describe what he's like.",
+            "hint": "What does the question want to know?",
+            "explanation": "Asking 'where' points the listener at locations, so 'meetings' and 'emails' carry the contrast. Manner words would take the peaks if the question had been 'What is he like?'."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L152_Q3",
+            "instruction": "Someone asks, 'Is the new office better?'",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "It's bigger, but it's noisier.",
+            "textToSpeak": "It's bigger, but it's noisier.",
+            "options": [
+                "'Bigger' takes the final peak, 'noisier' lifted",
+                "'Bigger' lifted, 'noisier' takes the final peak",
+                "'Not' and 'better' stand out: framing it as feedback",
+                "'Monday' carries the main peak; the reason is lower"
+            ],
+            "correctAnswer": "'Bigger' lifted, 'noisier' takes the final peak",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Lifted concession on 'bigger', peak and fall on 'noisier'.",
+            "meaningShift": "A lifted concession then a peak on the drawback gives a mixed verdict; the reverse would sound mostly positive.",
+            "hint": "Spot which half sounds as if the speaker still has something to add.",
+            "explanation": "Partial yeses come in two parts: a concession that lifts because the answer isn't complete, then the drawback with the final peak and fall. Reversing the contour would make the good news the conclusion and the drawback sound like an afterthought."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L153_Q1",
+            "instruction": "A friend is reading a restaurant booking confirmation.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Eight? I thought we said seven.",
+            "textToSpeak": "Eight? I thought we said seven.",
+            "options": [
+                "'Say' and 'I' stand out: their view against mine",
+                "Peaks on 'nine' and 'open': the rule",
+                "Rises on 'eight', peak on 'seven'",
+                "Falls on 'eight', peak on 'thought'"
+            ],
+            "correctAnswer": "Rises on 'eight', peak on 'seven'",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Rise on echoed 'eight', peak on 'seven'.",
+            "meaningShift": "A rise on 'eight' queries the booking; a fall would accept it, and a peak on 'thought' would shift the focus to memory.",
+            "hint": "Which number is queried, and which is remembered?",
+            "explanation": "Echoing the number as a surprised check, the first word rises. The second sentence then gives the number the speaker expected, and 'seven' takes the peak. A fall on 'eight' would present it as a settled fact, which does not fit the doubt."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L153_Q2",
+            "instruction": "A customer is speaking to a waiter.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "That's not what I ordered. I ordered the vegetarian one.",
+            "textToSpeak": "That's not what I ordered. I ordered the vegetarian one.",
+            "options": [
+                "'Ordered' and 'ordered' stand out",
+                "'Late' carries the main peak; Monday is background",
+                "'Courier' carries the peak: who reported it",
+                "'Not' and 'vegetarian' stand out"
+            ],
+            "correctAnswer": "'Not' and 'vegetarian' stand out",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Peaks on 'not' and 'vegetarian'; repeated 'ordered' is deaccented.",
+            "meaningShift": "Peaks on 'not' and 'vegetarian' identify the mistake; peaks on 'ordered' would quarrel about the order itself.",
+            "hint": "What differs between the dish received and the dish asked for?",
+            "explanation": "Since the complaint is about what arrived, 'not' marks the mismatch, and the correction 'vegetarian' names what was wanted. 'Ordered' appears twice, so it becomes given and is spoken lightly. Pushing both would turn the exchange into an argument about the act of ordering."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L153_Q3",
+            "instruction": "A ticket seller summarises a booking.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Okay, so that's two adults and one child. Is that right?",
+            "textToSpeak": "Okay, so that's two adults and one child. Is that right?",
+            "options": [
+                "'Saying' and 'handled' stand out: describing the process",
+                "'Right' lifts: inviting a correction",
+                "Flat fall on 'nine', rise on 'fine'",
+                "'Right' falls: closing the check"
+            ],
+            "correctAnswer": "'Right' lifts: inviting a correction",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Rising on 'right' at the end of a check.",
+            "meaningShift": "A lift invites correction; a fall would close the question.",
+            "hint": "Notice whether the speaker wants to hear 'no'.",
+            "explanation": "Lifting on 'right' hands the turn back and invites a correction if the summary is wrong. A fall would present the details as final and make it sound like a statement the customer just has to accept."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L154_Q1",
+            "instruction": "A colleague declines your request.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I'd help, but I'm tied up until five.",
+            "textToSpeak": "I'd help, but I'm tied up until five.",
+            "options": [
+                "Lift on 'help', fall on 'five': a warm refusal",
+                "Cool 'thanks', hesitant lift on 'pass'",
+                "'Smaller' lifted, 'nicer' takes the peak: net positive",
+                "Fall on 'help', lift on 'five': leaving it open"
+            ],
+            "correctAnswer": "Lift on 'help', fall on 'five': a warm refusal",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Rise on 'help', fall on 'five'.",
+            "meaningShift": "A lift then a fall softens the refusal; the reverse would sound blunt, then uncertain.",
+            "hint": "Hear which half sounds finished.",
+            "explanation": "Lifting on 'help' keeps the sentence open and shows goodwill before the 'but', and the fall on 'five' closes the explanation. Falling on 'help' would make the goodwill sound complete and detached, and a lift on 'five' would turn the limit into a question."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L154_Q2",
+            "instruction": "A team lead is explaining a delay.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I'm afraid the report won't be ready until Monday, because the data came in late.",
+            "textToSpeak": "I'm afraid the report won't be ready until Monday, because the data came in late.",
+            "options": [
+                "Lifts on 'everything', falls on 'questions'",
+                "'Late' carries the main peak; Monday is background",
+                "'Explained' and 'fix' stand out: describing the situation",
+                "'Monday' carries the main peak; the reason is lower"
+            ],
+            "correctAnswer": "'Monday' carries the main peak; the reason is lower",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Main peak on 'Monday', reduced peak on 'late'.",
+            "meaningShift": "A main peak on 'Monday' gives the key fact; a main peak on 'late' would headline the cause.",
+            "hint": "What does the listener need first?",
+            "explanation": "When the report will arrive is the listener's main concern, so 'Monday' takes the biggest peak. The reason follows in a quieter voice, as support. Reversing the order would make the lateness of the data the headline."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L154_Q3",
+            "instruction": "A friend invites you to a party you'd rather skip.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Thanks for asking, but I think I'll pass this time.",
+            "textToSpeak": "Thanks for asking, but I think I'll pass this time.",
+            "options": [
+                "'Call' and 'back' stand out: the promised details",
+                "Cool 'thanks', hesitant lift on 'pass'",
+                "Falls on 'everything', lifts on 'questions'",
+                "Warm 'thanks', firm fall on 'pass'"
+            ],
+            "correctAnswer": "Warm 'thanks', firm fall on 'pass'",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Warm lift on 'thanks', firm fall on 'pass'.",
+            "meaningShift": "A warm thanks with a firm fall refuses kindly; a cool thanks with a lift would leave it open.",
+            "hint": "How does the voice treat the invitation, and then the refusal?",
+            "explanation": "Warmth in 'thanks' keeps the friendship in focus, and a firm fall on 'pass' makes the refusal clear. A cool 'thanks' with a rise would sound distant and indecisive, leaving the friend unsure whether to insist."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L155_Q1",
+            "instruction": "You are describing your new flat.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "It's smaller than I expected, but it's much nicer.",
+            "textToSpeak": "It's smaller than I expected, but it's much nicer.",
+            "options": [
+                "'Saying' and 'handled' stand out: describing the process",
+                "'Smaller' lifted, 'nicer' takes the peak: net positive",
+                "'Said' and 'did' stand out: promise against action",
+                "'Smaller' takes the peak, 'nicer' lifted: net negative"
+            ],
+            "correctAnswer": "'Smaller' lifted, 'nicer' takes the peak: net positive",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Lift on 'smaller', peak and fall on 'nicer'.",
+            "meaningShift": "A final peak on 'nicer' makes the verdict positive; the reverse would make it a disappointment.",
+            "hint": "Work out which half of the sentence gets the final fall.",
+            "explanation": "Whatever comes last with the strongest fall tends to be heard as the speaker's main point. Here 'nicer' lands that way, so the verdict is positive. If 'smaller' took the peak and 'nicer' lifted, the listener would hear regret."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L155_Q2",
+            "instruction": "You are advising a friend on a phone.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "It's cheaper than the other one, but the battery won't last.",
+            "textToSpeak": "It's cheaper than the other one, but the battery won't last.",
+            "options": [
+                "'Cheaper' peaks, 'last' lifted: a recommendation",
+                "Peaks on 'Sundays' and 'ten': the exception",
+                "'Cheaper' lifted, 'last' falls: a warning",
+                "'Call' and 'back' stand out: the promised details"
+            ],
+            "correctAnswer": "'Cheaper' lifted, 'last' falls: a warning",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Lift on 'cheaper', peak and fall on 'last'.",
+            "meaningShift": "A lifted concession and a falling drawback warn the friend; the reverse would favour buying.",
+            "hint": "Pinpoint which clause carries the speaker's real message.",
+            "explanation": "By conceding the price advantage with a lift and landing the drawback with a fall on 'last', the speaker makes the friend hear a warning. If the weight were on 'cheaper', the drawback would sound like a footnote."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L155_Q3",
+            "instruction": "Asked which of two candidates you prefer.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Both are good, but the second is the one I'd choose.",
+            "textToSpeak": "Both are good, but the second is the one I'd choose.",
+            "options": [
+                "'Good' and 'choose' stand out: praise, then hedge",
+                "'Explained' and 'fix' stand out: describing the situation",
+                "'Both' and 'second' stand out: fair, then decisive",
+                "'Waiting' and 'said' stand out: the bare actions described"
+            ],
+            "correctAnswer": "'Both' and 'second' stand out: fair, then decisive",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Peaks on 'both' and 'second'.",
+            "meaningShift": "Peaks on 'both' and 'second' show fairness then a decision; the other pair would focus on quality and choice.",
+            "hint": "Which words separate the pair from the preference?",
+            "explanation": "'Both' acknowledges the pair, and 'second' picks one, so these carry the contrast. Peaks on 'good' and 'choose' would suggest the speaker was grading quality and the act of choosing, not selecting an option."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L156_Q1",
+            "instruction": "A manager is checking on arrival time.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "If you can get here by nine, we'll be fine.",
+            "textToSpeak": "If you can get here by nine, we'll be fine.",
+            "options": [
+                "'Polite' and 'rude' stand out: the manner",
+                "Open rise on 'nine', fall on 'fine'",
+                "'Smaller' takes the peak, 'nicer' lifted: net negative",
+                "Flat fall on 'nine', rise on 'fine'"
+            ],
+            "correctAnswer": "Open rise on 'nine', fall on 'fine'",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Rise at the end of the if-clause, fall on 'fine'.",
+            "meaningShift": "A lift on the condition and a fall on the result sound complete; the reverse would sound unsure of the outcome.",
+            "hint": "Which part is the condition, and which part is the result?",
+            "explanation": "Conditions typically lift at their boundary, as they set up a result, and the result falls to complete the thought. Falling on 'nine' would end the sentence prematurely, and rising on 'fine' would make the reassurance sound unsure."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L156_Q2",
+            "instruction": "A project lead is confirming a plan.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Unless something changes, we're sticking with Friday.",
+            "textToSpeak": "Unless something changes, we're sticking with Friday.",
+            "options": [
+                "Open rise on 'nine', fall on 'fine'",
+                "Peaks on 'honestly' and 'if': hedging the advice",
+                "Lift after 'changes', peak on 'Friday'",
+                "Peak on 'changes', fall on 'Friday'"
+            ],
+            "correctAnswer": "Lift after 'changes', peak on 'Friday'",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Lift on 'changes', main peak on 'Friday'.",
+            "meaningShift": "A peak on 'Friday' states the plan; a peak on 'changes' would highlight the risk.",
+            "hint": "Which word do you want the team to take away?",
+            "explanation": "Lifting at the end of the conditional opening, the speaker saves the strongest peak for the plan itself, 'Friday'. Putting the peak on 'changes' would make the possible change the headline, and 'Friday' would sound like a footnote."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L156_Q3",
+            "instruction": "A colleague has been asked to approve a request.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "If it were up to me, I'd say yes.",
+            "textToSpeak": "If it were up to me, I'd say yes.",
+            "options": [
+                "'Ordered' and 'ordered' stand out",
+                "'Yes' stands out: they're enthusiastic",
+                "'Me' stands out: it isn't up to them",
+                "'Not' and 'better' stand out: framing it as feedback"
+            ],
+            "correctAnswer": "'Me' stands out: it isn't up to them",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Prominence on 'me' in the conditional clause.",
+            "meaningShift": "A peak on 'me' suggests someone else decides; a peak on 'yes' would suggest agreement.",
+            "hint": "Whose decision is it, according to the sentence?",
+            "explanation": "Peaking on 'me' sets the speaker against whoever does decide, which hints that the answer will actually be no. A peak on 'yes' would make the sentence a plain, positive statement of preference."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L157_Q1",
+            "instruction": "A friend complains about a contractor.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "He said he'd call back, but he never did.",
+            "textToSpeak": "He said he'd call back, but he never did.",
+            "options": [
+                "'Said' and 'did' stand out: promise against action",
+                "Cool 'thanks', hesitant lift on 'pass'",
+                "'Best' and 'town' stand out: the claim itself",
+                "'Call' and 'back' stand out: the promised details"
+            ],
+            "correctAnswer": "'Said' and 'did' stand out: promise against action",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Contrastive peaks on 'said' and 'did'.",
+            "meaningShift": "Peaks on 'said' and 'did' show the gap; peaks on 'call back' would just describe the promise.",
+            "hint": "Notice which two words set a statement apart from what actually happened.",
+            "explanation": "Because the complaint rests on a gap between words and deeds, 'said' and 'did' carry the peaks. The details of what was promised are background and stay low."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L157_Q2",
+            "instruction": "A colleague defends herself.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "She told me it was fine, so I assumed it was.",
+            "textToSpeak": "She told me it was fine, so I assumed it was.",
+            "options": [
+                "Soft, lifted opening; 'Thursday' carries the strongest peak",
+                "Cool 'thanks', hesitant lift on 'pass'",
+                "'Told' stands out: pointing to what was said",
+                "'Fine' stands out: judging the work's quality"
+            ],
+            "correctAnswer": "'Told' stands out: pointing to what was said",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Prominence on 'told' in a justifying clause.",
+            "meaningShift": "A peak on 'told' cites the source; a peak on 'fine' would debate the quality.",
+            "hint": "What is the speaker using as justification?",
+            "explanation": "Relying on having been told, the defence puts the peak on 'told', which points the listener to the source of the assumption. A peak on 'fine' would argue about whether the thing was good."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L157_Q3",
+            "instruction": "You are sharing your opinion of a restaurant.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "They say it's the best restaurant in town, but I wasn't impressed.",
+            "textToSpeak": "They say it's the best restaurant in town, but I wasn't impressed.",
+            "options": [
+                "'Best' and 'town' stand out: the claim itself",
+                "'Polite' and 'rude' stand out: the manner",
+                "'Explained' and 'fix' stand out: describing the situation",
+                "'Say' and 'I' stand out: their view against mine"
+            ],
+            "correctAnswer": "'Say' and 'I' stand out: their view against mine",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Peaks on 'say' and 'I'.",
+            "meaningShift": "Peaks on 'say' and 'I' compare opinions; peaks on 'best' and 'town' would focus on the claim.",
+            "hint": "Hear whose opinions are being compared.",
+            "explanation": "Contrasting what 'they' say with what 'I' felt, the speaker puts the peaks on those two words. The claim itself is background, since the listener has probably heard it before."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L158_Q1",
+            "instruction": "A customer at a service desk.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I've been waiting for forty minutes, and nobody has even said sorry.",
+            "textToSpeak": "I've been waiting for forty minutes, and nobody has even said sorry.",
+            "options": [
+                "'Best' and 'town' stand out: the claim itself",
+                "Lifts on 'everything', falls on 'questions'",
+                "'Forty' and 'even' stand out: the length and the missing apology",
+                "'Waiting' and 'said' stand out: the bare actions described"
+            ],
+            "correctAnswer": "'Forty' and 'even' stand out: the length and the missing apology",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Peaks on 'forty' and 'even'.",
+            "meaningShift": "Peaks on 'forty' and 'even' sharpen the complaint; peaks on the verbs would only describe it.",
+            "hint": "Which words add the sting?",
+            "explanation": "Complaints usually peak on the words that measure the grievance. 'Forty' gives the scale, and 'even' signals that the lack of an apology is the last straw. The actions themselves are known and stay lower."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L158_Q2",
+            "instruction": "A customer is chasing a reply.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I understand you're busy, but this is the third time I've asked.",
+            "textToSpeak": "I understand you're busy, but this is the third time I've asked.",
+            "options": [
+                "Softer first clause, 'third' carries the peak",
+                "Fall on 'help', lift on 'five': leaving it open",
+                "Peaks on 'nine' and 'open': the rule",
+                "Harder first clause, 'busy' carries the peak"
+            ],
+            "correctAnswer": "Softer first clause, 'third' carries the peak",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Softened first clause, main peak on 'third'.",
+            "meaningShift": "A soft concession with a peak on 'third' keeps it civil; a hard 'busy' would sound sarcastic.",
+            "hint": "Hear which clause carries the pressure.",
+            "explanation": "Softening the concession keeps the exchange civil, and the strong peak on 'third' makes the real complaint clear. Pressing on 'busy' would sound sarcastic and shift the focus to the excuse."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L158_Q3",
+            "instruction": "A colleague gives feedback after an event.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I'm not complaining, I'm just saying it could have been handled better.",
+            "textToSpeak": "I'm not complaining, I'm just saying it could have been handled better.",
+            "options": [
+                "'Best' and 'town' stand out: the claim itself",
+                "'Saying' and 'handled' stand out: describing the process",
+                "'Bigger' takes the final peak, 'noisier' lifted",
+                "'Not' and 'better' stand out: framing it as feedback"
+            ],
+            "correctAnswer": "'Not' and 'better' stand out: framing it as feedback",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Peaks on 'not' and 'better'.",
+            "meaningShift": "Peaks on 'not' and 'better' present feedback; peaks on 'saying' and 'handled' would focus on the process.",
+            "hint": "How does the speaker want the comment to be heard?",
+            "explanation": "'Not' rejects the label 'complaint', and 'better' delivers the suggestion. Together they frame the comment as constructive. Pushing 'saying' and 'handled' would instead put the focus on who did what."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L159_Q1",
+            "instruction": "A travel agent is giving an itinerary.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "The flight leaves at six forty-five, lands at nine ten, and the transfer is at nine thirty.",
+            "textToSpeak": "The flight leaves at six forty-five, lands at nine ten, and the transfer is at nine thirty.",
+            "options": [
+                "'Late' carries the main peak; Monday is background",
+                "Falls after each of the times, including the last one",
+                "'Twice' and 'actually' stand out: patience wearing thin",
+                "Lifts after the first two times, falls on the last"
+            ],
+            "correctAnswer": "Lifts after the first two times, falls on the last",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Rises at 'forty-five' and 'ten', fall on 'thirty'.",
+            "meaningShift": "Lifts keep the list moving; a fall on each would make every time sound like a separate statement.",
+            "hint": "Imagine the speaker pausing after the first time. Would you expect more to follow?",
+            "explanation": "Sequences of items rise on every item except the last, which signals that more is coming. The final fall marks the end of the itinerary, so the traveller can stop writing."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L159_Q2",
+            "instruction": "A shop assistant explains the opening hours.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "We open at nine, except on Sundays, when we open at ten.",
+            "textToSpeak": "We open at nine, except on Sundays, when we open at ten.",
+            "options": [
+                "'Right' lifts: inviting a correction",
+                "'Depot' carries the main peak: the origin",
+                "Peaks on 'nine' and 'open': the rule",
+                "Peaks on 'Sundays' and 'ten': the exception"
+            ],
+            "correctAnswer": "Peaks on 'Sundays' and 'ten': the exception",
+            "correctAnswerIndex": 3,
+            "modulationPattern": "Peaks on 'Sundays' and 'ten'.",
+            "meaningShift": "Peaks on the exception help a Sunday visitor; peaks on the rule would highlight the usual hour.",
+            "hint": "Which words matter to someone planning to visit on a Sunday?",
+            "explanation": "With the rule stated first, the exception is where the listener must pay attention, so 'Sundays' and 'ten' take the peaks. Peaks on 'nine' and 'open' would promote the rule over the exception."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L159_Q3",
+            "instruction": "A presenter finishes a briefing.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "That's pretty much everything, unless anyone has questions.",
+            "textToSpeak": "That's pretty much everything, unless anyone has questions.",
+            "options": [
+                "Falls on 'everything', lifts on 'questions'",
+                "'Forty' and 'even' stand out: the length and the missing apology",
+                "'Fine' stands out: judging the work's quality",
+                "Lifts on 'everything', falls on 'questions'"
+            ],
+            "correctAnswer": "Falls on 'everything', lifts on 'questions'",
+            "correctAnswerIndex": 0,
+            "modulationPattern": "Fall on 'everything', rise on 'questions'.",
+            "meaningShift": "A fall then a lift closes and invites; the reverse would invite and then close.",
+            "hint": "Which part wraps up, and which part invites?",
+            "explanation": "Summing up, the first clause falls and gives a sense of closure. The 'unless' clause invites questions, so it lifts and leaves the door open. Reversing the pattern would make the invitation sound like a conclusion."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L160_Q1",
+            "instruction": "A team lead explains a late change to the group.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I know this is short notice, and I'm sorry, but the client moved the deadline to Thursday.",
+            "textToSpeak": "I know this is short notice, and I'm sorry, but the client moved the deadline to Thursday.",
+            "options": [
+                "'Depot' carries the main peak: the origin",
+                "Soft, lifted opening; 'Thursday' carries the strongest peak",
+                "Forceful opening; 'client' carries the strongest peak",
+                "Open rise on 'nine', fall on 'fine'"
+            ],
+            "correctAnswer": "Soft, lifted opening; 'Thursday' carries the strongest peak",
+            "correctAnswerIndex": 1,
+            "modulationPattern": "Lifted apologies, main peak on 'Thursday'.",
+            "meaningShift": "A soft opening with a peak on 'Thursday' delivers the news kindly; a strong opening and a peak on 'client' would blame.",
+            "hint": "Which part of the message must the team remember?",
+            "explanation": "Gentle lifts carry the apology clauses, and the delivered information, 'Thursday', takes the strongest peak. A forceful opening with the peak on 'client' would make it sound like the speaker was assigning blame."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L160_Q2",
+            "instruction": "A friend is deciding whether to go to a wedding abroad.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "Honestly, if it were me, I'd go, because you'll regret it if you don't.",
+            "textToSpeak": "Honestly, if it were me, I'd go, because you'll regret it if you don't.",
+            "options": [
+                "Peaks on 'honestly' and 'if': hedging the advice",
+                "Peaks on 'nine' and 'open': the rule",
+                "Peaks on 'me' and 'regret': advice, then reason",
+                "'Smaller' takes the peak, 'nicer' lifted: net negative"
+            ],
+            "correctAnswer": "Peaks on 'me' and 'regret': advice, then reason",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Peaks on 'me' and 'regret'.",
+            "meaningShift": "Peaks on 'me' and 'regret' give clear, personal advice; peaks on the hedges would soften it.",
+            "hint": "Split the sentence into the advice and the reason, then hear where each lands.",
+            "explanation": "'Me' frames the advice as a personal view, and 'regret' carries the reason that should persuade the friend. Peaks on 'honestly' and 'if' would stay with the hedges and hide what the speaker thinks."
+        },
+        {
+            "id": "ACC_PITCHMODULATION_L160_Q3",
+            "instruction": "A customer calmly escalates a complaint.",
+            "subtype": "pitchModulation",
+            "interactionType": "multiple_choice",
+            "word": "I've explained this twice already, so I'd like to speak to someone who can actually fix it.",
+            "textToSpeak": "I've explained this twice already, so I'd like to speak to someone who can actually fix it.",
+            "options": [
+                "'Cheaper' peaks, 'last' lifted: a recommendation",
+                "Falls on 'eight', peak on 'thought'",
+                "'Twice' and 'actually' stand out: patience wearing thin",
+                "'Explained' and 'fix' stand out: describing the situation"
+            ],
+            "correctAnswer": "'Twice' and 'actually' stand out: patience wearing thin",
+            "correctAnswerIndex": 2,
+            "modulationPattern": "Peaks on 'twice' and 'actually'.",
+            "meaningShift": "Peaks on 'twice' and 'actually' show tiring patience; peaks on 'explained' and 'fix' would only state the problem.",
+            "hint": "Notice which words measure how long the problem has lasted.",
+            "explanation": "'Twice' counts the earlier attempts, and 'actually' hints that the previous person could not help. Together they signal that the customer's patience is running out, but still politely. Peaks on 'explained' and 'fix' would just recount the facts."
+        }
+    ]
+}
