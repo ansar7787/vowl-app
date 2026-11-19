@@ -53,6 +53,8 @@ import 'package:vowl/features/accent/vowel_distinction/presentation/pages/vowel_
 import 'package:vowl/features/accent/vowel_distinction/presentation/pages/vowel_distinction_practice_screen.dart';
 import 'package:vowl/features/accent/consonant_clarity/presentation/pages/consonant_clarity_learn_screen.dart';
 import 'package:vowl/features/accent/consonant_clarity/presentation/pages/consonant_clarity_practice_screen.dart';
+import 'package:vowl/features/accent/pitch_pattern_match/presentation/pages/pitch_pattern_match_learn_screen.dart';
+import 'package:vowl/features/accent/pitch_pattern_match/presentation/pages/pitch_pattern_match_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -853,6 +855,24 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<ConsonantClarityPracticeScreen>());
+    });
+
+    test('resolves /learn route for pitchPatternMatch', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state =
+          createMockState('/learn?category=accent&gameType=pitchPatternMatch&level=5');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<PitchPatternMatchLearnScreen>());
+    });
+
+    test('resolves /practice route for pitchPatternMatch', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state =
+          createMockState('/practice?category=accent&gameType=pitchPatternMatch&level=5');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<PitchPatternMatchPracticeScreen>());
     });
   });
 }

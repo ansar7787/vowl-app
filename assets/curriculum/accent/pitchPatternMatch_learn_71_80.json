@@ -1,0 +1,608 @@
+{
+    "gameType": "pitchPatternMatch",
+    "batchIndex": 8,
+    "phase": "learn",
+    "levels": "71-80",
+    "quests": [
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L71_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "As for the budget, we're fine.",
+            "textToSpeak": "As for the budget, we're fine.",
+            "pitchPatterns": [
+                2,
+                3,
+                1,
+                3,
+                1
+            ],
+            "emphasisRule": "A fronted topic usually carries its own peak; the comment then adds a second one.",
+            "emotionContext": "Topic management",
+            "explanation": "'As for the budget' re-introduces a topic, so BUDGET gets its own lift to flag it. Then FINE gets the closing peak. A flat topic would sound as if the budget hadn't been singled out.",
+            "hint": "Count the peaks. Does 'as for the budget' stay flat, or does the voice lift on it?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L71_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "The new interns? They start Monday.",
+            "textToSpeak": "The new interns? They start Monday.",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                3,
+                1
+            ],
+            "emphasisRule": "A topic named with a rising lift gets its own peak, separate from the comment's peak.",
+            "emotionContext": "Topic management",
+            "explanation": "'The new interns?' is raised as the topic, with a peak on INTERNS. The comment is then MONDAY. START is just the link between them.",
+            "hint": "The speaker names a topic and then answers it. Which two words hold the peaks?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L71_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "The lease? We signed it yesterday.",
+            "textToSpeak": "The lease? We signed it yesterday.",
+            "pitchPatterns": [
+                2,
+                3,
+                1,
+                3,
+                1
+            ],
+            "emphasisRule": "A rising echo of the topic, followed straight away by the news, is topic-setting, not a question.",
+            "emotionContext": "Echo question",
+            "explanation": "B isn't confused about the lease; the rise on LEASE just replays A's topic. SIGNED then delivers the news. A real question would pause for an answer instead of continuing.",
+            "hint": "B's first two words could be a real question or an echo of A's topic. What does B do next?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L72_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Trains are running late because of the snow.",
+            "textToSpeak": "Trains are running late because of the snow.",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                1
+            ],
+            "emphasisRule": "Background information at the end of a sentence stays low; the news before it takes the peak.",
+            "emotionContext": "New information",
+            "explanation": "The snow was just announced, so it is background and falls quietly at the end. LATE is the news, and it takes the peak even though it comes earlier.",
+            "hint": "'Snow' is already known to the listeners. Which word brings the new information?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L72_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Classes are moving to the gym until it's fixed.",
+            "textToSpeak": "Classes are moving to the gym until it's fixed.",
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "emphasisRule": "A background clause that points back to known information stays low.",
+            "emotionContext": "New information",
+            "explanation": "'Until it's fixed' points back to the heating problem, so it is background. GYM is the new arrangement and takes the peak.",
+            "hint": "The notice has already talked about the broken heating. What new detail does this sentence add?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L72_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Because of the storm, the clinic opens at noon.",
+            "textToSpeak": "Because of the storm, the clinic opens at noon.",
+            "pitchPatterns": [
+                1,
+                2,
+                1,
+                3,
+                1
+            ],
+            "emphasisRule": "A background 'because of' clause is lighter than the main clause that carries the news.",
+            "emotionContext": "New information",
+            "explanation": "The storm is a reason everyone already knows, so the voice only lightly lifts on it. NOON is what patients need, so it is the strongest point.",
+            "hint": "Compare how strongly each part of the sentence is spoken. Which part is lighter?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L73_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "I woke up late, missed the bus, and spilled my coffee.",
+            "textToSpeak": "I woke up late, missed the bus, and spilled my coffee.",
+            "pitchPatterns": [
+                2,
+                3,
+                2,
+                3,
+                1
+            ],
+            "emphasisRule": "In a sequence of events, each clause has its own peak on its last content word.",
+            "emotionContext": "Narrative",
+            "explanation": "In a chain of events, each clause gets its own peak on its key content word: LATE, BUS, COFFEE. The verbs carry the action, but the complements finish each event.",
+            "hint": "Each event is a separate piece of news. Which part of each event does the voice lift on?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L73_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "First we drove to the lake, then we hiked to the falls.",
+            "textToSpeak": "First we drove to the lake, then we hiked to the falls.",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                3,
+                1
+            ],
+            "emphasisRule": "Sequence markers (first, then, next) stay low; the content of each step takes the peak.",
+            "emotionContext": "Narrative",
+            "explanation": "FIRST and THEN are signposts, so they stay light. The destinations, LAKE and FALLS, are what the listener follows, so each takes a peak.",
+            "hint": "Sequence words tell you the order. Do they carry the peaks?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L73_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "We were nearly home when the car stopped.",
+            "textToSpeak": "We were nearly home when the car stopped.",
+            "pitchPatterns": [
+                1,
+                1,
+                3,
+                2,
+                3
+            ],
+            "emphasisRule": "Rising pitch at a clause boundary signals that more of the story follows.",
+            "emotionContext": "Narrative",
+            "explanation": "A lift after HOME signals that the thought isn't complete. STOPPED then delivers the event with its own peak. A falling ending after HOME would close the story too early.",
+            "hint": "Listen to what the voice does after 'home'. Does it sound finished?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L74_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Because the babysitter cancelled, I left early.",
+            "textToSpeak": "Because the babysitter cancelled, I left early.",
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "emphasisRule": "In a reason-first sentence, the reason takes the peak and the repeated result falls.",
+            "emotionContext": "Answering a question",
+            "explanation": "'Left early' repeats the question, so it falls away even at the end. CANCELLED is the reason and carries the peak.",
+            "hint": "The friend's question contained 'leave early'. What new information does the answer give?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L74_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "The card machine was down.",
+            "textToSpeak": "The card machine was down.",
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "emphasisRule": "When a short subject + state explains a situation, the state word takes the peak.",
+            "emotionContext": "Answering a question",
+            "explanation": "CARD MACHINE is the subject, so it is the topic. DOWN is the reason, which is why it carries the peak.",
+            "hint": "The reason is a condition, not an object. Which word describes the problem?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L74_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "It was cancelled because of the weather.",
+            "textToSpeak": "It was cancelled because of the weather.",
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "emphasisRule": "A peak on the 'because' clause answers a why-question.",
+            "emotionContext": "New information",
+            "explanation": "WEATHER carries the peak, so the reason is what A didn't know. If the item had been missing, the peak would sit on a noun for the item.",
+            "hint": "Look at which clause carries the peak. Was the reason or the item the missing piece?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L75_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "First, chop the onions. Then fry them gently.",
+            "textToSpeak": "First, chop the onions. Then fry them gently.",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                3,
+                1
+            ],
+            "emphasisRule": "In step-by-step instructions, each step peaks on its last content word, and pronouns stay weak.",
+            "emotionContext": "Instruction",
+            "explanation": "Each step ends with its important detail: ONIONS, then GENTLY. THEM is a pronoun for the onions, so it stays weak.",
+            "hint": "For each step, which word finishes the instruction?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L75_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Plug it in, then turn it on.",
+            "textToSpeak": "Plug it in, then turn it on.",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                3,
+                1
+            ],
+            "emphasisRule": "With a pronoun object, a phrasal verb peaks on its particle, once per step.",
+            "emotionContext": "Instruction",
+            "explanation": "IT is too weak to carry pitch, so each step peaks on its particle: IN and ON. THEN signals the order.",
+            "hint": "The objects are pronouns. Which small words finish each step?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L75_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Never open the case while it's plugged in.",
+            "textToSpeak": "Never open the case while it's plugged in.",
+            "pitchPatterns": [
+                3,
+                1,
+                1,
+                1,
+                1
+            ],
+            "emphasisRule": "Warnings put the peak on the prohibition word, even at the start of the sentence.",
+            "emotionContext": "Warning",
+            "explanation": "In a warning, the speaker marks the prohibition itself, so NEVER takes the peak at the start. The condition 'plugged in' is just the situation.",
+            "hint": "The card is shouting something. Which word has to be heard to stay safe?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L76_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "The marathon has been moved to Monday.",
+            "textToSpeak": "The marathon has been moved to Monday.",
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "emphasisRule": "In a schedule-change announcement, the new day or time takes the peak.",
+            "emotionContext": "New information",
+            "explanation": "The listeners know about Sunday, so a move is expected. The new fact is the replacement day, MONDAY.",
+            "hint": "Listeners already know the planned day. What do they need to learn?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L76_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "The pool closes at eight today.",
+            "textToSpeak": "The pool closes at eight today.",
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "emphasisRule": "In an announcement of a change, the changed value takes the peak and a closing 'today' stays low.",
+            "emotionContext": "New information",
+            "explanation": "Closing at nine is normal, so the change is EIGHT, which takes the peak. TODAY just marks the exception and falls.",
+            "hint": "Everyone knows the usual closing time. What is different today?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L76_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "The train to Pune now departs from platform five.",
+            "textToSpeak": "The train to Pune now departs from platform five.",
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "emphasisRule": "A peak on a changed detail implies the old detail was known.",
+            "emotionContext": "New information",
+            "explanation": "Peaking on FIVE tells listeners the platform is the news. 'Now' signals a change, so they must have expected somewhere else.",
+            "hint": "The platform number takes the peak. What is that number replacing?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L77_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "So, in short, we need more time and more people.",
+            "textToSpeak": "So, in short, we need more time and more people.",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                3,
+                1
+            ],
+            "emphasisRule": "In a recap, the opener and repeated words stay low; the key items take the peaks.",
+            "emotionContext": "Recap",
+            "explanation": "'So, in short' and NEED are framing, and MORE is repeated, so they sit low. TIME and PEOPLE are what the team is asking for.",
+            "hint": "A recap boils a long meeting down to its essentials. Which words are those?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L77_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "As we discussed, the launch moves to May.",
+            "textToSpeak": "As we discussed, the launch moves to May.",
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "emphasisRule": "A phrase pointing back to earlier discussion stays low; the decision that follows carries the peak.",
+            "emotionContext": "Recap",
+            "explanation": "'As we discussed' only reminds listeners, so it isn't news and stays quick and low. MAY is the decision and takes the peak.",
+            "hint": "The opener points back to something everyone already knows. How strongly would you say it?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L77_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "We decided to launch in May.",
+            "textToSpeak": "We decided to launch in May.",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                1
+            ],
+            "emphasisRule": "In a recap of known facts, the peak can move to the verb that records the decision.",
+            "emotionContext": "Recap",
+            "explanation": "Because the month is already shared knowledge, MAY falls. What the speaker reminds people of is that it was DECIDED.",
+            "hint": "The date is no longer news. What is the speaker emphasising instead?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L78_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "My sister, who lives in Oslo, is visiting.",
+            "textToSpeak": "My sister, who lives in Oslo, is visiting.",
+            "pitchPatterns": [
+                3,
+                1,
+                1,
+                3,
+                1
+            ],
+            "emphasisRule": "A parenthetical aside is low and flat; the main clause keeps its own peaks.",
+            "emotionContext": "Aside",
+            "explanation": "An aside like 'who lives in Oslo' is spoken lower and flatter than the main line. The peaks go to SISTER and VISITING.",
+            "hint": "The middle part is an aside. How much pitch movement does it get?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L78_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "The meeting's at three, by the way.",
+            "textToSpeak": "The meeting's at three, by the way.",
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "emphasisRule": "Tags like 'by the way' stay low and quick; the peak stays on the key information before them.",
+            "emotionContext": "Aside",
+            "explanation": "'By the way' is a casual tag, so it stays quick and low. THREE is the information, so the peak stays there even though it isn't last.",
+            "hint": "'By the way' is a tag. Does the voice need to climb there?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L78_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "The report, I think, is almost done.",
+            "textToSpeak": "The report, I think, is almost done.",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                3,
+                1
+            ],
+            "emphasisRule": "A parenthetical like 'I think' is spoken low and flat.",
+            "emotionContext": "Aside",
+            "explanation": "'I think' is a hedge inserted into the sentence, so it is tucked away at a low pitch. REPORT and DONE carry the information.",
+            "hint": "Listen to how 'I think' sounds compared with the words around it.",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L79_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "A storm has closed the airport.",
+            "textToSpeak": "A storm has closed the airport.",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                1
+            ],
+            "emphasisRule": "A reason that follows a headline takes the peak, and the implied consequence stays low.",
+            "emotionContext": "New information",
+            "explanation": "Listeners already know about the flights, and the airport is implied. The new information is the cause, STORM, so it takes the peak early.",
+            "hint": "The headline already told you about flights. What is the new piece of information?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L79_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Big news: we won the contract.",
+            "textToSpeak": "Big news: we won the contract.",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                3,
+                1
+            ],
+            "emphasisRule": "A headline label gets a peak, then the detail gets its own.",
+            "emotionContext": "New information",
+            "explanation": "NEWS is announced with its own peak to alert listeners; CONTRACT then gets the second peak with the detail.",
+            "hint": "Does the opening label sound like a throwaway or a signal?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L79_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Fares are going up, mostly for commuters.",
+            "textToSpeak": "Fares are going up, mostly for commuters.",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                3,
+                1
+            ],
+            "emphasisRule": "In a headline plus a limiting detail, each part takes a peak, and the limiter stays low.",
+            "emotionContext": "New information",
+            "explanation": "UP is the headline, and COMMUTERS is the detail. MOSTLY just limits it.",
+            "hint": "The first clause gives the news. What does the second clause add?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L80_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "I called Sana about the schedule.",
+            "textToSpeak": "I called Sana about the schedule.",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                1
+            ],
+            "emphasisRule": "When all the objects are given, a different verb takes the peak.",
+            "emotionContext": "Given information",
+            "explanation": "SANA and SCHEDULE are both from A, so they are given. The new piece is the method, CALLED, so it gets the main lift.",
+            "hint": "Sana and the schedule both came from A. What did B change?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L80_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "She apologised, and then we all went home.",
+            "textToSpeak": "She apologised, and then we all went home.",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                3,
+                1
+            ],
+            "emphasisRule": "In a story, each event in the chain takes its own peak.",
+            "emotionContext": "Narrative",
+            "explanation": "Both events are news in the story, so each gets a peak. 'And then' just links them.",
+            "hint": "Is the first event just background for the second, or is it news too?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L80_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Dinner's at eight. Oh, and bring a jacket.",
+            "textToSpeak": "Dinner's at eight. Oh, and bring a jacket.",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                3,
+                1
+            ],
+            "emphasisRule": "An add-on sentence gets its own peak on its key word; the hook stays low.",
+            "emotionContext": "Aside",
+            "explanation": "'Oh, and' is a casual hook and stays low. Each sentence gives one key fact: EIGHT and JACKET.",
+            "hint": "The second sentence is an add-on. Which words still deserve peaks?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        }
+    ]
+}

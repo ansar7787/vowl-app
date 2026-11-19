@@ -1,0 +1,758 @@
+{
+    "gameType": "pitchPatternMatch",
+    "batchIndex": 11,
+    "phase": "mastery",
+    "levels": "101-110",
+    "quests": [
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L101_Q1",
+            "instruction": "Identify the pitch pattern. What attitude does the pitch show? You've just watched the final score on the big screen: your team won. A friend turns to you.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "So we won.",
+            "textToSpeak": "So we won.",
+            "options": [
+                "Confirmation: the voice falls because the fact is known",
+                "Surprise: the voice rises because the result is unexpected"
+            ],
+            "correctAnswer": "Confirmation: the voice falls because the fact is known",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "You and your friend both saw the score. Does the speaker need to ask anything?",
+            "explanation": "With the score on the screen, the speaker is simply confirming what both already know, so the pitch falls on WON. Surprise would need a rise and some disbelief.",
+            "emphasisRule": "A falling statement confirms what is known; a rise expresses surprise.",
+            "emotionContext": "Confirmation"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L101_Q2",
+            "instruction": "Identify the pitch pattern. What attitude does the pitch show? Everyone expected your rival to win the race. The results are read out and it's your name.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I won the race?",
+            "textToSpeak": "I won the race?",
+            "options": [
+                "Surprise: the rise shows the speaker didn't expect it",
+                "Confirmation: the speaker is checking the official record"
+            ],
+            "correctAnswer": "Surprise: the rise shows the speaker didn't expect it",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "hint": "Think about what the speaker expected before the result came out.",
+            "explanation": "The speaker was not expecting to win, so the rising ending conveys disbelief. A speaker only checking the record would sound calmer.",
+            "emphasisRule": "A rising ending on a result the speaker didn't expect signals surprise.",
+            "emotionContext": "Surprise"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L101_Q3",
+            "instruction": "Identify the pitch pattern. What attitude does the pitch show? A friend announces her engagement. You had suspected it for weeks.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I knew it!",
+            "textToSpeak": "I knew it!",
+            "options": [
+                "Surprise: a rising reaction to unexpected news",
+                "Confirmation of a hunch: a fall with the peak on KNEW"
+            ],
+            "correctAnswer": "Confirmation of a hunch: a fall with the peak on KNEW",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "Think about what the speaker already believed before the announcement.",
+            "explanation": "The speaker had guessed it already, so KNEW takes the peak and the voice falls: this is confirmation, not shock. Real surprise would more likely rise.",
+            "emphasisRule": "A falling peak on a verb of knowing marks confirmed expectation.",
+            "emotionContext": "Confirmation"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L102_Q1",
+            "instruction": "Identify the pitch pattern. What attitude does the pitch show? A: \"Do you know when the shop opens?\" B is guessing.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I think nine?",
+            "textToSpeak": "I think nine?",
+            "options": [
+                "Rising on nine: a guess inviting correction",
+                "Falling on nine: stated as a known fact"
+            ],
+            "correctAnswer": "Rising on nine: a guess inviting correction",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "hint": "B starts with 'I think'. What does the ending do with that doubt?",
+            "explanation": "The rise on NINE keeps the answer open: B is offering a guess and expects A to correct it if needed. A fall would present nine as certain.",
+            "emphasisRule": "A rising answer signals a guess and invites correction.",
+            "emotionContext": "Uncertainty"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L102_Q2",
+            "instruction": "Identify the pitch pattern. What attitude does the pitch show? A: \"Where did you park?\" B is trying to remember.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Level two, I think, or three.",
+            "textToSpeak": "Level two, I think, or three.",
+            "options": [
+                "Rising on both levels: still deciding between them",
+                "Falling on both: stating two separate levels"
+            ],
+            "correctAnswer": "Rising on both levels: still deciding between them",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                2,
+                3
+            ],
+            "hint": "B is thinking aloud. Does the voice sound settled on either option?",
+            "explanation": "Both levels rise, which keeps the choice open, and 'I think' adds to the doubt. If B were sure, the first would fall and be decisive.",
+            "emphasisRule": "In a hesitating answer, each option rises because none is decided.",
+            "emotionContext": "Uncertainty"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L102_Q3",
+            "instruction": "Identify the pitch pattern. What attitude does the pitch show? A: \"Can you finish the slides by Friday?\" B can't promise.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I can try.",
+            "textToSpeak": "I can try.",
+            "options": [
+                "Falling on TRY: a firm promise",
+                "Fall-rise on TRY: no promise"
+            ],
+            "correctAnswer": "Fall-rise on TRY: no promise",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                3,
+                1,
+                2
+            ],
+            "hint": "B says yes in words but not in tone. What does the voice do after TRY?",
+            "explanation": "TRY takes the peak, but the voice lifts again afterwards, which suggests 'but I can't guarantee it'. A flat fall would sound like a commitment.",
+            "emphasisRule": "A fall-rise on a modal answer signals a reservation or no guarantee.",
+            "emotionContext": "Uncertainty"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L103_Q1",
+            "instruction": "Identify the emphasis. A: \"Do you think the bridge might hold?\" B is the engineer who checked it.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "It will definitely hold.",
+            "textToSpeak": "It will definitely hold.",
+            "options": [
+                "Emphasis on HOLD",
+                "Emphasis on DEFINITELY"
+            ],
+            "correctAnswer": "Emphasis on DEFINITELY",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "A used the word 'might'. How does B correct that doubt?",
+            "explanation": "'Hold' was in A's question, so it is given. DEFINITELY answers A's 'might' and takes the peak to show total certainty.",
+            "emphasisRule": "An adverb of certainty takes the peak when it answers someone's doubt.",
+            "emotionContext": "Certainty"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L103_Q2",
+            "instruction": "Identify the emphasis. A: \"Are you sure you can finish today?\" B is confident.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I'll finish it, don't worry.",
+            "textToSpeak": "I'll finish it, don't worry.",
+            "options": [
+                "Emphasis on FINISH",
+                "Emphasis on WORRY"
+            ],
+            "correctAnswer": "Emphasis on FINISH",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                1
+            ],
+            "hint": "The reassuring tag comes last. Which word carries the actual promise?",
+            "explanation": "FINISH is the promise and takes the peak. 'Don't worry' is a reassuring tail that stays low even though it ends the sentence.",
+            "emphasisRule": "In a confident promise, the verb takes the peak and a reassurance tail stays low.",
+            "emotionContext": "Certainty"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L103_Q3",
+            "instruction": "Identify the pitch pattern. What attitude does the pitch show? A: \"Could it be the wrong address?\" B has just checked.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "It's the right address.",
+            "textToSpeak": "It's the right address.",
+            "options": [
+                "Rise on ADDRESS: asking whether it's right",
+                "Peak on RIGHT with a fall: certain, dismissing the doubt"
+            ],
+            "correctAnswer": "Peak on RIGHT with a fall: certain, dismissing the doubt",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "B has evidence. What would that do to the shape of the answer?",
+            "explanation": "RIGHT takes the peak and the voice falls: B rejects A's doubt flatly. A rise on ADDRESS would turn it into a question.",
+            "emphasisRule": "A falling peak on an evaluative word shows certainty.",
+            "emotionContext": "Certainty"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L104_Q1",
+            "instruction": "Identify the pitch pattern. What attitude does the pitch show? A: \"I ran forty kilometres this morning.\" B knows A hates running.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "You ran forty kilometres?",
+            "textToSpeak": "You ran forty kilometres?",
+            "options": [
+                "Confirmation: checking you heard correctly",
+                "Disbelief: doubting that it's true"
+            ],
+            "correctAnswer": "Disbelief: doubting that it's true",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                3
+            ],
+            "hint": "B knows something about A. How does that change what the question means?",
+            "explanation": "B's knowledge of A's habits makes the echo a challenge, so the early peak on RAN questions the claim itself. A request to repeat would not carry that doubt.",
+            "emphasisRule": "An early peak on the verb in an echo can express doubt about the claim.",
+            "emotionContext": "Disbelief"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L104_Q2",
+            "instruction": "Identify the pitch pattern. What attitude does the pitch show? A: \"I'll definitely finish by Friday.\" B has heard that before.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Yeah, right.",
+            "textToSpeak": "Yeah, right.",
+            "options": [
+                "Rising: genuine, friendly agreement",
+                "Flat, falling: sarcastic disbelief"
+            ],
+            "correctAnswer": "Flat, falling: sarcastic disbelief",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "B's words agree but the history says otherwise. What does the tone do?",
+            "explanation": "'Yeah, right' is only meaningful if it sounds flat and final. B's past experience tells A the words mean the opposite.",
+            "emphasisRule": "A flat, falling 'yeah, right' signals sarcastic disbelief.",
+            "emotionContext": "Sarcasm"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L104_Q3",
+            "instruction": "Identify the emphasis. A: \"Jonas cooked the whole dinner himself.\" B knows Jonas can't cook.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Jonas cooked it?",
+            "textToSpeak": "Jonas cooked it?",
+            "options": [
+                "Emphasis on JONAS",
+                "Emphasis on COOKED"
+            ],
+            "correctAnswer": "Emphasis on JONAS",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                3
+            ],
+            "hint": "What exactly does B find hard to believe?",
+            "explanation": "B's doubt is about the person, since Jonas can't cook. JONAS takes the peak, and COOKED is repeated from A's sentence.",
+            "emphasisRule": "In an echo of disbelief, the peak marks the part that seems unbelievable.",
+            "emotionContext": "Disbelief"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L105_Q1",
+            "instruction": "Identify the emphasis. A: \"Nobody came to the meeting.\" B was there with most of the team.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Plenty of people came.",
+            "textToSpeak": "Plenty of people came.",
+            "options": [
+                "Emphasis on CAME",
+                "Emphasis on PLENTY"
+            ],
+            "correctAnswer": "Emphasis on PLENTY",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                3,
+                1,
+                1,
+                1,
+                1
+            ],
+            "hint": "A made an extreme claim. How does B push back?",
+            "explanation": "A said 'nobody', so B's answer is a direct contradiction. PLENTY takes the peak at the start. CAME just repeats A's verb.",
+            "emphasisRule": "A quantity word that contradicts an extreme claim takes the peak.",
+            "emotionContext": "Contradiction"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L105_Q2",
+            "instruction": "Identify the emphasis. A: \"That café is always empty.\" B walked past it today.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "It was packed this morning.",
+            "textToSpeak": "It was packed this morning.",
+            "options": [
+                "Emphasis on MORNING",
+                "Emphasis on PACKED"
+            ],
+            "correctAnswer": "Emphasis on PACKED",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "B has direct evidence against 'always empty'. Which word contradicts it?",
+            "explanation": "PACKED is the opposite of empty, which is why it carries the peak. MORNING is just when B saw it and stays low.",
+            "emphasisRule": "An adjective opposing the other speaker's claim takes the peak.",
+            "emotionContext": "Contradiction"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L105_Q3",
+            "instruction": "Identify the pitch pattern. What attitude does the pitch show? A: \"You didn't tell me about the party.\" B told A twice.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I told you twice.",
+            "textToSpeak": "I told you twice.",
+            "options": [
+                "A peak on TWICE with a fall: firmly rejecting the claim",
+                "A rise on TWICE: unsure how many times it happened"
+            ],
+            "correctAnswer": "A peak on TWICE with a fall: firmly rejecting the claim",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "B is sure of the facts. How would that sound?",
+            "explanation": "TWICE takes the peak with a fall, which makes it a final answer to A's claim. A rise would sound as if B weren't sure how often.",
+            "emphasisRule": "A falling peak on a count word rejects a claim firmly.",
+            "emotionContext": "Contradiction"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L106_Q1",
+            "instruction": "Identify the pitch pattern. What attitude does the pitch show? A: \"Want to come hiking on Saturday?\" B can't.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "That sounds lovely...",
+            "textToSpeak": "That sounds lovely...",
+            "options": [
+                "A fall: genuine, unhedged acceptance",
+                "Fall-rise: a polite lead-in to a refusal"
+            ],
+            "correctAnswer": "Fall-rise: a polite lead-in to a refusal",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                3,
+                1,
+                2
+            ],
+            "hint": "The words are warm, but the sentence trails off. What does the voice do at the end?",
+            "explanation": "The lift after LOVELY leaves a gap for 'but...'. A genuine yes would fall and close the sentence.",
+            "emphasisRule": "A fall-rise on a warm phrase like 'that sounds lovely' signals that a refusal follows.",
+            "emotionContext": "Declining politely"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L106_Q2",
+            "instruction": "Identify the pitch pattern. What attitude does the pitch show? A: \"What do you think of my essay?\" B has criticisms.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Well, it's... interesting.",
+            "textToSpeak": "Well, it's... interesting.",
+            "options": [
+                "Fall on interesting: sincere, unreserved interest",
+                "Fall-rise on interesting: polite hesitation hiding criticism"
+            ],
+            "correctAnswer": "Fall-rise on interesting: polite hesitation hiding criticism",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                2
+            ],
+            "hint": "The speaker pauses before the key word. What does the final lift suggest?",
+            "explanation": "The hesitation and the lift after INTERESTING tell A that something is being left unsaid. A sincere reaction would fall confidently.",
+            "emphasisRule": "A hesitating fall-rise on a mild adjective can hide criticism.",
+            "emotionContext": "Disagreement"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L106_Q3",
+            "instruction": "Identify the pitch pattern. B answers a question about her new manager. Which continuation would most naturally follow?",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "She's very organised.",
+            "textToSpeak": "She's very organised.",
+            "options": [
+                "...but she doesn't listen much.",
+                "...and that's why I love working for her."
+            ],
+            "correctAnswer": "...but she doesn't listen much.",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                2
+            ],
+            "hint": "The sentence is not finished in tone. What is the voice leading to?",
+            "explanation": "The lift after ORGANISED signals a 'but' to come, so the natural continuation adds a drawback. A fall would have closed the praise.",
+            "emphasisRule": "A fall-rise on praise sets up a 'but' continuation.",
+            "emotionContext": "Reservation"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L107_Q1",
+            "instruction": "Identify the emphasis. A: \"The invoice went out on Monday.\" B thought it was Tuesday.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Was it Monday? I thought Tuesday.",
+            "textToSpeak": "Was it Monday? I thought Tuesday.",
+            "options": [
+                "Emphasis on WAS and THOUGHT",
+                "Emphasis on MONDAY and TUESDAY"
+            ],
+            "correctAnswer": "Emphasis on MONDAY and TUESDAY",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                3
+            ],
+            "hint": "The two days are the whole disagreement. Where does the voice go?",
+            "explanation": "B is gently questioning A, so the two days, MONDAY and TUESDAY, take the peaks. WAS and THOUGHT are the polite frame around them.",
+            "emphasisRule": "In a polite doubt, the two conflicting details carry the peaks and the frame stays low.",
+            "emotionContext": "Disagreement"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L107_Q2",
+            "instruction": "Identify the pitch pattern. What attitude does the pitch show? A: \"We should cut the budget by half.\" B has doubts.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Half? That's quite a lot.",
+            "textToSpeak": "Half? That's quite a lot.",
+            "options": [
+                "A rise on HALF: raising doubt politely",
+                "A fall on HALF: simply agreeing with the figure"
+            ],
+            "correctAnswer": "A rise on HALF: raising doubt politely",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                3,
+                1,
+                1,
+                1,
+                2
+            ],
+            "hint": "B repeats A's word. Is B accepting it or checking it?",
+            "explanation": "A rise on HALF repeats the number as a gentle challenge, and 'quite a lot' continues it. A fall would just accept the figure.",
+            "emphasisRule": "A rising echo of a figure raises doubt politely.",
+            "emotionContext": "Disagreement"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L107_Q3",
+            "instruction": "Identify the pitch pattern. What attitude does the pitch show? A: \"She'll definitely say yes.\" B has doubts.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I wouldn't be so sure.",
+            "textToSpeak": "I wouldn't be so sure.",
+            "options": [
+                "A fall-rise on SURE: gentle doubt",
+                "A flat fall on SURE: blunt rejection"
+            ],
+            "correctAnswer": "A fall-rise on SURE: gentle doubt",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                2
+            ],
+            "hint": "B is disagreeing but trying to be gentle. How does the ending sound?",
+            "explanation": "The final lift after SURE softens the disagreement and leaves A room to respond. A flat fall would feel like a verdict.",
+            "emphasisRule": "A fall-rise on a doubt expression keeps it gentle.",
+            "emotionContext": "Disagreement"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L108_Q1",
+            "instruction": "Identify the pitch pattern. What attitude does the pitch show? A friend shows you her wedding photos and you're thrilled.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "These are beautiful!",
+            "textToSpeak": "These are beautiful!",
+            "options": [
+                "A narrow, flat contour: polite interest",
+                "A sharp peak on BEAUTIFUL: genuine enthusiasm"
+            ],
+            "correctAnswer": "A sharp peak on BEAUTIFUL: genuine enthusiasm",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                3,
+                1,
+                1
+            ],
+            "hint": "Think about how a thrilled person's voice would move compared with a polite one.",
+            "explanation": "A big, quick peak on BEAUTIFUL shows excitement. A polite reaction would barely rise above the rest of the sentence.",
+            "emphasisRule": "Enthusiasm shows as a sharp, wide peak; politeness as a narrow, flat contour.",
+            "emotionContext": "Enthusiasm"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L108_Q2",
+            "instruction": "Identify the pitch pattern. What attitude does the pitch show? A colleague shows a slide that you find dull.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "That's nice.",
+            "textToSpeak": "That's nice.",
+            "options": [
+                "A sharp, wide peak: genuine excitement",
+                "A narrow, flat contour: polite but unenthusiastic"
+            ],
+            "correctAnswer": "A narrow, flat contour: polite but unenthusiastic",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                2,
+                2,
+                3,
+                2,
+                2
+            ],
+            "hint": "The words are positive, but the speaker has little to say. How much movement is there?",
+            "explanation": "The contour barely lifts, which makes 'nice' sound polite rather than excited. A genuinely enthusiastic reaction would have a clear peak.",
+            "emphasisRule": "A narrow, flat contour on a mild compliment signals politeness.",
+            "emotionContext": "Enthusiasm"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L108_Q3",
+            "instruction": "Identify the emphasis. A: \"We got the funding!\" B is thrilled.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "That's incredible news!",
+            "textToSpeak": "That's incredible news!",
+            "options": [
+                "Emphasis on NEWS",
+                "Emphasis on INCREDIBLE"
+            ],
+            "correctAnswer": "Emphasis on INCREDIBLE",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "'News' is just the topic. Which word carries the feeling?",
+            "explanation": "NEWS is implied by A's announcement, so it stays low. INCREDIBLE carries B's excitement and takes the peak.",
+            "emphasisRule": "In an enthusiastic reaction, the evaluative word takes the peak; the repeated topic stays low.",
+            "emotionContext": "Enthusiasm"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L109_Q1",
+            "instruction": "Identify the pitch pattern. What attitude does the pitch show? A: \"The new layout is much better.\" B isn't convinced.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "It's different, I'll give you that.",
+            "textToSpeak": "It's different, I'll give you that.",
+            "options": [
+                "Fall-rise on DIFFERENT: concedes a little but disagrees",
+                "A fall on DIFFERENT: agreeing with the praise"
+            ],
+            "correctAnswer": "Fall-rise on DIFFERENT: concedes a little but disagrees",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                2
+            ],
+            "hint": "B says something true but not what A wanted. What does the voice do after the key word?",
+            "explanation": "The lift after DIFFERENT suggests 'but that isn't the same as better'. A fall would sound like agreement.",
+            "emphasisRule": "A fall-rise on a mild concession signals polite disagreement.",
+            "emotionContext": "Disagreement"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L109_Q2",
+            "instruction": "Identify the emphasis. A: \"Let's cancel the meeting.\" B disagrees mildly.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I'd rather keep it, though.",
+            "textToSpeak": "I'd rather keep it, though.",
+            "options": [
+                "Emphasis on KEEP",
+                "Emphasis on RATHER"
+            ],
+            "correctAnswer": "Emphasis on KEEP",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "'Cancel' was A's idea. Which word is B's counter-proposal?",
+            "explanation": "KEEP is the alternative to cancelling, which is why it carries the peak. RATHER softens the disagreement but isn't what B stresses.",
+            "emphasisRule": "In a mild disagreement, the alternative action takes the peak.",
+            "emotionContext": "Disagreement"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L109_Q3",
+            "instruction": "Identify the pitch pattern. What attitude does the pitch show? A pushes a plan and B objects politely.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I see your point, but I'm not convinced.",
+            "textToSpeak": "I see your point, but I'm not convinced.",
+            "options": [
+                "Peaks on POINT and CONVINCED: acknowledging, then disagreeing",
+                "One peak on CONVINCED: a plain rejection with no acknowledgement"
+            ],
+            "correctAnswer": "Peaks on POINT and CONVINCED: acknowledging, then disagreeing",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                3,
+                1
+            ],
+            "hint": "The sentence has two halves. What does each half do?",
+            "explanation": "POINT acknowledges A's view with a lifted word, and CONVINCED delivers the disagreement. Two peaks show both halves of the message.",
+            "emphasisRule": "Polite disagreement often has two peaks: one for the acknowledgement, one for the objection.",
+            "emotionContext": "Disagreement"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L110_Q1",
+            "instruction": "Identify the pitch pattern. What attitude does the pitch show? A: \"My cat learned to open doors.\"",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Your cat opens doors?",
+            "textToSpeak": "Your cat opens doors?",
+            "options": [
+                "A neutral request to repeat what was said",
+                "Amused disbelief: the peak on CAT with a rise"
+            ],
+            "correctAnswer": "Amused disbelief: the peak on CAT with a rise",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                3
+            ],
+            "hint": "A has said something surprising about a pet. What is B reacting to?",
+            "explanation": "The early peak on CAT and the final rise show B finds it hard to believe and a bit funny. A plain request to repeat would stay level.",
+            "emphasisRule": "An echo with an early peak can express amused disbelief.",
+            "emotionContext": "Disbelief"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L110_Q2",
+            "instruction": "Identify the emphasis. A: \"We'll finish by Friday.\" B has doubts.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Do you think we can finish by Friday?",
+            "textToSpeak": "Do you think we can finish by Friday?",
+            "options": [
+                "Emphasis on THINK",
+                "Emphasis on FRIDAY"
+            ],
+            "correctAnswer": "Emphasis on THINK",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                3
+            ],
+            "hint": "A's deadline is repeated in B's question. What is B really questioning?",
+            "explanation": "FRIDAY is repeated from A, so it is spoken lightly. THINK shows B is questioning whether it's realistic, and the question rises at the end.",
+            "emphasisRule": "In a polite doubt, the verb of belief takes the peak and the repeated deadline stays low.",
+            "emotionContext": "Disagreement"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L110_Q3",
+            "instruction": "Identify the emphasis. A: \"You must hate this weather.\"",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I love it.",
+            "textToSpeak": "I love it.",
+            "options": [
+                "Emphasis on IT",
+                "Emphasis on LOVE"
+            ],
+            "correctAnswer": "Emphasis on LOVE",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "A has made an assumption. What does B say that is opposite?",
+            "explanation": "A assumed dislike, so LOVE is the contradiction and takes the peak. IT is a weak pronoun.",
+            "emphasisRule": "A word of feeling that contradicts what someone has assumed carries the peak.",
+            "emotionContext": "Contradiction"
+        }
+    ]
+}

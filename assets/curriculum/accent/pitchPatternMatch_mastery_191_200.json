@@ -1,0 +1,758 @@
+{
+    "gameType": "pitchPatternMatch",
+    "batchIndex": 20,
+    "phase": "mastery",
+    "levels": "191-200",
+    "quests": [
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L191_Q1",
+            "instruction": "Identify the emphasis. A radio presenter says: \"Shares in the airline rose sharply this morning.\" The co-host asks: \"Was that the earnings report?\" The presenter replies:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Analysts say it was the new routes.",
+            "textToSpeak": "Analysts say it was the new routes.",
+            "options": [
+                "Emphasis on ANALYSTS",
+                "Emphasis on ROUTES"
+            ],
+            "correctAnswer": "Emphasis on ROUTES",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "The co-host proposed one explanation. What does the presenter put in its place?",
+            "explanation": "ANALYSTS and SAY only attribute the claim, so they stay in the background. The replaced explanation is what matters: 'new routes' takes over from 'earnings report', and its noun carries the peak.",
+            "emphasisRule": "A noun phrase that replaces a proposed cause takes the peak on its head noun; the attribution stays low.",
+            "emotionContext": "New information"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L191_Q2",
+            "instruction": "Identify the emphasis. A: \"Which sector is driving the rally?\" An analyst answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "It's the chip makers that are driving it.",
+            "textToSpeak": "It's the chip makers that are driving it.",
+            "options": [
+                "Emphasis on CHIP",
+                "Emphasis on DRIVING"
+            ],
+            "correctAnswer": "Emphasis on CHIP",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                1
+            ],
+            "hint": "A's question supplies 'driving'. How is the answering noun phrase stressed?",
+            "explanation": "DRIVING comes from the question and falls. In the cleft, the focused phrase 'chip makers' behaves like a compound label, so CHIP takes the peak.",
+            "emphasisRule": "In a cleft answer, the focused compound takes the peak on its first word.",
+            "emotionContext": "New information"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L191_Q3",
+            "instruction": "Identify the pitch pattern. What did the presenter most likely ask?",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "The central bank decided to leave rates unchanged.",
+            "textToSpeak": "The central bank decided to leave rates unchanged.",
+            "options": [
+                "What did the central bank do about rates?",
+                "Who decided to leave rates unchanged?"
+            ],
+            "correctAnswer": "What did the central bank do about rates?",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "Look at the word that carries the main peak. What is missing from the presenter's question?",
+            "explanation": "The peak on UNCHANGED shows the decision itself was the unknown. If the presenter had asked who decided, the peak would sit on BANK.",
+            "emphasisRule": "A peak on the outcome answers a question about what was done; a peak on the agent answers who.",
+            "emotionContext": "New information"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L192_Q1",
+            "instruction": "Identify the emphasis. A professor asks: \"What does the author mean by 'soft power'?\" A student answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "She means influence that comes from attraction rather than coercion.",
+            "textToSpeak": "She means influence that comes from attraction rather than coercion.",
+            "options": [
+                "Emphasis on ATTRACTION and COERCION",
+                "Emphasis on MEANS and INFLUENCE"
+            ],
+            "correctAnswer": "Emphasis on ATTRACTION and COERCION",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                3,
+                3,
+                1
+            ],
+            "hint": "The professor's question supplied the term. What does the answer set against what?",
+            "explanation": "MEANS and INFLUENCE only frame the definition. The definition itself is a contrast, so ATTRACTION and COERCION each take a peak.",
+            "emphasisRule": "In a definition by contrast, the two opposed terms take the peaks.",
+            "emotionContext": "Answering a question"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L192_Q2",
+            "instruction": "Identify the emphasis. A professor asks: \"Why did the second experiment fail?\" A student answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "It failed because the samples were contaminated.",
+            "textToSpeak": "It failed because the samples were contaminated.",
+            "options": [
+                "Emphasis on FAILED",
+                "Emphasis on CONTAMINATED"
+            ],
+            "correctAnswer": "Emphasis on CONTAMINATED",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "The professor has already told you the experiment failed. What is new?",
+            "explanation": "FAILED repeats the professor's word and sinks. The cause, CONTAMINATED, is the new information and takes the peak.",
+            "emphasisRule": "The cause in a because-clause takes the peak when the result is given.",
+            "emotionContext": "Answering a question"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L192_Q3",
+            "instruction": "Identify the pitch pattern. What did the professor most likely ask?",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "The results were replicated in a larger sample.",
+            "textToSpeak": "The results were replicated in a larger sample.",
+            "options": [
+                "Who replicated the results?",
+                "How were the results replicated?"
+            ],
+            "correctAnswer": "How were the results replicated?",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "One word in the sentence stands out. What kind of information is it?",
+            "explanation": "LARGER qualifies how the replication was done, so the question was about how. A who-question would have put the peak on a name.",
+            "emphasisRule": "A peak on a modifier of the method answers a how-question.",
+            "emotionContext": "New information"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L193_Q1",
+            "instruction": "Identify the emphasis. A doctor asks: \"Which patient needs the scan first?\" The nurse answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "The man by the window needs it first.",
+            "textToSpeak": "The man by the window needs it first.",
+            "options": [
+                "Emphasis on FIRST",
+                "Emphasis on WINDOW"
+            ],
+            "correctAnswer": "Emphasis on WINDOW",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "The doctor asked 'which'. The nurse's sentence ends with 'first', which is also in the question. What carries the answer?",
+            "explanation": "FIRST repeats the doctor's wording, so it falls. The identifying detail is WINDOW, which tells the doctor which patient, which is why it carries the peak.",
+            "emphasisRule": "The word that answers 'which?' takes the peak, even when a repeated word closes the sentence.",
+            "emotionContext": "Answering a question"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L193_Q2",
+            "instruction": "Identify the emphasis. A pharmacist asks: \"Do you take this with food?\" The patient answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I take it with breakfast every day.",
+            "textToSpeak": "I take it with breakfast every day.",
+            "options": [
+                "Emphasis on BREAKFAST",
+                "Emphasis on TAKE"
+            ],
+            "correctAnswer": "Emphasis on BREAKFAST",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "The pharmacist's question contains 'take' and 'food'. What specific detail does the patient give?",
+            "explanation": "TAKE and IT are already known, so they sit low. BREAKFAST is the particular meal, which is why it carries the peak, and 'every day' trails off.",
+            "emphasisRule": "A specific instance answering a general question takes the peak, and a closing frequency phrase stays low.",
+            "emotionContext": "Answering a question"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L193_Q3",
+            "instruction": "Identify the pitch pattern. What did the patient most likely ask?",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "It should settle down within a few days.",
+            "textToSpeak": "It should settle down within a few days.",
+            "options": [
+                "How long until it improves?",
+                "Is there anything I can do to help it settle?"
+            ],
+            "correctAnswer": "How long until it improves?",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "The doctor's sentence has a time phrase at the end. What question would that answer?",
+            "explanation": "The peak on DAYS gives a duration, which answers a question about how long. A what-can-I-do question would have been answered with a verb such as REST or AVOID.",
+            "emphasisRule": "A peak on a time span answers a how-long question.",
+            "emotionContext": "New information"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L194_Q1",
+            "instruction": "Identify the emphasis. A support agent asks: \"Have you tried restarting the router?\" The customer answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I restarted it twice this morning.",
+            "textToSpeak": "I restarted it twice this morning.",
+            "options": [
+                "Emphasis on RESTARTED",
+                "Emphasis on TWICE"
+            ],
+            "correctAnswer": "Emphasis on TWICE",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "The agent's question gave you the action. What detail does the customer add?",
+            "explanation": "RESTARTED and IT are given by the agent's question, so they stay low. TWICE is the additional fact, and the closing 'this morning' trails after it.",
+            "emphasisRule": "A count added to a given action takes the peak.",
+            "emotionContext": "Answering a question"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L194_Q2",
+            "instruction": "Identify the emphasis. A support agent asks: \"Which cable did you replace?\" The customer answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I replaced the power cable.",
+            "textToSpeak": "I replaced the power cable.",
+            "options": [
+                "Emphasis on REPLACED",
+                "Emphasis on POWER"
+            ],
+            "correctAnswer": "Emphasis on POWER",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "'Replaced' and 'cable' are in the agent's question. What does the customer name?",
+            "explanation": "REPLACED comes from the question. 'Power cable' acts as a compound name, so its first word carries the peak and CABLE falls.",
+            "emphasisRule": "A compound answering 'which?' takes the peak on its first word.",
+            "emotionContext": "Answering a question"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L194_Q3",
+            "instruction": "Identify the emphasis. A support agent asks: \"Did you plug it into the wall socket directly?\" The customer answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I plugged it into an extension lead.",
+            "textToSpeak": "I plugged it into an extension lead.",
+            "options": [
+                "Emphasis on PLUGGED",
+                "Emphasis on EXTENSION"
+            ],
+            "correctAnswer": "Emphasis on EXTENSION",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "The agent assumed a direct connection. What does the customer say instead?",
+            "explanation": "PLUGGED and IT are in the agent's question. EXTENSION replaces 'wall socket directly', and 'extension lead' is a compound whose first word takes the peak.",
+            "emphasisRule": "A replaced compound takes the peak on its first word.",
+            "emotionContext": "Answering a question"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L195_Q1",
+            "instruction": "Identify the emphasis. A parent asks: \"How is Aisha doing in maths?\" The teacher answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "She's doing well, especially with fractions.",
+            "textToSpeak": "She's doing well, especially with fractions.",
+            "options": [
+                "Emphasis on DOING and ESPECIALLY",
+                "Emphasis on WELL and FRACTIONS"
+            ],
+            "correctAnswer": "Emphasis on WELL and FRACTIONS",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                3,
+                1
+            ],
+            "hint": "The parent's question includes 'doing'. What are the two pieces of news?",
+            "explanation": "DOING comes from the parent's question and ESPECIALLY is only a link. WELL answers how, and FRACTIONS narrows it down, so each takes a peak.",
+            "emphasisRule": "A general answer plus a specific detail takes two peaks, with the linking adverb kept low.",
+            "emotionContext": "Answering a question"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L195_Q2",
+            "instruction": "Identify the pitch pattern. What does the pitch do here? A teacher raises a concern gently.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I've noticed she's been a little quiet lately.",
+            "textToSpeak": "I've noticed she's been a little quiet lately.",
+            "options": [
+                "A peak on NOTICED: stressing that she has been watching her",
+                "A peak on QUIET with a gentle fall: raising a concern softly"
+            ],
+            "correctAnswer": "A peak on QUIET with a gentle fall: raising a concern softly",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "The teacher doesn't want to alarm the parent. Which word is the concern, and how is it said?",
+            "explanation": "QUIET is the concern. 'A little' and 'lately' soften it, so the peak is gentle and the voice falls away. Stressing NOTICED would make the sentence about the teacher.",
+            "emphasisRule": "A gentle concern puts the peak on the problem word, not on the speaker's own observation.",
+            "emotionContext": "Softening"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L195_Q3",
+            "instruction": "Identify the emphasis. A parent asks: \"Will she move up to the top group?\" The teacher answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "That's something we'll review at Christmas.",
+            "textToSpeak": "That's something we'll review at Christmas.",
+            "options": [
+                "Emphasis on REVIEW",
+                "Emphasis on CHRISTMAS"
+            ],
+            "correctAnswer": "Emphasis on CHRISTMAS",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "The parent has asked about the future. What does the teacher give?",
+            "explanation": "REVIEW tells the parent it isn't decided, but the answer to 'will she?' is the point in time. CHRISTMAS takes the peak.",
+            "emphasisRule": "An answer about timing takes the peak on the time, even when the verb is the polite hedge.",
+            "emotionContext": "Answering a question"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L196_Q1",
+            "instruction": "Identify the emphasis. A radio host asks: \"What made you start the project?\" The author answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "It began with a conversation on a train.",
+            "textToSpeak": "It began with a conversation on a train.",
+            "options": [
+                "Emphasis on CONVERSATION",
+                "Emphasis on TRAIN"
+            ],
+            "correctAnswer": "Emphasis on CONVERSATION",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "The host asked what started it. Which noun is the answer?",
+            "explanation": "TRAIN is where it happened, which is a setting. The answer to 'what made you start?' is the conversation, so CONVERSATION takes the peak.",
+            "emphasisRule": "The noun that answers a 'what made you…' question takes the peak, not the setting after it.",
+            "emotionContext": "Answering a question"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L196_Q2",
+            "instruction": "Identify the emphasis. A host asks: \"Who inspired the main character?\" The author answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "She's loosely based on my grandmother.",
+            "textToSpeak": "She's loosely based on my grandmother.",
+            "options": [
+                "Emphasis on LOOSELY",
+                "Emphasis on GRANDMOTHER"
+            ],
+            "correctAnswer": "Emphasis on GRANDMOTHER",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "The author softens the claim with an adverb. Who is the answer?",
+            "explanation": "LOOSELY hedges the claim, so it stays light. GRANDMOTHER is the person the host asked about, so she takes the peak.",
+            "emphasisRule": "A hedging adverb stays low; the person who answers 'who?' takes the peak.",
+            "emotionContext": "Answering a question"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L196_Q3",
+            "instruction": "Identify the pitch pattern. What did the host most likely ask?",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I'm working on one now.",
+            "textToSpeak": "I'm working on one now.",
+            "options": [
+                "What are you working on at the moment?",
+                "Is there a sequel planned?"
+            ],
+            "correctAnswer": "Is there a sequel planned?",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                1
+            ],
+            "hint": "The author says 'one' instead of naming something. What does the peak sit on, and what does that imply?",
+            "explanation": "'One' stands in for a sequel that the host has just mentioned, so it is weak. WORKING carries the peak, which answers a yes/no question about plans. A what-question would have needed a noun.",
+            "emphasisRule": "A pronoun substitute for the topic and a peak on the verb answer a question about the topic itself.",
+            "emotionContext": "New information"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L197_Q1",
+            "instruction": "Identify the emphasis. A tourist asks: \"How old is this building?\" The guide answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "It was built in the twelfth century.",
+            "textToSpeak": "It was built in the twelfth century.",
+            "options": [
+                "Emphasis on BUILT",
+                "Emphasis on TWELFTH"
+            ],
+            "correctAnswer": "Emphasis on TWELFTH",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "The tourist asked about age. Which word gives it?",
+            "explanation": "BUILT supports the answer, but the tourist wanted to know when. TWELFTH takes the peak, and 'century' is the unit that follows.",
+            "emphasisRule": "In an answer giving an ordinal date, the ordinal takes the peak and the unit falls.",
+            "emotionContext": "Answering a question"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L197_Q2",
+            "instruction": "Identify the emphasis. Visitors are standing right in front of the paintings, and the guide speaks politely.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Please don't touch the paintings.",
+            "textToSpeak": "Please don't touch the paintings.",
+            "options": [
+                "Emphasis on TOUCH",
+                "Emphasis on PAINTINGS"
+            ],
+            "correctAnswer": "Emphasis on TOUCH",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "The paintings are right in front of everyone. What is the guide actually asking them to avoid?",
+            "explanation": "The paintings are obvious from the scene, so PAINTINGS is given. The request is about the action, so TOUCH takes the peak and the polite 'please' stays light.",
+            "emphasisRule": "In a warning, when the object is in plain view, the verb takes the peak.",
+            "emotionContext": "Warning"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L197_Q3",
+            "instruction": "Identify the pitch pattern. What does the pitch do here? A tourist asks: \"Is the audio guide free?\" The guide answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "It's free with your ticket.",
+            "textToSpeak": "It's free with your ticket.",
+            "options": [
+                "A peak on TICKET: saying what you need to get it",
+                "A peak on FREE: stressing the price"
+            ],
+            "correctAnswer": "A peak on TICKET: saying what you need to get it",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "'Free' was the tourist's own word. What is the guide adding?",
+            "explanation": "FREE is already in the question, so the guide doesn't stress it. TICKET is the condition for getting it free, so the peak lands on it.",
+            "emphasisRule": "A condition added to a repeated word takes the peak.",
+            "emotionContext": "Contrast"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L198_Q1",
+            "instruction": "Identify the emphasis. A speaker compares two greenhouse gases.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Methane traps far more heat than carbon dioxide.",
+            "textToSpeak": "Methane traps far more heat than carbon dioxide.",
+            "options": [
+                "Emphasis on METHANE and CARBON",
+                "Emphasis on TRAPS and HEAT"
+            ],
+            "correctAnswer": "Emphasis on METHANE and CARBON",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                3,
+                1,
+                1,
+                3,
+                1
+            ],
+            "hint": "The comparison is between two gases. Which words name them, and how are compounds treated?",
+            "explanation": "TRAPS and HEAT are the shared frame. The gases are the contrast, so METHANE takes a peak and, in 'carbon dioxide', CARBON carries the second as the first word of a technical name.",
+            "emphasisRule": "In a comparison of technical names, each term takes a peak, with compounds peaking on their first word.",
+            "emotionContext": "New information"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L198_Q2",
+            "instruction": "Identify the emphasis. A: \"Did the factory close because of the strike?\" B knows it was something else.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "The factory closed because of a fire in the warehouse.",
+            "textToSpeak": "The factory closed because of a fire in the warehouse.",
+            "options": [
+                "Emphasis on FIRE",
+                "Emphasis on WAREHOUSE"
+            ],
+            "correctAnswer": "Emphasis on FIRE",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "A suggested a cause. What replaces it in B's longer sentence?",
+            "explanation": "FACTORY and CLOSED come from A, so they stay low. FIRE replaces 'strike', which is why it carries the peak, and WAREHOUSE only says where.",
+            "emphasisRule": "A replacement cause takes the peak even when a location phrase follows.",
+            "emotionContext": "Correction"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L198_Q3",
+            "instruction": "Identify the pitch pattern. What did the customer most likely ask?",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "The delivery fee depends on the size of the parcel.",
+            "textToSpeak": "The delivery fee depends on the size of the parcel.",
+            "options": [
+                "How much is the delivery fee for this parcel?",
+                "Why do some deliveries cost more than others?"
+            ],
+            "correctAnswer": "Why do some deliveries cost more than others?",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "The sentence names a factor. What would someone ask to get that answer?",
+            "explanation": "The peak on SIZE names the reason fees differ, so the customer asked why. A price question would be answered with an amount.",
+            "emphasisRule": "A peak on the determining factor answers a why-question.",
+            "emotionContext": "New information"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L199_Q1",
+            "instruction": "Identify the emphasis. A: \"Could we talk before the board meeting?\" B answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I can meet you an hour before the board meeting.",
+            "textToSpeak": "I can meet you an hour before the board meeting.",
+            "options": [
+                "Emphasis on MEET",
+                "Emphasis on HOUR"
+            ],
+            "correctAnswer": "Emphasis on HOUR",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "'Before the board meeting' came from A. What is B adding?",
+            "explanation": "The meeting and the word 'before' repeat A's request, so they stay low. HOUR is the new information, so it takes the peak.",
+            "emphasisRule": "A repeated time frame stays low; the new quantity of time takes the peak.",
+            "emotionContext": "Answering a question"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L199_Q2",
+            "instruction": "Identify the emphasis. A: \"Should I wear a suit or something casual?\" B answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Smart casual is fine for the interview.",
+            "textToSpeak": "Smart casual is fine for the interview.",
+            "options": [
+                "Emphasis on SMART",
+                "Emphasis on INTERVIEW"
+            ],
+            "correctAnswer": "Emphasis on SMART",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                3,
+                1,
+                1,
+                1,
+                1
+            ],
+            "hint": "A offered 'suit' or 'casual'. What does B add?",
+            "explanation": "'Casual' came from A, so the new word is the modifier that changes it. SMART takes the peak at the start, and the interview is just the occasion.",
+            "emphasisRule": "A new modifier on a given word takes the peak, even at the start of the sentence.",
+            "emotionContext": "Suggestion"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L199_Q3",
+            "instruction": "Identify the emphasis. A: \"When does the discount end?\" B answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "The offer runs through the weekend.",
+            "textToSpeak": "The offer runs through the weekend.",
+            "options": [
+                "Emphasis on WEEKEND",
+                "Emphasis on RUNS"
+            ],
+            "correctAnswer": "Emphasis on WEEKEND",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "A asked 'when'. Which word completes the answer?",
+            "explanation": "OFFER and RUNS are the shared frame. 'Through' links to the time, and WEEKEND gives the end point, so it takes the peak.",
+            "emphasisRule": "An end-point time takes the peak; the linking verb and preposition stay low.",
+            "emotionContext": "Neutral information"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L200_Q1",
+            "instruction": "Identify the emphasis. A: \"So you're saying we should cancel the contract?\" B clarifies carefully:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I'm saying we should renegotiate it.",
+            "textToSpeak": "I'm saying we should renegotiate it.",
+            "options": [
+                "Emphasis on SAYING",
+                "Emphasis on RENEGOTIATE"
+            ],
+            "correctAnswer": "Emphasis on RENEGOTIATE",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "A has put words in B's mouth. What is the one thing B changes?",
+            "explanation": "I'M SAYING and WE SHOULD are shared with A's version, and IT refers to the contract. RENEGOTIATE replaces 'cancel', so it takes the peak.",
+            "emphasisRule": "A clarification that swaps one verb puts the peak on the new verb and leaves the shared frame low.",
+            "emotionContext": "Clarification"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L200_Q2",
+            "instruction": "Identify the pitch pattern. What did A most likely ask?",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I'd rather see the final version.",
+            "textToSpeak": "I'd rather see the final version.",
+            "options": [
+                "Which version should I send you?",
+                "Do you want to review it at all?"
+            ],
+            "correctAnswer": "Which version should I send you?",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "One word in B's reply picks out an option. What question would that answer?",
+            "explanation": "FINAL selects one of several versions, so A asked which one. A yes/no question about reviewing would have been answered with a form of 'yes' or 'no'.",
+            "emphasisRule": "A peak on a distinguishing adjective answers a which-question.",
+            "emotionContext": "New information"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L200_Q3",
+            "instruction": "Identify the emphasis. A: \"Could you explain why the figures changed?\" An analyst answers:",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "The figures changed because we revised the methodology slightly.",
+            "textToSpeak": "The figures changed because we revised the methodology slightly.",
+            "options": [
+                "Emphasis on METHODOLOGY",
+                "Emphasis on REVISED"
+            ],
+            "correctAnswer": "Emphasis on METHODOLOGY",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "Everyone in the conversation already agrees that the numbers moved. What does the explanation after 'because' tell them that they did not know?",
+            "explanation": "FIGURES and CHANGED come from the question. REVISED is the action, but the thing that was revised, METHODOLOGY, is the cause, so it gets the main lift. 'Slightly' trails off.",
+            "emphasisRule": "In a reason clause, the object that explains the change takes the peak, and a closing adverb stays low.",
+            "emotionContext": "Explanation"
+        }
+    ]
+}

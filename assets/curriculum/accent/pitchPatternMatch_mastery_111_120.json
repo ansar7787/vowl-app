@@ -1,0 +1,758 @@
+{
+    "gameType": "pitchPatternMatch",
+    "batchIndex": 12,
+    "phase": "mastery",
+    "levels": "111-120",
+    "quests": [
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L111_Q1",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A manager asks a new employee to close the door and wants to sound friendly.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Could you close the door?",
+            "textToSpeak": "Could you close the door?",
+            "options": [
+                "Rising: a polite request that leaves room to say no",
+                "Falling: a firm instruction with no room to refuse"
+            ],
+            "correctAnswer": "Rising: a polite request that leaves room to say no",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "hint": "The manager wants the new employee to feel comfortable. How does the question end?",
+            "explanation": "The rise on DOOR turns the request into something the listener can answer, which sounds polite. A fall would sound like an order in question form.",
+            "emphasisRule": "A rising yes/no request sounds polite; a falling one sounds like a command.",
+            "emotionContext": "Polite request"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L111_Q2",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A tired parent is asking for the third time.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Can you put your shoes on.",
+            "textToSpeak": "Can you put your shoes on.",
+            "options": [
+                "Rising: a genuine question about ability",
+                "Falling: an impatient command in question form"
+            ],
+            "correctAnswer": "Falling: an impatient command in question form",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "The words form a question but the situation does not. What is the parent really doing?",
+            "explanation": "By the third request, the parent no longer wonders whether the child can. The falling ending on ON shows it is an instruction.",
+            "emphasisRule": "A falling 'can you...' is a command, not a question.",
+            "emotionContext": "Instruction"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L111_Q3",
+            "instruction": "Identify the emphasis. Two jobs are waiting: the printer and the projector. You ask a colleague for help.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Could you do the printer first?",
+            "textToSpeak": "Could you do the printer first?",
+            "options": [
+                "Emphasis on PRINTER",
+                "Emphasis on FIRST"
+            ],
+            "correctAnswer": "Emphasis on PRINTER",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                3,
+                1,
+                3
+            ],
+            "hint": "You are asking about priority between two jobs. Which word names the one you want?",
+            "explanation": "The request is polite, but the contrast is between the two jobs. PRINTER takes the peak, and FIRST just sets the order.",
+            "emphasisRule": "In a polite request between two items, the item you want takes the peak.",
+            "emotionContext": "Polite request"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L112_Q1",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A host notices a guest's glass is empty.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Can I top that up for you?",
+            "textToSpeak": "Can I top that up for you?",
+            "options": [
+                "Rising: a friendly offer the guest can decline",
+                "Falling: announcing what the host is going to do"
+            ],
+            "correctAnswer": "Rising: a friendly offer the guest can decline",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "hint": "The guest should feel free to say no. What does the ending do?",
+            "explanation": "The rise on YOU leaves the choice with the guest. A fall would sound as though the host had already decided.",
+            "emphasisRule": "A rising offer leaves the choice with the listener.",
+            "emotionContext": "Offer"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L112_Q2",
+            "instruction": "Identify the emphasis. A friend says her car is at the garage this week.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I could drive you, if you like.",
+            "textToSpeak": "I could drive you, if you like.",
+            "options": [
+                "Emphasis on DRIVE",
+                "Emphasis on LIKE"
+            ],
+            "correctAnswer": "Emphasis on DRIVE",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                1
+            ],
+            "hint": "The offer is the main point. 'If you like' is a softener. Which part has the peak?",
+            "explanation": "DRIVE is the offer itself, which is why it carries the peak. 'If you like' is a gentle tail that stays low and leaves the decision open.",
+            "emphasisRule": "In an offer with a softening tag, the offer takes the peak and the tag stays low.",
+            "emotionContext": "Offer"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L112_Q3",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A teacher notices a student who looks stuck.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Would it help if I explained it again?",
+            "textToSpeak": "Would it help if I explained it again?",
+            "options": [
+                "Rising: a gentle offer",
+                "Falling: a firm decision to explain"
+            ],
+            "correctAnswer": "Rising: a gentle offer",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "hint": "The teacher doesn't want the student to feel judged. How does the question end?",
+            "explanation": "The final rise on AGAIN keeps it as an offer the student can accept or decline. A fall would sound like the teacher's decision.",
+            "emphasisRule": "A rising conditional offer sounds gentle and optional.",
+            "emotionContext": "Offer"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L113_Q1",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A neighbour invites you to dinner and hopes you'll come.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Would you like to come for dinner on Friday?",
+            "textToSpeak": "Would you like to come for dinner on Friday?",
+            "options": [
+                "Falling: a fixed arrangement being announced",
+                "Rising: a warm, open invitation"
+            ],
+            "correctAnswer": "Rising: a warm, open invitation",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "hint": "Is the host announcing a plan or inviting you to choose?",
+            "explanation": "The final rise on FRIDAY leaves room for the guest to answer, which makes it a warm invitation. A fall would sound like an arrangement the host had made for you.",
+            "emphasisRule": "A rising invitation leaves the decision with the guest.",
+            "emotionContext": "Invitation"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L113_Q2",
+            "instruction": "Identify the emphasis. You're inviting a friend and want her partner to come as well.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "You should bring Sam too.",
+            "textToSpeak": "You should bring Sam too.",
+            "options": [
+                "Emphasis on SAM",
+                "Emphasis on BRING"
+            ],
+            "correctAnswer": "Emphasis on SAM",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "The friend is already invited. What is the new part of the invitation?",
+            "explanation": "The friend's invitation is settled, so BRING is understood. SAM is the extension of the invitation, so it takes the peak.",
+            "emphasisRule": "When extending an invitation, the added person takes the peak.",
+            "emotionContext": "Invitation"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L113_Q3",
+            "instruction": "Identify the emphasis. A: \"What time does the party start?\" B is relaxed about it.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "It starts at eight, but come whenever.",
+            "textToSpeak": "It starts at eight, but come whenever.",
+            "options": [
+                "Emphasis on EIGHT and WHENEVER",
+                "Emphasis on STARTS and COME"
+            ],
+            "correctAnswer": "Emphasis on EIGHT and WHENEVER",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                3,
+                1
+            ],
+            "hint": "B gives a fixed time and then removes the pressure. Which two words carry that?",
+            "explanation": "EIGHT answers A's question, and WHENEVER cancels any strictness. STARTS and COME are only the frame.",
+            "emphasisRule": "In a flexible invitation, the time and the 'whenever' each take a peak.",
+            "emotionContext": "Invitation"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L114_Q1",
+            "instruction": "Identify the emphasis. A: \"Are you free on Friday evening?\" B isn't.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I'm afraid I'm busy then.",
+            "textToSpeak": "I'm afraid I'm busy then.",
+            "options": [
+                "Emphasis on AFRAID",
+                "Emphasis on BUSY"
+            ],
+            "correctAnswer": "Emphasis on BUSY",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "The opening phrase softens the refusal. Which word carries the actual reason?",
+            "explanation": "'I'm afraid' cushions the answer, but it isn't the information. BUSY is, so it gets the main lift.",
+            "emphasisRule": "In a polite refusal, the softener stays low and the reason takes the peak.",
+            "emotionContext": "Declining politely"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L114_Q2",
+            "instruction": "Identify the emphasis. A: \"We're collecting names for the trip.\" B wants to go.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Sure, count me in.",
+            "textToSpeak": "Sure, count me in.",
+            "options": [
+                "Emphasis on IN",
+                "Emphasis on SURE"
+            ],
+            "correctAnswer": "Emphasis on IN",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "The reply starts with an agreeing word. Where does the real commitment sit?",
+            "explanation": "SURE is a quick agreement marker. IN carries the commitment, so the peak lands on it at the end.",
+            "emphasisRule": "In an informal acceptance, the word that expresses joining takes the peak.",
+            "emotionContext": "Accepting"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L114_Q3",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A: \"Can you cover my shift?\" B must decline kindly.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I wish I could.",
+            "textToSpeak": "I wish I could.",
+            "options": [
+                "A flat fall on WISH: a dismissal that shuts the topic down",
+                "Fall-rise on WISH: sincere regret softening the refusal"
+            ],
+            "correctAnswer": "Fall-rise on WISH: sincere regret softening the refusal",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                2
+            ],
+            "hint": "B can't help but wants A to know it isn't because of indifference. What does the voice do after WISH?",
+            "explanation": "The lift after WISH leaves a gentle 'but I can't' hanging. It conveys regret instead of a blunt no.",
+            "emphasisRule": "A fall-rise on 'I wish' expresses regret in a refusal.",
+            "emotionContext": "Declining politely"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L115_Q1",
+            "instruction": "Identify the emphasis. A says: \"Send it to the team.\" You know of the design team and the sales team.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Do you mean the design team?",
+            "textToSpeak": "Do you mean the design team?",
+            "options": [
+                "Emphasis on MEAN",
+                "Emphasis on DESIGN"
+            ],
+            "correctAnswer": "Emphasis on DESIGN",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                3
+            ],
+            "hint": "You are checking a specific guess. Which word shows it?",
+            "explanation": "TEAM is shared by both candidates, so it stays low. DESIGN is the guess you want to confirm, so it takes the peak.",
+            "emphasisRule": "In a polite clarification, the guessed option takes the peak.",
+            "emotionContext": "Clarification"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L115_Q2",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A colleague gave unclear instructions and you want to check without blaming them.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Just so I'm clear, you want it by Monday?",
+            "textToSpeak": "Just so I'm clear, you want it by Monday?",
+            "options": [
+                "Rising on MONDAY: checking, taking responsibility for the doubt",
+                "Falling on MONDAY: restating a decision that has been made"
+            ],
+            "correctAnswer": "Rising on MONDAY: checking, taking responsibility for the doubt",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "hint": "'Just so I'm clear' puts the doubt on you. What does the ending do?",
+            "explanation": "The rise on MONDAY asks the colleague to confirm. Opening with 'just so I'm clear' makes it your check, not their mistake.",
+            "emphasisRule": "A rise plus a self-blaming opener makes a clarification polite.",
+            "emotionContext": "Clarification"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L115_Q3",
+            "instruction": "Identify the emphasis. A says: \"Let's use the standard template.\" You don't know which one.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Is that the one from last year?",
+            "textToSpeak": "Is that the one from last year?",
+            "options": [
+                "Emphasis on ONE",
+                "Emphasis on LAST"
+            ],
+            "correctAnswer": "Emphasis on LAST",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                3,
+                1,
+                3
+            ],
+            "hint": "'The one' is a stand-in for something A hasn't specified. Which detail are you asking about?",
+            "explanation": "ONE is a placeholder, so it stays low. LAST is the detail that narrows it down, so the peak lands on it.",
+            "emphasisRule": "In a clarification question, the narrowing word takes the peak and 'one' stays low.",
+            "emotionContext": "Clarification"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L116_Q1",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A colleague stayed late to help you finish a report.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Thank you so much, I really appreciate it.",
+            "textToSpeak": "Thank you so much, I really appreciate it.",
+            "options": [
+                "One flat fall on the last word: a routine, automatic thank-you",
+                "Two peaks on MUCH and APPRECIATE: a warm, sincere thank-you"
+            ],
+            "correctAnswer": "Two peaks on MUCH and APPRECIATE: a warm, sincere thank-you",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                3,
+                1
+            ],
+            "hint": "The speaker adds a second sentence after 'thank you'. What does the voice do on each part?",
+            "explanation": "Each half of the thanks gets a peak, so the gratitude sounds real. A routine thank-you would use a single fall.",
+            "emphasisRule": "A sincere thank-you often has two peaks, one on each part.",
+            "emotionContext": "Thanks"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L116_Q2",
+            "instruction": "Identify the emphasis. You bump into someone carrying a coffee.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Oh, I'm so sorry!",
+            "textToSpeak": "Oh, I'm so sorry!",
+            "options": [
+                "Emphasis on SO",
+                "Emphasis on SORRY"
+            ],
+            "correctAnswer": "Emphasis on SO",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "hint": "In an emotional apology, does the intensifier stay quiet?",
+            "explanation": "In feeling expressions, the intensifier carries the sincerity. SO takes the peak, which tells the listener the apology is heartfelt.",
+            "emphasisRule": "In heartfelt apologies, 'so' takes the peak instead of the adjective.",
+            "emotionContext": "Apology"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L116_Q3",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? You're late to a meeting and apologise briefly before moving on.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Sorry I'm late, shall we start?",
+            "textToSpeak": "Sorry I'm late, shall we start?",
+            "options": [
+                "A quick, low 'sorry', then a rise: moving on",
+                "A strong peak on 'sorry': a deep apology"
+            ],
+            "correctAnswer": "A quick, low 'sorry', then a rise: moving on",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "hint": "The speaker wants to restart the meeting. Which part of the sentence is the main message?",
+            "explanation": "SORRY is brief and low, a quick courtesy. The rise on START hands the meeting back, so the focus is on starting.",
+            "emphasisRule": "A brief, low apology followed by a rising question moves the conversation forward.",
+            "emotionContext": "Apology"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L117_Q1",
+            "instruction": "Identify the emphasis. A manager has to tell an employee that a project has ended.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Unfortunately, the project's been cancelled.",
+            "textToSpeak": "Unfortunately, the project's been cancelled.",
+            "options": [
+                "Emphasis on UNFORTUNATELY",
+                "Emphasis on CANCELLED"
+            ],
+            "correctAnswer": "Emphasis on CANCELLED",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "The first word is a warning. Is it the news?",
+            "explanation": "UNFORTUNATELY prepares the listener, but it is not the information. CANCELLED is, so the peak lands on it.",
+            "emphasisRule": "A softening opener stays low; the bad news itself takes the peak.",
+            "emotionContext": "Softening"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L117_Q2",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A doctor reassures a worried patient.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "It's nothing serious, but we should keep an eye on it.",
+            "textToSpeak": "It's nothing serious, but we should keep an eye on it.",
+            "options": [
+                "One peak on EYE: a warning only, with nothing reassuring in it",
+                "Peaks on SERIOUS and EYE: reassurance first, then a gentle caution"
+            ],
+            "correctAnswer": "Peaks on SERIOUS and EYE: reassurance first, then a gentle caution",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                3,
+                1
+            ],
+            "hint": "The doctor is giving good news and a caution. How many peaks would that need?",
+            "explanation": "SERIOUS delivers the reassurance and EYE the caution, so there are two peaks. A single peak would make it only a warning.",
+            "emphasisRule": "A reassurance-then-caution sentence uses a peak for each part.",
+            "emotionContext": "Reassurance"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L117_Q3",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A neighbour tells you that builders will be working next door.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "I'm afraid it'll be a bit noisy for a while.",
+            "textToSpeak": "I'm afraid it'll be a bit noisy for a while.",
+            "options": [
+                "A softened peak on NOISY with a gentle ending: cushioning the news",
+                "A sharp peak on NOISY: a firm warning of what is coming"
+            ],
+            "correctAnswer": "A softened peak on NOISY with a gentle ending: cushioning the news",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                2
+            ],
+            "hint": "The speaker uses 'a bit' and 'for a while'. How does the pitch match that?",
+            "explanation": "A gentle peak and a slight lift afterwards fit the softeners 'a bit' and 'for a while'. A sharp peak would sound alarming.",
+            "emphasisRule": "Softening language is matched by a gentler pitch peak.",
+            "emotionContext": "Softening"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L118_Q1",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A trainer explains a step and pauses.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Does that make sense?",
+            "textToSpeak": "Does that make sense?",
+            "options": [
+                "Falling: ending the topic",
+                "Rising: inviting questions"
+            ],
+            "correctAnswer": "Rising: inviting questions",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "hint": "The trainer wants to know if anyone is lost. What does the ending suggest?",
+            "explanation": "The rise on SENSE invites people to respond. A fall would sound as if the trainer assumed everyone understood.",
+            "emphasisRule": "A rising check question invites a response.",
+            "emotionContext": "Clarification"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L118_Q2",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A listener nods, but looks confused.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Is that clear, or shall I go over it again?",
+            "textToSpeak": "Is that clear, or shall I go over it again?",
+            "options": [
+                "Rises on clear, falls on again: offering a choice",
+                "Rises on both clear and again: a plain yes/no question"
+            ],
+            "correctAnswer": "Rises on clear, falls on again: offering a choice",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                3,
+                1
+            ],
+            "hint": "The sentence has an 'or'. What happens to each half?",
+            "explanation": "CLEAR rises because another option follows, and AGAIN falls to close the choice. Two rises would make it a yes/no question.",
+            "emphasisRule": "An 'or' question rises on the first option and falls on the last.",
+            "emotionContext": "Clarification"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L118_Q3",
+            "instruction": "Identify the emphasis. A: \"Remember to back up the files before you update.\" B checks the order.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Back up first, then update?",
+            "textToSpeak": "Back up first, then update?",
+            "options": [
+                "Emphasis on BACK and THEN",
+                "Emphasis on FIRST and UPDATE"
+            ],
+            "correctAnswer": "Emphasis on FIRST and UPDATE",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                3
+            ],
+            "hint": "B is checking the order. Which two words carry it?",
+            "explanation": "FIRST and UPDATE mark the two steps in the sequence. BACK and THEN are the frame.",
+            "emphasisRule": "When checking an order, the sequence words take the peaks.",
+            "emotionContext": "Clarification"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L119_Q1",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A colleague has talked for a long time and you want to move the meeting on.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Sorry to interrupt, but can we move on?",
+            "textToSpeak": "Sorry to interrupt, but can we move on?",
+            "options": [
+                "Falling: a firm cut-off",
+                "Rising: polite, leaving room to agree"
+            ],
+            "correctAnswer": "Rising: polite, leaving room to agree",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "hint": "You still want to keep the speaker onside. What does the ending do?",
+            "explanation": "The rise on ON turns the redirect into a question the speaker can agree to. A fall would sound like an instruction.",
+            "emphasisRule": "A rising redirect sounds polite; a falling one sounds like a cut-off.",
+            "emotionContext": "Topic management"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L119_Q2",
+            "instruction": "Identify the emphasis. The budget was the original topic, but the speaker keeps drifting off.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Let's get back to the budget.",
+            "textToSpeak": "Let's get back to the budget.",
+            "options": [
+                "Emphasis on BACK",
+                "Emphasis on BUDGET"
+            ],
+            "correctAnswer": "Emphasis on BACK",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                1
+            ],
+            "hint": "The budget was already the topic. What is the speaker really asking for?",
+            "explanation": "BUDGET is given, so it falls away. BACK marks the return to the original topic, and it takes the peak.",
+            "emphasisRule": "When returning to a given topic, the word of returning takes the peak.",
+            "emotionContext": "Topic management"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L119_Q3",
+            "instruction": "Identify the emphasis. A louder colleague is talking over a quieter one.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Hang on, I think Dana was about to say something.",
+            "textToSpeak": "Hang on, I think Dana was about to say something.",
+            "options": [
+                "Emphasis on SOMETHING",
+                "Emphasis on DANA"
+            ],
+            "correctAnswer": "Emphasis on DANA",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                1
+            ],
+            "hint": "You want the group to look at someone else. Which word points them there?",
+            "explanation": "SOMETHING is vague and carries nothing new. DANA is the person you're redirecting attention to, so the peak lands on it.",
+            "emphasisRule": "When handing the floor to someone, their name takes the peak.",
+            "emotionContext": "Topic management"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L120_Q1",
+            "instruction": "Identify the emphasis. You ask a colleague to review one particular section of a long report.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Could you take a look at the second section?",
+            "textToSpeak": "Could you take a look at the second section?",
+            "options": [
+                "Emphasis on LOOK",
+                "Emphasis on SECOND"
+            ],
+            "correctAnswer": "Emphasis on SECOND",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                1,
+                3,
+                1,
+                3
+            ],
+            "hint": "The report is long. What are you asking the colleague to narrow down?",
+            "explanation": "'Take a look' is the usual request, so it stays low. SECOND tells the colleague which section, so the peak lands on it, and the rise keeps it polite.",
+            "emphasisRule": "In a polite request about part of a whole, the narrowing word takes the peak.",
+            "emotionContext": "Polite request"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L120_Q2",
+            "instruction": "Identify the pitch pattern. What does the pitch show about the speaker's intent? A shop assistant apologises after a long queue.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Sorry about the wait.",
+            "textToSpeak": "Sorry about the wait.",
+            "options": [
+                "Falling: a brief, routine apology",
+                "Rising: asking whether you minded"
+            ],
+            "correctAnswer": "Falling: a brief, routine apology",
+            "correctAnswerIndex": 0,
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "hint": "The assistant isn't asking anything. How does the sentence end?",
+            "explanation": "A fall on WAIT closes the apology. A rise would make it a question about whether the customer minded.",
+            "emphasisRule": "A falling 'sorry about...' is a brief apology, not a question.",
+            "emotionContext": "Apology"
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_MASTERY_L120_Q3",
+            "instruction": "Identify the emphasis. A: \"Fancy a drink after work?\" B can't.",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "speaking",
+            "word": "Not tonight, I've got an early start.",
+            "textToSpeak": "Not tonight, I've got an early start.",
+            "options": [
+                "Emphasis on GOT and START",
+                "Emphasis on TONIGHT and EARLY"
+            ],
+            "correctAnswer": "Emphasis on TONIGHT and EARLY",
+            "correctAnswerIndex": 1,
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                3,
+                1
+            ],
+            "hint": "B turns down this occasion, not the idea. Which two words show that?",
+            "explanation": "TONIGHT limits the refusal to this evening, and EARLY gives the reason. GOT and START are the frame.",
+            "emphasisRule": "A friendly refusal peaks on the limit and the reason.",
+            "emotionContext": "Declining politely"
+        }
+    ]
+}

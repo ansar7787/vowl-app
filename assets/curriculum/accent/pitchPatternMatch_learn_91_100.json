@@ -1,0 +1,608 @@
+{
+    "gameType": "pitchPatternMatch",
+    "batchIndex": 10,
+    "phase": "learn",
+    "levels": "91-100",
+    "quests": [
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L91_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Would you like tea or coffee?",
+            "textToSpeak": "Would you like tea or coffee?",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                3,
+                1
+            ],
+            "emphasisRule": "In an alternative question, every option but the last rises and the last one falls.",
+            "emotionContext": "Choice question",
+            "explanation": "The rise on TEA says 'there is another option coming', and the fall on COFFEE closes the choice. Rising on both would turn it into a yes/no offer.",
+            "hint": "Listen to what happens on each option, and especially on the last one.",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L91_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Are you taking the bus or the train?",
+            "textToSpeak": "Are you taking the bus or the train?",
+            "pitchPatterns": [
+                1,
+                1,
+                3,
+                3,
+                1
+            ],
+            "emphasisRule": "In an alternative question, the contrasting options carry the peaks and the shared verb stays low.",
+            "emotionContext": "Choice question",
+            "explanation": "TAKING is shared by both options, so it stays low. BUS and TRAIN are the alternatives, so each gets a peak, with the voice falling on the last one.",
+            "hint": "The verb is the same for both choices. Which words differ?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L91_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Can I get you tea or coffee or something?",
+            "textToSpeak": "Can I get you tea or coffee or something?",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                2,
+                3
+            ],
+            "emphasisRule": "A rise that continues past the last option makes a choice open-ended.",
+            "emotionContext": "Offer",
+            "explanation": "The final rise on 'something' leaves the offer open, so tea and coffee are only suggestions. A fall at the end would turn it back into a pick-one question.",
+            "hint": "'Or something' changes the shape of the offer. What does it do to the choice?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L92_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Small, medium, or large?",
+            "textToSpeak": "Small, medium, or large?",
+            "pitchPatterns": [
+                2,
+                3,
+                2,
+                3,
+                1
+            ],
+            "emphasisRule": "In a closed choice of three or more, every option rises except the last.",
+            "emotionContext": "Choice question",
+            "explanation": "SMALL and MEDIUM each lift because more options follow, and LARGE falls because the choice is complete. A rise on LARGE would ask whether any size is wanted.",
+            "hint": "Think about what each rise leaves open, and how the last item closes things.",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L92_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "So, are we taking the bus, the metro, or driving?",
+            "textToSpeak": "So, are we taking the bus, the metro, or driving?",
+            "pitchPatterns": [
+                1,
+                3,
+                2,
+                3,
+                1
+            ],
+            "emphasisRule": "Each option in a list of choices carries its own peak; the shared frame stays low.",
+            "emotionContext": "Choice question",
+            "explanation": "TAKING is the shared verb for the first two options and stays low. Each remaining option gets a peak, BUS first and METRO next, with the last one, DRIVING, falling to close the choice.",
+            "hint": "The taxi is already out. How many peaks should you hear in the choice itself?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L92_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "We have cake, pie, ice cream...",
+            "textToSpeak": "We have cake, pie, ice cream...",
+            "pitchPatterns": [
+                2,
+                3,
+                2,
+                3,
+                3
+            ],
+            "emphasisRule": "A rise on the last item of a list leaves it open.",
+            "emotionContext": "List",
+            "explanation": "The rise on ICE CREAM keeps the list open, which is how a waiter signals 'and more'. A fall would close the menu.",
+            "hint": "The waiter hasn't finished. What does the voice do on the last item?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L93_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Tomorrow's the deadline, isn't it?",
+            "textToSpeak": "Tomorrow's the deadline, isn't it?",
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "emphasisRule": "A falling tag seeks agreement; a rising tag seeks information.",
+            "emotionContext": "Confirmation",
+            "explanation": "A falling 'isn't it' says 'I know this, please agree'. A rising tag would reveal real doubt.",
+            "hint": "How confident is the speaker? Listen to what the tag does.",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L93_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "The shop closes at six, doesn't it?",
+            "textToSpeak": "The shop closes at six, doesn't it?",
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                2,
+                3
+            ],
+            "emphasisRule": "A rising tag signals real uncertainty.",
+            "emotionContext": "Confirmation",
+            "explanation": "The rise on 'doesn't it' asks for information because the speaker is unsure. A falling tag would sound as if the speaker already knew.",
+            "hint": "This time the speaker genuinely doesn't know. How does the tag end?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L93_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "It's a great place, isn't it?",
+            "textToSpeak": "It's a great place, isn't it?",
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "emphasisRule": "A falling tag on an opinion invites shared feeling, not information.",
+            "emotionContext": "Opinion",
+            "explanation": "An opinion isn't something the listener can look up, so the falling tag just invites them to share the feeling.",
+            "hint": "No facts are being asked for. What is the speaker doing?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L94_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Tuesday at three?",
+            "textToSpeak": "Tuesday at three?",
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "emphasisRule": "A repeated detail with a rising ending asks the speaker to confirm.",
+            "emotionContext": "Confirmation",
+            "explanation": "Repeating a detail with a rise checks that you heard it correctly. A fall would sound as though you were stating it yourself.",
+            "hint": "You are not giving new information. What is the repeated phrase for?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L94_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "The north field?",
+            "textToSpeak": "The north field?",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                3
+            ],
+            "emphasisRule": "When confirming by repeating, the doubtful word takes the peak.",
+            "emotionContext": "Confirmation",
+            "explanation": "FIELD is understood, so it carries only the rise. NORTH is the part you're checking, so it takes the early peak.",
+            "hint": "You only doubt one word. Which word is it?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L94_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "So that's two nights, starting Friday?",
+            "textToSpeak": "So that's two nights, starting Friday?",
+            "pitchPatterns": [
+                1,
+                2,
+                1,
+                3,
+                3
+            ],
+            "emphasisRule": "A summary with a rising ending asks for confirmation.",
+            "emotionContext": "Confirmation",
+            "explanation": "The rise on FRIDAY invites you to confirm the whole summary. A fall would close the topic before you had a chance to correct anything.",
+            "hint": "The clerk wants you to agree before continuing. What does the ending do?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L95_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "You lost what?",
+            "textToSpeak": "You lost what?",
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "emphasisRule": "In an echo question, the question word replaces the missing part and takes the peak.",
+            "emotionContext": "Echo question",
+            "explanation": "LOST is understood, so it falls away. WHAT replaces the part you missed and takes the peak with the rise.",
+            "hint": "You caught part of the sentence. Which piece did you fail to hear?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L95_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "You paid how much for it?",
+            "textToSpeak": "You paid how much for it?",
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                3
+            ],
+            "emphasisRule": "In an echo question, the questioned word takes the peak and a final pronoun stays weak.",
+            "emotionContext": "Surprise",
+            "explanation": "PAID is repeated, so it stays low. MUCH is the part B is reacting to, so the peak lands on it. IT is a weak pronoun at the end.",
+            "hint": "B heard the amount but can't believe it. What is B questioning?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L95_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "You quit?",
+            "textToSpeak": "You quit?",
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "emphasisRule": "An echo of the key word with a rise expresses surprise.",
+            "emotionContext": "Surprise",
+            "explanation": "B repeats QUIT, the surprising word from A's news. This is an echo of surprise, not a request for new details.",
+            "hint": "A has just given news. Is B asking for new information, or reacting to what was said?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L96_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Ms. who?",
+            "textToSpeak": "Ms. who?",
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "emphasisRule": "A partial echo with a question word asks the speaker to repeat the missing part.",
+            "emotionContext": "Clarification",
+            "explanation": "B repeats the title and replaces the missing name with WHO, rising to show it needs repeating. It is a clarification, not a new question.",
+            "hint": "B isn't asking about the invoice. Which part of A's sentence is B responding to?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L96_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Did you say twelve or twenty?",
+            "textToSpeak": "Did you say twelve or twenty?",
+            "pitchPatterns": [
+                1,
+                1,
+                3,
+                3,
+                1
+            ],
+            "emphasisRule": "A clarifying choice uses the alternative-question pattern: rise, then fall.",
+            "emotionContext": "Clarification",
+            "explanation": "The rise on TWELVE and the fall on TWENTY give the pattern of an alternative question, so B is asking A to pick one of the two.",
+            "hint": "The two numbers sound alike. How does the voice present them?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L96_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "The third quarter of this year?",
+            "textToSpeak": "The third quarter of this year?",
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                3
+            ],
+            "emphasisRule": "In a clarifying echo, the part being clarified takes the peak.",
+            "emotionContext": "Clarification",
+            "explanation": "QUARTER and THIRD are already settled, so they stay low. THIS is the part B isn't sure about, so it takes the peak.",
+            "hint": "B understood the quarter. What is the remaining doubt?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L97_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Neither, I'm driving.",
+            "textToSpeak": "Neither, I'm driving.",
+            "pitchPatterns": [
+                3,
+                1,
+                1,
+                3,
+                1
+            ],
+            "emphasisRule": "A reply that rejects both choices peaks on 'neither' and on the new option.",
+            "emotionContext": "Answering a question",
+            "explanation": "NEITHER rejects both of A's options, so it gets a peak at the start. DRIVING is the new option and takes the second peak. I'M is just a link.",
+            "hint": "B rejects both options. Which words show that?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L97_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "I'll take both of them.",
+            "textToSpeak": "I'll take both of them.",
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "emphasisRule": "The word answering the choice takes the peak; a final pronoun phrase stays low.",
+            "emotionContext": "Answering a question",
+            "explanation": "THEM is a weak pronoun, so the peak moves earlier to BOTH, the word that answers A's either-or question.",
+            "hint": "'Of them' is a quick pronoun phrase. What does B emphasise instead?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L97_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Um, tea, I think.",
+            "textToSpeak": "Um, tea, I think.",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                2
+            ],
+            "emphasisRule": "A rise or fall-rise on the chosen item signals that the choice is tentative.",
+            "emotionContext": "Uncertainty",
+            "explanation": "The voice lifts on TEA instead of settling, which matches the hedge 'I think'. A firm choice would fall.",
+            "hint": "The speaker adds 'I think'. What does that do to the sound of 'tea'?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L98_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Shall I take the lamp?",
+            "textToSpeak": "Shall I take the lamp?",
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "emphasisRule": "In an offer between two objects, the object being offered takes the peak.",
+            "emotionContext": "Offer",
+            "explanation": "She can manage the box, so the offer is only for the lamp. LAMP takes the peak, and the rise makes it an offer.",
+            "hint": "The offer is about one of two things. Which one?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L98_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "I'd love some.",
+            "textToSpeak": "I'd love some.",
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                1,
+                1
+            ],
+            "emphasisRule": "In an enthusiastic reply, the feeling word takes the peak and a final pronoun stays weak.",
+            "emotionContext": "Accepting",
+            "explanation": "SOME is a quick pronoun, so it can't hold the peak. LOVE carries the enthusiasm of the acceptance.",
+            "hint": "'Some' is a weak word. Which word carries the warmth?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L98_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "I couldn't possibly.",
+            "textToSpeak": "I couldn't possibly.",
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                3,
+                1
+            ],
+            "emphasisRule": "In polite refusals, the softening adverb carries the peak.",
+            "emotionContext": "Declining politely",
+            "explanation": "POSSIBLY is what makes the refusal sound polite and final, so it gets the main lift. COULDN'T is only the frame.",
+            "hint": "The refusal is softened by an adverb. Which word carries the polite 'no'?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L99_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "That's seven, two, nine, four?",
+            "textToSpeak": "That's seven, two, nine, four?",
+            "pitchPatterns": [
+                2,
+                3,
+                2,
+                3,
+                3
+            ],
+            "emphasisRule": "A final rise on the last digit group asks the listener to confirm.",
+            "emotionContext": "Confirmation",
+            "explanation": "A rise on the last group asks you to confirm the whole number. A fall would announce it as settled and leave no room to correct it.",
+            "hint": "Each group of digits promises more. What does the last group do?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L99_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "Twelve Mill Road?",
+            "textToSpeak": "Twelve Mill Road?",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                3
+            ],
+            "emphasisRule": "When checking part of an address, the unsure part takes the peak.",
+            "emotionContext": "Confirmation",
+            "explanation": "He knows the street, so MILL stays low. TWELVE is the number he wants confirmed, and it carries the peak.",
+            "hint": "He is certain of one part. Which part is he checking?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L99_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "And that's the same email address as before?",
+            "textToSpeak": "And that's the same email address as before?",
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "emphasisRule": "A final rise on a confirmation question asks the other person to verify.",
+            "emotionContext": "Confirmation",
+            "explanation": "The rise at the end hands the question to you, because only you know if the address has changed.",
+            "hint": "The agent can't know without you. What does her voice do?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L100_Q1",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "It was Jamal who called, wasn't it?",
+            "textToSpeak": "It was Jamal who called, wasn't it?",
+            "pitchPatterns": [
+                1,
+                2,
+                3,
+                2,
+                3
+            ],
+            "emphasisRule": "A rising tag signals real doubt.",
+            "emotionContext": "Confirmation",
+            "explanation": "A rising tag matches the speaker's doubt: it genuinely asks for confirmation. A falling tag would sound as if the speaker already knew.",
+            "hint": "The context tells you the speaker is unsure. What does the tag do?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L100_Q2",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "He's selling it?",
+            "textToSpeak": "He's selling it?",
+            "pitchPatterns": [
+                1,
+                3,
+                1,
+                1,
+                3
+            ],
+            "emphasisRule": "An echo of an implied action takes the peak on the verb; the pronouns stay weak.",
+            "emotionContext": "Surprise",
+            "explanation": "HE'S is given, and IT is a weak pronoun. SELLING is what B is shocked about, so it takes the peak.",
+            "hint": "B is repeating what A implied. Which part is B reacting to?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        },
+        {
+            "id": "ACC_PITCHPATTERNMATCH_LEARN_L100_Q3",
+            "instruction": "Master speech prosody, melodic contour, and vocal melody",
+            "subtype": "pitchPatternMatch",
+            "interactionType": "learn_card",
+            "word": "That's Saturday the third, right?",
+            "textToSpeak": "That's Saturday the third, right?",
+            "pitchPatterns": [
+                1,
+                1,
+                2,
+                2,
+                3
+            ],
+            "emphasisRule": "A short tag with a rise asks for the final check.",
+            "emotionContext": "Confirmation",
+            "explanation": "The rise on RIGHT turns the summary into a request for confirmation. A fall would end the exchange without waiting for a reply.",
+            "hint": "The speaker needs the salon to agree before hanging up. What does the final word do?",
+            "nativeTip": "In English, pitch is musical melody: raising pitch highlights new or contrasting information, while falling pitch signals finality and certainty. Flat pitch signals disinterest or reading."
+        }
+    ]
+}
