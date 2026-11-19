@@ -206,6 +206,8 @@ import 'package:vowl/features/roleplay/social_spark/presentation/pages/social_sp
 import 'package:vowl/features/roleplay/social_spark/presentation/pages/social_spark_practice_screen.dart';
 import 'package:vowl/features/roleplay/emergency_hub/presentation/pages/emergency_hub_learn_screen.dart';
 import 'package:vowl/features/roleplay/emergency_hub/presentation/pages/emergency_hub_practice_screen.dart';
+import 'package:vowl/features/elite_mastery/story_builder/presentation/pages/story_builder_learn_screen.dart';
+import 'package:vowl/features/elite_mastery/story_builder/presentation/pages/story_builder_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -1029,6 +1031,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'storybuilder') {
+          return fadeTransitionPage(
+            child: StoryBuilderLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1631,6 +1639,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'emergencyhub') {
           return fadeTransitionPage(
             child: EmergencyHubPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'storybuilder') {
+          return fadeTransitionPage(
+            child: StoryBuilderPracticeScreen(level: level),
             state: state,
           );
         }

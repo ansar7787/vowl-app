@@ -1,0 +1,578 @@
+{
+  "gameType": "storyBuilder",
+  "phase": "practice",
+  "batchIndex": 9,
+  "levels": "81-90",
+  "quests": [
+    {
+      "id": "ELT_STORYBUILDER_L81_PRACTICE_Q1",
+      "level": 81,
+      "phase": "practice",
+      "storyContext": "\"Excuse me, does this bus go to the university?\" Ilka asked the driver.",
+      "prompt": "In the narrative sequence (Question, Correction, Follow-up, Answer, Action), what event must logically take place immediately after: \"\"Excuse me, does this bus go to the university?\" Ilka asked the driver.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "\"No, that's the 14,\" he said, pointing across the road.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "\"No, that's the 14,\" he said, pointing across the road.",
+      "explanation": "Ilka's first question is answered with a correction, which prompts her second question about the library. The driver's second answer gives her what she needs, so she acts on it.",
+      "hint": "Every answer needs a question before it, and every follow-up question depends on the answer just given.",
+      "plotStructure": "Question, Correction, Follow-up, Answer, Action",
+      "sequenceLogic": "Question → Answer → Follow-up Question → Answer → Action"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L81_PRACTICE_Q2",
+      "level": 81,
+      "phase": "practice",
+      "storyContext": "\"Do you have anything without shellfish?\" Haruka asked the waiter.",
+      "prompt": "In the narrative sequence (Request, Options, Decision, Clarification, Completion), what event must logically take place immediately after: \"\"Do you have anything without shellfish?\" Haruka asked the waiter.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "\"The chicken curry and the vegetable stew are both safe,\" he answered.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "\"The chicken curry and the vegetable stew are both safe,\" he answered.",
+      "explanation": "The first question sets up the constraint, and the waiter's answer offers choices. Haruka's choice comes before the waiter's follow-up, and her last reply answers that follow-up.",
+      "hint": "Match each reply to the sentence it answers.",
+      "plotStructure": "Request, Options, Decision, Clarification, Completion",
+      "sequenceLogic": "Request → Options → Choice → Follow-up → Answer"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L81_PRACTICE_Q3",
+      "level": 81,
+      "phase": "practice",
+      "storyContext": "\"Can you send me the figures by Thursday?\" manager Ottilie asked.",
+      "prompt": "In the narrative sequence (Request, Clarification, Answer, Confirmation, Follow-up Action), what event must logically take place immediately after: \"\"Can you send me the figures by Thursday?\" manager Ottilie asked.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "\"Do you mean the draft figures or the final ones?\" Kojo replied.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "\"Do you mean the draft figures or the final ones?\" Kojo replied.",
+      "explanation": "Ottilie's request is ambiguous, so Kojo asks for clarification. Her answer adds a condition, his reply confirms that he understands, and the action shows he followed through.",
+      "hint": "A clarifying question changes what the follow-up action will be.",
+      "plotStructure": "Request, Clarification, Answer, Confirmation, Follow-up Action",
+      "sequenceLogic": "Request → Clarification → Answer → Confirmation → Action"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L82_PRACTICE_Q1",
+      "level": 82,
+      "phase": "practice",
+      "storyContext": "\"Is this seat taken?\" Dario asked a woman at the café table.",
+      "prompt": "In the narrative sequence (Request, Condition, Acceptance, Trigger, Follow-through), what event must logically take place immediately after: \"\"Is this seat taken?\" Dario asked a woman at the café table.\"?",
+      "options": [
+        "\"No, but I'm waiting for someone,\" she said, \"so I might need it later.\"",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "\"No, but I'm waiting for someone,\" she said, \"so I might need it later.\"",
+      "explanation": "The question is answered with a condition, and Dario's acceptance sets a time limit. When the friend arrives, the condition applies, and he acts on it.",
+      "hint": "A conditional permission creates a later obligation.",
+      "plotStructure": "Request, Condition, Acceptance, Trigger, Follow-through",
+      "sequenceLogic": "Request → Conditional Answer → Acceptance → Trigger → Action"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L82_PRACTICE_Q2",
+      "level": 82,
+      "phase": "practice",
+      "storyContext": "\"My card was declined,\" the customer told the cashier, \"but there is money in the account.\"",
+      "prompt": "In the narrative sequence (Complaint, Attempt, Failure, Referral, Resolution, Success), what event must logically take place immediately after: \"\"My card was declined,\" the customer told the cashier, \"but there is money in the account.\"\"?",
+      "options": [
+        "The cashier asked him to try the card once more.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The cashier asked him to try the card once more.",
+      "explanation": "The complaint opens the exchange, and the cashier tries the easiest fix first. Its failure leads to a more informed suggestion, and the bank's help allows the final attempt to succeed.",
+      "hint": "A problem statement is followed by simple checks and then by escalation.",
+      "plotStructure": "Complaint, Attempt, Failure, Referral, Resolution, Success",
+      "sequenceLogic": "Problem → Simple Check → Failure → Escalation → Solution → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L82_PRACTICE_Q3",
+      "level": 82,
+      "phase": "practice",
+      "storyContext": "Teacher Mrs. Danjuma asked why the homework was blank.",
+      "prompt": "In the narrative sequence (Question, Explanation, Offer, Information, Confirmation, Resolution), what event must logically take place immediately after: \"Teacher Mrs. Danjuma asked why the homework was blank.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Bilal said his notebook had been left on the bus."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Bilal said his notebook had been left on the bus.",
+      "explanation": "The question prompts an explanation, and Mrs. Danjuma's offer turns it into a plan. The route number is the piece she needs, the confirmation gives a location, and collecting the notebook is the resolution.",
+      "hint": "Follow the flow of information: which detail lets the teacher take the next step?",
+      "plotStructure": "Question, Explanation, Offer, Information, Confirmation, Resolution",
+      "sequenceLogic": "Question → Explanation → Offer → Information → Confirmation → Action"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L83_PRACTICE_Q1",
+      "level": 83,
+      "phase": "practice",
+      "storyContext": "\"Can I return this jacket?\" a customer asked at the shop counter.",
+      "prompt": "In the narrative sequence (Request, Requirement, Alternative, Verification, Resolution, Outcome), what event must logically take place immediately after: \"\"Can I return this jacket?\" a customer asked at the shop counter.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "The clerk asked to see the receipt.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The clerk asked to see the receipt.",
+      "explanation": "The request meets a requirement, and the customer has an alternative. The card details give the clerk another way to find the sale, and the refund follows.",
+      "hint": "What information allows the clerk to solve the problem without the receipt?",
+      "plotStructure": "Request, Requirement, Alternative, Verification, Resolution, Outcome",
+      "sequenceLogic": "Request → Requirement → Alternative → Verification → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L83_PRACTICE_Q2",
+      "level": 83,
+      "phase": "practice",
+      "storyContext": "\"I ordered the blue one,\" the customer said on the phone.",
+      "prompt": "In the narrative sequence (Complaint, Check, Discrepancy, Explanation, Solution, Confirmation), what event must logically take place immediately after: \"\"I ordered the blue one,\" the customer said on the phone.\"?",
+      "options": [
+        "The agent checked the account and found the order for green.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The agent checked the account and found the order for green.",
+      "explanation": "The complaint is checked against records, which show a difference. The customer's explanation identifies the cause, and the apology and reorder solve it.",
+      "hint": "A dispute over facts can be resolved when a cause is found.",
+      "plotStructure": "Complaint, Check, Discrepancy, Explanation, Solution, Confirmation",
+      "sequenceLogic": "Complaint → Verification → Discrepancy → Explanation → Solution → Confirmation"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L83_PRACTICE_Q3",
+      "level": 83,
+      "phase": "practice",
+      "storyContext": "\"How long will the repair take?\" Jasmine asked the mechanic.",
+      "prompt": "In the narrative sequence (Question, Answer, Follow-up, Risk, Request, Resolution), what event must logically take place immediately after: \"\"How long will the repair take?\" Jasmine asked the mechanic.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "\"About two days, if the part is in stock,\" he replied."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "\"About two days, if the part is in stock,\" he replied.",
+      "explanation": "The first answer contains a condition, so Jasmine asks what happens if it fails. His second answer shows the risk, and she asks him to check the stock first, which he does.",
+      "hint": "A question about a risk leads to an action that removes the risk.",
+      "plotStructure": "Question, Answer, Follow-up, Risk, Request, Resolution",
+      "sequenceLogic": "Question → Conditional Answer → Follow-up → Risk → Request → Action"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L84_PRACTICE_Q1",
+      "level": 84,
+      "phase": "practice",
+      "storyContext": "\"Do you have any rooms available tonight?\" a traveler asked the hotel clerk.",
+      "prompt": "In the narrative sequence (Inquiry, Availability, Detail, Price, Decision, Completion), what event must logically take place immediately after: \"\"Do you have any rooms available tonight?\" a traveler asked the hotel clerk.\"?",
+      "options": [
+        "\"We have a twin room on the second floor,\" the clerk said.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "They abandoned the current procedure and started again from scratch.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "\"We have a twin room on the second floor,\" the clerk said.",
+      "explanation": "The availability question is answered first, and the follow-up about breakfast is only possible after knowing what the room is. The final choice combines both answers, and the key is the result.",
+      "hint": "The traveler's choices depend on the information he receives.",
+      "plotStructure": "Inquiry, Availability, Detail, Price, Decision, Completion",
+      "sequenceLogic": "Inquiry → Answer → Follow-up → Answer → Decision → Action"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L84_PRACTICE_Q2",
+      "level": 84,
+      "phase": "practice",
+      "storyContext": "\"Could you explain what this clause means?\" Ignacio asked the lawyer.",
+      "prompt": "In the narrative sequence (Question, Explanation, Clarification, Condition, Action, Follow-up), what event must logically take place immediately after: \"\"Could you explain what this clause means?\" Ignacio asked the lawyer.\"?",
+      "options": [
+        "She said it limited how long the landlord could keep his deposit.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "They abandoned the current procedure and started again from scratch."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "She said it limited how long the landlord could keep his deposit.",
+      "explanation": "The initial question produces a general explanation, and the follow-up asks about a specific case. The lawyer's condition gives Ignacio an action to take, and he takes it.",
+      "hint": "The second question refines the first answer.",
+      "plotStructure": "Question, Explanation, Clarification, Condition, Action, Follow-up",
+      "sequenceLogic": "Question → Explanation → Specific Question → Condition → Action → Follow-up"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L84_PRACTICE_Q3",
+      "level": 84,
+      "phase": "practice",
+      "storyContext": "\"I'd like to book a table for six,\" the caller said.",
+      "prompt": "In the narrative sequence (Request, Question, Answer, Constraint, Decision, Confirmation), what event must logically take place immediately after: \"\"I'd like to book a table for six,\" the caller said.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "\"For what time?\" the host asked.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "\"For what time?\" the host asked.",
+      "explanation": "The request leads to a question about time, and the host's reply reveals a constraint. The caller must consult others, then choose, and the confirmation completes the exchange.",
+      "hint": "A request is completed only after the other side's constraints are known.",
+      "plotStructure": "Request, Question, Answer, Constraint, Decision, Confirmation",
+      "sequenceLogic": "Request → Question → Answer → Constraint → Decision → Confirmation"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L85_PRACTICE_Q1",
+      "level": 85,
+      "phase": "practice",
+      "storyContext": "\"My standing desk won't rise,\" said the designer, Lucinda.",
+      "prompt": "In the narrative sequence (Complaint, Question, Evidence, Explanation, Instruction, Result), what event must logically take place immediately after: \"\"My standing desk won't rise,\" said the designer, Lucinda.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "The technician, Jerome, asked whether the control panel showed a code.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The technician, Jerome, asked whether the control panel showed a code.",
+      "explanation": "The complaint is the trigger, and the technician asks a diagnostic question. The code gives evidence, its meaning determines the instruction, and the smooth rise shows the fix worked.",
+      "hint": "Diagnosis follows a chain of questions and answers.",
+      "plotStructure": "Complaint, Question, Evidence, Explanation, Instruction, Result",
+      "sequenceLogic": "Problem → Diagnostic Question → Evidence → Interpretation → Instruction → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L85_PRACTICE_Q2",
+      "level": 85,
+      "phase": "practice",
+      "storyContext": "\"Where can I find the nearest pharmacy?\" the tourist asked.",
+      "prompt": "In the narrative sequence (Question, Answer, Follow-up, Constraint, Realization, Action), what event must logically take place immediately after: \"\"Where can I find the nearest pharmacy?\" the tourist asked.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "The shopkeeper pointed left and said it was two blocks down."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The shopkeeper pointed left and said it was two blocks down.",
+      "explanation": "The first answer gives location, but the second reveals a time limit. Seeing the clock makes the limit urgent, so she hurries.",
+      "hint": "The answer to the second question changes how the tourist acts.",
+      "plotStructure": "Question, Answer, Follow-up, Constraint, Realization, Action",
+      "sequenceLogic": "Question → Location → Follow-up → Constraint → Realization → Action"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L85_PRACTICE_Q3",
+      "level": 85,
+      "phase": "practice",
+      "storyContext": "\"Will you be joining the study group tonight?\" Priyanka texted Owen.",
+      "prompt": "In the narrative sequence (Invitation, Doubt, Reassurance, Request, Suggestion, Agreement), what event must logically take place immediately after: \"\"Will you be joining the study group tonight?\" Priyanka texted Owen.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "\"Not sure. I have a shift until seven,\" he replied.",
+        "They abandoned the current procedure and started again from scratch."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "\"Not sure. I have a shift until seven,\" he replied.",
+      "explanation": "Priyanka's question is met with a reason for doubt, and her reply removes it. Owen's request for a nearby spot leads to her suggestion, and his last message confirms it.",
+      "hint": "Each message answers the one before it and also shapes the next.",
+      "plotStructure": "Invitation, Doubt, Reassurance, Request, Suggestion, Agreement",
+      "sequenceLogic": "Invitation → Hesitation → Reassurance → Request → Suggestion → Agreement"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L86_PRACTICE_Q1",
+      "level": 86,
+      "phase": "practice",
+      "storyContext": "\"I think I've been overcharged,\" said the diner.",
+      "prompt": "In the narrative sequence (Complaint, Check, Admission, Approval, Correction, Payment), what event must logically take place immediately after: \"\"I think I've been overcharged,\" said the diner.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "The waiter examined the bill and saw a dish charged twice.",
+        "They abandoned the current procedure and started again from scratch.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The waiter examined the bill and saw a dish charged twice.",
+      "explanation": "The complaint is followed by verification, and the waiter admits the error. The manager's approval is needed for changing the bill, and payment follows.",
+      "hint": "A complaint that turns out to be correct still requires approval.",
+      "plotStructure": "Complaint, Check, Admission, Approval, Correction, Payment",
+      "sequenceLogic": "Complaint → Verification → Admission → Approval → Correction → Payment"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L86_PRACTICE_Q2",
+      "level": 86,
+      "phase": "practice",
+      "storyContext": "\"What time does the museum open on Mondays?\" Selma asked at the ticket desk.",
+      "prompt": "In the narrative sequence (Question, Obstacle, Explanation, Alternative, Action, Outcome), what event must logically take place immediately after: \"\"What time does the museum open on Mondays?\" Selma asked at the ticket desk.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "\"We're closed on Mondays,\" the clerk said."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "\"We're closed on Mondays,\" the clerk said.",
+      "explanation": "The question is answered with an obstacle. Selma's explanation gives the clerk information about her time, so he can suggest a fitting alternative.",
+      "hint": "When a request cannot be met, an alternative can keep the goal alive.",
+      "plotStructure": "Question, Obstacle, Explanation, Alternative, Action, Outcome",
+      "sequenceLogic": "Question → Obstacle → Explanation → Alternative → Action"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L86_PRACTICE_Q3",
+      "level": 86,
+      "phase": "practice",
+      "storyContext": "\"Is the doctor running late?\" a patient asked the receptionist.",
+      "prompt": "In the narrative sequence (Question, Delay, Reason, Offer, Agreement, Update), what event must logically take place immediately after: \"\"Is the doctor running late?\" a patient asked the receptionist.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "The receptionist checked her screen and said forty minutes.",
+        "They abandoned the current procedure and started again from scratch.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The receptionist checked her screen and said forty minutes.",
+      "explanation": "The question exposes a delay, and the patient's reason for concern gives the receptionist what she needs to propose a new time. Agreement leads to the updated appointment.",
+      "hint": "What information leads the receptionist to offer a solution?",
+      "plotStructure": "Question, Delay, Reason, Offer, Agreement, Update",
+      "sequenceLogic": "Question → Delay → Explanation → Offer → Agreement → Action"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L87_PRACTICE_Q1",
+      "level": 87,
+      "phase": "practice",
+      "storyContext": "\"Would you mind switching seats?\" the passenger asked.",
+      "prompt": "In the narrative sequence (Request, Question, Reason, Agreement, Action, Result), what event must logically take place immediately after: \"\"Would you mind switching seats?\" the passenger asked.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "\"Is there a reason?\" the woman by the window said."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "\"Is there a reason?\" the woman by the window said.",
+      "explanation": "The request prompts a question, and the passenger's reason changes the reply. The woman accepts, and the move follows.",
+      "hint": "A request may need an explanation before the answer is given.",
+      "plotStructure": "Request, Question, Reason, Agreement, Action, Result",
+      "sequenceLogic": "Request → Question → Reason → Agreement → Action → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L87_PRACTICE_Q2",
+      "level": 87,
+      "phase": "practice",
+      "storyContext": "\"Where did you put the tax folder?\" Norbert called from the study.",
+      "prompt": "In the narrative sequence (Question, Answer, Failure, Report, Realization, Action), what event must logically take place immediately after: \"\"Where did you put the tax folder?\" Norbert called from the study.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Wanda shouted from the kitchen that it was in the blue crate.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "They abandoned the current procedure and started again from scratch."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Wanda shouted from the kitchen that it was in the blue crate.",
+      "explanation": "The question gets an answer, but the answer fails when Norbert checks. His report leads Wanda to remember the real explanation, and she acts to fix it.",
+      "hint": "Information can be wrong. Which line reveals it?",
+      "plotStructure": "Question, Answer, Failure, Report, Realization, Action",
+      "sequenceLogic": "Question → Answer → Check → Report → Realization → Action"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L87_PRACTICE_Q3",
+      "level": 87,
+      "phase": "practice",
+      "storyContext": "\"Could you review my cover letter?\" Tamika asked her friend Boaz.",
+      "prompt": "In the narrative sequence (Request, Question, Answer, Suggestion, Action, Feedback), what event must logically take place immediately after: \"\"Could you review my cover letter?\" Tamika asked her friend Boaz.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "He asked what job it was for."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "He asked what job it was for.",
+      "explanation": "The request leads to a question, and Tamika's answer gives the context. Boaz's suggestion fits that context, and the rewrite and review follow.",
+      "hint": "Advice depends on knowing the context.",
+      "plotStructure": "Request, Question, Answer, Suggestion, Action, Feedback",
+      "sequenceLogic": "Request → Question → Context → Advice → Revision → Feedback"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L88_PRACTICE_Q1",
+      "level": 88,
+      "phase": "practice",
+      "storyContext": "\"Excuse me, is this the line for tickets?\" a man asked a woman in front.",
+      "prompt": "In the narrative sequence (Question, Correction, Action, New Information, Adaptation, Result), what event must logically take place immediately after: \"\"Excuse me, is this the line for tickets?\" a man asked a woman in front.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "\"No, this one is for returns,\" she said.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "\"No, this one is for returns,\" she said.",
+      "explanation": "The question is answered with a correction, and the man acts on it. The woman's second piece of information comes after he has left, causing a further change.",
+      "hint": "Helpful information can arrive after the first exchange ends.",
+      "plotStructure": "Question, Correction, Action, New Information, Adaptation, Result",
+      "sequenceLogic": "Question → Correction → Action → Additional Help → Adaptation"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L88_PRACTICE_Q2",
+      "level": 88,
+      "phase": "practice",
+      "storyContext": "\"Do you deliver on weekends?\" asked the customer.",
+      "prompt": "In the narrative sequence (Request, Limit, Reason, Alternative, Concern, Reassurance), what event must logically take place immediately after: \"\"Do you deliver on weekends?\" asked the customer.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "The florist said deliveries were Monday to Friday only.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The florist said deliveries were Monday to Friday only.",
+      "explanation": "The request meets a limit, and the reason gives the florist a reason to adapt. The customer's concern about freshness leads to the florist's reassurance.",
+      "hint": "The customer's concern leads to the florist's added service.",
+      "plotStructure": "Request, Limit, Reason, Alternative, Concern, Reassurance",
+      "sequenceLogic": "Request → Limit → Reason → Alternative → Concern → Solution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L88_PRACTICE_Q3",
+      "level": 88,
+      "phase": "practice",
+      "storyContext": "\"Why is my internet so slow?\" Rosalind asked the support agent.",
+      "prompt": "In the narrative sequence (Problem, First Attempt, Failure, Diagnosis, Finding, Solution), what event must logically take place immediately after: \"\"Why is my internet so slow?\" Rosalind asked the support agent.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "The agent asked her to restart the router."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The agent asked her to restart the router.",
+      "explanation": "The problem is stated first, and the easiest fix is tried. Its failure leads to a better question, whose answer reveals the cause, and the final suggestion solves it.",
+      "hint": "A support conversation moves from simple checks to informed suggestions.",
+      "plotStructure": "Problem, First Attempt, Failure, Diagnosis, Finding, Solution",
+      "sequenceLogic": "Problem → Simple Fix → Failure → Question → Answer → Solution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L89_PRACTICE_Q1",
+      "level": 89,
+      "phase": "practice",
+      "storyContext": "\"We need volunteers for the cleanup,\" the organizer announced.",
+      "prompt": "In the narrative sequence (Request, Response, Requirement, Question, Detail, Result), what event must logically take place immediately after: \"\"We need volunteers for the cleanup,\" the organizer announced.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Two hands went up at the back."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Two hands went up at the back.",
+      "explanation": "The announcement opens the request, and the first response is too small. The organizer states the number needed, a question yields details, and the added detail persuades more people.",
+      "hint": "Answering a question can change the group's response.",
+      "plotStructure": "Request, Response, Requirement, Question, Detail, Result",
+      "sequenceLogic": "Request → Response → Clarification → Question → Answer → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L89_PRACTICE_Q2",
+      "level": 89,
+      "phase": "practice",
+      "storyContext": "\"Where did you learn to make bread like this?\" Ingeborg asked the baker.",
+      "prompt": "In the narrative sequence (Question, Answer, Follow-up, Answer, Request, Response), what event must logically take place immediately after: \"\"Where did you learn to make bread like this?\" Ingeborg asked the baker.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "\"My grandfather taught me,\" he said."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "\"My grandfather taught me,\" he said.",
+      "explanation": "The first question prompts a personal answer, and the follow-up about recipes leads to a memorable reply. Her request to watch is the natural next step, and his apron is the response.",
+      "hint": "Each answer opens the way to the next question.",
+      "plotStructure": "Question, Answer, Follow-up, Answer, Request, Response",
+      "sequenceLogic": "Question → Answer → Follow-up → Answer → Request → Response"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L89_PRACTICE_Q3",
+      "level": 89,
+      "phase": "practice",
+      "storyContext": "\"The printer says it needs a black cartridge,\" the intern said.",
+      "prompt": "In the narrative sequence (Report, Question, Answer, Retrieval, Instruction, Result), what event must logically take place immediately after: \"\"The printer says it needs a black cartridge,\" the intern said.\"?",
+      "options": [
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "The office manager asked where the spares were kept.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The office manager asked where the spares were kept.",
+      "explanation": "The intern's report leads to the manager's question, and the location answer lets him fetch the cartridge. The manager's instruction and the test page complete the fix.",
+      "hint": "The question asked determines the next action.",
+      "plotStructure": "Report, Question, Answer, Retrieval, Instruction, Result",
+      "sequenceLogic": "Report → Question → Answer → Action → Instruction → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L90_PRACTICE_Q1",
+      "level": 90,
+      "phase": "practice",
+      "storyContext": "\"Do you have this jacket in a larger size?\" the customer asked.",
+      "prompt": "In the narrative sequence (Request, Offer, Consent, Report, Decision, Action), what event must logically take place immediately after: \"\"Do you have this jacket in a larger size?\" the customer asked.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "\"Not on the rack, but I can check the stockroom,\" the assistant said.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "\"Not on the rack, but I can check the stockroom,\" the assistant said.",
+      "explanation": "The question sets up the request, and the assistant answers with an offer rather than a yes or no. The customer's \"please do\" authorizes the search, and the report contains the new detail she must accept or refuse. Her acceptance leads to the fitting room.",
+      "hint": "A reply that offers to check must be followed by a result before the customer can decide.",
+      "plotStructure": "Request, Offer, Consent, Report, Decision, Action",
+      "sequenceLogic": "Request → Offer → Authorization → Report → Decision → Action"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L90_PRACTICE_Q2",
+      "level": 90,
+      "phase": "practice",
+      "storyContext": "\"Do you know how to fix a flat tire?\" Fabian asked the cyclist beside him.",
+      "prompt": "In the narrative sequence (Question, Offer, Demonstration, Instruction, Action, Completion), what event must logically take place immediately after: \"\"Do you know how to fix a flat tire?\" Fabian asked the cyclist beside him.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "\"I can show you,\" Chiara said.",
+        "They abandoned the current procedure and started again from scratch."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "\"I can show you,\" Chiara said.",
+      "explanation": "The question leads to an offer, and the demonstration points out the cause. The instruction tells Fabian what to do, he does it, and they finish together.",
+      "hint": "Teaching requires that the learner acts after the instruction.",
+      "plotStructure": "Question, Offer, Demonstration, Instruction, Action, Completion",
+      "sequenceLogic": "Question → Offer → Demonstration → Instruction → Action → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L90_PRACTICE_Q3",
+      "level": 90,
+      "phase": "practice",
+      "storyContext": "\"I can't find the meeting link,\" a participant wrote in the chat.",
+      "prompt": "In the narrative sequence (Problem, First Solution, Failure, Diagnosis, Correction, Success), what event must logically take place immediately after: \"\"I can't find the meeting link,\" a participant wrote in the chat.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The host replied that she would resend it.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The host replied that she would resend it.",
+      "explanation": "The problem is stated, and the host resends the link. The blank page shows the fix failed, so the host checks and corrects it, allowing the participant to join.",
+      "hint": "A first solution may fail and reveal a second problem.",
+      "plotStructure": "Problem, First Solution, Failure, Diagnosis, Correction, Success",
+      "sequenceLogic": "Problem → Solution → Failure → Diagnosis → Correction → Result"
+    }
+  ]
+}

@@ -1,0 +1,578 @@
+{
+  "gameType": "storyBuilder",
+  "phase": "practice",
+  "batchIndex": 13,
+  "levels": "121-130",
+  "quests": [
+    {
+      "id": "ELT_STORYBUILDER_L121_PRACTICE_Q1",
+      "level": 121,
+      "phase": "practice",
+      "storyContext": "A late frost damaged the apple blossoms at Hartwell Orchard.",
+      "prompt": "In the narrative sequence (Trigger, Effect, Shortfall, Client Response, Loss, Adaptation), what event must logically take place immediately after: \"A late frost damaged the apple blossoms at Hartwell Orchard.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "They abandoned the current procedure and started again from scratch.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "Fewer apples formed that summer."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Fewer apples formed that summer.",
+      "explanation": "The frost damages the blossoms, which means less fruit. Less fruit means less cider, and the shortage pushes clients to look elsewhere. The permanent switch is the cost, and Doreen's planting is the adaptation.",
+      "hint": "Ask which link connects the natural event to the business decision.",
+      "plotStructure": "Trigger, Effect, Shortfall, Client Response, Loss, Adaptation",
+      "sequenceLogic": "Cause → Effect → Consequence → Adaptation"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L121_PRACTICE_Q2",
+      "level": 121,
+      "phase": "practice",
+      "storyContext": "The espresso machine at Café Lumen began leaking overnight.",
+      "prompt": "In the narrative sequence (Trigger, Spread, Failure, Discovery, Loss, Consequence, Diagnosis), what event must logically take place immediately after: \"The espresso machine at Café Lumen began leaking overnight.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "By morning, a small puddle had reached the power strip on the floor.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "By morning, a small puddle had reached the power strip on the floor.",
+      "explanation": "The leak begins the chain, and the puddle carries it to the electrical strip. The tripped power warms the milk, which forces Kasia to discard it, and that shortage limits the menu. The plumber's diagnosis comes last, as the leak's explanation.",
+      "hint": "Trace each effect back to its immediate cause, not just the original one.",
+      "plotStructure": "Trigger, Spread, Failure, Discovery, Loss, Consequence, Diagnosis",
+      "sequenceLogic": "Cause → Chain of Effects → Diagnosis"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L121_PRACTICE_Q3",
+      "level": 121,
+      "phase": "practice",
+      "storyContext": "A developer merged a small change to the image-resizing code.",
+      "prompt": "In the narrative sequence (Trigger, Mechanism, Effect, Overload, Failure, Impact, Fix), what event must logically take place immediately after: \"A developer merged a small change to the image-resizing code.\"?",
+      "options": [
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "The change removed a check that skipped tiny images."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The change removed a check that skipped tiny images.",
+      "explanation": "The change removes a safeguard, and the safeguard's absence creates too many files. The files fill storage, which causes upload failure, which blocks customers. The fix restores the check, and the alert prevents a repeat.",
+      "hint": "A small change can have large consequences. Which link is the step in between?",
+      "plotStructure": "Trigger, Mechanism, Effect, Overload, Failure, Impact, Fix",
+      "sequenceLogic": "Cause → Chain → Impact → Fix"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L122_PRACTICE_Q1",
+      "level": 122,
+      "phase": "practice",
+      "storyContext": "A teacher, Mr. Okonkwo, assigned a research project with a strict source requirement.",
+      "prompt": "In the narrative sequence (Trigger, Difficulty, Observation, Response, Result, Consequence), what event must logically take place immediately after: \"A teacher, Mr. Okonkwo, assigned a research project with a strict source requirement.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "They abandoned the current procedure and started again from scratch.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Students struggled to find enough reliable sources."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Students struggled to find enough reliable sources.",
+      "explanation": "The requirement creates the difficulty, and the difficulty produces the spike. The librarian responds with the workshop, which improves the work. The teacher's request is a lasting consequence.",
+      "hint": "Which event causes the librarian to act?",
+      "plotStructure": "Trigger, Difficulty, Observation, Response, Result, Consequence",
+      "sequenceLogic": "Requirement → Difficulty → Response → Result → Policy"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L122_PRACTICE_Q2",
+      "level": 122,
+      "phase": "practice",
+      "storyContext": "A burst water main flooded an intersection downtown.",
+      "prompt": "In the narrative sequence (Trigger, Closure, Redirection, Complaint, Adjustment, Consequence), what event must logically take place immediately after: \"A burst water main flooded an intersection downtown.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Police closed two lanes.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Police closed two lanes.",
+      "explanation": "The flood causes the closure, and the closure causes the reroute. The rerouted buses create noise for residents, whose complaints lead to the stop move. Commuters then bear the cost of the compromise.",
+      "hint": "Whose problem is created at each step?",
+      "plotStructure": "Trigger, Closure, Redirection, Complaint, Adjustment, Consequence",
+      "sequenceLogic": "Cause → Redirection → Complaint → Compromise → Cost"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L122_PRACTICE_Q3",
+      "level": 122,
+      "phase": "practice",
+      "storyContext": "A popular influencer mentioned a small bakery's rye loaf in a video.",
+      "prompt": "In the narrative sequence (Trigger, Surge, Strain, Decision, Concern, Explanation, Outcome), what event must logically take place immediately after: \"A popular influencer mentioned a small bakery's rye loaf in a video.\"?",
+      "options": [
+        "The bakery's online orders tripled in a day.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The bakery's online orders tripled in a day.",
+      "explanation": "The mention creates demand, and the demand overloads production. The pause protects customers but causes concern, and Yannick's post responds to it. The post's honesty produces a positive reaction, which increases demand again.",
+      "hint": "Each response creates a fresh reaction. Follow them one after another.",
+      "plotStructure": "Trigger, Surge, Strain, Decision, Concern, Explanation, Outcome",
+      "sequenceLogic": "Trigger → Overload → Response → Reaction → Response → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L123_PRACTICE_Q1",
+      "level": 123,
+      "phase": "practice",
+      "storyContext": "A neighborhood group planted trees along the road.",
+      "prompt": "In the narrative sequence (Action, Environmental Effect, Behavior Change, Measurable Result, Study, Policy), what event must logically take place immediately after: \"A neighborhood group planted trees along the road.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "The trees shaded the pavement in summer.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The trees shaded the pavement in summer.",
+      "explanation": "The trees provide shade, and shade lowers temperature. Lower temperature reduces air conditioning, which reduces electricity use. The utility's study and rebate are the institutional response.",
+      "hint": "An environmental change ends with a policy.",
+      "plotStructure": "Action, Environmental Effect, Behavior Change, Measurable Result, Study, Policy",
+      "sequenceLogic": "Cause → Effect → Measurement → Policy"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L123_PRACTICE_Q2",
+      "level": 123,
+      "phase": "practice",
+      "storyContext": "Manager Emil announced that meetings would be capped at thirty minutes.",
+      "prompt": "In the narrative sequence (Rule, Adaptation, Improvement, Reduction, Saving, Reinvestment), what event must logically take place immediately after: \"Manager Emil announced that meetings would be capped at thirty minutes.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "People began sending agendas beforehand.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "People began sending agendas beforehand.",
+      "explanation": "The cap forces preparation, and preparation focuses the discussion. Focused discussion reduces follow-up, which frees time, and Emil uses that freed time for something new.",
+      "hint": "How does a limit on one thing change other behavior?",
+      "plotStructure": "Rule, Adaptation, Improvement, Reduction, Saving, Reinvestment",
+      "sequenceLogic": "Constraint → Behavior Change → Effect → Result → Reinvestment"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L123_PRACTICE_Q3",
+      "level": 123,
+      "phase": "practice",
+      "storyContext": "Arvid felt sluggish every afternoon at work.",
+      "prompt": "In the narrative sequence (Symptom, Assumption, Failure, Investigation, Discovery, Action, Conclusion), what event must logically take place immediately after: \"Arvid felt sluggish every afternoon at work.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "They abandoned the current procedure and started again from scratch.",
+        "Arvid assumed he needed more sleep and went to bed earlier."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Arvid assumed he needed more sleep and went to bed earlier.",
+      "explanation": "The symptom leads to a guess, and the failed guess leads him to gather data. The notes reveal a pattern, the change of habit tests it, and the improvement confirms it. His remark to colleagues draws the conclusion.",
+      "hint": "A first theory that does not work leads to a better investigation.",
+      "plotStructure": "Symptom, Assumption, Failure, Investigation, Discovery, Action, Conclusion",
+      "sequenceLogic": "Symptom → Assumption → Failure → Tracking → Discovery → Action → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L124_PRACTICE_Q1",
+      "level": 124,
+      "phase": "practice",
+      "storyContext": "A film crew chose a quiet fishing village as a location.",
+      "prompt": "In the narrative sequence (Trigger, Popularity, Surge, Effect, Consequence, Policy Response), what event must logically take place immediately after: \"A film crew chose a quiet fishing village as a location.\"?",
+      "options": [
+        "The film became a hit.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "They abandoned the current procedure and started again from scratch.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The film became a hit.",
+      "explanation": "The location choice leads to the film's success, and its success draws visitors. Visitors increase demand for lodging, prices rise, and some residents are priced out. The council's rule responds to that.",
+      "hint": "Success at one level can create a problem at another.",
+      "plotStructure": "Trigger, Popularity, Surge, Effect, Consequence, Policy Response",
+      "sequenceLogic": "Cause → Popularity → Demand → Price Rise → Impact → Policy"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L124_PRACTICE_Q2",
+      "level": 124,
+      "phase": "practice",
+      "storyContext": "A small airline replaced its old planes with new ones.",
+      "prompt": "In the narrative sequence (Change, Saving, Pricing, Demand, Congestion, Response), what event must logically take place immediately after: \"A small airline replaced its old planes with new ones.\"?",
+      "options": [
+        "Fuel consumption fell noticeably.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Fuel consumption fell noticeably.",
+      "explanation": "New planes reduce fuel use, and lower costs allow lower fares. Cheaper fares draw new passengers, and larger crowds put pressure on the airport, which expands.",
+      "hint": "Which sentence links the cost of running to the price for customers?",
+      "plotStructure": "Change, Saving, Pricing, Demand, Congestion, Response",
+      "sequenceLogic": "Cause → Cost Reduction → Price Change → Demand → Pressure → Expansion"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L124_PRACTICE_Q3",
+      "level": 124,
+      "phase": "practice",
+      "storyContext": "Researchers found that a common fungus produced a compound that slowed bacterial growth.",
+      "prompt": "In the narrative sequence (Discovery, Test, Puzzle, Analysis, Application, Result, Consequence), what event must logically take place immediately after: \"Researchers found that a common fungus produced a compound that slowed bacterial growth.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "They isolated the compound and tested it on cultures.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "They isolated the compound and tested it on cultures.",
+      "explanation": "The discovery leads to isolation and testing, and the mixed results raise a question. The survivors' shared protein answers it, and becomes a target. The trials and funding are the consequences of that path.",
+      "hint": "Each result creates the next question.",
+      "plotStructure": "Discovery, Test, Puzzle, Analysis, Application, Result, Consequence",
+      "sequenceLogic": "Discovery → Test → Puzzle → Analysis → Target → Trial → Consequence"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L125_PRACTICE_Q1",
+      "level": 125,
+      "phase": "practice",
+      "storyContext": "Rain seeped through a skylight above the museum's textile room.",
+      "prompt": "In the narrative sequence (Trigger, Observation, Precaution, Event, Result, Repair), what event must logically take place immediately after: \"Rain seeped through a skylight above the museum's textile room.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "A curator noticed a faint stain on the ceiling.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "A curator noticed a faint stain on the ceiling.",
+      "explanation": "The leak begins quietly, and the curator's observation gives an early warning. Moving the tapestry protects it, so when the heavy leak comes, only an empty case is affected. Repairs are the next step.",
+      "hint": "A small warning enables a preventative action.",
+      "plotStructure": "Trigger, Observation, Precaution, Event, Result, Repair",
+      "sequenceLogic": "Warning → Precaution → Event → Outcome → Repair"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L125_PRACTICE_Q2",
+      "level": 125,
+      "phase": "practice",
+      "storyContext": "A courier company introduced a new routing app.",
+      "prompt": "In the narrative sequence (Change, Efficiency, Consequence, Saving, Impact, Complaint), what event must logically take place immediately after: \"A courier company introduced a new routing app.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Drivers found that the app avoided left turns.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "They abandoned the current procedure and started again from scratch."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Drivers found that the app avoided left turns.",
+      "explanation": "The app changes routes, and shorter routes speed up deliveries. Faster deliveries end shifts early, and the company saves overtime. Drivers lose income, so they complain.",
+      "hint": "A benefit for one group can be a cost for another.",
+      "plotStructure": "Change, Efficiency, Consequence, Saving, Impact, Complaint",
+      "sequenceLogic": "Change → Efficiency → Saving → Cost to Workers"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L125_PRACTICE_Q3",
+      "level": 125,
+      "phase": "practice",
+      "storyContext": "Rain began to leak through the roof of the parish hall during the harvest supper.",
+      "prompt": "In the narrative sequence (Disruption, Adaptation, Delay, Gathering, Expansion, Demand, Outcome), what event must logically take place immediately after: \"Rain began to leak through the roof of the parish hall during the harvest supper.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The organizer, Bronagh, moved the tables to the dry end of the hall.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The organizer, Bronagh, moved the tables to the dry end of the hall.",
+      "explanation": "The leak forces the tables to move, and the crowding delays serving. The delay pushes guests onto the porch, where singing begins. The singing draws more people, which increases demand for food and, in the end, the funds raised.",
+      "hint": "A disruption leads to something no one planned.",
+      "plotStructure": "Disruption, Adaptation, Delay, Gathering, Expansion, Demand, Outcome",
+      "sequenceLogic": "Disruption → Adaptation → Delay → Unplanned Event → Growth → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L126_PRACTICE_Q1",
+      "level": 126,
+      "phase": "practice",
+      "storyContext": "Ottavio left a bathroom window open during a storm.",
+      "prompt": "In the narrative sequence (Cause, Event, Damage, Escalation, Advice, Habit), what event must logically take place immediately after: \"Ottavio left a bathroom window open during a storm.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Rain blew in and soaked the wooden floor.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Rain blew in and soaked the wooden floor.",
+      "explanation": "The open window admits rain, and the floor absorbs it. Swelling comes first, lifting comes later, and the specialist's advice follows once the damage is visible. The final sentence records what he learned.",
+      "hint": "Water damage develops slowly. Which sentence marks that time lag?",
+      "plotStructure": "Cause, Event, Damage, Escalation, Advice, Habit",
+      "sequenceLogic": "Cause → Absorption → Damage → Advice → Lesson"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L126_PRACTICE_Q2",
+      "level": 126,
+      "phase": "practice",
+      "storyContext": "A school moved its start time forty minutes later.",
+      "prompt": "In the narrative sequence (Policy Change, Direct Effect, Improvement, Observation, Result, Influence), what event must logically take place immediately after: \"A school moved its start time forty minutes later.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "They abandoned the current procedure and started again from scratch.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Students slept longer on weekdays."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Students slept longer on weekdays.",
+      "explanation": "The change gives students more sleep, and more sleep improves attendance and alertness. Better alertness raises scores over time, and the results attract attention elsewhere.",
+      "hint": "Which effect is a direct result and which is a later result?",
+      "plotStructure": "Policy Change, Direct Effect, Improvement, Observation, Result, Influence",
+      "sequenceLogic": "Change → Direct Effect → Indirect Effect → Long-term Effect → Spread"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L126_PRACTICE_Q3",
+      "level": 126,
+      "phase": "practice",
+      "storyContext": "Cocoa harvests in West Africa were hit by heavy rains.",
+      "prompt": "In the narrative sequence (Trigger, Supply Shock, Price Rise, Wholesale, Retail, Alternative, Consumer Reaction), what event must logically take place immediately after: \"Cocoa harvests in West Africa were hit by heavy rains.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "The supply of beans fell.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The supply of beans fell.",
+      "explanation": "The weather reduces supply, and reduced supply raises bean prices. Makers pass the costs on to supermarkets, who pass them to shoppers. Shrinking bars is an alternative to raising prices, and shoppers' reaction is the last consequence.",
+      "hint": "Follow the chain from farm to shelf to customer trust.",
+      "plotStructure": "Trigger, Supply Shock, Price Rise, Wholesale, Retail, Alternative, Consumer Reaction",
+      "sequenceLogic": "Supply Chain Cause and Effect"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L127_PRACTICE_Q1",
+      "level": 127,
+      "phase": "practice",
+      "storyContext": "Yolanda's neighbor started composting.",
+      "prompt": "In the narrative sequence (Action, Side Effect, Spread, Communication, Fix, Result), what event must logically take place immediately after: \"Yolanda's neighbor started composting.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "The compost bin attracted fruit flies.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The compost bin attracted fruit flies.",
+      "explanation": "The composting attracts flies, and the flies spread to the next home. Yolanda's note communicates the problem, and the neighbor's changes respond to it. The last sentence shows the result.",
+      "hint": "What links the neighbor's action to Yolanda's problem?",
+      "plotStructure": "Action, Side Effect, Spread, Communication, Fix, Result",
+      "sequenceLogic": "Action → Side Effect → Complaint → Fix → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L127_PRACTICE_Q2",
+      "level": 127,
+      "phase": "practice",
+      "storyContext": "A football club's star striker was injured in a match.",
+      "prompt": "In the narrative sequence (Loss, Reorganization, Weakness, Consequence, Correction, Result), what event must logically take place immediately after: \"A football club's star striker was injured in a match.\"?",
+      "options": [
+        "The manager moved a midfielder into attack.",
+        "They abandoned the current procedure and started again from scratch.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The manager moved a midfielder into attack.",
+      "explanation": "The injury forces a change, and the change fills one gap while opening another. The leaked goals show the weakness, and the new signing addresses it.",
+      "hint": "One fix can create a weakness elsewhere.",
+      "plotStructure": "Loss, Reorganization, Weakness, Consequence, Correction, Result",
+      "sequenceLogic": "Loss → Fix → Side Effect → Consequence → Second Fix → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L127_PRACTICE_Q3",
+      "level": 127,
+      "phase": "practice",
+      "storyContext": "A hospital replaced paper charts with a tablet system.",
+      "prompt": "In the narrative sequence (Change, Adjustment, Slowdown, Detection, Support, Improvement, Expansion), what event must logically take place immediately after: \"A hospital replaced paper charts with a tablet system.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "Nurses spent extra time learning it.",
+        "They abandoned the current procedure and started again from scratch.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Nurses spent extra time learning it.",
+      "explanation": "The change requires learning, which takes time from other tasks. The slowdown is visible in discharge times, and managers respond with support. Only after training does the benefit appear, which leads to the expansion.",
+      "hint": "An improvement often gets worse before it gets better.",
+      "plotStructure": "Change, Adjustment, Slowdown, Detection, Support, Improvement, Expansion",
+      "sequenceLogic": "Change → Cost → Observation → Support → Benefit → Expansion"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L128_PRACTICE_Q1",
+      "level": 128,
+      "phase": "practice",
+      "storyContext": "The tour bus's air conditioning failed on a hot afternoon.",
+      "prompt": "In the narrative sequence (Failure, Reaction, Decision, Complication, Delay, Consequence), what event must logically take place immediately after: \"The tour bus's air conditioning failed on a hot afternoon.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Passengers grew irritable."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Passengers grew irritable.",
+      "explanation": "The failure makes people uncomfortable, and the guide's change addresses that. The restaurant's lack of readiness slows lunch, and the delay accumulates until the group misses the closing time.",
+      "hint": "A helpful decision may cause another problem. Which one?",
+      "plotStructure": "Failure, Reaction, Decision, Complication, Delay, Consequence",
+      "sequenceLogic": "Failure → Reaction → Adjustment → Side Effect → Delay → Consequence"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L128_PRACTICE_Q2",
+      "level": 128,
+      "phase": "practice",
+      "storyContext": "A start-up offered free shipping for a week.",
+      "prompt": "In the narrative sequence (Action, Surge, Overload, Consequence, Reaction, Response), what event must logically take place immediately after: \"A start-up offered free shipping for a week.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "Orders tripled.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Orders tripled.",
+      "explanation": "The offer creates demand, and demand exceeds capacity. Delays follow, and delayed customers criticize the company. The end of the promotion is a response to the damage.",
+      "hint": "Success in one area can overwhelm another.",
+      "plotStructure": "Action, Surge, Overload, Consequence, Reaction, Response",
+      "sequenceLogic": "Promotion → Surge → Overload → Delay → Reaction → Response"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L128_PRACTICE_Q3",
+      "level": 128,
+      "phase": "practice",
+      "storyContext": "The library announced it would end evening hours because of budget cuts.",
+      "prompt": "In the narrative sequence (Announcement, Impact, Organization, Pressure, Hearing, Decision, Outcome), what event must logically take place immediately after: \"The library announced it would end evening hours because of budget cuts.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "Students who studied there after work lost their space.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Students who studied there after work lost their space.",
+      "explanation": "The announcement affects a group of users, who respond by organizing. The petition grows and reaches the council, which finds a way to reverse the cut. The sponsor is a further consequence.",
+      "hint": "Follow how public pressure turns into a decision.",
+      "plotStructure": "Announcement, Impact, Organization, Pressure, Hearing, Decision, Outcome",
+      "sequenceLogic": "Decision → Impact → Response → Pressure → Reversal"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L129_PRACTICE_Q1",
+      "level": 129,
+      "phase": "practice",
+      "storyContext": "A storm felled a large oak in the park.",
+      "prompt": "In the narrative sequence (Trigger, Explanation, Erosion, Result, Response, Remedy), what event must logically take place immediately after: \"A storm felled a large oak in the park.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The tree's roots had held a hillside in place."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The tree's roots had held a hillside in place.",
+      "explanation": "The fall is the trigger, and the roots' role is the hidden link. Without the roots, rain loosens the soil, and the landslide follows. The closure and the saplings are the human response.",
+      "hint": "Which sentence explains why the tree's fall matters?",
+      "plotStructure": "Trigger, Explanation, Erosion, Result, Response, Remedy",
+      "sequenceLogic": "Cause → Hidden Link → Effect → Response"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L129_PRACTICE_Q2",
+      "level": 129,
+      "phase": "practice",
+      "storyContext": "The Adeyemis' washing machine broke down.",
+      "prompt": "In the narrative sequence (Disruption, Routine, Meeting, Conversation, Idea, Outcome), what event must logically take place immediately after: \"The Adeyemis' washing machine broke down.\"?",
+      "options": [
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "They began going to the laundromat on Saturdays.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "They began going to the laundromat on Saturdays.",
+      "explanation": "The breakdown leads to a change of habit, and the new routine brings them to the laundromat. The meeting there creates a conversation, which becomes an idea, and eventually a garden.",
+      "hint": "Look for the event that creates the chance meeting.",
+      "plotStructure": "Disruption, Routine, Meeting, Conversation, Idea, Outcome",
+      "sequenceLogic": "Disruption → New Routine → Encounter → Idea → Project"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L129_PRACTICE_Q3",
+      "level": 129,
+      "phase": "practice",
+      "storyContext": "A software company changed its pricing from monthly to yearly.",
+      "prompt": "In the narrative sequence (Change, Barrier, Cancellation, Loss, Insight, Adjustment, Recovery), what event must logically take place immediately after: \"A software company changed its pricing from monthly to yearly.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "Small clients found the upfront cost too high.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Small clients found the upfront cost too high.",
+      "explanation": "The pricing change creates a barrier for small clients, so they cancel. Revenue falls, and support staff notice the reason. The new tier addresses it, and the recovery follows.",
+      "hint": "A decision meets a reaction that shapes the next decision.",
+      "plotStructure": "Change, Barrier, Cancellation, Loss, Insight, Adjustment, Recovery",
+      "sequenceLogic": "Decision → Barrier → Reaction → Loss → Insight → Adjustment → Recovery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L130_PRACTICE_Q1",
+      "level": 130,
+      "phase": "practice",
+      "storyContext": "A newspaper published a mistaken headline saying a local bakery was closing.",
+      "prompt": "In the narrative sequence (Error, Reaction, Explanation, Correction, Amplification, Outcome), what event must logically take place immediately after: \"A newspaper published a mistaken headline saying a local bakery was closing.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Customers flooded the shop with sympathy.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Customers flooded the shop with sympathy.",
+      "explanation": "The error creates the wrong belief, and customers act on it. The owner's explanation corrects it, and the paper's correction makes the correction public. The fans' posts turn the confusion into free advertising.",
+      "hint": "A mistake can lead to unexpected publicity.",
+      "plotStructure": "Error, Reaction, Explanation, Correction, Amplification, Outcome",
+      "sequenceLogic": "Error → Reaction → Correction → Amplification → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L130_PRACTICE_Q2",
+      "level": 130,
+      "phase": "practice",
+      "storyContext": "Wolves were reintroduced to a national park.",
+      "prompt": "In the narrative sequence (Introduction, Reduction, Regrowth, Return, Construction, Attraction, Outcome), what event must logically take place immediately after: \"Wolves were reintroduced to a national park.\"?",
+      "options": [
+        "They reduced the elk population.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "They abandoned the current procedure and started again from scratch.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "They reduced the elk population.",
+      "explanation": "The wolves reduce elk, and fewer elk let willows grow. Beavers use willows and build dams, and the ponds attract new species. The diversity is the final effect of the chain.",
+      "hint": "Each new species depends on a change made by the last.",
+      "plotStructure": "Introduction, Reduction, Regrowth, Return, Construction, Attraction, Outcome",
+      "sequenceLogic": "Ecological Chain"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L130_PRACTICE_Q3",
+      "level": 130,
+      "phase": "practice",
+      "storyContext": "Restaurant owner Marlene cut portion sizes to save costs.",
+      "prompt": "In the narrative sequence (Decision, Reaction, Complaint, Loss, Analysis, Reversal, Recovery), what event must logically take place immediately after: \"Restaurant owner Marlene cut portion sizes to save costs.\"?",
+      "options": [
+        "Regular diners noticed the smaller plates.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Regular diners noticed the smaller plates.",
+      "explanation": "The cut is a decision with a hidden cost. Diners notice, complain, and book less, and Marlene's comparison shows the net loss. The reversal and the note address the problem, and the recovery follows.",
+      "hint": "A saving that costs more than it saves has to be reversed.",
+      "plotStructure": "Decision, Reaction, Complaint, Loss, Analysis, Reversal, Recovery",
+      "sequenceLogic": "Decision → Reaction → Loss → Analysis → Reversal → Recovery"
+    }
+  ]
+}

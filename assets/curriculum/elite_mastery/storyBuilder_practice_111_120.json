@@ -1,0 +1,578 @@
+{
+  "gameType": "storyBuilder",
+  "phase": "practice",
+  "batchIndex": 12,
+  "levels": "111-120",
+  "quests": [
+    {
+      "id": "ELT_STORYBUILDER_L111_PRACTICE_Q1",
+      "level": 111,
+      "phase": "practice",
+      "storyContext": "Anneli's grandmother's ring was missing from the dish beside the sink.",
+      "prompt": "In the narrative sequence (Problem, Clue, Reasoning, Discovery, Explanation, Resolution), what event must logically take place immediately after: \"Anneli's grandmother's ring was missing from the dish beside the sink.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Her brother said he had washed the dishes that morning.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Her brother said he had washed the dishes that morning.",
+      "explanation": "The missing ring is the problem, and the brother's remark supplies the clue that leads her to the drain. The discovery comes before the explanation, and only once she understands what happened can she reassure him.",
+      "hint": "A conclusion can only be drawn after the evidence that supports it has been found.",
+      "plotStructure": "Problem, Clue, Reasoning, Discovery, Explanation, Resolution",
+      "sequenceLogic": "Clue → Hypothesis → Discovery → Explanation"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L111_PRACTICE_Q2",
+      "level": 111,
+      "phase": "practice",
+      "storyContext": "Kolby wanted to give his partner a watch for her birthday.",
+      "prompt": "In the narrative sequence (Goal, Gap, Investigation, Discovery, Decision, Outcome), what event must logically take place immediately after: \"Kolby wanted to give his partner a watch for her birthday.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "Kolby did not know which style she liked.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Kolby did not know which style she liked.",
+      "explanation": "His goal and his lack of knowledge come first. He gathers information by observation, and the conclusion he draws guides the choice. Only after choosing can she react.",
+      "hint": "What does the character not know at the start, and how does he find out?",
+      "plotStructure": "Goal, Gap, Investigation, Discovery, Decision, Outcome",
+      "sequenceLogic": "Goal → Missing Information → Observation → Decision → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L111_PRACTICE_Q3",
+      "level": 111,
+      "phase": "practice",
+      "storyContext": "Neema was to meet a client at a train station she had never visited.",
+      "prompt": "In the narrative sequence (Setup, Vague Information, Complication, Inquiry, Clue, Search, Discovery), what event must logically take place immediately after: \"Neema was to meet a client at a train station she had never visited.\"?",
+      "options": [
+        "The client's email said, \"I'll be near the clock.\"",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The client's email said, \"I'll be near the clock.\"",
+      "explanation": "The first message creates ambiguity, and the discovery of two clocks makes it a problem. The question leads to a new piece of information, which does not answer it directly but lets her search. The search is only possible once she has that clue.",
+      "hint": "What information does the second message add that the first one lacked?",
+      "plotStructure": "Setup, Vague Information, Complication, Inquiry, Clue, Search, Discovery",
+      "sequenceLogic": "Ambiguity → Question → New Information → Search → Discovery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L112_PRACTICE_Q1",
+      "level": 112,
+      "phase": "practice",
+      "storyContext": "Vasco found the cake tin empty when he opened it at breakfast.",
+      "prompt": "In the narrative sequence (Mystery, Alibi, Trail, Evidence, Inference, Confirmation), what event must logically take place immediately after: \"Vasco found the cake tin empty when he opened it at breakfast.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "His flatmate said she had been out all evening.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "His flatmate said she had been out all evening.",
+      "explanation": "The empty tin is the mystery, and the flatmate's alibi removes one suspect. The crumbs and plate provide physical clues, the memory of the visitor produces a new suspect, and the text confirms it.",
+      "hint": "Each clue narrows the list of suspects.",
+      "plotStructure": "Mystery, Alibi, Trail, Evidence, Inference, Confirmation",
+      "sequenceLogic": "Mystery → Elimination → Clues → Inference → Confirmation"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L112_PRACTICE_Q2",
+      "level": 112,
+      "phase": "practice",
+      "storyContext": "Mireille's guidebook said the museum opened at nine.",
+      "prompt": "In the narrative sequence (Expectation, Arrival, Contradiction, Correction, Verification, Adaptation), what event must logically take place immediately after: \"Mireille's guidebook said the museum opened at nine.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "Mireille arrived at eight forty-five and joined a short line.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Mireille arrived at eight forty-five and joined a short line.",
+      "explanation": "The guidebook creates the expectation, and the closed doors contradict it. The guard provides the correction, and the website verifies it. Only then does she make a new plan.",
+      "hint": "What makes the character doubt the information she started with?",
+      "plotStructure": "Expectation, Arrival, Contradiction, Correction, Verification, Adaptation",
+      "sequenceLogic": "Expectation → Contradiction → Correction → Verification → Adaptation"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L112_PRACTICE_Q3",
+      "level": 112,
+      "phase": "practice",
+      "storyContext": "The team's monthly report kept showing lower revenue than the finance department's figures.",
+      "prompt": "In the narrative sequence (Problem, Hypothesis, Test, Discovery, Explanation, Action, Result), what event must logically take place immediately after: \"The team's monthly report kept showing lower revenue than the finance department's figures.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Accountant Cassian assumed someone had entered numbers incorrectly.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Accountant Cassian assumed someone had entered numbers incorrectly.",
+      "explanation": "The mismatch is the problem, and Cassian's first assumption is a hypothesis. Checking it fails, which pushes him to look at definitions. The explanation solves the problem, and the fix follows.",
+      "hint": "A theory that is disproved leads to a better explanation.",
+      "plotStructure": "Problem, Hypothesis, Test, Discovery, Explanation, Action, Result",
+      "sequenceLogic": "Problem → Hypothesis → Disproof → Discovery → Explanation → Fix → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L113_PRACTICE_Q1",
+      "level": 113,
+      "phase": "practice",
+      "storyContext": "Yesenia's friends were secretly planning her promotion party.",
+      "prompt": "In the narrative sequence (Secret, Observation, Misinterpretation, Slip, Realization, Payoff), what event must logically take place immediately after: \"Yesenia's friends were secretly planning her promotion party.\"?",
+      "options": [
+        "Yesenia noticed that they went quiet whenever she entered the room.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Yesenia noticed that they went quiet whenever she entered the room.",
+      "explanation": "The secret is the hidden truth, and her observation leads to a wrong interpretation. The slip corrects it, and her decision to pretend follows. The final sentence shows her acting on knowledge others do not know she has.",
+      "hint": "What does the character believe at each moment, and is it true?",
+      "plotStructure": "Secret, Observation, Misinterpretation, Slip, Realization, Payoff",
+      "sequenceLogic": "Secret → Misinterpretation → Slip → Realization → Performance"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L113_PRACTICE_Q2",
+      "level": 113,
+      "phase": "practice",
+      "storyContext": "Piet saw a light on in the closed hardware store next door.",
+      "prompt": "In the narrative sequence (Observation, Assumption, Escalation, Arrival, Discovery, Explanation, Resolution), what event must logically take place immediately after: \"Piet saw a light on in the closed hardware store next door.\"?",
+      "options": [
+        "Piet assumed a burglar was inside.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Piet assumed a burglar was inside.",
+      "explanation": "Piet's assumption comes from incomplete information. The owner's answer deepens the concern, and only the view through the window reveals the truth. The owner's forgotten detail explains it, and the apology follows.",
+      "hint": "What does each person know, and what is missing until the window scene?",
+      "plotStructure": "Observation, Assumption, Escalation, Arrival, Discovery, Explanation, Resolution",
+      "sequenceLogic": "Observation → Assumption → Inquiry → Discovery → Explanation"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L113_PRACTICE_Q3",
+      "level": 113,
+      "phase": "practice",
+      "storyContext": "Curator Aurelio noticed that the tag on a ceramic bowl listed the wrong century.",
+      "prompt": "In the narrative sequence (Suspicion, Investigation, Discovery, Verification, Confirmation, Correction, Extension), what event must logically take place immediately after: \"Curator Aurelio noticed that the tag on a ceramic bowl listed the wrong century.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "He checked the acquisition file and found it described as Roman.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "He checked the acquisition file and found it described as Roman.",
+      "explanation": "The suspicion comes first, and the file shows the origin of the error. The expert supplies the crucial clue, and Aurelio verifies it before correcting anything. The final sentence extends the consequences.",
+      "hint": "Which sentence supplies the information that makes the correction possible?",
+      "plotStructure": "Suspicion, Investigation, Discovery, Verification, Confirmation, Correction, Extension",
+      "sequenceLogic": "Suspicion → Record Check → New Information → Verification → Correction → Follow-up"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L114_PRACTICE_Q1",
+      "level": 114,
+      "phase": "practice",
+      "storyContext": "Berenice was told to prepare a five-minute talk for her interview.",
+      "prompt": "In the narrative sequence (Setup, Withheld Information, Reveal, Decision, Complication, Adaptation), what event must logically take place immediately after: \"Berenice was told to prepare a five-minute talk for her interview.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Berenice did not learn the topic until she arrived.",
+        "They abandoned the current procedure and started again from scratch.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Berenice did not learn the topic until she arrived.",
+      "explanation": "The instruction comes first, but the topic is withheld until she arrives. The card supplies the missing information, her choice follows, and only then does she see that her slides do not fit.",
+      "hint": "Ask when the character finds out what she has to talk about.",
+      "plotStructure": "Setup, Withheld Information, Reveal, Decision, Complication, Adaptation",
+      "sequenceLogic": "Instruction → Missing Information → Reveal → Choice → Realization → Adaptation"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L114_PRACTICE_Q2",
+      "level": 114,
+      "phase": "practice",
+      "storyContext": "Wenceslas found an unlabeled jar in his late uncle's pantry.",
+      "prompt": "In the narrative sequence (Discovery, Clue, Inquiry, Explanation, Direction, Resolution), what event must logically take place immediately after: \"Wenceslas found an unlabeled jar in his late uncle's pantry.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "He opened it and smelled cardamom."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "He opened it and smelled cardamom.",
+      "explanation": "The jar is the mystery, and the smell gives a partial clue. The photo brings in the aunt, whose reply explains the contents. Her additional detail points to the recipe, which he finds.",
+      "hint": "The person who knows the answer only answers after being asked.",
+      "plotStructure": "Discovery, Clue, Inquiry, Explanation, Direction, Resolution",
+      "sequenceLogic": "Mystery → Clue → Inquiry → Explanation → Direction → Discovery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L114_PRACTICE_Q3",
+      "level": 114,
+      "phase": "practice",
+      "storyContext": "Fenella received an email addressed to \"Dr. Fennel\" offering a speaking slot.",
+      "prompt": "In the narrative sequence (Doubt, Clue, Inference, Verification, Confirmation, Response, Result), what event must logically take place immediately after: \"Fenella received an email addressed to \"Dr. Fennel\" offering a speaking slot.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "The message mentioned a paper on soil microbes."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The message mentioned a paper on soil microbes.",
+      "explanation": "The odd name creates doubt, and the mention of the paper is the clue that resolves it partly. She verifies her suspicion, the organizer confirms it, and only after confirmation does she accept.",
+      "hint": "Which detail lets the character move from doubt to suspicion?",
+      "plotStructure": "Doubt, Clue, Inference, Verification, Confirmation, Response, Result",
+      "sequenceLogic": "Doubt → Clue → Inference → Verification → Confirmation → Action"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L115_PRACTICE_Q1",
+      "level": 115,
+      "phase": "practice",
+      "storyContext": "Amadou's sister said she had left a surprise in the freezer.",
+      "prompt": "In the narrative sequence (Setup, Search, Failure, Clue, Discovery, Explanation), what event must logically take place immediately after: \"Amadou's sister said she had left a surprise in the freezer.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Amadou looked and found only ice trays and a bag of peas.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Amadou looked and found only ice trays and a bag of peas.",
+      "explanation": "The claim of a surprise raises expectations, and the first search fails. The text gives the missing detail, so the second search succeeds. The note explains the reason for the gift.",
+      "hint": "What information did he lack the first time he looked?",
+      "plotStructure": "Setup, Search, Failure, Clue, Discovery, Explanation",
+      "sequenceLogic": "Claim → Search → Failure → Information → Discovery → Explanation"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L115_PRACTICE_Q2",
+      "level": 115,
+      "phase": "practice",
+      "storyContext": "Mariam's phone showed the bus arriving in two minutes.",
+      "prompt": "In the narrative sequence (Expectation, Delay, Recheck, Realization, Correction, Result), what event must logically take place immediately after: \"Mariam's phone showed the bus arriving in two minutes.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Five minutes passed with no bus."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Five minutes passed with no bus.",
+      "explanation": "The app's prediction sets the expectation, and the delay contradicts it. Rechecking the app reveals the mismatch, and her realization explains it. She then acts on the corrected information.",
+      "hint": "The information was right, but it referred to something she had not understood.",
+      "plotStructure": "Expectation, Delay, Recheck, Realization, Correction, Result",
+      "sequenceLogic": "Expectation → Contradiction → Recheck → Realization → Correction → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L115_PRACTICE_Q3",
+      "level": 115,
+      "phase": "practice",
+      "storyContext": "Auditor Halima was reviewing a small charity's accounts.",
+      "prompt": "In the narrative sequence (Context, Observation, Explanation, Discovery, Pattern, Insight, Recommendation), what event must logically take place immediately after: \"Auditor Halima was reviewing a small charity's accounts.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "She noticed that donations spiked every December.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "She noticed that donations spiked every December.",
+      "explanation": "The pattern is the observation, and the treasurer's answer is a simple explanation. The donor list gives more precise information, the dates confirm a regular arrangement, and her conclusion leads to the recommendation.",
+      "hint": "What does the auditor learn from the data that the treasurer's explanation did not include?",
+      "plotStructure": "Context, Observation, Explanation, Discovery, Pattern, Insight, Recommendation",
+      "sequenceLogic": "Observation → Explanation → Deeper Data → Pattern → Conclusion → Recommendation"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L116_PRACTICE_Q1",
+      "level": 116,
+      "phase": "practice",
+      "storyContext": "Odell had been told that the concert was black tie.",
+      "prompt": "In the narrative sequence (Belief, Action, Contradiction, Correction, Decision, Outcome), what event must logically take place immediately after: \"Odell had been told that the concert was black tie.\"?",
+      "options": [
+        "Odell rented a tuxedo.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "They abandoned the current procedure and started again from scratch."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Odell rented a tuxedo.",
+      "explanation": "The information he was given is incomplete, and it drives his rental. The crowd contradicts his assumption, the invitation corrects it, and only then does he decide to stay.",
+      "hint": "What did he understand at the start, and what did the invitation actually say?",
+      "plotStructure": "Belief, Action, Contradiction, Correction, Decision, Outcome",
+      "sequenceLogic": "Belief → Action → Contradiction → Correction → Response"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L116_PRACTICE_Q2",
+      "level": 116,
+      "phase": "practice",
+      "storyContext": "Dr. Chinwe's plants in group B grew faster than those in group A.",
+      "prompt": "In the narrative sequence (Observation, Assumption, Discovery, Test, Result, Conclusion), what event must logically take place immediately after: \"Dr. Chinwe's plants in group B grew faster than those in group A.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Dr. Chinwe assumed the fertilizer explained it.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Dr. Chinwe assumed the fertilizer explained it.",
+      "explanation": "The result comes first, followed by an assumption. Her notes give a new possibility, the repeated experiment tests it, and the vanished difference supports her new conclusion.",
+      "hint": "A good scientist tests whether an assumed cause is really the cause.",
+      "plotStructure": "Observation, Assumption, Discovery, Test, Result, Conclusion",
+      "sequenceLogic": "Observation → Assumption → Alternative → Test → Result → Conclusion"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L116_PRACTICE_Q3",
+      "level": 116,
+      "phase": "practice",
+      "storyContext": "At the reunion, Osvaldo failed to recognize a man greeting him warmly.",
+      "prompt": "In the narrative sequence (Puzzle, Clue, Memory, Second Clue, Realization, Reunion, Outcome), what event must logically take place immediately after: \"At the reunion, Osvaldo failed to recognize a man greeting him warmly.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "The man mentioned a summer job at a shipyard.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The man mentioned a summer job at a shipyard.",
+      "explanation": "The lack of recognition is the puzzle, and the shipyard is the first clue. Osvaldo's memory links to a colleague, Canada is the next clue, and the identity is revealed last.",
+      "hint": "Each clue narrows down the identity of the man.",
+      "plotStructure": "Puzzle, Clue, Memory, Second Clue, Realization, Reunion, Outcome",
+      "sequenceLogic": "Puzzle → Clue → Memory → Clue → Realization → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L117_PRACTICE_Q1",
+      "level": 117,
+      "phase": "practice",
+      "storyContext": "The tracking page said Ottoline's parcel had been delivered.",
+      "prompt": "In the narrative sequence (Report, Contradiction, Inquiry, Clue, Discovery, Suggestion), what event must logically take place immediately after: \"The tracking page said Ottoline's parcel had been delivered.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Ottoline found nothing on her porch.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Ottoline found nothing on her porch.",
+      "explanation": "The tracking page sets the expectation, and the empty porch contradicts it. Asking neighbors gathers information, the neighbor's tip locates it, and the message suggests a fix.",
+      "hint": "The tracking information was correct, but incomplete.",
+      "plotStructure": "Report, Contradiction, Inquiry, Clue, Discovery, Suggestion",
+      "sequenceLogic": "Report → Contradiction → Inquiry → Clue → Discovery → Improvement"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L117_PRACTICE_Q2",
+      "level": 117,
+      "phase": "practice",
+      "storyContext": "Tavish could not remember where he had parked in the huge garage.",
+      "prompt": "In the narrative sequence (Problem, Clue, Failed Search, Memory, Discovery, Resolution), what event must logically take place immediately after: \"Tavish could not remember where he had parked in the huge garage.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "Tavish remembered a fountain by the entrance, which narrowed it to the north level.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Tavish remembered a fountain by the entrance, which narrowed it to the north level.",
+      "explanation": "The problem is the forgotten location. The fountain narrows it down, but the search alone fails. The memory of the photo is the key, so the phone search comes next, and the walk to the space last.",
+      "hint": "What is the difference between the first clue and the memory that solves the problem?",
+      "plotStructure": "Problem, Clue, Failed Search, Memory, Discovery, Resolution",
+      "sequenceLogic": "Problem → Partial Clue → Failure → Memory → Discovery → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L117_PRACTICE_Q3",
+      "level": 117,
+      "phase": "practice",
+      "storyContext": "Editor Zeynep received a manuscript with an unusual number of footnotes.",
+      "prompt": "In the narrative sequence (Observation, Pattern, Investigation, Discovery, Request, Admission, Consequence), what event must logically take place immediately after: \"Editor Zeynep received a manuscript with an unusual number of footnotes.\"?",
+      "options": [
+        "She noticed that many cited the same obscure journal.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "She noticed that many cited the same obscure journal.",
+      "explanation": "The footnotes are the pattern, and the journal is the anchor. The end of publication raises a question, and checking the citations shows real errors. Her request leads to the admission, and the delay is the consequence.",
+      "hint": "What information does she gather, and what does each step reveal?",
+      "plotStructure": "Observation, Pattern, Investigation, Discovery, Request, Admission, Consequence",
+      "sequenceLogic": "Pattern → Investigation → Discovery → Request → Admission → Consequence"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L118_PRACTICE_Q1",
+      "level": 118,
+      "phase": "practice",
+      "storyContext": "Perla wanted to order a farewell cake for her retiring boss.",
+      "prompt": "In the narrative sequence (Goal, Information, Correction, Decision, Action, Outcome), what event must logically take place immediately after: \"Perla wanted to order a farewell cake for her retiring boss.\"?",
+      "options": [
+        "A coworker told her that he loved chocolate.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "A coworker told her that he loved chocolate.",
+      "explanation": "The plan comes first, and the coworker's information shapes it. The assistant's later information contradicts it, so Perla changes course, and the boss's reaction rewards the change.",
+      "hint": "New information arrives after the first plan, and changes it.",
+      "plotStructure": "Goal, Information, Correction, Decision, Action, Outcome",
+      "sequenceLogic": "Plan → Information → Contradicting Information → Change → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L118_PRACTICE_Q2",
+      "level": 118,
+      "phase": "practice",
+      "storyContext": "Sanjay realized his wallet was missing after leaving the café.",
+      "prompt": "In the narrative sequence (Problem, Inference, Search, Elimination, Clue, Discovery), what event must logically take place immediately after: \"Sanjay realized his wallet was missing after leaving the café.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Sanjay remembered paying with cash, so he must have had it there.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Sanjay remembered paying with cash, so he must have had it there.",
+      "explanation": "The loss is the trigger, and the memory of payment points him to the café. The barista's answer rules it out, the unzipped pocket suggests an alternative, and the retracing finds the wallet.",
+      "hint": "What clue redirects the search from the café to the street?",
+      "plotStructure": "Problem, Inference, Search, Elimination, Clue, Discovery",
+      "sequenceLogic": "Loss → Inference → Check → Elimination → New Clue → Discovery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L118_PRACTICE_Q3",
+      "level": 118,
+      "phase": "practice",
+      "storyContext": "Coach Ferreira reviewed the season's statistics.",
+      "prompt": "In the narrative sequence (Observation, Assumption, Insight, Verification, Action, Result), what event must logically take place immediately after: \"Coach Ferreira reviewed the season's statistics.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "The team's losses clustered in away games.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The team's losses clustered in away games.",
+      "explanation": "The statistics show a pattern, and the first explanation is an assumption. The player's remark offers an alternative, and the measurement confirms it. The training change and the wins follow.",
+      "hint": "A player offers a piece of information that the coach could not see in the numbers.",
+      "plotStructure": "Observation, Assumption, Insight, Verification, Action, Result",
+      "sequenceLogic": "Pattern → Assumption → New Information → Verification → Action → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L119_PRACTICE_Q1",
+      "level": 119,
+      "phase": "practice",
+      "storyContext": "Georgiana's grandmother told her she had left something in the piano bench.",
+      "prompt": "In the narrative sequence (Tip, Search, Discovery, Clue, Memory, Resolution), what event must logically take place immediately after: \"Georgiana's grandmother told her she had left something in the piano bench.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "Georgiana lifted the lid and found sheet music."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Georgiana lifted the lid and found sheet music.",
+      "explanation": "The tip starts the search, and the bench yields the music, then the envelope with the key. The note says what the key opens, memory locates the trunk, and the key opens it.",
+      "hint": "Each discovery gives instructions for the next.",
+      "plotStructure": "Tip, Search, Discovery, Clue, Memory, Resolution",
+      "sequenceLogic": "Tip → Discovery → Clue → Memory → Action"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L119_PRACTICE_Q2",
+      "level": 119,
+      "phase": "practice",
+      "storyContext": "Cormac believed the report was due on Friday.",
+      "prompt": "In the narrative sequence (Belief, Clue, Inquiry, Confirmation, Realization, Response), what event must logically take place immediately after: \"Cormac believed the report was due on Friday.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "On Wednesday, he saw his manager's calendar showing \"report review.\"",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "On Wednesday, he saw his manager's calendar showing \"report review.\"",
+      "explanation": "His belief is the starting point, and the calendar entry is the first sign it is wrong. His question confirms it, and the realization leads to a rush to finish.",
+      "hint": "What does the character believe, and what evidence changes his mind?",
+      "plotStructure": "Belief, Clue, Inquiry, Confirmation, Realization, Response",
+      "sequenceLogic": "Belief → Evidence → Inquiry → Confirmation → Realization → Action"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L119_PRACTICE_Q3",
+      "level": 119,
+      "phase": "practice",
+      "storyContext": "Lab technician Ryoko found an unlabeled bottle in the fridge.",
+      "prompt": "In the narrative sequence (Problem, Check, Inquiry, Clue, Confirmation, Correction, Policy Change), what event must logically take place immediately after: \"Lab technician Ryoko found an unlabeled bottle in the fridge.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Ryoko checked the inventory list, but it was not listed.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Ryoko checked the inventory list, but it was not listed.",
+      "explanation": "The bottle is the problem, and the inventory check is the obvious first step. Asking people gives a clue, and the handwriting identifies the source. Only then can the contents be confirmed and the bottle labeled.",
+      "hint": "Which step depends on the identity of the owner?",
+      "plotStructure": "Problem, Check, Inquiry, Clue, Confirmation, Correction, Policy Change",
+      "sequenceLogic": "Problem → Record Check → Inquiry → Clue → Confirmation → Correction → Policy"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L120_PRACTICE_Q1",
+      "level": 120,
+      "phase": "practice",
+      "storyContext": "Rukia did not reply to Bettina's message for two days.",
+      "prompt": "In the narrative sequence (Silence, Assumption, Action, Revelation, Explanation, Resolution), what event must logically take place immediately after: \"Rukia did not reply to Bettina's message for two days.\"?",
+      "options": [
+        "Bettina assumed her friend was upset about the party.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Bettina assumed her friend was upset about the party.",
+      "explanation": "The silence causes a wrong assumption, and the apology follows from that assumption. Rukia's reply reveals the real reason, and the new information leads to the laughter and rescheduling.",
+      "hint": "What does Bettina know when she writes her apology, and what does she not know?",
+      "plotStructure": "Silence, Assumption, Action, Revelation, Explanation, Resolution",
+      "sequenceLogic": "Silence → Assumption → Action → Revelation → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L120_PRACTICE_Q2",
+      "level": 120,
+      "phase": "practice",
+      "storyContext": "Marlowe attended an estate sale hoping to find a vintage camera.",
+      "prompt": "In the narrative sequence (Goal, Clue, Discovery, Recognition, Proposal, Outcome), what event must logically take place immediately after: \"Marlowe attended an estate sale hoping to find a vintage camera.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "Marlowe spotted a leather case marked ten dollars."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Marlowe spotted a leather case marked ten dollars.",
+      "explanation": "His goal leads him to the case, and its weight is the clue. Finding a lens instead of a camera changes his plan, and he only notices the woman as relevant after that discovery. The trade solves both their problems.",
+      "hint": "One person's missing piece is another's spare.",
+      "plotStructure": "Goal, Clue, Discovery, Recognition, Proposal, Outcome",
+      "sequenceLogic": "Goal → Clue → Discovery → Recognition → Exchange → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L120_PRACTICE_Q3",
+      "level": 120,
+      "phase": "practice",
+      "storyContext": "A patron asked Librarian Cosima for a book the catalog listed as available.",
+      "prompt": "In the narrative sequence (Request, Failure, Lead, Inquiry, Clue, Search, Resolution), what event must logically take place immediately after: \"A patron asked Librarian Cosima for a book the catalog listed as available.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "She searched the shelf and could not find it.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "She searched the shelf and could not find it.",
+      "explanation": "The request and failed search establish the problem. The catalog gives a name, the phone call gives the explanation, and Gulliver's extra detail narrows the search. Only then does the cart check reveal the misfiled book.",
+      "hint": "Which sentence supplies the detail that leads her to the right place to look?",
+      "plotStructure": "Request, Failure, Lead, Inquiry, Clue, Search, Resolution",
+      "sequenceLogic": "Problem → Failed Search → Record → Testimony → Detail → Search → Discovery"
+    }
+  ]
+}

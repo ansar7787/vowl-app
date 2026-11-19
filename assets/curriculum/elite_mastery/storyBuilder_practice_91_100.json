@@ -1,0 +1,578 @@
+{
+  "gameType": "storyBuilder",
+  "phase": "practice",
+  "batchIndex": 10,
+  "levels": "91-100",
+  "quests": [
+    {
+      "id": "ELT_STORYBUILDER_L91_PRACTICE_Q1",
+      "level": 91,
+      "phase": "practice",
+      "storyContext": "Every Tuesday, a converted van parked outside the Riverside housing complex.",
+      "prompt": "In the narrative sequence (Introduction, Description, Audience, Detail, Character, Outcome), what event must logically take place immediately after: \"Every Tuesday, a converted van parked outside the Riverside housing complex.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "It carried about four hundred books, from picture books to large-print novels.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "It carried about four hundred books, from picture books to large-print novels.",
+      "explanation": "The paragraph starts by introducing the van, and \"it\" needs that noun before it. \"Them\" refers to the residents named just before, and \"she\" only works once Dolores has been named. Each link depends on the sentence before it.",
+      "hint": "Notice which words point back to something already mentioned, such as \"it\" and \"them.\"",
+      "plotStructure": "Introduction, Description, Audience, Detail, Character, Outcome",
+      "sequenceLogic": "Reference Chain"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L91_PRACTICE_Q2",
+      "level": 91,
+      "phase": "practice",
+      "storyContext": "Many first-time bakers give up on sourdough after one flat loaf.",
+      "prompt": "In the narrative sequence (Claim, Cause, Explanation, Contrast, Conclusion), what event must logically take place immediately after: \"Many first-time bakers give up on sourdough after one flat loaf.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The problem is usually not their technique but their starter.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The problem is usually not their technique but their starter.",
+      "explanation": "The opening names the frustration, and the next sentence gives the cause. The explanation of the starter follows, then the contrast between those who skip it and those who do not. The concluding \"therefore\" can only follow the evidence.",
+      "hint": "Look for the sentence that states the problem and the one that draws the conclusion from all the evidence.",
+      "plotStructure": "Claim, Cause, Explanation, Contrast, Conclusion",
+      "sequenceLogic": "Problem → Cause → Evidence → Contrast → Conclusion"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L91_PRACTICE_Q3",
+      "level": 91,
+      "phase": "practice",
+      "storyContext": "The warehouse move is progressing, but one floor is holding us up.",
+      "prompt": "In the narrative sequence (Summary, Progress, Obstacle, Consequence, Risk, Request, Outlook), what event must logically take place immediately after: \"The warehouse move is progressing, but one floor is holding us up.\"?",
+      "options": [
+        "The first two floors were cleared over the weekend, faster than planned because the movers arrived early.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "They abandoned the current procedure and started again from scratch."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The first two floors were cleared over the weekend, faster than planned because the movers arrived early.",
+      "explanation": "The opening frames the message, then the good news is given before the problem. \"Those backups\" only makes sense after the equipment problem is stated, and the risk, the request, and the reassurance follow from it.",
+      "hint": "Which sentence introduces the obstacle, and which ones depend on it?",
+      "plotStructure": "Summary, Progress, Obstacle, Consequence, Risk, Request, Outlook",
+      "sequenceLogic": "Topic Continuity"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L92_PRACTICE_Q1",
+      "level": 92,
+      "phase": "practice",
+      "storyContext": "The night train to Lisbon left Madrid a few minutes after ten.",
+      "prompt": "In the narrative sequence (Scene Setting, Character, Detail, Action, Interruption, Return), what event must logically take place immediately after: \"The night train to Lisbon left Madrid a few minutes after ten.\"?",
+      "options": [
+        "Arash had booked a bunk in a four-person compartment.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Arash had booked a bunk in a four-person compartment.",
+      "explanation": "The train and its departure frame the scene, and Arash's booking explains why he is in the compartment. The roommates, the jacket, and the announcement all build on that situation, and the last sentence describes what happens after waking.",
+      "hint": "What does each sentence assume the reader already knows?",
+      "plotStructure": "Scene Setting, Character, Detail, Action, Interruption, Return",
+      "sequenceLogic": "Chronological Continuity"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L92_PRACTICE_Q2",
+      "level": 92,
+      "phase": "practice",
+      "storyContext": "Lighthouses once depended on keepers who climbed the tower each evening to light the lamp.",
+      "prompt": "In the narrative sequence (Past, Change, Present, Benefit, Cost, Response), what event must logically take place immediately after: \"Lighthouses once depended on keepers who climbed the tower each evening to light the lamp.\"?",
+      "options": [
+        "Automation gradually replaced them during the twentieth century.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "They abandoned the current procedure and started again from scratch.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Automation gradually replaced them during the twentieth century.",
+      "explanation": "The passage moves from the old system to the change to its results. \"This change\" refers to the sensors, and \"it\" then adds a less obvious consequence. The final sentence responds to that loss.",
+      "hint": "Notice how \"this change\" and \"it\" each point back to the previous sentence.",
+      "plotStructure": "Past, Change, Present, Benefit, Cost, Response",
+      "sequenceLogic": "Then → Now → Consequence → Response"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L92_PRACTICE_Q3",
+      "level": 92,
+      "phase": "practice",
+      "storyContext": "At thirty-four, Ilona still could not swim.",
+      "prompt": "In the narrative sequence (Situation, Habit, Trigger, Feeling, Decision, Setback, Growth), what event must logically take place immediately after: \"At thirty-four, Ilona still could not swim.\"?",
+      "options": [
+        "Ilona had always found excuses, from work deadlines to bad weather.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "They abandoned the current procedure and started again from scratch.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Ilona had always found excuses, from work deadlines to bad weather.",
+      "explanation": "The opening states the situation, and her excuses explain why it lasted so long. The lake weekend supplies the trigger, the feeling on the dock is the motivation, and the lessons follow. The last sentence shows the change.",
+      "hint": "Which sentence gives the reason for a later decision?",
+      "plotStructure": "Situation, Habit, Trigger, Feeling, Decision, Setback, Growth",
+      "sequenceLogic": "Situation → Trigger → Motivation → Action → Growth"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L93_PRACTICE_Q1",
+      "level": 93,
+      "phase": "practice",
+      "storyContext": "The new Ethiopian restaurant on Mill Street is small, with only eight tables.",
+      "prompt": "In the narrative sequence (Introduction, Evaluation, Detail, Concession, Elaboration, Verdict), what event must logically take place immediately after: \"The new Ethiopian restaurant on Mill Street is small, with only eight tables.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "They abandoned the current procedure and started again from scratch.",
+        "That size gives it a warmth larger places struggle to match."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "That size gives it a warmth larger places struggle to match.",
+      "explanation": "The review introduces the restaurant and its size, and the next sentence comments on it. The food comes next, the criticism about service follows, and the apologies are described in the sentence that mentions them. The final sentence sums up the impression.",
+      "hint": "\"That size\" and \"those apologies\" both need a noun earlier in the paragraph.",
+      "plotStructure": "Introduction, Evaluation, Detail, Concession, Elaboration, Verdict",
+      "sequenceLogic": "Description → Evaluation → Concession → Summary"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L93_PRACTICE_Q2",
+      "level": 93,
+      "phase": "practice",
+      "storyContext": "In the nineteenth century, most cities dumped their sewage directly into rivers.",
+      "prompt": "In the narrative sequence (Background, Escalation, Consequence, Response, Result, Conclusion), what event must logically take place immediately after: \"In the nineteenth century, most cities dumped their sewage directly into rivers.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "They abandoned the current procedure and started again from scratch.",
+        "As populations grew, the rivers became dangerously polluted."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "As populations grew, the rivers became dangerously polluted.",
+      "explanation": "The passage begins with a common practice, and the growth of cities makes it worse. Disease follows, and the evidence leads to the new systems. The drop in disease shows the result, and the conclusion generalizes the story.",
+      "hint": "Which sentence states the general practice, and which draws the final conclusion?",
+      "plotStructure": "Background, Escalation, Consequence, Response, Result, Conclusion",
+      "sequenceLogic": "Cause → Effect → Evidence → Response → Result → Conclusion"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L93_PRACTICE_Q3",
+      "level": 93,
+      "phase": "practice",
+      "storyContext": "Emeric's team had spent three months on a new scheduling tool.",
+      "prompt": "In the narrative sequence (Background, Trigger, Failure, Tension, Response, Recovery, Outcome), what event must logically take place immediately after: \"Emeric's team had spent three months on a new scheduling tool.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "The demo was going well until the client asked to import her old data.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The demo was going well until the client asked to import her old data.",
+      "explanation": "The setup precedes the demo, and the request for the import is the trigger. The failure, the silence, and Emeric's response follow. The calendar demonstration recovers the situation, and the client's comment is the outcome.",
+      "hint": "What event turns a successful demo into a tense moment, and what resolves it?",
+      "plotStructure": "Background, Trigger, Failure, Tension, Response, Recovery, Outcome",
+      "sequenceLogic": "Setup → Trigger → Failure → Reaction → Recovery → Outcome"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L94_PRACTICE_Q1",
+      "level": 94,
+      "phase": "practice",
+      "storyContext": "Frost seems to end the gardening year, but many vegetables survive it.",
+      "prompt": "In the narrative sequence (Claim, Example, Mechanism, Consequence, Application, Conclusion), what event must logically take place immediately after: \"Frost seems to end the gardening year, but many vegetables survive it.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Kale and leeks, for example, sweeten after a cold night."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Kale and leeks, for example, sweeten after a cold night.",
+      "explanation": "The claim comes first. The example of kale follows, and the science explains it. \"That is why\" refers to the sugar, and the conclusion follows from the practical advice.",
+      "hint": "Which sentence is the general claim, and which gives an example of it?",
+      "plotStructure": "Claim, Example, Mechanism, Consequence, Application, Conclusion",
+      "sequenceLogic": "Claim → Example → Explanation → Application → Conclusion"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L94_PRACTICE_Q2",
+      "level": 94,
+      "phase": "practice",
+      "storyContext": "The Nkemelu family moved into the house on Cedar Lane in March.",
+      "prompt": "In the narrative sequence (Setup, Introduction, Pattern, Turning Point, Gesture, Response), what event must logically take place immediately after: \"The Nkemelu family moved into the house on Cedar Lane in March.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Their new neighbor, Mr. Halloran, greeted them curtly and went back inside.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Their new neighbor, Mr. Halloran, greeted them curtly and went back inside.",
+      "explanation": "The move sets the scene, and the curt greeting and long silence establish the relationship. The storm is the turning point, and the coffee and pie are the action and its response.",
+      "hint": "Which event changes the relationship between the neighbors?",
+      "plotStructure": "Setup, Introduction, Pattern, Turning Point, Gesture, Response",
+      "sequenceLogic": "Setup → Relationship → Turning Point → Gesture → Response"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L94_PRACTICE_Q3",
+      "level": 94,
+      "phase": "practice",
+      "storyContext": "Psychologists have long noticed that people remember unfinished tasks better than finished ones.",
+      "prompt": "In the narrative sequence (Observation, Definition, Evidence, Explanation, Consequence, Application, Result), what event must logically take place immediately after: \"Psychologists have long noticed that people remember unfinished tasks better than finished ones.\"?",
+      "options": [
+        "This is sometimes called the Zeigarnik effect, after the researcher who described it.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "This is sometimes called the Zeigarnik effect, after the researcher who described it.",
+      "explanation": "The observation is stated first, and the effect is named. \"She\" refers to the researcher just named, and her example is followed by the explanation. The final two sentences apply the idea.",
+      "hint": "A term is introduced, then a person, then evidence, then explanation. Follow that flow.",
+      "plotStructure": "Observation, Definition, Evidence, Explanation, Consequence, Application, Result",
+      "sequenceLogic": "Claim → Name → Evidence → Explanation → Application"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L95_PRACTICE_Q1",
+      "level": 95,
+      "phase": "practice",
+      "storyContext": "Riverside Fire Station opened its doors to the public on Saturday.",
+      "prompt": "In the narrative sequence (Introduction, Activities, Highlight, Addition, Outcome, Future Plan), what event must logically take place immediately after: \"Riverside Fire Station opened its doors to the public on Saturday.\"?",
+      "options": [
+        "Visitors were invited to try on helmets and inspect the engines.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Visitors were invited to try on helmets and inspect the engines.",
+      "explanation": "The opening announces the event. The activities follow from the invitation, the demonstration is singled out as the most popular, and the crews' talk is added. The attendance total comes near the end, and the plan for the future closes.",
+      "hint": "Which sentence introduces the event, and which one looks ahead?",
+      "plotStructure": "Introduction, Activities, Highlight, Addition, Outcome, Future Plan",
+      "sequenceLogic": "Announcement → Activities → Result → Future"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L95_PRACTICE_Q2",
+      "level": 95,
+      "phase": "practice",
+      "storyContext": "Beginning next month, the finance team will work from home on Wednesdays.",
+      "prompt": "In the narrative sequence (Announcement, Background, Evidence, Limit, Review, Contact), what event must logically take place immediately after: \"Beginning next month, the finance team will work from home on Wednesdays.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "They abandoned the current procedure and started again from scratch.",
+        "The change follows a three-month pilot in which productivity remained steady.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The change follows a three-month pilot in which productivity remained steady.",
+      "explanation": "The announcement comes first, and the pilot explains where it came from. \"That time\" refers to the pilot, and the office-day sentence limits the change. The review and the contact information are administrative closings.",
+      "hint": "\"That time\" needs an earlier reference. Which sentence provides it?",
+      "plotStructure": "Announcement, Background, Evidence, Limit, Review, Contact",
+      "sequenceLogic": "Announcement → Justification → Detail → Limit → Follow-up"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L95_PRACTICE_Q3",
+      "level": 95,
+      "phase": "practice",
+      "storyContext": "The ferry crossing began in bright sunshine.",
+      "prompt": "In the narrative sequence (Beginning, Change, Arrival, Description, Contrast, Destination, Detail), what event must logically take place immediately after: \"The ferry crossing began in bright sunshine.\"?",
+      "options": [
+        "Halfway across, clouds rolled in from the west.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Halfway across, clouds rolled in from the west.",
+      "explanation": "The sunshine sets the starting point, and the change in weather follows. The harbor looks gray, \"still\" introduces a contrast in feeling, and Ruth's destination comes last. The final sentence refers to the guesthouse.",
+      "hint": "Notice the change in weather and the word \"still.\"",
+      "plotStructure": "Beginning, Change, Arrival, Description, Contrast, Destination, Detail",
+      "sequenceLogic": "Chronological Description"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L96_PRACTICE_Q1",
+      "level": 96,
+      "phase": "practice",
+      "storyContext": "Zubair's bike shop struggled through its first winter.",
+      "prompt": "In the narrative sequence (Situation, Cause, Response, Detail, Consequence, Outcome), what event must logically take place immediately after: \"Zubair's bike shop struggled through its first winter.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Customers rarely wanted repairs when the roads were icy."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Customers rarely wanted repairs when the roads were icy.",
+      "explanation": "The struggle is the situation, and the icy roads explain it. The classes are the response, the attendees give the next link, and their return in spring is the reason for the final result.",
+      "hint": "Which sentence explains the reason behind the classes?",
+      "plotStructure": "Situation, Cause, Response, Detail, Consequence, Outcome",
+      "sequenceLogic": "Problem → Cause → Response → Effect → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L96_PRACTICE_Q2",
+      "level": 96,
+      "phase": "practice",
+      "storyContext": "Camille studied the trail map the night before her first solo hike.",
+      "prompt": "In the narrative sequence (Preparation, Expectation, Complication, Search, Help, Outcome), what event must logically take place immediately after: \"Camille studied the trail map the night before her first solo hike.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "The route looked simple, a loop of eleven kilometers around a lake."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The route looked simple, a loop of eleven kilometers around a lake.",
+      "explanation": "The map study sets expectations, and the description of the loop reinforces them. \"However\" signals the missing bridge, which creates the problem, and the search and the local's help lead to the resolution.",
+      "hint": "Which sentence contrasts with the expectation created earlier?",
+      "plotStructure": "Preparation, Expectation, Complication, Search, Help, Outcome",
+      "sequenceLogic": "Expectation → Contrast → Problem → Help → Outcome"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L96_PRACTICE_Q3",
+      "level": 96,
+      "phase": "practice",
+      "storyContext": "The city council's decision to ban cars from the old market street surprised many.",
+      "prompt": "In the narrative sequence (Decision, Objection, Response, Evidence, Compromise, Development, Outcome), what event must logically take place immediately after: \"The city council's decision to ban cars from the old market street surprised many.\"?",
+      "options": [
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Shopkeepers feared they would lose customers who could no longer park nearby.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Shopkeepers feared they would lose customers who could no longer park nearby.",
+      "explanation": "The decision is stated, and the shopkeepers' fear follows. \"However\" introduces the planners' counterpoint, and \"there\" refers to the neighboring town. The trial and its outcome come last.",
+      "hint": "A claim is followed by an objection, then evidence that responds to it.",
+      "plotStructure": "Decision, Objection, Response, Evidence, Compromise, Development, Outcome",
+      "sequenceLogic": "Decision → Objection → Counterevidence → Trial → Outcome"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L97_PRACTICE_Q1",
+      "level": 97,
+      "phase": "practice",
+      "storyContext": "The blackout began at dusk and spread across the neighborhood.",
+      "prompt": "In the narrative sequence (Event, Gathering, Concern, Action, Discovery, Closure), what event must logically take place immediately after: \"The blackout began at dusk and spread across the neighborhood.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "In the apartment block, residents gathered in the stairwell with phones and candles.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "In the apartment block, residents gathered in the stairwell with phones and candles.",
+      "explanation": "The blackout is the event, and the stairwell gathering follows. Someone's memory gives the motive for the climb, and finding her calm resolves the worry. The final sentence closes the scene.",
+      "hint": "Which sentence gives the reason for the neighbors' climb?",
+      "plotStructure": "Event, Gathering, Concern, Action, Discovery, Closure",
+      "sequenceLogic": "Event → Reaction → Concern → Action → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L97_PRACTICE_Q2",
+      "level": 97,
+      "phase": "practice",
+      "storyContext": "Kimchi begins as raw cabbage salted for several hours.",
+      "prompt": "In the narrative sequence (Start, Effect, Preparation, Fermentation, Explanation, Preservation), what event must logically take place immediately after: \"Kimchi begins as raw cabbage salted for several hours.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "The salt draws out water and softens the leaves.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The salt draws out water and softens the leaves.",
+      "explanation": "The process starts with salting, and the effect of salt is explained. Rinsing and seasoning follow, and fermentation takes place in the jar. \"During this time\" refers to the day or two, and refrigeration is the last step.",
+      "hint": "Follow the process from raw ingredient to preserved food.",
+      "plotStructure": "Start, Effect, Preparation, Fermentation, Explanation, Preservation",
+      "sequenceLogic": "Process Sequence"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L97_PRACTICE_Q3",
+      "level": 97,
+      "phase": "practice",
+      "storyContext": "When Adaora's landlord announced a rent increase, she assumed she had no choice.",
+      "prompt": "In the narrative sequence (Assumption, Prompt, Research, Discovery, Action, Response, Outcome), what event must logically take place immediately after: \"When Adaora's landlord announced a rent increase, she assumed she had no choice.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "A colleague mentioned that tenants in their city had certain protections.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "A colleague mentioned that tenants in their city had certain protections.",
+      "explanation": "Her assumption is the starting point, and the colleague's remark begins to change it. The guide gives the facts, comparing notices reveals the error, and the letter and reply follow. The last sentence gives the long-term outcome.",
+      "hint": "How does new information change what the character believes?",
+      "plotStructure": "Assumption, Prompt, Research, Discovery, Action, Response, Outcome",
+      "sequenceLogic": "Assumption → Information → Comparison → Action → Response → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L98_PRACTICE_Q1",
+      "level": 98,
+      "phase": "practice",
+      "storyContext": "The mural was painted in a single week by volunteers.",
+      "prompt": "In the narrative sequence (Introduction, Process, Problem, Discovery, Response, Outcome), what event must logically take place immediately after: \"The mural was painted in a single week by volunteers.\"?",
+      "options": [
+        "Each afternoon, a different group of neighbors added a new section.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "They abandoned the current procedure and started again from scratch.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Each afternoon, a different group of neighbors added a new section.",
+      "explanation": "The mural is introduced, and the sections follow. The clash is the problem, Odile notices it, and her solution follows. The final sentence gives the result.",
+      "hint": "What does \"this\" refer to?",
+      "plotStructure": "Introduction, Process, Problem, Discovery, Response, Outcome",
+      "sequenceLogic": "Problem → Noticing → Solution → Outcome"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L98_PRACTICE_Q2",
+      "level": 98,
+      "phase": "practice",
+      "storyContext": "Bees find flowers with remarkable accuracy.",
+      "prompt": "In the narrative sequence (Claim, Mechanism, Direction, Distance, Response, Evidence, Significance), what event must logically take place immediately after: \"Bees find flowers with remarkable accuracy.\"?",
+      "options": [
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "When a scout discovers a rich patch, she returns to the hive and performs a waggle dance."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "When a scout discovers a rich patch, she returns to the hive and performs a waggle dance.",
+      "explanation": "The general claim starts the paragraph, and the scout's dance explains how. The angle and duration are two details, and the other workers' response follows. The experiments confirm the explanation, and the final sentence generalizes.",
+      "hint": "A statement is introduced, explained, and then tested.",
+      "plotStructure": "Claim, Mechanism, Direction, Distance, Response, Evidence, Significance",
+      "sequenceLogic": "Claim → Mechanism → Detail → Response → Evidence → Significance"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L98_PRACTICE_Q3",
+      "level": 98,
+      "phase": "practice",
+      "storyContext": "Renzo joined the chess club to make friends, not to win.",
+      "prompt": "In the narrative sequence (Motivation, Struggle, Support, Learning, Progress, Achievement, Payoff), what event must logically take place immediately after: \"Renzo joined the chess club to make friends, not to win.\"?",
+      "options": [
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "For months, he lost nearly every game."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "For months, he lost nearly every game.",
+      "explanation": "The reason for joining sets the opening, and his losses show the difficulty. Ada's conversations are the turning point, and the patterns are their effect. Draws and the tournament victory follow, and Ada's grin closes the loop.",
+      "hint": "Which sentences show cause and effect in his improvement?",
+      "plotStructure": "Motivation, Struggle, Support, Learning, Progress, Achievement, Payoff",
+      "sequenceLogic": "Situation → Struggle → Support → Growth → Achievement"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L99_PRACTICE_Q1",
+      "level": 99,
+      "phase": "practice",
+      "storyContext": "Passengers on the Rome flight were told to expect a forty-minute delay.",
+      "prompt": "In the narrative sequence (Announcement, Explanation, Escalation, Reaction, Response, Outcome), what event must logically take place immediately after: \"Passengers on the Rome flight were told to expect a forty-minute delay.\"?",
+      "options": [
+        "The airline blamed a late-arriving crew.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The airline blamed a late-arriving crew.",
+      "explanation": "The first announcement sets the initial expectation, and the reason follows. The estimate grows, the queue forms in response, and the vouchers answer the queue. The departure ends the story.",
+      "hint": "Watch the estimated time, which changes as the story develops.",
+      "plotStructure": "Announcement, Explanation, Escalation, Reaction, Response, Outcome",
+      "sequenceLogic": "Announcement → Escalation → Reaction → Response → Outcome"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L99_PRACTICE_Q2",
+      "level": 99,
+      "phase": "practice",
+      "storyContext": "Yohannes had always kept his invoices in a shoebox.",
+      "prompt": "In the narrative sequence (Habit, Problem, Effort, Reflection, New Habit, Closing Image), what event must logically take place immediately after: \"Yohannes had always kept his invoices in a shoebox.\"?",
+      "options": [
+        "This worked until tax season, when he could not find a single receipt for his laptop.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "This worked until tax season, when he could not find a single receipt for his laptop.",
+      "explanation": "The shoebox habit is stated first, and \"this\" refers to it. The search shows the cost, the reflection draws the lesson, and the new habit follows. The shoebox's new contents close the paragraph.",
+      "hint": "What \"this\" refers to, and what habit replaces it.",
+      "plotStructure": "Habit, Problem, Effort, Reflection, New Habit, Closing Image",
+      "sequenceLogic": "Habit → Problem → Cost → Lesson → Change"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L99_PRACTICE_Q3",
+      "level": 99,
+      "phase": "practice",
+      "storyContext": "Libraries are often described as quiet places full of books.",
+      "prompt": "In the narrative sequence (Claim, Limitation, Examples, Extension, Effect, Criticism, Rebuttal), what event must logically take place immediately after: \"Libraries are often described as quiet places full of books.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "That description, though accurate, leaves out much of what they now do.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "That description, though accurate, leaves out much of what they now do.",
+      "explanation": "The common view is stated, and \"that description\" refers to it. The services follow, and \"these services\" refers back to them. The critics' claim and the supporters' response finish the argument.",
+      "hint": "\"That description\" and \"these services\" both point to earlier sentences.",
+      "plotStructure": "Claim, Limitation, Examples, Extension, Effect, Criticism, Rebuttal",
+      "sequenceLogic": "Common View → Correction → Examples → Consequence → Debate"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L100_PRACTICE_Q1",
+      "level": 100,
+      "phase": "practice",
+      "storyContext": "The Harborview Bakery closed its doors in March after forty years.",
+      "prompt": "In the narrative sequence (Announcement, Spread, Reaction, Motive, Farewell, Ending), what event must logically take place immediately after: \"The Harborview Bakery closed its doors in March after forty years.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "News of the closure spread quickly along the waterfront.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "News of the closure spread quickly along the waterfront.",
+      "explanation": "The closing is announced, and the news spreads. The queue is the effect of the news, and \"many\" refers to the customers. Petrakis's final actions close the story.",
+      "hint": "Which sentence gives the reason for the queue?",
+      "plotStructure": "Announcement, Spread, Reaction, Motive, Farewell, Ending",
+      "sequenceLogic": "Event → Spread → Response → Farewell"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L100_PRACTICE_Q2",
+      "level": 100,
+      "phase": "practice",
+      "storyContext": "Editing a draft is different from writing it.",
+      "prompt": "In the narrative sequence (Claim, Drafting, Editing, Consequence, Explanation, Solution, Reason), what event must logically take place immediately after: \"Editing a draft is different from writing it.\"?",
+      "options": [
+        "While drafting, a writer focuses on getting ideas onto the page.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "While drafting, a writer focuses on getting ideas onto the page.",
+      "explanation": "The claim comes first, and drafting is described before editing. \"This shift\" refers to the contrast, and the explanation of the struggle follows. The trick and its reason come last.",
+      "hint": "\"This shift\" refers to a contrast. Which sentences make it?",
+      "plotStructure": "Claim, Drafting, Editing, Consequence, Explanation, Solution, Reason",
+      "sequenceLogic": "Claim → Contrast → Consequence → Explanation → Solution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L100_PRACTICE_Q3",
+      "level": 100,
+      "phase": "practice",
+      "storyContext": "A courier arrived at the design studio with an unmarked envelope.",
+      "prompt": "In the narrative sequence (Trigger, Puzzle, Obstacle, Insight, Search, Opening, Reveal), what event must logically take place immediately after: \"A courier arrived at the design studio with an unmarked envelope.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "Inside was a single key attached to a brass tag numbered 214.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Inside was a single key attached to a brass tag numbered 214.",
+      "explanation": "The envelope is the trigger, and its contents present the puzzle. Nobody recognizing it raises the problem, and Lucia's memory is the turning point. The basement, the click, and the sketchbook follow.",
+      "hint": "Which sentence solves the mystery of what the key opens?",
+      "plotStructure": "Trigger, Puzzle, Obstacle, Insight, Search, Opening, Reveal",
+      "sequenceLogic": "Mystery → Clue → Insight → Discovery"
+    }
+  ]
+}

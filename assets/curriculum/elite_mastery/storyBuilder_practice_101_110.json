@@ -1,0 +1,578 @@
+{
+  "gameType": "storyBuilder",
+  "phase": "practice",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "ELT_STORYBUILDER_L101_PRACTICE_Q1",
+      "level": 101,
+      "phase": "practice",
+      "storyContext": "Hoang had hired a van to move his belongings across town on Saturday morning.",
+      "prompt": "In the narrative sequence (Situation, Setback, Complication, Attempt, Escalation, Correction), what event must logically take place immediately after: \"Hoang had hired a van to move his belongings across town on Saturday morning.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "They abandoned the current procedure and started again from scratch.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "The rental desk told him it would be an hour late."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The rental desk told him it would be an hour late.",
+      "explanation": "The delay begins the trouble, and the faulty door adds to it. The strap is a weak fix, so the turn exposes its limits, and the second strap is the corrective action taken after the failure.",
+      "hint": "In an escalating story, each fix has to be tested by the next event.",
+      "plotStructure": "Situation, Setback, Complication, Attempt, Escalation, Correction",
+      "sequenceLogic": "Setback → Complication → Weak Fix → Failure → Correction"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L101_PRACTICE_Q2",
+      "level": 101,
+      "phase": "practice",
+      "storyContext": "Chef Teodoro's restaurant was fully booked for a birthday party.",
+      "prompt": "In the narrative sequence (Setup, Complication, Escalation, Response, Support, Outcome), what event must logically take place immediately after: \"Chef Teodoro's restaurant was fully booked for a birthday party.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "Halfway through service, the oven tripped the circuit breaker.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Halfway through service, the oven tripped the circuit breaker.",
+      "explanation": "The full booking creates the pressure, and the breaker trip is the complication. The raw dishes raise the stakes, the runner and the waiters are two parallel responses, and the last sentence shows the result.",
+      "hint": "Look for the sentence that raises the stakes and the one that responds to it.",
+      "plotStructure": "Setup, Complication, Escalation, Response, Support, Outcome",
+      "sequenceLogic": "Setup → Complication → Escalation → Response → Outcome"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L101_PRACTICE_Q3",
+      "level": 101,
+      "phase": "practice",
+      "storyContext": "The hiking club planned a twelve-kilometer walk to a waterfall.",
+      "prompt": "In the narrative sequence (Plan, Setback, Debate, Decision, Action, Resolution, Reflection), what event must logically take place immediately after: \"The hiking club planned a twelve-kilometer walk to a waterfall.\"?",
+      "options": [
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "They abandoned the current procedure and started again from scratch.",
+        "Two kilometers in, a member twisted her ankle."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Two kilometers in, a member twisted her ankle.",
+      "explanation": "The plan is interrupted by the injury, and the group's options are debated. Bertil's refusal sets a new priority, the call finds the help, and waiting abandons the original plan. The last sentence confirms the decision.",
+      "hint": "When a plan changes, a new goal can replace the old one.",
+      "plotStructure": "Plan, Setback, Debate, Decision, Action, Resolution, Reflection",
+      "sequenceLogic": "Plan → Setback → Conflict of Options → Decision → Outcome"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L102_PRACTICE_Q1",
+      "level": 102,
+      "phase": "practice",
+      "storyContext": "Ranjit practiced his wedding toast in front of the mirror.",
+      "prompt": "In the narrative sequence (Attempt, Failure, Confirmation, Low Point, Revision, Outcome), what event must logically take place immediately after: \"Ranjit practiced his wedding toast in front of the mirror.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "Every version sounded either too long or too jokey."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Every version sounded either too long or too jokey.",
+      "explanation": "The first attempts fail, and the sister's reaction confirms the problem. Crumpling the notes is the low point, and the short new version is the turning point. The reaction is the payoff.",
+      "hint": "A series of failures can lead to a simpler success.",
+      "plotStructure": "Attempt, Failure, Confirmation, Low Point, Revision, Outcome",
+      "sequenceLogic": "Attempt → Failure → Low Point → New Approach → Outcome"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L102_PRACTICE_Q2",
+      "level": 102,
+      "phase": "practice",
+      "storyContext": "Xiomara planned to launch her jewelry website on Friday at noon.",
+      "prompt": "In the narrative sequence (Deadline, Crisis, Failed Attempt, Escalation, Diagnosis, Resolution), what event must logically take place immediately after: \"Xiomara planned to launch her jewelry website on Friday at noon.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "On Thursday night, the payment system rejected every test order.",
+        "They abandoned the current procedure and started again from scratch."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "On Thursday night, the payment system rejected every test order.",
+      "explanation": "The deadline sets pressure, and the rejected orders create the crisis. Her own checking fails, so she escalates to support. The provider identifies the cause, and the upload solves it.",
+      "hint": "When self-help fails, what is the next step?",
+      "plotStructure": "Deadline, Crisis, Failed Attempt, Escalation, Diagnosis, Resolution",
+      "sequenceLogic": "Deadline → Failure → Failed Attempt → Escalation → Solution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L102_PRACTICE_Q3",
+      "level": 102,
+      "phase": "practice",
+      "storyContext": "A film crew arrived at the hillside location at dawn.",
+      "prompt": "In the narrative sequence (Setup, Complication, Waiting, Escalation, Decision, Cost, Outcome), what event must logically take place immediately after: \"A film crew arrived at the hillside location at dawn.\"?",
+      "options": [
+        "Clouds thickened, and light rain began before the first take.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Clouds thickened, and light rain began before the first take.",
+      "explanation": "The arrival sets the plan, and the rain challenges it. Waiting is the first response, but the worsening weather ends it. The move to the barn is the decision, and the extra hour is its cost. The final result is unexpectedly positive.",
+      "hint": "What information convinces the director that waiting is no longer an option?",
+      "plotStructure": "Setup, Complication, Waiting, Escalation, Decision, Cost, Outcome",
+      "sequenceLogic": "Plan → Complication → Delay → Escalation → Decision → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L103_PRACTICE_Q1",
+      "level": 103,
+      "phase": "practice",
+      "storyContext": "Silvio had a job interview across the city at ten.",
+      "prompt": "In the narrative sequence (Goal, Obstacle, Second Obstacle, Third Obstacle, Adaptation), what event must logically take place immediately after: \"Silvio had a job interview across the city at ten.\"?",
+      "options": [
+        "His car would not start at eight-thirty.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "His car would not start at eight-thirty.",
+      "explanation": "The car failure is the first obstacle, and the taxi fails second. The bus is the third and last, so Silvio has no travel option left. The phone call is the final adaptation.",
+      "hint": "Options disappear one by one. What is left at the end?",
+      "plotStructure": "Goal, Obstacle, Second Obstacle, Third Obstacle, Adaptation",
+      "sequenceLogic": "Obstacle → Failed Option → Failed Option → Adaptation"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L103_PRACTICE_Q2",
+      "level": 103,
+      "phase": "practice",
+      "storyContext": "The parish hall was booked for the charity dinner.",
+      "prompt": "In the narrative sequence (Setup, Complication, First Attempt, Shortfall, Adaptation, Outcome), what event must logically take place immediately after: \"The parish hall was booked for the charity dinner.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Two days before, the caterer cancelled."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Two days before, the caterer cancelled.",
+      "explanation": "The cancellation is the problem, and the restaurants are the first solution. Their partial response leaves a gap, and Fiadh's new format fills it. The final sentence shows an unexpected benefit.",
+      "hint": "Which sentence describes a first solution that falls short?",
+      "plotStructure": "Setup, Complication, First Attempt, Shortfall, Adaptation, Outcome",
+      "sequenceLogic": "Problem → Partial Solution → Gap → New Solution → Outcome"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L103_PRACTICE_Q3",
+      "level": 103,
+      "phase": "practice",
+      "storyContext": "Dr. Achterberg's team needed forty samples for the trial.",
+      "prompt": "In the narrative sequence (Goal, Setback, Hypothesis, Verification, Correction, Result, Documentation), what event must logically take place immediately after: \"Dr. Achterberg's team needed forty samples for the trial.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "Only twenty-two were viable after the first round."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Only twenty-two were viable after the first round.",
+      "explanation": "The target sets the goal, and the poor yield is the setback. The suspicion is verified by the technician, and only then can the second round be run with confidence. The final note records the lesson.",
+      "hint": "A suspicion needs to be checked before a new attempt begins.",
+      "plotStructure": "Goal, Setback, Hypothesis, Verification, Correction, Result, Documentation",
+      "sequenceLogic": "Goal → Setback → Hypothesis → Verification → Retry → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L104_PRACTICE_Q1",
+      "level": 104,
+      "phase": "practice",
+      "storyContext": "Kalinda set up her lemonade stand at the county fair.",
+      "prompt": "In the narrative sequence (Setup, Rising Demand, Complication, Help, Continuation, Gratitude), what event must logically take place immediately after: \"Kalinda set up her lemonade stand at the county fair.\"?",
+      "options": [
+        "By midday, the heat had drawn a long queue.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "By midday, the heat had drawn a long queue.",
+      "explanation": "The stand is the setup, and the heat brings success but also strain. Running out of ice is the complication, the neighbor's help solves it, and the thank-you is the follow-up.",
+      "hint": "Success can create a new problem.",
+      "plotStructure": "Setup, Rising Demand, Complication, Help, Continuation, Gratitude",
+      "sequenceLogic": "Success → Problem → Help → Continuation"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L104_PRACTICE_Q2",
+      "level": 104,
+      "phase": "practice",
+      "storyContext": "The kitchen renovation was supposed to take two weeks.",
+      "prompt": "In the narrative sequence (Plan, Discovery, Complication, Conflict, Compromise, Outcome), what event must logically take place immediately after: \"The kitchen renovation was supposed to take two weeks.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "On day three, the plumber found a corroded pipe behind the wall.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "On day three, the plumber found a corroded pipe behind the wall.",
+      "explanation": "The plan is the setup, the pipe is the discovery, and the ceiling makes it someone else's problem. The neighbor's objection is the conflict, and Kasimir's offer is the compromise.",
+      "hint": "A hidden problem grows into a dispute with someone else.",
+      "plotStructure": "Plan, Discovery, Complication, Conflict, Compromise, Outcome",
+      "sequenceLogic": "Plan → Discovery → Complication → Conflict → Compromise → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L104_PRACTICE_Q3",
+      "level": 104,
+      "phase": "practice",
+      "storyContext": "The relay team led by half a lap on the final leg.",
+      "prompt": "In the narrative sequence (Advantage, Reversal, Escalation, Recovery, Result, Reflection), what event must logically take place immediately after: \"The relay team led by half a lap on the final leg.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "They abandoned the current procedure and started again from scratch.",
+        "The last runner, Chidi, stumbled as the baton was passed."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The last runner, Chidi, stumbled as the baton was passed.",
+      "explanation": "The lead is the starting advantage, and the stumble is the reversal. The dropped baton and the retrieval widen the gap, and Chidi's sprint is the corrective action. The result and reflection follow.",
+      "hint": "What event turns an easy lead into a struggle?",
+      "plotStructure": "Advantage, Reversal, Escalation, Recovery, Result, Reflection",
+      "sequenceLogic": "Advantage → Reversal → Escalation → Recovery → Outcome"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L105_PRACTICE_Q1",
+      "level": 105,
+      "phase": "practice",
+      "storyContext": "Fatou's flight to Nairobi was cancelled because of a strike.",
+      "prompt": "In the narrative sequence (Problem, Offer, Constraint, Search, Agreement, Outcome), what event must logically take place immediately after: \"Fatou's flight to Nairobi was cancelled because of a strike.\"?",
+      "options": [
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "They abandoned the current procedure and started again from scratch.",
+        "The airline offered a seat on a flight two days later.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The airline offered a seat on a flight two days later.",
+      "explanation": "The cancellation is the problem, and the first offer does not solve it because of her deadline. Her own search finds an alternative, the airline's agreement removes the cost obstacle, and she arrives in time.",
+      "hint": "What limits the airline's first offer?",
+      "plotStructure": "Problem, Offer, Constraint, Search, Agreement, Outcome",
+      "sequenceLogic": "Problem → Inadequate Offer → Search → Agreement → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L105_PRACTICE_Q2",
+      "level": 105,
+      "phase": "practice",
+      "storyContext": "Renato baked a tiered cake for a friend's anniversary.",
+      "prompt": "In the narrative sequence (Plan, Problem, Failed Attempt, Escalation, Reframing, Outcome), what event must logically take place immediately after: \"Renato baked a tiered cake for a friend's anniversary.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "As he stacked the layers, the middle tier sagged.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "As he stacked the layers, the middle tier sagged.",
+      "explanation": "The plan is the tiered cake, the sag is the problem, and the skewer is a failed attempt. The leaking cream ends the repair option, and the trifle is a redefinition of the goal.",
+      "hint": "When repair is impossible, a change of purpose may help.",
+      "plotStructure": "Plan, Problem, Failed Attempt, Escalation, Reframing, Outcome",
+      "sequenceLogic": "Plan → Problem → Failed Fix → Escalation → Reframe → Outcome"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L105_PRACTICE_Q3",
+      "level": 105,
+      "phase": "practice",
+      "storyContext": "A small company sold handmade candles online.",
+      "prompt": "In the narrative sequence (Setup, Trigger, Investigation, Discovery, Action, Support, Outcome), what event must logically take place immediately after: \"A small company sold handmade candles online.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "One customer reported that a candle's glass jar had cracked while burning.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "One customer reported that a candle's glass jar had cracked while burning.",
+      "explanation": "The setup introduces the business, and the complaint is the trigger. The inspection reveals a wider problem, and Gwen's email is the corrective action. The supplier's response and recovery are the consequences.",
+      "hint": "A report triggers an investigation. Follow what the investigation reveals.",
+      "plotStructure": "Setup, Trigger, Investigation, Discovery, Action, Support, Outcome",
+      "sequenceLogic": "Complaint → Investigation → Discovery → Corrective Action → Consequence"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L106_PRACTICE_Q1",
+      "level": 106,
+      "phase": "practice",
+      "storyContext": "Oskar volunteered to drive a group of elderly members to the museum.",
+      "prompt": "In the narrative sequence (Plan, Setback, Obstacle, Alternative, Compromise, Outcome), what event must logically take place immediately after: \"Oskar volunteered to drive a group of elderly members to the museum.\"?",
+      "options": [
+        "An hour before departure, the minibus's battery died.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "An hour before departure, the minibus's battery died.",
+      "explanation": "The volunteer job is the plan, and the dead battery is the setback. The coordinator's lack of a vehicle closes one option, so Oskar opens another. The shared driving is the workaround.",
+      "hint": "When the main plan fails, look for how the character reorganizes.",
+      "plotStructure": "Plan, Setback, Obstacle, Alternative, Compromise, Outcome",
+      "sequenceLogic": "Plan → Setback → Failed Option → Workaround → Outcome"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L106_PRACTICE_Q2",
+      "level": 106,
+      "phase": "practice",
+      "storyContext": "Livia's group project presentation was due on Friday.",
+      "prompt": "In the narrative sequence (Deadline, Setback, Complication, Request, Solution, Outcome), what event must logically take place immediately after: \"Livia's group project presentation was due on Friday.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "On Wednesday, one member announced he had fallen ill.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "On Wednesday, one member announced he had fallen ill.",
+      "explanation": "The deadline creates pressure, and the illness is the setback. The knowledge gap is the key complication, the spreadsheet is the resource, and the shared work solves it.",
+      "hint": "What resource is missing, and what lets the team continue?",
+      "plotStructure": "Deadline, Setback, Complication, Request, Solution, Outcome",
+      "sequenceLogic": "Deadline → Setback → Knowledge Gap → Resource → Solution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L106_PRACTICE_Q3",
+      "level": 106,
+      "phase": "practice",
+      "storyContext": "The village's lantern festival depended on volunteers to light hundreds of lanterns at dusk.",
+      "prompt": "In the narrative sequence (Setup, Complication, Failure, Adaptation, Result, Outcome, Legacy), what event must logically take place immediately after: \"The village's lantern festival depended on volunteers to light hundreds of lanterns at dusk.\"?",
+      "options": [
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "An hour before sunset, a wind picked up.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "They abandoned the current procedure and started again from scratch."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "An hour before sunset, a wind picked up.",
+      "explanation": "The festival is the plan, the wind is the complication, and the blown-out lanterns show the first attempt failing. Perdita changes the location, the arches provide the solution, and the tunnel of light becomes an unexpected benefit.",
+      "hint": "How can a change of place solve a problem with the conditions?",
+      "plotStructure": "Setup, Complication, Failure, Adaptation, Result, Outcome, Legacy",
+      "sequenceLogic": "Plan → Complication → Failure → Adaptation → Success → Legacy"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L107_PRACTICE_Q1",
+      "level": 107,
+      "phase": "practice",
+      "storyContext": "Elodie brought her grandmother's watch to a repair shop.",
+      "prompt": "In the narrative sequence (Setup, Estimate, Complication, Decision, Outcome), what event must logically take place immediately after: \"Elodie brought her grandmother's watch to a repair shop.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "The watchmaker said it would take a week."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The watchmaker said it would take a week.",
+      "explanation": "The repair is the plan, and the first estimate is replaced by a longer one. The rare spring is the obstacle, and her acceptance is the decision. The ticking watch is the reward.",
+      "hint": "A delay can be worth accepting when the goal matters enough.",
+      "plotStructure": "Setup, Estimate, Complication, Decision, Outcome",
+      "sequenceLogic": "Plan → Delay → Obstacle → Decision → Outcome"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L107_PRACTICE_Q2",
+      "level": 107,
+      "phase": "practice",
+      "storyContext": "The friends had planned a picnic beside the lake.",
+      "prompt": "In the narrative sequence (Plan, Obstacle, Hesitation, Idea, Action, Outcome), what event must logically take place immediately after: \"The friends had planned a picnic beside the lake.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "They abandoned the current procedure and started again from scratch.",
+        "When they arrived, the area was closed for a private event."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "When they arrived, the area was closed for a private event.",
+      "explanation": "The picnic is the plan, and the closure blocks it. Going home is the easy option, but a memory offers another. Carrying the baskets is the action, and the result is a happy surprise.",
+      "hint": "What idea brings a stalled plan back to life?",
+      "plotStructure": "Plan, Obstacle, Hesitation, Idea, Action, Outcome",
+      "sequenceLogic": "Plan → Obstacle → Hesitation → Idea → Action → Outcome"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L107_PRACTICE_Q3",
+      "level": 107,
+      "phase": "practice",
+      "storyContext": "A furniture store promised delivery of a sofa within ten days.",
+      "prompt": "In the narrative sequence (Promise, Delay, First Inquiry, Contradiction, Escalation, Discovery, Resolution), what event must logically take place immediately after: \"A furniture store promised delivery of a sofa within ten days.\"?",
+      "options": [
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "On day eleven, nothing had arrived.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "On day eleven, nothing had arrived.",
+      "explanation": "The promise is broken, and Amina's first call gets a vague reply. Waiting and calling again gives a contradictory answer, so she escalates to a manager. He finds the real cause, and the store makes amends.",
+      "hint": "Notice how the customer escalates when the first answers fail.",
+      "plotStructure": "Promise, Delay, First Inquiry, Contradiction, Escalation, Discovery, Resolution",
+      "sequenceLogic": "Promise → Failure → Inquiry → Contradiction → Escalation → Discovery → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L108_PRACTICE_Q1",
+      "level": 108,
+      "phase": "practice",
+      "storyContext": "Dashiell entered a cooking contest with a plan for a three-course meal.",
+      "prompt": "In the narrative sequence (Plan, Breakdown, Fix, Delay, Compromise, Verdict), what event must logically take place immediately after: \"Dashiell entered a cooking contest with a plan for a three-course meal.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Ten minutes in, his oven failed.",
+        "They abandoned the current procedure and started again from scratch."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Ten minutes in, his oven failed.",
+      "explanation": "The plan is the setup, and the oven failure is the trigger. The borrowed stove is a fix, but it causes a delay, which leads to another compromise. The judges' comment summarizes the result.",
+      "hint": "A chain of adjustments follows a single breakdown.",
+      "plotStructure": "Plan, Breakdown, Fix, Delay, Compromise, Verdict",
+      "sequenceLogic": "Plan → Breakdown → Fix → Side Effect → Compromise → Verdict"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L108_PRACTICE_Q2",
+      "level": 108,
+      "phase": "practice",
+      "storyContext": "Freelance translator Ekaterina agreed to deliver a manuscript in two weeks.",
+      "prompt": "In the narrative sequence (Agreement, Complication, Warning, Conflict, Evidence, Resolution), what event must logically take place immediately after: \"Freelance translator Ekaterina agreed to deliver a manuscript in two weeks.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Midway through, the client sent a list of forty new changes.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Midway through, the client sent a list of forty new changes.",
+      "explanation": "The agreement sets the terms, and the new changes threaten them. The warning and the insistence create the conflict, and the estimate provides evidence that resolves it.",
+      "hint": "Evidence often resolves a dispute better than argument.",
+      "plotStructure": "Agreement, Complication, Warning, Conflict, Evidence, Resolution",
+      "sequenceLogic": "Agreement → Change → Conflict → Evidence → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L108_PRACTICE_Q3",
+      "level": 108,
+      "phase": "practice",
+      "storyContext": "A boat carrying tourists to the island lost engine power mid-crossing.",
+      "prompt": "In the narrative sequence (Crisis, Response, Escalation, Stabilization, Rescue, Follow-up), what event must logically take place immediately after: \"A boat carrying tourists to the island lost engine power mid-crossing.\"?",
+      "options": [
+        "Captain Nuno radioed the coast guard and gave their position.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Captain Nuno radioed the coast guard and gave their position.",
+      "explanation": "The engine failure and the radio call come first. The drifting tide then raises the danger, which explains why the anchor and life jackets follow, and the coast guard's arrival ends the crisis. Nuno's report about the recent servicing can only be filed after the rescue.",
+      "hint": "Look for the sequence of reactions, each triggered by a new threat.",
+      "plotStructure": "Crisis, Response, Escalation, Stabilization, Rescue, Follow-up",
+      "sequenceLogic": "Crisis → Response → Escalation → Response → Rescue → Follow-up"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L109_PRACTICE_Q1",
+      "level": 109,
+      "phase": "practice",
+      "storyContext": "Ludmila's plum tree hung over her neighbor's fence.",
+      "prompt": "In the narrative sequence (Setup, Conflict, Complaint, Offer, Agreement, Outcome), what event must logically take place immediately after: \"Ludmila's plum tree hung over her neighbor's fence.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Each autumn, plums fell into his yard.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Each autumn, plums fell into his yard.",
+      "explanation": "The tree is the setup, and the fallen plums create the conflict. His complaint leads to her offer, and his condition shapes the agreement. The final sentence shows the solution working.",
+      "hint": "The solution matches the complaint and adds a condition.",
+      "plotStructure": "Setup, Conflict, Complaint, Offer, Agreement, Outcome",
+      "sequenceLogic": "Conflict → Complaint → Offer → Condition → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L109_PRACTICE_Q2",
+      "level": 109,
+      "phase": "practice",
+      "storyContext": "Lorenzo planned to propose at sunset on a hilltop.",
+      "prompt": "In the narrative sequence (Plan, Threat, Hope, Failure, Adaptation, Outcome), what event must logically take place immediately after: \"Lorenzo planned to propose at sunset on a hilltop.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "Clouds covered the sky all afternoon.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Clouds covered the sky all afternoon.",
+      "explanation": "The plan depends on the weather, and the clouds threaten it. His hope is unrewarded, and the mist confirms the failure. He adapts by describing the view, and her response shows the moment still worked.",
+      "hint": "What does the character do when the setting fails to cooperate?",
+      "plotStructure": "Plan, Threat, Hope, Failure, Adaptation, Outcome",
+      "sequenceLogic": "Plan → Threat → Hope → Failure → Adaptation → Outcome"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L109_PRACTICE_Q3",
+      "level": 109,
+      "phase": "practice",
+      "storyContext": "Priscilla's team launched a mobile app update on Monday morning.",
+      "prompt": "In the narrative sequence (Launch, Problem, Escalation, False Lead, Insight, Resolution, Communication), what event must logically take place immediately after: \"Priscilla's team launched a mobile app update on Monday morning.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Within an hour, user reviews complained that the app kept logging them out.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "They abandoned the current procedure and started again from scratch."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Within an hour, user reviews complained that the app kept logging them out.",
+      "explanation": "The launch is the trigger, and the complaints show the problem. The support team escalates, the developers test a theory, and the failed revert rules it out. Priscilla's pattern-spotting identifies the true cause.",
+      "hint": "A first theory that is disproved helps narrow the cause.",
+      "plotStructure": "Launch, Problem, Escalation, False Lead, Insight, Resolution, Communication",
+      "sequenceLogic": "Launch → Complaint → Escalation → Failed Theory → Discovery → Fix"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L110_PRACTICE_Q1",
+      "level": 110,
+      "phase": "practice",
+      "storyContext": "A choir prepared for a competition in another city.",
+      "prompt": "In the narrative sequence (Goal, Problem, First Attempt, Side Effect, Second Attempt, Outcome), what event must logically take place immediately after: \"A choir prepared for a competition in another city.\"?",
+      "options": [
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "The night before, the tenor lost his voice.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The night before, the tenor lost his voice.",
+      "explanation": "The lost voice threatens the competition, so Belén's first idea is to transpose the piece. That helps the tenor but strains the sopranos, which pushes her to cut the solo and share his lines. Only the second solution explains the fuller sound and the placing.",
+      "hint": "One fix can cause a new problem. What is the second solution?",
+      "plotStructure": "Goal, Problem, First Attempt, Side Effect, Second Attempt, Outcome",
+      "sequenceLogic": "Goal → Problem → First Solution → New Problem → Second Solution → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L110_PRACTICE_Q2",
+      "level": 110,
+      "phase": "practice",
+      "storyContext": "A bakery chain's flour supplier warned of a two-week shortage.",
+      "prompt": "In the narrative sequence (Warning, Assessment, Obstacle, Opportunity, Adaptation, Outcome), what event must logically take place immediately after: \"A bakery chain's flour supplier warned of a two-week shortage.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "They abandoned the current procedure and started again from scratch.",
+        "Manager Ilse checked the stock and found only five days left."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Manager Ilse checked the stock and found only five days left.",
+      "explanation": "The warning is the trigger, and the stock check measures the problem. The expensive suppliers are one failed option, and the mill offers a partial one. Reducing the menu is the adaptation.",
+      "hint": "How can a manager stretch limited resources?",
+      "plotStructure": "Warning, Assessment, Obstacle, Opportunity, Adaptation, Outcome",
+      "sequenceLogic": "Warning → Assessment → Failed Option → Partial Option → Adaptation → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L110_PRACTICE_Q3",
+      "level": 110,
+      "phase": "practice",
+      "storyContext": "The town's flood barrier was designed to hold at two meters.",
+      "prompt": "In the narrative sequence (Setup, Trigger, Evidence, Warning, Action, Climax, Consequence), what event must logically take place immediately after: \"The town's flood barrier was designed to hold at two meters.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "They abandoned the current procedure and started again from scratch.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Heavy rain in the hills raised the river faster than forecast."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Heavy rain in the hills raised the river faster than forecast.",
+      "explanation": "The design limit is the setup, and the unexpected rain is the trigger. The measurement gives Farida evidence, her warning prompts the sandbags, and the peak shows that they were needed. The higher barrier is the lasting consequence.",
+      "hint": "A measurement gives the warning that leads to preparation.",
+      "plotStructure": "Setup, Trigger, Evidence, Warning, Action, Climax, Consequence",
+      "sequenceLogic": "Limit → Trigger → Measurement → Warning → Preparation → Peak → Consequence"
+    }
+  ]
+}

@@ -1,0 +1,838 @@
+{
+  "gameType": "storyBuilder",
+  "phase": "mastery",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "ELT_STORYBUILDER_L101_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "In an escalating story, each fix has to be tested by the next event.",
+      "explanation": "The delay begins the trouble, and the faulty door adds to it. The strap is a weak fix, so the turn exposes its limits, and the second strap is the corrective action taken after the failure.",
+      "sentences": [
+        "Hoang had hired a van to move his belongings across town on Saturday morning.",
+        "A sharp turn loosened the strap, and a box of books slid onto the road.",
+        "Hoang tied the door shut with a strap and set off anyway.",
+        "The rental desk told him it would be an hour late.",
+        "Hoang pulled over, gathered the books, and looped a second strap around the door.",
+        "When it finally arrived, its sliding door would not close properly."
+      ],
+      "correctOrder": [
+        0,
+        3,
+        5,
+        2,
+        1,
+        4
+      ],
+      "instruction": "Rebuild the sequence from beginning to outcome.",
+      "sequenceLogic": "Setback → Complication → Weak Fix → Failure → Correction",
+      "plotStructure": "Situation, Setback, Complication, Attempt, Escalation, Correction",
+      "level": 101,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L101_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Look for the sentence that raises the stakes and the one that responds to it.",
+      "explanation": "The full booking creates the pressure, and the breaker trip is the complication. The raw dishes raise the stakes, the runner and the waiters are two parallel responses, and the last sentence shows the result.",
+      "sentences": [
+        "Teodoro sent a runner to borrow ovens from the bakery next door.",
+        "The dishes arrived forty minutes late, and the host called it the best party she had attended.",
+        "Halfway through service, the oven tripped the circuit breaker.",
+        "Meanwhile, the waiters kept the guests happy with extra bread and apologies.",
+        "Half of the main courses were still raw.",
+        "Chef Teodoro's restaurant was fully booked for a birthday party."
+      ],
+      "correctOrder": [
+        5,
+        2,
+        4,
+        0,
+        3,
+        1
+      ],
+      "instruction": "Work out the order in which these events unfold.",
+      "sequenceLogic": "Setup → Complication → Escalation → Response → Outcome",
+      "plotStructure": "Setup, Complication, Escalation, Response, Support, Outcome",
+      "level": 101,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L101_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "When a plan changes, a new goal can replace the old one.",
+      "explanation": "The plan is interrupted by the injury, and the group's options are debated. Bertil's refusal sets a new priority, the call finds the help, and waiting abandons the original plan. The last sentence confirms the decision.",
+      "sentences": [
+        "They stayed until the warden helped her down, and the walk to the waterfall was abandoned.",
+        "The hiking club planned a twelve-kilometer walk to a waterfall.",
+        "He called the nearest hut, and a warden promised to arrive within the hour.",
+        "The group considered turning back, but she insisted they continue without her.",
+        "At the hut, everyone agreed they had made the right choice.",
+        "Two kilometers in, a member twisted her ankle.",
+        "Their leader, Bertil, refused to leave her alone on the trail."
+      ],
+      "correctOrder": [
+        1,
+        5,
+        3,
+        6,
+        2,
+        0,
+        4
+      ],
+      "instruction": "Decide which event comes first, and build the sequence from there.",
+      "sequenceLogic": "Plan → Setback → Conflict of Options → Decision → Outcome",
+      "plotStructure": "Plan, Setback, Debate, Decision, Action, Resolution, Reflection",
+      "level": 101,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L102_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "A series of failures can lead to a simpler success.",
+      "explanation": "The first attempts fail, and the sister's reaction confirms the problem. Crumpling the notes is the low point, and the short new version is the turning point. The reaction is the payoff.",
+      "sentences": [
+        "He asked his sister to listen, and she laughed in the wrong places.",
+        "Ranjit practiced his wedding toast in front of the mirror.",
+        "At the wedding, those three sentences got the warmest reaction of the night.",
+        "That evening, he wrote just three sentences about how he met the groom.",
+        "Discouraged, he crumpled his notes.",
+        "Every version sounded either too long or too jokey."
+      ],
+      "correctOrder": [
+        1,
+        5,
+        0,
+        4,
+        3,
+        2
+      ],
+      "instruction": "Order these sentences so the situation develops logically.",
+      "sequenceLogic": "Attempt → Failure → Low Point → New Approach → Outcome",
+      "plotStructure": "Attempt, Failure, Confirmation, Low Point, Revision, Outcome",
+      "level": 102,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L102_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "When self-help fails, what is the next step?",
+      "explanation": "The deadline sets pressure, and the rejected orders create the crisis. Her own checking fails, so she escalates to support. The provider identifies the cause, and the upload solves it.",
+      "sentences": [
+        "Xiomara uploaded it, and the system approved test payments by morning.",
+        "Xiomara spent hours checking her settings without finding the cause.",
+        "On Thursday night, the payment system rejected every test order.",
+        "Xiomara planned to launch her jewelry website on Friday at noon.",
+        "At midnight, she called the payment provider's support line.",
+        "They explained that her account needed a verification document she had not uploaded."
+      ],
+      "correctOrder": [
+        3,
+        2,
+        1,
+        4,
+        5,
+        0
+      ],
+      "instruction": "Sort the sentences into the sequence that makes sense.",
+      "sequenceLogic": "Deadline → Failure → Failed Attempt → Escalation → Solution",
+      "plotStructure": "Deadline, Crisis, Failed Attempt, Escalation, Diagnosis, Resolution",
+      "level": 102,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L102_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "What information convinces the director that waiting is no longer an option?",
+      "explanation": "The arrival sets the plan, and the rain challenges it. Waiting is the first response, but the worsening weather ends it. The move to the barn is the decision, and the extra hour is its cost. The final result is unexpectedly positive.",
+      "sentences": [
+        "A film crew arrived at the hillside location at dawn.",
+        "She decided to move the scene into a nearby barn.",
+        "After two hours, the rain grew heavier and the ground turned to mud.",
+        "The director, Malika, delayed shooting, hoping it would pass.",
+        "The crew rebuilt the lighting inside, which cost another hour.",
+        "The scene shot there looked warmer than the original plan, and Malika kept it in the final cut.",
+        "Clouds thickened, and light rain began before the first take."
+      ],
+      "correctOrder": [
+        0,
+        6,
+        3,
+        2,
+        1,
+        4,
+        5
+      ],
+      "instruction": "Rebuild the sequence from beginning to outcome.",
+      "sequenceLogic": "Plan → Complication → Delay → Escalation → Decision → Result",
+      "plotStructure": "Setup, Complication, Waiting, Escalation, Decision, Cost, Outcome",
+      "level": 102,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L103_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "Options disappear one by one. What is left at the end?",
+      "explanation": "The car failure is the first obstacle, and the taxi fails second. The bus is the third and last, so Silvio has no travel option left. The phone call is the final adaptation.",
+      "sentences": [
+        "His car would not start at eight-thirty.",
+        "Silvio called a taxi, but the dispatcher said none were free for forty minutes.",
+        "Silvio had a job interview across the city at ten.",
+        "Silvio phoned the interviewer, explained, and asked whether they could speak by phone instead.",
+        "Silvio ran to the bus stop.",
+        "The bus was full and drove straight past him."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        1,
+        4,
+        5,
+        3
+      ],
+      "instruction": "Reorder the sentences to produce the most logical version of events.",
+      "sequenceLogic": "Obstacle → Failed Option → Failed Option → Adaptation",
+      "plotStructure": "Goal, Obstacle, Second Obstacle, Third Obstacle, Adaptation",
+      "level": 103,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L103_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Which sentence describes a first solution that falls short?",
+      "explanation": "The cancellation is the problem, and the restaurants are the first solution. Their partial response leaves a gap, and Fiadh's new format fills it. The final sentence shows an unexpected benefit.",
+      "sentences": [
+        "Two days before, the caterer cancelled.",
+        "She asked the guests to bring a dish each, turning the dinner into a shared meal.",
+        "Only three agreed, which was not enough for a hundred guests.",
+        "Organizer Fiadh asked local restaurants to donate trays instead.",
+        "The parish hall was booked for the charity dinner.",
+        "The dishes were so varied that the evening raised more than any earlier dinner."
+      ],
+      "correctOrder": [
+        4,
+        0,
+        3,
+        2,
+        1,
+        5
+      ],
+      "instruction": "Place the events in the order they must occur.",
+      "sequenceLogic": "Problem → Partial Solution → Gap → New Solution → Outcome",
+      "plotStructure": "Setup, Complication, First Attempt, Shortfall, Adaptation, Outcome",
+      "level": 103,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L103_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "A suspicion needs to be checked before a new attempt begins.",
+      "explanation": "The target sets the goal, and the poor yield is the setback. The suspicion is verified by the technician, and only then can the second round be run with confidence. The final note records the lesson.",
+      "sentences": [
+        "They recalibrated it and started a second round.",
+        "This time, thirty-eight samples survived.",
+        "Dr. Achterberg's team needed forty samples for the trial.",
+        "Dr. Achterberg suspected that the incubator temperature had drifted.",
+        "A technician checked and found the sensor had been miscalibrated.",
+        "Only twenty-two were viable after the first round.",
+        "The team dropped two and proceeded, noting the sensor problem in their report."
+      ],
+      "correctOrder": [
+        2,
+        5,
+        3,
+        4,
+        0,
+        1,
+        6
+      ],
+      "instruction": "Reconstruct the story so that every event follows from the one before it.",
+      "sequenceLogic": "Goal → Setback → Hypothesis → Verification → Retry → Result",
+      "plotStructure": "Goal, Setback, Hypothesis, Verification, Correction, Result, Documentation",
+      "level": 103,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L104_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "Success can create a new problem.",
+      "explanation": "The stand is the setup, and the heat brings success but also strain. Running out of ice is the complication, the neighbor's help solves it, and the thank-you is the follow-up.",
+      "sentences": [
+        "Kalinda set up her lemonade stand at the county fair.",
+        "Her sales continued through the afternoon.",
+        "A neighboring vendor sold her a bag at cost.",
+        "Kalinda wrote a thank-you on the vendor's chalkboard.",
+        "By midday, the heat had drawn a long queue.",
+        "Kalinda ran out of ice."
+      ],
+      "correctOrder": [
+        0,
+        4,
+        5,
+        2,
+        1,
+        3
+      ],
+      "instruction": "Arrange the sentences into a coherent account of what happened.",
+      "sequenceLogic": "Success → Problem → Help → Continuation",
+      "plotStructure": "Setup, Rising Demand, Complication, Help, Continuation, Gratitude",
+      "level": 104,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L104_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "A hidden problem grows into a dispute with someone else.",
+      "explanation": "The plan is the setup, the pipe is the discovery, and the ceiling makes it someone else's problem. The neighbor's objection is the conflict, and Kasimir's offer is the compromise.",
+      "sentences": [
+        "On day three, the plumber found a corroded pipe behind the wall.",
+        "Homeowner Kasimir offered to pay for her to stay in a hotel for three days.",
+        "She agreed, and the work finished five days late.",
+        "The kitchen renovation was supposed to take two weeks.",
+        "The neighbor objected, worried about dust and noise.",
+        "Replacing it required opening part of the neighbor's ceiling."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        5,
+        4,
+        1,
+        2
+      ],
+      "instruction": "Work out the order in which these events unfold.",
+      "sequenceLogic": "Plan → Discovery → Complication → Conflict → Compromise → Result",
+      "plotStructure": "Plan, Discovery, Complication, Conflict, Compromise, Outcome",
+      "level": 104,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L104_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "What event turns an easy lead into a struggle?",
+      "explanation": "The lead is the starting advantage, and the stumble is the reversal. The dropped baton and the retrieval widen the gap, and Chidi's sprint is the corrective action. The result and reflection follow.",
+      "sentences": [
+        "Chidi's teammates said the recovery mattered more than the medal.",
+        "The relay team led by half a lap on the final leg.",
+        "The team finished second, one place behind the winners.",
+        "The last runner, Chidi, stumbled as the baton was passed.",
+        "The baton dropped and skidded across the track.",
+        "He sprinted to close the gap and passed one runner on the final curve.",
+        "Two teams overtook them while he retrieved it."
+      ],
+      "correctOrder": [
+        1,
+        3,
+        4,
+        6,
+        5,
+        2,
+        0
+      ],
+      "instruction": "Arrange the events so each action logically leads to the next.",
+      "sequenceLogic": "Advantage → Reversal → Escalation → Recovery → Outcome",
+      "plotStructure": "Advantage, Reversal, Escalation, Recovery, Result, Reflection",
+      "level": 104,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L105_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "What limits the airline's first offer?",
+      "explanation": "The cancellation is the problem, and the first offer does not solve it because of her deadline. Her own search finds an alternative, the airline's agreement removes the cost obstacle, and she arrives in time.",
+      "sentences": [
+        "Fatou searched other carriers and found a seat via Addis Ababa.",
+        "The new ticket cost more, but the airline agreed to cover the difference.",
+        "Fatou's flight to Nairobi was cancelled because of a strike.",
+        "The airline offered a seat on a flight two days later.",
+        "Fatou arrived the night before the wedding.",
+        "Fatou had a wedding to attend the next morning."
+      ],
+      "correctOrder": [
+        2,
+        3,
+        5,
+        0,
+        1,
+        4
+      ],
+      "instruction": "Sort the sentences into the sequence that makes sense.",
+      "sequenceLogic": "Problem → Inadequate Offer → Search → Agreement → Result",
+      "plotStructure": "Problem, Offer, Constraint, Search, Agreement, Outcome",
+      "level": 105,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L105_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "When repair is impossible, a change of purpose may help.",
+      "explanation": "The plan is the tiered cake, the sag is the problem, and the skewer is a failed attempt. The leaking cream ends the repair option, and the trifle is a redefinition of the goal.",
+      "sentences": [
+        "Renato tried propping it with a wooden skewer, but it slid sideways.",
+        "The guests said the trifle was the highlight of the evening.",
+        "The cream leaked down the sides.",
+        "Rather than serve a broken cake, he chilled it, cut it into squares, and served it as a trifle.",
+        "As he stacked the layers, the middle tier sagged.",
+        "Renato baked a tiered cake for a friend's anniversary."
+      ],
+      "correctOrder": [
+        5,
+        4,
+        0,
+        2,
+        3,
+        1
+      ],
+      "instruction": "Place the events in the order they must occur.",
+      "sequenceLogic": "Plan → Problem → Failed Fix → Escalation → Reframe → Outcome",
+      "plotStructure": "Plan, Problem, Failed Attempt, Escalation, Reframing, Outcome",
+      "level": 105,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L105_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "A report triggers an investigation. Follow what the investigation reveals.",
+      "explanation": "The setup introduces the business, and the complaint is the trigger. The inspection reveals a wider problem, and Gwen's email is the corrective action. The supplier's response and recovery are the consequences.",
+      "sentences": [
+        "She found hairline cracks in about one in ten jars.",
+        "The supplier agreed to replace the jars and reimburse her.",
+        "Sales recovered within a month, and customers wrote that the honesty had made them trust the brand more.",
+        "One customer reported that a candle's glass jar had cracked while burning.",
+        "Founder Gwen paused sales and inspected the batch.",
+        "A small company sold handmade candles online.",
+        "She emailed every customer of that batch offering a refund and a replacement."
+      ],
+      "correctOrder": [
+        5,
+        3,
+        4,
+        0,
+        6,
+        1,
+        2
+      ],
+      "instruction": "Reorder the sentences to produce the most logical version of events.",
+      "sequenceLogic": "Complaint → Investigation → Discovery → Corrective Action → Consequence",
+      "plotStructure": "Setup, Trigger, Investigation, Discovery, Action, Support, Outcome",
+      "level": 105,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L106_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "When the main plan fails, look for how the character reorganizes.",
+      "explanation": "The volunteer job is the plan, and the dead battery is the setback. The coordinator's lack of a vehicle closes one option, so Oskar opens another. The shared driving is the workaround.",
+      "sentences": [
+        "The museum visit began forty minutes late, but nobody minded.",
+        "Oskar volunteered to drive a group of elderly members to the museum.",
+        "An hour before departure, the minibus's battery died.",
+        "Oskar called the volunteer coordinator, who had no spare vehicle.",
+        "Oskar phoned three members who owned cars.",
+        "They agreed to share the driving, though it meant two trips."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        0
+      ],
+      "instruction": "Reconstruct the story so that every event follows from the one before it.",
+      "sequenceLogic": "Plan → Setback → Failed Option → Workaround → Outcome",
+      "plotStructure": "Plan, Setback, Obstacle, Alternative, Compromise, Outcome",
+      "level": 106,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L106_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "What resource is missing, and what lets the team continue?",
+      "explanation": "The deadline creates pressure, and the illness is the setback. The knowledge gap is the key complication, the spreadsheet is the resource, and the shared work solves it.",
+      "sentences": [
+        "Livia asked him to send his spreadsheet.",
+        "His section covered the budget analysis, which nobody else understood.",
+        "He sent it from his sickbed, and she and another teammate worked through the figures together.",
+        "Livia's group project presentation was due on Friday.",
+        "On Wednesday, one member announced he had fallen ill.",
+        "They presented the analysis on Friday, and he joined by video for the questions."
+      ],
+      "correctOrder": [
+        3,
+        4,
+        1,
+        0,
+        2,
+        5
+      ],
+      "instruction": "Arrange the events so each action logically leads to the next.",
+      "sequenceLogic": "Deadline → Setback → Knowledge Gap → Resource → Solution",
+      "plotStructure": "Deadline, Setback, Complication, Request, Solution, Outcome",
+      "level": 106,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L106_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "How can a change of place solve a problem with the conditions?",
+      "explanation": "The festival is the plan, the wind is the complication, and the blown-out lanterns show the first attempt failing. Perdita changes the location, the arches provide the solution, and the tunnel of light becomes an unexpected benefit.",
+      "sentences": [
+        "Visitors walked through the arches to see the glow, which made a tunnel of light.",
+        "The photos from that evening became the festival's main poster the following year.",
+        "Sheltered from the wind, the flames stayed steady.",
+        "An hour before sunset, a wind picked up.",
+        "The first lanterns blew out as soon as they were lit.",
+        "The organizer, Perdita, gathered the volunteers and suggested lighting them under the market arches.",
+        "The village's lantern festival depended on volunteers to light hundreds of lanterns at dusk."
+      ],
+      "correctOrder": [
+        6,
+        3,
+        4,
+        5,
+        2,
+        0,
+        1
+      ],
+      "instruction": "Restore the story's natural progression.",
+      "sequenceLogic": "Plan → Complication → Failure → Adaptation → Success → Legacy",
+      "plotStructure": "Setup, Complication, Failure, Adaptation, Result, Outcome, Legacy",
+      "level": 106,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L107_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "A delay can be worth accepting when the goal matters enough.",
+      "explanation": "The repair is the plan, and the first estimate is replaced by a longer one. The rare spring is the obstacle, and her acceptance is the decision. The ticking watch is the reward.",
+      "sentences": [
+        "Elodie brought her grandmother's watch to a repair shop.",
+        "Elodie accepted, knowing the watch was irreplaceable.",
+        "The watchmaker said it would take a week.",
+        "A month later, the watch ticked on her wrist for the first time in years.",
+        "After a week, he called to say a rare spring was missing.",
+        "He offered to order it, which would take a month."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        4,
+        5,
+        1,
+        3
+      ],
+      "instruction": "Decide which event comes first, and build the sequence from there.",
+      "sequenceLogic": "Plan → Delay → Obstacle → Decision → Outcome",
+      "plotStructure": "Setup, Estimate, Complication, Decision, Outcome",
+      "level": 107,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L107_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "What idea brings a stalled plan back to life?",
+      "explanation": "The picnic is the plan, and the closure blocks it. Going home is the easy option, but a memory offers another. Carrying the baskets is the action, and the result is a happy surprise.",
+      "sentences": [
+        "When they arrived, the area was closed for a private event.",
+        "Someone remembered a small clearing on the far shore.",
+        "They carried the baskets around the lake.",
+        "They considered going home.",
+        "The clearing was quieter, and the picnic was better than planned.",
+        "The friends had planned a picnic beside the lake."
+      ],
+      "correctOrder": [
+        5,
+        0,
+        3,
+        1,
+        2,
+        4
+      ],
+      "instruction": "Place the events in the order they must occur.",
+      "sequenceLogic": "Plan → Obstacle → Hesitation → Idea → Action → Outcome",
+      "plotStructure": "Plan, Obstacle, Hesitation, Idea, Action, Outcome",
+      "level": 107,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L107_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Notice how the customer escalates when the first answers fail.",
+      "explanation": "The promise is broken, and Amina's first call gets a vague reply. Waiting and calling again gives a contradictory answer, so she escalates to a manager. He finds the real cause, and the store makes amends.",
+      "sentences": [
+        "After three more days, she called again and got a different answer.",
+        "He discovered the sofa had been sent to the wrong address.",
+        "She asked to speak to a manager, who checked the warehouse system.",
+        "The store redelivered it the next day and refunded the delivery fee.",
+        "A furniture store promised delivery of a sofa within ten days.",
+        "Amina called the store, which said it was in transit.",
+        "On day eleven, nothing had arrived."
+      ],
+      "correctOrder": [
+        4,
+        6,
+        5,
+        0,
+        2,
+        1,
+        3
+      ],
+      "instruction": "Reconstruct the story so that every event follows from the one before it.",
+      "sequenceLogic": "Promise → Failure → Inquiry → Contradiction → Escalation → Discovery → Resolution",
+      "plotStructure": "Promise, Delay, First Inquiry, Contradiction, Escalation, Discovery, Resolution",
+      "level": 107,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L108_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "A chain of adjustments follows a single breakdown.",
+      "explanation": "The plan is the setup, and the oven failure is the trigger. The borrowed stove is a fix, but it causes a delay, which leads to another compromise. The judges' comment summarizes the result.",
+      "sentences": [
+        "The starter came out fine, but the main course ran late.",
+        "Dashiell borrowed a stove from the contestant beside him.",
+        "The judges praised his adaptability, if not his timing.",
+        "Dashiell served dessert without the planned sauce to catch up.",
+        "Dashiell entered a cooking contest with a plan for a three-course meal.",
+        "Ten minutes in, his oven failed."
+      ],
+      "correctOrder": [
+        4,
+        5,
+        1,
+        0,
+        3,
+        2
+      ],
+      "instruction": "Put the events in the order that makes the story coherent.",
+      "sequenceLogic": "Plan → Breakdown → Fix → Side Effect → Compromise → Verdict",
+      "plotStructure": "Plan, Breakdown, Fix, Delay, Compromise, Verdict",
+      "level": 108,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L108_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Evidence often resolves a dispute better than argument.",
+      "explanation": "The agreement sets the terms, and the new changes threaten them. The warning and the insistence create the conflict, and the estimate provides evidence that resolves it.",
+      "sentences": [
+        "Ekaterina warned that the deadline could not hold.",
+        "The client extended the deadline by a week.",
+        "Freelance translator Ekaterina agreed to deliver a manuscript in two weeks.",
+        "She sent an itemized estimate showing how many hours the changes needed.",
+        "Midway through, the client sent a list of forty new changes.",
+        "The client insisted it was unchanged."
+      ],
+      "correctOrder": [
+        2,
+        4,
+        0,
+        5,
+        3,
+        1
+      ],
+      "instruction": "Restore the story's natural progression.",
+      "sequenceLogic": "Agreement → Change → Conflict → Evidence → Resolution",
+      "plotStructure": "Agreement, Complication, Warning, Conflict, Evidence, Resolution",
+      "level": 108,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L108_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Look for the sequence of reactions, each triggered by a new threat.",
+      "explanation": "The engine failure and the radio call come first. The drifting tide then raises the danger, which explains why the anchor and life jackets follow, and the coast guard's arrival ends the crisis. Nuno's report about the recent servicing can only be filed after the rescue.",
+      "sentences": [
+        "He dropped anchor, which held after an initial drag.",
+        "The tide began to carry them toward rocks.",
+        "A coast guard vessel reached them within forty minutes and towed them back.",
+        "A boat carrying tourists to the island lost engine power mid-crossing.",
+        "Nuno filed a report noting that the engine had been serviced only a week earlier.",
+        "The passengers grew anxious, so the crew handed out life jackets.",
+        "Captain Nuno radioed the coast guard and gave their position."
+      ],
+      "correctOrder": [
+        3,
+        6,
+        1,
+        0,
+        5,
+        2,
+        4
+      ],
+      "instruction": "Sort the sentences into the sequence that makes sense.",
+      "sequenceLogic": "Crisis → Response → Escalation → Response → Rescue → Follow-up",
+      "plotStructure": "Crisis, Response, Escalation, Stabilization, Rescue, Follow-up",
+      "level": 108,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L109_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "The solution matches the complaint and adds a condition.",
+      "explanation": "The tree is the setup, and the fallen plums create the conflict. His complaint leads to her offer, and his condition shapes the agreement. The final sentence shows the solution working.",
+      "sentences": [
+        "She began early, and both yards stayed clean.",
+        "Ludmila's plum tree hung over her neighbor's fence.",
+        "She offered to pick the fruit before it fell.",
+        "He agreed, but only if she started by August.",
+        "He complained about the mess and the wasps.",
+        "Each autumn, plums fell into his yard."
+      ],
+      "correctOrder": [
+        1,
+        5,
+        4,
+        2,
+        3,
+        0
+      ],
+      "instruction": "Reorder the sentences to produce the most logical version of events.",
+      "sequenceLogic": "Conflict → Complaint → Offer → Condition → Result",
+      "plotStructure": "Setup, Conflict, Complaint, Offer, Agreement, Outcome",
+      "level": 109,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L109_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "What does the character do when the setting fails to cooperate?",
+      "explanation": "The plan depends on the weather, and the clouds threaten it. His hope is unrewarded, and the mist confirms the failure. He adapts by describing the view, and her response shows the moment still worked.",
+      "sentences": [
+        "He improvised, proposing on the picnic blanket and describing the view he had imagined.",
+        "Lorenzo planned to propose at sunset on a hilltop.",
+        "Clouds covered the sky all afternoon.",
+        "Lorenzo hoped they would clear as they climbed.",
+        "At the top, a thick mist hid the view.",
+        "She said yes, and they laughed about the imaginary sunset."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        3,
+        4,
+        0,
+        5
+      ],
+      "instruction": "Decide which event comes first, and build the sequence from there.",
+      "sequenceLogic": "Plan → Threat → Hope → Failure → Adaptation → Outcome",
+      "plotStructure": "Plan, Threat, Hope, Failure, Adaptation, Outcome",
+      "level": 109,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L109_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "A first theory that is disproved helps narrow the cause.",
+      "explanation": "The launch is the trigger, and the complaints show the problem. The support team escalates, the developers test a theory, and the failed revert rules it out. Priscilla's pattern-spotting identifies the true cause.",
+      "sentences": [
+        "Priscilla's team launched a mobile app update on Monday morning.",
+        "Priscilla noticed the logouts began at exactly thirty minutes and traced them to a changed session timeout.",
+        "Reverting it did not stop the logouts.",
+        "They corrected the value, issued a patch, and emailed users an apology.",
+        "The support team escalated the issue to engineering.",
+        "Within an hour, user reviews complained that the app kept logging them out.",
+        "Developers first suspected the new login screen."
+      ],
+      "correctOrder": [
+        0,
+        5,
+        4,
+        6,
+        2,
+        1,
+        3
+      ],
+      "instruction": "Arrange the events so each action logically leads to the next.",
+      "sequenceLogic": "Launch → Complaint → Escalation → Failed Theory → Discovery → Fix",
+      "plotStructure": "Launch, Problem, Escalation, False Lead, Insight, Resolution, Communication",
+      "level": 109,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L110_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "One fix can cause a new problem. What is the second solution?",
+      "explanation": "The lost voice threatens the competition, so Belén's first idea is to transpose the piece. That helps the tenor but strains the sopranos, which pushes her to cut the solo and share his lines. Only the second solution explains the fuller sound and the placing.",
+      "sentences": [
+        "A choir prepared for a competition in another city.",
+        "The change suited the tenor but strained the sopranos.",
+        "She decided to cut the tenor's solo and share his lines across the section.",
+        "The night before, the tenor lost his voice.",
+        "The performance sounded fuller than in rehearsals, and the choir placed second.",
+        "The conductor, Belén, tried transposing a piece to a lower key."
+      ],
+      "correctOrder": [
+        0,
+        3,
+        5,
+        1,
+        2,
+        4
+      ],
+      "instruction": "Order these sentences so the situation develops logically.",
+      "sequenceLogic": "Goal → Problem → First Solution → New Problem → Second Solution → Result",
+      "plotStructure": "Goal, Problem, First Attempt, Side Effect, Second Attempt, Outcome",
+      "level": 110,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L110_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "How can a manager stretch limited resources?",
+      "explanation": "The warning is the trigger, and the stock check measures the problem. The expensive suppliers are one failed option, and the mill offers a partial one. Reducing the menu is the adaptation.",
+      "sentences": [
+        "Customers accepted the shorter menu, and the shortage passed without lost sales.",
+        "She combined it with the remaining stock and reduced the menu to five best-selling breads.",
+        "A regional mill offered a smaller quantity at a fair price.",
+        "A bakery chain's flour supplier warned of a two-week shortage.",
+        "She called other suppliers, but prices had doubled.",
+        "Manager Ilse checked the stock and found only five days left."
+      ],
+      "correctOrder": [
+        3,
+        5,
+        4,
+        2,
+        1,
+        0
+      ],
+      "instruction": "Rebuild the sequence from beginning to outcome.",
+      "sequenceLogic": "Warning → Assessment → Failed Option → Partial Option → Adaptation → Result",
+      "plotStructure": "Warning, Assessment, Obstacle, Opportunity, Adaptation, Outcome",
+      "level": 110,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L110_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "A measurement gives the warning that leads to preparation.",
+      "explanation": "The design limit is the setup, and the unexpected rain is the trigger. The measurement gives Farida evidence, her warning prompts the sandbags, and the peak shows that they were needed. The higher barrier is the lasting consequence.",
+      "sentences": [
+        "Heavy rain in the hills raised the river faster than forecast.",
+        "She warned the council that the barrier might be overtopped by evening.",
+        "At its peak, the water reached 2.1 meters, and the sandbags held it back.",
+        "Engineer Farida measured the water climbing past 1.8 meters at noon.",
+        "The town's flood barrier was designed to hold at two meters.",
+        "Volunteers filled sandbags and stacked them along the weakest section.",
+        "The council commissioned a higher barrier the following spring."
+      ],
+      "correctOrder": [
+        4,
+        0,
+        3,
+        1,
+        5,
+        2,
+        6
+      ],
+      "instruction": "Place the events in the order they must occur.",
+      "sequenceLogic": "Limit → Trigger → Measurement → Warning → Preparation → Peak → Consequence",
+      "plotStructure": "Setup, Trigger, Evidence, Warning, Action, Climax, Consequence",
+      "level": 110,
+      "phase": "mastery"
+    }
+  ]
+}

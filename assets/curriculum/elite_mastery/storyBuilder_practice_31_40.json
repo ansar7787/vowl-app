@@ -1,0 +1,578 @@
+{
+  "gameType": "storyBuilder",
+  "phase": "practice",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "quests": [
+    {
+      "id": "ELT_STORYBUILDER_L31_PRACTICE_Q1",
+      "level": 31,
+      "phase": "practice",
+      "storyContext": "The running shoes Dalal ordered were half a size too small.",
+      "prompt": "In the narrative sequence (Problem, Action, Support, Resolution), what event must logically take place immediately after: \"The running shoes Dalal ordered were half a size too small.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Dalal repacked them in their original box.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Dalal repacked them in their original box.",
+      "explanation": "The wrong size is the problem. Dalal responds by sending the shoes back, the label makes that possible, and the new pair is the resolution.",
+      "hint": "A solution cannot be delivered until the problem has been reported and the old item sent back.",
+      "plotStructure": "Problem, Action, Support, Resolution",
+      "sequenceLogic": "Problem → Response → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L31_PRACTICE_Q2",
+      "level": 31,
+      "phase": "practice",
+      "storyContext": "Mr. Ferreira's soup arrived at the table cold.",
+      "prompt": "In the narrative sequence (Problem, Notice, Reply, Fix), what event must logically take place immediately after: \"Mr. Ferreira's soup arrived at the table cold.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Mr. Ferreira raised a hand to get the waiter's attention.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Mr. Ferreira raised a hand to get the waiter's attention.",
+      "explanation": "The cold soup is the problem, and signaling the waiter is the first step toward a fix. The apology and replacement follow because someone now knows there is a problem.",
+      "hint": "A complaint has to be noticed before it can be answered.",
+      "plotStructure": "Problem, Notice, Reply, Fix",
+      "sequenceLogic": "Problem → Response → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L31_PRACTICE_Q3",
+      "level": 31,
+      "phase": "practice",
+      "storyContext": "Anneke could not log in to her online banking.",
+      "prompt": "In the narrative sequence (Problem, Recovery, Setup, Verification, Access), what event must logically take place immediately after: \"Anneke could not log in to her online banking.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "The reset link she requested landed in her spam folder.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "They abandoned the current procedure and started again from scratch."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The reset link she requested landed in her spam folder.",
+      "explanation": "The failed login leads her to request a reset, and the link is only useful once she finds it. The new password comes before the phone code because the site asks for verification after the password is set.",
+      "hint": "Each security step unlocks the next one. Which step has to be completed for the following one to appear?",
+      "plotStructure": "Problem, Recovery, Setup, Verification, Access",
+      "sequenceLogic": "Problem → Attempt → Verification → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L32_PRACTICE_Q1",
+      "level": 32,
+      "phase": "practice",
+      "storyContext": "The strap of Ayo's backpack tore on his way to class.",
+      "prompt": "In the narrative sequence (Problem, Quick Fix, Proper Repair, Result), what event must logically take place immediately after: \"The strap of Ayo's backpack tore on his way to class.\"?",
+      "options": [
+        "Ayo tied the two ends in a knot to last the day.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Ayo tied the two ends in a knot to last the day.",
+      "explanation": "The tear demands a quick fix during the day, and the shoemaker's repair is the lasting solution. Separating a temporary answer from a permanent one shows how people respond to problems in stages.",
+      "hint": "Some solutions are temporary. Which comes when the problem first appears, and which comes when there is time?",
+      "plotStructure": "Problem, Quick Fix, Proper Repair, Result",
+      "sequenceLogic": "Problem → Temporary Fix → Permanent Fix"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L32_PRACTICE_Q2",
+      "level": 32,
+      "phase": "practice",
+      "storyContext": "Ravi walked into meeting room B and found another team already sitting there.",
+      "prompt": "In the narrative sequence (Situation, Explanation, Investigation, Resolution), what event must logically take place immediately after: \"Ravi walked into meeting room B and found another team already sitting there.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Both groups had booked the room for nine o'clock.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Both groups had booked the room for nine o'clock.",
+      "explanation": "The surprise of finding another team starts the problem, and the double booking explains it. Only after the assistant confirms the cause can the situation be settled.",
+      "hint": "Ask which sentence explains the confusion described in the sentence before it.",
+      "plotStructure": "Situation, Explanation, Investigation, Resolution",
+      "sequenceLogic": "Problem → Diagnosis → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L32_PRACTICE_Q3",
+      "level": 32,
+      "phase": "practice",
+      "storyContext": "Photographer Nomvula's camera battery died halfway through the wedding ceremony.",
+      "prompt": "In the narrative sequence (Problem, Obstacle, Adaptation, Fix, Outcome), what event must logically take place immediately after: \"Photographer Nomvula's camera battery died halfway through the wedding ceremony.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "Her spare was in the car, a ten-minute walk away.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Her spare was in the car, a ten-minute walk away.",
+      "explanation": "The dead battery creates the problem, and the distant spare is the obstacle. The workaround with the phone keeps the coverage going until the real solution arrives, and the matching photos show the problem was fully solved.",
+      "hint": "Look for the sentence that describes why a simple fix wasn't immediately possible.",
+      "plotStructure": "Problem, Obstacle, Adaptation, Fix, Outcome",
+      "sequenceLogic": "Problem → Obstacle → Workaround → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L33_PRACTICE_Q1",
+      "level": 33,
+      "phase": "practice",
+      "storyContext": "Mina could not find her apartment keys before leaving for work.",
+      "prompt": "In the narrative sequence (Problem, Search, Discovery, Continuation), what event must logically take place immediately after: \"Mina could not find her apartment keys before leaving for work.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "Mina retraced her steps from the night before.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Mina retraced her steps from the night before.",
+      "explanation": "The missing keys create a delay. Retracing steps is her search strategy, and finding the keys resolves the problem, letting her leave.",
+      "hint": "What must be found before the character can leave?",
+      "plotStructure": "Problem, Search, Discovery, Continuation",
+      "sequenceLogic": "Problem → Search → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L33_PRACTICE_Q2",
+      "level": 33,
+      "phase": "practice",
+      "storyContext": "Gustavo sent a proposal to a client by email.",
+      "prompt": "In the narrative sequence (Action, Feedback, Diagnosis, Correction), what event must logically take place immediately after: \"Gustavo sent a proposal to a client by email.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The client replied that no attachment had arrived.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The client replied that no attachment had arrived.",
+      "explanation": "The client's reply is what tells Gustavo something is wrong. He confirms the error by checking, then corrects it and follows up so the client knows the file has arrived.",
+      "hint": "The reply to the first action reveals the problem.",
+      "plotStructure": "Action, Feedback, Diagnosis, Correction",
+      "sequenceLogic": "Action → Problem Revealed → Correction"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L33_PRACTICE_Q3",
+      "level": 33,
+      "phase": "practice",
+      "storyContext": "Just before her sister's wedding, the zipper on Elif's dress jammed.",
+      "prompt": "In the narrative sequence (Problem, Attempt, Complication, Solution, Outcome), what event must logically take place immediately after: \"Just before her sister's wedding, the zipper on Elif's dress jammed.\"?",
+      "options": [
+        "Elif tugged at it, and the fabric caught in the teeth.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Elif tugged at it, and the fabric caught in the teeth.",
+      "explanation": "The jam is the problem, and pulling on it makes it worse, which is why help is needed. The soap trick solves it, so the zipper works and she arrives on time.",
+      "hint": "An unsuccessful first attempt can make the problem worse. Look for it.",
+      "plotStructure": "Problem, Attempt, Complication, Solution, Outcome",
+      "sequenceLogic": "Problem → Failed Attempt → Help → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L34_PRACTICE_Q1",
+      "level": 34,
+      "phase": "practice",
+      "storyContext": "The checkout page on the shop's website took a full minute to load.",
+      "prompt": "In the narrative sequence (Symptom, Cause, Fix, Result), what event must logically take place immediately after: \"The checkout page on the shop's website took a full minute to load.\"?",
+      "options": [
+        "The web developer found a huge uncompressed image on the page.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The web developer found a huge uncompressed image on the page.",
+      "explanation": "The slow page is the symptom. Finding the large image is the diagnosis, and shrinking it is the cure. The improved speed confirms the diagnosis was right.",
+      "hint": "A fix depends on finding out what is causing the trouble.",
+      "plotStructure": "Symptom, Cause, Fix, Result",
+      "sequenceLogic": "Problem → Diagnosis → Solution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L34_PRACTICE_Q2",
+      "level": 34,
+      "phase": "practice",
+      "storyContext": "A fallen tree blocked the hiking trail.",
+      "prompt": "In the narrative sequence (Obstacle, Search, Decision, Outcome), what event must logically take place immediately after: \"A fallen tree blocked the hiking trail.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "The group studied the map for another route.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The group studied the map for another route.",
+      "explanation": "The blocked trail forces a change, and studying the map creates the options. The chosen route explains the later arrival, and the outcome shows a delay can still be a success.",
+      "hint": "Look for what the group needed to do before choosing a new path.",
+      "plotStructure": "Obstacle, Search, Decision, Outcome",
+      "sequenceLogic": "Obstacle → Decision → Outcome"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L34_PRACTICE_Q3",
+      "level": 34,
+      "phase": "practice",
+      "storyContext": "Teodora had planned a walnut cake for her dinner party.",
+      "prompt": "In the narrative sequence (Plan, Complication, Search, Solution, Result), what event must logically take place immediately after: \"Teodora had planned a walnut cake for her dinner party.\"?",
+      "options": [
+        "Two days before, a guest mentioned a severe nut allergy.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "They abandoned the current procedure and started again from scratch."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Two days before, a guest mentioned a severe nut allergy.",
+      "explanation": "The plan exists first, and the allergy is the complication that threatens it. The search leads to the replacement, and the last sentence shows the problem was fully resolved.",
+      "hint": "What piece of information forces the plan to change?",
+      "plotStructure": "Plan, Complication, Search, Solution, Result",
+      "sequenceLogic": "Plan → Complication → Adaptation → Success"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L35_PRACTICE_Q1",
+      "level": 35,
+      "phase": "practice",
+      "storyContext": "Paint dripped from Marcus's brush onto the carpet.",
+      "prompt": "In the narrative sequence (Accident, Cleaning, Result, Cover-up), what event must logically take place immediately after: \"Paint dripped from Marcus's brush onto the carpet.\"?",
+      "options": [
+        "Marcus blotted the spot with a wet cloth before it could dry.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Marcus blotted the spot with a wet cloth before it could dry.",
+      "explanation": "The drip is the problem, and blotting is the quick response. The fading shows partial success, and the rug handles what cleaning could not.",
+      "hint": "The first fix does not always solve the whole problem.",
+      "plotStructure": "Accident, Cleaning, Result, Cover-up",
+      "sequenceLogic": "Problem → Attempt → Partial Fix → Workaround"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L35_PRACTICE_Q2",
+      "level": 35,
+      "phase": "practice",
+      "storyContext": "Amira's project partner stopped answering her messages.",
+      "prompt": "In the narrative sequence (Problem, Action, Reply, Completion), what event must logically take place immediately after: \"Amira's project partner stopped answering her messages.\"?",
+      "options": [
+        "Amira emailed him a clear list of what was still missing.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Amira emailed him a clear list of what was still missing.",
+      "explanation": "The silence is the problem. A clear list gives the partner something specific to respond to, and his reply and work resolve the situation.",
+      "hint": "What could Amira do to make the next step easier for her partner?",
+      "plotStructure": "Problem, Action, Reply, Completion",
+      "sequenceLogic": "Problem → Response → Cooperation → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L35_PRACTICE_Q3",
+      "level": 35,
+      "phase": "practice",
+      "storyContext": "The banner for the trade show was delayed in shipping and would not arrive in time.",
+      "prompt": "In the narrative sequence (Problem, Idea, Confirmation, Execution, Outcome), what event must logically take place immediately after: \"The banner for the trade show was delayed in shipping and would not arrive in time.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Hiro's team considered printing posters at a local shop.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Hiro's team considered printing posters at a local shop.",
+      "explanation": "The delay is the problem, and considering local printing is the idea. Confirming the shop can do the job turns the idea into a plan, and pickup completes it. The last sentence shows the solution worked seamlessly.",
+      "hint": "Notice which sentence describes an option and which describes it being confirmed.",
+      "plotStructure": "Problem, Idea, Confirmation, Execution, Outcome",
+      "sequenceLogic": "Problem → Options → Decision → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L36_PRACTICE_Q1",
+      "level": 36,
+      "phase": "practice",
+      "storyContext": "Two extra guests turned up for dinner at Rosalind's.",
+      "prompt": "In the narrative sequence (Surprise, Shortage, Fix, Result), what event must logically take place immediately after: \"Two extra guests turned up for dinner at Rosalind's.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "They abandoned the current procedure and started again from scratch.",
+        "The dining table had only six chairs."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The dining table had only six chairs.",
+      "explanation": "The unexpected guests create the shortage, and the borrowed chairs solve it. The last sentence shows the outcome.",
+      "hint": "The solution should match the shortage created in the second sentence.",
+      "plotStructure": "Surprise, Shortage, Fix, Result",
+      "sequenceLogic": "Problem → Response → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L36_PRACTICE_Q2",
+      "level": 36,
+      "phase": "practice",
+      "storyContext": "Yusuf noticed a coffee stain on his shirt ten minutes before his interview.",
+      "prompt": "In the narrative sequence (Problem, Constraint, Decision, Outcome), what event must logically take place immediately after: \"Yusuf noticed a coffee stain on his shirt ten minutes before his interview.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "Yusuf had no time to go home and change."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Yusuf had no time to go home and change.",
+      "explanation": "The stain is the problem, and the time limit rules out the obvious solution. The nearby shop offers another option, and the last sentence is the payoff.",
+      "hint": "A time limit shapes which options are realistic.",
+      "plotStructure": "Problem, Constraint, Decision, Outcome",
+      "sequenceLogic": "Problem → Constraint → Solution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L36_PRACTICE_Q3",
+      "level": 36,
+      "phase": "practice",
+      "storyContext": "The office printer jammed while Katya was printing the final report.",
+      "prompt": "In the narrative sequence (Problem, First Fix, Complication, Second Fix, Result), what event must logically take place immediately after: \"The office printer jammed while Katya was printing the final report.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Katya opened the back panel and pulled out a crumpled sheet."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Katya opened the back panel and pulled out a crumpled sheet.",
+      "explanation": "The jam is fixed by removing the paper, but the streaks reveal a second issue. The cleaning cycle addresses that, and the crisp copy confirms both problems are resolved.",
+      "hint": "One solution may reveal a second problem. Look for the moment the first fix stops being enough.",
+      "plotStructure": "Problem, First Fix, Complication, Second Fix, Result",
+      "sequenceLogic": "Problem → Fix → New Problem → Fix"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L37_PRACTICE_Q1",
+      "level": 37,
+      "phase": "practice",
+      "storyContext": "A thick fog settled over the harbor.",
+      "prompt": "In the narrative sequence (Condition, Decision, Waiting, Resolution), what event must logically take place immediately after: \"A thick fog settled over the harbor.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "They abandoned the current procedure and started again from scratch.",
+        "The ferry company suspended all crossings.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The ferry company suspended all crossings.",
+      "explanation": "The fog is the cause of the suspension, and waiting is what passengers do while the condition lasts. The resumption depends on the fog lifting.",
+      "hint": "What condition has to change before the ferry can run again?",
+      "plotStructure": "Condition, Decision, Waiting, Resolution",
+      "sequenceLogic": "Problem → Response → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L37_PRACTICE_Q2",
+      "level": 37,
+      "phase": "practice",
+      "storyContext": "Carmen's online order arrived with a broken lamp.",
+      "prompt": "In the narrative sequence (Problem, Documentation, Claim, Resolution), what event must logically take place immediately after: \"Carmen's online order arrived with a broken lamp.\"?",
+      "options": [
+        "Carmen photographed the damage.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Carmen photographed the damage.",
+      "explanation": "The broken lamp is the problem. The photos provide the proof that supports her claim, and the support team's decision depends on that proof.",
+      "hint": "What evidence does a company need before agreeing to replace an item?",
+      "plotStructure": "Problem, Documentation, Claim, Resolution",
+      "sequenceLogic": "Problem → Evidence → Request → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L37_PRACTICE_Q3",
+      "level": 37,
+      "phase": "practice",
+      "storyContext": "Organizer Bashir expected twenty volunteers for the park clean-up.",
+      "prompt": "In the narrative sequence (Expectation, Shortfall, Adaptation, Support, Outcome), what event must logically take place immediately after: \"Organizer Bashir expected twenty volunteers for the park clean-up.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "They abandoned the current procedure and started again from scratch.",
+        "Only six arrived."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Only six arrived.",
+      "explanation": "The expected number sets up the gap, and the low turnout creates the problem. Bashir's plan responds by prioritizing, and the added helpers show his visible effort attracted support.",
+      "hint": "When resources fall short, what must be decided?",
+      "plotStructure": "Expectation, Shortfall, Adaptation, Support, Outcome",
+      "sequenceLogic": "Problem → Prioritization → Unexpected Help → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L38_PRACTICE_Q1",
+      "level": 38,
+      "phase": "practice",
+      "storyContext": "Nilufar realized she had boarded the wrong bus when the driver announced an unfamiliar stop.",
+      "prompt": "In the narrative sequence (Mistake, Reassessment, Option, Correction), what event must logically take place immediately after: \"Nilufar realized she had boarded the wrong bus when the driver announced an unfamiliar stop.\"?",
+      "options": [
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Nilufar got off at the next stop and checked the map on her phone.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Nilufar got off at the next stop and checked the map on her phone.",
+      "explanation": "The announcement is how she realizes the mistake. Getting off and checking the map is the sensible response, and the opposite bus is the option that lets her return.",
+      "hint": "Which sentence contains the discovery that starts the correction?",
+      "plotStructure": "Mistake, Reassessment, Option, Correction",
+      "sequenceLogic": "Discovery → Response → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L38_PRACTICE_Q2",
+      "level": 38,
+      "phase": "practice",
+      "storyContext": "Nobody at the carousel had Hyun's suitcase.",
+      "prompt": "In the narrative sequence (Problem, Report, Search, Delivery), what event must logically take place immediately after: \"Nobody at the carousel had Hyun's suitcase.\"?",
+      "options": [
+        "Hyun filled out a missing-baggage form at the airline desk.",
+        "They abandoned the current procedure and started again from scratch.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Hyun filled out a missing-baggage form at the airline desk.",
+      "explanation": "The absent suitcase is the problem, and the form starts the official search. Tracing the bag has to come before delivery, since they must know where it is.",
+      "hint": "Ask what needs to happen before the airline can search.",
+      "plotStructure": "Problem, Report, Search, Delivery",
+      "sequenceLogic": "Problem → Report → Investigation → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L38_PRACTICE_Q3",
+      "level": 38,
+      "phase": "practice",
+      "storyContext": "Delroy added a whole tablespoon of chili powder to the stew.",
+      "prompt": "In the narrative sequence (Mistake, Discovery, Fix, Verification, Finishing Touch), what event must logically take place immediately after: \"Delroy added a whole tablespoon of chili powder to the stew.\"?",
+      "options": [
+        "When he tasted it, he realized it was far too hot for his guests.",
+        "They abandoned the current procedure and started again from scratch.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "When he tasted it, he realized it was far too hot for his guests.",
+      "explanation": "The mistake produces the problem, and tasting reveals it. Dilution is the correction, the second taste is the check, and the rice is an extra measure for the small amount of heat left.",
+      "hint": "A test after an adjustment tells you whether it worked.",
+      "plotStructure": "Mistake, Discovery, Fix, Verification, Finishing Touch",
+      "sequenceLogic": "Mistake → Discovery → Correction → Check"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L39_PRACTICE_Q1",
+      "level": 39,
+      "phase": "practice",
+      "storyContext": "Ilse washed her wool sweater on a hot cycle.",
+      "prompt": "In the narrative sequence (Mistake, Damage, Remedy, Recovery), what event must logically take place immediately after: \"Ilse washed her wool sweater on a hot cycle.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "It came out two sizes smaller.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "It came out two sizes smaller.",
+      "explanation": "The hot wash is the mistake that shrinks the sweater. The soaking and stretching attempt to repair it, and the morning check shows the result.",
+      "hint": "The result cannot be checked until the remedy has had time to work.",
+      "plotStructure": "Mistake, Damage, Remedy, Recovery",
+      "sequenceLogic": "Mistake → Consequence → Remedy → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L39_PRACTICE_Q2",
+      "level": 39,
+      "phase": "practice",
+      "storyContext": "Sven's presentation clicker stopped working just before he went on stage.",
+      "prompt": "In the narrative sequence (Problem, Solution, Agreement, Outcome), what event must logically take place immediately after: \"Sven's presentation clicker stopped working just before he went on stage.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Sven asked a colleague to advance the slides for him.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Sven asked a colleague to advance the slides for him.",
+      "explanation": "Nothing can be worked around until something has actually failed, so the broken clicker opens the story. Asking a colleague only helps once both agree how to communicate, which is why the nod comes before the talk. The audience noticing nothing is the proof that the plan worked.",
+      "hint": "A backup plan needs a way to communicate.",
+      "plotStructure": "Problem, Solution, Agreement, Outcome",
+      "sequenceLogic": "Problem → Workaround → Coordination → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L39_PRACTICE_Q3",
+      "level": 39,
+      "phase": "practice",
+      "storyContext": "The heater in Corinne's apartment stopped working in January.",
+      "prompt": "In the narrative sequence (Problem, First Attempt, Escalation, Commitment, Resolution), what event must logically take place immediately after: \"The heater in Corinne's apartment stopped working in January.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Corinne emailed her landlord a photo of the thermostat."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Corinne emailed her landlord a photo of the thermostat.",
+      "explanation": "The broken heater starts it. The email is the first attempt, and the silence shows it was not enough, so she escalates by calling. The promise leads to the repair.",
+      "hint": "Look for the sentence that shows the first attempt did not work.",
+      "plotStructure": "Problem, First Attempt, Escalation, Commitment, Resolution",
+      "sequenceLogic": "Problem → Attempt → Escalation → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L40_PRACTICE_Q1",
+      "level": 40,
+      "phase": "practice",
+      "storyContext": "Odile's laptop warned her that the disk was almost full.",
+      "prompt": "In the narrative sequence (Alert, Investigation, Action, Result), what event must logically take place immediately after: \"Odile's laptop warned her that the disk was almost full.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "Odile sorted her files by size and found a folder of old videos.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Odile sorted her files by size and found a folder of old videos.",
+      "explanation": "The warning is the problem, and sorting by size is the investigation. Backing up before deleting protects her data, and the missing warning confirms the fix.",
+      "hint": "How could Odile discover what was taking up the space?",
+      "plotStructure": "Alert, Investigation, Action, Result",
+      "sequenceLogic": "Problem → Investigation → Solution → Confirmation"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L40_PRACTICE_Q2",
+      "level": 40,
+      "phase": "practice",
+      "storyContext": "Tariq arrived at the theater and found that his ticket showed the wrong date.",
+      "prompt": "In the narrative sequence (Problem, Verification, Solution, Outcome), what event must logically take place immediately after: \"Tariq arrived at the theater and found that his ticket showed the wrong date.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "The box office manager looked up his booking.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The box office manager looked up his booking.",
+      "explanation": "The wrong date is the problem, and the manager can only correct it after locating his booking. The reprint solves it, and the seat shows the resolution.",
+      "hint": "What information does the manager need before she can fix the ticket?",
+      "plotStructure": "Problem, Verification, Solution, Outcome",
+      "sequenceLogic": "Problem → Investigation → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L40_PRACTICE_Q3",
+      "level": 40,
+      "phase": "practice",
+      "storyContext": "The community garden's water tank was found empty on Saturday morning.",
+      "prompt": "In the narrative sequence (Problem, Discovery, Action, Repair, Resolution), what event must logically take place immediately after: \"The community garden's water tank was found empty on Saturday morning.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "They abandoned the current procedure and started again from scratch.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Volunteers realized a broken tap had been dripping all week."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Volunteers realized a broken tap had been dripping all week.",
+      "explanation": "The empty tank is the visible problem, and the tap is its hidden cause. Ewa stops the loss and reports it, the plumber repairs it, and only then can the tank refill.",
+      "hint": "The problem is not solved until the source of the loss is addressed.",
+      "plotStructure": "Problem, Discovery, Action, Repair, Resolution",
+      "sequenceLogic": "Problem → Diagnosis → Response → Repair → Resolution"
+    }
+  ]
+}

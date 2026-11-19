@@ -1,0 +1,578 @@
+{
+  "gameType": "storyBuilder",
+  "phase": "practice",
+  "batchIndex": 18,
+  "levels": "171-180",
+  "quests": [
+    {
+      "id": "ELT_STORYBUILDER_L171_PRACTICE_Q1",
+      "level": 171,
+      "phase": "practice",
+      "storyContext": "Marit wanted to hold a workshop in the community hall on the last Saturday of the month.",
+      "prompt": "In the narrative sequence (Goal, Requirement, Dependency, Action, Delivery, Submission, Approval), what event must logically take place immediately after: \"Marit wanted to hold a workshop in the community hall on the last Saturday of the month.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "The hall's booking form required proof of insurance.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The hall's booking form required proof of insurance.",
+      "explanation": "The hall needs proof, the proof needs a certificate, and the certificate needs a headcount. Marit has to satisfy these in reverse order of how they are listed, and only then can the date be confirmed.",
+      "hint": "Work backward from the final approval: what does each requirement need before it can be met?",
+      "plotStructure": "Goal, Requirement, Dependency, Action, Delivery, Submission, Approval",
+      "sequenceLogic": "Requirement Chain → Fulfillment → Approval"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L171_PRACTICE_Q2",
+      "level": 171,
+      "phase": "practice",
+      "storyContext": "Dr. Voss needed the lab's mass spectrometer to analyze twelve samples for a paper due at the end of the month.",
+      "prompt": "In the narrative sequence (Need, Requirement, Qualification, Booking, Constraint, Adaptation, Execution, Outcome), what event must logically take place immediately after: \"Dr. Voss needed the lab's mass spectrometer to analyze twelve samples for a paper due at the end of the month.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "They abandoned the current procedure and started again from scratch.",
+        "The instrument could be booked only by users who had completed a safety refresher."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The instrument could be booked only by users who had completed a safety refresher.",
+      "explanation": "The booking requires training, so the refresher comes first. The reserved slot then sets a date, and the sample rule delays the preparation until that date is close. The results follow from all of these.",
+      "hint": "One constraint controls when a task can begin, and another controls when it must not begin.",
+      "plotStructure": "Need, Requirement, Qualification, Booking, Constraint, Adaptation, Execution, Outcome",
+      "sequenceLogic": "Qualification → Booking → Timing Constraint → Execution → Delivery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L171_PRACTICE_Q3",
+      "level": 171,
+      "phase": "practice",
+      "storyContext": "Film student Rafaela wanted to shoot a scene on a bridge.",
+      "prompt": "In the narrative sequence (Goal, Condition, Obstacle, Reason, Concession, Consent, Permit, Execution), what event must logically take place immediately after: \"Film student Rafaela wanted to shoot a scene on a bridge.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The city would grant a filming permit only if neighboring residents consented."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The city would grant a filming permit only if neighboring residents consented.",
+      "explanation": "The permit depends on consent, and one refusal blocks it. Rafaela learns the reason, offers a change that answers it, and gets consent. The permit then includes the neighbor's condition, and the shoot must respect it.",
+      "hint": "A condition set by one person shapes the terms for everyone else.",
+      "plotStructure": "Goal, Condition, Obstacle, Reason, Concession, Consent, Permit, Execution",
+      "sequenceLogic": "Permission → Objection → Reason → Concession → Approval → Compliance"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L172_PRACTICE_Q1",
+      "level": 172,
+      "phase": "practice",
+      "storyContext": "Ferdinand needed to renew his work visa before a business trip five weeks away.",
+      "prompt": "In the narrative sequence (Goal, Requirement, Problem, Estimate, Action, Dependent Step, Outcome), what event must logically take place immediately after: \"Ferdinand needed to renew his work visa before a business trip five weeks away.\"?",
+      "options": [
+        "The consulate required at least six months' passport validity.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The consulate required at least six months' passport validity.",
+      "explanation": "The visa needs a valid passport, and his passport is too close to expiry. The replacement takes three weeks, which fits within the deadline, and the appointment can only come after it arrives. The visa follows.",
+      "hint": "Which requirement blocks the next one?",
+      "plotStructure": "Goal, Requirement, Problem, Estimate, Action, Dependent Step, Outcome",
+      "sequenceLogic": "Prerequisite Chain → Deadline → Completion"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L172_PRACTICE_Q2",
+      "level": 172,
+      "phase": "practice",
+      "storyContext": "The IT team planned to migrate the payroll system on a weekend.",
+      "prompt": "In the narrative sequence (Plan, Constraint, Consequence, Requirement, Preparation, Approval, Execution, Outcome), what event must logically take place immediately after: \"The IT team planned to migrate the payroll system on a weekend.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Finance had a freeze on system changes during month-end processing.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Finance had a freeze on system changes during month-end processing.",
+      "explanation": "The freeze fixes when the work may begin, while the backup is within the team's control. The board's approval needs both the lifted freeze and the verified backup, and the vendor can only work after approval.",
+      "hint": "Which conditions are fixed by others and which can be met at any time?",
+      "plotStructure": "Plan, Constraint, Consequence, Requirement, Preparation, Approval, Execution, Outcome",
+      "sequenceLogic": "Constraints → Preparation → Approval → Execution → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L172_PRACTICE_Q3",
+      "level": 172,
+      "phase": "practice",
+      "storyContext": "Mireya had found an apartment she loved, but the landlord wanted a deposit within three days.",
+      "prompt": "In the narrative sequence (Opportunity, Obstacle, Alternative, Verification, Request, Approval, Action, Outcome), what event must logically take place immediately after: \"Mireya had found an apartment she loved, but the landlord wanted a deposit within three days.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Her savings were in a fixed-term account that could not be accessed for a week."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Her savings were in a fixed-term account that could not be accessed for a week.",
+      "explanation": "The deadline and locked savings create the problem, and the advance is a possible solution with a condition. Checking her contract confirms she qualifies, and only then can she request it. Approval allows the deposit, and the lease follows.",
+      "hint": "One option is closed, another is conditional. What must be confirmed before acting on the second?",
+      "plotStructure": "Opportunity, Obstacle, Alternative, Verification, Request, Approval, Action, Outcome",
+      "sequenceLogic": "Deadline → Blocked Option → Conditional Option → Verification → Request → Approval → Action"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L173_PRACTICE_Q1",
+      "level": 173,
+      "phase": "practice",
+      "storyContext": "Bea was cooking dinner for guests, and everything had to be hot at the same moment.",
+      "prompt": "In the narrative sequence (Goal, Constraint, Constraint, Start, Adjustment, Coordination, Outcome), what event must logically take place immediately after: \"Bea was cooking dinner for guests, and everything had to be hot at the same moment.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The lamb needed most of the afternoon in a moderate oven.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The lamb needed most of the afternoon in a moderate oven.",
+      "explanation": "The two dishes need different heat and different durations, so they cannot start together. The lamb starts first because it takes longest, the potatoes join near the end, and the lamb rests so both can finish at the same moment.",
+      "hint": "Match each step to the food that needs the oven at that moment.",
+      "plotStructure": "Goal, Constraint, Constraint, Start, Adjustment, Coordination, Outcome",
+      "sequenceLogic": "Parallel Timing → Sequence → Convergence"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L173_PRACTICE_Q2",
+      "level": 173,
+      "phase": "practice",
+      "storyContext": "A designer's new graphics tablet would not work with her computer.",
+      "prompt": "In the narrative sequence (Problem, Requirement, Dependency, Gap, Precaution, Upgrade, Installation, Outcome), what event must logically take place immediately after: \"A designer's new graphics tablet would not work with her computer.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "The manufacturer's site said the tablet needed the latest driver.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "They abandoned the current procedure and started again from scratch."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The manufacturer's site said the tablet needed the latest driver.",
+      "explanation": "The symptom leads to the driver requirement, which leads to the system requirement. The gap in her system means an upgrade, which must be done safely, so the backup comes before it. The driver can only be installed after the upgrade.",
+      "hint": "The final step depends on a chain of requirements. Which comes first in the chain?",
+      "plotStructure": "Problem, Requirement, Dependency, Gap, Precaution, Upgrade, Installation, Outcome",
+      "sequenceLogic": "Problem → Requirement Chain → Safe Upgrade → Installation → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L173_PRACTICE_Q3",
+      "level": 173,
+      "phase": "practice",
+      "storyContext": "A music school bought a used piano and needed it moved to a third-floor room.",
+      "prompt": "In the narrative sequence (Goal, Obstacle, Alternative, Requirement, Permission, Condition, Execution, Restoration), what event must logically take place immediately after: \"A music school bought a used piano and needed it moved to a third-floor room.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "The stairwell was too narrow for the piano's case."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The stairwell was too narrow for the piano's case.",
+      "explanation": "The stairwell blocks the obvious route, and the window is the alternative. The frame's removal needs permission, and the landlord's condition needs acceptance. Only then can the move take place, and the frame must be restored last.",
+      "hint": "What must each party agree before the movers can act?",
+      "plotStructure": "Goal, Obstacle, Alternative, Requirement, Permission, Condition, Execution, Restoration",
+      "sequenceLogic": "Obstacle → Alternative → Permission → Condition → Agreement → Execution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L174_PRACTICE_Q1",
+      "level": 174,
+      "phase": "practice",
+      "storyContext": "Lakshmi needed a recommendation letter for a scholarship application.",
+      "prompt": "In the narrative sequence (Need, Rule, Condition, Preparation, Action, Confirmation, Completion), what event must logically take place immediately after: \"Lakshmi needed a recommendation letter for a scholarship application.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "The scholarship portal accepted letters only if they were submitted directly by the referee.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The scholarship portal accepted letters only if they were submitted directly by the referee.",
+      "explanation": "The portal's rule means the professor must submit, and the professor's condition means Lakshmi supplies a list. The letter cannot be written until she does, and the notice tells her she can proceed.",
+      "hint": "Who has to act, and what must they receive before they can?",
+      "plotStructure": "Need, Rule, Condition, Preparation, Action, Confirmation, Completion",
+      "sequenceLogic": "Requirement → Condition → Fulfillment → Action → Confirmation"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L174_PRACTICE_Q2",
+      "level": 174,
+      "phase": "practice",
+      "storyContext": "Baker Oswin wanted to sell at the farmers' market.",
+      "prompt": "In the narrative sequence (Goal, Requirements, Booking, Parallel Task, Qualification, Assembly, Approval, Outcome), what event must logically take place immediately after: \"Baker Oswin wanted to sell at the farmers' market.\"?",
+      "options": [
+        "The market required a food-handling certificate and labeled products.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The market required a food-handling certificate and labeled products.",
+      "explanation": "The market has two requirements, and the certificate is the slower one. The waiting time is used for the labels, but the certificate number can only be added once the exam is passed. The manager can only approve complete paperwork.",
+      "hint": "Which task depends on a result that has not happened yet?",
+      "plotStructure": "Goal, Requirements, Booking, Parallel Task, Qualification, Assembly, Approval, Outcome",
+      "sequenceLogic": "Requirements → Waiting → Parallel Work → Completion → Approval"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L174_PRACTICE_Q3",
+      "level": 174,
+      "phase": "practice",
+      "storyContext": "Konstantin wanted to donate an old sofa to a charity shop.",
+      "prompt": "In the narrative sequence (Goal, Rule, Problem, Condition, Evidence, Approval, Collection, Outcome), what event must logically take place immediately after: \"Konstantin wanted to donate an old sofa to a charity shop.\"?",
+      "options": [
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "The shop accepted furniture only if it had a fire-safety label.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The shop accepted furniture only if it had a fire-safety label.",
+      "explanation": "The rule sets the requirement, and the torn label creates doubt. The shop's flexibility depends on legibility, so he sends proof. Approval follows the photo, and the collection depends on approval.",
+      "hint": "A rule becomes flexible under a condition. Which sentence states the condition?",
+      "plotStructure": "Goal, Rule, Problem, Condition, Evidence, Approval, Collection, Outcome",
+      "sequenceLogic": "Rule → Doubt → Condition → Evidence → Approval → Action"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L175_PRACTICE_Q1",
+      "level": 175,
+      "phase": "practice",
+      "storyContext": "Jeroen wanted to hike a mountain route that required an overnight stay in a hut.",
+      "prompt": "In the narrative sequence (Goal, Condition, Signal, Inquiry, Constraint, Adjustment, Confirmation), what event must logically take place immediately after: \"Jeroen wanted to hike a mountain route that required an overnight stay in a hut.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "The huts opened for bookings only after the snow had melted.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The huts opened for bookings only after the snow had melted.",
+      "explanation": "The plan depends on the huts opening, and the huts depend on the snow. The notice is the signal, and the call learns the availability. The change of day fits it, and the confirmation depends on that change.",
+      "hint": "Which event opens the possibility to act?",
+      "plotStructure": "Goal, Condition, Signal, Inquiry, Constraint, Adjustment, Confirmation",
+      "sequenceLogic": "Condition → Signal → Inquiry → Constraint → Adjustment → Confirmation"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L175_PRACTICE_Q2",
+      "level": 175,
+      "phase": "practice",
+      "storyContext": "Author Ulla finished a cookbook and wanted it printed for the holiday season.",
+      "prompt": "In the narrative sequence (Goal, Deadline, Obstacle, Request, Conditions, Fulfillment, Submission, Outcome), what event must logically take place immediately after: \"Author Ulla finished a cookbook and wanted it printed for the holiday season.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "The printer needed final files six weeks before delivery."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The printer needed final files six weeks before delivery.",
+      "explanation": "The printer's deadline fixes the outer limit, and the poem creates a dependency. She has to get permission, meet the conditions, and only then finish the files. The delivery follows the printer's schedule.",
+      "hint": "The final files cannot be sent until every permission is settled.",
+      "plotStructure": "Goal, Deadline, Obstacle, Request, Conditions, Fulfillment, Submission, Outcome",
+      "sequenceLogic": "Deadline → Dependency → Permission → Conditions → Completion → Delivery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L175_PRACTICE_Q3",
+      "level": 175,
+      "phase": "practice",
+      "storyContext": "Reza and Anke wanted to switch to a faster internet plan.",
+      "prompt": "In the narrative sequence (Goal, Constraint, Window, Lead Time, Plan, Confirmation, Notice, Outcome), what event must logically take place immediately after: \"Reza and Anke wanted to switch to a faster internet plan.\"?",
+      "options": [
+        "Their current contract could be ended without penalty only in its final month.",
+        "They abandoned the current procedure and started again from scratch.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Their current contract could be ended without penalty only in its final month.",
+      "explanation": "The old contract sets a window, and the installation time sets another. Ordering is timed so that installation falls in the free month, and the provider's date confirms it. Notice comes last so that no service gap or penalty occurs.",
+      "hint": "Two time windows must overlap. Which sentence connects them?",
+      "plotStructure": "Goal, Constraint, Window, Lead Time, Plan, Confirmation, Notice, Outcome",
+      "sequenceLogic": "Constraint → Constraint → Timing → Scheduling → Notice → Transition"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L176_PRACTICE_Q1",
+      "level": 176,
+      "phase": "practice",
+      "storyContext": "Kayak guide Nuala planned a crossing to a small island.",
+      "prompt": "In the narrative sequence (Plan, Constraint, Data, Requirement, Instruction, Launch, Arrival), what event must logically take place immediately after: \"Kayak guide Nuala planned a crossing to a small island.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "The crossing was safe only within an hour of high tide."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The crossing was safe only within an hour of high tide.",
+      "explanation": "The tide sets a safe window, and loading takes time. Arriving early allows loading to be done before the window opens, so launching can begin at the right moment. The crossing then falls within the safe period.",
+      "hint": "Work backward from the launch window to the arrival time.",
+      "plotStructure": "Plan, Constraint, Data, Requirement, Instruction, Launch, Arrival",
+      "sequenceLogic": "Constraint → Calculation → Instruction → Execution → Outcome"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L176_PRACTICE_Q2",
+      "level": 176,
+      "phase": "practice",
+      "storyContext": "The council approved funds for a playground in the east park.",
+      "prompt": "In the narrative sequence (Approval, Hazard, Constraint, Request, Information, Redesign, Execution, Outcome), what event must logically take place immediately after: \"The council approved funds for a playground in the east park.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "The site had a buried gas line.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The site had a buried gas line.",
+      "explanation": "The approved project meets a hidden hazard, and the hazard blocks digging until it is mapped. The survey provides the information the designers need to adjust, and only then can excavation begin.",
+      "hint": "What must be known before a plan can be finalized?",
+      "plotStructure": "Approval, Hazard, Constraint, Request, Information, Redesign, Execution, Outcome",
+      "sequenceLogic": "Plan → Hazard → Requirement → Information → Redesign → Execution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L176_PRACTICE_Q3",
+      "level": 176,
+      "phase": "practice",
+      "storyContext": "Vaughan found a used car he liked, and the seller wanted a quick sale.",
+      "prompt": "In the narrative sequence (Opportunity, Condition, Agreement, Action, Finding, Negotiation, Agreement, Approval), what event must logically take place immediately after: \"Vaughan found a used car he liked, and the seller wanted a quick sale.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "His bank would release a loan only after a mechanic inspected the car."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "His bank would release a loan only after a mechanic inspected the car.",
+      "explanation": "The bank needs an inspection, and the seller needs a quick sale, so time is limited. The inspection finds a fault, which becomes a basis for negotiating the price. The bank approves the loan only after the final price is set.",
+      "hint": "The bank's decision depends on two things. What are they?",
+      "plotStructure": "Opportunity, Condition, Agreement, Action, Finding, Negotiation, Agreement, Approval",
+      "sequenceLogic": "Conditions → Inspection → Finding → Negotiation → Agreement → Approval"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L177_PRACTICE_Q1",
+      "level": 177,
+      "phase": "practice",
+      "storyContext": "Rosetta was asked to give a fifteen-minute talk at a workshop.",
+      "prompt": "In the narrative sequence (Task, Constraints, Draft, Problem, Revision, Verification, Submission, Delivery), what event must logically take place immediately after: \"Rosetta was asked to give a fifteen-minute talk at a workshop.\"?",
+      "options": [
+        "The organizers required slides to be submitted a day ahead.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The organizers required slides to be submitted a day ahead.",
+      "explanation": "The limit and the deadline are both conditions. The first timing reveals the problem, cutting fixes it, and the second timing confirms it. Only a verified version is worth submitting.",
+      "hint": "The final version of the slides can only be submitted after it has been tested against the limit.",
+      "plotStructure": "Task, Constraints, Draft, Problem, Revision, Verification, Submission, Delivery",
+      "sequenceLogic": "Constraints → Draft → Test → Revision → Verification → Submission"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L177_PRACTICE_Q2",
+      "level": 177,
+      "phase": "practice",
+      "storyContext": "Lorenz was booking a birthday dinner for a group of ten.",
+      "prompt": "In the narrative sequence (Goal, Requirement, Complication, Inquiry, Solution, Commitment, Confirmation, Outcome), what event must logically take place immediately after: \"Lorenz was booking a birthday dinner for a group of ten.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "The restaurant required a deposit for groups over eight.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The restaurant required a deposit for groups over eight.",
+      "explanation": "The group size triggers a deposit, and the dietary needs create a question. Lorenz checks that the restaurant can meet them before paying, because payment would commit him. The confirmation and note follow.",
+      "hint": "Which conditions must be settled before money is paid?",
+      "plotStructure": "Goal, Requirement, Complication, Inquiry, Solution, Commitment, Confirmation, Outcome",
+      "sequenceLogic": "Requirements → Inquiry → Solution → Commitment → Confirmation"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L177_PRACTICE_Q3",
+      "level": 177,
+      "phase": "practice",
+      "storyContext": "A theater company wanted to restage a play in a park.",
+      "prompt": "In the narrative sequence (Goal, Requirement, Dependency, Contradiction, Request, Concession, Execution, Approval), what event must logically take place immediately after: \"A theater company wanted to restage a play in a park.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The park's permit office required a site plan and a noise assessment.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The park's permit office required a site plan and a noise assessment.",
+      "explanation": "The permit needs the assessment, and the assessment needs the stage, which needs the permit. The provisional permit breaks the loop, and the crew acts within its short time. The full permit comes last.",
+      "hint": "Two requirements depend on each other. What breaks the circle?",
+      "plotStructure": "Goal, Requirement, Dependency, Contradiction, Request, Concession, Execution, Approval",
+      "sequenceLogic": "Circular Dependency → Workaround → Execution → Approval"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L178_PRACTICE_Q1",
+      "level": 178,
+      "phase": "practice",
+      "storyContext": "A small museum wanted to borrow a painting from a larger gallery.",
+      "prompt": "In the narrative sequence (Goal, Condition, Testing, Failure, Improvement, Retest, Approval, Outcome), what event must logically take place immediately after: \"A small museum wanted to borrow a painting from a larger gallery.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "The gallery required proof that the museum's display cases met climate standards."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The gallery required proof that the museum's display cases met climate standards.",
+      "explanation": "The gallery's condition leads to testing, and the test's result shows the museum is not ready. The upgrade and retest provide new evidence, and the gallery can only approve after it.",
+      "hint": "A failed test creates a new requirement before approval.",
+      "plotStructure": "Goal, Condition, Testing, Failure, Improvement, Retest, Approval, Outcome",
+      "sequenceLogic": "Condition → Test → Failure → Upgrade → Retest → Approval"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L178_PRACTICE_Q2",
+      "level": 178,
+      "phase": "practice",
+      "storyContext": "A road crew was due to resurface a road.",
+      "prompt": "In the narrative sequence (Plan, Constraint, Forecast, Alternative Work, Condition Met, Execution, Dependency, Outcome), what event must logically take place immediately after: \"A road crew was due to resurface a road.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "The asphalt could be laid only in dry weather above five degrees.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The asphalt could be laid only in dry weather above five degrees.",
+      "explanation": "The weather constraint blocks the main task, so the crew does preparation that is not weather-dependent. The forecast change allows the asphalt, and the curing requirement delays the painting until the surface is ready.",
+      "hint": "How do you use the time when the main task is blocked?",
+      "plotStructure": "Plan, Constraint, Forecast, Alternative Work, Condition Met, Execution, Dependency, Outcome",
+      "sequenceLogic": "Constraint → Blocked Task → Alternative Work → Condition Met → Execution → Dependent Step"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L178_PRACTICE_Q3",
+      "level": 178,
+      "phase": "practice",
+      "storyContext": "The choir was invited to sing at a festival in Prague.",
+      "prompt": "In the narrative sequence (Invitation, Deadline, Dependency, Inquiry, Conflict, Negotiation, Confirmation, Completion), what event must logically take place immediately after: \"The choir was invited to sing at a festival in Prague.\"?",
+      "options": [
+        "The festival needed confirmation of attendance within two weeks.",
+        "They abandoned the current procedure and started again from scratch.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The festival needed confirmation of attendance within two weeks.",
+      "explanation": "The deadline needs a headcount, and the headcount needs passport information. The replies reveal a mismatch between the renewal time and the deadline, so the choir negotiates flexibility. The confirmation and final list follow the agreement.",
+      "hint": "Trace the dependencies from the deadline down to the passports.",
+      "plotStructure": "Invitation, Deadline, Dependency, Inquiry, Conflict, Negotiation, Confirmation, Completion",
+      "sequenceLogic": "Deadline → Dependency Chain → Inquiry → Conflict → Negotiation → Confirmation"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L179_PRACTICE_Q1",
+      "level": 179,
+      "phase": "practice",
+      "storyContext": "Noor's building required residents to reserve the freight elevator for moves.",
+      "prompt": "In the narrative sequence (Requirement, Requirement, Restriction, Failure, Retry, Confirmation, Execution), what event must logically take place immediately after: \"Noor's building required residents to reserve the freight elevator for moves.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "They abandoned the current procedure and started again from scratch.",
+        "Reservations required a deposit paid at the front desk.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Reservations required a deposit paid at the front desk.",
+      "explanation": "The building's rule requires a reservation, the reservation requires a deposit, and the deposit requires office hours. Her first trip fails because of the hours, so she returns. The confirmation makes the move possible.",
+      "hint": "What rule prevents her first attempt from working?",
+      "plotStructure": "Requirement, Requirement, Restriction, Failure, Retry, Confirmation, Execution",
+      "sequenceLogic": "Rule Chain → Failed Attempt → Retry → Confirmation → Execution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L179_PRACTICE_Q2",
+      "level": 179,
+      "phase": "practice",
+      "storyContext": "City planner Elske needed comments on a draft from three departments.",
+      "prompt": "In the narrative sequence (Need, Restriction, Gap, Request, Condition, Approval, Access, Outcome), what event must logically take place immediately after: \"City planner Elske needed comments on a draft from three departments.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "The draft lived in a system that allowed only registered users to comment.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The draft lived in a system that allowed only registered users to comment.",
+      "explanation": "The system's rule creates a need for accounts, and IT's rule creates a need for a signature. Each step satisfies the requirement of the next, so the comments cannot arrive until the signature has been obtained.",
+      "hint": "Which approval unlocks the next approval?",
+      "plotStructure": "Need, Restriction, Gap, Request, Condition, Approval, Access, Outcome",
+      "sequenceLogic": "Requirement → Request → Requirement → Approval → Access → Use"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L179_PRACTICE_Q3",
+      "level": 179,
+      "phase": "practice",
+      "storyContext": "Tour operator Baptiste was arranging a trip for a group of twelve to a country requiring visas.",
+      "prompt": "In the narrative sequence (Goal, Rule, Partial Progress, Obstacle, Request, Delay, Submission, Outcome), what event must logically take place immediately after: \"Tour operator Baptiste was arranging a trip for a group of twelve to a country requiring visas.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "The embassy issued group visas only if all passports were submitted together."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The embassy issued group visas only if all passports were submitted together.",
+      "explanation": "The embassy's rule means everyone's passport must be present at once. The fast travelers cannot proceed alone, and the delayed passport must be recovered. Only then can the group submit and get the visas.",
+      "hint": "The group's progress is held up by its slowest member.",
+      "plotStructure": "Goal, Rule, Partial Progress, Obstacle, Request, Delay, Submission, Outcome",
+      "sequenceLogic": "Group Requirement → Delay → Recovery → Submission → Approval"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L180_PRACTICE_Q1",
+      "level": 180,
+      "phase": "practice",
+      "storyContext": "A village won a grant to plant fifty trees along its main road.",
+      "prompt": "In the narrative sequence (Grant, Deadline, Requirement, Approval, Draft, Revision, Outcome), what event must logically take place immediately after: \"A village won a grant to plant fifty trees along its main road.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "They abandoned the current procedure and started again from scratch.",
+        "The grant required that planting be done in autumn."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The grant required that planting be done in autumn.",
+      "explanation": "The season limits the planting, and the delivery needs a list. The list needs the arborist's approval, and the arborist changes it. Only the approved list allows the nursery to deliver in time for the season.",
+      "hint": "Which approval is a prerequisite for the delivery?",
+      "plotStructure": "Grant, Deadline, Requirement, Approval, Draft, Revision, Outcome",
+      "sequenceLogic": "Deadline → Requirement Chain → Approval → Delivery → Action"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L180_PRACTICE_Q2",
+      "level": 180,
+      "phase": "practice",
+      "storyContext": "Team lead Ingvild wanted to release a security fix by Friday.",
+      "prompt": "In the narrative sequence (Goal, Requirements, Obstacle, Substitution, Approval, Complication, Resolution, Release), what event must logically take place immediately after: \"Team lead Ingvild wanted to release a security fix by Friday.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Company policy required two code reviews and a passed test suite.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Company policy required two code reviews and a passed test suite.",
+      "explanation": "The policy lists requirements, and the reviewer's absence blocks one. Ingvild replaces the reviewer, which is a people solution. The flaky test is a tool problem that is solved by a rerun. Only when all requirements are met can the fix go out.",
+      "hint": "Which obstacles are caused by people and which by tools?",
+      "plotStructure": "Goal, Requirements, Obstacle, Substitution, Approval, Complication, Resolution, Release",
+      "sequenceLogic": "Requirements → Obstacle → Substitute → Approval → Tool Failure → Retry → Release"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L180_PRACTICE_Q3",
+      "level": 180,
+      "phase": "practice",
+      "storyContext": "The charity planned a gala for two hundred guests at a historic hall.",
+      "prompt": "In the narrative sequence (Plan, Constraint, Idea, Requirement, Deadline, Decision, Communication, Response, Outcome), what event must logically take place immediately after: \"The charity planned a gala for two hundred guests at a historic hall.\"?",
+      "options": [
+        "The hall's fire limit allowed only one hundred and fifty people.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "They abandoned the current procedure and started again from scratch.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "The hall's fire limit allowed only one hundred and fifty people.",
+      "explanation": "The venue's limit creates the problem, and the second sitting is the idea. The caterer's notice period sets a deadline for the board, and the invitations can only go out after approval. The swaps and sales follow from the new format.",
+      "hint": "Follow which decision has to be made before each announcement.",
+      "plotStructure": "Plan, Constraint, Idea, Requirement, Deadline, Decision, Communication, Response, Outcome",
+      "sequenceLogic": "Constraint → Idea → Requirement → Deadline → Decision → Communication → Response → Outcome"
+    }
+  ]
+}

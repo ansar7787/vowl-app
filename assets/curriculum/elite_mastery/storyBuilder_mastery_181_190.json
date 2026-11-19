@@ -1,0 +1,920 @@
+{
+  "gameType": "storyBuilder",
+  "phase": "mastery",
+  "batchIndex": 19,
+  "levels": "181-190",
+  "quests": [
+    {
+      "id": "ELT_STORYBUILDER_L181_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "Ask which sentence explains why a later action was necessary, not just what the action was.",
+      "explanation": "The realization is the turning point, and the sentence about the off-the-record request explains why it matters. Checking the recording verifies the public source, which permits the change of attribution. The editor's approval can only follow the corrected draft.",
+      "sentences": [
+        "The distinction mattered because the official had asked that the interview stay off the record.",
+        "Reporter Delaney was about to file a story quoting a city official.",
+        "She changed the attribution to the press conference.",
+        "Rereading her notes, she realized the quote had come from a press conference, not from the private interview she had cited.",
+        "Her editor, reviewing the draft, noticed the corrected source and approved it.",
+        "She checked her recording and confirmed the phrase had been said publicly.",
+        "The story ran with a quote that was both accurate and properly attributed."
+      ],
+      "correctOrder": [
+        1,
+        3,
+        0,
+        5,
+        2,
+        4,
+        6
+      ],
+      "instruction": "Order these sentences so the situation develops logically.",
+      "sequenceLogic": "Realization → Significance → Verification → Correction → Approval",
+      "plotStructure": "Setup, Realization, Stakes, Verification, Correction, Review, Outcome",
+      "level": 181,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L181_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "A letter answers an objection, so the objection must already be known.",
+      "explanation": "Elspeth's goal and Halvorsen's refusal come first, and his reason explains the letter that follows. The silence shows the letter did not persuade him alone, and the neighbor's reassurance is what moves him. His request for writing leads to the signed agreement, and the survey follows.",
+      "sentences": [
+        "He did not reply for weeks.",
+        "She sent a signed agreement.",
+        "He allowed the survey, and its findings helped him apply for a conservation grant.",
+        "A neighbor who had read Elspeth's letter told Halvorsen the offer seemed genuine.",
+        "He had refused earlier requests because a previous survey had led to restrictions on his land.",
+        "Elspeth wrote to explain that this survey would carry no legal consequences and offered to share the results with him.",
+        "Halvorsen phoned Elspeth and asked for the promise in writing.",
+        "Ecologist Elspeth hoped to survey a wetland on Mr. Halvorsen's farm."
+      ],
+      "correctOrder": [
+        7,
+        4,
+        5,
+        0,
+        3,
+        6,
+        1,
+        2
+      ],
+      "instruction": "Arrange the sentences into a coherent account of what happened.",
+      "sequenceLogic": "Goal → Objection → Response → Silence → Third-party Reassurance → Condition → Agreement",
+      "plotStructure": "Goal, Objection, Response, Silence, Reassurance, Condition, Fulfillment, Outcome",
+      "level": 181,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L181_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Each suspect must be checked and cleared before the true cause can be found.",
+      "explanation": "The first theory is tested and eliminated by the logs, which leads Hendrik to propose another. His examination of the discarded rows reveals the pattern, and the limit explains it. The fix and rerun follow, and the added test prevents recurrence.",
+      "sentences": [
+        "He examined the discarded rows and found that valid rows with long addresses were being removed.",
+        "Hendrik suggested the filter step, which discards malformed rows.",
+        "The filter's length limit was set too low.",
+        "Nurul and Hendrik were debugging a data pipeline that dropped records.",
+        "Nothing was dropped, and they added a test for long addresses.",
+        "The logs showed every file arriving intact.",
+        "Nurul suspected the network, so she checked the transfer logs.",
+        "They raised the limit and reran the batch."
+      ],
+      "correctOrder": [
+        3,
+        6,
+        5,
+        1,
+        0,
+        2,
+        7,
+        4
+      ],
+      "instruction": "Restore the story's natural progression.",
+      "sequenceLogic": "Hypothesis → Elimination → New Hypothesis → Evidence → Cause → Fix → Prevention",
+      "plotStructure": "Problem, Hypothesis, Elimination, New Hypothesis, Evidence, Cause, Fix, Prevention",
+      "level": 181,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L182_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "The host's earlier knowledge is what makes her later request sensible.",
+      "explanation": "The dinner sets the scene, and the allergy is the key information. Her careful menu shows she takes it seriously, and the boss's offer creates a new risk. Her request to check leads to the discovery, and the fruit substitute is the outcome.",
+      "sentences": [
+        "Wenona was hosting a dinner for her boss and two colleagues.",
+        "Wenona suggested that he take the cake home and served fruit instead.",
+        "On the day, her boss mentioned that he was bringing dessert from a bakery.",
+        "The bakery's cake contained almond flour.",
+        "She knew that one colleague, Torvald, had a peanut allergy.",
+        "She planned a menu without nuts and read every ingredient label.",
+        "Wenona thanked him and asked him to check the bakery's ingredients."
+      ],
+      "correctOrder": [
+        0,
+        4,
+        5,
+        2,
+        6,
+        3,
+        1
+      ],
+      "instruction": "Place the events in the order they must occur.",
+      "sequenceLogic": "Knowledge → Precaution → New Risk → Check → Discovery → Adaptation",
+      "plotStructure": "Setup, Knowledge, Preparation, Complication, Inquiry, Discovery, Resolution",
+      "level": 182,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L182_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "When data and symptoms disagree, one of them has to be explained.",
+      "explanation": "The contradiction is the puzzle, and the question about supplements is a search for an explanation. The biotin answer offers a possible cause, and the second test checks it. The result explains the symptoms, and treatment follows.",
+      "sentences": [
+        "The client began treatment, and her fatigue eased.",
+        "Okafor knew that biotin can distort some lab results.",
+        "She ordered a second test after a week without the tablet.",
+        "The client reported fatigue and constant chills, yet the numbers were normal.",
+        "The client said she took a high-dose biotin tablet every morning.",
+        "Okafor asked whether she took any supplements.",
+        "Nutritionist Dr. Okafor noticed that a client's thyroid results contradicted her symptoms.",
+        "The new test showed an underactive thyroid."
+      ],
+      "correctOrder": [
+        6,
+        3,
+        5,
+        4,
+        1,
+        2,
+        7,
+        0
+      ],
+      "instruction": "Rebuild the sequence from beginning to outcome.",
+      "sequenceLogic": "Contradiction → Inquiry → Possible Cause → Retest → Diagnosis → Treatment",
+      "plotStructure": "Puzzle, Symptom, Inquiry, Clue, Reasoning, Retest, Result, Outcome",
+      "level": 182,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L182_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "A decision is justified by a comparison. Which sentences supply the two sides?",
+      "explanation": "The choice is set up by two options, each with a trade-off. The penalty gives the delay a cost, and the calculation compares it with the saving. The outcome follows from the comparison, and the message to Supplier A is a courtesy.",
+      "sentences": [
+        "Supplier B was pricier but could deliver within two weeks.",
+        "He informed Supplier A politely and asked to be considered for future orders.",
+        "Supplier A offered a lower price but a longer delivery time.",
+        "He chose Supplier B.",
+        "Procurement officer Wolfgang was choosing between two suppliers for a batch of sensors.",
+        "Wolfgang calculated the penalty against the price difference.",
+        "The penalty would exceed the savings from Supplier A.",
+        "The longer delivery time mattered because the project carried a penalty for late delivery of the final product."
+      ],
+      "correctOrder": [
+        4,
+        2,
+        0,
+        7,
+        5,
+        6,
+        3,
+        1
+      ],
+      "instruction": "Sort the sentences into the sequence that makes sense.",
+      "sequenceLogic": "Options → Trade-offs → Cost Analysis → Decision → Follow-up",
+      "plotStructure": "Choice, Option, Option, Stakes, Analysis, Finding, Decision, Follow-up",
+      "level": 182,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L183_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "What information does the councilor need before she can respond publicly?",
+      "explanation": "The rumor produces the emails, and the councilor verifies the facts before answering. Her first check finds nothing, and the property office provides the real story. The clarification changes the tone of the debate, and the consultation follows.",
+      "sentences": [
+        "She asked the property office and learned that only the parking lot behind the library was being considered for lease.",
+        "She posted a clarification with the actual proposal attached.",
+        "A rumor spread through the neighborhood that the library would be sold to developers.",
+        "She checked the council's agenda and found no such item.",
+        "The angry emails were replaced by questions about the parking lot.",
+        "A public consultation on the lease was scheduled.",
+        "Residents flooded Councilor Achterberg's inbox with angry emails."
+      ],
+      "correctOrder": [
+        2,
+        6,
+        3,
+        0,
+        1,
+        4,
+        5
+      ],
+      "instruction": "Put the events in the order that makes the story coherent.",
+      "sequenceLogic": "Rumor → Reaction → Verification → Facts → Clarification → Effect → Process",
+      "plotStructure": "Rumor, Reaction, Check, Discovery, Clarification, Shift, Outcome",
+      "level": 183,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L183_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Each person's action makes sense from their own point of view. Whose view is revealed when?",
+      "explanation": "The pitch and brief mention set up the situation, and Ayelet's message shows how it felt to her. The manager's question reveals Jonas's intention, and the suggestion resolves the gap between intention and effect. The apology and credit repair the relationship.",
+      "sentences": [
+        "Jonas presented a successful client pitch that Ayelet had helped build.",
+        "Ayelet felt sidelined and sent her manager a message listing her work.",
+        "Jonas apologized to Ayelet and credited her by name in the client follow-up.",
+        "Jonas said he had thought that praising the whole team was more diplomatic.",
+        "The manager suggested that specific acknowledgment would be clearer.",
+        "He mentioned Ayelet's contribution only briefly in the team meeting.",
+        "The manager, surprised, asked Jonas about it.",
+        "Ayelet thanked him, and the two agreed to draft future pitches together."
+      ],
+      "correctOrder": [
+        0,
+        5,
+        1,
+        6,
+        3,
+        4,
+        2,
+        7
+      ],
+      "instruction": "Decide which event comes first, and build the sequence from there.",
+      "sequenceLogic": "Action → Perception → Escalation → Explanation → Guidance → Repair → Reconciliation",
+      "plotStructure": "Setup, Oversight, Reaction, Inquiry, Explanation, Advice, Repair, Outcome",
+      "level": 183,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L183_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "A failed search can be fixed by changing the search terms. What changes?",
+      "explanation": "The diary supplies the story, and the failed record search creates the puzzle. Noticing the alternate spelling gives her a new key, and the report follows. The coordinates enable the divers, and the confirmation leads to the exhibition.",
+      "sentences": [
+        "The discovery confirmed the diary's account and led to a small exhibition.",
+        "The diary mentioned a ship's name that she found spelled differently in a register.",
+        "A historian bought a diary at an estate sale.",
+        "The report gave the coordinates of the wreck.",
+        "A diving club, contacted by the historian, located wreckage at the site.",
+        "Searching under the alternate spelling, she found a report of a wreck in the same year.",
+        "Its final entries described a shipwreck near the author's village.",
+        "She searched maritime records and found no wreck matching the description."
+      ],
+      "correctOrder": [
+        2,
+        6,
+        7,
+        1,
+        5,
+        3,
+        4,
+        0
+      ],
+      "instruction": "Reconstruct the story so that every event follows from the one before it.",
+      "sequenceLogic": "Source → Failed Search → Clue → New Search → Location → Verification → Outcome",
+      "plotStructure": "Discovery, Claim, Failed Search, Clue, Success, Location, Verification, Outcome",
+      "level": 183,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L184_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "What matters is not just the mistake, but how the restaurant responded.",
+      "explanation": "Recognizing the critic raises the stakes, and the instruction shows preparation. The cold course is the failure, and Lucien's recovery is the turning point. The review reflects both, and the bookings are the consequence.",
+      "sentences": [
+        "The replacement was excellent, and the critic complimented the sauce.",
+        "Owner Lucien recognized a well-known food critic seated near the window.",
+        "The published review mentioned the mistake but praised the way it was handled.",
+        "Bookings rose that month.",
+        "He told the kitchen to prepare each dish with extra attention.",
+        "Lucien apologized personally and ordered a fresh course.",
+        "The critic's first course arrived cold because a waiter had been distracted."
+      ],
+      "correctOrder": [
+        1,
+        4,
+        6,
+        5,
+        0,
+        2,
+        3
+      ],
+      "instruction": "Restore the story's natural progression.",
+      "sequenceLogic": "Stakes → Preparation → Failure → Recovery → Reaction → Review → Result",
+      "plotStructure": "Setup, Preparation, Failure, Recovery, Reaction, Publication, Outcome",
+      "level": 184,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L184_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Two people work under different assumptions. When does the coordinator find out?",
+      "explanation": "Both volunteers begin with the same instruction, but Kip's expertise changes his behavior. Lena, unaware of his system, undoes it, and the mixed stack shows the problem. Kip's explanation prompts Clementine to redesign roles, and the results confirm it.",
+      "sentences": [
+        "Lena, unaware, kept putting torn items into the general pile.",
+        "He set aside those items instead of sorting them.",
+        "The charity's repaired clothing brought in more than the unsorted items ever had.",
+        "Clementine reorganized the tasks, making Kip the repair lead and Lena the sorter.",
+        "Volunteer coordinator Clementine assigned two new volunteers, Kip and Lena, to sort donated clothes.",
+        "Kip, an experienced tailor, quickly noticed items needing repair.",
+        "Kip explained his system.",
+        "Clementine discovered a mixed stack and asked what was happening."
+      ],
+      "correctOrder": [
+        4,
+        5,
+        1,
+        0,
+        7,
+        6,
+        3,
+        2
+      ],
+      "instruction": "Sort the sentences into the sequence that makes sense.",
+      "sequenceLogic": "Assignment → Divergence → Conflict → Discovery → Explanation → Reorganization → Result",
+      "plotStructure": "Setup, Insight, Action, Contradiction, Discovery, Explanation, Reorganization, Outcome",
+      "level": 184,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L184_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Search decisions follow from the most probable location. What information supports that choice?",
+      "explanation": "The call starts the case, and Bettina's question collects the plan. The wife's remark about the weather and the log combine to make the valley route more likely, so the first team goes there. The second team covers the alternative, and the discovery ends the search.",
+      "sentences": [
+        "The woman said he had mentioned a ridge trail but might have switched to a valley route if the weather worsened.",
+        "She decided to send the first team to the valley route.",
+        "A second team searched the lower section of the ridge trail.",
+        "She asked which trail he had planned to take.",
+        "The valley team found the hiker resting beside a stream with a sprained ankle.",
+        "Bettina called the wife and told her he was safe.",
+        "Bettina checked the weather log and saw fog on the ridge by afternoon.",
+        "Ranger Bettina received a call from a woman whose husband had not returned from a day hike."
+      ],
+      "correctOrder": [
+        7,
+        3,
+        0,
+        6,
+        1,
+        2,
+        4,
+        5
+      ],
+      "instruction": "Work out the order in which these events unfold.",
+      "sequenceLogic": "Report → Inquiry → Information → Analysis → Prioritization → Search → Discovery → Notification",
+      "plotStructure": "Report, Inquiry, Information, Analysis, Decision, Parallel Search, Discovery, Resolution",
+      "level": 184,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L185_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "A claim is tested by evidence, and the claimant's next question shows how he responds.",
+      "explanation": "The proposal is challenged with data, and the records undermine the claim. Bramwell adjusts his argument by asking about cost, and the answer undermines that too. The vote follows the accumulated evidence.",
+      "sentences": [
+        "The finance officer provided a figure lower than that of the sports program.",
+        "Parents produced attendance records showing waiting lists for places.",
+        "The council voted to keep the funding.",
+        "Councilor Bramwell argued that the orchestra served too few students.",
+        "The town council debated whether to cut the youth orchestra's funding.",
+        "Bramwell asked for the cost per student.",
+        "The records undermined his claim."
+      ],
+      "correctOrder": [
+        4,
+        3,
+        1,
+        6,
+        5,
+        0,
+        2
+      ],
+      "instruction": "Place the events in the order they must occur.",
+      "sequenceLogic": "Claim → Evidence → Rebuttal → New Claim → Evidence → Decision",
+      "plotStructure": "Proposal, Claim, Evidence, Rebuttal, Second Claim, Second Evidence, Decision",
+      "level": 185,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L185_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Each new piece of information changes what the group can choose.",
+      "explanation": "The initial preferences conflict, and Mira's injury adds a constraint. Dov's proposal responds to it, Hana's question tests it against her preference, and the check satisfies it. Agreement and booking follow.",
+      "sentences": [
+        "Dov checked and found coves reachable from the path.",
+        "They booked a guesthouse near the path.",
+        "Hana asked whether it had swimming access.",
+        "Mira mentioned she had a knee injury that ruled out steep trails.",
+        "Dov proposed a coastal path with gentle slopes.",
+        "Three friends tried to choose a holiday destination.",
+        "Hana wanted a beach, and Dov wanted hiking.",
+        "Everyone agreed on the coast."
+      ],
+      "correctOrder": [
+        5,
+        6,
+        3,
+        4,
+        2,
+        0,
+        7,
+        1
+      ],
+      "instruction": "Arrange the events so each action logically leads to the next.",
+      "sequenceLogic": "Conflict → Constraint → Proposal → Test → Confirmation → Agreement → Action",
+      "plotStructure": "Dilemma, Conflict, Constraint, Proposal, Question, Answer, Agreement, Action",
+      "level": 185,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L185_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Which decision depends on hearing both accounts?",
+      "explanation": "The phrase raises the suspicion, and the comparison confirms it. Separate meetings allow each student to give an account, and the two accounts together show what happened. The policy determines the classification, and the syllabus change is a preventive step.",
+      "sentences": [
+        "She invited both students to separate meetings.",
+        "Professor Lindqvist noticed that two students' essays used the same unusual phrase.",
+        "She compared the essays and found several matching paragraphs.",
+        "Both students received a warning and were asked to rewrite.",
+        "The department's policy classified copying from a shared draft as plagiarism.",
+        "The first student admitted she had shared her draft with a friend.",
+        "Lindqvist added a briefing on collaboration limits to the syllabus.",
+        "The second student said he had used it only for inspiration."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0,
+        5,
+        7,
+        4,
+        3,
+        6
+      ],
+      "instruction": "Put the events in the order that makes the story coherent.",
+      "sequenceLogic": "Suspicion → Evidence → Hearing → Accounts → Policy → Sanction → Prevention",
+      "plotStructure": "Suspicion, Comparison, Hearing, Admission, Explanation, Policy, Outcome, Prevention",
+      "level": 185,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L186_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "Look for how each action escalates the conflict.",
+      "explanation": "The dispute is set up by the repeated blocking, and the note is the mildest response. Ferris's irritation leads him to ignore it, so Andrade escalates to the city. The warning brings him to her door, where they finally talk.",
+      "sentences": [
+        "They finally spoke properly and agreed to mark their spaces.",
+        "Ferris moved his car and knocked on her door to complain about being reported.",
+        "Ferris had blocked the driveway twice that week.",
+        "She reported the blockage to the city, which sent a warning.",
+        "Andrade left a note on his windshield.",
+        "Ferris, irritated by the tone, ignored it.",
+        "Mrs. Andrade and Mr. Ferris argued over who could park in front of their shared driveway."
+      ],
+      "correctOrder": [
+        6,
+        2,
+        4,
+        5,
+        3,
+        1,
+        0
+      ],
+      "instruction": "Reconstruct the story so that every event follows from the one before it.",
+      "sequenceLogic": "Conflict → Mild Response → Rejection → Escalation → Consequence → Dialogue → Agreement",
+      "plotStructure": "Conflict, Provocation, Note, Rejection, Escalation, Confrontation, Resolution",
+      "level": 186,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L186_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "A discovery is not always the cause. Which sentence reasons about that?",
+      "explanation": "The pendulum is checked and cleared, and the gear is a plausible cause. The reasoning about skips versus slowness rules it out, which sends him to the rope. The repair then fixes the real problem, and the gear becomes a separate recommendation.",
+      "sentences": [
+        "The clock kept time within seconds.",
+        "He examined the gears and found one worn tooth.",
+        "Hjalmar inspected the mechanism and found the pendulum swinging normally.",
+        "Hjalmar replaced the rope and oiled the pulleys.",
+        "He advised the town to replace the worn gear at the next service.",
+        "He turned to the weight that drives the clock and found the rope had frayed and increased friction.",
+        "Clockmaker Hjalmar was asked to restore a tower clock that ran slow.",
+        "A worn tooth would cause occasional skips, not consistent slowness."
+      ],
+      "correctOrder": [
+        6,
+        2,
+        1,
+        7,
+        5,
+        3,
+        0,
+        4
+      ],
+      "instruction": "Restore the story's natural progression.",
+      "sequenceLogic": "Symptom → Elimination → Suspect → Reasoning → True Cause → Repair → Recommendation",
+      "plotStructure": "Problem, Check, Finding, Reasoning, Cause, Repair, Result, Advice",
+      "level": 186,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L186_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "The character pursues two solutions at once. Which one succeeds?",
+      "explanation": "The loss creates the deadline, and her memory gives a lead. The closed museum blocks the direct route, so she opens a backup route through the embassy. The museum's callback resolves it, making the backup unnecessary.",
+      "sentences": [
+        "Ramona discovered her passport was missing the evening before her flight home from Lisbon.",
+        "The museum was closed, but the kiosk operator's phone number was on her ticket.",
+        "Ramona retraced her day and remembered showing it at a museum kiosk.",
+        "Ramona made her flight with an hour to spare.",
+        "Ramona called and reached his voicemail.",
+        "Ramona collected it from the museum and canceled the emergency application.",
+        "At the embassy, she filled in forms while the museum called back to say the passport had been found.",
+        "Ramona reported the loss to the embassy's emergency line, which advised her to request an emergency travel document in person the next morning."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        1,
+        4,
+        7,
+        6,
+        5,
+        3
+      ],
+      "instruction": "Place the events in the order they must occur.",
+      "sequenceLogic": "Loss → Lead → Attempt → Backup → Convergence → Resolution",
+      "plotStructure": "Problem, Lead, Attempt, Failure, Backup, Resolution, Cleanup, Outcome",
+      "level": 186,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L187_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "Which sentence reveals the source of the error, and which reveals how it got there?",
+      "explanation": "The mismatch is the trigger, and the hidden row is the location. The duplicate is the nature of the error, and the assistant's answer explains its origin. Removing the row fixes it, and the check cell prevents a repeat.",
+      "sentences": [
+        "The row contained a duplicate of the marketing budget.",
+        "He added a check cell that flags any mismatch.",
+        "She said it had been pasted by mistake during last week's update.",
+        "Analyst Cornelis noticed that the quarterly total was three percent higher than the sum of the departments.",
+        "Cornelis removed the row, and the total matched.",
+        "He asked the finance assistant who had added it.",
+        "He traced the difference to a hidden row in the department sheet."
+      ],
+      "correctOrder": [
+        3,
+        6,
+        0,
+        5,
+        2,
+        4,
+        1
+      ],
+      "instruction": "Arrange the events so each action logically leads to the next.",
+      "sequenceLogic": "Anomaly → Location → Nature → Origin → Fix → Prevention",
+      "plotStructure": "Anomaly, Location, Nature, Origin, Fix, Prevention",
+      "level": 187,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L187_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Which sentence gives both sides a reason to compromise?",
+      "explanation": "The proposal has different effects for different groups, and the mayor commissions a study to settle the facts. The study identifies the peak season as the conflict point, and the company's offer addresses exactly that. Both sides accept, and the agreement is signed.",
+      "sentences": [
+        "The company offered to limit visits to off-peak months.",
+        "The fishermen accepted, and the shopkeepers agreed that fewer visits were better than none.",
+        "Shopkeepers welcomed the extra customers.",
+        "A cruise company proposed docking ships at a small fishing village.",
+        "The mayor commissioned an impact study.",
+        "Fishermen worried that the dock's expansion would disturb the harbor.",
+        "The study found that noise and wake would affect the fishing grounds during peak season.",
+        "The village and company signed a five-year agreement."
+      ],
+      "correctOrder": [
+        3,
+        2,
+        5,
+        4,
+        6,
+        0,
+        1,
+        7
+      ],
+      "instruction": "Sort the sentences into the sequence that makes sense.",
+      "sequenceLogic": "Proposal → Divided Reactions → Study → Finding → Compromise → Agreement",
+      "plotStructure": "Proposal, Support, Opposition, Study, Finding, Compromise, Acceptance, Agreement",
+      "level": 187,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L187_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "The disagreement is about the meaning of a word. When does each side's position appear?",
+      "explanation": "The contract sets the terms, and the request tests them. Karoline's objection is answered by Tanaka's textual argument, and her reread reveals a gap in the contract. The compromise resolves this dispute, and the new clause prevents the next.",
+      "sentences": [
+        "Karoline reread the contract and saw that it did not define what counted as a revision.",
+        "After the third round, Tanaka requested a completely different logo.",
+        "Karoline said this was a new project, not a revision.",
+        "Karoline added a definition clause to her contract template.",
+        "The contract offered \"unlimited revisions.\"",
+        "They agreed to treat a change of concept as a new brief at half rate.",
+        "Freelance designer Karoline and her client, Mr. Tanaka, signed a contract for a brand identity.",
+        "Tanaka pointed to the word \"unlimited.\""
+      ],
+      "correctOrder": [
+        6,
+        4,
+        1,
+        2,
+        7,
+        0,
+        5,
+        3
+      ],
+      "instruction": "Order these sentences so the situation develops logically.",
+      "sequenceLogic": "Agreement → Test → Objection → Counterargument → Discovery → Compromise → Improvement",
+      "plotStructure": "Contract, Term, Dispute, Objection, Counterargument, Discovery, Compromise, Improvement",
+      "level": 187,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L188_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "Which sentence introduces the obstacle that makes the second option necessary?",
+      "explanation": "The duty-hours limit creates the need for a new crew, and the standby crew is the obvious solution. Traffic blocks it, so the manager searches for another. The pilot on his day off provides it, and boarding follows.",
+      "sentences": [
+        "The standby crew was stuck in traffic.",
+        "A pilot on his day off, living near the airport, agreed to step in.",
+        "With the replacement in place, the flight boarded.",
+        "The operations manager needed a replacement crew.",
+        "It departed forty minutes late.",
+        "A regional airline's evening crew was told that the next leg would exceed their legal duty hours.",
+        "The manager asked the delayed crew to wait while he confirmed the availability of alternatives."
+      ],
+      "correctOrder": [
+        5,
+        3,
+        0,
+        6,
+        1,
+        2,
+        4
+      ],
+      "instruction": "Decide which event comes first, and build the sequence from there.",
+      "sequenceLogic": "Constraint → Need → First Option Fails → Search → Solution → Result",
+      "plotStructure": "Constraint, Need, Obstacle, Search, Solution, Boarding, Outcome",
+      "level": 188,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L188_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "When accounts conflict, what would settle the matter?",
+      "explanation": "The conflict is stated through the two accounts, and the footage is a neutral source. It first excludes Melnyk as the mover and then shows what happened, and the admission confirms it. Liability follows the evidence.",
+      "sentences": [
+        "Ostrowski admitted he had forgotten to set the handbrake.",
+        "Driver Melnyk said Ostrowski had been moving forward.",
+        "The footage showed Melnyk's car stationary.",
+        "It also showed Ostrowski's car rolling backward down a slight slope.",
+        "Driver Ostrowski said the other car had reversed into him.",
+        "Renata assigned liability to Ostrowski.",
+        "Renata requested the lot's security footage.",
+        "Insurance adjuster Renata received two conflicting accounts of a parking-lot collision."
+      ],
+      "correctOrder": [
+        7,
+        4,
+        1,
+        6,
+        2,
+        3,
+        0,
+        5
+      ],
+      "instruction": "Restore the story's natural progression.",
+      "sequenceLogic": "Conflict → Evidence → Finding → Admission → Decision",
+      "plotStructure": "Claim, Counterclaim, Request, Evidence, Explanation, Admission, Decision",
+      "level": 188,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L188_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Each concession gives the other party a reason to move forward.",
+      "explanation": "The pitch meets a concern, and Efua's honesty leads to an explanation of her solution. The investor's request for evidence is answered with data, and the offer reflects the evidence and the remaining risk. Her acceptance turns the condition into a goal.",
+      "sentences": [
+        "The investor liked the product but worried about the user-retention numbers.",
+        "The investor offered a smaller initial investment tied to reaching a retention target.",
+        "Efua accepted and made the target her main milestone.",
+        "Efua admitted that retention dropped after two weeks.",
+        "Founder Efua pitched her language-learning app to an investor.",
+        "The investor asked to see test results before committing.",
+        "She explained that she had been testing a new onboarding flow that might fix it.",
+        "Efua shared early data showing improved retention among the test group."
+      ],
+      "correctOrder": [
+        4,
+        0,
+        3,
+        6,
+        5,
+        7,
+        1,
+        2
+      ],
+      "instruction": "Reorder the sentences to produce the most logical version of events.",
+      "sequenceLogic": "Pitch → Concern → Admission → Explanation → Evidence → Offer → Acceptance",
+      "plotStructure": "Pitch, Concern, Admission, Solution, Request, Evidence, Offer, Acceptance",
+      "level": 188,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L189_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "A suggested fix is rejected for a reason. Which sentence provides it?",
+      "explanation": "The problem and deadline create urgency, and the assistant offers the obvious solution. Hortense tests it and finds it impossible, so she moves to a different one that needs a specific material. The archive costume supplies it, and the result meets the deadline.",
+      "sentences": [
+        "Opening night was in two days.",
+        "The jacket fit, and the panel was invisible from the audience.",
+        "Costume designer Hortense discovered that the lead actor's jacket did not fit.",
+        "The wardrobe assistant suggested letting out the seams.",
+        "Hortense checked the fabric and found there was too little seam allowance.",
+        "Hortense unpicked that costume and built the panel.",
+        "Hortense proposed adding a panel from matching material.",
+        "The only matching fabric was in an older costume from the archive."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        3,
+        4,
+        6,
+        7,
+        5,
+        1
+      ],
+      "instruction": "Arrange the sentences into a coherent account of what happened.",
+      "sequenceLogic": "Problem → Deadline → Suggestion → Test → Alternative → Resource → Result",
+      "plotStructure": "Problem, Deadline, Suggestion, Rejection, Alternative, Resource, Execution, Outcome",
+      "level": 189,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L189_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Which detail explains why two correct measurements can differ?",
+      "explanation": "The conflicting results create a question, and the utility asks for methods. The detection limit explains why Lab A's result is less reliable, and the utility picks the more sensitive method to retest. The confirmation triggers action.",
+      "sentences": [
+        "The utility retested with the more sensitive method.",
+        "The client, a water utility, asked both labs to explain their methods.",
+        "Lab B's method was more sensitive.",
+        "Two labs tested the same water sample for a contaminant and reported different results.",
+        "The retest confirmed the higher level, and the utility began remediation.",
+        "Lab A reported a level within the safe range.",
+        "Lab B reported a level well above the limit.",
+        "Lab A used a method with a higher detection limit that might miss low concentrations."
+      ],
+      "correctOrder": [
+        3,
+        5,
+        6,
+        1,
+        7,
+        2,
+        0,
+        4
+      ],
+      "instruction": "Put the events in the order that makes the story coherent.",
+      "sequenceLogic": "Conflict → Inquiry → Explanation → Decision → Retest → Action",
+      "plotStructure": "Conflict, Result, Result, Inquiry, Explanation, Comparison, Retest, Outcome",
+      "level": 189,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L189_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Which sentence shows why the payment was delayed?",
+      "explanation": "The gap is the symptom, and the comparison finds its source. The sponsor's answer identifies the hold, and the director's missing signature is the real cause. Signing removes the obstacle, and the payment resolves the gap.",
+      "sentences": [
+        "The payment arrived within days, and the gap closed.",
+        "He contacted the sponsor's finance department.",
+        "They said the payment had been held pending a signed invoice.",
+        "Ludovic compared the ledger with the bank statements.",
+        "The gap came from a sponsor's payment that had been recorded but never received.",
+        "The festival's accountant, Ludovic, noticed the budget had a gap of ten thousand euros.",
+        "The festival director had never signed the invoice.",
+        "She signed it that afternoon and returned it."
+      ],
+      "correctOrder": [
+        5,
+        3,
+        4,
+        1,
+        2,
+        6,
+        7,
+        0
+      ],
+      "instruction": "Sort the sentences into the sequence that makes sense.",
+      "sequenceLogic": "Anomaly → Investigation → Source → Inquiry → Cause → Action → Resolution",
+      "plotStructure": "Anomaly, Investigation, Source, Inquiry, Cause, Discovery, Action, Outcome",
+      "level": 189,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L190_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "A statistic can be true and still misleading. Which sentence exposes why?",
+      "explanation": "The claim of doubling is challenged with a specific question, and the data answers it. New users are flat, and the fare change explains the increase. Aurelie's explanation changes the council's understanding, and the request targets the real goal.",
+      "sentences": [
+        "A city's bike-share pilot reported that rides had doubled.",
+        "Aurelie explained to the council that the doubling reflected fare design, not wider adoption.",
+        "Frequent riders had taken shorter trips more often, because the operator had introduced a cheaper short-ride fare.",
+        "Councilor Aurelie questioned whether the increase came from new users or from more trips by existing ones.",
+        "The council asked the operator to add outreach to attract new riders.",
+        "The data showed that new sign-ups were flat.",
+        "The operator sent detailed data."
+      ],
+      "correctOrder": [
+        0,
+        3,
+        6,
+        5,
+        2,
+        1,
+        4
+      ],
+      "instruction": "Restore the story's natural progression.",
+      "sequenceLogic": "Claim → Question → Data → Explanation → Interpretation → Action",
+      "plotStructure": "Claim, Challenge, Data, Finding, Explanation, Interpretation, Outcome",
+      "level": 190,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L190_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Two theories are tested in parallel. Which is confirmed, and which is dismissed?",
+      "explanation": "The drop is the puzzle, and the analysts propose two theories. The form test eliminates one, and the email check confirms the other. The pause is traced to the expired card, and fixing it resumes the campaign and restores sign-ups.",
+      "sentences": [
+        "Priam tested the form and found it working.",
+        "Analysts Priam and Sabra found that website sign-ups dropped sharply on one Tuesday.",
+        "Priam suspected a technical fault in the sign-up form.",
+        "The pause traced back to an expired payment card on the platform's account.",
+        "They updated the card and resumed the campaign.",
+        "Sabra checked the email platform and saw that the campaign had been paused.",
+        "Sign-ups recovered the following Tuesday.",
+        "Sabra suspected the marketing email that usually drove Tuesday sign-ups had not been sent."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        7,
+        0,
+        5,
+        3,
+        4,
+        6
+      ],
+      "instruction": "Rebuild the sequence from beginning to outcome.",
+      "sequenceLogic": "Anomaly → Competing Theories → Test → Confirmation → Root Cause → Fix → Recovery",
+      "plotStructure": "Anomaly, Theory, Theory, Elimination, Confirmation, Root Cause, Fix, Outcome",
+      "level": 190,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L190_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Which stakeholder's concern changes the shape of the final decision?",
+      "explanation": "The observation leads to a report, and the manager's request for data shapes the next step. The numbers move the issue upward, the director's concern balances cost and responsibility, and legal advice sets the form of the response. The redesign is a lasting consequence.",
+      "sentences": [
+        "Quality engineer Rasmus noticed that a small number of kitchen scales displayed weights slightly too high.",
+        "The manager took the numbers to the director.",
+        "The director worried about the cost of a recall but agreed the fault could affect recipes and small businesses.",
+        "The company posted the notice and set up a replacement page.",
+        "Legal advised offering free replacements to anyone who reported a problem and publishing a notice.",
+        "Rasmus tested two hundred units and found the fault in about one in fifty.",
+        "Rasmus reported it to his manager, who asked for more data before acting.",
+        "Rasmus's report was later used to redesign the calibration step."
+      ],
+      "correctOrder": [
+        0,
+        6,
+        5,
+        1,
+        2,
+        4,
+        3,
+        7
+      ],
+      "instruction": "Place the events in the order they must occur.",
+      "sequenceLogic": "Observation → Report → Data → Escalation → Deliberation → Advice → Action → Improvement",
+      "plotStructure": "Observation, Report, Evidence, Escalation, Deliberation, Advice, Action, Outcome",
+      "level": 190,
+      "phase": "mastery"
+    }
+  ]
+}

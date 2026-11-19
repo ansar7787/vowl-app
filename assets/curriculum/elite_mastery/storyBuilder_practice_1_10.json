@@ -1,0 +1,578 @@
+{
+  "gameType": "storyBuilder",
+  "phase": "practice",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "ELT_STORYBUILDER_L1_PRACTICE_Q1",
+      "level": 1,
+      "phase": "practice",
+      "storyContext": "Priya filled the kettle at the sink.",
+      "prompt": "In the narrative sequence (Start, Process, Result, Enjoyment), what event must logically take place immediately after: \"Priya filled the kettle at the sink.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "The water inside began to boil.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The water inside began to boil.",
+      "explanation": "Water cannot boil until the kettle has been filled and heated, and it cannot be poured until it is hot. The tea is only drinkable once it has been made. Each step gives the next one something to work with.",
+      "hint": "Ask which action has to happen before the water can boil.",
+      "plotStructure": "Start, Process, Result, Enjoyment",
+      "sequenceLogic": "Chronological Progression"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L1_PRACTICE_Q2",
+      "level": 1,
+      "phase": "practice",
+      "storyContext": "Tomás reached the bus stop with his backpack.",
+      "prompt": "In the narrative sequence (Arrival, Boarding, Journey, Destination), what event must logically take place immediately after: \"Tomás reached the bus stop with his backpack.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "A blue bus pulled up and opened its doors."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "A blue bus pulled up and opened its doors.",
+      "explanation": "Tomás has to be at the stop before the bus can collect him. Boarding and paying come after the bus arrives, and the journey only starts once he is seated. The trip ends at his destination.",
+      "hint": "A bus can only pick up someone who is already waiting for it.",
+      "plotStructure": "Arrival, Boarding, Journey, Destination",
+      "sequenceLogic": "Chronological Progression"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L1_PRACTICE_Q3",
+      "level": 1,
+      "phase": "practice",
+      "storyContext": "Amara pressed a bean seed into a small pot of soil.",
+      "prompt": "In the narrative sequence (Planting, Care, Growth, Change), what event must logically take place immediately after: \"Amara pressed a bean seed into a small pot of soil.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Amara gave the soil a little water each morning.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Amara gave the soil a little water each morning.",
+      "explanation": "Nothing sprouts until a seed is in the soil, and the seed needs water to wake up. Once the shoot appears, it keeps growing until the pot is too small. The story follows the natural life of a plant.",
+      "hint": "Growth can only appear after something has been planted and looked after.",
+      "plotStructure": "Planting, Care, Growth, Change",
+      "sequenceLogic": "Chronological Progression"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L2_PRACTICE_Q1",
+      "level": 2,
+      "phase": "practice",
+      "storyContext": "Elena wrote a short letter to her grandmother.",
+      "prompt": "In the narrative sequence (Creation, Preparation, Sending, Receiving), what event must logically take place immediately after: \"Elena wrote a short letter to her grandmother.\"?",
+      "options": [
+        "Elena folded the pages and slid them into an envelope.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Elena folded the pages and slid them into an envelope.",
+      "explanation": "The writing creates the thing that can be folded and posted. Mailing comes before delivery, and the grandmother can only read the letter after it has traveled. The order follows how a letter moves from writer to reader.",
+      "hint": "A letter cannot be sealed until there is something to put inside it.",
+      "plotStructure": "Creation, Preparation, Sending, Receiving",
+      "sequenceLogic": "Prerequisite Dependency"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L2_PRACTICE_Q2",
+      "level": 2,
+      "phase": "practice",
+      "storyContext": "Mr. Okafor sat down in the barber's chair.",
+      "prompt": "In the narrative sequence (Arrival, Preparation, Service, Departure), what event must logically take place immediately after: \"Mr. Okafor sat down in the barber's chair.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "The barber wrapped a cape around his shoulders.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The barber wrapped a cape around his shoulders.",
+      "explanation": "The customer has to be seated before any preparation starts, and the cape goes on before the scissors do. Payment marks the end of the service. Each event is a step the next one relies on.",
+      "hint": "Think about what the barber must do before cutting begins and what happens once the cut is done.",
+      "plotStructure": "Arrival, Preparation, Service, Departure",
+      "sequenceLogic": "Chronological Progression"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L2_PRACTICE_Q3",
+      "level": 2,
+      "phase": "practice",
+      "storyContext": "Hana dumped a basket of dirty clothes into the washing machine.",
+      "prompt": "In the narrative sequence (Setup, Operation, Completion, Follow-up), what event must logically take place immediately after: \"Hana dumped a basket of dirty clothes into the washing machine.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "Hana poured in the detergent and pressed the start button.",
+        "They abandoned the current procedure and started again from scratch.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Hana poured in the detergent and pressed the start button.",
+      "explanation": "Loading the machine has to come before starting it, and the buzzer only sounds after the cycle finishes. Damp clothes exist only once washing is over, which is why hanging them is last.",
+      "hint": "Clothes can only be hung up to dry after something has washed them.",
+      "plotStructure": "Setup, Operation, Completion, Follow-up",
+      "sequenceLogic": "Prerequisite Dependency"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L3_PRACTICE_Q1",
+      "level": 3,
+      "phase": "practice",
+      "storyContext": "Jamal carried an armful of novels to the library desk.",
+      "prompt": "In the narrative sequence (Borrowing, Checkout, Departure, Return), what event must logically take place immediately after: \"Jamal carried an armful of novels to the library desk.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "The librarian scanned each book and stamped a due date inside."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The librarian scanned each book and stamped a due date inside.",
+      "explanation": "A book cannot be borrowed until it has been checked out, and it cannot be returned before it has left the building. The due-date stamp connects the borrowing to the return. The sequence shows the full loan cycle.",
+      "hint": "Look for what has to be done at the desk before the books can leave the library.",
+      "plotStructure": "Borrowing, Checkout, Departure, Return",
+      "sequenceLogic": "Chronological Progression"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L3_PRACTICE_Q2",
+      "level": 3,
+      "phase": "practice",
+      "storyContext": "Ingrid noticed her bicycle tire had gone flat.",
+      "prompt": "In the narrative sequence (Problem, Action, Check, Outcome), what event must logically take place immediately after: \"Ingrid noticed her bicycle tire had gone flat.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Ingrid pumped air into the tire until it felt firm."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Ingrid pumped air into the tire until it felt firm.",
+      "explanation": "The flat tire is the problem that starts everything. The pumping addresses it, and pressing on the tire confirms the fix worked. Only after that is it sensible to ride.",
+      "hint": "Ask what must be true about the tire before Ingrid can safely ride.",
+      "plotStructure": "Problem, Action, Check, Outcome",
+      "sequenceLogic": "Problem → Response → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L3_PRACTICE_Q3",
+      "level": 3,
+      "phase": "practice",
+      "storyContext": "Rahul spread butter across two slices of bread.",
+      "prompt": "In the narrative sequence (Base, Filling, Assembly, Serving), what event must logically take place immediately after: \"Rahul spread butter across two slices of bread.\"?",
+      "options": [
+        "Rahul layered cheese and tomato on one of them.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Rahul layered cheese and tomato on one of them.",
+      "explanation": "Butter goes on the bread first because it is the base, and the fillings need a slice to sit on. Closing the sandwich makes it ready to cut. Serving comes last because there is nothing to serve until it is complete.",
+      "hint": "A sandwich must have all its parts before it can be cut and shared.",
+      "plotStructure": "Base, Filling, Assembly, Serving",
+      "sequenceLogic": "Prerequisite Dependency"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L4_PRACTICE_Q1",
+      "level": 4,
+      "phase": "practice",
+      "storyContext": "Nadia plugged her phone into the charger.",
+      "prompt": "In the narrative sequence (Start, Signal, Completion, Wrap-up), what event must logically take place immediately after: \"Nadia plugged her phone into the charger.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "The screen showed a small lightning bolt.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The screen showed a small lightning bolt.",
+      "explanation": "Plugging in starts the process, the lightning bolt confirms it is working, and time passes until the battery is full. Unplugging comes after the goal is reached.",
+      "hint": "Charging must begin before the battery can fill up.",
+      "plotStructure": "Start, Signal, Completion, Wrap-up",
+      "sequenceLogic": "Chronological Progression"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L4_PRACTICE_Q2",
+      "level": 4,
+      "phase": "practice",
+      "storyContext": "Mateo opened a can of white paint and stirred it.",
+      "prompt": "In the narrative sequence (Preparation, Work, Completion, Cleanup), what event must logically take place immediately after: \"Mateo opened a can of white paint and stirred it.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "Mateo dipped his brush and ran it along the first fence board."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Mateo dipped his brush and ran it along the first fence board.",
+      "explanation": "Paint has to be opened and mixed before it can be used, and painting the boards happens one at a time until the fence is done. Cleaning the brush is the last task because it would be pointless to clean it before finishing.",
+      "hint": "The brush is only cleaned once the painting job is done.",
+      "plotStructure": "Preparation, Work, Completion, Cleanup",
+      "sequenceLogic": "Preparation → Execution → Completion"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L4_PRACTICE_Q3",
+      "level": 4,
+      "phase": "practice",
+      "storyContext": "Chloe arrived at the bakery before sunrise.",
+      "prompt": "In the narrative sequence (Arrival, Preparation, Waiting, Result), what event must logically take place immediately after: \"Chloe arrived at the bakery before sunrise.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "She mixed flour, water, and yeast into a soft dough."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "She mixed flour, water, and yeast into a soft dough.",
+      "explanation": "Chloe has to get to work before she can begin. Dough is made, left to rise, and only then baked, so the loaves cannot appear before the earlier stages. The customers arriving at the end shows the whole process took hours.",
+      "hint": "Dough needs to exist before it can rise, and it must rise before it can bake.",
+      "plotStructure": "Arrival, Preparation, Waiting, Result",
+      "sequenceLogic": "Preparation → Execution → Completion"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L5_PRACTICE_Q1",
+      "level": 5,
+      "phase": "practice",
+      "storyContext": "Dark clouds gathered over the market.",
+      "prompt": "In the narrative sequence (Warning, Preparation, Event, Payoff), what event must logically take place immediately after: \"Dark clouds gathered over the market.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Farid pulled his umbrella out of his bag."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Farid pulled his umbrella out of his bag.",
+      "explanation": "The clouds are the warning that prompts Farid to take out his umbrella. He opens it as the rain starts, and the last sentence shows the payoff for being prepared.",
+      "hint": "Farid would not reach for an umbrella unless he had a reason to.",
+      "plotStructure": "Warning, Preparation, Event, Payoff",
+      "sequenceLogic": "Cause → Reaction → Consequence"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L5_PRACTICE_Q2",
+      "level": 5,
+      "phase": "practice",
+      "storyContext": "Dr. Silva called Yusuf's name in the waiting room.",
+      "prompt": "In the narrative sequence (Call, Entry, Examination, Planning), what event must logically take place immediately after: \"Dr. Silva called Yusuf's name in the waiting room.\"?",
+      "options": [
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Yusuf followed her into a small office with a chair.",
+        "They abandoned the current procedure and started again from scratch.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Yusuf followed her into a small office with a chair.",
+      "explanation": "A patient has to be called in before being examined. The dentist checks his teeth once he is seated, and the appointment for the next visit is arranged at the end, when she knows what he needs.",
+      "hint": "Ask what happens before an examination can begin and what happens after it ends.",
+      "plotStructure": "Call, Entry, Examination, Planning",
+      "sequenceLogic": "Chronological Progression"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L5_PRACTICE_Q3",
+      "level": 5,
+      "phase": "practice",
+      "storyContext": "Lucía was lost in a quiet neighborhood.",
+      "prompt": "In the narrative sequence (Problem, Request, Answer, Success), what event must logically take place immediately after: \"Lucía was lost in a quiet neighborhood.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "She stopped a passing cyclist and asked for directions to the train station.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "She stopped a passing cyclist and asked for directions to the train station.",
+      "explanation": "Lucía's problem comes first, and it is what motivates her to ask. The answer supplies the information she lacks. Only with that information can she walk the route and reach the station.",
+      "hint": "Directions can only be followed after they have been given.",
+      "plotStructure": "Problem, Request, Answer, Success",
+      "sequenceLogic": "Problem → Response → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L6_PRACTICE_Q1",
+      "level": 6,
+      "phase": "practice",
+      "storyContext": "The community soccer team gathered on the field at six.",
+      "prompt": "In the narrative sequence (Gathering, Setup, Warm-up, Main Activity), what event must logically take place immediately after: \"The community soccer team gathered on the field at six.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "The coach handed out orange vests.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The coach handed out orange vests.",
+      "explanation": "The players must be on the field before the coach can give instructions. Vests come first, passing warms them up, and the match is the main activity that the earlier steps prepare for.",
+      "hint": "A team match needs teams, and teams need people who are already on the field.",
+      "plotStructure": "Gathering, Setup, Warm-up, Main Activity",
+      "sequenceLogic": "Preparation → Execution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L6_PRACTICE_Q2",
+      "level": 6,
+      "phase": "practice",
+      "storyContext": "Kwame pushed a wooden rod into the lake bottom and tied a line to it.",
+      "prompt": "In the narrative sequence (Setup, Trigger, Action, Catch), what event must logically take place immediately after: \"Kwame pushed a wooden rod into the lake bottom and tied a line to it.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "A fish tugged at the bait on the hook.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "They abandoned the current procedure and started again from scratch."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "A fish tugged at the bait on the hook.",
+      "explanation": "The line has to be set up before a fish can bite. The tug is what prompts Kwame to pull and reel. The fish appears on the dock as the result of his action.",
+      "hint": "Something has to grab the bait before Kwame can reel anything in.",
+      "plotStructure": "Setup, Trigger, Action, Catch",
+      "sequenceLogic": "Cause → Reaction → Consequence"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L6_PRACTICE_Q3",
+      "level": 6,
+      "phase": "practice",
+      "storyContext": "Sofia chose her best photo from the trip.",
+      "prompt": "In the narrative sequence (Selection, Submission, Confirmation, Delivery), what event must logically take place immediately after: \"Sofia chose her best photo from the trip.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "Sofia uploaded it to the shop's printing website."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Sofia uploaded it to the shop's printing website.",
+      "explanation": "Sofia has to select a photo before she can upload it. The preview and confirmation come once the file is in the system, and the print can only arrive after everything has been confirmed.",
+      "hint": "The shop cannot print a photo it has not received.",
+      "plotStructure": "Selection, Submission, Confirmation, Delivery",
+      "sequenceLogic": "Prerequisite Dependency"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L7_PRACTICE_Q1",
+      "level": 7,
+      "phase": "practice",
+      "storyContext": "Ayesha stood at the hotel reception with her suitcase.",
+      "prompt": "In the narrative sequence (Arrival, Verification, Completion, Access), what event must logically take place immediately after: \"Ayesha stood at the hotel reception with her suitcase.\"?",
+      "options": [
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "The clerk typed in her name and found the booking.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The clerk typed in her name and found the booking.",
+      "explanation": "A guest checks in by arriving, giving a name, and completing paperwork. The key card is the reward for finishing check-in, and only with it can she go up to the room.",
+      "hint": "A key card is issued after the clerk confirms who the guest is.",
+      "plotStructure": "Arrival, Verification, Completion, Access",
+      "sequenceLogic": "Prerequisite Dependency"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L7_PRACTICE_Q2",
+      "level": 7,
+      "phase": "practice",
+      "storyContext": "Oliver unlocked the shutters of his flower stall at dawn.",
+      "prompt": "In the narrative sequence (Opening, Display, Customer Request, Sale), what event must logically take place immediately after: \"Oliver unlocked the shutters of his flower stall at dawn.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Oliver arranged the buckets of tulips in neat rows.",
+        "They abandoned the current procedure and started again from scratch."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Oliver arranged the buckets of tulips in neat rows.",
+      "explanation": "The stall has to open and the goods must be displayed before a customer can choose anything. Wrapping happens after a sale has been requested, so it comes last.",
+      "hint": "Think about what a shopkeeper must set up before customers can buy.",
+      "plotStructure": "Opening, Display, Customer Request, Sale",
+      "sequenceLogic": "Chronological Progression"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L7_PRACTICE_Q3",
+      "level": 7,
+      "phase": "practice",
+      "storyContext": "Lena taped the bottom of a cardboard box.",
+      "prompt": "In the narrative sequence (Setup, Filling, Sealing, Labeling), what event must logically take place immediately after: \"Lena taped the bottom of a cardboard box.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "She wrapped each glass in newspaper and placed it inside."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "She wrapped each glass in newspaper and placed it inside.",
+      "explanation": "The bottom is taped first so items do not fall out. The glasses are wrapped before they are packed, and the box is sealed only when it is full. Labeling comes last because the box is now closed and ready to be moved.",
+      "hint": "The box has to be filled before it makes sense to seal it.",
+      "plotStructure": "Setup, Filling, Sealing, Labeling",
+      "sequenceLogic": "Preparation → Execution → Completion"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L8_PRACTICE_Q1",
+      "level": 8,
+      "phase": "practice",
+      "storyContext": "Idris chose a new laptop on an electronics website.",
+      "prompt": "In the narrative sequence (Selection, Purchase, Confirmation, Delivery), what event must logically take place immediately after: \"Idris chose a new laptop on an electronics website.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Idris typed his address and payment details at the checkout page.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Idris typed his address and payment details at the checkout page.",
+      "explanation": "A buyer picks an item first, provides details to purchase it, and receives confirmation. The courier is the physical result. The story follows one transaction from decision to doorstep.",
+      "hint": "A delivery can only happen once an order has been placed and confirmed.",
+      "plotStructure": "Selection, Purchase, Confirmation, Delivery",
+      "sequenceLogic": "Prerequisite Dependency"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L8_PRACTICE_Q2",
+      "level": 8,
+      "phase": "practice",
+      "storyContext": "Marta and her brother carried a tent to a grassy clearing.",
+      "prompt": "In the narrative sequence (Arrival, Assembly, Stabilizing, Settling In), what event must logically take place immediately after: \"Marta and her brother carried a tent to a grassy clearing.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Marta and her brother pushed the poles through the fabric sleeves.",
+        "They abandoned the current procedure and started again from scratch."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Marta and her brother pushed the poles through the fabric sleeves.",
+      "explanation": "Building the tent starts at the site, then the poles give it shape, and stakes hold it up. Sleeping bags need a finished tent to go in. The order follows the construction.",
+      "hint": "Furniture goes inside a tent only after the tent stands.",
+      "plotStructure": "Arrival, Assembly, Stabilizing, Settling In",
+      "sequenceLogic": "Preparation → Execution → Completion"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L8_PRACTICE_Q3",
+      "level": 8,
+      "phase": "practice",
+      "storyContext": "Zainab sat down at her desk with a pencil.",
+      "prompt": "In the narrative sequence (Start, Understanding, Response, Review), what event must logically take place immediately after: \"Zainab sat down at her desk with a pencil.\"?",
+      "options": [
+        "Zainab read the first exam question twice.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Zainab read the first exam question twice.",
+      "explanation": "The exam begins when Zainab is ready to work. Reading the question comes before answering, and reviewing the answer makes sense only after it has been written.",
+      "hint": "An answer needs a question, and a check needs an answer.",
+      "plotStructure": "Start, Understanding, Response, Review",
+      "sequenceLogic": "Chronological Progression"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L9_PRACTICE_Q1",
+      "level": 9,
+      "phase": "practice",
+      "storyContext": "Pavel wrote a shopping list on the back of an envelope.",
+      "prompt": "In the narrative sequence (Planning, Selection, Payment, Departure), what event must logically take place immediately after: \"Pavel wrote a shopping list on the back of an envelope.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Pavel walked along the aisles and picked items off the shelves.",
+        "They abandoned the current procedure and started again from scratch.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Pavel walked along the aisles and picked items off the shelves.",
+      "explanation": "The list guides what Pavel selects. Items must be in his hands before they can be scanned, and packing happens once they are paid for. The order follows the customer's path through the store.",
+      "hint": "Payment can only be calculated after items have been chosen.",
+      "plotStructure": "Planning, Selection, Payment, Departure",
+      "sequenceLogic": "Chronological Progression"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L9_PRACTICE_Q2",
+      "level": 9,
+      "phase": "practice",
+      "storyContext": "Isabel warmed up her voice by humming scales.",
+      "prompt": "In the narrative sequence (Preparation, Model, Attempt, Improvement), what event must logically take place immediately after: \"Isabel warmed up her voice by humming scales.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Her teacher played a short melody on the piano."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Her teacher played a short melody on the piano.",
+      "explanation": "The warm-up prepares her voice. The melody must be played before she can copy it, and the mistake gives the teacher a reason to ask for another attempt. The correction only makes sense because of the earlier error.",
+      "hint": "A student cannot repeat a melody before hearing it.",
+      "plotStructure": "Preparation, Model, Attempt, Improvement",
+      "sequenceLogic": "Attempt → Correction → Success"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L9_PRACTICE_Q3",
+      "level": 9,
+      "phase": "practice",
+      "storyContext": "Björn stretched a blank canvas over a wooden frame.",
+      "prompt": "In the narrative sequence (Foundation, Design, Creation, Display), what event must logically take place immediately after: \"Björn stretched a blank canvas over a wooden frame.\"?",
+      "options": [
+        "He sketched a mountain outline in pencil.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "He sketched a mountain outline in pencil.",
+      "explanation": "The frame and canvas provide the surface, the sketch guides the paint, and the drying finishes the work. Hanging the picture is the last step because it needs a complete painting.",
+      "hint": "A painting cannot be hung until the paint has dried.",
+      "plotStructure": "Foundation, Design, Creation, Display",
+      "sequenceLogic": "Preparation → Execution → Completion"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L10_PRACTICE_Q1",
+      "level": 10,
+      "phase": "practice",
+      "storyContext": "The clinic receptionist asked Beatriz to fill out a form.",
+      "prompt": "In the narrative sequence (Request, Input, Assessment, Treatment), what event must logically take place immediately after: \"The clinic receptionist asked Beatriz to fill out a form.\"?",
+      "options": [
+        "Beatriz described her cough on the form and handed it back.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Beatriz described her cough on the form and handed it back.",
+      "explanation": "The form gives the clinic information. The nurse uses it, and the doctor relies on both. Medicine is prescribed last because it depends on everything learned before.",
+      "hint": "A doctor prescribes based on information gathered earlier in the visit.",
+      "plotStructure": "Request, Input, Assessment, Treatment",
+      "sequenceLogic": "Information → Assessment → Decision"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L10_PRACTICE_Q2",
+      "level": 10,
+      "phase": "practice",
+      "storyContext": "Damon found a lost glove on the train platform.",
+      "prompt": "In the narrative sequence (Discovery, Handover, Storage, Reunion), what event must logically take place immediately after: \"Damon found a lost glove on the train platform.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Damon handed it to the station attendant.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Damon handed it to the station attendant.",
+      "explanation": "Finding comes first, and handing over makes the glove the station's responsibility. Storing it makes it retrievable. The owner arrives after that.",
+      "hint": "The owner can only collect the glove after it has been stored somewhere they can ask about.",
+      "plotStructure": "Discovery, Handover, Storage, Reunion",
+      "sequenceLogic": "Discovery → Action → Consequence"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L10_PRACTICE_Q3",
+      "level": 10,
+      "phase": "practice",
+      "storyContext": "Hugo tucked a spare charger into his carry-on.",
+      "prompt": "In the narrative sequence (Packing, Screening, Clearance, Waiting), what event must logically take place immediately after: \"Hugo tucked a spare charger into his carry-on.\"?",
+      "options": [
+        "At the airport, he placed the bag on the scanner belt.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "They abandoned the current procedure and started again from scratch.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "At the airport, he placed the bag on the scanner belt.",
+      "explanation": "Packing happens at home before the airport. Security screening happens before he can reach the gate, so the gate comes last.",
+      "hint": "Passing security depends on the bag having already been packed.",
+      "plotStructure": "Packing, Screening, Clearance, Waiting",
+      "sequenceLogic": "Chronological Progression"
+    }
+  ]
+}

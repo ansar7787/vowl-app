@@ -1,0 +1,792 @@
+{
+  "gameType": "storyBuilder",
+  "phase": "mastery",
+  "batchIndex": 7,
+  "levels": "61-70",
+  "quests": [
+    {
+      "id": "ELT_STORYBUILDER_L61_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "In a conversation, each reply depends on what the other person just said.",
+      "explanation": "Dina's request opens the exchange, and Marek's answer gives a condition. Dina's time responds to his offer, his text acts on the agreed time, and the arrival is the outcome of everyone doing their part.",
+      "sentences": [
+        "They reached the station with time to spare.",
+        "Dina said she would be ready by seven-thirty.",
+        "Dina asked Marek whether he could drive her to the station on Friday.",
+        "Marek texted that he was parked outside.",
+        "Marek said he had an early meeting but could leave twenty minutes sooner."
+      ],
+      "correctOrder": [
+        2,
+        4,
+        1,
+        3,
+        0
+      ],
+      "instruction": "Reconstruct the story so that every event follows from the one before it.",
+      "sequenceLogic": "Request → Response → Agreement → Follow-up",
+      "plotStructure": "Request, Negotiation, Agreement, Action, Result",
+      "level": 61,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L61_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "An approval can only come after the request has been made visible to the approver.",
+      "explanation": "The request leads to a condition, and the condition leads to acceptance. Writing on the calendar is what allows the supervisor to see and approve it, and the final sentence shows the swap in action.",
+      "sentences": [
+        "Prisha accepted and wrote the swap on the team calendar.",
+        "Their supervisor saw the entry and approved it.",
+        "Prisha asked her colleague Wim to cover her phone shift on Thursday.",
+        "On Thursday, Wim answered calls while Prisha attended her daughter's recital.",
+        "Wim agreed on the condition that she cover his Monday."
+      ],
+      "correctOrder": [
+        2,
+        4,
+        0,
+        1,
+        3
+      ],
+      "instruction": "Place the events in the order they must occur.",
+      "sequenceLogic": "Request → Conditional Response → Acceptance → Approval → Result",
+      "plotStructure": "Request, Condition, Agreement, Approval, Outcome",
+      "level": 61,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L61_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Who knows what at each moment? Follow the parcel and the information about it.",
+      "explanation": "Achille's mistake starts the chain, Mrs. Osei notices it, and her failed delivery leads to the note. Keiko only knows about the parcel once she reads it, so collecting and thanking her come last.",
+      "sentences": [
+        "She carried it to the correct apartment, but nobody answered.",
+        "She collected the parcel and brought Mrs. Osei a plate of dumplings.",
+        "The neighbor, Mrs. Osei, noticed the name on the label did not match hers.",
+        "Keiko came home and read the note.",
+        "She left a note on the door saying where the parcel was.",
+        "Delivery driver Achille left a parcel with the wrong neighbor."
+      ],
+      "correctOrder": [
+        5,
+        2,
+        0,
+        4,
+        3,
+        1
+      ],
+      "instruction": "Reorder the sentences to produce the most logical version of events.",
+      "sequenceLogic": "Error → Correction → Communication → Resolution",
+      "plotStructure": "Mistake, Discovery, Attempt, Message, Gratitude, Resolution",
+      "level": 61,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L62_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "A misunderstanding cannot be discovered until its result is visible.",
+      "explanation": "The request is the origin, but the crackling line creates the misunderstanding. The wrong purchase reveals it, and only then does Tessa clarify. Bram's second trip is the correction.",
+      "sentences": [
+        "He arrived with a large packet of mints.",
+        "Bram walked back to the shop and returned with milk.",
+        "The line crackled, and Bram understood the word as \"mints.\"",
+        "Tessa phoned Bram and asked him to pick up milk on the way home.",
+        "Tessa laughed and repeated what she had said."
+      ],
+      "correctOrder": [
+        3,
+        2,
+        0,
+        4,
+        1
+      ],
+      "instruction": "Decide which event comes first, and build the sequence from there.",
+      "sequenceLogic": "Request → Misunderstanding → Discovery → Correction",
+      "plotStructure": "Request, Misunderstanding, Revelation, Clarification, Correction",
+      "level": 62,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L62_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Each proposal is answered by an objection or a solution. Match them.",
+      "explanation": "Naveen's suggestion is met by Olga's objection, which leads to his alternative. Sipho's conflict is a second objection, Olga's new time answers it, and Sipho's confirmation closes the discussion.",
+      "sentences": [
+        "Sipho confirmed he could make it after four.",
+        "Naveen suggested moving the team meeting to Tuesday.",
+        "Olga proposed shifting the meeting to late afternoon.",
+        "Olga pointed out that Tuesday clashed with the client call.",
+        "Everyone agreed except Sipho, who had a dentist appointment.",
+        "Naveen offered Wednesday instead."
+      ],
+      "correctOrder": [
+        1,
+        3,
+        5,
+        4,
+        2,
+        0
+      ],
+      "instruction": "Arrange the sentences into a coherent account of what happened.",
+      "sequenceLogic": "Proposal → Objection → Counter-proposal → Objection → Solution",
+      "plotStructure": "Proposal, Objection, Revision, Second Objection, Solution, Agreement",
+      "level": 62,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L62_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Track who knows the secret and who does not.",
+      "explanation": "Lior's plan comes first, and Noa becomes his accomplice. Aviva has no information, so her suspicion only arises from Noa's behavior. The walk carries out the plan and leads to the reveal.",
+      "sentences": [
+        "Lior secretly planned a surprise party for Aviva's birthday.",
+        "Aviva grew suspicious when Noa kept checking the time.",
+        "Aviva walked in to a room full of friends.",
+        "Noa invited Aviva to a long lunch.",
+        "He asked her sister Noa to keep Aviva busy until seven.",
+        "At seven, Noa suggested a walk that ended at Lior's door."
+      ],
+      "correctOrder": [
+        0,
+        4,
+        3,
+        1,
+        5,
+        2
+      ],
+      "instruction": "Sort the sentences into the sequence that makes sense.",
+      "sequenceLogic": "Secret Plan → Cooperation → Suspicion → Revelation",
+      "plotStructure": "Setup, Delegation, Execution, Tension, Reveal, Climax",
+      "level": 62,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L63_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "What causes the problem is a shared assumption, not a single mistake.",
+      "explanation": "The mutual assumption is the hidden cause. The missing fish reveals a problem, the manager's question exposes it, and both cooks recognize their error. The manager then acts to fix it.",
+      "sentences": [
+        "By afternoon, the fish still had not arrived.",
+        "Two cooks in the restaurant kitchen each thought the other had ordered the fish.",
+        "The manager called the supplier and arranged an emergency delivery.",
+        "The manager asked who had placed the order.",
+        "Both cooks realized nobody had."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        3,
+        4,
+        2
+      ],
+      "instruction": "Place the events in the order they must occur.",
+      "sequenceLogic": "Assumption → Problem → Inquiry → Realization → Solution",
+      "plotStructure": "Cause, Discovery, Inquiry, Realization, Resolution",
+      "level": 63,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L63_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Offering help usually comes before the other person shares the problem.",
+      "explanation": "Ines's observation motivates her offer, and Bertrand's admission gives her the information she needs. Her solution answers the specific problem, and the coffee is his response to being helped.",
+      "sentences": [
+        "Bertrand finished the report and thanked her with coffee the next morning.",
+        "Ines showed him how to convert the file format.",
+        "He admitted that the charts would not load.",
+        "She asked whether he needed help with the report.",
+        "Ines noticed that her teammate Bertrand was still at his desk at nine at night."
+      ],
+      "correctOrder": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "instruction": "Rebuild the sequence from beginning to outcome.",
+      "sequenceLogic": "Observation → Offer → Disclosure → Help → Gratitude",
+      "plotStructure": "Observation, Offer, Disclosure, Help, Thanks",
+      "level": 63,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L63_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Notice how indirect communication creates a second problem.",
+      "explanation": "The noise is the first issue, and the indirect complaint sets off a chain. The landlord's message leaves Gemma to guess, and her coldness creates a new problem. Faisal's direct question is what finally resolves it.",
+      "sentences": [
+        "The landlord passed the complaint to Gemma without naming who made it.",
+        "Gemma guessed it was Faisal and became cold toward him.",
+        "Puzzled by her attitude, Faisal finally asked her what was wrong.",
+        "Her neighbor Faisal complained to the landlord instead of speaking to her.",
+        "Upstairs tenant Gemma ran her washing machine late at night.",
+        "They cleared up the misunderstanding and agreed on quiet hours."
+      ],
+      "correctOrder": [
+        4,
+        3,
+        0,
+        1,
+        2,
+        5
+      ],
+      "instruction": "Restore the story's natural progression.",
+      "sequenceLogic": "Conflict → Indirect Communication → Misunderstanding → Direct Communication → Resolution",
+      "plotStructure": "Conflict, Complaint, Misreading, Confrontation, Resolution, Agreement",
+      "level": 63,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L64_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "A response can change after a person sees evidence.",
+      "explanation": "The advice creates a disagreement. The video answers his argument with evidence, and his silence shows he has been persuaded. The behavior in the match shows the change.",
+      "sentences": [
+        "Coach Naledi told Emil that he should pass more often.",
+        "In the next match, he passed twice and set up a goal.",
+        "Emil watched them and said nothing.",
+        "She showed him video of three moves where a pass would have created an open shot.",
+        "Emil argued that he scored most of the team's goals."
+      ],
+      "correctOrder": [
+        0,
+        4,
+        3,
+        2,
+        1
+      ],
+      "instruction": "Put the events in the order that makes the story coherent.",
+      "sequenceLogic": "Advice → Objection → Evidence → Acceptance → Action",
+      "plotStructure": "Advice, Disagreement, Evidence, Reflection, Outcome",
+      "level": 64,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L64_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "What method helps a group settle a disagreement without a vote?",
+      "explanation": "The assignment sets the shared task, and the disagreement follows. Testing both ideas gives them evidence, and the balanced draft leads to compromise.",
+      "sentences": [
+        "Ayaan and Bea wanted lots of text, while Cosmo wanted large images.",
+        "They decided to test both styles on a rough draft.",
+        "The draft with balanced text and images looked the clearest.",
+        "Ayaan, Bea, and Cosmo were assigned to create a class poster.",
+        "They agreed to combine the approaches."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        1,
+        2,
+        4
+      ],
+      "instruction": "Reorder the sentences to produce the most logical version of events.",
+      "sequenceLogic": "Task → Disagreement → Test → Compromise",
+      "plotStructure": "Task, Conflict, Experiment, Result, Agreement",
+      "level": 64,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L64_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "A disagreement ends when one side gets information the other has.",
+      "explanation": "The request meets a cost, and the client's insistence shows he lacks information. Zaid's drawings supply it, and Lindqvist's change of mind allows the work to proceed.",
+      "sentences": [
+        "Zaid started work the next morning.",
+        "Zaid showed him the drawings marking a support beam behind the wall.",
+        "Lindqvist agreed to the cost after seeing the beam.",
+        "Lindqvist insisted the change was small.",
+        "The builder, Zaid, said it would cost extra and take two days.",
+        "Mr. Lindqvist asked the builder to move the kitchen window."
+      ],
+      "correctOrder": [
+        5,
+        4,
+        3,
+        1,
+        2,
+        0
+      ],
+      "instruction": "Arrange the events so each action logically leads to the next.",
+      "sequenceLogic": "Request → Objection → Insistence → Evidence → Agreement → Action",
+      "plotStructure": "Request, Resistance, Conflict, Evidence, Agreement, Action",
+      "level": 64,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L65_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "What did each person believe at the moment Jonah arrived?",
+      "explanation": "The invitation is unclear, so Jonah interprets it his own way. His trays create the collision of expectations, Marisol's explanation reveals the gap, and the shared food is the friendly resolution.",
+      "sentences": [
+        "They laughed and shared the trays with the other guests.",
+        "Marisol sent invitations for a barbecue on Saturday.",
+        "Marisol, surprised, explained that she had planned everything herself.",
+        "He arrived with three trays of food.",
+        "Her friend Jonah understood it was a potluck."
+      ],
+      "correctOrder": [
+        1,
+        4,
+        3,
+        2,
+        0
+      ],
+      "instruction": "Place the events in the order they must occur.",
+      "sequenceLogic": "Message → Misinterpretation → Collision → Clarification → Resolution",
+      "plotStructure": "Invitation, Misreading, Surprise, Clarification, Resolution",
+      "level": 65,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L65_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "A shared problem can lead to cooperation rather than competition.",
+      "explanation": "The collision creates the conflict, and their shared need reveals the common interest. Scanning is a joint solution, and returning the book is the final courtesy.",
+      "sentences": [
+        "Both needed the same chapter for Monday's exam.",
+        "The book went back on the shelf for the next reader.",
+        "The file reached both inboxes within minutes.",
+        "Two students reached for the last copy of a textbook at the same moment.",
+        "They carried the book to the scanner together.",
+        "One suggested scanning it and sharing the file."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        5,
+        4,
+        2,
+        1
+      ],
+      "instruction": "Restore the story's natural progression.",
+      "sequenceLogic": "Conflict → Discovery of Shared Need → Cooperation → Result",
+      "plotStructure": "Conflict, Realization, Proposal, Action, Result, Wrap-up",
+      "level": 65,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L65_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Each question is shaped by the previous answer.",
+      "explanation": "The opening question leads to Darius's explanation, and Mr. Vaughn builds on it. Darius's description supplies evidence, and Ms. Rojas connects that evidence to the job. The invitation is the result.",
+      "sentences": [
+        "Darius described coordinating doctors, medicine, and schedules.",
+        "Another panelist, Mr. Vaughn, asked what he had learned from that time.",
+        "Panel chair Ms. Rojas opened the interview by asking Darius about a gap in his résumé.",
+        "Ms. Rojas noted that this was exactly the skill the role required.",
+        "The panel invited him back for a second interview.",
+        "Darius explained that he had cared for a sick relative."
+      ],
+      "correctOrder": [
+        2,
+        5,
+        1,
+        0,
+        3,
+        4
+      ],
+      "instruction": "Work out the order in which these events unfold.",
+      "sequenceLogic": "Question → Answer → Follow-up → Evidence → Evaluation → Outcome",
+      "plotStructure": "Question, Answer, Follow-up, Elaboration, Evaluation, Outcome",
+      "level": 65,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L66_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "A service chain begins with a report and ends with feedback.",
+      "explanation": "The complaint starts the process, Piotr routes it, and Salma diagnoses it. The repair follows the diagnosis, and the guest's call is the feedback.",
+      "sentences": [
+        "She tightened it, and the noise stopped.",
+        "The engineer, Salma, found a loose panel rattling.",
+        "A guest called the front desk to report that the air conditioner was noisy.",
+        "Clerk Piotr offered to send someone to check.",
+        "The guest called back to thank the front desk."
+      ],
+      "correctOrder": [
+        2,
+        3,
+        1,
+        0,
+        4
+      ],
+      "instruction": "Order these sentences so the situation develops logically.",
+      "sequenceLogic": "Report → Routing → Diagnosis → Repair → Feedback",
+      "plotStructure": "Complaint, Response, Investigation, Fix, Feedback",
+      "level": 66,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L66_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Follow each question to its answer and see what it unlocks.",
+      "explanation": "Odile's call for volunteers starts the exchange, and Marlon's reply shows availability. Odile's conditional offer invites Jun's, and Marlon's question about the meeting place leads to the pin.",
+      "sentences": [
+        "Marlon asked where to meet, and Odile sent a map pin.",
+        "Odile posted in the group chat asking who could join Sunday's cleanup.",
+        "Jun volunteered the bags.",
+        "On Sunday, all three arrived within minutes of each other.",
+        "Odile said she would bring gloves if someone else brought bags.",
+        "Marlon replied that he could come after noon."
+      ],
+      "correctOrder": [
+        1,
+        5,
+        4,
+        2,
+        0,
+        3
+      ],
+      "instruction": "Decide which event comes first, and build the sequence from there.",
+      "sequenceLogic": "Call → Reply → Coordination → Detail → Result",
+      "plotStructure": "Call, Reply, Coordination, Commitment, Logistics, Result",
+      "level": 66,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L66_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Information passed only in speech can be lost. What is the follow-up?",
+      "explanation": "The handover sets the responsibility, and the verbal reminder is the only record. The distraction causes the lapse, and the check-in reveals it. The written sheet is the lasting fix.",
+      "sentences": [
+        "Tuva handed the flower shop's evening shift to Colm.",
+        "A power flicker distracted Colm, and he forgot.",
+        "They began writing time-sensitive tasks on the handover sheet.",
+        "Colm boxed it immediately, and a driver delivered it before the reception ended.",
+        "She mentioned that a wedding bouquet had to be boxed by eight.",
+        "At nine, Tuva phoned to check in and asked about the bouquet."
+      ],
+      "correctOrder": [
+        0,
+        4,
+        1,
+        5,
+        3,
+        2
+      ],
+      "instruction": "Put the events in the order that makes the story coherent.",
+      "sequenceLogic": "Handover → Lapse → Discovery → Recovery → Improvement",
+      "plotStructure": "Handover, Instruction, Lapse, Discovery, Recovery, Improvement",
+      "level": 66,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L67_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "The driver can only adjust the route once he has certain information.",
+      "explanation": "The booking creates the trip, and the confirmation begins the conversation. Yasmin's timing is the key information, which explains Kwesi's route choice. The arrival is the result.",
+      "sentences": [
+        "Yasmin booked a ride to the airport.",
+        "Kwesi took a route that avoided the usual congestion.",
+        "They reached the terminal with time to check in.",
+        "Yasmin mentioned that her flight left in two hours.",
+        "The driver, Kwesi, arrived and confirmed the destination."
+      ],
+      "correctOrder": [
+        0,
+        4,
+        3,
+        1,
+        2
+      ],
+      "instruction": "Sort the sentences into the sequence that makes sense.",
+      "sequenceLogic": "Request → Information → Adaptation → Result",
+      "plotStructure": "Booking, Confirmation, Information, Decision, Result",
+      "level": 67,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L67_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "A disagreement about the past can only be settled with evidence.",
+      "explanation": "Thea's claim starts the dispute, and Ansel's denial deepens it. The message is the evidence that resolves it, and his apology and offer are the response. Pizza is the reconciliation.",
+      "sentences": [
+        "Ansel insisted he had only said maybe.",
+        "Ansel reread it and saw that he had written \"yes, sure.\"",
+        "He apologized and offered to come the next day.",
+        "Thea told her brother Ansel that he had promised to help her move.",
+        "Thea showed him the text message.",
+        "Thea accepted and ordered pizza for both of them."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        4,
+        1,
+        2,
+        5
+      ],
+      "instruction": "Reconstruct the story so that every event follows from the one before it.",
+      "sequenceLogic": "Claim → Denial → Evidence → Acceptance → Reconciliation",
+      "plotStructure": "Claim, Denial, Evidence, Realization, Apology, Reconciliation",
+      "level": 67,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L67_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "The best solution may borrow from both sides after testing.",
+      "explanation": "Each engineer's idea answers the other's, and the prototypes provide evidence. The test reveals the weakness in one design, so a targeted compromise is possible.",
+      "sentences": [
+        "Ravindra proposed a wired link only at those points.",
+        "They built small prototypes of both.",
+        "Ravindra objected that wiring would slow installation and suggested wireless.",
+        "Sophie accepted, and the team adopted the hybrid design.",
+        "Testing showed the wireless version lost signal near metal beams.",
+        "Sophie proposed wired sensors for the bridge because they were reliable."
+      ],
+      "correctOrder": [
+        5,
+        2,
+        1,
+        4,
+        0,
+        3
+      ],
+      "instruction": "Order these sentences so the situation develops logically.",
+      "sequenceLogic": "Proposal → Counterproposal → Testing → Compromise",
+      "plotStructure": "Proposal, Objection, Experiment, Finding, Compromise, Adoption",
+      "level": 67,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L68_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "Who is helping whom, and in what order?",
+      "explanation": "The school's need reaches Anja first. She asks customers, Idris responds, and she organizes the books before delivering them.",
+      "sentences": [
+        "She asked her customers to donate any they no longer read.",
+        "Anja sorted them by age level.",
+        "A customer, Idris, brought in two boxes.",
+        "She delivered them to the school, and the librarian thanked her.",
+        "Shopkeeper Anja heard that the school needed used books."
+      ],
+      "correctOrder": [
+        4,
+        0,
+        2,
+        1,
+        3
+      ],
+      "instruction": "Decide which event comes first, and build the sequence from there.",
+      "sequenceLogic": "Need → Request → Response → Preparation → Delivery",
+      "plotStructure": "Need, Request, Donation, Organization, Delivery",
+      "level": 68,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L68_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Turning a habit into instructions requires observation and measurement.",
+      "explanation": "The missing recipe is the problem, and Lisbeth's request is the response. Observing him leads to measuring, and comparing the result checks the accuracy. The card preserves it.",
+      "sentences": [
+        "Lisbeth measured each pinch afterward with spoons.",
+        "He added ingredients by the pinch and the handful.",
+        "Grandfather Emrys told his granddaughter Lisbeth that his pie recipe had never been written down.",
+        "She asked him to bake it while she took notes.",
+        "She wrote the exact amounts on a card for the family.",
+        "They compared the finished pie with his memory of it."
+      ],
+      "correctOrder": [
+        2,
+        3,
+        1,
+        0,
+        5,
+        4
+      ],
+      "instruction": "Put the events in the order that makes the story coherent.",
+      "sequenceLogic": "Problem → Request → Observation → Measurement → Verification → Record",
+      "plotStructure": "Problem, Request, Observation, Measurement, Verification, Preservation",
+      "level": 68,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L68_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "An action needing permission has to wait for it.",
+      "explanation": "The complaint starts the call, and the lookup produces the finding. Tomasz explains what he needs, and her approval is the condition for the corrected invoice.",
+      "sentences": [
+        "A corrected invoice arrived in her inbox before the call ended.",
+        "Ms. Adeyinka approved.",
+        "He said he could correct it but needed her approval to reissue the invoice.",
+        "The agent, Tomasz, looked up her account.",
+        "Ms. Adeyinka called about an incorrect charge on her bill.",
+        "He found that a discount had not been applied."
+      ],
+      "correctOrder": [
+        4,
+        3,
+        5,
+        2,
+        1,
+        0
+      ],
+      "instruction": "Reorder the sentences to produce the most logical version of events.",
+      "sequenceLogic": "Complaint → Investigation → Finding → Permission → Result",
+      "plotStructure": "Complaint, Investigation, Finding, Request, Approval, Resolution",
+      "level": 68,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L69_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "In cooperation, one person's report leads to the other's action.",
+      "explanation": "The stairwell creates the challenge, Hassan's call identifies the problem, and Lucinda's tilt responds to it. Clearing the turn allows them to finish.",
+      "sentences": [
+        "The wardrobe cleared the turn.",
+        "They set it down in the bedroom.",
+        "Two movers carried a wardrobe toward a narrow stairwell.",
+        "Hassan at the bottom called out that the corner was stuck.",
+        "Lucinda at the top tilted her end upward."
+      ],
+      "correctOrder": [
+        2,
+        3,
+        4,
+        0,
+        1
+      ],
+      "instruction": "Arrange the events so each action logically leads to the next.",
+      "sequenceLogic": "Challenge → Report → Adjustment → Success",
+      "plotStructure": "Challenge, Signal, Response, Progress, Completion",
+      "level": 69,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L69_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "A majority is not the only thing to consider. What did Camille discover about the minority?",
+      "explanation": "The vote gives the numbers, and Camille's observation reveals the reason behind the minority. She resolves the obstacle with a question, and the yes lets her act.",
+      "sentences": [
+        "Camille asked her friends to vote on where to hold the reunion.",
+        "Camille booked the lake house and hired a minibus.",
+        "Four chose the lake, and two chose the city.",
+        "They said yes.",
+        "Camille called them to ask whether they would come if she arranged transport.",
+        "Camille noticed that those who chose the city lived far from the lake."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        5,
+        4,
+        3,
+        1
+      ],
+      "instruction": "Order these sentences so the situation develops logically.",
+      "sequenceLogic": "Vote → Observation → Inquiry → Agreement → Decision",
+      "plotStructure": "Vote, Insight, Inquiry, Confirmation, Decision, Action",
+      "level": 69,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L69_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "A correction is only useful when it is remembered and applied.",
+      "explanation": "The routine sets the scene, and Tiago's misreading is the error. Amélie's realization and explanation correct it, the notebook records the lesson, and the joke shows he has learned it.",
+      "sentences": [
+        "One week, Tiago took a French phrase as a compliment.",
+        "Tiago and Amélie met weekly to practice each other's language.",
+        "She explained that it was sarcasm.",
+        "Tiago wrote the phrase in his notebook with a note about tone.",
+        "Amélie realized he had understood it literally.",
+        "The following week, he used it correctly in a joke."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        4,
+        2,
+        3,
+        5
+      ],
+      "instruction": "Reconstruct the story so that every event follows from the one before it.",
+      "sequenceLogic": "Misunderstanding → Correction → Learning → Application",
+      "plotStructure": "Routine, Error, Realization, Explanation, Recording, Application",
+      "level": 69,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L70_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "When the first solution is unavailable, what does a coordinator do?",
+      "explanation": "Missing cups become a problem only once volunteers report them. Shirin tries the supplier first, whose answer rules out the normal fix, so she sends a volunteer to a shop instead, and the station opens in time.",
+      "sentences": [
+        "Shirin sent a volunteer to buy paper cups from a nearby shop.",
+        "Shirin coordinated volunteers for the marathon water stations.",
+        "Two volunteers reported that their station had no cups.",
+        "Shirin called the supplier, who said the cups were on a truck stuck in traffic.",
+        "The station opened just as the first runners approached."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        3,
+        0,
+        4
+      ],
+      "instruction": "Put the events in the order that makes the story coherent.",
+      "sequenceLogic": "Report → Inquiry → Workaround → Result",
+      "plotStructure": "Problem, Inquiry, Obstacle, Workaround, Outcome",
+      "level": 70,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L70_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "When people disagree, what could they collect before deciding?",
+      "explanation": "The disagreement is the problem, and the two positions define the choice. Boris proposes a trial, the logs supply data, and the data decides the outcome.",
+      "sentences": [
+        "Each member logged how often they used the room.",
+        "The tenants' association could not agree on a new laundry-room schedule.",
+        "They set weekday evenings as the fixed schedule.",
+        "The data showed weekends were rarely used.",
+        "Some wanted weekday evenings, and others wanted weekends.",
+        "Chair Boris suggested trying both for a month."
+      ],
+      "correctOrder": [
+        1,
+        4,
+        5,
+        0,
+        3,
+        2
+      ],
+      "instruction": "Decide which event comes first, and build the sequence from there.",
+      "sequenceLogic": "Disagreement → Proposal → Data → Decision",
+      "plotStructure": "Conflict, Positions, Trial, Evidence, Decision",
+      "level": 70,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L70_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "When a plan fails because of missing information, who must contact whom?",
+      "explanation": "The request leads to a promise, and the attempt fails because Cleo is out. The note reopens communication, and her call sets a new time, allowing the repair.",
+      "sentences": [
+        "He left a note with his phone number.",
+        "Pieter arrived while Cleo was out and could not get in.",
+        "Cleo called him that evening and arranged a time.",
+        "Mr. Weiss said he would send his handyman, Pieter.",
+        "The repair was completed the next morning while she was at home.",
+        "Cleo asked her landlord, Mr. Weiss, to repair a broken window latch."
+      ],
+      "correctOrder": [
+        5,
+        3,
+        1,
+        0,
+        2,
+        4
+      ],
+      "instruction": "Arrange the events so each action logically leads to the next.",
+      "sequenceLogic": "Request → Delegation → Failed Attempt → Message → Reschedule → Result",
+      "plotStructure": "Request, Delegation, Obstacle, Message, Rescheduling, Resolution",
+      "level": 70,
+      "phase": "mastery"
+    }
+  ]
+}

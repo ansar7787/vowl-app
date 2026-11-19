@@ -1,0 +1,712 @@
+{
+  "gameType": "storyBuilder",
+  "phase": "mastery",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "id": "ELT_STORYBUILDER_L11_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "You cannot save a \"corrected\" form until something has been corrected.",
+      "explanation": "Reviewing comes after the form exists, and the PDF can only reflect the fixes once they are made. Uploading is the final action because it needs the finished file. Submitting an unchecked draft would defeat the purpose of reviewing.",
+      "sentences": [
+        "The corrected form was saved as a PDF.",
+        "Wanjiru filled in every section of the scholarship form.",
+        "Wanjiru reread her answers and corrected two spelling mistakes.",
+        "Wanjiru uploaded the PDF to the university portal."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "instruction": "Reorder the sentences to produce the most logical version of events.",
+      "sequenceLogic": "Prerequisite Dependency",
+      "plotStructure": "Creation, Review, Finalizing, Submission",
+      "level": 11,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L11_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Ask what each tool needs to work on before it can be used.",
+      "explanation": "The drill needs marks to aim at, the screws need holes, and the shelf needs brackets that are already secure. Every action creates the surface or support the following action requires.",
+      "sentences": [
+        "Stefan marked two spots on the wall where the shelf would hang.",
+        "Screws went into the holes and held the metal brackets firmly.",
+        "The shelf rested on the brackets without wobbling.",
+        "He drilled a hole at each mark."
+      ],
+      "correctOrder": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "instruction": "Order these sentences so the situation develops logically.",
+      "sequenceLogic": "Tool → Action → Result",
+      "plotStructure": "Planning, Preparation, Installation, Result",
+      "level": 11,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L11_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "A file can only be sent to the printer once it exists.",
+      "explanation": "Check-in creates the boarding pass, which makes the PDF available to print. Printing produces the paper copy she can store. Reverse any of these and the next step has nothing to work on.",
+      "sentences": [
+        "Aiko sent the file to the printer in the hallway.",
+        "The pass slid out of the tray and went into her passport holder.",
+        "The site produced a boarding pass as a PDF.",
+        "Aiko checked in for her flight on the airline's website."
+      ],
+      "correctOrder": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "instruction": "Decide which event comes first, and build the sequence from there.",
+      "sequenceLogic": "Prerequisite Dependency",
+      "plotStructure": "Requirement, Creation, Output, Storage",
+      "level": 11,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L12_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "Notice which sentence describes a problem and which describes it being solved.",
+      "explanation": "The dark hallway is the problem that starts everything. Diego needs the ladder to reach the fixture before he can swap the bulb, and the light coming on shows the repair worked.",
+      "sentences": [
+        "The hallway lit up when he flipped the switch again.",
+        "The old bulb came out with a twist, and a new one took its place.",
+        "The hallway light went dark when Diego flipped the switch.",
+        "Diego dragged a stepladder under the fixture."
+      ],
+      "correctOrder": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "instruction": "Arrange the sentences into a coherent account of what happened.",
+      "sequenceLogic": "Problem → Response → Resolution",
+      "plotStructure": "Problem, Preparation, Repair, Resolution",
+      "level": 12,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L12_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "The requirement mentioned in the notice tells you what has to be solved first.",
+      "explanation": "The notice names the obstacle, and connecting to Wi-Fi removes it. Only then can the download run and the restart happen. The new layout is what the restart delivers.",
+      "sentences": [
+        "Leila joined the café's Wi-Fi network.",
+        "The download bar filled up, and the tablet restarted by itself.",
+        "A notice on Leila's tablet said the update needed an internet connection.",
+        "The tablet opened with a new home screen layout."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "instruction": "Sort the sentences into the sequence that makes sense.",
+      "sequenceLogic": "Requirement → Action → Result",
+      "plotStructure": "Requirement, Enabling Step, Process, Outcome",
+      "level": 12,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L12_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "A tool that holds something in place must be added before the work it supports.",
+      "explanation": "The problem starts the story, and pinning prepares the fabric for sewing. Pins are removed only when the stitching no longer needs them, and the second try-on checks whether the fix worked.",
+      "sentences": [
+        "Tobias tried on his trousers and found them too long.",
+        "Tobias pulled the pins out and tried the trousers on again.",
+        "Tobias folded the hem and pinned it in place.",
+        "The pins kept the fabric steady while he sewed along the fold."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "instruction": "Restore the story's natural progression.",
+      "sequenceLogic": "Problem → Response → Check",
+      "plotStructure": "Problem, Preparation, Repair, Check",
+      "level": 12,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L13_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "What did she need to be able to see before she could choose?",
+      "explanation": "The account gives access, access reveals the courses, and choosing plus paying secures a place. The confirmation email is a consequence of finishing the registration.",
+      "sentences": [
+        "Logging in unlocked a list of courses with open places.",
+        "Nia created an account on the community college website.",
+        "A confirmation email arrived with the class schedule.",
+        "Nia chose a pottery class and paid the fee."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "instruction": "Place the events in the order they must occur.",
+      "sequenceLogic": "Prerequisite Dependency",
+      "plotStructure": "Access, Discovery, Commitment, Confirmation",
+      "level": 13,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L13_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Think about what a helper needs to be positioned next to before anything can be connected.",
+      "explanation": "The dead battery is the problem, and the neighbor's car has to be in place before the cables can connect the two. The engine can only start once power is shared.",
+      "sentences": [
+        "The engine roared to life on the next try.",
+        "His neighbor parked beside him and popped both hoods.",
+        "The engine of Emeka's car only clicked when he turned the key.",
+        "Cables linked the neighbor's battery to Emeka's."
+      ],
+      "correctOrder": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "instruction": "Put the events in the order that makes the story coherent.",
+      "sequenceLogic": "Problem → Response → Result",
+      "plotStructure": "Problem, Setup, Connection, Success",
+      "level": 13,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L13_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Look for the item that can only be attached to something already in place.",
+      "explanation": "Measuring guides the cutting, and cutting makes the paper that wraps the box. Ribbon goes on the finished package, and the tag is tucked under the ribbon, so it must come after it.",
+      "sentences": [
+        "Karin wrote her cousin's name on a tag and tucked it under the ribbon.",
+        "A ribbon went around the middle.",
+        "The paper was cut slightly larger than the box required.",
+        "Karin folded it around the box and taped the seam.",
+        "Karin measured her box before cutting the wrapping paper."
+      ],
+      "correctOrder": [
+        4,
+        2,
+        3,
+        1,
+        0
+      ],
+      "instruction": "Reorder the sentences to produce the most logical version of events.",
+      "sequenceLogic": "Preparation → Execution → Completion",
+      "plotStructure": "Measuring, Cutting, Wrapping, Decoration, Labeling",
+      "level": 13,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L14_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "Ask what signal shows that the oven is ready.",
+      "explanation": "The oven has to be set before it can heat, and the beep marks the moment heating is done. Putting the pizza in earlier would mean baking at the wrong temperature. Bubbling cheese is the result of baking.",
+      "sentences": [
+        "Samir slid a frozen pizza onto the middle shelf.",
+        "A beep told him it had reached that temperature.",
+        "The cheese was bubbling when he took it out.",
+        "Samir set the oven to 200 degrees."
+      ],
+      "correctOrder": [
+        3,
+        1,
+        0,
+        2
+      ],
+      "instruction": "Rebuild the sequence from beginning to outcome.",
+      "sequenceLogic": "Preparation → Execution → Result",
+      "plotStructure": "Setup, Signal, Action, Result",
+      "level": 14,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L14_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "One device needs power before it can accept input from another.",
+      "explanation": "The projector must be in the room and powered before the laptop connection is worth making. The glowing lamp tells him it is ready, and the slides appear as soon as the two devices are linked.",
+      "sentences": [
+        "The lamp glowed, so he connected his laptop with an HDMI cable.",
+        "Viktor carried the projector into the meeting room.",
+        "Viktor plugged its power cable into the wall socket.",
+        "His slides appeared on the wall."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "instruction": "Restore the story's natural progression.",
+      "sequenceLogic": "Prerequisite Dependency",
+      "plotStructure": "Setup, Power, Connection, Display",
+      "level": 14,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L14_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "A repair like this is only safe once something else has been stopped.",
+      "explanation": "Noticing the leak starts the story, and shutting the water off makes the repair possible. Opening the valve again is how she tests whether the repair worked, so it must come last.",
+      "sentences": [
+        "Thandi turned the valve under the sink to stop the flow.",
+        "Thandi opened the valve again and watched the pipe stay dry.",
+        "With the water off, she loosened the pipe and replaced the worn washer.",
+        "Thandi noticed water pooling beneath the kitchen sink."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "instruction": "Order these sentences so the situation develops logically.",
+      "sequenceLogic": "Problem → Response → Verification",
+      "plotStructure": "Problem, Safety Step, Repair, Test",
+      "level": 14,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L15_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "A favor cannot be granted before it has been requested.",
+      "explanation": "Owen's need gives him a reason to ask. The neighbor's agreement allows him to take the ladder, and the return closes the loop. The note only makes sense after the loan.",
+      "sentences": [
+        "Owen needed a ladder to clear the gutters.",
+        "Owen returned the ladder that evening with a thank-you note.",
+        "Owen knocked on his neighbor's door and asked to borrow hers.",
+        "She agreed and pointed him toward her garage."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "instruction": "Arrange the events so each action logically leads to the next.",
+      "sequenceLogic": "Need → Request → Response → Follow-up",
+      "plotStructure": "Need, Request, Permission, Return",
+      "level": 15,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L15_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "What must Rosa grant before she can see herself on screen?",
+      "explanation": "The link opens the meeting, and the permission request is a gate that must be passed before the video works. Only after her camera is on can she join the conversation.",
+      "sentences": [
+        "Rosa unmuted and greeted the group.",
+        "Rosa clicked the meeting link in her email.",
+        "Her own face appeared on screen once she allowed it.",
+        "The browser asked permission to use her camera."
+      ],
+      "correctOrder": [
+        1,
+        3,
+        2,
+        0
+      ],
+      "instruction": "Place the events in the order they must occur.",
+      "sequenceLogic": "Prerequisite Dependency",
+      "plotStructure": "Entry, Permission, Activation, Participation",
+      "level": 15,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L15_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "The form cannot be checked until every requirement on it has been met.",
+      "explanation": "Learning the requirement drives him to get the photo, and the photo has to exist before it can be attached. The clerk can only check a complete form, and the receipt confirms the clerk accepted it.",
+      "sentences": [
+        "The clerk at the passport office checked the form and stamped it.",
+        "Arjun glued the printed photo into the marked square on the form.",
+        "Arjun learned that his passport application required a recent photo.",
+        "Arjun received a receipt showing when to collect the passport.",
+        "A photo studio took his picture against a white background."
+      ],
+      "correctOrder": [
+        2,
+        4,
+        1,
+        0,
+        3
+      ],
+      "instruction": "Work out the order in which these events unfold.",
+      "sequenceLogic": "Requirement → Preparation → Submission → Confirmation",
+      "plotStructure": "Requirement, Preparation, Assembly, Review, Confirmation",
+      "level": 15,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L16_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "A cooking action that changes the heat depends on the heat already having done something.",
+      "explanation": "Rinsing prepares the rice, water and heat begin the cooking, and lowering the heat is a response to the bubbling. The lid comes off only when the rice has had time to cook.",
+      "sentences": [
+        "Ines rinsed the rice until the water ran clear.",
+        "Once the water bubbled, she turned the heat down and covered the pot.",
+        "The rice was soft when she lifted the lid.",
+        "Ines added two cups of water and set the pot on the stove."
+      ],
+      "correctOrder": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "instruction": "Reconstruct the story so that every event follows from the one before it.",
+      "sequenceLogic": "Preparation → Execution → Adjustment → Completion",
+      "plotStructure": "Preparation, Heating, Adjustment, Completion",
+      "level": 16,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L16_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "You cannot place a top on something that is not yet standing.",
+      "explanation": "Laying out the parts lets Jonas see what he has. The legs make the frame stand, and the tabletop needs a stable frame beneath it. Checking with a level is the final test.",
+      "sentences": [
+        "Jonas bolted the four legs onto the frame.",
+        "The frame stood upright, and he lowered the tabletop onto it.",
+        "Jonas emptied the box and laid the parts across the carpet.",
+        "A spirit level showed that the surface was flat."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "instruction": "Rebuild the sequence from beginning to outcome.",
+      "sequenceLogic": "Preparation → Execution → Verification",
+      "plotStructure": "Layout, Assembly, Finishing, Check",
+      "level": 16,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L16_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Ask what each preparation step gives the next one to work with.",
+      "explanation": "The advertisement tells Selin what to look for in her own experience. The examples must exist before she can rehearse them, and rehearsal finishes before she leaves for the interview. The interviewer's question pays off the preparation.",
+      "sentences": [
+        "Selin wrote down three past projects that matched what the company wanted.",
+        "Selin arrived at the office ten minutes early.",
+        "The interviewer opened with a question about one of those projects.",
+        "Selin read the job advertisement twice.",
+        "Selin practiced explaining each one aloud in front of a mirror."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        4,
+        1,
+        2
+      ],
+      "instruction": "Decide which event comes first, and build the sequence from there.",
+      "sequenceLogic": "Preparation → Execution → Payoff",
+      "plotStructure": "Research, Selection, Rehearsal, Arrival, Payoff",
+      "level": 16,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L17_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "Protection has to be in place before the messy job begins.",
+      "explanation": "Furniture is moved so it can be covered, and covering has to precede painting to prevent damage. The second coat responds to a problem that only appears once the first coat is on the wall.",
+      "sentences": [
+        "Dry patches showed through, so he added a second coat.",
+        "Femi rolled the first coat of paint onto the walls.",
+        "Plastic sheets covered the furniture and the floor.",
+        "Femi dragged the furniture into the middle of the room."
+      ],
+      "correctOrder": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "instruction": "Arrange the sentences into a coherent account of what happened.",
+      "sequenceLogic": "Preparation → Execution → Adjustment",
+      "plotStructure": "Clearing, Protection, Painting, Correction",
+      "level": 17,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L17_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "What piece of information does the website need before it will show her account?",
+      "explanation": "The account number is the key that unlocks the payment page. Payment produces the receipt, and saving comes last because there is nothing to file until the receipt exists.",
+      "sentences": [
+        "After she entered her card details, a receipt appeared on the screen.",
+        "The bill listed an account number in its top corner.",
+        "She saved the receipt in her household folder.",
+        "Camila typed that number into the provider's website to open the payment page."
+      ],
+      "correctOrder": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "instruction": "Restore the story's natural progression.",
+      "sequenceLogic": "Prerequisite Dependency",
+      "plotStructure": "Information, Access, Payment, Record",
+      "level": 17,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L17_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "A performance decision depends on a check that succeeded.",
+      "explanation": "The flat sound is the problem, and the tuner is the tool that diagnoses it. Adjusting the pegs fixes what the tuner reveals, the clean chord proves it worked, and only then does the song make sense.",
+      "sentences": [
+        "The next chord rang clean and bright.",
+        "Haruto's guitar sounded flat when he strummed it.",
+        "Haruto clipped a tuner to the headstock.",
+        "The needle showed which strings were off, and he turned the pegs until it centered.",
+        "Haruto started the song he had been practicing."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        3,
+        0,
+        4
+      ],
+      "instruction": "Arrange the events so each action logically leads to the next.",
+      "sequenceLogic": "Problem → Diagnosis → Adjustment → Confirmation",
+      "plotStructure": "Problem, Diagnosis, Correction, Confirmation, Action",
+      "level": 17,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L18_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "What message triggered Greta's first action?",
+      "explanation": "The warning explains why she refills the tray, and only with paper can copying begin. The warm copies are the result of pressing start.",
+      "sentences": [
+        "She set the contract on the glass and pressed start.",
+        "Five warm copies dropped into the output tray.",
+        "The office copier flashed a message that its paper tray was empty.",
+        "Greta refilled it with a fresh ream."
+      ],
+      "correctOrder": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "instruction": "Reorder the sentences to produce the most logical version of events.",
+      "sequenceLogic": "Trigger → Response → Result",
+      "plotStructure": "Obstacle, Fix, Action, Output",
+      "level": 18,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L18_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Look for the event that gives Malik a reason to act.",
+      "explanation": "The approaching expiry creates the need, which leads to the booking. He can only hand in the card and be photographed at the appointment, and the temporary paper covers the gap until delivery.",
+      "sentences": [
+        "Malik booked an appointment at the licensing office online.",
+        "At the office, he handed in the old card and had his photo taken.",
+        "A temporary paper license was printed for him to carry until the new card arrived.",
+        "Malik's driving license was three weeks from expiring."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "instruction": "Reconstruct the story so that every event follows from the one before it.",
+      "sequenceLogic": "Trigger → Preparation → Procedure → Interim Result",
+      "plotStructure": "Trigger, Booking, Procedure, Outcome",
+      "level": 18,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L18_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Notice why the first step is necessary, and let that reason guide the rest.",
+      "explanation": "The single port explains why the old device has to come out first. Once the new router is connected and confirmed by the lights, the phone can join its network. Loading pages is the proof the setup succeeded.",
+      "sentences": [
+        "Dalia unplugged the old router, since the modem had only one output port.",
+        "Web pages loaded without delay.",
+        "On her phone she found the new network name and entered the password.",
+        "Dalia linked the new router to the modem with a cable.",
+        "The panel lights turned green, showing that the connection worked."
+      ],
+      "correctOrder": [
+        0,
+        3,
+        4,
+        2,
+        1
+      ],
+      "instruction": "Put the events in the order that makes the story coherent.",
+      "sequenceLogic": "Prerequisite Dependency",
+      "plotStructure": "Clearing, Connection, Confirmation, Configuration, Success",
+      "level": 18,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L19_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "What must the coffee have done before the plunger is pushed?",
+      "explanation": "Grinding prepares the beans, the water starts the brewing, and the waiting time lets flavor develop. Plunging separates the grounds, and only then can the coffee be poured.",
+      "sentences": [
+        "Dark coffee poured into his cup.",
+        "After four minutes, he pushed the plunger down.",
+        "Hassan ground the coffee beans until they looked like coarse sand.",
+        "The grounds went into a glass press, and hot water covered them."
+      ],
+      "correctOrder": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "instruction": "Arrange the sentences into a coherent account of what happened.",
+      "sequenceLogic": "Preparation → Execution → Completion",
+      "plotStructure": "Preparation, Brewing, Separation, Serving",
+      "level": 19,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L19_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Something living must be safe before the environment changes.",
+      "explanation": "The fish have to be moved before the water is drained. The tank is refilled with treated water before they return, so the environment is safe for them again.",
+      "sentences": [
+        "Fresh treated water went in until it reached the line on the glass.",
+        "Freya scooped the fish into a temporary bowl.",
+        "Freya drained half the tank water into a bucket.",
+        "The fish slipped back into the clean tank."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "instruction": "Order these sentences so the situation develops logically.",
+      "sequenceLogic": "Preparation → Execution → Completion",
+      "plotStructure": "Protection, Removal, Refilling, Return",
+      "level": 19,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L19_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "A total can only be checked after something has produced it.",
+      "explanation": "The data must be entered before any formula can use it, and the formula needs a place to sit. The total's surprising size prompts Luca to look for the error, and the final update proves the formula works.",
+      "sentences": [
+        "Luca noticed a missing entry, typed it in, and watched the total update on its own.",
+        "Luca typed the monthly expenses into one column.",
+        "The total appeared, and it looked lower than he expected.",
+        "Luca selected the empty cell below the last number.",
+        "Luca entered a formula that added everything above it."
+      ],
+      "correctOrder": [
+        1,
+        3,
+        4,
+        2,
+        0
+      ],
+      "instruction": "Reorder the sentences to produce the most logical version of events.",
+      "sequenceLogic": "Preparation → Execution → Discovery → Adjustment",
+      "plotStructure": "Data Entry, Setup, Calculation, Observation, Correction",
+      "level": 19,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L20_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "A good result needs a chosen best option from several.",
+      "explanation": "A clear, well-lit surface has to exist before the vase is placed, and photos cannot be taken until the vase is there. The best photo can only be picked after several exist.",
+      "sentences": [
+        "Maribel cleared the clutter from the table beside the window.",
+        "The best photo became the main image of her online listing.",
+        "Maribel set her handmade vase on the clean surface in the daylight.",
+        "Maribel took several photos from different angles."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "instruction": "Restore the story's natural progression.",
+      "sequenceLogic": "Preparation → Execution → Selection",
+      "plotStructure": "Preparation, Staging, Capture, Selection",
+      "level": 20,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L20_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Why would the position of the line affect how the plank is clamped?",
+      "explanation": "The line marks the goal, and the plank is clamped so that the marked spot is reachable. Sawing depends on both, and sanding smooths what the saw leaves behind.",
+      "sentences": [
+        "The saw followed the line, and the board split in two.",
+        "Kofi sanded the rough end until it felt smooth.",
+        "Kofi clamped the plank so the line hung over the edge of the bench.",
+        "Kofi drew a line across the plank where it needed cutting."
+      ],
+      "correctOrder": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "instruction": "Work out the order in which these events unfold.",
+      "sequenceLogic": "Preparation → Execution → Finishing",
+      "plotStructure": "Marking, Securing, Cutting, Finishing",
+      "level": 20,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L20_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Look for the event that makes an adjustment necessary.",
+      "explanation": "The manager's request sets the limit. Slides must exist to be rehearsed, and the timed rehearsal reveals the problem that leads to cutting. The second run-through checks that the fix worked.",
+      "sentences": [
+        "Paola pulled last quarter's numbers into three slides.",
+        "Her second run-through finished just under five minutes.",
+        "She cut one slide and shortened her notes.",
+        "Paola's manager asked for a five-minute sales update.",
+        "Paola timed herself reading them aloud and ran two minutes over."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        4,
+        2,
+        1
+      ],
+      "instruction": "Decide which event comes first, and build the sequence from there.",
+      "sequenceLogic": "Preparation → Execution → Adjustment → Completion",
+      "plotStructure": "Request, Preparation, Test, Revision, Confirmation",
+      "level": 20,
+      "phase": "mastery"
+    }
+  ]
+}

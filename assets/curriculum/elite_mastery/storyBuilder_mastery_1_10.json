@@ -1,0 +1,698 @@
+{
+  "gameType": "storyBuilder",
+  "phase": "mastery",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "ELT_STORYBUILDER_L1_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "Ask which action has to happen before the water can boil.",
+      "explanation": "Water cannot boil until the kettle has been filled and heated, and it cannot be poured until it is hot. The tea is only drinkable once it has been made. Each step gives the next one something to work with.",
+      "sentences": [
+        "The tea was warm enough to sip at the window.",
+        "Priya poured it over a tea bag in her favorite mug.",
+        "Priya filled the kettle at the sink.",
+        "The water inside began to boil."
+      ],
+      "correctOrder": [
+        2,
+        3,
+        1,
+        0
+      ],
+      "instruction": "Put the sentences in order to tell the story.",
+      "sequenceLogic": "Chronological Progression",
+      "plotStructure": "Start, Process, Result, Enjoyment",
+      "level": 1,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L1_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "A bus can only pick up someone who is already waiting for it.",
+      "explanation": "Tomás has to be at the stop before the bus can collect him. Boarding and paying come after the bus arrives, and the journey only starts once he is seated. The trip ends at his destination.",
+      "sentences": [
+        "He tapped his card on the reader and took a seat by the window.",
+        "Tomás reached the bus stop with his backpack.",
+        "The bus carried him across town to his cousin's street.",
+        "A blue bus pulled up and opened its doors."
+      ],
+      "correctOrder": [
+        1,
+        3,
+        0,
+        2
+      ],
+      "instruction": "Put the events in the right order.",
+      "sequenceLogic": "Chronological Progression",
+      "plotStructure": "Arrival, Boarding, Journey, Destination",
+      "level": 1,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L1_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Growth can only appear after something has been planted and looked after.",
+      "explanation": "Nothing sprouts until a seed is in the soil, and the seed needs water to wake up. Once the shoot appears, it keeps growing until the pot is too small. The story follows the natural life of a plant.",
+      "sentences": [
+        "A thin green shoot pushed up through the surface.",
+        "The plant grew tall enough that she moved it into a bigger pot.",
+        "Amara gave the soil a little water each morning.",
+        "Amara pressed a bean seed into a small pot of soil."
+      ],
+      "correctOrder": [
+        3,
+        2,
+        0,
+        1
+      ],
+      "instruction": "Put the sentences in order from start to finish.",
+      "sequenceLogic": "Chronological Progression",
+      "plotStructure": "Planting, Care, Growth, Change",
+      "level": 1,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L2_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "A letter cannot be sealed until there is something to put inside it.",
+      "explanation": "The writing creates the thing that can be folded and posted. Mailing comes before delivery, and the grandmother can only read the letter after it has traveled. The order follows how a letter moves from writer to reader.",
+      "sentences": [
+        "A stamp went in the corner before she dropped the envelope into the mailbox.",
+        "Elena wrote a short letter to her grandmother.",
+        "Elena folded the pages and slid them into an envelope.",
+        "Three days later, her grandmother read the letter at the kitchen table."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "instruction": "Put the sentences in order to tell the story.",
+      "sequenceLogic": "Prerequisite Dependency",
+      "plotStructure": "Creation, Preparation, Sending, Receiving",
+      "level": 2,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L2_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Think about what the barber must do before cutting begins and what happens once the cut is done.",
+      "explanation": "The customer has to be seated before any preparation starts, and the cape goes on before the scissors do. Payment marks the end of the service. Each event is a step the next one relies on.",
+      "sentences": [
+        "Mr. Okafor sat down in the barber's chair.",
+        "Hair fell to the floor as the scissors clipped along his neckline.",
+        "Mr. Okafor paid at the counter and walked out with a fresh haircut.",
+        "The barber wrapped a cape around his shoulders."
+      ],
+      "correctOrder": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "instruction": "Arrange the events in the right order.",
+      "sequenceLogic": "Chronological Progression",
+      "plotStructure": "Arrival, Preparation, Service, Departure",
+      "level": 2,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L2_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Clothes can only be hung up to dry after something has washed them.",
+      "explanation": "Loading the machine has to come before starting it, and the buzzer only sounds after the cycle finishes. Damp clothes exist only once washing is over, which is why hanging them is last.",
+      "sentences": [
+        "Hana poured in the detergent and pressed the start button.",
+        "Hana hung the damp shirts on a rack near the window.",
+        "Hana dumped a basket of dirty clothes into the washing machine.",
+        "The machine buzzed to signal that the cycle had ended."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "instruction": "Put the sentences in order from start to finish.",
+      "sequenceLogic": "Prerequisite Dependency",
+      "plotStructure": "Setup, Operation, Completion, Follow-up",
+      "level": 2,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L3_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "Look for what has to be done at the desk before the books can leave the library.",
+      "explanation": "A book cannot be borrowed until it has been checked out, and it cannot be returned before it has left the building. The due-date stamp connects the borrowing to the return. The sequence shows the full loan cycle.",
+      "sentences": [
+        "Two weeks later, he returned every one of them to the same desk.",
+        "Jamal packed the books into his tote bag.",
+        "The librarian scanned each book and stamped a due date inside.",
+        "Jamal carried an armful of novels to the library desk."
+      ],
+      "correctOrder": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "instruction": "Put the sentences in order to tell the story.",
+      "sequenceLogic": "Chronological Progression",
+      "plotStructure": "Borrowing, Checkout, Departure, Return",
+      "level": 3,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L3_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Ask what must be true about the tire before Ingrid can safely ride.",
+      "explanation": "The flat tire is the problem that starts everything. The pumping addresses it, and pressing on the tire confirms the fix worked. Only after that is it sensible to ride.",
+      "sentences": [
+        "Ingrid pumped air into the tire until it felt firm.",
+        "The tire held its shape when she pressed on it.",
+        "Ingrid noticed her bicycle tire had gone flat.",
+        "Ingrid rode the bicycle to the market without any trouble."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "instruction": "Put the events in the right order.",
+      "sequenceLogic": "Problem → Response → Result",
+      "plotStructure": "Problem, Action, Check, Outcome",
+      "level": 3,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L3_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "A sandwich must have all its parts before it can be cut and shared.",
+      "explanation": "Butter goes on the bread first because it is the base, and the fillings need a slice to sit on. Closing the sandwich makes it ready to cut. Serving comes last because there is nothing to serve until it is complete.",
+      "sentences": [
+        "Rahul spread butter across two slices of bread.",
+        "He carried a half to his sister at the table.",
+        "Rahul layered cheese and tomato on one of them.",
+        "Rahul pressed the other slice on top and cut the sandwich in half."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "instruction": "Put the sentences in the correct order.",
+      "sequenceLogic": "Prerequisite Dependency",
+      "plotStructure": "Base, Filling, Assembly, Serving",
+      "level": 3,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L4_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "Charging must begin before the battery can fill up.",
+      "explanation": "Plugging in starts the process, the lightning bolt confirms it is working, and time passes until the battery is full. Unplugging comes after the goal is reached.",
+      "sentences": [
+        "Nadia unplugged the phone and put it in her jacket pocket.",
+        "Nadia plugged her phone into the charger.",
+        "The screen showed a small lightning bolt.",
+        "An hour later, the battery reached full power."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "instruction": "Put the sentences in order to tell the story.",
+      "sequenceLogic": "Chronological Progression",
+      "plotStructure": "Start, Signal, Completion, Wrap-up",
+      "level": 4,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L4_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "The brush is only cleaned once the painting job is done.",
+      "explanation": "Paint has to be opened and mixed before it can be used, and painting the boards happens one at a time until the fence is done. Cleaning the brush is the last task because it would be pointless to clean it before finishing.",
+      "sentences": [
+        "Mateo dipped his brush and ran it along the first fence board.",
+        "Every board on the fence had turned white by the afternoon.",
+        "Mateo rinsed the brush under the garden hose.",
+        "Mateo opened a can of white paint and stirred it."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "instruction": "Put the events in the right order.",
+      "sequenceLogic": "Preparation → Execution → Completion",
+      "plotStructure": "Preparation, Work, Completion, Cleanup",
+      "level": 4,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L4_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Dough needs to exist before it can rise, and it must rise before it can bake.",
+      "explanation": "Chloe has to get to work before she can begin. Dough is made, left to rise, and only then baked, so the loaves cannot appear before the earlier stages. The customers arriving at the end shows the whole process took hours.",
+      "sentences": [
+        "The dough rose in a warm bowl until it doubled in size.",
+        "Golden loaves came out of the oven as the first customers walked in.",
+        "Chloe arrived at the bakery before sunrise.",
+        "She mixed flour, water, and yeast into a soft dough."
+      ],
+      "correctOrder": [
+        2,
+        3,
+        0,
+        1
+      ],
+      "instruction": "Put the sentences in order to tell the story.",
+      "sequenceLogic": "Preparation → Execution → Completion",
+      "plotStructure": "Arrival, Preparation, Waiting, Result",
+      "level": 4,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L5_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "Farid would not reach for an umbrella unless he had a reason to.",
+      "explanation": "The clouds are the warning that prompts Farid to take out his umbrella. He opens it as the rain starts, and the last sentence shows the payoff for being prepared.",
+      "sentences": [
+        "Dark clouds gathered over the market.",
+        "Rain began to tap against the canvas as he opened it.",
+        "Everyone else rushed for shelter while he walked on dry.",
+        "Farid pulled his umbrella out of his bag."
+      ],
+      "correctOrder": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "instruction": "Put the sentences in order to tell the story.",
+      "sequenceLogic": "Cause → Reaction → Consequence",
+      "plotStructure": "Warning, Preparation, Event, Payoff",
+      "level": 5,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L5_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Ask what happens before an examination can begin and what happens after it ends.",
+      "explanation": "A patient has to be called in before being examined. The dentist checks his teeth once he is seated, and the appointment for the next visit is arranged at the end, when she knows what he needs.",
+      "sentences": [
+        "She looked at his teeth with a tiny mirror.",
+        "Dr. Silva called Yusuf's name in the waiting room.",
+        "Yusuf followed her into a small office with a chair.",
+        "He booked a follow-up visit for the next month."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "instruction": "Put the events in the right order.",
+      "sequenceLogic": "Chronological Progression",
+      "plotStructure": "Call, Entry, Examination, Planning",
+      "level": 5,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L5_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Directions can only be followed after they have been given.",
+      "explanation": "Lucía's problem comes first, and it is what motivates her to ask. The answer supplies the information she lacks. Only with that information can she walk the route and reach the station.",
+      "sentences": [
+        "Lucía followed the route and arrived at the station with time to spare.",
+        "The cyclist pointed toward a tall clock tower and explained the turns.",
+        "She stopped a passing cyclist and asked for directions to the train station.",
+        "Lucía was lost in a quiet neighborhood."
+      ],
+      "correctOrder": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "instruction": "Put the sentences in the correct order.",
+      "sequenceLogic": "Problem → Response → Resolution",
+      "plotStructure": "Problem, Request, Answer, Success",
+      "level": 5,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L6_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "A team match needs teams, and teams need people who are already on the field.",
+      "explanation": "The players must be on the field before the coach can give instructions. Vests come first, passing warms them up, and the match is the main activity that the earlier steps prepare for.",
+      "sentences": [
+        "The community soccer team gathered on the field at six.",
+        "The coach blew a whistle and split everyone into two teams for a match.",
+        "The coach handed out orange vests.",
+        "Players passed the ball in pairs across the grass."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "instruction": "Put the sentences in order to tell the story.",
+      "sequenceLogic": "Preparation → Execution",
+      "plotStructure": "Gathering, Setup, Warm-up, Main Activity",
+      "level": 6,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L6_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Something has to grab the bait before Kwame can reel anything in.",
+      "explanation": "The line has to be set up before a fish can bite. The tug is what prompts Kwame to pull and reel. The fish appears on the dock as the result of his action.",
+      "sentences": [
+        "A fish tugged at the bait on the hook.",
+        "Kwame pushed a wooden rod into the lake bottom and tied a line to it.",
+        "A silver fish flopped on the wooden dock.",
+        "Kwame pulled the rod up and wound the line quickly."
+      ],
+      "correctOrder": [
+        1,
+        0,
+        3,
+        2
+      ],
+      "instruction": "Put the events in the right order.",
+      "sequenceLogic": "Cause → Reaction → Consequence",
+      "plotStructure": "Setup, Trigger, Action, Catch",
+      "level": 6,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L6_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "The shop cannot print a photo it has not received.",
+      "explanation": "Sofia has to select a photo before she can upload it. The preview and confirmation come once the file is in the system, and the print can only arrive after everything has been confirmed.",
+      "sentences": [
+        "Sofia uploaded it to the shop's printing website.",
+        "The website showed a preview and asked her to confirm the size.",
+        "Sofia chose her best photo from the trip.",
+        "A week later, a glossy print arrived in her mailbox."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "instruction": "Put the sentences in order to tell the story.",
+      "sequenceLogic": "Prerequisite Dependency",
+      "plotStructure": "Selection, Submission, Confirmation, Delivery",
+      "level": 6,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L7_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "A key card is issued after the clerk confirms who the guest is.",
+      "explanation": "A guest checks in by arriving, giving a name, and completing paperwork. The key card is the reward for finishing check-in, and only with it can she go up to the room.",
+      "sentences": [
+        "The elevator opened onto her floor, and she found her room.",
+        "Ayesha stood at the hotel reception with her suitcase.",
+        "Ayesha signed the form and took a key card.",
+        "The clerk typed in her name and found the booking."
+      ],
+      "correctOrder": [
+        1,
+        3,
+        2,
+        0
+      ],
+      "instruction": "Put the sentences in order to tell the story.",
+      "sequenceLogic": "Prerequisite Dependency",
+      "plotStructure": "Arrival, Verification, Completion, Access",
+      "level": 7,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L7_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Think about what a shopkeeper must set up before customers can buy.",
+      "explanation": "The stall has to open and the goods must be displayed before a customer can choose anything. Wrapping happens after a sale has been requested, so it comes last.",
+      "sentences": [
+        "A woman stopped and asked for a bunch of yellow ones.",
+        "Oliver arranged the buckets of tulips in neat rows.",
+        "Oliver wrapped the flowers in brown paper and handed them over.",
+        "Oliver unlocked the shutters of his flower stall at dawn."
+      ],
+      "correctOrder": [
+        3,
+        1,
+        0,
+        2
+      ],
+      "instruction": "Put the sentences in order to tell the story.",
+      "sequenceLogic": "Chronological Progression",
+      "plotStructure": "Opening, Display, Customer Request, Sale",
+      "level": 7,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L7_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "The box has to be filled before it makes sense to seal it.",
+      "explanation": "The bottom is taped first so items do not fall out. The glasses are wrapped before they are packed, and the box is sealed only when it is full. Labeling comes last because the box is now closed and ready to be moved.",
+      "sentences": [
+        "She wrapped each glass in newspaper and placed it inside.",
+        "Lena wrote \"Kitchen\" on the side in black marker.",
+        "The box was full, so she sealed the top with more tape.",
+        "Lena taped the bottom of a cardboard box."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        2,
+        1
+      ],
+      "instruction": "Put the sentences in order from start to finish.",
+      "sequenceLogic": "Preparation → Execution → Completion",
+      "plotStructure": "Setup, Filling, Sealing, Labeling",
+      "level": 7,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L8_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "A delivery can only happen once an order has been placed and confirmed.",
+      "explanation": "A buyer picks an item first, provides details to purchase it, and receives confirmation. The courier is the physical result. The story follows one transaction from decision to doorstep.",
+      "sentences": [
+        "A courier rang his doorbell with a large box.",
+        "Idris typed his address and payment details at the checkout page.",
+        "Idris chose a new laptop on an electronics website.",
+        "An email confirmed that the order was on its way."
+      ],
+      "correctOrder": [
+        2,
+        1,
+        3,
+        0
+      ],
+      "instruction": "Put the events in the right order.",
+      "sequenceLogic": "Prerequisite Dependency",
+      "plotStructure": "Selection, Purchase, Confirmation, Delivery",
+      "level": 8,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L8_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "Furniture goes inside a tent only after the tent stands.",
+      "explanation": "Building the tent starts at the site, then the poles give it shape, and stakes hold it up. Sleeping bags need a finished tent to go in. The order follows the construction.",
+      "sentences": [
+        "Marta and her brother carried a tent to a grassy clearing.",
+        "The tent stood upright once they hammered stakes into the ground.",
+        "They unrolled two sleeping bags on the floor inside.",
+        "Marta and her brother pushed the poles through the fabric sleeves."
+      ],
+      "correctOrder": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "instruction": "Put the events in the right order.",
+      "sequenceLogic": "Preparation → Execution → Completion",
+      "plotStructure": "Arrival, Assembly, Stabilizing, Settling In",
+      "level": 8,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L8_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "An answer needs a question, and a check needs an answer.",
+      "explanation": "The exam begins when Zainab is ready to work. Reading the question comes before answering, and reviewing the answer makes sense only after it has been written.",
+      "sentences": [
+        "Zainab wrote a short answer in the space below it.",
+        "Zainab sat down at her desk with a pencil.",
+        "Zainab read the first exam question twice.",
+        "Zainab checked the answer again before turning the page."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "instruction": "Put the sentences in order to tell the story.",
+      "sequenceLogic": "Chronological Progression",
+      "plotStructure": "Start, Understanding, Response, Review",
+      "level": 8,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L9_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "Payment can only be calculated after items have been chosen.",
+      "explanation": "The list guides what Pavel selects. Items must be in his hands before they can be scanned, and packing happens once they are paid for. The order follows the customer's path through the store.",
+      "sentences": [
+        "Pavel walked along the aisles and picked items off the shelves.",
+        "Pavel packed the groceries into cloth bags and left the store.",
+        "Pavel wrote a shopping list on the back of an envelope.",
+        "A cashier scanned everything and announced the total."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "instruction": "Put the events in the right order.",
+      "sequenceLogic": "Chronological Progression",
+      "plotStructure": "Planning, Selection, Payment, Departure",
+      "level": 9,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L9_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "A student cannot repeat a melody before hearing it.",
+      "explanation": "The warm-up prepares her voice. The melody must be played before she can copy it, and the mistake gives the teacher a reason to ask for another attempt. The correction only makes sense because of the earlier error.",
+      "sentences": [
+        "The teacher asked her to repeat it, and she sang the ending correctly.",
+        "Isabel sang the melody back, missing the last note.",
+        "Her teacher played a short melody on the piano.",
+        "Isabel warmed up her voice by humming scales."
+      ],
+      "correctOrder": [
+        3,
+        2,
+        1,
+        0
+      ],
+      "instruction": "Put the sentences in order to tell the story.",
+      "sequenceLogic": "Attempt → Correction → Success",
+      "plotStructure": "Preparation, Model, Attempt, Improvement",
+      "level": 9,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L9_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "A painting cannot be hung until the paint has dried.",
+      "explanation": "The frame and canvas provide the surface, the sketch guides the paint, and the drying finishes the work. Hanging the picture is the last step because it needs a complete painting.",
+      "sentences": [
+        "He sketched a mountain outline in pencil.",
+        "He filled the outline with blue and gray paint.",
+        "Björn stretched a blank canvas over a wooden frame.",
+        "Once the paint had dried, he hung the painting above the sofa."
+      ],
+      "correctOrder": [
+        2,
+        0,
+        1,
+        3
+      ],
+      "instruction": "Arrange the events in the right order.",
+      "sequenceLogic": "Preparation → Execution → Completion",
+      "plotStructure": "Foundation, Design, Creation, Display",
+      "level": 9,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L10_MASTERY_Q1",
+      "interactionType": "writing",
+      "hint": "A doctor prescribes based on information gathered earlier in the visit.",
+      "explanation": "The form gives the clinic information. The nurse uses it, and the doctor relies on both. Medicine is prescribed last because it depends on everything learned before.",
+      "sentences": [
+        "The clinic receptionist asked Beatriz to fill out a form.",
+        "The doctor prescribed medicine that matched her symptoms.",
+        "Beatriz described her cough on the form and handed it back.",
+        "A nurse read the form and took her temperature."
+      ],
+      "correctOrder": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "instruction": "Put the sentences in order from start to finish.",
+      "sequenceLogic": "Information → Assessment → Decision",
+      "plotStructure": "Request, Input, Assessment, Treatment",
+      "level": 10,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L10_MASTERY_Q2",
+      "interactionType": "writing",
+      "hint": "The owner can only collect the glove after it has been stored somewhere they can ask about.",
+      "explanation": "Finding comes first, and handing over makes the glove the station's responsibility. Storing it makes it retrievable. The owner arrives after that.",
+      "sentences": [
+        "Damon handed it to the station attendant.",
+        "The attendant put it in a box labeled with the day's date.",
+        "The next morning, a commuter came to the desk and claimed the glove.",
+        "Damon found a lost glove on the train platform."
+      ],
+      "correctOrder": [
+        3,
+        0,
+        1,
+        2
+      ],
+      "instruction": "Put the events in the right order.",
+      "sequenceLogic": "Discovery → Action → Consequence",
+      "plotStructure": "Discovery, Handover, Storage, Reunion",
+      "level": 10,
+      "phase": "mastery"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L10_MASTERY_Q3",
+      "interactionType": "writing",
+      "hint": "Passing security depends on the bag having already been packed.",
+      "explanation": "Packing happens at home before the airport. Security screening happens before he can reach the gate, so the gate comes last.",
+      "sentences": [
+        "Hugo found his gate and sat by the window to wait.",
+        "Hugo tucked a spare charger into his carry-on.",
+        "At the airport, he placed the bag on the scanner belt.",
+        "An officer glanced at the screen and waved him through."
+      ],
+      "correctOrder": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "instruction": "Put the sentences in the correct order.",
+      "sequenceLogic": "Chronological Progression",
+      "plotStructure": "Packing, Screening, Clearance, Waiting",
+      "level": 10,
+      "phase": "mastery"
+    }
+  ]
+}

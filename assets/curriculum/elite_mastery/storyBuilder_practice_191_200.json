@@ -1,0 +1,578 @@
+{
+  "gameType": "storyBuilder",
+  "phase": "practice",
+  "batchIndex": 20,
+  "levels": "191-200",
+  "quests": [
+    {
+      "id": "ELT_STORYBUILDER_L191_PRACTICE_Q1",
+      "level": 191,
+      "phase": "practice",
+      "storyContext": "A bank's developers changed the way interest was rounded to simplify a report.",
+      "prompt": "In the narrative sequence (Change, Blind Spot, Latency, Discovery, Pattern, Diagnosis, Correction), what event must logically take place immediately after: \"A bank's developers changed the way interest was rounded to simplify a report.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "The change passed testing because the test data contained only whole-cent amounts.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The change passed testing because the test data contained only whole-cent amounts.",
+      "explanation": "The change enters the system, and the test data is what allows it to pass unnoticed. Months of apparent normality are followed by an audit that reveals a pattern. The pattern's consistency points to a systematic cause, and the fix responds to the specific blind spot in the tests.",
+      "hint": "What made the fault invisible at first?",
+      "plotStructure": "Change, Blind Spot, Latency, Discovery, Pattern, Diagnosis, Correction",
+      "sequenceLogic": "Change → Undetected Flaw → Delayed Discovery → Pattern → Root Cause → Correction"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L191_PRACTICE_Q2",
+      "level": 191,
+      "phase": "practice",
+      "storyContext": "Dr. Ferreira's lab reported that a new compound improved memory in mice.",
+      "prompt": "In the narrative sequence (Claim, Conflict, Cooperation, Observation, Test, Result, Publication, Consequence), what event must logically take place immediately after: \"Dr. Ferreira's lab reported that a new compound improved memory in mice.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "A rival lab attempted to replicate the result and failed."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "A rival lab attempted to replicate the result and failed.",
+      "explanation": "The claim and failed replication create a conflict, and the invitation turns it into a joint inquiry. Observation reveals a procedural difference, and the joint experiment tests it. The results explain both labs' outcomes and lead to a shared publication with a wider effect.",
+      "hint": "A failed replication is information. What did it point to?",
+      "plotStructure": "Claim, Conflict, Cooperation, Observation, Test, Result, Publication, Consequence",
+      "sequenceLogic": "Claim → Failed Replication → Observation → Hypothesis → Joint Test → Explanation → Impact"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L191_PRACTICE_Q3",
+      "level": 191,
+      "phase": "practice",
+      "storyContext": "A developer, Vasquez, planned to demolish an old cinema for apartments.",
+      "prompt": "In the narrative sequence (Plan, Requirement, Discovery, Recommendation, Objection, Proposal, Condition, Permit, Outcome), what event must logically take place immediately after: \"A developer, Vasquez, planned to demolish an old cinema for apartments.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "The city required a heritage assessment before issuing a demolition permit.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The city required a heritage assessment before issuing a demolition permit.",
+      "explanation": "The plan and the requirement set up the process, and the finding narrows the protection to one feature. The developer's objection creates a conflict that the architect's proposal resolves. The council's condition is carried into the permit, and the ceiling's new role is the final consequence.",
+      "hint": "Which proposal satisfies two opposed interests at once?",
+      "plotStructure": "Plan, Requirement, Discovery, Recommendation, Objection, Proposal, Condition, Permit, Outcome",
+      "sequenceLogic": "Plan → Requirement → Finding → Recommendation → Objection → Compromise → Condition → Permit → Outcome"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L192_PRACTICE_Q1",
+      "level": 192,
+      "phase": "practice",
+      "storyContext": "A university library merged two catalogs after absorbing a smaller college's collection.",
+      "prompt": "In the narrative sequence (Symptoms, Hypothesis, Evidence, Mechanism, Recovery, Fix, Outcome), what event must logically take place immediately after: \"A university library merged two catalogs after absorbing a smaller college's collection.\"?",
+      "options": [
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Some books appeared twice, and others vanished from search results."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Some books appeared twice, and others vanished from search results.",
+      "explanation": "Two symptoms appear after the merge, and Tsering hypothesizes an ID mismatch. Sampling confirms the specific mechanism, and the collision explains the vanishing records. She must first undo the damage from the backup, and only then can she correct the script and rerun.",
+      "hint": "Why would some records vanish while others duplicate?",
+      "plotStructure": "Symptoms, Hypothesis, Evidence, Mechanism, Recovery, Fix, Outcome",
+      "sequenceLogic": "Symptom → Hypothesis → Confirmation → Mechanism → Recovery → Correction → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L192_PRACTICE_Q2",
+      "level": 192,
+      "phase": "practice",
+      "storyContext": "Nonprofit director Amaru applied for a grant that required matching funds.",
+      "prompt": "In the narrative sequence (Requirement, Revelation, Obstacle, Action, Shortfall, Solution, Agreement, Submission), what event must logically take place immediately after: \"Nonprofit director Amaru applied for a grant that required matching funds.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "The funder's officer mentioned that the match could include volunteer hours.",
+        "They abandoned the current procedure and started again from scratch."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The funder's officer mentioned that the match could include volunteer hours.",
+      "explanation": "The requirement sets the goal, and the officer's remark opens a new source of value. Her lack of records creates an obstacle, and reconstructing hours partially solves it. The shortfall is then met by another donation, completing the match.",
+      "hint": "What is revealed in the officer's remark that changes her strategy?",
+      "plotStructure": "Requirement, Revelation, Obstacle, Action, Shortfall, Solution, Agreement, Submission",
+      "sequenceLogic": "Requirement → Information → Obstacle → Reconstruction → Shortfall → Donation → Completion"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L192_PRACTICE_Q3",
+      "level": 192,
+      "phase": "practice",
+      "storyContext": "Documentary editor Genevieve was assembling a film about a local factory closure.",
+      "prompt": "In the narrative sequence (Claim, Question, Gap, Risk, Removal, New Information, Renewal, Re-record, Outcome), what event must logically take place immediately after: \"Documentary editor Genevieve was assembling a film about a local factory closure.\"?",
+      "options": [
+        "An interviewee, a former manager, made a claim about a director's misconduct.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "An interviewee, a former manager, made a claim about a director's misconduct.",
+      "explanation": "The claim raises the question of verification, and the interviewee's lack of documents leaves it unresolved. Legal advice determines the cut, and the journalist's records later create a new basis. The revised film uses the evidence that was previously missing.",
+      "hint": "The decision changes when a new fact becomes available. Which one?",
+      "plotStructure": "Claim, Question, Gap, Risk, Removal, New Information, Renewal, Re-record, Outcome",
+      "sequenceLogic": "Claim → Verification → Failure → Legal Advice → Removal → New Evidence → Re-record → Inclusion"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L193_PRACTICE_Q1",
+      "level": 193,
+      "phase": "practice",
+      "storyContext": "The city's snow-clearing plan prioritized main roads first and residential streets last.",
+      "prompt": "In the narrative sequence (Plan, Failure, Response, Review, Revision, Application, Outcome), what event must logically take place immediately after: \"The city's snow-clearing plan prioritized main roads first and residential streets last.\"?",
+      "options": [
+        "During a heavy storm, an ambulance depot reported that its access road was unplowed.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "During a heavy storm, an ambulance depot reported that its access road was unplowed.",
+      "explanation": "The plan's logic assumes that priority roads are main roads. The depot's report exposes the flaw, and the immediate response fixes the single case. The review generalizes the lesson, the plan is revised, and the next storm tests the improvement.",
+      "hint": "What hidden assumption in the plan does the storm expose?",
+      "plotStructure": "Plan, Failure, Response, Review, Revision, Application, Outcome",
+      "sequenceLogic": "Assumption → Failure → Immediate Fix → Review → Revision → Test → Improvement"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L193_PRACTICE_Q2",
+      "level": 193,
+      "phase": "practice",
+      "storyContext": "Postdoc Ruslan drafted a paper based on data from a long collaboration.",
+      "prompt": "In the narrative sequence (Draft, Omission, Discovery, Inquiry, Justification, Standard, Consultation, Outcome), what event must logically take place immediately after: \"Postdoc Ruslan drafted a paper based on data from a long collaboration.\"?",
+      "options": [
+        "He listed himself as first author and two senior scientists as co-authors.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "He listed himself as first author and two senior scientists as co-authors.",
+      "explanation": "The draft creates the omission, and Chiamaka's discovery and request create the dispute. Ruslan's reply sets out his reasoning, which she answers with the journal's rule. Only after consulting the authorities on the paper can he change the list.",
+      "hint": "Which sentence supplies the standard that settles the disagreement?",
+      "plotStructure": "Draft, Omission, Discovery, Inquiry, Justification, Standard, Consultation, Outcome",
+      "sequenceLogic": "Omission → Discovery → Query → Justification → Standard → Consultation → Correction"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L193_PRACTICE_Q3",
+      "level": 193,
+      "phase": "practice",
+      "storyContext": "Inspector Thandiwe examined a road bridge during its routine review.",
+      "prompt": "In the narrative sequence (Observation, Anomaly, Question, Test, Finding, Source, Response, Consequence), what event must logically take place immediately after: \"Inspector Thandiwe examined a road bridge during its routine review.\"?",
+      "options": [
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Thandiwe noticed rust stains beneath one bearing."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Thandiwe noticed rust stains beneath one bearing.",
+      "explanation": "The stain is a minor observation, and the maintenance record turns it into an anomaly. Her reasoning motivates the sample, and the lab's result explains it. Tracing the source widens the issue, and the inspection order uncovers further cases.",
+      "hint": "What made a small stain worth pursuing?",
+      "plotStructure": "Observation, Anomaly, Question, Test, Finding, Source, Response, Consequence",
+      "sequenceLogic": "Observation → Anomaly → Reasoning → Test → Cause → Source → Broader Action → Consequence"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L194_PRACTICE_Q1",
+      "level": 194,
+      "phase": "practice",
+      "storyContext": "A housing association announced a renovation that would require tenants to leave for two weeks.",
+      "prompt": "In the narrative sequence (Announcement, Objection, Meeting, Discovery, Redesign, Effect, Implementation, Outcome), what event must logically take place immediately after: \"A housing association announced a renovation that would require tenants to leave for two weeks.\"?",
+      "options": [
+        "Tenants objected that the notice was too short.",
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Tenants objected that the notice was too short.",
+      "explanation": "The plan generates objections, and the meeting produces new information. The night workers' needs make the original scheme unsuitable, and staggering solves the problem. The reduced stay is a consequence of the new plan, and the temporary rooms carry it out.",
+      "hint": "Which piece of information changes the design of the plan?",
+      "plotStructure": "Announcement, Objection, Meeting, Discovery, Redesign, Effect, Implementation, Outcome",
+      "sequenceLogic": "Plan → Objection → Consultation → New Information → Redesign → Consequence → Implementation → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L194_PRACTICE_Q2",
+      "level": 194,
+      "phase": "practice",
+      "storyContext": "Chemist Dr. Osei was trying to synthesize a new dye for textiles.",
+      "prompt": "In the narrative sequence (Goal, Anomaly, Assumption, Confirmation, Discovery, Property, Application, Outcome), what event must logically take place immediately after: \"Chemist Dr. Osei was trying to synthesize a new dye for textiles.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Her reaction produced a dull brown instead of the expected blue."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Her reaction produced a dull brown instead of the expected blue.",
+      "explanation": "The unexpected color is first treated as an error, so she repeats the reaction. The repeat rules out contamination and turns the error into a puzzle. Analysis reveals a valuable property, and the company's interest shows the finding has practical use.",
+      "hint": "A repeated \"failure\" can be a signal. What does the second brown suggest?",
+      "plotStructure": "Goal, Anomaly, Assumption, Confirmation, Discovery, Property, Application, Outcome",
+      "sequenceLogic": "Expectation → Anomaly → Assumption → Repeat → Discovery → Property → Application → Publication"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L194_PRACTICE_Q3",
+      "level": 194,
+      "phase": "practice",
+      "storyContext": "Trustee Marianne was reviewing bids for the charity's new office renovation.",
+      "prompt": "In the narrative sequence (Review, Anomaly, Inquiry, Disclosure, Policy, Recusal, Decision, Outcome, Record), what event must logically take place immediately after: \"Trustee Marianne was reviewing bids for the charity's new office renovation.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "One bid, from Brightline Builders, was significantly lower than the others.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "One bid, from Brightline Builders, was significantly lower than the others.",
+      "explanation": "The bid review leads to a suspicious detail, and the question exposes the conflict. Policy determines what has to happen next, and the independent review separates the decision from the conflicted trustee. The choice is defensible because it rests on merit, and the minutes make the process transparent.",
+      "hint": "How can a decision be legitimate even when it favors the conflicted party?",
+      "plotStructure": "Review, Anomaly, Inquiry, Disclosure, Policy, Recusal, Decision, Outcome, Record",
+      "sequenceLogic": "Review → Anomaly → Question → Disclosure → Policy → Recusal → Decision → Record"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L195_PRACTICE_Q1",
+      "level": 195,
+      "phase": "practice",
+      "storyContext": "Consultant Amara was preparing for a negotiation with a Japanese supplier.",
+      "prompt": "In the narrative sequence (Preparation, Resource, Insight, Adaptation, Meeting, Interpretation, Redirection, Outcome), what event must logically take place immediately after: \"Consultant Amara was preparing for a negotiation with a Japanese supplier.\"?",
+      "options": [
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "She hired an interpreter, Mr. Sato, for the meeting."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "She hired an interpreter, Mr. Sato, for the meeting.",
+      "explanation": "The hiring gives her a source of cultural knowledge, and the briefing supplies it before the meeting. Her revised approach applies it, and the representative's reply is decoded by Sato. Because she understands the signal, she can change direction and reach an agreement.",
+      "hint": "What information does the interpreter provide, and when is it needed?",
+      "plotStructure": "Preparation, Resource, Insight, Adaptation, Meeting, Interpretation, Redirection, Outcome",
+      "sequenceLogic": "Preparation → Advice → Adaptation → Application → Interpretation → Redirection → Agreement"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L195_PRACTICE_Q2",
+      "level": 195,
+      "phase": "practice",
+      "storyContext": "Promoter Guillermo booked an outdoor concert for a band's summer tour.",
+      "prompt": "In the narrative sequence (Constraint, Proposal, Test, Invitation, Complaint, Adjustment, Approval, Condition), what event must logically take place immediately after: \"Promoter Guillermo booked an outdoor concert for a band's summer tour.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "They abandoned the current procedure and started again from scratch.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "The city required a noise limit that the band's usual setup exceeded."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "The city required a noise limit that the band's usual setup exceeded.",
+      "explanation": "The limit creates the problem, and the engineer's solution is tested. The instrument confirms it, but the neighbors' experience shows it is not enough. A further adjustment responds to their feedback, and the city's approval reflects both measurement and continued monitoring.",
+      "hint": "Measurement and perception may disagree. Which sentence shows this?",
+      "plotStructure": "Constraint, Proposal, Test, Invitation, Complaint, Adjustment, Approval, Condition",
+      "sequenceLogic": "Constraint → Solution → Measurement → Verification → Complaint → Adjustment → Approval"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L195_PRACTICE_Q3",
+      "level": 195,
+      "phase": "practice",
+      "storyContext": "A shoemaker's leather supplier announced a price rise of twenty percent.",
+      "prompt": "In the narrative sequence (Trigger, Comparison, Trade-off, Consultation, Decision, Reaction, Offer, Agreement, Outcome), what event must logically take place immediately after: \"A shoemaker's leather supplier announced a price rise of twenty percent.\"?",
+      "options": [
+        "Owner Daphne compared the offer with two alternative tanneries.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "He realized he had misplaced the necessary tool and searched the room for it."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Owner Daphne compared the offer with two alternative tanneries.",
+      "explanation": "The price rise forces a comparison, and each alternative has a trade-off. The customers' answer tells her what they value, so she chooses to stay and share the cost. The supplier's reaction is a delayed consequence of her comparison, and the contract completes the outcome.",
+      "hint": "Which decision depends on information gathered from outside her business?",
+      "plotStructure": "Trigger, Comparison, Trade-off, Consultation, Decision, Reaction, Offer, Agreement, Outcome",
+      "sequenceLogic": "Price Change → Comparison → Trade-off → Customer Input → Decision → Supplier Response → Agreement"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L196_PRACTICE_Q1",
+      "level": 196,
+      "phase": "practice",
+      "storyContext": "During a fire drill, an office building took eleven minutes to empty, twice the target.",
+      "prompt": "In the narrative sequence (Problem, Investigation, Cause, Proposal, Objection, Action, Outcome), what event must logically take place immediately after: \"During a fire drill, an office building took eleven minutes to empty, twice the target.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "They abandoned the current procedure and started again from scratch.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "Safety officer Hilary reviewed the footage from the lobby cameras."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Safety officer Hilary reviewed the footage from the lobby cameras.",
+      "explanation": "The drill result is the problem, and the footage is the evidence. The inward-opening door explains the queue, so Hilary proposes a specific change. The manager's objection is met by the permit request, and the improved drill confirms the change worked.",
+      "hint": "Which evidence supports the proposal, and which sentence shows how it was used?",
+      "plotStructure": "Problem, Investigation, Cause, Proposal, Objection, Action, Outcome",
+      "sequenceLogic": "Problem → Evidence → Diagnosis → Proposal → Objection → Process → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L196_PRACTICE_Q2",
+      "level": 196,
+      "phase": "practice",
+      "storyContext": "Two neighbors disputed the boundary between their gardens.",
+      "prompt": "In the narrative sequence (Dispute, Claims, Investigation, Discovery, Verification, Explanation, Finding, Resolution), what event must logically take place immediately after: \"Two neighbors disputed the boundary between their gardens.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "They abandoned the current procedure and started again from scratch.",
+        "Each produced a deed with a different measurement.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Each produced a deed with a different measurement.",
+      "explanation": "The dispute has two competing documents, and the surveyor introduces a third source, the marker. The maps establish its origin and authority, and the explanation of the deeds shows why they disagree. His report bases the decision on the original marker, and the neighbors accept it.",
+      "hint": "When two documents disagree, what kind of source can outrank both?",
+      "plotStructure": "Dispute, Claims, Investigation, Discovery, Verification, Explanation, Finding, Resolution",
+      "sequenceLogic": "Dispute → Competing Documents → Third Evidence → Verification → Explanation → Finding → Acceptance"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L196_PRACTICE_Q3",
+      "level": 196,
+      "phase": "practice",
+      "storyContext": "A marine biologist, Dr. Nakamura, received a warning that her funding might be cut.",
+      "prompt": "In the narrative sequence (Threat, Demand, Gap, Outreach, Data, Analysis, Finding, Submission, Outcome), what event must logically take place immediately after: \"A marine biologist, Dr. Nakamura, received a warning that her funding might be cut.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "The funder wanted evidence that the project had practical benefits.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The funder wanted evidence that the project had practical benefits.",
+      "explanation": "The warning and the funder's demand set the challenge, and her admission that the work is academic explains the gap. Contacting the cooperative provides a new data source, and the correlation turns it into evidence. The renewal and partnership show the funder's response.",
+      "hint": "How does she create the evidence her funder is asking for?",
+      "plotStructure": "Threat, Demand, Gap, Outreach, Data, Analysis, Finding, Submission, Outcome",
+      "sequenceLogic": "Threat → Demand → Gap → Outreach → Data → Analysis → Finding → Submission → Renewal"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L197_PRACTICE_Q1",
+      "level": 197,
+      "phase": "practice",
+      "storyContext": "After a merger, two engineering teams were told to adopt a single code repository.",
+      "prompt": "In the narrative sequence (Requirement, Differences, Conflict, Proposal, Test, Result, Agreement, Outcome), what event must logically take place immediately after: \"After a merger, two engineering teams were told to adopt a single code repository.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Team A used one branching approach, and Team B used another.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "They abandoned the current procedure and started again from scratch."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Team A used one branching approach, and Team B used another.",
+      "explanation": "The merger sets the requirement, and the differences create conflicts. The leads' disagreement is the obstacle, and Baraka's trial replaces argument with evidence. The result convinces Team A, and the unification follows.",
+      "hint": "An argument between experts can be settled by an experiment. What is the experiment?",
+      "plotStructure": "Requirement, Differences, Conflict, Proposal, Test, Result, Agreement, Outcome",
+      "sequenceLogic": "Requirement → Conflict → Disagreement → Trial → Evidence → Agreement → Resolution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L197_PRACTICE_Q2",
+      "level": 197,
+      "phase": "practice",
+      "storyContext": "A planner emailed the fire department about a proposed narrow street.",
+      "prompt": "In the narrative sequence (Message, Failure, Decision, Consequence, Dispute, Evidence, Discovery, Correction), what event must logically take place immediately after: \"A planner emailed the fire department about a proposed narrow street.\"?",
+      "options": [
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "The email was buried in the chief's inbox and unread.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "The email was buried in the chief's inbox and unread.",
+      "explanation": "The email starts the chain, and its being unread leads to the approval without comments. The trial exposes the consequence, and the chief's complaint reveals her belief. The planner's evidence changes the diagnosis to a communication failure, and both the design and the process are corrected.",
+      "hint": "Two people believe different things about the same event. What settles it?",
+      "plotStructure": "Message, Failure, Decision, Consequence, Dispute, Evidence, Discovery, Correction",
+      "sequenceLogic": "Communication → Failure → Decision → Consequence → Complaint → Evidence → Discovery → Correction"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L197_PRACTICE_Q3",
+      "level": 197,
+      "phase": "practice",
+      "storyContext": "An archive received a letter purporting to be from a nineteenth-century explorer.",
+      "prompt": "In the narrative sequence (Discovery, Clue, Comparison, Test, Confirmation, Provenance, Conclusion, Decision, Outcome), what event must logically take place immediately after: \"An archive received a letter purporting to be from a nineteenth-century explorer.\"?",
+      "options": [
+        "Archivist Ludmila noticed the letter mentioned a river by its modern name.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Archivist Ludmila noticed the letter mentioned a river by its modern name.",
+      "explanation": "The modern river name gives the first clue, and the comparison with the other letters makes it suspicious. The watermark and the fibers are separate physical tests, and the donor's account provides provenance. Together they justify the label, and the letter's new use follows.",
+      "hint": "Independent lines of evidence support one conclusion. Which ones are they?",
+      "plotStructure": "Discovery, Clue, Comparison, Test, Confirmation, Provenance, Conclusion, Decision, Outcome",
+      "sequenceLogic": "Suspicion → Comparison → Physical Evidence → Confirmation → Provenance → Conclusion → New Use"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L198_PRACTICE_Q1",
+      "level": 198,
+      "phase": "practice",
+      "storyContext": "Shop owner Ibrahim's rent was due to double when his lease renewed.",
+      "prompt": "In the narrative sequence (Problem, Research, Valuation, Presentation, Counter, Compromise, Agreement), what event must logically take place immediately after: \"Shop owner Ibrahim's rent was due to double when his lease renewed.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "They abandoned the current procedure and started again from scratch.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "He asked neighboring shops what they paid and found rents were similar to his current one."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "He asked neighboring shops what they paid and found rents were similar to his current one.",
+      "explanation": "The rent rise creates the dispute, and Ibrahim gathers evidence from two sources. He presents them, and Kessler answers with an argument of his own. The compromise trades a moderate increase for stability, and the lease closes the deal.",
+      "hint": "What does each side bring to the negotiation?",
+      "plotStructure": "Problem, Research, Valuation, Presentation, Counter, Compromise, Agreement",
+      "sequenceLogic": "Demand → Evidence → Presentation → Counterargument → Compromise → Agreement"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L198_PRACTICE_Q2",
+      "level": 198,
+      "phase": "practice",
+      "storyContext": "The night before a concert, the orchestra's cello soloist fell ill.",
+      "prompt": "In the narrative sequence (Crisis, Solution, Complication, Compromise, Preparation, Performance, Reaction, Outcome), what event must logically take place immediately after: \"The night before a concert, the orchestra's cello soloist fell ill.\"?",
+      "options": [
+        "Unexpected complications arose that forced them to delay the scheduled timeline.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "Conductor Vesna asked the principal cellist to step in."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "Conductor Vesna asked the principal cellist to step in.",
+      "explanation": "The illness creates the crisis, and the principal is the natural substitute. His limited knowledge is the complication, and the standard version is the compromise. The rehearsal makes it workable, and the audience's reaction shows it succeeded. The thanks and the invitation are consequences.",
+      "hint": "A last-minute solution has to solve one problem without creating another.",
+      "plotStructure": "Crisis, Solution, Complication, Compromise, Preparation, Performance, Reaction, Outcome",
+      "sequenceLogic": "Crisis → Substitute → Limitation → Compromise → Preparation → Performance → Response"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L198_PRACTICE_Q3",
+      "level": 198,
+      "phase": "practice",
+      "storyContext": "A medical device company sought approval in two countries.",
+      "prompt": "In the narrative sequence (Goal, Requirement, Dependency, Plan, Prerequisite, Execution, Approval, Submission, Outcome), what event must logically take place immediately after: \"A medical device company sought approval in two countries.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Country A's regulator asked for a clinical study conducted in its own population.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Country A's regulator asked for a clinical study conducted in its own population.",
+      "explanation": "The two regulators have different rules, and Country B's depends on Country A's approval. That dependency determines the order. Country A's demand for local data requires a study, which needs ethics approval before enrollment, and the final approval follows the chain.",
+      "hint": "Which approval unlocks the other, and what unlocks the first?",
+      "plotStructure": "Goal, Requirement, Dependency, Plan, Prerequisite, Execution, Approval, Submission, Outcome",
+      "sequenceLogic": "Dependency Chain → Requirement → Approval → Submission → Approval"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L199_PRACTICE_Q1",
+      "level": 199,
+      "phase": "practice",
+      "storyContext": "An archaeological team had a six-week dig permit before the rainy season.",
+      "prompt": "In the narrative sequence (Limit, Discovery, Requirement, Analysis, Request, Condition, Action, Outcome), what event must logically take place immediately after: \"An archaeological team had a six-week dig permit before the rainy season.\"?",
+      "options": [
+        "In the third week, they uncovered a mosaic floor.",
+        "He realized he had misplaced the necessary tool and searched the room for it.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "In the third week, they uncovered a mosaic floor.",
+      "explanation": "The permit sets the time limit, and the mosaic creates a new task. Fadila's recalculation shows a conflict, and the request for extra time addresses it. The authorities' condition adds a requirement, and the shelter satisfies it.",
+      "hint": "A discovery changes the schedule. Which sentence shows the recalculation?",
+      "plotStructure": "Limit, Discovery, Requirement, Analysis, Request, Condition, Action, Outcome",
+      "sequenceLogic": "Limit → Discovery → Requirement → Recalculation → Request → Condition → Action → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L199_PRACTICE_Q2",
+      "level": 199,
+      "phase": "practice",
+      "storyContext": "A beverage company planned to launch a drink named \"Zest\" in several countries.",
+      "prompt": "In the narrative sequence (Plan, Check, Warning, Test, Confirmation, Decision, Clearance, Outcome), what event must logically take place immediately after: \"A beverage company planned to launch a drink named \"Zest\" in several countries.\"?",
+      "options": [
+        "Without reviewing the previous steps, he rushed prematurely to the conclusion.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "The marketing team checked that the name was legally available.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "The marketing team checked that the name was legally available.",
+      "explanation": "The plan is checked for legal availability, but the regional manager raises a different problem. A test confirms the suspicion, and the company responds with a local change. The new name has to be cleared before printing, and launch follows.",
+      "hint": "Legal clearance and cultural fit are different checks. Which one comes first here, and why?",
+      "plotStructure": "Plan, Check, Warning, Test, Confirmation, Decision, Clearance, Outcome",
+      "sequenceLogic": "Plan → Check → Warning → Test → Confirmation → Change → Clearance → Launch"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L199_PRACTICE_Q3",
+      "level": 199,
+      "phase": "practice",
+      "storyContext": "A scheduling app displayed appointment times using the server's time zone.",
+      "prompt": "In the narrative sequence (Flaw, Symptom, Ambiguity, Pattern, Reproduction, Explanation, Fix, Communication, Outcome), what event must logically take place immediately after: \"A scheduling app displayed appointment times using the server's time zone.\"?",
+      "options": [
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "Customers in different time zones began to miss appointments.",
+        "She paused and hesitated before deciding whether to proceed with the plan."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Customers in different time zones began to miss appointments.",
+      "explanation": "The design decision creates the flaw, and customers experience the symptom. The tickets are vague, and Ayo's observation of the shared region is the pattern. Reproducing the bug proves it, and the daylight-saving detail explains the size of the error. The rewrite, notice, and result follow.",
+      "hint": "A vague symptom becomes clear when a pattern is noticed. What is the pattern?",
+      "plotStructure": "Flaw, Symptom, Ambiguity, Pattern, Reproduction, Explanation, Fix, Communication, Outcome",
+      "sequenceLogic": "Design Flaw → Symptom → Pattern → Reproduction → Explanation → Fix → Communication → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L200_PRACTICE_Q1",
+      "level": 200,
+      "phase": "practice",
+      "storyContext": "A family bakery's founder, Mr. Karagiannis, announced that he would retire and pass the business to one of his two children.",
+      "prompt": "In the narrative sequence (Announcement, Assumption, Assumption, Conflict, Consequence, Inquiry, Discovery, Resolution), what event must logically take place immediately after: \"A family bakery's founder, Mr. Karagiannis, announced that he would retire and pass the business to one of his two children.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "The initial attempt failed completely, causing everyone to reconsider the strategy.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "His daughter Eleni, who ran the ovens, assumed it would be her."
+      ],
+      "correctAnswerIndex": 3,
+      "correctAnswer": "His daughter Eleni, who ran the ovens, assumed it would be her.",
+      "explanation": "The announcement creates a vacuum, and each child fills it with an assumption. Independent decisions cause a visible mess, and the father's question turns assumptions into stated wishes. The stated wishes are compatible, and the split-leadership proposal follows.",
+      "hint": "What was each child assuming, and why did that assumption cause the problem?",
+      "plotStructure": "Announcement, Assumption, Assumption, Conflict, Consequence, Inquiry, Discovery, Resolution",
+      "sequenceLogic": "Announcement → Assumptions → Conflict → Consequences → Inquiry → Discovery → Solution"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L200_PRACTICE_Q2",
+      "level": 200,
+      "phase": "practice",
+      "storyContext": "A city health department planned a vaccination campaign for its winter season.",
+      "prompt": "In the narrative sequence (Plan, Need, Obstacle, Option, Offer, Condition, Action, Approval, Outcome), what event must logically take place immediately after: \"A city health department planned a vaccination campaign for its winter season.\"?",
+      "options": [
+        "They abandoned the current procedure and started again from scratch.",
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Analysts predicted the highest need in three districts.",
+        "An unrelated bystander asked for directions, momentarily pausing the narrative."
+      ],
+      "correctAnswerIndex": 2,
+      "correctAnswer": "Analysts predicted the highest need in three districts.",
+      "explanation": "The plan and analysis define the need, and the booked vans are the obstacle. Postponing is the default response, but the loan offers an alternative. The registration requirement is a hidden condition, and the paperwork satisfies it. The campaign then runs as planned, and the result is the final outcome.",
+      "hint": "An offered resource is not the same as a usable resource. What stands between them?",
+      "plotStructure": "Plan, Need, Obstacle, Option, Offer, Condition, Action, Approval, Outcome",
+      "sequenceLogic": "Plan → Need → Obstacle → Option → Alternative → Hidden Condition → Action → Approval → Result"
+    },
+    {
+      "id": "ELT_STORYBUILDER_L200_PRACTICE_Q3",
+      "level": 200,
+      "phase": "practice",
+      "storyContext": "Two economics teams reached opposite conclusions about whether a minimum-wage increase reduced employment.",
+      "prompt": "In the narrative sequence (Dispute, Accusation, Proposal, Commitment, Test, Results, Synthesis, Consequence, Legacy), what event must logically take place immediately after: \"Two economics teams reached opposite conclusions about whether a minimum-wage increase reduced employment.\"?",
+      "options": [
+        "She paused and hesitated before deciding whether to proceed with the plan.",
+        "Each team accused the other of choosing convenient data.",
+        "A sudden loud noise echoed in the adjacent corridor, breaking their concentration.",
+        "Unexpected complications arose that forced them to delay the scheduled timeline."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Each team accused the other of choosing convenient data.",
+      "explanation": "The opposed conclusions and mutual accusations create a credibility problem. The editor's proposal removes the possibility of choosing data after the fact, and the registration commits both sides. The simultaneous release and registered analyses make the results comparable, and the joint conclusion and the journal's policy show what the dispute taught the field.",
+      "hint": "How can a dispute about evidence be turned into a fair test?",
+      "plotStructure": "Dispute, Accusation, Proposal, Commitment, Test, Results, Synthesis, Consequence, Legacy",
+      "sequenceLogic": "Dispute → Accusation → Proposal → Commitment → Fair Test → Results → Synthesis → Policy"
+    }
+  ]
+}
