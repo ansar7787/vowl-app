@@ -159,6 +159,22 @@ void main() {
           ),
         ),
         GoRoute(
+          path: '/learn',
+          builder: (context, state) {
+            final uri = state.uri.toString();
+            navigatedRoutes.add(uri);
+            return Scaffold(body: Text('Learn Screen: $uri'));
+          },
+        ),
+        GoRoute(
+          path: '/practice',
+          builder: (context, state) {
+            final uri = state.uri.toString();
+            navigatedRoutes.add(uri);
+            return Scaffold(body: Text('Practice Screen: $uri'));
+          },
+        ),
+        GoRoute(
           path: '/game',
           builder: (context, state) {
             final uri = state.uri.toString();
@@ -255,14 +271,35 @@ void main() {
 
   group('ModernCategoryMap - Tap Interaction & Routing', () {
     testWidgets(
-      'tapping unlocked level node pushes /game with category and level',
+      'tapping unlocked level node pushes /game when learn and practice phases completed',
       (tester) async {
         tester.view.physicalSize = const Size(800, 1600);
         tester.view.devicePixelRatio = 1.0;
         addTearDown(tester.view.resetPhysicalSize);
         addTearDown(tester.view.resetDevicePixelRatio);
 
-        await tester.pumpWidget(createWidgetUnderTest());
+        const phasedCompleteUser = UserEntity(
+          id: 'user_456',
+          email: 'reader@vowl.app',
+          displayName: 'Elena Rostova',
+          currentStreak: 7,
+          totalExp: 2400,
+          coins: 180,
+          unlockedLevels: {'readAndAnswer': 3},
+          completedLevels: {
+            'readAndAnswer': [1, 2],
+          },
+          starRatings: {
+            'readAndAnswer': {'1': 3, '2': 2},
+          },
+          phaseProgress: {
+            'readAndAnswer': {
+              '1': {'learn', 'practice'},
+            },
+          },
+        );
+
+        await tester.pumpWidget(createWidgetUnderTest(customUser: phasedCompleteUser));
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 500));
 
@@ -275,6 +312,34 @@ void main() {
 
           expect(navigatedRoutes, isNotEmpty);
           expect(navigatedRoutes.first, contains('/game'));
+          expect(navigatedRoutes.first, contains('category=reading'));
+          expect(navigatedRoutes.first, contains('gameType=readAndAnswer'));
+          expect(navigatedRoutes.first, contains('level=1'));
+        }
+      },
+    );
+
+    testWidgets(
+      'tapping unlocked level node pushes /learn when learn phase not yet completed',
+      (tester) async {
+        tester.view.physicalSize = const Size(800, 1600);
+        tester.view.devicePixelRatio = 1.0;
+        addTearDown(tester.view.resetPhysicalSize);
+        addTearDown(tester.view.resetDevicePixelRatio);
+
+        await tester.pumpWidget(createWidgetUnderTest());
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 500));
+
+        // Find the node for Level 1 and tap it
+        final level1Finder = find.widgetWithText(ScaleButton, '1');
+        if (level1Finder.evaluate().isNotEmpty) {
+          await tester.tap(level1Finder.first);
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 500));
+
+          expect(navigatedRoutes, isNotEmpty);
+          expect(navigatedRoutes.first, contains('/learn'));
           expect(navigatedRoutes.first, contains('category=reading'));
           expect(navigatedRoutes.first, contains('gameType=readAndAnswer'));
           expect(navigatedRoutes.first, contains('level=1'));
