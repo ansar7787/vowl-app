@@ -75,6 +75,8 @@ import 'package:vowl/features/roleplay/gourmet_order/presentation/pages/gourmet_
 import 'package:vowl/features/roleplay/gourmet_order/presentation/pages/gourmet_order_practice_screen.dart';
 import 'package:vowl/features/roleplay/travel_desk/presentation/pages/travel_desk_learn_screen.dart';
 import 'package:vowl/features/roleplay/travel_desk/presentation/pages/travel_desk_practice_screen.dart';
+import 'package:vowl/features/roleplay/conflict_resolver/presentation/pages/conflict_resolver_learn_screen.dart';
+import 'package:vowl/features/roleplay/conflict_resolver/presentation/pages/conflict_resolver_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -1073,6 +1075,24 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<TravelDeskPracticeScreen>());
+    });
+
+    test('resolves /learn route for conflictResolver', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state =
+          createMockState('/learn?category=roleplay&gameType=conflictResolver&level=5');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<ConflictResolverLearnScreen>());
+    });
+
+    test('resolves /practice route for conflictResolver', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state =
+          createMockState('/practice?category=roleplay&gameType=conflictResolver&level=5');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<ConflictResolverPracticeScreen>());
     });
   });
 }

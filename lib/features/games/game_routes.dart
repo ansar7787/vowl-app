@@ -198,6 +198,8 @@ import 'package:vowl/features/roleplay/gourmet_order/presentation/pages/gourmet_
 import 'package:vowl/features/roleplay/gourmet_order/presentation/pages/gourmet_order_practice_screen.dart';
 import 'package:vowl/features/roleplay/travel_desk/presentation/pages/travel_desk_learn_screen.dart';
 import 'package:vowl/features/roleplay/travel_desk/presentation/pages/travel_desk_practice_screen.dart';
+import 'package:vowl/features/roleplay/conflict_resolver/presentation/pages/conflict_resolver_learn_screen.dart';
+import 'package:vowl/features/roleplay/conflict_resolver/presentation/pages/conflict_resolver_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -997,6 +999,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'conflictresolver') {
+          return fadeTransitionPage(
+            child: ConflictResolverLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1575,6 +1583,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'traveldesk') {
           return fadeTransitionPage(
             child: TravelDeskPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'conflictresolver') {
+          return fadeTransitionPage(
+            child: ConflictResolverPracticeScreen(level: level),
             state: state,
           );
         }
