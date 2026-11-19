@@ -12,7 +12,8 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/presentation/game_mechanics/speaking/speak_to_confirm_overlay.dart';
 import 'package:vowl/core/presentation/widgets/game_briefing_layer.dart';
-import 'package:vowl/core/presentation/widgets/game_progress_header.dart';
+import 'package:vowl/core/presentation/widgets/games/headers/vowl_universal_game_header.dart';
+import 'package:vowl/features/roleplay/presentation/layout/roleplay_base_layout.dart';
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_theme.dart';
@@ -390,8 +391,9 @@ void main() {
       tester,
     ) async {
       await pumpGourmetOrderScreen(tester);
-      expect(find.byType(GameProgressHeader), findsOneWidget);
-      expect(find.byType(QuestHintButton), findsOneWidget);
+      expect(find.byType(RoleplayBaseLayout), findsOneWidget);
+      expect(find.byType(VowlUniversalGameHeader), findsOneWidget);
+      expect(find.byIcon(Icons.favorite_rounded), findsWidgets);
     });
   });
 

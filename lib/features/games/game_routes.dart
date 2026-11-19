@@ -194,6 +194,8 @@ import 'package:vowl/features/roleplay/job_interview/presentation/pages/job_inte
 import 'package:vowl/features/roleplay/job_interview/presentation/pages/job_interview_practice_screen.dart';
 import 'package:vowl/features/roleplay/medical_consult/presentation/pages/medical_consult_learn_screen.dart';
 import 'package:vowl/features/roleplay/medical_consult/presentation/pages/medical_consult_practice_screen.dart';
+import 'package:vowl/features/roleplay/gourmet_order/presentation/pages/gourmet_order_learn_screen.dart';
+import 'package:vowl/features/roleplay/gourmet_order/presentation/pages/gourmet_order_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -981,6 +983,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'gourmetorder') {
+          return fadeTransitionPage(
+            child: GourmetOrderLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1547,6 +1555,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'medicalconsult') {
           return fadeTransitionPage(
             child: MedicalConsultPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'gourmetorder') {
+          return fadeTransitionPage(
+            child: GourmetOrderPracticeScreen(level: level),
             state: state,
           );
         }
