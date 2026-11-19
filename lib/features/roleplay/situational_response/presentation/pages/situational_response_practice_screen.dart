@@ -276,14 +276,16 @@ class _SituationalResponsePracticeScreenState
                               color: AppColors.indigo500,
                             ),
                             SizedBox(width: 4.w),
-                            Text(
-                              'FORMALITY: $formalityScore%',
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.bold,
-                                color: AppColors.indigo500,
+                            Flexible(
+                              child: Text(
+                                'FORMALITY: $formalityScore%',
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.indigo500,
+                                ),
                               ),
                             ),
                           ],
@@ -495,13 +497,17 @@ class _SituationalResponsePracticeScreenState
                           size: 18.sp,
                         ),
                         SizedBox(width: 8.w),
-                        Text(
-                          isCorrect ? 'WELL CALIBRATED!' : 'COMMUNICATION FEEDBACK',
-                          style: TextStyle(
-                            fontSize: 13.sp,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 1.0,
-                            color: isCorrect ? AppColors.emerald500 : AppColors.amber500,
+                        Expanded(
+                          child: Text(
+                            isCorrect ? 'WELL CALIBRATED!' : 'COMMUNICATION FEEDBACK',
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.0,
+                              color: isCorrect ? AppColors.emerald500 : AppColors.amber500,
+                            ),
                           ),
                         ),
                       ],
