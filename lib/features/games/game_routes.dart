@@ -174,6 +174,8 @@ import 'package:vowl/features/accent/shadowing_challenge/presentation/pages/shad
 import 'package:vowl/features/accent/shadowing_challenge/presentation/pages/shadowing_challenge_practice_screen.dart';
 import 'package:vowl/features/accent/vowel_distinction/presentation/pages/vowel_distinction_learn_screen.dart';
 import 'package:vowl/features/accent/vowel_distinction/presentation/pages/vowel_distinction_practice_screen.dart';
+import 'package:vowl/features/accent/consonant_clarity/presentation/pages/consonant_clarity_learn_screen.dart';
+import 'package:vowl/features/accent/consonant_clarity/presentation/pages/consonant_clarity_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -901,6 +903,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'consonantclarity') {
+          return fadeTransitionPage(
+            child: ConsonantClarityLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1407,6 +1415,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'voweldistinction') {
           return fadeTransitionPage(
             child: VowelDistinctionPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'consonantclarity') {
+          return fadeTransitionPage(
+            child: ConsonantClarityPracticeScreen(level: level),
             state: state,
           );
         }
