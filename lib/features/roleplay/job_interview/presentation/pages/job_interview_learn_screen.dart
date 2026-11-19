@@ -244,8 +244,6 @@ class _JobInterviewLearnScreenState extends State<JobInterviewLearnScreen> {
       title: 'Job Interview',
       gameType: 'jobInterview',
       level: widget.level,
-      currentStep: _currentIndex + 1,
-      totalSteps: _quests.length,
       actionLabel:
           _currentIndex == _quests.length - 1 ? 'START PRACTICE' : 'NEXT QUESTION',
       onComplete: _onNext,

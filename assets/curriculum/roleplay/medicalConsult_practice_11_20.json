@@ -1,0 +1,518 @@
+{
+  "gameType": "medicalConsult",
+  "phase": "practice",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "id": "mc_practice_l11_q1",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 11,
+      "doctorQuestion": "Can you describe the pain in your shoulder and when it started?",
+      "options": [
+        "It's a sharp, catching pain when I lift my arm overhead that started three days ago after tennis practice.",
+        "It just hurts really bad and I don't like it at all.",
+        "My shoulder feels funny sometimes, maybe for a few weeks or days."
+      ],
+      "correctAnswerIndex": 0,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided vague descriptions and missing timeline details.",
+      "explanation": "Stating the exact sensation ('sharp, catching'), the precise motion trigger ('lifting arm overhead'), and clear timeline ('three days ago') gives the doctor actionable diagnostic data.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l11_q2",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 11,
+      "doctorQuestion": "Do you have any allergies or adverse reactions to antibiotics?",
+      "options": [
+        "I think medicine makes me tired sometimes.",
+        "Yes, I broke out in hives and facial swelling from Amoxicillin two years ago, so I avoid all penicillin derivatives.",
+        "No, I never take any pills unless someone tells me to."
+      ],
+      "correctAnswerIndex": 1,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided dismissing drug allergy history or confusing side effects with true allergies.",
+      "explanation": "Clearly naming the specific medication ('Amoxicillin'), the allergic manifestation ('hives and facial swelling'), and the drug family ('penicillin') prevents life-threatening prescribing errors.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l11_q3",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 11,
+      "doctorQuestion": "How severe is your headache on a scale from 1 to 10, and what does it feel like?",
+      "options": [
+        "It's about a 7; it's a tight, band-like dull pressure wrapping around my entire forehead with no nausea.",
+        "It's probably an 11 or 12, it's the worst thing ever in human history.",
+        "I don't know numbers, it's just a regular headache."
+      ],
+      "correctAnswerIndex": 0,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided unrealistic hyperbolic ratings and unhelpful vagueness.",
+      "explanation": "A calibrated rating (7/10) paired with anatomical description ('tight, band-like dull pressure wrapping around forehead') and negative symptom rule-out ('no nausea') accurately points to tension-type cephalalgia.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l12_q1",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 12,
+      "doctorQuestion": "Have you been taking any over-the-counter medication for this fever?",
+      "options": [
+        "I took some random pills from my friend's cabinet yesterday.",
+        "I've taken 500mg of Acetaminophen every 6 hours since yesterday morning, which brings it down from 102°F to 99.5°F.",
+        "I don't believe in medicine so I just drink hot water."
+      ],
+      "correctAnswerIndex": 1,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided unidentified medication ingestion and missing dosage logs.",
+      "explanation": "Providing exact medication names ('Acetaminophen'), precise dosage ('500mg every 6 hours'), and recorded temperature response demonstrates high medical communication clarity.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l12_q2",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 12,
+      "doctorQuestion": "Does the back pain radiate anywhere, like down your legs?",
+      "options": [
+        "Yes, it shoots down my left thigh and into my calf, especially when I sit down.",
+        "My whole body hurts everywhere all the time.",
+        "I don't understand what radiate means."
+      ],
+      "correctAnswerIndex": 0,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided generalized complaints that obscure localized radiculopathy.",
+      "explanation": "Confirming distal radiation along a specific pathway ('shoots down left thigh into calf') alerts the physician to possible lumbar nerve root compression (sciatica).",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l12_q3",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 12,
+      "doctorQuestion": "Can you describe the pain in your shoulder and when it started?",
+      "options": [
+        "It's a sharp, catching pain when I lift my arm overhead that started three days ago after tennis practice.",
+        "It just hurts really bad and I don't like it at all.",
+        "My shoulder feels funny sometimes, maybe for a few weeks or days."
+      ],
+      "correctAnswerIndex": 0,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided vague descriptions and missing timeline details.",
+      "explanation": "Stating the exact sensation ('sharp, catching'), the precise motion trigger ('lifting arm overhead'), and clear timeline ('three days ago') gives the doctor actionable diagnostic data.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l13_q1",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 13,
+      "doctorQuestion": "Do you have any allergies or adverse reactions to antibiotics?",
+      "options": [
+        "I think medicine makes me tired sometimes.",
+        "Yes, I broke out in hives and facial swelling from Amoxicillin two years ago, so I avoid all penicillin derivatives.",
+        "No, I never take any pills unless someone tells me to."
+      ],
+      "correctAnswerIndex": 1,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided dismissing drug allergy history or confusing side effects with true allergies.",
+      "explanation": "Clearly naming the specific medication ('Amoxicillin'), the allergic manifestation ('hives and facial swelling'), and the drug family ('penicillin') prevents life-threatening prescribing errors.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l13_q2",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 13,
+      "doctorQuestion": "How severe is your headache on a scale from 1 to 10, and what does it feel like?",
+      "options": [
+        "It's about a 7; it's a tight, band-like dull pressure wrapping around my entire forehead with no nausea.",
+        "It's probably an 11 or 12, it's the worst thing ever in human history.",
+        "I don't know numbers, it's just a regular headache."
+      ],
+      "correctAnswerIndex": 0,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided unrealistic hyperbolic ratings and unhelpful vagueness.",
+      "explanation": "A calibrated rating (7/10) paired with anatomical description ('tight, band-like dull pressure wrapping around forehead') and negative symptom rule-out ('no nausea') accurately points to tension-type cephalalgia.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l13_q3",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 13,
+      "doctorQuestion": "Have you been taking any over-the-counter medication for this fever?",
+      "options": [
+        "I took some random pills from my friend's cabinet yesterday.",
+        "I've taken 500mg of Acetaminophen every 6 hours since yesterday morning, which brings it down from 102°F to 99.5°F.",
+        "I don't believe in medicine so I just drink hot water."
+      ],
+      "correctAnswerIndex": 1,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided unidentified medication ingestion and missing dosage logs.",
+      "explanation": "Providing exact medication names ('Acetaminophen'), precise dosage ('500mg every 6 hours'), and recorded temperature response demonstrates high medical communication clarity.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l14_q1",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 14,
+      "doctorQuestion": "Does the back pain radiate anywhere, like down your legs?",
+      "options": [
+        "Yes, it shoots down my left thigh and into my calf, especially when I sit down.",
+        "My whole body hurts everywhere all the time.",
+        "I don't understand what radiate means."
+      ],
+      "correctAnswerIndex": 0,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided generalized complaints that obscure localized radiculopathy.",
+      "explanation": "Confirming distal radiation along a specific pathway ('shoots down left thigh into calf') alerts the physician to possible lumbar nerve root compression (sciatica).",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l14_q2",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 14,
+      "doctorQuestion": "Can you describe the pain in your shoulder and when it started?",
+      "options": [
+        "It's a sharp, catching pain when I lift my arm overhead that started three days ago after tennis practice.",
+        "It just hurts really bad and I don't like it at all.",
+        "My shoulder feels funny sometimes, maybe for a few weeks or days."
+      ],
+      "correctAnswerIndex": 0,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided vague descriptions and missing timeline details.",
+      "explanation": "Stating the exact sensation ('sharp, catching'), the precise motion trigger ('lifting arm overhead'), and clear timeline ('three days ago') gives the doctor actionable diagnostic data.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l14_q3",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 14,
+      "doctorQuestion": "Do you have any allergies or adverse reactions to antibiotics?",
+      "options": [
+        "I think medicine makes me tired sometimes.",
+        "Yes, I broke out in hives and facial swelling from Amoxicillin two years ago, so I avoid all penicillin derivatives.",
+        "No, I never take any pills unless someone tells me to."
+      ],
+      "correctAnswerIndex": 1,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided dismissing drug allergy history or confusing side effects with true allergies.",
+      "explanation": "Clearly naming the specific medication ('Amoxicillin'), the allergic manifestation ('hives and facial swelling'), and the drug family ('penicillin') prevents life-threatening prescribing errors.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l15_q1",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 15,
+      "doctorQuestion": "How severe is your headache on a scale from 1 to 10, and what does it feel like?",
+      "options": [
+        "It's about a 7; it's a tight, band-like dull pressure wrapping around my entire forehead with no nausea.",
+        "It's probably an 11 or 12, it's the worst thing ever in human history.",
+        "I don't know numbers, it's just a regular headache."
+      ],
+      "correctAnswerIndex": 0,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided unrealistic hyperbolic ratings and unhelpful vagueness.",
+      "explanation": "A calibrated rating (7/10) paired with anatomical description ('tight, band-like dull pressure wrapping around forehead') and negative symptom rule-out ('no nausea') accurately points to tension-type cephalalgia.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l15_q2",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 15,
+      "doctorQuestion": "Have you been taking any over-the-counter medication for this fever?",
+      "options": [
+        "I took some random pills from my friend's cabinet yesterday.",
+        "I've taken 500mg of Acetaminophen every 6 hours since yesterday morning, which brings it down from 102°F to 99.5°F.",
+        "I don't believe in medicine so I just drink hot water."
+      ],
+      "correctAnswerIndex": 1,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided unidentified medication ingestion and missing dosage logs.",
+      "explanation": "Providing exact medication names ('Acetaminophen'), precise dosage ('500mg every 6 hours'), and recorded temperature response demonstrates high medical communication clarity.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l15_q3",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 15,
+      "doctorQuestion": "Does the back pain radiate anywhere, like down your legs?",
+      "options": [
+        "Yes, it shoots down my left thigh and into my calf, especially when I sit down.",
+        "My whole body hurts everywhere all the time.",
+        "I don't understand what radiate means."
+      ],
+      "correctAnswerIndex": 0,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided generalized complaints that obscure localized radiculopathy.",
+      "explanation": "Confirming distal radiation along a specific pathway ('shoots down left thigh into calf') alerts the physician to possible lumbar nerve root compression (sciatica).",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l16_q1",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 16,
+      "doctorQuestion": "Can you describe the pain in your shoulder and when it started?",
+      "options": [
+        "It's a sharp, catching pain when I lift my arm overhead that started three days ago after tennis practice.",
+        "It just hurts really bad and I don't like it at all.",
+        "My shoulder feels funny sometimes, maybe for a few weeks or days."
+      ],
+      "correctAnswerIndex": 0,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided vague descriptions and missing timeline details.",
+      "explanation": "Stating the exact sensation ('sharp, catching'), the precise motion trigger ('lifting arm overhead'), and clear timeline ('three days ago') gives the doctor actionable diagnostic data.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l16_q2",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 16,
+      "doctorQuestion": "Do you have any allergies or adverse reactions to antibiotics?",
+      "options": [
+        "I think medicine makes me tired sometimes.",
+        "Yes, I broke out in hives and facial swelling from Amoxicillin two years ago, so I avoid all penicillin derivatives.",
+        "No, I never take any pills unless someone tells me to."
+      ],
+      "correctAnswerIndex": 1,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided dismissing drug allergy history or confusing side effects with true allergies.",
+      "explanation": "Clearly naming the specific medication ('Amoxicillin'), the allergic manifestation ('hives and facial swelling'), and the drug family ('penicillin') prevents life-threatening prescribing errors.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l16_q3",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 16,
+      "doctorQuestion": "How severe is your headache on a scale from 1 to 10, and what does it feel like?",
+      "options": [
+        "It's about a 7; it's a tight, band-like dull pressure wrapping around my entire forehead with no nausea.",
+        "It's probably an 11 or 12, it's the worst thing ever in human history.",
+        "I don't know numbers, it's just a regular headache."
+      ],
+      "correctAnswerIndex": 0,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided unrealistic hyperbolic ratings and unhelpful vagueness.",
+      "explanation": "A calibrated rating (7/10) paired with anatomical description ('tight, band-like dull pressure wrapping around forehead') and negative symptom rule-out ('no nausea') accurately points to tension-type cephalalgia.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l17_q1",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 17,
+      "doctorQuestion": "Have you been taking any over-the-counter medication for this fever?",
+      "options": [
+        "I took some random pills from my friend's cabinet yesterday.",
+        "I've taken 500mg of Acetaminophen every 6 hours since yesterday morning, which brings it down from 102°F to 99.5°F.",
+        "I don't believe in medicine so I just drink hot water."
+      ],
+      "correctAnswerIndex": 1,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided unidentified medication ingestion and missing dosage logs.",
+      "explanation": "Providing exact medication names ('Acetaminophen'), precise dosage ('500mg every 6 hours'), and recorded temperature response demonstrates high medical communication clarity.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l17_q2",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 17,
+      "doctorQuestion": "Does the back pain radiate anywhere, like down your legs?",
+      "options": [
+        "Yes, it shoots down my left thigh and into my calf, especially when I sit down.",
+        "My whole body hurts everywhere all the time.",
+        "I don't understand what radiate means."
+      ],
+      "correctAnswerIndex": 0,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided generalized complaints that obscure localized radiculopathy.",
+      "explanation": "Confirming distal radiation along a specific pathway ('shoots down left thigh into calf') alerts the physician to possible lumbar nerve root compression (sciatica).",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l17_q3",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 17,
+      "doctorQuestion": "Can you describe the pain in your shoulder and when it started?",
+      "options": [
+        "It's a sharp, catching pain when I lift my arm overhead that started three days ago after tennis practice.",
+        "It just hurts really bad and I don't like it at all.",
+        "My shoulder feels funny sometimes, maybe for a few weeks or days."
+      ],
+      "correctAnswerIndex": 0,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided vague descriptions and missing timeline details.",
+      "explanation": "Stating the exact sensation ('sharp, catching'), the precise motion trigger ('lifting arm overhead'), and clear timeline ('three days ago') gives the doctor actionable diagnostic data.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l18_q1",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 18,
+      "doctorQuestion": "Do you have any allergies or adverse reactions to antibiotics?",
+      "options": [
+        "I think medicine makes me tired sometimes.",
+        "Yes, I broke out in hives and facial swelling from Amoxicillin two years ago, so I avoid all penicillin derivatives.",
+        "No, I never take any pills unless someone tells me to."
+      ],
+      "correctAnswerIndex": 1,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided dismissing drug allergy history or confusing side effects with true allergies.",
+      "explanation": "Clearly naming the specific medication ('Amoxicillin'), the allergic manifestation ('hives and facial swelling'), and the drug family ('penicillin') prevents life-threatening prescribing errors.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l18_q2",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 18,
+      "doctorQuestion": "How severe is your headache on a scale from 1 to 10, and what does it feel like?",
+      "options": [
+        "It's about a 7; it's a tight, band-like dull pressure wrapping around my entire forehead with no nausea.",
+        "It's probably an 11 or 12, it's the worst thing ever in human history.",
+        "I don't know numbers, it's just a regular headache."
+      ],
+      "correctAnswerIndex": 0,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided unrealistic hyperbolic ratings and unhelpful vagueness.",
+      "explanation": "A calibrated rating (7/10) paired with anatomical description ('tight, band-like dull pressure wrapping around forehead') and negative symptom rule-out ('no nausea') accurately points to tension-type cephalalgia.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l18_q3",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 18,
+      "doctorQuestion": "Have you been taking any over-the-counter medication for this fever?",
+      "options": [
+        "I took some random pills from my friend's cabinet yesterday.",
+        "I've taken 500mg of Acetaminophen every 6 hours since yesterday morning, which brings it down from 102°F to 99.5°F.",
+        "I don't believe in medicine so I just drink hot water."
+      ],
+      "correctAnswerIndex": 1,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided unidentified medication ingestion and missing dosage logs.",
+      "explanation": "Providing exact medication names ('Acetaminophen'), precise dosage ('500mg every 6 hours'), and recorded temperature response demonstrates high medical communication clarity.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l19_q1",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 19,
+      "doctorQuestion": "Does the back pain radiate anywhere, like down your legs?",
+      "options": [
+        "Yes, it shoots down my left thigh and into my calf, especially when I sit down.",
+        "My whole body hurts everywhere all the time.",
+        "I don't understand what radiate means."
+      ],
+      "correctAnswerIndex": 0,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided generalized complaints that obscure localized radiculopathy.",
+      "explanation": "Confirming distal radiation along a specific pathway ('shoots down left thigh into calf') alerts the physician to possible lumbar nerve root compression (sciatica).",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l19_q2",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 19,
+      "doctorQuestion": "Can you describe the pain in your shoulder and when it started?",
+      "options": [
+        "It's a sharp, catching pain when I lift my arm overhead that started three days ago after tennis practice.",
+        "It just hurts really bad and I don't like it at all.",
+        "My shoulder feels funny sometimes, maybe for a few weeks or days."
+      ],
+      "correctAnswerIndex": 0,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided vague descriptions and missing timeline details.",
+      "explanation": "Stating the exact sensation ('sharp, catching'), the precise motion trigger ('lifting arm overhead'), and clear timeline ('three days ago') gives the doctor actionable diagnostic data.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l19_q3",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 19,
+      "doctorQuestion": "Do you have any allergies or adverse reactions to antibiotics?",
+      "options": [
+        "I think medicine makes me tired sometimes.",
+        "Yes, I broke out in hives and facial swelling from Amoxicillin two years ago, so I avoid all penicillin derivatives.",
+        "No, I never take any pills unless someone tells me to."
+      ],
+      "correctAnswerIndex": 1,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided dismissing drug allergy history or confusing side effects with true allergies.",
+      "explanation": "Clearly naming the specific medication ('Amoxicillin'), the allergic manifestation ('hives and facial swelling'), and the drug family ('penicillin') prevents life-threatening prescribing errors.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l20_q1",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 20,
+      "doctorQuestion": "How severe is your headache on a scale from 1 to 10, and what does it feel like?",
+      "options": [
+        "It's about a 7; it's a tight, band-like dull pressure wrapping around my entire forehead with no nausea.",
+        "It's probably an 11 or 12, it's the worst thing ever in human history.",
+        "I don't know numbers, it's just a regular headache."
+      ],
+      "correctAnswerIndex": 0,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided unrealistic hyperbolic ratings and unhelpful vagueness.",
+      "explanation": "A calibrated rating (7/10) paired with anatomical description ('tight, band-like dull pressure wrapping around forehead') and negative symptom rule-out ('no nausea') accurately points to tension-type cephalalgia.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l20_q2",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 20,
+      "doctorQuestion": "Have you been taking any over-the-counter medication for this fever?",
+      "options": [
+        "I took some random pills from my friend's cabinet yesterday.",
+        "I've taken 500mg of Acetaminophen every 6 hours since yesterday morning, which brings it down from 102°F to 99.5°F.",
+        "I don't believe in medicine so I just drink hot water."
+      ],
+      "correctAnswerIndex": 1,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided unidentified medication ingestion and missing dosage logs.",
+      "explanation": "Providing exact medication names ('Acetaminophen'), precise dosage ('500mg every 6 hours'), and recorded temperature response demonstrates high medical communication clarity.",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    },
+    {
+      "id": "mc_practice_l20_q3",
+      "gameType": "medicalConsult",
+      "phase": "practice",
+      "level": 20,
+      "doctorQuestion": "Does the back pain radiate anywhere, like down your legs?",
+      "options": [
+        "Yes, it shoots down my left thigh and into my calf, especially when I sit down.",
+        "My whole body hurts everywhere all the time.",
+        "I don't understand what radiate means."
+      ],
+      "correctAnswerIndex": 0,
+      "clinicalScore": 5,
+      "pitfallAvoided": "Avoided generalized complaints that obscure localized radiculopathy.",
+      "explanation": "Confirming distal radiation along a specific pathway ('shoots down left thigh into calf') alerts the physician to possible lumbar nerve root compression (sciatica).",
+      "instruction": "Select the patient response that gives the most accurate clinical clarity."
+    }
+  ]
+}

@@ -1,0 +1,698 @@
+{
+  "gameType": "medicalConsult",
+  "phase": "mastery",
+  "batchIndex": 6,
+  "levels": "51-60",
+  "quests": [
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I've had to run to the bathroom all day. It's been happening two or three times a week. It seems worse after certain activities.\"",
+      "symptoms": [
+        "How often has this been happening?",
+        "How long does it usually last each time?",
+        "Have you had any recent vaccinations?",
+        "Is there anything that seems to bring it on or make it worse?"
+      ],
+      "correctAnswer": "How long does it usually last each time?",
+      "hint": "The patient has already told you how often it happens and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how often it happens and what sets it off, so the most useful next question asks about how long it lasts, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l51_q1",
+      "medicalVocab": [
+        "Diarrhea",
+        "Follow-up Question",
+        "Duration"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I've had to run to the bathroom all day. It's been happening two or three times a week. It started a few days ago.\"",
+      "symptoms": [
+        "Do you smoke or use any tobacco products?",
+        "How often has this been happening?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "When did you first notice this?"
+      ],
+      "correctAnswer": "Is there anything that seems to bring it on or make it worse?",
+      "hint": "The patient has already told you how often it happens and when it started. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how often it happens and when it started, so the most useful next question asks about what sets it off, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l51_q2",
+      "medicalVocab": [
+        "Diarrhea",
+        "Follow-up Question",
+        "Trigger"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I've had to run to the bathroom all day. I've also felt a bit more tired than usual alongside it. It started a few days ago.\"",
+      "symptoms": [
+        "Have you noticed anything else alongside this?",
+        "When did you first notice this?",
+        "Have you changed your diet recently?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "Has this been affecting your daily activities?",
+      "hint": "The patient has already told you other symptoms and when it started. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered other symptoms and when it started, so the most useful next question asks about the effect on daily life, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l51_q3",
+      "medicalVocab": [
+        "Diarrhea",
+        "Follow-up Question",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel constipated. Each time, it lasts about twenty minutes or so. It seems worse after certain activities.\"",
+      "symptoms": [
+        "When did you first notice this?",
+        "Have you had any recent dental work?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "How long does it usually last each time?"
+      ],
+      "correctAnswer": "When did you first notice this?",
+      "hint": "The patient has already told you how long it lasts and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how long it lasts and what sets it off, so the most useful next question asks about when it started, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l52_q1",
+      "medicalVocab": [
+        "Constipation",
+        "Follow-up Question",
+        "Onset"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel constipated. It's been making it harder to concentrate at work. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "Do you have any pain when you urinate?",
+        "Has this been affecting your daily activities?",
+        "Have you noticed anything else alongside this?",
+        "How would you describe how bad it feels?"
+      ],
+      "correctAnswer": "Have you noticed anything else alongside this?",
+      "hint": "The patient has already told you the effect on daily life and how bad it feels. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered the effect on daily life and how bad it feels, so the most useful next question asks about other symptoms, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l52_q2",
+      "medicalVocab": [
+        "Constipation",
+        "Follow-up Question",
+        "Associated Symptoms"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel constipated. I've also felt a bit more tired than usual alongside it. Each time, it lasts about twenty minutes or so.\"",
+      "symptoms": [
+        "Have you noticed anything else alongside this?",
+        "How long does it usually last each time?",
+        "Have you traveled outside the country recently?",
+        "When did you first notice this?"
+      ],
+      "correctAnswer": "When did you first notice this?",
+      "hint": "The patient has already told you other symptoms and how long it lasts. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered other symptoms and how long it lasts, so the most useful next question asks about when it started, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l52_q3",
+      "medicalVocab": [
+        "Constipation",
+        "Follow-up Question",
+        "Onset"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My hand feels numb. It's been making it harder to concentrate at work. It seems worse after certain activities.\"",
+      "symptoms": [
+        "Can you show me exactly where you feel it?",
+        "Has this been affecting your daily activities?",
+        "Have you had any recent vaccinations?",
+        "Is there anything that seems to bring it on or make it worse?"
+      ],
+      "correctAnswer": "Can you show me exactly where you feel it?",
+      "hint": "The patient has already told you the effect on daily life and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered the effect on daily life and what sets it off, so the most useful next question asks about where it is, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l53_q1",
+      "medicalVocab": [
+        "Numbness",
+        "Follow-up Question",
+        "Location"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My hand feels numb. I've also felt a bit more tired than usual alongside it. Each time, it lasts about twenty minutes or so.\"",
+      "symptoms": [
+        "How long does it usually last each time?",
+        "Do you smoke or use any tobacco products?",
+        "Have you noticed anything else alongside this?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "Has this been affecting your daily activities?",
+      "hint": "The patient has already told you other symptoms and how long it lasts. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered other symptoms and how long it lasts, so the most useful next question asks about the effect on daily life, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l53_q2",
+      "medicalVocab": [
+        "Numbness",
+        "Follow-up Question",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My hand feels numb. Each time, it lasts about twenty minutes or so. It seems worse after certain activities.\"",
+      "symptoms": [
+        "When did you first notice this?",
+        "Have you changed your diet recently?",
+        "How long does it usually last each time?",
+        "Is there anything that seems to bring it on or make it worse?"
+      ],
+      "correctAnswer": "When did you first notice this?",
+      "hint": "The patient has already told you how long it lasts and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how long it lasts and what sets it off, so the most useful next question asks about when it started, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l53_q3",
+      "medicalVocab": [
+        "Numbness",
+        "Follow-up Question",
+        "Onset"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My leg keeps tingling. It's been making it harder to concentrate at work. It started a few days ago.\"",
+      "symptoms": [
+        "When did you first notice this?",
+        "How would you describe how bad it feels?",
+        "Have you had any recent dental work?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "How would you describe how bad it feels?",
+      "hint": "The patient has already told you the effect on daily life and when it started. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered the effect on daily life and when it started, so the most useful next question asks about how bad it feels, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l54_q1",
+      "medicalVocab": [
+        "Tingling",
+        "Follow-up Question",
+        "Severity"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My leg keeps tingling. It's fairly mild, more annoying than painful. It seems worse after certain activities.\"",
+      "symptoms": [
+        "Have you noticed anything else alongside this?",
+        "How would you describe how bad it feels?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "Do you have any pain when you urinate?"
+      ],
+      "correctAnswer": "Have you noticed anything else alongside this?",
+      "hint": "The patient has already told you how bad it feels and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how bad it feels and what sets it off, so the most useful next question asks about other symptoms, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l54_q2",
+      "medicalVocab": [
+        "Tingling",
+        "Follow-up Question",
+        "Associated Symptoms"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My leg keeps tingling. It's been making it harder to concentrate at work. It seems worse after certain activities.\"",
+      "symptoms": [
+        "Have you traveled outside the country recently?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "Can you show me exactly where you feel it?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "Can you show me exactly where you feel it?",
+      "hint": "The patient has already told you the effect on daily life and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered the effect on daily life and what sets it off, so the most useful next question asks about where it is, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l54_q3",
+      "medicalVocab": [
+        "Tingling",
+        "Follow-up Question",
+        "Location"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My heart skips a beat sometimes. I've also felt a bit more tired than usual alongside it. It's been happening two or three times a week.\"",
+      "symptoms": [
+        "How often has this been happening?",
+        "Have you had any recent vaccinations?",
+        "How would you describe how bad it feels?",
+        "Have you noticed anything else alongside this?"
+      ],
+      "correctAnswer": "How would you describe how bad it feels?",
+      "hint": "The patient has already told you other symptoms and how often it happens. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered other symptoms and how often it happens, so the most useful next question asks about how bad it feels, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l55_q1",
+      "medicalVocab": [
+        "Palpitations",
+        "Follow-up Question",
+        "Severity"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My heart skips a beat sometimes. I've also felt a bit more tired than usual alongside it. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "Have you noticed anything else alongside this?",
+        "Do you smoke or use any tobacco products?",
+        "How would you describe how bad it feels?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "Has this been affecting your daily activities?",
+      "hint": "The patient has already told you other symptoms and how bad it feels. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered other symptoms and how bad it feels, so the most useful next question asks about the effect on daily life, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l55_q2",
+      "medicalVocab": [
+        "Palpitations",
+        "Follow-up Question",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My heart skips a beat sometimes. It's fairly mild, more annoying than painful. It seems worse after certain activities.\"",
+      "symptoms": [
+        "Have you changed your diet recently?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "How long does it usually last each time?",
+        "How would you describe how bad it feels?"
+      ],
+      "correctAnswer": "How long does it usually last each time?",
+      "hint": "The patient has already told you how bad it feels and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how bad it feels and what sets it off, so the most useful next question asks about how long it lasts, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l55_q3",
+      "medicalVocab": [
+        "Palpitations",
+        "Follow-up Question",
+        "Duration"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My ankles are so puffy. It's been happening two or three times a week. It's been making it harder to concentrate at work.\"",
+      "symptoms": [
+        "When did you first notice this?",
+        "How often has this been happening?",
+        "Has this been affecting your daily activities?",
+        "Have you had any recent dental work?"
+      ],
+      "correctAnswer": "When did you first notice this?",
+      "hint": "The patient has already told you how often it happens and the effect on daily life. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how often it happens and the effect on daily life, so the most useful next question asks about when it started, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l56_q1",
+      "medicalVocab": [
+        "Swollen Ankles",
+        "Follow-up Question",
+        "Onset"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My ankles are so puffy. I've also felt a bit more tired than usual alongside it. It's been happening two or three times a week.\"",
+      "symptoms": [
+        "How often has this been happening?",
+        "When did you first notice this?",
+        "Have you noticed anything else alongside this?",
+        "Do you have any pain when you urinate?"
+      ],
+      "correctAnswer": "When did you first notice this?",
+      "hint": "The patient has already told you other symptoms and how often it happens. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered other symptoms and how often it happens, so the most useful next question asks about when it started, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l56_q2",
+      "medicalVocab": [
+        "Swollen Ankles",
+        "Follow-up Question",
+        "Onset"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My ankles are so puffy. It's fairly mild, more annoying than painful. It seems worse after certain activities.\"",
+      "symptoms": [
+        "How would you describe how bad it feels?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "Have you noticed anything else alongside this?",
+        "Have you traveled outside the country recently?"
+      ],
+      "correctAnswer": "Have you noticed anything else alongside this?",
+      "hint": "The patient has already told you how bad it feels and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how bad it feels and what sets it off, so the most useful next question asks about other symptoms, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l56_q3",
+      "medicalVocab": [
+        "Swollen Ankles",
+        "Follow-up Question",
+        "Associated Symptoms"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel anxious most of the time lately. I've also felt a bit more tired than usual alongside it. It seems worse after certain activities.\"",
+      "symptoms": [
+        "Is there anything that seems to bring it on or make it worse?",
+        "Have you noticed anything else alongside this?",
+        "How often has this been happening?",
+        "Have you had any recent vaccinations?"
+      ],
+      "correctAnswer": "How often has this been happening?",
+      "hint": "The patient has already told you other symptoms and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered other symptoms and what sets it off, so the most useful next question asks about how often it happens, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l57_q1",
+      "medicalVocab": [
+        "Anxiety",
+        "Follow-up Question",
+        "Frequency"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel anxious most of the time lately. Each time, it lasts about twenty minutes or so. It started a few days ago.\"",
+      "symptoms": [
+        "Do you smoke or use any tobacco products?",
+        "How often has this been happening?",
+        "When did you first notice this?",
+        "How long does it usually last each time?"
+      ],
+      "correctAnswer": "How often has this been happening?",
+      "hint": "The patient has already told you how long it lasts and when it started. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how long it lasts and when it started, so the most useful next question asks about how often it happens, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l57_q2",
+      "medicalVocab": [
+        "Anxiety",
+        "Follow-up Question",
+        "Frequency"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel anxious most of the time lately. I've also felt a bit more tired than usual alongside it. Each time, it lasts about twenty minutes or so.\"",
+      "symptoms": [
+        "How long does it usually last each time?",
+        "Have you changed your diet recently?",
+        "Have you noticed anything else alongside this?",
+        "How would you describe how bad it feels?"
+      ],
+      "correctAnswer": "How would you describe how bad it feels?",
+      "hint": "The patient has already told you other symptoms and how long it lasts. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered other symptoms and how long it lasts, so the most useful next question asks about how bad it feels, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l57_q3",
+      "medicalVocab": [
+        "Anxiety",
+        "Follow-up Question",
+        "Severity"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I just feel flat most days. It started a few days ago. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "How long does it usually last each time?",
+        "How would you describe how bad it feels?",
+        "When did you first notice this?",
+        "Have you had any recent dental work?"
+      ],
+      "correctAnswer": "How long does it usually last each time?",
+      "hint": "The patient has already told you when it started and how bad it feels. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered when it started and how bad it feels, so the most useful next question asks about how long it lasts, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l58_q1",
+      "medicalVocab": [
+        "Low Mood",
+        "Follow-up Question",
+        "Duration"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I just feel flat most days. It's been happening two or three times a week. It's been making it harder to concentrate at work.\"",
+      "symptoms": [
+        "How often has this been happening?",
+        "Do you have any pain when you urinate?",
+        "Has this been affecting your daily activities?",
+        "How would you describe how bad it feels?"
+      ],
+      "correctAnswer": "How would you describe how bad it feels?",
+      "hint": "The patient has already told you how often it happens and the effect on daily life. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how often it happens and the effect on daily life, so the most useful next question asks about how bad it feels, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l58_q2",
+      "medicalVocab": [
+        "Low Mood",
+        "Follow-up Question",
+        "Severity"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I just feel flat most days. Each time, it lasts about twenty minutes or so. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "How would you describe how bad it feels?",
+        "How long does it usually last each time?",
+        "Has this been affecting your daily activities?",
+        "Have you traveled outside the country recently?"
+      ],
+      "correctAnswer": "Has this been affecting your daily activities?",
+      "hint": "The patient has already told you how long it lasts and how bad it feels. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how long it lasts and how bad it feels, so the most useful next question asks about the effect on daily life, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l58_q3",
+      "medicalVocab": [
+        "Low Mood",
+        "Follow-up Question",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My calf just cramped up. It's mostly on one side. It started a few days ago.\"",
+      "symptoms": [
+        "Has this been affecting your daily activities?",
+        "Can you show me exactly where you feel it?",
+        "When did you first notice this?",
+        "Have you had any recent vaccinations?"
+      ],
+      "correctAnswer": "Has this been affecting your daily activities?",
+      "hint": "The patient has already told you where it is and when it started. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered where it is and when it started, so the most useful next question asks about the effect on daily life, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l59_q1",
+      "medicalVocab": [
+        "Cramp",
+        "Follow-up Question",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My calf just cramped up. Each time, it lasts about twenty minutes or so. It started a few days ago.\"",
+      "symptoms": [
+        "Do you smoke or use any tobacco products?",
+        "Has this been affecting your daily activities?",
+        "When did you first notice this?",
+        "How long does it usually last each time?"
+      ],
+      "correctAnswer": "Has this been affecting your daily activities?",
+      "hint": "The patient has already told you how long it lasts and when it started. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how long it lasts and when it started, so the most useful next question asks about the effect on daily life, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l59_q2",
+      "medicalVocab": [
+        "Cramp",
+        "Follow-up Question",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My calf just cramped up. It started a few days ago. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "When did you first notice this?",
+        "How often has this been happening?",
+        "How would you describe how bad it feels?",
+        "Have you changed your diet recently?"
+      ],
+      "correctAnswer": "How often has this been happening?",
+      "hint": "The patient has already told you when it started and how bad it feels. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered when it started and how bad it feels, so the most useful next question asks about how often it happens, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l59_q3",
+      "medicalVocab": [
+        "Cramp",
+        "Follow-up Question",
+        "Frequency"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the follow-up question that would help most right now.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I have no strength in my legs. It's mostly on one side. It seems worse after certain activities.\"",
+      "symptoms": [
+        "Have you had any recent dental work?",
+        "Can you show me exactly where you feel it?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "How often has this been happening?"
+      ],
+      "correctAnswer": "How often has this been happening?",
+      "hint": "The patient has already told you where it is and what sets it off. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered where it is and what sets it off, so the most useful next question asks about how often it happens, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l60_q1",
+      "medicalVocab": [
+        "Weakness",
+        "Follow-up Question",
+        "Frequency"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the best question to ask the patient next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I have no strength in my legs. It's been making it harder to concentrate at work. It's mostly on one side.\"",
+      "symptoms": [
+        "Do you have any pain when you urinate?",
+        "How often has this been happening?",
+        "Can you show me exactly where you feel it?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "How often has this been happening?",
+      "hint": "The patient has already told you the effect on daily life and where it is. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered the effect on daily life and where it is, so the most useful next question asks about how often it happens, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l60_q2",
+      "medicalVocab": [
+        "Weakness",
+        "Follow-up Question",
+        "Frequency"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Choose the most useful follow-up question to ask next.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I have no strength in my legs. Each time, it lasts about twenty minutes or so. It's been making it harder to concentrate at work.\"",
+      "symptoms": [
+        "Have you traveled outside the country recently?",
+        "How often has this been happening?",
+        "How long does it usually last each time?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "How often has this been happening?",
+      "hint": "The patient has already told you how long it lasts and the effect on daily life. A good question adds something new instead of repeating that.",
+      "explanation": "The patient already covered how long it lasts and the effect on daily life, so the most useful next question asks about how often it happens, which is still missing. The other options either repeat information already given or move off topic entirely.",
+      "id": "mc_l60_q3",
+      "medicalVocab": [
+        "Weakness",
+        "Follow-up Question",
+        "Frequency"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    }
+  ]
+}

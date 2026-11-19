@@ -1,0 +1,698 @@
+{
+  "gameType": "medicalConsult",
+  "phase": "mastery",
+  "batchIndex": 13,
+  "levels": "121-130",
+  "quests": [
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My lower back is killing me. It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "Daily Tasks",
+        "Walking",
+        "Sleeping",
+        "Working / Concentrating"
+      ],
+      "correctAnswer": "Working / Concentrating",
+      "hint": "Which everyday activity has become harder for this patient?",
+      "explanation": "The patient says the problem is getting in the way of work and concentration. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l121_q1",
+      "medicalVocab": [
+        "Back Pain",
+        "Functional Impact",
+        "Daily Activities"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's a twinge low in my back sometimes. I've been limping a bit because it hurts to put full weight down.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's breathing during activity.",
+        "The symptom is mainly interfering with the patient's eating.",
+        "The symptom is mainly interfering with the patient's walking.",
+        "The symptom is mainly interfering with the patient's everyday tasks."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's walking.",
+      "hint": "Match the summary to the precise activity the patient described.",
+      "explanation": "The patient's second sentence is about walking. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l121_q2",
+      "medicalVocab": [
+        "Back Pain",
+        "Summary",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My lower back is killing me. It's been going on for about two weeks now. I keep waking up because of it, so I'm not sleeping through the night.\"",
+      "symptoms": [
+        "Household Chores",
+        "Sleeping",
+        "Daily Tasks",
+        "Working / Concentrating"
+      ],
+      "correctAnswer": "Sleeping",
+      "hint": "Combine how long this has lasted with what the patient says it interferes with.",
+      "explanation": "Two weeks of a symptom that keeps interfering with sleep is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l121_q3",
+      "medicalVocab": [
+        "Back Pain",
+        "Duration",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My fingers feel stiff and sore. I've had to cut my usual workouts short because of it.\"",
+      "symptoms": [
+        "Breathing During Activity",
+        "Walking",
+        "Exercising",
+        "Socializing"
+      ],
+      "correctAnswer": "Exercising",
+      "hint": "Listen for what the patient can no longer do easily, not how the symptom feels.",
+      "explanation": "The patient says the problem is getting in the way of exercise. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l122_q1",
+      "medicalVocab": [
+        "Joint Pain",
+        "Functional Impact",
+        "Daily Activities"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My knuckles feel swollen and sore after staying still for a while. Even getting dressed in the morning has become more difficult.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's breathing during activity.",
+        "The symptom is mainly interfering with the patient's social activities.",
+        "The symptom is mainly interfering with the patient's sleep.",
+        "The symptom is mainly interfering with the patient's everyday tasks."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's everyday tasks.",
+      "hint": "Watch out for options that name a nearby but different area of daily life.",
+      "explanation": "The patient's second sentence is about everyday tasks. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l122_q2",
+      "medicalVocab": [
+        "Joint Pain",
+        "Summary",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My fingers feel stiff and sore. It's been going on for about two weeks now. It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "Working / Concentrating",
+        "Daily Tasks",
+        "Speaking",
+        "Eating"
+      ],
+      "correctAnswer": "Working / Concentrating",
+      "hint": "Timing plus effect: which activity is being affected over these two weeks?",
+      "explanation": "Two weeks of a symptom that keeps interfering with work and concentration is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l122_q3",
+      "medicalVocab": [
+        "Joint Pain",
+        "Duration",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My arms feel really sore. I've been limping a bit because it hurts to put full weight down.\"",
+      "symptoms": [
+        "Walking",
+        "Working / Concentrating",
+        "Household Chores",
+        "Exercising"
+      ],
+      "correctAnswer": "Walking",
+      "hint": "Think about the daily routine being disrupted.",
+      "explanation": "The patient says the problem is getting in the way of walking. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l123_q1",
+      "medicalVocab": [
+        "Muscle Soreness",
+        "Functional Impact",
+        "Daily Activities"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"Climbing stairs makes my thighs burn more than usual. I keep waking up because of it, so I'm not sleeping through the night.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's everyday tasks.",
+        "The symptom is mainly interfering with the patient's breathing during activity.",
+        "The symptom is mainly interfering with the patient's sleep.",
+        "The symptom is mainly interfering with the patient's household chores."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's sleep.",
+      "hint": "A good summary sticks to what the patient actually said.",
+      "explanation": "The patient's second sentence is about sleep. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l123_q2",
+      "medicalVocab": [
+        "Muscle Soreness",
+        "Summary",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My arms feel really sore. It's been going on for about two weeks now. Even getting dressed in the morning has become more difficult.\"",
+      "symptoms": [
+        "Speaking",
+        "Eating",
+        "Household Chores",
+        "Daily Tasks"
+      ],
+      "correctAnswer": "Daily Tasks",
+      "hint": "Read the duration and the last sentence together before choosing.",
+      "explanation": "Two weeks of a symptom that keeps interfering with everyday tasks is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l123_q3",
+      "medicalVocab": [
+        "Muscle Soreness",
+        "Duration",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel exhausted. It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "Socializing",
+        "Working / Concentrating",
+        "Walking",
+        "Speaking"
+      ],
+      "correctAnswer": "Working / Concentrating",
+      "hint": "Which everyday activity has become harder for this patient?",
+      "explanation": "The patient says the problem is getting in the way of work and concentration. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l124_q1",
+      "medicalVocab": [
+        "Fatigue",
+        "Functional Impact",
+        "Daily Activities"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I drag myself through the whole afternoon no matter how much I sleep. I've had to cut my usual workouts short because of it.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's everyday tasks.",
+        "The symptom is mainly interfering with the patient's speaking.",
+        "The symptom is mainly interfering with the patient's social activities.",
+        "The symptom is mainly interfering with the patient's exercise."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's exercise.",
+      "hint": "Match the summary to the precise activity the patient described.",
+      "explanation": "The patient's second sentence is about exercise. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l124_q2",
+      "medicalVocab": [
+        "Fatigue",
+        "Summary",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel exhausted. It's been going on for about two weeks now. Even simple chores around the house feel like too much right now.\"",
+      "symptoms": [
+        "Household Chores",
+        "Speaking",
+        "Working / Concentrating",
+        "Exercising"
+      ],
+      "correctAnswer": "Household Chores",
+      "hint": "Combine how long this has lasted with what the patient says it interferes with.",
+      "explanation": "Two weeks of a symptom that keeps interfering with household chores is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l124_q3",
+      "medicalVocab": [
+        "Fatigue",
+        "Duration",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I keep waking up in the middle of the night. Even getting dressed in the morning has become more difficult.\"",
+      "symptoms": [
+        "Daily Tasks",
+        "Exercising",
+        "Sleeping",
+        "Working / Concentrating"
+      ],
+      "correctAnswer": "Daily Tasks",
+      "hint": "Listen for what the patient can no longer do easily, not how the symptom feels.",
+      "explanation": "The patient says the problem is getting in the way of everyday tasks. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l125_q1",
+      "medicalVocab": [
+        "Insomnia",
+        "Functional Impact",
+        "Daily Activities"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I keep watching the clock tick by, hour after hour. I've had to cut my usual workouts short because of it.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's everyday tasks.",
+        "The symptom is mainly interfering with the patient's speaking.",
+        "The symptom is mainly interfering with the patient's exercise.",
+        "The symptom is mainly interfering with the patient's social activities."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's exercise.",
+      "hint": "Watch out for options that name a nearby but different area of daily life.",
+      "explanation": "The patient's second sentence is about exercise. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l125_q2",
+      "medicalVocab": [
+        "Insomnia",
+        "Summary",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I keep waking up in the middle of the night. It's been going on for about two weeks now. It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "Working / Concentrating",
+        "Eating",
+        "Sleeping",
+        "Household Chores"
+      ],
+      "correctAnswer": "Working / Concentrating",
+      "hint": "Timing plus effect: which activity is being affected over these two weeks?",
+      "explanation": "Two weeks of a symptom that keeps interfering with work and concentration is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l125_q3",
+      "medicalVocab": [
+        "Insomnia",
+        "Duration",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel lightheaded a lot lately. I keep waking up because of it, so I'm not sleeping through the night.\"",
+      "symptoms": [
+        "Eating",
+        "Speaking",
+        "Exercising",
+        "Sleeping"
+      ],
+      "correctAnswer": "Sleeping",
+      "hint": "Think about the daily routine being disrupted.",
+      "explanation": "The patient says the problem is getting in the way of sleep. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l126_q1",
+      "medicalVocab": [
+        "Dizziness",
+        "Functional Impact",
+        "Daily Activities"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I have to grab onto something because the room seems to sway. It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's sleep.",
+        "The symptom is mainly interfering with the patient's everyday tasks.",
+        "The symptom is mainly interfering with the patient's work and concentration.",
+        "The symptom is mainly interfering with the patient's breathing during activity."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's work and concentration.",
+      "hint": "A good summary sticks to what the patient actually said.",
+      "explanation": "The patient's second sentence is about work and concentration. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l126_q2",
+      "medicalVocab": [
+        "Dizziness",
+        "Summary",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel lightheaded a lot lately. It's been going on for about two weeks now. Even simple chores around the house feel like too much right now.\"",
+      "symptoms": [
+        "Exercising",
+        "Working / Concentrating",
+        "Eating",
+        "Household Chores"
+      ],
+      "correctAnswer": "Household Chores",
+      "hint": "Read the duration and the last sentence together before choosing.",
+      "explanation": "Two weeks of a symptom that keeps interfering with household chores is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l126_q3",
+      "medicalVocab": [
+        "Dizziness",
+        "Duration",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel short of breath a lot lately. I have to slow down and catch my breath doing things that used to be easy.\"",
+      "symptoms": [
+        "Working / Concentrating",
+        "Breathing During Activity",
+        "Speaking",
+        "Socializing"
+      ],
+      "correctAnswer": "Breathing During Activity",
+      "hint": "Which everyday activity has become harder for this patient?",
+      "explanation": "The patient says the problem is getting in the way of breathing during activity. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l127_q1",
+      "medicalVocab": [
+        "Shortness of Breath",
+        "Functional Impact",
+        "Daily Activities"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I get winded doing things that used to be easy for me. I've had to cut my usual workouts short because of it.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's work and concentration.",
+        "The symptom is mainly interfering with the patient's exercise.",
+        "The symptom is mainly interfering with the patient's speaking.",
+        "The symptom is mainly interfering with the patient's social activities."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's exercise.",
+      "hint": "Match the summary to the precise activity the patient described.",
+      "explanation": "The patient's second sentence is about exercise. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l127_q2",
+      "medicalVocab": [
+        "Shortness of Breath",
+        "Summary",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I feel short of breath a lot lately. It's been going on for about two weeks now. My voice gives out partway through longer conversations.\"",
+      "symptoms": [
+        "Working / Concentrating",
+        "Daily Tasks",
+        "Speaking",
+        "Socializing"
+      ],
+      "correctAnswer": "Speaking",
+      "hint": "Combine how long this has lasted with what the patient says it interferes with.",
+      "explanation": "Two weeks of a symptom that keeps interfering with speaking is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l127_q3",
+      "medicalVocab": [
+        "Shortness of Breath",
+        "Duration",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My chest has been hurting quite a bit. I've had to cut my usual workouts short because of it.\"",
+      "symptoms": [
+        "Walking",
+        "Speaking",
+        "Exercising",
+        "Socializing"
+      ],
+      "correctAnswer": "Exercising",
+      "hint": "Listen for what the patient can no longer do easily, not how the symptom feels.",
+      "explanation": "The patient says the problem is getting in the way of exercise. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l128_q1",
+      "medicalVocab": [
+        "Chest Pain",
+        "Functional Impact",
+        "Daily Activities"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"It's a tight, squeezing feeling under my breastbone. I keep waking up because of it, so I'm not sleeping through the night.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's eating.",
+        "The symptom is mainly interfering with the patient's sleep.",
+        "The symptom is mainly interfering with the patient's speaking.",
+        "The symptom is mainly interfering with the patient's work and concentration."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's sleep.",
+      "hint": "Watch out for options that name a nearby but different area of daily life.",
+      "explanation": "The patient's second sentence is about sleep. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l128_q2",
+      "medicalVocab": [
+        "Chest Pain",
+        "Summary",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My chest has been hurting quite a bit. It's been going on for about two weeks now. Even getting dressed in the morning has become more difficult.\"",
+      "symptoms": [
+        "Speaking",
+        "Daily Tasks",
+        "Socializing",
+        "Sleeping"
+      ],
+      "correctAnswer": "Daily Tasks",
+      "hint": "Timing plus effect: which activity is being affected over these two weeks?",
+      "explanation": "Two weeks of a symptom that keeps interfering with everyday tasks is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l128_q3",
+      "medicalVocab": [
+        "Chest Pain",
+        "Duration",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's a rash on my leg. Even simple chores around the house feel like too much right now.\"",
+      "symptoms": [
+        "Sleeping",
+        "Exercising",
+        "Eating",
+        "Household Chores"
+      ],
+      "correctAnswer": "Household Chores",
+      "hint": "Think about the daily routine being disrupted.",
+      "explanation": "The patient says the problem is getting in the way of household chores. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l129_q1",
+      "medicalVocab": [
+        "Skin Rash",
+        "Functional Impact",
+        "Daily Activities"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"It looks different from the rest of my skin nearby. I keep waking up because of it, so I'm not sleeping through the night.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's sleep.",
+        "The symptom is mainly interfering with the patient's speaking.",
+        "The symptom is mainly interfering with the patient's eating.",
+        "The symptom is mainly interfering with the patient's social activities."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's sleep.",
+      "hint": "A good summary sticks to what the patient actually said.",
+      "explanation": "The patient's second sentence is about sleep. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l129_q2",
+      "medicalVocab": [
+        "Skin Rash",
+        "Summary",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's a rash on my leg. It's been going on for about two weeks now. It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "Breathing During Activity",
+        "Working / Concentrating",
+        "Exercising",
+        "Socializing"
+      ],
+      "correctAnswer": "Working / Concentrating",
+      "hint": "Read the duration and the last sentence together before choosing.",
+      "explanation": "Two weeks of a symptom that keeps interfering with work and concentration is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l129_q3",
+      "medicalVocab": [
+        "Skin Rash",
+        "Duration",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify which daily activity the symptom is affecting.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My skin has been so itchy. Even simple chores around the house feel like too much right now.\"",
+      "symptoms": [
+        "Walking",
+        "Household Chores",
+        "Working / Concentrating",
+        "Breathing During Activity"
+      ],
+      "correctAnswer": "Household Chores",
+      "hint": "Which everyday activity has become harder for this patient?",
+      "explanation": "The patient says the problem is getting in the way of household chores. Functional impact is about what the patient can no longer do easily, not just how the symptom feels.",
+      "id": "mc_l130_q1",
+      "medicalVocab": [
+        "Itching",
+        "Functional Impact",
+        "Daily Activities"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the statement that best summarizes the impact on the patient's life.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"It's this crawling, prickly feeling that gets worse at night. I've been avoiding get-togethers because I don't feel up to it.\"",
+      "symptoms": [
+        "The symptom is mainly interfering with the patient's social activities.",
+        "The symptom is mainly interfering with the patient's household chores.",
+        "The symptom is mainly interfering with the patient's work and concentration.",
+        "The symptom is mainly interfering with the patient's walking."
+      ],
+      "correctAnswer": "The symptom is mainly interfering with the patient's social activities.",
+      "hint": "Match the summary to the precise activity the patient described.",
+      "explanation": "The patient's second sentence is about social activities. A useful summary restates the effect in neutral clinical language without adding anything the patient did not say.",
+      "id": "mc_l130_q2",
+      "medicalVocab": [
+        "Itching",
+        "Summary",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Now that duration is known, identify the activity most affected.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My skin has been so itchy. It's been going on for about two weeks now. It's been hard to focus on anything at my desk for more than a few minutes.\"",
+      "symptoms": [
+        "Working / Concentrating",
+        "Speaking",
+        "Household Chores",
+        "Sleeping"
+      ],
+      "correctAnswer": "Working / Concentrating",
+      "hint": "Combine how long this has lasted with what the patient says it interferes with.",
+      "explanation": "Two weeks of a symptom that keeps interfering with work and concentration is a meaningful pattern to record. Timing and impact together tell you more than either one alone.",
+      "id": "mc_l130_q3",
+      "medicalVocab": [
+        "Itching",
+        "Duration",
+        "Functional Impact"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    }
+  ]
+}

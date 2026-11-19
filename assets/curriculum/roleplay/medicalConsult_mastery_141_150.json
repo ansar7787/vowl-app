@@ -1,0 +1,698 @@
+{
+  "gameType": "medicalConsult",
+  "phase": "mastery",
+  "batchIndex": 15,
+  "levels": "141-150",
+  "quests": [
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's a pressure right in the middle of my chest. It started a few days ago. It's been happening two or three times a week. It's mostly on one side. It seems worse after certain activities.\"",
+      "symptoms": [
+        "The patient reports that it happens about once a month, that it is mostly on one side, and that it began a few days ago.",
+        "The patient reports that it happens two or three times a week, that it is mostly on one side, and that it began a few days ago.",
+        "The patient reports that it happens two or three times a week, that it is on both sides equally, and that it began a few days ago.",
+        "The patient reports that it happens two or three times a week, that it is mostly on one side, and that it began several months ago."
+      ],
+      "correctAnswer": "The patient reports that it happens two or three times a week, that it is mostly on one side, and that it began a few days ago.",
+      "hint": "Compare every detail in each summary with what the patient actually said.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l141_q1",
+      "medicalVocab": [
+        "Chest Pain",
+        "Summary",
+        "Accuracy"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"There's a pressure right in the middle of my chest. It started a few days ago. It's been happening two or three times a week. It's mostly on one side. It seems worse after certain activities.\"",
+      "symptoms": [
+        "How severe it feels",
+        "What brings it on or worsens it",
+        "How often it happens",
+        "When it started"
+      ],
+      "correctAnswer": "How severe it feels",
+      "hint": "Cross off what the patient has already told you. What is left?",
+      "explanation": "The patient never mentioned how severe it feels, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l141_q2",
+      "medicalVocab": [
+        "Chest Pain",
+        "Missing Information",
+        "Gap"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"There's a pressure right in the middle of my chest. It started a few days ago. It's been happening two or three times a week. It's mostly on one side. It seems worse after certain activities.\"",
+      "symptoms": [
+        "When did you first notice this?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "How would you describe how bad it feels?",
+        "Can you show me exactly where you feel it?"
+      ],
+      "correctAnswer": "How would you describe how bad it feels?",
+      "hint": "Look for the question about the one thing that has not been asked or answered yet.",
+      "explanation": "Since how severe it feels has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l141_q3",
+      "medicalVocab": [
+        "Chest Pain",
+        "Follow-up Question",
+        "Clarification"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My skin looks blotchy and slightly raised in a few spots. It seems worse after certain activities. It started a few days ago. It's been making it harder to concentrate at work. It's been happening two or three times a week.\"",
+      "symptoms": [
+        "The patient reports that it seems worse after certain activities, that it makes concentrating at work harder, and that it began several months ago.",
+        "The patient reports that it only happens when completely at rest, that it makes concentrating at work harder, and that it began a few days ago.",
+        "The patient reports that it seems worse after certain activities, that it has no effect on daily activities, and that it began a few days ago.",
+        "The patient reports that it seems worse after certain activities, that it makes concentrating at work harder, and that it began a few days ago."
+      ],
+      "correctAnswer": "The patient reports that it seems worse after certain activities, that it makes concentrating at work harder, and that it began a few days ago.",
+      "hint": "Three summaries are almost right. Find the one with no altered detail.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l142_q1",
+      "medicalVocab": [
+        "Skin Rash",
+        "Summary",
+        "Accuracy"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"My skin looks blotchy and slightly raised in a few spots. It seems worse after certain activities. It started a few days ago. It's been making it harder to concentrate at work. It's been happening two or three times a week.\"",
+      "symptoms": [
+        "Effect on daily life",
+        "When it started",
+        "What brings it on or worsens it",
+        "Where it is felt"
+      ],
+      "correctAnswer": "Where it is felt",
+      "hint": "Three topics have been covered. Which one has not come up at all?",
+      "explanation": "The patient never mentioned where it is felt, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l142_q2",
+      "medicalVocab": [
+        "Skin Rash",
+        "Missing Information",
+        "Gap"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"My skin looks blotchy and slightly raised in a few spots. It seems worse after certain activities. It started a few days ago. It's been making it harder to concentrate at work. It's been happening two or three times a week.\"",
+      "symptoms": [
+        "How often has this been happening?",
+        "Can you show me exactly where you feel it?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "Can you show me exactly where you feel it?",
+      "hint": "Most of the picture is complete. Which question would fill in the last piece?",
+      "explanation": "Since where it is felt has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l142_q3",
+      "medicalVocab": [
+        "Skin Rash",
+        "Follow-up Question",
+        "Clarification"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's no rash to see, but the itch is driving me crazy. Each time, it lasts about twenty minutes or so. It started a few days ago. It seems worse after certain activities. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "The patient reports that it began a few days ago, that it feels fairly mild, and that each episode lasts about twenty minutes.",
+        "The patient reports that it began a few days ago, that it feels fairly mild, and that each episode lasts several hours.",
+        "The patient reports that it began several months ago, that it feels fairly mild, and that each episode lasts about twenty minutes.",
+        "The patient reports that it began a few days ago, that it feels extremely severe, and that each episode lasts about twenty minutes."
+      ],
+      "correctAnswer": "The patient reports that it began a few days ago, that it feels fairly mild, and that each episode lasts about twenty minutes.",
+      "hint": "Look for the summary where nothing has been quietly changed.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l143_q1",
+      "medicalVocab": [
+        "Itching",
+        "Summary",
+        "Accuracy"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"There's no rash to see, but the itch is driving me crazy. Each time, it lasts about twenty minutes or so. It started a few days ago. It seems worse after certain activities. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "When it started",
+        "How long each episode lasts",
+        "Effect on daily life",
+        "What brings it on or worsens it"
+      ],
+      "correctAnswer": "Effect on daily life",
+      "hint": "Scan the statement for each topic; one of them is missing.",
+      "explanation": "The patient never mentioned effect on daily life, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l143_q2",
+      "medicalVocab": [
+        "Itching",
+        "Missing Information",
+        "Gap"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"There's no rash to see, but the itch is driving me crazy. Each time, it lasts about twenty minutes or so. It started a few days ago. It seems worse after certain activities. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "Is there anything that seems to bring it on or make it worse?",
+        "Has this been affecting your daily activities?",
+        "How would you describe how bad it feels?",
+        "When did you first notice this?"
+      ],
+      "correctAnswer": "Has this been affecting your daily activities?",
+      "hint": "Avoid questions whose answers the patient has already given.",
+      "explanation": "Since effect on daily life has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l143_q3",
+      "medicalVocab": [
+        "Itching",
+        "Follow-up Question",
+        "Clarification"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's a persistent pain deep inside my ear. I've also felt a bit more tired than usual alongside it. It's been happening two or three times a week. It's mostly on one side. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "The patient reports that it is on both sides equally, that it happens two or three times a week, and that there is some extra tiredness with it.",
+        "The patient reports that it is mostly on one side, that it happens about once a month, and that there is some extra tiredness with it.",
+        "The patient reports that it is mostly on one side, that it happens two or three times a week, and that there is some extra tiredness with it.",
+        "The patient reports that it is mostly on one side, that it happens two or three times a week, and that there are no other symptoms at all."
+      ],
+      "correctAnswer": "The patient reports that it is mostly on one side, that it happens two or three times a week, and that there is some extra tiredness with it.",
+      "hint": "Compare every detail in each summary with what the patient actually said.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l144_q1",
+      "medicalVocab": [
+        "Earache",
+        "Summary",
+        "Accuracy"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"There's a persistent pain deep inside my ear. I've also felt a bit more tired than usual alongside it. It's been happening two or three times a week. It's mostly on one side. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "Other symptoms alongside it",
+        "Where it is felt",
+        "How often it happens",
+        "Effect on daily life"
+      ],
+      "correctAnswer": "Effect on daily life",
+      "hint": "Cross off what the patient has already told you. What is left?",
+      "explanation": "The patient never mentioned effect on daily life, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l144_q2",
+      "medicalVocab": [
+        "Earache",
+        "Missing Information",
+        "Gap"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"There's a persistent pain deep inside my ear. I've also felt a bit more tired than usual alongside it. It's been happening two or three times a week. It's mostly on one side. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "Can you show me exactly where you feel it?",
+        "How often has this been happening?",
+        "Has this been affecting your daily activities?",
+        "How would you describe how bad it feels?"
+      ],
+      "correctAnswer": "Has this been affecting your daily activities?",
+      "hint": "Look for the question about the one thing that has not been asked or answered yet.",
+      "explanation": "Since effect on daily life has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l144_q3",
+      "medicalVocab": [
+        "Earache",
+        "Follow-up Question",
+        "Clarification"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I hear a low buzzing that seems to come from inside my head. It's been happening two or three times a week. Each time, it lasts about twenty minutes or so. It's been making it harder to concentrate at work. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "The patient reports that it has no effect on daily activities, that it feels fairly mild, and that each episode lasts about twenty minutes.",
+        "The patient reports that it makes concentrating at work harder, that it feels fairly mild, and that each episode lasts about twenty minutes.",
+        "The patient reports that it makes concentrating at work harder, that it feels extremely severe, and that each episode lasts about twenty minutes.",
+        "The patient reports that it makes concentrating at work harder, that it feels fairly mild, and that each episode lasts several hours."
+      ],
+      "correctAnswer": "The patient reports that it makes concentrating at work harder, that it feels fairly mild, and that each episode lasts about twenty minutes.",
+      "hint": "Three summaries are almost right. Find the one with no altered detail.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l145_q1",
+      "medicalVocab": [
+        "Ringing in the Ears",
+        "Summary",
+        "Accuracy"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"I hear a low buzzing that seems to come from inside my head. It's been happening two or three times a week. Each time, it lasts about twenty minutes or so. It's been making it harder to concentrate at work. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "When it started",
+        "How severe it feels",
+        "How long each episode lasts",
+        "Effect on daily life"
+      ],
+      "correctAnswer": "When it started",
+      "hint": "Three topics have been covered. Which one has not come up at all?",
+      "explanation": "The patient never mentioned when it started, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l145_q2",
+      "medicalVocab": [
+        "Ringing in the Ears",
+        "Missing Information",
+        "Gap"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"I hear a low buzzing that seems to come from inside my head. It's been happening two or three times a week. Each time, it lasts about twenty minutes or so. It's been making it harder to concentrate at work. It's fairly mild, more annoying than painful.\"",
+      "symptoms": [
+        "How long does it usually last each time?",
+        "How would you describe how bad it feels?",
+        "When did you first notice this?",
+        "How often has this been happening?"
+      ],
+      "correctAnswer": "When did you first notice this?",
+      "hint": "Most of the picture is complete. Which question would fill in the last piece?",
+      "explanation": "Since when it started has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l145_q3",
+      "medicalVocab": [
+        "Ringing in the Ears",
+        "Follow-up Question",
+        "Clarification"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"My eyes feel strained and things blur at the edges. It seems worse after certain activities. It's fairly mild, more annoying than painful. It's been making it harder to concentrate at work. Each time, it lasts about twenty minutes or so.\"",
+      "symptoms": [
+        "The patient reports that it seems worse after certain activities, that it feels fairly mild, and that each episode lasts about twenty minutes.",
+        "The patient reports that it seems worse after certain activities, that it feels extremely severe, and that each episode lasts about twenty minutes.",
+        "The patient reports that it only happens when completely at rest, that it feels fairly mild, and that each episode lasts about twenty minutes.",
+        "The patient reports that it seems worse after certain activities, that it feels fairly mild, and that each episode lasts several hours."
+      ],
+      "correctAnswer": "The patient reports that it seems worse after certain activities, that it feels fairly mild, and that each episode lasts about twenty minutes.",
+      "hint": "Look for the summary where nothing has been quietly changed.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l146_q1",
+      "medicalVocab": [
+        "Blurred Vision",
+        "Summary",
+        "Accuracy"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"My eyes feel strained and things blur at the edges. It seems worse after certain activities. It's fairly mild, more annoying than painful. It's been making it harder to concentrate at work. Each time, it lasts about twenty minutes or so.\"",
+      "symptoms": [
+        "Other symptoms alongside it",
+        "Effect on daily life",
+        "How severe it feels",
+        "How long each episode lasts"
+      ],
+      "correctAnswer": "Other symptoms alongside it",
+      "hint": "Scan the statement for each topic; one of them is missing.",
+      "explanation": "The patient never mentioned other symptoms alongside it, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l146_q2",
+      "medicalVocab": [
+        "Blurred Vision",
+        "Missing Information",
+        "Gap"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"My eyes feel strained and things blur at the edges. It seems worse after certain activities. It's fairly mild, more annoying than painful. It's been making it harder to concentrate at work. Each time, it lasts about twenty minutes or so.\"",
+      "symptoms": [
+        "How would you describe how bad it feels?",
+        "Have you noticed anything else alongside this?",
+        "Has this been affecting your daily activities?",
+        "Is there anything that seems to bring it on or make it worse?"
+      ],
+      "correctAnswer": "Have you noticed anything else alongside this?",
+      "hint": "Avoid questions whose answers the patient has already given.",
+      "explanation": "Since other symptoms alongside it has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l146_q3",
+      "medicalVocab": [
+        "Blurred Vision",
+        "Follow-up Question",
+        "Clarification"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's this heavy, blocked feeling across my cheeks and forehead. It seems worse after certain activities. It started a few days ago. I've also felt a bit more tired than usual alongside it. It's been happening two or three times a week.\"",
+      "symptoms": [
+        "The patient reports that there is some extra tiredness with it, that it happens about once a month, and that it seems worse after certain activities.",
+        "The patient reports that there is some extra tiredness with it, that it happens two or three times a week, and that it only happens when completely at rest.",
+        "The patient reports that there are no other symptoms at all, that it happens two or three times a week, and that it seems worse after certain activities.",
+        "The patient reports that there is some extra tiredness with it, that it happens two or three times a week, and that it seems worse after certain activities."
+      ],
+      "correctAnswer": "The patient reports that there is some extra tiredness with it, that it happens two or three times a week, and that it seems worse after certain activities.",
+      "hint": "Compare every detail in each summary with what the patient actually said.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l147_q1",
+      "medicalVocab": [
+        "Sinus Congestion",
+        "Summary",
+        "Accuracy"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"There's this heavy, blocked feeling across my cheeks and forehead. It seems worse after certain activities. It started a few days ago. I've also felt a bit more tired than usual alongside it. It's been happening two or three times a week.\"",
+      "symptoms": [
+        "How often it happens",
+        "Other symptoms alongside it",
+        "Effect on daily life",
+        "When it started"
+      ],
+      "correctAnswer": "Effect on daily life",
+      "hint": "Cross off what the patient has already told you. What is left?",
+      "explanation": "The patient never mentioned effect on daily life, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l147_q2",
+      "medicalVocab": [
+        "Sinus Congestion",
+        "Missing Information",
+        "Gap"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"There's this heavy, blocked feeling across my cheeks and forehead. It seems worse after certain activities. It started a few days ago. I've also felt a bit more tired than usual alongside it. It's been happening two or three times a week.\"",
+      "symptoms": [
+        "Has this been affecting your daily activities?",
+        "When did you first notice this?",
+        "How often has this been happening?",
+        "Have you noticed anything else alongside this?"
+      ],
+      "correctAnswer": "Has this been affecting your daily activities?",
+      "hint": "Look for the question about the one thing that has not been asked or answered yet.",
+      "explanation": "Since effect on daily life has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l147_q3",
+      "medicalVocab": [
+        "Sinus Congestion",
+        "Follow-up Question",
+        "Clarification"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"There's this drip that won't let up. It's been making it harder to concentrate at work. I've also felt a bit more tired than usual alongside it. It's fairly mild, more annoying than painful. It started a few days ago.\"",
+      "symptoms": [
+        "The patient reports that it began a few days ago, that it has no effect on daily activities, and that there is some extra tiredness with it.",
+        "The patient reports that it began several months ago, that it makes concentrating at work harder, and that there is some extra tiredness with it.",
+        "The patient reports that it began a few days ago, that it makes concentrating at work harder, and that there is some extra tiredness with it.",
+        "The patient reports that it began a few days ago, that it makes concentrating at work harder, and that there are no other symptoms at all."
+      ],
+      "correctAnswer": "The patient reports that it began a few days ago, that it makes concentrating at work harder, and that there is some extra tiredness with it.",
+      "hint": "Three summaries are almost right. Find the one with no altered detail.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l148_q1",
+      "medicalVocab": [
+        "Runny Nose",
+        "Summary",
+        "Accuracy"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"There's this drip that won't let up. It's been making it harder to concentrate at work. I've also felt a bit more tired than usual alongside it. It's fairly mild, more annoying than painful. It started a few days ago.\"",
+      "symptoms": [
+        "Effect on daily life",
+        "What brings it on or worsens it",
+        "How severe it feels",
+        "Other symptoms alongside it"
+      ],
+      "correctAnswer": "What brings it on or worsens it",
+      "hint": "Three topics have been covered. Which one has not come up at all?",
+      "explanation": "The patient never mentioned what brings it on or worsens it, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l148_q2",
+      "medicalVocab": [
+        "Runny Nose",
+        "Missing Information",
+        "Gap"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"There's this drip that won't let up. It's been making it harder to concentrate at work. I've also felt a bit more tired than usual alongside it. It's fairly mild, more annoying than painful. It started a few days ago.\"",
+      "symptoms": [
+        "Have you noticed anything else alongside this?",
+        "How would you describe how bad it feels?",
+        "Is there anything that seems to bring it on or make it worse?",
+        "Has this been affecting your daily activities?"
+      ],
+      "correctAnswer": "Is there anything that seems to bring it on or make it worse?",
+      "hint": "Most of the picture is complete. Which question would fill in the last piece?",
+      "explanation": "Since what brings it on or worsens it has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l148_q3",
+      "medicalVocab": [
+        "Runny Nose",
+        "Follow-up Question",
+        "Clarification"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"I noticed a puffiness on one side of my neck. I've also felt a bit more tired than usual alongside it. It's been making it harder to concentrate at work. It's fairly mild, more annoying than painful. It started a few days ago.\"",
+      "symptoms": [
+        "The patient reports that it makes concentrating at work harder, that there is some extra tiredness with it, and that it began several months ago.",
+        "The patient reports that it has no effect on daily activities, that there is some extra tiredness with it, and that it began a few days ago.",
+        "The patient reports that it makes concentrating at work harder, that there are no other symptoms at all, and that it began a few days ago.",
+        "The patient reports that it makes concentrating at work harder, that there is some extra tiredness with it, and that it began a few days ago."
+      ],
+      "correctAnswer": "The patient reports that it makes concentrating at work harder, that there is some extra tiredness with it, and that it began a few days ago.",
+      "hint": "Look for the summary where nothing has been quietly changed.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l149_q1",
+      "medicalVocab": [
+        "Swollen Glands",
+        "Summary",
+        "Accuracy"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"I noticed a puffiness on one side of my neck. I've also felt a bit more tired than usual alongside it. It's been making it harder to concentrate at work. It's fairly mild, more annoying than painful. It started a few days ago.\"",
+      "symptoms": [
+        "Other symptoms alongside it",
+        "How long each episode lasts",
+        "How severe it feels",
+        "Effect on daily life"
+      ],
+      "correctAnswer": "How long each episode lasts",
+      "hint": "Scan the statement for each topic; one of them is missing.",
+      "explanation": "The patient never mentioned how long each episode lasts, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l149_q2",
+      "medicalVocab": [
+        "Swollen Glands",
+        "Missing Information",
+        "Gap"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"I noticed a puffiness on one side of my neck. I've also felt a bit more tired than usual alongside it. It's been making it harder to concentrate at work. It's fairly mild, more annoying than painful. It started a few days ago.\"",
+      "symptoms": [
+        "How would you describe how bad it feels?",
+        "Has this been affecting your daily activities?",
+        "When did you first notice this?",
+        "How long does it usually last each time?"
+      ],
+      "correctAnswer": "How long does it usually last each time?",
+      "hint": "Avoid questions whose answers the patient has already given.",
+      "explanation": "Since how long each episode lasts has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l149_q3",
+      "medicalVocab": [
+        "Swollen Glands",
+        "Follow-up Question",
+        "Clarification"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Select the summary that accurately reflects what the patient said.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Patient says: \"It's a burning that starts in my chest and creeps up toward my throat. It started a few days ago. It's been happening two or three times a week. I've also felt a bit more tired than usual alongside it. It's been making it harder to concentrate at work.\"",
+      "symptoms": [
+        "The patient reports that there is some extra tiredness with it, that it makes concentrating at work harder, and that it happens two or three times a week.",
+        "The patient reports that there is some extra tiredness with it, that it makes concentrating at work harder, and that it happens about once a month.",
+        "The patient reports that there is some extra tiredness with it, that it has no effect on daily activities, and that it happens two or three times a week.",
+        "The patient reports that there are no other symptoms at all, that it makes concentrating at work harder, and that it happens two or three times a week."
+      ],
+      "correctAnswer": "The patient reports that there is some extra tiredness with it, that it makes concentrating at work harder, and that it happens two or three times a week.",
+      "hint": "Compare every detail in each summary with what the patient actually said.",
+      "explanation": "Only one summary keeps every detail the way the patient gave it. The others quietly change one fact, which is exactly the kind of error that creeps into notes when details are not checked.",
+      "id": "mc_l150_q1",
+      "medicalVocab": [
+        "Acid Reflux",
+        "Summary",
+        "Accuracy"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Identify the detail that has NOT been covered yet.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Same patient, continuing: \"It's a burning that starts in my chest and creeps up toward my throat. It started a few days ago. It's been happening two or three times a week. I've also felt a bit more tired than usual alongside it. It's been making it harder to concentrate at work.\"",
+      "symptoms": [
+        "Effect on daily life",
+        "How often it happens",
+        "Other symptoms alongside it",
+        "How severe it feels"
+      ],
+      "correctAnswer": "How severe it feels",
+      "hint": "Cross off what the patient has already told you. What is left?",
+      "explanation": "The patient never mentioned how severe it feels, while the other three were all stated. Spotting the gap is what tells you where to ask next.",
+      "id": "mc_l150_q2",
+      "medicalVocab": [
+        "Acid Reflux",
+        "Missing Information",
+        "Gap"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    },
+    {
+      "instruction": "Given everything mentioned, select the most useful next question.",
+      "subtype": "medicalConsult",
+      "interactionType": "dialogue",
+      "prompt": "Reviewing what the patient has shared: \"It's a burning that starts in my chest and creeps up toward my throat. It started a few days ago. It's been happening two or three times a week. I've also felt a bit more tired than usual alongside it. It's been making it harder to concentrate at work.\"",
+      "symptoms": [
+        "How would you describe how bad it feels?",
+        "When did you first notice this?",
+        "Has this been affecting your daily activities?",
+        "Have you noticed anything else alongside this?"
+      ],
+      "correctAnswer": "How would you describe how bad it feels?",
+      "hint": "Look for the question about the one thing that has not been asked or answered yet.",
+      "explanation": "Since how severe it feels has not come up, asking about it adds new information. The other questions ask about details the patient already gave.",
+      "id": "mc_l150_q3",
+      "medicalVocab": [
+        "Acid Reflux",
+        "Follow-up Question",
+        "Clarification"
+      ],
+      "phase": "mastery",
+      "gameType": "medicalConsult"
+    }
+  ]
+}

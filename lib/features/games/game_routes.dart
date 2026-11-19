@@ -192,6 +192,8 @@ import 'package:vowl/features/roleplay/situational_response/presentation/pages/s
 import 'package:vowl/features/roleplay/situational_response/presentation/pages/situational_response_practice_screen.dart';
 import 'package:vowl/features/roleplay/job_interview/presentation/pages/job_interview_learn_screen.dart';
 import 'package:vowl/features/roleplay/job_interview/presentation/pages/job_interview_practice_screen.dart';
+import 'package:vowl/features/roleplay/medical_consult/presentation/pages/medical_consult_learn_screen.dart';
+import 'package:vowl/features/roleplay/medical_consult/presentation/pages/medical_consult_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -973,6 +975,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'medicalconsult') {
+          return fadeTransitionPage(
+            child: MedicalConsultLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1533,6 +1541,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'jobinterview') {
           return fadeTransitionPage(
             child: JobInterviewPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'medicalconsult') {
+          return fadeTransitionPage(
+            child: MedicalConsultPracticeScreen(level: level),
             state: state,
           );
         }
