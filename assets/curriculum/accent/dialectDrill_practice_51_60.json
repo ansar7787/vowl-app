@@ -1,0 +1,608 @@
+{
+    "gameType": "dialectDrill",
+    "batchIndex": 6,
+    "phase": "practice",
+    "levels": "51-60",
+    "quests": [
+        {
+            "id": "dialectDrill_practice_l51_q1",
+            "instruction": "One of these words takes the long 'ah' vowel in Southern British English. Which one?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "chance / cancel",
+            "textToSpeak": "chance / cancel",
+            "options": [
+                "CLEAR SKY",
+                "CHANCE",
+                "weak vowel",
+                "CANCEL"
+            ],
+            "correctAnswer": "CHANCE",
+            "correctAnswerIndex": 1,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "The trigger is the consonant environment, not the spelling letter 'a'.",
+            "hint": "Look at what follows the vowel. One word has 'n' plus a soft 's' sound; the other has 'n' followed by a vowel.",
+            "explanation": "The long /ɑː/ appears before certain consonant clusters, such as /ns/ in chance. In cancel, the vowel is followed by /n/ + vowel, so it stays short."
+        },
+        {
+            "id": "dialectDrill_practice_l51_q2",
+            "instruction": "Which word keeps the short vowel in Southern British English?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "grasp / grab",
+            "textToSpeak": "grasp / grab",
+            "options": [
+                "dropped t",
+                "METAL",
+                "GRASP",
+                "GRAB"
+            ],
+            "correctAnswer": "GRAB",
+            "correctAnswerIndex": 3,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "The ending /sp/ belongs to the same family as /st/ and /sk/.",
+            "hint": "Both words start the same way. Compare the consonants after the vowel.",
+            "explanation": "Before /sp/ the vowel is lengthened in Southern British (/ɡrɑːsp/). Before /b/ it stays short, so grab is /ɡræb/."
+        },
+        {
+            "id": "dialectDrill_practice_l51_q3",
+            "instruction": "Which word has the short vowel in Southern British English?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "master / matter",
+            "textToSpeak": "master / matter",
+            "options": [
+                "METAL",
+                "MASTER",
+                "GRAB",
+                "MATTER"
+            ],
+            "correctAnswer": "MATTER",
+            "correctAnswerIndex": 3,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "The rule is about clusters that begin with a fricative like /s/, /f/ or /θ/.",
+            "hint": "Consider what consonant comes after the vowel.",
+            "explanation": "Master has /st/ after the vowel and is /ˈmɑːstə/. Matter keeps /æ/ because a tap or stop, not a fricative cluster, follows."
+        },
+        {
+            "id": "dialectDrill_practice_l52_q1",
+            "instruction": "In Southern British English, which word is more likely to have the long vowel?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "mass / mask",
+            "textToSpeak": "mass / mask",
+            "options": [
+                "weak vowel",
+                "MASS",
+                "SOFA WAS",
+                "MASK"
+            ],
+            "correctAnswer": "MASK",
+            "correctAnswerIndex": 3,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "Single /s/ endings are a well-known exception to the rule.",
+            "hint": "One of these words is deceptively similar to a word that triggers the long vowel.",
+            "explanation": "Mask has /sk/ after the vowel and takes /ɑː/. Mass has a single /s/ at the end, which usually leaves the vowel short."
+        },
+        {
+            "id": "dialectDrill_practice_l52_q2",
+            "instruction": "Which word takes the long vowel in Southern British English?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "gas / glass",
+            "textToSpeak": "gas / glass",
+            "options": [
+                "MORTAL",
+                "GLASS",
+                "SAMPLE",
+                "GAS"
+            ],
+            "correctAnswer": "GLASS",
+            "correctAnswerIndex": 1,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "Some words simply don't fit the pattern for historical reasons.",
+            "hint": "The two words share a final sound but differ in what comes before it.",
+            "explanation": "Both words end in /s/, yet glass has the long vowel /ɡlɑːs/ and gas has the short /ɡæs/. The split is historical: glass belongs to the lengthened set, and gas does not."
+        },
+        {
+            "id": "dialectDrill_practice_l52_q3",
+            "instruction": "Which word has the long vowel in Southern British English?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "plant / planet",
+            "textToSpeak": "plant / planet",
+            "options": [
+                "ATOM",
+                "PLANT",
+                "PLANET",
+                "SOFA WAS"
+            ],
+            "correctAnswer": "PLANT",
+            "correctAnswerIndex": 1,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "Look at the sounds around the vowel, not at the number of syllables.",
+            "hint": "Count the consonants after the vowel.",
+            "explanation": "Plant has /nt/ following the vowel and takes /ɑː/. Planet has /n/ followed by a vowel, so it stays short."
+        },
+        {
+            "id": "dialectDrill_practice_l53_q1",
+            "instruction": "In a non-rhotic accent, which word still has an /r/ sound?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "arrive / arm",
+            "textToSpeak": "arrive / arm",
+            "options": [
+                "CONSUME",
+                "tapped t",
+                "ARRIVE",
+                "ARM"
+            ],
+            "correctAnswer": "ARRIVE",
+            "correctAnswerIndex": 2,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "This is the rule behind linking r as well.",
+            "hint": "Ask whether a vowel or a consonant follows the r.",
+            "explanation": "Non-rhotic speakers pronounce /r/ only before vowels. In arrive the /r/ is followed by a vowel; in arm it is followed by /m/."
+        },
+        {
+            "id": "dialectDrill_practice_l53_q2",
+            "instruction": "Which word keeps its /r/ in non-rhotic British speech?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "moral / mortal",
+            "textToSpeak": "moral / mortal",
+            "options": [
+                "RESCUE",
+                "MORAL",
+                "SAW THEM",
+                "MORTAL"
+            ],
+            "correctAnswer": "MORAL",
+            "correctAnswerIndex": 1,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "Similar pairs are 'carry / card' and 'hurry / hurt'.",
+            "hint": "Look at the letter after the r in each word.",
+            "explanation": "In moral, /r/ is followed by a vowel, so it is kept. In mortal it is followed by /t/ and drops."
+        },
+        {
+            "id": "dialectDrill_practice_l53_q3",
+            "instruction": "Which word contains a pronounced /r/ in Southern British English?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "hurry / hurt",
+            "textToSpeak": "hurry / hurt",
+            "options": [
+                "HURT",
+                "CONSUME",
+                "GRAB",
+                "HURRY"
+            ],
+            "correctAnswer": "HURRY",
+            "correctAnswerIndex": 3,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "American English pronounces the /r/ in both words.",
+            "hint": "Both words start with the same letters. What follows the 'r'?",
+            "explanation": "Hurry keeps /r/ before the vowel /i/. Hurt drops it before /t/ in a non-rhotic accent."
+        },
+        {
+            "id": "dialectDrill_practice_l54_q1",
+            "instruction": "Which phrase would have a linking r in non-rhotic British speech?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "here is / here comes",
+            "textToSpeak": "here is / here comes",
+            "options": [
+                "MEDIA EVENT",
+                "HERE IS",
+                "CONSUME",
+                "HERE COMES"
+            ],
+            "correctAnswer": "HERE IS",
+            "correctAnswerIndex": 1,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "Rhotic speakers pronounce /r/ in both phrases.",
+            "hint": "The linking r depends on the sound that begins the next word.",
+            "explanation": "A non-rhotic speaker adds /r/ when the next word starts with a vowel, as in 'here is'. With 'comes', no /r/ is added."
+        },
+        {
+            "id": "dialectDrill_practice_l54_q2",
+            "instruction": "In which phrase would a non-rhotic speaker pronounce the /r/ of 'after'?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "after eight / after school",
+            "textToSpeak": "after eight / after school",
+            "options": [
+                "PLANT",
+                "MEDIA EVENT",
+                "AFTER EIGHT",
+                "AFTER SCHOOL"
+            ],
+            "correctAnswer": "AFTER EIGHT",
+            "correctAnswerIndex": 2,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "The rule holds for any word ending in written 'r'.",
+            "hint": "Think about the consonant or vowel that comes next.",
+            "explanation": "The /r/ is kept before a vowel: 'after eight' links the words."
+        },
+        {
+            "id": "dialectDrill_practice_l54_q3",
+            "instruction": "Which phrase shows linking r in Southern British English?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "four apples / four pears",
+            "textToSpeak": "four apples / four pears",
+            "options": [
+                "FOUR PEARS",
+                "SAW IT",
+                "GAS",
+                "FOUR APPLES"
+            ],
+            "correctAnswer": "FOUR APPLES",
+            "correctAnswerIndex": 3,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "You can hear it in numbers, addresses and times.",
+            "hint": "Listen for a linking sound between the words.",
+            "explanation": "Before 'apples', a vowel follows 'four', so /r/ is pronounced. Before 'pears', it is not."
+        },
+        {
+            "id": "dialectDrill_practice_l55_q1",
+            "instruction": "In which phrase might a non-rhotic speaker add an extra /r/?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "media event / media report",
+            "textToSpeak": "media event / media report",
+            "options": [
+                "MEDIA REPORT",
+                "MASTER",
+                "MEDIA EVENT",
+                "dropped y-glide"
+            ],
+            "correctAnswer": "MEDIA EVENT",
+            "correctAnswerIndex": 2,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "Intrusive r generalizes from linking r.",
+            "hint": "The first word ends in a vowel, not in written 'r'.",
+            "explanation": "Some non-rhotic speakers add an intrusive /r/ between two vowels: 'media-r-event'. It doesn't happen before a consonant."
+        },
+        {
+            "id": "dialectDrill_practice_l55_q2",
+            "instruction": "Which phrase is more likely to have an intrusive r?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "sofa is / sofa was",
+            "textToSpeak": "sofa is / sofa was",
+            "options": [
+                "SOFA IS",
+                "SOFA WAS",
+                "SAW IT",
+                "CLEAR UP"
+            ],
+            "correctAnswer": "SOFA IS",
+            "correctAnswerIndex": 0,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "It is not a mistake but a pattern in many non-rhotic accents.",
+            "hint": "The intrusive r goes between vowels.",
+            "explanation": "Between 'sofa' and 'is' there are two vowels next to each other, so an intrusive /r/ often appears."
+        },
+        {
+            "id": "dialectDrill_practice_l55_q3",
+            "instruction": "In which phrase might you hear 'saw-r-it'?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "saw it / saw them",
+            "textToSpeak": "saw it / saw them",
+            "options": [
+                "SAW THEM",
+                "dropped h",
+                "RUDE",
+                "SAW IT"
+            ],
+            "correctAnswer": "SAW IT",
+            "correctAnswerIndex": 3,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "In careful speech, some speakers avoid it.",
+            "hint": "The next word begins with a vowel in only one phrase.",
+            "explanation": "The pronounced /r/ appears before a vowel, as in 'saw-r-it'."
+        },
+        {
+            "id": "dialectDrill_practice_l56_q1",
+            "instruction": "Which word has a tapped /t/ in General American?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "later / attack",
+            "textToSpeak": "later / attack",
+            "options": [
+                "ATTACK",
+                "dropped t",
+                "ATOMIC",
+                "LATER"
+            ],
+            "correctAnswer": "LATER",
+            "correctAnswerIndex": 3,
+            "dialectRegion": "United States",
+            "dialectNote": "The stress pattern controls the tap.",
+            "hint": "The stress of the syllable after the /t/ matters.",
+            "explanation": "A /t/ is tapped between a stressed vowel and an unstressed vowel, as in later. In attack, the /t/ comes before a stressed vowel and remains a full /t/."
+        },
+        {
+            "id": "dialectDrill_practice_l56_q2",
+            "instruction": "Which word has a tapped /t/ in General American?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "hotel / hotter",
+            "textToSpeak": "hotel / hotter",
+            "options": [
+                "AFTER EIGHT",
+                "AFTER SCHOOL",
+                "HOTTER",
+                "HOTEL"
+            ],
+            "correctAnswer": "HOTTER",
+            "correctAnswerIndex": 2,
+            "dialectRegion": "United States",
+            "dialectNote": "Same letters, different stress, different sounds.",
+            "hint": "Both words contain /t/ between vowels. Where is the stress?",
+            "explanation": "Hotter has stress on the first syllable and reduction after it, so the /t/ is tapped. In hotel, the /t/ precedes the stressed syllable and is not tapped."
+        },
+        {
+            "id": "dialectDrill_practice_l56_q3",
+            "instruction": "Which word contains the tap in General American?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "atom / atomic",
+            "textToSpeak": "atom / atomic",
+            "options": [
+                "HOTEL",
+                "ATOM",
+                "ATOMIC",
+                "MORTAL"
+            ],
+            "correctAnswer": "ATOM",
+            "correctAnswerIndex": 1,
+            "dialectRegion": "United States",
+            "dialectNote": "This pair shows how suffixes can change the pronunciation of a base word.",
+            "hint": "The /t/ occurs in both words. What changes when the ending is added?",
+            "explanation": "In atom, /t/ follows the stressed vowel and precedes a weak one. In atomic, stress shifts and the /t/ precedes a stressed syllable."
+        },
+        {
+            "id": "dialectDrill_practice_l57_q1",
+            "instruction": "In Southern British English, which word has a 'y' glide before the vowel?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "duke / rude",
+            "textToSpeak": "duke / rude",
+            "options": [
+                "AFTER EIGHT",
+                "RUDE",
+                "DUKE",
+                "CLEAR SKY"
+            ],
+            "correctAnswer": "DUKE",
+            "correctAnswerIndex": 2,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "The glide is impossible after r, sh, ch and j in English.",
+            "hint": "The glide appears after certain consonants but not after 'r'.",
+            "explanation": "After /d/ the /j/ is kept in Southern British: /djuːk/. After /r/ it is never pronounced, so rude is /ruːd/."
+        },
+        {
+            "id": "dialectDrill_practice_l57_q2",
+            "instruction": "Which word keeps the 'y' glide in British English?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "consume / conclude",
+            "textToSpeak": "consume / conclude",
+            "options": [
+                "PLANT",
+                "GRAB",
+                "CONSUME",
+                "CONCLUDE"
+            ],
+            "correctAnswer": "CONSUME",
+            "correctAnswerIndex": 2,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "Yod-dropping after /l/ has become standard in most British accents.",
+            "hint": "Consider the sound just before the vowel.",
+            "explanation": "After /s/ the glide is kept: /kənˈsjuːm/. After /l/ the glide is not pronounced in this word."
+        },
+        {
+            "id": "dialectDrill_practice_l57_q3",
+            "instruction": "Which word differs between General American and Southern British because of a 'y' glide?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "revenue / rescue",
+            "textToSpeak": "revenue / rescue",
+            "options": [
+                "REVENUE",
+                "SOFA IS",
+                "RESCUE",
+                "AMPLE"
+            ],
+            "correctAnswer": "REVENUE",
+            "correctAnswerIndex": 0,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "The glide after k is kept in both varieties.",
+            "hint": "One of the words keeps its glide in both varieties.",
+            "explanation": "Rescue has /skj/ in both, since the glide follows /k/. Revenue has /nj/ in British English and /n/ in American."
+        },
+        {
+            "id": "dialectDrill_practice_l58_q1",
+            "instruction": "What accent feature explains this spoken form?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "butter → BUD-er",
+            "textToSpeak": "butter → BUD-er",
+            "options": [
+                "CHANCE",
+                "tapped t",
+                "dropped h",
+                "glottal stop"
+            ],
+            "correctAnswer": "tapped t",
+            "correctAnswerIndex": 1,
+            "dialectRegion": "United States",
+            "dialectNote": "Practise with words like better and writer.",
+            "hint": "The spelling shows a 'd'. Think about the way the tongue moves.",
+            "explanation": "The tap is a quick movement of the tongue tip that sounds like /d/ to many listeners."
+        },
+        {
+            "id": "dialectDrill_practice_l58_q2",
+            "instruction": "What feature explains this form?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "park → PAHK",
+            "textToSpeak": "park → PAHK",
+            "options": [
+                "tapped t",
+                "CHANCE",
+                "dropped r",
+                "CLEAR UP"
+            ],
+            "correctAnswer": "dropped r",
+            "correctAnswerIndex": 2,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "Non-rhotic speech occurs in many places worldwide.",
+            "hint": "Look at what has gone missing.",
+            "explanation": "The /r/ before a consonant is not pronounced in non-rhotic accents."
+        },
+        {
+            "id": "dialectDrill_practice_l58_q3",
+            "instruction": "What feature explains this form?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "Tuesday → TOOZ-day",
+            "textToSpeak": "Tuesday → TOOZ-day",
+            "options": [
+                "MATTER",
+                "ARRIVE",
+                "dropped y-glide",
+                "dropped h"
+            ],
+            "correctAnswer": "dropped y-glide",
+            "correctAnswerIndex": 2,
+            "dialectRegion": "United States",
+            "dialectNote": "The feature is called yod-dropping.",
+            "hint": "Compare it with the usual British 'TYOOZ-day'.",
+            "explanation": "The /j/ glide after /t/ is not pronounced in General American."
+        },
+        {
+            "id": "dialectDrill_practice_l59_q1",
+            "instruction": "Which process explains this fast-speech form?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "don't you → DOHN-choo",
+            "textToSpeak": "don't you → DOHN-choo",
+            "options": [
+                "sound blending",
+                "SAW THEM",
+                "MORAL",
+                "dropped t"
+            ],
+            "correctAnswer": "sound blending",
+            "correctAnswerIndex": 0,
+            "dialectRegion": "United States",
+            "dialectNote": "It is very common in casual speech.",
+            "hint": "Two sounds at a word boundary merge into one.",
+            "explanation": "/t/ and /j/ blend into /tʃ/, called palatalisation."
+        },
+        {
+            "id": "dialectDrill_practice_l59_q2",
+            "instruction": "Which process explains this form?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "next week → NEKS-week",
+            "textToSpeak": "next week → NEKS-week",
+            "options": [
+                "dropped t",
+                "weak vowel",
+                "dropped r",
+                "HURT"
+            ],
+            "correctAnswer": "dropped t",
+            "correctAnswerIndex": 0,
+            "dialectRegion": "United States",
+            "dialectNote": "Such dropping occurs in every variety.",
+            "hint": "A consonant has quietly disappeared from a cluster.",
+            "explanation": "The /t/ in the middle of the cluster /kst/ is dropped in fast speech."
+        },
+        {
+            "id": "dialectDrill_practice_l59_q3",
+            "instruction": "Which feature explains this form?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "got to → GAH-duh",
+            "textToSpeak": "got to → GAH-duh",
+            "options": [
+                "tapped t",
+                "sound blending",
+                "ARM",
+                "AMPLE"
+            ],
+            "correctAnswer": "tapped t",
+            "correctAnswerIndex": 0,
+            "dialectRegion": "United States",
+            "dialectNote": "This is a typical example of connected speech.",
+            "hint": "The middle consonant sounds different from the spelling.",
+            "explanation": "The /t/ is tapped between vowels, and 'to' is reduced to a schwa."
+        },
+        {
+            "id": "dialectDrill_practice_l60_q1",
+            "instruction": "In Southern British English, which word has the long vowel?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "sample / ample",
+            "textToSpeak": "sample / ample",
+            "options": [
+                "ARM",
+                "SAMPLE",
+                "AMPLE",
+                "ATTACK"
+            ],
+            "correctAnswer": "SAMPLE",
+            "correctAnswerIndex": 1,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "There are word-by-word exceptions, so listening matters.",
+            "hint": "Compare the consonants that follow the vowel.",
+            "explanation": "Sample takes the long /ɑː/ in Southern British, while ample keeps the short /æ/ despite the same /mp/ cluster."
+        },
+        {
+            "id": "dialectDrill_practice_l60_q2",
+            "instruction": "In which phrase would a non-rhotic speaker pronounce the r of 'clear'?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "clear up / clear sky",
+            "textToSpeak": "clear up / clear sky",
+            "options": [
+                "CLEAR SKY",
+                "RESCUE",
+                "HERE IS",
+                "CLEAR UP"
+            ],
+            "correctAnswer": "CLEAR UP",
+            "correctAnswerIndex": 3,
+            "dialectRegion": "United Kingdom",
+            "dialectNote": "In rhotic accents the /r/ is heard in both phrases, so the contrast disappears.",
+            "hint": "Look at the sound that follows 'clear'.",
+            "explanation": "A non-rhotic speaker links /r/ to a following vowel, as in 'clear up'."
+        },
+        {
+            "id": "dialectDrill_practice_l60_q3",
+            "instruction": "Which word has a tapped /t/ in General American?",
+            "subtype": "dialectDrill",
+            "interactionType": "multiple_choice",
+            "word": "metal / metallic",
+            "textToSpeak": "metal / metallic",
+            "options": [
+                "METAL",
+                "SAW THEM",
+                "MORAL",
+                "METALLIC"
+            ],
+            "correctAnswer": "METAL",
+            "correctAnswerIndex": 0,
+            "dialectRegion": "United States",
+            "dialectNote": "Stress shifts in related words often change consonants too.",
+            "hint": "Both words contain /t/. Consider which syllable is stressed.",
+            "explanation": "Metal has a tapped /t/ before a weak vowel. Metallic shifts the stress, so /t/ is released fully."
+        }
+    ]
+}

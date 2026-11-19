@@ -180,6 +180,8 @@ import 'package:vowl/features/accent/pitch_pattern_match/presentation/pages/pitc
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/pages/pitch_pattern_match_practice_screen.dart';
 import 'package:vowl/features/accent/speed_variance/presentation/pages/speed_variance_learn_screen.dart';
 import 'package:vowl/features/accent/speed_variance/presentation/pages/speed_variance_practice_screen.dart';
+import 'package:vowl/features/accent/dialect_drill/presentation/pages/dialect_drill_learn_screen.dart';
+import 'package:vowl/features/accent/dialect_drill/presentation/pages/dialect_drill_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -925,6 +927,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'dialectdrill') {
+          return fadeTransitionPage(
+            child: DialectDrillLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1449,6 +1457,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'speedvariance') {
           return fadeTransitionPage(
             child: SpeedVariancePracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'dialectdrill') {
+          return fadeTransitionPage(
+            child: DialectDrillPracticeScreen(level: level),
             state: state,
           );
         }

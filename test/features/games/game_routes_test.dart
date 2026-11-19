@@ -57,6 +57,8 @@ import 'package:vowl/features/accent/pitch_pattern_match/presentation/pages/pitc
 import 'package:vowl/features/accent/pitch_pattern_match/presentation/pages/pitch_pattern_match_practice_screen.dart';
 import 'package:vowl/features/accent/speed_variance/presentation/pages/speed_variance_learn_screen.dart';
 import 'package:vowl/features/accent/speed_variance/presentation/pages/speed_variance_practice_screen.dart';
+import 'package:vowl/features/accent/dialect_drill/presentation/pages/dialect_drill_learn_screen.dart';
+import 'package:vowl/features/accent/dialect_drill/presentation/pages/dialect_drill_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -893,6 +895,24 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<SpeedVariancePracticeScreen>());
+    });
+
+    test('resolves /learn route for dialectDrill', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state =
+          createMockState('/learn?category=accent&gameType=dialectDrill&level=5');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<DialectDrillLearnScreen>());
+    });
+
+    test('resolves /practice route for dialectDrill', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state =
+          createMockState('/practice?category=accent&gameType=dialectDrill&level=5');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<DialectDrillPracticeScreen>());
     });
   });
 }
