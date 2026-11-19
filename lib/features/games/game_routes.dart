@@ -212,6 +212,8 @@ import 'package:vowl/features/elite_mastery/idiom_match/presentation/pages/idiom
 import 'package:vowl/features/elite_mastery/idiom_match/presentation/pages/idiom_match_practice_screen.dart';
 import 'package:vowl/features/elite_mastery/speed_spelling/presentation/pages/speed_spelling_learn_screen.dart';
 import 'package:vowl/features/elite_mastery/speed_spelling/presentation/pages/speed_spelling_practice_screen.dart';
+import 'package:vowl/features/elite_mastery/accent_shadowing/presentation/pages/accent_shadowing_learn_screen.dart';
+import 'package:vowl/features/elite_mastery/accent_shadowing/presentation/pages/accent_shadowing_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -1053,6 +1055,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'accentshadowing') {
+          return fadeTransitionPage(
+            child: AccentShadowingLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1673,6 +1681,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'speedspelling') {
           return fadeTransitionPage(
             child: SpeedSpellingPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'accentshadowing') {
+          return fadeTransitionPage(
+            child: AccentShadowingPracticeScreen(level: level),
             state: state,
           );
         }

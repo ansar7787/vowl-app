@@ -89,6 +89,8 @@ import 'package:vowl/features/elite_mastery/idiom_match/presentation/pages/idiom
 import 'package:vowl/features/elite_mastery/idiom_match/presentation/pages/idiom_match_practice_screen.dart';
 import 'package:vowl/features/elite_mastery/speed_spelling/presentation/pages/speed_spelling_learn_screen.dart';
 import 'package:vowl/features/elite_mastery/speed_spelling/presentation/pages/speed_spelling_practice_screen.dart';
+import 'package:vowl/features/elite_mastery/accent_shadowing/presentation/pages/accent_shadowing_learn_screen.dart';
+import 'package:vowl/features/elite_mastery/accent_shadowing/presentation/pages/accent_shadowing_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -1213,6 +1215,24 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<SpeedSpellingPracticeScreen>());
+    });
+
+    test('resolves /learn route for accentShadowing', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state =
+          createMockState('/learn?category=elite_mastery&gameType=accentShadowing&level=5');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<AccentShadowingLearnScreen>());
+    });
+
+    test('resolves /practice route for accentShadowing', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state =
+          createMockState('/practice?category=elite_mastery&gameType=accentShadowing&level=5');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<AccentShadowingPracticeScreen>());
     });
   });
 }
