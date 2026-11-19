@@ -1,0 +1,488 @@
+{
+  "gameType": "fastSpeechDecoder",
+  "phase": "mastery",
+  "batchIndex": 14,
+  "levels": "131-140",
+  "quests": [
+    {
+      "id": "LIS_FASTSPEECHDECODER_L131_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Catch the exact item, since the cashier says it quickly in passing.",
+      "explanation": "In real shopping conversations, clerks speak at natural conversational speed, blending small words together around the item name.",
+      "textToSpeak": "Do you need a bag for that?",
+      "options": [
+        "Do you need a box for that?",
+        "Do you need a bag for that?"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L131_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Listen for whether this is in stock, or sold out.",
+      "explanation": "'We're out of' compresses heavily in fast speech, and the item named right after tells you exactly what's unavailable.",
+      "textToSpeak": "We're out of your size in that color.",
+      "options": [
+        "We have your size in that color.",
+        "We're out of your size in that color."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L131_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Notice the exact return policy detail mentioned.",
+      "explanation": "Store policies are often explained quickly and routinely, so the specific time frame, easy to lose in fast speech, is the real detail here.",
+      "textToSpeak": "You can return it within thirty days.",
+      "options": [
+        "You can return it within fourteen days.",
+        "You can return it within thirty days."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L132_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "Catch the exact platform number, since transit announcements move fast.",
+      "explanation": "Transit announcements are often delivered at a rapid, routine pace, so isolating the specific number takes real focus.",
+      "textToSpeak": "Your train departs from platform six.",
+      "options": [
+        "Your train departs from platform sixteen.",
+        "Your train departs from platform six."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L132_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Listen for whether the bus is delayed or running on time.",
+      "explanation": "'Running late' and 'running on time' can both blend at speed, so the key status word deserves careful attention.",
+      "textToSpeak": "The bus is running about ten minutes late.",
+      "options": [
+        "The bus is running right on time.",
+        "The bus is running about ten minutes late."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L132_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Notice the exact stop where they need to get off.",
+      "explanation": "Directions on public transport are often given quickly, so the specific stop name is the real detail worth isolating.",
+      "textToSpeak": "You'll want to get off at the next stop.",
+      "options": [
+        "You'll want to get off at the last stop.",
+        "You'll want to get off at the next stop."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L133_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Catch exactly what they're recommending, since it's said quickly.",
+      "explanation": "Restaurant recommendations often come out fast and casually, so the specific dish named needs your close attention.",
+      "textToSpeak": "I'd recommend the grilled salmon tonight.",
+      "options": [
+        "I'd recommend the grilled chicken tonight.",
+        "I'd recommend the grilled salmon tonight."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L133_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Listen for whether the table is ready, or still needs a bit more time.",
+      "explanation": "'Just a few more minutes' reduces at speed, so listen for whether the wait continues or the table is confirmed as ready.",
+      "textToSpeak": "Your table's ready whenever you are.",
+      "options": [
+        "Your table needs a few more minutes.",
+        "Your table's ready whenever you are."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L133_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Notice the exact allergy or dietary detail mentioned.",
+      "explanation": "Dietary details are often mentioned quickly and in passing, so the specific ingredient or restriction is the real content here.",
+      "textToSpeak": "This dish is completely nut-free.",
+      "options": [
+        "This dish is completely nut-free.",
+        "This dish is completely dairy-free."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L134_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "Catch the exact gate number, since airport announcements are fast and routine.",
+      "explanation": "Gate numbers are announced quickly and repetitively, so isolating the specific number from the background noise of the phrase matters.",
+      "textToSpeak": "Final boarding is now at gate twenty-three.",
+      "options": [
+        "Final boarding is now at gate thirty-two.",
+        "Final boarding is now at gate twenty-three."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L134_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Listen for whether the flight is delayed, or on time.",
+      "explanation": "Flight status updates blend their key word into the surrounding announcement, so isolating 'delayed' versus 'on time' really matters.",
+      "textToSpeak": "Your flight is currently on time.",
+      "options": [
+        "Your flight is currently delayed.",
+        "Your flight is currently on time."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L134_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Notice exactly what needs to go in the overhead bin, or under the seat.",
+      "explanation": "Cabin crew instructions are delivered quickly and routinely, so the specific placement detail needs deliberate attention.",
+      "textToSpeak": "Please place your bag under the seat in front of you.",
+      "options": [
+        "Please place your bag under the seat in front of you.",
+        "Please place your bag in the overhead bin above you."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L135_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Catch exactly who they're trying to reach.",
+      "explanation": "Phone conversations move quickly and casually, so names and departments can blend together unless you listen closely.",
+      "textToSpeak": "I'm trying to reach someone in billing.",
+      "options": [
+        "I'm trying to reach someone in billing.",
+        "I'm trying to reach someone in sales."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L135_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Listen for whether the call got through, or went to voicemail.",
+      "explanation": "'Went straight to voicemail' compresses at speed, so the outcome of the call is the real detail to catch here.",
+      "textToSpeak": "It went straight to voicemail again.",
+      "options": [
+        "It rang through and I got them.",
+        "It went straight to voicemail again."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L135_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Notice the exact callback number given.",
+      "explanation": "Phone numbers are often read out at a steady, rapid pace, so isolating each digit takes real, deliberate focus.",
+      "textToSpeak": "Please call us back at extension four one two.",
+      "options": [
+        "Please call us back at extension four one two.",
+        "Please call us back at extension four one four."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L136_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "Catch the exact day the appointment is being moved to.",
+      "explanation": "Rescheduling details are often mentioned quickly and casually, so the new day or time needs your close attention.",
+      "textToSpeak": "We'll need to move your appointment to Friday.",
+      "options": [
+        "We'll need to move your appointment to Thursday.",
+        "We'll need to move your appointment to Friday."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L136_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Listen for whether they need to confirm, or cancel entirely.",
+      "explanation": "'Confirm' and 'cancel' share a similar rhythm but very different meanings, so the specific word needs careful isolation.",
+      "textToSpeak": "Could you confirm your appointment for us?",
+      "options": [
+        "Could you cancel your appointment for us?",
+        "Could you confirm your appointment for us?"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L136_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Notice exactly how early they should arrive.",
+      "explanation": "Arrival instructions are often given quickly at the end of a call, so the specific number of minutes is the real detail to catch.",
+      "textToSpeak": "Please arrive fifteen minutes early.",
+      "options": [
+        "Please arrive fifteen minutes early.",
+        "Please arrive five minutes early."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L137_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Catch exactly what needs fixing around the house.",
+      "explanation": "Household conversations move quickly and casually, so the specific item that's broken needs your close attention.",
+      "textToSpeak": "The kitchen tap's been leaking all week.",
+      "options": [
+        "The kitchen tap's been leaking all week.",
+        "The bathroom tap's been leaking all week."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L137_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Listen for whether the delivery has arrived, or is still on its way.",
+      "explanation": "'Still on its way' and 'already arrived' both compress at speed, so the status word is the real thing to isolate here.",
+      "textToSpeak": "The package is still on its way.",
+      "options": [
+        "The package has already arrived.",
+        "The package is still on its way."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L137_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Notice the exact chore that still needs doing.",
+      "explanation": "Household to-do lists are often mentioned quickly in passing conversation, so the specific task is where the real content lies.",
+      "textToSpeak": "We still need to take out the recycling.",
+      "options": [
+        "We still need to take out the recycling.",
+        "We still need to take out the trash."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L138_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "Catch the exact errand, since it's mentioned quickly in a busy list.",
+      "explanation": "Lists of errands are often rattled off quickly and casually, so each individual task needs deliberate attention to catch.",
+      "textToSpeak": "I still need to drop off the dry cleaning.",
+      "options": [
+        "I still need to pick up the dry cleaning.",
+        "I still need to drop off the dry cleaning."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L138_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Listen for whether the pharmacy is open, or already closed.",
+      "explanation": "Store hours are often mentioned casually and quickly, so the actual status, open or closed, needs your close attention.",
+      "textToSpeak": "The pharmacy's already closed for the day.",
+      "options": [
+        "The pharmacy's already closed for the day.",
+        "The pharmacy's still open for the day."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L138_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Notice the exact place mentioned for the last errand.",
+      "explanation": "The final stop on an errand run is often mentioned quickly at the end of a sentence, so listen through to the very last detail.",
+      "textToSpeak": "Last stop is the post office before we head home.",
+      "options": [
+        "Last stop is the post office before we head home.",
+        "Last stop is the bank before we head home."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L139_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Catch exactly which way to turn, since directions come quickly.",
+      "explanation": "Spoken directions are often given at a fast, continuous pace, so each turn needs to be caught individually as it's mentioned.",
+      "textToSpeak": "Turn left at the second traffic light.",
+      "options": [
+        "Turn left at the second traffic light.",
+        "Turn right at the second traffic light."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L139_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Listen for whether the destination is on the left, or the right.",
+      "explanation": "'On your left' and 'on your right' reduce their key word quickly, so that final direction word is really what decides the meaning.",
+      "textToSpeak": "The entrance is on your right.",
+      "options": [
+        "The entrance is on your left.",
+        "The entrance is on your right."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L139_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Notice the exact landmark mentioned for orientation.",
+      "explanation": "Landmarks are often mentioned quickly as a shortcut in directions, so the specific one named needs your close attention.",
+      "textToSpeak": "You'll see a bakery on the corner.",
+      "options": [
+        "You'll see a bakery on the corner.",
+        "You'll see a pharmacy on the corner."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L140_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "By now, expect everyday details to arrive fast and in combination.",
+      "explanation": "This level combines a plan, a place, and a time all in one natural sentence, the way real weekend planning conversations actually sound.",
+      "textToSpeak": "Let's grab lunch downtown around one, if that works.",
+      "options": [
+        "Let's grab lunch downtown around one, if that works.",
+        "Let's grab lunch downtown around three, if that works."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L140_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Catch the full plan despite several fast, everyday details.",
+      "explanation": "By Level 140, everyday practical conversations, shopping, transport, errands, should feel much more decodable than they did at Level 51.",
+      "textToSpeak": "We'll swing by the shop, then head straight to the station.",
+      "options": [
+        "We'll swing by the shop, then head straight to the station.",
+        "We'll head straight to the station, then swing by the shop."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L140_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Notice how much practical detail survives even at a natural, fast pace.",
+      "explanation": "Everyday situations like these are exactly where fast, reduced speech shows up most, so this practice transfers directly into daily life.",
+      "textToSpeak": "If the traffic's bad, we'll just take the back roads.",
+      "options": [
+        "If the traffic's bad, we'll just take the back roads.",
+        "If the traffic's light, we'll just take the back roads."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    }
+  ]
+}

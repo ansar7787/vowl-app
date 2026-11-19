@@ -1,0 +1,488 @@
+{
+  "gameType": "fastSpeechDecoder",
+  "phase": "mastery",
+  "batchIndex": 15,
+  "levels": "141-150",
+  "quests": [
+    {
+      "id": "LIS_FASTSPEECHDECODER_L141_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Catch exactly what's been moved to next week.",
+      "explanation": "Meeting updates are often delivered quickly and routinely, so the specific item being rescheduled needs your close attention.",
+      "textToSpeak": "We've pushed the review meeting to next week.",
+      "options": [
+        "We've pushed the kickoff meeting to next week.",
+        "We've pushed the review meeting to next week."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L141_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Listen for whether everyone needs to attend, or just a few people.",
+      "explanation": "'Everyone' and 'just a few of us' both compress at speed, so the scope of attendance is the real detail to isolate here.",
+      "textToSpeak": "Just a few of us need to be there.",
+      "options": [
+        "Everyone needs to be there.",
+        "Just a few of us need to be there."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L141_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Notice the exact topic that's first on the agenda.",
+      "explanation": "Agenda items are often listed quickly at the start of a meeting, so the first topic mentioned deserves careful attention.",
+      "textToSpeak": "First up, let's go over the budget numbers.",
+      "options": [
+        "First up, let's go over the timeline changes.",
+        "First up, let's go over the budget numbers."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L142_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "Catch the exact deadline, since it's often stated quickly and firmly.",
+      "explanation": "Deadlines are usually stated at natural conversational speed without much emphasis, so the specific day needs deliberate listening.",
+      "textToSpeak": "Everything needs to be submitted by Thursday.",
+      "options": [
+        "Everything needs to be submitted by Wednesday.",
+        "Everything needs to be submitted by Thursday."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L142_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Listen for whether the deadline moved earlier, or later.",
+      "explanation": "'Moved up' and 'pushed back' point in opposite directions, so that key phrase is what actually decides the new timeline.",
+      "textToSpeak": "The deadline's been moved up a full week.",
+      "options": [
+        "The deadline's been pushed back a full week.",
+        "The deadline's been moved up a full week."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L142_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Notice exactly what's still outstanding before the deadline.",
+      "explanation": "Outstanding tasks are often mentioned quickly in passing, so the specific item still needed is where the real content lies.",
+      "textToSpeak": "We're still waiting on the final approval.",
+      "options": [
+        "We're still waiting on the final invoice.",
+        "We're still waiting on the final approval."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L143_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Catch exactly which chapter needs reviewing before class.",
+      "explanation": "Assignment instructions are often given quickly and casually, so the specific chapter or section mentioned needs your full attention.",
+      "textToSpeak": "Please review chapter six before our next class.",
+      "options": [
+        "Please review chapter sixteen before our next class.",
+        "Please review chapter six before our next class."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L143_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Listen for whether the essay is due, or has already been submitted.",
+      "explanation": "'Due' and 'already submitted' both compress at speed, so the actual status of the assignment is the real detail to catch.",
+      "textToSpeak": "That essay's already been submitted.",
+      "options": [
+        "That essay's still due next week.",
+        "That essay's already been submitted."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L143_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Notice the exact word count required for the assignment.",
+      "explanation": "Word counts are often mentioned quickly and specifically, so the number itself needs deliberate, careful listening.",
+      "textToSpeak": "It needs to be at least fifteen hundred words.",
+      "options": [
+        "It needs to be at least fifteen hundred words.",
+        "It needs to be at least five hundred words."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L144_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "Catch exactly which part of the project is behind schedule.",
+      "explanation": "Project status updates are often given quickly, so the specific component that's delayed needs your close attention.",
+      "textToSpeak": "The design phase is running behind schedule.",
+      "options": [
+        "The testing phase is running behind schedule.",
+        "The design phase is running behind schedule."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L144_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Listen for whether they've decided to keep the current approach, or change it.",
+      "explanation": "'Stick with' and 'switch from' both compress quickly, but they describe opposite decisions, so the exact phrase matters a lot.",
+      "textToSpeak": "We've decided to stick with the original plan.",
+      "options": [
+        "We've decided to switch from the original plan.",
+        "We've decided to stick with the original plan."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L144_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Notice exactly who's responsible for the next step.",
+      "explanation": "Task ownership is often assigned quickly and casually in project talk, so the name or role mentioned is the real content here.",
+      "textToSpeak": "Marketing will handle the next round of feedback.",
+      "options": [
+        "Marketing will handle the next round of feedback.",
+        "Engineering will handle the next round of feedback."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L145_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Catch the exact time slot being proposed.",
+      "explanation": "Scheduling suggestions are often floated quickly in conversation, so the specific time proposed needs your close attention.",
+      "textToSpeak": "Would two o'clock work for everyone?",
+      "options": [
+        "Would two o'clock work for everyone?",
+        "Would twelve o'clock work for everyone?"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L145_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Listen for whether the slot is available, or already booked.",
+      "explanation": "'Already booked' and 'still open' both compress at speed, so the exact availability status is the real detail to catch.",
+      "textToSpeak": "That slot's still open on my end.",
+      "options": [
+        "That slot's already booked on my end.",
+        "That slot's still open on my end."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L145_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Notice exactly how long the call is expected to run.",
+      "explanation": "Call durations are often mentioned quickly in passing, so the specific length of time needs deliberate attention.",
+      "textToSpeak": "Let's keep it to about thirty minutes.",
+      "options": [
+        "Let's keep it to about thirty minutes.",
+        "Let's keep it to about thirteen minutes."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L146_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "Catch the exact document being requested.",
+      "explanation": "Requests at work are often phrased quickly and casually, so the specific document or file named needs your full attention.",
+      "textToSpeak": "Could you send over the latest draft?",
+      "options": [
+        "Could you send over the final draft?",
+        "Could you send over the latest draft?"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L146_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Listen for whether this needs to happen before, or after the meeting.",
+      "explanation": "'Before' and 'after' the meeting completely change the urgency, so that small word needs a careful, close listen.",
+      "textToSpeak": "Please have it ready before the meeting starts.",
+      "options": [
+        "Please have it ready before the meeting starts.",
+        "Please have it ready after the meeting starts."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L146_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Notice exactly what format they'd prefer the file in.",
+      "explanation": "File format requests are often mentioned quickly at the end of a sentence, so listen through to the very last detail.",
+      "textToSpeak": "Could you send it as a PDF instead?",
+      "options": [
+        "Could you send it as a PDF instead?",
+        "Could you send it as a spreadsheet instead?"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L147_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Catch exactly what they're asking you to clarify.",
+      "explanation": "Clarifying questions often move quickly since the speaker already has context, so the specific detail they're unsure about needs attention.",
+      "textToSpeak": "Sorry, could you clarify the second point?",
+      "options": [
+        "Sorry, could you clarify the second point?",
+        "Sorry, could you clarify the third point?"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L147_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Listen for whether they understood, or are still confused.",
+      "explanation": "'That makes sense now' and 'still not sure' both compress quickly, but they describe opposite states of understanding.",
+      "textToSpeak": "I'm still not totally sure about that part.",
+      "options": [
+        "That makes total sense to me now.",
+        "I'm still not totally sure about that part."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L147_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Notice exactly what they meant by the earlier comment.",
+      "explanation": "'What I meant was' often reduces quickly, so the real explanation that follows is where the useful content actually lives.",
+      "textToSpeak": "What I meant was we should wait until Friday.",
+      "options": [
+        "What I meant was we should wait until Friday.",
+        "What I meant was we should wait until Monday."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L148_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "Catch exactly which slide they're referring to.",
+      "explanation": "Presenters often move quickly through slide references, so the specific number or topic mentioned needs your close attention.",
+      "textToSpeak": "If you look at slide seven, you'll see the trend.",
+      "options": [
+        "If you look at slide seventeen, you'll see the trend.",
+        "If you look at slide seven, you'll see the trend."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L148_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Listen for whether questions come now, or at the end.",
+      "explanation": "'Now' and 'at the end' point to very different moments, so catching that timing word changes what you should do next.",
+      "textToSpeak": "We'll take questions at the end, if that's okay.",
+      "options": [
+        "We'll take questions at the end, if that's okay.",
+        "We'll take questions right now, if that's okay."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L148_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Notice the exact figure highlighted in the presentation.",
+      "explanation": "Key statistics in a talk are often delivered quickly and confidently, so the specific number deserves careful, deliberate listening.",
+      "textToSpeak": "Revenue grew by twelve percent this quarter.",
+      "options": [
+        "Revenue grew by twelve percent this quarter.",
+        "Revenue grew by twenty percent this quarter."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L149_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Catch exactly what they said was in the email.",
+      "explanation": "People often summarize emails quickly in conversation, so the specific detail they mention needs your full attention.",
+      "textToSpeak": "The email said the launch is confirmed for March.",
+      "options": [
+        "The email said the launch is confirmed for March.",
+        "The email said the launch is confirmed for April."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L149_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Listen for whether they've replied already, or still need to.",
+      "explanation": "'Already replied' and 'still need to reply' both compress quickly, but they describe opposite states of progress.",
+      "textToSpeak": "I still need to reply to that thread.",
+      "options": [
+        "I already replied to that thread.",
+        "I still need to reply to that thread."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L149_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Notice exactly who was copied on the message.",
+      "explanation": "Names mentioned in passing while discussing an email can blur together at speed, so isolating the specific name matters.",
+      "textToSpeak": "They copied the whole finance team on it.",
+      "options": [
+        "They copied the whole finance team on it.",
+        "They copied the whole design team on it."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L150_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "By now, expect workplace sentences to pack in several details at once.",
+      "explanation": "This level combines a deadline, a task owner, and a next step all in one flowing sentence, the way a real status update actually sounds.",
+      "textToSpeak": "Once design signs off, engineering can start building by Monday.",
+      "options": [
+        "Once engineering signs off, design can start building by Monday.",
+        "Once design signs off, engineering can start building by Monday."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L150_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Catch the full update despite several fast, technical details.",
+      "explanation": "By Level 150, dense workplace speech, meetings, deadlines, project status, should feel far more manageable than at the start of this file.",
+      "textToSpeak": "We're still on track, assuming the review wraps up by Thursday.",
+      "options": [
+        "We're still on track, assuming the review wraps up by Thursday.",
+        "We're already behind, assuming the review wraps up by Thursday."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L150_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Notice how much professional detail survives even at a natural, rapid pace.",
+      "explanation": "Workplace and study English often move quickly because the speakers share context, so training on dense, realistic sentences like this builds real confidence.",
+      "textToSpeak": "As long as the numbers hold, we'll present the findings Friday.",
+      "options": [
+        "As long as the numbers hold, we'll present the findings Friday.",
+        "As long as the numbers hold, we'll present the findings Monday."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    }
+  ]
+}

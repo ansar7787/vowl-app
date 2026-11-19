@@ -1,0 +1,488 @@
+{
+  "gameType": "fastSpeechDecoder",
+  "phase": "mastery",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "id": "LIS_FASTSPEECHDECODER_L11_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Track both people mentioned — one waiting, one running late.",
+      "explanation": "Two reduced forms appear back to back here, 'I'm' and 'she's', so you have to hold both subjects in mind as the sentence moves quickly past each one.",
+      "textToSpeak": "I'm ready, but she's still getting dressed.",
+      "options": [
+        "She's ready, but I'm still getting dressed.",
+        "I'm ready, but she's still getting dressed."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L11_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Catch who's driving, and who's walking instead.",
+      "explanation": "'We're' and 'they're' both reduce to a light, fast sound, so keep the two groups separate as the sentence links them together.",
+      "textToSpeak": "We're driving, since they're walking already.",
+      "options": [
+        "They're driving, since we're walking already.",
+        "We're driving, since they're walking already."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L11_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Notice who's excited, and who's feeling nervous instead.",
+      "explanation": "This sentence packs 'you're' and 'he's' together, each compressed to almost nothing, so the two feelings need to be matched to the right person.",
+      "textToSpeak": "You're excited about the move, but he's nervous.",
+      "options": [
+        "You're nervous about the move, but he's excited.",
+        "You're excited about the move, but he's nervous."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L12_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "Catch what each person has actually done.",
+      "explanation": "'I've' and 'you've' both reduce fast here, so the sentence quietly hands off from one subject's action to the other's — don't lose track of who did what.",
+      "textToSpeak": "I've finished packing, and you've booked the taxi.",
+      "options": [
+        "You've finished packing, and I've booked the taxi.",
+        "I've finished packing, and you've booked the taxi."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L12_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Listen for which group has already eaten.",
+      "explanation": "'We've' compresses fast, and the timing word right after it, 'already', is easy to miss but changes whether this is happening now or already done.",
+      "textToSpeak": "We've already eaten, so don't wait for us.",
+      "options": [
+        "We haven't eaten, so don't wait for us.",
+        "We've already eaten, so don't wait for us."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L12_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Catch who's seen the message, and who still hasn't replied.",
+      "explanation": "Two different 've forms sit close together in this sentence, so track carefully which subject goes with which action as they link together.",
+      "textToSpeak": "I've read your message, but you've not replied yet.",
+      "options": [
+        "You've read my message, but I've not replied yet.",
+        "I've read your message, but you've not replied yet."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L13_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Notice who's calling ahead, and who's meeting them there.",
+      "explanation": "'I'll' and 'she'll' both shrink down at speed, so hold on to which person does the calling and which one does the arriving.",
+      "textToSpeak": "I'll call ahead, and she'll meet us there.",
+      "options": [
+        "She'll call ahead, and I'll meet us there.",
+        "I'll call ahead, and she'll meet us there."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L13_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Catch exactly what will happen, and when.",
+      "explanation": "'We'll' reduces to almost nothing before the verb, so the real content, the action and its timing, is carried entirely by the words that follow.",
+      "textToSpeak": "We'll leave as soon as the rain stops.",
+      "options": [
+        "We'll leave as soon as the rain stops.",
+        "We'll leave as soon as the rain starts."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L13_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Listen for who'll cook, and who'll clean up after.",
+      "explanation": "'They'll' and 'we'll' can sound close together at natural speed, so the vowel is what tells you which task belongs to which group.",
+      "textToSpeak": "They'll cook tonight, and we'll clean up after.",
+      "options": [
+        "We'll cook tonight, and they'll clean up after.",
+        "They'll cook tonight, and we'll clean up after."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L14_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "Catch what each person would actually prefer.",
+      "explanation": "'I'd' and 'she'd' both reduce to a quick sound plus a soft 'd', so listen carefully for whose preference comes first in the sentence.",
+      "textToSpeak": "I'd rather stay in, but she'd prefer to go out.",
+      "options": [
+        "I'd rather stay in, but she'd prefer to go out.",
+        "She'd rather stay in, but I'd prefer to go out."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L14_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Notice what the group would do differently.",
+      "explanation": "'We'd' compresses fast in casual speech, so the useful detail, what exactly would be done differently, sits in the words right after it.",
+      "textToSpeak": "We'd probably choose a smaller place next time.",
+      "options": [
+        "We'd probably choose a smaller place next time.",
+        "We'd probably choose a bigger place next time."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L14_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Listen for who'd help, and what they'd need first.",
+      "explanation": "'They'd' and 'we'd' both reduce to a light, fast sound before the verb, so catching the right subject changes who's actually offering the help.",
+      "textToSpeak": "They'd help if we'd just ask them directly.",
+      "options": [
+        "We'd help if they'd just ask us directly.",
+        "They'd help if we'd just ask them directly."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L15_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Catch what's happening now, and what's already finished.",
+      "explanation": "This sentence mixes 'I'm' with 'I've', two different reduced forms with two different jobs — one about now, one about the past.",
+      "textToSpeak": "I'm still cooking, even though I've already set the table.",
+      "options": [
+        "I'm still cooking, even though I've already set the table.",
+        "I've still cooked, even though I'm already setting the table."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L15_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Notice who's stuck in traffic, and what they've missed.",
+      "explanation": "'She's' and 'she've' don't exist as a pair, but 'she's' and 'they've' do appear together here — track each reduced form to its own subject.",
+      "textToSpeak": "She's stuck in traffic, so they've started without her.",
+      "options": [
+        "They're stuck in traffic, so she's started without them.",
+        "She's stuck in traffic, so they've started without her."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L15_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Listen for who's arriving, and what they've brought.",
+      "explanation": "'We're' and 'we've' look similar on the page but sound quite different — one is about a state right now, the other about something completed.",
+      "textToSpeak": "We're almost there, and we've brought snacks for everyone.",
+      "options": [
+        "We're almost there, and we've brought snacks for everyone.",
+        "We were almost there, and we'd brought snacks for everyone."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L16_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "Catch what's true right now, and what will happen later.",
+      "explanation": "'I'm' and 'I'll' share the same subject but point to different times, so listen for which verb ending belongs to now and which belongs to later.",
+      "textToSpeak": "I'm running late, but I'll still make it to the start.",
+      "options": [
+        "I'm running late, but I'll still make it to the start.",
+        "I'll be running late, but I'm still making it to the start."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L16_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Notice who's nervous now, and who'll go first.",
+      "explanation": "Two subjects and two different reduced forms appear here, 'he's' and 'you'll', so match each one to the right role in the sentence.",
+      "textToSpeak": "He's nervous, so you'll go first instead.",
+      "options": [
+        "You're nervous, so he'll go first instead.",
+        "He's nervous, so you'll go first instead."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L16_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Listen for the current situation, and the plan for later.",
+      "explanation": "'They're' describes what's happening now, while 'they'll' describes what comes next — both reduce fast, so the tense is easy to miss.",
+      "textToSpeak": "They're behind schedule, but they'll catch up by Friday.",
+      "options": [
+        "They're behind schedule, but they'll catch up by Friday.",
+        "They'll be behind schedule, but they're caught up by Friday."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L17_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Catch what's already happened, and what they'd do differently.",
+      "explanation": "'I've' and 'I'd' look almost identical in text but sound different — one marks something finished, the other a hypothetical choice.",
+      "textToSpeak": "I've seen the movie, but I'd still watch it again.",
+      "options": [
+        "I've seen the movie, but I'd still watch it again.",
+        "I'd seen the movie, but I've still watched it again."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L17_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Notice what she's done, and what she'd have preferred.",
+      "explanation": "'She's' collapses fast into the sentence, and 'she'd have' compresses even further — listen for both reduced chunks to follow her full thought.",
+      "textToSpeak": "She's finished the course, though she'd have liked more practice.",
+      "options": [
+        "She's finished the course, though she'd have liked more practice.",
+        "She'd finished the course, though she's liked more practice."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L17_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Listen for what the team has decided, and what they'd change.",
+      "explanation": "'They've' marks a completed decision, while 'they'd' introduces a hypothetical — both reduce quickly, so tense is the whole story here.",
+      "textToSpeak": "They've picked a venue, but they'd change the date if possible.",
+      "options": [
+        "They'd picked a venue, but they've changed the date if possible.",
+        "They've picked a venue, but they'd change the date if possible."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L18_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "Track three things: who's ready, who's not, and what'll happen next.",
+      "explanation": "This sentence links three reduced forms — 'I'm', 'she's', and 'we'll' — one right after another, so hold each subject in mind as the sentence moves on.",
+      "textToSpeak": "I'm ready, she's not, so we'll wait five more minutes.",
+      "options": [
+        "I'm ready, she's not, so we'll wait five more minutes.",
+        "She's ready, I'm not, so we'll wait five more minutes."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L18_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Catch what's already happened, what's true now, and what comes next.",
+      "explanation": "'We've', 'it's', and 'we'll' appear together here, each reduced, each pointing to a different moment — past, present, and future in one breath.",
+      "textToSpeak": "We've checked the map, it's clear, so we'll head out now.",
+      "options": [
+        "We've checked the map, it's clear, so we'll head out now.",
+        "We've checked the map, it's blocked, so we'll head out now."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L18_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Listen for who's tired, what they've decided, and what they'll do.",
+      "explanation": "Three reduced forms stack up in this one sentence — 'they're', 'they've', 'they'll' — so the pace really tests how much you can hold onto at once.",
+      "textToSpeak": "They're exhausted, they've decided, and they'll leave early tomorrow.",
+      "options": [
+        "They're exhausted, they've decided, and they'll leave late tomorrow.",
+        "They're exhausted, they've decided, and they'll leave early tomorrow."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L19_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Catch the full picture: who's arriving, what they've brought, and what happens next.",
+      "explanation": "As sentences grow longer, more reduced forms pile up close together. Here 'she's' and 'she's' repeat with different verbs, so listen past the shape and focus on the verb each time.",
+      "textToSpeak": "She's arriving tonight, and she's bringing her sister along too.",
+      "options": [
+        "She's arriving tonight, and she's bringing her sister along too.",
+        "She's arriving tonight, and she's bringing her brother along too."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L19_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Listen for what's finished, what's still happening, and who's involved.",
+      "explanation": "This longer sentence links 'we've', 'we're', and a named person together, so the challenge is holding all three pieces in mind by the end.",
+      "textToSpeak": "We've finished the first draft, and we're sending it to Mark for feedback.",
+      "options": [
+        "We've finished the first draft, and we're sending it to Mark for feedback.",
+        "We've finished the first draft, and we're sending it to Mark for approval."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L19_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Catch the order of events across the whole sentence.",
+      "explanation": "'I'd', 'I've', and 'I'll' can all appear in a single flowing thought, each with a different time meaning, so the order they appear in really matters.",
+      "textToSpeak": "I'd already left when you called, but I've turned back and I'll be there soon.",
+      "options": [
+        "I'd already left when you called, but I've turned back and I'll be there soon.",
+        "I've already left when you called, but I'd turned back and I'll be there soon."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L20_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "Catch every subject as it changes through the sentence.",
+      "explanation": "This sentence rotates through three different subjects with reduced forms — 'I'm', 'you're', 'we're' — so don't lock onto the first one and assume it stays the same.",
+      "textToSpeak": "I'm packing, you're driving, and we're leaving by six.",
+      "options": [
+        "I'm packing, you're driving, and we're leaving by six.",
+        "You're packing, I'm driving, and we're leaving by six."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L20_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Notice exactly what's changed between the two halves of the sentence.",
+      "explanation": "'It's' appears twice here with two different descriptions, so the reduced form itself isn't the challenge — catching which adjective goes where is.",
+      "textToSpeak": "It's cloudy now, but it's supposed to clear up by afternoon.",
+      "options": [
+        "It's clear now, but it's supposed to cloud over by afternoon.",
+        "It's cloudy now, but it's supposed to clear up by afternoon."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L20_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Listen for what's been done, what's true now, and what's still to come.",
+      "explanation": "By this point you're tracking multiple reduced forms across one long sentence — 've, 's, and 'll all appear, so treat each one as a separate small clue.",
+      "textToSpeak": "We've booked the hotel, it's confirmed, and we'll check in on Friday.",
+      "options": [
+        "We've booked the hotel, it's confirmed, and we'll check in on Friday.",
+        "We've booked the hotel, it's pending, and we'll check in on Friday."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    }
+  ]
+}

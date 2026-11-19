@@ -29,6 +29,8 @@ import 'package:vowl/features/listening/audio_true_false/presentation/pages/audi
 import 'package:vowl/features/listening/audio_true_false/presentation/pages/audio_true_false_practice_screen.dart';
 import 'package:vowl/features/listening/sound_image_match/presentation/pages/sound_image_match_learn_screen.dart';
 import 'package:vowl/features/listening/sound_image_match/presentation/pages/sound_image_match_practice_screen.dart';
+import 'package:vowl/features/listening/fast_speech_decoder/presentation/pages/fast_speech_decoder_learn_screen.dart';
+import 'package:vowl/features/listening/fast_speech_decoder/presentation/pages/fast_speech_decoder_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -631,6 +633,22 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<SoundImageMatchPracticeScreen>());
+    });
+
+    test('resolves /learn route for fastSpeechDecoder', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state = createMockState('/learn?category=listening&gameType=fastSpeechDecoder&level=4');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<FastSpeechDecoderLearnScreen>());
+    });
+
+    test('resolves /practice route for fastSpeechDecoder', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state = createMockState('/practice?category=listening&gameType=fastSpeechDecoder&level=4');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<FastSpeechDecoderPracticeScreen>());
     });
   });
 }

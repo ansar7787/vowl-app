@@ -1,0 +1,488 @@
+{
+  "gameType": "fastSpeechDecoder",
+  "phase": "mastery",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "LIS_FASTSPEECHDECODER_L1_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Listen for exactly who's flying, not just the destination.",
+      "explanation": "'I'm' packs 'I am' into a single quick beat. At natural speed it can sound close to 'she's', so catch the vowel to know who's actually going.",
+      "textToSpeak": "I'm flying to Rome next week.",
+      "options": [
+        "She's flying to Rome next week.",
+        "I'm flying to Rome next week."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L1_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Catch the exact food after the contraction, not just that there's an allergy.",
+      "explanation": "'I'm' flows straight into the next word, so don't lose focus once you've heard it — the real detail, the specific food, comes right after.",
+      "textToSpeak": "I'm allergic to shellfish.",
+      "options": [
+        "I'm allergic to peanuts.",
+        "I'm allergic to shellfish."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L1_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Catch who's getting the coffee, and what they're actually getting.",
+      "explanation": "'I'm' and 'he's' both reduce to a fast, light sound before the verb, so the subject is easy to miss. Then a second detail, the drink itself, also changes.",
+      "textToSpeak": "I'm getting a coffee before the meeting.",
+      "options": [
+        "He's getting a tea before the meeting.",
+        "I'm getting a coffee before the meeting."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L2_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "Listen for who this is actually about.",
+      "explanation": "'You're' squeezes 'you are' into one syllable. At speed it can blur into 'he's', so the vowel is the only clue to who's being talked about.",
+      "textToSpeak": "You're improving really fast.",
+      "options": [
+        "He's improving really fast.",
+        "You're improving really fast."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L2_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Notice which day is actually mentioned.",
+      "explanation": "'You're' reduces to almost nothing before the verb, so most of your listening effort should go to the rest of the sentence, like the exact day named here.",
+      "textToSpeak": "You're presenting on Thursday.",
+      "options": [
+        "You're presenting on Tuesday.",
+        "You're presenting on Thursday."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L2_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Catch who's running late, and by how long.",
+      "explanation": "'You're' and 'we're' can sound very similar in a rushed sentence, and the exact number that follows changes how late things really are.",
+      "textToSpeak": "You're running about ten minutes behind.",
+      "options": [
+        "We're running about twenty minutes behind.",
+        "You're running about ten minutes behind."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L3_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Listen closely for who is actually being described.",
+      "explanation": "'He's' and 'she's' are both just a consonant plus 's' tacked onto a pronoun, so at speed they're nearly the same shape. Only the vowel tells them apart.",
+      "textToSpeak": "She's applying for a new role.",
+      "options": [
+        "He's applying for a new role.",
+        "She's applying for a new role."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L3_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Catch what he's actually working on.",
+      "explanation": "'He's' collapses down fast, so keep listening past it — the specific task named right after carries the real information.",
+      "textToSpeak": "He's fixing the printer again.",
+      "options": [
+        "He's fixing the router again.",
+        "He's fixing the printer again."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L3_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Notice who it is, and what they've just started.",
+      "explanation": "'She's' and 'he's' reduce almost identically, so the vowel is your only cue to the subject. The activity mentioned afterward is a second detail to lock in.",
+      "textToSpeak": "She's just started learning guitar.",
+      "options": [
+        "He's just started learning piano.",
+        "She's just started learning guitar."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L4_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "Listen for whether this is about the weather or about him.",
+      "explanation": "'It's' shrinks 'it is' into one light syllable, and at natural speed it can be mistaken for 'he's' if you're not tracking the vowel carefully.",
+      "textToSpeak": "It's getting colder outside.",
+      "options": [
+        "He's getting colder outside.",
+        "It's getting colder outside."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L4_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Catch the exact time mentioned, not just that something's starting.",
+      "explanation": "'It's' reduces to almost nothing before the verb, so the real content — here, the time — lands entirely on the words that follow.",
+      "textToSpeak": "It's starting at half past nine.",
+      "options": [
+        "It's starting at half past nine.",
+        "It's starting at half past ten."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L4_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Notice whether it's a fact about now, or about something that used to be true.",
+      "explanation": "'It's' is present tense squeezed into a beat, and it can be confused with 'it was' if the final sound is missed. Tense changes the whole meaning here.",
+      "textToSpeak": "It's much quieter in this neighborhood.",
+      "options": [
+        "It's much quieter in this neighborhood.",
+        "It was much quieter in this neighborhood."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L5_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Listen for exactly who's meeting up.",
+      "explanation": "'We're' compresses 'we are' into a single beat, and it can sound close to 'they're' at speed. Catch the vowel to know whether you're included.",
+      "textToSpeak": "We're meeting at the usual place.",
+      "options": [
+        "They're meeting at the usual place.",
+        "We're meeting at the usual place."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L5_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Catch what's actually being planned, not just that plans exist.",
+      "explanation": "'We're' flattens down fast in casual speech, so the useful information sits in the activity that follows it.",
+      "textToSpeak": "We're planning a road trip in July.",
+      "options": [
+        "We're planning a road trip in July.",
+        "We're planning a road trip in June."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L5_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Notice who's out of something, and what exactly it is.",
+      "explanation": "'We're' and 'they're' both reduce to a light, fast sound before the verb, so the subject is easy to lose. The missing item is the second detail to catch.",
+      "textToSpeak": "We're out of coffee at home.",
+      "options": [
+        "They're out of coffee at home.",
+        "We're out of coffee at home."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L6_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "Listen for who's arriving, and roughly when.",
+      "explanation": "'They're' reduces to a quick, light sound that can blend into 'we're' unless you catch the vowel. Then a second detail, the timing, adds to the picture.",
+      "textToSpeak": "They're arriving a bit earlier than planned.",
+      "options": [
+        "We're arriving a bit earlier than planned.",
+        "They're arriving a bit earlier than planned."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L6_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Catch exactly what they're doing, not who's doing it.",
+      "explanation": "Once you've caught 'they're', the real content comes right after — here, the specific activity being described.",
+      "textToSpeak": "They're renovating the kitchen this month.",
+      "options": [
+        "They're renovating the kitchen this month.",
+        "They're renovating the bathroom this month."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L6_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Notice who it is, and whether they're for or against the idea.",
+      "explanation": "'They're' and 'we're' are close enough in fast speech that the vowel is your main clue. The opinion word afterward then flips the meaning entirely.",
+      "textToSpeak": "They're actually against the new plan.",
+      "options": [
+        "They're actually against the new plan.",
+        "We're actually against the new plan."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L7_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Listen for who's making the promise here.",
+      "explanation": "'I'll' packs 'I will' into a single quick sound. It can be confused with 'she'll' or 'he'll' at speed, so the vowel matters more than usual.",
+      "textToSpeak": "I'll email you the details tonight.",
+      "options": [
+        "She'll email you the details tonight.",
+        "I'll email you the details tonight."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L7_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Catch what's actually being promised, not just that a promise was made.",
+      "explanation": "'I'll' reduces to almost nothing, so keep your attention on the verb and detail that follow it to know exactly what's being offered.",
+      "textToSpeak": "I'll pick up the tickets on my way.",
+      "options": [
+        "I'll pick up the tickets on my way.",
+        "I'll print out the tickets on my way."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L7_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Notice who's speaking, and how soon they'll act.",
+      "explanation": "'I'll' can blur into 'he'll' in a fast sentence, and the timing word at the end tells you exactly how urgent this really is.",
+      "textToSpeak": "I'll sort it out first thing tomorrow.",
+      "options": [
+        "He'll sort it out first thing tomorrow.",
+        "I'll sort it out first thing tomorrow."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L8_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "Listen for whether this is about you, or about everyone.",
+      "explanation": "'You'll' and 'we'll' both reduce to a fast sound plus a light 'll', so the vowel is what separates a promise to you from a plan for the group.",
+      "textToSpeak": "You'll need your passport at the gate.",
+      "options": [
+        "You'll need your passport at the gate.",
+        "We'll need your passport at the gate."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L8_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Catch exactly what the group is likely to do.",
+      "explanation": "'We'll' collapses down in casual speech, so the real prediction sits in the words right after it — here, the destination.",
+      "textToSpeak": "We'll probably end up at the beach.",
+      "options": [
+        "We'll probably end up at the beach.",
+        "We'll probably end up at the lake."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L8_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Notice who this applies to, and how strong the advice sounds.",
+      "explanation": "'You'll' and 'we'll' are easy to mix up at speed, and the strength of the verb that follows changes how firm the advice actually is.",
+      "textToSpeak": "You'll definitely want a jacket tonight.",
+      "options": [
+        "We'll definitely want a jacket tonight.",
+        "You'll definitely want a jacket tonight."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L9_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen carefully and catch the exact sentence.",
+      "hint": "Listen for who has or hasn't done this.",
+      "explanation": "'I've' packs 'I have' into one beat and can sound like 'you've' if the vowel isn't caught. This tells you who the experience actually belongs to.",
+      "textToSpeak": "I've never been to a live concert.",
+      "options": [
+        "You've never been to a live concert.",
+        "I've never been to a live concert."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L9_Q2",
+      "interactionType": "choice",
+      "instruction": "They said it fast — what did you actually hear?",
+      "hint": "Catch exactly what's already been done.",
+      "explanation": "'You've' reduces to almost nothing before the verb, so the useful information is entirely in the action that follows.",
+      "textToSpeak": "You've already finished the whole report.",
+      "options": [
+        "You've already finished the whole report.",
+        "You've already started the whole report."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L9_Q3",
+      "interactionType": "choice",
+      "instruction": "Natural speech blends words together. Catch the real message.",
+      "hint": "Notice who's speaking, and what they've changed their mind about.",
+      "explanation": "'I've' and 'you've' reduce almost identically, so the subject depends entirely on the vowel. The detail afterward then tells you what actually happened.",
+      "textToSpeak": "I've changed my mind about the trip.",
+      "options": [
+        "You've changed your mind about the trip.",
+        "I've changed my mind about the trip."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L10_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the small word that changes the meaning.",
+      "hint": "Listen for two things: who's speaking now, and what they'll do next.",
+      "explanation": "This sentence links two reduced forms back to back — 'I'm' and 'I'll' — so you need to catch both quick sounds to follow the whole thought.",
+      "textToSpeak": "I'm nearly done, so I'll call you back.",
+      "options": [
+        "I'm nearly done, so I'll call you back.",
+        "I'm nearly done, so she'll call you back."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L10_Q2",
+      "interactionType": "choice",
+      "instruction": "Focus on the key detail hidden in the fast sentence.",
+      "hint": "Catch who's tired, and who's still going out.",
+      "explanation": "'We're' and 'they're' both appear here, reduced and back to back, so you have to track two different subjects through one fast sentence.",
+      "textToSpeak": "We're exhausted, but they're still heading out.",
+      "options": [
+        "We're exhausted, but they're still heading out.",
+        "They're exhausted, but we're still heading out."
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_FASTSPEECHDECODER_L10_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen again — which version matches what was said?",
+      "hint": "Notice what's already happened, and what comes next.",
+      "explanation": "'I've' and 'I'll' sound similar in shape but carry different meanings — one about the past, one about the future — so catching the right one matters.",
+      "textToSpeak": "I've packed already, so I'll head out early.",
+      "options": [
+        "I'll pack already, so I've headed out early.",
+        "I've packed already, so I'll head out early."
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "fastSpeechDecoder",
+      "emoji": "⚡",
+      "phase": "mastery"
+    }
+  ]
+}
