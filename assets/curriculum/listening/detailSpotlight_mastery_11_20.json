@@ -1,0 +1,608 @@
+{
+  "gameType": "detailSpotlight",
+  "phase": "mastery",
+  "batchIndex": 2,
+  "levels": "11-20",
+  "quests": [
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L11_Q1",
+      "interactionType": "choice",
+      "instruction": "Catch the bus number the speaker takes.",
+      "hint": "Bus numbers are said one at a time. Listen for the number right before ‘bus’.",
+      "explanation": "9 is correct. The speaker says ‘number nine bus’. Nine and nineteen sound different: nineteen is longer.",
+      "textToSpeak": "I take the number nine bus to work every day.",
+      "targetDetail": "9",
+      "options": [
+        "19",
+        "6",
+        "9",
+        "5"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🚌",
+      "detailCategory": "Number",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L11_Q2",
+      "interactionType": "choice",
+      "instruction": "Where is Mom while she talks on the phone?",
+      "hint": "The place is at the end of the sentence, after ‘in the’.",
+      "explanation": "The answer is hallway. The action is talking on the phone, and the place is ‘in the hallway’.",
+      "textToSpeak": "Mom is talking on the phone in the hallway.",
+      "targetDetail": "hallway",
+      "options": [
+        "balcony",
+        "garage",
+        "kitchen",
+        "hallway"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "📞",
+      "detailCategory": "Location",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L11_Q3",
+      "interactionType": "choice",
+      "instruction": "Clear the glass and tap the time the lesson finishes.",
+      "hint": "‘Half past’ has a special meaning. Think about how many minutes it adds.",
+      "explanation": "4:30 is correct. ‘Half past four’ means thirty minutes after four.",
+      "textToSpeak": "The lesson finishes at half past four.",
+      "targetDetail": "4:30",
+      "options": [
+        "4:15",
+        "4:30",
+        "4:45",
+        "5:30"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "🎓",
+      "detailCategory": "Time",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L12_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the size the customer asks for.",
+      "hint": "The customer says two things about the drink. The size comes before the drink name.",
+      "explanation": "The answer is large. The customer asks for a ‘large coffee’. ‘No sugar’ is a different detail.",
+      "textToSpeak": "Can I have a large coffee with no sugar?",
+      "targetDetail": "large",
+      "options": [
+        "large",
+        "small",
+        "medium",
+        "extra small"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "☕",
+      "detailCategory": "Preference",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L12_Q2",
+      "interactionType": "choice",
+      "instruction": "Which way do you turn at the bank?",
+      "hint": "There are two directions in this sentence. Pick the one linked to the bank.",
+      "explanation": "You turn left at the bank. ‘Straight’ is what you do after the turn. So the answer is left.",
+      "textToSpeak": "Turn left at the bank, then go straight.",
+      "targetDetail": "left",
+      "options": [
+        "straight",
+        "around",
+        "left",
+        "right"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🧭",
+      "detailCategory": "Direction",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L12_Q3",
+      "interactionType": "choice",
+      "instruction": "Tap what she is studying for.",
+      "hint": "Listen for the words after ‘for her’. They name the reason for studying.",
+      "explanation": "Correct: math test. ‘Studying for her math test’ tells you why she is studying tonight.",
+      "textToSpeak": "She is studying for her math test tonight.",
+      "targetDetail": "math test",
+      "options": [
+        "driving test",
+        "English quiz",
+        "math test",
+        "science exam"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "📖",
+      "detailCategory": "Reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L13_Q1",
+      "interactionType": "choice",
+      "instruction": "Tap the price of one ticket.",
+      "hint": "Numbers ending in ‘-teen’ and ‘-ty’ are easy to confuse. Listen to the end of the number.",
+      "explanation": "The answer is $14. ‘Fourteen’ ends with ‘-teen’. Forty ends with a quick ‘-ty’ sound.",
+      "textToSpeak": "The tickets cost fourteen dollars each.",
+      "targetDetail": "$14",
+      "options": [
+        "$4",
+        "$40",
+        "$15",
+        "$14"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🎟️",
+      "detailCategory": "Price",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L13_Q2",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap the animal the neighbor has only one of.",
+      "hint": "Numbers help you here. Match each animal to its number.",
+      "explanation": "Cat is correct. The neighbor has two dogs but only one cat, because the sentence says ‘a cat’.",
+      "textToSpeak": "Our neighbor has two dogs and a cat.",
+      "targetDetail": "cat",
+      "options": [
+        "rabbit",
+        "dog",
+        "bird",
+        "cat"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🏘️",
+      "detailCategory": "Quantity",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L13_Q3",
+      "interactionType": "choice",
+      "instruction": "Catch where they meet.",
+      "hint": "‘In front of’ is followed by the meeting place.",
+      "explanation": "Correct: library. They meet in front of the library, and the time is noon.",
+      "textToSpeak": "We meet in front of the library at noon.",
+      "targetDetail": "library",
+      "options": [
+        "museum",
+        "library",
+        "station",
+        "cinema"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "🕛",
+      "detailCategory": "Location",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L14_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the date the flight lands.",
+      "hint": "A date has two parts: the day number and the month. Check both.",
+      "explanation": "The answer is June 15. ‘The fifteenth of June’ names both the day and the month. Fifth is a different day.",
+      "textToSpeak": "Her flight lands on the fifteenth of June.",
+      "targetDetail": "June 15",
+      "options": [
+        "June 5",
+        "June 15",
+        "May 15",
+        "July 15"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "✈️",
+      "detailCategory": "Date",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L14_Q2",
+      "interactionType": "choice",
+      "instruction": "Tap the sport he plays.",
+      "hint": "‘Usually’ signals a habit. The activity follows the verb ‘plays’.",
+      "explanation": "The answer is tennis. He plays tennis after work. ‘Usually’ means it is his normal routine.",
+      "textToSpeak": "He usually plays tennis after work.",
+      "targetDetail": "tennis",
+      "options": [
+        "soccer",
+        "swimming",
+        "tennis",
+        "golf"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🌇",
+      "detailCategory": "Action",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L14_Q3",
+      "interactionType": "choice",
+      "instruction": "Tap which floor the meeting room is on.",
+      "hint": "Ordinal numbers say the position in a list. Listen for the whole word.",
+      "explanation": "The answer is third. The room is on the third floor. Ordinal numbers tell you the order.",
+      "textToSpeak": "The meeting room is on the third floor.",
+      "targetDetail": "third",
+      "options": [
+        "first",
+        "fourth",
+        "second",
+        "third"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🏢",
+      "detailCategory": "Location",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L15_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for what you must bring in addition to a pen.",
+      "hint": "The list has two items. One of them is already named in the question.",
+      "explanation": "The answer is ID card. The speaker asks for an ID card and a pen, so the other item is the ID card.",
+      "textToSpeak": "Please bring your ID card and a pen.",
+      "targetDetail": "ID card",
+      "options": [
+        "ticket",
+        "ID card",
+        "passport",
+        "notebook"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "📋",
+      "detailCategory": "Instruction",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L15_Q2",
+      "interactionType": "choice",
+      "instruction": "Wipe away the fog and tap how often they visit.",
+      "hint": "Frequency phrases start with ‘every’. Wait for the time word after it.",
+      "explanation": "The answer is every weekend. It is a regular habit that happens on Saturday and Sunday each week.",
+      "textToSpeak": "We visit my grandparents every weekend.",
+      "targetDetail": "every weekend",
+      "options": [
+        "every night",
+        "every month",
+        "every summer",
+        "every weekend"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🚗",
+      "detailCategory": "Frequency",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L15_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen for why the speaker says to wait.",
+      "hint": "The word ‘so’ connects a reason to an instruction. Listen to what comes before it.",
+      "explanation": "Hot is correct. The tea is hot, so the speaker says to wait. ‘So’ shows the result.",
+      "textToSpeak": "The tea is very hot, so wait a minute.",
+      "targetDetail": "hot",
+      "options": [
+        "heavy",
+        "hot",
+        "wet",
+        "sharp"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "🍵",
+      "detailCategory": "Reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L16_Q1",
+      "interactionType": "choice",
+      "instruction": "Where does the passenger want to go?",
+      "hint": "In questions like this, the place comes after ‘go to the’.",
+      "explanation": "The answer is airport. The passenger asks if the bus goes to the airport.",
+      "textToSpeak": "Excuse me, does this bus go to the airport?",
+      "targetDetail": "airport",
+      "options": [
+        "airport",
+        "station",
+        "hospital",
+        "university"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🚏",
+      "detailCategory": "Place",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L16_Q2",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap what the customer does not want.",
+      "hint": "‘No’ or ‘without’ shows what the person does not want.",
+      "explanation": "The customer wants the salad but says ‘no onions’. So the answer is onions.",
+      "textToSpeak": "I'd like the chicken salad, but no onions.",
+      "targetDetail": "onions",
+      "options": [
+        "onions",
+        "nuts",
+        "cheese",
+        "tomatoes"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🍽️",
+      "detailCategory": "Preference",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L16_Q3",
+      "interactionType": "choice",
+      "instruction": "Catch the battery level.",
+      "hint": "Listen for the number right before ‘percent’. Count its syllables.",
+      "explanation": "Correct: 20%. ‘Twenty’ has two beats. Twelve sounds very different because of the ‘-elve’ ending.",
+      "textToSpeak": "My phone battery is at twenty percent.",
+      "targetDetail": "20%",
+      "options": [
+        "2%",
+        "12%",
+        "20%",
+        "80%"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🔋",
+      "detailCategory": "Measurement",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L17_Q1",
+      "interactionType": "choice",
+      "instruction": "Tap the time the concert starts.",
+      "hint": "Listen for two parts: the hour, then the minutes.",
+      "explanation": "The answer is 7:45. ‘Seven forty-five’ means fifteen minutes before eight.",
+      "textToSpeak": "The concert starts at seven forty-five.",
+      "targetDetail": "7:45",
+      "options": [
+        "7:15",
+        "7:40",
+        "8:45",
+        "7:45"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🎶",
+      "detailCategory": "Time",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L17_Q2",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap where the sister works.",
+      "hint": "Two places are mentioned. One is where she works; the other is only nearby.",
+      "explanation": "The answer is hotel. She works ‘at a hotel’. The beach is just near it.",
+      "textToSpeak": "My sister works at a hotel near the beach.",
+      "targetDetail": "hotel",
+      "options": [
+        "school",
+        "hospital",
+        "bank",
+        "hotel"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🌴",
+      "detailCategory": "Place",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L17_Q3",
+      "interactionType": "choice",
+      "instruction": "Notice where to write your name on the page.",
+      "hint": "Position words come after ‘at the’. Focus on that short word.",
+      "explanation": "Top is correct. The instruction is to write your name at the top of the page.",
+      "textToSpeak": "Please write your name at the top of the page.",
+      "targetDetail": "top",
+      "options": [
+        "top",
+        "bottom",
+        "corner",
+        "middle"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "✍️",
+      "detailCategory": "Instruction",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L18_Q1",
+      "interactionType": "choice",
+      "instruction": "How long is the movie?",
+      "hint": "Duration answers the question ‘how long?’. Listen for a number and a time word.",
+      "explanation": "The answer is 2 hours. ‘Two hours long’ tells you the length of the movie.",
+      "textToSpeak": "The movie is two hours long.",
+      "targetDetail": "2 hours",
+      "options": [
+        "2 hours",
+        "1 hour",
+        "3 hours",
+        "4 hours"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🎬",
+      "detailCategory": "Duration",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L18_Q2",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass, then tap the reason for pizza tonight.",
+      "hint": "‘Because’ is the key word. The reason comes right after it.",
+      "explanation": "The word ‘because’ introduces the reason for the plan. So the answer is Dad is tired.",
+      "textToSpeak": "We're having pizza tonight because Dad is tired.",
+      "targetDetail": "Dad is tired",
+      "options": [
+        "The oven is broken",
+        "Dad is tired",
+        "They're in a hurry",
+        "Mom is late"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "🏠",
+      "detailCategory": "Reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L18_Q3",
+      "interactionType": "choice",
+      "instruction": "Which item that the speaker bought is green?",
+      "hint": "Two colors are said. Match each color to the item that follows it.",
+      "explanation": "The answer is hat. The colors come before the items: a red scarf and a green hat.",
+      "textToSpeak": "I bought a red scarf and a green hat.",
+      "targetDetail": "hat",
+      "options": [
+        "hat",
+        "bag",
+        "scarf",
+        "coat"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🛍️",
+      "detailCategory": "Description",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L19_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the day and part of the day of the appointment.",
+      "hint": "You need two details, the day and the time of day. Check both parts.",
+      "explanation": "The answer is Wednesday afternoon. The other options change only one part, so listen to both words.",
+      "textToSpeak": "The dentist can see you on Wednesday afternoon.",
+      "targetDetail": "Wednesday afternoon",
+      "options": [
+        "Wednesday morning",
+        "Monday afternoon",
+        "Thursday afternoon",
+        "Wednesday afternoon"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🗓️",
+      "detailCategory": "Time",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L19_Q2",
+      "interactionType": "choice",
+      "instruction": "Tap where the speaker keeps the keys.",
+      "hint": "‘Keep’ is followed by the place where something is stored.",
+      "explanation": "Drawer is correct. The speaker keeps the keys ‘in the small drawer’.",
+      "textToSpeak": "I keep my keys in the small drawer.",
+      "targetDetail": "drawer",
+      "options": [
+        "shelf",
+        "drawer",
+        "basket",
+        "pocket"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "🔑",
+      "detailCategory": "Location",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L19_Q3",
+      "interactionType": "choice",
+      "instruction": "Catch when the uncle works.",
+      "hint": "The sentence tells you his job and his working time. Listen for the second part.",
+      "explanation": "At night is correct. He drives a taxi, and the time he works is at night.",
+      "textToSpeak": "My uncle is a taxi driver, and he works at night.",
+      "targetDetail": "at night",
+      "options": [
+        "in the afternoon",
+        "at night",
+        "on weekends",
+        "in the morning"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "🚕",
+      "detailCategory": "Time",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L20_Q1",
+      "interactionType": "choice",
+      "instruction": "Tap the row number you should sit in.",
+      "hint": "Some numbers stop quickly and others continue with an ending. Listen to the very end.",
+      "explanation": "6 is correct. The speaker says ‘row six’. ‘Next to the window’ tells you the seat side.",
+      "textToSpeak": "Please sit in row six, next to the window.",
+      "targetDetail": "6",
+      "options": [
+        "16",
+        "3",
+        "6",
+        "8"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "💺",
+      "detailCategory": "Number",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L20_Q2",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass, then tap the reason he is late.",
+      "hint": "The reason is what follows ‘because’. Ignore the other explanations you could imagine.",
+      "explanation": "The bus was full is correct. It follows ‘because’ and explains the delay.",
+      "textToSpeak": "He's late because the bus was full.",
+      "targetDetail": "the bus was full",
+      "options": [
+        "his car broke down",
+        "it was raining",
+        "the bus was full",
+        "he missed the train"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "⏰",
+      "detailCategory": "Reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L20_Q3",
+      "interactionType": "choice",
+      "instruction": "How many chairs do they need in the end?",
+      "hint": "One number is said and then rejected. Listen for the word ‘not’.",
+      "explanation": "Correct: 4. The speaker says ‘not five’, so five is the wrong number and four is the real one.",
+      "textToSpeak": "We need four chairs, not five.",
+      "targetDetail": "4",
+      "options": [
+        "4",
+        "14",
+        "5",
+        "3"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🪑",
+      "detailCategory": "Correction",
+      "phase": "mastery"
+    }
+  ]
+}

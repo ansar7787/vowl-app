@@ -33,6 +33,8 @@ import 'package:vowl/features/listening/fast_speech_decoder/presentation/pages/f
 import 'package:vowl/features/listening/fast_speech_decoder/presentation/pages/fast_speech_decoder_practice_screen.dart';
 import 'package:vowl/features/listening/emotion_recognition/presentation/pages/emotion_recognition_learn_screen.dart';
 import 'package:vowl/features/listening/emotion_recognition/presentation/pages/emotion_recognition_practice_screen.dart';
+import 'package:vowl/features/listening/detail_spotlight/presentation/pages/detail_spotlight_learn_screen.dart';
+import 'package:vowl/features/listening/detail_spotlight/presentation/pages/detail_spotlight_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -667,6 +669,22 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<EmotionRecognitionPracticeScreen>());
+    });
+
+    test('resolves /learn route for detailSpotlight', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state = createMockState('/learn?category=listening&gameType=detailSpotlight&level=4');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<DetailSpotlightLearnScreen>());
+    });
+
+    test('resolves /practice route for detailSpotlight', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state = createMockState('/practice?category=listening&gameType=detailSpotlight&level=4');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<DetailSpotlightPracticeScreen>());
     });
   });
 }

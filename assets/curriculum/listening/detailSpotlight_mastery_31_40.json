@@ -1,0 +1,608 @@
+{
+  "gameType": "detailSpotlight",
+  "phase": "mastery",
+  "batchIndex": 4,
+  "levels": "31-40",
+  "quests": [
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L31_Q1",
+      "interactionType": "choice",
+      "instruction": "Tap the time the train leaves.",
+      "hint": "‘Past’ means after the hour. Think about how many minutes a quarter is.",
+      "explanation": "5:15 is correct. A quarter is fifteen minutes, so ‘a quarter past five’ is fifteen minutes after five.",
+      "textToSpeak": "The next train to Boston leaves at a quarter past five.",
+      "targetDetail": "5:15",
+      "options": [
+        "5:45",
+        "5:50",
+        "5:15",
+        "4:15"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🚆",
+      "detailCategory": "Time",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L31_Q2",
+      "interactionType": "choice",
+      "instruction": "Wipe away the fog and tap how often you should take the tablets.",
+      "hint": "Two numbers are said. One is how many tablets; the other is how often.",
+      "explanation": "The answer is three times a day. Two is the number of tablets each time.",
+      "textToSpeak": "Take two tablets after lunch, three times a day.",
+      "targetDetail": "three times a day",
+      "options": [
+        "three times a day",
+        "twice a day",
+        "four times a day",
+        "once a day"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "💊",
+      "detailCategory": "Frequency",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L31_Q3",
+      "interactionType": "choice",
+      "instruction": "Catch the age the sister is turning.",
+      "hint": "Numbers ending in ‘-teen’ and ‘-ty’ are easy to mix up. Listen to the very end of the number.",
+      "explanation": "The answer is 13. ‘Thirteen’ ends with a clear ‘-teen’. ‘Thirty’ ends quickly.",
+      "textToSpeak": "My sister is turning thirteen next week.",
+      "targetDetail": "13",
+      "options": [
+        "3",
+        "12",
+        "30",
+        "13"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🎂",
+      "detailCategory": "Number",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L32_Q1",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap the place across from the post office.",
+      "hint": "‘Opposite’ means across from. The place follows that word.",
+      "explanation": "The post office and the supermarket face each other. The corner is a different detail. So the answer is supermarket.",
+      "textToSpeak": "The post office is opposite the supermarket, on the corner.",
+      "targetDetail": "supermarket",
+      "options": [
+        "pharmacy",
+        "bookstore",
+        "supermarket",
+        "bank"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "📮",
+      "detailCategory": "Location",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L32_Q2",
+      "interactionType": "choice",
+      "instruction": "Tap the price of the pizza.",
+      "hint": "Prices with cents have two parts. Listen for both the whole amount and the cents.",
+      "explanation": "‘Eleven fifty’ means eleven dollars and fifty cents. Nine ninety-five is the pasta. So the answer is $11.50.",
+      "textToSpeak": "The pasta costs nine ninety-five, and the pizza is eleven fifty.",
+      "targetDetail": "$11.50",
+      "options": [
+        "$9.95",
+        "$15.10",
+        "$11.15",
+        "$11.50"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🍕",
+      "detailCategory": "Price",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L32_Q3",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass, then tap the days of the class.",
+      "hint": "Two days are given. Each wrong option changes one of them.",
+      "explanation": "The answer is Mondays and Wednesdays. Two to three is the time, not the days.",
+      "textToSpeak": "Our class is on Mondays and Wednesdays from two to three.",
+      "targetDetail": "Mondays and Wednesdays",
+      "options": [
+        "Mondays and Thursdays",
+        "Mondays and Wednesdays",
+        "Tuesdays and Wednesdays",
+        "Wednesdays and Fridays"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "📅",
+      "detailCategory": "Day",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L33_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the weather at noon.",
+      "hint": "The weather changes during the day. Notice the word ‘but’.",
+      "explanation": "Cloudy is the morning weather. ‘By noon’ shows the change. So the answer is sunny.",
+      "textToSpeak": "It's cloudy this morning, but it will be sunny by noon.",
+      "targetDetail": "sunny",
+      "options": [
+        "windy",
+        "rainy",
+        "sunny",
+        "cloudy"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🕛",
+      "detailCategory": "Change",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L33_Q2",
+      "interactionType": "choice",
+      "instruction": "Wipe away the fog and tap where the museum is.",
+      "hint": "Two directions are said. One is a turn, and one is the museum's position.",
+      "explanation": "You turn right at the light, and then the museum is on the left. So the answer is on your left.",
+      "textToSpeak": "Turn right at the traffic light and the museum is on your left.",
+      "targetDetail": "on your left",
+      "options": [
+        "on your right",
+        "on your left",
+        "behind you",
+        "straight ahead"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "🧭",
+      "detailCategory": "Direction",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L33_Q3",
+      "interactionType": "choice",
+      "instruction": "Catch how many people the hall holds.",
+      "hint": "Big numbers have extra parts. Listen for the size word after the digit.",
+      "explanation": "500 is correct. ‘Five hundred’ is five times a hundred. Fifty is much smaller.",
+      "textToSpeak": "The concert hall holds about five hundred people.",
+      "targetDetail": "500",
+      "options": [
+        "500",
+        "150",
+        "5,000",
+        "50"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🎼",
+      "detailCategory": "Quantity",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L34_Q1",
+      "interactionType": "choice",
+      "instruction": "Tap the time the meeting ends.",
+      "hint": "‘Until’ marks the end of the meeting. Listen for the time that comes after it.",
+      "explanation": "‘Until eleven thirty’ means the meeting ends at that time. So the answer is 11:30.",
+      "textToSpeak": "Sorry, the manager is in a meeting until eleven thirty.",
+      "targetDetail": "11:30",
+      "options": [
+        "11:30",
+        "12:30",
+        "1:30",
+        "11:00"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🕰️",
+      "detailCategory": "Time",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L34_Q2",
+      "interactionType": "choice",
+      "instruction": "Find how the shop counts its price.",
+      "hint": "The price and the unit are different details. Listen for the phrase that begins with ‘by the’.",
+      "explanation": "By the hour is correct. The price is six dollars, and the shop charges for each hour.",
+      "textToSpeak": "We rent bikes by the hour, and it costs six dollars.",
+      "targetDetail": "by the hour",
+      "options": [
+        "by the day",
+        "by the kilometer",
+        "by the week",
+        "by the hour"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🚲",
+      "detailCategory": "Measurement",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L34_Q3",
+      "interactionType": "choice",
+      "instruction": "Notice who is with Anna.",
+      "hint": "Two people are mentioned. Focus on the second one.",
+      "explanation": "Correct: grandmother. Anna is with her grandmother in the kitchen.",
+      "textToSpeak": "Anna is in the kitchen with her grandmother, making bread.",
+      "targetDetail": "grandmother",
+      "options": [
+        "mother",
+        "aunt",
+        "grandmother",
+        "neighbor"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🍞",
+      "detailCategory": "Relationship",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L35_Q1",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap why the flight was late.",
+      "hint": "‘Because of’ is followed by a noun that gives the cause.",
+      "explanation": "‘Because of fog’ gives the reason for the two-hour delay. So the answer is fog.",
+      "textToSpeak": "The flight to Rome was two hours late because of fog.",
+      "targetDetail": "fog",
+      "options": [
+        "a storm",
+        "snow",
+        "fog",
+        "a strike"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🛫",
+      "detailCategory": "Reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L35_Q2",
+      "interactionType": "choice",
+      "instruction": "Listen for where you cannot pay by card.",
+      "hint": "One place is allowed and one is not. Listen for ‘but not’.",
+      "explanation": "The answer is in the café. Cards are fine everywhere except the café.",
+      "textToSpeak": "You can pay by card, but not in the café.",
+      "targetDetail": "in the café",
+      "options": [
+        "in the café",
+        "at the hotel",
+        "in the shop",
+        "on the bus"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "💳",
+      "detailCategory": "Instruction",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L35_Q3",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap how much time you have.",
+      "hint": "Two numbers are heard. One counts questions, the other counts minutes.",
+      "explanation": "The answer is 30 minutes. Forty is the number of questions.",
+      "textToSpeak": "The exam has forty questions, and you have thirty minutes.",
+      "targetDetail": "30 minutes",
+      "options": [
+        "40 minutes",
+        "13 minutes",
+        "30 minutes",
+        "60 minutes"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "📝",
+      "detailCategory": "Duration",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L36_Q1",
+      "interactionType": "choice",
+      "instruction": "Tap where the sister works.",
+      "hint": "Both siblings are described. Match the word ‘sister’ to her workplace.",
+      "explanation": "The brother works in a bank, but the sister works in a hospital. So the answer is hospital.",
+      "textToSpeak": "My brother works in a bank, and my sister works in a hospital.",
+      "targetDetail": "hospital",
+      "options": [
+        "bank",
+        "hospital",
+        "factory",
+        "school"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "👨‍👩‍👧",
+      "detailCategory": "Place",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L36_Q2",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap the time guests should be there.",
+      "hint": "There are two times. One is the event; the other is when you should arrive.",
+      "explanation": "Dinner is at eight, but guests should be there half an hour before. So the answer is 7:30.",
+      "textToSpeak": "Dinner is at eight, so please be here by seven thirty.",
+      "targetDetail": "7:30",
+      "options": [
+        "7:30",
+        "8:00",
+        "8:30",
+        "7:00"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🍷",
+      "detailCategory": "Time",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L36_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen for what the building is behind.",
+      "hint": "The building has a description and a location. The place you need is at the end.",
+      "explanation": "The glass door describes the building; ‘behind the cinema’ shows its location. So the answer is cinema.",
+      "textToSpeak": "It's the tall building with a glass door, just behind the cinema.",
+      "targetDetail": "cinema",
+      "options": [
+        "school",
+        "cinema",
+        "hotel",
+        "library"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "🏙️",
+      "detailCategory": "Location",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L37_Q1",
+      "interactionType": "choice",
+      "instruction": "Clear the glass and tap the date of the appointment.",
+      "hint": "Dates use ordinal numbers. Listen for the whole word, not only its first sound.",
+      "explanation": "The answer is March 20. ‘The twentieth of March’ includes both the day and the month.",
+      "textToSpeak": "Your appointment is on the twentieth of March, at ten.",
+      "targetDetail": "March 20",
+      "options": [
+        "April 20",
+        "March 12",
+        "March 2",
+        "March 20"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🗓️",
+      "detailCategory": "Date",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L37_Q2",
+      "interactionType": "choice",
+      "instruction": "Listen for what the children are doing.",
+      "hint": "The action ends in ‘-ing’. Listen for it and the noun that follows.",
+      "explanation": "Watching TV is correct. The living room is only the place where it happens.",
+      "textToSpeak": "The children are watching TV in the living room.",
+      "targetDetail": "watching TV",
+      "options": [
+        "playing games",
+        "reading",
+        "watching TV",
+        "doing homework"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🛋️",
+      "detailCategory": "Action",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L37_Q3",
+      "interactionType": "choice",
+      "instruction": "Wipe away the fog and tap how heavy the box is.",
+      "hint": "The word ‘about’ means the number is close, not exact. Listen for the number after it.",
+      "explanation": "10 kilos is correct. ‘About ten’ shows an approximate weight.",
+      "textToSpeak": "The box is heavy, about ten kilos.",
+      "targetDetail": "10 kilos",
+      "options": [
+        "100 kilos",
+        "2 kilos",
+        "20 kilos",
+        "10 kilos"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "📦",
+      "detailCategory": "Measurement",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L38_Q1",
+      "interactionType": "choice",
+      "instruction": "Tap when the doctor is off.",
+      "hint": "‘Off’ means not working. Notice which days come before and after it.",
+      "explanation": "The answer is weekends. She works Tuesday to Friday, so she is off on Saturday and Sunday.",
+      "textToSpeak": "The doctor works Tuesday to Friday, and she's off on weekends.",
+      "targetDetail": "weekends",
+      "options": [
+        "weekends",
+        "Wednesdays",
+        "Fridays",
+        "Mondays"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🩺",
+      "detailCategory": "Day",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L38_Q2",
+      "interactionType": "choice",
+      "instruction": "Find who should get the report.",
+      "hint": "Both names are said. The speaker chooses only one.",
+      "explanation": "Mr. Brown is correct. ‘Not Mr. Green’ means Mr. Green is the wrong person.",
+      "textToSpeak": "Could you send the report to Mr. Brown, not Mr. Green?",
+      "targetDetail": "Mr. Brown",
+      "options": [
+        "Mr. Green",
+        "Mr. White",
+        "Mr. Black",
+        "Mr. Brown"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "📧",
+      "detailCategory": "Correction",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L38_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen for how Ryan is travelling.",
+      "hint": "The way of travelling follows the word ‘by’.",
+      "explanation": "Correct: train. ‘By train’ shows the type of transport, and half past nine is his arrival time.",
+      "textToSpeak": "Ryan is coming by train and arriving at half past nine.",
+      "targetDetail": "train",
+      "options": [
+        "bus",
+        "train",
+        "plane",
+        "taxi"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "🧳",
+      "detailCategory": "Action",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L39_Q1",
+      "interactionType": "choice",
+      "instruction": "Clear the glass and tap how many students are in the class in total.",
+      "hint": "‘Total’ means everyone. One of the numbers is only part of the group.",
+      "explanation": "The answer is 30. Fifteen is just the girls. Thirty is the whole class.",
+      "textToSpeak": "There are thirty students in my class, and fifteen are girls.",
+      "targetDetail": "30",
+      "options": [
+        "30",
+        "50",
+        "15",
+        "13"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🏫",
+      "detailCategory": "Quantity",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L39_Q2",
+      "interactionType": "choice",
+      "instruction": "How often does the speaker go swimming?",
+      "hint": "How often means the number of times, not the days. Listen for ‘a week’.",
+      "explanation": "The answer is twice a week. Tuesday and Saturday are the two days, which fits ‘twice’.",
+      "textToSpeak": "I go swimming twice a week, usually on Tuesday and Saturday.",
+      "targetDetail": "twice a week",
+      "options": [
+        "three times a week",
+        "twice a week",
+        "every day",
+        "once a week"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "🏊",
+      "detailCategory": "Frequency",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L39_Q3",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap what the receptionist asks you to do.",
+      "hint": "The receptionist gives one instruction and one promise. Choose the instruction.",
+      "explanation": "Take a seat is correct. ‘The doctor will see you soon’ is only a promise.",
+      "textToSpeak": "Please take a seat, and the doctor will see you soon.",
+      "targetDetail": "take a seat",
+      "options": [
+        "pay now",
+        "show your card",
+        "take a seat",
+        "fill out a form"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🏥",
+      "detailCategory": "Instruction",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L40_Q1",
+      "interactionType": "choice",
+      "instruction": "Tap where Mary put her passport.",
+      "hint": "The passport has a container and the container has a place. Listen for the first one.",
+      "explanation": "In the blue folder is correct. The desk is only where the folder is.",
+      "textToSpeak": "Mary put her passport in the blue folder on the desk.",
+      "targetDetail": "in the blue folder",
+      "options": [
+        "in the red folder",
+        "in the blue folder",
+        "in the desk drawer",
+        "in her bag"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "🗂️",
+      "detailCategory": "Location",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L40_Q2",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass, then tap when the break is.",
+      "hint": "Two times are given for two different events. Match the event to the time.",
+      "explanation": "The answer is 10:15. Nine o'clock is when class starts. The break is at ten fifteen.",
+      "textToSpeak": "The class starts at nine, and the break is at ten fifteen.",
+      "targetDetail": "10:15",
+      "options": [
+        "9:15",
+        "10:15",
+        "10:30",
+        "10:50"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "☕",
+      "detailCategory": "Time",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L40_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen for how long the tour takes.",
+      "hint": "Numbers ending in ‘-ty’ and ‘-teen’ can sound close. Check where the stress falls.",
+      "explanation": "‘Ninety’ is stressed on the first part. The break is included in the time. So the answer is 90 minutes.",
+      "textToSpeak": "The museum tour takes about ninety minutes, including a short break.",
+      "targetDetail": "90 minutes",
+      "options": [
+        "45 minutes",
+        "19 minutes",
+        "90 minutes",
+        "60 minutes"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🏛️",
+      "detailCategory": "Duration",
+      "phase": "mastery"
+    }
+  ]
+}

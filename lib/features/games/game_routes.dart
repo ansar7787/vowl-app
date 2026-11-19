@@ -156,6 +156,8 @@ import 'package:vowl/features/listening/fast_speech_decoder/presentation/pages/f
 import 'package:vowl/features/listening/fast_speech_decoder/presentation/pages/fast_speech_decoder_practice_screen.dart';
 import 'package:vowl/features/listening/emotion_recognition/presentation/pages/emotion_recognition_learn_screen.dart';
 import 'package:vowl/features/listening/emotion_recognition/presentation/pages/emotion_recognition_practice_screen.dart';
+import 'package:vowl/features/listening/detail_spotlight/presentation/pages/detail_spotlight_learn_screen.dart';
+import 'package:vowl/features/listening/detail_spotlight/presentation/pages/detail_spotlight_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -829,6 +831,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'detailspotlight') {
+          return fadeTransitionPage(
+            child: DetailSpotlightLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1281,6 +1289,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'emotionrecognition') {
           return fadeTransitionPage(
             child: EmotionRecognitionPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'detailspotlight') {
+          return fadeTransitionPage(
+            child: DetailSpotlightPracticeScreen(level: level),
             state: state,
           );
         }

@@ -1,0 +1,608 @@
+{
+  "gameType": "detailSpotlight",
+  "phase": "mastery",
+  "batchIndex": 11,
+  "levels": "101-110",
+  "quests": [
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L101_Q1",
+      "interactionType": "choice",
+      "instruction": "Pick out who needs to review the contract first.",
+      "hint": "The person the speaker emailed is not the same as the group that must check the document.",
+      "explanation": "The answer is the legal team. Mr. Reyes will only reply after ‘legal’, meaning the legal department, has reviewed it.",
+      "textToSpeak": "So I emailed Mr. Reyes about the contract, and he said he'd get back to me once legal has looked at it.",
+      "targetDetail": "the legal team",
+      "options": [
+        "Mr. Reyes",
+        "the client",
+        "the finance team",
+        "the legal team"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "📑",
+      "detailCategory": "Role",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L101_Q2",
+      "interactionType": "choice",
+      "instruction": "Notice when the speaker arrived.",
+      "hint": "The planned train and the actual arrival are different. Listen for ‘got in’.",
+      "explanation": "The answer is around 9:00. Ten past eight was the train they skipped. The speaker arrived later.",
+      "textToSpeak": "I was going to take the ten past eight train, but it was packed, so I waited for the next one and got in around nine.",
+      "targetDetail": "around 9:00",
+      "options": [
+        "8:40",
+        "around 9:00",
+        "8:10",
+        "9:30"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "🚉",
+      "detailCategory": "Time",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L101_Q3",
+      "interactionType": "choice",
+      "instruction": "Tap how the speaker feels about the landlord's promise.",
+      "hint": "The speaker does not say the feeling directly. Listen to the phrase after ‘but honestly’.",
+      "explanation": "The answer is doubtful. ‘I'll believe it when I see it’ means the speaker isn't convinced it will happen.",
+      "textToSpeak": "My landlord says the heating should be fixed by the weekend, but honestly I'll believe it when I see it.",
+      "targetDetail": "doubtful",
+      "options": [
+        "doubtful",
+        "relieved",
+        "delighted",
+        "confused"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🏠",
+      "detailCategory": "Description",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L102_Q1",
+      "interactionType": "choice",
+      "instruction": "Tap by when you should order dessert.",
+      "hint": "The time limit is connected to the kitchen. Listen for what ‘before then’ refers to.",
+      "explanation": "Before 10:00 is correct. The kitchen closes at ten, so dessert must be ordered before that.",
+      "textToSpeak": "The waiter told us the kitchen closes at ten, so if you want dessert, order it before then.",
+      "targetDetail": "before 10:00",
+      "options": [
+        "before 9:00",
+        "at 11:00",
+        "after 10:00",
+        "before 10:00"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🍰",
+      "detailCategory": "Time",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L102_Q2",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap what she wants to focus on most.",
+      "hint": "The speaker points to the item using its position in the list, not its name.",
+      "explanation": "The answer is customer feedback. ‘The last one’ refers to the third point in the list.",
+      "textToSpeak": "Her presentation covers three main points: costs, timing, and customer feedback. She wants to spend most of the time on the last one.",
+      "targetDetail": "customer feedback",
+      "options": [
+        "customer feedback",
+        "timing",
+        "costs",
+        "staffing"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "📊",
+      "detailCategory": "Key Information",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L102_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen for how much of a discount there is.",
+      "hint": "The tag price and the sign give different information. Focus on the sign.",
+      "explanation": "A third is correct. The sign says everything is one third off.",
+      "textToSpeak": "I know it says sixty dollars on the tag, but there's a sign saying everything's a third off this week.",
+      "targetDetail": "a third",
+      "options": [
+        "a quarter",
+        "a half",
+        "a fifth",
+        "a third"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🏷️",
+      "detailCategory": "Measurement",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L103_Q1",
+      "interactionType": "choice",
+      "instruction": "Clear the glass and tap what the customer is complaining about.",
+      "hint": "The complaint usually comes right after the request to speak to someone.",
+      "explanation": "Being charged twice is correct. The customer says the same order was billed two times.",
+      "textToSpeak": "Can I speak to whoever's in charge of billing? I was charged twice for the same order.",
+      "targetDetail": "being charged twice",
+      "options": [
+        "being charged twice",
+        "a damaged item",
+        "a late delivery",
+        "a wrong address"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "☎️",
+      "detailCategory": "Reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L103_Q2",
+      "interactionType": "choice",
+      "instruction": "Listen for how you should register.",
+      "hint": "The seminar has two requirements. One is about how, and one is about when.",
+      "explanation": "The answer is online. The deadline is separate information.",
+      "textToSpeak": "The seminar is open to everyone, but you have to register online, and the deadline is the end of this month.",
+      "targetDetail": "online",
+      "options": [
+        "by mail",
+        "by phone",
+        "online",
+        "in person"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🎓",
+      "detailCategory": "Instruction",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L103_Q3",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap the earliest day the speaker can travel.",
+      "hint": "Two busy days are named, and then a limit. Think about what ‘after the sixth’ allows.",
+      "explanation": "Correct: the 7th. The speaker can't go until after the sixth, so the first possible day is the seventh.",
+      "textToSpeak": "I've got a dentist appointment on the third and a job interview on the fifth, so I can't do the trip until after the sixth.",
+      "targetDetail": "the 7th",
+      "options": [
+        "the 7th",
+        "the 6th",
+        "the 5th",
+        "the 3rd"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "📆",
+      "detailCategory": "Date",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L104_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for who suggested a new venue.",
+      "hint": "Notice who makes the suggestion. Then think about how that person is related to the speaker.",
+      "explanation": "The speaker says ‘my sister’, so the idea came from a family member. So the answer is the speaker's sister.",
+      "textToSpeak": "We were going to have the party at my place, but my sister suggested the community center since it's bigger and has a kitchen.",
+      "targetDetail": "the speaker's sister",
+      "options": [
+        "the manager",
+        "the speaker's cousin",
+        "a neighbor",
+        "the speaker's sister"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🎈",
+      "detailCategory": "Person",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L104_Q2",
+      "interactionType": "choice",
+      "instruction": "Wipe away the fog and tap the color of the door you want.",
+      "hint": "One door is rejected and another is confirmed. Ownership words such as ‘ours’ matter.",
+      "explanation": "Correct: blue. Red is the pharmacy's door.",
+      "textToSpeak": "It's not the red door on the left. That's the pharmacy. Ours is the blue one, just past the bike shop.",
+      "targetDetail": "blue",
+      "options": [
+        "blue",
+        "green",
+        "red",
+        "white"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🚪",
+      "detailCategory": "Description",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L104_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen for the maximum length of the report.",
+      "hint": "‘At most’ sets an upper limit. Listen for the number linked to it.",
+      "explanation": "The answer is 12 pages. ‘At most’ means twelve is the limit.",
+      "textToSpeak": "The report needs to be twelve pages at most, including the charts, and it has to be in by Monday morning.",
+      "targetDetail": "12 pages",
+      "options": [
+        "2 pages",
+        "20 pages",
+        "12 pages",
+        "21 pages"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "📝",
+      "detailCategory": "Requirement",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L105_Q1",
+      "interactionType": "choice",
+      "instruction": "Tap what the patient wants the doctor to know.",
+      "hint": "The reason for the request comes before the word ‘so’.",
+      "explanation": "A medicine allergy is correct. The speaker is allergic to a specific medicine.",
+      "textToSpeak": "I'm allergic to penicillin, so please make sure the doctor knows before prescribing anything.",
+      "targetDetail": "a medicine allergy",
+      "options": [
+        "a past surgery",
+        "a pregnancy",
+        "a fever",
+        "a medicine allergy"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🩺",
+      "detailCategory": "Status",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L105_Q2",
+      "interactionType": "choice",
+      "instruction": "Notice why the trip was wasted.",
+      "hint": "The reason comes early, and the result comes after ‘so’.",
+      "explanation": "The office was closed is correct. It is why the speaker's drive was pointless.",
+      "textToSpeak": "Nobody told me the office would be closed on Friday, so I drove all the way there for nothing.",
+      "targetDetail": "the office was closed",
+      "options": [
+        "the manager was away",
+        "the road was blocked",
+        "the office was closed",
+        "the appointment was canceled"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🚗",
+      "detailCategory": "Reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L105_Q3",
+      "interactionType": "choice",
+      "instruction": "Wipe away the fog and tap what happens if they don't take a taxi.",
+      "hint": "‘Otherwise’ introduces what happens in the other case.",
+      "explanation": "They'll miss the start is correct. That is the result of not taking a taxi.",
+      "textToSpeak": "The bus is fifteen minutes late, so if we take a taxi, we'll make it. Otherwise we'll miss the start.",
+      "targetDetail": "they'll miss the start",
+      "options": [
+        "they'll arrive early",
+        "they'll pay extra",
+        "they'll miss the start",
+        "they'll get lost"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🚕",
+      "detailCategory": "Condition",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L106_Q1",
+      "interactionType": "choice",
+      "instruction": "Catch where the speaker exercised this week.",
+      "hint": "The normal routine and this week's routine differ. Listen for ‘instead’.",
+      "explanation": "At the gym is correct. Running outside is the normal habit.",
+      "textToSpeak": "I usually go for a run before work, but this week it's been raining so much that I've been using the gym instead.",
+      "targetDetail": "at the gym",
+      "options": [
+        "at the gym",
+        "by the river",
+        "at home",
+        "in the park"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🌧️",
+      "detailCategory": "Location",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L106_Q2",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass, then tap who the speaker will contact.",
+      "hint": "The pronoun ‘her’ refers back to someone already mentioned.",
+      "explanation": "The answer is the professor. ‘Her’ refers to the professor, who gave the first date.",
+      "textToSpeak": "The professor said the paper is due on the twentieth, but the syllabus says the twenty-seventh. I'll email her to check.",
+      "targetDetail": "the professor",
+      "options": [
+        "a classmate",
+        "the professor",
+        "the librarian",
+        "the teaching assistant"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "🎓",
+      "detailCategory": "Person",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L106_Q3",
+      "interactionType": "choice",
+      "instruction": "Focus on how many people they expected.",
+      "hint": "The actual number and the expected number are different. ‘Double’ compares them.",
+      "explanation": "100 is correct. Two hundred came, which is twice the expected amount.",
+      "textToSpeak": "There were around two hundred people at the event, which was double what we expected.",
+      "targetDetail": "100",
+      "options": [
+        "100",
+        "200",
+        "50",
+        "400"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🎪",
+      "detailCategory": "Quantity",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L107_Q1",
+      "interactionType": "choice",
+      "instruction": "Identify what caused them to miss their connection.",
+      "hint": "Follow the chain: first a problem, then a result.",
+      "explanation": "A three-hour delay is correct. It made them miss the next flight.",
+      "textToSpeak": "Our plane was delayed for three hours, so we missed our connection and had to spend the night in Frankfurt.",
+      "targetDetail": "a three-hour delay",
+      "options": [
+        "a three-hour delay",
+        "a security check",
+        "a lost bag",
+        "a canceled flight"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🛫",
+      "detailCategory": "Reason",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L107_Q2",
+      "interactionType": "choice",
+      "instruction": "Notice which table is available immediately.",
+      "hint": "One table needs a wait. Another does not. ‘Right now’ signals the available one.",
+      "explanation": "The window table needs a twenty-minute wait. So the answer is the table by the door.",
+      "textToSpeak": "If you'd like the window table, you'll have to wait about twenty minutes, but there's a table by the door available right now.",
+      "targetDetail": "the table by the door",
+      "options": [
+        "the window table",
+        "the corner table",
+        "the table by the door",
+        "the patio table"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🍽️",
+      "detailCategory": "Location",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L107_Q3",
+      "interactionType": "choice",
+      "instruction": "Tap when she became a team leader.",
+      "hint": "Two different time expressions are used. One is a length of time, and one is a point in time.",
+      "explanation": "The answer is in January. Six years is how long she has worked there.",
+      "textToSpeak": "She's been with the company for six years, but she only became a team leader in January.",
+      "targetDetail": "in January",
+      "options": [
+        "last spring",
+        "last June",
+        "six years ago",
+        "in January"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "💼",
+      "detailCategory": "Date",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L108_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for how many copies of the résumé to bring.",
+      "hint": "Several numbers are mentioned. Attach each number to its noun.",
+      "explanation": "Ten is the number of minutes for arriving early. So the answer is 2.",
+      "textToSpeak": "For the interview, dress smartly, arrive ten minutes early, and bring two copies of your résumé.",
+      "targetDetail": "2",
+      "options": [
+        "10",
+        "2",
+        "1",
+        "3"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "📄",
+      "detailCategory": "Quantity",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L108_Q2",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap what needs replacing.",
+      "hint": "The first part is a rejection. Listen for the second part.",
+      "explanation": "The answer is the tires. The brakes are fine.",
+      "textToSpeak": "The mechanic said it's not the brakes. It's the tires that are worn out, and they'll cost about three hundred to replace.",
+      "targetDetail": "the tires",
+      "options": [
+        "the brakes",
+        "the tires",
+        "the engine",
+        "the battery"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "🔧",
+      "detailCategory": "Status",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L108_Q3",
+      "interactionType": "choice",
+      "instruction": "Focus on how to get to campus in the summer.",
+      "hint": "The usual option is unavailable. Listen for what replaces it.",
+      "explanation": "Correct: by train. The bus does not operate during the break.",
+      "textToSpeak": "Please note that the bus to the campus doesn't run during the summer break, so you'll need to take the train.",
+      "targetDetail": "by train",
+      "options": [
+        "by bus",
+        "by taxi",
+        "on foot",
+        "by train"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🎒",
+      "detailCategory": "Condition",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L109_Q1",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap the extension to call for urgent matters.",
+      "hint": "The digits appear in every option. Only their order changes.",
+      "explanation": "The digits are said one by one: two, four, one. So the answer is 241.",
+      "textToSpeak": "Thanks for calling. I'm out of the office until Wednesday, so for anything urgent, please contact my colleague Laura at extension two four one.",
+      "targetDetail": "241",
+      "options": [
+        "421",
+        "142",
+        "214",
+        "241"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "📞",
+      "detailCategory": "Number",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L109_Q2",
+      "interactionType": "choice",
+      "instruction": "Listen for which part of the film was slow.",
+      "hint": "The film is described in stages. ‘But’ signals a change.",
+      "explanation": "The answer is the first half. It was slow, and things improved afterward.",
+      "textToSpeak": "The first half of the film was slow, but it really picked up after that, and the ending was amazing.",
+      "targetDetail": "the first half",
+      "options": [
+        "the second half",
+        "the middle",
+        "the first half",
+        "the ending"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🎬",
+      "detailCategory": "Description",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L109_Q3",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap what you pay if you cancel late.",
+      "hint": "The rules depend on when you cancel. Track what happens after the free period.",
+      "explanation": "The first night is correct. Late cancellation costs one night, not the whole stay.",
+      "textToSpeak": "You can cancel for free up to forty-eight hours before check-in. After that, they'll charge you for the first night.",
+      "targetDetail": "the first night",
+      "options": [
+        "the first night",
+        "nothing",
+        "the full stay",
+        "a fixed fee"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🏨",
+      "detailCategory": "Condition",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L110_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for who found the flights.",
+      "hint": "Two people did two different jobs. Match the name to the flights.",
+      "explanation": "Correct: Elena. Marcus organized the trip, but she found the flights.",
+      "textToSpeak": "Marcus is the one who organized the trip, but it was Elena who found the cheap flights.",
+      "targetDetail": "Elena",
+      "options": [
+        "Marcus",
+        "Elena",
+        "Andre",
+        "Sonia"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "✈️",
+      "detailCategory": "Person",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L110_Q2",
+      "interactionType": "choice",
+      "instruction": "Find where they ate over the weekend.",
+      "hint": "The weather changed the plan. Follow the word ‘so’.",
+      "explanation": "Dry weather let them eat outdoors both days. So the answer is outside.",
+      "textToSpeak": "We were expecting rain, but it stayed dry all weekend, so we ended up eating outside on Saturday and Sunday.",
+      "targetDetail": "outside",
+      "options": [
+        "at a friend's house",
+        "indoors",
+        "at a restaurant",
+        "outside"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🌤️",
+      "detailCategory": "Location",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L110_Q3",
+      "interactionType": "choice",
+      "instruction": "Notice the day everyone must be in the office.",
+      "hint": "Flexible days and fixed days are different. Listen for ‘always’.",
+      "explanation": "Friday is correct. The two remote days are flexible, but Friday is fixed.",
+      "textToSpeak": "The new policy says you can work from home two days a week, but Fridays are always in the office.",
+      "targetDetail": "Friday",
+      "options": [
+        "Monday",
+        "Friday",
+        "Wednesday",
+        "Thursday"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "🏢",
+      "detailCategory": "Day",
+      "phase": "mastery"
+    }
+  ]
+}

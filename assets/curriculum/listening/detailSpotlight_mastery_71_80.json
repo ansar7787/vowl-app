@@ -1,0 +1,608 @@
+{
+  "gameType": "detailSpotlight",
+  "phase": "mastery",
+  "batchIndex": 8,
+  "levels": "71-80",
+  "quests": [
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L71_Q1",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass, then tap the color that is sold out.",
+      "hint": "Three colors are listed. Only one is followed by a problem.",
+      "explanation": "Dark green is correct. Black and navy are still available in your size.",
+      "textToSpeak": "This jacket comes in black, navy, and dark green, but the green one is sold out in your size.",
+      "targetDetail": "dark green",
+      "options": [
+        "dark green",
+        "black",
+        "gray",
+        "navy"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🛍️",
+      "detailCategory": "Status",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L71_Q2",
+      "interactionType": "choice",
+      "instruction": "Catch the sale price of the boots.",
+      "hint": "There is a normal price and a sale price. ‘Instead of’ points to the old one.",
+      "explanation": "Eighty is the original price. Forty-six is the digits in the wrong order. So the answer is $64.",
+      "textToSpeak": "It's twenty percent off today, so the boots are sixty-four dollars instead of eighty.",
+      "targetDetail": "$64",
+      "options": [
+        "$16",
+        "$46",
+        "$64",
+        "$80"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🏷️",
+      "detailCategory": "Price",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L71_Q3",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap the size the assistant offers.",
+      "hint": "One size is rejected, and another is offered. Watch for ‘but’.",
+      "explanation": "Medium is the size that is too small. So the answer is large.",
+      "textToSpeak": "The medium is too small on you, but we have the large in the back if you'd like to try it.",
+      "targetDetail": "large",
+      "options": [
+        "extra large",
+        "large",
+        "small",
+        "medium"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "👕",
+      "detailCategory": "Description",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L72_Q1",
+      "interactionType": "choice",
+      "instruction": "Tap how long you have to return the item.",
+      "hint": "The time limit is followed by a condition. Focus on the number of days.",
+      "explanation": "Correct: 30 days. Having the receipt is the condition, not the deadline.",
+      "textToSpeak": "You can return it within thirty days, as long as you have the receipt.",
+      "targetDetail": "30 days",
+      "options": [
+        "13 days",
+        "3 days",
+        "30 days",
+        "60 days"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🔄",
+      "detailCategory": "Duration",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L72_Q2",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap what the store offers the customer.",
+      "hint": "One option is offered and another is refused. Listen for ‘only’ and ‘not’.",
+      "explanation": "The answer is store credit. The reason is that the item was bought on sale.",
+      "textToSpeak": "I'm afraid we can only offer store credit, not a cash refund, because you bought it on sale.",
+      "targetDetail": "store credit",
+      "options": [
+        "store credit",
+        "a discount code",
+        "a replacement",
+        "a cash refund"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🧾",
+      "detailCategory": "Result",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L72_Q3",
+      "interactionType": "choice",
+      "instruction": "Notice the main problem with the blender.",
+      "hint": "Listen for what happened to the product itself, after two weeks of use.",
+      "explanation": "The damaged box is a separate detail. So the answer is it stopped working.",
+      "textToSpeak": "The blender stopped working after two weeks, and the box was damaged when it arrived.",
+      "targetDetail": "it stopped working",
+      "options": [
+        "it's the wrong color",
+        "it's too small",
+        "it stopped working",
+        "it's too loud"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🛒",
+      "detailCategory": "Status",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L73_Q1",
+      "interactionType": "choice",
+      "instruction": "Tap the focus of today's lesson.",
+      "hint": "Two activities are mentioned, but only one is for today.",
+      "explanation": "Speaking practice belongs to next week. So the answer is writing emails.",
+      "textToSpeak": "Today's lesson will focus on writing emails, and you'll do the speaking practice next week.",
+      "targetDetail": "writing emails",
+      "options": [
+        "reading news",
+        "speaking practice",
+        "learning grammar",
+        "writing emails"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🎓",
+      "detailCategory": "Key Information",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L73_Q2",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass, then tap the day you must tell the teacher about needing more time.",
+      "hint": "The homework has a deadline, and the request has its own deadline. Choose the second.",
+      "explanation": "Correct: Friday. Monday is when homework is due. The request must be made by Friday.",
+      "textToSpeak": "Homework is due on Monday, but if you need more time, just tell me by Friday.",
+      "targetDetail": "Friday",
+      "options": [
+        "Wednesday",
+        "Friday",
+        "Monday",
+        "Thursday"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "✏️",
+      "detailCategory": "Condition",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L73_Q3",
+      "interactionType": "choice",
+      "instruction": "Catch what you are allowed to bring to the test.",
+      "hint": "‘But not’ separates what is allowed from what is not.",
+      "explanation": "A phone is specifically not allowed. So the answer is a dictionary.",
+      "textToSpeak": "The test covers units four to six, and you can bring a dictionary but not a phone.",
+      "targetDetail": "a dictionary",
+      "options": [
+        "a calculator",
+        "a dictionary",
+        "a phone",
+        "your notes"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "📝",
+      "detailCategory": "Requirement",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L74_Q1",
+      "interactionType": "choice",
+      "instruction": "Tap who gets the keys.",
+      "hint": "The list has three tasks. Listen to the one involving the keys.",
+      "explanation": "The answer is security. The other two tasks are the printer and the cupboard.",
+      "textToSpeak": "Before you leave, please turn off the printer, lock the supply cupboard, and give the keys to security.",
+      "targetDetail": "security",
+      "options": [
+        "the cleaner",
+        "the manager",
+        "reception",
+        "security"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🏢",
+      "detailCategory": "Instruction",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L74_Q2",
+      "interactionType": "choice",
+      "instruction": "Catch the minimum length of the password.",
+      "hint": "‘At least’ shows the smallest allowed number. Listen for it.",
+      "explanation": "8 characters is correct. ‘At least eight’ sets the minimum. The number requirement is different.",
+      "textToSpeak": "The new password must have at least eight characters, including one number.",
+      "targetDetail": "8 characters",
+      "options": [
+        "6 characters",
+        "18 characters",
+        "8 characters",
+        "10 characters"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "💻",
+      "detailCategory": "Requirement",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L74_Q3",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap when the training session ends.",
+      "hint": "‘Until’ marks the end. The time comes right after it.",
+      "explanation": "The answer is 4:00. The training session lasts until four.",
+      "textToSpeak": "Please don't schedule any calls on Tuesday afternoon. I'm in a training session until four.",
+      "targetDetail": "4:00",
+      "options": [
+        "5:00",
+        "3:00",
+        "4:00",
+        "2:00"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "📆",
+      "detailCategory": "Time",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L75_Q1",
+      "interactionType": "choice",
+      "instruction": "Tap what happens first at the appointment.",
+      "hint": "‘First’ and ‘then’ show the order. You need the first item.",
+      "explanation": "The answer is blood pressure check. The test results come later, with the doctor.",
+      "textToSpeak": "The nurse will take your blood pressure first, then the doctor will talk to you about the test results.",
+      "targetDetail": "blood pressure check",
+      "options": [
+        "blood pressure check",
+        "the test results",
+        "a blood test",
+        "an X-ray"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🏥",
+      "detailCategory": "Sequence",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L75_Q2",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap how long you should avoid coffee and heavy meals.",
+      "hint": "The number has two parts. Listen for all of it.",
+      "explanation": "The answer is 24 hours. It is a full day before the scan.",
+      "textToSpeak": "Avoid coffee and heavy meals for twenty-four hours before the scan.",
+      "targetDetail": "24 hours",
+      "options": [
+        "24 hours",
+        "12 hours",
+        "4 hours",
+        "14 hours"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🩻",
+      "detailCategory": "Duration",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L75_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen for when the pain is worst.",
+      "hint": "‘Especially’ points to the strongest case. Listen for it.",
+      "explanation": "Going down the stairs is correct. It is when the knee hurts most.",
+      "textToSpeak": "My knee has been hurting since Sunday, especially when I go down the stairs.",
+      "targetDetail": "going down the stairs",
+      "options": [
+        "carrying bags",
+        "sitting for hours",
+        "going down the stairs",
+        "climbing hills"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🦵",
+      "detailCategory": "Condition",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L76_Q1",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap the delivery window.",
+      "hint": "The window has a start and an end. Check both.",
+      "explanation": "Correct: 1:00 to 3:00. The company asks someone to be home during that time.",
+      "textToSpeak": "Your order is out for delivery and should arrive between one and three, so please make sure someone is home.",
+      "targetDetail": "1:00 to 3:00",
+      "options": [
+        "11:00 to 1:00",
+        "1:00 to 3:00",
+        "1:00 to 2:00",
+        "3:00 to 5:00"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "📦",
+      "detailCategory": "Time",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L76_Q2",
+      "interactionType": "choice",
+      "instruction": "Notice where the driver tries first.",
+      "hint": "Two places are named, one after the other. Choose the one that comes first.",
+      "explanation": "The answer is with a neighbor. The mailroom is only the second choice, if nobody answers.",
+      "textToSpeak": "If you're not home, the driver will try a neighbor first, and if nobody answers, leave the package in the mailroom.",
+      "targetDetail": "with a neighbor",
+      "options": [
+        "at the front desk",
+        "with a neighbor",
+        "on the porch",
+        "in the mailroom"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "🚚",
+      "detailCategory": "Sequence",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L76_Q3",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap what they need to remove.",
+      "hint": "The reason for the action comes first. Then you hear the solution.",
+      "explanation": "The answer is the legs. Taking off the legs makes the sofa fit through the door.",
+      "textToSpeak": "The sofa is too wide for the door, so we'll need to take the legs off before we bring it in.",
+      "targetDetail": "the legs",
+      "options": [
+        "the door",
+        "the cushions",
+        "the legs",
+        "the arms"
+      ],
+      "correctAnswerIndex": 2,
+      "subtype": "detailSpotlight",
+      "emoji": "🛋️",
+      "detailCategory": "Instruction",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L77_Q1",
+      "interactionType": "choice",
+      "instruction": "Tap the date the guest leaves.",
+      "hint": "Arrival and departure are different days. Listen for ‘leaving’.",
+      "explanation": "The 11th is correct. The guest arrives on the ninth.",
+      "textToSpeak": "I've booked a room for two nights, arriving on the ninth and leaving on the eleventh.",
+      "targetDetail": "the 11th",
+      "options": [
+        "the 11th",
+        "the 12th",
+        "the 9th",
+        "the 10th"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🏨",
+      "detailCategory": "Date",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L77_Q2",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass and tap how many people the table is for.",
+      "hint": "Several numbers are mentioned. Listen for the one linked to ‘table’.",
+      "explanation": "5 is correct. Seven thirty is the time of the booking.",
+      "textToSpeak": "We need a table for five at seven thirty, but one of our guests is vegetarian.",
+      "targetDetail": "5",
+      "options": [
+        "7",
+        "4",
+        "6",
+        "5"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🍴",
+      "detailCategory": "Quantity",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L77_Q3",
+      "interactionType": "choice",
+      "instruction": "Listen for the new date.",
+      "hint": "The customer wants to replace a date. Focus on the second one.",
+      "explanation": "The 21st is correct. The fourteenth is the old date.",
+      "textToSpeak": "Could you change my booking from the fourteenth to the twenty-first? Something came up at work.",
+      "targetDetail": "the 21st",
+      "options": [
+        "the 21st",
+        "the 14th",
+        "the 20th",
+        "the 12th"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🗓️",
+      "detailCategory": "Change",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L78_Q1",
+      "interactionType": "choice",
+      "instruction": "Pick out the earlier appointment offered.",
+      "hint": "Two slots are offered. Decide which comes first in the week.",
+      "explanation": "The answer is Thursday morning. Nine to twelve is the morning slot on Thursday.",
+      "textToSpeak": "The technician can come on Thursday between nine and twelve, or Friday afternoon.",
+      "targetDetail": "Thursday morning",
+      "options": [
+        "Thursday afternoon",
+        "Friday afternoon",
+        "Friday morning",
+        "Thursday morning"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🔧",
+      "detailCategory": "Time",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L78_Q2",
+      "interactionType": "choice",
+      "instruction": "Tap the price of the new part.",
+      "hint": "There are two amounts. One is for the work, and one is for the item.",
+      "explanation": "$40 is correct. A hundred and fifty is the cost of the repair.",
+      "textToSpeak": "The repair will cost about a hundred and fifty dollars, plus forty for the new part.",
+      "targetDetail": "$40",
+      "options": [
+        "$40",
+        "$100",
+        "$150",
+        "$14"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🧰",
+      "detailCategory": "Price",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L78_Q3",
+      "interactionType": "choice",
+      "instruction": "Wipe the glass, then tap what is actually damaged.",
+      "hint": "One idea is rejected first. Listen for what comes next.",
+      "explanation": "The charger cable is correct. The battery is fine.",
+      "textToSpeak": "The problem isn't the battery. It's the charger cable that's damaged.",
+      "targetDetail": "the charger cable",
+      "options": [
+        "the speaker",
+        "the charger cable",
+        "the battery",
+        "the screen"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "🛠️",
+      "detailCategory": "Status",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L79_Q1",
+      "interactionType": "choice",
+      "instruction": "Listen for the example of a proof of address.",
+      "hint": "‘Like’ introduces an example. Listen for what follows it.",
+      "explanation": "The answer is a utility bill. It shows the address where you live.",
+      "textToSpeak": "To open an account you'll need one photo ID and a proof of address, like a utility bill.",
+      "targetDetail": "a utility bill",
+      "options": [
+        "a passport",
+        "a payslip",
+        "a library card",
+        "a utility bill"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🏦",
+      "detailCategory": "Requirement",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L79_Q2",
+      "interactionType": "choice",
+      "instruction": "Wipe away the fog and tap the joining fee.",
+      "hint": "There are two costs. One repeats every month, and one is paid once.",
+      "explanation": "$50 is correct. Forty-five dollars is the monthly cost.",
+      "textToSpeak": "The gym membership is forty-five a month, but there's a fifty-dollar joining fee.",
+      "targetDetail": "$50",
+      "options": [
+        "$50",
+        "$45",
+        "$15",
+        "$5"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "🏋️",
+      "detailCategory": "Price",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L79_Q3",
+      "interactionType": "choice",
+      "instruction": "Tap the weight at which parcels must go by courier.",
+      "hint": "The word ‘over’ tells you the direction of the limit.",
+      "explanation": "Correct: over 2 kilos. Heavier parcels need a courier.",
+      "textToSpeak": "Parcels over two kilos have to go by courier, not regular mail.",
+      "targetDetail": "over 2 kilos",
+      "options": [
+        "over 2 kilos",
+        "over 20 kilos",
+        "over 12 kilos",
+        "under 2 kilos"
+      ],
+      "correctAnswerIndex": 0,
+      "subtype": "detailSpotlight",
+      "emoji": "📮",
+      "detailCategory": "Condition",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L80_Q1",
+      "interactionType": "choice",
+      "instruction": "Clear the glass and tap how often the bus runs on Sundays.",
+      "hint": "There are two schedules. Match the frequency to the right day.",
+      "explanation": "Ten minutes is the weekday schedule. So the answer is every 30 minutes.",
+      "textToSpeak": "The bus runs every ten minutes on weekdays, but only every thirty on Sundays.",
+      "targetDetail": "every 30 minutes",
+      "options": [
+        "every 10 minutes",
+        "every 30 minutes",
+        "every hour",
+        "every 13 minutes"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "🚌",
+      "detailCategory": "Frequency",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L80_Q2",
+      "interactionType": "choice",
+      "instruction": "Notice when registration opens.",
+      "hint": "Three times are heard. Each one belongs to a different part of the event.",
+      "explanation": "Correct: 8:30. Nine is the start of the seminar, and ten thirty is the break.",
+      "textToSpeak": "The seminar starts at nine, with registration from eight thirty and a coffee break at ten thirty.",
+      "targetDetail": "8:30",
+      "options": [
+        "10:30",
+        "8:00",
+        "9:00",
+        "8:30"
+      ],
+      "correctAnswerIndex": 3,
+      "subtype": "detailSpotlight",
+      "emoji": "🎤",
+      "detailCategory": "Time",
+      "phase": "mastery"
+    },
+    {
+      "id": "LIS_DETAILSPOTLIGHT_L80_Q3",
+      "interactionType": "choice",
+      "instruction": "Identify what stays open.",
+      "hint": "One thing is canceled and one stays open. Listen for ‘but’.",
+      "explanation": "The library is correct. Classes are canceled, but the library keeps its normal hours.",
+      "textToSpeak": "Classes are canceled on Monday because of the holiday, but the library will stay open.",
+      "targetDetail": "the library",
+      "options": [
+        "the cafeteria",
+        "the library",
+        "the school",
+        "the gym"
+      ],
+      "correctAnswerIndex": 1,
+      "subtype": "detailSpotlight",
+      "emoji": "📚",
+      "detailCategory": "Status",
+      "phase": "mastery"
+    }
+  ]
+}
