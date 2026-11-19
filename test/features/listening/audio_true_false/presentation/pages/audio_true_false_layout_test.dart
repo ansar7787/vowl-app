@@ -861,7 +861,8 @@ void main() {
         when(() => mockListeningBloc.state).thenReturn(nextState);
         listeningStreamController.add(nextState);
         await tester.pump();
-        await tester.pump(const Duration(milliseconds: 300));
+        await tester.pump(const Duration(milliseconds: 500));
+        await tester.pump(const Duration(milliseconds: 500));
 
         expect(find.text('She bought fresh apples.'), findsOneWidget);
         expect(find.text('🍎'), findsOneWidget);
