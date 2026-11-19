@@ -43,6 +43,8 @@ import 'package:vowl/features/accent/minimal_pairs/presentation/pages/minimal_pa
 import 'package:vowl/features/accent/minimal_pairs/presentation/pages/minimal_pairs_practice_screen.dart';
 import 'package:vowl/features/accent/intonation_mimic/presentation/pages/intonation_mimic_learn_screen.dart';
 import 'package:vowl/features/accent/intonation_mimic/presentation/pages/intonation_mimic_practice_screen.dart';
+import 'package:vowl/features/accent/syllable_stress/presentation/pages/syllable_stress_learn_screen.dart';
+import 'package:vowl/features/accent/syllable_stress/presentation/pages/syllable_stress_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -757,6 +759,22 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<IntonationMimicPracticeScreen>());
+    });
+
+    test('resolves /learn route for syllableStress', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state = createMockState('/learn?category=accent&gameType=syllableStress&level=5');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<SyllableStressLearnScreen>());
+    });
+
+    test('resolves /practice route for syllableStress', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state = createMockState('/practice?category=accent&gameType=syllableStress&level=5');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<SyllableStressPracticeScreen>());
     });
   });
 }

@@ -166,6 +166,8 @@ import 'package:vowl/features/accent/minimal_pairs/presentation/pages/minimal_pa
 import 'package:vowl/features/accent/minimal_pairs/presentation/pages/minimal_pairs_practice_screen.dart';
 import 'package:vowl/features/accent/intonation_mimic/presentation/pages/intonation_mimic_learn_screen.dart';
 import 'package:vowl/features/accent/intonation_mimic/presentation/pages/intonation_mimic_practice_screen.dart';
+import 'package:vowl/features/accent/syllable_stress/presentation/pages/syllable_stress_learn_screen.dart';
+import 'package:vowl/features/accent/syllable_stress/presentation/pages/syllable_stress_practice_screen.dart';
 import 'package:vowl/core/utils/app_router.dart';
 import 'package:vowl/core/utils/discovery_helper.dart';
 import 'package:vowl/core/utils/toll_gate_helper.dart';
@@ -869,6 +871,12 @@ class GameRoutes {
             state: state,
           );
         }
+        if (gameType.toLowerCase() == 'syllablestress') {
+          return fadeTransitionPage(
+            child: SyllableStressLearnScreen(level: level),
+            state: state,
+          );
+        }
 
         return fadeTransitionPage(
           child: LearnPhaseScaffold(
@@ -1351,6 +1359,12 @@ class GameRoutes {
         if (gameType.toLowerCase() == 'intonationmimic') {
           return fadeTransitionPage(
             child: IntonationMimicPracticeScreen(level: level),
+            state: state,
+          );
+        }
+        if (gameType.toLowerCase() == 'syllablestress') {
+          return fadeTransitionPage(
+            child: SyllableStressPracticeScreen(level: level),
             state: state,
           );
         }
