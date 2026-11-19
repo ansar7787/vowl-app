@@ -1,0 +1,698 @@
+{
+  "gameType": "travelDesk",
+  "batchIndex": 3,
+  "levels": "21-30",
+  "quests": [
+    {
+      "instruction": "Which place can help with this request?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Two tickets for tonight's performance, please. Where would I buy them?",
+      "itinerary": [
+        "Opera Square Cinema Ticket Kiosk",
+        "Opera Square Train Ticket Office",
+        "Opera Square Tourist Information Desk",
+        "Opera Square Opera House Box Office"
+      ],
+      "options": [
+        "Cinema Ticket Kiosk",
+        "Train Ticket Office",
+        "Tourist Information Desk",
+        "Opera House Box Office"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Tickets are sold where the event takes place, or at its official sales point.",
+      "explanation": "A box office sells seats for the venue's own shows. A cinema kiosk only sells film tickets, and a train office sells travel.",
+      "id": "td_l21_q1",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the most suitable service.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'm going to see three museums this week. Is there a single pass that covers them all?",
+      "itinerary": [
+        "Museum Quarter Museum Gift Shop",
+        "Museum Quarter City Pass Sales Point",
+        "Museum Quarter Museum Cafe",
+        "Museum Quarter Coat Check"
+      ],
+      "options": [
+        "Museum Gift Shop",
+        "City Pass Sales Point",
+        "Museum Cafe",
+        "Coat Check"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "One pass, several museums: who sells combined entry?",
+      "explanation": "A city pass sales point sells combined tickets for several attractions. A gift shop sells souvenirs and a coat check stores bags.",
+      "id": "td_l21_q2",
+      "travelDocuments": "Museum Pass"
+    },
+    {
+      "instruction": "Choose the most useful next step.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'd like to reserve two seats on tomorrow's sightseeing boat. I don't want to just turn up and hope.",
+      "itinerary": [
+        "Harbour Water Taxi Stand",
+        "Harbour Yacht Club",
+        "Harbour Cruise Ticket Booth",
+        "Harbour Fish Market"
+      ],
+      "options": [
+        "Water Taxi Stand",
+        "Yacht Club",
+        "Cruise Ticket Booth",
+        "Fish Market"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "The traveler wants a booked place on a tourist boat, not simple transport across the water.",
+      "explanation": "A cruise ticket booth sells reserved seats for sightseeing trips. A water taxi stand gives point-to-point rides, not tours.",
+      "id": "td_l21_q3",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which option best fits the traveler's schedule?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "It's nearly nine at night. The big supermarkets shut at eight here. Where can I still buy milk?",
+      "itinerary": [
+        "Riverside Bakery",
+        "Riverside 24-Hour Convenience Store",
+        "Riverside Farmers' Market",
+        "Riverside Supermarket"
+      ],
+      "options": [
+        "Bakery",
+        "24-Hour Convenience Store",
+        "Farmers' Market",
+        "Supermarket"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "The information about closing time is what decides the answer.",
+      "explanation": "A 24-hour convenience store is open late when supermarkets and bakeries have already closed. The farmers' market runs during the day.",
+      "id": "td_l22_q1",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "What is the smartest place to start?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "It's Sunday and everything seems to be shut. Where can I still get some cash?",
+      "itinerary": [
+        "Town Centre Bank Machine Outside Station",
+        "Town Centre Post Office",
+        "Town Centre Currency Exchange Bureau",
+        "Town Centre Bank Branch"
+      ],
+      "options": [
+        "Bank Machine Outside Station",
+        "Post Office",
+        "Currency Exchange Bureau",
+        "Bank Branch"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Sundays affect staffed counters, but not machines.",
+      "explanation": "A cash machine works all day and night, including Sundays. Bank branches, post offices and exchange bureaus are usually closed on Sundays.",
+      "id": "td_l22_q2",
+      "travelDocuments": "ID Card"
+    },
+    {
+      "instruction": "Who should the traveler ask first?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'd like to check the cathedral's opening times before I walk all the way up the hill.",
+      "itinerary": [
+        "Old Town Souvenir Kiosk",
+        "Old Town Tourist Information Centre",
+        "Old Town Bus Stop",
+        "Old Town Cathedral Gift Shop"
+      ],
+      "options": [
+        "Souvenir Kiosk",
+        "Tourist Information Centre",
+        "Bus Stop",
+        "Cathedral Gift Shop"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "You're asking for facts, and you want them without wasting a walk.",
+      "explanation": "The tourist information centre knows and can phone ahead. Shops and kiosks near the cathedral might not know its schedule.",
+      "id": "td_l22_q3",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the most useful next step.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'm lost in the terminal. I can't find Gate 42 and my flight is boarding.",
+      "itinerary": [
+        "Departures Hall Baggage Claim",
+        "Departures Hall Duty-Free Shop",
+        "Departures Hall Airport Information Desk",
+        "Departures Hall Currency Exchange"
+      ],
+      "options": [
+        "Baggage Claim",
+        "Duty-Free Shop",
+        "Airport Information Desk",
+        "Currency Exchange"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "You need someone whose job is directing passengers, and fast.",
+      "explanation": "The information desk can point you to the right gate and confirm boarding. Shops and baggage claim don't help with directions.",
+      "id": "td_l23_q1",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Where should the traveler go to fix this?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I left my jacket on the train about an hour ago. Someone might have handed it in.",
+      "itinerary": [
+        "Central Station Cafe",
+        "Central Station Information Board",
+        "Central Station Lost Property Office",
+        "Central Station Ticket Office"
+      ],
+      "options": [
+        "Cafe",
+        "Information Board",
+        "Lost Property Office",
+        "Ticket Office"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Which office collects things that people forgot?",
+      "explanation": "Lost property offices keep items found on trains and in the station. Ticket offices don't hold personal belongings.",
+      "id": "td_l23_q2",
+      "travelDocuments": "Train Ticket"
+    },
+    {
+      "instruction": "Which counter can solve the real problem?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "The ticket machine took my money but didn't give me a ticket.",
+      "itinerary": [
+        "Central Station Platform Gate",
+        "Central Station Another Ticket Machine",
+        "Central Station Newsagent",
+        "Central Station Customer Service Desk"
+      ],
+      "options": [
+        "Platform Gate",
+        "Another Ticket Machine",
+        "Newsagent",
+        "Customer Service Desk"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "The money is gone, so you need a person who can fix a payment problem.",
+      "explanation": "Customer service can refund or issue your ticket. Trying another machine could mean paying twice.",
+      "id": "td_l23_q3",
+      "travelDocuments": "Train Ticket"
+    },
+    {
+      "instruction": "Which option respects both the need and the limits?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My phone's at three per cent. Is there somewhere I could plug it in while I sit for a while?",
+      "itinerary": [
+        "Departures Hall Duty-Free Shop",
+        "Departures Hall Charging Lounge",
+        "Departures Hall Currency Exchange",
+        "Departures Hall Pharmacy"
+      ],
+      "options": [
+        "Duty-Free Shop",
+        "Charging Lounge",
+        "Currency Exchange",
+        "Pharmacy"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "You need a power socket and somewhere to wait.",
+      "explanation": "A charging lounge gives you sockets and seating. The other counters have nothing to offer a dying phone.",
+      "id": "td_l24_q1",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Which option fits the situation best?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'd like to leave my rucksack somewhere safe for a couple of hours while I look around.",
+      "itinerary": [
+        "Museum Entrance Cafe",
+        "Museum Entrance Ticket Desk",
+        "Museum Entrance Gift Shop",
+        "Museum Entrance Cloakroom"
+      ],
+      "options": [
+        "Cafe",
+        "Ticket Desk",
+        "Gift Shop",
+        "Cloakroom"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Bags are often not allowed in exhibition rooms. Where do they go instead?",
+      "explanation": "A cloakroom stores bags and coats securely while you visit. The shop and cafe don't offer storage.",
+      "id": "td_l24_q2",
+      "travelDocuments": "Museum Pass"
+    },
+    {
+      "instruction": "Which option is the safest practical choice?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I've got a stroller and the stairs aren't an option. How can we get up to platform 5?",
+      "itinerary": [
+        "Central Station Lift",
+        "Central Station Footbridge Stairs",
+        "Central Station Service Tunnel",
+        "Central Station Escalator"
+      ],
+      "options": [
+        "Lift",
+        "Footbridge Stairs",
+        "Service Tunnel",
+        "Escalator"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Consider what a stroller can safely use.",
+      "explanation": "A lift is the safe, step-free way to carry a stroller between levels. Escalators are risky and stairs are impossible with a pushchair.",
+      "id": "td_l24_q3",
+      "travelDocuments": "Train Ticket"
+    },
+    {
+      "instruction": "Which place can help with this request?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'd like to borrow something to read on the train, just for the week.",
+      "itinerary": [
+        "Central Library Second-Hand Market",
+        "Central Library Newsagent",
+        "Central Library Lending Desk",
+        "Central Library Bookshop"
+      ],
+      "options": [
+        "Second-Hand Market",
+        "Newsagent",
+        "Lending Desk",
+        "Bookshop"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "The key word is borrow. Where can you take a book without buying it?",
+      "explanation": "A library lends books for a week or two. Bookshops and second-hand markets sell them, which isn't what was asked.",
+      "id": "td_l25_q1",
+      "travelDocuments": "ID Card"
+    },
+    {
+      "instruction": "Which option suits the whole group?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We'd like a proper dinner: a waiter, a menu, maybe a bottle of wine.",
+      "itinerary": [
+        "Waterfront Food Court",
+        "Waterfront Street Food Truck",
+        "Waterfront Self-Service Canteen",
+        "Waterfront Table-Service Restaurant"
+      ],
+      "options": [
+        "Food Court",
+        "Street Food Truck",
+        "Self-Service Canteen",
+        "Table-Service Restaurant"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "'A waiter' is the big clue about the way the meal is served.",
+      "explanation": "A table-service restaurant has waiters and full menus. A canteen, food court and truck all rely on you serving yourself.",
+      "id": "td_l25_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Identify the most practical destination.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'd like to see the main sights, but I'd rather not plan everything. Is there a bus I can just hop on and off?",
+      "itinerary": [
+        "Cathedral Square Metro Station",
+        "Cathedral Square Sightseeing Bus Stop",
+        "Cathedral Square Ferry Pier",
+        "Cathedral Square Taxi Rank"
+      ],
+      "options": [
+        "Metro Station",
+        "Sightseeing Bus Stop",
+        "Ferry Pier",
+        "Taxi Rank"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Hop on, hop off: which vehicle is designed for visitors?",
+      "explanation": "Sightseeing buses pass the main attractions and let you get off wherever you like. The metro or a taxi would take you to one place at a time.",
+      "id": "td_l25_q3",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the most suitable service.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I bought a heavy vase and there's no way it'll fit on the plane. Can it be shipped home?",
+      "itinerary": [
+        "Market Street International Courier Office",
+        "Market Street Left-Luggage Office",
+        "Market Street Souvenir Shop",
+        "Market Street Airline Check-In Desk"
+      ],
+      "options": [
+        "International Courier Office",
+        "Left-Luggage Office",
+        "Souvenir Shop",
+        "Airline Check-In Desk"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "The problem is that the item can't travel with you.",
+      "explanation": "A courier office packs and sends items abroad. Left luggage only stores things, and airline check-in would still count the vase as luggage.",
+      "id": "td_l26_q1",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which option suits the whole group?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "There are four of us with suitcases, all going to the same hotel. We'd like to share a ride to keep costs down.",
+      "itinerary": [
+        "Arrivals Hall Helicopter Transfers",
+        "Arrivals Hall Luxury Limousine Service",
+        "Arrivals Hall Shared Shuttle Van Desk",
+        "Arrivals Hall Car Rental Desk"
+      ],
+      "options": [
+        "Helicopter Transfers",
+        "Luxury Limousine Service",
+        "Shared Shuttle Van Desk",
+        "Car Rental Desk"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Sharing is the way to save money.",
+      "explanation": "A shared shuttle divides the cost among passengers going the same way. A limousine or helicopter would be far more expensive.",
+      "id": "td_l26_q2",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Which service fits this traveler best?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "Could we get a driver for the day who knows the sights? None of us wants to drive.",
+      "itinerary": [
+        "City Centre Self-Drive Car Rental",
+        "City Centre Airport Shuttle",
+        "City Centre Public Bus Station",
+        "City Centre Private Guide and Driver Service"
+      ],
+      "options": [
+        "Self-Drive Car Rental",
+        "Airport Shuttle",
+        "Public Bus Station",
+        "Private Guide and Driver Service"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "The group doesn't want to drive. They want a local who can.",
+      "explanation": "A guide-and-driver service provides both transport and local knowledge. A rental car would mean one of you driving.",
+      "id": "td_l26_q3",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which destination best solves the request?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'm staying for a month. I'd like a local number and cheap data.",
+      "itinerary": [
+        "Central Street Internet Cafe",
+        "Central Street Mobile Network Store",
+        "Central Street Camera Shop",
+        "Central Street Post Office"
+      ],
+      "options": [
+        "Internet Cafe",
+        "Mobile Network Store",
+        "Camera Shop",
+        "Post Office"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "The traveler wants a local phone plan, not just internet access.",
+      "explanation": "A mobile network store sells local SIM cards with data plans. An internet cafe offers computers only.",
+      "id": "td_l27_q1",
+      "travelDocuments": "Passport"
+    },
+    {
+      "instruction": "Choose the best place for the traveler.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My camera's memory card is full and I still have two days of sightseeing.",
+      "itinerary": [
+        "Camera Row Camera Shop",
+        "Camera Row Photo Booth",
+        "Camera Row Pharmacy",
+        "Camera Row Stationery Shop"
+      ],
+      "options": [
+        "Camera Shop",
+        "Photo Booth",
+        "Pharmacy",
+        "Stationery Shop"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Which shop specialises in photography equipment?",
+      "explanation": "A camera shop sells memory cards and accessories. A photo booth only takes passport photos.",
+      "id": "td_l27_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Where should the traveler go to fix this?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My phone screen cracked when I dropped it. It still works, but I'd like it fixed before the weekend.",
+      "itinerary": [
+        "Tech Alley Phone Repair Shop",
+        "Tech Alley Watch Repair Stall",
+        "Tech Alley Mobile Network Store",
+        "Tech Alley Camera Shop"
+      ],
+      "options": [
+        "Phone Repair Shop",
+        "Watch Repair Stall",
+        "Mobile Network Store",
+        "Camera Shop"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Fixing a broken screen is a repair job, not a sales job.",
+      "explanation": "A phone repair shop replaces screens, often in a few hours. A network store sells plans and a watch stall only handles watches.",
+      "id": "td_l27_q3",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Who should the traveler ask first?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I think I've been overcharged on my hotel bill. Who should I speak to?",
+      "itinerary": [
+        "Grand Hotel Restaurant Host",
+        "Grand Hotel Bell Desk",
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Reception Cashier"
+      ],
+      "options": [
+        "Restaurant Host",
+        "Bell Desk",
+        "Housekeeping",
+        "Reception Cashier"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Whoever manages your account handles billing questions.",
+      "explanation": "The reception cashier prepares and adjusts the bill. Housekeeping and bell staff don't see billing records.",
+      "id": "td_l28_q1",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Pick the option that works within the time limit.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'm flying home tonight. Where can I claim back the tax on things I bought?",
+      "itinerary": [
+        "Airport Currency Exchange",
+        "Airport Duty-Free Shop",
+        "Airport Tax-Refund Counter",
+        "Airport Check-In Desk"
+      ],
+      "options": [
+        "Currency Exchange",
+        "Duty-Free Shop",
+        "Tax-Refund Counter",
+        "Check-In Desk"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Refunds are dealt with at a special counter, and usually before you leave the country.",
+      "explanation": "A tax-refund counter stamps your receipts and pays out the tax. Duty-free shops and check-in desks don't process refunds.",
+      "id": "td_l28_q2",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Which place or service can answer the real question behind the request?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My card was declined at the restaurant. It works at home, so I suspect my bank blocked it because I'm abroad.",
+      "itinerary": [
+        "Your Bank Cash Machine",
+        "Your Bank Customer Service Line",
+        "Your Bank Currency Exchange",
+        "Your Bank Restaurant Manager"
+      ],
+      "options": [
+        "Cash Machine",
+        "Customer Service Line",
+        "Currency Exchange",
+        "Restaurant Manager"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Who has the power to unblock a card?",
+      "explanation": "Only your bank can unblock a card. The restaurant can't change it and a machine can't do it.",
+      "id": "td_l28_q3",
+      "travelDocuments": "ID Card"
+    },
+    {
+      "instruction": "Which option suits the whole group?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We've got one free afternoon and it's raining. Where could we take two young children?",
+      "itinerary": [
+        "Science Park Hiking Trail",
+        "Science Park Beach Promenade",
+        "Science Park Interactive Science Museum",
+        "Science Park Open-Air Market"
+      ],
+      "options": [
+        "Hiking Trail",
+        "Beach Promenade",
+        "Interactive Science Museum",
+        "Open-Air Market"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Two conditions: bad weather and kids.",
+      "explanation": "An interactive science museum is indoors and hands-on for children. The other choices are outdoors and weather-dependent.",
+      "id": "td_l29_q1",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which option fits the situation best?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "It's our anniversary. We'd like somewhere romantic for dinner, ideally with a view.",
+      "itinerary": [
+        "Skyline Street Food Court",
+        "Skyline Street Fast-Food Restaurant",
+        "Skyline Street Staff Cafeteria",
+        "Skyline Street Rooftop Restaurant"
+      ],
+      "options": [
+        "Food Court",
+        "Fast-Food Restaurant",
+        "Staff Cafeteria",
+        "Rooftop Restaurant"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Look at the occasion and the request for a view.",
+      "explanation": "A rooftop restaurant offers atmosphere and views for special evenings. The fast-food place, food court and cafeteria don't fit an anniversary.",
+      "id": "td_l29_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Which option best fits the traveler's schedule?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "We have one whole day free. We'd like to see somewhere outside the city and be back for dinner.",
+      "itinerary": [
+        "Central Station Day-Trip Coach Desk",
+        "Central Station Hotel Spa",
+        "Central Station Overnight Sleeper Ticket Office",
+        "Central Station Airport Shuttle Desk"
+      ],
+      "options": [
+        "Day-Trip Coach Desk",
+        "Hotel Spa",
+        "Overnight Sleeper Ticket Office",
+        "Airport Shuttle Desk"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "The timing matters: leave in the morning, return the same evening.",
+      "explanation": "A day-trip coach leaves in the morning and returns in the evening. A sleeper train or shuttle wouldn't match the timing.",
+      "id": "td_l29_q3",
+      "travelDocuments": "Train Ticket"
+    },
+    {
+      "instruction": "Pick the option that works within the time limit.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My train leaves in an hour and I'm starving, but I don't want a long sit-down meal.",
+      "itinerary": [
+        "Central Station Hotel Dining Room",
+        "Central Station Cooking Class",
+        "Central Station Sandwich Kiosk",
+        "Central Station Formal Restaurant"
+      ],
+      "options": [
+        "Hotel Dining Room",
+        "Cooking Class",
+        "Sandwich Kiosk",
+        "Formal Restaurant"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "You have the time but you don't want to spend it all on lunch.",
+      "explanation": "A sandwich kiosk serves fast food you can eat quickly. A sit-down restaurant would risk making you late.",
+      "id": "td_l30_q1",
+      "travelDocuments": "Train Ticket"
+    },
+    {
+      "instruction": "Who should the traveler ask first?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I've booked a room for tonight, but I'll be arriving after midnight. Who should I speak to?",
+      "itinerary": [
+        "Hotel Palace Airport Information Desk",
+        "Hotel Palace Taxi Rank",
+        "Hotel Palace Tourist Office",
+        "Hotel Palace Reception"
+      ],
+      "options": [
+        "Airport Information Desk",
+        "Taxi Rank",
+        "Tourist Office",
+        "Reception"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "The hotel is the only party that can hold your room.",
+      "explanation": "Only the hotel's reception can arrange late check-in and note your arrival time. The other services don't have access to your booking.",
+      "id": "td_l30_q2",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Where should the traveler go to fix this?",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "My suitcase didn't arrive. Where do I report it?",
+      "itinerary": [
+        "Arrivals Hall Baggage Service Desk",
+        "Arrivals Hall Duty-Free Shop",
+        "Arrivals Hall Security Control",
+        "Arrivals Hall Check-In Desk"
+      ],
+      "options": [
+        "Baggage Service Desk",
+        "Duty-Free Shop",
+        "Security Control",
+        "Check-In Desk"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "The bag was lost by the airline, so report it inside the airport.",
+      "explanation": "The baggage service desk records missing bags and traces them. Check-in and security deal with departing passengers.",
+      "id": "td_l30_q3",
+      "travelDocuments": "Boarding Pass"
+    }
+  ],
+  "phase": "mastery"
+}

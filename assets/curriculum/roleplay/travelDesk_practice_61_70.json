@@ -1,0 +1,518 @@
+{
+  "gameType": "travelDesk",
+  "phase": "practice",
+  "batchIndex": 7,
+  "levels": "61-70",
+  "quests": [
+    {
+      "id": "td_practice_l61_q1",
+      "level": 61,
+      "travelContext": "AIRPORT CHECK-IN & BAGGAGE ROUTING",
+      "travelerPrompt": "My connection in Frankfurt departs in 45 minutes from Concourse B. Can my bags be checked straight through to Berlin?",
+      "travelDocument": "Baggage Claim Stub & Boarding Pass",
+      "question": "How should the check-in agent instruct the passenger with a tight connection?",
+      "options": [
+        "Certainly! I have checked your luggage straight through to Berlin. Here are your passes; please take the expedited transit lane to Concourse B Gate 14.",
+        "You have 45 minutes, run to baggage claim in Frankfurt and re-check it yourself.",
+        "Just go to the gate and ask someone there if your bags made it."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Certainly! I have checked your luggage straight through to Berlin. Here are your passes; please take the expedited transit lane to Concourse B Gate 14.",
+      "explanation": "Confirming through-check baggage routing and providing clear concourse directions with expedited lane access is exemplary desk service.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l61_q2",
+      "level": 61,
+      "travelContext": "BORDER CONTROL & CUSTOMS DECLARATION",
+      "travelerPrompt": "I am traveling with vacuum-packed cured ham and artisanal cheeses gifted by family. Do I need to declare these at customs?",
+      "travelDocument": "Customs Declaration Card",
+      "question": "Select the most professional border agent guidance regarding food items:",
+      "options": [
+        "If it is vacuum packed you do not need to tell anyone, just walk through.",
+        "Yes, all cured meats and dairy products must be declared on your customs card so our biosecurity inspector can verify compliance.",
+        "Food is strictly prohibited and you will be arrested if you bring it in."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Yes, all cured meats and dairy products must be declared on your customs card so our biosecurity inspector can verify compliance.",
+      "explanation": "Instructing the traveler to declare items on their customs form allows official agricultural screening without incurring penalties.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l61_q3",
+      "level": 61,
+      "travelContext": "PASSPORT CONTROL & TRANSIT VISAS",
+      "travelerPrompt": "We have an 8-hour layover in Tokyo Narita before our Sydney flight. Can we exit the airport to visit the town without a pre-arranged visa?",
+      "travelDocument": "Biometric Passport & Onward Ticket",
+      "question": "What is the accurate travel advice for transit passengers seeking airport exit?",
+      "options": [
+        "Nobody is ever allowed to leave the airport on an international ticket.",
+        "You can request a temporary Shore Pass at immigration with proof of onward departure within 72 hours and 6 months passport validity.",
+        "You can just walk out through baggage exit without speaking to immigration."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "You can request a temporary Shore Pass at immigration with proof of onward departure within 72 hours and 6 months passport validity.",
+      "explanation": "Accurately citing shore pass criteria (72 hours departure window and valid passport) enables safe transit exploration.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l62_q1",
+      "level": 62,
+      "travelContext": "HOTEL CONCIERGE & LATE ARRIVAL",
+      "travelerPrompt": "Our flight was severely delayed and we will not reach the hotel until 2:30 AM. Will our room still be available?",
+      "travelDocument": "Hotel Booking Voucher",
+      "question": "How should the concierge reassure a delayed international traveler?",
+      "options": [
+        "Rooms are automatically released at 10 PM so you will lose your booking.",
+        "Yes, your reservation is guaranteed by credit card through the night audit, and I will notify the night manager to pre-encode your keys.",
+        "You must pay an extra night surcharge if you arrive after midnight."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Yes, your reservation is guaranteed by credit card through the night audit, and I will notify the night manager to pre-encode your keys.",
+      "explanation": "Assuring the guest of their credit card guarantee and noting the night audit prevents unnecessary travel anxiety.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l62_q2",
+      "level": 62,
+      "travelContext": "LOST LUGGAGE & PROPERTY IRREGULARITY",
+      "travelerPrompt": "Our baggage carousel has cleared and my checked suitcase never arrived. What do I need to do to track it down?",
+      "travelDocument": "Baggage Claim Tag",
+      "question": "Which procedure must be executed for missing checked baggage?",
+      "options": [
+        "Wait at the airport until tomorrow morning to see if the bag arrives.",
+        "File a Property Irregularity Report (PIR) using your baggage claim tag so we can track it via WorldTracer and arrange hotel delivery.",
+        "Buy new clothes immediately and send the receipts without filing an airport report."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "File a Property Irregularity Report (PIR) using your baggage claim tag so we can track it via WorldTracer and arrange hotel delivery.",
+      "explanation": "Filing a formal PIR with the baggage claim tag is the essential first step for international airline baggage recovery.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l62_q3",
+      "level": 62,
+      "travelContext": "RAIL TRANSIT & PASS VALIDATION",
+      "travelerPrompt": "Does our Eurail Global Pass allow us to hop directly onto the high-speed TGV train to Marseille?",
+      "travelDocument": "Eurail Pass & Seat Reservation",
+      "question": "How should the station agent explain high-speed rail pass rules?",
+      "options": [
+        "You can board any train you like without any tickets or reservations.",
+        "Your pass covers the fare, but high-speed TGV trains require a mandatory seat reservation before boarding to avoid fines.",
+        "Rail passes cannot be used on trains on weekdays."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Your pass covers the fare, but high-speed TGV trains require a mandatory seat reservation before boarding to avoid fines.",
+      "explanation": "Clarifying the distinction between base rail coverage and mandatory high-speed seat reservations protects travelers from on-board fines.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l63_q1",
+      "level": 63,
+      "travelContext": "FLIGHT DISRUPTION & PASSENGER RIGHTS",
+      "travelerPrompt": "Our flight to Chicago was cancelled due to mechanical failure. What assistance does the airline provide while we wait for tomorrow's flight?",
+      "travelDocument": "Flight Cancellation Notice & Hotel Voucher",
+      "question": "Choose the appropriate desk agent response during an airline cancellation:",
+      "options": [
+        "You must book your own hotel in the city and try calling our automated customer care line.",
+        "We have rebooked you on tomorrow's flight and are providing complimentary hotel accommodation, airport transfers, and meal vouchers.",
+        "The airline has no responsibility for mechanical issues on the aircraft."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "We have rebooked you on tomorrow's flight and are providing complimentary hotel accommodation, airport transfers, and meal vouchers.",
+      "explanation": "Providing comprehensive duty of care assistance (hotel, transfers, vouchers, confirmed seat) fulfills airline legal obligations.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l63_q2",
+      "level": 63,
+      "travelContext": "CAR RENTAL & INTERNATIONAL PERMITS",
+      "travelerPrompt": "I reserved a rental car online. I have my International Driving Permit with me, but I forgot my domestic license at home. Can I still pick up the car?",
+      "travelDocument": "International Driving Permit & Rental Agreement",
+      "question": "How should the car rental agent handle a driver presenting only an IDP?",
+      "options": [
+        "Yes, an IDP replaces all other licenses so you can drive immediately.",
+        "Unfortunately, the IDP is only valid when presented alongside your original primary physical driver's license.",
+        "You can draw your domestic license on paper and sign it."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Unfortunately, the IDP is only valid when presented alongside your original primary physical driver's license.",
+      "explanation": "Accurately informing the customer that an IDP requires the accompanying national primary license prevents illegal driving operations.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l63_q3",
+      "level": 63,
+      "travelContext": "AIRPORT SECURITY & RESTRICTED LIQUIDS",
+      "travelerPrompt": "Can I take this unopened bottle of olive oil through the security screening checkpoint in my backpack?",
+      "travelDocument": "Security Screening Advisory",
+      "question": "What is the correct guidance for liquids exceeding 100ml at airport security?",
+      "options": [
+        "You can bring any liquid container as long as the seal has never been broken.",
+        "Containers over 100ml cannot pass through cabin baggage security and must be safely packed in your checked luggage.",
+        "Security officers can drink half of the liquid so the rest is allowed through."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Containers over 100ml cannot pass through cabin baggage security and must be safely packed in your checked luggage.",
+      "explanation": "Explaining the 100ml limit and directing the passenger to store larger liquids in checked baggage adheres to global civil aviation security rules.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l64_q1",
+      "level": 64,
+      "travelContext": "TRAVEL HEALTH & VACCINE CERTIFICATION",
+      "travelerPrompt": "Our tour arrives from a designated yellow fever endemic region. When does our vaccination certificate become legally valid for entry?",
+      "travelDocument": "WHO Yellow Fever Certificate",
+      "question": "When does a traveler's Yellow Card vaccine certificate become valid for entry?",
+      "options": [
+        "Instantly as soon as the doctor writes your name on it.",
+        "Exactly 10 days following vaccination, as mandated by WHO border quarantine regulations.",
+        "Only after you have lived in the destination country for six months."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Exactly 10 days following vaccination, as mandated by WHO border quarantine regulations.",
+      "explanation": "Stating the 10-day WHO rule prevents travelers from facing quarantine refusal or entry denial upon arrival.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l64_q2",
+      "level": 64,
+      "travelContext": "FOREIGN CURRENCY & DCC CONVERSION",
+      "travelerPrompt": "The ATM in the arrival terminal asks whether I want to be billed in my home currency or local euros. Which should I pick?",
+      "travelDocument": "ATM Transaction Advisory",
+      "question": "Which billing currency option should travelers select at overseas terminals?",
+      "options": [
+        "Always choose your home currency because it is easier to read.",
+        "Always choose to be billed in the local currency to avoid expensive Dynamic Currency Conversion (DCC) mark-ups.",
+        "Card transactions are free regardless of the currency option chosen."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Always choose to be billed in the local currency to avoid expensive Dynamic Currency Conversion (DCC) mark-ups.",
+      "explanation": "Selecting the local currency avoids high DCC fees and provides the user with genuine interbank foreign exchange rates.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l64_q3",
+      "level": 64,
+      "travelContext": "FERRY TERMINAL & CROSS-BORDER VEHICLES",
+      "travelerPrompt": "We are boarding the vehicle ferry to cross the international channel. What documents must the driver show at port security?",
+      "travelDocument": "Ferry Vehicle Pass & Registration Book",
+      "question": "What documents must be presented when boarding a cross-border car ferry?",
+      "options": [
+        "Only your car keys and a parking ticket.",
+        "Passports for all passengers, vehicle registration logbook, and proof of international motor insurance.",
+        "A written recommendation letter from your neighborhood police station."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Passports for all passengers, vehicle registration logbook, and proof of international motor insurance.",
+      "explanation": "Comprehensive documentation (all passports, vehicle registration, and insurance) is required for international vehicle embarkation.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l65_q1",
+      "level": 65,
+      "travelContext": "AIRPORT CHECK-IN & BAGGAGE ROUTING",
+      "travelerPrompt": "My connection in Frankfurt departs in 45 minutes from Concourse B. Can my bags be checked straight through to Berlin?",
+      "travelDocument": "Baggage Claim Stub & Boarding Pass",
+      "question": "How should the check-in agent instruct the passenger with a tight connection?",
+      "options": [
+        "Certainly! I have checked your luggage straight through to Berlin. Here are your passes; please take the expedited transit lane to Concourse B Gate 14.",
+        "You have 45 minutes, run to baggage claim in Frankfurt and re-check it yourself.",
+        "Just go to the gate and ask someone there if your bags made it."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Certainly! I have checked your luggage straight through to Berlin. Here are your passes; please take the expedited transit lane to Concourse B Gate 14.",
+      "explanation": "Confirming through-check baggage routing and providing clear concourse directions with expedited lane access is exemplary desk service.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l65_q2",
+      "level": 65,
+      "travelContext": "BORDER CONTROL & CUSTOMS DECLARATION",
+      "travelerPrompt": "I am traveling with vacuum-packed cured ham and artisanal cheeses gifted by family. Do I need to declare these at customs?",
+      "travelDocument": "Customs Declaration Card",
+      "question": "Select the most professional border agent guidance regarding food items:",
+      "options": [
+        "If it is vacuum packed you do not need to tell anyone, just walk through.",
+        "Yes, all cured meats and dairy products must be declared on your customs card so our biosecurity inspector can verify compliance.",
+        "Food is strictly prohibited and you will be arrested if you bring it in."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Yes, all cured meats and dairy products must be declared on your customs card so our biosecurity inspector can verify compliance.",
+      "explanation": "Instructing the traveler to declare items on their customs form allows official agricultural screening without incurring penalties.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l65_q3",
+      "level": 65,
+      "travelContext": "PASSPORT CONTROL & TRANSIT VISAS",
+      "travelerPrompt": "We have an 8-hour layover in Tokyo Narita before our Sydney flight. Can we exit the airport to visit the town without a pre-arranged visa?",
+      "travelDocument": "Biometric Passport & Onward Ticket",
+      "question": "What is the accurate travel advice for transit passengers seeking airport exit?",
+      "options": [
+        "Nobody is ever allowed to leave the airport on an international ticket.",
+        "You can request a temporary Shore Pass at immigration with proof of onward departure within 72 hours and 6 months passport validity.",
+        "You can just walk out through baggage exit without speaking to immigration."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "You can request a temporary Shore Pass at immigration with proof of onward departure within 72 hours and 6 months passport validity.",
+      "explanation": "Accurately citing shore pass criteria (72 hours departure window and valid passport) enables safe transit exploration.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l66_q1",
+      "level": 66,
+      "travelContext": "HOTEL CONCIERGE & LATE ARRIVAL",
+      "travelerPrompt": "Our flight was severely delayed and we will not reach the hotel until 2:30 AM. Will our room still be available?",
+      "travelDocument": "Hotel Booking Voucher",
+      "question": "How should the concierge reassure a delayed international traveler?",
+      "options": [
+        "Rooms are automatically released at 10 PM so you will lose your booking.",
+        "Yes, your reservation is guaranteed by credit card through the night audit, and I will notify the night manager to pre-encode your keys.",
+        "You must pay an extra night surcharge if you arrive after midnight."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Yes, your reservation is guaranteed by credit card through the night audit, and I will notify the night manager to pre-encode your keys.",
+      "explanation": "Assuring the guest of their credit card guarantee and noting the night audit prevents unnecessary travel anxiety.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l66_q2",
+      "level": 66,
+      "travelContext": "LOST LUGGAGE & PROPERTY IRREGULARITY",
+      "travelerPrompt": "Our baggage carousel has cleared and my checked suitcase never arrived. What do I need to do to track it down?",
+      "travelDocument": "Baggage Claim Tag",
+      "question": "Which procedure must be executed for missing checked baggage?",
+      "options": [
+        "Wait at the airport until tomorrow morning to see if the bag arrives.",
+        "File a Property Irregularity Report (PIR) using your baggage claim tag so we can track it via WorldTracer and arrange hotel delivery.",
+        "Buy new clothes immediately and send the receipts without filing an airport report."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "File a Property Irregularity Report (PIR) using your baggage claim tag so we can track it via WorldTracer and arrange hotel delivery.",
+      "explanation": "Filing a formal PIR with the baggage claim tag is the essential first step for international airline baggage recovery.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l66_q3",
+      "level": 66,
+      "travelContext": "RAIL TRANSIT & PASS VALIDATION",
+      "travelerPrompt": "Does our Eurail Global Pass allow us to hop directly onto the high-speed TGV train to Marseille?",
+      "travelDocument": "Eurail Pass & Seat Reservation",
+      "question": "How should the station agent explain high-speed rail pass rules?",
+      "options": [
+        "You can board any train you like without any tickets or reservations.",
+        "Your pass covers the fare, but high-speed TGV trains require a mandatory seat reservation before boarding to avoid fines.",
+        "Rail passes cannot be used on trains on weekdays."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Your pass covers the fare, but high-speed TGV trains require a mandatory seat reservation before boarding to avoid fines.",
+      "explanation": "Clarifying the distinction between base rail coverage and mandatory high-speed seat reservations protects travelers from on-board fines.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l67_q1",
+      "level": 67,
+      "travelContext": "FLIGHT DISRUPTION & PASSENGER RIGHTS",
+      "travelerPrompt": "Our flight to Chicago was cancelled due to mechanical failure. What assistance does the airline provide while we wait for tomorrow's flight?",
+      "travelDocument": "Flight Cancellation Notice & Hotel Voucher",
+      "question": "Choose the appropriate desk agent response during an airline cancellation:",
+      "options": [
+        "You must book your own hotel in the city and try calling our automated customer care line.",
+        "We have rebooked you on tomorrow's flight and are providing complimentary hotel accommodation, airport transfers, and meal vouchers.",
+        "The airline has no responsibility for mechanical issues on the aircraft."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "We have rebooked you on tomorrow's flight and are providing complimentary hotel accommodation, airport transfers, and meal vouchers.",
+      "explanation": "Providing comprehensive duty of care assistance (hotel, transfers, vouchers, confirmed seat) fulfills airline legal obligations.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l67_q2",
+      "level": 67,
+      "travelContext": "CAR RENTAL & INTERNATIONAL PERMITS",
+      "travelerPrompt": "I reserved a rental car online. I have my International Driving Permit with me, but I forgot my domestic license at home. Can I still pick up the car?",
+      "travelDocument": "International Driving Permit & Rental Agreement",
+      "question": "How should the car rental agent handle a driver presenting only an IDP?",
+      "options": [
+        "Yes, an IDP replaces all other licenses so you can drive immediately.",
+        "Unfortunately, the IDP is only valid when presented alongside your original primary physical driver's license.",
+        "You can draw your domestic license on paper and sign it."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Unfortunately, the IDP is only valid when presented alongside your original primary physical driver's license.",
+      "explanation": "Accurately informing the customer that an IDP requires the accompanying national primary license prevents illegal driving operations.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l67_q3",
+      "level": 67,
+      "travelContext": "AIRPORT SECURITY & RESTRICTED LIQUIDS",
+      "travelerPrompt": "Can I take this unopened bottle of olive oil through the security screening checkpoint in my backpack?",
+      "travelDocument": "Security Screening Advisory",
+      "question": "What is the correct guidance for liquids exceeding 100ml at airport security?",
+      "options": [
+        "You can bring any liquid container as long as the seal has never been broken.",
+        "Containers over 100ml cannot pass through cabin baggage security and must be safely packed in your checked luggage.",
+        "Security officers can drink half of the liquid so the rest is allowed through."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Containers over 100ml cannot pass through cabin baggage security and must be safely packed in your checked luggage.",
+      "explanation": "Explaining the 100ml limit and directing the passenger to store larger liquids in checked baggage adheres to global civil aviation security rules.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l68_q1",
+      "level": 68,
+      "travelContext": "TRAVEL HEALTH & VACCINE CERTIFICATION",
+      "travelerPrompt": "Our tour arrives from a designated yellow fever endemic region. When does our vaccination certificate become legally valid for entry?",
+      "travelDocument": "WHO Yellow Fever Certificate",
+      "question": "When does a traveler's Yellow Card vaccine certificate become valid for entry?",
+      "options": [
+        "Instantly as soon as the doctor writes your name on it.",
+        "Exactly 10 days following vaccination, as mandated by WHO border quarantine regulations.",
+        "Only after you have lived in the destination country for six months."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Exactly 10 days following vaccination, as mandated by WHO border quarantine regulations.",
+      "explanation": "Stating the 10-day WHO rule prevents travelers from facing quarantine refusal or entry denial upon arrival.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l68_q2",
+      "level": 68,
+      "travelContext": "FOREIGN CURRENCY & DCC CONVERSION",
+      "travelerPrompt": "The ATM in the arrival terminal asks whether I want to be billed in my home currency or local euros. Which should I pick?",
+      "travelDocument": "ATM Transaction Advisory",
+      "question": "Which billing currency option should travelers select at overseas terminals?",
+      "options": [
+        "Always choose your home currency because it is easier to read.",
+        "Always choose to be billed in the local currency to avoid expensive Dynamic Currency Conversion (DCC) mark-ups.",
+        "Card transactions are free regardless of the currency option chosen."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Always choose to be billed in the local currency to avoid expensive Dynamic Currency Conversion (DCC) mark-ups.",
+      "explanation": "Selecting the local currency avoids high DCC fees and provides the user with genuine interbank foreign exchange rates.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l68_q3",
+      "level": 68,
+      "travelContext": "FERRY TERMINAL & CROSS-BORDER VEHICLES",
+      "travelerPrompt": "We are boarding the vehicle ferry to cross the international channel. What documents must the driver show at port security?",
+      "travelDocument": "Ferry Vehicle Pass & Registration Book",
+      "question": "What documents must be presented when boarding a cross-border car ferry?",
+      "options": [
+        "Only your car keys and a parking ticket.",
+        "Passports for all passengers, vehicle registration logbook, and proof of international motor insurance.",
+        "A written recommendation letter from your neighborhood police station."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Passports for all passengers, vehicle registration logbook, and proof of international motor insurance.",
+      "explanation": "Comprehensive documentation (all passports, vehicle registration, and insurance) is required for international vehicle embarkation.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l69_q1",
+      "level": 69,
+      "travelContext": "AIRPORT CHECK-IN & BAGGAGE ROUTING",
+      "travelerPrompt": "My connection in Frankfurt departs in 45 minutes from Concourse B. Can my bags be checked straight through to Berlin?",
+      "travelDocument": "Baggage Claim Stub & Boarding Pass",
+      "question": "How should the check-in agent instruct the passenger with a tight connection?",
+      "options": [
+        "Certainly! I have checked your luggage straight through to Berlin. Here are your passes; please take the expedited transit lane to Concourse B Gate 14.",
+        "You have 45 minutes, run to baggage claim in Frankfurt and re-check it yourself.",
+        "Just go to the gate and ask someone there if your bags made it."
+      ],
+      "correctAnswerIndex": 0,
+      "correctAnswer": "Certainly! I have checked your luggage straight through to Berlin. Here are your passes; please take the expedited transit lane to Concourse B Gate 14.",
+      "explanation": "Confirming through-check baggage routing and providing clear concourse directions with expedited lane access is exemplary desk service.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l69_q2",
+      "level": 69,
+      "travelContext": "BORDER CONTROL & CUSTOMS DECLARATION",
+      "travelerPrompt": "I am traveling with vacuum-packed cured ham and artisanal cheeses gifted by family. Do I need to declare these at customs?",
+      "travelDocument": "Customs Declaration Card",
+      "question": "Select the most professional border agent guidance regarding food items:",
+      "options": [
+        "If it is vacuum packed you do not need to tell anyone, just walk through.",
+        "Yes, all cured meats and dairy products must be declared on your customs card so our biosecurity inspector can verify compliance.",
+        "Food is strictly prohibited and you will be arrested if you bring it in."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Yes, all cured meats and dairy products must be declared on your customs card so our biosecurity inspector can verify compliance.",
+      "explanation": "Instructing the traveler to declare items on their customs form allows official agricultural screening without incurring penalties.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l69_q3",
+      "level": 69,
+      "travelContext": "PASSPORT CONTROL & TRANSIT VISAS",
+      "travelerPrompt": "We have an 8-hour layover in Tokyo Narita before our Sydney flight. Can we exit the airport to visit the town without a pre-arranged visa?",
+      "travelDocument": "Biometric Passport & Onward Ticket",
+      "question": "What is the accurate travel advice for transit passengers seeking airport exit?",
+      "options": [
+        "Nobody is ever allowed to leave the airport on an international ticket.",
+        "You can request a temporary Shore Pass at immigration with proof of onward departure within 72 hours and 6 months passport validity.",
+        "You can just walk out through baggage exit without speaking to immigration."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "You can request a temporary Shore Pass at immigration with proof of onward departure within 72 hours and 6 months passport validity.",
+      "explanation": "Accurately citing shore pass criteria (72 hours departure window and valid passport) enables safe transit exploration.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l70_q1",
+      "level": 70,
+      "travelContext": "HOTEL CONCIERGE & LATE ARRIVAL",
+      "travelerPrompt": "Our flight was severely delayed and we will not reach the hotel until 2:30 AM. Will our room still be available?",
+      "travelDocument": "Hotel Booking Voucher",
+      "question": "How should the concierge reassure a delayed international traveler?",
+      "options": [
+        "Rooms are automatically released at 10 PM so you will lose your booking.",
+        "Yes, your reservation is guaranteed by credit card through the night audit, and I will notify the night manager to pre-encode your keys.",
+        "You must pay an extra night surcharge if you arrive after midnight."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Yes, your reservation is guaranteed by credit card through the night audit, and I will notify the night manager to pre-encode your keys.",
+      "explanation": "Assuring the guest of their credit card guarantee and noting the night audit prevents unnecessary travel anxiety.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l70_q2",
+      "level": 70,
+      "travelContext": "LOST LUGGAGE & PROPERTY IRREGULARITY",
+      "travelerPrompt": "Our baggage carousel has cleared and my checked suitcase never arrived. What do I need to do to track it down?",
+      "travelDocument": "Baggage Claim Tag",
+      "question": "Which procedure must be executed for missing checked baggage?",
+      "options": [
+        "Wait at the airport until tomorrow morning to see if the bag arrives.",
+        "File a Property Irregularity Report (PIR) using your baggage claim tag so we can track it via WorldTracer and arrange hotel delivery.",
+        "Buy new clothes immediately and send the receipts without filing an airport report."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "File a Property Irregularity Report (PIR) using your baggage claim tag so we can track it via WorldTracer and arrange hotel delivery.",
+      "explanation": "Filing a formal PIR with the baggage claim tag is the essential first step for international airline baggage recovery.",
+      "deskScore": 5
+    },
+    {
+      "id": "td_practice_l70_q3",
+      "level": 70,
+      "travelContext": "RAIL TRANSIT & PASS VALIDATION",
+      "travelerPrompt": "Does our Eurail Global Pass allow us to hop directly onto the high-speed TGV train to Marseille?",
+      "travelDocument": "Eurail Pass & Seat Reservation",
+      "question": "How should the station agent explain high-speed rail pass rules?",
+      "options": [
+        "You can board any train you like without any tickets or reservations.",
+        "Your pass covers the fare, but high-speed TGV trains require a mandatory seat reservation before boarding to avoid fines.",
+        "Rail passes cannot be used on trains on weekdays."
+      ],
+      "correctAnswerIndex": 1,
+      "correctAnswer": "Your pass covers the fare, but high-speed TGV trains require a mandatory seat reservation before boarding to avoid fines.",
+      "explanation": "Clarifying the distinction between base rail coverage and mandatory high-speed seat reservations protects travelers from on-board fines.",
+      "deskScore": 5
+    }
+  ]
+}

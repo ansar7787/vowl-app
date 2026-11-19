@@ -73,6 +73,8 @@ import 'package:vowl/features/roleplay/medical_consult/presentation/pages/medica
 import 'package:vowl/features/roleplay/medical_consult/presentation/pages/medical_consult_practice_screen.dart';
 import 'package:vowl/features/roleplay/gourmet_order/presentation/pages/gourmet_order_learn_screen.dart';
 import 'package:vowl/features/roleplay/gourmet_order/presentation/pages/gourmet_order_practice_screen.dart';
+import 'package:vowl/features/roleplay/travel_desk/presentation/pages/travel_desk_learn_screen.dart';
+import 'package:vowl/features/roleplay/travel_desk/presentation/pages/travel_desk_practice_screen.dart';
 import 'package:vowl/features/listening/presentation/bloc/listening_bloc.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_level_screen.dart';
 import 'package:vowl/features/profile/presentation/pages/adventure_xp_screen.dart';
@@ -1053,6 +1055,24 @@ void main() {
       final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
 
       expect(page.child, isA<GourmetOrderPracticeScreen>());
+    });
+
+    test('resolves /learn route for travelDesk', () {
+      final learnRoute = findRoute(GameRoutes.learnRoute);
+      final state =
+          createMockState('/learn?category=roleplay&gameType=travelDesk&level=5');
+      final page = learnRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<TravelDeskLearnScreen>());
+    });
+
+    test('resolves /practice route for travelDesk', () {
+      final practiceRoute = findRoute(GameRoutes.practiceRoute);
+      final state =
+          createMockState('/practice?category=roleplay&gameType=travelDesk&level=5');
+      final page = practiceRoute.pageBuilder!(mockContext, state) as CustomTransitionPage;
+
+      expect(page.child, isA<TravelDeskPracticeScreen>());
     });
   });
 }

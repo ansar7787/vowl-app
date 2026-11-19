@@ -1,0 +1,698 @@
+{
+  "gameType": "travelDesk",
+  "batchIndex": 16,
+  "levels": "151-160",
+  "quests": [
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I completely see your point about the cut-off time, but our flight was delayed by the airline, not by us.",
+      "itinerary": [
+        "Grand Hotel Duty Manager",
+        "Grand Hotel Restaurant Host",
+        "Grand Hotel Bell Desk",
+        "Grand Hotel Housekeeping"
+      ],
+      "options": [
+        "Duty Manager",
+        "Restaurant Host",
+        "Bell Desk",
+        "Housekeeping"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "The guest concedes the rule but presents a fact that might justify an exception.",
+      "explanation": "A duty manager can weigh the circumstances and waive a late-arrival penalty. Front-desk clerks often must follow the written rule.",
+      "id": "td_l151_q1",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I'm not trying to be difficult, but the invoice lists a service we never used.",
+      "itinerary": [
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Front Desk Cashier",
+        "Grand Hotel Spa Reception",
+        "Grand Hotel Bell Desk"
+      ],
+      "options": [
+        "Housekeeping",
+        "Front Desk Cashier",
+        "Spa Reception",
+        "Bell Desk"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A calm disagreement about a bill is still a billing dispute.",
+      "explanation": "The cashier issued the invoice and can correct an error on it. Other departments don't have billing access.",
+      "id": "td_l151_q2",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I do take on board that you're busy, but we've been standing here for twenty-five minutes without being seated.",
+      "itinerary": [
+        "Riverside Bistro Restaurant Manager",
+        "Riverside Bistro Cloakroom",
+        "Riverside Bistro Kitchen",
+        "Riverside Bistro Bar Staff"
+      ],
+      "options": [
+        "Restaurant Manager",
+        "Cloakroom",
+        "Kitchen",
+        "Bar Staff"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Acknowledging the staff's workload doesn't remove the need to raise the wait.",
+      "explanation": "The manager can review seating and offer a solution. Kitchen staff have no control over the waiting list.",
+      "id": "td_l151_q3",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I hear what you're saying about seasonal pricing, but the website still shows the lower rate.",
+      "itinerary": [
+        "Grand Hotel Bell Desk",
+        "Grand Hotel Spa Reception",
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Reservations Manager"
+      ],
+      "options": [
+        "Bell Desk",
+        "Spa Reception",
+        "Housekeeping",
+        "Reservations Manager"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "A pricing discrepancy between the site and the desk needs someone who can check bookings.",
+      "explanation": "The reservations manager can check the online rate at the time of booking and honour it if there was an error.",
+      "id": "td_l152_q1",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I know rules are rules, but the sign outside clearly said free cancellation up to noon.",
+      "itinerary": [
+        "Tour Company Souvenir Stand",
+        "Tour Company Office Manager",
+        "Tour Company Bus Driver",
+        "Tour Company Ticket Machine"
+      ],
+      "options": [
+        "Souvenir Stand",
+        "Office Manager",
+        "Bus Driver",
+        "Ticket Machine"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A stated policy that conflicts with what's being enforced needs a manager to review.",
+      "explanation": "The office manager can check the posted terms and honour them. A driver has no authority over refund policy.",
+      "id": "td_l152_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I appreciate that's the standard route, but it would take us past the flooded road we were warned about.",
+      "itinerary": [
+        "Coach Company Route Planning Desk",
+        "Coach Company Roadside Cafe",
+        "Coach Company Ticket Office",
+        "Coach Company Driver Alone"
+      ],
+      "options": [
+        "Route Planning Desk",
+        "Roadside Cafe",
+        "Ticket Office",
+        "Driver Alone"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "A safety concern about the route needs someone who plans routes, not just drives them.",
+      "explanation": "The route planning desk can check conditions and adjust the route. A driver may not have authority to reroute alone.",
+      "id": "td_l152_q3",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I don't doubt the policy exists, but nobody explained it when we made this reservation over the phone.",
+      "itinerary": [
+        "Grand Hotel Spa Reception",
+        "Grand Hotel Reservations Manager",
+        "Grand Hotel Bell Desk",
+        "Grand Hotel Housekeeping"
+      ],
+      "options": [
+        "Spa Reception",
+        "Reservations Manager",
+        "Bell Desk",
+        "Housekeeping"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A dispute about what was said at booking time needs whoever manages bookings.",
+      "explanation": "The reservations manager can review the call notes and resolve the disagreement fairly.",
+      "id": "td_l153_q1",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I understand you can't just give refunds, but this genuinely wasn't our mistake.",
+      "itinerary": [
+        "Airline Check-In Agent",
+        "Airline Baggage Claim",
+        "Airline Duty-Free Shop",
+        "Airline Customer Relations Desk"
+      ],
+      "options": [
+        "Check-In Agent",
+        "Baggage Claim",
+        "Duty-Free Shop",
+        "Customer Relations Desk"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Escalate past the front-line agent when the case needs real review.",
+      "explanation": "Customer relations can review the case properly and decide on compensation. A check-in agent usually can't authorise refunds.",
+      "id": "td_l153_q2",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I get that overbooking happens, but we specifically chose this hotel for the view we paid extra for.",
+      "itinerary": [
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Duty Manager",
+        "Grand Hotel Gym",
+        "Grand Hotel Bell Desk"
+      ],
+      "options": [
+        "Housekeeping",
+        "Duty Manager",
+        "Gym",
+        "Bell Desk"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "The complaint concedes the practice but insists on the paid-for detail.",
+      "explanation": "A duty manager can find a comparable view room or offer suitable compensation.",
+      "id": "td_l153_q3",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I hate to labour the point, but this is the third time we've asked about the missing towels.",
+      "itinerary": [
+        "Grand Hotel Restaurant",
+        "Grand Hotel Housekeeping Again",
+        "Grand Hotel Duty Manager",
+        "Grand Hotel Bell Desk"
+      ],
+      "options": [
+        "Restaurant",
+        "Housekeeping Again",
+        "Duty Manager",
+        "Bell Desk"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Three failed requests to the same department call for escalation.",
+      "explanation": "A duty manager can ensure the issue is actually resolved this time. Asking housekeeping a fourth time hasn't worked so far.",
+      "id": "td_l154_q1",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I realise flights get delayed, but this is the second cancellation on the same route this month.",
+      "itinerary": [
+        "Airline Customer Relations Desk",
+        "Airline Security Control",
+        "Airline Duty-Free Shop",
+        "Airline Check-In Agent"
+      ],
+      "options": [
+        "Customer Relations Desk",
+        "Security Control",
+        "Duty-Free Shop",
+        "Check-In Agent"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "A pattern of failures deserves a proper review, not just another rebooking.",
+      "explanation": "Customer relations can look at the pattern and consider real compensation. A check-in agent only handles today's flight.",
+      "id": "td_l154_q2",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "With all due respect, we specified a ground-floor room twice, and this is the second time we've been given stairs.",
+      "itinerary": [
+        "Grand Hotel Gym",
+        "Grand Hotel Restaurant",
+        "Grand Hotel Front Desk Manager",
+        "Grand Hotel Bell Desk"
+      ],
+      "options": [
+        "Gym",
+        "Restaurant",
+        "Front Desk Manager",
+        "Bell Desk"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A repeated mistake on a stated need needs someone senior enough to fix it properly.",
+      "explanation": "The front desk manager can guarantee the correct room this time. Repeating the request to a clerk hasn't worked.",
+      "id": "td_l154_q3",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I completely understand safety comes first, but is there any way to speed up the security check for a connecting flight?",
+      "itinerary": [
+        "Security Control Duty Supervisor",
+        "Security Control Baggage Claim",
+        "Security Control Currency Exchange",
+        "Security Control Duty-Free Shop"
+      ],
+      "options": [
+        "Duty Supervisor",
+        "Baggage Claim",
+        "Currency Exchange",
+        "Duty-Free Shop"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Acknowledging the reason for a rule can still be followed by a reasonable request.",
+      "explanation": "A supervisor can prioritise a passenger at risk of missing a connection. Shops have no influence over the queue.",
+      "id": "td_l155_q1",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I know you're following the airline's rules, but I paid for extra legroom and this seat doesn't have it.",
+      "itinerary": [
+        "Boarding Gate Currency Exchange",
+        "Boarding Gate Duty-Free Shop",
+        "Boarding Gate Baggage Claim",
+        "Boarding Gate Gate Supervisor"
+      ],
+      "options": [
+        "Currency Exchange",
+        "Duty-Free Shop",
+        "Baggage Claim",
+        "Gate Supervisor"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "A paid feature that wasn't delivered needs someone who can check and correct the seating.",
+      "explanation": "A gate supervisor can verify the seat map and fix the allocation. Other counters can't access seating records.",
+      "id": "td_l155_q2",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I appreciate the museum has to close on time, but we only got in twenty minutes ago because of the queue outside.",
+      "itinerary": [
+        "Museum Quarter Cafe",
+        "Museum Quarter Gift Shop",
+        "Museum Quarter Visitor Services Manager",
+        "Museum Quarter Cloakroom"
+      ],
+      "options": [
+        "Cafe",
+        "Gift Shop",
+        "Visitor Services Manager",
+        "Cloakroom"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A complaint about lost time due to the venue's own queue needs a decision-maker.",
+      "explanation": "Visitor services can offer a partial refund or a free return visit. The gift shop and cafe have no such authority.",
+      "id": "td_l155_q3",
+      "travelDocuments": "Museum Pass"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I realise it's a busy weekend, but we did book this table two weeks in advance.",
+      "itinerary": [
+        "Riverside Bistro Kitchen",
+        "Riverside Bistro Delivery Entrance",
+        "Riverside Bistro Restaurant Manager",
+        "Riverside Bistro Cloakroom"
+      ],
+      "options": [
+        "Kitchen",
+        "Delivery Entrance",
+        "Restaurant Manager",
+        "Cloakroom"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A firm reminder about an advance booking still routes to the same person.",
+      "explanation": "The manager can check the reservation system and correct any error. Kitchen staff aren't involved in table bookings.",
+      "id": "td_l156_q1",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I don't wish to be that guest, but the room next door has been playing loud music since midnight.",
+      "itinerary": [
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Spa Reception",
+        "Grand Hotel Bell Desk",
+        "Grand Hotel Night Manager"
+      ],
+      "options": [
+        "Housekeeping",
+        "Spa Reception",
+        "Bell Desk",
+        "Night Manager"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Late-night disturbances need someone on duty with authority to act.",
+      "explanation": "The night manager can address noisy guests at any hour. Housekeeping and the spa aren't staffed for this.",
+      "id": "td_l156_q2",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I completely accept the delay wasn't your fault, but I do need to know what happens to my connecting flight.",
+      "itinerary": [
+        "Airline Currency Exchange",
+        "Airline Transfer Desk",
+        "Airline Baggage Claim",
+        "Airline Duty-Free Shop"
+      ],
+      "options": [
+        "Currency Exchange",
+        "Transfer Desk",
+        "Baggage Claim",
+        "Duty-Free Shop"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Accepting the cause of a delay doesn't remove the need for a solution.",
+      "explanation": "The transfer desk can rebook a missed connection. Shops and currency counters have no access to flight records.",
+      "id": "td_l156_q3",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I know it's a common question, but could you remind me whether tap water is safe to drink here?",
+      "itinerary": [
+        "Tourist Information Centre Currency Exchange",
+        "Tourist Information Centre Staff Desk",
+        "Tourist Information Centre Bank",
+        "Tourist Information Centre Souvenir Shop"
+      ],
+      "options": [
+        "Currency Exchange",
+        "Staff Desk",
+        "Bank",
+        "Souvenir Shop"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "A basic, practical safety question suits general visitor information.",
+      "explanation": "Tourist information staff can confirm local water safety and other practical facts.",
+      "id": "td_l157_q1",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "This might be a silly question, but is it rude to keep the change when tipping here?",
+      "itinerary": [
+        "Tourist Information Centre Souvenir Shop",
+        "Tourist Information Centre Currency Exchange",
+        "Tourist Information Centre Bank Branch",
+        "Tourist Information Centre Staff Desk"
+      ],
+      "options": [
+        "Souvenir Shop",
+        "Currency Exchange",
+        "Bank Branch",
+        "Staff Desk"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Cultural questions, however small they feel, suit the same information desk.",
+      "explanation": "Tourist information can explain local tipping customs clearly. A bank has no cultural knowledge to offer.",
+      "id": "td_l157_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I hope this isn't too much trouble, but could someone check whether my visa allows multiple entries?",
+      "itinerary": [
+        "Consulate Currency Exchange",
+        "Consulate Tourist Information Centre",
+        "Consulate Visa Information Desk",
+        "Consulate Bank Branch"
+      ],
+      "options": [
+        "Currency Exchange",
+        "Tourist Information Centre",
+        "Visa Information Desk",
+        "Bank Branch"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "Visa rules are legal matters, not general travel advice.",
+      "explanation": "The consulate's visa desk can confirm your entry conditions accurately. A tourist office might guess wrong.",
+      "id": "td_l157_q3",
+      "travelDocuments": "Passport"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I hear that the tour is technically full, but we did reserve our spots online last week.",
+      "itinerary": [
+        "Tour Company Booking Office",
+        "Tour Company Roadside Cafe",
+        "Tour Company Souvenir Stand",
+        "Tour Company Bus Driver"
+      ],
+      "options": [
+        "Booking Office",
+        "Roadside Cafe",
+        "Souvenir Stand",
+        "Bus Driver"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "A prior confirmed booking outranks a walk-up 'full' sign.",
+      "explanation": "The booking office can check the reservation list and honour a confirmed spot. The driver can't verify online bookings.",
+      "id": "td_l158_q1",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I understand the show has started, but we were told latecomers could be seated after the first number.",
+      "itinerary": [
+        "Theatre Box Office",
+        "Theatre Front-of-House Manager",
+        "Theatre Backstage Crew",
+        "Theatre Cloakroom"
+      ],
+      "options": [
+        "Box Office",
+        "Front-of-House Manager",
+        "Backstage Crew",
+        "Cloakroom"
+      ],
+      "correctAnswerIndex": 1,
+      "hint": "Seating decisions during a show belong to front-of-house staff.",
+      "explanation": "The front-of-house manager decides when latecomers can be seated. The box office only sells tickets.",
+      "id": "td_l158_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I do take your point about closing time, but we still have thirty minutes according to our tickets.",
+      "itinerary": [
+        "Museum Quarter Cafe",
+        "Museum Quarter Cloakroom",
+        "Museum Quarter Visitor Services Desk",
+        "Museum Quarter Gift Shop"
+      ],
+      "options": [
+        "Cafe",
+        "Cloakroom",
+        "Visitor Services Desk",
+        "Gift Shop"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A stated time on a ticket is worth confirming with staff who can check it.",
+      "explanation": "Visitor services can confirm the correct closing time and any discrepancy. A gift shop has no authority over entry times.",
+      "id": "td_l158_q3",
+      "travelDocuments": "Museum Pass"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I get why the fee applies generally, but our case was clearly the airline's fault, not ours.",
+      "itinerary": [
+        "Airline Customer Relations",
+        "Airline Currency Exchange",
+        "Airline Duty-Free Shop",
+        "Airline Check-In Agent"
+      ],
+      "options": [
+        "Customer Relations",
+        "Currency Exchange",
+        "Duty-Free Shop",
+        "Check-In Agent"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "A fee dispute where the traveler wasn't at fault needs a proper review.",
+      "explanation": "Customer relations can review the circumstances and waive the fee if justified. A check-in agent usually can't overrule policy.",
+      "id": "td_l159_q1",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I appreciate you can't change the itinerary alone, but is there someone who could approve a small detour?",
+      "itinerary": [
+        "Tour Company Roadside Cafe",
+        "Tour Company Ticket Office",
+        "Tour Company Bus Driver",
+        "Tour Company Tour Manager"
+      ],
+      "options": [
+        "Roadside Cafe",
+        "Ticket Office",
+        "Bus Driver",
+        "Tour Manager"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "The driver's limits are acknowledged, so look for whoever has more authority.",
+      "explanation": "A tour manager can approve changes to the planned route. Drivers usually must follow the set itinerary.",
+      "id": "td_l159_q2",
+      "travelDocuments": "City Map"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I know check-out was an hour ago, but our flight isn't until tonight and we've nowhere else to wait.",
+      "itinerary": [
+        "Grand Hotel Spa Reception",
+        "Grand Hotel Bell Desk",
+        "Grand Hotel Housekeeping",
+        "Grand Hotel Front Desk"
+      ],
+      "options": [
+        "Spa Reception",
+        "Bell Desk",
+        "Housekeeping",
+        "Front Desk"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "The stated time has passed, but the desk may still offer a practical solution.",
+      "explanation": "The front desk can offer luggage storage or a day-use option even after check-out. Housekeeping can't make that offer.",
+      "id": "td_l159_q3",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I completely understand supply issues happen, but we specifically chose this hotel for the advertised pool.",
+      "itinerary": [
+        "Grand Hotel Duty Manager",
+        "Grand Hotel Bell Desk",
+        "Grand Hotel Gym",
+        "Grand Hotel Housekeeping"
+      ],
+      "options": [
+        "Duty Manager",
+        "Bell Desk",
+        "Gym",
+        "Housekeeping"
+      ],
+      "correctAnswerIndex": 0,
+      "hint": "Accepting the cause doesn't remove the need for a resolution to a paid feature.",
+      "explanation": "A duty manager can offer alternatives or compensation for an advertised amenity that's unavailable.",
+      "id": "td_l160_q1",
+      "travelDocuments": "Hotel Reservation"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I realise it's out of your hands, but could you at least find out when the connecting flight will actually depart?",
+      "itinerary": [
+        "Airport Baggage Claim",
+        "Airport Duty-Free Shop",
+        "Airport Airline Information Desk",
+        "Airport Currency Exchange"
+      ],
+      "options": [
+        "Baggage Claim",
+        "Duty-Free Shop",
+        "Airline Information Desk",
+        "Currency Exchange"
+      ],
+      "correctAnswerIndex": 2,
+      "hint": "A calm request for updated information still needs the airline's own desk.",
+      "explanation": "The airline information desk has live flight data. Shops and exchange counters don't.",
+      "id": "td_l160_q2",
+      "travelDocuments": "Boarding Pass"
+    },
+    {
+      "instruction": "Choose the most professional way to move this forward.",
+      "subtype": "travelDesk",
+      "interactionType": "dialogue",
+      "prompt": "I know you're not the one who made the booking mistake, but someone needs to sort out our seats.",
+      "itinerary": [
+        "Airline Baggage Claim",
+        "Airline Duty-Free Shop",
+        "Airline Currency Exchange",
+        "Airline Gate Supervisor"
+      ],
+      "options": [
+        "Baggage Claim",
+        "Duty-Free Shop",
+        "Currency Exchange",
+        "Gate Supervisor"
+      ],
+      "correctAnswerIndex": 3,
+      "hint": "Acknowledging the staff aren't to blame doesn't mean the problem shouldn't be fixed.",
+      "explanation": "A gate supervisor can correct a seating error before boarding. The other counters have no access to seat assignments.",
+      "id": "td_l160_q3",
+      "travelDocuments": "Boarding Pass"
+    }
+  ],
+  "phase": "mastery"
+}
