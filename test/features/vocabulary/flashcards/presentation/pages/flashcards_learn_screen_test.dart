@@ -104,6 +104,8 @@ void main() {
         expect(find.byType(FlashcardsLearnScreen), findsOneWidget);
         expect(find.text('AUTHENTIC'), findsWidgets);
         expect(find.text('Compare Words'), findsOneWidget);
+        expect(find.text('Tap to Flip'), findsOneWidget);
+        expect(find.text('3D DECK'), findsNothing);
         expect(find.text('Flip for Meaning & Context'), findsOneWidget);
 
         // Verify tap-to-speak syllable chips
@@ -127,9 +129,9 @@ void main() {
         await tester.pumpAndSettle();
         expect(find.text('Pronunciation Verified ✓'), findsOneWidget);
 
-        // Flip the card to back face
-        await tester.ensureVisible(find.text('Flip for Meaning & Context'));
-        await tester.tap(find.text('Flip for Meaning & Context'));
+        // Flip the card to back face by tapping the Tap to Flip badge or card body
+        await tester.ensureVisible(find.text('Tap to Flip'));
+        await tester.tap(find.text('Tap to Flip'));
         await tester.pumpAndSettle();
 
         expect(find.text('NATURAL COLLOCATIONS'), findsOneWidget);
@@ -141,6 +143,25 @@ void main() {
         await tester.pumpAndSettle();
         expect(find.text('Flip for Meaning & Context'), findsOneWidget);
 
+        // Verify horizontal swipe navigation between cards in cluster
+        // Swipe Left: transitions from Word 1 (AUTHENTIC) to Word 2 (GENUINE)
+        await tester.fling(
+          find.text('AUTHENTIC').first,
+          const Offset(-300, 0),
+          1000,
+        );
+        await tester.pumpAndSettle();
+        expect(find.text('GENUINE'), findsWidgets);
+
+        // Swipe Right: transitions back from Word 2 (GENUINE) to Word 1 (AUTHENTIC)
+        await tester.fling(
+          find.text('GENUINE').first,
+          const Offset(300, 0),
+          1000,
+        );
+        await tester.pumpAndSettle();
+        expect(find.text('AUTHENTIC'), findsWidgets);
+
         // Tap "Compare Words" to view the Nuance Duel / Cluster Contrast Matrix
         await tester.ensureVisible(find.text('Compare Words'));
         await tester.tap(find.text('Compare Words'));
@@ -148,7 +169,8 @@ void main() {
 
         expect(find.text('HOW TO CHOOSE'), findsOneWidget);
         expect(find.text('Word Usage Distinction'), findsOneWidget);
-        expect(find.text('Start Guided Practice ➔'), findsOneWidget);
+        expect(find.text('Start Guided Practice'), findsOneWidget);
+        expect(find.byIcon(Icons.arrow_forward_ios_rounded), findsWidgets);
         expect(find.text('Cards'), findsOneWidget);
 
         // Toggle back to individual card view via "Cards" button

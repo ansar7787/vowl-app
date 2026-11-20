@@ -57,7 +57,7 @@ class FlashcardClusterContrastCard extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
                 child: Icon(
-                  Icons.compare_arrows_rounded,
+                  Icons.swap_horiz_rounded,
                   size: 20.r,
                   color: isDark ? AppColors.indigo400 : AppColors.indigo600,
                 ),
@@ -255,15 +255,28 @@ class FlashcardClusterContrastCard extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Center(
-                child: Text(
-                  'Start Guided Practice ➔',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 15.sp,
-                    fontWeight: FontWeight.w800,
-                    color: Colors.white,
-                  ),
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Start Guided Practice',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w800,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(width: 8.w),
+                    Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      size: 14.r,
+                      color: Colors.white,
+                    ),
+                  ],
                 ),
               ),
             ),

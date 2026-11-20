@@ -110,32 +110,36 @@ class FlashcardLearnView extends StatelessWidget {
       curve: Curves.easeInOutCubic,
       builder: (context, val, child) {
         final isBack = val >= 0.5;
-        return Transform(
-          transform: Matrix4.identity()
-            ..setEntry(3, 2, 0.001)
-            ..rotateY(val * pi),
-          alignment: Alignment.center,
-          child: isBack
-              ? Transform(
-                  transform: Matrix4.identity()..rotateY(pi),
-                  alignment: Alignment.center,
-                  child: FlashcardLearnBackFace(
-                    quest: quest,
-                    isDark: isDark,
-                    onFlip: onFlip,
-                    collocations: collocations,
-                    commonMistake: commonMistake,
+        return GestureDetector(
+          onTap: onFlip,
+          behavior: HitTestBehavior.opaque,
+          child: Transform(
+            transform: Matrix4.identity()
+              ..setEntry(3, 2, 0.001)
+              ..rotateY(val * pi),
+            alignment: Alignment.center,
+            child: isBack
+                ? Transform(
+                    transform: Matrix4.identity()..rotateY(pi),
+                    alignment: Alignment.center,
+                    child: FlashcardLearnBackFace(
+                      quest: quest,
+                      isDark: isDark,
+                      onFlip: onFlip,
+                      collocations: collocations,
+                      commonMistake: commonMistake,
+                      contextDomain: contextDomain,
+                      onSpeakExample: onSpeakExample,
+                    ),
+                  )
+                : _buildFrontFace(
+                    context,
+                    syllables: syllables,
+                    stressedIndex: stressedIndex,
                     contextDomain: contextDomain,
-                    onSpeakExample: onSpeakExample,
+                    phonetic: phonetic,
                   ),
-                )
-              : _buildFrontFace(
-                  context,
-                  syllables: syllables,
-                  stressedIndex: stressedIndex,
-                  contextDomain: contextDomain,
-                  phonetic: phonetic,
-                ),
+          ),
         );
       },
     );
@@ -193,33 +197,48 @@ class FlashcardLearnView extends StatelessWidget {
                   );
                 }),
               ),
-              // 3D Flip Hint Badge
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
-                decoration: BoxDecoration(
-                  color: isDark ? AppColors.slate800 : AppColors.slate100,
-                  borderRadius: BorderRadius.circular(8.r),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      Icons.sync_alt_rounded,
-                      size: 12.r,
-                      color: isDark ? AppColors.slate400 : AppColors.slate600,
+              // Tap to Flip Cue Badge
+              ScaleButton(
+                onTap: onFlip,
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                  decoration: BoxDecoration(
+                    color: isDark
+                        ? AppColors.indigo500.withValues(alpha: 0.18)
+                        : AppColors.indigo500.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(8.r),
+                    border: Border.all(
+                      color: isDark
+                          ? AppColors.indigo500.withValues(alpha: 0.35)
+                          : AppColors.indigo500.withValues(alpha: 0.25),
+                      width: 1,
                     ),
-                    SizedBox(width: 4.w),
-                    Text(
-                      '3D DECK',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.sp,
-                        fontWeight: FontWeight.w800,
-                        letterSpacing: 0.8,
-                        color: isDark ? AppColors.slate400 : AppColors.slate600,
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.touch_app_rounded,
+                        size: 13.r,
+                        color: isDark
+                            ? AppColors.indigo400
+                            : AppColors.indigo600,
                       ),
-                    ),
-                  ],
+                      SizedBox(width: 4.w),
+                      Text(
+                        'Tap to Flip',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 10.sp,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 0.5,
+                          color: isDark
+                              ? AppColors.indigo400
+                              : AppColors.indigo600,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
@@ -328,17 +347,19 @@ class FlashcardLearnView extends StatelessWidget {
                   color: isDark ? AppColors.slate700 : AppColors.slate300,
                 ),
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.flip_rounded,
-                    size: 18.r,
-                    color: isDark ? AppColors.indigo400 : AppColors.indigo600,
-                  ),
-                  SizedBox(width: 8.w),
-                  Flexible(
-                    child: Text(
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.flip_rounded,
+                      size: 18.r,
+                      color: isDark ? AppColors.indigo400 : AppColors.indigo600,
+                    ),
+                    SizedBox(width: 8.w),
+                    Text(
                       'Flip for Meaning & Context',
                       style: TextStyle(
                         fontFamily: 'Outfit',
@@ -349,8 +370,14 @@ class FlashcardLearnView extends StatelessWidget {
                             : AppColors.indigo600,
                       ),
                     ),
-                  ),
-                ],
+                    SizedBox(width: 6.w),
+                    Icon(
+                      Icons.arrow_forward_ios_rounded,
+                      size: 12.r,
+                      color: isDark ? AppColors.indigo400 : AppColors.indigo600,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

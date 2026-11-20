@@ -296,7 +296,7 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
       } else if (_showCollocationStage && !_hasCheckedCollocation) {
         actionLabel = 'Select Partner';
       } else {
-        actionLabel = isLast ? 'Enter Mastery Phase 🏆' : 'Next Exercise ➔';
+        actionLabel = isLast ? 'Enter Mastery Phase 🏆' : 'Next Exercise';
       }
     }
 

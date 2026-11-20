@@ -15,6 +15,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
 import '../widgets/flashcard_cluster_contrast_card.dart';
 import '../widgets/flashcard_learn_view.dart';
+import 'flashcards_learn_fallback_data.dart';
 
 /// 2026 Interactive Learn Phase screen for Vocabulary Flashcards.
 ///
@@ -38,6 +39,7 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
   bool _isLoading = true;
   int _currentIndex = 0;
   bool _showContrastMatrix = false;
+  double _horizontalDragDelta = 0;
 
   @override
   void initState() {
@@ -85,87 +87,7 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
     } catch (_) {
       if (mounted) {
         setState(() {
-          _quests = [
-            PhasedQuest(
-              id: 'FALLBACK_L${widget.level}_1',
-              level: widget.level,
-              word: 'AUTHENTIC',
-              pronunciation: '/ɔːˈθen.tɪk/',
-              definition:
-                  'Genuine, real, and true to original traditions rather than an imitation.',
-              example:
-                  'The chef insisted on using only authentic Italian ingredients for the pasta.',
-              nativeTip:
-                  "Native speakers often describe honest, grounded people as 'very authentic'.",
-              commonMistake:
-                  "Don't confuse 'authentic' with 'original' — an original idea is new; an authentic item is real and genuine.",
-              familyWords: const [
-                'authenticity',
-                'authenticate',
-                'authentically',
-              ],
-              rawExtra: const {
-                'syllables': ['au', 'then', 'tic'],
-                'stressedSyllableIndex': 1,
-                'contextDomain': 'Culinary & Traditions',
-                'collocations': [
-                  'authentic cuisine',
-                  'authentic leadership',
-                  'authentic smile',
-                ],
-              },
-            ),
-            PhasedQuest(
-              id: 'FALLBACK_L${widget.level}_2',
-              level: widget.level,
-              word: 'GENUINE',
-              pronunciation: '/ˈdʒen.ju.ɪn/',
-              definition:
-                  'Truly what something is said to be; honest and sincere.',
-              example:
-                  'Her genuine smile immediately put everyone in the room at ease.',
-              nativeTip:
-                  "Use 'genuine' for sincere feelings or real materials like leather.",
-              commonMistake:
-                  "Don't confuse 'genuine' with 'legitimate' — genuine is sincerity; legitimate is legal validity.",
-              familyWords: const ['genuineness', 'genuinely'],
-              rawExtra: const {
-                'syllables': ['gen', 'u', 'ine'],
-                'stressedSyllableIndex': 0,
-                'contextDomain': 'Character & Sincerity',
-                'collocations': [
-                  'genuine smile',
-                  'genuine leather',
-                  'genuine interest',
-                ],
-              },
-            ),
-            PhasedQuest(
-              id: 'FALLBACK_L${widget.level}_3',
-              level: widget.level,
-              word: 'LEGITIMATE',
-              pronunciation: '/lɪˈdʒɪt.ə.mət/',
-              definition:
-                  'Conforming to the law or rules; valid and justified.',
-              example:
-                  'The committee raised several legitimate concerns regarding public safety.',
-              nativeTip:
-                  "Native speakers shorten this to 'legit' in casual conversation.",
-              commonMistake:
-                  "Don't confuse with 'authentic' — a claim is legitimate (valid), an antique is authentic (real).",
-              familyWords: const ['legitimacy', 'legitimize', 'legitimately'],
-              rawExtra: const {
-                'syllables': ['le', 'git', 'i', 'mate'],
-                'stressedSyllableIndex': 1,
-                'contextDomain': 'Legal & Procedural',
-                'collocations': [
-                  'legitimate concern',
-                  'legitimate business',
-                  'legitimate claim',
-                ],
-              },
-            ),
-          ];
+          _quests = getFlashcardLearnFallbackQuests(widget.level);
           _isLoading = false;
         });
       }
@@ -187,6 +109,18 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
     _isFlippedNotifier.value = !_isFlippedNotifier.value;
     if (di.sl.isRegistered<HapticService>()) {
       di.sl<HapticService>().selection();
+    }
+  }
+
+  void _previousWord() {
+    if (_currentIndex > 0) {
+      if (di.sl.isRegistered<HapticService>()) {
+        di.sl<HapticService>().light();
+      }
+      setState(() {
+        _currentIndex--;
+        _isFlippedNotifier.value = false;
+      });
     }
   }
 
@@ -251,7 +185,7 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
         title: 'Compare Level Words',
         gameType: 'flashcards',
         level: widget.level,
-        actionLabel: 'Start Practice ➔',
+        actionLabel: 'Start Practice',
         onComplete: _finishLearnPhase,
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
@@ -268,8 +202,8 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
 
     final isLast = _currentIndex == _quests.length - 1;
     final actionLabel = isLast
-        ? (_quests.length > 1 ? 'Compare 3 Words ➔' : 'Start Practice ➔')
-        : 'Next Word ➔';
+        ? (_quests.length > 1 ? 'Compare Words' : 'Start Practice')
+        : 'Next Word';
 
     return LearnPhaseScaffold(
       title: 'Word ${_currentIndex + 1} of ${_quests.length}',
@@ -310,7 +244,7 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(
-                            Icons.compare_arrows_rounded,
+                            Icons.swap_horiz_rounded,
                             size: 14.r,
                             color: isDark
                                 ? AppColors.indigo400
@@ -335,31 +269,60 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
                 ),
               ),
             ],
-            ValueListenableBuilder<bool>(
-              valueListenable: _isFlippedNotifier,
-              builder: (context, isFlipped, _) {
-                return ValueListenableBuilder<bool>(
-                  valueListenable: _isSpeakingNotifier,
-                  builder: (context, isSpeaking, _) {
-                    return FlashcardLearnView(
-                      quest: quest,
-                      isFlipped: isFlipped,
-                      isSpeaking: isSpeaking,
-                      isDark: isDark,
-                      onFlip: _flipCard,
-                      clusterIndex: _currentIndex,
-                      clusterTotal: _quests.length,
-                      onSpeakSyllable: (syllable) => _speakText(syllable),
-                      onSpeakFullWord: () {
-                        if (quest.word != null) _speakText(quest.word!);
-                      },
-                      onSpeakExample: () {
-                        if (quest.example != null) _speakText(quest.example!);
-                      },
-                    );
-                  },
-                );
+            GestureDetector(
+              behavior: HitTestBehavior.translucent,
+              onHorizontalDragUpdate: (details) {
+                _horizontalDragDelta += details.primaryDelta ?? 0;
               },
+              onHorizontalDragEnd: (details) {
+                final velocity = details.primaryVelocity ?? 0;
+                if (velocity < -200 || _horizontalDragDelta < -40) {
+                  _nextWord();
+                } else if (velocity > 200 || _horizontalDragDelta > 40) {
+                  _previousWord();
+                }
+                _horizontalDragDelta = 0;
+              },
+              onHorizontalDragCancel: () {
+                _horizontalDragDelta = 0;
+              },
+              child: AnimatedSwitcher(
+                duration: const Duration(milliseconds: 250),
+                transitionBuilder: (child, animation) {
+                  return FadeTransition(opacity: animation, child: child);
+                },
+                child: KeyedSubtree(
+                  key: ValueKey('flashcard_$_currentIndex'),
+                  child: ValueListenableBuilder<bool>(
+                    valueListenable: _isFlippedNotifier,
+                    builder: (context, isFlipped, _) {
+                      return ValueListenableBuilder<bool>(
+                        valueListenable: _isSpeakingNotifier,
+                        builder: (context, isSpeaking, _) {
+                          return FlashcardLearnView(
+                            quest: quest,
+                            isFlipped: isFlipped,
+                            isSpeaking: isSpeaking,
+                            isDark: isDark,
+                            onFlip: _flipCard,
+                            clusterIndex: _currentIndex,
+                            clusterTotal: _quests.length,
+                            onSpeakSyllable: (syllable) => _speakText(syllable),
+                            onSpeakFullWord: () {
+                              if (quest.word != null) _speakText(quest.word!);
+                            },
+                            onSpeakExample: () {
+                              if (quest.example != null) {
+                                _speakText(quest.example!);
+                              }
+                            },
+                          );
+                        },
+                      );
+                    },
+                  ),
+                ),
+              ),
             ),
           ],
         ),

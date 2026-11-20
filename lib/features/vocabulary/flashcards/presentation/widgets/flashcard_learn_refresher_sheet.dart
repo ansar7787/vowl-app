@@ -121,15 +121,28 @@ class FlashcardLearnRefresherSheet extends StatelessWidget {
                   color: AppColors.indigo500,
                   borderRadius: BorderRadius.circular(16.r),
                 ),
-                child: Center(
-                  child: Text(
-                    'Review in Learn Mode ➔',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w700,
-                      color: Colors.white,
-                    ),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Review in Learn Mode',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 15.sp,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                        ),
+                      ),
+                      SizedBox(width: 8.w),
+                      Icon(
+                        Icons.arrow_forward_ios_rounded,
+                        size: 14.r,
+                        color: Colors.white,
+                      ),
+                    ],
                   ),
                 ),
               ),
