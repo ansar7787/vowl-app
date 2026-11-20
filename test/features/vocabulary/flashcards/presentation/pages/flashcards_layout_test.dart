@@ -3,14 +3,20 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:vowl/core/data/models/phased_quest_model.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
+import 'package:vowl/features/vocabulary/flashcards/presentation/controllers/flashcard_controller.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_learn_view.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_practice_chunk_weaver.dart';
+import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_speed_slam_view.dart';
 
 class MockCallbackFunction extends Mock {
   void call();
   void callString(String str);
   void callInt(int val);
 }
+
+class MockHapticService extends Mock implements HapticService {}
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -46,6 +52,19 @@ void main() {
       ],
       'correctCollocationIndex': 0,
     },
+  );
+
+  const testVocabQuest = VocabularyQuest(
+    id: 'VOC_FC_TEST_Q1',
+    word: 'AUTHENTIC',
+    definition: 'Genuine, real, and true to original traditions.',
+    contextSentence:
+        'The chef insisted on using only authentic Italian ingredients.',
+    collocations: ['authentic cuisine'],
+    wrongCollocations: ['authentic weather'],
+    options: ['authentic', 'authoritarian', 'automatic'],
+    difficulty: 1,
+    instruction: 'Slam the natural collocation before the fuse burns down!',
   );
 
   Widget buildResponsiveHarness({
@@ -151,6 +170,34 @@ void main() {
           await tester.pumpAndSettle();
 
           expect(find.text('COMPLETE THE CONTEXT SENTENCE'), findsOneWidget);
+          expect(tester.takeException(), isNull);
+        },
+      );
+
+      testWidgets(
+        'FlashcardSpeedSlamView renders cleanly without overflow on ${size.width}x${size.height}',
+        (tester) async {
+          final mockHaptic = MockHapticService();
+          final controller = FlashcardMasteryController(
+            hapticService: mockHaptic,
+            onSubmitResult:
+                ({required bool isCorrect, required bool speedBonus}) {},
+          );
+
+          await tester.pumpWidget(
+            buildResponsiveHarness(
+              screenSize: size,
+              child: FlashcardSpeedSlamView(
+                quest: testVocabQuest,
+                controller: controller,
+                isDark: false,
+                onAdvanceToStage2: () {},
+              ),
+            ),
+          );
+          await tester.pumpAndSettle();
+
+          expect(find.text('AUTHENTIC'), findsOneWidget);
           expect(tester.takeException(), isNull);
         },
       );

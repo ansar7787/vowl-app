@@ -166,16 +166,20 @@ class FlashcardPrecisionStrikeView extends StatelessWidget {
                           ),
                           SizedBox(width: 12.w),
                           Expanded(
-                            child: Text(
-                              word.toUpperCase(),
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 15.sp,
-                                fontWeight: FontWeight.w800,
-                                letterSpacing: 1.1,
-                                color: isDark
-                                    ? Colors.white
-                                    : AppColors.slate900,
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                word.toUpperCase(),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.w800,
+                                  letterSpacing: 1.1,
+                                  color: isDark
+                                      ? Colors.white
+                                      : AppColors.slate900,
+                                ),
                               ),
                             ),
                           ),

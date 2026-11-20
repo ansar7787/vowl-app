@@ -89,15 +89,18 @@ class FlashcardSpeedSlamView extends StatelessWidget {
               if (quest.topicEmoji != null)
                 Text(quest.topicEmoji!, style: TextStyle(fontSize: 28.sp)),
               SizedBox(height: 4.h),
-              Text(
-                quest.word?.toUpperCase() ?? '',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 26.sp,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 1.4,
-                  color: isDark ? Colors.white : AppColors.slate950,
+              FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  quest.word?.toUpperCase() ?? '',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 26.sp,
+                    fontWeight: FontWeight.w900,
+                    letterSpacing: 1.4,
+                    color: isDark ? Colors.white : AppColors.slate950,
+                  ),
                 ),
               ),
               if (quest.definition != null) ...[
