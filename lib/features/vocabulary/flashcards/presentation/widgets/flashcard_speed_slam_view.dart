@@ -61,6 +61,39 @@ class FlashcardSpeedSlamView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        // ── Mastery Phase Header Pill Tag ────────────────────────────────────
+        Center(
+          child: Container(
+            margin: EdgeInsets.only(bottom: 12.h),
+            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 4.h),
+            decoration: BoxDecoration(
+              color: AppColors.emerald500.withValues(
+                alpha: isDark ? 0.2 : 0.12,
+              ),
+              borderRadius: BorderRadius.circular(12.r),
+              border: Border.all(
+                color: AppColors.emerald500.withValues(alpha: 0.4),
+                width: 1.2,
+              ),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  '🏆 MASTERY PHASE',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w800,
+                    letterSpacing: 1.0,
+                    color: isDark ? AppColors.emerald400 : AppColors.emerald600,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+
         // ── High-Frequency Timer Fuse Bar with Combo Streak ──────────────
         FlashcardSpeedFuseBar(
           timerProgress: controller.timerProgress,

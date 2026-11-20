@@ -14,11 +14,11 @@
       "targetCollocation": "authentic cuisine",
       "correctAnswer": "AUTHENTIC",
       "scrambledChunks": [
-        "AU",
+        "IC",
         "THEN",
         "TIC",
         "TION",
-        "IC"
+        "AU"
       ],
       "collocationPrompt": "Pair 'authentic' with its natural partner:",
       "collocationOptions": [
@@ -36,11 +36,11 @@
           "sentence": "The museum verified that the ancient artifact was completely _____.",
           "correctAnswer": "AUTHENTIC",
           "options": [
-            "AU",
+            "IC",
             "THEN",
             "TIC",
             "TION",
-            "IC"
+            "AU"
           ],
           "hint": "Genuine, real, and true to original traditions.",
           "feedbackIfWrong": "'AUTHENTIC' naturally pairs with 'authentic cuisine', not 'authentic weather'."
@@ -57,17 +57,17 @@
       "targetCollocation": "genuine interest",
       "correctAnswer": "GENUINE",
       "scrambledChunks": [
-        "GEN",
-        "U",
-        "INE",
+        "IC",
         "TION",
-        "IC"
+        "GEN",
+        "INE",
+        "U"
       ],
       "collocationPrompt": "Pair 'genuine' with its natural partner:",
       "collocationOptions": [
         "genuine interest",
-        "genuine speed",
-        "genuine electricity"
+        "genuine electricity",
+        "genuine speed"
       ],
       "correctCollocationIndex": 0,
       "hint": "Truly what something is said to be; sincere and honest.",
@@ -79,11 +79,11 @@
           "sentence": "She expressed _____ concern for the welfare of her community.",
           "correctAnswer": "GENUINE",
           "options": [
-            "GEN",
-            "U",
-            "INE",
+            "IC",
             "TION",
-            "IC"
+            "GEN",
+            "INE",
+            "U"
           ],
           "hint": "Truly what something is said to be; sincere and honest.",
           "feedbackIfWrong": "'GENUINE' naturally pairs with 'genuine interest', not 'genuine speed'."
@@ -100,20 +100,20 @@
       "targetCollocation": "legitimate concern",
       "correctAnswer": "LEGITIMATE",
       "scrambledChunks": [
-        "LE",
-        "GIT",
-        "I",
+        "IC",
         "MATE",
+        "GIT",
         "TION",
-        "IC"
+        "I",
+        "LE"
       ],
       "collocationPrompt": "Pair 'legitimate' with its natural partner:",
       "collocationOptions": [
-        "legitimate concern",
+        "legitimate flavor",
         "legitimate weather",
-        "legitimate flavor"
+        "legitimate concern"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 2,
       "hint": "Conforming to the law, rules, or valid logic.",
       "feedbackIfWrong": "'LEGITIMATE' naturally pairs with 'legitimate concern', not 'legitimate weather'.",
       "exercises": [
@@ -123,12 +123,12 @@
           "sentence": "The committee accepted the refund request as a _____ claim.",
           "correctAnswer": "LEGITIMATE",
           "options": [
-            "LE",
-            "GIT",
-            "I",
+            "IC",
             "MATE",
+            "GIT",
             "TION",
-            "IC"
+            "I",
+            "LE"
           ],
           "hint": "Conforming to the law, rules, or valid logic.",
           "feedbackIfWrong": "'LEGITIMATE' naturally pairs with 'legitimate concern', not 'legitimate weather'."
@@ -146,16 +146,16 @@
       "correctAnswer": "RESILIENT",
       "scrambledChunks": [
         "RE",
-        "SIL",
         "IENT",
-        "TION",
-        "IC"
+        "SIL",
+        "IC",
+        "TION"
       ],
       "collocationPrompt": "Pair 'resilient' with its natural partner:",
       "collocationOptions": [
         "resilient economy",
-        "resilient clock",
-        "resilient coffee"
+        "resilient coffee",
+        "resilient clock"
       ],
       "correctCollocationIndex": 0,
       "hint": "Able to recover quickly from difficult conditions.",
@@ -168,10 +168,10 @@
           "correctAnswer": "RESILIENT",
           "options": [
             "RE",
-            "SIL",
             "IENT",
-            "TION",
-            "IC"
+            "SIL",
+            "IC",
+            "TION"
           ],
           "hint": "Able to recover quickly from difficult conditions.",
           "feedbackIfWrong": "'RESILIENT' naturally pairs with 'resilient economy', not 'resilient clock'."
@@ -188,19 +188,19 @@
       "targetCollocation": "persistent effort",
       "correctAnswer": "PERSISTENT",
       "scrambledChunks": [
-        "PER",
         "SIST",
-        "ENT",
         "TION",
-        "IC"
+        "ENT",
+        "IC",
+        "PER"
       ],
       "collocationPrompt": "Pair 'persistent' with its natural partner:",
       "collocationOptions": [
+        "persistent river",
         "persistent effort",
-        "persistent glass",
-        "persistent river"
+        "persistent glass"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 1,
       "hint": "Continuing firmly in a course of action despite difficulty.",
       "feedbackIfWrong": "'PERSISTENT' naturally pairs with 'persistent effort', not 'persistent glass'.",
       "exercises": [
@@ -210,11 +210,11 @@
           "sentence": "Through _____ effort, the research team solved the decade-old mystery.",
           "correctAnswer": "PERSISTENT",
           "options": [
-            "PER",
             "SIST",
-            "ENT",
             "TION",
-            "IC"
+            "ENT",
+            "IC",
+            "PER"
           ],
           "hint": "Continuing firmly in a course of action despite difficulty.",
           "feedbackIfWrong": "'PERSISTENT' naturally pairs with 'persistent effort', not 'persistent glass'."
@@ -232,9 +232,9 @@
       "correctAnswer": "TENACIOUS",
       "scrambledChunks": [
         "TE",
+        "TION",
         "NA",
         "CIOUS",
-        "TION",
         "IC"
       ],
       "collocationPrompt": "Pair 'tenacious' with its natural partner:",
@@ -254,9 +254,9 @@
           "correctAnswer": "TENACIOUS",
           "options": [
             "TE",
+            "TION",
             "NA",
             "CIOUS",
-            "TION",
             "IC"
           ],
           "hint": "Holding fast; characterized by keeping a firm grip.",
@@ -274,12 +274,12 @@
       "targetCollocation": "innovative approach",
       "correctAnswer": "INNOVATIVE",
       "scrambledChunks": [
-        "IN",
-        "NO",
-        "VA",
-        "TIVE",
         "TION",
-        "IC"
+        "IC",
+        "NO",
+        "IN",
+        "TIVE",
+        "VA"
       ],
       "collocationPrompt": "Pair 'innovative' with its natural partner:",
       "collocationOptions": [
@@ -297,12 +297,12 @@
           "sentence": "The startup introduced an _____ approach to renewable energy storage.",
           "correctAnswer": "INNOVATIVE",
           "options": [
-            "IN",
-            "NO",
-            "VA",
-            "TIVE",
             "TION",
-            "IC"
+            "IC",
+            "NO",
+            "IN",
+            "TIVE",
+            "VA"
           ],
           "hint": "Featuring new methods, advanced ideas, and creative solutions.",
           "feedbackIfWrong": "'INNOVATIVE' naturally pairs with 'innovative approach', not 'innovative gravity'."
@@ -320,19 +320,19 @@
       "correctAnswer": "PIONEERING",
       "scrambledChunks": [
         "PI",
-        "O",
         "NEER",
-        "ING",
+        "O",
+        "IC",
         "TION",
-        "IC"
+        "ING"
       ],
       "collocationPrompt": "Pair 'pioneering' with its natural partner:",
       "collocationOptions": [
-        "pioneering work",
         "pioneering stone",
+        "pioneering work",
         "pioneering sunset"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 1,
       "hint": "Involving new ideas or methods; breaking entirely new ground.",
       "feedbackIfWrong": "'PIONEERING' naturally pairs with 'pioneering work', not 'pioneering stone'.",
       "exercises": [
@@ -343,11 +343,11 @@
           "correctAnswer": "PIONEERING",
           "options": [
             "PI",
-            "O",
             "NEER",
-            "ING",
+            "O",
+            "IC",
             "TION",
-            "IC"
+            "ING"
           ],
           "hint": "Involving new ideas or methods; breaking entirely new ground.",
           "feedbackIfWrong": "'PIONEERING' naturally pairs with 'pioneering work', not 'pioneering stone'."
@@ -364,21 +364,21 @@
       "targetCollocation": "revolutionary breakthrough",
       "correctAnswer": "REVOLUTIONARY",
       "scrambledChunks": [
+        "IC",
         "REV",
-        "O",
-        "LU",
         "TION",
+        "LU",
         "ARY",
         "TION",
-        "IC"
+        "O"
       ],
       "collocationPrompt": "Pair 'revolutionary' with its natural partner:",
       "collocationOptions": [
-        "revolutionary breakthrough",
         "revolutionary tree",
-        "revolutionary silence"
+        "revolutionary silence",
+        "revolutionary breakthrough"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 2,
       "hint": "Involving or causing a complete or dramatic change.",
       "feedbackIfWrong": "'REVOLUTIONARY' naturally pairs with 'revolutionary breakthrough', not 'revolutionary tree'.",
       "exercises": [
@@ -388,13 +388,13 @@
           "sentence": "The new battery architecture represents a _____ breakthrough.",
           "correctAnswer": "REVOLUTIONARY",
           "options": [
+            "IC",
             "REV",
-            "O",
-            "LU",
             "TION",
+            "LU",
             "ARY",
             "TION",
-            "IC"
+            "O"
           ],
           "hint": "Involving or causing a complete or dramatic change.",
           "feedbackIfWrong": "'REVOLUTIONARY' naturally pairs with 'revolutionary breakthrough', not 'revolutionary tree'."
@@ -411,18 +411,18 @@
       "targetCollocation": "collaborate closely",
       "correctAnswer": "COLLABORATE",
       "scrambledChunks": [
-        "COL",
-        "LAB",
-        "O",
         "RATE",
-        "TION",
-        "IC"
+        "COL",
+        "IC",
+        "O",
+        "LAB",
+        "TION"
       ],
       "collocationPrompt": "Pair 'collaborate' with its natural partner:",
       "collocationOptions": [
         "collaborate closely",
-        "collaborate alone",
-        "collaborate secretly with enemies"
+        "collaborate secretly with enemies",
+        "collaborate alone"
       ],
       "correctCollocationIndex": 0,
       "hint": "Work jointly on an activity, especially to produce something.",
@@ -434,12 +434,12 @@
           "sentence": "International scientists will _____ on the vaccine trials.",
           "correctAnswer": "COLLABORATE",
           "options": [
-            "COL",
-            "LAB",
-            "O",
             "RATE",
-            "TION",
-            "IC"
+            "COL",
+            "IC",
+            "O",
+            "LAB",
+            "TION"
           ],
           "hint": "Work jointly on an activity, especially to produce something.",
           "feedbackIfWrong": "'COLLABORATE' naturally pairs with 'collaborate closely', not 'collaborate alone'."
@@ -456,20 +456,20 @@
       "targetCollocation": "cooperate fully",
       "correctAnswer": "COOPERATE",
       "scrambledChunks": [
-        "CO",
-        "OP",
-        "ER",
-        "ATE",
+        "IC",
         "TION",
-        "IC"
+        "OP",
+        "CO",
+        "ER",
+        "ATE"
       ],
       "collocationPrompt": "Pair 'cooperate' with its natural partner:",
       "collocationOptions": [
-        "cooperate fully",
         "cooperate solo",
-        "cooperate gravity"
+        "cooperate gravity",
+        "cooperate fully"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 2,
       "hint": "Act jointly; work toward the same end or comply with requests.",
       "feedbackIfWrong": "'COOPERATE' naturally pairs with 'cooperate fully', not 'cooperate solo'.",
       "exercises": [
@@ -479,12 +479,12 @@
           "sentence": "Witnesses were urged to _____ fully with the authorities.",
           "correctAnswer": "COOPERATE",
           "options": [
-            "CO",
-            "OP",
-            "ER",
-            "ATE",
+            "IC",
             "TION",
-            "IC"
+            "OP",
+            "CO",
+            "ER",
+            "ATE"
           ],
           "hint": "Act jointly; work toward the same end or comply with requests.",
           "feedbackIfWrong": "'COOPERATE' naturally pairs with 'cooperate fully', not 'cooperate solo'."
@@ -503,10 +503,10 @@
       "scrambledChunks": [
         "CO",
         "OR",
-        "DI",
-        "NATE",
         "TION",
-        "IC"
+        "NATE",
+        "IC",
+        "DI"
       ],
       "collocationPrompt": "Pair 'coordinate' with its natural partner:",
       "collocationOptions": [
@@ -526,10 +526,10 @@
           "options": [
             "CO",
             "OR",
-            "DI",
-            "NATE",
             "TION",
-            "IC"
+            "NATE",
+            "IC",
+            "DI"
           ],
           "hint": "Bring the different elements of a complex activity into an efficient relationship.",
           "feedbackIfWrong": "'COORDINATE' naturally pairs with 'coordinate efforts', not 'coordinate weather'."
@@ -546,19 +546,19 @@
       "targetCollocation": "fresh perspective",
       "correctAnswer": "PERSPECTIVE",
       "scrambledChunks": [
-        "PER",
-        "SPEC",
-        "TIVE",
         "TION",
-        "IC"
+        "IC",
+        "TIVE",
+        "SPEC",
+        "PER"
       ],
       "collocationPrompt": "Pair 'perspective' with its natural partner:",
       "collocationOptions": [
+        "perspective coin",
         "fresh perspective",
-        "perspective temperature",
-        "perspective coin"
+        "perspective temperature"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 1,
       "hint": "A particular attitude toward or way of regarding something.",
       "feedbackIfWrong": "'PERSPECTIVE' naturally pairs with 'fresh perspective', not 'perspective temperature'.",
       "exercises": [
@@ -568,11 +568,11 @@
           "sentence": "Living in another country gave her a broader global _____.",
           "correctAnswer": "PERSPECTIVE",
           "options": [
-            "PER",
-            "SPEC",
-            "TIVE",
             "TION",
-            "IC"
+            "IC",
+            "TIVE",
+            "SPEC",
+            "PER"
           ],
           "hint": "A particular attitude toward or way of regarding something.",
           "feedbackIfWrong": "'PERSPECTIVE' naturally pairs with 'fresh perspective', not 'perspective temperature'."
@@ -589,17 +589,17 @@
       "targetCollocation": "public perception",
       "correctAnswer": "PERCEPTION",
       "scrambledChunks": [
+        "TION",
         "PER",
         "CEP",
-        "TION",
         "TION",
         "IC"
       ],
       "collocationPrompt": "Pair 'perception' with its natural partner:",
       "collocationOptions": [
         "public perception",
-        "liquid perception",
-        "perception speed"
+        "perception speed",
+        "liquid perception"
       ],
       "correctCollocationIndex": 0,
       "hint": "The ability to see, hear, or become aware of something through the senses or mind.",
@@ -611,9 +611,9 @@
           "sentence": "Public _____ of artificial intelligence shifted dramatically this year.",
           "correctAnswer": "PERCEPTION",
           "options": [
+            "TION",
             "PER",
             "CEP",
-            "TION",
             "TION",
             "IC"
           ],
@@ -632,18 +632,18 @@
       "targetCollocation": "valuable insight",
       "correctAnswer": "INSIGHT",
       "scrambledChunks": [
-        "IN",
-        "SIGHT",
+        "IC",
         "TION",
-        "IC"
+        "SIGHT",
+        "IN"
       ],
       "collocationPrompt": "Pair 'insight' with its natural partner:",
       "collocationOptions": [
-        "valuable insight",
         "insight water",
-        "insight clock"
+        "insight clock",
+        "valuable insight"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 2,
       "hint": "The capacity to gain an accurate and deep intuitive understanding.",
       "feedbackIfWrong": "'INSIGHT' naturally pairs with 'valuable insight', not 'insight water'.",
       "exercises": [
@@ -653,10 +653,10 @@
           "sentence": "The survey provided valuable _____ into consumer habits.",
           "correctAnswer": "INSIGHT",
           "options": [
-            "IN",
-            "SIGHT",
+            "IC",
             "TION",
-            "IC"
+            "SIGHT",
+            "IN"
           ],
           "hint": "The capacity to gain an accurate and deep intuitive understanding.",
           "feedbackIfWrong": "'INSIGHT' naturally pairs with 'valuable insight', not 'insight water'."
@@ -673,20 +673,20 @@
       "targetCollocation": "significant impact",
       "correctAnswer": "SIGNIFICANT",
       "scrambledChunks": [
-        "SIG",
-        "NIF",
-        "I",
-        "CANT",
         "TION",
-        "IC"
+        "I",
+        "SIG",
+        "IC",
+        "NIF",
+        "CANT"
       ],
       "collocationPrompt": "Pair 'significant' with its natural partner:",
       "collocationOptions": [
+        "significant mirror",
         "significant impact",
-        "significant salt",
-        "significant mirror"
+        "significant salt"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 1,
       "hint": "Sufficiently great or important to be worthy of attention.",
       "feedbackIfWrong": "'SIGNIFICANT' naturally pairs with 'significant impact', not 'significant salt'.",
       "exercises": [
@@ -696,12 +696,12 @@
           "sentence": "There has been a _____ increase in international student applications.",
           "correctAnswer": "SIGNIFICANT",
           "options": [
-            "SIG",
-            "NIF",
-            "I",
-            "CANT",
             "TION",
-            "IC"
+            "I",
+            "SIG",
+            "IC",
+            "NIF",
+            "CANT"
           ],
           "hint": "Sufficiently great or important to be worthy of attention.",
           "feedbackIfWrong": "'SIGNIFICANT' naturally pairs with 'significant impact', not 'significant salt'."
@@ -720,17 +720,17 @@
       "scrambledChunks": [
         "SUB",
         "STAN",
-        "TIAL",
         "TION",
+        "TIAL",
         "IC"
       ],
       "collocationPrompt": "Pair 'substantial' with its natural partner:",
       "collocationOptions": [
-        "substantial amount",
         "substantial breeze",
+        "substantial amount",
         "substantial second"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 1,
       "hint": "Of considerable importance, size, or worth.",
       "feedbackIfWrong": "'SUBSTANTIAL' naturally pairs with 'substantial amount', not 'substantial breeze'.",
       "exercises": [
@@ -742,8 +742,8 @@
           "options": [
             "SUB",
             "STAN",
-            "TIAL",
             "TION",
+            "TIAL",
             "IC"
           ],
           "hint": "Of considerable importance, size, or worth.",
@@ -762,20 +762,20 @@
       "correctAnswer": "CONSIDERABLE",
       "scrambledChunks": [
         "CON",
-        "SID",
-        "ER",
-        "A",
-        "BLE",
+        "IC",
         "TION",
-        "IC"
+        "SID",
+        "BLE",
+        "ER",
+        "A"
       ],
       "collocationPrompt": "Pair 'considerable' with its natural partner:",
       "collocationOptions": [
+        "considerable sugar",
         "considerable amount",
-        "considerable cloud",
-        "considerable sugar"
+        "considerable cloud"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 1,
       "hint": "Notably large in size, amount, or extent.",
       "feedbackIfWrong": "'CONSIDERABLE' naturally pairs with 'considerable amount', not 'considerable cloud'.",
       "exercises": [
@@ -786,12 +786,12 @@
           "correctAnswer": "CONSIDERABLE",
           "options": [
             "CON",
-            "SID",
-            "ER",
-            "A",
-            "BLE",
+            "IC",
             "TION",
-            "IC"
+            "SID",
+            "BLE",
+            "ER",
+            "A"
           ],
           "hint": "Notably large in size, amount, or extent.",
           "feedbackIfWrong": "'CONSIDERABLE' naturally pairs with 'considerable amount', not 'considerable cloud'."
@@ -808,20 +808,20 @@
       "targetCollocation": "accelerate growth",
       "correctAnswer": "ACCELERATE",
       "scrambledChunks": [
-        "AC",
-        "CEL",
-        "ER",
         "ATE",
+        "AC",
         "TION",
-        "IC"
+        "IC",
+        "CEL",
+        "ER"
       ],
       "collocationPrompt": "Pair 'accelerate' with its natural partner:",
       "collocationOptions": [
+        "accelerate backward",
         "accelerate growth",
-        "accelerate stone",
-        "accelerate backward"
+        "accelerate stone"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 1,
       "hint": "Begin to move more quickly or cause something to happen faster.",
       "feedbackIfWrong": "'ACCELERATE' naturally pairs with 'accelerate growth', not 'accelerate stone'.",
       "exercises": [
@@ -831,12 +831,12 @@
           "sentence": "The government announced urgent measures to _____ economic recovery.",
           "correctAnswer": "ACCELERATE",
           "options": [
-            "AC",
-            "CEL",
-            "ER",
             "ATE",
+            "AC",
             "TION",
-            "IC"
+            "IC",
+            "CEL",
+            "ER"
           ],
           "hint": "Begin to move more quickly or cause something to happen faster.",
           "feedbackIfWrong": "'ACCELERATE' naturally pairs with 'accelerate growth', not 'accelerate stone'."
@@ -853,19 +853,19 @@
       "targetCollocation": "expedite the process",
       "correctAnswer": "EXPEDITE",
       "scrambledChunks": [
-        "EX",
         "PE",
-        "DITE",
         "TION",
-        "IC"
+        "DITE",
+        "IC",
+        "EX"
       ],
       "collocationPrompt": "Pair 'expedite' with its natural partner:",
       "collocationOptions": [
-        "expedite the process",
         "expedite tree",
-        "expedite mountain"
+        "expedite mountain",
+        "expedite the process"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 2,
       "hint": "Make an action or process happen sooner or be accomplished more quickly.",
       "feedbackIfWrong": "'EXPEDITE' naturally pairs with 'expedite the process', not 'expedite tree'.",
       "exercises": [
@@ -875,11 +875,11 @@
           "sentence": "You can pay an extra fee to _____ passport processing.",
           "correctAnswer": "EXPEDITE",
           "options": [
-            "EX",
             "PE",
-            "DITE",
             "TION",
-            "IC"
+            "DITE",
+            "IC",
+            "EX"
           ],
           "hint": "Make an action or process happen sooner or be accomplished more quickly.",
           "feedbackIfWrong": "'EXPEDITE' naturally pairs with 'expedite the process', not 'expedite tree'."
@@ -896,20 +896,20 @@
       "targetCollocation": "intensify efforts",
       "correctAnswer": "INTENSIFY",
       "scrambledChunks": [
+        "IC",
+        "SI",
+        "TION",
         "IN",
         "TEN",
-        "SI",
-        "FY",
-        "TION",
-        "IC"
+        "FY"
       ],
       "collocationPrompt": "Pair 'intensify' with its natural partner:",
       "collocationOptions": [
+        "intensify napkin",
         "intensify efforts",
-        "intensify floor",
-        "intensify napkin"
+        "intensify floor"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 1,
       "hint": "Become or make more intense, strong, or focused.",
       "feedbackIfWrong": "'INTENSIFY' naturally pairs with 'intensify efforts', not 'intensify floor'.",
       "exercises": [
@@ -919,12 +919,12 @@
           "sentence": "Competition in the smartphone market continues to _____.",
           "correctAnswer": "INTENSIFY",
           "options": [
+            "IC",
+            "SI",
+            "TION",
             "IN",
             "TEN",
-            "SI",
-            "FY",
-            "TION",
-            "IC"
+            "FY"
           ],
           "hint": "Become or make more intense, strong, or focused.",
           "feedbackIfWrong": "'INTENSIFY' naturally pairs with 'intensify efforts', not 'intensify floor'."
@@ -941,20 +941,20 @@
       "targetCollocation": "comprehensive study",
       "correctAnswer": "COMPREHENSIVE",
       "scrambledChunks": [
-        "COM",
-        "PRE",
         "HEN",
-        "SIVE",
+        "PRE",
         "TION",
-        "IC"
+        "SIVE",
+        "IC",
+        "COM"
       ],
       "collocationPrompt": "Pair 'comprehensive' with its natural partner:",
       "collocationOptions": [
-        "comprehensive study",
         "comprehensive pencil",
-        "comprehensive coffee"
+        "comprehensive coffee",
+        "comprehensive study"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 2,
       "hint": "Including or dealing with all or nearly all elements or aspects.",
       "feedbackIfWrong": "'COMPREHENSIVE' naturally pairs with 'comprehensive study', not 'comprehensive pencil'.",
       "exercises": [
@@ -964,12 +964,12 @@
           "sentence": "The handbook provides a _____ guide to corporate finance.",
           "correctAnswer": "COMPREHENSIVE",
           "options": [
-            "COM",
-            "PRE",
             "HEN",
-            "SIVE",
+            "PRE",
             "TION",
-            "IC"
+            "SIVE",
+            "IC",
+            "COM"
           ],
           "hint": "Including or dealing with all or nearly all elements or aspects.",
           "feedbackIfWrong": "'COMPREHENSIVE' naturally pairs with 'comprehensive study', not 'comprehensive pencil'."
@@ -986,19 +986,19 @@
       "targetCollocation": "exhaustive search",
       "correctAnswer": "EXHAUSTIVE",
       "scrambledChunks": [
-        "EX",
         "HAUS",
-        "TIVE",
         "TION",
-        "IC"
+        "EX",
+        "IC",
+        "TIVE"
       ],
       "collocationPrompt": "Pair 'exhaustive' with its natural partner:",
       "collocationOptions": [
-        "exhaustive search",
+        "exhaustive cloud",
         "exhaustive glass",
-        "exhaustive cloud"
+        "exhaustive search"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 2,
       "hint": "Examining, including, or considering all elements or aspects fully.",
       "feedbackIfWrong": "'EXHAUSTIVE' naturally pairs with 'exhaustive search', not 'exhaustive glass'.",
       "exercises": [
@@ -1008,11 +1008,11 @@
           "sentence": "After an _____ investigation, the safety inspectors cleared the aircraft.",
           "correctAnswer": "EXHAUSTIVE",
           "options": [
-            "EX",
             "HAUS",
-            "TIVE",
             "TION",
-            "IC"
+            "EX",
+            "IC",
+            "TIVE"
           ],
           "hint": "Examining, including, or considering all elements or aspects fully.",
           "feedbackIfWrong": "'EXHAUSTIVE' naturally pairs with 'exhaustive search', not 'exhaustive glass'."
@@ -1031,8 +1031,8 @@
       "scrambledChunks": [
         "EX",
         "TEN",
-        "SIVE",
         "TION",
+        "SIVE",
         "IC"
       ],
       "collocationPrompt": "Pair 'extensive' with its natural partner:",
@@ -1053,8 +1053,8 @@
           "options": [
             "EX",
             "TEN",
-            "SIVE",
             "TION",
+            "SIVE",
             "IC"
           ],
           "hint": "Covering or affecting a large area; having great range or breadth.",
@@ -1072,19 +1072,19 @@
       "targetCollocation": "determined effort",
       "correctAnswer": "DETERMINED",
       "scrambledChunks": [
-        "DE",
-        "TER",
-        "MINED",
         "TION",
-        "IC"
+        "TER",
+        "IC",
+        "DE",
+        "MINED"
       ],
       "collocationPrompt": "Pair 'determined' with its natural partner:",
       "collocationOptions": [
-        "determined effort",
         "determined river",
-        "determined spoon"
+        "determined spoon",
+        "determined effort"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 2,
       "hint": "Having made a firm decision and being resolved not to change it.",
       "feedbackIfWrong": "'DETERMINED' naturally pairs with 'determined effort', not 'determined river'.",
       "exercises": [
@@ -1094,11 +1094,11 @@
           "sentence": "She was _____ to master spoken English before her foreign exchange semester.",
           "correctAnswer": "DETERMINED",
           "options": [
-            "DE",
-            "TER",
-            "MINED",
             "TION",
-            "IC"
+            "TER",
+            "IC",
+            "DE",
+            "MINED"
           ],
           "hint": "Having made a firm decision and being resolved not to change it.",
           "feedbackIfWrong": "'DETERMINED' naturally pairs with 'determined effort', not 'determined river'."
@@ -1115,19 +1115,19 @@
       "targetCollocation": "resolute stand",
       "correctAnswer": "RESOLUTE",
       "scrambledChunks": [
-        "RES",
-        "O",
-        "LUTE",
         "TION",
-        "IC"
+        "LUTE",
+        "IC",
+        "RES",
+        "O"
       ],
       "collocationPrompt": "Pair 'resolute' with its natural partner:",
       "collocationOptions": [
-        "resolute stand",
         "resolute ceiling",
-        "resolute soup"
+        "resolute soup",
+        "resolute stand"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 2,
       "hint": "Admirably purposeful, determined, and unwavering.",
       "feedbackIfWrong": "'RESOLUTE' naturally pairs with 'resolute stand', not 'resolute ceiling'.",
       "exercises": [
@@ -1137,11 +1137,11 @@
           "sentence": "The leadership remained _____ in the face of strong public criticism.",
           "correctAnswer": "RESOLUTE",
           "options": [
-            "RES",
-            "O",
-            "LUTE",
             "TION",
-            "IC"
+            "LUTE",
+            "IC",
+            "RES",
+            "O"
           ],
           "hint": "Admirably purposeful, determined, and unwavering.",
           "feedbackIfWrong": "'RESOLUTE' naturally pairs with 'resolute stand', not 'resolute ceiling'."
@@ -1158,19 +1158,19 @@
       "targetCollocation": "decisive victory",
       "correctAnswer": "DECISIVE",
       "scrambledChunks": [
-        "DE",
         "CI",
-        "SIVE",
         "TION",
-        "IC"
+        "DE",
+        "IC",
+        "SIVE"
       ],
       "collocationPrompt": "Pair 'decisive' with its natural partner:",
       "collocationOptions": [
-        "decisive victory",
         "decisive window",
-        "decisive flavor"
+        "decisive flavor",
+        "decisive victory"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 2,
       "hint": "Settling an issue; producing a definite result; showing the ability to make decisions quickly.",
       "feedbackIfWrong": "'DECISIVE' naturally pairs with 'decisive victory', not 'decisive window'.",
       "exercises": [
@@ -1180,11 +1180,11 @@
           "sentence": "The captain made a _____ move that secured victory in the final minutes.",
           "correctAnswer": "DECISIVE",
           "options": [
-            "DE",
             "CI",
-            "SIVE",
             "TION",
-            "IC"
+            "DE",
+            "IC",
+            "SIVE"
           ],
           "hint": "Settling an issue; producing a definite result; showing the ability to make decisions quickly.",
           "feedbackIfWrong": "'DECISIVE' naturally pairs with 'decisive victory', not 'decisive window'."
@@ -1201,20 +1201,20 @@
       "targetCollocation": "operational efficiency",
       "correctAnswer": "EFFICIENCY",
       "scrambledChunks": [
+        "CY",
+        "IC",
+        "TION",
         "EF",
         "FI",
-        "CIEN",
-        "CY",
-        "TION",
-        "IC"
+        "CIEN"
       ],
       "collocationPrompt": "Pair 'efficiency' with its natural partner:",
       "collocationOptions": [
-        "operational efficiency",
         "efficiency sugar",
+        "operational efficiency",
         "efficiency cloud"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 1,
       "hint": "The ability to achieve maximum productivity with minimum wasted effort.",
       "feedbackIfWrong": "'EFFICIENCY' naturally pairs with 'operational efficiency', not 'efficiency sugar'.",
       "exercises": [
@@ -1224,12 +1224,12 @@
           "sentence": "Automation significantly improved the manufacturing line's operational _____.",
           "correctAnswer": "EFFICIENCY",
           "options": [
+            "CY",
+            "IC",
+            "TION",
             "EF",
             "FI",
-            "CIEN",
-            "CY",
-            "TION",
-            "IC"
+            "CIEN"
           ],
           "hint": "The ability to achieve maximum productivity with minimum wasted effort.",
           "feedbackIfWrong": "'EFFICIENCY' naturally pairs with 'operational efficiency', not 'efficiency sugar'."
@@ -1246,21 +1246,21 @@
       "targetCollocation": "search engine optimization",
       "correctAnswer": "OPTIMIZATION",
       "scrambledChunks": [
+        "IC",
         "OP",
         "TI",
         "MI",
+        "TION",
         "ZA",
-        "TION",
-        "TION",
-        "IC"
+        "TION"
       ],
       "collocationPrompt": "Pair 'optimization' with its natural partner:",
       "collocationOptions": [
-        "search engine optimization",
         "optimization river",
-        "optimization shadow"
+        "optimization shadow",
+        "search engine optimization"
       ],
-      "correctCollocationIndex": 0,
+      "correctCollocationIndex": 2,
       "hint": "The action of making the best or most effective use of a situation or resource.",
       "feedbackIfWrong": "'OPTIMIZATION' naturally pairs with 'search engine optimization', not 'optimization river'.",
       "exercises": [
@@ -1270,13 +1270,13 @@
           "sentence": "Code _____ reduced the application's memory consumption by forty percent.",
           "correctAnswer": "OPTIMIZATION",
           "options": [
+            "IC",
             "OP",
             "TI",
             "MI",
+            "TION",
             "ZA",
-            "TION",
-            "TION",
-            "IC"
+            "TION"
           ],
           "hint": "The action of making the best or most effective use of a situation or resource.",
           "feedbackIfWrong": "'OPTIMIZATION' naturally pairs with 'search engine optimization', not 'optimization river'."
@@ -1293,19 +1293,19 @@
       "targetCollocation": "boost productivity",
       "correctAnswer": "PRODUCTIVITY",
       "scrambledChunks": [
-        "PRO",
-        "DUC",
+        "TION",
         "TIV",
+        "PRO",
+        "IC",
         "I",
         "TY",
-        "TION",
-        "IC"
+        "DUC"
       ],
       "collocationPrompt": "Pair 'productivity' with its natural partner:",
       "collocationOptions": [
         "boost productivity",
-        "productivity napkin",
-        "productivity storm"
+        "productivity storm",
+        "productivity napkin"
       ],
       "correctCollocationIndex": 0,
       "hint": "The effectiveness of productive effort, especially in industry.",
@@ -1317,13 +1317,13 @@
           "sentence": "Flexible working hours contributed to a notable rise in staff _____.",
           "correctAnswer": "PRODUCTIVITY",
           "options": [
-            "PRO",
-            "DUC",
+            "TION",
             "TIV",
+            "PRO",
+            "IC",
             "I",
             "TY",
-            "TION",
-            "IC"
+            "DUC"
           ],
           "hint": "The effectiveness of productive effort, especially in industry.",
           "feedbackIfWrong": "'PRODUCTIVITY' naturally pairs with 'boost productivity', not 'productivity napkin'."

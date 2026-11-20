@@ -82,13 +82,13 @@ List<PhasedQuest> getFlashcardPracticeFallbackQuests(int level) => [
         'The chef insisted on using only _____ Italian ingredients for the pasta.',
     rawExtra: const {
       'hint': 'Think of a 3-syllable word meaning genuine.',
-      'scrambledChunks': ['AU', 'THEN', 'TIC', 'TION', 'IC'],
+      'scrambledChunks': ['TION', 'THEN', 'IC', 'AU', 'TIC'],
       'collocationOptions': [
-        'authentic cuisine',
         'authentic weather',
+        'authentic cuisine',
         'authentic price',
       ],
-      'correctCollocationIndex': 0,
+      'correctCollocationIndex': 1,
     },
   ),
 ];

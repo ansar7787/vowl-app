@@ -149,7 +149,7 @@ class FlashcardPracticeChunkWeaver extends StatelessWidget {
         SizedBox(height: 16.h),
 
         // Stage 1: Word Chunk Assembly Area (60-120 FPS isolated repaint)
-        if (!showCollocationStage) ...[
+        if (!showCollocationStage)
           if (availableChunksNotifier != null && placedChunksNotifier != null)
             AnimatedBuilder(
               animation: Listenable.merge([
@@ -166,7 +166,6 @@ class FlashcardPracticeChunkWeaver extends StatelessWidget {
               currentPlaced: placedChunks,
               currentAvailable: availableChunks,
             ),
-        ],
 
         // Stage 2: Instant Collocation Snap Challenge
         if (showCollocationStage)

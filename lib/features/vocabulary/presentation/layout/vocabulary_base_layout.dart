@@ -114,6 +114,7 @@ class VocabularyBaseLayout extends StatelessWidget {
         return VowlUniversalGameHeader(
           level: level,
           category: 'vocabulary',
+          phaseBadge: null,
           progress: progress,
           lives: lives,
           hintText: effectiveHint,
