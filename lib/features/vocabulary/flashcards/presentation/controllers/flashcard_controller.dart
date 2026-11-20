@@ -6,9 +6,9 @@ import 'package:vowl/core/utils/haptic_service.dart';
 ///
 /// Architecture notes:
 /// - [ChangeNotifier] manages macro screen state ([isAnswered], [isCorrect], hints, confetti).
-/// - [ValueNotifier] is deliberately used for [dragOffset], [dragAngle], and [isFlipped] so
-///   high-frequency (60-120 FPS) card dragging and flipping only repaint isolated card widgets
-///   without forcing full [VocabularyBaseLayout] rebuilds.
+/// - [ValueNotifier] is deliberately used for [dragOffset], [dragAngle], [dragProgress],
+///   [comboStreak], and [isFlipped] so high-frequency (60-120 FPS) card dragging and flipping
+///   only repaint isolated card widgets without forcing full [VocabularyBaseLayout] rebuilds.
 class FlashcardController extends ChangeNotifier {
   final HapticService _hapticService;
   final void Function(bool) onSubmitAnswer;
@@ -19,7 +19,9 @@ class FlashcardController extends ChangeNotifier {
   // High-frequency gesture listenables (isolated card repainting)
   final ValueNotifier<Offset> dragOffset = ValueNotifier(Offset.zero);
   final ValueNotifier<double> dragAngle = ValueNotifier(0.0);
+  final ValueNotifier<double> dragProgress = ValueNotifier(0.0);
   final ValueNotifier<bool> isFlipped = ValueNotifier(false);
+  final ValueNotifier<int> comboStreak = ValueNotifier(0);
 
   // Macro screen state properties
   bool isAnswered = false;
@@ -50,6 +52,10 @@ class FlashcardController extends ChangeNotifier {
     isFlipped.value = false;
     dragOffset.value = Offset.zero;
     dragAngle.value = 0.0;
+    dragProgress.value = 0.0;
+    if (retry) {
+      comboStreak.value = 0;
+    }
     notifyListeners();
   }
 
@@ -61,18 +67,22 @@ class FlashcardController extends ChangeNotifier {
   }
 
   /// Handles horizontal card dragging gestures and updates card orientation.
-  void onHorizontalDragUpdate(DragUpdateDetails details) {
+  void onHorizontalDragUpdate(
+    DragUpdateDetails details, [
+    double threshold = 120.0,
+  ]) {
     if (isAnswered || _isDisposed) return;
     if (isRetrying) {
       isRetrying = false;
       notifyListeners();
     }
     final oldDx = dragOffset.value.dx;
-    dragOffset.value = Offset(oldDx + details.delta.dx, 0);
-    dragAngle.value = dragOffset.value.dx / 500;
+    final newDx = oldDx + details.delta.dx;
+    dragOffset.value = Offset(newDx, 0);
+    dragAngle.value = newDx / 500;
+    dragProgress.value = (newDx / threshold).clamp(-1.0, 1.0);
 
-    if ((dragOffset.value.dx - oldDx).abs() > 0 &&
-        (dragOffset.value.dx.abs() % 20 < 2)) {
+    if ((newDx - oldDx).abs() > 0 && (newDx.abs() % 20 < 2)) {
       _hapticService.selection();
     }
   }
@@ -85,6 +95,7 @@ class FlashcardController extends ChangeNotifier {
     } else {
       dragOffset.value = Offset.zero;
       dragAngle.value = 0.0;
+      dragProgress.value = 0.0;
     }
   }
 
@@ -96,8 +107,17 @@ class FlashcardController extends ChangeNotifier {
     isAnswered = true;
     isCorrect = mastered;
     dragOffset.value = Offset(mastered ? 1000 : -1000, 0);
-    notifyListeners();
+    dragProgress.value = mastered ? 1.0 : -1.0;
 
+    if (mastered) {
+      comboStreak.value++;
+      _hapticService.success();
+    } else {
+      comboStreak.value = 0;
+      _hapticService.error();
+    }
+
+    notifyListeners();
     onSubmitAnswer(mastered);
   }
 
@@ -134,7 +154,9 @@ class FlashcardController extends ChangeNotifier {
     _hintTimer?.cancel();
     dragOffset.dispose();
     dragAngle.dispose();
+    dragProgress.dispose();
     isFlipped.dispose();
+    comboStreak.dispose();
     super.dispose();
   }
 }

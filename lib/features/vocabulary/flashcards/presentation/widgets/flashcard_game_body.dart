@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_action_buttons.dart';
@@ -13,8 +14,8 @@ import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashca
 
 /// Stateless presentation layer for the flashcard game.
 ///
-/// Owns all layout and rendering; owns no game state. Every mutable value
-/// is injected by parent and every user interaction is reported back through a callback.
+/// Features Chrono-Swipe velocity cards, Directional Holographic Glow Stamps
+/// (`MASTERED ✦` and `REVIEW ↺`), and real-time combo flame counters.
 class FlashcardGameBody extends StatelessWidget {
   /// The active vocabulary quest item.
   final VocabularyQuest quest;
@@ -48,6 +49,12 @@ class FlashcardGameBody extends StatelessWidget {
   /// High-frequency card tilt angle in radians.
   final ValueNotifier<double> dragAngle;
 
+  /// Drag progress ratio between -1.0 and 1.0 for directional stamps.
+  final ValueNotifier<double>? dragProgress;
+
+  /// Current combo streak count.
+  final ValueNotifier<int>? comboStreak;
+
   // ── Interaction callbacks ─────────────────────────────────────────────────
 
   /// Callback executed during horizontal card drag movement.
@@ -76,6 +83,8 @@ class FlashcardGameBody extends StatelessWidget {
     required this.hideActions,
     required this.dragOffset,
     required this.dragAngle,
+    this.dragProgress,
+    this.comboStreak,
     required this.onHorizontalDragUpdate,
     required this.onHorizontalDragEnd,
     required this.onCardTap,
@@ -111,6 +120,46 @@ class FlashcardGameBody extends StatelessWidget {
                               quest: quest,
                             ),
                       ),
+                      if (comboStreak != null)
+                        ValueListenableBuilder<int>(
+                          valueListenable: comboStreak!,
+                          builder: (context, streak, _) {
+                            if (streak < 2) return const SizedBox.shrink();
+                            return Padding(
+                              padding: EdgeInsets.only(top: 6.h),
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 12.w,
+                                  vertical: 4.h,
+                                ),
+                                decoration: BoxDecoration(
+                                  gradient: const LinearGradient(
+                                    colors: [Colors.deepOrange, Colors.amber],
+                                  ),
+                                  borderRadius: BorderRadius.circular(12.r),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.deepOrange.withValues(
+                                        alpha: 0.35,
+                                      ),
+                                      blurRadius: 8.r,
+                                    ),
+                                  ],
+                                ),
+                                child: Text(
+                                  '🔥 $streak STREAK COMBO',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 11.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.white,
+                                    letterSpacing: 0.8,
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
+                        ),
                       SizedBox(height: layout.instructionToCard),
                       Flexible(
                         child: Center(
@@ -167,6 +216,7 @@ class FlashcardGameBody extends StatelessWidget {
           label:
               '${quest.word ?? ""}. ${flipped ? context.tr('instructions.flashcards.definition_revealed', fallback: 'Check your answer') : context.tr('instructions.flashcards.tap_to_reveal', fallback: 'Tap card to flip')}',
           child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
             onHorizontalDragUpdate: flipped ? onHorizontalDragUpdate : null,
             onHorizontalDragEnd: flipped
                 ? (d) => onHorizontalDragEnd(d, swipeThreshold)
@@ -193,10 +243,14 @@ class FlashcardGameBody extends StatelessWidget {
               ),
             ),
           ),
-          // ── Draggable + flippable card ───────────────────────────────
+          // ── Draggable + flippable card with directional stamps ────────
           RepaintBoundary(
             child: ListenableBuilder(
-              listenable: Listenable.merge([dragOffset, dragAngle]),
+              listenable: Listenable.merge([
+                dragOffset,
+                dragAngle,
+                ?dragProgress,
+              ]),
               builder: (context, child) {
                 return AnimatedContainer(
                   duration: (isAnswered || isRetrying) ? 400.ms : Duration.zero,
@@ -208,7 +262,14 @@ class FlashcardGameBody extends StatelessWidget {
                       0.0,
                     )
                     ..rotateZ(dragAngle.value),
-                  child: child,
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      child!,
+                      if (dragProgress != null)
+                        _buildDirectionalStamps(width, height),
+                    ],
+                  ),
                 );
               },
               child: ValueListenableBuilder<bool>(
@@ -252,6 +313,53 @@ class FlashcardGameBody extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  // ── Directional Holographic Glow Stamps ───────────────────────────────────
+
+  Widget _buildDirectionalStamps(double width, double height) {
+    final progress = dragProgress!.value;
+    if (progress.abs() < 0.12) return const SizedBox.shrink();
+
+    final isMastered = progress > 0;
+    final stampOpacity = ((progress.abs() - 0.12) / 0.55).clamp(0.0, 1.0);
+    final stampColor = isMastered ? AppColors.emerald500 : AppColors.red500;
+    final stampText = isMastered ? 'MASTERED ✦' : 'REVIEW ↺';
+    final rotation = isMastered ? -0.22 : 0.22;
+
+    return Positioned(
+      top: height * 0.14,
+      child: Opacity(
+        opacity: stampOpacity,
+        child: Transform.rotate(
+          angle: rotation,
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+            decoration: BoxDecoration(
+              color: stampColor.withValues(alpha: 0.15),
+              borderRadius: BorderRadius.circular(14.r),
+              border: Border.all(color: stampColor, width: 3.5),
+              boxShadow: [
+                BoxShadow(
+                  color: stampColor.withValues(alpha: 0.4),
+                  blurRadius: 16.r,
+                ),
+              ],
+            ),
+            child: Text(
+              stampText,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 22.sp,
+                fontWeight: FontWeight.w900,
+                color: stampColor,
+                letterSpacing: 2.0,
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }

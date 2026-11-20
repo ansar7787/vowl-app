@@ -4,7 +4,10 @@ import 'package:vowl/core/data/models/phased_quest_model.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
-/// Context judgment multiple-choice card for Flashcard Practice Phase.
+/// Choice Battle Crystals card for the Flashcard Practice Phase.
+///
+/// Features glowing crystal badge indicators, high-contrast options,
+/// scale-spring taps, and animated evaluation states.
 class FlashcardPracticeChoiceCard extends StatelessWidget {
   final PracticeExercise exercise;
   final int? selectedOptionIndex;
@@ -35,8 +38,18 @@ class FlashcardPracticeChoiceCard extends StatelessWidget {
             color: isDark ? AppColors.slate900 : Colors.white,
             borderRadius: BorderRadius.circular(20.r),
             border: Border.all(
-              color: isDark ? AppColors.slate800 : AppColors.slate200,
+              color: isDark
+                  ? Colors.amber.withValues(alpha: 0.3)
+                  : Colors.amber.withValues(alpha: 0.25),
+              width: 1.5,
             ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.amber.withValues(alpha: 0.08),
+                blurRadius: 16.r,
+                offset: Offset(0, 4.h),
+              ),
+            ],
           ),
           child: Text(
             exercise.question ?? exercise.sentence ?? '',
@@ -45,14 +58,14 @@ class FlashcardPracticeChoiceCard extends StatelessWidget {
               fontSize: 18.sp,
               fontWeight: FontWeight.w700,
               color: isDark ? Colors.white : AppColors.slate900,
-              height: 1.4,
+              height: 1.45,
             ),
             textAlign: TextAlign.center,
           ),
         ),
         SizedBox(height: 20.h),
 
-        // Option tiles with ScaleButton
+        // Crystal Option Tiles with ScaleButton
         Column(
           children: List.generate(exercise.options.length, (index) {
             final option = exercise.options[index];
@@ -61,22 +74,34 @@ class FlashcardPracticeChoiceCard extends StatelessWidget {
                 ? AppColors.slate800
                 : AppColors.slate200;
             Color tileColor = isDark ? AppColors.slate900 : Colors.white;
+            Color badgeBgColor = isDark
+                ? AppColors.slate800
+                : AppColors.slate100;
+            Color badgeTextColor = isDark
+                ? AppColors.slate400
+                : AppColors.slate600;
 
             if (hasChecked) {
               if (index == exercise.correctAnswerIndex) {
                 borderColor = Colors.green;
-                tileColor = Colors.green.withValues(alpha: 0.1);
+                tileColor = Colors.green.withValues(alpha: 0.12);
+                badgeBgColor = Colors.green;
+                badgeTextColor = Colors.white;
               } else if (isSelected && !isAnswerCorrect) {
                 borderColor = Colors.red;
-                tileColor = Colors.red.withValues(alpha: 0.1);
+                tileColor = Colors.red.withValues(alpha: 0.12);
+                badgeBgColor = Colors.red;
+                badgeTextColor = Colors.white;
               }
             } else if (isSelected) {
               borderColor = Colors.amber.shade600;
-              tileColor = Colors.amber.withValues(alpha: 0.1);
+              tileColor = Colors.amber.withValues(alpha: 0.10);
+              badgeBgColor = Colors.amber.shade600;
+              badgeTextColor = Colors.white;
             }
 
             return Padding(
-              padding: EdgeInsets.only(bottom: 10.h),
+              padding: EdgeInsets.only(bottom: 12.h),
               child: ScaleButton(
                 onTap: hasChecked ? null : () => onSelectOption(index),
                 child: Container(
@@ -90,7 +115,7 @@ class FlashcardPracticeChoiceCard extends StatelessWidget {
                         color: Colors.black.withValues(
                           alpha: isDark ? 0.2 : 0.04,
                         ),
-                        blurRadius: 6,
+                        blurRadius: 8,
                         offset: const Offset(0, 2),
                       ),
                     ],
@@ -98,15 +123,14 @@ class FlashcardPracticeChoiceCard extends StatelessWidget {
                   child: Row(
                     children: [
                       Container(
-                        width: 28.r,
-                        height: 28.r,
+                        width: 32.r,
+                        height: 32.r,
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: isSelected
-                              ? Colors.amber.shade600
-                              : (isDark
-                                    ? AppColors.slate800
-                                    : AppColors.slate100),
+                          color: badgeBgColor,
+                          border: Border.all(
+                            color: borderColor.withValues(alpha: 0.4),
+                          ),
                         ),
                         child: Center(
                           child: Text(
@@ -114,17 +138,13 @@ class FlashcardPracticeChoiceCard extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontWeight: FontWeight.w800,
-                              fontSize: 12.sp,
-                              color: isSelected
-                                  ? Colors.white
-                                  : (isDark
-                                        ? AppColors.slate400
-                                        : AppColors.slate600),
+                              fontSize: 13.sp,
+                              color: badgeTextColor,
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(width: 12.w),
+                      SizedBox(width: 14.w),
                       Expanded(
                         child: Text(
                           option,
@@ -137,6 +157,15 @@ class FlashcardPracticeChoiceCard extends StatelessWidget {
                           ),
                         ),
                       ),
+                      if (hasChecked &&
+                          index == exercise.correctAnswerIndex) ...[
+                        SizedBox(width: 8.w),
+                        Icon(
+                          Icons.check_circle_rounded,
+                          color: Colors.green,
+                          size: 20.r,
+                        ),
+                      ],
                     ],
                   ),
                 ),

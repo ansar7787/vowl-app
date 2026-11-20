@@ -15,8 +15,8 @@ import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashca
 
 /// Guided active recall & context practice screen for Flashcards.
 ///
-/// Features typed fill-in-the-gap exercises and context differentiation
-/// with instant corrective feedback before entering the timed Test phase.
+/// Features cyber-cloze shard assembly exercises and choice battle crystals
+/// with instant corrective feedback before entering the timed Mastery phase.
 class FlashcardsPracticeScreen extends StatefulWidget {
   final int level;
 
@@ -227,6 +227,7 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
       onHint: () => setState(() => _showHint = true),
       onComplete: _advanceOrFinish,
       child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -240,7 +241,7 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
               ),
               child: Text(
                 exercise.interactionType == 'typing'
-                    ? '⌨️ ACTIVE RECALL • FILL THE GAP'
+                    ? '⚡ ACTIVE RECALL • SHARD ASSEMBLY'
                     : '🎯 CONTEXT JUDGMENT',
                 style: TextStyle(
                   fontFamily: 'Outfit',
@@ -253,7 +254,7 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
             ),
             SizedBox(height: 16.h),
 
-            // Exercise Body (Typing or Choice)
+            // Exercise Body (Typing Shard Assembly or Crystal Choice)
             if (exercise.interactionType == 'typing')
               FlashcardPracticeTypingCard(
                 exercise: exercise,

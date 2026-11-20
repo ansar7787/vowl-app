@@ -170,6 +170,8 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
                       hideActions: false,
                       dragOffset: _controller.dragOffset,
                       dragAngle: _controller.dragAngle,
+                      dragProgress: _controller.dragProgress,
+                      comboStreak: _controller.comboStreak,
                       onHorizontalDragUpdate:
                           _controller.onHorizontalDragUpdate,
                       onHorizontalDragEnd: _controller.onHorizontalDragEnd,

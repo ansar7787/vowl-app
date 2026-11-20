@@ -162,6 +162,7 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
       actionLabel: isLast ? 'Start Practice ➔' : 'Next Word ➔',
       onComplete: _nextWord,
       child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

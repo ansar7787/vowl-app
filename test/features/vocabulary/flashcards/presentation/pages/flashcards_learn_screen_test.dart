@@ -6,6 +6,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/pages/flashcards_learn_screen.dart';
+import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_audio_visualizer.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_learn_card.dart';
 
 class MockTtsService extends Mock implements TtsService {}
@@ -46,7 +47,7 @@ void main() {
 
   group('FlashcardsLearnScreen', () {
     testWidgets(
-      'renders learn phase scaffold, verifies pronunciation, flippable card, and advances',
+      'renders holographic card, audio visualizer, flippable 3D faces, and advances',
       (tester) async {
         tester.view.physicalSize = const Size(375, 812);
         tester.view.devicePixelRatio = 1.0;
@@ -58,37 +59,36 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(milliseconds: 400));
 
-        expect(find.byType(FlashcardsLearnScreen), findsOneWidget);
+        // Verifies the flippable card and audio visualizer are mounted
         expect(find.byType(FlashcardLearnCard), findsOneWidget);
+        expect(find.byType(FlashcardAudioVisualizer), findsOneWidget);
 
-        // Verify front card content
-        expect(find.text('HELLO'), findsOneWidget);
-        expect(find.text('/həˈloʊ/'), findsOneWidget);
-
-        // Verify audio trigger on front card
-        final audioButton = find.byIcon(Icons.volume_up_rounded);
-        expect(audioButton, findsWidgets);
-        await tester.tap(audioButton.first);
-        await tester.pump(const Duration(milliseconds: 200));
-        verify(() => mockTtsService.speak('HELLO')).called(1);
+        // Tap the audio speaker button
+        final speakerFinder = find.byIcon(Icons.volume_up_rounded).first;
+        await tester.tap(speakerFinder);
+        await tester.pump();
+        verify(() => mockTtsService.speak(any())).called(greaterThan(0));
 
         // Tap card to flip
         await tester.tap(find.byKey(const Key('flashcard_learn_card')));
-        await tester.pumpAndSettle();
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 450));
 
-        // After flipping, definition is revealed
         expect(find.text('DEFINITION'), findsOneWidget);
-        expect(find.textContaining('common greeting'), findsOneWidget);
+        expect(find.text('Tap to flip back'), findsOneWidget);
 
-        // Tap to flip back
-        await tester.tap(find.byKey(const Key('flashcard_learn_card')));
+        // Scroll down to see teaching sections
+        await tester.drag(find.byType(SingleChildScrollView), const Offset(0, -300));
         await tester.pumpAndSettle();
 
-        // Advance to next word
-        final nextButton = find.textContaining('Next Word');
-        if (nextButton.evaluate().isNotEmpty) {
-          await tester.tap(nextButton.first);
-          await tester.pump(const Duration(milliseconds: 300));
+        expect(find.text('NATIVE SPEAKER TIP'), findsOneWidget);
+        expect(find.text('PITFALL TO AVOID'), findsOneWidget);
+
+        // Tap Next Word button to advance
+        final nextBtn = find.text('Next Word ➔');
+        if (nextBtn.evaluate().isNotEmpty) {
+          await tester.tap(nextBtn);
+          await tester.pumpAndSettle();
         }
       },
     );

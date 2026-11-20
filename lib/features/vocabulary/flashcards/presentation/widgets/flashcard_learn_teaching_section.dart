@@ -31,7 +31,7 @@ class FlashcardLearnTeachingSection extends StatelessWidget {
             padding: EdgeInsets.all(14.r),
             decoration: BoxDecoration(
               color: isDark
-                  ? AppColors.slate900.withValues(alpha: 0.6)
+                  ? AppColors.slate900.withValues(alpha: 0.7)
                   : AppColors.slate100,
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
@@ -68,8 +68,8 @@ class FlashcardLearnTeachingSection extends StatelessWidget {
               color: Colors.amber.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
-                color: Colors.amber.withValues(alpha: 0.3),
-                width: 1,
+                color: Colors.amber.withValues(alpha: 0.35),
+                width: 1.2,
               ),
             ),
             child: Row(
@@ -122,7 +122,7 @@ class FlashcardLearnTeachingSection extends StatelessWidget {
               color: AppColors.indigo500.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
-                color: AppColors.indigo500.withValues(alpha: 0.2),
+                color: AppColors.indigo500.withValues(alpha: 0.22),
               ),
             ),
             child: Row(
@@ -169,14 +169,17 @@ class FlashcardLearnTeachingSection extends StatelessWidget {
           SizedBox(height: 14.h),
         ],
 
-        // 4. Common Mistake Alert
+        // 4. Hazard Shield ⚠️ (Pitfall to Avoid)
         if (quest.commonMistake != null && quest.commonMistake!.isNotEmpty) ...[
           Container(
             padding: EdgeInsets.all(14.r),
             decoration: BoxDecoration(
               color: Colors.red.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(16.r),
-              border: Border.all(color: Colors.red.withValues(alpha: 0.25)),
+              border: Border.all(
+                color: Colors.red.withValues(alpha: 0.30),
+                width: 1.2,
+              ),
             ),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -197,7 +200,7 @@ class FlashcardLearnTeachingSection extends StatelessWidget {
                           letterSpacing: 1.0,
                         ),
                       ),
-                      SizedBox(height: 2.h),
+                      SizedBox(height: 4.h),
                       Text(
                         quest.commonMistake!,
                         style: TextStyle(
@@ -218,7 +221,7 @@ class FlashcardLearnTeachingSection extends StatelessWidget {
           SizedBox(height: 14.h),
         ],
 
-        // 5. Word Family Pills
+        // 5. Word Family & Variations (Word Power Orbs)
         if (quest.familyWords.isNotEmpty) ...[
           Container(
             padding: EdgeInsets.all(14.r),
@@ -260,7 +263,7 @@ class FlashcardLearnTeachingSection extends StatelessWidget {
                               : AppColors.slate100,
                           borderRadius: BorderRadius.circular(10.r),
                           border: Border.all(
-                            color: AppColors.indigo500.withValues(alpha: 0.2),
+                            color: AppColors.indigo500.withValues(alpha: 0.25),
                           ),
                         ),
                         child: Row(
@@ -348,7 +351,7 @@ class FlashcardLearnTeachingSection extends StatelessWidget {
                     Container(
                       padding: EdgeInsets.all(10.r),
                       decoration: BoxDecoration(
-                        color: AppColors.indigo500.withValues(alpha: 0.06),
+                        color: AppColors.indigo500.withValues(alpha: 0.08),
                         borderRadius: BorderRadius.circular(10.r),
                       ),
                       child: Text(
