@@ -10,6 +10,7 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/tts_service.dart';
 import '../widgets/flashcard_practice_chunk_weaver.dart';
 
 /// 2026 Interactive Practice Phase screen for Vocabulary Flashcards.
@@ -155,7 +156,6 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
       if (!isCorrect) {
         _shakeTrigger++;
       } else {
-        // Unlock Stage 2 Collocation Snap
         _showCollocationStage = true;
       }
     });
@@ -190,6 +190,13 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
     }
   }
 
+  void _speakSentence(String rawSentence) {
+    if (di.sl.isRegistered<TtsService>()) {
+      final textToSpeak = rawSentence.replaceAll('_____', 'blank');
+      di.sl<TtsService>().speak(textToSpeak);
+    }
+  }
+
   void _advanceOrFinish() {
     if (!_hasCheckedAssembly) {
       _checkAssembly();
@@ -197,7 +204,6 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
     }
 
     if (!_isAssemblyCorrect) {
-      // Allow retry of assembly
       setState(() {
         _initQuestInteraction(_currentIndex);
       });
@@ -205,7 +211,7 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
     }
 
     if (_showCollocationStage && !_hasCheckedCollocation) {
-      return; // Awaiting collocation selection
+      return;
     }
 
     if (_currentIndex < _quests.length - 1) {
@@ -229,9 +235,7 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
         '/game?category=vocabulary&gameType=flashcards&level=${widget.level}';
     try {
       context.pushReplacement(target);
-    } catch (_) {
-      // Handled gracefully in tests where GoRouter is omitted
-    }
+    } catch (_) {}
   }
 
   @override
@@ -315,6 +319,9 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
               onRemoveChunk: _removeChunk,
               onCheckAssembly: _checkAssembly,
               onSelectCollocation: _selectCollocation,
+              onSpeakSentence: () => _speakSentence(quest.example ?? ''),
+              onClearChunks: () =>
+                  setState(() => _initQuestInteraction(_currentIndex)),
             ),
             if (_showHint && quest.hint != null) ...[
               SizedBox(height: 16.h),

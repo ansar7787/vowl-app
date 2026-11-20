@@ -12,6 +12,7 @@ class FlashcardLearnBackFace extends StatelessWidget {
   final List<String> collocations;
   final String? commonMistake;
   final String contextDomain;
+  final VoidCallback? onSpeakExample;
 
   const FlashcardLearnBackFace({
     super.key,
@@ -21,6 +22,7 @@ class FlashcardLearnBackFace extends StatelessWidget {
     required this.collocations,
     this.commonMistake,
     required this.contextDomain,
+    this.onSpeakExample,
   });
 
   @override
@@ -115,7 +117,7 @@ class FlashcardLearnBackFace extends StatelessWidget {
 
           SizedBox(height: 16.h),
 
-          // Real-World Sentence
+          // Real-World Sentence with quote and inline listen button
           if (quest.example != null)
             Container(
               padding: EdgeInsets.all(14.r),
@@ -150,6 +152,19 @@ class FlashcardLearnBackFace extends StatelessWidget {
                       ),
                     ),
                   ),
+                  if (onSpeakExample != null) ...[
+                    SizedBox(width: 6.w),
+                    ScaleButton(
+                      onTap: onSpeakExample!,
+                      child: Icon(
+                        Icons.volume_up_rounded,
+                        size: 18.r,
+                        color: isDark
+                            ? AppColors.indigo400
+                            : AppColors.indigo600,
+                      ),
+                    ),
+                  ],
                 ],
               ),
             ),

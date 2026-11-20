@@ -16,6 +16,9 @@ class FlashcardLearnView extends StatelessWidget {
   final VoidCallback onFlip;
   final void Function(String syllable) onSpeakSyllable;
   final VoidCallback onSpeakFullWord;
+  final VoidCallback? onSpeakExample;
+  final int clusterIndex;
+  final int clusterTotal;
 
   const FlashcardLearnView({
     super.key,
@@ -26,6 +29,9 @@ class FlashcardLearnView extends StatelessWidget {
     required this.onFlip,
     required this.onSpeakSyllable,
     required this.onSpeakFullWord,
+    this.onSpeakExample,
+    this.clusterIndex = 0,
+    this.clusterTotal = 3,
   });
 
   @override
@@ -69,6 +75,7 @@ class FlashcardLearnView extends StatelessWidget {
                     collocations: collocations,
                     commonMistake: commonMistake,
                     contextDomain: contextDomain,
+                    onSpeakExample: onSpeakExample,
                   ),
                 )
               : _buildFrontFace(
@@ -109,6 +116,62 @@ class FlashcardLearnView extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
+          // Header Row: Cluster Progress Pills & 3D Interactive Tag
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              // Cluster Progress Indicators
+              Row(
+                children: List.generate(clusterTotal, (idx) {
+                  final isActive = idx == clusterIndex;
+                  return AnimatedContainer(
+                    duration: const Duration(milliseconds: 250),
+                    margin: EdgeInsets.only(right: 5.w),
+                    width: isActive ? 20.w : 7.w,
+                    height: 7.h,
+                    decoration: BoxDecoration(
+                      color: isActive
+                          ? AppColors.indigo500
+                          : (isDark ? AppColors.slate800 : AppColors.slate300),
+                      borderRadius: BorderRadius.circular(4.r),
+                    ),
+                  );
+                }),
+              ),
+              // 3D Flip Hint Badge
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+                decoration: BoxDecoration(
+                  color: isDark ? AppColors.slate800 : AppColors.slate100,
+                  borderRadius: BorderRadius.circular(8.r),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.sync_alt_rounded,
+                      size: 12.r,
+                      color: isDark ? AppColors.slate400 : AppColors.slate600,
+                    ),
+                    SizedBox(width: 4.w),
+                    Text(
+                      '3D DECK',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 0.8,
+                        color: isDark ? AppColors.slate400 : AppColors.slate600,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+
+          SizedBox(height: 16.h),
+
           // Scenario Badge
           Container(
             padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),

@@ -5,6 +5,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import '../controllers/flashcard_controller.dart';
 import 'flashcard_precision_strike_view.dart';
+import 'flashcard_speed_fuse_bar.dart';
 
 /// Objective arcade challenge view for Flashcard Speed Collocation Slam & Precision Strike.
 class FlashcardSpeedSlamView extends StatelessWidget {
@@ -53,85 +54,11 @@ class FlashcardSpeedSlamView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        // ── High-Frequency Timer Fuse Bar (ValueNotifier isolated) ─────────
-        ValueListenableBuilder<double>(
-          valueListenable: controller.timerProgress,
-          builder: (context, progress, _) {
-            Color fuseColor = Colors.green;
-            if (progress <= 0.25) {
-              fuseColor = Colors.red;
-            } else if (progress <= 0.5) {
-              fuseColor = Colors.amber;
-            }
-
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(Icons.timer_rounded, size: 14.r, color: fuseColor),
-                        SizedBox(width: 4.w),
-                        Text(
-                          'SPEED FUSE',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w800,
-                            letterSpacing: 1.2,
-                            color: fuseColor,
-                          ),
-                        ),
-                      ],
-                    ),
-                    // Combo Streak Counter
-                    ValueListenableBuilder<int>(
-                      valueListenable: controller.comboStreak,
-                      builder: (context, streak, _) {
-                        if (streak <= 0) return const SizedBox.shrink();
-                        return Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 8.w,
-                            vertical: 2.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.amber.withValues(alpha: 0.2),
-                            borderRadius: BorderRadius.circular(10.r),
-                            border: Border.all(color: Colors.amber, width: 1.0),
-                          ),
-                          child: Text(
-                            '🔥 ${streak}x COMBO',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.w900,
-                              color: isDark
-                                  ? Colors.amberAccent
-                                  : Colors.amber.shade900,
-                            ),
-                          ),
-                        );
-                      },
-                    ),
-                  ],
-                ),
-                SizedBox(height: 6.h),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(8.r),
-                  child: LinearProgressIndicator(
-                    value: progress,
-                    minHeight: 8.h,
-                    backgroundColor: isDark
-                        ? AppColors.slate800
-                        : AppColors.slate200,
-                    valueColor: AlwaysStoppedAnimation<Color>(fuseColor),
-                  ),
-                ),
-              ],
-            );
-          },
+        // ── High-Frequency Timer Fuse Bar with Combo Streak ──────────────
+        FlashcardSpeedFuseBar(
+          timerProgress: controller.timerProgress,
+          comboStreak: controller.comboStreak,
+          isDark: isDark,
         ),
 
         SizedBox(height: 16.h),
@@ -336,6 +263,16 @@ class FlashcardSpeedSlamView extends StatelessWidget {
                               ),
                             ),
                           ),
+                          if (isSelected) ...[
+                            SizedBox(width: 8.w),
+                            Icon(
+                              isMatchCorrect
+                                  ? Icons.check_circle_rounded
+                                  : Icons.cancel_rounded,
+                              size: 20.r,
+                              color: isMatchCorrect ? Colors.green : Colors.red,
+                            ),
+                          ],
                         ],
                       ),
                     ),

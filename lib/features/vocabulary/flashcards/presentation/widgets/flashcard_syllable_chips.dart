@@ -59,6 +59,14 @@ class FlashcardSyllableChips extends StatelessWidget {
                         : (isDark ? AppColors.slate700 : AppColors.slate300),
                     width: isStressed ? 2.0 : 1.0,
                   ),
+                  boxShadow: isStressed
+                      ? [
+                          BoxShadow(
+                            color: Colors.amber.withValues(alpha: 0.2),
+                            blurRadius: 8.r,
+                          ),
+                        ]
+                      : null,
                 ),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
@@ -134,6 +142,32 @@ class FlashcardSyllableChips extends StatelessWidget {
                     color: isDark ? AppColors.slate300 : AppColors.slate700,
                   ),
                 ),
+                if (isSpeaking) ...[
+                  SizedBox(width: 8.w),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Container(
+                        width: 3.w,
+                        height: 12.h,
+                        color: AppColors.indigo400,
+                        margin: EdgeInsets.symmetric(horizontal: 1.w),
+                      ),
+                      Container(
+                        width: 3.w,
+                        height: 16.h,
+                        color: AppColors.indigo400,
+                        margin: EdgeInsets.symmetric(horizontal: 1.w),
+                      ),
+                      Container(
+                        width: 3.w,
+                        height: 10.h,
+                        color: AppColors.indigo400,
+                        margin: EdgeInsets.symmetric(horizontal: 1.w),
+                      ),
+                    ],
+                  ),
+                ],
               ],
             ),
           ),

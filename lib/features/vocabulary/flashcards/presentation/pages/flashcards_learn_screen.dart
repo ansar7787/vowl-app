@@ -153,9 +153,7 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
         '/practice?category=vocabulary&gameType=flashcards&level=${widget.level}';
     try {
       context.pushReplacement(target);
-    } catch (_) {
-      // Handled gracefully in test harnesses where GoRouter is omitted
-    }
+    } catch (_) {}
   }
 
   @override
@@ -208,9 +206,14 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
                       isSpeaking: isSpeaking,
                       isDark: isDark,
                       onFlip: _flipCard,
+                      clusterIndex: _currentIndex,
+                      clusterTotal: _quests.length,
                       onSpeakSyllable: (syllable) => _speakText(syllable),
                       onSpeakFullWord: () {
                         if (quest.word != null) _speakText(quest.word!);
+                      },
+                      onSpeakExample: () {
+                        if (quest.example != null) _speakText(quest.example!);
                       },
                     );
                   },

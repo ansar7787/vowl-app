@@ -52,7 +52,7 @@ class FlashcardPrecisionStrikeView extends StatelessWidget {
           ],
         ),
         SizedBox(height: 10.h),
-        // Sentence with gap
+        // Sentence with illuminated gap
         Container(
           padding: EdgeInsets.all(16.r),
           decoration: BoxDecoration(
@@ -61,6 +61,12 @@ class FlashcardPrecisionStrikeView extends StatelessWidget {
             border: Border.all(
               color: isDark ? AppColors.slate800 : AppColors.slate300,
             ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.cyan.withValues(alpha: isDark ? 0.08 : 0.04),
+                blurRadius: 10.r,
+              ),
+            ],
           ),
           child: Text(
             sentence,
@@ -102,7 +108,7 @@ class FlashcardPrecisionStrikeView extends StatelessWidget {
                 }
 
                 return Padding(
-                  padding: EdgeInsets.only(bottom: 8.h),
+                  padding: EdgeInsets.only(bottom: 10.h),
                   child: ScaleButton(
                     key: ValueKey('candidate_$idx'),
                     onTap: () => controller.strikeCandidateWord(
@@ -114,7 +120,7 @@ class FlashcardPrecisionStrikeView extends StatelessWidget {
                       width: double.infinity,
                       padding: EdgeInsets.symmetric(
                         horizontal: 16.w,
-                        vertical: 12.h,
+                        vertical: 14.h,
                       ),
                       decoration: BoxDecoration(
                         color: bgCol,
@@ -123,18 +129,65 @@ class FlashcardPrecisionStrikeView extends StatelessWidget {
                           color: borderCol,
                           width: isSelected ? 2.5 : 1.5,
                         ),
-                      ),
-                      child: Center(
-                        child: Text(
-                          word.toUpperCase(),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 15.sp,
-                            fontWeight: FontWeight.w800,
-                            letterSpacing: 1.1,
-                            color: isDark ? Colors.white : AppColors.slate900,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(
+                              alpha: isDark ? 0.25 : 0.04,
+                            ),
+                            blurRadius: 6.r,
+                            offset: Offset(0, 2.h),
                           ),
-                        ),
+                        ],
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 28.r,
+                            height: 28.r,
+                            decoration: BoxDecoration(
+                              color: isDark
+                                  ? AppColors.slate800
+                                  : AppColors.slate100,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Center(
+                              child: Text(
+                                String.fromCharCode(65 + idx),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 13.sp,
+                                  fontWeight: FontWeight.w800,
+                                  color: isDark
+                                      ? Colors.white
+                                      : AppColors.slate900,
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 12.w),
+                          Expanded(
+                            child: Text(
+                              word.toUpperCase(),
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 15.sp,
+                                fontWeight: FontWeight.w800,
+                                letterSpacing: 1.1,
+                                color: isDark
+                                    ? Colors.white
+                                    : AppColors.slate900,
+                              ),
+                            ),
+                          ),
+                          if (isSelected)
+                            Icon(
+                              isTarget
+                                  ? Icons.check_circle_rounded
+                                  : Icons.cancel_rounded,
+                              size: 20.r,
+                              color: isTarget ? Colors.green : Colors.red,
+                            ),
+                        ],
                       ),
                     ),
                   ),
