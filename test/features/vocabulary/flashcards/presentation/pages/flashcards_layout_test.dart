@@ -284,5 +284,43 @@ void main() {
       expect(find.byType(FlashcardsScreen), findsOneWidget);
       expect(tester.takeException(), isNull);
     });
+
+    testWidgets('renders multiple choice options when quest has options', (
+      tester,
+    ) async {
+      const mcQuest = VocabularyQuest(
+        id: 'VOC_FC_MC_1',
+        instruction: 'CHOOSE THE CORRECT MEANING',
+        difficulty: 1,
+        subtype: GameSubtype.flashcards,
+        word: 'HELLO',
+        definition: 'A greeting',
+        options: ['A greeting', 'A farewell', 'A thank you'],
+        correctAnswer: 'A greeting',
+      );
+
+      await pumpFlashcards(
+        tester,
+        state: const VocabularyLoaded(
+          quests: [mcQuest],
+          currentIndex: 0,
+          livesRemaining: 3,
+        ),
+      );
+
+      // Flip card
+      await tester.tap(find.byType(FlashcardSwipeFront));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 500));
+
+      expect(find.text('SELECT THE CORRECT MEANING'), findsOneWidget);
+      expect(find.text('A greeting'), findsOneWidget);
+      expect(find.text('A farewell'), findsOneWidget);
+
+      await tester.tap(find.text('A greeting'));
+      await tester.pump(const Duration(milliseconds: 300));
+
+      verify(() => mockVocabBloc.add(const SubmitAnswer(true))).called(1);
+    });
   });
 }

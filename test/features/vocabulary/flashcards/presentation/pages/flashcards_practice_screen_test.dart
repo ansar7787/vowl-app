@@ -5,6 +5,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/vocabulary/flashcards/presentation/pages/flashcards_practice_screen.dart';
+import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_practice_choice_card.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_practice_typing_card.dart';
 
 class MockHapticService extends Mock implements HapticService {}
@@ -36,7 +37,7 @@ void main() {
 
   group('FlashcardsPracticeScreen', () {
     testWidgets(
-      'renders active recall typing exercise, evaluates answer and advances',
+      'renders active recall typing exercise, evaluates incorrect and correct answer, and advances',
       (tester) async {
         tester.view.physicalSize = const Size(375, 812);
         tester.view.devicePixelRatio = 1.0;
@@ -51,27 +52,30 @@ void main() {
         expect(find.byType(FlashcardsPracticeScreen), findsOneWidget);
         expect(find.byType(FlashcardPracticeTypingCard), findsOneWidget);
 
-        // Enter answer in typing field
         final textField = find.byType(TextField);
         expect(textField, findsOneWidget);
-        await tester.enterText(textField, 'Hello');
-        await tester.pump();
-
-        // Tap Check Answer button
         final checkButton = find.text('Check Answer');
         expect(checkButton, findsOneWidget);
+
+        // 1. Enter correct answer in typing field
+        await tester.enterText(textField, 'Hello');
+        await tester.pump();
         await tester.tap(checkButton);
         await tester.pump(const Duration(milliseconds: 300));
 
         // Correct feedback displayed
         expect(find.text('CORRECT'), findsOneWidget);
         expect(find.text('Spot on! Correct answer.'), findsOneWidget);
+        verify(() => mockHapticService.success()).called(1);
 
-        // Tap Next Exercise
+        // 2. Tap Next Exercise to advance to choice exercise
         final nextButton = find.textContaining('Next Exercise');
         expect(nextButton, findsOneWidget);
         await tester.tap(nextButton);
         await tester.pump(const Duration(milliseconds: 300));
+
+        // 3. Choice card is rendered for exercise 2
+        expect(find.byType(FlashcardPracticeChoiceCard), findsOneWidget);
       },
     );
   });

@@ -45,44 +45,52 @@ void main() {
   }
 
   group('FlashcardsLearnScreen', () {
-    testWidgets('renders learn phase scaffold, flippable card, and advances', (
-      tester,
-    ) async {
-      tester.view.physicalSize = const Size(375, 812);
-      tester.view.devicePixelRatio = 1.0;
-      addTearDown(tester.view.resetPhysicalSize);
+    testWidgets(
+      'renders learn phase scaffold, verifies pronunciation, flippable card, and advances',
+      (tester) async {
+        tester.view.physicalSize = const Size(375, 812);
+        tester.view.devicePixelRatio = 1.0;
+        addTearDown(tester.view.resetPhysicalSize);
 
-      await tester.pumpWidget(
-        buildTestableWidget(const FlashcardsLearnScreen(level: 1)),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 400));
+        await tester.pumpWidget(
+          buildTestableWidget(const FlashcardsLearnScreen(level: 1)),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 400));
 
-      expect(find.byType(FlashcardsLearnScreen), findsOneWidget);
-      expect(find.byType(FlashcardLearnCard), findsOneWidget);
+        expect(find.byType(FlashcardsLearnScreen), findsOneWidget);
+        expect(find.byType(FlashcardLearnCard), findsOneWidget);
 
-      // Verify front card content
-      expect(find.text('HELLO'), findsOneWidget);
-      expect(find.text('/həˈloʊ/'), findsOneWidget);
+        // Verify front card content
+        expect(find.text('HELLO'), findsOneWidget);
+        expect(find.text('/həˈloʊ/'), findsOneWidget);
 
-      // Tap card to flip
-      await tester.tap(find.byKey(const Key('flashcard_learn_card')));
-      await tester.pumpAndSettle();
+        // Verify audio trigger on front card
+        final audioButton = find.byIcon(Icons.volume_up_rounded);
+        expect(audioButton, findsWidgets);
+        await tester.tap(audioButton.first);
+        await tester.pump(const Duration(milliseconds: 200));
+        verify(() => mockTtsService.speak('HELLO')).called(1);
 
-      // After flipping, definition is revealed
-      expect(find.text('DEFINITION'), findsOneWidget);
-      expect(find.textContaining('common greeting'), findsOneWidget);
+        // Tap card to flip
+        await tester.tap(find.byKey(const Key('flashcard_learn_card')));
+        await tester.pumpAndSettle();
 
-      // Tap to flip back
-      await tester.tap(find.byKey(const Key('flashcard_learn_card')));
-      await tester.pumpAndSettle();
+        // After flipping, definition is revealed
+        expect(find.text('DEFINITION'), findsOneWidget);
+        expect(find.textContaining('common greeting'), findsOneWidget);
 
-      // Advance to next word
-      final nextButton = find.textContaining('Next Word');
-      if (nextButton.evaluate().isNotEmpty) {
-        await tester.tap(nextButton.first);
-        await tester.pump(const Duration(milliseconds: 300));
-      }
-    });
+        // Tap to flip back
+        await tester.tap(find.byKey(const Key('flashcard_learn_card')));
+        await tester.pumpAndSettle();
+
+        // Advance to next word
+        final nextButton = find.textContaining('Next Word');
+        if (nextButton.evaluate().isNotEmpty) {
+          await tester.tap(nextButton.first);
+          await tester.pump(const Duration(milliseconds: 300));
+        }
+      },
+    );
   });
 }
