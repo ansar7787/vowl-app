@@ -265,14 +265,18 @@ class FlashcardLearnView extends StatelessWidget {
                 ),
                 SizedBox(width: 6.w),
                 Flexible(
-                  child: Text(
-                    contextDomain,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w700,
-                      color: isDark ? AppColors.indigo400 : AppColors.indigo600,
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      contextDomain,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w700,
+                        color: isDark
+                            ? AppColors.indigo400
+                            : AppColors.indigo600,
+                      ),
                     ),
                   ),
                 ),
@@ -283,15 +287,18 @@ class FlashcardLearnView extends StatelessWidget {
           SizedBox(height: 18.h),
 
           // Target Word
-          Text(
-            quest.word ?? '',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 32.sp,
-              fontWeight: FontWeight.w900,
-              letterSpacing: 1.5,
-              color: isDark ? Colors.white : AppColors.slate950,
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              quest.word ?? '',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 32.sp,
+                fontWeight: FontWeight.w900,
+                letterSpacing: 1.5,
+                color: isDark ? Colors.white : AppColors.slate950,
+              ),
             ),
           ),
 

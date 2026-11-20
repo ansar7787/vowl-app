@@ -118,97 +118,90 @@ class _FlashcardLearnBackFaceState extends State<FlashcardLearnBackFace> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Header: Word + Sound Button + Translate + Flip Front
+            // Top Navigation Bar: Flip to Front (left) + Translate (right)
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ScaleButton(
+                  onTap: widget.onFlip,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 8.w,
+                      vertical: 4.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: isDark ? AppColors.slate800 : AppColors.slate100,
+                      borderRadius: BorderRadius.circular(10.r),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.arrow_back_ios_new_rounded,
+                          size: 12.r,
+                          color: AppColors.indigo500,
+                        ),
+                        SizedBox(width: 3.w),
+                        Text(
+                          'Front',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w700,
+                            color: isDark
+                                ? AppColors.slate300
+                                : AppColors.slate700,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                TranslateButtonWidget(
+                  originalText: _buildTranslatableContent(),
+                  onTranslationComplete: (t) => _applyTranslation(t, null),
+                  onTranslationWithLanguage: (t, loc) =>
+                      _applyTranslation(t, loc),
+                ),
+              ],
+            ),
+            SizedBox(height: 10.h),
+            // Dedicated Target Word + Sound Row: auto-scaled, zero ellipses, zero overflow
             Row(
               children: [
                 Expanded(
-                  child: Row(
-                    children: [
-                      Flexible(
-                        child: Text(
-                          quest.word ?? '',
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 20.sp,
-                            fontWeight: FontWeight.w900,
-                            color: isDark ? Colors.white : AppColors.slate950,
-                          ),
-                        ),
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      quest.word ?? '',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 22.sp,
+                        fontWeight: FontWeight.w900,
+                        color: isDark ? Colors.white : AppColors.slate950,
                       ),
-                      SizedBox(width: 6.w),
-                      ScaleButton(
-                        onTap: () =>
-                            quest.word != null ? _speakText(quest.word!) : null,
-                        child: Container(
-                          padding: EdgeInsets.all(5.r),
-                          decoration: BoxDecoration(
-                            color: isDark
-                                ? AppColors.indigo500.withValues(alpha: 0.2)
-                                : AppColors.indigo500.withValues(alpha: 0.1),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(
-                            Icons.volume_up_rounded,
-                            size: 16.r,
-                            color: isDark
-                                ? AppColors.indigo400
-                                : AppColors.indigo600,
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
                 SizedBox(width: 6.w),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    TranslateButtonWidget(
-                      originalText: _buildTranslatableContent(),
-                      onTranslationComplete: (t) => _applyTranslation(t, null),
-                      onTranslationWithLanguage: (t, loc) =>
-                          _applyTranslation(t, loc),
+                ScaleButton(
+                  onTap: () =>
+                      quest.word != null ? _speakText(quest.word!) : null,
+                  child: Container(
+                    padding: EdgeInsets.all(5.r),
+                    decoration: BoxDecoration(
+                      color: isDark
+                          ? AppColors.indigo500.withValues(alpha: 0.2)
+                          : AppColors.indigo500.withValues(alpha: 0.1),
+                      shape: BoxShape.circle,
                     ),
-                    SizedBox(width: 6.w),
-                    ScaleButton(
-                      onTap: widget.onFlip,
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 8.w,
-                          vertical: 4.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: isDark
-                              ? AppColors.slate800
-                              : AppColors.slate100,
-                          borderRadius: BorderRadius.circular(10.r),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              Icons.arrow_back_ios_new_rounded,
-                              size: 12.r,
-                              color: AppColors.indigo500,
-                            ),
-                            SizedBox(width: 3.w),
-                            Text(
-                              'Front',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.w700,
-                                color: isDark
-                                    ? AppColors.slate300
-                                    : AppColors.slate700,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                    child: Icon(
+                      Icons.volume_up_rounded,
+                      size: 16.r,
+                      color: isDark ? AppColors.indigo400 : AppColors.indigo600,
                     ),
-                  ],
+                  ),
                 ),
               ],
             ),

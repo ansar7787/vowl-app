@@ -299,16 +299,18 @@ class _FlashcardEchoPronunciationState
               Icon(Icons.replay_rounded, size: 16.r, color: AppColors.rose500),
               SizedBox(width: 6.w),
               Flexible(
-                child: Text(
-                  _heardWord != null
-                      ? 'Heard "$_heardWord" • Tap to retry'
-                      : 'Not quite matched • Tap to retry',
-                  overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w700,
-                    color: AppColors.rose500,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    _heardWord != null
+                        ? 'Heard "$_heardWord" • Tap to retry'
+                        : 'Not quite matched • Tap to retry',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w700,
+                      color: AppColors.rose500,
+                    ),
                   ),
                 ),
               ),

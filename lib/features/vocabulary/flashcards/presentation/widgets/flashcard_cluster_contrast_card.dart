@@ -183,16 +183,18 @@ class FlashcardClusterContrastCard extends StatelessWidget {
                                   : AppColors.indigo500.withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(8.r),
                             ),
-                            child: Text(
-                              domain,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.w700,
-                                color: isDark
-                                    ? AppColors.indigo400
-                                    : AppColors.indigo600,
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              child: Text(
+                                domain,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 11.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: isDark
+                                      ? AppColors.indigo400
+                                      : AppColors.indigo600,
+                                ),
                               ),
                             ),
                           ),
