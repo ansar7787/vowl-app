@@ -135,7 +135,7 @@ class FlashcardSyllableChips extends StatelessWidget {
                 SizedBox(width: 6.w),
                 Flexible(
                   child: Text(
-                    isSpeaking ? 'Listening...' : 'Tap for Full Audio',
+                    isSpeaking ? 'Playing Audio...' : 'Tap for Full Audio',
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 13.sp,

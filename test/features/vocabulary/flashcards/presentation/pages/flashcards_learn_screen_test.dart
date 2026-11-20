@@ -178,6 +178,21 @@ void main() {
         await tester.tap(find.text('Cards'));
         await tester.pumpAndSettle();
         expect(find.text('AUTHENTIC'), findsWidgets);
+
+        // Re-open "Compare Words" and verify swiping right returns to cards
+        await tester.ensureVisible(find.text('Compare Words'));
+        await tester.tap(find.text('Compare Words'));
+        await tester.pumpAndSettle();
+        expect(find.text('HOW TO CHOOSE'), findsOneWidget);
+
+        // Swipe right on contrast matrix to return to cards
+        await tester.fling(
+          find.text('HOW TO CHOOSE'),
+          const Offset(300, 0),
+          1000,
+        );
+        await tester.pumpAndSettle();
+        expect(find.text('AUTHENTIC'), findsWidgets);
       },
     );
   });

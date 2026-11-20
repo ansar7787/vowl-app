@@ -182,16 +182,29 @@ class FlashcardPracticeChunkWeaver extends StatelessWidget {
                         onClearChunks != null)
                       ScaleButton(
                         onTap: onClearChunks!,
-                        child: Text(
-                          'Clear ↺',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w700,
-                            color: isDark
-                                ? Colors.red.shade300
-                                : Colors.red.shade700,
-                          ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Icon(
+                              Icons.undo_rounded,
+                              size: 12.r,
+                              color: isDark
+                                  ? Colors.red.shade300
+                                  : Colors.red.shade700,
+                            ),
+                            SizedBox(width: 3.w),
+                            Text(
+                              'Clear',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w700,
+                                color: isDark
+                                    ? Colors.red.shade300
+                                    : Colors.red.shade700,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                   ],

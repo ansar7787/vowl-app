@@ -292,7 +292,7 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
     String actionLabel = 'Check Word';
     if (_hasCheckedAssembly) {
       if (!_isAssemblyCorrect) {
-        actionLabel = 'Try Again ↺';
+        actionLabel = 'Try Again';
       } else if (_showCollocationStage && !_hasCheckedCollocation) {
         actionLabel = 'Select Partner';
       } else {
