@@ -1,0 +1,351 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
+import '../controllers/flashcard_controller.dart';
+import 'flashcard_precision_strike_view.dart';
+
+/// Objective arcade challenge view for Flashcard Speed Collocation Slam & Precision Strike.
+class FlashcardSpeedSlamView extends StatelessWidget {
+  final VocabularyQuest quest;
+  final FlashcardMasteryController controller;
+  final bool isDark;
+  final VoidCallback onAdvanceToStage2;
+
+  const FlashcardSpeedSlamView({
+    super.key,
+    required this.quest,
+    required this.controller,
+    required this.isDark,
+    required this.onAdvanceToStage2,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    // Stage 1 Collocation Slam Options
+    final collocations = quest.collocations ?? ['authentic cuisine'];
+    final wrongCollocations = quest.wrongCollocations ?? ['authentic weather'];
+    final correctCollocation = collocations.first;
+    final distractorCollocation = wrongCollocations.first;
+
+    // Stable deterministic pairing: even level puts correct first, odd puts distractor first
+    final isCorrectFirst = (quest.difficulty) % 2 == 0;
+    final slamOptions = isCorrectFirst
+        ? [
+            {'text': correctCollocation, 'isCorrect': true},
+            {'text': distractorCollocation, 'isCorrect': false},
+          ]
+        : [
+            {'text': distractorCollocation, 'isCorrect': false},
+            {'text': correctCollocation, 'isCorrect': true},
+          ];
+
+    // Stage 2 Candidate Words
+    final candidateWords =
+        quest.options ??
+        [
+          quest.word?.toLowerCase() ?? 'authentic',
+          'authoritarian',
+          'automatic',
+        ];
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        // ── High-Frequency Timer Fuse Bar (ValueNotifier isolated) ─────────
+        ValueListenableBuilder<double>(
+          valueListenable: controller.timerProgress,
+          builder: (context, progress, _) {
+            Color fuseColor = Colors.green;
+            if (progress <= 0.25) {
+              fuseColor = Colors.red;
+            } else if (progress <= 0.5) {
+              fuseColor = Colors.amber;
+            }
+
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Icon(Icons.timer_rounded, size: 14.r, color: fuseColor),
+                        SizedBox(width: 4.w),
+                        Text(
+                          'SPEED FUSE',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 11.sp,
+                            fontWeight: FontWeight.w800,
+                            letterSpacing: 1.2,
+                            color: fuseColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                    // Combo Streak Counter
+                    ValueListenableBuilder<int>(
+                      valueListenable: controller.comboStreak,
+                      builder: (context, streak, _) {
+                        if (streak <= 0) return const SizedBox.shrink();
+                        return Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 8.w,
+                            vertical: 2.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.amber.withValues(alpha: 0.2),
+                            borderRadius: BorderRadius.circular(10.r),
+                            border: Border.all(color: Colors.amber, width: 1.0),
+                          ),
+                          child: Text(
+                            '🔥 ${streak}x COMBO',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w900,
+                              color: isDark
+                                  ? Colors.amberAccent
+                                  : Colors.amber.shade900,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+                SizedBox(height: 6.h),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(8.r),
+                  child: LinearProgressIndicator(
+                    value: progress,
+                    minHeight: 8.h,
+                    backgroundColor: isDark
+                        ? AppColors.slate800
+                        : AppColors.slate200,
+                    valueColor: AlwaysStoppedAnimation<Color>(fuseColor),
+                  ),
+                ),
+              ],
+            );
+          },
+        ),
+
+        SizedBox(height: 16.h),
+
+        // ── Target Word Card ────────────────────────────────────────────────
+        Container(
+          width: double.infinity,
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+          decoration: BoxDecoration(
+            color: isDark ? AppColors.slate900 : Colors.white,
+            borderRadius: BorderRadius.circular(20.r),
+            border: Border.all(
+              color: isDark ? AppColors.slate800 : AppColors.slate200,
+              width: 1.5,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withValues(alpha: isDark ? 0.35 : 0.05),
+                blurRadius: 14.r,
+                offset: Offset(0, 4.h),
+              ),
+            ],
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              if (quest.topicEmoji != null)
+                Text(quest.topicEmoji!, style: TextStyle(fontSize: 28.sp)),
+              SizedBox(height: 4.h),
+              Text(
+                quest.word?.toUpperCase() ?? '',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 26.sp,
+                  fontWeight: FontWeight.w900,
+                  letterSpacing: 1.4,
+                  color: isDark ? Colors.white : AppColors.slate950,
+                ),
+              ),
+              if (quest.definition != null) ...[
+                SizedBox(height: 6.h),
+                Text(
+                  quest.definition!,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w500,
+                    color: isDark ? AppColors.slate400 : AppColors.slate600,
+                  ),
+                ),
+              ],
+            ],
+          ),
+        ),
+
+        SizedBox(height: 18.h),
+
+        // ── Stage Switching: Stage 1 Collocation Slam vs Stage 2 Precision Strike
+        ValueListenableBuilder<bool>(
+          valueListenable: controller.isStage2,
+          builder: (context, isStage2, _) {
+            if (!isStage2) {
+              return _buildStage1CollocationSlam(
+                context,
+                slamOptions: slamOptions,
+              );
+            } else {
+              return FlashcardPrecisionStrikeView(
+                quest: quest,
+                controller: controller,
+                candidateWords: candidateWords,
+                isDark: isDark,
+              );
+            }
+          },
+        ),
+      ],
+    );
+  }
+
+  Widget _buildStage1CollocationSlam(
+    BuildContext context, {
+    required List<Map<String, Object>> slamOptions,
+  }) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          children: [
+            Icon(Icons.flash_on_rounded, size: 16.r, color: Colors.amber),
+            SizedBox(width: 6.w),
+            Expanded(
+              child: Text(
+                'STAGE 1: SLAM THE AUTHENTIC COLLOCATION',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 11.sp,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 1.1,
+                  color: isDark ? Colors.amberAccent : Colors.amber.shade900,
+                ),
+              ),
+            ),
+          ],
+        ),
+        SizedBox(height: 10.h),
+        ValueListenableBuilder<int?>(
+          valueListenable: controller.selectedCollocationIndex,
+          builder: (context, selectedIdx, _) {
+            return Column(
+              children: List.generate(slamOptions.length, (idx) {
+                final option = slamOptions[idx];
+                final text = option['text'] as String;
+                final isMatchCorrect = option['isCorrect'] as bool;
+                final isSelected = selectedIdx == idx;
+
+                Color borderColor = isDark
+                    ? AppColors.slate800
+                    : AppColors.slate200;
+                Color bgColor = isDark ? AppColors.slate900 : Colors.white;
+
+                if (isSelected) {
+                  if (isMatchCorrect) {
+                    borderColor = Colors.green;
+                    bgColor = Colors.green.withValues(alpha: 0.15);
+                  } else {
+                    borderColor = Colors.red;
+                    bgColor = Colors.red.withValues(alpha: 0.15);
+                  }
+                }
+
+                return Padding(
+                  padding: EdgeInsets.only(bottom: 10.h),
+                  child: ScaleButton(
+                    key: ValueKey('slam_$idx'),
+                    onTap: () => controller.slamCollocation(
+                      index: idx,
+                      isMatchCorrect: isMatchCorrect,
+                      onAdvanceToStage2: onAdvanceToStage2,
+                    ),
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 18.w,
+                        vertical: 16.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: bgColor,
+                        borderRadius: BorderRadius.circular(16.r),
+                        border: Border.all(
+                          color: borderColor,
+                          width: isSelected ? 2.5 : 1.5,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(
+                              alpha: isDark ? 0.3 : 0.04,
+                            ),
+                            blurRadius: 8.r,
+                            offset: Offset(0, 3.h),
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 32.r,
+                            height: 32.r,
+                            decoration: BoxDecoration(
+                              color: isDark
+                                  ? AppColors.slate800
+                                  : AppColors.slate100,
+                              shape: BoxShape.circle,
+                            ),
+                            child: Center(
+                              child: Text(
+                                String.fromCharCode(65 + idx),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w900,
+                                  color: isDark
+                                      ? Colors.white
+                                      : AppColors.slate900,
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 14.w),
+                          Expanded(
+                            child: Text(
+                              text,
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 16.sp,
+                                fontWeight: FontWeight.w700,
+                                color: isDark
+                                    ? Colors.white
+                                    : AppColors.slate900,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              }),
+            );
+          },
+        ),
+      ],
+    );
+  }
+}

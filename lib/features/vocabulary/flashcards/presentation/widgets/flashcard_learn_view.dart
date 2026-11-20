@@ -1,0 +1,232 @@
+import 'dart:math';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/data/models/phased_quest_model.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'flashcard_learn_back_face.dart';
+import 'flashcard_syllable_chips.dart';
+
+/// Tactile 3D discovery deck for the Flashcard Learn Phase.
+class FlashcardLearnView extends StatelessWidget {
+  final PhasedQuest quest;
+  final bool isFlipped;
+  final bool isSpeaking;
+  final bool isDark;
+  final VoidCallback onFlip;
+  final void Function(String syllable) onSpeakSyllable;
+  final VoidCallback onSpeakFullWord;
+
+  const FlashcardLearnView({
+    super.key,
+    required this.quest,
+    required this.isFlipped,
+    required this.isSpeaking,
+    required this.isDark,
+    required this.onFlip,
+    required this.onSpeakSyllable,
+    required this.onSpeakFullWord,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final rawSyllables = quest.rawExtra['syllables'] as List<dynamic>?;
+    final syllables = rawSyllables != null
+        ? rawSyllables.map((e) => e.toString()).toList()
+        : (quest.word != null ? [quest.word!] : <String>[]);
+    final stressedIndex =
+        (quest.rawExtra['stressedSyllableIndex'] as num?)?.toInt() ?? 0;
+    final contextDomain =
+        quest.rawExtra['contextDomain'] as String? ?? 'Real-World Context';
+    final collocations =
+        (quest.rawExtra['collocations'] as List<dynamic>?)
+            ?.map((e) => e.toString())
+            .toList() ??
+        quest.familyWords;
+    final commonMistake =
+        quest.commonMistake ??
+        quest.rawExtra['commonConfusionAlert'] as String?;
+
+    return TweenAnimationBuilder<double>(
+      tween: Tween<double>(begin: 0, end: isFlipped ? 1.0 : 0.0),
+      duration: const Duration(milliseconds: 350),
+      curve: Curves.easeInOutCubic,
+      builder: (context, val, child) {
+        final isBack = val >= 0.5;
+        return Transform(
+          transform: Matrix4.identity()
+            ..setEntry(3, 2, 0.001)
+            ..rotateY(val * pi),
+          alignment: Alignment.center,
+          child: isBack
+              ? Transform(
+                  transform: Matrix4.identity()..rotateY(pi),
+                  alignment: Alignment.center,
+                  child: FlashcardLearnBackFace(
+                    quest: quest,
+                    isDark: isDark,
+                    onFlip: onFlip,
+                    collocations: collocations,
+                    commonMistake: commonMistake,
+                    contextDomain: contextDomain,
+                  ),
+                )
+              : _buildFrontFace(
+                  context,
+                  syllables: syllables,
+                  stressedIndex: stressedIndex,
+                  contextDomain: contextDomain,
+                ),
+        );
+      },
+    );
+  }
+
+  Widget _buildFrontFace(
+    BuildContext context, {
+    required List<String> syllables,
+    required int stressedIndex,
+    required String contextDomain,
+  }) {
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.all(24.r),
+      decoration: BoxDecoration(
+        color: isDark ? AppColors.slate900 : Colors.white,
+        borderRadius: BorderRadius.circular(24.r),
+        border: Border.all(
+          color: isDark ? AppColors.slate800 : AppColors.slate200,
+          width: 1.5,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: isDark ? 0.4 : 0.06),
+            blurRadius: 20.r,
+            offset: Offset(0, 8.h),
+          ),
+        ],
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          // Scenario Badge
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+            decoration: BoxDecoration(
+              color: isDark
+                  ? AppColors.indigo500.withValues(alpha: 0.2)
+                  : AppColors.indigo500.withValues(alpha: 0.1),
+              borderRadius: BorderRadius.circular(12.r),
+            ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(
+                  Icons.explore_rounded,
+                  size: 14.r,
+                  color: isDark ? AppColors.indigo400 : AppColors.indigo600,
+                ),
+                SizedBox(width: 6.w),
+                Flexible(
+                  child: Text(
+                    contextDomain,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isDark ? AppColors.indigo400 : AppColors.indigo600,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          SizedBox(height: 20.h),
+
+          // Target Word
+          Text(
+            quest.word ?? '',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 32.sp,
+              fontWeight: FontWeight.w900,
+              letterSpacing: 1.5,
+              color: isDark ? Colors.white : AppColors.slate950,
+            ),
+          ),
+
+          SizedBox(height: 6.h),
+
+          // Phonetic IPA
+          if (quest.pronunciation != null)
+            Text(
+              quest.pronunciation!,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 17.sp,
+                fontStyle: FontStyle.italic,
+                fontWeight: FontWeight.w500,
+                color: isDark ? AppColors.slate400 : AppColors.slate600,
+              ),
+            ),
+
+          SizedBox(height: 20.h),
+
+          // Tap-to-Speak Syllable Chips
+          FlashcardSyllableChips(
+            syllables: syllables,
+            stressedIndex: stressedIndex,
+            isSpeaking: isSpeaking,
+            isDark: isDark,
+            onSpeakSyllable: onSpeakSyllable,
+            onSpeakFullWord: onSpeakFullWord,
+          ),
+
+          SizedBox(height: 28.h),
+
+          // Flip Button Cue
+          ScaleButton(
+            onTap: onFlip,
+            child: Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(vertical: 14.h),
+              decoration: BoxDecoration(
+                color: isDark ? AppColors.slate800 : AppColors.slate100,
+                borderRadius: BorderRadius.circular(16.r),
+                border: Border.all(
+                  color: isDark ? AppColors.slate700 : AppColors.slate300,
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.flip_rounded,
+                    size: 18.r,
+                    color: isDark ? AppColors.indigo400 : AppColors.indigo600,
+                  ),
+                  SizedBox(width: 8.w),
+                  Flexible(
+                    child: Text(
+                      'Flip for Meaning & Context',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w700,
+                        color: isDark
+                            ? AppColors.indigo400
+                            : AppColors.indigo600,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

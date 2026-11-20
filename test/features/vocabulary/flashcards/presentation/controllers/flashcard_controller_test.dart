@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -9,22 +8,26 @@ class MockHapticService extends Mock implements HapticService {}
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  late MockHapticService mockHapticService;
-  late List<bool> submittedAnswers;
-  late FlashcardController controller;
+  late MockHapticService mockHaptic;
+  late FlashcardMasteryController controller;
+  bool submittedCorrect = false;
+  bool submittedSpeedBonus = false;
 
   setUp(() {
-    mockHapticService = MockHapticService();
-    submittedAnswers = [];
+    mockHaptic = MockHapticService();
+    when(() => mockHaptic.selection()).thenAnswer((_) async {});
+    when(() => mockHaptic.success()).thenAnswer((_) async {});
+    when(() => mockHaptic.error()).thenAnswer((_) async {});
 
-    when(() => mockHapticService.selection()).thenAnswer((_) async {});
-    when(() => mockHapticService.success()).thenAnswer((_) async {});
-    when(() => mockHapticService.error()).thenAnswer((_) async {});
-    when(() => mockHapticService.light()).thenAnswer((_) async {});
+    submittedCorrect = false;
+    submittedSpeedBonus = false;
 
-    controller = FlashcardController(
-      hapticService: mockHapticService,
-      onSubmitAnswer: (mastered) => submittedAnswers.add(mastered),
+    controller = FlashcardMasteryController(
+      hapticService: mockHaptic,
+      onSubmitResult: ({required bool isCorrect, required bool speedBonus}) {
+        submittedCorrect = isCorrect;
+        submittedSpeedBonus = speedBonus;
+      },
     );
   });
 
@@ -32,147 +35,113 @@ void main() {
     controller.dispose();
   });
 
-  group('FlashcardController Unit Tests', () {
-    test('initial state has correct default values', () {
+  group('FlashcardMasteryController', () {
+    test('initializes with default values and starts timer', () {
+      controller.startTimer();
       expect(controller.isAnswered, isFalse);
-      expect(controller.isRetrying, isFalse);
       expect(controller.isCorrect, isNull);
-      expect(controller.showConfetti, isFalse);
-      expect(controller.isHintActive, isFalse);
-      expect(controller.dragOffset.value, Offset.zero);
-      expect(controller.dragAngle.value, 0.0);
-      expect(controller.dragProgress.value, 0.0);
-      expect(controller.isFlipped.value, isFalse);
-      expect(controller.comboStreak.value, 0);
+      expect(controller.timerProgress.value, equals(1.0));
+      expect(controller.isStage2.value, isFalse);
+      expect(controller.comboStreak.value, equals(0));
     });
 
-    test('flipCard toggles isFlipped and triggers haptic', () {
-      controller.flipCard();
-      expect(controller.isFlipped.value, isTrue);
-      verify(() => mockHapticService.light()).called(1);
+    test('slamCollocation with correct match advances to stage 2', () async {
+      bool advancedToStage2 = false;
+      controller.slamCollocation(
+        index: 0,
+        isMatchCorrect: true,
+        onAdvanceToStage2: () {
+          advancedToStage2 = true;
+        },
+      );
 
-      controller.flipCard();
-      expect(controller.isFlipped.value, isFalse);
-      verify(() => mockHapticService.light()).called(1);
+      expect(controller.selectedCollocationIndex.value, equals(0));
+      verify(() => mockHaptic.selection()).called(1);
+
+      await Future.delayed(const Duration(milliseconds: 300));
+      expect(controller.isStage2.value, isTrue);
+      expect(advancedToStage2, isTrue);
     });
 
-    test('onHorizontalDragUpdate updates offset, angle, and progress', () {
-      controller.onHorizontalDragUpdate(
-        DragUpdateDetails(
-          globalPosition: const Offset(60, 0),
-          delta: const Offset(60, 0),
-        ),
-        120.0,
-      );
-
-      expect(controller.dragOffset.value.dx, 60.0);
-      expect(controller.dragAngle.value, 60.0 / 500);
-      expect(controller.dragProgress.value, 0.5);
-    });
-
-    test('onHorizontalDragEnd with dx > threshold submits mastered (true)', () {
-      controller.onHorizontalDragUpdate(
-        DragUpdateDetails(
-          globalPosition: const Offset(150, 0),
-          delta: const Offset(150, 0),
-        ),
-        120.0,
-      );
-
-      controller.onHorizontalDragEnd(
-        DragEndDetails(
-          velocity: const Velocity(pixelsPerSecond: Offset(200, 0)),
-        ),
-        120.0,
-      );
-
-      expect(controller.isAnswered, isTrue);
-      expect(controller.isCorrect, isTrue);
-      expect(controller.comboStreak.value, 1);
-      expect(submittedAnswers, [true]);
-      verify(() => mockHapticService.success()).called(1);
-    });
-
-    test('onHorizontalDragEnd with dx < -threshold submits review (false)', () {
-      controller.onHorizontalDragUpdate(
-        DragUpdateDetails(
-          globalPosition: const Offset(-150, 0),
-          delta: const Offset(-150, 0),
-        ),
-        120.0,
-      );
-
-      controller.onHorizontalDragEnd(
-        DragEndDetails(
-          velocity: const Velocity(pixelsPerSecond: Offset(-200, 0)),
-        ),
-        120.0,
+    test('slamCollocation with wrong match fails trial', () {
+      controller.slamCollocation(
+        index: 1,
+        isMatchCorrect: false,
+        onAdvanceToStage2: () {},
       );
 
       expect(controller.isAnswered, isTrue);
       expect(controller.isCorrect, isFalse);
-      expect(controller.comboStreak.value, 0);
-      expect(submittedAnswers, [false]);
-      verify(() => mockHapticService.error()).called(1);
+      expect(submittedCorrect, isFalse);
+      expect(controller.comboStreak.value, equals(0));
+      verify(() => mockHaptic.error()).called(1);
     });
 
     test(
-      'onHorizontalDragEnd below threshold snaps back without submitting',
-      () {
-        controller.onHorizontalDragUpdate(
-          DragUpdateDetails(
-            globalPosition: const Offset(40, 0),
-            delta: const Offset(40, 0),
-          ),
-          120.0,
+      'strikeCandidateWord with correct target completes trial with combo',
+      () async {
+        // Advance to Stage 2 first
+        controller.slamCollocation(
+          index: 0,
+          isMatchCorrect: true,
+          onAdvanceToStage2: () {},
+        );
+        await Future.delayed(const Duration(milliseconds: 300));
+
+        controller.strikeCandidateWord(
+          index: 0,
+          selectedWord: 'authentic',
+          targetWord: 'authentic',
         );
 
-        controller.onHorizontalDragEnd(
-          DragEndDetails(velocity: Velocity.zero),
-          120.0,
-        );
-
-        expect(controller.isAnswered, isFalse);
-        expect(controller.isCorrect, isNull);
-        expect(controller.dragOffset.value, Offset.zero);
-        expect(controller.dragAngle.value, 0.0);
-        expect(controller.dragProgress.value, 0.0);
-        expect(submittedAnswers, isEmpty);
+        expect(controller.isAnswered, isTrue);
+        expect(controller.isCorrect, isTrue);
+        expect(submittedCorrect, isTrue);
+        expect(submittedSpeedBonus, isTrue);
+        expect(controller.comboStreak.value, equals(1));
+        verify(() => mockHaptic.success()).called(1);
       },
     );
 
-    test('combo streak increments on multiple consecutive correct answers', () {
-      controller.submitAnswer(true);
-      expect(controller.comboStreak.value, 1);
+    test(
+      'strikeCandidateWord with wrong target fails trial and resets streak',
+      () async {
+        controller.comboStreak.value = 3;
+        controller.isStage2.value = true;
 
-      controller.reset(false);
-      expect(controller.comboStreak.value, 1);
+        controller.strikeCandidateWord(
+          index: 1,
+          selectedWord: 'automatic',
+          targetWord: 'authentic',
+        );
 
-      controller.submitAnswer(true);
-      expect(controller.comboStreak.value, 2);
+        expect(controller.isAnswered, isTrue);
+        expect(controller.isCorrect, isFalse);
+        expect(submittedCorrect, isFalse);
+        expect(controller.comboStreak.value, equals(0));
+        verify(() => mockHaptic.error()).called(1);
+      },
+    );
 
-      controller.reset(false);
-      controller.submitAnswer(false);
-      expect(controller.comboStreak.value, 0);
+    test('reset clears interaction states', () {
+      controller.comboStreak.value = 5;
+      controller.reset(isRetry: false);
+
+      expect(controller.isAnswered, isFalse);
+      expect(controller.isCorrect, isNull);
+      expect(controller.isStage2.value, isFalse);
+      expect(controller.selectedCollocationIndex.value, isNull);
+      expect(controller.selectedCandidateIndex.value, isNull);
+      expect(controller.timerProgress.value, equals(1.0));
+      expect(controller.comboStreak.value, equals(5));
+
+      controller.reset(isRetry: true);
+      expect(controller.comboStreak.value, equals(0));
     });
 
-    test('reset with retry=true zeroes out combo streak', () {
-      controller.submitAnswer(true);
-      expect(controller.comboStreak.value, 1);
-
-      controller.reset(true);
-      expect(controller.comboStreak.value, 0);
-      expect(controller.isRetrying, isTrue);
-    });
-
-    test('requestHint sets isFlipped and isHintActive', () {
-      controller.requestHint();
-      expect(controller.isFlipped.value, isTrue);
-      expect(controller.isHintActive, isTrue);
-    });
-
-    test('completeGame sets showConfetti', () {
-      controller.completeGame();
+    test('triggerVictoryCelebration sets showConfetti', () {
+      expect(controller.showConfetti, isFalse);
+      controller.triggerVictoryCelebration();
       expect(controller.showConfetti, isTrue);
     });
   });

@@ -1159,15 +1159,15 @@ class GameInstructionService {
       title: "Vocabulary Flashcards",
       icon: Icons.style_rounded,
       objective:
-          "Test your memory! Try to recall the word's meaning before flipping the card, then swipe right if you knew it or left to practice again.",
+          "Beat the speed fuse! Slam the authentic collocation and strike the correct word to complete the real-world sentence.",
       rules: [
-        "Guess the meaning first",
-        "Tap to flip the card",
-        "Swipe Right: Mastered, Left: Review",
+        "Slam the authentic collocation before time expires",
+        "Strike the target word to complete the sentence",
+        "Guard your 3 lives and chain combos for bonus XP",
       ],
-      actionText: "Start Review",
+      actionText: "Start Challenge",
       tip:
-          "Be honest with yourself! Swiping left ensures you'll get another chance to really lock the word into your memory.",
+          "Real fluency is instant intuition. Spot the natural word pairing and trust your instincts!",
     ),
     GameSubtype.synonymSearch: GameBriefing(
       title: "Synonym Match",

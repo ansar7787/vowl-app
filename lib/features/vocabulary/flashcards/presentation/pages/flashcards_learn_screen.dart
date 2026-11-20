@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,12 +12,12 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
-import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_learn_card.dart';
-import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_learn_teaching_section.dart';
+import '../widgets/flashcard_learn_view.dart';
 
-/// Rich, interactive Learn Phase screen for Flashcards.
+/// 2026 Interactive Learn Phase screen for Vocabulary Flashcards.
 ///
-/// Teaches each target word in depth before the learner enters guided practice.
+/// Features the tactile Discovery Deck with Tap-to-Speak Syllable Chips,
+/// stressed syllable highlights, natural collocations, and common ESL mistake alerts.
 class FlashcardsLearnScreen extends StatefulWidget {
   final int level;
 
@@ -28,24 +29,11 @@ class FlashcardsLearnScreen extends StatefulWidget {
 
 class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
   final ValueNotifier<bool> _isFlippedNotifier = ValueNotifier<bool>(false);
-  List<PhasedQuest> _quests = const [
-    PhasedQuest(
-      id: 'VOC_FLASHCARDS_L1_LEARN_Q1',
-      level: 1,
-      word: 'HELLO',
-      pronunciation: '/həˈloʊ/',
-      definition:
-          'A common greeting used when meeting someone or starting a conversation.',
-      example: "Hello, I'm calling about the apartment you listed online.",
-      nativeTip:
-          "In British English, 'Hiya' is common among friends. In North America, 'Hey' is standard.",
-      visualAnchor: '🤝 Meeting someone → 👋 Hello → 🗣️ Starting conversation',
-      familyWords: ['Hi', 'Hey', 'Hiya', 'Greetings'],
-      commonMistake:
-          "Don't say 'Hello' to acknowledge an order or answer 'Yes'.",
-    ),
-  ];
-  bool _isLoading = false;
+  final ValueNotifier<bool> _isSpeakingNotifier = ValueNotifier<bool>(false);
+  Timer? _speechTimer;
+
+  List<PhasedQuest> _quests = const [];
+  bool _isLoading = true;
   int _currentIndex = 0;
 
   @override
@@ -56,7 +44,9 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
 
   @override
   void dispose() {
+    _speechTimer?.cancel();
     _isFlippedNotifier.dispose();
+    _isSpeakingNotifier.dispose();
     super.dispose();
   }
 
@@ -88,12 +78,30 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
             PhasedQuest(
               id: 'FALLBACK_L${widget.level}_1',
               level: widget.level,
-              word: 'WELCOME',
-              pronunciation: '/ˈwɛlkəm/',
-              definition: 'Greeting used to welcome someone kindly.',
-              example: 'Welcome to your Vowl learning session!',
-              nativeTip: 'Warm and friendly across all contexts.',
-              visualAnchor: '🤝 Open hands greeting a friend',
+              word: 'AUTHENTIC',
+              pronunciation: '/ɔːˈθen.tɪk/',
+              definition:
+                  'Genuine, real, and true to original traditions rather than an imitation.',
+              example:
+                  'The chef insisted on using only authentic Italian ingredients for the pasta.',
+              nativeTip:
+                  "Native speakers often describe honest, grounded people as 'very authentic'.",
+              commonMistake:
+                  "Don't confuse 'authentic' with 'original' — an original idea is new; an authentic item is real and genuine.",
+              familyWords: const [
+                'authenticity',
+                'authenticate',
+                'authentically',
+              ],
+              rawExtra: const {
+                'syllables': ['au', 'then', 'tic'],
+                'stressedSyllableIndex': 1,
+                'collocations': [
+                  'authentic cuisine',
+                  'authentic leadership',
+                  'authentic smile',
+                ],
+              },
             ),
           ];
           _isLoading = false;
@@ -102,9 +110,14 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
     }
   }
 
-  void _speak(String text) {
+  void _speakText(String text) {
     if (di.sl.isRegistered<TtsService>()) {
+      _speechTimer?.cancel();
+      _isSpeakingNotifier.value = true;
       di.sl<TtsService>().speak(text);
+      _speechTimer = Timer(const Duration(milliseconds: 1400), () {
+        if (mounted) _isSpeakingNotifier.value = false;
+      });
     }
   }
 
@@ -112,10 +125,6 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
     _isFlippedNotifier.value = !_isFlippedNotifier.value;
     if (di.sl.isRegistered<HapticService>()) {
       di.sl<HapticService>().selection();
-    }
-    final quest = _quests.isNotEmpty ? _quests[_currentIndex] : null;
-    if (_isFlippedNotifier.value && quest?.word != null) {
-      _speak(quest!.word!);
     }
   }
 
@@ -145,7 +154,7 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
     try {
       context.pushReplacement(target);
     } catch (_) {
-      // Handled gracefully in tests where GoRouter is omitted
+      // Handled gracefully in test harnesses where GoRouter is omitted
     }
   }
 
@@ -187,29 +196,26 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // 3D Flippable Word Card with ValueListenable isolation
             ValueListenableBuilder<bool>(
               valueListenable: _isFlippedNotifier,
               builder: (context, isFlipped, _) {
-                return FlashcardLearnCard(
-                  quest: quest,
-                  isFlipped: isFlipped,
-                  isDark: isDark,
-                  onFlip: _flipCard,
-                  onSpeak: () {
-                    if (quest.word != null) _speak(quest.word!);
+                return ValueListenableBuilder<bool>(
+                  valueListenable: _isSpeakingNotifier,
+                  builder: (context, isSpeaking, _) {
+                    return FlashcardLearnView(
+                      quest: quest,
+                      isFlipped: isFlipped,
+                      isSpeaking: isSpeaking,
+                      isDark: isDark,
+                      onFlip: _flipCard,
+                      onSpeakSyllable: (syllable) => _speakText(syllable),
+                      onSpeakFullWord: () {
+                        if (quest.word != null) _speakText(quest.word!);
+                      },
+                    );
                   },
                 );
               },
-            ),
-
-            SizedBox(height: 20.h),
-
-            // Teaching Sections: Anchors, Tips, Nuances, Families, Cards
-            FlashcardLearnTeachingSection(
-              quest: quest,
-              isDark: isDark,
-              onSpeak: _speak,
             ),
           ],
         ),

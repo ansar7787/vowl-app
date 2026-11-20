@@ -2,38 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:vowl/core/data/models/phased_quest_model.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/vocabulary/flashcards/presentation/pages/flashcards_practice_screen.dart';
-import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_practice_choice_card.dart';
-import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_practice_typing_card.dart';
 
 class MockHapticService extends Mock implements HapticService {}
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  late MockHapticService mockHapticService;
+  late MockHapticService mockHaptic;
 
   setUp(() {
-    VowlMotion.lowAnimationModeOverride.value = true;
-    mockHapticService = MockHapticService();
-    when(() => mockHapticService.selection()).thenAnswer((_) async {});
-    when(() => mockHapticService.success()).thenAnswer((_) async {});
-    when(() => mockHapticService.error()).thenAnswer((_) async {});
-    when(() => mockHapticService.light()).thenAnswer((_) async {});
+    mockHaptic = MockHapticService();
+    when(() => mockHaptic.selection()).thenAnswer((_) async {});
+    when(() => mockHaptic.success()).thenAnswer((_) async {});
+    when(() => mockHaptic.error()).thenAnswer((_) async {});
 
     if (di.sl.isRegistered<HapticService>()) {
       di.sl.unregister<HapticService>();
     }
-    di.sl.registerSingleton<HapticService>(mockHapticService);
+    di.sl.registerLazySingleton<HapticService>(() => mockHaptic);
   });
 
   tearDown(() {
-    VowlMotion.lowAnimationModeOverride.value = false;
     if (di.sl.isRegistered<HapticService>()) {
       di.sl.unregister<HapticService>();
     }
@@ -41,129 +33,52 @@ void main() {
 
   Widget buildTestableWidget(Widget child) {
     return ScreenUtilInit(
-      designSize: const Size(390, 844),
+      designSize: const Size(375, 812),
       builder: (context, _) => MaterialApp(home: child),
     );
   }
 
-  group('FlashcardsPracticeScreen Widget Tests', () {
+  group('FlashcardsPracticeScreen', () {
     testWidgets(
-      'renders active training gym and handles typing shard assembly',
+      'assembles chunks, checks word, and completes collocation challenge',
       (tester) async {
         await tester.pumpWidget(
           buildTestableWidget(const FlashcardsPracticeScreen(level: 1)),
         );
-        for (int i = 0; i < 10; i++) {
-          await tester.pump(const Duration(milliseconds: 100));
-          if (find.byType(ElevatedButton).evaluate().isNotEmpty) break;
-        }
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
         expect(find.byType(FlashcardsPracticeScreen), findsOneWidget);
+        expect(find.text('COMPLETE THE CONTEXT SENTENCE'), findsOneWidget);
+        expect(find.text('AVAILABLE CHUNKS'), findsOneWidget);
 
-        final typingCardFinder = find.byType(FlashcardPracticeTypingCard);
-        final choiceCardFinder = find.byType(FlashcardPracticeChoiceCard);
-        expect(
-          typingCardFinder.evaluate().isNotEmpty ||
-              choiceCardFinder.evaluate().isNotEmpty,
-          isTrue,
-        );
+        // Tap chunks: AU, THEN, TIC with debounce clearance
+        expect(find.text('AU'), findsOneWidget);
+        expect(find.text('THEN'), findsOneWidget);
+        expect(find.text('TIC'), findsOneWidget);
 
-        if (typingCardFinder.evaluate().isNotEmpty) {
-          expect(find.text('TAP SHARDS TO ASSEMBLE'), findsOneWidget);
-          expect(find.text('Clear'), findsOneWidget);
-          expect(find.text('Undo'), findsOneWidget);
+        await tester.tap(find.text('AU'));
+        await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(find.text('THEN'));
+        await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(find.text('TIC'));
+        await tester.pump(const Duration(milliseconds: 600));
 
-          // Tap a letter shard
-          final shardFinder = find.widgetWithText(ScaleButton, 'H');
-          if (shardFinder.evaluate().isNotEmpty) {
-            await tester.ensureVisible(shardFinder.first);
-            await tester.tap(shardFinder.first);
-            await tester.pump();
-            verify(() => mockHapticService.selection()).called(1);
+        // Tap Check Word
+        expect(find.text('Check Word'), findsOneWidget);
+        await tester.tap(find.text('Check Word'));
+        await tester.pumpAndSettle();
 
-            // Tap Clear
-            await tester.tap(find.text('Clear'));
-            await tester.pump();
-            verify(() => mockHapticService.light()).called(1);
-          }
-        }
-      },
-    );
+        // Collocation Challenge should now be visible
+        expect(find.textContaining('partner'), findsOneWidget);
+        expect(find.text('authentic cuisine'), findsOneWidget);
 
-    testWidgets('checking answer evaluates exercise and updates feedback', (
-      tester,
-    ) async {
-      await tester.pumpWidget(
-        buildTestableWidget(const FlashcardsPracticeScreen(level: 1)),
-      );
-      for (int i = 0; i < 10; i++) {
-        await tester.pump(const Duration(milliseconds: 100));
-        if (find.byType(ElevatedButton).evaluate().isNotEmpty) break;
-      }
+        // Select authentic cuisine
+        await tester.tap(find.text('authentic cuisine'));
+        await tester.pump(const Duration(milliseconds: 600));
+        await tester.pumpAndSettle();
 
-      final actionButtonFinder = find.byType(ElevatedButton);
-      expect(actionButtonFinder, findsOneWidget);
-
-      await tester.tap(actionButtonFinder, warnIfMissed: false);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      expect(find.byType(FlashcardsPracticeScreen), findsOneWidget);
-    });
-
-    testWidgets(
-      'FlashcardPracticeTypingCard safely updates shards when exercise changes via didUpdateWidget',
-      (tester) async {
-        final controller = TextEditingController();
-        addTearDown(controller.dispose);
-
-        const exercise1 = PracticeExercise(
-          exerciseType: 'shard',
-          interactionType: 'typing',
-          question: 'Type HELLO',
-          correctAnswer: 'HELLO',
-        );
-
-        const exercise2 = PracticeExercise(
-          exerciseType: 'shard',
-          interactionType: 'typing',
-          question: 'Type WORLD',
-          correctAnswer: 'WORLD',
-        );
-
-        await tester.pumpWidget(
-          buildTestableWidget(
-            FlashcardPracticeTypingCard(
-              exercise: exercise1,
-              textController: controller,
-              hasChecked: false,
-              isAnswerCorrect: false,
-              shakeCount: 0,
-              isDark: false,
-              onCheck: () {},
-            ),
-          ),
-        );
-        await tester.pump();
-
-        // Update widget with new exercise (triggers didUpdateWidget)
-        await tester.pumpWidget(
-          buildTestableWidget(
-            FlashcardPracticeTypingCard(
-              exercise: exercise2,
-              textController: controller,
-              hasChecked: false,
-              isAnswerCorrect: false,
-              shakeCount: 0,
-              isDark: false,
-              onCheck: () {},
-            ),
-          ),
-        );
-        await tester.pump();
-
-        expect(tester.takeException(), isNull);
-        expect(find.byType(FlashcardPracticeTypingCard), findsOneWidget);
+        verify(() => mockHaptic.success()).called(2);
       },
     );
   });

@@ -1,938 +1,428 @@
 {
-    "gameType": "flashcards",
-    "phase": "practice",
-    "batchIndex": 1,
-    "levels": "1-10",
-    "quests": [
+  "gameType": "flashcards",
+  "phase": "practice",
+  "batchIndex": 1,
+  "levels": "1-10",
+  "quests": [
+    {
+      "id": "VOC_FC_L1_PRAC_Q1",
+      "level": 1,
+      "word": "AUTHENTIC",
+      "exerciseType": "chunkWeaver",
+      "sentence": "The museum confirmed that the ancient artifact was completely _____.",
+      "targetCollocation": "authentic cuisine",
+      "correctAnswer": "AUTHENTIC",
+      "scrambledChunks": [
+        "AU",
+        "THEN",
+        "TIC",
+        "TION",
+        "IC"
+      ],
+      "collocationPrompt": "Pair 'authentic' with its natural partner:",
+      "collocationOptions": [
+        "authentic cuisine",
+        "authentic weather",
+        "authentic price"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Think of a word meaning genuine, real, or uncopied.",
+      "feedbackIfWrong": "'Authentic' pairs with documents, culture, and cuisine, not weather or prices.",
+      "exercises": [
         {
-            "id": "VOC_FLASHCARDS_L1_PRAC_Q1",
-            "level": 1,
-            "word": "HELLO",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "_____, I'm calling about the apartment you listed online.",
-                    "correctAnswer": "Hello",
-                    "hint": "The standard neutral word used at the very start of a phone conversation or meeting.",
-                    "feedbackIfWrong": "When initiating a call or opening a conversation, say 'Hello'."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "In which situation would you naturally use 'Hello'?",
-                    "options": [
-                        "Replying when your manager asks if the report is finished",
-                        "Picking up the telephone when an unknown number rings",
-                        "Saying thanks after a stranger holds the elevator door"
-                    ],
-                    "correctAnswer": 1,
-                    "feedbackPerOption": [
-                        "In this situation, you would say 'Yes, it is' — 'Hello' is only a greeting, not an affirmative answer.",
-                        "Correct! 'Hello?' with a rising tone is the quintessential phone greeting.",
-                        "Here you would say 'Thank you!' — 'Hello' does not express gratitude."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L1_PRAC_Q2",
-            "level": 1,
-            "word": "GOODBYE",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "It was wonderful seeing you. _____ — call me when you arrive!",
-                    "correctAnswer": "Goodbye",
-                    "hint": "The word you say right before departing or hanging up.",
-                    "feedbackIfWrong": "The sentence is a departure. Use 'Goodbye' to close a visit."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which of these is the most natural departure phrase when leaving your office team on Friday?",
-                    "options": [
-                        "Have a wonderful weekend, see you Monday!",
-                        "Goodnight, let us never speak again.",
-                        "Hello everyone, I am leaving."
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Spot on! Wishing a great weekend and mentioning the next meeting is the friendly standard.",
-                        "This sounds overly dramatic and negative for a normal office farewell.",
-                        "'Hello' is for arriving, not departing."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L1_PRAC_Q3",
-            "level": 1,
-            "word": "PLEASE",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Could you pass the water pitcher, _____?",
-                    "correctAnswer": "please",
-                    "hint": "The single courtesy word that turns a demand into a polite request.",
-                    "feedbackIfWrong": "Use 'please' at the end of requests to ensure a courteous tone."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Where does placing 'Please' sound like an instruction rather than a gentle request?",
-                    "options": [
-                        "At the very start: 'Please take your seats now.'",
-                        "At the end: 'Could you help me for a moment, please?'",
-                        "In isolation: 'A coffee, please.'"
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Exactly! 'Please' at the start of an imperative sentence often functions like a polite command from a teacher or speaker.",
-                        "At the end of a question, 'please' softens the request noticeably.",
-                        "In cafes, 'please' after an item simply ensures polite ordering etiquette."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L2_PRAC_Q1",
-            "level": 2,
-            "word": "THANK YOU",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "_____ for your valuable feedback on my presentation.",
-                    "correctAnswer": "Thank you",
-                    "hint": "The universal phrase expressing gratitude and appreciation.",
-                    "feedbackIfWrong": "Use 'Thank you' to show appreciation for help, advice, or feedback."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which phrase is grammatically incorrect in English?",
-                    "options": [
-                        "Thanks you very much",
-                        "Thank you very much",
-                        "Thanks a million"
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Correct! Never combine 'Thanks' with 'you'. Say either 'Thanks' or 'Thank you'.",
-                        "This is completely standard and widely used in professional settings.",
-                        "This is a common, expressive colloquial idiom for deep gratitude."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L2_PRAC_Q2",
-            "level": 2,
-            "word": "SORRY",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "I'm so _____ for being late; the morning train was halted.",
-                    "correctAnswer": "sorry",
-                    "hint": "The word used to express regret or an apology.",
-                    "feedbackIfWrong": "Use 'sorry' when expressing regret for a delay or error."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "What is the most professional alternative to 'Sorry for the delay' in a business reply?",
-                    "options": [
-                        "Thank you for your patience",
-                        "My bad, I forgot",
-                        "I am deeply devastated"
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Excellent! 'Thank you for your patience' focuses on gratitude toward the client instead of drawing attention to fault.",
-                        "'My bad' is too casual for formal client correspondence.",
-                        "'Devastated' is far too emotional for an email delay."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L2_PRAC_Q3",
-            "level": 2,
-            "word": "YES",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "_____, I will definitely attend the conference next Tuesday.",
-                    "correctAnswer": "Yes",
-                    "hint": "The formal, unambiguous affirmative confirmation.",
-                    "feedbackIfWrong": "Confirm agreement or attendance with 'Yes'."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "How should you answer an interviewer asking if you have experience with Flutter?",
-                    "options": [
-                        "Yes, absolutely. I've built multiple production applications.",
-                        "Yeah whatever.",
-                        "Yep yep yep."
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Perfect! 'Yes, absolutely' paired with concrete evidence creates confidence.",
-                        "This sounds indifferent and unprofessional.",
-                        "This is overly casual slang for an interview context."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L3_PRAC_Q1",
-            "level": 3,
-            "word": "NO",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "_____, thank you; I've already had two cups of coffee.",
-                    "correctAnswer": "No",
-                    "hint": "Polite negative response to decline an offer.",
-                    "feedbackIfWrong": "Decline with 'No, thank you'."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "When a host offers you more food and you are full, what is the best reply?",
-                    "options": [
-                        "No, thank you, everything was delicious but I'm completely full!",
-                        "No! Take it away.",
-                        "Stop giving me food."
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Spot on! Complimenting the meal while gently declining prevents awkwardness.",
-                        "This sounds harsh and abrupt.",
-                        "This is demanding and inconsiderate."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L3_PRAC_Q2",
-            "level": 3,
-            "word": "HELP",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Could you please _____ me carry these heavy boxes upstairs?",
-                    "correctAnswer": "help",
-                    "hint": "Verb meaning to assist or provide support.",
-                    "feedbackIfWrong": "Use 'help' to request assistance."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which idiom naturally means 'help someone with a task'?",
-                    "options": [
-                        "Lend someone a hand",
-                        "Give someone a foot",
-                        "Take someone's head"
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Exactly! 'Lend a hand' or 'give a hand' is the classic English idiom for helping out.",
-                        "There is no such idiom in English.",
-                        "This is nonsensical."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L3_PRAC_Q3",
-            "level": 3,
-            "word": "WATER",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Could we please get a pitcher of tap _____ for the table?",
-                    "correctAnswer": "water",
-                    "hint": "Essential clear beverage.",
-                    "feedbackIfWrong": "Request 'tap water' in dining settings."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "What is 'still water' in a restaurant context?",
-                    "options": [
-                        "Non-carbonated, flat water without bubbles",
-                        "Water that has been sitting for weeks",
-                        "Water mixed with lemon juice"
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Correct! 'Still' contrasts with 'sparkling' (carbonated) water.",
-                        "Incorrect; 'still' refers strictly to the lack of carbonation.",
-                        "Lemon water is called water with lemon."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L4_PRAC_Q1",
-            "level": 4,
-            "word": "FOOD",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "The local market is famous for serving delicious street _____.",
-                    "correctAnswer": "food",
-                    "hint": "Nutritious substance people consume.",
-                    "feedbackIfWrong": "Use 'food' in the collocation 'street food'."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which of these is uncountable in everyday standard English?",
-                    "options": [
-                        "Food (e.g. 'There is plenty of food')",
-                        "Apple (e.g. 'There is an apple')",
-                        "Sandwich (e.g. 'I ate two sandwiches')"
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Correct! 'Food' is typically uncountable; you say 'some food', not 'three foods'.",
-                        "'Apple' is countable (one apple, two apples).",
-                        "'Sandwich' is countable (one sandwich, two sandwiches)."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L4_PRAC_Q2",
-            "level": 4,
-            "word": "HOME",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "After working ten hours, I'm ready to go _____ and relax.",
-                    "correctAnswer": "home",
-                    "hint": "The place of personal comfort and sanctuary where you live.",
-                    "feedbackIfWrong": "Say 'go home' without the preposition 'to'."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which sentence has a grammatical error?",
-                    "options": [
-                        "I am going to home right now.",
-                        "I am going home right now.",
-                        "I am staying home tonight."
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Correct! Never insert 'to' before 'home' when using motion verbs like 'go'.",
-                        "This is grammatically perfect.",
-                        "This is completely standard English."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L4_PRAC_Q3",
-            "level": 4,
-            "word": "SCHOOL",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "The bus drops the children off at _____ every morning at eight.",
-                    "correctAnswer": "school",
-                    "hint": "Educational institution for learners.",
-                    "feedbackIfWrong": "Use 'at school' to describe the educational venue."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "What does an American mean when asking an adult 'Where did you go to school?'",
-                    "options": [
-                        "Which university or college did you attend?",
-                        "Which kindergarten did you go to as a baby?",
-                        "Did you drop out of school?"
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Correct! In American English, 'school' is widely used as a casual synonym for college or university.",
-                        "Adults rarely ask about kindergarten in casual professional conversations.",
-                        "It is an open, friendly inquiry about education, not an accusation."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L5_PRAC_Q1",
-            "level": 5,
-            "word": "FRIEND",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "She has been a loyal _____ of mine for over ten years.",
-                    "correctAnswer": "friend",
-                    "hint": "A close companion with mutual affection.",
-                    "feedbackIfWrong": "Use the double possessive idiom 'a friend of mine'."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "What is the correct English collocation?",
-                    "options": [
-                        "Make friends with someone",
-                        "Do friends with someone",
-                        "Build friends with someone"
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Correct! English speakers say 'make friends' (never 'do friends').",
-                        "'Do friends' is non-standard.",
-                        "'Build friends' is non-standard."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L5_PRAC_Q2",
-            "level": 5,
-            "word": "GOOD",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "That is a remarkably _____ idea for solving the client's bottleneck.",
-                    "correctAnswer": "good",
-                    "hint": "Adjective denoting high quality or favorable standard.",
-                    "feedbackIfWrong": "Use the adjective 'good' to modify the noun 'idea'."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Choose the correct sentence (Good vs Well):",
-                    "options": [
-                        "She writes exceptionally well.",
-                        "She writes exceptionally good.",
-                        "She is a well writer."
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Correct! 'Well' is an adverb that modifies the verb 'writes'.",
-                        "'Good' is an adjective, so it cannot modify the verb 'writes'.",
-                        "'Good' should be used before the noun 'writer' ('good writer')."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L5_PRAC_Q3",
-            "level": 5,
-            "word": "BAD",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Sorry for stepping on your foot — my _____!",
-                    "correctAnswer": "bad",
-                    "hint": "Casual idiom acknowledging a minor fault or mistake.",
-                    "feedbackIfWrong": "Use the popular casual idiom 'My bad!'."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "How do you express diplomatic constructive criticism on a draft?",
-                    "options": [
-                        "This is a solid start, but there is room for improvement in section two.",
-                        "This is terrible and bad.",
-                        "You wrote bad words."
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Spot on! Highlighting the positive foundation while pointing out specific improvement areas is standard professional courtesy.",
-                        "This is overly blunt and demotivating.",
-                        "This sounds childish and imprecise."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L6_PRAC_Q1",
-            "level": 6,
-            "word": "HAPPY",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "I would be more than _____ to help you finalize the slides.",
-                    "correctAnswer": "happy",
-                    "hint": "Polite formula denoting willing assistance and satisfaction.",
-                    "feedbackIfWrong": "Use 'happy to help' in customer and peer correspondence."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which preposition naturally follows 'happy' when expressing satisfaction with a result?",
-                    "options": [
-                        "Happy with (e.g. 'We are happy with the outcome')",
-                        "Happy to (e.g. 'We are happy to the outcome')",
-                        "Happy on (e.g. 'We are happy on the outcome')"
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Correct! You are 'happy with' a result or product.",
-                        "'Happy to' is followed by a verb ('happy to assist').",
-                        "'Happy on' is non-standard."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L6_PRAC_Q2",
-            "level": 6,
-            "word": "SAD",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "It is deeply _____ to watch the ancient forest burn in the wildfires.",
-                    "correctAnswer": "sad",
-                    "hint": "Word evoking sorrow, grief, or unhappiness.",
-                    "feedbackIfWrong": "Use 'sad' to describe mournful or tragic circumstances."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "What is the most empathetic response when a coworker's pet passes away?",
-                    "options": [
-                        "I'm so sorry to hear that. Thinking of you and sending warm thoughts.",
-                        "That is sad, now get back to work.",
-                        "Pets are just animals."
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Correct! Expressing sympathy and offering warm thoughts shows high emotional intelligence.",
-                        "This is cold, insensitive, and unprofessional.",
-                        "This dismisses genuine grief."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L6_PRAC_Q3",
-            "level": 6,
-            "word": "BIG",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Don't stress over that tiny typo; it's really no _____ deal!",
-                    "correctAnswer": "big",
-                    "hint": "Adjective carrying emotional importance in the idiom 'no big deal'.",
-                    "feedbackIfWrong": "The idiom is 'no big deal' (never 'no large deal')."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Why do native speakers say 'big mistake' instead of 'large mistake'?",
-                    "options": [
-                        "'Big' carries emotional weight and consequence; 'large' is neutral and factual.",
-                        "'Large' is not a real English word.",
-                        "'Big' can only be used with numbers."
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Spot on! 'Big' conveys emotional magnitude (big deal, big mistake, big surprise).",
-                        "'Large' is a perfectly good word, but it is reserved for neutral physical scale.",
-                        "'Big' is used with nouns, not just numbers."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L7_PRAC_Q1",
-            "level": 7,
-            "word": "SMALL",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "At networking events, making polite _____ talk helps break the ice.",
-                    "correctAnswer": "small",
-                    "hint": "The term for light casual conversation about weather, travel, etc.",
-                    "feedbackIfWrong": "The phrase is 'small talk'."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which word should you use to describe a person who is not tall?",
-                    "options": [
-                        "Short",
-                        "Small",
-                        "Tiny"
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Correct! When talking about human height, always use 'short'.",
-                        "'Small' can imply frame or size, but height specifically requires 'short'.",
-                        "'Tiny' is diminutive and can sound condescending when describing an adult."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L7_PRAC_Q2",
-            "level": 7,
-            "word": "HOT",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Artificial intelligence is the most discussed and _____ topic in tech today.",
-                    "correctAnswer": "hot",
-                    "hint": "Metaphorical adjective meaning widely trending or popular.",
-                    "feedbackIfWrong": "Use 'hot topic' to describe trending trends."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "If someone asks 'Is the curry hot?', what might they mean?",
-                    "options": [
-                        "Either spicy with chilies OR hot in temperature",
-                        "Only if it was heated in an oven",
-                        "Only if it is red in color"
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Spot on! 'Hot' in food can mean thermal temperature or spicy pungent heat.",
-                        "'Hot' is not restricted to oven heating.",
-                        "Color does not dictate spice level."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L7_PRAC_Q3",
-            "level": 7,
-            "word": "COLD",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "He was about to sign the contract, but he got _____ feet at the last minute.",
-                    "correctAnswer": "cold",
-                    "hint": "Idiom meaning to become nervous and hesitate before a major commitment.",
-                    "feedbackIfWrong": "The idiom is 'cold feet'."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "What is the difference between 'I am cold' and 'I have a cold'?",
-                    "options": [
-                        "'I am cold' = feeling low temperature; 'I have a cold' = sick with a viral illness",
-                        "They mean the exact same thing",
-                        "'I have a cold' means you are standing outside in winter"
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Correct! Adding the article 'a' turns the sensation into the viral medical illness.",
-                        "They are very different sentences with completely distinct meanings.",
-                        "Standing outside is described by 'I am cold'."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L8_PRAC_Q1",
-            "level": 8,
-            "word": "DAY",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "It's past 6 PM and we've accomplished a lot; let's call it a _____!",
-                    "correctAnswer": "day",
-                    "hint": "Workplace idiom meaning to finish work for the rest of today.",
-                    "feedbackIfWrong": "The idiom is 'call it a day'."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "What does 'day in and day out' mean?",
-                    "options": [
-                        "Happening continuously every single day without pause",
-                        "Working only on sunny days",
-                        "Changing jobs every other day"
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Correct! It emphasizes consistent, repetitive daily effort or routine.",
-                        "It has nothing to do with weather.",
-                        "It does not refer to changing jobs."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L8_PRAC_Q2",
-            "level": 8,
-            "word": "NIGHT",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "The college students pulled an all-_____ to finish the group project before sunrise.",
-                    "correctAnswer": "nighter",
-                    "hint": "Slang for staying awake all night to study or work.",
-                    "feedbackIfWrong": "The phrase is 'pulled an all-nighter'."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "You meet a business client at an 8:00 PM dinner. How do you greet them?",
-                    "options": [
-                        "Good evening!",
-                        "Goodnight!",
-                        "Sleep well!"
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Spot on! 'Good evening' is the formal and courteous greeting when arriving after dusk.",
-                        "'Goodnight' is strictly a farewell when departing or going to sleep.",
-                        "'Sleep well' is only said right before someone goes to bed."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L8_PRAC_Q3",
-            "level": 8,
-            "word": "GO",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "I'm not sure if this strategy will work, but let's give it a _____!",
-                    "correctAnswer": "go",
-                    "hint": "Idiom meaning to attempt or try something out.",
-                    "feedbackIfWrong": "The idiom is 'give it a go'."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which sentence is grammatically correct in English?",
-                    "options": [
-                        "Let's go shopping this weekend.",
-                        "Let's go to shopping this weekend.",
-                        "Let's go for to shop this weekend."
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Correct! Activity verbs ending in -ing (shopping, swimming, skiing) follow 'go' directly without 'to'.",
-                        "Do not insert 'to' before -ing activity verbs.",
-                        "This construction is ungrammatical."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L9_PRAC_Q1",
-            "level": 9,
-            "word": "EAT",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Are you hungry? Let's grab a bite to _____ before our next meeting.",
-                    "correctAnswer": "eat",
-                    "hint": "Casual collocation for having a meal together.",
-                    "feedbackIfWrong": "The idiom is 'grab a bite to eat'."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "How do native speakers naturally talk about medication?",
-                    "options": [
-                        "Take medicine (e.g. 'I need to take my medicine')",
-                        "Eat medicine (e.g. 'I need to eat my medicine')",
-                        "Drink pills (e.g. 'I need to drink pills')"
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Correct! In English you always 'take' medicine or pills, never 'eat' them.",
-                        "English does not use 'eat' for medicine.",
-                        "English does not say 'drink pills'."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L9_PRAC_Q2",
-            "level": 9,
-            "word": "DRINK",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "We're heading across the street for a quick _____ after work; want to join?",
-                    "correctAnswer": "drink",
-                    "hint": "Social gathering for beverages.",
-                    "feedbackIfWrong": "Use 'go for a drink' in post-work social invitations."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Choose the sentence with correct verb tense:",
-                    "options": [
-                        "I drank three glasses of water this morning.",
-                        "I drunk three glasses of water this morning.",
-                        "I have drank three glasses of water."
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Spot on! Past simple is 'drank' (drink -> drank -> drunk).",
-                        "'Drunk' is the past participle, not the past simple.",
-                        "Present perfect requires the participle: 'I have drunk'."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L9_PRAC_Q3",
-            "level": 9,
-            "word": "SLEEP",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "That's a big decision; why don't you _____ on it and let me know tomorrow?",
-                    "correctAnswer": "sleep",
-                    "hint": "Workplace idiom meaning to take overnight to think before deciding.",
-                    "feedbackIfWrong": "The idiom is 'sleep on it'."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "What is the difference between 'sleep' and 'fall asleep'?",
-                    "options": [
-                        "'Sleep' is the state of resting; 'fall asleep' is the moment of transitioning from awake to asleep",
-                        "They mean the exact same thing",
-                        "'Fall asleep' means rolling out of bed while sleeping"
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Correct! 'Fall asleep' is the active transition; 'sleep' is the ongoing state.",
-                        "They represent different grammatical aspects (action transition vs state).",
-                        "Rolling out of bed is falling out of bed."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L10_PRAC_Q1",
-            "level": 10,
-            "word": "WRITE",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "When you have a free moment, please drop me a line and _____ back.",
-                    "correctAnswer": "write",
-                    "hint": "Verb meaning to compose a text or email response.",
-                    "feedbackIfWrong": "The phrase is 'write back'."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which of these words is pronounced EXACTLY the same as 'write' (/raɪt/)?",
-                    "options": [
-                        "Right (correct / direction)",
-                        "Rote (by memory)",
-                        "White (color)"
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Spot on! 'Write' and 'right' are homophones — the 'w' in 'write' is completely silent.",
-                        "'Rote' has an /oʊ/ vowel sound.",
-                        "'White' begins with /w/ and has different historical aspiration."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L10_PRAC_Q2",
-            "level": 10,
-            "word": "READ",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "In negotiations, always pay attention to subtle cues and _____ between the lines.",
-                    "correctAnswer": "read",
-                    "hint": "Idiom meaning to understand the unspoken hidden meaning.",
-                    "feedbackIfWrong": "The idiom is 'read between the lines'."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "How is the past tense of 'read' pronounced in 'Yesterday I read three chapters'?",
-                    "options": [
-                        "Like the color 'red' (/rɛd/)",
-                        "Like the plant 'reed' (/riːd/)",
-                        "Like 'ride' (/raɪd/)"
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Correct! Past tense 'read' is pronounced identically to the color 'red' (/rɛd/).",
-                        "Pronouncing it like 'reed' is only for present tense ('Today I read').",
-                        "'Ride' is a completely different word."
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L10_PRAC_Q3",
-            "level": 10,
-            "word": "SPEAK",
-            "exercises": [
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Don't just make promises; remember that actions _____ louder than words.",
-                    "correctAnswer": "speak",
-                    "hint": "Classic English proverb emphasizing tangible action over empty talk.",
-                    "feedbackIfWrong": "The proverb is 'actions speak louder than words'."
-                },
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Choose the grammatically natural sentence (Speak vs Talk):",
-                    "options": [
-                        "She can speak four languages fluently.",
-                        "She can talk four languages fluently.",
-                        "She can say four languages fluently."
-                    ],
-                    "correctAnswer": 0,
-                    "feedbackPerOption": [
-                        "Correct! Languages are always paired with 'speak' ('speak English', 'speak Spanish').",
-                        "You cannot 'talk' a language in standard English.",
-                        "'Say' requires direct speech or specific phrases, not language abilities."
-                    ]
-                }
-            ]
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "The museum confirmed that the ancient artifact was completely _____.",
+          "correctAnswer": "AUTHENTIC",
+          "options": [
+            "AU",
+            "THEN",
+            "TIC",
+            "TION",
+            "IC"
+          ],
+          "hint": "Think of a word meaning genuine, real, or uncopied.",
+          "feedbackIfWrong": "'Authentic' pairs with documents, culture, and cuisine, not weather or prices."
         }
-    ]
+      ]
+    },
+    {
+      "id": "VOC_FC_L2_PRAC_Q1",
+      "level": 2,
+      "word": "RESILIENT",
+      "exerciseType": "chunkWeaver",
+      "sentence": "Athletes must develop a _____ mindset to bounce back after major injuries.",
+      "targetCollocation": "resilient economy",
+      "correctAnswer": "RESILIENT",
+      "scrambledChunks": [
+        "RE",
+        "SIL",
+        "IENT",
+        "IST",
+        "ANT"
+      ],
+      "collocationPrompt": "Pair 'resilient' with its natural partner:",
+      "collocationOptions": [
+        "resilient economy",
+        "resilient water",
+        "resilient coffee"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Think of a word meaning tough and able to bounce back.",
+      "feedbackIfWrong": "'Resilient' describes people, economies, and materials that recover after pressure.",
+      "exercises": [
+        {
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "Athletes must develop a _____ mindset to bounce back after major injuries.",
+          "correctAnswer": "RESILIENT",
+          "options": [
+            "RE",
+            "SIL",
+            "IENT",
+            "IST",
+            "ANT"
+          ],
+          "hint": "Think of a word meaning tough and able to bounce back.",
+          "feedbackIfWrong": "'Resilient' describes people, economies, and materials that recover after pressure."
+        }
+      ]
+    },
+    {
+      "id": "VOC_FC_L3_PRAC_Q1",
+      "level": 3,
+      "word": "INNOVATIVE",
+      "exerciseType": "chunkWeaver",
+      "sentence": "The design agency won awards for their _____ approach to mobile user interfaces.",
+      "targetCollocation": "innovative approach",
+      "correctAnswer": "INNOVATIVE",
+      "scrambledChunks": [
+        "IN",
+        "NO",
+        "VA",
+        "TIVE",
+        "TOR"
+      ],
+      "collocationPrompt": "Pair 'innovative' with its natural partner:",
+      "collocationOptions": [
+        "innovative approach",
+        "innovative stone",
+        "innovative dirt"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Think of a word meaning creative, pioneering, and forward-thinking.",
+      "feedbackIfWrong": "'Innovative' modifies solutions, designs, and strategies that break new ground.",
+      "exercises": [
+        {
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "The design agency won awards for their _____ approach to mobile user interfaces.",
+          "correctAnswer": "INNOVATIVE",
+          "options": [
+            "IN",
+            "NO",
+            "VA",
+            "TIVE",
+            "TOR"
+          ],
+          "hint": "Think of a word meaning creative, pioneering, and forward-thinking.",
+          "feedbackIfWrong": "'Innovative' modifies solutions, designs, and strategies that break new ground."
+        }
+      ]
+    },
+    {
+      "id": "VOC_FC_L4_PRAC_Q1",
+      "level": 4,
+      "word": "COLLABORATE",
+      "exerciseType": "chunkWeaver",
+      "sentence": "Remote teams rely on digital whiteboards to _____ on quarterly roadmaps.",
+      "targetCollocation": "collaborate closely",
+      "correctAnswer": "COLLABORATE",
+      "scrambledChunks": [
+        "COL",
+        "LAB",
+        "O",
+        "RATE",
+        "ROB"
+      ],
+      "collocationPrompt": "Pair 'collaborate' with its natural partner:",
+      "collocationOptions": [
+        "collaborate closely",
+        "collaborate a car",
+        "collaborate a sandwich"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Think of a verb meaning to team up and work together.",
+      "feedbackIfWrong": "'Collaborate' requires mutual teamwork; you collaborate with people on goals.",
+      "exercises": [
+        {
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "Remote teams rely on digital whiteboards to _____ on quarterly roadmaps.",
+          "correctAnswer": "COLLABORATE",
+          "options": [
+            "COL",
+            "LAB",
+            "O",
+            "RATE",
+            "ROB"
+          ],
+          "hint": "Think of a verb meaning to team up and work together.",
+          "feedbackIfWrong": "'Collaborate' requires mutual teamwork; you collaborate with people on goals."
+        }
+      ]
+    },
+    {
+      "id": "VOC_FC_L5_PRAC_Q1",
+      "level": 5,
+      "word": "PERSPECTIVE",
+      "exerciseType": "chunkWeaver",
+      "sentence": "Consultants were hired to offer an objective _____ on the company restructuring.",
+      "targetCollocation": "fresh perspective",
+      "correctAnswer": "PERSPECTIVE",
+      "scrambledChunks": [
+        "PER",
+        "SPEC",
+        "TIVE",
+        "PRO",
+        "ECT"
+      ],
+      "collocationPrompt": "Pair 'perspective' with its natural partner:",
+      "collocationOptions": [
+        "fresh perspective",
+        "perspective sugar",
+        "perspective window"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Think of a noun meaning point of view or way of seeing.",
+      "feedbackIfWrong": "'Perspective' describes how you interpret a situation from a specific vantage point.",
+      "exercises": [
+        {
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "Consultants were hired to offer an objective _____ on the company restructuring.",
+          "correctAnswer": "PERSPECTIVE",
+          "options": [
+            "PER",
+            "SPEC",
+            "TIVE",
+            "PRO",
+            "ECT"
+          ],
+          "hint": "Think of a noun meaning point of view or way of seeing.",
+          "feedbackIfWrong": "'Perspective' describes how you interpret a situation from a specific vantage point."
+        }
+      ]
+    },
+    {
+      "id": "VOC_FC_L6_PRAC_Q1",
+      "level": 6,
+      "word": "SIGNIFICANT",
+      "exerciseType": "chunkWeaver",
+      "sentence": "The introduction of solar energy led to a _____ reduction in operational costs.",
+      "targetCollocation": "significant impact",
+      "correctAnswer": "SIGNIFICANT",
+      "scrambledChunks": [
+        "SIG",
+        "NIF",
+        "I",
+        "CANT",
+        "MAG"
+      ],
+      "collocationPrompt": "Pair 'significant' with its natural partner:",
+      "collocationOptions": [
+        "significant impact",
+        "significant salt",
+        "significant lamp"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Think of a word meaning major, noticeable, or meaningful.",
+      "feedbackIfWrong": "'Significant' highlights measurable impact, changes, or milestones.",
+      "exercises": [
+        {
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "The introduction of solar energy led to a _____ reduction in operational costs.",
+          "correctAnswer": "SIGNIFICANT",
+          "options": [
+            "SIG",
+            "NIF",
+            "I",
+            "CANT",
+            "MAG"
+          ],
+          "hint": "Think of a word meaning major, noticeable, or meaningful.",
+          "feedbackIfWrong": "'Significant' highlights measurable impact, changes, or milestones."
+        }
+      ]
+    },
+    {
+      "id": "VOC_FC_L7_PRAC_Q1",
+      "level": 7,
+      "word": "ACCELERATE",
+      "exerciseType": "chunkWeaver",
+      "sentence": "Automated software tools can greatly _____ the code deployment cycle.",
+      "targetCollocation": "accelerate growth",
+      "correctAnswer": "ACCELERATE",
+      "scrambledChunks": [
+        "AC",
+        "CEL",
+        "ER",
+        "ATE",
+        "CUM"
+      ],
+      "collocationPrompt": "Pair 'accelerate' with its natural partner:",
+      "collocationOptions": [
+        "accelerate growth",
+        "accelerate a sleep",
+        "accelerate an apple"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Think of a verb meaning to speed up or advance quickly.",
+      "feedbackIfWrong": "'Accelerate' means to increase rate of change, both physically and metaphorically.",
+      "exercises": [
+        {
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "Automated software tools can greatly _____ the code deployment cycle.",
+          "correctAnswer": "ACCELERATE",
+          "options": [
+            "AC",
+            "CEL",
+            "ER",
+            "ATE",
+            "CUM"
+          ],
+          "hint": "Think of a verb meaning to speed up or advance quickly.",
+          "feedbackIfWrong": "'Accelerate' means to increase rate of change, both physically and metaphorically."
+        }
+      ]
+    },
+    {
+      "id": "VOC_FC_L8_PRAC_Q1",
+      "level": 8,
+      "word": "COMPREHENSIVE",
+      "exerciseType": "chunkWeaver",
+      "sentence": "The board conducted a _____ audit of all financial transactions over the past five years.",
+      "targetCollocation": "comprehensive review",
+      "correctAnswer": "COMPREHENSIVE",
+      "scrambledChunks": [
+        "COM",
+        "PRE",
+        "HEN",
+        "SIVE",
+        "BLE"
+      ],
+      "collocationPrompt": "Pair 'comprehensive' with its natural partner:",
+      "collocationOptions": [
+        "comprehensive review",
+        "comprehensive shoe",
+        "comprehensive glass"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Think of a word meaning thorough, all-inclusive, and complete.",
+      "feedbackIfWrong": "'Comprehensive' implies nothing was overlooked or omitted from the review.",
+      "exercises": [
+        {
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "The board conducted a _____ audit of all financial transactions over the past five years.",
+          "correctAnswer": "COMPREHENSIVE",
+          "options": [
+            "COM",
+            "PRE",
+            "HEN",
+            "SIVE",
+            "BLE"
+          ],
+          "hint": "Think of a word meaning thorough, all-inclusive, and complete.",
+          "feedbackIfWrong": "'Comprehensive' implies nothing was overlooked or omitted from the review."
+        }
+      ]
+    },
+    {
+      "id": "VOC_FC_L9_PRAC_Q1",
+      "level": 9,
+      "word": "DETERMINED",
+      "exerciseType": "chunkWeaver",
+      "sentence": "The young entrepreneur remained _____ to launch her sustainable fashion brand.",
+      "targetCollocation": "determined effort",
+      "correctAnswer": "DETERMINED",
+      "scrambledChunks": [
+        "DE",
+        "TER",
+        "MINED",
+        "RRED",
+        "ANT"
+      ],
+      "collocationPrompt": "Pair 'determined' with its natural partner:",
+      "collocationOptions": [
+        "determined effort",
+        "determined soup",
+        "determined wind"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Think of a word meaning resolute, unwavering, and focused on a goal.",
+      "feedbackIfWrong": "'Determined' reflects inner willpower and persistence against obstacles.",
+      "exercises": [
+        {
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "The young entrepreneur remained _____ to launch her sustainable fashion brand.",
+          "correctAnswer": "DETERMINED",
+          "options": [
+            "DE",
+            "TER",
+            "MINED",
+            "RRED",
+            "ANT"
+          ],
+          "hint": "Think of a word meaning resolute, unwavering, and focused on a goal.",
+          "feedbackIfWrong": "'Determined' reflects inner willpower and persistence against obstacles."
+        }
+      ]
+    },
+    {
+      "id": "VOC_FC_L10_PRAC_Q1",
+      "level": 10,
+      "word": "EFFICIENCY",
+      "exerciseType": "chunkWeaver",
+      "sentence": "Modern cloud servers offer high computing power while maximizing energy _____.",
+      "targetCollocation": "energy efficiency",
+      "correctAnswer": "EFFICIENCY",
+      "scrambledChunks": [
+        "EF",
+        "FI",
+        "CIEN",
+        "CY",
+        "SUFF"
+      ],
+      "collocationPrompt": "Pair 'efficiency' with its natural partner:",
+      "collocationOptions": [
+        "energy efficiency",
+        "efficiency dirt",
+        "efficiency rain"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Think of a noun meaning productivity with minimal wasted effort or time.",
+      "feedbackIfWrong": "'Efficiency' measures ratio of useful work performed to resources consumed.",
+      "exercises": [
+        {
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "Modern cloud servers offer high computing power while maximizing energy _____.",
+          "correctAnswer": "EFFICIENCY",
+          "options": [
+            "EF",
+            "FI",
+            "CIEN",
+            "CY",
+            "SUFF"
+          ],
+          "hint": "Think of a noun meaning productivity with minimal wasted effort or time.",
+          "feedbackIfWrong": "'Efficiency' measures ratio of useful work performed to resources consumed."
+        }
+      ]
+    }
+  ]
 }

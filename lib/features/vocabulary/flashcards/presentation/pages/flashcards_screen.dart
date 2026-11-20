@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
@@ -9,21 +10,20 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
-import 'package:vowl/features/vocabulary/flashcards/presentation/controllers/flashcard_controller.dart';
-import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_game_body.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
+import '../controllers/flashcard_controller.dart';
+import '../widgets/flashcard_speed_slam_view.dart';
 
-/// Interactive flashcard review screen supporting 3D card flips, swipes, and TTS pronunciation.
+/// 2026 Objective Mastery Phase screen for Vocabulary Flashcards.
+///
+/// Features the Speed Collocation Slam & Precision Strike arcade challenge.
+/// 100% objective testing with 3 lives, a 5-second isolated speed fuse, and combo flame multipliers.
 class FlashcardsScreen extends StatefulWidget {
-  /// The active curriculum difficulty level.
   final int level;
-
-  /// The active game subtype.
   final GameSubtype gameType;
 
-  /// Creates a [FlashcardsScreen] instance.
   const FlashcardsScreen({
     super.key,
     required this.level,
@@ -48,9 +48,8 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
   String getCompletionTitle(BuildContext context) =>
       context.tr('games.level_complete_caps', fallback: 'LEVEL COMPLETE!');
 
-  late final FlashcardController _controller;
+  late final FlashcardMasteryController _controller;
   late ThemeResult _theme;
-
   VocabularyQuest? _lastQuest;
 
   @override
@@ -61,10 +60,11 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
       lastProcessedIndex = initialBlocState.currentIndex;
       _lastQuest = initialBlocState.currentQuestOrNull;
     }
-    _controller = FlashcardController(
+
+    _controller = FlashcardMasteryController(
       hapticService: di.sl<HapticService>(),
-      onSubmitAnswer: (mastered) {
-        if (mastered) {
+      onSubmitResult: ({required bool isCorrect, required bool speedBonus}) {
+        if (isCorrect) {
           submitCorrectAnswer();
         } else {
           final state = context.read<VocabularyBloc>().state;
@@ -77,12 +77,13 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
         }
       },
     );
+
     initVocabularyGame();
   }
 
   @override
   void onQuestionReset() {
-    _controller.reset(true);
+    _controller.reset(isRetry: true);
   }
 
   @override
@@ -99,8 +100,6 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
     super.dispose();
   }
 
-  // ── Build ─────────────────────────────────────────────────────────────────
-
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
@@ -108,7 +107,6 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: _onBlocState,
       builder: (context, state) {
-        // Error state — surfaces the message instead of hiding it in shimmer
         if (state is VocabularyError) {
           return Scaffold(
             appBar: AppBar(
@@ -153,30 +151,24 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
               onContinue: () =>
                   context.read<VocabularyBloc>().add(const NextQuestion()),
               useScrolling: false,
-              onHint: _controller.requestHint,
               child: quest == null
                   ? GameShimmerLoading(
                       primaryColor: Theme.of(context).primaryColor,
                     )
-                  : FlashcardGameBody(
-                      key: ValueKey(quest.id),
-                      quest: quest,
-                      primaryColor: _theme.primaryColor,
-                      isDark: isDark,
-                      isFlipped: _controller.isFlipped,
-                      isAnswered: _controller.isAnswered,
-                      isRetrying: _controller.isRetrying,
-                      isHintActive: _controller.isHintActive,
-                      hideActions: false,
-                      dragOffset: _controller.dragOffset,
-                      dragAngle: _controller.dragAngle,
-                      dragProgress: _controller.dragProgress,
-                      comboStreak: _controller.comboStreak,
-                      onHorizontalDragUpdate:
-                          _controller.onHorizontalDragUpdate,
-                      onHorizontalDragEnd: _controller.onHorizontalDragEnd,
-                      onCardTap: _controller.flipCard,
-                      onSubmitAnswer: _controller.submitAnswer,
+                  : Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 16.w),
+                      child: SingleChildScrollView(
+                        physics: const BouncingScrollPhysics(),
+                        child: FlashcardSpeedSlamView(
+                          key: ValueKey(quest.id),
+                          quest: quest,
+                          controller: _controller,
+                          isDark: isDark,
+                          onAdvanceToStage2: () {
+                            if (mounted) setState(() {});
+                          },
+                        ),
+                      ),
                     ),
             );
           },
@@ -184,8 +176,6 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
       },
     );
   }
-
-  // ── BLoC listener ─────────────────────────────────────────────────────────
 
   void _onBlocState(BuildContext context, VocabularyState state) {
     if (state is VocabularyLoaded) {
@@ -197,11 +187,11 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
 
       if (isNew || isRetry) {
         _lastQuest = state.currentQuestOrNull ?? _lastQuest;
-        _controller.reset(isRetry);
+        _controller.reset(isRetry: isRetry);
       }
     } else if (state is VocabularyGameComplete) {
       onVocabularyStateChanged(context, state);
-      _controller.completeGame();
+      _controller.triggerVictoryCelebration();
     }
   }
 }

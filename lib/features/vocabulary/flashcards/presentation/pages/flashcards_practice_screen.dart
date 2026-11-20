@@ -10,13 +10,11 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_practice_choice_card.dart';
-import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_practice_typing_card.dart';
+import '../widgets/flashcard_practice_chunk_weaver.dart';
 
-/// Guided active recall & context practice screen for Flashcards.
+/// 2026 Interactive Practice Phase screen for Vocabulary Flashcards.
 ///
-/// Features cyber-cloze shard assembly exercises and choice battle crystals
-/// with instant corrective feedback before entering the timed Mastery phase.
+/// Features the Word Chunk Weaver and instant Collocation Snap challenge.
 class FlashcardsPracticeScreen extends StatefulWidget {
   final int level;
 
@@ -28,41 +26,30 @@ class FlashcardsPracticeScreen extends StatefulWidget {
 }
 
 class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
-  List<PracticeExercise> _exercises = const [
-    PracticeExercise(
-      exerciseType: 'fillGap',
-      interactionType: 'typing',
-      sentence: '_____, welcome to the team!',
-      correctAnswer: 'Hello',
-      hint: 'A friendly greeting.',
-      feedbackIfWrong: 'Say Hello to greet a teammate.',
-    ),
-  ];
-  bool _isLoading = false;
-  int _currentExerciseIndex = 0;
+  List<PhasedQuest> _quests = const [];
+  bool _isLoading = true;
+  int _currentIndex = 0;
 
-  // Exercise interaction state
-  final TextEditingController _textController = TextEditingController();
-  int? _selectedOptionIndex;
-  bool _hasChecked = false;
-  bool _isAnswerCorrect = false;
-  String? _feedbackText;
+  // Active Quest Interaction State
+  List<String> _availableChunks = [];
+  final List<String> _placedChunks = [];
+  bool _hasCheckedAssembly = false;
+  bool _isAssemblyCorrect = false;
+
+  bool _showCollocationStage = false;
+  int? _selectedCollocationIndex;
+  bool _hasCheckedCollocation = false;
+
+  int _shakeTrigger = 0;
   bool _showHint = false;
-  int _shakeCount = 0;
 
   @override
   void initState() {
     super.initState();
-    _loadPracticeExercises();
+    _loadPracticeQuests();
   }
 
-  @override
-  void dispose() {
-    _textController.dispose();
-    super.dispose();
-  }
-
-  Future<void> _loadPracticeExercises() async {
+  Future<void> _loadPracticeQuests() async {
     try {
       final batchIndex = ((widget.level - 1) ~/ 10) + 1;
       final startLevel = (batchIndex - 1) * 10 + 1;
@@ -76,104 +63,155 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
       final levelQuests = batch.quests
           .where((q) => q.level == widget.level)
           .toList();
-      final allExercises = <PracticeExercise>[];
-      for (final q in (levelQuests.isNotEmpty ? levelQuests : batch.quests)) {
-        allExercises.addAll(q.exercises);
-      }
+      final loaded = levelQuests.isNotEmpty ? levelQuests : batch.quests;
 
       if (mounted) {
         setState(() {
-          _exercises = allExercises;
+          _quests = loaded;
           _isLoading = false;
+          _initQuestInteraction(0);
         });
       }
     } catch (_) {
       if (mounted) {
         setState(() {
-          _exercises = [
-            const PracticeExercise(
-              exerciseType: 'fillGap',
-              interactionType: 'typing',
-              sentence: '_____, welcome to the team!',
-              correctAnswer: 'Hello',
-              hint: 'A friendly greeting.',
-              feedbackIfWrong: 'Say Hello to greet a teammate.',
+          _quests = [
+            PhasedQuest(
+              id: 'FALLBACK_P1',
+              level: widget.level,
+              word: 'AUTHENTIC',
+              example:
+                  'The chef insisted on using only _____ Italian ingredients for the pasta.',
+              rawExtra: const {
+                'hint':
+                    'Think of a 3-syllable word meaning genuine, starting with AU.',
+                'scrambledChunks': ['AU', 'THEN', 'TIC', 'TION', 'IC'],
+                'collocationOptions': [
+                  'authentic cuisine',
+                  'authentic weather',
+                  'authentic price',
+                ],
+                'correctCollocationIndex': 0,
+              },
             ),
           ];
           _isLoading = false;
+          _initQuestInteraction(0);
         });
       }
     }
   }
 
-  void _checkCurrentAnswer() {
-    if (_exercises.isEmpty) return;
-    final exercise = _exercises[_currentExerciseIndex];
+  void _initQuestInteraction(int index) {
+    if (_quests.isEmpty || index >= _quests.length) return;
+    final quest = _quests[index];
 
-    if (exercise.interactionType == 'typing') {
-      final userText = _textController.text.trim();
-      if (userText.isEmpty) return;
+    final rawChunks = quest.rawExtra['scrambledChunks'] as List<dynamic>?;
+    final chunks = rawChunks != null
+        ? rawChunks.map((e) => e.toString()).toList()
+        : (quest.word != null ? [quest.word!] : <String>[]);
 
-      final isCorrect =
-          userText.toLowerCase() ==
-          (exercise.correctAnswer ?? '').toLowerCase();
-      setState(() {
-        _hasChecked = true;
-        _isAnswerCorrect = isCorrect;
-        if (!isCorrect) _shakeCount++;
-        _feedbackText = isCorrect
-            ? 'Spot on! Correct answer.'
-            : (exercise.feedbackIfWrong ??
-                  'Correct answer: "${exercise.correctAnswer}"');
-      });
-      if (di.sl.isRegistered<HapticService>()) {
-        if (isCorrect) {
-          di.sl<HapticService>().success();
-        } else {
-          di.sl<HapticService>().error();
-        }
+    _availableChunks = List<String>.from(chunks);
+    _placedChunks.clear();
+    _hasCheckedAssembly = false;
+    _isAssemblyCorrect = false;
+    _showCollocationStage = false;
+    _selectedCollocationIndex = null;
+    _hasCheckedCollocation = false;
+    _showHint = false;
+  }
+
+  void _addChunk(String chunk) {
+    if (_hasCheckedAssembly) return;
+    setState(() {
+      _availableChunks.remove(chunk);
+      _placedChunks.add(chunk);
+    });
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl<HapticService>().selection();
+    }
+  }
+
+  void _removeChunk(int index) {
+    if (_hasCheckedAssembly || index >= _placedChunks.length) return;
+    setState(() {
+      final chunk = _placedChunks.removeAt(index);
+      _availableChunks.add(chunk);
+    });
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl<HapticService>().selection();
+    }
+  }
+
+  void _checkAssembly() {
+    if (_placedChunks.isEmpty) return;
+    final assembled = _placedChunks.join('').toUpperCase();
+    final target = (_quests[_currentIndex].word ?? '').toUpperCase();
+
+    final isCorrect = assembled == target;
+    setState(() {
+      _hasCheckedAssembly = true;
+      _isAssemblyCorrect = isCorrect;
+      if (!isCorrect) {
+        _shakeTrigger++;
+      } else {
+        // Unlock Stage 2 Collocation Snap
+        _showCollocationStage = true;
       }
-    } else {
-      if (_selectedOptionIndex == null) return;
-      final isCorrect = _selectedOptionIndex == exercise.correctAnswerIndex;
-      String? perOptionFeedback;
-      if (_selectedOptionIndex! < exercise.feedbackPerOption.length) {
-        perOptionFeedback = exercise.feedbackPerOption[_selectedOptionIndex!];
-      }
+    });
 
-      setState(() {
-        _hasChecked = true;
-        _isAnswerCorrect = isCorrect;
-        if (!isCorrect) _shakeCount++;
-        _feedbackText =
-            perOptionFeedback ??
-            (isCorrect ? 'Correct choice!' : 'That choice is not optimal.');
-      });
-      if (di.sl.isRegistered<HapticService>()) {
-        if (isCorrect) {
-          di.sl<HapticService>().success();
-        } else {
-          di.sl<HapticService>().error();
-        }
+    if (di.sl.isRegistered<HapticService>()) {
+      if (isCorrect) {
+        di.sl<HapticService>().success();
+      } else {
+        di.sl<HapticService>().error();
+      }
+    }
+  }
+
+  void _selectCollocation(int optionIndex) {
+    final quest = _quests[_currentIndex];
+    final correctIndex =
+        (quest.rawExtra['correctCollocationIndex'] as num?)?.toInt() ?? 0;
+    final isCorrect = optionIndex == correctIndex;
+
+    setState(() {
+      _selectedCollocationIndex = optionIndex;
+      _hasCheckedCollocation = true;
+      if (!isCorrect) _shakeTrigger++;
+    });
+
+    if (di.sl.isRegistered<HapticService>()) {
+      if (isCorrect) {
+        di.sl<HapticService>().success();
+      } else {
+        di.sl<HapticService>().error();
       }
     }
   }
 
   void _advanceOrFinish() {
-    if (!_hasChecked) {
-      _checkCurrentAnswer();
+    if (!_hasCheckedAssembly) {
+      _checkAssembly();
       return;
     }
 
-    if (_currentExerciseIndex < _exercises.length - 1) {
+    if (!_isAssemblyCorrect) {
+      // Allow retry of assembly
       setState(() {
-        _currentExerciseIndex++;
-        _hasChecked = false;
-        _isAnswerCorrect = false;
-        _selectedOptionIndex = null;
-        _feedbackText = null;
-        _showHint = false;
-        _textController.clear();
+        _initQuestInteraction(_currentIndex);
+      });
+      return;
+    }
+
+    if (_showCollocationStage && !_hasCheckedCollocation) {
+      return; // Awaiting collocation selection
+    }
+
+    if (_currentIndex < _quests.length - 1) {
+      setState(() {
+        _currentIndex++;
+        _initQuestInteraction(_currentIndex);
       });
     } else {
       _finishPracticePhase();
@@ -209,12 +247,10 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
       );
     }
 
-    final exercise = _exercises.isNotEmpty
-        ? _exercises[_currentExerciseIndex]
-        : null;
-    if (exercise == null) {
+    final quest = _quests.isNotEmpty ? _quests[_currentIndex] : null;
+    if (quest == null) {
       return PracticePhaseScaffold(
-        title: 'Practice Gym',
+        title: 'Practice Studio',
         gameType: 'flashcards',
         level: widget.level,
         currentExerciseIndex: 0,
@@ -224,19 +260,34 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
       );
     }
 
-    final isLast = _currentExerciseIndex == _exercises.length - 1;
-    final actionLabel = _hasChecked
-        ? (isLast ? 'Enter Mastery Phase 🏆' : 'Next Exercise ➔')
-        : 'Check Answer';
+    final isLast = _currentIndex == _quests.length - 1;
+    String actionLabel = 'Check Word';
+    if (_hasCheckedAssembly) {
+      if (!_isAssemblyCorrect) {
+        actionLabel = 'Try Again ↺';
+      } else if (_showCollocationStage && !_hasCheckedCollocation) {
+        actionLabel = 'Select Partner';
+      } else {
+        actionLabel = isLast ? 'Enter Mastery Phase 🏆' : 'Next Exercise ➔';
+      }
+    }
+
+    final rawCollocationOptions =
+        quest.rawExtra['collocationOptions'] as List<dynamic>?;
+    final collocationOptions = rawCollocationOptions != null
+        ? rawCollocationOptions.map((e) => e.toString()).toList()
+        : const <String>[];
+    final correctCollocationIndex =
+        (quest.rawExtra['correctCollocationIndex'] as num?)?.toInt() ?? 0;
 
     return PracticePhaseScaffold(
-      title: 'Exercise ${_currentExerciseIndex + 1} of ${_exercises.length}',
+      title: 'Exercise ${_currentIndex + 1} of ${_quests.length}',
       gameType: 'flashcards',
       level: widget.level,
-      currentExerciseIndex: _currentExerciseIndex,
-      totalExercises: _exercises.length,
+      currentExerciseIndex: _currentIndex,
+      totalExercises: _quests.length,
       actionLabel: actionLabel,
-      isHintAvailable: exercise.hint != null && !_showHint,
+      isHintAvailable: quest.hint != null && !_showHint,
       onHint: () => setState(() => _showHint = true),
       onComplete: _advanceOrFinish,
       child: SingleChildScrollView(
@@ -245,143 +296,56 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Exercise Header Tag
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-              decoration: BoxDecoration(
-                color: Colors.amber.withValues(alpha: 0.12),
-                borderRadius: BorderRadius.circular(10.r),
-              ),
-              child: Text(
-                exercise.interactionType == 'typing'
-                    ? '⚡ ACTIVE RECALL • SHARD ASSEMBLY'
-                    : '🎯 CONTEXT JUDGMENT',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 11.sp,
-                  fontWeight: FontWeight.w800,
-                  color: isDark ? Colors.amber.shade300 : Colors.amber.shade800,
-                  letterSpacing: 1.1,
-                ),
-              ),
+            FlashcardPracticeChunkWeaver(
+              sentence: quest.example ?? '',
+              targetWord: quest.word ?? '',
+              availableChunks: _availableChunks,
+              placedChunks: _placedChunks,
+              hasCheckedAssembly: _hasCheckedAssembly,
+              isAssemblyCorrect: _isAssemblyCorrect,
+              showCollocationStage: _showCollocationStage,
+              collocationPrompt: quest.rawExtra['collocationPrompt'] as String?,
+              collocationOptions: collocationOptions,
+              selectedCollocationIndex: _selectedCollocationIndex,
+              correctCollocationIndex: correctCollocationIndex,
+              hasCheckedCollocation: _hasCheckedCollocation,
+              shakeTrigger: _shakeTrigger,
+              isDark: isDark,
+              onAddChunk: _addChunk,
+              onRemoveChunk: _removeChunk,
+              onCheckAssembly: _checkAssembly,
+              onSelectCollocation: _selectCollocation,
             ),
-            SizedBox(height: 16.h),
-
-            // Exercise Body (Typing Shard Assembly or Crystal Choice)
-            if (exercise.interactionType == 'typing')
-              FlashcardPracticeTypingCard(
-                key: ValueKey(
-                  'typing_${exercise.correctAnswer}_$_currentExerciseIndex',
-                ),
-                exercise: exercise,
-                textController: _textController,
-                hasChecked: _hasChecked,
-                isAnswerCorrect: _isAnswerCorrect,
-                shakeCount: _shakeCount,
-                isDark: isDark,
-                onCheck: _checkCurrentAnswer,
-              )
-            else
-              FlashcardPracticeChoiceCard(
-                key: ValueKey(
-                  'choice_${exercise.correctAnswer}_$_currentExerciseIndex',
-                ),
-                exercise: exercise,
-                selectedOptionIndex: _selectedOptionIndex,
-                hasChecked: _hasChecked,
-                isAnswerCorrect: _isAnswerCorrect,
-                isDark: isDark,
-                onSelectOption: (idx) {
-                  setState(() => _selectedOptionIndex = idx);
-                },
-              ),
-
-            // Hint Drawer
-            if (_showHint && exercise.hint != null) ...[
-              SizedBox(height: 14.h),
-              Container(
-                padding: EdgeInsets.all(14.r),
-                decoration: BoxDecoration(
-                  color: Colors.blue.withValues(alpha: 0.08),
-                  borderRadius: BorderRadius.circular(14.r),
-                  border: Border.all(color: Colors.blue.withValues(alpha: 0.2)),
-                ),
-                child: Row(
-                  children: [
-                    Text('💡', style: TextStyle(fontSize: 16.sp)),
-                    SizedBox(width: 10.w),
-                    Expanded(
-                      child: Text(
-                        exercise.hint!,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 13.sp,
-                          color: isDark
-                              ? Colors.lightBlue.shade200
-                              : Colors.blue.shade800,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-
-            // Feedback Card
-            if (_hasChecked && _feedbackText != null) ...[
+            if (_showHint && quest.hint != null) ...[
               SizedBox(height: 16.h),
               Container(
-                padding: EdgeInsets.all(16.r),
+                padding: EdgeInsets.all(12.r),
                 decoration: BoxDecoration(
-                  color: _isAnswerCorrect
-                      ? Colors.green.withValues(alpha: 0.1)
-                      : Colors.orange.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(16.r),
+                  color: Colors.amber.withValues(alpha: isDark ? 0.2 : 0.1),
+                  borderRadius: BorderRadius.circular(12.r),
                   border: Border.all(
-                    color: _isAnswerCorrect
-                        ? Colors.green.withValues(alpha: 0.4)
-                        : Colors.orange.withValues(alpha: 0.4),
-                    width: 1.5,
+                    color: Colors.amber.withValues(alpha: 0.4),
                   ),
                 ),
                 child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      _isAnswerCorrect ? '🎉' : '💡',
-                      style: TextStyle(fontSize: 22.sp),
+                    Icon(
+                      Icons.lightbulb_rounded,
+                      size: 18.r,
+                      color: Colors.amber,
                     ),
-                    SizedBox(width: 12.w),
+                    SizedBox(width: 8.w),
                     Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            _isAnswerCorrect ? 'CORRECT' : 'COACHING TIP',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.w800,
-                              color: _isAnswerCorrect
-                                  ? Colors.green
-                                  : Colors.orange.shade800,
-                              letterSpacing: 1.2,
-                            ),
-                          ),
-                          SizedBox(height: 4.h),
-                          Text(
-                            _feedbackText!,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w600,
-                              color: isDark
-                                  ? AppColors.slate200
-                                  : AppColors.slate900,
-                              height: 1.4,
-                            ),
-                          ),
-                        ],
+                      child: Text(
+                        quest.hint!,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 13.sp,
+                          fontWeight: FontWeight.w600,
+                          color: isDark
+                              ? Colors.amber.shade200
+                              : Colors.amber.shade900,
+                        ),
                       ),
                     ),
                   ],

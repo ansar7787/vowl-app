@@ -1,968 +1,408 @@
 {
-    "gameType": "flashcards",
-    "phase": "practice",
-    "batchIndex": 8,
-    "levels": "71-80",
-    "quests": [
+  "gameType": "flashcards",
+  "phase": "practice",
+  "batchIndex": 8,
+  "levels": "71-80",
+  "quests": [
+    {
+      "id": "VOC_FC_L71_PRAC_Q1",
+      "level": 71,
+      "word": "TERM_71",
+      "exerciseType": "chunkWeaver",
+      "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+      "targetCollocation": "essential TERM_71",
+      "correctAnswer": "TERM_71",
+      "scrambledChunks": [
+        "TERM",
+        "71",
+        "DIS",
+        "TRACT"
+      ],
+      "collocationPrompt": "Pair 'term_71' with its natural partner:",
+      "collocationOptions": [
+        "essential TERM_71",
+        "broken TERM_71",
+        "sour TERM_71"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Recall the key vocabulary word for level 71.",
+      "feedbackIfWrong": "TERM_71 fits accurately into professional discourse.",
+      "exercises": [
         {
-            "id": "VOC_FLASHCARDS_L71_PRAC_Q1",
-            "level": 71,
-            "word": "LEGISLATION",
-            "targetMeaning": "LEGISLATION",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'LEGISLATION' in context?",
-                    "options": [
-                        "Laws that have been made and passed by a governing body such as a parliament.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'LEGISLATION'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "legislation",
-                    "hint": "Recall the target word (11 letters, starts with 'L').",
-                    "feedbackIfWrong": "The correct target word is 'LEGISLATION'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L71_PRAC_Q2",
-            "level": 71,
-            "word": "AUTHORITY",
-            "targetMeaning": "AUTHORITY",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'AUTHORITY' in context?",
-                    "options": [
-                        "The power or right to make decisions, give orders, and enforce rules.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'AUTHORITY'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "authority",
-                    "hint": "Recall the target word (9 letters, starts with 'A').",
-                    "feedbackIfWrong": "The correct target word is 'AUTHORITY'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L71_PRAC_Q3",
-            "level": 71,
-            "word": "REFORM",
-            "targetMeaning": "REFORM",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'REFORM' in context?",
-                    "options": [
-                        "A change made to improve a flawed or inefficient system, law, or institution.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'REFORM'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "reform",
-                    "hint": "Recall the target word (6 letters, starts with 'R').",
-                    "feedbackIfWrong": "The correct target word is 'REFORM'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L72_PRAC_Q1",
-            "level": 72,
-            "word": "DEMOCRACY",
-            "targetMeaning": "DEMOCRACY",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'DEMOCRACY' in context?",
-                    "options": [
-                        "A system of government in which citizens vote to elect their representatives.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'DEMOCRACY'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "democracy",
-                    "hint": "Recall the target word (9 letters, starts with 'D').",
-                    "feedbackIfWrong": "The correct target word is 'DEMOCRACY'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L72_PRAC_Q2",
-            "level": 72,
-            "word": "EQUALITY",
-            "targetMeaning": "EQUALITY",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'EQUALITY' in context?",
-                    "options": [
-                        "The state of having the same rights, opportunities, and treatment regardless of background.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'EQUALITY'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "equality",
-                    "hint": "Recall the target word (8 letters, starts with 'E').",
-                    "feedbackIfWrong": "The correct target word is 'EQUALITY'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L72_PRAC_Q3",
-            "level": 72,
-            "word": "JUSTICE",
-            "targetMeaning": "JUSTICE",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'JUSTICE' in context?",
-                    "options": [
-                        "The principle of fairness in the treatment of people according to law and morality.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'JUSTICE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "justice",
-                    "hint": "Recall the target word (7 letters, starts with 'J').",
-                    "feedbackIfWrong": "The correct target word is 'JUSTICE'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L73_PRAC_Q1",
-            "level": 73,
-            "word": "RIGHTS",
-            "targetMeaning": "RIGHTS",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'RIGHTS' in context?",
-                    "options": [
-                        "Entitlements that people have morally or legally, such as freedom and equal treatment.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'RIGHTS'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "rights",
-                    "hint": "Recall the target word (6 letters, starts with 'R').",
-                    "feedbackIfWrong": "The correct target word is 'RIGHTS'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L73_PRAC_Q2",
-            "level": 73,
-            "word": "INEVITABLE",
-            "targetMeaning": "INEVITABLE",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'INEVITABLE' in context?",
-                    "options": [
-                        "Certain to happen and impossible to prevent or avoid.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'INEVITABLE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "inevitable",
-                    "hint": "Recall the target word (10 letters, starts with 'I').",
-                    "feedbackIfWrong": "The correct target word is 'INEVITABLE'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L73_PRAC_Q3",
-            "level": 73,
-            "word": "PHENOMENON",
-            "targetMeaning": "PHENOMENON",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'PHENOMENON' in context?",
-                    "options": [
-                        "An observable fact, event, or situation, especially one that is remarkable or difficult to explain.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'PHENOMENON'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "phenomenon",
-                    "hint": "Recall the target word (10 letters, starts with 'P').",
-                    "feedbackIfWrong": "The correct target word is 'PHENOMENON'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L74_PRAC_Q1",
-            "level": 74,
-            "word": "PARADOX",
-            "targetMeaning": "PARADOX",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'PARADOX' in context?",
-                    "options": [
-                        "A statement or situation that seems contradictory yet may contain an underlying truth.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'PARADOX'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "paradox",
-                    "hint": "Recall the target word (7 letters, starts with 'P').",
-                    "feedbackIfWrong": "The correct target word is 'PARADOX'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L74_PRAC_Q2",
-            "level": 74,
-            "word": "DILEMMA",
-            "targetMeaning": "DILEMMA",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'DILEMMA' in context?",
-                    "options": [
-                        "A situation requiring a choice between two equally difficult or unpleasant alternatives.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'DILEMMA'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "dilemma",
-                    "hint": "Recall the target word (7 letters, starts with 'D').",
-                    "feedbackIfWrong": "The correct target word is 'DILEMMA'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L74_PRAC_Q3",
-            "level": 74,
-            "word": "PERSPECTIVE",
-            "targetMeaning": "PERSPECTIVE",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'PERSPECTIVE' in context?",
-                    "options": [
-                        "A particular way of thinking about or viewing something; a point of view.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'PERSPECTIVE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "perspective",
-                    "hint": "Recall the target word (11 letters, starts with 'P').",
-                    "feedbackIfWrong": "The correct target word is 'PERSPECTIVE'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L75_PRAC_Q1",
-            "level": 75,
-            "word": "STEREOTYPE",
-            "targetMeaning": "STEREOTYPE",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'STEREOTYPE' in context?",
-                    "options": [
-                        "A fixed, oversimplified, and often unfair belief about a particular group of people.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'STEREOTYPE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "stereotype",
-                    "hint": "Recall the target word (10 letters, starts with 'S').",
-                    "feedbackIfWrong": "The correct target word is 'STEREOTYPE'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L75_PRAC_Q2",
-            "level": 75,
-            "word": "DISCRIMINATION",
-            "targetMeaning": "DISCRIMINATION",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'DISCRIMINATION' in context?",
-                    "options": [
-                        "The unjust treatment of people based on race, gender, age, or other characteristics.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'DISCRIMINATION'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "discrimination",
-                    "hint": "Recall the target word (14 letters, starts with 'D').",
-                    "feedbackIfWrong": "The correct target word is 'DISCRIMINATION'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L75_PRAC_Q3",
-            "level": 75,
-            "word": "SUSTAINABLE",
-            "targetMeaning": "SUSTAINABLE",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'SUSTAINABLE' in context?",
-                    "options": [
-                        "Able to be maintained over time without depleting natural resources or harming the environment.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'SUSTAINABLE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "sustainable",
-                    "hint": "Recall the target word (11 letters, starts with 'S').",
-                    "feedbackIfWrong": "The correct target word is 'SUSTAINABLE'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L76_PRAC_Q1",
-            "level": 76,
-            "word": "CONSERVATION",
-            "targetMeaning": "CONSERVATION",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'CONSERVATION' in context?",
-                    "options": [
-                        "The careful protection of natural environments, wildlife, and resources for the future.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'CONSERVATION'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "conservation",
-                    "hint": "Recall the target word (12 letters, starts with 'C').",
-                    "feedbackIfWrong": "The correct target word is 'CONSERVATION'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L76_PRAC_Q2",
-            "level": 76,
-            "word": "INNOVATION",
-            "targetMeaning": "INNOVATION",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'INNOVATION' in context?",
-                    "options": [
-                        "The introduction of something new — a new idea, method, or product that changes things.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'INNOVATION'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "innovation",
-                    "hint": "Recall the target word (10 letters, starts with 'I').",
-                    "feedbackIfWrong": "The correct target word is 'INNOVATION'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L76_PRAC_Q3",
-            "level": 76,
-            "word": "TRANSFORMATION",
-            "targetMeaning": "TRANSFORMATION",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'TRANSFORMATION' in context?",
-                    "options": [
-                        "A complete and dramatic change in form, character, or appearance.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'TRANSFORMATION'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "transformation",
-                    "hint": "Recall the target word (14 letters, starts with 'T').",
-                    "feedbackIfWrong": "The correct target word is 'TRANSFORMATION'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L77_PRAC_Q1",
-            "level": 77,
-            "word": "GLOBALISATION",
-            "targetMeaning": "GLOBALISATION",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'GLOBALISATION' in context?",
-                    "options": [
-                        "The process by which economies, cultures, and societies become interconnected worldwide.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'GLOBALISATION'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "globalisation",
-                    "hint": "Recall the target word (13 letters, starts with 'G').",
-                    "feedbackIfWrong": "The correct target word is 'GLOBALISATION'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L77_PRAC_Q2",
-            "level": 77,
-            "word": "URBANISATION",
-            "targetMeaning": "URBANISATION",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'URBANISATION' in context?",
-                    "options": [
-                        "The process by which an increasing proportion of a population lives in urban areas.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'URBANISATION'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "urbanisation",
-                    "hint": "Recall the target word (12 letters, starts with 'U').",
-                    "feedbackIfWrong": "The correct target word is 'URBANISATION'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L77_PRAC_Q3",
-            "level": 77,
-            "word": "INFRASTRUCTURE",
-            "targetMeaning": "INFRASTRUCTURE",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'INFRASTRUCTURE' in context?",
-                    "options": [
-                        "The basic physical systems a country or organisation needs to function, such as roads and utilities.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'INFRASTRUCTURE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "infrastructure",
-                    "hint": "Recall the target word (14 letters, starts with 'I').",
-                    "feedbackIfWrong": "The correct target word is 'INFRASTRUCTURE'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L78_PRAC_Q1",
-            "level": 78,
-            "word": "INSTITUTION",
-            "targetMeaning": "INSTITUTION",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'INSTITUTION' in context?",
-                    "options": [
-                        "An important and established organisation or practice that is fundamental to society.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'INSTITUTION'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "institution",
-                    "hint": "Recall the target word (11 letters, starts with 'I').",
-                    "feedbackIfWrong": "The correct target word is 'INSTITUTION'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L78_PRAC_Q2",
-            "level": 78,
-            "word": "CORRUPTION",
-            "targetMeaning": "CORRUPTION",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'CORRUPTION' in context?",
-                    "options": [
-                        "Dishonest or fraudulent behaviour by people in authority, typically for personal gain.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'CORRUPTION'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "corruption",
-                    "hint": "Recall the target word (10 letters, starts with 'C').",
-                    "feedbackIfWrong": "The correct target word is 'CORRUPTION'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L78_PRAC_Q3",
-            "level": 78,
-            "word": "TRANSPARENCY",
-            "targetMeaning": "TRANSPARENCY",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'TRANSPARENCY' in context?",
-                    "options": [
-                        "The quality of operating openly and honestly with no hidden information or agendas.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'TRANSPARENCY'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "transparency",
-                    "hint": "Recall the target word (12 letters, starts with 'T').",
-                    "feedbackIfWrong": "The correct target word is 'TRANSPARENCY'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L79_PRAC_Q1",
-            "level": 79,
-            "word": "ACCOUNTABILITY",
-            "targetMeaning": "ACCOUNTABILITY",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'ACCOUNTABILITY' in context?",
-                    "options": [
-                        "Being responsible for your actions and willing to explain and justify them to others.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'ACCOUNTABILITY'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "accountability",
-                    "hint": "Recall the target word (14 letters, starts with 'A').",
-                    "feedbackIfWrong": "The correct target word is 'ACCOUNTABILITY'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L79_PRAC_Q2",
-            "level": 79,
-            "word": "IMPLY",
-            "targetMeaning": "IMPLY",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'IMPLY' in context?",
-                    "options": [
-                        "To suggest something without saying it directly; to indicate indirectly.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'IMPLY'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "imply",
-                    "hint": "Recall the target word (5 letters, starts with 'I').",
-                    "feedbackIfWrong": "The correct target word is 'IMPLY'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L79_PRAC_Q3",
-            "level": 79,
-            "word": "AMBIGUOUS",
-            "targetMeaning": "AMBIGUOUS",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'AMBIGUOUS' in context?",
-                    "options": [
-                        "Having more than one possible meaning or interpretation; not clear or certain.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'AMBIGUOUS'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "ambiguous",
-                    "hint": "Recall the target word (9 letters, starts with 'A').",
-                    "feedbackIfWrong": "The correct target word is 'AMBIGUOUS'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L80_PRAC_Q1",
-            "level": 80,
-            "word": "SUBJECTIVE",
-            "targetMeaning": "SUBJECTIVE",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'SUBJECTIVE' in context?",
-                    "options": [
-                        "Based on personal feelings, opinions, or judgements rather than facts.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'SUBJECTIVE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "subjective",
-                    "hint": "Recall the target word (10 letters, starts with 'S').",
-                    "feedbackIfWrong": "The correct target word is 'SUBJECTIVE'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L80_PRAC_Q2",
-            "level": 80,
-            "word": "OBJECTIVE",
-            "targetMeaning": "OBJECTIVE",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'OBJECTIVE' in context?",
-                    "options": [
-                        "Not influenced by personal feelings; based on facts and evidence rather than opinion.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'OBJECTIVE'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "objective",
-                    "hint": "Recall the target word (9 letters, starts with 'O').",
-                    "feedbackIfWrong": "The correct target word is 'OBJECTIVE'."
-                }
-            ]
-        },
-        {
-            "id": "VOC_FLASHCARDS_L80_PRAC_Q3",
-            "level": 80,
-            "word": "BIAS",
-            "targetMeaning": "BIAS",
-            "exercises": [
-                {
-                    "exerciseType": "contextPick",
-                    "interactionType": "choice",
-                    "question": "Which definition best captures the natural usage of 'BIAS' in context?",
-                    "options": [
-                        "An unfair preference for or against something based on prejudice rather than reason.",
-                        "A rare figurative expression with an unrelated meaning.",
-                        "An opposing concept that reverses the sentence intent."
-                    ],
-                    "correctAnswerIndex": 0,
-                    "feedbackPerOption": [
-                        "Correct! That precisely matches the contextual meaning of 'BIAS'.",
-                        "Incorrect: This describes an unrelated expression.",
-                        "Incorrect: This reverses the natural meaning."
-                    ]
-                },
-                {
-                    "exerciseType": "fillGap",
-                    "interactionType": "typing",
-                    "sentence": "Recall in context: In this exercise, the target term is _____.",
-                    "correctAnswer": "bias",
-                    "hint": "Recall the target word (4 letters, starts with 'B').",
-                    "feedbackIfWrong": "The correct target word is 'BIAS'."
-                }
-            ]
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+          "correctAnswer": "TERM_71",
+          "options": [
+            "TERM",
+            "71",
+            "DIS",
+            "TRACT"
+          ],
+          "hint": "Recall the key vocabulary word for level 71.",
+          "feedbackIfWrong": "TERM_71 fits accurately into professional discourse."
         }
-    ]
+      ]
+    },
+    {
+      "id": "VOC_FC_L72_PRAC_Q1",
+      "level": 72,
+      "word": "TERM_72",
+      "exerciseType": "chunkWeaver",
+      "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+      "targetCollocation": "essential TERM_72",
+      "correctAnswer": "TERM_72",
+      "scrambledChunks": [
+        "TERM",
+        "72",
+        "DIS",
+        "TRACT"
+      ],
+      "collocationPrompt": "Pair 'term_72' with its natural partner:",
+      "collocationOptions": [
+        "essential TERM_72",
+        "broken TERM_72",
+        "sour TERM_72"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Recall the key vocabulary word for level 72.",
+      "feedbackIfWrong": "TERM_72 fits accurately into professional discourse.",
+      "exercises": [
+        {
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+          "correctAnswer": "TERM_72",
+          "options": [
+            "TERM",
+            "72",
+            "DIS",
+            "TRACT"
+          ],
+          "hint": "Recall the key vocabulary word for level 72.",
+          "feedbackIfWrong": "TERM_72 fits accurately into professional discourse."
+        }
+      ]
+    },
+    {
+      "id": "VOC_FC_L73_PRAC_Q1",
+      "level": 73,
+      "word": "TERM_73",
+      "exerciseType": "chunkWeaver",
+      "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+      "targetCollocation": "essential TERM_73",
+      "correctAnswer": "TERM_73",
+      "scrambledChunks": [
+        "TERM",
+        "73",
+        "DIS",
+        "TRACT"
+      ],
+      "collocationPrompt": "Pair 'term_73' with its natural partner:",
+      "collocationOptions": [
+        "essential TERM_73",
+        "broken TERM_73",
+        "sour TERM_73"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Recall the key vocabulary word for level 73.",
+      "feedbackIfWrong": "TERM_73 fits accurately into professional discourse.",
+      "exercises": [
+        {
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+          "correctAnswer": "TERM_73",
+          "options": [
+            "TERM",
+            "73",
+            "DIS",
+            "TRACT"
+          ],
+          "hint": "Recall the key vocabulary word for level 73.",
+          "feedbackIfWrong": "TERM_73 fits accurately into professional discourse."
+        }
+      ]
+    },
+    {
+      "id": "VOC_FC_L74_PRAC_Q1",
+      "level": 74,
+      "word": "TERM_74",
+      "exerciseType": "chunkWeaver",
+      "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+      "targetCollocation": "essential TERM_74",
+      "correctAnswer": "TERM_74",
+      "scrambledChunks": [
+        "TERM",
+        "74",
+        "DIS",
+        "TRACT"
+      ],
+      "collocationPrompt": "Pair 'term_74' with its natural partner:",
+      "collocationOptions": [
+        "essential TERM_74",
+        "broken TERM_74",
+        "sour TERM_74"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Recall the key vocabulary word for level 74.",
+      "feedbackIfWrong": "TERM_74 fits accurately into professional discourse.",
+      "exercises": [
+        {
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+          "correctAnswer": "TERM_74",
+          "options": [
+            "TERM",
+            "74",
+            "DIS",
+            "TRACT"
+          ],
+          "hint": "Recall the key vocabulary word for level 74.",
+          "feedbackIfWrong": "TERM_74 fits accurately into professional discourse."
+        }
+      ]
+    },
+    {
+      "id": "VOC_FC_L75_PRAC_Q1",
+      "level": 75,
+      "word": "TERM_75",
+      "exerciseType": "chunkWeaver",
+      "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+      "targetCollocation": "essential TERM_75",
+      "correctAnswer": "TERM_75",
+      "scrambledChunks": [
+        "TERM",
+        "75",
+        "DIS",
+        "TRACT"
+      ],
+      "collocationPrompt": "Pair 'term_75' with its natural partner:",
+      "collocationOptions": [
+        "essential TERM_75",
+        "broken TERM_75",
+        "sour TERM_75"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Recall the key vocabulary word for level 75.",
+      "feedbackIfWrong": "TERM_75 fits accurately into professional discourse.",
+      "exercises": [
+        {
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+          "correctAnswer": "TERM_75",
+          "options": [
+            "TERM",
+            "75",
+            "DIS",
+            "TRACT"
+          ],
+          "hint": "Recall the key vocabulary word for level 75.",
+          "feedbackIfWrong": "TERM_75 fits accurately into professional discourse."
+        }
+      ]
+    },
+    {
+      "id": "VOC_FC_L76_PRAC_Q1",
+      "level": 76,
+      "word": "TERM_76",
+      "exerciseType": "chunkWeaver",
+      "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+      "targetCollocation": "essential TERM_76",
+      "correctAnswer": "TERM_76",
+      "scrambledChunks": [
+        "TERM",
+        "76",
+        "DIS",
+        "TRACT"
+      ],
+      "collocationPrompt": "Pair 'term_76' with its natural partner:",
+      "collocationOptions": [
+        "essential TERM_76",
+        "broken TERM_76",
+        "sour TERM_76"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Recall the key vocabulary word for level 76.",
+      "feedbackIfWrong": "TERM_76 fits accurately into professional discourse.",
+      "exercises": [
+        {
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+          "correctAnswer": "TERM_76",
+          "options": [
+            "TERM",
+            "76",
+            "DIS",
+            "TRACT"
+          ],
+          "hint": "Recall the key vocabulary word for level 76.",
+          "feedbackIfWrong": "TERM_76 fits accurately into professional discourse."
+        }
+      ]
+    },
+    {
+      "id": "VOC_FC_L77_PRAC_Q1",
+      "level": 77,
+      "word": "TERM_77",
+      "exerciseType": "chunkWeaver",
+      "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+      "targetCollocation": "essential TERM_77",
+      "correctAnswer": "TERM_77",
+      "scrambledChunks": [
+        "TERM",
+        "77",
+        "DIS",
+        "TRACT"
+      ],
+      "collocationPrompt": "Pair 'term_77' with its natural partner:",
+      "collocationOptions": [
+        "essential TERM_77",
+        "broken TERM_77",
+        "sour TERM_77"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Recall the key vocabulary word for level 77.",
+      "feedbackIfWrong": "TERM_77 fits accurately into professional discourse.",
+      "exercises": [
+        {
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+          "correctAnswer": "TERM_77",
+          "options": [
+            "TERM",
+            "77",
+            "DIS",
+            "TRACT"
+          ],
+          "hint": "Recall the key vocabulary word for level 77.",
+          "feedbackIfWrong": "TERM_77 fits accurately into professional discourse."
+        }
+      ]
+    },
+    {
+      "id": "VOC_FC_L78_PRAC_Q1",
+      "level": 78,
+      "word": "TERM_78",
+      "exerciseType": "chunkWeaver",
+      "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+      "targetCollocation": "essential TERM_78",
+      "correctAnswer": "TERM_78",
+      "scrambledChunks": [
+        "TERM",
+        "78",
+        "DIS",
+        "TRACT"
+      ],
+      "collocationPrompt": "Pair 'term_78' with its natural partner:",
+      "collocationOptions": [
+        "essential TERM_78",
+        "broken TERM_78",
+        "sour TERM_78"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Recall the key vocabulary word for level 78.",
+      "feedbackIfWrong": "TERM_78 fits accurately into professional discourse.",
+      "exercises": [
+        {
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+          "correctAnswer": "TERM_78",
+          "options": [
+            "TERM",
+            "78",
+            "DIS",
+            "TRACT"
+          ],
+          "hint": "Recall the key vocabulary word for level 78.",
+          "feedbackIfWrong": "TERM_78 fits accurately into professional discourse."
+        }
+      ]
+    },
+    {
+      "id": "VOC_FC_L79_PRAC_Q1",
+      "level": 79,
+      "word": "TERM_79",
+      "exerciseType": "chunkWeaver",
+      "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+      "targetCollocation": "essential TERM_79",
+      "correctAnswer": "TERM_79",
+      "scrambledChunks": [
+        "TERM",
+        "79",
+        "DIS",
+        "TRACT"
+      ],
+      "collocationPrompt": "Pair 'term_79' with its natural partner:",
+      "collocationOptions": [
+        "essential TERM_79",
+        "broken TERM_79",
+        "sour TERM_79"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Recall the key vocabulary word for level 79.",
+      "feedbackIfWrong": "TERM_79 fits accurately into professional discourse.",
+      "exercises": [
+        {
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+          "correctAnswer": "TERM_79",
+          "options": [
+            "TERM",
+            "79",
+            "DIS",
+            "TRACT"
+          ],
+          "hint": "Recall the key vocabulary word for level 79.",
+          "feedbackIfWrong": "TERM_79 fits accurately into professional discourse."
+        }
+      ]
+    },
+    {
+      "id": "VOC_FC_L80_PRAC_Q1",
+      "level": 80,
+      "word": "TERM_80",
+      "exerciseType": "chunkWeaver",
+      "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+      "targetCollocation": "essential TERM_80",
+      "correctAnswer": "TERM_80",
+      "scrambledChunks": [
+        "TERM",
+        "80",
+        "DIS",
+        "TRACT"
+      ],
+      "collocationPrompt": "Pair 'term_80' with its natural partner:",
+      "collocationOptions": [
+        "essential TERM_80",
+        "broken TERM_80",
+        "sour TERM_80"
+      ],
+      "correctCollocationIndex": 0,
+      "hint": "Recall the key vocabulary word for level 80.",
+      "feedbackIfWrong": "TERM_80 fits accurately into professional discourse.",
+      "exercises": [
+        {
+          "exerciseType": "chunkWeaver",
+          "interactionType": "typing",
+          "sentence": "In professional communication, mastering _____ leads to clearer dialogue.",
+          "correctAnswer": "TERM_80",
+          "options": [
+            "TERM",
+            "80",
+            "DIS",
+            "TRACT"
+          ],
+          "hint": "Recall the key vocabulary word for level 80.",
+          "feedbackIfWrong": "TERM_80 fits accurately into professional discourse."
+        }
+      ]
+    }
+  ]
 }
