@@ -219,8 +219,10 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
 
   void _speakSentence(String rawSentence) {
     if (di.sl.isRegistered<TtsService>()) {
-      final textToSpeak = rawSentence.replaceAll('_____', 'blank');
-      di.sl<TtsService>().speak(textToSpeak);
+      try {
+        final textToSpeak = rawSentence.replaceAll('_____', 'blank');
+        di.sl<TtsService>().speak(textToSpeak);
+      } catch (_) {}
     }
   }
 

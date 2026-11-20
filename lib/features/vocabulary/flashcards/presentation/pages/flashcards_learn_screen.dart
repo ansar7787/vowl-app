@@ -51,7 +51,9 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
   void _warmUpTtsEngine() {
     if (di.sl.isRegistered<TtsService>()) {
       // Pre-warm native audio pipeline asynchronously for older/budget devices
-      final _ = di.sl<TtsService>().engineStatus;
+      try {
+        final _ = di.sl<TtsService>().engineStatus;
+      } catch (_) {}
     }
   }
 
@@ -96,12 +98,16 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
 
   void _speakText(String text) {
     if (di.sl.isRegistered<TtsService>()) {
-      _speechTimer?.cancel();
-      _isSpeakingNotifier.value = true;
-      di.sl<TtsService>().speak(text);
-      _speechTimer = Timer(const Duration(milliseconds: 1400), () {
+      try {
+        _speechTimer?.cancel();
+        _isSpeakingNotifier.value = true;
+        di.sl<TtsService>().speak(text);
+        _speechTimer = Timer(const Duration(milliseconds: 1400), () {
+          if (mounted) _isSpeakingNotifier.value = false;
+        });
+      } catch (_) {
         if (mounted) _isSpeakingNotifier.value = false;
-      });
+      }
     }
   }
 

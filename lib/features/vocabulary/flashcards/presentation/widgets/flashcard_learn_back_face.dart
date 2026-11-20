@@ -48,8 +48,10 @@ class _FlashcardLearnBackFaceState extends State<FlashcardLearnBackFace> {
 
   void _speakText(String text, {String? locale}) {
     if (di.sl.isRegistered<TtsService>()) {
-      TtsSpeakerButtonWidget.stopAll();
-      di.sl<TtsService>().speak(text, locale: locale ?? 'en-US');
+      try {
+        TtsSpeakerButtonWidget.stopAll();
+        di.sl<TtsService>().speak(text, locale: locale ?? 'en-US');
+      } catch (_) {}
     }
   }
 
@@ -63,6 +65,7 @@ class _FlashcardLearnBackFaceState extends State<FlashcardLearnBackFace> {
   }
 
   void _applyTranslation(String fullText, String? locale) {
+    if (!mounted) return;
     final parts = fullText.split(RegExp(r'\n?---\n?'));
     setState(() {
       _translatedDefinition = parts.isNotEmpty && parts[0].isNotEmpty

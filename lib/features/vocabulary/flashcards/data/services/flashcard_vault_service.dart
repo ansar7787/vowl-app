@@ -92,9 +92,17 @@ class FlashcardVaultService {
     final cleanWord = word.trim().toUpperCase();
     final prefs = await _getPrefs();
     final rawJson = prefs.getString(storageKey);
-    final Map<String, dynamic> vaultMap = rawJson != null
-        ? Map<String, dynamic>.from(jsonDecode(rawJson) as Map)
-        : <String, dynamic>{};
+    Map<String, dynamic> vaultMap = <String, dynamic>{};
+    if (rawJson != null && rawJson.isNotEmpty) {
+      try {
+        final decoded = jsonDecode(rawJson);
+        if (decoded is Map) {
+          vaultMap = Map<String, dynamic>.from(decoded);
+        }
+      } catch (_) {
+        vaultMap = <String, dynamic>{};
+      }
+    }
 
     final existingJson = vaultMap[cleanWord] as Map<String, dynamic>?;
 

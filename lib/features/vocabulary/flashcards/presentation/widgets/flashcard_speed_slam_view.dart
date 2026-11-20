@@ -24,9 +24,15 @@ class FlashcardSpeedSlamView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Stage 1 Collocation Slam Options
-    final collocations = quest.collocations ?? ['authentic cuisine'];
-    final wrongCollocations = quest.wrongCollocations ?? ['authentic weather'];
+    // Stage 1 Collocation Slam Options with defensive non-empty checks
+    final collocations =
+        (quest.collocations != null && quest.collocations!.isNotEmpty)
+        ? quest.collocations!
+        : ['authentic cuisine'];
+    final wrongCollocations =
+        (quest.wrongCollocations != null && quest.wrongCollocations!.isNotEmpty)
+        ? quest.wrongCollocations!
+        : ['authentic weather'];
     final correctCollocation = collocations.first;
     final distractorCollocation = wrongCollocations.first;
 
@@ -43,14 +49,14 @@ class FlashcardSpeedSlamView extends StatelessWidget {
             {'text': correctCollocation, 'isCorrect': true},
           ];
 
-    // Stage 2 Candidate Words
-    final candidateWords =
-        quest.options ??
-        [
-          quest.word?.toLowerCase() ?? 'authentic',
-          'authoritarian',
-          'automatic',
-        ];
+    // Stage 2 Candidate Words with defensive non-empty checks
+    final candidateWords = (quest.options != null && quest.options!.isNotEmpty)
+        ? quest.options!
+        : [
+            quest.word?.toLowerCase() ?? 'authentic',
+            'authoritarian',
+            'automatic',
+          ];
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,

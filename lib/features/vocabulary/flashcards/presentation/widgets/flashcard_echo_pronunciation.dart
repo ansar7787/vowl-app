@@ -128,9 +128,11 @@ class _FlashcardEchoPronunciationState
 
     final ok = await service.initializeStt();
     if (!ok || !mounted) {
-      setState(() {
-        _isListening = false;
-      });
+      if (mounted) {
+        setState(() {
+          _isListening = false;
+        });
+      }
       return;
     }
 
@@ -147,57 +149,67 @@ class _FlashcardEchoPronunciationState
       }
     });
 
-    await service.listen(
-      pauseFor: const Duration(seconds: 5),
-      onResult: (candidates, isFinal) {
-        if (!mounted || !_isListening) return;
+    try {
+      await service.listen(
+        pauseFor: const Duration(seconds: 5),
+        onResult: (candidates, isFinal) {
+          if (!mounted || !_isListening) return;
 
-        if (candidates.isNotEmpty) {
-          final top = candidates.first;
-          _heardWord = top;
+          if (candidates.isNotEmpty) {
+            final top = candidates.first;
+            _heardWord = top;
 
-          final matched = _checkSpeechMatch(candidates, widget.targetWord);
+            final matched = _checkSpeechMatch(candidates, widget.targetWord);
 
-          if (matched) {
-            _watchdogTimer?.cancel();
-            service.stop();
-            setState(() {
-              _isListening = false;
-              _isVerified = true;
-            });
-            _hapticService?.success();
-            widget.onVerified?.call();
-          } else if (isFinal) {
-            // Only finalize failure after the speech engine completes final transcription
-            _watchdogTimer?.cancel();
-            service.stop();
-            setState(() {
-              _isListening = false;
-              _isVerified = false;
-            });
-            _hapticService?.error();
-          } else {
-            // Intermediate partial recognition: update feedback without cutting off speaker
-            setState(() {});
-          }
-        }
-      },
-      onDone: () {
-        _watchdogTimer?.cancel();
-        if (mounted && _isListening) {
-          setState(() {
-            _isListening = false;
-            if (_isVerified != true) {
-              _isVerified = false;
-              _heardWord ??= 'No speech detected';
+            if (matched) {
+              _watchdogTimer?.cancel();
+              service.stop();
+              setState(() {
+                _isListening = false;
+                _isVerified = true;
+              });
+              _hapticService?.success();
+              widget.onVerified?.call();
+            } else if (isFinal) {
+              // Only finalize failure after the speech engine completes final transcription
+              _watchdogTimer?.cancel();
+              service.stop();
+              setState(() {
+                _isListening = false;
+                _isVerified = false;
+              });
+              _hapticService?.error();
+            } else {
+              // Intermediate partial recognition: update feedback without cutting off speaker
+              setState(() {});
             }
-          });
-          if (_isVerified == false) {
-            _hapticService?.error();
           }
-        }
-      },
-    );
+        },
+        onDone: () {
+          _watchdogTimer?.cancel();
+          if (mounted && _isListening) {
+            setState(() {
+              _isListening = false;
+              if (_isVerified != true) {
+                _isVerified = false;
+                _heardWord ??= 'No speech detected';
+              }
+            });
+            if (_isVerified == false) {
+              _hapticService?.error();
+            }
+          }
+        },
+      );
+    } catch (_) {
+      if (mounted) {
+        setState(() {
+          _isListening = false;
+          _isVerified = false;
+          _heardWord ??= 'No speech detected';
+        });
+      }
+    }
   }
 
   @override

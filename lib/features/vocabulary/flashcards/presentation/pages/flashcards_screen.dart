@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -71,10 +72,12 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
               (state is VocabularyLoaded ? state.currentQuestOrNull : null) ??
               _lastQuest;
           if (q != null && q.word != null) {
-            FlashcardVaultService().recordMastery(
-              q.word!,
-              widget.level,
-              perfect: speedBonus,
+            unawaited(
+              FlashcardVaultService().recordMastery(
+                q.word!,
+                widget.level,
+                perfect: speedBonus,
+              ),
             );
           }
           submitCorrectAnswer();
