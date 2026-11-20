@@ -8,9 +8,11 @@ import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/presentation/phases/practice_phase_scaffold.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
+import '../widgets/flashcard_learn_refresher_sheet.dart';
 import '../widgets/flashcard_practice_chunk_weaver.dart';
 
 /// 2026 Interactive Practice Phase screen for Vocabulary Flashcards.
@@ -43,6 +45,7 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
 
   int _shakeTrigger = 0;
   bool _showHint = false;
+  int _consecutiveFailures = 0;
 
   @override
   void initState() {
@@ -84,8 +87,7 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
               example:
                   'The chef insisted on using only _____ Italian ingredients for the pasta.',
               rawExtra: const {
-                'hint':
-                    'Think of a 3-syllable word meaning genuine, starting with AU.',
+                'hint': 'Think of a 3-syllable word meaning genuine.',
                 'scrambledChunks': ['AU', 'THEN', 'TIC', 'TION', 'IC'],
                 'collocationOptions': [
                   'authentic cuisine',
@@ -145,7 +147,18 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
   }
 
   void _checkAssembly() {
-    if (_placedChunks.isEmpty) return;
+    if (_placedChunks.isEmpty) {
+      CustomSnackBar.show(
+        context: context,
+        message: 'Please tap the chunks below to assemble the word first.',
+        type: CustomSnackBarType.warning,
+      );
+      if (di.sl.isRegistered<HapticService>()) {
+        di.sl<HapticService>().light();
+      }
+      return;
+    }
+
     final assembled = _placedChunks.join('').toUpperCase();
     final target = (_quests[_currentIndex].word ?? '').toUpperCase();
 
@@ -155,7 +168,21 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
       _isAssemblyCorrect = isCorrect;
       if (!isCorrect) {
         _shakeTrigger++;
+        _consecutiveFailures++;
+        if (_consecutiveFailures >= 3) {
+          FlashcardLearnRefresherSheet.show(
+            context,
+            level: widget.level,
+            onKeepPracticing: () {
+              setState(() {
+                _consecutiveFailures = 0;
+                _initQuestInteraction(_currentIndex);
+              });
+            },
+          );
+        }
       } else {
+        _consecutiveFailures = 0;
         _showCollocationStage = true;
       }
     });
@@ -204,19 +231,16 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
     }
 
     if (!_isAssemblyCorrect) {
-      setState(() {
-        _initQuestInteraction(_currentIndex);
-      });
+      setState(() => _initQuestInteraction(_currentIndex));
       return;
     }
 
-    if (_showCollocationStage && !_hasCheckedCollocation) {
-      return;
-    }
+    if (_showCollocationStage && !_hasCheckedCollocation) return;
 
     if (_currentIndex < _quests.length - 1) {
       setState(() {
         _currentIndex++;
+        _consecutiveFailures = 0;
         _initQuestInteraction(_currentIndex);
       });
     } else {

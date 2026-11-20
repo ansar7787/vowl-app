@@ -43,6 +43,14 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
   void initState() {
     super.initState();
     _loadLearnQuests();
+    _warmUpTtsEngine();
+  }
+
+  void _warmUpTtsEngine() {
+    if (di.sl.isRegistered<TtsService>()) {
+      // Pre-warm native audio pipeline asynchronously for older/budget devices
+      final _ = di.sl<TtsService>().engineStatus;
+    }
   }
 
   @override

@@ -18,6 +18,7 @@ void main() {
     when(() => mockHaptic.selection()).thenAnswer((_) async {});
     when(() => mockHaptic.success()).thenAnswer((_) async {});
     when(() => mockHaptic.error()).thenAnswer((_) async {});
+    when(() => mockHaptic.light()).thenAnswer((_) async {});
 
     if (di.sl.isRegistered<HapticService>()) {
       di.sl.unregister<HapticService>();
@@ -40,7 +41,7 @@ void main() {
 
   group('FlashcardsPracticeScreen', () {
     testWidgets(
-      'assembles chunks, checks word, and completes collocation challenge',
+      'handles empty chunk warning, assembles chunks, and completes collocation challenge',
       (tester) async {
         tester.view.physicalSize = const Size(375 * 2, 812 * 2);
         tester.view.devicePixelRatio = 2.0;
@@ -59,6 +60,12 @@ void main() {
         expect(find.text('COMPLETE THE CONTEXT SENTENCE'), findsOneWidget);
         expect(find.text('AVAILABLE CHUNKS'), findsOneWidget);
 
+        // Tap Check Word without selecting chunks -> shows warning snackbar
+        expect(find.text('Check Word'), findsOneWidget);
+        await tester.tap(find.text('Check Word'));
+        await tester.pump();
+        verify(() => mockHaptic.light()).called(1);
+
         // Tap chunks: AU, THEN, TIC with debounce clearance
         expect(find.text('AU'), findsOneWidget);
         expect(find.text('THEN'), findsOneWidget);
@@ -76,8 +83,7 @@ void main() {
         await tester.tap(find.text('TIC'));
         await tester.pump(const Duration(milliseconds: 600));
 
-        // Tap Check Word
-        expect(find.text('Check Word'), findsOneWidget);
+        // Tap Check Word with assembled word
         await tester.tap(find.text('Check Word'));
         await tester.pumpAndSettle();
 

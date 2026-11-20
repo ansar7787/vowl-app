@@ -37,6 +37,7 @@ void main() {
     when(() => mockHaptic.light()).thenAnswer((_) async {});
     when(() => mockHaptic.success()).thenAnswer((_) async {});
     when(() => mockTts.speak(any())).thenAnswer((_) async {});
+    when(() => mockTts.engineStatus).thenReturn(TtsEngineStatus.ready);
 
     when(() => mockSpeech.initializeStt()).thenAnswer((_) async => true);
     when(() => mockSpeech.isListening).thenReturn(false);

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
@@ -37,6 +38,7 @@ class _FlashcardEchoPronunciationState
   bool _isListening = false;
   bool? _isVerified;
   String? _heardWord;
+  Timer? _watchdogTimer;
 
   SpeechService? get _speechService =>
       di.sl.isRegistered<SpeechService>() ? di.sl<SpeechService>() : null;
@@ -56,11 +58,13 @@ class _FlashcardEchoPronunciationState
 
   @override
   void dispose() {
+    _watchdogTimer?.cancel();
     _stopListening();
     super.dispose();
   }
 
   Future<void> _stopListening() async {
+    _watchdogTimer?.cancel();
     if (_isListening) {
       _isListening = false;
       await _speechService?.stop();
@@ -81,10 +85,8 @@ class _FlashcardEchoPronunciationState
 
     if (_isListening) {
       _hapticService?.light();
-      setState(() {
-        _isListening = false;
-      });
-      await service.stop();
+      await _stopListening();
+      if (mounted) setState(() {});
       return;
     }
 
@@ -92,6 +94,7 @@ class _FlashcardEchoPronunciationState
     setState(() {
       _isListening = true;
       _heardWord = null;
+      _isVerified = null;
     });
 
     final ok = await service.initializeStt();
@@ -102,7 +105,21 @@ class _FlashcardEchoPronunciationState
       return;
     }
 
+    // Single-word vocalization watchdog (cut mic after 4.5s max to prevent lingering)
+    _watchdogTimer?.cancel();
+    _watchdogTimer = Timer(const Duration(milliseconds: 4500), () {
+      if (mounted && _isListening) {
+        _stopListening();
+        setState(() {
+          _isVerified = false;
+          _heardWord ??= 'No speech detected';
+        });
+        _hapticService?.error();
+      }
+    });
+
     await service.listen(
+      pauseFor: const Duration(seconds: 2),
       onResult: (candidates, isFinal) {
         if (!mounted || !_isListening) return;
 
@@ -118,15 +135,18 @@ class _FlashcardEchoPronunciationState
             ),
           );
 
+          _watchdogTimer?.cancel();
+          // Cut recording immediately upon getting speech response
+          service.stop();
+
           if (matched) {
             setState(() {
               _isListening = false;
               _isVerified = true;
             });
-            service.stop();
             _hapticService?.success();
             widget.onVerified?.call();
-          } else if (isFinal) {
+          } else {
             setState(() {
               _isListening = false;
               _isVerified = false;
@@ -136,10 +156,11 @@ class _FlashcardEchoPronunciationState
         }
       },
       onDone: () {
+        _watchdogTimer?.cancel();
         if (mounted && _isListening) {
           setState(() {
             _isListening = false;
-            if (_isVerified != true && _heardWord != null) {
+            if (_isVerified != true) {
               _isVerified = false;
             }
           });
@@ -227,38 +248,36 @@ class _FlashcardEchoPronunciationState
       );
     }
 
-    if (_isVerified == false && _heardWord != null) {
+    if (_isVerified == false) {
       return ScaleButton(
         onTap: _toggleListening,
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
           decoration: BoxDecoration(
-            color: Colors.amber.withValues(alpha: widget.isDark ? 0.2 : 0.12),
+            color: AppColors.rose500.withValues(
+              alpha: widget.isDark ? 0.2 : 0.12,
+            ),
             borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(color: Colors.amber.withValues(alpha: 0.5)),
+            border: Border.all(
+              color: AppColors.rose500.withValues(alpha: 0.45),
+            ),
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(
-                Icons.replay_rounded,
-                size: 16.r,
-                color: widget.isDark
-                    ? Colors.amberAccent
-                    : Colors.amber.shade900,
-              ),
+              Icon(Icons.replay_rounded, size: 16.r, color: AppColors.rose500),
               SizedBox(width: 6.w),
               Flexible(
                 child: Text(
-                  'Heard "$_heardWord". Tap to Try Again',
+                  _heardWord != null
+                      ? 'Heard "$_heardWord" • Tap to retry'
+                      : 'Not quite matched • Tap to retry',
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w700,
-                    color: widget.isDark
-                        ? Colors.amberAccent
-                        : Colors.amber.shade900,
+                    color: AppColors.rose500,
                   ),
                 ),
               ),
