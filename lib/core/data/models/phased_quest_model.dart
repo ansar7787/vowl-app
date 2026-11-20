@@ -64,14 +64,12 @@ class PracticeExercise {
         interactionType: json['interactionType'] as String? ?? 'choice',
         sentence: json['sentence'] as String?,
         question: json['question'] as String?,
-        correctAnswer:
-            json['correctAnswer'] is String
-                ? json['correctAnswer'] as String
-                : null,
-        correctAnswerIndex:
-            json['correctAnswer'] is int
-                ? json['correctAnswer'] as int
-                : (json['correctAnswerIndex'] as int?),
+        correctAnswer: json['correctAnswer'] is String
+            ? json['correctAnswer'] as String
+            : null,
+        correctAnswerIndex: json['correctAnswer'] is int
+            ? json['correctAnswer'] as int
+            : (json['correctAnswerIndex'] as int?),
         options:
             (json['options'] as List<dynamic>?)
                 ?.map((e) => e.toString())
@@ -144,8 +142,9 @@ class PhasedQuest {
       (rawExtra['contextSentence'] ?? example) as String?;
   String? get instruction => rawExtra['instruction'] as String?;
   String? get hint => rawExtra['hint'] as String?;
-  List<String>? get options =>
-      (rawExtra['options'] as List<dynamic>?)?.map((e) => e.toString()).toList();
+  List<String>? get options => (rawExtra['options'] as List<dynamic>?)
+      ?.map((e) => e.toString())
+      .toList();
   String? get correctAnswer => rawExtra['correctAnswer'] as String?;
   String? get explanation => rawExtra['explanation'] as String?;
 
@@ -156,7 +155,7 @@ class PhasedQuest {
     visualAnchor: json['visualAnchor'] as String?,
     word: json['word'] as String?,
     definition: json['definition'] as String?,
-    pronunciation: json['pronunciation'] as String?,
+    pronunciation: (json['pronunciation'] ?? json['phonetic']) as String?,
     example: (json['example'] ?? json['exampleSentence']) as String?,
     usageExample: json['usageExample'] as String?,
     nativeTip: json['nativeTip'] as String?,

@@ -53,6 +53,9 @@ class FlashcardLearnView extends StatelessWidget {
         quest.commonMistake ??
         quest.rawExtra['commonConfusionAlert'] as String?;
 
+    final phonetic =
+        quest.pronunciation ?? quest.rawExtra['phonetic'] as String?;
+
     return TweenAnimationBuilder<double>(
       tween: Tween<double>(begin: 0, end: isFlipped ? 1.0 : 0.0),
       duration: const Duration(milliseconds: 350),
@@ -83,6 +86,7 @@ class FlashcardLearnView extends StatelessWidget {
                   syllables: syllables,
                   stressedIndex: stressedIndex,
                   contextDomain: contextDomain,
+                  phonetic: phonetic,
                 ),
         );
       },
@@ -94,10 +98,11 @@ class FlashcardLearnView extends StatelessWidget {
     required List<String> syllables,
     required int stressedIndex,
     required String contextDomain,
+    String? phonetic,
   }) {
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.all(24.r),
+      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
       decoration: BoxDecoration(
         color: isDark ? AppColors.slate900 : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
@@ -223,9 +228,9 @@ class FlashcardLearnView extends StatelessWidget {
           SizedBox(height: 6.h),
 
           // Phonetic IPA
-          if (quest.pronunciation != null)
+          if (phonetic != null)
             Text(
-              quest.pronunciation!,
+              phonetic,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 17.sp,
@@ -235,7 +240,7 @@ class FlashcardLearnView extends StatelessWidget {
               ),
             ),
 
-          SizedBox(height: 20.h),
+          SizedBox(height: 16.h),
 
           // Tap-to-Speak Syllable Chips
           FlashcardSyllableChips(
@@ -247,7 +252,7 @@ class FlashcardLearnView extends StatelessWidget {
             onSpeakFullWord: onSpeakFullWord,
           ),
 
-          SizedBox(height: 28.h),
+          SizedBox(height: 20.h),
 
           // Flip Button Cue
           ScaleButton(

@@ -85,9 +85,7 @@ class FlashcardPracticeChunkWeaver extends StatelessWidget {
                     Icon(
                       Icons.edit_note_rounded,
                       size: 18.r,
-                      color: isDark
-                          ? AppColors.indigo400
-                          : AppColors.indigo600,
+                      color: isDark ? AppColors.indigo400 : AppColors.indigo600,
                     ),
                     SizedBox(width: 8.w),
                     Expanded(

@@ -30,8 +30,9 @@ class FlashcardSpeedSlamView extends StatelessWidget {
     final correctCollocation = collocations.first;
     final distractorCollocation = wrongCollocations.first;
 
-    // Stable deterministic pairing: even level puts correct first, odd puts distractor first
-    final isCorrectFirst = (quest.difficulty) % 2 == 0;
+    // Balanced deterministic pairing that alternates naturally across words within each level
+    final isCorrectFirst =
+        (quest.id.hashCode.abs() + quest.difficulty) % 2 == 0;
     final slamOptions = isCorrectFirst
         ? [
             {'text': correctCollocation, 'isCorrect': true},

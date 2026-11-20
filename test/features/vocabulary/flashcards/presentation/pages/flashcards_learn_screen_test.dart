@@ -81,6 +81,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 1500));
 
       // Flip the card
+      await tester.ensureVisible(find.text('Flip for Meaning & Context'));
       await tester.tap(find.text('Flip for Meaning & Context'));
       await tester.pumpAndSettle();
 

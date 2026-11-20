@@ -110,7 +110,7 @@ class FlashcardSyllableChips extends StatelessWidget {
         ScaleButton(
           onTap: onSpeakFullWord,
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
             decoration: BoxDecoration(
               color: isSpeaking
                   ? AppColors.indigo500.withValues(alpha: 0.2)
@@ -129,17 +129,19 @@ class FlashcardSyllableChips extends StatelessWidget {
                   isSpeaking
                       ? Icons.volume_up_rounded
                       : Icons.volume_down_rounded,
-                  size: 18.r,
+                  size: 16.r,
                   color: isDark ? AppColors.indigo400 : AppColors.indigo600,
                 ),
-                SizedBox(width: 8.w),
-                Text(
-                  isSpeaking ? 'Listening...' : 'Tap for Full Audio',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w600,
-                    color: isDark ? AppColors.slate300 : AppColors.slate700,
+                SizedBox(width: 6.w),
+                Flexible(
+                  child: Text(
+                    isSpeaking ? 'Listening...' : 'Tap for Full Audio',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w600,
+                      color: isDark ? AppColors.slate300 : AppColors.slate700,
+                    ),
                   ),
                 ),
                 if (isSpeaking) ...[
