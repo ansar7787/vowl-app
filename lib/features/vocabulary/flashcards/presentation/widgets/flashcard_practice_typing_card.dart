@@ -40,7 +40,7 @@ class FlashcardPracticeTypingCard extends StatefulWidget {
 
 class _FlashcardPracticeTypingCardState
     extends State<FlashcardPracticeTypingCard> {
-  late final List<String> _shards;
+  late List<String> _shards;
 
   @override
   void initState() {
@@ -52,6 +52,10 @@ class _FlashcardPracticeTypingCardState
   @override
   void didUpdateWidget(covariant FlashcardPracticeTypingCard oldWidget) {
     super.didUpdateWidget(oldWidget);
+    if (oldWidget.textController != widget.textController) {
+      oldWidget.textController.removeListener(_onTextChanged);
+      widget.textController.addListener(_onTextChanged);
+    }
     if (oldWidget.exercise.correctAnswer != widget.exercise.correctAnswer) {
       _shards = _generateLetterShards();
     }

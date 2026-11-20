@@ -270,6 +270,9 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
             // Exercise Body (Typing Shard Assembly or Crystal Choice)
             if (exercise.interactionType == 'typing')
               FlashcardPracticeTypingCard(
+                key: ValueKey(
+                  'typing_${exercise.correctAnswer}_$_currentExerciseIndex',
+                ),
                 exercise: exercise,
                 textController: _textController,
                 hasChecked: _hasChecked,
@@ -280,6 +283,9 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
               )
             else
               FlashcardPracticeChoiceCard(
+                key: ValueKey(
+                  'choice_${exercise.correctAnswer}_$_currentExerciseIndex',
+                ),
                 exercise: exercise,
                 selectedOptionIndex: _selectedOptionIndex,
                 hasChecked: _hasChecked,

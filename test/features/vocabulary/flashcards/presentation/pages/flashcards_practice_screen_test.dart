@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:vowl/core/data/models/phased_quest_model.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -109,5 +110,61 @@ void main() {
 
       expect(find.byType(FlashcardsPracticeScreen), findsOneWidget);
     });
+
+    testWidgets(
+      'FlashcardPracticeTypingCard safely updates shards when exercise changes via didUpdateWidget',
+      (tester) async {
+        final controller = TextEditingController();
+        addTearDown(controller.dispose);
+
+        const exercise1 = PracticeExercise(
+          exerciseType: 'shard',
+          interactionType: 'typing',
+          question: 'Type HELLO',
+          correctAnswer: 'HELLO',
+        );
+
+        const exercise2 = PracticeExercise(
+          exerciseType: 'shard',
+          interactionType: 'typing',
+          question: 'Type WORLD',
+          correctAnswer: 'WORLD',
+        );
+
+        await tester.pumpWidget(
+          buildTestableWidget(
+            FlashcardPracticeTypingCard(
+              exercise: exercise1,
+              textController: controller,
+              hasChecked: false,
+              isAnswerCorrect: false,
+              shakeCount: 0,
+              isDark: false,
+              onCheck: () {},
+            ),
+          ),
+        );
+        await tester.pump();
+
+        // Update widget with new exercise (triggers didUpdateWidget)
+        await tester.pumpWidget(
+          buildTestableWidget(
+            FlashcardPracticeTypingCard(
+              exercise: exercise2,
+              textController: controller,
+              hasChecked: false,
+              isAnswerCorrect: false,
+              shakeCount: 0,
+              isDark: false,
+              onCheck: () {},
+            ),
+          ),
+        );
+        await tester.pump();
+
+        expect(tester.takeException(), isNull);
+        expect(find.byType(FlashcardPracticeTypingCard), findsOneWidget);
+      },
+    );
   });
 }
