@@ -216,6 +216,7 @@ class FlashcardGameBody extends StatelessWidget {
           label:
               '${quest.word ?? ""}. ${flipped ? context.tr('instructions.flashcards.definition_revealed', fallback: 'Check your answer') : context.tr('instructions.flashcards.tap_to_reveal', fallback: 'Tap card to flip')}',
           child: GestureDetector(
+            key: const Key('flashcard_card_gesture_detector'),
             behavior: HitTestBehavior.opaque,
             onHorizontalDragUpdate: flipped ? onHorizontalDragUpdate : null,
             onHorizontalDragEnd: flipped

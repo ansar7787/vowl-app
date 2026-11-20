@@ -156,7 +156,7 @@ class FlashcardActionButtons extends StatelessWidget {
     }
 
     final buttonsRow = Padding(
-      padding: EdgeInsets.symmetric(vertical: 6.h, horizontal: 20.w),
+      padding: EdgeInsets.symmetric(vertical: 6.h, horizontal: 16.w),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

@@ -127,7 +127,7 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
 
               return Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: compactWidth ? 16.w : 22.w,
+                  horizontal: 16.w,
                   vertical: isUltraCompact
                       ? 6.h
                       : (compactHeight ? 10.h : 20.h),

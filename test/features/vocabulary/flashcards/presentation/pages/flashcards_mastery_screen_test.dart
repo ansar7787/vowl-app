@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,6 +7,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/widgets/game_error_view.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -16,8 +19,6 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/pages/flashcards_mastery_screen.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_game_body.dart';
-import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_swipe_back.dart';
-import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_swipe_front.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 
 class MockVocabularyBloc extends MockBloc<VocabularyEvent, VocabularyState>
@@ -27,181 +28,207 @@ class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
 
 class MockHapticService extends Mock implements HapticService {}
 
-class MockTtsService extends Mock implements TtsService {}
-
 class MockSoundService extends Mock implements SoundService {}
 
-class FakeVocabularyEvent extends Fake implements VocabularyEvent {}
-
-class FakeVocabularyState extends Fake implements VocabularyState {}
+class MockTtsService extends Mock implements TtsService {}
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  late MockVocabularyBloc mockVocabBloc;
+  late MockVocabularyBloc mockVocabularyBloc;
   late MockAuthBloc mockAuthBloc;
   late MockHapticService mockHapticService;
-  late MockTtsService mockTtsService;
   late MockSoundService mockSoundService;
+  late MockTtsService mockTtsService;
+  late StreamController<VocabularyState> vocabularyStreamController;
 
   const testQuest = VocabularyQuest(
     id: 'VOC_FLASHCARDS_L1_Q1',
-    instruction: 'CHOOSE THE CORRECT MEANING',
-    difficulty: 1,
+    type: QuestType.vocabulary,
     subtype: GameSubtype.flashcards,
     word: 'HELLO',
-    definition: 'A common greeting used when meeting someone.',
-    contextSentence: "Hello, I'm calling about the apartment.",
+    correctAnswer:
+        'A common greeting used when meeting someone or starting a conversation.',
+    definition:
+        'A common greeting used when meeting someone or starting a conversation.',
+    contextSentence:
+        'Hello, I am calling about the apartment you listed online.',
     topicEmoji: '👋',
-    hint: 'First word out of your mouth on the phone.',
+    instruction: 'CHOOSE THE CORRECT MEANING',
+    hint: 'The first word out of your mouth when you answer the phone.',
+    explanation: 'Hello is the safest, most neutral greeting in English.',
+    difficulty: 1,
+  );
+
+  const testLoadedState = VocabularyLoaded(
+    quests: [testQuest],
+    currentIndex: 0,
+    livesRemaining: 3,
+    wrongCount: 0,
+    hintUsed: false,
+    answerStatus: AnswerStatus.unanswered,
   );
 
   setUpAll(() {
-    registerFallbackValue(FakeVocabularyEvent());
-    registerFallbackValue(FakeVocabularyState());
     registerFallbackValue(const SubmitAnswer(true));
-    registerFallbackValue(const SubmitAnswer(false));
     registerFallbackValue(const NextQuestion());
-    registerFallbackValue(const VocabularyHintUsed());
-
-    mockHapticService = MockHapticService();
-    mockTtsService = MockTtsService();
-    mockSoundService = MockSoundService();
-
-    when(() => mockHapticService.selection()).thenAnswer((_) async {});
-    when(() => mockHapticService.light()).thenAnswer((_) async {});
-    when(() => mockHapticService.success()).thenAnswer((_) async {});
-    when(() => mockHapticService.error()).thenAnswer((_) async {});
-    when(() => mockHapticService.heavy()).thenAnswer((_) async {});
-    when(() => mockHapticService.warning()).thenAnswer((_) async {});
-    when(() => mockHapticService.rhythmicTick()).thenAnswer((_) async {});
-
-    when(() => mockTtsService.speak(any())).thenAnswer((_) async {});
-    when(() => mockTtsService.stop()).thenAnswer((_) async {});
-    when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
-    when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
-    when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
-
-    if (di.sl.isRegistered<HapticService>()) {
-      di.sl.unregister<HapticService>();
-    }
-    di.sl.registerSingleton<HapticService>(mockHapticService);
-
-    if (di.sl.isRegistered<TtsService>()) {
-      di.sl.unregister<TtsService>();
-    }
-    di.sl.registerSingleton<TtsService>(mockTtsService);
-
-    if (di.sl.isRegistered<SoundService>()) {
-      di.sl.unregister<SoundService>();
-    }
-    di.sl.registerSingleton<SoundService>(mockSoundService);
   });
 
   setUp(() {
     VowlMotion.lowAnimationModeOverride.value = true;
     SharedPreferences.setMockInitialValues({
-      'haptics_enabled': true,
       'has_seen_briefing_flashcards': true,
     });
-
-    mockVocabBloc = MockVocabularyBloc();
+    mockVocabularyBloc = MockVocabularyBloc();
     mockAuthBloc = MockAuthBloc();
+    mockHapticService = MockHapticService();
+    mockSoundService = MockSoundService();
+    mockTtsService = MockTtsService();
+    vocabularyStreamController = StreamController<VocabularyState>.broadcast();
 
-    when(() => mockAuthBloc.state).thenReturn(
-      AuthState.authenticated(
-        const UserEntity(
-          id: 'test_user',
-          email: 'test@vowl.app',
-          displayName: 'Tester',
-          vowlMascot: 'vowl_prime',
-        ),
-      ),
+    when(
+      () => mockVocabularyBloc.stream,
+    ).thenAnswer((_) => vocabularyStreamController.stream);
+    when(() => mockVocabularyBloc.state).thenReturn(testLoadedState);
+    whenListen(
+      mockVocabularyBloc,
+      vocabularyStreamController.stream,
+      initialState: testLoadedState,
     );
+
+    const testUser = UserEntity(
+      id: 'test_user',
+      email: 'test@vowl.app',
+      vowlMascot: 'vowl_prime',
+    );
+    when(
+      () => mockAuthBloc.state,
+    ).thenReturn(AuthState.authenticated(testUser));
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
+
+    when(() => mockHapticService.selection()).thenAnswer((_) async {});
+    when(() => mockHapticService.success()).thenAnswer((_) async {});
+    when(() => mockHapticService.error()).thenAnswer((_) async {});
+    when(() => mockHapticService.light()).thenAnswer((_) async {});
+    when(
+      () => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')),
+    ).thenAnswer((_) async {});
+    when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
+    when(() => mockTtsService.speak(any())).thenAnswer((_) async {});
+    when(() => mockTtsService.stop()).thenAnswer((_) async {});
+
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<SoundService>()) {
+      di.sl.unregister<SoundService>();
+    }
+    if (di.sl.isRegistered<TtsService>()) {
+      di.sl.unregister<TtsService>();
+    }
+
+    di.sl.registerSingleton<HapticService>(mockHapticService);
+    di.sl.registerSingleton<SoundService>(mockSoundService);
+    di.sl.registerSingleton<TtsService>(mockTtsService);
   });
 
   tearDown(() {
     VowlMotion.lowAnimationModeOverride.value = false;
+    vocabularyStreamController.close();
+    if (di.sl.isRegistered<HapticService>()) {
+      di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<SoundService>()) {
+      di.sl.unregister<SoundService>();
+    }
+    if (di.sl.isRegistered<TtsService>()) {
+      di.sl.unregister<TtsService>();
+    }
   });
 
-  tearDownAll(() {
-    TestWidgetsFlutterBinding.instance.platformDispatcher.clearAllTestValues();
-  });
-
-  Future<void> pumpMastery(
-    WidgetTester tester, {
-    VocabularyState? state,
-    int level = 2,
-    double width = 390,
-    double height = 844,
-  }) async {
-    tester.view.physicalSize = Size(width * 2, height * 2);
-    tester.view.devicePixelRatio = 2.0;
-
-    when(() => mockVocabBloc.state).thenReturn(
-      state ??
-          const VocabularyLoaded(
-            quests: [testQuest],
-            currentIndex: 0,
-            livesRemaining: 3,
-          ),
-    );
-
-    await tester.pumpWidget(
-      MultiBlocProvider(
+  Widget buildTestableWidget(Widget child) {
+    return ScreenUtilInit(
+      designSize: const Size(390, 844),
+      builder: (context, _) => MultiBlocProvider(
         providers: [
-          BlocProvider<VocabularyBloc>.value(value: mockVocabBloc),
+          BlocProvider<VocabularyBloc>.value(value: mockVocabularyBloc),
           BlocProvider<AuthBloc>.value(value: mockAuthBloc),
         ],
-        child: ScreenUtilInit(
-          designSize: const Size(390, 844),
-          minTextAdapt: true,
-          splitScreenMode: true,
-          builder: (context, _) => MaterialApp(
-            home: Scaffold(
-              body: FlashcardsMasteryScreen(level: level),
-            ),
-          ),
-        ),
+        child: MaterialApp(home: child),
       ),
     );
-    await tester.pump();
-    await tester.pump(const Duration(milliseconds: 500));
   }
 
-  group('FlashcardsMasteryScreen', () {
-    test('is a type alias of FlashcardsScreen', () {
-      const widget = FlashcardsMasteryScreen(level: 1);
-      expect(widget, isA<FlashcardsScreen>());
-      expect(widget.level, equals(1));
+  group('FlashcardsMasteryScreen Widget Tests', () {
+    testWidgets('renders shimmer loading when in VocabularyLoading state', (
+      tester,
+    ) async {
+      when(
+        () => mockVocabularyBloc.state,
+      ).thenReturn(const VocabularyLoading());
+
+      await tester.pumpWidget(
+        buildTestableWidget(const FlashcardsMasteryScreen(level: 1)),
+      );
+      await tester.pump(const Duration(milliseconds: 100));
+
+      expect(find.byType(GameShimmerLoading), findsOneWidget);
     });
 
-    testWidgets(
-      'renders front clue, flips to definition, and handles answer submissions',
-      (tester) async {
-        await pumpMastery(tester);
+    testWidgets('renders error view when in VocabularyError state', (
+      tester,
+    ) async {
+      when(
+        () => mockVocabularyBloc.state,
+      ).thenReturn(const VocabularyError('Failed to load flashcards.'));
 
-        // Verifies game body and front card
-        expect(find.byType(FlashcardGameBody), findsOneWidget);
-        expect(find.byType(FlashcardSwipeFront), findsOneWidget);
+      await tester.pumpWidget(
+        buildTestableWidget(const FlashcardsMasteryScreen(level: 1)),
+      );
+      await tester.pump(const Duration(milliseconds: 100));
 
-        // Tap card to flip
-        await tester.tap(find.byType(FlashcardSwipeFront), warnIfMissed: false);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 500));
+      expect(find.byType(GameErrorView), findsOneWidget);
+      expect(find.text('Failed to load flashcards.'), findsOneWidget);
+    });
 
-        expect(find.byType(FlashcardSwipeBack), findsOneWidget);
-        expect(find.text('HELLO'), findsOneWidget);
+    testWidgets('renders flashcard front face and flips to reveal back face', (
+      tester,
+    ) async {
+      tester.view.physicalSize = const Size(1170, 2532);
+      tester.view.devicePixelRatio = 3.0;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
 
-        // Tap "Got It" to submit mastered answer
-        final gotItBtn = find.text('Got It');
-        expect(gotItBtn, findsOneWidget);
-        await tester.tap(gotItBtn);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 500));
+      await tester.pumpWidget(
+        buildTestableWidget(const FlashcardsMasteryScreen(level: 2)),
+      );
+      await tester.pump(const Duration(milliseconds: 400));
 
-        verify(() => mockVocabBloc.add(any(that: isA<SubmitAnswer>()))).called(1);
-      },
-    );
+      expect(find.byType(FlashcardGameBody), findsOneWidget);
+      expect(find.text('Clue'), findsOneWidget);
+
+      // Tap card to flip
+      final cardDetector = find.byKey(
+        const Key('flashcard_card_gesture_detector'),
+      );
+      expect(cardDetector, findsOneWidget);
+      await tester.tap(cardDetector);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 600));
+
+      // Back face shows action buttons (Again & Got It)
+      expect(find.text('Again'), findsOneWidget);
+      expect(find.text('Got It'), findsOneWidget);
+
+      // Tap Got It to submit mastery
+      await tester.tap(find.text('Got It'), warnIfMissed: false);
+      await tester.pump(const Duration(milliseconds: 400));
+
+      verify(
+        () => mockVocabularyBloc.add(any(that: isA<SubmitAnswer>())),
+      ).called(1);
+    });
   });
 }

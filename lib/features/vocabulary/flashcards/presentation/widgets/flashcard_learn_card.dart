@@ -79,7 +79,7 @@ class _FlashcardLearnCardState extends State<FlashcardLearnCard> {
         : AppColors.indigo500.withValues(alpha: 0.25);
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 24.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 22.h),
       decoration: BoxDecoration(
         color: bgColor,
         borderRadius: BorderRadius.circular(24.r),
@@ -239,7 +239,7 @@ class _FlashcardLearnCardState extends State<FlashcardLearnCard> {
 
   Widget _buildBackFace(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 22.w, vertical: 24.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 22.h),
       decoration: BoxDecoration(
         color: widget.isDark ? AppColors.slate900 : Colors.white,
         borderRadius: BorderRadius.circular(24.r),
