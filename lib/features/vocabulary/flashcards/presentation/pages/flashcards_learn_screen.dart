@@ -1,7 +1,5 @@
 import 'dart:async';
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/data/models/phased_quest_model.dart';
@@ -13,9 +11,9 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
+import '../../data/services/flashcard_curriculum_service.dart';
 import '../widgets/flashcard_cluster_contrast_card.dart';
 import '../widgets/flashcard_learn_view.dart';
-import 'flashcards_learn_fallback_data.dart';
 
 /// 2026 Interactive Learn Phase screen for Vocabulary Flashcards.
 ///
@@ -66,33 +64,14 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
   }
 
   Future<void> _loadLearnQuests() async {
-    try {
-      final batchIndex = ((widget.level - 1) ~/ 10) + 1;
-      final startLevel = (batchIndex - 1) * 10 + 1;
-      final endLevel = batchIndex * 10;
-      final path =
-          'assets/curriculum/vocabulary/flashcards_learn_${startLevel}_$endLevel.json';
-      final jsonStr = await rootBundle.loadString(path);
-      final data = jsonDecode(jsonStr) as Map<String, dynamic>;
-      final batch = PhasedQuestBatch.fromJson(data);
-
-      final levelQuests = batch.quests
-          .where((q) => q.level == widget.level)
-          .toList();
-
-      if (mounted) {
-        setState(() {
-          _quests = levelQuests.isNotEmpty ? levelQuests : batch.quests;
-          _isLoading = false;
-        });
-      }
-    } catch (_) {
-      if (mounted) {
-        setState(() {
-          _quests = getFlashcardLearnFallbackQuests(widget.level);
-          _isLoading = false;
-        });
-      }
+    final quests = await FlashcardCurriculumService().getLearnQuests(
+      widget.level,
+    );
+    if (mounted) {
+      setState(() {
+        _quests = quests;
+        _isLoading = false;
+      });
     }
   }
 

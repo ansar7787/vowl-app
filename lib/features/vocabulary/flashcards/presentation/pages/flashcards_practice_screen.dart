@@ -1,6 +1,4 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/data/models/phased_quest_model.dart';
@@ -12,9 +10,9 @@ import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
+import '../../data/services/flashcard_curriculum_service.dart';
 import '../widgets/flashcard_learn_refresher_sheet.dart';
 import '../widgets/flashcard_practice_chunk_weaver.dart';
-import 'flashcards_learn_fallback_data.dart';
 
 /// 2026 Interactive Practice Phase screen for Vocabulary Flashcards.
 ///
@@ -68,36 +66,15 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
   }
 
   Future<void> _loadPracticeQuests() async {
-    try {
-      final batchIndex = ((widget.level - 1) ~/ 10) + 1;
-      final startLevel = (batchIndex - 1) * 10 + 1;
-      final endLevel = batchIndex * 10;
-      final path =
-          'assets/curriculum/vocabulary/flashcards_practice_${startLevel}_$endLevel.json';
-      final jsonStr = await rootBundle.loadString(path);
-      final data = jsonDecode(jsonStr) as Map<String, dynamic>;
-      final batch = PhasedQuestBatch.fromJson(data);
-
-      final levelQuests = batch.quests
-          .where((q) => q.level == widget.level)
-          .toList();
-      final loaded = levelQuests.isNotEmpty ? levelQuests : batch.quests;
-
-      if (mounted) {
-        setState(() {
-          _quests = loaded;
-          _isLoading = false;
-          _initQuestInteraction(0);
-        });
-      }
-    } catch (_) {
-      if (mounted) {
-        setState(() {
-          _quests = getFlashcardPracticeFallbackQuests(widget.level);
-          _isLoading = false;
-          _initQuestInteraction(0);
-        });
-      }
+    final quests = await FlashcardCurriculumService().getPracticeQuests(
+      widget.level,
+    );
+    if (mounted) {
+      setState(() {
+        _quests = quests;
+        _isLoading = false;
+        _initQuestInteraction(0);
+      });
     }
   }
 
