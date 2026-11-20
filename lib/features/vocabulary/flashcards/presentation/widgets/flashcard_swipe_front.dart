@@ -65,7 +65,8 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
         (MediaQuery.maybeOf(context)?.disableAnimations ?? false) ||
         VowlMotion.lowAnimationModeOverride.value;
 
-    final isMidnight = widget.isDark &&
+    final isMidnight =
+        widget.isDark &&
         Theme.of(context).scaffoldBackgroundColor == Colors.black;
     final cardBg = isMidnight
         ? AppColors.midnightSurface
@@ -85,10 +86,7 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
         decoration: BoxDecoration(
           color: cardBg,
           borderRadius: BorderRadius.circular(24.r),
-          border: Border.all(
-            color: borderColor,
-            width: 1.0,
-          ),
+          border: Border.all(color: borderColor, width: 1.0),
         ),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(24.r),
@@ -100,9 +98,7 @@ class _FlashcardSwipeFrontState extends State<FlashcardSwipeFront> {
 
               final emojiBox = Container(
                 padding: EdgeInsets.all(
-                  isUltraCompact
-                      ? 6.r
-                      : (compactHeight ? 10.r : 16.r),
+                  isUltraCompact ? 6.r : (compactHeight ? 10.r : 16.r),
                 ),
                 decoration: BoxDecoration(
                   color: widget.color.withValues(alpha: 0.08),

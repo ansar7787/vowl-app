@@ -1,8 +1,9 @@
-import 'package:vowl/core/theme/app_colors.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
 /// Bottom action controls for the flashcard game presenting flip prompts and mastery evaluation buttons.
@@ -121,21 +122,29 @@ class FlashcardActionButtons extends StatelessWidget {
             ),
             for (int i = 0; i < options!.length; i++) ...[
               if (i > 0) SizedBox(height: 6.h),
-              _OptionCard(
-                text: options![i],
-                isCorrect: options![i].trim().toLowerCase() ==
-                    (correctAnswer ?? '').trim().toLowerCase(),
-                isDark: isDark,
-                disabled: isTransitioning,
-                onSelected: (correct) {
-                  if (onOptionSelected != null) {
-                    onOptionSelected!(correct);
-                  } else if (correct) {
-                    onGotIt();
-                  } else {
-                    onAgain();
-                  }
-                },
+              ScaleButton(
+                onTap: isTransitioning
+                    ? null
+                    : () {
+                        final isCorrect =
+                            options![i].trim().toLowerCase() ==
+                            (correctAnswer ?? '').trim().toLowerCase();
+                        if (onOptionSelected != null) {
+                          onOptionSelected!(isCorrect);
+                        } else if (isCorrect) {
+                          onGotIt();
+                        } else {
+                          onAgain();
+                        }
+                      },
+                child: _OptionCardView(
+                  text: options![i],
+                  isCorrect:
+                      options![i].trim().toLowerCase() ==
+                      (correctAnswer ?? '').trim().toLowerCase(),
+                  isDark: isDark,
+                  disabled: isTransitioning,
+                ),
               ),
             ],
           ],
@@ -152,23 +161,29 @@ class FlashcardActionButtons extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(
-            child: _ActionBtn(
-              label: context.tr('actions.again', fallback: 'Again'),
-              icon: Icons.keyboard_double_arrow_left_rounded,
-              color: AppColors.red500,
-              isDark: isDark,
+            child: ScaleButton(
               onTap: isTransitioning ? null : onAgain,
+              child: _ActionBtnView(
+                label: context.tr('actions.again', fallback: 'Again'),
+                icon: Icons.keyboard_double_arrow_left_rounded,
+                color: AppColors.red500,
+                isDark: isDark,
+                disabled: isTransitioning,
+              ),
             ),
           ),
           SizedBox(width: 14.w),
           Expanded(
-            child: _ActionBtn(
-              label: context.tr('actions.got_it', fallback: 'Got It'),
-              icon: Icons.keyboard_double_arrow_right_rounded,
-              color: AppColors.emerald500,
-              isDark: isDark,
+            child: ScaleButton(
               onTap: isTransitioning ? null : onGotIt,
-              isRight: true,
+              child: _ActionBtnView(
+                label: context.tr('actions.got_it', fallback: 'Got It'),
+                icon: Icons.keyboard_double_arrow_right_rounded,
+                color: AppColors.emerald500,
+                isDark: isDark,
+                disabled: isTransitioning,
+                isRight: true,
+              ),
             ),
           ),
         ],
@@ -180,165 +195,113 @@ class FlashcardActionButtons extends StatelessWidget {
   }
 }
 
-class _OptionCard extends StatefulWidget {
+class _OptionCardView extends StatelessWidget {
   final String text;
   final bool isCorrect;
   final bool isDark;
   final bool disabled;
-  final ValueChanged<bool> onSelected;
 
-  const _OptionCard({
+  const _OptionCardView({
     required this.text,
     required this.isCorrect,
     required this.isDark,
     required this.disabled,
-    required this.onSelected,
   });
 
   @override
-  State<_OptionCard> createState() => _OptionCardState();
-}
-
-class _OptionCardState extends State<_OptionCard> {
-  bool? _wasTappedCorrect;
-
-  @override
   Widget build(BuildContext context) {
-    Color bgColor;
-    Color borderColor;
-    Color textColor;
+    final bgColor = isDark ? AppColors.midnightSurface : Colors.white;
+    final borderColor = isDark
+        ? Colors.white.withValues(alpha: 0.12)
+        : AppColors.slate200;
+    final textColor = isDark ? Colors.white : AppColors.slate800;
 
-    if (_wasTappedCorrect != null) {
-      if (_wasTappedCorrect!) {
-        bgColor = AppColors.emerald500.withValues(alpha: 0.2);
-        borderColor = AppColors.emerald500;
-        textColor = widget.isDark ? AppColors.emerald400 : AppColors.emerald600;
-      } else {
-        bgColor = AppColors.red500.withValues(alpha: 0.2);
-        borderColor = AppColors.red500;
-        textColor = widget.isDark ? AppColors.rose500 : AppColors.rose700;
-      }
-    } else {
-      bgColor = widget.isDark ? AppColors.midnightSurface : Colors.white;
-      borderColor = widget.isDark
-          ? Colors.white.withValues(alpha: 0.12)
-          : AppColors.slate200;
-      textColor = widget.isDark ? Colors.white : AppColors.slate800;
-    }
-
-    return Material(
-      color: bgColor,
-      borderRadius: BorderRadius.circular(14.r),
-      child: InkWell(
-        onTap: widget.disabled
-            ? null
-            : () {
-                setState(() {
-                  _wasTappedCorrect = widget.isCorrect;
-                });
-                widget.onSelected(widget.isCorrect);
-              },
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+      decoration: BoxDecoration(
+        color: bgColor,
         borderRadius: BorderRadius.circular(14.r),
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(14.r),
-            border: Border.all(color: borderColor, width: 1.2),
+        border: Border.all(color: borderColor, width: 1.2),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: isDark ? 0.2 : 0.04),
+            blurRadius: 6,
+            offset: const Offset(0, 2),
           ),
-          child: Row(
-            children: [
-              Expanded(
-                child: Text(
-                  widget.text,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w600,
-                    color: textColor,
-                    height: 1.3,
-                  ),
-                ),
+        ],
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Text(
+              text,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 13.sp,
+                fontWeight: FontWeight.w600,
+                color: textColor,
+                height: 1.3,
               ),
-              if (_wasTappedCorrect != null)
-                Icon(
-                  _wasTappedCorrect!
-                      ? Icons.check_circle_rounded
-                      : Icons.cancel_rounded,
-                  color: borderColor,
-                  size: 18.r,
-                ),
-            ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
 }
 
-class _ActionBtn extends StatelessWidget {
+class _ActionBtnView extends StatelessWidget {
   final String label;
   final IconData icon;
   final Color color;
   final bool isDark;
-  final VoidCallback? onTap;
+  final bool disabled;
   final bool isRight;
 
-  const _ActionBtn({
+  const _ActionBtnView({
     required this.label,
     required this.icon,
     required this.color,
     required this.isDark,
-    this.onTap,
+    required this.disabled,
     this.isRight = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: color.withValues(alpha: 0.10),
-      borderRadius: BorderRadius.circular(16.r),
-      child: InkWell(
-        onTap: onTap,
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: 14.h),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.10),
         borderRadius: BorderRadius.circular(16.r),
-        splashColor: color.withValues(alpha: 0.2),
-        highlightColor: color.withValues(alpha: 0.1),
-        child: Container(
-          padding: EdgeInsets.symmetric(vertical: 14.h),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(
-              color: color.withValues(alpha: 0.25),
-              width: 1.5,
+        border: Border.all(color: color.withValues(alpha: 0.28), width: 1.5),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          if (!isRight) ...[
+            Icon(icon, color: color, size: 18.r),
+            SizedBox(width: 6.w),
+          ],
+          Flexible(
+            child: Text(
+              label,
+              textAlign: TextAlign.center,
+              softWrap: true,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                color: color,
+                fontWeight: FontWeight.w700,
+                fontSize: 14.sp,
+                letterSpacing: 0.5,
+              ),
             ),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              if (!isRight) ...[
-                Icon(icon, color: color, size: 18.r),
-                SizedBox(width: 6.w),
-              ],
-              Flexible(
-                child: Text(
-                  label,
-                  textAlign: TextAlign.center,
-                  softWrap: true,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    color: color,
-                    fontWeight: FontWeight.w700,
-                    fontSize: 14.sp,
-                    letterSpacing: 0.5,
-                  ),
-                ),
-              ),
-              if (isRight) ...[
-                SizedBox(width: 6.w),
-                Icon(icon, color: color, size: 18.r),
-              ],
-            ],
-          ),
-        ),
+          if (isRight) ...[
+            SizedBox(width: 6.w),
+            Icon(icon, color: color, size: 18.r),
+          ],
+        ],
       ),
     );
   }

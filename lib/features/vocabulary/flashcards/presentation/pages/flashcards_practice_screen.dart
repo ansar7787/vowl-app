@@ -6,7 +6,12 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/data/models/phased_quest_model.dart';
 import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/presentation/phases/practice_phase_scaffold.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_practice_choice_card.dart';
+import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_practice_typing_card.dart';
 
 /// Guided active recall & context practice screen for Flashcards.
 ///
@@ -15,10 +20,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 class FlashcardsPracticeScreen extends StatefulWidget {
   final int level;
 
-  const FlashcardsPracticeScreen({
-    super.key,
-    required this.level,
-  });
+  const FlashcardsPracticeScreen({super.key, required this.level});
 
   @override
   State<FlashcardsPracticeScreen> createState() =>
@@ -37,6 +39,7 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
   bool _isAnswerCorrect = false;
   String? _feedbackText;
   bool _showHint = false;
+  int _shakeCount = 0;
 
   @override
   void initState() {
@@ -61,8 +64,9 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
       final data = jsonDecode(jsonStr) as Map<String, dynamic>;
       final batch = PhasedQuestBatch.fromJson(data);
 
-      final levelQuests =
-          batch.quests.where((q) => q.level == widget.level).toList();
+      final levelQuests = batch.quests
+          .where((q) => q.level == widget.level)
+          .toList();
       final allExercises = <PracticeExercise>[];
       for (final q in (levelQuests.isNotEmpty ? levelQuests : batch.quests)) {
         allExercises.addAll(q.exercises);
@@ -75,7 +79,6 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
         });
       }
     } catch (_) {
-      // Fallback exercise if asset missing
       if (mounted) {
         setState(() {
           _exercises = [
@@ -103,40 +106,46 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
       if (userText.isEmpty) return;
 
       final isCorrect =
-          userText.toLowerCase() == (exercise.correctAnswer ?? '').toLowerCase();
+          userText.toLowerCase() ==
+          (exercise.correctAnswer ?? '').toLowerCase();
       setState(() {
         _hasChecked = true;
         _isAnswerCorrect = isCorrect;
+        if (!isCorrect) _shakeCount++;
         _feedbackText = isCorrect
             ? 'Spot on! Correct answer.'
             : (exercise.feedbackIfWrong ??
-                'Correct answer: "${exercise.correctAnswer}"');
+                  'Correct answer: "${exercise.correctAnswer}"');
       });
-      if (isCorrect) {
-        HapticFeedback.lightImpact();
-      } else {
-        HapticFeedback.mediumImpact();
+      if (di.sl.isRegistered<HapticService>()) {
+        if (isCorrect) {
+          di.sl<HapticService>().success();
+        } else {
+          di.sl<HapticService>().error();
+        }
       }
     } else {
-      // Choice interaction
       if (_selectedOptionIndex == null) return;
       final isCorrect = _selectedOptionIndex == exercise.correctAnswerIndex;
       String? perOptionFeedback;
       if (_selectedOptionIndex! < exercise.feedbackPerOption.length) {
-        perOptionFeedback =
-            exercise.feedbackPerOption[_selectedOptionIndex!];
+        perOptionFeedback = exercise.feedbackPerOption[_selectedOptionIndex!];
       }
 
       setState(() {
         _hasChecked = true;
         _isAnswerCorrect = isCorrect;
-        _feedbackText = perOptionFeedback ??
+        if (!isCorrect) _shakeCount++;
+        _feedbackText =
+            perOptionFeedback ??
             (isCorrect ? 'Correct choice!' : 'That choice is not optimal.');
       });
-      if (isCorrect) {
-        HapticFeedback.lightImpact();
-      } else {
-        HapticFeedback.mediumImpact();
+      if (di.sl.isRegistered<HapticService>()) {
+        if (isCorrect) {
+          di.sl<HapticService>().success();
+        } else {
+          di.sl<HapticService>().error();
+        }
       }
     }
   }
@@ -169,7 +178,6 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
       level: widget.level,
       phase: 'practice',
     );
-    // Navigate into the Test phase (/game)
     final target =
         '/game?category=vocabulary&gameType=flashcards&level=${widget.level}';
     context.pushReplacement(target);
@@ -182,12 +190,15 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
     if (_isLoading) {
       return Scaffold(
         backgroundColor: isDark ? AppColors.slate950 : AppColors.slate50,
-        body: const Center(child: CircularProgressIndicator()),
+        body: const SafeArea(
+          child: GameShimmerLoading(primaryColor: Colors.amber),
+        ),
       );
     }
 
-    final exercise =
-        _exercises.isNotEmpty ? _exercises[_currentExerciseIndex] : null;
+    final exercise = _exercises.isNotEmpty
+        ? _exercises[_currentExerciseIndex]
+        : null;
     if (exercise == null) {
       return PracticePhaseScaffold(
         title: 'Practice Gym',
@@ -235,169 +246,35 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
                   fontFamily: 'Outfit',
                   fontSize: 11.sp,
                   fontWeight: FontWeight.w800,
-                  color: isDark
-                      ? Colors.amber.shade300
-                      : Colors.amber.shade800,
+                  color: isDark ? Colors.amber.shade300 : Colors.amber.shade800,
                   letterSpacing: 1.1,
                 ),
               ),
             ),
             SizedBox(height: 16.h),
 
-            // Prompt Question or Sentence
-            Container(
-              padding: EdgeInsets.all(20.r),
-              decoration: BoxDecoration(
-                color: isDark ? AppColors.slate900 : Colors.white,
-                borderRadius: BorderRadius.circular(20.r),
-                border: Border.all(
-                  color: isDark ? AppColors.slate800 : AppColors.slate200,
-                ),
+            // Exercise Body (Typing or Choice)
+            if (exercise.interactionType == 'typing')
+              FlashcardPracticeTypingCard(
+                exercise: exercise,
+                textController: _textController,
+                hasChecked: _hasChecked,
+                isAnswerCorrect: _isAnswerCorrect,
+                shakeCount: _shakeCount,
+                isDark: isDark,
+                onCheck: _checkCurrentAnswer,
+              )
+            else
+              FlashcardPracticeChoiceCard(
+                exercise: exercise,
+                selectedOptionIndex: _selectedOptionIndex,
+                hasChecked: _hasChecked,
+                isAnswerCorrect: _isAnswerCorrect,
+                isDark: isDark,
+                onSelectOption: (idx) {
+                  setState(() => _selectedOptionIndex = idx);
+                },
               ),
-              child: Text(
-                exercise.sentence ?? exercise.question ?? '',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w700,
-                  color: isDark ? Colors.white : AppColors.slate900,
-                  height: 1.4,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-
-            SizedBox(height: 20.h),
-
-            // Interaction Body (Typing or Choice)
-            if (exercise.interactionType == 'typing') ...[
-              TextField(
-                controller: _textController,
-                enabled: !_hasChecked,
-                textCapitalization: TextCapitalization.sentences,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 18.sp,
-                  fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white : AppColors.slate900,
-                ),
-                decoration: InputDecoration(
-                  hintText: 'Type the missing word from memory...',
-                  hintStyle: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 14.sp,
-                    color: isDark ? AppColors.slate500 : AppColors.slate400,
-                  ),
-                  filled: true,
-                  fillColor: isDark ? AppColors.slate900 : Colors.white,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16.r),
-                    borderSide: BorderSide(
-                      color: isDark ? AppColors.slate800 : AppColors.slate300,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16.r),
-                    borderSide: const BorderSide(
-                      color: AppColors.indigo500,
-                      width: 2,
-                    ),
-                  ),
-                ),
-              ),
-            ] else ...[
-              // Option Chips
-              Column(
-                children: List.generate(exercise.options.length, (index) {
-                  final option = exercise.options[index];
-                  final isSelected = _selectedOptionIndex == index;
-                  Color borderColor = isDark
-                      ? AppColors.slate800
-                      : AppColors.slate200;
-                  Color tileColor = isDark
-                      ? AppColors.slate900
-                      : Colors.white;
-
-                  if (_hasChecked) {
-                    if (index == exercise.correctAnswerIndex) {
-                      borderColor = Colors.green;
-                      tileColor = Colors.green.withValues(alpha: 0.1);
-                    } else if (isSelected && !(_isAnswerCorrect)) {
-                      borderColor = Colors.red;
-                      tileColor = Colors.red.withValues(alpha: 0.1);
-                    }
-                  } else if (isSelected) {
-                    borderColor = Colors.amber.shade600;
-                    tileColor = Colors.amber.withValues(alpha: 0.1);
-                  }
-
-                  return Padding(
-                    padding: EdgeInsets.only(bottom: 10.h),
-                    child: InkWell(
-                      onTap: _hasChecked
-                          ? null
-                          : () {
-                              setState(() => _selectedOptionIndex = index);
-                            },
-                      borderRadius: BorderRadius.circular(16.r),
-                      child: Container(
-                        padding: EdgeInsets.all(16.r),
-                        decoration: BoxDecoration(
-                          color: tileColor,
-                          borderRadius: BorderRadius.circular(16.r),
-                          border: Border.all(color: borderColor, width: 2),
-                        ),
-                        child: Row(
-                          children: [
-                            Container(
-                              width: 28.r,
-                              height: 28.r,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: isSelected
-                                    ? Colors.amber.shade600
-                                    : (isDark
-                                        ? AppColors.slate800
-                                        : AppColors.slate100),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  String.fromCharCode(65 + index),
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontWeight: FontWeight.w800,
-                                    fontSize: 12.sp,
-                                    color: isSelected
-                                        ? Colors.white
-                                        : (isDark
-                                            ? AppColors.slate400
-                                            : AppColors.slate600),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 12.w),
-                            Expanded(
-                              child: Text(
-                                option,
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w600,
-                                  color: isDark
-                                      ? Colors.white
-                                      : AppColors.slate900,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  );
-                }),
-              ),
-            ],
 
             // Hint Drawer
             if (_showHint && exercise.hint != null) ...[

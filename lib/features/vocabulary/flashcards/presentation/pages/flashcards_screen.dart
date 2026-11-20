@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:vowl/core/presentation/widgets/game_error_view.dart';
-import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-
+import 'package:vowl/core/presentation/widgets/game_error_view.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
+import 'package:vowl/features/vocabulary/flashcards/presentation/controllers/flashcard_controller.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_game_body.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
-import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
-import 'package:vowl/core/utils/locale_service.dart';
-
-import '../controllers/flashcard_controller.dart';
+import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
 
 /// Interactive flashcard review screen supporting 3D card flips, swipes, and TTS pronunciation.
 class FlashcardsScreen extends StatefulWidget {
@@ -69,11 +67,12 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
         if (mastered) {
           submitCorrectAnswer();
         } else {
-          final q = _lastQuest;
+          final state = context.read<VocabularyBloc>().state;
+          final q =
+              (state is VocabularyLoaded ? state.currentQuestOrNull : null) ??
+              _lastQuest;
           if (q != null) {
             submitWrongAnswer(quest: q, userAnswer: null);
-          } else {
-            submitWrongAnswer(quest: _lastQuest!, userAnswer: '');
           }
         }
       },
@@ -109,8 +108,6 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listener: _onBlocState,
       builder: (context, state) {
-        // Loading / unknown transient state
-
         // Error state — surfaces the message instead of hiding it in shimmer
         if (state is VocabularyError) {
           return Scaffold(

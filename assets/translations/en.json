@@ -1580,17 +1580,27 @@
       "title": "Clarity Editor"
     },
     "flashcards": {
-      "actionText": "Start Practicing",
+      "actionText": "Start Review",
+      "completed": "LEVEL COMPLETE!",
       "definition_revealed": "Check your answer",
-      "objective": "Review each word and test your memory. Look at the clue, recall the meaning, and tap the card to check your answer. Swipe right if you got it right, or left to review again.",
+      "level_100": {
+        "actionText": "Conquer Century",
+        "objective": "Welcome to Level 100! You've reinforced an enormous vocabulary vault through active recall. Prove your mastery on this century milestone!",
+        "rule_0": "Test your recall instantly",
+        "rule_1": "Flip to verify definition",
+        "rule_2": "Swipe with confidence to lock in your score",
+        "tip": "PRO TIP: High-speed recall locks words into long-term fluent memory. Trust your instincts!",
+        "title": "Century Flashcard Master"
+      },
+      "objective": "Test your recall! Inspect the clue, picture the meaning before you flip, and swipe right when you have it locked down or left to review again.",
       "rule_0": "Think of the answer first",
       "rule_1": "Tap card to flip and check",
       "rule_2": "Swipe right for Got It, left for Again",
+      "select_meaning": "SELECT THE CORRECT MEANING",
       "swipe_instruction": "Swipe left to review, right if you got it",
       "tap_to_reveal": "Tap card to flip",
-      "tip": "Tip: If you are unsure of a word, review it again to help lock it into memory.",
-      "title": "Vocabulary Flashcards",
-      "completed": "LEVEL COMPLETE!"
+      "tip": "PRO TIP: Active recall builds permanent memory pathways. Always guess before flipping!",
+      "title": "Vocabulary Flashcards"
     },
     "food": {
       "actionText": "Let's Cook",
