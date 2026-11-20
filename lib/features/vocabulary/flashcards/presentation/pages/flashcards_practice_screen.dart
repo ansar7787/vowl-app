@@ -14,6 +14,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
 import '../widgets/flashcard_learn_refresher_sheet.dart';
 import '../widgets/flashcard_practice_chunk_weaver.dart';
+import 'flashcards_learn_fallback_data.dart';
 
 /// 2026 Interactive Practice Phase screen for Vocabulary Flashcards.
 ///
@@ -33,9 +34,15 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
   bool _isLoading = true;
   int _currentIndex = 0;
 
-  // Active Quest Interaction State
-  List<String> _availableChunks = [];
-  final List<String> _placedChunks = [];
+  // Active Quest Interaction State (ValueNotifiers for 120 FPS leaf rebuilds)
+  late final ValueNotifier<List<String>> _availableChunksNotifier =
+      ValueNotifier<List<String>>([]);
+  late final ValueNotifier<List<String>> _placedChunksNotifier =
+      ValueNotifier<List<String>>([]);
+
+  List<String> get _availableChunks => _availableChunksNotifier.value;
+  List<String> get _placedChunks => _placedChunksNotifier.value;
+
   bool _hasCheckedAssembly = false;
   bool _isAssemblyCorrect = false;
 
@@ -51,6 +58,13 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
   void initState() {
     super.initState();
     _loadPracticeQuests();
+  }
+
+  @override
+  void dispose() {
+    _availableChunksNotifier.dispose();
+    _placedChunksNotifier.dispose();
+    super.dispose();
   }
 
   Future<void> _loadPracticeQuests() async {
@@ -79,25 +93,7 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
     } catch (_) {
       if (mounted) {
         setState(() {
-          _quests = [
-            PhasedQuest(
-              id: 'FALLBACK_P1',
-              level: widget.level,
-              word: 'AUTHENTIC',
-              example:
-                  'The chef insisted on using only _____ Italian ingredients for the pasta.',
-              rawExtra: const {
-                'hint': 'Think of a 3-syllable word meaning genuine.',
-                'scrambledChunks': ['AU', 'THEN', 'TIC', 'TION', 'IC'],
-                'collocationOptions': [
-                  'authentic cuisine',
-                  'authentic weather',
-                  'authentic price',
-                ],
-                'correctCollocationIndex': 0,
-              },
-            ),
-          ];
+          _quests = getFlashcardPracticeFallbackQuests(widget.level);
           _isLoading = false;
           _initQuestInteraction(0);
         });
@@ -114,8 +110,8 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
         ? rawChunks.map((e) => e.toString()).toList()
         : (quest.word != null ? [quest.word!] : <String>[]);
 
-    _availableChunks = List<String>.from(chunks);
-    _placedChunks.clear();
+    _availableChunksNotifier.value = List<String>.from(chunks);
+    _placedChunksNotifier.value = [];
     _hasCheckedAssembly = false;
     _isAssemblyCorrect = false;
     _showCollocationStage = false;
@@ -126,21 +122,28 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
 
   void _addChunk(String chunk) {
     if (_hasCheckedAssembly) return;
-    setState(() {
-      _availableChunks.remove(chunk);
-      _placedChunks.add(chunk);
-    });
+    final nextAvail = List<String>.from(_availableChunksNotifier.value);
+    final nextPlaced = List<String>.from(_placedChunksNotifier.value);
+    if (nextAvail.remove(chunk)) {
+      nextPlaced.add(chunk);
+      _availableChunksNotifier.value = nextAvail;
+      _placedChunksNotifier.value = nextPlaced;
+    }
     if (di.sl.isRegistered<HapticService>()) {
       di.sl<HapticService>().selection();
     }
   }
 
   void _removeChunk(int index) {
-    if (_hasCheckedAssembly || index >= _placedChunks.length) return;
-    setState(() {
-      final chunk = _placedChunks.removeAt(index);
-      _availableChunks.add(chunk);
-    });
+    if (_hasCheckedAssembly || index >= _placedChunksNotifier.value.length) {
+      return;
+    }
+    final nextAvail = List<String>.from(_availableChunksNotifier.value);
+    final nextPlaced = List<String>.from(_placedChunksNotifier.value);
+    final chunk = nextPlaced.removeAt(index);
+    nextAvail.add(chunk);
+    _placedChunksNotifier.value = nextPlaced;
+    _availableChunksNotifier.value = nextAvail;
     if (di.sl.isRegistered<HapticService>()) {
       di.sl<HapticService>().selection();
     }
@@ -331,6 +334,8 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
               targetWord: quest.word ?? '',
               availableChunks: _availableChunks,
               placedChunks: _placedChunks,
+              availableChunksNotifier: _availableChunksNotifier,
+              placedChunksNotifier: _placedChunksNotifier,
               hasCheckedAssembly: _hasCheckedAssembly,
               isAssemblyCorrect: _isAssemblyCorrect,
               showCollocationStage: _showCollocationStage,

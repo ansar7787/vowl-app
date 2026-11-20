@@ -71,3 +71,24 @@ List<PhasedQuest> getFlashcardLearnFallbackQuests(int level) => [
     },
   ),
 ];
+
+/// Default fallback quests for the Flashcard Practice Phase if network or asset load fails.
+List<PhasedQuest> getFlashcardPracticeFallbackQuests(int level) => [
+  PhasedQuest(
+    id: 'FALLBACK_P$level',
+    level: level,
+    word: 'AUTHENTIC',
+    example:
+        'The chef insisted on using only _____ Italian ingredients for the pasta.',
+    rawExtra: const {
+      'hint': 'Think of a 3-syllable word meaning genuine.',
+      'scrambledChunks': ['AU', 'THEN', 'TIC', 'TION', 'IC'],
+      'collocationOptions': [
+        'authentic cuisine',
+        'authentic weather',
+        'authentic price',
+      ],
+      'correctCollocationIndex': 0,
+    },
+  ),
+];
