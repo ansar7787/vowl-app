@@ -148,7 +148,7 @@ class _FlashcardEchoPronunciationState
     });
 
     await service.listen(
-      pauseFor: const Duration(seconds: 2),
+      pauseFor: const Duration(seconds: 5),
       onResult: (candidates, isFinal) {
         if (!mounted || !_isListening) return;
 
@@ -280,6 +280,14 @@ class _FlashcardEchoPronunciationState
     }
 
     if (_isVerified == false) {
+      final hasRealWord =
+          _heardWord != null &&
+          _heardWord != 'No speech detected' &&
+          _heardWord!.trim().isNotEmpty;
+      final retryText = hasRealWord
+          ? 'Heard "$_heardWord" • Tap to retry'
+          : 'No speech detected • Tap to retry';
+
       return ScaleButton(
         onTap: _toggleListening,
         child: Container(
@@ -302,9 +310,7 @@ class _FlashcardEchoPronunciationState
                 child: FittedBox(
                   fit: BoxFit.scaleDown,
                   child: Text(
-                    _heardWord != null
-                        ? 'Heard "$_heardWord" • Tap to retry'
-                        : 'Not quite matched • Tap to retry',
+                    retryText,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,

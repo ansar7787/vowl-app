@@ -179,8 +179,16 @@ class SpeechServiceImpl implements SpeechService {
       if (!status.isGranted) return false;
 
       _isSttInitialized = await _stt.initialize(
-        onError: (val) =>
-            sl<AppLogger>().error('SpeechService: STT Error', error: val),
+        onError: (val) {
+          if (val.errorMsg == 'error_no_match' ||
+              val.errorMsg == 'error_speech_timeout') {
+            sl<AppLogger>().debug(
+              'SpeechService: STT silent/no match (${val.errorMsg})',
+            );
+          } else {
+            sl<AppLogger>().error('SpeechService: STT Error', error: val);
+          }
+        },
         onStatus: (status) {
           sl<AppLogger>().debug('SpeechService: STT Status: $status');
           if (status == 'done' || status == 'notListening') {
