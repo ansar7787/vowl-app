@@ -8,6 +8,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'flashcard_learn_collocations_section.dart';
+import 'flashcard_learn_example_box.dart';
 
 /// Back face of the 3D Discovery Card in Flashcard Learn Phase.
 ///
@@ -38,15 +39,51 @@ class FlashcardLearnBackFace extends StatefulWidget {
 }
 
 class _FlashcardLearnBackFaceState extends State<FlashcardLearnBackFace> {
-  String? _translatedText;
+  String? _translatedDefinition;
+  String? _translatedExample;
+  String? _translatedMistake;
+  List<String>? _translatedCollocations;
   String? _translatedLocale;
-  bool _showTranslated = true;
+  bool _showTranslated = false;
 
   void _speakText(String text, {String? locale}) {
     if (di.sl.isRegistered<TtsService>()) {
       TtsSpeakerButtonWidget.stopAll();
       di.sl<TtsService>().speak(text, locale: locale ?? 'en-US');
     }
+  }
+
+  String _buildTranslatableContent() {
+    return [
+      widget.quest.definition ?? '',
+      widget.quest.example ?? '',
+      widget.commonMistake ?? '',
+      widget.collocations.join(', '),
+    ].join('\n---\n');
+  }
+
+  void _applyTranslation(String fullText, String? locale) {
+    final parts = fullText.split(RegExp(r'\n?---\n?'));
+    setState(() {
+      _translatedDefinition = parts.isNotEmpty && parts[0].isNotEmpty
+          ? parts[0].trim()
+          : fullText;
+      _translatedExample = parts.length > 1 && parts[1].isNotEmpty
+          ? parts[1].trim()
+          : null;
+      _translatedMistake = parts.length > 2 && parts[2].isNotEmpty
+          ? parts[2].trim()
+          : null;
+      _translatedCollocations = parts.length > 3 && parts[3].isNotEmpty
+          ? parts[3]
+                .split(RegExp(r'[,•\n]'))
+                .map((s) => s.trim())
+                .where((s) => s.isNotEmpty)
+                .toList()
+          : null;
+      _translatedLocale = locale;
+      _showTranslated = true;
+    });
   }
 
   @override
@@ -81,54 +118,53 @@ class _FlashcardLearnBackFaceState extends State<FlashcardLearnBackFace> {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Header: Word + Audio + Translate + Flip to Front
+            // Header: Word + Sound Button + Translate + Flip Front
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ScaleButton(
-                  onTap: () =>
-                      quest.word != null ? _speakText(quest.word!) : null,
-                  child: Row(
-                    children: [
-                      Text(
-                        quest.word ?? '',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 20.sp,
-                          fontWeight: FontWeight.w900,
-                          color: isDark ? Colors.white : AppColors.slate950,
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      quest.word ?? '',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 20.sp,
+                        fontWeight: FontWeight.w900,
+                        color: isDark ? Colors.white : AppColors.slate950,
+                      ),
+                    ),
+                    SizedBox(width: 8.w),
+                    ScaleButton(
+                      onTap: () =>
+                          quest.word != null ? _speakText(quest.word!) : null,
+                      child: Container(
+                        padding: EdgeInsets.all(5.r),
+                        decoration: BoxDecoration(
+                          color: isDark
+                              ? AppColors.indigo500.withValues(alpha: 0.2)
+                              : AppColors.indigo500.withValues(alpha: 0.1),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          Icons.volume_up_rounded,
+                          size: 16.r,
+                          color: isDark
+                              ? AppColors.indigo400
+                              : AppColors.indigo600,
                         ),
                       ),
-                      SizedBox(width: 6.w),
-                      Icon(
-                        Icons.volume_up_rounded,
-                        size: 16.r,
-                        color: isDark
-                            ? AppColors.indigo400
-                            : AppColors.indigo600,
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     TranslateButtonWidget(
-                      originalText:
-                          '${quest.definition ?? ""}\n${quest.example ?? ""}',
-                      onTranslationComplete: (t) => mounted
-                          ? setState(() {
-                              _translatedText = t;
-                              _showTranslated = true;
-                            })
-                          : null,
-                      onTranslationWithLanguage: (t, loc) => mounted
-                          ? setState(() {
-                              _translatedText = t;
-                              _translatedLocale = loc;
-                              _showTranslated = true;
-                            })
-                          : null,
+                      originalText: _buildTranslatableContent(),
+                      onTranslationComplete: (t) => _applyTranslation(t, null),
+                      onTranslationWithLanguage: (t, loc) =>
+                          _applyTranslation(t, loc),
                     ),
                     SizedBox(width: 8.w),
                     ScaleButton(
@@ -174,8 +210,8 @@ class _FlashcardLearnBackFaceState extends State<FlashcardLearnBackFace> {
 
             SizedBox(height: 14.h),
 
-            // Translation toggle bar if translation exists
-            if (_translatedText != null) ...[
+            // Translation toggle bar across all learning content
+            if (_translatedDefinition != null) ...[
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -204,7 +240,7 @@ class _FlashcardLearnBackFaceState extends State<FlashcardLearnBackFace> {
                           ),
                           SizedBox(width: 4.w),
                           Text(
-                            _showTranslated ? 'Original' : 'Translated',
+                            _showTranslated ? 'Original (EN)' : 'Translated',
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 11.sp,
@@ -216,9 +252,9 @@ class _FlashcardLearnBackFaceState extends State<FlashcardLearnBackFace> {
                       ),
                     ),
                   ),
-                  if (_showTranslated)
+                  if (_showTranslated && _translatedDefinition != null)
                     TtsSpeakerButtonWidget(
-                      text: _translatedText!,
+                      text: _translatedDefinition!,
                       color: isDark ? AppColors.indigo400 : AppColors.indigo600,
                       locale: _translatedLocale,
                       size: 16.r,
@@ -228,100 +264,55 @@ class _FlashcardLearnBackFaceState extends State<FlashcardLearnBackFace> {
               SizedBox(height: 8.h),
             ],
 
-            // Definition (Original or Translated, tap to speak)
-            ScaleButton(
-              onTap: () {
-                if (_showTranslated && _translatedText != null) {
-                  _speakText(_translatedText!, locale: _translatedLocale);
-                } else if (quest.definition != null) {
-                  _speakText(quest.definition!);
-                }
-              },
-              child: Text(
-                (_showTranslated && _translatedText != null)
-                    ? _translatedText!
-                    : (quest.definition ?? ''),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                  height: 1.4,
-                  color: isDark ? Colors.white : AppColors.slate900,
-                ),
+            // Definition (Tapping definition or card flips; dedicated buttons speak)
+            Text(
+              (_showTranslated && _translatedDefinition != null)
+                  ? _translatedDefinition!
+                  : (quest.definition ?? ''),
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w600,
+                height: 1.4,
+                color: isDark ? Colors.white : AppColors.slate900,
               ),
             ),
 
             SizedBox(height: 16.h),
 
-            // Real-World Sentence with quote and inline listen button
+            // Real-World Sentence with quote and sound icon
             if (quest.example != null)
-              Container(
-                padding: EdgeInsets.all(14.r),
-                decoration: BoxDecoration(
-                  color: isDark
-                      ? AppColors.slate800.withValues(alpha: 0.6)
-                      : AppColors.slate50,
-                  borderRadius: BorderRadius.circular(14.r),
-                  border: Border.all(
-                    color: isDark ? AppColors.slate700 : AppColors.slate200,
-                  ),
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Icon(
-                      Icons.format_quote_rounded,
-                      size: 20.r,
-                      color: isDark ? AppColors.indigo400 : AppColors.indigo600,
-                    ),
-                    SizedBox(width: 8.w),
-                    Expanded(
-                      child: ScaleButton(
-                        onTap: () => _speakText(quest.example!),
-                        child: Text(
-                          quest.example!,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w500,
-                            fontStyle: FontStyle.italic,
-                            height: 1.35,
-                            color: isDark
-                                ? AppColors.slate200
-                                : AppColors.slate800,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 6.w),
-                    ScaleButton(
-                      onTap:
-                          widget.onSpeakExample ??
-                          () => _speakText(quest.example!),
-                      child: Icon(
-                        Icons.volume_up_rounded,
-                        size: 18.r,
-                        color: isDark
-                            ? AppColors.indigo400
-                            : AppColors.indigo600,
-                      ),
-                    ),
-                  ],
-                ),
+              FlashcardLearnExampleBox(
+                exampleText: (_showTranslated && _translatedExample != null)
+                    ? _translatedExample!
+                    : quest.example!,
+                isDark: isDark,
+                onSpeak: () {
+                  if (_showTranslated && _translatedExample != null) {
+                    _speakText(_translatedExample!, locale: _translatedLocale);
+                  } else {
+                    _speakText(quest.example!);
+                  }
+                },
               ),
 
             SizedBox(height: 14.h),
 
-            // Natural Collocations (Tap to Speak)
+            // Natural Collocations (Refined clean pills with speech on tap)
             FlashcardLearnCollocationsSection(
-              collocations: widget.collocations,
+              collocations:
+                  (_showTranslated &&
+                      _translatedCollocations != null &&
+                      _translatedCollocations!.isNotEmpty)
+                  ? _translatedCollocations!
+                  : widget.collocations,
               isDark: isDark,
               onSpeak: _speakText,
             ),
 
             SizedBox(height: 14.h),
 
-            // Common Mistake Alert Box
+            // Common Mistake Alert Box (Translates in sync)
             if (widget.commonMistake != null)
               Container(
                 padding: EdgeInsets.all(12.r),
@@ -343,7 +334,9 @@ class _FlashcardLearnBackFaceState extends State<FlashcardLearnBackFace> {
                     SizedBox(width: 8.w),
                     Expanded(
                       child: Text(
-                        widget.commonMistake!,
+                        (_showTranslated && _translatedMistake != null)
+                            ? _translatedMistake!
+                            : widget.commonMistake!,
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,

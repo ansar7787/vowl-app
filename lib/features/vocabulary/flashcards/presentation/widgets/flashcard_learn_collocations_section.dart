@@ -42,33 +42,22 @@ class FlashcardLearnCollocationsSection extends StatelessWidget {
             return ScaleButton(
               onTap: () => onSpeak(col),
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                padding: EdgeInsets.symmetric(horizontal: 11.w, vertical: 6.h),
                 decoration: BoxDecoration(
                   color: isDark ? AppColors.slate800 : AppColors.slate100,
-                  borderRadius: BorderRadius.circular(10.r),
+                  borderRadius: BorderRadius.circular(12.r),
                   border: Border.all(
                     color: isDark ? AppColors.slate700 : AppColors.slate300,
                   ),
                 ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      col,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w600,
-                        color: isDark ? AppColors.slate200 : AppColors.slate800,
-                      ),
-                    ),
-                    SizedBox(width: 4.w),
-                    Icon(
-                      Icons.volume_down_rounded,
-                      size: 13.r,
-                      color: isDark ? AppColors.slate400 : AppColors.slate500,
-                    ),
-                  ],
+                child: Text(
+                  col,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w600,
+                    color: isDark ? AppColors.slate200 : AppColors.slate800,
+                  ),
                 ),
               ),
             );

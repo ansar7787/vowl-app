@@ -71,6 +71,35 @@ class _FlashcardEchoPronunciationState
     }
   }
 
+  bool _checkSpeechMatch(List<String> candidates, String target) {
+    final cleanTarget = target.trim().toLowerCase().replaceAll(
+      RegExp(r"[^\w\s]"),
+      "",
+    );
+    for (final candidate in candidates) {
+      final cleanCandidate = candidate.trim().toLowerCase().replaceAll(
+        RegExp(r"[^\w\s]"),
+        "",
+      );
+      if (cleanCandidate.isEmpty) continue;
+
+      if (cleanCandidate == cleanTarget) return true;
+      if (cleanCandidate.contains(cleanTarget)) return true;
+
+      final tokens = cleanCandidate.split(RegExp(r'\s+'));
+      if (tokens.contains(cleanTarget)) return true;
+
+      if (TextSimilarityHelper.isMatch(
+        cleanCandidate,
+        cleanTarget,
+        threshold: 0.65,
+      )) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   Future<void> _toggleListening() async {
     final service = _speechService;
     if (service == null) {
@@ -105,9 +134,9 @@ class _FlashcardEchoPronunciationState
       return;
     }
 
-    // Single-word vocalization watchdog (cut mic after 4.5s max to prevent lingering)
+    // Comfortable 8.5s watchdog giving non-native learners plenty of time to process & vocalize
     _watchdogTimer?.cancel();
-    _watchdogTimer = Timer(const Duration(milliseconds: 4500), () {
+    _watchdogTimer = Timer(const Duration(milliseconds: 8500), () {
       if (mounted && _isListening) {
         _stopListening();
         setState(() {
@@ -127,31 +156,29 @@ class _FlashcardEchoPronunciationState
           final top = candidates.first;
           _heardWord = top;
 
-          final matched = candidates.any(
-            (c) => TextSimilarityHelper.isMatch(
-              c,
-              widget.targetWord,
-              threshold: 0.75,
-            ),
-          );
-
-          _watchdogTimer?.cancel();
-          // Cut recording immediately upon getting speech response
-          service.stop();
+          final matched = _checkSpeechMatch(candidates, widget.targetWord);
 
           if (matched) {
+            _watchdogTimer?.cancel();
+            service.stop();
             setState(() {
               _isListening = false;
               _isVerified = true;
             });
             _hapticService?.success();
             widget.onVerified?.call();
-          } else {
+          } else if (isFinal) {
+            // Only finalize failure after the speech engine completes final transcription
+            _watchdogTimer?.cancel();
+            service.stop();
             setState(() {
               _isListening = false;
               _isVerified = false;
             });
             _hapticService?.error();
+          } else {
+            // Intermediate partial recognition: update feedback without cutting off speaker
+            setState(() {});
           }
         }
       },
@@ -162,8 +189,12 @@ class _FlashcardEchoPronunciationState
             _isListening = false;
             if (_isVerified != true) {
               _isVerified = false;
+              _heardWord ??= 'No speech detected';
             }
           });
+          if (_isVerified == false) {
+            _hapticService?.error();
+          }
         }
       },
     );
