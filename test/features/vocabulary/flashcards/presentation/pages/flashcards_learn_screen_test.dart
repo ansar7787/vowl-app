@@ -70,7 +70,7 @@ void main() {
       expect(find.text('THEN'), findsOneWidget);
       await tester.tap(find.text('THEN'));
       await tester.pump();
-      verify(() => mockTts.speak('then')).called(1);
+      verify(() => mockTts.speak('THEN')).called(1);
       await tester.pump(const Duration(milliseconds: 1500));
 
       // Tap full audio button

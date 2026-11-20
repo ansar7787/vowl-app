@@ -42,6 +42,13 @@ void main() {
     testWidgets(
       'assembles chunks, checks word, and completes collocation challenge',
       (tester) async {
+        tester.view.physicalSize = const Size(375 * 2, 812 * 2);
+        tester.view.devicePixelRatio = 2.0;
+        addTearDown(() {
+          tester.view.resetPhysicalSize();
+          tester.view.resetDevicePixelRatio();
+        });
+
         await tester.pumpWidget(
           buildTestableWidget(const FlashcardsPracticeScreen(level: 1)),
         );
@@ -57,10 +64,15 @@ void main() {
         expect(find.text('THEN'), findsOneWidget);
         expect(find.text('TIC'), findsOneWidget);
 
+        await tester.ensureVisible(find.text('AU'));
         await tester.tap(find.text('AU'));
         await tester.pump(const Duration(milliseconds: 600));
+
+        await tester.ensureVisible(find.text('THEN'));
         await tester.tap(find.text('THEN'));
         await tester.pump(const Duration(milliseconds: 600));
+
+        await tester.ensureVisible(find.text('TIC'));
         await tester.tap(find.text('TIC'));
         await tester.pump(const Duration(milliseconds: 600));
 
@@ -74,6 +86,7 @@ void main() {
         expect(find.text('authentic cuisine'), findsOneWidget);
 
         // Select authentic cuisine
+        await tester.ensureVisible(find.text('authentic cuisine'));
         await tester.tap(find.text('authentic cuisine'));
         await tester.pump(const Duration(milliseconds: 600));
         await tester.pumpAndSettle();
