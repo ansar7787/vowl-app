@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
+import 'package:vowl/features/vocabulary/flashcards/data/services/flashcard_vault_service.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
@@ -65,6 +66,17 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
       hapticService: di.sl<HapticService>(),
       onSubmitResult: ({required bool isCorrect, required bool speedBonus}) {
         if (isCorrect) {
+          final state = context.read<VocabularyBloc>().state;
+          final q =
+              (state is VocabularyLoaded ? state.currentQuestOrNull : null) ??
+              _lastQuest;
+          if (q != null && q.word != null) {
+            FlashcardVaultService().recordMastery(
+              q.word!,
+              widget.level,
+              perfect: speedBonus,
+            );
+          }
           submitCorrectAnswer();
         } else {
           final state = context.read<VocabularyBloc>().state;

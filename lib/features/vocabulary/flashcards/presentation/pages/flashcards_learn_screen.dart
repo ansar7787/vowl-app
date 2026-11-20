@@ -7,17 +7,19 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/data/models/phased_quest_model.dart';
 import 'package:vowl/core/presentation/phases/learn_phase_scaffold.dart';
 import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
+import '../widgets/flashcard_cluster_contrast_card.dart';
 import '../widgets/flashcard_learn_view.dart';
 
 /// 2026 Interactive Learn Phase screen for Vocabulary Flashcards.
 ///
 /// Features the tactile Discovery Deck with Tap-to-Speak Syllable Chips,
-/// stressed syllable highlights, natural collocations, and common ESL mistake alerts.
+/// stressed syllable highlights, natural collocations, and the Nuance Contrast Matrix.
 class FlashcardsLearnScreen extends StatefulWidget {
   final int level;
 
@@ -35,6 +37,7 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
   List<PhasedQuest> _quests = const [];
   bool _isLoading = true;
   int _currentIndex = 0;
+  bool _showContrastMatrix = false;
 
   @override
   void initState() {
@@ -96,10 +99,61 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
               rawExtra: const {
                 'syllables': ['au', 'then', 'tic'],
                 'stressedSyllableIndex': 1,
+                'contextDomain': 'Culinary & Traditions',
                 'collocations': [
                   'authentic cuisine',
                   'authentic leadership',
                   'authentic smile',
+                ],
+              },
+            ),
+            PhasedQuest(
+              id: 'FALLBACK_L${widget.level}_2',
+              level: widget.level,
+              word: 'GENUINE',
+              pronunciation: '/ˈdʒen.ju.ɪn/',
+              definition:
+                  'Truly what something is said to be; honest and sincere.',
+              example:
+                  'Her genuine smile immediately put everyone in the room at ease.',
+              nativeTip:
+                  "Use 'genuine' for sincere feelings or real materials like leather.",
+              commonMistake:
+                  "Don't confuse 'genuine' with 'legitimate' — genuine is sincerity; legitimate is legal validity.",
+              familyWords: const ['genuineness', 'genuinely'],
+              rawExtra: const {
+                'syllables': ['gen', 'u', 'ine'],
+                'stressedSyllableIndex': 0,
+                'contextDomain': 'Character & Sincerity',
+                'collocations': [
+                  'genuine smile',
+                  'genuine leather',
+                  'genuine interest',
+                ],
+              },
+            ),
+            PhasedQuest(
+              id: 'FALLBACK_L${widget.level}_3',
+              level: widget.level,
+              word: 'LEGITIMATE',
+              pronunciation: '/lɪˈdʒɪt.ə.mət/',
+              definition:
+                  'Conforming to the law or rules; valid and justified.',
+              example:
+                  'The committee raised several legitimate concerns regarding public safety.',
+              nativeTip:
+                  "Native speakers shorten this to 'legit' in casual conversation.",
+              commonMistake:
+                  "Don't confuse with 'authentic' — a claim is legitimate (valid), an antique is authentic (real).",
+              familyWords: const ['legitimacy', 'legitimize', 'legitimately'],
+              rawExtra: const {
+                'syllables': ['le', 'git', 'i', 'mate'],
+                'stressedSyllableIndex': 1,
+                'contextDomain': 'Legal & Procedural',
+                'collocations': [
+                  'legitimate concern',
+                  'legitimate business',
+                  'legitimate claim',
                 ],
               },
             ),
@@ -136,6 +190,10 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
       setState(() {
         _currentIndex++;
         _isFlippedNotifier.value = false;
+      });
+    } else if (!_showContrastMatrix && _quests.length > 1) {
+      setState(() {
+        _showContrastMatrix = true;
       });
     } else {
       _finishLearnPhase();
@@ -180,13 +238,36 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
       );
     }
 
+    if (_showContrastMatrix) {
+      return LearnPhaseScaffold(
+        title: 'Compare Level Words',
+        gameType: 'flashcards',
+        level: widget.level,
+        actionLabel: 'Start Practice ➔',
+        onComplete: _finishLearnPhase,
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+          child: FlashcardClusterContrastCard(
+            quests: _quests,
+            isDark: isDark,
+            onProceed: _finishLearnPhase,
+            onBackToCards: () => setState(() => _showContrastMatrix = false),
+          ),
+        ),
+      );
+    }
+
     final isLast = _currentIndex == _quests.length - 1;
+    final actionLabel = isLast
+        ? (_quests.length > 1 ? 'Compare 3 Words ➔' : 'Start Practice ➔')
+        : 'Next Word ➔';
 
     return LearnPhaseScaffold(
       title: 'Word ${_currentIndex + 1} of ${_quests.length}',
       gameType: 'flashcards',
       level: widget.level,
-      actionLabel: isLast ? 'Start Practice ➔' : 'Next Word ➔',
+      actionLabel: actionLabel,
       onComplete: _nextWord,
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -194,6 +275,58 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            if (_quests.length > 1) ...[
+              Align(
+                alignment: Alignment.centerRight,
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 8.h),
+                  child: ScaleButton(
+                    onTap: () => setState(() => _showContrastMatrix = true),
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 10.w,
+                        vertical: 5.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? AppColors.slate800
+                            : AppColors.indigo500.withValues(alpha: 0.08),
+                        borderRadius: BorderRadius.circular(10.r),
+                        border: Border.all(
+                          color: isDark
+                              ? AppColors.slate700
+                              : AppColors.indigo500.withValues(alpha: 0.3),
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.compare_arrows_rounded,
+                            size: 14.r,
+                            color: isDark
+                                ? AppColors.indigo400
+                                : AppColors.indigo600,
+                          ),
+                          SizedBox(width: 4.w),
+                          Text(
+                            'Compare Words',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w700,
+                              color: isDark
+                                  ? AppColors.indigo400
+                                  : AppColors.indigo600,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
             ValueListenableBuilder<bool>(
               valueListenable: _isFlippedNotifier,
               builder: (context, isFlipped, _) {

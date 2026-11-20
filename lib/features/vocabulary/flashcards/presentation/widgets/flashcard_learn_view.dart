@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/data/models/phased_quest_model.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'flashcard_echo_pronunciation.dart';
 import 'flashcard_learn_back_face.dart';
 import 'flashcard_syllable_chips.dart';
 
@@ -33,6 +34,53 @@ class FlashcardLearnView extends StatelessWidget {
     this.clusterIndex = 0,
     this.clusterTotal = 3,
   });
+
+  IconData _resolveMnemonicIcon(String domain) {
+    final d = domain.toLowerCase();
+    if (d.contains('culin') ||
+        d.contains('food') ||
+        d.contains('tradition') ||
+        d.contains('recipe')) {
+      return Icons.restaurant_rounded;
+    }
+    if (d.contains('legal') ||
+        d.contains('law') ||
+        d.contains('procedur') ||
+        d.contains('court')) {
+      return Icons.gavel_rounded;
+    }
+    if (d.contains('emotion') ||
+        d.contains('feel') ||
+        d.contains('charact') ||
+        d.contains('sincer')) {
+      return Icons.favorite_rounded;
+    }
+    if (d.contains('sci') ||
+        d.contains('tech') ||
+        d.contains('data') ||
+        d.contains('comput')) {
+      return Icons.biotech_rounded;
+    }
+    if (d.contains('art') ||
+        d.contains('design') ||
+        d.contains('creat') ||
+        d.contains('cultur')) {
+      return Icons.palette_rounded;
+    }
+    if (d.contains('business') ||
+        d.contains('work') ||
+        d.contains('lead') ||
+        d.contains('finan')) {
+      return Icons.business_center_rounded;
+    }
+    if (d.contains('nature') ||
+        d.contains('eco') ||
+        d.contains('plant') ||
+        d.contains('wild')) {
+      return Icons.eco_rounded;
+    }
+    return Icons.lightbulb_outline_rounded;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -100,6 +148,8 @@ class FlashcardLearnView extends StatelessWidget {
     required String contextDomain,
     String? phonetic,
   }) {
+    final mnemonicIcon = _resolveMnemonicIcon(contextDomain);
+
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
@@ -177,7 +227,7 @@ class FlashcardLearnView extends StatelessWidget {
 
           SizedBox(height: 16.h),
 
-          // Scenario Badge
+          // Mnemonic Visual Anchor Badge
           Container(
             padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
             decoration: BoxDecoration(
@@ -190,14 +240,15 @@ class FlashcardLearnView extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Icon(
-                  Icons.explore_rounded,
-                  size: 14.r,
+                  mnemonicIcon,
+                  size: 15.r,
                   color: isDark ? AppColors.indigo400 : AppColors.indigo600,
                 ),
                 SizedBox(width: 6.w),
                 Flexible(
                   child: Text(
                     contextDomain,
+                    overflow: TextOverflow.ellipsis,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
@@ -210,7 +261,7 @@ class FlashcardLearnView extends StatelessWidget {
             ),
           ),
 
-          SizedBox(height: 20.h),
+          SizedBox(height: 18.h),
 
           // Target Word
           Text(
@@ -240,7 +291,7 @@ class FlashcardLearnView extends StatelessWidget {
               ),
             ),
 
-          SizedBox(height: 16.h),
+          SizedBox(height: 14.h),
 
           // Tap-to-Speak Syllable Chips
           FlashcardSyllableChips(
@@ -252,7 +303,17 @@ class FlashcardLearnView extends StatelessWidget {
             onSpeakFullWord: onSpeakFullWord,
           ),
 
-          SizedBox(height: 20.h),
+          SizedBox(height: 10.h),
+
+          // Echo Pronunciation / Speech Validation
+          FlashcardEchoPronunciation(
+            targetWord: quest.word ?? '',
+            syllables: syllables,
+            stressedIndex: stressedIndex,
+            isDark: isDark,
+          ),
+
+          SizedBox(height: 18.h),
 
           // Flip Button Cue
           ScaleButton(

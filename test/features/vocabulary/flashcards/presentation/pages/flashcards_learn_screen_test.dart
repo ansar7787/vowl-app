@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:speech_to_text/speech_to_text.dart' show ListenMode;
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/speech_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/pages/flashcards_learn_screen.dart';
 
@@ -11,19 +13,48 @@ class MockHapticService extends Mock implements HapticService {}
 
 class MockTtsService extends Mock implements TtsService {}
 
+class MockSpeechService extends Mock implements SpeechService {}
+
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
+  setUpAll(() {
+    registerFallbackValue(ListenMode.dictation);
+    registerFallbackValue((List<String> _, bool _) {});
+    registerFallbackValue(() {});
+  });
+
   late MockHapticService mockHaptic;
   late MockTtsService mockTts;
+  late MockSpeechService mockSpeech;
 
   setUp(() {
     mockHaptic = MockHapticService();
     mockTts = MockTtsService();
+    mockSpeech = MockSpeechService();
 
     when(() => mockHaptic.selection()).thenAnswer((_) async {});
     when(() => mockHaptic.light()).thenAnswer((_) async {});
+    when(() => mockHaptic.success()).thenAnswer((_) async {});
     when(() => mockTts.speak(any())).thenAnswer((_) async {});
+
+    when(() => mockSpeech.initializeStt()).thenAnswer((_) async => true);
+    when(() => mockSpeech.isListening).thenReturn(false);
+    when(() => mockSpeech.stop()).thenAnswer((_) async {});
+    when(
+      () => mockSpeech.listen(
+        onResult: any(named: 'onResult'),
+        onDone: any(named: 'onDone'),
+        onSoundLevelChange: any(named: 'onSoundLevelChange'),
+        localeId: any(named: 'localeId'),
+        pauseFor: any(named: 'pauseFor'),
+        listenMode: any(named: 'listenMode'),
+      ),
+    ).thenAnswer((invocation) async {
+      final onResult =
+          invocation.namedArguments[#onResult] as SpeechResultCallback?;
+      onResult?.call(['AUTHENTIC'], true);
+    });
 
     if (di.sl.isRegistered<HapticService>()) {
       di.sl.unregister<HapticService>();
@@ -31,9 +62,13 @@ void main() {
     if (di.sl.isRegistered<TtsService>()) {
       di.sl.unregister<TtsService>();
     }
+    if (di.sl.isRegistered<SpeechService>()) {
+      di.sl.unregister<SpeechService>();
+    }
 
     di.sl.registerLazySingleton<HapticService>(() => mockHaptic);
     di.sl.registerLazySingleton<TtsService>(() => mockTts);
+    di.sl.registerLazySingleton<SpeechService>(() => mockSpeech);
   });
 
   tearDown(() {
@@ -42,6 +77,9 @@ void main() {
     }
     if (di.sl.isRegistered<TtsService>()) {
       di.sl.unregister<TtsService>();
+    }
+    if (di.sl.isRegistered<SpeechService>()) {
+      di.sl.unregister<SpeechService>();
     }
   });
 
@@ -53,40 +91,71 @@ void main() {
   }
 
   group('FlashcardsLearnScreen', () {
-    testWidgets('renders word, phonetic IPA, syllable chips, and flips card', (
-      tester,
-    ) async {
-      await tester.pumpWidget(
-        buildTestableWidget(const FlashcardsLearnScreen(level: 1)),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+    testWidgets(
+      'renders word, phonetic IPA, syllable chips, verifies echo, flips card, and opens nuance matrix',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestableWidget(const FlashcardsLearnScreen(level: 1)),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(FlashcardsLearnScreen), findsOneWidget);
-      expect(find.text('AUTHENTIC'), findsWidgets);
-      expect(find.text('Flip for Meaning & Context'), findsOneWidget);
+        expect(find.byType(FlashcardsLearnScreen), findsOneWidget);
+        expect(find.text('AUTHENTIC'), findsWidgets);
+        expect(find.text('Compare Words'), findsOneWidget);
+        expect(find.text('Flip for Meaning & Context'), findsOneWidget);
 
-      // Verify tap-to-speak syllable chips
-      expect(find.text('THEN'), findsOneWidget);
-      await tester.tap(find.text('THEN'));
-      await tester.pump();
-      verify(() => mockTts.speak('THEN')).called(1);
-      await tester.pump(const Duration(milliseconds: 1500));
+        // Verify tap-to-speak syllable chips
+        expect(find.text('THEN'), findsOneWidget);
+        await tester.tap(find.text('THEN'));
+        await tester.pump();
+        verify(() => mockTts.speak('THEN')).called(1);
+        await tester.pump(const Duration(milliseconds: 1500));
 
-      // Tap full audio button
-      expect(find.text('Tap for Full Audio'), findsOneWidget);
-      await tester.tap(find.text('Tap for Full Audio'));
-      await tester.pump();
-      verify(() => mockTts.speak('AUTHENTIC')).called(1);
-      await tester.pump(const Duration(milliseconds: 1500));
+        // Tap full audio button
+        expect(find.text('Tap for Full Audio'), findsOneWidget);
+        await tester.tap(find.text('Tap for Full Audio'));
+        await tester.pump();
+        verify(() => mockTts.speak('AUTHENTIC')).called(1);
+        await tester.pump(const Duration(milliseconds: 1500));
 
-      // Flip the card
-      await tester.ensureVisible(find.text('Flip for Meaning & Context'));
-      await tester.tap(find.text('Flip for Meaning & Context'));
-      await tester.pumpAndSettle();
+        // Tap Echo Pronunciation button
+        expect(find.text('Echo Pronunciation'), findsOneWidget);
+        await tester.ensureVisible(find.text('Echo Pronunciation'));
+        await tester.tap(find.text('Echo Pronunciation'));
+        await tester.pumpAndSettle();
+        expect(find.text('Pronunciation Verified ✓'), findsOneWidget);
 
-      expect(find.text('NATURAL COLLOCATIONS'), findsOneWidget);
-      expect(find.text('Front'), findsOneWidget);
-    });
+        // Flip the card to back face
+        await tester.ensureVisible(find.text('Flip for Meaning & Context'));
+        await tester.tap(find.text('Flip for Meaning & Context'));
+        await tester.pumpAndSettle();
+
+        expect(find.text('NATURAL COLLOCATIONS'), findsOneWidget);
+        expect(find.text('Front'), findsOneWidget);
+
+        // Flip back to front face
+        await tester.ensureVisible(find.text('Front'));
+        await tester.tap(find.text('Front'));
+        await tester.pumpAndSettle();
+        expect(find.text('Flip for Meaning & Context'), findsOneWidget);
+
+        // Tap "Compare Words" to view the Nuance Duel / Cluster Contrast Matrix
+        await tester.ensureVisible(find.text('Compare Words'));
+        await tester.tap(find.text('Compare Words'));
+        await tester.pumpAndSettle();
+
+        expect(find.text('HOW TO CHOOSE'), findsOneWidget);
+        expect(find.text('Word Usage Distinction'), findsOneWidget);
+        expect(find.text('Start Guided Practice ➔'), findsOneWidget);
+        expect(find.text('Cards'), findsOneWidget);
+
+        // Toggle back to individual card view via "Cards" button
+        await tester.ensureVisible(find.text('Cards'));
+        await tester.tap(find.text('Cards'));
+        await tester.pumpAndSettle();
+        expect(find.text('AUTHENTIC'), findsWidgets);
+      },
+    );
   });
 }
