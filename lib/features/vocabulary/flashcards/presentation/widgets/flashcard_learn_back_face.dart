@@ -120,43 +120,47 @@ class _FlashcardLearnBackFaceState extends State<FlashcardLearnBackFace> {
           children: [
             // Header: Word + Sound Button + Translate + Flip Front
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      quest.word ?? '',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 20.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : AppColors.slate950,
-                      ),
-                    ),
-                    SizedBox(width: 8.w),
-                    ScaleButton(
-                      onTap: () =>
-                          quest.word != null ? _speakText(quest.word!) : null,
-                      child: Container(
-                        padding: EdgeInsets.all(5.r),
-                        decoration: BoxDecoration(
-                          color: isDark
-                              ? AppColors.indigo500.withValues(alpha: 0.2)
-                              : AppColors.indigo500.withValues(alpha: 0.1),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.volume_up_rounded,
-                          size: 16.r,
-                          color: isDark
-                              ? AppColors.indigo400
-                              : AppColors.indigo600,
+                Expanded(
+                  child: Row(
+                    children: [
+                      Flexible(
+                        child: Text(
+                          quest.word ?? '',
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 20.sp,
+                            fontWeight: FontWeight.w900,
+                            color: isDark ? Colors.white : AppColors.slate950,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                      SizedBox(width: 6.w),
+                      ScaleButton(
+                        onTap: () =>
+                            quest.word != null ? _speakText(quest.word!) : null,
+                        child: Container(
+                          padding: EdgeInsets.all(5.r),
+                          decoration: BoxDecoration(
+                            color: isDark
+                                ? AppColors.indigo500.withValues(alpha: 0.2)
+                                : AppColors.indigo500.withValues(alpha: 0.1),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.volume_up_rounded,
+                            size: 16.r,
+                            color: isDark
+                                ? AppColors.indigo400
+                                : AppColors.indigo600,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
+                SizedBox(width: 6.w),
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -166,12 +170,12 @@ class _FlashcardLearnBackFaceState extends State<FlashcardLearnBackFace> {
                       onTranslationWithLanguage: (t, loc) =>
                           _applyTranslation(t, loc),
                     ),
-                    SizedBox(width: 8.w),
+                    SizedBox(width: 6.w),
                     ScaleButton(
                       onTap: widget.onFlip,
                       child: Container(
                         padding: EdgeInsets.symmetric(
-                          horizontal: 10.w,
+                          horizontal: 8.w,
                           vertical: 4.h,
                         ),
                         decoration: BoxDecoration(
@@ -181,18 +185,19 @@ class _FlashcardLearnBackFaceState extends State<FlashcardLearnBackFace> {
                           borderRadius: BorderRadius.circular(10.r),
                         ),
                         child: Row(
+                          mainAxisSize: MainAxisSize.min,
                           children: [
                             Icon(
                               Icons.arrow_back_ios_new_rounded,
                               size: 12.r,
                               color: AppColors.indigo500,
                             ),
-                            SizedBox(width: 4.w),
+                            SizedBox(width: 3.w),
                             Text(
                               'Front',
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 12.sp,
+                                fontSize: 11.sp,
                                 fontWeight: FontWeight.w700,
                                 color: isDark
                                     ? AppColors.slate300

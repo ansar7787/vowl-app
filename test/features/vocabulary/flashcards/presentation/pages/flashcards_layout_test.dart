@@ -101,6 +101,30 @@ void main() {
       );
 
       testWidgets(
+        'FlashcardLearnView BackFace renders cleanly without overflow on ${size.width}x${size.height}',
+        (tester) async {
+          await tester.pumpWidget(
+            buildResponsiveHarness(
+              screenSize: size,
+              child: FlashcardLearnView(
+                quest: testQuest,
+                isFlipped: true,
+                isSpeaking: false,
+                isDark: false,
+                onFlip: () => mockCb(),
+                onSpeakSyllable: (s) => mockCb.callString(s),
+                onSpeakFullWord: () => mockCb(),
+              ),
+            ),
+          );
+          await tester.pumpAndSettle();
+
+          expect(find.text('AUTHENTIC'), findsOneWidget);
+          expect(tester.takeException(), isNull);
+        },
+      );
+
+      testWidgets(
         'FlashcardPracticeChunkWeaver renders cleanly without overflow on ${size.width}x${size.height}',
         (tester) async {
           await tester.pumpWidget(
