@@ -10,7 +10,8 @@ import '../../data/services/flashcard_vault_service.dart';
 /// Interactive modal sheet to actively practice fading words and refresh retention to 100%.
 class FlashcardVaultQuickReviewDialog extends StatefulWidget {
   final List<FlashcardVaultEntry> entriesToReview;
-  final Future<void> Function(String word, int level) onWordMastered;
+  final Future<void> Function(String word, int level, {bool struggled})
+  onWordMastered;
 
   const FlashcardVaultQuickReviewDialog({
     super.key,
@@ -21,7 +22,8 @@ class FlashcardVaultQuickReviewDialog extends StatefulWidget {
   static Future<void> show(
     BuildContext context, {
     required List<FlashcardVaultEntry> entriesToReview,
-    required Future<void> Function(String word, int level) onWordMastered,
+    required Future<void> Function(String word, int level, {bool struggled})
+    onWordMastered,
   }) async {
     await showModalBottomSheet<void>(
       context: context,
@@ -43,6 +45,7 @@ class _FlashcardVaultQuickReviewDialogState
     extends State<FlashcardVaultQuickReviewDialog> {
   int _currentIndex = 0;
   bool _isRefreshed = false;
+  bool _lastReviewStruggled = false;
   bool _isFinished = false;
 
   void _speakCurrentWord(String word) {
@@ -53,13 +56,20 @@ class _FlashcardVaultQuickReviewDialogState
     }
   }
 
-  Future<void> _refreshCurrentWord() async {
+  Future<void> _recordReview({required bool struggled}) async {
     final entry = widget.entriesToReview[_currentIndex];
-    HapticFeedback.heavyImpact();
+    if (struggled) {
+      HapticFeedback.mediumImpact();
+    } else {
+      HapticFeedback.heavyImpact();
+    }
     _speakCurrentWord(entry.word);
 
-    setState(() => _isRefreshed = true);
-    await widget.onWordMastered(entry.word, entry.level);
+    setState(() {
+      _isRefreshed = true;
+      _lastReviewStruggled = struggled;
+    });
+    await widget.onWordMastered(entry.word, entry.level, struggled: struggled);
 
     await Future.delayed(const Duration(milliseconds: 650));
     if (!mounted) return;
@@ -68,18 +78,7 @@ class _FlashcardVaultQuickReviewDialogState
       setState(() {
         _currentIndex++;
         _isRefreshed = false;
-      });
-    } else {
-      setState(() => _isFinished = true);
-    }
-  }
-
-  void _skipOrNext() {
-    HapticFeedback.selectionClick();
-    if (_currentIndex < widget.entriesToReview.length - 1) {
-      setState(() {
-        _currentIndex++;
-        _isRefreshed = false;
+        _lastReviewStruggled = false;
       });
     } else {
       setState(() => _isFinished = true);
@@ -133,179 +132,191 @@ class _FlashcardVaultQuickReviewDialogState
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              'Word ${_currentIndex + 1} of $total',
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w700,
-                color: isDark ? AppColors.slate400 : AppColors.slate500,
-              ),
-            ),
-            IconButton(
-              icon: const Icon(Icons.close_rounded),
-              color: isDark ? AppColors.slate400 : AppColors.slate600,
-              onPressed: () => Navigator.of(context).maybePop(),
-            ),
-          ],
-        ),
-        SizedBox(height: 10.h),
-        Container(
-          padding: EdgeInsets.all(20.r),
-          decoration: BoxDecoration(
-            color: isDark ? AppColors.slate800 : AppColors.slate50,
-            borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(
-              color: _isRefreshed
-                  ? AppColors.emerald500
-                  : (isDark ? AppColors.slate700 : AppColors.slate200),
-              width: _isRefreshed ? 2.0 : 1.0,
-            ),
-          ),
-          child: Column(
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Flexible(
-                    child: Text(
-                      entry.word,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 24.sp,
-                        fontWeight: FontWeight.w900,
-                        color: isDark ? Colors.white : AppColors.slate900,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 8.w),
-                  ScaleButton(
-                    onTap: () {
-                      HapticFeedback.lightImpact();
-                      _speakCurrentWord(entry.word);
-                    },
-                    child: Container(
-                      padding: EdgeInsets.all(6.r),
-                      decoration: BoxDecoration(
-                        color: isDark ? AppColors.slate700 : AppColors.slate200,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Icon(
-                        Icons.volume_up_rounded,
-                        size: 18.r,
-                        color: AppColors.indigo500,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(height: 8.h),
               Text(
-                'Level ${entry.level} • Practiced ${entry.repetitionCount}x',
+                'Word ${_currentIndex + 1} of $total',
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 12.sp,
+                  fontWeight: FontWeight.w700,
                   color: isDark ? AppColors.slate400 : AppColors.slate500,
                 ),
               ),
-              SizedBox(height: 12.h),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
-                decoration: BoxDecoration(
-                  color: _isRefreshed
-                      ? AppColors.emerald500.withValues(alpha: 0.15)
-                      : AppColors.rose500.withValues(alpha: 0.15),
-                  borderRadius: BorderRadius.circular(12.r),
+              IconButton(
+                icon: const Icon(Icons.close_rounded),
+                color: isDark ? AppColors.slate400 : AppColors.slate600,
+                onPressed: () => Navigator.of(context).maybePop(),
+              ),
+            ],
+          ),
+          SizedBox(height: 10.h),
+          Container(
+            padding: EdgeInsets.all(20.r),
+            decoration: BoxDecoration(
+              color: isDark ? AppColors.slate800 : AppColors.slate50,
+              borderRadius: BorderRadius.circular(20.r),
+              border: Border.all(
+                color: _isRefreshed
+                    ? AppColors.emerald500
+                    : (isDark ? AppColors.slate700 : AppColors.slate200),
+                width: _isRefreshed ? 2.0 : 1.0,
+              ),
+            ),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Flexible(
+                      child: Text(
+                        entry.word,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 24.sp,
+                          fontWeight: FontWeight.w900,
+                          color: isDark ? Colors.white : AppColors.slate900,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 8.w),
+                    ScaleButton(
+                      onTap: () {
+                        HapticFeedback.lightImpact();
+                        _speakCurrentWord(entry.word);
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(6.r),
+                        decoration: BoxDecoration(
+                          color: isDark
+                              ? AppColors.slate700
+                              : AppColors.slate200,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          Icons.volume_up_rounded,
+                          size: 18.r,
+                          color: AppColors.indigo500,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                child: Text(
-                  _isRefreshed
-                      ? '✨ Memory Restored to 100%!'
-                      : '⚠️ Retention: ${entry.retentionPercentage}% (Fading)',
+                SizedBox(height: 8.h),
+                Text(
+                  'Level ${entry.level} • Practiced ${entry.repetitionCount}x',
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 11.5.sp,
-                    fontWeight: FontWeight.w800,
+                    fontSize: 12.sp,
+                    color: isDark ? AppColors.slate400 : AppColors.slate500,
+                  ),
+                ),
+                SizedBox(height: 12.h),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 4.h,
+                  ),
+                  decoration: BoxDecoration(
                     color: _isRefreshed
-                        ? AppColors.emerald500
-                        : AppColors.rose500,
+                        ? AppColors.emerald500.withValues(alpha: 0.15)
+                        : AppColors.rose500.withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(12.r),
+                  ),
+                  child: Text(
+                    _isRefreshed
+                        ? (_lastReviewStruggled
+                              ? '🟡 Hard: Review in 24h (70%)'
+                              : '✨ Mastered! Next in 4 Days (100%)')
+                        : '⚠️ Retention: ${entry.retentionPercentage}% (Fading)',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.5.sp,
+                      fontWeight: FontWeight.w800,
+                      color: _isRefreshed
+                          ? (_lastReviewStruggled
+                                ? Colors.amber
+                                : AppColors.emerald500)
+                          : AppColors.rose500,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 24.h),
+          Row(
+            children: [
+              Expanded(
+                child: ScaleButton(
+                  key: const ValueKey('btn_struggled'),
+                  onTap: () => _recordReview(struggled: true),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(vertical: 14.h),
+                    decoration: BoxDecoration(
+                      color: isDark ? AppColors.slate800 : AppColors.slate100,
+                      borderRadius: BorderRadius.circular(14.r),
+                      border: Border.all(
+                        color: isDark ? AppColors.slate700 : AppColors.slate300,
+                      ),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Struggled (24h) 🤔',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.5.sp,
+                          fontWeight: FontWeight.w700,
+                          color: isDark
+                              ? AppColors.slate300
+                              : AppColors.slate700,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(width: 12.w),
+              Expanded(
+                child: ScaleButton(
+                  key: const ValueKey('btn_refresh_memory'),
+                  onTap: () => _recordReview(struggled: false),
+                  child: Container(
+                    padding: EdgeInsets.symmetric(vertical: 14.h),
+                    decoration: BoxDecoration(
+                      gradient: const LinearGradient(
+                        colors: [AppColors.indigo500, AppColors.emerald500],
+                      ),
+                      borderRadius: BorderRadius.circular(14.r),
+                      boxShadow: [
+                        BoxShadow(
+                          color: AppColors.emerald500.withValues(alpha: 0.3),
+                          blurRadius: 8.r,
+                          offset: Offset(0, 3.h),
+                        ),
+                      ],
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Remembered! ⚡',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 13.sp,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ),
             ],
           ),
-        ),
-        SizedBox(height: 24.h),
-        Row(
-          children: [
-            Expanded(
-              child: ScaleButton(
-                onTap: _skipOrNext,
-                child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 14.h),
-                  decoration: BoxDecoration(
-                    color: isDark ? AppColors.slate800 : AppColors.slate100,
-                    borderRadius: BorderRadius.circular(14.r),
-                    border: Border.all(
-                      color: isDark ? AppColors.slate700 : AppColors.slate300,
-                    ),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Still Learning 🤔',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w700,
-                        color: isDark ? AppColors.slate300 : AppColors.slate700,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(width: 12.w),
-            Expanded(
-              child: ScaleButton(
-                key: const ValueKey('btn_refresh_memory'),
-                onTap: _refreshCurrentWord,
-                child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 14.h),
-                  decoration: BoxDecoration(
-                    gradient: const LinearGradient(
-                      colors: [AppColors.indigo500, AppColors.emerald500],
-                    ),
-                    borderRadius: BorderRadius.circular(14.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: AppColors.emerald500.withValues(alpha: 0.3),
-                        blurRadius: 8.r,
-                        offset: Offset(0, 3.h),
-                      ),
-                    ],
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Remembered! ⚡',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ],
-    ),
-  );
-}
+        ],
+      ),
+    );
+  }
 
   Widget _buildCompletionView(bool isDark) {
     return Center(

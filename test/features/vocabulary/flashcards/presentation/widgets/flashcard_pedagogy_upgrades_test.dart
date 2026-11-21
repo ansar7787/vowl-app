@@ -12,6 +12,8 @@ import 'package:vowl/features/vocabulary/flashcards/presentation/controllers/fla
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_collocation_snap_card.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_precision_strike_view.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_speed_slam_view.dart';
+import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_syllable_chips.dart';
+import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_vault_quick_review_dialog.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_vault_sheet.dart';
 
 class MockHapticService extends Mock implements HapticService {}
@@ -114,7 +116,7 @@ void main() {
         await tester.pump(const Duration(milliseconds: 300));
 
         // Memory restored badge
-        expect(find.text('✨ Memory Restored to 100%!'), findsOneWidget);
+        expect(find.textContaining('Mastered! Next in 4 Days'), findsOneWidget);
 
         await tester.pump(const Duration(milliseconds: 700));
         await tester.pumpAndSettle();
@@ -293,8 +295,82 @@ void main() {
 
         // Quick-Review dialog opens for this single word
         expect(find.text('Word 1 of 1'), findsOneWidget);
-        expect(find.byKey(const ValueKey('btn_refresh_memory')), findsOneWidget);
+        expect(
+          find.byKey(const ValueKey('btn_refresh_memory')),
+          findsOneWidget,
+        );
+        expect(find.byKey(const ValueKey('btn_struggled')), findsOneWidget);
         expect(find.text('SERENDIPITY'), findsWidgets);
+      },
+    );
+
+    testWidgets(
+      'FlashcardSyllableChips renders both Normal and Slow Turtle audio triggers',
+      (tester) async {
+        bool normalSpoke = false;
+        bool slowSpoke = false;
+
+        await tester.pumpWidget(
+          buildTestableWidget(
+            FlashcardSyllableChips(
+              syllables: const ['AU', 'THEN', 'TIC'],
+              stressedIndex: 1,
+              isSpeaking: false,
+              isDark: false,
+              onSpeakSyllable: (_) {},
+              onSpeakFullWord: () => normalSpoke = true,
+              onSpeakSlowWord: () => slowSpoke = true,
+            ),
+          ),
+        );
+        await tester.pumpAndSettle();
+
+        expect(find.byKey(const ValueKey('btn_full_audio')), findsOneWidget);
+        expect(find.byKey(const ValueKey('btn_slow_audio')), findsOneWidget);
+        expect(find.text('Normal'), findsOneWidget);
+        expect(find.text('Slow (0.3x)'), findsOneWidget);
+
+        await tester.tap(find.byKey(const ValueKey('btn_full_audio')));
+        expect(normalSpoke, isTrue);
+
+        await tester.tap(find.byKey(const ValueKey('btn_slow_audio')));
+        expect(slowSpoke, isTrue);
+      },
+    );
+
+    testWidgets(
+      'FlashcardVaultQuickReviewDialog supports 2-tier cognitive FSRS grading',
+      (tester) async {
+        bool? wasStruggled;
+        final entry = FlashcardVaultEntry(
+          word: 'AUTHENTIC',
+          level: 1,
+          lastTestedAt: DateTime.now().subtract(const Duration(days: 2)),
+          stabilityHours: 24.0,
+          repetitionCount: 1,
+        );
+
+        await tester.pumpWidget(
+          buildTestableWidget(
+            FlashcardVaultQuickReviewDialog(
+              entriesToReview: [entry],
+              onWordMastered: (word, level, {struggled = false}) async {
+                wasStruggled = struggled;
+              },
+            ),
+          ),
+        );
+        await tester.pumpAndSettle();
+
+        // Tap Struggled button
+        await tester.tap(find.byKey(const ValueKey('btn_struggled')));
+        await tester.pump();
+
+        expect(wasStruggled, isTrue);
+        expect(find.textContaining('Hard: Review in 24h'), findsOneWidget);
+
+        await tester.pump(const Duration(milliseconds: 700));
+        await tester.pumpAndSettle();
       },
     );
   });

@@ -12,6 +12,7 @@ class FlashcardSyllableChips extends StatelessWidget {
   final bool isDark;
   final void Function(String syllable) onSpeakSyllable;
   final VoidCallback onSpeakFullWord;
+  final VoidCallback? onSpeakSlowWord;
 
   const FlashcardSyllableChips({
     super.key,
@@ -21,6 +22,7 @@ class FlashcardSyllableChips extends StatelessWidget {
     required this.isDark,
     required this.onSpeakSyllable,
     required this.onSpeakFullWord,
+    this.onSpeakSlowWord,
   });
 
   @override
@@ -110,76 +112,95 @@ class FlashcardSyllableChips extends StatelessWidget {
 
         SizedBox(height: 12.h),
 
-        // Full word audio trigger & animated sound wave indicator
-        ScaleButton(
-          onTap: () {
-            HapticFeedback.lightImpact();
-            onSpeakFullWord();
-          },
-          child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-            decoration: BoxDecoration(
-              color: isSpeaking
-                  ? AppColors.indigo500.withValues(alpha: 0.2)
-                  : Colors.transparent,
-              borderRadius: BorderRadius.circular(20.r),
-              border: Border.all(
-                color: isSpeaking
-                    ? AppColors.indigo500
-                    : (isDark ? AppColors.slate700 : AppColors.slate300),
-              ),
-            ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(
-                  isSpeaking
-                      ? Icons.volume_up_rounded
-                      : Icons.volume_down_rounded,
-                  size: 16.r,
-                  color: isDark ? AppColors.indigo400 : AppColors.indigo600,
-                ),
-                SizedBox(width: 6.w),
-                Flexible(
-                  child: Text(
-                    isSpeaking ? 'Playing Audio...' : 'Tap for Full Audio',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 13.sp,
-                      fontWeight: FontWeight.w600,
-                      color: isDark ? AppColors.slate300 : AppColors.slate700,
-                    ),
+        // Dual-cadence audio controls: Normal full audio & 🐢 Slow phoneme audio
+        Wrap(
+          spacing: 8.w,
+          runSpacing: 6.h,
+          alignment: WrapAlignment.center,
+          children: [
+            ScaleButton(
+              key: const ValueKey('btn_full_audio'),
+              onTap: () {
+                HapticFeedback.lightImpact();
+                onSpeakFullWord();
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+                decoration: BoxDecoration(
+                  color: isSpeaking
+                      ? AppColors.indigo500.withValues(alpha: 0.2)
+                      : Colors.transparent,
+                  borderRadius: BorderRadius.circular(20.r),
+                  border: Border.all(
+                    color: isSpeaking
+                        ? AppColors.indigo500
+                        : (isDark ? AppColors.slate700 : AppColors.slate300),
                   ),
                 ),
-                if (isSpeaking) ...[
-                  SizedBox(width: 8.w),
-                  Row(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      isSpeaking
+                          ? Icons.volume_up_rounded
+                          : Icons.volume_down_rounded,
+                      size: 16.r,
+                      color: isDark ? AppColors.indigo400 : AppColors.indigo600,
+                    ),
+                    SizedBox(width: 6.w),
+                    Text(
+                      isSpeaking ? 'Playing...' : 'Normal',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.5.sp,
+                        fontWeight: FontWeight.w600,
+                        color: isDark ? AppColors.slate300 : AppColors.slate700,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            if (onSpeakSlowWord != null)
+              ScaleButton(
+                key: const ValueKey('btn_slow_audio'),
+                onTap: () {
+                  HapticFeedback.lightImpact();
+                  onSpeakSlowWord!();
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 12.w,
+                    vertical: 6.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: isDark ? AppColors.slate800 : AppColors.slate100,
+                    borderRadius: BorderRadius.circular(20.r),
+                    border: Border.all(
+                      color: isDark ? AppColors.slate700 : AppColors.slate300,
+                    ),
+                  ),
+                  child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Container(
-                        width: 3.w,
-                        height: 12.h,
-                        color: AppColors.indigo400,
-                        margin: EdgeInsets.symmetric(horizontal: 1.w),
-                      ),
-                      Container(
-                        width: 3.w,
-                        height: 16.h,
-                        color: AppColors.indigo400,
-                        margin: EdgeInsets.symmetric(horizontal: 1.w),
-                      ),
-                      Container(
-                        width: 3.w,
-                        height: 10.h,
-                        color: AppColors.indigo400,
-                        margin: EdgeInsets.symmetric(horizontal: 1.w),
+                      Text('🐢', style: TextStyle(fontSize: 13.sp)),
+                      SizedBox(width: 5.w),
+                      Text(
+                        'Slow (0.3x)',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.5.sp,
+                          fontWeight: FontWeight.w700,
+                          color: isDark
+                              ? AppColors.slate300
+                              : AppColors.slate700,
+                        ),
                       ),
                     ],
                   ),
-                ],
-              ],
-            ),
-          ),
+                ),
+              ),
+          ],
         ),
       ],
     );

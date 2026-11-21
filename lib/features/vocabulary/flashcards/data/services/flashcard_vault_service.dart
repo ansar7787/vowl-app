@@ -9,6 +9,12 @@ enum RetentionGrade {
   critical, // < 50%
 }
 
+/// FSRS-inspired cognitive review grade distinguishing easy recall from difficult recall.
+enum CognitiveReviewGrade {
+  struggled, // Hard recall: 70% retention, 24h stability interval
+  mastered, // Instant recall: 100% retention, multi-day stability interval
+}
+
 /// Persistent record of a mastered vocabulary word in the Lexicon Vault.
 class FlashcardVaultEntry {
   final String word;
@@ -83,10 +89,12 @@ class FlashcardVaultService {
   }
 
   /// Records a successful mastery event for a target word.
+  /// If [struggled] is true, sets a conservative 24h stability interval (70% retention).
   Future<void> recordMastery(
     String word,
     int level, {
     bool perfect = true,
+    bool struggled = false,
   }) async {
     if (word.trim().isEmpty) return;
     final cleanWord = word.trim().toUpperCase();
@@ -109,26 +117,47 @@ class FlashcardVaultService {
     if (existingJson != null) {
       final existing = FlashcardVaultEntry.fromJson(existingJson);
       final newCount = existing.repetitionCount + 1;
-      final multiplier = perfect ? 2.5 : 1.5;
-      final newStability = (existing.stabilityHours * multiplier).clamp(
-        24.0,
-        8760.0,
-      ); // Up to 1 year
+      final double newStability;
+      final DateTime testTime;
+
+      if (struggled) {
+        newStability = 24.0;
+        testTime = DateTime.now().subtract(
+          const Duration(hours: 8),
+        ); // ~71% retention
+      } else {
+        final multiplier = perfect ? 2.5 : 1.5;
+        newStability = (existing.stabilityHours * multiplier).clamp(
+          24.0,
+          8760.0,
+        ); // Up to 1 year
+        testTime = DateTime.now();
+      }
 
       final updated = FlashcardVaultEntry(
         word: cleanWord,
         level: level,
-        lastTestedAt: DateTime.now(),
+        lastTestedAt: testTime,
         repetitionCount: newCount,
         stabilityHours: newStability,
       );
       vaultMap[cleanWord] = updated.toJson();
     } else {
-      final baseStability = perfect ? 48.0 : 24.0;
+      final double baseStability;
+      final DateTime testTime;
+
+      if (struggled) {
+        baseStability = 24.0;
+        testTime = DateTime.now().subtract(const Duration(hours: 8));
+      } else {
+        baseStability = perfect ? 48.0 : 24.0;
+        testTime = DateTime.now();
+      }
+
       final entry = FlashcardVaultEntry(
         word: cleanWord,
         level: level,
-        lastTestedAt: DateTime.now(),
+        lastTestedAt: testTime,
         repetitionCount: 1,
         stabilityHours: baseStability,
       );

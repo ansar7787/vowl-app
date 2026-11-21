@@ -36,7 +36,15 @@ void main() {
     when(() => mockHaptic.selection()).thenAnswer((_) async {});
     when(() => mockHaptic.light()).thenAnswer((_) async {});
     when(() => mockHaptic.success()).thenAnswer((_) async {});
-    when(() => mockTts.speak(any())).thenAnswer((_) async {});
+    when(
+      () => mockTts.speak(
+        any(),
+        rate: any(named: 'rate'),
+        locale: any(named: 'locale'),
+        pauseMarkers: any(named: 'pauseMarkers'),
+        forcedPreset: any(named: 'forcedPreset'),
+      ),
+    ).thenAnswer((_) async {});
     when(() => mockTts.engineStatus).thenReturn(TtsEngineStatus.ready);
 
     when(() => mockSpeech.initializeStt()).thenAnswer((_) async => true);
@@ -112,14 +120,14 @@ void main() {
         expect(find.text('THEN'), findsOneWidget);
         await tester.tap(find.text('THEN'));
         await tester.pump();
-        verify(() => mockTts.speak('THEN')).called(1);
+        verify(() => mockTts.speak('THEN', rate: any(named: 'rate'))).called(1);
         await tester.pump(const Duration(milliseconds: 1500));
 
         // Tap full audio button
-        expect(find.text('Tap for Full Audio'), findsOneWidget);
-        await tester.tap(find.text('Tap for Full Audio'));
+        expect(find.byKey(const ValueKey('btn_full_audio')), findsOneWidget);
+        await tester.tap(find.byKey(const ValueKey('btn_full_audio')));
         await tester.pump();
-        verify(() => mockTts.speak('AUTHENTIC')).called(1);
+        verify(() => mockTts.speak('AUTHENTIC', rate: any(named: 'rate'))).called(1);
         await tester.pump(const Duration(milliseconds: 1500));
 
         // Tap Practice Speaking button

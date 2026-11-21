@@ -30,6 +30,8 @@ class FlashcardsPracticeScreen extends StatefulWidget {
 
 class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
   List<PhasedQuest> _quests = const [];
+  final List<PhasedQuest> _remediationQueue = [];
+  bool _isInRemediation = false;
   bool _isLoading = true;
   int _currentIndex = 0;
 
@@ -84,9 +86,15 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
     final quest = _quests[index];
 
     final rawChunks = quest.rawExtra['scrambledChunks'] as List<dynamic>?;
-    final chunks = rawChunks != null
+    List<String> chunks = rawChunks != null
         ? rawChunks.map((e) => e.toString()).toList()
         : (quest.word != null ? [quest.word!] : <String>[]);
+
+    final targetWord = (quest.word ?? '').toUpperCase();
+    if (chunks.join('').toUpperCase() == targetWord && chunks.length >= 2) {
+      final distractor = targetWord.contains('TIC') ? 'TION' : 'ING';
+      chunks = [...chunks, distractor]..shuffle();
+    }
 
     _availableChunksNotifier.value = List<String>.from(chunks);
     _placedChunksNotifier.value = [];
@@ -153,16 +161,16 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
       if (!isCorrect) {
         _shakeTrigger++;
         _consecutiveFailures++;
+        final cur = _quests[_currentIndex];
+        if (!_remediationQueue.contains(cur)) _remediationQueue.add(cur);
         if (_consecutiveFailures >= 3) {
           FlashcardLearnRefresherSheet.show(
             context,
             level: widget.level,
-            onKeepPracticing: () {
-              setState(() {
-                _consecutiveFailures = 0;
-                _initQuestInteraction(_currentIndex);
-              });
-            },
+            onKeepPracticing: () => setState(() {
+              _consecutiveFailures = 0;
+              _initQuestInteraction(_currentIndex);
+            }),
           );
         }
       } else {
@@ -200,7 +208,11 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
     setState(() {
       _selectedCollocationIndex = optionIndex;
       _hasCheckedCollocation = true;
-      if (!isCorrect) _shakeTrigger++;
+      if (!isCorrect) {
+        _shakeTrigger++;
+        final cur = _quests[_currentIndex];
+        if (!_remediationQueue.contains(cur)) _remediationQueue.add(cur);
+      }
     });
 
     if (isCorrect) {
@@ -245,6 +257,20 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
         _consecutiveFailures = 0;
         _initQuestInteraction(_currentIndex);
       });
+    } else if (_remediationQueue.isNotEmpty) {
+      setState(() {
+        _quests = List.from(_remediationQueue);
+        _remediationQueue.clear();
+        _isInRemediation = true;
+        _currentIndex = 0;
+        _consecutiveFailures = 0;
+        _initQuestInteraction(0);
+      });
+      CustomSnackBar.show(
+        context: context,
+        message: 'Reinforcing missed items until 100% mastered! 🔄',
+        type: CustomSnackBarType.info,
+      );
     } else {
       _finishPracticePhase();
     }
@@ -310,8 +336,12 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
     final correctCollocationIndex =
         (quest.rawExtra['correctCollocationIndex'] as num?)?.toInt() ?? 0;
 
+    final phaseTitle = _isInRemediation
+        ? 'Reinforce ${_currentIndex + 1} of ${_quests.length} 🔄'
+        : 'Exercise ${_currentIndex + 1} of ${_quests.length}';
+
     return PracticePhaseScaffold(
-      title: 'Exercise ${_currentIndex + 1} of ${_quests.length}',
+      title: phaseTitle,
       gameType: 'flashcards',
       level: widget.level,
       currentExerciseIndex: _currentIndex,
@@ -351,45 +381,38 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
               onClearChunks: () =>
                   setState(() => _initQuestInteraction(_currentIndex)),
             ),
-            if (_showHint && quest.hint != null) ...[
-              SizedBox(height: 16.h),
-              Container(
-                padding: EdgeInsets.all(12.r),
-                decoration: BoxDecoration(
-                  color: Colors.amber.withValues(alpha: isDark ? 0.2 : 0.1),
-                  borderRadius: BorderRadius.circular(12.r),
-                  border: Border.all(
-                    color: Colors.amber.withValues(alpha: 0.4),
-                  ),
-                ),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.lightbulb_rounded,
-                      size: 18.r,
-                      color: Colors.amber,
-                    ),
-                    SizedBox(width: 8.w),
-                    Expanded(
-                      child: Text(
-                        quest.hint!,
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w600,
-                          color: isDark
-                              ? Colors.amber.shade200
-                              : Colors.amber.shade900,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
+            if (_showHint && quest.hint != null)
+              _buildHintBox(quest.hint!, isDark),
           ],
         ),
       ),
     );
   }
+
+  Widget _buildHintBox(String hint, bool isDark) => Container(
+    margin: EdgeInsets.only(top: 16.h),
+    padding: EdgeInsets.all(12.r),
+    decoration: BoxDecoration(
+      color: Colors.amber.withValues(alpha: isDark ? 0.2 : 0.1),
+      borderRadius: BorderRadius.circular(12.r),
+      border: Border.all(color: Colors.amber.withValues(alpha: 0.4)),
+    ),
+    child: Row(
+      children: [
+        Icon(Icons.lightbulb_rounded, size: 18.r, color: Colors.amber),
+        SizedBox(width: 8.w),
+        Expanded(
+          child: Text(
+            hint,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 13.sp,
+              fontWeight: FontWeight.w600,
+              color: isDark ? Colors.amber.shade200 : Colors.amber.shade900,
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
 }

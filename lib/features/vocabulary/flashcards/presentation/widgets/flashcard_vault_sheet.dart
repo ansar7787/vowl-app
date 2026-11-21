@@ -42,8 +42,13 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
     await FlashcardVaultQuickReviewDialog.show(
       context,
       entriesToReview: targets,
-      onWordMastered: (word, level) async {
-        await FlashcardVaultService().recordMastery(word, level, perfect: true);
+      onWordMastered: (word, level, {struggled = false}) async {
+        await FlashcardVaultService().recordMastery(
+          word,
+          level,
+          perfect: !struggled,
+          struggled: struggled,
+        );
       },
     );
     final updated = await FlashcardVaultService().getVaultEntries();

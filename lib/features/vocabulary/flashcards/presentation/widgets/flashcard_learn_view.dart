@@ -17,6 +17,7 @@ class FlashcardLearnView extends StatelessWidget {
   final VoidCallback onFlip;
   final void Function(String syllable) onSpeakSyllable;
   final VoidCallback onSpeakFullWord;
+  final VoidCallback? onSpeakSlowWord;
   final VoidCallback? onSpeakExample;
   final int clusterIndex;
   final int clusterTotal;
@@ -30,6 +31,7 @@ class FlashcardLearnView extends StatelessWidget {
     required this.onFlip,
     required this.onSpeakSyllable,
     required this.onSpeakFullWord,
+    this.onSpeakSlowWord,
     this.onSpeakExample,
     this.clusterIndex = 0,
     this.clusterTotal = 3,
@@ -37,46 +39,25 @@ class FlashcardLearnView extends StatelessWidget {
 
   IconData _resolveMnemonicIcon(String domain) {
     final d = domain.toLowerCase();
-    if (d.contains('culin') ||
-        d.contains('food') ||
-        d.contains('tradition') ||
-        d.contains('recipe')) {
+    if (d.contains('culin') || d.contains('food') || d.contains('recipe')) {
       return Icons.restaurant_rounded;
     }
-    if (d.contains('legal') ||
-        d.contains('law') ||
-        d.contains('procedur') ||
-        d.contains('court')) {
+    if (d.contains('legal') || d.contains('law') || d.contains('court')) {
       return Icons.gavel_rounded;
     }
-    if (d.contains('emotion') ||
-        d.contains('feel') ||
-        d.contains('charact') ||
-        d.contains('sincer')) {
+    if (d.contains('emotion') || d.contains('feel') || d.contains('charact')) {
       return Icons.favorite_rounded;
     }
-    if (d.contains('sci') ||
-        d.contains('tech') ||
-        d.contains('data') ||
-        d.contains('comput')) {
+    if (d.contains('sci') || d.contains('tech') || d.contains('data')) {
       return Icons.biotech_rounded;
     }
-    if (d.contains('art') ||
-        d.contains('design') ||
-        d.contains('creat') ||
-        d.contains('cultur')) {
+    if (d.contains('art') || d.contains('design') || d.contains('creat')) {
       return Icons.palette_rounded;
     }
-    if (d.contains('business') ||
-        d.contains('work') ||
-        d.contains('lead') ||
-        d.contains('finan')) {
+    if (d.contains('business') || d.contains('work') || d.contains('lead')) {
       return Icons.business_center_rounded;
     }
-    if (d.contains('nature') ||
-        d.contains('eco') ||
-        d.contains('plant') ||
-        d.contains('wild')) {
+    if (d.contains('nature') || d.contains('eco') || d.contains('plant')) {
       return Icons.eco_rounded;
     }
     return Icons.lightbulb_outline_rounded;
@@ -327,6 +308,7 @@ class FlashcardLearnView extends StatelessWidget {
             isDark: isDark,
             onSpeakSyllable: onSpeakSyllable,
             onSpeakFullWord: onSpeakFullWord,
+            onSpeakSlowWord: onSpeakSlowWord,
           ),
 
           SizedBox(height: 10.h),

@@ -77,13 +77,14 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
     }
   }
 
-  void _speakText(String text) {
+  void _speakText(String text, {double rate = 0.44}) {
     if (di.sl.isRegistered<TtsService>()) {
       try {
         _speechTimer?.cancel();
         _isSpeakingNotifier.value = true;
-        di.sl<TtsService>().speak(text);
-        _speechTimer = Timer(const Duration(milliseconds: 1400), () {
+        di.sl<TtsService>().speak(text, rate: rate);
+        final durationMs = rate < 0.35 ? 2200 : 1400;
+        _speechTimer = Timer(Duration(milliseconds: durationMs), () {
           if (mounted) _isSpeakingNotifier.value = false;
         });
       } catch (_) {
@@ -304,9 +305,17 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
                             onFlip: _flipCard,
                             clusterIndex: _currentIndex,
                             clusterTotal: _quests.length,
-                            onSpeakSyllable: (syllable) => _speakText(syllable),
+                            onSpeakSyllable: (syllable) =>
+                                _speakText(syllable, rate: 0.28),
                             onSpeakFullWord: () {
-                              if (quest.word != null) _speakText(quest.word!);
+                              if (quest.word != null) {
+                                _speakText(quest.word!, rate: 0.44);
+                              }
+                            },
+                            onSpeakSlowWord: () {
+                              if (quest.word != null) {
+                                _speakText(quest.word!, rate: 0.28);
+                              }
                             },
                             onSpeakExample: () {
                               if (quest.example != null) {

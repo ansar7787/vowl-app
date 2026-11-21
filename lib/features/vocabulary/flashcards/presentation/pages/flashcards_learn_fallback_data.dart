@@ -84,9 +84,9 @@ List<PhasedQuest> getFlashcardPracticeFallbackQuests(int level) => [
       'hint': 'Think of a 3-syllable word meaning genuine.',
       'scrambledChunks': ['TION', 'THEN', 'IC', 'AU', 'TIC'],
       'collocationOptions': [
-        'authentic weather',
+        'authentic replica',
         'authentic cuisine',
-        'authentic price',
+        'authentic counterfeit',
       ],
       'correctCollocationIndex': 1,
     },
