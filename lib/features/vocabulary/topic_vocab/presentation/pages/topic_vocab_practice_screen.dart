@@ -251,7 +251,7 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
 
     if (_isLoading || _controller == null) {
       return PracticePhaseScaffold(
-        title: 'Cluster Fusion Gym',
+        title: 'Practice: Word Groups',
         gameType: 'topicVocab',
         level: widget.level,
         currentExerciseIndex: 0,
@@ -283,13 +283,13 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
     final isDone = _controller!.isComplete;
 
     return PracticePhaseScaffold(
-      title: 'Cluster Fusion Gym',
+      title: 'Practice: Word Groups',
       gameType: 'topicVocab',
       level: widget.level,
       currentExerciseIndex: _currentIndex,
       totalExercises: _quests.length,
       isActionEnabled: isDone,
-      actionLabel: isLast ? 'Finish Gym & Enter Mastery' : 'Next Fusion Board',
+      actionLabel: isLast ? 'Start Mastery Challenge' : 'Next Word Group',
       onComplete: _handleNext,
       onHint: _handleHint,
       isHintAvailable: !isDone,

@@ -204,8 +204,8 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 100));
 
-      // Fuse button should show (3/3)
-      final fuseButton = find.text('FUSE CLUSTER (3/3)');
+      // Group button should show (3/3)
+      final fuseButton = find.text('Group Words (3/3)');
       expect(fuseButton, findsOneWidget);
 
       await tester.ensureVisible(fuseButton);

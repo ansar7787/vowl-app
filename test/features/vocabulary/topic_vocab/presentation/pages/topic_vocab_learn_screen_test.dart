@@ -104,7 +104,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       expect(find.byType(TopicBlueprintTree), findsOneWidget);
-      expect(find.text('Topic Vocab Lab'), findsOneWidget);
+      expect(find.text('Topic Vocabulary'), findsOneWidget);
       expect(find.text('Thermal Spectrum: Heat vs Cold'), findsOneWidget);
 
       final actionFinder = find.textContaining('Start Practice');

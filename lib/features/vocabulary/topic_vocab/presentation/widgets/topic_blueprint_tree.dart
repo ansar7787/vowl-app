@@ -4,7 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
-/// Interactive semantic blueprint tree for the Learn phase.
+/// Clean semantic word overview for the Learn phase with balanced typography
+/// and real-world English usage context.
 class TopicBlueprintTree extends StatelessWidget {
   final String conceptTitle;
   final String topicEmoji;
@@ -33,16 +34,16 @@ class TopicBlueprintTree extends StatelessWidget {
         children: [
           // Header Card
           Container(
-            padding: EdgeInsets.all(14.r),
+            padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
             decoration: BoxDecoration(
-              color: accentColor.withValues(alpha: isDark ? 0.15 : 0.08),
-              borderRadius: BorderRadius.circular(16.r),
-              border: Border.all(color: accentColor.withValues(alpha: 0.3)),
+              color: accentColor.withValues(alpha: isDark ? 0.14 : 0.08),
+              borderRadius: BorderRadius.circular(14.r),
+              border: Border.all(color: accentColor.withValues(alpha: 0.25)),
             ),
             child: Row(
               children: [
-                Text(topicEmoji, style: TextStyle(fontSize: 26.sp)),
-                SizedBox(width: 12.w),
+                Text(topicEmoji, style: TextStyle(fontSize: 24.sp)),
+                SizedBox(width: 10.w),
                 Expanded(
                   child: AutoSizeText(
                     conceptTitle,
@@ -50,7 +51,7 @@ class TopicBlueprintTree extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 16.sp,
-                      fontWeight: FontWeight.w800,
+                      fontWeight: FontWeight.w700,
                       color: isDark ? Colors.white : const Color(0xFF0F172A),
                     ),
                   ),
@@ -58,27 +59,27 @@ class TopicBlueprintTree extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 12.h),
+          SizedBox(height: 10.h),
 
           // Contrast Insight
           if (contrastInsight != null && contrastInsight!.isNotEmpty) ...[
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
               decoration: BoxDecoration(
                 color: AppColors.amber500.withValues(
-                  alpha: isDark ? 0.14 : 0.08,
+                  alpha: isDark ? 0.12 : 0.08,
                 ),
-                borderRadius: BorderRadius.circular(14.r),
+                borderRadius: BorderRadius.circular(12.r),
                 border: Border.all(
-                  color: AppColors.amber500.withValues(alpha: 0.35),
+                  color: AppColors.amber500.withValues(alpha: 0.3),
                 ),
               ),
               child: Row(
                 children: [
                   Icon(
-                    Icons.compare_arrows_rounded,
+                    Icons.info_outline_rounded,
                     color: AppColors.amber500,
-                    size: 20.r,
+                    size: 18.r,
                   ),
                   SizedBox(width: 8.w),
                   Expanded(
@@ -87,7 +88,7 @@ class TopicBlueprintTree extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 12.sp,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w500,
                         color: isDark
                             ? Colors.white70
                             : const Color(0xFF334155),
@@ -97,13 +98,13 @@ class TopicBlueprintTree extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 14.h),
+            SizedBox(height: 12.h),
           ],
 
           // Category Cards
           ...categories.map((cat) {
             final categoryMap = cat as Map<String, dynamic>;
-            final catName = categoryMap['name'] as String? ?? 'Category';
+            final catName = categoryMap['name'] as String? ?? 'Topic';
             final catEmoji = categoryMap['emoji'] as String? ?? '📌';
             final catDesc =
                 categoryMap['desc'] as String? ??
@@ -112,17 +113,17 @@ class TopicBlueprintTree extends StatelessWidget {
             final wordsList = (categoryMap['words'] as List<dynamic>?) ?? [];
 
             return Container(
-              margin: EdgeInsets.only(bottom: 16.h),
-              padding: EdgeInsets.all(14.r),
+              margin: EdgeInsets.only(bottom: 12.h),
+              padding: EdgeInsets.all(12.r),
               decoration: BoxDecoration(
                 color: isDark
-                    ? Colors.white.withValues(alpha: 0.05)
-                    : Colors.black.withValues(alpha: 0.03),
-                borderRadius: BorderRadius.circular(18.r),
+                    ? Colors.white.withValues(alpha: 0.04)
+                    : Colors.black.withValues(alpha: 0.02),
+                borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(
                   color: isDark
-                      ? Colors.white.withValues(alpha: 0.1)
-                      : Colors.black.withValues(alpha: 0.08),
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : Colors.black.withValues(alpha: 0.06),
                 ),
               ),
               child: Column(
@@ -131,7 +132,7 @@ class TopicBlueprintTree extends StatelessWidget {
                   // Category Title
                   Row(
                     children: [
-                      Text(catEmoji, style: TextStyle(fontSize: 20.sp)),
+                      Text(catEmoji, style: TextStyle(fontSize: 18.sp)),
                       SizedBox(width: 8.w),
                       Expanded(
                         child: AutoSizeText(
@@ -140,7 +141,7 @@ class TopicBlueprintTree extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 15.sp,
-                            fontWeight: FontWeight.w800,
+                            fontWeight: FontWeight.w700,
                             color: accentColor,
                           ),
                         ),
@@ -154,11 +155,12 @@ class TopicBlueprintTree extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 12.sp,
+                        fontWeight: FontWeight.w400,
                         color: isDark ? Colors.white60 : Colors.black54,
                       ),
                     ),
                   ],
-                  SizedBox(height: 12.h),
+                  SizedBox(height: 10.h),
 
                   // Word items
                   ...wordsList.map((w) {
@@ -169,7 +171,7 @@ class TopicBlueprintTree extends StatelessWidget {
                     final coll = wMap['coll'] as String? ?? '';
 
                     return Container(
-                      margin: EdgeInsets.only(bottom: 10.h),
+                      margin: EdgeInsets.only(bottom: 8.h),
                       padding: EdgeInsets.all(10.r),
                       decoration: BoxDecoration(
                         color: isDark
@@ -178,8 +180,8 @@ class TopicBlueprintTree extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12.r),
                         border: Border.all(
                           color: isDark
-                              ? Colors.white.withValues(alpha: 0.08)
-                              : Colors.black.withValues(alpha: 0.06),
+                              ? Colors.white.withValues(alpha: 0.07)
+                              : Colors.black.withValues(alpha: 0.05),
                         ),
                       ),
                       child: Column(
@@ -195,7 +197,7 @@ class TopicBlueprintTree extends StatelessWidget {
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 14.sp,
-                                        fontWeight: FontWeight.w800,
+                                        fontWeight: FontWeight.w600,
                                         color: isDark
                                             ? Colors.white
                                             : const Color(0xFF0F172A),
@@ -208,6 +210,7 @@ class TopicBlueprintTree extends StatelessWidget {
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 11.sp,
+                                          fontWeight: FontWeight.w400,
                                           color: isDark
                                               ? Colors.white38
                                               : Colors.black38,
@@ -220,17 +223,18 @@ class TopicBlueprintTree extends StatelessWidget {
                               TtsSpeakerButtonWidget(
                                 text: word,
                                 color: accentColor,
-                                size: 28.r,
+                                size: 26.r,
                               ),
                             ],
                           ),
                           if (def.isNotEmpty) ...[
-                            SizedBox(height: 4.h),
+                            SizedBox(height: 3.h),
                             Text(
                               def,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 12.sp,
+                                fontWeight: FontWeight.w400,
                                 color: isDark
                                     ? Colors.white70
                                     : const Color(0xFF334155),
@@ -238,22 +242,22 @@ class TopicBlueprintTree extends StatelessWidget {
                             ),
                           ],
                           if (coll.isNotEmpty) ...[
-                            SizedBox(height: 6.h),
+                            SizedBox(height: 5.h),
                             Container(
                               padding: EdgeInsets.symmetric(
-                                horizontal: 8.w,
-                                vertical: 4.h,
+                                horizontal: 7.w,
+                                vertical: 3.h,
                               ),
                               decoration: BoxDecoration(
                                 color: accentColor.withValues(alpha: 0.08),
-                                borderRadius: BorderRadius.circular(8.r),
+                                borderRadius: BorderRadius.circular(6.r),
                               ),
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
                                   Icon(
                                     Icons.link_rounded,
-                                    size: 12.r,
+                                    size: 11.r,
                                     color: accentColor,
                                   ),
                                   SizedBox(width: 4.w),
@@ -263,7 +267,7 @@ class TopicBlueprintTree extends StatelessWidget {
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 11.sp,
-                                        fontWeight: FontWeight.w600,
+                                        fontWeight: FontWeight.w500,
                                         color: accentColor,
                                       ),
                                     ),

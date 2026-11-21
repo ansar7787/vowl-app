@@ -213,7 +213,7 @@ class StoryServiceImpl implements StoryService {
     'synonymSearch':
         "Having a variety of words for the same thing makes you a much better speaker. Let's build your word flexibility!",
     'topicVocab':
-        "Your brain loves finding connections! Let's fuse related words into thematic clusters so they naturally stick in your memory for effortless spoken recall.",
+        "Learning words in groups is how your brain naturally remembers them. Connect related words so you can recall them quickly in conversation.",
     'wordFormation':
         "Welcome to word building! We're going to learn how to create powerful new words by mixing and matching their core pieces.",
     'contextualUsage':
@@ -1036,7 +1036,7 @@ class StoryServiceImpl implements StoryService {
     ],
     'topicvocab': [
       "",
-      "You're off to a great start! Fusing clusters like this builds powerful mental networks that make speaking feel effortless.",
+      "You're off to a great start! Grouping words by topic helps you find the right word faster when speaking.",
       "You're getting so fast at this! You're building a mental map of English that'll make talking feel effortless.",
       "50 levels down! Your brain is doing an amazing job soaking all these related words up. Keep it going!",
       "Level 100! That's a massive milestone. You've built a seriously impressive vocabulary that you can actually use in real life.",

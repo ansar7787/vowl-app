@@ -142,7 +142,7 @@ class _TopicVocabLearnScreenState extends State<TopicVocabLearnScreen> {
 
     if (_isLoading) {
       return LearnPhaseScaffold(
-        title: 'Topic Vocab Lab',
+        title: 'Topic Vocabulary',
         gameType: 'topicVocab',
         level: widget.level,
         isActionEnabled: false,
@@ -166,7 +166,7 @@ class _TopicVocabLearnScreenState extends State<TopicVocabLearnScreen> {
     final isLast = _currentIndex == _quests.length - 1;
 
     return LearnPhaseScaffold(
-      title: 'Topic Vocab Lab',
+      title: 'Topic Vocabulary',
       gameType: 'topicVocab',
       level: widget.level,
       isActionEnabled: true,

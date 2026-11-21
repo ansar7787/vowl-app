@@ -13,7 +13,7 @@ import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_fusion_tile.dart';
 
 /// Interactive matrix grid displaying fused banners, remaining word tiles,
-/// one-away hints, combo streaks, auditory tap feedback, and action buttons.
+/// one-away hints, streak badges, and clear action controls.
 class TopicMatrixGrid extends StatelessWidget {
   final TopicVocabController controller;
   final Color accentColor;
@@ -65,66 +65,61 @@ class TopicMatrixGrid extends StatelessWidget {
                 SizedBox(height: 6.h),
               ],
 
-              // Arcade Combo Streak Banner
+              // Clean Streak Badge
               if (combo > 1 && !isAnswered)
-                Container(
-                      margin: EdgeInsets.only(bottom: 10.h),
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 14.w,
-                        vertical: 6.h,
+                Center(
+                  child: Container(
+                    margin: EdgeInsets.only(bottom: 10.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 12.w,
+                      vertical: 5.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: AppColors.amber500.withValues(alpha: isDark ? 0.2 : 0.12),
+                      borderRadius: BorderRadius.circular(16.r),
+                      border: Border.all(
+                        color: AppColors.amber500.withValues(alpha: 0.35),
                       ),
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            AppColors.amber500,
-                            AppColors.rose500,
-                          ],
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.local_fire_department_rounded,
+                          color: AppColors.amber500,
+                          size: 16.r,
                         ),
-                        borderRadius: BorderRadius.circular(20.r),
-                        boxShadow: [
-                          BoxShadow(
-                            color: AppColors.amber500.withValues(alpha: 0.35),
-                            blurRadius: 10.r,
-                            offset: const Offset(0, 2),
+                        SizedBox(width: 4.w),
+                        Text(
+                          'Streak ×$combo',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.amber500,
                           ),
-                        ],
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.local_fire_department_rounded, color: Colors.white, size: 18.r),
-                          SizedBox(width: 6.w),
-                          Text(
-                            combo >= 3 ? '⚡ $combo× MEGA COMBO!' : '🔥 $combo× SPEED COMBO!',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 13.sp,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.white,
-                              letterSpacing: 0.5,
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-                    .animate()
-                    .fadeIn(duration: 200.ms)
-                    .scale(begin: const Offset(0.85, 0.85), end: const Offset(1, 1), curve: Curves.easeOutBack),
+                        ),
+                      ],
+                    ),
+                  )
+                  .animate()
+                  .fadeIn(duration: 200.ms)
+                  .scale(begin: const Offset(0.9, 0.9), end: const Offset(1, 1)),
+                ),
 
               // One-away hint banner
               if (controller.isOneAway)
                 Container(
-                      margin: EdgeInsets.only(bottom: 12.h),
+                      margin: EdgeInsets.only(bottom: 10.h),
                       padding: EdgeInsets.symmetric(
                         horizontal: 12.w,
-                        vertical: 8.h,
+                        vertical: 7.h,
                       ),
                       decoration: BoxDecoration(
-                        color: AppColors.amber500.withValues(alpha: 0.15),
+                        color: AppColors.amber500.withValues(alpha: 0.12),
                         borderRadius: BorderRadius.circular(12.r),
                         border: Border.all(
-                          color: AppColors.amber500.withValues(alpha: 0.4),
+                          color: AppColors.amber500.withValues(alpha: 0.35),
                         ),
                       ),
                       child: Row(
@@ -133,18 +128,18 @@ class TopicMatrixGrid extends StatelessWidget {
                           Icon(
                             Icons.lightbulb_outline_rounded,
                             color: AppColors.amber500,
-                            size: 16.r,
+                            size: 15.r,
                           ),
                           SizedBox(width: 6.w),
                           Text(
                             context.tr(
                               'instructions.topicVocab.one_away',
-                              fallback: 'One away... you are so close!',
+                              fallback: 'Almost there! 2 of 3 words match.',
                             ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 12.sp,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.w600,
                               color: AppColors.amber500,
                             ),
                           ),
@@ -153,7 +148,7 @@ class TopicMatrixGrid extends StatelessWidget {
                     )
                     .animate()
                     .fadeIn(duration: 200.ms)
-                    .slideY(begin: -0.2, end: 0),
+                    .slideY(begin: -0.15, end: 0),
 
               // Word Matrix Grid
               if (remaining.isNotEmpty) ...[
@@ -197,7 +192,7 @@ class TopicMatrixGrid extends StatelessWidget {
                     },
                   ),
                 ),
-                SizedBox(height: 16.h),
+                SizedBox(height: 14.h),
 
                 // Controls row
                 if (!isAnswered)
@@ -213,13 +208,13 @@ class TopicMatrixGrid extends StatelessWidget {
                           ),
                           decoration: BoxDecoration(
                             color: isDark
-                                ? Colors.white.withValues(alpha: 0.06)
-                                : Colors.black.withValues(alpha: 0.05),
+                                ? Colors.white.withValues(alpha: 0.05)
+                                : Colors.black.withValues(alpha: 0.04),
                             borderRadius: BorderRadius.circular(14.r),
                             border: Border.all(
                               color: isDark
-                                  ? Colors.white.withValues(alpha: 0.12)
-                                  : Colors.black.withValues(alpha: 0.1),
+                                  ? Colors.white.withValues(alpha: 0.1)
+                                  : Colors.black.withValues(alpha: 0.08),
                             ),
                           ),
                           child: Row(
@@ -239,7 +234,7 @@ class TopicMatrixGrid extends StatelessWidget {
                                   style: TextStyle(
                                     fontFamily: 'Outfit',
                                     fontSize: 12.sp,
-                                    fontWeight: FontWeight.w700,
+                                    fontWeight: FontWeight.w600,
                                     color: isDark ? Colors.white70 : Colors.black87,
                                   ),
                                 ),
@@ -260,13 +255,13 @@ class TopicMatrixGrid extends StatelessWidget {
                           ),
                           decoration: BoxDecoration(
                             color: isDark
-                                ? Colors.white.withValues(alpha: 0.06)
-                                : Colors.black.withValues(alpha: 0.05),
+                                ? Colors.white.withValues(alpha: 0.05)
+                                : Colors.black.withValues(alpha: 0.04),
                             borderRadius: BorderRadius.circular(14.r),
                             border: Border.all(
                               color: isDark
-                                  ? Colors.white.withValues(alpha: 0.12)
-                                  : Colors.black.withValues(alpha: 0.1),
+                                  ? Colors.white.withValues(alpha: 0.1)
+                                  : Colors.black.withValues(alpha: 0.08),
                             ),
                           ),
                           child: Icon(
@@ -278,7 +273,7 @@ class TopicMatrixGrid extends StatelessWidget {
                       ),
                       SizedBox(width: 10.w),
 
-                      // Fuse Action button
+                      // Group Action button
                       Expanded(
                         child: ScaleButton(
                           onTap: canFuse ? onFuse : null,
@@ -291,39 +286,39 @@ class TopicMatrixGrid extends StatelessWidget {
                                   ? LinearGradient(
                                       colors: [
                                         accentColor,
-                                        accentColor.withValues(alpha: 0.8),
+                                        accentColor.withValues(alpha: 0.85),
                                       ],
                                     )
                                   : null,
                               color: canFuse
                                   ? null
-                                  : (isDark ? Colors.white12 : Colors.black12),
+                                  : (isDark ? Colors.white10 : Colors.black12),
                               borderRadius: BorderRadius.circular(14.r),
                               boxShadow: canFuse
                                   ? [
                                       BoxShadow(
                                         color: accentColor.withValues(
-                                          alpha: 0.35,
+                                          alpha: 0.3,
                                         ),
-                                        blurRadius: 10.r,
-                                        offset: const Offset(0, 3),
+                                        blurRadius: 8.r,
+                                        offset: const Offset(0, 2),
                                       ),
                                     ]
                                   : null,
                             ),
                             child: AutoSizeText(
-                              '${context.tr("instructions.topicVocab.fuse", fallback: "FUSE CLUSTER")} (${selected.length}/${controller.targetClusterSize})',
+                              '${context.tr("instructions.topicVocab.fuse", fallback: "Group Words")} (${selected.length}/${controller.targetClusterSize})',
                               maxLines: 1,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 13.sp,
-                                fontWeight: FontWeight.w800,
+                                fontWeight: FontWeight.w700,
                                 color: canFuse
                                     ? Colors.white
                                     : (isDark
                                           ? Colors.white38
                                           : Colors.black38),
-                                letterSpacing: 0.5,
+                                letterSpacing: 0.3,
                               ),
                             ),
                           ),

@@ -75,7 +75,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       expect(find.byType(TopicMatrixGrid), findsOneWidget);
-      expect(find.text('Cluster Fusion Gym'), findsOneWidget);
+      expect(find.text('Practice: Word Groups'), findsOneWidget);
 
       final hintButton = find.byIcon(Icons.lightbulb_outline_rounded);
       if (hintButton.evaluate().isNotEmpty) {

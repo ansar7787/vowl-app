@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
-/// Tactile, responsive word tile for the Cluster Fusion matrix with
-/// selection indicators, elevation lift, error feedback, and long-press peek.
+/// Clean, tactile word tile with standard typography, balanced weights,
+/// selection indicator, and long-press definition peek.
 class TopicFusionTile extends StatelessWidget {
   final String word;
   final bool isSelected;
@@ -33,20 +33,20 @@ class TopicFusionTile extends StatelessWidget {
     final Color textColor;
 
     if (isError) {
-      bgColor = AppColors.rose500.withValues(alpha: isDark ? 0.35 : 0.2);
+      bgColor = AppColors.rose500.withValues(alpha: isDark ? 0.3 : 0.15);
       borderColor = AppColors.rose500;
       textColor = isDark ? Colors.white : AppColors.rose500;
     } else if (isSelected) {
-      bgColor = accentColor.withValues(alpha: isDark ? 0.28 : 0.18);
+      bgColor = accentColor.withValues(alpha: isDark ? 0.22 : 0.14);
       borderColor = accentColor;
       textColor = accentColor;
     } else {
       bgColor = isDark
-          ? Colors.white.withValues(alpha: 0.06)
-          : Colors.black.withValues(alpha: 0.04);
+          ? Colors.white.withValues(alpha: 0.05)
+          : Colors.black.withValues(alpha: 0.03);
       borderColor = isDark
-          ? Colors.white.withValues(alpha: 0.12)
-          : Colors.black.withValues(alpha: 0.08);
+          ? Colors.white.withValues(alpha: 0.1)
+          : Colors.black.withValues(alpha: 0.07);
       textColor = isDark ? Colors.white : const Color(0xFF1E293B);
     }
 
@@ -56,26 +56,26 @@ class TopicFusionTile extends StatelessWidget {
       child: ScaleButton(
         onTap: onTap,
         onLongPress: onLongPress,
-        scaleDown: 0.94,
+        scaleDown: 0.95,
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 220),
+          duration: const Duration(milliseconds: 200),
           curve: Curves.easeOutCubic,
           alignment: Alignment.center,
-          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 12.h),
+          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
           decoration: BoxDecoration(
             color: bgColor,
-            borderRadius: BorderRadius.circular(16.r),
+            borderRadius: BorderRadius.circular(14.r),
             border: Border.all(
               color: borderColor,
-              width: (isSelected || isError) ? 2.0 : 1.0,
+              width: (isSelected || isError) ? 1.5 : 1.0,
             ),
             boxShadow: isSelected
                 ? [
                     BoxShadow(
                       color: (isError ? AppColors.rose500 : accentColor)
-                          .withValues(alpha: 0.3),
-                      blurRadius: 10.r,
-                      offset: const Offset(0, 3),
+                          .withValues(alpha: 0.2),
+                      blurRadius: 8.r,
+                      offset: const Offset(0, 2),
                     ),
                   ]
                 : null,
@@ -91,29 +91,23 @@ class TopicFusionTile extends StatelessWidget {
                   minFontSize: 11,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 15.sp,
-                    fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
+                    fontSize: 14.sp,
+                    fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
                     color: textColor,
-                    letterSpacing: 0.2,
+                    letterSpacing: 0.1,
                   ),
                 ),
               ),
               if (isSelected && !isError)
                 Positioned(
-                  top: -4.h,
-                  right: -4.w,
+                  top: -2.h,
+                  right: -2.w,
                   child: Container(
-                    width: 8.r,
-                    height: 8.r,
+                    width: 7.r,
+                    height: 7.r,
                     decoration: BoxDecoration(
                       color: accentColor,
                       shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: accentColor.withValues(alpha: 0.5),
-                          blurRadius: 4.r,
-                        ),
-                      ],
                     ),
                   ),
                 ),

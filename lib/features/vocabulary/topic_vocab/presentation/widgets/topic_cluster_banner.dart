@@ -5,8 +5,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
-/// Celebratory merged banner representing an already-fused thematic cluster
-/// with native audio pronunciation support.
+/// Clean, merged category banner representing a completed word group
+/// with natural typography and native audio pronunciation.
 class TopicClusterBanner extends StatelessWidget {
   final String categoryName;
   final String emoji;
@@ -29,14 +29,14 @@ class TopicClusterBanner extends StatelessWidget {
 
     return Container(
           width: double.infinity,
-          margin: EdgeInsets.only(bottom: 12.h),
-          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+          margin: EdgeInsets.only(bottom: 10.h),
+          padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
           decoration: BoxDecoration(
-            color: accentColor.withValues(alpha: isDark ? 0.18 : 0.12),
-            borderRadius: BorderRadius.circular(16.r),
+            color: accentColor.withValues(alpha: isDark ? 0.16 : 0.1),
+            borderRadius: BorderRadius.circular(14.r),
             border: Border.all(
-              color: accentColor.withValues(alpha: 0.5),
-              width: 1.5,
+              color: accentColor.withValues(alpha: 0.4),
+              width: 1.0,
             ),
           ),
           child: Column(
@@ -49,21 +49,21 @@ class TopicClusterBanner extends StatelessWidget {
                   SizedBox(width: 8.w),
                   Expanded(
                     child: AutoSizeText(
-                      categoryName.toUpperCase(),
+                      categoryName,
                       maxLines: 1,
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w800,
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w700,
                         color: accentColor,
-                        letterSpacing: 0.8,
+                        letterSpacing: 0.3,
                       ),
                     ),
                   ),
                   TtsSpeakerButtonWidget(
                     text: words.join(', '),
                     color: accentColor,
-                    size: 26.r,
+                    size: 24.r,
                   ),
                   SizedBox(width: 6.w),
                   Icon(
@@ -73,14 +73,14 @@ class TopicClusterBanner extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 6.h),
+              SizedBox(height: 4.h),
               AutoSizeText(
                 words.join(' • '),
                 maxLines: 2,
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 13.sp,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w500,
                   color: isDark ? Colors.white70 : const Color(0xFF334155),
                 ),
               ),
@@ -90,8 +90,8 @@ class TopicClusterBanner extends StatelessWidget {
                   explanation!,
                   style: TextStyle(
                     fontFamily: 'Outfit',
-                    fontSize: 11.sp,
-                    fontStyle: FontStyle.italic,
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w400,
                     color: isDark ? Colors.white54 : Colors.black54,
                   ),
                 ),
@@ -100,11 +100,11 @@ class TopicClusterBanner extends StatelessWidget {
           ),
         )
         .animate()
-        .fadeIn(duration: 350.ms)
+        .fadeIn(duration: 300.ms)
         .scale(
-          begin: const Offset(0.94, 0.94),
+          begin: const Offset(0.96, 0.96),
           end: const Offset(1, 1),
-          curve: Curves.easeOutBack,
+          curve: Curves.easeOutCubic,
         );
   }
 }

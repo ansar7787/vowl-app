@@ -1240,18 +1240,18 @@ class GameInstructionService {
           "Idioms are colorful cultural keys! Don't translate them literally word-for-word.",
     ),
     GameSubtype.topicVocab: GameBriefing(
-      title: "Cluster Fusion",
+      title: "Word Groups",
       icon: Icons.hub_rounded,
       objective:
-          "Select words sharing an underlying theme and fuse them into thematic clusters. Grouping words cements semantic networks in memory for rapid spoken recall.",
+          "Find words that belong together and group them by topic. Learning words in groups makes them much easier to remember and use when speaking.",
       rules: [
-        "Explore the word tiles on the matrix",
-        "Tap words belonging to the same category",
-        "Tap 'FUSE CLUSTER' to merge the group",
+        "Look at the words on the screen",
+        "Tap 3 words that belong to the same topic",
+        "Tap 'Group Words' to connect them",
       ],
-      actionText: "Start Fusion",
+      actionText: "Start Playing",
       tip:
-          "Helpful tip: If you're stuck, look for words that share subtle sensory or contextual relationships!",
+          "Helpful tip: Think about how you use each word in real life or daily conversation.",
     ),
     GameSubtype.wordFormation: GameBriefing(
       title: "Word Morph",

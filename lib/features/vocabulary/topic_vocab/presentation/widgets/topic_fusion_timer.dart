@@ -4,7 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
-/// Responsive countdown timer bar with urgent heartbeat pulse for Mastery Phase speed challenge.
+/// Clean countdown timer bar with subtle urgency indicator.
 class TopicFusionTimer extends StatelessWidget {
   final int remainingSeconds;
   final int totalSeconds;
@@ -31,23 +31,23 @@ class TopicFusionTimer extends StatelessWidget {
     final timerIcon = Icon(
       Icons.timer_outlined,
       color: timerColor,
-      size: 18.r,
+      size: 16.r,
     );
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
       decoration: BoxDecoration(
         color: isDark
             ? (isUrgent
-                ? AppColors.rose500.withValues(alpha: 0.1)
-                : Colors.white.withValues(alpha: 0.05))
-            : (isUrgent
                 ? AppColors.rose500.withValues(alpha: 0.08)
-                : Colors.black.withValues(alpha: 0.03)),
-        borderRadius: BorderRadius.circular(14.r),
+                : Colors.white.withValues(alpha: 0.04))
+            : (isUrgent
+                ? AppColors.rose500.withValues(alpha: 0.06)
+                : Colors.black.withValues(alpha: 0.02)),
+        borderRadius: BorderRadius.circular(12.r),
         border: Border.all(
-          color: timerColor.withValues(alpha: isUrgent ? 0.6 : 0.3),
-          width: isUrgent ? 1.5 : 1.0,
+          color: timerColor.withValues(alpha: isUrgent ? 0.5 : 0.25),
+          width: 1.0,
         ),
       ),
       child: Row(
@@ -55,29 +55,29 @@ class TopicFusionTimer extends StatelessWidget {
           if (isUrgent)
             timerIcon
                 .animate(onPlay: (c) => c.repeat(reverse: true))
-                .scale(begin: const Offset(1, 1), end: const Offset(1.25, 1.25), duration: 400.ms)
+                .scale(begin: const Offset(1, 1), end: const Offset(1.2, 1.2), duration: 400.ms)
           else
             timerIcon,
           SizedBox(width: 8.w),
           Expanded(
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(6.r),
+              borderRadius: BorderRadius.circular(4.r),
               child: LinearProgressIndicator(
                 value: progress,
-                backgroundColor: isDark ? Colors.white12 : Colors.black12,
+                backgroundColor: isDark ? Colors.white10 : Colors.black12,
                 valueColor: AlwaysStoppedAnimation<Color>(timerColor),
-                minHeight: 8.h,
+                minHeight: 6.h,
               ),
             ),
           ),
-          SizedBox(width: 10.w),
+          SizedBox(width: 8.w),
           AutoSizeText(
             '${remainingSeconds}s',
             maxLines: 1,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 13.sp,
-              fontWeight: FontWeight.w800,
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w700,
               color: timerColor,
             ),
           ),
