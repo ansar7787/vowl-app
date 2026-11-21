@@ -115,6 +115,53 @@ void main() {
         await tester.pumpAndSettle();
 
         verify(() => mockHaptic.success()).called(2);
+        expect(find.text('Next Exercise'), findsOneWidget);
+      },
+    );
+
+    testWidgets(
+      're-queues missed exercise and prevents premature Enter Mastery Phase button',
+      (tester) async {
+        tester.view.physicalSize = const Size(375 * 2, 812 * 2);
+        tester.view.devicePixelRatio = 2.0;
+        addTearDown(() {
+          tester.view.resetPhysicalSize();
+          tester.view.resetDevicePixelRatio();
+        });
+
+        await tester.pumpWidget(
+          buildTestableWidget(const FlashcardsPracticeScreen(level: 1)),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        // Assemble chunks for exercise 1
+        await tester.tap(find.text('AU'));
+        await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(find.text('THEN'));
+        await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(find.text('TIC'));
+        await tester.pump(const Duration(milliseconds: 600));
+        await tester.tap(find.text('Check Word'));
+        await tester.pumpAndSettle();
+
+        // Intentionally pick incorrect collocation first
+        await tester.tap(find.text('authentic replica'));
+        await tester.pump(const Duration(milliseconds: 600));
+        await tester.pumpAndSettle();
+
+        // Now pick correct partner
+        await tester.tap(find.text('authentic cuisine'));
+        await tester.pump(const Duration(milliseconds: 600));
+        await tester.pumpAndSettle();
+
+        // Since this exercise had an error, advancing will re-queue it 2 questions later
+        expect(find.text('Next Exercise'), findsOneWidget);
+        await tester.tap(find.text('Next Exercise'));
+        await tester.pumpAndSettle();
+
+        // Now on exercise 2
+        expect(find.textContaining('Exercise 2 of 4'), findsOneWidget);
       },
     );
   });

@@ -29,9 +29,9 @@ class FlashcardsPracticeScreen extends StatefulWidget {
 }
 
 class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
-  List<PhasedQuest> _quests = const [];
-  final List<PhasedQuest> _remediationQueue = [];
-  bool _isInRemediation = false;
+  List<PhasedQuest> _quests = [];
+  final Set<String> _remediatedWords = {};
+  bool _currentQuestHadError = false;
   bool _isLoading = true;
   int _currentIndex = 0;
 
@@ -69,7 +69,7 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
     );
     if (mounted) {
       setState(() {
-        _quests = quests;
+        _quests = List<PhasedQuest>.from(quests);
         _isLoading = false;
         _initQuestInteraction(0);
       });
@@ -100,6 +100,7 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
     _selectedCollocationIndex = null;
     _hasCheckedCollocation = false;
     _showHint = false;
+    _currentQuestHadError = false;
   }
 
   void _addChunk(String chunk) {
@@ -162,10 +163,9 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
       _hasCheckedAssembly = true;
       _isAssemblyCorrect = isCorrect;
       if (!isCorrect) {
+        _currentQuestHadError = true;
         _shakeTrigger++;
         _consecutiveFailures++;
-        final cur = _quests[_currentIndex];
-        if (!_remediationQueue.contains(cur)) _remediationQueue.add(cur);
         if (_consecutiveFailures >= 3) {
           FlashcardLearnRefresherSheet.show(
             context,
@@ -199,9 +199,8 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
       _selectedCollocationIndex = optionIndex;
       _hasCheckedCollocation = true;
       if (!isCorrect) {
+        _currentQuestHadError = true;
         _shakeTrigger++;
-        final cur = _quests[_currentIndex];
-        if (!_remediationQueue.contains(cur)) _remediationQueue.add(cur);
       }
     });
     _triggerFeedbackHaptic(isCorrect: isCorrect);
@@ -228,26 +227,22 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
 
     if (_showCollocationStage && !_hasCheckedCollocation) return;
 
+    if (_currentQuestHadError) {
+      final currentQuest = _quests[_currentIndex];
+      if (currentQuest.word != null) {
+        _remediatedWords.add(currentQuest.word!.toUpperCase());
+      }
+      // Re-queue failed question exactly 2 questions later (or append to end)
+      final insertIndex = (_currentIndex + 3).clamp(0, _quests.length);
+      _quests.insert(insertIndex, currentQuest);
+    }
+
     if (_currentIndex < _quests.length - 1) {
       setState(() {
         _currentIndex++;
         _consecutiveFailures = 0;
         _initQuestInteraction(_currentIndex);
       });
-    } else if (_remediationQueue.isNotEmpty) {
-      setState(() {
-        _quests = List.from(_remediationQueue);
-        _remediationQueue.clear();
-        _isInRemediation = true;
-        _currentIndex = 0;
-        _consecutiveFailures = 0;
-        _initQuestInteraction(0);
-      });
-      CustomSnackBar.show(
-        context: context,
-        message: 'Reinforcing missed items until 100% mastered! 🔄',
-        type: CustomSnackBarType.info,
-      );
     } else {
       _finishPracticePhase();
     }
@@ -300,8 +295,12 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
         actionLabel = 'Try Again';
       } else if (_showCollocationStage && !_hasCheckedCollocation) {
         actionLabel = 'Select Partner';
+      } else if (isLast) {
+        actionLabel = _currentQuestHadError
+            ? 'Reinforce Missed Word 🔄'
+            : 'Enter Mastery Phase 🏆';
       } else {
-        actionLabel = isLast ? 'Enter Mastery Phase 🏆' : 'Next Exercise';
+        actionLabel = 'Next Exercise';
       }
     }
 
@@ -314,7 +313,9 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
     final correctCollocationIndex =
         (quest.rawExtra['correctCollocationIndex'] as num?)?.toInt() ?? 0;
 
-    final phaseTitle = _isInRemediation
+    final currentWord = (quest.word ?? '').toUpperCase();
+    final isRemediating = _remediatedWords.contains(currentWord);
+    final phaseTitle = isRemediating
         ? 'Reinforce ${_currentIndex + 1} of ${_quests.length} 🔄'
         : 'Exercise ${_currentIndex + 1} of ${_quests.length}';
 
