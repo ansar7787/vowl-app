@@ -166,11 +166,13 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
       }
     }
 
+    final emoji = quest.topicEmoji ?? '';
+
     if (bucketMap.isNotEmpty) {
       return bucketMap.entries.map((e) {
         return TopicClusterGroup(
           categoryName: e.key,
-          emoji: quest.topicEmoji ?? '🏷️',
+          emoji: emoji,
           words: e.value,
           explanation: quest.explanation,
           collocations: _extractCollocations(e.value, quest),
@@ -178,29 +180,27 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
       }).toList();
     }
 
-    final buckets = quest.topicBuckets ?? const ['Domain Alpha', 'Domain Beta'];
-    final options = quest.options ??
-        const ['Word A', 'Word B', 'Word C', 'Word D', 'Word E', 'Word F'];
-    final half = (options.length / (buckets.isNotEmpty ? buckets.length : 2)).ceil();
-    final firstHalf = options.take(half).toList();
-    final secondHalf = options.skip(half).toList();
+    final buckets = quest.topicBuckets ?? <String>[];
+    final options = quest.options ?? <String>[];
+    final bucketCount = buckets.isNotEmpty ? buckets.length : 1;
+    final perBucket = options.isNotEmpty ? (options.length / bucketCount).ceil() : 0;
 
-    return [
-      TopicClusterGroup(
-        categoryName: buckets.isNotEmpty ? buckets[0] : 'Domain Alpha',
-        emoji: quest.topicEmoji ?? '🔥',
-        words: firstHalf,
-        explanation: quest.explanation,
-        collocations: _extractCollocations(firstHalf, quest),
-      ),
-      TopicClusterGroup(
-        categoryName: buckets.length > 1 ? buckets[1] : 'Domain Beta',
-        emoji: quest.topicEmoji ?? '❄️',
-        words: secondHalf,
-        explanation: quest.explanation,
-        collocations: _extractCollocations(secondHalf, quest),
-      ),
-    ];
+    final result = <TopicClusterGroup>[];
+    for (var i = 0; i < buckets.length; i++) {
+      final start = i * perBucket;
+      final end = (start + perBucket).clamp(0, options.length);
+      final words = (start < options.length) ? options.sublist(start, end) : <String>[];
+      result.add(
+        TopicClusterGroup(
+          categoryName: buckets[i],
+          emoji: emoji,
+          words: words,
+          explanation: quest.explanation,
+          collocations: _extractCollocations(words, quest),
+        ),
+      );
+    }
+    return result;
   }
 
   void _handleFuse() {
@@ -233,10 +233,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
       if (_currentQuest != null && _controller!.failedAttempts >= 3) {
         _countdownTimer?.cancel();
         _controller?.autoSolve();
-        submitWrongAnswer(
-          quest: _currentQuest!,
-          userAnswer: 'Multiple failed fusions',
-        );
+        submitWrongAnswer(quest: _currentQuest!, userAnswer: 'Multiple failed fusions');
       } else {
         soundService.playSoftWrong();
       }
@@ -379,6 +376,8 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
                               accentColor: accentColor,
                               onFuse: _handleFuse,
                               isAnswered: isAnsweredNotifier.value,
+                              instruction: _currentQuest?.instruction,
+                              topicEmoji: _currentQuest?.topicEmoji,
                               onTileLongPress: _handleTileLongPress,
                             )
                           : const SizedBox.shrink(),

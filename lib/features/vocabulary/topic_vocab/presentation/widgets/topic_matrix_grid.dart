@@ -21,6 +21,8 @@ class TopicMatrixGrid extends StatelessWidget {
   final VoidCallback onFuse;
   final bool isAnswered;
   final bool enableTtsOnTap;
+  final String? instruction;
+  final String? topicEmoji;
   final void Function(String word)? onTileLongPress;
 
   const TopicMatrixGrid({
@@ -30,6 +32,8 @@ class TopicMatrixGrid extends StatelessWidget {
     required this.onFuse,
     this.isAnswered = false,
     this.enableTtsOnTap = true,
+    this.instruction,
+    this.topicEmoji,
     this.onTileLongPress,
   });
 
@@ -173,6 +177,13 @@ class TopicMatrixGrid extends StatelessWidget {
   }
 
   Widget _buildTopicalInstructionBanner(BuildContext context, bool isDark) {
+    final effectiveInstruction = instruction ??
+        context.tr(
+          'instructions.topicVocab.matrix_hint',
+          fallback: 'Fuse the matching topic clusters before time expires!',
+        );
+    final emoji = topicEmoji?.trim() ?? '';
+
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 7.h),
       decoration: BoxDecoration(
@@ -187,18 +198,18 @@ class TopicMatrixGrid extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Icon(
-            Icons.hub_outlined,
-            size: 15.r,
-            color: accentColor,
-          ),
+          if (emoji.isNotEmpty)
+            Text(emoji, style: TextStyle(fontSize: 15.sp))
+          else
+            Icon(
+              Icons.hub_outlined,
+              size: 15.r,
+              color: accentColor,
+            ),
           SizedBox(width: 8.w),
           Expanded(
             child: Text(
-              context.tr(
-                'instructions.topicVocab.matrix_hint',
-                fallback: 'Tap 3 related words to fuse their topic cluster.',
-              ),
+              effectiveInstruction,
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 11.5.sp,

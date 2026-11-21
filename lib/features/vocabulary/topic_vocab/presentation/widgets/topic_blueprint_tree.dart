@@ -5,7 +5,6 @@ import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
 import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/domain/entities/topic_learn_quest.dart';
-import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_icon_helper.dart';
 
 /// Clean semantic word overview for the Learn phase with balanced typography,
 /// real-world English usage context, and strongly-typed domain models.
@@ -56,11 +55,16 @@ class TopicBlueprintTree extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10.r),
                   ),
                   alignment: Alignment.center,
-                  child: Icon(
-                    TopicIconHelper.getIcon(topicEmoji, conceptTitle),
-                    size: 20.r,
-                    color: accentColor,
-                  ),
+                  child: topicEmoji.isNotEmpty
+                      ? Text(
+                          topicEmoji,
+                          style: TextStyle(fontSize: 18.sp),
+                        )
+                      : Icon(
+                          Icons.school_rounded,
+                          size: 20.r,
+                          color: accentColor,
+                        ),
                 ),
                 SizedBox(width: 10.w),
                 Expanded(
@@ -146,11 +150,16 @@ class TopicBlueprintTree extends StatelessWidget {
                           borderRadius: BorderRadius.circular(8.r),
                         ),
                         alignment: Alignment.center,
-                        child: Icon(
-                          TopicIconHelper.getIcon(cat.emoji, cat.name),
-                          size: 15.r,
-                          color: accentColor,
-                        ),
+                        child: cat.emoji.isNotEmpty
+                            ? Text(
+                                cat.emoji,
+                                style: TextStyle(fontSize: 14.sp),
+                              )
+                            : Icon(
+                                Icons.category_rounded,
+                                size: 15.r,
+                                color: accentColor,
+                              ),
                       ),
                       SizedBox(width: 8.w),
                       Expanded(

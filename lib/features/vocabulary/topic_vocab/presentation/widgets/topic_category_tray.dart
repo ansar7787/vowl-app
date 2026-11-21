@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
-import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_icon_helper.dart';
 
 /// A guided semantic category tray for the Practice Phase.
 /// Displays the category name, emoji, active selection indicator,
@@ -89,11 +88,19 @@ class TopicCategoryTray extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8.r),
                   ),
                   alignment: Alignment.center,
-                  child: Icon(
-                    TopicIconHelper.getIcon(emoji, categoryName),
-                    size: 16.r,
-                    color: isCompleted ? AppColors.emerald500 : accentColor,
-                  ),
+                  child: emoji.isNotEmpty
+                      ? Text(
+                          emoji,
+                          style: TextStyle(fontSize: 15.sp),
+                        )
+                      : Icon(
+                          isCompleted
+                              ? Icons.check_circle_rounded
+                              : Icons.category_rounded,
+                          size: 16.r,
+                          color:
+                              isCompleted ? AppColors.emerald500 : accentColor,
+                        ),
                 ),
                 SizedBox(width: 8.w),
                 Expanded(
