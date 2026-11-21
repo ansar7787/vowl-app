@@ -14,10 +14,10 @@ class TopicPracticeCelebrationCard extends StatelessWidget {
       margin: EdgeInsets.only(top: 8.h),
       padding: EdgeInsets.all(14.r),
       decoration: BoxDecoration(
-        color: AppColors.emerald500.withValues(alpha: isDark ? 0.15 : 0.08),
+        color: isDark ? AppColors.slate800 : Colors.white,
         borderRadius: BorderRadius.circular(14.r),
         border: Border.all(
-          color: AppColors.emerald500.withValues(alpha: 0.35),
+          color: AppColors.emerald500.withValues(alpha: 0.5),
         ),
       ),
       child: Row(

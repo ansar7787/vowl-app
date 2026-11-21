@@ -33,21 +33,17 @@ class TopicFusionTile extends StatelessWidget {
     final Color textColor;
 
     if (isError) {
-      bgColor = AppColors.rose500.withValues(alpha: isDark ? 0.3 : 0.15);
+      bgColor = AppColors.rose500.withValues(alpha: isDark ? 0.20 : 0.10);
       borderColor = AppColors.rose500;
       textColor = isDark ? Colors.white : AppColors.rose500;
     } else if (isSelected) {
-      bgColor = accentColor.withValues(alpha: isDark ? 0.22 : 0.14);
+      bgColor = accentColor.withValues(alpha: isDark ? 0.20 : 0.10);
       borderColor = accentColor;
-      textColor = accentColor;
+      textColor = isDark ? Colors.white : accentColor;
     } else {
-      bgColor = isDark
-          ? Colors.white.withValues(alpha: 0.05)
-          : Colors.black.withValues(alpha: 0.03);
-      borderColor = isDark
-          ? Colors.white.withValues(alpha: 0.1)
-          : Colors.black.withValues(alpha: 0.07);
-      textColor = isDark ? Colors.white : const Color(0xFF1E293B);
+      bgColor = isDark ? AppColors.slate800 : Colors.white;
+      borderColor = isDark ? AppColors.slate700 : AppColors.slate200;
+      textColor = isDark ? Colors.white : AppColors.slate900;
     }
 
     return Semantics(
@@ -69,16 +65,6 @@ class TopicFusionTile extends StatelessWidget {
               color: borderColor,
               width: (isSelected || isError) ? 1.5 : 1.0,
             ),
-            boxShadow: isSelected
-                ? [
-                    BoxShadow(
-                      color: (isError ? AppColors.rose500 : accentColor)
-                          .withValues(alpha: 0.2),
-                      blurRadius: 8.r,
-                      offset: const Offset(0, 2),
-                    ),
-                  ]
-                : null,
           ),
           child: Stack(
             clipBehavior: Clip.none,

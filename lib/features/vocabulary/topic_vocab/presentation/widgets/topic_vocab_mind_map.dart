@@ -25,11 +25,11 @@ class TopicVocabMindMap extends StatelessWidget {
           width: double.infinity,
           padding: EdgeInsets.all(14.r),
           decoration: BoxDecoration(
-            color: isDark
-                ? Colors.white.withValues(alpha: 0.05)
-                : Colors.black.withValues(alpha: 0.02),
+            color: isDark ? const Color(0xFF1E293B) : Colors.white,
             borderRadius: BorderRadius.circular(16.r),
-            border: Border.all(color: color.withValues(alpha: 0.3)),
+            border: Border.all(
+              color: isDark ? const Color(0xFF334155) : const Color(0xFFE2E8F0),
+            ),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

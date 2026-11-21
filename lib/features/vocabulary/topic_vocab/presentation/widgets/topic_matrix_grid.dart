@@ -208,13 +208,13 @@ class TopicMatrixGrid extends StatelessWidget {
                           ),
                           decoration: BoxDecoration(
                             color: isDark
-                                ? Colors.white.withValues(alpha: 0.05)
-                                : Colors.black.withValues(alpha: 0.04),
+                                ? AppColors.slate800
+                                : AppColors.slate100,
                             borderRadius: BorderRadius.circular(14.r),
                             border: Border.all(
                               color: isDark
-                                  ? Colors.white.withValues(alpha: 0.1)
-                                  : Colors.black.withValues(alpha: 0.08),
+                                  ? AppColors.slate700
+                                  : AppColors.slate200,
                             ),
                           ),
                           child: Row(
@@ -224,8 +224,8 @@ class TopicMatrixGrid extends StatelessWidget {
                                 Icons.clear_rounded,
                                 size: 18.r,
                                 color: selected.isEmpty
-                                    ? (isDark ? Colors.white24 : Colors.black26)
-                                    : (isDark ? Colors.white70 : Colors.black87),
+                                    ? (isDark ? AppColors.slate600 : AppColors.slate400)
+                                    : (isDark ? AppColors.slate200 : AppColors.slate700),
                               ),
                               if (selected.isNotEmpty) ...[
                                 SizedBox(width: 4.w),
@@ -235,7 +235,7 @@ class TopicMatrixGrid extends StatelessWidget {
                                     fontFamily: 'Outfit',
                                     fontSize: 12.sp,
                                     fontWeight: FontWeight.w600,
-                                    color: isDark ? Colors.white70 : Colors.black87,
+                                    color: isDark ? AppColors.slate200 : AppColors.slate700,
                                   ),
                                 ),
                               ],
@@ -255,19 +255,19 @@ class TopicMatrixGrid extends StatelessWidget {
                           ),
                           decoration: BoxDecoration(
                             color: isDark
-                                ? Colors.white.withValues(alpha: 0.05)
-                                : Colors.black.withValues(alpha: 0.04),
+                                ? AppColors.slate800
+                                : AppColors.slate100,
                             borderRadius: BorderRadius.circular(14.r),
                             border: Border.all(
                               color: isDark
-                                  ? Colors.white.withValues(alpha: 0.1)
-                                  : Colors.black.withValues(alpha: 0.08),
+                                  ? AppColors.slate700
+                                  : AppColors.slate200,
                             ),
                           ),
                           child: Icon(
                             Icons.shuffle_rounded,
                             size: 18.r,
-                            color: isDark ? Colors.white70 : Colors.black87,
+                            color: isDark ? AppColors.slate300 : AppColors.slate700,
                           ),
                         ),
                       ),
@@ -282,29 +282,10 @@ class TopicMatrixGrid extends StatelessWidget {
                             padding: EdgeInsets.symmetric(vertical: 13.h),
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
-                              gradient: canFuse
-                                  ? LinearGradient(
-                                      colors: [
-                                        accentColor,
-                                        accentColor.withValues(alpha: 0.85),
-                                      ],
-                                    )
-                                  : null,
                               color: canFuse
-                                  ? null
-                                  : (isDark ? Colors.white10 : Colors.black12),
+                                  ? accentColor
+                                  : (isDark ? AppColors.slate800 : AppColors.slate200),
                               borderRadius: BorderRadius.circular(14.r),
-                              boxShadow: canFuse
-                                  ? [
-                                      BoxShadow(
-                                        color: accentColor.withValues(
-                                          alpha: 0.3,
-                                        ),
-                                        blurRadius: 8.r,
-                                        offset: const Offset(0, 2),
-                                      ),
-                                    ]
-                                  : null,
                             ),
                             child: AutoSizeText(
                               '${context.tr("instructions.topicVocab.fuse", fallback: "Group Words")} (${selected.length}/${controller.targetClusterSize})',
@@ -316,8 +297,8 @@ class TopicMatrixGrid extends StatelessWidget {
                                 color: canFuse
                                     ? Colors.white
                                     : (isDark
-                                          ? Colors.white38
-                                          : Colors.black38),
+                                          ? AppColors.slate500
+                                          : AppColors.slate400),
                                 letterSpacing: 0.3,
                               ),
                             ),

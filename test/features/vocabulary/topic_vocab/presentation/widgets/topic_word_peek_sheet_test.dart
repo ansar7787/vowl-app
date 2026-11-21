@@ -65,12 +65,12 @@ void main() {
     expect(find.text('Scorching'), findsOneWidget);
     expect(find.text('Theme: Intense Heat'), findsOneWidget);
     expect(find.text('Extremely hot; parching the surface of something.'), findsOneWidget);
-    expect(find.text('Dismiss Peek'), findsOneWidget);
+    expect(find.text('Got it'), findsOneWidget);
 
     // Tap dismiss and settle dismiss animation
-    await tester.tap(find.text('Dismiss Peek'));
+    await tester.tap(find.text('Got it'));
     await tester.pumpAndSettle();
 
-    expect(find.text('Dismiss Peek'), findsNothing);
+    expect(find.text('Got it'), findsNothing);
   });
 }

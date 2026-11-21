@@ -157,17 +157,22 @@ class TopicWordPeekSheet extends StatelessWidget {
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
                   color: isDark
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : Colors.black.withValues(alpha: 0.06),
+                      ? const Color(0xFF334155)
+                      : const Color(0xFFF1F5F9),
                   borderRadius: BorderRadius.circular(14.r),
+                  border: Border.all(
+                    color: isDark
+                        ? const Color(0xFF475569)
+                        : const Color(0xFFE2E8F0),
+                  ),
                 ),
                 child: Text(
-                  'Dismiss Peek',
+                  'Got it',
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w700,
-                    color: isDark ? Colors.white70 : const Color(0xFF475569),
+                    color: isDark ? Colors.white : const Color(0xFF334155),
                   ),
                 ),
               ),

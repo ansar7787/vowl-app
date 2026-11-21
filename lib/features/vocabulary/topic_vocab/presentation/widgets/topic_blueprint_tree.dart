@@ -67,9 +67,9 @@ class TopicBlueprintTree extends StatelessWidget {
             Container(
               padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
               decoration: BoxDecoration(
-                color: AppColors.amber500.withValues(
-                  alpha: isDark ? 0.12 : 0.08,
-                ),
+                color: isDark
+                    ? AppColors.slate800
+                    : AppColors.amber500.withValues(alpha: 0.08),
                 borderRadius: BorderRadius.circular(12.r),
                 border: Border.all(
                   color: AppColors.amber500.withValues(alpha: 0.3),
@@ -108,14 +108,10 @@ class TopicBlueprintTree extends StatelessWidget {
               margin: EdgeInsets.only(bottom: 12.h),
               padding: EdgeInsets.all(12.r),
               decoration: BoxDecoration(
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.04)
-                    : Colors.black.withValues(alpha: 0.02),
+                color: isDark ? AppColors.slate800 : Colors.white,
                 borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(
-                  color: isDark
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : Colors.black.withValues(alpha: 0.06),
+                  color: isDark ? AppColors.slate700 : AppColors.slate200,
                 ),
               ),
               child: Column(
@@ -161,13 +157,13 @@ class TopicBlueprintTree extends StatelessWidget {
                       padding: EdgeInsets.all(10.r),
                       decoration: BoxDecoration(
                         color: isDark
-                            ? Colors.white.withValues(alpha: 0.04)
-                            : Colors.white,
+                            ? AppColors.slate900
+                            : const Color(0xFFF8FAFC),
                         borderRadius: BorderRadius.circular(12.r),
                         border: Border.all(
                           color: isDark
-                              ? Colors.white.withValues(alpha: 0.07)
-                              : Colors.black.withValues(alpha: 0.05),
+                              ? AppColors.slate800
+                              : AppColors.slate200,
                         ),
                       ),
                       child: Column(

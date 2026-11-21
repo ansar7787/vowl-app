@@ -47,13 +47,13 @@ class TopicCategoryTray extends StatelessWidget {
         ? AppColors.emerald500
         : isActive
             ? accentColor
-            : (isDark ? Colors.white12 : Colors.black12);
+            : (isDark ? AppColors.slate700 : AppColors.slate200);
 
     final backgroundColor = isCompleted
-        ? AppColors.emerald500.withValues(alpha: isDark ? 0.12 : 0.08)
+        ? AppColors.emerald500.withValues(alpha: isDark ? 0.12 : 0.06)
         : isActive
-            ? accentColor.withValues(alpha: isDark ? 0.10 : 0.06)
-            : (isDark ? const Color(0xFF1E1E2C) : Colors.white);
+            ? accentColor.withValues(alpha: isDark ? 0.10 : 0.05)
+            : (isDark ? AppColors.slate800 : Colors.white);
 
     return ScaleButton(
       onTap: isCompleted ? null : onTap,
@@ -69,20 +69,6 @@ class TopicCategoryTray extends StatelessWidget {
             color: borderColor,
             width: isActive || isCompleted ? 2.0 : 1.0,
           ),
-          boxShadow: [
-            if (isActive && !isCompleted)
-              BoxShadow(
-                color: accentColor.withValues(alpha: 0.18),
-                blurRadius: 10.r,
-                offset: const Offset(0, 3),
-              ),
-            if (isCompleted)
-              BoxShadow(
-                color: AppColors.emerald500.withValues(alpha: 0.18),
-                blurRadius: 10.r,
-                offset: const Offset(0, 3),
-              ),
-          ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -311,14 +297,12 @@ class _EmptyWordSlot extends StatelessWidget {
       height: 32.h,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: isDark
-            ? Colors.white.withValues(alpha: 0.03)
-            : Colors.black.withValues(alpha: 0.02),
+        color: isDark ? AppColors.slate900 : AppColors.slate100,
         borderRadius: BorderRadius.circular(10.r),
         border: Border.all(
           color: isActive
-              ? accentColor.withValues(alpha: 0.4)
-              : (isDark ? Colors.white12 : Colors.black12),
+              ? accentColor.withValues(alpha: 0.45)
+              : (isDark ? AppColors.slate700 : AppColors.slate300),
           width: 1.0,
           style: BorderStyle.solid,
         ),
@@ -327,8 +311,8 @@ class _EmptyWordSlot extends StatelessWidget {
         Icons.add_rounded,
         size: 15.r,
         color: isActive
-            ? accentColor.withValues(alpha: 0.6)
-            : (isDark ? Colors.white24 : Colors.black26),
+            ? accentColor.withValues(alpha: 0.7)
+            : (isDark ? AppColors.slate500 : AppColors.slate400),
       ),
     );
   }
