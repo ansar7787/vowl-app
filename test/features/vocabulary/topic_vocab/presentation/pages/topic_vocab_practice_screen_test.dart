@@ -11,7 +11,8 @@ import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/pages/topic_vocab_practice_screen.dart';
-import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_matrix_grid.dart';
+import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_category_tray.dart';
+import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_fusion_tile.dart';
 
 class MockHapticService extends Mock implements HapticService {}
 class MockSoundService extends Mock implements SoundService {}
@@ -69,19 +70,23 @@ void main() {
   }
 
   group('TopicVocabPracticeScreen', () {
-    testWidgets('renders matrix grid with tiles and interactive controls', (tester) async {
+    testWidgets('renders category trays, word pool, and handles sorting interaction', (tester) async {
+      tester.view.physicalSize = const Size(1080, 2400);
+      addTearDown(tester.view.resetPhysicalSize);
+
       await tester.pumpWidget(buildTestableWidget(const TopicVocabPracticeScreen(level: 1)));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(TopicMatrixGrid), findsOneWidget);
+      expect(find.byType(TopicCategoryTray), findsWidgets);
       expect(find.text('Practice: Word Groups'), findsOneWidget);
+      expect(find.byType(TopicFusionTile), findsWidgets);
 
-      final hintButton = find.byIcon(Icons.lightbulb_outline_rounded);
-      if (hintButton.evaluate().isNotEmpty) {
-        await tester.tap(hintButton.first);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 300));
+      // Tap on a word tile from the pool
+      final tiles = find.byType(TopicFusionTile);
+      if (tiles.evaluate().isNotEmpty) {
+        await tester.tap(tiles.first);
+        await tester.pumpAndSettle();
       }
     });
   });

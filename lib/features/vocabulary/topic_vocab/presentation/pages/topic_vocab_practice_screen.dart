@@ -9,14 +9,16 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/domain/entities/topic_practice_quest.dart';
-import 'package:vowl/features/vocabulary/topic_vocab/presentation/controllers/topic_vocab_controller.dart';
-import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_matrix_grid.dart';
+import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_category_tray.dart';
+import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_fusion_tile.dart';
+import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_practice_celebration_card.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_word_peek_sheet.dart';
 
 /// Guided active recall screen for Topic Vocab ("Practice: Word Groups").
-/// Learners practice grouping tiles into 3-word semantic clusters with hints,
-/// one-away feedback, audio tap feedback, and strongly-typed domain models.
+/// Features interactive category trays where learners categorize vocabulary
+/// items with real-time semantic anchoring, TTS audio, and coaching tips.
 class TopicVocabPracticeScreen extends StatefulWidget {
   final int level;
 
@@ -31,7 +33,12 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
   int _currentIndex = 0;
   List<TopicPracticeQuest> _quests = [];
   bool _isLoading = true;
-  TopicVocabController? _controller;
+
+  int _activeCategoryIndex = 0;
+  final Map<int, List<String>> _placedWords = {};
+  List<String> _poolWords = [];
+  String? _coachingMessage;
+
   late final HapticService _hapticService = di.sl.isRegistered<HapticService>()
       ? di.sl<HapticService>()
       : HapticService();
@@ -40,12 +47,6 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
   void initState() {
     super.initState();
     _loadCurriculum();
-  }
-
-  @override
-  void dispose() {
-    _controller?.dispose();
-    super.dispose();
   }
 
   int get _batchStart => ((widget.level - 1) ~/ 10) * 10 + 1;
@@ -57,8 +58,8 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
     try {
       final jsonString = await rootBundle.loadString(batchPath);
       final data = jsonDecode(jsonString) as Map<String, dynamic>;
-      final rawQuests = (data['quests'] as List<dynamic>)
-          .cast<Map<String, dynamic>>();
+      final rawQuests =
+          (data['quests'] as List<dynamic>).cast<Map<String, dynamic>>();
 
       final filtered = rawQuests
           .where((q) => (q['level'] as int? ?? widget.level) == widget.level)
@@ -67,112 +68,107 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
 
       if (mounted) {
         setState(() {
-          _quests = filtered.isNotEmpty ? filtered : _buildFallbackQuests();
+          _quests = filtered.isNotEmpty
+              ? filtered
+              : [TopicPracticeQuest.fallback(widget.level)];
           _isLoading = false;
-          _initControllerForCurrentQuest();
+          _initBoardForCurrentQuest();
         });
       }
     } catch (_) {
       if (mounted) {
         setState(() {
-          _quests = _buildFallbackQuests();
+          _quests = [TopicPracticeQuest.fallback(widget.level)];
           _isLoading = false;
-          _initControllerForCurrentQuest();
+          _initBoardForCurrentQuest();
         });
       }
     }
   }
 
-  List<TopicPracticeQuest> _buildFallbackQuests() {
-    return [
-      TopicPracticeQuest(
-        id: 'VOC_TOPICVOCAB_L${widget.level}_PRACTICE_FALLBACK',
-        level: widget.level,
-        conceptTitle: 'Practice: Word Groups',
-        boards: const [
-          TopicPracticeBoard(
-            targetClusterSize: 3,
-            tiles: [
-              'Boiling',
-              'Scorching',
-              'Steaming',
-              'Freezing',
-              'Icy',
-              'Chilly',
-            ],
-            clusters: [
-              TopicPracticeCluster(
-                categoryName: 'Intense Heat',
-                emoji: '🔥',
-                words: ['Boiling', 'Scorching', 'Steaming'],
-                explanation: 'Words describing high heat and vapor.',
-              ),
-              TopicPracticeCluster(
-                categoryName: 'Extreme Cold',
-                emoji: '❄️',
-                words: ['Freezing', 'Icy', 'Chilly'],
-                explanation: 'Words describing freezing cold and ice.',
-              ),
-            ],
-            clues: {
-              'catAClue': 'Think of high temperatures and boiling heat.',
-              'catBClue': 'Think of freezing ice and cold winter weather.',
-            },
-          ),
-        ],
-      ),
-    ];
-  }
-
-  void _initControllerForCurrentQuest() {
-    _controller?.dispose();
+  void _initBoardForCurrentQuest() {
     if (_quests.isEmpty) return;
-
     final quest = _quests[_currentIndex];
     if (quest.boards.isEmpty) return;
 
     final board = quest.boards.first;
-    final parsedClusters = board.clusters.map((c) {
-      return TopicClusterGroup(
-        categoryName: c.categoryName,
-        emoji: c.emoji,
-        words: c.words,
-        explanation: c.explanation,
+    _placedWords.clear();
+    for (int i = 0; i < board.clusters.length; i++) {
+      _placedWords[i] = [];
+    }
+    _poolWords = List<String>.from(board.tiles);
+    _activeCategoryIndex = 0;
+    _coachingMessage = null;
+  }
+
+  bool get _isBoardComplete {
+    if (_quests.isEmpty) return false;
+    final quest = _quests[_currentIndex];
+    if (quest.boards.isEmpty) return false;
+    final board = quest.boards.first;
+    for (int i = 0; i < board.clusters.length; i++) {
+      if ((_placedWords[i]?.length ?? 0) < board.targetClusterSize) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  void _handleWordTap(String word) {
+    if (_quests.isEmpty) return;
+    final quest = _quests[_currentIndex];
+    if (quest.boards.isEmpty) return;
+    final board = quest.boards.first;
+    if (_activeCategoryIndex >= board.clusters.length) return;
+
+    if (di.sl.isRegistered<TtsService>()) {
+      try {
+        di.sl<TtsService>().speak(word);
+      } catch (_) {}
+    }
+
+    final activeCluster = board.clusters[_activeCategoryIndex];
+    if (activeCluster.words.contains(word)) {
+      _hapticService.light();
+      setState(() {
+        _coachingMessage = null;
+        _poolWords.remove(word);
+        _placedWords[_activeCategoryIndex]?.add(word);
+
+        if ((_placedWords[_activeCategoryIndex]?.length ?? 0) >=
+            board.targetClusterSize) {
+          _hapticService.success();
+          for (int i = 0; i < board.clusters.length; i++) {
+            if ((_placedWords[i]?.length ?? 0) < board.targetClusterSize) {
+              _activeCategoryIndex = i;
+              break;
+            }
+          }
+        }
+      });
+    } else {
+      _hapticService.error();
+      final matching = board.clusters.firstWhere(
+        (c) => c.words.contains(word),
+        orElse: () => activeCluster,
       );
-    }).toList();
-
-    _controller =
-        TopicVocabController(
-          targetClusters: parsedClusters,
-          targetClusterSize: board.targetClusterSize,
-          initialTiles: board.tiles,
-          hapticService: _hapticService,
-        )..addListener(() {
-          if (mounted) setState(() {});
-        });
+      setState(() {
+        _coachingMessage =
+            "'$word' belongs to ${matching.categoryName} ${matching.emoji}. Select that tray to place it.";
+      });
+    }
   }
 
-  void _handleFuse() {
-    _controller?.submitFusion();
-  }
-
-  void _handleHint() {
-    if (_quests.isEmpty) return;
-    final quest = _quests[_currentIndex];
-    if (quest.boards.isEmpty) return;
-    final board = quest.boards.first;
-
-    final clueText = board.clues.isNotEmpty
-        ? board.clues.values.join(' • ')
-        : 'Look for words that share a common theme or situation.';
-
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(clueText),
-        behavior: SnackBarBehavior.floating,
-        duration: const Duration(seconds: 4),
-      ),
-    );
+  void _handleRemoveWord(int categoryIndex, String word) {
+    _hapticService.light();
+    setState(() {
+      _coachingMessage = null;
+      _placedWords[categoryIndex]?.remove(word);
+      if (!_poolWords.contains(word)) {
+        _poolWords.add(word);
+      }
+      _activeCategoryIndex = categoryIndex;
+    });
   }
 
   void _handleTileLongPress(String word) {
@@ -183,7 +179,6 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
 
     String? matchedCategory;
     String? matchedExplanation;
-
     for (final c in board.clusters) {
       if (c.words.contains(word)) {
         matchedCategory = c.categoryName;
@@ -196,7 +191,7 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
     TopicWordPeekSheet.show(
       context,
       word: word,
-      definition: matchedExplanation ?? 'Thematic vocabulary item in this lesson.',
+      definition: matchedExplanation ?? 'Vocabulary item in this lesson.',
       categoryHint: matchedCategory,
       accentColor: theme.primaryColor,
     );
@@ -207,7 +202,7 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
     if (_currentIndex < _quests.length - 1) {
       setState(() {
         _currentIndex++;
-        _initControllerForCurrentQuest();
+        _initBoardForCurrentQuest();
       });
     } else {
       PhaseProgressRecorder.recordPhaseCompleted(
@@ -232,8 +227,9 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('topicVocab', level: widget.level);
     final accentColor = theme.primaryColor;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    if (_isLoading || _controller == null) {
+    if (_isLoading || _quests.isEmpty) {
       return PracticePhaseScaffold(
         title: 'Practice: Word Groups',
         gameType: 'topicVocab',
@@ -247,13 +243,13 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
           child: Column(
             children: [
               ShimmerLoading.rounded(
-                height: 100.h,
+                height: 110.h,
                 width: double.infinity,
                 borderRadius: 16,
               ),
-              SizedBox(height: 16.h),
+              SizedBox(height: 14.h),
               ShimmerLoading.rounded(
-                height: 200.h,
+                height: 110.h,
                 width: double.infinity,
                 borderRadius: 16,
               ),
@@ -263,8 +259,10 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
       );
     }
 
+    final quest = _quests[_currentIndex];
+    final board = quest.boards.first;
+    final isDone = _isBoardComplete;
     final isLast = _currentIndex == _quests.length - 1;
-    final isDone = _controller!.isComplete;
 
     return PracticePhaseScaffold(
       title: 'Practice: Word Groups',
@@ -275,15 +273,93 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
       isActionEnabled: isDone,
       actionLabel: isLast ? 'Start Mastery Challenge' : 'Next Word Group',
       onComplete: _handleNext,
-      onHint: _handleHint,
-      isHintAvailable: !isDone,
-      child: Padding(
+      child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-        child: TopicMatrixGrid(
-          controller: _controller!,
-          accentColor: accentColor,
-          onFuse: _handleFuse,
-          onTileLongPress: _handleTileLongPress,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Padding(
+              padding: EdgeInsets.only(bottom: 10.h),
+              child: Text(
+                'Tap a category tray, then tap matching words to place them.',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 13.sp,
+                  fontWeight: FontWeight.w500,
+                  color: isDark ? Colors.white60 : Colors.black54,
+                ),
+              ),
+            ),
+            ...List.generate(board.clusters.length, (idx) {
+              final cluster = board.clusters[idx];
+              final placed = _placedWords[idx] ?? [];
+              final isTrayComplete = placed.length >= board.targetClusterSize;
+              final isTrayActive = _activeCategoryIndex == idx;
+
+              return TopicCategoryTray(
+                categoryName: cluster.categoryName,
+                emoji: cluster.emoji,
+                clue: board.clues['cat${String.fromCharCode(65 + idx)}Clue'],
+                explanation: cluster.explanation,
+                targetCount: board.targetClusterSize,
+                placedWords: placed,
+                isActive: isTrayActive,
+                isCompleted: isTrayComplete,
+                accentColor: accentColor,
+                onTap: () {
+                  _hapticService.selection();
+                  setState(() => _activeCategoryIndex = idx);
+                },
+                onRemoveWord: (w) => _handleRemoveWord(idx, w),
+                onWordTap: (w) {
+                  if (di.sl.isRegistered<TtsService>()) {
+                    try {
+                      di.sl<TtsService>().speak(w);
+                    } catch (_) {}
+                  }
+                },
+              );
+            }),
+            if (_coachingMessage != null)
+              TopicPracticeCoachingBanner(message: _coachingMessage!),
+            SizedBox(height: 6.h),
+            if (_poolWords.isNotEmpty) ...[
+              Text(
+                'Available Words (${_poolWords.length}):',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w600,
+                  color: isDark ? Colors.white54 : Colors.black54,
+                ),
+              ),
+              SizedBox(height: 8.h),
+              GridView.builder(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: _poolWords.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: _poolWords.length > 4 ? 3 : 2,
+                  crossAxisSpacing: 10.w,
+                  mainAxisSpacing: 10.h,
+                  childAspectRatio: 1.8,
+                ),
+                itemBuilder: (context, index) {
+                  final word = _poolWords[index];
+                  return TopicFusionTile(
+                    word: word,
+                    isSelected: false,
+                    accentColor: accentColor,
+                    onTap: () => _handleWordTap(word),
+                    onLongPress: () => _handleTileLongPress(word),
+                  );
+                },
+              ),
+            ],
+            if (isDone) const TopicPracticeCelebrationCard(),
+            SizedBox(height: 20.h),
+          ],
         ),
       ),
     );

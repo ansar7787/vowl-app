@@ -79,4 +79,43 @@ class TopicPracticeQuest {
           .toList(),
     );
   }
+
+  factory TopicPracticeQuest.fallback(int level) {
+    return TopicPracticeQuest(
+      id: 'VOC_TOPICVOCAB_L${level}_PRACTICE_FALLBACK',
+      level: level,
+      conceptTitle: 'Practice: Word Groups',
+      boards: const [
+        TopicPracticeBoard(
+          targetClusterSize: 3,
+          tiles: [
+            'Boiling',
+            'Scorching',
+            'Steaming',
+            'Freezing',
+            'Icy',
+            'Chilly',
+          ],
+          clusters: [
+            TopicPracticeCluster(
+              categoryName: 'Intense Heat',
+              emoji: '🔥',
+              words: ['Boiling', 'Scorching', 'Steaming'],
+              explanation: 'Words describing high heat and vapor.',
+            ),
+            TopicPracticeCluster(
+              categoryName: 'Extreme Cold',
+              emoji: '❄️',
+              words: ['Freezing', 'Icy', 'Chilly'],
+              explanation: 'Words describing freezing cold and ice.',
+            ),
+          ],
+          clues: {
+            'catAClue': 'Think of high temperatures and boiling heat.',
+            'catBClue': 'Think of freezing ice and cold winter weather.',
+          },
+        ),
+      ],
+    );
+  }
 }
