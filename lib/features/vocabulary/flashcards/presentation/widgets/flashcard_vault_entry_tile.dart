@@ -23,6 +23,11 @@ class FlashcardVaultEntryTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final r = entry.retentionPercentage;
+    final cefr = entry.level <= 50
+        ? 'B1'
+        : (entry.level <= 100
+            ? 'B2'
+            : (entry.level <= 150 ? 'C1' : 'C2'));
     final healthColor = r >= 80
         ? AppColors.emerald500
         : (r >= 50 ? Colors.amber : AppColors.rose500);
@@ -79,7 +84,7 @@ class FlashcardVaultEntryTile extends StatelessWidget {
                         borderRadius: BorderRadius.circular(6.r),
                       ),
                       child: Text(
-                        'Lvl ${entry.level}',
+                        'Lvl ${entry.level} • $cefr',
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 9.5.sp,

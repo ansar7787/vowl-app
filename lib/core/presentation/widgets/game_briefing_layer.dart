@@ -23,6 +23,10 @@ class GameBriefingLayer extends StatelessWidget {
     const phasedGames = {'flashcards', 'synonymSearch', 'antonymSearch', 'contextClues', 'phrasalVerbs', 'idioms', 'academicWord', 'topicVocab', 'wordFormation', 'prefixSuffix', 'collocations', 'contextualUsage'};
     final isPhased = phasedGames.contains(gameType.name);
 
+    final cefr = level <= 50
+        ? 'B1'
+        : (level <= 100 ? 'B2' : (level <= 150 ? 'C1' : 'C2'));
+
     final briefing = GameInstructionService.getBriefing(
       context,
       gameType,
@@ -30,7 +34,7 @@ class GameBriefingLayer extends StatelessWidget {
       level: level,
     );
     return QuestBriefingOverlay(
-      phaseBadge: isPhased ? '🏆 MASTERY PHASE • LEVEL $level' : null,
+      phaseBadge: isPhased ? '🏆 MASTERY PHASE • LEVEL $level • $cefr' : null,
       title: briefing.title,
       objective: briefing.objective,
       rules: briefing.rules,
