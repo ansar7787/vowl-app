@@ -99,6 +99,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
   void _handleTimeExpired() {
     if (isAnsweredNotifier.value) return;
     hapticService.error();
+    _controller?.autoSolve();
     if (_currentQuest != null) {
       submitWrongAnswer(quest: _currentQuest!, userAnswer: 'Time Expired');
     }
@@ -233,6 +234,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
     } else {
       if (_currentQuest != null && _controller!.failedAttempts >= 3) {
         _countdownTimer?.cancel();
+        _controller?.autoSolve();
         submitWrongAnswer(
           quest: _currentQuest!,
           userAnswer: 'Multiple failed fusions',

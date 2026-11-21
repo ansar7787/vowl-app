@@ -119,7 +119,9 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
   void _speak(String word) {
     if (di.sl.isRegistered<TtsService>()) {
       try {
-        di.sl<TtsService>().speak(word);
+        final tts = di.sl<TtsService>();
+        tts.stop();
+        tts.speak(word);
       } catch (_) {}
     }
   }
@@ -368,7 +370,8 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: _poolWords.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: _poolWords.length > 4 ? 3 : 2,
+                  crossAxisCount:
+                      (_poolWords.length == 3 || _poolWords.length >= 5) ? 3 : 2,
                   crossAxisSpacing: 10.w,
                   mainAxisSpacing: 10.h,
                   childAspectRatio: 1.8,

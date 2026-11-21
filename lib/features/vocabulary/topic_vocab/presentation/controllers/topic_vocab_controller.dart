@@ -74,15 +74,14 @@ class TopicVocabController extends ChangeNotifier {
   /// Toggles selection of a word tile.
   void toggleTile(String word) {
     if (_remainingTiles.contains(word)) {
+      _isOneAway = false;
       if (_selectedTiles.contains(word)) {
         _selectedTiles.remove(word);
-        _isOneAway = false;
         _hapticService.selection();
       } else {
         if (_selectedTiles.length < targetClusterSize) {
           _selectedTiles.add(word);
           _hapticService.light();
-          _checkOneAwayStatus();
         } else {
           _hapticService.warning();
         }

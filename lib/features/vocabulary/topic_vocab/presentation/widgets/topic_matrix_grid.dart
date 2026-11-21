@@ -160,7 +160,10 @@ class TopicMatrixGrid extends StatelessWidget {
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: remaining.length,
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: remaining.length > 4 ? 3 : 2,
+                      crossAxisCount:
+                          (remaining.length == 3 || remaining.length >= 5)
+                              ? 3
+                              : 2,
                       crossAxisSpacing: 10.w,
                       mainAxisSpacing: 10.h,
                       childAspectRatio: 1.8,
@@ -181,7 +184,9 @@ class TopicMatrixGrid extends StatelessWidget {
                                 if (enableTtsOnTap &&
                                     di.sl.isRegistered<TtsService>()) {
                                   try {
-                                    di.sl<TtsService>().speak(word);
+                                    final tts = di.sl<TtsService>();
+                                    tts.stop();
+                                    tts.speak(word);
                                   } catch (_) {}
                                 }
                                 controller.toggleTile(word);

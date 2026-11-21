@@ -139,6 +139,8 @@ void main() {
       controller.toggleTile('Scorching');
       controller.toggleTile('Freezing');
 
+      controller.submitFusion();
+
       expect(controller.isOneAway, isTrue);
     });
 
