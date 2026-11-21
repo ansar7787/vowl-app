@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vowl/core/data/models/phased_quest_model.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/quest_briefing_overlay.dart';
 import 'package:vowl/core/utils/game_instruction_service.dart';
@@ -23,9 +24,7 @@ class GameBriefingLayer extends StatelessWidget {
     const phasedGames = {'flashcards', 'synonymSearch', 'antonymSearch', 'contextClues', 'phrasalVerbs', 'idioms', 'academicWord', 'topicVocab', 'wordFormation', 'prefixSuffix', 'collocations', 'contextualUsage'};
     final isPhased = phasedGames.contains(gameType.name);
 
-    final cefr = level <= 50
-        ? 'B1'
-        : (level <= 100 ? 'B2' : (level <= 150 ? 'C1' : 'C2'));
+    final cefr = PhasedQuest.getCefrForLevel(level);
 
     final briefing = GameInstructionService.getBriefing(
       context,

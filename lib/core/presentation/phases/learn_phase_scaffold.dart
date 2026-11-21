@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/data/models/phased_quest_model.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -56,9 +57,7 @@ class LearnPhaseScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isDark ? AppColors.slate950 : AppColors.slate50;
-    final cefr = level <= 50
-        ? 'B1'
-        : (level <= 100 ? 'B2' : (level <= 150 ? 'C1' : 'C2'));
+    final cefr = PhasedQuest.getCefrForLevel(level);
 
     void handleExit() {
       if (di.sl.isRegistered<TtsService>()) {

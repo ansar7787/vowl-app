@@ -147,14 +147,19 @@ class PhasedQuest {
       .toList();
   String? get correctAnswer => rawExtra['correctAnswer'] as String?;
   String? get explanation => rawExtra['explanation'] as String?;
+  static String getCefrForLevel(int level) {
+    if (level <= 40) return 'A2';
+    if (level <= 80) return 'B1';
+    if (level <= 120) return 'B2';
+    if (level <= 160) return 'C1';
+    return 'C2';
+  }
+
   String? get cefr => rawExtra['cefr'] as String?;
   String get cefrLevel {
     final explicit = cefr;
     if (explicit != null && explicit.isNotEmpty) return explicit.toUpperCase();
-    if (level <= 50) return 'B1';
-    if (level <= 100) return 'B2';
-    if (level <= 150) return 'C1';
-    return 'C2';
+    return getCefrForLevel(level);
   }
 
   factory PhasedQuest.fromJson(Map<String, dynamic> json) => PhasedQuest(

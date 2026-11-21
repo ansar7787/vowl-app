@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/data/models/phased_quest_model.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -23,11 +24,7 @@ class FlashcardVaultEntryTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final r = entry.retentionPercentage;
-    final cefr = entry.level <= 50
-        ? 'B1'
-        : (entry.level <= 100
-            ? 'B2'
-            : (entry.level <= 150 ? 'C1' : 'C2'));
+    final cefr = PhasedQuest.getCefrForLevel(entry.level);
     final healthColor = r >= 80
         ? AppColors.emerald500
         : (r >= 50 ? Colors.amber : AppColors.rose500);
