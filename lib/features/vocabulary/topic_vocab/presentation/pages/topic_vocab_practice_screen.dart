@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/presentation/phases/practice_phase_scaffold.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
+import 'package:vowl/core/presentation/widgets/game_scrollbar.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -304,89 +305,93 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
       onComplete: _handleNext,
       onHint: _handleHint,
       isHintAvailable: !isDone,
-      child: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(bottom: 10.h),
-              child: Text(
-                'Tap a category tray, then tap matching words to place them.',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 13.sp,
-                  fontWeight: FontWeight.w500,
-                  color: isDark ? Colors.white60 : Colors.black54,
+      child: GameScrollbar(
+        thumbColor: accentColor.withValues(alpha: 0.55),
+        thickness: 3.5.w,
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(bottom: 10.h),
+                child: Text(
+                  'Tap a category tray, then tap matching words to place them.',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 13.sp,
+                    fontWeight: FontWeight.w500,
+                    color: isDark ? Colors.white60 : Colors.black54,
+                  ),
                 ),
               ),
-            ),
-            ...List.generate(board.clusters.length, (idx) {
-              final cluster = board.clusters[idx];
-              final placed = _placedWords[idx] ?? [];
-              final isTrayComplete = placed.length >= board.targetClusterSize;
-              final isTrayActive = _activeCategoryIndex == idx;
+              ...List.generate(board.clusters.length, (idx) {
+                final cluster = board.clusters[idx];
+                final placed = _placedWords[idx] ?? [];
+                final isTrayComplete = placed.length >= board.targetClusterSize;
+                final isTrayActive = _activeCategoryIndex == idx;
 
-              return TopicCategoryTray(
-                categoryName: cluster.categoryName,
-                emoji: cluster.emoji,
-                clue: board.clues['cat${String.fromCharCode(65 + idx)}Clue'],
-                explanation: cluster.explanation,
-                collocations: cluster.collocations,
-                targetCount: board.targetClusterSize,
-                placedWords: placed,
-                isActive: isTrayActive,
-                isCompleted: isTrayComplete,
-                accentColor: accentColor,
-                onTap: () {
-                  _hapticService.selection();
-                  setState(() => _activeCategoryIndex = idx);
-                },
-                onRemoveWord: (w) => _handleRemoveWord(idx, w),
-                onWordTap: _speak,
-              );
-            }),
-            if (_coachingMessage != null)
-              TopicPracticeCoachingBanner(message: _coachingMessage!),
-            SizedBox(height: 6.h),
-            if (_poolWords.isNotEmpty) ...[
-              Text(
-                'Available Words (${_poolWords.length}):',
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 12.sp,
-                  fontWeight: FontWeight.w600,
-                  color: isDark ? Colors.white54 : Colors.black54,
+                return TopicCategoryTray(
+                  categoryName: cluster.categoryName,
+                  emoji: cluster.emoji,
+                  clue: board.clues['cat${String.fromCharCode(65 + idx)}Clue'],
+                  explanation: cluster.explanation,
+                  collocations: cluster.collocations,
+                  targetCount: board.targetClusterSize,
+                  placedWords: placed,
+                  isActive: isTrayActive,
+                  isCompleted: isTrayComplete,
+                  accentColor: accentColor,
+                  onTap: () {
+                    _hapticService.selection();
+                    setState(() => _activeCategoryIndex = idx);
+                  },
+                  onRemoveWord: (w) => _handleRemoveWord(idx, w),
+                  onWordTap: _speak,
+                );
+              }),
+              if (_coachingMessage != null)
+                TopicPracticeCoachingBanner(message: _coachingMessage!),
+              SizedBox(height: 6.h),
+              if (_poolWords.isNotEmpty) ...[
+                Text(
+                  'Available Words (${_poolWords.length}):',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w600,
+                    color: isDark ? Colors.white54 : Colors.black54,
+                  ),
                 ),
-              ),
-              SizedBox(height: 8.h),
-              GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: _poolWords.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount:
-                      (_poolWords.length == 3 || _poolWords.length >= 5) ? 3 : 2,
-                  crossAxisSpacing: 10.w,
-                  mainAxisSpacing: 10.h,
-                  childAspectRatio: 1.8,
+                SizedBox(height: 8.h),
+                GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemCount: _poolWords.length,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount:
+                        (_poolWords.length == 3 || _poolWords.length >= 5) ? 3 : 2,
+                    crossAxisSpacing: 10.w,
+                    mainAxisSpacing: 10.h,
+                    childAspectRatio: 1.35,
+                  ),
+                  itemBuilder: (context, index) {
+                    final word = _poolWords[index];
+                    return TopicFusionTile(
+                      word: word,
+                      isSelected: false,
+                      accentColor: accentColor,
+                      onTap: () => _handleWordTap(word),
+                      onLongPress: () => _handleTileLongPress(word),
+                    );
+                  },
                 ),
-                itemBuilder: (context, index) {
-                  final word = _poolWords[index];
-                  return TopicFusionTile(
-                    word: word,
-                    isSelected: false,
-                    accentColor: accentColor,
-                    onTap: () => _handleWordTap(word),
-                    onLongPress: () => _handleTileLongPress(word),
-                  );
-                },
-              ),
+              ],
+              if (isDone) const TopicPracticeCelebrationCard(),
+              SizedBox(height: 20.h),
             ],
-            if (isDone) const TopicPracticeCelebrationCard(),
-            SizedBox(height: 20.h),
-          ],
+          ),
         ),
       ),
     );

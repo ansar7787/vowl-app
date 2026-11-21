@@ -23,14 +23,14 @@ class TopicWordPeekSheet extends StatefulWidget {
   });
 
   /// Displays the peek sheet as a modal bottom sheet.
-  static void show(
+  static Future<void> show(
     BuildContext context, {
     required String word,
     String? definition,
     String? categoryHint,
     required Color accentColor,
   }) {
-    showModalBottomSheet<void>(
+    return showModalBottomSheet<void>(
       context: context,
       backgroundColor: Colors.transparent,
       isScrollControlled: true,

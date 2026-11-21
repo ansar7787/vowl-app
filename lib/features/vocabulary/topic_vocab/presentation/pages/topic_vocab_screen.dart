@@ -243,15 +243,16 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
     }
   }
 
-  void _handleTileLongPress(String word) {
+  void _handleTileLongPress(String word) async {
     if (_currentQuest == null) return;
     String? matchedDefinition;
     String? matchedCategory;
 
     final related = _currentQuest!.relatedWords ?? [];
     for (final rw in related) {
-      if (rw.toLowerCase().startsWith('${word.toLowerCase()}:') ||
-          rw.toLowerCase().startsWith('${word.toLowerCase()} -')) {
+      final lower = rw.toLowerCase();
+      if (lower.startsWith('${word.toLowerCase()}:') ||
+          lower.startsWith('${word.toLowerCase()} -')) {
         final parts = rw.split(RegExp(r'[:\-]'));
         if (parts.length > 1) {
           matchedDefinition = parts.sublist(1).join(':').trim();
@@ -271,13 +272,20 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
     }
 
     final theme = LevelThemeHelper.getTheme('topicVocab', level: widget.level);
-    TopicWordPeekSheet.show(
+    final wasTimerRunning = _countdownTimer?.isActive ?? false;
+    _countdownTimer?.cancel();
+
+    await TopicWordPeekSheet.show(
       context,
       word: word,
       definition: matchedDefinition ?? _currentQuest!.explanation,
       categoryHint: matchedCategory,
       accentColor: theme.primaryColor,
     );
+
+    if (mounted && wasTimerRunning && isAnsweredNotifier.value == false && _remainingSeconds > 0) {
+      _startTimer();
+    }
   }
 
   void _handleContinue(VocabularyLoaded state) {
@@ -314,17 +322,9 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
                 padding: EdgeInsets.all(16.r),
                 child: Column(
                   children: [
-                    ShimmerLoading.rounded(
-                      height: 50.h,
-                      width: double.infinity,
-                      borderRadius: 12,
-                    ),
+                    ShimmerLoading.rounded(height: 50.h, width: double.infinity, borderRadius: 12),
                     SizedBox(height: 16.h),
-                    ShimmerLoading.rounded(
-                      height: 250.h,
-                      width: double.infinity,
-                      borderRadius: 16,
-                    ),
+                    ShimmerLoading.rounded(height: 250.h, width: double.infinity, borderRadius: 16),
                   ],
                 ),
               ),
