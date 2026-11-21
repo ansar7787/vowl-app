@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -35,6 +36,7 @@ class TopicVocabController extends ChangeNotifier {
   int _failedAttempts = 0;
   bool _isShaking = false;
   bool _isDisposed = false;
+  Timer? _shakeTimer;
 
   TopicVocabController({
     required List<TopicClusterGroup> targetClusters,
@@ -160,7 +162,8 @@ class TopicVocabController extends ChangeNotifier {
     notifyListeners();
 
     // Reset shake after brief frame
-    Future.delayed(const Duration(milliseconds: 600), () {
+    _shakeTimer?.cancel();
+    _shakeTimer = Timer(const Duration(milliseconds: 600), () {
       if (!_isDisposed) {
         _isShaking = false;
         notifyListeners();
@@ -173,6 +176,7 @@ class TopicVocabController extends ChangeNotifier {
   @override
   void dispose() {
     _isDisposed = true;
+    _shakeTimer?.cancel();
     super.dispose();
   }
 

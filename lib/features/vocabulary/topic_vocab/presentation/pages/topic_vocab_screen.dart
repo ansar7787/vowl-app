@@ -108,6 +108,8 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
     if (_currentQuest?.id == quest.id && _controller != null) return;
     _currentQuest = quest;
     _controller?.dispose();
+    _bonusTimer?.cancel();
+    _bonusSeconds = 0;
 
     final clusters = _parseClusters(quest);
     final initialTiles = quest.options != null && quest.options!.isNotEmpty
@@ -235,6 +237,8 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
           quest: _currentQuest!,
           userAnswer: 'Multiple failed fusions',
         );
+      } else {
+        soundService.playSoftWrong();
       }
     }
   }

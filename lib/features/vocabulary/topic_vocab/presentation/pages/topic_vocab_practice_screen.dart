@@ -9,6 +9,7 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/domain/entities/topic_practice_quest.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_category_tray.dart';
@@ -66,11 +67,12 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
           .map((q) => TopicPracticeQuest.fromJson(q))
           .toList();
 
+      final loaded = filtered.isNotEmpty
+          ? filtered
+          : [TopicPracticeQuest.fallback(widget.level)];
       if (mounted) {
         setState(() {
-          _quests = filtered.isNotEmpty
-              ? filtered
-              : [TopicPracticeQuest.fallback(widget.level)];
+          _quests = loaded;
           _isLoading = false;
           _initBoardForCurrentQuest();
         });
@@ -142,6 +144,13 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
         if ((_placedWords[_activeCategoryIndex]?.length ?? 0) >=
             board.targetClusterSize) {
           _hapticService.success();
+          if (di.sl.isRegistered<SoundService>()) {
+            try {
+              di.sl<SoundService>().playCorrect(
+                    comboStep: _isBoardComplete ? 3 : 1,
+                  );
+            } catch (_) {}
+          }
           for (int i = 0; i < board.clusters.length; i++) {
             if ((_placedWords[i]?.length ?? 0) < board.targetClusterSize) {
               _activeCategoryIndex = i;
@@ -152,6 +161,11 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
       });
     } else {
       _hapticService.error();
+      if (di.sl.isRegistered<SoundService>()) {
+        try {
+          di.sl<SoundService>().playSoftWrong();
+        } catch (_) {}
+      }
       final matching = board.clusters.firstWhere(
         (c) => c.words.contains(word),
         orElse: () => activeCluster,
@@ -267,17 +281,9 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
           padding: EdgeInsets.all(16.r),
           child: Column(
             children: [
-              ShimmerLoading.rounded(
-                height: 110.h,
-                width: double.infinity,
-                borderRadius: 16,
-              ),
+              ShimmerLoading.rounded(height: 110.h, width: double.infinity, borderRadius: 16),
               SizedBox(height: 14.h),
-              ShimmerLoading.rounded(
-                height: 110.h,
-                width: double.infinity,
-                borderRadius: 16,
-              ),
+              ShimmerLoading.rounded(height: 110.h, width: double.infinity, borderRadius: 16),
             ],
           ),
         ),

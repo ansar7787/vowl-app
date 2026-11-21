@@ -116,6 +116,7 @@ void main() {
     when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
     when(() => mockSoundService.playCorrect(comboStep: any(named: 'comboStep'))).thenAnswer((_) async {});
     when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
+    when(() => mockSoundService.playSoftWrong()).thenAnswer((_) async {});
     when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
     when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
 

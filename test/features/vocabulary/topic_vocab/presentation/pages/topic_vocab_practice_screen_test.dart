@@ -41,6 +41,10 @@ void main() {
     when(() => mockHaptics.error()).thenAnswer((_) async {});
     when(() => mockHaptics.success()).thenAnswer((_) async {});
 
+    when(() => mockSounds.playCorrect()).thenAnswer((_) async {});
+    when(() => mockSounds.playCorrect(comboStep: any(named: 'comboStep'))).thenAnswer((_) async {});
+    when(() => mockSounds.playSoftWrong()).thenAnswer((_) async {});
+
     when(() => mockTts.stop()).thenAnswer((_) async {});
     when(() => mockTts.speak(any(), rate: any(named: 'rate'), locale: any(named: 'locale'))).thenAnswer((_) async {});
 
