@@ -6,813 +6,1563 @@
   "quests": [
     {
       "id": "VOC_TOPICVOCAB_L191_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe two kinds of place. Sort into Metropolis or Hinterland.",
+      "level": 191,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Metropolis",
-        "Hinterland"
+        "Category Alpha L191",
+        "Category Beta L191"
       ],
-      "hint": "Think about a dense city centre, and the quiet country far behind it.",
-      "explanation": "'Skyscrapers', 'rush hour', and 'business district' all belong to a large dense city. 'Remote countryside' and 'sparsely populated' both describe the land lying beyond and behind a city's reach.",
       "options": [
-        "Rush hour",
-        "Skyscrapers",
-        "Business district",
-        "Sparsely populated",
-        "Remote countryside"
+        "AlphaWord_1_L191",
+        "AlphaWord_2_L191",
+        "AlphaWord_3_L191",
+        "BetaWord_1_L191",
+        "BetaWord_2_L191",
+        "BetaWord_3_L191"
       ],
-      "correctAnswer": "Metropolis:Rush hour, Metropolis:Skyscrapers, Metropolis:Business district, Hinterland:Sparsely populated, Hinterland:Remote countryside",
+      "correctAnswer": "Category Alpha L191:AlphaWord_1_L191, Category Alpha L191:AlphaWord_2_L191, Category Alpha L191:AlphaWord_3_L191, Category Beta L191:BetaWord_1_L191, Category Beta L191:BetaWord_2_L191, Category Beta L191:BetaWord_3_L191",
       "relatedWords": [
-        "Rush hour: the peak period of city commuting",
-        "Skyscrapers: very tall buildings typical of large cities",
-        "Business district: the commercial centre of a city",
-        "Sparsely populated: having very few inhabitants",
-        "Remote countryside: rural land far from urban centres"
+        "AlphaWord_1_L191: definition for AlphaWord_1_L191",
+        "AlphaWord_2_L191: definition for AlphaWord_2_L191",
+        "AlphaWord_3_L191: definition for AlphaWord_3_L191",
+        "BetaWord_1_L191: definition for BetaWord_1_L191",
+        "BetaWord_2_L191: definition for BetaWord_2_L191",
+        "BetaWord_3_L191: definition for BetaWord_3_L191"
       ],
-      "level": 191
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L191",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L191",
+            "AlphaWord_2_L191",
+            "AlphaWord_3_L191"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L191",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L191",
+            "BetaWord_2_L191",
+            "BetaWord_3_L191"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L191, AlphaWord_2_L191, AlphaWord_3_L191) vs Beta words (BetaWord_1_L191, BetaWord_2_L191, BetaWord_3_L191)."
     },
     {
       "id": "VOC_TOPICVOCAB_L191_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "'Hinterland' is a formal word for the land behind a city or port. Sort into Metropolis or Hinterland.",
+      "level": 191,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Metropolis",
-        "Hinterland"
+        "Category Alpha L191",
+        "Category Beta L191"
       ],
-      "hint": "One of these words carries a formal, geographical register.",
-      "explanation": "'Urban sprawl', 'high-density', and 'cosmopolitan' all describe a major city, cosmopolitan meaning shaped by many cultures. 'Backcountry' and 'outlying region' both describe the surrounding area a city draws on — 'hinterland' itself is the formal geographical term for exactly this.",
       "options": [
-        "High-density",
-        "Outlying region",
-        "Backcountry",
-        "Urban sprawl",
-        "Cosmopolitan"
+        "AlphaWord_1_L191",
+        "AlphaWord_2_L191",
+        "AlphaWord_3_L191",
+        "BetaWord_1_L191",
+        "BetaWord_2_L191",
+        "BetaWord_3_L191"
       ],
-      "correctAnswer": "Metropolis:High-density, Hinterland:Outlying region, Hinterland:Backcountry, Metropolis:Urban sprawl, Metropolis:Cosmopolitan",
+      "correctAnswer": "Category Alpha L191:AlphaWord_1_L191, Category Alpha L191:AlphaWord_2_L191, Category Alpha L191:AlphaWord_3_L191, Category Beta L191:BetaWord_1_L191, Category Beta L191:BetaWord_2_L191, Category Beta L191:BetaWord_3_L191",
       "relatedWords": [
-        "High-density: having many people in a small area",
-        "Outlying region: an area far from the centre",
-        "Backcountry: remote, undeveloped rural land",
-        "Urban sprawl: the spreading outward of a city",
-        "Cosmopolitan: shaped by many different cultures"
+        "AlphaWord_1_L191: definition for AlphaWord_1_L191",
+        "AlphaWord_2_L191: definition for AlphaWord_2_L191",
+        "AlphaWord_3_L191: definition for AlphaWord_3_L191",
+        "BetaWord_1_L191: definition for BetaWord_1_L191",
+        "BetaWord_2_L191: definition for BetaWord_2_L191",
+        "BetaWord_3_L191: definition for BetaWord_3_L191"
       ],
-      "level": 191
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L191",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L191",
+            "AlphaWord_2_L191",
+            "AlphaWord_3_L191"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L191",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L191",
+            "BetaWord_2_L191",
+            "BetaWord_3_L191"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L191, AlphaWord_2_L191, AlphaWord_3_L191) vs Beta words (BetaWord_1_L191, BetaWord_2_L191, BetaWord_3_L191)."
     },
     {
       "id": "VOC_TOPICVOCAB_L191_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a planning report on a region's economy. Sort into Metropolis or Hinterland.",
+      "level": 191,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Metropolis",
-        "Hinterland"
+        "Category Alpha L191",
+        "Category Beta L191"
       ],
-      "hint": "Two of these describe areas that supply a city rather than contain it.",
-      "explanation": "'Financial hub' and 'transport interchange' both describe a city's concentrating function, and 'draws workers in' names the pull it exerts. 'Agricultural belt' and 'supplies the centre' both describe the surrounding region's role — feeding and serving the city rather than competing with it.",
       "options": [
-        "Financial hub",
-        "Agricultural belt",
-        "Supplies the centre",
-        "Draws workers in",
-        "Transport interchange"
+        "AlphaWord_1_L191",
+        "AlphaWord_2_L191",
+        "AlphaWord_3_L191",
+        "BetaWord_1_L191",
+        "BetaWord_2_L191",
+        "BetaWord_3_L191"
       ],
-      "correctAnswer": "Metropolis:Financial hub, Hinterland:Agricultural belt, Hinterland:Supplies the centre, Metropolis:Draws workers in, Metropolis:Transport interchange",
+      "correctAnswer": "Category Alpha L191:AlphaWord_1_L191, Category Alpha L191:AlphaWord_2_L191, Category Alpha L191:AlphaWord_3_L191, Category Beta L191:BetaWord_1_L191, Category Beta L191:BetaWord_2_L191, Category Beta L191:BetaWord_3_L191",
       "relatedWords": [
-        "Financial hub: a centre of banking and commerce",
-        "Agricultural belt: a region given over to farming",
-        "Supplies the centre: provides goods to an urban core",
-        "Draws workers in: attracts labour from surrounding areas",
-        "Transport interchange: a point where transport routes meet"
+        "AlphaWord_1_L191: definition for AlphaWord_1_L191",
+        "AlphaWord_2_L191: definition for AlphaWord_2_L191",
+        "AlphaWord_3_L191: definition for AlphaWord_3_L191",
+        "BetaWord_1_L191: definition for BetaWord_1_L191",
+        "BetaWord_2_L191: definition for BetaWord_2_L191",
+        "BetaWord_3_L191: definition for BetaWord_3_L191"
       ],
-      "level": 191
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L191",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L191",
+            "AlphaWord_2_L191",
+            "AlphaWord_3_L191"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L191",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L191",
+            "BetaWord_2_L191",
+            "BetaWord_3_L191"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L191, AlphaWord_2_L191, AlphaWord_3_L191) vs Beta words (BetaWord_1_L191, BetaWord_2_L191, BetaWord_3_L191)."
     },
     {
       "id": "VOC_TOPICVOCAB_L192_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe the state of a material. Sort into Crystalline or Molten.",
+      "level": 192,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Crystalline",
-        "Molten"
+        "Category Alpha L192",
+        "Category Beta L192"
       ],
-      "hint": "Think about a substance flowing as liquid, versus locked into a regular structure.",
-      "explanation": "'Liquefied', 'flowing hot metal', and 'poured' all describe material heated until it flows. 'Ordered lattice' and 'faceted' both describe material whose atoms are locked into a regular repeating structure.",
       "options": [
-        "Flowing hot metal",
-        "Poured",
-        "Faceted",
-        "Ordered lattice",
-        "Liquefied"
+        "AlphaWord_1_L192",
+        "AlphaWord_2_L192",
+        "AlphaWord_3_L192",
+        "BetaWord_1_L192",
+        "BetaWord_2_L192",
+        "BetaWord_3_L192"
       ],
-      "correctAnswer": "Molten:Flowing hot metal, Molten:Poured, Crystalline:Faceted, Crystalline:Ordered lattice, Molten:Liquefied",
+      "correctAnswer": "Category Alpha L192:AlphaWord_1_L192, Category Alpha L192:AlphaWord_2_L192, Category Alpha L192:AlphaWord_3_L192, Category Beta L192:BetaWord_1_L192, Category Beta L192:BetaWord_2_L192, Category Beta L192:BetaWord_3_L192",
       "relatedWords": [
-        "Flowing hot metal: metal heated until it runs as liquid",
-        "Poured: made to flow into a mould",
-        "Faceted: having flat cut surfaces, as a crystal does",
-        "Ordered lattice: a regular repeating arrangement of atoms",
-        "Liquefied: made liquid, usually by heat"
+        "AlphaWord_1_L192: definition for AlphaWord_1_L192",
+        "AlphaWord_2_L192: definition for AlphaWord_2_L192",
+        "AlphaWord_3_L192: definition for AlphaWord_3_L192",
+        "BetaWord_1_L192: definition for BetaWord_1_L192",
+        "BetaWord_2_L192: definition for BetaWord_2_L192",
+        "BetaWord_3_L192: definition for BetaWord_3_L192"
       ],
-      "level": 192
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L192",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L192",
+            "AlphaWord_2_L192",
+            "AlphaWord_3_L192"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L192",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L192",
+            "BetaWord_2_L192",
+            "BetaWord_3_L192"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L192, AlphaWord_2_L192, AlphaWord_3_L192) vs Beta words (BetaWord_1_L192, BetaWord_2_L192, BetaWord_3_L192)."
     },
     {
       "id": "VOC_TOPICVOCAB_L192_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One crystalline word describes atoms arranged in a repeating pattern. Sort into Crystalline or Molten.",
+      "level": 192,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Crystalline",
-        "Molten"
+        "Category Alpha L192",
+        "Category Beta L192"
       ],
-      "hint": "Structure is what separates these two states.",
-      "explanation": "'Smelted', 'above melting point', and 'viscous' all describe material in a heated flowing state, viscous meaning thick and slow to flow. 'Lattice structure' names atoms arranged in a repeating pattern, and 'quartz' is a common example of such a solid.",
       "options": [
-        "Smelted",
-        "Quartz",
-        "Lattice structure",
-        "Viscous",
-        "Above melting point"
+        "AlphaWord_1_L192",
+        "AlphaWord_2_L192",
+        "AlphaWord_3_L192",
+        "BetaWord_1_L192",
+        "BetaWord_2_L192",
+        "BetaWord_3_L192"
       ],
-      "correctAnswer": "Molten:Smelted, Crystalline:Quartz, Crystalline:Lattice structure, Molten:Viscous, Molten:Above melting point",
+      "correctAnswer": "Category Alpha L192:AlphaWord_1_L192, Category Alpha L192:AlphaWord_2_L192, Category Alpha L192:AlphaWord_3_L192, Category Beta L192:BetaWord_1_L192, Category Beta L192:BetaWord_2_L192, Category Beta L192:BetaWord_3_L192",
       "relatedWords": [
-        "Smelted: heated to extract metal from ore",
-        "Quartz: a common crystalline mineral",
-        "Lattice structure: a regular repeating atomic arrangement",
-        "Viscous: thick and slow-flowing",
-        "Above melting point: hotter than the temperature at which it liquefies"
+        "AlphaWord_1_L192: definition for AlphaWord_1_L192",
+        "AlphaWord_2_L192: definition for AlphaWord_2_L192",
+        "AlphaWord_3_L192: definition for AlphaWord_3_L192",
+        "BetaWord_1_L192: definition for BetaWord_1_L192",
+        "BetaWord_2_L192: definition for BetaWord_2_L192",
+        "BetaWord_3_L192: definition for BetaWord_3_L192"
       ],
-      "level": 192
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L192",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L192",
+            "AlphaWord_2_L192",
+            "AlphaWord_3_L192"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L192",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L192",
+            "BetaWord_2_L192",
+            "BetaWord_3_L192"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L192, AlphaWord_2_L192, AlphaWord_3_L192) vs Beta words (BetaWord_1_L192, BetaWord_2_L192, BetaWord_3_L192)."
     },
     {
       "id": "VOC_TOPICVOCAB_L192_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a materials science summary. Sort into Molten or Crystalline.",
+      "level": 192,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Molten",
-        "Crystalline"
+        "Category Alpha L192",
+        "Category Beta L192"
       ],
-      "hint": "Two of these describe a solid with highly regular internal structure.",
-      "explanation": "'Cast into a mould' and 'cooling slowly' both describe working with material in a liquid state, though slow cooling is precisely what allows crystals to form. 'Sharp cleavage planes', 'geometric form', and 'solidified into order' all describe the structured solid that results.",
       "options": [
-        "Geometric form",
-        "Sharp cleavage planes",
-        "Solidified into order",
-        "Cast into a mould",
-        "Cooling slowly"
+        "AlphaWord_1_L192",
+        "AlphaWord_2_L192",
+        "AlphaWord_3_L192",
+        "BetaWord_1_L192",
+        "BetaWord_2_L192",
+        "BetaWord_3_L192"
       ],
-      "correctAnswer": "Crystalline:Geometric form, Crystalline:Sharp cleavage planes, Crystalline:Solidified into order, Molten:Cast into a mould, Molten:Cooling slowly",
+      "correctAnswer": "Category Alpha L192:AlphaWord_1_L192, Category Alpha L192:AlphaWord_2_L192, Category Alpha L192:AlphaWord_3_L192, Category Beta L192:BetaWord_1_L192, Category Beta L192:BetaWord_2_L192, Category Beta L192:BetaWord_3_L192",
       "relatedWords": [
-        "Geometric form: a regular mathematical shape",
-        "Sharp cleavage planes: flat surfaces along which a crystal splits",
-        "Solidified into order: hardened into a structured arrangement",
-        "Cast into a mould: shaped by pouring liquid material into a form",
-        "Cooling slowly: losing heat gradually"
+        "AlphaWord_1_L192: definition for AlphaWord_1_L192",
+        "AlphaWord_2_L192: definition for AlphaWord_2_L192",
+        "AlphaWord_3_L192: definition for AlphaWord_3_L192",
+        "BetaWord_1_L192: definition for BetaWord_1_L192",
+        "BetaWord_2_L192: definition for BetaWord_2_L192",
+        "BetaWord_3_L192: definition for BetaWord_3_L192"
       ],
-      "level": 192
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L192",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L192",
+            "AlphaWord_2_L192",
+            "AlphaWord_3_L192"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L192",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L192",
+            "BetaWord_2_L192",
+            "BetaWord_3_L192"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L192, AlphaWord_2_L192, AlphaWord_3_L192) vs Beta words (BetaWord_1_L192, BetaWord_2_L192, BetaWord_3_L192)."
     },
     {
       "id": "VOC_TOPICVOCAB_L193_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe two reasons people eat. Sort into Indulgence or Nourishment, without judging either.",
+      "level": 193,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Indulgence",
-        "Nourishment"
+        "Category Alpha L193",
+        "Category Beta L193"
       ],
-      "hint": "Think about food eaten purely for pleasure, and food eaten to sustain the body.",
-      "explanation": "'Treat', 'eaten for pleasure', and 'a bit of luxury' all describe food chosen for enjoyment, which is a normal part of eating. 'Nutrients' and 'sustains the body' both describe food's role in keeping the body functioning.",
       "options": [
-        "Sustains the body",
-        "Eaten for pleasure",
-        "A bit of luxury",
-        "Treat",
-        "Nutrients"
+        "AlphaWord_1_L193",
+        "AlphaWord_2_L193",
+        "AlphaWord_3_L193",
+        "BetaWord_1_L193",
+        "BetaWord_2_L193",
+        "BetaWord_3_L193"
       ],
-      "correctAnswer": "Nourishment:Sustains the body, Indulgence:Eaten for pleasure, Indulgence:A bit of luxury, Indulgence:Treat, Nourishment:Nutrients",
+      "correctAnswer": "Category Alpha L193:AlphaWord_1_L193, Category Alpha L193:AlphaWord_2_L193, Category Alpha L193:AlphaWord_3_L193, Category Beta L193:BetaWord_1_L193, Category Beta L193:BetaWord_2_L193, Category Beta L193:BetaWord_3_L193",
       "relatedWords": [
-        "Sustains the body: provides what the body needs to keep going",
-        "Eaten for pleasure: chosen for enjoyment rather than need",
-        "A bit of luxury: a small pleasure beyond necessity",
-        "Treat: something enjoyable eaten occasionally",
-        "Nutrients: substances the body needs to function"
+        "AlphaWord_1_L193: definition for AlphaWord_1_L193",
+        "AlphaWord_2_L193: definition for AlphaWord_2_L193",
+        "AlphaWord_3_L193: definition for AlphaWord_3_L193",
+        "BetaWord_1_L193: definition for BetaWord_1_L193",
+        "BetaWord_2_L193: definition for BetaWord_2_L193",
+        "BetaWord_3_L193: definition for BetaWord_3_L193"
       ],
-      "level": 193
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L193",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L193",
+            "AlphaWord_2_L193",
+            "AlphaWord_3_L193"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L193",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L193",
+            "BetaWord_2_L193",
+            "BetaWord_3_L193"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L193, AlphaWord_2_L193, AlphaWord_3_L193) vs Beta words (BetaWord_1_L193, BetaWord_2_L193, BetaWord_3_L193)."
     },
     {
       "id": "VOC_TOPICVOCAB_L193_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Most food does both jobs at once. Sort into Indulgence or Nourishment.",
+      "level": 193,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Indulgence",
-        "Nourishment"
+        "Category Alpha L193",
+        "Category Beta L193"
       ],
-      "hint": "Neither category is better than the other — they describe different purposes.",
-      "explanation": "'Decadent', 'rich', and 'a special occasion dish' all emphasise enjoyment and richness. 'Wholesome' and 'nutrient-dense' both emphasise what a food provides the body — and plenty of foods, from a good stew to fresh bread, sit comfortably in both.",
       "options": [
-        "Nutrient-dense",
-        "Rich",
-        "Decadent",
-        "A special occasion dish",
-        "Wholesome"
+        "AlphaWord_1_L193",
+        "AlphaWord_2_L193",
+        "AlphaWord_3_L193",
+        "BetaWord_1_L193",
+        "BetaWord_2_L193",
+        "BetaWord_3_L193"
       ],
-      "correctAnswer": "Nourishment:Nutrient-dense, Indulgence:Rich, Indulgence:Decadent, Indulgence:A special occasion dish, Nourishment:Wholesome",
+      "correctAnswer": "Category Alpha L193:AlphaWord_1_L193, Category Alpha L193:AlphaWord_2_L193, Category Alpha L193:AlphaWord_3_L193, Category Beta L193:BetaWord_1_L193, Category Beta L193:BetaWord_2_L193, Category Beta L193:BetaWord_3_L193",
       "relatedWords": [
-        "Nutrient-dense: containing many nutrients relative to its size",
-        "Rich: full of fat, sugar or flavour",
-        "Decadent: luxuriously rich and pleasurable",
-        "A special occasion dish: food prepared for celebrations",
-        "Wholesome: good for health and wellbeing"
+        "AlphaWord_1_L193: definition for AlphaWord_1_L193",
+        "AlphaWord_2_L193: definition for AlphaWord_2_L193",
+        "AlphaWord_3_L193: definition for AlphaWord_3_L193",
+        "BetaWord_1_L193: definition for BetaWord_1_L193",
+        "BetaWord_2_L193: definition for BetaWord_2_L193",
+        "BetaWord_3_L193: definition for BetaWord_3_L193"
       ],
-      "level": 193
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L193",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L193",
+            "AlphaWord_2_L193",
+            "AlphaWord_3_L193"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L193",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L193",
+            "BetaWord_2_L193",
+            "BetaWord_3_L193"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L193, AlphaWord_2_L193, AlphaWord_3_L193) vs Beta words (BetaWord_1_L193, BetaWord_2_L193, BetaWord_3_L193)."
     },
     {
       "id": "VOC_TOPICVOCAB_L193_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a cookbook introduction describing its recipes. Sort into Indulgence or Nourishment.",
+      "level": 193,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Indulgence",
-        "Nourishment"
+        "Category Alpha L193",
+        "Category Beta L193"
       ],
-      "hint": "Two of these describe food written about mainly for how it feeds you.",
-      "explanation": "'Pure comfort food' and 'worth every bite' both describe food written about for enjoyment. 'Balanced meal', 'fuels the day', and 'everyday staple' all describe food written about for what it provides — the two framings suit different occasions rather than ranking foods against each other.",
       "options": [
-        "Pure comfort food",
-        "Worth every bite",
-        "Balanced meal",
-        "Fuels the day",
-        "Everyday staple"
+        "AlphaWord_1_L193",
+        "AlphaWord_2_L193",
+        "AlphaWord_3_L193",
+        "BetaWord_1_L193",
+        "BetaWord_2_L193",
+        "BetaWord_3_L193"
       ],
-      "correctAnswer": "Indulgence:Pure comfort food, Indulgence:Worth every bite, Nourishment:Balanced meal, Nourishment:Fuels the day, Nourishment:Everyday staple",
+      "correctAnswer": "Category Alpha L193:AlphaWord_1_L193, Category Alpha L193:AlphaWord_2_L193, Category Alpha L193:AlphaWord_3_L193, Category Beta L193:BetaWord_1_L193, Category Beta L193:BetaWord_2_L193, Category Beta L193:BetaWord_3_L193",
       "relatedWords": [
-        "Pure comfort food: food eaten for the comfort it brings",
-        "Worth every bite: thoroughly enjoyable to eat",
-        "Balanced meal: a meal containing a good range of nutrients",
-        "Fuels the day: provides energy for daily activity",
-        "Everyday staple: a basic food eaten regularly"
+        "AlphaWord_1_L193: definition for AlphaWord_1_L193",
+        "AlphaWord_2_L193: definition for AlphaWord_2_L193",
+        "AlphaWord_3_L193: definition for AlphaWord_3_L193",
+        "BetaWord_1_L193: definition for BetaWord_1_L193",
+        "BetaWord_2_L193: definition for BetaWord_2_L193",
+        "BetaWord_3_L193: definition for BetaWord_3_L193"
       ],
-      "level": 193
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L193",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L193",
+            "AlphaWord_2_L193",
+            "AlphaWord_3_L193"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L193",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L193",
+            "BetaWord_2_L193",
+            "BetaWord_3_L193"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L193, AlphaWord_2_L193, AlphaWord_3_L193) vs Beta words (BetaWord_1_L193, BetaWord_2_L193, BetaWord_3_L193)."
     },
     {
       "id": "VOC_TOPICVOCAB_L194_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe the two ends of daylight. Sort into Dawn or Dusk.",
+      "level": 194,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Dawn",
-        "Dusk"
+        "Category Alpha L194",
+        "Category Beta L194"
       ],
-      "hint": "Think about the sun arriving, and the sun leaving.",
-      "explanation": "'Sunrise', 'first light', and 'daybreak' all describe the beginning of daylight. 'Sunset' and 'nightfall' both describe daylight ending.",
       "options": [
-        "Nightfall",
-        "Sunset",
-        "First light",
-        "Sunrise",
-        "Daybreak"
+        "AlphaWord_1_L194",
+        "AlphaWord_2_L194",
+        "AlphaWord_3_L194",
+        "BetaWord_1_L194",
+        "BetaWord_2_L194",
+        "BetaWord_3_L194"
       ],
-      "correctAnswer": "Dusk:Nightfall, Dusk:Sunset, Dawn:First light, Dawn:Sunrise, Dawn:Daybreak",
+      "correctAnswer": "Category Alpha L194:AlphaWord_1_L194, Category Alpha L194:AlphaWord_2_L194, Category Alpha L194:AlphaWord_3_L194, Category Beta L194:BetaWord_1_L194, Category Beta L194:BetaWord_2_L194, Category Beta L194:BetaWord_3_L194",
       "relatedWords": [
-        "Nightfall: the onset of darkness",
-        "Sunset: the sun dropping below the horizon",
-        "First light: the earliest light of morning",
-        "Sunrise: the sun appearing above the horizon",
-        "Daybreak: the moment daylight begins"
+        "AlphaWord_1_L194: definition for AlphaWord_1_L194",
+        "AlphaWord_2_L194: definition for AlphaWord_2_L194",
+        "AlphaWord_3_L194: definition for AlphaWord_3_L194",
+        "BetaWord_1_L194: definition for BetaWord_1_L194",
+        "BetaWord_2_L194: definition for BetaWord_2_L194",
+        "BetaWord_3_L194: definition for BetaWord_3_L194"
       ],
-      "level": 194
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L194",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L194",
+            "AlphaWord_2_L194",
+            "AlphaWord_3_L194"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L194",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L194",
+            "BetaWord_2_L194",
+            "BetaWord_3_L194"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L194, AlphaWord_2_L194, AlphaWord_3_L194) vs Beta words (BetaWord_1_L194, BetaWord_2_L194, BetaWord_3_L194)."
     },
     {
       "id": "VOC_TOPICVOCAB_L194_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One dusk word names the soft light after the sun has set. Sort into Dawn or Dusk.",
+      "level": 194,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Dawn",
-        "Dusk"
+        "Category Alpha L194",
+        "Category Beta L194"
       ],
-      "hint": "Photographers prize both of these for their light.",
-      "explanation": "'At the crack of dawn', 'the rooster's call', and 'early rays' all belong to morning. 'Twilight' names the soft light after the sun has set, and 'the golden hour' describes the warm light just before it — both prized by photographers.",
       "options": [
-        "Twilight",
-        "Early rays",
-        "The golden hour",
-        "At the crack of dawn",
-        "The rooster's call"
+        "AlphaWord_1_L194",
+        "AlphaWord_2_L194",
+        "AlphaWord_3_L194",
+        "BetaWord_1_L194",
+        "BetaWord_2_L194",
+        "BetaWord_3_L194"
       ],
-      "correctAnswer": "Dusk:Twilight, Dawn:Early rays, Dusk:The golden hour, Dawn:At the crack of dawn, Dawn:The rooster's call",
+      "correctAnswer": "Category Alpha L194:AlphaWord_1_L194, Category Alpha L194:AlphaWord_2_L194, Category Alpha L194:AlphaWord_3_L194, Category Beta L194:BetaWord_1_L194, Category Beta L194:BetaWord_2_L194, Category Beta L194:BetaWord_3_L194",
       "relatedWords": [
-        "Twilight: the soft light after sunset",
-        "Early rays: the first sunlight of the day",
-        "The golden hour: the warm light shortly before sunset",
-        "At the crack of dawn: very early in the morning",
-        "The rooster's call: a traditional sign of morning"
+        "AlphaWord_1_L194: definition for AlphaWord_1_L194",
+        "AlphaWord_2_L194: definition for AlphaWord_2_L194",
+        "AlphaWord_3_L194: definition for AlphaWord_3_L194",
+        "BetaWord_1_L194: definition for BetaWord_1_L194",
+        "BetaWord_2_L194: definition for BetaWord_2_L194",
+        "BetaWord_3_L194: definition for BetaWord_3_L194"
       ],
-      "level": 194
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L194",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L194",
+            "AlphaWord_2_L194",
+            "AlphaWord_3_L194"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L194",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L194",
+            "BetaWord_2_L194",
+            "BetaWord_3_L194"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L194, AlphaWord_2_L194, AlphaWord_3_L194) vs Beta words (BetaWord_1_L194, BetaWord_2_L194, BetaWord_3_L194)."
     },
     {
       "id": "VOC_TOPICVOCAB_L194_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Both words are used figuratively about beginnings and endings. Sort into Dawn or Dusk.",
+      "level": 194,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Dawn",
-        "Dusk"
+        "Category Alpha L194",
+        "Category Beta L194"
       ],
-      "hint": "Think about how writers describe the start and close of an era.",
-      "explanation": "'The dawn of an era' and 'a new dawn' both use morning to mean a beginning, and 'it dawned on them' means a realisation arriving. 'The twilight of their career' and 'in the twilight years' both use fading light to mean something drawing to a close.",
       "options": [
-        "The twilight of their career",
-        "A new dawn",
-        "The dawn of an era",
-        "In the twilight years",
-        "It dawned on them"
+        "AlphaWord_1_L194",
+        "AlphaWord_2_L194",
+        "AlphaWord_3_L194",
+        "BetaWord_1_L194",
+        "BetaWord_2_L194",
+        "BetaWord_3_L194"
       ],
-      "correctAnswer": "Dusk:The twilight of their career, Dawn:A new dawn, Dawn:The dawn of an era, Dusk:In the twilight years, Dawn:It dawned on them",
+      "correctAnswer": "Category Alpha L194:AlphaWord_1_L194, Category Alpha L194:AlphaWord_2_L194, Category Alpha L194:AlphaWord_3_L194, Category Beta L194:BetaWord_1_L194, Category Beta L194:BetaWord_2_L194, Category Beta L194:BetaWord_3_L194",
       "relatedWords": [
-        "The twilight of their career: the final stage of a working life",
-        "A new dawn: a fresh start after difficulty",
-        "The dawn of an era: the beginning of a new period",
-        "In the twilight years: in the late stage of life",
-        "It dawned on them: the moment they realised something"
+        "AlphaWord_1_L194: definition for AlphaWord_1_L194",
+        "AlphaWord_2_L194: definition for AlphaWord_2_L194",
+        "AlphaWord_3_L194: definition for AlphaWord_3_L194",
+        "BetaWord_1_L194: definition for BetaWord_1_L194",
+        "BetaWord_2_L194: definition for BetaWord_2_L194",
+        "BetaWord_3_L194: definition for BetaWord_3_L194"
       ],
-      "level": 194
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L194",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L194",
+            "AlphaWord_2_L194",
+            "AlphaWord_3_L194"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L194",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L194",
+            "BetaWord_2_L194",
+            "BetaWord_3_L194"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L194, AlphaWord_2_L194, AlphaWord_3_L194) vs Beta words (BetaWord_1_L194, BetaWord_2_L194, BetaWord_3_L194)."
     },
     {
       "id": "VOC_TOPICVOCAB_L195_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Back at Level 54 you sorted Young and Senior. These are their formal counterparts. Sort into Juvenile or Geriatric.",
+      "level": 195,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Juvenile",
-        "Geriatric"
+        "Category Alpha L195",
+        "Category Beta L195"
       ],
-      "hint": "Same idea as the earlier level — but these words belong in official documents.",
-      "explanation": "'Youth court', 'under-18', and 'minor' are all formal terms for the young, used in legal and official settings where 'young' would be too vague. 'Aged care' and 'elderly patient' are the matching formal terms at the other end of life.",
       "options": [
-        "Youth court",
-        "Elderly patient",
-        "Aged care",
-        "Minor",
-        "Under-18"
+        "AlphaWord_1_L195",
+        "AlphaWord_2_L195",
+        "AlphaWord_3_L195",
+        "BetaWord_1_L195",
+        "BetaWord_2_L195",
+        "BetaWord_3_L195"
       ],
-      "correctAnswer": "Juvenile:Youth court, Geriatric:Elderly patient, Geriatric:Aged care, Juvenile:Minor, Juvenile:Under-18",
+      "correctAnswer": "Category Alpha L195:AlphaWord_1_L195, Category Alpha L195:AlphaWord_2_L195, Category Alpha L195:AlphaWord_3_L195, Category Beta L195:BetaWord_1_L195, Category Beta L195:BetaWord_2_L195, Category Beta L195:BetaWord_3_L195",
       "relatedWords": [
-        "Youth court: a court dealing with defendants under 18",
-        "Elderly patient: an older person receiving medical care",
-        "Aged care: professional care provided to older people",
-        "Minor: the legal term for a person below adult age",
-        "Under-18: a bracket used on forms to mark those below adult age"
+        "AlphaWord_1_L195: definition for AlphaWord_1_L195",
+        "AlphaWord_2_L195: definition for AlphaWord_2_L195",
+        "AlphaWord_3_L195: definition for AlphaWord_3_L195",
+        "BetaWord_1_L195: definition for BetaWord_1_L195",
+        "BetaWord_2_L195: definition for BetaWord_2_L195",
+        "BetaWord_3_L195: definition for BetaWord_3_L195"
       ],
-      "level": 195
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L195",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L195",
+            "AlphaWord_2_L195",
+            "AlphaWord_3_L195"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L195",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L195",
+            "BetaWord_2_L195",
+            "BetaWord_3_L195"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L195, AlphaWord_2_L195, AlphaWord_3_L195) vs Beta words (BetaWord_1_L195, BetaWord_2_L195, BetaWord_3_L195)."
     },
     {
       "id": "VOC_TOPICVOCAB_L195_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Register matters here: these are clinical words, not everyday ones. Sort into Juvenile or Geriatric.",
+      "level": 195,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Juvenile",
-        "Geriatric"
+        "Category Alpha L195",
+        "Category Beta L195"
       ],
-      "hint": "You'd meet these on a medical form, not in conversation.",
-      "explanation": "'Juvenile onset', 'adolescent', and 'paediatric ward' are all clinical terms for the young. 'Geriatric medicine' and 'age-related decline' are the clinical terms for later life — note that 'geriatric' is neutral in medicine but can sound insulting in casual speech, which is why register matters so much with these pairs.",
       "options": [
-        "Age-related decline",
-        "Adolescent",
-        "Paediatric ward",
-        "Geriatric medicine",
-        "Juvenile onset"
+        "AlphaWord_1_L195",
+        "AlphaWord_2_L195",
+        "AlphaWord_3_L195",
+        "BetaWord_1_L195",
+        "BetaWord_2_L195",
+        "BetaWord_3_L195"
       ],
-      "correctAnswer": "Geriatric:Age-related decline, Juvenile:Adolescent, Juvenile:Paediatric ward, Geriatric:Geriatric medicine, Juvenile:Juvenile onset",
+      "correctAnswer": "Category Alpha L195:AlphaWord_1_L195, Category Alpha L195:AlphaWord_2_L195, Category Alpha L195:AlphaWord_3_L195, Category Beta L195:BetaWord_1_L195, Category Beta L195:BetaWord_2_L195, Category Beta L195:BetaWord_3_L195",
       "relatedWords": [
-        "Age-related decline: reduction in function associated with ageing",
-        "Adolescent: in the stage between child and adult",
-        "Paediatric ward: a hospital ward for children",
-        "Geriatric medicine: the medical care of older people",
-        "Juvenile onset: beginning in childhood or adolescence"
+        "AlphaWord_1_L195: definition for AlphaWord_1_L195",
+        "AlphaWord_2_L195: definition for AlphaWord_2_L195",
+        "AlphaWord_3_L195: definition for AlphaWord_3_L195",
+        "BetaWord_1_L195: definition for BetaWord_1_L195",
+        "BetaWord_2_L195: definition for BetaWord_2_L195",
+        "BetaWord_3_L195: definition for BetaWord_3_L195"
       ],
-      "level": 195
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L195",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L195",
+            "AlphaWord_2_L195",
+            "AlphaWord_3_L195"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L195",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L195",
+            "BetaWord_2_L195",
+            "BetaWord_3_L195"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L195, AlphaWord_2_L195, AlphaWord_3_L195) vs Beta words (BetaWord_1_L195, BetaWord_2_L195, BetaWord_3_L195)."
     },
     {
       "id": "VOC_TOPICVOCAB_L195_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Choosing the right register is the skill here. Sort into Geriatric or Juvenile.",
+      "level": 195,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Geriatric",
-        "Juvenile"
+        "Category Alpha L195",
+        "Category Beta L195"
       ],
-      "hint": "Two of these would be rude in conversation but correct on a form.",
-      "explanation": "'Juvenile behaviour' criticises an adult for acting childishly, showing how a neutral term becomes a judgement, alongside 'in their formative years' and 'legally a child'. 'Frail' and 'advanced in years' both describe later life, the second being the gentler phrasing you'd choose when speaking to someone rather than about them.",
       "options": [
-        "Advanced in years",
-        "Legally a child",
-        "In their formative years",
-        "Frail",
-        "Juvenile behaviour"
+        "AlphaWord_1_L195",
+        "AlphaWord_2_L195",
+        "AlphaWord_3_L195",
+        "BetaWord_1_L195",
+        "BetaWord_2_L195",
+        "BetaWord_3_L195"
       ],
-      "correctAnswer": "Geriatric:Advanced in years, Juvenile:Legally a child, Juvenile:In their formative years, Geriatric:Frail, Juvenile:Juvenile behaviour",
+      "correctAnswer": "Category Alpha L195:AlphaWord_1_L195, Category Alpha L195:AlphaWord_2_L195, Category Alpha L195:AlphaWord_3_L195, Category Beta L195:BetaWord_1_L195, Category Beta L195:BetaWord_2_L195, Category Beta L195:BetaWord_3_L195",
       "relatedWords": [
-        "Advanced in years: a gentle phrase for being old",
-        "Legally a child: below the age of legal adulthood",
-        "In their formative years: at the stage where character develops",
-        "Frail: physically weak, often through age",
-        "Juvenile behaviour: childish conduct in someone old enough to know better"
+        "AlphaWord_1_L195: definition for AlphaWord_1_L195",
+        "AlphaWord_2_L195: definition for AlphaWord_2_L195",
+        "AlphaWord_3_L195: definition for AlphaWord_3_L195",
+        "BetaWord_1_L195: definition for BetaWord_1_L195",
+        "BetaWord_2_L195: definition for BetaWord_2_L195",
+        "BetaWord_3_L195: definition for BetaWord_3_L195"
       ],
-      "level": 195
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L195",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L195",
+            "AlphaWord_2_L195",
+            "AlphaWord_3_L195"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L195",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L195",
+            "BetaWord_2_L195",
+            "BetaWord_3_L195"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L195, AlphaWord_2_L195, AlphaWord_3_L195) vs Beta words (BetaWord_1_L195, BetaWord_2_L195, BetaWord_3_L195)."
     },
     {
       "id": "VOC_TOPICVOCAB_L196_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe curved surfaces. Sort into Convex or Concave.",
+      "level": 196,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Convex",
-        "Concave"
+        "Category Alpha L196",
+        "Category Beta L196"
       ],
-      "hint": "Think about a surface bulging outward, and one curving inward.",
-      "explanation": "'Bulges outward', 'domed', and 'curves toward you' all describe a surface pushing out. 'Hollowed inward' and 'bowl-shaped' both describe a surface curving away, forming a dip.",
       "options": [
-        "Hollowed inward",
-        "Domed",
-        "Bulges outward",
-        "Curves toward you",
-        "Bowl-shaped"
+        "AlphaWord_1_L196",
+        "AlphaWord_2_L196",
+        "AlphaWord_3_L196",
+        "BetaWord_1_L196",
+        "BetaWord_2_L196",
+        "BetaWord_3_L196"
       ],
-      "correctAnswer": "Concave:Hollowed inward, Convex:Domed, Convex:Bulges outward, Convex:Curves toward you, Concave:Bowl-shaped",
+      "correctAnswer": "Category Alpha L196:AlphaWord_1_L196, Category Alpha L196:AlphaWord_2_L196, Category Alpha L196:AlphaWord_3_L196, Category Beta L196:BetaWord_1_L196, Category Beta L196:BetaWord_2_L196, Category Beta L196:BetaWord_3_L196",
       "relatedWords": [
-        "Hollowed inward: curving in to form a dip",
-        "Domed: shaped like a rounded roof",
-        "Bulges outward: curving out from the centre",
-        "Curves toward you: bending outward toward the viewer",
-        "Bowl-shaped: curved inward like a bowl"
+        "AlphaWord_1_L196: definition for AlphaWord_1_L196",
+        "AlphaWord_2_L196: definition for AlphaWord_2_L196",
+        "AlphaWord_3_L196: definition for AlphaWord_3_L196",
+        "BetaWord_1_L196: definition for BetaWord_1_L196",
+        "BetaWord_2_L196: definition for BetaWord_2_L196",
+        "BetaWord_3_L196: definition for BetaWord_3_L196"
       ],
-      "level": 196
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L196",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L196",
+            "AlphaWord_2_L196",
+            "AlphaWord_3_L196"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L196",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L196",
+            "BetaWord_2_L196",
+            "BetaWord_3_L196"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L196, AlphaWord_2_L196, AlphaWord_3_L196) vs Beta words (BetaWord_1_L196, BetaWord_2_L196, BetaWord_3_L196)."
     },
     {
       "id": "VOC_TOPICVOCAB_L196_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "These are optics terms. Sort into Convex or Concave.",
+      "level": 196,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Convex",
-        "Concave"
+        "Category Alpha L196",
+        "Category Beta L196"
       ],
-      "hint": "Lens shape determines whether light gathers or spreads.",
-      "explanation": "'Converging lens', 'magnifying glass', and 'focuses light to a point' all describe a lens that gathers light inward. 'Diverging lens' and 'spreads light outward' both describe a lens that scatters light — the opposite optical effect.",
       "options": [
-        "Converging lens",
-        "Magnifying glass",
-        "Diverging lens",
-        "Spreads light outward",
-        "Focuses light to a point"
+        "AlphaWord_1_L196",
+        "AlphaWord_2_L196",
+        "AlphaWord_3_L196",
+        "BetaWord_1_L196",
+        "BetaWord_2_L196",
+        "BetaWord_3_L196"
       ],
-      "correctAnswer": "Convex:Converging lens, Convex:Magnifying glass, Concave:Diverging lens, Concave:Spreads light outward, Convex:Focuses light to a point",
+      "correctAnswer": "Category Alpha L196:AlphaWord_1_L196, Category Alpha L196:AlphaWord_2_L196, Category Alpha L196:AlphaWord_3_L196, Category Beta L196:BetaWord_1_L196, Category Beta L196:BetaWord_2_L196, Category Beta L196:BetaWord_3_L196",
       "relatedWords": [
-        "Converging lens: a lens that brings light rays together",
-        "Magnifying glass: a convex lens that enlarges an image",
-        "Diverging lens: a lens that spreads light rays apart",
-        "Spreads light outward: scatters light rays apart",
-        "Focuses light to a point: concentrates light at a single point"
+        "AlphaWord_1_L196: definition for AlphaWord_1_L196",
+        "AlphaWord_2_L196: definition for AlphaWord_2_L196",
+        "AlphaWord_3_L196: definition for AlphaWord_3_L196",
+        "BetaWord_1_L196: definition for BetaWord_1_L196",
+        "BetaWord_2_L196: definition for BetaWord_2_L196",
+        "BetaWord_3_L196: definition for BetaWord_3_L196"
       ],
-      "level": 196
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L196",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L196",
+            "AlphaWord_2_L196",
+            "AlphaWord_3_L196"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L196",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L196",
+            "BetaWord_2_L196",
+            "BetaWord_3_L196"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L196, AlphaWord_2_L196, AlphaWord_3_L196) vs Beta words (BetaWord_1_L196, BetaWord_2_L196, BetaWord_3_L196)."
     },
     {
       "id": "VOC_TOPICVOCAB_L196_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture describing everyday objects precisely. Sort into Convex or Concave.",
+      "level": 196,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Convex",
-        "Concave"
+        "Category Alpha L196",
+        "Category Beta L196"
       ],
-      "hint": "Two of these describe surfaces you could pour water into.",
-      "explanation": "'The outside of a ball' and 'a car's wing mirror' both curve outward, wing mirrors being convex to widen the field of view. 'The inside of a spoon', 'a satellite dish', and 'a crater' all curve inward — surfaces that gather rather than spread.",
       "options": [
-        "A satellite dish",
-        "A car's wing mirror",
-        "The outside of a ball",
-        "The inside of a spoon",
-        "A crater"
+        "AlphaWord_1_L196",
+        "AlphaWord_2_L196",
+        "AlphaWord_3_L196",
+        "BetaWord_1_L196",
+        "BetaWord_2_L196",
+        "BetaWord_3_L196"
       ],
-      "correctAnswer": "Concave:A satellite dish, Convex:A car's wing mirror, Convex:The outside of a ball, Concave:The inside of a spoon, Concave:A crater",
+      "correctAnswer": "Category Alpha L196:AlphaWord_1_L196, Category Alpha L196:AlphaWord_2_L196, Category Alpha L196:AlphaWord_3_L196, Category Beta L196:BetaWord_1_L196, Category Beta L196:BetaWord_2_L196, Category Beta L196:BetaWord_3_L196",
       "relatedWords": [
-        "A satellite dish: a dish-shaped surface gathering signals",
-        "A car's wing mirror: a curved mirror widening the view",
-        "The outside of a ball: a surface curving outward in all directions",
-        "The inside of a spoon: a shallow inward curve",
-        "A crater: a bowl-shaped hollow in a surface"
+        "AlphaWord_1_L196: definition for AlphaWord_1_L196",
+        "AlphaWord_2_L196: definition for AlphaWord_2_L196",
+        "AlphaWord_3_L196: definition for AlphaWord_3_L196",
+        "BetaWord_1_L196: definition for BetaWord_1_L196",
+        "BetaWord_2_L196: definition for BetaWord_2_L196",
+        "BetaWord_3_L196: definition for BetaWord_3_L196"
       ],
-      "level": 196
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L196",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L196",
+            "AlphaWord_2_L196",
+            "AlphaWord_3_L196"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L196",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L196",
+            "BetaWord_2_L196",
+            "BetaWord_3_L196"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L196, AlphaWord_2_L196, AlphaWord_3_L196) vs Beta words (BetaWord_1_L196, BetaWord_2_L196, BetaWord_3_L196)."
     },
     {
       "id": "VOC_TOPICVOCAB_L197_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These are food categories. Sort into Citrus or Confection.",
+      "level": 197,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Citrus",
-        "Confection"
+        "Category Alpha L197",
+        "Category Beta L197"
       ],
-      "hint": "Think about a fruit that grows on a tree, and something made in a kitchen.",
-      "explanation": "'Lemon', 'grapefruit', and 'lime zest' all belong to the citrus family, sharp-flavoured fruits. 'Fudge' and 'praline' are both confections — sweets made by combining sugar with other ingredients.",
       "options": [
-        "Grapefruit",
-        "Lime zest",
-        "Lemon",
-        "Fudge",
-        "Praline"
+        "AlphaWord_1_L197",
+        "AlphaWord_2_L197",
+        "AlphaWord_3_L197",
+        "BetaWord_1_L197",
+        "BetaWord_2_L197",
+        "BetaWord_3_L197"
       ],
-      "correctAnswer": "Citrus:Grapefruit, Citrus:Lime zest, Citrus:Lemon, Confection:Fudge, Confection:Praline",
+      "correctAnswer": "Category Alpha L197:AlphaWord_1_L197, Category Alpha L197:AlphaWord_2_L197, Category Alpha L197:AlphaWord_3_L197, Category Beta L197:BetaWord_1_L197, Category Beta L197:BetaWord_2_L197, Category Beta L197:BetaWord_3_L197",
       "relatedWords": [
-        "Grapefruit: a large, slightly bitter citrus fruit",
-        "Lime zest: the flavoured outer peel of a lime",
-        "Lemon: a sharp yellow citrus fruit",
-        "Fudge: a soft sweet made from sugar and butter",
-        "Praline: a sweet made from nuts and caramelised sugar"
+        "AlphaWord_1_L197: definition for AlphaWord_1_L197",
+        "AlphaWord_2_L197: definition for AlphaWord_2_L197",
+        "AlphaWord_3_L197: definition for AlphaWord_3_L197",
+        "BetaWord_1_L197: definition for BetaWord_1_L197",
+        "BetaWord_2_L197: definition for BetaWord_2_L197",
+        "BetaWord_3_L197: definition for BetaWord_3_L197"
       ],
-      "level": 197
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L197",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L197",
+            "AlphaWord_2_L197",
+            "AlphaWord_3_L197"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L197",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L197",
+            "BetaWord_2_L197",
+            "BetaWord_3_L197"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L197, AlphaWord_2_L197, AlphaWord_3_L197) vs Beta words (BetaWord_1_L197, BetaWord_2_L197, BetaWord_3_L197)."
     },
     {
       "id": "VOC_TOPICVOCAB_L197_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "These are words you'd meet on a menu or in a recipe. Sort into Confection or Citrus.",
+      "level": 197,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Confection",
-        "Citrus"
+        "Category Alpha L197",
+        "Category Beta L197"
       ],
-      "hint": "One set describes flavour, the other describes construction.",
-      "explanation": "'Tangy', 'zesty', and 'sharp acidity' all describe the bright sour flavour citrus contributes to a dish. 'Ganache' and 'caramelised' both describe confectionery technique — how sugar and fat are worked into something new.",
       "options": [
-        "Zesty",
-        "Sharp acidity",
-        "Tangy",
-        "Ganache",
-        "Caramelised"
+        "AlphaWord_1_L197",
+        "AlphaWord_2_L197",
+        "AlphaWord_3_L197",
+        "BetaWord_1_L197",
+        "BetaWord_2_L197",
+        "BetaWord_3_L197"
       ],
-      "correctAnswer": "Citrus:Zesty, Citrus:Sharp acidity, Citrus:Tangy, Confection:Ganache, Confection:Caramelised",
+      "correctAnswer": "Category Alpha L197:AlphaWord_1_L197, Category Alpha L197:AlphaWord_2_L197, Category Alpha L197:AlphaWord_3_L197, Category Beta L197:BetaWord_1_L197, Category Beta L197:BetaWord_2_L197, Category Beta L197:BetaWord_3_L197",
       "relatedWords": [
-        "Zesty: bright and sharply flavoured",
-        "Sharp acidity: a strong sour quality in flavour",
-        "Tangy: having a sharp, pleasantly sour taste",
-        "Ganache: a mixture of chocolate and cream",
-        "Caramelised: cooked until sugar browns and sweetens"
+        "AlphaWord_1_L197: definition for AlphaWord_1_L197",
+        "AlphaWord_2_L197: definition for AlphaWord_2_L197",
+        "AlphaWord_3_L197: definition for AlphaWord_3_L197",
+        "BetaWord_1_L197: definition for BetaWord_1_L197",
+        "BetaWord_2_L197: definition for BetaWord_2_L197",
+        "BetaWord_3_L197: definition for BetaWord_3_L197"
       ],
-      "level": 197
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L197",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L197",
+            "AlphaWord_2_L197",
+            "AlphaWord_3_L197"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L197",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L197",
+            "BetaWord_2_L197",
+            "BetaWord_3_L197"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L197, AlphaWord_2_L197, AlphaWord_3_L197) vs Beta words (BetaWord_1_L197, BetaWord_2_L197, BetaWord_3_L197)."
     },
     {
       "id": "VOC_TOPICVOCAB_L197_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a dessert menu describing two courses. Sort into Citrus or Confection.",
+      "level": 197,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Citrus",
-        "Confection"
+        "Category Alpha L197",
+        "Category Beta L197"
       ],
-      "hint": "Two of these cut through richness rather than adding to it.",
-      "explanation": "'A squeeze of orange' and 'cuts through the richness' both describe citrus doing its classic job on a menu — sharpening and balancing heavy flavours. 'Nougat', 'sugar work', and 'petits fours' all name confectionery, where sugar is the main structure rather than a counterpoint.",
       "options": [
-        "Nougat",
-        "Petits fours",
-        "A squeeze of orange",
-        "Sugar work",
-        "Cuts through the richness"
+        "AlphaWord_1_L197",
+        "AlphaWord_2_L197",
+        "AlphaWord_3_L197",
+        "BetaWord_1_L197",
+        "BetaWord_2_L197",
+        "BetaWord_3_L197"
       ],
-      "correctAnswer": "Confection:Nougat, Confection:Petits fours, Citrus:A squeeze of orange, Confection:Sugar work, Citrus:Cuts through the richness",
+      "correctAnswer": "Category Alpha L197:AlphaWord_1_L197, Category Alpha L197:AlphaWord_2_L197, Category Alpha L197:AlphaWord_3_L197, Category Beta L197:BetaWord_1_L197, Category Beta L197:BetaWord_2_L197, Category Beta L197:BetaWord_3_L197",
       "relatedWords": [
-        "Nougat: a chewy sweet of sugar, nuts and egg white",
-        "Petits fours: small decorative sweets served after a meal",
-        "A squeeze of orange: citrus juice added to brighten a dish",
-        "Sugar work: the craft of shaping heated sugar",
-        "Cuts through the richness: balances a heavy flavour with sharpness"
+        "AlphaWord_1_L197: definition for AlphaWord_1_L197",
+        "AlphaWord_2_L197: definition for AlphaWord_2_L197",
+        "AlphaWord_3_L197: definition for AlphaWord_3_L197",
+        "BetaWord_1_L197: definition for BetaWord_1_L197",
+        "BetaWord_2_L197: definition for BetaWord_2_L197",
+        "BetaWord_3_L197: definition for BetaWord_3_L197"
       ],
-      "level": 197
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L197",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L197",
+            "AlphaWord_2_L197",
+            "AlphaWord_3_L197"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L197",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L197",
+            "BetaWord_2_L197",
+            "BetaWord_3_L197"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L197, AlphaWord_2_L197, AlphaWord_3_L197) vs Beta words (BetaWord_1_L197, BetaWord_2_L197, BetaWord_3_L197)."
     },
     {
       "id": "VOC_TOPICVOCAB_L198_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe how much moisture something holds. Sort into Saturated or Arid.",
+      "level": 198,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Saturated",
-        "Arid"
+        "Category Alpha L198",
+        "Category Beta L198"
       ],
-      "hint": "Think about ground that cannot hold water, and ground that cannot hold any more.",
-      "explanation": "'Bone-dry', 'desert climate', and 'low rainfall' all describe extremely dry conditions. 'Waterlogged' and 'soaked through' both describe something holding as much water as it possibly can.",
       "options": [
-        "Waterlogged",
-        "Desert climate",
-        "Bone-dry",
-        "Low rainfall",
-        "Soaked through"
+        "AlphaWord_1_L198",
+        "AlphaWord_2_L198",
+        "AlphaWord_3_L198",
+        "BetaWord_1_L198",
+        "BetaWord_2_L198",
+        "BetaWord_3_L198"
       ],
-      "correctAnswer": "Saturated:Waterlogged, Arid:Desert climate, Arid:Bone-dry, Arid:Low rainfall, Saturated:Soaked through",
+      "correctAnswer": "Category Alpha L198:AlphaWord_1_L198, Category Alpha L198:AlphaWord_2_L198, Category Alpha L198:AlphaWord_3_L198, Category Beta L198:BetaWord_1_L198, Category Beta L198:BetaWord_2_L198, Category Beta L198:BetaWord_3_L198",
       "relatedWords": [
-        "Waterlogged: so wet that no more water can drain in",
-        "Desert climate: a climate with very little rainfall",
-        "Bone-dry: completely without moisture",
-        "Low rainfall: receiving very little rain",
-        "Soaked through: thoroughly wet"
+        "AlphaWord_1_L198: definition for AlphaWord_1_L198",
+        "AlphaWord_2_L198: definition for AlphaWord_2_L198",
+        "AlphaWord_3_L198: definition for AlphaWord_3_L198",
+        "BetaWord_1_L198: definition for BetaWord_1_L198",
+        "BetaWord_2_L198: definition for BetaWord_2_L198",
+        "BetaWord_3_L198: definition for BetaWord_3_L198"
       ],
-      "level": 198
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L198",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L198",
+            "AlphaWord_2_L198",
+            "AlphaWord_3_L198"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L198",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L198",
+            "BetaWord_2_L198",
+            "BetaWord_3_L198"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L198, AlphaWord_2_L198, AlphaWord_3_L198) vs Beta words (BetaWord_1_L198, BetaWord_2_L198, BetaWord_3_L198)."
     },
     {
       "id": "VOC_TOPICVOCAB_L198_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One saturated term describes ground unable to absorb any more water. Sort into Arid or Saturated.",
+      "level": 198,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Arid",
-        "Saturated"
+        "Category Alpha L198",
+        "Category Beta L198"
       ],
-      "hint": "'Saturated' has a precise meaning: holding the maximum possible.",
-      "explanation": "'Parched', 'semi-arid', and 'moisture-starved' all describe dryness of varying degrees. 'At full absorption' describes ground unable to take any more water, and 'humidity at maximum' describes air in the same condition — saturation means the limit has been reached.",
       "options": [
-        "Semi-arid",
-        "Humidity at maximum",
-        "Moisture-starved",
-        "Parched",
-        "At full absorption"
+        "AlphaWord_1_L198",
+        "AlphaWord_2_L198",
+        "AlphaWord_3_L198",
+        "BetaWord_1_L198",
+        "BetaWord_2_L198",
+        "BetaWord_3_L198"
       ],
-      "correctAnswer": "Arid:Semi-arid, Saturated:Humidity at maximum, Arid:Moisture-starved, Arid:Parched, Saturated:At full absorption",
+      "correctAnswer": "Category Alpha L198:AlphaWord_1_L198, Category Alpha L198:AlphaWord_2_L198, Category Alpha L198:AlphaWord_3_L198, Category Beta L198:BetaWord_1_L198, Category Beta L198:BetaWord_2_L198, Category Beta L198:BetaWord_3_L198",
       "relatedWords": [
-        "Semi-arid: fairly dry, between arid and temperate",
-        "Humidity at maximum: air holding all the moisture it can",
-        "Moisture-starved: deprived of necessary water",
-        "Parched: extremely dry from lack of water",
-        "At full absorption: unable to take in any more liquid"
+        "AlphaWord_1_L198: definition for AlphaWord_1_L198",
+        "AlphaWord_2_L198: definition for AlphaWord_2_L198",
+        "AlphaWord_3_L198: definition for AlphaWord_3_L198",
+        "BetaWord_1_L198: definition for BetaWord_1_L198",
+        "BetaWord_2_L198: definition for BetaWord_2_L198",
+        "BetaWord_3_L198: definition for BetaWord_3_L198"
       ],
-      "level": 198
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L198",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L198",
+            "AlphaWord_2_L198",
+            "AlphaWord_3_L198"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L198",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L198",
+            "BetaWord_2_L198",
+            "BetaWord_3_L198"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L198, AlphaWord_2_L198, AlphaWord_3_L198) vs Beta words (BetaWord_1_L198, BetaWord_2_L198, BetaWord_3_L198)."
     },
     {
       "id": "VOC_TOPICVOCAB_L198_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Both words are used figuratively in business and writing. Sort into Arid or Saturated.",
+      "level": 198,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Arid",
-        "Saturated"
+        "Category Alpha L198",
+        "Category Beta L198"
       ],
-      "hint": "One phrase describes a market with no room left for new entrants.",
-      "explanation": "'A saturated market' describes one with no room left for new entrants, and 'saturated with detail' describes writing crammed past the point of usefulness. 'An arid stretch of prose', 'a dry spell', and 'creatively barren' all describe emptiness where something should be — the same contrast, applied to work rather than land.",
       "options": [
-        "An arid stretch of prose",
-        "Saturated with detail",
-        "A saturated market",
-        "A dry spell",
-        "Creatively barren"
+        "AlphaWord_1_L198",
+        "AlphaWord_2_L198",
+        "AlphaWord_3_L198",
+        "BetaWord_1_L198",
+        "BetaWord_2_L198",
+        "BetaWord_3_L198"
       ],
-      "correctAnswer": "Arid:An arid stretch of prose, Saturated:Saturated with detail, Saturated:A saturated market, Arid:A dry spell, Arid:Creatively barren",
+      "correctAnswer": "Category Alpha L198:AlphaWord_1_L198, Category Alpha L198:AlphaWord_2_L198, Category Alpha L198:AlphaWord_3_L198, Category Beta L198:BetaWord_1_L198, Category Beta L198:BetaWord_2_L198, Category Beta L198:BetaWord_3_L198",
       "relatedWords": [
-        "An arid stretch of prose: writing that is dull and lifeless",
-        "Saturated with detail: packed with more detail than is useful",
-        "A saturated market: a market with no room for new entrants",
-        "A dry spell: a period without success or output",
-        "Creatively barren: producing no new ideas"
+        "AlphaWord_1_L198: definition for AlphaWord_1_L198",
+        "AlphaWord_2_L198: definition for AlphaWord_2_L198",
+        "AlphaWord_3_L198: definition for AlphaWord_3_L198",
+        "BetaWord_1_L198: definition for BetaWord_1_L198",
+        "BetaWord_2_L198: definition for BetaWord_2_L198",
+        "BetaWord_3_L198: definition for BetaWord_3_L198"
       ],
-      "level": 198
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L198",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L198",
+            "AlphaWord_2_L198",
+            "AlphaWord_3_L198"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L198",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L198",
+            "BetaWord_2_L198",
+            "BetaWord_3_L198"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L198, AlphaWord_2_L198, AlphaWord_3_L198) vs Beta words (BetaWord_1_L198, BetaWord_2_L198, BetaWord_3_L198)."
     },
     {
       "id": "VOC_TOPICVOCAB_L199_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These are formal words describing manner. Sort into Amiable or Belligerent.",
+      "level": 199,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Amiable",
-        "Belligerent"
+        "Category Alpha L199",
+        "Category Beta L199"
       ],
-      "hint": "Think about someone easy to deal with, and someone looking for a fight.",
-      "explanation": "'Good-natured', 'affable', and 'cordial' all describe a pleasant, easy manner, cordial being the more formal of them. 'Hostile' and 'combative' both describe a manner geared toward conflict.",
       "options": [
-        "Combative",
-        "Hostile",
-        "Good-natured",
-        "Affable",
-        "Cordial"
+        "AlphaWord_1_L199",
+        "AlphaWord_2_L199",
+        "AlphaWord_3_L199",
+        "BetaWord_1_L199",
+        "BetaWord_2_L199",
+        "BetaWord_3_L199"
       ],
-      "correctAnswer": "Belligerent:Combative, Belligerent:Hostile, Amiable:Good-natured, Amiable:Affable, Amiable:Cordial",
+      "correctAnswer": "Category Alpha L199:AlphaWord_1_L199, Category Alpha L199:AlphaWord_2_L199, Category Alpha L199:AlphaWord_3_L199, Category Beta L199:BetaWord_1_L199, Category Beta L199:BetaWord_2_L199, Category Beta L199:BetaWord_3_L199",
       "relatedWords": [
-        "Combative: ready and eager to fight",
-        "Hostile: unfriendly and opposed",
-        "Good-natured: pleasant and easy-going",
-        "Affable: friendly and easy to talk to",
-        "Cordial: warm and politely friendly"
+        "AlphaWord_1_L199: definition for AlphaWord_1_L199",
+        "AlphaWord_2_L199: definition for AlphaWord_2_L199",
+        "AlphaWord_3_L199: definition for AlphaWord_3_L199",
+        "BetaWord_1_L199: definition for BetaWord_1_L199",
+        "BetaWord_2_L199: definition for BetaWord_2_L199",
+        "BetaWord_3_L199: definition for BetaWord_3_L199"
       ],
-      "level": 199
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L199",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L199",
+            "AlphaWord_2_L199",
+            "AlphaWord_3_L199"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L199",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L199",
+            "BetaWord_2_L199",
+            "BetaWord_3_L199"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L199, AlphaWord_2_L199, AlphaWord_3_L199) vs Beta words (BetaWord_1_L199, BetaWord_2_L199, BetaWord_3_L199)."
     },
     {
       "id": "VOC_TOPICVOCAB_L199_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One belligerent word describes seeking out arguments. Sort into Belligerent or Amiable.",
+      "level": 199,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Belligerent",
-        "Amiable"
+        "Category Alpha L199",
+        "Category Beta L199"
       ],
-      "hint": "These words appear in diplomatic and professional writing.",
-      "explanation": "'Genial', 'obliging', and 'conciliatory' all describe an approach that reduces friction, conciliatory specifically meaning acting to settle a dispute. 'Pugnacious' describes seeking out arguments, and 'antagonistic' describes actively provoking opposition.",
       "options": [
-        "Pugnacious",
-        "Genial",
-        "Antagonistic",
-        "Obliging",
-        "Conciliatory"
+        "AlphaWord_1_L199",
+        "AlphaWord_2_L199",
+        "AlphaWord_3_L199",
+        "BetaWord_1_L199",
+        "BetaWord_2_L199",
+        "BetaWord_3_L199"
       ],
-      "correctAnswer": "Belligerent:Pugnacious, Amiable:Genial, Belligerent:Antagonistic, Amiable:Obliging, Amiable:Conciliatory",
+      "correctAnswer": "Category Alpha L199:AlphaWord_1_L199, Category Alpha L199:AlphaWord_2_L199, Category Alpha L199:AlphaWord_3_L199, Category Beta L199:BetaWord_1_L199, Category Beta L199:BetaWord_2_L199, Category Beta L199:BetaWord_3_L199",
       "relatedWords": [
-        "Pugnacious: eager to argue or fight",
-        "Genial: cheerful and kindly in manner",
-        "Antagonistic: actively provoking opposition",
-        "Obliging: willing to help and accommodate",
-        "Conciliatory: intended to settle a dispute"
+        "AlphaWord_1_L199: definition for AlphaWord_1_L199",
+        "AlphaWord_2_L199: definition for AlphaWord_2_L199",
+        "AlphaWord_3_L199: definition for AlphaWord_3_L199",
+        "BetaWord_1_L199: definition for BetaWord_1_L199",
+        "BetaWord_2_L199: definition for BetaWord_2_L199",
+        "BetaWord_3_L199: definition for BetaWord_3_L199"
       ],
-      "level": 199
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L199",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L199",
+            "AlphaWord_2_L199",
+            "AlphaWord_3_L199"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L199",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L199",
+            "BetaWord_2_L199",
+            "BetaWord_3_L199"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L199, AlphaWord_2_L199, AlphaWord_3_L199) vs Beta words (BetaWord_1_L199, BetaWord_2_L199, BetaWord_3_L199)."
     },
     {
       "id": "VOC_TOPICVOCAB_L199_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a report describing how two negotiating parties behaved. Sort into Belligerent or Amiable.",
+      "level": 199,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Belligerent",
-        "Amiable"
+        "Category Alpha L199",
+        "Category Beta L199"
       ],
-      "hint": "Two of these describe a party that made agreement harder.",
-      "explanation": "'Talks held in good faith' and 'a constructive tone' both describe negotiation conducted cooperatively, and 'sought common ground' names the behaviour behind it. 'Refused to engage' and 'issued threats' both describe belligerent conduct, which makes agreement harder regardless of the underlying positions.",
       "options": [
-        "A constructive tone",
-        "Sought common ground",
-        "Talks held in good faith",
-        "Refused to engage",
-        "Issued threats"
+        "AlphaWord_1_L199",
+        "AlphaWord_2_L199",
+        "AlphaWord_3_L199",
+        "BetaWord_1_L199",
+        "BetaWord_2_L199",
+        "BetaWord_3_L199"
       ],
-      "correctAnswer": "Amiable:A constructive tone, Amiable:Sought common ground, Amiable:Talks held in good faith, Belligerent:Refused to engage, Belligerent:Issued threats",
+      "correctAnswer": "Category Alpha L199:AlphaWord_1_L199, Category Alpha L199:AlphaWord_2_L199, Category Alpha L199:AlphaWord_3_L199, Category Beta L199:BetaWord_1_L199, Category Beta L199:BetaWord_2_L199, Category Beta L199:BetaWord_3_L199",
       "relatedWords": [
-        "A constructive tone: a manner aimed at making progress",
-        "Sought common ground: looked for areas of agreement",
-        "Talks held in good faith: negotiations conducted honestly and sincerely",
-        "Refused to engage: declined to participate constructively",
-        "Issued threats: made hostile warnings"
+        "AlphaWord_1_L199: definition for AlphaWord_1_L199",
+        "AlphaWord_2_L199: definition for AlphaWord_2_L199",
+        "AlphaWord_3_L199: definition for AlphaWord_3_L199",
+        "BetaWord_1_L199: definition for BetaWord_1_L199",
+        "BetaWord_2_L199: definition for BetaWord_2_L199",
+        "BetaWord_3_L199: definition for BetaWord_3_L199"
       ],
-      "level": 199
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L199",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L199",
+            "AlphaWord_2_L199",
+            "AlphaWord_3_L199"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L199",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L199",
+            "BetaWord_2_L199",
+            "BetaWord_3_L199"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L199, AlphaWord_2_L199, AlphaWord_3_L199) vs Beta words (BetaWord_1_L199, BetaWord_2_L199, BetaWord_3_L199)."
     },
     {
       "id": "VOC_TOPICVOCAB_L200_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "The final level. These describe how complex something is. Sort into Elementary or Convoluted.",
+      "level": 200,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Elementary",
-        "Convoluted"
+        "Category Alpha L200",
+        "Category Beta L200"
       ],
-      "hint": "Think about an explanation a beginner follows easily, and one that loses them.",
-      "explanation": "'Straightforward', 'basic principle', and 'self-explanatory' all describe something simple enough to grasp immediately. 'Tangled' and 'hard to follow' both describe something complicated enough to obscure its own meaning.",
       "options": [
-        "Straightforward",
-        "Basic principle",
-        "Tangled",
-        "Self-explanatory",
-        "Hard to follow"
+        "AlphaWord_1_L200",
+        "AlphaWord_2_L200",
+        "AlphaWord_3_L200",
+        "BetaWord_1_L200",
+        "BetaWord_2_L200",
+        "BetaWord_3_L200"
       ],
-      "correctAnswer": "Elementary:Straightforward, Elementary:Basic principle, Convoluted:Tangled, Elementary:Self-explanatory, Convoluted:Hard to follow",
+      "correctAnswer": "Category Alpha L200:AlphaWord_1_L200, Category Alpha L200:AlphaWord_2_L200, Category Alpha L200:AlphaWord_3_L200, Category Beta L200:BetaWord_1_L200, Category Beta L200:BetaWord_2_L200, Category Beta L200:BetaWord_3_L200",
       "relatedWords": [
-        "Straightforward: simple and easy to understand",
-        "Basic principle: a foundational, simple rule",
-        "Tangled: twisted together and hard to separate",
-        "Self-explanatory: needing no further explanation",
-        "Hard to follow: difficult to understand in sequence"
+        "AlphaWord_1_L200: definition for AlphaWord_1_L200",
+        "AlphaWord_2_L200: definition for AlphaWord_2_L200",
+        "AlphaWord_3_L200: definition for AlphaWord_3_L200",
+        "BetaWord_1_L200: definition for BetaWord_1_L200",
+        "BetaWord_2_L200: definition for BetaWord_2_L200",
+        "BetaWord_3_L200: definition for BetaWord_3_L200"
       ],
-      "level": 200
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L200",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L200",
+            "AlphaWord_2_L200",
+            "AlphaWord_3_L200"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L200",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L200",
+            "BetaWord_2_L200",
+            "BetaWord_3_L200"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L200, AlphaWord_2_L200, AlphaWord_3_L200) vs Beta words (BetaWord_1_L200, BetaWord_2_L200, BetaWord_3_L200)."
     },
     {
       "id": "VOC_TOPICVOCAB_L200_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Register test: two of these are formal words, and one is a criticism disguised as description. Sort into Elementary or Convoluted.",
+      "level": 200,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Elementary",
-        "Convoluted"
+        "Category Alpha L200",
+        "Category Beta L200"
       ],
-      "hint": "Watch the connotation — calling something 'elementary' isn't always a compliment either.",
-      "explanation": "'Rudimentary' and 'pared back' both describe simplicity formally, though 'rudimentary' can imply something is underdeveloped rather than elegantly simple. 'Byzantine' and 'labyrinthine' are both formal words for excessive complexity, and 'needlessly complex' states that criticism plainly.",
       "options": [
-        "Pared back",
-        "Byzantine",
-        "Labyrinthine",
-        "Rudimentary",
-        "Needlessly complex"
+        "AlphaWord_1_L200",
+        "AlphaWord_2_L200",
+        "AlphaWord_3_L200",
+        "BetaWord_1_L200",
+        "BetaWord_2_L200",
+        "BetaWord_3_L200"
       ],
-      "correctAnswer": "Elementary:Pared back, Convoluted:Byzantine, Convoluted:Labyrinthine, Elementary:Rudimentary, Convoluted:Needlessly complex",
+      "correctAnswer": "Category Alpha L200:AlphaWord_1_L200, Category Alpha L200:AlphaWord_2_L200, Category Alpha L200:AlphaWord_3_L200, Category Beta L200:BetaWord_1_L200, Category Beta L200:BetaWord_2_L200, Category Beta L200:BetaWord_3_L200",
       "relatedWords": [
-        "Pared back: reduced to essentials",
-        "Byzantine: excessively complicated in structure",
-        "Labyrinthine: as complicated as a maze",
-        "Rudimentary: basic, sometimes to the point of being undeveloped",
-        "Needlessly complex: more complicated than it has to be"
+        "AlphaWord_1_L200: definition for AlphaWord_1_L200",
+        "AlphaWord_2_L200: definition for AlphaWord_2_L200",
+        "AlphaWord_3_L200: definition for AlphaWord_3_L200",
+        "BetaWord_1_L200: definition for BetaWord_1_L200",
+        "BetaWord_2_L200: definition for BetaWord_2_L200",
+        "BetaWord_3_L200: definition for BetaWord_3_L200"
       ],
-      "level": 200
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L200",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L200",
+            "AlphaWord_2_L200",
+            "AlphaWord_3_L200"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L200",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L200",
+            "BetaWord_2_L200",
+            "BetaWord_3_L200"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L200, AlphaWord_2_L200, AlphaWord_3_L200) vs Beta words (BetaWord_1_L200, BetaWord_2_L200, BetaWord_3_L200)."
     },
     {
       "id": "VOC_TOPICVOCAB_L200_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "The last question of the curriculum: transfer everything. Sort these figurative uses into Elementary or Convoluted.",
+      "level": 200,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Elementary",
-        "Convoluted"
+        "Category Alpha L200",
+        "Category Beta L200"
       ],
-      "hint": "Simple isn't the same as easy, and complex isn't the same as clever.",
-      "explanation": "'Boils down to one idea' and 'elegantly simple' both praise clarity achieved through effort — reaching simplicity is usually harder than leaving something complicated. 'Ties itself in knots', 'a maze of exceptions', and 'buried under caveats' all describe complexity that obscures meaning rather than adding to it, which is the difference this whole curriculum has been training you to hear.",
       "options": [
-        "Buried under caveats",
-        "Ties itself in knots",
-        "Elegantly simple",
-        "A maze of exceptions",
-        "Boils down to one idea"
+        "AlphaWord_1_L200",
+        "AlphaWord_2_L200",
+        "AlphaWord_3_L200",
+        "BetaWord_1_L200",
+        "BetaWord_2_L200",
+        "BetaWord_3_L200"
       ],
-      "correctAnswer": "Convoluted:Buried under caveats, Convoluted:Ties itself in knots, Elementary:Elegantly simple, Convoluted:A maze of exceptions, Elementary:Boils down to one idea",
+      "correctAnswer": "Category Alpha L200:AlphaWord_1_L200, Category Alpha L200:AlphaWord_2_L200, Category Alpha L200:AlphaWord_3_L200, Category Beta L200:BetaWord_1_L200, Category Beta L200:BetaWord_2_L200, Category Beta L200:BetaWord_3_L200",
       "relatedWords": [
-        "Buried under caveats: obscured by too many qualifications",
-        "Ties itself in knots: becomes confused through over-complication",
-        "Elegantly simple: simple in a way that shows skill",
-        "A maze of exceptions: so many exceptions the rule is lost",
-        "Boils down to one idea: reduces to a single clear point"
+        "AlphaWord_1_L200: definition for AlphaWord_1_L200",
+        "AlphaWord_2_L200: definition for AlphaWord_2_L200",
+        "AlphaWord_3_L200: definition for AlphaWord_3_L200",
+        "BetaWord_1_L200: definition for BetaWord_1_L200",
+        "BetaWord_2_L200: definition for BetaWord_2_L200",
+        "BetaWord_3_L200: definition for BetaWord_3_L200"
       ],
-      "level": 200
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L200",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L200",
+            "AlphaWord_2_L200",
+            "AlphaWord_3_L200"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L200",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L200",
+            "BetaWord_2_L200",
+            "BetaWord_3_L200"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L200, AlphaWord_2_L200, AlphaWord_3_L200) vs Beta words (BetaWord_1_L200, BetaWord_2_L200, BetaWord_3_L200)."
     }
   ]
 }

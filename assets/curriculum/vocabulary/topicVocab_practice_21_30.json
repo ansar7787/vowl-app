@@ -7,1740 +7,1470 @@
     {
       "id": "VOC_TOPICVOCAB_L21_PRACTICE_Q1",
       "level": 21,
-      "word": "Classroom",
-      "conceptTitle": "Topic Sorting Gym: Home vs School",
-      "targetKeyword": "Classroom",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 21 (A2)",
       "topicBuckets": [
-        "Home",
-        "School"
+        "Category Alpha L21",
+        "Category Beta L21"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Classroom\" belong to?",
-          "options": [
-            "Home",
-            "School"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L21",
+            "AlphaWord_2_L21",
+            "AlphaWord_3_L21",
+            "BetaWord_1_L21",
+            "BetaWord_2_L21",
+            "BetaWord_3_L21"
           ],
-          "correctAnswer": "School",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Classroom\" does not belong to \"Home\".",
-            "Correct! \"Classroom\" is categorized under \"School\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L21",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L21",
+                "AlphaWord_2_L21",
+                "AlphaWord_3_L21"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L21",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L21",
+                "BetaWord_2_L21",
+                "BetaWord_3_L21"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about which rooms or things you'd find at school, and which you'd find where you live."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"School\" category?",
-          "options": [
-            "Classroom",
-            "Cafeteria",
-            "Kitchen",
-            "Locker"
-          ],
-          "correctAnswer": "Classroom",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Classroom\" belongs directly to \"School\".",
-            "Incorrect. \"Cafeteria\" does not belong to \"School\".",
-            "Incorrect. \"Kitchen\" does not belong to \"School\".",
-            "Incorrect. \"Locker\" does not belong to \"School\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Home: \"______\".",
-          "question": "Type the term belonging to [Home] (7 letters):",
-          "correctAnswer": "KITCHEN",
-          "feedbackIfWrong": "The expected term for [Home] is \"Kitchen\".",
-          "hint": "Starts with \"K\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L21_PRACTICE_Q2",
       "level": 21,
-      "word": "Principal",
-      "conceptTitle": "Topic Sorting Gym: School vs Home",
-      "targetKeyword": "Principal",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 21 (A2)",
       "topicBuckets": [
-        "School",
-        "Home"
+        "Category Alpha L21",
+        "Category Beta L21"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Principal\" belong to?",
-          "options": [
-            "School",
-            "Home"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L21",
+            "AlphaWord_2_L21",
+            "AlphaWord_3_L21",
+            "BetaWord_1_L21",
+            "BetaWord_2_L21",
+            "BetaWord_3_L21"
           ],
-          "correctAnswer": "School",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Principal\" is categorized under \"School\".",
-            "Not quite. \"Principal\" does not belong to \"Home\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L21",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L21",
+                "AlphaWord_2_L21",
+                "AlphaWord_3_L21"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L21",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L21",
+                "BetaWord_2_L21",
+                "BetaWord_3_L21"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about people tied to a school building specifically, versus people tied to a family."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Home\" category?",
-          "options": [
-            "Sibling",
-            "Principal",
-            "Classmate",
-            "Janitor"
-          ],
-          "correctAnswer": "Sibling",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Sibling\" belongs directly to \"Home\".",
-            "Incorrect. \"Principal\" does not belong to \"Home\".",
-            "Incorrect. \"Classmate\" does not belong to \"Home\".",
-            "Incorrect. \"Janitor\" does not belong to \"Home\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of School: \"______\".",
-          "question": "Type the term belonging to [School] (9 letters):",
-          "correctAnswer": "CLASSMATE",
-          "feedbackIfWrong": "The expected term for [School] is \"Classmate\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L21_PRACTICE_Q3",
       "level": 21,
-      "word": "Bedtime",
-      "conceptTitle": "Topic Sorting Gym: School vs Home",
-      "targetKeyword": "Bedtime",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 21 (A2)",
       "topicBuckets": [
-        "School",
-        "Home"
+        "Category Alpha L21",
+        "Category Beta L21"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Bedtime\" belong to?",
-          "options": [
-            "School",
-            "Home"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L21",
+            "AlphaWord_2_L21",
+            "AlphaWord_3_L21",
+            "BetaWord_1_L21",
+            "BetaWord_2_L21",
+            "BetaWord_3_L21"
           ],
-          "correctAnswer": "Home",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Bedtime\" does not belong to \"School\".",
-            "Correct! \"Bedtime\" is categorized under \"Home\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L21",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L21",
+                "AlphaWord_2_L21",
+                "AlphaWord_3_L21"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L21",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L21",
+                "BetaWord_2_L21",
+                "BetaWord_3_L21"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these are set by family, and two happen on a school schedule."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Home\" category?",
-          "options": [
-            "Bedtime",
-            "Chores",
-            "Assembly",
-            "Recess"
-          ],
-          "correctAnswer": "Bedtime",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Bedtime\" belongs directly to \"Home\".",
-            "Incorrect. \"Chores\" does not belong to \"Home\".",
-            "Incorrect. \"Assembly\" does not belong to \"Home\".",
-            "Incorrect. \"Recess\" does not belong to \"Home\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of School: \"______\".",
-          "question": "Type the term belonging to [School] (8 letters):",
-          "correctAnswer": "ASSEMBLY",
-          "feedbackIfWrong": "The expected term for [School] is \"Assembly\".",
-          "hint": "Starts with \"A\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L22_PRACTICE_Q1",
       "level": 22,
-      "word": "Purchase",
-      "conceptTitle": "Topic Sorting Gym: Buy vs Sell",
-      "targetKeyword": "Purchase",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 22 (A2)",
       "topicBuckets": [
-        "Buy",
-        "Sell"
+        "Category Alpha L22",
+        "Category Beta L22"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Purchase\" belong to?",
-          "options": [
-            "Buy",
-            "Sell"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L22",
+            "AlphaWord_2_L22",
+            "AlphaWord_3_L22",
+            "BetaWord_1_L22",
+            "BetaWord_2_L22",
+            "BetaWord_3_L22"
           ],
-          "correctAnswer": "Buy",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Purchase\" is categorized under \"Buy\".",
-            "Not quite. \"Purchase\" does not belong to \"Sell\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L22",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L22",
+                "AlphaWord_2_L22",
+                "AlphaWord_3_L22"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L22",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L22",
+                "BetaWord_2_L22",
+                "BetaWord_3_L22"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about which side of a transaction is handing over money, and which side is handing over goods."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Sell\" category?",
-          "options": [
-            "Retailer",
-            "Purchase",
-            "Acquire",
-            "Order"
-          ],
-          "correctAnswer": "Retailer",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Retailer\" belongs directly to \"Sell\".",
-            "Incorrect. \"Purchase\" does not belong to \"Sell\".",
-            "Incorrect. \"Acquire\" does not belong to \"Sell\".",
-            "Incorrect. \"Order\" does not belong to \"Sell\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Sell: \"______\".",
-          "question": "Type the term belonging to [Sell] (8 letters):",
-          "correctAnswer": "RETAILER",
-          "feedbackIfWrong": "The expected term for [Sell] is \"Retailer\".",
-          "hint": "Starts with \"R\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L22_PRACTICE_Q2",
       "level": 22,
-      "word": "Haggle",
-      "conceptTitle": "Topic Sorting Gym: Sell vs Buy",
-      "targetKeyword": "Haggle",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 22 (A2)",
       "topicBuckets": [
-        "Sell",
-        "Buy"
+        "Category Alpha L22",
+        "Category Beta L22"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Haggle\" belong to?",
-          "options": [
-            "Sell",
-            "Buy"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L22",
+            "AlphaWord_2_L22",
+            "AlphaWord_3_L22",
+            "BetaWord_1_L22",
+            "BetaWord_2_L22",
+            "BetaWord_3_L22"
           ],
-          "correctAnswer": "Buy",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Haggle\" does not belong to \"Sell\".",
-            "Correct! \"Haggle\" is categorized under \"Buy\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L22",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L22",
+                "AlphaWord_2_L22",
+                "AlphaWord_3_L22"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L22",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L22",
+                "BetaWord_2_L22",
+                "BetaWord_3_L22"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about looking around a store versus offering something to the highest bidder."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Buy\" category?",
-          "options": [
-            "Haggle",
-            "Auction",
-            "Browse",
-            "Advertise"
-          ],
-          "correctAnswer": "Haggle",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Haggle\" belongs directly to \"Buy\".",
-            "Incorrect. \"Auction\" does not belong to \"Buy\".",
-            "Incorrect. \"Browse\" does not belong to \"Buy\".",
-            "Incorrect. \"Advertise\" does not belong to \"Buy\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Buy: \"______\".",
-          "question": "Type the term belonging to [Buy] (6 letters):",
-          "correctAnswer": "BROWSE",
-          "feedbackIfWrong": "The expected term for [Buy] is \"Browse\".",
-          "hint": "Starts with \"B\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L22_PRACTICE_Q3",
       "level": 22,
-      "word": "Wholesaler",
-      "conceptTitle": "Topic Sorting Gym: Buy vs Sell",
-      "targetKeyword": "Wholesaler",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 22 (A2)",
       "topicBuckets": [
-        "Buy",
-        "Sell"
+        "Category Alpha L22",
+        "Category Beta L22"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Wholesaler\" belong to?",
-          "options": [
-            "Buy",
-            "Sell"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L22",
+            "AlphaWord_2_L22",
+            "AlphaWord_3_L22",
+            "BetaWord_1_L22",
+            "BetaWord_2_L22",
+            "BetaWord_3_L22"
           ],
-          "correctAnswer": "Sell",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Wholesaler\" does not belong to \"Buy\".",
-            "Correct! \"Wholesaler\" is categorized under \"Sell\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L22",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L22",
+                "AlphaWord_2_L22",
+                "AlphaWord_3_L22"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L22",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L22",
+                "BetaWord_2_L22",
+                "BetaWord_3_L22"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One seller word specifically means selling large quantities to other businesses, not individual customers."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Sell\" category?",
-          "options": [
-            "Wholesaler",
-            "Consumer",
-            "Supply",
-            "Merchant"
-          ],
-          "correctAnswer": "Wholesaler",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Wholesaler\" belongs directly to \"Sell\".",
-            "Incorrect. \"Consumer\" does not belong to \"Sell\".",
-            "Incorrect. \"Supply\" does not belong to \"Sell\".",
-            "Incorrect. \"Merchant\" does not belong to \"Sell\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Sell: \"______\".",
-          "question": "Type the term belonging to [Sell] (6 letters):",
-          "correctAnswer": "SUPPLY",
-          "feedbackIfWrong": "The expected term for [Sell] is \"Supply\".",
-          "hint": "Starts with \"S\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L23_PRACTICE_Q1",
       "level": 23,
-      "word": "Affordable",
-      "conceptTitle": "Topic Sorting Gym: Expensive vs Cheap",
-      "targetKeyword": "Affordable",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 23 (A2)",
       "topicBuckets": [
-        "Expensive",
-        "Cheap"
+        "Category Alpha L23",
+        "Category Beta L23"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Affordable\" belong to?",
-          "options": [
-            "Expensive",
-            "Cheap"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L23",
+            "AlphaWord_2_L23",
+            "AlphaWord_3_L23",
+            "BetaWord_1_L23",
+            "BetaWord_2_L23",
+            "BetaWord_3_L23"
           ],
-          "correctAnswer": "Cheap",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Affordable\" does not belong to \"Expensive\".",
-            "Correct! \"Affordable\" is categorized under \"Cheap\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L23",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L23",
+                "AlphaWord_2_L23",
+                "AlphaWord_3_L23"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L23",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L23",
+                "BetaWord_2_L23",
+                "BetaWord_3_L23"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about which words describe something easy on your wallet, versus something that stretches it."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Cheap\" category?",
-          "options": [
-            "Affordable",
-            "Pricey",
-            "Inexpensive",
-            "Budget-friendly"
-          ],
-          "correctAnswer": "Affordable",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Affordable\" belongs directly to \"Cheap\".",
-            "Incorrect. \"Pricey\" does not belong to \"Cheap\".",
-            "Incorrect. \"Inexpensive\" does not belong to \"Cheap\".",
-            "Incorrect. \"Budget-friendly\" does not belong to \"Cheap\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Cheap: \"______\".",
-          "question": "Type the term belonging to [Cheap] (11 letters):",
-          "correctAnswer": "INEXPENSIVE",
-          "feedbackIfWrong": "The expected term for [Cheap] is \"Inexpensive\".",
-          "hint": "Starts with \"I\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L23_PRACTICE_Q2",
       "level": 23,
-      "word": "Luxurious",
-      "conceptTitle": "Topic Sorting Gym: Cheap vs Expensive",
-      "targetKeyword": "Luxurious",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 23 (A2)",
       "topicBuckets": [
-        "Cheap",
-        "Expensive"
+        "Category Alpha L23",
+        "Category Beta L23"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Luxurious\" belong to?",
-          "options": [
-            "Cheap",
-            "Expensive"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L23",
+            "AlphaWord_2_L23",
+            "AlphaWord_3_L23",
+            "BetaWord_1_L23",
+            "BetaWord_2_L23",
+            "BetaWord_3_L23"
           ],
-          "correctAnswer": "Expensive",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Luxurious\" does not belong to \"Cheap\".",
-            "Correct! \"Luxurious\" is categorized under \"Expensive\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L23",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L23",
+                "AlphaWord_2_L23",
+                "AlphaWord_3_L23"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L23",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L23",
+                "BetaWord_2_L23",
+                "BetaWord_3_L23"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about a price reduced from its original amount, versus spending far beyond what's reasonable."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Expensive\" category?",
-          "options": [
-            "Luxurious",
-            "Marked-down",
-            "Economical",
-            "Discounted"
-          ],
-          "correctAnswer": "Luxurious",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Luxurious\" belongs directly to \"Expensive\".",
-            "Incorrect. \"Marked-down\" does not belong to \"Expensive\".",
-            "Incorrect. \"Economical\" does not belong to \"Expensive\".",
-            "Incorrect. \"Discounted\" does not belong to \"Expensive\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Cheap: \"______\".",
-          "question": "Type the term belonging to [Cheap] (10 letters):",
-          "correctAnswer": "ECONOMICAL",
-          "feedbackIfWrong": "The expected term for [Cheap] is \"Economical\".",
-          "hint": "Starts with \"E\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L23_PRACTICE_Q3",
       "level": 23,
-      "word": "Steep",
-      "conceptTitle": "Topic Sorting Gym: Cheap vs Expensive",
-      "targetKeyword": "Steep",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 23 (A2)",
       "topicBuckets": [
-        "Cheap",
-        "Expensive"
+        "Category Alpha L23",
+        "Category Beta L23"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Steep\" belong to?",
-          "options": [
-            "Cheap",
-            "Expensive"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L23",
+            "AlphaWord_2_L23",
+            "AlphaWord_3_L23",
+            "BetaWord_1_L23",
+            "BetaWord_2_L23",
+            "BetaWord_3_L23"
           ],
-          "correctAnswer": "Expensive",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Steep\" does not belong to \"Cheap\".",
-            "Correct! \"Steep\" is categorized under \"Expensive\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L23",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L23",
+                "AlphaWord_2_L23",
+                "AlphaWord_3_L23"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L23",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L23",
+                "BetaWord_2_L23",
+                "BetaWord_3_L23"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Three of these describe a price that feels unreasonably high."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Expensive\" category?",
-          "options": [
-            "Steep",
-            "Reasonable",
-            "Cost-effective",
-            "Overpriced"
-          ],
-          "correctAnswer": "Steep",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Steep\" belongs directly to \"Expensive\".",
-            "Incorrect. \"Reasonable\" does not belong to \"Expensive\".",
-            "Incorrect. \"Cost-effective\" does not belong to \"Expensive\".",
-            "Incorrect. \"Overpriced\" does not belong to \"Expensive\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Cheap: \"______\".",
-          "question": "Type the term belonging to [Cheap] (14 letters):",
-          "correctAnswer": "COST-EFFECTIVE",
-          "feedbackIfWrong": "The expected term for [Cheap] is \"Cost-effective\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L24_PRACTICE_Q1",
       "level": 24,
-      "word": "Stew",
-      "conceptTitle": "Topic Sorting Gym: Breakfast vs Dinner",
-      "targetKeyword": "Stew",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 24 (A2)",
       "topicBuckets": [
-        "Breakfast",
-        "Dinner"
+        "Category Alpha L24",
+        "Category Beta L24"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Stew\" belong to?",
-          "options": [
-            "Breakfast",
-            "Dinner"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L24",
+            "AlphaWord_2_L24",
+            "AlphaWord_3_L24",
+            "BetaWord_1_L24",
+            "BetaWord_2_L24",
+            "BetaWord_3_L24"
           ],
-          "correctAnswer": "Dinner",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Stew\" does not belong to \"Breakfast\".",
-            "Correct! \"Stew\" is categorized under \"Dinner\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L24",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L24",
+                "AlphaWord_2_L24",
+                "AlphaWord_3_L24"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L24",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L24",
+                "BetaWord_2_L24",
+                "BetaWord_3_L24"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about what's typically on the table first thing in the morning versus in the evening."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Dinner\" category?",
-          "options": [
-            "Stew",
-            "Toast",
-            "Pancakes",
-            "Roast"
-          ],
-          "correctAnswer": "Stew",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Stew\" belongs directly to \"Dinner\".",
-            "Incorrect. \"Toast\" does not belong to \"Dinner\".",
-            "Incorrect. \"Pancakes\" does not belong to \"Dinner\".",
-            "Incorrect. \"Roast\" does not belong to \"Dinner\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Breakfast: \"______\".",
-          "question": "Type the term belonging to [Breakfast] (8 letters):",
-          "correctAnswer": "PANCAKES",
-          "feedbackIfWrong": "The expected term for [Breakfast] is \"Pancakes\".",
-          "hint": "Starts with \"P\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L24_PRACTICE_Q2",
       "level": 24,
-      "word": "Casserole",
-      "conceptTitle": "Topic Sorting Gym: Dinner vs Breakfast",
-      "targetKeyword": "Casserole",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 24 (A2)",
       "topicBuckets": [
-        "Dinner",
-        "Breakfast"
+        "Category Alpha L24",
+        "Category Beta L24"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Casserole\" belong to?",
-          "options": [
-            "Dinner",
-            "Breakfast"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L24",
+            "AlphaWord_2_L24",
+            "AlphaWord_3_L24",
+            "BetaWord_1_L24",
+            "BetaWord_2_L24",
+            "BetaWord_3_L24"
           ],
-          "correctAnswer": "Dinner",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Casserole\" is categorized under \"Dinner\".",
-            "Not quite. \"Casserole\" does not belong to \"Breakfast\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L24",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L24",
+                "AlphaWord_2_L24",
+                "AlphaWord_3_L24"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L24",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L24",
+                "BetaWord_2_L24",
+                "BetaWord_3_L24"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two dinner dishes here need much longer cooking time than any breakfast food."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Breakfast\" category?",
-          "options": [
-            "Porridge",
-            "Casserole",
-            "Omelet",
-            "Pot roast"
-          ],
-          "correctAnswer": "Porridge",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Porridge\" belongs directly to \"Breakfast\".",
-            "Incorrect. \"Casserole\" does not belong to \"Breakfast\".",
-            "Incorrect. \"Omelet\" does not belong to \"Breakfast\".",
-            "Incorrect. \"Pot roast\" does not belong to \"Breakfast\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Breakfast: \"______\".",
-          "question": "Type the term belonging to [Breakfast] (6 letters):",
-          "correctAnswer": "OMELET",
-          "feedbackIfWrong": "The expected term for [Breakfast] is \"Omelet\".",
-          "hint": "Starts with \"O\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L24_PRACTICE_Q3",
       "level": 24,
-      "word": "Full English",
-      "conceptTitle": "Topic Sorting Gym: Breakfast vs Dinner",
-      "targetKeyword": "Full English",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 24 (A2)",
       "topicBuckets": [
-        "Breakfast",
-        "Dinner"
+        "Category Alpha L24",
+        "Category Beta L24"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Full English\" belong to?",
-          "options": [
-            "Breakfast",
-            "Dinner"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L24",
+            "AlphaWord_2_L24",
+            "AlphaWord_3_L24",
+            "BetaWord_1_L24",
+            "BetaWord_2_L24",
+            "BetaWord_3_L24"
           ],
-          "correctAnswer": "Breakfast",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Full English\" is categorized under \"Breakfast\".",
-            "Not quite. \"Full English\" does not belong to \"Dinner\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L24",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L24",
+                "AlphaWord_2_L24",
+                "AlphaWord_3_L24"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L24",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L24",
+                "BetaWord_2_L24",
+                "BetaWord_3_L24"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One dinner phrase specifically means a discounted meal served earlier than usual."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Dinner\" category?",
-          "options": [
-            "Formal banquet",
-            "Full English",
-            "Early bird special",
-            "Three-course meal"
-          ],
-          "correctAnswer": "Formal banquet",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Formal banquet\" belongs directly to \"Dinner\".",
-            "Incorrect. \"Full English\" does not belong to \"Dinner\".",
-            "Incorrect. \"Early bird special\" does not belong to \"Dinner\".",
-            "Incorrect. \"Three-course meal\" does not belong to \"Dinner\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Dinner: \"______\".",
-          "question": "Type the term belonging to [Dinner] (18 letters):",
-          "correctAnswer": "EARLY BIRD SPECIAL",
-          "feedbackIfWrong": "The expected term for [Dinner] is \"Early bird special\".",
-          "hint": "Starts with \"E\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L25_PRACTICE_Q1",
       "level": 25,
-      "word": "Sprint",
-      "conceptTitle": "Topic Sorting Gym: Walk vs Run",
-      "targetKeyword": "Sprint",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 25 (A2)",
       "topicBuckets": [
-        "Walk",
-        "Run"
+        "Category Alpha L25",
+        "Category Beta L25"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Sprint\" belong to?",
-          "options": [
-            "Walk",
-            "Run"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L25",
+            "AlphaWord_2_L25",
+            "AlphaWord_3_L25",
+            "BetaWord_1_L25",
+            "BetaWord_2_L25",
+            "BetaWord_3_L25"
           ],
-          "correctAnswer": "Run",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Sprint\" does not belong to \"Walk\".",
-            "Correct! \"Sprint\" is categorized under \"Run\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L25",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L25",
+                "AlphaWord_2_L25",
+                "AlphaWord_3_L25"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L25",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L25",
+                "BetaWord_2_L25",
+                "BetaWord_3_L25"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about your speed and effort — a relaxed pace, or an all-out burst."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Run\" category?",
-          "options": [
-            "Sprint",
-            "Dash",
-            "Pace",
-            "Amble"
-          ],
-          "correctAnswer": "Sprint",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Sprint\" belongs directly to \"Run\".",
-            "Incorrect. \"Dash\" does not belong to \"Run\".",
-            "Incorrect. \"Pace\" does not belong to \"Run\".",
-            "Incorrect. \"Amble\" does not belong to \"Run\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Walk: \"______\".",
-          "question": "Type the term belonging to [Walk] (4 letters):",
-          "correctAnswer": "PACE",
-          "feedbackIfWrong": "The expected term for [Walk] is \"Pace\".",
-          "hint": "Starts with \"P\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L25_PRACTICE_Q2",
       "level": 25,
-      "word": "Hike",
-      "conceptTitle": "Topic Sorting Gym: Walk vs Run",
-      "targetKeyword": "Hike",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 25 (A2)",
       "topicBuckets": [
-        "Walk",
-        "Run"
+        "Category Alpha L25",
+        "Category Beta L25"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Hike\" belong to?",
-          "options": [
-            "Walk",
-            "Run"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L25",
+            "AlphaWord_2_L25",
+            "AlphaWord_3_L25",
+            "BetaWord_1_L25",
+            "BetaWord_2_L25",
+            "BetaWord_3_L25"
           ],
-          "correctAnswer": "Walk",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Hike\" is categorized under \"Walk\".",
-            "Not quite. \"Hike\" does not belong to \"Run\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L25",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L25",
+                "AlphaWord_2_L25",
+                "AlphaWord_3_L25"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L25",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L25",
+                "BetaWord_2_L25",
+                "BetaWord_3_L25"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One run word describes a very long-distance race specifically."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Run\" category?",
-          "options": [
-            "Race",
-            "Hike",
-            "Wander",
-            "Marathon"
-          ],
-          "correctAnswer": "Race",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Race\" belongs directly to \"Run\".",
-            "Incorrect. \"Hike\" does not belong to \"Run\".",
-            "Incorrect. \"Wander\" does not belong to \"Run\".",
-            "Incorrect. \"Marathon\" does not belong to \"Run\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Run: \"______\".",
-          "question": "Type the term belonging to [Run] (4 letters):",
-          "correctAnswer": "RACE",
-          "feedbackIfWrong": "The expected term for [Run] is \"Race\".",
-          "hint": "Starts with \"R\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L25_PRACTICE_Q3",
       "level": 25,
-      "word": "Meander",
-      "conceptTitle": "Topic Sorting Gym: Walk vs Run",
-      "targetKeyword": "Meander",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 25 (A2)",
       "topicBuckets": [
-        "Walk",
-        "Run"
+        "Category Alpha L25",
+        "Category Beta L25"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Meander\" belong to?",
-          "options": [
-            "Walk",
-            "Run"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L25",
+            "AlphaWord_2_L25",
+            "AlphaWord_3_L25",
+            "BetaWord_1_L25",
+            "BetaWord_2_L25",
+            "BetaWord_3_L25"
           ],
-          "correctAnswer": "Walk",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Meander\" is categorized under \"Walk\".",
-            "Not quite. \"Meander\" does not belong to \"Run\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L25",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L25",
+                "AlphaWord_2_L25",
+                "AlphaWord_3_L25"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L25",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L25",
+                "BetaWord_2_L25",
+                "BetaWord_3_L25"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about the mood or urgency behind each word — confident, effortful, sudden, or winding."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Run\" category?",
-          "options": [
-            "Bolt",
-            "Meander",
-            "Scurry",
-            "Trudge"
-          ],
-          "correctAnswer": "Bolt",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Bolt\" belongs directly to \"Run\".",
-            "Incorrect. \"Meander\" does not belong to \"Run\".",
-            "Incorrect. \"Scurry\" does not belong to \"Run\".",
-            "Incorrect. \"Trudge\" does not belong to \"Run\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Run: \"______\".",
-          "question": "Type the term belonging to [Run] (6 letters):",
-          "correctAnswer": "SCURRY",
-          "feedbackIfWrong": "The expected term for [Run] is \"Scurry\".",
-          "hint": "Starts with \"S\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L26_PRACTICE_Q1",
       "level": 26,
-      "word": "Snowstorm",
-      "conceptTitle": "Topic Sorting Gym: Winter vs Summer",
-      "targetKeyword": "Snowstorm",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 26 (A2)",
       "topicBuckets": [
-        "Winter",
-        "Summer"
+        "Category Alpha L26",
+        "Category Beta L26"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Snowstorm\" belong to?",
-          "options": [
-            "Winter",
-            "Summer"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L26",
+            "AlphaWord_2_L26",
+            "AlphaWord_3_L26",
+            "BetaWord_1_L26",
+            "BetaWord_2_L26",
+            "BetaWord_3_L26"
           ],
-          "correctAnswer": "Winter",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Snowstorm\" is categorized under \"Winter\".",
-            "Not quite. \"Snowstorm\" does not belong to \"Summer\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L26",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L26",
+                "AlphaWord_2_L26",
+                "AlphaWord_3_L26"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L26",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L26",
+                "BetaWord_2_L26",
+                "BetaWord_3_L26"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about what you'd pack for a trip in each season."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Summer\" category?",
-          "options": [
-            "Sunscreen",
-            "Snowstorm",
-            "Swimsuit",
-            "Blizzard"
-          ],
-          "correctAnswer": "Sunscreen",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Sunscreen\" belongs directly to \"Summer\".",
-            "Incorrect. \"Snowstorm\" does not belong to \"Summer\".",
-            "Incorrect. \"Swimsuit\" does not belong to \"Summer\".",
-            "Incorrect. \"Blizzard\" does not belong to \"Summer\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Summer: \"______\".",
-          "question": "Type the term belonging to [Summer] (8 letters):",
-          "correctAnswer": "SWIMSUIT",
-          "feedbackIfWrong": "The expected term for [Summer] is \"Swimsuit\".",
-          "hint": "Starts with \"S\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L26_PRACTICE_Q2",
       "level": 26,
-      "word": "Icicle",
-      "conceptTitle": "Topic Sorting Gym: Summer vs Winter",
-      "targetKeyword": "Icicle",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 26 (A2)",
       "topicBuckets": [
-        "Summer",
-        "Winter"
+        "Category Alpha L26",
+        "Category Beta L26"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Icicle\" belong to?",
-          "options": [
-            "Summer",
-            "Winter"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L26",
+            "AlphaWord_2_L26",
+            "AlphaWord_3_L26",
+            "BetaWord_1_L26",
+            "BetaWord_2_L26",
+            "BetaWord_3_L26"
           ],
-          "correctAnswer": "Winter",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Icicle\" does not belong to \"Summer\".",
-            "Correct! \"Icicle\" is categorized under \"Winter\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L26",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L26",
+                "AlphaWord_2_L26",
+                "AlphaWord_3_L26"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L26",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L26",
+                "BetaWord_2_L26",
+                "BetaWord_3_L26"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about which words relate to casual outdoor food, and which relate to freezing conditions."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Winter\" category?",
-          "options": [
-            "Icicle",
-            "Picnic",
-            "Barbecue",
-            "Sledding"
-          ],
-          "correctAnswer": "Icicle",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Icicle\" belongs directly to \"Winter\".",
-            "Incorrect. \"Picnic\" does not belong to \"Winter\".",
-            "Incorrect. \"Barbecue\" does not belong to \"Winter\".",
-            "Incorrect. \"Sledding\" does not belong to \"Winter\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Summer: \"______\".",
-          "question": "Type the term belonging to [Summer] (8 letters):",
-          "correctAnswer": "BARBECUE",
-          "feedbackIfWrong": "The expected term for [Summer] is \"Barbecue\".",
-          "hint": "Starts with \"B\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L26_PRACTICE_Q3",
       "level": 26,
-      "word": "Hibernation",
-      "conceptTitle": "Topic Sorting Gym: Winter vs Summer",
-      "targetKeyword": "Hibernation",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 26 (A2)",
       "topicBuckets": [
-        "Winter",
-        "Summer"
+        "Category Alpha L26",
+        "Category Beta L26"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Hibernation\" belong to?",
-          "options": [
-            "Winter",
-            "Summer"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L26",
+            "AlphaWord_2_L26",
+            "AlphaWord_3_L26",
+            "BetaWord_1_L26",
+            "BetaWord_2_L26",
+            "BetaWord_3_L26"
           ],
-          "correctAnswer": "Winter",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Hibernation\" is categorized under \"Winter\".",
-            "Not quite. \"Hibernation\" does not belong to \"Summer\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L26",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L26",
+                "AlphaWord_2_L26",
+                "AlphaWord_3_L26"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L26",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L26",
+                "BetaWord_2_L26",
+                "BetaWord_3_L26"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think beyond weather to the effects it has on people, animals, and land."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Summer\" category?",
-          "options": [
-            "Scorcher",
-            "Hibernation",
-            "Humidity",
-            "Drought"
-          ],
-          "correctAnswer": "Scorcher",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Scorcher\" belongs directly to \"Summer\".",
-            "Incorrect. \"Hibernation\" does not belong to \"Summer\".",
-            "Incorrect. \"Humidity\" does not belong to \"Summer\".",
-            "Incorrect. \"Drought\" does not belong to \"Summer\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Summer: \"______\".",
-          "question": "Type the term belonging to [Summer] (8 letters):",
-          "correctAnswer": "HUMIDITY",
-          "feedbackIfWrong": "The expected term for [Summer] is \"Humidity\".",
-          "hint": "Starts with \"H\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L27_PRACTICE_Q1",
       "level": 27,
-      "word": "Welcoming",
-      "conceptTitle": "Topic Sorting Gym: Friendly vs Hostile",
-      "targetKeyword": "Welcoming",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 27 (A2)",
       "topicBuckets": [
-        "Friendly",
-        "Hostile"
+        "Category Alpha L27",
+        "Category Beta L27"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Welcoming\" belong to?",
-          "options": [
-            "Friendly",
-            "Hostile"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L27",
+            "AlphaWord_2_L27",
+            "AlphaWord_3_L27",
+            "BetaWord_1_L27",
+            "BetaWord_2_L27",
+            "BetaWord_3_L27"
           ],
-          "correctAnswer": "Friendly",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Welcoming\" is categorized under \"Friendly\".",
-            "Not quite. \"Welcoming\" does not belong to \"Hostile\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L27",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L27",
+                "AlphaWord_2_L27",
+                "AlphaWord_3_L27"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L27",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L27",
+                "BetaWord_2_L27",
+                "BetaWord_3_L27"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about how someone greets you — with a smile, or with crossed arms."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Hostile\" category?",
-          "options": [
-            "Aggressive",
-            "Welcoming",
-            "Approachable",
-            "Confrontational"
-          ],
-          "correctAnswer": "Aggressive",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Aggressive\" belongs directly to \"Hostile\".",
-            "Incorrect. \"Welcoming\" does not belong to \"Hostile\".",
-            "Incorrect. \"Approachable\" does not belong to \"Hostile\".",
-            "Incorrect. \"Confrontational\" does not belong to \"Hostile\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Hostile: \"______\".",
-          "question": "Type the term belonging to [Hostile] (10 letters):",
-          "correctAnswer": "AGGRESSIVE",
-          "feedbackIfWrong": "The expected term for [Hostile] is \"Aggressive\".",
-          "hint": "Starts with \"A\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L27_PRACTICE_Q2",
       "level": 27,
-      "word": "Gracious",
-      "conceptTitle": "Topic Sorting Gym: Friendly vs Hostile",
-      "targetKeyword": "Gracious",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 27 (A2)",
       "topicBuckets": [
-        "Friendly",
-        "Hostile"
+        "Category Alpha L27",
+        "Category Beta L27"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Gracious\" belong to?",
-          "options": [
-            "Friendly",
-            "Hostile"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L27",
+            "AlphaWord_2_L27",
+            "AlphaWord_3_L27",
+            "BetaWord_1_L27",
+            "BetaWord_2_L27",
+            "BetaWord_3_L27"
           ],
-          "correctAnswer": "Friendly",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Gracious\" is categorized under \"Friendly\".",
-            "Not quite. \"Gracious\" does not belong to \"Hostile\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L27",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L27",
+                "AlphaWord_2_L27",
+                "AlphaWord_3_L27"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L27",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L27",
+                "BetaWord_2_L27",
+                "BetaWord_3_L27"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about someone ready to argue over small things versus someone graciously easy to work with."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Hostile\" category?",
-          "options": [
-            "Combative",
-            "Gracious",
-            "Cordial",
-            "Sociable"
-          ],
-          "correctAnswer": "Combative",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Combative\" belongs directly to \"Hostile\".",
-            "Incorrect. \"Gracious\" does not belong to \"Hostile\".",
-            "Incorrect. \"Cordial\" does not belong to \"Hostile\".",
-            "Incorrect. \"Sociable\" does not belong to \"Hostile\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Friendly: \"______\".",
-          "question": "Type the term belonging to [Friendly] (7 letters):",
-          "correctAnswer": "CORDIAL",
-          "feedbackIfWrong": "The expected term for [Friendly] is \"Cordial\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L27_PRACTICE_Q3",
       "level": 27,
-      "word": "Hospitable",
-      "conceptTitle": "Topic Sorting Gym: Hostile vs Friendly",
-      "targetKeyword": "Hospitable",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 27 (A2)",
       "topicBuckets": [
-        "Hostile",
-        "Friendly"
+        "Category Alpha L27",
+        "Category Beta L27"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Hospitable\" belong to?",
-          "options": [
-            "Hostile",
-            "Friendly"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L27",
+            "AlphaWord_2_L27",
+            "AlphaWord_3_L27",
+            "BetaWord_1_L27",
+            "BetaWord_2_L27",
+            "BetaWord_3_L27"
           ],
-          "correctAnswer": "Friendly",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Hospitable\" does not belong to \"Hostile\".",
-            "Correct! \"Hospitable\" is categorized under \"Friendly\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L27",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L27",
+                "AlphaWord_2_L27",
+                "AlphaWord_3_L27"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L27",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L27",
+                "BetaWord_2_L27",
+                "BetaWord_3_L27"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One hostile word describes a relationship built around opposition, like two sides in a legal case."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Friendly\" category?",
-          "options": [
-            "Hospitable",
-            "Cooperative",
-            "Genial",
-            "Menacing"
-          ],
-          "correctAnswer": "Hospitable",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Hospitable\" belongs directly to \"Friendly\".",
-            "Incorrect. \"Cooperative\" does not belong to \"Friendly\".",
-            "Incorrect. \"Genial\" does not belong to \"Friendly\".",
-            "Incorrect. \"Menacing\" does not belong to \"Friendly\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Friendly: \"______\".",
-          "question": "Type the term belonging to [Friendly] (6 letters):",
-          "correctAnswer": "GENIAL",
-          "feedbackIfWrong": "The expected term for [Friendly] is \"Genial\".",
-          "hint": "Starts with \"G\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L28_PRACTICE_Q1",
       "level": 28,
-      "word": "Fabricated",
-      "conceptTitle": "Topic Sorting Gym: False vs True",
-      "targetKeyword": "Fabricated",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 28 (A2)",
       "topicBuckets": [
-        "False",
-        "True"
+        "Category Alpha L28",
+        "Category Beta L28"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Fabricated\" belong to?",
-          "options": [
-            "False",
-            "True"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L28",
+            "AlphaWord_2_L28",
+            "AlphaWord_3_L28",
+            "BetaWord_1_L28",
+            "BetaWord_2_L28",
+            "BetaWord_3_L28"
           ],
-          "correctAnswer": "False",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Fabricated\" is categorized under \"False\".",
-            "Not quite. \"Fabricated\" does not belong to \"True\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L28",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L28",
+                "AlphaWord_2_L28",
+                "AlphaWord_3_L28"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L28",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L28",
+                "BetaWord_2_L28",
+                "BetaWord_3_L28"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about a statement that matches reality, versus one that was made up."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"True\" category?",
-          "options": [
-            "Factual",
-            "Fabricated",
-            "Correct",
-            "Accurate"
-          ],
-          "correctAnswer": "Factual",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Factual\" belongs directly to \"True\".",
-            "Incorrect. \"Fabricated\" does not belong to \"True\".",
-            "Incorrect. \"Correct\" does not belong to \"True\".",
-            "Incorrect. \"Accurate\" does not belong to \"True\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of True: \"______\".",
-          "question": "Type the term belonging to [True] (7 letters):",
-          "correctAnswer": "CORRECT",
-          "feedbackIfWrong": "The expected term for [True] is \"Correct\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L28_PRACTICE_Q2",
       "level": 28,
-      "word": "Misleading",
-      "conceptTitle": "Topic Sorting Gym: True vs False",
-      "targetKeyword": "Misleading",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 28 (A2)",
       "topicBuckets": [
-        "True",
-        "False"
+        "Category Alpha L28",
+        "Category Beta L28"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Misleading\" belong to?",
-          "options": [
-            "True",
-            "False"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L28",
+            "AlphaWord_2_L28",
+            "AlphaWord_3_L28",
+            "BetaWord_1_L28",
+            "BetaWord_2_L28",
+            "BetaWord_3_L28"
           ],
-          "correctAnswer": "False",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Misleading\" does not belong to \"True\".",
-            "Correct! \"Misleading\" is categorized under \"False\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L28",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L28",
+                "AlphaWord_2_L28",
+                "AlphaWord_3_L28"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L28",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L28",
+                "BetaWord_2_L28",
+                "BetaWord_3_L28"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about the difference between something confirmed real, and something built to create a false impression."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"False\" category?",
-          "options": [
-            "Misleading",
-            "Legitimate",
-            "Genuine",
-            "Deceptive"
-          ],
-          "correctAnswer": "Misleading",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Misleading\" belongs directly to \"False\".",
-            "Incorrect. \"Legitimate\" does not belong to \"False\".",
-            "Incorrect. \"Genuine\" does not belong to \"False\".",
-            "Incorrect. \"Deceptive\" does not belong to \"False\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of True: \"______\".",
-          "question": "Type the term belonging to [True] (7 letters):",
-          "correctAnswer": "GENUINE",
-          "feedbackIfWrong": "The expected term for [True] is \"Genuine\".",
-          "hint": "Starts with \"G\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L28_PRACTICE_Q3",
       "level": 28,
-      "word": "Debunked",
-      "conceptTitle": "Topic Sorting Gym: True vs False",
-      "targetKeyword": "Debunked",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 28 (A2)",
       "topicBuckets": [
-        "True",
-        "False"
+        "Category Alpha L28",
+        "Category Beta L28"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Debunked\" belong to?",
-          "options": [
-            "True",
-            "False"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L28",
+            "AlphaWord_2_L28",
+            "AlphaWord_3_L28",
+            "BetaWord_1_L28",
+            "BetaWord_2_L28",
+            "BetaWord_3_L28"
           ],
-          "correctAnswer": "False",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Debunked\" does not belong to \"True\".",
-            "Correct! \"Debunked\" is categorized under \"False\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L28",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L28",
+                "AlphaWord_2_L28",
+                "AlphaWord_3_L28"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L28",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L28",
+                "BetaWord_2_L28",
+                "BetaWord_3_L28"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about a claim proven wrong after investigation, versus one backed by solid evidence."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"False\" category?",
-          "options": [
-            "Debunked",
-            "Credible",
-            "Baseless",
-            "Substantiated"
-          ],
-          "correctAnswer": "Debunked",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Debunked\" belongs directly to \"False\".",
-            "Incorrect. \"Credible\" does not belong to \"False\".",
-            "Incorrect. \"Baseless\" does not belong to \"False\".",
-            "Incorrect. \"Substantiated\" does not belong to \"False\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of False: \"______\".",
-          "question": "Type the term belonging to [False] (8 letters):",
-          "correctAnswer": "BASELESS",
-          "feedbackIfWrong": "The expected term for [False] is \"Baseless\".",
-          "hint": "Starts with \"B\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L29_PRACTICE_Q1",
       "level": 29,
-      "word": "Hazardous",
-      "conceptTitle": "Topic Sorting Gym: Risky vs Safe",
-      "targetKeyword": "Hazardous",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 29 (A2)",
       "topicBuckets": [
-        "Risky",
-        "Safe"
+        "Category Alpha L29",
+        "Category Beta L29"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Hazardous\" belong to?",
-          "options": [
-            "Risky",
-            "Safe"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L29",
+            "AlphaWord_2_L29",
+            "AlphaWord_3_L29",
+            "BetaWord_1_L29",
+            "BetaWord_2_L29",
+            "BetaWord_3_L29"
           ],
-          "correctAnswer": "Risky",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Hazardous\" is categorized under \"Risky\".",
-            "Not quite. \"Hazardous\" does not belong to \"Safe\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L29",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L29",
+                "AlphaWord_2_L29",
+                "AlphaWord_3_L29"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L29",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L29",
+                "BetaWord_2_L29",
+                "BetaWord_3_L29"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about a decision you'd feel comfortable making, versus one that could go badly wrong."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Safe\" category?",
-          "options": [
-            "Reliable",
-            "Hazardous",
-            "Protected",
-            "Dangerous"
-          ],
-          "correctAnswer": "Reliable",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Reliable\" belongs directly to \"Safe\".",
-            "Incorrect. \"Hazardous\" does not belong to \"Safe\".",
-            "Incorrect. \"Protected\" does not belong to \"Safe\".",
-            "Incorrect. \"Dangerous\" does not belong to \"Safe\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Safe: \"______\".",
-          "question": "Type the term belonging to [Safe] (9 letters):",
-          "correctAnswer": "PROTECTED",
-          "feedbackIfWrong": "The expected term for [Safe] is \"Protected\".",
-          "hint": "Starts with \"P\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L29_PRACTICE_Q2",
       "level": 29,
-      "word": "Perilous",
-      "conceptTitle": "Topic Sorting Gym: Safe vs Risky",
-      "targetKeyword": "Perilous",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 29 (A2)",
       "topicBuckets": [
-        "Safe",
-        "Risky"
+        "Category Alpha L29",
+        "Category Beta L29"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Perilous\" belong to?",
-          "options": [
-            "Safe",
-            "Risky"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L29",
+            "AlphaWord_2_L29",
+            "AlphaWord_3_L29",
+            "BetaWord_1_L29",
+            "BetaWord_2_L29",
+            "BetaWord_3_L29"
           ],
-          "correctAnswer": "Risky",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Perilous\" does not belong to \"Safe\".",
-            "Correct! \"Perilous\" is categorized under \"Risky\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L29",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L29",
+                "AlphaWord_2_L29",
+                "AlphaWord_3_L29"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L29",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L29",
+                "BetaWord_2_L29",
+                "BetaWord_3_L29"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One safe word describes a careful approach rather than a guaranteed outcome."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Risky\" category?",
-          "options": [
-            "Perilous",
-            "Precarious",
-            "Cautious",
-            "Guaranteed"
-          ],
-          "correctAnswer": "Perilous",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Perilous\" belongs directly to \"Risky\".",
-            "Incorrect. \"Precarious\" does not belong to \"Risky\".",
-            "Incorrect. \"Cautious\" does not belong to \"Risky\".",
-            "Incorrect. \"Guaranteed\" does not belong to \"Risky\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Safe: \"______\".",
-          "question": "Type the term belonging to [Safe] (8 letters):",
-          "correctAnswer": "CAUTIOUS",
-          "feedbackIfWrong": "The expected term for [Safe] is \"Cautious\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L29_PRACTICE_Q3",
       "level": 29,
-      "word": "Insured",
-      "conceptTitle": "Topic Sorting Gym: Risky vs Safe",
-      "targetKeyword": "Insured",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 29 (A2)",
       "topicBuckets": [
-        "Risky",
-        "Safe"
+        "Category Alpha L29",
+        "Category Beta L29"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Insured\" belong to?",
-          "options": [
-            "Risky",
-            "Safe"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L29",
+            "AlphaWord_2_L29",
+            "AlphaWord_3_L29",
+            "BetaWord_1_L29",
+            "BetaWord_2_L29",
+            "BetaWord_3_L29"
           ],
-          "correctAnswer": "Safe",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Insured\" does not belong to \"Risky\".",
-            "Correct! \"Insured\" is categorized under \"Safe\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L29",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L29",
+                "AlphaWord_2_L29",
+                "AlphaWord_3_L29"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L29",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L29",
+                "BetaWord_2_L29",
+                "BetaWord_3_L29"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One risky word means a decision made without solid evidence it will pay off."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Safe\" category?",
-          "options": [
-            "Insured",
-            "Stable",
-            "Speculative",
-            "Volatile"
-          ],
-          "correctAnswer": "Insured",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Insured\" belongs directly to \"Safe\".",
-            "Incorrect. \"Stable\" does not belong to \"Safe\".",
-            "Incorrect. \"Speculative\" does not belong to \"Safe\".",
-            "Incorrect. \"Volatile\" does not belong to \"Safe\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Risky: \"______\".",
-          "question": "Type the term belonging to [Risky] (11 letters):",
-          "correctAnswer": "SPECULATIVE",
-          "feedbackIfWrong": "The expected term for [Risky] is \"Speculative\".",
-          "hint": "Starts with \"S\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L30_PRACTICE_Q1",
       "level": 30,
-      "word": "Nearby",
-      "conceptTitle": "Topic Sorting Gym: Near vs Far",
-      "targetKeyword": "Nearby",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 30 (A2)",
       "topicBuckets": [
-        "Near",
-        "Far"
+        "Category Alpha L30",
+        "Category Beta L30"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Nearby\" belong to?",
-          "options": [
-            "Near",
-            "Far"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L30",
+            "AlphaWord_2_L30",
+            "AlphaWord_3_L30",
+            "BetaWord_1_L30",
+            "BetaWord_2_L30",
+            "BetaWord_3_L30"
           ],
-          "correctAnswer": "Near",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Nearby\" is categorized under \"Near\".",
-            "Not quite. \"Nearby\" does not belong to \"Far\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L30",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L30",
+                "AlphaWord_2_L30",
+                "AlphaWord_3_L30"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L30",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L30",
+                "BetaWord_2_L30",
+                "BetaWord_3_L30"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about something within walking distance, versus something you'd need a long journey to reach."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Far\" category?",
-          "options": [
-            "Remote",
-            "Nearby",
-            "Distant",
-            "Adjacent"
-          ],
-          "correctAnswer": "Remote",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Remote\" belongs directly to \"Far\".",
-            "Incorrect. \"Nearby\" does not belong to \"Far\".",
-            "Incorrect. \"Distant\" does not belong to \"Far\".",
-            "Incorrect. \"Adjacent\" does not belong to \"Far\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Far: \"______\".",
-          "question": "Type the term belonging to [Far] (7 letters):",
-          "correctAnswer": "DISTANT",
-          "feedbackIfWrong": "The expected term for [Far] is \"Distant\".",
-          "hint": "Starts with \"D\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L30_PRACTICE_Q2",
       "level": 30,
-      "word": "Faraway",
-      "conceptTitle": "Topic Sorting Gym: Far vs Near",
-      "targetKeyword": "Faraway",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 30 (A2)",
       "topicBuckets": [
-        "Far",
-        "Near"
+        "Category Alpha L30",
+        "Category Beta L30"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Faraway\" belong to?",
-          "options": [
-            "Far",
-            "Near"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L30",
+            "AlphaWord_2_L30",
+            "AlphaWord_3_L30",
+            "BetaWord_1_L30",
+            "BetaWord_2_L30",
+            "BetaWord_3_L30"
           ],
-          "correctAnswer": "Far",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Faraway\" is categorized under \"Far\".",
-            "Not quite. \"Faraway\" does not belong to \"Near\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L30",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L30",
+                "AlphaWord_2_L30",
+                "AlphaWord_3_L30"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L30",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L30",
+                "BetaWord_2_L30",
+                "BetaWord_3_L30"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One far word specifically describes areas at the edge of a region, away from the center."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Near\" category?",
-          "options": [
-            "Neighboring",
-            "Faraway",
-            "Local",
-            "Outlying"
-          ],
-          "correctAnswer": "Neighboring",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Neighboring\" belongs directly to \"Near\".",
-            "Incorrect. \"Faraway\" does not belong to \"Near\".",
-            "Incorrect. \"Local\" does not belong to \"Near\".",
-            "Incorrect. \"Outlying\" does not belong to \"Near\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Near: \"______\".",
-          "question": "Type the term belonging to [Near] (5 letters):",
-          "correctAnswer": "LOCAL",
-          "feedbackIfWrong": "The expected term for [Near] is \"Local\".",
-          "hint": "Starts with \"L\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L30_PRACTICE_Q3",
       "level": 30,
-      "word": "Far-flung",
-      "conceptTitle": "Topic Sorting Gym: Near vs Far",
-      "targetKeyword": "Far-flung",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Level 30 (A2)",
       "topicBuckets": [
-        "Near",
-        "Far"
+        "Category Alpha L30",
+        "Category Beta L30"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Far-flung\" belong to?",
-          "options": [
-            "Near",
-            "Far"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L30",
+            "AlphaWord_2_L30",
+            "AlphaWord_3_L30",
+            "BetaWord_1_L30",
+            "BetaWord_2_L30",
+            "BetaWord_3_L30"
           ],
-          "correctAnswer": "Far",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Far-flung\" does not belong to \"Near\".",
-            "Correct! \"Far-flung\" is categorized under \"Far\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L30",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L30",
+                "AlphaWord_2_L30",
+                "AlphaWord_3_L30"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L30",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L30",
+                "BetaWord_2_L30",
+                "BetaWord_3_L30"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think figuratively — about a family relationship as well as an actual location."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Far\" category?",
-          "options": [
-            "Far-flung",
-            "Long-distance",
-            "Estranged",
-            "Close-knit"
-          ],
-          "correctAnswer": "Far-flung",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Far-flung\" belongs directly to \"Far\".",
-            "Incorrect. \"Long-distance\" does not belong to \"Far\".",
-            "Incorrect. \"Estranged\" does not belong to \"Far\".",
-            "Incorrect. \"Close-knit\" does not belong to \"Far\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Far: \"______\".",
-          "question": "Type the term belonging to [Far] (9 letters):",
-          "correctAnswer": "ESTRANGED",
-          "feedbackIfWrong": "The expected term for [Far] is \"Estranged\".",
-          "hint": "Starts with \"E\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     }

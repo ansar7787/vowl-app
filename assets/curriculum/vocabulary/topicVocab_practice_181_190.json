@@ -7,1740 +7,1470 @@
     {
       "id": "VOC_TOPICVOCAB_L181_PRACTICE_Q1",
       "level": 181,
-      "word": "Solar",
-      "conceptTitle": "Topic Sorting Gym: Nonrenewable vs Renewable",
-      "targetKeyword": "Solar",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 181 (C2)",
       "topicBuckets": [
-        "Nonrenewable",
-        "Renewable"
+        "Category Alpha L181",
+        "Category Beta L181"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Solar\" belong to?",
-          "options": [
-            "Nonrenewable",
-            "Renewable"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L181",
+            "AlphaWord_2_L181",
+            "AlphaWord_3_L181",
+            "BetaWord_1_L181",
+            "BetaWord_2_L181",
+            "BetaWord_3_L181"
           ],
-          "correctAnswer": "Renewable",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Solar\" does not belong to \"Nonrenewable\".",
-            "Correct! \"Solar\" is categorized under \"Renewable\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L181",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L181",
+                "AlphaWord_2_L181",
+                "AlphaWord_3_L181"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L181",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L181",
+                "BetaWord_2_L181",
+                "BetaWord_3_L181"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about which sources run out, and which keep replenishing."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Renewable\" category?",
-          "options": [
-            "Solar",
-            "Coal",
-            "Wind power",
-            "Crude oil"
-          ],
-          "correctAnswer": "Solar",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Solar\" belongs directly to \"Renewable\".",
-            "Incorrect. \"Coal\" does not belong to \"Renewable\".",
-            "Incorrect. \"Wind power\" does not belong to \"Renewable\".",
-            "Incorrect. \"Crude oil\" does not belong to \"Renewable\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Renewable: \"______\".",
-          "question": "Type the term belonging to [Renewable] (10 letters):",
-          "correctAnswer": "WIND POWER",
-          "feedbackIfWrong": "The expected term for [Renewable] is \"Wind power\".",
-          "hint": "Starts with \"W\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L181_PRACTICE_Q2",
       "level": 181,
-      "word": "Geothermal",
-      "conceptTitle": "Topic Sorting Gym: Renewable vs Nonrenewable",
-      "targetKeyword": "Geothermal",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 181 (C2)",
       "topicBuckets": [
-        "Renewable",
-        "Nonrenewable"
+        "Category Alpha L181",
+        "Category Beta L181"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Geothermal\" belong to?",
-          "options": [
-            "Renewable",
-            "Nonrenewable"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L181",
+            "AlphaWord_2_L181",
+            "AlphaWord_3_L181",
+            "BetaWord_1_L181",
+            "BetaWord_2_L181",
+            "BetaWord_3_L181"
           ],
-          "correctAnswer": "Renewable",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Geothermal\" is categorized under \"Renewable\".",
-            "Not quite. \"Geothermal\" does not belong to \"Nonrenewable\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L181",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L181",
+                "AlphaWord_2_L181",
+                "AlphaWord_3_L181"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L181",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L181",
+                "BetaWord_2_L181",
+                "BetaWord_3_L181"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "The defining question is whether the source replenishes on a human timescale."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Nonrenewable\" category?",
-          "options": [
-            "Fossil fuels",
-            "Geothermal",
-            "Biomass",
-            "Finite reserves"
-          ],
-          "correctAnswer": "Fossil fuels",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Fossil fuels\" belongs directly to \"Nonrenewable\".",
-            "Incorrect. \"Geothermal\" does not belong to \"Nonrenewable\".",
-            "Incorrect. \"Biomass\" does not belong to \"Nonrenewable\".",
-            "Incorrect. \"Finite reserves\" does not belong to \"Nonrenewable\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Renewable: \"______\".",
-          "question": "Type the term belonging to [Renewable] (7 letters):",
-          "correctAnswer": "BIOMASS",
-          "feedbackIfWrong": "The expected term for [Renewable] is \"Biomass\".",
-          "hint": "Starts with \"B\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L181_PRACTICE_Q3",
       "level": 181,
-      "word": "Carbon-neutral",
-      "conceptTitle": "Topic Sorting Gym: Nonrenewable vs Renewable",
-      "targetKeyword": "Carbon-neutral",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 181 (C2)",
       "topicBuckets": [
-        "Nonrenewable",
-        "Renewable"
+        "Category Alpha L181",
+        "Category Beta L181"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Carbon-neutral\" belong to?",
-          "options": [
-            "Nonrenewable",
-            "Renewable"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L181",
+            "AlphaWord_2_L181",
+            "AlphaWord_3_L181",
+            "BetaWord_1_L181",
+            "BetaWord_2_L181",
+            "BetaWord_3_L181"
           ],
-          "correctAnswer": "Renewable",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Carbon-neutral\" does not belong to \"Nonrenewable\".",
-            "Correct! \"Carbon-neutral\" is categorized under \"Renewable\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L181",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L181",
+                "AlphaWord_2_L181",
+                "AlphaWord_3_L181"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L181",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L181",
+                "BetaWord_2_L181",
+                "BetaWord_3_L181"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe sources a country eventually has to replace."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Renewable\" category?",
-          "options": [
-            "Carbon-neutral",
-            "Depleting supply",
-            "Extraction site",
-            "Clean energy transition"
-          ],
-          "correctAnswer": "Carbon-neutral",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Carbon-neutral\" belongs directly to \"Renewable\".",
-            "Incorrect. \"Depleting supply\" does not belong to \"Renewable\".",
-            "Incorrect. \"Extraction site\" does not belong to \"Renewable\".",
-            "Incorrect. \"Clean energy transition\" does not belong to \"Renewable\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Nonrenewable: \"______\".",
-          "question": "Type the term belonging to [Nonrenewable] (15 letters):",
-          "correctAnswer": "EXTRACTION SITE",
-          "feedbackIfWrong": "The expected term for [Nonrenewable] is \"Extraction site\".",
-          "hint": "Starts with \"E\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L182_PRACTICE_Q1",
       "level": 182,
-      "word": "Thinks out loud",
-      "conceptTitle": "Topic Sorting Gym: Extrovert vs Introvert",
-      "targetKeyword": "Thinks out loud",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 182 (C2)",
       "topicBuckets": [
-        "Extrovert",
-        "Introvert"
+        "Category Alpha L182",
+        "Category Beta L182"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Thinks out loud\" belong to?",
-          "options": [
-            "Extrovert",
-            "Introvert"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L182",
+            "AlphaWord_2_L182",
+            "AlphaWord_3_L182",
+            "BetaWord_1_L182",
+            "BetaWord_2_L182",
+            "BetaWord_3_L182"
           ],
-          "correctAnswer": "Extrovert",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Thinks out loud\" is categorized under \"Extrovert\".",
-            "Not quite. \"Thinks out loud\" does not belong to \"Introvert\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L182",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L182",
+                "AlphaWord_2_L182",
+                "AlphaWord_3_L182"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L182",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L182",
+                "BetaWord_2_L182",
+                "BetaWord_3_L182"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "The question isn't shyness — it's what leaves someone feeling recharged."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Introvert\" category?",
-          "options": [
-            "Prefers small groups",
-            "Thinks out loud",
-            "Energised by crowds",
-            "Recharges alone"
-          ],
-          "correctAnswer": "Prefers small groups",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Prefers small groups\" belongs directly to \"Introvert\".",
-            "Incorrect. \"Thinks out loud\" does not belong to \"Introvert\".",
-            "Incorrect. \"Energised by crowds\" does not belong to \"Introvert\".",
-            "Incorrect. \"Recharges alone\" does not belong to \"Introvert\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Extrovert: \"______\".",
-          "question": "Type the term belonging to [Extrovert] (19 letters):",
-          "correctAnswer": "ENERGISED BY CROWDS",
-          "feedbackIfWrong": "The expected term for [Extrovert] is \"Energised by crowds\".",
-          "hint": "Starts with \"E\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L182_PRACTICE_Q2",
       "level": 182,
-      "word": "Values deep conversation",
-      "conceptTitle": "Topic Sorting Gym: Introvert vs Extrovert",
-      "targetKeyword": "Values deep conversation",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 182 (C2)",
       "topicBuckets": [
-        "Introvert",
-        "Extrovert"
+        "Category Alpha L182",
+        "Category Beta L182"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Values deep conversation\" belong to?",
-          "options": [
-            "Introvert",
-            "Extrovert"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L182",
+            "AlphaWord_2_L182",
+            "AlphaWord_3_L182",
+            "BetaWord_1_L182",
+            "BetaWord_2_L182",
+            "BetaWord_3_L182"
           ],
-          "correctAnswer": "Introvert",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Values deep conversation\" is categorized under \"Introvert\".",
-            "Not quite. \"Values deep conversation\" does not belong to \"Extrovert\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L182",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L182",
+                "AlphaWord_2_L182",
+                "AlphaWord_3_L182"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L182",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L182",
+                "BetaWord_2_L182",
+                "BetaWord_3_L182"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Watch out for the common mix-up with shyness and confidence."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Extrovert\" category?",
-          "options": [
-            "Socially expansive",
-            "Values deep conversation",
-            "Reflective",
-            "Processes internally"
-          ],
-          "correctAnswer": "Socially expansive",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Socially expansive\" belongs directly to \"Extrovert\".",
-            "Incorrect. \"Values deep conversation\" does not belong to \"Extrovert\".",
-            "Incorrect. \"Reflective\" does not belong to \"Extrovert\".",
-            "Incorrect. \"Processes internally\" does not belong to \"Extrovert\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Introvert: \"______\".",
-          "question": "Type the term belonging to [Introvert] (20 letters):",
-          "correctAnswer": "PROCESSES INTERNALLY",
-          "feedbackIfWrong": "The expected term for [Introvert] is \"Processes internally\".",
-          "hint": "Starts with \"P\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L182_PRACTICE_Q3",
       "level": 182,
-      "word": "Draws energy from the room",
-      "conceptTitle": "Topic Sorting Gym: Introvert vs Extrovert",
-      "targetKeyword": "Draws energy from the room",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 182 (C2)",
       "topicBuckets": [
-        "Introvert",
-        "Extrovert"
+        "Category Alpha L182",
+        "Category Beta L182"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Draws energy from the room\" belong to?",
-          "options": [
-            "Introvert",
-            "Extrovert"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L182",
+            "AlphaWord_2_L182",
+            "AlphaWord_3_L182",
+            "BetaWord_1_L182",
+            "BetaWord_2_L182",
+            "BetaWord_3_L182"
           ],
-          "correctAnswer": "Extrovert",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Draws energy from the room\" does not belong to \"Introvert\".",
-            "Correct! \"Draws energy from the room\" is categorized under \"Extrovert\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L182",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L182",
+                "AlphaWord_2_L182",
+                "AlphaWord_3_L182"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L182",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L182",
+                "BetaWord_2_L182",
+                "BetaWord_3_L182"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe working styles suited to collaboration in the moment."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Extrovert\" category?",
-          "options": [
-            "Draws energy from the room",
-            "Needs quiet to focus",
-            "Prepares before speaking",
-            "Brainstorms aloud"
-          ],
-          "correctAnswer": "Draws energy from the room",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Draws energy from the room\" belongs directly to \"Extrovert\".",
-            "Incorrect. \"Needs quiet to focus\" does not belong to \"Extrovert\".",
-            "Incorrect. \"Prepares before speaking\" does not belong to \"Extrovert\".",
-            "Incorrect. \"Brainstorms aloud\" does not belong to \"Extrovert\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Introvert: \"______\".",
-          "question": "Type the term belonging to [Introvert] (24 letters):",
-          "correctAnswer": "PREPARES BEFORE SPEAKING",
-          "feedbackIfWrong": "The expected term for [Introvert] is \"Prepares before speaking\".",
-          "hint": "Starts with \"P\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L183_PRACTICE_Q1",
       "level": 183,
-      "word": "Migratory",
-      "conceptTitle": "Topic Sorting Gym: Nomadic vs Settled",
-      "targetKeyword": "Migratory",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 183 (C2)",
       "topicBuckets": [
-        "Nomadic",
-        "Settled"
+        "Category Alpha L183",
+        "Category Beta L183"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Migratory\" belong to?",
-          "options": [
-            "Nomadic",
-            "Settled"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L183",
+            "AlphaWord_2_L183",
+            "AlphaWord_3_L183",
+            "BetaWord_1_L183",
+            "BetaWord_2_L183",
+            "BetaWord_3_L183"
           ],
-          "correctAnswer": "Nomadic",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Migratory\" is categorized under \"Nomadic\".",
-            "Not quite. \"Migratory\" does not belong to \"Settled\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L183",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L183",
+                "AlphaWord_2_L183",
+                "AlphaWord_3_L183"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L183",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L183",
+                "BetaWord_2_L183",
+                "BetaWord_3_L183"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about moving with the seasons, versus staying in one place."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Settled\" category?",
-          "options": [
-            "Permanent address",
-            "Migratory",
-            "Moves with the herd",
-            "Put down roots"
-          ],
-          "correctAnswer": "Permanent address",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Permanent address\" belongs directly to \"Settled\".",
-            "Incorrect. \"Migratory\" does not belong to \"Settled\".",
-            "Incorrect. \"Moves with the herd\" does not belong to \"Settled\".",
-            "Incorrect. \"Put down roots\" does not belong to \"Settled\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Nomadic: \"______\".",
-          "question": "Type the term belonging to [Nomadic] (19 letters):",
-          "correctAnswer": "MOVES WITH THE HERD",
-          "feedbackIfWrong": "The expected term for [Nomadic] is \"Moves with the herd\".",
-          "hint": "Starts with \"M\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L183_PRACTICE_Q2",
       "level": 183,
-      "word": "Transient",
-      "conceptTitle": "Topic Sorting Gym: Nomadic vs Settled",
-      "targetKeyword": "Transient",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 183 (C2)",
       "topicBuckets": [
-        "Nomadic",
-        "Settled"
+        "Category Alpha L183",
+        "Category Beta L183"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Transient\" belong to?",
-          "options": [
-            "Nomadic",
-            "Settled"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L183",
+            "AlphaWord_2_L183",
+            "AlphaWord_3_L183",
+            "BetaWord_1_L183",
+            "BetaWord_2_L183",
+            "BetaWord_3_L183"
           ],
-          "correctAnswer": "Nomadic",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Transient\" is categorized under \"Nomadic\".",
-            "Not quite. \"Transient\" does not belong to \"Settled\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L183",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L183",
+                "AlphaWord_2_L183",
+                "AlphaWord_3_L183"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L183",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L183",
+                "BetaWord_2_L183",
+                "BetaWord_3_L183"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Settlement and agriculture developed together."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Settled\" category?",
-          "options": [
-            "Homestead",
-            "Transient",
-            "No fixed abode",
-            "Itinerant"
-          ],
-          "correctAnswer": "Homestead",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Homestead\" belongs directly to \"Settled\".",
-            "Incorrect. \"Transient\" does not belong to \"Settled\".",
-            "Incorrect. \"No fixed abode\" does not belong to \"Settled\".",
-            "Incorrect. \"Itinerant\" does not belong to \"Settled\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Nomadic: \"______\".",
-          "question": "Type the term belonging to [Nomadic] (9 letters):",
-          "correctAnswer": "ITINERANT",
-          "feedbackIfWrong": "The expected term for [Nomadic] is \"Itinerant\".",
-          "hint": "Starts with \"I\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L183_PRACTICE_Q3",
       "level": 183,
-      "word": "Digital nomad",
-      "conceptTitle": "Topic Sorting Gym: Nomadic vs Settled",
-      "targetKeyword": "Digital nomad",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 183 (C2)",
       "topicBuckets": [
-        "Nomadic",
-        "Settled"
+        "Category Alpha L183",
+        "Category Beta L183"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Digital nomad\" belong to?",
-          "options": [
-            "Nomadic",
-            "Settled"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L183",
+            "AlphaWord_2_L183",
+            "AlphaWord_3_L183",
+            "BetaWord_1_L183",
+            "BetaWord_2_L183",
+            "BetaWord_3_L183"
           ],
-          "correctAnswer": "Nomadic",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Digital nomad\" is categorized under \"Nomadic\".",
-            "Not quite. \"Digital nomad\" does not belong to \"Settled\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L183",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L183",
+                "AlphaWord_2_L183",
+                "AlphaWord_3_L183"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L183",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L183",
+                "BetaWord_2_L183",
+                "BetaWord_3_L183"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe building a life around one location."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Settled\" category?",
-          "options": [
-            "Mortgage",
-            "Digital nomad",
-            "Lives out of a suitcase",
-            "Community ties"
-          ],
-          "correctAnswer": "Mortgage",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Mortgage\" belongs directly to \"Settled\".",
-            "Incorrect. \"Digital nomad\" does not belong to \"Settled\".",
-            "Incorrect. \"Lives out of a suitcase\" does not belong to \"Settled\".",
-            "Incorrect. \"Community ties\" does not belong to \"Settled\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Nomadic: \"______\".",
-          "question": "Type the term belonging to [Nomadic] (23 letters):",
-          "correctAnswer": "LIVES OUT OF A SUITCASE",
-          "feedbackIfWrong": "The expected term for [Nomadic] is \"Lives out of a suitcase\".",
-          "hint": "Starts with \"L\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L184_PRACTICE_Q1",
       "level": 184,
-      "word": "Accepts readily",
-      "conceptTitle": "Topic Sorting Gym: Believer vs Skeptic",
-      "targetKeyword": "Accepts readily",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 184 (C2)",
       "topicBuckets": [
-        "Believer",
-        "Skeptic"
+        "Category Alpha L184",
+        "Category Beta L184"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Accepts readily\" belong to?",
-          "options": [
-            "Believer",
-            "Skeptic"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L184",
+            "AlphaWord_2_L184",
+            "AlphaWord_3_L184",
+            "BetaWord_1_L184",
+            "BetaWord_2_L184",
+            "BetaWord_3_L184"
           ],
-          "correctAnswer": "Believer",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Accepts readily\" is categorized under \"Believer\".",
-            "Not quite. \"Accepts readily\" does not belong to \"Skeptic\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L184",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L184",
+                "AlphaWord_2_L184",
+                "AlphaWord_3_L184"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L184",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L184",
+                "BetaWord_2_L184",
+                "BetaWord_3_L184"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about who asks for proof, and who accepts readily."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Skeptic\" category?",
-          "options": [
-            "Withholds judgement",
-            "Accepts readily",
-            "Takes it on faith",
-            "Demands evidence"
-          ],
-          "correctAnswer": "Withholds judgement",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Withholds judgement\" belongs directly to \"Skeptic\".",
-            "Incorrect. \"Accepts readily\" does not belong to \"Skeptic\".",
-            "Incorrect. \"Takes it on faith\" does not belong to \"Skeptic\".",
-            "Incorrect. \"Demands evidence\" does not belong to \"Skeptic\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Skeptic: \"______\".",
-          "question": "Type the term belonging to [Skeptic] (19 letters):",
-          "correctAnswer": "WITHHOLDS JUDGEMENT",
-          "feedbackIfWrong": "The expected term for [Skeptic] is \"Withholds judgement\".",
-          "hint": "Starts with \"W\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L184_PRACTICE_Q2",
       "level": 184,
-      "word": "Convinced",
-      "conceptTitle": "Topic Sorting Gym: Skeptic vs Believer",
-      "targetKeyword": "Convinced",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 184 (C2)",
       "topicBuckets": [
-        "Skeptic",
-        "Believer"
+        "Category Alpha L184",
+        "Category Beta L184"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Convinced\" belong to?",
-          "options": [
-            "Skeptic",
-            "Believer"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L184",
+            "AlphaWord_2_L184",
+            "AlphaWord_3_L184",
+            "BetaWord_1_L184",
+            "BetaWord_2_L184",
+            "BetaWord_3_L184"
           ],
-          "correctAnswer": "Believer",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Convinced\" does not belong to \"Skeptic\".",
-            "Correct! \"Convinced\" is categorized under \"Believer\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L184",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L184",
+                "AlphaWord_2_L184",
+                "AlphaWord_3_L184"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L184",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L184",
+                "BetaWord_2_L184",
+                "BetaWord_3_L184"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One of these words describes rejecting evidence rather than examining it."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Believer\" category?",
-          "options": [
-            "Convinced",
-            "Critical thinker",
-            "Cynical",
-            "Trusts the account"
-          ],
-          "correctAnswer": "Convinced",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Convinced\" belongs directly to \"Believer\".",
-            "Incorrect. \"Critical thinker\" does not belong to \"Believer\".",
-            "Incorrect. \"Cynical\" does not belong to \"Believer\".",
-            "Incorrect. \"Trusts the account\" does not belong to \"Believer\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Skeptic: \"______\".",
-          "question": "Type the term belonging to [Skeptic] (7 letters):",
-          "correctAnswer": "CYNICAL",
-          "feedbackIfWrong": "The expected term for [Skeptic] is \"Cynical\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L184_PRACTICE_Q3",
       "level": 184,
-      "word": "Raised an eyebrow",
-      "conceptTitle": "Topic Sorting Gym: Skeptic vs Believer",
-      "targetKeyword": "Raised an eyebrow",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 184 (C2)",
       "topicBuckets": [
-        "Skeptic",
-        "Believer"
+        "Category Alpha L184",
+        "Category Beta L184"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Raised an eyebrow\" belong to?",
-          "options": [
-            "Skeptic",
-            "Believer"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L184",
+            "AlphaWord_2_L184",
+            "AlphaWord_3_L184",
+            "BetaWord_1_L184",
+            "BetaWord_2_L184",
+            "BetaWord_3_L184"
           ],
-          "correctAnswer": "Skeptic",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Raised an eyebrow\" is categorized under \"Skeptic\".",
-            "Not quite. \"Raised an eyebrow\" does not belong to \"Believer\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L184",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L184",
+                "AlphaWord_2_L184",
+                "AlphaWord_3_L184"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L184",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L184",
+                "BetaWord_2_L184",
+                "BetaWord_3_L184"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe sharing a story before checking it."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Believer\" category?",
-          "options": [
-            "Shared it immediately",
-            "Raised an eyebrow",
-            "Checks other outlets",
-            "Waits for corroboration"
-          ],
-          "correctAnswer": "Shared it immediately",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Shared it immediately\" belongs directly to \"Believer\".",
-            "Incorrect. \"Raised an eyebrow\" does not belong to \"Believer\".",
-            "Incorrect. \"Checks other outlets\" does not belong to \"Believer\".",
-            "Incorrect. \"Waits for corroboration\" does not belong to \"Believer\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Skeptic: \"______\".",
-          "question": "Type the term belonging to [Skeptic] (23 letters):",
-          "correctAnswer": "WAITS FOR CORROBORATION",
-          "feedbackIfWrong": "The expected term for [Skeptic] is \"Waits for corroboration\".",
-          "hint": "Starts with \"W\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L185_PRACTICE_Q1",
       "level": 185,
-      "word": "Speed in a direction",
-      "conceptTitle": "Topic Sorting Gym: Velocity vs Inertia",
-      "targetKeyword": "Speed in a direction",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 185 (C2)",
       "topicBuckets": [
-        "Velocity",
-        "Inertia"
+        "Category Alpha L185",
+        "Category Beta L185"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Speed in a direction\" belong to?",
-          "options": [
-            "Velocity",
-            "Inertia"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L185",
+            "AlphaWord_2_L185",
+            "AlphaWord_3_L185",
+            "BetaWord_1_L185",
+            "BetaWord_2_L185",
+            "BetaWord_3_L185"
           ],
-          "correctAnswer": "Velocity",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Speed in a direction\" is categorized under \"Velocity\".",
-            "Not quite. \"Speed in a direction\" does not belong to \"Inertia\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L185",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L185",
+                "AlphaWord_2_L185",
+                "AlphaWord_3_L185"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L185",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L185",
+                "BetaWord_2_L185",
+                "BetaWord_3_L185"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about motion itself, versus resistance to changing motion."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Inertia\" category?",
-          "options": [
-            "Resistance to change",
-            "Speed in a direction",
-            "Rate of travel",
-            "Acceleration"
-          ],
-          "correctAnswer": "Resistance to change",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Resistance to change\" belongs directly to \"Inertia\".",
-            "Incorrect. \"Speed in a direction\" does not belong to \"Inertia\".",
-            "Incorrect. \"Rate of travel\" does not belong to \"Inertia\".",
-            "Incorrect. \"Acceleration\" does not belong to \"Inertia\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Velocity: \"______\".",
-          "question": "Type the term belonging to [Velocity] (12 letters):",
-          "correctAnswer": "ACCELERATION",
-          "feedbackIfWrong": "The expected term for [Velocity] is \"Acceleration\".",
-          "hint": "Starts with \"A\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L185_PRACTICE_Q2",
       "level": 185,
-      "word": "Gathering speed",
-      "conceptTitle": "Topic Sorting Gym: Inertia vs Velocity",
-      "targetKeyword": "Gathering speed",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 185 (C2)",
       "topicBuckets": [
-        "Inertia",
-        "Velocity"
+        "Category Alpha L185",
+        "Category Beta L185"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Gathering speed\" belong to?",
-          "options": [
-            "Inertia",
-            "Velocity"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L185",
+            "AlphaWord_2_L185",
+            "AlphaWord_3_L185",
+            "BetaWord_1_L185",
+            "BetaWord_2_L185",
+            "BetaWord_3_L185"
           ],
-          "correctAnswer": "Velocity",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Gathering speed\" does not belong to \"Inertia\".",
-            "Correct! \"Gathering speed\" is categorized under \"Velocity\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L185",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L185",
+                "AlphaWord_2_L185",
+                "AlphaWord_3_L185"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L185",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L185",
+                "BetaWord_2_L185",
+                "BetaWord_3_L185"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Heavier objects resist changes in motion more strongly."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Velocity\" category?",
-          "options": [
-            "Gathering speed",
-            "Mass",
-            "In motion",
-            "Momentum"
-          ],
-          "correctAnswer": "Gathering speed",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Gathering speed\" belongs directly to \"Velocity\".",
-            "Incorrect. \"Mass\" does not belong to \"Velocity\".",
-            "Incorrect. \"In motion\" does not belong to \"Velocity\".",
-            "Incorrect. \"Momentum\" does not belong to \"Velocity\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Velocity: \"______\".",
-          "question": "Type the term belonging to [Velocity] (9 letters):",
-          "correctAnswer": "IN MOTION",
-          "feedbackIfWrong": "The expected term for [Velocity] is \"In motion\".",
-          "hint": "Starts with \"I\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L185_PRACTICE_Q3",
       "level": 185,
-      "word": "Moving fast",
-      "conceptTitle": "Topic Sorting Gym: Inertia vs Velocity",
-      "targetKeyword": "Moving fast",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 185 (C2)",
       "topicBuckets": [
-        "Inertia",
-        "Velocity"
+        "Category Alpha L185",
+        "Category Beta L185"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Moving fast\" belong to?",
-          "options": [
-            "Inertia",
-            "Velocity"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L185",
+            "AlphaWord_2_L185",
+            "AlphaWord_3_L185",
+            "BetaWord_1_L185",
+            "BetaWord_2_L185",
+            "BetaWord_3_L185"
           ],
-          "correctAnswer": "Velocity",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Moving fast\" does not belong to \"Inertia\".",
-            "Correct! \"Moving fast\" is categorized under \"Velocity\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L185",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L185",
+                "AlphaWord_2_L185",
+                "AlphaWord_3_L185"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L185",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L185",
+                "BetaWord_2_L185",
+                "BetaWord_3_L185"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe an organisation that won't change."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Velocity\" category?",
-          "options": [
-            "Moving fast",
-            "Stuck in its ways",
-            "Gaining traction",
-            "Institutional inertia"
-          ],
-          "correctAnswer": "Moving fast",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Moving fast\" belongs directly to \"Velocity\".",
-            "Incorrect. \"Stuck in its ways\" does not belong to \"Velocity\".",
-            "Incorrect. \"Gaining traction\" does not belong to \"Velocity\".",
-            "Incorrect. \"Institutional inertia\" does not belong to \"Velocity\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Velocity: \"______\".",
-          "question": "Type the term belonging to [Velocity] (16 letters):",
-          "correctAnswer": "GAINING TRACTION",
-          "feedbackIfWrong": "The expected term for [Velocity] is \"Gaining traction\".",
-          "hint": "Starts with \"G\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L186_PRACTICE_Q1",
       "level": 186,
-      "word": "Oxidation",
-      "conceptTitle": "Topic Sorting Gym: Cryogenics vs Combustion",
-      "targetKeyword": "Oxidation",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 186 (C2)",
       "topicBuckets": [
-        "Cryogenics",
-        "Combustion"
+        "Category Alpha L186",
+        "Category Beta L186"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Oxidation\" belong to?",
-          "options": [
-            "Cryogenics",
-            "Combustion"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L186",
+            "AlphaWord_2_L186",
+            "AlphaWord_3_L186",
+            "BetaWord_1_L186",
+            "BetaWord_2_L186",
+            "BetaWord_3_L186"
           ],
-          "correctAnswer": "Combustion",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Oxidation\" does not belong to \"Cryogenics\".",
-            "Correct! \"Oxidation\" is categorized under \"Combustion\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L186",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L186",
+                "AlphaWord_2_L186",
+                "AlphaWord_3_L186"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L186",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L186",
+                "BetaWord_2_L186",
+                "BetaWord_3_L186"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about burning, versus cooling to extremes."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Combustion\" category?",
-          "options": [
-            "Oxidation",
-            "Burning",
-            "Ignition",
-            "Liquid nitrogen"
-          ],
-          "correctAnswer": "Oxidation",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Oxidation\" belongs directly to \"Combustion\".",
-            "Incorrect. \"Burning\" does not belong to \"Combustion\".",
-            "Incorrect. \"Ignition\" does not belong to \"Combustion\".",
-            "Incorrect. \"Liquid nitrogen\" does not belong to \"Combustion\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Combustion: \"______\".",
-          "question": "Type the term belonging to [Combustion] (8 letters):",
-          "correctAnswer": "IGNITION",
-          "feedbackIfWrong": "The expected term for [Combustion] is \"Ignition\".",
-          "hint": "Starts with \"I\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L186_PRACTICE_Q2",
       "level": 186,
-      "word": "Exhaust",
-      "conceptTitle": "Topic Sorting Gym: Cryogenics vs Combustion",
-      "targetKeyword": "Exhaust",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 186 (C2)",
       "topicBuckets": [
-        "Cryogenics",
-        "Combustion"
+        "Category Alpha L186",
+        "Category Beta L186"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Exhaust\" belong to?",
-          "options": [
-            "Cryogenics",
-            "Combustion"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L186",
+            "AlphaWord_2_L186",
+            "AlphaWord_3_L186",
+            "BetaWord_1_L186",
+            "BetaWord_2_L186",
+            "BetaWord_3_L186"
           ],
-          "correctAnswer": "Combustion",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Exhaust\" does not belong to \"Cryogenics\".",
-            "Correct! \"Exhaust\" is categorized under \"Combustion\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L186",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L186",
+                "AlphaWord_2_L186",
+                "AlphaWord_3_L186"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L186",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L186",
+                "BetaWord_2_L186",
+                "BetaWord_3_L186"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Both fields have precise technical vocabulary."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Combustion\" category?",
-          "options": [
-            "Exhaust",
-            "Sub-zero",
-            "Fuel source",
-            "Cryopreservation"
-          ],
-          "correctAnswer": "Exhaust",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Exhaust\" belongs directly to \"Combustion\".",
-            "Incorrect. \"Sub-zero\" does not belong to \"Combustion\".",
-            "Incorrect. \"Fuel source\" does not belong to \"Combustion\".",
-            "Incorrect. \"Cryopreservation\" does not belong to \"Combustion\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Combustion: \"______\".",
-          "question": "Type the term belonging to [Combustion] (11 letters):",
-          "correctAnswer": "FUEL SOURCE",
-          "feedbackIfWrong": "The expected term for [Combustion] is \"Fuel source\".",
-          "hint": "Starts with \"F\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L186_PRACTICE_Q3",
       "level": 186,
-      "word": "Cryogenic storage",
-      "conceptTitle": "Topic Sorting Gym: Combustion vs Cryogenics",
-      "targetKeyword": "Cryogenic storage",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 186 (C2)",
       "topicBuckets": [
-        "Combustion",
-        "Cryogenics"
+        "Category Alpha L186",
+        "Category Beta L186"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Cryogenic storage\" belong to?",
-          "options": [
-            "Combustion",
-            "Cryogenics"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L186",
+            "AlphaWord_2_L186",
+            "AlphaWord_3_L186",
+            "BetaWord_1_L186",
+            "BetaWord_2_L186",
+            "BetaWord_3_L186"
           ],
-          "correctAnswer": "Cryogenics",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Cryogenic storage\" does not belong to \"Combustion\".",
-            "Correct! \"Cryogenic storage\" is categorized under \"Cryogenics\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L186",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L186",
+                "AlphaWord_2_L186",
+                "AlphaWord_3_L186"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L186",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L186",
+                "BetaWord_2_L186",
+                "BetaWord_3_L186"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe applications of extreme cold."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Cryogenics\" category?",
-          "options": [
-            "Cryogenic storage",
-            "Releases carbon dioxide",
-            "Internal combustion engine",
-            "Supercooled"
-          ],
-          "correctAnswer": "Cryogenic storage",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Cryogenic storage\" belongs directly to \"Cryogenics\".",
-            "Incorrect. \"Releases carbon dioxide\" does not belong to \"Cryogenics\".",
-            "Incorrect. \"Internal combustion engine\" does not belong to \"Cryogenics\".",
-            "Incorrect. \"Supercooled\" does not belong to \"Cryogenics\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Combustion: \"______\".",
-          "question": "Type the term belonging to [Combustion] (26 letters):",
-          "correctAnswer": "INTERNAL COMBUSTION ENGINE",
-          "feedbackIfWrong": "The expected term for [Combustion] is \"Internal combustion engine\".",
-          "hint": "Starts with \"I\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L187_PRACTICE_Q1",
       "level": 187,
-      "word": "Shatters",
-      "conceptTitle": "Topic Sorting Gym: Malleable vs Brittle",
-      "targetKeyword": "Shatters",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 187 (C2)",
       "topicBuckets": [
-        "Malleable",
-        "Brittle"
+        "Category Alpha L187",
+        "Category Beta L187"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Shatters\" belong to?",
-          "options": [
-            "Malleable",
-            "Brittle"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L187",
+            "AlphaWord_2_L187",
+            "AlphaWord_3_L187",
+            "BetaWord_1_L187",
+            "BetaWord_2_L187",
+            "BetaWord_3_L187"
           ],
-          "correctAnswer": "Brittle",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Shatters\" does not belong to \"Malleable\".",
-            "Correct! \"Shatters\" is categorized under \"Brittle\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L187",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L187",
+                "AlphaWord_2_L187",
+                "AlphaWord_3_L187"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L187",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L187",
+                "BetaWord_2_L187",
+                "BetaWord_3_L187"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about whether something bends or snaps under pressure."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Brittle\" category?",
-          "options": [
-            "Shatters",
-            "Pliable",
-            "Cracks under stress",
-            "Can be hammered flat"
-          ],
-          "correctAnswer": "Shatters",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Shatters\" belongs directly to \"Brittle\".",
-            "Incorrect. \"Pliable\" does not belong to \"Brittle\".",
-            "Incorrect. \"Cracks under stress\" does not belong to \"Brittle\".",
-            "Incorrect. \"Can be hammered flat\" does not belong to \"Brittle\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Brittle: \"______\".",
-          "question": "Type the term belonging to [Brittle] (19 letters):",
-          "correctAnswer": "CRACKS UNDER STRESS",
-          "feedbackIfWrong": "The expected term for [Brittle] is \"Cracks under stress\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L187_PRACTICE_Q2",
       "level": 187,
-      "word": "Workable",
-      "conceptTitle": "Topic Sorting Gym: Malleable vs Brittle",
-      "targetKeyword": "Workable",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 187 (C2)",
       "topicBuckets": [
-        "Malleable",
-        "Brittle"
+        "Category Alpha L187",
+        "Category Beta L187"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Workable\" belong to?",
-          "options": [
-            "Malleable",
-            "Brittle"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L187",
+            "AlphaWord_2_L187",
+            "AlphaWord_3_L187",
+            "BetaWord_1_L187",
+            "BetaWord_2_L187",
+            "BetaWord_3_L187"
           ],
-          "correctAnswer": "Malleable",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Workable\" is categorized under \"Malleable\".",
-            "Not quite. \"Workable\" does not belong to \"Brittle\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L187",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L187",
+                "AlphaWord_2_L187",
+                "AlphaWord_3_L187"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L187",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L187",
+                "BetaWord_2_L187",
+                "BetaWord_3_L187"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Engineers care a great deal about which way a material fails."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Brittle\" category?",
-          "options": [
-            "Fractures",
-            "Workable",
-            "Ductile",
-            "Reshapes easily"
-          ],
-          "correctAnswer": "Fractures",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Fractures\" belongs directly to \"Brittle\".",
-            "Incorrect. \"Workable\" does not belong to \"Brittle\".",
-            "Incorrect. \"Ductile\" does not belong to \"Brittle\".",
-            "Incorrect. \"Reshapes easily\" does not belong to \"Brittle\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Malleable: \"______\".",
-          "question": "Type the term belonging to [Malleable] (15 letters):",
-          "correctAnswer": "RESHAPES EASILY",
-          "feedbackIfWrong": "The expected term for [Malleable] is \"Reshapes easily\".",
-          "hint": "Starts with \"R\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L187_PRACTICE_Q3",
       "level": 187,
-      "word": "Snaps under pressure",
-      "conceptTitle": "Topic Sorting Gym: Malleable vs Brittle",
-      "targetKeyword": "Snaps under pressure",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 187 (C2)",
       "topicBuckets": [
-        "Malleable",
-        "Brittle"
+        "Category Alpha L187",
+        "Category Beta L187"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Snaps under pressure\" belong to?",
-          "options": [
-            "Malleable",
-            "Brittle"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L187",
+            "AlphaWord_2_L187",
+            "AlphaWord_3_L187",
+            "BetaWord_1_L187",
+            "BetaWord_2_L187",
+            "BetaWord_3_L187"
           ],
-          "correctAnswer": "Brittle",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Snaps under pressure\" does not belong to \"Malleable\".",
-            "Correct! \"Snaps under pressure\" is categorized under \"Brittle\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L187",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L187",
+                "AlphaWord_2_L187",
+                "AlphaWord_3_L187"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L187",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L187",
+                "BetaWord_2_L187",
+                "BetaWord_3_L187"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe something that fails suddenly under pressure."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Brittle\" category?",
-          "options": [
-            "Snaps under pressure",
-            "Flexible thinking",
-            "Adaptable",
-            "Open to persuasion"
-          ],
-          "correctAnswer": "Snaps under pressure",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Snaps under pressure\" belongs directly to \"Brittle\".",
-            "Incorrect. \"Flexible thinking\" does not belong to \"Brittle\".",
-            "Incorrect. \"Adaptable\" does not belong to \"Brittle\".",
-            "Incorrect. \"Open to persuasion\" does not belong to \"Brittle\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Malleable: \"______\".",
-          "question": "Type the term belonging to [Malleable] (9 letters):",
-          "correctAnswer": "ADAPTABLE",
-          "feedbackIfWrong": "The expected term for [Malleable] is \"Adaptable\".",
-          "hint": "Starts with \"A\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L188_PRACTICE_Q1",
       "level": 188,
-      "word": "Glowing",
-      "conceptTitle": "Topic Sorting Gym: Luminous vs Murky",
-      "targetKeyword": "Glowing",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 188 (C2)",
       "topicBuckets": [
-        "Luminous",
-        "Murky"
+        "Category Alpha L188",
+        "Category Beta L188"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Glowing\" belong to?",
-          "options": [
-            "Luminous",
-            "Murky"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L188",
+            "AlphaWord_2_L188",
+            "AlphaWord_3_L188",
+            "BetaWord_1_L188",
+            "BetaWord_2_L188",
+            "BetaWord_3_L188"
           ],
-          "correctAnswer": "Luminous",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Glowing\" is categorized under \"Luminous\".",
-            "Not quite. \"Glowing\" does not belong to \"Murky\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L188",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L188",
+                "AlphaWord_2_L188",
+                "AlphaWord_3_L188"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L188",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L188",
+                "BetaWord_2_L188",
+                "BetaWord_3_L188"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about clear bright water, and water you can't see through."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Murky\" category?",
-          "options": [
-            "Clouded",
-            "Glowing",
-            "Brilliant",
-            "Turbid"
-          ],
-          "correctAnswer": "Clouded",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Clouded\" belongs directly to \"Murky\".",
-            "Incorrect. \"Glowing\" does not belong to \"Murky\".",
-            "Incorrect. \"Brilliant\" does not belong to \"Murky\".",
-            "Incorrect. \"Turbid\" does not belong to \"Murky\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Luminous: \"______\".",
-          "question": "Type the term belonging to [Luminous] (9 letters):",
-          "correctAnswer": "BRILLIANT",
-          "feedbackIfWrong": "The expected term for [Luminous] is \"Brilliant\".",
-          "hint": "Starts with \"B\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L188_PRACTICE_Q2",
       "level": 188,
-      "word": "Phosphorescent",
-      "conceptTitle": "Topic Sorting Gym: Luminous vs Murky",
-      "targetKeyword": "Phosphorescent",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 188 (C2)",
       "topicBuckets": [
-        "Luminous",
-        "Murky"
+        "Category Alpha L188",
+        "Category Beta L188"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Phosphorescent\" belong to?",
-          "options": [
-            "Luminous",
-            "Murky"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L188",
+            "AlphaWord_2_L188",
+            "AlphaWord_3_L188",
+            "BetaWord_1_L188",
+            "BetaWord_2_L188",
+            "BetaWord_3_L188"
           ],
-          "correctAnswer": "Luminous",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Phosphorescent\" is categorized under \"Luminous\".",
-            "Not quite. \"Phosphorescent\" does not belong to \"Murky\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L188",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L188",
+                "AlphaWord_2_L188",
+                "AlphaWord_3_L188"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L188",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L188",
+                "BetaWord_2_L188",
+                "BetaWord_3_L188"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Some materials store light and release it slowly."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Murky\" category?",
-          "options": [
-            "Gloomy",
-            "Phosphorescent",
-            "Radiant",
-            "Obscured"
-          ],
-          "correctAnswer": "Gloomy",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Gloomy\" belongs directly to \"Murky\".",
-            "Incorrect. \"Phosphorescent\" does not belong to \"Murky\".",
-            "Incorrect. \"Radiant\" does not belong to \"Murky\".",
-            "Incorrect. \"Obscured\" does not belong to \"Murky\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Luminous: \"______\".",
-          "question": "Type the term belonging to [Luminous] (7 letters):",
-          "correctAnswer": "RADIANT",
-          "feedbackIfWrong": "The expected term for [Luminous] is \"Radiant\".",
-          "hint": "Starts with \"R\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L188_PRACTICE_Q3",
       "level": 188,
-      "word": "A luminous performance",
-      "conceptTitle": "Topic Sorting Gym: Luminous vs Murky",
-      "targetKeyword": "A luminous performance",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 188 (C2)",
       "topicBuckets": [
-        "Luminous",
-        "Murky"
+        "Category Alpha L188",
+        "Category Beta L188"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"A luminous performance\" belong to?",
-          "options": [
-            "Luminous",
-            "Murky"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L188",
+            "AlphaWord_2_L188",
+            "AlphaWord_3_L188",
+            "BetaWord_1_L188",
+            "BetaWord_2_L188",
+            "BetaWord_3_L188"
           ],
-          "correctAnswer": "Luminous",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"A luminous performance\" is categorized under \"Luminous\".",
-            "Not quite. \"A luminous performance\" does not belong to \"Murky\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L188",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L188",
+                "AlphaWord_2_L188",
+                "AlphaWord_3_L188"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L188",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L188",
+                "BetaWord_2_L188",
+                "BetaWord_3_L188"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "'Murky' is often used about ethics, not visibility."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Murky\" category?",
-          "options": [
-            "A murky situation",
-            "A luminous performance",
-            "Crystal-clear explanation",
-            "Murky ethics"
-          ],
-          "correctAnswer": "A murky situation",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"A murky situation\" belongs directly to \"Murky\".",
-            "Incorrect. \"A luminous performance\" does not belong to \"Murky\".",
-            "Incorrect. \"Crystal-clear explanation\" does not belong to \"Murky\".",
-            "Incorrect. \"Murky ethics\" does not belong to \"Murky\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Murky: \"______\".",
-          "question": "Type the term belonging to [Murky] (17 letters):",
-          "correctAnswer": "A MURKY SITUATION",
-          "feedbackIfWrong": "The expected term for [Murky] is \"A murky situation\".",
-          "hint": "Starts with \"A\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L189_PRACTICE_Q1",
       "level": 189,
-      "word": "Satellite path",
-      "conceptTitle": "Topic Sorting Gym: Bedrock vs Orbit",
-      "targetKeyword": "Satellite path",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 189 (C2)",
       "topicBuckets": [
-        "Bedrock",
-        "Orbit"
+        "Category Alpha L189",
+        "Category Beta L189"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Satellite path\" belong to?",
-          "options": [
-            "Bedrock",
-            "Orbit"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L189",
+            "AlphaWord_2_L189",
+            "AlphaWord_3_L189",
+            "BetaWord_1_L189",
+            "BetaWord_2_L189",
+            "BetaWord_3_L189"
           ],
-          "correctAnswer": "Orbit",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Satellite path\" does not belong to \"Bedrock\".",
-            "Correct! \"Satellite path\" is categorized under \"Orbit\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L189",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L189",
+                "AlphaWord_2_L189",
+                "AlphaWord_3_L189"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L189",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L189",
+                "BetaWord_2_L189",
+                "BetaWord_3_L189"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about circling above, versus the solid layer far below."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Orbit\" category?",
-          "options": [
-            "Satellite path",
-            "Circles a planet",
-            "Foundation stone",
-            "Gravitational pull"
-          ],
-          "correctAnswer": "Satellite path",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Satellite path\" belongs directly to \"Orbit\".",
-            "Incorrect. \"Circles a planet\" does not belong to \"Orbit\".",
-            "Incorrect. \"Foundation stone\" does not belong to \"Orbit\".",
-            "Incorrect. \"Gravitational pull\" does not belong to \"Orbit\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Bedrock: \"______\".",
-          "question": "Type the term belonging to [Bedrock] (16 letters):",
-          "correctAnswer": "FOUNDATION STONE",
-          "feedbackIfWrong": "The expected term for [Bedrock] is \"Foundation stone\".",
-          "hint": "Starts with \"F\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L189_PRACTICE_Q2",
       "level": 189,
-      "word": "Perigee",
-      "conceptTitle": "Topic Sorting Gym: Orbit vs Bedrock",
-      "targetKeyword": "Perigee",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 189 (C2)",
       "topicBuckets": [
-        "Orbit",
-        "Bedrock"
+        "Category Alpha L189",
+        "Category Beta L189"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Perigee\" belong to?",
-          "options": [
-            "Orbit",
-            "Bedrock"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L189",
+            "AlphaWord_2_L189",
+            "AlphaWord_3_L189",
+            "BetaWord_1_L189",
+            "BetaWord_2_L189",
+            "BetaWord_3_L189"
           ],
-          "correctAnswer": "Orbit",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Perigee\" is categorized under \"Orbit\".",
-            "Not quite. \"Perigee\" does not belong to \"Bedrock\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L189",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L189",
+                "AlphaWord_2_L189",
+                "AlphaWord_3_L189"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L189",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L189",
+                "BetaWord_2_L189",
+                "BetaWord_3_L189"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Both fields have technical vocabulary for position and depth."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Bedrock\" category?",
-          "options": [
-            "Load-bearing",
-            "Perigee",
-            "Substrate",
-            "Trajectory"
-          ],
-          "correctAnswer": "Load-bearing",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Load-bearing\" belongs directly to \"Bedrock\".",
-            "Incorrect. \"Perigee\" does not belong to \"Bedrock\".",
-            "Incorrect. \"Substrate\" does not belong to \"Bedrock\".",
-            "Incorrect. \"Trajectory\" does not belong to \"Bedrock\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Bedrock: \"______\".",
-          "question": "Type the term belonging to [Bedrock] (9 letters):",
-          "correctAnswer": "SUBSTRATE",
-          "feedbackIfWrong": "The expected term for [Bedrock] is \"Substrate\".",
-          "hint": "Starts with \"S\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L189_PRACTICE_Q3",
       "level": 189,
-      "word": "Founding principle",
-      "conceptTitle": "Topic Sorting Gym: Orbit vs Bedrock",
-      "targetKeyword": "Founding principle",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 189 (C2)",
       "topicBuckets": [
-        "Orbit",
-        "Bedrock"
+        "Category Alpha L189",
+        "Category Beta L189"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Founding principle\" belong to?",
-          "options": [
-            "Orbit",
-            "Bedrock"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L189",
+            "AlphaWord_2_L189",
+            "AlphaWord_3_L189",
+            "BetaWord_1_L189",
+            "BetaWord_2_L189",
+            "BetaWord_3_L189"
           ],
-          "correctAnswer": "Bedrock",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Founding principle\" does not belong to \"Orbit\".",
-            "Correct! \"Founding principle\" is categorized under \"Bedrock\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L189",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L189",
+                "AlphaWord_2_L189",
+                "AlphaWord_3_L189"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L189",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L189",
+                "BetaWord_2_L189",
+                "BetaWord_3_L189"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe something everything else is built on."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Bedrock\" category?",
-          "options": [
-            "Founding principle",
-            "Drifting around the edges",
-            "In their orbit",
-            "Unshakeable base"
-          ],
-          "correctAnswer": "Founding principle",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Founding principle\" belongs directly to \"Bedrock\".",
-            "Incorrect. \"Drifting around the edges\" does not belong to \"Bedrock\".",
-            "Incorrect. \"In their orbit\" does not belong to \"Bedrock\".",
-            "Incorrect. \"Unshakeable base\" does not belong to \"Bedrock\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Orbit: \"______\".",
-          "question": "Type the term belonging to [Orbit] (14 letters):",
-          "correctAnswer": "IN THEIR ORBIT",
-          "feedbackIfWrong": "The expected term for [Orbit] is \"In their orbit\".",
-          "hint": "Starts with \"I\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L190_PRACTICE_Q1",
       "level": 190,
-      "word": "Secret formula",
-      "conceptTitle": "Topic Sorting Gym: Empiricism vs Alchemy",
-      "targetKeyword": "Secret formula",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 190 (C2)",
       "topicBuckets": [
-        "Empiricism",
-        "Alchemy"
+        "Category Alpha L190",
+        "Category Beta L190"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Secret formula\" belong to?",
-          "options": [
-            "Empiricism",
-            "Alchemy"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L190",
+            "AlphaWord_2_L190",
+            "AlphaWord_3_L190",
+            "BetaWord_1_L190",
+            "BetaWord_2_L190",
+            "BetaWord_3_L190"
           ],
-          "correctAnswer": "Alchemy",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Secret formula\" does not belong to \"Empiricism\".",
-            "Correct! \"Secret formula\" is categorized under \"Alchemy\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L190",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L190",
+                "AlphaWord_2_L190",
+                "AlphaWord_3_L190"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L190",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L190",
+                "BetaWord_2_L190",
+                "BetaWord_3_L190"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about secret formulas versus published, testable results."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Alchemy\" category?",
-          "options": [
-            "Secret formula",
-            "Transmutation",
-            "Controlled experiment",
-            "Mystical symbols"
-          ],
-          "correctAnswer": "Secret formula",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Secret formula\" belongs directly to \"Alchemy\".",
-            "Incorrect. \"Transmutation\" does not belong to \"Alchemy\".",
-            "Incorrect. \"Controlled experiment\" does not belong to \"Alchemy\".",
-            "Incorrect. \"Mystical symbols\" does not belong to \"Alchemy\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Empiricism: \"______\".",
-          "question": "Type the term belonging to [Empiricism] (21 letters):",
-          "correctAnswer": "CONTROLLED EXPERIMENT",
-          "feedbackIfWrong": "The expected term for [Empiricism] is \"Controlled experiment\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L190_PRACTICE_Q2",
       "level": 190,
-      "word": "Elixir",
-      "conceptTitle": "Topic Sorting Gym: Alchemy vs Empiricism",
-      "targetKeyword": "Elixir",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 190 (C2)",
       "topicBuckets": [
-        "Alchemy",
-        "Empiricism"
+        "Category Alpha L190",
+        "Category Beta L190"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Elixir\" belong to?",
-          "options": [
-            "Alchemy",
-            "Empiricism"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L190",
+            "AlphaWord_2_L190",
+            "AlphaWord_3_L190",
+            "BetaWord_1_L190",
+            "BetaWord_2_L190",
+            "BetaWord_3_L190"
           ],
-          "correctAnswer": "Alchemy",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Elixir\" is categorized under \"Alchemy\".",
-            "Not quite. \"Elixir\" does not belong to \"Empiricism\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L190",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L190",
+                "AlphaWord_2_L190",
+                "AlphaWord_3_L190"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L190",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L190",
+                "BetaWord_2_L190",
+                "BetaWord_3_L190"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "What separates the two is whether findings can be checked."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Empiricism\" category?",
-          "options": [
-            "Peer review",
-            "Elixir",
-            "Guarded knowledge",
-            "Philosopher's stone"
-          ],
-          "correctAnswer": "Peer review",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Peer review\" belongs directly to \"Empiricism\".",
-            "Incorrect. \"Elixir\" does not belong to \"Empiricism\".",
-            "Incorrect. \"Guarded knowledge\" does not belong to \"Empiricism\".",
-            "Incorrect. \"Philosopher's stone\" does not belong to \"Empiricism\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Alchemy: \"______\".",
-          "question": "Type the term belonging to [Alchemy] (17 letters):",
-          "correctAnswer": "GUARDED KNOWLEDGE",
-          "feedbackIfWrong": "The expected term for [Alchemy] is \"Guarded knowledge\".",
-          "hint": "Starts with \"G\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L190_PRACTICE_Q3",
       "level": 190,
-      "word": "Mysterious transformation",
-      "conceptTitle": "Topic Sorting Gym: Alchemy vs Empiricism",
-      "targetKeyword": "Mysterious transformation",
+      "cefr": "C2",
+      "conceptTitle": "Cluster Fusion: Level 190 (C2)",
       "topicBuckets": [
-        "Alchemy",
-        "Empiricism"
+        "Category Alpha L190",
+        "Category Beta L190"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Mysterious transformation\" belong to?",
-          "options": [
-            "Alchemy",
-            "Empiricism"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L190",
+            "AlphaWord_2_L190",
+            "AlphaWord_3_L190",
+            "BetaWord_1_L190",
+            "BetaWord_2_L190",
+            "BetaWord_3_L190"
           ],
-          "correctAnswer": "Alchemy",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Mysterious transformation\" is categorized under \"Alchemy\".",
-            "Not quite. \"Mysterious transformation\" does not belong to \"Empiricism\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L190",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L190",
+                "AlphaWord_2_L190",
+                "AlphaWord_3_L190"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L190",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L190",
+                "BetaWord_2_L190",
+                "BetaWord_3_L190"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "'Alchemy' now often means something wonderful but unexplained."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Empiricism\" category?",
-          "options": [
-            "Measurable outcome",
-            "Mysterious transformation",
-            "Tested against data",
-            "A kind of alchemy"
-          ],
-          "correctAnswer": "Measurable outcome",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Measurable outcome\" belongs directly to \"Empiricism\".",
-            "Incorrect. \"Mysterious transformation\" does not belong to \"Empiricism\".",
-            "Incorrect. \"Tested against data\" does not belong to \"Empiricism\".",
-            "Incorrect. \"A kind of alchemy\" does not belong to \"Empiricism\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Empiricism: \"______\".",
-          "question": "Type the term belonging to [Empiricism] (19 letters):",
-          "correctAnswer": "TESTED AGAINST DATA",
-          "feedbackIfWrong": "The expected term for [Empiricism] is \"Tested against data\".",
-          "hint": "Starts with \"T\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     }

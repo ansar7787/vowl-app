@@ -4,7 +4,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:vowl/core/utils/locale_service.dart';
 
-/// Mind map dictionary card presenting semantic linkages and definitions for categorized topic terms.
+/// Semantic breakdown card displaying lexical links and meanings for topic clusters.
 class TopicVocabMindMap extends StatelessWidget {
   /// List of related topical terms with definitions or collocations.
   final List<String> relatedWords;
@@ -12,7 +12,6 @@ class TopicVocabMindMap extends StatelessWidget {
   /// Theme accent color.
   final Color color;
 
-  /// Creates a [TopicVocabMindMap] widget.
   const TopicVocabMindMap({
     super.key,
     required this.relatedWords,
@@ -24,20 +23,21 @@ class TopicVocabMindMap extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
           width: double.infinity,
-          padding: EdgeInsets.all(16.r),
+          padding: EdgeInsets.all(14.r),
           decoration: BoxDecoration(
             color: isDark
                 ? Colors.white.withValues(alpha: 0.05)
                 : Colors.black.withValues(alpha: 0.02),
-            borderRadius: BorderRadius.circular(20.r),
+            borderRadius: BorderRadius.circular(16.r),
             border: Border.all(color: color.withValues(alpha: 0.3)),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Row(
                 children: [
-                  Icon(Icons.hub_rounded, color: color, size: 20.r),
+                  Icon(Icons.hub_rounded, color: color, size: 18.r),
                   SizedBox(width: 8.w),
                   AutoSizeText(
                     context.tr(
@@ -50,17 +50,16 @@ class TopicVocabMindMap extends StatelessWidget {
                       fontSize: 13.sp,
                       fontWeight: FontWeight.w700,
                       color: color,
-                      letterSpacing: 0.4,
+                      letterSpacing: 0.3,
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 12.h),
+              SizedBox(height: 10.h),
               Wrap(
                 spacing: 8.w,
                 runSpacing: 8.h,
                 children: relatedWords.map((word) {
-                  // Extract key/value pair robustly using regex
                   final match = RegExp(
                     r'^(.*?)(?:[:\-])(.*)$',
                   ).firstMatch(word);
@@ -120,7 +119,7 @@ class TopicVocabMindMap extends StatelessWidget {
           ),
         )
         .animate()
-        .fadeIn(duration: 400.ms)
-        .slideY(begin: 0.2, end: 0, curve: Curves.easeOut);
+        .fadeIn(duration: 350.ms)
+        .slideY(begin: 0.15, end: 0, curve: Curves.easeOut);
   }
 }

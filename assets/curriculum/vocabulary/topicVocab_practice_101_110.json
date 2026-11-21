@@ -7,1740 +7,1470 @@
     {
       "id": "VOC_TOPICVOCAB_L101_PRACTICE_Q1",
       "level": 101,
-      "word": "Serene",
-      "conceptTitle": "Topic Sorting Gym: Calm vs Tense",
-      "targetKeyword": "Serene",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 101 (B2)",
       "topicBuckets": [
-        "Calm",
-        "Tense"
+        "Category Alpha L101",
+        "Category Beta L101"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Serene\" belong to?",
-          "options": [
-            "Calm",
-            "Tense"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L101",
+            "AlphaWord_2_L101",
+            "AlphaWord_3_L101",
+            "BetaWord_1_L101",
+            "BetaWord_2_L101",
+            "BetaWord_3_L101"
           ],
-          "correctAnswer": "Calm",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Serene\" is categorized under \"Calm\".",
-            "Not quite. \"Serene\" does not belong to \"Tense\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L101",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L101",
+                "AlphaWord_2_L101",
+                "AlphaWord_3_L101"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L101",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L101",
+                "BetaWord_2_L101",
+                "BetaWord_3_L101"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about how your shoulders feel in each state."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Tense\" category?",
-          "options": [
-            "Edgy",
-            "Serene",
-            "Composed",
-            "Tranquil"
-          ],
-          "correctAnswer": "Edgy",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Edgy\" belongs directly to \"Tense\".",
-            "Incorrect. \"Serene\" does not belong to \"Tense\".",
-            "Incorrect. \"Composed\" does not belong to \"Tense\".",
-            "Incorrect. \"Tranquil\" does not belong to \"Tense\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Tense: \"______\".",
-          "question": "Type the term belonging to [Tense] (4 letters):",
-          "correctAnswer": "EDGY",
-          "feedbackIfWrong": "The expected term for [Tense] is \"Edgy\".",
-          "hint": "Starts with \"E\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L101_PRACTICE_Q2",
       "level": 101,
-      "word": "Unruffled",
-      "conceptTitle": "Topic Sorting Gym: Calm vs Tense",
-      "targetKeyword": "Unruffled",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 101 (B2)",
       "topicBuckets": [
-        "Calm",
-        "Tense"
+        "Category Alpha L101",
+        "Category Beta L101"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Unruffled\" belong to?",
-          "options": [
-            "Calm",
-            "Tense"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L101",
+            "AlphaWord_2_L101",
+            "AlphaWord_3_L101",
+            "BetaWord_1_L101",
+            "BetaWord_2_L101",
+            "BetaWord_3_L101"
           ],
-          "correctAnswer": "Calm",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Unruffled\" is categorized under \"Calm\".",
-            "Not quite. \"Unruffled\" does not belong to \"Tense\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L101",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L101",
+                "AlphaWord_2_L101",
+                "AlphaWord_3_L101"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L101",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L101",
+                "BetaWord_2_L101",
+                "BetaWord_3_L101"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about the atmosphere in a room, not just one person's mood."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Tense\" category?",
-          "options": [
-            "Fraught",
-            "Unruffled",
-            "Level-headed",
-            "Placid"
-          ],
-          "correctAnswer": "Fraught",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Fraught\" belongs directly to \"Tense\".",
-            "Incorrect. \"Unruffled\" does not belong to \"Tense\".",
-            "Incorrect. \"Level-headed\" does not belong to \"Tense\".",
-            "Incorrect. \"Placid\" does not belong to \"Tense\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Calm: \"______\".",
-          "question": "Type the term belonging to [Calm] (12 letters):",
-          "correctAnswer": "LEVEL-HEADED",
-          "feedbackIfWrong": "The expected term for [Calm] is \"Level-headed\".",
-          "hint": "Starts with \"L\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L101_PRACTICE_Q3",
       "level": 101,
-      "word": "White-knuckled",
-      "conceptTitle": "Topic Sorting Gym: Calm vs Tense",
-      "targetKeyword": "White-knuckled",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 101 (B2)",
       "topicBuckets": [
-        "Calm",
-        "Tense"
+        "Category Alpha L101",
+        "Category Beta L101"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"White-knuckled\" belong to?",
-          "options": [
-            "Calm",
-            "Tense"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L101",
+            "AlphaWord_2_L101",
+            "AlphaWord_3_L101",
+            "BetaWord_1_L101",
+            "BetaWord_2_L101",
+            "BetaWord_3_L101"
           ],
-          "correctAnswer": "Tense",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"White-knuckled\" does not belong to \"Calm\".",
-            "Correct! \"White-knuckled\" is categorized under \"Tense\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L101",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L101",
+                "AlphaWord_2_L101",
+                "AlphaWord_3_L101"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L101",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L101",
+                "BetaWord_2_L101",
+                "BetaWord_3_L101"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe a silence that feels heavy rather than peaceful."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Tense\" category?",
-          "options": [
-            "White-knuckled",
-            "Takes it in stride",
-            "Charged atmosphere",
-            "Knot in the stomach"
-          ],
-          "correctAnswer": "White-knuckled",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"White-knuckled\" belongs directly to \"Tense\".",
-            "Incorrect. \"Takes it in stride\" does not belong to \"Tense\".",
-            "Incorrect. \"Charged atmosphere\" does not belong to \"Tense\".",
-            "Incorrect. \"Knot in the stomach\" does not belong to \"Tense\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Tense: \"______\".",
-          "question": "Type the term belonging to [Tense] (18 letters):",
-          "correctAnswer": "CHARGED ATMOSPHERE",
-          "feedbackIfWrong": "The expected term for [Tense] is \"Charged atmosphere\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L102_PRACTICE_Q1",
       "level": 102,
-      "word": "Eager",
-      "conceptTitle": "Topic Sorting Gym: Bored vs Excited",
-      "targetKeyword": "Eager",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 102 (B2)",
       "topicBuckets": [
-        "Bored",
-        "Excited"
+        "Category Alpha L102",
+        "Category Beta L102"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Eager\" belong to?",
-          "options": [
-            "Bored",
-            "Excited"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L102",
+            "AlphaWord_2_L102",
+            "AlphaWord_3_L102",
+            "BetaWord_1_L102",
+            "BetaWord_2_L102",
+            "BetaWord_3_L102"
           ],
-          "correctAnswer": "Excited",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Eager\" does not belong to \"Bored\".",
-            "Correct! \"Eager\" is categorized under \"Excited\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L102",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L102",
+                "AlphaWord_2_L102",
+                "AlphaWord_3_L102"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L102",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L102",
+                "BetaWord_2_L102",
+                "BetaWord_3_L102"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about how time feels: racing by, or dragging."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Excited\" category?",
-          "options": [
-            "Eager",
-            "Thrilled",
-            "Uninterested",
-            "Enthusiastic"
-          ],
-          "correctAnswer": "Eager",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Eager\" belongs directly to \"Excited\".",
-            "Incorrect. \"Thrilled\" does not belong to \"Excited\".",
-            "Incorrect. \"Uninterested\" does not belong to \"Excited\".",
-            "Incorrect. \"Enthusiastic\" does not belong to \"Excited\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Bored: \"______\".",
-          "question": "Type the term belonging to [Bored] (12 letters):",
-          "correctAnswer": "UNINTERESTED",
-          "feedbackIfWrong": "The expected term for [Bored] is \"Uninterested\".",
-          "hint": "Starts with \"U\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L102_PRACTICE_Q2",
       "level": 102,
-      "word": "Raring to go",
-      "conceptTitle": "Topic Sorting Gym: Excited vs Bored",
-      "targetKeyword": "Raring to go",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 102 (B2)",
       "topicBuckets": [
-        "Excited",
-        "Bored"
+        "Category Alpha L102",
+        "Category Beta L102"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Raring to go\" belong to?",
-          "options": [
-            "Excited",
-            "Bored"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L102",
+            "AlphaWord_2_L102",
+            "AlphaWord_3_L102",
+            "BetaWord_1_L102",
+            "BetaWord_2_L102",
+            "BetaWord_3_L102"
           ],
-          "correctAnswer": "Excited",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Raring to go\" is categorized under \"Excited\".",
-            "Not quite. \"Raring to go\" does not belong to \"Bored\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L102",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L102",
+                "AlphaWord_2_L102",
+                "AlphaWord_3_L102"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L102",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L102",
+                "BetaWord_2_L102",
+                "BetaWord_3_L102"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about a task repeated until it means nothing."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Bored\" category?",
-          "options": [
-            "Jaded",
-            "Raring to go",
-            "Exhilarated",
-            "Monotonous"
-          ],
-          "correctAnswer": "Jaded",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Jaded\" belongs directly to \"Bored\".",
-            "Incorrect. \"Raring to go\" does not belong to \"Bored\".",
-            "Incorrect. \"Exhilarated\" does not belong to \"Bored\".",
-            "Incorrect. \"Monotonous\" does not belong to \"Bored\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Excited: \"______\".",
-          "question": "Type the term belonging to [Excited] (11 letters):",
-          "correctAnswer": "EXHILARATED",
-          "feedbackIfWrong": "The expected term for [Excited] is \"Exhilarated\".",
-          "hint": "Starts with \"E\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L102_PRACTICE_Q3",
       "level": 102,
-      "word": "Can't wait",
-      "conceptTitle": "Topic Sorting Gym: Excited vs Bored",
-      "targetKeyword": "Can't wait",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 102 (B2)",
       "topicBuckets": [
-        "Excited",
-        "Bored"
+        "Category Alpha L102",
+        "Category Beta L102"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Can't wait\" belong to?",
-          "options": [
-            "Excited",
-            "Bored"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L102",
+            "AlphaWord_2_L102",
+            "AlphaWord_3_L102",
+            "BetaWord_1_L102",
+            "BetaWord_2_L102",
+            "BetaWord_3_L102"
           ],
-          "correctAnswer": "Excited",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Can't wait\" is categorized under \"Excited\".",
-            "Not quite. \"Can't wait\" does not belong to \"Bored\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L102",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L102",
+                "AlphaWord_2_L102",
+                "AlphaWord_3_L102"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L102",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L102",
+                "BetaWord_2_L102",
+                "BetaWord_3_L102"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe attention drifting away entirely."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Bored\" category?",
-          "options": [
-            "Glazed over",
-            "Can't wait",
-            "On the edge of their seat",
-            "Clock-watching"
-          ],
-          "correctAnswer": "Glazed over",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Glazed over\" belongs directly to \"Bored\".",
-            "Incorrect. \"Can't wait\" does not belong to \"Bored\".",
-            "Incorrect. \"On the edge of their seat\" does not belong to \"Bored\".",
-            "Incorrect. \"Clock-watching\" does not belong to \"Bored\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Bored: \"______\".",
-          "question": "Type the term belonging to [Bored] (11 letters):",
-          "correctAnswer": "GLAZED OVER",
-          "feedbackIfWrong": "The expected term for [Bored] is \"Glazed over\".",
-          "hint": "Starts with \"G\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L103_PRACTICE_Q1",
       "level": 103,
-      "word": "Delight",
-      "conceptTitle": "Topic Sorting Gym: Grief vs Joy",
-      "targetKeyword": "Delight",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 103 (B2)",
       "topicBuckets": [
-        "Grief",
-        "Joy"
+        "Category Alpha L103",
+        "Category Beta L103"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Delight\" belong to?",
-          "options": [
-            "Grief",
-            "Joy"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L103",
+            "AlphaWord_2_L103",
+            "AlphaWord_3_L103",
+            "BetaWord_1_L103",
+            "BetaWord_2_L103",
+            "BetaWord_3_L103"
           ],
-          "correctAnswer": "Joy",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Delight\" does not belong to \"Grief\".",
-            "Correct! \"Delight\" is categorized under \"Joy\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L103",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L103",
+                "AlphaWord_2_L103",
+                "AlphaWord_3_L103"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L103",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L103",
+                "BetaWord_2_L103",
+                "BetaWord_3_L103"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about the emotions surrounding a celebration and a loss."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Joy\" category?",
-          "options": [
-            "Delight",
-            "Mourning",
-            "Rejoicing",
-            "Elation"
-          ],
-          "correctAnswer": "Delight",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Delight\" belongs directly to \"Joy\".",
-            "Incorrect. \"Mourning\" does not belong to \"Joy\".",
-            "Incorrect. \"Rejoicing\" does not belong to \"Joy\".",
-            "Incorrect. \"Elation\" does not belong to \"Joy\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Joy: \"______\".",
-          "question": "Type the term belonging to [Joy] (9 letters):",
-          "correctAnswer": "REJOICING",
-          "feedbackIfWrong": "The expected term for [Joy] is \"Rejoicing\".",
-          "hint": "Starts with \"R\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L103_PRACTICE_Q2",
       "level": 103,
-      "word": "Anguish",
-      "conceptTitle": "Topic Sorting Gym: Grief vs Joy",
-      "targetKeyword": "Anguish",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 103 (B2)",
       "topicBuckets": [
-        "Grief",
-        "Joy"
+        "Category Alpha L103",
+        "Category Beta L103"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Anguish\" belong to?",
-          "options": [
-            "Grief",
-            "Joy"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L103",
+            "AlphaWord_2_L103",
+            "AlphaWord_3_L103",
+            "BetaWord_1_L103",
+            "BetaWord_2_L103",
+            "BetaWord_3_L103"
           ],
-          "correctAnswer": "Grief",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Anguish\" is categorized under \"Grief\".",
-            "Not quite. \"Anguish\" does not belong to \"Joy\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L103",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L103",
+                "AlphaWord_2_L103",
+                "AlphaWord_3_L103"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L103",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L103",
+                "BetaWord_2_L103",
+                "BetaWord_3_L103"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Some feelings are quiet rather than loud."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Joy\" category?",
-          "options": [
-            "Jubilation",
-            "Anguish",
-            "Contentment",
-            "Bliss"
-          ],
-          "correctAnswer": "Jubilation",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Jubilation\" belongs directly to \"Joy\".",
-            "Incorrect. \"Anguish\" does not belong to \"Joy\".",
-            "Incorrect. \"Contentment\" does not belong to \"Joy\".",
-            "Incorrect. \"Bliss\" does not belong to \"Joy\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Joy: \"______\".",
-          "question": "Type the term belonging to [Joy] (11 letters):",
-          "correctAnswer": "CONTENTMENT",
-          "feedbackIfWrong": "The expected term for [Joy] is \"Contentment\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L103_PRACTICE_Q3",
       "level": 103,
-      "word": "Celebration",
-      "conceptTitle": "Topic Sorting Gym: Joy vs Grief",
-      "targetKeyword": "Celebration",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 103 (B2)",
       "topicBuckets": [
-        "Joy",
-        "Grief"
+        "Category Alpha L103",
+        "Category Beta L103"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Celebration\" belong to?",
-          "options": [
-            "Joy",
-            "Grief"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L103",
+            "AlphaWord_2_L103",
+            "AlphaWord_3_L103",
+            "BetaWord_1_L103",
+            "BetaWord_2_L103",
+            "BetaWord_3_L103"
           ],
-          "correctAnswer": "Joy",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Celebration\" is categorized under \"Joy\".",
-            "Not quite. \"Celebration\" does not belong to \"Grief\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L103",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L103",
+                "AlphaWord_2_L103",
+                "AlphaWord_3_L103"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L103",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L103",
+                "BetaWord_2_L103",
+                "BetaWord_3_L103"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about the language used at a wedding and at a memorial."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Grief\" category?",
-          "options": [
-            "Condolences",
-            "Celebration",
-            "Bereavement",
-            "Good tidings"
-          ],
-          "correctAnswer": "Condolences",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Condolences\" belongs directly to \"Grief\".",
-            "Incorrect. \"Celebration\" does not belong to \"Grief\".",
-            "Incorrect. \"Bereavement\" does not belong to \"Grief\".",
-            "Incorrect. \"Good tidings\" does not belong to \"Grief\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Grief: \"______\".",
-          "question": "Type the term belonging to [Grief] (11 letters):",
-          "correctAnswer": "BEREAVEMENT",
-          "feedbackIfWrong": "The expected term for [Grief] is \"Bereavement\".",
-          "hint": "Starts with \"B\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L104_PRACTICE_Q1",
       "level": 104,
-      "word": "Weeping",
-      "conceptTitle": "Topic Sorting Gym: Laughter vs Tears",
-      "targetKeyword": "Weeping",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 104 (B2)",
       "topicBuckets": [
-        "Laughter",
-        "Tears"
+        "Category Alpha L104",
+        "Category Beta L104"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Weeping\" belong to?",
-          "options": [
-            "Laughter",
-            "Tears"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L104",
+            "AlphaWord_2_L104",
+            "AlphaWord_3_L104",
+            "BetaWord_1_L104",
+            "BetaWord_2_L104",
+            "BetaWord_3_L104"
           ],
-          "correctAnswer": "Tears",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Weeping\" does not belong to \"Laughter\".",
-            "Correct! \"Weeping\" is categorized under \"Tears\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L104",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L104",
+                "AlphaWord_2_L104",
+                "AlphaWord_3_L104"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L104",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L104",
+                "BetaWord_2_L104",
+                "BetaWord_3_L104"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about the sounds a room makes during a comedy and during a sad film."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Tears\" category?",
-          "options": [
-            "Weeping",
-            "Chuckle",
-            "Guffaw",
-            "Sobbing"
-          ],
-          "correctAnswer": "Weeping",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Weeping\" belongs directly to \"Tears\".",
-            "Incorrect. \"Chuckle\" does not belong to \"Tears\".",
-            "Incorrect. \"Guffaw\" does not belong to \"Tears\".",
-            "Incorrect. \"Sobbing\" does not belong to \"Tears\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Laughter: \"______\".",
-          "question": "Type the term belonging to [Laughter] (6 letters):",
-          "correctAnswer": "GUFFAW",
-          "feedbackIfWrong": "The expected term for [Laughter] is \"Guffaw\".",
-          "hint": "Starts with \"G\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L104_PRACTICE_Q2",
       "level": 104,
-      "word": "Whimper",
-      "conceptTitle": "Topic Sorting Gym: Laughter vs Tears",
-      "targetKeyword": "Whimper",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 104 (B2)",
       "topicBuckets": [
-        "Laughter",
-        "Tears"
+        "Category Alpha L104",
+        "Category Beta L104"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Whimper\" belong to?",
-          "options": [
-            "Laughter",
-            "Tears"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L104",
+            "AlphaWord_2_L104",
+            "AlphaWord_3_L104",
+            "BetaWord_1_L104",
+            "BetaWord_2_L104",
+            "BetaWord_3_L104"
           ],
-          "correctAnswer": "Tears",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Whimper\" does not belong to \"Laughter\".",
-            "Correct! \"Whimper\" is categorized under \"Tears\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L104",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L104",
+                "AlphaWord_2_L104",
+                "AlphaWord_3_L104"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L104",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L104",
+                "BetaWord_2_L104",
+                "BetaWord_3_L104"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Volume separates these as much as emotion does."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Tears\" category?",
-          "options": [
-            "Whimper",
-            "Snicker",
-            "Cackle",
-            "Misty-eyed"
-          ],
-          "correctAnswer": "Whimper",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Whimper\" belongs directly to \"Tears\".",
-            "Incorrect. \"Snicker\" does not belong to \"Tears\".",
-            "Incorrect. \"Cackle\" does not belong to \"Tears\".",
-            "Incorrect. \"Misty-eyed\" does not belong to \"Tears\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Laughter: \"______\".",
-          "question": "Type the term belonging to [Laughter] (6 letters):",
-          "correctAnswer": "CACKLE",
-          "feedbackIfWrong": "The expected term for [Laughter] is \"Cackle\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L104_PRACTICE_Q3",
       "level": 104,
-      "word": "Welling up",
-      "conceptTitle": "Topic Sorting Gym: Laughter vs Tears",
-      "targetKeyword": "Welling up",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 104 (B2)",
       "topicBuckets": [
-        "Laughter",
-        "Tears"
+        "Category Alpha L104",
+        "Category Beta L104"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Welling up\" belong to?",
-          "options": [
-            "Laughter",
-            "Tears"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L104",
+            "AlphaWord_2_L104",
+            "AlphaWord_3_L104",
+            "BetaWord_1_L104",
+            "BetaWord_2_L104",
+            "BetaWord_3_L104"
           ],
-          "correctAnswer": "Tears",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Welling up\" does not belong to \"Laughter\".",
-            "Correct! \"Welling up\" is categorized under \"Tears\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L104",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L104",
+                "AlphaWord_2_L104",
+                "AlphaWord_3_L104"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L104",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L104",
+                "BetaWord_2_L104",
+                "BetaWord_3_L104"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One phrase belongs to both feelings at once — decide which one it fits best here."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Tears\" category?",
-          "options": [
-            "Welling up",
-            "Comic relief",
-            "Side-splitting",
-            "Tearjerker"
-          ],
-          "correctAnswer": "Welling up",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Welling up\" belongs directly to \"Tears\".",
-            "Incorrect. \"Comic relief\" does not belong to \"Tears\".",
-            "Incorrect. \"Side-splitting\" does not belong to \"Tears\".",
-            "Incorrect. \"Tearjerker\" does not belong to \"Tears\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Laughter: \"______\".",
-          "question": "Type the term belonging to [Laughter] (14 letters):",
-          "correctAnswer": "SIDE-SPLITTING",
-          "feedbackIfWrong": "The expected term for [Laughter] is \"Side-splitting\".",
-          "hint": "Starts with \"S\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L105_PRACTICE_Q1",
       "level": 105,
-      "word": "Friction",
-      "conceptTitle": "Topic Sorting Gym: Harmony vs Discord",
-      "targetKeyword": "Friction",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 105 (B2)",
       "topicBuckets": [
-        "Harmony",
-        "Discord"
+        "Category Alpha L105",
+        "Category Beta L105"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Friction\" belong to?",
-          "options": [
-            "Harmony",
-            "Discord"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L105",
+            "AlphaWord_2_L105",
+            "AlphaWord_3_L105",
+            "BetaWord_1_L105",
+            "BetaWord_2_L105",
+            "BetaWord_3_L105"
           ],
-          "correctAnswer": "Discord",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Friction\" does not belong to \"Harmony\".",
-            "Correct! \"Friction\" is categorized under \"Discord\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L105",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L105",
+                "AlphaWord_2_L105",
+                "AlphaWord_3_L105"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L105",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L105",
+                "BetaWord_2_L105",
+                "BetaWord_3_L105"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about a team that works smoothly, and one that argues constantly."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Discord\" category?",
-          "options": [
-            "Friction",
-            "Conflict",
-            "Cohesion",
-            "Accord"
-          ],
-          "correctAnswer": "Friction",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Friction\" belongs directly to \"Discord\".",
-            "Incorrect. \"Conflict\" does not belong to \"Discord\".",
-            "Incorrect. \"Cohesion\" does not belong to \"Discord\".",
-            "Incorrect. \"Accord\" does not belong to \"Discord\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Harmony: \"______\".",
-          "question": "Type the term belonging to [Harmony] (8 letters):",
-          "correctAnswer": "COHESION",
-          "feedbackIfWrong": "The expected term for [Harmony] is \"Cohesion\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L105_PRACTICE_Q2",
       "level": 105,
-      "word": "Strife",
-      "conceptTitle": "Topic Sorting Gym: Discord vs Harmony",
-      "targetKeyword": "Strife",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 105 (B2)",
       "topicBuckets": [
-        "Discord",
-        "Harmony"
+        "Category Alpha L105",
+        "Category Beta L105"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Strife\" belong to?",
-          "options": [
-            "Discord",
-            "Harmony"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L105",
+            "AlphaWord_2_L105",
+            "AlphaWord_3_L105",
+            "BetaWord_1_L105",
+            "BetaWord_2_L105",
+            "BetaWord_3_L105"
           ],
-          "correctAnswer": "Discord",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Strife\" is categorized under \"Discord\".",
-            "Not quite. \"Strife\" does not belong to \"Harmony\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L105",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L105",
+                "AlphaWord_2_L105",
+                "AlphaWord_3_L105"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L105",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L105",
+                "BetaWord_2_L105",
+                "BetaWord_3_L105"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about what pulls a group together, and what tears it apart."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Harmony\" category?",
-          "options": [
-            "In sync",
-            "Strife",
-            "Division",
-            "Common ground"
-          ],
-          "correctAnswer": "In sync",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"In sync\" belongs directly to \"Harmony\".",
-            "Incorrect. \"Strife\" does not belong to \"Harmony\".",
-            "Incorrect. \"Division\" does not belong to \"Harmony\".",
-            "Incorrect. \"Common ground\" does not belong to \"Harmony\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Harmony: \"______\".",
-          "question": "Type the term belonging to [Harmony] (7 letters):",
-          "correctAnswer": "IN SYNC",
-          "feedbackIfWrong": "The expected term for [Harmony] is \"In sync\".",
-          "hint": "Starts with \"I\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L105_PRACTICE_Q3",
       "level": 105,
-      "word": "Rapport",
-      "conceptTitle": "Topic Sorting Gym: Harmony vs Discord",
-      "targetKeyword": "Rapport",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 105 (B2)",
       "topicBuckets": [
-        "Harmony",
-        "Discord"
+        "Category Alpha L105",
+        "Category Beta L105"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Rapport\" belong to?",
-          "options": [
-            "Harmony",
-            "Discord"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L105",
+            "AlphaWord_2_L105",
+            "AlphaWord_3_L105",
+            "BetaWord_1_L105",
+            "BetaWord_2_L105",
+            "BetaWord_3_L105"
           ],
-          "correctAnswer": "Harmony",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Rapport\" is categorized under \"Harmony\".",
-            "Not quite. \"Rapport\" does not belong to \"Discord\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L105",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L105",
+                "AlphaWord_2_L105",
+                "AlphaWord_3_L105"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L105",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L105",
+                "BetaWord_2_L105",
+                "BetaWord_3_L105"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe disagreement conducted openly rather than quietly."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Discord\" category?",
-          "options": [
-            "At loggerheads",
-            "Rapport",
-            "Clashing",
-            "Meeting of minds"
-          ],
-          "correctAnswer": "At loggerheads",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"At loggerheads\" belongs directly to \"Discord\".",
-            "Incorrect. \"Rapport\" does not belong to \"Discord\".",
-            "Incorrect. \"Clashing\" does not belong to \"Discord\".",
-            "Incorrect. \"Meeting of minds\" does not belong to \"Discord\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Discord: \"______\".",
-          "question": "Type the term belonging to [Discord] (8 letters):",
-          "correctAnswer": "CLASHING",
-          "feedbackIfWrong": "The expected term for [Discord] is \"Clashing\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L106_PRACTICE_Q1",
       "level": 106,
-      "word": "Disorder",
-      "conceptTitle": "Topic Sorting Gym: Order vs Chaos",
-      "targetKeyword": "Disorder",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 106 (B2)",
       "topicBuckets": [
-        "Order",
-        "Chaos"
+        "Category Alpha L106",
+        "Category Beta L106"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Disorder\" belong to?",
-          "options": [
-            "Order",
-            "Chaos"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L106",
+            "AlphaWord_2_L106",
+            "AlphaWord_3_L106",
+            "BetaWord_1_L106",
+            "BetaWord_2_L106",
+            "BetaWord_3_L106"
           ],
-          "correctAnswer": "Chaos",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Disorder\" does not belong to \"Order\".",
-            "Correct! \"Disorder\" is categorized under \"Chaos\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L106",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L106",
+                "AlphaWord_2_L106",
+                "AlphaWord_3_L106"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L106",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L106",
+                "BetaWord_2_L106",
+                "BetaWord_3_L106"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about a filing system versus a room after a party."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Chaos\" category?",
-          "options": [
-            "Disorder",
-            "System",
-            "Discipline",
-            "Turmoil"
-          ],
-          "correctAnswer": "Disorder",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Disorder\" belongs directly to \"Chaos\".",
-            "Incorrect. \"System\" does not belong to \"Chaos\".",
-            "Incorrect. \"Discipline\" does not belong to \"Chaos\".",
-            "Incorrect. \"Turmoil\" does not belong to \"Chaos\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Order: \"______\".",
-          "question": "Type the term belonging to [Order] (10 letters):",
-          "correctAnswer": "DISCIPLINE",
-          "feedbackIfWrong": "The expected term for [Order] is \"Discipline\".",
-          "hint": "Starts with \"D\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L106_PRACTICE_Q2",
       "level": 106,
-      "word": "Regulation",
-      "conceptTitle": "Topic Sorting Gym: Order vs Chaos",
-      "targetKeyword": "Regulation",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 106 (B2)",
       "topicBuckets": [
-        "Order",
-        "Chaos"
+        "Category Alpha L106",
+        "Category Beta L106"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Regulation\" belong to?",
-          "options": [
-            "Order",
-            "Chaos"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L106",
+            "AlphaWord_2_L106",
+            "AlphaWord_3_L106",
+            "BetaWord_1_L106",
+            "BetaWord_2_L106",
+            "BetaWord_3_L106"
           ],
-          "correctAnswer": "Order",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Regulation\" is categorized under \"Order\".",
-            "Not quite. \"Regulation\" does not belong to \"Chaos\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L106",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L106",
+                "AlphaWord_2_L106",
+                "AlphaWord_3_L106"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L106",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L106",
+                "BetaWord_2_L106",
+                "BetaWord_3_L106"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about degrees: untidy, confused, or completely broken down."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Chaos\" category?",
-          "options": [
-            "Anarchy",
-            "Regulation",
-            "Pandemonium",
-            "Stability"
-          ],
-          "correctAnswer": "Anarchy",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Anarchy\" belongs directly to \"Chaos\".",
-            "Incorrect. \"Regulation\" does not belong to \"Chaos\".",
-            "Incorrect. \"Pandemonium\" does not belong to \"Chaos\".",
-            "Incorrect. \"Stability\" does not belong to \"Chaos\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Chaos: \"______\".",
-          "question": "Type the term belonging to [Chaos] (11 letters):",
-          "correctAnswer": "PANDEMONIUM",
-          "feedbackIfWrong": "The expected term for [Chaos] is \"Pandemonium\".",
-          "hint": "Starts with \"P\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L106_PRACTICE_Q3",
       "level": 106,
-      "word": "A free-for-all",
-      "conceptTitle": "Topic Sorting Gym: Chaos vs Order",
-      "targetKeyword": "A free-for-all",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 106 (B2)",
       "topicBuckets": [
-        "Chaos",
-        "Order"
+        "Category Alpha L106",
+        "Category Beta L106"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"A free-for-all\" belong to?",
-          "options": [
-            "Chaos",
-            "Order"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L106",
+            "AlphaWord_2_L106",
+            "AlphaWord_3_L106",
+            "BetaWord_1_L106",
+            "BetaWord_2_L106",
+            "BetaWord_3_L106"
           ],
-          "correctAnswer": "Chaos",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"A free-for-all\" is categorized under \"Chaos\".",
-            "Not quite. \"A free-for-all\" does not belong to \"Order\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L106",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L106",
+                "AlphaWord_2_L106",
+                "AlphaWord_3_L106"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L106",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L106",
+                "BetaWord_2_L106",
+                "BetaWord_3_L106"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe a workplace that has stopped functioning properly."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Order\" category?",
-          "options": [
-            "Running like clockwork",
-            "A free-for-all",
-            "Everything in its place",
-            "Protocol"
-          ],
-          "correctAnswer": "Running like clockwork",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Running like clockwork\" belongs directly to \"Order\".",
-            "Incorrect. \"A free-for-all\" does not belong to \"Order\".",
-            "Incorrect. \"Everything in its place\" does not belong to \"Order\".",
-            "Incorrect. \"Protocol\" does not belong to \"Order\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Order: \"______\".",
-          "question": "Type the term belonging to [Order] (23 letters):",
-          "correctAnswer": "EVERYTHING IN ITS PLACE",
-          "feedbackIfWrong": "The expected term for [Order] is \"Everything in its place\".",
-          "hint": "Starts with \"E\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L107_PRACTICE_Q1",
       "level": 107,
-      "word": "Nonfiction",
-      "conceptTitle": "Topic Sorting Gym: Fiction vs Truth",
-      "targetKeyword": "Nonfiction",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 107 (B2)",
       "topicBuckets": [
-        "Fiction",
-        "Truth"
+        "Category Alpha L107",
+        "Category Beta L107"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Nonfiction\" belong to?",
-          "options": [
-            "Fiction",
-            "Truth"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L107",
+            "AlphaWord_2_L107",
+            "AlphaWord_3_L107",
+            "BetaWord_1_L107",
+            "BetaWord_2_L107",
+            "BetaWord_3_L107"
           ],
-          "correctAnswer": "Truth",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Nonfiction\" does not belong to \"Fiction\".",
-            "Correct! \"Nonfiction\" is categorized under \"Truth\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L107",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L107",
+                "AlphaWord_2_L107",
+                "AlphaWord_3_L107"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L107",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L107",
+                "BetaWord_2_L107",
+                "BetaWord_3_L107"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about which shelf a book belongs on in a library."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Truth\" category?",
-          "options": [
-            "Nonfiction",
-            "Biography",
-            "Novel",
-            "Fable"
-          ],
-          "correctAnswer": "Nonfiction",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Nonfiction\" belongs directly to \"Truth\".",
-            "Incorrect. \"Biography\" does not belong to \"Truth\".",
-            "Incorrect. \"Novel\" does not belong to \"Truth\".",
-            "Incorrect. \"Fable\" does not belong to \"Truth\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Fiction: \"______\".",
-          "question": "Type the term belonging to [Fiction] (5 letters):",
-          "correctAnswer": "NOVEL",
-          "feedbackIfWrong": "The expected term for [Fiction] is \"Novel\".",
-          "hint": "Starts with \"N\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L107_PRACTICE_Q2",
       "level": 107,
-      "word": "Case study",
-      "conceptTitle": "Topic Sorting Gym: Fiction vs Truth",
-      "targetKeyword": "Case study",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 107 (B2)",
       "topicBuckets": [
-        "Fiction",
-        "Truth"
+        "Category Alpha L107",
+        "Category Beta L107"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Case study\" belong to?",
-          "options": [
-            "Fiction",
-            "Truth"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L107",
+            "AlphaWord_2_L107",
+            "AlphaWord_3_L107",
+            "BetaWord_1_L107",
+            "BetaWord_2_L107",
+            "BetaWord_3_L107"
           ],
-          "correctAnswer": "Truth",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Case study\" does not belong to \"Fiction\".",
-            "Correct! \"Case study\" is categorized under \"Truth\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L107",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L107",
+                "AlphaWord_2_L107",
+                "AlphaWord_3_L107"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L107",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L107",
+                "BetaWord_2_L107",
+                "BetaWord_3_L107"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Some fiction borrows heavily from reality without becoming factual."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Truth\" category?",
-          "options": [
-            "Case study",
-            "Myth",
-            "Eyewitness account",
-            "Verified record"
-          ],
-          "correctAnswer": "Case study",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Case study\" belongs directly to \"Truth\".",
-            "Incorrect. \"Myth\" does not belong to \"Truth\".",
-            "Incorrect. \"Eyewitness account\" does not belong to \"Truth\".",
-            "Incorrect. \"Verified record\" does not belong to \"Truth\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Truth: \"______\".",
-          "question": "Type the term belonging to [Truth] (18 letters):",
-          "correctAnswer": "EYEWITNESS ACCOUNT",
-          "feedbackIfWrong": "The expected term for [Truth] is \"Eyewitness account\".",
-          "hint": "Starts with \"E\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L107_PRACTICE_Q3",
       "level": 107,
-      "word": "Factual reporting",
-      "conceptTitle": "Topic Sorting Gym: Truth vs Fiction",
-      "targetKeyword": "Factual reporting",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 107 (B2)",
       "topicBuckets": [
-        "Truth",
-        "Fiction"
+        "Category Alpha L107",
+        "Category Beta L107"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Factual reporting\" belong to?",
-          "options": [
-            "Truth",
-            "Fiction"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L107",
+            "AlphaWord_2_L107",
+            "AlphaWord_3_L107",
+            "BetaWord_1_L107",
+            "BetaWord_2_L107",
+            "BetaWord_3_L107"
           ],
-          "correctAnswer": "Truth",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Factual reporting\" is categorized under \"Truth\".",
-            "Not quite. \"Factual reporting\" does not belong to \"Fiction\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L107",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L107",
+                "AlphaWord_2_L107",
+                "AlphaWord_3_L107"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L107",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L107",
+                "BetaWord_2_L107",
+                "BetaWord_3_L107"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One label warns readers that real events have been reshaped for storytelling."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Fiction\" category?",
-          "options": [
-            "Fabricated",
-            "Factual reporting",
-            "Primary source",
-            "Allegory"
-          ],
-          "correctAnswer": "Fabricated",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Fabricated\" belongs directly to \"Fiction\".",
-            "Incorrect. \"Factual reporting\" does not belong to \"Fiction\".",
-            "Incorrect. \"Primary source\" does not belong to \"Fiction\".",
-            "Incorrect. \"Allegory\" does not belong to \"Fiction\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Truth: \"______\".",
-          "question": "Type the term belonging to [Truth] (14 letters):",
-          "correctAnswer": "PRIMARY SOURCE",
-          "feedbackIfWrong": "The expected term for [Truth] is \"Primary source\".",
-          "hint": "Starts with \"P\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L108_PRACTICE_Q1",
       "level": 108,
-      "word": "Licensed practitioner",
-      "conceptTitle": "Topic Sorting Gym: Amateur vs Professional",
-      "targetKeyword": "Licensed practitioner",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 108 (B2)",
       "topicBuckets": [
-        "Amateur",
-        "Professional"
+        "Category Alpha L108",
+        "Category Beta L108"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Licensed practitioner\" belong to?",
-          "options": [
-            "Amateur",
-            "Professional"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L108",
+            "AlphaWord_2_L108",
+            "AlphaWord_3_L108",
+            "BetaWord_1_L108",
+            "BetaWord_2_L108",
+            "BetaWord_3_L108"
           ],
-          "correctAnswer": "Professional",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Licensed practitioner\" does not belong to \"Amateur\".",
-            "Correct! \"Licensed practitioner\" is categorized under \"Professional\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L108",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L108",
+                "AlphaWord_2_L108",
+                "AlphaWord_3_L108"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L108",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L108",
+                "BetaWord_2_L108",
+                "BetaWord_3_L108"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about who does something for love, and who does it for a living."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Professional\" category?",
-          "options": [
-            "Licensed practitioner",
-            "Self-taught",
-            "Beginner",
-            "Hobbyist"
-          ],
-          "correctAnswer": "Licensed practitioner",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Licensed practitioner\" belongs directly to \"Professional\".",
-            "Incorrect. \"Self-taught\" does not belong to \"Professional\".",
-            "Incorrect. \"Beginner\" does not belong to \"Professional\".",
-            "Incorrect. \"Hobbyist\" does not belong to \"Professional\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Amateur: \"______\".",
-          "question": "Type the term belonging to [Amateur] (8 letters):",
-          "correctAnswer": "BEGINNER",
-          "feedbackIfWrong": "The expected term for [Amateur] is \"Beginner\".",
-          "hint": "Starts with \"B\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L108_PRACTICE_Q2",
       "level": 108,
-      "word": "Seasoned expert",
-      "conceptTitle": "Topic Sorting Gym: Professional vs Amateur",
-      "targetKeyword": "Seasoned expert",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 108 (B2)",
       "topicBuckets": [
-        "Professional",
-        "Amateur"
+        "Category Alpha L108",
+        "Category Beta L108"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Seasoned expert\" belong to?",
-          "options": [
-            "Professional",
-            "Amateur"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L108",
+            "AlphaWord_2_L108",
+            "AlphaWord_3_L108",
+            "BetaWord_1_L108",
+            "BetaWord_2_L108",
+            "BetaWord_3_L108"
           ],
-          "correctAnswer": "Professional",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Seasoned expert\" is categorized under \"Professional\".",
-            "Not quite. \"Seasoned expert\" does not belong to \"Amateur\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L108",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L108",
+                "AlphaWord_2_L108",
+                "AlphaWord_3_L108"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L108",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L108",
+                "BetaWord_2_L108",
+                "BetaWord_3_L108"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One word here is a criticism, not a neutral description."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Amateur\" category?",
-          "options": [
-            "For the love of it",
-            "Seasoned expert",
-            "Amateurish",
-            "Accredited"
-          ],
-          "correctAnswer": "For the love of it",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"For the love of it\" belongs directly to \"Amateur\".",
-            "Incorrect. \"Seasoned expert\" does not belong to \"Amateur\".",
-            "Incorrect. \"Amateurish\" does not belong to \"Amateur\".",
-            "Incorrect. \"Accredited\" does not belong to \"Amateur\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Amateur: \"______\".",
-          "question": "Type the term belonging to [Amateur] (10 letters):",
-          "correctAnswer": "AMATEURISH",
-          "feedbackIfWrong": "The expected term for [Amateur] is \"Amateurish\".",
-          "hint": "Starts with \"A\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L108_PRACTICE_Q3",
       "level": 108,
-      "word": "Community production",
-      "conceptTitle": "Topic Sorting Gym: Amateur vs Professional",
-      "targetKeyword": "Community production",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 108 (B2)",
       "topicBuckets": [
-        "Amateur",
-        "Professional"
+        "Category Alpha L108",
+        "Category Beta L108"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Community production\" belong to?",
-          "options": [
-            "Amateur",
-            "Professional"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L108",
+            "AlphaWord_2_L108",
+            "AlphaWord_3_L108",
+            "BetaWord_1_L108",
+            "BetaWord_2_L108",
+            "BetaWord_3_L108"
           ],
-          "correctAnswer": "Amateur",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Community production\" is categorized under \"Amateur\".",
-            "Not quite. \"Community production\" does not belong to \"Professional\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L108",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L108",
+                "AlphaWord_2_L108",
+                "AlphaWord_3_L108"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L108",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L108",
+                "BetaWord_2_L108",
+                "BetaWord_3_L108"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe work that meets a paying audience's expectations."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Professional\" category?",
-          "options": [
-            "Industry standard",
-            "Community production",
-            "Commands a fee",
-            "Polished delivery"
-          ],
-          "correctAnswer": "Industry standard",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Industry standard\" belongs directly to \"Professional\".",
-            "Incorrect. \"Community production\" does not belong to \"Professional\".",
-            "Incorrect. \"Commands a fee\" does not belong to \"Professional\".",
-            "Incorrect. \"Polished delivery\" does not belong to \"Professional\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Professional: \"______\".",
-          "question": "Type the term belonging to [Professional] (14 letters):",
-          "correctAnswer": "COMMANDS A FEE",
-          "feedbackIfWrong": "The expected term for [Professional] is \"Commands a fee\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L109_PRACTICE_Q1",
       "level": 109,
-      "word": "Fantasy",
-      "conceptTitle": "Topic Sorting Gym: Reality vs Dream",
-      "targetKeyword": "Fantasy",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 109 (B2)",
       "topicBuckets": [
-        "Reality",
-        "Dream"
+        "Category Alpha L109",
+        "Category Beta L109"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Fantasy\" belong to?",
-          "options": [
-            "Reality",
-            "Dream"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L109",
+            "AlphaWord_2_L109",
+            "AlphaWord_3_L109",
+            "BetaWord_1_L109",
+            "BetaWord_2_L109",
+            "BetaWord_3_L109"
           ],
-          "correctAnswer": "Dream",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Fantasy\" does not belong to \"Reality\".",
-            "Correct! \"Fantasy\" is categorized under \"Dream\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L109",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L109",
+                "AlphaWord_2_L109",
+                "AlphaWord_3_L109"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L109",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L109",
+                "BetaWord_2_L109",
+                "BetaWord_3_L109"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about what you can touch, and what happens only in the mind."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Dream\" category?",
-          "options": [
-            "Fantasy",
-            "Actual",
-            "Tangible",
-            "Vision"
-          ],
-          "correctAnswer": "Fantasy",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Fantasy\" belongs directly to \"Dream\".",
-            "Incorrect. \"Actual\" does not belong to \"Dream\".",
-            "Incorrect. \"Tangible\" does not belong to \"Dream\".",
-            "Incorrect. \"Vision\" does not belong to \"Dream\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Reality: \"______\".",
-          "question": "Type the term belonging to [Reality] (8 letters):",
-          "correctAnswer": "TANGIBLE",
-          "feedbackIfWrong": "The expected term for [Reality] is \"Tangible\".",
-          "hint": "Starts with \"T\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L109_PRACTICE_Q2",
       "level": 109,
-      "word": "Daydream",
-      "conceptTitle": "Topic Sorting Gym: Reality vs Dream",
-      "targetKeyword": "Daydream",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 109 (B2)",
       "topicBuckets": [
-        "Reality",
-        "Dream"
+        "Category Alpha L109",
+        "Category Beta L109"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Daydream\" belong to?",
-          "options": [
-            "Reality",
-            "Dream"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L109",
+            "AlphaWord_2_L109",
+            "AlphaWord_3_L109",
+            "BetaWord_1_L109",
+            "BetaWord_2_L109",
+            "BetaWord_3_L109"
           ],
-          "correctAnswer": "Dream",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Daydream\" does not belong to \"Reality\".",
-            "Correct! \"Daydream\" is categorized under \"Dream\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L109",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L109",
+                "AlphaWord_2_L109",
+                "AlphaWord_3_L109"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L109",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L109",
+                "BetaWord_2_L109",
+                "BetaWord_3_L109"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about what a plan needs to survive contact with the real world."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Dream\" category?",
-          "options": [
-            "Daydream",
-            "Utopian",
-            "Down-to-earth",
-            "Practical"
-          ],
-          "correctAnswer": "Daydream",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Daydream\" belongs directly to \"Dream\".",
-            "Incorrect. \"Utopian\" does not belong to \"Dream\".",
-            "Incorrect. \"Down-to-earth\" does not belong to \"Dream\".",
-            "Incorrect. \"Practical\" does not belong to \"Dream\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Reality: \"______\".",
-          "question": "Type the term belonging to [Reality] (13 letters):",
-          "correctAnswer": "DOWN-TO-EARTH",
-          "feedbackIfWrong": "The expected term for [Reality] is \"Down-to-earth\".",
-          "hint": "Starts with \"D\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L109_PRACTICE_Q3",
       "level": 109,
-      "word": "Hard evidence",
-      "conceptTitle": "Topic Sorting Gym: Reality vs Dream",
-      "targetKeyword": "Hard evidence",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 109 (B2)",
       "topicBuckets": [
-        "Reality",
-        "Dream"
+        "Category Alpha L109",
+        "Category Beta L109"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Hard evidence\" belong to?",
-          "options": [
-            "Reality",
-            "Dream"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L109",
+            "AlphaWord_2_L109",
+            "AlphaWord_3_L109",
+            "BetaWord_1_L109",
+            "BetaWord_2_L109",
+            "BetaWord_3_L109"
           ],
-          "correctAnswer": "Reality",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Hard evidence\" is categorized under \"Reality\".",
-            "Not quite. \"Hard evidence\" does not belong to \"Dream\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L109",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L109",
+                "AlphaWord_2_L109",
+                "AlphaWord_3_L109"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L109",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L109",
+                "BetaWord_2_L109",
+                "BetaWord_3_L109"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these suggest hopes unlikely to survive scrutiny."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Dream\" category?",
-          "options": [
-            "Wishful thinking",
-            "Hard evidence",
-            "Bottom line",
-            "Pie in the sky"
-          ],
-          "correctAnswer": "Wishful thinking",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Wishful thinking\" belongs directly to \"Dream\".",
-            "Incorrect. \"Hard evidence\" does not belong to \"Dream\".",
-            "Incorrect. \"Bottom line\" does not belong to \"Dream\".",
-            "Incorrect. \"Pie in the sky\" does not belong to \"Dream\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Dream: \"______\".",
-          "question": "Type the term belonging to [Dream] (16 letters):",
-          "correctAnswer": "WISHFUL THINKING",
-          "feedbackIfWrong": "The expected term for [Dream] is \"Wishful thinking\".",
-          "hint": "Starts with \"W\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L110_PRACTICE_Q1",
       "level": 110,
-      "word": "Heat",
-      "conceptTitle": "Topic Sorting Gym: Matter vs Energy",
-      "targetKeyword": "Heat",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 110 (B2)",
       "topicBuckets": [
-        "Matter",
-        "Energy"
+        "Category Alpha L110",
+        "Category Beta L110"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Heat\" belong to?",
-          "options": [
-            "Matter",
-            "Energy"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L110",
+            "AlphaWord_2_L110",
+            "AlphaWord_3_L110",
+            "BetaWord_1_L110",
+            "BetaWord_2_L110",
+            "BetaWord_3_L110"
           ],
-          "correctAnswer": "Energy",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Heat\" does not belong to \"Matter\".",
-            "Correct! \"Heat\" is categorized under \"Energy\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L110",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L110",
+                "AlphaWord_2_L110",
+                "AlphaWord_3_L110"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L110",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L110",
+                "BetaWord_2_L110",
+                "BetaWord_3_L110"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about what has weight and takes up space, and what makes things move or change."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Energy\" category?",
-          "options": [
-            "Heat",
-            "Solid",
-            "Particle",
-            "Electricity"
-          ],
-          "correctAnswer": "Heat",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Heat\" belongs directly to \"Energy\".",
-            "Incorrect. \"Solid\" does not belong to \"Energy\".",
-            "Incorrect. \"Particle\" does not belong to \"Energy\".",
-            "Incorrect. \"Electricity\" does not belong to \"Energy\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Matter: \"______\".",
-          "question": "Type the term belonging to [Matter] (8 letters):",
-          "correctAnswer": "PARTICLE",
-          "feedbackIfWrong": "The expected term for [Matter] is \"Particle\".",
-          "hint": "Starts with \"P\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L110_PRACTICE_Q2",
       "level": 110,
-      "word": "Mass",
-      "conceptTitle": "Topic Sorting Gym: Energy vs Matter",
-      "targetKeyword": "Mass",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 110 (B2)",
       "topicBuckets": [
-        "Energy",
-        "Matter"
+        "Category Alpha L110",
+        "Category Beta L110"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Mass\" belong to?",
-          "options": [
-            "Energy",
-            "Matter"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L110",
+            "AlphaWord_2_L110",
+            "AlphaWord_3_L110",
+            "BetaWord_1_L110",
+            "BetaWord_2_L110",
+            "BetaWord_3_L110"
           ],
-          "correctAnswer": "Matter",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Mass\" does not belong to \"Energy\".",
-            "Correct! \"Mass\" is categorized under \"Matter\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L110",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L110",
+                "AlphaWord_2_L110",
+                "AlphaWord_3_L110"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L110",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L110",
+                "BetaWord_2_L110",
+                "BetaWord_3_L110"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Weight and mass aren't quite the same thing — one measures substance itself."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Matter\" category?",
-          "options": [
-            "Mass",
-            "Radiation",
-            "Kinetic",
-            "Atom"
-          ],
-          "correctAnswer": "Mass",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Mass\" belongs directly to \"Matter\".",
-            "Incorrect. \"Radiation\" does not belong to \"Matter\".",
-            "Incorrect. \"Kinetic\" does not belong to \"Matter\".",
-            "Incorrect. \"Atom\" does not belong to \"Matter\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Energy: \"______\".",
-          "question": "Type the term belonging to [Energy] (7 letters):",
-          "correctAnswer": "KINETIC",
-          "feedbackIfWrong": "The expected term for [Energy] is \"Kinetic\".",
-          "hint": "Starts with \"K\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L110_PRACTICE_Q3",
       "level": 110,
-      "word": "Density",
-      "conceptTitle": "Topic Sorting Gym: Energy vs Matter",
-      "targetKeyword": "Density",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 110 (B2)",
       "topicBuckets": [
-        "Energy",
-        "Matter"
+        "Category Alpha L110",
+        "Category Beta L110"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Density\" belong to?",
-          "options": [
-            "Energy",
-            "Matter"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L110",
+            "AlphaWord_2_L110",
+            "AlphaWord_3_L110",
+            "BetaWord_1_L110",
+            "BetaWord_2_L110",
+            "BetaWord_3_L110"
           ],
-          "correctAnswer": "Matter",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Density\" does not belong to \"Energy\".",
-            "Correct! \"Density\" is categorized under \"Matter\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L110",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L110",
+                "AlphaWord_2_L110",
+                "AlphaWord_3_L110"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L110",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L110",
+                "BetaWord_2_L110",
+                "BetaWord_3_L110"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe what things are made of, rather than what makes them act."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Matter\" category?",
-          "options": [
-            "Density",
-            "Power output",
-            "Stored potential",
-            "Occupies space"
-          ],
-          "correctAnswer": "Density",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Density\" belongs directly to \"Matter\".",
-            "Incorrect. \"Power output\" does not belong to \"Matter\".",
-            "Incorrect. \"Stored potential\" does not belong to \"Matter\".",
-            "Incorrect. \"Occupies space\" does not belong to \"Matter\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Energy: \"______\".",
-          "question": "Type the term belonging to [Energy] (16 letters):",
-          "correctAnswer": "STORED POTENTIAL",
-          "feedbackIfWrong": "The expected term for [Energy] is \"Stored potential\".",
-          "hint": "Starts with \"S\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     }

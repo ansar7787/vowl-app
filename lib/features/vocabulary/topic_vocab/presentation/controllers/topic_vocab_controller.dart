@@ -1,215 +1,176 @@
-import 'dart:async';
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
-import 'package:vowl/core/utils/sound_service.dart';
-import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 
-/// Controller coordinating topic categorization gestures, batch sorting queues, and bin containment state.
+/// Data class representing a fused thematic cluster.
+class TopicClusterGroup {
+  final String categoryName;
+  final String emoji;
+  final List<String> words;
+  final String? explanation;
+
+  const TopicClusterGroup({
+    required this.categoryName,
+    required this.emoji,
+    required this.words,
+    this.explanation,
+  });
+}
+
+/// Controller managing Cluster Fusion matrix interactions, selections,
+/// one-away hints, and combo tracking.
 class TopicVocabController extends ChangeNotifier {
+  final List<TopicClusterGroup> _targetClusters;
+  final int targetClusterSize;
   final HapticService _hapticService;
-  final SoundService _soundService;
 
-  /// Callback executed to report trial answers to the parent game.
-  final void Function(bool isCorrect, {GameQuest? quest, String? userAnswer})
-  onSubmitAnswer;
+  late List<String> _remainingTiles;
+  final Set<String> _selectedTiles = {};
+  final List<TopicClusterGroup> _fusedClusters = [];
 
-  /// Current word index within the active sorting batch.
-  int currentWordIndex = 0;
+  bool _isOneAway = false;
+  int _consecutiveSuccesses = 0;
+  int _failedAttempts = 0;
+  bool _isShaking = false;
 
-  /// Whether the batch sorting trial has been evaluated.
-  bool isAnswered = false;
-
-  /// Whether the user passed the batch trial correctly.
-  bool? isCorrect;
-
-  /// Whether celebration confetti is currently enabled.
-  bool showConfetti = false;
-
-  /// Whether phase 1 sorting has concluded.
-  bool isFirstStagePassed = false;
-
-  /// Whether a pedagogical hint peek is active.
-  bool isHintActive = false;
-
-  /// Shuffled word queue for the current sorting trial.
-  List<String> shuffledOptions = [];
-
-  /// User choice history records.
-  final List<Map<String, String>> userChoices = [];
-
-  /// Map recording which words currently occupy each topic containment bin.
-  Map<int, List<String>> wordsInBins = {};
-  final Map<String, String> _expectedAnswers = {};
-
-  /// The word currently animating across the screen towards a bin.
-  String? flickedWord;
-
-  /// Target bin index receiving the flicked word.
-  int? flickTarget;
-
-  /// Starting pixel offset of the flick animation.
-  double? flickStartOffset;
-
-  /// The active vocabulary quest item.
-  VocabularyQuest? currentQuest;
-  bool _isDisposed = false;
-  Timer? _flickTimer;
-
-  /// Whether Stage 2 acts as an optional Bonus XP Arena with penalty-free victory banking.
-  final bool isBonusStage;
-
-  /// Creates a [TopicVocabController] instance with [hapticService] and [soundService].
   TopicVocabController({
-    required HapticService hapticService,
-    required SoundService soundService,
-    required this.onSubmitAnswer,
-    this.isBonusStage = false,
-  }) : _hapticService = hapticService,
-       _soundService = soundService;
-
-  @override
-  void notifyListeners() {
-    if (!_isDisposed) {
-      super.notifyListeners();
+    required List<TopicClusterGroup> targetClusters,
+    this.targetClusterSize = 3,
+    List<String>? initialTiles,
+    HapticService? hapticService,
+  }) : _targetClusters = targetClusters,
+       _hapticService =
+           hapticService ??
+           (di.sl.isRegistered<HapticService>()
+               ? di.sl<HapticService>()
+               : HapticService()) {
+    if (initialTiles != null && initialTiles.isNotEmpty) {
+      _remainingTiles = List.from(initialTiles);
+    } else {
+      _remainingTiles = _targetClusters.expand((c) => c.words).toList()
+        ..shuffle();
     }
   }
 
-  @override
-  void dispose() {
-    _isDisposed = true;
-    _flickTimer?.cancel();
-    super.dispose();
-  }
+  List<String> get remainingTiles => List.unmodifiable(_remainingTiles);
+  Set<String> get selectedTiles => Set.unmodifiable(_selectedTiles);
+  List<TopicClusterGroup> get fusedClusters =>
+      List.unmodifiable(_fusedClusters);
+  bool get isOneAway => _isOneAway;
+  int get comboMultiplier =>
+      _consecutiveSuccesses > 1 ? _consecutiveSuccesses : 1;
+  int get failedAttempts => _failedAttempts;
+  bool get isShaking => _isShaking;
+  bool get isComplete => _remainingTiles.isEmpty;
+  int get remainingClusterCount =>
+      _targetClusters.length - _fusedClusters.length;
 
-  void reset(VocabularyQuest? quest) {
-    if (_isDisposed) return;
-    _flickTimer?.cancel();
-    currentQuest = quest;
-    isAnswered = false;
-    isCorrect = null;
-    isFirstStagePassed = false;
-    currentWordIndex = 0;
-    isHintActive = false;
-    userChoices.clear();
-    _expectedAnswers.clear();
-
-    // Dynamically initialize bins based on actual bucket count.
-    final bucketCount = quest?.topicBuckets?.length ?? 2;
-    wordsInBins = {for (int i = 0; i < bucketCount; i++) i: <String>[]};
-
-    if (quest?.correctAnswer != null) {
-      final pairs = quest!.correctAnswer!.split(',');
-      for (var pair in pairs) {
-        final parts = pair.split(':');
-        if (parts.length == 2) {
-          final targetBucket = parts[0].trim().toLowerCase();
-          final targetWord = parts[1].trim().toLowerCase();
-          _expectedAnswers[targetWord] = targetBucket;
-        }
-      }
-    }
-
-    shuffledOptions = List<String>.from(quest?.options ?? [])..shuffle();
-    notifyListeners();
-  }
-
-  void activateHint() {
-    if (isHintActive || _isDisposed) return;
-    isHintActive = true;
-    notifyListeners();
-  }
-
-  void completeGame() {
-    if (showConfetti || _isDisposed) return;
-    showConfetti = true;
-    notifyListeners();
-  }
-
-  void handleFlick(
-    double velocity,
-    double dropOffset,
-    String word,
-    List<String> buckets,
-  ) {
-    if (isAnswered || flickedWord != null) return;
-
-    int targetBin = velocity < 0 ? 0 : 1;
-    String bucketName = buckets[targetBin % buckets.length];
-    bool isCorrectChoice = _validateChoice(word, bucketName);
-
-    flickedWord = word;
-    flickTarget = targetBin;
-    flickStartOffset = dropOffset;
-    notifyListeners();
-
-    _flickTimer?.cancel();
-    _flickTimer = Timer(const Duration(milliseconds: 250), () {
-      if (_isDisposed) return;
-
-      flickedWord = null;
-      flickTarget = null;
-      flickStartOffset = null;
-
-      if (!isCorrectChoice) {
-        _submitFinalAnswer(false, word: word);
-        return;
-      }
-
-      userChoices.add({'word': word, 'bucket': bucketName});
-      wordsInBins[targetBin]?.add(word);
-      isHintActive = false;
-      _soundService.playCorrect();
-
-      final idealMax = (buckets.length * 2 + 1).clamp(3, 5);
-      final maxWords = shuffledOptions.isNotEmpty
-          ? idealMax.clamp(1, shuffledOptions.length)
-          : idealMax;
-
-      if (currentWordIndex < maxWords - 1) {
-        currentWordIndex++;
+  /// Toggles selection of a word tile.
+  void toggleTile(String word) {
+    if (_remainingTiles.contains(word)) {
+      if (_selectedTiles.contains(word)) {
+        _selectedTiles.remove(word);
+        _isOneAway = false;
+        _hapticService.selection();
       } else {
-        _hapticService.success();
-        isFirstStagePassed = true;
-        if (isBonusStage) {
-          notifyListeners();
+        if (_selectedTiles.length < targetClusterSize) {
+          _selectedTiles.add(word);
+          _hapticService.light();
+          _checkOneAwayStatus();
         } else {
-          _submitFinalAnswer(true);
+          _hapticService.warning();
         }
       }
       notifyListeners();
-    });
-  }
-
-  /// Submits the final bonus victory with penalty-free victory banking.
-  void submitFinalBonusVictory([bool nailedIt = true]) {
-    _submitFinalAnswer(nailedIt);
-  }
-
-  void _submitFinalAnswer(bool nailedIt, {String? word}) {
-    if (isAnswered || _isDisposed) return;
-    isAnswered = true;
-    isCorrect = nailedIt;
-    notifyListeners();
-
-    if (nailedIt) {
-      onSubmitAnswer(true);
-    } else {
-      onSubmitAnswer(false, quest: currentQuest, userAnswer: word);
     }
   }
 
-  bool isHintTarget(String word, String bucket) {
-    if (!isHintActive) return false;
-    final cleanWord = word.trim().toLowerCase();
-    final cleanLabel = bucket.trim().toLowerCase();
-    return _expectedAnswers[cleanWord] == cleanLabel;
+  /// Clears active selection.
+  void deselectAll() {
+    if (_selectedTiles.isNotEmpty) {
+      _selectedTiles.clear();
+      _isOneAway = false;
+      notifyListeners();
+    }
   }
 
-  bool _validateChoice(String word, String bucket) {
-    final cleanWord = word.trim().toLowerCase();
-    final cleanLabel = bucket.trim().toLowerCase();
+  /// Shuffles remaining tiles on the board.
+  void shuffleRemaining() {
+    _remainingTiles.shuffle();
+    _hapticService.selection();
+    notifyListeners();
+  }
 
-    return _expectedAnswers[cleanWord] == cleanLabel;
+  /// Checks if selected tiles are exactly one tile away from completing any cluster.
+  void _checkOneAwayStatus() {
+    if (_selectedTiles.length == targetClusterSize) {
+      for (final cluster in _targetClusters) {
+        if (_fusedClusters.any((f) => f.categoryName == cluster.categoryName)) {
+          continue;
+        }
+        final matchCount = _selectedTiles
+            .where((w) => cluster.words.contains(w))
+            .length;
+        if (matchCount == targetClusterSize - 1) {
+          _isOneAway = true;
+          return;
+        }
+      }
+    }
+    _isOneAway = false;
+  }
+
+  /// Submits the current selection for cluster fusion evaluation.
+  /// Returns the completed [TopicClusterGroup] on match, or `null` on failure.
+  TopicClusterGroup? submitFusion() {
+    if (_selectedTiles.length != targetClusterSize) {
+      _hapticService.warning();
+      return null;
+    }
+
+    for (final cluster in _targetClusters) {
+      if (_fusedClusters.any((f) => f.categoryName == cluster.categoryName)) {
+        continue;
+      }
+
+      final isMatch = _selectedTiles.every((w) => cluster.words.contains(w));
+      if (isMatch) {
+        // Success
+        _fusedClusters.add(cluster);
+        _remainingTiles.removeWhere((w) => _selectedTiles.contains(w));
+        _selectedTiles.clear();
+        _isOneAway = false;
+        _consecutiveSuccesses++;
+        _hapticService.heavy();
+        notifyListeners();
+        return cluster;
+      }
+    }
+
+    // Failed fusion
+    _failedAttempts++;
+    _consecutiveSuccesses = 0;
+    _isShaking = true;
+    _checkOneAwayStatus();
+    _hapticService.error();
+    notifyListeners();
+
+    // Reset shake after brief frame
+    Future.delayed(const Duration(milliseconds: 600), () {
+      _isShaking = false;
+      notifyListeners();
+    });
+
+    return null;
+  }
+
+  /// Solves the puzzle automatically (e.g. for accessibility or skip hints).
+  void autoSolve() {
+    _fusedClusters.clear();
+    _fusedClusters.addAll(_targetClusters);
+    _remainingTiles.clear();
+    _selectedTiles.clear();
+    _isOneAway = false;
+    notifyListeners();
   }
 }

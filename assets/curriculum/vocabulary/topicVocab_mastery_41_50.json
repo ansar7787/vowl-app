@@ -6,813 +6,1563 @@
   "quests": [
     {
       "id": "VOC_TOPICVOCAB_L41_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Hobby or Work.",
+      "level": 41,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Hobby",
-        "Work"
+        "Category Alpha L41",
+        "Category Beta L41"
       ],
-      "hint": "Think about what you do to earn money versus what you do purely for enjoyment.",
-      "explanation": "Job, career, and occupation all describe paid employment, with career suggesting a long-term path rather than a single job. Pastime and 'leisure activity' both describe something done for fun in free time, not for income.",
       "options": [
-        "Job",
-        "Pastime",
-        "Occupation",
-        "Leisure activity",
-        "Career"
+        "AlphaWord_1_L41",
+        "AlphaWord_2_L41",
+        "AlphaWord_3_L41",
+        "BetaWord_1_L41",
+        "BetaWord_2_L41",
+        "BetaWord_3_L41"
       ],
-      "correctAnswer": "Work:Job, Hobby:Pastime, Work:Occupation, Hobby:Leisure activity, Work:Career",
+      "correctAnswer": "Category Alpha L41:AlphaWord_1_L41, Category Alpha L41:AlphaWord_2_L41, Category Alpha L41:AlphaWord_3_L41, Category Beta L41:BetaWord_1_L41, Category Beta L41:BetaWord_2_L41, Category Beta L41:BetaWord_3_L41",
       "relatedWords": [
-        "Job: a role someone does to earn money",
-        "Pastime: an activity done for enjoyment in spare time",
-        "Occupation: a person's paid job or profession",
-        "Leisure activity: something done for enjoyment during free time",
-        "Career: a long-term path of paid work"
+        "AlphaWord_1_L41: definition for AlphaWord_1_L41",
+        "AlphaWord_2_L41: definition for AlphaWord_2_L41",
+        "AlphaWord_3_L41: definition for AlphaWord_3_L41",
+        "BetaWord_1_L41: definition for BetaWord_1_L41",
+        "BetaWord_2_L41: definition for BetaWord_2_L41",
+        "BetaWord_3_L41: definition for BetaWord_3_L41"
       ],
-      "level": 41
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L41",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L41",
+            "AlphaWord_2_L41",
+            "AlphaWord_3_L41"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L41",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L41",
+            "BetaWord_2_L41",
+            "BetaWord_3_L41"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L41, AlphaWord_2_L41, AlphaWord_3_L41) vs Beta words (BetaWord_1_L41, BetaWord_2_L41, BetaWord_3_L41)."
     },
     {
       "id": "VOC_TOPICVOCAB_L41_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Think about how someone makes a living versus how they unwind after hours. Sort into Work or Hobby.",
+      "level": 41,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Work",
-        "Hobby"
+        "Category Alpha L41",
+        "Category Beta L41"
       ],
-      "hint": "One work word suggests a job someone feels genuinely called to do.",
-      "explanation": "Vocation, livelihood, and trade all describe how someone earns money, with vocation specifically suggesting work someone feels called to do. Diversion and recreation both describe hobbies, activities meant to relax or entertain, away from work.",
       "options": [
-        "Recreation",
-        "Vocation",
-        "Trade",
-        "Diversion",
-        "Livelihood"
+        "AlphaWord_1_L41",
+        "AlphaWord_2_L41",
+        "AlphaWord_3_L41",
+        "BetaWord_1_L41",
+        "BetaWord_2_L41",
+        "BetaWord_3_L41"
       ],
-      "correctAnswer": "Hobby:Recreation, Work:Vocation, Work:Trade, Hobby:Diversion, Work:Livelihood",
+      "correctAnswer": "Category Alpha L41:AlphaWord_1_L41, Category Alpha L41:AlphaWord_2_L41, Category Alpha L41:AlphaWord_3_L41, Category Beta L41:BetaWord_1_L41, Category Beta L41:BetaWord_2_L41, Category Beta L41:BetaWord_3_L41",
       "relatedWords": [
-        "Recreation: activity done for enjoyment when not working",
-        "Vocation: a job someone feels strongly suited or called to do",
-        "Trade: a skilled job, especially manual or craft work",
-        "Diversion: an activity that provides entertainment or relaxation",
-        "Livelihood: a means of earning money to live"
+        "AlphaWord_1_L41: definition for AlphaWord_1_L41",
+        "AlphaWord_2_L41: definition for AlphaWord_2_L41",
+        "AlphaWord_3_L41: definition for AlphaWord_3_L41",
+        "BetaWord_1_L41: definition for BetaWord_1_L41",
+        "BetaWord_2_L41: definition for BetaWord_2_L41",
+        "BetaWord_3_L41: definition for BetaWord_3_L41"
       ],
-      "level": 41
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L41",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L41",
+            "AlphaWord_2_L41",
+            "AlphaWord_3_L41"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L41",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L41",
+            "BetaWord_2_L41",
+            "BetaWord_3_L41"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L41, AlphaWord_2_L41, AlphaWord_3_L41) vs Beta words (BetaWord_1_L41, BetaWord_2_L41, BetaWord_3_L41)."
     },
     {
       "id": "VOC_TOPICVOCAB_L41_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Think about how you'd describe your job on a resume versus what you do on weekends purely because you love it. Sort into Work or Hobby.",
+      "level": 41,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Work",
-        "Hobby"
+        "Category Alpha L41",
+        "Category Beta L41"
       ],
-      "hint": "One work phrase refers to a standard workday schedule.",
-      "explanation": "Employment, workload, and 'nine-to-five' all describe formal paid work, with 'nine-to-five' specifically referring to a standard workday schedule. A 'side project' and a 'passion project' both describe something pursued in free time out of genuine interest, not for a paycheck.",
       "options": [
-        "Employment",
-        "Workload",
-        "Nine-to-five",
-        "Side project",
-        "Passion project"
+        "AlphaWord_1_L41",
+        "AlphaWord_2_L41",
+        "AlphaWord_3_L41",
+        "BetaWord_1_L41",
+        "BetaWord_2_L41",
+        "BetaWord_3_L41"
       ],
-      "correctAnswer": "Work:Employment, Work:Workload, Work:Nine-to-five, Hobby:Side project, Hobby:Passion project",
+      "correctAnswer": "Category Alpha L41:AlphaWord_1_L41, Category Alpha L41:AlphaWord_2_L41, Category Alpha L41:AlphaWord_3_L41, Category Beta L41:BetaWord_1_L41, Category Beta L41:BetaWord_2_L41, Category Beta L41:BetaWord_3_L41",
       "relatedWords": [
-        "Employment: the state of having paid work",
-        "Workload: the amount of work someone has to do",
-        "Nine-to-five: a standard workday schedule",
-        "Side project: something worked on for interest, outside of a main job",
-        "Passion project: something pursued out of genuine personal interest"
+        "AlphaWord_1_L41: definition for AlphaWord_1_L41",
+        "AlphaWord_2_L41: definition for AlphaWord_2_L41",
+        "AlphaWord_3_L41: definition for AlphaWord_3_L41",
+        "BetaWord_1_L41: definition for BetaWord_1_L41",
+        "BetaWord_2_L41: definition for BetaWord_2_L41",
+        "BetaWord_3_L41: definition for BetaWord_3_L41"
       ],
-      "level": 41
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L41",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L41",
+            "AlphaWord_2_L41",
+            "AlphaWord_3_L41"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L41",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L41",
+            "BetaWord_2_L41",
+            "BetaWord_3_L41"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L41, AlphaWord_2_L41, AlphaWord_3_L41) vs Beta words (BetaWord_1_L41, BetaWord_2_L41, BetaWord_3_L41)."
     },
     {
       "id": "VOC_TOPICVOCAB_L42_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Student or Teacher.",
+      "level": 42,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Student",
-        "Teacher"
+        "Category Alpha L42",
+        "Category Beta L42"
       ],
-      "hint": "Think about who's standing at the front of the room, and who's sitting and listening.",
-      "explanation": "Instructor, educator, and professor are all words for someone who teaches, with professor specifically used at a university level. Pupil and learner both describe someone being taught, with pupil being a slightly more traditional or formal word.",
       "options": [
-        "Educator",
-        "Instructor",
-        "Learner",
-        "Professor",
-        "Pupil"
+        "AlphaWord_1_L42",
+        "AlphaWord_2_L42",
+        "AlphaWord_3_L42",
+        "BetaWord_1_L42",
+        "BetaWord_2_L42",
+        "BetaWord_3_L42"
       ],
-      "correctAnswer": "Teacher:Educator, Teacher:Instructor, Student:Learner, Teacher:Professor, Student:Pupil",
+      "correctAnswer": "Category Alpha L42:AlphaWord_1_L42, Category Alpha L42:AlphaWord_2_L42, Category Alpha L42:AlphaWord_3_L42, Category Beta L42:BetaWord_1_L42, Category Beta L42:BetaWord_2_L42, Category Beta L42:BetaWord_3_L42",
       "relatedWords": [
-        "Educator: a person who teaches, especially professionally",
-        "Instructor: someone who teaches a skill or subject",
-        "Learner: a person who is learning something",
-        "Professor: a senior teacher at a university",
-        "Pupil: a student, especially a younger one"
+        "AlphaWord_1_L42: definition for AlphaWord_1_L42",
+        "AlphaWord_2_L42: definition for AlphaWord_2_L42",
+        "AlphaWord_3_L42: definition for AlphaWord_3_L42",
+        "BetaWord_1_L42: definition for BetaWord_1_L42",
+        "BetaWord_2_L42: definition for BetaWord_2_L42",
+        "BetaWord_3_L42: definition for BetaWord_3_L42"
       ],
-      "level": 42
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L42",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L42",
+            "AlphaWord_2_L42",
+            "AlphaWord_3_L42"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L42",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L42",
+            "BetaWord_2_L42",
+            "BetaWord_3_L42"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L42, AlphaWord_2_L42, AlphaWord_3_L42) vs Beta words (BetaWord_1_L42, BetaWord_2_L42, BetaWord_3_L42)."
     },
     {
       "id": "VOC_TOPICVOCAB_L42_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Think about someone who trains another person in a skill or trade. Sort into Student or Teacher.",
+      "level": 42,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Student",
-        "Teacher"
+        "Category Alpha L42",
+        "Category Beta L42"
       ],
-      "hint": "One teacher word specifically means giving formal talks, often at a university.",
-      "explanation": "Mentor, tutor, and lecturer all describe someone who guides or teaches others, with a lecturer specifically giving formal talks, often at a university. Apprentice and trainee both describe someone learning a skill, often while working under supervision.",
       "options": [
-        "Apprentice",
-        "Lecturer",
-        "Trainee",
-        "Tutor",
-        "Mentor"
+        "AlphaWord_1_L42",
+        "AlphaWord_2_L42",
+        "AlphaWord_3_L42",
+        "BetaWord_1_L42",
+        "BetaWord_2_L42",
+        "BetaWord_3_L42"
       ],
-      "correctAnswer": "Student:Apprentice, Teacher:Lecturer, Student:Trainee, Teacher:Tutor, Teacher:Mentor",
+      "correctAnswer": "Category Alpha L42:AlphaWord_1_L42, Category Alpha L42:AlphaWord_2_L42, Category Alpha L42:AlphaWord_3_L42, Category Beta L42:BetaWord_1_L42, Category Beta L42:BetaWord_2_L42, Category Beta L42:BetaWord_3_L42",
       "relatedWords": [
-        "Apprentice: someone learning a trade under a skilled worker",
-        "Lecturer: someone who gives formal talks, especially at a university",
-        "Trainee: a person being trained for a job",
-        "Tutor: a private teacher, often teaching one person or a small group",
-        "Mentor: an experienced person who guides someone less experienced"
+        "AlphaWord_1_L42: definition for AlphaWord_1_L42",
+        "AlphaWord_2_L42: definition for AlphaWord_2_L42",
+        "AlphaWord_3_L42: definition for AlphaWord_3_L42",
+        "BetaWord_1_L42: definition for BetaWord_1_L42",
+        "BetaWord_2_L42: definition for BetaWord_2_L42",
+        "BetaWord_3_L42: definition for BetaWord_3_L42"
       ],
-      "level": 42
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L42",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L42",
+            "AlphaWord_2_L42",
+            "AlphaWord_3_L42"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L42",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L42",
+            "BetaWord_2_L42",
+            "BetaWord_3_L42"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L42, AlphaWord_2_L42, AlphaWord_3_L42) vs Beta words (BetaWord_1_L42, BetaWord_2_L42, BetaWord_3_L42)."
     },
     {
       "id": "VOC_TOPICVOCAB_L42_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Think about the people employed to teach at a university versus the people enrolled to learn there. Sort into Teacher or Student.",
+      "level": 42,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Teacher",
-        "Student"
+        "Category Alpha L42",
+        "Category Beta L42"
       ],
-      "hint": "One teacher term specifically means a permanent academic position.",
-      "explanation": "Faculty, 'academic staff', and a 'tenured professor' all describe people employed to teach, with tenure specifically meaning a permanent academic position. An undergraduate and an enrollee both describe someone registered to study, with undergraduate specifically referring to a student working toward a first degree.",
       "options": [
-        "Faculty",
-        "Tenured professor",
-        "Enrollee",
-        "Academic staff",
-        "Undergraduate"
+        "AlphaWord_1_L42",
+        "AlphaWord_2_L42",
+        "AlphaWord_3_L42",
+        "BetaWord_1_L42",
+        "BetaWord_2_L42",
+        "BetaWord_3_L42"
       ],
-      "correctAnswer": "Teacher:Faculty, Teacher:Tenured professor, Student:Enrollee, Teacher:Academic staff, Student:Undergraduate",
+      "correctAnswer": "Category Alpha L42:AlphaWord_1_L42, Category Alpha L42:AlphaWord_2_L42, Category Alpha L42:AlphaWord_3_L42, Category Beta L42:BetaWord_1_L42, Category Beta L42:BetaWord_2_L42, Category Beta L42:BetaWord_3_L42",
       "relatedWords": [
-        "Faculty: the teaching staff of a school or university",
-        "Tenured professor: a professor holding a permanent academic position",
-        "Enrollee: someone registered to take a course",
-        "Academic staff: people employed to teach or research at a school or university",
-        "Undergraduate: a student working toward a first university degree"
+        "AlphaWord_1_L42: definition for AlphaWord_1_L42",
+        "AlphaWord_2_L42: definition for AlphaWord_2_L42",
+        "AlphaWord_3_L42: definition for AlphaWord_3_L42",
+        "BetaWord_1_L42: definition for BetaWord_1_L42",
+        "BetaWord_2_L42: definition for BetaWord_2_L42",
+        "BetaWord_3_L42: definition for BetaWord_3_L42"
       ],
-      "level": 42
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L42",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L42",
+            "AlphaWord_2_L42",
+            "AlphaWord_3_L42"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L42",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L42",
+            "BetaWord_2_L42",
+            "BetaWord_3_L42"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L42, AlphaWord_2_L42, AlphaWord_3_L42) vs Beta words (BetaWord_1_L42, BetaWord_2_L42, BetaWord_3_L42)."
     },
     {
       "id": "VOC_TOPICVOCAB_L43_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Doctor or Patient.",
+      "level": 43,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Doctor",
-        "Patient"
+        "Category Alpha L43",
+        "Category Beta L43"
       ],
-      "hint": "Think about who is providing medical care, and who is receiving it.",
-      "explanation": "Physician, surgeon, and specialist are all types of doctors, with a specialist focusing on one particular area of medicine. An outpatient is a patient who doesn't stay overnight in a hospital, and a 'case' is a medical term for a particular patient's health situation.",
       "options": [
-        "Surgeon",
-        "Outpatient",
-        "Physician",
-        "Case",
-        "Specialist"
+        "AlphaWord_1_L43",
+        "AlphaWord_2_L43",
+        "AlphaWord_3_L43",
+        "BetaWord_1_L43",
+        "BetaWord_2_L43",
+        "BetaWord_3_L43"
       ],
-      "correctAnswer": "Doctor:Surgeon, Patient:Outpatient, Doctor:Physician, Patient:Case, Doctor:Specialist",
+      "correctAnswer": "Category Alpha L43:AlphaWord_1_L43, Category Alpha L43:AlphaWord_2_L43, Category Alpha L43:AlphaWord_3_L43, Category Beta L43:BetaWord_1_L43, Category Beta L43:BetaWord_2_L43, Category Beta L43:BetaWord_3_L43",
       "relatedWords": [
-        "Surgeon: a doctor who performs operations",
-        "Outpatient: a patient treated without staying overnight in hospital",
-        "Physician: a medical doctor",
-        "Case: a medical term for a particular patient's situation",
-        "Specialist: a doctor focused on one area of medicine"
+        "AlphaWord_1_L43: definition for AlphaWord_1_L43",
+        "AlphaWord_2_L43: definition for AlphaWord_2_L43",
+        "AlphaWord_3_L43: definition for AlphaWord_3_L43",
+        "BetaWord_1_L43: definition for BetaWord_1_L43",
+        "BetaWord_2_L43: definition for BetaWord_2_L43",
+        "BetaWord_3_L43: definition for BetaWord_3_L43"
       ],
-      "level": 43
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L43",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L43",
+            "AlphaWord_2_L43",
+            "AlphaWord_3_L43"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L43",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L43",
+            "BetaWord_2_L43",
+            "BetaWord_3_L43"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L43, AlphaWord_2_L43, AlphaWord_3_L43) vs Beta words (BetaWord_1_L43, BetaWord_2_L43, BetaWord_3_L43)."
     },
     {
       "id": "VOC_TOPICVOCAB_L43_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Think about a senior specialist in a hospital, and someone confined to bed while recovering. Sort into Doctor or Patient.",
+      "level": 43,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Doctor",
-        "Patient"
+        "Category Alpha L43",
+        "Category Beta L43"
       ],
-      "hint": "One doctor word specifically refers to a senior specialist, especially in British hospitals.",
-      "explanation": "Practitioner, consultant, and 'attending physician' are all terms for a doctor, with consultant specifically referring to a senior specialist, especially in British hospitals. A convalescent is someone recovering from illness, and bedridden describes someone unable to leave their bed due to illness.",
       "options": [
-        "Bedridden",
-        "Convalescent",
-        "Attending physician",
-        "Practitioner",
-        "Consultant"
+        "AlphaWord_1_L43",
+        "AlphaWord_2_L43",
+        "AlphaWord_3_L43",
+        "BetaWord_1_L43",
+        "BetaWord_2_L43",
+        "BetaWord_3_L43"
       ],
-      "correctAnswer": "Patient:Bedridden, Patient:Convalescent, Doctor:Attending physician, Doctor:Practitioner, Doctor:Consultant",
+      "correctAnswer": "Category Alpha L43:AlphaWord_1_L43, Category Alpha L43:AlphaWord_2_L43, Category Alpha L43:AlphaWord_3_L43, Category Beta L43:BetaWord_1_L43, Category Beta L43:BetaWord_2_L43, Category Beta L43:BetaWord_3_L43",
       "relatedWords": [
-        "Bedridden: unable to leave bed due to illness or injury",
-        "Convalescent: a person recovering from illness",
-        "Attending physician: the doctor primarily responsible for a patient's care",
-        "Practitioner: a person practicing medicine",
-        "Consultant: a senior specialist doctor, especially in the UK"
+        "AlphaWord_1_L43: definition for AlphaWord_1_L43",
+        "AlphaWord_2_L43: definition for AlphaWord_2_L43",
+        "AlphaWord_3_L43: definition for AlphaWord_3_L43",
+        "BetaWord_1_L43: definition for BetaWord_1_L43",
+        "BetaWord_2_L43: definition for BetaWord_2_L43",
+        "BetaWord_3_L43: definition for BetaWord_3_L43"
       ],
-      "level": 43
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L43",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L43",
+            "AlphaWord_2_L43",
+            "AlphaWord_3_L43"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L43",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L43",
+            "BetaWord_2_L43",
+            "BetaWord_3_L43"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L43, AlphaWord_2_L43, AlphaWord_3_L43) vs Beta words (BetaWord_1_L43, BetaWord_2_L43, BetaWord_3_L43)."
     },
     {
       "id": "VOC_TOPICVOCAB_L43_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These are the kinds of phrases you'd read on a hospital discharge form. Sort into Doctor or Patient.",
+      "level": 43,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Doctor",
-        "Patient"
+        "Category Alpha L43",
+        "Category Beta L43"
       ],
-      "hint": "Think about who sent a patient for further care, and who is being sent home.",
-      "explanation": "A 'primary care physician', 'health care provider', and 'referring doctor' are all formal terms for a doctor, used especially on medical paperwork. A 'follow-up patient' has already been seen and is returning for continued care, and a 'discharge-ready patient' is well enough to leave the hospital.",
       "options": [
-        "Follow-up patient",
-        "Referring doctor",
-        "Discharge-ready patient",
-        "Health care provider",
-        "Primary care physician"
+        "AlphaWord_1_L43",
+        "AlphaWord_2_L43",
+        "AlphaWord_3_L43",
+        "BetaWord_1_L43",
+        "BetaWord_2_L43",
+        "BetaWord_3_L43"
       ],
-      "correctAnswer": "Patient:Follow-up patient, Doctor:Referring doctor, Patient:Discharge-ready patient, Doctor:Health care provider, Doctor:Primary care physician",
+      "correctAnswer": "Category Alpha L43:AlphaWord_1_L43, Category Alpha L43:AlphaWord_2_L43, Category Alpha L43:AlphaWord_3_L43, Category Beta L43:BetaWord_1_L43, Category Beta L43:BetaWord_2_L43, Category Beta L43:BetaWord_3_L43",
       "relatedWords": [
-        "Follow-up patient: a patient returning for continued care",
-        "Referring doctor: the doctor who sends a patient to a specialist",
-        "Discharge-ready patient: a patient well enough to leave the hospital",
-        "Health care provider: a formal term for someone who provides medical care",
-        "Primary care physician: a patient's main, regular doctor"
+        "AlphaWord_1_L43: definition for AlphaWord_1_L43",
+        "AlphaWord_2_L43: definition for AlphaWord_2_L43",
+        "AlphaWord_3_L43: definition for AlphaWord_3_L43",
+        "BetaWord_1_L43: definition for BetaWord_1_L43",
+        "BetaWord_2_L43: definition for BetaWord_2_L43",
+        "BetaWord_3_L43: definition for BetaWord_3_L43"
       ],
-      "level": 43
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L43",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L43",
+            "AlphaWord_2_L43",
+            "AlphaWord_3_L43"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L43",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L43",
+            "BetaWord_2_L43",
+            "BetaWord_3_L43"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L43, AlphaWord_2_L43, AlphaWord_3_L43) vs Beta words (BetaWord_1_L43, BetaWord_2_L43, BetaWord_3_L43)."
     },
     {
       "id": "VOC_TOPICVOCAB_L44_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Customer or Shopkeeper.",
+      "level": 44,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Customer",
-        "Shopkeeper"
+        "Category Alpha L44",
+        "Category Beta L44"
       ],
-      "hint": "Think about who owns the store, and who walks in to buy something.",
-      "explanation": "Shopper, patron, and client are all words for someone buying goods or services, with patron and client sounding slightly more formal. Proprietor and storekeeper both describe the person who owns and runs a shop.",
       "options": [
-        "Shopper",
-        "Patron",
-        "Client",
-        "Storekeeper",
-        "Proprietor"
+        "AlphaWord_1_L44",
+        "AlphaWord_2_L44",
+        "AlphaWord_3_L44",
+        "BetaWord_1_L44",
+        "BetaWord_2_L44",
+        "BetaWord_3_L44"
       ],
-      "correctAnswer": "Customer:Shopper, Customer:Patron, Customer:Client, Shopkeeper:Storekeeper, Shopkeeper:Proprietor",
+      "correctAnswer": "Category Alpha L44:AlphaWord_1_L44, Category Alpha L44:AlphaWord_2_L44, Category Alpha L44:AlphaWord_3_L44, Category Beta L44:BetaWord_1_L44, Category Beta L44:BetaWord_2_L44, Category Beta L44:BetaWord_3_L44",
       "relatedWords": [
-        "Shopper: a person who is buying or looking at goods",
-        "Patron: a customer of a shop or business, especially a regular one",
-        "Client: a person who uses the services of a business",
-        "Storekeeper: a person who owns or runs a shop",
-        "Proprietor: the owner of a business, especially a shop"
+        "AlphaWord_1_L44: definition for AlphaWord_1_L44",
+        "AlphaWord_2_L44: definition for AlphaWord_2_L44",
+        "AlphaWord_3_L44: definition for AlphaWord_3_L44",
+        "BetaWord_1_L44: definition for BetaWord_1_L44",
+        "BetaWord_2_L44: definition for BetaWord_2_L44",
+        "BetaWord_3_L44: definition for BetaWord_3_L44"
       ],
-      "level": 44
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L44",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L44",
+            "AlphaWord_2_L44",
+            "AlphaWord_3_L44"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L44",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L44",
+            "BetaWord_2_L44",
+            "BetaWord_3_L44"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L44, AlphaWord_2_L44, AlphaWord_3_L44) vs Beta words (BetaWord_1_L44, BetaWord_2_L44, BetaWord_3_L44)."
     },
     {
       "id": "VOC_TOPICVOCAB_L44_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Think about someone who comes back to the same shop every week, and the staff who greet them. Sort into Customer or Shopkeeper.",
+      "level": 44,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Customer",
-        "Shopkeeper"
+        "Category Alpha L44",
+        "Category Beta L44"
       ],
-      "hint": "Two customer words describe someone who visits often, and one describes someone just browsing.",
-      "explanation": "A 'regular' and a 'loyal patron' both describe a customer who returns often, and a 'window shopper' looks at goods without necessarily buying. A cashier and a 'retail assistant' are both staff roles working in a shop, helping customers and handling sales.",
       "options": [
-        "Window shopper",
-        "Loyal patron",
-        "Cashier",
-        "Regular",
-        "Retail assistant"
+        "AlphaWord_1_L44",
+        "AlphaWord_2_L44",
+        "AlphaWord_3_L44",
+        "BetaWord_1_L44",
+        "BetaWord_2_L44",
+        "BetaWord_3_L44"
       ],
-      "correctAnswer": "Customer:Window shopper, Customer:Loyal patron, Shopkeeper:Cashier, Customer:Regular, Shopkeeper:Retail assistant",
+      "correctAnswer": "Category Alpha L44:AlphaWord_1_L44, Category Alpha L44:AlphaWord_2_L44, Category Alpha L44:AlphaWord_3_L44, Category Beta L44:BetaWord_1_L44, Category Beta L44:BetaWord_2_L44, Category Beta L44:BetaWord_3_L44",
       "relatedWords": [
-        "Window shopper: someone who looks at goods without necessarily buying",
-        "Loyal patron: a customer who consistently returns to the same business",
-        "Cashier: a shop employee who handles payments",
-        "Regular: a customer who visits often",
-        "Retail assistant: a shop employee who helps customers"
+        "AlphaWord_1_L44: definition for AlphaWord_1_L44",
+        "AlphaWord_2_L44: definition for AlphaWord_2_L44",
+        "AlphaWord_3_L44: definition for AlphaWord_3_L44",
+        "BetaWord_1_L44: definition for BetaWord_1_L44",
+        "BetaWord_2_L44: definition for BetaWord_2_L44",
+        "BetaWord_3_L44: definition for BetaWord_3_L44"
       ],
-      "level": 44
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L44",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L44",
+            "AlphaWord_2_L44",
+            "AlphaWord_3_L44"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L44",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L44",
+            "BetaWord_2_L44",
+            "BetaWord_3_L44"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L44, AlphaWord_2_L44, AlphaWord_3_L44) vs Beta words (BetaWord_1_L44, BetaWord_2_L44, BetaWord_3_L44)."
     },
     {
       "id": "VOC_TOPICVOCAB_L44_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These are business terms. Think about the people a shop is trying to attract, versus the person running it. Sort into Customer or Shopkeeper.",
+      "level": 44,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Customer",
-        "Shopkeeper"
+        "Category Alpha L44",
+        "Category Beta L44"
       ],
-      "hint": "One shopkeeper term specifically means someone who runs a shop without being part of a large chain.",
-      "explanation": "A 'consumer base', 'target audience', and 'foot traffic' are all business terms describing customers collectively, either as a group being marketed to or as people physically visiting a store. A 'small business owner' and an 'independent retailer' both describe someone who owns and runs their own shop, without being part of a large chain.",
       "options": [
-        "Small business owner",
-        "Consumer base",
-        "Foot traffic",
-        "Independent retailer",
-        "Target audience"
+        "AlphaWord_1_L44",
+        "AlphaWord_2_L44",
+        "AlphaWord_3_L44",
+        "BetaWord_1_L44",
+        "BetaWord_2_L44",
+        "BetaWord_3_L44"
       ],
-      "correctAnswer": "Shopkeeper:Small business owner, Customer:Consumer base, Customer:Foot traffic, Shopkeeper:Independent retailer, Customer:Target audience",
+      "correctAnswer": "Category Alpha L44:AlphaWord_1_L44, Category Alpha L44:AlphaWord_2_L44, Category Alpha L44:AlphaWord_3_L44, Category Beta L44:BetaWord_1_L44, Category Beta L44:BetaWord_2_L44, Category Beta L44:BetaWord_3_L44",
       "relatedWords": [
-        "Small business owner: a person who owns and runs their own small business",
-        "Consumer base: the group of customers a business serves",
-        "Foot traffic: the number of people physically visiting a store",
-        "Independent retailer: a shop owner not part of a large chain",
-        "Target audience: the specific group a business aims to attract"
+        "AlphaWord_1_L44: definition for AlphaWord_1_L44",
+        "AlphaWord_2_L44: definition for AlphaWord_2_L44",
+        "AlphaWord_3_L44: definition for AlphaWord_3_L44",
+        "BetaWord_1_L44: definition for BetaWord_1_L44",
+        "BetaWord_2_L44: definition for BetaWord_2_L44",
+        "BetaWord_3_L44: definition for BetaWord_3_L44"
       ],
-      "level": 44
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L44",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L44",
+            "AlphaWord_2_L44",
+            "AlphaWord_3_L44"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L44",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L44",
+            "BetaWord_2_L44",
+            "BetaWord_3_L44"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L44, AlphaWord_2_L44, AlphaWord_3_L44) vs Beta words (BetaWord_1_L44, BetaWord_2_L44, BetaWord_3_L44)."
     },
     {
       "id": "VOC_TOPICVOCAB_L45_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Beach or Mountain.",
+      "level": 45,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Beach",
-        "Mountain"
+        "Category Alpha L45",
+        "Category Beta L45"
       ],
-      "hint": "Think about climbing to the top of one, and walking along the edge of the other.",
-      "explanation": "Summit, peak, and slope all describe parts of a mountain, from its highest point to its angled sides. Shoreline and coastline both describe where land meets the sea, the defining feature of a beach.",
       "options": [
-        "Summit",
-        "Shoreline",
-        "Peak",
-        "Slope",
-        "Coastline"
+        "AlphaWord_1_L45",
+        "AlphaWord_2_L45",
+        "AlphaWord_3_L45",
+        "BetaWord_1_L45",
+        "BetaWord_2_L45",
+        "BetaWord_3_L45"
       ],
-      "correctAnswer": "Mountain:Summit, Beach:Shoreline, Mountain:Peak, Mountain:Slope, Beach:Coastline",
+      "correctAnswer": "Category Alpha L45:AlphaWord_1_L45, Category Alpha L45:AlphaWord_2_L45, Category Alpha L45:AlphaWord_3_L45, Category Beta L45:BetaWord_1_L45, Category Beta L45:BetaWord_2_L45, Category Beta L45:BetaWord_3_L45",
       "relatedWords": [
-        "Summit: the highest point of a mountain",
-        "Shoreline: the line where land meets a body of water",
-        "Peak: the pointed top of a mountain",
-        "Slope: a surface with one side higher than the other",
-        "Coastline: the outline of a coast, where land meets the sea"
+        "AlphaWord_1_L45: definition for AlphaWord_1_L45",
+        "AlphaWord_2_L45: definition for AlphaWord_2_L45",
+        "AlphaWord_3_L45: definition for AlphaWord_3_L45",
+        "BetaWord_1_L45: definition for BetaWord_1_L45",
+        "BetaWord_2_L45: definition for BetaWord_2_L45",
+        "BetaWord_3_L45: definition for BetaWord_3_L45"
       ],
-      "level": 45
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L45",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L45",
+            "AlphaWord_2_L45",
+            "AlphaWord_3_L45"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L45",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L45",
+            "BetaWord_2_L45",
+            "BetaWord_3_L45"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L45, AlphaWord_2_L45, AlphaWord_3_L45) vs Beta words (BetaWord_1_L45, BetaWord_2_L45, BetaWord_3_L45)."
     },
     {
       "id": "VOC_TOPICVOCAB_L45_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Think about where hikers start their climb, and where small sea creatures gather in shallow water. Sort into Beach or Mountain.",
+      "level": 45,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Beach",
-        "Mountain"
+        "Category Alpha L45",
+        "Category Beta L45"
       ],
-      "hint": "One mountain word describes a temporary camp used before a big climb.",
-      "explanation": "A trailhead, base camp, and ridge are all specific to mountain terrain — a base camp is a temporary camp used before a big climb, and a ridge is a long, narrow, raised strip of land. A tide pool and a sandbar are both features found on or near a beach, shaped by the movement of tides.",
       "options": [
-        "Sandbar",
-        "Tide pool",
-        "Ridge",
-        "Base camp",
-        "Trailhead"
+        "AlphaWord_1_L45",
+        "AlphaWord_2_L45",
+        "AlphaWord_3_L45",
+        "BetaWord_1_L45",
+        "BetaWord_2_L45",
+        "BetaWord_3_L45"
       ],
-      "correctAnswer": "Beach:Sandbar, Beach:Tide pool, Mountain:Ridge, Mountain:Base camp, Mountain:Trailhead",
+      "correctAnswer": "Category Alpha L45:AlphaWord_1_L45, Category Alpha L45:AlphaWord_2_L45, Category Alpha L45:AlphaWord_3_L45, Category Beta L45:BetaWord_1_L45, Category Beta L45:BetaWord_2_L45, Category Beta L45:BetaWord_3_L45",
       "relatedWords": [
-        "Sandbar: a ridge of sand built up by water currents",
-        "Tide pool: a shallow pool of seawater left behind at low tide",
-        "Ridge: a long, narrow, raised strip of land",
-        "Base camp: a temporary camp used as a starting point for climbing",
-        "Trailhead: the starting point of a hiking trail"
+        "AlphaWord_1_L45: definition for AlphaWord_1_L45",
+        "AlphaWord_2_L45: definition for AlphaWord_2_L45",
+        "AlphaWord_3_L45: definition for AlphaWord_3_L45",
+        "BetaWord_1_L45: definition for BetaWord_1_L45",
+        "BetaWord_2_L45: definition for BetaWord_2_L45",
+        "BetaWord_3_L45: definition for BetaWord_3_L45"
       ],
-      "level": 45
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L45",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L45",
+            "AlphaWord_2_L45",
+            "AlphaWord_3_L45"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L45",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L45",
+            "BetaWord_2_L45",
+            "BetaWord_3_L45"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L45, AlphaWord_2_L45, AlphaWord_3_L45) vs Beta words (BetaWord_1_L45, BetaWord_2_L45, BetaWord_3_L45)."
     },
     {
       "id": "VOC_TOPICVOCAB_L45_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Think about a travel brochure — which words describe a ski resort, and which describe a seaside resort? Sort into Mountain or Beach.",
+      "level": 45,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Mountain",
-        "Beach"
+        "Category Alpha L45",
+        "Category Beta L45"
       ],
-      "hint": "Think about cold, high places versus warm, sunny ones.",
-      "explanation": "Alpine, snowcapped, and mountaineering all describe high, often cold mountain environments and the sport of climbing them. Tropical and 'sun-soaked' both describe the warm, sunny conditions typical of a beach vacation.",
       "options": [
-        "Mountaineering",
-        "Tropical",
-        "Alpine",
-        "Sun-soaked",
-        "Snowcapped"
+        "AlphaWord_1_L45",
+        "AlphaWord_2_L45",
+        "AlphaWord_3_L45",
+        "BetaWord_1_L45",
+        "BetaWord_2_L45",
+        "BetaWord_3_L45"
       ],
-      "correctAnswer": "Mountain:Mountaineering, Beach:Tropical, Mountain:Alpine, Beach:Sun-soaked, Mountain:Snowcapped",
+      "correctAnswer": "Category Alpha L45:AlphaWord_1_L45, Category Alpha L45:AlphaWord_2_L45, Category Alpha L45:AlphaWord_3_L45, Category Beta L45:BetaWord_1_L45, Category Beta L45:BetaWord_2_L45, Category Beta L45:BetaWord_3_L45",
       "relatedWords": [
-        "Mountaineering: the sport of climbing mountains",
-        "Tropical: relating to warm, sunny regions near the equator",
-        "Alpine: relating to high mountains",
-        "Sun-soaked: filled with or exposed to a lot of sunshine",
-        "Snowcapped: having a covering of snow on top"
+        "AlphaWord_1_L45: definition for AlphaWord_1_L45",
+        "AlphaWord_2_L45: definition for AlphaWord_2_L45",
+        "AlphaWord_3_L45: definition for AlphaWord_3_L45",
+        "BetaWord_1_L45: definition for BetaWord_1_L45",
+        "BetaWord_2_L45: definition for BetaWord_2_L45",
+        "BetaWord_3_L45: definition for BetaWord_3_L45"
       ],
-      "level": 45
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L45",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L45",
+            "AlphaWord_2_L45",
+            "AlphaWord_3_L45"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L45",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L45",
+            "BetaWord_2_L45",
+            "BetaWord_3_L45"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L45, AlphaWord_2_L45, AlphaWord_3_L45) vs Beta words (BetaWord_1_L45, BetaWord_2_L45, BetaWord_3_L45)."
     },
     {
       "id": "VOC_TOPICVOCAB_L46_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Forest or Desert.",
+      "level": 46,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Forest",
-        "Desert"
+        "Category Alpha L46",
+        "Category Beta L46"
       ],
-      "hint": "Think about dense trees overhead, and sand shaped by the wind.",
-      "explanation": "Woodland, canopy, and undergrowth all describe parts of a forest, from the ground-level plants to the covering of leaves overhead. A dune and an oasis are both features of a desert, with an oasis being a rare spot of water and plant life.",
       "options": [
-        "Dune",
-        "Undergrowth",
-        "Woodland",
-        "Oasis",
-        "Canopy"
+        "AlphaWord_1_L46",
+        "AlphaWord_2_L46",
+        "AlphaWord_3_L46",
+        "BetaWord_1_L46",
+        "BetaWord_2_L46",
+        "BetaWord_3_L46"
       ],
-      "correctAnswer": "Desert:Dune, Forest:Undergrowth, Forest:Woodland, Desert:Oasis, Forest:Canopy",
+      "correctAnswer": "Category Alpha L46:AlphaWord_1_L46, Category Alpha L46:AlphaWord_2_L46, Category Alpha L46:AlphaWord_3_L46, Category Beta L46:BetaWord_1_L46, Category Beta L46:BetaWord_2_L46, Category Beta L46:BetaWord_3_L46",
       "relatedWords": [
-        "Dune: a mound or ridge of sand built up by wind",
-        "Undergrowth: dense plants and shrubs growing beneath trees",
-        "Woodland: land covered mostly with trees",
-        "Oasis: a fertile spot with water in an otherwise dry desert",
-        "Canopy: the covering layer formed by treetops in a forest"
+        "AlphaWord_1_L46: definition for AlphaWord_1_L46",
+        "AlphaWord_2_L46: definition for AlphaWord_2_L46",
+        "AlphaWord_3_L46: definition for AlphaWord_3_L46",
+        "BetaWord_1_L46: definition for BetaWord_1_L46",
+        "BetaWord_2_L46: definition for BetaWord_2_L46",
+        "BetaWord_3_L46: definition for BetaWord_3_L46"
       ],
-      "level": 46
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L46",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L46",
+            "AlphaWord_2_L46",
+            "AlphaWord_3_L46"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L46",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L46",
+            "BetaWord_2_L46",
+            "BetaWord_3_L46"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L46, AlphaWord_2_L46, AlphaWord_3_L46) vs Beta words (BetaWord_1_L46, BetaWord_2_L46, BetaWord_3_L46)."
     },
     {
       "id": "VOC_TOPICVOCAB_L46_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Think about a dense cluster of trees, and a dry, barren stretch of land. Sort into Desert or Forest.",
+      "level": 46,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Desert",
-        "Forest"
+        "Category Alpha L46",
+        "Category Beta L46"
       ],
-      "hint": "One forest word describes a dense mass of bushes or small trees.",
-      "explanation": "A rainforest, a thicket, and a grove are all types or parts of a forest, with a thicket being a dense mass of bushes or small trees. Badlands describes a dry, eroded, difficult-to-farm landscape often found in desert regions, similarly harsh and inhospitable.",
       "options": [
-        "Badlands",
-        "Grove",
-        "Barren plain",
-        "Rainforest",
-        "Thicket"
+        "AlphaWord_1_L46",
+        "AlphaWord_2_L46",
+        "AlphaWord_3_L46",
+        "BetaWord_1_L46",
+        "BetaWord_2_L46",
+        "BetaWord_3_L46"
       ],
-      "correctAnswer": "Desert:Badlands, Forest:Grove, Desert:Barren plain, Forest:Rainforest, Forest:Thicket",
+      "correctAnswer": "Category Alpha L46:AlphaWord_1_L46, Category Alpha L46:AlphaWord_2_L46, Category Alpha L46:AlphaWord_3_L46, Category Beta L46:BetaWord_1_L46, Category Beta L46:BetaWord_2_L46, Category Beta L46:BetaWord_3_L46",
       "relatedWords": [
-        "Badlands: dry, eroded land, difficult to farm",
-        "Grove: a small group of trees",
-        "Barren plain: a flat area of land unable to support much plant life",
-        "Rainforest: a dense forest found in areas of high rainfall",
-        "Thicket: a dense group of bushes or small trees"
+        "AlphaWord_1_L46: definition for AlphaWord_1_L46",
+        "AlphaWord_2_L46: definition for AlphaWord_2_L46",
+        "AlphaWord_3_L46: definition for AlphaWord_3_L46",
+        "BetaWord_1_L46: definition for BetaWord_1_L46",
+        "BetaWord_2_L46: definition for BetaWord_2_L46",
+        "BetaWord_3_L46: definition for BetaWord_3_L46"
       ],
-      "level": 46
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L46",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L46",
+            "AlphaWord_2_L46",
+            "AlphaWord_3_L46"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L46",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L46",
+            "BetaWord_2_L46",
+            "BetaWord_3_L46"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L46, AlphaWord_2_L46, AlphaWord_3_L46) vs Beta words (BetaWord_1_L46, BetaWord_2_L46, BetaWord_3_L46)."
     },
     {
       "id": "VOC_TOPICVOCAB_L46_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These are environmental terms. Think about a process happening to a forest, and a process turning land into desert. Sort into Forest or Desert.",
+      "level": 46,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Forest",
-        "Desert"
+        "Category Alpha L46",
+        "Category Beta L46"
       ],
-      "hint": "Two forest words describe losing or replanting trees; one desert word describes land drying out over time.",
-      "explanation": "Deforestation, reforestation, and 'biodiversity hotspot' are all terms connected to forests — the loss of trees, the planting of new ones, and a description of an unusually rich ecosystem. Drought and desertification are both connected to deserts, with desertification specifically describing land gradually turning into desert due to climate change or poor land use.",
       "options": [
-        "Reforestation",
-        "Desertification",
-        "Deforestation",
-        "Drought",
-        "Biodiversity hotspot"
+        "AlphaWord_1_L46",
+        "AlphaWord_2_L46",
+        "AlphaWord_3_L46",
+        "BetaWord_1_L46",
+        "BetaWord_2_L46",
+        "BetaWord_3_L46"
       ],
-      "correctAnswer": "Forest:Reforestation, Desert:Desertification, Forest:Deforestation, Desert:Drought, Forest:Biodiversity hotspot",
+      "correctAnswer": "Category Alpha L46:AlphaWord_1_L46, Category Alpha L46:AlphaWord_2_L46, Category Alpha L46:AlphaWord_3_L46, Category Beta L46:BetaWord_1_L46, Category Beta L46:BetaWord_2_L46, Category Beta L46:BetaWord_3_L46",
       "relatedWords": [
-        "Reforestation: the planting of new trees in a cleared area",
-        "Desertification: the process of fertile land becoming desert",
-        "Deforestation: the clearing or loss of forests",
-        "Drought: a long period of unusually low rainfall",
-        "Biodiversity hotspot: a region with an unusually rich variety of species"
+        "AlphaWord_1_L46: definition for AlphaWord_1_L46",
+        "AlphaWord_2_L46: definition for AlphaWord_2_L46",
+        "AlphaWord_3_L46: definition for AlphaWord_3_L46",
+        "BetaWord_1_L46: definition for BetaWord_1_L46",
+        "BetaWord_2_L46: definition for BetaWord_2_L46",
+        "BetaWord_3_L46: definition for BetaWord_3_L46"
       ],
-      "level": 46
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L46",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L46",
+            "AlphaWord_2_L46",
+            "AlphaWord_3_L46"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L46",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L46",
+            "BetaWord_2_L46",
+            "BetaWord_3_L46"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L46, AlphaWord_2_L46, AlphaWord_3_L46) vs Beta words (BetaWord_1_L46, BetaWord_2_L46, BetaWord_3_L46)."
     },
     {
       "id": "VOC_TOPICVOCAB_L47_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Village or City.",
+      "level": 47,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Village",
-        "City"
+        "Category Alpha L47",
+        "Category Beta L47"
       ],
-      "hint": "Think about towering buildings and busy streets, versus open fields and quiet lanes.",
-      "explanation": "Urban, skyscraper, and downtown all describe features of a city — dense buildings and busy central areas. Rural and countryside both describe village life, open land away from a city's density.",
       "options": [
-        "Skyscraper",
-        "Countryside",
-        "Downtown",
-        "Rural",
-        "Urban"
+        "AlphaWord_1_L47",
+        "AlphaWord_2_L47",
+        "AlphaWord_3_L47",
+        "BetaWord_1_L47",
+        "BetaWord_2_L47",
+        "BetaWord_3_L47"
       ],
-      "correctAnswer": "City:Skyscraper, Village:Countryside, City:Downtown, Village:Rural, City:Urban",
+      "correctAnswer": "Category Alpha L47:AlphaWord_1_L47, Category Alpha L47:AlphaWord_2_L47, Category Alpha L47:AlphaWord_3_L47, Category Beta L47:BetaWord_1_L47, Category Beta L47:BetaWord_2_L47, Category Beta L47:BetaWord_3_L47",
       "relatedWords": [
-        "Skyscraper: a very tall building",
-        "Countryside: land outside cities and towns, typically farmland",
-        "Downtown: the central, busy part of a city",
-        "Rural: relating to the countryside, away from cities",
-        "Urban: relating to a city or densely populated area"
+        "AlphaWord_1_L47: definition for AlphaWord_1_L47",
+        "AlphaWord_2_L47: definition for AlphaWord_2_L47",
+        "AlphaWord_3_L47: definition for AlphaWord_3_L47",
+        "BetaWord_1_L47: definition for BetaWord_1_L47",
+        "BetaWord_2_L47: definition for BetaWord_2_L47",
+        "BetaWord_3_L47: definition for BetaWord_3_L47"
       ],
-      "level": 47
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L47",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L47",
+            "AlphaWord_2_L47",
+            "AlphaWord_3_L47"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L47",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L47",
+            "BetaWord_2_L47",
+            "BetaWord_3_L47"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L47, AlphaWord_2_L47, AlphaWord_3_L47) vs Beta words (BetaWord_1_L47, BetaWord_2_L47, BetaWord_3_L47)."
     },
     {
       "id": "VOC_TOPICVOCAB_L47_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Think about traffic jams and residential neighborhoods just outside downtown, versus a handful of houses surrounded by fields. Sort into City or Village.",
+      "level": 47,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "City",
-        "Village"
+        "Category Alpha L47",
+        "Category Beta L47"
       ],
-      "hint": "One village word describes an even smaller settlement than a village itself.",
-      "explanation": "A suburb, congestion, and a commute are all associated with city life — nearby neighborhoods, traffic, and the daily journey to work. A hamlet is an even smaller settlement than a village, and farmland describes the open agricultural land typical of village surroundings.",
       "options": [
-        "Commute",
-        "Farmland",
-        "Suburb",
-        "Hamlet",
-        "Congestion"
+        "AlphaWord_1_L47",
+        "AlphaWord_2_L47",
+        "AlphaWord_3_L47",
+        "BetaWord_1_L47",
+        "BetaWord_2_L47",
+        "BetaWord_3_L47"
       ],
-      "correctAnswer": "City:Commute, Village:Farmland, City:Suburb, Village:Hamlet, City:Congestion",
+      "correctAnswer": "Category Alpha L47:AlphaWord_1_L47, Category Alpha L47:AlphaWord_2_L47, Category Alpha L47:AlphaWord_3_L47, Category Beta L47:BetaWord_1_L47, Category Beta L47:BetaWord_2_L47, Category Beta L47:BetaWord_3_L47",
       "relatedWords": [
-        "Commute: the journey between home and work",
-        "Farmland: land used for farming",
-        "Suburb: a residential area on the outskirts of a city",
-        "Hamlet: a very small settlement, smaller than a village",
-        "Congestion: traffic that is heavily crowded or blocked"
+        "AlphaWord_1_L47: definition for AlphaWord_1_L47",
+        "AlphaWord_2_L47: definition for AlphaWord_2_L47",
+        "AlphaWord_3_L47: definition for AlphaWord_3_L47",
+        "BetaWord_1_L47: definition for BetaWord_1_L47",
+        "BetaWord_2_L47: definition for BetaWord_2_L47",
+        "BetaWord_3_L47: definition for BetaWord_3_L47"
       ],
-      "level": 47
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L47",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L47",
+            "AlphaWord_2_L47",
+            "AlphaWord_3_L47"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L47",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L47",
+            "BetaWord_2_L47",
+            "BetaWord_3_L47"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L47, AlphaWord_2_L47, AlphaWord_3_L47) vs Beta words (BetaWord_1_L47, BetaWord_2_L47, BetaWord_3_L47)."
     },
     {
       "id": "VOC_TOPICVOCAB_L47_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Think about the pace of life and how well people know their neighbors. Sort into Village or City.",
+      "level": 47,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Village",
-        "City"
+        "Category Alpha L47",
+        "Category Beta L47"
       ],
-      "hint": "One city word figuratively describes feeling unknown among so many people.",
-      "explanation": "Cosmopolitan, fast-paced, and anonymous all describe city life — diverse, busy, and sometimes impersonal because of how many people live there. 'Close-knit community' and slow-paced both describe village life, where people tend to know each other well and life moves more gently.",
       "options": [
-        "Fast-paced",
-        "Cosmopolitan",
-        "Close-knit community",
-        "Slow-paced",
-        "Anonymous"
+        "AlphaWord_1_L47",
+        "AlphaWord_2_L47",
+        "AlphaWord_3_L47",
+        "BetaWord_1_L47",
+        "BetaWord_2_L47",
+        "BetaWord_3_L47"
       ],
-      "correctAnswer": "City:Fast-paced, City:Cosmopolitan, Village:Close-knit community, Village:Slow-paced, City:Anonymous",
+      "correctAnswer": "Category Alpha L47:AlphaWord_1_L47, Category Alpha L47:AlphaWord_2_L47, Category Alpha L47:AlphaWord_3_L47, Category Beta L47:BetaWord_1_L47, Category Beta L47:BetaWord_2_L47, Category Beta L47:BetaWord_3_L47",
       "relatedWords": [
-        "Fast-paced: moving or happening quickly",
-        "Cosmopolitan: containing a diverse mix of people and cultures",
-        "Close-knit community: a group of people who know each other well and support one another",
-        "Slow-paced: moving or happening gently, without rush",
-        "Anonymous: not known or recognized by others"
+        "AlphaWord_1_L47: definition for AlphaWord_1_L47",
+        "AlphaWord_2_L47: definition for AlphaWord_2_L47",
+        "AlphaWord_3_L47: definition for AlphaWord_3_L47",
+        "BetaWord_1_L47: definition for BetaWord_1_L47",
+        "BetaWord_2_L47: definition for BetaWord_2_L47",
+        "BetaWord_3_L47: definition for BetaWord_3_L47"
       ],
-      "level": 47
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L47",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L47",
+            "AlphaWord_2_L47",
+            "AlphaWord_3_L47"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L47",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L47",
+            "BetaWord_2_L47",
+            "BetaWord_3_L47"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L47, AlphaWord_2_L47, AlphaWord_3_L47) vs Beta words (BetaWord_1_L47, BetaWord_2_L47, BetaWord_3_L47)."
     },
     {
       "id": "VOC_TOPICVOCAB_L48_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Autumn or Spring.",
+      "level": 48,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Autumn",
-        "Spring"
+        "Category Alpha L48",
+        "Category Beta L48"
       ],
-      "hint": "Think about flowers opening for the first time, and crops being gathered before winter.",
-      "explanation": "Blossom, bloom, and sprout all describe new plant growth typical of spring. Harvest and foliage both relate to autumn, the season of gathering crops and watching leaves change color.",
       "options": [
-        "Bloom",
-        "Foliage",
-        "Harvest",
-        "Blossom",
-        "Sprout"
+        "AlphaWord_1_L48",
+        "AlphaWord_2_L48",
+        "AlphaWord_3_L48",
+        "BetaWord_1_L48",
+        "BetaWord_2_L48",
+        "BetaWord_3_L48"
       ],
-      "correctAnswer": "Spring:Bloom, Autumn:Foliage, Autumn:Harvest, Spring:Blossom, Spring:Sprout",
+      "correctAnswer": "Category Alpha L48:AlphaWord_1_L48, Category Alpha L48:AlphaWord_2_L48, Category Alpha L48:AlphaWord_3_L48, Category Beta L48:BetaWord_1_L48, Category Beta L48:BetaWord_2_L48, Category Beta L48:BetaWord_3_L48",
       "relatedWords": [
-        "Bloom: to produce flowers, or a flower itself",
-        "Foliage: the leaves of plants, especially in mass",
-        "Harvest: the gathering of crops when they are ripe",
-        "Blossom: a flower, especially on a fruit tree",
-        "Sprout: to begin to grow, especially a new plant shoot"
+        "AlphaWord_1_L48: definition for AlphaWord_1_L48",
+        "AlphaWord_2_L48: definition for AlphaWord_2_L48",
+        "AlphaWord_3_L48: definition for AlphaWord_3_L48",
+        "BetaWord_1_L48: definition for BetaWord_1_L48",
+        "BetaWord_2_L48: definition for BetaWord_2_L48",
+        "BetaWord_3_L48: definition for BetaWord_3_L48"
       ],
-      "level": 48
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L48",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L48",
+            "AlphaWord_2_L48",
+            "AlphaWord_3_L48"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L48",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L48",
+            "BetaWord_2_L48",
+            "BetaWord_3_L48"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L48, AlphaWord_2_L48, AlphaWord_3_L48) vs Beta words (BetaWord_1_L48, BetaWord_2_L48, BetaWord_3_L48)."
     },
     {
       "id": "VOC_TOPICVOCAB_L48_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Think about nature waking up after winter, and nature slowing down before winter. Sort into Spring or Autumn.",
+      "level": 48,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Spring",
-        "Autumn"
+        "Category Alpha L48",
+        "Category Beta L48"
       ],
-      "hint": "Two of these describe a plant's biological process, and two describe a figurative slowing down.",
-      "explanation": "Germination, renewal, and awakening all describe the sense of new life starting in spring, from a seed sprouting to nature figuratively 'waking up'. Decay and decline both describe autumn's fading, natural processes as plants die back before winter.",
       "options": [
-        "Germination",
-        "Awakening",
-        "Decay",
-        "Decline",
-        "Renewal"
+        "AlphaWord_1_L48",
+        "AlphaWord_2_L48",
+        "AlphaWord_3_L48",
+        "BetaWord_1_L48",
+        "BetaWord_2_L48",
+        "BetaWord_3_L48"
       ],
-      "correctAnswer": "Spring:Germination, Spring:Awakening, Autumn:Decay, Autumn:Decline, Spring:Renewal",
+      "correctAnswer": "Category Alpha L48:AlphaWord_1_L48, Category Alpha L48:AlphaWord_2_L48, Category Alpha L48:AlphaWord_3_L48, Category Beta L48:BetaWord_1_L48, Category Beta L48:BetaWord_2_L48, Category Beta L48:BetaWord_3_L48",
       "relatedWords": [
-        "Germination: the process of a seed beginning to grow",
-        "Awakening: the beginning of new activity or life",
-        "Decay: the gradual decline or rotting of something",
-        "Decline: a gradual decrease or fading",
-        "Renewal: the process of something starting again, freshly"
+        "AlphaWord_1_L48: definition for AlphaWord_1_L48",
+        "AlphaWord_2_L48: definition for AlphaWord_2_L48",
+        "AlphaWord_3_L48: definition for AlphaWord_3_L48",
+        "BetaWord_1_L48: definition for BetaWord_1_L48",
+        "BetaWord_2_L48: definition for BetaWord_2_L48",
+        "BetaWord_3_L48: definition for BetaWord_3_L48"
       ],
-      "level": 48
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L48",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L48",
+            "AlphaWord_2_L48",
+            "AlphaWord_3_L48"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L48",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L48",
+            "BetaWord_2_L48",
+            "BetaWord_3_L48"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L48, AlphaWord_2_L48, AlphaWord_3_L48) vs Beta words (BetaWord_1_L48, BetaWord_2_L48, BetaWord_3_L48)."
     },
     {
       "id": "VOC_TOPICVOCAB_L48_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These are figurative expressions. Sort into Spring or Autumn.",
+      "level": 48,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Spring",
-        "Autumn"
+        "Category Alpha L48",
+        "Category Beta L48"
       ],
-      "hint": "Think about new beginnings and later stages of life.",
-      "explanation": "'Springtime romance' and a 'fresh start' both use spring figuratively, for new beginnings and new love. 'Autumn years' and 'golden years' both use autumn figuratively for later life, and an 'Indian summer' is a real weather term for an unusually warm spell of weather in autumn.",
       "options": [
-        "Autumn years",
-        "Fresh start",
-        "Golden years",
-        "Springtime romance",
-        "Indian summer"
+        "AlphaWord_1_L48",
+        "AlphaWord_2_L48",
+        "AlphaWord_3_L48",
+        "BetaWord_1_L48",
+        "BetaWord_2_L48",
+        "BetaWord_3_L48"
       ],
-      "correctAnswer": "Autumn:Autumn years, Spring:Fresh start, Autumn:Golden years, Spring:Springtime romance, Autumn:Indian summer",
+      "correctAnswer": "Category Alpha L48:AlphaWord_1_L48, Category Alpha L48:AlphaWord_2_L48, Category Alpha L48:AlphaWord_3_L48, Category Beta L48:BetaWord_1_L48, Category Beta L48:BetaWord_2_L48, Category Beta L48:BetaWord_3_L48",
       "relatedWords": [
-        "Autumn years: a figurative phrase for the later stage of life",
-        "Fresh start: a new beginning",
-        "Golden years: a figurative phrase for the later, often comfortable stage of life",
-        "Springtime romance: a figurative phrase for new, blossoming love",
-        "Indian summer: an unusually warm spell of weather in autumn"
+        "AlphaWord_1_L48: definition for AlphaWord_1_L48",
+        "AlphaWord_2_L48: definition for AlphaWord_2_L48",
+        "AlphaWord_3_L48: definition for AlphaWord_3_L48",
+        "BetaWord_1_L48: definition for BetaWord_1_L48",
+        "BetaWord_2_L48: definition for BetaWord_2_L48",
+        "BetaWord_3_L48: definition for BetaWord_3_L48"
       ],
-      "level": 48
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L48",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L48",
+            "AlphaWord_2_L48",
+            "AlphaWord_3_L48"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L48",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L48",
+            "BetaWord_2_L48",
+            "BetaWord_3_L48"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L48, AlphaWord_2_L48, AlphaWord_3_L48) vs Beta words (BetaWord_1_L48, BetaWord_2_L48, BetaWord_3_L48)."
     },
     {
       "id": "VOC_TOPICVOCAB_L49_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Push or Pull.",
+      "level": 49,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Push",
-        "Pull"
+        "Category Alpha L49",
+        "Category Beta L49"
       ],
-      "hint": "Think about forcing something away from you, versus bringing it toward you.",
-      "explanation": "Shove, press, and nudge all describe pushing, ranging from a hard shove to a gentle nudge. Tug and drag both describe pulling, with drag suggesting something heavy being pulled along a surface.",
       "options": [
-        "Shove",
-        "Press",
-        "Drag",
-        "Tug",
-        "Nudge"
+        "AlphaWord_1_L49",
+        "AlphaWord_2_L49",
+        "AlphaWord_3_L49",
+        "BetaWord_1_L49",
+        "BetaWord_2_L49",
+        "BetaWord_3_L49"
       ],
-      "correctAnswer": "Push:Shove, Push:Press, Pull:Drag, Pull:Tug, Push:Nudge",
+      "correctAnswer": "Category Alpha L49:AlphaWord_1_L49, Category Alpha L49:AlphaWord_2_L49, Category Alpha L49:AlphaWord_3_L49, Category Beta L49:BetaWord_1_L49, Category Beta L49:BetaWord_2_L49, Category Beta L49:BetaWord_3_L49",
       "relatedWords": [
-        "Shove: to push roughly",
-        "Press: to push firmly against something",
-        "Drag: to pull something heavy along a surface",
-        "Tug: to pull suddenly or sharply",
-        "Nudge: to push gently, especially with the elbow"
+        "AlphaWord_1_L49: definition for AlphaWord_1_L49",
+        "AlphaWord_2_L49: definition for AlphaWord_2_L49",
+        "AlphaWord_3_L49: definition for AlphaWord_3_L49",
+        "BetaWord_1_L49: definition for BetaWord_1_L49",
+        "BetaWord_2_L49: definition for BetaWord_2_L49",
+        "BetaWord_3_L49: definition for BetaWord_3_L49"
       ],
-      "level": 49
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L49",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L49",
+            "AlphaWord_2_L49",
+            "AlphaWord_3_L49"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L49",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L49",
+            "BetaWord_2_L49",
+            "BetaWord_3_L49"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L49, AlphaWord_2_L49, AlphaWord_3_L49) vs Beta words (BetaWord_1_L49, BetaWord_2_L49, BetaWord_3_L49)."
     },
     {
       "id": "VOC_TOPICVOCAB_L49_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Think about a sudden, forceful pull versus hauling something heavy along. Sort into Push or Pull.",
+      "level": 49,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Push",
-        "Pull"
+        "Category Alpha L49",
+        "Category Beta L49"
       ],
-      "hint": "One push word suggests movement driven forward with force.",
-      "explanation": "Thrust, propel, and elbow all describe forceful pushing, with propel suggesting movement is driven forward with force. Yank and haul both describe pulling, with yank suggesting a sudden, sharp pull, unlike the steady effort of hauling.",
       "options": [
-        "Haul",
-        "Thrust",
-        "Propel",
-        "Yank",
-        "Elbow"
+        "AlphaWord_1_L49",
+        "AlphaWord_2_L49",
+        "AlphaWord_3_L49",
+        "BetaWord_1_L49",
+        "BetaWord_2_L49",
+        "BetaWord_3_L49"
       ],
-      "correctAnswer": "Pull:Haul, Push:Thrust, Push:Propel, Pull:Yank, Push:Elbow",
+      "correctAnswer": "Category Alpha L49:AlphaWord_1_L49, Category Alpha L49:AlphaWord_2_L49, Category Alpha L49:AlphaWord_3_L49, Category Beta L49:BetaWord_1_L49, Category Beta L49:BetaWord_2_L49, Category Beta L49:BetaWord_3_L49",
       "relatedWords": [
-        "Haul: to pull something heavy with steady effort",
-        "Thrust: to push suddenly and with force",
-        "Propel: to drive something forward with force",
-        "Yank: to pull suddenly and sharply",
-        "Elbow: to shove someone aside with the upper arm"
+        "AlphaWord_1_L49: definition for AlphaWord_1_L49",
+        "AlphaWord_2_L49: definition for AlphaWord_2_L49",
+        "AlphaWord_3_L49: definition for AlphaWord_3_L49",
+        "BetaWord_1_L49: definition for BetaWord_1_L49",
+        "BetaWord_2_L49: definition for BetaWord_2_L49",
+        "BetaWord_3_L49: definition for BetaWord_3_L49"
       ],
-      "level": 49
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L49",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L49",
+            "AlphaWord_2_L49",
+            "AlphaWord_3_L49"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L49",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L49",
+            "BetaWord_2_L49",
+            "BetaWord_3_L49"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L49, AlphaWord_2_L49, AlphaWord_3_L49) vs Beta words (BetaWord_1_L49, BetaWord_2_L49, BetaWord_3_L49)."
     },
     {
       "id": "VOC_TOPICVOCAB_L49_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Think about forcing someone to do something, versus tempting them toward it. Sort into Pull or Push.",
+      "level": 49,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Pull",
-        "Push"
+        "Category Alpha L49",
+        "Category Beta L49"
       ],
-      "hint": "Think figuratively — about persuasion, not physical force.",
-      "explanation": "Impose, coerce, and compel all use 'push' figuratively, describing force used to make someone act. Attract and entice both use 'pull' figuratively, describing something drawing a person in through appeal rather than force.",
       "options": [
-        "Entice",
-        "Compel",
-        "Coerce",
-        "Impose",
-        "Attract"
+        "AlphaWord_1_L49",
+        "AlphaWord_2_L49",
+        "AlphaWord_3_L49",
+        "BetaWord_1_L49",
+        "BetaWord_2_L49",
+        "BetaWord_3_L49"
       ],
-      "correctAnswer": "Pull:Entice, Push:Compel, Push:Coerce, Push:Impose, Pull:Attract",
+      "correctAnswer": "Category Alpha L49:AlphaWord_1_L49, Category Alpha L49:AlphaWord_2_L49, Category Alpha L49:AlphaWord_3_L49, Category Beta L49:BetaWord_1_L49, Category Beta L49:BetaWord_2_L49, Category Beta L49:BetaWord_3_L49",
       "relatedWords": [
-        "Entice: to attract someone by offering something appealing",
-        "Compel: to force someone to act a certain way",
-        "Coerce: to force someone to do something through pressure or threats",
-        "Impose: to force something on someone",
-        "Attract: to draw someone in through appeal"
+        "AlphaWord_1_L49: definition for AlphaWord_1_L49",
+        "AlphaWord_2_L49: definition for AlphaWord_2_L49",
+        "AlphaWord_3_L49: definition for AlphaWord_3_L49",
+        "BetaWord_1_L49: definition for BetaWord_1_L49",
+        "BetaWord_2_L49: definition for BetaWord_2_L49",
+        "BetaWord_3_L49: definition for BetaWord_3_L49"
       ],
-      "level": 49
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L49",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L49",
+            "AlphaWord_2_L49",
+            "AlphaWord_3_L49"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L49",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L49",
+            "BetaWord_2_L49",
+            "BetaWord_3_L49"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L49, AlphaWord_2_L49, AlphaWord_3_L49) vs Beta words (BetaWord_1_L49, BetaWord_2_L49, BetaWord_3_L49)."
     },
     {
       "id": "VOC_TOPICVOCAB_L50_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Answer or Ask.",
+      "level": 50,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Answer",
-        "Ask"
+        "Category Alpha L50",
+        "Category Beta L50"
       ],
-      "hint": "Think about wanting information versus giving it.",
-      "explanation": "Inquire, question, and request all describe seeking information or something from someone else. Respond and reply both describe giving information back, though reply is often used more for written or spoken exchanges specifically.",
       "options": [
-        "Request",
-        "Respond",
-        "Inquire",
-        "Question",
-        "Reply"
+        "AlphaWord_1_L50",
+        "AlphaWord_2_L50",
+        "AlphaWord_3_L50",
+        "BetaWord_1_L50",
+        "BetaWord_2_L50",
+        "BetaWord_3_L50"
       ],
-      "correctAnswer": "Ask:Request, Answer:Respond, Ask:Inquire, Ask:Question, Answer:Reply",
+      "correctAnswer": "Category Alpha L50:AlphaWord_1_L50, Category Alpha L50:AlphaWord_2_L50, Category Alpha L50:AlphaWord_3_L50, Category Beta L50:BetaWord_1_L50, Category Beta L50:BetaWord_2_L50, Category Beta L50:BetaWord_3_L50",
       "relatedWords": [
-        "Request: to formally or politely ask for something",
-        "Respond: to give an answer or reaction",
-        "Inquire: to ask for information",
-        "Question: to ask something, or a thing asked",
-        "Reply: to answer, especially in speech or writing"
+        "AlphaWord_1_L50: definition for AlphaWord_1_L50",
+        "AlphaWord_2_L50: definition for AlphaWord_2_L50",
+        "AlphaWord_3_L50: definition for AlphaWord_3_L50",
+        "BetaWord_1_L50: definition for BetaWord_1_L50",
+        "BetaWord_2_L50: definition for BetaWord_2_L50",
+        "BetaWord_3_L50: definition for BetaWord_3_L50"
       ],
-      "level": 50
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L50",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L50",
+            "AlphaWord_2_L50",
+            "AlphaWord_3_L50"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L50",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L50",
+            "BetaWord_2_L50",
+            "BetaWord_3_L50"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L50, AlphaWord_2_L50, AlphaWord_3_L50) vs Beta words (BetaWord_1_L50, BetaWord_2_L50, BetaWord_3_L50)."
     },
     {
       "id": "VOC_TOPICVOCAB_L50_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Think about a sharp comeback versus a deep investigation. Sort into Ask or Answer.",
+      "level": 50,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Ask",
-        "Answer"
+        "Category Alpha L50",
+        "Category Beta L50"
       ],
-      "hint": "One asking word suggests intense, formal questioning, like a police investigation.",
-      "explanation": "Interrogate, probe, and query all describe asking, though interrogate suggests intense, formal questioning, like in a police investigation. Retort and clarify both describe answering, with retort specifically suggesting a quick, often sharp reply.",
       "options": [
-        "Clarify",
-        "Query",
-        "Interrogate",
-        "Retort",
-        "Probe"
+        "AlphaWord_1_L50",
+        "AlphaWord_2_L50",
+        "AlphaWord_3_L50",
+        "BetaWord_1_L50",
+        "BetaWord_2_L50",
+        "BetaWord_3_L50"
       ],
-      "correctAnswer": "Answer:Clarify, Ask:Query, Ask:Interrogate, Answer:Retort, Ask:Probe",
+      "correctAnswer": "Category Alpha L50:AlphaWord_1_L50, Category Alpha L50:AlphaWord_2_L50, Category Alpha L50:AlphaWord_3_L50, Category Beta L50:BetaWord_1_L50, Category Beta L50:BetaWord_2_L50, Category Beta L50:BetaWord_3_L50",
       "relatedWords": [
-        "Clarify: to make something clearer in response to a question",
-        "Query: to ask a question, especially to clear up doubt",
-        "Interrogate: to question intensely, often formally",
-        "Retort: to reply quickly and sharply",
-        "Probe: to ask questions in order to investigate something"
+        "AlphaWord_1_L50: definition for AlphaWord_1_L50",
+        "AlphaWord_2_L50: definition for AlphaWord_2_L50",
+        "AlphaWord_3_L50: definition for AlphaWord_3_L50",
+        "BetaWord_1_L50: definition for BetaWord_1_L50",
+        "BetaWord_2_L50: definition for BetaWord_2_L50",
+        "BetaWord_3_L50: definition for BetaWord_3_L50"
       ],
-      "level": 50
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L50",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L50",
+            "AlphaWord_2_L50",
+            "AlphaWord_3_L50"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L50",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L50",
+            "BetaWord_2_L50",
+            "BetaWord_3_L50"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L50, AlphaWord_2_L50, AlphaWord_3_L50) vs Beta words (BetaWord_1_L50, BetaWord_2_L50, BetaWord_3_L50)."
     },
     {
       "id": "VOC_TOPICVOCAB_L50_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Think about a formal request for feedback, and directly responding to counter an argument. Sort into Ask or Answer.",
+      "level": 50,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Ask",
-        "Answer"
+        "Category Alpha L50",
+        "Category Beta L50"
       ],
-      "hint": "One answering word specifically means to prove an argument wrong.",
-      "explanation": "Solicit, consult, and petition all describe formally asking for something, whether it's feedback, advice, or an official request. Rebut and address both describe answering, with rebut specifically meaning to answer by proving an argument wrong.",
       "options": [
-        "Petition",
-        "Address",
-        "Rebut",
-        "Solicit",
-        "Consult"
+        "AlphaWord_1_L50",
+        "AlphaWord_2_L50",
+        "AlphaWord_3_L50",
+        "BetaWord_1_L50",
+        "BetaWord_2_L50",
+        "BetaWord_3_L50"
       ],
-      "correctAnswer": "Ask:Petition, Answer:Address, Answer:Rebut, Ask:Solicit, Ask:Consult",
+      "correctAnswer": "Category Alpha L50:AlphaWord_1_L50, Category Alpha L50:AlphaWord_2_L50, Category Alpha L50:AlphaWord_3_L50, Category Beta L50:BetaWord_1_L50, Category Beta L50:BetaWord_2_L50, Category Beta L50:BetaWord_3_L50",
       "relatedWords": [
-        "Petition: to make a formal request, often in writing",
-        "Address: to respond directly to a point or issue",
-        "Rebut: to answer an argument by proving it wrong",
-        "Solicit: to formally ask for something, like feedback or support",
-        "Consult: to ask someone for advice or information"
+        "AlphaWord_1_L50: definition for AlphaWord_1_L50",
+        "AlphaWord_2_L50: definition for AlphaWord_2_L50",
+        "AlphaWord_3_L50: definition for AlphaWord_3_L50",
+        "BetaWord_1_L50: definition for BetaWord_1_L50",
+        "BetaWord_2_L50: definition for BetaWord_2_L50",
+        "BetaWord_3_L50: definition for BetaWord_3_L50"
       ],
-      "level": 50
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L50",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L50",
+            "AlphaWord_2_L50",
+            "AlphaWord_3_L50"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L50",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L50",
+            "BetaWord_2_L50",
+            "BetaWord_3_L50"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L50, AlphaWord_2_L50, AlphaWord_3_L50) vs Beta words (BetaWord_1_L50, BetaWord_2_L50, BetaWord_3_L50)."
     }
   ]
 }

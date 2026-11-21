@@ -7,1740 +7,1470 @@
     {
       "id": "VOC_TOPICVOCAB_L1_PRACTICE_Q1",
       "level": 1,
-      "word": "Boiling",
-      "conceptTitle": "Topic Sorting Gym: Hot vs Cold",
-      "targetKeyword": "Boiling",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Thermal Spectrum: Heat vs Cold",
       "topicBuckets": [
-        "Hot",
-        "Cold"
+        "Intense Heat",
+        "Extreme Cold"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Boiling\" belong to?",
-          "options": [
-            "Hot",
-            "Cold"
-          ],
-          "correctAnswer": "Hot",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Boiling\" is categorized under \"Hot\".",
-            "Not quite. \"Boiling\" does not belong to \"Cold\"."
-          ],
-          "hint": "Think about what happens to your skin near each one — a burn, or a shiver."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Cold\" category?",
-          "options": [
-            "Freezing",
+          "targetClusterSize": 3,
+          "tiles": [
             "Boiling",
+            "Scorching",
             "Steaming",
-            "Icy"
+            "Freezing",
+            "Icy",
+            "Chilly"
           ],
-          "correctAnswer": "Freezing",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Freezing\" belongs directly to \"Cold\".",
-            "Incorrect. \"Boiling\" does not belong to \"Cold\".",
-            "Incorrect. \"Steaming\" does not belong to \"Cold\".",
-            "Incorrect. \"Icy\" does not belong to \"Cold\"."
+          "clusters": [
+            {
+              "categoryName": "Intense Heat",
+              "emoji": "🔥",
+              "words": [
+                "Boiling",
+                "Scorching",
+                "Steaming"
+              ],
+              "explanation": "Boiling, Scorching, Steaming belong to Intense Heat."
+            },
+            {
+              "categoryName": "Extreme Cold",
+              "emoji": "❄️",
+              "words": [
+                "Freezing",
+                "Icy",
+                "Chilly"
+              ],
+              "explanation": "Freezing, Icy, Chilly belong to Extreme Cold."
+            }
           ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Hot: \"______\".",
-          "question": "Type the term belonging to [Hot] (8 letters):",
-          "correctAnswer": "STEAMING",
-          "feedbackIfWrong": "The expected term for [Hot] is \"Steaming\".",
-          "hint": "Starts with \"S\"."
+          "clues": {
+            "catAClue": "Look for terms describing high thermal energy, boiling liquids, and scorching weather.",
+            "catBClue": "Look for terms describing sub-zero temperatures, frost formation, and winter chills."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L1_PRACTICE_Q2",
       "level": 1,
-      "word": "Sweltering",
-      "conceptTitle": "Topic Sorting Gym: Hot vs Cold",
-      "targetKeyword": "Sweltering",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Thermal Spectrum: Heat vs Cold",
       "topicBuckets": [
-        "Hot",
-        "Cold"
+        "Intense Heat",
+        "Extreme Cold"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Sweltering\" belong to?",
-          "options": [
-            "Hot",
-            "Cold"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Boiling",
+            "Scorching",
+            "Steaming",
+            "Freezing",
+            "Icy",
+            "Chilly"
           ],
-          "correctAnswer": "Hot",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Sweltering\" is categorized under \"Hot\".",
-            "Not quite. \"Sweltering\" does not belong to \"Cold\"."
+          "clusters": [
+            {
+              "categoryName": "Intense Heat",
+              "emoji": "🔥",
+              "words": [
+                "Boiling",
+                "Scorching",
+                "Steaming"
+              ],
+              "explanation": "Boiling, Scorching, Steaming belong to Intense Heat."
+            },
+            {
+              "categoryName": "Extreme Cold",
+              "emoji": "❄️",
+              "words": [
+                "Freezing",
+                "Icy",
+                "Chilly"
+              ],
+              "explanation": "Freezing, Icy, Chilly belong to Extreme Cold."
+            }
           ],
-          "hint": "Notice which ones you'd use for a cozy blanket, and which for a summer afternoon."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Cold\" category?",
-          "options": [
-            "Chilly",
-            "Sweltering",
-            "Cool",
-            "Toasty"
-          ],
-          "correctAnswer": "Chilly",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Chilly\" belongs directly to \"Cold\".",
-            "Incorrect. \"Sweltering\" does not belong to \"Cold\".",
-            "Incorrect. \"Cool\" does not belong to \"Cold\".",
-            "Incorrect. \"Toasty\" does not belong to \"Cold\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Cold: \"______\".",
-          "question": "Type the term belonging to [Cold] (4 letters):",
-          "correctAnswer": "COOL",
-          "feedbackIfWrong": "The expected term for [Cold] is \"Cool\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for terms describing high thermal energy, boiling liquids, and scorching weather.",
+            "catBClue": "Look for terms describing sub-zero temperatures, frost formation, and winter chills."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L1_PRACTICE_Q3",
       "level": 1,
-      "word": "Blazing",
-      "conceptTitle": "Topic Sorting Gym: Hot vs Cold",
-      "targetKeyword": "Blazing",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Thermal Spectrum: Heat vs Cold",
       "topicBuckets": [
-        "Hot",
-        "Cold"
+        "Intense Heat",
+        "Extreme Cold"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Blazing\" belong to?",
-          "options": [
-            "Hot",
-            "Cold"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Boiling",
+            "Scorching",
+            "Steaming",
+            "Freezing",
+            "Icy",
+            "Chilly"
           ],
-          "correctAnswer": "Hot",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Blazing\" is categorized under \"Hot\".",
-            "Not quite. \"Blazing\" does not belong to \"Cold\"."
+          "clusters": [
+            {
+              "categoryName": "Intense Heat",
+              "emoji": "🔥",
+              "words": [
+                "Boiling",
+                "Scorching",
+                "Steaming"
+              ],
+              "explanation": "Boiling, Scorching, Steaming belong to Intense Heat."
+            },
+            {
+              "categoryName": "Extreme Cold",
+              "emoji": "❄️",
+              "words": [
+                "Freezing",
+                "Icy",
+                "Chilly"
+              ],
+              "explanation": "Freezing, Icy, Chilly belong to Extreme Cold."
+            }
           ],
-          "hint": "One cold word describes the effect on your body, not just the temperature itself."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Cold\" category?",
-          "options": [
-            "Arctic",
-            "Blazing",
-            "Simmering",
-            "Sizzling"
-          ],
-          "correctAnswer": "Arctic",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Arctic\" belongs directly to \"Cold\".",
-            "Incorrect. \"Blazing\" does not belong to \"Cold\".",
-            "Incorrect. \"Simmering\" does not belong to \"Cold\".",
-            "Incorrect. \"Sizzling\" does not belong to \"Cold\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Hot: \"______\".",
-          "question": "Type the term belonging to [Hot] (8 letters):",
-          "correctAnswer": "SIZZLING",
-          "feedbackIfWrong": "The expected term for [Hot] is \"Sizzling\".",
-          "hint": "Starts with \"S\"."
+          "clues": {
+            "catAClue": "Look for terms describing high thermal energy, boiling liquids, and scorching weather.",
+            "catBClue": "Look for terms describing sub-zero temperatures, frost formation, and winter chills."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L2_PRACTICE_Q1",
       "level": 2,
-      "word": "Giant",
-      "conceptTitle": "Topic Sorting Gym: Small vs Big",
-      "targetKeyword": "Giant",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Culinary Domains: Cooking vs Dining",
       "topicBuckets": [
-        "Small",
-        "Big"
+        "Kitchen Prep",
+        "Dining Table"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Giant\" belong to?",
-          "options": [
-            "Small",
-            "Big"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Chopping",
+            "Simmering",
+            "Whisking",
+            "Cutlery",
+            "Napkin",
+            "Saucer"
           ],
-          "correctAnswer": "Big",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Giant\" does not belong to \"Small\".",
-            "Correct! \"Giant\" is categorized under \"Big\"."
+          "clusters": [
+            {
+              "categoryName": "Kitchen Prep",
+              "emoji": "🍳",
+              "words": [
+                "Chopping",
+                "Simmering",
+                "Whisking"
+              ],
+              "explanation": "Chopping, Simmering, Whisking belong to Kitchen Prep."
+            },
+            {
+              "categoryName": "Dining Table",
+              "emoji": "🍷",
+              "words": [
+                "Cutlery",
+                "Napkin",
+                "Saucer"
+              ],
+              "explanation": "Cutlery, Napkin, Saucer belong to Dining Table."
+            }
           ],
-          "hint": "Picture an elephant next to an ant."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Big\" category?",
-          "options": [
-            "Giant",
-            "Huge",
-            "Mini",
-            "Massive"
-          ],
-          "correctAnswer": "Giant",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Giant\" belongs directly to \"Big\".",
-            "Incorrect. \"Huge\" does not belong to \"Big\".",
-            "Incorrect. \"Mini\" does not belong to \"Big\".",
-            "Incorrect. \"Massive\" does not belong to \"Big\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Small: \"______\".",
-          "question": "Type the term belonging to [Small] (4 letters):",
-          "correctAnswer": "MINI",
-          "feedbackIfWrong": "The expected term for [Small] is \"Mini\".",
-          "hint": "Starts with \"M\"."
+          "clues": {
+            "catAClue": "Look for terms describing actions and tools used when actively preparing food.",
+            "catBClue": "Look for terms describing utensils and actions used when eating a meal."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L2_PRACTICE_Q2",
       "level": 2,
-      "word": "Petite",
-      "conceptTitle": "Topic Sorting Gym: Big vs Small",
-      "targetKeyword": "Petite",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Culinary Domains: Cooking vs Dining",
       "topicBuckets": [
-        "Big",
-        "Small"
+        "Kitchen Prep",
+        "Dining Table"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Petite\" belong to?",
-          "options": [
-            "Big",
-            "Small"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Chopping",
+            "Simmering",
+            "Whisking",
+            "Cutlery",
+            "Napkin",
+            "Saucer"
           ],
-          "correctAnswer": "Small",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Petite\" does not belong to \"Big\".",
-            "Correct! \"Petite\" is categorized under \"Small\"."
+          "clusters": [
+            {
+              "categoryName": "Kitchen Prep",
+              "emoji": "🍳",
+              "words": [
+                "Chopping",
+                "Simmering",
+                "Whisking"
+              ],
+              "explanation": "Chopping, Simmering, Whisking belong to Kitchen Prep."
+            },
+            {
+              "categoryName": "Dining Table",
+              "emoji": "🍷",
+              "words": [
+                "Cutlery",
+                "Napkin",
+                "Saucer"
+              ],
+              "explanation": "Cutlery, Napkin, Saucer belong to Dining Table."
+            }
           ],
-          "hint": "One small word usually describes a person's build, not an object."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Small\" category?",
-          "options": [
-            "Petite",
-            "Colossal",
-            "Compact",
-            "Vast"
-          ],
-          "correctAnswer": "Petite",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Petite\" belongs directly to \"Small\".",
-            "Incorrect. \"Colossal\" does not belong to \"Small\".",
-            "Incorrect. \"Compact\" does not belong to \"Small\".",
-            "Incorrect. \"Vast\" does not belong to \"Small\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Small: \"______\".",
-          "question": "Type the term belonging to [Small] (7 letters):",
-          "correctAnswer": "COMPACT",
-          "feedbackIfWrong": "The expected term for [Small] is \"Compact\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for terms describing actions and tools used when actively preparing food.",
+            "catBClue": "Look for terms describing utensils and actions used when eating a meal."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L2_PRACTICE_Q3",
       "level": 2,
-      "word": "Microscopic",
-      "conceptTitle": "Topic Sorting Gym: Big vs Small",
-      "targetKeyword": "Microscopic",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Culinary Domains: Cooking vs Dining",
       "topicBuckets": [
-        "Big",
-        "Small"
+        "Kitchen Prep",
+        "Dining Table"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Microscopic\" belong to?",
-          "options": [
-            "Big",
-            "Small"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Chopping",
+            "Simmering",
+            "Whisking",
+            "Cutlery",
+            "Napkin",
+            "Saucer"
           ],
-          "correctAnswer": "Small",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Microscopic\" does not belong to \"Big\".",
-            "Correct! \"Microscopic\" is categorized under \"Small\"."
+          "clusters": [
+            {
+              "categoryName": "Kitchen Prep",
+              "emoji": "🍳",
+              "words": [
+                "Chopping",
+                "Simmering",
+                "Whisking"
+              ],
+              "explanation": "Chopping, Simmering, Whisking belong to Kitchen Prep."
+            },
+            {
+              "categoryName": "Dining Table",
+              "emoji": "🍷",
+              "words": [
+                "Cutlery",
+                "Napkin",
+                "Saucer"
+              ],
+              "explanation": "Cutlery, Napkin, Saucer belong to Dining Table."
+            }
           ],
-          "hint": "Think about degree, not just physical size — one word could describe a thin build or a small amount."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Small\" category?",
-          "options": [
-            "Microscopic",
-            "Slight",
-            "Large",
-            "Little"
-          ],
-          "correctAnswer": "Microscopic",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Microscopic\" belongs directly to \"Small\".",
-            "Incorrect. \"Slight\" does not belong to \"Small\".",
-            "Incorrect. \"Large\" does not belong to \"Small\".",
-            "Incorrect. \"Little\" does not belong to \"Small\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Big: \"______\".",
-          "question": "Type the term belonging to [Big] (5 letters):",
-          "correctAnswer": "LARGE",
-          "feedbackIfWrong": "The expected term for [Big] is \"Large\".",
-          "hint": "Starts with \"L\"."
+          "clues": {
+            "catAClue": "Look for terms describing actions and tools used when actively preparing food.",
+            "catBClue": "Look for terms describing utensils and actions used when eating a meal."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L3_PRACTICE_Q1",
       "level": 3,
-      "word": "Rapid",
-      "conceptTitle": "Topic Sorting Gym: Fast vs Slow",
-      "targetKeyword": "Rapid",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Daily Rhythm: Morning Dawn vs Nightfall",
       "topicBuckets": [
-        "Fast",
-        "Slow"
+        "Morning Awakening",
+        "Evening Slumber"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Rapid\" belong to?",
-          "options": [
-            "Fast",
-            "Slow"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Sunrise",
+            "Dawn",
+            "Daybreak",
+            "Dusk",
+            "Midnight",
+            "Twilight"
           ],
-          "correctAnswer": "Fast",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Rapid\" is categorized under \"Fast\".",
-            "Not quite. \"Rapid\" does not belong to \"Slow\"."
+          "clusters": [
+            {
+              "categoryName": "Morning Awakening",
+              "emoji": "🌅",
+              "words": [
+                "Sunrise",
+                "Dawn",
+                "Daybreak"
+              ],
+              "explanation": "Sunrise, Dawn, Daybreak belong to Morning Awakening."
+            },
+            {
+              "categoryName": "Evening Slumber",
+              "emoji": "🌙",
+              "words": [
+                "Dusk",
+                "Midnight",
+                "Twilight"
+              ],
+              "explanation": "Dusk, Midnight, Twilight belong to Evening Slumber."
+            }
           ],
-          "hint": "Picture a sprinter bursting off the blocks versus traffic barely moving."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Slow\" category?",
-          "options": [
-            "Sluggish",
-            "Rapid",
-            "Quick",
-            "Gradual"
-          ],
-          "correctAnswer": "Sluggish",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Sluggish\" belongs directly to \"Slow\".",
-            "Incorrect. \"Rapid\" does not belong to \"Slow\".",
-            "Incorrect. \"Quick\" does not belong to \"Slow\".",
-            "Incorrect. \"Gradual\" does not belong to \"Slow\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Fast: \"______\".",
-          "question": "Type the term belonging to [Fast] (5 letters):",
-          "correctAnswer": "QUICK",
-          "feedbackIfWrong": "The expected term for [Fast] is \"Quick\".",
-          "hint": "Starts with \"Q\"."
+          "clues": {
+            "catAClue": "Look for terms describing times, sensations, and actions as the day starts.",
+            "catBClue": "Look for terms describing times, sensations, and habits as darkness settles."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L3_PRACTICE_Q2",
       "level": 3,
-      "word": "Crawling",
-      "conceptTitle": "Topic Sorting Gym: Fast vs Slow",
-      "targetKeyword": "Crawling",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Daily Rhythm: Morning Dawn vs Nightfall",
       "topicBuckets": [
-        "Fast",
-        "Slow"
+        "Morning Awakening",
+        "Evening Slumber"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Crawling\" belong to?",
-          "options": [
-            "Fast",
-            "Slow"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Sunrise",
+            "Dawn",
+            "Daybreak",
+            "Dusk",
+            "Midnight",
+            "Twilight"
           ],
-          "correctAnswer": "Slow",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Crawling\" does not belong to \"Fast\".",
-            "Correct! \"Crawling\" is categorized under \"Slow\"."
+          "clusters": [
+            {
+              "categoryName": "Morning Awakening",
+              "emoji": "🌅",
+              "words": [
+                "Sunrise",
+                "Dawn",
+                "Daybreak"
+              ],
+              "explanation": "Sunrise, Dawn, Daybreak belong to Morning Awakening."
+            },
+            {
+              "categoryName": "Evening Slumber",
+              "emoji": "🌙",
+              "words": [
+                "Dusk",
+                "Midnight",
+                "Twilight"
+              ],
+              "explanation": "Dusk, Midnight, Twilight belong to Evening Slumber."
+            }
           ],
-          "hint": "Notice which fast word suggests careless rushing, not just quickness."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Slow\" category?",
-          "options": [
-            "Crawling",
-            "Lazy",
-            "Hasty",
-            "Swift"
-          ],
-          "correctAnswer": "Crawling",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Crawling\" belongs directly to \"Slow\".",
-            "Incorrect. \"Lazy\" does not belong to \"Slow\".",
-            "Incorrect. \"Hasty\" does not belong to \"Slow\".",
-            "Incorrect. \"Swift\" does not belong to \"Slow\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Fast: \"______\".",
-          "question": "Type the term belonging to [Fast] (5 letters):",
-          "correctAnswer": "HASTY",
-          "feedbackIfWrong": "The expected term for [Fast] is \"Hasty\".",
-          "hint": "Starts with \"H\"."
+          "clues": {
+            "catAClue": "Look for terms describing times, sensations, and actions as the day starts.",
+            "catBClue": "Look for terms describing times, sensations, and habits as darkness settles."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L3_PRACTICE_Q3",
       "level": 3,
-      "word": "Breakneck",
-      "conceptTitle": "Topic Sorting Gym: Fast vs Slow",
-      "targetKeyword": "Breakneck",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Daily Rhythm: Morning Dawn vs Nightfall",
       "topicBuckets": [
-        "Fast",
-        "Slow"
+        "Morning Awakening",
+        "Evening Slumber"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Breakneck\" belong to?",
-          "options": [
-            "Fast",
-            "Slow"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Sunrise",
+            "Dawn",
+            "Daybreak",
+            "Dusk",
+            "Midnight",
+            "Twilight"
           ],
-          "correctAnswer": "Fast",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Breakneck\" is categorized under \"Fast\".",
-            "Not quite. \"Breakneck\" does not belong to \"Slow\"."
+          "clusters": [
+            {
+              "categoryName": "Morning Awakening",
+              "emoji": "🌅",
+              "words": [
+                "Sunrise",
+                "Dawn",
+                "Daybreak"
+              ],
+              "explanation": "Sunrise, Dawn, Daybreak belong to Morning Awakening."
+            },
+            {
+              "categoryName": "Evening Slumber",
+              "emoji": "🌙",
+              "words": [
+                "Dusk",
+                "Midnight",
+                "Twilight"
+              ],
+              "explanation": "Dusk, Midnight, Twilight belong to Evening Slumber."
+            }
           ],
-          "hint": "Two of the slow words suggest a relaxed choice, while one suggests heavy, effortful movement."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Slow\" category?",
-          "options": [
-            "Plodding",
-            "Breakneck",
-            "Blistering",
-            "Unhurried"
-          ],
-          "correctAnswer": "Plodding",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Plodding\" belongs directly to \"Slow\".",
-            "Incorrect. \"Breakneck\" does not belong to \"Slow\".",
-            "Incorrect. \"Blistering\" does not belong to \"Slow\".",
-            "Incorrect. \"Unhurried\" does not belong to \"Slow\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Fast: \"______\".",
-          "question": "Type the term belonging to [Fast] (10 letters):",
-          "correctAnswer": "BLISTERING",
-          "feedbackIfWrong": "The expected term for [Fast] is \"Blistering\".",
-          "hint": "Starts with \"B\"."
+          "clues": {
+            "catAClue": "Look for terms describing times, sensations, and actions as the day starts.",
+            "catBClue": "Look for terms describing times, sensations, and habits as darkness settles."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L4_PRACTICE_Q1",
       "level": 4,
-      "word": "Cheerful",
-      "conceptTitle": "Topic Sorting Gym: Sad vs Happy",
-      "targetKeyword": "Cheerful",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Habitats: Bustling City vs Serene Nature",
       "topicBuckets": [
-        "Sad",
-        "Happy"
+        "Urban Metropolis",
+        "Wilderness & Forest"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Cheerful\" belong to?",
-          "options": [
-            "Sad",
-            "Happy"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Skyscraper",
+            "Pavement",
+            "Crossroad",
+            "Meadow",
+            "Canopy",
+            "Brook"
           ],
-          "correctAnswer": "Happy",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Cheerful\" does not belong to \"Sad\".",
-            "Correct! \"Cheerful\" is categorized under \"Happy\"."
+          "clusters": [
+            {
+              "categoryName": "Urban Metropolis",
+              "emoji": "🏢",
+              "words": [
+                "Skyscraper",
+                "Pavement",
+                "Crossroad"
+              ],
+              "explanation": "Skyscraper, Pavement, Crossroad belong to Urban Metropolis."
+            },
+            {
+              "categoryName": "Wilderness & Forest",
+              "emoji": "🌲",
+              "words": [
+                "Meadow",
+                "Canopy",
+                "Brook"
+              ],
+              "explanation": "Meadow, Canopy, Brook belong to Wilderness & Forest."
+            }
           ],
-          "hint": "Think about someone's face — smiling, or drooping."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Happy\" category?",
-          "options": [
-            "Cheerful",
-            "Delighted",
-            "Joyful",
-            "Miserable"
-          ],
-          "correctAnswer": "Cheerful",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Cheerful\" belongs directly to \"Happy\".",
-            "Incorrect. \"Delighted\" does not belong to \"Happy\".",
-            "Incorrect. \"Joyful\" does not belong to \"Happy\".",
-            "Incorrect. \"Miserable\" does not belong to \"Happy\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Happy: \"______\".",
-          "question": "Type the term belonging to [Happy] (6 letters):",
-          "correctAnswer": "JOYFUL",
-          "feedbackIfWrong": "The expected term for [Happy] is \"Joyful\".",
-          "hint": "Starts with \"J\"."
+          "clues": {
+            "catAClue": "Look for terms describing structures and sights typical of large modern cities.",
+            "catBClue": "Look for terms describing natural terrain, vegetation, and peaceful landscapes."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L4_PRACTICE_Q2",
       "level": 4,
-      "word": "Content",
-      "conceptTitle": "Topic Sorting Gym: Happy vs Sad",
-      "targetKeyword": "Content",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Habitats: Bustling City vs Serene Nature",
       "topicBuckets": [
-        "Happy",
-        "Sad"
+        "Urban Metropolis",
+        "Wilderness & Forest"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Content\" belong to?",
-          "options": [
-            "Happy",
-            "Sad"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Skyscraper",
+            "Pavement",
+            "Crossroad",
+            "Meadow",
+            "Canopy",
+            "Brook"
           ],
-          "correctAnswer": "Happy",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Content\" is categorized under \"Happy\".",
-            "Not quite. \"Content\" does not belong to \"Sad\"."
+          "clusters": [
+            {
+              "categoryName": "Urban Metropolis",
+              "emoji": "🏢",
+              "words": [
+                "Skyscraper",
+                "Pavement",
+                "Crossroad"
+              ],
+              "explanation": "Skyscraper, Pavement, Crossroad belong to Urban Metropolis."
+            },
+            {
+              "categoryName": "Wilderness & Forest",
+              "emoji": "🌲",
+              "words": [
+                "Meadow",
+                "Canopy",
+                "Brook"
+              ],
+              "explanation": "Meadow, Canopy, Brook belong to Wilderness & Forest."
+            }
           ],
-          "hint": "Rank these by intensity before you sort — some are quiet, one is severe."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Sad\" category?",
-          "options": [
-            "Glum",
-            "Content",
-            "Downcast",
-            "Upbeat"
-          ],
-          "correctAnswer": "Glum",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Glum\" belongs directly to \"Sad\".",
-            "Incorrect. \"Content\" does not belong to \"Sad\".",
-            "Incorrect. \"Downcast\" does not belong to \"Sad\".",
-            "Incorrect. \"Upbeat\" does not belong to \"Sad\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Sad: \"______\".",
-          "question": "Type the term belonging to [Sad] (8 letters):",
-          "correctAnswer": "DOWNCAST",
-          "feedbackIfWrong": "The expected term for [Sad] is \"Downcast\".",
-          "hint": "Starts with \"D\"."
+          "clues": {
+            "catAClue": "Look for terms describing structures and sights typical of large modern cities.",
+            "catBClue": "Look for terms describing natural terrain, vegetation, and peaceful landscapes."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L4_PRACTICE_Q3",
       "level": 4,
-      "word": "Devastated",
-      "conceptTitle": "Topic Sorting Gym: Happy vs Sad",
-      "targetKeyword": "Devastated",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Habitats: Bustling City vs Serene Nature",
       "topicBuckets": [
-        "Happy",
-        "Sad"
+        "Urban Metropolis",
+        "Wilderness & Forest"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Devastated\" belong to?",
-          "options": [
-            "Happy",
-            "Sad"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Skyscraper",
+            "Pavement",
+            "Crossroad",
+            "Meadow",
+            "Canopy",
+            "Brook"
           ],
-          "correctAnswer": "Sad",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Devastated\" does not belong to \"Happy\".",
-            "Correct! \"Devastated\" is categorized under \"Sad\"."
+          "clusters": [
+            {
+              "categoryName": "Urban Metropolis",
+              "emoji": "🏢",
+              "words": [
+                "Skyscraper",
+                "Pavement",
+                "Crossroad"
+              ],
+              "explanation": "Skyscraper, Pavement, Crossroad belong to Urban Metropolis."
+            },
+            {
+              "categoryName": "Wilderness & Forest",
+              "emoji": "🌲",
+              "words": [
+                "Meadow",
+                "Canopy",
+                "Brook"
+              ],
+              "explanation": "Meadow, Canopy, Brook belong to Wilderness & Forest."
+            }
           ],
-          "hint": "Two words here are extreme versions of happy or sad, not just mild feelings."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Sad\" category?",
-          "options": [
-            "Devastated",
-            "Elated",
-            "Ecstatic",
-            "Somber"
-          ],
-          "correctAnswer": "Devastated",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Devastated\" belongs directly to \"Sad\".",
-            "Incorrect. \"Elated\" does not belong to \"Sad\".",
-            "Incorrect. \"Ecstatic\" does not belong to \"Sad\".",
-            "Incorrect. \"Somber\" does not belong to \"Sad\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Happy: \"______\".",
-          "question": "Type the term belonging to [Happy] (8 letters):",
-          "correctAnswer": "ECSTATIC",
-          "feedbackIfWrong": "The expected term for [Happy] is \"Ecstatic\".",
-          "hint": "Starts with \"E\"."
+          "clues": {
+            "catAClue": "Look for terms describing structures and sights typical of large modern cities.",
+            "catBClue": "Look for terms describing natural terrain, vegetation, and peaceful landscapes."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L5_PRACTICE_Q1",
       "level": 5,
-      "word": "Daylight",
-      "conceptTitle": "Topic Sorting Gym: Day vs Night",
-      "targetKeyword": "Daylight",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Velocity Spectrum: High Speed vs Slow Motion",
       "topicBuckets": [
-        "Day",
-        "Night"
+        "High Speed",
+        "Slow Pace"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Daylight\" belong to?",
-          "options": [
-            "Day",
-            "Night"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Rapid",
+            "Swift",
+            "Brisk",
+            "Sluggish",
+            "Gradual",
+            "Plodding"
           ],
-          "correctAnswer": "Day",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Daylight\" is categorized under \"Day\".",
-            "Not quite. \"Daylight\" does not belong to \"Night\"."
+          "clusters": [
+            {
+              "categoryName": "High Speed",
+              "emoji": "🏎️",
+              "words": [
+                "Rapid",
+                "Swift",
+                "Brisk"
+              ],
+              "explanation": "Rapid, Swift, Brisk belong to High Speed."
+            },
+            {
+              "categoryName": "Slow Pace",
+              "emoji": "🐢",
+              "words": [
+                "Sluggish",
+                "Gradual",
+                "Plodding"
+              ],
+              "explanation": "Sluggish, Gradual, Plodding belong to Slow Pace."
+            }
           ],
-          "hint": "Think about what the sky looks like at each time."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Night\" category?",
-          "options": [
-            "Darkness",
-            "Daylight",
-            "Noon",
-            "Dawn"
-          ],
-          "correctAnswer": "Darkness",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Darkness\" belongs directly to \"Night\".",
-            "Incorrect. \"Daylight\" does not belong to \"Night\".",
-            "Incorrect. \"Noon\" does not belong to \"Night\".",
-            "Incorrect. \"Dawn\" does not belong to \"Night\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Day: \"______\".",
-          "question": "Type the term belonging to [Day] (4 letters):",
-          "correctAnswer": "NOON",
-          "feedbackIfWrong": "The expected term for [Day] is \"Noon\".",
-          "hint": "Starts with \"N\"."
+          "clues": {
+            "catAClue": "Look for terms describing moving or occurring with great rapidity and quickness.",
+            "catBClue": "Look for terms describing moving without hurry or lacking quick energy."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L5_PRACTICE_Q2",
       "level": 5,
-      "word": "Broad daylight",
-      "conceptTitle": "Topic Sorting Gym: Day vs Night",
-      "targetKeyword": "Broad daylight",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Velocity Spectrum: High Speed vs Slow Motion",
       "topicBuckets": [
-        "Day",
-        "Night"
+        "High Speed",
+        "Slow Pace"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Broad daylight\" belong to?",
-          "options": [
-            "Day",
-            "Night"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Rapid",
+            "Swift",
+            "Brisk",
+            "Sluggish",
+            "Gradual",
+            "Plodding"
           ],
-          "correctAnswer": "Day",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Broad daylight\" is categorized under \"Day\".",
-            "Not quite. \"Broad daylight\" does not belong to \"Night\"."
+          "clusters": [
+            {
+              "categoryName": "High Speed",
+              "emoji": "🏎️",
+              "words": [
+                "Rapid",
+                "Swift",
+                "Brisk"
+              ],
+              "explanation": "Rapid, Swift, Brisk belong to High Speed."
+            },
+            {
+              "categoryName": "Slow Pace",
+              "emoji": "🐢",
+              "words": [
+                "Sluggish",
+                "Gradual",
+                "Plodding"
+              ],
+              "explanation": "Sluggish, Gradual, Plodding belong to Slow Pace."
+            }
           ],
-          "hint": "Notice which words describe a moment of change, not the middle of a time period."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Night\" category?",
-          "options": [
-            "Nightfall",
-            "Broad daylight",
-            "Sunrise",
-            "Twilight"
-          ],
-          "correctAnswer": "Nightfall",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Nightfall\" belongs directly to \"Night\".",
-            "Incorrect. \"Broad daylight\" does not belong to \"Night\".",
-            "Incorrect. \"Sunrise\" does not belong to \"Night\".",
-            "Incorrect. \"Twilight\" does not belong to \"Night\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Night: \"______\".",
-          "question": "Type the term belonging to [Night] (9 letters):",
-          "correctAnswer": "NIGHTFALL",
-          "feedbackIfWrong": "The expected term for [Night] is \"Nightfall\".",
-          "hint": "Starts with \"N\"."
+          "clues": {
+            "catAClue": "Look for terms describing moving or occurring with great rapidity and quickness.",
+            "catBClue": "Look for terms describing moving without hurry or lacking quick energy."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L5_PRACTICE_Q3",
       "level": 5,
-      "word": "Nocturnal",
-      "conceptTitle": "Topic Sorting Gym: Day vs Night",
-      "targetKeyword": "Nocturnal",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Velocity Spectrum: High Speed vs Slow Motion",
       "topicBuckets": [
-        "Day",
-        "Night"
+        "High Speed",
+        "Slow Pace"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Nocturnal\" belong to?",
-          "options": [
-            "Day",
-            "Night"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Rapid",
+            "Swift",
+            "Brisk",
+            "Sluggish",
+            "Gradual",
+            "Plodding"
           ],
-          "correctAnswer": "Night",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Nocturnal\" does not belong to \"Day\".",
-            "Correct! \"Nocturnal\" is categorized under \"Night\"."
+          "clusters": [
+            {
+              "categoryName": "High Speed",
+              "emoji": "🏎️",
+              "words": [
+                "Rapid",
+                "Swift",
+                "Brisk"
+              ],
+              "explanation": "Rapid, Swift, Brisk belong to High Speed."
+            },
+            {
+              "categoryName": "Slow Pace",
+              "emoji": "🐢",
+              "words": [
+                "Sluggish",
+                "Gradual",
+                "Plodding"
+              ],
+              "explanation": "Sluggish, Gradual, Plodding belong to Slow Pace."
+            }
           ],
-          "hint": "One word is an informal name for overnight work, and one describes animals active after dark."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Night\" category?",
-          "options": [
-            "Nocturnal",
-            "Rush hour",
-            "Graveyard shift",
-            "Siesta"
-          ],
-          "correctAnswer": "Nocturnal",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Nocturnal\" belongs directly to \"Night\".",
-            "Incorrect. \"Rush hour\" does not belong to \"Night\".",
-            "Incorrect. \"Graveyard shift\" does not belong to \"Night\".",
-            "Incorrect. \"Siesta\" does not belong to \"Night\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Night: \"______\".",
-          "question": "Type the term belonging to [Night] (15 letters):",
-          "correctAnswer": "GRAVEYARD SHIFT",
-          "feedbackIfWrong": "The expected term for [Night] is \"Graveyard shift\".",
-          "hint": "Starts with \"G\"."
+          "clues": {
+            "catAClue": "Look for terms describing moving or occurring with great rapidity and quickness.",
+            "catBClue": "Look for terms describing moving without hurry or lacking quick energy."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L6_PRACTICE_Q1",
       "level": 6,
-      "word": "Sink",
-      "conceptTitle": "Topic Sorting Gym: Up vs Down",
-      "targetKeyword": "Sink",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Emotional Spectrum: High Joy vs Deep Sorrow",
       "topicBuckets": [
-        "Up",
-        "Down"
+        "Radiant Joy",
+        "Somber Grief"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Sink\" belong to?",
-          "options": [
-            "Up",
-            "Down"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Ecstatic",
+            "Delighted",
+            "Cheerful",
+            "Devastated",
+            "Gloomy",
+            "Downcast"
           ],
-          "correctAnswer": "Down",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Sink\" does not belong to \"Up\".",
-            "Correct! \"Sink\" is categorized under \"Down\"."
+          "clusters": [
+            {
+              "categoryName": "Radiant Joy",
+              "emoji": "🎉",
+              "words": [
+                "Ecstatic",
+                "Delighted",
+                "Cheerful"
+              ],
+              "explanation": "Ecstatic, Delighted, Cheerful belong to Radiant Joy."
+            },
+            {
+              "categoryName": "Somber Grief",
+              "emoji": "🌧️",
+              "words": [
+                "Devastated",
+                "Gloomy",
+                "Downcast"
+              ],
+              "explanation": "Devastated, Gloomy, Downcast belong to Somber Grief."
+            }
           ],
-          "hint": "Picture an elevator — is it heading to a higher or lower floor?"
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Down\" category?",
-          "options": [
-            "Sink",
-            "Climb",
-            "Rise",
-            "Descend"
-          ],
-          "correctAnswer": "Sink",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Sink\" belongs directly to \"Down\".",
-            "Incorrect. \"Climb\" does not belong to \"Down\".",
-            "Incorrect. \"Rise\" does not belong to \"Down\".",
-            "Incorrect. \"Descend\" does not belong to \"Down\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Up: \"______\".",
-          "question": "Type the term belonging to [Up] (4 letters):",
-          "correctAnswer": "RISE",
-          "feedbackIfWrong": "The expected term for [Up] is \"Rise\".",
-          "hint": "Starts with \"R\"."
+          "clues": {
+            "catAClue": "Look for terms describing positive states of delight, triumph, and happiness.",
+            "catBClue": "Look for terms describing sadness, disappointment, and emotional gloom."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L6_PRACTICE_Q2",
       "level": 6,
-      "word": "Plunge",
-      "conceptTitle": "Topic Sorting Gym: Up vs Down",
-      "targetKeyword": "Plunge",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Emotional Spectrum: High Joy vs Deep Sorrow",
       "topicBuckets": [
-        "Up",
-        "Down"
+        "Radiant Joy",
+        "Somber Grief"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Plunge\" belong to?",
-          "options": [
-            "Up",
-            "Down"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Ecstatic",
+            "Delighted",
+            "Cheerful",
+            "Devastated",
+            "Gloomy",
+            "Downcast"
           ],
-          "correctAnswer": "Down",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Plunge\" does not belong to \"Up\".",
-            "Correct! \"Plunge\" is categorized under \"Down\"."
+          "clusters": [
+            {
+              "categoryName": "Radiant Joy",
+              "emoji": "🎉",
+              "words": [
+                "Ecstatic",
+                "Delighted",
+                "Cheerful"
+              ],
+              "explanation": "Ecstatic, Delighted, Cheerful belong to Radiant Joy."
+            },
+            {
+              "categoryName": "Somber Grief",
+              "emoji": "🌧️",
+              "words": [
+                "Devastated",
+                "Gloomy",
+                "Downcast"
+              ],
+              "explanation": "Devastated, Gloomy, Downcast belong to Somber Grief."
+            }
           ],
-          "hint": "Notice which ones suggest control, and which suggest losing it."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Down\" category?",
-          "options": [
-            "Plunge",
-            "Collapse",
-            "Drop",
-            "Soar"
-          ],
-          "correctAnswer": "Plunge",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Plunge\" belongs directly to \"Down\".",
-            "Incorrect. \"Collapse\" does not belong to \"Down\".",
-            "Incorrect. \"Drop\" does not belong to \"Down\".",
-            "Incorrect. \"Soar\" does not belong to \"Down\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Down: \"______\".",
-          "question": "Type the term belonging to [Down] (4 letters):",
-          "correctAnswer": "DROP",
-          "feedbackIfWrong": "The expected term for [Down] is \"Drop\".",
-          "hint": "Starts with \"D\"."
+          "clues": {
+            "catAClue": "Look for terms describing positive states of delight, triumph, and happiness.",
+            "catBClue": "Look for terms describing sadness, disappointment, and emotional gloom."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L6_PRACTICE_Q3",
       "level": 6,
-      "word": "Skyward",
-      "conceptTitle": "Topic Sorting Gym: Up vs Down",
-      "targetKeyword": "Skyward",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Emotional Spectrum: High Joy vs Deep Sorrow",
       "topicBuckets": [
-        "Up",
-        "Down"
+        "Radiant Joy",
+        "Somber Grief"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Skyward\" belong to?",
-          "options": [
-            "Up",
-            "Down"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Ecstatic",
+            "Delighted",
+            "Cheerful",
+            "Devastated",
+            "Gloomy",
+            "Downcast"
           ],
-          "correctAnswer": "Up",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Skyward\" is categorized under \"Up\".",
-            "Not quite. \"Skyward\" does not belong to \"Down\"."
+          "clusters": [
+            {
+              "categoryName": "Radiant Joy",
+              "emoji": "🎉",
+              "words": [
+                "Ecstatic",
+                "Delighted",
+                "Cheerful"
+              ],
+              "explanation": "Ecstatic, Delighted, Cheerful belong to Radiant Joy."
+            },
+            {
+              "categoryName": "Somber Grief",
+              "emoji": "🌧️",
+              "words": [
+                "Devastated",
+                "Gloomy",
+                "Downcast"
+              ],
+              "explanation": "Devastated, Gloomy, Downcast belong to Somber Grief."
+            }
           ],
-          "hint": "Think about where your feet or head would be for each word."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Down\" category?",
-          "options": [
-            "Underfoot",
-            "Skyward",
-            "Uphill",
-            "Downhill"
-          ],
-          "correctAnswer": "Underfoot",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Underfoot\" belongs directly to \"Down\".",
-            "Incorrect. \"Skyward\" does not belong to \"Down\".",
-            "Incorrect. \"Uphill\" does not belong to \"Down\".",
-            "Incorrect. \"Downhill\" does not belong to \"Down\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Up: \"______\".",
-          "question": "Type the term belonging to [Up] (6 letters):",
-          "correctAnswer": "UPHILL",
-          "feedbackIfWrong": "The expected term for [Up] is \"Uphill\".",
-          "hint": "Starts with \"U\"."
+          "clues": {
+            "catAClue": "Look for terms describing positive states of delight, triumph, and happiness.",
+            "catBClue": "Look for terms describing sadness, disappointment, and emotional gloom."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L7_PRACTICE_Q1",
       "level": 7,
-      "word": "Recent",
-      "conceptTitle": "Topic Sorting Gym: Old vs New",
-      "targetKeyword": "Recent",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Acoustic Spectrum: Roaring Loud vs Hushed Quiet",
       "topicBuckets": [
-        "Old",
-        "New"
+        "Intense Noise",
+        "Gentle Silence"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Recent\" belong to?",
-          "options": [
-            "Old",
-            "New"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Deafening",
+            "Piercing",
+            "Thunderous",
+            "Whisper",
+            "Hushed",
+            "Faint"
           ],
-          "correctAnswer": "New",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Recent\" does not belong to \"Old\".",
-            "Correct! \"Recent\" is categorized under \"New\"."
+          "clusters": [
+            {
+              "categoryName": "Intense Noise",
+              "emoji": "📢",
+              "words": [
+                "Deafening",
+                "Piercing",
+                "Thunderous"
+              ],
+              "explanation": "Deafening, Piercing, Thunderous belong to Intense Noise."
+            },
+            {
+              "categoryName": "Gentle Silence",
+              "emoji": "🤫",
+              "words": [
+                "Whisper",
+                "Hushed",
+                "Faint"
+              ],
+              "explanation": "Whisper, Hushed, Faint belong to Gentle Silence."
+            }
           ],
-          "hint": "Think about how much time has passed since something was made or happened."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"New\" category?",
-          "options": [
-            "Recent",
-            "Outdated",
-            "Fresh",
-            "Ancient"
-          ],
-          "correctAnswer": "Recent",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Recent\" belongs directly to \"New\".",
-            "Incorrect. \"Outdated\" does not belong to \"New\".",
-            "Incorrect. \"Fresh\" does not belong to \"New\".",
-            "Incorrect. \"Ancient\" does not belong to \"New\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of New: \"______\".",
-          "question": "Type the term belonging to [New] (5 letters):",
-          "correctAnswer": "FRESH",
-          "feedbackIfWrong": "The expected term for [New] is \"Fresh\".",
-          "hint": "Starts with \"F\"."
+          "clues": {
+            "catAClue": "Look for terms describing sounds of extreme volume, clatter, and reverberation.",
+            "catBClue": "Look for terms describing low volume, whispered voices, and serene calm."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L7_PRACTICE_Q2",
       "level": 7,
-      "word": "Vintage",
-      "conceptTitle": "Topic Sorting Gym: New vs Old",
-      "targetKeyword": "Vintage",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Acoustic Spectrum: Roaring Loud vs Hushed Quiet",
       "topicBuckets": [
-        "New",
-        "Old"
+        "Intense Noise",
+        "Gentle Silence"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Vintage\" belong to?",
-          "options": [
-            "New",
-            "Old"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Deafening",
+            "Piercing",
+            "Thunderous",
+            "Whisper",
+            "Hushed",
+            "Faint"
           ],
-          "correctAnswer": "Old",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Vintage\" does not belong to \"New\".",
-            "Correct! \"Vintage\" is categorized under \"Old\"."
+          "clusters": [
+            {
+              "categoryName": "Intense Noise",
+              "emoji": "📢",
+              "words": [
+                "Deafening",
+                "Piercing",
+                "Thunderous"
+              ],
+              "explanation": "Deafening, Piercing, Thunderous belong to Intense Noise."
+            },
+            {
+              "categoryName": "Gentle Silence",
+              "emoji": "🤫",
+              "words": [
+                "Whisper",
+                "Hushed",
+                "Faint"
+              ],
+              "explanation": "Whisper, Hushed, Faint belong to Gentle Silence."
+            }
           ],
-          "hint": "Notice the tone each word carries, not just its age."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Old\" category?",
-          "options": [
-            "Vintage",
-            "Obsolete",
-            "Contemporary",
-            "Antique"
-          ],
-          "correctAnswer": "Vintage",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Vintage\" belongs directly to \"Old\".",
-            "Incorrect. \"Obsolete\" does not belong to \"Old\".",
-            "Incorrect. \"Contemporary\" does not belong to \"Old\".",
-            "Incorrect. \"Antique\" does not belong to \"Old\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of New: \"______\".",
-          "question": "Type the term belonging to [New] (12 letters):",
-          "correctAnswer": "CONTEMPORARY",
-          "feedbackIfWrong": "The expected term for [New] is \"Contemporary\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for terms describing sounds of extreme volume, clatter, and reverberation.",
+            "catBClue": "Look for terms describing low volume, whispered voices, and serene calm."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L7_PRACTICE_Q3",
       "level": 7,
-      "word": "Cutting-edge",
-      "conceptTitle": "Topic Sorting Gym: New vs Old",
-      "targetKeyword": "Cutting-edge",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Acoustic Spectrum: Roaring Loud vs Hushed Quiet",
       "topicBuckets": [
-        "New",
-        "Old"
+        "Intense Noise",
+        "Gentle Silence"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Cutting-edge\" belong to?",
-          "options": [
-            "New",
-            "Old"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Deafening",
+            "Piercing",
+            "Thunderous",
+            "Whisper",
+            "Hushed",
+            "Faint"
           ],
-          "correctAnswer": "New",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Cutting-edge\" is categorized under \"New\".",
-            "Not quite. \"Cutting-edge\" does not belong to \"Old\"."
+          "clusters": [
+            {
+              "categoryName": "Intense Noise",
+              "emoji": "📢",
+              "words": [
+                "Deafening",
+                "Piercing",
+                "Thunderous"
+              ],
+              "explanation": "Deafening, Piercing, Thunderous belong to Intense Noise."
+            },
+            {
+              "categoryName": "Gentle Silence",
+              "emoji": "🤫",
+              "words": [
+                "Whisper",
+                "Hushed",
+                "Faint"
+              ],
+              "explanation": "Whisper, Hushed, Faint belong to Gentle Silence."
+            }
           ],
-          "hint": "Think about where you'd actually read these words — a tech review, or a history book."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Old\" category?",
-          "options": [
-            "Archaic",
-            "Cutting-edge",
-            "State-of-the-art",
-            "Timeworn"
-          ],
-          "correctAnswer": "Archaic",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Archaic\" belongs directly to \"Old\".",
-            "Incorrect. \"Cutting-edge\" does not belong to \"Old\".",
-            "Incorrect. \"State-of-the-art\" does not belong to \"Old\".",
-            "Incorrect. \"Timeworn\" does not belong to \"Old\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Old: \"______\".",
-          "question": "Type the term belonging to [Old] (7 letters):",
-          "correctAnswer": "ARCHAIC",
-          "feedbackIfWrong": "The expected term for [Old] is \"Archaic\".",
-          "hint": "Starts with \"A\"."
+          "clues": {
+            "catAClue": "Look for terms describing sounds of extreme volume, clatter, and reverberation.",
+            "catBClue": "Look for terms describing low volume, whispered voices, and serene calm."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L8_PRACTICE_Q1",
       "level": 8,
-      "word": "Enter",
-      "conceptTitle": "Topic Sorting Gym: In vs Out",
-      "targetKeyword": "Enter",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Hydrology Spectrum: Soaked Moisture vs Arid Dryness",
       "topicBuckets": [
-        "In",
-        "Out"
+        "Heavy Moisture",
+        "Barren Dryness"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Enter\" belong to?",
-          "options": [
-            "In",
-            "Out"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Drenched",
+            "Soggy",
+            "Damp",
+            "Parched",
+            "Arid",
+            "Brittle"
           ],
-          "correctAnswer": "In",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Enter\" is categorized under \"In\".",
-            "Not quite. \"Enter\" does not belong to \"Out\"."
+          "clusters": [
+            {
+              "categoryName": "Heavy Moisture",
+              "emoji": "🌊",
+              "words": [
+                "Drenched",
+                "Soggy",
+                "Damp"
+              ],
+              "explanation": "Drenched, Soggy, Damp belong to Heavy Moisture."
+            },
+            {
+              "categoryName": "Barren Dryness",
+              "emoji": "🏜️",
+              "words": [
+                "Parched",
+                "Arid",
+                "Brittle"
+              ],
+              "explanation": "Parched, Arid, Brittle belong to Barren Dryness."
+            }
           ],
-          "hint": "Think about walking through a doorway — which direction are you moving?"
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Out\" category?",
-          "options": [
-            "Exit",
-            "Enter",
-            "Outside",
-            "Inside"
-          ],
-          "correctAnswer": "Exit",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Exit\" belongs directly to \"Out\".",
-            "Incorrect. \"Enter\" does not belong to \"Out\".",
-            "Incorrect. \"Outside\" does not belong to \"Out\".",
-            "Incorrect. \"Inside\" does not belong to \"Out\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Out: \"______\".",
-          "question": "Type the term belonging to [Out] (7 letters):",
-          "correctAnswer": "OUTSIDE",
-          "feedbackIfWrong": "The expected term for [Out] is \"Outside\".",
-          "hint": "Starts with \"O\"."
+          "clues": {
+            "catAClue": "Look for terms describing conditions of high water saturation and dampness.",
+            "catBClue": "Look for terms describing lack of water, parched land, and fine dust."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L8_PRACTICE_Q2",
       "level": 8,
-      "word": "Indoors",
-      "conceptTitle": "Topic Sorting Gym: In vs Out",
-      "targetKeyword": "Indoors",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Hydrology Spectrum: Soaked Moisture vs Arid Dryness",
       "topicBuckets": [
-        "In",
-        "Out"
+        "Heavy Moisture",
+        "Barren Dryness"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Indoors\" belong to?",
-          "options": [
-            "In",
-            "Out"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Drenched",
+            "Soggy",
+            "Damp",
+            "Parched",
+            "Arid",
+            "Brittle"
           ],
-          "correctAnswer": "In",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Indoors\" is categorized under \"In\".",
-            "Not quite. \"Indoors\" does not belong to \"Out\"."
+          "clusters": [
+            {
+              "categoryName": "Heavy Moisture",
+              "emoji": "🌊",
+              "words": [
+                "Drenched",
+                "Soggy",
+                "Damp"
+              ],
+              "explanation": "Drenched, Soggy, Damp belong to Heavy Moisture."
+            },
+            {
+              "categoryName": "Barren Dryness",
+              "emoji": "🏜️",
+              "words": [
+                "Parched",
+                "Arid",
+                "Brittle"
+              ],
+              "explanation": "Parched, Arid, Brittle belong to Barren Dryness."
+            }
           ],
-          "hint": "Two words here are often used for flights and travel — think about arriving versus leaving."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Out\" category?",
-          "options": [
-            "Outdoors",
-            "Indoors",
-            "Included",
-            "Outbound"
-          ],
-          "correctAnswer": "Outdoors",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Outdoors\" belongs directly to \"Out\".",
-            "Incorrect. \"Indoors\" does not belong to \"Out\".",
-            "Incorrect. \"Included\" does not belong to \"Out\".",
-            "Incorrect. \"Outbound\" does not belong to \"Out\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Out: \"______\".",
-          "question": "Type the term belonging to [Out] (8 letters):",
-          "correctAnswer": "OUTDOORS",
-          "feedbackIfWrong": "The expected term for [Out] is \"Outdoors\".",
-          "hint": "Starts with \"O\"."
+          "clues": {
+            "catAClue": "Look for terms describing conditions of high water saturation and dampness.",
+            "catBClue": "Look for terms describing lack of water, parched land, and fine dust."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L8_PRACTICE_Q3",
       "level": 8,
-      "word": "Outcast",
-      "conceptTitle": "Topic Sorting Gym: In vs Out",
-      "targetKeyword": "Outcast",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Hydrology Spectrum: Soaked Moisture vs Arid Dryness",
       "topicBuckets": [
-        "In",
-        "Out"
+        "Heavy Moisture",
+        "Barren Dryness"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Outcast\" belong to?",
-          "options": [
-            "In",
-            "Out"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Drenched",
+            "Soggy",
+            "Damp",
+            "Parched",
+            "Arid",
+            "Brittle"
           ],
-          "correctAnswer": "Out",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Outcast\" does not belong to \"In\".",
-            "Correct! \"Outcast\" is categorized under \"Out\"."
+          "clusters": [
+            {
+              "categoryName": "Heavy Moisture",
+              "emoji": "🌊",
+              "words": [
+                "Drenched",
+                "Soggy",
+                "Damp"
+              ],
+              "explanation": "Drenched, Soggy, Damp belong to Heavy Moisture."
+            },
+            {
+              "categoryName": "Barren Dryness",
+              "emoji": "🏜️",
+              "words": [
+                "Parched",
+                "Arid",
+                "Brittle"
+              ],
+              "explanation": "Parched, Arid, Brittle belong to Barren Dryness."
+            }
           ],
-          "hint": "Think about who's accepted into a group, and who's pushed away from it."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Out\" category?",
-          "options": [
-            "Outcast",
-            "Belong",
-            "Membership",
-            "Insider"
-          ],
-          "correctAnswer": "Outcast",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Outcast\" belongs directly to \"Out\".",
-            "Incorrect. \"Belong\" does not belong to \"Out\".",
-            "Incorrect. \"Membership\" does not belong to \"Out\".",
-            "Incorrect. \"Insider\" does not belong to \"Out\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of In: \"______\".",
-          "question": "Type the term belonging to [In] (10 letters):",
-          "correctAnswer": "MEMBERSHIP",
-          "feedbackIfWrong": "The expected term for [In] is \"Membership\".",
-          "hint": "Starts with \"M\"."
+          "clues": {
+            "catAClue": "Look for terms describing conditions of high water saturation and dampness.",
+            "catBClue": "Look for terms describing lack of water, parched land, and fine dust."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L9_PRACTICE_Q1",
       "level": 9,
-      "word": "Damp",
-      "conceptTitle": "Topic Sorting Gym: Wet vs Dry",
-      "targetKeyword": "Damp",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Spatial Dimensions: Expansive Immensity vs Compact Minutiae",
       "topicBuckets": [
-        "Wet",
-        "Dry"
+        "Colossal Size",
+        "Tiny Minutiae"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Damp\" belong to?",
-          "options": [
-            "Wet",
-            "Dry"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Massive",
+            "Vast",
+            "Colossal",
+            "Microscopic",
+            "Petite",
+            "Compact"
           ],
-          "correctAnswer": "Wet",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Damp\" is categorized under \"Wet\".",
-            "Not quite. \"Damp\" does not belong to \"Dry\"."
+          "clusters": [
+            {
+              "categoryName": "Colossal Size",
+              "emoji": "⛰️",
+              "words": [
+                "Massive",
+                "Vast",
+                "Colossal"
+              ],
+              "explanation": "Massive, Vast, Colossal belong to Colossal Size."
+            },
+            {
+              "categoryName": "Tiny Minutiae",
+              "emoji": "🔍",
+              "words": [
+                "Microscopic",
+                "Petite",
+                "Compact"
+              ],
+              "explanation": "Microscopic, Petite, Compact belong to Tiny Minutiae."
+            }
           ],
-          "hint": "Think about a sponge — is it soaked with water or completely dried out?"
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Dry\" category?",
-          "options": [
-            "Parched",
-            "Damp",
-            "Soggy",
-            "Arid"
-          ],
-          "correctAnswer": "Parched",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Parched\" belongs directly to \"Dry\".",
-            "Incorrect. \"Damp\" does not belong to \"Dry\".",
-            "Incorrect. \"Soggy\" does not belong to \"Dry\".",
-            "Incorrect. \"Arid\" does not belong to \"Dry\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Dry: \"______\".",
-          "question": "Type the term belonging to [Dry] (7 letters):",
-          "correctAnswer": "PARCHED",
-          "feedbackIfWrong": "The expected term for [Dry] is \"Parched\".",
-          "hint": "Starts with \"P\"."
+          "clues": {
+            "catAClue": "Look for terms describing objects, spaces, or structures of vast proportions.",
+            "catBClue": "Look for terms describing small, delicate, or microscopic objects and measurements."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L9_PRACTICE_Q2",
       "level": 9,
-      "word": "Crisp",
-      "conceptTitle": "Topic Sorting Gym: Wet vs Dry",
-      "targetKeyword": "Crisp",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Spatial Dimensions: Expansive Immensity vs Compact Minutiae",
       "topicBuckets": [
-        "Wet",
-        "Dry"
+        "Colossal Size",
+        "Tiny Minutiae"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Crisp\" belong to?",
-          "options": [
-            "Wet",
-            "Dry"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Massive",
+            "Vast",
+            "Colossal",
+            "Microscopic",
+            "Petite",
+            "Compact"
           ],
-          "correctAnswer": "Dry",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Crisp\" does not belong to \"Wet\".",
-            "Correct! \"Crisp\" is categorized under \"Dry\"."
+          "clusters": [
+            {
+              "categoryName": "Colossal Size",
+              "emoji": "⛰️",
+              "words": [
+                "Massive",
+                "Vast",
+                "Colossal"
+              ],
+              "explanation": "Massive, Vast, Colossal belong to Colossal Size."
+            },
+            {
+              "categoryName": "Tiny Minutiae",
+              "emoji": "🔍",
+              "words": [
+                "Microscopic",
+                "Petite",
+                "Compact"
+              ],
+              "explanation": "Microscopic, Petite, Compact belong to Tiny Minutiae."
+            }
           ],
-          "hint": "Think about what 'wet' means for weather versus for an object."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Dry\" category?",
-          "options": [
-            "Crisp",
-            "Drenched",
-            "Humid",
-            "Dusty"
-          ],
-          "correctAnswer": "Crisp",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Crisp\" belongs directly to \"Dry\".",
-            "Incorrect. \"Drenched\" does not belong to \"Dry\".",
-            "Incorrect. \"Humid\" does not belong to \"Dry\".",
-            "Incorrect. \"Dusty\" does not belong to \"Dry\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Wet: \"______\".",
-          "question": "Type the term belonging to [Wet] (5 letters):",
-          "correctAnswer": "HUMID",
-          "feedbackIfWrong": "The expected term for [Wet] is \"Humid\".",
-          "hint": "Starts with \"H\"."
+          "clues": {
+            "catAClue": "Look for terms describing objects, spaces, or structures of vast proportions.",
+            "catBClue": "Look for terms describing small, delicate, or microscopic objects and measurements."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L9_PRACTICE_Q3",
       "level": 9,
-      "word": "Brittle",
-      "conceptTitle": "Topic Sorting Gym: Wet vs Dry",
-      "targetKeyword": "Brittle",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Spatial Dimensions: Expansive Immensity vs Compact Minutiae",
       "topicBuckets": [
-        "Wet",
-        "Dry"
+        "Colossal Size",
+        "Tiny Minutiae"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Brittle\" belong to?",
-          "options": [
-            "Wet",
-            "Dry"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Massive",
+            "Vast",
+            "Colossal",
+            "Microscopic",
+            "Petite",
+            "Compact"
           ],
-          "correctAnswer": "Dry",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Brittle\" does not belong to \"Wet\".",
-            "Correct! \"Brittle\" is categorized under \"Dry\"."
+          "clusters": [
+            {
+              "categoryName": "Colossal Size",
+              "emoji": "⛰️",
+              "words": [
+                "Massive",
+                "Vast",
+                "Colossal"
+              ],
+              "explanation": "Massive, Vast, Colossal belong to Colossal Size."
+            },
+            {
+              "categoryName": "Tiny Minutiae",
+              "emoji": "🔍",
+              "words": [
+                "Microscopic",
+                "Petite",
+                "Compact"
+              ],
+              "explanation": "Microscopic, Petite, Compact belong to Tiny Minutiae."
+            }
           ],
-          "hint": "Two of these describe ground that's absorbed too much water, and one describes something too dry to bend."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Dry\" category?",
-          "options": [
-            "Brittle",
-            "Sodden",
-            "Saturated",
-            "Waterlogged"
-          ],
-          "correctAnswer": "Brittle",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Brittle\" belongs directly to \"Dry\".",
-            "Incorrect. \"Sodden\" does not belong to \"Dry\".",
-            "Incorrect. \"Saturated\" does not belong to \"Dry\".",
-            "Incorrect. \"Waterlogged\" does not belong to \"Dry\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Wet: \"______\".",
-          "question": "Type the term belonging to [Wet] (9 letters):",
-          "correctAnswer": "SATURATED",
-          "feedbackIfWrong": "The expected term for [Wet] is \"Saturated\".",
-          "hint": "Starts with \"S\"."
+          "clues": {
+            "catAClue": "Look for terms describing objects, spaces, or structures of vast proportions.",
+            "catBClue": "Look for terms describing small, delicate, or microscopic objects and measurements."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L10_PRACTICE_Q1",
       "level": 10,
-      "word": "Deafening",
-      "conceptTitle": "Topic Sorting Gym: Quiet vs Loud",
-      "targetKeyword": "Deafening",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Temporality Spectrum: Ancient Heritage vs Modern Innovation",
       "topicBuckets": [
-        "Quiet",
-        "Loud"
+        "Ancient History",
+        "Modern Horizon"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Deafening\" belong to?",
-          "options": [
-            "Quiet",
-            "Loud"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Ancient",
+            "Antique",
+            "Archaic",
+            "Contemporary",
+            "Innovative",
+            "Cutting-edge"
           ],
-          "correctAnswer": "Loud",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Deafening\" does not belong to \"Quiet\".",
-            "Correct! \"Deafening\" is categorized under \"Loud\"."
+          "clusters": [
+            {
+              "categoryName": "Ancient History",
+              "emoji": "🏺",
+              "words": [
+                "Ancient",
+                "Antique",
+                "Archaic"
+              ],
+              "explanation": "Ancient, Antique, Archaic belong to Ancient History."
+            },
+            {
+              "categoryName": "Modern Horizon",
+              "emoji": "🚀",
+              "words": [
+                "Contemporary",
+                "Innovative",
+                "Cutting-edge"
+              ],
+              "explanation": "Contemporary, Innovative, Cutting-edge belong to Modern Horizon."
+            }
           ],
-          "hint": "Imagine a rock concert versus a library."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Loud\" category?",
-          "options": [
-            "Deafening",
-            "Silent",
-            "Noisy",
-            "Booming"
-          ],
-          "correctAnswer": "Deafening",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Deafening\" belongs directly to \"Loud\".",
-            "Incorrect. \"Silent\" does not belong to \"Loud\".",
-            "Incorrect. \"Noisy\" does not belong to \"Loud\".",
-            "Incorrect. \"Booming\" does not belong to \"Loud\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Loud: \"______\".",
-          "question": "Type the term belonging to [Loud] (5 letters):",
-          "correctAnswer": "NOISY",
-          "feedbackIfWrong": "The expected term for [Loud] is \"Noisy\".",
-          "hint": "Starts with \"N\"."
+          "clues": {
+            "catAClue": "Look for terms describing objects, ideas, and customs from distant past eras.",
+            "catBClue": "Look for terms describing current technology, fresh ideas, and futuristic developments."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L10_PRACTICE_Q2",
       "level": 10,
-      "word": "Faint",
-      "conceptTitle": "Topic Sorting Gym: Quiet vs Loud",
-      "targetKeyword": "Faint",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Temporality Spectrum: Ancient Heritage vs Modern Innovation",
       "topicBuckets": [
-        "Quiet",
-        "Loud"
+        "Ancient History",
+        "Modern Horizon"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Faint\" belong to?",
-          "options": [
-            "Quiet",
-            "Loud"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Ancient",
+            "Antique",
+            "Archaic",
+            "Contemporary",
+            "Innovative",
+            "Cutting-edge"
           ],
-          "correctAnswer": "Quiet",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Faint\" is categorized under \"Quiet\".",
-            "Not quite. \"Faint\" does not belong to \"Loud\"."
+          "clusters": [
+            {
+              "categoryName": "Ancient History",
+              "emoji": "🏺",
+              "words": [
+                "Ancient",
+                "Antique",
+                "Archaic"
+              ],
+              "explanation": "Ancient, Antique, Archaic belong to Ancient History."
+            },
+            {
+              "categoryName": "Modern Horizon",
+              "emoji": "🚀",
+              "words": [
+                "Contemporary",
+                "Innovative",
+                "Cutting-edge"
+              ],
+              "explanation": "Contemporary, Innovative, Cutting-edge belong to Modern Horizon."
+            }
           ],
-          "hint": "Notice which loud words describe an unpleasant, hard-to-ignore sound."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Loud\" category?",
-          "options": [
-            "Piercing",
-            "Faint",
-            "Blaring",
-            "Muted"
-          ],
-          "correctAnswer": "Piercing",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Piercing\" belongs directly to \"Loud\".",
-            "Incorrect. \"Faint\" does not belong to \"Loud\".",
-            "Incorrect. \"Blaring\" does not belong to \"Loud\".",
-            "Incorrect. \"Muted\" does not belong to \"Loud\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Loud: \"______\".",
-          "question": "Type the term belonging to [Loud] (7 letters):",
-          "correctAnswer": "BLARING",
-          "feedbackIfWrong": "The expected term for [Loud] is \"Blaring\".",
-          "hint": "Starts with \"B\"."
+          "clues": {
+            "catAClue": "Look for terms describing objects, ideas, and customs from distant past eras.",
+            "catBClue": "Look for terms describing current technology, fresh ideas, and futuristic developments."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L10_PRACTICE_Q3",
       "level": 10,
-      "word": "Serenity",
-      "conceptTitle": "Topic Sorting Gym: Loud vs Quiet",
-      "targetKeyword": "Serenity",
+      "cefr": "A2",
+      "conceptTitle": "Cluster Fusion: Temporality Spectrum: Ancient Heritage vs Modern Innovation",
       "topicBuckets": [
-        "Loud",
-        "Quiet"
+        "Ancient History",
+        "Modern Horizon"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Serenity\" belong to?",
-          "options": [
-            "Loud",
-            "Quiet"
+          "targetClusterSize": 3,
+          "tiles": [
+            "Ancient",
+            "Antique",
+            "Archaic",
+            "Contemporary",
+            "Innovative",
+            "Cutting-edge"
           ],
-          "correctAnswer": "Quiet",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Serenity\" does not belong to \"Loud\".",
-            "Correct! \"Serenity\" is categorized under \"Quiet\"."
+          "clusters": [
+            {
+              "categoryName": "Ancient History",
+              "emoji": "🏺",
+              "words": [
+                "Ancient",
+                "Antique",
+                "Archaic"
+              ],
+              "explanation": "Ancient, Antique, Archaic belong to Ancient History."
+            },
+            {
+              "categoryName": "Modern Horizon",
+              "emoji": "🚀",
+              "words": [
+                "Contemporary",
+                "Innovative",
+                "Cutting-edge"
+              ],
+              "explanation": "Contemporary, Innovative, Cutting-edge belong to Modern Horizon."
+            }
           ],
-          "hint": "Think beyond just volume for one of the quiet words."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Quiet\" category?",
-          "options": [
-            "Serenity",
-            "Murmur",
-            "Whisper",
-            "Clamor"
-          ],
-          "correctAnswer": "Serenity",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Serenity\" belongs directly to \"Quiet\".",
-            "Incorrect. \"Murmur\" does not belong to \"Quiet\".",
-            "Incorrect. \"Whisper\" does not belong to \"Quiet\".",
-            "Incorrect. \"Clamor\" does not belong to \"Quiet\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Quiet: \"______\".",
-          "question": "Type the term belonging to [Quiet] (7 letters):",
-          "correctAnswer": "WHISPER",
-          "feedbackIfWrong": "The expected term for [Quiet] is \"Whisper\".",
-          "hint": "Starts with \"W\"."
+          "clues": {
+            "catAClue": "Look for terms describing objects, ideas, and customs from distant past eras.",
+            "catBClue": "Look for terms describing current technology, fresh ideas, and futuristic developments."
+          }
         }
       ]
     }

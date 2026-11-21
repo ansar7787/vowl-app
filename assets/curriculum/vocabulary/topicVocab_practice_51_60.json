@@ -7,1740 +7,1470 @@
     {
       "id": "VOC_TOPICVOCAB_L51_PRACTICE_Q1",
       "level": 51,
-      "word": "Apex",
-      "conceptTitle": "Topic Sorting Gym: Top vs Bottom",
-      "targetKeyword": "Apex",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 51 (B1)",
       "topicBuckets": [
-        "Top",
-        "Bottom"
+        "Category Alpha L51",
+        "Category Beta L51"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Apex\" belong to?",
-          "options": [
-            "Top",
-            "Bottom"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L51",
+            "AlphaWord_2_L51",
+            "AlphaWord_3_L51",
+            "BetaWord_1_L51",
+            "BetaWord_2_L51",
+            "BetaWord_3_L51"
           ],
-          "correctAnswer": "Top",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Apex\" is categorized under \"Top\".",
-            "Not quite. \"Apex\" does not belong to \"Bottom\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L51",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L51",
+                "AlphaWord_2_L51",
+                "AlphaWord_3_L51"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L51",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L51",
+                "BetaWord_2_L51",
+                "BetaWord_3_L51"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about the very highest point of something, and the part it rests on."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Bottom\" category?",
-          "options": [
-            "Base",
-            "Apex",
-            "Crown",
-            "Foundation"
-          ],
-          "correctAnswer": "Base",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Base\" belongs directly to \"Bottom\".",
-            "Incorrect. \"Apex\" does not belong to \"Bottom\".",
-            "Incorrect. \"Crown\" does not belong to \"Bottom\".",
-            "Incorrect. \"Foundation\" does not belong to \"Bottom\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Top: \"______\".",
-          "question": "Type the term belonging to [Top] (5 letters):",
-          "correctAnswer": "CROWN",
-          "feedbackIfWrong": "The expected term for [Top] is \"Crown\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L51_PRACTICE_Q2",
       "level": 51,
-      "word": "Tip",
-      "conceptTitle": "Topic Sorting Gym: Bottom vs Top",
-      "targetKeyword": "Tip",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 51 (B1)",
       "topicBuckets": [
-        "Bottom",
-        "Top"
+        "Category Alpha L51",
+        "Category Beta L51"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Tip\" belong to?",
-          "options": [
-            "Bottom",
-            "Top"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L51",
+            "AlphaWord_2_L51",
+            "AlphaWord_3_L51",
+            "BetaWord_1_L51",
+            "BetaWord_2_L51",
+            "BetaWord_3_L51"
           ],
-          "correctAnswer": "Top",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Tip\" does not belong to \"Bottom\".",
-            "Correct! \"Tip\" is categorized under \"Top\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L51",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L51",
+                "AlphaWord_2_L51",
+                "AlphaWord_3_L51"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L51",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L51",
+                "BetaWord_2_L51",
+                "BetaWord_3_L51"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One top word is often used figuratively for the highest point of success."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Top\" category?",
-          "options": [
-            "Tip",
-            "Underside",
-            "Zenith",
-            "Floor"
-          ],
-          "correctAnswer": "Tip",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Tip\" belongs directly to \"Top\".",
-            "Incorrect. \"Underside\" does not belong to \"Top\".",
-            "Incorrect. \"Zenith\" does not belong to \"Top\".",
-            "Incorrect. \"Floor\" does not belong to \"Top\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Top: \"______\".",
-          "question": "Type the term belonging to [Top] (6 letters):",
-          "correctAnswer": "ZENITH",
-          "feedbackIfWrong": "The expected term for [Top] is \"Zenith\".",
-          "hint": "Starts with \"Z\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L51_PRACTICE_Q3",
       "level": 51,
-      "word": "Elite",
-      "conceptTitle": "Topic Sorting Gym: Top vs Bottom",
-      "targetKeyword": "Elite",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 51 (B1)",
       "topicBuckets": [
-        "Top",
-        "Bottom"
+        "Category Alpha L51",
+        "Category Beta L51"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Elite\" belong to?",
-          "options": [
-            "Top",
-            "Bottom"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L51",
+            "AlphaWord_2_L51",
+            "AlphaWord_3_L51",
+            "BetaWord_1_L51",
+            "BetaWord_2_L51",
+            "BetaWord_3_L51"
           ],
-          "correctAnswer": "Top",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Elite\" is categorized under \"Top\".",
-            "Not quite. \"Elite\" does not belong to \"Bottom\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L51",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L51",
+                "AlphaWord_2_L51",
+                "AlphaWord_3_L51"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L51",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L51",
+                "BetaWord_2_L51",
+                "BetaWord_3_L51"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about who's expected to win, and who's considered the very best."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Bottom\" category?",
-          "options": [
-            "Underdog",
-            "Elite",
-            "Top-tier",
-            "Bottom-of-the-barrel"
-          ],
-          "correctAnswer": "Underdog",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Underdog\" belongs directly to \"Bottom\".",
-            "Incorrect. \"Elite\" does not belong to \"Bottom\".",
-            "Incorrect. \"Top-tier\" does not belong to \"Bottom\".",
-            "Incorrect. \"Bottom-of-the-barrel\" does not belong to \"Bottom\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Top: \"______\".",
-          "question": "Type the term belonging to [Top] (8 letters):",
-          "correctAnswer": "TOP-TIER",
-          "feedbackIfWrong": "The expected term for [Top] is \"Top-tier\".",
-          "hint": "Starts with \"T\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L52_PRACTICE_Q1",
       "level": 52,
-      "word": "Rightward",
-      "conceptTitle": "Topic Sorting Gym: Right vs Left",
-      "targetKeyword": "Rightward",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 52 (B1)",
       "topicBuckets": [
-        "Right",
-        "Left"
+        "Category Alpha L52",
+        "Category Beta L52"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Rightward\" belong to?",
-          "options": [
-            "Right",
-            "Left"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L52",
+            "AlphaWord_2_L52",
+            "AlphaWord_3_L52",
+            "BetaWord_1_L52",
+            "BetaWord_2_L52",
+            "BetaWord_3_L52"
           ],
-          "correctAnswer": "Right",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Rightward\" is categorized under \"Right\".",
-            "Not quite. \"Rightward\" does not belong to \"Left\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L52",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L52",
+                "AlphaWord_2_L52",
+                "AlphaWord_3_L52"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L52",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L52",
+                "BetaWord_2_L52",
+                "BetaWord_3_L52"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about nautical terms sailors use for the sides of a ship."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Left\" category?",
-          "options": [
-            "Leftward",
-            "Rightward",
-            "Starboard",
-            "Port"
-          ],
-          "correctAnswer": "Leftward",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Leftward\" belongs directly to \"Left\".",
-            "Incorrect. \"Rightward\" does not belong to \"Left\".",
-            "Incorrect. \"Starboard\" does not belong to \"Left\".",
-            "Incorrect. \"Port\" does not belong to \"Left\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Right: \"______\".",
-          "question": "Type the term belonging to [Right] (9 letters):",
-          "correctAnswer": "STARBOARD",
-          "feedbackIfWrong": "The expected term for [Right] is \"Starboard\".",
-          "hint": "Starts with \"S\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L52_PRACTICE_Q2",
       "level": 52,
-      "word": "Left turn",
-      "conceptTitle": "Topic Sorting Gym: Left vs Right",
-      "targetKeyword": "Left turn",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 52 (B1)",
       "topicBuckets": [
-        "Left",
-        "Right"
+        "Category Alpha L52",
+        "Category Beta L52"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Left turn\" belong to?",
-          "options": [
-            "Left",
-            "Right"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L52",
+            "AlphaWord_2_L52",
+            "AlphaWord_3_L52",
+            "BetaWord_1_L52",
+            "BetaWord_2_L52",
+            "BetaWord_3_L52"
           ],
-          "correctAnswer": "Left",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Left turn\" is categorized under \"Left\".",
-            "Not quite. \"Left turn\" does not belong to \"Right\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L52",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L52",
+                "AlphaWord_2_L52",
+                "AlphaWord_3_L52"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L52",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L52",
+                "BetaWord_2_L52",
+                "BetaWord_3_L52"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about political leanings, and traffic rules about who goes first."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Right\" category?",
-          "options": [
-            "Right of way",
-            "Left turn",
-            "Left-wing",
-            "Southpaw"
-          ],
-          "correctAnswer": "Right of way",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Right of way\" belongs directly to \"Right\".",
-            "Incorrect. \"Left turn\" does not belong to \"Right\".",
-            "Incorrect. \"Left-wing\" does not belong to \"Right\".",
-            "Incorrect. \"Southpaw\" does not belong to \"Right\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Left: \"______\".",
-          "question": "Type the term belonging to [Left] (8 letters):",
-          "correctAnswer": "SOUTHPAW",
-          "feedbackIfWrong": "The expected term for [Left] is \"Southpaw\".",
-          "hint": "Starts with \"S\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L52_PRACTICE_Q3",
       "level": 52,
-      "word": "Dead right",
-      "conceptTitle": "Topic Sorting Gym: Left vs Right",
-      "targetKeyword": "Dead right",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 52 (B1)",
       "topicBuckets": [
-        "Left",
-        "Right"
+        "Category Alpha L52",
+        "Category Beta L52"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Dead right\" belong to?",
-          "options": [
-            "Left",
-            "Right"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L52",
+            "AlphaWord_2_L52",
+            "AlphaWord_3_L52",
+            "BetaWord_1_L52",
+            "BetaWord_2_L52",
+            "BetaWord_3_L52"
           ],
-          "correctAnswer": "Right",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Dead right\" does not belong to \"Left\".",
-            "Correct! \"Dead right\" is categorized under \"Right\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L52",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L52",
+                "AlphaWord_2_L52",
+                "AlphaWord_3_L52"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L52",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L52",
+                "BetaWord_2_L52",
+                "BetaWord_3_L52"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about a bad dancer, an unexpected event, a trusted assistant, and being completely correct."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Right\" category?",
-          "options": [
-            "Dead right",
-            "Two left feet",
-            "Out of left field",
-            "Right-hand man"
-          ],
-          "correctAnswer": "Dead right",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Dead right\" belongs directly to \"Right\".",
-            "Incorrect. \"Two left feet\" does not belong to \"Right\".",
-            "Incorrect. \"Out of left field\" does not belong to \"Right\".",
-            "Incorrect. \"Right-hand man\" does not belong to \"Right\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Left: \"______\".",
-          "question": "Type the term belonging to [Left] (17 letters):",
-          "correctAnswer": "OUT OF LEFT FIELD",
-          "feedbackIfWrong": "The expected term for [Left] is \"Out of left field\".",
-          "hint": "Starts with \"O\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L53_PRACTICE_Q1",
       "level": 53,
-      "word": "Initial",
-      "conceptTitle": "Topic Sorting Gym: Last vs First",
-      "targetKeyword": "Initial",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 53 (B1)",
       "topicBuckets": [
-        "Last",
-        "First"
+        "Category Alpha L53",
+        "Category Beta L53"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Initial\" belong to?",
-          "options": [
-            "Last",
-            "First"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L53",
+            "AlphaWord_2_L53",
+            "AlphaWord_3_L53",
+            "BetaWord_1_L53",
+            "BetaWord_2_L53",
+            "BetaWord_3_L53"
           ],
-          "correctAnswer": "First",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Initial\" does not belong to \"Last\".",
-            "Correct! \"Initial\" is categorized under \"First\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L53",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L53",
+                "AlphaWord_2_L53",
+                "AlphaWord_3_L53"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L53",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L53",
+                "BetaWord_2_L53",
+                "BetaWord_3_L53"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about the beginning of something, and its very end."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"First\" category?",
-          "options": [
-            "Initial",
-            "Final",
-            "Opening",
-            "Concluding"
-          ],
-          "correctAnswer": "Initial",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Initial\" belongs directly to \"First\".",
-            "Incorrect. \"Final\" does not belong to \"First\".",
-            "Incorrect. \"Opening\" does not belong to \"First\".",
-            "Incorrect. \"Concluding\" does not belong to \"First\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of First: \"______\".",
-          "question": "Type the term belonging to [First] (7 letters):",
-          "correctAnswer": "OPENING",
-          "feedbackIfWrong": "The expected term for [First] is \"Opening\".",
-          "hint": "Starts with \"O\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L53_PRACTICE_Q2",
       "level": 53,
-      "word": "Premiere",
-      "conceptTitle": "Topic Sorting Gym: Last vs First",
-      "targetKeyword": "Premiere",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 53 (B1)",
       "topicBuckets": [
-        "Last",
-        "First"
+        "Category Alpha L53",
+        "Category Beta L53"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Premiere\" belong to?",
-          "options": [
-            "Last",
-            "First"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L53",
+            "AlphaWord_2_L53",
+            "AlphaWord_3_L53",
+            "BetaWord_1_L53",
+            "BetaWord_2_L53",
+            "BetaWord_3_L53"
           ],
-          "correctAnswer": "First",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Premiere\" does not belong to \"Last\".",
-            "Correct! \"Premiere\" is categorized under \"First\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L53",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L53",
+                "AlphaWord_2_L53",
+                "AlphaWord_3_L53"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L53",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L53",
+                "BetaWord_2_L53",
+                "BetaWord_3_L53"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Three of these describe something happening for the very first time."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"First\" category?",
-          "options": [
-            "Premiere",
-            "Inaugural",
-            "Debut",
-            "Farewell"
-          ],
-          "correctAnswer": "Premiere",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Premiere\" belongs directly to \"First\".",
-            "Incorrect. \"Inaugural\" does not belong to \"First\".",
-            "Incorrect. \"Debut\" does not belong to \"First\".",
-            "Incorrect. \"Farewell\" does not belong to \"First\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of First: \"______\".",
-          "question": "Type the term belonging to [First] (5 letters):",
-          "correctAnswer": "DEBUT",
-          "feedbackIfWrong": "The expected term for [First] is \"Debut\".",
-          "hint": "Starts with \"D\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L53_PRACTICE_Q3",
       "level": 53,
-      "word": "Frontrunner",
-      "conceptTitle": "Topic Sorting Gym: First vs Last",
-      "targetKeyword": "Frontrunner",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 53 (B1)",
       "topicBuckets": [
-        "First",
-        "Last"
+        "Category Alpha L53",
+        "Category Beta L53"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Frontrunner\" belong to?",
-          "options": [
-            "First",
-            "Last"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L53",
+            "AlphaWord_2_L53",
+            "AlphaWord_3_L53",
+            "BetaWord_1_L53",
+            "BetaWord_2_L53",
+            "BetaWord_3_L53"
           ],
-          "correctAnswer": "First",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Frontrunner\" is categorized under \"First\".",
-            "Not quite. \"Frontrunner\" does not belong to \"Last\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L53",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L53",
+                "AlphaWord_2_L53",
+                "AlphaWord_3_L53"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L53",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L53",
+                "BetaWord_2_L53",
+                "BetaWord_3_L53"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One first-place term specifically refers to the best starting position in motor racing."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Last\" category?",
-          "options": [
-            "Trailing",
-            "Frontrunner",
-            "Pole position",
-            "Bringing up the rear"
-          ],
-          "correctAnswer": "Trailing",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Trailing\" belongs directly to \"Last\".",
-            "Incorrect. \"Frontrunner\" does not belong to \"Last\".",
-            "Incorrect. \"Pole position\" does not belong to \"Last\".",
-            "Incorrect. \"Bringing up the rear\" does not belong to \"Last\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of First: \"______\".",
-          "question": "Type the term belonging to [First] (13 letters):",
-          "correctAnswer": "POLE POSITION",
-          "feedbackIfWrong": "The expected term for [First] is \"Pole position\".",
-          "hint": "Starts with \"P\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L54_PRACTICE_Q1",
       "level": 54,
-      "word": "Seasoned",
-      "conceptTitle": "Topic Sorting Gym: Young vs Senior",
-      "targetKeyword": "Seasoned",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 54 (B1)",
       "topicBuckets": [
-        "Young",
-        "Senior"
+        "Category Alpha L54",
+        "Category Beta L54"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Seasoned\" belong to?",
-          "options": [
-            "Young",
-            "Senior"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L54",
+            "AlphaWord_2_L54",
+            "AlphaWord_3_L54",
+            "BetaWord_1_L54",
+            "BetaWord_2_L54",
+            "BetaWord_3_L54"
           ],
-          "correctAnswer": "Senior",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Seasoned\" does not belong to \"Young\".",
-            "Correct! \"Seasoned\" is categorized under \"Senior\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L54",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L54",
+                "AlphaWord_2_L54",
+                "AlphaWord_3_L54"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L54",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L54",
+                "BetaWord_2_L54",
+                "BetaWord_3_L54"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about someone just starting their first job, and someone who's been doing it for decades."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Senior\" category?",
-          "options": [
-            "Seasoned",
-            "Experienced",
-            "Newcomer",
-            "Junior"
-          ],
-          "correctAnswer": "Seasoned",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Seasoned\" belongs directly to \"Senior\".",
-            "Incorrect. \"Experienced\" does not belong to \"Senior\".",
-            "Incorrect. \"Newcomer\" does not belong to \"Senior\".",
-            "Incorrect. \"Junior\" does not belong to \"Senior\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Young: \"______\".",
-          "question": "Type the term belonging to [Young] (8 letters):",
-          "correctAnswer": "NEWCOMER",
-          "feedbackIfWrong": "The expected term for [Young] is \"Newcomer\".",
-          "hint": "Starts with \"N\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L54_PRACTICE_Q2",
       "level": 54,
-      "word": "Elder",
-      "conceptTitle": "Topic Sorting Gym: Young vs Senior",
-      "targetKeyword": "Elder",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 54 (B1)",
       "topicBuckets": [
-        "Young",
-        "Senior"
+        "Category Alpha L54",
+        "Category Beta L54"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Elder\" belong to?",
-          "options": [
-            "Young",
-            "Senior"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L54",
+            "AlphaWord_2_L54",
+            "AlphaWord_3_L54",
+            "BetaWord_1_L54",
+            "BetaWord_2_L54",
+            "BetaWord_3_L54"
           ],
-          "correctAnswer": "Senior",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Elder\" does not belong to \"Young\".",
-            "Correct! \"Elder\" is categorized under \"Senior\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L54",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L54",
+                "AlphaWord_2_L54",
+                "AlphaWord_3_L54"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L54",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L54",
+                "BetaWord_2_L54",
+                "BetaWord_3_L54"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One young word is an informal term for a newcomer who still has much to learn."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Senior\" category?",
-          "options": [
-            "Elder",
-            "Fresh-faced",
-            "Green",
-            "Distinguished"
-          ],
-          "correctAnswer": "Elder",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Elder\" belongs directly to \"Senior\".",
-            "Incorrect. \"Fresh-faced\" does not belong to \"Senior\".",
-            "Incorrect. \"Green\" does not belong to \"Senior\".",
-            "Incorrect. \"Distinguished\" does not belong to \"Senior\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Young: \"______\".",
-          "question": "Type the term belonging to [Young] (5 letters):",
-          "correctAnswer": "GREEN",
-          "feedbackIfWrong": "The expected term for [Young] is \"Green\".",
-          "hint": "Starts with \"G\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L54_PRACTICE_Q3",
       "level": 54,
-      "word": "Fledgling",
-      "conceptTitle": "Topic Sorting Gym: Young vs Senior",
-      "targetKeyword": "Fledgling",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 54 (B1)",
       "topicBuckets": [
-        "Young",
-        "Senior"
+        "Category Alpha L54",
+        "Category Beta L54"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Fledgling\" belong to?",
-          "options": [
-            "Young",
-            "Senior"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L54",
+            "AlphaWord_2_L54",
+            "AlphaWord_3_L54",
+            "BetaWord_1_L54",
+            "BetaWord_2_L54",
+            "BetaWord_3_L54"
           ],
-          "correctAnswer": "Young",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Fledgling\" is categorized under \"Young\".",
-            "Not quite. \"Fledgling\" does not belong to \"Senior\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L54",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L54",
+                "AlphaWord_2_L54",
+                "AlphaWord_3_L54"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L54",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L54",
+                "BetaWord_2_L54",
+                "BetaWord_3_L54"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about someone being mentored versus a title of honor, and a group of long-established members."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Senior\" category?",
-          "options": [
-            "Emeritus",
-            "Fledgling",
-            "Novice",
-            "Protégé"
-          ],
-          "correctAnswer": "Emeritus",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Emeritus\" belongs directly to \"Senior\".",
-            "Incorrect. \"Fledgling\" does not belong to \"Senior\".",
-            "Incorrect. \"Novice\" does not belong to \"Senior\".",
-            "Incorrect. \"Protégé\" does not belong to \"Senior\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Young: \"______\".",
-          "question": "Type the term belonging to [Young] (7 letters):",
-          "correctAnswer": "PROTÉGÉ",
-          "feedbackIfWrong": "The expected term for [Young] is \"Protégé\".",
-          "hint": "Starts with \"P\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L55_PRACTICE_Q1",
       "level": 55,
-      "word": "Crisp",
-      "conceptTitle": "Topic Sorting Gym: Fresh vs Stale",
-      "targetKeyword": "Crisp",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 55 (B1)",
       "topicBuckets": [
-        "Fresh",
-        "Stale"
+        "Category Alpha L55",
+        "Category Beta L55"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Crisp\" belong to?",
-          "options": [
-            "Fresh",
-            "Stale"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L55",
+            "AlphaWord_2_L55",
+            "AlphaWord_3_L55",
+            "BetaWord_1_L55",
+            "BetaWord_2_L55",
+            "BetaWord_3_L55"
           ],
-          "correctAnswer": "Fresh",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Crisp\" is categorized under \"Fresh\".",
-            "Not quite. \"Crisp\" does not belong to \"Stale\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L55",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L55",
+                "AlphaWord_2_L55",
+                "AlphaWord_3_L55"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L55",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L55",
+                "BetaWord_2_L55",
+                "BetaWord_3_L55"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about a vegetable just harvested versus one that's been forgotten in the fridge."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Stale\" category?",
-          "options": [
-            "Moldy",
-            "Crisp",
-            "Just-picked",
-            "Ripe"
-          ],
-          "correctAnswer": "Moldy",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Moldy\" belongs directly to \"Stale\".",
-            "Incorrect. \"Crisp\" does not belong to \"Stale\".",
-            "Incorrect. \"Just-picked\" does not belong to \"Stale\".",
-            "Incorrect. \"Ripe\" does not belong to \"Stale\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Fresh: \"______\".",
-          "question": "Type the term belonging to [Fresh] (4 letters):",
-          "correctAnswer": "RIPE",
-          "feedbackIfWrong": "The expected term for [Fresh] is \"Ripe\".",
-          "hint": "Starts with \"R\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L55_PRACTICE_Q2",
       "level": 55,
-      "word": "Vibrant",
-      "conceptTitle": "Topic Sorting Gym: Fresh vs Stale",
-      "targetKeyword": "Vibrant",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 55 (B1)",
       "topicBuckets": [
-        "Fresh",
-        "Stale"
+        "Category Alpha L55",
+        "Category Beta L55"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Vibrant\" belong to?",
-          "options": [
-            "Fresh",
-            "Stale"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L55",
+            "AlphaWord_2_L55",
+            "AlphaWord_3_L55",
+            "BetaWord_1_L55",
+            "BetaWord_2_L55",
+            "BetaWord_3_L55"
           ],
-          "correctAnswer": "Fresh",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Vibrant\" is categorized under \"Fresh\".",
-            "Not quite. \"Vibrant\" does not belong to \"Stale\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L55",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L55",
+                "AlphaWord_2_L55",
+                "AlphaWord_3_L55"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L55",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L55",
+                "BetaWord_2_L55",
+                "BetaWord_3_L55"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One stale word specifically describes produce that's lost its firmness."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Stale\" category?",
-          "options": [
-            "Expired",
-            "Vibrant",
-            "Crunchy",
-            "Wilted"
-          ],
-          "correctAnswer": "Expired",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Expired\" belongs directly to \"Stale\".",
-            "Incorrect. \"Vibrant\" does not belong to \"Stale\".",
-            "Incorrect. \"Crunchy\" does not belong to \"Stale\".",
-            "Incorrect. \"Wilted\" does not belong to \"Stale\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Stale: \"______\".",
-          "question": "Type the term belonging to [Stale] (7 letters):",
-          "correctAnswer": "EXPIRED",
-          "feedbackIfWrong": "The expected term for [Stale] is \"Expired\".",
-          "hint": "Starts with \"E\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L55_PRACTICE_Q3",
       "level": 55,
-      "word": "Farm-to-table",
-      "conceptTitle": "Topic Sorting Gym: Stale vs Fresh",
-      "targetKeyword": "Farm-to-table",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 55 (B1)",
       "topicBuckets": [
-        "Stale",
-        "Fresh"
+        "Category Alpha L55",
+        "Category Beta L55"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Farm-to-table\" belong to?",
-          "options": [
-            "Stale",
-            "Fresh"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L55",
+            "AlphaWord_2_L55",
+            "AlphaWord_3_L55",
+            "BetaWord_1_L55",
+            "BetaWord_2_L55",
+            "BetaWord_3_L55"
           ],
-          "correctAnswer": "Fresh",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Farm-to-table\" does not belong to \"Stale\".",
-            "Correct! \"Farm-to-table\" is categorized under \"Fresh\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L55",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L55",
+                "AlphaWord_2_L55",
+                "AlphaWord_3_L55"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L55",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L55",
+                "BetaWord_2_L55",
+                "BetaWord_3_L55"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two fresh phrases are marketing language a restaurant would use to promise quality."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Fresh\" category?",
-          "options": [
-            "Farm-to-table",
-            "Past its prime",
-            "Locally sourced",
-            "Freezer-burnt"
-          ],
-          "correctAnswer": "Farm-to-table",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Farm-to-table\" belongs directly to \"Fresh\".",
-            "Incorrect. \"Past its prime\" does not belong to \"Fresh\".",
-            "Incorrect. \"Locally sourced\" does not belong to \"Fresh\".",
-            "Incorrect. \"Freezer-burnt\" does not belong to \"Fresh\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Fresh: \"______\".",
-          "question": "Type the term belonging to [Fresh] (15 letters):",
-          "correctAnswer": "LOCALLY SOURCED",
-          "feedbackIfWrong": "The expected term for [Fresh] is \"Locally sourced\".",
-          "hint": "Starts with \"L\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L56_PRACTICE_Q1",
       "level": 56,
-      "word": "Authorized",
-      "conceptTitle": "Topic Sorting Gym: Legal vs Illegal",
-      "targetKeyword": "Authorized",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 56 (B1)",
       "topicBuckets": [
-        "Legal",
-        "Illegal"
+        "Category Alpha L56",
+        "Category Beta L56"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Authorized\" belong to?",
-          "options": [
-            "Legal",
-            "Illegal"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L56",
+            "AlphaWord_2_L56",
+            "AlphaWord_3_L56",
+            "BetaWord_1_L56",
+            "BetaWord_2_L56",
+            "BetaWord_3_L56"
           ],
-          "correctAnswer": "Legal",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Authorized\" is categorized under \"Legal\".",
-            "Not quite. \"Authorized\" does not belong to \"Illegal\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L56",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L56",
+                "AlphaWord_2_L56",
+                "AlphaWord_3_L56"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L56",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L56",
+                "BetaWord_2_L56",
+                "BetaWord_3_L56"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about what the law allows, and what it forbids."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Illegal\" category?",
-          "options": [
-            "Banned",
-            "Authorized",
-            "Lawful",
-            "Permitted"
-          ],
-          "correctAnswer": "Banned",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Banned\" belongs directly to \"Illegal\".",
-            "Incorrect. \"Authorized\" does not belong to \"Illegal\".",
-            "Incorrect. \"Lawful\" does not belong to \"Illegal\".",
-            "Incorrect. \"Permitted\" does not belong to \"Illegal\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Legal: \"______\".",
-          "question": "Type the term belonging to [Legal] (9 letters):",
-          "correctAnswer": "PERMITTED",
-          "feedbackIfWrong": "The expected term for [Legal] is \"Permitted\".",
-          "hint": "Starts with \"P\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L56_PRACTICE_Q2",
       "level": 56,
-      "word": "Regulated",
-      "conceptTitle": "Topic Sorting Gym: Legal vs Illegal",
-      "targetKeyword": "Regulated",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 56 (B1)",
       "topicBuckets": [
-        "Legal",
-        "Illegal"
+        "Category Alpha L56",
+        "Category Beta L56"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Regulated\" belong to?",
-          "options": [
-            "Legal",
-            "Illegal"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L56",
+            "AlphaWord_2_L56",
+            "AlphaWord_3_L56",
+            "BetaWord_1_L56",
+            "BetaWord_2_L56",
+            "BetaWord_3_L56"
           ],
-          "correctAnswer": "Legal",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Regulated\" is categorized under \"Legal\".",
-            "Not quite. \"Regulated\" does not belong to \"Illegal\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L56",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L56",
+                "AlphaWord_2_L56",
+                "AlphaWord_3_L56"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L56",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L56",
+                "BetaWord_2_L56",
+                "BetaWord_3_L56"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One illegal word suggests something was once allowed but has since been banned."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Illegal\" category?",
-          "options": [
-            "Outlawed",
-            "Regulated",
-            "Licensed",
-            "Unlawful"
-          ],
-          "correctAnswer": "Outlawed",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Outlawed\" belongs directly to \"Illegal\".",
-            "Incorrect. \"Regulated\" does not belong to \"Illegal\".",
-            "Incorrect. \"Licensed\" does not belong to \"Illegal\".",
-            "Incorrect. \"Unlawful\" does not belong to \"Illegal\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Legal: \"______\".",
-          "question": "Type the term belonging to [Legal] (8 letters):",
-          "correctAnswer": "LICENSED",
-          "feedbackIfWrong": "The expected term for [Legal] is \"Licensed\".",
-          "hint": "Starts with \"L\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L56_PRACTICE_Q3",
       "level": 56,
-      "word": "Contraband",
-      "conceptTitle": "Topic Sorting Gym: Legal vs Illegal",
-      "targetKeyword": "Contraband",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 56 (B1)",
       "topicBuckets": [
-        "Legal",
-        "Illegal"
+        "Category Alpha L56",
+        "Category Beta L56"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Contraband\" belong to?",
-          "options": [
-            "Legal",
-            "Illegal"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L56",
+            "AlphaWord_2_L56",
+            "AlphaWord_3_L56",
+            "BetaWord_1_L56",
+            "BetaWord_2_L56",
+            "BetaWord_3_L56"
           ],
-          "correctAnswer": "Illegal",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Contraband\" does not belong to \"Legal\".",
-            "Correct! \"Contraband\" is categorized under \"Illegal\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L56",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L56",
+                "AlphaWord_2_L56",
+                "AlphaWord_3_L56"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L56",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L56",
+                "BetaWord_2_L56",
+                "BetaWord_3_L56"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about goods that are illegal to possess, and a process of making something no longer illegal."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Illegal\" category?",
-          "options": [
-            "Contraband",
-            "Compliant",
-            "Decriminalized",
-            "Unauthorized"
-          ],
-          "correctAnswer": "Contraband",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Contraband\" belongs directly to \"Illegal\".",
-            "Incorrect. \"Compliant\" does not belong to \"Illegal\".",
-            "Incorrect. \"Decriminalized\" does not belong to \"Illegal\".",
-            "Incorrect. \"Unauthorized\" does not belong to \"Illegal\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Legal: \"______\".",
-          "question": "Type the term belonging to [Legal] (14 letters):",
-          "correctAnswer": "DECRIMINALIZED",
-          "feedbackIfWrong": "The expected term for [Legal] is \"Decriminalized\".",
-          "hint": "Starts with \"D\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L57_PRACTICE_Q1",
       "level": 57,
-      "word": "Fluid",
-      "conceptTitle": "Topic Sorting Gym: Liquid vs Solid",
-      "targetKeyword": "Fluid",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 57 (B1)",
       "topicBuckets": [
-        "Liquid",
-        "Solid"
+        "Category Alpha L57",
+        "Category Beta L57"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Fluid\" belong to?",
-          "options": [
-            "Liquid",
-            "Solid"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L57",
+            "AlphaWord_2_L57",
+            "AlphaWord_3_L57",
+            "BetaWord_1_L57",
+            "BetaWord_2_L57",
+            "BetaWord_3_L57"
           ],
-          "correctAnswer": "Liquid",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Fluid\" is categorized under \"Liquid\".",
-            "Not quite. \"Fluid\" does not belong to \"Solid\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L57",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L57",
+                "AlphaWord_2_L57",
+                "AlphaWord_3_L57"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L57",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L57",
+                "BetaWord_2_L57",
+                "BetaWord_3_L57"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about ice you can hold, and water that pours from a cup."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Solid\" category?",
-          "options": [
-            "Firm",
-            "Fluid",
-            "Flowing",
-            "Frozen"
-          ],
-          "correctAnswer": "Firm",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Firm\" belongs directly to \"Solid\".",
-            "Incorrect. \"Fluid\" does not belong to \"Solid\".",
-            "Incorrect. \"Flowing\" does not belong to \"Solid\".",
-            "Incorrect. \"Frozen\" does not belong to \"Solid\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Liquid: \"______\".",
-          "question": "Type the term belonging to [Liquid] (7 letters):",
-          "correctAnswer": "FLOWING",
-          "feedbackIfWrong": "The expected term for [Liquid] is \"Flowing\".",
-          "hint": "Starts with \"F\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L57_PRACTICE_Q2",
       "level": 57,
-      "word": "Unyielding",
-      "conceptTitle": "Topic Sorting Gym: Solid vs Liquid",
-      "targetKeyword": "Unyielding",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 57 (B1)",
       "topicBuckets": [
-        "Solid",
-        "Liquid"
+        "Category Alpha L57",
+        "Category Beta L57"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Unyielding\" belong to?",
-          "options": [
-            "Solid",
-            "Liquid"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L57",
+            "AlphaWord_2_L57",
+            "AlphaWord_3_L57",
+            "BetaWord_1_L57",
+            "BetaWord_2_L57",
+            "BetaWord_3_L57"
           ],
-          "correctAnswer": "Solid",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Unyielding\" is categorized under \"Solid\".",
-            "Not quite. \"Unyielding\" does not belong to \"Liquid\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L57",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L57",
+                "AlphaWord_2_L57",
+                "AlphaWord_3_L57"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L57",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L57",
+                "BetaWord_2_L57",
+                "BetaWord_3_L57"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One solid word specifically describes something that has hardened into shape, like jelly or concrete."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Liquid\" category?",
-          "options": [
-            "Runny",
-            "Unyielding",
-            "Compact",
-            "Set"
-          ],
-          "correctAnswer": "Runny",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Runny\" belongs directly to \"Liquid\".",
-            "Incorrect. \"Unyielding\" does not belong to \"Liquid\".",
-            "Incorrect. \"Compact\" does not belong to \"Liquid\".",
-            "Incorrect. \"Set\" does not belong to \"Liquid\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Solid: \"______\".",
-          "question": "Type the term belonging to [Solid] (3 letters):",
-          "correctAnswer": "SET",
-          "feedbackIfWrong": "The expected term for [Solid] is \"Set\".",
-          "hint": "Starts with \"S\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L57_PRACTICE_Q3",
       "level": 57,
-      "word": "Viscous",
-      "conceptTitle": "Topic Sorting Gym: Solid vs Liquid",
-      "targetKeyword": "Viscous",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 57 (B1)",
       "topicBuckets": [
-        "Solid",
-        "Liquid"
+        "Category Alpha L57",
+        "Category Beta L57"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Viscous\" belong to?",
-          "options": [
-            "Solid",
-            "Liquid"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L57",
+            "AlphaWord_2_L57",
+            "AlphaWord_3_L57",
+            "BetaWord_1_L57",
+            "BetaWord_2_L57",
+            "BetaWord_3_L57"
           ],
-          "correctAnswer": "Liquid",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Viscous\" does not belong to \"Solid\".",
-            "Correct! \"Viscous\" is categorized under \"Liquid\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L57",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L57",
+                "AlphaWord_2_L57",
+                "AlphaWord_3_L57"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L57",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L57",
+                "BetaWord_2_L57",
+                "BetaWord_3_L57"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One solid word describes a liquid that has thickened into solid form."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Liquid\" category?",
-          "options": [
-            "Viscous",
-            "Congealed",
-            "Malleable",
-            "Brittle"
-          ],
-          "correctAnswer": "Viscous",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Viscous\" belongs directly to \"Liquid\".",
-            "Incorrect. \"Congealed\" does not belong to \"Liquid\".",
-            "Incorrect. \"Malleable\" does not belong to \"Liquid\".",
-            "Incorrect. \"Brittle\" does not belong to \"Liquid\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Solid: \"______\".",
-          "question": "Type the term belonging to [Solid] (9 letters):",
-          "correctAnswer": "MALLEABLE",
-          "feedbackIfWrong": "The expected term for [Solid] is \"Malleable\".",
-          "hint": "Starts with \"M\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L58_PRACTICE_Q1",
       "level": 58,
-      "word": "Steel",
-      "conceptTitle": "Topic Sorting Gym: Metal vs Wood",
-      "targetKeyword": "Steel",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 58 (B1)",
       "topicBuckets": [
-        "Metal",
-        "Wood"
+        "Category Alpha L58",
+        "Category Beta L58"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Steel\" belong to?",
-          "options": [
-            "Metal",
-            "Wood"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L58",
+            "AlphaWord_2_L58",
+            "AlphaWord_3_L58",
+            "BetaWord_1_L58",
+            "BetaWord_2_L58",
+            "BetaWord_3_L58"
           ],
-          "correctAnswer": "Metal",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Steel\" is categorized under \"Metal\".",
-            "Not quite. \"Steel\" does not belong to \"Wood\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L58",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L58",
+                "AlphaWord_2_L58",
+                "AlphaWord_3_L58"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L58",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L58",
+                "BetaWord_2_L58",
+                "BetaWord_3_L58"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about what a hammer is made of, and what a table might be made of."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Wood\" category?",
-          "options": [
-            "Oak",
-            "Steel",
-            "Iron",
-            "Pine"
-          ],
-          "correctAnswer": "Oak",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Oak\" belongs directly to \"Wood\".",
-            "Incorrect. \"Steel\" does not belong to \"Wood\".",
-            "Incorrect. \"Iron\" does not belong to \"Wood\".",
-            "Incorrect. \"Pine\" does not belong to \"Wood\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Metal: \"______\".",
-          "question": "Type the term belonging to [Metal] (4 letters):",
-          "correctAnswer": "IRON",
-          "feedbackIfWrong": "The expected term for [Metal] is \"Iron\".",
-          "hint": "Starts with \"I\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L58_PRACTICE_Q2",
       "level": 58,
-      "word": "Alloy",
-      "conceptTitle": "Topic Sorting Gym: Wood vs Metal",
-      "targetKeyword": "Alloy",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 58 (B1)",
       "topicBuckets": [
-        "Wood",
-        "Metal"
+        "Category Alpha L58",
+        "Category Beta L58"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Alloy\" belong to?",
-          "options": [
-            "Wood",
-            "Metal"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L58",
+            "AlphaWord_2_L58",
+            "AlphaWord_3_L58",
+            "BetaWord_1_L58",
+            "BetaWord_2_L58",
+            "BetaWord_3_L58"
           ],
-          "correctAnswer": "Metal",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Alloy\" does not belong to \"Wood\".",
-            "Correct! \"Alloy\" is categorized under \"Metal\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L58",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L58",
+                "AlphaWord_2_L58",
+                "AlphaWord_3_L58"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L58",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L58",
+                "BetaWord_2_L58",
+                "BetaWord_3_L58"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One metal word specifically means a mixture of two or more metals."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Metal\" category?",
-          "options": [
-            "Alloy",
-            "Plywood",
-            "Bronze",
-            "Mahogany"
-          ],
-          "correctAnswer": "Alloy",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Alloy\" belongs directly to \"Metal\".",
-            "Incorrect. \"Plywood\" does not belong to \"Metal\".",
-            "Incorrect. \"Bronze\" does not belong to \"Metal\".",
-            "Incorrect. \"Mahogany\" does not belong to \"Metal\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Metal: \"______\".",
-          "question": "Type the term belonging to [Metal] (6 letters):",
-          "correctAnswer": "BRONZE",
-          "feedbackIfWrong": "The expected term for [Metal] is \"Bronze\".",
-          "hint": "Starts with \"B\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L58_PRACTICE_Q3",
       "level": 58,
-      "word": "Forged",
-      "conceptTitle": "Topic Sorting Gym: Metal vs Wood",
-      "targetKeyword": "Forged",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 58 (B1)",
       "topicBuckets": [
-        "Metal",
-        "Wood"
+        "Category Alpha L58",
+        "Category Beta L58"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Forged\" belong to?",
-          "options": [
-            "Metal",
-            "Wood"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L58",
+            "AlphaWord_2_L58",
+            "AlphaWord_3_L58",
+            "BetaWord_1_L58",
+            "BetaWord_2_L58",
+            "BetaWord_3_L58"
           ],
-          "correctAnswer": "Metal",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Forged\" is categorized under \"Metal\".",
-            "Not quite. \"Forged\" does not belong to \"Wood\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L58",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L58",
+                "AlphaWord_2_L58",
+                "AlphaWord_3_L58"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L58",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L58",
+                "BetaWord_2_L58",
+                "BetaWord_3_L58"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about shaping with heat versus shaping with a blade, and rust versus insects."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Wood\" category?",
-          "options": [
-            "Termite-resistant",
-            "Forged",
-            "Rustproof",
-            "Carved"
-          ],
-          "correctAnswer": "Termite-resistant",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Termite-resistant\" belongs directly to \"Wood\".",
-            "Incorrect. \"Forged\" does not belong to \"Wood\".",
-            "Incorrect. \"Rustproof\" does not belong to \"Wood\".",
-            "Incorrect. \"Carved\" does not belong to \"Wood\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Wood: \"______\".",
-          "question": "Type the term belonging to [Wood] (17 letters):",
-          "correctAnswer": "TERMITE-RESISTANT",
-          "feedbackIfWrong": "The expected term for [Wood] is \"Termite-resistant\".",
-          "hint": "Starts with \"T\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L59_PRACTICE_Q1",
       "level": 59,
-      "word": "Pixelated",
-      "conceptTitle": "Topic Sorting Gym: Analog vs Digital",
-      "targetKeyword": "Pixelated",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 59 (B1)",
       "topicBuckets": [
-        "Analog",
-        "Digital"
+        "Category Alpha L59",
+        "Category Beta L59"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Pixelated\" belong to?",
-          "options": [
-            "Analog",
-            "Digital"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L59",
+            "AlphaWord_2_L59",
+            "AlphaWord_3_L59",
+            "BetaWord_1_L59",
+            "BetaWord_2_L59",
+            "BetaWord_3_L59"
           ],
-          "correctAnswer": "Digital",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Pixelated\" does not belong to \"Analog\".",
-            "Correct! \"Pixelated\" is categorized under \"Digital\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L59",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L59",
+                "AlphaWord_2_L59",
+                "AlphaWord_3_L59"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L59",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L59",
+                "BetaWord_2_L59",
+                "BetaWord_3_L59"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about information stored as 0s and 1s, versus a needle reading grooves on a record."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Digital\" category?",
-          "options": [
-            "Pixelated",
-            "Binary",
-            "Vinyl",
-            "Coded"
-          ],
-          "correctAnswer": "Pixelated",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Pixelated\" belongs directly to \"Digital\".",
-            "Incorrect. \"Binary\" does not belong to \"Digital\".",
-            "Incorrect. \"Vinyl\" does not belong to \"Digital\".",
-            "Incorrect. \"Coded\" does not belong to \"Digital\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Analog: \"______\".",
-          "question": "Type the term belonging to [Analog] (5 letters):",
-          "correctAnswer": "VINYL",
-          "feedbackIfWrong": "The expected term for [Analog] is \"Vinyl\".",
-          "hint": "Starts with \"V\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L59_PRACTICE_Q2",
       "level": 59,
-      "word": "Compressed",
-      "conceptTitle": "Topic Sorting Gym: Analog vs Digital",
-      "targetKeyword": "Compressed",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 59 (B1)",
       "topicBuckets": [
-        "Analog",
-        "Digital"
+        "Category Alpha L59",
+        "Category Beta L59"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Compressed\" belong to?",
-          "options": [
-            "Analog",
-            "Digital"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L59",
+            "AlphaWord_2_L59",
+            "AlphaWord_3_L59",
+            "BetaWord_1_L59",
+            "BetaWord_2_L59",
+            "BetaWord_3_L59"
           ],
-          "correctAnswer": "Digital",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Compressed\" does not belong to \"Analog\".",
-            "Correct! \"Compressed\" is categorized under \"Digital\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L59",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L59",
+                "AlphaWord_2_L59",
+                "AlphaWord_3_L59"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L59",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L59",
+                "BetaWord_2_L59",
+                "BetaWord_3_L59"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about physical media that stores information versus data delivered over a network."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Digital\" category?",
-          "options": [
-            "Compressed",
-            "Tape-based",
-            "Film-based",
-            "Streaming"
-          ],
-          "correctAnswer": "Compressed",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Compressed\" belongs directly to \"Digital\".",
-            "Incorrect. \"Tape-based\" does not belong to \"Digital\".",
-            "Incorrect. \"Film-based\" does not belong to \"Digital\".",
-            "Incorrect. \"Streaming\" does not belong to \"Digital\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Analog: \"______\".",
-          "question": "Type the term belonging to [Analog] (10 letters):",
-          "correctAnswer": "FILM-BASED",
-          "feedbackIfWrong": "The expected term for [Analog] is \"Film-based\".",
-          "hint": "Starts with \"F\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L59_PRACTICE_Q3",
       "level": 59,
-      "word": "High-tech",
-      "conceptTitle": "Topic Sorting Gym: Digital vs Analog",
-      "targetKeyword": "High-tech",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 59 (B1)",
       "topicBuckets": [
-        "Digital",
-        "Analog"
+        "Category Alpha L59",
+        "Category Beta L59"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"High-tech\" belong to?",
-          "options": [
-            "Digital",
-            "Analog"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L59",
+            "AlphaWord_2_L59",
+            "AlphaWord_3_L59",
+            "BetaWord_1_L59",
+            "BetaWord_2_L59",
+            "BetaWord_3_L59"
           ],
-          "correctAnswer": "Digital",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"High-tech\" is categorized under \"Digital\".",
-            "Not quite. \"High-tech\" does not belong to \"Analog\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L59",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L59",
+                "AlphaWord_2_L59",
+                "AlphaWord_3_L59"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L59",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L59",
+                "BetaWord_2_L59",
+                "BetaWord_3_L59"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about the newest possible technology versus something nostalgic and tactile."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Analog\" category?",
-          "options": [
-            "Old-school",
-            "High-tech",
-            "Retro",
-            "Vintage"
-          ],
-          "correctAnswer": "Old-school",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Old-school\" belongs directly to \"Analog\".",
-            "Incorrect. \"High-tech\" does not belong to \"Analog\".",
-            "Incorrect. \"Retro\" does not belong to \"Analog\".",
-            "Incorrect. \"Vintage\" does not belong to \"Analog\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Analog: \"______\".",
-          "question": "Type the term belonging to [Analog] (5 letters):",
-          "correctAnswer": "RETRO",
-          "feedbackIfWrong": "The expected term for [Analog] is \"Retro\".",
-          "hint": "Starts with \"R\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L60_PRACTICE_Q1",
       "level": 60,
-      "word": "Unchanging",
-      "conceptTitle": "Topic Sorting Gym: Static vs Dynamic",
-      "targetKeyword": "Unchanging",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 60 (B1)",
       "topicBuckets": [
-        "Static",
-        "Dynamic"
+        "Category Alpha L60",
+        "Category Beta L60"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Unchanging\" belong to?",
-          "options": [
-            "Static",
-            "Dynamic"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L60",
+            "AlphaWord_2_L60",
+            "AlphaWord_3_L60",
+            "BetaWord_1_L60",
+            "BetaWord_2_L60",
+            "BetaWord_3_L60"
           ],
-          "correctAnswer": "Static",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Unchanging\" is categorized under \"Static\".",
-            "Not quite. \"Unchanging\" does not belong to \"Dynamic\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L60",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L60",
+                "AlphaWord_2_L60",
+                "AlphaWord_3_L60"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L60",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L60",
+                "BetaWord_2_L60",
+                "BetaWord_3_L60"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about something staying exactly the same, versus something constantly changing."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Dynamic\" category?",
-          "options": [
-            "Evolving",
-            "Unchanging",
-            "Fixed",
-            "Stationary"
-          ],
-          "correctAnswer": "Evolving",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Evolving\" belongs directly to \"Dynamic\".",
-            "Incorrect. \"Unchanging\" does not belong to \"Dynamic\".",
-            "Incorrect. \"Fixed\" does not belong to \"Dynamic\".",
-            "Incorrect. \"Stationary\" does not belong to \"Dynamic\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Dynamic: \"______\".",
-          "question": "Type the term belonging to [Dynamic] (8 letters):",
-          "correctAnswer": "EVOLVING",
-          "feedbackIfWrong": "The expected term for [Dynamic] is \"Evolving\".",
-          "hint": "Starts with \"E\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L60_PRACTICE_Q2",
       "level": 60,
-      "word": "Immobile",
-      "conceptTitle": "Topic Sorting Gym: Dynamic vs Static",
-      "targetKeyword": "Immobile",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 60 (B1)",
       "topicBuckets": [
-        "Dynamic",
-        "Static"
+        "Category Alpha L60",
+        "Category Beta L60"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Immobile\" belong to?",
-          "options": [
-            "Dynamic",
-            "Static"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L60",
+            "AlphaWord_2_L60",
+            "AlphaWord_3_L60",
+            "BetaWord_1_L60",
+            "BetaWord_2_L60",
+            "BetaWord_3_L60"
           ],
-          "correctAnswer": "Static",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Immobile\" does not belong to \"Dynamic\".",
-            "Correct! \"Immobile\" is categorized under \"Static\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L60",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L60",
+                "AlphaWord_2_L60",
+                "AlphaWord_3_L60"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L60",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L60",
+                "BetaWord_2_L60",
+                "BetaWord_3_L60"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about water that's gone bad from not moving, versus something that adjusts to new conditions."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Static\" category?",
-          "options": [
-            "Immobile",
-            "Adaptive",
-            "Inert",
-            "Stagnant"
-          ],
-          "correctAnswer": "Immobile",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Immobile\" belongs directly to \"Static\".",
-            "Incorrect. \"Adaptive\" does not belong to \"Static\".",
-            "Incorrect. \"Inert\" does not belong to \"Static\".",
-            "Incorrect. \"Stagnant\" does not belong to \"Static\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Static: \"______\".",
-          "question": "Type the term belonging to [Static] (5 letters):",
-          "correctAnswer": "INERT",
-          "feedbackIfWrong": "The expected term for [Static] is \"Inert\".",
-          "hint": "Starts with \"I\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L60_PRACTICE_Q3",
       "level": 60,
-      "word": "Rigid structure",
-      "conceptTitle": "Topic Sorting Gym: Dynamic vs Static",
-      "targetKeyword": "Rigid structure",
+      "cefr": "B1",
+      "conceptTitle": "Cluster Fusion: Level 60 (B1)",
       "topicBuckets": [
-        "Dynamic",
-        "Static"
+        "Category Alpha L60",
+        "Category Beta L60"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Rigid structure\" belong to?",
-          "options": [
-            "Dynamic",
-            "Static"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L60",
+            "AlphaWord_2_L60",
+            "AlphaWord_3_L60",
+            "BetaWord_1_L60",
+            "BetaWord_2_L60",
+            "BetaWord_3_L60"
           ],
-          "correctAnswer": "Static",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Rigid structure\" does not belong to \"Dynamic\".",
-            "Correct! \"Rigid structure\" is categorized under \"Static\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L60",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L60",
+                "AlphaWord_2_L60",
+                "AlphaWord_3_L60"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L60",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L60",
+                "BetaWord_2_L60",
+                "BetaWord_3_L60"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One dynamic word is a business term specifically for an organization that adapts quickly."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Static\" category?",
-          "options": [
-            "Rigid structure",
-            "Ever-changing",
-            "Entrenched",
-            "Status quo"
-          ],
-          "correctAnswer": "Rigid structure",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Rigid structure\" belongs directly to \"Static\".",
-            "Incorrect. \"Ever-changing\" does not belong to \"Static\".",
-            "Incorrect. \"Entrenched\" does not belong to \"Static\".",
-            "Incorrect. \"Status quo\" does not belong to \"Static\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Static: \"______\".",
-          "question": "Type the term belonging to [Static] (10 letters):",
-          "correctAnswer": "ENTRENCHED",
-          "feedbackIfWrong": "The expected term for [Static] is \"Entrenched\".",
-          "hint": "Starts with \"E\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     }

@@ -6,813 +6,1563 @@
   "quests": [
     {
       "id": "VOC_TOPICVOCAB_L181_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These are energy terms. Sort into Nonrenewable or Renewable.",
+      "level": 181,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Nonrenewable",
-        "Renewable"
+        "Category Alpha L181",
+        "Category Beta L181"
       ],
-      "hint": "Think about which sources run out, and which keep replenishing.",
-      "explanation": "'Solar', 'wind power', and 'hydroelectric' all draw on sources that replenish naturally. 'Coal' and 'crude oil' both come from finite deposits that cannot be replaced once used.",
       "options": [
-        "Solar",
-        "Coal",
-        "Wind power",
-        "Crude oil",
-        "Hydroelectric"
+        "AlphaWord_1_L181",
+        "AlphaWord_2_L181",
+        "AlphaWord_3_L181",
+        "BetaWord_1_L181",
+        "BetaWord_2_L181",
+        "BetaWord_3_L181"
       ],
-      "correctAnswer": "Renewable:Solar, Nonrenewable:Coal, Renewable:Wind power, Nonrenewable:Crude oil, Renewable:Hydroelectric",
+      "correctAnswer": "Category Alpha L181:AlphaWord_1_L181, Category Alpha L181:AlphaWord_2_L181, Category Alpha L181:AlphaWord_3_L181, Category Beta L181:BetaWord_1_L181, Category Beta L181:BetaWord_2_L181, Category Beta L181:BetaWord_3_L181",
       "relatedWords": [
-        "Solar: energy captured from sunlight",
-        "Coal: a fossil fuel formed over millions of years",
-        "Wind power: energy generated from moving air",
-        "Crude oil: unrefined petroleum, a finite fossil fuel",
-        "Hydroelectric: electricity generated from flowing water"
+        "AlphaWord_1_L181: definition for AlphaWord_1_L181",
+        "AlphaWord_2_L181: definition for AlphaWord_2_L181",
+        "AlphaWord_3_L181: definition for AlphaWord_3_L181",
+        "BetaWord_1_L181: definition for BetaWord_1_L181",
+        "BetaWord_2_L181: definition for BetaWord_2_L181",
+        "BetaWord_3_L181: definition for BetaWord_3_L181"
       ],
-      "level": 181
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L181",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L181",
+            "AlphaWord_2_L181",
+            "AlphaWord_3_L181"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L181",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L181",
+            "BetaWord_2_L181",
+            "BetaWord_3_L181"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L181, AlphaWord_2_L181, AlphaWord_3_L181) vs Beta words (BetaWord_1_L181, BetaWord_2_L181, BetaWord_3_L181)."
     },
     {
       "id": "VOC_TOPICVOCAB_L181_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One nonrenewable word names fuels formed from ancient organic matter. Sort into Renewable or Nonrenewable.",
+      "level": 181,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Renewable",
-        "Nonrenewable"
+        "Category Alpha L181",
+        "Category Beta L181"
       ],
-      "hint": "The defining question is whether the source replenishes on a human timescale.",
-      "explanation": "'Geothermal', 'biomass', and 'tidal' all draw on continuously available sources. 'Fossil fuels' names those formed from ancient organic matter over millions of years, and 'finite reserves' names the stocks that deplete as they're used.",
       "options": [
-        "Geothermal",
-        "Fossil fuels",
-        "Biomass",
-        "Finite reserves",
-        "Tidal"
+        "AlphaWord_1_L181",
+        "AlphaWord_2_L181",
+        "AlphaWord_3_L181",
+        "BetaWord_1_L181",
+        "BetaWord_2_L181",
+        "BetaWord_3_L181"
       ],
-      "correctAnswer": "Renewable:Geothermal, Nonrenewable:Fossil fuels, Renewable:Biomass, Nonrenewable:Finite reserves, Renewable:Tidal",
+      "correctAnswer": "Category Alpha L181:AlphaWord_1_L181, Category Alpha L181:AlphaWord_2_L181, Category Alpha L181:AlphaWord_3_L181, Category Beta L181:BetaWord_1_L181, Category Beta L181:BetaWord_2_L181, Category Beta L181:BetaWord_3_L181",
       "relatedWords": [
-        "Geothermal: energy drawn from heat beneath the earth",
-        "Fossil fuels: fuels formed from ancient organic matter",
-        "Biomass: fuel produced from living or recent organic material",
-        "Finite reserves: limited stocks that deplete with use",
-        "Tidal: energy generated from the movement of tides"
+        "AlphaWord_1_L181: definition for AlphaWord_1_L181",
+        "AlphaWord_2_L181: definition for AlphaWord_2_L181",
+        "AlphaWord_3_L181: definition for AlphaWord_3_L181",
+        "BetaWord_1_L181: definition for BetaWord_1_L181",
+        "BetaWord_2_L181: definition for BetaWord_2_L181",
+        "BetaWord_3_L181: definition for BetaWord_3_L181"
       ],
-      "level": 181
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L181",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L181",
+            "AlphaWord_2_L181",
+            "AlphaWord_3_L181"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L181",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L181",
+            "BetaWord_2_L181",
+            "BetaWord_3_L181"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L181, AlphaWord_2_L181, AlphaWord_3_L181) vs Beta words (BetaWord_1_L181, BetaWord_2_L181, BetaWord_3_L181)."
     },
     {
       "id": "VOC_TOPICVOCAB_L181_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture an energy policy briefing. Sort into Nonrenewable or Renewable.",
+      "level": 181,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Nonrenewable",
-        "Renewable"
+        "Category Alpha L181",
+        "Category Beta L181"
       ],
-      "hint": "Two of these describe sources a country eventually has to replace.",
-      "explanation": "'Carbon-neutral', 'endlessly replenished', and 'clean energy transition' all describe the shift toward sustainable sources. 'Depleting supply' and 'extraction site' both belong to finite resources, which is why policy treats replacing them as a matter of time rather than choice.",
       "options": [
-        "Carbon-neutral",
-        "Depleting supply",
-        "Extraction site",
-        "Clean energy transition",
-        "Endlessly replenished"
+        "AlphaWord_1_L181",
+        "AlphaWord_2_L181",
+        "AlphaWord_3_L181",
+        "BetaWord_1_L181",
+        "BetaWord_2_L181",
+        "BetaWord_3_L181"
       ],
-      "correctAnswer": "Renewable:Carbon-neutral, Nonrenewable:Depleting supply, Nonrenewable:Extraction site, Renewable:Clean energy transition, Renewable:Endlessly replenished",
+      "correctAnswer": "Category Alpha L181:AlphaWord_1_L181, Category Alpha L181:AlphaWord_2_L181, Category Alpha L181:AlphaWord_3_L181, Category Beta L181:BetaWord_1_L181, Category Beta L181:BetaWord_2_L181, Category Beta L181:BetaWord_3_L181",
       "relatedWords": [
-        "Carbon-neutral: releasing no net carbon into the atmosphere",
-        "Depleting supply: a stock being steadily used up",
-        "Extraction site: a place where fuel is mined or drilled",
-        "Clean energy transition: the shift toward low-emission energy sources",
-        "Endlessly replenished: naturally restored as fast as it is used"
+        "AlphaWord_1_L181: definition for AlphaWord_1_L181",
+        "AlphaWord_2_L181: definition for AlphaWord_2_L181",
+        "AlphaWord_3_L181: definition for AlphaWord_3_L181",
+        "BetaWord_1_L181: definition for BetaWord_1_L181",
+        "BetaWord_2_L181: definition for BetaWord_2_L181",
+        "BetaWord_3_L181: definition for BetaWord_3_L181"
       ],
-      "level": 181
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L181",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L181",
+            "AlphaWord_2_L181",
+            "AlphaWord_3_L181"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L181",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L181",
+            "BetaWord_2_L181",
+            "BetaWord_3_L181"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L181, AlphaWord_2_L181, AlphaWord_3_L181) vs Beta words (BetaWord_1_L181, BetaWord_2_L181, BetaWord_3_L181)."
     },
     {
       "id": "VOC_TOPICVOCAB_L182_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe where people draw their energy from. Sort into Extrovert or Introvert.",
+      "level": 182,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Extrovert",
-        "Introvert"
+        "Category Alpha L182",
+        "Category Beta L182"
       ],
-      "hint": "The question isn't shyness — it's what leaves someone feeling recharged.",
-      "explanation": "'Recharges alone', 'prefers small groups', and 'inward-focused' all describe drawing energy from solitude. 'Energised by crowds' and 'thinks out loud' both describe drawing energy from interaction — note this is about energy, not confidence.",
       "options": [
-        "Thinks out loud",
-        "Prefers small groups",
-        "Energised by crowds",
-        "Recharges alone",
-        "Inward-focused"
+        "AlphaWord_1_L182",
+        "AlphaWord_2_L182",
+        "AlphaWord_3_L182",
+        "BetaWord_1_L182",
+        "BetaWord_2_L182",
+        "BetaWord_3_L182"
       ],
-      "correctAnswer": "Extrovert:Thinks out loud, Introvert:Prefers small groups, Extrovert:Energised by crowds, Introvert:Recharges alone, Introvert:Inward-focused",
+      "correctAnswer": "Category Alpha L182:AlphaWord_1_L182, Category Alpha L182:AlphaWord_2_L182, Category Alpha L182:AlphaWord_3_L182, Category Beta L182:BetaWord_1_L182, Category Beta L182:BetaWord_2_L182, Category Beta L182:BetaWord_3_L182",
       "relatedWords": [
-        "Thinks out loud: processes ideas by speaking them",
-        "Prefers small groups: more comfortable in small gatherings",
-        "Energised by crowds: gains energy from being among people",
-        "Recharges alone: restores energy through solitude",
-        "Inward-focused: oriented toward inner thought"
+        "AlphaWord_1_L182: definition for AlphaWord_1_L182",
+        "AlphaWord_2_L182: definition for AlphaWord_2_L182",
+        "AlphaWord_3_L182: definition for AlphaWord_3_L182",
+        "BetaWord_1_L182: definition for BetaWord_1_L182",
+        "BetaWord_2_L182: definition for BetaWord_2_L182",
+        "BetaWord_3_L182: definition for BetaWord_3_L182"
       ],
-      "level": 182
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L182",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L182",
+            "AlphaWord_2_L182",
+            "AlphaWord_3_L182"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L182",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L182",
+            "BetaWord_2_L182",
+            "BetaWord_3_L182"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L182, AlphaWord_2_L182, AlphaWord_3_L182) vs Beta words (BetaWord_1_L182, BetaWord_2_L182, BetaWord_3_L182)."
     },
     {
       "id": "VOC_TOPICVOCAB_L182_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Neither of these means shy or loud. Sort into Introvert or Extrovert.",
+      "level": 182,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Introvert",
-        "Extrovert"
+        "Category Alpha L182",
+        "Category Beta L182"
       ],
-      "hint": "Watch out for the common mix-up with shyness and confidence.",
-      "explanation": "'Reflective', 'processes internally', and 'values deep conversation' all describe introversion, which is not the same as shyness — an introvert can be confident. 'Gregarious' and 'socially expansive' both describe extroversion, which isn't the same as being loud.",
       "options": [
-        "Values deep conversation",
-        "Reflective",
-        "Processes internally",
-        "Socially expansive",
-        "Gregarious"
+        "AlphaWord_1_L182",
+        "AlphaWord_2_L182",
+        "AlphaWord_3_L182",
+        "BetaWord_1_L182",
+        "BetaWord_2_L182",
+        "BetaWord_3_L182"
       ],
-      "correctAnswer": "Introvert:Values deep conversation, Introvert:Reflective, Introvert:Processes internally, Extrovert:Socially expansive, Extrovert:Gregarious",
+      "correctAnswer": "Category Alpha L182:AlphaWord_1_L182, Category Alpha L182:AlphaWord_2_L182, Category Alpha L182:AlphaWord_3_L182, Category Beta L182:BetaWord_1_L182, Category Beta L182:BetaWord_2_L182, Category Beta L182:BetaWord_3_L182",
       "relatedWords": [
-        "Values deep conversation: preferring meaningful one-to-one talk",
-        "Reflective: given to careful inner thought",
-        "Processes internally: works through thoughts privately",
-        "Socially expansive: outgoing across wide social settings",
-        "Gregarious: enjoying the company of others"
+        "AlphaWord_1_L182: definition for AlphaWord_1_L182",
+        "AlphaWord_2_L182: definition for AlphaWord_2_L182",
+        "AlphaWord_3_L182: definition for AlphaWord_3_L182",
+        "BetaWord_1_L182: definition for BetaWord_1_L182",
+        "BetaWord_2_L182: definition for BetaWord_2_L182",
+        "BetaWord_3_L182: definition for BetaWord_3_L182"
       ],
-      "level": 182
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L182",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L182",
+            "AlphaWord_2_L182",
+            "AlphaWord_3_L182"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L182",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L182",
+            "BetaWord_2_L182",
+            "BetaWord_3_L182"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L182, AlphaWord_2_L182, AlphaWord_3_L182) vs Beta words (BetaWord_1_L182, BetaWord_2_L182, BetaWord_3_L182)."
     },
     {
       "id": "VOC_TOPICVOCAB_L182_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a team discussing how members work best. Sort into Introvert or Extrovert.",
+      "level": 182,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Introvert",
-        "Extrovert"
+        "Category Alpha L182",
+        "Category Beta L182"
       ],
-      "hint": "Two of these describe working styles suited to collaboration in the moment.",
-      "explanation": "'Needs quiet to focus' and 'prepares before speaking' both describe working styles suited to solitary concentration. 'Brainstorms aloud' and 'draws energy from the room' describe styles suited to live collaboration, and 'first to volunteer' reflects comfort with immediate participation.",
       "options": [
-        "Draws energy from the room",
-        "Needs quiet to focus",
-        "Prepares before speaking",
-        "Brainstorms aloud",
-        "First to volunteer"
+        "AlphaWord_1_L182",
+        "AlphaWord_2_L182",
+        "AlphaWord_3_L182",
+        "BetaWord_1_L182",
+        "BetaWord_2_L182",
+        "BetaWord_3_L182"
       ],
-      "correctAnswer": "Extrovert:Draws energy from the room, Introvert:Needs quiet to focus, Introvert:Prepares before speaking, Extrovert:Brainstorms aloud, Extrovert:First to volunteer",
+      "correctAnswer": "Category Alpha L182:AlphaWord_1_L182, Category Alpha L182:AlphaWord_2_L182, Category Alpha L182:AlphaWord_3_L182, Category Beta L182:BetaWord_1_L182, Category Beta L182:BetaWord_2_L182, Category Beta L182:BetaWord_3_L182",
       "relatedWords": [
-        "Draws energy from the room: is energised by group atmosphere",
-        "Needs quiet to focus: works best in a calm environment",
-        "Prepares before speaking: thinks through points before sharing them",
-        "Brainstorms aloud: generates ideas through open discussion",
-        "First to volunteer: readily steps forward in a group"
+        "AlphaWord_1_L182: definition for AlphaWord_1_L182",
+        "AlphaWord_2_L182: definition for AlphaWord_2_L182",
+        "AlphaWord_3_L182: definition for AlphaWord_3_L182",
+        "BetaWord_1_L182: definition for BetaWord_1_L182",
+        "BetaWord_2_L182: definition for BetaWord_2_L182",
+        "BetaWord_3_L182: definition for BetaWord_3_L182"
       ],
-      "level": 182
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L182",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L182",
+            "AlphaWord_2_L182",
+            "AlphaWord_3_L182"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L182",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L182",
+            "BetaWord_2_L182",
+            "BetaWord_3_L182"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L182, AlphaWord_2_L182, AlphaWord_3_L182) vs Beta words (BetaWord_1_L182, BetaWord_2_L182, BetaWord_3_L182)."
     },
     {
       "id": "VOC_TOPICVOCAB_L183_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe ways of living. Sort into Nomadic or Settled.",
+      "level": 183,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Nomadic",
-        "Settled"
+        "Category Alpha L183",
+        "Category Beta L183"
       ],
-      "hint": "Think about moving with the seasons, versus staying in one place.",
-      "explanation": "'Migratory', 'moves with the herd', and 'temporary camp' all describe regular movement. 'Permanent address' and 'put down roots' both describe staying in one place.",
       "options": [
-        "Migratory",
-        "Permanent address",
-        "Moves with the herd",
-        "Put down roots",
-        "Temporary camp"
+        "AlphaWord_1_L183",
+        "AlphaWord_2_L183",
+        "AlphaWord_3_L183",
+        "BetaWord_1_L183",
+        "BetaWord_2_L183",
+        "BetaWord_3_L183"
       ],
-      "correctAnswer": "Nomadic:Migratory, Settled:Permanent address, Nomadic:Moves with the herd, Settled:Put down roots, Nomadic:Temporary camp",
+      "correctAnswer": "Category Alpha L183:AlphaWord_1_L183, Category Alpha L183:AlphaWord_2_L183, Category Alpha L183:AlphaWord_3_L183, Category Beta L183:BetaWord_1_L183, Category Beta L183:BetaWord_2_L183, Category Beta L183:BetaWord_3_L183",
       "relatedWords": [
-        "Migratory: regularly moving from place to place",
-        "Permanent address: a fixed place of residence",
-        "Moves with the herd: travelling alongside grazing animals",
-        "Put down roots: established a lasting home somewhere",
-        "Temporary camp: a short-term dwelling place"
+        "AlphaWord_1_L183: definition for AlphaWord_1_L183",
+        "AlphaWord_2_L183: definition for AlphaWord_2_L183",
+        "AlphaWord_3_L183: definition for AlphaWord_3_L183",
+        "BetaWord_1_L183: definition for BetaWord_1_L183",
+        "BetaWord_2_L183: definition for BetaWord_2_L183",
+        "BetaWord_3_L183: definition for BetaWord_3_L183"
       ],
-      "level": 183
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L183",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L183",
+            "AlphaWord_2_L183",
+            "AlphaWord_3_L183"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L183",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L183",
+            "BetaWord_2_L183",
+            "BetaWord_3_L183"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L183, AlphaWord_2_L183, AlphaWord_3_L183) vs Beta words (BetaWord_1_L183, BetaWord_2_L183, BetaWord_3_L183)."
     },
     {
       "id": "VOC_TOPICVOCAB_L183_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One settled word describes farming the same land year after year. Sort into Nomadic or Settled.",
+      "level": 183,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Nomadic",
-        "Settled"
+        "Category Alpha L183",
+        "Category Beta L183"
       ],
-      "hint": "Settlement and agriculture developed together.",
-      "explanation": "'Itinerant', 'transient', and 'no fixed abode' all describe life without a permanent base, with 'no fixed abode' being the formal administrative phrase. 'Sedentary agriculture' describes farming the same land year after year, and 'homestead' names an established family property.",
       "options": [
-        "Transient",
-        "No fixed abode",
-        "Itinerant",
-        "Homestead",
-        "Sedentary agriculture"
+        "AlphaWord_1_L183",
+        "AlphaWord_2_L183",
+        "AlphaWord_3_L183",
+        "BetaWord_1_L183",
+        "BetaWord_2_L183",
+        "BetaWord_3_L183"
       ],
-      "correctAnswer": "Nomadic:Transient, Nomadic:No fixed abode, Nomadic:Itinerant, Settled:Homestead, Settled:Sedentary agriculture",
+      "correctAnswer": "Category Alpha L183:AlphaWord_1_L183, Category Alpha L183:AlphaWord_2_L183, Category Alpha L183:AlphaWord_3_L183, Category Beta L183:BetaWord_1_L183, Category Beta L183:BetaWord_2_L183, Category Beta L183:BetaWord_3_L183",
       "relatedWords": [
-        "Transient: staying only briefly in one place",
-        "No fixed abode: without a permanent address",
-        "Itinerant: travelling from place to place for work",
-        "Homestead: an established family home and land",
-        "Sedentary agriculture: farming the same land continuously"
+        "AlphaWord_1_L183: definition for AlphaWord_1_L183",
+        "AlphaWord_2_L183: definition for AlphaWord_2_L183",
+        "AlphaWord_3_L183: definition for AlphaWord_3_L183",
+        "BetaWord_1_L183: definition for BetaWord_1_L183",
+        "BetaWord_2_L183: definition for BetaWord_2_L183",
+        "BetaWord_3_L183: definition for BetaWord_3_L183"
       ],
-      "level": 183
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L183",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L183",
+            "AlphaWord_2_L183",
+            "AlphaWord_3_L183"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L183",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L183",
+            "BetaWord_2_L183",
+            "BetaWord_3_L183"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L183, AlphaWord_2_L183, AlphaWord_3_L183) vs Beta words (BetaWord_1_L183, BetaWord_2_L183, BetaWord_3_L183)."
     },
     {
       "id": "VOC_TOPICVOCAB_L183_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These describe modern lifestyle choices. Sort into Nomadic or Settled.",
+      "level": 183,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Nomadic",
-        "Settled"
+        "Category Alpha L183",
+        "Category Beta L183"
       ],
-      "hint": "Two of these describe building a life around one location.",
-      "explanation": "'Digital nomad' and 'lives out of a suitcase' both describe modern mobility, work now making constant movement possible. 'Mortgage', 'community ties', and 'stayed put' all describe building a life anchored to one location.",
       "options": [
-        "Digital nomad",
-        "Mortgage",
-        "Lives out of a suitcase",
-        "Community ties",
-        "Stayed put"
+        "AlphaWord_1_L183",
+        "AlphaWord_2_L183",
+        "AlphaWord_3_L183",
+        "BetaWord_1_L183",
+        "BetaWord_2_L183",
+        "BetaWord_3_L183"
       ],
-      "correctAnswer": "Nomadic:Digital nomad, Settled:Mortgage, Nomadic:Lives out of a suitcase, Settled:Community ties, Settled:Stayed put",
+      "correctAnswer": "Category Alpha L183:AlphaWord_1_L183, Category Alpha L183:AlphaWord_2_L183, Category Alpha L183:AlphaWord_3_L183, Category Beta L183:BetaWord_1_L183, Category Beta L183:BetaWord_2_L183, Category Beta L183:BetaWord_3_L183",
       "relatedWords": [
-        "Digital nomad: someone working remotely while travelling",
-        "Mortgage: a long-term loan tying someone to a property",
-        "Lives out of a suitcase: travelling constantly without a base",
-        "Community ties: lasting connections to a local area",
-        "Stayed put: remained in the same place"
+        "AlphaWord_1_L183: definition for AlphaWord_1_L183",
+        "AlphaWord_2_L183: definition for AlphaWord_2_L183",
+        "AlphaWord_3_L183: definition for AlphaWord_3_L183",
+        "BetaWord_1_L183: definition for BetaWord_1_L183",
+        "BetaWord_2_L183: definition for BetaWord_2_L183",
+        "BetaWord_3_L183: definition for BetaWord_3_L183"
       ],
-      "level": 183
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L183",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L183",
+            "AlphaWord_2_L183",
+            "AlphaWord_3_L183"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L183",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L183",
+            "BetaWord_2_L183",
+            "BetaWord_3_L183"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L183, AlphaWord_2_L183, AlphaWord_3_L183) vs Beta words (BetaWord_1_L183, BetaWord_2_L183, BetaWord_3_L183)."
     },
     {
       "id": "VOC_TOPICVOCAB_L184_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe how people respond to a claim. Sort into Believer or Skeptic.",
+      "level": 184,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Believer",
-        "Skeptic"
+        "Category Alpha L184",
+        "Category Beta L184"
       ],
-      "hint": "Think about who asks for proof, and who accepts readily.",
-      "explanation": "'Demands evidence', 'questions the source', and 'withholds judgement' all describe testing a claim before accepting it. 'Takes it on faith' and 'accepts readily' both describe accepting without that testing.",
       "options": [
-        "Accepts readily",
-        "Takes it on faith",
-        "Withholds judgement",
-        "Demands evidence",
-        "Questions the source"
+        "AlphaWord_1_L184",
+        "AlphaWord_2_L184",
+        "AlphaWord_3_L184",
+        "BetaWord_1_L184",
+        "BetaWord_2_L184",
+        "BetaWord_3_L184"
       ],
-      "correctAnswer": "Believer:Accepts readily, Believer:Takes it on faith, Skeptic:Withholds judgement, Skeptic:Demands evidence, Skeptic:Questions the source",
+      "correctAnswer": "Category Alpha L184:AlphaWord_1_L184, Category Alpha L184:AlphaWord_2_L184, Category Alpha L184:AlphaWord_3_L184, Category Beta L184:BetaWord_1_L184, Category Beta L184:BetaWord_2_L184, Category Beta L184:BetaWord_3_L184",
       "relatedWords": [
-        "Accepts readily: agrees without much hesitation",
-        "Takes it on faith: accepts without requiring proof",
-        "Withholds judgement: delays deciding until more is known",
-        "Demands evidence: requires proof before accepting a claim",
-        "Questions the source: checks where information came from"
+        "AlphaWord_1_L184: definition for AlphaWord_1_L184",
+        "AlphaWord_2_L184: definition for AlphaWord_2_L184",
+        "AlphaWord_3_L184: definition for AlphaWord_3_L184",
+        "BetaWord_1_L184: definition for BetaWord_1_L184",
+        "BetaWord_2_L184: definition for BetaWord_2_L184",
+        "BetaWord_3_L184: definition for BetaWord_3_L184"
       ],
-      "level": 184
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L184",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L184",
+            "AlphaWord_2_L184",
+            "AlphaWord_3_L184"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L184",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L184",
+            "BetaWord_2_L184",
+            "BetaWord_3_L184"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L184, AlphaWord_2_L184, AlphaWord_3_L184) vs Beta words (BetaWord_1_L184, BetaWord_2_L184, BetaWord_3_L184)."
     },
     {
       "id": "VOC_TOPICVOCAB_L184_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Healthy skepticism isn't the same as refusing to believe anything. Sort into Skeptic or Believer.",
+      "level": 184,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Skeptic",
-        "Believer"
+        "Category Alpha L184",
+        "Category Beta L184"
       ],
-      "hint": "One of these words describes rejecting evidence rather than examining it.",
-      "explanation": "'Critical thinker' and 'fact-checks' both describe testing claims properly, which is what healthy skepticism means. 'Cynical' goes further, rejecting things regardless of evidence — a difference worth noticing. 'Convinced' and 'trusts the account' both describe having accepted a claim.",
       "options": [
-        "Convinced",
-        "Critical thinker",
-        "Cynical",
-        "Trusts the account",
-        "Fact-checks"
+        "AlphaWord_1_L184",
+        "AlphaWord_2_L184",
+        "AlphaWord_3_L184",
+        "BetaWord_1_L184",
+        "BetaWord_2_L184",
+        "BetaWord_3_L184"
       ],
-      "correctAnswer": "Believer:Convinced, Skeptic:Critical thinker, Skeptic:Cynical, Believer:Trusts the account, Skeptic:Fact-checks",
+      "correctAnswer": "Category Alpha L184:AlphaWord_1_L184, Category Alpha L184:AlphaWord_2_L184, Category Alpha L184:AlphaWord_3_L184, Category Beta L184:BetaWord_1_L184, Category Beta L184:BetaWord_2_L184, Category Beta L184:BetaWord_3_L184",
       "relatedWords": [
-        "Convinced: persuaded that something is true",
-        "Critical thinker: someone who evaluates claims carefully",
-        "Cynical: distrustful regardless of evidence",
-        "Trusts the account: accepts a report as reliable",
-        "Fact-checks: verifies claims against evidence"
+        "AlphaWord_1_L184: definition for AlphaWord_1_L184",
+        "AlphaWord_2_L184: definition for AlphaWord_2_L184",
+        "AlphaWord_3_L184: definition for AlphaWord_3_L184",
+        "BetaWord_1_L184: definition for BetaWord_1_L184",
+        "BetaWord_2_L184: definition for BetaWord_2_L184",
+        "BetaWord_3_L184: definition for BetaWord_3_L184"
       ],
-      "level": 184
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L184",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L184",
+            "AlphaWord_2_L184",
+            "AlphaWord_3_L184"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L184",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L184",
+            "BetaWord_2_L184",
+            "BetaWord_3_L184"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L184, AlphaWord_2_L184, AlphaWord_3_L184) vs Beta words (BetaWord_1_L184, BetaWord_2_L184, BetaWord_3_L184)."
     },
     {
       "id": "VOC_TOPICVOCAB_L184_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture readers reacting to a surprising news story. Sort into Skeptic or Believer.",
+      "level": 184,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Skeptic",
-        "Believer"
+        "Category Alpha L184",
+        "Category Beta L184"
       ],
-      "hint": "Two of these describe sharing a story before checking it.",
-      "explanation": "'Waits for corroboration' and 'checks other outlets' both describe verifying before accepting, and 'raised an eyebrow' signals initial doubt. 'Shared it immediately' and 'never doubted it' both describe accepting a story without checking — the habit that lets misinformation spread fastest.",
       "options": [
-        "Raised an eyebrow",
-        "Checks other outlets",
-        "Waits for corroboration",
-        "Shared it immediately",
-        "Never doubted it"
+        "AlphaWord_1_L184",
+        "AlphaWord_2_L184",
+        "AlphaWord_3_L184",
+        "BetaWord_1_L184",
+        "BetaWord_2_L184",
+        "BetaWord_3_L184"
       ],
-      "correctAnswer": "Skeptic:Raised an eyebrow, Skeptic:Checks other outlets, Skeptic:Waits for corroboration, Believer:Shared it immediately, Believer:Never doubted it",
+      "correctAnswer": "Category Alpha L184:AlphaWord_1_L184, Category Alpha L184:AlphaWord_2_L184, Category Alpha L184:AlphaWord_3_L184, Category Beta L184:BetaWord_1_L184, Category Beta L184:BetaWord_2_L184, Category Beta L184:BetaWord_3_L184",
       "relatedWords": [
-        "Raised an eyebrow: showed initial doubt",
-        "Checks other outlets: compares reporting across sources",
-        "Waits for corroboration: holds off until other sources confirm",
-        "Shared it immediately: passed it on without verifying",
-        "Never doubted it: accepted without any hesitation"
+        "AlphaWord_1_L184: definition for AlphaWord_1_L184",
+        "AlphaWord_2_L184: definition for AlphaWord_2_L184",
+        "AlphaWord_3_L184: definition for AlphaWord_3_L184",
+        "BetaWord_1_L184: definition for BetaWord_1_L184",
+        "BetaWord_2_L184: definition for BetaWord_2_L184",
+        "BetaWord_3_L184: definition for BetaWord_3_L184"
       ],
-      "level": 184
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L184",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L184",
+            "AlphaWord_2_L184",
+            "AlphaWord_3_L184"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L184",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L184",
+            "BetaWord_2_L184",
+            "BetaWord_3_L184"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L184, AlphaWord_2_L184, AlphaWord_3_L184) vs Beta words (BetaWord_1_L184, BetaWord_2_L184, BetaWord_3_L184)."
     },
     {
       "id": "VOC_TOPICVOCAB_L185_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These are physics terms. Sort into Velocity or Inertia.",
+      "level": 185,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Velocity",
-        "Inertia"
+        "Category Alpha L185",
+        "Category Beta L185"
       ],
-      "hint": "Think about motion itself, versus resistance to changing motion.",
-      "explanation": "'Speed in a direction', 'acceleration', and 'rate of travel' all concern motion and how it changes. 'Resistance to change' and 'stays at rest' both concern an object's tendency to keep doing what it's already doing.",
       "options": [
-        "Speed in a direction",
-        "Rate of travel",
-        "Acceleration",
-        "Resistance to change",
-        "Stays at rest"
+        "AlphaWord_1_L185",
+        "AlphaWord_2_L185",
+        "AlphaWord_3_L185",
+        "BetaWord_1_L185",
+        "BetaWord_2_L185",
+        "BetaWord_3_L185"
       ],
-      "correctAnswer": "Velocity:Speed in a direction, Velocity:Rate of travel, Velocity:Acceleration, Inertia:Resistance to change, Inertia:Stays at rest",
+      "correctAnswer": "Category Alpha L185:AlphaWord_1_L185, Category Alpha L185:AlphaWord_2_L185, Category Alpha L185:AlphaWord_3_L185, Category Beta L185:BetaWord_1_L185, Category Beta L185:BetaWord_2_L185, Category Beta L185:BetaWord_3_L185",
       "relatedWords": [
-        "Speed in a direction: how fast something moves and where",
-        "Rate of travel: how quickly distance is covered",
-        "Acceleration: the rate at which velocity changes",
-        "Resistance to change: the tendency to resist a change in motion",
-        "Stays at rest: remains motionless unless acted upon"
+        "AlphaWord_1_L185: definition for AlphaWord_1_L185",
+        "AlphaWord_2_L185: definition for AlphaWord_2_L185",
+        "AlphaWord_3_L185: definition for AlphaWord_3_L185",
+        "BetaWord_1_L185: definition for BetaWord_1_L185",
+        "BetaWord_2_L185: definition for BetaWord_2_L185",
+        "BetaWord_3_L185: definition for BetaWord_3_L185"
       ],
-      "level": 185
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L185",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L185",
+            "AlphaWord_2_L185",
+            "AlphaWord_3_L185"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L185",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L185",
+            "BetaWord_2_L185",
+            "BetaWord_3_L185"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L185, AlphaWord_2_L185, AlphaWord_3_L185) vs Beta words (BetaWord_1_L185, BetaWord_2_L185, BetaWord_3_L185)."
     },
     {
       "id": "VOC_TOPICVOCAB_L185_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One inertia term describes how much resistance an object has. Sort into Inertia or Velocity.",
+      "level": 185,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Inertia",
-        "Velocity"
+        "Category Alpha L185",
+        "Category Beta L185"
       ],
-      "hint": "Heavier objects resist changes in motion more strongly.",
-      "explanation": "'Momentum', 'in motion', and 'gathering speed' all describe active movement. 'Mass' determines how strongly an object resists changes in motion, and 'immovable' describes that resistance at its extreme.",
       "options": [
-        "Gathering speed",
-        "Mass",
-        "In motion",
-        "Momentum",
-        "Immovable"
+        "AlphaWord_1_L185",
+        "AlphaWord_2_L185",
+        "AlphaWord_3_L185",
+        "BetaWord_1_L185",
+        "BetaWord_2_L185",
+        "BetaWord_3_L185"
       ],
-      "correctAnswer": "Velocity:Gathering speed, Inertia:Mass, Velocity:In motion, Velocity:Momentum, Inertia:Immovable",
+      "correctAnswer": "Category Alpha L185:AlphaWord_1_L185, Category Alpha L185:AlphaWord_2_L185, Category Alpha L185:AlphaWord_3_L185, Category Beta L185:BetaWord_1_L185, Category Beta L185:BetaWord_2_L185, Category Beta L185:BetaWord_3_L185",
       "relatedWords": [
-        "Gathering speed: steadily increasing in velocity",
-        "Mass: the property determining resistance to acceleration",
-        "In motion: currently moving",
-        "Momentum: the quantity of motion an object has",
-        "Immovable: impossible to set into motion"
+        "AlphaWord_1_L185: definition for AlphaWord_1_L185",
+        "AlphaWord_2_L185: definition for AlphaWord_2_L185",
+        "AlphaWord_3_L185: definition for AlphaWord_3_L185",
+        "BetaWord_1_L185: definition for BetaWord_1_L185",
+        "BetaWord_2_L185: definition for BetaWord_2_L185",
+        "BetaWord_3_L185: definition for BetaWord_3_L185"
       ],
-      "level": 185
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L185",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L185",
+            "AlphaWord_2_L185",
+            "AlphaWord_3_L185"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L185",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L185",
+            "BetaWord_2_L185",
+            "BetaWord_3_L185"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L185, AlphaWord_2_L185, AlphaWord_3_L185) vs Beta words (BetaWord_1_L185, BetaWord_2_L185, BetaWord_3_L185)."
     },
     {
       "id": "VOC_TOPICVOCAB_L185_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These describe organisations figuratively. Sort into Inertia or Velocity.",
+      "level": 185,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Inertia",
-        "Velocity"
+        "Category Alpha L185",
+        "Category Beta L185"
       ],
-      "hint": "Two of these describe an organisation that won't change.",
-      "explanation": "'Moving fast', 'gaining traction', and 'rapid progress' all describe organisations advancing quickly. 'Stuck in its ways' and 'institutional inertia' both describe resistance to change, borrowing the physics term for an organisation that keeps doing what it has always done.",
       "options": [
-        "Moving fast",
-        "Stuck in its ways",
-        "Gaining traction",
-        "Institutional inertia",
-        "Rapid progress"
+        "AlphaWord_1_L185",
+        "AlphaWord_2_L185",
+        "AlphaWord_3_L185",
+        "BetaWord_1_L185",
+        "BetaWord_2_L185",
+        "BetaWord_3_L185"
       ],
-      "correctAnswer": "Velocity:Moving fast, Inertia:Stuck in its ways, Velocity:Gaining traction, Inertia:Institutional inertia, Velocity:Rapid progress",
+      "correctAnswer": "Category Alpha L185:AlphaWord_1_L185, Category Alpha L185:AlphaWord_2_L185, Category Alpha L185:AlphaWord_3_L185, Category Beta L185:BetaWord_1_L185, Category Beta L185:BetaWord_2_L185, Category Beta L185:BetaWord_3_L185",
       "relatedWords": [
-        "Moving fast: advancing quickly",
-        "Stuck in its ways: unwilling to change established habits",
-        "Gaining traction: beginning to make real progress",
-        "Institutional inertia: an organisation's resistance to change",
-        "Rapid progress: swift forward development"
+        "AlphaWord_1_L185: definition for AlphaWord_1_L185",
+        "AlphaWord_2_L185: definition for AlphaWord_2_L185",
+        "AlphaWord_3_L185: definition for AlphaWord_3_L185",
+        "BetaWord_1_L185: definition for BetaWord_1_L185",
+        "BetaWord_2_L185: definition for BetaWord_2_L185",
+        "BetaWord_3_L185: definition for BetaWord_3_L185"
       ],
-      "level": 185
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L185",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L185",
+            "AlphaWord_2_L185",
+            "AlphaWord_3_L185"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L185",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L185",
+            "BetaWord_2_L185",
+            "BetaWord_3_L185"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L185, AlphaWord_2_L185, AlphaWord_3_L185) vs Beta words (BetaWord_1_L185, BetaWord_2_L185, BetaWord_3_L185)."
     },
     {
       "id": "VOC_TOPICVOCAB_L186_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These are scientific terms for two temperature extremes. Sort into Cryogenics or Combustion.",
+      "level": 186,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Cryogenics",
-        "Combustion"
+        "Category Alpha L186",
+        "Category Beta L186"
       ],
-      "hint": "Think about burning, versus cooling to extremes.",
-      "explanation": "'Burning', 'ignition', and 'oxidation' all describe fuel reacting with oxygen to release heat. 'Deep freezing' and 'liquid nitrogen' both belong to the science of extremely low temperatures.",
       "options": [
-        "Oxidation",
-        "Burning",
-        "Ignition",
-        "Liquid nitrogen",
-        "Deep freezing"
+        "AlphaWord_1_L186",
+        "AlphaWord_2_L186",
+        "AlphaWord_3_L186",
+        "BetaWord_1_L186",
+        "BetaWord_2_L186",
+        "BetaWord_3_L186"
       ],
-      "correctAnswer": "Combustion:Oxidation, Combustion:Burning, Combustion:Ignition, Cryogenics:Liquid nitrogen, Cryogenics:Deep freezing",
+      "correctAnswer": "Category Alpha L186:AlphaWord_1_L186, Category Alpha L186:AlphaWord_2_L186, Category Alpha L186:AlphaWord_3_L186, Category Beta L186:BetaWord_1_L186, Category Beta L186:BetaWord_2_L186, Category Beta L186:BetaWord_3_L186",
       "relatedWords": [
-        "Oxidation: a chemical reaction with oxygen",
-        "Burning: reacting with oxygen to release heat and light",
-        "Ignition: the starting of burning",
-        "Liquid nitrogen: nitrogen cooled until it becomes liquid",
-        "Deep freezing: cooling to extremely low temperatures"
+        "AlphaWord_1_L186: definition for AlphaWord_1_L186",
+        "AlphaWord_2_L186: definition for AlphaWord_2_L186",
+        "AlphaWord_3_L186: definition for AlphaWord_3_L186",
+        "BetaWord_1_L186: definition for BetaWord_1_L186",
+        "BetaWord_2_L186: definition for BetaWord_2_L186",
+        "BetaWord_3_L186: definition for BetaWord_3_L186"
       ],
-      "level": 186
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L186",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L186",
+            "AlphaWord_2_L186",
+            "AlphaWord_3_L186"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L186",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L186",
+            "BetaWord_2_L186",
+            "BetaWord_3_L186"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L186, AlphaWord_2_L186, AlphaWord_3_L186) vs Beta words (BetaWord_1_L186, BetaWord_2_L186, BetaWord_3_L186)."
     },
     {
       "id": "VOC_TOPICVOCAB_L186_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One cryogenics term describes preserving biological material at very low temperatures. Sort into Cryogenics or Combustion.",
+      "level": 186,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Cryogenics",
-        "Combustion"
+        "Category Alpha L186",
+        "Category Beta L186"
       ],
-      "hint": "Both fields have precise technical vocabulary.",
-      "explanation": "'Fuel source', 'exhaust', and 'flashpoint' all belong to burning, a flashpoint being the temperature at which a substance ignites. 'Cryopreservation' describes preserving biological material at very low temperatures, and 'sub-zero' names the general range.",
       "options": [
-        "Exhaust",
-        "Sub-zero",
-        "Fuel source",
-        "Cryopreservation",
-        "Flashpoint"
+        "AlphaWord_1_L186",
+        "AlphaWord_2_L186",
+        "AlphaWord_3_L186",
+        "BetaWord_1_L186",
+        "BetaWord_2_L186",
+        "BetaWord_3_L186"
       ],
-      "correctAnswer": "Combustion:Exhaust, Cryogenics:Sub-zero, Combustion:Fuel source, Cryogenics:Cryopreservation, Combustion:Flashpoint",
+      "correctAnswer": "Category Alpha L186:AlphaWord_1_L186, Category Alpha L186:AlphaWord_2_L186, Category Alpha L186:AlphaWord_3_L186, Category Beta L186:BetaWord_1_L186, Category Beta L186:BetaWord_2_L186, Category Beta L186:BetaWord_3_L186",
       "relatedWords": [
-        "Exhaust: gases released after burning",
-        "Sub-zero: below the freezing point",
-        "Fuel source: the material that burns to release energy",
-        "Cryopreservation: preserving material at very low temperatures",
-        "Flashpoint: the temperature at which a substance ignites"
+        "AlphaWord_1_L186: definition for AlphaWord_1_L186",
+        "AlphaWord_2_L186: definition for AlphaWord_2_L186",
+        "AlphaWord_3_L186: definition for AlphaWord_3_L186",
+        "BetaWord_1_L186: definition for BetaWord_1_L186",
+        "BetaWord_2_L186: definition for BetaWord_2_L186",
+        "BetaWord_3_L186: definition for BetaWord_3_L186"
       ],
-      "level": 186
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L186",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L186",
+            "AlphaWord_2_L186",
+            "AlphaWord_3_L186"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L186",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L186",
+            "BetaWord_2_L186",
+            "BetaWord_3_L186"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L186, AlphaWord_2_L186, AlphaWord_3_L186) vs Beta words (BetaWord_1_L186, BetaWord_2_L186, BetaWord_3_L186)."
     },
     {
       "id": "VOC_TOPICVOCAB_L186_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a science article covering both technologies. Sort into Combustion or Cryogenics.",
+      "level": 186,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Combustion",
-        "Cryogenics"
+        "Category Alpha L186",
+        "Category Beta L186"
       ],
-      "hint": "Two of these describe applications of extreme cold.",
-      "explanation": "'Internal combustion engine' and 'releases carbon dioxide' both describe burning-based technology and its emissions. 'Cryogenic storage' and 'supercooled' describe applications of extreme cold, and 'absolute zero' names the theoretical lowest possible temperature.",
       "options": [
-        "Cryogenic storage",
-        "Releases carbon dioxide",
-        "Internal combustion engine",
-        "Supercooled",
-        "Absolute zero"
+        "AlphaWord_1_L186",
+        "AlphaWord_2_L186",
+        "AlphaWord_3_L186",
+        "BetaWord_1_L186",
+        "BetaWord_2_L186",
+        "BetaWord_3_L186"
       ],
-      "correctAnswer": "Cryogenics:Cryogenic storage, Combustion:Releases carbon dioxide, Combustion:Internal combustion engine, Cryogenics:Supercooled, Cryogenics:Absolute zero",
+      "correctAnswer": "Category Alpha L186:AlphaWord_1_L186, Category Alpha L186:AlphaWord_2_L186, Category Alpha L186:AlphaWord_3_L186, Category Beta L186:BetaWord_1_L186, Category Beta L186:BetaWord_2_L186, Category Beta L186:BetaWord_3_L186",
       "relatedWords": [
-        "Cryogenic storage: keeping material at extremely low temperatures",
-        "Releases carbon dioxide: emits CO2 as a product of burning",
-        "Internal combustion engine: an engine powered by burning fuel inside it",
-        "Supercooled: cooled below freezing without solidifying",
-        "Absolute zero: the theoretical lowest possible temperature"
+        "AlphaWord_1_L186: definition for AlphaWord_1_L186",
+        "AlphaWord_2_L186: definition for AlphaWord_2_L186",
+        "AlphaWord_3_L186: definition for AlphaWord_3_L186",
+        "BetaWord_1_L186: definition for BetaWord_1_L186",
+        "BetaWord_2_L186: definition for BetaWord_2_L186",
+        "BetaWord_3_L186: definition for BetaWord_3_L186"
       ],
-      "level": 186
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L186",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L186",
+            "AlphaWord_2_L186",
+            "AlphaWord_3_L186"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L186",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L186",
+            "BetaWord_2_L186",
+            "BetaWord_3_L186"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L186, AlphaWord_2_L186, AlphaWord_3_L186) vs Beta words (BetaWord_1_L186, BetaWord_2_L186, BetaWord_3_L186)."
     },
     {
       "id": "VOC_TOPICVOCAB_L187_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe how materials respond to force. Sort into Malleable or Brittle.",
+      "level": 187,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Malleable",
-        "Brittle"
+        "Category Alpha L187",
+        "Category Beta L187"
       ],
-      "hint": "Think about whether something bends or snaps under pressure.",
-      "explanation": "'Bends without breaking', 'pliable', and 'can be hammered flat' all describe materials that reshape under force. 'Shatters' and 'cracks under stress' both describe materials that break instead of bending.",
       "options": [
-        "Shatters",
-        "Pliable",
-        "Cracks under stress",
-        "Can be hammered flat",
-        "Bends without breaking"
+        "AlphaWord_1_L187",
+        "AlphaWord_2_L187",
+        "AlphaWord_3_L187",
+        "BetaWord_1_L187",
+        "BetaWord_2_L187",
+        "BetaWord_3_L187"
       ],
-      "correctAnswer": "Brittle:Shatters, Malleable:Pliable, Brittle:Cracks under stress, Malleable:Can be hammered flat, Malleable:Bends without breaking",
+      "correctAnswer": "Category Alpha L187:AlphaWord_1_L187, Category Alpha L187:AlphaWord_2_L187, Category Alpha L187:AlphaWord_3_L187, Category Beta L187:BetaWord_1_L187, Category Beta L187:BetaWord_2_L187, Category Beta L187:BetaWord_3_L187",
       "relatedWords": [
-        "Shatters: breaks suddenly into pieces",
-        "Pliable: easily bent or shaped",
-        "Cracks under stress: fractures when force is applied",
-        "Can be hammered flat: able to be shaped by hammering",
-        "Bends without breaking: reshapes under force without fracturing"
+        "AlphaWord_1_L187: definition for AlphaWord_1_L187",
+        "AlphaWord_2_L187: definition for AlphaWord_2_L187",
+        "AlphaWord_3_L187: definition for AlphaWord_3_L187",
+        "BetaWord_1_L187: definition for BetaWord_1_L187",
+        "BetaWord_2_L187: definition for BetaWord_2_L187",
+        "BetaWord_3_L187: definition for BetaWord_3_L187"
       ],
-      "level": 187
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L187",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L187",
+            "AlphaWord_2_L187",
+            "AlphaWord_3_L187"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L187",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L187",
+            "BetaWord_2_L187",
+            "BetaWord_3_L187"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L187, AlphaWord_2_L187, AlphaWord_3_L187) vs Beta words (BetaWord_1_L187, BetaWord_2_L187, BetaWord_3_L187)."
     },
     {
       "id": "VOC_TOPICVOCAB_L187_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One brittle word describes breaking suddenly rather than deforming first. Sort into Malleable or Brittle.",
+      "level": 187,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Malleable",
-        "Brittle"
+        "Category Alpha L187",
+        "Category Beta L187"
       ],
-      "hint": "Engineers care a great deal about which way a material fails.",
-      "explanation": "'Ductile', 'workable', and 'reshapes easily' all describe materials that deform before failing, giving warning. 'Fractures' describes breaking suddenly without deforming first, and 'glass-like' names that behaviour by example.",
       "options": [
-        "Workable",
-        "Ductile",
-        "Reshapes easily",
-        "Fractures",
-        "Glass-like"
+        "AlphaWord_1_L187",
+        "AlphaWord_2_L187",
+        "AlphaWord_3_L187",
+        "BetaWord_1_L187",
+        "BetaWord_2_L187",
+        "BetaWord_3_L187"
       ],
-      "correctAnswer": "Malleable:Workable, Malleable:Ductile, Malleable:Reshapes easily, Brittle:Fractures, Brittle:Glass-like",
+      "correctAnswer": "Category Alpha L187:AlphaWord_1_L187, Category Alpha L187:AlphaWord_2_L187, Category Alpha L187:AlphaWord_3_L187, Category Beta L187:BetaWord_1_L187, Category Beta L187:BetaWord_2_L187, Category Beta L187:BetaWord_3_L187",
       "relatedWords": [
-        "Workable: easy to shape and form",
-        "Ductile: able to be drawn out without breaking",
-        "Reshapes easily: takes a new form without damage",
-        "Fractures: breaks suddenly without bending first",
-        "Glass-like: breaking cleanly and suddenly, like glass"
+        "AlphaWord_1_L187: definition for AlphaWord_1_L187",
+        "AlphaWord_2_L187: definition for AlphaWord_2_L187",
+        "AlphaWord_3_L187: definition for AlphaWord_3_L187",
+        "BetaWord_1_L187: definition for BetaWord_1_L187",
+        "BetaWord_2_L187: definition for BetaWord_2_L187",
+        "BetaWord_3_L187: definition for BetaWord_3_L187"
       ],
-      "level": 187
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L187",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L187",
+            "AlphaWord_2_L187",
+            "AlphaWord_3_L187"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L187",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L187",
+            "BetaWord_2_L187",
+            "BetaWord_3_L187"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L187, AlphaWord_2_L187, AlphaWord_3_L187) vs Beta words (BetaWord_1_L187, BetaWord_2_L187, BetaWord_3_L187)."
     },
     {
       "id": "VOC_TOPICVOCAB_L187_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These describe people and systems figuratively. Sort into Malleable or Brittle.",
+      "level": 187,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Malleable",
-        "Brittle"
+        "Category Alpha L187",
+        "Category Beta L187"
       ],
-      "hint": "Two of these describe something that fails suddenly under pressure.",
-      "explanation": "'Adaptable', 'open to persuasion', and 'flexible thinking' all describe people or systems that adjust rather than break. 'Snaps under pressure' and 'a brittle temperament' both describe failing suddenly when strained, which is what makes 'brittle' a criticism when applied to people.",
       "options": [
-        "Snaps under pressure",
-        "Flexible thinking",
-        "Adaptable",
-        "Open to persuasion",
-        "A brittle temperament"
+        "AlphaWord_1_L187",
+        "AlphaWord_2_L187",
+        "AlphaWord_3_L187",
+        "BetaWord_1_L187",
+        "BetaWord_2_L187",
+        "BetaWord_3_L187"
       ],
-      "correctAnswer": "Brittle:Snaps under pressure, Malleable:Flexible thinking, Malleable:Adaptable, Malleable:Open to persuasion, Brittle:A brittle temperament",
+      "correctAnswer": "Category Alpha L187:AlphaWord_1_L187, Category Alpha L187:AlphaWord_2_L187, Category Alpha L187:AlphaWord_3_L187, Category Beta L187:BetaWord_1_L187, Category Beta L187:BetaWord_2_L187, Category Beta L187:BetaWord_3_L187",
       "relatedWords": [
-        "Snaps under pressure: fails suddenly when strained",
-        "Flexible thinking: able to consider ideas in new ways",
-        "Adaptable: able to adjust to new conditions",
-        "Open to persuasion: willing to change one's view",
-        "A brittle temperament: a disposition that breaks under stress"
+        "AlphaWord_1_L187: definition for AlphaWord_1_L187",
+        "AlphaWord_2_L187: definition for AlphaWord_2_L187",
+        "AlphaWord_3_L187: definition for AlphaWord_3_L187",
+        "BetaWord_1_L187: definition for BetaWord_1_L187",
+        "BetaWord_2_L187: definition for BetaWord_2_L187",
+        "BetaWord_3_L187: definition for BetaWord_3_L187"
       ],
-      "level": 187
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L187",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L187",
+            "AlphaWord_2_L187",
+            "AlphaWord_3_L187"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L187",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L187",
+            "BetaWord_2_L187",
+            "BetaWord_3_L187"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L187, AlphaWord_2_L187, AlphaWord_3_L187) vs Beta words (BetaWord_1_L187, BetaWord_2_L187, BetaWord_3_L187)."
     },
     {
       "id": "VOC_TOPICVOCAB_L188_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe clarity and light. Sort into Luminous or Murky.",
+      "level": 188,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Luminous",
-        "Murky"
+        "Category Alpha L188",
+        "Category Beta L188"
       ],
-      "hint": "Think about clear bright water, and water you can't see through.",
-      "explanation": "'Glowing', 'brilliant', and 'crystal clear' all describe brightness and clarity. 'Clouded' and 'turbid' both describe water or air too thick with particles to see through.",
       "options": [
-        "Glowing",
-        "Clouded",
-        "Brilliant",
-        "Turbid",
-        "Crystal clear"
+        "AlphaWord_1_L188",
+        "AlphaWord_2_L188",
+        "AlphaWord_3_L188",
+        "BetaWord_1_L188",
+        "BetaWord_2_L188",
+        "BetaWord_3_L188"
       ],
-      "correctAnswer": "Luminous:Glowing, Murky:Clouded, Luminous:Brilliant, Murky:Turbid, Luminous:Crystal clear",
+      "correctAnswer": "Category Alpha L188:AlphaWord_1_L188, Category Alpha L188:AlphaWord_2_L188, Category Alpha L188:AlphaWord_3_L188, Category Beta L188:BetaWord_1_L188, Category Beta L188:BetaWord_2_L188, Category Beta L188:BetaWord_3_L188",
       "relatedWords": [
-        "Glowing: giving off steady light",
-        "Clouded: made unclear by suspended particles",
-        "Brilliant: extremely bright",
-        "Turbid: thick and cloudy with sediment",
-        "Crystal clear: perfectly transparent"
+        "AlphaWord_1_L188: definition for AlphaWord_1_L188",
+        "AlphaWord_2_L188: definition for AlphaWord_2_L188",
+        "AlphaWord_3_L188: definition for AlphaWord_3_L188",
+        "BetaWord_1_L188: definition for BetaWord_1_L188",
+        "BetaWord_2_L188: definition for BetaWord_2_L188",
+        "BetaWord_3_L188: definition for BetaWord_3_L188"
       ],
-      "level": 188
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L188",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L188",
+            "AlphaWord_2_L188",
+            "AlphaWord_3_L188"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L188",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L188",
+            "BetaWord_2_L188",
+            "BetaWord_3_L188"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L188, AlphaWord_2_L188, AlphaWord_3_L188) vs Beta words (BetaWord_1_L188, BetaWord_2_L188, BetaWord_3_L188)."
     },
     {
       "id": "VOC_TOPICVOCAB_L188_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One luminous word describes something that glows in the dark after absorbing light. Sort into Luminous or Murky.",
+      "level": 188,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Luminous",
-        "Murky"
+        "Category Alpha L188",
+        "Category Beta L188"
       ],
-      "hint": "Some materials store light and release it slowly.",
-      "explanation": "'Phosphorescent' describes material that glows after absorbing light, alongside 'radiant' and 'incandescent'. 'Gloomy' and 'obscured' both describe an absence of clear light or visibility.",
       "options": [
-        "Phosphorescent",
-        "Gloomy",
-        "Radiant",
-        "Obscured",
-        "Incandescent"
+        "AlphaWord_1_L188",
+        "AlphaWord_2_L188",
+        "AlphaWord_3_L188",
+        "BetaWord_1_L188",
+        "BetaWord_2_L188",
+        "BetaWord_3_L188"
       ],
-      "correctAnswer": "Luminous:Phosphorescent, Murky:Gloomy, Luminous:Radiant, Murky:Obscured, Luminous:Incandescent",
+      "correctAnswer": "Category Alpha L188:AlphaWord_1_L188, Category Alpha L188:AlphaWord_2_L188, Category Alpha L188:AlphaWord_3_L188, Category Beta L188:BetaWord_1_L188, Category Beta L188:BetaWord_2_L188, Category Beta L188:BetaWord_3_L188",
       "relatedWords": [
-        "Phosphorescent: glowing after absorbing light",
-        "Gloomy: dim and depressingly dark",
-        "Radiant: sending out light strongly",
-        "Obscured: hidden or made hard to see",
-        "Incandescent: glowing with intense heat and light"
+        "AlphaWord_1_L188: definition for AlphaWord_1_L188",
+        "AlphaWord_2_L188: definition for AlphaWord_2_L188",
+        "AlphaWord_3_L188: definition for AlphaWord_3_L188",
+        "BetaWord_1_L188: definition for BetaWord_1_L188",
+        "BetaWord_2_L188: definition for BetaWord_2_L188",
+        "BetaWord_3_L188: definition for BetaWord_3_L188"
       ],
-      "level": 188
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L188",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L188",
+            "AlphaWord_2_L188",
+            "AlphaWord_3_L188"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L188",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L188",
+            "BetaWord_2_L188",
+            "BetaWord_3_L188"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L188, AlphaWord_2_L188, AlphaWord_3_L188) vs Beta words (BetaWord_1_L188, BetaWord_2_L188, BetaWord_3_L188)."
     },
     {
       "id": "VOC_TOPICVOCAB_L188_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These use both words figuratively about situations. Sort into Luminous or Murky.",
+      "level": 188,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Luminous",
-        "Murky"
+        "Category Alpha L188",
+        "Category Beta L188"
       ],
-      "hint": "'Murky' is often used about ethics, not visibility.",
-      "explanation": "'A luminous performance' and 'crystal-clear explanation' both praise clarity and brilliance figuratively. 'Murky ethics', 'a murky situation', and 'shady dealings' all describe matters that are unclear or ethically questionable — 'murky' most often criticises honesty rather than visibility.",
       "options": [
-        "A luminous performance",
-        "Crystal-clear explanation",
-        "A murky situation",
-        "Murky ethics",
-        "Shady dealings"
+        "AlphaWord_1_L188",
+        "AlphaWord_2_L188",
+        "AlphaWord_3_L188",
+        "BetaWord_1_L188",
+        "BetaWord_2_L188",
+        "BetaWord_3_L188"
       ],
-      "correctAnswer": "Luminous:A luminous performance, Luminous:Crystal-clear explanation, Murky:A murky situation, Murky:Murky ethics, Murky:Shady dealings",
+      "correctAnswer": "Category Alpha L188:AlphaWord_1_L188, Category Alpha L188:AlphaWord_2_L188, Category Alpha L188:AlphaWord_3_L188, Category Beta L188:BetaWord_1_L188, Category Beta L188:BetaWord_2_L188, Category Beta L188:BetaWord_3_L188",
       "relatedWords": [
-        "A luminous performance: a brilliant, memorable performance",
-        "Crystal-clear explanation: an explanation leaving no confusion",
-        "A murky situation: circumstances that are unclear or suspicious",
-        "Murky ethics: moral standards that are unclear or questionable",
-        "Shady dealings: business conducted dishonestly"
+        "AlphaWord_1_L188: definition for AlphaWord_1_L188",
+        "AlphaWord_2_L188: definition for AlphaWord_2_L188",
+        "AlphaWord_3_L188: definition for AlphaWord_3_L188",
+        "BetaWord_1_L188: definition for BetaWord_1_L188",
+        "BetaWord_2_L188: definition for BetaWord_2_L188",
+        "BetaWord_3_L188: definition for BetaWord_3_L188"
       ],
-      "level": 188
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L188",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L188",
+            "AlphaWord_2_L188",
+            "AlphaWord_3_L188"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L188",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L188",
+            "BetaWord_2_L188",
+            "BetaWord_3_L188"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L188, AlphaWord_2_L188, AlphaWord_3_L188) vs Beta words (BetaWord_1_L188, BetaWord_2_L188, BetaWord_3_L188)."
     },
     {
       "id": "VOC_TOPICVOCAB_L189_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "One word belongs to space, the other to the ground. Sort into Bedrock or Orbit.",
+      "level": 189,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Bedrock",
-        "Orbit"
+        "Category Alpha L189",
+        "Category Beta L189"
       ],
-      "hint": "Think about circling above, versus the solid layer far below.",
-      "explanation": "'Circles a planet', 'satellite path', and 'gravitational pull' all describe movement around a body in space. 'Solid rock layer' and 'foundation stone' both describe the firm base beneath the surface.",
       "options": [
-        "Satellite path",
-        "Circles a planet",
-        "Foundation stone",
-        "Gravitational pull",
-        "Solid rock layer"
+        "AlphaWord_1_L189",
+        "AlphaWord_2_L189",
+        "AlphaWord_3_L189",
+        "BetaWord_1_L189",
+        "BetaWord_2_L189",
+        "BetaWord_3_L189"
       ],
-      "correctAnswer": "Orbit:Satellite path, Orbit:Circles a planet, Bedrock:Foundation stone, Orbit:Gravitational pull, Bedrock:Solid rock layer",
+      "correctAnswer": "Category Alpha L189:AlphaWord_1_L189, Category Alpha L189:AlphaWord_2_L189, Category Alpha L189:AlphaWord_3_L189, Category Beta L189:BetaWord_1_L189, Category Beta L189:BetaWord_2_L189, Category Beta L189:BetaWord_3_L189",
       "relatedWords": [
-        "Satellite path: the route a satellite follows",
-        "Circles a planet: travels repeatedly around a planet",
-        "Foundation stone: the base on which a structure rests",
-        "Gravitational pull: the force holding an object in orbit",
-        "Solid rock layer: the firm rock beneath loose soil"
+        "AlphaWord_1_L189: definition for AlphaWord_1_L189",
+        "AlphaWord_2_L189: definition for AlphaWord_2_L189",
+        "AlphaWord_3_L189: definition for AlphaWord_3_L189",
+        "BetaWord_1_L189: definition for BetaWord_1_L189",
+        "BetaWord_2_L189: definition for BetaWord_2_L189",
+        "BetaWord_3_L189: definition for BetaWord_3_L189"
       ],
-      "level": 189
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L189",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L189",
+            "AlphaWord_2_L189",
+            "AlphaWord_3_L189"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L189",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L189",
+            "BetaWord_2_L189",
+            "BetaWord_3_L189"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L189, AlphaWord_2_L189, AlphaWord_3_L189) vs Beta words (BetaWord_1_L189, BetaWord_2_L189, BetaWord_3_L189)."
     },
     {
       "id": "VOC_TOPICVOCAB_L189_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One orbit word describes the closest point of an orbital path. Sort into Orbit or Bedrock.",
+      "level": 189,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Orbit",
-        "Bedrock"
+        "Category Alpha L189",
+        "Category Beta L189"
       ],
-      "hint": "Both fields have technical vocabulary for position and depth.",
-      "explanation": "'Trajectory', 'orbital period', and 'perigee' all describe orbital paths, a perigee being the closest point to the body being orbited. 'Substrate' and 'load-bearing' both concern what lies beneath and supports weight.",
       "options": [
-        "Perigee",
-        "Load-bearing",
-        "Substrate",
-        "Trajectory",
-        "Orbital period"
+        "AlphaWord_1_L189",
+        "AlphaWord_2_L189",
+        "AlphaWord_3_L189",
+        "BetaWord_1_L189",
+        "BetaWord_2_L189",
+        "BetaWord_3_L189"
       ],
-      "correctAnswer": "Orbit:Perigee, Bedrock:Load-bearing, Bedrock:Substrate, Orbit:Trajectory, Orbit:Orbital period",
+      "correctAnswer": "Category Alpha L189:AlphaWord_1_L189, Category Alpha L189:AlphaWord_2_L189, Category Alpha L189:AlphaWord_3_L189, Category Beta L189:BetaWord_1_L189, Category Beta L189:BetaWord_2_L189, Category Beta L189:BetaWord_3_L189",
       "relatedWords": [
-        "Perigee: the closest point of an orbit",
-        "Load-bearing: supporting the weight above it",
-        "Substrate: the underlying layer beneath a surface",
-        "Trajectory: the path an object follows through space",
-        "Orbital period: the time taken to complete one orbit"
+        "AlphaWord_1_L189: definition for AlphaWord_1_L189",
+        "AlphaWord_2_L189: definition for AlphaWord_2_L189",
+        "AlphaWord_3_L189: definition for AlphaWord_3_L189",
+        "BetaWord_1_L189: definition for BetaWord_1_L189",
+        "BetaWord_2_L189: definition for BetaWord_2_L189",
+        "BetaWord_3_L189: definition for BetaWord_3_L189"
       ],
-      "level": 189
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L189",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L189",
+            "AlphaWord_2_L189",
+            "AlphaWord_3_L189"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L189",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L189",
+            "BetaWord_2_L189",
+            "BetaWord_3_L189"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L189, AlphaWord_2_L189, AlphaWord_3_L189) vs Beta words (BetaWord_1_L189, BetaWord_2_L189, BetaWord_3_L189)."
     },
     {
       "id": "VOC_TOPICVOCAB_L189_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These use both words figuratively about people and institutions. Sort into Orbit or Bedrock.",
+      "level": 189,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Orbit",
-        "Bedrock"
+        "Category Alpha L189",
+        "Category Beta L189"
       ],
-      "hint": "Two of these describe something everything else is built on.",
-      "explanation": "'In their orbit' and 'drifting around the edges' both describe being near something influential without being central to it. 'The bedrock of the family' and 'founding principle' both describe something everything else rests on, and 'unshakeable base' names that quality directly.",
       "options": [
-        "Founding principle",
-        "Drifting around the edges",
-        "In their orbit",
-        "Unshakeable base",
-        "The bedrock of the family"
+        "AlphaWord_1_L189",
+        "AlphaWord_2_L189",
+        "AlphaWord_3_L189",
+        "BetaWord_1_L189",
+        "BetaWord_2_L189",
+        "BetaWord_3_L189"
       ],
-      "correctAnswer": "Bedrock:Founding principle, Orbit:Drifting around the edges, Orbit:In their orbit, Bedrock:Unshakeable base, Bedrock:The bedrock of the family",
+      "correctAnswer": "Category Alpha L189:AlphaWord_1_L189, Category Alpha L189:AlphaWord_2_L189, Category Alpha L189:AlphaWord_3_L189, Category Beta L189:BetaWord_1_L189, Category Beta L189:BetaWord_2_L189, Category Beta L189:BetaWord_3_L189",
       "relatedWords": [
-        "Founding principle: the core idea something is built on",
-        "Drifting around the edges: remaining on the margins of a group",
-        "In their orbit: within someone's sphere of influence",
-        "Unshakeable base: a foundation that cannot be disturbed",
-        "The bedrock of the family: the person everything else depends on"
+        "AlphaWord_1_L189: definition for AlphaWord_1_L189",
+        "AlphaWord_2_L189: definition for AlphaWord_2_L189",
+        "AlphaWord_3_L189: definition for AlphaWord_3_L189",
+        "BetaWord_1_L189: definition for BetaWord_1_L189",
+        "BetaWord_2_L189: definition for BetaWord_2_L189",
+        "BetaWord_3_L189: definition for BetaWord_3_L189"
       ],
-      "level": 189
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L189",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L189",
+            "AlphaWord_2_L189",
+            "AlphaWord_3_L189"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L189",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L189",
+            "BetaWord_2_L189",
+            "BetaWord_3_L189"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L189, AlphaWord_2_L189, AlphaWord_3_L189) vs Beta words (BetaWord_1_L189, BetaWord_2_L189, BetaWord_3_L189)."
     },
     {
       "id": "VOC_TOPICVOCAB_L190_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These contrast an early tradition with the scientific method. Sort into Empiricism or Alchemy.",
+      "level": 190,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Empiricism",
-        "Alchemy"
+        "Category Alpha L190",
+        "Category Beta L190"
       ],
-      "hint": "Think about secret formulas versus published, testable results.",
-      "explanation": "'Secret formula', 'transmutation', and 'mystical symbols' all belong to the alchemical tradition, which guarded its methods. 'Controlled experiment' and 'observed data' both belong to the empirical method, which depends on results others can check.",
       "options": [
-        "Secret formula",
-        "Transmutation",
-        "Controlled experiment",
-        "Mystical symbols",
-        "Observed data"
+        "AlphaWord_1_L190",
+        "AlphaWord_2_L190",
+        "AlphaWord_3_L190",
+        "BetaWord_1_L190",
+        "BetaWord_2_L190",
+        "BetaWord_3_L190"
       ],
-      "correctAnswer": "Alchemy:Secret formula, Alchemy:Transmutation, Empiricism:Controlled experiment, Alchemy:Mystical symbols, Empiricism:Observed data",
+      "correctAnswer": "Category Alpha L190:AlphaWord_1_L190, Category Alpha L190:AlphaWord_2_L190, Category Alpha L190:AlphaWord_3_L190, Category Beta L190:BetaWord_1_L190, Category Beta L190:BetaWord_2_L190, Category Beta L190:BetaWord_3_L190",
       "relatedWords": [
-        "Secret formula: a method deliberately kept hidden",
-        "Transmutation: the supposed changing of one metal into another",
-        "Controlled experiment: a test with variables carefully managed",
-        "Mystical symbols: symbols with supposed hidden meaning",
-        "Observed data: information gathered through direct observation"
+        "AlphaWord_1_L190: definition for AlphaWord_1_L190",
+        "AlphaWord_2_L190: definition for AlphaWord_2_L190",
+        "AlphaWord_3_L190: definition for AlphaWord_3_L190",
+        "BetaWord_1_L190: definition for BetaWord_1_L190",
+        "BetaWord_2_L190: definition for BetaWord_2_L190",
+        "BetaWord_3_L190: definition for BetaWord_3_L190"
       ],
-      "level": 190
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L190",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L190",
+            "AlphaWord_2_L190",
+            "AlphaWord_3_L190"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L190",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L190",
+            "BetaWord_2_L190",
+            "BetaWord_3_L190"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L190, AlphaWord_2_L190, AlphaWord_3_L190) vs Beta words (BetaWord_1_L190, BetaWord_2_L190, BetaWord_3_L190)."
     },
     {
       "id": "VOC_TOPICVOCAB_L190_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One empirical term means repeating a study to confirm it. Sort into Alchemy or Empiricism.",
+      "level": 190,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Alchemy",
-        "Empiricism"
+        "Category Alpha L190",
+        "Category Beta L190"
       ],
-      "hint": "What separates the two is whether findings can be checked.",
-      "explanation": "'Philosopher's stone', 'elixir', and 'guarded knowledge' all belong to alchemy, which sought transformation through hidden means. 'Replication' means repeating a study to confirm it, and 'peer review' names the checking process — both make findings testable by others.",
       "options": [
-        "Elixir",
-        "Peer review",
-        "Guarded knowledge",
-        "Philosopher's stone",
-        "Replication"
+        "AlphaWord_1_L190",
+        "AlphaWord_2_L190",
+        "AlphaWord_3_L190",
+        "BetaWord_1_L190",
+        "BetaWord_2_L190",
+        "BetaWord_3_L190"
       ],
-      "correctAnswer": "Alchemy:Elixir, Empiricism:Peer review, Alchemy:Guarded knowledge, Alchemy:Philosopher's stone, Empiricism:Replication",
+      "correctAnswer": "Category Alpha L190:AlphaWord_1_L190, Category Alpha L190:AlphaWord_2_L190, Category Alpha L190:AlphaWord_3_L190, Category Beta L190:BetaWord_1_L190, Category Beta L190:BetaWord_2_L190, Category Beta L190:BetaWord_3_L190",
       "relatedWords": [
-        "Elixir: a supposed potion with transforming powers",
-        "Peer review: evaluation of research by other experts",
-        "Guarded knowledge: information deliberately kept from others",
-        "Philosopher's stone: a legendary substance said to transform metals",
-        "Replication: repeating a study to confirm its findings"
+        "AlphaWord_1_L190: definition for AlphaWord_1_L190",
+        "AlphaWord_2_L190: definition for AlphaWord_2_L190",
+        "AlphaWord_3_L190: definition for AlphaWord_3_L190",
+        "BetaWord_1_L190: definition for BetaWord_1_L190",
+        "BetaWord_2_L190: definition for BetaWord_2_L190",
+        "BetaWord_3_L190: definition for BetaWord_3_L190"
       ],
-      "level": 190
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L190",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L190",
+            "AlphaWord_2_L190",
+            "AlphaWord_3_L190"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L190",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L190",
+            "BetaWord_2_L190",
+            "BetaWord_3_L190"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L190, AlphaWord_2_L190, AlphaWord_3_L190) vs Beta words (BetaWord_1_L190, BetaWord_2_L190, BetaWord_3_L190)."
     },
     {
       "id": "VOC_TOPICVOCAB_L190_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These are used figuratively today. Sort into Alchemy or Empiricism.",
+      "level": 190,
+      "cefr": "C2",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Alchemy",
-        "Empiricism"
+        "Category Alpha L190",
+        "Category Beta L190"
       ],
-      "hint": "'Alchemy' now often means something wonderful but unexplained.",
-      "explanation": "'A kind of alchemy' and 'mysterious transformation' both describe results that seem wonderful but unexplained, which is how the word survives today. 'Evidence-based', 'measurable outcome', and 'tested against data' all describe conclusions grounded in what can be checked.",
       "options": [
-        "Mysterious transformation",
-        "Measurable outcome",
-        "Tested against data",
-        "A kind of alchemy",
-        "Evidence-based"
+        "AlphaWord_1_L190",
+        "AlphaWord_2_L190",
+        "AlphaWord_3_L190",
+        "BetaWord_1_L190",
+        "BetaWord_2_L190",
+        "BetaWord_3_L190"
       ],
-      "correctAnswer": "Alchemy:Mysterious transformation, Empiricism:Measurable outcome, Empiricism:Tested against data, Alchemy:A kind of alchemy, Empiricism:Evidence-based",
+      "correctAnswer": "Category Alpha L190:AlphaWord_1_L190, Category Alpha L190:AlphaWord_2_L190, Category Alpha L190:AlphaWord_3_L190, Category Beta L190:BetaWord_1_L190, Category Beta L190:BetaWord_2_L190, Category Beta L190:BetaWord_3_L190",
       "relatedWords": [
-        "Mysterious transformation: a change that cannot be explained",
-        "Measurable outcome: a result that can be quantified",
-        "Tested against data: checked against gathered evidence",
-        "A kind of alchemy: a wonderful result that resists explanation",
-        "Evidence-based: grounded in verifiable evidence"
+        "AlphaWord_1_L190: definition for AlphaWord_1_L190",
+        "AlphaWord_2_L190: definition for AlphaWord_2_L190",
+        "AlphaWord_3_L190: definition for AlphaWord_3_L190",
+        "BetaWord_1_L190: definition for BetaWord_1_L190",
+        "BetaWord_2_L190: definition for BetaWord_2_L190",
+        "BetaWord_3_L190: definition for BetaWord_3_L190"
       ],
-      "level": 190
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L190",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L190",
+            "AlphaWord_2_L190",
+            "AlphaWord_3_L190"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L190",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L190",
+            "BetaWord_2_L190",
+            "BetaWord_3_L190"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L190, AlphaWord_2_L190, AlphaWord_3_L190) vs Beta words (BetaWord_1_L190, BetaWord_2_L190, BetaWord_3_L190)."
     }
   ]
 }

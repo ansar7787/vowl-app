@@ -7,1740 +7,1470 @@
     {
       "id": "VOC_TOPICVOCAB_L111_PRACTICE_Q1",
       "level": 111,
-      "word": "Glow",
-      "conceptTitle": "Topic Sorting Gym: Shadow vs Light",
-      "targetKeyword": "Glow",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 111 (B2)",
       "topicBuckets": [
-        "Shadow",
-        "Light"
+        "Category Alpha L111",
+        "Category Beta L111"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Glow\" belong to?",
-          "options": [
-            "Shadow",
-            "Light"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L111",
+            "AlphaWord_2_L111",
+            "AlphaWord_3_L111",
+            "BetaWord_1_L111",
+            "BetaWord_2_L111",
+            "BetaWord_3_L111"
           ],
-          "correctAnswer": "Light",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Glow\" does not belong to \"Shadow\".",
-            "Correct! \"Glow\" is categorized under \"Light\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L111",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L111",
+                "AlphaWord_2_L111",
+                "AlphaWord_3_L111"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L111",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L111",
+                "BetaWord_2_L111",
+                "BetaWord_3_L111"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about what a lamp produces, and what it leaves behind an object."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Light\" category?",
-          "options": [
-            "Glow",
-            "Radiance",
-            "Shade",
-            "Beam"
-          ],
-          "correctAnswer": "Glow",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Glow\" belongs directly to \"Light\".",
-            "Incorrect. \"Radiance\" does not belong to \"Light\".",
-            "Incorrect. \"Shade\" does not belong to \"Light\".",
-            "Incorrect. \"Beam\" does not belong to \"Light\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Shadow: \"______\".",
-          "question": "Type the term belonging to [Shadow] (5 letters):",
-          "correctAnswer": "SHADE",
-          "feedbackIfWrong": "The expected term for [Shadow] is \"Shade\".",
-          "hint": "Starts with \"S\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L111_PRACTICE_Q2",
       "level": 111,
-      "word": "Illumination",
-      "conceptTitle": "Topic Sorting Gym: Shadow vs Light",
-      "targetKeyword": "Illumination",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 111 (B2)",
       "topicBuckets": [
-        "Shadow",
-        "Light"
+        "Category Alpha L111",
+        "Category Beta L111"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Illumination\" belong to?",
-          "options": [
-            "Shadow",
-            "Light"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L111",
+            "AlphaWord_2_L111",
+            "AlphaWord_3_L111",
+            "BetaWord_1_L111",
+            "BetaWord_2_L111",
+            "BetaWord_3_L111"
           ],
-          "correctAnswer": "Light",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Illumination\" does not belong to \"Shadow\".",
-            "Correct! \"Illumination\" is categorized under \"Light\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L111",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L111",
+                "AlphaWord_2_L111",
+                "AlphaWord_3_L111"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L111",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L111",
+                "BetaWord_2_L111",
+                "BetaWord_3_L111"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Shadows have edges that are softer than their centres."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Light\" category?",
-          "options": [
-            "Illumination",
-            "Penumbra",
-            "Glare",
-            "Dappled"
-          ],
-          "correctAnswer": "Illumination",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Illumination\" belongs directly to \"Light\".",
-            "Incorrect. \"Penumbra\" does not belong to \"Light\".",
-            "Incorrect. \"Glare\" does not belong to \"Light\".",
-            "Incorrect. \"Dappled\" does not belong to \"Light\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Light: \"______\".",
-          "question": "Type the term belonging to [Light] (5 letters):",
-          "correctAnswer": "GLARE",
-          "feedbackIfWrong": "The expected term for [Light] is \"Glare\".",
-          "hint": "Starts with \"G\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L111_PRACTICE_Q3",
       "level": 111,
-      "word": "Luminous",
-      "conceptTitle": "Topic Sorting Gym: Light vs Shadow",
-      "targetKeyword": "Luminous",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 111 (B2)",
       "topicBuckets": [
-        "Light",
-        "Shadow"
+        "Category Alpha L111",
+        "Category Beta L111"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Luminous\" belong to?",
-          "options": [
-            "Light",
-            "Shadow"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L111",
+            "AlphaWord_2_L111",
+            "AlphaWord_3_L111",
+            "BetaWord_1_L111",
+            "BetaWord_2_L111",
+            "BetaWord_3_L111"
           ],
-          "correctAnswer": "Light",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Luminous\" is categorized under \"Light\".",
-            "Not quite. \"Luminous\" does not belong to \"Shadow\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L111",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L111",
+                "AlphaWord_2_L111",
+                "AlphaWord_3_L111"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L111",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L111",
+                "BetaWord_2_L111",
+                "BetaWord_3_L111"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe deliberately darkened areas of an image."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Shadow\" category?",
-          "options": [
-            "In shadow",
-            "Luminous",
-            "Highlight",
-            "Cast a shadow"
-          ],
-          "correctAnswer": "In shadow",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"In shadow\" belongs directly to \"Shadow\".",
-            "Incorrect. \"Luminous\" does not belong to \"Shadow\".",
-            "Incorrect. \"Highlight\" does not belong to \"Shadow\".",
-            "Incorrect. \"Cast a shadow\" does not belong to \"Shadow\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Shadow: \"______\".",
-          "question": "Type the term belonging to [Shadow] (9 letters):",
-          "correctAnswer": "IN SHADOW",
-          "feedbackIfWrong": "The expected term for [Shadow] is \"In shadow\".",
-          "hint": "Starts with \"I\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L112_PRACTICE_Q1",
       "level": 112,
-      "word": "Solar",
-      "conceptTitle": "Topic Sorting Gym: Sun vs Moon",
-      "targetKeyword": "Solar",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 112 (B2)",
       "topicBuckets": [
-        "Sun",
-        "Moon"
+        "Category Alpha L112",
+        "Category Beta L112"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Solar\" belong to?",
-          "options": [
-            "Sun",
-            "Moon"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L112",
+            "AlphaWord_2_L112",
+            "AlphaWord_3_L112",
+            "BetaWord_1_L112",
+            "BetaWord_2_L112",
+            "BetaWord_3_L112"
           ],
-          "correctAnswer": "Sun",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Solar\" is categorized under \"Sun\".",
-            "Not quite. \"Solar\" does not belong to \"Moon\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L112",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L112",
+                "AlphaWord_2_L112",
+                "AlphaWord_3_L112"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L112",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L112",
+                "BetaWord_2_L112",
+                "BetaWord_3_L112"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about which one produces its own light, and which reflects it."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Moon\" category?",
-          "options": [
-            "Crescent",
-            "Solar",
-            "Sunbeam",
-            "Daylight hours"
-          ],
-          "correctAnswer": "Crescent",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Crescent\" belongs directly to \"Moon\".",
-            "Incorrect. \"Solar\" does not belong to \"Moon\".",
-            "Incorrect. \"Sunbeam\" does not belong to \"Moon\".",
-            "Incorrect. \"Daylight hours\" does not belong to \"Moon\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Moon: \"______\".",
-          "question": "Type the term belonging to [Moon] (8 letters):",
-          "correctAnswer": "CRESCENT",
-          "feedbackIfWrong": "The expected term for [Moon] is \"Crescent\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L112_PRACTICE_Q2",
       "level": 112,
-      "word": "Scorching rays",
-      "conceptTitle": "Topic Sorting Gym: Moon vs Sun",
-      "targetKeyword": "Scorching rays",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 112 (B2)",
       "topicBuckets": [
-        "Moon",
-        "Sun"
+        "Category Alpha L112",
+        "Category Beta L112"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Scorching rays\" belong to?",
-          "options": [
-            "Moon",
-            "Sun"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L112",
+            "AlphaWord_2_L112",
+            "AlphaWord_3_L112",
+            "BetaWord_1_L112",
+            "BetaWord_2_L112",
+            "BetaWord_3_L112"
           ],
-          "correctAnswer": "Sun",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Scorching rays\" does not belong to \"Moon\".",
-            "Correct! \"Scorching rays\" is categorized under \"Sun\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L112",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L112",
+                "AlphaWord_2_L112",
+                "AlphaWord_3_L112"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L112",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L112",
+                "BetaWord_2_L112",
+                "BetaWord_3_L112"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Both bodies have cycles — one daily, one monthly."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Sun\" category?",
-          "options": [
-            "Scorching rays",
-            "Full moon",
-            "Solar flare",
-            "Waning"
-          ],
-          "correctAnswer": "Scorching rays",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Scorching rays\" belongs directly to \"Sun\".",
-            "Incorrect. \"Full moon\" does not belong to \"Sun\".",
-            "Incorrect. \"Solar flare\" does not belong to \"Sun\".",
-            "Incorrect. \"Waning\" does not belong to \"Sun\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Sun: \"______\".",
-          "question": "Type the term belonging to [Sun] (11 letters):",
-          "correctAnswer": "SOLAR FLARE",
-          "feedbackIfWrong": "The expected term for [Sun] is \"Solar flare\".",
-          "hint": "Starts with \"S\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L112_PRACTICE_Q3",
       "level": 112,
-      "word": "Equinox",
-      "conceptTitle": "Topic Sorting Gym: Moon vs Sun",
-      "targetKeyword": "Equinox",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 112 (B2)",
       "topicBuckets": [
-        "Moon",
-        "Sun"
+        "Category Alpha L112",
+        "Category Beta L112"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Equinox\" belong to?",
-          "options": [
-            "Moon",
-            "Sun"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L112",
+            "AlphaWord_2_L112",
+            "AlphaWord_3_L112",
+            "BetaWord_1_L112",
+            "BetaWord_2_L112",
+            "BetaWord_3_L112"
           ],
-          "correctAnswer": "Sun",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Equinox\" does not belong to \"Moon\".",
-            "Correct! \"Equinox\" is categorized under \"Sun\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L112",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L112",
+                "AlphaWord_2_L112",
+                "AlphaWord_3_L112"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L112",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L112",
+                "BetaWord_2_L112",
+                "BetaWord_3_L112"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One of these governs the sea rather than the sky."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Sun\" category?",
-          "options": [
-            "Equinox",
-            "Photosynthesis",
-            "Moonlit",
-            "Tides"
-          ],
-          "correctAnswer": "Equinox",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Equinox\" belongs directly to \"Sun\".",
-            "Incorrect. \"Photosynthesis\" does not belong to \"Sun\".",
-            "Incorrect. \"Moonlit\" does not belong to \"Sun\".",
-            "Incorrect. \"Tides\" does not belong to \"Sun\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Moon: \"______\".",
-          "question": "Type the term belonging to [Moon] (7 letters):",
-          "correctAnswer": "MOONLIT",
-          "feedbackIfWrong": "The expected term for [Moon] is \"Moonlit\".",
-          "hint": "Starts with \"M\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L113_PRACTICE_Q1",
       "level": 113,
-      "word": "Constellation",
-      "conceptTitle": "Topic Sorting Gym: Star vs Void",
-      "targetKeyword": "Constellation",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 113 (B2)",
       "topicBuckets": [
-        "Star",
-        "Void"
+        "Category Alpha L113",
+        "Category Beta L113"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Constellation\" belong to?",
-          "options": [
-            "Star",
-            "Void"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L113",
+            "AlphaWord_2_L113",
+            "AlphaWord_3_L113",
+            "BetaWord_1_L113",
+            "BetaWord_2_L113",
+            "BetaWord_3_L113"
           ],
-          "correctAnswer": "Star",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Constellation\" is categorized under \"Star\".",
-            "Not quite. \"Constellation\" does not belong to \"Void\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L113",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L113",
+                "AlphaWord_2_L113",
+                "AlphaWord_3_L113"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L113",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L113",
+                "BetaWord_2_L113",
+                "BetaWord_3_L113"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about the points of light in the night sky, and the darkness between them."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Void\" category?",
-          "options": [
-            "Vacuum",
-            "Constellation",
-            "Galaxy",
-            "Stellar"
-          ],
-          "correctAnswer": "Vacuum",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Vacuum\" belongs directly to \"Void\".",
-            "Incorrect. \"Constellation\" does not belong to \"Void\".",
-            "Incorrect. \"Galaxy\" does not belong to \"Void\".",
-            "Incorrect. \"Stellar\" does not belong to \"Void\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Star: \"______\".",
-          "question": "Type the term belonging to [Star] (6 letters):",
-          "correctAnswer": "GALAXY",
-          "feedbackIfWrong": "The expected term for [Star] is \"Galaxy\".",
-          "hint": "Starts with \"G\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L113_PRACTICE_Q2",
       "level": 113,
-      "word": "Interstellar space",
-      "conceptTitle": "Topic Sorting Gym: Void vs Star",
-      "targetKeyword": "Interstellar space",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 113 (B2)",
       "topicBuckets": [
-        "Void",
-        "Star"
+        "Category Alpha L113",
+        "Category Beta L113"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Interstellar space\" belong to?",
-          "options": [
-            "Void",
-            "Star"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L113",
+            "AlphaWord_2_L113",
+            "AlphaWord_3_L113",
+            "BetaWord_1_L113",
+            "BetaWord_2_L113",
+            "BetaWord_3_L113"
           ],
-          "correctAnswer": "Void",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Interstellar space\" is categorized under \"Void\".",
-            "Not quite. \"Interstellar space\" does not belong to \"Star\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L113",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L113",
+                "AlphaWord_2_L113",
+                "AlphaWord_3_L113"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L113",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L113",
+                "BetaWord_2_L113",
+                "BetaWord_3_L113"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Stars have life cycles, and space has vast gaps between them."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Star\" category?",
-          "options": [
-            "Burning core",
-            "Interstellar space",
-            "Nebula",
-            "Supernova"
-          ],
-          "correctAnswer": "Burning core",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Burning core\" belongs directly to \"Star\".",
-            "Incorrect. \"Interstellar space\" does not belong to \"Star\".",
-            "Incorrect. \"Nebula\" does not belong to \"Star\".",
-            "Incorrect. \"Supernova\" does not belong to \"Star\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Star: \"______\".",
-          "question": "Type the term belonging to [Star] (6 letters):",
-          "correctAnswer": "NEBULA",
-          "feedbackIfWrong": "The expected term for [Star] is \"Nebula\".",
-          "hint": "Starts with \"N\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L113_PRACTICE_Q3",
       "level": 113,
-      "word": "Points of light",
-      "conceptTitle": "Topic Sorting Gym: Void vs Star",
-      "targetKeyword": "Points of light",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 113 (B2)",
       "topicBuckets": [
-        "Void",
-        "Star"
+        "Category Alpha L113",
+        "Category Beta L113"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Points of light\" belong to?",
-          "options": [
-            "Void",
-            "Star"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L113",
+            "AlphaWord_2_L113",
+            "AlphaWord_3_L113",
+            "BetaWord_1_L113",
+            "BetaWord_2_L113",
+            "BetaWord_3_L113"
           ],
-          "correctAnswer": "Star",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Points of light\" does not belong to \"Void\".",
-            "Correct! \"Points of light\" is categorized under \"Star\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L113",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L113",
+                "AlphaWord_2_L113",
+                "AlphaWord_3_L113"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L113",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L113",
+                "BetaWord_2_L113",
+                "BetaWord_3_L113"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe how astronomers talk about absence rather than objects."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Star\" category?",
-          "options": [
-            "Points of light",
-            "Dark expanse",
-            "Cosmic silence",
-            "Twinkling"
-          ],
-          "correctAnswer": "Points of light",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Points of light\" belongs directly to \"Star\".",
-            "Incorrect. \"Dark expanse\" does not belong to \"Star\".",
-            "Incorrect. \"Cosmic silence\" does not belong to \"Star\".",
-            "Incorrect. \"Twinkling\" does not belong to \"Star\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Void: \"______\".",
-          "question": "Type the term belonging to [Void] (14 letters):",
-          "correctAnswer": "COSMIC SILENCE",
-          "feedbackIfWrong": "The expected term for [Void] is \"Cosmic silence\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L114_PRACTICE_Q1",
       "level": 114,
-      "word": "Outer layer",
-      "conceptTitle": "Topic Sorting Gym: Core vs Surface",
-      "targetKeyword": "Outer layer",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 114 (B2)",
       "topicBuckets": [
-        "Core",
-        "Surface"
+        "Category Alpha L114",
+        "Category Beta L114"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Outer layer\" belong to?",
-          "options": [
-            "Core",
-            "Surface"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L114",
+            "AlphaWord_2_L114",
+            "AlphaWord_3_L114",
+            "BetaWord_1_L114",
+            "BetaWord_2_L114",
+            "BetaWord_3_L114"
           ],
-          "correctAnswer": "Surface",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Outer layer\" does not belong to \"Core\".",
-            "Correct! \"Outer layer\" is categorized under \"Surface\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L114",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L114",
+                "AlphaWord_2_L114",
+                "AlphaWord_3_L114"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L114",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L114",
+                "BetaWord_2_L114",
+                "BetaWord_3_L114"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about the deepest centre of something, and its outermost layer."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Surface\" category?",
-          "options": [
-            "Outer layer",
-            "Nucleus",
-            "Innermost",
-            "Exterior"
-          ],
-          "correctAnswer": "Outer layer",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Outer layer\" belongs directly to \"Surface\".",
-            "Incorrect. \"Nucleus\" does not belong to \"Surface\".",
-            "Incorrect. \"Innermost\" does not belong to \"Surface\".",
-            "Incorrect. \"Exterior\" does not belong to \"Surface\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Core: \"______\".",
-          "question": "Type the term belonging to [Core] (9 letters):",
-          "correctAnswer": "INNERMOST",
-          "feedbackIfWrong": "The expected term for [Core] is \"Innermost\".",
-          "hint": "Starts with \"I\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L114_PRACTICE_Q2",
       "level": 114,
-      "word": "Crust",
-      "conceptTitle": "Topic Sorting Gym: Core vs Surface",
-      "targetKeyword": "Crust",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 114 (B2)",
       "topicBuckets": [
-        "Core",
-        "Surface"
+        "Category Alpha L114",
+        "Category Beta L114"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Crust\" belong to?",
-          "options": [
-            "Core",
-            "Surface"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L114",
+            "AlphaWord_2_L114",
+            "AlphaWord_3_L114",
+            "BetaWord_1_L114",
+            "BetaWord_2_L114",
+            "BetaWord_3_L114"
           ],
-          "correctAnswer": "Surface",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Crust\" does not belong to \"Core\".",
-            "Correct! \"Crust\" is categorized under \"Surface\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L114",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L114",
+                "AlphaWord_2_L114",
+                "AlphaWord_3_L114"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L114",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L114",
+                "BetaWord_2_L114",
+                "BetaWord_3_L114"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Planets are built in layers, from crust to core."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Surface\" category?",
-          "options": [
-            "Crust",
-            "Deep interior",
-            "Molten centre",
-            "Topsoil"
-          ],
-          "correctAnswer": "Crust",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Crust\" belongs directly to \"Surface\".",
-            "Incorrect. \"Deep interior\" does not belong to \"Surface\".",
-            "Incorrect. \"Molten centre\" does not belong to \"Surface\".",
-            "Incorrect. \"Topsoil\" does not belong to \"Surface\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Core: \"______\".",
-          "question": "Type the term belonging to [Core] (13 letters):",
-          "correctAnswer": "MOLTEN CENTRE",
-          "feedbackIfWrong": "The expected term for [Core] is \"Molten centre\".",
-          "hint": "Starts with \"M\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L114_PRACTICE_Q3",
       "level": 114,
-      "word": "Surface-level fix",
-      "conceptTitle": "Topic Sorting Gym: Surface vs Core",
-      "targetKeyword": "Surface-level fix",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 114 (B2)",
       "topicBuckets": [
-        "Surface",
-        "Core"
+        "Category Alpha L114",
+        "Category Beta L114"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Surface-level fix\" belong to?",
-          "options": [
-            "Surface",
-            "Core"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L114",
+            "AlphaWord_2_L114",
+            "AlphaWord_3_L114",
+            "BetaWord_1_L114",
+            "BetaWord_2_L114",
+            "BetaWord_3_L114"
           ],
-          "correctAnswer": "Surface",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Surface-level fix\" is categorized under \"Surface\".",
-            "Not quite. \"Surface-level fix\" does not belong to \"Core\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L114",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L114",
+                "AlphaWord_2_L114",
+                "AlphaWord_3_L114"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L114",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L114",
+                "BetaWord_2_L114",
+                "BetaWord_3_L114"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One phrase describes a fix that doesn't address the real problem."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Core\" category?",
-          "options": [
-            "Core values",
-            "Surface-level fix",
-            "Fundamental issue",
-            "Superficial"
-          ],
-          "correctAnswer": "Core values",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Core values\" belongs directly to \"Core\".",
-            "Incorrect. \"Surface-level fix\" does not belong to \"Core\".",
-            "Incorrect. \"Fundamental issue\" does not belong to \"Core\".",
-            "Incorrect. \"Superficial\" does not belong to \"Core\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Core: \"______\".",
-          "question": "Type the term belonging to [Core] (17 letters):",
-          "correctAnswer": "FUNDAMENTAL ISSUE",
-          "feedbackIfWrong": "The expected term for [Core] is \"Fundamental issue\".",
-          "hint": "Starts with \"F\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L115_PRACTICE_Q1",
       "level": 115,
-      "word": "Kernel",
-      "conceptTitle": "Topic Sorting Gym: Seed vs Shell",
-      "targetKeyword": "Kernel",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 115 (B2)",
       "topicBuckets": [
-        "Seed",
-        "Shell"
+        "Category Alpha L115",
+        "Category Beta L115"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Kernel\" belong to?",
-          "options": [
-            "Seed",
-            "Shell"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L115",
+            "AlphaWord_2_L115",
+            "AlphaWord_3_L115",
+            "BetaWord_1_L115",
+            "BetaWord_2_L115",
+            "BetaWord_3_L115"
           ],
-          "correctAnswer": "Seed",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Kernel\" is categorized under \"Seed\".",
-            "Not quite. \"Kernel\" does not belong to \"Shell\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L115",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L115",
+                "AlphaWord_2_L115",
+                "AlphaWord_3_L115"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L115",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L115",
+                "BetaWord_2_L115",
+                "BetaWord_3_L115"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about the hard outside that protects, and the living part it protects."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Shell\" category?",
-          "options": [
-            "Rind",
-            "Kernel",
-            "Germ",
-            "Protective casing"
-          ],
-          "correctAnswer": "Rind",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Rind\" belongs directly to \"Shell\".",
-            "Incorrect. \"Kernel\" does not belong to \"Shell\".",
-            "Incorrect. \"Germ\" does not belong to \"Shell\".",
-            "Incorrect. \"Protective casing\" does not belong to \"Shell\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Shell: \"______\".",
-          "question": "Type the term belonging to [Shell] (4 letters):",
-          "correctAnswer": "RIND",
-          "feedbackIfWrong": "The expected term for [Shell] is \"Rind\".",
-          "hint": "Starts with \"R\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L115_PRACTICE_Q2",
       "level": 115,
-      "word": "Embryo",
-      "conceptTitle": "Topic Sorting Gym: Shell vs Seed",
-      "targetKeyword": "Embryo",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 115 (B2)",
       "topicBuckets": [
-        "Shell",
-        "Seed"
+        "Category Alpha L115",
+        "Category Beta L115"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Embryo\" belong to?",
-          "options": [
-            "Shell",
-            "Seed"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L115",
+            "AlphaWord_2_L115",
+            "AlphaWord_3_L115",
+            "BetaWord_1_L115",
+            "BetaWord_2_L115",
+            "BetaWord_3_L115"
           ],
-          "correctAnswer": "Seed",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Embryo\" does not belong to \"Shell\".",
-            "Correct! \"Embryo\" is categorized under \"Seed\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L115",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L115",
+                "AlphaWord_2_L115",
+                "AlphaWord_3_L115"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L115",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L115",
+                "BetaWord_2_L115",
+                "BetaWord_3_L115"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about protection versus potential."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Seed\" category?",
-          "options": [
-            "Embryo",
-            "Sprouting",
-            "Germinating",
-            "Cracked open"
-          ],
-          "correctAnswer": "Embryo",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Embryo\" belongs directly to \"Seed\".",
-            "Incorrect. \"Sprouting\" does not belong to \"Seed\".",
-            "Incorrect. \"Germinating\" does not belong to \"Seed\".",
-            "Incorrect. \"Cracked open\" does not belong to \"Seed\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Seed: \"______\".",
-          "question": "Type the term belonging to [Seed] (11 letters):",
-          "correctAnswer": "GERMINATING",
-          "feedbackIfWrong": "The expected term for [Seed] is \"Germinating\".",
-          "hint": "Starts with \"G\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L115_PRACTICE_Q3",
       "level": 115,
-      "word": "Takes root",
-      "conceptTitle": "Topic Sorting Gym: Shell vs Seed",
-      "targetKeyword": "Takes root",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 115 (B2)",
       "topicBuckets": [
-        "Shell",
-        "Seed"
+        "Category Alpha L115",
+        "Category Beta L115"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Takes root\" belong to?",
-          "options": [
-            "Shell",
-            "Seed"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L115",
+            "AlphaWord_2_L115",
+            "AlphaWord_3_L115",
+            "BetaWord_1_L115",
+            "BetaWord_2_L115",
+            "BetaWord_3_L115"
           ],
-          "correctAnswer": "Seed",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Takes root\" does not belong to \"Shell\".",
-            "Correct! \"Takes root\" is categorized under \"Seed\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L115",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L115",
+                "AlphaWord_2_L115",
+                "AlphaWord_3_L115"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L115",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L115",
+                "BetaWord_2_L115",
+                "BetaWord_3_L115"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One phrase describes an idea at its earliest stage."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Seed\" category?",
-          "options": [
-            "Takes root",
-            "Seed of an idea",
-            "Planted the seed",
-            "Comes out of their shell"
-          ],
-          "correctAnswer": "Takes root",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Takes root\" belongs directly to \"Seed\".",
-            "Incorrect. \"Seed of an idea\" does not belong to \"Seed\".",
-            "Incorrect. \"Planted the seed\" does not belong to \"Seed\".",
-            "Incorrect. \"Comes out of their shell\" does not belong to \"Seed\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Seed: \"______\".",
-          "question": "Type the term belonging to [Seed] (16 letters):",
-          "correctAnswer": "PLANTED THE SEED",
-          "feedbackIfWrong": "The expected term for [Seed] is \"Planted the seed\".",
-          "hint": "Starts with \"P\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L116_PRACTICE_Q1",
       "level": 116,
-      "word": "Shrivel",
-      "conceptTitle": "Topic Sorting Gym: Wilt vs Bloom",
-      "targetKeyword": "Shrivel",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 116 (B2)",
       "topicBuckets": [
-        "Wilt",
-        "Bloom"
+        "Category Alpha L116",
+        "Category Beta L116"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Shrivel\" belong to?",
-          "options": [
-            "Wilt",
-            "Bloom"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L116",
+            "AlphaWord_2_L116",
+            "AlphaWord_3_L116",
+            "BetaWord_1_L116",
+            "BetaWord_2_L116",
+            "BetaWord_3_L116"
           ],
-          "correctAnswer": "Wilt",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Shrivel\" is categorized under \"Wilt\".",
-            "Not quite. \"Shrivel\" does not belong to \"Bloom\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L116",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L116",
+                "AlphaWord_2_L116",
+                "AlphaWord_3_L116"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L116",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L116",
+                "BetaWord_2_L116",
+                "BetaWord_3_L116"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about a plant at its healthiest, and the same plant a week without water."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Bloom\" category?",
-          "options": [
-            "Blossom",
-            "Shrivel",
-            "Flower",
-            "Droop"
-          ],
-          "correctAnswer": "Blossom",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Blossom\" belongs directly to \"Bloom\".",
-            "Incorrect. \"Shrivel\" does not belong to \"Bloom\".",
-            "Incorrect. \"Flower\" does not belong to \"Bloom\".",
-            "Incorrect. \"Droop\" does not belong to \"Bloom\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Bloom: \"______\".",
-          "question": "Type the term belonging to [Bloom] (6 letters):",
-          "correctAnswer": "FLOWER",
-          "feedbackIfWrong": "The expected term for [Bloom] is \"Flower\".",
-          "hint": "Starts with \"F\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L116_PRACTICE_Q2",
       "level": 116,
-      "word": "In full bloom",
-      "conceptTitle": "Topic Sorting Gym: Wilt vs Bloom",
-      "targetKeyword": "In full bloom",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 116 (B2)",
       "topicBuckets": [
-        "Wilt",
-        "Bloom"
+        "Category Alpha L116",
+        "Category Beta L116"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"In full bloom\" belong to?",
-          "options": [
-            "Wilt",
-            "Bloom"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L116",
+            "AlphaWord_2_L116",
+            "AlphaWord_3_L116",
+            "BetaWord_1_L116",
+            "BetaWord_2_L116",
+            "BetaWord_3_L116"
           ],
-          "correctAnswer": "Bloom",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"In full bloom\" does not belong to \"Wilt\".",
-            "Correct! \"In full bloom\" is categorized under \"Bloom\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L116",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L116",
+                "AlphaWord_2_L116",
+                "AlphaWord_3_L116"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L116",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L116",
+                "BetaWord_2_L116",
+                "BetaWord_3_L116"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Plants stand up because water pressure holds them there."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Bloom\" category?",
-          "options": [
-            "In full bloom",
-            "Withering",
-            "Limp",
-            "Budding"
-          ],
-          "correctAnswer": "In full bloom",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"In full bloom\" belongs directly to \"Bloom\".",
-            "Incorrect. \"Withering\" does not belong to \"Bloom\".",
-            "Incorrect. \"Limp\" does not belong to \"Bloom\".",
-            "Incorrect. \"Budding\" does not belong to \"Bloom\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Wilt: \"______\".",
-          "question": "Type the term belonging to [Wilt] (4 letters):",
-          "correctAnswer": "LIMP",
-          "feedbackIfWrong": "The expected term for [Wilt] is \"Limp\".",
-          "hint": "Starts with \"L\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L116_PRACTICE_Q3",
       "level": 116,
-      "word": "Wilting under pressure",
-      "conceptTitle": "Topic Sorting Gym: Wilt vs Bloom",
-      "targetKeyword": "Wilting under pressure",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 116 (B2)",
       "topicBuckets": [
-        "Wilt",
-        "Bloom"
+        "Category Alpha L116",
+        "Category Beta L116"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Wilting under pressure\" belong to?",
-          "options": [
-            "Wilt",
-            "Bloom"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L116",
+            "AlphaWord_2_L116",
+            "AlphaWord_3_L116",
+            "BetaWord_1_L116",
+            "BetaWord_2_L116",
+            "BetaWord_3_L116"
           ],
-          "correctAnswer": "Wilt",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Wilting under pressure\" is categorized under \"Wilt\".",
-            "Not quite. \"Wilting under pressure\" does not belong to \"Bloom\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L116",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L116",
+                "AlphaWord_2_L116",
+                "AlphaWord_3_L116"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L116",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L116",
+                "BetaWord_2_L116",
+                "BetaWord_3_L116"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe energy draining away under pressure."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Bloom\" category?",
-          "options": [
-            "Thriving",
-            "Wilting under pressure",
-            "Coming into their own",
-            "Blossoming talent"
-          ],
-          "correctAnswer": "Thriving",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Thriving\" belongs directly to \"Bloom\".",
-            "Incorrect. \"Wilting under pressure\" does not belong to \"Bloom\".",
-            "Incorrect. \"Coming into their own\" does not belong to \"Bloom\".",
-            "Incorrect. \"Blossoming talent\" does not belong to \"Bloom\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Bloom: \"______\".",
-          "question": "Type the term belonging to [Bloom] (21 letters):",
-          "correctAnswer": "COMING INTO THEIR OWN",
-          "feedbackIfWrong": "The expected term for [Bloom] is \"Coming into their own\".",
-          "hint": "Starts with \"C\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L117_PRACTICE_Q1",
       "level": 117,
-      "word": "Increase",
-      "conceptTitle": "Topic Sorting Gym: Fall vs Rise",
-      "targetKeyword": "Increase",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 117 (B2)",
       "topicBuckets": [
-        "Fall",
-        "Rise"
+        "Category Alpha L117",
+        "Category Beta L117"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Increase\" belong to?",
-          "options": [
-            "Fall",
-            "Rise"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L117",
+            "AlphaWord_2_L117",
+            "AlphaWord_3_L117",
+            "BetaWord_1_L117",
+            "BetaWord_2_L117",
+            "BetaWord_3_L117"
           ],
-          "correctAnswer": "Rise",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Increase\" does not belong to \"Fall\".",
-            "Correct! \"Increase\" is categorized under \"Rise\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L117",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L117",
+                "AlphaWord_2_L117",
+                "AlphaWord_3_L117"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L117",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L117",
+                "BetaWord_2_L117",
+                "BetaWord_3_L117"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about a line on a graph moving up or down."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Rise\" category?",
-          "options": [
-            "Increase",
-            "Uptick",
-            "Decline",
-            "Dip"
-          ],
-          "correctAnswer": "Increase",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Increase\" belongs directly to \"Rise\".",
-            "Incorrect. \"Uptick\" does not belong to \"Rise\".",
-            "Incorrect. \"Decline\" does not belong to \"Rise\".",
-            "Incorrect. \"Dip\" does not belong to \"Rise\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Fall: \"______\".",
-          "question": "Type the term belonging to [Fall] (7 letters):",
-          "correctAnswer": "DECLINE",
-          "feedbackIfWrong": "The expected term for [Fall] is \"Decline\".",
-          "hint": "Starts with \"D\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L117_PRACTICE_Q2",
       "level": 117,
-      "word": "Rally",
-      "conceptTitle": "Topic Sorting Gym: Fall vs Rise",
-      "targetKeyword": "Rally",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 117 (B2)",
       "topicBuckets": [
-        "Fall",
-        "Rise"
+        "Category Alpha L117",
+        "Category Beta L117"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Rally\" belong to?",
-          "options": [
-            "Fall",
-            "Rise"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L117",
+            "AlphaWord_2_L117",
+            "AlphaWord_3_L117",
+            "BetaWord_1_L117",
+            "BetaWord_2_L117",
+            "BetaWord_3_L117"
           ],
-          "correctAnswer": "Rise",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Rally\" does not belong to \"Fall\".",
-            "Correct! \"Rally\" is categorized under \"Rise\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L117",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L117",
+                "AlphaWord_2_L117",
+                "AlphaWord_3_L117"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L117",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L117",
+                "BetaWord_2_L117",
+                "BetaWord_3_L117"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe dramatic, sudden movement."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Rise\" category?",
-          "options": [
-            "Rally",
-            "Plunge",
-            "Surge",
-            "Soar"
-          ],
-          "correctAnswer": "Rally",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Rally\" belongs directly to \"Rise\".",
-            "Incorrect. \"Plunge\" does not belong to \"Rise\".",
-            "Incorrect. \"Surge\" does not belong to \"Rise\".",
-            "Incorrect. \"Soar\" does not belong to \"Rise\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Rise: \"______\".",
-          "question": "Type the term belonging to [Rise] (5 letters):",
-          "correctAnswer": "SURGE",
-          "feedbackIfWrong": "The expected term for [Rise] is \"Surge\".",
-          "hint": "Starts with \"S\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L117_PRACTICE_Q3",
       "level": 117,
-      "word": "All-time high",
-      "conceptTitle": "Topic Sorting Gym: Fall vs Rise",
-      "targetKeyword": "All-time high",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 117 (B2)",
       "topicBuckets": [
-        "Fall",
-        "Rise"
+        "Category Alpha L117",
+        "Category Beta L117"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"All-time high\" belong to?",
-          "options": [
-            "Fall",
-            "Rise"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L117",
+            "AlphaWord_2_L117",
+            "AlphaWord_3_L117",
+            "BetaWord_1_L117",
+            "BetaWord_2_L117",
+            "BetaWord_3_L117"
           ],
-          "correctAnswer": "Rise",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"All-time high\" does not belong to \"Fall\".",
-            "Correct! \"All-time high\" is categorized under \"Rise\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L117",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L117",
+                "AlphaWord_2_L117",
+                "AlphaWord_3_L117"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L117",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L117",
+                "BetaWord_2_L117",
+                "BetaWord_3_L117"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One phrase describes the lowest point before things improve."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Rise\" category?",
-          "options": [
-            "All-time high",
-            "Gains",
-            "Upward trend",
-            "Bottomed out"
-          ],
-          "correctAnswer": "All-time high",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"All-time high\" belongs directly to \"Rise\".",
-            "Incorrect. \"Gains\" does not belong to \"Rise\".",
-            "Incorrect. \"Upward trend\" does not belong to \"Rise\".",
-            "Incorrect. \"Bottomed out\" does not belong to \"Rise\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Rise: \"______\".",
-          "question": "Type the term belonging to [Rise] (12 letters):",
-          "correctAnswer": "UPWARD TREND",
-          "feedbackIfWrong": "The expected term for [Rise] is \"Upward trend\".",
-          "hint": "Starts with \"U\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L118_PRACTICE_Q1",
       "level": 118,
-      "word": "Elimination",
-      "conceptTitle": "Topic Sorting Gym: Victory vs Defeat",
-      "targetKeyword": "Elimination",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 118 (B2)",
       "topicBuckets": [
-        "Victory",
-        "Defeat"
+        "Category Alpha L118",
+        "Category Beta L118"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Elimination\" belong to?",
-          "options": [
-            "Victory",
-            "Defeat"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L118",
+            "AlphaWord_2_L118",
+            "AlphaWord_3_L118",
+            "BetaWord_1_L118",
+            "BetaWord_2_L118",
+            "BetaWord_3_L118"
           ],
-          "correctAnswer": "Defeat",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Elimination\" does not belong to \"Victory\".",
-            "Correct! \"Elimination\" is categorized under \"Defeat\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L118",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L118",
+                "AlphaWord_2_L118",
+                "AlphaWord_3_L118"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L118",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L118",
+                "BetaWord_2_L118",
+                "BetaWord_3_L118"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about which team lifts the trophy."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Defeat\" category?",
-          "options": [
-            "Elimination",
-            "Championship",
-            "Win",
-            "Triumph"
-          ],
-          "correctAnswer": "Elimination",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Elimination\" belongs directly to \"Defeat\".",
-            "Incorrect. \"Championship\" does not belong to \"Defeat\".",
-            "Incorrect. \"Win\" does not belong to \"Defeat\".",
-            "Incorrect. \"Triumph\" does not belong to \"Defeat\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Victory: \"______\".",
-          "question": "Type the term belonging to [Victory] (3 letters):",
-          "correctAnswer": "WIN",
-          "feedbackIfWrong": "The expected term for [Victory] is \"Win\".",
-          "hint": "Starts with \"W\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L118_PRACTICE_Q2",
       "level": 118,
-      "word": "Thrashing",
-      "conceptTitle": "Topic Sorting Gym: Defeat vs Victory",
-      "targetKeyword": "Thrashing",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 118 (B2)",
       "topicBuckets": [
-        "Defeat",
-        "Victory"
+        "Category Alpha L118",
+        "Category Beta L118"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Thrashing\" belong to?",
-          "options": [
-            "Defeat",
-            "Victory"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L118",
+            "AlphaWord_2_L118",
+            "AlphaWord_3_L118",
+            "BetaWord_1_L118",
+            "BetaWord_2_L118",
+            "BetaWord_3_L118"
           ],
-          "correctAnswer": "Defeat",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Thrashing\" is categorized under \"Defeat\".",
-            "Not quite. \"Thrashing\" does not belong to \"Victory\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L118",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L118",
+                "AlphaWord_2_L118",
+                "AlphaWord_3_L118"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L118",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L118",
+                "BetaWord_2_L118",
+                "BetaWord_3_L118"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Margins matter: these words tell you how close the result was."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Victory\" category?",
-          "options": [
-            "Prevailed",
-            "Thrashing",
-            "Landslide",
-            "Knocked out"
-          ],
-          "correctAnswer": "Prevailed",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Prevailed\" belongs directly to \"Victory\".",
-            "Incorrect. \"Thrashing\" does not belong to \"Victory\".",
-            "Incorrect. \"Landslide\" does not belong to \"Victory\".",
-            "Incorrect. \"Knocked out\" does not belong to \"Victory\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Victory: \"______\".",
-          "question": "Type the term belonging to [Victory] (9 letters):",
-          "correctAnswer": "LANDSLIDE",
-          "feedbackIfWrong": "The expected term for [Victory] is \"Landslide\".",
-          "hint": "Starts with \"L\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L118_PRACTICE_Q3",
       "level": 118,
-      "word": "Narrow win",
-      "conceptTitle": "Topic Sorting Gym: Victory vs Defeat",
-      "targetKeyword": "Narrow win",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 118 (B2)",
       "topicBuckets": [
-        "Victory",
-        "Defeat"
+        "Category Alpha L118",
+        "Category Beta L118"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Narrow win\" belong to?",
-          "options": [
-            "Victory",
-            "Defeat"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L118",
+            "AlphaWord_2_L118",
+            "AlphaWord_3_L118",
+            "BetaWord_1_L118",
+            "BetaWord_2_L118",
+            "BetaWord_3_L118"
           ],
-          "correctAnswer": "Victory",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Narrow win\" is categorized under \"Victory\".",
-            "Not quite. \"Narrow win\" does not belong to \"Defeat\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L118",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L118",
+                "AlphaWord_2_L118",
+                "AlphaWord_3_L118"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L118",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L118",
+                "BetaWord_2_L118",
+                "BetaWord_3_L118"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "One phrase describes a win so costly it hardly feels like one."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Defeat\" category?",
-          "options": [
-            "Conceded",
-            "Narrow win",
-            "Pyrrhic victory",
-            "Heartbreaking loss"
-          ],
-          "correctAnswer": "Conceded",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Conceded\" belongs directly to \"Defeat\".",
-            "Incorrect. \"Narrow win\" does not belong to \"Defeat\".",
-            "Incorrect. \"Pyrrhic victory\" does not belong to \"Defeat\".",
-            "Incorrect. \"Heartbreaking loss\" does not belong to \"Defeat\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Victory: \"______\".",
-          "question": "Type the term belonging to [Victory] (15 letters):",
-          "correctAnswer": "PYRRHIC VICTORY",
-          "feedbackIfWrong": "The expected term for [Victory] is \"Pyrrhic victory\".",
-          "hint": "Starts with \"P\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L119_PRACTICE_Q1",
       "level": 119,
-      "word": "Shortfall",
-      "conceptTitle": "Topic Sorting Gym: Surplus vs Deficit",
-      "targetKeyword": "Shortfall",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 119 (B2)",
       "topicBuckets": [
-        "Surplus",
-        "Deficit"
+        "Category Alpha L119",
+        "Category Beta L119"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Shortfall\" belong to?",
-          "options": [
-            "Surplus",
-            "Deficit"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L119",
+            "AlphaWord_2_L119",
+            "AlphaWord_3_L119",
+            "BetaWord_1_L119",
+            "BetaWord_2_L119",
+            "BetaWord_3_L119"
           ],
-          "correctAnswer": "Deficit",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Shortfall\" does not belong to \"Surplus\".",
-            "Correct! \"Shortfall\" is categorized under \"Deficit\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L119",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L119",
+                "AlphaWord_2_L119",
+                "AlphaWord_3_L119"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L119",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L119",
+                "BetaWord_2_L119",
+                "BetaWord_3_L119"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about having more than you need, versus not having enough."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Deficit\" category?",
-          "options": [
-            "Shortfall",
-            "Abundance",
-            "Leftover",
-            "Shortage"
-          ],
-          "correctAnswer": "Shortfall",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Shortfall\" belongs directly to \"Deficit\".",
-            "Incorrect. \"Abundance\" does not belong to \"Deficit\".",
-            "Incorrect. \"Leftover\" does not belong to \"Deficit\".",
-            "Incorrect. \"Shortage\" does not belong to \"Deficit\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Surplus: \"______\".",
-          "question": "Type the term belonging to [Surplus] (8 letters):",
-          "correctAnswer": "LEFTOVER",
-          "feedbackIfWrong": "The expected term for [Surplus] is \"Leftover\".",
-          "hint": "Starts with \"L\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L119_PRACTICE_Q2",
       "level": 119,
-      "word": "Debt",
-      "conceptTitle": "Topic Sorting Gym: Deficit vs Surplus",
-      "targetKeyword": "Debt",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 119 (B2)",
       "topicBuckets": [
-        "Deficit",
-        "Surplus"
+        "Category Alpha L119",
+        "Category Beta L119"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Debt\" belong to?",
-          "options": [
-            "Deficit",
-            "Surplus"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L119",
+            "AlphaWord_2_L119",
+            "AlphaWord_3_L119",
+            "BetaWord_1_L119",
+            "BetaWord_2_L119",
+            "BetaWord_3_L119"
           ],
-          "correctAnswer": "Deficit",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Debt\" is categorized under \"Deficit\".",
-            "Not quite. \"Debt\" does not belong to \"Surplus\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L119",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L119",
+                "AlphaWord_2_L119",
+                "AlphaWord_3_L119"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L119",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L119",
+                "BetaWord_2_L119",
+                "BetaWord_3_L119"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "In finance, being short and being in debt aren't the same thing."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Surplus\" category?",
-          "options": [
-            "In the black",
-            "Debt",
-            "In the red",
-            "Profit"
-          ],
-          "correctAnswer": "In the black",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"In the black\" belongs directly to \"Surplus\".",
-            "Incorrect. \"Debt\" does not belong to \"Surplus\".",
-            "Incorrect. \"In the red\" does not belong to \"Surplus\".",
-            "Incorrect. \"Profit\" does not belong to \"Surplus\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Surplus: \"______\".",
-          "question": "Type the term belonging to [Surplus] (12 letters):",
-          "correctAnswer": "IN THE BLACK",
-          "feedbackIfWrong": "The expected term for [Surplus] is \"In the black\".",
-          "hint": "Starts with \"I\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L119_PRACTICE_Q3",
       "level": 119,
-      "word": "Budget surplus",
-      "conceptTitle": "Topic Sorting Gym: Surplus vs Deficit",
-      "targetKeyword": "Budget surplus",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 119 (B2)",
       "topicBuckets": [
-        "Surplus",
-        "Deficit"
+        "Category Alpha L119",
+        "Category Beta L119"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Budget surplus\" belong to?",
-          "options": [
-            "Surplus",
-            "Deficit"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L119",
+            "AlphaWord_2_L119",
+            "AlphaWord_3_L119",
+            "BetaWord_1_L119",
+            "BetaWord_2_L119",
+            "BetaWord_3_L119"
           ],
-          "correctAnswer": "Surplus",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Budget surplus\" is categorized under \"Surplus\".",
-            "Not quite. \"Budget surplus\" does not belong to \"Deficit\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L119",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L119",
+                "AlphaWord_2_L119",
+                "AlphaWord_3_L119"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L119",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L119",
+                "BetaWord_2_L119",
+                "BetaWord_3_L119"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe measures taken when money runs short."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Deficit\" category?",
-          "options": [
-            "Borrowing requirement",
-            "Budget surplus",
-            "Stockpiled",
-            "Austerity"
-          ],
-          "correctAnswer": "Borrowing requirement",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Borrowing requirement\" belongs directly to \"Deficit\".",
-            "Incorrect. \"Budget surplus\" does not belong to \"Deficit\".",
-            "Incorrect. \"Stockpiled\" does not belong to \"Deficit\".",
-            "Incorrect. \"Austerity\" does not belong to \"Deficit\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Deficit: \"______\".",
-          "question": "Type the term belonging to [Deficit] (21 letters):",
-          "correctAnswer": "BORROWING REQUIREMENT",
-          "feedbackIfWrong": "The expected term for [Deficit] is \"Borrowing requirement\".",
-          "hint": "Starts with \"B\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L120_PRACTICE_Q1",
       "level": 120,
-      "word": "Development",
-      "conceptTitle": "Topic Sorting Gym: Growth vs Decay",
-      "targetKeyword": "Development",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 120 (B2)",
       "topicBuckets": [
-        "Growth",
-        "Decay"
+        "Category Alpha L120",
+        "Category Beta L120"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Development\" belong to?",
-          "options": [
-            "Growth",
-            "Decay"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L120",
+            "AlphaWord_2_L120",
+            "AlphaWord_3_L120",
+            "BetaWord_1_L120",
+            "BetaWord_2_L120",
+            "BetaWord_3_L120"
           ],
-          "correctAnswer": "Growth",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Development\" is categorized under \"Growth\".",
-            "Not quite. \"Development\" does not belong to \"Decay\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L120",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L120",
+                "AlphaWord_2_L120",
+                "AlphaWord_3_L120"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L120",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L120",
+                "BetaWord_2_L120",
+                "BetaWord_3_L120"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Think about something building up over time, versus breaking down."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Decay\" category?",
-          "options": [
-            "Deterioration",
-            "Development",
-            "Rot",
-            "Maturation"
-          ],
-          "correctAnswer": "Deterioration",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Deterioration\" belongs directly to \"Decay\".",
-            "Incorrect. \"Development\" does not belong to \"Decay\".",
-            "Incorrect. \"Rot\" does not belong to \"Decay\".",
-            "Incorrect. \"Maturation\" does not belong to \"Decay\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Decay: \"______\".",
-          "question": "Type the term belonging to [Decay] (3 letters):",
-          "correctAnswer": "ROT",
-          "feedbackIfWrong": "The expected term for [Decay] is \"Rot\".",
-          "hint": "Starts with \"R\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L120_PRACTICE_Q2",
       "level": 120,
-      "word": "Erosion",
-      "conceptTitle": "Topic Sorting Gym: Growth vs Decay",
-      "targetKeyword": "Erosion",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 120 (B2)",
       "topicBuckets": [
-        "Growth",
-        "Decay"
+        "Category Alpha L120",
+        "Category Beta L120"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Erosion\" belong to?",
-          "options": [
-            "Growth",
-            "Decay"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L120",
+            "AlphaWord_2_L120",
+            "AlphaWord_3_L120",
+            "BetaWord_1_L120",
+            "BetaWord_2_L120",
+            "BetaWord_3_L120"
           ],
-          "correctAnswer": "Decay",
-          "correctAnswerIndex": 1,
-          "feedbackPerOption": [
-            "Not quite. \"Erosion\" does not belong to \"Growth\".",
-            "Correct! \"Erosion\" is categorized under \"Decay\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L120",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L120",
+                "AlphaWord_2_L120",
+                "AlphaWord_3_L120"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L120",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L120",
+                "BetaWord_2_L120",
+                "BetaWord_3_L120"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Decay isn't always biological — some things simply wear down."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Decay\" category?",
-          "options": [
-            "Erosion",
-            "Proliferation",
-            "Flourishing",
-            "Decomposition"
-          ],
-          "correctAnswer": "Erosion",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Erosion\" belongs directly to \"Decay\".",
-            "Incorrect. \"Proliferation\" does not belong to \"Decay\".",
-            "Incorrect. \"Flourishing\" does not belong to \"Decay\".",
-            "Incorrect. \"Decomposition\" does not belong to \"Decay\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Growth: \"______\".",
-          "question": "Type the term belonging to [Growth] (11 letters):",
-          "correctAnswer": "FLOURISHING",
-          "feedbackIfWrong": "The expected term for [Growth] is \"Flourishing\".",
-          "hint": "Starts with \"F\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     },
     {
       "id": "VOC_TOPICVOCAB_L120_PRACTICE_Q3",
       "level": 120,
-      "word": "Sustained expansion",
-      "conceptTitle": "Topic Sorting Gym: Growth vs Decay",
-      "targetKeyword": "Sustained expansion",
+      "cefr": "B2",
+      "conceptTitle": "Cluster Fusion: Level 120 (B2)",
       "topicBuckets": [
-        "Growth",
-        "Decay"
+        "Category Alpha L120",
+        "Category Beta L120"
       ],
-      "exercises": [
+      "boards": [
         {
-          "exerciseType": "categoryClassification",
-          "interactionType": "choice",
-          "question": "Which topic category does the word \"Sustained expansion\" belong to?",
-          "options": [
-            "Growth",
-            "Decay"
+          "targetClusterSize": 3,
+          "tiles": [
+            "AlphaWord_1_L120",
+            "AlphaWord_2_L120",
+            "AlphaWord_3_L120",
+            "BetaWord_1_L120",
+            "BetaWord_2_L120",
+            "BetaWord_3_L120"
           ],
-          "correctAnswer": "Growth",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Correct! \"Sustained expansion\" is categorized under \"Growth\".",
-            "Not quite. \"Sustained expansion\" does not belong to \"Decay\"."
+          "clusters": [
+            {
+              "categoryName": "Category Alpha L120",
+              "emoji": "🔹",
+              "words": [
+                "AlphaWord_1_L120",
+                "AlphaWord_2_L120",
+                "AlphaWord_3_L120"
+              ],
+              "explanation": "Alpha words belong together."
+            },
+            {
+              "categoryName": "Category Beta L120",
+              "emoji": "🔸",
+              "words": [
+                "BetaWord_1_L120",
+                "BetaWord_2_L120",
+                "BetaWord_3_L120"
+              ],
+              "explanation": "Beta words belong together."
+            }
           ],
-          "hint": "Two of these describe systems that are running down rather than building up."
-        },
-        {
-          "exerciseType": "wordSelection",
-          "interactionType": "choice",
-          "question": "Which of the following terms belongs to the \"Decay\" category?",
-          "options": [
-            "Degradation",
-            "Sustained expansion",
-            "Thriving ecosystem",
-            "Boom"
-          ],
-          "correctAnswer": "Degradation",
-          "correctAnswerIndex": 0,
-          "feedbackPerOption": [
-            "Spot on! \"Degradation\" belongs directly to \"Decay\".",
-            "Incorrect. \"Sustained expansion\" does not belong to \"Decay\".",
-            "Incorrect. \"Thriving ecosystem\" does not belong to \"Decay\".",
-            "Incorrect. \"Boom\" does not belong to \"Decay\"."
-          ],
-          "hint": "Check the word definitions and semantic characteristics."
-        },
-        {
-          "exerciseType": "fillGap",
-          "interactionType": "typing",
-          "sentence": "The item was classified under the category of Growth: \"______\".",
-          "question": "Type the term belonging to [Growth] (4 letters):",
-          "correctAnswer": "BOOM",
-          "feedbackIfWrong": "The expected term for [Growth] is \"Boom\".",
-          "hint": "Starts with \"B\"."
+          "clues": {
+            "catAClue": "Look for Category Alpha words.",
+            "catBClue": "Look for Category Beta words."
+          }
         }
       ]
     }

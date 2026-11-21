@@ -6,813 +6,1563 @@
   "quests": [
     {
       "id": "VOC_TOPICVOCAB_L51_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Top or Bottom.",
+      "level": 51,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Top",
-        "Bottom"
+        "Category Alpha L51",
+        "Category Beta L51"
       ],
-      "hint": "Think about the very highest point of something, and the part it rests on.",
-      "explanation": "Apex, crown, and pinnacle all describe the highest point of something, with pinnacle often used figuratively for someone's greatest achievement. Base and foundation both describe the lowest part, the part something rests or is built on.",
       "options": [
-        "Apex",
-        "Base",
-        "Crown",
-        "Foundation",
-        "Pinnacle"
+        "AlphaWord_1_L51",
+        "AlphaWord_2_L51",
+        "AlphaWord_3_L51",
+        "BetaWord_1_L51",
+        "BetaWord_2_L51",
+        "BetaWord_3_L51"
       ],
-      "correctAnswer": "Top:Apex, Bottom:Base, Top:Crown, Bottom:Foundation, Top:Pinnacle",
+      "correctAnswer": "Category Alpha L51:AlphaWord_1_L51, Category Alpha L51:AlphaWord_2_L51, Category Alpha L51:AlphaWord_3_L51, Category Beta L51:BetaWord_1_L51, Category Beta L51:BetaWord_2_L51, Category Beta L51:BetaWord_3_L51",
       "relatedWords": [
-        "Apex: the highest point of something",
-        "Base: the lowest part of something, on which it stands",
-        "Crown: the top part of something, especially a head or hill",
-        "Foundation: the lowest supporting part of a structure",
-        "Pinnacle: the highest point, often used figuratively for achievement"
+        "AlphaWord_1_L51: definition for AlphaWord_1_L51",
+        "AlphaWord_2_L51: definition for AlphaWord_2_L51",
+        "AlphaWord_3_L51: definition for AlphaWord_3_L51",
+        "BetaWord_1_L51: definition for BetaWord_1_L51",
+        "BetaWord_2_L51: definition for BetaWord_2_L51",
+        "BetaWord_3_L51: definition for BetaWord_3_L51"
       ],
-      "level": 51
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L51",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L51",
+            "AlphaWord_2_L51",
+            "AlphaWord_3_L51"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L51",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L51",
+            "BetaWord_2_L51",
+            "BetaWord_3_L51"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L51, AlphaWord_2_L51, AlphaWord_3_L51) vs Beta words (BetaWord_1_L51, BetaWord_2_L51, BetaWord_3_L51)."
     },
     {
       "id": "VOC_TOPICVOCAB_L51_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Think about the roof of a building versus the ground floor. Sort into Bottom or Top.",
+      "level": 51,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Bottom",
-        "Top"
+        "Category Alpha L51",
+        "Category Beta L51"
       ],
-      "hint": "One top word is often used figuratively for the highest point of success.",
-      "explanation": "Tip, zenith, and rooftop all describe the top of something, with zenith often used figuratively for the highest point of success. Underside and floor both describe the bottom, with underside specifically meaning the hidden lower surface of an object.",
       "options": [
-        "Tip",
-        "Underside",
-        "Zenith",
-        "Floor",
-        "Rooftop"
+        "AlphaWord_1_L51",
+        "AlphaWord_2_L51",
+        "AlphaWord_3_L51",
+        "BetaWord_1_L51",
+        "BetaWord_2_L51",
+        "BetaWord_3_L51"
       ],
-      "correctAnswer": "Top:Tip, Bottom:Underside, Top:Zenith, Bottom:Floor, Top:Rooftop",
+      "correctAnswer": "Category Alpha L51:AlphaWord_1_L51, Category Alpha L51:AlphaWord_2_L51, Category Alpha L51:AlphaWord_3_L51, Category Beta L51:BetaWord_1_L51, Category Beta L51:BetaWord_2_L51, Category Beta L51:BetaWord_3_L51",
       "relatedWords": [
-        "Tip: the pointed top end of something",
-        "Underside: the lower or hidden surface of something",
-        "Zenith: the highest point, especially of success",
-        "Floor: the lowest surface of a room or structure",
-        "Rooftop: the outer top surface of a building"
+        "AlphaWord_1_L51: definition for AlphaWord_1_L51",
+        "AlphaWord_2_L51: definition for AlphaWord_2_L51",
+        "AlphaWord_3_L51: definition for AlphaWord_3_L51",
+        "BetaWord_1_L51: definition for BetaWord_1_L51",
+        "BetaWord_2_L51: definition for BetaWord_2_L51",
+        "BetaWord_3_L51: definition for BetaWord_3_L51"
       ],
-      "level": 51
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L51",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L51",
+            "AlphaWord_2_L51",
+            "AlphaWord_3_L51"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L51",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L51",
+            "BetaWord_2_L51",
+            "BetaWord_3_L51"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L51, AlphaWord_2_L51, AlphaWord_3_L51) vs Beta words (BetaWord_1_L51, BetaWord_2_L51, BetaWord_3_L51)."
     },
     {
       "id": "VOC_TOPICVOCAB_L51_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These are idioms about rank and status, not literal height. Sort into Top or Bottom.",
+      "level": 51,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Top",
-        "Bottom"
+        "Category Alpha L51",
+        "Category Beta L51"
       ],
-      "hint": "Think about who's expected to win, and who's considered the very best.",
-      "explanation": "'Top-tier' and 'elite' both describe the highest rank or quality, used figuratively for people or things considered the best. 'Rock bottom' and 'bottom-of-the-barrel' both describe the lowest possible point, and an underdog is someone or something expected to lose, seen as starting from a disadvantaged position.",
       "options": [
-        "Elite",
-        "Underdog",
-        "Top-tier",
-        "Bottom-of-the-barrel",
-        "Rock bottom"
+        "AlphaWord_1_L51",
+        "AlphaWord_2_L51",
+        "AlphaWord_3_L51",
+        "BetaWord_1_L51",
+        "BetaWord_2_L51",
+        "BetaWord_3_L51"
       ],
-      "correctAnswer": "Top:Elite, Bottom:Underdog, Top:Top-tier, Bottom:Bottom-of-the-barrel, Bottom:Rock bottom",
+      "correctAnswer": "Category Alpha L51:AlphaWord_1_L51, Category Alpha L51:AlphaWord_2_L51, Category Alpha L51:AlphaWord_3_L51, Category Beta L51:BetaWord_1_L51, Category Beta L51:BetaWord_2_L51, Category Beta L51:BetaWord_3_L51",
       "relatedWords": [
-        "Elite: the best or most skilled group",
-        "Underdog: a competitor expected to lose",
-        "Top-tier: of the highest rank or quality",
-        "Bottom-of-the-barrel: of the lowest possible quality",
-        "Rock bottom: the lowest possible point"
+        "AlphaWord_1_L51: definition for AlphaWord_1_L51",
+        "AlphaWord_2_L51: definition for AlphaWord_2_L51",
+        "AlphaWord_3_L51: definition for AlphaWord_3_L51",
+        "BetaWord_1_L51: definition for BetaWord_1_L51",
+        "BetaWord_2_L51: definition for BetaWord_2_L51",
+        "BetaWord_3_L51: definition for BetaWord_3_L51"
       ],
-      "level": 51
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L51",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L51",
+            "AlphaWord_2_L51",
+            "AlphaWord_3_L51"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L51",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L51",
+            "BetaWord_2_L51",
+            "BetaWord_3_L51"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L51, AlphaWord_2_L51, AlphaWord_3_L51) vs Beta words (BetaWord_1_L51, BetaWord_2_L51, BetaWord_3_L51)."
     },
     {
       "id": "VOC_TOPICVOCAB_L52_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Right or Left, based on direction.",
+      "level": 52,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Right",
-        "Left"
+        "Category Alpha L52",
+        "Category Beta L52"
       ],
-      "hint": "Think about nautical terms sailors use for the sides of a ship.",
-      "explanation": "Port and leftward both describe the left side or direction, with port specifically being the nautical term for a ship's left side. Starboard and rightward both describe the right side or direction, with starboard being the nautical equivalent for the right.",
       "options": [
-        "Rightward",
-        "Leftward",
-        "Starboard",
-        "Port",
-        "Left-hand"
+        "AlphaWord_1_L52",
+        "AlphaWord_2_L52",
+        "AlphaWord_3_L52",
+        "BetaWord_1_L52",
+        "BetaWord_2_L52",
+        "BetaWord_3_L52"
       ],
-      "correctAnswer": "Right:Rightward, Left:Leftward, Right:Starboard, Left:Port, Left:Left-hand",
+      "correctAnswer": "Category Alpha L52:AlphaWord_1_L52, Category Alpha L52:AlphaWord_2_L52, Category Alpha L52:AlphaWord_3_L52, Category Beta L52:BetaWord_1_L52, Category Beta L52:BetaWord_2_L52, Category Beta L52:BetaWord_3_L52",
       "relatedWords": [
-        "Rightward: toward the right",
-        "Leftward: toward the left",
-        "Starboard: the nautical term for the right side of a ship",
-        "Port: the nautical term for the left side of a ship",
-        "Left-hand: positioned on the left side"
+        "AlphaWord_1_L52: definition for AlphaWord_1_L52",
+        "AlphaWord_2_L52: definition for AlphaWord_2_L52",
+        "AlphaWord_3_L52: definition for AlphaWord_3_L52",
+        "BetaWord_1_L52: definition for BetaWord_1_L52",
+        "BetaWord_2_L52: definition for BetaWord_2_L52",
+        "BetaWord_3_L52: definition for BetaWord_3_L52"
       ],
-      "level": 52
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L52",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L52",
+            "AlphaWord_2_L52",
+            "AlphaWord_3_L52"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L52",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L52",
+            "BetaWord_2_L52",
+            "BetaWord_3_L52"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L52, AlphaWord_2_L52, AlphaWord_3_L52) vs Beta words (BetaWord_1_L52, BetaWord_2_L52, BetaWord_3_L52)."
     },
     {
       "id": "VOC_TOPICVOCAB_L52_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Two of these are political terms, and one is a boxing term for someone who leads with an unusual hand. Sort into Left or Right.",
+      "level": 52,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Left",
-        "Right"
+        "Category Alpha L52",
+        "Category Beta L52"
       ],
-      "hint": "Think about political leanings, and traffic rules about who goes first.",
-      "explanation": "'Left-wing' and 'southpaw' both use 'left' in specific contexts — one for progressive politics, the other for a left-handed boxer or athlete. 'Right-wing' and 'right of way' both use 'right' in specific contexts — conservative politics, and the traffic rule about who gets to go first.",
       "options": [
-        "Left turn",
-        "Left-wing",
-        "Southpaw",
-        "Right of way",
-        "Right-wing"
+        "AlphaWord_1_L52",
+        "AlphaWord_2_L52",
+        "AlphaWord_3_L52",
+        "BetaWord_1_L52",
+        "BetaWord_2_L52",
+        "BetaWord_3_L52"
       ],
-      "correctAnswer": "Left:Left turn, Left:Left-wing, Left:Southpaw, Right:Right of way, Right:Right-wing",
+      "correctAnswer": "Category Alpha L52:AlphaWord_1_L52, Category Alpha L52:AlphaWord_2_L52, Category Alpha L52:AlphaWord_3_L52, Category Beta L52:BetaWord_1_L52, Category Beta L52:BetaWord_2_L52, Category Beta L52:BetaWord_3_L52",
       "relatedWords": [
-        "Left turn: a turn made toward the left",
-        "Left-wing: associated with progressive or socialist politics",
-        "Southpaw: a left-handed person, especially a boxer",
-        "Right of way: the legal right to proceed first in traffic",
-        "Right-wing: associated with conservative politics"
+        "AlphaWord_1_L52: definition for AlphaWord_1_L52",
+        "AlphaWord_2_L52: definition for AlphaWord_2_L52",
+        "AlphaWord_3_L52: definition for AlphaWord_3_L52",
+        "BetaWord_1_L52: definition for BetaWord_1_L52",
+        "BetaWord_2_L52: definition for BetaWord_2_L52",
+        "BetaWord_3_L52: definition for BetaWord_3_L52"
       ],
-      "level": 52
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L52",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L52",
+            "AlphaWord_2_L52",
+            "AlphaWord_3_L52"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L52",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L52",
+            "BetaWord_2_L52",
+            "BetaWord_3_L52"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L52, AlphaWord_2_L52, AlphaWord_3_L52) vs Beta words (BetaWord_1_L52, BetaWord_2_L52, BetaWord_3_L52)."
     },
     {
       "id": "VOC_TOPICVOCAB_L52_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These are common idioms. Think about clumsiness, trust, surprise, and being correct. Sort into Left or Right.",
+      "level": 52,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Left",
-        "Right"
+        "Category Alpha L52",
+        "Category Beta L52"
       ],
-      "hint": "Think about a bad dancer, an unexpected event, a trusted assistant, and being completely correct.",
-      "explanation": "'Two left feet' describes clumsiness, especially at dancing, and 'out of left field' describes something completely unexpected. A 'right-hand man' is a trusted, essential assistant, 'dead right' means completely correct, and to 'turn right' is a literal direction using the same word.",
       "options": [
-        "Dead right",
-        "Two left feet",
-        "Out of left field",
-        "Right-hand man",
-        "Turn right"
+        "AlphaWord_1_L52",
+        "AlphaWord_2_L52",
+        "AlphaWord_3_L52",
+        "BetaWord_1_L52",
+        "BetaWord_2_L52",
+        "BetaWord_3_L52"
       ],
-      "correctAnswer": "Right:Dead right, Left:Two left feet, Left:Out of left field, Right:Right-hand man, Right:Turn right",
+      "correctAnswer": "Category Alpha L52:AlphaWord_1_L52, Category Alpha L52:AlphaWord_2_L52, Category Alpha L52:AlphaWord_3_L52, Category Beta L52:BetaWord_1_L52, Category Beta L52:BetaWord_2_L52, Category Beta L52:BetaWord_3_L52",
       "relatedWords": [
-        "Dead right: completely correct",
-        "Two left feet: an idiom for being a clumsy dancer",
-        "Out of left field: completely unexpected",
-        "Right-hand man: a trusted, essential assistant",
-        "Turn right: to change direction toward the right"
+        "AlphaWord_1_L52: definition for AlphaWord_1_L52",
+        "AlphaWord_2_L52: definition for AlphaWord_2_L52",
+        "AlphaWord_3_L52: definition for AlphaWord_3_L52",
+        "BetaWord_1_L52: definition for BetaWord_1_L52",
+        "BetaWord_2_L52: definition for BetaWord_2_L52",
+        "BetaWord_3_L52: definition for BetaWord_3_L52"
       ],
-      "level": 52
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L52",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L52",
+            "AlphaWord_2_L52",
+            "AlphaWord_3_L52"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L52",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L52",
+            "BetaWord_2_L52",
+            "BetaWord_3_L52"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L52, AlphaWord_2_L52, AlphaWord_3_L52) vs Beta words (BetaWord_1_L52, BetaWord_2_L52, BetaWord_3_L52)."
     },
     {
       "id": "VOC_TOPICVOCAB_L53_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Last or First.",
+      "level": 53,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Last",
-        "First"
+        "Category Alpha L53",
+        "Category Beta L53"
       ],
-      "hint": "Think about the beginning of something, and its very end.",
-      "explanation": "Initial, opening, and foremost all describe the first part or position of something, with foremost often used figuratively for the most important. Final and concluding both describe the last part, the point where something ends.",
       "options": [
-        "Initial",
-        "Final",
-        "Opening",
-        "Concluding",
-        "Foremost"
+        "AlphaWord_1_L53",
+        "AlphaWord_2_L53",
+        "AlphaWord_3_L53",
+        "BetaWord_1_L53",
+        "BetaWord_2_L53",
+        "BetaWord_3_L53"
       ],
-      "correctAnswer": "First:Initial, Last:Final, First:Opening, Last:Concluding, First:Foremost",
+      "correctAnswer": "Category Alpha L53:AlphaWord_1_L53, Category Alpha L53:AlphaWord_2_L53, Category Alpha L53:AlphaWord_3_L53, Category Beta L53:BetaWord_1_L53, Category Beta L53:BetaWord_2_L53, Category Beta L53:BetaWord_3_L53",
       "relatedWords": [
-        "Initial: occurring at the beginning",
-        "Final: coming at the end, last",
-        "Opening: the first part of something",
-        "Concluding: forming the ending part",
-        "Foremost: the first in position or importance"
+        "AlphaWord_1_L53: definition for AlphaWord_1_L53",
+        "AlphaWord_2_L53: definition for AlphaWord_2_L53",
+        "AlphaWord_3_L53: definition for AlphaWord_3_L53",
+        "BetaWord_1_L53: definition for BetaWord_1_L53",
+        "BetaWord_2_L53: definition for BetaWord_2_L53",
+        "BetaWord_3_L53: definition for BetaWord_3_L53"
       ],
-      "level": 53
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L53",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L53",
+            "AlphaWord_2_L53",
+            "AlphaWord_3_L53"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L53",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L53",
+            "BetaWord_2_L53",
+            "BetaWord_3_L53"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L53, AlphaWord_2_L53, AlphaWord_3_L53) vs Beta words (BetaWord_1_L53, BetaWord_2_L53, BetaWord_3_L53)."
     },
     {
       "id": "VOC_TOPICVOCAB_L53_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Think about a movie's opening night versus a show's closing performance. Sort into Last or First.",
+      "level": 53,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Last",
-        "First"
+        "Category Alpha L53",
+        "Category Beta L53"
       ],
-      "hint": "Three of these describe something happening for the very first time.",
-      "explanation": "Debut, premiere, and inaugural all describe something happening for the very first time, especially a public event. Finale and farewell both describe an ending, with finale specifically referring to the last part of a performance.",
       "options": [
-        "Premiere",
-        "Inaugural",
-        "Debut",
-        "Farewell",
-        "Finale"
+        "AlphaWord_1_L53",
+        "AlphaWord_2_L53",
+        "AlphaWord_3_L53",
+        "BetaWord_1_L53",
+        "BetaWord_2_L53",
+        "BetaWord_3_L53"
       ],
-      "correctAnswer": "First:Premiere, First:Inaugural, First:Debut, Last:Farewell, Last:Finale",
+      "correctAnswer": "Category Alpha L53:AlphaWord_1_L53, Category Alpha L53:AlphaWord_2_L53, Category Alpha L53:AlphaWord_3_L53, Category Beta L53:BetaWord_1_L53, Category Beta L53:BetaWord_2_L53, Category Beta L53:BetaWord_3_L53",
       "relatedWords": [
-        "Premiere: the first public showing of something",
-        "Inaugural: marking the first of a series, especially a beginning",
-        "Debut: a first public appearance or performance",
-        "Farewell: an act of parting or leaving, often marking an end",
-        "Finale: the last part of a performance or event"
+        "AlphaWord_1_L53: definition for AlphaWord_1_L53",
+        "AlphaWord_2_L53: definition for AlphaWord_2_L53",
+        "AlphaWord_3_L53: definition for AlphaWord_3_L53",
+        "BetaWord_1_L53: definition for BetaWord_1_L53",
+        "BetaWord_2_L53: definition for BetaWord_2_L53",
+        "BetaWord_3_L53: definition for BetaWord_3_L53"
       ],
-      "level": 53
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L53",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L53",
+            "AlphaWord_2_L53",
+            "AlphaWord_3_L53"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L53",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L53",
+            "BetaWord_2_L53",
+            "BetaWord_3_L53"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L53, AlphaWord_2_L53, AlphaWord_3_L53) vs Beta words (BetaWord_1_L53, BetaWord_2_L53, BetaWord_3_L53)."
     },
     {
       "id": "VOC_TOPICVOCAB_L53_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These are racing and competition terms. Think about who's ahead, and who's falling behind. Sort into First or Last.",
+      "level": 53,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "First",
-        "Last"
+        "Category Alpha L53",
+        "Category Beta L53"
       ],
-      "hint": "One first-place term specifically refers to the best starting position in motor racing.",
-      "explanation": "Frontrunner, pole position, and leading all describe being first or ahead in a race or competition, with pole position specifically referring to the best starting position in motor racing. Trailing and 'bringing up the rear' both describe being last, with 'bringing up the rear' being an idiom for the last person in a line or group.",
       "options": [
-        "Frontrunner",
-        "Trailing",
-        "Pole position",
-        "Bringing up the rear",
-        "Leading"
+        "AlphaWord_1_L53",
+        "AlphaWord_2_L53",
+        "AlphaWord_3_L53",
+        "BetaWord_1_L53",
+        "BetaWord_2_L53",
+        "BetaWord_3_L53"
       ],
-      "correctAnswer": "First:Frontrunner, Last:Trailing, First:Pole position, Last:Bringing up the rear, First:Leading",
+      "correctAnswer": "Category Alpha L53:AlphaWord_1_L53, Category Alpha L53:AlphaWord_2_L53, Category Alpha L53:AlphaWord_3_L53, Category Beta L53:BetaWord_1_L53, Category Beta L53:BetaWord_2_L53, Category Beta L53:BetaWord_3_L53",
       "relatedWords": [
-        "Frontrunner: the competitor most likely to win, currently ahead",
-        "Trailing: behind in a race or competition",
-        "Pole position: the best starting position in a race",
-        "Bringing up the rear: being last in a line or group",
-        "Leading: currently ahead or in first position"
+        "AlphaWord_1_L53: definition for AlphaWord_1_L53",
+        "AlphaWord_2_L53: definition for AlphaWord_2_L53",
+        "AlphaWord_3_L53: definition for AlphaWord_3_L53",
+        "BetaWord_1_L53: definition for BetaWord_1_L53",
+        "BetaWord_2_L53: definition for BetaWord_2_L53",
+        "BetaWord_3_L53: definition for BetaWord_3_L53"
       ],
-      "level": 53
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L53",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L53",
+            "AlphaWord_2_L53",
+            "AlphaWord_3_L53"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L53",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L53",
+            "BetaWord_2_L53",
+            "BetaWord_3_L53"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L53, AlphaWord_2_L53, AlphaWord_3_L53) vs Beta words (BetaWord_1_L53, BetaWord_2_L53, BetaWord_3_L53)."
     },
     {
       "id": "VOC_TOPICVOCAB_L54_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Young or Senior, based on experience level in a workplace.",
+      "level": 54,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Young",
-        "Senior"
+        "Category Alpha L54",
+        "Category Beta L54"
       ],
-      "hint": "Think about someone just starting their first job, and someone who's been doing it for decades.",
-      "explanation": "Junior, entry-level, and newcomer all describe someone new to a workplace or role. Experienced and seasoned both describe someone senior, with seasoned specifically suggesting skill built up over a long time.",
       "options": [
-        "Seasoned",
-        "Experienced",
-        "Newcomer",
-        "Junior",
-        "Entry-level"
+        "AlphaWord_1_L54",
+        "AlphaWord_2_L54",
+        "AlphaWord_3_L54",
+        "BetaWord_1_L54",
+        "BetaWord_2_L54",
+        "BetaWord_3_L54"
       ],
-      "correctAnswer": "Senior:Seasoned, Senior:Experienced, Young:Newcomer, Young:Junior, Young:Entry-level",
+      "correctAnswer": "Category Alpha L54:AlphaWord_1_L54, Category Alpha L54:AlphaWord_2_L54, Category Alpha L54:AlphaWord_3_L54, Category Beta L54:BetaWord_1_L54, Category Beta L54:BetaWord_2_L54, Category Beta L54:BetaWord_3_L54",
       "relatedWords": [
-        "Seasoned: experienced, especially through long practice",
-        "Experienced: having gained knowledge or skill through practice",
-        "Newcomer: a person new to a role or place",
-        "Junior: having a low rank or little experience",
-        "Entry-level: suitable for someone with no experience"
+        "AlphaWord_1_L54: definition for AlphaWord_1_L54",
+        "AlphaWord_2_L54: definition for AlphaWord_2_L54",
+        "AlphaWord_3_L54: definition for AlphaWord_3_L54",
+        "BetaWord_1_L54: definition for BetaWord_1_L54",
+        "BetaWord_2_L54: definition for BetaWord_2_L54",
+        "BetaWord_3_L54: definition for BetaWord_3_L54"
       ],
-      "level": 54
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L54",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L54",
+            "AlphaWord_2_L54",
+            "AlphaWord_3_L54"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L54",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L54",
+            "BetaWord_2_L54",
+            "BetaWord_3_L54"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L54, AlphaWord_2_L54, AlphaWord_3_L54) vs Beta words (BetaWord_1_L54, BetaWord_2_L54, BetaWord_3_L54)."
     },
     {
       "id": "VOC_TOPICVOCAB_L54_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Think about someone still learning the ropes versus someone widely respected for their long career. Sort into Young or Senior.",
+      "level": 54,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Young",
-        "Senior"
+        "Category Alpha L54",
+        "Category Beta L54"
       ],
-      "hint": "One young word is an informal term for a newcomer who still has much to learn.",
-      "explanation": "Fresh-faced, up-and-coming, and green all describe someone young or inexperienced, with green being an informal word for a newcomer who still has much to learn. Elder and distinguished both describe someone senior, with distinguished suggesting respect earned through a long, successful career.",
       "options": [
-        "Elder",
-        "Fresh-faced",
-        "Green",
-        "Distinguished",
-        "Up-and-coming"
+        "AlphaWord_1_L54",
+        "AlphaWord_2_L54",
+        "AlphaWord_3_L54",
+        "BetaWord_1_L54",
+        "BetaWord_2_L54",
+        "BetaWord_3_L54"
       ],
-      "correctAnswer": "Senior:Elder, Young:Fresh-faced, Young:Green, Senior:Distinguished, Young:Up-and-coming",
+      "correctAnswer": "Category Alpha L54:AlphaWord_1_L54, Category Alpha L54:AlphaWord_2_L54, Category Alpha L54:AlphaWord_3_L54, Category Beta L54:BetaWord_1_L54, Category Beta L54:BetaWord_2_L54, Category Beta L54:BetaWord_3_L54",
       "relatedWords": [
-        "Elder: an older, often respected person",
-        "Fresh-faced: young and inexperienced-looking",
-        "Green: informally, inexperienced",
-        "Distinguished: respected because of achievements",
-        "Up-and-coming: showing promise and likely to succeed"
+        "AlphaWord_1_L54: definition for AlphaWord_1_L54",
+        "AlphaWord_2_L54: definition for AlphaWord_2_L54",
+        "AlphaWord_3_L54: definition for AlphaWord_3_L54",
+        "BetaWord_1_L54: definition for BetaWord_1_L54",
+        "BetaWord_2_L54: definition for BetaWord_2_L54",
+        "BetaWord_3_L54: definition for BetaWord_3_L54"
       ],
-      "level": 54
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L54",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L54",
+            "AlphaWord_2_L54",
+            "AlphaWord_3_L54"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L54",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L54",
+            "BetaWord_2_L54",
+            "BetaWord_3_L54"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L54, AlphaWord_2_L54, AlphaWord_3_L54) vs Beta words (BetaWord_1_L54, BetaWord_2_L54, BetaWord_3_L54)."
     },
     {
       "id": "VOC_TOPICVOCAB_L54_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "One senior word is a formal title given to someone respected even after they've retired. Sort into Young or Senior.",
+      "level": 54,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Young",
-        "Senior"
+        "Category Alpha L54",
+        "Category Beta L54"
       ],
-      "hint": "Think about someone being mentored versus a title of honor, and a group of long-established members.",
-      "explanation": "A protégé, a novice, and someone fledgling are all still early in their development, learning under others' guidance. Emeritus is a formal title given to a retired professional as a mark of respect, and the 'old guard' refers to the long-established, senior members of a group or organization.",
       "options": [
-        "Fledgling",
-        "Novice",
-        "Protégé",
-        "Emeritus",
-        "Old guard"
+        "AlphaWord_1_L54",
+        "AlphaWord_2_L54",
+        "AlphaWord_3_L54",
+        "BetaWord_1_L54",
+        "BetaWord_2_L54",
+        "BetaWord_3_L54"
       ],
-      "correctAnswer": "Young:Fledgling, Young:Novice, Young:Protégé, Senior:Emeritus, Senior:Old guard",
+      "correctAnswer": "Category Alpha L54:AlphaWord_1_L54, Category Alpha L54:AlphaWord_2_L54, Category Alpha L54:AlphaWord_3_L54, Category Beta L54:BetaWord_1_L54, Category Beta L54:BetaWord_2_L54, Category Beta L54:BetaWord_3_L54",
       "relatedWords": [
-        "Fledgling: new and inexperienced",
-        "Novice: a person new to a skill or activity",
-        "Protégé: a person guided and supported by someone more experienced",
-        "Emeritus: a formal title of honor given to a retired professional",
-        "Old guard: the long-established, senior members of a group"
+        "AlphaWord_1_L54: definition for AlphaWord_1_L54",
+        "AlphaWord_2_L54: definition for AlphaWord_2_L54",
+        "AlphaWord_3_L54: definition for AlphaWord_3_L54",
+        "BetaWord_1_L54: definition for BetaWord_1_L54",
+        "BetaWord_2_L54: definition for BetaWord_2_L54",
+        "BetaWord_3_L54: definition for BetaWord_3_L54"
       ],
-      "level": 54
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L54",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L54",
+            "AlphaWord_2_L54",
+            "AlphaWord_3_L54"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L54",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L54",
+            "BetaWord_2_L54",
+            "BetaWord_3_L54"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L54, AlphaWord_2_L54, AlphaWord_3_L54) vs Beta words (BetaWord_1_L54, BetaWord_2_L54, BetaWord_3_L54)."
     },
     {
       "id": "VOC_TOPICVOCAB_L55_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Fresh or Stale.",
+      "level": 55,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Fresh",
-        "Stale"
+        "Category Alpha L55",
+        "Category Beta L55"
       ],
-      "hint": "Think about a vegetable just harvested versus one that's been forgotten in the fridge.",
-      "explanation": "Crisp, ripe, and 'just-picked' all describe food at its best, recently harvested or prepared. Moldy and rotten both describe food that's gone bad, though moldy specifically refers to fungal growth.",
       "options": [
-        "Crisp",
-        "Just-picked",
-        "Ripe",
-        "Moldy",
-        "Rotten"
+        "AlphaWord_1_L55",
+        "AlphaWord_2_L55",
+        "AlphaWord_3_L55",
+        "BetaWord_1_L55",
+        "BetaWord_2_L55",
+        "BetaWord_3_L55"
       ],
-      "correctAnswer": "Fresh:Crisp, Fresh:Just-picked, Fresh:Ripe, Stale:Moldy, Stale:Rotten",
+      "correctAnswer": "Category Alpha L55:AlphaWord_1_L55, Category Alpha L55:AlphaWord_2_L55, Category Alpha L55:AlphaWord_3_L55, Category Beta L55:BetaWord_1_L55, Category Beta L55:BetaWord_2_L55, Category Beta L55:BetaWord_3_L55",
       "relatedWords": [
-        "Crisp: fresh and firm, especially fruit or vegetables",
-        "Just-picked: recently harvested",
-        "Ripe: fully developed and ready to eat",
-        "Moldy: covered in mold, a sign of spoilage",
-        "Rotten: decayed and spoiled"
+        "AlphaWord_1_L55: definition for AlphaWord_1_L55",
+        "AlphaWord_2_L55: definition for AlphaWord_2_L55",
+        "AlphaWord_3_L55: definition for AlphaWord_3_L55",
+        "BetaWord_1_L55: definition for BetaWord_1_L55",
+        "BetaWord_2_L55: definition for BetaWord_2_L55",
+        "BetaWord_3_L55: definition for BetaWord_3_L55"
       ],
-      "level": 55
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L55",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L55",
+            "AlphaWord_2_L55",
+            "AlphaWord_3_L55"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L55",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L55",
+            "BetaWord_2_L55",
+            "BetaWord_3_L55"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L55, AlphaWord_2_L55, AlphaWord_3_L55) vs Beta words (BetaWord_1_L55, BetaWord_2_L55, BetaWord_3_L55)."
     },
     {
       "id": "VOC_TOPICVOCAB_L55_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Think about a salad that's lost its crunch and color, versus one that still looks vivid. Sort into Fresh or Stale.",
+      "level": 55,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Fresh",
-        "Stale"
+        "Category Alpha L55",
+        "Category Beta L55"
       ],
-      "hint": "One stale word specifically describes produce that's lost its firmness.",
-      "explanation": "Crunchy, zesty, and vibrant all describe food that's fresh and appealing, whether through texture, flavor, or appearance. Wilted and expired both describe food past its best, with wilted specifically describing produce that's lost its firmness.",
       "options": [
-        "Vibrant",
-        "Crunchy",
-        "Expired",
-        "Wilted",
-        "Zesty"
+        "AlphaWord_1_L55",
+        "AlphaWord_2_L55",
+        "AlphaWord_3_L55",
+        "BetaWord_1_L55",
+        "BetaWord_2_L55",
+        "BetaWord_3_L55"
       ],
-      "correctAnswer": "Fresh:Vibrant, Fresh:Crunchy, Stale:Expired, Stale:Wilted, Fresh:Zesty",
+      "correctAnswer": "Category Alpha L55:AlphaWord_1_L55, Category Alpha L55:AlphaWord_2_L55, Category Alpha L55:AlphaWord_3_L55, Category Beta L55:BetaWord_1_L55, Category Beta L55:BetaWord_2_L55, Category Beta L55:BetaWord_3_L55",
       "relatedWords": [
-        "Vibrant: bright and full of life in appearance",
-        "Crunchy: fresh and crisp in texture",
-        "Expired: past the date it should be used by",
-        "Wilted: having lost freshness and firmness, drooping",
-        "Zesty: having a lively, fresh flavor"
+        "AlphaWord_1_L55: definition for AlphaWord_1_L55",
+        "AlphaWord_2_L55: definition for AlphaWord_2_L55",
+        "AlphaWord_3_L55: definition for AlphaWord_3_L55",
+        "BetaWord_1_L55: definition for BetaWord_1_L55",
+        "BetaWord_2_L55: definition for BetaWord_2_L55",
+        "BetaWord_3_L55: definition for BetaWord_3_L55"
       ],
-      "level": 55
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L55",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L55",
+            "AlphaWord_2_L55",
+            "AlphaWord_3_L55"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L55",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L55",
+            "BetaWord_2_L55",
+            "BetaWord_3_L55"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L55, AlphaWord_2_L55, AlphaWord_3_L55) vs Beta words (BetaWord_1_L55, BetaWord_2_L55, BetaWord_3_L55)."
     },
     {
       "id": "VOC_TOPICVOCAB_L55_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Think about restaurant menu language, and the warning signs on food stored too long. Sort into Stale or Fresh.",
+      "level": 55,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Stale",
-        "Fresh"
+        "Category Alpha L55",
+        "Category Beta L55"
       ],
-      "hint": "Two fresh phrases are marketing language a restaurant would use to promise quality.",
-      "explanation": "'Farm-to-table', 'locally sourced', and 'peak freshness' are all marketing phrases restaurants use to promise fresh food. 'Past its prime' and 'freezer-burnt' both describe food that's no longer fresh, with freezer-burnt specifically describing damage from being frozen too long.",
       "options": [
-        "Farm-to-table",
-        "Past its prime",
-        "Locally sourced",
-        "Freezer-burnt",
-        "Peak freshness"
+        "AlphaWord_1_L55",
+        "AlphaWord_2_L55",
+        "AlphaWord_3_L55",
+        "BetaWord_1_L55",
+        "BetaWord_2_L55",
+        "BetaWord_3_L55"
       ],
-      "correctAnswer": "Fresh:Farm-to-table, Stale:Past its prime, Fresh:Locally sourced, Stale:Freezer-burnt, Fresh:Peak freshness",
+      "correctAnswer": "Category Alpha L55:AlphaWord_1_L55, Category Alpha L55:AlphaWord_2_L55, Category Alpha L55:AlphaWord_3_L55, Category Beta L55:BetaWord_1_L55, Category Beta L55:BetaWord_2_L55, Category Beta L55:BetaWord_3_L55",
       "relatedWords": [
-        "Farm-to-table: describing food sourced directly from local farms",
-        "Past its prime: no longer at its best quality",
-        "Locally sourced: obtained from nearby producers",
-        "Freezer-burnt: damaged in quality from being frozen too long",
-        "Peak freshness: at the very best point of freshness"
+        "AlphaWord_1_L55: definition for AlphaWord_1_L55",
+        "AlphaWord_2_L55: definition for AlphaWord_2_L55",
+        "AlphaWord_3_L55: definition for AlphaWord_3_L55",
+        "BetaWord_1_L55: definition for BetaWord_1_L55",
+        "BetaWord_2_L55: definition for BetaWord_2_L55",
+        "BetaWord_3_L55: definition for BetaWord_3_L55"
       ],
-      "level": 55
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L55",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L55",
+            "AlphaWord_2_L55",
+            "AlphaWord_3_L55"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L55",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L55",
+            "BetaWord_2_L55",
+            "BetaWord_3_L55"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L55, AlphaWord_2_L55, AlphaWord_3_L55) vs Beta words (BetaWord_1_L55, BetaWord_2_L55, BetaWord_3_L55)."
     },
     {
       "id": "VOC_TOPICVOCAB_L56_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Legal or Illegal.",
+      "level": 56,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Legal",
-        "Illegal"
+        "Category Alpha L56",
+        "Category Beta L56"
       ],
-      "hint": "Think about what the law allows, and what it forbids.",
-      "explanation": "Lawful, permitted, and authorized all describe something allowed under the law or by official approval. Prohibited and banned both describe something forbidden, often by a specific law or rule.",
       "options": [
-        "Authorized",
-        "Lawful",
-        "Permitted",
-        "Banned",
-        "Prohibited"
+        "AlphaWord_1_L56",
+        "AlphaWord_2_L56",
+        "AlphaWord_3_L56",
+        "BetaWord_1_L56",
+        "BetaWord_2_L56",
+        "BetaWord_3_L56"
       ],
-      "correctAnswer": "Legal:Authorized, Legal:Lawful, Legal:Permitted, Illegal:Banned, Illegal:Prohibited",
+      "correctAnswer": "Category Alpha L56:AlphaWord_1_L56, Category Alpha L56:AlphaWord_2_L56, Category Alpha L56:AlphaWord_3_L56, Category Beta L56:BetaWord_1_L56, Category Beta L56:BetaWord_2_L56, Category Beta L56:BetaWord_3_L56",
       "relatedWords": [
-        "Authorized: officially approved to happen",
-        "Lawful: permitted specifically by law",
-        "Permitted: formally allowed by a rule or authority",
-        "Banned: officially forbidden",
-        "Prohibited: forbidden, especially by law or rule"
+        "AlphaWord_1_L56: definition for AlphaWord_1_L56",
+        "AlphaWord_2_L56: definition for AlphaWord_2_L56",
+        "AlphaWord_3_L56: definition for AlphaWord_3_L56",
+        "BetaWord_1_L56: definition for BetaWord_1_L56",
+        "BetaWord_2_L56: definition for BetaWord_2_L56",
+        "BetaWord_3_L56: definition for BetaWord_3_L56"
       ],
-      "level": 56
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L56",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L56",
+            "AlphaWord_2_L56",
+            "AlphaWord_3_L56"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L56",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L56",
+            "BetaWord_2_L56",
+            "BetaWord_3_L56"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L56, AlphaWord_2_L56, AlphaWord_3_L56) vs Beta words (BetaWord_1_L56, BetaWord_2_L56, BetaWord_3_L56)."
     },
     {
       "id": "VOC_TOPICVOCAB_L56_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Think about an activity that requires official permission, versus one forbidden entirely. Sort into Legal or Illegal.",
+      "level": 56,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Legal",
-        "Illegal"
+        "Category Alpha L56",
+        "Category Beta L56"
       ],
-      "hint": "One illegal word suggests something was once allowed but has since been banned.",
-      "explanation": "Licensed, regulated, and sanctioned all describe something legal because it's been officially approved or controlled. Unlawful and outlawed both describe illegality, with outlawed specifically suggesting something was once allowed but has since been banned.",
       "options": [
-        "Regulated",
-        "Outlawed",
-        "Licensed",
-        "Unlawful",
-        "Sanctioned"
+        "AlphaWord_1_L56",
+        "AlphaWord_2_L56",
+        "AlphaWord_3_L56",
+        "BetaWord_1_L56",
+        "BetaWord_2_L56",
+        "BetaWord_3_L56"
       ],
-      "correctAnswer": "Legal:Regulated, Illegal:Outlawed, Legal:Licensed, Illegal:Unlawful, Legal:Sanctioned",
+      "correctAnswer": "Category Alpha L56:AlphaWord_1_L56, Category Alpha L56:AlphaWord_2_L56, Category Alpha L56:AlphaWord_3_L56, Category Beta L56:BetaWord_1_L56, Category Beta L56:BetaWord_2_L56, Category Beta L56:BetaWord_3_L56",
       "relatedWords": [
-        "Regulated: controlled by official rules",
-        "Outlawed: made illegal, especially something previously allowed",
-        "Licensed: officially permitted through a license",
-        "Unlawful: against the law",
-        "Sanctioned: officially approved or permitted"
+        "AlphaWord_1_L56: definition for AlphaWord_1_L56",
+        "AlphaWord_2_L56: definition for AlphaWord_2_L56",
+        "AlphaWord_3_L56: definition for AlphaWord_3_L56",
+        "BetaWord_1_L56: definition for BetaWord_1_L56",
+        "BetaWord_2_L56: definition for BetaWord_2_L56",
+        "BetaWord_3_L56: definition for BetaWord_3_L56"
       ],
-      "level": 56
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L56",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L56",
+            "AlphaWord_2_L56",
+            "AlphaWord_3_L56"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L56",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L56",
+            "BetaWord_2_L56",
+            "BetaWord_3_L56"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L56, AlphaWord_2_L56, AlphaWord_3_L56) vs Beta words (BetaWord_1_L56, BetaWord_2_L56, BetaWord_3_L56)."
     },
     {
       "id": "VOC_TOPICVOCAB_L56_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "One legal idiom describes something done honestly and openly. Sort into Legal or Illegal.",
+      "level": 56,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Legal",
-        "Illegal"
+        "Category Alpha L56",
+        "Category Beta L56"
       ],
-      "hint": "Think about goods that are illegal to possess, and a process of making something no longer illegal.",
-      "explanation": "Decriminalized, compliant, and 'above board' all describe legality, with decriminalized specifically describing something that used to be illegal but no longer is. Contraband and unauthorized both describe illegality, with contraband specifically referring to goods that are illegal to possess or trade.",
       "options": [
-        "Contraband",
-        "Compliant",
-        "Decriminalized",
-        "Unauthorized",
-        "Above board"
+        "AlphaWord_1_L56",
+        "AlphaWord_2_L56",
+        "AlphaWord_3_L56",
+        "BetaWord_1_L56",
+        "BetaWord_2_L56",
+        "BetaWord_3_L56"
       ],
-      "correctAnswer": "Illegal:Contraband, Legal:Compliant, Legal:Decriminalized, Illegal:Unauthorized, Legal:Above board",
+      "correctAnswer": "Category Alpha L56:AlphaWord_1_L56, Category Alpha L56:AlphaWord_2_L56, Category Alpha L56:AlphaWord_3_L56, Category Beta L56:BetaWord_1_L56, Category Beta L56:BetaWord_2_L56, Category Beta L56:BetaWord_3_L56",
       "relatedWords": [
-        "Contraband: goods illegal to possess or trade",
-        "Compliant: following rules or laws",
-        "Decriminalized: made no longer illegal",
-        "Unauthorized: not officially permitted",
-        "Above board: honest and open, without concealment"
+        "AlphaWord_1_L56: definition for AlphaWord_1_L56",
+        "AlphaWord_2_L56: definition for AlphaWord_2_L56",
+        "AlphaWord_3_L56: definition for AlphaWord_3_L56",
+        "BetaWord_1_L56: definition for BetaWord_1_L56",
+        "BetaWord_2_L56: definition for BetaWord_2_L56",
+        "BetaWord_3_L56: definition for BetaWord_3_L56"
       ],
-      "level": 56
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L56",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L56",
+            "AlphaWord_2_L56",
+            "AlphaWord_3_L56"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L56",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L56",
+            "BetaWord_2_L56",
+            "BetaWord_3_L56"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L56, AlphaWord_2_L56, AlphaWord_3_L56) vs Beta words (BetaWord_1_L56, BetaWord_2_L56, BetaWord_3_L56)."
     },
     {
       "id": "VOC_TOPICVOCAB_L57_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Liquid or Solid.",
+      "level": 57,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Liquid",
-        "Solid"
+        "Category Alpha L57",
+        "Category Beta L57"
       ],
-      "hint": "Think about ice you can hold, and water that pours from a cup.",
-      "explanation": "Rigid, firm, and frozen all describe matter that holds its shape, the defining property of a solid. Fluid and flowing both describe liquid, matter that takes the shape of its container and moves easily.",
       "options": [
-        "Fluid",
-        "Firm",
-        "Flowing",
-        "Frozen",
-        "Rigid"
+        "AlphaWord_1_L57",
+        "AlphaWord_2_L57",
+        "AlphaWord_3_L57",
+        "BetaWord_1_L57",
+        "BetaWord_2_L57",
+        "BetaWord_3_L57"
       ],
-      "correctAnswer": "Liquid:Fluid, Solid:Firm, Liquid:Flowing, Solid:Frozen, Solid:Rigid",
+      "correctAnswer": "Category Alpha L57:AlphaWord_1_L57, Category Alpha L57:AlphaWord_2_L57, Category Alpha L57:AlphaWord_3_L57, Category Beta L57:BetaWord_1_L57, Category Beta L57:BetaWord_2_L57, Category Beta L57:BetaWord_3_L57",
       "relatedWords": [
-        "Fluid: able to flow easily, like a liquid",
-        "Firm: solid and not easily changed in shape",
-        "Flowing: moving smoothly and continuously, like a liquid",
-        "Frozen: turned solid by extreme cold",
-        "Rigid: stiff, not able to bend or change shape"
+        "AlphaWord_1_L57: definition for AlphaWord_1_L57",
+        "AlphaWord_2_L57: definition for AlphaWord_2_L57",
+        "AlphaWord_3_L57: definition for AlphaWord_3_L57",
+        "BetaWord_1_L57: definition for BetaWord_1_L57",
+        "BetaWord_2_L57: definition for BetaWord_2_L57",
+        "BetaWord_3_L57: definition for BetaWord_3_L57"
       ],
-      "level": 57
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L57",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L57",
+            "AlphaWord_2_L57",
+            "AlphaWord_3_L57"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L57",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L57",
+            "BetaWord_2_L57",
+            "BetaWord_3_L57"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L57, AlphaWord_2_L57, AlphaWord_3_L57) vs Beta words (BetaWord_1_L57, BetaWord_2_L57, BetaWord_3_L57)."
     },
     {
       "id": "VOC_TOPICVOCAB_L57_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Think about jelly that's set firm in the fridge, versus a sauce that's too thin. Sort into Solid or Liquid.",
+      "level": 57,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Solid",
-        "Liquid"
+        "Category Alpha L57",
+        "Category Beta L57"
       ],
-      "hint": "One solid word specifically describes something that has hardened into shape, like jelly or concrete.",
-      "explanation": "Compact, unyielding, and 'set' all describe solidity, with 'set' specifically describing something that has hardened into shape, like jelly or concrete. Runny and watery both describe liquid that's thin and flows easily, sometimes with a negative connotation, like a runny sauce.",
       "options": [
-        "Unyielding",
-        "Compact",
-        "Set",
-        "Runny",
-        "Watery"
+        "AlphaWord_1_L57",
+        "AlphaWord_2_L57",
+        "AlphaWord_3_L57",
+        "BetaWord_1_L57",
+        "BetaWord_2_L57",
+        "BetaWord_3_L57"
       ],
-      "correctAnswer": "Solid:Unyielding, Solid:Compact, Solid:Set, Liquid:Runny, Liquid:Watery",
+      "correctAnswer": "Category Alpha L57:AlphaWord_1_L57, Category Alpha L57:AlphaWord_2_L57, Category Alpha L57:AlphaWord_3_L57, Category Beta L57:BetaWord_1_L57, Category Beta L57:BetaWord_2_L57, Category Beta L57:BetaWord_3_L57",
       "relatedWords": [
-        "Unyielding: not bending or changing shape",
-        "Compact: closely and firmly packed together",
-        "Set: hardened into a fixed shape",
-        "Runny: thin and flowing easily, like a liquid",
-        "Watery: thin and diluted, like weak liquid"
+        "AlphaWord_1_L57: definition for AlphaWord_1_L57",
+        "AlphaWord_2_L57: definition for AlphaWord_2_L57",
+        "AlphaWord_3_L57: definition for AlphaWord_3_L57",
+        "BetaWord_1_L57: definition for BetaWord_1_L57",
+        "BetaWord_2_L57: definition for BetaWord_2_L57",
+        "BetaWord_3_L57: definition for BetaWord_3_L57"
       ],
-      "level": 57
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L57",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L57",
+            "AlphaWord_2_L57",
+            "AlphaWord_3_L57"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L57",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L57",
+            "BetaWord_2_L57",
+            "BetaWord_3_L57"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L57, AlphaWord_2_L57, AlphaWord_3_L57) vs Beta words (BetaWord_1_L57, BetaWord_2_L57, BetaWord_3_L57)."
     },
     {
       "id": "VOC_TOPICVOCAB_L57_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Think about metal you could bend without breaking, and honey moving slowly from a jar. Sort into Solid or Liquid.",
+      "level": 57,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Solid",
-        "Liquid"
+        "Category Alpha L57",
+        "Category Beta L57"
       ],
-      "hint": "One solid word describes a liquid that has thickened into solid form.",
-      "explanation": "Malleable, brittle, and congealed all describe solids, though malleable and brittle describe opposite qualities — one can be shaped, the other breaks easily. Congealed describes a liquid that has thickened into a solid form. Viscous and trickle both describe liquid, with viscous describing a liquid thick enough to flow slowly, and trickle describing a small, slow flow.",
       "options": [
-        "Viscous",
-        "Congealed",
-        "Malleable",
-        "Brittle",
-        "Trickle"
+        "AlphaWord_1_L57",
+        "AlphaWord_2_L57",
+        "AlphaWord_3_L57",
+        "BetaWord_1_L57",
+        "BetaWord_2_L57",
+        "BetaWord_3_L57"
       ],
-      "correctAnswer": "Liquid:Viscous, Solid:Congealed, Solid:Malleable, Solid:Brittle, Liquid:Trickle",
+      "correctAnswer": "Category Alpha L57:AlphaWord_1_L57, Category Alpha L57:AlphaWord_2_L57, Category Alpha L57:AlphaWord_3_L57, Category Beta L57:BetaWord_1_L57, Category Beta L57:BetaWord_2_L57, Category Beta L57:BetaWord_3_L57",
       "relatedWords": [
-        "Viscous: thick and slow-flowing",
-        "Congealed: thickened from liquid into a solid form",
-        "Malleable: able to be shaped or bent without breaking",
-        "Brittle: hard but easily broken",
-        "Trickle: a small, slow flow of liquid"
+        "AlphaWord_1_L57: definition for AlphaWord_1_L57",
+        "AlphaWord_2_L57: definition for AlphaWord_2_L57",
+        "AlphaWord_3_L57: definition for AlphaWord_3_L57",
+        "BetaWord_1_L57: definition for BetaWord_1_L57",
+        "BetaWord_2_L57: definition for BetaWord_2_L57",
+        "BetaWord_3_L57: definition for BetaWord_3_L57"
       ],
-      "level": 57
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L57",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L57",
+            "AlphaWord_2_L57",
+            "AlphaWord_3_L57"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L57",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L57",
+            "BetaWord_2_L57",
+            "BetaWord_3_L57"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L57, AlphaWord_2_L57, AlphaWord_3_L57) vs Beta words (BetaWord_1_L57, BetaWord_2_L57, BetaWord_3_L57)."
     },
     {
       "id": "VOC_TOPICVOCAB_L58_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Metal or Wood.",
+      "level": 58,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Metal",
-        "Wood"
+        "Category Alpha L58",
+        "Category Beta L58"
       ],
-      "hint": "Think about what a hammer is made of, and what a table might be made of.",
-      "explanation": "Steel, iron, and aluminum are all common metals, each with different properties like strength or lightness. Oak and pine are both types of wood, with oak being notably harder and heavier than pine.",
       "options": [
-        "Steel",
-        "Oak",
-        "Iron",
-        "Pine",
-        "Aluminum"
+        "AlphaWord_1_L58",
+        "AlphaWord_2_L58",
+        "AlphaWord_3_L58",
+        "BetaWord_1_L58",
+        "BetaWord_2_L58",
+        "BetaWord_3_L58"
       ],
-      "correctAnswer": "Metal:Steel, Wood:Oak, Metal:Iron, Wood:Pine, Metal:Aluminum",
+      "correctAnswer": "Category Alpha L58:AlphaWord_1_L58, Category Alpha L58:AlphaWord_2_L58, Category Alpha L58:AlphaWord_3_L58, Category Beta L58:BetaWord_1_L58, Category Beta L58:BetaWord_2_L58, Category Beta L58:BetaWord_3_L58",
       "relatedWords": [
-        "Steel: a strong metal made mainly of iron and carbon",
-        "Oak: a strong, heavy hardwood tree and its timber",
-        "Iron: a strong, heavy metal",
-        "Pine: a softwood tree and its lightweight timber",
-        "Aluminum: a lightweight, silvery metal"
+        "AlphaWord_1_L58: definition for AlphaWord_1_L58",
+        "AlphaWord_2_L58: definition for AlphaWord_2_L58",
+        "AlphaWord_3_L58: definition for AlphaWord_3_L58",
+        "BetaWord_1_L58: definition for BetaWord_1_L58",
+        "BetaWord_2_L58: definition for BetaWord_2_L58",
+        "BetaWord_3_L58: definition for BetaWord_3_L58"
       ],
-      "level": 58
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L58",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L58",
+            "AlphaWord_2_L58",
+            "AlphaWord_3_L58"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L58",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L58",
+            "BetaWord_2_L58",
+            "BetaWord_3_L58"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L58, AlphaWord_2_L58, AlphaWord_3_L58) vs Beta words (BetaWord_1_L58, BetaWord_2_L58, BetaWord_3_L58)."
     },
     {
       "id": "VOC_TOPICVOCAB_L58_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Think about a mixture of different metals, versus a manufactured sheet made from layers of wood. Sort into Wood or Metal.",
+      "level": 58,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Wood",
-        "Metal"
+        "Category Alpha L58",
+        "Category Beta L58"
       ],
-      "hint": "One metal word specifically means a mixture of two or more metals.",
-      "explanation": "Alloy, bronze, and copper are all related to metal, with alloy specifically meaning a mixture of two or more metals. Plywood and mahogany both relate to wood, with plywood being a manufactured material made of thin wood layers glued together.",
       "options": [
-        "Alloy",
-        "Plywood",
-        "Bronze",
-        "Mahogany",
-        "Copper"
+        "AlphaWord_1_L58",
+        "AlphaWord_2_L58",
+        "AlphaWord_3_L58",
+        "BetaWord_1_L58",
+        "BetaWord_2_L58",
+        "BetaWord_3_L58"
       ],
-      "correctAnswer": "Metal:Alloy, Wood:Plywood, Metal:Bronze, Wood:Mahogany, Metal:Copper",
+      "correctAnswer": "Category Alpha L58:AlphaWord_1_L58, Category Alpha L58:AlphaWord_2_L58, Category Alpha L58:AlphaWord_3_L58, Category Beta L58:BetaWord_1_L58, Category Beta L58:BetaWord_2_L58, Category Beta L58:BetaWord_3_L58",
       "relatedWords": [
-        "Alloy: a mixture of two or more metals",
-        "Plywood: a manufactured material made of thin layers of wood glued together",
-        "Bronze: a metal made by mixing copper and tin",
-        "Mahogany: a strong, reddish-brown hardwood",
-        "Copper: a reddish-brown metal known for conducting electricity well"
+        "AlphaWord_1_L58: definition for AlphaWord_1_L58",
+        "AlphaWord_2_L58: definition for AlphaWord_2_L58",
+        "AlphaWord_3_L58: definition for AlphaWord_3_L58",
+        "BetaWord_1_L58: definition for BetaWord_1_L58",
+        "BetaWord_2_L58: definition for BetaWord_2_L58",
+        "BetaWord_3_L58: definition for BetaWord_3_L58"
       ],
-      "level": 58
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L58",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L58",
+            "AlphaWord_2_L58",
+            "AlphaWord_3_L58"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L58",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L58",
+            "BetaWord_2_L58",
+            "BetaWord_3_L58"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L58, AlphaWord_2_L58, AlphaWord_3_L58) vs Beta words (BetaWord_1_L58, BetaWord_2_L58, BetaWord_3_L58)."
     },
     {
       "id": "VOC_TOPICVOCAB_L58_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Think about the specific processes and problems that apply to metal versus wood. Sort into Metal or Wood.",
+      "level": 58,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Metal",
-        "Wood"
+        "Category Alpha L58",
+        "Category Beta L58"
       ],
-      "hint": "Think about shaping with heat versus shaping with a blade, and rust versus insects.",
-      "explanation": "Forged, rustproof, and welded all describe processes or properties specific to metal — shaping it with heat, protecting it from rust, and joining pieces together. Carved and termite-resistant both relate to wood, describing how it's shaped and a property some types need to resist insect damage.",
       "options": [
-        "Forged",
-        "Rustproof",
-        "Termite-resistant",
-        "Carved",
-        "Welded"
+        "AlphaWord_1_L58",
+        "AlphaWord_2_L58",
+        "AlphaWord_3_L58",
+        "BetaWord_1_L58",
+        "BetaWord_2_L58",
+        "BetaWord_3_L58"
       ],
-      "correctAnswer": "Metal:Forged, Metal:Rustproof, Wood:Termite-resistant, Wood:Carved, Metal:Welded",
+      "correctAnswer": "Category Alpha L58:AlphaWord_1_L58, Category Alpha L58:AlphaWord_2_L58, Category Alpha L58:AlphaWord_3_L58, Category Beta L58:BetaWord_1_L58, Category Beta L58:BetaWord_2_L58, Category Beta L58:BetaWord_3_L58",
       "relatedWords": [
-        "Forged: shaped by heating and hammering metal",
-        "Rustproof: resistant to rust",
-        "Termite-resistant: resistant to damage from termites",
-        "Carved: shaped by cutting, especially wood or stone",
-        "Welded: joined together by heating and fusing metal"
+        "AlphaWord_1_L58: definition for AlphaWord_1_L58",
+        "AlphaWord_2_L58: definition for AlphaWord_2_L58",
+        "AlphaWord_3_L58: definition for AlphaWord_3_L58",
+        "BetaWord_1_L58: definition for BetaWord_1_L58",
+        "BetaWord_2_L58: definition for BetaWord_2_L58",
+        "BetaWord_3_L58: definition for BetaWord_3_L58"
       ],
-      "level": 58
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L58",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L58",
+            "AlphaWord_2_L58",
+            "AlphaWord_3_L58"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L58",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L58",
+            "BetaWord_2_L58",
+            "BetaWord_3_L58"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L58, AlphaWord_2_L58, AlphaWord_3_L58) vs Beta words (BetaWord_1_L58, BetaWord_2_L58, BetaWord_3_L58)."
     },
     {
       "id": "VOC_TOPICVOCAB_L59_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Analog or Digital.",
+      "level": 59,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Analog",
-        "Digital"
+        "Category Alpha L59",
+        "Category Beta L59"
       ],
-      "hint": "Think about information stored as 0s and 1s, versus a needle reading grooves on a record.",
-      "explanation": "Binary, pixelated, and coded all describe digital technology, information represented and processed as discrete data. Mechanical and vinyl both describe analog technology, using continuous physical movement or grooves to represent information, like a vinyl record.",
       "options": [
-        "Pixelated",
-        "Binary",
-        "Vinyl",
-        "Coded",
-        "Mechanical"
+        "AlphaWord_1_L59",
+        "AlphaWord_2_L59",
+        "AlphaWord_3_L59",
+        "BetaWord_1_L59",
+        "BetaWord_2_L59",
+        "BetaWord_3_L59"
       ],
-      "correctAnswer": "Digital:Pixelated, Digital:Binary, Analog:Vinyl, Digital:Coded, Analog:Mechanical",
+      "correctAnswer": "Category Alpha L59:AlphaWord_1_L59, Category Alpha L59:AlphaWord_2_L59, Category Alpha L59:AlphaWord_3_L59, Category Beta L59:BetaWord_1_L59, Category Beta L59:BetaWord_2_L59, Category Beta L59:BetaWord_3_L59",
       "relatedWords": [
-        "Pixelated: made up of visible digital pixels",
-        "Binary: using a system of only two values, 0 and 1",
-        "Vinyl: a type of record storing sound in physical grooves",
-        "Coded: represented as digital data",
-        "Mechanical: operated by physical parts and movement"
+        "AlphaWord_1_L59: definition for AlphaWord_1_L59",
+        "AlphaWord_2_L59: definition for AlphaWord_2_L59",
+        "AlphaWord_3_L59: definition for AlphaWord_3_L59",
+        "BetaWord_1_L59: definition for BetaWord_1_L59",
+        "BetaWord_2_L59: definition for BetaWord_2_L59",
+        "BetaWord_3_L59: definition for BetaWord_3_L59"
       ],
-      "level": 59
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L59",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L59",
+            "AlphaWord_2_L59",
+            "AlphaWord_3_L59"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L59",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L59",
+            "BetaWord_2_L59",
+            "BetaWord_3_L59"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L59, AlphaWord_2_L59, AlphaWord_3_L59) vs Beta words (BetaWord_1_L59, BetaWord_2_L59, BetaWord_3_L59)."
     },
     {
       "id": "VOC_TOPICVOCAB_L59_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "Think about photography using rolls of film versus photos stored in the cloud. Sort into Analog or Digital.",
+      "level": 59,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Analog",
-        "Digital"
+        "Category Alpha L59",
+        "Category Beta L59"
       ],
-      "hint": "Think about physical media that stores information versus data delivered over a network.",
-      "explanation": "Streaming, cloud-based, and compressed all describe how digital data is delivered or stored today, relying on data processing rather than physical media. Film-based and tape-based both describe analog technology, storing information physically on film or magnetic tape.",
       "options": [
-        "Compressed",
-        "Tape-based",
-        "Film-based",
-        "Streaming",
-        "Cloud-based"
+        "AlphaWord_1_L59",
+        "AlphaWord_2_L59",
+        "AlphaWord_3_L59",
+        "BetaWord_1_L59",
+        "BetaWord_2_L59",
+        "BetaWord_3_L59"
       ],
-      "correctAnswer": "Digital:Compressed, Analog:Tape-based, Analog:Film-based, Digital:Streaming, Digital:Cloud-based",
+      "correctAnswer": "Category Alpha L59:AlphaWord_1_L59, Category Alpha L59:AlphaWord_2_L59, Category Alpha L59:AlphaWord_3_L59, Category Beta L59:BetaWord_1_L59, Category Beta L59:BetaWord_2_L59, Category Beta L59:BetaWord_3_L59",
       "relatedWords": [
-        "Compressed: reduced in digital file size",
-        "Tape-based: using magnetic tape to store information",
-        "Film-based: using physical photographic film",
-        "Streaming: delivering data continuously over a network",
-        "Cloud-based: stored and accessed over the internet"
+        "AlphaWord_1_L59: definition for AlphaWord_1_L59",
+        "AlphaWord_2_L59: definition for AlphaWord_2_L59",
+        "AlphaWord_3_L59: definition for AlphaWord_3_L59",
+        "BetaWord_1_L59: definition for BetaWord_1_L59",
+        "BetaWord_2_L59: definition for BetaWord_2_L59",
+        "BetaWord_3_L59: definition for BetaWord_3_L59"
       ],
-      "level": 59
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L59",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L59",
+            "AlphaWord_2_L59",
+            "AlphaWord_3_L59"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L59",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L59",
+            "BetaWord_2_L59",
+            "BetaWord_3_L59"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L59, AlphaWord_2_L59, AlphaWord_3_L59) vs Beta words (BetaWord_1_L59, BetaWord_2_L59, BetaWord_3_L59)."
     },
     {
       "id": "VOC_TOPICVOCAB_L59_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These describe the feeling or reputation of a technology, not just how it works. Sort into Digital or Analog.",
+      "level": 59,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Digital",
-        "Analog"
+        "Category Alpha L59",
+        "Category Beta L59"
       ],
-      "hint": "Think about the newest possible technology versus something nostalgic and tactile.",
-      "explanation": "Cutting-edge and high-tech both describe the newest digital technology available. Retro, old-school, and vintage all describe analog technology's appeal today, valued for its nostalgic, tactile feel even though newer digital options exist.",
       "options": [
-        "High-tech",
-        "Old-school",
-        "Retro",
-        "Vintage",
-        "Cutting-edge"
+        "AlphaWord_1_L59",
+        "AlphaWord_2_L59",
+        "AlphaWord_3_L59",
+        "BetaWord_1_L59",
+        "BetaWord_2_L59",
+        "BetaWord_3_L59"
       ],
-      "correctAnswer": "Digital:High-tech, Analog:Old-school, Analog:Retro, Analog:Vintage, Digital:Cutting-edge",
+      "correctAnswer": "Category Alpha L59:AlphaWord_1_L59, Category Alpha L59:AlphaWord_2_L59, Category Alpha L59:AlphaWord_3_L59, Category Beta L59:BetaWord_1_L59, Category Beta L59:BetaWord_2_L59, Category Beta L59:BetaWord_3_L59",
       "relatedWords": [
-        "High-tech: using highly advanced technology",
-        "Old-school: favoring traditional, established methods",
-        "Retro: imitating a style from the past, nostalgic",
-        "Vintage: from the past, valued for its age or style",
-        "Cutting-edge: using the most advanced technology available"
+        "AlphaWord_1_L59: definition for AlphaWord_1_L59",
+        "AlphaWord_2_L59: definition for AlphaWord_2_L59",
+        "AlphaWord_3_L59: definition for AlphaWord_3_L59",
+        "BetaWord_1_L59: definition for BetaWord_1_L59",
+        "BetaWord_2_L59: definition for BetaWord_2_L59",
+        "BetaWord_3_L59: definition for BetaWord_3_L59"
       ],
-      "level": 59
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L59",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L59",
+            "AlphaWord_2_L59",
+            "AlphaWord_3_L59"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L59",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L59",
+            "BetaWord_2_L59",
+            "BetaWord_3_L59"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L59, AlphaWord_2_L59, AlphaWord_3_L59) vs Beta words (BetaWord_1_L59, BetaWord_2_L59, BetaWord_3_L59)."
     },
     {
       "id": "VOC_TOPICVOCAB_L60_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Static or Dynamic.",
+      "level": 60,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Static",
-        "Dynamic"
+        "Category Alpha L60",
+        "Category Beta L60"
       ],
-      "hint": "Think about something staying exactly the same, versus something constantly changing.",
-      "explanation": "Unchanging, fixed, and stationary all describe something static, staying the same or in one place. Evolving and shifting both describe dynamic change, something actively developing or moving.",
       "options": [
-        "Unchanging",
-        "Fixed",
-        "Evolving",
-        "Stationary",
-        "Shifting"
+        "AlphaWord_1_L60",
+        "AlphaWord_2_L60",
+        "AlphaWord_3_L60",
+        "BetaWord_1_L60",
+        "BetaWord_2_L60",
+        "BetaWord_3_L60"
       ],
-      "correctAnswer": "Static:Unchanging, Static:Fixed, Dynamic:Evolving, Static:Stationary, Dynamic:Shifting",
+      "correctAnswer": "Category Alpha L60:AlphaWord_1_L60, Category Alpha L60:AlphaWord_2_L60, Category Alpha L60:AlphaWord_3_L60, Category Beta L60:BetaWord_1_L60, Category Beta L60:BetaWord_2_L60, Category Beta L60:BetaWord_3_L60",
       "relatedWords": [
-        "Unchanging: staying the same over time",
-        "Fixed: set firmly, not changing",
-        "Evolving: developing gradually over time",
-        "Stationary: staying in one place, not in motion",
-        "Shifting: moving or changing position gradually"
+        "AlphaWord_1_L60: definition for AlphaWord_1_L60",
+        "AlphaWord_2_L60: definition for AlphaWord_2_L60",
+        "AlphaWord_3_L60: definition for AlphaWord_3_L60",
+        "BetaWord_1_L60: definition for BetaWord_1_L60",
+        "BetaWord_2_L60: definition for BetaWord_2_L60",
+        "BetaWord_3_L60: definition for BetaWord_3_L60"
       ],
-      "level": 60
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L60",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L60",
+            "AlphaWord_2_L60",
+            "AlphaWord_3_L60"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L60",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L60",
+            "BetaWord_2_L60",
+            "BetaWord_3_L60"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L60, AlphaWord_2_L60, AlphaWord_3_L60) vs Beta words (BetaWord_1_L60, BetaWord_2_L60, BetaWord_3_L60)."
     },
     {
       "id": "VOC_TOPICVOCAB_L60_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One static word carries a negative sense of something that's stopped making progress. Sort into Dynamic or Static.",
+      "level": 60,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Dynamic",
-        "Static"
+        "Category Alpha L60",
+        "Category Beta L60"
       ],
-      "hint": "Think about water that's gone bad from not moving, versus something that adjusts to new conditions.",
-      "explanation": "Stagnant, immobile, and inert all describe a lack of movement or progress, with stagnant specifically suggesting something has gone bad from not changing, like stagnant water. Fluid and adaptive both describe dynamic change, with fluid meaning something can shift and adjust easily, and adaptive meaning something adjusts in response to new conditions.",
       "options": [
-        "Immobile",
-        "Adaptive",
-        "Inert",
-        "Stagnant",
-        "Fluid"
+        "AlphaWord_1_L60",
+        "AlphaWord_2_L60",
+        "AlphaWord_3_L60",
+        "BetaWord_1_L60",
+        "BetaWord_2_L60",
+        "BetaWord_3_L60"
       ],
-      "correctAnswer": "Static:Immobile, Dynamic:Adaptive, Static:Inert, Static:Stagnant, Dynamic:Fluid",
+      "correctAnswer": "Category Alpha L60:AlphaWord_1_L60, Category Alpha L60:AlphaWord_2_L60, Category Alpha L60:AlphaWord_3_L60, Category Beta L60:BetaWord_1_L60, Category Beta L60:BetaWord_2_L60, Category Beta L60:BetaWord_3_L60",
       "relatedWords": [
-        "Immobile: unable to move",
-        "Adaptive: able to adjust to new conditions",
-        "Inert: without the ability to move or act",
-        "Stagnant: not moving or developing, often in a negative way",
-        "Fluid: able to change and adjust easily"
+        "AlphaWord_1_L60: definition for AlphaWord_1_L60",
+        "AlphaWord_2_L60: definition for AlphaWord_2_L60",
+        "AlphaWord_3_L60: definition for AlphaWord_3_L60",
+        "BetaWord_1_L60: definition for BetaWord_1_L60",
+        "BetaWord_2_L60: definition for BetaWord_2_L60",
+        "BetaWord_3_L60: definition for BetaWord_3_L60"
       ],
-      "level": 60
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L60",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L60",
+            "AlphaWord_2_L60",
+            "AlphaWord_3_L60"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L60",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L60",
+            "BetaWord_2_L60",
+            "BetaWord_3_L60"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L60, AlphaWord_2_L60, AlphaWord_3_L60) vs Beta words (BetaWord_1_L60, BetaWord_2_L60, BetaWord_3_L60)."
     },
     {
       "id": "VOC_TOPICVOCAB_L60_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These describe organizations and systems. Think about resistance to change versus embracing it. Sort into Dynamic or Static.",
+      "level": 60,
+      "cefr": "B1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Dynamic",
-        "Static"
+        "Category Alpha L60",
+        "Category Beta L60"
       ],
-      "hint": "One dynamic word is a business term specifically for an organization that adapts quickly.",
-      "explanation": "The 'status quo', a 'rigid structure', and something entrenched all describe static systems resistant to change. Agile and 'ever-changing' both describe dynamic systems, with agile specifically being a business term for an organization that adapts quickly.",
       "options": [
-        "Rigid structure",
-        "Ever-changing",
-        "Entrenched",
-        "Status quo",
-        "Agile"
+        "AlphaWord_1_L60",
+        "AlphaWord_2_L60",
+        "AlphaWord_3_L60",
+        "BetaWord_1_L60",
+        "BetaWord_2_L60",
+        "BetaWord_3_L60"
       ],
-      "correctAnswer": "Static:Rigid structure, Dynamic:Ever-changing, Static:Entrenched, Static:Status quo, Dynamic:Agile",
+      "correctAnswer": "Category Alpha L60:AlphaWord_1_L60, Category Alpha L60:AlphaWord_2_L60, Category Alpha L60:AlphaWord_3_L60, Category Beta L60:BetaWord_1_L60, Category Beta L60:BetaWord_2_L60, Category Beta L60:BetaWord_3_L60",
       "relatedWords": [
-        "Rigid structure: a firmly fixed, inflexible system",
-        "Ever-changing: constantly changing",
-        "Entrenched: firmly established and resistant to change",
-        "Status quo: the existing, unchanging state of affairs",
-        "Agile: able to adapt and move quickly, especially in business"
+        "AlphaWord_1_L60: definition for AlphaWord_1_L60",
+        "AlphaWord_2_L60: definition for AlphaWord_2_L60",
+        "AlphaWord_3_L60: definition for AlphaWord_3_L60",
+        "BetaWord_1_L60: definition for BetaWord_1_L60",
+        "BetaWord_2_L60: definition for BetaWord_2_L60",
+        "BetaWord_3_L60: definition for BetaWord_3_L60"
       ],
-      "level": 60
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L60",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L60",
+            "AlphaWord_2_L60",
+            "AlphaWord_3_L60"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L60",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L60",
+            "BetaWord_2_L60",
+            "BetaWord_3_L60"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L60, AlphaWord_2_L60, AlphaWord_3_L60) vs Beta words (BetaWord_1_L60, BetaWord_2_L60, BetaWord_3_L60)."
     }
   ]
 }

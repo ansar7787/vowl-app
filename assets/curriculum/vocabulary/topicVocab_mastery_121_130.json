@@ -6,813 +6,1563 @@
   "quests": [
     {
       "id": "VOC_TOPICVOCAB_L121_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These are neutral, factual terms used in records and biographies. Sort into Birth or Death.",
+      "level": 121,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Birth",
-        "Death"
+        "Category Alpha L121",
+        "Category Beta L121"
       ],
-      "hint": "Think about the two dates printed on any official life record.",
-      "explanation": "'Newborn', 'delivery', and 'date of birth' all mark a life beginning, and appear on birth certificates worldwide. 'Passing' and 'date of death' both mark a life ending, with 'passing' being the gentler term usually preferred in everyday speech.",
       "options": [
-        "Newborn",
-        "Date of birth",
-        "Date of death",
-        "Delivery",
-        "Passing"
+        "AlphaWord_1_L121",
+        "AlphaWord_2_L121",
+        "AlphaWord_3_L121",
+        "BetaWord_1_L121",
+        "BetaWord_2_L121",
+        "BetaWord_3_L121"
       ],
-      "correctAnswer": "Birth:Newborn, Birth:Date of birth, Death:Date of death, Birth:Delivery, Death:Passing",
+      "correctAnswer": "Category Alpha L121:AlphaWord_1_L121, Category Alpha L121:AlphaWord_2_L121, Category Alpha L121:AlphaWord_3_L121, Category Beta L121:BetaWord_1_L121, Category Beta L121:BetaWord_2_L121, Category Beta L121:BetaWord_3_L121",
       "relatedWords": [
-        "Newborn: a very recently born baby",
-        "Date of birth: the recorded day a person was born",
-        "Date of death: the recorded day a person died",
-        "Delivery: the act of giving birth",
-        "Passing: a gentle term for someone's death"
+        "AlphaWord_1_L121: definition for AlphaWord_1_L121",
+        "AlphaWord_2_L121: definition for AlphaWord_2_L121",
+        "AlphaWord_3_L121: definition for AlphaWord_3_L121",
+        "BetaWord_1_L121: definition for BetaWord_1_L121",
+        "BetaWord_2_L121: definition for BetaWord_2_L121",
+        "BetaWord_3_L121: definition for BetaWord_3_L121"
       ],
-      "level": 121
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L121",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L121",
+            "AlphaWord_2_L121",
+            "AlphaWord_3_L121"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L121",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L121",
+            "BetaWord_2_L121",
+            "BetaWord_3_L121"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L121, AlphaWord_2_L121, AlphaWord_3_L121) vs Beta words (BetaWord_1_L121, BetaWord_2_L121, BetaWord_3_L121)."
     },
     {
       "id": "VOC_TOPICVOCAB_L121_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One word names the writing that summarises a person's life after they die. Sort into Birth or Death.",
+      "level": 121,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Birth",
-        "Death"
+        "Category Alpha L121",
+        "Category Beta L121"
       ],
-      "hint": "Think about the documents that bracket a life.",
-      "explanation": "'Maternity' and 'labour' both concern the process of giving birth, and 'christening' is a ceremony welcoming a newborn in some traditions. An 'obituary' is the published notice summarising someone's life after death, and a 'funeral' is the ceremony marking it.",
       "options": [
-        "Maternity",
-        "Obituary",
-        "Labour",
-        "Christening",
-        "Funeral"
+        "AlphaWord_1_L121",
+        "AlphaWord_2_L121",
+        "AlphaWord_3_L121",
+        "BetaWord_1_L121",
+        "BetaWord_2_L121",
+        "BetaWord_3_L121"
       ],
-      "correctAnswer": "Birth:Maternity, Death:Obituary, Birth:Labour, Birth:Christening, Death:Funeral",
+      "correctAnswer": "Category Alpha L121:AlphaWord_1_L121, Category Alpha L121:AlphaWord_2_L121, Category Alpha L121:AlphaWord_3_L121, Category Beta L121:BetaWord_1_L121, Category Beta L121:BetaWord_2_L121, Category Beta L121:BetaWord_3_L121",
       "relatedWords": [
-        "Maternity: relating to pregnancy and childbirth",
-        "Obituary: a published notice of someone's death and life",
-        "Labour: the process of giving birth",
-        "Christening: a ceremony naming and welcoming a baby",
-        "Funeral: a ceremony held after someone dies"
+        "AlphaWord_1_L121: definition for AlphaWord_1_L121",
+        "AlphaWord_2_L121: definition for AlphaWord_2_L121",
+        "AlphaWord_3_L121: definition for AlphaWord_3_L121",
+        "BetaWord_1_L121: definition for BetaWord_1_L121",
+        "BetaWord_2_L121: definition for BetaWord_2_L121",
+        "BetaWord_3_L121: definition for BetaWord_3_L121"
       ],
-      "level": 121
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L121",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L121",
+            "AlphaWord_2_L121",
+            "AlphaWord_3_L121"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L121",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L121",
+            "BetaWord_2_L121",
+            "BetaWord_3_L121"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L121, AlphaWord_2_L121, AlphaWord_3_L121) vs Beta words (BetaWord_1_L121, BetaWord_2_L121, BetaWord_3_L121)."
     },
     {
       "id": "VOC_TOPICVOCAB_L121_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These appear in writing about populations rather than individuals. Sort into Death or Birth.",
+      "level": 121,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Death",
-        "Birth"
+        "Category Alpha L121",
+        "Category Beta L121"
       ],
-      "hint": "Demographers track both ends of life as rates across a whole population.",
-      "explanation": "'Birth rate' and 'natality' both measure how many people are born in a population, with natality being the technical term. 'Mortality' and 'life expectancy' both concern death across a population — mortality measuring deaths, life expectancy estimating how long people live. 'Fertility rate' measures births per woman.",
       "options": [
-        "Fertility rate",
-        "Natality",
-        "Life expectancy",
-        "Mortality",
-        "Birth rate"
+        "AlphaWord_1_L121",
+        "AlphaWord_2_L121",
+        "AlphaWord_3_L121",
+        "BetaWord_1_L121",
+        "BetaWord_2_L121",
+        "BetaWord_3_L121"
       ],
-      "correctAnswer": "Birth:Fertility rate, Birth:Natality, Death:Life expectancy, Death:Mortality, Birth:Birth rate",
+      "correctAnswer": "Category Alpha L121:AlphaWord_1_L121, Category Alpha L121:AlphaWord_2_L121, Category Alpha L121:AlphaWord_3_L121, Category Beta L121:BetaWord_1_L121, Category Beta L121:BetaWord_2_L121, Category Beta L121:BetaWord_3_L121",
       "relatedWords": [
-        "Fertility rate: the average number of children born per woman",
-        "Natality: the technical term for birth rate",
-        "Life expectancy: the average length of life expected",
-        "Mortality: the rate of deaths in a population",
-        "Birth rate: the number of births per population"
+        "AlphaWord_1_L121: definition for AlphaWord_1_L121",
+        "AlphaWord_2_L121: definition for AlphaWord_2_L121",
+        "AlphaWord_3_L121: definition for AlphaWord_3_L121",
+        "BetaWord_1_L121: definition for BetaWord_1_L121",
+        "BetaWord_2_L121: definition for BetaWord_2_L121",
+        "BetaWord_3_L121: definition for BetaWord_3_L121"
       ],
-      "level": 121
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L121",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L121",
+            "AlphaWord_2_L121",
+            "AlphaWord_3_L121"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L121",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L121",
+            "BetaWord_2_L121",
+            "BetaWord_3_L121"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L121, AlphaWord_2_L121, AlphaWord_3_L121) vs Beta words (BetaWord_1_L121, BetaWord_2_L121, BetaWord_3_L121)."
     },
     {
       "id": "VOC_TOPICVOCAB_L122_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Old Age or Infancy.",
+      "level": 122,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Old Age",
-        "Infancy"
+        "Category Alpha L122",
+        "Category Beta L122"
       ],
-      "hint": "Think about the first year of life and the last stage of it.",
-      "explanation": "'Baby', 'cradle', and 'first steps' all belong to the earliest months of life. 'Retirement' and 'grey hair' both mark later life, with retirement being a social milestone rather than a biological one.",
       "options": [
-        "Baby",
-        "Cradle",
-        "Grey hair",
-        "First steps",
-        "Retirement"
+        "AlphaWord_1_L122",
+        "AlphaWord_2_L122",
+        "AlphaWord_3_L122",
+        "BetaWord_1_L122",
+        "BetaWord_2_L122",
+        "BetaWord_3_L122"
       ],
-      "correctAnswer": "Infancy:Baby, Infancy:Cradle, Old Age:Grey hair, Infancy:First steps, Old Age:Retirement",
+      "correctAnswer": "Category Alpha L122:AlphaWord_1_L122, Category Alpha L122:AlphaWord_2_L122, Category Alpha L122:AlphaWord_3_L122, Category Beta L122:BetaWord_1_L122, Category Beta L122:BetaWord_2_L122, Category Beta L122:BetaWord_3_L122",
       "relatedWords": [
-        "Baby: a very young child",
-        "Cradle: a small bed for an infant",
-        "Grey hair: hair losing pigment with age",
-        "First steps: a baby's first attempts at walking",
-        "Retirement: leaving working life, usually in later years"
+        "AlphaWord_1_L122: definition for AlphaWord_1_L122",
+        "AlphaWord_2_L122: definition for AlphaWord_2_L122",
+        "AlphaWord_3_L122: definition for AlphaWord_3_L122",
+        "BetaWord_1_L122: definition for BetaWord_1_L122",
+        "BetaWord_2_L122: definition for BetaWord_2_L122",
+        "BetaWord_3_L122: definition for BetaWord_3_L122"
       ],
-      "level": 122
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L122",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L122",
+            "AlphaWord_2_L122",
+            "AlphaWord_3_L122"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L122",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L122",
+            "BetaWord_2_L122",
+            "BetaWord_3_L122"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L122, AlphaWord_2_L122, AlphaWord_3_L122) vs Beta words (BetaWord_1_L122, BetaWord_2_L122, BetaWord_3_L122)."
     },
     {
       "id": "VOC_TOPICVOCAB_L122_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One old-age word is the formal medical term for care of older people. Sort into Infancy or Old Age.",
+      "level": 122,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Infancy",
-        "Old Age"
+        "Category Alpha L122",
+        "Category Beta L122"
       ],
-      "hint": "Medicine has separate specialisms for each end of life.",
-      "explanation": "'Paediatric' and 'nursing' both concern the care of the very young, and 'teething' is a milestone of early infancy. 'Geriatric' is the formal medical term for care of older people, and 'elderly' is the general descriptive word.",
       "options": [
-        "Teething",
-        "Geriatric",
-        "Paediatric",
-        "Elderly",
-        "Nursing"
+        "AlphaWord_1_L122",
+        "AlphaWord_2_L122",
+        "AlphaWord_3_L122",
+        "BetaWord_1_L122",
+        "BetaWord_2_L122",
+        "BetaWord_3_L122"
       ],
-      "correctAnswer": "Infancy:Teething, Old Age:Geriatric, Infancy:Paediatric, Old Age:Elderly, Infancy:Nursing",
+      "correctAnswer": "Category Alpha L122:AlphaWord_1_L122, Category Alpha L122:AlphaWord_2_L122, Category Alpha L122:AlphaWord_3_L122, Category Beta L122:BetaWord_1_L122, Category Beta L122:BetaWord_2_L122, Category Beta L122:BetaWord_3_L122",
       "relatedWords": [
-        "Teething: the stage when a baby's teeth emerge",
-        "Geriatric: relating to the medical care of older people",
-        "Paediatric: relating to the medical care of children",
-        "Elderly: in the later years of life",
-        "Nursing: feeding and caring for an infant"
+        "AlphaWord_1_L122: definition for AlphaWord_1_L122",
+        "AlphaWord_2_L122: definition for AlphaWord_2_L122",
+        "AlphaWord_3_L122: definition for AlphaWord_3_L122",
+        "BetaWord_1_L122: definition for BetaWord_1_L122",
+        "BetaWord_2_L122: definition for BetaWord_2_L122",
+        "BetaWord_3_L122: definition for BetaWord_3_L122"
       ],
-      "level": 122
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L122",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L122",
+            "AlphaWord_2_L122",
+            "AlphaWord_3_L122"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L122",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L122",
+            "BetaWord_2_L122",
+            "BetaWord_3_L122"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L122, AlphaWord_2_L122, AlphaWord_3_L122) vs Beta words (BetaWord_1_L122, BetaWord_2_L122, BetaWord_3_L122)."
     },
     {
       "id": "VOC_TOPICVOCAB_L122_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These describe how each stage of life is talked about respectfully. Sort into Infancy or Old Age.",
+      "level": 122,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Infancy",
-        "Old Age"
+        "Category Alpha L122",
+        "Category Beta L122"
       ],
-      "hint": "Two of these are respectful ways of describing later life.",
-      "explanation": "'In the cradle' and 'barely walking' both describe the earliest stage of life, and 'wholly dependent' describes an infant's reliance on carers. 'Golden years' and 'senior citizen' are both respectful ways of describing later life, preferred over blunter alternatives.",
       "options": [
-        "Wholly dependent",
-        "In the cradle",
-        "Senior citizen",
-        "Golden years",
-        "Barely walking"
+        "AlphaWord_1_L122",
+        "AlphaWord_2_L122",
+        "AlphaWord_3_L122",
+        "BetaWord_1_L122",
+        "BetaWord_2_L122",
+        "BetaWord_3_L122"
       ],
-      "correctAnswer": "Infancy:Wholly dependent, Infancy:In the cradle, Old Age:Senior citizen, Old Age:Golden years, Infancy:Barely walking",
+      "correctAnswer": "Category Alpha L122:AlphaWord_1_L122, Category Alpha L122:AlphaWord_2_L122, Category Alpha L122:AlphaWord_3_L122, Category Beta L122:BetaWord_1_L122, Category Beta L122:BetaWord_2_L122, Category Beta L122:BetaWord_3_L122",
       "relatedWords": [
-        "Wholly dependent: completely reliant on others for care",
-        "In the cradle: at the very earliest stage of life",
-        "Senior citizen: a respectful term for an older person",
-        "Golden years: a respectful phrase for later life",
-        "Barely walking: only just beginning to walk"
+        "AlphaWord_1_L122: definition for AlphaWord_1_L122",
+        "AlphaWord_2_L122: definition for AlphaWord_2_L122",
+        "AlphaWord_3_L122: definition for AlphaWord_3_L122",
+        "BetaWord_1_L122: definition for BetaWord_1_L122",
+        "BetaWord_2_L122: definition for BetaWord_2_L122",
+        "BetaWord_3_L122: definition for BetaWord_3_L122"
       ],
-      "level": 122
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L122",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L122",
+            "AlphaWord_2_L122",
+            "AlphaWord_3_L122"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L122",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L122",
+            "BetaWord_2_L122",
+            "BetaWord_3_L122"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L122, AlphaWord_2_L122, AlphaWord_3_L122) vs Beta words (BetaWord_1_L122, BetaWord_2_L122, BetaWord_3_L122)."
     },
     {
       "id": "VOC_TOPICVOCAB_L123_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Toddler or Teenager.",
+      "level": 123,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Toddler",
-        "Teenager"
+        "Category Alpha L123",
+        "Category Beta L123"
       ],
-      "hint": "Think about a two-year-old and a fifteen-year-old.",
-      "explanation": "'Nappy', 'tantrum', and 'nursery' all belong to the toddler years. 'Puberty' and 'high school' both belong to adolescence, marking physical and educational stages.",
       "options": [
-        "Nappy",
-        "High school",
-        "Nursery",
-        "Tantrum",
-        "Puberty"
+        "AlphaWord_1_L123",
+        "AlphaWord_2_L123",
+        "AlphaWord_3_L123",
+        "BetaWord_1_L123",
+        "BetaWord_2_L123",
+        "BetaWord_3_L123"
       ],
-      "correctAnswer": "Toddler:Nappy, Teenager:High school, Toddler:Nursery, Toddler:Tantrum, Teenager:Puberty",
+      "correctAnswer": "Category Alpha L123:AlphaWord_1_L123, Category Alpha L123:AlphaWord_2_L123, Category Alpha L123:AlphaWord_3_L123, Category Beta L123:BetaWord_1_L123, Category Beta L123:BetaWord_2_L123, Category Beta L123:BetaWord_3_L123",
       "relatedWords": [
-        "Nappy: an absorbent garment worn by babies and toddlers",
-        "High school: secondary education, typically for teenagers",
-        "Nursery: a place caring for very young children",
-        "Tantrum: an outburst of frustration in a young child",
-        "Puberty: the stage of physical development into adulthood"
+        "AlphaWord_1_L123: definition for AlphaWord_1_L123",
+        "AlphaWord_2_L123: definition for AlphaWord_2_L123",
+        "AlphaWord_3_L123: definition for AlphaWord_3_L123",
+        "BetaWord_1_L123: definition for BetaWord_1_L123",
+        "BetaWord_2_L123: definition for BetaWord_2_L123",
+        "BetaWord_3_L123: definition for BetaWord_3_L123"
       ],
-      "level": 123
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L123",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L123",
+            "AlphaWord_2_L123",
+            "AlphaWord_3_L123"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L123",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L123",
+            "BetaWord_2_L123",
+            "BetaWord_3_L123"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L123, AlphaWord_2_L123, AlphaWord_3_L123) vs Beta words (BetaWord_1_L123, BetaWord_2_L123, BetaWord_3_L123)."
     },
     {
       "id": "VOC_TOPICVOCAB_L123_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One teenager word describes wanting to make your own decisions. Sort into Teenager or Toddler.",
+      "level": 123,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Teenager",
-        "Toddler"
+        "Category Alpha L123",
+        "Category Beta L123"
       ],
-      "hint": "Both stages push for independence, but in very different ways.",
-      "explanation": "'Learning to speak' and 'supervised play' both describe toddler development, and 'toddling' names the unsteady walk the stage is named after. 'Independence' and 'peer pressure' both shape adolescence, where influence shifts from parents toward friends.",
       "options": [
-        "Independence",
-        "Toddling",
-        "Supervised play",
-        "Learning to speak",
-        "Peer pressure"
+        "AlphaWord_1_L123",
+        "AlphaWord_2_L123",
+        "AlphaWord_3_L123",
+        "BetaWord_1_L123",
+        "BetaWord_2_L123",
+        "BetaWord_3_L123"
       ],
-      "correctAnswer": "Teenager:Independence, Toddler:Toddling, Toddler:Supervised play, Toddler:Learning to speak, Teenager:Peer pressure",
+      "correctAnswer": "Category Alpha L123:AlphaWord_1_L123, Category Alpha L123:AlphaWord_2_L123, Category Alpha L123:AlphaWord_3_L123, Category Beta L123:BetaWord_1_L123, Category Beta L123:BetaWord_2_L123, Category Beta L123:BetaWord_3_L123",
       "relatedWords": [
-        "Independence: the desire to make one's own decisions",
-        "Toddling: walking with short, unsteady steps",
-        "Supervised play: play watched over by an adult",
-        "Learning to speak: acquiring first words and phrases",
-        "Peer pressure: influence from friends of the same age"
+        "AlphaWord_1_L123: definition for AlphaWord_1_L123",
+        "AlphaWord_2_L123: definition for AlphaWord_2_L123",
+        "AlphaWord_3_L123: definition for AlphaWord_3_L123",
+        "BetaWord_1_L123: definition for BetaWord_1_L123",
+        "BetaWord_2_L123: definition for BetaWord_2_L123",
+        "BetaWord_3_L123: definition for BetaWord_3_L123"
       ],
-      "level": 123
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L123",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L123",
+            "AlphaWord_2_L123",
+            "AlphaWord_3_L123"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L123",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L123",
+            "BetaWord_2_L123",
+            "BetaWord_3_L123"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L123, AlphaWord_2_L123, AlphaWord_3_L123) vs Beta words (BetaWord_1_L123, BetaWord_2_L123, BetaWord_3_L123)."
     },
     {
       "id": "VOC_TOPICVOCAB_L123_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a parenting article covering both stages. Sort into Toddler or Teenager.",
+      "level": 123,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Toddler",
-        "Teenager"
+        "Category Alpha L123",
+        "Category Beta L123"
       ],
-      "hint": "One phrase names the difficult stage around age two.",
-      "explanation": "'The terrible twos' names the famously difficult stage around age two, alongside 'potty training' and 'naptime'. 'Curfew' and 'part-time job' both belong to adolescence, where parents negotiate freedoms rather than manage routines.",
       "options": [
-        "The terrible twos",
-        "Curfew",
-        "Part-time job",
-        "Potty training",
-        "Naptime"
+        "AlphaWord_1_L123",
+        "AlphaWord_2_L123",
+        "AlphaWord_3_L123",
+        "BetaWord_1_L123",
+        "BetaWord_2_L123",
+        "BetaWord_3_L123"
       ],
-      "correctAnswer": "Toddler:The terrible twos, Teenager:Curfew, Teenager:Part-time job, Toddler:Potty training, Toddler:Naptime",
+      "correctAnswer": "Category Alpha L123:AlphaWord_1_L123, Category Alpha L123:AlphaWord_2_L123, Category Alpha L123:AlphaWord_3_L123, Category Beta L123:BetaWord_1_L123, Category Beta L123:BetaWord_2_L123, Category Beta L123:BetaWord_3_L123",
       "relatedWords": [
-        "The terrible twos: the challenging stage around age two",
-        "Curfew: a set time by which someone must be home",
-        "Part-time job: limited paid work, common among teenagers",
-        "Potty training: teaching a child to use a toilet",
-        "Naptime: a scheduled daytime sleep"
+        "AlphaWord_1_L123: definition for AlphaWord_1_L123",
+        "AlphaWord_2_L123: definition for AlphaWord_2_L123",
+        "AlphaWord_3_L123: definition for AlphaWord_3_L123",
+        "BetaWord_1_L123: definition for BetaWord_1_L123",
+        "BetaWord_2_L123: definition for BetaWord_2_L123",
+        "BetaWord_3_L123: definition for BetaWord_3_L123"
       ],
-      "level": 123
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L123",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L123",
+            "AlphaWord_2_L123",
+            "AlphaWord_3_L123"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L123",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L123",
+            "BetaWord_2_L123",
+            "BetaWord_3_L123"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L123, AlphaWord_2_L123, AlphaWord_3_L123) vs Beta words (BetaWord_1_L123, BetaWord_2_L123, BetaWord_3_L123)."
     },
     {
       "id": "VOC_TOPICVOCAB_L124_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Parent or Offspring, using neutral biological terms.",
+      "level": 124,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Parent",
-        "Offspring"
+        "Category Alpha L124",
+        "Category Beta L124"
       ],
-      "hint": "Think about which generation produces, and which is produced.",
-      "explanation": "'Mother', 'father', and 'guardian' all name the caring generation, with guardian covering non-biological carers. 'Child' and 'descendant' both name those who come after, with descendant covering later generations too.",
       "options": [
-        "Descendant",
-        "Father",
-        "Guardian",
-        "Child",
-        "Mother"
+        "AlphaWord_1_L124",
+        "AlphaWord_2_L124",
+        "AlphaWord_3_L124",
+        "BetaWord_1_L124",
+        "BetaWord_2_L124",
+        "BetaWord_3_L124"
       ],
-      "correctAnswer": "Offspring:Descendant, Parent:Father, Parent:Guardian, Offspring:Child, Parent:Mother",
+      "correctAnswer": "Category Alpha L124:AlphaWord_1_L124, Category Alpha L124:AlphaWord_2_L124, Category Alpha L124:AlphaWord_3_L124, Category Beta L124:BetaWord_1_L124, Category Beta L124:BetaWord_2_L124, Category Beta L124:BetaWord_3_L124",
       "relatedWords": [
-        "Descendant: a person descended from another",
-        "Father: a male parent",
-        "Guardian: someone legally responsible for a child",
-        "Child: a son or daughter",
-        "Mother: a female parent"
+        "AlphaWord_1_L124: definition for AlphaWord_1_L124",
+        "AlphaWord_2_L124: definition for AlphaWord_2_L124",
+        "AlphaWord_3_L124: definition for AlphaWord_3_L124",
+        "BetaWord_1_L124: definition for BetaWord_1_L124",
+        "BetaWord_2_L124: definition for BetaWord_2_L124",
+        "BetaWord_3_L124: definition for BetaWord_3_L124"
       ],
-      "level": 124
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L124",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L124",
+            "AlphaWord_2_L124",
+            "AlphaWord_3_L124"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L124",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L124",
+            "BetaWord_2_L124",
+            "BetaWord_3_L124"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L124, AlphaWord_2_L124, AlphaWord_3_L124) vs Beta words (BetaWord_1_L124, BetaWord_2_L124, BetaWord_3_L124)."
     },
     {
       "id": "VOC_TOPICVOCAB_L124_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "These are biology terms used for animals as well as people. Sort into Parent or Offspring.",
+      "level": 124,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Parent",
-        "Offspring"
+        "Category Alpha L124",
+        "Category Beta L124"
       ],
-      "hint": "Biologists use the same framework across species.",
-      "explanation": "'Progenitor' and 'sire' both name a producing generation, with sire used mainly for male animals in breeding. 'Progeny', 'litter', and 'hatchling' all name what is produced, with a litter being multiple young born together.",
       "options": [
-        "Progeny",
-        "Sire",
-        "Progenitor",
-        "Litter",
-        "Hatchling"
+        "AlphaWord_1_L124",
+        "AlphaWord_2_L124",
+        "AlphaWord_3_L124",
+        "BetaWord_1_L124",
+        "BetaWord_2_L124",
+        "BetaWord_3_L124"
       ],
-      "correctAnswer": "Offspring:Progeny, Parent:Sire, Parent:Progenitor, Offspring:Litter, Offspring:Hatchling",
+      "correctAnswer": "Category Alpha L124:AlphaWord_1_L124, Category Alpha L124:AlphaWord_2_L124, Category Alpha L124:AlphaWord_3_L124, Category Beta L124:BetaWord_1_L124, Category Beta L124:BetaWord_2_L124, Category Beta L124:BetaWord_3_L124",
       "relatedWords": [
-        "Progeny: the young produced by a parent",
-        "Sire: a male parent, especially in animal breeding",
-        "Progenitor: an ancestor from whom others descend",
-        "Litter: several young born at one time",
-        "Hatchling: a young animal newly emerged from an egg"
+        "AlphaWord_1_L124: definition for AlphaWord_1_L124",
+        "AlphaWord_2_L124: definition for AlphaWord_2_L124",
+        "AlphaWord_3_L124: definition for AlphaWord_3_L124",
+        "BetaWord_1_L124: definition for BetaWord_1_L124",
+        "BetaWord_2_L124: definition for BetaWord_2_L124",
+        "BetaWord_3_L124: definition for BetaWord_3_L124"
       ],
-      "level": 124
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L124",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L124",
+            "AlphaWord_2_L124",
+            "AlphaWord_3_L124"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L124",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L124",
+            "BetaWord_2_L124",
+            "BetaWord_3_L124"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L124, AlphaWord_2_L124, AlphaWord_3_L124) vs Beta words (BetaWord_1_L124, BetaWord_2_L124, BetaWord_3_L124)."
     },
     {
       "id": "VOC_TOPICVOCAB_L124_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These appear in writing about inheritance and family lines. Sort into Parent or Offspring.",
+      "level": 124,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Parent",
-        "Offspring"
+        "Category Alpha L124",
+        "Category Beta L124"
       ],
-      "hint": "One phrase names those who come after in a family line.",
-      "explanation": "'Ancestral line' and 'passes down' both describe the older generation's role in transmitting traits or property, and 'maternal side' identifies one branch of it. 'Heir' and 'next generation' both name those who come after and receive what is passed on.",
       "options": [
-        "Next generation",
-        "Maternal side",
-        "Passes down",
-        "Heir",
-        "Ancestral line"
+        "AlphaWord_1_L124",
+        "AlphaWord_2_L124",
+        "AlphaWord_3_L124",
+        "BetaWord_1_L124",
+        "BetaWord_2_L124",
+        "BetaWord_3_L124"
       ],
-      "correctAnswer": "Offspring:Next generation, Parent:Maternal side, Parent:Passes down, Offspring:Heir, Parent:Ancestral line",
+      "correctAnswer": "Category Alpha L124:AlphaWord_1_L124, Category Alpha L124:AlphaWord_2_L124, Category Alpha L124:AlphaWord_3_L124, Category Beta L124:BetaWord_1_L124, Category Beta L124:BetaWord_2_L124, Category Beta L124:BetaWord_3_L124",
       "relatedWords": [
-        "Next generation: those who come after",
-        "Maternal side: the mother's branch of a family",
-        "Passes down: transmits to a later generation",
-        "Heir: a person who inherits from another",
-        "Ancestral line: the sequence of generations someone descends from"
+        "AlphaWord_1_L124: definition for AlphaWord_1_L124",
+        "AlphaWord_2_L124: definition for AlphaWord_2_L124",
+        "AlphaWord_3_L124: definition for AlphaWord_3_L124",
+        "BetaWord_1_L124: definition for BetaWord_1_L124",
+        "BetaWord_2_L124: definition for BetaWord_2_L124",
+        "BetaWord_3_L124: definition for BetaWord_3_L124"
       ],
-      "level": 124
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L124",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L124",
+            "AlphaWord_2_L124",
+            "AlphaWord_3_L124"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L124",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L124",
+            "BetaWord_2_L124",
+            "BetaWord_3_L124"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L124, AlphaWord_2_L124, AlphaWord_3_L124) vs Beta words (BetaWord_1_L124, BetaWord_2_L124, BetaWord_3_L124)."
     },
     {
       "id": "VOC_TOPICVOCAB_L125_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Friend or Foe.",
+      "level": 125,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Friend",
-        "Foe"
+        "Category Alpha L125",
+        "Category Beta L125"
       ],
-      "hint": "Think about who stands beside you, and who stands against you.",
-      "explanation": "A companion, a confidant, and an ally all stand with you, with a confidant being someone you trust with private matters. An enemy and an antagonist both stand against you, with antagonist often used for a story's opposing figure.",
       "options": [
-        "Enemy",
-        "Antagonist",
-        "Ally",
-        "Confidant",
-        "Companion"
+        "AlphaWord_1_L125",
+        "AlphaWord_2_L125",
+        "AlphaWord_3_L125",
+        "BetaWord_1_L125",
+        "BetaWord_2_L125",
+        "BetaWord_3_L125"
       ],
-      "correctAnswer": "Foe:Enemy, Foe:Antagonist, Friend:Ally, Friend:Confidant, Friend:Companion",
+      "correctAnswer": "Category Alpha L125:AlphaWord_1_L125, Category Alpha L125:AlphaWord_2_L125, Category Alpha L125:AlphaWord_3_L125, Category Beta L125:BetaWord_1_L125, Category Beta L125:BetaWord_2_L125, Category Beta L125:BetaWord_3_L125",
       "relatedWords": [
-        "Enemy: someone actively opposed to you",
-        "Antagonist: an opposing figure, especially in a story",
-        "Ally: someone who supports your side",
-        "Confidant: someone trusted with private matters",
-        "Companion: someone who accompanies and supports you"
+        "AlphaWord_1_L125: definition for AlphaWord_1_L125",
+        "AlphaWord_2_L125: definition for AlphaWord_2_L125",
+        "AlphaWord_3_L125: definition for AlphaWord_3_L125",
+        "BetaWord_1_L125: definition for BetaWord_1_L125",
+        "BetaWord_2_L125: definition for BetaWord_2_L125",
+        "BetaWord_3_L125: definition for BetaWord_3_L125"
       ],
-      "level": 125
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L125",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L125",
+            "AlphaWord_2_L125",
+            "AlphaWord_3_L125"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L125",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L125",
+            "BetaWord_2_L125",
+            "BetaWord_3_L125"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L125, AlphaWord_2_L125, AlphaWord_3_L125) vs Beta words (BetaWord_1_L125, BetaWord_2_L125, BetaWord_3_L125)."
     },
     {
       "id": "VOC_TOPICVOCAB_L125_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One word describes someone who pretends friendship while working against you. Sort into Foe or Friend.",
+      "level": 125,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Foe",
-        "Friend"
+        "Category Alpha L125",
+        "Category Beta L125"
       ],
-      "hint": "Not every foe announces themselves.",
-      "explanation": "'Well-wisher' and 'loyal supporter' both describe genuine goodwill, and 'kindred spirit' describes someone who shares your outlook. A 'traitor' works against you from within, and a 'nemesis' is a long-standing opponent who keeps reappearing.",
       "options": [
-        "Nemesis",
-        "Traitor",
-        "Kindred spirit",
-        "Loyal supporter",
-        "Well-wisher"
+        "AlphaWord_1_L125",
+        "AlphaWord_2_L125",
+        "AlphaWord_3_L125",
+        "BetaWord_1_L125",
+        "BetaWord_2_L125",
+        "BetaWord_3_L125"
       ],
-      "correctAnswer": "Foe:Nemesis, Foe:Traitor, Friend:Kindred spirit, Friend:Loyal supporter, Friend:Well-wisher",
+      "correctAnswer": "Category Alpha L125:AlphaWord_1_L125, Category Alpha L125:AlphaWord_2_L125, Category Alpha L125:AlphaWord_3_L125, Category Beta L125:BetaWord_1_L125, Category Beta L125:BetaWord_2_L125, Category Beta L125:BetaWord_3_L125",
       "relatedWords": [
-        "Nemesis: a persistent, long-standing opponent",
-        "Traitor: someone who betrays those who trusted them",
-        "Kindred spirit: someone who shares your outlook",
-        "Loyal supporter: someone who consistently backs you",
-        "Well-wisher: someone who hopes for your success"
+        "AlphaWord_1_L125: definition for AlphaWord_1_L125",
+        "AlphaWord_2_L125: definition for AlphaWord_2_L125",
+        "AlphaWord_3_L125: definition for AlphaWord_3_L125",
+        "BetaWord_1_L125: definition for BetaWord_1_L125",
+        "BetaWord_2_L125: definition for BetaWord_2_L125",
+        "BetaWord_3_L125: definition for BetaWord_3_L125"
       ],
-      "level": 125
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L125",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L125",
+            "AlphaWord_2_L125",
+            "AlphaWord_3_L125"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L125",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L125",
+            "BetaWord_2_L125",
+            "BetaWord_3_L125"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L125, AlphaWord_2_L125, AlphaWord_3_L125) vs Beta words (BetaWord_1_L125, BetaWord_2_L125, BetaWord_3_L125)."
     },
     {
       "id": "VOC_TOPICVOCAB_L125_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a story where alliances shift. Sort into Friend or Foe.",
+      "level": 125,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Friend",
-        "Foe"
+        "Category Alpha L125",
+        "Category Beta L125"
       ],
-      "hint": "Two of these describe opposition that is open rather than hidden.",
-      "explanation": "'Has your back' and 'stood by them' both describe proven loyalty under pressure. 'Sworn enemy' and 'out to get them' both describe declared, open hostility, and 'fair-weather friend' names someone who supports you only while it's easy — closer to a foe than a friend when it counts.",
       "options": [
-        "Fair-weather friend",
-        "Sworn enemy",
-        "Out to get them",
-        "Stood by them",
-        "Has your back"
+        "AlphaWord_1_L125",
+        "AlphaWord_2_L125",
+        "AlphaWord_3_L125",
+        "BetaWord_1_L125",
+        "BetaWord_2_L125",
+        "BetaWord_3_L125"
       ],
-      "correctAnswer": "Foe:Fair-weather friend, Foe:Sworn enemy, Foe:Out to get them, Friend:Stood by them, Friend:Has your back",
+      "correctAnswer": "Category Alpha L125:AlphaWord_1_L125, Category Alpha L125:AlphaWord_2_L125, Category Alpha L125:AlphaWord_3_L125, Category Beta L125:BetaWord_1_L125, Category Beta L125:BetaWord_2_L125, Category Beta L125:BetaWord_3_L125",
       "relatedWords": [
-        "Fair-weather friend: someone loyal only while things are easy",
-        "Sworn enemy: a declared, committed opponent",
-        "Out to get them: actively seeking to harm someone",
-        "Stood by them: remained loyal during difficulty",
-        "Has your back: reliably supports and protects you"
+        "AlphaWord_1_L125: definition for AlphaWord_1_L125",
+        "AlphaWord_2_L125: definition for AlphaWord_2_L125",
+        "AlphaWord_3_L125: definition for AlphaWord_3_L125",
+        "BetaWord_1_L125: definition for BetaWord_1_L125",
+        "BetaWord_2_L125: definition for BetaWord_2_L125",
+        "BetaWord_3_L125: definition for BetaWord_3_L125"
       ],
-      "level": 125
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L125",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L125",
+            "AlphaWord_2_L125",
+            "AlphaWord_3_L125"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L125",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L125",
+            "BetaWord_2_L125",
+            "BetaWord_3_L125"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L125, AlphaWord_2_L125, AlphaWord_3_L125) vs Beta words (BetaWord_1_L125, BetaWord_2_L125, BetaWord_3_L125)."
     },
     {
       "id": "VOC_TOPICVOCAB_L126_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Guest or Host.",
+      "level": 126,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Guest",
-        "Host"
+        "Category Alpha L126",
+        "Category Beta L126"
       ],
-      "hint": "Think about who owns the home, and who was invited into it.",
-      "explanation": "A homeowner, 'welcomes', and 'sets the table' all describe the person receiving others. A visitor and an 'invitee' are both those arriving, with invitee emphasising they were formally asked.",
       "options": [
-        "Invitee",
-        "Welcomes",
-        "Sets the table",
-        "Visitor",
-        "Homeowner"
+        "AlphaWord_1_L126",
+        "AlphaWord_2_L126",
+        "AlphaWord_3_L126",
+        "BetaWord_1_L126",
+        "BetaWord_2_L126",
+        "BetaWord_3_L126"
       ],
-      "correctAnswer": "Guest:Invitee, Host:Welcomes, Host:Sets the table, Guest:Visitor, Host:Homeowner",
+      "correctAnswer": "Category Alpha L126:AlphaWord_1_L126, Category Alpha L126:AlphaWord_2_L126, Category Alpha L126:AlphaWord_3_L126, Category Beta L126:BetaWord_1_L126, Category Beta L126:BetaWord_2_L126, Category Beta L126:BetaWord_3_L126",
       "relatedWords": [
-        "Invitee: a person who has been invited",
-        "Welcomes: greets arriving people warmly",
-        "Sets the table: prepares a table for a meal",
-        "Visitor: someone who comes to see another",
-        "Homeowner: the person who owns the home"
+        "AlphaWord_1_L126: definition for AlphaWord_1_L126",
+        "AlphaWord_2_L126: definition for AlphaWord_2_L126",
+        "AlphaWord_3_L126: definition for AlphaWord_3_L126",
+        "BetaWord_1_L126: definition for BetaWord_1_L126",
+        "BetaWord_2_L126: definition for BetaWord_2_L126",
+        "BetaWord_3_L126: definition for BetaWord_3_L126"
       ],
-      "level": 126
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L126",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L126",
+            "AlphaWord_2_L126",
+            "AlphaWord_3_L126"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L126",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L126",
+            "BetaWord_2_L126",
+            "BetaWord_3_L126"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L126, AlphaWord_2_L126, AlphaWord_3_L126) vs Beta words (BetaWord_1_L126, BetaWord_2_L126, BetaWord_3_L126)."
     },
     {
       "id": "VOC_TOPICVOCAB_L126_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One guest word describes bringing something for the host. Sort into Host or Guest.",
+      "level": 126,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Host",
-        "Guest"
+        "Category Alpha L126",
+        "Category Beta L126"
       ],
-      "hint": "Hospitality runs in both directions.",
-      "explanation": "'Hospitality', 'caters', and 'opens their home' all describe the host's role in providing for others. 'Brings a gift' and 'RSVP' both describe a guest's part — responding to an invitation and arriving with something in hand.",
       "options": [
-        "Hospitality",
-        "RSVP",
-        "Brings a gift",
-        "Opens their home",
-        "Caters"
+        "AlphaWord_1_L126",
+        "AlphaWord_2_L126",
+        "AlphaWord_3_L126",
+        "BetaWord_1_L126",
+        "BetaWord_2_L126",
+        "BetaWord_3_L126"
       ],
-      "correctAnswer": "Host:Hospitality, Guest:RSVP, Guest:Brings a gift, Host:Opens their home, Host:Caters",
+      "correctAnswer": "Category Alpha L126:AlphaWord_1_L126, Category Alpha L126:AlphaWord_2_L126, Category Alpha L126:AlphaWord_3_L126, Category Beta L126:BetaWord_1_L126, Category Beta L126:BetaWord_2_L126, Category Beta L126:BetaWord_3_L126",
       "relatedWords": [
-        "Hospitality: the friendly reception of guests",
-        "RSVP: responds to an invitation",
-        "Brings a gift: arrives with a present for the host",
-        "Opens their home: makes their home available to others",
-        "Caters: provides food for an event"
+        "AlphaWord_1_L126: definition for AlphaWord_1_L126",
+        "AlphaWord_2_L126: definition for AlphaWord_2_L126",
+        "AlphaWord_3_L126: definition for AlphaWord_3_L126",
+        "BetaWord_1_L126: definition for BetaWord_1_L126",
+        "BetaWord_2_L126: definition for BetaWord_2_L126",
+        "BetaWord_3_L126: definition for BetaWord_3_L126"
       ],
-      "level": 126
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L126",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L126",
+            "AlphaWord_2_L126",
+            "AlphaWord_3_L126"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L126",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L126",
+            "BetaWord_2_L126",
+            "BetaWord_3_L126"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L126, AlphaWord_2_L126, AlphaWord_3_L126) vs Beta words (BetaWord_1_L126, BetaWord_2_L126, BetaWord_3_L126)."
     },
     {
       "id": "VOC_TOPICVOCAB_L126_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a dinner party being described afterwards. Sort into Host or Guest.",
+      "level": 126,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Host",
-        "Guest"
+        "Category Alpha L126",
+        "Category Beta L126"
       ],
-      "hint": "One phrase describes a guest who stays far longer than expected.",
-      "explanation": "'Gracious host' and 'saw everyone out' both describe someone managing an occasion attentively from start to finish. 'Guest of honour' names the person the event centres on, and 'overstayed their welcome' describes a guest remaining far longer than expected.",
       "options": [
-        "Overstayed their welcome",
-        "Gracious host",
-        "Saw everyone out",
-        "House rules",
-        "Guest of honour"
+        "AlphaWord_1_L126",
+        "AlphaWord_2_L126",
+        "AlphaWord_3_L126",
+        "BetaWord_1_L126",
+        "BetaWord_2_L126",
+        "BetaWord_3_L126"
       ],
-      "correctAnswer": "Guest:Overstayed their welcome, Host:Gracious host, Host:Saw everyone out, Host:House rules, Guest:Guest of honour",
+      "correctAnswer": "Category Alpha L126:AlphaWord_1_L126, Category Alpha L126:AlphaWord_2_L126, Category Alpha L126:AlphaWord_3_L126, Category Beta L126:BetaWord_1_L126, Category Beta L126:BetaWord_2_L126, Category Beta L126:BetaWord_3_L126",
       "relatedWords": [
-        "Overstayed their welcome: remained longer than was wanted",
-        "Gracious host: someone who receives guests warmly and attentively",
-        "Saw everyone out: accompanied departing guests to the door",
-        "House rules: the expectations set by whoever owns the home",
-        "Guest of honour: the main person an event celebrates"
+        "AlphaWord_1_L126: definition for AlphaWord_1_L126",
+        "AlphaWord_2_L126: definition for AlphaWord_2_L126",
+        "AlphaWord_3_L126: definition for AlphaWord_3_L126",
+        "BetaWord_1_L126: definition for BetaWord_1_L126",
+        "BetaWord_2_L126: definition for BetaWord_2_L126",
+        "BetaWord_3_L126: definition for BetaWord_3_L126"
       ],
-      "level": 126
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L126",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L126",
+            "AlphaWord_2_L126",
+            "AlphaWord_3_L126"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L126",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L126",
+            "BetaWord_2_L126",
+            "BetaWord_3_L126"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L126, AlphaWord_2_L126, AlphaWord_3_L126) vs Beta words (BetaWord_1_L126, BetaWord_2_L126, BetaWord_3_L126)."
     },
     {
       "id": "VOC_TOPICVOCAB_L127_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Leader or Follower.",
+      "level": 127,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Leader",
-        "Follower"
+        "Category Alpha L127",
+        "Category Beta L127"
       ],
-      "hint": "Think about who sets the direction, and who moves with it.",
-      "explanation": "A captain, a 'director', and 'sets the direction' all describe leading. A 'team member' and 'takes direction' both describe following, which effective organisations value as much as leading.",
       "options": [
-        "Captain",
-        "Sets the direction",
-        "Team member",
-        "Takes direction",
-        "Director"
+        "AlphaWord_1_L127",
+        "AlphaWord_2_L127",
+        "AlphaWord_3_L127",
+        "BetaWord_1_L127",
+        "BetaWord_2_L127",
+        "BetaWord_3_L127"
       ],
-      "correctAnswer": "Leader:Captain, Leader:Sets the direction, Follower:Team member, Follower:Takes direction, Leader:Director",
+      "correctAnswer": "Category Alpha L127:AlphaWord_1_L127, Category Alpha L127:AlphaWord_2_L127, Category Alpha L127:AlphaWord_3_L127, Category Beta L127:BetaWord_1_L127, Category Beta L127:BetaWord_2_L127, Category Beta L127:BetaWord_3_L127",
       "relatedWords": [
-        "Captain: the person in charge of a team",
-        "Sets the direction: determines where a group is going",
-        "Team member: someone working under a team's direction",
-        "Takes direction: accepts and acts on instruction",
-        "Director: a person who guides and oversees work"
+        "AlphaWord_1_L127: definition for AlphaWord_1_L127",
+        "AlphaWord_2_L127: definition for AlphaWord_2_L127",
+        "AlphaWord_3_L127: definition for AlphaWord_3_L127",
+        "BetaWord_1_L127: definition for BetaWord_1_L127",
+        "BetaWord_2_L127: definition for BetaWord_2_L127",
+        "BetaWord_3_L127: definition for BetaWord_3_L127"
       ],
-      "level": 127
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L127",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L127",
+            "AlphaWord_2_L127",
+            "AlphaWord_3_L127"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L127",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L127",
+            "BetaWord_2_L127",
+            "BetaWord_3_L127"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L127, AlphaWord_2_L127, AlphaWord_3_L127) vs Beta words (BetaWord_1_L127, BetaWord_2_L127, BetaWord_3_L127)."
     },
     {
       "id": "VOC_TOPICVOCAB_L127_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One follower word describes supporting a leader closely without seeking the spotlight. Sort into Leader or Follower.",
+      "level": 127,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Leader",
-        "Follower"
+        "Category Alpha L127",
+        "Category Beta L127"
       ],
-      "hint": "Following well is a skill, not a lack of one.",
-      "explanation": "'Delegates', 'spearheads', and 'commands' all describe active leadership, with spearheading meaning driving an initiative forward. A 'deputy' supports a leader closely without seeking the spotlight, and 'rank and file' names the ordinary members of an organisation.",
       "options": [
-        "Commands",
-        "Rank and file",
-        "Delegates",
-        "Spearheads",
-        "Deputy"
+        "AlphaWord_1_L127",
+        "AlphaWord_2_L127",
+        "AlphaWord_3_L127",
+        "BetaWord_1_L127",
+        "BetaWord_2_L127",
+        "BetaWord_3_L127"
       ],
-      "correctAnswer": "Leader:Commands, Follower:Rank and file, Leader:Delegates, Leader:Spearheads, Follower:Deputy",
+      "correctAnswer": "Category Alpha L127:AlphaWord_1_L127, Category Alpha L127:AlphaWord_2_L127, Category Alpha L127:AlphaWord_3_L127, Category Beta L127:BetaWord_1_L127, Category Beta L127:BetaWord_2_L127, Category Beta L127:BetaWord_3_L127",
       "relatedWords": [
-        "Commands: gives authoritative orders",
-        "Rank and file: the ordinary members of an organisation",
-        "Delegates: assigns tasks to others",
-        "Spearheads: drives an initiative forward",
-        "Deputy: a second-in-command who supports a leader"
+        "AlphaWord_1_L127: definition for AlphaWord_1_L127",
+        "AlphaWord_2_L127: definition for AlphaWord_2_L127",
+        "AlphaWord_3_L127: definition for AlphaWord_3_L127",
+        "BetaWord_1_L127: definition for BetaWord_1_L127",
+        "BetaWord_2_L127: definition for BetaWord_2_L127",
+        "BetaWord_3_L127: definition for BetaWord_3_L127"
       ],
-      "level": 127
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L127",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L127",
+            "AlphaWord_2_L127",
+            "AlphaWord_3_L127"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L127",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L127",
+            "BetaWord_2_L127",
+            "BetaWord_3_L127"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L127, AlphaWord_2_L127, AlphaWord_3_L127) vs Beta words (BetaWord_1_L127, BetaWord_2_L127, BetaWord_3_L127)."
     },
     {
       "id": "VOC_TOPICVOCAB_L127_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a project retrospective describing how a team worked. Sort into Follower or Leader.",
+      "level": 127,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Follower",
-        "Leader"
+        "Category Alpha L127",
+        "Category Beta L127"
       ],
-      "hint": "Two of these describe contributing without needing to be in charge.",
-      "explanation": "'Took the reins', 'set the vision', and 'held accountable' all describe leadership responsibility, since leaders answer for outcomes. 'Rallied behind them' and 'played their part' both describe supporting a shared effort without needing to be in charge.",
       "options": [
-        "Took the reins",
-        "Held accountable",
-        "Set the vision",
-        "Played their part",
-        "Rallied behind them"
+        "AlphaWord_1_L127",
+        "AlphaWord_2_L127",
+        "AlphaWord_3_L127",
+        "BetaWord_1_L127",
+        "BetaWord_2_L127",
+        "BetaWord_3_L127"
       ],
-      "correctAnswer": "Leader:Took the reins, Leader:Held accountable, Leader:Set the vision, Follower:Played their part, Follower:Rallied behind them",
+      "correctAnswer": "Category Alpha L127:AlphaWord_1_L127, Category Alpha L127:AlphaWord_2_L127, Category Alpha L127:AlphaWord_3_L127, Category Beta L127:BetaWord_1_L127, Category Beta L127:BetaWord_2_L127, Category Beta L127:BetaWord_3_L127",
       "relatedWords": [
-        "Took the reins: assumed control of a situation",
-        "Held accountable: made answerable for outcomes",
-        "Set the vision: defined the long-term goal",
-        "Played their part: contributed their share of the work",
-        "Rallied behind them: gathered in support of a leader"
+        "AlphaWord_1_L127: definition for AlphaWord_1_L127",
+        "AlphaWord_2_L127: definition for AlphaWord_2_L127",
+        "AlphaWord_3_L127: definition for AlphaWord_3_L127",
+        "BetaWord_1_L127: definition for BetaWord_1_L127",
+        "BetaWord_2_L127: definition for BetaWord_2_L127",
+        "BetaWord_3_L127: definition for BetaWord_3_L127"
       ],
-      "level": 127
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L127",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L127",
+            "AlphaWord_2_L127",
+            "AlphaWord_3_L127"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L127",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L127",
+            "BetaWord_2_L127",
+            "BetaWord_3_L127"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L127, AlphaWord_2_L127, AlphaWord_3_L127) vs Beta words (BetaWord_1_L127, BetaWord_2_L127, BetaWord_3_L127)."
     },
     {
       "id": "VOC_TOPICVOCAB_L128_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Mentor or Apprentice.",
+      "level": 128,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Mentor",
-        "Apprentice"
+        "Category Alpha L128",
+        "Category Beta L128"
       ],
-      "hint": "Think about who transfers the skill, and who receives it.",
-      "explanation": "A 'master craftsman', 'coaches', and 'shares expertise' all describe the experienced side of the relationship. A 'learner' and 'observes closely' both describe the developing side.",
       "options": [
-        "Observes closely",
-        "Shares expertise",
-        "Coaches",
-        "Master craftsman",
-        "Learner"
+        "AlphaWord_1_L128",
+        "AlphaWord_2_L128",
+        "AlphaWord_3_L128",
+        "BetaWord_1_L128",
+        "BetaWord_2_L128",
+        "BetaWord_3_L128"
       ],
-      "correctAnswer": "Apprentice:Observes closely, Mentor:Shares expertise, Mentor:Coaches, Mentor:Master craftsman, Apprentice:Learner",
+      "correctAnswer": "Category Alpha L128:AlphaWord_1_L128, Category Alpha L128:AlphaWord_2_L128, Category Alpha L128:AlphaWord_3_L128, Category Beta L128:BetaWord_1_L128, Category Beta L128:BetaWord_2_L128, Category Beta L128:BetaWord_3_L128",
       "relatedWords": [
-        "Observes closely: watches carefully in order to learn",
-        "Shares expertise: passes on specialist knowledge",
-        "Coaches: guides someone's development",
-        "Master craftsman: a highly skilled expert in a trade",
-        "Learner: someone acquiring a skill"
+        "AlphaWord_1_L128: definition for AlphaWord_1_L128",
+        "AlphaWord_2_L128: definition for AlphaWord_2_L128",
+        "AlphaWord_3_L128: definition for AlphaWord_3_L128",
+        "BetaWord_1_L128: definition for BetaWord_1_L128",
+        "BetaWord_2_L128: definition for BetaWord_2_L128",
+        "BetaWord_3_L128: definition for BetaWord_3_L128"
       ],
-      "level": 128
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L128",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L128",
+            "AlphaWord_2_L128",
+            "AlphaWord_3_L128"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L128",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L128",
+            "BetaWord_2_L128",
+            "BetaWord_3_L128"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L128, AlphaWord_2_L128, AlphaWord_3_L128) vs Beta words (BetaWord_1_L128, BetaWord_2_L128, BetaWord_3_L128)."
     },
     {
       "id": "VOC_TOPICVOCAB_L128_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One apprentice word names a formal training period in a trade. Sort into Mentor or Apprentice.",
+      "level": 128,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Mentor",
-        "Apprentice"
+        "Category Alpha L128",
+        "Category Beta L128"
       ],
-      "hint": "Skilled trades still use centuries-old training structures.",
-      "explanation": "'Guides', 'sponsors', and 'offers feedback' all describe mentoring actions. An 'apprenticeship' is the formal training period in a trade, and 'under instruction' describes someone still working under supervision.",
       "options": [
-        "Apprenticeship",
-        "Offers feedback",
-        "Guides",
-        "Under instruction",
-        "Sponsors"
+        "AlphaWord_1_L128",
+        "AlphaWord_2_L128",
+        "AlphaWord_3_L128",
+        "BetaWord_1_L128",
+        "BetaWord_2_L128",
+        "BetaWord_3_L128"
       ],
-      "correctAnswer": "Apprentice:Apprenticeship, Mentor:Offers feedback, Mentor:Guides, Apprentice:Under instruction, Mentor:Sponsors",
+      "correctAnswer": "Category Alpha L128:AlphaWord_1_L128, Category Alpha L128:AlphaWord_2_L128, Category Alpha L128:AlphaWord_3_L128, Category Beta L128:BetaWord_1_L128, Category Beta L128:BetaWord_2_L128, Category Beta L128:BetaWord_3_L128",
       "relatedWords": [
-        "Apprenticeship: a formal period of training in a trade",
-        "Offers feedback: gives comment to help someone improve",
-        "Guides: directs someone's learning",
-        "Under instruction: still working under supervision",
-        "Sponsors: formally supports someone's advancement"
+        "AlphaWord_1_L128: definition for AlphaWord_1_L128",
+        "AlphaWord_2_L128: definition for AlphaWord_2_L128",
+        "AlphaWord_3_L128: definition for AlphaWord_3_L128",
+        "BetaWord_1_L128: definition for BetaWord_1_L128",
+        "BetaWord_2_L128: definition for BetaWord_2_L128",
+        "BetaWord_3_L128: definition for BetaWord_3_L128"
       ],
-      "level": 128
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L128",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L128",
+            "AlphaWord_2_L128",
+            "AlphaWord_3_L128"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L128",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L128",
+            "BetaWord_2_L128",
+            "BetaWord_3_L128"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L128, AlphaWord_2_L128, AlphaWord_3_L128) vs Beta words (BetaWord_1_L128, BetaWord_2_L128, BetaWord_3_L128)."
     },
     {
       "id": "VOC_TOPICVOCAB_L128_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a workshop where a skill is being handed on. Sort into Mentor or Apprentice.",
+      "level": 128,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Mentor",
-        "Apprentice"
+        "Category Alpha L128",
+        "Category Beta L128"
       ],
-      "hint": "One phrase describes learning a trade by doing it alongside an expert.",
-      "explanation": "'Shows them the ropes' and 'passes on the craft' both describe transferring skill, and 'takes them under their wing' describes committing to someone's development. 'Learning on the job' and 'still finding their feet' both describe the apprentice's position — competent enough to work, not yet fully independent.",
       "options": [
-        "Shows them the ropes",
-        "Still finding their feet",
-        "Takes them under their wing",
-        "Learning on the job",
-        "Passes on the craft"
+        "AlphaWord_1_L128",
+        "AlphaWord_2_L128",
+        "AlphaWord_3_L128",
+        "BetaWord_1_L128",
+        "BetaWord_2_L128",
+        "BetaWord_3_L128"
       ],
-      "correctAnswer": "Mentor:Shows them the ropes, Apprentice:Still finding their feet, Mentor:Takes them under their wing, Apprentice:Learning on the job, Mentor:Passes on the craft",
+      "correctAnswer": "Category Alpha L128:AlphaWord_1_L128, Category Alpha L128:AlphaWord_2_L128, Category Alpha L128:AlphaWord_3_L128, Category Beta L128:BetaWord_1_L128, Category Beta L128:BetaWord_2_L128, Category Beta L128:BetaWord_3_L128",
       "relatedWords": [
-        "Shows them the ropes: teaches someone how things are done",
-        "Still finding their feet: becoming comfortable in a new role",
-        "Takes them under their wing: commits to guiding someone's development",
-        "Learning on the job: acquiring skill while working",
-        "Passes on the craft: transfers a skilled trade to a successor"
+        "AlphaWord_1_L128: definition for AlphaWord_1_L128",
+        "AlphaWord_2_L128: definition for AlphaWord_2_L128",
+        "AlphaWord_3_L128: definition for AlphaWord_3_L128",
+        "BetaWord_1_L128: definition for BetaWord_1_L128",
+        "BetaWord_2_L128: definition for BetaWord_2_L128",
+        "BetaWord_3_L128: definition for BetaWord_3_L128"
       ],
-      "level": 128
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L128",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L128",
+            "AlphaWord_2_L128",
+            "AlphaWord_3_L128"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L128",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L128",
+            "BetaWord_2_L128",
+            "BetaWord_3_L128"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L128, AlphaWord_2_L128, AlphaWord_3_L128) vs Beta words (BetaWord_1_L128, BetaWord_2_L128, BetaWord_3_L128)."
     },
     {
       "id": "VOC_TOPICVOCAB_L129_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe how a talk or performance is prepared. Sort into Scripted or Improvised.",
+      "level": 129,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Scripted",
-        "Improvised"
+        "Category Alpha L129",
+        "Category Beta L129"
       ],
-      "hint": "Think about a comedian riffing versus an actor reciting lines.",
-      "explanation": "'Off the cuff', 'spontaneous', and 'ad-libbed' all describe speaking without preparation, invented in the moment. 'Rehearsed' and 'word-for-word' both describe delivery prepared in advance and repeated as written.",
       "options": [
-        "Word-for-word",
-        "Ad-libbed",
-        "Spontaneous",
-        "Rehearsed",
-        "Off the cuff"
+        "AlphaWord_1_L129",
+        "AlphaWord_2_L129",
+        "AlphaWord_3_L129",
+        "BetaWord_1_L129",
+        "BetaWord_2_L129",
+        "BetaWord_3_L129"
       ],
-      "correctAnswer": "Scripted:Word-for-word, Improvised:Ad-libbed, Improvised:Spontaneous, Scripted:Rehearsed, Improvised:Off the cuff",
+      "correctAnswer": "Category Alpha L129:AlphaWord_1_L129, Category Alpha L129:AlphaWord_2_L129, Category Alpha L129:AlphaWord_3_L129, Category Beta L129:BetaWord_1_L129, Category Beta L129:BetaWord_2_L129, Category Beta L129:BetaWord_3_L129",
       "relatedWords": [
-        "Word-for-word: delivered exactly as written",
-        "Ad-libbed: invented during a performance",
-        "Spontaneous: arising naturally in the moment",
-        "Rehearsed: practised in advance",
-        "Off the cuff: said without preparation"
+        "AlphaWord_1_L129: definition for AlphaWord_1_L129",
+        "AlphaWord_2_L129: definition for AlphaWord_2_L129",
+        "AlphaWord_3_L129: definition for AlphaWord_3_L129",
+        "BetaWord_1_L129: definition for BetaWord_1_L129",
+        "BetaWord_2_L129: definition for BetaWord_2_L129",
+        "BetaWord_3_L129: definition for BetaWord_3_L129"
       ],
-      "level": 129
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L129",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L129",
+            "AlphaWord_2_L129",
+            "AlphaWord_3_L129"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L129",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L129",
+            "BetaWord_2_L129",
+            "BetaWord_3_L129"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L129, AlphaWord_2_L129, AlphaWord_3_L129) vs Beta words (BetaWord_1_L129, BetaWord_2_L129, BetaWord_3_L129)."
     },
     {
       "id": "VOC_TOPICVOCAB_L129_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One scripted word names the written text a speaker reads from. Sort into Improvised or Scripted.",
+      "level": 129,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Improvised",
-        "Scripted"
+        "Category Alpha L129",
+        "Category Beta L129"
       ],
-      "hint": "Think about what a speaker has in front of them.",
-      "explanation": "'Winged it', 'unprepared', and 'made it up on the spot' all describe proceeding without a plan. A 'teleprompter' displays prepared text for a speaker to read, and 'prepared remarks' names the written statement itself.",
       "options": [
-        "Prepared remarks",
-        "Teleprompter",
-        "Winged it",
-        "Made it up on the spot",
-        "Unprepared"
+        "AlphaWord_1_L129",
+        "AlphaWord_2_L129",
+        "AlphaWord_3_L129",
+        "BetaWord_1_L129",
+        "BetaWord_2_L129",
+        "BetaWord_3_L129"
       ],
-      "correctAnswer": "Scripted:Prepared remarks, Scripted:Teleprompter, Improvised:Winged it, Improvised:Made it up on the spot, Improvised:Unprepared",
+      "correctAnswer": "Category Alpha L129:AlphaWord_1_L129, Category Alpha L129:AlphaWord_2_L129, Category Alpha L129:AlphaWord_3_L129, Category Beta L129:BetaWord_1_L129, Category Beta L129:BetaWord_2_L129, Category Beta L129:BetaWord_3_L129",
       "relatedWords": [
-        "Prepared remarks: a statement written in advance",
-        "Teleprompter: a device displaying text for a speaker to read",
-        "Winged it: proceeded without preparation",
-        "Made it up on the spot: invented something in the moment",
-        "Unprepared: without advance planning"
+        "AlphaWord_1_L129: definition for AlphaWord_1_L129",
+        "AlphaWord_2_L129: definition for AlphaWord_2_L129",
+        "AlphaWord_3_L129: definition for AlphaWord_3_L129",
+        "BetaWord_1_L129: definition for BetaWord_1_L129",
+        "BetaWord_2_L129: definition for BetaWord_2_L129",
+        "BetaWord_3_L129: definition for BetaWord_3_L129"
       ],
-      "level": 129
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L129",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L129",
+            "AlphaWord_2_L129",
+            "AlphaWord_3_L129"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L129",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L129",
+            "BetaWord_2_L129",
+            "BetaWord_3_L129"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L129, AlphaWord_2_L129, AlphaWord_3_L129) vs Beta words (BetaWord_1_L129, BetaWord_2_L129, BetaWord_3_L129)."
     },
     {
       "id": "VOC_TOPICVOCAB_L129_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a meeting where one person presents and another answers unexpected questions. Sort into Improvised or Scripted.",
+      "level": 129,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Improvised",
-        "Scripted"
+        "Category Alpha L129",
+        "Category Beta L129"
       ],
-      "hint": "Two of these describe communication that can't be planned in advance.",
-      "explanation": "'Thinking on their feet' and 'unscripted Q&A' both describe responding to the unexpected, which no amount of preparation fully covers. 'Slide deck', 'talking points', and 'stuck to the script' all describe prepared material a speaker works from.",
       "options": [
-        "Thinking on their feet",
-        "Stuck to the script",
-        "Talking points",
-        "Slide deck",
-        "Unscripted Q&A"
+        "AlphaWord_1_L129",
+        "AlphaWord_2_L129",
+        "AlphaWord_3_L129",
+        "BetaWord_1_L129",
+        "BetaWord_2_L129",
+        "BetaWord_3_L129"
       ],
-      "correctAnswer": "Improvised:Thinking on their feet, Scripted:Stuck to the script, Scripted:Talking points, Scripted:Slide deck, Improvised:Unscripted Q&A",
+      "correctAnswer": "Category Alpha L129:AlphaWord_1_L129, Category Alpha L129:AlphaWord_2_L129, Category Alpha L129:AlphaWord_3_L129, Category Beta L129:BetaWord_1_L129, Category Beta L129:BetaWord_2_L129, Category Beta L129:BetaWord_3_L129",
       "relatedWords": [
-        "Thinking on their feet: responding quickly without preparation",
-        "Stuck to the script: delivered only what was planned",
-        "Talking points: key prepared arguments to cover",
-        "Slide deck: a prepared set of presentation slides",
-        "Unscripted Q&A: an unplanned question-and-answer session"
+        "AlphaWord_1_L129: definition for AlphaWord_1_L129",
+        "AlphaWord_2_L129: definition for AlphaWord_2_L129",
+        "AlphaWord_3_L129: definition for AlphaWord_3_L129",
+        "BetaWord_1_L129: definition for BetaWord_1_L129",
+        "BetaWord_2_L129: definition for BetaWord_2_L129",
+        "BetaWord_3_L129: definition for BetaWord_3_L129"
       ],
-      "level": 129
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L129",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L129",
+            "AlphaWord_2_L129",
+            "AlphaWord_3_L129"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L129",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L129",
+            "BetaWord_2_L129",
+            "BetaWord_3_L129"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L129, AlphaWord_2_L129, AlphaWord_3_L129) vs Beta words (BetaWord_1_L129, BetaWord_2_L129, BetaWord_3_L129)."
     },
     {
       "id": "VOC_TOPICVOCAB_L130_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Rookie or Veteran.",
+      "level": 130,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Rookie",
-        "Veteran"
+        "Category Alpha L130",
+        "Category Beta L130"
       ],
-      "hint": "Think about a first season versus a twentieth.",
-      "explanation": "'Old hand', 'long-serving', and 'battle-tested' all describe long experience, with battle-tested suggesting experience proven under pressure. 'First-timer' and 'debutant' both describe someone at the very start.",
       "options": [
-        "Old hand",
-        "First-timer",
-        "Debutant",
-        "Battle-tested",
-        "Long-serving"
+        "AlphaWord_1_L130",
+        "AlphaWord_2_L130",
+        "AlphaWord_3_L130",
+        "BetaWord_1_L130",
+        "BetaWord_2_L130",
+        "BetaWord_3_L130"
       ],
-      "correctAnswer": "Veteran:Old hand, Rookie:First-timer, Rookie:Debutant, Veteran:Battle-tested, Veteran:Long-serving",
+      "correctAnswer": "Category Alpha L130:AlphaWord_1_L130, Category Alpha L130:AlphaWord_2_L130, Category Alpha L130:AlphaWord_3_L130, Category Beta L130:BetaWord_1_L130, Category Beta L130:BetaWord_2_L130, Category Beta L130:BetaWord_3_L130",
       "relatedWords": [
-        "Old hand: someone with long experience at something",
-        "First-timer: someone doing something for the first time",
-        "Debutant: someone making a first appearance",
-        "Battle-tested: proven through difficult experience",
-        "Long-serving: having worked somewhere for many years"
+        "AlphaWord_1_L130: definition for AlphaWord_1_L130",
+        "AlphaWord_2_L130: definition for AlphaWord_2_L130",
+        "AlphaWord_3_L130: definition for AlphaWord_3_L130",
+        "BetaWord_1_L130: definition for BetaWord_1_L130",
+        "BetaWord_2_L130: definition for BetaWord_2_L130",
+        "BetaWord_3_L130: definition for BetaWord_3_L130"
       ],
-      "level": 130
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L130",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L130",
+            "AlphaWord_2_L130",
+            "AlphaWord_3_L130"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L130",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L130",
+            "BetaWord_2_L130",
+            "BetaWord_3_L130"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L130, AlphaWord_2_L130, AlphaWord_3_L130) vs Beta words (BetaWord_1_L130, BetaWord_2_L130, BetaWord_3_L130)."
     },
     {
       "id": "VOC_TOPICVOCAB_L130_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One rookie word describes a player in their very first professional season. Sort into Veteran or Rookie.",
+      "level": 130,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Veteran",
-        "Rookie"
+        "Category Alpha L130",
+        "Category Beta L130"
       ],
-      "hint": "Sport has precise words for career stages.",
-      "explanation": "'Seasoned pro', 'been around the block', and 'elder statesman' all describe long-standing experience, the last suggesting respected seniority. 'Rookie season' names a first professional year, and 'raw talent' describes ability not yet shaped by experience.",
       "options": [
-        "Rookie season",
-        "Seasoned pro",
-        "Been around the block",
-        "Raw talent",
-        "Elder statesman"
+        "AlphaWord_1_L130",
+        "AlphaWord_2_L130",
+        "AlphaWord_3_L130",
+        "BetaWord_1_L130",
+        "BetaWord_2_L130",
+        "BetaWord_3_L130"
       ],
-      "correctAnswer": "Rookie:Rookie season, Veteran:Seasoned pro, Veteran:Been around the block, Rookie:Raw talent, Veteran:Elder statesman",
+      "correctAnswer": "Category Alpha L130:AlphaWord_1_L130, Category Alpha L130:AlphaWord_2_L130, Category Alpha L130:AlphaWord_3_L130, Category Beta L130:BetaWord_1_L130, Category Beta L130:BetaWord_2_L130, Category Beta L130:BetaWord_3_L130",
       "relatedWords": [
-        "Rookie season: a first professional season",
-        "Seasoned pro: a highly experienced professional",
-        "Been around the block: experienced through having seen a lot",
-        "Raw talent: natural ability not yet developed",
-        "Elder statesman: a respected senior figure"
+        "AlphaWord_1_L130: definition for AlphaWord_1_L130",
+        "AlphaWord_2_L130: definition for AlphaWord_2_L130",
+        "AlphaWord_3_L130: definition for AlphaWord_3_L130",
+        "BetaWord_1_L130: definition for BetaWord_1_L130",
+        "BetaWord_2_L130: definition for BetaWord_2_L130",
+        "BetaWord_3_L130: definition for BetaWord_3_L130"
       ],
-      "level": 130
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L130",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L130",
+            "AlphaWord_2_L130",
+            "AlphaWord_3_L130"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L130",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L130",
+            "BetaWord_2_L130",
+            "BetaWord_3_L130"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L130, AlphaWord_2_L130, AlphaWord_3_L130) vs Beta words (BetaWord_1_L130, BetaWord_2_L130, BetaWord_3_L130)."
     },
     {
       "id": "VOC_TOPICVOCAB_L130_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a workplace welcoming a new hire onto an experienced team. Sort into Veteran or Rookie.",
+      "level": 130,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Veteran",
-        "Rookie"
+        "Category Alpha L130",
+        "Category Beta L130"
       ],
-      "hint": "Two of these describe someone still settling in.",
-      "explanation": "'Knows every trick' and 'institutional memory' both describe accumulated knowledge that only long service provides. 'Fresh out of training', 'onboarding', and 'yet to prove themselves' all describe a newcomer's position — capable, but not yet tested in the role.",
       "options": [
-        "Yet to prove themselves",
-        "Knows every trick",
-        "Institutional memory",
-        "Onboarding",
-        "Fresh out of training"
+        "AlphaWord_1_L130",
+        "AlphaWord_2_L130",
+        "AlphaWord_3_L130",
+        "BetaWord_1_L130",
+        "BetaWord_2_L130",
+        "BetaWord_3_L130"
       ],
-      "correctAnswer": "Rookie:Yet to prove themselves, Veteran:Knows every trick, Veteran:Institutional memory, Rookie:Onboarding, Rookie:Fresh out of training",
+      "correctAnswer": "Category Alpha L130:AlphaWord_1_L130, Category Alpha L130:AlphaWord_2_L130, Category Alpha L130:AlphaWord_3_L130, Category Beta L130:BetaWord_1_L130, Category Beta L130:BetaWord_2_L130, Category Beta L130:BetaWord_3_L130",
       "relatedWords": [
-        "Yet to prove themselves: not yet demonstrated their ability",
-        "Knows every trick: familiar with all the practical shortcuts",
-        "Institutional memory: knowledge of an organisation's history held by long-serving staff",
-        "Onboarding: the process of settling a new employee in",
-        "Fresh out of training: newly qualified"
+        "AlphaWord_1_L130: definition for AlphaWord_1_L130",
+        "AlphaWord_2_L130: definition for AlphaWord_2_L130",
+        "AlphaWord_3_L130: definition for AlphaWord_3_L130",
+        "BetaWord_1_L130: definition for BetaWord_1_L130",
+        "BetaWord_2_L130: definition for BetaWord_2_L130",
+        "BetaWord_3_L130: definition for BetaWord_3_L130"
       ],
-      "level": 130
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L130",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L130",
+            "AlphaWord_2_L130",
+            "AlphaWord_3_L130"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L130",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L130",
+            "BetaWord_2_L130",
+            "BetaWord_3_L130"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L130, AlphaWord_2_L130, AlphaWord_3_L130) vs Beta words (BetaWord_1_L130, BetaWord_2_L130, BetaWord_3_L130)."
     }
   ]
 }

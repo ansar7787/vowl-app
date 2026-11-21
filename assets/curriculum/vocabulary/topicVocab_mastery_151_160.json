@@ -6,813 +6,1563 @@
   "quests": [
     {
       "id": "VOC_TOPICVOCAB_L151_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These appear in writing about rights and confinement. Sort into Liberty or Captivity.",
+      "level": 151,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Liberty",
-        "Captivity"
+        "Category Alpha L151",
+        "Category Beta L151"
       ],
-      "hint": "Think about being able to come and go, versus being held.",
-      "explanation": "'Freedom', 'released', and 'at liberty' all describe being free to act or move. 'Detained' and 'confinement' both describe being held, with detained being the formal term used by authorities.",
       "options": [
-        "Freedom",
-        "Detained",
-        "Released",
-        "Confinement",
-        "At liberty"
+        "AlphaWord_1_L151",
+        "AlphaWord_2_L151",
+        "AlphaWord_3_L151",
+        "BetaWord_1_L151",
+        "BetaWord_2_L151",
+        "BetaWord_3_L151"
       ],
-      "correctAnswer": "Liberty:Freedom, Captivity:Detained, Liberty:Released, Captivity:Confinement, Liberty:At liberty",
+      "correctAnswer": "Category Alpha L151:AlphaWord_1_L151, Category Alpha L151:AlphaWord_2_L151, Category Alpha L151:AlphaWord_3_L151, Category Beta L151:BetaWord_1_L151, Category Beta L151:BetaWord_2_L151, Category Beta L151:BetaWord_3_L151",
       "relatedWords": [
-        "Freedom: the power to act or move without restriction",
-        "Detained: officially held and prevented from leaving",
-        "Released: set free from being held",
-        "Confinement: the state of being kept within limits",
-        "At liberty: free to act as one chooses"
+        "AlphaWord_1_L151: definition for AlphaWord_1_L151",
+        "AlphaWord_2_L151: definition for AlphaWord_2_L151",
+        "AlphaWord_3_L151: definition for AlphaWord_3_L151",
+        "BetaWord_1_L151: definition for BetaWord_1_L151",
+        "BetaWord_2_L151: definition for BetaWord_2_L151",
+        "BetaWord_3_L151: definition for BetaWord_3_L151"
       ],
-      "level": 151
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L151",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L151",
+            "AlphaWord_2_L151",
+            "AlphaWord_3_L151"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L151",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L151",
+            "BetaWord_2_L151",
+            "BetaWord_3_L151"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L151, AlphaWord_2_L151, AlphaWord_3_L151) vs Beta words (BetaWord_1_L151, BetaWord_2_L151, BetaWord_3_L151)."
     },
     {
       "id": "VOC_TOPICVOCAB_L151_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One liberty word describes formally freeing people from bondage. Sort into Liberty or Captivity.",
+      "level": 151,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Liberty",
-        "Captivity"
+        "Category Alpha L151",
+        "Category Beta L151"
       ],
-      "hint": "History supplies formal words for both states.",
-      "explanation": "'Emancipation' describes formally freeing people from bondage, alongside 'autonomy' and 'self-determination', which describe the right to govern oneself. 'Imprisonment' and 'in shackles' both describe being physically held against one's will.",
       "options": [
-        "Emancipation",
-        "Imprisonment",
-        "Autonomy",
-        "In shackles",
-        "Self-determination"
+        "AlphaWord_1_L151",
+        "AlphaWord_2_L151",
+        "AlphaWord_3_L151",
+        "BetaWord_1_L151",
+        "BetaWord_2_L151",
+        "BetaWord_3_L151"
       ],
-      "correctAnswer": "Liberty:Emancipation, Captivity:Imprisonment, Liberty:Autonomy, Captivity:In shackles, Liberty:Self-determination",
+      "correctAnswer": "Category Alpha L151:AlphaWord_1_L151, Category Alpha L151:AlphaWord_2_L151, Category Alpha L151:AlphaWord_3_L151, Category Beta L151:BetaWord_1_L151, Category Beta L151:BetaWord_2_L151, Category Beta L151:BetaWord_3_L151",
       "relatedWords": [
-        "Emancipation: the act of formally setting people free",
-        "Imprisonment: the state of being kept in prison",
-        "Autonomy: the right to govern oneself",
-        "In shackles: physically restrained by chains",
-        "Self-determination: a people's right to decide their own governance"
+        "AlphaWord_1_L151: definition for AlphaWord_1_L151",
+        "AlphaWord_2_L151: definition for AlphaWord_2_L151",
+        "AlphaWord_3_L151: definition for AlphaWord_3_L151",
+        "BetaWord_1_L151: definition for BetaWord_1_L151",
+        "BetaWord_2_L151: definition for BetaWord_2_L151",
+        "BetaWord_3_L151: definition for BetaWord_3_L151"
       ],
-      "level": 151
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L151",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L151",
+            "AlphaWord_2_L151",
+            "AlphaWord_3_L151"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L151",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L151",
+            "BetaWord_2_L151",
+            "BetaWord_3_L151"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L151, AlphaWord_2_L151, AlphaWord_3_L151) vs Beta words (BetaWord_1_L151, BetaWord_2_L151, BetaWord_3_L151)."
     },
     {
       "id": "VOC_TOPICVOCAB_L151_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These are used figuratively as well as literally. Sort into Captivity or Liberty.",
+      "level": 151,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Captivity",
-        "Liberty"
+        "Category Alpha L151",
+        "Category Beta L151"
       ],
-      "hint": "Two of these describe feeling trapped without being physically held.",
-      "explanation": "'Unshackled' and 'free rein' both describe removing restrictions, and 'breaking free' describes escaping them. 'Trapped in a routine' and 'a prisoner of circumstance' both use captivity figuratively, describing feeling held by a situation rather than by walls.",
       "options": [
-        "Unshackled",
-        "Trapped in a routine",
-        "A prisoner of circumstance",
-        "Breaking free",
-        "Free rein"
+        "AlphaWord_1_L151",
+        "AlphaWord_2_L151",
+        "AlphaWord_3_L151",
+        "BetaWord_1_L151",
+        "BetaWord_2_L151",
+        "BetaWord_3_L151"
       ],
-      "correctAnswer": "Liberty:Unshackled, Captivity:Trapped in a routine, Captivity:A prisoner of circumstance, Liberty:Breaking free, Liberty:Free rein",
+      "correctAnswer": "Category Alpha L151:AlphaWord_1_L151, Category Alpha L151:AlphaWord_2_L151, Category Alpha L151:AlphaWord_3_L151, Category Beta L151:BetaWord_1_L151, Category Beta L151:BetaWord_2_L151, Category Beta L151:BetaWord_3_L151",
       "relatedWords": [
-        "Unshackled: released from restrictions",
-        "Trapped in a routine: feeling unable to escape a fixed pattern",
-        "A prisoner of circumstance: held back by a situation beyond one's control",
-        "Breaking free: escaping a restriction",
-        "Free rein: complete freedom to act as one chooses"
+        "AlphaWord_1_L151: definition for AlphaWord_1_L151",
+        "AlphaWord_2_L151: definition for AlphaWord_2_L151",
+        "AlphaWord_3_L151: definition for AlphaWord_3_L151",
+        "BetaWord_1_L151: definition for BetaWord_1_L151",
+        "BetaWord_2_L151: definition for BetaWord_2_L151",
+        "BetaWord_3_L151: definition for BetaWord_3_L151"
       ],
-      "level": 151
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L151",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L151",
+            "AlphaWord_2_L151",
+            "AlphaWord_3_L151"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L151",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L151",
+            "BetaWord_2_L151",
+            "BetaWord_3_L151"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L151, AlphaWord_2_L151, AlphaWord_3_L151) vs Beta words (BetaWord_1_L151, BetaWord_2_L151, BetaWord_3_L151)."
     },
     {
       "id": "VOC_TOPICVOCAB_L152_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These are courtroom terms. Sort into Verdict or Appeal.",
+      "level": 152,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Verdict",
-        "Appeal"
+        "Category Alpha L152",
+        "Category Beta L152"
       ],
-      "hint": "Think about a decision being given, versus that decision being challenged.",
-      "explanation": "'Guilty', 'acquitted', and 'the jury's decision' all describe a court reaching a conclusion. 'Challenged the ruling' and 'higher court' both concern questioning that conclusion afterwards.",
       "options": [
-        "Higher court",
-        "Acquitted",
-        "Challenged the ruling",
-        "Guilty",
-        "The jury's decision"
+        "AlphaWord_1_L152",
+        "AlphaWord_2_L152",
+        "AlphaWord_3_L152",
+        "BetaWord_1_L152",
+        "BetaWord_2_L152",
+        "BetaWord_3_L152"
       ],
-      "correctAnswer": "Appeal:Higher court, Verdict:Acquitted, Appeal:Challenged the ruling, Verdict:Guilty, Verdict:The jury's decision",
+      "correctAnswer": "Category Alpha L152:AlphaWord_1_L152, Category Alpha L152:AlphaWord_2_L152, Category Alpha L152:AlphaWord_3_L152, Category Beta L152:BetaWord_1_L152, Category Beta L152:BetaWord_2_L152, Category Beta L152:BetaWord_3_L152",
       "relatedWords": [
-        "Higher court: a court that reviews decisions of lower courts",
-        "Acquitted: found not guilty",
-        "Challenged the ruling: formally disputed a court's decision",
-        "Guilty: a finding that the accused committed the offence",
-        "The jury's decision: the conclusion reached by a jury"
+        "AlphaWord_1_L152: definition for AlphaWord_1_L152",
+        "AlphaWord_2_L152: definition for AlphaWord_2_L152",
+        "AlphaWord_3_L152: definition for AlphaWord_3_L152",
+        "BetaWord_1_L152: definition for BetaWord_1_L152",
+        "BetaWord_2_L152: definition for BetaWord_2_L152",
+        "BetaWord_3_L152: definition for BetaWord_3_L152"
       ],
-      "level": 152
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L152",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L152",
+            "AlphaWord_2_L152",
+            "AlphaWord_3_L152"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L152",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L152",
+            "BetaWord_2_L152",
+            "BetaWord_3_L152"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L152, AlphaWord_2_L152, AlphaWord_3_L152) vs Beta words (BetaWord_1_L152, BetaWord_2_L152, BetaWord_3_L152)."
     },
     {
       "id": "VOC_TOPICVOCAB_L152_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One appeal word describes sending a case back for a fresh hearing. Sort into Verdict or Appeal.",
+      "level": 152,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Verdict",
-        "Appeal"
+        "Category Alpha L152",
+        "Category Beta L152"
       ],
-      "hint": "Appeals don't always overturn a decision outright.",
-      "explanation": "'Sentencing', 'found liable', and 'judgment delivered' all belong to a decision being reached and applied. 'Retrial' describes sending a case back for a fresh hearing, and 'overturned' describes a higher court cancelling the original decision.",
       "options": [
-        "Judgment delivered",
-        "Sentencing",
-        "Found liable",
-        "Overturned",
-        "Retrial"
+        "AlphaWord_1_L152",
+        "AlphaWord_2_L152",
+        "AlphaWord_3_L152",
+        "BetaWord_1_L152",
+        "BetaWord_2_L152",
+        "BetaWord_3_L152"
       ],
-      "correctAnswer": "Verdict:Judgment delivered, Verdict:Sentencing, Verdict:Found liable, Appeal:Overturned, Appeal:Retrial",
+      "correctAnswer": "Category Alpha L152:AlphaWord_1_L152, Category Alpha L152:AlphaWord_2_L152, Category Alpha L152:AlphaWord_3_L152, Category Beta L152:BetaWord_1_L152, Category Beta L152:BetaWord_2_L152, Category Beta L152:BetaWord_3_L152",
       "relatedWords": [
-        "Judgment delivered: a court's formal decision announced",
-        "Sentencing: the setting of a punishment after conviction",
-        "Found liable: held legally responsible",
-        "Overturned: cancelled by a higher court",
-        "Retrial: a fresh hearing of a case"
+        "AlphaWord_1_L152: definition for AlphaWord_1_L152",
+        "AlphaWord_2_L152: definition for AlphaWord_2_L152",
+        "AlphaWord_3_L152: definition for AlphaWord_3_L152",
+        "BetaWord_1_L152: definition for BetaWord_1_L152",
+        "BetaWord_2_L152: definition for BetaWord_2_L152",
+        "BetaWord_3_L152: definition for BetaWord_3_L152"
       ],
-      "level": 152
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L152",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L152",
+            "AlphaWord_2_L152",
+            "AlphaWord_3_L152"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L152",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L152",
+            "BetaWord_2_L152",
+            "BetaWord_3_L152"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L152, AlphaWord_2_L152, AlphaWord_3_L152) vs Beta words (BetaWord_1_L152, BetaWord_2_L152, BetaWord_3_L152)."
     },
     {
       "id": "VOC_TOPICVOCAB_L152_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a legal news report following a case over two years. Sort into Verdict or Appeal.",
+      "level": 152,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Verdict",
-        "Appeal"
+        "Category Alpha L152",
+        "Category Beta L152"
       ],
-      "hint": "Two of these describe what happens after a decision is questioned.",
-      "explanation": "'Unanimous decision' and 'case closed' both describe a matter being settled, and 'convicted' names the outcome itself. 'Grounds for appeal' names the legal basis for challenging a decision, and 'permission to appeal' is the court's agreement to hear that challenge.",
       "options": [
-        "Permission to appeal",
-        "Unanimous decision",
-        "Case closed",
-        "Grounds for appeal",
-        "Convicted"
+        "AlphaWord_1_L152",
+        "AlphaWord_2_L152",
+        "AlphaWord_3_L152",
+        "BetaWord_1_L152",
+        "BetaWord_2_L152",
+        "BetaWord_3_L152"
       ],
-      "correctAnswer": "Appeal:Permission to appeal, Verdict:Unanimous decision, Verdict:Case closed, Appeal:Grounds for appeal, Verdict:Convicted",
+      "correctAnswer": "Category Alpha L152:AlphaWord_1_L152, Category Alpha L152:AlphaWord_2_L152, Category Alpha L152:AlphaWord_3_L152, Category Beta L152:BetaWord_1_L152, Category Beta L152:BetaWord_2_L152, Category Beta L152:BetaWord_3_L152",
       "relatedWords": [
-        "Permission to appeal: a court's agreement to hear a challenge",
-        "Unanimous decision: a decision all jurors agreed on",
-        "Case closed: a matter formally concluded",
-        "Grounds for appeal: the legal basis for challenging a decision",
-        "Convicted: formally found guilty of an offence"
+        "AlphaWord_1_L152: definition for AlphaWord_1_L152",
+        "AlphaWord_2_L152: definition for AlphaWord_2_L152",
+        "AlphaWord_3_L152: definition for AlphaWord_3_L152",
+        "BetaWord_1_L152: definition for BetaWord_1_L152",
+        "BetaWord_2_L152: definition for BetaWord_2_L152",
+        "BetaWord_3_L152: definition for BetaWord_3_L152"
       ],
-      "level": 152
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L152",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L152",
+            "AlphaWord_2_L152",
+            "AlphaWord_3_L152"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L152",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L152",
+            "BetaWord_2_L152",
+            "BetaWord_3_L152"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L152, AlphaWord_2_L152, AlphaWord_3_L152) vs Beta words (BetaWord_1_L152, BetaWord_2_L152, BetaWord_3_L152)."
     },
     {
       "id": "VOC_TOPICVOCAB_L153_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These appear in police reporting. Sort into Suspect or Witness.",
+      "level": 153,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Suspect",
-        "Witness"
+        "Category Alpha L153",
+        "Category Beta L153"
       ],
-      "hint": "Think about who saw something happen, and who may have done it.",
-      "explanation": "'Saw the incident', 'gave a statement', and 'bystander' all describe someone who observed events. 'Person of interest' and 'under investigation' both describe someone police are examining in connection with an offence.",
       "options": [
-        "Saw the incident",
-        "Person of interest",
-        "Gave a statement",
-        "Under investigation",
-        "Bystander"
+        "AlphaWord_1_L153",
+        "AlphaWord_2_L153",
+        "AlphaWord_3_L153",
+        "BetaWord_1_L153",
+        "BetaWord_2_L153",
+        "BetaWord_3_L153"
       ],
-      "correctAnswer": "Witness:Saw the incident, Suspect:Person of interest, Witness:Gave a statement, Suspect:Under investigation, Witness:Bystander",
+      "correctAnswer": "Category Alpha L153:AlphaWord_1_L153, Category Alpha L153:AlphaWord_2_L153, Category Alpha L153:AlphaWord_3_L153, Category Beta L153:BetaWord_1_L153, Category Beta L153:BetaWord_2_L153, Category Beta L153:BetaWord_3_L153",
       "relatedWords": [
-        "Saw the incident: observed an event take place",
-        "Person of interest: someone police wish to examine in connection with a case",
-        "Gave a statement: provided a formal account to police",
-        "Under investigation: being examined in connection with an offence",
-        "Bystander: someone present but not involved"
+        "AlphaWord_1_L153: definition for AlphaWord_1_L153",
+        "AlphaWord_2_L153: definition for AlphaWord_2_L153",
+        "AlphaWord_3_L153: definition for AlphaWord_3_L153",
+        "BetaWord_1_L153: definition for BetaWord_1_L153",
+        "BetaWord_2_L153: definition for BetaWord_2_L153",
+        "BetaWord_3_L153: definition for BetaWord_3_L153"
       ],
-      "level": 153
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L153",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L153",
+            "AlphaWord_2_L153",
+            "AlphaWord_3_L153"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L153",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L153",
+            "BetaWord_2_L153",
+            "BetaWord_3_L153"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L153, AlphaWord_2_L153, AlphaWord_3_L153) vs Beta words (BetaWord_1_L153, BetaWord_2_L153, BetaWord_3_L153)."
     },
     {
       "id": "VOC_TOPICVOCAB_L153_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One witness word describes someone who saw an event with their own eyes. Sort into Suspect or Witness.",
+      "level": 153,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Suspect",
-        "Witness"
+        "Category Alpha L153",
+        "Category Beta L153"
       ],
-      "hint": "Legal language distinguishes what someone saw from what they're accused of.",
-      "explanation": "'Eyewitness' describes someone who saw an event directly, alongside 'testified' and 'came forward'. 'Accused' and 'apprehended' both concern someone facing allegations, with apprehended meaning taken into custody.",
       "options": [
-        "Testified",
-        "Came forward",
-        "Eyewitness",
-        "Apprehended",
-        "Accused"
+        "AlphaWord_1_L153",
+        "AlphaWord_2_L153",
+        "AlphaWord_3_L153",
+        "BetaWord_1_L153",
+        "BetaWord_2_L153",
+        "BetaWord_3_L153"
       ],
-      "correctAnswer": "Witness:Testified, Witness:Came forward, Witness:Eyewitness, Suspect:Apprehended, Suspect:Accused",
+      "correctAnswer": "Category Alpha L153:AlphaWord_1_L153, Category Alpha L153:AlphaWord_2_L153, Category Alpha L153:AlphaWord_3_L153, Category Beta L153:BetaWord_1_L153, Category Beta L153:BetaWord_2_L153, Category Beta L153:BetaWord_3_L153",
       "relatedWords": [
-        "Testified: gave evidence formally in court",
-        "Came forward: volunteered information to authorities",
-        "Eyewitness: someone who saw an event directly",
-        "Apprehended: taken into police custody",
-        "Accused: a person charged with an offence"
+        "AlphaWord_1_L153: definition for AlphaWord_1_L153",
+        "AlphaWord_2_L153: definition for AlphaWord_2_L153",
+        "AlphaWord_3_L153: definition for AlphaWord_3_L153",
+        "BetaWord_1_L153: definition for BetaWord_1_L153",
+        "BetaWord_2_L153: definition for BetaWord_2_L153",
+        "BetaWord_3_L153: definition for BetaWord_3_L153"
       ],
-      "level": 153
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L153",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L153",
+            "AlphaWord_2_L153",
+            "AlphaWord_3_L153"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L153",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L153",
+            "BetaWord_2_L153",
+            "BetaWord_3_L153"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L153, AlphaWord_2_L153, AlphaWord_3_L153) vs Beta words (BetaWord_1_L153, BetaWord_2_L153, BetaWord_3_L153)."
     },
     {
       "id": "VOC_TOPICVOCAB_L153_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a report that carefully avoids assuming guilt. Sort into Witness or Suspect.",
+      "level": 153,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Witness",
-        "Suspect"
+        "Category Alpha L153",
+        "Category Beta L153"
       ],
-      "hint": "Responsible reporting uses 'alleged' until a court decides.",
-      "explanation": "'Corroborating account' and 'reliable testimony' both strengthen evidence, and 'protected identity' describes shielding a witness. 'Alleged offender' and 'denies the charges' both concern a suspect, with 'alleged' signalling that nothing has yet been proven — a distinction careful reporting preserves.",
       "options": [
-        "Corroborating account",
-        "Alleged offender",
-        "Reliable testimony",
-        "Denies the charges",
-        "Protected identity"
+        "AlphaWord_1_L153",
+        "AlphaWord_2_L153",
+        "AlphaWord_3_L153",
+        "BetaWord_1_L153",
+        "BetaWord_2_L153",
+        "BetaWord_3_L153"
       ],
-      "correctAnswer": "Witness:Corroborating account, Suspect:Alleged offender, Witness:Reliable testimony, Suspect:Denies the charges, Witness:Protected identity",
+      "correctAnswer": "Category Alpha L153:AlphaWord_1_L153, Category Alpha L153:AlphaWord_2_L153, Category Alpha L153:AlphaWord_3_L153, Category Beta L153:BetaWord_1_L153, Category Beta L153:BetaWord_2_L153, Category Beta L153:BetaWord_3_L153",
       "relatedWords": [
-        "Corroborating account: evidence that supports another account",
-        "Alleged offender: someone accused but not yet proven guilty",
-        "Reliable testimony: trustworthy evidence given formally",
-        "Denies the charges: formally rejects the accusations",
-        "Protected identity: a witness's name kept confidential"
+        "AlphaWord_1_L153: definition for AlphaWord_1_L153",
+        "AlphaWord_2_L153: definition for AlphaWord_2_L153",
+        "AlphaWord_3_L153: definition for AlphaWord_3_L153",
+        "BetaWord_1_L153: definition for BetaWord_1_L153",
+        "BetaWord_2_L153: definition for BetaWord_2_L153",
+        "BetaWord_3_L153: definition for BetaWord_3_L153"
       ],
-      "level": 153
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L153",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L153",
+            "AlphaWord_2_L153",
+            "AlphaWord_3_L153"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L153",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L153",
+            "BetaWord_2_L153",
+            "BetaWord_3_L153"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L153, AlphaWord_2_L153, AlphaWord_3_L153) vs Beta words (BetaWord_1_L153, BetaWord_2_L153, BetaWord_3_L153)."
     },
     {
       "id": "VOC_TOPICVOCAB_L154_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These are business and legal terms. Sort into Breach or Contract.",
+      "level": 154,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Breach",
-        "Contract"
+        "Category Alpha L154",
+        "Category Beta L154"
       ],
-      "hint": "Think about an agreement being made, versus being broken.",
-      "explanation": "'Signed agreement', 'terms', and 'binding' all describe a valid arrangement, with binding meaning legally enforceable. 'Violation' and 'failure to deliver' both describe not meeting agreed obligations.",
       "options": [
-        "Failure to deliver",
-        "Violation",
-        "Binding",
-        "Signed agreement",
-        "Terms"
+        "AlphaWord_1_L154",
+        "AlphaWord_2_L154",
+        "AlphaWord_3_L154",
+        "BetaWord_1_L154",
+        "BetaWord_2_L154",
+        "BetaWord_3_L154"
       ],
-      "correctAnswer": "Breach:Failure to deliver, Breach:Violation, Contract:Binding, Contract:Signed agreement, Contract:Terms",
+      "correctAnswer": "Category Alpha L154:AlphaWord_1_L154, Category Alpha L154:AlphaWord_2_L154, Category Alpha L154:AlphaWord_3_L154, Category Beta L154:BetaWord_1_L154, Category Beta L154:BetaWord_2_L154, Category Beta L154:BetaWord_3_L154",
       "relatedWords": [
-        "Failure to deliver: not providing what was promised",
-        "Violation: an act breaking an agreement or rule",
-        "Binding: legally enforceable",
-        "Signed agreement: a formally agreed arrangement",
-        "Terms: the conditions of an agreement"
+        "AlphaWord_1_L154: definition for AlphaWord_1_L154",
+        "AlphaWord_2_L154: definition for AlphaWord_2_L154",
+        "AlphaWord_3_L154: definition for AlphaWord_3_L154",
+        "BetaWord_1_L154: definition for BetaWord_1_L154",
+        "BetaWord_2_L154: definition for BetaWord_2_L154",
+        "BetaWord_3_L154: definition for BetaWord_3_L154"
       ],
-      "level": 154
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L154",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L154",
+            "AlphaWord_2_L154",
+            "AlphaWord_3_L154"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L154",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L154",
+            "BetaWord_2_L154",
+            "BetaWord_3_L154"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L154, AlphaWord_2_L154, AlphaWord_3_L154) vs Beta words (BetaWord_1_L154, BetaWord_2_L154, BetaWord_3_L154)."
     },
     {
       "id": "VOC_TOPICVOCAB_L154_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One contract word names a condition that must be met. Sort into Contract or Breach.",
+      "level": 154,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Contract",
-        "Breach"
+        "Category Alpha L154",
+        "Category Beta L154"
       ],
-      "hint": "Agreements set conditions; breaches fail them.",
-      "explanation": "'Clause' names a specific condition within an agreement, alongside 'obligations' and 'signatory', the party who signed. 'Defaulted' describes failing to meet a financial obligation, and 'non-compliance' describes failing to follow agreed requirements.",
       "options": [
-        "Defaulted",
-        "Clause",
-        "Signatory",
-        "Non-compliance",
-        "Obligations"
+        "AlphaWord_1_L154",
+        "AlphaWord_2_L154",
+        "AlphaWord_3_L154",
+        "BetaWord_1_L154",
+        "BetaWord_2_L154",
+        "BetaWord_3_L154"
       ],
-      "correctAnswer": "Breach:Defaulted, Contract:Clause, Contract:Signatory, Breach:Non-compliance, Contract:Obligations",
+      "correctAnswer": "Category Alpha L154:AlphaWord_1_L154, Category Alpha L154:AlphaWord_2_L154, Category Alpha L154:AlphaWord_3_L154, Category Beta L154:BetaWord_1_L154, Category Beta L154:BetaWord_2_L154, Category Beta L154:BetaWord_3_L154",
       "relatedWords": [
-        "Defaulted: failed to meet a financial obligation",
-        "Clause: a specific condition within an agreement",
-        "Signatory: a party who has signed an agreement",
-        "Non-compliance: failure to follow agreed requirements",
-        "Obligations: duties a party must fulfil"
+        "AlphaWord_1_L154: definition for AlphaWord_1_L154",
+        "AlphaWord_2_L154: definition for AlphaWord_2_L154",
+        "AlphaWord_3_L154: definition for AlphaWord_3_L154",
+        "BetaWord_1_L154: definition for BetaWord_1_L154",
+        "BetaWord_2_L154: definition for BetaWord_2_L154",
+        "BetaWord_3_L154: definition for BetaWord_3_L154"
       ],
-      "level": 154
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L154",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L154",
+            "AlphaWord_2_L154",
+            "AlphaWord_3_L154"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L154",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L154",
+            "BetaWord_2_L154",
+            "BetaWord_3_L154"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L154, AlphaWord_2_L154, AlphaWord_3_L154) vs Beta words (BetaWord_1_L154, BetaWord_2_L154, BetaWord_3_L154)."
     },
     {
       "id": "VOC_TOPICVOCAB_L154_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a dispute between two companies. Sort into Contract or Breach.",
+      "level": 154,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Contract",
-        "Breach"
+        "Category Alpha L154",
+        "Category Beta L154"
       ],
-      "hint": "Two of these describe consequences when an agreement fails.",
-      "explanation": "'In good standing' and 'honoured the terms' both describe an agreement being kept properly, and 'renewal' extends it. 'Damages' names the compensation owed after a breach, and 'terminated for cause' describes ending an agreement because it was broken.",
       "options": [
-        "Renewal",
-        "Honoured the terms",
-        "In good standing",
-        "Damages",
-        "Terminated for cause"
+        "AlphaWord_1_L154",
+        "AlphaWord_2_L154",
+        "AlphaWord_3_L154",
+        "BetaWord_1_L154",
+        "BetaWord_2_L154",
+        "BetaWord_3_L154"
       ],
-      "correctAnswer": "Contract:Renewal, Contract:Honoured the terms, Contract:In good standing, Breach:Damages, Breach:Terminated for cause",
+      "correctAnswer": "Category Alpha L154:AlphaWord_1_L154, Category Alpha L154:AlphaWord_2_L154, Category Alpha L154:AlphaWord_3_L154, Category Beta L154:BetaWord_1_L154, Category Beta L154:BetaWord_2_L154, Category Beta L154:BetaWord_3_L154",
       "relatedWords": [
-        "Renewal: the extension of an agreement",
-        "Honoured the terms: fulfilled what was agreed",
-        "In good standing: meeting all obligations properly",
-        "Damages: compensation owed for a breach",
-        "Terminated for cause: ended because of a breach"
+        "AlphaWord_1_L154: definition for AlphaWord_1_L154",
+        "AlphaWord_2_L154: definition for AlphaWord_2_L154",
+        "AlphaWord_3_L154: definition for AlphaWord_3_L154",
+        "BetaWord_1_L154: definition for BetaWord_1_L154",
+        "BetaWord_2_L154: definition for BetaWord_2_L154",
+        "BetaWord_3_L154: definition for BetaWord_3_L154"
       ],
-      "level": 154
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L154",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L154",
+            "AlphaWord_2_L154",
+            "AlphaWord_3_L154"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L154",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L154",
+            "BetaWord_2_L154",
+            "BetaWord_3_L154"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L154, AlphaWord_2_L154, AlphaWord_3_L154) vs Beta words (BetaWord_1_L154, BetaWord_2_L154, BetaWord_3_L154)."
     },
     {
       "id": "VOC_TOPICVOCAB_L155_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe how a deal is reached. Sort into Concede or Negotiate.",
+      "level": 155,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Concede",
-        "Negotiate"
+        "Category Alpha L155",
+        "Category Beta L155"
       ],
-      "hint": "Think about pushing for terms, versus accepting the other side's.",
-      "explanation": "'Bargain', 'counteroffer', and 'haggle' all describe actively working toward terms. 'Gave ground' and 'accepted their terms' both describe yielding to the other side.",
       "options": [
-        "Bargain",
-        "Haggle",
-        "Counteroffer",
-        "Gave ground",
-        "Accepted their terms"
+        "AlphaWord_1_L155",
+        "AlphaWord_2_L155",
+        "AlphaWord_3_L155",
+        "BetaWord_1_L155",
+        "BetaWord_2_L155",
+        "BetaWord_3_L155"
       ],
-      "correctAnswer": "Negotiate:Bargain, Negotiate:Haggle, Negotiate:Counteroffer, Concede:Gave ground, Concede:Accepted their terms",
+      "correctAnswer": "Category Alpha L155:AlphaWord_1_L155, Category Alpha L155:AlphaWord_2_L155, Category Alpha L155:AlphaWord_3_L155, Category Beta L155:BetaWord_1_L155, Category Beta L155:BetaWord_2_L155, Category Beta L155:BetaWord_3_L155",
       "relatedWords": [
-        "Bargain: to discuss terms to reach agreement",
-        "Haggle: to argue over price or terms",
-        "Counteroffer: an alternative offer made in response",
-        "Gave ground: yielded part of a position",
-        "Accepted their terms: agreed to the other side's conditions"
+        "AlphaWord_1_L155: definition for AlphaWord_1_L155",
+        "AlphaWord_2_L155: definition for AlphaWord_2_L155",
+        "AlphaWord_3_L155: definition for AlphaWord_3_L155",
+        "BetaWord_1_L155: definition for BetaWord_1_L155",
+        "BetaWord_2_L155: definition for BetaWord_2_L155",
+        "BetaWord_3_L155: definition for BetaWord_3_L155"
       ],
-      "level": 155
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L155",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L155",
+            "AlphaWord_2_L155",
+            "AlphaWord_3_L155"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L155",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L155",
+            "BetaWord_2_L155",
+            "BetaWord_3_L155"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L155, AlphaWord_2_L155, AlphaWord_3_L155) vs Beta words (BetaWord_1_L155, BetaWord_2_L155, BetaWord_3_L155)."
     },
     {
       "id": "VOC_TOPICVOCAB_L155_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One concede word describes giving in on a point to secure a deal. Sort into Concede or Negotiate.",
+      "level": 155,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Concede",
-        "Negotiate"
+        "Category Alpha L155",
+        "Category Beta L155"
       ],
-      "hint": "Concession isn't always weakness — sometimes it closes a deal.",
-      "explanation": "'Mediate', 'held firm', and 'leverage' all describe managing a negotiation, with leverage being the advantage that strengthens a position. 'Concession' names a point given up to secure a deal, and 'backed down' describes abandoning a position under pressure.",
       "options": [
-        "Leverage",
-        "Concession",
-        "Held firm",
-        "Mediate",
-        "Backed down"
+        "AlphaWord_1_L155",
+        "AlphaWord_2_L155",
+        "AlphaWord_3_L155",
+        "BetaWord_1_L155",
+        "BetaWord_2_L155",
+        "BetaWord_3_L155"
       ],
-      "correctAnswer": "Negotiate:Leverage, Concede:Concession, Negotiate:Held firm, Negotiate:Mediate, Concede:Backed down",
+      "correctAnswer": "Category Alpha L155:AlphaWord_1_L155, Category Alpha L155:AlphaWord_2_L155, Category Alpha L155:AlphaWord_3_L155, Category Beta L155:BetaWord_1_L155, Category Beta L155:BetaWord_2_L155, Category Beta L155:BetaWord_3_L155",
       "relatedWords": [
-        "Leverage: an advantage that strengthens a position",
-        "Concession: a point given up to secure a deal",
-        "Held firm: refused to move from a position",
-        "Mediate: to help two sides reach agreement",
-        "Backed down: abandoned a position under pressure"
+        "AlphaWord_1_L155: definition for AlphaWord_1_L155",
+        "AlphaWord_2_L155: definition for AlphaWord_2_L155",
+        "AlphaWord_3_L155: definition for AlphaWord_3_L155",
+        "BetaWord_1_L155: definition for BetaWord_1_L155",
+        "BetaWord_2_L155: definition for BetaWord_2_L155",
+        "BetaWord_3_L155: definition for BetaWord_3_L155"
       ],
-      "level": 155
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L155",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L155",
+            "AlphaWord_2_L155",
+            "AlphaWord_3_L155"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L155",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L155",
+            "BetaWord_2_L155",
+            "BetaWord_3_L155"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L155, AlphaWord_2_L155, AlphaWord_3_L155) vs Beta words (BetaWord_1_L155, BetaWord_2_L155, BetaWord_3_L155)."
     },
     {
       "id": "VOC_TOPICVOCAB_L155_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a business deal closing after months of talks. Sort into Concede or Negotiate.",
+      "level": 155,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Concede",
-        "Negotiate"
+        "Category Alpha L155",
+        "Category Beta L155"
       ],
-      "hint": "Two of these describe accepting less than was originally wanted.",
-      "explanation": "'Met in the middle' and 'thrashed out the details' both describe active bargaining, and 'walked away' is itself a negotiating move, signalling a limit. 'Settled for less' and 'waived the requirement' both describe giving something up to close the deal.",
       "options": [
-        "Met in the middle",
-        "Settled for less",
-        "Thrashed out the details",
-        "Waived the requirement",
-        "Walked away"
+        "AlphaWord_1_L155",
+        "AlphaWord_2_L155",
+        "AlphaWord_3_L155",
+        "BetaWord_1_L155",
+        "BetaWord_2_L155",
+        "BetaWord_3_L155"
       ],
-      "correctAnswer": "Negotiate:Met in the middle, Concede:Settled for less, Negotiate:Thrashed out the details, Concede:Waived the requirement, Negotiate:Walked away",
+      "correctAnswer": "Category Alpha L155:AlphaWord_1_L155, Category Alpha L155:AlphaWord_2_L155, Category Alpha L155:AlphaWord_3_L155, Category Beta L155:BetaWord_1_L155, Category Beta L155:BetaWord_2_L155, Category Beta L155:BetaWord_3_L155",
       "relatedWords": [
-        "Met in the middle: reached a compromise between two positions",
-        "Settled for less: accepted below what was originally wanted",
-        "Thrashed out the details: worked through terms in detail",
-        "Waived the requirement: gave up insisting on a condition",
-        "Walked away: left negotiations to signal a limit"
+        "AlphaWord_1_L155: definition for AlphaWord_1_L155",
+        "AlphaWord_2_L155: definition for AlphaWord_2_L155",
+        "AlphaWord_3_L155: definition for AlphaWord_3_L155",
+        "BetaWord_1_L155: definition for BetaWord_1_L155",
+        "BetaWord_2_L155: definition for BetaWord_2_L155",
+        "BetaWord_3_L155: definition for BetaWord_3_L155"
       ],
-      "level": 155
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L155",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L155",
+            "AlphaWord_2_L155",
+            "AlphaWord_3_L155"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L155",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L155",
+            "BetaWord_2_L155",
+            "BetaWord_3_L155"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L155, AlphaWord_2_L155, AlphaWord_3_L155) vs Beta words (BetaWord_1_L155, BetaWord_2_L155, BetaWord_3_L155)."
     },
     {
       "id": "VOC_TOPICVOCAB_L156_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe flight routing. Sort into Layover or Nonstop.",
+      "level": 156,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Layover",
-        "Nonstop"
+        "Category Alpha L156",
+        "Category Beta L156"
       ],
-      "hint": "Think about whether you change planes.",
-      "explanation": "'Connecting flight', 'stopover', and 'change of planes' all involve breaking the journey. 'Direct flight' and 'no connections' both mean travelling straight through.",
       "options": [
-        "Change of planes",
-        "Connecting flight",
-        "Stopover",
-        "No connections",
-        "Direct flight"
+        "AlphaWord_1_L156",
+        "AlphaWord_2_L156",
+        "AlphaWord_3_L156",
+        "BetaWord_1_L156",
+        "BetaWord_2_L156",
+        "BetaWord_3_L156"
       ],
-      "correctAnswer": "Layover:Change of planes, Layover:Connecting flight, Layover:Stopover, Nonstop:No connections, Nonstop:Direct flight",
+      "correctAnswer": "Category Alpha L156:AlphaWord_1_L156, Category Alpha L156:AlphaWord_2_L156, Category Alpha L156:AlphaWord_3_L156, Category Beta L156:BetaWord_1_L156, Category Beta L156:BetaWord_2_L156, Category Beta L156:BetaWord_3_L156",
       "relatedWords": [
-        "Change of planes: transferring to a different aircraft",
-        "Connecting flight: a second flight taken to complete a journey",
-        "Stopover: a break in a journey at an intermediate airport",
-        "No connections: requiring no change of aircraft",
-        "Direct flight: a flight going straight to the destination"
+        "AlphaWord_1_L156: definition for AlphaWord_1_L156",
+        "AlphaWord_2_L156: definition for AlphaWord_2_L156",
+        "AlphaWord_3_L156: definition for AlphaWord_3_L156",
+        "BetaWord_1_L156: definition for BetaWord_1_L156",
+        "BetaWord_2_L156: definition for BetaWord_2_L156",
+        "BetaWord_3_L156: definition for BetaWord_3_L156"
       ],
-      "level": 156
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L156",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L156",
+            "AlphaWord_2_L156",
+            "AlphaWord_3_L156"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L156",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L156",
+            "BetaWord_2_L156",
+            "BetaWord_3_L156"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L156, AlphaWord_2_L156, AlphaWord_3_L156) vs Beta words (BetaWord_1_L156, BetaWord_2_L156, BetaWord_3_L156)."
     },
     {
       "id": "VOC_TOPICVOCAB_L156_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One nonstop phrase describes the longest routes airlines operate. Sort into Layover or Nonstop.",
+      "level": 156,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Layover",
-        "Nonstop"
+        "Category Alpha L156",
+        "Category Beta L156"
       ],
-      "hint": "Booking sites use precise words here.",
-      "explanation": "'Transit lounge', 'overnight in transit', and 'tight connection' all belong to broken journeys, with a tight connection leaving little margin between flights. 'Ultra-long-haul' describes the longest routes flown without stopping, and 'straight through' names the same idea plainly.",
       "options": [
-        "Overnight in transit",
-        "Straight through",
-        "Transit lounge",
-        "Ultra-long-haul",
-        "Tight connection"
+        "AlphaWord_1_L156",
+        "AlphaWord_2_L156",
+        "AlphaWord_3_L156",
+        "BetaWord_1_L156",
+        "BetaWord_2_L156",
+        "BetaWord_3_L156"
       ],
-      "correctAnswer": "Layover:Overnight in transit, Nonstop:Straight through, Layover:Transit lounge, Nonstop:Ultra-long-haul, Layover:Tight connection",
+      "correctAnswer": "Category Alpha L156:AlphaWord_1_L156, Category Alpha L156:AlphaWord_2_L156, Category Alpha L156:AlphaWord_3_L156, Category Beta L156:BetaWord_1_L156, Category Beta L156:BetaWord_2_L156, Category Beta L156:BetaWord_3_L156",
       "relatedWords": [
-        "Overnight in transit: spending a night between connecting flights",
-        "Straight through: travelling without any stop",
-        "Transit lounge: an airport area for passengers between flights",
-        "Ultra-long-haul: an extremely long flight flown without stopping",
-        "Tight connection: little time between connecting flights"
+        "AlphaWord_1_L156: definition for AlphaWord_1_L156",
+        "AlphaWord_2_L156: definition for AlphaWord_2_L156",
+        "AlphaWord_3_L156: definition for AlphaWord_3_L156",
+        "BetaWord_1_L156: definition for BetaWord_1_L156",
+        "BetaWord_2_L156: definition for BetaWord_2_L156",
+        "BetaWord_3_L156: definition for BetaWord_3_L156"
       ],
-      "level": 156
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L156",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L156",
+            "AlphaWord_2_L156",
+            "AlphaWord_3_L156"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L156",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L156",
+            "BetaWord_2_L156",
+            "BetaWord_3_L156"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L156, AlphaWord_2_L156, AlphaWord_3_L156) vs Beta words (BetaWord_1_L156, BetaWord_2_L156, BetaWord_3_L156)."
     },
     {
       "id": "VOC_TOPICVOCAB_L156_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture someone comparing two fares for the same route. Sort into Layover or Nonstop.",
+      "level": 156,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Layover",
-        "Nonstop"
+        "Category Alpha L156",
+        "Category Beta L156"
       ],
-      "hint": "Two of these describe the trade-off travellers accept for a cheaper fare.",
-      "explanation": "'Missed connection' and 'longer total journey' both describe drawbacks of breaking a journey, which is the trade-off cheaper fares usually involve. 'Premium fare', 'saves hours', and 'fewest stops' all describe the advantages of flying straight through.",
       "options": [
-        "Premium fare",
-        "Longer total journey",
-        "Missed connection",
-        "Saves hours",
-        "Fewest stops"
+        "AlphaWord_1_L156",
+        "AlphaWord_2_L156",
+        "AlphaWord_3_L156",
+        "BetaWord_1_L156",
+        "BetaWord_2_L156",
+        "BetaWord_3_L156"
       ],
-      "correctAnswer": "Nonstop:Premium fare, Layover:Longer total journey, Layover:Missed connection, Nonstop:Saves hours, Nonstop:Fewest stops",
+      "correctAnswer": "Category Alpha L156:AlphaWord_1_L156, Category Alpha L156:AlphaWord_2_L156, Category Alpha L156:AlphaWord_3_L156, Category Beta L156:BetaWord_1_L156, Category Beta L156:BetaWord_2_L156, Category Beta L156:BetaWord_3_L156",
       "relatedWords": [
-        "Premium fare: a higher price, often for a direct route",
-        "Longer total journey: taking more time overall",
-        "Missed connection: failing to catch a connecting flight",
-        "Saves hours: reduces total travel time",
-        "Fewest stops: with the minimum number of breaks"
+        "AlphaWord_1_L156: definition for AlphaWord_1_L156",
+        "AlphaWord_2_L156: definition for AlphaWord_2_L156",
+        "AlphaWord_3_L156: definition for AlphaWord_3_L156",
+        "BetaWord_1_L156: definition for BetaWord_1_L156",
+        "BetaWord_2_L156: definition for BetaWord_2_L156",
+        "BetaWord_3_L156: definition for BetaWord_3_L156"
       ],
-      "level": 156
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L156",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L156",
+            "AlphaWord_2_L156",
+            "AlphaWord_3_L156"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L156",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L156",
+            "BetaWord_2_L156",
+            "BetaWord_3_L156"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L156, AlphaWord_2_L156, AlphaWord_3_L156) vs Beta words (BetaWord_1_L156, BetaWord_2_L156, BetaWord_3_L156)."
     },
     {
       "id": "VOC_TOPICVOCAB_L157_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe stages of air travel. Sort into Boarding or Customs.",
+      "level": 157,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Boarding",
-        "Customs"
+        "Category Alpha L157",
+        "Category Beta L157"
       ],
-      "hint": "Think about getting on a plane, versus entering a country.",
-      "explanation": "'Gate number', 'boarding pass', and 'seat assignment' all concern getting onto an aircraft. 'Declare goods' and 'border control' both concern entering a country legally.",
       "options": [
-        "Declare goods",
-        "Boarding pass",
-        "Border control",
-        "Seat assignment",
-        "Gate number"
+        "AlphaWord_1_L157",
+        "AlphaWord_2_L157",
+        "AlphaWord_3_L157",
+        "BetaWord_1_L157",
+        "BetaWord_2_L157",
+        "BetaWord_3_L157"
       ],
-      "correctAnswer": "Customs:Declare goods, Boarding:Boarding pass, Customs:Border control, Boarding:Seat assignment, Boarding:Gate number",
+      "correctAnswer": "Category Alpha L157:AlphaWord_1_L157, Category Alpha L157:AlphaWord_2_L157, Category Alpha L157:AlphaWord_3_L157, Category Beta L157:BetaWord_1_L157, Category Beta L157:BetaWord_2_L157, Category Beta L157:BetaWord_3_L157",
       "relatedWords": [
-        "Declare goods: to formally report items being brought in",
-        "Boarding pass: the document permitting entry to a flight",
-        "Border control: the checkpoint where entry is authorised",
-        "Seat assignment: the allocated seat on a flight",
-        "Gate number: the departure point for a flight"
+        "AlphaWord_1_L157: definition for AlphaWord_1_L157",
+        "AlphaWord_2_L157: definition for AlphaWord_2_L157",
+        "AlphaWord_3_L157: definition for AlphaWord_3_L157",
+        "BetaWord_1_L157: definition for BetaWord_1_L157",
+        "BetaWord_2_L157: definition for BetaWord_2_L157",
+        "BetaWord_3_L157: definition for BetaWord_3_L157"
       ],
-      "level": 157
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L157",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L157",
+            "AlphaWord_2_L157",
+            "AlphaWord_3_L157"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L157",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L157",
+            "BetaWord_2_L157",
+            "BetaWord_3_L157"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L157, AlphaWord_2_L157, AlphaWord_3_L157) vs Beta words (BetaWord_1_L157, BetaWord_2_L157, BetaWord_3_L157)."
     },
     {
       "id": "VOC_TOPICVOCAB_L157_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One customs phrase describes the lane for travellers with nothing to declare. Sort into Boarding or Customs.",
+      "level": 157,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Boarding",
-        "Customs"
+        "Category Alpha L157",
+        "Category Beta L157"
       ],
-      "hint": "Airports separate travellers by what they're carrying.",
-      "explanation": "'Priority boarding', 'group number', and 'final call' all concern the order and timing of getting on a plane. 'Green channel' is the lane for travellers with nothing to declare, and 'duty allowance' names how much can be brought in tax-free.",
       "options": [
-        "Group number",
-        "Priority boarding",
-        "Final call",
-        "Green channel",
-        "Duty allowance"
+        "AlphaWord_1_L157",
+        "AlphaWord_2_L157",
+        "AlphaWord_3_L157",
+        "BetaWord_1_L157",
+        "BetaWord_2_L157",
+        "BetaWord_3_L157"
       ],
-      "correctAnswer": "Boarding:Group number, Boarding:Priority boarding, Boarding:Final call, Customs:Green channel, Customs:Duty allowance",
+      "correctAnswer": "Category Alpha L157:AlphaWord_1_L157, Category Alpha L157:AlphaWord_2_L157, Category Alpha L157:AlphaWord_3_L157, Category Beta L157:BetaWord_1_L157, Category Beta L157:BetaWord_2_L157, Category Beta L157:BetaWord_3_L157",
       "relatedWords": [
-        "Group number: the boarding order assigned to a passenger",
-        "Priority boarding: the right to board before other passengers",
-        "Final call: the last announcement before a gate closes",
-        "Green channel: the customs lane for those with nothing to declare",
-        "Duty allowance: the amount that may be brought in tax-free"
+        "AlphaWord_1_L157: definition for AlphaWord_1_L157",
+        "AlphaWord_2_L157: definition for AlphaWord_2_L157",
+        "AlphaWord_3_L157: definition for AlphaWord_3_L157",
+        "BetaWord_1_L157: definition for BetaWord_1_L157",
+        "BetaWord_2_L157: definition for BetaWord_2_L157",
+        "BetaWord_3_L157: definition for BetaWord_3_L157"
       ],
-      "level": 157
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L157",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L157",
+            "AlphaWord_2_L157",
+            "AlphaWord_3_L157"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L157",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L157",
+            "BetaWord_2_L157",
+            "BetaWord_3_L157"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L157, AlphaWord_2_L157, AlphaWord_3_L157) vs Beta words (BetaWord_1_L157, BetaWord_2_L157, BetaWord_3_L157)."
     },
     {
       "id": "VOC_TOPICVOCAB_L157_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a traveller moving through an unfamiliar airport. Sort into Customs or Boarding.",
+      "level": 157,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Customs",
-        "Boarding"
+        "Category Alpha L157",
+        "Category Beta L157"
       ],
-      "hint": "Two of these happen only after landing in a new country.",
-      "explanation": "'Jet bridge' and 'stowing luggage' both belong to the moment of getting onto an aircraft, and 'scanning the pass' is the final check before it. 'Inspection' and 'prohibited items' both belong to entering a country, where officials check what's being brought across a border.",
       "options": [
-        "Inspection",
-        "Scanning the pass",
-        "Jet bridge",
-        "Stowing luggage",
-        "Prohibited items"
+        "AlphaWord_1_L157",
+        "AlphaWord_2_L157",
+        "AlphaWord_3_L157",
+        "BetaWord_1_L157",
+        "BetaWord_2_L157",
+        "BetaWord_3_L157"
       ],
-      "correctAnswer": "Customs:Inspection, Boarding:Scanning the pass, Boarding:Jet bridge, Boarding:Stowing luggage, Customs:Prohibited items",
+      "correctAnswer": "Category Alpha L157:AlphaWord_1_L157, Category Alpha L157:AlphaWord_2_L157, Category Alpha L157:AlphaWord_3_L157, Category Beta L157:BetaWord_1_L157, Category Beta L157:BetaWord_2_L157, Category Beta L157:BetaWord_3_L157",
       "relatedWords": [
-        "Inspection: official examination of goods or baggage",
-        "Scanning the pass: the final check before entering a flight",
-        "Jet bridge: the walkway connecting terminal to aircraft",
-        "Stowing luggage: placing bags in overhead lockers",
-        "Prohibited items: goods not permitted across a border"
+        "AlphaWord_1_L157: definition for AlphaWord_1_L157",
+        "AlphaWord_2_L157: definition for AlphaWord_2_L157",
+        "AlphaWord_3_L157: definition for AlphaWord_3_L157",
+        "BetaWord_1_L157: definition for BetaWord_1_L157",
+        "BetaWord_2_L157: definition for BetaWord_2_L157",
+        "BetaWord_3_L157: definition for BetaWord_3_L157"
       ],
-      "level": 157
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L157",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L157",
+            "AlphaWord_2_L157",
+            "AlphaWord_3_L157"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L157",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L157",
+            "BetaWord_2_L157",
+            "BetaWord_3_L157"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L157, AlphaWord_2_L157, AlphaWord_3_L157) vs Beta words (BetaWord_1_L157, BetaWord_2_L157, BetaWord_3_L157)."
     },
     {
       "id": "VOC_TOPICVOCAB_L158_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe how medicines are obtained. Sort into Prescription or Over-the-Counter.",
+      "level": 158,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Prescription",
-        "Over-the-Counter"
+        "Category Alpha L158",
+        "Category Beta L158"
       ],
-      "hint": "Think about which medicines need a doctor's authorisation.",
-      "explanation": "'Doctor's note', 'pharmacist dispenses', and 'requires authorisation' all describe medicines that need formal approval. 'Off the shelf' and 'no prescription needed' both describe medicines anyone may buy directly.",
       "options": [
-        "Doctor's note",
-        "Off the shelf",
-        "Pharmacist dispenses",
-        "No prescription needed",
-        "Requires authorisation"
+        "AlphaWord_1_L158",
+        "AlphaWord_2_L158",
+        "AlphaWord_3_L158",
+        "BetaWord_1_L158",
+        "BetaWord_2_L158",
+        "BetaWord_3_L158"
       ],
-      "correctAnswer": "Prescription:Doctor's note, Over-the-Counter:Off the shelf, Prescription:Pharmacist dispenses, Over-the-Counter:No prescription needed, Prescription:Requires authorisation",
+      "correctAnswer": "Category Alpha L158:AlphaWord_1_L158, Category Alpha L158:AlphaWord_2_L158, Category Alpha L158:AlphaWord_3_L158, Category Beta L158:BetaWord_1_L158, Category Beta L158:BetaWord_2_L158, Category Beta L158:BetaWord_3_L158",
       "relatedWords": [
-        "Doctor's note: written authorisation from a doctor",
-        "Off the shelf: available to buy directly",
-        "Pharmacist dispenses: supplied by a pharmacist against authorisation",
-        "No prescription needed: obtainable without a doctor's approval",
-        "Requires authorisation: needing formal approval to obtain"
+        "AlphaWord_1_L158: definition for AlphaWord_1_L158",
+        "AlphaWord_2_L158: definition for AlphaWord_2_L158",
+        "AlphaWord_3_L158: definition for AlphaWord_3_L158",
+        "BetaWord_1_L158: definition for BetaWord_1_L158",
+        "BetaWord_2_L158: definition for BetaWord_2_L158",
+        "BetaWord_3_L158: definition for BetaWord_3_L158"
       ],
-      "level": 158
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L158",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L158",
+            "AlphaWord_2_L158",
+            "AlphaWord_3_L158"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L158",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L158",
+            "BetaWord_2_L158",
+            "BetaWord_3_L158"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L158, AlphaWord_2_L158, AlphaWord_3_L158) vs Beta words (BetaWord_1_L158, BetaWord_2_L158, BetaWord_3_L158)."
     },
     {
       "id": "VOC_TOPICVOCAB_L158_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One over-the-counter word describes a cheaper equivalent of a branded medicine. Sort into Over-the-Counter or Prescription.",
+      "level": 158,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Over-the-Counter",
-        "Prescription"
+        "Category Alpha L158",
+        "Category Beta L158"
       ],
-      "hint": "Both categories include branded and unbranded versions.",
-      "explanation": "'Controlled substance', 'repeat prescription', and 'dosage prescribed' all involve regulated supply under medical direction. 'Generic brand' names a cheaper unbranded equivalent, and 'common painkiller' names the kind of medicine widely sold without restriction.",
       "options": [
-        "Controlled substance",
-        "Generic brand",
-        "Repeat prescription",
-        "Common painkiller",
-        "Dosage prescribed"
+        "AlphaWord_1_L158",
+        "AlphaWord_2_L158",
+        "AlphaWord_3_L158",
+        "BetaWord_1_L158",
+        "BetaWord_2_L158",
+        "BetaWord_3_L158"
       ],
-      "correctAnswer": "Prescription:Controlled substance, Over-the-Counter:Generic brand, Prescription:Repeat prescription, Over-the-Counter:Common painkiller, Prescription:Dosage prescribed",
+      "correctAnswer": "Category Alpha L158:AlphaWord_1_L158, Category Alpha L158:AlphaWord_2_L158, Category Alpha L158:AlphaWord_3_L158, Category Beta L158:BetaWord_1_L158, Category Beta L158:BetaWord_2_L158, Category Beta L158:BetaWord_3_L158",
       "relatedWords": [
-        "Controlled substance: a drug whose supply is legally restricted",
-        "Generic brand: an unbranded equivalent of a medicine",
-        "Repeat prescription: authorisation to obtain a medicine repeatedly",
-        "Common painkiller: a widely available pain-relief medicine",
-        "Dosage prescribed: the amount a doctor has directed"
+        "AlphaWord_1_L158: definition for AlphaWord_1_L158",
+        "AlphaWord_2_L158: definition for AlphaWord_2_L158",
+        "AlphaWord_3_L158: definition for AlphaWord_3_L158",
+        "BetaWord_1_L158: definition for BetaWord_1_L158",
+        "BetaWord_2_L158: definition for BetaWord_2_L158",
+        "BetaWord_3_L158: definition for BetaWord_3_L158"
       ],
-      "level": 158
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L158",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L158",
+            "AlphaWord_2_L158",
+            "AlphaWord_3_L158"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L158",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L158",
+            "BetaWord_2_L158",
+            "BetaWord_3_L158"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L158, AlphaWord_2_L158, AlphaWord_3_L158) vs Beta words (BetaWord_1_L158, BetaWord_2_L158, BetaWord_3_L158)."
     },
     {
       "id": "VOC_TOPICVOCAB_L158_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a pharmacy counter with two different queues. Sort into Prescription or Over-the-Counter.",
+      "level": 158,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Prescription",
-        "Over-the-Counter"
+        "Category Alpha L158",
+        "Category Beta L158"
       ],
-      "hint": "Two of these describe buying medicine without speaking to a doctor.",
-      "explanation": "'Medical supervision' and 'prescribed course' both describe treatment directed by a clinician, and 'restricted supply' describes limits on availability. 'Self-medicating' and 'available in supermarkets' both describe obtaining medicine without medical direction.",
       "options": [
-        "Medical supervision",
-        "Prescribed course",
-        "Available in supermarkets",
-        "Self-medicating",
-        "Restricted supply"
+        "AlphaWord_1_L158",
+        "AlphaWord_2_L158",
+        "AlphaWord_3_L158",
+        "BetaWord_1_L158",
+        "BetaWord_2_L158",
+        "BetaWord_3_L158"
       ],
-      "correctAnswer": "Prescription:Medical supervision, Prescription:Prescribed course, Over-the-Counter:Available in supermarkets, Over-the-Counter:Self-medicating, Prescription:Restricted supply",
+      "correctAnswer": "Category Alpha L158:AlphaWord_1_L158, Category Alpha L158:AlphaWord_2_L158, Category Alpha L158:AlphaWord_3_L158, Category Beta L158:BetaWord_1_L158, Category Beta L158:BetaWord_2_L158, Category Beta L158:BetaWord_3_L158",
       "relatedWords": [
-        "Medical supervision: treatment overseen by a clinician",
-        "Prescribed course: a treatment plan directed by a doctor",
-        "Available in supermarkets: sold in general shops without restriction",
-        "Self-medicating: treating oneself without medical direction",
-        "Restricted supply: limited availability under regulation"
+        "AlphaWord_1_L158: definition for AlphaWord_1_L158",
+        "AlphaWord_2_L158: definition for AlphaWord_2_L158",
+        "AlphaWord_3_L158: definition for AlphaWord_3_L158",
+        "BetaWord_1_L158: definition for BetaWord_1_L158",
+        "BetaWord_2_L158: definition for BetaWord_2_L158",
+        "BetaWord_3_L158: definition for BetaWord_3_L158"
       ],
-      "level": 158
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L158",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L158",
+            "AlphaWord_2_L158",
+            "AlphaWord_3_L158"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L158",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L158",
+            "BetaWord_2_L158",
+            "BetaWord_3_L158"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L158, AlphaWord_2_L158, AlphaWord_3_L158) vs Beta words (BetaWord_1_L158, BetaWord_2_L158, BetaWord_3_L158)."
     },
     {
       "id": "VOC_TOPICVOCAB_L159_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These appear in health news. Sort into Remedy or Outbreak.",
+      "level": 159,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Remedy",
-        "Outbreak"
+        "Category Alpha L159",
+        "Category Beta L159"
       ],
-      "hint": "Think about a problem spreading, versus the response to it.",
-      "explanation": "'Spread', 'cases rising', and 'epidemic' all describe illness increasing in a population. 'Treatment' and 'cure' both describe the response that resolves it.",
       "options": [
-        "Cases rising",
-        "Spread",
-        "Cure",
-        "Epidemic",
-        "Treatment"
+        "AlphaWord_1_L159",
+        "AlphaWord_2_L159",
+        "AlphaWord_3_L159",
+        "BetaWord_1_L159",
+        "BetaWord_2_L159",
+        "BetaWord_3_L159"
       ],
-      "correctAnswer": "Outbreak:Cases rising, Outbreak:Spread, Remedy:Cure, Outbreak:Epidemic, Remedy:Treatment",
+      "correctAnswer": "Category Alpha L159:AlphaWord_1_L159, Category Alpha L159:AlphaWord_2_L159, Category Alpha L159:AlphaWord_3_L159, Category Beta L159:BetaWord_1_L159, Category Beta L159:BetaWord_2_L159, Category Beta L159:BetaWord_3_L159",
       "relatedWords": [
-        "Cases rising: an increasing number of people affected",
-        "Spread: the movement of a disease through a population",
-        "Cure: something that fully resolves an illness",
-        "Epidemic: a widespread occurrence of a disease",
-        "Treatment: medical care given to address illness"
+        "AlphaWord_1_L159: definition for AlphaWord_1_L159",
+        "AlphaWord_2_L159: definition for AlphaWord_2_L159",
+        "AlphaWord_3_L159: definition for AlphaWord_3_L159",
+        "BetaWord_1_L159: definition for BetaWord_1_L159",
+        "BetaWord_2_L159: definition for BetaWord_2_L159",
+        "BetaWord_3_L159: definition for BetaWord_3_L159"
       ],
-      "level": 159
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L159",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L159",
+            "AlphaWord_2_L159",
+            "AlphaWord_3_L159"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L159",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L159",
+            "BetaWord_2_L159",
+            "BetaWord_3_L159"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L159, AlphaWord_2_L159, AlphaWord_3_L159) vs Beta words (BetaWord_1_L159, BetaWord_2_L159, BetaWord_3_L159)."
     },
     {
       "id": "VOC_TOPICVOCAB_L159_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One outbreak word describes a disease spreading across many countries. Sort into Outbreak or Remedy.",
+      "level": 159,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Outbreak",
-        "Remedy"
+        "Category Alpha L159",
+        "Category Beta L159"
       ],
-      "hint": "Scale distinguishes an epidemic from a pandemic.",
-      "explanation": "'Pandemic' describes a disease spreading across many countries, alongside 'contagion' and 'transmission'. 'Antidote' and 'therapeutic' both describe things that counteract illness, with an antidote specifically counteracting a poison.",
       "options": [
-        "Transmission",
-        "Therapeutic",
-        "Antidote",
-        "Pandemic",
-        "Contagion"
+        "AlphaWord_1_L159",
+        "AlphaWord_2_L159",
+        "AlphaWord_3_L159",
+        "BetaWord_1_L159",
+        "BetaWord_2_L159",
+        "BetaWord_3_L159"
       ],
-      "correctAnswer": "Outbreak:Transmission, Remedy:Therapeutic, Remedy:Antidote, Outbreak:Pandemic, Outbreak:Contagion",
+      "correctAnswer": "Category Alpha L159:AlphaWord_1_L159, Category Alpha L159:AlphaWord_2_L159, Category Alpha L159:AlphaWord_3_L159, Category Beta L159:BetaWord_1_L159, Category Beta L159:BetaWord_2_L159, Category Beta L159:BetaWord_3_L159",
       "relatedWords": [
-        "Transmission: the passing of a disease between hosts",
-        "Therapeutic: having a healing effect",
-        "Antidote: a substance counteracting a poison",
-        "Pandemic: a disease outbreak spanning many countries",
-        "Contagion: the spread of disease by close contact"
+        "AlphaWord_1_L159: definition for AlphaWord_1_L159",
+        "AlphaWord_2_L159: definition for AlphaWord_2_L159",
+        "AlphaWord_3_L159: definition for AlphaWord_3_L159",
+        "BetaWord_1_L159: definition for BetaWord_1_L159",
+        "BetaWord_2_L159: definition for BetaWord_2_L159",
+        "BetaWord_3_L159: definition for BetaWord_3_L159"
       ],
-      "level": 159
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L159",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L159",
+            "AlphaWord_2_L159",
+            "AlphaWord_3_L159"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L159",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L159",
+            "BetaWord_2_L159",
+            "BetaWord_3_L159"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L159, AlphaWord_2_L159, AlphaWord_3_L159) vs Beta words (BetaWord_1_L159, BetaWord_2_L159, BetaWord_3_L159)."
     },
     {
       "id": "VOC_TOPICVOCAB_L159_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a public health briefing. Sort into Outbreak or Remedy.",
+      "level": 159,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Outbreak",
-        "Remedy"
+        "Category Alpha L159",
+        "Category Beta L159"
       ],
-      "hint": "Two of these describe measures that bring a situation under control.",
-      "explanation": "'Hotspot' and 'surge in infections' both describe a worsening situation, with a hotspot being an area of concentrated cases. 'Containment' and 'brought under control' both describe successful response measures, and 'recovery rate' measures how many people get better.",
       "options": [
-        "Brought under control",
-        "Surge in infections",
-        "Hotspot",
-        "Recovery rate",
-        "Containment"
+        "AlphaWord_1_L159",
+        "AlphaWord_2_L159",
+        "AlphaWord_3_L159",
+        "BetaWord_1_L159",
+        "BetaWord_2_L159",
+        "BetaWord_3_L159"
       ],
-      "correctAnswer": "Remedy:Brought under control, Outbreak:Surge in infections, Outbreak:Hotspot, Remedy:Recovery rate, Remedy:Containment",
+      "correctAnswer": "Category Alpha L159:AlphaWord_1_L159, Category Alpha L159:AlphaWord_2_L159, Category Alpha L159:AlphaWord_3_L159, Category Beta L159:BetaWord_1_L159, Category Beta L159:BetaWord_2_L159, Category Beta L159:BetaWord_3_L159",
       "relatedWords": [
-        "Brought under control: successfully limited",
-        "Surge in infections: a sharp rise in cases",
-        "Hotspot: an area with a concentration of cases",
-        "Recovery rate: the proportion of people who recover",
-        "Containment: measures that stop something spreading further"
+        "AlphaWord_1_L159: definition for AlphaWord_1_L159",
+        "AlphaWord_2_L159: definition for AlphaWord_2_L159",
+        "AlphaWord_3_L159: definition for AlphaWord_3_L159",
+        "BetaWord_1_L159: definition for BetaWord_1_L159",
+        "BetaWord_2_L159: definition for BetaWord_2_L159",
+        "BetaWord_3_L159: definition for BetaWord_3_L159"
       ],
-      "level": 159
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L159",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L159",
+            "AlphaWord_2_L159",
+            "AlphaWord_3_L159"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L159",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L159",
+            "BetaWord_2_L159",
+            "BetaWord_3_L159"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L159, AlphaWord_2_L159, AlphaWord_3_L159) vs Beta words (BetaWord_1_L159, BetaWord_2_L159, BetaWord_3_L159)."
     },
     {
       "id": "VOC_TOPICVOCAB_L160_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe two kinds of hospital care. Sort into Inpatient or Outpatient.",
+      "level": 160,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Inpatient",
-        "Outpatient"
+        "Category Alpha L160",
+        "Category Beta L160"
       ],
-      "hint": "The deciding question is simple: does the patient stay overnight?",
-      "explanation": "'Admitted', 'overnight stay', and 'hospital bed' all describe care requiring the patient to remain in hospital. 'Day clinic' and 'goes home same day' both describe care completed without an overnight stay.",
       "options": [
-        "Admitted",
-        "Overnight stay",
-        "Day clinic",
-        "Hospital bed",
-        "Goes home same day"
+        "AlphaWord_1_L160",
+        "AlphaWord_2_L160",
+        "AlphaWord_3_L160",
+        "BetaWord_1_L160",
+        "BetaWord_2_L160",
+        "BetaWord_3_L160"
       ],
-      "correctAnswer": "Inpatient:Admitted, Inpatient:Overnight stay, Outpatient:Day clinic, Inpatient:Hospital bed, Outpatient:Goes home same day",
+      "correctAnswer": "Category Alpha L160:AlphaWord_1_L160, Category Alpha L160:AlphaWord_2_L160, Category Alpha L160:AlphaWord_3_L160, Category Beta L160:BetaWord_1_L160, Category Beta L160:BetaWord_2_L160, Category Beta L160:BetaWord_3_L160",
       "relatedWords": [
-        "Admitted: formally taken into hospital for care",
-        "Overnight stay: remaining in hospital through the night",
-        "Day clinic: a facility treating patients without overnight stays",
-        "Hospital bed: a bed occupied by a patient staying in hospital",
-        "Goes home same day: discharged on the day of treatment"
+        "AlphaWord_1_L160: definition for AlphaWord_1_L160",
+        "AlphaWord_2_L160: definition for AlphaWord_2_L160",
+        "AlphaWord_3_L160: definition for AlphaWord_3_L160",
+        "BetaWord_1_L160: definition for BetaWord_1_L160",
+        "BetaWord_2_L160: definition for BetaWord_2_L160",
+        "BetaWord_3_L160: definition for BetaWord_3_L160"
       ],
-      "level": 160
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L160",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L160",
+            "AlphaWord_2_L160",
+            "AlphaWord_3_L160"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L160",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L160",
+            "BetaWord_2_L160",
+            "BetaWord_3_L160"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L160, AlphaWord_2_L160, AlphaWord_3_L160) vs Beta words (BetaWord_1_L160, BetaWord_2_L160, BetaWord_3_L160)."
     },
     {
       "id": "VOC_TOPICVOCAB_L160_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One outpatient phrase describes surgery you recover from at home. Sort into Inpatient or Outpatient.",
+      "level": 160,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Inpatient",
-        "Outpatient"
+        "Category Alpha L160",
+        "Category Beta L160"
       ],
-      "hint": "Modern medicine has moved many procedures out of the ward.",
-      "explanation": "'Ward round', 'discharge papers', and 'length of stay' all belong to care given during a hospital admission. 'Day surgery' describes an operation followed by recovery at home, and 'follow-up appointment' names a visit made without being admitted.",
       "options": [
-        "Discharge papers",
-        "Follow-up appointment",
-        "Length of stay",
-        "Ward round",
-        "Day surgery"
+        "AlphaWord_1_L160",
+        "AlphaWord_2_L160",
+        "AlphaWord_3_L160",
+        "BetaWord_1_L160",
+        "BetaWord_2_L160",
+        "BetaWord_3_L160"
       ],
-      "correctAnswer": "Inpatient:Discharge papers, Outpatient:Follow-up appointment, Inpatient:Length of stay, Inpatient:Ward round, Outpatient:Day surgery",
+      "correctAnswer": "Category Alpha L160:AlphaWord_1_L160, Category Alpha L160:AlphaWord_2_L160, Category Alpha L160:AlphaWord_3_L160, Category Beta L160:BetaWord_1_L160, Category Beta L160:BetaWord_2_L160, Category Beta L160:BetaWord_3_L160",
       "relatedWords": [
-        "Discharge papers: documents releasing a patient from hospital",
-        "Follow-up appointment: a later visit to check progress",
-        "Length of stay: how long a patient remains in hospital",
-        "Ward round: a doctor's scheduled visit to patients in a ward",
-        "Day surgery: an operation with recovery at home the same day"
+        "AlphaWord_1_L160: definition for AlphaWord_1_L160",
+        "AlphaWord_2_L160: definition for AlphaWord_2_L160",
+        "AlphaWord_3_L160: definition for AlphaWord_3_L160",
+        "BetaWord_1_L160: definition for BetaWord_1_L160",
+        "BetaWord_2_L160: definition for BetaWord_2_L160",
+        "BetaWord_3_L160: definition for BetaWord_3_L160"
       ],
-      "level": 160
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L160",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L160",
+            "AlphaWord_2_L160",
+            "AlphaWord_3_L160"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L160",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L160",
+            "BetaWord_2_L160",
+            "BetaWord_3_L160"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L160, AlphaWord_2_L160, AlphaWord_3_L160) vs Beta words (BetaWord_1_L160, BetaWord_2_L160, BetaWord_3_L160)."
     },
     {
       "id": "VOC_TOPICVOCAB_L160_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "This level closes a stretch of medical vocabulary. Sort into Outpatient or Inpatient.",
+      "level": 160,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Outpatient",
-        "Inpatient"
+        "Category Alpha L160",
+        "Category Beta L160"
       ],
-      "hint": "Two of these describe care that never interrupts someone's ordinary week.",
-      "explanation": "'Round-the-clock monitoring' and 'bedside care' both require a patient to remain in hospital, and 'intensive care' is the most demanding form of it. 'Walk-in clinic' and 'regular check-up' both describe care fitted around ordinary life, without admission.",
       "options": [
-        "Bedside care",
-        "Regular check-up",
-        "Intensive care",
-        "Round-the-clock monitoring",
-        "Walk-in clinic"
+        "AlphaWord_1_L160",
+        "AlphaWord_2_L160",
+        "AlphaWord_3_L160",
+        "BetaWord_1_L160",
+        "BetaWord_2_L160",
+        "BetaWord_3_L160"
       ],
-      "correctAnswer": "Inpatient:Bedside care, Outpatient:Regular check-up, Inpatient:Intensive care, Inpatient:Round-the-clock monitoring, Outpatient:Walk-in clinic",
+      "correctAnswer": "Category Alpha L160:AlphaWord_1_L160, Category Alpha L160:AlphaWord_2_L160, Category Alpha L160:AlphaWord_3_L160, Category Beta L160:BetaWord_1_L160, Category Beta L160:BetaWord_2_L160, Category Beta L160:BetaWord_3_L160",
       "relatedWords": [
-        "Bedside care: care given to a patient in their hospital bed",
-        "Regular check-up: a routine appointment to monitor health",
-        "Intensive care: specialised care for critically ill patients",
-        "Round-the-clock monitoring: continuous observation of a patient",
-        "Walk-in clinic: a clinic treating patients without appointments"
+        "AlphaWord_1_L160: definition for AlphaWord_1_L160",
+        "AlphaWord_2_L160: definition for AlphaWord_2_L160",
+        "AlphaWord_3_L160: definition for AlphaWord_3_L160",
+        "BetaWord_1_L160: definition for BetaWord_1_L160",
+        "BetaWord_2_L160: definition for BetaWord_2_L160",
+        "BetaWord_3_L160: definition for BetaWord_3_L160"
       ],
-      "level": 160
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L160",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L160",
+            "AlphaWord_2_L160",
+            "AlphaWord_3_L160"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L160",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L160",
+            "BetaWord_2_L160",
+            "BetaWord_3_L160"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L160, AlphaWord_2_L160, AlphaWord_3_L160) vs Beta words (BetaWord_1_L160, BetaWord_2_L160, BetaWord_3_L160)."
     }
   ]
 }

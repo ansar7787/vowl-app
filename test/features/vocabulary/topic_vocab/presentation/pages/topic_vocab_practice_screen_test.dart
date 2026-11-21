@@ -1,95 +1,88 @@
+import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail/mocktail.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/pages/topic_vocab_practice_screen.dart';
+import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_matrix_grid.dart';
+
+class MockHapticService extends Mock implements HapticService {}
+class MockSoundService extends Mock implements SoundService {}
+class MockTtsService extends Mock implements TtsService {}
+class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
+  late MockHapticService mockHaptics;
+  late MockSoundService mockSounds;
+  late MockTtsService mockTts;
+  late MockAuthBloc mockAuthBloc;
+
+  setUp(() async {
+    VowlMotion.lowAnimationModeOverride.value = true;
+    mockHaptics = MockHapticService();
+    mockSounds = MockSoundService();
+    mockTts = MockTtsService();
+    mockAuthBloc = MockAuthBloc();
+
+    when(() => mockHaptics.selection()).thenAnswer((_) async {});
+    when(() => mockHaptics.light()).thenAnswer((_) async {});
+    when(() => mockHaptics.heavy()).thenAnswer((_) async {});
+    when(() => mockHaptics.warning()).thenAnswer((_) async {});
+    when(() => mockHaptics.error()).thenAnswer((_) async {});
+    when(() => mockHaptics.success()).thenAnswer((_) async {});
+
+    when(() => mockTts.stop()).thenAnswer((_) async {});
+    when(() => mockTts.speak(any(), rate: any(named: 'rate'), locale: any(named: 'locale'))).thenAnswer((_) async {});
+
+    await di.sl.reset();
+    di.sl.registerSingleton<HapticService>(mockHaptics);
+    di.sl.registerSingleton<SoundService>(mockSounds);
+    di.sl.registerSingleton<TtsService>(mockTts);
+  });
+
+  tearDown(() {
+    VowlMotion.lowAnimationModeOverride.value = false;
+  });
+
   Widget buildTestableWidget(Widget child) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: const Size(390, 844),
       builder: (context, _) => MaterialApp(
-        home: child,
+        home: MediaQuery(
+          data: const MediaQueryData(disableAnimations: true),
+          child: BlocProvider<AuthBloc>.value(
+            value: mockAuthBloc,
+            child: child,
+          ),
+        ),
       ),
     );
   }
 
   group('TopicVocabPracticeScreen', () {
-    testWidgets(
-        'renders category choice, word selection, typing gap-fill, and advances',
-        (tester) async {
-      await tester.pumpWidget(
-        buildTestableWidget(
-          const TopicVocabPracticeScreen(level: 1),
-        ),
-      );
+    testWidgets('renders matrix grid with tiles and interactive controls', (tester) async {
+      await tester.pumpWidget(buildTestableWidget(const TopicVocabPracticeScreen(level: 1)));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(TopicVocabPracticeScreen), findsOneWidget);
-      expect(find.text('EXERCISE 1 OF 3'), findsOneWidget);
+      expect(find.byType(TopicMatrixGrid), findsOneWidget);
+      expect(find.text('Cluster Fusion Gym'), findsOneWidget);
 
-      // Select 'Hot'
-      final optionFinder = find.text('Hot');
-      await tester.ensureVisible(optionFinder);
-      await tester.tap(optionFinder);
-      await tester.pumpAndSettle();
-
-      // Check Answer
-      final checkFinder = find.text('Check Answer');
-      await tester.ensureVisible(checkFinder);
-      await tester.tap(checkFinder);
-      await tester.pumpAndSettle();
-
-      expect(find.textContaining('describes high heat'), findsOneWidget);
-      expect(find.text('Next Exercise'), findsOneWidget);
-
-      // Advance to Exercise 2 (Word Selection)
-      final nextFinder = find.text('Next Exercise');
-      await tester.ensureVisible(nextFinder);
-      await tester.tap(nextFinder);
-      await tester.pumpAndSettle();
-
-      expect(find.text('EXERCISE 2 OF 3'), findsOneWidget);
-
-      // Select 'Freezing'
-      final freezingOption = find.text('Freezing');
-      await tester.ensureVisible(freezingOption);
-      await tester.tap(freezingOption);
-      await tester.pumpAndSettle();
-
-      final check2Finder = find.text('Check Answer');
-      await tester.ensureVisible(check2Finder);
-      await tester.tap(check2Finder);
-      await tester.pumpAndSettle();
-
-      expect(find.textContaining('water to turn to ice'), findsOneWidget);
-
-      // Advance to Exercise 3 (Typing)
-      final next2Finder = find.text('Next Exercise');
-      await tester.ensureVisible(next2Finder);
-      await tester.tap(next2Finder);
-      await tester.pumpAndSettle();
-
-      expect(find.text('EXERCISE 3 OF 3'), findsOneWidget);
-      final textFieldFinder = find.byType(TextField);
-      expect(textFieldFinder, findsOneWidget);
-
-      await tester.ensureVisible(textFieldFinder);
-      await tester.enterText(textFieldFinder, 'BOILING');
-      await tester.pumpAndSettle();
-
-      final check3Finder = find.text('Check Answer');
-      await tester.ensureVisible(check3Finder);
-      await tester.tap(check3Finder);
-      await tester.pumpAndSettle();
-
-      expect(find.textContaining('Spot on! You accurately categorized the thematic term'), findsOneWidget);
-
-      final finishFinder = find.text('Enter Mastery Arena 🏆');
-      await tester.ensureVisible(finishFinder);
-      expect(finishFinder, findsOneWidget);
+      final hintButton = find.byIcon(Icons.lightbulb_outline_rounded);
+      if (hintButton.evaluate().isNotEmpty) {
+        await tester.tap(hintButton.first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+      }
     });
   });
 }

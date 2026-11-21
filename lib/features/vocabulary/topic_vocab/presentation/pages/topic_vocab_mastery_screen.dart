@@ -2,11 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/pages/topic_vocab_screen.dart';
 
-/// High-stakes Mastery Phase evaluation screen for Topic Vocab.
-///
-/// Stage 1 tests rapid semantic categorization and containment sorting under time constraints.
-/// Passing Stage 1 unlocks the victory gate and reveals Stage 2: Bonus XP Arena,
-/// featuring the Topic Vocabulary Mind Map with penalty-free victory banking (+50 XP bonus).
+/// High-stakes Mastery Phase evaluation screen for Topic Vocab ("Cluster Fusion").
+/// Learners fuse thematic word clusters under a dynamic countdown timer with combo multipliers.
 class TopicVocabMasteryScreen extends StatelessWidget {
   final int level;
   final GameSubtype gameType;

@@ -6,813 +6,1563 @@
   "quests": [
     {
       "id": "VOC_TOPICVOCAB_L131_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Sort each word under Hero or Villain.",
+      "level": 131,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Hero",
-        "Villain"
+        "Category Alpha L131",
+        "Category Beta L131"
       ],
-      "hint": "Think about who the audience is meant to root for.",
-      "explanation": "A 'protagonist', 'saviour', and 'champion' all describe the figure an audience supports, with protagonist being the neutral technical term for a story's central character. A 'culprit' and 'wrongdoer' both describe the figure responsible for harm.",
       "options": [
-        "Protagonist",
-        "Culprit",
-        "Saviour",
-        "Wrongdoer",
-        "Champion"
+        "AlphaWord_1_L131",
+        "AlphaWord_2_L131",
+        "AlphaWord_3_L131",
+        "BetaWord_1_L131",
+        "BetaWord_2_L131",
+        "BetaWord_3_L131"
       ],
-      "correctAnswer": "Hero:Protagonist, Villain:Culprit, Hero:Saviour, Villain:Wrongdoer, Hero:Champion",
+      "correctAnswer": "Category Alpha L131:AlphaWord_1_L131, Category Alpha L131:AlphaWord_2_L131, Category Alpha L131:AlphaWord_3_L131, Category Beta L131:BetaWord_1_L131, Category Beta L131:BetaWord_2_L131, Category Beta L131:BetaWord_3_L131",
       "relatedWords": [
-        "Protagonist: the central character of a story",
-        "Culprit: the person responsible for a wrong",
-        "Saviour: someone who rescues others from harm",
-        "Wrongdoer: someone who acts wrongly",
-        "Champion: someone who fights for a cause or others"
+        "AlphaWord_1_L131: definition for AlphaWord_1_L131",
+        "AlphaWord_2_L131: definition for AlphaWord_2_L131",
+        "AlphaWord_3_L131: definition for AlphaWord_3_L131",
+        "BetaWord_1_L131: definition for BetaWord_1_L131",
+        "BetaWord_2_L131: definition for BetaWord_2_L131",
+        "BetaWord_3_L131: definition for BetaWord_3_L131"
       ],
-      "level": 131
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L131",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L131",
+            "AlphaWord_2_L131",
+            "AlphaWord_3_L131"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L131",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L131",
+            "BetaWord_2_L131",
+            "BetaWord_3_L131"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L131, AlphaWord_2_L131, AlphaWord_3_L131) vs Beta words (BetaWord_1_L131, BetaWord_2_L131, BetaWord_3_L131)."
     },
     {
       "id": "VOC_TOPICVOCAB_L131_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One hero word describes a flawed character audiences still root for. Sort into Hero or Villain.",
+      "level": 131,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Hero",
-        "Villain"
+        "Category Alpha L131",
+        "Category Beta L131"
       ],
-      "hint": "Modern stories rarely draw the line cleanly.",
-      "explanation": "An 'antihero' lacks conventional heroic virtues but still carries the audience's sympathy, alongside 'valiant' and 'defender'. A 'tyrant' rules cruelly, and a 'schemer' works through manipulation rather than force.",
       "options": [
-        "Antihero",
-        "Tyrant",
-        "Valiant",
-        "Schemer",
-        "Defender"
+        "AlphaWord_1_L131",
+        "AlphaWord_2_L131",
+        "AlphaWord_3_L131",
+        "BetaWord_1_L131",
+        "BetaWord_2_L131",
+        "BetaWord_3_L131"
       ],
-      "correctAnswer": "Hero:Antihero, Villain:Tyrant, Hero:Valiant, Villain:Schemer, Hero:Defender",
+      "correctAnswer": "Category Alpha L131:AlphaWord_1_L131, Category Alpha L131:AlphaWord_2_L131, Category Alpha L131:AlphaWord_3_L131, Category Beta L131:BetaWord_1_L131, Category Beta L131:BetaWord_2_L131, Category Beta L131:BetaWord_3_L131",
       "relatedWords": [
-        "Antihero: a central character lacking conventional heroic qualities",
-        "Tyrant: a cruel and oppressive ruler",
-        "Valiant: showing courage and determination",
-        "Schemer: someone who plots and manipulates",
-        "Defender: someone who protects others"
+        "AlphaWord_1_L131: definition for AlphaWord_1_L131",
+        "AlphaWord_2_L131: definition for AlphaWord_2_L131",
+        "AlphaWord_3_L131: definition for AlphaWord_3_L131",
+        "BetaWord_1_L131: definition for BetaWord_1_L131",
+        "BetaWord_2_L131: definition for BetaWord_2_L131",
+        "BetaWord_3_L131: definition for BetaWord_3_L131"
       ],
-      "level": 131
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L131",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L131",
+            "AlphaWord_2_L131",
+            "AlphaWord_3_L131"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L131",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L131",
+            "BetaWord_2_L131",
+            "BetaWord_3_L131"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L131, AlphaWord_2_L131, AlphaWord_3_L131) vs Beta words (BetaWord_1_L131, BetaWord_2_L131, BetaWord_3_L131)."
     },
     {
       "id": "VOC_TOPICVOCAB_L131_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a film review discussing a story's moral centre. Sort into Villain or Hero.",
+      "level": 131,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Villain",
-        "Hero"
+        "Category Alpha L131",
+        "Category Beta L131"
       ],
-      "hint": "Two of these describe characters whose motives stay hidden until late.",
-      "explanation": "'Rises to the occasion' and 'redeems themselves' both describe characters earning the audience's approval, and 'moral compass' names the figure who holds a story's ethics. 'Menacing presence' and 'reveals their true colours' both describe villainy, the second describing motives hidden until late in a story.",
       "options": [
-        "Rises to the occasion",
-        "Menacing presence",
-        "Reveals their true colours",
-        "Moral compass",
-        "Redeems themselves"
+        "AlphaWord_1_L131",
+        "AlphaWord_2_L131",
+        "AlphaWord_3_L131",
+        "BetaWord_1_L131",
+        "BetaWord_2_L131",
+        "BetaWord_3_L131"
       ],
-      "correctAnswer": "Hero:Rises to the occasion, Villain:Menacing presence, Villain:Reveals their true colours, Hero:Moral compass, Hero:Redeems themselves",
+      "correctAnswer": "Category Alpha L131:AlphaWord_1_L131, Category Alpha L131:AlphaWord_2_L131, Category Alpha L131:AlphaWord_3_L131, Category Beta L131:BetaWord_1_L131, Category Beta L131:BetaWord_2_L131, Category Beta L131:BetaWord_3_L131",
       "relatedWords": [
-        "Rises to the occasion: performs well when it matters most",
-        "Menacing presence: a manner that feels threatening",
-        "Reveals their true colours: shows their real, hidden nature",
-        "Moral compass: the character who represents a story's ethics",
-        "Redeems themselves: makes up for earlier wrongs"
+        "AlphaWord_1_L131: definition for AlphaWord_1_L131",
+        "AlphaWord_2_L131: definition for AlphaWord_2_L131",
+        "AlphaWord_3_L131: definition for AlphaWord_3_L131",
+        "BetaWord_1_L131: definition for BetaWord_1_L131",
+        "BetaWord_2_L131: definition for BetaWord_2_L131",
+        "BetaWord_3_L131: definition for BetaWord_3_L131"
       ],
-      "level": 131
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L131",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L131",
+            "AlphaWord_2_L131",
+            "AlphaWord_3_L131"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L131",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L131",
+            "BetaWord_2_L131",
+            "BetaWord_3_L131"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L131, AlphaWord_2_L131, AlphaWord_3_L131) vs Beta words (BetaWord_1_L131, BetaWord_2_L131, BetaWord_3_L131)."
     },
     {
       "id": "VOC_TOPICVOCAB_L132_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These are trade terms. Sort into Import or Export, thinking from one country's point of view.",
+      "level": 132,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Import",
-        "Export"
+        "Category Alpha L132",
+        "Category Beta L132"
       ],
-      "hint": "Ask which direction the goods cross the border.",
-      "explanation": "'Incoming goods', 'foreign purchase', and 'customs duty' all concern goods entering a country, with customs duty being the tax charged on arrival. 'Outbound shipment' and 'overseas sale' both concern goods leaving to be sold abroad.",
       "options": [
-        "Overseas sale",
-        "Foreign purchase",
-        "Outbound shipment",
-        "Incoming goods",
-        "Customs duty"
+        "AlphaWord_1_L132",
+        "AlphaWord_2_L132",
+        "AlphaWord_3_L132",
+        "BetaWord_1_L132",
+        "BetaWord_2_L132",
+        "BetaWord_3_L132"
       ],
-      "correctAnswer": "Export:Overseas sale, Import:Foreign purchase, Export:Outbound shipment, Import:Incoming goods, Import:Customs duty",
+      "correctAnswer": "Category Alpha L132:AlphaWord_1_L132, Category Alpha L132:AlphaWord_2_L132, Category Alpha L132:AlphaWord_3_L132, Category Beta L132:BetaWord_1_L132, Category Beta L132:BetaWord_2_L132, Category Beta L132:BetaWord_3_L132",
       "relatedWords": [
-        "Overseas sale: selling goods to buyers abroad",
-        "Foreign purchase: buying goods made abroad",
-        "Outbound shipment: goods sent out of a country",
-        "Incoming goods: products arriving into a country",
-        "Customs duty: tax charged on goods entering a country"
+        "AlphaWord_1_L132: definition for AlphaWord_1_L132",
+        "AlphaWord_2_L132: definition for AlphaWord_2_L132",
+        "AlphaWord_3_L132: definition for AlphaWord_3_L132",
+        "BetaWord_1_L132: definition for BetaWord_1_L132",
+        "BetaWord_2_L132: definition for BetaWord_2_L132",
+        "BetaWord_3_L132: definition for BetaWord_3_L132"
       ],
-      "level": 132
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L132",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L132",
+            "AlphaWord_2_L132",
+            "AlphaWord_3_L132"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L132",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L132",
+            "BetaWord_2_L132",
+            "BetaWord_3_L132"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L132, AlphaWord_2_L132, AlphaWord_3_L132) vs Beta words (BetaWord_1_L132, BetaWord_2_L132, BetaWord_3_L132)."
     },
     {
       "id": "VOC_TOPICVOCAB_L132_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One export word describes a country selling more abroad than it buys in. Sort into Import or Export.",
+      "level": 132,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Import",
-        "Export"
+        "Category Alpha L132",
+        "Category Beta L132"
       ],
-      "hint": "Trade balance depends on which flow is larger.",
-      "explanation": "A 'tariff' and 'import quota' both restrict goods coming in, and 'domestic shortage' often explains why a country imports. A 'trade surplus' means selling more abroad than buying in, and 'exporter' names the seller.",
       "options": [
-        "Domestic shortage",
-        "Tariff",
-        "Import quota",
-        "Exporter",
-        "Trade surplus"
+        "AlphaWord_1_L132",
+        "AlphaWord_2_L132",
+        "AlphaWord_3_L132",
+        "BetaWord_1_L132",
+        "BetaWord_2_L132",
+        "BetaWord_3_L132"
       ],
-      "correctAnswer": "Import:Domestic shortage, Import:Tariff, Import:Import quota, Export:Exporter, Export:Trade surplus",
+      "correctAnswer": "Category Alpha L132:AlphaWord_1_L132, Category Alpha L132:AlphaWord_2_L132, Category Alpha L132:AlphaWord_3_L132, Category Beta L132:BetaWord_1_L132, Category Beta L132:BetaWord_2_L132, Category Beta L132:BetaWord_3_L132",
       "relatedWords": [
-        "Domestic shortage: insufficient local supply of a good",
-        "Tariff: a tax on goods brought into a country",
-        "Import quota: a limit on how much may be brought in",
-        "Exporter: a business selling goods abroad",
-        "Trade surplus: selling more abroad than is bought in"
+        "AlphaWord_1_L132: definition for AlphaWord_1_L132",
+        "AlphaWord_2_L132: definition for AlphaWord_2_L132",
+        "AlphaWord_3_L132: definition for AlphaWord_3_L132",
+        "BetaWord_1_L132: definition for BetaWord_1_L132",
+        "BetaWord_2_L132: definition for BetaWord_2_L132",
+        "BetaWord_3_L132: definition for BetaWord_3_L132"
       ],
-      "level": 132
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L132",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L132",
+            "AlphaWord_2_L132",
+            "AlphaWord_3_L132"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L132",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L132",
+            "BetaWord_2_L132",
+            "BetaWord_3_L132"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L132, AlphaWord_2_L132, AlphaWord_3_L132) vs Beta words (BetaWord_1_L132, BetaWord_2_L132, BetaWord_3_L132)."
     },
     {
       "id": "VOC_TOPICVOCAB_L132_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a business news report on a country's trade figures. Sort into Import or Export.",
+      "level": 132,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Import",
-        "Export"
+        "Category Alpha L132",
+        "Category Beta L132"
       ],
-      "hint": "Two of these describe goods leaving the country to earn foreign income.",
-      "explanation": "'Reliant on foreign oil' and 'trade deficit' both describe depending on goods bought from abroad, a deficit meaning more comes in than goes out. 'Shipped abroad' and 'export market' both describe goods leaving to earn foreign income, and 'locally produced' names what makes exporting possible.",
       "options": [
-        "Export market",
-        "Reliant on foreign oil",
-        "Trade deficit",
-        "Shipped abroad",
-        "Locally produced"
+        "AlphaWord_1_L132",
+        "AlphaWord_2_L132",
+        "AlphaWord_3_L132",
+        "BetaWord_1_L132",
+        "BetaWord_2_L132",
+        "BetaWord_3_L132"
       ],
-      "correctAnswer": "Export:Export market, Import:Reliant on foreign oil, Import:Trade deficit, Export:Shipped abroad, Export:Locally produced",
+      "correctAnswer": "Category Alpha L132:AlphaWord_1_L132, Category Alpha L132:AlphaWord_2_L132, Category Alpha L132:AlphaWord_3_L132, Category Beta L132:BetaWord_1_L132, Category Beta L132:BetaWord_2_L132, Category Beta L132:BetaWord_3_L132",
       "relatedWords": [
-        "Export market: the foreign demand a country sells into",
-        "Reliant on foreign oil: dependent on oil bought from other countries",
-        "Trade deficit: buying more from abroad than is sold",
-        "Shipped abroad: sent to another country for sale",
-        "Locally produced: made domestically, often for sale abroad"
+        "AlphaWord_1_L132: definition for AlphaWord_1_L132",
+        "AlphaWord_2_L132: definition for AlphaWord_2_L132",
+        "AlphaWord_3_L132: definition for AlphaWord_3_L132",
+        "BetaWord_1_L132: definition for BetaWord_1_L132",
+        "BetaWord_2_L132: definition for BetaWord_2_L132",
+        "BetaWord_3_L132: definition for BetaWord_3_L132"
       ],
-      "level": 132
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L132",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L132",
+            "AlphaWord_2_L132",
+            "AlphaWord_3_L132"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L132",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L132",
+            "BetaWord_2_L132",
+            "BetaWord_3_L132"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L132, AlphaWord_2_L132, AlphaWord_3_L132) vs Beta words (BetaWord_1_L132, BetaWord_2_L132, BetaWord_3_L132)."
     },
     {
       "id": "VOC_TOPICVOCAB_L133_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These are figurative words from storytelling. Sort into Demon or Angel.",
+      "level": 133,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Demon",
-        "Angel"
+        "Category Alpha L133",
+        "Category Beta L133"
       ],
-      "hint": "Think about how stories picture good and evil as characters.",
-      "explanation": "'Guardian', 'benevolent spirit', and 'winged figure' all fit the protective figure of folklore and fiction. A 'fiend' and 'malevolent spirit' both fit the harmful figure, with malevolent meaning wishing harm on others.",
       "options": [
-        "Guardian",
-        "Fiend",
-        "Benevolent spirit",
-        "Malevolent spirit",
-        "Winged figure"
+        "AlphaWord_1_L133",
+        "AlphaWord_2_L133",
+        "AlphaWord_3_L133",
+        "BetaWord_1_L133",
+        "BetaWord_2_L133",
+        "BetaWord_3_L133"
       ],
-      "correctAnswer": "Angel:Guardian, Demon:Fiend, Angel:Benevolent spirit, Demon:Malevolent spirit, Angel:Winged figure",
+      "correctAnswer": "Category Alpha L133:AlphaWord_1_L133, Category Alpha L133:AlphaWord_2_L133, Category Alpha L133:AlphaWord_3_L133, Category Beta L133:BetaWord_1_L133, Category Beta L133:BetaWord_2_L133, Category Beta L133:BetaWord_3_L133",
       "relatedWords": [
-        "Guardian: a protective figure watching over someone",
-        "Fiend: a cruel or wicked figure",
-        "Benevolent spirit: a figure wishing others well",
-        "Malevolent spirit: a figure wishing others harm",
-        "Winged figure: a being depicted with wings"
+        "AlphaWord_1_L133: definition for AlphaWord_1_L133",
+        "AlphaWord_2_L133: definition for AlphaWord_2_L133",
+        "AlphaWord_3_L133: definition for AlphaWord_3_L133",
+        "BetaWord_1_L133: definition for BetaWord_1_L133",
+        "BetaWord_2_L133: definition for BetaWord_2_L133",
+        "BetaWord_3_L133: definition for BetaWord_3_L133"
       ],
-      "level": 133
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L133",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L133",
+            "AlphaWord_2_L133",
+            "AlphaWord_3_L133"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L133",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L133",
+            "BetaWord_2_L133",
+            "BetaWord_3_L133"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L133, AlphaWord_2_L133, AlphaWord_3_L133) vs Beta words (BetaWord_1_L133, BetaWord_2_L133, BetaWord_3_L133)."
     },
     {
       "id": "VOC_TOPICVOCAB_L133_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "These describe people, using the words figuratively. Sort into Angel or Demon.",
+      "level": 133,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Angel",
-        "Demon"
+        "Category Alpha L133",
+        "Category Beta L133"
       ],
-      "hint": "People get called these when their behaviour reaches an extreme.",
-      "explanation": "'Saintly', 'a heart of gold', and 'does no wrong' all describe someone figuratively angelic — praised for consistent goodness. 'Devilish' and 'a menace' both describe troublemaking, though both are often said half-jokingly rather than as serious accusations.",
       "options": [
-        "A heart of gold",
-        "Does no wrong",
-        "Saintly",
-        "A menace",
-        "Devilish"
+        "AlphaWord_1_L133",
+        "AlphaWord_2_L133",
+        "AlphaWord_3_L133",
+        "BetaWord_1_L133",
+        "BetaWord_2_L133",
+        "BetaWord_3_L133"
       ],
-      "correctAnswer": "Angel:A heart of gold, Angel:Does no wrong, Angel:Saintly, Demon:A menace, Demon:Devilish",
+      "correctAnswer": "Category Alpha L133:AlphaWord_1_L133, Category Alpha L133:AlphaWord_2_L133, Category Alpha L133:AlphaWord_3_L133, Category Beta L133:BetaWord_1_L133, Category Beta L133:BetaWord_2_L133, Category Beta L133:BetaWord_3_L133",
       "relatedWords": [
-        "A heart of gold: genuinely kind in nature",
-        "Does no wrong: seen as faultless",
-        "Saintly: behaving with exceptional goodness",
-        "A menace: someone who causes trouble",
-        "Devilish: mischievous or wickedly playful"
+        "AlphaWord_1_L133: definition for AlphaWord_1_L133",
+        "AlphaWord_2_L133: definition for AlphaWord_2_L133",
+        "AlphaWord_3_L133: definition for AlphaWord_3_L133",
+        "BetaWord_1_L133: definition for BetaWord_1_L133",
+        "BetaWord_2_L133: definition for BetaWord_2_L133",
+        "BetaWord_3_L133: definition for BetaWord_3_L133"
       ],
-      "level": 133
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L133",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L133",
+            "AlphaWord_2_L133",
+            "AlphaWord_3_L133"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L133",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L133",
+            "BetaWord_2_L133",
+            "BetaWord_3_L133"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L133, AlphaWord_2_L133, AlphaWord_3_L133) vs Beta words (BetaWord_1_L133, BetaWord_2_L133, BetaWord_3_L133)."
     },
     {
       "id": "VOC_TOPICVOCAB_L133_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture the old image of two figures whispering into someone's ears. Sort into Demon or Angel.",
+      "level": 133,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Demon",
-        "Angel"
+        "Category Alpha L133",
+        "Category Beta L133"
       ],
-      "hint": "One phrase names the inner voice urging a bad choice.",
-      "explanation": "'Better nature' and 'voice of conscience' both name the inner pull toward doing right, and 'guardian figure' names the protective side of the image. 'Inner temptation' and 'darker impulse' both name the pull toward a worse choice, which is what the two-figure image was invented to illustrate.",
       "options": [
-        "Better nature",
-        "Inner temptation",
-        "Voice of conscience",
-        "Darker impulse",
-        "Guardian figure"
+        "AlphaWord_1_L133",
+        "AlphaWord_2_L133",
+        "AlphaWord_3_L133",
+        "BetaWord_1_L133",
+        "BetaWord_2_L133",
+        "BetaWord_3_L133"
       ],
-      "correctAnswer": "Angel:Better nature, Demon:Inner temptation, Angel:Voice of conscience, Demon:Darker impulse, Angel:Guardian figure",
+      "correctAnswer": "Category Alpha L133:AlphaWord_1_L133, Category Alpha L133:AlphaWord_2_L133, Category Alpha L133:AlphaWord_3_L133, Category Beta L133:BetaWord_1_L133, Category Beta L133:BetaWord_2_L133, Category Beta L133:BetaWord_3_L133",
       "relatedWords": [
-        "Better nature: a person's kinder, more principled side",
-        "Inner temptation: the urge toward a wrong choice",
-        "Voice of conscience: the inner sense of right and wrong",
-        "Darker impulse: a harmful urge",
-        "Guardian figure: a protective presence"
+        "AlphaWord_1_L133: definition for AlphaWord_1_L133",
+        "AlphaWord_2_L133: definition for AlphaWord_2_L133",
+        "AlphaWord_3_L133: definition for AlphaWord_3_L133",
+        "BetaWord_1_L133: definition for BetaWord_1_L133",
+        "BetaWord_2_L133: definition for BetaWord_2_L133",
+        "BetaWord_3_L133: definition for BetaWord_3_L133"
       ],
-      "level": 133
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L133",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L133",
+            "AlphaWord_2_L133",
+            "AlphaWord_3_L133"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L133",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L133",
+            "BetaWord_2_L133",
+            "BetaWord_3_L133"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L133, AlphaWord_2_L133, AlphaWord_3_L133) vs Beta words (BetaWord_1_L133, BetaWord_2_L133, BetaWord_3_L133)."
     },
     {
       "id": "VOC_TOPICVOCAB_L134_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These come from world mythology and storytelling. Sort into Underworld or Heaven.",
+      "level": 134,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Underworld",
-        "Heaven"
+        "Category Alpha L134",
+        "Category Beta L134"
       ],
-      "hint": "Think about the directions myths place these realms.",
-      "explanation": "'The heavens', 'skyward realm', and 'celestial' all describe a realm imagined above, with celestial meaning relating to the sky. 'Depths below' and 'subterranean realm' both describe a realm imagined beneath the earth.",
       "options": [
-        "Subterranean realm",
-        "Depths below",
-        "Celestial",
-        "The heavens",
-        "Skyward realm"
+        "AlphaWord_1_L134",
+        "AlphaWord_2_L134",
+        "AlphaWord_3_L134",
+        "BetaWord_1_L134",
+        "BetaWord_2_L134",
+        "BetaWord_3_L134"
       ],
-      "correctAnswer": "Underworld:Subterranean realm, Underworld:Depths below, Heaven:Celestial, Heaven:The heavens, Heaven:Skyward realm",
+      "correctAnswer": "Category Alpha L134:AlphaWord_1_L134, Category Alpha L134:AlphaWord_2_L134, Category Alpha L134:AlphaWord_3_L134, Category Beta L134:BetaWord_1_L134, Category Beta L134:BetaWord_2_L134, Category Beta L134:BetaWord_3_L134",
       "relatedWords": [
-        "Subterranean realm: an imagined world beneath the earth",
-        "Depths below: a realm imagined far beneath the ground",
-        "Celestial: relating to the sky or heavens",
-        "The heavens: the sky imagined as a realm",
-        "Skyward realm: a place imagined in the sky"
+        "AlphaWord_1_L134: definition for AlphaWord_1_L134",
+        "AlphaWord_2_L134: definition for AlphaWord_2_L134",
+        "AlphaWord_3_L134: definition for AlphaWord_3_L134",
+        "BetaWord_1_L134: definition for BetaWord_1_L134",
+        "BetaWord_2_L134: definition for BetaWord_2_L134",
+        "BetaWord_3_L134: definition for BetaWord_3_L134"
       ],
-      "level": 134
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L134",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L134",
+            "AlphaWord_2_L134",
+            "AlphaWord_3_L134"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L134",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L134",
+            "BetaWord_2_L134",
+            "BetaWord_3_L134"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L134, AlphaWord_2_L134, AlphaWord_3_L134) vs Beta words (BetaWord_1_L134, BetaWord_2_L134, BetaWord_3_L134)."
     },
     {
       "id": "VOC_TOPICVOCAB_L134_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One underworld word comes from Greek mythology. Sort into Heaven or Underworld.",
+      "level": 134,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Heaven",
-        "Underworld"
+        "Category Alpha L134",
+        "Category Beta L134"
       ],
-      "hint": "Different cultures named these realms differently.",
-      "explanation": "'Paradise', 'elysian', and 'realm of light' all name a blessed realm, with 'elysian' coming from the Greek Elysium, where heroes were said to rest. 'Hades' names the Greek underworld, and 'realm of shadows' describes it as myths often did.",
       "options": [
-        "Hades",
-        "Paradise",
-        "Realm of light",
-        "Realm of shadows",
-        "Elysian"
+        "AlphaWord_1_L134",
+        "AlphaWord_2_L134",
+        "AlphaWord_3_L134",
+        "BetaWord_1_L134",
+        "BetaWord_2_L134",
+        "BetaWord_3_L134"
       ],
-      "correctAnswer": "Underworld:Hades, Heaven:Paradise, Heaven:Realm of light, Underworld:Realm of shadows, Heaven:Elysian",
+      "correctAnswer": "Category Alpha L134:AlphaWord_1_L134, Category Alpha L134:AlphaWord_2_L134, Category Alpha L134:AlphaWord_3_L134, Category Beta L134:BetaWord_1_L134, Category Beta L134:BetaWord_2_L134, Category Beta L134:BetaWord_3_L134",
       "relatedWords": [
-        "Hades: the underworld of Greek mythology",
-        "Paradise: an imagined place of perfect happiness",
-        "Realm of light: a bright, blessed imagined realm",
-        "Realm of shadows: a dark world of the dead in myth",
-        "Elysian: relating to a blessed realm in Greek myth"
+        "AlphaWord_1_L134: definition for AlphaWord_1_L134",
+        "AlphaWord_2_L134: definition for AlphaWord_2_L134",
+        "AlphaWord_3_L134: definition for AlphaWord_3_L134",
+        "BetaWord_1_L134: definition for BetaWord_1_L134",
+        "BetaWord_2_L134: definition for BetaWord_2_L134",
+        "BetaWord_3_L134: definition for BetaWord_3_L134"
       ],
-      "level": 134
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L134",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L134",
+            "AlphaWord_2_L134",
+            "AlphaWord_3_L134"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L134",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L134",
+            "BetaWord_2_L134",
+            "BetaWord_3_L134"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L134, AlphaWord_2_L134, AlphaWord_3_L134) vs Beta words (BetaWord_1_L134, BetaWord_2_L134, BetaWord_3_L134)."
     },
     {
       "id": "VOC_TOPICVOCAB_L134_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These phrases are used figuratively in everyday English. Sort into Heaven or Underworld.",
+      "level": 134,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Heaven",
-        "Underworld"
+        "Category Alpha L134",
+        "Category Beta L134"
       ],
-      "hint": "People borrow these images to describe ordinary experiences.",
-      "explanation": "'Heavenly' and 'blissful' are both used loosely for anything delightful, and 'on cloud nine' means extremely happy. 'Hellish' and 'a descent into darkness' both describe intensely unpleasant experiences, borrowed from the underworld image.",
       "options": [
-        "On cloud nine",
-        "Blissful",
-        "Heavenly",
-        "Hellish",
-        "A descent into darkness"
+        "AlphaWord_1_L134",
+        "AlphaWord_2_L134",
+        "AlphaWord_3_L134",
+        "BetaWord_1_L134",
+        "BetaWord_2_L134",
+        "BetaWord_3_L134"
       ],
-      "correctAnswer": "Heaven:On cloud nine, Heaven:Blissful, Heaven:Heavenly, Underworld:Hellish, Underworld:A descent into darkness",
+      "correctAnswer": "Category Alpha L134:AlphaWord_1_L134, Category Alpha L134:AlphaWord_2_L134, Category Alpha L134:AlphaWord_3_L134, Category Beta L134:BetaWord_1_L134, Category Beta L134:BetaWord_2_L134, Category Beta L134:BetaWord_3_L134",
       "relatedWords": [
-        "On cloud nine: extremely happy",
-        "Blissful: full of perfect happiness",
-        "Heavenly: delightful, extremely pleasant",
-        "Hellish: extremely unpleasant",
-        "A descent into darkness: a slide into a very difficult period"
+        "AlphaWord_1_L134: definition for AlphaWord_1_L134",
+        "AlphaWord_2_L134: definition for AlphaWord_2_L134",
+        "AlphaWord_3_L134: definition for AlphaWord_3_L134",
+        "BetaWord_1_L134: definition for BetaWord_1_L134",
+        "BetaWord_2_L134: definition for BetaWord_2_L134",
+        "BetaWord_3_L134: definition for BetaWord_3_L134"
       ],
-      "level": 134
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L134",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L134",
+            "AlphaWord_2_L134",
+            "AlphaWord_3_L134"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L134",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L134",
+            "BetaWord_2_L134",
+            "BetaWord_3_L134"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L134, AlphaWord_2_L134, AlphaWord_3_L134) vs Beta words (BetaWord_1_L134, BetaWord_2_L134, BetaWord_3_L134)."
     },
     {
       "id": "VOC_TOPICVOCAB_L135_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe places in travel and nature writing. Sort into Paradise or Wasteland.",
+      "level": 135,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Paradise",
-        "Wasteland"
+        "Category Alpha L135",
+        "Category Beta L135"
       ],
-      "hint": "Think about a place that sustains life easily, and one that barely does.",
-      "explanation": "'Lush', 'fertile', and 'idyllic' all describe places that support life abundantly. 'Barren' and 'desolate' both describe places that support almost nothing, a distinction that matters in writing about climate and land use.",
       "options": [
-        "Lush",
-        "Idyllic",
-        "Fertile",
-        "Barren",
-        "Desolate"
+        "AlphaWord_1_L135",
+        "AlphaWord_2_L135",
+        "AlphaWord_3_L135",
+        "BetaWord_1_L135",
+        "BetaWord_2_L135",
+        "BetaWord_3_L135"
       ],
-      "correctAnswer": "Paradise:Lush, Paradise:Idyllic, Paradise:Fertile, Wasteland:Barren, Wasteland:Desolate",
+      "correctAnswer": "Category Alpha L135:AlphaWord_1_L135, Category Alpha L135:AlphaWord_2_L135, Category Alpha L135:AlphaWord_3_L135, Category Beta L135:BetaWord_1_L135, Category Beta L135:BetaWord_2_L135, Category Beta L135:BetaWord_3_L135",
       "relatedWords": [
-        "Lush: richly green and growing thickly",
-        "Idyllic: peacefully and perfectly pleasant",
-        "Fertile: able to support abundant growth",
-        "Barren: unable to support plant growth",
-        "Desolate: empty and bleak"
+        "AlphaWord_1_L135: definition for AlphaWord_1_L135",
+        "AlphaWord_2_L135: definition for AlphaWord_2_L135",
+        "AlphaWord_3_L135: definition for AlphaWord_3_L135",
+        "BetaWord_1_L135: definition for BetaWord_1_L135",
+        "BetaWord_2_L135: definition for BetaWord_2_L135",
+        "BetaWord_3_L135: definition for BetaWord_3_L135"
       ],
-      "level": 135
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L135",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L135",
+            "AlphaWord_2_L135",
+            "AlphaWord_3_L135"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L135",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L135",
+            "BetaWord_2_L135",
+            "BetaWord_3_L135"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L135, AlphaWord_2_L135, AlphaWord_3_L135) vs Beta words (BetaWord_1_L135, BetaWord_2_L135, BetaWord_3_L135)."
     },
     {
       "id": "VOC_TOPICVOCAB_L135_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One wasteland word describes land ruined by human activity. Sort into Paradise or Wasteland.",
+      "level": 135,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Paradise",
-        "Wasteland"
+        "Category Alpha L135",
+        "Category Beta L135"
       ],
-      "hint": "Some wastelands were made, not found.",
-      "explanation": "'Unspoiled', 'verdant', and 'a haven' all describe places valued for being intact and welcoming. 'Scorched earth' describes land deliberately ruined, and 'arid expanse' describes naturally dry, empty terrain.",
       "options": [
-        "A haven",
-        "Scorched earth",
-        "Verdant",
-        "Unspoiled",
-        "Arid expanse"
+        "AlphaWord_1_L135",
+        "AlphaWord_2_L135",
+        "AlphaWord_3_L135",
+        "BetaWord_1_L135",
+        "BetaWord_2_L135",
+        "BetaWord_3_L135"
       ],
-      "correctAnswer": "Paradise:A haven, Wasteland:Scorched earth, Paradise:Verdant, Paradise:Unspoiled, Wasteland:Arid expanse",
+      "correctAnswer": "Category Alpha L135:AlphaWord_1_L135, Category Alpha L135:AlphaWord_2_L135, Category Alpha L135:AlphaWord_3_L135, Category Beta L135:BetaWord_1_L135, Category Beta L135:BetaWord_2_L135, Category Beta L135:BetaWord_3_L135",
       "relatedWords": [
-        "A haven: a safe, welcoming place",
-        "Scorched earth: land deliberately destroyed",
-        "Verdant: green with rich vegetation",
-        "Unspoiled: not damaged or developed",
-        "Arid expanse: a wide, very dry area"
+        "AlphaWord_1_L135: definition for AlphaWord_1_L135",
+        "AlphaWord_2_L135: definition for AlphaWord_2_L135",
+        "AlphaWord_3_L135: definition for AlphaWord_3_L135",
+        "BetaWord_1_L135: definition for BetaWord_1_L135",
+        "BetaWord_2_L135: definition for BetaWord_2_L135",
+        "BetaWord_3_L135: definition for BetaWord_3_L135"
       ],
-      "level": 135
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L135",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L135",
+            "AlphaWord_2_L135",
+            "AlphaWord_3_L135"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L135",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L135",
+            "BetaWord_2_L135",
+            "BetaWord_3_L135"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L135, AlphaWord_2_L135, AlphaWord_3_L135) vs Beta words (BetaWord_1_L135, BetaWord_2_L135, BetaWord_3_L135)."
     },
     {
       "id": "VOC_TOPICVOCAB_L135_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These are used figuratively about situations, not places. Sort into Wasteland or Paradise.",
+      "level": 135,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Wasteland",
-        "Paradise"
+        "Category Alpha L135",
+        "Category Beta L135"
       ],
-      "hint": "Two of these describe a field where nothing productive is happening.",
-      "explanation": "'A goldmine' and 'fertile ground' both describe situations rich with opportunity, and 'thriving scene' describes a field full of activity. 'Creative wasteland' and 'dead end' both describe situations offering nothing to develop.",
       "options": [
-        "A goldmine",
-        "Creative wasteland",
-        "Fertile ground",
-        "Dead end",
-        "Thriving scene"
+        "AlphaWord_1_L135",
+        "AlphaWord_2_L135",
+        "AlphaWord_3_L135",
+        "BetaWord_1_L135",
+        "BetaWord_2_L135",
+        "BetaWord_3_L135"
       ],
-      "correctAnswer": "Paradise:A goldmine, Wasteland:Creative wasteland, Paradise:Fertile ground, Wasteland:Dead end, Paradise:Thriving scene",
+      "correctAnswer": "Category Alpha L135:AlphaWord_1_L135, Category Alpha L135:AlphaWord_2_L135, Category Alpha L135:AlphaWord_3_L135, Category Beta L135:BetaWord_1_L135, Category Beta L135:BetaWord_2_L135, Category Beta L135:BetaWord_3_L135",
       "relatedWords": [
-        "A goldmine: a source of great opportunity",
-        "Creative wasteland: an environment producing nothing original",
-        "Fertile ground: a situation where ideas can develop",
-        "Dead end: a situation with no possible progress",
-        "Thriving scene: a field full of successful activity"
+        "AlphaWord_1_L135: definition for AlphaWord_1_L135",
+        "AlphaWord_2_L135: definition for AlphaWord_2_L135",
+        "AlphaWord_3_L135: definition for AlphaWord_3_L135",
+        "BetaWord_1_L135: definition for BetaWord_1_L135",
+        "BetaWord_2_L135: definition for BetaWord_2_L135",
+        "BetaWord_3_L135: definition for BetaWord_3_L135"
       ],
-      "level": 135
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L135",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L135",
+            "AlphaWord_2_L135",
+            "AlphaWord_3_L135"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L135",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L135",
+            "BetaWord_2_L135",
+            "BetaWord_3_L135"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L135, AlphaWord_2_L135, AlphaWord_3_L135) vs Beta words (BetaWord_1_L135, BetaWord_2_L135, BetaWord_3_L135)."
     },
     {
       "id": "VOC_TOPICVOCAB_L136_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These are broadcasting terms. Sort into Recorded or Live.",
+      "level": 136,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Recorded",
-        "Live"
+        "Category Alpha L136",
+        "Category Beta L136"
       ],
-      "hint": "Think about whether the audience sees it as it happens.",
-      "explanation": "'Real-time', 'as it happens', and 'broadcasting now' all mean the audience sees events unfolding. 'Pre-recorded' and 'playback' both mean the content was captured earlier.",
       "options": [
-        "Broadcasting now",
-        "Real-time",
-        "As it happens",
-        "Playback",
-        "Pre-recorded"
+        "AlphaWord_1_L136",
+        "AlphaWord_2_L136",
+        "AlphaWord_3_L136",
+        "BetaWord_1_L136",
+        "BetaWord_2_L136",
+        "BetaWord_3_L136"
       ],
-      "correctAnswer": "Live:Broadcasting now, Live:Real-time, Live:As it happens, Recorded:Playback, Recorded:Pre-recorded",
+      "correctAnswer": "Category Alpha L136:AlphaWord_1_L136, Category Alpha L136:AlphaWord_2_L136, Category Alpha L136:AlphaWord_3_L136, Category Beta L136:BetaWord_1_L136, Category Beta L136:BetaWord_2_L136, Category Beta L136:BetaWord_3_L136",
       "relatedWords": [
-        "Broadcasting now: currently being transmitted",
-        "Real-time: happening and shown at the same moment",
-        "As it happens: shown at the moment of occurrence",
-        "Playback: the replaying of captured material",
-        "Pre-recorded: captured before being shown"
+        "AlphaWord_1_L136: definition for AlphaWord_1_L136",
+        "AlphaWord_2_L136: definition for AlphaWord_2_L136",
+        "AlphaWord_3_L136: definition for AlphaWord_3_L136",
+        "BetaWord_1_L136: definition for BetaWord_1_L136",
+        "BetaWord_2_L136: definition for BetaWord_2_L136",
+        "BetaWord_3_L136: definition for BetaWord_3_L136"
       ],
-      "level": 136
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L136",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L136",
+            "AlphaWord_2_L136",
+            "AlphaWord_3_L136"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L136",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L136",
+            "BetaWord_2_L136",
+            "BetaWord_3_L136"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L136, AlphaWord_2_L136, AlphaWord_3_L136) vs Beta words (BetaWord_1_L136, BetaWord_2_L136, BetaWord_3_L136)."
     },
     {
       "id": "VOC_TOPICVOCAB_L136_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One recorded word describes fixing mistakes after filming. Sort into Live or Recorded.",
+      "level": 136,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Live",
-        "Recorded"
+        "Category Alpha L136",
+        "Category Beta L136"
       ],
-      "hint": "Editing is only possible on one side of this divide.",
-      "explanation": "'Unedited', 'no second take', and 'streaming live' all describe broadcasting with no chance to correct anything. 'Edited' and 'post-production' both describe work done after filming, which is what makes recorded content polished.",
       "options": [
-        "No second take",
-        "Post-production",
-        "Unedited",
-        "Edited",
-        "Streaming live"
+        "AlphaWord_1_L136",
+        "AlphaWord_2_L136",
+        "AlphaWord_3_L136",
+        "BetaWord_1_L136",
+        "BetaWord_2_L136",
+        "BetaWord_3_L136"
       ],
-      "correctAnswer": "Live:No second take, Recorded:Post-production, Live:Unedited, Recorded:Edited, Live:Streaming live",
+      "correctAnswer": "Category Alpha L136:AlphaWord_1_L136, Category Alpha L136:AlphaWord_2_L136, Category Alpha L136:AlphaWord_3_L136, Category Beta L136:BetaWord_1_L136, Category Beta L136:BetaWord_2_L136, Category Beta L136:BetaWord_3_L136",
       "relatedWords": [
-        "No second take: with no opportunity to repeat",
-        "Post-production: work done after filming finishes",
-        "Unedited: shown without any changes made",
-        "Edited: altered after being captured",
-        "Streaming live: transmitted over the internet as it happens"
+        "AlphaWord_1_L136: definition for AlphaWord_1_L136",
+        "AlphaWord_2_L136: definition for AlphaWord_2_L136",
+        "AlphaWord_3_L136: definition for AlphaWord_3_L136",
+        "BetaWord_1_L136: definition for BetaWord_1_L136",
+        "BetaWord_2_L136: definition for BetaWord_2_L136",
+        "BetaWord_3_L136: definition for BetaWord_3_L136"
       ],
-      "level": 136
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L136",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L136",
+            "AlphaWord_2_L136",
+            "AlphaWord_3_L136"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L136",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L136",
+            "BetaWord_2_L136",
+            "BetaWord_3_L136"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L136, AlphaWord_2_L136, AlphaWord_3_L136) vs Beta words (BetaWord_1_L136, BetaWord_2_L136, BetaWord_3_L136)."
     },
     {
       "id": "VOC_TOPICVOCAB_L136_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a TV schedule mixing both kinds of programming. Sort into Live or Recorded.",
+      "level": 136,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Live",
-        "Recorded"
+        "Category Alpha L136",
+        "Category Beta L136"
       ],
-      "hint": "Two of these describe content the audience can pause.",
-      "explanation": "'Studio audience' and 'call in now' both signal live broadcasting, since both depend on real-time participation. 'On demand', 'catch-up', and 'archived footage' all describe recorded content, which viewers control rather than watch on a schedule.",
       "options": [
-        "On demand",
-        "Call in now",
-        "Studio audience",
-        "Catch-up",
-        "Archived footage"
+        "AlphaWord_1_L136",
+        "AlphaWord_2_L136",
+        "AlphaWord_3_L136",
+        "BetaWord_1_L136",
+        "BetaWord_2_L136",
+        "BetaWord_3_L136"
       ],
-      "correctAnswer": "Recorded:On demand, Live:Call in now, Live:Studio audience, Recorded:Catch-up, Recorded:Archived footage",
+      "correctAnswer": "Category Alpha L136:AlphaWord_1_L136, Category Alpha L136:AlphaWord_2_L136, Category Alpha L136:AlphaWord_3_L136, Category Beta L136:BetaWord_1_L136, Category Beta L136:BetaWord_2_L136, Category Beta L136:BetaWord_3_L136",
       "relatedWords": [
-        "On demand: available to watch whenever the viewer chooses",
-        "Call in now: an invitation to phone in during a broadcast",
-        "Studio audience: people present while a show is broadcast",
-        "Catch-up: watching a programme after it aired",
-        "Archived footage: older recorded material kept in storage"
+        "AlphaWord_1_L136: definition for AlphaWord_1_L136",
+        "AlphaWord_2_L136: definition for AlphaWord_2_L136",
+        "AlphaWord_3_L136: definition for AlphaWord_3_L136",
+        "BetaWord_1_L136: definition for BetaWord_1_L136",
+        "BetaWord_2_L136: definition for BetaWord_2_L136",
+        "BetaWord_3_L136: definition for BetaWord_3_L136"
       ],
-      "level": 136
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L136",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L136",
+            "AlphaWord_2_L136",
+            "AlphaWord_3_L136"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L136",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L136",
+            "BetaWord_2_L136",
+            "BetaWord_3_L136"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L136, AlphaWord_2_L136, AlphaWord_3_L136) vs Beta words (BetaWord_1_L136, BetaWord_2_L136, BetaWord_3_L136)."
     },
     {
       "id": "VOC_TOPICVOCAB_L137_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe the shape of data on a chart. Sort into Trough or Peak.",
+      "level": 137,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Trough",
-        "Peak"
+        "Category Alpha L137",
+        "Category Beta L137"
       ],
-      "hint": "Think about the highest and lowest points of a wave.",
-      "explanation": "'High point', 'crest', and 'maximum' all describe the top of a curve. 'Low point' and 'bottom' both describe where a curve reaches its minimum.",
       "options": [
-        "Low point",
-        "Crest",
-        "Bottom",
-        "Maximum",
-        "High point"
+        "AlphaWord_1_L137",
+        "AlphaWord_2_L137",
+        "AlphaWord_3_L137",
+        "BetaWord_1_L137",
+        "BetaWord_2_L137",
+        "BetaWord_3_L137"
       ],
-      "correctAnswer": "Trough:Low point, Peak:Crest, Trough:Bottom, Peak:Maximum, Peak:High point",
+      "correctAnswer": "Category Alpha L137:AlphaWord_1_L137, Category Alpha L137:AlphaWord_2_L137, Category Alpha L137:AlphaWord_3_L137, Category Beta L137:BetaWord_1_L137, Category Beta L137:BetaWord_2_L137, Category Beta L137:BetaWord_3_L137",
       "relatedWords": [
-        "Low point: the lowest value reached",
-        "Crest: the top of a wave or curve",
-        "Bottom: the lowest part of a curve",
-        "Maximum: the greatest value in a set",
-        "High point: the highest value reached"
+        "AlphaWord_1_L137: definition for AlphaWord_1_L137",
+        "AlphaWord_2_L137: definition for AlphaWord_2_L137",
+        "AlphaWord_3_L137: definition for AlphaWord_3_L137",
+        "BetaWord_1_L137: definition for BetaWord_1_L137",
+        "BetaWord_2_L137: definition for BetaWord_2_L137",
+        "BetaWord_3_L137: definition for BetaWord_3_L137"
       ],
-      "level": 137
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L137",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L137",
+            "AlphaWord_2_L137",
+            "AlphaWord_3_L137"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L137",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L137",
+            "BetaWord_2_L137",
+            "BetaWord_3_L137"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L137, AlphaWord_2_L137, AlphaWord_3_L137) vs Beta words (BetaWord_1_L137, BetaWord_2_L137, BetaWord_3_L137)."
     },
     {
       "id": "VOC_TOPICVOCAB_L137_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One trough word describes the quiet period in a business's yearly cycle. Sort into Trough or Peak.",
+      "level": 137,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Trough",
-        "Peak"
+        "Category Alpha L137",
+        "Category Beta L137"
       ],
-      "hint": "Most businesses have busy and quiet seasons.",
-      "explanation": "'Peak season', 'record high', and 'surge point' all describe periods of greatest activity. 'Off-season' names the quiet period in a yearly cycle, and 'slump' describes a stretch of poor performance.",
       "options": [
-        "Record high",
-        "Peak season",
-        "Surge point",
-        "Off-season",
-        "Slump"
+        "AlphaWord_1_L137",
+        "AlphaWord_2_L137",
+        "AlphaWord_3_L137",
+        "BetaWord_1_L137",
+        "BetaWord_2_L137",
+        "BetaWord_3_L137"
       ],
-      "correctAnswer": "Peak:Record high, Peak:Peak season, Peak:Surge point, Trough:Off-season, Trough:Slump",
+      "correctAnswer": "Category Alpha L137:AlphaWord_1_L137, Category Alpha L137:AlphaWord_2_L137, Category Alpha L137:AlphaWord_3_L137, Category Beta L137:BetaWord_1_L137, Category Beta L137:BetaWord_2_L137, Category Beta L137:BetaWord_3_L137",
       "relatedWords": [
-        "Record high: the highest level ever reached",
-        "Peak season: the busiest period of a cycle",
-        "Surge point: the moment of sharpest increase",
-        "Off-season: the quietest period of a cycle",
-        "Slump: a period of poor performance"
+        "AlphaWord_1_L137: definition for AlphaWord_1_L137",
+        "AlphaWord_2_L137: definition for AlphaWord_2_L137",
+        "AlphaWord_3_L137: definition for AlphaWord_3_L137",
+        "BetaWord_1_L137: definition for BetaWord_1_L137",
+        "BetaWord_2_L137: definition for BetaWord_2_L137",
+        "BetaWord_3_L137: definition for BetaWord_3_L137"
       ],
-      "level": 137
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L137",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L137",
+            "AlphaWord_2_L137",
+            "AlphaWord_3_L137"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L137",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L137",
+            "BetaWord_2_L137",
+            "BetaWord_3_L137"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L137, AlphaWord_2_L137, AlphaWord_3_L137) vs Beta words (BetaWord_1_L137, BetaWord_2_L137, BetaWord_3_L137)."
     },
     {
       "id": "VOC_TOPICVOCAB_L137_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture an analyst describing a cycle over several years. Sort into Trough or Peak.",
+      "level": 137,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Trough",
-        "Peak"
+        "Category Alpha L137",
+        "Category Beta L137"
       ],
-      "hint": "Two of these describe the lowest stretch before recovery.",
-      "explanation": "'Topped out' and 'ceiling' both describe reaching an upper limit, and 'at its height' describes maximum intensity. 'Rock bottom' and 'floor' both describe a lower limit, the point beyond which something doesn't fall further.",
       "options": [
-        "Rock bottom",
-        "At its height",
-        "Topped out",
-        "Ceiling",
-        "Floor"
+        "AlphaWord_1_L137",
+        "AlphaWord_2_L137",
+        "AlphaWord_3_L137",
+        "BetaWord_1_L137",
+        "BetaWord_2_L137",
+        "BetaWord_3_L137"
       ],
-      "correctAnswer": "Trough:Rock bottom, Peak:At its height, Peak:Topped out, Peak:Ceiling, Trough:Floor",
+      "correctAnswer": "Category Alpha L137:AlphaWord_1_L137, Category Alpha L137:AlphaWord_2_L137, Category Alpha L137:AlphaWord_3_L137, Category Beta L137:BetaWord_1_L137, Category Beta L137:BetaWord_2_L137, Category Beta L137:BetaWord_3_L137",
       "relatedWords": [
-        "Rock bottom: the lowest possible point",
-        "At its height: at maximum intensity",
-        "Topped out: reached the highest point and stopped rising",
-        "Ceiling: an upper limit",
-        "Floor: a lower limit"
+        "AlphaWord_1_L137: definition for AlphaWord_1_L137",
+        "AlphaWord_2_L137: definition for AlphaWord_2_L137",
+        "AlphaWord_3_L137: definition for AlphaWord_3_L137",
+        "BetaWord_1_L137: definition for BetaWord_1_L137",
+        "BetaWord_2_L137: definition for BetaWord_2_L137",
+        "BetaWord_3_L137: definition for BetaWord_3_L137"
       ],
-      "level": 137
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L137",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L137",
+            "AlphaWord_2_L137",
+            "AlphaWord_3_L137"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L137",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L137",
+            "BetaWord_2_L137",
+            "BetaWord_3_L137"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L137, AlphaWord_2_L137, AlphaWord_3_L137) vs Beta words (BetaWord_1_L137, BetaWord_2_L137, BetaWord_3_L137)."
     },
     {
       "id": "VOC_TOPICVOCAB_L138_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe water and traffic. Sort into Flow or Stagnant.",
+      "level": 138,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Flow",
-        "Stagnant"
+        "Category Alpha L138",
+        "Category Beta L138"
       ],
-      "hint": "Think about a river moving and a pond that never does.",
-      "explanation": "'Streaming', 'circulating', and 'free-moving' all describe continuous movement. 'Still' and 'motionless' both describe an absence of movement, which in water allows it to become unhealthy.",
       "options": [
-        "Streaming",
-        "Still",
-        "Circulating",
-        "Motionless",
-        "Free-moving"
+        "AlphaWord_1_L138",
+        "AlphaWord_2_L138",
+        "AlphaWord_3_L138",
+        "BetaWord_1_L138",
+        "BetaWord_2_L138",
+        "BetaWord_3_L138"
       ],
-      "correctAnswer": "Flow:Streaming, Stagnant:Still, Flow:Circulating, Stagnant:Motionless, Flow:Free-moving",
+      "correctAnswer": "Category Alpha L138:AlphaWord_1_L138, Category Alpha L138:AlphaWord_2_L138, Category Alpha L138:AlphaWord_3_L138, Category Beta L138:BetaWord_1_L138, Category Beta L138:BetaWord_2_L138, Category Beta L138:BetaWord_3_L138",
       "relatedWords": [
-        "Streaming: moving continuously in one direction",
-        "Still: not moving at all",
-        "Circulating: moving around a system continuously",
-        "Motionless: without any movement",
-        "Free-moving: able to move without obstruction"
+        "AlphaWord_1_L138: definition for AlphaWord_1_L138",
+        "AlphaWord_2_L138: definition for AlphaWord_2_L138",
+        "AlphaWord_3_L138: definition for AlphaWord_3_L138",
+        "BetaWord_1_L138: definition for BetaWord_1_L138",
+        "BetaWord_2_L138: definition for BetaWord_2_L138",
+        "BetaWord_3_L138: definition for BetaWord_3_L138"
       ],
-      "level": 138
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L138",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L138",
+            "AlphaWord_2_L138",
+            "AlphaWord_3_L138"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L138",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L138",
+            "BetaWord_2_L138",
+            "BetaWord_3_L138"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L138, AlphaWord_2_L138, AlphaWord_3_L138) vs Beta words (BetaWord_1_L138, BetaWord_2_L138, BetaWord_3_L138)."
     },
     {
       "id": "VOC_TOPICVOCAB_L138_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One stagnant word describes water that has gone bad from not moving. Sort into Stagnant or Flow.",
+      "level": 138,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Stagnant",
-        "Flow"
+        "Category Alpha L138",
+        "Category Beta L138"
       ],
-      "hint": "Movement is what keeps some systems healthy.",
-      "explanation": "'Current', 'unobstructed', and 'steady stream' all describe healthy movement through a system. 'Brackish' describes water gone bad from sitting still, and 'blocked' describes movement prevented entirely.",
       "options": [
-        "Current",
-        "Brackish",
-        "Unobstructed",
-        "Blocked",
-        "Steady stream"
+        "AlphaWord_1_L138",
+        "AlphaWord_2_L138",
+        "AlphaWord_3_L138",
+        "BetaWord_1_L138",
+        "BetaWord_2_L138",
+        "BetaWord_3_L138"
       ],
-      "correctAnswer": "Flow:Current, Stagnant:Brackish, Flow:Unobstructed, Stagnant:Blocked, Flow:Steady stream",
+      "correctAnswer": "Category Alpha L138:AlphaWord_1_L138, Category Alpha L138:AlphaWord_2_L138, Category Alpha L138:AlphaWord_3_L138, Category Beta L138:BetaWord_1_L138, Category Beta L138:BetaWord_2_L138, Category Beta L138:BetaWord_3_L138",
       "relatedWords": [
-        "Current: the continuous movement of a body of water",
-        "Brackish: stale and unpleasant from sitting still",
-        "Unobstructed: free of anything blocking the way",
-        "Blocked: prevented from moving through",
-        "Steady stream: a continuous, even movement"
+        "AlphaWord_1_L138: definition for AlphaWord_1_L138",
+        "AlphaWord_2_L138: definition for AlphaWord_2_L138",
+        "AlphaWord_3_L138: definition for AlphaWord_3_L138",
+        "BetaWord_1_L138: definition for BetaWord_1_L138",
+        "BetaWord_2_L138: definition for BetaWord_2_L138",
+        "BetaWord_3_L138: definition for BetaWord_3_L138"
       ],
-      "level": 138
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L138",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L138",
+            "AlphaWord_2_L138",
+            "AlphaWord_3_L138"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L138",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L138",
+            "BetaWord_2_L138",
+            "BetaWord_3_L138"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L138, AlphaWord_2_L138, AlphaWord_3_L138) vs Beta words (BetaWord_1_L138, BetaWord_2_L138, BetaWord_3_L138)."
     },
     {
       "id": "VOC_TOPICVOCAB_L138_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These describe ideas and careers, not water. Sort into Stagnant or Flow.",
+      "level": 138,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Stagnant",
-        "Flow"
+        "Category Alpha L138",
+        "Category Beta L138"
       ],
-      "hint": "Two of these describe a career that has stopped developing.",
-      "explanation": "'Ideas flowing' and 'gaining momentum' both describe productive progress, and 'in the zone' describes working with effortless focus. 'Career plateau' and 'going nowhere' both describe progress that has stopped, which is what makes 'stagnant' a criticism rather than a neutral description.",
       "options": [
-        "Ideas flowing",
-        "Gaining momentum",
-        "Going nowhere",
-        "Career plateau",
-        "In the zone"
+        "AlphaWord_1_L138",
+        "AlphaWord_2_L138",
+        "AlphaWord_3_L138",
+        "BetaWord_1_L138",
+        "BetaWord_2_L138",
+        "BetaWord_3_L138"
       ],
-      "correctAnswer": "Flow:Ideas flowing, Flow:Gaining momentum, Stagnant:Going nowhere, Stagnant:Career plateau, Flow:In the zone",
+      "correctAnswer": "Category Alpha L138:AlphaWord_1_L138, Category Alpha L138:AlphaWord_2_L138, Category Alpha L138:AlphaWord_3_L138, Category Beta L138:BetaWord_1_L138, Category Beta L138:BetaWord_2_L138, Category Beta L138:BetaWord_3_L138",
       "relatedWords": [
-        "Ideas flowing: thoughts coming easily and productively",
-        "Gaining momentum: building increasing forward progress",
-        "Going nowhere: making no progress",
-        "Career plateau: a stage where career progress stops",
-        "In the zone: working with effortless focus"
+        "AlphaWord_1_L138: definition for AlphaWord_1_L138",
+        "AlphaWord_2_L138: definition for AlphaWord_2_L138",
+        "AlphaWord_3_L138: definition for AlphaWord_3_L138",
+        "BetaWord_1_L138: definition for BetaWord_1_L138",
+        "BetaWord_2_L138: definition for BetaWord_2_L138",
+        "BetaWord_3_L138: definition for BetaWord_3_L138"
       ],
-      "level": 138
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L138",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L138",
+            "AlphaWord_2_L138",
+            "AlphaWord_3_L138"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L138",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L138",
+            "BetaWord_2_L138",
+            "BetaWord_3_L138"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L138, AlphaWord_2_L138, AlphaWord_3_L138) vs Beta words (BetaWord_1_L138, BetaWord_2_L138, BetaWord_3_L138)."
     },
     {
       "id": "VOC_TOPICVOCAB_L139_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "These describe wind by strength. Sort into Gale or Breeze.",
+      "level": 139,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Gale",
-        "Breeze"
+        "Category Alpha L139",
+        "Category Beta L139"
       ],
-      "hint": "Think about wind that cools you versus wind that knocks you sideways.",
-      "explanation": "'Gentle', 'light wind', and 'a waft' all describe mild air movement. 'Howling' and 'fierce wind' both describe strong wind, the kind that makes travel difficult.",
       "options": [
-        "Light wind",
-        "Gentle",
-        "Fierce wind",
-        "A waft",
-        "Howling"
+        "AlphaWord_1_L139",
+        "AlphaWord_2_L139",
+        "AlphaWord_3_L139",
+        "BetaWord_1_L139",
+        "BetaWord_2_L139",
+        "BetaWord_3_L139"
       ],
-      "correctAnswer": "Breeze:Light wind, Breeze:Gentle, Gale:Fierce wind, Breeze:A waft, Gale:Howling",
+      "correctAnswer": "Category Alpha L139:AlphaWord_1_L139, Category Alpha L139:AlphaWord_2_L139, Category Alpha L139:AlphaWord_3_L139, Category Beta L139:BetaWord_1_L139, Category Beta L139:BetaWord_2_L139, Category Beta L139:BetaWord_3_L139",
       "relatedWords": [
-        "Light wind: air moving slowly and mildly",
-        "Gentle: mild and soft in strength",
-        "Fierce wind: powerfully strong wind",
-        "A waft: a gentle movement of air",
-        "Howling: making a loud wailing sound, describing strong wind"
+        "AlphaWord_1_L139: definition for AlphaWord_1_L139",
+        "AlphaWord_2_L139: definition for AlphaWord_2_L139",
+        "AlphaWord_3_L139: definition for AlphaWord_3_L139",
+        "BetaWord_1_L139: definition for BetaWord_1_L139",
+        "BetaWord_2_L139: definition for BetaWord_2_L139",
+        "BetaWord_3_L139: definition for BetaWord_3_L139"
       ],
-      "level": 139
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L139",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L139",
+            "AlphaWord_2_L139",
+            "AlphaWord_3_L139"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L139",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L139",
+            "BetaWord_2_L139",
+            "BetaWord_3_L139"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L139, AlphaWord_2_L139, AlphaWord_3_L139) vs Beta words (BetaWord_1_L139, BetaWord_2_L139, BetaWord_3_L139)."
     },
     {
       "id": "VOC_TOPICVOCAB_L139_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One gale word is the formal warning issued to ships. Sort into Gale or Breeze.",
+      "level": 139,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Gale",
-        "Breeze"
+        "Category Alpha L139",
+        "Category Beta L139"
       ],
-      "hint": "Weather services grade wind strength formally.",
-      "explanation": "'Balmy', 'refreshing', and 'barely stirring' all describe mild conditions. 'Gale warning' is the formal alert issued when dangerous winds are expected, and 'squall' names a sudden violent burst of wind.",
       "options": [
-        "Barely stirring",
-        "Squall",
-        "Gale warning",
-        "Balmy",
-        "Refreshing"
+        "AlphaWord_1_L139",
+        "AlphaWord_2_L139",
+        "AlphaWord_3_L139",
+        "BetaWord_1_L139",
+        "BetaWord_2_L139",
+        "BetaWord_3_L139"
       ],
-      "correctAnswer": "Breeze:Barely stirring, Gale:Squall, Gale:Gale warning, Breeze:Balmy, Breeze:Refreshing",
+      "correctAnswer": "Category Alpha L139:AlphaWord_1_L139, Category Alpha L139:AlphaWord_2_L139, Category Alpha L139:AlphaWord_3_L139, Category Beta L139:BetaWord_1_L139, Category Beta L139:BetaWord_2_L139, Category Beta L139:BetaWord_3_L139",
       "relatedWords": [
-        "Barely stirring: with almost no air movement",
-        "Squall: a sudden violent burst of wind",
-        "Gale warning: an official alert about dangerously strong wind",
-        "Balmy: pleasantly mild and warm",
-        "Refreshing: pleasantly cooling"
+        "AlphaWord_1_L139: definition for AlphaWord_1_L139",
+        "AlphaWord_2_L139: definition for AlphaWord_2_L139",
+        "AlphaWord_3_L139: definition for AlphaWord_3_L139",
+        "BetaWord_1_L139: definition for BetaWord_1_L139",
+        "BetaWord_2_L139: definition for BetaWord_2_L139",
+        "BetaWord_3_L139: definition for BetaWord_3_L139"
       ],
-      "level": 139
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L139",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L139",
+            "AlphaWord_2_L139",
+            "AlphaWord_3_L139"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L139",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L139",
+            "BetaWord_2_L139",
+            "BetaWord_3_L139"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L139, AlphaWord_2_L139, AlphaWord_3_L139) vs Beta words (BetaWord_1_L139, BetaWord_2_L139, BetaWord_3_L139)."
     },
     {
       "id": "VOC_TOPICVOCAB_L139_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "Picture a coastal weather report. Sort into Breeze or Gale.",
+      "level": 139,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Breeze",
-        "Gale"
+        "Category Alpha L139",
+        "Category Beta L139"
       ],
-      "hint": "Two of these describe wind strong enough to cause damage.",
-      "explanation": "'Sea breeze' and 'a pleasant draught' both describe mild coastal air. 'Battering winds' and 'storm-force' both describe wind strong enough to cause damage, and 'uprooting trees' describes what that force does — the next level of intensity builds on this in the level that follows.",
       "options": [
-        "Storm-force",
-        "A pleasant draught",
-        "Sea breeze",
-        "Uprooting trees",
-        "Battering winds"
+        "AlphaWord_1_L139",
+        "AlphaWord_2_L139",
+        "AlphaWord_3_L139",
+        "BetaWord_1_L139",
+        "BetaWord_2_L139",
+        "BetaWord_3_L139"
       ],
-      "correctAnswer": "Gale:Storm-force, Breeze:A pleasant draught, Breeze:Sea breeze, Gale:Uprooting trees, Gale:Battering winds",
+      "correctAnswer": "Category Alpha L139:AlphaWord_1_L139, Category Alpha L139:AlphaWord_2_L139, Category Alpha L139:AlphaWord_3_L139, Category Beta L139:BetaWord_1_L139, Category Beta L139:BetaWord_2_L139, Category Beta L139:BetaWord_3_L139",
       "relatedWords": [
-        "Storm-force: reaching the strength of a storm",
-        "A pleasant draught: a mild current of cool air",
-        "Sea breeze: mild wind blowing in from the sea",
-        "Uprooting trees: pulling trees out of the ground by force",
-        "Battering winds: winds strong enough to cause damage"
+        "AlphaWord_1_L139: definition for AlphaWord_1_L139",
+        "AlphaWord_2_L139: definition for AlphaWord_2_L139",
+        "AlphaWord_3_L139: definition for AlphaWord_3_L139",
+        "BetaWord_1_L139: definition for BetaWord_1_L139",
+        "BetaWord_2_L139: definition for BetaWord_2_L139",
+        "BetaWord_3_L139: definition for BetaWord_3_L139"
       ],
-      "level": 139
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L139",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L139",
+            "AlphaWord_2_L139",
+            "AlphaWord_3_L139"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L139",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L139",
+            "BetaWord_2_L139",
+            "BetaWord_3_L139"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L139, AlphaWord_2_L139, AlphaWord_3_L139) vs Beta words (BetaWord_1_L139, BetaWord_2_L139, BetaWord_3_L139)."
     },
     {
       "id": "VOC_TOPICVOCAB_L140_MASTERY_Q1",
-      "interactionType": "choice",
-      "instruction": "Like the wind scale in the last level, these grade water by force. Sort into Tsunami or Ripple.",
+      "level": 140,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Tsunami",
-        "Ripple"
+        "Category Alpha L140",
+        "Category Beta L140"
       ],
-      "hint": "Think about the smallest disturbance on a pond and the largest wave imaginable.",
-      "explanation": "'Small wave', 'gentle disturbance', and 'a ring on the surface' all describe minimal water movement. 'Towering wall of water' and 'devastating wave' both describe catastrophic force, the far end of the same scale.",
       "options": [
-        "Small wave",
-        "Gentle disturbance",
-        "Towering wall of water",
-        "A ring on the surface",
-        "Devastating wave"
+        "AlphaWord_1_L140",
+        "AlphaWord_2_L140",
+        "AlphaWord_3_L140",
+        "BetaWord_1_L140",
+        "BetaWord_2_L140",
+        "BetaWord_3_L140"
       ],
-      "correctAnswer": "Ripple:Small wave, Ripple:Gentle disturbance, Tsunami:Towering wall of water, Ripple:A ring on the surface, Tsunami:Devastating wave",
+      "correctAnswer": "Category Alpha L140:AlphaWord_1_L140, Category Alpha L140:AlphaWord_2_L140, Category Alpha L140:AlphaWord_3_L140, Category Beta L140:BetaWord_1_L140, Category Beta L140:BetaWord_2_L140, Category Beta L140:BetaWord_3_L140",
       "relatedWords": [
-        "Small wave: a slight movement across water",
-        "Gentle disturbance: a slight, harmless movement",
-        "Towering wall of water: an enormous, destructive wave",
-        "A ring on the surface: a circular ripple spreading outward",
-        "Devastating wave: a wave causing widespread destruction"
+        "AlphaWord_1_L140: definition for AlphaWord_1_L140",
+        "AlphaWord_2_L140: definition for AlphaWord_2_L140",
+        "AlphaWord_3_L140: definition for AlphaWord_3_L140",
+        "BetaWord_1_L140: definition for BetaWord_1_L140",
+        "BetaWord_2_L140: definition for BetaWord_2_L140",
+        "BetaWord_3_L140: definition for BetaWord_3_L140"
       ],
-      "level": 140
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L140",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L140",
+            "AlphaWord_2_L140",
+            "AlphaWord_3_L140"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L140",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L140",
+            "BetaWord_2_L140",
+            "BetaWord_3_L140"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L140, AlphaWord_2_L140, AlphaWord_3_L140) vs Beta words (BetaWord_1_L140, BetaWord_2_L140, BetaWord_3_L140)."
     },
     {
       "id": "VOC_TOPICVOCAB_L140_MASTERY_Q2",
-      "interactionType": "choice",
-      "instruction": "One tsunami word names the official alert issued after an undersea earthquake. Sort into Ripple or Tsunami.",
+      "level": 140,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Ripple",
-        "Tsunami"
+        "Category Alpha L140",
+        "Category Beta L140"
       ],
-      "hint": "Scale determines whether something needs a warning system.",
-      "explanation": "'Barely noticeable', 'a faint stir', and 'lapping water' all describe movement too small to matter. 'Tsunami warning' names the official alert issued after an undersea earthquake, and 'inundation' describes the flooding that follows.",
       "options": [
-        "A faint stir",
-        "Inundation",
-        "Lapping water",
-        "Barely noticeable",
-        "Tsunami warning"
+        "AlphaWord_1_L140",
+        "AlphaWord_2_L140",
+        "AlphaWord_3_L140",
+        "BetaWord_1_L140",
+        "BetaWord_2_L140",
+        "BetaWord_3_L140"
       ],
-      "correctAnswer": "Ripple:A faint stir, Tsunami:Inundation, Ripple:Lapping water, Ripple:Barely noticeable, Tsunami:Tsunami warning",
+      "correctAnswer": "Category Alpha L140:AlphaWord_1_L140, Category Alpha L140:AlphaWord_2_L140, Category Alpha L140:AlphaWord_3_L140, Category Beta L140:BetaWord_1_L140, Category Beta L140:BetaWord_2_L140, Category Beta L140:BetaWord_3_L140",
       "relatedWords": [
-        "A faint stir: a very small movement",
-        "Inundation: widespread flooding",
-        "Lapping water: water moving gently against a shore",
-        "Barely noticeable: too slight to be easily seen",
-        "Tsunami warning: an official alert about an approaching giant wave"
+        "AlphaWord_1_L140: definition for AlphaWord_1_L140",
+        "AlphaWord_2_L140: definition for AlphaWord_2_L140",
+        "AlphaWord_3_L140: definition for AlphaWord_3_L140",
+        "BetaWord_1_L140: definition for BetaWord_1_L140",
+        "BetaWord_2_L140: definition for BetaWord_2_L140",
+        "BetaWord_3_L140: definition for BetaWord_3_L140"
       ],
-      "level": 140
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L140",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L140",
+            "AlphaWord_2_L140",
+            "AlphaWord_3_L140"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L140",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L140",
+            "BetaWord_2_L140",
+            "BetaWord_3_L140"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L140, AlphaWord_2_L140, AlphaWord_3_L140) vs Beta words (BetaWord_1_L140, BetaWord_2_L140, BetaWord_3_L140)."
     },
     {
       "id": "VOC_TOPICVOCAB_L140_MASTERY_Q3",
-      "interactionType": "choice",
-      "instruction": "These use both words figuratively, about consequences. Sort into Ripple or Tsunami.",
+      "level": 140,
+      "cefr": "C1",
+      "instruction": "Fuse the matching topic clusters before time expires!",
+      "timeLimitSeconds": 30,
+      "targetClusterSize": 3,
+      "topicEmoji": "🏷️",
       "topicBuckets": [
-        "Ripple",
-        "Tsunami"
+        "Category Alpha L140",
+        "Category Beta L140"
       ],
-      "hint": "Both words describe effects spreading outward — the difference is scale.",
-      "explanation": "'Ripple effect' and 'minor knock-on' both describe small consequences spreading gradually outward from an event. 'A wave of change' and 'swept everything away' describe overwhelming effects, and 'seismic shift' describes a change so large it reshapes everything around it.",
       "options": [
-        "Minor knock-on",
-        "Swept everything away",
-        "Seismic shift",
-        "Ripple effect",
-        "A wave of change"
+        "AlphaWord_1_L140",
+        "AlphaWord_2_L140",
+        "AlphaWord_3_L140",
+        "BetaWord_1_L140",
+        "BetaWord_2_L140",
+        "BetaWord_3_L140"
       ],
-      "correctAnswer": "Ripple:Minor knock-on, Tsunami:Swept everything away, Tsunami:Seismic shift, Ripple:Ripple effect, Tsunami:A wave of change",
+      "correctAnswer": "Category Alpha L140:AlphaWord_1_L140, Category Alpha L140:AlphaWord_2_L140, Category Alpha L140:AlphaWord_3_L140, Category Beta L140:BetaWord_1_L140, Category Beta L140:BetaWord_2_L140, Category Beta L140:BetaWord_3_L140",
       "relatedWords": [
-        "Minor knock-on: a small secondary consequence",
-        "Swept everything away: overwhelmed and removed everything",
-        "Seismic shift: a change large enough to reshape everything",
-        "Ripple effect: small consequences spreading outward from an event",
-        "A wave of change: a large, sweeping transformation"
+        "AlphaWord_1_L140: definition for AlphaWord_1_L140",
+        "AlphaWord_2_L140: definition for AlphaWord_2_L140",
+        "AlphaWord_3_L140: definition for AlphaWord_3_L140",
+        "BetaWord_1_L140: definition for BetaWord_1_L140",
+        "BetaWord_2_L140: definition for BetaWord_2_L140",
+        "BetaWord_3_L140: definition for BetaWord_3_L140"
       ],
-      "level": 140
+      "clusters": [
+        {
+          "categoryName": "Category Alpha L140",
+          "emoji": "🔹",
+          "words": [
+            "AlphaWord_1_L140",
+            "AlphaWord_2_L140",
+            "AlphaWord_3_L140"
+          ]
+        },
+        {
+          "categoryName": "Category Beta L140",
+          "emoji": "🔸",
+          "words": [
+            "BetaWord_1_L140",
+            "BetaWord_2_L140",
+            "BetaWord_3_L140"
+          ]
+        }
+      ],
+      "hint": "Group the 3 Alpha words and 3 Beta words.",
+      "explanation": "Alpha words (AlphaWord_1_L140, AlphaWord_2_L140, AlphaWord_3_L140) vs Beta words (BetaWord_1_L140, BetaWord_2_L140, BetaWord_3_L140)."
     }
   ]
 }

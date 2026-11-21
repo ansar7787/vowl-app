@@ -6,14 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/core/network/network_info.dart';
-import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
-import 'package:vowl/core/utils/ad_service.dart';
-import 'package:vowl/core/utils/analytics_service.dart';
-import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
@@ -25,32 +18,17 @@ import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/pages/topic_vocab_mastery_screen.dart';
-import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_containment_bin.dart';
-import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_vocab_mind_map.dart';
+import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_fusion_tile.dart';
+import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_fusion_timer.dart';
+import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_matrix_grid.dart';
 
-class MockVocabularyBloc extends MockBloc<VocabularyEvent, VocabularyState>
-    implements VocabularyBloc {}
-
+class MockVocabularyBloc extends MockBloc<VocabularyEvent, VocabularyState> implements VocabularyBloc {}
 class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
-
-class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState>
-    implements EconomyBloc {}
-
+class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState> implements EconomyBloc {}
 class MockHapticService extends Mock implements HapticService {}
-
 class MockSoundService extends Mock implements SoundService {}
-
 class MockTtsService extends Mock implements TtsService {}
-
 class MockLocaleService extends Mock implements LocaleService {}
-
-class MockAppLogger extends Mock implements AppLogger {}
-
-class MockAnalyticsService extends Mock implements AnalyticsService {}
-
-class MockAdService extends Mock implements AdService {}
-
-class MockNetworkInfo extends Mock implements NetworkInfo {}
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -62,43 +40,29 @@ void main() {
   late MockSoundService mockSoundService;
   late MockTtsService mockTtsService;
   late MockLocaleService mockLocaleService;
-  late MockAppLogger mockAppLogger;
-  late MockAnalyticsService mockAnalyticsService;
-  late MockAdService mockAdService;
-  late MockNetworkInfo mockNetworkInfo;
   late StreamController<VocabularyState> vocabularyStreamController;
 
-  const testQuest = VocabularyQuest(
-    id: 'VOC_TOPICVOCAB_L2_Q1',
-    type: QuestType.vocabulary,
-    subtype: GameSubtype.topicVocab,
-    word: 'All Art',
-    correctAnswer: 'Art:painting,Art:sculpture',
-    options: ['painting', 'sculpture'],
-    topicBuckets: ['Science', 'Art'],
-    topicEmoji: '🎨',
-    instruction: 'SORT TO ART',
-    hint: 'Everything belongs to Art',
-    explanation: 'Painting and sculpture are artistic disciplines.',
-    relatedWords: ['painting - visual art', 'sculpture - 3D art'],
+  final testQuest = VocabularyQuest(
+    id: 'VOC_TOPICVOCAB_L2_MASTERY_Q1',
+    instruction: 'Fuse the matching topic clusters before time expires!',
     difficulty: 1,
-  );
-
-  const testLoadedState = VocabularyLoaded(
-    quests: [testQuest],
-    currentIndex: 0,
-    livesRemaining: 3,
-    wrongCount: 0,
-    hintUsed: false,
-    answerStatus: AnswerStatus.unanswered,
+    topicEmoji: '🌡️',
+    topicBuckets: const ['Intense Heat', 'Extreme Cold'],
+    options: const ['Boiling', 'Scorching', 'Steaming', 'Freezing', 'Icy', 'Chilly'],
+    correctAnswer:
+        'Intense Heat:Boiling, Intense Heat:Scorching, Intense Heat:Steaming, Extreme Cold:Freezing, Extreme Cold:Icy, Extreme Cold:Chilly',
+    relatedWords: const ['Boiling: Liquid at 100C', 'Freezing: Ice at 0C'],
+    explanation: 'Heat terms vs Cold terms.',
   );
 
   setUpAll(() {
     registerFallbackValue(const SubmitAnswer(true));
+    registerFallbackValue(const SubmitAnswer(false));
     registerFallbackValue(const NextQuestion());
   });
 
   setUp(() async {
+    VowlMotion.lowAnimationModeOverride.value = true;
     SharedPreferences.setMockInitialValues({
       'has_seen_briefing_topicVocab': true,
     });
@@ -110,18 +74,21 @@ void main() {
     mockSoundService = MockSoundService();
     mockTtsService = MockTtsService();
     mockLocaleService = MockLocaleService();
-    mockAppLogger = MockAppLogger();
-    mockAnalyticsService = MockAnalyticsService();
-    mockAdService = MockAdService();
-    mockNetworkInfo = MockNetworkInfo();
 
     vocabularyStreamController = StreamController<VocabularyState>.broadcast();
 
-    when(() => mockVocabularyBloc.state).thenReturn(testLoadedState);
+    final loadedState = VocabularyLoaded(
+      quests: [testQuest],
+      currentIndex: 0,
+      livesRemaining: 3,
+      answerStatus: AnswerStatus.unanswered,
+    );
+
+    when(() => mockVocabularyBloc.state).thenReturn(loadedState);
     whenListen(
       mockVocabularyBloc,
       vocabularyStreamController.stream,
-      initialState: testLoadedState,
+      initialState: loadedState,
     );
 
     when(() => mockAuthBloc.state).thenReturn(
@@ -129,61 +96,42 @@ void main() {
         const UserEntity(
           id: 'test_user_topic',
           email: 'topic@vowl.app',
-          displayName: 'Topic Scholar',
+          displayName: 'Topic Master',
           hintCount: 3,
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(() => mockEconomyBloc.stream).thenAnswer((_) => const Stream<EconomyState>.empty());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
-    when(() => mockHapticService.success()).thenAnswer((_) async {});
-    when(() => mockHapticService.error()).thenAnswer((_) async {});
     when(() => mockHapticService.light()).thenAnswer((_) async {});
     when(() => mockHapticService.heavy()).thenAnswer((_) async {});
+    when(() => mockHapticService.warning()).thenAnswer((_) async {});
+    when(() => mockHapticService.error()).thenAnswer((_) async {});
+    when(() => mockHapticService.success()).thenAnswer((_) async {});
 
     when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
     when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
-    when(() => mockSoundService.playTts(any())).thenAnswer((_) async {});
-    when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
     when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
-    when(() => mockSoundService.playHint()).thenAnswer((_) async {});
-    when(() => mockSoundService.playClick()).thenAnswer((_) async {});
-    when(() => mockSoundService.playLevelComplete()).thenAnswer((_) async {});
-    when(() => mockSoundService.playFile(any())).thenAnswer((_) async {});
+    when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
 
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
-    when(
-      () => mockTtsService.speak(
-        any(),
-        rate: any(named: 'rate'),
-        locale: any(named: 'locale'),
-      ),
-    ).thenAnswer((_) async {});
-
-    when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
+    when(() => mockTtsService.speak(any(), rate: any(named: 'rate'), locale: any(named: 'locale')))
+        .thenAnswer((_) async {});
 
     await di.sl.reset();
     di.sl.registerSingleton<HapticService>(mockHapticService);
     di.sl.registerSingleton<SoundService>(mockSoundService);
     di.sl.registerSingleton<TtsService>(mockTtsService);
     di.sl.registerSingleton<LocaleService>(mockLocaleService);
-    di.sl.registerSingleton<AppLogger>(mockAppLogger);
-    di.sl.registerSingleton<AnalyticsService>(mockAnalyticsService);
-    di.sl.registerSingleton<AdService>(mockAdService);
-    di.sl.registerSingleton<NetworkInfo>(mockNetworkInfo);
-
-    VowlMotion.lowAnimationModeOverride.value = true;
   });
 
-  tearDown(() async {
-    await vocabularyStreamController.close();
+  tearDown(() {
     VowlMotion.lowAnimationModeOverride.value = false;
+    vocabularyStreamController.close();
   });
 
   Widget buildTestableWidget(Widget child) {
@@ -196,13 +144,9 @@ void main() {
           BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
         ],
         child: MaterialApp(
-          theme: AppTheme.lightTheme,
           home: MediaQuery(
-            data: const MediaQueryData(
-              size: Size(390, 844),
-              disableAnimations: true,
-            ),
-            child: child,
+            data: const MediaQueryData(disableAnimations: true),
+            child: Scaffold(body: child),
           ),
         ),
       ),
@@ -210,9 +154,7 @@ void main() {
   }
 
   group('TopicVocabMasteryScreen', () {
-    testWidgets(
-        'renders Stage 1 containment bins, completes sorting, and reveals Stage 2 Bonus Arena with victory banking',
-        (tester) async {
+    testWidgets('renders matrix grid, countdown timer, and fetches quests', (tester) async {
       tester.view.physicalSize = const Size(390, 844) * 2.0;
       tester.view.devicePixelRatio = 2.0;
       addTearDown(() {
@@ -220,48 +162,58 @@ void main() {
         tester.view.resetDevicePixelRatio();
       });
 
-      await tester.pumpWidget(
-        buildTestableWidget(
-          const TopicVocabMasteryScreen(level: 2),
-        ),
-      );
+      await tester.pumpWidget(buildTestableWidget(const TopicVocabMasteryScreen(level: 2)));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(TopicVocabMasteryScreen), findsOneWidget);
-      expect(find.byType(TopicContainmentBin), findsNWidgets(2));
+      verify(() => mockVocabularyBloc.add(any(that: isA<FetchVocabularyQuests>()))).called(1);
+      expect(find.byType(TopicFusionTimer), findsOneWidget);
+      expect(find.byType(TopicMatrixGrid), findsOneWidget);
+      expect(find.text('Boiling'), findsOneWidget);
+      expect(find.text('Freezing'), findsOneWidget);
+    });
 
-      // Right bin is Art (index 1)
-      final rightBin = find.byWidgetPredicate(
-        (w) => w is TopicContainmentBin && w.label == 'Art',
-      );
-      expect(rightBin, findsOneWidget);
+    testWidgets('selecting matching tiles enables fuse button and triggers fusion', (tester) async {
+      tester.view.physicalSize = const Size(390, 844) * 2.0;
+      tester.view.devicePixelRatio = 2.0;
+      addTearDown(() {
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      });
 
-      // Sort word 1 into Art
-      await tester.tap(rightBin, warnIfMissed: false);
+      await tester.pumpWidget(buildTestableWidget(const TopicVocabMasteryScreen(level: 2)));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      // Sort word 2 into Art
-      await tester.tap(rightBin, warnIfMissed: false);
+      // Tap 3 heat words using find.widgetWithText(TopicFusionTile, ...)
+      final boilingFinder = find.widgetWithText(TopicFusionTile, 'Boiling');
+      await tester.ensureVisible(boilingFinder);
+      await tester.tap(boilingFinder, warnIfMissed: false);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 100));
+
+      final scorchingFinder = find.widgetWithText(TopicFusionTile, 'Scorching');
+      await tester.ensureVisible(scorchingFinder);
+      await tester.tap(scorchingFinder, warnIfMissed: false);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 100));
+
+      final steamingFinder = find.widgetWithText(TopicFusionTile, 'Steaming');
+      await tester.ensureVisible(steamingFinder);
+      await tester.tap(steamingFinder, warnIfMissed: false);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 100));
+
+      // Fuse button should show (3/3)
+      final fuseButton = find.text('FUSE CLUSTER (3/3)');
+      expect(fuseButton, findsOneWidget);
+
+      await tester.ensureVisible(fuseButton);
+      await tester.tap(fuseButton, warnIfMissed: false);
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      // Stage 1 complete -> Stage 2 Bonus XP Arena is displayed!
-      expect(find.textContaining('BONUS XP ARENA'), findsOneWidget);
-      expect(find.byType(TopicVocabMindMap), findsOneWidget);
-      expect(find.byKey(const Key('topic_vocab_bonus_bank_button')), findsOneWidget);
-
-      // Tap Bank Win button (+50 XP bonus, 0 hearts deducted)
-      await tester.tap(
-        find.byKey(const Key('topic_vocab_bonus_bank_button')),
-        warnIfMissed: false,
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      // Verify answer was submitted as victory to bloc
-      verify(() => mockVocabularyBloc.add(const SubmitAnswer(true))).called(1);
+      verify(() => mockHapticService.heavy()).called(1);
     });
   });
 }
