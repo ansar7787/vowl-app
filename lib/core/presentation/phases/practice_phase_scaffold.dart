@@ -68,6 +68,9 @@ class PracticePhaseScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isDark ? AppColors.slate950 : AppColors.slate50;
+    final cefr = level <= 50
+        ? 'B1'
+        : (level <= 100 ? 'B2' : (level <= 150 ? 'C1' : 'C2'));
     final progress = totalExercises > 0
         ? ((currentExerciseIndex + 1) / totalExercises).clamp(0.0, 1.0)
         : 0.0;
@@ -133,7 +136,7 @@ class PracticePhaseScaffold extends StatelessWidget {
                     Text('✋', style: TextStyle(fontSize: 11.sp)),
                     SizedBox(width: 4.w),
                     Text(
-                      'PRACTICE PHASE • LEVEL $level',
+                      'PRACTICE PHASE • LEVEL $level • $cefr',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,

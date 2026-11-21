@@ -56,6 +56,9 @@ class LearnPhaseScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isDark ? AppColors.slate950 : AppColors.slate50;
+    final cefr = level <= 50
+        ? 'B1'
+        : (level <= 100 ? 'B2' : (level <= 150 ? 'C1' : 'C2'));
 
     void handleExit() {
       if (di.sl.isRegistered<TtsService>()) {
@@ -119,7 +122,7 @@ class LearnPhaseScaffold extends StatelessWidget {
                     Text('🧠', style: TextStyle(fontSize: 11.sp)),
                     SizedBox(width: 4.w),
                     Text(
-                      'LEARN PHASE • LEVEL $level',
+                      'LEARN PHASE • LEVEL $level • $cefr',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.sp,
