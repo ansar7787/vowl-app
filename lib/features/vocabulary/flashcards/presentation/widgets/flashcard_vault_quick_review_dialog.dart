@@ -28,6 +28,7 @@ class FlashcardVaultQuickReviewDialog extends StatefulWidget {
     await showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
+      useSafeArea: true,
       backgroundColor: Colors.transparent,
       builder: (ctx) => FlashcardVaultQuickReviewDialog(
         entriesToReview: entriesToReview,
@@ -103,9 +104,11 @@ class _FlashcardVaultQuickReviewDialogState
           ),
         ],
       ),
-      child: Column(
-        children: [
-          Container(
+      child: SafeArea(
+        top: false,
+        child: Column(
+          children: [
+            Container(
             width: 44.w,
             height: 4.h,
             decoration: BoxDecoration(
@@ -120,8 +123,9 @@ class _FlashcardVaultQuickReviewDialogState
             Expanded(child: _buildReviewCard(isDark)),
         ],
       ),
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildReviewCard(bool isDark) {
     final entry = widget.entriesToReview[_currentIndex];

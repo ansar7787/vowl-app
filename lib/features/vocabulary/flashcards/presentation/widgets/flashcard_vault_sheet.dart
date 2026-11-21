@@ -18,6 +18,7 @@ class FlashcardVaultSheet extends StatefulWidget {
     await showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
+      useSafeArea: true,
       backgroundColor: Colors.transparent,
       builder: (ctx) => FlashcardVaultSheet(initialEntries: entries),
     );
@@ -86,9 +87,11 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
           ),
         ],
       ),
-      child: Column(
-        children: [
-          SizedBox(height: 12.h),
+      child: SafeArea(
+        top: false,
+        child: Column(
+          children: [
+            SizedBox(height: 12.h),
           Container(
             width: 44.w,
             height: 4.h,
@@ -260,7 +263,8 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
                 ),
               ),
             ),
-        ],
+          ],
+        ),
       ),
     );
   }

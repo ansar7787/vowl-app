@@ -28,6 +28,7 @@ class FlashcardLearnRefresherSheet extends StatelessWidget {
       context: context,
       backgroundColor: Colors.transparent,
       isScrollControlled: true,
+      useSafeArea: true,
       builder: (_) => FlashcardLearnRefresherSheet(
         level: level,
         onKeepPracticing: onKeepPracticing,
