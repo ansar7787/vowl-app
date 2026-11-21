@@ -1,16 +1,15 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
-import 'package:vowl/core/theme/app_spacing.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/locale_service.dart';
 
-/// Cinematic full-screen mission briefing shown before a quest begins.
+/// Mission briefing overlay shown before a quest begins or on-demand from the header.
 ///
-/// The [_isExiting] flag drives a coordinated fade + slide exit animation
-/// that completes before [onStart] is invoked.
+/// Designed with standard 16.w edge margins, solid dark surface contrast,
+/// zero-idle battery consumption, and cohesive pedagogical hierarchy.
 class QuestBriefingOverlay extends StatefulWidget {
   final String title;
   final String objective;
@@ -40,10 +39,8 @@ class QuestBriefingOverlay extends StatefulWidget {
 }
 
 class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
-  static const Duration _exitAnimDuration = Duration(milliseconds: 400);
+  static const Duration _exitAnimDuration = Duration(milliseconds: 300);
   final ValueNotifier<bool> _isExitingNotifier = ValueNotifier(false);
-
-  // Pre-build rule items once to avoid list allocation on every build().
   late final List<Widget> _ruleWidgets;
 
   @override
@@ -63,7 +60,6 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
   void _handleStart() {
     if (_isExitingNotifier.value || !mounted) return;
     _isExitingNotifier.value = true;
-    // Align delay with the defined exit animation duration plus a tiny buffer.
     Future<void>.delayed(
       _exitAnimDuration + const Duration(milliseconds: 20),
       () {
@@ -72,13 +68,22 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
     );
   }
 
+  LinearGradient _gradient(Color color) {
+    final hsl = HSLColor.fromColor(color);
+    final darker = hsl
+        .withLightness((hsl.lightness - 0.12).clamp(0.0, 1.0))
+        .toColor();
+    return LinearGradient(
+      colors: [color, darker],
+      begin: Alignment.topCenter,
+      end: Alignment.bottomCenter,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Semantics(
-      label: context.tr(
-        'common.mission_briefing',
-        fallback: 'MISSION BRIEFING',
-      ),
+      label: context.tr('common.mission_briefing', fallback: 'MISSION BRIEFING'),
       child: Material(
         color: Colors.transparent,
         child: ValueListenableBuilder<bool>(
@@ -86,368 +91,256 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
           builder: (context, isExiting, _) {
             return Stack(
               children: [
-                // Background dim overlay (Solid for maximum performance)
                 Positioned.fill(
                   child: ColoredBox(color: Colors.black.withValues(alpha: 0.85))
                       .animate(target: isExiting ? 1 : 0)
                       .fadeOut(duration: _exitAnimDuration),
                 ),
-
-                // Content card
                 Center(
                   child: SingleChildScrollView(
-                    padding: EdgeInsets.symmetric(vertical: 50.h),
+                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
                     physics: const BouncingScrollPhysics(),
-                    child:
-                        Container(
-                              width: 0.85.sw,
-                              constraints: const BoxConstraints(maxWidth: 450),
-                              padding: EdgeInsets.all(AppSpacing.cardSpacious),
-                              decoration: BoxDecoration(
-                                color: Colors.white.withValues(alpha: 0.1),
-                                borderRadius: BorderRadius.circular(40.r),
-                                border: Border.all(
-                                  color: Colors.white.withValues(alpha: 0.2),
-                                  width: 1.0, // Sleek 1px hairline border
-                                ),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: widget.primaryColor.withValues(
-                                      alpha: 0.3,
-                                    ),
-                                    blurRadius: 40,
-                                    offset: const Offset(0, 20),
-                                  ),
-                                ],
-                              ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  // Animated hero icon
-                                  RepaintBoundary(
-                                    child: Builder(
-                                      builder: (context) {
-                                        final reduceMotion =
-                                            MediaQuery.disableAnimationsOf(
-                                              context,
-                                            );
-                                        Widget iconContainer = Container(
-                                          padding: EdgeInsets.all(16.r),
-                                          decoration: BoxDecoration(
-                                            gradient: LinearGradient(
-                                              colors: [
-                                                widget.primaryColor,
-                                                HSLColor.fromColor(
-                                                      widget.primaryColor,
-                                                    )
-                                                    .withLightness(
-                                                      (HSLColor.fromColor(
-                                                                widget
-                                                                    .primaryColor,
-                                                              ).lightness -
-                                                              0.12)
-                                                          .clamp(0.0, 1.0),
-                                                    )
-                                                    .toColor(),
-                                              ],
-                                              begin: Alignment.topCenter,
-                                              end: Alignment.bottomCenter,
-                                            ),
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                              color: Colors.white.withValues(
-                                                alpha: 0.3,
-                                              ),
-                                              width: 1.0,
-                                            ),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: widget.primaryColor
-                                                    .withValues(alpha: 0.5),
-                                                blurRadius: 20,
-                                                offset: const Offset(0, 10),
-                                              ),
-                                            ],
-                                          ),
-                                          child: Icon(
-                                            widget.icon,
-                                            color: Colors.white,
-                                            size: 32.r,
-                                          ),
-                                        );
-
-                                        if (!reduceMotion) {
-                                          iconContainer = iconContainer
-                                              .animate(
-                                                target:
-                                                    VowlMotion.shouldReduceMotion(
-                                                      context,
-                                                    )
-                                                    ? 0
-                                                    : 1,
-                                                onPlay: (c) =>
-                                                    c.repeat(reverse: true),
-                                              )
-                                              .scale(
-                                                begin: const Offset(1, 1),
-                                                end: const Offset(1.1, 1.1),
-                                                duration: 1.seconds,
-                                              );
-                                        }
-
-                                        return iconContainer;
-                                      },
-                                    ),
-                                  ),
-
-                                  SizedBox(height: 24.h),
-
-                                  if (widget.phaseBadge != null) ...[
-                                    Container(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 10.w,
-                                        vertical: 3.h,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: widget.primaryColor.withValues(
-                                          alpha: 0.15,
-                                        ),
-                                        borderRadius: BorderRadius.circular(
-                                          12.r,
-                                        ),
-                                        border: Border.all(
-                                          color: widget.primaryColor.withValues(
-                                            alpha: 0.3,
-                                          ),
-                                          width: 1,
-                                        ),
-                                      ),
-                                      child: Text(
-                                        widget.phaseBadge!,
-                                        style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 10.sp,
-                                          fontWeight: FontWeight.w800,
-                                          color: widget.primaryColor,
-                                          letterSpacing: 1.2,
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(height: 8.h),
-                                  ],
-
-                                  // Category label
-                                  Text(
-                                    context
-                                        .tr(
-                                          'common.mission_briefing',
-                                          fallback: 'MISSION BRIEFING',
-                                        )
-                                        .toUpperCase(),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 11.sp,
-                                      fontWeight: FontWeight.w800,
-                                      color: widget.primaryColor,
-                                      letterSpacing: 4,
-                                    ),
-                                  ),
-
-                                  SizedBox(height: 8.h),
-
-                                  // Quest title
-                                  AutoSizeText(
-                                    widget.title.toUpperCase(),
-                                    textAlign: TextAlign.center,
-                                    maxLines: 2,
-                                    minFontSize: 14,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 22.sp,
-                                      fontWeight: FontWeight.w800,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-
-                                  SizedBox(height: 24.h),
-
-                                  // Objective
-                                  Container(
-                                    width: double.infinity,
-                                    padding: EdgeInsets.all(16.r),
-                                    decoration: BoxDecoration(
-                                      color: Colors.white.withValues(
-                                        alpha: 0.05,
-                                      ),
-                                      borderRadius: BorderRadius.circular(20.r),
-                                    ),
-                                    child: Text(
-                                      widget.objective,
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 14.sp,
-                                        fontWeight: FontWeight.w500,
-                                        color: Colors.white.withValues(
-                                          alpha: 0.9,
-                                        ),
-                                        height: 1.5,
-                                      ),
-                                    ),
-                                  ),
-
-                                  SizedBox(height: 24.h),
-
-                                  // Pre-built rule items (no per-build allocation)
-                                  ..._ruleWidgets,
-
-                                  SizedBox(height: 24.h),
-
-                                  // Pro-tip card
-                                  Container(
-                                        padding: EdgeInsets.all(12.r),
-                                        decoration: BoxDecoration(
-                                          color: Colors.amber.withValues(
-                                            alpha: 0.1,
-                                          ),
-                                          borderRadius: BorderRadius.circular(
-                                            16.r,
-                                          ),
-                                          border: Border.all(
-                                            color: Colors.amber.withValues(
-                                              alpha: 0.3,
-                                            ),
-                                            width: 1,
-                                          ),
-                                        ),
-                                        child: Row(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Icon(
-                                              Icons.tips_and_updates_rounded,
-                                              color: Colors.amber,
-                                              size: 18.r,
-                                            ),
-                                            SizedBox(width: 10.w),
-                                            Expanded(
-                                              child: Text(
-                                                widget.tip,
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 12.sp,
-                                                  color: Colors.white
-                                                      .withValues(alpha: 0.8),
-                                                  fontWeight: FontWeight.w500,
-                                                  fontStyle: FontStyle.italic,
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      )
-                                      .animate()
-                                      .fadeIn(delay: 400.ms)
-                                      .slideY(begin: 0.1),
-
-                                  SizedBox(height: 32.h),
-
-                                  // Start button
-                                  RepaintBoundary(
-                                    child: Semantics(
-                                      button: true,
-                                      label: widget.actionText,
-                                      child: ScaleButton(
-                                        onTap: _handleStart,
-                                        child: Container(
-                                          width: double.infinity,
-                                          height: 56.h,
-                                          decoration: BoxDecoration(
-                                            gradient: LinearGradient(
-                                              colors: [
-                                                widget.primaryColor,
-                                                HSLColor.fromColor(
-                                                      widget.primaryColor,
-                                                    )
-                                                    .withLightness(
-                                                      (HSLColor.fromColor(
-                                                                widget
-                                                                    .primaryColor,
-                                                              ).lightness -
-                                                              0.12)
-                                                          .clamp(0.0, 1.0),
-                                                    )
-                                                    .toColor(),
-                                              ],
-                                              begin: Alignment.topCenter,
-                                              end: Alignment.bottomCenter,
-                                            ),
-                                            border: Border.all(
-                                              color: Colors.white.withValues(
-                                                alpha: 0.2,
-                                              ),
-                                              width: 1.0,
-                                            ),
-                                            borderRadius: BorderRadius.circular(
-                                              20.r,
-                                            ),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                color: widget.primaryColor
-                                                    .withValues(alpha: 0.4),
-                                                blurRadius: 15,
-                                                offset: const Offset(0, 8),
-                                              ),
-                                            ],
-                                          ),
-                                          child: Center(
-                                            child: Padding(
-                                              padding: EdgeInsets.symmetric(
-                                                horizontal: 16.w,
-                                              ),
-                                              child: AutoSizeText(
-                                                widget.actionText.toUpperCase(),
-                                                maxLines: 1,
-                                                minFontSize: 10,
-                                                overflow: TextOverflow.ellipsis,
-                                                style: TextStyle(
-                                                  fontFamily: 'Outfit',
-                                                  fontSize: 16.sp,
-                                                  fontWeight: FontWeight.w800,
-                                                  color: Colors.white,
-                                                  letterSpacing: 1.5,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            )
-                            .animate(target: isExiting ? 1 : 0)
-                            .slideY(
-                              begin: 0,
-                              end: -0.2,
-                              duration: _exitAnimDuration,
-                              curve: Curves.easeIn,
-                            )
-                            .fadeOut(duration: 300.ms),
+                    child: Container(
+                      width: double.infinity,
+                      constraints: const BoxConstraints(maxWidth: 480),
+                      padding: EdgeInsets.all(20.r),
+                      decoration: BoxDecoration(
+                        color: AppColors.slate900,
+                        borderRadius: BorderRadius.circular(24.r),
+                        border: Border.all(
+                          color: Colors.white.withValues(alpha: 0.12),
+                          width: 1.0,
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: widget.primaryColor.withValues(alpha: 0.25),
+                            blurRadius: 24.r,
+                            offset: Offset(0, 8.h),
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          _buildHeroIcon(),
+                          SizedBox(height: 14.h),
+                          if (widget.phaseBadge != null) ...[
+                            _buildPhaseBadge(),
+                            SizedBox(height: 6.h),
+                          ],
+                          _buildCategoryLabel(context),
+                          SizedBox(height: 4.h),
+                          _buildTitle(),
+                          SizedBox(height: 14.h),
+                          _buildObjectiveBox(),
+                          SizedBox(height: 14.h),
+                          ..._ruleWidgets,
+                          SizedBox(height: 14.h),
+                          _buildTipCard(),
+                          SizedBox(height: 18.h),
+                          _buildCtaButton(),
+                        ],
+                      ),
+                    )
+                        .animate(target: isExiting ? 1 : 0)
+                        .slideY(
+                          begin: 0,
+                          end: -0.15,
+                          duration: _exitAnimDuration,
+                          curve: Curves.easeIn,
+                        )
+                        .fadeOut(duration: 250.ms),
                   ),
                 ),
               ],
             );
           },
         ),
-      ).animate().fadeIn(duration: 400.ms),
+      ).animate().fadeIn(duration: 300.ms),
     );
   }
+
+  Widget _buildHeroIcon() => Container(
+        padding: EdgeInsets.all(14.r),
+        decoration: BoxDecoration(
+          gradient: _gradient(widget.primaryColor),
+          shape: BoxShape.circle,
+          border: Border.all(
+            color: Colors.white.withValues(alpha: 0.25),
+            width: 1.0,
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: widget.primaryColor.withValues(alpha: 0.4),
+              blurRadius: 14.r,
+              offset: Offset(0, 6.h),
+            ),
+          ],
+        ),
+        child: Icon(widget.icon, color: Colors.white, size: 28.r),
+      )
+          .animate()
+          .scale(
+            begin: const Offset(0.85, 0.85),
+            end: const Offset(1, 1),
+            duration: 350.ms,
+            curve: Curves.easeOutBack,
+          );
+
+  Widget _buildPhaseBadge() => Container(
+        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.h),
+        decoration: BoxDecoration(
+          color: widget.primaryColor.withValues(alpha: 0.15),
+          borderRadius: BorderRadius.circular(10.r),
+          border: Border.all(
+            color: widget.primaryColor.withValues(alpha: 0.3),
+            width: 1,
+          ),
+        ),
+        child: Text(
+          widget.phaseBadge!,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 10.sp,
+            fontWeight: FontWeight.w800,
+            color: widget.primaryColor,
+            letterSpacing: 1.0,
+          ),
+        ),
+      );
+
+  Widget _buildCategoryLabel(BuildContext context) => Text(
+        context
+            .tr('common.mission_briefing', fallback: 'MISSION BRIEFING')
+            .toUpperCase(),
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 10.5.sp,
+          fontWeight: FontWeight.w800,
+          color: widget.primaryColor,
+          letterSpacing: 3,
+        ),
+      );
+
+  Widget _buildTitle() => AutoSizeText(
+        widget.title.toUpperCase(),
+        textAlign: TextAlign.center,
+        maxLines: 2,
+        minFontSize: 13,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 19.sp,
+          fontWeight: FontWeight.w800,
+          color: Colors.white,
+        ),
+      );
+
+  Widget _buildObjectiveBox() => Container(
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+        decoration: BoxDecoration(
+          color: Colors.white.withValues(alpha: 0.05),
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(
+            color: Colors.white.withValues(alpha: 0.08),
+            width: 1,
+          ),
+        ),
+        child: Text(
+          widget.objective,
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 13.sp,
+            fontWeight: FontWeight.w500,
+            color: Colors.white.withValues(alpha: 0.92),
+            height: 1.45,
+          ),
+        ),
+      );
+
+  Widget _buildTipCard() => Container(
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
+        decoration: BoxDecoration(
+          color: Colors.amber.withValues(alpha: 0.1),
+          borderRadius: BorderRadius.circular(14.r),
+          border: Border.all(
+            color: Colors.amber.withValues(alpha: 0.3),
+            width: 1,
+          ),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Icon(Icons.tips_and_updates_rounded, color: Colors.amber, size: 16.r),
+            SizedBox(width: 8.w),
+            Expanded(
+              child: Text(
+                widget.tip,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 11.5.sp,
+                  color: Colors.white.withValues(alpha: 0.85),
+                  fontWeight: FontWeight.w500,
+                  fontStyle: FontStyle.italic,
+                  height: 1.35,
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+
+  Widget _buildCtaButton() => RepaintBoundary(
+        child: Semantics(
+          button: true,
+          label: widget.actionText,
+          child: ScaleButton(
+            onTap: _handleStart,
+            child: Container(
+              width: double.infinity,
+              height: 50.h,
+              decoration: BoxDecoration(
+                gradient: _gradient(widget.primaryColor),
+                border: Border.all(
+                  color: Colors.white.withValues(alpha: 0.2),
+                  width: 1.0,
+                ),
+                borderRadius: BorderRadius.circular(16.r),
+                boxShadow: [
+                  BoxShadow(
+                    color: widget.primaryColor.withValues(alpha: 0.35),
+                    blurRadius: 12.r,
+                    offset: Offset(0, 5.h),
+                  ),
+                ],
+              ),
+              child: Center(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  child: AutoSizeText(
+                    widget.actionText.toUpperCase(),
+                    maxLines: 1,
+                    minFontSize: 10,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.white,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      );
 }
 
 // ---------------------------------------------------------------------------
-// Pre-built rule row — extracted to avoid closure allocations in build().
+// Pre-built rule item
 // ---------------------------------------------------------------------------
 
 class _RuleItem extends StatelessWidget {
@@ -459,20 +352,21 @@ class _RuleItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(bottom: 10.h),
+      padding: EdgeInsets.only(bottom: 8.h),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(Icons.check_circle_rounded, color: primaryColor, size: 16.r),
-          SizedBox(width: 10.w),
+          Icon(Icons.check_circle_rounded, color: primaryColor, size: 15.r),
+          SizedBox(width: 8.w),
           Expanded(
             child: Text(
               rule,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 13.sp,
-                color: Colors.white70,
+                fontSize: 12.5.sp,
+                color: Colors.white.withValues(alpha: 0.85),
                 fontWeight: FontWeight.w500,
+                height: 1.35,
               ),
             ),
           ),
