@@ -89,10 +89,17 @@ class _FlashcardVaultQuickReviewDialogState
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
 
     return Container(
-      height: 0.85.sh,
-      padding: EdgeInsets.fromLTRB(20.w, 12.h, 20.w, 24.h),
+      height: isLandscape ? 0.95.sh : 0.85.sh,
+      padding: EdgeInsets.fromLTRB(
+        20.w,
+        isLandscape ? 6.h : 12.h,
+        20.w,
+        isLandscape ? 12.h : 24.h,
+      ),
       decoration: BoxDecoration(
         color: isDark ? AppColors.slate900 : Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
@@ -109,23 +116,23 @@ class _FlashcardVaultQuickReviewDialogState
         child: Column(
           children: [
             Container(
-            width: 44.w,
-            height: 4.h,
-            decoration: BoxDecoration(
-              color: isDark ? AppColors.slate700 : AppColors.slate300,
-              borderRadius: BorderRadius.circular(2.r),
+              width: 44.w,
+              height: 4.h,
+              decoration: BoxDecoration(
+                color: isDark ? AppColors.slate700 : AppColors.slate300,
+                borderRadius: BorderRadius.circular(2.r),
+              ),
             ),
-          ),
-          SizedBox(height: 12.h),
-          if (_isFinished)
-            Expanded(child: _buildCompletionView(isDark))
-          else
-            Expanded(child: _buildReviewCard(isDark)),
-        ],
+            SizedBox(height: isLandscape ? 6.h : 12.h),
+            if (_isFinished)
+              Expanded(child: _buildCompletionView(isDark))
+            else
+              Expanded(child: _buildReviewCard(isDark)),
+          ],
+        ),
       ),
-    ),
-  );
-}
+    );
+  }
 
   Widget _buildReviewCard(bool isDark) {
     final entry = widget.entriesToReview[_currentIndex];
@@ -289,13 +296,11 @@ class _FlashcardVaultQuickReviewDialogState
                   child: Container(
                     padding: EdgeInsets.symmetric(vertical: 14.h),
                     decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [AppColors.indigo500, AppColors.emerald500],
-                      ),
+                      color: AppColors.indigo500,
                       borderRadius: BorderRadius.circular(14.r),
                       boxShadow: [
                         BoxShadow(
-                          color: AppColors.emerald500.withValues(alpha: 0.3),
+                          color: AppColors.indigo500.withValues(alpha: 0.25),
                           blurRadius: 8.r,
                           offset: Offset(0, 3.h),
                         ),

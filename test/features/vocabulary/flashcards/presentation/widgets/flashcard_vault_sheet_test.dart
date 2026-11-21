@@ -87,5 +87,27 @@ void main() {
         findsOneWidget,
       );
     });
+
+    testWidgets(
+      'renders cleanly without overflow in landscape mode (640x306)',
+      (tester) async {
+        tester.view.physicalSize = const Size(640, 306);
+        tester.view.devicePixelRatio = 1.0;
+        addTearDown(() {
+          tester.view.resetPhysicalSize();
+          tester.view.resetDevicePixelRatio();
+        });
+
+        await tester.pumpWidget(
+          buildTestableWidget(FlashcardVaultSheet(initialEntries: testEntries)),
+        );
+        await tester.pumpAndSettle();
+
+        expect(tester.takeException(), isNull);
+        expect(find.text('Word Bank'), findsOneWidget);
+        expect(find.text('MASTERED'), findsOneWidget);
+        expect(find.text('AUTHENTIC'), findsOneWidget);
+      },
+    );
   });
 }

@@ -6,6 +6,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import '../../data/services/flashcard_vault_service.dart';
 import 'flashcard_vault_entry_tile.dart';
 import 'flashcard_vault_quick_review_dialog.dart';
+import 'flashcard_vault_stats_bar.dart';
 
 /// Modal sheet displaying the learner's Lexicon Memory Vault with Ebbinghaus retention scores.
 class FlashcardVaultSheet extends StatefulWidget {
@@ -63,6 +64,8 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isLandscape =
+        MediaQuery.of(context).orientation == Orientation.landscape;
     final dueCount = _entries.where((e) => e.retention < 0.60).length;
     final displayed = _filterDueOnly
         ? _entries.where((e) => e.retention < 0.60).toList()
@@ -75,7 +78,9 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
               .round();
 
     return Container(
-      height: 0.85.sh,
+      constraints: BoxConstraints(
+        maxHeight: MediaQuery.of(context).size.height * 0.92,
+      ),
       decoration: BoxDecoration(
         color: isDark ? AppColors.slate900 : Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
@@ -89,219 +94,193 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
       ),
       child: SafeArea(
         top: false,
-        child: Column(
-          children: [
-            SizedBox(height: 12.h),
-          Container(
-            width: 44.w,
-            height: 4.h,
-            decoration: BoxDecoration(
-              color: isDark ? AppColors.slate700 : AppColors.slate300,
-              borderRadius: BorderRadius.circular(2.r),
-            ),
-          ),
-          SizedBox(height: 12.h),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(7.r),
-                  decoration: BoxDecoration(
-                    color: AppColors.indigo500.withValues(alpha: 0.15),
-                    borderRadius: BorderRadius.circular(10.r),
-                  ),
-                  child: Text('📚', style: TextStyle(fontSize: 18.sp)),
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(height: 12.h),
+              Container(
+                width: 44.w,
+                height: 4.h,
+                decoration: BoxDecoration(
+                  color: isDark ? AppColors.slate700 : AppColors.slate300,
+                  borderRadius: BorderRadius.circular(2.r),
                 ),
-                SizedBox(width: 8.w),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Word Bank',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 17.sp,
-                          fontWeight: FontWeight.w800,
-                          color: isDark ? Colors.white : AppColors.slate900,
-                        ),
-                      ),
-                      Text(
-                        'Review words you\'ve learned',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 11.sp,
-                          color: isDark
-                              ? AppColors.slate400
-                              : AppColors.slate600,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                IconButton(
-                  icon: const Icon(Icons.close_rounded),
-                  color: isDark ? AppColors.slate400 : AppColors.slate600,
-                  onPressed: () => Navigator.of(context).maybePop(),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 10.h),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: Row(
-              children: [
-                Expanded(child: _buildStat('MASTERED', '${_entries.length}', AppColors.indigo500, isDark)),
-                SizedBox(width: 8.w),
-                Expanded(child: _buildStat('TO REVIEW', '$dueCount', dueCount > 0 ? AppColors.rose500 : AppColors.emerald500, isDark)),
-                SizedBox(width: 8.w),
-                Expanded(child: _buildStat('RETENTION', '$avgRetention%', avgRetention >= 70 ? AppColors.emerald500 : Colors.amber, isDark)),
-              ],
-            ),
-          ),
-          SizedBox(height: 12.h),
-          if (_entries.isNotEmpty)
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                physics: const BouncingScrollPhysics(),
+              ),
+              SizedBox(height: 12.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
                 child: Row(
                   children: [
-                    _buildTab(
-                      'All (${_entries.length})',
-                      !_filterDueOnly,
-                      () => setState(() => _filterDueOnly = false),
-                      isDark,
+                    Container(
+                      padding: EdgeInsets.all(7.r),
+                      decoration: BoxDecoration(
+                        color: AppColors.indigo500.withValues(alpha: 0.15),
+                        borderRadius: BorderRadius.circular(10.r),
+                      ),
+                      child: Text('📚', style: TextStyle(fontSize: 18.sp)),
                     ),
                     SizedBox(width: 8.w),
-                    _buildTab(
-                      'Needs Review ($dueCount)',
-                      _filterDueOnly,
-                      () => setState(() => _filterDueOnly = true),
-                      isDark,
-                      highlightColor: dueCount > 0 ? AppColors.rose500 : null,
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Word Bank',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 17.sp,
+                              fontWeight: FontWeight.w800,
+                              color: isDark ? Colors.white : AppColors.slate900,
+                            ),
+                          ),
+                          Text(
+                            'Review words you\'ve learned',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              color: isDark
+                                  ? AppColors.slate400
+                                  : AppColors.slate600,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    IconButton(
+                      icon: const Icon(Icons.close_rounded),
+                      color: isDark ? AppColors.slate400 : AppColors.slate600,
+                      onPressed: () => Navigator.of(context).maybePop(),
                     ),
                   ],
                 ),
               ),
-            ),
-          SizedBox(height: 8.h),
-          Expanded(
-            child: displayed.isEmpty
-                ? _buildEmpty(isDark)
-                : ListView.separated(
-                    padding: EdgeInsets.fromLTRB(16.w, 4.h, 16.w, 12.h),
-                    itemCount: displayed.length,
-                    separatorBuilder: (context, index) =>
-                        SizedBox(height: 10.h),
-                    itemBuilder: (context, idx) => FlashcardVaultEntryTile(
-                      entry: displayed[idx],
-                      isDark: isDark,
-                      onTap: () => _startQuickReview([displayed[idx]]),
+              SizedBox(height: 10.h),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
+                child: FlashcardVaultStatsBar(
+                  totalCount: _entries.length,
+                  dueCount: dueCount,
+                  avgRetention: avgRetention,
+                  isDark: isDark,
+                  isLandscape: false,
+                ),
+              ),
+              SizedBox(height: 12.h),
+              if (_entries.isNotEmpty)
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16.w),
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    physics: const BouncingScrollPhysics(),
+                    child: Row(
+                      children: [
+                        _buildTab(
+                          'All (${_entries.length})',
+                          !_filterDueOnly,
+                          () => setState(() => _filterDueOnly = false),
+                          isDark,
+                        ),
+                        SizedBox(width: 8.w),
+                        _buildTab(
+                          'Needs Review ($dueCount)',
+                          _filterDueOnly,
+                          () => setState(() => _filterDueOnly = true),
+                          isDark,
+                          highlightColor:
+                              dueCount > 0 ? AppColors.rose500 : null,
+                        ),
+                      ],
                     ),
                   ),
-          ),
-          if (_entries.isNotEmpty)
-            Padding(
-              padding: EdgeInsets.fromLTRB(16.w, 4.h, 16.w, 14.h),
-              child: ScaleButton(
-                key: const ValueKey('btn_quick_review'),
-                onTap: () {
-                  final targets = dueCount > 0
-                      ? _entries.where((e) => e.retention < 0.60).toList()
-                      : _entries;
-                  _startQuickReview(targets);
-                },
-                child: Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(vertical: 12.h),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: dueCount > 0
-                          ? [AppColors.rose500, AppColors.indigo600]
-                          : [AppColors.indigo500, AppColors.indigo600],
-                    ),
-                    borderRadius: BorderRadius.circular(16.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color:
-                            (dueCount > 0
-                                    ? AppColors.rose500
-                                    : AppColors.indigo500)
-                                .withValues(alpha: 0.3),
-                        blurRadius: 8.r,
-                        offset: Offset(0, 3.h),
-                      ),
-                    ],
+                ),
+              SizedBox(height: 8.h),
+              if (displayed.isEmpty)
+                _buildEmpty(isDark)
+              else
+                ListView.separated(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  padding: EdgeInsets.fromLTRB(16.w, 4.h, 16.w, 12.h),
+                  itemCount: displayed.length,
+                  separatorBuilder: (context, index) =>
+                      SizedBox(height: 10.h),
+                  itemBuilder: (context, idx) => FlashcardVaultEntryTile(
+                    entry: displayed[idx],
+                    isDark: isDark,
+                    onTap: () => _startQuickReview([displayed[idx]]),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.bolt_rounded, color: Colors.white, size: 18.r),
-                      SizedBox(width: 6.w),
-                      Flexible(
-                        child: FittedBox(
-                          fit: BoxFit.scaleDown,
-                          child: Text(
-                            dueCount > 0
-                                ? 'Practice Fading Words ($dueCount)'
-                                : 'Quick Review (${_entries.length})',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 13.5.sp,
-                              fontWeight: FontWeight.w800,
-                              color: Colors.white,
+                ),
+              if (_entries.isNotEmpty)
+                Padding(
+                  padding: EdgeInsets.fromLTRB(16.w, 4.h, 16.w, 14.h),
+                  child: ScaleButton(
+                  key: const ValueKey('btn_quick_review'),
+                  onTap: () {
+                    final targets = dueCount > 0
+                        ? _entries.where((e) => e.retention < 0.60).toList()
+                        : _entries;
+                    _startQuickReview(targets);
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    padding: EdgeInsets.symmetric(
+                      vertical: isLandscape ? 8.h : 12.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: dueCount > 0
+                          ? AppColors.rose500
+                          : AppColors.indigo500,
+                      borderRadius: BorderRadius.circular(16.r),
+                      boxShadow: [
+                        BoxShadow(
+                          color:
+                              (dueCount > 0
+                                      ? AppColors.rose500
+                                      : AppColors.indigo500)
+                                  .withValues(alpha: 0.25),
+                          blurRadius: 8.r,
+                          offset: Offset(0, 3.h),
+                        ),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.bolt_rounded,
+                          color: Colors.white,
+                          size: 18.r,
+                        ),
+                        SizedBox(width: 6.w),
+                        Flexible(
+                          child: FittedBox(
+                            fit: BoxFit.scaleDown,
+                            child: Text(
+                              dueCount > 0
+                                  ? 'Practice Fading Words ($dueCount)'
+                                  : 'Quick Review (${_entries.length})',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 13.5.sp,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
-
-  Widget _buildStat(String title, String val, Color color, bool isDark) =>
-      Container(
-        padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 6.w),
-        decoration: BoxDecoration(
-          color: color.withValues(alpha: isDark ? 0.15 : 0.08),
-          borderRadius: BorderRadius.circular(12.r),
-          border: Border.all(color: color.withValues(alpha: 0.3)),
-        ),
-        child: Column(
-          children: [
-            Text(
-              val,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 17.sp,
-                fontWeight: FontWeight.w900,
-                color: color,
-              ),
-            ),
-            SizedBox(height: 2.h),
-            Text(
-              title,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 9.sp,
-                fontWeight: FontWeight.w700,
-                letterSpacing: 0.8,
-                color: isDark ? AppColors.slate400 : AppColors.slate600,
-              ),
-            ),
-          ],
-        ),
-      );
 
   Widget _buildTab(
     String label,
