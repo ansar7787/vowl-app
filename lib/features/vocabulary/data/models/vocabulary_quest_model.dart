@@ -126,7 +126,7 @@ class VocabularyQuestModel extends VocabularyQuest {
           (subtype == GameSubtype.wordFormation
               ? "Synthesis complete. The root was modified to form the correct word class."
               : (subtype == GameSubtype.topicVocab
-                    ? "Nexus synced. This term is core to the topic's data structure."
+                    ? "Cluster fused. These words share a core thematic concept."
                     : null)),
       passage: map['passage'] ?? map['contextSentence'] ?? map['text'],
       synonyms: map['synonyms'] != null

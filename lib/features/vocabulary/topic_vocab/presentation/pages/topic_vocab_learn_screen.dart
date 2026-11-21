@@ -124,7 +124,9 @@ class _TopicVocabLearnScreenState extends State<TopicVocabLearnScreen> {
       );
       if (mounted) {
         try {
-          context.pushReplacement('/vocabulary/topicVocab/practice/${widget.level}');
+          context.pushReplacement(
+            '/practice?category=vocabulary&gameType=topicVocab&level=${widget.level}',
+          );
         } catch (_) {
           Navigator.of(context).pop();
         }
