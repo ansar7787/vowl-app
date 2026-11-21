@@ -5,11 +5,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/locale_service.dart';
+import 'quest_briefing_rule_item.dart';
 
 /// Mission briefing overlay shown before a quest begins or on-demand from the header.
 ///
-/// Fully harmonized across Light, Dark, and AMOLED Midnight modes with zero text-contrast
-/// conflicts, 16.w edge margins, solid surface rendering, and zero-idle battery consumption.
+/// Designed with standard 16.w edge margins, harmonious Light/Dark/Midnight typography,
+/// sequential numbered step indicators, left-aligned structured objectives, and zero idle drain.
 class QuestBriefingOverlay extends StatefulWidget {
   final String title;
   final String objective;
@@ -39,16 +40,20 @@ class QuestBriefingOverlay extends StatefulWidget {
 }
 
 class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
-  static const Duration _exitAnimDuration = Duration(milliseconds: 300);
+  static const Duration _exitAnimDuration = Duration(milliseconds: 280);
   final ValueNotifier<bool> _isExitingNotifier = ValueNotifier(false);
   late final List<Widget> _ruleWidgets;
 
   @override
   void initState() {
     super.initState();
-    _ruleWidgets = widget.rules
-        .map((rule) => _RuleItem(rule: rule, primaryColor: widget.primaryColor))
-        .toList(growable: false);
+    _ruleWidgets = widget.rules.asMap().entries.map((entry) {
+      return QuestBriefingRuleItem(
+        index: entry.key + 1,
+        rule: entry.value,
+        primaryColor: widget.primaryColor,
+      );
+    }).toList(growable: false);
   }
 
   @override
@@ -68,13 +73,11 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
     );
   }
 
-  LinearGradient _gradient(Color color) {
-    final hsl = HSLColor.fromColor(color);
-    final darker = hsl
-        .withLightness((hsl.lightness - 0.12).clamp(0.0, 1.0))
-        .toColor();
+  LinearGradient _gradient(Color c) {
+    final hsl = HSLColor.fromColor(c);
+    final darker = hsl.withLightness((hsl.lightness - 0.12).clamp(0.0, 1.0)).toColor();
     return LinearGradient(
-      colors: [color, darker],
+      colors: [c, darker],
       begin: Alignment.topCenter,
       end: Alignment.bottomCenter,
     );
@@ -83,22 +86,17 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final isMidnight =
-        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final isMidnight = isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
     final cardBg = isMidnight
         ? AppColors.midnightSurface
         : (isDark ? AppColors.midnightNavy : Colors.white);
-
     final cardBorder = isMidnight
         ? Colors.white.withValues(alpha: 0.16)
         : (isDark ? Colors.white.withValues(alpha: 0.1) : AppColors.slate200);
-
     final backdropColor = isMidnight
         ? Colors.black.withValues(alpha: 0.92)
-        : (isDark
-              ? Colors.black.withValues(alpha: 0.85)
-              : Colors.black.withValues(alpha: 0.65));
+        : (isDark ? Colors.black.withValues(alpha: 0.85) : Colors.black.withValues(alpha: 0.65));
 
     final cardShadow = isDark
         ? BoxShadow(
@@ -128,15 +126,12 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                 ),
                 Center(
                   child: SingleChildScrollView(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 16.w,
-                      vertical: 24.h,
-                    ),
+                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
                     physics: const BouncingScrollPhysics(),
                     child: Container(
                       width: double.infinity,
                       constraints: const BoxConstraints(maxWidth: 480),
-                      padding: EdgeInsets.all(20.r),
+                      padding: EdgeInsets.fromLTRB(18.w, 18.h, 18.w, 18.h),
                       decoration: BoxDecoration(
                         color: cardBg,
                         borderRadius: BorderRadius.circular(24.r),
@@ -147,32 +142,26 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           _buildHeroIcon(),
-                          SizedBox(height: 14.h),
-                          if (widget.phaseBadge != null) ...[
-                            _buildPhaseBadge(),
-                            SizedBox(height: 6.h),
-                          ],
-                          _buildCategoryLabel(context),
-                          SizedBox(height: 4.h),
+                          SizedBox(height: 12.h),
+                          if (widget.phaseBadge != null)
+                            _buildPhaseBadge()
+                          else
+                            _buildCategoryLabel(context),
+                          SizedBox(height: 6.h),
                           _buildTitle(isDark),
-                          SizedBox(height: 14.h),
+                          SizedBox(height: 12.h),
                           _buildObjectiveBox(isDark, isMidnight),
-                          SizedBox(height: 14.h),
+                          SizedBox(height: 12.h),
                           ..._ruleWidgets,
-                          SizedBox(height: 14.h),
+                          SizedBox(height: 12.h),
                           _buildTipCard(isDark),
-                          SizedBox(height: 18.h),
+                          SizedBox(height: 16.h),
                           _buildCtaButton(),
                         ],
                       ),
                     )
                         .animate(target: isExiting ? 1 : 0)
-                        .slideY(
-                          begin: 0,
-                          end: -0.15,
-                          duration: _exitAnimDuration,
-                          curve: Curves.easeIn,
-                        )
+                        .slideY(begin: 0, end: -0.15, duration: _exitAnimDuration, curve: Curves.easeIn)
                         .fadeOut(duration: 250.ms),
                   ),
                 ),
@@ -180,28 +169,25 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
             );
           },
         ),
-      ).animate().fadeIn(duration: 300.ms),
+      ).animate().fadeIn(duration: 280.ms),
     );
   }
 
   Widget _buildHeroIcon() => Container(
-        padding: EdgeInsets.all(14.r),
+        padding: EdgeInsets.all(12.r),
         decoration: BoxDecoration(
           gradient: _gradient(widget.primaryColor),
           shape: BoxShape.circle,
-          border: Border.all(
-            color: Colors.white.withValues(alpha: 0.25),
-            width: 1.0,
-          ),
+          border: Border.all(color: Colors.white.withValues(alpha: 0.25), width: 1.0),
           boxShadow: [
             BoxShadow(
-              color: widget.primaryColor.withValues(alpha: 0.4),
+              color: widget.primaryColor.withValues(alpha: 0.35),
               blurRadius: 14.r,
-              offset: Offset(0, 6.h),
+              offset: Offset(0, 5.h),
             ),
           ],
         ),
-        child: Icon(widget.icon, color: Colors.white, size: 28.r),
+        child: Icon(widget.icon, color: Colors.white, size: 26.r),
       )
           .animate()
           .scale(
@@ -216,10 +202,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
         decoration: BoxDecoration(
           color: widget.primaryColor.withValues(alpha: 0.15),
           borderRadius: BorderRadius.circular(10.r),
-          border: Border.all(
-            color: widget.primaryColor.withValues(alpha: 0.3),
-            width: 1,
-          ),
+          border: Border.all(color: widget.primaryColor.withValues(alpha: 0.3), width: 1),
         ),
         child: Text(
           widget.phaseBadge!,
@@ -228,34 +211,33 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
             fontSize: 10.sp,
             fontWeight: FontWeight.w800,
             color: widget.primaryColor,
-            letterSpacing: 1.0,
+            letterSpacing: 0.8,
           ),
         ),
       );
 
   Widget _buildCategoryLabel(BuildContext context) => Text(
-        context
-            .tr('common.mission_briefing', fallback: 'MISSION BRIEFING')
-            .toUpperCase(),
+        context.tr('common.mission_briefing', fallback: 'MISSION BRIEFING').toUpperCase(),
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 10.5.sp,
+          fontSize: 10.sp,
           fontWeight: FontWeight.w800,
           color: widget.primaryColor,
-          letterSpacing: 3,
+          letterSpacing: 2,
         ),
       );
 
   Widget _buildTitle(bool isDark) => AutoSizeText(
-        widget.title.toUpperCase(),
+        widget.title,
         textAlign: TextAlign.center,
         maxLines: 2,
         minFontSize: 13,
         style: TextStyle(
           fontFamily: 'Outfit',
-          fontSize: 19.sp,
+          fontSize: 18.sp,
           fontWeight: FontWeight.w800,
           color: isDark ? Colors.white : AppColors.slate900,
+          letterSpacing: -0.2,
         ),
       );
 
@@ -266,27 +248,48 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
     final border = isDark
         ? Colors.white.withValues(alpha: isMidnight ? 0.12 : 0.08)
         : AppColors.slate200;
-    final textCol =
-        isDark ? Colors.white.withValues(alpha: 0.92) : AppColors.slate800;
+    final textCol = isDark ? Colors.white.withValues(alpha: 0.92) : AppColors.slate800;
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
       decoration: BoxDecoration(
         color: bg,
-        borderRadius: BorderRadius.circular(16.r),
+        borderRadius: BorderRadius.circular(14.r),
         border: Border.all(color: border, width: 1),
       ),
-      child: Text(
-        widget.objective,
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontFamily: 'Outfit',
-          fontSize: 13.sp,
-          fontWeight: FontWeight.w500,
-          color: textCol,
-          height: 1.45,
-        ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(Icons.track_changes_rounded, size: 13.r, color: widget.primaryColor),
+              SizedBox(width: 5.w),
+              Text(
+                'OBJECTIVE',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 9.5.sp,
+                  fontWeight: FontWeight.w800,
+                  letterSpacing: 1.0,
+                  color: widget.primaryColor,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 5.h),
+          Text(
+            widget.objective,
+            textAlign: TextAlign.start,
+            style: TextStyle(
+              fontFamily: 'Outfit',
+              fontSize: 12.5.sp,
+              fontWeight: FontWeight.w500,
+              color: textCol,
+              height: 1.4,
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -294,12 +297,12 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
   Widget _buildTipCard(bool isDark) {
     final bg = Colors.amber.withValues(alpha: isDark ? 0.1 : 0.12);
     final border = Colors.amber.withValues(alpha: isDark ? 0.3 : 0.35);
-    final textCol =
-        isDark ? Colors.white.withValues(alpha: 0.88) : AppColors.slate800;
+    final textCol = isDark ? Colors.white.withValues(alpha: 0.88) : AppColors.slate800;
     final iconCol = isDark ? Colors.amber : Colors.amber.shade800;
+    final tipText = widget.tip.startsWith('Tip: ') ? widget.tip.substring(5) : widget.tip;
 
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 9.h),
       decoration: BoxDecoration(
         color: bg,
         borderRadius: BorderRadius.circular(14.r),
@@ -308,18 +311,24 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(Icons.tips_and_updates_rounded, color: iconCol, size: 16.r),
+          Icon(Icons.tips_and_updates_rounded, color: iconCol, size: 15.r),
           SizedBox(width: 8.w),
           Expanded(
-            child: Text(
-              widget.tip,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 11.5.sp,
-                color: textCol,
-                fontWeight: FontWeight.w500,
-                fontStyle: FontStyle.italic,
-                height: 1.35,
+            child: RichText(
+              text: TextSpan(
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 11.5.sp,
+                  color: textCol,
+                  height: 1.35,
+                ),
+                children: [
+                  TextSpan(
+                    text: 'Tip: ',
+                    style: TextStyle(fontWeight: FontWeight.w800, color: iconCol),
+                  ),
+                  TextSpan(text: tipText, style: const TextStyle(fontWeight: FontWeight.w500)),
+                ],
               ),
             ),
           ),
@@ -336,37 +345,43 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
             onTap: _handleStart,
             child: Container(
               width: double.infinity,
-              height: 50.h,
+              height: 48.h,
               decoration: BoxDecoration(
                 gradient: _gradient(widget.primaryColor),
-                border: Border.all(
-                  color: Colors.white.withValues(alpha: 0.2),
-                  width: 1.0,
-                ),
+                border: Border.all(color: Colors.white.withValues(alpha: 0.2), width: 1.0),
                 borderRadius: BorderRadius.circular(16.r),
                 boxShadow: [
                   BoxShadow(
                     color: widget.primaryColor.withValues(alpha: 0.35),
                     blurRadius: 12.r,
-                    offset: Offset(0, 5.h),
+                    offset: Offset(0, 4.h),
                   ),
                 ],
               ),
               child: Center(
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
-                  child: AutoSizeText(
-                    widget.actionText.toUpperCase(),
-                    maxLines: 1,
-                    minFontSize: 10,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w800,
-                      color: Colors.white,
-                      letterSpacing: 1.2,
-                    ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Flexible(
+                        child: AutoSizeText(
+                          widget.actionText.toUpperCase(),
+                          maxLines: 1,
+                          minFontSize: 10,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 14.5.sp,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.white,
+                            letterSpacing: 1.0,
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 8.w),
+                      Icon(Icons.arrow_forward_rounded, color: Colors.white, size: 16.r),
+                    ],
                   ),
                 ),
               ),
@@ -374,45 +389,4 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
           ),
         ),
       );
-}
-
-// ---------------------------------------------------------------------------
-// Pre-built rule item
-// ---------------------------------------------------------------------------
-
-class _RuleItem extends StatelessWidget {
-  final String rule;
-  final Color primaryColor;
-
-  const _RuleItem({required this.rule, required this.primaryColor});
-
-  @override
-  Widget build(BuildContext context) {
-    final isDark = Theme.of(context).brightness == Brightness.dark;
-    final textCol =
-        isDark ? Colors.white.withValues(alpha: 0.88) : AppColors.slate700;
-
-    return Padding(
-      padding: EdgeInsets.only(bottom: 8.h),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Icon(Icons.check_circle_rounded, color: primaryColor, size: 15.r),
-          SizedBox(width: 8.w),
-          Expanded(
-            child: Text(
-              rule,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 12.5.sp,
-                color: textCol,
-                fontWeight: FontWeight.w500,
-                height: 1.35,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 }
