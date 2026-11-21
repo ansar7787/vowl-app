@@ -1159,15 +1159,15 @@ class GameInstructionService {
       title: "Vocabulary Flashcards",
       icon: Icons.style_rounded,
       objective:
-          "Beat the speed fuse! Slam the authentic collocation and strike the correct word to complete the real-world sentence.",
+          "Test your word recall in two quick steps: pair the word with its natural partner, then pick the missing word to complete the sentence.",
       rules: [
-        "Slam the authentic collocation before time expires",
-        "Strike the target word to complete the sentence",
-        "Guard your 3 lives and chain combos for bonus XP",
+        "Match the word with its natural pair (collocation)",
+        "Pick the correct word to finish the sentence",
+        "Answer before the 5-second timer runs out to save your lives",
       ],
       actionText: "Start Challenge",
       tip:
-          "Real fluency is instant intuition. Spot the natural word pairing and trust your instincts!",
+          "Tip: Go with what sounds natural—native speakers rely on everyday word pairings.",
     ),
     GameSubtype.synonymSearch: GameBriefing(
       title: "Synonym Match",
