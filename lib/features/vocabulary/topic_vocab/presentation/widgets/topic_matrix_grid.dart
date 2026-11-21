@@ -50,60 +50,54 @@ class TopicMatrixGrid extends StatelessWidget {
         final canFuse =
             selected.length == controller.targetClusterSize && !isAnswered;
 
-        return Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            // Topical instruction banner at top
-            _buildTopicalInstructionBanner(context, isDark),
-            SizedBox(height: 10.h),
+        return Center(
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            padding: EdgeInsets.symmetric(vertical: 8.h),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                // Topical instruction banner at top of game board
+                _buildTopicalInstructionBanner(context, isDark),
+                SizedBox(height: 12.h),
 
-            // Middle: Scrollable cluster banners and word matrix
-            Expanded(
-              child: SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                padding: EdgeInsets.only(bottom: 8.h),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    // Fused Clusters
-                    if (fused.isNotEmpty) ...[
-                      ...fused.map(
-                        (c) => TopicClusterBanner(
-                          categoryName: c.categoryName,
-                          emoji: c.emoji,
-                          words: c.words,
-                          explanation: c.explanation,
-                          collocations: c.collocations,
-                          accentColor: accentColor,
-                        ),
-                      ),
-                      SizedBox(height: 8.h),
-                    ],
+                // Fused Clusters
+                if (fused.isNotEmpty) ...[
+                  ...fused.map(
+                    (c) => TopicClusterBanner(
+                      categoryName: c.categoryName,
+                      emoji: c.emoji,
+                      words: c.words,
+                      explanation: c.explanation,
+                      collocations: c.collocations,
+                      accentColor: accentColor,
+                    ),
+                  ),
+                  SizedBox(height: 10.h),
+                ],
 
-                    // One-away hint banner
-                    if (controller.isOneAway) ...[
-                      _buildOneAwayBanner(context),
-                      SizedBox(height: 10.h),
-                    ],
+                // One-away hint banner
+                if (controller.isOneAway) ...[
+                  _buildOneAwayBanner(context),
+                  SizedBox(height: 10.h),
+                ],
 
-                    // Word Matrix Grid
-                    if (remaining.isNotEmpty) ...[
-                      ShakeableWrapper(
-                        shakeCount: controller.failedAttempts,
-                        child: _buildWordMatrix(context, remaining, selected),
-                      ),
-                    ],
-                  ],
-                ),
-              ),
+                // Word Matrix Grid
+                if (remaining.isNotEmpty) ...[
+                  ShakeableWrapper(
+                    shakeCount: controller.failedAttempts,
+                    child: _buildWordMatrix(context, remaining, selected),
+                  ),
+                  SizedBox(height: 16.h),
+                ],
+
+                // Unified action controls directly paired with the word matrix
+                if (!isAnswered && remaining.isNotEmpty)
+                  _buildControlsRow(context, isDark, selected, canFuse),
+              ],
             ),
-
-            // Bottom-anchored action controls
-            if (!isAnswered && remaining.isNotEmpty) ...[
-              SizedBox(height: 10.h),
-              _buildControlsRow(context, isDark, selected, canFuse),
-            ],
-          ],
+          ),
         );
       },
     );
