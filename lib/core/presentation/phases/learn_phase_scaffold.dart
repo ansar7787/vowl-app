@@ -33,6 +33,9 @@ class LearnPhaseScaffold extends StatelessWidget {
   /// Whether the complete action is currently enabled.
   final bool isActionEnabled;
 
+  /// Optional action buttons displayed on the trailing side of the AppBar.
+  final List<Widget>? actions;
+
   const LearnPhaseScaffold({
     super.key,
     required this.title,
@@ -43,6 +46,7 @@ class LearnPhaseScaffold extends StatelessWidget {
     this.onExit,
     this.actionLabel = 'Got It! Continue',
     this.isActionEnabled = true,
+    this.actions,
   });
 
   @override
@@ -55,6 +59,7 @@ class LearnPhaseScaffold extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+        actions: actions,
         leading: IconButton(
           icon: Icon(
             Icons.close_rounded,

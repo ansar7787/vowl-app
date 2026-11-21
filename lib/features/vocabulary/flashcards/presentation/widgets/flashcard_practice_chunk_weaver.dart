@@ -100,7 +100,9 @@ class FlashcardPracticeChunkWeaver extends StatelessWidget {
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w800,
                           letterSpacing: 1.2,
-                          color: isDark ? AppColors.indigo400 : AppColors.indigo600,
+                          color: isDark
+                              ? AppColors.indigo400
+                              : AppColors.indigo600,
                         ),
                       ),
                     ),
@@ -111,13 +113,17 @@ class FlashcardPracticeChunkWeaver extends StatelessWidget {
                         child: Container(
                           padding: EdgeInsets.all(6.r),
                           decoration: BoxDecoration(
-                            color: isDark ? AppColors.slate800 : AppColors.slate100,
+                            color: isDark
+                                ? AppColors.slate800
+                                : AppColors.slate100,
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
                             Icons.volume_up_rounded,
                             size: 16.r,
-                            color: isDark ? AppColors.indigo400 : AppColors.indigo600,
+                            color: isDark
+                                ? AppColors.indigo400
+                                : AppColors.indigo600,
                           ),
                         ),
                       ),

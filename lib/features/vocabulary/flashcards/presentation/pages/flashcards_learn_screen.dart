@@ -14,6 +14,7 @@ import 'package:vowl/core/utils/tts_service.dart';
 import '../../data/services/flashcard_curriculum_service.dart';
 import '../widgets/flashcard_cluster_contrast_card.dart';
 import '../widgets/flashcard_learn_view.dart';
+import '../widgets/flashcard_vault_sheet.dart';
 
 /// 2026 Interactive Learn Phase screen for Vocabulary Flashcards.
 ///
@@ -195,6 +196,15 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
       gameType: 'flashcards',
       level: widget.level,
       actionLabel: actionLabel,
+      actions: [
+        IconButton(
+          key: const ValueKey('btn_memory_vault'),
+          icon: const Icon(Icons.bookmark_added_rounded),
+          color: isDark ? AppColors.indigo400 : AppColors.indigo600,
+          tooltip: 'Memory Vault',
+          onPressed: () => FlashcardVaultSheet.show(context),
+        ),
+      ],
       onComplete: _nextWord,
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
