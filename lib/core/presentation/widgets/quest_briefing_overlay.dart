@@ -380,7 +380,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                         ),
                       ),
                       SizedBox(width: 8.w),
-                      Icon(Icons.arrow_forward_rounded, color: Colors.white, size: 16.r),
+                      Icon(Icons.arrow_forward_ios_rounded, color: Colors.white, size: 13.r),
                     ],
                   ),
                 ),
