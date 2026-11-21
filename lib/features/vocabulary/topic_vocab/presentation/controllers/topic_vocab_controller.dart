@@ -32,6 +32,7 @@ class TopicVocabController extends ChangeNotifier {
   int _consecutiveSuccesses = 0;
   int _failedAttempts = 0;
   bool _isShaking = false;
+  bool _isDisposed = false;
 
   TopicVocabController({
     required List<TopicClusterGroup> targetClusters,
@@ -158,11 +159,19 @@ class TopicVocabController extends ChangeNotifier {
 
     // Reset shake after brief frame
     Future.delayed(const Duration(milliseconds: 600), () {
-      _isShaking = false;
-      notifyListeners();
+      if (!_isDisposed) {
+        _isShaking = false;
+        notifyListeners();
+      }
     });
 
     return null;
+  }
+
+  @override
+  void dispose() {
+    _isDisposed = true;
+    super.dispose();
   }
 
   /// Solves the puzzle automatically (e.g. for accessibility or skip hints).

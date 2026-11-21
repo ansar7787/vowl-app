@@ -235,5 +235,36 @@ void main() {
       expect(controller.remainingTiles, isEmpty);
       expect(controller.fusedClusters.length, 2);
     });
+
+    test('dispose guards delayed callbacks and avoids post-dispose notifications', () async {
+      final controller = TopicVocabController(
+        targetClusters: testClusters,
+        targetClusterSize: 3,
+        initialTiles: [
+          'Boiling',
+          'Scorching',
+          'Steaming',
+          'Freezing',
+          'Icy',
+          'Chilly',
+        ],
+        hapticService: mockHaptics,
+      );
+
+      // Trigger failed attempt to start the 600ms delayed timer
+      controller.toggleTile('Boiling');
+      controller.toggleTile('Scorching');
+      controller.toggleTile('Freezing');
+      controller.submitFusion();
+
+      // Dispose controller immediately while timer is pending
+      controller.dispose();
+
+      // Wait 700ms to allow delayed callback to execute
+      await Future<void>.delayed(const Duration(milliseconds: 700));
+
+      // Should complete cleanly without throwing FlutterError or late notification
+      expect(controller.failedAttempts, 1);
+    });
   });
 }
