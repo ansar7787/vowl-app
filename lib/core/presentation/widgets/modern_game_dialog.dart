@@ -61,9 +61,10 @@ class ModernGameDialog extends StatelessWidget {
         glassOpacity: isDark ? 0.1 : 0.6,
         child: Padding(
           padding: EdgeInsets.all(AppSpacing.cardSpacious),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
               // ── Icon / mascot ─────────────────────────────────────────
               RepaintBoundary(
                 child:
@@ -355,7 +356,8 @@ class ModernGameDialog extends StatelessWidget {
             ],
           ),
         ),
-      ).animateIf(
+      ),
+    ).animateIf(
         context,
         (w) => w.animate().scale(duration: 400.ms, curve: Curves.easeOutCubic),
       ),

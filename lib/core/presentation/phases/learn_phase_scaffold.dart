@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/tts_service.dart';
 
 /// Standard, zero-stress UI scaffold for all Learn phase screens.
 ///
@@ -54,19 +57,44 @@ class LearnPhaseScaffold extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final bgColor = isDark ? AppColors.slate950 : AppColors.slate50;
 
-    return Scaffold(
-      backgroundColor: bgColor,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        actions: actions,
-        leading: IconButton(
-          icon: Icon(
-            Icons.close_rounded,
-            color: isDark ? AppColors.slate300 : AppColors.slate700,
+    void handleExit() {
+      if (di.sl.isRegistered<TtsService>()) {
+        try {
+          di.sl<TtsService>().stop();
+        } catch (_) {}
+      }
+      if (onExit != null) {
+        onExit!();
+      } else {
+        GameDialogHelper.showExitConfirmation(
+          context,
+          onQuit: () {
+            if (Navigator.of(context).canPop()) {
+              Navigator.of(context).pop();
+            }
+          },
+        );
+      }
+    }
+
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) {
+        if (!didPop) handleExit();
+      },
+      child: Scaffold(
+        backgroundColor: bgColor,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          actions: actions,
+          leading: IconButton(
+            icon: Icon(
+              Icons.close_rounded,
+              color: isDark ? AppColors.slate300 : AppColors.slate700,
+            ),
+            onPressed: handleExit,
           ),
-          onPressed: onExit ?? () => Navigator.of(context).maybePop(),
-        ),
         title: Column(
           children: [
             Container(
@@ -163,6 +191,7 @@ class LearnPhaseScaffold extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
+    ),
+  );
+}
 }

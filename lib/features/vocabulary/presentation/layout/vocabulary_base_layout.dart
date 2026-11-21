@@ -7,6 +7,7 @@ import 'package:vowl/core/presentation/widgets/games/headers/vowl_universal_game
 import 'package:vowl/core/presentation/widgets/games/dialogs/vowl_pause_bottom_sheet.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/widgets/vocabulary_peeking_mascot.dart';
+import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_feedback_card.dart';
 import 'package:vowl/features/vocabulary/presentation/themes/vocab_level_theme.dart';
 import 'package:vowl/core/presentation/layout/game_base_layout.dart';
@@ -128,6 +129,12 @@ class VocabularyBaseLayout extends StatelessWidget {
               onRestart: () {
                 context.read<VocabularyBloc>().add(
                   FetchVocabularyQuests(gameType: gameType, level: level),
+                );
+              },
+              onQuit: () {
+                GameDialogHelper.showExitConfirmation(
+                  context,
+                  onQuit: () => Navigator.of(context).pop(),
                 );
               },
             );
