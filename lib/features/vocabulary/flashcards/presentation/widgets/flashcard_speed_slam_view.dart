@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
@@ -58,9 +59,11 @@ class FlashcardSpeedSlamView extends StatelessWidget {
             'automatic',
           ];
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
+    return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
         // ── Mastery Phase Header Pill Tag ────────────────────────────────────
         Center(
           child: Container(
@@ -181,8 +184,9 @@ class FlashcardSpeedSlamView extends StatelessWidget {
           },
         ),
       ],
-    );
-  }
+    ),
+  );
+}
 
   Widget _buildStage1CollocationSlam(
     BuildContext context, {
@@ -213,115 +217,162 @@ class FlashcardSpeedSlamView extends StatelessWidget {
         ValueListenableBuilder<int?>(
           valueListenable: controller.selectedCollocationIndex,
           builder: (context, selectedIdx, _) {
+            final correctOption = slamOptions.firstWhere(
+              (o) => o['isCorrect'] as bool,
+              orElse: () => slamOptions.first,
+            );
             return Column(
-              children: List.generate(slamOptions.length, (idx) {
-                final option = slamOptions[idx];
-                final text = option['text'] as String;
-                final isMatchCorrect = option['isCorrect'] as bool;
-                final isSelected = selectedIdx == idx;
+              children: [
+                ...List.generate(slamOptions.length, (idx) {
+                  final option = slamOptions[idx];
+                  final text = option['text'] as String;
+                  final isMatchCorrect = option['isCorrect'] as bool;
+                  final isSelected = selectedIdx == idx;
 
-                Color borderColor = isDark
-                    ? AppColors.slate800
-                    : AppColors.slate200;
-                Color bgColor = isDark ? AppColors.slate900 : Colors.white;
+                  Color borderColor = isDark
+                      ? AppColors.slate800
+                      : AppColors.slate200;
+                  Color bgColor = isDark ? AppColors.slate900 : Colors.white;
 
-                if (isSelected) {
-                  if (isMatchCorrect) {
-                    borderColor = Colors.green;
-                    bgColor = Colors.green.withValues(alpha: 0.15);
-                  } else {
-                    borderColor = Colors.red;
-                    bgColor = Colors.red.withValues(alpha: 0.15);
+                  if (isSelected) {
+                    if (isMatchCorrect) {
+                      borderColor = Colors.green;
+                      bgColor = Colors.green.withValues(alpha: 0.15);
+                    } else {
+                      borderColor = Colors.red;
+                      bgColor = Colors.red.withValues(alpha: 0.15);
+                    }
                   }
-                }
 
-                return Padding(
-                  padding: EdgeInsets.only(bottom: 10.h),
-                  child: ScaleButton(
-                    key: ValueKey('slam_$idx'),
-                    onTap: () => controller.slamCollocation(
-                      index: idx,
-                      isMatchCorrect: isMatchCorrect,
-                      onAdvanceToStage2: onAdvanceToStage2,
-                    ),
-                    child: Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 18.w,
-                        vertical: 16.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: bgColor,
-                        borderRadius: BorderRadius.circular(16.r),
-                        border: Border.all(
-                          color: borderColor,
-                          width: isSelected ? 2.5 : 1.5,
+                  return Padding(
+                    padding: EdgeInsets.only(bottom: 10.h),
+                    child: ScaleButton(
+                      key: ValueKey('slam_$idx'),
+                      onTap: () {
+                        HapticFeedback.selectionClick();
+                        controller.slamCollocation(
+                          index: idx,
+                          isMatchCorrect: isMatchCorrect,
+                          onAdvanceToStage2: onAdvanceToStage2,
+                        );
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 18.w,
+                          vertical: 16.h,
                         ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withValues(
-                              alpha: isDark ? 0.3 : 0.04,
-                            ),
-                            blurRadius: 8.r,
-                            offset: Offset(0, 3.h),
+                        decoration: BoxDecoration(
+                          color: bgColor,
+                          borderRadius: BorderRadius.circular(16.r),
+                          border: Border.all(
+                            color: borderColor,
+                            width: isSelected ? 2.5 : 1.5,
                           ),
-                        ],
-                      ),
-                      child: Row(
-                        children: [
-                          Container(
-                            width: 32.r,
-                            height: 32.r,
-                            decoration: BoxDecoration(
-                              color: isDark
-                                  ? AppColors.slate800
-                                  : AppColors.slate100,
-                              shape: BoxShape.circle,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withValues(
+                                alpha: isDark ? 0.3 : 0.04,
+                              ),
+                              blurRadius: 8.r,
+                              offset: Offset(0, 3.h),
                             ),
-                            child: Center(
+                          ],
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 32.r,
+                              height: 32.r,
+                              decoration: BoxDecoration(
+                                color: isDark
+                                    ? AppColors.slate800
+                                    : AppColors.slate100,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  String.fromCharCode(65 + idx),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w900,
+                                    color: isDark
+                                        ? Colors.white
+                                        : AppColors.slate900,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 14.w),
+                            Expanded(
                               child: Text(
-                                String.fromCharCode(65 + idx),
+                                text,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 14.sp,
-                                  fontWeight: FontWeight.w900,
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w700,
                                   color: isDark
                                       ? Colors.white
                                       : AppColors.slate900,
                                 ),
                               ),
                             ),
-                          ),
-                          SizedBox(width: 14.w),
-                          Expanded(
-                            child: Text(
-                              text,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.w700,
-                                color: isDark
-                                    ? Colors.white
-                                    : AppColors.slate900,
+                            if (isSelected) ...[
+                              SizedBox(width: 8.w),
+                              Icon(
+                                isMatchCorrect
+                                    ? Icons.check_circle_rounded
+                                    : Icons.cancel_rounded,
+                                size: 20.r,
+                                color: isMatchCorrect
+                                    ? Colors.green
+                                    : Colors.red,
                               ),
-                            ),
-                          ),
-                          if (isSelected) ...[
-                            SizedBox(width: 8.w),
-                            Icon(
-                              isMatchCorrect
-                                  ? Icons.check_circle_rounded
-                                  : Icons.cancel_rounded,
-                              size: 20.r,
-                              color: isMatchCorrect ? Colors.green : Colors.red,
-                            ),
+                            ],
                           ],
-                        ],
+                        ),
                       ),
                     ),
+                  );
+                }),
+                if (selectedIdx != null &&
+                    !(slamOptions[selectedIdx]['isCorrect'] as bool)) ...[
+                  SizedBox(height: 6.h),
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 14.w,
+                      vertical: 10.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.amber.withValues(alpha: isDark ? 0.2 : 0.1),
+                      borderRadius: BorderRadius.circular(12.r),
+                      border: Border.all(
+                        color: Colors.amber.withValues(alpha: 0.35),
+                      ),
+                    ),
+                    child: Row(
+                      children: [
+                        Text('💡', style: TextStyle(fontSize: 15.sp)),
+                        SizedBox(width: 8.w),
+                        Expanded(
+                          child: Text(
+                            'Natural pairing: "${correctOption['text']}" is how native speakers say it.',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w600,
+                              color: isDark
+                                  ? Colors.amberAccent
+                                  : Colors.amber.shade900,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                );
-              }),
+                ],
+              ],
             );
           },
         ),

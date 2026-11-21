@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
@@ -119,6 +120,7 @@ class _FlashcardEchoPronunciationState
       return;
     }
 
+    HapticFeedback.selectionClick();
     _hapticService?.selection();
     setState(() {
       _isListening = true;
@@ -168,6 +170,7 @@ class _FlashcardEchoPronunciationState
                 _isListening = false;
                 _isVerified = true;
               });
+              HapticFeedback.heavyImpact();
               _hapticService?.success();
               widget.onVerified?.call();
             } else if (isFinal) {
@@ -178,6 +181,7 @@ class _FlashcardEchoPronunciationState
                 _isListening = false;
                 _isVerified = false;
               });
+              HapticFeedback.mediumImpact();
               _hapticService?.error();
             } else {
               // Intermediate partial recognition: update feedback without cutting off speaker

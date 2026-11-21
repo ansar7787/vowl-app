@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/data/models/phased_quest_model.dart';
@@ -106,6 +107,7 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
       _availableChunksNotifier.value = nextAvail;
       _placedChunksNotifier.value = nextPlaced;
     }
+    HapticFeedback.selectionClick();
     if (di.sl.isRegistered<HapticService>()) {
       di.sl<HapticService>().selection();
     }
@@ -121,6 +123,7 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
     nextAvail.add(chunk);
     _placedChunksNotifier.value = nextPlaced;
     _availableChunksNotifier.value = nextAvail;
+    HapticFeedback.selectionClick();
     if (di.sl.isRegistered<HapticService>()) {
       di.sl<HapticService>().selection();
     }
@@ -133,6 +136,7 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
         message: 'Please tap the chunks below to assemble the word first.',
         type: CustomSnackBarType.warning,
       );
+      HapticFeedback.lightImpact();
       if (di.sl.isRegistered<HapticService>()) {
         di.sl<HapticService>().light();
       }
@@ -164,9 +168,20 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
       } else {
         _consecutiveFailures = 0;
         _showCollocationStage = true;
+        // Auto-Pronunciation Climax: Speak assembled target word immediately
+        if (di.sl.isRegistered<TtsService>()) {
+          try {
+            di.sl<TtsService>().speak(_quests[_currentIndex].word ?? '');
+          } catch (_) {}
+        }
       }
     });
 
+    if (isCorrect) {
+      HapticFeedback.heavyImpact();
+    } else {
+      HapticFeedback.mediumImpact();
+    }
     if (di.sl.isRegistered<HapticService>()) {
       if (isCorrect) {
         di.sl<HapticService>().success();
@@ -188,6 +203,11 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
       if (!isCorrect) _shakeTrigger++;
     });
 
+    if (isCorrect) {
+      HapticFeedback.heavyImpact();
+    } else {
+      HapticFeedback.mediumImpact();
+    }
     if (di.sl.isRegistered<HapticService>()) {
       if (isCorrect) {
         di.sl<HapticService>().success();

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
@@ -101,7 +102,10 @@ class FlashcardCollocationSnapCard extends StatelessWidget {
               padding: EdgeInsets.only(bottom: 10.h),
               child: ScaleButton(
                 key: ValueKey('collocation_$idx'),
-                onTap: () => onSelectCollocation(idx),
+                onTap: () {
+                  HapticFeedback.selectionClick();
+                  onSelectCollocation(idx);
+                },
                 child: Container(
                   padding: EdgeInsets.symmetric(
                     horizontal: 16.w,
@@ -166,6 +170,38 @@ class FlashcardCollocationSnapCard extends StatelessWidget {
               ),
             );
           }),
+          if (hasCheckedCollocation &&
+              selectedCollocationIndex != null &&
+              selectedCollocationIndex != correctCollocationIndex) ...[
+            SizedBox(height: 6.h),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 10.h),
+              decoration: BoxDecoration(
+                color: Colors.amber.withValues(alpha: isDark ? 0.2 : 0.1),
+                borderRadius: BorderRadius.circular(12.r),
+                border: Border.all(color: Colors.amber.withValues(alpha: 0.35)),
+              ),
+              child: Row(
+                children: [
+                  Text('💡', style: TextStyle(fontSize: 15.sp)),
+                  SizedBox(width: 8.w),
+                  Expanded(
+                    child: Text(
+                      'Natural phrasing: "${collocationOptions[correctCollocationIndex]}" is the common native pairing.',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w600,
+                        color: isDark
+                            ? Colors.amberAccent
+                            : Colors.amber.shade900,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ],
       ),
     );

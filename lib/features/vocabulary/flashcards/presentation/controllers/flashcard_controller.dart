@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 
 /// Objective arcade controller for Flashcard Speed Collocation Slam & Precision Strike.
@@ -95,6 +96,7 @@ class FlashcardMasteryController extends ChangeNotifier {
     selectedCollocationIndex.value = index;
 
     if (isMatchCorrect) {
+      HapticFeedback.mediumImpact();
       _hapticService.selection();
       // Advance to Stage 2 with remaining timer
       Future.delayed(const Duration(milliseconds: 250), () {
@@ -108,6 +110,7 @@ class FlashcardMasteryController extends ChangeNotifier {
       isAnswered = true;
       isCorrect = false;
       comboStreak.value = 0;
+      HapticFeedback.heavyImpact();
       _hapticService.error();
       notifyListeners();
       onSubmitResult(isCorrect: false, speedBonus: false);
@@ -132,11 +135,13 @@ class FlashcardMasteryController extends ChangeNotifier {
     if (isMatch) {
       final isSpeedBonus = timerProgress.value >= 0.5; // Answered in <2.5s
       comboStreak.value++;
+      HapticFeedback.heavyImpact();
       _hapticService.success();
       notifyListeners();
       onSubmitResult(isCorrect: true, speedBonus: isSpeedBonus);
     } else {
       comboStreak.value = 0;
+      HapticFeedback.heavyImpact();
       _hapticService.error();
       notifyListeners();
       onSubmitResult(isCorrect: false, speedBonus: false);
@@ -164,6 +169,7 @@ class FlashcardMasteryController extends ChangeNotifier {
   void triggerVictoryCelebration() {
     _countdownTimer?.cancel();
     if (showConfetti || _isDisposed) return;
+    HapticFeedback.heavyImpact();
     showConfetti = true;
     notifyListeners();
   }

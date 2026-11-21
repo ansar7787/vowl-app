@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import '../../data/services/flashcard_vault_service.dart';
 import 'flashcard_vault_entry_tile.dart';
+import 'flashcard_vault_quick_review_dialog.dart';
 
 /// Modal sheet displaying the learner's Lexicon Memory Vault with Ebbinghaus retention scores.
 class FlashcardVaultSheet extends StatefulWidget {
@@ -33,6 +35,23 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
   void initState() {
     super.initState();
     _entries = List.from(widget.initialEntries);
+  }
+
+  Future<void> _startQuickReview(List<FlashcardVaultEntry> targets) async {
+    HapticFeedback.mediumImpact();
+    await FlashcardVaultQuickReviewDialog.show(
+      context,
+      entriesToReview: targets,
+      onWordMastered: (word, level) async {
+        await FlashcardVaultService().recordMastery(word, level, perfect: true);
+      },
+    );
+    final updated = await FlashcardVaultService().getVaultEntries();
+    if (mounted) {
+      setState(() {
+        _entries = updated;
+      });
+    }
   }
 
   @override
@@ -187,7 +206,7 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
             child: displayed.isEmpty
                 ? _buildEmpty(isDark)
                 : ListView.separated(
-                    padding: EdgeInsets.fromLTRB(16.w, 4.h, 16.w, 20.h),
+                    padding: EdgeInsets.fromLTRB(16.w, 4.h, 16.w, 12.h),
                     itemCount: displayed.length,
                     separatorBuilder: (context, index) =>
                         SizedBox(height: 10.h),
@@ -197,6 +216,65 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
                     ),
                   ),
           ),
+          if (_entries.isNotEmpty)
+            Padding(
+              padding: EdgeInsets.fromLTRB(16.w, 4.h, 16.w, 14.h),
+              child: ScaleButton(
+                key: const ValueKey('btn_quick_review'),
+                onTap: () {
+                  final targets = dueCount > 0
+                      ? _entries.where((e) => e.retention < 0.60).toList()
+                      : _entries;
+                  _startQuickReview(targets);
+                },
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(vertical: 12.h),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: dueCount > 0
+                          ? [AppColors.rose500, AppColors.indigo600]
+                          : [AppColors.indigo500, AppColors.indigo600],
+                    ),
+                    borderRadius: BorderRadius.circular(16.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color:
+                            (dueCount > 0
+                                    ? AppColors.rose500
+                                    : AppColors.indigo500)
+                                .withValues(alpha: 0.3),
+                        blurRadius: 8.r,
+                        offset: Offset(0, 3.h),
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.bolt_rounded, color: Colors.white, size: 18.r),
+                      SizedBox(width: 6.w),
+                      Flexible(
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: Text(
+                            dueCount > 0
+                                ? 'Practice Fading Words ($dueCount)'
+                                : 'Quick Review (${_entries.length})',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 13.5.sp,
+                              fontWeight: FontWeight.w800,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
         ],
       ),
     );

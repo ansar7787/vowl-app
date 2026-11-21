@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
@@ -41,7 +42,10 @@ class FlashcardSyllableChips extends StatelessWidget {
             final syllable = syllables[idx];
 
             return ScaleButton(
-              onTap: () => onSpeakSyllable(syllable),
+              onTap: () {
+                HapticFeedback.selectionClick();
+                onSpeakSyllable(syllable);
+              },
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
                 decoration: BoxDecoration(
@@ -108,7 +112,10 @@ class FlashcardSyllableChips extends StatelessWidget {
 
         // Full word audio trigger & animated sound wave indicator
         ScaleButton(
-          onTap: onSpeakFullWord,
+          onTap: () {
+            HapticFeedback.lightImpact();
+            onSpeakFullWord();
+          },
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
             decoration: BoxDecoration(

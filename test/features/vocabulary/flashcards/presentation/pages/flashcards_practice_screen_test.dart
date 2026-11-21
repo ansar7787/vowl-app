@@ -4,31 +4,45 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/pages/flashcards_practice_screen.dart';
 
 class MockHapticService extends Mock implements HapticService {}
+
+class MockTtsService extends Mock implements TtsService {}
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   late MockHapticService mockHaptic;
+  late MockTtsService mockTts;
 
   setUp(() {
     mockHaptic = MockHapticService();
+    mockTts = MockTtsService();
     when(() => mockHaptic.selection()).thenAnswer((_) async {});
     when(() => mockHaptic.success()).thenAnswer((_) async {});
     when(() => mockHaptic.error()).thenAnswer((_) async {});
     when(() => mockHaptic.light()).thenAnswer((_) async {});
+    when(() => mockTts.speak(any())).thenAnswer((_) async {});
 
     if (di.sl.isRegistered<HapticService>()) {
       di.sl.unregister<HapticService>();
     }
     di.sl.registerLazySingleton<HapticService>(() => mockHaptic);
+
+    if (di.sl.isRegistered<TtsService>()) {
+      di.sl.unregister<TtsService>();
+    }
+    di.sl.registerLazySingleton<TtsService>(() => mockTts);
   });
 
   tearDown(() {
     if (di.sl.isRegistered<HapticService>()) {
       di.sl.unregister<HapticService>();
+    }
+    if (di.sl.isRegistered<TtsService>()) {
+      di.sl.unregister<TtsService>();
     }
   });
 
@@ -86,6 +100,9 @@ void main() {
         // Tap Check Word with assembled word
         await tester.tap(find.text('Check Word'));
         await tester.pumpAndSettle();
+
+        // Verify Auto-Pronunciation Climax: Target word is spoken immediately upon assembly
+        verify(() => mockTts.speak('AUTHENTIC')).called(1);
 
         // Collocation Challenge should now be visible
         expect(find.textContaining('partner'), findsOneWidget);

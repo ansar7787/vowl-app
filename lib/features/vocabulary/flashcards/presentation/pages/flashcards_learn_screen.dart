@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/data/models/phased_quest_model.dart';
@@ -92,6 +93,7 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
   }
 
   void _flipCard() {
+    HapticFeedback.lightImpact();
     _isFlippedNotifier.value = !_isFlippedNotifier.value;
     if (di.sl.isRegistered<HapticService>()) {
       di.sl<HapticService>().selection();
