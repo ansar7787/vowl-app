@@ -14,6 +14,7 @@ import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_scr
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/controllers/topic_vocab_controller.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_fusion_timer.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_matrix_grid.dart';
+import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_word_peek_sheet.dart';
 
 /// High-stakes Mastery Phase evaluation screen for Topic Vocab ("Cluster Fusion").
 /// Learners must identify and fuse all topical clusters before the timer runs out.
@@ -192,6 +193,43 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
     }
   }
 
+  void _handleTileLongPress(String word) {
+    if (_currentQuest == null) return;
+    String? matchedDefinition;
+    String? matchedCategory;
+
+    final related = _currentQuest!.relatedWords ?? [];
+    for (final rw in related) {
+      if (rw.toLowerCase().startsWith('${word.toLowerCase()}:') ||
+          rw.toLowerCase().startsWith('${word.toLowerCase()} -')) {
+        final parts = rw.split(RegExp(r'[:\-]'));
+        if (parts.length > 1) {
+          matchedDefinition = parts.sublist(1).join(':').trim();
+        }
+        break;
+      }
+    }
+
+    if (_controller != null) {
+      for (final c in _controller!.targetClusters) {
+        if (c.words.contains(word)) {
+          matchedCategory = c.categoryName;
+          matchedDefinition ??= c.explanation;
+          break;
+        }
+      }
+    }
+
+    final theme = LevelThemeHelper.getTheme('topicVocab', level: widget.level);
+    TopicWordPeekSheet.show(
+      context,
+      word: word,
+      definition: matchedDefinition ?? _currentQuest!.explanation,
+      categoryHint: matchedCategory,
+      accentColor: theme.primaryColor,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('topicVocab', level: widget.level);
@@ -277,6 +315,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
                                       accentColor: accentColor,
                                       onFuse: _handleFuse,
                                       isAnswered: isAnswered,
+                                      onTileLongPress: _handleTileLongPress,
                                     )
                                   : const SizedBox.shrink(),
                             ),

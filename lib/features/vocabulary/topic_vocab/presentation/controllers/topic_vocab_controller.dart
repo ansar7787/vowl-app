@@ -54,6 +54,7 @@ class TopicVocabController extends ChangeNotifier {
 
   List<String> get remainingTiles => List.unmodifiable(_remainingTiles);
   Set<String> get selectedTiles => Set.unmodifiable(_selectedTiles);
+  List<TopicClusterGroup> get targetClusters => List.unmodifiable(_targetClusters);
   List<TopicClusterGroup> get fusedClusters =>
       List.unmodifiable(_fusedClusters);
   bool get isOneAway => _isOneAway;

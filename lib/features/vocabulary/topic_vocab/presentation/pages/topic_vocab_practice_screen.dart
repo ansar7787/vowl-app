@@ -11,9 +11,11 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/controllers/topic_vocab_controller.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_matrix_grid.dart';
+import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_word_peek_sheet.dart';
 
 /// Guided active recall screen for Topic Vocab ("Cluster Fusion Gym").
-/// Learners practice fusing tiles into 3-word semantic clusters with hints and one-away feedback.
+/// Learners practice fusing tiles into 3-word semantic clusters with hints,
+/// one-away feedback, audio tap feedback, and long-press definition peeking.
 class TopicVocabPracticeScreen extends StatefulWidget {
   final int level;
 
@@ -182,6 +184,40 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
     );
   }
 
+  void _handleTileLongPress(String word) {
+    if (_quests.isEmpty) return;
+    final quest = _quests[_currentIndex];
+    final boards = (quest['boards'] as List<dynamic>?) ?? [];
+    if (boards.isEmpty) return;
+    final board = boards.first as Map<String, dynamic>;
+    final clusters = (board['clusters'] as List<dynamic>?) ?? [];
+
+    String? matchedCategory;
+    String? matchedExplanation;
+
+    for (final c in clusters) {
+      final cmap = c as Map<String, dynamic>;
+      final words = (cmap['words'] as List<dynamic>?)
+              ?.map((e) => e.toString())
+              .toList() ??
+          [];
+      if (words.contains(word)) {
+        matchedCategory = cmap['categoryName'] as String?;
+        matchedExplanation = cmap['explanation'] as String?;
+        break;
+      }
+    }
+
+    final theme = LevelThemeHelper.getTheme('topicVocab', level: widget.level);
+    TopicWordPeekSheet.show(
+      context,
+      word: word,
+      definition: matchedExplanation ?? 'Thematic vocabulary item in this lesson.',
+      categoryHint: matchedCategory,
+      accentColor: theme.primaryColor,
+    );
+  }
+
   void _handleNext() {
     _hapticService.light();
     if (_currentIndex < _quests.length - 1) {
@@ -263,6 +299,7 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
           controller: _controller!,
           accentColor: accentColor,
           onFuse: _handleFuse,
+          onTileLongPress: _handleTileLongPress,
         ),
       ),
     );

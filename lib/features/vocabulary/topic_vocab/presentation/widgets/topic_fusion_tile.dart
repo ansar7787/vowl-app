@@ -5,12 +5,13 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
 /// Tactile, responsive word tile for the Cluster Fusion matrix with
-/// selection indicators, elevation lift, and error feedback.
+/// selection indicators, elevation lift, error feedback, and long-press peek.
 class TopicFusionTile extends StatelessWidget {
   final String word;
   final bool isSelected;
   final bool isError;
   final VoidCallback onTap;
+  final VoidCallback? onLongPress;
   final Color accentColor;
 
   const TopicFusionTile({
@@ -19,6 +20,7 @@ class TopicFusionTile extends StatelessWidget {
     required this.isSelected,
     this.isError = false,
     required this.onTap,
+    this.onLongPress,
     required this.accentColor,
   });
 
@@ -53,6 +55,7 @@ class TopicFusionTile extends StatelessWidget {
       label: '$word, ${isSelected ? "selected" : "not selected"}',
       child: ScaleButton(
         onTap: onTap,
+        onLongPress: onLongPress,
         scaleDown: 0.94,
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 220),

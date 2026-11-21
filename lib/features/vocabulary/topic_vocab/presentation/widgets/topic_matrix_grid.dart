@@ -5,18 +5,22 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
+import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/controllers/topic_vocab_controller.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_cluster_banner.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_fusion_tile.dart';
 
 /// Interactive matrix grid displaying fused banners, remaining word tiles,
-/// one-away hints, combo streaks, and action buttons.
+/// one-away hints, combo streaks, auditory tap feedback, and action buttons.
 class TopicMatrixGrid extends StatelessWidget {
   final TopicVocabController controller;
   final Color accentColor;
   final VoidCallback onFuse;
   final bool isAnswered;
+  final bool enableTtsOnTap;
+  final void Function(String word)? onTileLongPress;
 
   const TopicMatrixGrid({
     super.key,
@@ -24,6 +28,8 @@ class TopicMatrixGrid extends StatelessWidget {
     required this.accentColor,
     required this.onFuse,
     this.isAnswered = false,
+    this.enableTtsOnTap = true,
+    this.onTileLongPress,
   });
 
   @override
@@ -175,7 +181,18 @@ class TopicMatrixGrid extends StatelessWidget {
                         accentColor: accentColor,
                         onTap: isAnswered
                             ? () {}
-                            : () => controller.toggleTile(word),
+                            : () {
+                                if (enableTtsOnTap &&
+                                    di.sl.isRegistered<TtsService>()) {
+                                  try {
+                                    di.sl<TtsService>().speak(word);
+                                  } catch (_) {}
+                                }
+                                controller.toggleTile(word);
+                              },
+                        onLongPress: onTileLongPress != null
+                            ? () => onTileLongPress!(word)
+                            : null,
                       );
                     },
                   ),
