@@ -60,10 +60,25 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
   @override
   void initState() {
     super.initState();
+    final initialBlocState = context.read<VocabularyBloc>().state;
+    if (initialBlocState is VocabularyLoaded) {
+      lastProcessedIndex = initialBlocState.currentIndex;
+      _currentQuest = initialBlocState.currentQuestOrNull;
+      if (_currentQuest != null) {
+        _initQuestState(_currentQuest!);
+      }
+    }
     if (di.sl.isRegistered<TtsService>()) {
       unawaited(di.sl<TtsService>().preWarm());
     }
     initVocabularyGame();
+  }
+
+  @override
+  void onQuestionReset() {
+    if (_currentQuest != null) {
+      _initQuestState(_currentQuest!, forceReset: true);
+    }
   }
 
   @override
@@ -119,7 +134,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
     _bonusTimer?.cancel();
     _bonusSeconds = 0;
 
-    final clusters = _parseClusters(quest);
+    final clusters = TopicClusterGroup.parseClusters(quest);
     final initialTiles = quest.options != null && quest.options!.isNotEmpty
         ? List<String>.from(quest.options!)
         : null;
@@ -135,72 +150,6 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
         });
 
     _startTimer();
-  }
-
-  List<String> _extractCollocations(List<String> words, VocabularyQuest quest) {
-    final result = <String>[];
-    for (final coll in quest.collocations ?? <String>[]) {
-      if (words.any((w) => coll.toLowerCase().contains(w.toLowerCase()))) {
-        result.add(coll);
-      }
-    }
-    if (result.isEmpty && quest.relatedWords != null) {
-      for (final rw in quest.relatedWords!) {
-        if (words.any((w) => rw.toLowerCase().contains(w.toLowerCase()))) {
-          final clean = rw.contains(':') ? rw.split(':')[0].trim() : rw.trim();
-          if (clean.contains(' ')) result.add(clean);
-        }
-      }
-    }
-    return result;
-  }
-
-  List<TopicClusterGroup> _parseClusters(VocabularyQuest quest) {
-    final Map<String, List<String>> bucketMap = {};
-    if (quest.correctAnswer != null && quest.correctAnswer!.contains(':')) {
-      for (final p in quest.correctAnswer!.split(',').map((s) => s.trim())) {
-        final parts = p.split(':');
-        if (parts.length == 2) {
-          bucketMap.putIfAbsent(parts[0].trim(), () => []).add(parts[1].trim());
-        }
-      }
-    }
-
-    final emoji = quest.topicEmoji ?? '';
-
-    if (bucketMap.isNotEmpty) {
-      return bucketMap.entries.map((e) {
-        return TopicClusterGroup(
-          categoryName: e.key,
-          emoji: emoji,
-          words: e.value,
-          explanation: quest.explanation,
-          collocations: _extractCollocations(e.value, quest),
-        );
-      }).toList();
-    }
-
-    final buckets = quest.topicBuckets ?? <String>[];
-    final options = quest.options ?? <String>[];
-    final bucketCount = buckets.isNotEmpty ? buckets.length : 1;
-    final perBucket = options.isNotEmpty ? (options.length / bucketCount).ceil() : 0;
-
-    final result = <TopicClusterGroup>[];
-    for (var i = 0; i < buckets.length; i++) {
-      final start = i * perBucket;
-      final end = (start + perBucket).clamp(0, options.length);
-      final words = (start < options.length) ? options.sublist(start, end) : <String>[];
-      result.add(
-        TopicClusterGroup(
-          categoryName: buckets[i],
-          emoji: emoji,
-          words: words,
-          explanation: quest.explanation,
-          collocations: _extractCollocations(words, quest),
-        ),
-      );
-    }
-    return result;
   }
 
   void _handleFuse() {
@@ -306,90 +255,126 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,
       listener: (context, state) {
-        onVocabularyStateChanged(context, state);
         if (state is VocabularyLoaded) {
-          _initQuestState(state.currentQuest);
+          final isNew = state.currentIndex != lastProcessedIndex;
+          final isRetry = !isNew &&
+              !state.answerStatus.isAnswered &&
+              isAnsweredNotifier.value;
+          final isLivesRestored =
+              lastLives != null && state.livesRemaining > lastLives!;
+
+          onVocabularyStateChanged(context, state);
+
+          if (isNew || isRetry || isLivesRestored) {
+            _currentQuest = state.currentQuestOrNull ?? _currentQuest;
+            if (_currentQuest != null) {
+              _initQuestState(
+                _currentQuest!,
+                forceReset: isRetry || isLivesRestored,
+              );
+            }
+          }
+        } else if (state is VocabularyGameOver) {
+          onVocabularyStateChanged(context, state);
+          _countdownTimer?.cancel();
+          _bonusTimer?.cancel();
+        } else if (state is VocabularyGameComplete) {
+          onVocabularyStateChanged(context, state);
+          _countdownTimer?.cancel();
+          _bonusTimer?.cancel();
         }
       },
       builder: (context, state) {
-        if (state is VocabularyLoading || state is VocabularyInitial) {
-          return Scaffold(
-            body: SafeArea(
-              child: Padding(
-                padding: EdgeInsets.all(16.r),
-                child: Column(
-                  children: [
-                    ShimmerLoading.rounded(height: 50.h, width: double.infinity, borderRadius: 12),
-                    SizedBox(height: 16.h),
-                    ShimmerLoading.rounded(height: 250.h, width: double.infinity, borderRadius: 16),
-                  ],
-                ),
-              ),
-            ),
-          );
-        }
-
         if (state is VocabularyError) {
           return Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              leading: const BackButton(),
+            ),
             body: GameErrorView(
               message: state.message,
+              primaryColor: accentColor,
               onRetry: initVocabularyGame,
+              onExit: () => Navigator.of(context).maybePop(),
             ),
           );
         }
 
         if (state is VocabularyLoaded) {
-          if (_controller == null) {
-            _initQuestState(state.currentQuest);
-          }
+          _currentQuest = state.currentQuestOrNull ?? _currentQuest;
+        }
 
-          return ListenableBuilder(
-            listenable: Listenable.merge([
-              isAnsweredNotifier,
-              isCorrectNotifier,
-              showConfettiNotifier,
-            ]),
-            builder: (context, _) {
-              return VocabularyBaseLayout(
-                gameType: widget.gameType,
-                level: widget.level,
-                isAnswered: isAnsweredNotifier.value,
-                isCorrect: isCorrectNotifier.value,
-                isFinalFailure: state.isFinalFailure,
-                showConfetti: showConfettiNotifier.value,
-                onContinue: () => _handleContinue(state),
-                onHint: dispatchHintUsed,
-                child: Column(
-                  children: [
-                    TopicFusionTimer(
-                      remainingSeconds: _remainingSeconds,
-                      totalSeconds: _totalSeconds,
-                      accentColor: accentColor,
-                      bonusSecondsAdded: _bonusSeconds,
-                      comboMultiplier: _controller?.comboMultiplier ?? 1,
-                    ),
-                    SizedBox(height: 12.h),
-                    Expanded(
-                      child: _controller != null
-                          ? TopicMatrixGrid(
-                              controller: _controller!,
-                              accentColor: accentColor,
-                              onFuse: _handleFuse,
-                              isAnswered: isAnsweredNotifier.value,
-                              instruction: _currentQuest?.instruction,
-                              topicEmoji: _currentQuest?.topicEmoji,
-                              onTileLongPress: _handleTileLongPress,
-                            )
-                          : const SizedBox.shrink(),
-                    ),
-                  ],
-                ),
-              );
-            },
+        final quest = (state is VocabularyLoaded)
+            ? state.currentQuestOrNull
+            : _currentQuest;
+
+        if (quest == null &&
+            (state is VocabularyLoading || state is VocabularyInitial)) {
+          return Scaffold(
+            body: SafeArea(
+              child: GameShimmerLoading(primaryColor: accentColor),
+            ),
           );
         }
 
-        return const Scaffold(body: SizedBox.shrink());
+        if (quest != null && _controller == null) {
+          _initQuestState(quest);
+        }
+
+        return ListenableBuilder(
+          listenable: Listenable.merge([
+            isAnsweredNotifier,
+            isCorrectNotifier,
+            showConfettiNotifier,
+          ]),
+          builder: (context, _) {
+            return VocabularyBaseLayout(
+              gameType: widget.gameType,
+              level: widget.level,
+              isAnswered: isAnsweredNotifier.value,
+              isCorrect: isCorrectNotifier.value,
+              isFinalFailure:
+                  state is VocabularyLoaded ? state.isFinalFailure : false,
+              showConfetti: showConfettiNotifier.value,
+              onContinue: () {
+                if (state is VocabularyLoaded) {
+                  _handleContinue(state);
+                } else {
+                  dispatchNextQuestion();
+                }
+              },
+              onHint: dispatchHintUsed,
+              child: quest == null
+                  ? GameShimmerLoading(primaryColor: accentColor)
+                  : Column(
+                      children: [
+                        TopicFusionTimer(
+                          remainingSeconds: _remainingSeconds,
+                          totalSeconds: _totalSeconds,
+                          accentColor: accentColor,
+                          bonusSecondsAdded: _bonusSeconds,
+                          comboMultiplier: _controller?.comboMultiplier ?? 1,
+                        ),
+                        SizedBox(height: 12.h),
+                        Expanded(
+                          child: _controller != null
+                              ? TopicMatrixGrid(
+                                  controller: _controller!,
+                                  accentColor: accentColor,
+                                  onFuse: _handleFuse,
+                                  isAnswered: isAnsweredNotifier.value,
+                                  instruction: quest.instruction,
+                                  topicEmoji: quest.topicEmoji,
+                                  onTileLongPress: _handleTileLongPress,
+                                )
+                              : const SizedBox.shrink(),
+                        ),
+                      ],
+                    ),
+            );
+          },
+        );
       },
     );
   }

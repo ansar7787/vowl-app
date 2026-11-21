@@ -224,11 +224,13 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
         builder: (context, state) {
           final baseState = widget.stateMapper(state);
           final isComplete = baseState is GameCompleteState;
+          final isGameOver = baseState is GameOverState;
+          final canDirectlyPop = isComplete || isGameOver;
 
           return PopScope(
-            canPop: isComplete,
+            canPop: canDirectlyPop,
             onPopInvokedWithResult: (didPop, _) {
-              if (!didPop) _onExitPressed(context);
+              if (!didPop && !isGameOver) _onExitPressed(context);
             },
             child: MediaQuery(
               data: MediaQuery.of(context).copyWith(

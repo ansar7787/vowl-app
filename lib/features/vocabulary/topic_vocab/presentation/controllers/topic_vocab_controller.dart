@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 
 /// Data class representing a fused thematic cluster.
 class TopicClusterGroup {
@@ -18,6 +19,79 @@ class TopicClusterGroup {
     this.explanation,
     this.collocations = const [],
   });
+
+  static List<String> _extractCollocations(
+    List<String> words,
+    VocabularyQuest quest,
+  ) {
+    final result = <String>[];
+    for (final coll in quest.collocations ?? <String>[]) {
+      if (words.any((w) => coll.toLowerCase().contains(w.toLowerCase()))) {
+        result.add(coll);
+      }
+    }
+    if (result.isEmpty && quest.relatedWords != null) {
+      for (final rw in quest.relatedWords!) {
+        if (words.any((w) => rw.toLowerCase().contains(w.toLowerCase()))) {
+          final clean = rw.contains(':') ? rw.split(':')[0].trim() : rw.trim();
+          if (clean.contains(' ')) result.add(clean);
+        }
+      }
+    }
+    return result;
+  }
+
+  /// Parses thematic cluster groups from curriculum JSON data with zero hardcoded fallbacks.
+  static List<TopicClusterGroup> parseClusters(VocabularyQuest quest) {
+    final Map<String, List<String>> bucketMap = {};
+    if (quest.correctAnswer != null && quest.correctAnswer!.contains(':')) {
+      for (final p in quest.correctAnswer!.split(',').map((s) => s.trim())) {
+        final parts = p.split(':');
+        if (parts.length == 2) {
+          bucketMap.putIfAbsent(parts[0].trim(), () => []).add(parts[1].trim());
+        }
+      }
+    }
+
+    final emoji = quest.topicEmoji ?? '';
+
+    if (bucketMap.isNotEmpty) {
+      return bucketMap.entries.map((e) {
+        return TopicClusterGroup(
+          categoryName: e.key,
+          emoji: emoji,
+          words: e.value,
+          explanation: quest.explanation,
+          collocations: _extractCollocations(e.value, quest),
+        );
+      }).toList();
+    }
+
+    final buckets = quest.topicBuckets ?? <String>[];
+    final options = quest.options ?? <String>[];
+    final bucketCount = buckets.isNotEmpty ? buckets.length : 1;
+    final perBucket =
+        options.isNotEmpty ? (options.length / bucketCount).ceil() : 0;
+
+    final result = <TopicClusterGroup>[];
+    for (var i = 0; i < buckets.length; i++) {
+      final start = i * perBucket;
+      final end = (start + perBucket).clamp(0, options.length);
+      final words = (start < options.length)
+          ? options.sublist(start, end)
+          : <String>[];
+      result.add(
+        TopicClusterGroup(
+          categoryName: buckets[i],
+          emoji: emoji,
+          words: words,
+          explanation: quest.explanation,
+          collocations: _extractCollocations(words, quest),
+        ),
+      );
+    }
+    return result;
+  }
 }
 
 /// Controller managing Cluster Fusion matrix interactions, selections,

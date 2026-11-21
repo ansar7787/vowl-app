@@ -406,7 +406,7 @@ class GameDialogHelper {
       // If the user tapped "Give Up" (true) OR pressed the system Back button (null),
       // we cleanly exit the game screen.
       if (gaveUp == true || gaveUp == null) {
-        Navigator.of(context).pop();
+        Navigator.of(context).maybePop();
       }
     });
   }

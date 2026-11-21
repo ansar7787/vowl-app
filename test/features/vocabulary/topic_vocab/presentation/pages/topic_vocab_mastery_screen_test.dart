@@ -117,6 +117,7 @@ void main() {
     when(() => mockSoundService.playCorrect(comboStep: any(named: 'comboStep'))).thenAnswer((_) async {});
     when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
     when(() => mockSoundService.playSoftWrong()).thenAnswer((_) async {});
+    when(() => mockSoundService.playGameOver()).thenAnswer((_) async {});
     when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
     when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
 
@@ -217,6 +218,44 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       verify(() => mockHapticService.heavy()).called(1);
+    });
+
+    testWidgets('handles VocabularyGameOver gracefully without unmounting to white screen, and popping cleanly on Give Up', (tester) async {
+      tester.view.physicalSize = const Size(390, 844) * 2.0;
+      tester.view.devicePixelRatio = 2.0;
+      addTearDown(() {
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      });
+
+      await tester.pumpWidget(buildTestableWidget(const TopicVocabMasteryScreen(level: 2)));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      // Emit VocabularyGameOver
+      vocabularyStreamController.add(
+        VocabularyGameOver(
+          quests: [testQuest],
+          currentIndex: 0,
+        ),
+      );
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      // The board is NOT replaced with blank white screen; TopicMatrixGrid remains mounted
+      expect(find.byType(TopicMatrixGrid), findsOneWidget);
+
+      // The game over dialog is shown with GIVE UP button
+      final giveUpFinder = find.text('GIVE UP');
+      expect(giveUpFinder, findsOneWidget);
+
+      // Tap GIVE UP
+      await tester.tap(giveUpFinder);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      // The dialog is dismissed cleanly
+      expect(find.text('GIVE UP'), findsNothing);
     });
   });
 }
