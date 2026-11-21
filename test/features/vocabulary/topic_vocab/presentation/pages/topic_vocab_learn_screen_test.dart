@@ -69,6 +69,7 @@ void main() {
     when(() => mockHaptics.error()).thenAnswer((_) async {});
     when(() => mockSounds.playCorrect(comboStep: any(named: 'comboStep'))).thenAnswer((_) async {});
     when(() => mockTts.speak(any())).thenAnswer((_) async {});
+    when(() => mockTts.preWarm()).thenAnswer((_) async {});
 
     if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
     if (di.sl.isRegistered<SoundService>()) di.sl.unregister<SoundService>();

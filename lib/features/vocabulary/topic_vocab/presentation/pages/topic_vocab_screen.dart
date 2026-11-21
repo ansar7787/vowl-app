@@ -7,6 +7,8 @@ import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/game_error_view.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
@@ -58,6 +60,9 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
   @override
   void initState() {
     super.initState();
+    if (di.sl.isRegistered<TtsService>()) {
+      unawaited(di.sl<TtsService>().preWarm());
+    }
     initVocabularyGame();
   }
 
@@ -105,8 +110,10 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
     }
   }
 
-  void _initQuestState(VocabularyQuest quest) {
-    if (_currentQuest?.id == quest.id && _controller != null) return;
+  void _initQuestState(VocabularyQuest quest, {bool forceReset = false}) {
+    if (!forceReset && _currentQuest?.id == quest.id && _controller != null) {
+      return;
+    }
     _currentQuest = quest;
     _controller?.dispose();
     _bonusTimer?.cancel();
@@ -132,8 +139,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
 
   List<String> _extractCollocations(List<String> words, VocabularyQuest quest) {
     final result = <String>[];
-    final questColls = quest.collocations ?? [];
-    for (final coll in questColls) {
+    for (final coll in quest.collocations ?? <String>[]) {
       if (words.any((w) => coll.toLowerCase().contains(w.toLowerCase()))) {
         result.add(coll);
       }
@@ -142,9 +148,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
       for (final rw in quest.relatedWords!) {
         if (words.any((w) => rw.toLowerCase().contains(w.toLowerCase()))) {
           final clean = rw.contains(':') ? rw.split(':')[0].trim() : rw.trim();
-          if (clean.contains(' ')) {
-            result.add(clean);
-          }
+          if (clean.contains(' ')) result.add(clean);
         }
       }
     }
@@ -153,15 +157,11 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
 
   List<TopicClusterGroup> _parseClusters(VocabularyQuest quest) {
     final Map<String, List<String>> bucketMap = {};
-
     if (quest.correctAnswer != null && quest.correctAnswer!.contains(':')) {
-      final pairs = quest.correctAnswer!.split(',').map((s) => s.trim());
-      for (final p in pairs) {
+      for (final p in quest.correctAnswer!.split(',').map((s) => s.trim())) {
         final parts = p.split(':');
         if (parts.length == 2) {
-          final bucket = parts[0].trim();
-          final word = parts[1].trim();
-          bucketMap.putIfAbsent(bucket, () => []).add(word);
+          bucketMap.putIfAbsent(parts[0].trim(), () => []).add(parts[1].trim());
         }
       }
     }
@@ -178,12 +178,10 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
       }).toList();
     }
 
-    final buckets = quest.topicBuckets ?? ['Domain Alpha', 'Domain Beta'];
-    final options =
-        quest.options ??
-        ['Word A', 'Word B', 'Word C', 'Word D', 'Word E', 'Word F'];
-    final half = (options.length / (buckets.isNotEmpty ? buckets.length : 2))
-        .ceil();
+    final buckets = quest.topicBuckets ?? const ['Domain Alpha', 'Domain Beta'];
+    final options = quest.options ??
+        const ['Word A', 'Word B', 'Word C', 'Word D', 'Word E', 'Word F'];
+    final half = (options.length / (buckets.isNotEmpty ? buckets.length : 2)).ceil();
     final firstHalf = options.take(half).toList();
     final secondHalf = options.skip(half).toList();
 
@@ -282,6 +280,19 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
     );
   }
 
+  void _handleContinue(VocabularyLoaded state) {
+    if (isCorrectNotifier.value == false &&
+        !state.isFinalFailure &&
+        state.livesRemaining > 0) {
+      isAnsweredNotifier.value = false;
+      isCorrectNotifier.value = null;
+      context.read<VocabularyBloc>().add(const RetryCurrentQuestion());
+      _initQuestState(state.currentQuest, forceReset: true);
+    } else {
+      dispatchNextQuestion();
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('topicVocab', level: widget.level);
@@ -335,49 +346,44 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
             _initQuestState(state.currentQuest);
           }
 
-          return ValueListenableBuilder<bool>(
-            valueListenable: isAnsweredNotifier,
-            builder: (context, isAnswered, _) {
-              return ValueListenableBuilder<bool?>(
-                valueListenable: isCorrectNotifier,
-                builder: (context, isCorrect, _) {
-                  return ValueListenableBuilder<bool>(
-                    valueListenable: showConfettiNotifier,
-                    builder: (context, showConfetti, _) {
-                      return VocabularyBaseLayout(
-                        gameType: widget.gameType,
-                        level: widget.level,
-                        isAnswered: isAnswered,
-                        isCorrect: isCorrect,
-                        showConfetti: showConfetti,
-                        onContinue: dispatchNextQuestion,
-                        onHint: dispatchHintUsed,
-                        child: Column(
-                          children: [
-                            TopicFusionTimer(
-                              remainingSeconds: _remainingSeconds,
-                              totalSeconds: _totalSeconds,
+          return ListenableBuilder(
+            listenable: Listenable.merge([
+              isAnsweredNotifier,
+              isCorrectNotifier,
+              showConfettiNotifier,
+            ]),
+            builder: (context, _) {
+              return VocabularyBaseLayout(
+                gameType: widget.gameType,
+                level: widget.level,
+                isAnswered: isAnsweredNotifier.value,
+                isCorrect: isCorrectNotifier.value,
+                isFinalFailure: state.isFinalFailure,
+                showConfetti: showConfettiNotifier.value,
+                onContinue: () => _handleContinue(state),
+                onHint: dispatchHintUsed,
+                child: Column(
+                  children: [
+                    TopicFusionTimer(
+                      remainingSeconds: _remainingSeconds,
+                      totalSeconds: _totalSeconds,
+                      accentColor: accentColor,
+                      bonusSecondsAdded: _bonusSeconds,
+                    ),
+                    SizedBox(height: 12.h),
+                    Expanded(
+                      child: _controller != null
+                          ? TopicMatrixGrid(
+                              controller: _controller!,
                               accentColor: accentColor,
-                              bonusSecondsAdded: _bonusSeconds,
-                            ),
-                            SizedBox(height: 12.h),
-                            Expanded(
-                              child: _controller != null
-                                  ? TopicMatrixGrid(
-                                      controller: _controller!,
-                                      accentColor: accentColor,
-                                      onFuse: _handleFuse,
-                                      isAnswered: isAnswered,
-                                      onTileLongPress: _handleTileLongPress,
-                                    )
-                                  : const SizedBox.shrink(),
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                  );
-                },
+                              onFuse: _handleFuse,
+                              isAnswered: isAnsweredNotifier.value,
+                              onTileLongPress: _handleTileLongPress,
+                            )
+                          : const SizedBox.shrink(),
+                    ),
+                  ],
+                ),
               );
             },
           );

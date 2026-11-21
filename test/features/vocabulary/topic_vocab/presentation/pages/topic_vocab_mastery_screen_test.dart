@@ -121,6 +121,7 @@ void main() {
     when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
 
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
+    when(() => mockTtsService.preWarm()).thenAnswer((_) async {});
     when(() => mockTtsService.speak(any(), rate: any(named: 'rate'), locale: any(named: 'locale')))
         .thenAnswer((_) async {});
 

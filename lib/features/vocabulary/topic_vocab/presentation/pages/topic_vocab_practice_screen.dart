@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -47,6 +48,9 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
   @override
   void initState() {
     super.initState();
+    if (di.sl.isRegistered<TtsService>()) {
+      unawaited(di.sl<TtsService>().preWarm());
+    }
     _loadCurriculum();
   }
 
@@ -174,7 +178,7 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
       );
       setState(() {
         _coachingMessage =
-            "'$word' belongs to ${matching.categoryName} ${matching.emoji}. Select that tray to place it.";
+            "'$word' belongs to ${matching.categoryName}. Select that tray to place it.";
       });
     }
   }

@@ -20,6 +20,7 @@ void main() {
     }
     di.sl.registerSingleton<TtsService>(mockTts);
     when(() => mockTts.speak(any())).thenAnswer((_) async {});
+    when(() => mockTts.preWarm()).thenAnswer((_) async {});
   });
 
   tearDownAll(() {

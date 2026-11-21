@@ -5,9 +5,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
+import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_icon_helper.dart';
 
 /// Clean, merged category banner representing a completed word group
-/// with natural typography, authentic collocations, and native audio pronunciation.
+/// with natural typography, authentic collocations, professional icons, and native audio.
 class TopicClusterBanner extends StatelessWidget {
   final String categoryName;
   final String emoji;
@@ -48,7 +49,20 @@ class TopicClusterBanner extends StatelessWidget {
         children: [
           Row(
             children: [
-              Text(emoji, style: TextStyle(fontSize: 18.sp)),
+              Container(
+                width: 28.r,
+                height: 28.r,
+                decoration: BoxDecoration(
+                  color: accentColor.withValues(alpha: 0.15),
+                  borderRadius: BorderRadius.circular(8.r),
+                ),
+                alignment: Alignment.center,
+                child: Icon(
+                  TopicIconHelper.getIcon(emoji, categoryName),
+                  size: 16.r,
+                  color: accentColor,
+                ),
+              ),
               SizedBox(width: 8.w),
               Expanded(
                 child: AutoSizeText(
@@ -101,13 +115,13 @@ class TopicClusterBanner extends StatelessWidget {
                 Expanded(
                   child: AutoSizeText(
                     collocations!.join(' • '),
-                    maxLines: 2,
+                    maxLines: 1,
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 11.5.sp,
+                      fontWeight: FontWeight.w600,
+                      color: accentColor.withValues(alpha: isDark ? 0.9 : 0.85),
                       fontStyle: FontStyle.italic,
-                      fontWeight: FontWeight.w500,
-                      color: isDark ? Colors.white60 : const Color(0xFF475569),
                     ),
                   ),
                 ),
@@ -116,13 +130,13 @@ class TopicClusterBanner extends StatelessWidget {
           ],
           if (explanation != null && explanation!.isNotEmpty) ...[
             SizedBox(height: 4.h),
-            Text(
+            AutoSizeText(
               explanation!,
+              maxLines: 2,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 12.sp,
-                fontWeight: FontWeight.w400,
-                color: isDark ? Colors.white54 : Colors.black54,
+                fontSize: 11.sp,
+                color: isDark ? Colors.white54 : const Color(0xFF64748B),
               ),
             ),
           ],
@@ -136,11 +150,7 @@ class TopicClusterBanner extends StatelessWidget {
 
     return banner
         .animate()
-        .fadeIn(duration: 300.ms)
-        .scale(
-          begin: const Offset(0.96, 0.96),
-          end: const Offset(1, 1),
-          curve: Curves.easeOutCubic,
-        );
+        .fadeIn(duration: 250.ms)
+        .slideY(begin: -0.1, end: 0, duration: 250.ms, curve: Curves.easeOut);
   }
 }

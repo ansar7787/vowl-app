@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/domain/entities/topic_learn_quest.dart';
+import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_icon_helper.dart';
 
 /// Clean semantic word overview for the Learn phase with balanced typography,
 /// real-world English usage context, and strongly-typed domain models.
@@ -43,7 +44,20 @@ class TopicBlueprintTree extends StatelessWidget {
             ),
             child: Row(
               children: [
-                Text(topicEmoji, style: TextStyle(fontSize: 24.sp)),
+                Container(
+                  width: 36.r,
+                  height: 36.r,
+                  decoration: BoxDecoration(
+                    color: accentColor.withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(10.r),
+                  ),
+                  alignment: Alignment.center,
+                  child: Icon(
+                    TopicIconHelper.getIcon(topicEmoji, conceptTitle),
+                    size: 20.r,
+                    color: accentColor,
+                  ),
+                ),
                 SizedBox(width: 10.w),
                 Expanded(
                   child: AutoSizeText(
@@ -120,7 +134,20 @@ class TopicBlueprintTree extends StatelessWidget {
                   // Category Title
                   Row(
                     children: [
-                      Text(cat.emoji, style: TextStyle(fontSize: 18.sp)),
+                      Container(
+                        width: 26.r,
+                        height: 26.r,
+                        decoration: BoxDecoration(
+                          color: accentColor.withValues(alpha: 0.12),
+                          borderRadius: BorderRadius.circular(8.r),
+                        ),
+                        alignment: Alignment.center,
+                        child: Icon(
+                          TopicIconHelper.getIcon(cat.emoji, cat.name),
+                          size: 15.r,
+                          color: accentColor,
+                        ),
+                      ),
                       SizedBox(width: 8.w),
                       Expanded(
                         child: AutoSizeText(

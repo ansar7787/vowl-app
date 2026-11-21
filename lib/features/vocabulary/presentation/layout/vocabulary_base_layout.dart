@@ -189,8 +189,8 @@ class VocabularyBaseLayout extends StatelessWidget {
                   : theme.primaryColor,
             );
           }
-          ruleTitle = '';
-          ruleContent = null;
+          ruleTitle = 'TOPICAL CONTEXT';
+          ruleContent = quest.definition ?? quest.hint;
           finalExplanation = quest.explanation;
         } else if (gameType == GameSubtype.wordFormation) {
           ruleTitle = 'WORD BUILDING';

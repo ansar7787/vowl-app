@@ -19,6 +19,7 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
+import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/pages/topic_vocab_screen.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_vocab_mind_map.dart';
 
@@ -59,6 +60,7 @@ void main() {
     registerFallbackValue(const SubmitAnswer(true));
     registerFallbackValue(const SubmitAnswer(false));
     registerFallbackValue(const NextQuestion());
+    registerFallbackValue(const RetryCurrentQuestion());
   });
 
   setUp(() async {
@@ -106,6 +108,7 @@ void main() {
     when(() => mockSoundService.stopTts()).thenAnswer((_) async {});
 
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
+    when(() => mockTtsService.preWarm()).thenAnswer((_) async {});
     when(() => mockTtsService.speak(any(), rate: any(named: 'rate'), locale: any(named: 'locale')))
         .thenAnswer((_) async {});
 
@@ -199,6 +202,33 @@ void main() {
 
       expect(find.byType(TopicVocabMindMap), findsOneWidget);
       expect(find.textContaining('Boiling'), findsWidgets);
+    });
+
+    testWidgets('renders TRY AGAIN on incorrect answer and onContinue dispatches RetryCurrentQuestion', (tester) async {
+      await tester.pumpWidget(buildTestableWidget(const TopicVocabScreen(level: 1)));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      final incorrectState = VocabularyLoaded(
+        quests: [testQuest],
+        currentIndex: 0,
+        livesRemaining: 2,
+        answerStatus: AnswerStatus.incorrect,
+        isFinalFailure: false,
+      );
+      when(() => mockVocabularyBloc.state).thenReturn(incorrectState);
+      vocabularyStreamController.add(incorrectState);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      expect(find.text('TRY AGAIN'), findsOneWidget);
+
+      final baseLayout = tester.widget<VocabularyBaseLayout>(find.byType(VocabularyBaseLayout));
+      baseLayout.onContinue();
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      verify(() => mockVocabularyBloc.add(any(that: isA<RetryCurrentQuestion>()))).called(1);
     });
   });
 }

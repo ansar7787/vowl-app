@@ -47,7 +47,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text('Intense Heat'), findsOneWidget);
-      expect(find.text('🔥'), findsOneWidget);
+      expect(find.byIcon(Icons.whatshot_rounded), findsOneWidget);
       expect(find.text('Boiling'), findsOneWidget);
       expect(find.text('1/3'), findsOneWidget);
 

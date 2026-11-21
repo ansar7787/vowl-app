@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -9,6 +10,7 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/domain/entities/topic_learn_quest.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_blueprint_tree.dart';
 
@@ -39,6 +41,9 @@ class _TopicVocabLearnScreenState extends State<TopicVocabLearnScreen> {
   @override
   void initState() {
     super.initState();
+    if (di.sl.isRegistered<TtsService>()) {
+      unawaited(di.sl<TtsService>().preWarm());
+    }
     if (widget.initialQuests != null && widget.initialQuests!.isNotEmpty) {
       _quests = List.from(widget.initialQuests!);
       _isLoading = false;

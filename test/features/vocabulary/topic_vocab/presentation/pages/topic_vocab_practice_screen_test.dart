@@ -46,6 +46,7 @@ void main() {
     when(() => mockSounds.playSoftWrong()).thenAnswer((_) async {});
 
     when(() => mockTts.stop()).thenAnswer((_) async {});
+    when(() => mockTts.preWarm()).thenAnswer((_) async {});
     when(() => mockTts.speak(any(), rate: any(named: 'rate'), locale: any(named: 'locale'))).thenAnswer((_) async {});
 
     await di.sl.reset();
