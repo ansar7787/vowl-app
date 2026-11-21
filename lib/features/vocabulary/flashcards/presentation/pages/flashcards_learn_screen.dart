@@ -40,6 +40,7 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
   int _currentIndex = 0;
   bool _showContrastMatrix = false;
   double _horizontalDragDelta = 0;
+  final Set<int> _flippedIndices = <int>{};
 
   @override
   void initState() {
@@ -95,7 +96,13 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
 
   void _flipCard() {
     HapticFeedback.lightImpact();
-    _isFlippedNotifier.value = !_isFlippedNotifier.value;
+    final nextFlipped = !_isFlippedNotifier.value;
+    _isFlippedNotifier.value = nextFlipped;
+    if (nextFlipped && !_flippedIndices.contains(_currentIndex)) {
+      setState(() {
+        _flippedIndices.add(_currentIndex);
+      });
+    }
     if (di.sl.isRegistered<HapticService>()) {
       di.sl<HapticService>().selection();
     }
@@ -114,6 +121,10 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
   }
 
   void _nextWord() {
+    if (!_flippedIndices.contains(_currentIndex)) {
+      _flipCard();
+      return;
+    }
     if (di.sl.isRegistered<HapticService>()) {
       di.sl<HapticService>().light();
     }
@@ -189,10 +200,13 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
       );
     }
 
+    final hasFlippedCurrent = _flippedIndices.contains(_currentIndex);
     final isLast = _currentIndex == _quests.length - 1;
-    final actionLabel = isLast
-        ? (_quests.length > 1 ? 'Compare Words' : 'Start Practice')
-        : 'Next Word';
+    final actionLabel = !hasFlippedCurrent
+        ? 'Flip Card to Continue'
+        : (isLast
+            ? (_quests.length > 1 ? 'Compare Words' : 'Start Practice')
+            : 'Next Word');
 
     return LearnPhaseScaffold(
       title: 'Word ${_currentIndex + 1} of ${_quests.length}',
@@ -275,7 +289,11 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
               onHorizontalDragEnd: (details) {
                 final velocity = details.primaryVelocity ?? 0;
                 if (velocity < -200 || _horizontalDragDelta < -40) {
-                  _nextWord();
+                  if (!_flippedIndices.contains(_currentIndex)) {
+                    _flipCard();
+                  } else {
+                    _nextWord();
+                  }
                 } else if (velocity > 200 || _horizontalDragDelta > 40) {
                   _previousWord();
                 }

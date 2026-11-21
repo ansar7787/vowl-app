@@ -203,5 +203,53 @@ void main() {
         expect(find.text('AUTHENTIC'), findsWidgets);
       },
     );
+
+    testWidgets(
+      'requires card flip before advancing and dynamically switches button label to Next Word',
+      (tester) async {
+        await tester.pumpWidget(
+          buildTestableWidget(const FlashcardsLearnScreen(level: 1)),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        // Initial state: Card is on front face (AUTHENTIC)
+        expect(find.text('AUTHENTIC'), findsWidgets);
+        expect(find.text('Flip Card to Continue'), findsOneWidget);
+        expect(find.text('Next Word'), findsNothing);
+
+        // Attempting to advance via bottom button when not flipped: flips card to back face
+        await tester.ensureVisible(find.text('Flip Card to Continue'));
+        await tester.tap(find.text('Flip Card to Continue'));
+        await tester.pumpAndSettle();
+
+        // Card is now flipped to back face (revealing collocations & context)
+        expect(find.text('NATURAL COLLOCATIONS'), findsOneWidget);
+        expect(find.text('Next Word'), findsOneWidget);
+        expect(find.text('Flip Card to Continue'), findsNothing);
+
+        // Now that the card has been flipped, tapping Next Word advances to Word 2 (GENUINE)
+        await tester.ensureVisible(find.text('Next Word'));
+        await tester.tap(find.text('Next Word'));
+        await tester.pumpAndSettle();
+
+        expect(find.text('GENUINE'), findsWidgets);
+        // On Word 2, button resets to "Flip Card to Continue" to enforce pedagogy
+        expect(find.text('Flip Card to Continue'), findsOneWidget);
+        expect(find.text('Next Word'), findsNothing);
+
+        // Swiping left without flipping Word 2 flips it to back face instead of skipping to Word 3
+        await tester.fling(
+          find.text('GENUINE').first,
+          const Offset(-300, 0),
+          1000,
+        );
+        await tester.pumpAndSettle();
+
+        // Word 2 is now on back face, not skipped!
+        expect(find.text('NATURAL COLLOCATIONS'), findsOneWidget);
+        expect(find.text('Next Word'), findsOneWidget);
+      },
+    );
   });
 }
