@@ -36,21 +36,16 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
   int _currentIndex = 0;
 
   // Active Quest Interaction State (ValueNotifiers for 120 FPS leaf rebuilds)
-  late final ValueNotifier<List<String>> _availableChunksNotifier =
-      ValueNotifier<List<String>>([]);
-  late final ValueNotifier<List<String>> _placedChunksNotifier =
-      ValueNotifier<List<String>>([]);
-
+  late final ValueNotifier<List<String>> _availableChunksNotifier = ValueNotifier([]);
+  late final ValueNotifier<List<String>> _placedChunksNotifier = ValueNotifier([]);
   List<String> get _availableChunks => _availableChunksNotifier.value;
   List<String> get _placedChunks => _placedChunksNotifier.value;
 
   bool _hasCheckedAssembly = false;
   bool _isAssemblyCorrect = false;
-
   bool _showCollocationStage = false;
   int? _selectedCollocationIndex;
   bool _hasCheckedCollocation = false;
-
   int _shakeTrigger = 0;
   bool _showHint = false;
   int _consecutiveFailures = 0;
@@ -91,7 +86,8 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
         : (quest.word != null ? [quest.word!] : <String>[]);
 
     final targetWord = (quest.word ?? '').toUpperCase();
-    if (chunks.join('').toUpperCase() == targetWord && chunks.length >= 2) {
+    final combinedUpper = chunks.join('').toUpperCase();
+    if (combinedUpper.length == targetWord.length && chunks.length >= 2) {
       final distractor = targetWord.contains('TIC') ? 'TION' : 'ING';
       chunks = [...chunks, distractor]..shuffle();
     }
@@ -114,10 +110,7 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
       nextPlaced.add(chunk);
       _availableChunksNotifier.value = nextAvail;
       _placedChunksNotifier.value = nextPlaced;
-    }
-    HapticFeedback.selectionClick();
-    if (di.sl.isRegistered<HapticService>()) {
-      di.sl<HapticService>().selection();
+      _triggerSelectionHaptic();
     }
   }
 
@@ -131,9 +124,21 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
     nextAvail.add(chunk);
     _placedChunksNotifier.value = nextPlaced;
     _availableChunksNotifier.value = nextAvail;
+    _triggerSelectionHaptic();
+  }
+
+  void _triggerSelectionHaptic() {
     HapticFeedback.selectionClick();
-    if (di.sl.isRegistered<HapticService>()) {
-      di.sl<HapticService>().selection();
+    if (di.sl.isRegistered<HapticService>()) di.sl<HapticService>().selection();
+  }
+
+  void _triggerFeedbackHaptic({required bool isCorrect}) {
+    if (isCorrect) {
+      HapticFeedback.heavyImpact();
+      if (di.sl.isRegistered<HapticService>()) di.sl<HapticService>().success();
+    } else {
+      HapticFeedback.mediumImpact();
+      if (di.sl.isRegistered<HapticService>()) di.sl<HapticService>().error();
     }
   }
 
@@ -145,16 +150,14 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
         type: CustomSnackBarType.warning,
       );
       HapticFeedback.lightImpact();
-      if (di.sl.isRegistered<HapticService>()) {
-        di.sl<HapticService>().light();
-      }
+      if (di.sl.isRegistered<HapticService>()) di.sl<HapticService>().light();
       return;
     }
 
     final assembled = _placedChunks.join('').toUpperCase();
     final target = (_quests[_currentIndex].word ?? '').toUpperCase();
-
     final isCorrect = assembled == target;
+
     setState(() {
       _hasCheckedAssembly = true;
       _isAssemblyCorrect = isCorrect;
@@ -176,7 +179,6 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
       } else {
         _consecutiveFailures = 0;
         _showCollocationStage = true;
-        // Auto-Pronunciation Climax: Speak assembled target word immediately
         if (di.sl.isRegistered<TtsService>()) {
           try {
             di.sl<TtsService>().speak(_quests[_currentIndex].word ?? '');
@@ -184,19 +186,7 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
         }
       }
     });
-
-    if (isCorrect) {
-      HapticFeedback.heavyImpact();
-    } else {
-      HapticFeedback.mediumImpact();
-    }
-    if (di.sl.isRegistered<HapticService>()) {
-      if (isCorrect) {
-        di.sl<HapticService>().success();
-      } else {
-        di.sl<HapticService>().error();
-      }
-    }
+    _triggerFeedbackHaptic(isCorrect: isCorrect);
   }
 
   void _selectCollocation(int optionIndex) {
@@ -214,26 +204,13 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
         if (!_remediationQueue.contains(cur)) _remediationQueue.add(cur);
       }
     });
-
-    if (isCorrect) {
-      HapticFeedback.heavyImpact();
-    } else {
-      HapticFeedback.mediumImpact();
-    }
-    if (di.sl.isRegistered<HapticService>()) {
-      if (isCorrect) {
-        di.sl<HapticService>().success();
-      } else {
-        di.sl<HapticService>().error();
-      }
-    }
+    _triggerFeedbackHaptic(isCorrect: isCorrect);
   }
 
   void _speakSentence(String rawSentence) {
     if (di.sl.isRegistered<TtsService>()) {
       try {
-        final textToSpeak = rawSentence.replaceAll('_____', 'blank');
-        di.sl<TtsService>().speak(textToSpeak);
+        di.sl<TtsService>().speak(rawSentence.replaceAll('_____', 'blank'));
       } catch (_) {}
     }
   }
@@ -283,10 +260,10 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
       level: widget.level,
       phase: 'practice',
     );
-    final target =
-        '/game?category=vocabulary&gameType=flashcards&level=${widget.level}';
     try {
-      context.pushReplacement(target);
+      context.pushReplacement(
+        '/game?category=vocabulary&gameType=flashcards&level=${widget.level}',
+      );
     } catch (_) {}
   }
 
@@ -330,9 +307,10 @@ class _FlashcardsPracticeScreenState extends State<FlashcardsPracticeScreen> {
 
     final rawCollocationOptions =
         quest.rawExtra['collocationOptions'] as List<dynamic>?;
-    final collocationOptions = rawCollocationOptions != null
-        ? rawCollocationOptions.map((e) => e.toString()).toList()
-        : const <String>[];
+    final collocationOptions = rawCollocationOptions
+            ?.map((e) => e.toString())
+            .toList() ??
+        const [];
     final correctCollocationIndex =
         (quest.rawExtra['correctCollocationIndex'] as num?)?.toInt() ?? 0;
 

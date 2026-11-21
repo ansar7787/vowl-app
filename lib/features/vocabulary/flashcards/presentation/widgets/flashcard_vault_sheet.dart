@@ -150,32 +150,11 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             child: Row(
               children: [
-                Expanded(
-                  child: _buildStat(
-                    'MASTERED',
-                    '${_entries.length}',
-                    AppColors.indigo500,
-                    isDark,
-                  ),
-                ),
+                Expanded(child: _buildStat('MASTERED', '${_entries.length}', AppColors.indigo500, isDark)),
                 SizedBox(width: 8.w),
-                Expanded(
-                  child: _buildStat(
-                    'TO REVIEW',
-                    '$dueCount',
-                    dueCount > 0 ? AppColors.rose500 : AppColors.emerald500,
-                    isDark,
-                  ),
-                ),
+                Expanded(child: _buildStat('TO REVIEW', '$dueCount', dueCount > 0 ? AppColors.rose500 : AppColors.emerald500, isDark)),
                 SizedBox(width: 8.w),
-                Expanded(
-                  child: _buildStat(
-                    'RETENTION',
-                    '$avgRetention%',
-                    avgRetention >= 70 ? AppColors.emerald500 : Colors.amber,
-                    isDark,
-                  ),
-                ),
+                Expanded(child: _buildStat('RETENTION', '$avgRetention%', avgRetention >= 70 ? AppColors.emerald500 : Colors.amber, isDark)),
               ],
             ),
           ),
@@ -355,44 +334,44 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
   }
 
   Widget _buildEmpty(bool isDark) => Center(
-    child: SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
-      padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(
-            Icons.bookmark_border_rounded,
-            size: 40.r,
-            color: isDark ? AppColors.slate600 : AppColors.slate400,
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 16.h),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(
+                Icons.bookmark_border_rounded,
+                size: 40.r,
+                color: isDark ? AppColors.slate600 : AppColors.slate400,
+              ),
+              SizedBox(height: 10.h),
+              Text(
+                _filterDueOnly
+                    ? 'No Words Due for Review! 🎉'
+                    : 'Your Word Bank is Empty',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.w800,
+                  color: isDark ? Colors.white : AppColors.slate800,
+                ),
+              ),
+              SizedBox(height: 6.h),
+              Text(
+                _filterDueOnly
+                    ? 'All your saved words are fresh in memory.'
+                    : 'Master words to add them here and review them before they fade.',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 12.sp,
+                  color: isDark ? AppColors.slate400 : AppColors.slate500,
+                ),
+              ),
+            ],
           ),
-          SizedBox(height: 10.h),
-          Text(
-            _filterDueOnly
-                ? 'No Words Due for Review! 🎉'
-                : 'Your Word Bank is Empty',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 15.sp,
-              fontWeight: FontWeight.w800,
-              color: isDark ? Colors.white : AppColors.slate800,
-            ),
-          ),
-          SizedBox(height: 6.h),
-          Text(
-            _filterDueOnly
-                ? 'All your saved words are fresh in memory.'
-                : 'Master words to add them here and review them before they fade.',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 12.sp,
-              color: isDark ? AppColors.slate400 : AppColors.slate500,
-            ),
-          ),
-        ],
-      ),
-    ),
-  );
+        ),
+      );
 }

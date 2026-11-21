@@ -150,22 +150,21 @@ class FlashcardPracticeChunkWeaver extends StatelessWidget {
 
         // Stage 1: Word Chunk Assembly Area (60-120 FPS isolated repaint)
         if (!showCollocationStage)
-          if (availableChunksNotifier != null && placedChunksNotifier != null)
-            AnimatedBuilder(
-              animation: Listenable.merge([
-                availableChunksNotifier!,
-                placedChunksNotifier!,
-              ]),
-              builder: (context, _) => _buildStage1AssemblyArea(
-                currentPlaced: placedChunksNotifier!.value,
-                currentAvailable: availableChunksNotifier!.value,
-              ),
-            )
-          else
-            _buildStage1AssemblyArea(
-              currentPlaced: placedChunks,
-              currentAvailable: availableChunks,
-            ),
+          availableChunksNotifier != null && placedChunksNotifier != null
+              ? AnimatedBuilder(
+                  animation: Listenable.merge([
+                    availableChunksNotifier!,
+                    placedChunksNotifier!,
+                  ]),
+                  builder: (context, _) => _buildStage1AssemblyArea(
+                    currentPlaced: placedChunksNotifier!.value,
+                    currentAvailable: availableChunksNotifier!.value,
+                  ),
+                )
+              : _buildStage1AssemblyArea(
+                  currentPlaced: placedChunks,
+                  currentAvailable: availableChunks,
+                ),
 
         // Stage 2: Instant Collocation Snap Challenge
         if (showCollocationStage)
@@ -254,53 +253,7 @@ class FlashcardPracticeChunkWeaver extends StatelessWidget {
               ),
               SizedBox(height: 10.h),
               currentPlaced.isEmpty
-                  ? Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: List.generate(
-                            3,
-                            (i) => Container(
-                              width: 44.w,
-                              height: 32.h,
-                              margin: EdgeInsets.symmetric(horizontal: 4.w),
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: isDark
-                                      ? AppColors.slate700
-                                      : AppColors.slate300,
-                                  width: 1.2,
-                                ),
-                                borderRadius: BorderRadius.circular(8.r),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  '·',
-                                  style: TextStyle(
-                                    fontSize: 18.sp,
-                                    color: isDark
-                                        ? AppColors.slate600
-                                        : AppColors.slate400,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 8.h),
-                        Text(
-                          'Tap phonetic chunks below to assemble',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 13.sp,
-                            fontStyle: FontStyle.italic,
-                            color: isDark
-                                ? AppColors.slate500
-                                : AppColors.slate400,
-                          ),
-                        ),
-                      ],
-                    )
+                  ? _buildEmptySlots(isDark)
                   : Wrap(
                       spacing: 6.w,
                       runSpacing: 6.h,
@@ -373,13 +326,6 @@ class FlashcardPracticeChunkWeaver extends StatelessWidget {
                   border: Border.all(
                     color: isDark ? AppColors.slate700 : AppColors.slate300,
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.04),
-                      blurRadius: 6.r,
-                      offset: Offset(0, 2.h),
-                    ),
-                  ],
                 ),
                 child: Text(
                   chunk,
@@ -393,6 +339,50 @@ class FlashcardPracticeChunkWeaver extends StatelessWidget {
               ),
             );
           }).toList(),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildEmptySlots(bool isDark) {
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: List.generate(
+            3,
+            (_) => Container(
+              width: 44.w,
+              height: 32.h,
+              margin: EdgeInsets.symmetric(horizontal: 4.w),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: isDark ? AppColors.slate700 : AppColors.slate300,
+                  width: 1.2,
+                ),
+                borderRadius: BorderRadius.circular(8.r),
+              ),
+              child: Center(
+                child: Text(
+                  '·',
+                  style: TextStyle(
+                    fontSize: 18.sp,
+                    color: isDark ? AppColors.slate600 : AppColors.slate400,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+        SizedBox(height: 8.h),
+        Text(
+          'Tap phonetic chunks below to assemble',
+          style: TextStyle(
+            fontFamily: 'Outfit',
+            fontSize: 13.sp,
+            fontStyle: FontStyle.italic,
+            color: isDark ? AppColors.slate500 : AppColors.slate400,
+          ),
         ),
       ],
     );
