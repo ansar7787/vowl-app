@@ -82,6 +82,13 @@ void main() {
       expect(find.text('Practice: Word Groups'), findsOneWidget);
       expect(find.byType(TopicFusionTile), findsWidgets);
 
+      // Tap hint icon
+      final hintIcon = find.byIcon(Icons.lightbulb_outline_rounded);
+      expect(hintIcon, findsOneWidget);
+      await tester.tap(hintIcon);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
       // Tap on a word tile from the pool
       final tiles = find.byType(TopicFusionTile);
       if (tiles.evaluate().isNotEmpty) {

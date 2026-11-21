@@ -197,6 +197,27 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
     );
   }
 
+  void _handleHint() {
+    if (_quests.isEmpty) return;
+    final quest = _quests[_currentIndex];
+    if (quest.boards.isEmpty) return;
+    final board = quest.boards.first;
+
+    final clueKey = 'cat${String.fromCharCode(65 + _activeCategoryIndex)}Clue';
+    final clueText = board.clues[clueKey] ??
+        (board.clues.isNotEmpty
+            ? board.clues.values.first
+            : 'Look for words sharing a situation or condition.');
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(clueText),
+        behavior: SnackBarBehavior.floating,
+        duration: const Duration(seconds: 4),
+      ),
+    );
+  }
+
   void _handleNext() {
     _hapticService.light();
     if (_currentIndex < _quests.length - 1) {
@@ -273,6 +294,8 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
       isActionEnabled: isDone,
       actionLabel: isLast ? 'Start Mastery Challenge' : 'Next Word Group',
       onComplete: _handleNext,
+      onHint: _handleHint,
+      isHintAvailable: !isDone,
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
