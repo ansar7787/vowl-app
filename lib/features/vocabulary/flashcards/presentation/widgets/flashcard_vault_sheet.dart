@@ -164,7 +164,7 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
                   dueCount: dueCount,
                   avgRetention: avgRetention,
                   isDark: isDark,
-                  isLandscape: false,
+                  isLandscape: isLandscape,
                 ),
               ),
               SizedBox(height: 12.h),

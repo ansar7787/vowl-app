@@ -47,7 +47,10 @@ class FlashcardVaultStatsBar extends StatelessWidget {
   }
 
   Widget _buildCard(String title, String val, Color color) => Container(
-    padding: EdgeInsets.symmetric(vertical: 8.h, horizontal: 6.w),
+    padding: EdgeInsets.symmetric(
+      vertical: isLandscape ? 5.h : 8.h,
+      horizontal: 6.w,
+    ),
     decoration: BoxDecoration(
       color: color.withValues(alpha: isDark ? 0.15 : 0.08),
       borderRadius: BorderRadius.circular(12.r),
