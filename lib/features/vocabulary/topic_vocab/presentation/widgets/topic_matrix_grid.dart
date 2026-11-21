@@ -48,6 +48,7 @@ class TopicMatrixGrid extends StatelessWidget {
 
         return SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
+          padding: EdgeInsets.only(bottom: 24.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [

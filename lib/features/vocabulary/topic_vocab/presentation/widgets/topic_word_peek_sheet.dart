@@ -44,9 +44,14 @@ class TopicWordPeekSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
+    final mediaQuery = MediaQuery.of(context);
+    final bottomInset = mediaQuery.viewPadding.bottom > 0
+        ? mediaQuery.viewPadding.bottom
+        : mediaQuery.padding.bottom;
+    final bottomPadding = 20.h + bottomInset;
 
     return Container(
-      padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, 28.h),
+      padding: EdgeInsets.fromLTRB(20.w, 16.h, 20.w, bottomPadding),
       decoration: BoxDecoration(
         color: isDark ? const Color(0xFF1E293B) : Colors.white,
         borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
