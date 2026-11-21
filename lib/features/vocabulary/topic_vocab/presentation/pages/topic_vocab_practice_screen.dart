@@ -114,6 +114,14 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
     return true;
   }
 
+  void _speak(String word) {
+    if (di.sl.isRegistered<TtsService>()) {
+      try {
+        di.sl<TtsService>().speak(word);
+      } catch (_) {}
+    }
+  }
+
   void _handleWordTap(String word) {
     if (_quests.isEmpty) return;
     final quest = _quests[_currentIndex];
@@ -121,11 +129,7 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
     final board = quest.boards.first;
     if (_activeCategoryIndex >= board.clusters.length) return;
 
-    if (di.sl.isRegistered<TtsService>()) {
-      try {
-        di.sl<TtsService>().speak(word);
-      } catch (_) {}
-    }
+    _speak(word);
 
     final activeCluster = board.clusters[_activeCategoryIndex];
     if (activeCluster.words.contains(word)) {
@@ -325,6 +329,7 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
                 emoji: cluster.emoji,
                 clue: board.clues['cat${String.fromCharCode(65 + idx)}Clue'],
                 explanation: cluster.explanation,
+                collocations: cluster.collocations,
                 targetCount: board.targetClusterSize,
                 placedWords: placed,
                 isActive: isTrayActive,
@@ -335,13 +340,7 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
                   setState(() => _activeCategoryIndex = idx);
                 },
                 onRemoveWord: (w) => _handleRemoveWord(idx, w),
-                onWordTap: (w) {
-                  if (di.sl.isRegistered<TtsService>()) {
-                    try {
-                      di.sl<TtsService>().speak(w);
-                    } catch (_) {}
-                  }
-                },
+                onWordTap: _speak,
               );
             }),
             if (_coachingMessage != null)

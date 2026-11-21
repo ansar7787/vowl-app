@@ -76,6 +76,7 @@ void main() {
             categoryName: 'Intense Heat',
             emoji: '🔥',
             explanation: 'Words describing high heat and vapor.',
+            collocations: const ['boiling water', 'scorching sun'],
             targetCount: 3,
             placedWords: const ['Boiling', 'Scorching', 'Steaming'],
             isActive: false,
@@ -90,6 +91,8 @@ void main() {
       expect(find.text('3/3'), findsOneWidget);
       expect(find.byIcon(Icons.check_rounded), findsOneWidget);
       expect(find.text('Words describing high heat and vapor.'), findsOneWidget);
+      expect(find.text('boiling water • scorching sun'), findsOneWidget);
+      expect(find.byIcon(Icons.link_rounded), findsOneWidget);
     });
   });
 }

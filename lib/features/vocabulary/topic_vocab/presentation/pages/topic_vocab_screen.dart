@@ -50,6 +50,8 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
   TopicVocabController? _controller;
   VocabularyQuest? _currentQuest;
   Timer? _countdownTimer;
+  Timer? _bonusTimer;
+  int _bonusSeconds = 0;
   int _remainingSeconds = 30;
   static const int _totalSeconds = 30;
 
@@ -62,6 +64,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
   @override
   void dispose() {
     _countdownTimer?.cancel();
+    _bonusTimer?.cancel();
     _controller?.dispose();
     disposeVocabularyGame();
     super.dispose();
@@ -124,6 +127,27 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
     _startTimer();
   }
 
+  List<String> _extractCollocations(List<String> words, VocabularyQuest quest) {
+    final result = <String>[];
+    final questColls = quest.collocations ?? [];
+    for (final coll in questColls) {
+      if (words.any((w) => coll.toLowerCase().contains(w.toLowerCase()))) {
+        result.add(coll);
+      }
+    }
+    if (result.isEmpty && quest.relatedWords != null) {
+      for (final rw in quest.relatedWords!) {
+        if (words.any((w) => rw.toLowerCase().contains(w.toLowerCase()))) {
+          final clean = rw.contains(':') ? rw.split(':')[0].trim() : rw.trim();
+          if (clean.contains(' ')) {
+            result.add(clean);
+          }
+        }
+      }
+    }
+    return result;
+  }
+
   List<TopicClusterGroup> _parseClusters(VocabularyQuest quest) {
     final Map<String, List<String>> bucketMap = {};
 
@@ -146,6 +170,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
           emoji: quest.topicEmoji ?? '🏷️',
           words: e.value,
           explanation: quest.explanation,
+          collocations: _extractCollocations(e.value, quest),
         );
       }).toList();
     }
@@ -156,19 +181,23 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
         ['Word A', 'Word B', 'Word C', 'Word D', 'Word E', 'Word F'];
     final half = (options.length / (buckets.isNotEmpty ? buckets.length : 2))
         .ceil();
+    final firstHalf = options.take(half).toList();
+    final secondHalf = options.skip(half).toList();
 
     return [
       TopicClusterGroup(
         categoryName: buckets.isNotEmpty ? buckets[0] : 'Domain Alpha',
         emoji: quest.topicEmoji ?? '🔥',
-        words: options.take(half).toList(),
+        words: firstHalf,
         explanation: quest.explanation,
+        collocations: _extractCollocations(firstHalf, quest),
       ),
       TopicClusterGroup(
         categoryName: buckets.length > 1 ? buckets[1] : 'Domain Beta',
         emoji: quest.topicEmoji ?? '❄️',
-        words: options.skip(half).toList(),
+        words: secondHalf,
         explanation: quest.explanation,
+        collocations: _extractCollocations(secondHalf, quest),
       ),
     ];
   }
@@ -178,6 +207,23 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
 
     final fused = _controller!.submitFusion();
     if (fused != null) {
+      final combo = _controller!.comboMultiplier;
+      soundService.playCorrect(comboStep: combo);
+      if (combo >= 2) {
+        hapticService.heavy();
+      } else {
+        hapticService.success();
+      }
+
+      _bonusTimer?.cancel();
+      setState(() {
+        _remainingSeconds = (_remainingSeconds + 5).clamp(1, _totalSeconds);
+        _bonusSeconds = 5;
+      });
+      _bonusTimer = Timer(const Duration(milliseconds: 1200), () {
+        if (mounted) setState(() => _bonusSeconds = 0);
+      });
+
       if (_controller!.isComplete) {
         _countdownTimer?.cancel();
         submitCorrectAnswer();
@@ -306,6 +352,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
                               remainingSeconds: _remainingSeconds,
                               totalSeconds: _totalSeconds,
                               accentColor: accentColor,
+                              bonusSecondsAdded: _bonusSeconds,
                             ),
                             SizedBox(height: 12.h),
                             Expanded(

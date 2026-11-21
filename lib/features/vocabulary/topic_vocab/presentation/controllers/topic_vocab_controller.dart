@@ -8,12 +8,14 @@ class TopicClusterGroup {
   final String emoji;
   final List<String> words;
   final String? explanation;
+  final List<String> collocations;
 
   const TopicClusterGroup({
     required this.categoryName,
     required this.emoji,
     required this.words,
     this.explanation,
+    this.collocations = const [],
   });
 }
 

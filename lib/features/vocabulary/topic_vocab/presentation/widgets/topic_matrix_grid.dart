@@ -59,6 +59,7 @@ class TopicMatrixGrid extends StatelessWidget {
                     emoji: c.emoji,
                     words: c.words,
                     explanation: c.explanation,
+                    collocations: c.collocations,
                     accentColor: accentColor,
                   ),
                 ),

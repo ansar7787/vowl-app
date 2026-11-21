@@ -14,6 +14,7 @@ class TopicCategoryTray extends StatelessWidget {
   final String emoji;
   final String? clue;
   final String? explanation;
+  final List<String>? collocations;
   final int targetCount;
   final List<String> placedWords;
   final bool isActive;
@@ -29,6 +30,7 @@ class TopicCategoryTray extends StatelessWidget {
     required this.emoji,
     this.clue,
     this.explanation,
+    this.collocations,
     this.targetCount = 3,
     required this.placedWords,
     required this.isActive,
@@ -184,6 +186,35 @@ class TopicCategoryTray extends StatelessWidget {
                 }
               }),
             ),
+
+            // Real-world Collocations spotlight
+            if (isCompleted && collocations != null && collocations!.isNotEmpty) ...[
+              SizedBox(height: 8.h),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.link_rounded,
+                    size: 13.r,
+                    color: AppColors.emerald500,
+                  ),
+                  SizedBox(width: 4.w),
+                  Expanded(
+                    child: AutoSizeText(
+                      collocations!.join(' • '),
+                      maxLines: 2,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.5.sp,
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.w500,
+                        color: isDark ? Colors.white70 : const Color(0xFF334155),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ],
         ),
       ),

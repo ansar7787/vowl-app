@@ -3,18 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/theme/vowl_motion.dart';
 
-/// Clean countdown timer bar with subtle urgency indicator.
+/// Clean countdown timer bar with subtle urgency indicator and dynamic bonus time badge.
 class TopicFusionTimer extends StatelessWidget {
   final int remainingSeconds;
   final int totalSeconds;
   final Color accentColor;
+  final int bonusSecondsAdded;
 
   const TopicFusionTimer({
     super.key,
     required this.remainingSeconds,
     required this.totalSeconds,
     required this.accentColor,
+    this.bonusSecondsAdded = 0,
   });
 
   @override
@@ -52,7 +55,7 @@ class TopicFusionTimer extends StatelessWidget {
       ),
       child: Row(
         children: [
-          if (isUrgent)
+          if (isUrgent && !VowlMotion.shouldReduceMotion(context))
             timerIcon
                 .animate(onPlay: (c) => c.repeat(reverse: true))
                 .scale(begin: const Offset(1, 1), end: const Offset(1.2, 1.2), duration: 400.ms)
@@ -81,8 +84,42 @@ class TopicFusionTimer extends StatelessWidget {
               color: timerColor,
             ),
           ),
+          if (bonusSecondsAdded > 0) ...[
+            SizedBox(width: 6.w),
+            _buildBonusBadge(context),
+          ],
         ],
       ),
     );
+  }
+
+  Widget _buildBonusBadge(BuildContext context) {
+    final badge = Container(
+      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+      decoration: BoxDecoration(
+        color: AppColors.emerald500,
+        borderRadius: BorderRadius.circular(8.r),
+      ),
+      child: Text(
+        '+${bonusSecondsAdded}s',
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 11.sp,
+          fontWeight: FontWeight.w800,
+          color: Colors.white,
+          letterSpacing: 0.2,
+        ),
+      ),
+    );
+
+    if (VowlMotion.shouldReduceMotion(context)) {
+      return badge;
+    }
+
+    return badge
+        .animate()
+        .fadeIn(duration: 200.ms)
+        .slideY(begin: 0.25, end: 0, duration: 250.ms, curve: Curves.easeOutBack)
+        .scale(begin: const Offset(0.85, 0.85), end: const Offset(1, 1));
   }
 }

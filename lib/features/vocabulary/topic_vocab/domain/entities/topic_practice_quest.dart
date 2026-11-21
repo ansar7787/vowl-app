@@ -4,21 +4,26 @@ class TopicPracticeCluster {
   final String emoji;
   final List<String> words;
   final String? explanation;
+  final List<String> collocations;
 
   const TopicPracticeCluster({
     required this.categoryName,
     this.emoji = '✨',
     required this.words,
     this.explanation,
+    this.collocations = const [],
   });
 
   factory TopicPracticeCluster.fromJson(Map<String, dynamic> json) {
     final rawWords = (json['words'] as List<dynamic>?) ?? [];
+    final rawColls = (json['collocations'] as List<dynamic>?) ??
+        (json['colls'] as List<dynamic>?) ?? [];
     return TopicPracticeCluster(
       categoryName: json['categoryName'] as String? ?? 'Category',
       emoji: json['emoji'] as String? ?? '✨',
       words: rawWords.map((e) => e.toString()).toList(),
       explanation: json['explanation'] as String?,
+      collocations: rawColls.map((e) => e.toString()).toList(),
     );
   }
 }
@@ -102,12 +107,14 @@ class TopicPracticeQuest {
               emoji: '🔥',
               words: ['Boiling', 'Scorching', 'Steaming'],
               explanation: 'Words describing high heat and vapor.',
+              collocations: ['boiling water', 'scorching sun', 'steaming mug'],
             ),
             TopicPracticeCluster(
               categoryName: 'Extreme Cold',
               emoji: '❄️',
               words: ['Freezing', 'Icy', 'Chilly'],
               explanation: 'Words describing freezing cold and ice.',
+              collocations: ['freezing point', 'icy road', 'chilly breeze'],
             ),
           ],
           clues: {
