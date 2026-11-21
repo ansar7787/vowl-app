@@ -79,7 +79,7 @@ void main() {
     correctAnswerIndex: 0,
     difficulty: 2,
     topicEmoji: '📜',
-    instruction: 'Slam the natural collocation before the fuse burns down!',
+    instruction: 'Choose the natural phrase before the timer runs out!',
   );
 
   setUpAll(() {
@@ -219,12 +219,9 @@ void main() {
         await pumpScreen(tester);
 
         expect(find.byType(FlashcardsScreen), findsOneWidget);
-        expect(find.text('SPEED FUSE'), findsOneWidget);
+        expect(find.text('TIME LEFT'), findsOneWidget);
         expect(find.text('AUTHENTIC'), findsWidgets);
-        expect(
-          find.text('STAGE 1: SLAM THE AUTHENTIC COLLOCATION'),
-          findsOneWidget,
-        );
+        expect(find.text('STAGE 1: CHOOSE THE NATURAL PHRASE'), findsOneWidget);
         expect(find.text('authentic cuisine'), findsOneWidget);
         expect(find.text('authentic weather'), findsOneWidget);
 
@@ -233,8 +230,8 @@ void main() {
         await tester.pump(const Duration(milliseconds: 600));
         await tester.pumpAndSettle();
 
-        // Should advance to Stage 2 Precision Strike
-        expect(find.text('STAGE 2: PRECISION SENTENCE STRIKE'), findsOneWidget);
+        // Should advance to Stage 2 Complete the Sentence
+        expect(find.text('STAGE 2: COMPLETE THE SENTENCE'), findsOneWidget);
         expect(find.text('AUTHENTIC'), findsWidgets);
 
         // Strike candidate word via dedicated key

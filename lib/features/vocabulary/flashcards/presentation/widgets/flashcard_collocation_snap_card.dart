@@ -63,7 +63,7 @@ class FlashcardCollocationSnapCard extends StatelessWidget {
               SizedBox(width: 8.w),
               Expanded(
                 child: Text(
-                  collocationPrompt ?? 'SELECT THE NATURAL WORD PARTNER',
+                  collocationPrompt ?? 'CHOOSE THE NATURAL PHRASE',
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 12.sp,

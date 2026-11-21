@@ -84,7 +84,7 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
                     color: AppColors.indigo500.withValues(alpha: 0.15),
                     borderRadius: BorderRadius.circular(10.r),
                   ),
-                  child: Text('🧠', style: TextStyle(fontSize: 18.sp)),
+                  child: Text('📚', style: TextStyle(fontSize: 18.sp)),
                 ),
                 SizedBox(width: 8.w),
                 Expanded(
@@ -92,7 +92,7 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Memory Vault',
+                        'Word Bank',
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 17.sp,
@@ -101,7 +101,7 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
                         ),
                       ),
                       Text(
-                        'Ebbinghaus Spaced Repetition',
+                        'Review words you\'ve learned',
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 11.sp,
@@ -137,7 +137,7 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
                 SizedBox(width: 8.w),
                 Expanded(
                   child: _buildStat(
-                    'DUE REVIEW',
+                    'TO REVIEW',
                     '$dueCount',
                     dueCount > 0 ? AppColors.rose500 : AppColors.emerald500,
                     isDark,
@@ -146,7 +146,7 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
                 SizedBox(width: 8.w),
                 Expanded(
                   child: _buildStat(
-                    'AVG HEALTH',
+                    'RETENTION',
                     '$avgRetention%',
                     avgRetention >= 70 ? AppColors.emerald500 : Colors.amber,
                     isDark,
@@ -172,7 +172,7 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
                     ),
                     SizedBox(width: 8.w),
                     _buildTab(
-                      'Due for Review ($dueCount)',
+                      'Needs Review ($dueCount)',
                       _filterDueOnly,
                       () => setState(() => _filterDueOnly = true),
                       isDark,
@@ -286,7 +286,7 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
           Text(
             _filterDueOnly
                 ? 'No Words Due for Review! 🎉'
-                : 'Your Memory Vault is Empty',
+                : 'Your Word Bank is Empty',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',
@@ -298,8 +298,8 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
           SizedBox(height: 6.h),
           Text(
             _filterDueOnly
-                ? 'All mastered words have high retention scores.'
-                : 'Complete the Mastery phase to record words and track memory decay here.',
+                ? 'All your saved words are fresh in memory.'
+                : 'Master words to add them here and review them before they fade.',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontFamily: 'Outfit',

@@ -364,7 +364,7 @@ class _FlashcardEchoPronunciationState
             SizedBox(width: 6.w),
             Flexible(
               child: Text(
-                'Echo Pronunciation',
+                'Practice Speaking',
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 13.sp,

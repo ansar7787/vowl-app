@@ -39,7 +39,7 @@ class FlashcardPrecisionStrikeView extends StatelessWidget {
             SizedBox(width: 6.w),
             Expanded(
               child: Text(
-                'STAGE 2: PRECISION SENTENCE STRIKE',
+                'STAGE 2: COMPLETE THE SENTENCE',
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 11.sp,

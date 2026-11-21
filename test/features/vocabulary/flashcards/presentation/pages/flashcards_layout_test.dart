@@ -64,7 +64,7 @@ void main() {
     wrongCollocations: ['authentic weather'],
     options: ['authentic', 'authoritarian', 'automatic'],
     difficulty: 1,
-    instruction: 'Slam the natural collocation before the fuse burns down!',
+    instruction: 'Choose the natural phrase before the timer runs out!',
   );
 
   Widget buildResponsiveHarness({

@@ -197,7 +197,7 @@ class FlashcardSpeedSlamView extends StatelessWidget {
             SizedBox(width: 6.w),
             Expanded(
               child: Text(
-                'STAGE 1: SLAM THE AUTHENTIC COLLOCATION',
+                'STAGE 1: CHOOSE THE NATURAL PHRASE',
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 11.sp,

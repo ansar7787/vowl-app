@@ -125,7 +125,7 @@ class FlashcardVaultEntryTile extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  '${entry.repetitionCount}x • ${entry.stabilityHours.round()}h stability',
+                  'Practiced ${entry.repetitionCount}x',
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 10.5.sp,

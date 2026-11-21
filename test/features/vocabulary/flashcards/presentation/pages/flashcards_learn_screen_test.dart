@@ -122,10 +122,10 @@ void main() {
         verify(() => mockTts.speak('AUTHENTIC')).called(1);
         await tester.pump(const Duration(milliseconds: 1500));
 
-        // Tap Echo Pronunciation button
-        expect(find.text('Echo Pronunciation'), findsOneWidget);
-        await tester.ensureVisible(find.text('Echo Pronunciation'));
-        await tester.tap(find.text('Echo Pronunciation'));
+        // Tap Practice Speaking button
+        expect(find.text('Practice Speaking'), findsOneWidget);
+        await tester.ensureVisible(find.text('Practice Speaking'));
+        await tester.tap(find.text('Practice Speaking'));
         await tester.pumpAndSettle();
         expect(find.text('Pronunciation Verified ✓'), findsOneWidget);
 

@@ -201,7 +201,7 @@ class _FlashcardsLearnScreenState extends State<FlashcardsLearnScreen> {
           key: const ValueKey('btn_memory_vault'),
           icon: const Icon(Icons.bookmark_added_rounded),
           color: isDark ? AppColors.indigo400 : AppColors.indigo600,
-          tooltip: 'Memory Vault',
+          tooltip: 'Word Bank',
           onPressed: () => FlashcardVaultSheet.show(context),
         ),
       ],

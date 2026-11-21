@@ -45,7 +45,7 @@ class FlashcardSpeedFuseBar extends StatelessWidget {
                     Icon(Icons.timer_rounded, size: 15.r, color: fuseColor),
                     SizedBox(width: 5.w),
                     Text(
-                      'SPEED FUSE',
+                      'TIME LEFT',
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 11.sp,

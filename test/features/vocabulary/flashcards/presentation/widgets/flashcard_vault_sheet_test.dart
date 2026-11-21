@@ -47,22 +47,22 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      expect(find.text('Memory Vault'), findsOneWidget);
-      expect(find.text('Ebbinghaus Spaced Repetition'), findsOneWidget);
+      expect(find.text('Word Bank'), findsOneWidget);
+      expect(find.text("Review words you've learned"), findsOneWidget);
 
       expect(find.text('MASTERED'), findsOneWidget);
-      expect(find.text('DUE REVIEW'), findsOneWidget);
-      expect(find.text('AVG HEALTH'), findsOneWidget);
+      expect(find.text('TO REVIEW'), findsOneWidget);
+      expect(find.text('RETENTION'), findsOneWidget);
 
       expect(find.text('AUTHENTIC'), findsOneWidget);
       expect(find.text('GENUINE'), findsOneWidget);
 
-      // Tap Due for Review tab
-      expect(find.textContaining('Due for Review'), findsOneWidget);
-      await tester.tap(find.textContaining('Due for Review'));
+      // Tap Needs Review tab
+      expect(find.textContaining('Needs Review'), findsOneWidget);
+      await tester.tap(find.textContaining('Needs Review'));
       await tester.pumpAndSettle();
 
-      // GENUINE (decayed after 5 days with 24h stability) should be in Due for Review
+      // GENUINE (decayed after 5 days with 24h stability) should be in Needs Review
       expect(find.text('GENUINE'), findsOneWidget);
     });
 
@@ -81,8 +81,11 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      expect(find.text('Your Memory Vault is Empty'), findsOneWidget);
-      expect(find.textContaining('Complete the Mastery phase'), findsOneWidget);
+      expect(find.text('Your Word Bank is Empty'), findsOneWidget);
+      expect(
+        find.textContaining('Master words to add them here'),
+        findsOneWidget,
+      );
     });
   });
 }
