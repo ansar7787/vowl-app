@@ -1,9 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
-/// Responsive countdown timer bar for Mastery Phase speed challenge.
+/// Responsive countdown timer bar with urgent heartbeat pulse for Mastery Phase speed challenge.
 class TopicFusionTimer extends StatelessWidget {
   final int remainingSeconds;
   final int totalSeconds;
@@ -22,22 +23,41 @@ class TopicFusionTimer extends StatelessWidget {
     final progress = (remainingSeconds / (totalSeconds > 0 ? totalSeconds : 30))
         .clamp(0.0, 1.0);
 
-    final timerColor = remainingSeconds <= 5
+    final isUrgent = remainingSeconds <= 5;
+    final timerColor = isUrgent
         ? AppColors.rose500
         : (remainingSeconds <= 10 ? AppColors.amber500 : accentColor);
+
+    final timerIcon = Icon(
+      Icons.timer_outlined,
+      color: timerColor,
+      size: 18.r,
+    );
 
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
       decoration: BoxDecoration(
         color: isDark
-            ? Colors.white.withValues(alpha: 0.05)
-            : Colors.black.withValues(alpha: 0.03),
+            ? (isUrgent
+                ? AppColors.rose500.withValues(alpha: 0.1)
+                : Colors.white.withValues(alpha: 0.05))
+            : (isUrgent
+                ? AppColors.rose500.withValues(alpha: 0.08)
+                : Colors.black.withValues(alpha: 0.03)),
         borderRadius: BorderRadius.circular(14.r),
-        border: Border.all(color: timerColor.withValues(alpha: 0.3)),
+        border: Border.all(
+          color: timerColor.withValues(alpha: isUrgent ? 0.6 : 0.3),
+          width: isUrgent ? 1.5 : 1.0,
+        ),
       ),
       child: Row(
         children: [
-          Icon(Icons.timer_outlined, color: timerColor, size: 18.r),
+          if (isUrgent)
+            timerIcon
+                .animate(onPlay: (c) => c.repeat(reverse: true))
+                .scale(begin: const Offset(1, 1), end: const Offset(1.25, 1.25), duration: 400.ms)
+          else
+            timerIcon,
           SizedBox(width: 8.w),
           Expanded(
             child: ClipRRect(

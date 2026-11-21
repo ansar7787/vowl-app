@@ -138,6 +138,7 @@ class _TopicVocabLearnScreenState extends State<TopicVocabLearnScreen> {
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('topicVocab', level: widget.level);
     final accentColor = theme.primaryColor;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     if (_isLoading) {
       return LearnPhaseScaffold(
@@ -169,14 +170,45 @@ class _TopicVocabLearnScreenState extends State<TopicVocabLearnScreen> {
       gameType: 'topicVocab',
       level: widget.level,
       isActionEnabled: true,
-      actionLabel: isLast ? 'Got It! Start Practice' : 'Next Category',
+      actionLabel: isLast ? 'Got It! Start Practice' : 'Next Category (${_currentIndex + 1}/${_quests.length})',
       onComplete: _handleNext,
-      child: TopicBlueprintTree(
-        conceptTitle: quest['conceptTitle'] as String? ?? 'Thematic Clusters',
-        topicEmoji: quest['topicEmoji'] as String? ?? '🏷️',
-        categories: (quest['categories'] as List<dynamic>?) ?? [],
-        contrastInsight: quest['contrastInsight'] as String?,
-        accentColor: accentColor,
+      child: Column(
+        children: [
+          if (_quests.length > 1)
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 6.h),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(_quests.length, (idx) {
+                  final isActive = idx == _currentIndex;
+                  final isDone = idx < _currentIndex;
+                  return AnimatedContainer(
+                    duration: const Duration(milliseconds: 250),
+                    margin: EdgeInsets.symmetric(horizontal: 3.w),
+                    width: isActive ? 22.w : 7.w,
+                    height: 5.h,
+                    decoration: BoxDecoration(
+                      color: isActive
+                          ? accentColor
+                          : (isDone
+                              ? accentColor.withValues(alpha: 0.45)
+                              : (isDark ? Colors.white24 : Colors.black12)),
+                      borderRadius: BorderRadius.circular(4.r),
+                    ),
+                  );
+                }),
+              ),
+            ),
+          Expanded(
+            child: TopicBlueprintTree(
+              conceptTitle: quest['conceptTitle'] as String? ?? 'Thematic Clusters',
+              topicEmoji: quest['topicEmoji'] as String? ?? '🏷️',
+              categories: (quest['categories'] as List<dynamic>?) ?? [],
+              contrastInsight: quest['contrastInsight'] as String?,
+              accentColor: accentColor,
+            ),
+          ),
+        ],
       ),
     );
   }

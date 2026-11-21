@@ -2,9 +2,11 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
-/// Celebratory merged banner representing an already-fused thematic cluster.
+/// Celebratory merged banner representing an already-fused thematic cluster
+/// with native audio pronunciation support.
 class TopicClusterBanner extends StatelessWidget {
   final String categoryName;
   final String emoji;
@@ -58,6 +60,12 @@ class TopicClusterBanner extends StatelessWidget {
                       ),
                     ),
                   ),
+                  TtsSpeakerButtonWidget(
+                    text: words.join(', '),
+                    color: accentColor,
+                    size: 26.r,
+                  ),
+                  SizedBox(width: 6.w),
                   Icon(
                     Icons.check_circle_rounded,
                     color: AppColors.emerald500,

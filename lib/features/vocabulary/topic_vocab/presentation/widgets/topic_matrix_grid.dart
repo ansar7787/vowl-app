@@ -11,7 +11,7 @@ import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_fusion_tile.dart';
 
 /// Interactive matrix grid displaying fused banners, remaining word tiles,
-/// one-away hints, and action buttons.
+/// one-away hints, combo streaks, and action buttons.
 class TopicMatrixGrid extends StatelessWidget {
   final TopicVocabController controller;
   final Color accentColor;
@@ -38,6 +38,7 @@ class TopicMatrixGrid extends StatelessWidget {
         final selected = controller.selectedTiles;
         final canFuse =
             selected.length == controller.targetClusterSize && !isAnswered;
+        final combo = controller.comboMultiplier;
 
         return SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
@@ -57,6 +58,53 @@ class TopicMatrixGrid extends StatelessWidget {
                 ),
                 SizedBox(height: 6.h),
               ],
+
+              // Arcade Combo Streak Banner
+              if (combo > 1 && !isAnswered)
+                Container(
+                      margin: EdgeInsets.only(bottom: 10.h),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 14.w,
+                        vertical: 6.h,
+                      ),
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [
+                            AppColors.amber500,
+                            AppColors.rose500,
+                          ],
+                        ),
+                        borderRadius: BorderRadius.circular(20.r),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.amber500.withValues(alpha: 0.35),
+                            blurRadius: 10.r,
+                            offset: const Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.local_fire_department_rounded, color: Colors.white, size: 18.r),
+                          SizedBox(width: 6.w),
+                          Text(
+                            combo >= 3 ? '⚡ $combo× MEGA COMBO!' : '🔥 $combo× SPEED COMBO!',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 13.sp,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.white,
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                    .animate()
+                    .fadeIn(duration: 200.ms)
+                    .scale(begin: const Offset(0.85, 0.85), end: const Offset(1, 1), curve: Curves.easeOutBack),
 
               // One-away hint banner
               if (controller.isOneAway)
@@ -118,9 +166,12 @@ class TopicMatrixGrid extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final word = remaining[index];
                       final isTileSelected = selected.contains(word);
+                      final isTileError =
+                          controller.isShaking && isTileSelected;
                       return TopicFusionTile(
                         word: word,
                         isSelected: isTileSelected,
+                        isError: isTileError,
                         accentColor: accentColor,
                         onTap: isAnswered
                             ? () {}
@@ -154,12 +205,29 @@ class TopicMatrixGrid extends StatelessWidget {
                                   : Colors.black.withValues(alpha: 0.1),
                             ),
                           ),
-                          child: Icon(
-                            Icons.clear_rounded,
-                            size: 20.r,
-                            color: selected.isEmpty
-                                ? (isDark ? Colors.white24 : Colors.black26)
-                                : (isDark ? Colors.white70 : Colors.black87),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.clear_rounded,
+                                size: 18.r,
+                                color: selected.isEmpty
+                                    ? (isDark ? Colors.white24 : Colors.black26)
+                                    : (isDark ? Colors.white70 : Colors.black87),
+                              ),
+                              if (selected.isNotEmpty) ...[
+                                SizedBox(width: 4.w),
+                                Text(
+                                  '${selected.length}',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: isDark ? Colors.white70 : Colors.black87,
+                                  ),
+                                ),
+                              ],
+                            ],
                           ),
                         ),
                       ),
@@ -186,7 +254,7 @@ class TopicMatrixGrid extends StatelessWidget {
                           ),
                           child: Icon(
                             Icons.shuffle_rounded,
-                            size: 20.r,
+                            size: 18.r,
                             color: isDark ? Colors.white70 : Colors.black87,
                           ),
                         ),
