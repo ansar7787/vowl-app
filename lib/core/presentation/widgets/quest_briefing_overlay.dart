@@ -8,8 +8,8 @@ import 'package:vowl/core/utils/locale_service.dart';
 
 /// Mission briefing overlay shown before a quest begins or on-demand from the header.
 ///
-/// Designed with standard 16.w edge margins, solid dark surface contrast,
-/// zero-idle battery consumption, and cohesive pedagogical hierarchy.
+/// Fully harmonized across Light, Dark, and AMOLED Midnight modes with zero text-contrast
+/// conflicts, 16.w edge margins, solid surface rendering, and zero-idle battery consumption.
 class QuestBriefingOverlay extends StatefulWidget {
   final String title;
   final String objective;
@@ -82,6 +82,36 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+
+    final cardBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark ? AppColors.midnightNavy : Colors.white);
+
+    final cardBorder = isMidnight
+        ? Colors.white.withValues(alpha: 0.16)
+        : (isDark ? Colors.white.withValues(alpha: 0.1) : AppColors.slate200);
+
+    final backdropColor = isMidnight
+        ? Colors.black.withValues(alpha: 0.92)
+        : (isDark
+              ? Colors.black.withValues(alpha: 0.85)
+              : Colors.black.withValues(alpha: 0.65));
+
+    final cardShadow = isDark
+        ? BoxShadow(
+            color: widget.primaryColor.withValues(alpha: 0.25),
+            blurRadius: 24.r,
+            offset: Offset(0, 8.h),
+          )
+        : BoxShadow(
+            color: Colors.black.withValues(alpha: 0.12),
+            blurRadius: 24.r,
+            offset: Offset(0, 8.h),
+          );
+
     return Semantics(
       label: context.tr('common.mission_briefing', fallback: 'MISSION BRIEFING'),
       child: Material(
@@ -92,32 +122,26 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
             return Stack(
               children: [
                 Positioned.fill(
-                  child: ColoredBox(color: Colors.black.withValues(alpha: 0.85))
+                  child: ColoredBox(color: backdropColor)
                       .animate(target: isExiting ? 1 : 0)
                       .fadeOut(duration: _exitAnimDuration),
                 ),
                 Center(
                   child: SingleChildScrollView(
-                    padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 24.h),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 24.h,
+                    ),
                     physics: const BouncingScrollPhysics(),
                     child: Container(
                       width: double.infinity,
                       constraints: const BoxConstraints(maxWidth: 480),
                       padding: EdgeInsets.all(20.r),
                       decoration: BoxDecoration(
-                        color: AppColors.slate900,
+                        color: cardBg,
                         borderRadius: BorderRadius.circular(24.r),
-                        border: Border.all(
-                          color: Colors.white.withValues(alpha: 0.12),
-                          width: 1.0,
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: widget.primaryColor.withValues(alpha: 0.25),
-                            blurRadius: 24.r,
-                            offset: Offset(0, 8.h),
-                          ),
-                        ],
+                        border: Border.all(color: cardBorder, width: 1.0),
+                        boxShadow: [cardShadow],
                       ),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -130,13 +154,13 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                           ],
                           _buildCategoryLabel(context),
                           SizedBox(height: 4.h),
-                          _buildTitle(),
+                          _buildTitle(isDark),
                           SizedBox(height: 14.h),
-                          _buildObjectiveBox(),
+                          _buildObjectiveBox(isDark, isMidnight),
                           SizedBox(height: 14.h),
                           ..._ruleWidgets,
                           SizedBox(height: 14.h),
-                          _buildTipCard(),
+                          _buildTipCard(isDark),
                           SizedBox(height: 18.h),
                           _buildCtaButton(),
                         ],
@@ -222,7 +246,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
         ),
       );
 
-  Widget _buildTitle() => AutoSizeText(
+  Widget _buildTitle(bool isDark) => AutoSizeText(
         widget.title.toUpperCase(),
         textAlign: TextAlign.center,
         maxLines: 2,
@@ -231,65 +255,78 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
           fontFamily: 'Outfit',
           fontSize: 19.sp,
           fontWeight: FontWeight.w800,
-          color: Colors.white,
+          color: isDark ? Colors.white : AppColors.slate900,
         ),
       );
 
-  Widget _buildObjectiveBox() => Container(
-        width: double.infinity,
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
-        decoration: BoxDecoration(
-          color: Colors.white.withValues(alpha: 0.05),
-          borderRadius: BorderRadius.circular(16.r),
-          border: Border.all(
-            color: Colors.white.withValues(alpha: 0.08),
-            width: 1,
-          ),
-        ),
-        child: Text(
-          widget.objective,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontFamily: 'Outfit',
-            fontSize: 13.sp,
-            fontWeight: FontWeight.w500,
-            color: Colors.white.withValues(alpha: 0.92),
-            height: 1.45,
-          ),
-        ),
-      );
+  Widget _buildObjectiveBox(bool isDark, bool isMidnight) {
+    final bg = isMidnight
+        ? Colors.white.withValues(alpha: 0.04)
+        : (isDark ? Colors.white.withValues(alpha: 0.05) : AppColors.slate50);
+    final border = isDark
+        ? Colors.white.withValues(alpha: isMidnight ? 0.12 : 0.08)
+        : AppColors.slate200;
+    final textCol =
+        isDark ? Colors.white.withValues(alpha: 0.92) : AppColors.slate800;
 
-  Widget _buildTipCard() => Container(
-        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
-        decoration: BoxDecoration(
-          color: Colors.amber.withValues(alpha: 0.1),
-          borderRadius: BorderRadius.circular(14.r),
-          border: Border.all(
-            color: Colors.amber.withValues(alpha: 0.3),
-            width: 1,
-          ),
+    return Container(
+      width: double.infinity,
+      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+      decoration: BoxDecoration(
+        color: bg,
+        borderRadius: BorderRadius.circular(16.r),
+        border: Border.all(color: border, width: 1),
+      ),
+      child: Text(
+        widget.objective,
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontFamily: 'Outfit',
+          fontSize: 13.sp,
+          fontWeight: FontWeight.w500,
+          color: textCol,
+          height: 1.45,
         ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Icon(Icons.tips_and_updates_rounded, color: Colors.amber, size: 16.r),
-            SizedBox(width: 8.w),
-            Expanded(
-              child: Text(
-                widget.tip,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 11.5.sp,
-                  color: Colors.white.withValues(alpha: 0.85),
-                  fontWeight: FontWeight.w500,
-                  fontStyle: FontStyle.italic,
-                  height: 1.35,
-                ),
+      ),
+    );
+  }
+
+  Widget _buildTipCard(bool isDark) {
+    final bg = Colors.amber.withValues(alpha: isDark ? 0.1 : 0.12);
+    final border = Colors.amber.withValues(alpha: isDark ? 0.3 : 0.35);
+    final textCol =
+        isDark ? Colors.white.withValues(alpha: 0.88) : AppColors.slate800;
+    final iconCol = isDark ? Colors.amber : Colors.amber.shade800;
+
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
+      decoration: BoxDecoration(
+        color: bg,
+        borderRadius: BorderRadius.circular(14.r),
+        border: Border.all(color: border, width: 1),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(Icons.tips_and_updates_rounded, color: iconCol, size: 16.r),
+          SizedBox(width: 8.w),
+          Expanded(
+            child: Text(
+              widget.tip,
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 11.5.sp,
+                color: textCol,
+                fontWeight: FontWeight.w500,
+                fontStyle: FontStyle.italic,
+                height: 1.35,
               ),
             ),
-          ],
-        ),
-      );
+          ),
+        ],
+      ),
+    );
+  }
 
   Widget _buildCtaButton() => RepaintBoundary(
         child: Semantics(
@@ -351,6 +388,10 @@ class _RuleItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final textCol =
+        isDark ? Colors.white.withValues(alpha: 0.88) : AppColors.slate700;
+
     return Padding(
       padding: EdgeInsets.only(bottom: 8.h),
       child: Row(
@@ -364,7 +405,7 @@ class _RuleItem extends StatelessWidget {
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 12.5.sp,
-                color: Colors.white.withValues(alpha: 0.85),
+                color: textCol,
                 fontWeight: FontWeight.w500,
                 height: 1.35,
               ),
