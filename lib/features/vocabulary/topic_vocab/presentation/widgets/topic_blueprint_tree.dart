@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/features/vocabulary/topic_vocab/domain/entities/topic_learn_quest.dart';
 
-/// Clean semantic word overview for the Learn phase with balanced typography
-/// and real-world English usage context.
+/// Clean semantic word overview for the Learn phase with balanced typography,
+/// real-world English usage context, and strongly-typed domain models.
 class TopicBlueprintTree extends StatelessWidget {
   final String conceptTitle;
   final String topicEmoji;
-  final List<dynamic> categories;
+  final List<TopicCategory> categories;
   final String? contrastInsight;
   final Color accentColor;
 
@@ -103,15 +104,6 @@ class TopicBlueprintTree extends StatelessWidget {
 
           // Category Cards
           ...categories.map((cat) {
-            final categoryMap = cat as Map<String, dynamic>;
-            final catName = categoryMap['name'] as String? ?? 'Topic';
-            final catEmoji = categoryMap['emoji'] as String? ?? '📌';
-            final catDesc =
-                categoryMap['desc'] as String? ??
-                categoryMap['description'] as String? ??
-                '';
-            final wordsList = (categoryMap['words'] as List<dynamic>?) ?? [];
-
             return Container(
               margin: EdgeInsets.only(bottom: 12.h),
               padding: EdgeInsets.all(12.r),
@@ -132,11 +124,11 @@ class TopicBlueprintTree extends StatelessWidget {
                   // Category Title
                   Row(
                     children: [
-                      Text(catEmoji, style: TextStyle(fontSize: 18.sp)),
+                      Text(cat.emoji, style: TextStyle(fontSize: 18.sp)),
                       SizedBox(width: 8.w),
                       Expanded(
                         child: AutoSizeText(
-                          catName,
+                          cat.name,
                           maxLines: 1,
                           style: TextStyle(
                             fontFamily: 'Outfit',
@@ -148,10 +140,10 @@ class TopicBlueprintTree extends StatelessWidget {
                       ),
                     ],
                   ),
-                  if (catDesc.isNotEmpty) ...[
+                  if (cat.description.isNotEmpty) ...[
                     SizedBox(height: 4.h),
                     Text(
-                      catDesc,
+                      cat.description,
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 12.sp,
@@ -163,13 +155,7 @@ class TopicBlueprintTree extends StatelessWidget {
                   SizedBox(height: 10.h),
 
                   // Word items
-                  ...wordsList.map((w) {
-                    final wMap = w as Map<String, dynamic>;
-                    final word = wMap['word'] as String? ?? '';
-                    final ipa = wMap['ipa'] as String? ?? '';
-                    final def = wMap['def'] as String? ?? '';
-                    final coll = wMap['coll'] as String? ?? '';
-
+                  ...cat.words.map((w) {
                     return Container(
                       margin: EdgeInsets.only(bottom: 8.h),
                       padding: EdgeInsets.all(10.r),
@@ -193,7 +179,7 @@ class TopicBlueprintTree extends StatelessWidget {
                                 child: Row(
                                   children: [
                                     Text(
-                                      word,
+                                      w.word,
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 14.sp,
@@ -203,10 +189,10 @@ class TopicBlueprintTree extends StatelessWidget {
                                             : const Color(0xFF0F172A),
                                       ),
                                     ),
-                                    if (ipa.isNotEmpty) ...[
+                                    if (w.ipa.isNotEmpty) ...[
                                       SizedBox(width: 6.w),
                                       Text(
-                                        ipa,
+                                        w.ipa,
                                         style: TextStyle(
                                           fontFamily: 'Outfit',
                                           fontSize: 11.sp,
@@ -221,16 +207,16 @@ class TopicBlueprintTree extends StatelessWidget {
                                 ),
                               ),
                               TtsSpeakerButtonWidget(
-                                text: word,
+                                text: w.word,
                                 color: accentColor,
                                 size: 26.r,
                               ),
                             ],
                           ),
-                          if (def.isNotEmpty) ...[
+                          if (w.definition.isNotEmpty) ...[
                             SizedBox(height: 3.h),
                             Text(
-                              def,
+                              w.definition,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 12.sp,
@@ -241,7 +227,7 @@ class TopicBlueprintTree extends StatelessWidget {
                               ),
                             ),
                           ],
-                          if (coll.isNotEmpty) ...[
+                          if (w.collocation.isNotEmpty) ...[
                             SizedBox(height: 5.h),
                             Container(
                               padding: EdgeInsets.symmetric(
@@ -263,7 +249,7 @@ class TopicBlueprintTree extends StatelessWidget {
                                   SizedBox(width: 4.w),
                                   Flexible(
                                     child: Text(
-                                      coll,
+                                      w.collocation,
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 11.sp,

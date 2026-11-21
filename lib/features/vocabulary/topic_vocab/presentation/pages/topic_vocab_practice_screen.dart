@@ -9,13 +9,14 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/features/vocabulary/topic_vocab/domain/entities/topic_practice_quest.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/controllers/topic_vocab_controller.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_matrix_grid.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_word_peek_sheet.dart';
 
-/// Guided active recall screen for Topic Vocab ("Cluster Fusion Gym").
-/// Learners practice fusing tiles into 3-word semantic clusters with hints,
-/// one-away feedback, audio tap feedback, and long-press definition peeking.
+/// Guided active recall screen for Topic Vocab ("Practice: Word Groups").
+/// Learners practice grouping tiles into 3-word semantic clusters with hints,
+/// one-away feedback, audio tap feedback, and strongly-typed domain models.
 class TopicVocabPracticeScreen extends StatefulWidget {
   final int level;
 
@@ -28,7 +29,7 @@ class TopicVocabPracticeScreen extends StatefulWidget {
 
 class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
   int _currentIndex = 0;
-  List<Map<String, dynamic>> _quests = [];
+  List<TopicPracticeQuest> _quests = [];
   bool _isLoading = true;
   TopicVocabController? _controller;
   late final HapticService _hapticService = di.sl.isRegistered<HapticService>()
@@ -61,6 +62,7 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
 
       final filtered = rawQuests
           .where((q) => (q['level'] as int? ?? widget.level) == widget.level)
+          .map((q) => TopicPracticeQuest.fromJson(q))
           .toList();
 
       if (mounted) {
@@ -81,15 +83,16 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
     }
   }
 
-  List<Map<String, dynamic>> _buildFallbackQuests() {
+  List<TopicPracticeQuest> _buildFallbackQuests() {
     return [
-      {
-        'id': 'VOC_TOPICVOCAB_L${widget.level}_PRACTICE_FALLBACK',
-        'level': widget.level,
-        'boards': [
-          {
-            'targetClusterSize': 3,
-            'tiles': [
+      TopicPracticeQuest(
+        id: 'VOC_TOPICVOCAB_L${widget.level}_PRACTICE_FALLBACK',
+        level: widget.level,
+        conceptTitle: 'Practice: Word Groups',
+        boards: const [
+          TopicPracticeBoard(
+            targetClusterSize: 3,
+            tiles: [
               'Boiling',
               'Scorching',
               'Steaming',
@@ -97,27 +100,27 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
               'Icy',
               'Chilly',
             ],
-            'clusters': [
-              {
-                'categoryName': 'Intense Heat',
-                'emoji': '🔥',
-                'words': ['Boiling', 'Scorching', 'Steaming'],
-                'explanation': 'Terms describing extreme heat.',
-              },
-              {
-                'categoryName': 'Extreme Cold',
-                'emoji': '❄️',
-                'words': ['Freezing', 'Icy', 'Chilly'],
-                'explanation': 'Terms describing freezing chill.',
-              },
+            clusters: [
+              TopicPracticeCluster(
+                categoryName: 'Intense Heat',
+                emoji: '🔥',
+                words: ['Boiling', 'Scorching', 'Steaming'],
+                explanation: 'Words describing high heat and vapor.',
+              ),
+              TopicPracticeCluster(
+                categoryName: 'Extreme Cold',
+                emoji: '❄️',
+                words: ['Freezing', 'Icy', 'Chilly'],
+                explanation: 'Words describing freezing cold and ice.',
+              ),
             ],
-            'clues': {
-              'catAClue': 'Think of hot temperatures and vapor.',
-              'catBClue': 'Think of winter ice and frost.',
+            clues: {
+              'catAClue': 'Think of high temperatures and boiling heat.',
+              'catBClue': 'Think of freezing ice and cold winter weather.',
             },
-          },
+          ),
         ],
-      },
+      ),
     ];
   }
 
@@ -126,33 +129,23 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
     if (_quests.isEmpty) return;
 
     final quest = _quests[_currentIndex];
-    final boards = (quest['boards'] as List<dynamic>?) ?? [];
-    if (boards.isEmpty) return;
+    if (quest.boards.isEmpty) return;
 
-    final board = boards.first as Map<String, dynamic>;
-    final clustersList = (board['clusters'] as List<dynamic>?) ?? [];
-    final targetSize = board['targetClusterSize'] as int? ?? 3;
-    final initialTiles = (board['tiles'] as List<dynamic>?)
-        ?.map((e) => e.toString())
-        .toList();
-
-    final parsedClusters = clustersList.map((c) {
-      final cmap = c as Map<String, dynamic>;
+    final board = quest.boards.first;
+    final parsedClusters = board.clusters.map((c) {
       return TopicClusterGroup(
-        categoryName: cmap['categoryName'] as String? ?? 'Category',
-        emoji: cmap['emoji'] as String? ?? '✨',
-        words: (cmap['words'] as List<dynamic>)
-            .map((e) => e.toString())
-            .toList(),
-        explanation: cmap['explanation'] as String?,
+        categoryName: c.categoryName,
+        emoji: c.emoji,
+        words: c.words,
+        explanation: c.explanation,
       );
     }).toList();
 
     _controller =
         TopicVocabController(
           targetClusters: parsedClusters,
-          targetClusterSize: targetSize,
-          initialTiles: initialTiles,
+          targetClusterSize: board.targetClusterSize,
+          initialTiles: board.tiles,
           hapticService: _hapticService,
         )..addListener(() {
           if (mounted) setState(() {});
@@ -166,14 +159,12 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
   void _handleHint() {
     if (_quests.isEmpty) return;
     final quest = _quests[_currentIndex];
-    final boards = (quest['boards'] as List<dynamic>?) ?? [];
-    if (boards.isEmpty) return;
-    final board = boards.first as Map<String, dynamic>;
-    final clues = board['clues'] as Map<String, dynamic>?;
+    if (quest.boards.isEmpty) return;
+    final board = quest.boards.first;
 
-    final clueText = clues != null
-        ? clues.values.join(' • ')
-        : 'Look for semantic similarities among remaining tiles.';
+    final clueText = board.clues.isNotEmpty
+        ? board.clues.values.join(' • ')
+        : 'Look for words that share a common theme or situation.';
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -187,23 +178,16 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
   void _handleTileLongPress(String word) {
     if (_quests.isEmpty) return;
     final quest = _quests[_currentIndex];
-    final boards = (quest['boards'] as List<dynamic>?) ?? [];
-    if (boards.isEmpty) return;
-    final board = boards.first as Map<String, dynamic>;
-    final clusters = (board['clusters'] as List<dynamic>?) ?? [];
+    if (quest.boards.isEmpty) return;
+    final board = quest.boards.first;
 
     String? matchedCategory;
     String? matchedExplanation;
 
-    for (final c in clusters) {
-      final cmap = c as Map<String, dynamic>;
-      final words = (cmap['words'] as List<dynamic>?)
-              ?.map((e) => e.toString())
-              .toList() ??
-          [];
-      if (words.contains(word)) {
-        matchedCategory = cmap['categoryName'] as String?;
-        matchedExplanation = cmap['explanation'] as String?;
+    for (final c in board.clusters) {
+      if (c.words.contains(word)) {
+        matchedCategory = c.categoryName;
+        matchedExplanation = c.explanation;
         break;
       }
     }

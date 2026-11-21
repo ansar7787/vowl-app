@@ -10,6 +10,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:vowl/features/vocabulary/topic_vocab/domain/entities/topic_learn_quest.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/pages/topic_vocab_learn_screen.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_blueprint_tree.dart';
 
@@ -27,32 +28,31 @@ void main() {
   late MockAuthBloc mockAuthBloc;
 
   final testQuests = [
-    {
-      'id': 'VOC_TOPICVOCAB_L1_LEARN_TEST',
-      'level': 1,
-      'conceptTitle': 'Thermal Spectrum: Heat vs Cold',
-      'topicEmoji': '🌡️',
-      'topicBuckets': ['Intense Heat', 'Extreme Cold'],
-      'contrastInsight': 'Notice differences between heat and cold.',
-      'categories': [
-        {
-          'name': 'Intense Heat',
-          'emoji': '🔥',
-          'desc': 'High thermal energy terms.',
-          'words': [
-            {'word': 'Boiling', 'ipa': '/ˈbɔɪ.lɪŋ/', 'def': 'Liquid heated to 100°C.', 'coll': 'boiling water', 'int': 'Extreme'},
-          ]
-        },
-        {
-          'name': 'Extreme Cold',
-          'emoji': '❄️',
-          'desc': 'Sub-zero terms.',
-          'words': [
-            {'word': 'Freezing', 'ipa': '/ˈfriː.zɪŋ/', 'def': 'Ice cold below 0°C.', 'coll': 'freezing cold', 'int': 'Extreme'},
-          ]
-        }
-      ]
-    }
+    const TopicLearnQuest(
+      id: 'VOC_TOPICVOCAB_L1_LEARN_TEST',
+      level: 1,
+      conceptTitle: 'Thermal Spectrum: Heat vs Cold',
+      topicEmoji: '🌡️',
+      contrastInsight: 'Notice differences between heat and cold.',
+      categories: [
+        TopicCategory(
+          name: 'Intense Heat',
+          emoji: '🔥',
+          description: 'High thermal energy terms.',
+          words: [
+            TopicWordDetail(word: 'Boiling', ipa: '/ˈbɔɪ.lɪŋ/', definition: 'Liquid heated to 100°C.', collocation: 'boiling water'),
+          ],
+        ),
+        TopicCategory(
+          name: 'Extreme Cold',
+          emoji: '❄️',
+          description: 'Sub-zero terms.',
+          words: [
+            TopicWordDetail(word: 'Freezing', ipa: '/ˈfriː.zɪŋ/', definition: 'Ice cold below 0°C.', collocation: 'freezing cold'),
+          ],
+        ),
+      ],
+    ),
   ];
 
   setUp(() async {
@@ -67,31 +67,31 @@ void main() {
     when(() => mockHaptics.heavy()).thenAnswer((_) async {});
     when(() => mockHaptics.warning()).thenAnswer((_) async {});
     when(() => mockHaptics.error()).thenAnswer((_) async {});
-    when(() => mockHaptics.success()).thenAnswer((_) async {});
+    when(() => mockSounds.playCorrect(comboStep: any(named: 'comboStep'))).thenAnswer((_) async {});
+    when(() => mockTts.speak(any())).thenAnswer((_) async {});
 
-    when(() => mockTts.stop()).thenAnswer((_) async {});
-    when(() => mockTts.speak(any(), rate: any(named: 'rate'), locale: any(named: 'locale'))).thenAnswer((_) async {});
+    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
+    if (di.sl.isRegistered<SoundService>()) di.sl.unregister<SoundService>();
+    if (di.sl.isRegistered<TtsService>()) di.sl.unregister<TtsService>();
 
-    await di.sl.reset();
     di.sl.registerSingleton<HapticService>(mockHaptics);
     di.sl.registerSingleton<SoundService>(mockSounds);
     di.sl.registerSingleton<TtsService>(mockTts);
   });
 
   tearDown(() {
-    VowlMotion.lowAnimationModeOverride.value = false;
+    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
+    if (di.sl.isRegistered<SoundService>()) di.sl.unregister<SoundService>();
+    if (di.sl.isRegistered<TtsService>()) di.sl.unregister<TtsService>();
   });
 
   Widget buildTestableWidget(Widget child) {
     return ScreenUtilInit(
       designSize: const Size(390, 844),
       builder: (context, _) => MaterialApp(
-        home: MediaQuery(
-          data: const MediaQueryData(disableAnimations: true),
-          child: BlocProvider<AuthBloc>.value(
-            value: mockAuthBloc,
-            child: child,
-          ),
+        home: BlocProvider<AuthBloc>.value(
+          value: mockAuthBloc,
+          child: Scaffold(body: child),
         ),
       ),
     );

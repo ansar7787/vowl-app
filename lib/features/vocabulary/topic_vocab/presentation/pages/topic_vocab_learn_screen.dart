@@ -9,14 +9,15 @@ import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/features/vocabulary/topic_vocab/domain/entities/topic_learn_quest.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_blueprint_tree.dart';
 
-/// Zero-stress Learn Phase screen for Topic Vocab ("Topic Vocab Lab").
+/// Zero-stress Learn Phase screen for Topic Vocab ("Topic Vocabulary").
 /// Explores thematic boundaries, word definitions, phonetic pronunciations,
-/// and collocations without timer or life penalties.
+/// and collocations with strongly typed domain entities and no timer or life penalties.
 class TopicVocabLearnScreen extends StatefulWidget {
   final int level;
-  final List<Map<String, dynamic>>? initialQuests;
+  final List<TopicLearnQuest>? initialQuests;
 
   const TopicVocabLearnScreen({
     super.key,
@@ -30,7 +31,7 @@ class TopicVocabLearnScreen extends StatefulWidget {
 
 class _TopicVocabLearnScreenState extends State<TopicVocabLearnScreen> {
   int _currentIndex = 0;
-  List<Map<String, dynamic>> _quests = [];
+  List<TopicLearnQuest> _quests = [];
   bool _isLoading = true;
   late final HapticService _hapticService =
       di.sl.isRegistered<HapticService>() ? di.sl<HapticService>() : HapticService();
@@ -56,7 +57,10 @@ class _TopicVocabLearnScreenState extends State<TopicVocabLearnScreen> {
       final data = jsonDecode(jsonString) as Map<String, dynamic>;
       final rawQuests = (data['quests'] as List<dynamic>).cast<Map<String, dynamic>>();
 
-      final filtered = rawQuests.where((q) => (q['level'] as int? ?? widget.level) == widget.level).toList();
+      final filtered = rawQuests
+          .where((q) => (q['level'] as int? ?? widget.level) == widget.level)
+          .map((q) => TopicLearnQuest.fromJson(q))
+          .toList();
 
       if (mounted) {
         setState(() {
@@ -74,38 +78,37 @@ class _TopicVocabLearnScreenState extends State<TopicVocabLearnScreen> {
     }
   }
 
-  List<Map<String, dynamic>> _buildFallbackQuests() {
+  List<TopicLearnQuest> _buildFallbackQuests() {
     return [
-      {
-        'id': 'VOC_TOPICVOCAB_L${widget.level}_LEARN_FALLBACK',
-        'level': widget.level,
-        'conceptTitle': 'Thematic Domains: Discovery L${widget.level}',
-        'topicEmoji': '🏷️',
-        'topicBuckets': ['Primary Domain', 'Secondary Domain'],
-        'contrastInsight': 'Notice differences between primary and secondary domains.',
-        'categories': [
-          {
-            'name': 'Primary Domain',
-            'emoji': '🔹',
-            'desc': 'Core fundamental vocabulary terms.',
-            'words': [
-              {'word': 'Anchor', 'ipa': '/ˈæŋ.kər/', 'def': 'A central, stabilizing concept or object.', 'coll': 'firm anchor', 'int': 'Base'},
-              {'word': 'Pillar', 'ipa': '/ˈpɪl.ər/', 'def': 'A prominent supporting feature.', 'coll': 'central pillar', 'int': 'Support'},
-              {'word': 'Bedrock', 'ipa': '/ˈbed.rɒk/', 'def': 'The solid fundamental foundation.', 'coll': 'solid bedrock', 'int': 'Foundation'}
-            ]
-          },
-          {
-            'name': 'Secondary Domain',
-            'emoji': '🔸',
-            'desc': 'Dynamic or expressive terms in this context.',
-            'words': [
-              {'word': 'Vortex', 'ipa': '/ˈvɔː.teks/', 'def': 'A whirling mass of fluid or air.', 'coll': 'polar vortex', 'int': 'Dynamic'},
-              {'word': 'Ripple', 'ipa': '/ˈrɪp.əl/', 'def': 'A small wave or series of waves.', 'coll': 'ripple effect', 'int': 'Wave'},
-              {'word': 'Current', 'ipa': '/ˈkʌr.ənt/', 'def': 'A body of water moving in a definite direction.', 'coll': 'ocean current', 'int': 'Flow'}
-            ]
-          }
-        ]
-      }
+      TopicLearnQuest(
+        id: 'VOC_TOPICVOCAB_L${widget.level}_LEARN_FALLBACK',
+        level: widget.level,
+        conceptTitle: 'Topic Words • Level ${widget.level}',
+        topicEmoji: '🏷️',
+        contrastInsight: 'Compare how these words are used in different situations.',
+        categories: const [
+          TopicCategory(
+            name: 'Core Words',
+            emoji: '🔹',
+            description: 'Fundamental vocabulary terms.',
+            words: [
+              TopicWordDetail(word: 'Anchor', ipa: '/ˈæŋ.kər/', definition: 'A central, stabilizing concept or object.', collocation: 'firm anchor'),
+              TopicWordDetail(word: 'Pillar', ipa: '/ˈpɪl.ər/', definition: 'A prominent supporting feature.', collocation: 'central pillar'),
+              TopicWordDetail(word: 'Bedrock', ipa: '/ˈbed.rɒk/', definition: 'The solid fundamental foundation.', collocation: 'solid bedrock'),
+            ],
+          ),
+          TopicCategory(
+            name: 'Related Words',
+            emoji: '🔸',
+            description: 'Contextual terms in this topic.',
+            words: [
+              TopicWordDetail(word: 'Vortex', ipa: '/ˈvɔː.teks/', definition: 'A whirling mass of fluid or air.', collocation: 'polar vortex'),
+              TopicWordDetail(word: 'Ripple', ipa: '/ˈrɪp.əl/', definition: 'A small wave or series of waves.', collocation: 'ripple effect'),
+              TopicWordDetail(word: 'Current', ipa: '/ˈkʌr.ənt/', definition: 'A body of water moving in a definite direction.', collocation: 'ocean current'),
+            ],
+          ),
+        ],
+      ),
     ];
   }
 
@@ -201,10 +204,10 @@ class _TopicVocabLearnScreenState extends State<TopicVocabLearnScreen> {
             ),
           Expanded(
             child: TopicBlueprintTree(
-              conceptTitle: quest['conceptTitle'] as String? ?? 'Thematic Clusters',
-              topicEmoji: quest['topicEmoji'] as String? ?? '🏷️',
-              categories: (quest['categories'] as List<dynamic>?) ?? [],
-              contrastInsight: quest['contrastInsight'] as String?,
+              conceptTitle: quest.conceptTitle,
+              topicEmoji: quest.topicEmoji,
+              categories: quest.categories,
+              contrastInsight: quest.contrastInsight,
               accentColor: accentColor,
             ),
           ),
