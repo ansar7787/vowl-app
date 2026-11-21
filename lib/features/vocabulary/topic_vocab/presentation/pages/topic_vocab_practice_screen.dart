@@ -74,21 +74,19 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
       final loaded = filtered.isNotEmpty
           ? filtered
           : [TopicPracticeQuest.fallback(widget.level)];
-      if (mounted) {
-        setState(() {
-          _quests = loaded;
-          _isLoading = false;
-          _initBoardForCurrentQuest();
-        });
-      }
+      _setLoadedQuests(loaded);
     } catch (_) {
-      if (mounted) {
-        setState(() {
-          _quests = [TopicPracticeQuest.fallback(widget.level)];
-          _isLoading = false;
-          _initBoardForCurrentQuest();
-        });
-      }
+      _setLoadedQuests([TopicPracticeQuest.fallback(widget.level)]);
+    }
+  }
+
+  void _setLoadedQuests(List<TopicPracticeQuest> loaded) {
+    if (mounted) {
+      setState(() {
+        _quests = loaded;
+        _isLoading = false;
+        _initBoardForCurrentQuest();
+      });
     }
   }
 
@@ -151,11 +149,7 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
             board.targetClusterSize) {
           _hapticService.success();
           if (di.sl.isRegistered<SoundService>()) {
-            try {
-              di.sl<SoundService>().playCorrect(
-                    comboStep: _isBoardComplete ? 3 : 1,
-                  );
-            } catch (_) {}
+            try { di.sl<SoundService>().playCorrect(comboStep: _isBoardComplete ? 3 : 1); } catch (_) {}
           }
           for (int i = 0; i < board.clusters.length; i++) {
             if ((_placedWords[i]?.length ?? 0) < board.targetClusterSize) {
@@ -168,9 +162,7 @@ class _TopicVocabPracticeScreenState extends State<TopicVocabPracticeScreen> {
     } else {
       _hapticService.error();
       if (di.sl.isRegistered<SoundService>()) {
-        try {
-          di.sl<SoundService>().playSoftWrong();
-        } catch (_) {}
+        try { di.sl<SoundService>().playSoftWrong(); } catch (_) {}
       }
       final matching = board.clusters.firstWhere(
         (c) => c.words.contains(word),

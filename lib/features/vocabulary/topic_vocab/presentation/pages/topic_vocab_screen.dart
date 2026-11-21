@@ -369,6 +369,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
                       totalSeconds: _totalSeconds,
                       accentColor: accentColor,
                       bonusSecondsAdded: _bonusSeconds,
+                      comboMultiplier: _controller?.comboMultiplier ?? 1,
                     ),
                     SizedBox(height: 12.h),
                     Expanded(

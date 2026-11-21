@@ -79,5 +79,24 @@ void main() {
       expect(find.text('4s'), findsOneWidget);
       expect(find.byIcon(Icons.timer_outlined), findsOneWidget);
     });
+
+    testWidgets('renders combo streak badge when comboMultiplier > 1', (tester) async {
+      await tester.pumpWidget(
+        buildTestableWidget(
+          const TopicFusionTimer(
+            remainingSeconds: 18,
+            totalSeconds: 30,
+            accentColor: Colors.deepPurple,
+            comboMultiplier: 2,
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.text('TIME LEFT'), findsOneWidget);
+      expect(find.text('18s'), findsOneWidget);
+      expect(find.text('2x COMBO'), findsOneWidget);
+      expect(find.byIcon(Icons.local_fire_department_rounded), findsOneWidget);
+    });
   });
 }
