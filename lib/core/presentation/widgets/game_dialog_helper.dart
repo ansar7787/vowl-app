@@ -82,10 +82,23 @@ class GameDialogHelper {
     _sound.playLevelComplete();
     _haptic.success();
 
-    if (mistakesMade == 0 && di.sl.isRegistered<PraiseService>()) {
+    final stars = GamificationRepositoryImpl.lastEarnedStars.value;
+    final int effectiveMistakes = mistakesMade > 0
+        ? mistakesMade
+        : (stars > 0 ? (3 - stars).clamp(0, 3) : 0);
+
+    if (effectiveMistakes == 0 &&
+        stars == 3 &&
+        di.sl.isRegistered<PraiseService>()) {
       Timer(const Duration(milliseconds: 1400), () {
         try {
           di.sl<PraiseService>().givePraise(context: PraiseContext.flawless);
+        } catch (_) {}
+      });
+    } else if (stars > 0 && di.sl.isRegistered<PraiseService>()) {
+      Timer(const Duration(milliseconds: 1400), () {
+        try {
+          di.sl<PraiseService>().givePraise(context: PraiseContext.standard);
         } catch (_) {}
       });
     }

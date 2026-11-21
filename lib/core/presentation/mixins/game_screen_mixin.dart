@@ -127,8 +127,15 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
     BuildContext context, {
     required int xpEarned,
     required int coinsEarned,
+    int? livesRemaining,
   }) {
     showConfettiNotifier.value = true;
+
+    final effectiveLives = livesRemaining ?? lastLives;
+    final effectiveStars = GamificationRepositoryImpl.lastEarnedStars.value;
+    final mistakes = effectiveLives != null
+        ? (3 - effectiveLives).clamp(0, 3)
+        : (effectiveStars > 0 ? (3 - effectiveStars).clamp(0, 3) : 0);
 
     // Optimistically unlock the next level and credit earned XP and coins in AuthBloc
     // so map state, top bar HUD, and profile reflect the completion immediately upon navigation.
@@ -139,7 +146,7 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
           level: level,
           xp: xpEarned,
           coins: coinsEarned,
-          stars: GamificationRepositoryImpl.lastEarnedStars.value,
+          stars: effectiveStars,
         ),
       );
     } catch (_) {
@@ -152,6 +159,7 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
       coins: coinsEarned,
       title: getCompletionTitle(context),
       enableDoubleUp: true,
+      mistakesMade: mistakes,
       gameType: gameType.name,
       level: level,
     );

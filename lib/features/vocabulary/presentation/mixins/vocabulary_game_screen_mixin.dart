@@ -59,6 +59,7 @@ mixin VocabularyGameScreenMixin<T extends StatefulWidget>
         context,
         xpEarned: state.xpEarned,
         coinsEarned: state.coinsEarned,
+        livesRemaining: state.livesRemaining,
       );
     }
   }

@@ -293,6 +293,7 @@ class VocabularyBloc extends Bloc<VocabularyEvent, VocabularyState> {
         xpEarned: xp,
         coinsEarned: coins,
         questCount: s.quests.length,
+        livesRemaining: s.livesRemaining,
       ),
     );
 

@@ -174,15 +174,23 @@ class VocabularyGameComplete extends VocabularyState
   @override
   final int coinsEarned;
   final int questCount;
+  @override
+  final int livesRemaining;
 
   const VocabularyGameComplete({
     required this.xpEarned,
     required this.coinsEarned,
     required this.questCount,
+    this.livesRemaining = 3,
   });
 
   @override
-  List<Object?> get props => [xpEarned, coinsEarned, questCount];
+  List<Object?> get props => [
+    xpEarned,
+    coinsEarned,
+    questCount,
+    livesRemaining,
+  ];
 }
 
 /// The player ran out of lives.  Carries enough context for a revive to
