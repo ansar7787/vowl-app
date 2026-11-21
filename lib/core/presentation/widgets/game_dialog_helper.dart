@@ -406,6 +406,8 @@ class GameDialogHelper {
     required VoidCallback onQuit,
     String? title,
     String? description,
+    String? continueButtonText,
+    String? exitButtonText,
   }) {
     final resolvedTitle =
         title ?? context.tr('games.quit_game_title', fallback: 'QUIT GAME?');
@@ -416,6 +418,12 @@ class GameDialogHelper {
           fallback:
               'Your current progress for this level will be lost. Are you sure?',
         );
+    final resolvedContinue =
+        continueButtonText ??
+        context.tr('games.keep_playing', fallback: 'KEEP PLAYING');
+    final resolvedExit =
+        exitButtonText ??
+        context.tr('common.exit', fallback: 'EXIT').toUpperCase();
 
     showDialog(
       context: context,
@@ -423,12 +431,11 @@ class GameDialogHelper {
       builder: (dialogCtx) => ModernGameDialog(
         title: resolvedTitle,
         description: resolvedDescription,
-        buttonText: context.tr('games.keep_playing', fallback: 'KEEP PLAYING'),
+        buttonText: resolvedContinue,
         isSuccess: true,
         onButtonPressed: () => Navigator.of(dialogCtx).pop(),
         isExitConfirmation: true,
-        adButtonText:
-            context.tr('common.exit', fallback: 'EXIT').toUpperCase(),
+        adButtonText: resolvedExit,
         onAdAction: () {
           Navigator.of(dialogCtx).pop();
           onQuit();

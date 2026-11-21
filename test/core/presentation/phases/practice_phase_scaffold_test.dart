@@ -99,15 +99,15 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('QUIT GAME?'), findsOneWidget);
-      expect(find.text('KEEP PLAYING'), findsOneWidget);
+      expect(find.text('QUIT PRACTICE?'), findsOneWidget);
+      expect(find.text('KEEP PRACTICING'), findsOneWidget);
       expect(find.text('EXIT'), findsOneWidget);
 
-      await tester.tap(find.text('KEEP PLAYING'));
+      await tester.tap(find.text('KEEP PRACTICING'));
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.text('QUIT GAME?'), findsNothing);
+      expect(find.text('QUIT PRACTICE?'), findsNothing);
     });
 
     testWidgets('tapping close icon calls onExit callback when provided', (tester) async {

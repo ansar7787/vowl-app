@@ -83,6 +83,10 @@ class PracticePhaseScaffold extends StatelessWidget {
       } else {
         GameDialogHelper.showExitConfirmation(
           context,
+          title: 'QUIT PRACTICE?',
+          description:
+              'Your completed Learn phase is safe! You will only restart this practice session from exercise 1 when you return.',
+          continueButtonText: 'KEEP PRACTICING',
           onQuit: () {
             if (Navigator.of(context).canPop()) {
               Navigator.of(context).pop();

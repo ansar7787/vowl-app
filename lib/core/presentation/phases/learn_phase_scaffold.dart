@@ -68,6 +68,10 @@ class LearnPhaseScaffold extends StatelessWidget {
       } else {
         GameDialogHelper.showExitConfirmation(
           context,
+          title: 'LEAVE LEARN PHASE?',
+          description:
+              'You can return anytime. Your study cards for this session will reset to word 1 when you come back.',
+          continueButtonText: 'KEEP LEARNING',
           onQuit: () {
             if (Navigator.of(context).canPop()) {
               Navigator.of(context).pop();

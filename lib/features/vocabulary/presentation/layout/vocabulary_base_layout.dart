@@ -134,6 +134,10 @@ class VocabularyBaseLayout extends StatelessWidget {
               onQuit: () {
                 GameDialogHelper.showExitConfirmation(
                   context,
+                  title: 'QUIT MASTERY?',
+                  description:
+                      'Your Learn and Practice progress are safe! This mastery round will end without saving your score.',
+                  continueButtonText: 'KEEP PLAYING',
                   onQuit: () => Navigator.of(context).pop(),
                 );
               },
