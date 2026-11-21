@@ -10,6 +10,7 @@ import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/flashcards/data/services/flashcard_vault_service.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/controllers/flashcard_controller.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_collocation_snap_card.dart';
+import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_precision_strike_view.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_speed_slam_view.dart';
 import 'package:vowl/features/vocabulary/flashcards/presentation/widgets/flashcard_vault_sheet.dart';
 
@@ -106,7 +107,9 @@ void main() {
         );
 
         // Tap Remembered to refresh memory
-        await tester.ensureVisible(find.byKey(const ValueKey('btn_refresh_memory')));
+        await tester.ensureVisible(
+          find.byKey(const ValueKey('btn_refresh_memory')),
+        );
         await tester.tap(find.byKey(const ValueKey('btn_refresh_memory')));
         await tester.pump(const Duration(milliseconds: 300));
 
@@ -121,7 +124,9 @@ void main() {
         expect(find.byKey(const ValueKey('btn_review_done')), findsOneWidget);
 
         // Tap Back to Word Bank
-        await tester.ensureVisible(find.byKey(const ValueKey('btn_review_done')));
+        await tester.ensureVisible(
+          find.byKey(const ValueKey('btn_review_done')),
+        );
         await tester.tap(find.byKey(const ValueKey('btn_review_done')));
         await tester.pumpAndSettle();
 
@@ -215,6 +220,81 @@ void main() {
           find.textContaining('Natural pairing: "authentic cuisine"'),
           findsOneWidget,
         );
+      },
+    );
+
+    testWidgets(
+      'FlashcardPrecisionStrikeView displays 1-line instant explanation on incorrect candidate word',
+      (tester) async {
+        final controller = FlashcardMasteryController(
+          hapticService: mockHaptic,
+          onSubmitResult: ({required isCorrect, required speedBonus}) {},
+        );
+        addTearDown(controller.dispose);
+
+        const quest = VocabularyQuest(
+          id: 'test_strike',
+          word: 'AUTHENTIC',
+          instruction: 'Complete the sentence with the correct word.',
+          difficulty: 1,
+          contextSentence: 'The chef makes _____ Italian pasta.',
+        );
+
+        controller.isStage2.value = true;
+        await tester.pumpWidget(
+          buildTestableWidget(
+            SingleChildScrollView(
+              child: FlashcardPrecisionStrikeView(
+                quest: quest,
+                controller: controller,
+                candidateWords: const ['AUTOMATIC', 'AUTHENTIC'],
+                isDark: false,
+              ),
+            ),
+          ),
+        );
+        await tester.pumpAndSettle();
+
+        // Tap incorrect candidate word (candidate_0: AUTOMATIC)
+        await tester.tap(find.byKey(const ValueKey('candidate_0')));
+        await tester.pumpAndSettle();
+
+        // 1-line instant explanation should be visible
+        expect(
+          find.textContaining(
+            'Context fit: "AUTHENTIC" naturally fits the meaning of this sentence.',
+          ),
+          findsOneWidget,
+        );
+      },
+    );
+
+    testWidgets(
+      'FlashcardVaultSheet individual entry tile tap opens quick-review dialog',
+      (tester) async {
+        final entries = [
+          FlashcardVaultEntry(
+            word: 'SERENDIPITY',
+            level: 3,
+            lastTestedAt: DateTime.now().subtract(const Duration(days: 3)),
+            stabilityHours: 24.0,
+            repetitionCount: 1,
+          ),
+        ];
+
+        await tester.pumpWidget(
+          buildTestableWidget(FlashcardVaultSheet(initialEntries: entries)),
+        );
+        await tester.pumpAndSettle();
+
+        // Tap the entry tile
+        await tester.tap(find.text('SERENDIPITY'));
+        await tester.pumpAndSettle();
+
+        // Quick-Review dialog opens for this single word
+        expect(find.text('Word 1 of 1'), findsOneWidget);
+        expect(find.byKey(const ValueKey('btn_refresh_memory')), findsOneWidget);
+        expect(find.text('SERENDIPITY'), findsWidgets);
       },
     );
   });

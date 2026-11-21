@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
@@ -85,118 +86,160 @@ class FlashcardPrecisionStrikeView extends StatelessWidget {
           valueListenable: controller.selectedCandidateIndex,
           builder: (context, selectedIdx, _) {
             return Column(
-              children: List.generate(candidateWords.length, (idx) {
-                final word = candidateWords[idx];
-                final isSelected = selectedIdx == idx;
-                final isTarget =
-                    word.trim().toLowerCase() ==
-                    targetWord.trim().toLowerCase();
+              children: [
+                ...List.generate(candidateWords.length, (idx) {
+                  final word = candidateWords[idx];
+                  final isSelected = selectedIdx == idx;
+                  final isTarget =
+                      word.trim().toLowerCase() ==
+                      targetWord.trim().toLowerCase();
 
-                Color borderCol = isDark
-                    ? AppColors.slate800
-                    : AppColors.slate200;
-                Color bgCol = isDark ? AppColors.slate900 : Colors.white;
+                  Color borderCol = isDark
+                      ? AppColors.slate800
+                      : AppColors.slate200;
+                  Color bgCol = isDark ? AppColors.slate900 : Colors.white;
 
-                if (isSelected) {
-                  if (isTarget) {
-                    borderCol = Colors.green;
-                    bgCol = Colors.green.withValues(alpha: 0.15);
-                  } else {
-                    borderCol = Colors.red;
-                    bgCol = Colors.red.withValues(alpha: 0.15);
+                  if (isSelected) {
+                    if (isTarget) {
+                      borderCol = Colors.green;
+                      bgCol = Colors.green.withValues(alpha: 0.15);
+                    } else {
+                      borderCol = Colors.red;
+                      bgCol = Colors.red.withValues(alpha: 0.15);
+                    }
                   }
-                }
 
-                return Padding(
-                  padding: EdgeInsets.only(bottom: 10.h),
-                  child: ScaleButton(
-                    key: ValueKey('candidate_$idx'),
-                    onTap: () => controller.strikeCandidateWord(
-                      index: idx,
-                      selectedWord: word,
-                      targetWord: targetWord,
-                    ),
-                    child: Container(
-                      width: double.infinity,
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 16.w,
-                        vertical: 14.h,
-                      ),
-                      decoration: BoxDecoration(
-                        color: bgCol,
-                        borderRadius: BorderRadius.circular(14.r),
-                        border: Border.all(
-                          color: borderCol,
-                          width: isSelected ? 2.5 : 1.5,
+                  return Padding(
+                    padding: EdgeInsets.only(bottom: 10.h),
+                    child: ScaleButton(
+                      key: ValueKey('candidate_$idx'),
+                      onTap: () {
+                        HapticFeedback.selectionClick();
+                        controller.strikeCandidateWord(
+                          index: idx,
+                          selectedWord: word,
+                          targetWord: targetWord,
+                        );
+                      },
+                      child: Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 16.w,
+                          vertical: 14.h,
                         ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withValues(
-                              alpha: isDark ? 0.25 : 0.04,
-                            ),
-                            blurRadius: 6.r,
-                            offset: Offset(0, 2.h),
+                        decoration: BoxDecoration(
+                          color: bgCol,
+                          borderRadius: BorderRadius.circular(14.r),
+                          border: Border.all(
+                            color: borderCol,
+                            width: isSelected ? 2.5 : 1.5,
                           ),
-                        ],
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withValues(
+                                alpha: isDark ? 0.25 : 0.04,
+                              ),
+                              blurRadius: 6.r,
+                              offset: Offset(0, 2.h),
+                            ),
+                          ],
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 28.r,
+                              height: 28.r,
+                              decoration: BoxDecoration(
+                                color: isDark
+                                    ? AppColors.slate800
+                                    : AppColors.slate100,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  String.fromCharCode(65 + idx),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 13.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: isDark
+                                        ? Colors.white
+                                        : AppColors.slate900,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 12.w),
+                            Expanded(
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                alignment: Alignment.centerLeft,
+                                child: Text(
+                                  word.toUpperCase(),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 15.sp,
+                                    fontWeight: FontWeight.w800,
+                                    letterSpacing: 1.1,
+                                    color: isDark
+                                        ? Colors.white
+                                        : AppColors.slate900,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            if (isSelected)
+                              Icon(
+                                isTarget
+                                    ? Icons.check_circle_rounded
+                                    : Icons.cancel_rounded,
+                                size: 20.r,
+                                color: isTarget ? Colors.green : Colors.red,
+                              ),
+                          ],
+                        ),
                       ),
-                      child: Row(
-                        children: [
-                          Container(
-                            width: 28.r,
-                            height: 28.r,
-                            decoration: BoxDecoration(
+                    ),
+                  );
+                }),
+                if (selectedIdx != null &&
+                    candidateWords[selectedIdx].trim().toLowerCase() !=
+                        targetWord.trim().toLowerCase()) ...[
+                  SizedBox(height: 6.h),
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 14.w,
+                      vertical: 10.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Colors.amber.withValues(alpha: isDark ? 0.2 : 0.1),
+                      borderRadius: BorderRadius.circular(12.r),
+                      border: Border.all(
+                        color: Colors.amber.withValues(alpha: 0.35),
+                      ),
+                    ),
+                    child: Row(
+                      children: [
+                        Text('💡', style: TextStyle(fontSize: 15.sp)),
+                        SizedBox(width: 8.w),
+                        Expanded(
+                          child: Text(
+                            'Context fit: "${targetWord.toUpperCase()}" naturally fits the meaning of this sentence.',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 12.sp,
+                              fontWeight: FontWeight.w600,
                               color: isDark
-                                  ? AppColors.slate800
-                                  : AppColors.slate100,
-                              shape: BoxShape.circle,
-                            ),
-                            child: Center(
-                              child: Text(
-                                String.fromCharCode(65 + idx),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 13.sp,
-                                  fontWeight: FontWeight.w800,
-                                  color: isDark
-                                      ? Colors.white
-                                      : AppColors.slate900,
-                                ),
-                              ),
+                                  ? Colors.amberAccent
+                                  : Colors.amber.shade900,
                             ),
                           ),
-                          SizedBox(width: 12.w),
-                          Expanded(
-                            child: FittedBox(
-                              fit: BoxFit.scaleDown,
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                word.toUpperCase(),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 15.sp,
-                                  fontWeight: FontWeight.w800,
-                                  letterSpacing: 1.1,
-                                  color: isDark
-                                      ? Colors.white
-                                      : AppColors.slate900,
-                                ),
-                              ),
-                            ),
-                          ),
-                          if (isSelected)
-                            Icon(
-                              isTarget
-                                  ? Icons.check_circle_rounded
-                                  : Icons.cancel_rounded,
-                              size: 20.r,
-                              color: isTarget ? Colors.green : Colors.red,
-                            ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
-                );
-              }),
+                ],
+              ],
             );
           },
         ),

@@ -213,6 +213,7 @@ class _FlashcardVaultSheetState extends State<FlashcardVaultSheet> {
                     itemBuilder: (context, idx) => FlashcardVaultEntryTile(
                       entry: displayed[idx],
                       isDark: isDark,
+                      onTap: () => _startQuickReview([displayed[idx]]),
                     ),
                   ),
           ),

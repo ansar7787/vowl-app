@@ -59,11 +59,9 @@ class FlashcardSpeedSlamView extends StatelessWidget {
             'automatic',
           ];
 
-    return SingleChildScrollView(
-      physics: const BouncingScrollPhysics(),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
         // ── Mastery Phase Header Pill Tag ────────────────────────────────────
         Center(
           child: Container(
@@ -184,9 +182,8 @@ class FlashcardSpeedSlamView extends StatelessWidget {
           },
         ),
       ],
-    ),
-  );
-}
+    );
+  }
 
   Widget _buildStage1CollocationSlam(
     BuildContext context, {

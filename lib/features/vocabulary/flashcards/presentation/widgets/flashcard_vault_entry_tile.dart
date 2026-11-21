@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
@@ -10,11 +11,13 @@ import '../../data/services/flashcard_vault_service.dart';
 class FlashcardVaultEntryTile extends StatelessWidget {
   final FlashcardVaultEntry entry;
   final bool isDark;
+  final VoidCallback? onTap;
 
   const FlashcardVaultEntryTile({
     super.key,
     required this.entry,
     required this.isDark,
+    this.onTap,
   });
 
   @override
@@ -27,7 +30,7 @@ class FlashcardVaultEntryTile extends StatelessWidget {
         ? 'Strong'
         : (r >= 50 ? 'Fading' : 'Review Now');
 
-    return Container(
+    final card = Container(
       padding: EdgeInsets.all(12.r),
       decoration: BoxDecoration(
         color: isDark ? AppColors.slate800 : Colors.white,
@@ -90,6 +93,7 @@ class FlashcardVaultEntryTile extends StatelessWidget {
               ),
               ScaleButton(
                 onTap: () {
+                  HapticFeedback.lightImpact();
                   if (di.sl.isRegistered<TtsService>()) {
                     di.sl<TtsService>().speak(entry.word);
                   }
@@ -148,5 +152,10 @@ class FlashcardVaultEntryTile extends StatelessWidget {
         ],
       ),
     );
+
+    if (onTap != null) {
+      return ScaleButton(onTap: onTap!, child: card);
+    }
+    return card;
   }
 }
