@@ -83,6 +83,29 @@ void main() {
       );
     });
 
+    test('getTargetWeekKey bounds strictly to previous or current week', () {
+      final now = DateTime.utc(2026, 11, 4); // ISO week 45, prev is week 44
+      const userWithOldWeek = UserEntity(
+        id: 'u_old',
+        email: 'old@vowl.app',
+        previousRankWeekKey: '2026-W40',
+      );
+      expect(
+        WeeklyLeagueRewardHelper.getTargetWeekKey(userWithOldWeek, now),
+        equals('2026-W44'),
+      );
+
+      const userWithPrevWeek = UserEntity(
+        id: 'u_prev',
+        email: 'prev@vowl.app',
+        previousRankWeekKey: '2026-W44',
+      );
+      expect(
+        WeeklyLeagueRewardHelper.getTargetWeekKey(userWithPrevWeek, now),
+        equals('2026-W44'),
+      );
+    });
+
     test('allocates VIP days and coins strictly according to tier', () {
       expect(WeeklyLeagueRewardHelper.getVipDays(1), 7);
       expect(WeeklyLeagueRewardHelper.getCoins(1), 500);

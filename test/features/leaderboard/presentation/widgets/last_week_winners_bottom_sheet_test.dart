@@ -319,6 +319,54 @@ void main() {
   );
 
   testWidgets(
+    'does not mark current week as claimed even if user previously claimed a historical older week',
+    (tester) async {
+      tester.view.physicalSize = const Size(390 * 2, 844 * 2);
+      tester.view.devicePixelRatio = 2.0;
+      addTearDown(() => tester.view.resetPhysicalSize());
+
+      // User who claimed week 44 in the past, but is now viewing week 45 which is unclaimed
+      final userWithOldClaim = UserEntity(
+        id: 'user_old_claim',
+        email: 'oldclaim@vowl.app',
+        displayName: 'Hero Winner',
+        previousRank: 1,
+        previousRankWeekKey: '2026-W44', // previous rank was stored with old key
+        claimedWeeklyRewardWeekKeys: const ['2026-W44'], // only 44 claimed, NOT 45!
+      );
+
+      final winners = [
+        {
+          'id': userWithOldClaim.id,
+          'rank': 1,
+          'displayName': userWithOldClaim.displayName,
+          'photoUrl': null,
+          'weeklyXp': 6500,
+          'currentStreak': 14,
+          'weekKey': targetWeekKey, // 2026-W45
+        },
+      ];
+
+      await tester.pumpWidget(
+        buildTestWidget(
+          LastWeekWinnersBottomSheet(
+            winners: winners,
+            currentUser: userWithOldClaim,
+            weekKey: targetWeekKey,
+          ),
+          currentUser: userWithOldClaim,
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      // Must NOT be marked as claimed for week 45!
+      expect(find.text('Claim Reward (7d VIP · '), findsOneWidget);
+      expect(find.text('+500)'), findsOneWidget);
+      expect(find.text('Claimed: '), findsNothing);
+    },
+  );
+
+  testWidgets(
     'preserves Rank #4 for 4th-place finisher based on exact weekly XP and enables 100 coin claim',
     (tester) async {
       tester.view.physicalSize = const Size(390 * 2, 844 * 2);

@@ -157,32 +157,41 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
 
     // Check offline win-back: Did user finish top 10 last week and hasn't claimed?
     final user = widget.currentUser;
-    final targetWeekKey = WeeklyLeagueRewardHelper.getTargetWeekKey(user);
-
-    final isLocallyClaimed = _locallyClaimedWeekKeys.contains(targetWeekKey) ||
-        (user?.previousRankWeekKey != null &&
-            _locallyClaimedWeekKeys.contains(user!.previousRankWeekKey));
-    final hasUnclaimedLastWeek =
-        !isLocallyClaimed && WeeklyLeagueRewardHelper.hasUnclaimedReward(user);
-
     final prevWeekKey = WeeklyLeagueRewardHelper.getPreviousWeekKey();
     final curWeekKey = WeeklyLeagueRewardHelper.getCurrentWeekKey();
+    final targetWeekKey = WeeklyLeagueRewardHelper.getTargetWeekKey(user);
+
+    final int? winnerRank;
+    final myWinnerIndex = widget.lastWeekWinners.indexWhere(
+      (w) => w['id'] == user?.id,
+    );
+    if (myWinnerIndex >= 0) {
+      final r = (widget.lastWeekWinners[myWinnerIndex]['rank'] as num?)?.toInt() ??
+          (myWinnerIndex + 1);
+      winnerRank = (r >= 1 && r <= 10) ? r : null;
+    } else {
+      winnerRank = null;
+    }
+
     final bool isEligibleWeek = user != null &&
         (user.previousRankWeekKey == null ||
             user.previousRankWeekKey == prevWeekKey ||
             user.previousRankWeekKey == curWeekKey);
-    final bool isTop10Finisher = user?.previousRank != null &&
-        user!.previousRank! >= 1 &&
-        user.previousRank! <= 10 &&
-        isEligibleWeek;
-    final bool hasClaimedLastWeek = isTop10Finisher &&
-        !hasUnclaimedLastWeek &&
-        (isLocallyClaimed ||
-            user.claimedWeeklyRewardWeekKeys.contains(targetWeekKey) ||
-            (user.previousRankWeekKey != null &&
-                user.claimedWeeklyRewardWeekKeys.contains(
-                  user.previousRankWeekKey,
-                )));
+    final int? effectiveRank = winnerRank ??
+        ((user?.previousRank != null &&
+                user!.previousRank! >= 1 &&
+                user.previousRank! <= 10 &&
+                isEligibleWeek)
+            ? user.previousRank
+            : null);
+    final bool isTop10Finisher = effectiveRank != null;
+
+    final isLocallyClaimed = _locallyClaimedWeekKeys.contains(targetWeekKey);
+    final bool isClaimed = isLocallyClaimed ||
+        (user != null && user.claimedWeeklyRewardWeekKeys.contains(targetWeekKey));
+
+    final bool hasUnclaimedLastWeek = isTop10Finisher && !isClaimed;
+    final bool hasClaimedLastWeek = isTop10Finisher && isClaimed;
 
     return Container(
       margin: EdgeInsets.only(
@@ -409,20 +418,7 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
             SizedBox(height: 12.h),
             Builder(
               builder: (context) {
-                int rank = widget.currentUser!.previousRank ?? 10;
-                final myWinnerIndex = widget.lastWeekWinners.indexWhere(
-                  (w) => w['id'] == widget.currentUser?.id,
-                );
-                if (myWinnerIndex >= 0) {
-                  final winnerRank =
-                      (widget.lastWeekWinners[myWinnerIndex]['rank'] as num?)
-                          ?.toInt();
-                  if (winnerRank != null &&
-                      winnerRank >= 1 &&
-                      winnerRank <= 10) {
-                    rank = winnerRank;
-                  }
-                }
+                final rank = effectiveRank;
                 final rankTitle = WeeklyLeagueRewardHelper.getRankTitle(rank);
                 final rankSubtitle =
                     WeeklyLeagueRewardHelper.getRankSubtitle(rank);
