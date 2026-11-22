@@ -406,17 +406,8 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
                           width: double.infinity,
                           height: 52.h,
                           decoration: BoxDecoration(
-                            gradient: LinearGradient(
-                              colors: [
-                                _accentColor,
-                                _accentColor.withValues(alpha: 0.8),
-                              ],
-                            ),
+                            color: AppColors.indigo500,
                             borderRadius: BorderRadius.circular(16.r),
-                            border: Border.all(
-                              color: Colors.white.withValues(alpha: 0.3),
-                              width: 1,
-                            ),
                           ),
                           alignment: Alignment.center,
                           child: _isClaiming
@@ -424,31 +415,20 @@ class _WeeklyLeagueChampionDialogState extends State<WeeklyLeagueChampionDialog>
                                   size: 18,
                                   color: Colors.white,
                                 )
-                              : Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    const Icon(
-                                      LucideIcons.checkCheck,
-                                      color: Colors.white,
-                                      size: 20,
-                                    ),
-                                    SizedBox(width: 8.w),
-                                    Text(
-                                      widget.isAlreadyClaimed
-                                          ? 'Got It!'
-                                          : context.tr(
-                                              'leaderboard.claim_and_celebrate',
-                                              fallback: 'Claim & Celebrate',
-                                            ),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 15.sp,
-                                        fontWeight: FontWeight.w800,
-                                        color: Colors.white,
-                                        letterSpacing: 0.5,
-                                      ),
-                                    ),
-                                  ],
+                              : Text(
+                                  widget.isAlreadyClaimed
+                                      ? 'Got It!'
+                                      : context.tr(
+                                          'leaderboard.claim_and_celebrate',
+                                          fallback: 'Claim & Celebrate',
+                                        ),
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 15.sp,
+                                    fontWeight: FontWeight.w800,
+                                    color: Colors.white,
+                                    letterSpacing: 0.3,
+                                  ),
                                 ),
                         ),
                       ),
