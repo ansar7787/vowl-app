@@ -91,7 +91,17 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
     if (_isClaiming) return;
     final user = widget.currentUser;
     if (user == null) return;
-    final rank = user.previousRank ?? 10;
+    int rank = user.previousRank ?? 10;
+    final myWinnerIndex = widget.lastWeekWinners.indexWhere(
+      (w) => w['id'] == user.id,
+    );
+    if (myWinnerIndex >= 0) {
+      final winnerRank =
+          (widget.lastWeekWinners[myWinnerIndex]['rank'] as num?)?.toInt();
+      if (winnerRank != null && winnerRank >= 1 && winnerRank <= 10) {
+        rank = winnerRank;
+      }
+    }
     final vipDays = WeeklyLeagueRewardHelper.getVipDays(rank);
     final coins = WeeklyLeagueRewardHelper.getCoins(rank);
 
@@ -399,7 +409,20 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
             SizedBox(height: 12.h),
             Builder(
               builder: (context) {
-                final rank = widget.currentUser!.previousRank ?? 10;
+                int rank = widget.currentUser!.previousRank ?? 10;
+                final myWinnerIndex = widget.lastWeekWinners.indexWhere(
+                  (w) => w['id'] == widget.currentUser?.id,
+                );
+                if (myWinnerIndex >= 0) {
+                  final winnerRank =
+                      (widget.lastWeekWinners[myWinnerIndex]['rank'] as num?)
+                          ?.toInt();
+                  if (winnerRank != null &&
+                      winnerRank >= 1 &&
+                      winnerRank <= 10) {
+                    rank = winnerRank;
+                  }
+                }
                 final rankTitle = WeeklyLeagueRewardHelper.getRankTitle(rank);
                 final rankSubtitle =
                     WeeklyLeagueRewardHelper.getRankSubtitle(rank);

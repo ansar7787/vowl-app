@@ -84,221 +84,111 @@ class _LastWeekWinnersBottomSheetState
   final Set<String> _locallyClaimedWeekKeys = {};
 
   /// Resolves the weekly winners strictly from legitimate weekly sources:
-  /// 1. Official weekly winners list from Cloud Function recap in metadata cache.
-  /// 2. Users from [allUsers] who have official [previousRankWeekKey] matching the cycle.
-  /// 3. Backfilled from [allUsers] so all 10 ranks (1..10) are visible, locking
-  ///    the current user at their authentic [previousRank].
+  /// 1. Computes the exact XP earned during [resolvedWeekKey] using [WeeklyLeagueRewardHelper.getWeeklyExpForWeek].
+  /// 2. Pools learners from [effectiveUser], [allUsers], and [winners].
+  /// 3. Filters users with weekly XP > 0 (learners who earned 0 XP in that period did not compete).
+  /// 4. Strictly sorts descending by:
+  ///    - weeklyXp descending (highest XP first)
+  ///    - currentStreak descending (tie-breaker)
+  ///    - totalExp descending (tie-breaker)
+  ///    - displayName ascending (tie-breaker)
+  /// 5. Assigns sequential unique ranks 1, 2, 3, ... 10 strictly according to this sorted order.
   ///
-  /// NEVER falls back to global all-time total XP rankings when no weekly data exists.
+  /// NEVER forces arbitrary ranks from previousRank or backfills lower XP users ahead of higher XP users.
   List<Map<String, dynamic>> _resolveWinners({
     required String resolvedWeekKey,
     required String prevWeekKey,
     required String curWeekKey,
     UserEntity? effectiveUser,
   }) {
-    List<Map<String, dynamic>> candidates = [];
+    final Map<String, Map<String, dynamic>> candidateMap = {};
 
-    if (widget.winners.isNotEmpty) {
-      candidates = List<Map<String, dynamic>>.from(widget.winners);
-    } else if (widget.allUsers != null && widget.allUsers!.isNotEmpty) {
-      // Check if users have verified weekly league finish keys
-      final weeklyFinisherCandidates = widget.allUsers!.where((u) {
-        final matchesWeek =
-            u.previousRankWeekKey == resolvedWeekKey ||
-            u.previousRankWeekKey == prevWeekKey ||
-            u.previousRankWeekKey == curWeekKey ||
-            u.previousRankWeekKey == null;
-        return matchesWeek &&
-            u.previousRank != null &&
-            u.previousRank! >= 1 &&
-            u.previousRank! <= 10;
-      }).toList();
+    void registerUser(UserEntity u) {
+      var xp = WeeklyLeagueRewardHelper.getWeeklyExpForWeek(u, resolvedWeekKey);
+      if (xp == 0 &&
+          u.previousWeeklyExp > 0 &&
+          (u.previousRankWeekKey == resolvedWeekKey ||
+              u.previousRankWeekKey == prevWeekKey ||
+              u.previousRankWeekKey == null)) {
+        xp = u.previousWeeklyExp;
+      }
+      candidateMap[u.id] = {
+        'id': u.id,
+        'displayName': u.safeDisplayName,
+        'photoUrl': u.photoUrl,
+        'weeklyXp': xp,
+        'currentStreak': u.currentStreak,
+        'totalExp': u.totalExp,
+        'weekKey': u.previousRankWeekKey ?? resolvedWeekKey,
+      };
+    }
 
-      if (weeklyFinisherCandidates.isNotEmpty) {
-        weeklyFinisherCandidates.sort(
-          (a, b) => a.previousRank!.compareTo(b.previousRank!),
-        );
-        candidates = weeklyFinisherCandidates.map((u) {
-          final xp = u.previousWeeklyExp > 0
-              ? u.previousWeeklyExp
-              : u.currentWeeklyExp;
-          return {
-            'id': u.id,
-            'rank': u.previousRank!,
-            'displayName': u.safeDisplayName,
-            'photoUrl': u.photoUrl,
-            'weeklyXp': xp,
-            'currentStreak': u.currentStreak,
-            'weekKey': u.previousRankWeekKey ?? resolvedWeekKey,
-          };
-        }).toList();
+    if (effectiveUser != null) {
+      registerUser(effectiveUser);
+    }
+
+    if (widget.allUsers != null) {
+      for (final u in widget.allUsers!) {
+        if (effectiveUser != null && u.id == effectiveUser.id) continue;
+        registerUser(u);
       }
     }
 
-    // Ensure effectiveUser's authentic rank is placed if they finished top 10
-    if (effectiveUser != null &&
-        effectiveUser.previousRank != null &&
-        effectiveUser.previousRank! >= 1 &&
-        effectiveUser.previousRank! <= 10) {
-      final userExplicitRank = effectiveUser.previousRank!;
-      final existingIndex =
-          candidates.indexWhere((c) => c['id'] == effectiveUser.id);
-      final xp = effectiveUser.previousWeeklyExp > 0
-          ? effectiveUser.previousWeeklyExp
-          : effectiveUser.currentWeeklyExp;
-      final userEntry = {
-        'id': effectiveUser.id,
-        'rank': userExplicitRank,
-        'displayName': effectiveUser.safeDisplayName,
-        'photoUrl': effectiveUser.photoUrl,
-        'weeklyXp': xp,
-        'currentStreak': effectiveUser.currentStreak,
-        'weekKey': effectiveUser.previousRankWeekKey ?? resolvedWeekKey,
-      };
-
-      if (existingIndex >= 0) {
-        candidates[existingIndex] = {
-          ...candidates[existingIndex],
-          ...userEntry,
-          'rank': userExplicitRank,
+    for (final w in widget.winners) {
+      final id = w['id'] as String?;
+      if (id == null) continue;
+      final winnerXp = (w['weeklyXp'] as num?)?.toInt() ?? 0;
+      if (!candidateMap.containsKey(id)) {
+        candidateMap[id] = {
+          'id': id,
+          'displayName': (w['displayName'] as String?) ?? 'Vowl Learner',
+          'photoUrl': w['photoUrl'] as String?,
+          'weeklyXp': winnerXp,
+          'currentStreak': (w['currentStreak'] as num?)?.toInt() ?? 0,
+          'totalExp': (w['totalExp'] as num?)?.toInt() ?? 0,
+          'weekKey': (w['weekKey'] as String?) ?? resolvedWeekKey,
         };
       } else {
-        candidates.add(userEntry);
-      }
-    }
-
-    // Backfill from allUsers so all 10 slots (ranks 1 to 10) are visible
-    // ONLY if there is at least 1 verified weekly candidate (never backfill on cold empty state)
-    if (candidates.isNotEmpty &&
-        candidates.length < 10 &&
-        widget.allUsers != null &&
-        widget.allUsers!.isNotEmpty) {
-      final existingIds = candidates.map((c) => c['id'] as String?).toSet();
-      final remainingUsers =
-          widget.allUsers!.where((u) => !existingIds.contains(u.id)).toList();
-
-      if (remainingUsers.isNotEmpty) {
-        // Sort other users by previous weekly XP, current weekly XP, streak, totalExp
-        remainingUsers.sort((a, b) {
-          final prevXpCmp = b.previousWeeklyExp.compareTo(a.previousWeeklyExp);
-          if (prevXpCmp != 0) return prevXpCmp;
-          final curXpCmp = b.currentWeeklyExp.compareTo(a.currentWeeklyExp);
-          if (curXpCmp != 0) return curXpCmp;
-          final streakCmp = b.currentStreak.compareTo(a.currentStreak);
-          if (streakCmp != 0) return streakCmp;
-          return b.totalExp.compareTo(a.totalExp);
-        });
-
-        final occupiedRanks = candidates
-            .map((c) => (c['rank'] as num?)?.toInt())
-            .whereType<int>()
-            .toSet();
-
-        final availableRanks = <int>[];
-        for (int r = 1; r <= 10; r++) {
-          if (!occupiedRanks.contains(r)) {
-            availableRanks.add(r);
-          }
-        }
-
-        int rankIdx = 0;
-        for (final user in remainingUsers) {
-          if (rankIdx >= availableRanks.length) break;
-          final assignedRank = availableRanks[rankIdx++];
-          final xp = user.previousWeeklyExp > 0
-              ? user.previousWeeklyExp
-              : user.currentWeeklyExp;
-          candidates.add({
-            'id': user.id,
-            'rank': assignedRank,
-            'displayName': user.safeDisplayName,
-            'photoUrl': user.photoUrl,
-            'weeklyXp': xp,
-            'currentStreak': user.currentStreak,
-            'weekKey': user.previousRankWeekKey ?? resolvedWeekKey,
-          });
+        final existingXp =
+            (candidateMap[id]!['weeklyXp'] as num?)?.toInt() ?? 0;
+        if (winnerXp > existingXp) {
+          candidateMap[id]!['weeklyXp'] = winnerXp;
         }
       }
     }
 
-    if (candidates.isEmpty) return const [];
+    final List<Map<String, dynamic>> pool = candidateMap.values.where((c) {
+      final xp = (c['weeklyXp'] as num?)?.toInt() ?? 0;
+      return xp > 0;
+    }).toList();
 
-    // Deduplicate / sanitize ranks while preserving authoritative ranks
-    final sorted = List<Map<String, dynamic>>.from(candidates);
-    sorted.sort((a, b) {
-      final aRank = (a['rank'] as num?)?.toInt();
-      final bRank = (b['rank'] as num?)?.toInt();
-      if (aRank != null && bRank != null && aRank != bRank) {
-        return aRank.compareTo(bRank);
-      }
+    if (pool.isEmpty) return const [];
+
+    pool.sort((a, b) {
       final aXp = (a['weeklyXp'] as num?)?.toInt() ?? 0;
       final bXp = (b['weeklyXp'] as num?)?.toInt() ?? 0;
       if (bXp != aXp) return bXp.compareTo(aXp);
+
       final aStreak = (a['currentStreak'] as num?)?.toInt() ?? 0;
       final bStreak = (b['currentStreak'] as num?)?.toInt() ?? 0;
       if (bStreak != aStreak) return bStreak.compareTo(aStreak);
+
+      final aTotal = (a['totalExp'] as num?)?.toInt() ?? 0;
+      final bTotal = (b['totalExp'] as num?)?.toInt() ?? 0;
+      if (bTotal != aTotal) return bTotal.compareTo(aTotal);
+
       final aName = (a['displayName'] as String?) ?? '';
       final bName = (b['displayName'] as String?) ?? '';
       return aName.compareTo(bName);
     });
 
-    final clamped = sorted.take(10).toList();
-
-    // Check if ranks in clamped are already unique and strictly in 1..10
-    final rankSet = <int>{};
-    bool hasDuplicateRanks = false;
-    for (final item in clamped) {
-      final r = (item['rank'] as num?)?.toInt();
-      if (r == null || r < 1 || r > 10 || rankSet.contains(r)) {
-        hasDuplicateRanks = true;
-        break;
-      }
-      rankSet.add(r);
-    }
-
-    if (!hasDuplicateRanks) {
-      clamped.sort((a, b) =>
-          ((a['rank'] as num?)?.toInt() ?? 0).compareTo((b['rank'] as num?)?.toInt() ?? 0));
-      return clamped;
-    }
-
-    // If duplicate ranks exist (e.g. raw test data with all rank 10), assign sequential 1..N
-    // but preserve effectiveUser's rank if present
-    final effectiveUserRank = (effectiveUser?.previousRank != null &&
-            effectiveUser!.previousRank! >= 1 &&
-            effectiveUser.previousRank! <= 10)
-        ? effectiveUser.previousRank
-        : null;
-
-    final assigned = <int>{};
-    if (effectiveUserRank != null) {
-      assigned.add(effectiveUserRank);
-    }
-
-    int nextAvailableRank = 1;
-    final sanitized = List.generate(clamped.length, (index) {
-      final item = clamped[index];
-      if (effectiveUserRank != null && item['id'] == effectiveUser?.id) {
-        return {
-          ...item,
-          'rank': effectiveUserRank,
-        };
-      }
-      while (assigned.contains(nextAvailableRank)) {
-        nextAvailableRank++;
-      }
-      assigned.add(nextAvailableRank);
-      final assignedRank = nextAvailableRank;
-      nextAvailableRank++;
+    final top10 = pool.take(10).toList();
+    return List.generate(top10.length, (index) {
       return {
-        ...item,
-        'rank': assignedRank,
+        ...top10[index],
+        'rank': index + 1,
       };
     });
-
-    sanitized.sort((a, b) =>
-        ((a['rank'] as num?)?.toInt() ?? 0).compareTo((b['rank'] as num?)?.toInt() ?? 0));
-    return sanitized;
   }
 
   Future<void> _handleClaim({
@@ -392,21 +282,18 @@ class _LastWeekWinnersBottomSheetState
     );
     final bool isInWinnersList = myWinnerIndex >= 0;
 
-    final int? userRank;
-    if (effectiveUser?.previousRank != null &&
-        effectiveUser!.previousRank! >= 1 &&
-        effectiveUser.previousRank! <= 10 &&
-        (effectiveUser.previousRankWeekKey == resolvedWeekKey ||
-            effectiveUser.previousRankWeekKey == prevWeekKey ||
-            effectiveUser.previousRankWeekKey == curWeekKey ||
-            effectiveUser.previousRankWeekKey == null)) {
-      userRank = effectiveUser.previousRank;
-    } else if (isInWinnersList) {
-      userRank = (resolvedWinners[myWinnerIndex]['rank'] as num?)?.toInt() ??
-          (myWinnerIndex + 1);
-    } else {
-      userRank = null;
-    }
+    final int? userRank = isInWinnersList
+        ? ((resolvedWinners[myWinnerIndex]['rank'] as num?)?.toInt() ??
+            (myWinnerIndex + 1))
+        : (effectiveUser?.previousRank != null &&
+                effectiveUser!.previousRank! >= 1 &&
+                effectiveUser.previousRank! <= 10 &&
+                (effectiveUser.previousRankWeekKey == resolvedWeekKey ||
+                    effectiveUser.previousRankWeekKey == prevWeekKey ||
+                    effectiveUser.previousRankWeekKey == curWeekKey ||
+                    effectiveUser.previousRankWeekKey == null))
+            ? effectiveUser.previousRank
+            : null;
 
     final bool hasUserWon = userRank != null && userRank <= 10;
     final bool isAlreadyClaimed =
@@ -1066,11 +953,14 @@ class _LastWeekWinnersBottomSheetState
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: displayName,
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Flexible(
+                      child: Text(
+                        displayName,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: isPodium ? 13.sp : 12.5.sp,
@@ -1078,36 +968,31 @@ class _LastWeekWinnersBottomSheetState
                           color: isDark ? Colors.white : AppColors.slate900,
                         ),
                       ),
-                      if (isMe) ...[
-                        WidgetSpan(
-                          alignment: PlaceholderAlignment.middle,
-                          child: Container(
-                            margin: EdgeInsets.only(left: 5.w),
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 5.w,
-                              vertical: 1.5.h,
-                            ),
-                            decoration: BoxDecoration(
-                              color: rankColor,
-                              borderRadius: BorderRadius.circular(5.r),
-                            ),
-                            child: Text(
-                              'YOU',
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 8.5.sp,
-                                fontWeight: FontWeight.w900,
-                                color: rank == 1 ? Colors.black : Colors.white,
-                                letterSpacing: 0.3,
-                              ),
-                            ),
+                    ),
+                    if (isMe) ...[
+                      SizedBox(width: 5.w),
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 5.w,
+                          vertical: 1.5.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: rankColor,
+                          borderRadius: BorderRadius.circular(5.r),
+                        ),
+                        child: Text(
+                          'YOU',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 8.5.sp,
+                            fontWeight: FontWeight.w900,
+                            color: rank == 1 ? Colors.black : Colors.white,
+                            letterSpacing: 0.3,
                           ),
                         ),
-                      ],
+                      ),
                     ],
-                  ),
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
+                  ],
                 ),
                 SizedBox(height: 2.h),
                 Row(

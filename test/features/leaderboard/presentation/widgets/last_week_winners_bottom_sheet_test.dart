@@ -319,7 +319,7 @@ void main() {
   );
 
   testWidgets(
-    'preserves Rank #4 for 4th-place finisher, backfills top 10 from allUsers and enables 100 coin claim',
+    'preserves Rank #4 for 4th-place finisher based on exact weekly XP and enables 100 coin claim',
     (tester) async {
       tester.view.physicalSize = const Size(390 * 2, 844 * 2);
       tester.view.devicePixelRatio = 2.0;
@@ -335,17 +335,43 @@ void main() {
         totalExp: 12000,
         previousRank: 4,
         previousRankWeekKey: targetWeekKey,
+        dailyXpHistory: {'2026-11-04': 850}, // 4th highest XP
         claimedWeeklyRewardWeekKeys: const [],
       );
 
-      // 9 other users in allUsers to populate the full top 10
-      final allOtherUsers = List.generate(9, (i) {
+      // Top 3 users with higher weekly XP
+      final top3Users = [
+        UserEntity(
+          id: 'user_top_1',
+          email: 'top1@vowl.app',
+          displayName: 'Finisher 1',
+          totalExp: 15000,
+          dailyXpHistory: {'2026-11-04': 1000}, // Rank 1
+        ),
+        UserEntity(
+          id: 'user_top_2',
+          email: 'top2@vowl.app',
+          displayName: 'Finisher 2',
+          totalExp: 14000,
+          dailyXpHistory: {'2026-11-04': 950}, // Rank 2
+        ),
+        UserEntity(
+          id: 'user_top_3',
+          email: 'top3@vowl.app',
+          displayName: 'Finisher 3',
+          totalExp: 13000,
+          dailyXpHistory: {'2026-11-04': 900}, // Rank 3
+        ),
+      ];
+
+      // 6 lower users to complete the top 10
+      final lowerUsers = List.generate(6, (i) {
         return UserEntity(
-          id: 'user_other_$i',
-          email: 'other_$i@vowl.app',
-          displayName: 'Finisher ${i + 1}',
-          totalExp: 10000 - (i * 500),
-          dailyXpHistory: {'2026-11-04': 1000 - (i * 50)},
+          id: 'user_lower_$i',
+          email: 'lower_$i@vowl.app',
+          displayName: 'Finisher ${i + 5}',
+          totalExp: 9000 - (i * 500),
+          dailyXpHistory: {'2026-11-04': 800 - (i * 50)}, // Ranks 5 to 10
         );
       });
 
@@ -353,7 +379,7 @@ void main() {
         buildTestWidget(
           LastWeekWinnersBottomSheet(
             winners: const [],
-            allUsers: [testFourthPlaceUser, ...allOtherUsers],
+            allUsers: [...top3Users, testFourthPlaceUser, ...lowerUsers],
             currentUser: testFourthPlaceUser,
             weekKey: targetWeekKey,
             onClaimReward: (rank, vipDays, coins, weekKey) async {
@@ -388,6 +414,64 @@ void main() {
 
       expect(claimedRank, equals(4));
       expect(claimedCoins, equals(100));
+    },
+  );
+
+  testWidgets(
+    'orders winners strictly descending by weekly XP (95 XP user ranks ahead of 30 XP user)',
+    (tester) async {
+      tester.view.physicalSize = const Size(390 * 2, 844 * 2);
+      tester.view.devicePixelRatio = 2.0;
+      addTearDown(() => tester.view.resetPhysicalSize());
+
+      // User with 95 XP, user with 85 XP, user with 30 XP
+      final userWith95Xp = UserEntity(
+        id: 'user_95_xp',
+        email: 'user95@vowl.app',
+        displayName: 'User 95 XP',
+        dailyXpHistory: {'2026-11-04': 95},
+      );
+
+      final userWith85Xp = UserEntity(
+        id: 'user_85_xp',
+        email: 'user85@vowl.app',
+        displayName: 'User 85 XP',
+        dailyXpHistory: {'2026-11-04': 85},
+      );
+
+      final userWith30Xp = UserEntity(
+        id: 'user_30_xp',
+        email: 'user30@vowl.app',
+        displayName: 'User 30 XP',
+        dailyXpHistory: {'2026-11-04': 30},
+      );
+
+      await tester.pumpWidget(
+        buildTestWidget(
+          LastWeekWinnersBottomSheet(
+            winners: const [],
+            // Pass out of order: 30 XP, 95 XP, 85 XP
+            allUsers: [userWith30Xp, userWith95Xp, userWith85Xp],
+            currentUser: userWith95Xp,
+            weekKey: targetWeekKey,
+          ),
+          currentUser: userWith95Xp,
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      // User 95 XP MUST be Rank #1 (Champion)
+      expect(find.text('YOUR FINISH · RANK #1'), findsOneWidget);
+      expect(find.text('User 95 XP'), findsOneWidget);
+      expect(find.text('95 XP'), findsOneWidget);
+
+      // User 85 XP is 2nd
+      expect(find.text('User 85 XP'), findsOneWidget);
+      expect(find.text('85 XP'), findsOneWidget);
+
+      // User 30 XP is 3rd
+      expect(find.text('User 30 XP'), findsOneWidget);
+      expect(find.text('30 XP'), findsOneWidget);
     },
   );
 }
