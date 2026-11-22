@@ -86,14 +86,15 @@ class _LastWeekWinnersBottomSheetState
   /// Resolves the weekly winners strictly from legitimate weekly sources:
   /// 1. Official weekly winners list from Cloud Function recap in metadata cache.
   /// 2. Users from [allUsers] who have official [previousRankWeekKey] matching the cycle.
-  /// 3. Users from [allUsers] who actually earned XP during last week ([previousWeeklyExp] > 0).
+  /// 3. Backfilled from [allUsers] so all 10 ranks (1..10) are visible, locking
+  ///    the current user at their authentic [previousRank].
   ///
-  /// NEVER falls back to global all-time total XP rankings. If no weekly data
-  /// exists yet, returns an empty list so the clean prize distribution is shown.
+  /// NEVER falls back to global all-time total XP rankings when no weekly data exists.
   List<Map<String, dynamic>> _resolveWinners({
     required String resolvedWeekKey,
     required String prevWeekKey,
     required String curWeekKey,
+    UserEntity? effectiveUser,
   }) {
     List<Map<String, dynamic>> candidates = [];
 
@@ -105,7 +106,8 @@ class _LastWeekWinnersBottomSheetState
         final matchesWeek =
             u.previousRankWeekKey == resolvedWeekKey ||
             u.previousRankWeekKey == prevWeekKey ||
-            u.previousRankWeekKey == curWeekKey;
+            u.previousRankWeekKey == curWeekKey ||
+            u.previousRankWeekKey == null;
         return matchesWeek &&
             u.previousRank != null &&
             u.previousRank! >= 1 &&
@@ -130,45 +132,98 @@ class _LastWeekWinnersBottomSheetState
             'weekKey': u.previousRankWeekKey ?? resolvedWeekKey,
           };
         }).toList();
+      }
+    }
+
+    // Ensure effectiveUser's authentic rank is placed if they finished top 10
+    if (effectiveUser != null &&
+        effectiveUser.previousRank != null &&
+        effectiveUser.previousRank! >= 1 &&
+        effectiveUser.previousRank! <= 10) {
+      final userExplicitRank = effectiveUser.previousRank!;
+      final existingIndex =
+          candidates.indexWhere((c) => c['id'] == effectiveUser.id);
+      final xp = effectiveUser.previousWeeklyExp > 0
+          ? effectiveUser.previousWeeklyExp
+          : effectiveUser.currentWeeklyExp;
+      final userEntry = {
+        'id': effectiveUser.id,
+        'rank': userExplicitRank,
+        'displayName': effectiveUser.safeDisplayName,
+        'photoUrl': effectiveUser.photoUrl,
+        'weeklyXp': xp,
+        'currentStreak': effectiveUser.currentStreak,
+        'weekKey': effectiveUser.previousRankWeekKey ?? resolvedWeekKey,
+      };
+
+      if (existingIndex >= 0) {
+        candidates[existingIndex] = {
+          ...candidates[existingIndex],
+          ...userEntry,
+          'rank': userExplicitRank,
+        };
       } else {
-        // Tertiary fallback: Users who actually earned XP in the previous week
-        final earnedWeeklyXpUsers = widget.allUsers!
-            .where((u) => u.previousWeeklyExp > 0)
-            .toList();
+        candidates.add(userEntry);
+      }
+    }
 
-        if (earnedWeeklyXpUsers.isNotEmpty) {
-          earnedWeeklyXpUsers.sort((a, b) {
-            final xpCmp = b.previousWeeklyExp.compareTo(a.previousWeeklyExp);
-            if (xpCmp != 0) return xpCmp;
-            final streakCmp = b.currentStreak.compareTo(a.currentStreak);
-            if (streakCmp != 0) return streakCmp;
-            return b.totalExp.compareTo(a.totalExp);
+    // Backfill from allUsers so all 10 slots (ranks 1 to 10) are visible
+    // ONLY if there is at least 1 verified weekly candidate (never backfill on cold empty state)
+    if (candidates.isNotEmpty &&
+        candidates.length < 10 &&
+        widget.allUsers != null &&
+        widget.allUsers!.isNotEmpty) {
+      final existingIds = candidates.map((c) => c['id'] as String?).toSet();
+      final remainingUsers =
+          widget.allUsers!.where((u) => !existingIds.contains(u.id)).toList();
+
+      if (remainingUsers.isNotEmpty) {
+        // Sort other users by previous weekly XP, current weekly XP, streak, totalExp
+        remainingUsers.sort((a, b) {
+          final prevXpCmp = b.previousWeeklyExp.compareTo(a.previousWeeklyExp);
+          if (prevXpCmp != 0) return prevXpCmp;
+          final curXpCmp = b.currentWeeklyExp.compareTo(a.currentWeeklyExp);
+          if (curXpCmp != 0) return curXpCmp;
+          final streakCmp = b.currentStreak.compareTo(a.currentStreak);
+          if (streakCmp != 0) return streakCmp;
+          return b.totalExp.compareTo(a.totalExp);
+        });
+
+        final occupiedRanks = candidates
+            .map((c) => (c['rank'] as num?)?.toInt())
+            .whereType<int>()
+            .toSet();
+
+        final availableRanks = <int>[];
+        for (int r = 1; r <= 10; r++) {
+          if (!occupiedRanks.contains(r)) {
+            availableRanks.add(r);
+          }
+        }
+
+        int rankIdx = 0;
+        for (final user in remainingUsers) {
+          if (rankIdx >= availableRanks.length) break;
+          final assignedRank = availableRanks[rankIdx++];
+          final xp = user.previousWeeklyExp > 0
+              ? user.previousWeeklyExp
+              : user.currentWeeklyExp;
+          candidates.add({
+            'id': user.id,
+            'rank': assignedRank,
+            'displayName': user.safeDisplayName,
+            'photoUrl': user.photoUrl,
+            'weeklyXp': xp,
+            'currentStreak': user.currentStreak,
+            'weekKey': user.previousRankWeekKey ?? resolvedWeekKey,
           });
-
-          candidates = earnedWeeklyXpUsers.take(10).map((u) {
-            return {
-              'id': u.id,
-              'displayName': u.safeDisplayName,
-              'photoUrl': u.photoUrl,
-              'weeklyXp': u.previousWeeklyExp,
-              'currentStreak': u.currentStreak,
-              'weekKey': resolvedWeekKey,
-            };
-          }).toList();
-        } else {
-          // NO ONE earned weekly XP -> DO NOT SHOW FAKE GLOBAL RANKING!
-          candidates = const [];
         }
       }
     }
 
     if (candidates.isEmpty) return const [];
 
-    // Sort deterministically to eliminate ties and duplicates:
-    // 1. Explicit rank if valid and distinct
-    // 2. Weekly XP DESC
-    // 3. Current Streak DESC
-    // 4. Display Name ASC (stable alphabetical tie-breaker)
+    // Deduplicate / sanitize ranks while preserving authoritative ranks
     final sorted = List<Map<String, dynamic>>.from(candidates);
     sorted.sort((a, b) {
       final aRank = (a['rank'] as num?)?.toInt();
@@ -187,14 +242,63 @@ class _LastWeekWinnersBottomSheetState
       return aName.compareTo(bName);
     });
 
-    // Ensure strictly unique, sequential ranks 1 to 10 (no duplicate ranks)
     final clamped = sorted.take(10).toList();
-    return List.generate(clamped.length, (index) {
+
+    // Check if ranks in clamped are already unique and strictly in 1..10
+    final rankSet = <int>{};
+    bool hasDuplicateRanks = false;
+    for (final item in clamped) {
+      final r = (item['rank'] as num?)?.toInt();
+      if (r == null || r < 1 || r > 10 || rankSet.contains(r)) {
+        hasDuplicateRanks = true;
+        break;
+      }
+      rankSet.add(r);
+    }
+
+    if (!hasDuplicateRanks) {
+      clamped.sort((a, b) =>
+          ((a['rank'] as num?)?.toInt() ?? 0).compareTo((b['rank'] as num?)?.toInt() ?? 0));
+      return clamped;
+    }
+
+    // If duplicate ranks exist (e.g. raw test data with all rank 10), assign sequential 1..N
+    // but preserve effectiveUser's rank if present
+    final effectiveUserRank = (effectiveUser?.previousRank != null &&
+            effectiveUser!.previousRank! >= 1 &&
+            effectiveUser.previousRank! <= 10)
+        ? effectiveUser.previousRank
+        : null;
+
+    final assigned = <int>{};
+    if (effectiveUserRank != null) {
+      assigned.add(effectiveUserRank);
+    }
+
+    int nextAvailableRank = 1;
+    final sanitized = List.generate(clamped.length, (index) {
+      final item = clamped[index];
+      if (effectiveUserRank != null && item['id'] == effectiveUser?.id) {
+        return {
+          ...item,
+          'rank': effectiveUserRank,
+        };
+      }
+      while (assigned.contains(nextAvailableRank)) {
+        nextAvailableRank++;
+      }
+      assigned.add(nextAvailableRank);
+      final assignedRank = nextAvailableRank;
+      nextAvailableRank++;
       return {
-        ...clamped[index],
-        'rank': index + 1, // Guaranteed 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+        ...item,
+        'rank': assignedRank,
       };
     });
+
+    sanitized.sort((a, b) =>
+        ((a['rank'] as num?)?.toInt() ?? 0).compareTo((b['rank'] as num?)?.toInt() ?? 0));
+    return sanitized;
   }
 
   Future<void> _handleClaim({
@@ -279,6 +383,7 @@ class _LastWeekWinnersBottomSheetState
       resolvedWeekKey: resolvedWeekKey,
       prevWeekKey: prevWeekKey,
       curWeekKey: curWeekKey,
+      effectiveUser: effectiveUser,
     );
 
     // Identify logged-in user placement & claim status
@@ -288,9 +393,7 @@ class _LastWeekWinnersBottomSheetState
     final bool isInWinnersList = myWinnerIndex >= 0;
 
     final int? userRank;
-    if (isInWinnersList) {
-      userRank = myWinnerIndex + 1;
-    } else if (effectiveUser?.previousRank != null &&
+    if (effectiveUser?.previousRank != null &&
         effectiveUser!.previousRank! >= 1 &&
         effectiveUser.previousRank! <= 10 &&
         (effectiveUser.previousRankWeekKey == resolvedWeekKey ||
@@ -298,6 +401,9 @@ class _LastWeekWinnersBottomSheetState
             effectiveUser.previousRankWeekKey == curWeekKey ||
             effectiveUser.previousRankWeekKey == null)) {
       userRank = effectiveUser.previousRank;
+    } else if (isInWinnersList) {
+      userRank = (resolvedWinners[myWinnerIndex]['rank'] as num?)?.toInt() ??
+          (myWinnerIndex + 1);
     } else {
       userRank = null;
     }
@@ -575,29 +681,27 @@ class _LastWeekWinnersBottomSheetState
     final vipDays = WeeklyLeagueRewardHelper.getVipDays(rank);
     final rankTitle = WeeklyLeagueRewardHelper.getRankTitle(rank);
     final rankSubtitle = WeeklyLeagueRewardHelper.getRankSubtitle(rank);
-    final prizeSummary = WeeklyLeagueRewardHelper.getPrizeSummary(rank);
+
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final cardBg = isMidnight
+        ? const Color(0xFF0F1523)
+        : (isDark ? const Color(0xFF1E293B) : const Color(0xFFF8FAFC));
 
     return Container(
       padding: EdgeInsets.all(12.w),
       decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            accentColor.withValues(alpha: isDark ? 0.24 : 0.16),
-            accentColor.withValues(alpha: isDark ? 0.08 : 0.05),
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
+        color: cardBg,
         borderRadius: BorderRadius.circular(18.r),
         border: Border.all(
-          color: accentColor.withValues(alpha: isDark ? 0.55 : 0.45),
-          width: 1.5.w,
+          color: accentColor.withValues(alpha: isDark ? 0.45 : 0.35),
+          width: 1.2.w,
         ),
         boxShadow: [
           BoxShadow(
-            color: accentColor.withValues(alpha: isDark ? 0.18 : 0.10),
-            blurRadius: 14,
-            offset: const Offset(0, 4),
+            color: accentColor.withValues(alpha: isDark ? 0.12 : 0.06),
+            blurRadius: 10,
+            offset: const Offset(0, 3),
           ),
         ],
       ),
@@ -613,14 +717,9 @@ class _LastWeekWinnersBottomSheetState
                 height: 40.r,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  gradient: LinearGradient(
-                    colors: [
-                      accentColor.withValues(alpha: 0.35),
-                      accentColor.withValues(alpha: 0.15),
-                    ],
-                  ),
+                  color: accentColor.withValues(alpha: isDark ? 0.18 : 0.12),
                   border: Border.all(
-                    color: accentColor.withValues(alpha: 0.5),
+                    color: accentColor.withValues(alpha: 0.4),
                     width: 1.2,
                   ),
                 ),
@@ -660,16 +759,53 @@ class _LastWeekWinnersBottomSheetState
                         letterSpacing: -0.2,
                       ),
                     ),
-                    SizedBox(height: 1.h),
-                    Text(
-                      '$rankSubtitle · $prizeSummary',
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 10.5.sp,
-                        fontWeight: FontWeight.w600,
-                        color: isDark ? AppColors.slate300 : AppColors.slate600,
+                    SizedBox(height: 2.h),
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      alignment: Alignment.centerLeft,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            '$rankSubtitle · ',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.5.sp,
+                              fontWeight: FontWeight.w600,
+                              color: isDark
+                                  ? AppColors.slate300
+                                  : AppColors.slate600,
+                            ),
+                          ),
+                          if (vipDays > 0) ...[
+                            Text(
+                              '${vipDays}d VIP · ',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 10.5.sp,
+                                fontWeight: FontWeight.w600,
+                                color: isDark
+                                    ? AppColors.slate300
+                                    : AppColors.slate600,
+                              ),
+                            ),
+                          ],
+                          Icon(
+                            Icons.monetization_on_rounded,
+                            size: 11.5.sp,
+                            color: const Color(0xFFF59E0B),
+                          ),
+                          SizedBox(width: 2.w),
+                          Text(
+                            '+$coins',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.5.sp,
+                              fontWeight: FontWeight.w900,
+                              color: const Color(0xFFF59E0B),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -717,12 +853,30 @@ class _LastWeekWinnersBottomSheetState
                             ),
                             SizedBox(width: 6.w),
                             Text(
-                              'Claim Reward ($prizeSummary)',
+                              vipDays > 0
+                                  ? 'Claim Reward (${vipDays}d VIP · '
+                                  : 'Claim Reward (',
                               style: TextStyle(
                                 fontFamily: 'Outfit',
                                 fontSize: 12.5.sp,
                                 fontWeight: FontWeight.w900,
                                 color: Colors.white,
+                                letterSpacing: 0.3,
+                              ),
+                            ),
+                            Icon(
+                              Icons.monetization_on_rounded,
+                              size: 12.5.sp,
+                              color: const Color(0xFFFDE68A),
+                            ),
+                            SizedBox(width: 2.w),
+                            Text(
+                              '+$coins)',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 12.5.sp,
+                                fontWeight: FontWeight.w900,
+                                color: const Color(0xFFFDE68A),
                                 letterSpacing: 0.3,
                               ),
                             ),
@@ -746,16 +900,45 @@ class _LastWeekWinnersBottomSheetState
               ),
               child: FittedBox(
                 fit: BoxFit.scaleDown,
-                child: Text(
-                  vipDays > 0
-                      ? 'Claimed: +$coins Coins · ${vipDays}d VIP'
-                      : 'Claimed: +$coins Coins',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 11.5.sp,
-                    fontWeight: FontWeight.w900,
-                    color: AppColors.emerald500,
-                  ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Claimed: ',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.5.sp,
+                        fontWeight: FontWeight.w900,
+                        color: AppColors.emerald500,
+                      ),
+                    ),
+                    if (vipDays > 0) ...[
+                      Text(
+                        '${vipDays}d VIP · ',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.5.sp,
+                          fontWeight: FontWeight.w900,
+                          color: AppColors.emerald500,
+                        ),
+                      ),
+                    ],
+                    Icon(
+                      Icons.monetization_on_rounded,
+                      size: 12.sp,
+                      color: AppColors.emerald500,
+                    ),
+                    SizedBox(width: 2.w),
+                    Text(
+                      '+$coins',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 11.5.sp,
+                        fontWeight: FontWeight.w900,
+                        color: AppColors.emerald500,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -805,7 +988,6 @@ class _LastWeekWinnersBottomSheetState
         rankIcon = LucideIcons.zap;
     }
 
-    final prizeSummary = WeeklyLeagueRewardHelper.getPrizeSummary(rank);
     final cardBg = isMe
         ? (isDark
             ? rankColor.withValues(alpha: 0.15)
@@ -990,14 +1172,36 @@ class _LastWeekWinnersBottomSheetState
                   width: 1,
                 ),
               ),
-              child: Text(
-                prizeSummary,
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.sp,
-                  fontWeight: FontWeight.w800,
-                  color: rankColor,
-                ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (WeeklyLeagueRewardHelper.getVipDays(rank) > 0) ...[
+                    Text(
+                      '${WeeklyLeagueRewardHelper.getVipDays(rank)}d VIP · ',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 9.5.sp,
+                        fontWeight: FontWeight.w800,
+                        color: rankColor,
+                      ),
+                    ),
+                  ],
+                  Icon(
+                    Icons.monetization_on_rounded,
+                    size: 11.sp,
+                    color: const Color(0xFFF59E0B),
+                  ),
+                  SizedBox(width: 2.w),
+                  Text(
+                    '+${WeeklyLeagueRewardHelper.getCoins(rank)}',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 9.5.sp,
+                      fontWeight: FontWeight.w900,
+                      color: const Color(0xFFF59E0B),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
@@ -1079,35 +1283,39 @@ class _LastWeekWinnersBottomSheetState
           SizedBox(height: 8.h),
 
           _buildTierRow(
-            '1st Place',
-            '7 Days VIP + 500 Coins + Champion Aura',
-            IllustrationColors.premiumGold,
-            LucideIcons.trophy,
-            isDark,
+            title: '1st Place',
+            rank: 1,
+            color: IllustrationColors.premiumGold,
+            icon: LucideIcons.trophy,
+            isDark: isDark,
+            auraBadge: 'Champion Aura',
           ),
           SizedBox(height: 6.h),
           _buildTierRow(
-            '2nd Place',
-            '3 Days VIP + 300 Coins + Silver Medal',
-            const Color(0xFFC0C0C0),
-            LucideIcons.medal,
-            isDark,
+            title: '2nd Place',
+            rank: 2,
+            color: const Color(0xFFC0C0C0),
+            icon: LucideIcons.medal,
+            isDark: isDark,
+            auraBadge: 'Silver Medal',
           ),
           SizedBox(height: 6.h),
           _buildTierRow(
-            '3rd Place',
-            '1 Day VIP + 200 Coins + Bronze Podium',
-            const Color(0xFFCD7F32),
-            LucideIcons.award,
-            isDark,
+            title: '3rd Place',
+            rank: 3,
+            color: const Color(0xFFCD7F32),
+            icon: LucideIcons.award,
+            isDark: isDark,
+            auraBadge: 'Bronze Podium',
           ),
           SizedBox(height: 6.h),
           _buildTierRow(
-            'Ranks 4-10',
-            '100 Coins + Finisher Ribbon',
-            AppColors.indigo500,
-            LucideIcons.zap,
-            isDark,
+            title: 'Ranks 4-10',
+            rank: 4,
+            color: AppColors.indigo500,
+            icon: LucideIcons.zap,
+            isDark: isDark,
+            auraBadge: 'Finisher Ribbon',
           ),
 
           SizedBox(height: 14.h),
@@ -1146,13 +1354,17 @@ class _LastWeekWinnersBottomSheetState
     );
   }
 
-  Widget _buildTierRow(
-    String title,
-    String reward,
-    Color color,
-    IconData icon,
-    bool isDark,
-  ) {
+  Widget _buildTierRow({
+    required String title,
+    required int rank,
+    required Color color,
+    required IconData icon,
+    required bool isDark,
+    String? auraBadge,
+  }) {
+    final vipDays = WeeklyLeagueRewardHelper.getVipDays(rank);
+    final coins = WeeklyLeagueRewardHelper.getCoins(rank);
+
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 7.h),
       decoration: BoxDecoration(
@@ -1175,16 +1387,50 @@ class _LastWeekWinnersBottomSheetState
           ),
           SizedBox(width: 8.w),
           Expanded(
-            child: Text(
-              reward,
-              textAlign: TextAlign.end,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 10.5.sp,
-                fontWeight: FontWeight.w700,
-                color: isDark ? Colors.white70 : AppColors.slate700,
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              alignment: Alignment.centerRight,
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (vipDays > 0) ...[
+                    Text(
+                      '${vipDays}d VIP · ',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w700,
+                        color: isDark ? Colors.white70 : AppColors.slate700,
+                      ),
+                    ),
+                  ],
+                  Icon(
+                    Icons.monetization_on_rounded,
+                    size: 11.5.sp,
+                    color: const Color(0xFFF59E0B),
+                  ),
+                  SizedBox(width: 2.w),
+                  Text(
+                    '+$coins',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w900,
+                      color: const Color(0xFFF59E0B),
+                    ),
+                  ),
+                  if (auraBadge != null) ...[
+                    Text(
+                      ' · $auraBadge',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w700,
+                        color: isDark ? Colors.white70 : AppColors.slate700,
+                      ),
+                    ),
+                  ],
+                ],
               ),
             ),
           ),

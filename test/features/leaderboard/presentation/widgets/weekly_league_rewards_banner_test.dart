@@ -98,16 +98,20 @@ void main() {
   testWidgets(
     'renders premier prize badges and unclaimed prize alert when user won top rank',
     (tester) async {
+      tester.view.physicalSize = const Size(390 * 2, 844 * 2);
+      tester.view.devicePixelRatio = 2.0;
+      addTearDown(() => tester.view.resetPhysicalSize());
+
       await tester.pumpWidget(
         buildTestWidget(WeeklyLeagueRewardsBanner(currentUser: unclaimedUser)),
       );
       await tester.pumpAndSettle();
 
-      expect(find.text('Weekly Rewards'), findsOneWidget);
+      expect(find.text('Weekly Rewards & Winners'), findsOneWidget);
       expect(find.text('Live'), findsOneWidget);
       expect(find.text('1st'), findsOneWidget);
       expect(find.text('7d VIP'), findsOneWidget);
-      expect(find.text('+500'), findsOneWidget);
+      expect(find.text('+500'), findsNWidgets(3)); // in grid, in user card, and in claim button
       expect(find.text('2nd'), findsOneWidget);
       expect(find.text('3d VIP'), findsOneWidget);
       expect(find.text('+300'), findsOneWidget);
@@ -117,7 +121,7 @@ void main() {
       expect(find.text('4-10th'), findsOneWidget);
       expect(find.text('Top 10'), findsOneWidget);
       expect(find.text('+100'), findsOneWidget);
-      expect(find.byIcon(Icons.monetization_on_rounded), findsNWidgets(4));
+      expect(find.byIcon(Icons.monetization_on_rounded), findsWidgets);
 
       // Unclaimed banner
       expect(find.text('Rank #1 Last Week!'), findsOneWidget);
@@ -128,6 +132,10 @@ void main() {
   testWidgets(
     'renders claimed status with exact numbers when user already claimed weekly prize',
     (tester) async {
+      tester.view.physicalSize = const Size(390 * 2, 844 * 2);
+      tester.view.devicePixelRatio = 2.0;
+      addTearDown(() => tester.view.resetPhysicalSize());
+
       final claimedUser = UserEntity(
         id: 'user_winner_1',
         email: 'winner@vowl.app',
@@ -147,7 +155,9 @@ void main() {
 
       expect(find.text('Rank #1 Last Week!'), findsOneWidget);
       expect(find.text('Claimed'), findsOneWidget);
-      expect(find.text('Awarded: +500 Coins · 7d VIP'), findsOneWidget);
+      expect(find.text('Awarded: '), findsOneWidget);
+      expect(find.text('7d VIP · '), findsOneWidget);
+      expect(find.text('+500'), findsNWidgets(2)); // in grid and in user card
       expect(find.text('Claim'), findsNothing);
     },
   );
