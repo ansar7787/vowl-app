@@ -53,8 +53,15 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
   Timer? _countdownTimer;
   Timer? _bonusTimer;
   int _bonusSeconds = 0;
+  int _totalSeconds = 45;
   int _remainingSeconds = 45;
-  static const int _totalSeconds = 45;
+
+  int _computeTotalSeconds(VocabularyQuest quest) {
+    final count = quest.options?.length ?? 6;
+    if (count <= 6) return 45;
+    if (count <= 9) return 60;
+    return 75;
+  }
 
   @override
   void initState() {
@@ -132,6 +139,8 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
     _controller?.dispose();
     _bonusTimer?.cancel();
     _bonusSeconds = 0;
+    _totalSeconds = _computeTotalSeconds(quest);
+    _remainingSeconds = _totalSeconds;
 
     final clusters = TopicClusterGroup.parseClusters(quest);
     final initialTiles = quest.options != null && quest.options!.isNotEmpty
