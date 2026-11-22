@@ -40,6 +40,12 @@ class LearnPhaseScaffold extends StatelessWidget {
   /// Optional action buttons displayed on the trailing side of the AppBar.
   final List<Widget>? actions;
 
+  /// Optional callback invoked when the user navigates back to a previous section or card.
+  final VoidCallback? onPrevious;
+
+  /// Optional label for the previous button. Defaults to null (renders back icon).
+  final String? previousLabel;
+
   const LearnPhaseScaffold({
     super.key,
     required this.title,
@@ -51,6 +57,8 @@ class LearnPhaseScaffold extends StatelessWidget {
     this.actionLabel = 'Got It! Continue',
     this.isActionEnabled = true,
     this.actions,
+    this.onPrevious,
+    this.previousLabel,
   });
 
   @override
@@ -169,29 +177,83 @@ class LearnPhaseScaffold extends StatelessWidget {
               child: SizedBox(
                 width: double.infinity,
                 height: 52.h,
-                child: ElevatedButton(
-                  onPressed: isActionEnabled ? onComplete : null,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.indigo500,
-                    foregroundColor: Colors.white,
-                    disabledBackgroundColor: isDark
-                        ? AppColors.slate800
-                        : AppColors.slate200,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16.r),
-                    ),
-                  ),
-                  child: Text(
-                    actionLabel,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w700,
-                      letterSpacing: 0.5,
-                    ),
-                  ),
-                ),
+                child: onPrevious != null
+                    ? Row(
+                        children: [
+                          SizedBox(
+                            width: 52.h,
+                            height: 52.h,
+                            child: OutlinedButton(
+                              onPressed: onPrevious,
+                              style: OutlinedButton.styleFrom(
+                                padding: EdgeInsets.zero,
+                                foregroundColor: isDark
+                                    ? AppColors.slate300
+                                    : AppColors.slate700,
+                                side: BorderSide(
+                                  color: isDark
+                                      ? AppColors.slate700
+                                      : AppColors.slate300,
+                                  width: 1.5,
+                                ),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16.r),
+                                ),
+                              ),
+                              child: Icon(Icons.arrow_back_rounded, size: 22.r),
+                            ),
+                          ),
+                          SizedBox(width: 12.w),
+                          Expanded(
+                            child: ElevatedButton(
+                              onPressed: isActionEnabled ? onComplete : null,
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: AppColors.indigo500,
+                                foregroundColor: Colors.white,
+                                disabledBackgroundColor: isDark
+                                    ? AppColors.slate800
+                                    : AppColors.slate200,
+                                elevation: 0,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(16.r),
+                                ),
+                              ),
+                              child: Text(
+                                actionLabel,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16.sp,
+                                  fontWeight: FontWeight.w700,
+                                  letterSpacing: 0.5,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      )
+                    : ElevatedButton(
+                        onPressed: isActionEnabled ? onComplete : null,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: AppColors.indigo500,
+                          foregroundColor: Colors.white,
+                          disabledBackgroundColor: isDark
+                              ? AppColors.slate800
+                              : AppColors.slate200,
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16.r),
+                          ),
+                        ),
+                        child: Text(
+                          actionLabel,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w700,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                      ),
               ),
             ),
           ],

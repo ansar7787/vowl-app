@@ -22,12 +22,18 @@ class TranslateButtonWidget extends StatefulWidget {
   final Function(String translatedText) onTranslationComplete;
   final Function(String translatedText, String? languageCode)?
   onTranslationWithLanguage;
+  final double? iconSize;
+  final Color? iconColor;
+  final EdgeInsetsGeometry? padding;
 
   const TranslateButtonWidget({
     super.key,
     required this.originalText,
     required this.onTranslationComplete,
     this.onTranslationWithLanguage,
+    this.iconSize,
+    this.iconColor,
+    this.padding,
   });
 
   @override
@@ -115,20 +121,17 @@ class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
     return ValueListenableBuilder<bool>(
       valueListenable: _isTranslating,
       builder: (context, isTranslating, _) {
+        final size = (widget.iconSize ?? 24).r;
         if (isTranslating) {
-          return Container(
-            width: 32.r,
-            height: 32.r,
-            decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor.withValues(alpha: 0.1),
-              shape: BoxShape.circle,
-            ),
+          return SizedBox(
+            width: size + 6.r,
+            height: size + 6.r,
             child: Center(
               child:
                   Icon(
                         LucideIcons.sparkles,
-                        size: 18.r,
-                        color: Theme.of(context).primaryColor,
+                        size: (size * 0.75),
+                        color: widget.iconColor ?? Theme.of(context).primaryColor,
                       )
                       .animate(onPlay: (c) => c.repeat(reverse: true))
                       .scale(
@@ -141,10 +144,14 @@ class _TranslateButtonWidgetState extends State<TranslateButtonWidget> {
 
         return IconButton(
           onPressed: _handleTranslatePress,
-          icon: Icon(LucideIcons.languages, size: 24.r, color: Colors.grey),
+          icon: Icon(
+            LucideIcons.languages,
+            size: size,
+            color: widget.iconColor ?? Colors.grey,
+          ),
           tooltip: 'Translate',
           constraints: const BoxConstraints(),
-          padding: EdgeInsets.zero,
+          padding: widget.padding ?? EdgeInsets.zero,
         );
       },
     );

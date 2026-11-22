@@ -27,6 +27,7 @@ class TopicWordItemCard extends StatefulWidget {
 class _TopicWordItemCardState extends State<TopicWordItemCard> {
   String? _translatedDefinition;
   String? _translatedCollocation;
+  String? _targetLanguageCode;
   bool _showTranslated = false;
 
   String _buildTranslatableContent() {
@@ -37,7 +38,7 @@ class _TopicWordItemCardState extends State<TopicWordItemCard> {
     return w.definition.isNotEmpty ? w.definition : w.word;
   }
 
-  void _handleTranslationComplete(String fullText) {
+  void _handleTranslationComplete(String fullText, [String? languageCode]) {
     if (!mounted) return;
     final parts = fullText.split(RegExp(r'\n?---\n?'));
     setState(() {
@@ -47,6 +48,9 @@ class _TopicWordItemCardState extends State<TopicWordItemCard> {
       _translatedCollocation = parts.length > 1 && parts[1].isNotEmpty
           ? parts[1].trim()
           : null;
+      if (languageCode != null) {
+        _targetLanguageCode = languageCode;
+      }
       _showTranslated = true;
     });
   }
@@ -70,7 +74,7 @@ class _TopicWordItemCardState extends State<TopicWordItemCard> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Header Row: Word, IPA + Actions (TTS Speaker & Translate)
+          // Header Row: Word, IPA + Unified Compact Audio & Translate Pill
           Row(
             children: [
               Expanded(
@@ -102,15 +106,67 @@ class _TopicWordItemCardState extends State<TopicWordItemCard> {
                   ],
                 ),
               ),
-              TtsSpeakerButtonWidget(
-                text: w.word,
-                color: accent,
-                size: 26.r,
-              ),
-              SizedBox(width: 4.w),
-              TranslateButtonWidget(
-                originalText: _buildTranslatableContent(),
-                onTranslationComplete: _handleTranslationComplete,
+              // Unified 1-Pill Audio & Translate Tool Capsule
+              Container(
+                height: 28.h,
+                decoration: BoxDecoration(
+                  color: isDark ? AppColors.slate800 : AppColors.slate100,
+                  borderRadius: BorderRadius.circular(14.r),
+                  border: Border.all(
+                    color: isDark ? AppColors.slate700 : AppColors.slate300,
+                    width: 1,
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    // Authentic Native English Pronunciation
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 5.w),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          TtsSpeakerButtonWidget(
+                            text: w.word,
+                            color: accent,
+                            size: 15.r,
+                          ),
+                          SizedBox(width: 3.w),
+                          Text(
+                            'EN',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 9.sp,
+                              fontWeight: FontWeight.w700,
+                              color: accent,
+                              letterSpacing: 0.5,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    // Vertical Hairline Separator
+                    Container(
+                      width: 1,
+                      height: 14.h,
+                      color: isDark ? AppColors.slate700 : AppColors.slate300,
+                    ),
+                    // 1-Click AI Offline Native Language Translate
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 5.w),
+                      child: TranslateButtonWidget(
+                        originalText: _buildTranslatableContent(),
+                        iconSize: 15.r,
+                        iconColor: _showTranslated
+                            ? AppColors.emerald500
+                            : (isDark ? AppColors.slate400 : AppColors.slate600),
+                        onTranslationComplete: (t) => _handleTranslationComplete(t),
+                        onTranslationWithLanguage: (t, code) =>
+                            _handleTranslationComplete(t, code),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -161,6 +217,16 @@ class _TopicWordItemCardState extends State<TopicWordItemCard> {
                       ),
                     ),
                   ),
+                  if (_targetLanguageCode != null &&
+                      _targetLanguageCode!.isNotEmpty) ...[
+                    SizedBox(width: 4.w),
+                    TtsSpeakerButtonWidget(
+                      text: _translatedDefinition!,
+                      locale: _targetLanguageCode,
+                      color: AppColors.emerald500,
+                      size: 13.r,
+                    ),
+                  ],
                 ],
               ),
             ),

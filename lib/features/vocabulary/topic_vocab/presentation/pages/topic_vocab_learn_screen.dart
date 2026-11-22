@@ -35,14 +35,16 @@ class _TopicVocabLearnScreenState extends State<TopicVocabLearnScreen> {
   int _currentIndex = 0;
   List<TopicLearnQuest> _quests = [];
   bool _isLoading = true;
+  late final PageController _pageController;
   late final HapticService _hapticService =
       di.sl.isRegistered<HapticService>() ? di.sl<HapticService>() : HapticService();
 
   @override
   void initState() {
     super.initState();
+    _pageController = PageController(initialPage: _currentIndex);
     if (di.sl.isRegistered<TtsService>()) {
-      unawaited(di.sl<TtsService>().preWarm());
+      unawaited(di.sl<TtsService>().preWarm(locale: 'en-US'));
     }
     if (widget.initialQuests != null && widget.initialQuests!.isNotEmpty) {
       _quests = List.from(widget.initialQuests!);
@@ -50,6 +52,12 @@ class _TopicVocabLearnScreenState extends State<TopicVocabLearnScreen> {
     } else {
       _loadCurriculum();
     }
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
   }
 
   int get _batchStart => ((widget.level - 1) ~/ 10) * 10 + 1;
@@ -117,12 +125,23 @@ class _TopicVocabLearnScreenState extends State<TopicVocabLearnScreen> {
     ];
   }
 
+  void _handlePrevious() {
+    _hapticService.light();
+    if (_currentIndex > 0) {
+      _pageController.previousPage(
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeOutCubic,
+      );
+    }
+  }
+
   void _handleNext() {
     _hapticService.light();
     if (_currentIndex < _quests.length - 1) {
-      setState(() {
-        _currentIndex++;
-      });
+      _pageController.nextPage(
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeOutCubic,
+      );
     } else {
       PhaseProgressRecorder.recordPhaseCompleted(
         context,
@@ -170,7 +189,6 @@ class _TopicVocabLearnScreenState extends State<TopicVocabLearnScreen> {
       );
     }
 
-    final quest = _quests[_currentIndex];
     final isLast = _currentIndex == _quests.length - 1;
 
     return LearnPhaseScaffold(
@@ -180,6 +198,7 @@ class _TopicVocabLearnScreenState extends State<TopicVocabLearnScreen> {
       isActionEnabled: true,
       actionLabel: isLast ? 'Got It! Start Practice' : 'Next Category (${_currentIndex + 1}/${_quests.length})',
       onComplete: _handleNext,
+      onPrevious: _currentIndex > 0 ? _handlePrevious : null,
       child: Column(
         children: [
           if (_quests.length > 1)
@@ -190,30 +209,55 @@ class _TopicVocabLearnScreenState extends State<TopicVocabLearnScreen> {
                 children: List.generate(_quests.length, (idx) {
                   final isActive = idx == _currentIndex;
                   final isDone = idx < _currentIndex;
-                  return AnimatedContainer(
-                    duration: const Duration(milliseconds: 250),
-                    margin: EdgeInsets.symmetric(horizontal: 3.w),
-                    width: isActive ? 22.w : 7.w,
-                    height: 5.h,
-                    decoration: BoxDecoration(
-                      color: isActive
-                          ? accentColor
-                          : (isDone
-                              ? accentColor.withValues(alpha: 0.45)
-                              : (isDark ? Colors.white24 : Colors.black12)),
-                      borderRadius: BorderRadius.circular(4.r),
+                  return GestureDetector(
+                    onTap: () {
+                      _hapticService.selection();
+                      _pageController.animateToPage(
+                        idx,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeOutCubic,
+                      );
+                    },
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 250),
+                      margin: EdgeInsets.symmetric(horizontal: 3.w),
+                      width: isActive ? 24.w : 8.w,
+                      height: 5.h,
+                      decoration: BoxDecoration(
+                        color: isActive
+                            ? accentColor
+                            : (isDone
+                                ? accentColor.withValues(alpha: 0.45)
+                                : (isDark ? Colors.white24 : Colors.black12)),
+                        borderRadius: BorderRadius.circular(4.r),
+                      ),
                     ),
                   );
                 }),
               ),
             ),
           Expanded(
-            child: TopicBlueprintTree(
-              conceptTitle: quest.conceptTitle,
-              topicEmoji: quest.topicEmoji,
-              categories: quest.categories,
-              contrastInsight: quest.contrastInsight,
-              accentColor: accentColor,
+            child: PageView.builder(
+              controller: _pageController,
+              physics: const BouncingScrollPhysics(),
+              itemCount: _quests.length,
+              onPageChanged: (index) {
+                _hapticService.selection();
+                setState(() {
+                  _currentIndex = index;
+                });
+              },
+              itemBuilder: (context, index) {
+                final quest = _quests[index];
+                return TopicBlueprintTree(
+                  key: ValueKey(quest.id),
+                  conceptTitle: quest.conceptTitle,
+                  topicEmoji: quest.topicEmoji,
+                  categories: quest.categories,
+                  contrastInsight: quest.contrastInsight,
+                  accentColor: accentColor,
+                );
+              },
             ),
           ),
         ],

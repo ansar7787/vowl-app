@@ -21,8 +21,8 @@ void main() {
       di.sl.unregister<TtsService>();
     }
     di.sl.registerSingleton<TtsService>(mockTts);
-    when(() => mockTts.speak(any())).thenAnswer((_) async {});
-    when(() => mockTts.preWarm()).thenAnswer((_) async {});
+    when(() => mockTts.speak(any(), rate: any(named: 'rate'), locale: any(named: 'locale'))).thenAnswer((_) async {});
+    when(() => mockTts.preWarm(locale: any(named: 'locale'), preset: any(named: 'preset'))).thenAnswer((_) async {});
   });
 
   tearDownAll(() {

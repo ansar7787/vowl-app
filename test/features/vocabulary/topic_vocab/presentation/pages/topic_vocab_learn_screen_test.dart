@@ -68,8 +68,8 @@ void main() {
     when(() => mockHaptics.warning()).thenAnswer((_) async {});
     when(() => mockHaptics.error()).thenAnswer((_) async {});
     when(() => mockSounds.playCorrect(comboStep: any(named: 'comboStep'))).thenAnswer((_) async {});
-    when(() => mockTts.speak(any())).thenAnswer((_) async {});
-    when(() => mockTts.preWarm()).thenAnswer((_) async {});
+    when(() => mockTts.speak(any(), rate: any(named: 'rate'), locale: any(named: 'locale'))).thenAnswer((_) async {});
+    when(() => mockTts.preWarm(locale: any(named: 'locale'), preset: any(named: 'preset'))).thenAnswer((_) async {});
 
     if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
     if (di.sl.isRegistered<SoundService>()) di.sl.unregister<SoundService>();
@@ -114,6 +114,53 @@ void main() {
       await tester.pump();
       await tester.pump(const Duration(milliseconds: 300));
       verify(() => mockHaptics.light()).called(1);
+    });
+
+    testWidgets('supports back and forward navigation with PageView and synchronized indicators', (tester) async {
+      final multiQuests = [
+        testQuests[0],
+        const TopicLearnQuest(
+          id: 'VOC_TOPICVOCAB_L1_LEARN_TEST_2',
+          level: 1,
+          conceptTitle: 'Weather Dynamics',
+          topicEmoji: '🌪️',
+          contrastInsight: 'Notice storm boundaries.',
+          categories: [
+            TopicCategory(
+              name: 'Storms',
+              emoji: '⚡',
+              description: 'High energy storms.',
+              words: [
+                TopicWordDetail(word: 'Blizzard', ipa: '/ˈblɪz.əd/', definition: 'Severe snowstorm.', collocation: 'raging blizzard'),
+              ],
+            ),
+          ],
+        ),
+      ];
+
+      await tester.pumpWidget(buildTestableWidget(TopicVocabLearnScreen(level: 1, initialQuests: multiQuests)));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 300));
+
+      // Initially on page 1, action says "Next Category (1/2)" and no Back button
+      expect(find.text('Next Category (1/2)'), findsOneWidget);
+      expect(find.byIcon(Icons.arrow_back_rounded), findsNothing);
+
+      // Tap Next Category
+      await tester.tap(find.text('Next Category (1/2)'));
+      await tester.pumpAndSettle();
+
+      // Now on page 2: action says "Got It! Start Practice" and Back button is visible
+      expect(find.text('Got It! Start Practice'), findsOneWidget);
+      expect(find.byIcon(Icons.arrow_back_rounded), findsOneWidget);
+
+      // Tap Back button to navigate back to page 1
+      await tester.tap(find.byIcon(Icons.arrow_back_rounded));
+      await tester.pumpAndSettle();
+
+      // Verified returned to page 1
+      expect(find.text('Next Category (1/2)'), findsOneWidget);
+      expect(find.byIcon(Icons.arrow_back_rounded), findsNothing);
     });
   });
 }
