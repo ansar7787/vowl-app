@@ -213,11 +213,14 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // Left: Unified Clickable Header Row: Gift Icon + "Weekly Rewards & Winners" + Chevron Right
+              // Left: Unified Clickable Header Capsule: Gift Icon + "Rewards & Winners" + Chevron Right
               Flexible(
                 child: GestureDetector(
                   behavior: HitTestBehavior.opaque,
                   onTap: () {
+                    if (di.sl.isRegistered<HapticService>()) {
+                      di.sl<HapticService>().selection();
+                    }
                     LastWeekWinnersBottomSheet.show(
                       context: context,
                       winners: widget.lastWeekWinners,
@@ -254,37 +257,50 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                   child: FittedBox(
                     fit: BoxFit.scaleDown,
                     alignment: Alignment.centerLeft,
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          LucideIcons.gift,
-                          size: 15.sp,
-                          color: const Color(0xFFF59E0B),
-                        ),
-                        SizedBox(width: 6.w),
-                        Text(
-                          context.tr(
-                            'leaderboard.weekly_rewards_and_winners',
-                            fallback: 'Weekly Rewards & Winners',
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 10.w,
+                        vertical: 4.5.h,
+                      ),
+                      decoration: BoxDecoration(
+                        color: isDark
+                            ? const Color(0xFF1E293B)
+                            : const Color(0xFFF1F5F9),
+                        borderRadius: BorderRadius.circular(10.r),
+                        border: Border.all(color: borderColor),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            LucideIcons.gift,
+                            size: 13.sp,
+                            color: const Color(0xFFF59E0B),
                           ),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 13.sp,
-                            fontWeight: FontWeight.w800,
-                            color: isDark ? Colors.white : AppColors.slate900,
-                            letterSpacing: 0.2,
+                          SizedBox(width: 5.w),
+                          Text(
+                            context.tr(
+                              'leaderboard.rewards_and_winners',
+                              fallback: 'Rewards & Winners',
+                            ),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.5.sp,
+                              fontWeight: FontWeight.w800,
+                              color: isDark ? Colors.white : AppColors.slate900,
+                              letterSpacing: 0.1,
+                            ),
                           ),
-                        ),
-                        SizedBox(width: 4.w),
-                        Icon(
-                          LucideIcons.chevronRight,
-                          size: 14.sp,
-                          color: isDark
-                              ? AppColors.slate400
-                              : AppColors.slate500,
-                        ),
-                      ],
+                          SizedBox(width: 3.w),
+                          Icon(
+                            LucideIcons.chevronRight,
+                            size: 13.sp,
+                            color: isDark
+                                ? AppColors.slate400
+                                : AppColors.slate500,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
