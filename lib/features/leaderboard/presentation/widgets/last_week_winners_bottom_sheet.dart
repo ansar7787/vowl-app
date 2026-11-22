@@ -266,8 +266,10 @@ class _LastWeekWinnersBottomSheetState
     final prevWeekKey = WeeklyLeagueRewardHelper.getPreviousWeekKey();
     final curWeekKey = WeeklyLeagueRewardHelper.getCurrentWeekKey();
     final resolvedWeekKey = widget.weekKey ??
-        effectiveUser?.previousRankWeekKey ??
-        prevWeekKey;
+        ((effectiveUser?.previousRankWeekKey == curWeekKey ||
+                effectiveUser?.previousRankWeekKey == prevWeekKey)
+            ? effectiveUser!.previousRankWeekKey!
+            : prevWeekKey);
 
     final resolvedWinners = _resolveWinners(
       resolvedWeekKey: resolvedWeekKey,
@@ -299,16 +301,7 @@ class _LastWeekWinnersBottomSheetState
     final bool isAlreadyClaimed =
         _locallyClaimedWeekKeys.contains(resolvedWeekKey) ||
         (effectiveUser != null &&
-            (_locallyClaimedWeekKeys.contains(
-                  effectiveUser.previousRankWeekKey,
-                ) ||
-                effectiveUser.claimedWeeklyRewardWeekKeys.contains(
-                  resolvedWeekKey,
-                ) ||
-                (effectiveUser.previousRankWeekKey != null &&
-                    effectiveUser.claimedWeeklyRewardWeekKeys.contains(
-                      effectiveUser.previousRankWeekKey,
-                    ))));
+            effectiveUser.claimedWeeklyRewardWeekKeys.contains(resolvedWeekKey));
 
     return SafeArea(
       top: false,

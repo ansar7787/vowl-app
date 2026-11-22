@@ -128,8 +128,15 @@ final class WeeklyLeagueRewardHelper {
   }
 
   /// Returns the relevant week key for claiming the reward.
+  /// Strictly bounds to [prevWeekKey] or [curWeekKey] to prevent stale cycle bleeding.
   static String getTargetWeekKey(UserEntity? user, [DateTime? now]) {
-    return user?.previousRankWeekKey ?? getPreviousWeekKey(now);
+    final prevWeekKey = getPreviousWeekKey(now);
+    final curWeekKey = getCurrentWeekKey(now);
+    if (user?.previousRankWeekKey == curWeekKey ||
+        user?.previousRankWeekKey == prevWeekKey) {
+      return user!.previousRankWeekKey!;
+    }
+    return prevWeekKey;
   }
 
   /// Checks if [user] finished in top 10 and has an unclaimed reward.
