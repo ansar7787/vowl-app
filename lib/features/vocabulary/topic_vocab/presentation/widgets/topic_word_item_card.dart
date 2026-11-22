@@ -108,7 +108,8 @@ class _TopicWordItemCardState extends State<TopicWordItemCard> {
               ),
               // Unified 1-Pill Audio & Translate Tool Capsule
               Container(
-                height: 28.h,
+                constraints: BoxConstraints(minHeight: 28.h),
+                padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 1.h),
                 decoration: BoxDecoration(
                   color: isDark ? AppColors.slate800 : AppColors.slate100,
                   borderRadius: BorderRadius.circular(14.r),

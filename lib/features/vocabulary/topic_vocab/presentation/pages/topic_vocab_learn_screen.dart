@@ -210,6 +210,7 @@ class _TopicVocabLearnScreenState extends State<TopicVocabLearnScreen> {
                   final isActive = idx == _currentIndex;
                   final isDone = idx < _currentIndex;
                   return GestureDetector(
+                    behavior: HitTestBehavior.opaque,
                     onTap: () {
                       _hapticService.selection();
                       _pageController.animateToPage(
@@ -218,18 +219,20 @@ class _TopicVocabLearnScreenState extends State<TopicVocabLearnScreen> {
                         curve: Curves.easeOutCubic,
                       );
                     },
-                    child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 250),
-                      margin: EdgeInsets.symmetric(horizontal: 3.w),
-                      width: isActive ? 24.w : 8.w,
-                      height: 5.h,
-                      decoration: BoxDecoration(
-                        color: isActive
-                            ? accentColor
-                            : (isDone
-                                ? accentColor.withValues(alpha: 0.45)
-                                : (isDark ? Colors.white24 : Colors.black12)),
-                        borderRadius: BorderRadius.circular(4.r),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 6.h),
+                      child: AnimatedContainer(
+                        duration: const Duration(milliseconds: 250),
+                        width: isActive ? 24.w : 8.w,
+                        height: 5.h,
+                        decoration: BoxDecoration(
+                          color: isActive
+                              ? accentColor
+                              : (isDone
+                                  ? accentColor.withValues(alpha: 0.45)
+                                  : (isDark ? Colors.white24 : Colors.black12)),
+                          borderRadius: BorderRadius.circular(4.r),
+                        ),
                       ),
                     ),
                   );

@@ -49,6 +49,7 @@ class TopicWordPeekSheet extends StatefulWidget {
 
 class _TopicWordPeekSheetState extends State<TopicWordPeekSheet> {
   String? _translatedText;
+  String? _targetLanguageCode;
   bool _showTranslated = false;
 
   @override
@@ -119,6 +120,15 @@ class _TopicWordPeekSheetState extends State<TopicWordPeekSheet> {
                   if (mounted) {
                     setState(() {
                       _translatedText = translated;
+                      _showTranslated = true;
+                    });
+                  }
+                },
+                onTranslationWithLanguage: (translated, langCode) {
+                  if (mounted) {
+                    setState(() {
+                      _translatedText = translated;
+                      _targetLanguageCode = langCode;
                       _showTranslated = true;
                     });
                   }
@@ -219,6 +229,16 @@ class _TopicWordPeekSheetState extends State<TopicWordPeekSheet> {
                       ),
                     ),
                   ),
+                  if (_targetLanguageCode != null &&
+                      _targetLanguageCode!.isNotEmpty) ...[
+                    SizedBox(width: 6.w),
+                    TtsSpeakerButtonWidget(
+                      text: _translatedText!,
+                      locale: _targetLanguageCode,
+                      color: AppColors.emerald500,
+                      size: 16.r,
+                    ),
+                  ],
                 ],
               ),
             ),
