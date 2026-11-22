@@ -6,6 +6,7 @@ import 'package:vowl/core/error/failures.dart';
 import 'package:vowl/features/auth/data/models/user_model.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
 import 'package:vowl/features/leaderboard/domain/repositories/leaderboard_repository.dart';
+import 'package:vowl/features/leaderboard/domain/utils/weekly_league_reward_helper.dart';
 
 /// Concrete implementation of [LeaderboardRepository] querying Firestore
 /// cached leaderboards with client-side timeout guards and fallback queries.
@@ -48,11 +49,43 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
             .toList();
 
         final List<dynamic> winnersJson = data['lastWeekWinners'] ?? [];
-        final lastWeekWinners = winnersJson
+        List<Map<String, dynamic>> lastWeekWinners = winnersJson
             .map(
               (json) => Map<String, dynamic>.from(json as Map),
             )
             .toList();
+
+        // Resilient fetch: If cache document does not have lastWeekWinners,
+        // attempt to fetch the verified weekly winners directly from the users collection.
+        if (lastWeekWinners.isEmpty) {
+          try {
+            final prevWeekKey = WeeklyLeagueRewardHelper.getPreviousWeekKey();
+            final winnersSnap = await firestore
+                .collection('users')
+                .where('previousRankWeekKey', isEqualTo: prevWeekKey)
+                .where('previousRank', isLessThanOrEqualTo: 10)
+                .orderBy('previousRank')
+                .get()
+                .timeout(const Duration(seconds: 4));
+
+            if (winnersSnap.docs.isNotEmpty) {
+              lastWeekWinners = winnersSnap.docs.map((doc) {
+                final d = doc.data();
+                return {
+                  'id': doc.id,
+                  'rank': (d['previousRank'] as num?)?.toInt() ?? 10,
+                  'displayName': d['displayName'] ?? 'Vowl Learner',
+                  'photoUrl': d['photoUrl'],
+                  'weeklyXp': (d['weeklyXp'] as num?)?.toInt() ?? 0,
+                  'currentStreak': (d['currentStreak'] as num?)?.toInt() ?? 0,
+                  'weekKey': prevWeekKey,
+                };
+              }).toList();
+            }
+          } catch (_) {
+            // Keep empty list if query unavailable
+          }
+        }
 
         return Right(
           LeaderboardResult(
@@ -92,19 +125,48 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
             'currentStreak': data['currentStreak'],
             'completedLevels': data['completedLevels'],
             'isPremium': data['isPremium'] ?? false,
-            'previousRank': data['previousRank'] ?? users.length,
+            'previousRank': data['previousRank'],
+            'previousRankWeekKey': data['previousRankWeekKey'],
           });
         } catch (e) {
           if (kDebugMode) debugPrint('LeaderboardRepo: Corrupted user doc: $e');
         }
       }
 
-      // NOTE: Cache seeding removed — security rules block client writes to
-      // the metadata collection (allow write: if false). The Cloud Function
-      // handles cache population. The previous client-side write was dead code
-      // that always failed silently.
+      List<Map<String, dynamic>> fallbackWinners = [];
+      try {
+        final prevWeekKey = WeeklyLeagueRewardHelper.getPreviousWeekKey();
+        final winnersSnap = await firestore
+            .collection('users')
+            .where('previousRankWeekKey', isEqualTo: prevWeekKey)
+            .where('previousRank', isLessThanOrEqualTo: 10)
+            .orderBy('previousRank')
+            .get()
+            .timeout(const Duration(seconds: 4));
 
-      return Right(LeaderboardResult(users: users, lastUpdated: fetchTime));
+        if (winnersSnap.docs.isNotEmpty) {
+          fallbackWinners = winnersSnap.docs.map((doc) {
+            final d = doc.data();
+            return {
+              'id': doc.id,
+              'rank': (d['previousRank'] as num?)?.toInt() ?? 10,
+              'displayName': d['displayName'] ?? 'Vowl Learner',
+              'photoUrl': d['photoUrl'],
+              'weeklyXp': (d['weeklyXp'] as num?)?.toInt() ?? 0,
+              'currentStreak': (d['currentStreak'] as num?)?.toInt() ?? 0,
+              'weekKey': prevWeekKey,
+            };
+          }).toList();
+        }
+      } catch (_) {}
+
+      return Right(
+        LeaderboardResult(
+          users: users,
+          lastUpdated: fetchTime,
+          lastWeekWinners: fallbackWinners,
+        ),
+      );
     } on TimeoutException {
       return const Left(
         ServerFailure('Connection timed out. Please check your network.'),

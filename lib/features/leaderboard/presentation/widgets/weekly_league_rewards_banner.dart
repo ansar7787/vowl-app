@@ -202,6 +202,8 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                             winners: widget.lastWeekWinners,
                             allUsers: widget.allUsers,
                             currentUser: widget.currentUser,
+                            weekKey: targetWeekKey,
+                            onClaimReward: widget.onClaimReward,
                           );
                         },
                         child: Container(

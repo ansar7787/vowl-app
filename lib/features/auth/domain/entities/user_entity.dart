@@ -380,6 +380,27 @@ class UserEntity {
     return sum;
   }
 
+  /// Computes the total XP earned in the previous ISO week (Monday through Sunday)
+  /// by summing entries in [dailyXpHistory] matching the dates of that week.
+  int get previousWeeklyExp {
+    if (dailyXpHistory.isEmpty) return 0;
+    final now = DateTime.now().toUtc();
+    final daysSinceMonday = (now.weekday - 1) % 7;
+    final prevMonday = DateTime.utc(
+      now.year,
+      now.month,
+      now.day,
+    ).subtract(Duration(days: daysSinceMonday + 7));
+    var sum = 0;
+    for (int i = 0; i < 7; i++) {
+      final day = prevMonday.add(Duration(days: i));
+      final key =
+          '${day.year}-${day.month.toString().padLeft(2, '0')}-${day.day.toString().padLeft(2, '0')}';
+      sum += dailyXpHistory[key] ?? 0;
+    }
+    return sum;
+  }
+
   // ---------------------------------------------------------------------------
   // Mastery getters (delegates to QuestType subtypes)
   // ---------------------------------------------------------------------------
