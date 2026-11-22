@@ -1,4 +1,3 @@
-import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -61,7 +60,7 @@ class LastWeekWinnersBottomSheet extends StatefulWidget {
     return showModalBottomSheet(
       context: context,
       useRootNavigator: true,
-      useSafeArea: false,
+      useSafeArea: true,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (_) => LastWeekWinnersBottomSheet(
@@ -261,13 +260,6 @@ class _LastWeekWinnersBottomSheetState
         ? AppColors.slate400
         : (tokens?.textSecondary ?? const Color(0xFF64748B));
 
-    final systemBottomPadding = math.max(
-      MediaQuery.paddingOf(context).bottom,
-      MediaQuery.viewPaddingOf(context).bottom,
-    );
-    final safeBottom =
-        (systemBottomPadding > 0 ? systemBottomPadding : 16.h) + 16.h;
-
     // Real-time user resolution from AuthBloc
     UserEntity? authUser;
     try {
@@ -325,26 +317,26 @@ class _LastWeekWinnersBottomSheetState
                       effectiveUser.previousRankWeekKey,
                     ))));
 
-    return Container(
-      constraints: BoxConstraints(
-        maxHeight: MediaQuery.sizeOf(context).height * 0.88,
-      ),
-      padding: EdgeInsets.fromLTRB(18.w, 12.h, 18.w, safeBottom),
-      decoration: BoxDecoration(
-        color: surfaceColor,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
-        border: Border.all(color: borderColor, width: 1.w),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: isDark ? 0.5 : 0.15),
-            blurRadius: 24,
-            offset: const Offset(0, -6),
-          ),
-        ],
-      ),
-      child: SafeArea(
-        top: false,
-        bottom: false,
+    return SafeArea(
+      top: false,
+      bottom: true,
+      child: Container(
+        constraints: BoxConstraints(
+          maxHeight: MediaQuery.sizeOf(context).height * 0.88,
+        ),
+        padding: EdgeInsets.fromLTRB(18.w, 12.h, 18.w, 12.h),
+        decoration: BoxDecoration(
+          color: surfaceColor,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
+          border: Border.all(color: borderColor, width: 1.w),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: isDark ? 0.45 : 0.12),
+              blurRadius: 20,
+              offset: const Offset(0, -4),
+            ),
+          ],
+        ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -409,7 +401,7 @@ class _LastWeekWinnersBottomSheetState
                       ),
                       SizedBox(height: 1.h),
                       Text(
-                        'Weekly League Winners · $resolvedWeekKey',
+                        WeeklyLeagueRewardHelper.formatWeekDateRange(resolvedWeekKey),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 11.5.sp,
@@ -516,19 +508,8 @@ class _LastWeekWinnersBottomSheetState
                 width: double.infinity,
                 padding: EdgeInsets.symmetric(vertical: 12.h),
                 decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [Color(0xFF6366F1), Color(0xFF4F46E5)],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  borderRadius: BorderRadius.circular(16.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color(0xFF6366F1).withValues(alpha: 0.35),
-                      blurRadius: 10,
-                      offset: const Offset(0, 3),
-                    ),
-                  ],
+                  color: AppColors.indigo500,
+                  borderRadius: BorderRadius.circular(14.r),
                 ),
                 alignment: Alignment.center,
                 child: Text(
@@ -729,25 +710,14 @@ class _LastWeekWinnersBottomSheetState
                 width: double.infinity,
                 padding: EdgeInsets.symmetric(vertical: 9.h),
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [accentColor, accentColor.withValues(alpha: 0.85)],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
+                  color: AppColors.indigo500,
                   borderRadius: BorderRadius.circular(12.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: accentColor.withValues(alpha: 0.35),
-                      blurRadius: 8,
-                      offset: const Offset(0, 3),
-                    ),
-                  ],
                 ),
                 alignment: Alignment.center,
                 child: _isClaiming
-                    ? VowlMicroLoader(
-                        size: 15.r,
-                        color: rank == 1 ? Colors.black : Colors.white,
+                    ? const VowlMicroLoader(
+                        size: 15,
+                        color: Colors.white,
                       )
                     : FittedBox(
                         fit: BoxFit.scaleDown,
@@ -757,7 +727,7 @@ class _LastWeekWinnersBottomSheetState
                             Icon(
                               LucideIcons.sparkles,
                               size: 14.sp,
-                              color: rank == 1 ? Colors.black : Colors.white,
+                              color: Colors.white,
                             ),
                             SizedBox(width: 6.w),
                             Text(
@@ -766,7 +736,7 @@ class _LastWeekWinnersBottomSheetState
                                 fontFamily: 'Outfit',
                                 fontSize: 12.5.sp,
                                 fontWeight: FontWeight.w900,
-                                color: rank == 1 ? Colors.black : Colors.white,
+                                color: Colors.white,
                                 letterSpacing: 0.3,
                               ),
                             ),
@@ -790,27 +760,16 @@ class _LastWeekWinnersBottomSheetState
               ),
               child: FittedBox(
                 fit: BoxFit.scaleDown,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      LucideIcons.checkCheck,
-                      size: 14.sp,
-                      color: AppColors.emerald500,
-                    ),
-                    SizedBox(width: 6.w),
-                    Text(
-                      vipDays > 0
-                          ? 'Claimed: +$coins Coins · ${vipDays}d VIP'
-                          : 'Claimed: +$coins Coins',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 11.5.sp,
-                        fontWeight: FontWeight.w900,
-                        color: AppColors.emerald500,
-                      ),
-                    ),
-                  ],
+                child: Text(
+                  vipDays > 0
+                      ? 'Claimed: +$coins Coins · ${vipDays}d VIP'
+                      : 'Claimed: +$coins Coins',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.5.sp,
+                    fontWeight: FontWeight.w900,
+                    color: AppColors.emerald500,
+                  ),
                 ),
               ),
             ),
@@ -1017,25 +976,13 @@ class _LastWeekWinnersBottomSheetState
                     vertical: 5.h,
                   ),
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        rankColor,
-                        rankColor.withValues(alpha: 0.85),
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(9.r),
-                    boxShadow: [
-                      BoxShadow(
-                        color: rankColor.withValues(alpha: 0.3),
-                        blurRadius: 6,
-                        offset: const Offset(0, 2),
-                      ),
-                    ],
+                    color: AppColors.indigo500,
+                    borderRadius: BorderRadius.circular(8.r),
                   ),
                   child: _isClaiming
-                      ? VowlMicroLoader(
-                          size: 12.r,
-                          color: rank == 1 ? Colors.black : Colors.white,
+                      ? const VowlMicroLoader(
+                          size: 12,
+                          color: Colors.white,
                         )
                       : Text(
                           'Claim',
@@ -1043,7 +990,7 @@ class _LastWeekWinnersBottomSheetState
                             fontFamily: 'Outfit',
                             fontSize: 10.5.sp,
                             fontWeight: FontWeight.w900,
-                            color: rank == 1 ? Colors.black : Colors.white,
+                            color: Colors.white,
                             letterSpacing: 0.4,
                           ),
                         ),
@@ -1051,7 +998,7 @@ class _LastWeekWinnersBottomSheetState
               ),
             ] else ...[
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 3.5.h),
+                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
                 decoration: BoxDecoration(
                   color: AppColors.emerald500.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(8.r),
@@ -1060,25 +1007,14 @@ class _LastWeekWinnersBottomSheetState
                     width: 1,
                   ),
                 ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Icon(
-                      LucideIcons.checkCheck,
-                      size: 10.sp,
-                      color: AppColors.emerald500,
-                    ),
-                    SizedBox(width: 3.w),
-                    Text(
-                      'Claimed',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 9.5.sp,
-                        fontWeight: FontWeight.w800,
-                        color: AppColors.emerald500,
-                      ),
-                    ),
-                  ],
+                child: Text(
+                  'Claimed',
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 9.5.sp,
+                    fontWeight: FontWeight.w800,
+                    color: AppColors.emerald500,
+                  ),
                 ),
               ),
             ],

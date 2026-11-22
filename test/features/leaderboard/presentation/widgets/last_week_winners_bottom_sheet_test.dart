@@ -145,7 +145,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.text("Last Week's Champions"), findsOneWidget);
-      expect(find.text('Weekly League Winners · 2026-W45'), findsOneWidget);
+      expect(find.text('Nov 2 – Nov 8, 2026'), findsOneWidget);
 
       // Verify ranks 1, 2, 3 have distinct podium icons and labels
       expect(find.text('Weekly Learner 0'), findsOneWidget);

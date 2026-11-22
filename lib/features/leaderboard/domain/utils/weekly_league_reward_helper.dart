@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:vowl/core/utils/custom_snack_bar.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -28,6 +29,32 @@ final class WeeklyLeagueRewardHelper {
   static String getPreviousWeekKey([DateTime? date]) {
     final now = (date ?? DateTime.now()).toUtc();
     return getCurrentWeekKey(now.subtract(const Duration(days: 7)));
+  }
+
+  /// Formats human-readable exact start and end date for a week key (e.g., 'Nov 2 – Nov 8, 2026').
+  static String formatWeekDateRange(String? weekKey, [DateTime? referenceDate]) {
+    DateTime monday;
+    if (weekKey != null && RegExp(r'^\d{4}-W\d{2}$').hasMatch(weekKey)) {
+      final parts = weekKey.split('-W');
+      final year = int.parse(parts[0]);
+      final week = int.parse(parts[1]);
+
+      // Jan 4th is always in week 1 of ISO 8601
+      final jan4 = DateTime.utc(year, 1, 4);
+      final jan4Weekday = jan4.weekday; // 1 = Monday, 7 = Sunday
+      final week1Monday = jan4.subtract(Duration(days: jan4Weekday - 1));
+      monday = week1Monday.add(Duration(days: (week - 1) * 7));
+    } else {
+      final now = (referenceDate ?? DateTime.now()).toUtc();
+      monday = now.subtract(Duration(days: now.weekday - 1 + 7));
+    }
+    final sunday = monday.add(const Duration(days: 6));
+
+    if (monday.year == sunday.year) {
+      return '${DateFormat('MMM d').format(monday)} – ${DateFormat('MMM d, yyyy').format(sunday)}';
+    } else {
+      return '${DateFormat('MMM d, yyyy').format(monday)} – ${DateFormat('MMM d, yyyy').format(sunday)}';
+    }
   }
 
   /// Returns the relevant week key for claiming the reward.

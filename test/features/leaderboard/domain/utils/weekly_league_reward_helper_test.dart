@@ -16,6 +16,17 @@ void main() {
       );
     });
 
+    test('formats human-readable date range from week key accurately', () {
+      expect(
+        WeeklyLeagueRewardHelper.formatWeekDateRange('2026-W45'),
+        equals('Nov 2 – Nov 8, 2026'),
+      );
+      expect(
+        WeeklyLeagueRewardHelper.formatWeekDateRange('2026-W44'),
+        equals('Oct 26 – Nov 1, 2026'),
+      );
+    });
+
     test('correctly evaluates hasUnclaimedReward', () {
       final now = DateTime.utc(2026, 11, 4);
 

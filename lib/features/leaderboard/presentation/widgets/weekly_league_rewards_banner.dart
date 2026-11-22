@@ -560,10 +560,8 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                                   _handleClaimDirect(targetWeekKey);
                                 },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: bannerAccent,
-                            foregroundColor: rank == 1
-                                ? Colors.black
-                                : Colors.white,
+                            backgroundColor: AppColors.indigo500,
+                            foregroundColor: Colors.white,
                             padding: EdgeInsets.symmetric(
                               horizontal: 14.w,
                               vertical: 7.h,
@@ -573,12 +571,12 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10.r),
                             ),
-                            elevation: 2,
+                            elevation: 0,
                           ),
                           child: _isClaiming
-                              ? VowlMicroLoader(
-                                  size: 14.r,
-                                  color: rank == 1 ? Colors.black : Colors.white,
+                              ? const VowlMicroLoader(
+                                  size: 14,
+                                  color: Colors.white,
                                 )
                               : Text(
                                   'Claim',
@@ -608,26 +606,15 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                               width: 1.w,
                             ),
                           ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                LucideIcons.checkCheck,
-                                size: 13.sp,
-                                color: AppColors.emerald500,
-                              ),
-                              SizedBox(width: 4.w),
-                              Text(
-                                'Claimed',
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 11.5.sp,
-                                  fontWeight: FontWeight.w900,
-                                  color: AppColors.emerald500,
-                                  letterSpacing: 0.3,
-                                ),
-                              ),
-                            ],
+                          child: Text(
+                            'Claimed',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.5.sp,
+                              fontWeight: FontWeight.w900,
+                              color: AppColors.emerald500,
+                              letterSpacing: 0.3,
+                            ),
                           ),
                         ),
                     ],
