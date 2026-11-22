@@ -32,7 +32,11 @@ final class WeeklyLeagueRewardHelper {
   }
 
   /// Formats human-readable exact start and end date for a week key (e.g., 'Nov 2 – Nov 8, 2026').
-  static String formatWeekDateRange(String? weekKey, [DateTime? referenceDate]) {
+  static String formatWeekDateRange(
+    String? weekKey, {
+    DateTime? referenceDate,
+    String? locale,
+  }) {
     DateTime monday;
     if (weekKey != null && RegExp(r'^\d{4}-W\d{2}$').hasMatch(weekKey)) {
       final parts = weekKey.split('-W');
@@ -50,10 +54,39 @@ final class WeeklyLeagueRewardHelper {
     }
     final sunday = monday.add(const Duration(days: 6));
 
+    const months = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+    ];
+    final mMonth = months[monday.month - 1];
+    final sMonth = months[sunday.month - 1];
+
+    if (locale != null && locale.isNotEmpty && !locale.startsWith('en')) {
+      try {
+        if (monday.year == sunday.year) {
+          return '${DateFormat('MMM d', locale).format(monday)} – ${DateFormat('MMM d, yyyy', locale).format(sunday)}';
+        } else {
+          return '${DateFormat('MMM d, yyyy', locale).format(monday)} – ${DateFormat('MMM d, yyyy', locale).format(sunday)}';
+        }
+      } catch (_) {
+        // Fall back to clean deterministic date formatting
+      }
+    }
+
     if (monday.year == sunday.year) {
-      return '${DateFormat('MMM d').format(monday)} – ${DateFormat('MMM d, yyyy').format(sunday)}';
+      return '$mMonth ${monday.day} – $sMonth ${sunday.day}, ${sunday.year}';
     } else {
-      return '${DateFormat('MMM d, yyyy').format(monday)} – ${DateFormat('MMM d, yyyy').format(sunday)}';
+      return '$mMonth ${monday.day}, ${monday.year} – $sMonth ${sunday.day}, ${sunday.year}';
     }
   }
 
@@ -166,7 +199,6 @@ final class WeeklyLeagueRewardHelper {
       newExpiry = null;
     }
 
-    final updatedKeys = [...user.claimedWeeklyRewardWeekKeys, weekKey];
     final coinHistoryEntry = {
       'titleKey': 'coin_history.weekly_league_reward',
       'amount': coins,
@@ -179,7 +211,7 @@ final class WeeklyLeagueRewardHelper {
           .collection('users')
           .doc(user.id)
           .update({
-            'claimedWeeklyRewardWeekKeys': updatedKeys,
+            'claimedWeeklyRewardWeekKeys': FieldValue.arrayUnion([weekKey]),
             if (coins > 0) ...{
               'coins': FieldValue.increment(coins),
               'coinHistory': FieldValue.arrayUnion([coinHistoryEntry]),

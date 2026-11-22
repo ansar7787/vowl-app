@@ -55,45 +55,36 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
             )
             .toList();
 
-        // Resilient fetch: If cache document does not have lastWeekWinners,
-        // attempt to fetch the verified weekly winners directly from the users collection.
-        // Uses single-field equality filter without compound index requirement.
-        if (lastWeekWinners.isEmpty) {
-          try {
-            final prevWeekKey = WeeklyLeagueRewardHelper.getPreviousWeekKey();
-            final winnersSnap = await firestore
-                .collection('users')
-                .where('previousRankWeekKey', isEqualTo: prevWeekKey)
-                .get()
-                .timeout(const Duration(seconds: 4));
+        // ZERO-LEAKAGE BILLING PROTECTION:
+        // If cache document does not have lastWeekWinners, resolve directly from the
+        // in-memory users list already fetched from metadata/leaderboard_cache.
+        // This eliminates any unbounded Firestore queries and guarantees $0 additional read costs.
+        if (lastWeekWinners.isEmpty && users.isNotEmpty) {
+          final prevWeekKey = WeeklyLeagueRewardHelper.getPreviousWeekKey();
+          final weeklyCandidates = users.where((u) {
+            return u.previousRankWeekKey == prevWeekKey &&
+                u.previousRank != null &&
+                u.previousRank! >= 1 &&
+                u.previousRank! <= 10;
+          }).toList();
 
-            if (winnersSnap.docs.isNotEmpty) {
-              final topDocs = winnersSnap.docs.where((doc) {
-                final r = (doc.data()['previousRank'] as num?)?.toInt();
-                return r != null && r >= 1 && r <= 10;
-              }).toList();
-
-              topDocs.sort((a, b) {
-                final ra = (a.data()['previousRank'] as num?)?.toInt() ?? 10;
-                final rb = (b.data()['previousRank'] as num?)?.toInt() ?? 10;
-                return ra.compareTo(rb);
-              });
-
-              lastWeekWinners = topDocs.take(10).map((doc) {
-                final d = doc.data();
-                return {
-                  'id': doc.id,
-                  'rank': (d['previousRank'] as num?)?.toInt() ?? 10,
-                  'displayName': d['displayName'] ?? 'Vowl Learner',
-                  'photoUrl': d['photoUrl'],
-                  'weeklyXp': (d['weeklyXp'] as num?)?.toInt() ?? 0,
-                  'currentStreak': (d['currentStreak'] as num?)?.toInt() ?? 0,
-                  'weekKey': prevWeekKey,
-                };
-              }).toList();
-            }
-          } catch (_) {
-            // Keep empty list if query unavailable
+          if (weeklyCandidates.isNotEmpty) {
+            weeklyCandidates.sort(
+              (a, b) => a.previousRank!.compareTo(b.previousRank!),
+            );
+            lastWeekWinners = weeklyCandidates.take(10).map((u) {
+              return {
+                'id': u.id,
+                'rank': u.previousRank!,
+                'displayName': u.safeDisplayName,
+                'photoUrl': u.photoUrl,
+                'weeklyXp': u.previousWeeklyExp > 0
+                    ? u.previousWeeklyExp
+                    : u.currentWeeklyExp,
+                'currentStreak': u.currentStreak,
+                'weekKey': prevWeekKey,
+              };
+            }).toList();
           }
         }
 
@@ -144,40 +135,34 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
       }
 
       List<Map<String, dynamic>> fallbackWinners = [];
-      try {
+      if (users.isNotEmpty) {
         final prevWeekKey = WeeklyLeagueRewardHelper.getPreviousWeekKey();
-        final winnersSnap = await firestore
-            .collection('users')
-            .where('previousRankWeekKey', isEqualTo: prevWeekKey)
-            .get()
-            .timeout(const Duration(seconds: 4));
+        final weeklyCandidates = users.where((u) {
+          return u.previousRankWeekKey == prevWeekKey &&
+              u.previousRank != null &&
+              u.previousRank! >= 1 &&
+              u.previousRank! <= 10;
+        }).toList();
 
-        if (winnersSnap.docs.isNotEmpty) {
-          final topDocs = winnersSnap.docs.where((doc) {
-            final r = (doc.data()['previousRank'] as num?)?.toInt();
-            return r != null && r >= 1 && r <= 10;
-          }).toList();
-
-          topDocs.sort((a, b) {
-            final ra = (a.data()['previousRank'] as num?)?.toInt() ?? 10;
-            final rb = (b.data()['previousRank'] as num?)?.toInt() ?? 10;
-            return ra.compareTo(rb);
-          });
-
-          fallbackWinners = topDocs.take(10).map((doc) {
-            final d = doc.data();
+        if (weeklyCandidates.isNotEmpty) {
+          weeklyCandidates.sort(
+            (a, b) => a.previousRank!.compareTo(b.previousRank!),
+          );
+          fallbackWinners = weeklyCandidates.take(10).map((u) {
             return {
-              'id': doc.id,
-              'rank': (d['previousRank'] as num?)?.toInt() ?? 10,
-              'displayName': d['displayName'] ?? 'Vowl Learner',
-              'photoUrl': d['photoUrl'],
-              'weeklyXp': (d['weeklyXp'] as num?)?.toInt() ?? 0,
-              'currentStreak': (d['currentStreak'] as num?)?.toInt() ?? 0,
+              'id': u.id,
+              'rank': u.previousRank!,
+              'displayName': u.safeDisplayName,
+              'photoUrl': u.photoUrl,
+              'weeklyXp': u.previousWeeklyExp > 0
+                  ? u.previousWeeklyExp
+                  : u.currentWeeklyExp,
+              'currentStreak': u.currentStreak,
               'weekKey': prevWeekKey,
             };
           }).toList();
         }
-      } catch (_) {}
+      }
 
       return Right(
         LeaderboardResult(

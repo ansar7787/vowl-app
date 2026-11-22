@@ -401,7 +401,10 @@ class _LastWeekWinnersBottomSheetState
                       ),
                       SizedBox(height: 1.h),
                       Text(
-                        WeeklyLeagueRewardHelper.formatWeekDateRange(resolvedWeekKey),
+                        WeeklyLeagueRewardHelper.formatWeekDateRange(
+                          resolvedWeekKey,
+                          locale: Localizations.localeOf(context).toString(),
+                        ),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 11.5.sp,
@@ -460,13 +463,19 @@ class _LastWeekWinnersBottomSheetState
                     if (resolvedWinners.isNotEmpty) ...[
                       ...resolvedWinners.map((winner) {
                         final rank = (winner['rank'] as num?)?.toInt() ?? 10;
-                        final name =
-                            (winner['displayName'] as String?) ??
-                            'Vowl Learner';
-                        final photoUrl = winner['photoUrl'] as String?;
+                        final isMe = effectiveUser?.id == winner['id'];
+                        final name = isMe
+                            ? (effectiveUser?.safeDisplayName ??
+                                (winner['displayName'] as String?) ??
+                                'Vowl Learner')
+                            : ((winner['displayName'] as String?) ??
+                                'Vowl Learner');
+                        final photoUrl = isMe
+                            ? (effectiveUser?.photoUrl ??
+                                winner['photoUrl'] as String?)
+                            : (winner['photoUrl'] as String?);
                         final weeklyXp =
                             (winner['weeklyXp'] as num?)?.toInt() ?? 0;
-                        final isMe = effectiveUser?.id == winner['id'];
 
                         return _buildWinnerCard(
                           context: context,
@@ -626,40 +635,17 @@ class _LastWeekWinnersBottomSheetState
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Row(
-                      children: [
-                        Text(
-                          'YOUR FINISH · RANK #$rank',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 10.sp,
-                            fontWeight: FontWeight.w900,
-                            color: accentColor,
-                            letterSpacing: 0.5,
-                          ),
-                        ),
-                        SizedBox(width: 6.w),
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 5.w,
-                            vertical: 1.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: accentColor,
-                            borderRadius: BorderRadius.circular(4.r),
-                          ),
-                          child: Text(
-                            'YOU',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 8.5.sp,
-                              fontWeight: FontWeight.w900,
-                              color: rank == 1 ? Colors.black : Colors.white,
-                              letterSpacing: 0.4,
-                            ),
-                          ),
-                        ),
-                      ],
+                    Text(
+                      'YOUR FINISH · RANK #$rank',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w900,
+                        color: accentColor,
+                        letterSpacing: 0.5,
+                      ),
                     ),
                     SizedBox(height: 2.h),
                     Text(
@@ -795,6 +781,7 @@ class _LastWeekWinnersBottomSheetState
     final Color rankColor;
     final String rankLabel;
     final IconData rankIcon;
+    final bool isPodium = rank <= 3;
 
     switch (rank) {
       case 1:
@@ -827,41 +814,52 @@ class _LastWeekWinnersBottomSheetState
             ? const Color(0xFF0F1523)
             : (isDark ? const Color(0xFF1A2338) : const Color(0xFFF8FAFC)));
 
+    final double borderWidth = isMe
+        ? (rank == 1 ? 1.8.w : (isPodium ? 1.5.w : 1.3.w))
+        : (rank == 1 ? 1.4.w : (isPodium ? 1.2.w : 1.w));
+
     return Container(
-      margin: EdgeInsets.only(bottom: 8.h),
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 9.h),
+      margin: EdgeInsets.only(bottom: isPodium ? 8.h : 6.h),
+      padding: EdgeInsets.symmetric(
+        horizontal: 12.w,
+        vertical: isPodium ? 9.h : 7.5.h,
+      ),
       decoration: BoxDecoration(
         color: cardBg,
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
           color: isMe
               ? rankColor
-              : rankColor.withValues(alpha: isDark ? 0.25 : 0.15),
-          width: isMe ? 1.5.w : 1.w,
+              : (isPodium
+                  ? rankColor.withValues(alpha: isDark ? 0.35 : 0.25)
+                  : (isDark
+                      ? Colors.white.withValues(alpha: 0.08)
+                      : Colors.black.withValues(alpha: 0.06))),
+          width: borderWidth,
         ),
       ),
       child: Row(
         children: [
           // Rank Badge
           Container(
-            width: 32.r,
-            height: 32.r,
+            width: isPodium ? 32.r : 28.r,
+            height: isPodium ? 32.r : 28.r,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: rankColor.withValues(alpha: 0.18),
+              color: rankColor.withValues(alpha: isPodium ? 0.18 : 0.12),
               border: Border.all(
-                color: rankColor.withValues(alpha: 0.4),
+                color: rankColor.withValues(alpha: isPodium ? 0.45 : 0.25),
                 width: 1.w,
               ),
             ),
             alignment: Alignment.center,
-            child: rank <= 3
+            child: isPodium
                 ? Icon(rankIcon, size: 16.sp, color: rankColor)
                 : Text(
                     rankLabel,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 11.sp,
+                      fontSize: 10.5.sp,
                       fontWeight: FontWeight.w900,
                       color: rankColor,
                     ),
@@ -872,7 +870,7 @@ class _LastWeekWinnersBottomSheetState
           // User Avatar
           UserAvatar(
             photoUrl: photoUrl,
-            size: 34.r,
+            size: isPodium ? 34.r : 30.r,
             border: Border.all(
               color: rankColor.withValues(alpha: 0.4),
               width: 1.2.r,
@@ -886,45 +884,48 @@ class _LastWeekWinnersBottomSheetState
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Row(
-                  children: [
-                    Flexible(
-                      child: Text(
-                        displayName,
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
+                Text.rich(
+                  TextSpan(
+                    children: [
+                      TextSpan(
+                        text: displayName,
                         style: TextStyle(
                           fontFamily: 'Outfit',
-                          fontSize: 13.sp,
+                          fontSize: isPodium ? 13.sp : 12.5.sp,
                           fontWeight: FontWeight.w800,
                           color: isDark ? Colors.white : AppColors.slate900,
                         ),
                       ),
-                    ),
-                    if (isMe) ...[
-                      SizedBox(width: 6.w),
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 6.w,
-                          vertical: 1.5.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: rankColor,
-                          borderRadius: BorderRadius.circular(6.r),
-                        ),
-                        child: Text(
-                          'YOU',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 9.sp,
-                            fontWeight: FontWeight.w900,
-                            color: rank == 1 ? Colors.black : Colors.white,
-                            letterSpacing: 0.4,
+                      if (isMe) ...[
+                        WidgetSpan(
+                          alignment: PlaceholderAlignment.middle,
+                          child: Container(
+                            margin: EdgeInsets.only(left: 5.w),
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 5.w,
+                              vertical: 1.5.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: rankColor,
+                              borderRadius: BorderRadius.circular(5.r),
+                            ),
+                            child: Text(
+                              'YOU',
+                              style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 8.5.sp,
+                                fontWeight: FontWeight.w900,
+                                color: rank == 1 ? Colors.black : Colors.white,
+                                letterSpacing: 0.3,
+                              ),
+                            ),
                           ),
                         ),
-                      ),
+                      ],
                     ],
-                  ],
+                  ),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 SizedBox(height: 2.h),
                 Row(
@@ -956,68 +957,28 @@ class _LastWeekWinnersBottomSheetState
           ),
           SizedBox(width: 8.w),
 
-          // Prize Pill or In-Card Claim / Claimed Action
-          if (isMe) ...[
-            if (!isAlreadyClaimed && currentUser != null) ...[
-              ScaleButton(
-                onTap: _isClaiming
-                    ? null
-                    : () => _handleClaim(
-                        context: context,
-                        user: currentUser,
-                        rank: rank,
-                        vipDays: WeeklyLeagueRewardHelper.getVipDays(rank),
-                        coins: WeeklyLeagueRewardHelper.getCoins(rank),
-                        targetWeekKey: weekKey,
-                      ),
-                child: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 12.w,
-                    vertical: 5.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: AppColors.indigo500,
-                    borderRadius: BorderRadius.circular(8.r),
-                  ),
-                  child: _isClaiming
-                      ? const VowlMicroLoader(
-                          size: 12,
-                          color: Colors.white,
-                        )
-                      : Text(
-                          'Claim',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 10.5.sp,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.white,
-                            letterSpacing: 0.4,
-                          ),
-                        ),
+          // Prize Pill or In-Card Claimed Status (Hero CTA is on Spotlight Banner)
+          if (isMe && isAlreadyClaimed) ...[
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+              decoration: BoxDecoration(
+                color: AppColors.emerald500.withValues(alpha: 0.15),
+                borderRadius: BorderRadius.circular(8.r),
+                border: Border.all(
+                  color: AppColors.emerald500.withValues(alpha: 0.4),
+                  width: 1,
                 ),
               ),
-            ] else ...[
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-                decoration: BoxDecoration(
-                  color: AppColors.emerald500.withValues(alpha: 0.15),
-                  borderRadius: BorderRadius.circular(8.r),
-                  border: Border.all(
-                    color: AppColors.emerald500.withValues(alpha: 0.4),
-                    width: 1,
-                  ),
-                ),
-                child: Text(
-                  'Claimed',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 9.5.sp,
-                    fontWeight: FontWeight.w800,
-                    color: AppColors.emerald500,
-                  ),
+              child: Text(
+                'Claimed',
+                style: TextStyle(
+                  fontFamily: 'Outfit',
+                  fontSize: 9.5.sp,
+                  fontWeight: FontWeight.w800,
+                  color: AppColors.emerald500,
                 ),
               ),
-            ],
+            ),
           ] else ...[
             Container(
               padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
@@ -1057,6 +1018,53 @@ class _LastWeekWinnersBottomSheetState
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          Center(
+            child: Container(
+              width: 52.r,
+              height: 52.r,
+              margin: EdgeInsets.only(bottom: 10.h),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: (isDark ? Colors.white : Colors.black).withValues(
+                  alpha: 0.04,
+                ),
+                border: Border.all(
+                  color: textSecondary.withValues(alpha: 0.2),
+                  width: 1.2.w,
+                ),
+              ),
+              child: Icon(
+                LucideIcons.trophy,
+                size: 24.r,
+                color: textSecondary,
+              ),
+            ),
+          ),
+          Center(
+            child: Text(
+              'No Finalized Champions Yet',
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w800,
+                color: textPrimary,
+              ),
+            ),
+          ),
+          SizedBox(height: 3.h),
+          Center(
+            child: Text(
+              'Weekly results finalize every Sunday at 23:59 UTC.',
+              style: TextStyle(
+                fontFamily: 'Outfit',
+                fontSize: 11.sp,
+                fontWeight: FontWeight.w500,
+                color: textSecondary,
+              ),
+            ),
+          ),
+          SizedBox(height: 14.h),
+
           // Prize structure overview
           Text(
             'Weekly League Prize Tiers',
