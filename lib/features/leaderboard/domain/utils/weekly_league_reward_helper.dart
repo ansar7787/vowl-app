@@ -31,13 +31,8 @@ final class WeeklyLeagueRewardHelper {
     return getCurrentWeekKey(now.subtract(const Duration(days: 7)));
   }
 
-  /// Formats human-readable exact start and end date for a week key (e.g., 'Nov 2 – Nov 8, 2026').
-  static String formatWeekDateRange(
-    String? weekKey, {
-    DateTime? referenceDate,
-    String? locale,
-  }) {
-    DateTime monday;
+  /// Returns the exact Monday (00:00:00.000 UTC) for a given ISO-8601 week key (e.g. '2026-W45').
+  static DateTime getMondayForWeekKey(String? weekKey, [DateTime? referenceDate]) {
     if (weekKey != null && RegExp(r'^\d{4}-W\d{2}$').hasMatch(weekKey)) {
       final parts = weekKey.split('-W');
       final year = int.parse(parts[0]);
@@ -47,11 +42,53 @@ final class WeeklyLeagueRewardHelper {
       final jan4 = DateTime.utc(year, 1, 4);
       final jan4Weekday = jan4.weekday; // 1 = Monday, 7 = Sunday
       final week1Monday = jan4.subtract(Duration(days: jan4Weekday - 1));
-      monday = week1Monday.add(Duration(days: (week - 1) * 7));
-    } else {
-      final now = (referenceDate ?? DateTime.now()).toUtc();
-      monday = now.subtract(Duration(days: now.weekday - 1 + 7));
+      return week1Monday.add(Duration(days: (week - 1) * 7));
     }
+    final now = (referenceDate ?? DateTime.now()).toUtc();
+    final daysSinceMonday = (now.weekday - 1) % 7;
+    return DateTime.utc(now.year, now.month, now.day)
+        .subtract(Duration(days: daysSinceMonday + 7));
+  }
+
+  /// Calculates the exact XP earned by [user] during the 7 days (Monday through Sunday)
+  /// of the target [weekKey].
+  static int getWeeklyExpForWeek(UserEntity user, String? weekKey) {
+    if (weekKey != null && user.dailyXpHistory.isNotEmpty) {
+      final monday = getMondayForWeekKey(weekKey);
+      var sum = 0;
+      bool hasDateMatch = false;
+      for (int i = 0; i < 7; i++) {
+        final day = monday.add(Duration(days: i));
+        final dayKey =
+            '${day.year}-${day.month.toString().padLeft(2, '0')}-${day.day.toString().padLeft(2, '0')}';
+        if (user.dailyXpHistory.containsKey(dayKey)) {
+          hasDateMatch = true;
+          sum += user.dailyXpHistory[dayKey] ?? 0;
+        }
+      }
+      if (hasDateMatch || sum > 0) {
+        return sum;
+      }
+    }
+
+    final prevWeekKey = getPreviousWeekKey();
+    final curWeekKey = getCurrentWeekKey();
+    if (weekKey == prevWeekKey && user.previousWeeklyExp > 0) {
+      return user.previousWeeklyExp;
+    }
+    if (weekKey == curWeekKey && user.currentWeeklyExp > 0) {
+      return user.currentWeeklyExp;
+    }
+    return 0;
+  }
+
+  /// Formats human-readable exact start and end date for a week key (e.g., 'Nov 2 – Nov 8, 2026').
+  static String formatWeekDateRange(
+    String? weekKey, {
+    DateTime? referenceDate,
+    String? locale,
+  }) {
+    final monday = getMondayForWeekKey(weekKey, referenceDate);
     final sunday = monday.add(const Duration(days: 6));
 
     const months = [

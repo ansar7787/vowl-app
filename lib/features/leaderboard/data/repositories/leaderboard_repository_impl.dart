@@ -61,83 +61,48 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
         // This eliminates any unbounded Firestore queries and guarantees $0 additional read costs.
         if (lastWeekWinners.isEmpty && users.isNotEmpty) {
           final prevWeekKey = WeeklyLeagueRewardHelper.getPreviousWeekKey();
-          final weeklyCandidates = users.where((u) {
-            return u.previousRankWeekKey == prevWeekKey &&
-                u.previousRank != null &&
-                u.previousRank! >= 1 &&
-                u.previousRank! <= 10;
-          }).toList();
+          final weeklyCandidates = users.map((u) {
+            final xp = WeeklyLeagueRewardHelper.getWeeklyExpForWeek(
+              u,
+              prevWeekKey,
+            );
+            return {
+              'id': u.id,
+              'displayName': u.safeDisplayName,
+              'photoUrl': u.photoUrl,
+              'weeklyXp': xp,
+              'currentStreak': u.currentStreak,
+              'totalExp': u.totalExp,
+              'weekKey': prevWeekKey,
+            };
+          }).where((m) => ((m['weeklyXp'] as num?)?.toInt() ?? 0) > 0).toList();
 
           if (weeklyCandidates.isNotEmpty) {
-            weeklyCandidates.sort(
-              (a, b) => a.previousRank!.compareTo(b.previousRank!),
-            );
+            weeklyCandidates.sort((a, b) {
+              final aXp = (a['weeklyXp'] as num?)?.toInt() ?? 0;
+              final bXp = (b['weeklyXp'] as num?)?.toInt() ?? 0;
+              if (bXp != aXp) return bXp.compareTo(aXp);
 
-            final Map<int, Map<String, dynamic>> rankMap = {};
-            for (final u in weeklyCandidates) {
-              if (u.previousRank != null &&
-                  u.previousRank! >= 1 &&
-                  u.previousRank! <= 10) {
-                if (!rankMap.containsKey(u.previousRank!)) {
-                  rankMap[u.previousRank!] = {
-                    'id': u.id,
-                    'rank': u.previousRank!,
-                    'displayName': u.safeDisplayName,
-                    'photoUrl': u.photoUrl,
-                    'weeklyXp': u.previousWeeklyExp > 0
-                        ? u.previousWeeklyExp
-                        : u.currentWeeklyExp,
-                    'currentStreak': u.currentStreak,
-                    'weekKey': prevWeekKey,
-                  };
-                }
-              }
-            }
+              final aStreak = (a['currentStreak'] as num?)?.toInt() ?? 0;
+              final bStreak = (b['currentStreak'] as num?)?.toInt() ?? 0;
+              if (bStreak != aStreak) return bStreak.compareTo(aStreak);
 
-            // If sparse (e.g. only 1 or 2 users have previousRank stored),
-            // backfill from the remaining cached users so all 10 ranks are visible.
-            if (rankMap.length < 10) {
-              final assignedIds =
-                  rankMap.values.map((v) => v['id'] as String?).toSet();
-              final remaining =
-                  users.where((u) => !assignedIds.contains(u.id)).toList();
-              remaining.sort((a, b) {
-                final prevXpCmp =
-                    b.previousWeeklyExp.compareTo(a.previousWeeklyExp);
-                if (prevXpCmp != 0) return prevXpCmp;
-                final curXpCmp =
-                    b.currentWeeklyExp.compareTo(a.currentWeeklyExp);
-                if (curXpCmp != 0) return curXpCmp;
-                final streakCmp = b.currentStreak.compareTo(a.currentStreak);
-                if (streakCmp != 0) return streakCmp;
-                return b.totalExp.compareTo(a.totalExp);
-              });
+              final aTotal = (a['totalExp'] as num?)?.toInt() ?? 0;
+              final bTotal = (b['totalExp'] as num?)?.toInt() ?? 0;
+              if (bTotal != aTotal) return bTotal.compareTo(aTotal);
 
-              final availableRanks = <int>[];
-              for (int r = 1; r <= 10; r++) {
-                if (!rankMap.containsKey(r)) availableRanks.add(r);
-              }
+              final aName = (a['displayName'] as String?) ?? '';
+              final bName = (b['displayName'] as String?) ?? '';
+              return aName.compareTo(bName);
+            });
 
-              int rIdx = 0;
-              for (final remUser in remaining) {
-                if (rIdx >= availableRanks.length) break;
-                final assignedRank = availableRanks[rIdx++];
-                rankMap[assignedRank] = {
-                  'id': remUser.id,
-                  'rank': assignedRank,
-                  'displayName': remUser.safeDisplayName,
-                  'photoUrl': remUser.photoUrl,
-                  'weeklyXp': remUser.previousWeeklyExp > 0
-                      ? remUser.previousWeeklyExp
-                      : remUser.currentWeeklyExp,
-                  'currentStreak': remUser.currentStreak,
-                  'weekKey': remUser.previousRankWeekKey ?? prevWeekKey,
-                };
-              }
-            }
-
-            final sortedRanks = rankMap.keys.toList()..sort();
-            lastWeekWinners = sortedRanks.map((r) => rankMap[r]!).toList();
+            final top10 = weeklyCandidates.take(10).toList();
+            lastWeekWinners = List.generate(top10.length, (index) {
+              return {
+                ...top10[index],
+                'rank': index + 1,
+              };
+            });
           }
         }
 
