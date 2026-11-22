@@ -16,7 +16,6 @@ import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_scr
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/controllers/topic_vocab_controller.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_fusion_timer.dart';
 import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_matrix_grid.dart';
-import 'package:vowl/features/vocabulary/topic_vocab/presentation/widgets/topic_word_peek_sheet.dart';
 
 /// High-stakes Mastery Phase evaluation screen for Topic Vocab ("Cluster Fusion").
 /// Learners must identify and fuse all topical clusters before the timer runs out.
@@ -54,8 +53,8 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
   Timer? _countdownTimer;
   Timer? _bonusTimer;
   int _bonusSeconds = 0;
-  int _remainingSeconds = 30;
-  static const int _totalSeconds = 30;
+  int _remainingSeconds = 45;
+  static const int _totalSeconds = 45;
 
   @override
   void initState() {
@@ -167,10 +166,10 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
 
       _bonusTimer?.cancel();
       setState(() {
-        _remainingSeconds = (_remainingSeconds + 5).clamp(1, _totalSeconds);
-        _bonusSeconds = 5;
+        _remainingSeconds = (_remainingSeconds + 10).clamp(1, _totalSeconds);
+        _bonusSeconds = 10;
       });
-      _bonusTimer = Timer(const Duration(milliseconds: 1200), () {
+      _bonusTimer = Timer(const Duration(milliseconds: 1400), () {
         if (mounted) setState(() => _bonusSeconds = 0);
       });
 
@@ -186,51 +185,6 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
       } else {
         soundService.playSoftWrong();
       }
-    }
-  }
-
-  void _handleTileLongPress(String word) async {
-    if (_currentQuest == null) return;
-    String? matchedDefinition;
-    String? matchedCategory;
-
-    final related = _currentQuest!.relatedWords ?? [];
-    for (final rw in related) {
-      final lower = rw.toLowerCase();
-      if (lower.startsWith('${word.toLowerCase()}:') ||
-          lower.startsWith('${word.toLowerCase()} -')) {
-        final parts = rw.split(RegExp(r'[:\-]'));
-        if (parts.length > 1) {
-          matchedDefinition = parts.sublist(1).join(':').trim();
-        }
-        break;
-      }
-    }
-
-    if (_controller != null) {
-      for (final c in _controller!.targetClusters) {
-        if (c.words.contains(word)) {
-          matchedCategory = c.categoryName;
-          matchedDefinition ??= c.explanation;
-          break;
-        }
-      }
-    }
-
-    final theme = LevelThemeHelper.getTheme('topicVocab', level: widget.level);
-    final wasTimerRunning = _countdownTimer?.isActive ?? false;
-    _countdownTimer?.cancel();
-
-    await TopicWordPeekSheet.show(
-      context,
-      word: word,
-      definition: matchedDefinition ?? _currentQuest!.explanation,
-      categoryHint: matchedCategory,
-      accentColor: theme.primaryColor,
-    );
-
-    if (mounted && wasTimerRunning && isAnsweredNotifier.value == false && _remainingSeconds > 0) {
-      _startTimer();
     }
   }
 
@@ -366,7 +320,6 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
                                   isAnswered: isAnsweredNotifier.value,
                                   instruction: quest.instruction,
                                   topicEmoji: quest.topicEmoji,
-                                  onTileLongPress: _handleTileLongPress,
                                 )
                               : const SizedBox.shrink(),
                         ),
