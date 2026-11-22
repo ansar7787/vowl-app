@@ -82,6 +82,7 @@ class LastWeekWinnersBottomSheet extends StatefulWidget {
 class _LastWeekWinnersBottomSheetState
     extends State<LastWeekWinnersBottomSheet> {
   bool _isClaiming = false;
+  final Set<String> _locallyClaimedWeekKeys = {};
 
   /// Resolves the weekly winners strictly from legitimate weekly sources:
   /// 1. Official weekly winners list from Cloud Function recap in metadata cache.
@@ -226,6 +227,11 @@ class _LastWeekWinnersBottomSheetState
           showCelebrationDialog: true,
         );
       }
+      if (mounted) {
+        setState(() {
+          _locallyClaimedWeekKeys.add(targetWeekKey);
+        });
+      }
     } finally {
       if (mounted) {
         setState(() => _isClaiming = false);
@@ -305,12 +311,19 @@ class _LastWeekWinnersBottomSheetState
     }
 
     final bool hasUserWon = userRank != null && userRank <= 10;
-    final bool isAlreadyClaimed = effectiveUser != null &&
-        (effectiveUser.claimedWeeklyRewardWeekKeys.contains(resolvedWeekKey) ||
-            (effectiveUser.previousRankWeekKey != null &&
-                effectiveUser.claimedWeeklyRewardWeekKeys.contains(
+    final bool isAlreadyClaimed =
+        _locallyClaimedWeekKeys.contains(resolvedWeekKey) ||
+        (effectiveUser != null &&
+            (_locallyClaimedWeekKeys.contains(
                   effectiveUser.previousRankWeekKey,
-                )));
+                ) ||
+                effectiveUser.claimedWeeklyRewardWeekKeys.contains(
+                  resolvedWeekKey,
+                ) ||
+                (effectiveUser.previousRankWeekKey != null &&
+                    effectiveUser.claimedWeeklyRewardWeekKeys.contains(
+                      effectiveUser.previousRankWeekKey,
+                    ))));
 
     return Container(
       constraints: BoxConstraints(

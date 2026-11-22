@@ -57,19 +57,29 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
 
         // Resilient fetch: If cache document does not have lastWeekWinners,
         // attempt to fetch the verified weekly winners directly from the users collection.
+        // Uses single-field equality filter without compound index requirement.
         if (lastWeekWinners.isEmpty) {
           try {
             final prevWeekKey = WeeklyLeagueRewardHelper.getPreviousWeekKey();
             final winnersSnap = await firestore
                 .collection('users')
                 .where('previousRankWeekKey', isEqualTo: prevWeekKey)
-                .where('previousRank', isLessThanOrEqualTo: 10)
-                .orderBy('previousRank')
                 .get()
                 .timeout(const Duration(seconds: 4));
 
             if (winnersSnap.docs.isNotEmpty) {
-              lastWeekWinners = winnersSnap.docs.map((doc) {
+              final topDocs = winnersSnap.docs.where((doc) {
+                final r = (doc.data()['previousRank'] as num?)?.toInt();
+                return r != null && r >= 1 && r <= 10;
+              }).toList();
+
+              topDocs.sort((a, b) {
+                final ra = (a.data()['previousRank'] as num?)?.toInt() ?? 10;
+                final rb = (b.data()['previousRank'] as num?)?.toInt() ?? 10;
+                return ra.compareTo(rb);
+              });
+
+              lastWeekWinners = topDocs.take(10).map((doc) {
                 final d = doc.data();
                 return {
                   'id': doc.id,
@@ -139,13 +149,22 @@ class LeaderboardRepositoryImpl implements LeaderboardRepository {
         final winnersSnap = await firestore
             .collection('users')
             .where('previousRankWeekKey', isEqualTo: prevWeekKey)
-            .where('previousRank', isLessThanOrEqualTo: 10)
-            .orderBy('previousRank')
             .get()
             .timeout(const Duration(seconds: 4));
 
         if (winnersSnap.docs.isNotEmpty) {
-          fallbackWinners = winnersSnap.docs.map((doc) {
+          final topDocs = winnersSnap.docs.where((doc) {
+            final r = (doc.data()['previousRank'] as num?)?.toInt();
+            return r != null && r >= 1 && r <= 10;
+          }).toList();
+
+          topDocs.sort((a, b) {
+            final ra = (a.data()['previousRank'] as num?)?.toInt() ?? 10;
+            final rb = (b.data()['previousRank'] as num?)?.toInt() ?? 10;
+            return ra.compareTo(rb);
+          });
+
+          fallbackWinners = topDocs.take(10).map((doc) {
             final d = doc.data();
             return {
               'id': doc.id,

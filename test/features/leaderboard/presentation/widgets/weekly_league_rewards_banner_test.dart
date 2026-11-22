@@ -124,4 +124,31 @@ void main() {
       expect(find.text('Claim'), findsOneWidget);
     },
   );
+
+  testWidgets(
+    'renders claimed status with exact numbers when user already claimed weekly prize',
+    (tester) async {
+      final claimedUser = UserEntity(
+        id: 'user_winner_1',
+        email: 'winner@vowl.app',
+        displayName: 'Winner One',
+        totalExp: 18000,
+        previousRank: 1,
+        previousRankWeekKey: WeeklyLeagueRewardsBanner.getPreviousWeekKey(),
+        claimedWeeklyRewardWeekKeys: [
+          WeeklyLeagueRewardsBanner.getPreviousWeekKey(),
+        ],
+      );
+
+      await tester.pumpWidget(
+        buildTestWidget(WeeklyLeagueRewardsBanner(currentUser: claimedUser)),
+      );
+      await tester.pumpAndSettle();
+
+      expect(find.text('Rank #1 Last Week!'), findsOneWidget);
+      expect(find.text('Claimed'), findsOneWidget);
+      expect(find.text('Awarded: +500 Coins · 7d VIP'), findsOneWidget);
+      expect(find.text('Claim'), findsNothing);
+    },
+  );
 }

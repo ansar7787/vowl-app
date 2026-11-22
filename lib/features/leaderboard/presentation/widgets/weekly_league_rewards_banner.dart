@@ -49,6 +49,7 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
   late Timer _timer;
   Duration _timeUntilReset = Duration.zero;
   bool _isClaiming = false;
+  final Set<String> _locallyClaimedWeekKeys = {};
 
   @override
   void initState() {
@@ -109,6 +110,11 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
           showCelebrationDialog: true,
         );
       }
+      if (mounted) {
+        setState(() {
+          _locallyClaimedWeekKeys.add(targetWeekKey);
+        });
+      }
     } finally {
       if (mounted) {
         setState(() => _isClaiming = false);
@@ -141,9 +147,32 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
 
     // Check offline win-back: Did user finish top 10 last week and hasn't claimed?
     final user = widget.currentUser;
-    final hasUnclaimedLastWeek =
-        WeeklyLeagueRewardHelper.hasUnclaimedReward(user);
     final targetWeekKey = WeeklyLeagueRewardHelper.getTargetWeekKey(user);
+
+    final isLocallyClaimed = _locallyClaimedWeekKeys.contains(targetWeekKey) ||
+        (user?.previousRankWeekKey != null &&
+            _locallyClaimedWeekKeys.contains(user!.previousRankWeekKey));
+    final hasUnclaimedLastWeek =
+        !isLocallyClaimed && WeeklyLeagueRewardHelper.hasUnclaimedReward(user);
+
+    final prevWeekKey = WeeklyLeagueRewardHelper.getPreviousWeekKey();
+    final curWeekKey = WeeklyLeagueRewardHelper.getCurrentWeekKey();
+    final bool isEligibleWeek = user != null &&
+        (user.previousRankWeekKey == null ||
+            user.previousRankWeekKey == prevWeekKey ||
+            user.previousRankWeekKey == curWeekKey);
+    final bool isTop10Finisher = user?.previousRank != null &&
+        user!.previousRank! >= 1 &&
+        user.previousRank! <= 10 &&
+        isEligibleWeek;
+    final bool hasClaimedLastWeek = isTop10Finisher &&
+        !hasUnclaimedLastWeek &&
+        (isLocallyClaimed ||
+            user.claimedWeeklyRewardWeekKeys.contains(targetWeekKey) ||
+            (user.previousRankWeekKey != null &&
+                user.claimedWeeklyRewardWeekKeys.contains(
+                  user.previousRankWeekKey,
+                )));
 
     return Container(
       margin: EdgeInsets.only(
@@ -203,7 +232,31 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                             allUsers: widget.allUsers,
                             currentUser: widget.currentUser,
                             weekKey: targetWeekKey,
-                            onClaimReward: widget.onClaimReward,
+                            onClaimReward: (rank, vipDays, coins, weekKey) async {
+                              if (widget.onClaimReward != null) {
+                                await widget.onClaimReward!(
+                                  rank,
+                                  vipDays,
+                                  coins,
+                                  weekKey,
+                                );
+                              } else if (widget.currentUser != null) {
+                                await WeeklyLeagueRewardHelper.claimReward(
+                                  context: context,
+                                  user: widget.currentUser!,
+                                  rank: rank,
+                                  vipDays: vipDays,
+                                  coins: coins,
+                                  weekKey: weekKey,
+                                  showCelebrationDialog: true,
+                                );
+                              }
+                              if (mounted) {
+                                setState(() {
+                                  _locallyClaimedWeekKeys.add(weekKey);
+                                });
+                              }
+                            },
                           );
                         },
                         child: Container(
@@ -376,8 +429,8 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
             ],
           ),
 
-          // Unclaimed Offline Win-Back Banner
-          if (hasUnclaimedLastWeek) ...[
+          // Unclaimed Offline Win-Back Banner or Claimed Celebration Status
+          if (hasUnclaimedLastWeek || hasClaimedLastWeek) ...[
             SizedBox(height: 12.h),
             Builder(
               builder: (context) {
@@ -387,6 +440,8 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                     WeeklyLeagueRewardHelper.getRankSubtitle(rank);
                 final prizeSummary =
                     WeeklyLeagueRewardHelper.getPrizeSummary(rank);
+                final vipDays = WeeklyLeagueRewardHelper.getVipDays(rank);
+                final coins = WeeklyLeagueRewardHelper.getCoins(rank);
 
                 final Color bannerAccent;
                 final IconData bannerIcon;
@@ -475,7 +530,11 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                             ),
                             SizedBox(height: 1.h),
                             Text(
-                              '$rankSubtitle · $prizeSummary',
+                              hasClaimedLastWeek
+                                  ? (vipDays > 0
+                                      ? 'Awarded: +$coins Coins · ${vipDays}d VIP'
+                                      : 'Awarded: +$coins Coins')
+                                  : '$rankSubtitle · $prizeSummary',
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
@@ -490,46 +549,87 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                           ],
                         ),
                       ),
-                      ElevatedButton(
-                        onPressed: _isClaiming
-                            ? null
-                            : () {
-                                if (di.sl.isRegistered<HapticService>()) {
-                                  di.sl<HapticService>().selection();
-                                }
-                                _handleClaimDirect(targetWeekKey);
-                              },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: bannerAccent,
-                          foregroundColor: rank == 1
-                              ? Colors.black
-                              : Colors.white,
+                      if (hasUnclaimedLastWeek)
+                        ElevatedButton(
+                          onPressed: _isClaiming
+                              ? null
+                              : () {
+                                  if (di.sl.isRegistered<HapticService>()) {
+                                    di.sl<HapticService>().selection();
+                                  }
+                                  _handleClaimDirect(targetWeekKey);
+                                },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: bannerAccent,
+                            foregroundColor: rank == 1
+                                ? Colors.black
+                                : Colors.white,
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 14.w,
+                              vertical: 7.h,
+                            ),
+                            minimumSize: Size.zero,
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.r),
+                            ),
+                            elevation: 2,
+                          ),
+                          child: _isClaiming
+                              ? VowlMicroLoader(
+                                  size: 14.r,
+                                  color: rank == 1 ? Colors.black : Colors.white,
+                                )
+                              : Text(
+                                  'Claim',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 12.sp,
+                                    fontWeight: FontWeight.w900,
+                                    letterSpacing: 0.5,
+                                  ),
+                                ),
+                        )
+                      else
+                        Container(
                           padding: EdgeInsets.symmetric(
-                            horizontal: 14.w,
-                            vertical: 7.h,
+                            horizontal: 10.w,
+                            vertical: 6.h,
                           ),
-                          minimumSize: Size.zero,
-                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          shape: RoundedRectangleBorder(
+                          decoration: BoxDecoration(
+                            color: AppColors.emerald500.withValues(
+                              alpha: isDark ? 0.22 : 0.15,
+                            ),
                             borderRadius: BorderRadius.circular(10.r),
+                            border: Border.all(
+                              color: AppColors.emerald500.withValues(
+                                alpha: 0.5,
+                              ),
+                              width: 1.w,
+                            ),
                           ),
-                          elevation: 2,
-                        ),
-                        child: _isClaiming
-                            ? VowlMicroLoader(
-                                size: 14.r,
-                                color: rank == 1 ? Colors.black : Colors.white,
-                              )
-                            : Text(
-                                'Claim',
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                LucideIcons.checkCheck,
+                                size: 13.sp,
+                                color: AppColors.emerald500,
+                              ),
+                              SizedBox(width: 4.w),
+                              Text(
+                                'Claimed',
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 12.sp,
+                                  fontSize: 11.5.sp,
                                   fontWeight: FontWeight.w900,
-                                  letterSpacing: 0.5,
+                                  color: AppColors.emerald500,
+                                  letterSpacing: 0.3,
                                 ),
                               ),
-                      ),
+                            ],
+                          ),
+                        ),
                     ],
                   ),
                 );
