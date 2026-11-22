@@ -194,114 +194,79 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // Left: Card Section Title & (i) Last Week's Winners Info Button
+              // Left: Unified Clickable Header Row: Gift Icon + "Weekly Rewards & Winners" + Chevron Right
               Flexible(
-                child: FittedBox(
-                  fit: BoxFit.scaleDown,
-                  alignment: Alignment.centerLeft,
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(
-                        LucideIcons.gift,
-                        size: 14.sp,
-                        color: const Color(0xFFF59E0B),
-                      ),
-                      SizedBox(width: 6.w),
-                      Text(
-                        context.tr(
-                          'leaderboard.weekly_rewards',
-                          fallback: 'Weekly Rewards',
-                        ),
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w800,
-                          color: isDark ? Colors.white : AppColors.slate900,
-                          letterSpacing: 0.2,
-                        ),
-                      ),
-                      SizedBox(width: 6.w),
-                      // (i) Last Week Winners Info Button
-                      GestureDetector(
-                        behavior: HitTestBehavior.opaque,
-                        onTap: () {
-                          LastWeekWinnersBottomSheet.show(
-                            context: context,
-                            winners: widget.lastWeekWinners,
-                            allUsers: widget.allUsers,
-                            currentUser: widget.currentUser,
-                            weekKey: targetWeekKey,
-                            onClaimReward: (rank, vipDays, coins, weekKey) async {
-                              if (widget.onClaimReward != null) {
-                                await widget.onClaimReward!(
-                                  rank,
-                                  vipDays,
-                                  coins,
-                                  weekKey,
-                                );
-                              } else if (widget.currentUser != null) {
-                                await WeeklyLeagueRewardHelper.claimReward(
-                                  context: context,
-                                  user: widget.currentUser!,
-                                  rank: rank,
-                                  vipDays: vipDays,
-                                  coins: coins,
-                                  weekKey: weekKey,
-                                  showCelebrationDialog: true,
-                                );
-                              }
-                              if (mounted) {
-                                setState(() {
-                                  _locallyClaimedWeekKeys.add(weekKey);
-                                });
-                              }
-                            },
+                child: GestureDetector(
+                  behavior: HitTestBehavior.opaque,
+                  onTap: () {
+                    LastWeekWinnersBottomSheet.show(
+                      context: context,
+                      winners: widget.lastWeekWinners,
+                      allUsers: widget.allUsers,
+                      currentUser: widget.currentUser,
+                      weekKey: targetWeekKey,
+                      onClaimReward: (rank, vipDays, coins, weekKey) async {
+                        if (widget.onClaimReward != null) {
+                          await widget.onClaimReward!(
+                            rank,
+                            vipDays,
+                            coins,
+                            weekKey,
                           );
-                        },
-                        child: Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 6.w,
-                            vertical: 3.h,
+                        } else if (widget.currentUser != null) {
+                          await WeeklyLeagueRewardHelper.claimReward(
+                            context: context,
+                            user: widget.currentUser!,
+                            rank: rank,
+                            vipDays: vipDays,
+                            coins: coins,
+                            weekKey: weekKey,
+                            showCelebrationDialog: true,
+                          );
+                        }
+                        if (mounted) {
+                          setState(() {
+                            _locallyClaimedWeekKeys.add(weekKey);
+                          });
+                        }
+                      },
+                    );
+                  },
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    alignment: Alignment.centerLeft,
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          LucideIcons.gift,
+                          size: 15.sp,
+                          color: const Color(0xFFF59E0B),
+                        ),
+                        SizedBox(width: 6.w),
+                        Text(
+                          context.tr(
+                            'leaderboard.weekly_rewards_and_winners',
+                            fallback: 'Weekly Rewards & Winners',
                           ),
-                          decoration: BoxDecoration(
-                            color: const Color(0xFFF59E0B).withValues(
-                              alpha: isDark ? 0.16 : 0.10,
-                            ),
-                            borderRadius: BorderRadius.circular(8.r),
-                            border: Border.all(
-                              color: const Color(0xFFF59E0B).withValues(
-                                alpha: isDark ? 0.35 : 0.25,
-                              ),
-                              width: 1,
-                            ),
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                LucideIcons.info,
-                                size: 10.5.sp,
-                                color: const Color(0xFFF59E0B),
-                              ),
-                              SizedBox(width: 3.w),
-                              Text(
-                                context.tr(
-                                  'leaderboard.winners_pill',
-                                  fallback: 'Winners',
-                                ),
-                                style: TextStyle(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 10.sp,
-                                  fontWeight: FontWeight.w800,
-                                  color: const Color(0xFFF59E0B),
-                                ),
-                              ),
-                            ],
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w800,
+                            color: isDark ? Colors.white : AppColors.slate900,
+                            letterSpacing: 0.2,
                           ),
                         ),
-                      ),
-                    ],
+                        SizedBox(width: 4.w),
+                        Icon(
+                          LucideIcons.chevronRight,
+                          size: 14.sp,
+                          color: isDark
+                              ? AppColors.slate400
+                              : AppColors.slate500,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -438,8 +403,6 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                 final rankTitle = WeeklyLeagueRewardHelper.getRankTitle(rank);
                 final rankSubtitle =
                     WeeklyLeagueRewardHelper.getRankSubtitle(rank);
-                final prizeSummary =
-                    WeeklyLeagueRewardHelper.getPrizeSummary(rank);
                 final vipDays = WeeklyLeagueRewardHelper.getVipDays(rank);
                 final coins = WeeklyLeagueRewardHelper.getCoins(rank);
 
@@ -463,24 +426,27 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                     bannerIcon = LucideIcons.zap;
                 }
 
+                final isMidnight = isDark &&
+                    Theme.of(context).scaffoldBackgroundColor == Colors.black;
+                final cardBg = isMidnight
+                    ? const Color(0xFF0F1523)
+                    : (isDark
+                        ? const Color(0xFF1E293B)
+                        : const Color(0xFFF8FAFC));
+
                 return Container(
                   padding: EdgeInsets.symmetric(
                     horizontal: 14.w,
                     vertical: 10.h,
                   ),
                   decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        bannerAccent.withValues(alpha: isDark ? 0.22 : 0.16),
-                        AppColors.amber500.withValues(
-                          alpha: isDark ? 0.14 : 0.08,
-                        ),
-                      ],
-                    ),
+                    color: cardBg,
                     borderRadius: BorderRadius.circular(14.r),
                     border: Border.all(
-                      color: bannerAccent.withValues(alpha: 0.5),
-                      width: 1.5.w,
+                      color: isDark
+                          ? bannerAccent.withValues(alpha: 0.4)
+                          : bannerAccent.withValues(alpha: 0.3),
+                      width: 1.w,
                     ),
                   ),
                   child: Row(
@@ -489,7 +455,9 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                         padding: EdgeInsets.all(7.r),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
-                          color: bannerAccent.withValues(alpha: 0.25),
+                          color: bannerAccent.withValues(
+                            alpha: isDark ? 0.16 : 0.10,
+                          ),
                         ),
                         child: Icon(
                           bannerIcon,
@@ -528,22 +496,55 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                                 letterSpacing: -0.2,
                               ),
                             ),
-                            SizedBox(height: 1.h),
-                            Text(
-                              hasClaimedLastWeek
-                                  ? (vipDays > 0
-                                      ? 'Awarded: +$coins Coins · ${vipDays}d VIP'
-                                      : 'Awarded: +$coins Coins')
-                                  : '$rankSubtitle · $prizeSummary',
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 10.sp,
-                                fontWeight: FontWeight.w600,
-                                color: isDark
-                                    ? AppColors.slate300
-                                    : AppColors.slate600,
+                            SizedBox(height: 2.h),
+                            FittedBox(
+                              fit: BoxFit.scaleDown,
+                              alignment: Alignment.centerLeft,
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    hasClaimedLastWeek
+                                        ? 'Awarded: '
+                                        : '$rankSubtitle · ',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 10.sp,
+                                      fontWeight: FontWeight.w600,
+                                      color: isDark
+                                          ? AppColors.slate300
+                                          : AppColors.slate600,
+                                    ),
+                                  ),
+                                  if (vipDays > 0) ...[
+                                    Text(
+                                      '${vipDays}d VIP · ',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 10.sp,
+                                        fontWeight: FontWeight.w600,
+                                        color: isDark
+                                            ? AppColors.slate300
+                                            : AppColors.slate600,
+                                      ),
+                                    ),
+                                  ],
+                                  Icon(
+                                    Icons.monetization_on_rounded,
+                                    size: 11.5.sp,
+                                    color: const Color(0xFFF59E0B),
+                                  ),
+                                  SizedBox(width: 2.w),
+                                  Text(
+                                    '+$coins',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 10.sp,
+                                      fontWeight: FontWeight.w900,
+                                      color: const Color(0xFFF59E0B),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ],
@@ -578,14 +579,35 @@ class _WeeklyLeagueRewardsBannerState extends State<WeeklyLeagueRewardsBanner> {
                                   size: 14,
                                   color: Colors.white,
                                 )
-                              : Text(
-                                  'Claim',
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 12.sp,
-                                    fontWeight: FontWeight.w900,
-                                    letterSpacing: 0.5,
-                                  ),
+                              : Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      'Claim',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 12.sp,
+                                        fontWeight: FontWeight.w900,
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                    SizedBox(width: 4.w),
+                                    Icon(
+                                      Icons.monetization_on_rounded,
+                                      size: 12.sp,
+                                      color: const Color(0xFFFDE68A),
+                                    ),
+                                    SizedBox(width: 2.w),
+                                    Text(
+                                      '+$coins',
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 11.sp,
+                                        fontWeight: FontWeight.w900,
+                                        color: const Color(0xFFFDE68A),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                         )
                       else

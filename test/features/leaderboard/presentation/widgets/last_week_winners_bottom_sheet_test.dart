@@ -147,18 +147,21 @@ void main() {
       expect(find.text("Last Week's Champions"), findsOneWidget);
       expect(find.text('Nov 2 – Nov 8, 2026'), findsOneWidget);
 
-      // Verify ranks 1, 2, 3 have distinct podium icons and labels
+      // Verify ranks 1, 2, 3 have distinct podium icons, VIP labels, and coin values
       expect(find.text('Weekly Learner 0'), findsOneWidget);
       expect(find.text('5000 XP'), findsOneWidget);
-      expect(find.text('7d VIP & 500 Coins'), findsOneWidget);
+      expect(find.text('7d VIP · '), findsOneWidget);
+      expect(find.text('+500'), findsOneWidget);
 
       expect(find.text('Weekly Learner 1'), findsOneWidget);
       expect(find.text('4500 XP'), findsOneWidget);
-      expect(find.text('3d VIP & 300 Coins'), findsOneWidget);
+      expect(find.text('3d VIP · '), findsOneWidget);
+      expect(find.text('+300'), findsOneWidget);
 
       expect(find.text('Weekly Learner 2'), findsOneWidget);
       expect(find.text('4000 XP'), findsOneWidget);
-      expect(find.text('1d VIP & 200 Coins'), findsOneWidget);
+      expect(find.text('1d VIP · '), findsOneWidget);
+      expect(find.text('+200'), findsOneWidget);
 
       // Check ranks 4 through 10 have proper unique #4..#10 badges
       expect(find.text('#4'), findsOneWidget);
@@ -168,6 +171,7 @@ void main() {
       expect(find.text('#8'), findsOneWidget);
       expect(find.text('#9'), findsOneWidget);
       expect(find.text('#10'), findsOneWidget);
+      expect(find.byIcon(Icons.monetization_on_rounded), findsWidgets);
     },
   );
 
@@ -260,10 +264,11 @@ void main() {
       // Spotlight banner shows user's finish and claim button
       expect(find.text('YOUR FINISH · RANK #1'), findsOneWidget);
       expect(find.text('Weekly League Champion'), findsOneWidget);
-      expect(find.text('Claim Reward (7d VIP & 500 Coins)'), findsOneWidget);
+      expect(find.text('Claim Reward (7d VIP · '), findsOneWidget);
+      expect(find.text('+500)'), findsOneWidget);
 
       // Tap Claim
-      await tester.tap(find.text('Claim Reward (7d VIP & 500 Coins)'));
+      await tester.tap(find.text('Claim Reward (7d VIP · '));
       await tester.pumpAndSettle();
 
       expect(claimInvoked, isTrue);
@@ -303,11 +308,86 @@ void main() {
 
       // Spotlight banner shows Claimed with exact numbers
       expect(find.text('YOUR FINISH · RANK #1'), findsOneWidget);
-      expect(find.text('Claimed: +500 Coins · 7d VIP'), findsOneWidget);
+      expect(find.text('Claimed: '), findsOneWidget);
+      expect(find.text('7d VIP · '), findsNWidgets(2)); // in banner and card
+      expect(find.text('+500'), findsNWidgets(2)); // in banner and card
       // No claim button
-      expect(find.text('Claim Reward (7d VIP & 500 Coins)'), findsNothing);
+      expect(find.text('Claim Reward (7d VIP · '), findsNothing);
       // Winner card in list also shows Claimed status
       expect(find.text('Claimed'), findsOneWidget);
+    },
+  );
+
+  testWidgets(
+    'preserves Rank #4 for 4th-place finisher, backfills top 10 from allUsers and enables 100 coin claim',
+    (tester) async {
+      tester.view.physicalSize = const Size(390 * 2, 844 * 2);
+      tester.view.devicePixelRatio = 2.0;
+      addTearDown(() => tester.view.resetPhysicalSize());
+
+      int? claimedRank;
+      int? claimedCoins;
+
+      final testFourthPlaceUser = UserEntity(
+        id: 'user_rank_4',
+        email: 'rank4@vowl.app',
+        displayName: 'Fourth Place Winner',
+        totalExp: 12000,
+        previousRank: 4,
+        previousRankWeekKey: targetWeekKey,
+        claimedWeeklyRewardWeekKeys: const [],
+      );
+
+      // 9 other users in allUsers to populate the full top 10
+      final allOtherUsers = List.generate(9, (i) {
+        return UserEntity(
+          id: 'user_other_$i',
+          email: 'other_$i@vowl.app',
+          displayName: 'Finisher ${i + 1}',
+          totalExp: 10000 - (i * 500),
+          dailyXpHistory: {'2026-11-04': 1000 - (i * 50)},
+        );
+      });
+
+      await tester.pumpWidget(
+        buildTestWidget(
+          LastWeekWinnersBottomSheet(
+            winners: const [],
+            allUsers: [testFourthPlaceUser, ...allOtherUsers],
+            currentUser: testFourthPlaceUser,
+            weekKey: targetWeekKey,
+            onClaimReward: (rank, vipDays, coins, weekKey) async {
+              claimedRank = rank;
+              claimedCoins = coins;
+            },
+          ),
+          currentUser: testFourthPlaceUser,
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      // 1. Authoritative Rank #4 Check: User must NEVER be forced to Rank #1
+      expect(find.text('YOUR FINISH · RANK #4'), findsOneWidget);
+      expect(find.text('Weekly Top 10 Finisher'), findsOneWidget);
+      expect(find.text('YOUR FINISH · RANK #1'), findsNothing);
+      expect(find.text('Weekly League Champion'), findsNothing);
+
+      // 2. Full Top 10 Slotting: All 10 ranks must be present
+      expect(find.text('#4'), findsOneWidget);
+      expect(find.text('#5'), findsOneWidget);
+      expect(find.text('#10'), findsOneWidget);
+      expect(find.text('YOU'), findsOneWidget);
+
+      // 3. Claim button for 100 coins
+      expect(find.text('Claim Reward ('), findsOneWidget);
+      expect(find.text('+100)'), findsOneWidget);
+
+      // Tap Claim
+      await tester.tap(find.text('Claim Reward ('));
+      await tester.pumpAndSettle();
+
+      expect(claimedRank, equals(4));
+      expect(claimedCoins, equals(100));
     },
   );
 }
