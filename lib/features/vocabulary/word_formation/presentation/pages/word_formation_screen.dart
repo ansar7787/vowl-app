@@ -58,7 +58,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   final Set<String> _missedQuestIds = <String>{};
   final Set<String> _dueReviewRoots = <String>{};
 
-  static const int _maxTimeSeconds = 10;
+  static const int _maxTimeSeconds = 6;
   Timer? _countdownTimer;
   int _secondsRemaining = _maxTimeSeconds;
   VocabularyQuest? _activeQuest;
@@ -68,6 +68,9 @@ class _WordFormationScreenState extends State<WordFormationScreen>
     super.initState();
     initGameLifecycle();
     initVocabularyGame();
+    if (di.sl.isRegistered<TtsService>()) {
+      unawaited(di.sl<TtsService>().preWarm(locale: 'en-US'));
+    }
   }
 
   @override
@@ -97,14 +100,19 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   void onQuestionReset() {
     _countdownTimer?.cancel();
     TtsSpeakerButtonWidget.stopAll();
-    _secondsRemaining = _maxTimeSeconds;
+    final isRevenge = _activeQuest != null &&
+        (_missedQuestIds.contains(_activeQuest!.id) ||
+            _dueReviewRoots.contains(_activeQuest!.rootWord ?? _activeQuest!.word ?? ''));
+    _secondsRemaining = isRevenge ? 8 : _maxTimeSeconds;
     setState(() => _selectedDirection = null);
   }
 
   void _startTimer(VocabularyQuest quest, {bool resetSeconds = true}) {
     _countdownTimer?.cancel();
-    if (resetSeconds) _secondsRemaining = _maxTimeSeconds;
     final root = quest.rootWord ?? quest.word ?? '';
+    final isRevenge = _missedQuestIds.contains(quest.id) || _dueReviewRoots.contains(root);
+    final timeLimit = isRevenge ? 8 : _maxTimeSeconds;
+    if (resetSeconds) _secondsRemaining = timeLimit;
     if (root.isNotEmpty) {
       WordFormationMistakeVault().isReviewDue(root).then((due) {
         if (due && mounted) setState(() => _dueReviewRoots.add(root));
@@ -118,7 +126,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
       if (ModalRoute.of(context)?.isCurrent != true) return;
       if (_secondsRemaining > 1) {
         setState(() => _secondsRemaining--);
-        if (_secondsRemaining <= 3) di.sl<HapticService>().light();
+        if (_secondsRemaining <= 2) di.sl<HapticService>().light();
       } else {
         timer.cancel();
         _missedQuestIds.add(quest.id);
@@ -181,7 +189,8 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   }
 
   Widget _buildSpeedArenaBar(Color primaryColor, bool isRevenge) {
-    final isDanger = _secondsRemaining <= 3;
+    final timeLimit = isRevenge ? 8 : _maxTimeSeconds;
+    final isDanger = _secondsRemaining <= 2;
     final activeColor = isDanger
         ? AppColors.gameIncorrect
         : (isRevenge ? const Color(0xFFF59E0B) : primaryColor);
@@ -229,7 +238,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
             child: ClipRRect(
               borderRadius: BorderRadius.circular(4.r),
               child: LinearProgressIndicator(
-                value: (_secondsRemaining / _maxTimeSeconds).clamp(0.0, 1.0),
+                value: (_secondsRemaining / timeLimit).clamp(0.0, 1.0),
                 minHeight: 5.h,
                 backgroundColor: primaryColor.withValues(alpha: 0.12),
                 valueColor: AlwaysStoppedAnimation<Color>(activeColor),
@@ -299,6 +308,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
             return VocabularyBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
+              disablePadding: true,
               isAnswered: isAns,
               isCorrect: isCorr,
               isFinalFailure: state.isFinalFailure,

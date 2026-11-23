@@ -298,10 +298,32 @@ class _WordFormationSentenceSlotState extends State<WordFormationSentenceSlot> {
                       size: 14.r,
                     ),
                   ],
-                  SizedBox(width: 4.w),
-                  GestureDetector(
+                  SizedBox(width: 6.w),
+                  ScaleButton(
                     onTap: () => setState(() => _showTranslated = false),
-                    child: Icon(Icons.close_rounded, size: 14.r, color: isDark ? Colors.white38 : Colors.black38),
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+                      decoration: BoxDecoration(
+                        color: widget.primaryColor.withValues(alpha: 0.14),
+                        borderRadius: BorderRadius.circular(6.r),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(Icons.undo_rounded, size: 10.r, color: widget.primaryColor),
+                          SizedBox(width: 3.w),
+                          Text(
+                            'Original (EN)',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 9.sp,
+                              fontWeight: FontWeight.w700,
+                              color: widget.primaryColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),

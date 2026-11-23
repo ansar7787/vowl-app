@@ -275,37 +275,67 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
                       SizedBox(width: 6.w),
                       TranslateButtonWidget(
                         originalText: activeExample,
-                        onTranslationComplete: (t) {
-                          setState(() {
-                            _translatedExamples[_activeDirection] = t;
-                            _showTranslatedExample[_activeDirection] = true;
-                          });
-                        },
-                        onTranslationWithLanguage: (t, code) {
-                          setState(() {
-                            _translatedExamples[_activeDirection] = t;
-                            _exampleLanguages[_activeDirection] = code ?? '';
-                            _showTranslatedExample[_activeDirection] = true;
-                          });
-                        },
+                        onTranslationComplete: (t) => setState(() {
+                          _translatedExamples[_activeDirection] = t;
+                          _showTranslatedExample[_activeDirection] = true;
+                        }),
+                        onTranslationWithLanguage: (t, code) => setState(() {
+                          _translatedExamples[_activeDirection] = t;
+                          _exampleLanguages[_activeDirection] = code ?? '';
+                          _showTranslatedExample[_activeDirection] = true;
+                        }),
                         iconSize: 13.r,
                         iconColor: activeColor,
                         padding: EdgeInsets.all(2.r),
                       ),
-                      if (_showTranslatedExample[_activeDirection] == true &&
-                          _translatedExamples[_activeDirection] != null &&
-                          _exampleLanguages[_activeDirection] != null &&
-                          _exampleLanguages[_activeDirection]!.isNotEmpty) ...[
-                        SizedBox(width: 4.w),
-                        TtsSpeakerButtonWidget(
-                          text: _translatedExamples[_activeDirection]!,
-                          locale: _exampleLanguages[_activeDirection],
-                          color: activeColor,
-                          size: 13.r,
-                        ),
-                      ],
                     ],
                   ),
+                  if (_translatedExamples[_activeDirection] != null) ...[
+                    SizedBox(height: 4.h),
+                    Row(
+                      children: [
+                        ScaleButton(
+                          onTap: () => setState(() => _showTranslatedExample[_activeDirection] =
+                              !(_showTranslatedExample[_activeDirection] ?? false)),
+                          child: Container(
+                            padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 2.h),
+                            decoration: BoxDecoration(
+                              color: activeColor.withValues(alpha: 0.12),
+                              borderRadius: BorderRadius.circular(6.r),
+                              border: Border.all(color: activeColor.withValues(alpha: 0.25)),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(Icons.undo_rounded, size: 10.r, color: activeColor),
+                                SizedBox(width: 3.w),
+                                Text(
+                                  _showTranslatedExample[_activeDirection] == true ? 'Original (EN)' : 'Translated',
+                                  style: TextStyle(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 9.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: activeColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        if (_showTranslatedExample[_activeDirection] == true &&
+                            _exampleLanguages[_activeDirection] != null &&
+                            _exampleLanguages[_activeDirection]!.isNotEmpty) ...[
+                          SizedBox(width: 6.w),
+                          TtsSpeakerButtonWidget(
+                            text: _translatedExamples[_activeDirection]!,
+                            locale: _exampleLanguages[_activeDirection],
+                            color: activeColor,
+                            size: 13.r,
+                          ),
+                        ],
+                      ],
+                    ),
+                  ],
                 ],
               ],
             ),

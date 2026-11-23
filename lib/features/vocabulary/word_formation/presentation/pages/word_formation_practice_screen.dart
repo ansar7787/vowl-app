@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -50,6 +51,9 @@ class _WordFormationPracticeScreenState
   void initState() {
     super.initState();
     _loadQuests();
+    if (di.sl.isRegistered<TtsService>()) {
+      unawaited(di.sl<TtsService>().preWarm(locale: 'en-US'));
+    }
   }
 
   @override
@@ -262,28 +266,16 @@ class _WordFormationPracticeScreenState
                       SizedBox(height: 12.h),
                       Container(
                         width: double.infinity,
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 14.w,
-                          vertical: 12.h,
-                        ),
+                        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
                         decoration: BoxDecoration(
                           color: AppColors.gameCorrect.withValues(alpha: 0.08),
                           borderRadius: BorderRadius.circular(16.r),
-                          border: Border.all(
-                            color: AppColors.gameCorrect.withValues(
-                              alpha: 0.25,
-                            ),
-                            width: 1.2,
-                          ),
+                          border: Border.all(color: AppColors.gameCorrect.withValues(alpha: 0.25), width: 1.2),
                         ),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Icon(
-                              Icons.lightbulb_rounded,
-                              color: AppColors.gameCorrect,
-                              size: 18.r,
-                            ),
+                            Icon(Icons.lightbulb_rounded, color: AppColors.gameCorrect, size: 18.r),
                             SizedBox(width: 8.w),
                             Expanded(
                               child: Column(
@@ -302,21 +294,46 @@ class _WordFormationPracticeScreenState
                                         ),
                                       ),
                                       const Spacer(),
+                                      if (_translatedInsight != null) ...[
+                                        GestureDetector(
+                                          onTap: () => setState(() => _showTranslatedInsight = !_showTranslatedInsight),
+                                          child: Container(
+                                            padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
+                                            decoration: BoxDecoration(
+                                              color: AppColors.gameCorrect.withValues(alpha: 0.14),
+                                              borderRadius: BorderRadius.circular(6.r),
+                                            ),
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.min,
+                                              children: [
+                                                Icon(Icons.undo_rounded, size: 10.r, color: AppColors.gameCorrect),
+                                                SizedBox(width: 3.w),
+                                                Text(
+                                                  _showTranslatedInsight ? 'Original (EN)' : 'Translated',
+                                                  style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 10.sp,
+                                                    fontWeight: FontWeight.w700,
+                                                    color: AppColors.gameCorrect,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(width: 4.w),
+                                      ],
                                       TranslateButtonWidget(
                                         originalText: explanation,
-                                        onTranslationComplete: (t) {
-                                          setState(() {
-                                            _translatedInsight = t;
-                                            _showTranslatedInsight = true;
-                                          });
-                                        },
-                                        onTranslationWithLanguage: (t, code) {
-                                          setState(() {
-                                            _translatedInsight = t;
-                                            _insightLanguageCode = code;
-                                            _showTranslatedInsight = true;
-                                          });
-                                        },
+                                        onTranslationComplete: (t) => setState(() {
+                                          _translatedInsight = t;
+                                          _showTranslatedInsight = true;
+                                        }),
+                                        onTranslationWithLanguage: (t, code) => setState(() {
+                                          _translatedInsight = t;
+                                          _insightLanguageCode = code;
+                                          _showTranslatedInsight = true;
+                                        }),
                                         iconSize: 13.r,
                                         iconColor: AppColors.gameCorrect,
                                         padding: EdgeInsets.all(2.r),
@@ -338,25 +355,18 @@ class _WordFormationPracticeScreenState
                                   SizedBox(height: 4.h),
                                   GestureDetector(
                                     onTap: _translatedInsight != null
-                                        ? () => setState(() =>
-                                            _showTranslatedInsight =
-                                                !_showTranslatedInsight)
+                                        ? () => setState(() => _showTranslatedInsight = !_showTranslatedInsight)
                                         : null,
                                     child: Text(
-                                      _showTranslatedInsight &&
-                                              _translatedInsight != null
+                                      _showTranslatedInsight && _translatedInsight != null
                                           ? _translatedInsight!
                                           : explanation,
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 13.sp,
-                                        fontStyle: _showTranslatedInsight
-                                            ? FontStyle.italic
-                                            : FontStyle.normal,
+                                        fontStyle: _showTranslatedInsight ? FontStyle.italic : FontStyle.normal,
                                         fontWeight: FontWeight.w400,
-                                        color: isDark
-                                            ? Colors.white70
-                                            : Colors.black87,
+                                        color: isDark ? Colors.white70 : Colors.black87,
                                         height: 1.35,
                                       ),
                                     ),

@@ -178,20 +178,54 @@ class _WordFormationMorphCoreState extends State<WordFormationMorphCore> {
                   iconColor: primaryColor,
                   padding: EdgeInsets.all(4.r),
                 ),
-                if (_showTranslated &&
-                    _translatedMeaning != null &&
-                    _targetLanguageCode != null &&
-                    _targetLanguageCode!.isNotEmpty) ...[
-                  SizedBox(width: 4.w),
-                  TtsSpeakerButtonWidget(
-                    text: _translatedMeaning!,
-                    locale: _targetLanguageCode,
-                    color: primaryColor,
-                    size: 14.r,
-                  ),
-                ],
               ],
             ),
+            if (_translatedMeaning != null) ...[
+              SizedBox(height: 6.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ScaleButton(
+                    onTap: () => setState(() => _showTranslated = !_showTranslated),
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+                      decoration: BoxDecoration(
+                        color: primaryColor.withValues(alpha: 0.12),
+                        borderRadius: BorderRadius.circular(6.r),
+                        border: Border.all(color: primaryColor.withValues(alpha: 0.25)),
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(Icons.undo_rounded, size: 10.r, color: primaryColor),
+                          SizedBox(width: 4.w),
+                          Text(
+                            _showTranslated ? 'Original (EN)' : 'Translated',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w700,
+                              color: primaryColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  if (_showTranslated &&
+                      _targetLanguageCode != null &&
+                      _targetLanguageCode!.isNotEmpty) ...[
+                    SizedBox(width: 6.w),
+                    TtsSpeakerButtonWidget(
+                      text: _translatedMeaning!,
+                      locale: _targetLanguageCode,
+                      color: primaryColor,
+                      size: 14.r,
+                    ),
+                  ],
+                ],
+              ),
+            ],
           ],
         ],
       ),

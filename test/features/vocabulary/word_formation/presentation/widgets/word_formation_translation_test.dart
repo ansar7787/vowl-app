@@ -31,6 +31,7 @@ void main() {
 
     when(() => mockTtsService.speak(any(), rate: any(named: 'rate'), locale: any(named: 'locale'))).thenAnswer((_) async {});
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
+    when(() => mockTtsService.preWarm(locale: any(named: 'locale'), preset: any(named: 'preset'))).thenAnswer((_) async {});
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
     when(() => mockHapticService.error()).thenAnswer((_) async {});
