@@ -55,6 +55,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   int _lastProcessedIndex = -1;
   int _comboStreak = 0;
   final Set<String> _missedQuestIds = <String>{};
+  final Set<String> _dueReviewRoots = <String>{};
 
   static const int _maxTimeSeconds = 10;
   Timer? _countdownTimer;
@@ -99,6 +100,12 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   void _startTimer(VocabularyQuest quest, {bool resetSeconds = true}) {
     _countdownTimer?.cancel();
     if (resetSeconds) _secondsRemaining = _maxTimeSeconds;
+    final root = quest.rootWord ?? quest.word ?? '';
+    if (root.isNotEmpty) {
+      WordFormationMistakeVault().isReviewDue(root).then((due) {
+        if (due && mounted) setState(() => _dueReviewRoots.add(root));
+      });
+    }
     _countdownTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (!mounted || isAnswered) {
         timer.cancel();
@@ -111,7 +118,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
       } else {
         timer.cancel();
         _missedQuestIds.add(quest.id);
-        WordFormationMistakeVault().recordMistake(quest.rootWord ?? quest.word ?? '');
+        WordFormationMistakeVault().recordMistake(root);
         setState(() {
           _secondsRemaining = 0;
           _shakeCount++;
@@ -152,6 +159,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
     final root = quest.rootWord ?? quest.word ?? '';
     if (isMatch) {
       _missedQuestIds.remove(quest.id);
+      _dueReviewRoots.remove(root);
       WordFormationMistakeVault().recordSuccess(root);
       _comboStreak++;
       submitCorrectAnswer();
@@ -285,6 +293,8 @@ class _WordFormationScreenState extends State<WordFormationScreen>
             final isCorr = isCorrectNotifier.value;
             final confetti = showConfettiNotifier.value;
 
+            final isRevenge = _missedQuestIds.contains(quest.id) || _dueReviewRoots.contains(rootWord);
+
             return VocabularyBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
@@ -313,9 +323,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                   targetWord.isNotEmpty ? targetWord : rootWord,
                 );
               },
-              customHintText: _missedQuestIds.contains(quest.id)
-                  ? 'Revenge Round: Focus on the root word!'
-                  : null,
+              customHintText: isRevenge ? 'Spaced Review: Focus on the root word!' : null,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                 child: Column(
@@ -325,10 +333,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                         physics: const BouncingScrollPhysics(),
                         child: Column(
                           children: [
-                            _buildSpeedArenaBar(
-                              primaryColor,
-                              _missedQuestIds.contains(quest.id),
-                            ),
+                            _buildSpeedArenaBar(primaryColor, isRevenge),
                             WordFormationSentenceSlot(
                               sentence: sentence,
                               formedWord: isAns && isCorr == true

@@ -39,6 +39,7 @@ class _WordFormationPracticeScreenState
   bool? _isCorrect;
   int _shakeCount = 0;
   int _comboStreak = 0;
+  final Set<String> _dueReviewRoots = <String>{};
 
   @override
   void initState() {
@@ -54,6 +55,14 @@ class _WordFormationPracticeScreenState
         _quests = quests;
         _isLoading = false;
       });
+      for (final q in quests) {
+        final r = (q.rawExtra['rootWord'] as String?) ?? q.word ?? '';
+        if (r.isNotEmpty) {
+          WordFormationMistakeVault().isReviewDue(r).then((due) {
+            if (due && mounted) setState(() => _dueReviewRoots.add(r));
+          });
+        }
+      }
     }
   }
 
@@ -70,6 +79,7 @@ class _WordFormationPracticeScreenState
 
     if (isMatch) {
       _comboStreak++;
+      _dueReviewRoots.remove(root);
       WordFormationMistakeVault().recordSuccess(root);
       di.sl<HapticService>().success();
       di.sl<SoundService>().playCorrect();
@@ -190,7 +200,9 @@ class _WordFormationPracticeScreenState
                           : null,
                       rootWord: rootWord,
                       targetRole: targetRole,
-                      roleClue: roleClue,
+                      roleClue: _dueReviewRoots.contains(rootWord)
+                          ? '🔥 Spaced Review: Master this word!'
+                          : roleClue,
                       isAnswered: _isAnswered,
                       isCorrect: _isCorrect,
                       primaryColor: primaryColor,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
@@ -24,6 +25,7 @@ void main() {
   late MockSoundService mockSoundService;
 
   setUp(() {
+    SharedPreferences.setMockInitialValues({});
     mockTtsService = MockTtsService();
     mockHapticService = MockHapticService();
     mockSoundService = MockSoundService();
