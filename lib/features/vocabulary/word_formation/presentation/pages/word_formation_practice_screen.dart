@@ -1,6 +1,4 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/data/models/phased_quest_model.dart';
@@ -13,6 +11,7 @@ import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/features/vocabulary/word_formation/data/services/word_formation_curriculum_service.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_4way_launcher.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_morph_core.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_sentence_slot.dart';
@@ -45,62 +44,14 @@ class _WordFormationPracticeScreenState
   }
 
   Future<void> _loadQuests() async {
-    try {
-      final batchIndex = ((widget.level - 1) ~/ 10) + 1;
-      final startLevel = (batchIndex - 1) * 10 + 1;
-      final endLevel = batchIndex * 10;
-      final path =
-          'assets/curriculum/vocabulary/wordFormation_practice_${startLevel}_$endLevel.json';
-      final jsonStr = await rootBundle.loadString(path);
-      final data = jsonDecode(jsonStr) as Map<String, dynamic>;
-      final batch = PhasedQuestBatch.fromJson(data);
-
-      final levelQuests = batch.quests
-          .where((q) => q.level == widget.level)
-          .toList();
-
-      if (mounted) {
-        setState(() {
-          _quests = levelQuests.isNotEmpty ? levelQuests : batch.quests;
-          _isLoading = false;
-        });
-      }
-    } catch (_) {
-      if (mounted) {
-        setState(() {
-          _quests = _buildFallbackQuests();
-          _isLoading = false;
-        });
-      }
+    final quests =
+        await WordFormationCurriculumService().getPracticeQuests(widget.level);
+    if (mounted) {
+      setState(() {
+        _quests = quests;
+        _isLoading = false;
+      });
     }
-  }
-
-  List<PhasedQuest> _buildFallbackQuests() {
-    return [
-      PhasedQuest(
-        id: 'FALLBACK_WF_P1_Q1',
-        level: widget.level,
-        word: 'DECIDE',
-        example:
-            'The committee reached a unanimous _______ after hours of debate.',
-        rawExtra: {
-          'rootWord': 'DECIDE',
-          'sentence':
-              'The committee reached a unanimous _______ after hours of debate.',
-          'targetWord': 'DECISION',
-          'correctAnswer': 'DECISION',
-          'correctDirection': 'north',
-          'targetRole': 'Noun',
-          'roleClue': "The adjective 'unanimous' describes a NOUN (North ⬆️).",
-          'northNoun': 'DECISION',
-          'eastAdjective': 'DECISIVE',
-          'southAdverb': 'DECISIVELY',
-          'westOpposite': 'INDECISIVE',
-          'bounceFeedback':
-              "Notice: 'unanimous' is an adjective, which describes a NOUN (North ⬆️)!",
-        },
-      ),
-    ];
   }
 
   void _onDirectionSelected(String direction) {

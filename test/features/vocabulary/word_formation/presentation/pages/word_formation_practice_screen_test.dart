@@ -29,12 +29,11 @@ void main() {
     mockSoundService = MockSoundService();
 
     when(() => mockTtsService.speak(any())).thenAnswer((_) async {});
-    when(() => mockTtsService.stop()).thenAnswer((_) async {});
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
-    when(() => mockHapticService.light()).thenAnswer((_) async {});
-    when(() => mockHapticService.heavy()).thenAnswer((_) async {});
-    when(() => mockHapticService.error()).thenAnswer((_) async {});
     when(() => mockHapticService.success()).thenAnswer((_) async {});
+    when(() => mockHapticService.error()).thenAnswer((_) async {});
+    when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
+    when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
 
     if (di.sl.isRegistered<TtsService>()) di.sl.unregister<TtsService>();
     if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
@@ -62,52 +61,94 @@ void main() {
     testWidgets('renders sentence slot and 4-way launcher pads', (
       tester,
     ) async {
-      await tester.pumpWidget(
-        buildTestableWidget(const WordFormationPracticeScreen(level: 1)),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+      tester.view.physicalSize = const Size(390, 844) * 2.0;
+      tester.view.devicePixelRatio = 2.0;
 
-      expect(find.byType(WordFormationPracticeScreen), findsOneWidget);
-      expect(find.byType(WordFormationSentenceSlot), findsOneWidget);
-      expect(find.byType(WordFormation4WayLauncher), findsOneWidget);
+      try {
+        await tester.pumpWidget(
+          buildTestableWidget(const WordFormationPracticeScreen(level: 1)),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        expect(find.byType(WordFormationPracticeScreen), findsOneWidget);
+        expect(find.byType(WordFormationSentenceSlot), findsOneWidget);
+        expect(find.byType(WordFormation4WayLauncher), findsOneWidget);
+      } finally {
+        await tester.pumpWidget(const SizedBox());
+        await tester.pumpAndSettle();
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      }
     });
 
     testWidgets('tapping correct direction fills slot and plays audio', (
       tester,
     ) async {
-      await tester.pumpWidget(
-        buildTestableWidget(const WordFormationPracticeScreen(level: 1)),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+      tester.view.physicalSize = const Size(390, 844) * 2.0;
+      tester.view.devicePixelRatio = 2.0;
 
-      // In fallback / Batch 1 Quest 1: correct direction is North (Noun)
-      final northFinder = find.textContaining('NOUN');
-      if (northFinder.evaluate().isNotEmpty) {
-        await tester.tap(northFinder.first);
+      try {
+        await tester.pumpWidget(
+          buildTestableWidget(const WordFormationPracticeScreen(level: 1)),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        // Find North pad specifically inside the 4-way launcher
+        final northFinder = find.descendant(
+          of: find.byType(WordFormation4WayLauncher),
+          matching: find.text('NOUN'),
+        );
+        expect(northFinder, findsOneWidget);
+        await tester.ensureVisible(northFinder);
+        await tester.tap(northFinder);
         await tester.pumpAndSettle();
+
         verify(
           () => mockTtsService.speak(any()),
         ).called(greaterThanOrEqualTo(1));
+        verify(
+          () => mockSoundService.playCorrect(),
+        ).called(greaterThanOrEqualTo(1));
+      } finally {
+        await tester.pumpWidget(const SizedBox());
+        await tester.pumpAndSettle();
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
       }
     });
 
     testWidgets('tapping wrong direction triggers error feedback', (
       tester,
     ) async {
-      await tester.pumpWidget(
-        buildTestableWidget(const WordFormationPracticeScreen(level: 1)),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+      tester.view.physicalSize = const Size(390, 844) * 2.0;
+      tester.view.devicePixelRatio = 2.0;
 
-      // Tap South or West (wrong direction for Quest 1)
-      final southFinder = find.textContaining('ADV');
-      if (southFinder.evaluate().isNotEmpty) {
-        await tester.tap(southFinder.first);
+      try {
+        await tester.pumpWidget(
+          buildTestableWidget(const WordFormationPracticeScreen(level: 1)),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        // Find South pad specifically inside the 4-way launcher (ADVERB)
+        final southFinder = find.descendant(
+          of: find.byType(WordFormation4WayLauncher),
+          matching: find.text('ADVERB'),
+        );
+        expect(southFinder, findsOneWidget);
+        await tester.ensureVisible(southFinder);
+        await tester.tap(southFinder);
         await tester.pumpAndSettle();
+
         verify(() => mockHapticService.error()).called(greaterThanOrEqualTo(1));
+        verify(() => mockSoundService.playWrong()).called(greaterThanOrEqualTo(1));
+      } finally {
+        await tester.pumpWidget(const SizedBox());
+        await tester.pumpAndSettle();
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
       }
     });
   });

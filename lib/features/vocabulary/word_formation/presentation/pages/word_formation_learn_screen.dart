@@ -1,6 +1,4 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:vowl/core/data/models/phased_quest_model.dart';
@@ -9,6 +7,7 @@ import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/features/vocabulary/word_formation/data/services/word_formation_curriculum_service.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_learn_compass.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_morph_core.dart';
 
@@ -35,107 +34,14 @@ class _WordFormationLearnScreenState extends State<WordFormationLearnScreen> {
   }
 
   Future<void> _loadQuests() async {
-    try {
-      final batchIndex = ((widget.level - 1) ~/ 10) + 1;
-      final startLevel = (batchIndex - 1) * 10 + 1;
-      final endLevel = batchIndex * 10;
-      final path =
-          'assets/curriculum/vocabulary/wordFormation_learn_${startLevel}_$endLevel.json';
-      final jsonStr = await rootBundle.loadString(path);
-      final data = jsonDecode(jsonStr) as Map<String, dynamic>;
-      final batch = PhasedQuestBatch.fromJson(data);
-
-      final levelQuests = batch.quests
-          .where((q) => q.level == widget.level)
-          .toList();
-
-      if (mounted) {
-        setState(() {
-          _quests = levelQuests.isNotEmpty ? levelQuests : batch.quests;
-          _isLoading = false;
-        });
-      }
-    } catch (_) {
-      if (mounted) {
-        setState(() {
-          _quests = _buildFallbackQuests();
-          _isLoading = false;
-        });
-      }
+    final quests =
+        await WordFormationCurriculumService().getLearnQuests(widget.level);
+    if (mounted) {
+      setState(() {
+        _quests = quests;
+        _isLoading = false;
+      });
     }
-  }
-
-  List<PhasedQuest> _buildFallbackQuests() {
-    return [
-      PhasedQuest(
-        id: 'FALLBACK_WF_L1_Q1',
-        level: widget.level,
-        word: 'DECIDE',
-        definition: 'To make a choice after thinking carefully.',
-        rawExtra: {
-          'rootWord': 'DECIDE',
-          'rootMeaning': 'To make a choice after thinking carefully.',
-          'northNoun': {
-            'word': 'DECISION',
-            'role': 'Noun',
-            'rule': 'Drop -de, add -sion',
-            'example': 'Making a tough career decision takes courage.',
-          },
-          'eastAdjective': {
-            'word': 'DECISIVE',
-            'role': 'Adjective',
-            'rule': 'Drop -e, add -isive',
-            'example': 'A decisive manager resolves issues quickly.',
-          },
-          'southAdverb': {
-            'word': 'DECISIVELY',
-            'role': 'Adverb',
-            'rule': 'Add -ly to adjective',
-            'example': 'She acted decisively during the crisis.',
-          },
-          'westOpposite': {
-            'word': 'INDECISIVE',
-            'role': 'Opposite',
-            'rule': 'Prefix in- + decisive',
-            'example': 'An indecisive customer hesitated for hours.',
-          },
-        },
-      ),
-      PhasedQuest(
-        id: 'FALLBACK_WF_L1_Q2',
-        level: widget.level,
-        word: 'CREATE',
-        definition: 'To bring something new into existence.',
-        rawExtra: {
-          'rootWord': 'CREATE',
-          'rootMeaning': 'To bring something new into existence.',
-          'northNoun': {
-            'word': 'CREATION',
-            'role': 'Noun',
-            'rule': 'Drop -e, add -ion',
-            'example': 'The artistic creation took three years.',
-          },
-          'eastAdjective': {
-            'word': 'CREATIVE',
-            'role': 'Adjective',
-            'rule': 'Drop -e, add -ive',
-            'example': 'A creative solution to a hard problem.',
-          },
-          'southAdverb': {
-            'word': 'CREATIVELY',
-            'role': 'Adverb',
-            'rule': 'Add -ly to adjective',
-            'example': 'They thought creatively to save costs.',
-          },
-          'westOpposite': {
-            'word': 'UNCREATIVE',
-            'role': 'Opposite',
-            'rule': 'Prefix un- + creative',
-            'example': 'Copying others is uncreative work.',
-          },
-        },
-      ),
-    ];
   }
 
   void _onContinue() {
