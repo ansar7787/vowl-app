@@ -5,7 +5,6 @@ import 'package:vowl/core/data/models/phased_quest_model.dart';
 import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/presentation/phases/practice_phase_scaffold.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -67,19 +66,15 @@ class _WordFormationPracticeScreenState
         .toLowerCase();
     final isMatch = direction.trim().toLowerCase() == correctDir;
 
-    setState(() {
-      _selectedDirection = direction;
-      _isAnswered = true;
-      _isCorrect = isMatch;
-      if (!isMatch) {
-        _shakeCount++;
-      }
-    });
-
     if (isMatch) {
       _comboStreak++;
       di.sl<HapticService>().success();
       di.sl<SoundService>().playCorrect();
+      setState(() {
+        _selectedDirection = direction;
+        _isAnswered = true;
+        _isCorrect = true;
+      });
       final sentence = extra['sentence'] as String? ?? quest.example ?? '';
       final target =
           extra['targetWord'] as String? ?? quest.correctAnswer ?? '';
@@ -91,6 +86,12 @@ class _WordFormationPracticeScreenState
       _comboStreak = 0;
       di.sl<HapticService>().error();
       di.sl<SoundService>().playWrong();
+      setState(() {
+        _selectedDirection = direction;
+        _isAnswered = false; // Keep pads interactive so learner can retry!
+        _isCorrect = false;
+        _shakeCount++;
+      });
     }
   }
 
@@ -287,57 +288,6 @@ class _WordFormationPracticeScreenState
                     ],
                     SizedBox(height: 16.h),
                   ],
-                ),
-              ),
-            ),
-            SafeArea(
-              top: false,
-              child: Padding(
-                padding: EdgeInsets.only(bottom: 16.h, top: 8.h),
-                child: ScaleButton(
-                  onTap: _isAnswered && _isCorrect == true ? _onNext : null,
-                  child: Container(
-                    width: double.infinity,
-                    height: 52.h,
-                    decoration: BoxDecoration(
-                      color: _isAnswered && _isCorrect == true
-                          ? primaryColor
-                          : primaryColor.withValues(alpha: 0.3),
-                      borderRadius: BorderRadius.circular(16.r),
-                      boxShadow: [
-                        if (_isAnswered && _isCorrect == true)
-                          BoxShadow(
-                            color: primaryColor.withValues(alpha: 0.3),
-                            blurRadius: 12,
-                            offset: const Offset(0, 4),
-                          ),
-                      ],
-                    ),
-                    alignment: Alignment.center,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          _currentIndex < _quests.length - 1
-                              ? 'Next Exercise'
-                              : 'Start Mastery Challenge',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.white,
-                            letterSpacing: 0.5,
-                          ),
-                        ),
-                        SizedBox(width: 8.w),
-                        Icon(
-                          Icons.arrow_forward_rounded,
-                          color: Colors.white,
-                          size: 18.r,
-                        ),
-                      ],
-                    ),
-                  ),
                 ),
               ),
             ),

@@ -5,7 +5,6 @@ import 'package:vowl/core/data/models/phased_quest_model.dart';
 import 'package:vowl/core/presentation/phases/learn_phase_scaffold.dart';
 import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/features/vocabulary/word_formation/data/services/word_formation_curriculum_service.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_learn_compass.dart';
@@ -129,56 +128,8 @@ class _WordFormationLearnScreenState extends State<WordFormationLearnScreen> {
                       westOpposite: west,
                       primaryColor: primaryColor,
                     ),
-                    SizedBox(height: 24.h),
+                    SizedBox(height: 16.h),
                   ],
-                ),
-              ),
-            ),
-            SafeArea(
-              top: false,
-              child: Padding(
-                padding: EdgeInsets.only(bottom: 16.h, top: 8.h),
-                child: ScaleButton(
-                  onTap: _onContinue,
-                  child: Container(
-                    width: double.infinity,
-                    height: 52.h,
-                    decoration: BoxDecoration(
-                      color: primaryColor,
-                      borderRadius: BorderRadius.circular(16.r),
-                      boxShadow: [
-                        BoxShadow(
-                          color: primaryColor.withValues(alpha: 0.3),
-                          blurRadius: 12,
-                          offset: const Offset(0, 4),
-                        ),
-                      ],
-                    ),
-                    alignment: Alignment.center,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          _currentIndex < _quests.length - 1
-                              ? 'Next Word'
-                              : 'Start Practice',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.white,
-                            letterSpacing: 0.5,
-                          ),
-                        ),
-                        SizedBox(width: 8.w),
-                        Icon(
-                          Icons.arrow_forward_rounded,
-                          color: Colors.white,
-                          size: 18.r,
-                        ),
-                      ],
-                    ),
-                  ),
                 ),
               ),
             ),

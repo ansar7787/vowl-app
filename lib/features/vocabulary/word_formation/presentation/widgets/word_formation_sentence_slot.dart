@@ -52,11 +52,11 @@ class WordFormationSentenceSlot extends StatelessWidget {
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
-          color: isAnswered
-              ? (isCorrect == true
-                    ? AppColors.gameCorrect.withValues(alpha: 0.45)
-                    : AppColors.gameIncorrect.withValues(alpha: 0.45))
-              : roleColor.withValues(alpha: 0.28),
+          color: isCorrect == true
+              ? AppColors.gameCorrect.withValues(alpha: 0.45)
+              : (isCorrect == false
+                    ? AppColors.gameIncorrect.withValues(alpha: 0.45)
+                    : roleColor.withValues(alpha: 0.28)),
           width: 1.2,
         ),
         boxShadow: [
@@ -281,7 +281,7 @@ class WordFormationSentenceSlot extends StatelessWidget {
             ),
           ],
 
-          if (isAnswered && isCorrect == false && bounceFeedback != null) ...[
+          if (isCorrect == false && bounceFeedback != null) ...[
             SizedBox(height: 10.h),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
