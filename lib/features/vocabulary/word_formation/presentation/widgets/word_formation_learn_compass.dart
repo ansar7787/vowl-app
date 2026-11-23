@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'word_formation_colors.dart';
 
 /// Interactive discovery compass card used in Learn phase to explore 4-way morphological shifts.
@@ -32,6 +34,19 @@ class WordFormationLearnCompass extends StatefulWidget {
 
 class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
   String _activeDirection = 'north';
+  final Map<String, String> _translatedExamples = {};
+  final Map<String, String> _exampleLanguages = {};
+  final Map<String, bool> _showTranslatedExample = {};
+
+  @override
+  void didUpdateWidget(covariant WordFormationLearnCompass oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.northNoun != widget.northNoun) {
+      _translatedExamples.clear();
+      _exampleLanguages.clear();
+      _showTranslatedExample.clear();
+    }
+  }
 
   Map<String, dynamic> get _activeData {
     switch (_activeDirection) {
@@ -232,15 +247,63 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
                 ],
                 if (activeExample.isNotEmpty) ...[
                   SizedBox(height: 8.h),
-                  Text(
-                    '"$activeExample"',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 13.sp,
-                      fontStyle: FontStyle.italic,
-                      color: isDark ? Colors.white70 : Colors.black87,
-                      height: 1.35,
-                    ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: GestureDetector(
+                          onTap: _showTranslatedExample[_activeDirection] == true
+                              ? () => setState(() =>
+                                  _showTranslatedExample[_activeDirection] = false)
+                              : null,
+                          child: Text(
+                            _showTranslatedExample[_activeDirection] == true &&
+                                    _translatedExamples[_activeDirection] != null
+                                ? '"${_translatedExamples[_activeDirection]}"'
+                                : '"$activeExample"',
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 13.sp,
+                              fontStyle: FontStyle.italic,
+                              color: isDark ? Colors.white70 : Colors.black87,
+                              height: 1.35,
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 6.w),
+                      TranslateButtonWidget(
+                        originalText: activeExample,
+                        onTranslationComplete: (t) {
+                          setState(() {
+                            _translatedExamples[_activeDirection] = t;
+                            _showTranslatedExample[_activeDirection] = true;
+                          });
+                        },
+                        onTranslationWithLanguage: (t, code) {
+                          setState(() {
+                            _translatedExamples[_activeDirection] = t;
+                            _exampleLanguages[_activeDirection] = code ?? '';
+                            _showTranslatedExample[_activeDirection] = true;
+                          });
+                        },
+                        iconSize: 13.r,
+                        iconColor: activeColor,
+                        padding: EdgeInsets.all(2.r),
+                      ),
+                      if (_showTranslatedExample[_activeDirection] == true &&
+                          _translatedExamples[_activeDirection] != null &&
+                          _exampleLanguages[_activeDirection] != null &&
+                          _exampleLanguages[_activeDirection]!.isNotEmpty) ...[
+                        SizedBox(width: 4.w),
+                        TtsSpeakerButtonWidget(
+                          text: _translatedExamples[_activeDirection]!,
+                          locale: _exampleLanguages[_activeDirection],
+                          color: activeColor,
+                          size: 13.r,
+                        ),
+                      ],
+                    ],
                   ),
                 ],
               ],

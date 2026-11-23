@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 
 /// Central interactive hub displaying the base morphological root word
-/// with audio pronunciation and on-demand root definition translation.
+/// with audio pronunciation and on-demand root definition translation with translated audio.
 class WordFormationMorphCore extends StatefulWidget {
   final String rootWord;
   final String? rootMeaning;
@@ -28,6 +29,7 @@ class WordFormationMorphCore extends StatefulWidget {
 
 class _WordFormationMorphCoreState extends State<WordFormationMorphCore> {
   String? _translatedMeaning;
+  String? _targetLanguageCode;
   bool _showTranslated = false;
 
   @override
@@ -36,6 +38,7 @@ class _WordFormationMorphCoreState extends State<WordFormationMorphCore> {
     if (oldWidget.rootMeaning != widget.rootMeaning ||
         oldWidget.rootWord != widget.rootWord) {
       _translatedMeaning = null;
+      _targetLanguageCode = null;
       _showTranslated = false;
     }
   }
@@ -164,10 +167,29 @@ class _WordFormationMorphCoreState extends State<WordFormationMorphCore> {
                       _showTranslated = true;
                     });
                   },
+                  onTranslationWithLanguage: (translated, langCode) {
+                    setState(() {
+                      _translatedMeaning = translated;
+                      _targetLanguageCode = langCode;
+                      _showTranslated = true;
+                    });
+                  },
                   iconSize: 13.r,
                   iconColor: primaryColor,
                   padding: EdgeInsets.all(4.r),
                 ),
+                if (_showTranslated &&
+                    _translatedMeaning != null &&
+                    _targetLanguageCode != null &&
+                    _targetLanguageCode!.isNotEmpty) ...[
+                  SizedBox(width: 4.w),
+                  TtsSpeakerButtonWidget(
+                    text: _translatedMeaning!,
+                    locale: _targetLanguageCode,
+                    color: primaryColor,
+                    size: 14.r,
+                  ),
+                ],
               ],
             ),
           ],

@@ -6,11 +6,13 @@ import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/presentation/phases/practice_phase_scaffold.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 import 'package:vowl/features/vocabulary/word_formation/data/services/word_formation_curriculum_service.dart';
 import 'package:vowl/features/vocabulary/word_formation/data/services/word_formation_mistake_vault.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_4way_launcher.dart';
@@ -40,6 +42,9 @@ class _WordFormationPracticeScreenState
   int _shakeCount = 0;
   int _comboStreak = 0;
   final Set<String> _dueReviewRoots = <String>{};
+  String? _translatedInsight;
+  String? _insightLanguageCode;
+  bool _showTranslatedInsight = false;
 
   @override
   void initState() {
@@ -116,6 +121,9 @@ class _WordFormationPracticeScreenState
         _selectedDirection = null;
         _isAnswered = false;
         _isCorrect = null;
+        _translatedInsight = null;
+        _insightLanguageCode = null;
+        _showTranslatedInsight = false;
       });
     } else {
       PhaseProgressRecorder.recordPhaseCompleted(
@@ -274,27 +282,76 @@ class _WordFormationPracticeScreenState
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Text(
-                                    'Grammar Insight',
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 11.sp,
-                                      fontWeight: FontWeight.w700,
-                                      color: AppColors.gameCorrect,
-                                      letterSpacing: 0.4,
-                                    ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        'Grammar Insight',
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 11.sp,
+                                          fontWeight: FontWeight.w700,
+                                          color: AppColors.gameCorrect,
+                                          letterSpacing: 0.4,
+                                        ),
+                                      ),
+                                      const Spacer(),
+                                      TranslateButtonWidget(
+                                        originalText: explanation,
+                                        onTranslationComplete: (t) {
+                                          setState(() {
+                                            _translatedInsight = t;
+                                            _showTranslatedInsight = true;
+                                          });
+                                        },
+                                        onTranslationWithLanguage: (t, code) {
+                                          setState(() {
+                                            _translatedInsight = t;
+                                            _insightLanguageCode = code;
+                                            _showTranslatedInsight = true;
+                                          });
+                                        },
+                                        iconSize: 13.r,
+                                        iconColor: AppColors.gameCorrect,
+                                        padding: EdgeInsets.all(2.r),
+                                      ),
+                                      if (_showTranslatedInsight &&
+                                          _translatedInsight != null &&
+                                          _insightLanguageCode != null &&
+                                          _insightLanguageCode!.isNotEmpty) ...[
+                                        SizedBox(width: 4.w),
+                                        TtsSpeakerButtonWidget(
+                                          text: _translatedInsight!,
+                                          locale: _insightLanguageCode,
+                                          color: AppColors.gameCorrect,
+                                          size: 13.r,
+                                        ),
+                                      ],
+                                    ],
                                   ),
                                   SizedBox(height: 4.h),
-                                  Text(
-                                    explanation,
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 13.sp,
-                                      fontWeight: FontWeight.w400,
-                                      color: isDark
-                                          ? Colors.white70
-                                          : Colors.black87,
-                                      height: 1.35,
+                                  GestureDetector(
+                                    onTap: _translatedInsight != null
+                                        ? () => setState(() =>
+                                            _showTranslatedInsight =
+                                                !_showTranslatedInsight)
+                                        : null,
+                                    child: Text(
+                                      _showTranslatedInsight &&
+                                              _translatedInsight != null
+                                          ? _translatedInsight!
+                                          : explanation,
+                                      style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 13.sp,
+                                        fontStyle: _showTranslatedInsight
+                                            ? FontStyle.italic
+                                            : FontStyle.normal,
+                                        fontWeight: FontWeight.w400,
+                                        color: isDark
+                                            ? Colors.white70
+                                            : Colors.black87,
+                                        height: 1.35,
+                                      ),
                                     ),
                                   ),
                                 ],

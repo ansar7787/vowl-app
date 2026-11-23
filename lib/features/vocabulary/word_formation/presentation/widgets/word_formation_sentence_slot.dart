@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
+import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
@@ -11,7 +12,7 @@ import 'word_formation_morpheme_formula.dart';
 import 'word_formation_slot_content.dart';
 
 /// Card rendering the sentence context with an animated morphological slot
-/// and optional on-demand sentence context translation.
+/// and optional on-demand sentence context translation with translated audio.
 class WordFormationSentenceSlot extends StatefulWidget {
   final String sentence;
   final String? formedWord;
@@ -45,6 +46,7 @@ class WordFormationSentenceSlot extends StatefulWidget {
 
 class _WordFormationSentenceSlotState extends State<WordFormationSentenceSlot> {
   String? _translatedSentence;
+  String? _targetLanguageCode;
   bool _showTranslated = false;
 
   @override
@@ -52,6 +54,7 @@ class _WordFormationSentenceSlotState extends State<WordFormationSentenceSlot> {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.sentence != widget.sentence) {
       _translatedSentence = null;
+      _targetLanguageCode = null;
       _showTranslated = false;
     }
   }
@@ -183,6 +186,13 @@ class _WordFormationSentenceSlotState extends State<WordFormationSentenceSlot> {
                     _showTranslated = true;
                   });
                 },
+                onTranslationWithLanguage: (translated, langCode) {
+                  setState(() {
+                    _translatedSentence = translated;
+                    _targetLanguageCode = langCode;
+                    _showTranslated = true;
+                  });
+                },
                 iconSize: 14.r,
                 iconColor: roleColor,
                 padding: EdgeInsets.all(2.r),
@@ -250,23 +260,23 @@ class _WordFormationSentenceSlotState extends State<WordFormationSentenceSlot> {
             ),
           ),
 
-          // Translated Sentence Banner (tappable to dismiss/toggle)
+          // Translated Sentence Banner (with native-language audio speaker)
           if (_showTranslated && _translatedSentence != null) ...[
             SizedBox(height: 8.h),
-            GestureDetector(
-              onTap: () => setState(() => _showTranslated = false),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 7.h),
-                decoration: BoxDecoration(
-                  color: widget.primaryColor.withValues(alpha: 0.08),
-                  borderRadius: BorderRadius.circular(10.r),
-                  border: Border.all(color: widget.primaryColor.withValues(alpha: 0.22)),
-                ),
-                child: Row(
-                  children: [
-                    Icon(Icons.translate_rounded, size: 13.r, color: widget.primaryColor),
-                    SizedBox(width: 6.w),
-                    Expanded(
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 7.h),
+              decoration: BoxDecoration(
+                color: widget.primaryColor.withValues(alpha: 0.08),
+                borderRadius: BorderRadius.circular(10.r),
+                border: Border.all(color: widget.primaryColor.withValues(alpha: 0.22)),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.translate_rounded, size: 13.r, color: widget.primaryColor),
+                  SizedBox(width: 6.w),
+                  Expanded(
+                    child: GestureDetector(
+                      onTap: () => setState(() => _showTranslated = false),
                       child: Text(
                         _translatedSentence!,
                         style: TextStyle(
@@ -278,10 +288,22 @@ class _WordFormationSentenceSlotState extends State<WordFormationSentenceSlot> {
                         ),
                       ),
                     ),
+                  ),
+                  if (_targetLanguageCode != null && _targetLanguageCode!.isNotEmpty) ...[
                     SizedBox(width: 4.w),
-                    Icon(Icons.close_rounded, size: 14.r, color: isDark ? Colors.white38 : Colors.black38),
+                    TtsSpeakerButtonWidget(
+                      text: _translatedSentence!,
+                      locale: _targetLanguageCode,
+                      color: widget.primaryColor,
+                      size: 14.r,
+                    ),
                   ],
-                ),
+                  SizedBox(width: 4.w),
+                  GestureDetector(
+                    onTap: () => setState(() => _showTranslated = false),
+                    child: Icon(Icons.close_rounded, size: 14.r, color: isDark ? Colors.white38 : Colors.black38),
+                  ),
+                ],
               ),
             ),
           ],
