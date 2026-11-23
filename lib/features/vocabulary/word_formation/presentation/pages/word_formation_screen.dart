@@ -50,6 +50,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   int _shakeCount = 0;
   String? _selectedDirection;
   int _lastProcessedIndex = -1;
+  int _comboStreak = 0;
 
   @override
   void initState() {
@@ -108,6 +109,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
     });
 
     if (isMatch) {
+      _comboStreak++;
       submitCorrectAnswer();
       final sentence = quest.sentence ?? quest.contextSentence ?? '';
       final target = quest.targetWord ?? quest.correctAnswer ?? selectedWord;
@@ -116,6 +118,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
         di.sl<TtsService>().speak(fullText);
       }
     } else {
+      _comboStreak = 0;
       submitWrongAnswer(quest: quest, userAnswer: selectedWord);
     }
   }
@@ -219,6 +222,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                               formedWord: isAns && isCorr == true
                                   ? targetWord
                                   : null,
+                              rootWord: rootWord,
                               targetRole: targetRoleName,
                               roleClue: quest.hint,
                               isAnswered: isAns,
@@ -243,6 +247,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                               correctDirection: isAns ? correctDir : null,
                               isAnswered: isAns,
                               primaryColor: primaryColor,
+                              comboStreak: _comboStreak,
                               onDirectionSelected: (dir) =>
                                   _onDirectionSelected(
                                     dir,

@@ -36,6 +36,7 @@ class _WordFormationPracticeScreenState
   bool _isAnswered = false;
   bool? _isCorrect;
   int _shakeCount = 0;
+  int _comboStreak = 0;
 
   @override
   void initState() {
@@ -74,6 +75,7 @@ class _WordFormationPracticeScreenState
     });
 
     if (isMatch) {
+      _comboStreak++;
       di.sl<HapticService>().success();
       di.sl<SoundService>().playCorrect();
       final sentence = extra['sentence'] as String? ?? quest.example ?? '';
@@ -84,6 +86,7 @@ class _WordFormationPracticeScreenState
         di.sl<TtsService>().speak(fullText);
       }
     } else {
+      _comboStreak = 0;
       di.sl<HapticService>().error();
       di.sl<SoundService>().playWrong();
     }
@@ -173,6 +176,7 @@ class _WordFormationPracticeScreenState
                       formedWord: _isAnswered && _isCorrect == true
                           ? targetWord
                           : null,
+                      rootWord: rootWord,
                       targetRole: targetRole,
                       roleClue: roleClue,
                       isAnswered: _isAnswered,
@@ -197,6 +201,7 @@ class _WordFormationPracticeScreenState
                       correctDirection: _isAnswered ? correctDir : null,
                       isAnswered: _isAnswered,
                       primaryColor: primaryColor,
+                      comboStreak: _comboStreak,
                       onDirectionSelected: _onDirectionSelected,
                     ),
                     SizedBox(height: 16.h),

@@ -21,6 +21,7 @@ class WordFormation4WayLauncher extends StatelessWidget {
   final String? correctDirection;
   final bool isAnswered;
   final Color primaryColor;
+  final int comboStreak;
   final ValueChanged<String> onDirectionSelected;
 
   const WordFormation4WayLauncher({
@@ -33,6 +34,7 @@ class WordFormation4WayLauncher extends StatelessWidget {
     this.correctDirection,
     required this.isAnswered,
     required this.primaryColor,
+    this.comboStreak = 0,
     required this.onDirectionSelected,
   });
 
@@ -130,32 +132,58 @@ class WordFormation4WayLauncher extends StatelessWidget {
   }
 
   Widget _buildCenterHub(bool isDark) {
+    Color orbColor = primaryColor;
+    String? comboLabel;
+    if (comboStreak == 1) {
+      orbColor = WordFormationColors.northNoun;
+      comboLabel = '1x';
+    } else if (comboStreak == 2) {
+      orbColor = WordFormationColors.southAdverb;
+      comboLabel = '2x';
+    } else if (comboStreak >= 3) {
+      orbColor = const Color(0xFFEAB308);
+      comboLabel = '3x 🔥';
+    }
+
     return Container(
-      width: 38.r,
-      height: 38.r,
+      width: 42.r,
+      height: 42.r,
       decoration: BoxDecoration(
         color: isDark
-            ? Colors.white.withValues(alpha: 0.06)
-            : primaryColor.withValues(alpha: 0.08),
+            ? Colors.white.withValues(alpha: 0.08)
+            : orbColor.withValues(alpha: 0.12),
         shape: BoxShape.circle,
         border: Border.all(
-          color: primaryColor.withValues(alpha: 0.28),
-          width: 1.5,
+          color: orbColor.withValues(alpha: comboStreak > 0 ? 0.7 : 0.28),
+          width: comboStreak >= 2 ? 2.2 : 1.5,
         ),
         boxShadow: [
           BoxShadow(
-            color: primaryColor.withValues(alpha: 0.12),
-            blurRadius: 8,
+            color: orbColor.withValues(alpha: comboStreak >= 2 ? 0.4 : 0.12),
+            blurRadius: comboStreak >= 3 ? 16 : (comboStreak >= 1 ? 10 : 8),
             offset: const Offset(0, 2),
           ),
         ],
       ),
       child: Center(
-        child: Icon(
-          Icons.explore_rounded,
-          color: primaryColor,
-          size: 20.r,
-        ),
+        child: comboLabel != null
+            ? FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  comboLabel,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w800,
+                    color: orbColor,
+                  ),
+                ),
+              )
+            : Icon(
+                Icons.explore_rounded,
+                color: primaryColor,
+                size: 20.r,
+              ),
       ),
     );
   }

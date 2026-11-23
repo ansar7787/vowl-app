@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/tts_service.dart';
 
-/// Pedagogical widget displaying morphological word family derivations.
+/// Pedagogical widget displaying interactive morphological word family derivations.
+///
+/// Tapping any word chip triggers native TTS pronunciation with subtle selection haptics.
 class WordFormationFamilyTree extends StatelessWidget {
   final List<String> familyTree;
   final Color color;
@@ -36,10 +42,10 @@ class WordFormationFamilyTree extends StatelessWidget {
               Icon(Icons.account_tree_rounded, color: color, size: 16.r),
               SizedBox(width: 6.w),
               Text(
-                'WORD FAMILY',
+                'WORD FAMILY (TAP TO HEAR)',
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 12.sp,
+                  fontSize: 11.sp,
                   fontWeight: FontWeight.w700,
                   color: color,
                   letterSpacing: 0.8,
@@ -52,20 +58,37 @@ class WordFormationFamilyTree extends StatelessWidget {
             spacing: 8.w,
             runSpacing: 6.h,
             children: familyTree.map((word) {
-              return Container(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
-                decoration: BoxDecoration(
-                  color: color.withValues(alpha: 0.1),
-                  borderRadius: BorderRadius.circular(8.r),
-                  border: Border.all(color: color.withValues(alpha: 0.2)),
-                ),
-                child: Text(
-                  word,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 12.sp,
-                    fontWeight: FontWeight.w600,
-                    color: isDark ? Colors.white : AppColors.slate900,
+              return ScaleButton(
+                onTap: () {
+                  di.sl<HapticService>().selection();
+                  di.sl<TtsService>().speak(word);
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                  decoration: BoxDecoration(
+                    color: color.withValues(alpha: 0.1),
+                    borderRadius: BorderRadius.circular(8.r),
+                    border: Border.all(color: color.withValues(alpha: 0.25)),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        word,
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w700,
+                          color: isDark ? Colors.white : AppColors.slate900,
+                        ),
+                      ),
+                      SizedBox(width: 4.w),
+                      Icon(
+                        Icons.volume_up_rounded,
+                        size: 12.r,
+                        color: color.withValues(alpha: 0.8),
+                      ),
+                    ],
                   ),
                 ),
               );

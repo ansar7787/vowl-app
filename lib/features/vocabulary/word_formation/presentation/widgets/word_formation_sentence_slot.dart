@@ -6,11 +6,13 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
 import 'word_formation_colors.dart';
+import 'word_formation_morpheme_formula.dart';
 
 /// Card rendering the sentence context with an animated morphological slot.
 class WordFormationSentenceSlot extends StatelessWidget {
   final String sentence;
   final String? formedWord;
+  final String? rootWord;
   final String? targetRole;
   final String? roleClue;
   final bool isAnswered;
@@ -23,6 +25,7 @@ class WordFormationSentenceSlot extends StatelessWidget {
     super.key,
     required this.sentence,
     this.formedWord,
+    this.rootWord,
     this.targetRole,
     this.roleClue,
     required this.isAnswered,
@@ -225,6 +228,18 @@ class WordFormationSentenceSlot extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+          ],
+
+          if (isAnswered &&
+              isCorrect == true &&
+              formedWord != null &&
+              rootWord != null) ...[
+            SizedBox(height: 12.h),
+            WordFormationMorphemeFormula(
+              rootWord: rootWord!,
+              formedWord: formedWord!,
+              targetRole: targetRole,
             ),
           ],
 
