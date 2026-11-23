@@ -12,7 +12,6 @@ import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart'
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
 import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_screen_mixin.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_4way_launcher.dart';
-import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_morph_core.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_sentence_slot.dart';
 
 /// Mastery Phase Screen for Word Formation: Spatial 4-Way Morph Rush.
@@ -127,7 +126,6 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   Widget build(BuildContext context) {
     final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
     final primaryColor = theme.primaryColor;
-    final isDark = Theme.of(context).brightness == Brightness.dark;
 
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,
@@ -214,7 +212,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                         physics: const BouncingScrollPhysics(),
                         child: Column(
                           children: [
-                            SizedBox(height: 8.h),
+                            SizedBox(height: 10.h),
                             WordFormationSentenceSlot(
                               sentence: sentence,
                               formedWord: isAns && isCorr == true
@@ -228,14 +226,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                               primaryColor: primaryColor,
                               shakeCount: _shakeCount,
                             ),
-                            SizedBox(height: 12.h),
-                            WordFormationMorphCore(
-                              rootWord: rootWord,
-                              rootMeaning: quest.definition,
-                              primaryColor: primaryColor,
-                              isDark: isDark,
-                            ),
-                            SizedBox(height: 12.h),
+                            SizedBox(height: 16.h),
                             WordFormation4WayLauncher(
                               northWord: northWord,
                               eastWord: eastWord,

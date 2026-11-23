@@ -73,9 +73,47 @@ class WordFormationSentenceSlot extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          // Header: Role Clue Badge
+          // Header: Root Word Pill (if provided) & Role Clue Badge
           Row(
             children: [
+              if (rootWord != null && rootWord!.isNotEmpty) ...[
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+                  decoration: BoxDecoration(
+                    color: primaryColor.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(8.r),
+                    border: Border.all(
+                      color: primaryColor.withValues(alpha: 0.28),
+                      width: 1.0,
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        'ROOT: ${rootWord!.toUpperCase()}',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w700,
+                          color: primaryColor,
+                          letterSpacing: 0.5,
+                        ),
+                      ),
+                      SizedBox(width: 4.w),
+                      ScaleButton(
+                        onTap: () => di.sl<TtsService>().speak(rootWord!),
+                        child: Icon(
+                          Icons.volume_up_rounded,
+                          color: primaryColor,
+                          size: 13.r,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(width: 8.w),
+              ],
               Flexible(
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),

@@ -7,12 +7,14 @@ import 'package:vowl/core/presentation/phases/practice_phase_scaffold.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/word_formation/data/services/word_formation_curriculum_service.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_4way_launcher.dart';
+import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_family_tree.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_morph_core.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_sentence_slot.dart';
 
@@ -134,6 +136,7 @@ class _WordFormationPracticeScreenState
     final quest = _quests[_currentIndex];
     final extra = quest.rawExtra;
     final rootWord = (extra['rootWord'] as String?) ?? quest.word ?? 'ROOT';
+    final rootMeaning = (extra['rootMeaning'] as String?) ?? quest.definition;
     final sentence =
         (extra['sentence'] as String?) ??
         quest.example ??
@@ -144,6 +147,10 @@ class _WordFormationPracticeScreenState
     final roleClue = extra['roleClue'] as String?;
     final correctDir = extra['correctDirection'] as String? ?? 'north';
     final bounceFeedback = extra['bounceFeedback'] as String?;
+    final explanation = extra['explanation'] as String?;
+    final familyTree = (extra['familyTree'] is List)
+        ? (extra['familyTree'] as List).map((e) => e.toString()).toList()
+        : <String>[];
 
     final northWord = (extra['northNoun'] as String?) ?? '${rootWord}_NOUN';
     final eastWord = (extra['eastAdjective'] as String?) ?? '${rootWord}_ADJ';
@@ -188,6 +195,7 @@ class _WordFormationPracticeScreenState
                     SizedBox(height: 12.h),
                     WordFormationMorphCore(
                       rootWord: rootWord,
+                      rootMeaning: rootMeaning,
                       primaryColor: primaryColor,
                       isDark: isDark,
                     ),
@@ -204,6 +212,79 @@ class _WordFormationPracticeScreenState
                       comboStreak: _comboStreak,
                       onDirectionSelected: _onDirectionSelected,
                     ),
+                    if (_isAnswered &&
+                        _isCorrect == true &&
+                        familyTree.isNotEmpty) ...[
+                      SizedBox(height: 12.h),
+                      WordFormationFamilyTree(
+                        familyTree: familyTree,
+                        color: primaryColor,
+                      ),
+                    ],
+                    if (_isAnswered &&
+                        _isCorrect == true &&
+                        explanation != null &&
+                        explanation.isNotEmpty) ...[
+                      SizedBox(height: 12.h),
+                      Container(
+                        width: double.infinity,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 14.w,
+                          vertical: 12.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: AppColors.gameCorrect.withValues(alpha: 0.08),
+                          borderRadius: BorderRadius.circular(16.r),
+                          border: Border.all(
+                            color: AppColors.gameCorrect.withValues(
+                              alpha: 0.25,
+                            ),
+                            width: 1.2,
+                          ),
+                        ),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Icon(
+                              Icons.lightbulb_rounded,
+                              color: AppColors.gameCorrect,
+                              size: 18.r,
+                            ),
+                            SizedBox(width: 8.w),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Grammar Insight',
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 11.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: AppColors.gameCorrect,
+                                      letterSpacing: 0.4,
+                                    ),
+                                  ),
+                                  SizedBox(height: 4.h),
+                                  Text(
+                                    explanation,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 13.sp,
+                                      fontWeight: FontWeight.w400,
+                                      color: isDark
+                                          ? Colors.white70
+                                          : Colors.black87,
+                                      height: 1.35,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                     SizedBox(height: 16.h),
                   ],
                 ),
