@@ -42,6 +42,7 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
   void didUpdateWidget(covariant WordFormationLearnCompass oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (oldWidget.northNoun != widget.northNoun) {
+      _activeDirection = 'north';
       _translatedExamples.clear();
       _exampleLanguages.clear();
       _showTranslatedExample.clear();

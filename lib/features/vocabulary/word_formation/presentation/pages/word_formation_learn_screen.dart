@@ -6,6 +6,7 @@ import 'package:vowl/core/presentation/phases/learn_phase_scaffold.dart';
 import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/features/vocabulary/word_formation/data/services/word_formation_curriculum_service.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_learn_compass.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_morph_core.dart';
@@ -43,7 +44,14 @@ class _WordFormationLearnScreenState extends State<WordFormationLearnScreen> {
     }
   }
 
+  @override
+  void dispose() {
+    TtsSpeakerButtonWidget.stopAll();
+    super.dispose();
+  }
+
   void _onContinue() {
+    TtsSpeakerButtonWidget.stopAll();
     if (_currentIndex < _quests.length - 1) {
       setState(() {
         _currentIndex++;

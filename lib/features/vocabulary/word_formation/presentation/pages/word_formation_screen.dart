@@ -6,6 +6,7 @@ import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -72,6 +73,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   @override
   void dispose() {
     _countdownTimer?.cancel();
+    TtsSpeakerButtonWidget.stopAll();
     disposeVocabularyGame();
     super.dispose();
   }
@@ -80,6 +82,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   void onGamePaused() {
     super.onGamePaused();
     _countdownTimer?.cancel();
+    TtsSpeakerButtonWidget.stopAll();
   }
 
   @override
@@ -93,6 +96,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   @override
   void onQuestionReset() {
     _countdownTimer?.cancel();
+    TtsSpeakerButtonWidget.stopAll();
     _secondsRemaining = _maxTimeSeconds;
     setState(() => _selectedDirection = null);
   }
@@ -301,6 +305,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
               showConfetti: confetti,
               onContinue: () {
                 _countdownTimer?.cancel();
+                TtsSpeakerButtonWidget.stopAll();
                 final currentState = context.read<VocabularyBloc>().state;
                 final isFinal = currentState is VocabularyLoaded &&
                     (currentState.isFinalFailure || currentState.livesRemaining <= 0);

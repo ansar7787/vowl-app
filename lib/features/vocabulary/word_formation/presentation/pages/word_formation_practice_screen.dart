@@ -52,6 +52,12 @@ class _WordFormationPracticeScreenState
     _loadQuests();
   }
 
+  @override
+  void dispose() {
+    TtsSpeakerButtonWidget.stopAll();
+    super.dispose();
+  }
+
   Future<void> _loadQuests() async {
     final quests =
         await WordFormationCurriculumService().getPracticeQuests(widget.level);
@@ -115,6 +121,7 @@ class _WordFormationPracticeScreenState
   }
 
   void _onNext() {
+    TtsSpeakerButtonWidget.stopAll();
     if (_currentIndex < _quests.length - 1) {
       setState(() {
         _currentIndex++;
