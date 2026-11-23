@@ -58,10 +58,12 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   static const int _maxTimeSeconds = 10;
   Timer? _countdownTimer;
   int _secondsRemaining = _maxTimeSeconds;
+  VocabularyQuest? _activeQuest;
 
   @override
   void initState() {
     super.initState();
+    initGameLifecycle();
     initVocabularyGame();
   }
 
@@ -73,35 +75,38 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   }
 
   @override
-  void onQuestionReset() {
+  void onGamePaused() {
+    super.onGamePaused();
     _countdownTimer?.cancel();
-    setState(() {
-      _selectedDirection = null;
-    });
   }
 
-  void _startTimer(VocabularyQuest quest) {
+  @override
+  void onGameResumed() {
+    super.onGameResumed();
+    if (!isAnswered && _secondsRemaining > 0 && mounted && _activeQuest != null) {
+      _startTimer(_activeQuest!, resetSeconds: false);
+    }
+  }
+
+  @override
+  void onQuestionReset() {
     _countdownTimer?.cancel();
     _secondsRemaining = _maxTimeSeconds;
+    setState(() => _selectedDirection = null);
+  }
+
+  void _startTimer(VocabularyQuest quest, {bool resetSeconds = true}) {
+    _countdownTimer?.cancel();
+    if (resetSeconds) _secondsRemaining = _maxTimeSeconds;
     _countdownTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      if (!mounted) {
+      if (!mounted || isAnswered) {
         timer.cancel();
         return;
       }
-      if (isAnswered) {
-        timer.cancel();
-        return;
-      }
-      if (ModalRoute.of(context)?.isCurrent != true) {
-        return;
-      }
+      if (ModalRoute.of(context)?.isCurrent != true) return;
       if (_secondsRemaining > 1) {
-        setState(() {
-          _secondsRemaining--;
-        });
-        if (_secondsRemaining <= 3) {
-          di.sl<HapticService>().light();
-        }
+        setState(() => _secondsRemaining--);
+        if (_secondsRemaining <= 3) di.sl<HapticService>().light();
       } else {
         timer.cancel();
         _missedQuestIds.add(quest.id);
@@ -117,18 +122,8 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   }
 
   String _directionFromIndex(int? index) {
-    switch (index) {
-      case 0:
-        return 'north';
-      case 1:
-        return 'east';
-      case 2:
-        return 'south';
-      case 3:
-        return 'west';
-      default:
-        return 'north';
-    }
+    const dirs = ['north', 'east', 'south', 'west'];
+    return (index != null && index >= 0 && index < dirs.length) ? dirs[index] : 'north';
   }
 
   void _onDirectionSelected(
@@ -149,9 +144,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
 
     setState(() {
       _selectedDirection = direction;
-      if (!isMatch) {
-        _shakeCount++;
-      }
+      if (!isMatch) _shakeCount++;
     });
 
     if (isMatch) {
@@ -161,8 +154,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
       final sentence = quest.sentence ?? quest.contextSentence ?? '';
       final target = quest.targetWord ?? quest.correctAnswer ?? selectedWord;
       if (sentence.isNotEmpty && target.isNotEmpty) {
-        final fullText = sentence.replaceAll('_______', target);
-        di.sl<TtsService>().speak(fullText);
+        di.sl<TtsService>().speak(sentence.replaceAll('_______', target));
       }
     } else {
       _missedQuestIds.add(quest.id);
@@ -181,14 +173,10 @@ class _WordFormationScreenState extends State<WordFormationScreen>
       margin: EdgeInsets.only(top: 4.h, bottom: 8.h),
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
       decoration: BoxDecoration(
-        color: activeColor.withValues(
-          alpha: isDanger ? 0.12 : (isRevenge ? 0.14 : 0.08),
-        ),
+        color: activeColor.withValues(alpha: isDanger ? 0.12 : (isRevenge ? 0.14 : 0.08)),
         borderRadius: BorderRadius.circular(12.r),
         border: Border.all(
-          color: activeColor.withValues(
-            alpha: isDanger ? 0.4 : (isRevenge ? 0.45 : 0.22),
-          ),
+          color: activeColor.withValues(alpha: isDanger ? 0.4 : (isRevenge ? 0.45 : 0.22)),
           width: 1.2,
         ),
       ),
@@ -258,6 +246,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
         }
 
         final quest = state.currentQuest;
+        _activeQuest = quest;
         if (state.currentIndex != _lastProcessedIndex) {
           _lastProcessedIndex = state.currentIndex;
           _selectedDirection = null;
@@ -266,18 +255,14 @@ class _WordFormationScreenState extends State<WordFormationScreen>
 
         final options = quest.options ?? [];
         final rootWord = quest.rootWord ?? quest.word ?? 'ROOT';
-        final sentence =
-            quest.sentence ??
-            quest.contextSentence ??
-            'Complete the sentence with _______';
+        final sentence = quest.sentence ?? quest.contextSentence ?? 'Complete the sentence with _______';
         final targetWord = quest.targetWord ?? quest.correctAnswer ?? '';
         final correctIndex = quest.correctAnswerIndex;
         final correctDir = _directionFromIndex(correctIndex);
-        final targetRoleName = correctIndex == 0
-            ? 'Noun'
-            : (correctIndex == 1
-                ? 'Adjective'
-                : (correctIndex == 2 ? 'Adverb' : 'Opposite'));
+        const roles = ['Noun', 'Adjective', 'Adverb', 'Opposite'];
+        final targetRoleName = (correctIndex != null && correctIndex >= 0 && correctIndex < roles.length)
+            ? roles[correctIndex]
+            : 'Opposite';
 
         final northWord = options.isNotEmpty ? options[0] : '${rootWord}_NOUN';
         final eastWord = options.length > 1 ? options[1] : '${rootWord}_ADJ';
@@ -300,15 +285,18 @@ class _WordFormationScreenState extends State<WordFormationScreen>
               level: widget.level,
               isAnswered: isAns,
               isCorrect: isCorr,
+              isFinalFailure: state.isFinalFailure,
               showConfetti: confetti,
               onContinue: () {
                 _countdownTimer?.cancel();
-                if (isCorr == false) {
+                final currentState = context.read<VocabularyBloc>().state;
+                final isFinal = currentState is VocabularyLoaded &&
+                    (currentState.isFinalFailure || currentState.livesRemaining <= 0);
+
+                if (isCorr == false && !isFinal) {
                   isAnsweredNotifier.value = false;
                   isCorrectNotifier.value = null;
-                  setState(() {
-                    _selectedDirection = null;
-                  });
+                  setState(() => _selectedDirection = null);
                   _startTimer(quest);
                 } else {
                   dispatchNextQuestion();

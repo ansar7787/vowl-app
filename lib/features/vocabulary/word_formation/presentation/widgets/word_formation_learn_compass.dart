@@ -192,14 +192,18 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
                   ],
                 ),
                 SizedBox(height: 6.h),
-                Text(
-                  activeWord,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 22.sp,
-                    fontWeight: FontWeight.w700,
-                    color: isDark ? Colors.white : AppColors.slate900,
-                    letterSpacing: 0.8,
+                FittedBox(
+                  fit: BoxFit.scaleDown,
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    activeWord,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 22.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isDark ? Colors.white : AppColors.slate900,
+                      letterSpacing: 0.8,
+                    ),
                   ),
                 ),
                 if (activeRule.isNotEmpty) ...[
