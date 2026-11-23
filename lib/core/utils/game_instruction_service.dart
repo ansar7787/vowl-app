@@ -1255,17 +1255,17 @@ class GameInstructionService {
     ),
     GameSubtype.wordFormation: GameBriefing(
       title: "Word Morph",
-      icon: Icons.science_rounded,
+      icon: Icons.explore_rounded,
       objective:
-          "Native speakers constantly bend words to fit different grammatical situations. Slide the correct injection rail into the reaction core, then type the final result.",
+          "Transform root words into nouns, adjectives, adverbs, or opposites to complete sentences. Launch the morph pad in the correct direction to fit the grammatical context.",
       rules: [
-        "Check the target meaning",
-        "Slide the correct ending rail",
-        "Type the final word to lock it",
+        "Read the sentence context and grammatical clue",
+        "Launch North ⬆️ for Noun, East ➡️ for Adjective, South ⬇️ for Adverb, West ⬅️ for Opposite",
+        "Lock in your answer to complete the sentence",
       ],
-      actionText: "Start Morphing",
+      actionText: "Launch Morph",
       tip:
-          "Ask yourself what kind of word you need. Are you turning a noun into an adjective, or a verb into a person?",
+          "Check what role is missing in the blank: a noun naming something, an adjective describing it, an adverb showing how, or an opposite meaning!",
     ),
     GameSubtype.prefixSuffix: GameBriefing(
       title: "Affix Synthesizer",

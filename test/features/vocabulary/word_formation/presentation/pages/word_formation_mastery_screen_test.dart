@@ -6,17 +6,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/core/network/network_info.dart';
-import 'package:vowl/core/theme/app_theme.dart';
+import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
-import 'package:vowl/core/utils/ad_service.dart';
-import 'package:vowl/core/utils/analytics_service.dart';
-import 'package:vowl/core/utils/app_logger.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
-import 'package:vowl/core/utils/locale_service.dart';
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/auth/domain/entities/user_entity.dart';
@@ -24,8 +18,9 @@ import 'package:vowl/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
-import 'package:vowl/features/vocabulary/word_formation/presentation/pages/word_formation_mastery_screen.dart';
-import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/morph_injection_rail.dart';
+import 'package:vowl/features/vocabulary/word_formation/presentation/pages/word_formation_screen.dart';
+import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_4way_launcher.dart';
+import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_sentence_slot.dart';
 
 class MockVocabularyBloc extends MockBloc<VocabularyEvent, VocabularyState>
     implements VocabularyBloc {}
@@ -35,21 +30,11 @@ class MockAuthBloc extends MockBloc<AuthEvent, AuthState> implements AuthBloc {}
 class MockEconomyBloc extends MockBloc<EconomyEvent, EconomyState>
     implements EconomyBloc {}
 
+class MockTtsService extends Mock implements TtsService {}
+
 class MockHapticService extends Mock implements HapticService {}
 
 class MockSoundService extends Mock implements SoundService {}
-
-class MockTtsService extends Mock implements TtsService {}
-
-class MockLocaleService extends Mock implements LocaleService {}
-
-class MockAppLogger extends Mock implements AppLogger {}
-
-class MockAnalyticsService extends Mock implements AnalyticsService {}
-
-class MockAdService extends Mock implements AdService {}
-
-class MockNetworkInfo extends Mock implements NetworkInfo {}
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
@@ -57,28 +42,26 @@ void main() {
   late MockVocabularyBloc mockVocabularyBloc;
   late MockAuthBloc mockAuthBloc;
   late MockEconomyBloc mockEconomyBloc;
+  late MockTtsService mockTtsService;
   late MockHapticService mockHapticService;
   late MockSoundService mockSoundService;
-  late MockTtsService mockTtsService;
-  late MockLocaleService mockLocaleService;
-  late MockAppLogger mockAppLogger;
-  late MockAnalyticsService mockAnalyticsService;
-  late MockAdService mockAdService;
-  late MockNetworkInfo mockNetworkInfo;
   late StreamController<VocabularyState> vocabularyStreamController;
 
   const testQuest = VocabularyQuest(
-    id: 'quest_wf_1',
+    id: 'VOC_WORDFORMATION_L2_Q1',
     type: QuestType.vocabulary,
     subtype: GameSubtype.wordFormation,
-    word: 'create',
-    rootWord: 'create',
-    correctAnswer: 'creation',
-    options: ['-tion', '-ment', '-able', '-ful'],
-    instruction: 'Form the correct word by attaching the right affix.',
-    hint: 'The process of bringing something into existence.',
-    explanation: 'Creation is the noun form of create.',
-    difficulty: 1,
+    instruction: 'Transform the root word into the correct form.',
+    word: 'CREATION',
+    rootWord: 'CREATE',
+    correctAnswer: 'CREATION',
+    correctAnswerIndex: 0,
+    contextSentence: 'The artist unveiled her latest _______ to high praise.',
+    definition:
+        'To bring something into existence through skill or imagination.',
+    options: ['CREATION', 'CREATIVE', 'CREATIVELY', 'UNCREATIVE'],
+    hint: 'A noun naming the piece of work created.',
+    difficulty: 2,
   );
 
   const testLoadedState = VocabularyLoaded(
@@ -94,9 +77,10 @@ void main() {
     registerFallbackValue(const SubmitAnswer(true));
     registerFallbackValue(const SubmitAnswer(false));
     registerFallbackValue(const NextQuestion());
+    registerFallbackValue(const VocabularyHintUsed());
   });
 
-  setUp(() async {
+  setUp(() {
     SharedPreferences.setMockInitialValues({
       'has_seen_briefing_wordFormation': true,
     });
@@ -104,77 +88,65 @@ void main() {
     mockVocabularyBloc = MockVocabularyBloc();
     mockAuthBloc = MockAuthBloc();
     mockEconomyBloc = MockEconomyBloc();
+    mockTtsService = MockTtsService();
     mockHapticService = MockHapticService();
     mockSoundService = MockSoundService();
-    mockTtsService = MockTtsService();
-    mockLocaleService = MockLocaleService();
-    mockAppLogger = MockAppLogger();
-    mockAnalyticsService = MockAnalyticsService();
-    mockAdService = MockAdService();
-    mockNetworkInfo = MockNetworkInfo();
-
     vocabularyStreamController = StreamController<VocabularyState>.broadcast();
-
-    when(() => mockVocabularyBloc.state).thenReturn(testLoadedState);
-    whenListen(
-      mockVocabularyBloc,
-      vocabularyStreamController.stream,
-      initialState: testLoadedState,
-    );
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
         const UserEntity(
           id: 'test_user_wf',
           email: 'wf@vowl.app',
-          displayName: 'Morphology Master',
+          displayName: 'Word Morpher',
           hintCount: 3,
         ),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(
+      () => mockAuthBloc.stream,
+    ).thenAnswer((_) => const Stream<AuthState>.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
-
-    when(() => mockHapticService.selection()).thenAnswer((_) async {});
-    when(() => mockHapticService.success()).thenAnswer((_) async {});
-    when(() => mockHapticService.error()).thenAnswer((_) async {});
-
-    when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
-    when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
-    when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
-    when(() => mockSoundService.playLevelComplete()).thenAnswer((_) async {});
-
-    when(() => mockTtsService.stop()).thenAnswer((_) async {});
     when(
-      () => mockTtsService.speak(
-        any(),
-        rate: any(named: 'rate'),
-        locale: any(named: 'locale'),
-      ),
+      () => mockEconomyBloc.stream,
+    ).thenAnswer((_) => const Stream<EconomyState>.empty());
+
+    when(() => mockVocabularyBloc.state).thenReturn(testLoadedState);
+    when(
+      () => mockVocabularyBloc.stream,
+    ).thenAnswer((_) => vocabularyStreamController.stream);
+
+    when(() => mockTtsService.speak(any())).thenAnswer((_) async {});
+    when(() => mockTtsService.stop()).thenAnswer((_) async {});
+    when(() => mockHapticService.selection()).thenAnswer((_) async {});
+    when(() => mockHapticService.light()).thenAnswer((_) async {});
+    when(() => mockHapticService.heavy()).thenAnswer((_) async {});
+    when(() => mockHapticService.error()).thenAnswer((_) async {});
+    when(() => mockHapticService.success()).thenAnswer((_) async {});
+
+    when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
+    when(
+      () => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')),
     ).thenAnswer((_) async {});
+    when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
 
-    when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
+    if (di.sl.isRegistered<TtsService>()) di.sl.unregister<TtsService>();
+    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
+    if (di.sl.isRegistered<SoundService>()) di.sl.unregister<SoundService>();
 
-    await di.sl.reset();
-    di.sl.registerSingleton<HapticService>(mockHapticService);
-    di.sl.registerSingleton<SoundService>(mockSoundService);
-    di.sl.registerSingleton<TtsService>(mockTtsService);
-    di.sl.registerSingleton<LocaleService>(mockLocaleService);
-    di.sl.registerSingleton<AppLogger>(mockAppLogger);
-    di.sl.registerSingleton<AnalyticsService>(mockAnalyticsService);
-    di.sl.registerSingleton<AdService>(mockAdService);
-    di.sl.registerSingleton<NetworkInfo>(mockNetworkInfo);
-
+    di.sl.registerLazySingleton<TtsService>(() => mockTtsService);
+    di.sl.registerLazySingleton<HapticService>(() => mockHapticService);
+    di.sl.registerLazySingleton<SoundService>(() => mockSoundService);
     VowlMotion.lowAnimationModeOverride.value = true;
   });
 
-  tearDown(() async {
-    await vocabularyStreamController.close();
+  tearDown(() {
     VowlMotion.lowAnimationModeOverride.value = false;
+    vocabularyStreamController.close();
+    if (di.sl.isRegistered<TtsService>()) di.sl.unregister<TtsService>();
+    if (di.sl.isRegistered<HapticService>()) di.sl.unregister<HapticService>();
+    if (di.sl.isRegistered<SoundService>()) di.sl.unregister<SoundService>();
   });
 
   Widget buildTestableWidget(Widget child) {
@@ -186,65 +158,123 @@ void main() {
           BlocProvider<AuthBloc>.value(value: mockAuthBloc),
           BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
         ],
-        child: MaterialApp(
-          theme: AppTheme.lightTheme,
-          home: MediaQuery(
-            data: const MediaQueryData(
-              size: Size(390, 844),
-              disableAnimations: true,
-            ),
-            child: Scaffold(body: child),
-          ),
-        ),
+        child: MaterialApp(home: child),
       ),
     );
   }
 
-  group('WordFormationMasteryScreen', () {
-    testWidgets(
-        'renders Stage 1 morph injection, passes stage 1, reveals Bonus XP Arena, and banks win',
-        (tester) async {
+  group('WordFormationScreen (Mastery Arena)', () {
+    testWidgets('renders sentence slot, morph core, and 4-way launcher', (
+      tester,
+    ) async {
       tester.view.physicalSize = const Size(390, 844) * 2.0;
       tester.view.devicePixelRatio = 2.0;
-      addTearDown(() {
+
+      try {
+        await tester.pumpWidget(
+          buildTestableWidget(const WordFormationScreen(level: 2)),
+        );
+        await tester.pump();
+
+        expect(find.byType(WordFormationScreen), findsOneWidget);
+        expect(find.byType(WordFormationSentenceSlot), findsOneWidget);
+        expect(find.byType(WordFormation4WayLauncher), findsOneWidget);
+      } finally {
+        await tester.pumpWidget(const SizedBox());
         tester.view.resetPhysicalSize();
         tester.view.resetDevicePixelRatio();
-      });
-
-      await tester.pumpWidget(
-        buildTestableWidget(
-          const WordFormationMasteryScreen(level: 2),
-        ),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      expect(find.byType(WordFormationMasteryScreen), findsOneWidget);
-      expect(find.byType(MorphInjectionRail), findsWidgets);
-
-      // Tap -TION affix chip (correct for 'create' -> 'creation')
-      final correctChip = find.text('-TION');
-      expect(correctChip, findsWidgets);
-      await tester.tap(correctChip.first);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pumpAndSettle();
-
-      // Stage 1 passed -> Bonus XP Arena appears!
-      expect(find.textContaining('BONUS XP ARENA'), findsOneWidget);
-      final bankButton =
-          find.byKey(const Key('word_formation_bonus_bank_button'));
-      expect(bankButton, findsOneWidget);
-      await tester.ensureVisible(bankButton);
-
-      // Tap Bank Win button (+50 XP bonus, 0 hearts deducted)
-      await tester.tap(bankButton, warnIfMissed: false);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-
-      // Verify answer was submitted as victory to bloc
-      verify(() => mockVocabularyBloc.add(const SubmitAnswer(true))).called(1);
+      }
     });
+
+    testWidgets('tapping correct direction dispatches SubmitAnswer(true)', (
+      tester,
+    ) async {
+      tester.view.physicalSize = const Size(390, 844) * 2.0;
+      tester.view.devicePixelRatio = 2.0;
+
+      try {
+        await tester.pumpWidget(
+          buildTestableWidget(const WordFormationScreen(level: 2)),
+        );
+        await tester.pump();
+
+        // Tap North pad (CREATION - correct index 0)
+        final northFinder = find.text('CREATION');
+        expect(northFinder, findsOneWidget);
+        await tester.tap(northFinder, warnIfMissed: false);
+        await tester.pump();
+
+        verify(
+          () => mockVocabularyBloc.add(const SubmitAnswer(true)),
+        ).called(1);
+      } finally {
+        await tester.pumpWidget(const SizedBox());
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      }
+    });
+
+    testWidgets('tapping wrong direction dispatches SubmitAnswer(false)', (
+      tester,
+    ) async {
+      tester.view.physicalSize = const Size(390, 844) * 2.0;
+      tester.view.devicePixelRatio = 2.0;
+
+      try {
+        await tester.pumpWidget(
+          buildTestableWidget(const WordFormationScreen(level: 2)),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+
+        // Tap East pad (CREATIVE - incorrect for Quest 1)
+        final eastFinder = find.text('CREATIVE');
+        expect(eastFinder, findsOneWidget);
+        await tester.ensureVisible(eastFinder);
+        await tester.tap(eastFinder);
+        await tester.pump();
+
+        verify(
+          () => mockVocabularyBloc.add(const SubmitAnswer(false)),
+        ).called(1);
+      } finally {
+        await tester.pumpWidget(const SizedBox());
+        tester.view.resetPhysicalSize();
+        tester.view.resetDevicePixelRatio();
+      }
+    });
+
+    testWidgets(
+      'tapping hint button dispatches VocabularyHintUsed and reads aloud',
+      (tester) async {
+        tester.view.physicalSize = const Size(390, 844) * 2.0;
+        tester.view.devicePixelRatio = 2.0;
+
+        try {
+          await tester.pumpWidget(
+            buildTestableWidget(const WordFormationScreen(level: 2)),
+          );
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 300));
+
+          final hintFinder = find.byType(QuestHintButton);
+          expect(hintFinder, findsOneWidget);
+          final hintButton = tester.widget<QuestHintButton>(hintFinder);
+          hintButton.onTap();
+          await tester.pump();
+
+          verify(
+            () => mockVocabularyBloc.add(const VocabularyHintUsed()),
+          ).called(greaterThanOrEqualTo(1));
+          verify(
+            () => mockTtsService.speak(any()),
+          ).called(greaterThanOrEqualTo(1));
+        } finally {
+          await tester.pumpWidget(const SizedBox());
+          tester.view.resetPhysicalSize();
+          tester.view.resetDevicePixelRatio();
+        }
+      },
+    );
   });
 }

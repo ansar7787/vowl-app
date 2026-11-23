@@ -4,994 +4,1564 @@
   "subtype": "wordFormation",
   "quests": [
     {
-      "id": "VOC_WORDFORMATION_L1_LEARN_Q1",
+      "id": "VOC_WF_L1_LEARN_Q1",
       "level": 1,
-      "word": "HELP",
-      "rootWord": "HELP",
-      "correctAnswer": "HELPFUL",
-      "options": [
-        "-FUL",
-        "-ISH",
-        "-ORY",
-        "-IST"
-      ],
+      "rootWord": "DECIDE",
+      "word": "DECIDE",
+      "rootMeaning": "To make a choice after thinking carefully.",
+      "definition": "To make a choice after thinking carefully.",
+      "northNoun": {
+        "word": "DECISION",
+        "role": "Noun",
+        "rule": "Drop -de, add -sion",
+        "example": "Making a tough career decision takes courage."
+      },
+      "eastAdjective": {
+        "word": "DECISIVE",
+        "role": "Adjective",
+        "rule": "Drop -e, add -isive",
+        "example": "A decisive manager resolves issues quickly."
+      },
+      "southAdverb": {
+        "word": "DECISIVELY",
+        "role": "Adverb",
+        "rule": "Add -ly to adjective",
+        "example": "She acted decisively during the crisis."
+      },
+      "westOpposite": {
+        "word": "INDECISIVE",
+        "role": "Opposite",
+        "rule": "Prefix in- + decisive",
+        "example": "An indecisive customer hesitated for hours."
+      },
       "familyTree": [
-        "HELP",
-        "HELPER",
-        "HELPFUL",
-        "HELPLESS"
+        "DECISION",
+        "DECIDE",
+        "DECISIVE",
+        "DECISIVELY",
+        "INDECISIVE"
       ],
-      "targetAffix": "-FUL",
-      "conceptTitle": "Root Morphology: HELP",
-      "definition": "HELP + -FUL = HELPFUL. The suffix -FUL means 'full of' and turns the noun HELP into an adjective describing someone who gives support.",
-      "rule": "Base Root: HELP + Affix: -FUL ➔ Target: HELPFUL",
-      "examples": [
-        "HELP",
-        "HELPER",
-        "HELPFUL",
-        "HELPLESS"
+      "familyWords": [
+        "DECISION",
+        "DECIDE",
+        "DECISIVE",
+        "DECISIVELY",
+        "INDECISIVE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective meaning 'full of help, supportive'. My neighbor was very ____ when I was moving furniture.",
-      "explanation": "HELP + -FUL = HELPFUL. The suffix -FUL means 'full of' and turns the noun HELP into an adjective describing someone who gives support.",
-      "difficulty": 1
+      "options": [
+        "DECISION",
+        "DECISIVE",
+        "DECISIVELY",
+        "INDECISIVE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L1_LEARN_Q2",
+      "id": "VOC_WF_L1_LEARN_Q2",
       "level": 1,
-      "word": "CARE",
+      "rootWord": "CREATE",
+      "word": "CREATE",
+      "rootMeaning": "To bring something new into existence.",
+      "definition": "To bring something new into existence.",
+      "northNoun": {
+        "word": "CREATION",
+        "role": "Noun",
+        "rule": "Drop -e, add -ion",
+        "example": "The artistic creation took three years."
+      },
+      "eastAdjective": {
+        "word": "CREATIVE",
+        "role": "Adjective",
+        "rule": "Drop -e, add -ive",
+        "example": "A creative solution to a hard problem."
+      },
+      "southAdverb": {
+        "word": "CREATIVELY",
+        "role": "Adverb",
+        "rule": "Add -ly to adjective",
+        "example": "They thought creatively to save costs."
+      },
+      "westOpposite": {
+        "word": "UNCREATIVE",
+        "role": "Opposite",
+        "rule": "Prefix un- + creative",
+        "example": "Copying others is uncreative work."
+      },
+      "familyTree": [
+        "CREATION",
+        "CREATE",
+        "CREATIVE",
+        "CREATIVELY",
+        "UNCREATIVE"
+      ],
+      "familyWords": [
+        "CREATION",
+        "CREATE",
+        "CREATIVE",
+        "CREATIVELY",
+        "UNCREATIVE"
+      ],
+      "options": [
+        "CREATION",
+        "CREATIVE",
+        "CREATIVELY",
+        "UNCREATIVE"
+      ]
+    },
+    {
+      "id": "VOC_WF_L1_LEARN_Q3",
+      "level": 1,
       "rootWord": "CARE",
-      "correctAnswer": "CARELESS",
-      "options": [
-        "-FUL",
-        "-ISH",
-        "-MENT",
-        "-LESS"
-      ],
+      "word": "CARE",
+      "rootMeaning": "Serious attention or effort applied to doing something right.",
+      "definition": "Serious attention or effort applied to doing something right.",
+      "northNoun": {
+        "word": "CARE",
+        "role": "Noun",
+        "rule": "Base root form",
+        "example": "Handle fragile glass with care."
+      },
+      "eastAdjective": {
+        "word": "CAREFUL",
+        "role": "Adjective",
+        "rule": "Add suffix -ful",
+        "example": "Be careful crossing the busy street."
+      },
+      "southAdverb": {
+        "word": "CAREFULLY",
+        "role": "Adverb",
+        "rule": "Add -ly to adjective",
+        "example": "He drove carefully through the dense fog."
+      },
+      "westOpposite": {
+        "word": "CARELESS",
+        "role": "Opposite",
+        "rule": "Suffix -less (without)",
+        "example": "A careless mistake cost them the game."
+      },
       "familyTree": [
         "CARE",
-        "CAREFUL",
-        "CARELESS",
-        "CARETAKER"
-      ],
-      "targetAffix": "-LESS",
-      "conceptTitle": "Root Morphology: CARE",
-      "definition": "CARE + -LESS = CARELESS. The suffix -LESS means 'without', so CARELESS describes someone acting without enough care or attention.",
-      "rule": "Base Root: CARE + Affix: -LESS ➔ Target: CARELESS",
-      "examples": [
         "CARE",
         "CAREFUL",
-        "CARELESS",
-        "CARETAKER"
+        "CAREFULLY",
+        "CARELESS"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective meaning 'without care, reckless'. He crossed the busy street without looking both ways, which was very ____.",
-      "explanation": "CARE + -LESS = CARELESS. The suffix -LESS means 'without', so CARELESS describes someone acting without enough care or attention.",
-      "difficulty": 1
+      "familyWords": [
+        "CARE",
+        "CARE",
+        "CAREFUL",
+        "CAREFULLY",
+        "CARELESS"
+      ],
+      "options": [
+        "CARE",
+        "CAREFUL",
+        "CAREFULLY",
+        "CARELESS"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L1_LEARN_Q3",
-      "level": 1,
-      "word": "USE",
+      "id": "VOC_WF_L2_LEARN_Q1",
+      "level": 2,
+      "rootWord": "SUCCESS",
+      "word": "SUCCESS",
+      "rootMeaning": "Achieving an intended goal or desired result.",
+      "definition": "Achieving an intended goal or desired result.",
+      "northNoun": {
+        "word": "SUCCESS",
+        "role": "Noun",
+        "rule": "Base root form",
+        "example": "Hard work is the key to success."
+      },
+      "eastAdjective": {
+        "word": "SUCCESSFUL",
+        "role": "Adjective",
+        "rule": "Add suffix -ful",
+        "example": "A successful business venture."
+      },
+      "southAdverb": {
+        "word": "SUCCESSFULLY",
+        "role": "Adverb",
+        "rule": "Add -ly to adjective",
+        "example": "They launched the product successfully."
+      },
+      "westOpposite": {
+        "word": "UNSUCCESSFUL",
+        "role": "Opposite",
+        "rule": "Prefix un- + successful",
+        "example": "An unsuccessful attempt to climb."
+      },
+      "familyTree": [
+        "SUCCESS",
+        "SUCCESS",
+        "SUCCESSFUL",
+        "SUCCESSFULLY",
+        "UNSUCCESSFUL"
+      ],
+      "familyWords": [
+        "SUCCESS",
+        "SUCCESS",
+        "SUCCESSFUL",
+        "SUCCESSFULLY",
+        "UNSUCCESSFUL"
+      ],
+      "options": [
+        "SUCCESS",
+        "SUCCESSFUL",
+        "SUCCESSFULLY",
+        "UNSUCCESSFUL"
+      ]
+    },
+    {
+      "id": "VOC_WF_L2_LEARN_Q2",
+      "level": 2,
+      "rootWord": "EMPLOY",
+      "word": "EMPLOY",
+      "rootMeaning": "To give work to someone and pay them for it.",
+      "definition": "To give work to someone and pay them for it.",
+      "northNoun": {
+        "word": "EMPLOYMENT",
+        "role": "Noun",
+        "rule": "Add suffix -ment",
+        "example": "Seeking full-time employment."
+      },
+      "eastAdjective": {
+        "word": "EMPLOYABLE",
+        "role": "Adjective",
+        "rule": "Add suffix -able",
+        "example": "New tech skills make you employable."
+      },
+      "southAdverb": {
+        "word": "EMPLOYEE",
+        "role": "Agent Noun",
+        "rule": "Add suffix -ee",
+        "example": "Every employee received a bonus."
+      },
+      "westOpposite": {
+        "word": "UNEMPLOYED",
+        "role": "Opposite",
+        "rule": "Prefix un- + employed",
+        "example": "Assistance for unemployed workers."
+      },
+      "familyTree": [
+        "EMPLOYMENT",
+        "EMPLOY",
+        "EMPLOYABLE",
+        "EMPLOYEE",
+        "UNEMPLOYED"
+      ],
+      "familyWords": [
+        "EMPLOYMENT",
+        "EMPLOY",
+        "EMPLOYABLE",
+        "EMPLOYEE",
+        "UNEMPLOYED"
+      ],
+      "options": [
+        "EMPLOYMENT",
+        "EMPLOYABLE",
+        "EMPLOYEE",
+        "UNEMPLOYED"
+      ]
+    },
+    {
+      "id": "VOC_WF_L2_LEARN_Q3",
+      "level": 2,
+      "rootWord": "HELP",
+      "word": "HELP",
+      "rootMeaning": "To give assistance or support to someone.",
+      "definition": "To give assistance or support to someone.",
+      "northNoun": {
+        "word": "HELP",
+        "role": "Noun",
+        "rule": "Base root form",
+        "example": "We appreciate all your help."
+      },
+      "eastAdjective": {
+        "word": "HELPFUL",
+        "role": "Adjective",
+        "rule": "Add suffix -ful",
+        "example": "A helpful assistant in the store."
+      },
+      "southAdverb": {
+        "word": "HELPFULLY",
+        "role": "Adverb",
+        "rule": "Add -ly to adjective",
+        "example": "He helpfully carried my heavy bags."
+      },
+      "westOpposite": {
+        "word": "HELPLESS",
+        "role": "Opposite",
+        "rule": "Suffix -less (lacking)",
+        "example": "The stranded hikers felt helpless."
+      },
+      "familyTree": [
+        "HELP",
+        "HELP",
+        "HELPFUL",
+        "HELPFULLY",
+        "HELPLESS"
+      ],
+      "familyWords": [
+        "HELP",
+        "HELP",
+        "HELPFUL",
+        "HELPFULLY",
+        "HELPLESS"
+      ],
+      "options": [
+        "HELP",
+        "HELPFUL",
+        "HELPFULLY",
+        "HELPLESS"
+      ]
+    },
+    {
+      "id": "VOC_WF_L3_LEARN_Q1",
+      "level": 3,
+      "rootWord": "COMFORT",
+      "word": "COMFORT",
+      "rootMeaning": "A state of physical ease and freedom from pain.",
+      "definition": "A state of physical ease and freedom from pain.",
+      "northNoun": {
+        "word": "COMFORT",
+        "role": "Noun",
+        "rule": "Base root form",
+        "example": "Relax in the comfort of your home."
+      },
+      "eastAdjective": {
+        "word": "COMFORTABLE",
+        "role": "Adjective",
+        "rule": "Add suffix -able",
+        "example": "A comfortable leather sofa."
+      },
+      "southAdverb": {
+        "word": "COMFORTABLY",
+        "role": "Adverb",
+        "rule": "Drop -e, add -y",
+        "example": "She sat comfortably by the fire."
+      },
+      "westOpposite": {
+        "word": "UNCOMFORTABLE",
+        "role": "Opposite",
+        "rule": "Prefix un- + comfortable",
+        "example": "An uncomfortable wooden chair."
+      },
+      "familyTree": [
+        "COMFORT",
+        "COMFORT",
+        "COMFORTABLE",
+        "COMFORTABLY",
+        "UNCOMFORTABLE"
+      ],
+      "familyWords": [
+        "COMFORT",
+        "COMFORT",
+        "COMFORTABLE",
+        "COMFORTABLY",
+        "UNCOMFORTABLE"
+      ],
+      "options": [
+        "COMFORT",
+        "COMFORTABLE",
+        "COMFORTABLY",
+        "UNCOMFORTABLE"
+      ]
+    },
+    {
+      "id": "VOC_WF_L3_LEARN_Q2",
+      "level": 3,
+      "rootWord": "NATURE",
+      "word": "NATURE",
+      "rootMeaning": "The physical world and living things collectively.",
+      "definition": "The physical world and living things collectively.",
+      "northNoun": {
+        "word": "NATURE",
+        "role": "Noun",
+        "rule": "Base root form",
+        "example": "We must protect wildlife and nature."
+      },
+      "eastAdjective": {
+        "word": "NATURAL",
+        "role": "Adjective",
+        "rule": "Drop -e, add -al",
+        "example": "Pure natural spring water."
+      },
+      "southAdverb": {
+        "word": "NATURALLY",
+        "role": "Adverb",
+        "rule": "Add -ly to adjective",
+        "example": "A confident speaker breathes naturally."
+      },
+      "westOpposite": {
+        "word": "UNNATURAL",
+        "role": "Opposite",
+        "rule": "Prefix un- + natural",
+        "example": "An unnatural glow in the dark."
+      },
+      "familyTree": [
+        "NATURE",
+        "NATURE",
+        "NATURAL",
+        "NATURALLY",
+        "UNNATURAL"
+      ],
+      "familyWords": [
+        "NATURE",
+        "NATURE",
+        "NATURAL",
+        "NATURALLY",
+        "UNNATURAL"
+      ],
+      "options": [
+        "NATURE",
+        "NATURAL",
+        "NATURALLY",
+        "UNNATURAL"
+      ]
+    },
+    {
+      "id": "VOC_WF_L3_LEARN_Q3",
+      "level": 3,
       "rootWord": "USE",
-      "correctAnswer": "USEFUL",
-      "options": [
-        "-FUL",
-        "-LESS",
-        "-ABLE",
-        "-ORY"
-      ],
+      "word": "USE",
+      "rootMeaning": "To take, hold, or deploy something as a means of achieving a goal.",
+      "definition": "To take, hold, or deploy something as a means of achieving a goal.",
+      "northNoun": {
+        "word": "USAGE",
+        "role": "Noun",
+        "rule": "Add suffix -age",
+        "example": "Standard English grammar usage."
+      },
+      "eastAdjective": {
+        "word": "USEFUL",
+        "role": "Adjective",
+        "rule": "Add suffix -ful",
+        "example": "A useful pocket dictionary."
+      },
+      "southAdverb": {
+        "word": "USER",
+        "role": "Agent Noun",
+        "rule": "Add suffix -r",
+        "example": "Over a million active users."
+      },
+      "westOpposite": {
+        "word": "USELESS",
+        "role": "Opposite",
+        "rule": "Suffix -less (without)",
+        "example": "A flat tire makes a car useless."
+      },
       "familyTree": [
+        "USAGE",
         "USE",
         "USEFUL",
-        "USELESS",
-        "USER"
+        "USER",
+        "USELESS"
       ],
-      "targetAffix": "-FUL",
-      "conceptTitle": "Root Morphology: USE",
-      "definition": "USE + -FUL = USEFUL. The suffix -FUL turns the noun USE into an adjective meaning 'having a practical use' or 'helpful'.",
-      "rule": "Base Root: USE + Affix: -FUL ➔ Target: USEFUL",
-      "examples": [
+      "familyWords": [
+        "USAGE",
         "USE",
         "USEFUL",
-        "USELESS",
-        "USER"
+        "USER",
+        "USELESS"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing a tool or idea that helps you do something. A good dictionary is ____ when you're learning a new language.",
-      "explanation": "USE + -FUL = USEFUL. The suffix -FUL turns the noun USE into an adjective meaning 'having a practical use' or 'helpful'.",
-      "difficulty": 1
-    },
-    {
-      "id": "VOC_WORDFORMATION_L2_LEARN_Q1",
-      "level": 2,
-      "word": "TEACH",
-      "rootWord": "TEACH",
-      "correctAnswer": "TEACHER",
       "options": [
-        "-ER",
-        "-IST",
-        "-ION",
-        "-ARY"
-      ],
-      "familyTree": [
-        "TEACH",
-        "TEACHER",
-        "TEACHING",
-        "TEACHABLE"
-      ],
-      "targetAffix": "-ER",
-      "conceptTitle": "Root Morphology: TEACH",
-      "definition": "TEACH + -ER = TEACHER. The suffix -ER means 'a person who does something', turning the verb TEACH into a noun for the person who performs it.",
-      "rule": "Base Root: TEACH + Affix: -ER ➔ Target: TEACHER",
-      "examples": [
-        "TEACH",
-        "TEACHER",
-        "TEACHING",
-        "TEACHABLE"
-      ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for a person whose job is to help students learn. My favorite ____ in school was Mr. Adams, who taught history.",
-      "explanation": "TEACH + -ER = TEACHER. The suffix -ER means 'a person who does something', turning the verb TEACH into a noun for the person who performs it.",
-      "difficulty": 1
+        "USAGE",
+        "USEFUL",
+        "USER",
+        "USELESS"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L2_LEARN_Q2",
-      "level": 2,
-      "word": "ACT",
+      "id": "VOC_WF_L4_LEARN_Q1",
+      "level": 4,
+      "rootWord": "DANGER",
+      "word": "DANGER",
+      "rootMeaning": "The possibility of suffering harm or injury.",
+      "definition": "The possibility of suffering harm or injury.",
+      "northNoun": {
+        "word": "DANGER",
+        "role": "Noun",
+        "rule": "Base root form",
+        "example": "A warning sign of danger ahead."
+      },
+      "eastAdjective": {
+        "word": "DANGEROUS",
+        "role": "Adjective",
+        "rule": "Add suffix -ous",
+        "example": "A dangerous mountain path."
+      },
+      "southAdverb": {
+        "word": "DANGEROUSLY",
+        "role": "Adverb",
+        "rule": "Add -ly to adjective",
+        "example": "Driving dangerously fast on ice."
+      },
+      "westOpposite": {
+        "word": "ENDANGER",
+        "role": "Verb",
+        "rule": "Prefix en- (put into)",
+        "example": "Pollution can endanger wildlife."
+      },
+      "familyTree": [
+        "DANGER",
+        "DANGER",
+        "DANGEROUS",
+        "DANGEROUSLY",
+        "ENDANGER"
+      ],
+      "familyWords": [
+        "DANGER",
+        "DANGER",
+        "DANGEROUS",
+        "DANGEROUSLY",
+        "ENDANGER"
+      ],
+      "options": [
+        "DANGER",
+        "DANGEROUS",
+        "DANGEROUSLY",
+        "ENDANGER"
+      ]
+    },
+    {
+      "id": "VOC_WF_L4_LEARN_Q2",
+      "level": 4,
+      "rootWord": "PATIENT",
+      "word": "PATIENT",
+      "rootMeaning": "Able to accept or tolerate delays or suffering calmly.",
+      "definition": "Able to accept or tolerate delays or suffering calmly.",
+      "northNoun": {
+        "word": "PATIENCE",
+        "role": "Noun",
+        "rule": "Change -t to -ce",
+        "example": "Patience is a great virtue."
+      },
+      "eastAdjective": {
+        "word": "PATIENT",
+        "role": "Adjective",
+        "rule": "Base adjective form",
+        "example": "A patient teacher listens well."
+      },
+      "southAdverb": {
+        "word": "PATIENTLY",
+        "role": "Adverb",
+        "rule": "Add -ly to adjective",
+        "example": "Waiting patiently in line."
+      },
+      "westOpposite": {
+        "word": "IMPATIENT",
+        "role": "Opposite",
+        "rule": "Prefix im- before 'p'",
+        "example": "Honking an impatient horn."
+      },
+      "familyTree": [
+        "PATIENCE",
+        "PATIENT",
+        "PATIENT",
+        "PATIENTLY",
+        "IMPATIENT"
+      ],
+      "familyWords": [
+        "PATIENCE",
+        "PATIENT",
+        "PATIENT",
+        "PATIENTLY",
+        "IMPATIENT"
+      ],
+      "options": [
+        "PATIENCE",
+        "PATIENT",
+        "PATIENTLY",
+        "IMPATIENT"
+      ]
+    },
+    {
+      "id": "VOC_WF_L4_LEARN_Q3",
+      "level": 4,
       "rootWord": "ACT",
-      "correctAnswer": "ACTOR",
-      "options": [
-        "-ER",
-        "-IST",
-        "-ARY",
-        "-OR"
-      ],
+      "word": "ACT",
+      "rootMeaning": "To take action or do something.",
+      "definition": "To take action or do something.",
+      "northNoun": {
+        "word": "ACTION",
+        "role": "Noun",
+        "rule": "Add suffix -ion",
+        "example": "Prompt action saved lives."
+      },
+      "eastAdjective": {
+        "word": "ACTIVE",
+        "role": "Adjective",
+        "rule": "Add suffix -ive",
+        "example": "An active lifestyle keeps you fit."
+      },
+      "southAdverb": {
+        "word": "ACTIVELY",
+        "role": "Adverb",
+        "rule": "Add -ly to adjective",
+        "example": "They are actively hiring engineers."
+      },
+      "westOpposite": {
+        "word": "INACTIVE",
+        "role": "Opposite",
+        "rule": "Prefix in- + active",
+        "example": "An inactive user account."
+      },
       "familyTree": [
-        "ACT",
-        "ACTOR",
         "ACTION",
-        "ACTIVE"
-      ],
-      "targetAffix": "-OR",
-      "conceptTitle": "Root Morphology: ACT",
-      "definition": "ACT + -OR = ACTOR. Some verbs form their agent noun with -OR instead of -ER; ACTOR names the person who performs the action of acting.",
-      "rule": "Base Root: ACT + Affix: -OR ➔ Target: ACTOR",
-      "examples": [
         "ACT",
-        "ACTOR",
+        "ACTIVE",
+        "ACTIVELY",
+        "INACTIVE"
+      ],
+      "familyWords": [
         "ACTION",
-        "ACTIVE"
+        "ACT",
+        "ACTIVE",
+        "ACTIVELY",
+        "INACTIVE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for a person who performs in films or plays. The young ____ won an award for her first movie role.",
-      "explanation": "ACT + -OR = ACTOR. Some verbs form their agent noun with -OR instead of -ER; ACTOR names the person who performs the action of acting.",
-      "difficulty": 1
-    },
-    {
-      "id": "VOC_WORDFORMATION_L2_LEARN_Q3",
-      "level": 2,
-      "word": "DANCE",
-      "rootWord": "DANCE",
-      "correctAnswer": "DANCER",
       "options": [
-        "-IST",
-        "-ER",
-        "-OR",
-        "-ANT"
-      ],
-      "familyTree": [
-        "DANCE",
-        "DANCER",
-        "DANCING",
-        "DANCEABLE"
-      ],
-      "targetAffix": "-ER",
-      "conceptTitle": "Root Morphology: DANCE",
-      "definition": "DANCE + -ER = DANCER. Notice the silent E in DANCE is dropped before the vowel suffix -ER: DANCE + ER = DANCER, not 'danceer'.",
-      "rule": "Base Root: DANCE + Affix: -ER ➔ Target: DANCER",
-      "examples": [
-        "DANCE",
-        "DANCER",
-        "DANCING",
-        "DANCEABLE"
-      ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for a person who dances, especially as a profession. The ____ practiced the same routine for six hours before the show.",
-      "explanation": "DANCE + -ER = DANCER. Notice the silent E in DANCE is dropped before the vowel suffix -ER: DANCE + ER = DANCER, not 'danceer'.",
-      "difficulty": 1
+        "ACTION",
+        "ACTIVE",
+        "ACTIVELY",
+        "INACTIVE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L3_LEARN_Q1",
-      "level": 3,
-      "word": "FEAR",
-      "rootWord": "FEAR",
-      "correctAnswer": "FEARLESS",
-      "options": [
-        "-ENT",
-        "-ICAL",
-        "-LESS",
-        "-IBLE"
-      ],
-      "familyTree": [
-        "FEAR",
-        "FEARFUL",
-        "FEARLESS",
-        "FEARSOME"
-      ],
-      "targetAffix": "-LESS",
-      "conceptTitle": "Root Morphology: FEAR",
-      "definition": "FEAR + -LESS = FEARLESS. The suffix -LESS means 'without', turning the noun FEAR into an adjective meaning 'without fear'.",
-      "rule": "Base Root: FEAR + Affix: -LESS ➔ Target: FEARLESS",
-      "examples": [
-        "FEAR",
-        "FEARFUL",
-        "FEARLESS",
-        "FEARSOME"
-      ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing someone who shows no fear, even in danger. The firefighter ran into the burning building, completely ____.",
-      "explanation": "FEAR + -LESS = FEARLESS. The suffix -LESS means 'without', turning the noun FEAR into an adjective meaning 'without fear'.",
-      "difficulty": 1
-    },
-    {
-      "id": "VOC_WORDFORMATION_L3_LEARN_Q2",
-      "level": 3,
-      "word": "HOME",
-      "rootWord": "HOME",
-      "correctAnswer": "HOMELESS",
-      "options": [
-        "-LESS",
-        "-IC",
-        "-ORY",
-        "-ANT"
-      ],
-      "familyTree": [
-        "HOME",
-        "HOMELESS",
-        "HOMELY",
-        "HOMEWARD"
-      ],
-      "targetAffix": "-LESS",
-      "conceptTitle": "Root Morphology: HOME",
-      "definition": "HOME + -LESS = HOMELESS. The suffix -LESS means 'without', turning the noun HOME into an adjective meaning 'without a home'.",
-      "rule": "Base Root: HOME + Affix: -LESS ➔ Target: HOMELESS",
-      "examples": [
-        "HOME",
-        "HOMELESS",
-        "HOMELY",
-        "HOMEWARD"
-      ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing someone who has no house to live in. The city opened a new shelter to help ____ families find a warm bed.",
-      "explanation": "HOME + -LESS = HOMELESS. The suffix -LESS means 'without', turning the noun HOME into an adjective meaning 'without a home'.",
-      "difficulty": 1
-    },
-    {
-      "id": "VOC_WORDFORMATION_L3_LEARN_Q3",
-      "level": 3,
-      "word": "HARM",
-      "rootWord": "HARM",
-      "correctAnswer": "HARMLESS",
-      "options": [
-        "-LESS",
-        "-FUL",
-        "-IVE",
-        "-ARY"
-      ],
-      "familyTree": [
-        "HARM",
-        "HARMFUL",
-        "HARMLESS",
-        "HARMONY"
-      ],
-      "targetAffix": "-LESS",
-      "conceptTitle": "Root Morphology: HARM",
-      "definition": "HARM + -LESS = HARMLESS. Adding -LESS to the noun HARM produces an adjective meaning 'causing no harm'.",
-      "rule": "Base Root: HARM + Affix: -LESS ➔ Target: HARMLESS",
-      "examples": [
-        "HARM",
-        "HARMFUL",
-        "HARMLESS",
-        "HARMONY"
-      ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective meaning 'not able to cause damage or injury'. The spider looked frightening, but it was actually completely ____.",
-      "explanation": "HARM + -LESS = HARMLESS. Adding -LESS to the noun HARM produces an adjective meaning 'causing no harm'.",
-      "difficulty": 1
-    },
-    {
-      "id": "VOC_WORDFORMATION_L4_LEARN_Q1",
-      "level": 4,
-      "word": "KIND",
-      "rootWord": "KIND",
-      "correctAnswer": "KINDNESS",
-      "options": [
-        "-ITY",
-        "-MENT",
-        "-NESS",
-        "-SHIP"
-      ],
-      "familyTree": [
-        "KIND",
-        "KINDLY",
-        "KINDNESS",
-        "UNKIND"
-      ],
-      "targetAffix": "-NESS",
-      "conceptTitle": "Root Morphology: KIND",
-      "definition": "KIND + -NESS = KINDNESS. The suffix -NESS turns the adjective KIND into a noun describing the state or quality of being kind.",
-      "rule": "Base Root: KIND + Affix: -NESS ➔ Target: KINDNESS",
-      "examples": [
-        "KIND",
-        "KINDLY",
-        "KINDNESS",
-        "UNKIND"
-      ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun meaning the quality of being caring and generous toward others. A small act of ____, like a smile, can brighten someone's day.",
-      "explanation": "KIND + -NESS = KINDNESS. The suffix -NESS turns the adjective KIND into a noun describing the state or quality of being kind.",
-      "difficulty": 1
-    },
-    {
-      "id": "VOC_WORDFORMATION_L4_LEARN_Q2",
-      "level": 4,
-      "word": "HAPPY",
-      "rootWord": "HAPPY",
-      "correctAnswer": "HAPPINESS",
-      "options": [
-        "-NESS",
-        "-ITY",
-        "-ISM",
-        "-HOOD"
-      ],
-      "familyTree": [
-        "HAPPY",
-        "HAPPILY",
-        "HAPPINESS",
-        "UNHAPPY"
-      ],
-      "targetAffix": "-NESS",
-      "conceptTitle": "Root Morphology: HAPPY",
-      "definition": "HAPPY + -NESS = HAPPINESS. Before adding -NESS, the final Y changes to I: HAPPY becomes HAPPI, then + NESS = HAPPINESS.",
-      "rule": "Base Root: HAPPY + Affix: -NESS ➔ Target: HAPPINESS",
-      "examples": [
-        "HAPPY",
-        "HAPPILY",
-        "HAPPINESS",
-        "UNHAPPY"
-      ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for the state of feeling joyful and content. Winning the championship filled the whole team with ____.",
-      "explanation": "HAPPY + -NESS = HAPPINESS. Before adding -NESS, the final Y changes to I: HAPPY becomes HAPPI, then + NESS = HAPPINESS.",
-      "difficulty": 1
-    },
-    {
-      "id": "VOC_WORDFORMATION_L4_LEARN_Q3",
-      "level": 4,
-      "word": "DARK",
-      "rootWord": "DARK",
-      "correctAnswer": "DARKNESS",
-      "options": [
-        "-ITY",
-        "-NESS",
-        "-ANCE",
-        "-SHIP"
-      ],
-      "familyTree": [
-        "DARK",
-        "DARKEN",
-        "DARKNESS",
-        "DARKLY"
-      ],
-      "targetAffix": "-NESS",
-      "conceptTitle": "Root Morphology: DARK",
-      "definition": "DARK + -NESS = DARKNESS. The suffix -NESS changes the adjective DARK into a noun naming that quality or condition.",
-      "rule": "Base Root: DARK + Affix: -NESS ➔ Target: DARKNESS",
-      "examples": [
-        "DARK",
-        "DARKEN",
-        "DARKNESS",
-        "DARKLY"
-      ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for the absence of light. The power went out, and the whole street was covered in ____.",
-      "explanation": "DARK + -NESS = DARKNESS. The suffix -NESS changes the adjective DARK into a noun naming that quality or condition.",
-      "difficulty": 1
-    },
-    {
-      "id": "VOC_WORDFORMATION_L5_LEARN_Q1",
+      "id": "VOC_WF_L5_LEARN_Q1",
       "level": 5,
-      "word": "QUICK",
-      "rootWord": "QUICK",
-      "correctAnswer": "QUICKLY",
-      "options": [
-        "-NESS",
-        "-LY",
-        "-FUL",
-        "-ISH"
-      ],
+      "rootWord": "IMPRESS",
+      "word": "IMPRESS",
+      "rootMeaning": "To make someone feel admiration and respect.",
+      "definition": "To make someone feel admiration and respect.",
+      "northNoun": {
+        "word": "IMPRESSION",
+        "role": "Noun",
+        "rule": "Add suffix -ion",
+        "example": "Make a good first impression."
+      },
+      "eastAdjective": {
+        "word": "IMPRESSIVE",
+        "role": "Adjective",
+        "rule": "Add suffix -ive",
+        "example": "An impressive performance."
+      },
+      "southAdverb": {
+        "word": "IMPRESSIVELY",
+        "role": "Adverb",
+        "rule": "Add -ly to adjective",
+        "example": "He spoke impressively well."
+      },
+      "westOpposite": {
+        "word": "UNIMPRESSIVE",
+        "role": "Opposite",
+        "rule": "Prefix un- + impressive",
+        "example": "A rather unimpressive score."
+      },
       "familyTree": [
-        "QUICK",
-        "QUICKLY",
-        "QUICKEN",
-        "QUICKNESS"
+        "IMPRESSION",
+        "IMPRESS",
+        "IMPRESSIVE",
+        "IMPRESSIVELY",
+        "UNIMPRESSIVE"
       ],
-      "targetAffix": "-LY",
-      "conceptTitle": "Root Morphology: QUICK",
-      "definition": "QUICK + -LY = QUICKLY. The suffix -LY turns the adjective QUICK into an adverb describing how an action is done.",
-      "rule": "Base Root: QUICK + Affix: -LY ➔ Target: QUICKLY",
-      "examples": [
-        "QUICK",
-        "QUICKLY",
-        "QUICKEN",
-        "QUICKNESS"
+      "familyWords": [
+        "IMPRESSION",
+        "IMPRESS",
+        "IMPRESSIVE",
+        "IMPRESSIVELY",
+        "UNIMPRESSIVE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adverb describing how fast an action happens. She finished the crossword puzzle ____, in under five minutes.",
-      "explanation": "QUICK + -LY = QUICKLY. The suffix -LY turns the adjective QUICK into an adverb describing how an action is done.",
-      "difficulty": 1
+      "options": [
+        "IMPRESSION",
+        "IMPRESSIVE",
+        "IMPRESSIVELY",
+        "UNIMPRESSIVE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L5_LEARN_Q2",
+      "id": "VOC_WF_L5_LEARN_Q2",
       "level": 5,
-      "word": "SLOW",
-      "rootWord": "SLOW",
-      "correctAnswer": "SLOWLY",
-      "options": [
-        "-LY",
-        "-NESS",
-        "-ISH",
-        "-WARD"
-      ],
+      "rootWord": "BEAUTY",
+      "word": "BEAUTY",
+      "rootMeaning": "A combination of qualities that pleases the senses.",
+      "definition": "A combination of qualities that pleases the senses.",
+      "northNoun": {
+        "word": "BEAUTY",
+        "role": "Noun",
+        "rule": "Base root form",
+        "example": "The natural beauty of the sunset."
+      },
+      "eastAdjective": {
+        "word": "BEAUTIFUL",
+        "role": "Adjective",
+        "rule": "Change -y to -i, add -ful",
+        "example": "A beautiful melody."
+      },
+      "southAdverb": {
+        "word": "BEAUTIFULLY",
+        "role": "Adverb",
+        "rule": "Add -ly to adjective",
+        "example": "The violin sang beautifully."
+      },
+      "westOpposite": {
+        "word": "BEAUTIFY",
+        "role": "Verb",
+        "rule": "Change -y to -i, add -fy",
+        "example": "Plant flowers to beautify parks."
+      },
       "familyTree": [
-        "SLOW",
-        "SLOWLY",
-        "SLOWNESS",
-        "SLOWDOWN"
+        "BEAUTY",
+        "BEAUTY",
+        "BEAUTIFUL",
+        "BEAUTIFULLY",
+        "BEAUTIFY"
       ],
-      "targetAffix": "-LY",
-      "conceptTitle": "Root Morphology: SLOW",
-      "definition": "SLOW + -LY = SLOWLY. Adding -LY to the adjective SLOW creates an adverb that describes the manner of an action.",
-      "rule": "Base Root: SLOW + Affix: -LY ➔ Target: SLOWLY",
-      "examples": [
-        "SLOW",
-        "SLOWLY",
-        "SLOWNESS",
-        "SLOWDOWN"
+      "familyWords": [
+        "BEAUTY",
+        "BEAUTY",
+        "BEAUTIFUL",
+        "BEAUTIFULLY",
+        "BEAUTIFY"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adverb describing an action done without hurrying. The old man crossed the road ____, leaning on his cane.",
-      "explanation": "SLOW + -LY = SLOWLY. Adding -LY to the adjective SLOW creates an adverb that describes the manner of an action.",
-      "difficulty": 1
+      "options": [
+        "BEAUTY",
+        "BEAUTIFUL",
+        "BEAUTIFULLY",
+        "BEAUTIFY"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L5_LEARN_Q3",
+      "id": "VOC_WF_L5_LEARN_Q3",
       "level": 5,
-      "word": "HAPPY",
-      "rootWord": "HAPPY",
-      "correctAnswer": "HAPPILY",
-      "options": [
-        "-NESS",
-        "-FUL",
-        "-SOME",
-        "-LY"
-      ],
+      "rootWord": "DEPEND",
+      "word": "DEPEND",
+      "rootMeaning": "To rely on someone or something for support.",
+      "definition": "To rely on someone or something for support.",
+      "northNoun": {
+        "word": "DEPENDENCE",
+        "role": "Noun",
+        "rule": "Add suffix -ence",
+        "example": "Reducing dependence on oil."
+      },
+      "eastAdjective": {
+        "word": "DEPENDABLE",
+        "role": "Adjective",
+        "rule": "Add suffix -able",
+        "example": "A dependable pickup truck."
+      },
+      "southAdverb": {
+        "word": "DEPENDABLY",
+        "role": "Adverb",
+        "rule": "Drop -e, add -y",
+        "example": "The system runs dependably."
+      },
+      "westOpposite": {
+        "word": "INDEPENDENT",
+        "role": "Opposite",
+        "rule": "Prefix in- + dependent",
+        "example": "An independent thinker."
+      },
       "familyTree": [
-        "HAPPY",
-        "HAPPILY",
-        "HAPPINESS",
-        "UNHAPPY"
+        "DEPENDENCE",
+        "DEPEND",
+        "DEPENDABLE",
+        "DEPENDABLY",
+        "INDEPENDENT"
       ],
-      "targetAffix": "-LY",
-      "conceptTitle": "Root Morphology: HAPPY",
-      "definition": "HAPPY + -LY = HAPPILY. Just like with HAPPINESS in an earlier level, the final Y changes to I before -LY is added: HAPPY to HAPPI, then + LY = HAPPILY.",
-      "rule": "Base Root: HAPPY + Affix: -LY ➔ Target: HAPPILY",
-      "examples": [
-        "HAPPY",
-        "HAPPILY",
-        "HAPPINESS",
-        "UNHAPPY"
+      "familyWords": [
+        "DEPENDENCE",
+        "DEPEND",
+        "DEPENDABLE",
+        "DEPENDABLY",
+        "INDEPENDENT"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adverb describing an action done with joy. The children played in the snow ____ all afternoon.",
-      "explanation": "HAPPY + -LY = HAPPILY. Just like with HAPPINESS in an earlier level, the final Y changes to I before -LY is added: HAPPY to HAPPI, then + LY = HAPPILY.",
-      "difficulty": 1
+      "options": [
+        "DEPENDENCE",
+        "DEPENDABLE",
+        "DEPENDABLY",
+        "INDEPENDENT"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L6_LEARN_Q1",
+      "id": "VOC_WF_L6_LEARN_Q1",
       "level": 6,
-      "word": "HAPPY",
-      "rootWord": "HAPPY",
-      "correctAnswer": "UNHAPPY",
-      "options": [
-        "UN-",
-        "DIS-",
-        "MIS-",
-        "NON-"
-      ],
+      "rootWord": "EDUCATE",
+      "word": "EDUCATE",
+      "rootMeaning": "To give intellectual, moral, and social instruction.",
+      "definition": "To give intellectual, moral, and social instruction.",
+      "northNoun": {
+        "word": "EDUCATION",
+        "role": "Noun",
+        "rule": "Drop -e, add -ion",
+        "example": "Investing in youth education."
+      },
+      "eastAdjective": {
+        "word": "EDUCATIONAL",
+        "role": "Adjective",
+        "rule": "Add suffix -al to noun",
+        "example": "An educational documentary."
+      },
+      "southAdverb": {
+        "word": "EDUCATOR",
+        "role": "Agent Noun",
+        "rule": "Drop -e, add -or",
+        "example": "A dedicated high school educator."
+      },
+      "westOpposite": {
+        "word": "UNEDUCATED",
+        "role": "Opposite",
+        "rule": "Prefix un- + educated",
+        "example": "Misleading uneducated voters."
+      },
       "familyTree": [
-        "HAPPY",
-        "UNHAPPY",
-        "HAPPILY",
-        "HAPPINESS"
+        "EDUCATION",
+        "EDUCATE",
+        "EDUCATIONAL",
+        "EDUCATOR",
+        "UNEDUCATED"
       ],
-      "targetAffix": "UN-",
-      "conceptTitle": "Root Morphology: HAPPY",
-      "definition": "UN- + HAPPY = UNHAPPY. The prefix UN- means 'not', reversing the meaning of the adjective HAPPY.",
-      "rule": "Base Root: HAPPY + Affix: UN- ➔ Target: UNHAPPY",
-      "examples": [
-        "HAPPY",
-        "UNHAPPY",
-        "HAPPILY",
-        "HAPPINESS"
+      "familyWords": [
+        "EDUCATION",
+        "EDUCATE",
+        "EDUCATIONAL",
+        "EDUCATOR",
+        "UNEDUCATED"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective meaning 'not happy, sad'. He was ____ about the delayed flight and missing his brother's birthday.",
-      "explanation": "UN- + HAPPY = UNHAPPY. The prefix UN- means 'not', reversing the meaning of the adjective HAPPY.",
-      "difficulty": 1
+      "options": [
+        "EDUCATION",
+        "EDUCATIONAL",
+        "EDUCATOR",
+        "UNEDUCATED"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L6_LEARN_Q2",
+      "id": "VOC_WF_L6_LEARN_Q2",
       "level": 6,
-      "word": "FAIR",
-      "rootWord": "FAIR",
-      "correctAnswer": "UNFAIR",
-      "options": [
-        "DIS-",
-        "IN-",
-        "NON-",
-        "UN-"
-      ],
+      "rootWord": "FRIEND",
+      "word": "FRIEND",
+      "rootMeaning": "A person whom one knows and with whom one has a bond of affection.",
+      "definition": "A person whom one knows and with whom one has a bond of affection.",
+      "northNoun": {
+        "word": "FRIENDSHIP",
+        "role": "Noun",
+        "rule": "Add suffix -ship",
+        "example": "A lifelong bond of friendship."
+      },
+      "eastAdjective": {
+        "word": "FRIENDLY",
+        "role": "Adjective",
+        "rule": "Add suffix -ly",
+        "example": "A friendly local barista."
+      },
+      "southAdverb": {
+        "word": "FRIENDLINESS",
+        "role": "Quality Noun",
+        "rule": "Change -y to -i, add -ness",
+        "example": "Known for her genuine friendliness."
+      },
+      "westOpposite": {
+        "word": "UNFRIENDLY",
+        "role": "Opposite",
+        "rule": "Prefix un- + friendly",
+        "example": "An unfriendly glare from a stranger."
+      },
       "familyTree": [
-        "FAIR",
-        "UNFAIR",
-        "FAIRLY",
-        "FAIRNESS"
+        "FRIENDSHIP",
+        "FRIEND",
+        "FRIENDLY",
+        "FRIENDLINESS",
+        "UNFRIENDLY"
       ],
-      "targetAffix": "UN-",
-      "conceptTitle": "Root Morphology: FAIR",
-      "definition": "UN- + FAIR = UNFAIR. The prefix UN- attaches to the adjective FAIR to create its opposite meaning.",
-      "rule": "Base Root: FAIR + Affix: UN- ➔ Target: UNFAIR",
-      "examples": [
-        "FAIR",
-        "UNFAIR",
-        "FAIRLY",
-        "FAIRNESS"
+      "familyWords": [
+        "FRIENDSHIP",
+        "FRIEND",
+        "FRIENDLY",
+        "FRIENDLINESS",
+        "UNFRIENDLY"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective meaning 'not fair, unjust'. The referee's decision seemed ____ because it favored one team.",
-      "explanation": "UN- + FAIR = UNFAIR. The prefix UN- attaches to the adjective FAIR to create its opposite meaning.",
-      "difficulty": 1
+      "options": [
+        "FRIENDSHIP",
+        "FRIENDLY",
+        "FRIENDLINESS",
+        "UNFRIENDLY"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L6_LEARN_Q3",
+      "id": "VOC_WF_L6_LEARN_Q3",
       "level": 6,
-      "word": "KIND",
-      "rootWord": "KIND",
-      "correctAnswer": "UNKIND",
-      "options": [
-        "UN-",
-        "DIS-",
-        "MIS-",
-        "IN-"
-      ],
+      "rootWord": "ATTRACT",
+      "word": "ATTRACT",
+      "rootMeaning": "To draw someone or something closer by appealing qualities.",
+      "definition": "To draw someone or something closer by appealing qualities.",
+      "northNoun": {
+        "word": "ATTRACTION",
+        "role": "Noun",
+        "rule": "Add suffix -ion",
+        "example": "A major tourist attraction."
+      },
+      "eastAdjective": {
+        "word": "ATTRACTIVE",
+        "role": "Adjective",
+        "rule": "Add suffix -ive",
+        "example": "An attractive job offer."
+      },
+      "southAdverb": {
+        "word": "ATTRACTIVELY",
+        "role": "Adverb",
+        "rule": "Add -ly to adjective",
+        "example": "Plated attractively by the chef."
+      },
+      "westOpposite": {
+        "word": "UNATTRACTIVE",
+        "role": "Opposite",
+        "rule": "Prefix un- + attractive",
+        "example": "An unattractive concrete wall."
+      },
       "familyTree": [
-        "KIND",
-        "UNKIND",
-        "KINDLY",
-        "KINDNESS"
+        "ATTRACTION",
+        "ATTRACT",
+        "ATTRACTIVE",
+        "ATTRACTIVELY",
+        "UNATTRACTIVE"
       ],
-      "targetAffix": "UN-",
-      "conceptTitle": "Root Morphology: KIND",
-      "definition": "UN- + KIND = UNKIND. Like UNHAPPY and UNFAIR, this word uses UN- to reverse the meaning of a common adjective, this time the KIND from an earlier level's KINDNESS.",
-      "rule": "Base Root: KIND + Affix: UN- ➔ Target: UNKIND",
-      "examples": [
-        "KIND",
-        "UNKIND",
-        "KINDLY",
-        "KINDNESS"
+      "familyWords": [
+        "ATTRACTION",
+        "ATTRACT",
+        "ATTRACTIVE",
+        "ATTRACTIVELY",
+        "UNATTRACTIVE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective meaning 'not kind, unpleasant to others'. It was ____ of him to laugh at her mistake in front of everyone.",
-      "explanation": "UN- + KIND = UNKIND. Like UNHAPPY and UNFAIR, this word uses UN- to reverse the meaning of a common adjective, this time the KIND from an earlier level's KINDNESS.",
-      "difficulty": 1
+      "options": [
+        "ATTRACTION",
+        "ATTRACTIVE",
+        "ATTRACTIVELY",
+        "UNATTRACTIVE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L7_LEARN_Q1",
+      "id": "VOC_WF_L7_LEARN_Q1",
       "level": 7,
-      "word": "ENJOY",
-      "rootWord": "ENJOY",
-      "correctAnswer": "ENJOYMENT",
-      "options": [
-        "-MENT",
-        "-TION",
-        "-ANCE",
-        "-ITY"
-      ],
+      "rootWord": "CONFIDE",
+      "word": "CONFIDE",
+      "rootMeaning": "To trust someone enough to tell them secrets.",
+      "definition": "To trust someone enough to tell them secrets.",
+      "northNoun": {
+        "word": "CONFIDENCE",
+        "role": "Noun",
+        "rule": "Drop -e, add -ence",
+        "example": "Speaking with great confidence."
+      },
+      "eastAdjective": {
+        "word": "CONFIDENT",
+        "role": "Adjective",
+        "rule": "Drop -e, add -ent",
+        "example": "A confident public speaker."
+      },
+      "southAdverb": {
+        "word": "CONFIDENTLY",
+        "role": "Adverb",
+        "rule": "Add -ly to adjective",
+        "example": "She answered every question confidently."
+      },
+      "westOpposite": {
+        "word": "CONFIDENTIAL",
+        "role": "Adjective",
+        "rule": "Add suffix -ial",
+        "example": "A confidential legal document."
+      },
       "familyTree": [
-        "ENJOY",
-        "ENJOYABLE",
-        "ENJOYMENT",
-        "ENJOYING"
+        "CONFIDENCE",
+        "CONFIDE",
+        "CONFIDENT",
+        "CONFIDENTLY",
+        "CONFIDENTIAL"
       ],
-      "targetAffix": "-MENT",
-      "conceptTitle": "Root Morphology: ENJOY",
-      "definition": "ENJOY + -MENT = ENJOYMENT. The suffix -MENT turns the verb ENJOY into a noun naming the result or feeling of that action.",
-      "rule": "Base Root: ENJOY + Affix: -MENT ➔ Target: ENJOYMENT",
-      "examples": [
-        "ENJOY",
-        "ENJOYABLE",
-        "ENJOYMENT",
-        "ENJOYING"
+      "familyWords": [
+        "CONFIDENCE",
+        "CONFIDE",
+        "CONFIDENT",
+        "CONFIDENTLY",
+        "CONFIDENTIAL"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for the pleasure you feel while doing something you like. Reading before bed is a source of great ____ for me.",
-      "explanation": "ENJOY + -MENT = ENJOYMENT. The suffix -MENT turns the verb ENJOY into a noun naming the result or feeling of that action.",
-      "difficulty": 1
+      "options": [
+        "CONFIDENCE",
+        "CONFIDENT",
+        "CONFIDENTLY",
+        "CONFIDENTIAL"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L7_LEARN_Q2",
+      "id": "VOC_WF_L7_LEARN_Q2",
       "level": 7,
-      "word": "AGREE",
-      "rootWord": "AGREE",
-      "correctAnswer": "AGREEMENT",
-      "options": [
-        "-TION",
-        "-ANCE",
-        "-MENT",
-        "-ISM"
-      ],
+      "rootWord": "INFORM",
+      "word": "INFORM",
+      "rootMeaning": "To give facts or information to someone.",
+      "definition": "To give facts or information to someone.",
+      "northNoun": {
+        "word": "INFORMATION",
+        "role": "Noun",
+        "rule": "Add suffix -ation",
+        "example": "Accurate background information."
+      },
+      "eastAdjective": {
+        "word": "INFORMATIVE",
+        "role": "Adjective",
+        "rule": "Add suffix -ative",
+        "example": "An informative lecture on science."
+      },
+      "southAdverb": {
+        "word": "INFORMATIVELY",
+        "role": "Adverb",
+        "rule": "Add -ly to adjective",
+        "example": "Presented informatively with charts."
+      },
+      "westOpposite": {
+        "word": "MISINFORM",
+        "role": "Opposite",
+        "rule": "Prefix mis- (wrongly)",
+        "example": "Rumors that misinform the public."
+      },
       "familyTree": [
-        "AGREE",
-        "AGREEMENT",
-        "AGREEABLE",
-        "DISAGREE"
+        "INFORMATION",
+        "INFORM",
+        "INFORMATIVE",
+        "INFORMATIVELY",
+        "MISINFORM"
       ],
-      "targetAffix": "-MENT",
-      "conceptTitle": "Root Morphology: AGREE",
-      "definition": "AGREE + -MENT = AGREEMENT. Adding -MENT to the verb AGREE creates a noun for the arrangement or understanding reached.",
-      "rule": "Base Root: AGREE + Affix: -MENT ➔ Target: AGREEMENT",
-      "examples": [
-        "AGREE",
-        "AGREEMENT",
-        "AGREEABLE",
-        "DISAGREE"
+      "familyWords": [
+        "INFORMATION",
+        "INFORM",
+        "INFORMATIVE",
+        "INFORMATIVELY",
+        "MISINFORM"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for a decision that two or more people accept together. After a long meeting, the two companies finally reached an ____.",
-      "explanation": "AGREE + -MENT = AGREEMENT. Adding -MENT to the verb AGREE creates a noun for the arrangement or understanding reached.",
-      "difficulty": 1
+      "options": [
+        "INFORMATION",
+        "INFORMATIVE",
+        "INFORMATIVELY",
+        "MISINFORM"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L7_LEARN_Q3",
+      "id": "VOC_WF_L7_LEARN_Q3",
       "level": 7,
-      "word": "MOVE",
-      "rootWord": "MOVE",
-      "correctAnswer": "MOVEMENT",
-      "options": [
-        "-TION",
-        "-ANCE",
-        "-ERY",
-        "-MENT"
-      ],
+      "rootWord": "RELY",
+      "word": "RELY",
+      "rootMeaning": "To depend on with full trust or confidence.",
+      "definition": "To depend on with full trust or confidence.",
+      "northNoun": {
+        "word": "RELIABILITY",
+        "role": "Noun",
+        "rule": "Change -y to -i, add -ability",
+        "example": "Tested for mechanical reliability."
+      },
+      "eastAdjective": {
+        "word": "RELIABLE",
+        "role": "Adjective",
+        "rule": "Change -y to -i, add -able",
+        "example": "A reliable internet connection."
+      },
+      "southAdverb": {
+        "word": "RELIABLY",
+        "role": "Adverb",
+        "rule": "Drop -e, add -y",
+        "example": "The train arrives reliably on time."
+      },
+      "westOpposite": {
+        "word": "UNRELIABLE",
+        "role": "Opposite",
+        "rule": "Prefix un- + reliable",
+        "example": "An unreliable witness in court."
+      },
       "familyTree": [
-        "MOVE",
-        "MOVEMENT",
-        "MOVABLE",
-        "REMOVE"
+        "RELIABILITY",
+        "RELY",
+        "RELIABLE",
+        "RELIABLY",
+        "UNRELIABLE"
       ],
-      "targetAffix": "-MENT",
-      "conceptTitle": "Root Morphology: MOVE",
-      "definition": "MOVE + -MENT = MOVEMENT. The suffix -MENT changes the verb MOVE into a noun describing an act of motion.",
-      "rule": "Base Root: MOVE + Affix: -MENT ➔ Target: MOVEMENT",
-      "examples": [
-        "MOVE",
-        "MOVEMENT",
-        "MOVABLE",
-        "REMOVE"
+      "familyWords": [
+        "RELIABILITY",
+        "RELY",
+        "RELIABLE",
+        "RELIABLY",
+        "UNRELIABLE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun for the act or process of moving. A sudden ____ in the bushes made the campers jump.",
-      "explanation": "MOVE + -MENT = MOVEMENT. The suffix -MENT changes the verb MOVE into a noun describing an act of motion.",
-      "difficulty": 1
+      "options": [
+        "RELIABILITY",
+        "RELIABLE",
+        "RELIABLY",
+        "UNRELIABLE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L8_LEARN_Q1",
+      "id": "VOC_WF_L8_LEARN_Q1",
       "level": 8,
-      "word": "ENJOY",
-      "rootWord": "ENJOY",
-      "correctAnswer": "ENJOYABLE",
-      "options": [
-        "-MENT",
-        "-ABLE",
-        "-IVE",
-        "-ANT"
-      ],
+      "rootWord": "DIFFER",
+      "word": "DIFFER",
+      "rootMeaning": "To be unlike or dissimilar.",
+      "definition": "To be unlike or dissimilar.",
+      "northNoun": {
+        "word": "DIFFERENCE",
+        "role": "Noun",
+        "rule": "Add suffix -ence",
+        "example": "Spot the difference in the images."
+      },
+      "eastAdjective": {
+        "word": "DIFFERENT",
+        "role": "Adjective",
+        "rule": "Add suffix -ent",
+        "example": "A totally different approach."
+      },
+      "southAdverb": {
+        "word": "DIFFERENTLY",
+        "role": "Adverb",
+        "rule": "Add -ly to adjective",
+        "example": "Everyone processes grief differently."
+      },
+      "westOpposite": {
+        "word": "INDIFFERENT",
+        "role": "Opposite",
+        "rule": "Prefix in- (unconcerned)",
+        "example": "Indifferent to peer pressure."
+      },
       "familyTree": [
-        "ENJOY",
-        "ENJOYABLE",
-        "ENJOYMENT",
-        "ENJOYING"
+        "DIFFERENCE",
+        "DIFFER",
+        "DIFFERENT",
+        "DIFFERENTLY",
+        "INDIFFERENT"
       ],
-      "targetAffix": "-ABLE",
-      "conceptTitle": "Root Morphology: ENJOY",
-      "definition": "ENJOY + -ABLE = ENJOYABLE. The suffix -ABLE means 'capable of' or 'giving', turning ENJOY into an adjective describing something that brings enjoyment. Compare this to ENJOYMENT, the noun form you met earlier.",
-      "rule": "Base Root: ENJOY + Affix: -ABLE ➔ Target: ENJOYABLE",
-      "examples": [
-        "ENJOY",
-        "ENJOYABLE",
-        "ENJOYMENT",
-        "ENJOYING"
+      "familyWords": [
+        "DIFFERENCE",
+        "DIFFER",
+        "DIFFERENT",
+        "DIFFERENTLY",
+        "INDIFFERENT"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing something that is pleasant and worth experiencing. The trip to the mountains was a truly ____ experience.",
-      "explanation": "ENJOY + -ABLE = ENJOYABLE. The suffix -ABLE means 'capable of' or 'giving', turning ENJOY into an adjective describing something that brings enjoyment. Compare this to ENJOYMENT, the noun form you met earlier.",
-      "difficulty": 1
+      "options": [
+        "DIFFERENCE",
+        "DIFFERENT",
+        "DIFFERENTLY",
+        "INDIFFERENT"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L8_LEARN_Q2",
+      "id": "VOC_WF_L8_LEARN_Q2",
       "level": 8,
-      "word": "WASH",
-      "rootWord": "WASH",
-      "correctAnswer": "WASHABLE",
-      "options": [
-        "-IBLE",
-        "-ABLE",
-        "-IVE",
-        "-MENT"
-      ],
+      "rootWord": "IMAGINE",
+      "word": "IMAGINE",
+      "rootMeaning": "To form a mental image or concept of.",
+      "definition": "To form a mental image or concept of.",
+      "northNoun": {
+        "word": "IMAGINATION",
+        "role": "Noun",
+        "rule": "Drop -e, add -ation",
+        "example": "A child with vivid imagination."
+      },
+      "eastAdjective": {
+        "word": "IMAGINATIVE",
+        "role": "Adjective",
+        "rule": "Drop -e, add -ative",
+        "example": "An imaginative fantasy novel."
+      },
+      "southAdverb": {
+        "word": "IMAGINATIVELY",
+        "role": "Adverb",
+        "rule": "Add -ly to adjective",
+        "example": "Decorated imaginatively with fairy lights."
+      },
+      "westOpposite": {
+        "word": "UNIMAGINATIVE",
+        "role": "Opposite",
+        "rule": "Prefix un- + imaginative",
+        "example": "A dull, unimaginative design."
+      },
       "familyTree": [
-        "WASH",
-        "WASHABLE",
-        "WASHER",
-        "WASHING"
+        "IMAGINATION",
+        "IMAGINE",
+        "IMAGINATIVE",
+        "IMAGINATIVELY",
+        "UNIMAGINATIVE"
       ],
-      "targetAffix": "-ABLE",
-      "conceptTitle": "Root Morphology: WASH",
-      "definition": "WASH + -ABLE = WASHABLE. The suffix -ABLE means 'able to be', so WASHABLE describes something that can safely be washed.",
-      "rule": "Base Root: WASH + Affix: -ABLE ➔ Target: WASHABLE",
-      "examples": [
-        "WASH",
-        "WASHABLE",
-        "WASHER",
-        "WASHING"
+      "familyWords": [
+        "IMAGINATION",
+        "IMAGINE",
+        "IMAGINATIVE",
+        "IMAGINATIVELY",
+        "UNIMAGINATIVE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing clothing that can be cleaned in a washing machine. Check the label to make sure the jacket is ____ before you buy it.",
-      "explanation": "WASH + -ABLE = WASHABLE. The suffix -ABLE means 'able to be', so WASHABLE describes something that can safely be washed.",
-      "difficulty": 1
+      "options": [
+        "IMAGINATION",
+        "IMAGINATIVE",
+        "IMAGINATIVELY",
+        "UNIMAGINATIVE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L8_LEARN_Q3",
+      "id": "VOC_WF_L8_LEARN_Q3",
       "level": 8,
-      "word": "BREAK",
-      "rootWord": "BREAK",
-      "correctAnswer": "BREAKABLE",
-      "options": [
-        "-IBLE",
-        "-FUL",
-        "-ABLE",
-        "-IVE"
-      ],
+      "rootWord": "POLLUTE",
+      "word": "POLLUTE",
+      "rootMeaning": "To introduce harmful substances into the environment.",
+      "definition": "To introduce harmful substances into the environment.",
+      "northNoun": {
+        "word": "POLLUTION",
+        "role": "Noun",
+        "rule": "Drop -e, add -ion",
+        "example": "Urban smog and air pollution."
+      },
+      "eastAdjective": {
+        "word": "POLLUTED",
+        "role": "Adjective",
+        "rule": "Add -d (past participle)",
+        "example": "Swimming in polluted waters."
+      },
+      "southAdverb": {
+        "word": "POLLUTER",
+        "role": "Agent Noun",
+        "rule": "Drop -e, add -er",
+        "example": "Fining major industrial polluters."
+      },
+      "westOpposite": {
+        "word": "UNPOLLUTED",
+        "role": "Opposite",
+        "rule": "Prefix un- + polluted",
+        "example": "Pristine, unpolluted mountain lakes."
+      },
       "familyTree": [
-        "BREAK",
-        "BREAKABLE",
-        "BREAKAGE",
-        "UNBREAKABLE"
+        "POLLUTION",
+        "POLLUTE",
+        "POLLUTED",
+        "POLLUTER",
+        "UNPOLLUTED"
       ],
-      "targetAffix": "-ABLE",
-      "conceptTitle": "Root Morphology: BREAK",
-      "definition": "BREAK + -ABLE = BREAKABLE. Adding -ABLE to the verb BREAK forms an adjective meaning 'able to be broken'.",
-      "rule": "Base Root: BREAK + Affix: -ABLE ➔ Target: BREAKABLE",
-      "examples": [
-        "BREAK",
-        "BREAKABLE",
-        "BREAKAGE",
-        "UNBREAKABLE"
+      "familyWords": [
+        "POLLUTION",
+        "POLLUTE",
+        "POLLUTED",
+        "POLLUTER",
+        "UNPOLLUTED"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective describing an object that can shatter easily. Please mark the box 'fragile' because the vase inside is ____.",
-      "explanation": "BREAK + -ABLE = BREAKABLE. Adding -ABLE to the verb BREAK forms an adjective meaning 'able to be broken'.",
-      "difficulty": 1
+      "options": [
+        "POLLUTION",
+        "POLLUTED",
+        "POLLUTER",
+        "UNPOLLUTED"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L9_LEARN_Q1",
+      "id": "VOC_WF_L9_LEARN_Q1",
       "level": 9,
-      "word": "BUILD",
-      "rootWord": "BUILD",
-      "correctAnswer": "REBUILD",
-      "options": [
-        "UN-",
-        "RE-",
-        "DIS-",
-        "MIS-"
-      ],
+      "rootWord": "COMPETE",
+      "word": "COMPETE",
+      "rootMeaning": "To strive against others to gain or win something.",
+      "definition": "To strive against others to gain or win something.",
+      "northNoun": {
+        "word": "COMPETITION",
+        "role": "Noun",
+        "rule": "Drop -e, add -ition",
+        "example": "Fierce market competition."
+      },
+      "eastAdjective": {
+        "word": "COMPETITIVE",
+        "role": "Adjective",
+        "rule": "Drop -e, add -itive",
+        "example": "A highly competitive industry."
+      },
+      "southAdverb": {
+        "word": "COMPETITIVELY",
+        "role": "Adverb",
+        "rule": "Add -ly to adjective",
+        "example": "Price your services competitively."
+      },
+      "westOpposite": {
+        "word": "UNCOMPETITIVE",
+        "role": "Opposite",
+        "rule": "Prefix un- + competitive",
+        "example": "Slow legacy firms become uncompetitive."
+      },
       "familyTree": [
-        "BUILD",
-        "REBUILD",
-        "BUILDER",
-        "BUILDING"
+        "COMPETITION",
+        "COMPETE",
+        "COMPETITIVE",
+        "COMPETITIVELY",
+        "UNCOMPETITIVE"
       ],
-      "targetAffix": "RE-",
-      "conceptTitle": "Root Morphology: BUILD",
-      "definition": "RE- + BUILD = REBUILD. The prefix RE- means 'again', so REBUILD means to build something a second time.",
-      "rule": "Base Root: BUILD + Affix: RE- ➔ Target: REBUILD",
-      "examples": [
-        "BUILD",
-        "REBUILD",
-        "BUILDER",
-        "BUILDING"
+      "familyWords": [
+        "COMPETITION",
+        "COMPETE",
+        "COMPETITIVE",
+        "COMPETITIVELY",
+        "UNCOMPETITIVE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Verb meaning to build something again after it was damaged. After the earthquake, the town worked together to ____ the school.",
-      "explanation": "RE- + BUILD = REBUILD. The prefix RE- means 'again', so REBUILD means to build something a second time.",
-      "difficulty": 1
+      "options": [
+        "COMPETITION",
+        "COMPETITIVE",
+        "COMPETITIVELY",
+        "UNCOMPETITIVE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L9_LEARN_Q2",
+      "id": "VOC_WF_L9_LEARN_Q2",
       "level": 9,
-      "word": "AGREE",
-      "rootWord": "AGREE",
-      "correctAnswer": "DISAGREE",
-      "options": [
-        "UN-",
-        "MIS-",
-        "NON-",
-        "DIS-"
-      ],
+      "rootWord": "ORIGIN",
+      "word": "ORIGIN",
+      "rootMeaning": "The point or place where something begins or arises.",
+      "definition": "The point or place where something begins or arises.",
+      "northNoun": {
+        "word": "ORIGIN",
+        "role": "Noun",
+        "rule": "Base root form",
+        "example": "The origin of the solar system."
+      },
+      "eastAdjective": {
+        "word": "ORIGINAL",
+        "role": "Adjective",
+        "rule": "Add suffix -al",
+        "example": "The original oil painting."
+      },
+      "southAdverb": {
+        "word": "ORIGINALLY",
+        "role": "Adverb",
+        "rule": "Add -ly to adjective",
+        "example": "We originally planned to fly."
+      },
+      "westOpposite": {
+        "word": "ORIGINATE",
+        "role": "Verb",
+        "rule": "Add suffix -ate",
+        "example": "Where did the phrase originate?"
+      },
       "familyTree": [
-        "AGREE",
-        "AGREEMENT",
-        "DISAGREE",
-        "DISAGREEMENT"
+        "ORIGIN",
+        "ORIGIN",
+        "ORIGINAL",
+        "ORIGINALLY",
+        "ORIGINATE"
       ],
-      "targetAffix": "DIS-",
-      "conceptTitle": "Root Morphology: AGREE",
-      "definition": "DIS- + AGREE = DISAGREE. The prefix DIS- reverses the meaning of a verb; here it turns AGREE (met in an earlier level's AGREEMENT) into its opposite.",
-      "rule": "Base Root: AGREE + Affix: DIS- ➔ Target: DISAGREE",
-      "examples": [
-        "AGREE",
-        "AGREEMENT",
-        "DISAGREE",
-        "DISAGREEMENT"
+      "familyWords": [
+        "ORIGIN",
+        "ORIGIN",
+        "ORIGINAL",
+        "ORIGINALLY",
+        "ORIGINATE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Verb meaning to have a different opinion from someone else. The two scientists ____ about what caused the results.",
-      "explanation": "DIS- + AGREE = DISAGREE. The prefix DIS- reverses the meaning of a verb; here it turns AGREE (met in an earlier level's AGREEMENT) into its opposite.",
-      "difficulty": 1
+      "options": [
+        "ORIGIN",
+        "ORIGINAL",
+        "ORIGINALLY",
+        "ORIGINATE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L9_LEARN_Q3",
+      "id": "VOC_WF_L9_LEARN_Q3",
       "level": 9,
-      "word": "PLAY",
-      "rootWord": "PLAY",
-      "correctAnswer": "REPLAY",
-      "options": [
-        "UN-",
-        "RE-",
-        "DIS-",
-        "OVER-"
-      ],
+      "rootWord": "HONEST",
+      "word": "HONEST",
+      "rootMeaning": "Free of deceit and untruthfulness; sincere.",
+      "definition": "Free of deceit and untruthfulness; sincere.",
+      "northNoun": {
+        "word": "HONESTY",
+        "role": "Noun",
+        "rule": "Add suffix -y",
+        "example": "Honesty is valued above all."
+      },
+      "eastAdjective": {
+        "word": "HONEST",
+        "role": "Adjective",
+        "rule": "Base adjective form",
+        "example": "An honest appraisal of skills."
+      },
+      "southAdverb": {
+        "word": "HONESTLY",
+        "role": "Adverb",
+        "rule": "Add suffix -ly",
+        "example": "Speak honestly with your doctor."
+      },
+      "westOpposite": {
+        "word": "DISHONEST",
+        "role": "Opposite",
+        "rule": "Prefix dis- + honest",
+        "example": "A dishonest sales tactic."
+      },
       "familyTree": [
-        "PLAY",
-        "REPLAY",
-        "PLAYER",
-        "PLAYBACK"
+        "HONESTY",
+        "HONEST",
+        "HONEST",
+        "HONESTLY",
+        "DISHONEST"
       ],
-      "targetAffix": "RE-",
-      "conceptTitle": "Root Morphology: PLAY",
-      "definition": "RE- + PLAY = REPLAY. The prefix RE- means 'again', so REPLAY means to play something a second time.",
-      "rule": "Base Root: PLAY + Affix: RE- ➔ Target: REPLAY",
-      "examples": [
-        "PLAY",
-        "REPLAY",
-        "PLAYER",
-        "PLAYBACK"
+      "familyWords": [
+        "HONESTY",
+        "HONEST",
+        "HONEST",
+        "HONESTLY",
+        "DISHONEST"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Verb meaning to play a recording again. Could you ____ that video clip? I missed what she said.",
-      "explanation": "RE- + PLAY = REPLAY. The prefix RE- means 'again', so REPLAY means to play something a second time.",
-      "difficulty": 1
+      "options": [
+        "HONESTY",
+        "HONEST",
+        "HONESTLY",
+        "DISHONEST"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L10_LEARN_Q1",
+      "id": "VOC_WF_L10_LEARN_Q1",
       "level": 10,
-      "word": "THANK",
-      "rootWord": "THANK",
-      "correctAnswer": "THANKFUL",
-      "options": [
-        "-LESS",
-        "-ISH",
-        "-ORY",
-        "-FUL"
-      ],
+      "rootWord": "PREDICT",
+      "word": "PREDICT",
+      "rootMeaning": "To say or estimate that a future event will happen.",
+      "definition": "To say or estimate that a future event will happen.",
+      "northNoun": {
+        "word": "PREDICTION",
+        "role": "Noun",
+        "rule": "Add suffix -ion",
+        "example": "An accurate weather prediction."
+      },
+      "eastAdjective": {
+        "word": "PREDICTABLE",
+        "role": "Adjective",
+        "rule": "Add suffix -able",
+        "example": "A predictable movie ending."
+      },
+      "southAdverb": {
+        "word": "PREDICTABLY",
+        "role": "Adverb",
+        "rule": "Drop -e, add -y",
+        "example": "Traffic was predictably congested."
+      },
+      "westOpposite": {
+        "word": "UNPREDICTABLE",
+        "role": "Opposite",
+        "rule": "Prefix un- + predictable",
+        "example": "Unpredictable mountain storms."
+      },
       "familyTree": [
-        "THANK",
-        "THANKFUL",
-        "THANKLESS",
-        "THANKS"
+        "PREDICTION",
+        "PREDICT",
+        "PREDICTABLE",
+        "PREDICTABLY",
+        "UNPREDICTABLE"
       ],
-      "targetAffix": "-FUL",
-      "conceptTitle": "Root Morphology: THANK",
-      "definition": "THANK + -FUL = THANKFUL. This reuses the -FUL pattern from your very first level, now with a new root and a gratitude context instead of a physical-help context.",
-      "rule": "Base Root: THANK + Affix: -FUL ➔ Target: THANKFUL",
-      "examples": [
-        "THANK",
-        "THANKFUL",
-        "THANKLESS",
-        "THANKS"
+      "familyWords": [
+        "PREDICTION",
+        "PREDICT",
+        "PREDICTABLE",
+        "PREDICTABLY",
+        "UNPREDICTABLE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective meaning 'feeling or showing gratitude'. She was deeply ____ when her neighbors helped her rebuild the fence.",
-      "explanation": "THANK + -FUL = THANKFUL. This reuses the -FUL pattern from your very first level, now with a new root and a gratitude context instead of a physical-help context.",
-      "difficulty": 1
+      "options": [
+        "PREDICTION",
+        "PREDICTABLE",
+        "PREDICTABLY",
+        "UNPREDICTABLE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L10_LEARN_Q2",
+      "id": "VOC_WF_L10_LEARN_Q2",
       "level": 10,
-      "word": "POWER",
-      "rootWord": "POWER",
-      "correctAnswer": "POWERLESS",
-      "options": [
-        "-FUL",
-        "-IVE",
-        "-LESS",
-        "-ARY"
-      ],
+      "rootWord": "VALUE",
+      "word": "VALUE",
+      "rootMeaning": "The regard that something is held to deserve; importance or worth.",
+      "definition": "The regard that something is held to deserve; importance or worth.",
+      "northNoun": {
+        "word": "VALUE",
+        "role": "Noun",
+        "rule": "Base root form",
+        "example": "Good value for money."
+      },
+      "eastAdjective": {
+        "word": "VALUABLE",
+        "role": "Adjective",
+        "rule": "Drop -e, add -able",
+        "example": "A valuable gold coin."
+      },
+      "southAdverb": {
+        "word": "VALUABLY",
+        "role": "Adverb",
+        "rule": "Drop -e, add -y",
+        "example": "Contributing valuably to discussion."
+      },
+      "westOpposite": {
+        "word": "INVALUABLE",
+        "role": "Opposite/Intense",
+        "rule": "Prefix in- (beyond value)",
+        "example": "Invaluable advice from a mentor."
+      },
       "familyTree": [
-        "POWER",
-        "POWERFUL",
-        "POWERLESS",
-        "EMPOWER"
+        "VALUE",
+        "VALUE",
+        "VALUABLE",
+        "VALUABLY",
+        "INVALUABLE"
       ],
-      "targetAffix": "-LESS",
-      "conceptTitle": "Root Morphology: POWER",
-      "definition": "POWER + -LESS = POWERLESS. This reuses the -LESS pattern from earlier levels, this time describing a lack of control or strength rather than a lack of fear or a home.",
-      "rule": "Base Root: POWER + Affix: -LESS ➔ Target: POWERLESS",
-      "examples": [
-        "POWER",
-        "POWERFUL",
-        "POWERLESS",
-        "EMPOWER"
+      "familyWords": [
+        "VALUE",
+        "VALUE",
+        "VALUABLE",
+        "VALUABLY",
+        "INVALUABLE"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Adjective meaning 'unable to control a situation'. Watching the flood rise, the villagers felt completely ____ to stop it.",
-      "explanation": "POWER + -LESS = POWERLESS. This reuses the -LESS pattern from earlier levels, this time describing a lack of control or strength rather than a lack of fear or a home.",
-      "difficulty": 1
+      "options": [
+        "VALUE",
+        "VALUABLE",
+        "VALUABLY",
+        "INVALUABLE"
+      ]
     },
     {
-      "id": "VOC_WORDFORMATION_L10_LEARN_Q3",
+      "id": "VOC_WF_L10_LEARN_Q3",
       "level": 10,
-      "word": "WEAK",
-      "rootWord": "WEAK",
-      "correctAnswer": "WEAKNESS",
-      "options": [
-        "-ITY",
-        "-ANCE",
-        "-SHIP",
-        "-NESS"
-      ],
+      "rootWord": "PROTECT",
+      "word": "PROTECT",
+      "rootMeaning": "To keep safe from harm or injury.",
+      "definition": "To keep safe from harm or injury.",
+      "northNoun": {
+        "word": "PROTECTION",
+        "role": "Noun",
+        "rule": "Add suffix -ion",
+        "example": "Sunscreen provides UV protection."
+      },
+      "eastAdjective": {
+        "word": "PROTECTIVE",
+        "role": "Adjective",
+        "rule": "Add suffix -ive",
+        "example": "Protective steel-toe boots."
+      },
+      "southAdverb": {
+        "word": "PROTECTIVELY",
+        "role": "Adverb",
+        "rule": "Add -ly to adjective",
+        "example": "Holding a newborn protectively."
+      },
+      "westOpposite": {
+        "word": "UNPROTECTED",
+        "role": "Opposite",
+        "rule": "Prefix un- + protected",
+        "example": "An unprotected network port."
+      },
       "familyTree": [
-        "WEAK",
-        "WEAKEN",
-        "WEAKNESS",
-        "WEAKLY"
+        "PROTECTION",
+        "PROTECT",
+        "PROTECTIVE",
+        "PROTECTIVELY",
+        "UNPROTECTED"
       ],
-      "targetAffix": "-NESS",
-      "conceptTitle": "Root Morphology: WEAK",
-      "definition": "WEAK + -NESS = WEAKNESS. This reuses the -NESS pattern from earlier levels to turn the adjective WEAK into a noun naming that quality.",
-      "rule": "Base Root: WEAK + Affix: -NESS ➔ Target: WEAKNESS",
-      "examples": [
-        "WEAK",
-        "WEAKEN",
-        "WEAKNESS",
-        "WEAKLY"
+      "familyWords": [
+        "PROTECTION",
+        "PROTECT",
+        "PROTECTIVE",
+        "PROTECTIVELY",
+        "UNPROTECTED"
       ],
-      "instruction": "Choose the correct answer.",
-      "hint": "Noun naming a quality where a person lacks strength or skill. He admitted that lifting heavy boxes was his one real ____.",
-      "explanation": "WEAK + -NESS = WEAKNESS. This reuses the -NESS pattern from earlier levels to turn the adjective WEAK into a noun naming that quality.",
-      "difficulty": 1
+      "options": [
+        "PROTECTION",
+        "PROTECTIVE",
+        "PROTECTIVELY",
+        "UNPROTECTED"
+      ]
     }
   ]
 }

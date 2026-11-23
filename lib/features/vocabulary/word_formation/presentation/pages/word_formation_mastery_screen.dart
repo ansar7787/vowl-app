@@ -1,28 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:vowl/core/domain/entities/game_quest.dart';
-import 'package:vowl/features/vocabulary/word_formation/presentation/pages/word_formation_screen.dart';
+// Explicit naming for Learn -> Practice -> Mastery architecture.
+// 1. word_formation_learn_screen.dart    (Learn Phase)
+// 2. word_formation_practice_screen.dart (Practice Phase)
+// 3. word_formation_mastery_screen.dart  (Mastery Phase)
 
-/// Mastery Phase Screen for Word Formation.
-///
-/// Executes the comprehensive morphological synthesis evaluation.
-/// Stage 1 tests affix injection into the reaction core.
-/// Stage 2 presents the optional Bonus XP Arena (+50 XP bonus, 0 hearts deducted for banking).
-class WordFormationMasteryScreen extends StatelessWidget {
-  final int level;
-  final GameSubtype gameType;
+import 'word_formation_screen.dart';
 
-  const WordFormationMasteryScreen({
-    super.key,
-    required this.level,
-    this.gameType = GameSubtype.wordFormation,
-  });
+export 'word_formation_screen.dart';
 
-  @override
-  Widget build(BuildContext context) {
-    return WordFormationScreen(
-      level: level,
-      gameType: gameType,
-      isBonusStage: true,
-    );
-  }
-}
+/// Explicit type alias for the Mastery phase of Word Formation.
+typedef WordFormationMasteryScreen = WordFormationScreen;

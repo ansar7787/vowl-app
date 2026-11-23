@@ -7,23 +7,21 @@ import 'package:vowl/core/data/models/phased_quest_model.dart';
 import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/presentation/phases/practice_phase_scaffold.dart';
 import 'package:vowl/core/presentation/themes/level_theme_helper.dart';
-import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
+import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_4way_launcher.dart';
+import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_morph_core.dart';
+import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_sentence_slot.dart';
 
-/// Interactive Practice Phase screen for Word Formation: "Affix Association Gym".
-///
-/// Drills learners on identifying roots, injecting correct affixes into sentence contexts,
-/// and typing the newly formed words with immediate feedback and explanation.
+/// Practice Phase screen for Word Formation: The Directional Morph Launcher.
 class WordFormationPracticeScreen extends StatefulWidget {
   final int level;
 
-  const WordFormationPracticeScreen({
-    super.key,
-    required this.level,
-  });
+  const WordFormationPracticeScreen({super.key, required this.level});
 
   @override
   State<WordFormationPracticeScreen> createState() =>
@@ -32,67 +30,21 @@ class WordFormationPracticeScreen extends StatefulWidget {
 
 class _WordFormationPracticeScreenState
     extends State<WordFormationPracticeScreen> {
-  List<PhasedQuest> _quests = const [
-    PhasedQuest(
-      id: 'FALLBACK_WF_P1',
-      level: 1,
-      conceptTitle: 'Morphology Gym: HELP',
-      word: 'HELP',
-      definition:
-          'HELP + -FUL = HELPFUL. Suffix -FUL turns HELP into an adjective meaning supportive.',
-      example: 'My neighbor was very ____ when I was moving furniture.',
-      nativeTip: '-ful forms adjectives meaning full of something.',
-      visualAnchor: '🏋️ Word Formation Gym • HELP',
-      rawExtra: {
-        'rootWord': 'HELP',
-        'correctAnswer': 'HELPFUL',
-        'options': ['-FUL', '-ISH', '-ORY', '-IST'],
-        'familyTree': ['HELP', 'HELPER', 'HELPFUL', 'HELPLESS'],
-        'targetAffix': '-FUL',
-      },
-    ),
-    PhasedQuest(
-      id: 'FALLBACK_WF_P2',
-      level: 1,
-      conceptTitle: 'Morphology Gym: CARE',
-      word: 'CARE',
-      definition:
-          'CARE + -LESS = CARELESS. Suffix -LESS forms an adjective meaning without care.',
-      example: 'He crossed the street without looking, which was ____.',
-      nativeTip: '-less creates an adjective meaning lacking that quality.',
-      visualAnchor: '🏋️ Word Formation Gym • CARE',
-      rawExtra: {
-        'rootWord': 'CARE',
-        'correctAnswer': 'CARELESS',
-        'options': ['-FUL', '-ISH', '-MENT', '-LESS'],
-        'familyTree': ['CARE', 'CAREFUL', 'CARELESS', 'CARETAKER'],
-        'targetAffix': '-LESS',
-      },
-    ),
-  ];
-
+  List<PhasedQuest> _quests = [];
+  bool _isLoading = true;
   int _currentIndex = 0;
-  String? _selectedAffix;
-  bool? _isAffixCorrect;
-  bool _showExplanation = false;
-
-  final TextEditingController _typingController = TextEditingController();
-  bool _isTypingCorrect = false;
-  bool _typingValidated = false;
+  String? _selectedDirection;
+  bool _isAnswered = false;
+  bool? _isCorrect;
+  int _shakeCount = 0;
 
   @override
   void initState() {
     super.initState();
-    _loadPracticeQuests();
+    _loadQuests();
   }
 
-  @override
-  void dispose() {
-    _typingController.dispose();
-    super.dispose();
-  }
-
-  Future<void> _loadPracticeQuests() async {
+  Future<void> _loadQuests() async {
     try {
       final batchIndex = ((widget.level - 1) ~/ 10) + 1;
       final startLevel = (batchIndex - 1) * 10 + 1;
@@ -102,53 +54,84 @@ class _WordFormationPracticeScreenState
       final jsonStr = await rootBundle.loadString(path);
       final data = jsonDecode(jsonStr) as Map<String, dynamic>;
       final batch = PhasedQuestBatch.fromJson(data);
-      if (batch.quests.isNotEmpty && mounted) {
+
+      final levelQuests = batch.quests
+          .where((q) => q.level == widget.level)
+          .toList();
+
+      if (mounted) {
         setState(() {
-          _quests = batch.quests;
+          _quests = levelQuests.isNotEmpty ? levelQuests : batch.quests;
+          _isLoading = false;
         });
       }
     } catch (_) {
-      // Fallback quests are already initialized
+      if (mounted) {
+        setState(() {
+          _quests = _buildFallbackQuests();
+          _isLoading = false;
+        });
+      }
     }
   }
 
-  void _onAffixChosen(String affix, String correctAnswer) {
-    if (_isAffixCorrect == true) return;
+  List<PhasedQuest> _buildFallbackQuests() {
+    return [
+      PhasedQuest(
+        id: 'FALLBACK_WF_P1_Q1',
+        level: widget.level,
+        word: 'DECIDE',
+        example:
+            'The committee reached a unanimous _______ after hours of debate.',
+        rawExtra: {
+          'rootWord': 'DECIDE',
+          'sentence':
+              'The committee reached a unanimous _______ after hours of debate.',
+          'targetWord': 'DECISION',
+          'correctAnswer': 'DECISION',
+          'correctDirection': 'north',
+          'targetRole': 'Noun',
+          'roleClue': "The adjective 'unanimous' describes a NOUN (North ⬆️).",
+          'northNoun': 'DECISION',
+          'eastAdjective': 'DECISIVE',
+          'southAdverb': 'DECISIVELY',
+          'westOpposite': 'INDECISIVE',
+          'bounceFeedback':
+              "Notice: 'unanimous' is an adjective, which describes a NOUN (North ⬆️)!",
+        },
+      ),
+    ];
+  }
 
-    final clean = affix.replaceAll('-', '').trim().toLowerCase();
-    final correct = correctAnswer.trim().toLowerCase();
-    final isMatch = correct.endsWith(clean) || correct.startsWith(clean);
+  void _onDirectionSelected(String direction) {
+    if (_isAnswered && _isCorrect == true) return;
+
+    final quest = _quests[_currentIndex];
+    final extra = quest.rawExtra;
+    final correctDir = (extra['correctDirection'] as String? ?? 'north')
+        .trim()
+        .toLowerCase();
+    final isMatch = direction.trim().toLowerCase() == correctDir;
 
     setState(() {
-      _selectedAffix = affix;
-      _isAffixCorrect = isMatch;
-      _showExplanation = true;
+      _selectedDirection = direction;
+      _isAnswered = true;
+      _isCorrect = isMatch;
+      if (!isMatch) {
+        _shakeCount++;
+      }
     });
 
     if (isMatch) {
       di.sl<HapticService>().success();
       di.sl<SoundService>().playCorrect();
-      di.sl<TtsService>().speak(correctAnswer);
-    } else {
-      di.sl<HapticService>().error();
-      di.sl<SoundService>().playWrong();
-    }
-  }
-
-  void _validateTyping(String targetWord) {
-    final input = _typingController.text.trim().toLowerCase();
-    final target = targetWord.trim().toLowerCase();
-    final isMatch = input == target;
-
-    setState(() {
-      _isTypingCorrect = isMatch;
-      _typingValidated = true;
-    });
-
-    if (isMatch) {
-      di.sl<HapticService>().success();
-      di.sl<SoundService>().playCorrect();
-      di.sl<TtsService>().speak(targetWord);
+      final sentence = extra['sentence'] as String? ?? quest.example ?? '';
+      final target =
+          extra['targetWord'] as String? ?? quest.correctAnswer ?? '';
+      if (sentence.isNotEmpty && target.isNotEmpty) {
+        final fullText = sentence.replaceAll('_______', target);
+        di.sl<TtsService>().speak(fullText);
+      }
     } else {
       di.sl<HapticService>().error();
       di.sl<SoundService>().playWrong();
@@ -159,12 +142,9 @@ class _WordFormationPracticeScreenState
     if (_currentIndex < _quests.length - 1) {
       setState(() {
         _currentIndex++;
-        _selectedAffix = null;
-        _isAffixCorrect = null;
-        _showExplanation = false;
-        _typingController.clear();
-        _isTypingCorrect = false;
-        _typingValidated = false;
+        _selectedDirection = null;
+        _isAnswered = false;
+        _isCorrect = null;
       });
     } else {
       PhaseProgressRecorder.recordPhaseCompleted(
@@ -174,377 +154,156 @@ class _WordFormationPracticeScreenState
         phase: 'practice',
       );
       context.pushReplacement(
-        '/game?category=vocabulary&gameType=wordFormation&level=${widget.level}',
+        '/mastery?category=vocabulary&gameType=wordFormation&level=${widget.level}',
       );
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    final quest = _quests[_currentIndex];
-    final theme = LevelThemeHelper.getTheme(
-      'vocabulary',
-      level: widget.level,
-    );
+    final theme = LevelThemeHelper.getTheme('vocabulary', level: widget.level);
     final primaryColor = theme.primaryColor;
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
-    final rootWord = (quest.rawExtra['rootWord'] as String?) ??
-        ((quest.word?.isNotEmpty == true) ? quest.word! : 'ROOT');
-    final correctAnswer =
-        (quest.rawExtra['correctAnswer'] as String?) ?? 'FORMED WORD';
-    final options = (quest.rawExtra['options'] as List<dynamic>?)
-            ?.map((e) => e.toString())
-            .toList() ??
-        ['-FUL', '-LESS', '-ABLE', '-NESS'];
+    if (_isLoading) {
+      return PracticePhaseScaffold(
+        title: 'Directional Morph Gym',
+        gameType: 'wordFormation',
+        level: widget.level,
+        currentExerciseIndex: 0,
+        totalExercises: 3,
+        onComplete: _onNext,
+        child: GameShimmerLoading(primaryColor: primaryColor),
+      );
+    }
+
+    final quest = _quests[_currentIndex];
+    final extra = quest.rawExtra;
+    final rootWord = (extra['rootWord'] as String?) ?? quest.word ?? 'ROOT';
+    final sentence =
+        (extra['sentence'] as String?) ??
+        quest.example ??
+        'Sentence with _______';
+    final targetWord =
+        (extra['targetWord'] as String?) ?? quest.correctAnswer ?? 'TARGET';
+    final targetRole = (extra['targetRole'] as String?) ?? 'Target';
+    final roleClue = extra['roleClue'] as String?;
+    final correctDir = extra['correctDirection'] as String? ?? 'north';
+    final bounceFeedback = extra['bounceFeedback'] as String?;
+
+    final northWord = (extra['northNoun'] as String?) ?? '${rootWord}_NOUN';
+    final eastWord = (extra['eastAdjective'] as String?) ?? '${rootWord}_ADJ';
+    final southWord = (extra['southAdverb'] as String?) ?? '${rootWord}_ADV';
+    final westWord = (extra['westOpposite'] as String?) ?? '${rootWord}_OPP';
 
     return PracticePhaseScaffold(
-      title: 'Word Formation Gym',
+      title: 'Practice: $rootWord',
       gameType: 'wordFormation',
       level: widget.level,
       currentExerciseIndex: _currentIndex,
       totalExercises: _quests.length,
-      actionLabel: _currentIndex < _quests.length - 1
-          ? 'Next Practice (${_currentIndex + 1}/${_quests.length})'
-          : 'Proceed to Mastery Exam 🏆',
       onComplete: _onNext,
-      child: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      isActionEnabled: _isAnswered && _isCorrect == true,
+      actionLabel: _currentIndex < _quests.length - 1
+          ? 'Next Exercise'
+          : 'Enter Mastery Arena ⚡',
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            // Progress Header
-            Row(
-              children: [
-                Expanded(
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(6.r),
-                    child: LinearProgressIndicator(
-                      value: (_currentIndex + 1) / _quests.length,
-                      backgroundColor: isDark
-                          ? AppColors.slate800
-                          : AppColors.slate200,
-                      valueColor: AlwaysStoppedAnimation<Color>(primaryColor),
-                      minHeight: 8.h,
-                    ),
-                  ),
-                ),
-                SizedBox(width: 12.w),
-                Text(
-                  '${_currentIndex + 1} / ${_quests.length}',
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w700,
-                    color: isDark ? AppColors.slate400 : AppColors.slate600,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 16.h),
-
-            // Drill 1: Context Sentence & Base Root
-            Container(
-              padding: EdgeInsets.all(16.r),
-              decoration: BoxDecoration(
-                color: isDark ? AppColors.slate900 : Colors.white,
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(
-                  color: isDark ? AppColors.slate800 : AppColors.slate200,
-                  width: 1.5,
-                ),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Flexible(
-                        child: Container(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 8.w, vertical: 4.h),
-                          decoration: BoxDecoration(
-                            color: primaryColor.withValues(
-                                alpha: isDark ? 0.2 : 0.1),
-                            borderRadius: BorderRadius.circular(6.r),
-                          ),
-                          child: Text(
-                            'DRILL 1: AFFIX INJECTION',
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 10.sp,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 0.8,
-                              color: primaryColor,
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 8.w),
-                      Text(
-                        'BASE: $rootWord',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w800,
-                          color: primaryColor,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 12.h),
-                  Text(
-                    quest.example ??
-                        'Synthesize the appropriate word using root "$rootWord":',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.w600,
-                      height: 1.45,
-                      color: isDark ? Colors.white : AppColors.slate900,
-                    ),
-                  ),
-                  SizedBox(height: 14.h),
-                  Text(
-                    'Select the matching affix:',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w600,
-                      color: isDark ? AppColors.slate400 : AppColors.slate600,
-                    ),
-                  ),
-                  SizedBox(height: 10.h),
-                  Wrap(
-                    spacing: 10.w,
-                    runSpacing: 10.h,
-                    children: options.map((affix) {
-                      final isChosen = _selectedAffix == affix;
-                      final isCorrect = isChosen && _isAffixCorrect == true;
-                      final isWrong = isChosen && _isAffixCorrect == false;
-
-                      Color bg =
-                          isDark ? AppColors.slate800 : AppColors.slate100;
-                      if (isCorrect) bg = AppColors.emerald500;
-                      if (isWrong) bg = AppColors.rose500;
-
-                      return GestureDetector(
-                        onTap: () => _onAffixChosen(affix, correctAnswer),
-                        child: Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 16.w,
-                            vertical: 10.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: bg,
-                            borderRadius: BorderRadius.circular(10.r),
-                            border: Border.all(
-                              color: isCorrect
-                                  ? AppColors.emerald400
-                                  : isWrong
-                                      ? AppColors.rose500
-                                      : primaryColor.withValues(alpha: 0.3),
-                              width: 1.5,
-                            ),
-                          ),
-                          child: Text(
-                            affix,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w800,
-                              color: (isCorrect || isWrong)
-                                  ? Colors.white
-                                  : (isDark
-                                      ? Colors.white
-                                      : AppColors.slate900),
-                            ),
-                          ),
-                        ),
-                      );
-                    }).toList(),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 14.h),
-
-            // Drill 2: Spelling Confirmation & Gap-Fill
-            if (_isAffixCorrect == true) ...[
-              Container(
-                padding: EdgeInsets.all(16.r),
-                decoration: BoxDecoration(
-                  color: isDark ? AppColors.slate900 : Colors.white,
-                  borderRadius: BorderRadius.circular(16.r),
-                  border: Border.all(
-                    color: _typingValidated
-                        ? (_isTypingCorrect
-                            ? AppColors.emerald500
-                            : AppColors.rose500)
-                        : (isDark ? AppColors.slate800 : AppColors.slate200),
-                    width: 1.5,
-                  ),
-                ),
+            Expanded(
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 8.w, vertical: 4.h),
-                      decoration: BoxDecoration(
-                        color: AppColors.amber500.withValues(
-                            alpha: isDark ? 0.2 : 0.1),
-                        borderRadius: BorderRadius.circular(6.r),
-                      ),
-                      child: Text(
-                        'DRILL 2: SPELLING SOLIDIFICATION',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w700,
-                          letterSpacing: 0.8,
-                          color: AppColors.amber500,
-                        ),
-                      ),
+                    SizedBox(height: 8.h),
+                    WordFormationSentenceSlot(
+                      sentence: sentence,
+                      formedWord: _isAnswered && _isCorrect == true
+                          ? targetWord
+                          : null,
+                      targetRole: targetRole,
+                      roleClue: roleClue,
+                      isAnswered: _isAnswered,
+                      isCorrect: _isCorrect,
+                      primaryColor: primaryColor,
+                      bounceFeedback: bounceFeedback,
+                      shakeCount: _shakeCount,
                     ),
-                    SizedBox(height: 10.h),
-                    Text(
-                      'Type the full synthesized word ($rootWord + $_selectedAffix):',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w600,
-                        color: isDark ? Colors.white : AppColors.slate900,
-                      ),
+                    SizedBox(height: 12.h),
+                    WordFormationMorphCore(
+                      rootWord: rootWord,
+                      primaryColor: primaryColor,
+                      isDark: isDark,
                     ),
-                    SizedBox(height: 10.h),
-                    Row(
+                    SizedBox(height: 12.h),
+                    WordFormation4WayLauncher(
+                      northWord: northWord,
+                      eastWord: eastWord,
+                      southWord: southWord,
+                      westWord: westWord,
+                      selectedDirection: _selectedDirection,
+                      correctDirection: _isAnswered ? correctDir : null,
+                      isAnswered: _isAnswered,
+                      primaryColor: primaryColor,
+                      onDirectionSelected: _onDirectionSelected,
+                    ),
+                    SizedBox(height: 16.h),
+                  ],
+                ),
+              ),
+            ),
+            SafeArea(
+              top: false,
+              child: Padding(
+                padding: EdgeInsets.only(bottom: 16.h, top: 8.h),
+                child: ScaleButton(
+                  onTap: _isAnswered && _isCorrect == true ? _onNext : null,
+                  child: Container(
+                    width: double.infinity,
+                    height: 52.h,
+                    decoration: BoxDecoration(
+                      color: _isAnswered && _isCorrect == true
+                          ? primaryColor
+                          : primaryColor.withValues(alpha: 0.3),
+                      borderRadius: BorderRadius.circular(16.r),
+                      boxShadow: [
+                        if (_isAnswered && _isCorrect == true)
+                          BoxShadow(
+                            color: primaryColor.withValues(alpha: 0.3),
+                            blurRadius: 12,
+                            offset: const Offset(0, 4),
+                          ),
+                      ],
+                    ),
+                    alignment: Alignment.center,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Expanded(
-                          child: TextField(
-                            key: const Key('wf_practice_typing_field'),
-                            controller: _typingController,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 15.sp,
-                              fontWeight: FontWeight.w700,
-                              color: isDark ? Colors.white : AppColors.slate900,
-                            ),
-                            decoration: InputDecoration(
-                              hintText: 'e.g. $correctAnswer',
-                              hintStyle: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 13.sp,
-                                color: isDark
-                                    ? AppColors.slate600
-                                    : AppColors.slate400,
-                              ),
-                              contentPadding: EdgeInsets.symmetric(
-                                horizontal: 12.w,
-                                vertical: 10.h,
-                              ),
-                              filled: true,
-                              fillColor: isDark
-                                  ? AppColors.slate800
-                                  : AppColors.slate100,
-                              border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(10.r),
-                                borderSide: BorderSide.none,
-                              ),
-                            ),
-                            onSubmitted: (_) => _validateTyping(correctAnswer),
+                        Text(
+                          _currentIndex < _quests.length - 1
+                              ? 'Next Scenario'
+                              : 'Unlock Mastery Test',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.white,
+                            letterSpacing: 0.5,
                           ),
                         ),
                         SizedBox(width: 8.w),
-                        ElevatedButton(
-                          key: const Key('wf_practice_typing_check_button'),
-                          onPressed: () => _validateTyping(correctAnswer),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: primaryColor,
-                            foregroundColor: Colors.white,
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 14.w,
-                              vertical: 12.h,
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10.r),
-                            ),
-                          ),
-                          child: const Text('Check'),
+                        Icon(
+                          Icons.arrow_forward_rounded,
+                          color: Colors.white,
+                          size: 18.r,
                         ),
                       ],
                     ),
-                    if (_typingValidated) ...[
-                      SizedBox(height: 8.h),
-                      Text(
-                        _isTypingCorrect
-                            ? '✅ Excellent spelling!'
-                            : '❌ Expected: $correctAnswer',
-                        style: TextStyle(
-                          fontFamily: 'Outfit',
-                          fontSize: 12.sp,
-                          fontWeight: FontWeight.w700,
-                          color: _isTypingCorrect
-                              ? AppColors.emerald500
-                              : AppColors.rose500,
-                        ),
-                      ),
-                    ],
-                  ],
-                ),
-              ),
-              SizedBox(height: 14.h),
-            ],
-
-            // Explanation Card
-            if (_showExplanation) ...[
-              Container(
-                padding: EdgeInsets.all(14.r),
-                decoration: BoxDecoration(
-                  color: isDark ? AppColors.slate900 : Colors.white,
-                  borderRadius: BorderRadius.circular(14.r),
-                  border: Border.all(
-                    color: isDark ? AppColors.slate800 : AppColors.slate200,
                   ),
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(Icons.info_outline_rounded,
-                            color: primaryColor, size: 16.r),
-                        SizedBox(width: 6.w),
-                        Text(
-                          'MORPHOLOGY EXPLANATION',
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w700,
-                            letterSpacing: 0.8,
-                            color: primaryColor,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 6.h),
-                    Text(
-                      quest.definition ??
-                          'Formed word "$correctAnswer" derives from base "$rootWord".',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 13.sp,
-                        height: 1.4,
-                        color: isDark ? AppColors.slate300 : AppColors.slate700,
-                      ),
-                    ),
-                  ],
-                ),
               ),
-              SizedBox(height: 16.h),
-            ],
-
-            SizedBox(height: 16.h),
+            ),
           ],
         ),
       ),
