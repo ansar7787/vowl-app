@@ -247,14 +247,11 @@ class _WordFormationScreenState extends State<WordFormationScreen>
       listener: onVocabularyStateChanged,
       builder: (context, state) {
         if (state is! VocabularyLoaded || state.currentQuestOrNull == null) {
-          return VocabularyBaseLayout(
-            gameType: widget.gameType,
-            level: widget.level,
-            isAnswered: false,
-            isCorrect: null,
-            showConfetti: false,
-            onContinue: dispatchNextQuestion,
-            child: GameShimmerLoading(primaryColor: primaryColor),
+          return Scaffold(
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            body: SafeArea(
+              child: GameShimmerLoading(primaryColor: primaryColor),
+            ),
           );
         }
 
@@ -333,6 +330,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                         physics: const BouncingScrollPhysics(),
                         child: Column(
                           children: [
+                            SizedBox(height: 12.h),
                             _buildSpeedArenaBar(primaryColor, isRevenge),
                             WordFormationSentenceSlot(
                               sentence: sentence,

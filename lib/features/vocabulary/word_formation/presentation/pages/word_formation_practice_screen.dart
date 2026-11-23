@@ -192,7 +192,7 @@ class _WordFormationPracticeScreenState
                 physics: const BouncingScrollPhysics(),
                 child: Column(
                   children: [
-                    SizedBox(height: 8.h),
+                    SizedBox(height: 12.h),
                     WordFormationSentenceSlot(
                       sentence: sentence,
                       formedWord: _isAnswered && _isCorrect == true

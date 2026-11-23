@@ -4,9 +4,11 @@ import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/core/utils/widgets/translate_button_widget.dart';
 
-/// Central interactive hub displaying the base morphological root word.
-class WordFormationMorphCore extends StatelessWidget {
+/// Central interactive hub displaying the base morphological root word
+/// with audio pronunciation and on-demand root definition translation.
+class WordFormationMorphCore extends StatefulWidget {
   final String rootWord;
   final String? rootMeaning;
   final Color primaryColor;
@@ -21,7 +23,29 @@ class WordFormationMorphCore extends StatelessWidget {
   });
 
   @override
+  State<WordFormationMorphCore> createState() => _WordFormationMorphCoreState();
+}
+
+class _WordFormationMorphCoreState extends State<WordFormationMorphCore> {
+  String? _translatedMeaning;
+  bool _showTranslated = false;
+
+  @override
+  void didUpdateWidget(covariant WordFormationMorphCore oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (oldWidget.rootMeaning != widget.rootMeaning ||
+        oldWidget.rootWord != widget.rootWord) {
+      _translatedMeaning = null;
+      _showTranslated = false;
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final primaryColor = widget.primaryColor;
+    final isDark = widget.isDark;
+    final rootMeaning = widget.rootMeaning;
+
     return Container(
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
@@ -67,7 +91,7 @@ class WordFormationMorphCore extends StatelessWidget {
               SizedBox(width: 6.w),
               ScaleButton(
                 onTap: () {
-                  di.sl<TtsService>().speak(rootWord);
+                  di.sl<TtsService>().speak(widget.rootWord);
                 },
                 child: Container(
                   padding: EdgeInsets.all(4.r),
@@ -90,7 +114,7 @@ class WordFormationMorphCore extends StatelessWidget {
           FittedBox(
             fit: BoxFit.scaleDown,
             child: Text(
-              rootWord.toUpperCase(),
+              widget.rootWord.toUpperCase(),
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 24.sp,
@@ -101,18 +125,50 @@ class WordFormationMorphCore extends StatelessWidget {
             ),
           ),
 
-          if (rootMeaning != null && rootMeaning!.isNotEmpty) ...[
-            SizedBox(height: 4.h),
-            Text(
-              rootMeaning!,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 13.sp,
-                fontWeight: FontWeight.w400,
-                color: isDark ? Colors.white70 : Colors.black54,
-                height: 1.35,
-              ),
+          if (rootMeaning != null && rootMeaning.isNotEmpty) ...[
+            SizedBox(height: 6.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Flexible(
+                  child: GestureDetector(
+                    onTap: _translatedMeaning != null
+                        ? () => setState(
+                              () => _showTranslated = !_showTranslated,
+                            )
+                        : null,
+                    child: Text(
+                      _showTranslated && _translatedMeaning != null
+                          ? _translatedMeaning!
+                          : rootMeaning,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 13.sp,
+                        fontStyle: _showTranslated
+                            ? FontStyle.italic
+                            : FontStyle.normal,
+                        fontWeight: FontWeight.w400,
+                        color: isDark ? Colors.white70 : Colors.black54,
+                        height: 1.35,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(width: 6.w),
+                TranslateButtonWidget(
+                  originalText: rootMeaning,
+                  onTranslationComplete: (translated) {
+                    setState(() {
+                      _translatedMeaning = translated;
+                      _showTranslated = true;
+                    });
+                  },
+                  iconSize: 13.r,
+                  iconColor: primaryColor,
+                  padding: EdgeInsets.all(4.r),
+                ),
+              ],
             ),
           ],
         ],
