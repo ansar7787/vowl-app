@@ -5,6 +5,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
+import 'package:vowl/features/vocabulary/word_formation/domain/services/word_formation_spelling_rules.dart';
 import 'word_formation_colors.dart';
 
 /// Linguistic formula widget that visually decomposes a formed word
@@ -26,6 +27,7 @@ class WordFormationMorphemeFormula extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     final breakdown = MorphemeBreakdown.deconstruct(rootWord, formedWord);
     final roleColor = WordFormationColors.forRole(targetRole);
+    final insight = WordFormationSpellingRules.analyze(rootWord, formedWord);
 
     return Container(
       width: double.infinity,
@@ -136,6 +138,36 @@ class WordFormationMorphemeFormula extends StatelessWidget {
               ],
             ),
           ),
+          if (insight != null) ...[
+            SizedBox(height: 6.h),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+              decoration: BoxDecoration(
+                color: roleColor.withValues(alpha: 0.08),
+                borderRadius: BorderRadius.circular(6.r),
+                border: Border.all(
+                  color: roleColor.withValues(alpha: 0.2),
+                ),
+              ),
+              child: Row(
+                children: [
+                  Icon(Icons.lightbulb_rounded, size: 12.r, color: roleColor),
+                  SizedBox(width: 4.w),
+                  Expanded(
+                    child: Text(
+                      insight.ruleDescription,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.5.sp,
+                        fontWeight: FontWeight.w500,
+                        color: isDark ? Colors.white70 : Colors.black87,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ],
       ),
     );

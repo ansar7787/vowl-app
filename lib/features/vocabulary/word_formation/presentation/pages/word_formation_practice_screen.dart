@@ -12,6 +12,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/word_formation/data/services/word_formation_curriculum_service.dart';
+import 'package:vowl/features/vocabulary/word_formation/data/services/word_formation_mistake_vault.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_4way_launcher.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_family_tree.dart';
 import 'package:vowl/features/vocabulary/word_formation/presentation/widgets/word_formation_morph_core.dart';
@@ -65,9 +66,11 @@ class _WordFormationPracticeScreenState
         .trim()
         .toLowerCase();
     final isMatch = direction.trim().toLowerCase() == correctDir;
+    final root = (extra['rootWord'] as String?) ?? quest.word ?? '';
 
     if (isMatch) {
       _comboStreak++;
+      WordFormationMistakeVault().recordSuccess(root);
       di.sl<HapticService>().success();
       di.sl<SoundService>().playCorrect();
       setState(() {
@@ -84,6 +87,7 @@ class _WordFormationPracticeScreenState
       }
     } else {
       _comboStreak = 0;
+      WordFormationMistakeVault().recordMistake(root);
       di.sl<HapticService>().error();
       di.sl<SoundService>().playWrong();
       setState(() {

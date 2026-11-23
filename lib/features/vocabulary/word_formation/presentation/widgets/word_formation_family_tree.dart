@@ -57,7 +57,11 @@ class WordFormationFamilyTree extends StatelessWidget {
           Wrap(
             spacing: 8.w,
             runSpacing: 6.h,
-            children: familyTree.map((word) {
+            children: familyTree.map((item) {
+              final parts = item.split('(');
+              final word = parts[0].trim();
+              final roleTag = parts.length > 1 ? parts[1].replaceAll(')', '').trim() : null;
+
               return ScaleButton(
                 onTap: () {
                   di.sl<HapticService>().selection();
@@ -82,6 +86,18 @@ class WordFormationFamilyTree extends StatelessWidget {
                           color: isDark ? Colors.white : AppColors.slate900,
                         ),
                       ),
+                      if (roleTag != null) ...[
+                        SizedBox(width: 4.w),
+                        Text(
+                          '($roleTag)',
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w500,
+                            color: color,
+                          ),
+                        ),
+                      ],
                       SizedBox(width: 4.w),
                       Icon(
                         Icons.volume_up_rounded,
