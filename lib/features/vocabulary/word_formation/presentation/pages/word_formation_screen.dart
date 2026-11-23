@@ -161,12 +161,10 @@ class _WordFormationScreenState extends State<WordFormationScreen>
         final correctIndex = quest.correctAnswerIndex;
         final correctDir = _directionFromIndex(correctIndex);
         final targetRoleName = correctIndex == 0
-            ? 'Noun (North ⬆️)'
+            ? 'Noun'
             : (correctIndex == 1
-                ? 'Adjective (East ➡️)'
-                : (correctIndex == 2
-                    ? 'Adverb (South ⬇️)'
-                    : 'Opposite (West ⬅️)'));
+                ? 'Adjective'
+                : (correctIndex == 2 ? 'Adverb' : 'Opposite'));
 
         final northWord = options.isNotEmpty ? options[0] : '${rootWord}_NOUN';
         final eastWord = options.length > 1 ? options[1] : '${rootWord}_ADJ';

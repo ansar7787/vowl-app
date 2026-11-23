@@ -70,7 +70,7 @@ class _WordFormationLearnScreenState extends State<WordFormationLearnScreen> {
 
     if (_isLoading) {
       return LearnPhaseScaffold(
-        title: 'Word Formation Sandbox',
+        title: 'Word Families',
         gameType: 'wordFormation',
         level: widget.level,
         onComplete: _onContinue,
@@ -104,7 +104,7 @@ class _WordFormationLearnScreenState extends State<WordFormationLearnScreen> {
       onComplete: _onContinue,
       actionLabel: _currentIndex < _quests.length - 1
           ? 'Next Word'
-          : 'Start Practice 🚀',
+          : 'Start Practice',
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Column(

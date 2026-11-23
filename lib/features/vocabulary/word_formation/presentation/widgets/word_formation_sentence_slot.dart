@@ -45,27 +45,27 @@ class WordFormationSentenceSlot extends StatelessWidget {
 
     final cardContent = Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
       decoration: BoxDecoration(
         color: isDark
             ? Colors.white.withValues(alpha: 0.05)
             : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(20.r),
+        borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
           color: isAnswered
               ? (isCorrect == true
-                    ? AppColors.gameCorrect.withValues(alpha: 0.5)
-                    : AppColors.gameIncorrect.withValues(alpha: 0.5))
-              : roleColor.withValues(alpha: 0.35),
-          width: 1.5,
+                    ? AppColors.gameCorrect.withValues(alpha: 0.45)
+                    : AppColors.gameIncorrect.withValues(alpha: 0.45))
+              : roleColor.withValues(alpha: 0.28),
+          width: 1.2,
         ),
         boxShadow: [
           BoxShadow(
             color: isAnswered && isCorrect == true
-                ? AppColors.gameCorrect.withValues(alpha: 0.12)
-                : roleColor.withValues(alpha: 0.06),
-            blurRadius: 16,
-            offset: const Offset(0, 4),
+                ? AppColors.gameCorrect.withValues(alpha: 0.1)
+                : roleColor.withValues(alpha: 0.05),
+            blurRadius: 12,
+            offset: const Offset(0, 3),
           ),
         ],
       ),
@@ -100,15 +100,15 @@ class WordFormationSentenceSlot extends StatelessWidget {
                         child: Text(
                           targetRole != null
                               ? 'TARGET: ${targetRole!.toUpperCase()}'
-                              : 'SYNTACTIC SLOT',
+                              : 'FILL IN THE BLANK',
                           maxLines: 1,
                           overflow: TextOverflow.clip,
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 11.sp,
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w600,
                             color: roleColor,
-                            letterSpacing: 0.8,
+                            letterSpacing: 0.6,
                           ),
                         ),
                       ),
@@ -149,8 +149,8 @@ class WordFormationSentenceSlot extends StatelessWidget {
             text: TextSpan(
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w500,
+                fontSize: 15.sp,
+                fontWeight: FontWeight.w400,
                 color: isDark ? Colors.white : AppColors.slate900,
                 height: 1.5,
               ),
@@ -160,18 +160,18 @@ class WordFormationSentenceSlot extends StatelessWidget {
                   alignment: PlaceholderAlignment.middle,
                   child: Container(
                     padding: EdgeInsets.symmetric(
-                      horizontal: 10.w,
-                      vertical: 4.h,
+                      horizontal: 9.w,
+                      vertical: 3.h,
                     ),
                     margin: EdgeInsets.symmetric(horizontal: 4.w),
                     decoration: BoxDecoration(
                       color: isAnswered
                           ? (isCorrect == true
-                                ? AppColors.gameCorrect.withValues(alpha: 0.18)
+                                ? AppColors.gameCorrect.withValues(alpha: 0.16)
                                 : AppColors.gameIncorrect.withValues(
-                                    alpha: 0.18,
+                                    alpha: 0.16,
                                   ))
-                          : roleColor.withValues(alpha: 0.1),
+                          : roleColor.withValues(alpha: 0.08),
                       borderRadius: BorderRadius.circular(8.r),
                       border: Border.all(
                         color: isAnswered
@@ -179,7 +179,7 @@ class WordFormationSentenceSlot extends StatelessWidget {
                                   ? AppColors.gameCorrect
                                   : AppColors.gameIncorrect)
                             : roleColor,
-                        width: 1.8,
+                        width: 1.5,
                       ),
                     ),
                     child: Text(
@@ -188,14 +188,14 @@ class WordFormationSentenceSlot extends StatelessWidget {
                           : (targetRole != null ? '[$targetRole]' : '_______'),
                       style: TextStyle(
                         fontFamily: 'Outfit',
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w800,
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w700,
                         color: isAnswered
                             ? (isCorrect == true
                                   ? AppColors.gameCorrect
                                   : AppColors.gameIncorrect)
                             : roleColor,
-                        letterSpacing: 0.5,
+                        letterSpacing: 0.4,
                       ),
                     ),
                   ),

@@ -25,13 +25,13 @@ class WordFormationFamilyTree extends StatelessWidget {
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
+      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
       decoration: BoxDecoration(
         color: isDark
             ? Colors.white.withValues(alpha: 0.05)
             : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(16.r),
-        border: Border.all(color: color.withValues(alpha: 0.25), width: 1.5),
+        border: Border.all(color: color.withValues(alpha: 0.22), width: 1.2),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,16 +39,16 @@ class WordFormationFamilyTree extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(Icons.account_tree_rounded, color: color, size: 16.r),
+              Icon(Icons.account_tree_rounded, color: color, size: 15.r),
               SizedBox(width: 6.w),
               Text(
-                'WORD FAMILY (TAP TO HEAR)',
+                'Word Family',
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 11.sp,
-                  fontWeight: FontWeight.w700,
+                  fontSize: 12.sp,
+                  fontWeight: FontWeight.w600,
                   color: color,
-                  letterSpacing: 0.8,
+                  letterSpacing: 0.4,
                 ),
               ),
             ],
@@ -68,7 +68,7 @@ class WordFormationFamilyTree extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: color.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(8.r),
-                    border: Border.all(color: color.withValues(alpha: 0.25)),
+                    border: Border.all(color: color.withValues(alpha: 0.22)),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -78,14 +78,14 @@ class WordFormationFamilyTree extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
-                          fontWeight: FontWeight.w700,
+                          fontWeight: FontWeight.w600,
                           color: isDark ? Colors.white : AppColors.slate900,
                         ),
                       ),
                       SizedBox(width: 4.w),
                       Icon(
                         Icons.volume_up_rounded,
-                        size: 12.r,
+                        size: 13.r,
                         color: color.withValues(alpha: 0.8),
                       ),
                     ],

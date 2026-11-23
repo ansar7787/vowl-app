@@ -47,13 +47,13 @@ class WordFormationMorphemeFormula extends StatelessWidget {
               ),
               SizedBox(width: 4.w),
               Text(
-                'MORPHOLOGICAL EQUATION',
+                'WORD BREAKDOWN',
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 10.sp,
-                  fontWeight: FontWeight.w800,
+                  fontWeight: FontWeight.w700,
                   color: roleColor,
-                  letterSpacing: 0.8,
+                  letterSpacing: 0.6,
                 ),
               ),
             ],
@@ -106,7 +106,7 @@ class WordFormationMorphemeFormula extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
-                      fontWeight: FontWeight.w800,
+                      fontWeight: FontWeight.w700,
                       color: AppColors.gameCorrect,
                       letterSpacing: 0.5,
                     ),
@@ -128,7 +128,7 @@ class WordFormationMorphemeFormula extends StatelessWidget {
         style: TextStyle(
           fontFamily: 'Outfit',
           fontSize: 13.sp,
-          fontWeight: FontWeight.w800,
+          fontWeight: FontWeight.w600,
           color: Colors.grey,
         ),
       ),
@@ -142,10 +142,10 @@ class WordFormationMorphemeFormula extends StatelessWidget {
     required bool isDark,
   }) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 7.w, vertical: 3.h),
+      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
       decoration: BoxDecoration(
         color: color.withValues(alpha: 0.14),
-        borderRadius: BorderRadius.circular(7.r),
+        borderRadius: BorderRadius.circular(8.r),
         border: Border.all(
           color: color.withValues(alpha: 0.35),
           width: 1.0,
@@ -158,8 +158,8 @@ class WordFormationMorphemeFormula extends StatelessWidget {
             type,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 8.sp,
-              fontWeight: FontWeight.w700,
+              fontSize: 9.5.sp,
+              fontWeight: FontWeight.w600,
               color: color,
               letterSpacing: 0.5,
             ),
@@ -168,8 +168,8 @@ class WordFormationMorphemeFormula extends StatelessWidget {
             label,
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 11.sp,
-              fontWeight: FontWeight.w800,
+              fontSize: 12.sp,
+              fontWeight: FontWeight.w700,
               color: isDark ? Colors.white : AppColors.slate900,
             ),
           ),

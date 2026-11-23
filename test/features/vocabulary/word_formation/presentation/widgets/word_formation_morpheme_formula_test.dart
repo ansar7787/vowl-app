@@ -26,7 +26,7 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      expect(find.text('MORPHOLOGICAL EQUATION'), findsOneWidget);
+      expect(find.text('WORD BREAKDOWN'), findsOneWidget);
       expect(find.text('DECIDE'), findsOneWidget);
       expect(find.text('DECISION'), findsOneWidget);
       expect(find.text('SUFFIX'), findsOneWidget);

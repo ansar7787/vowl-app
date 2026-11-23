@@ -72,21 +72,21 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
 
     return Container(
       width: double.infinity,
-      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
       decoration: BoxDecoration(
         color: isDark
             ? Colors.white.withValues(alpha: 0.05)
             : Colors.black.withValues(alpha: 0.02),
-        borderRadius: BorderRadius.circular(20.r),
+        borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
-          color: widget.primaryColor.withValues(alpha: 0.25),
-          width: 1.5,
+          color: widget.primaryColor.withValues(alpha: 0.22),
+          width: 1.2,
         ),
         boxShadow: [
           BoxShadow(
-            color: widget.primaryColor.withValues(alpha: 0.06),
-            blurRadius: 16,
-            offset: const Offset(0, 4),
+            color: widget.primaryColor.withValues(alpha: 0.05),
+            blurRadius: 12,
+            offset: const Offset(0, 3),
           ),
         ],
       ),
@@ -170,9 +170,9 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 10.sp,
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w700,
                           color: Colors.white,
-                          letterSpacing: 0.8,
+                          letterSpacing: 0.6,
                         ),
                       ),
                     ),
@@ -197,9 +197,9 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
                   style: TextStyle(
                     fontFamily: 'Outfit',
                     fontSize: 22.sp,
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w700,
                     color: isDark ? Colors.white : AppColors.slate900,
-                    letterSpacing: 1.5,
+                    letterSpacing: 0.8,
                   ),
                 ),
                 if (activeRule.isNotEmpty) ...[
@@ -289,7 +289,7 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 11.sp,
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.w600,
                 color: isSelected ? Colors.white : color,
               ),
             ),

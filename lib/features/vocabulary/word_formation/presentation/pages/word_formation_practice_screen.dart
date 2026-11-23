@@ -121,7 +121,7 @@ class _WordFormationPracticeScreenState
 
     if (_isLoading) {
       return PracticePhaseScaffold(
-        title: 'Directional Morph Gym',
+        title: 'Practice: Word Forms',
         gameType: 'wordFormation',
         level: widget.level,
         currentExerciseIndex: 0,
@@ -160,7 +160,7 @@ class _WordFormationPracticeScreenState
       isActionEnabled: _isAnswered && _isCorrect == true,
       actionLabel: _currentIndex < _quests.length - 1
           ? 'Next Exercise'
-          : 'Enter Mastery Arena ⚡',
+          : 'Start Mastery Challenge',
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
         child: Column(
@@ -238,8 +238,8 @@ class _WordFormationPracticeScreenState
                       children: [
                         Text(
                           _currentIndex < _quests.length - 1
-                              ? 'Next Scenario'
-                              : 'Unlock Mastery Test',
+                              ? 'Next Exercise'
+                              : 'Start Mastery Challenge',
                           style: TextStyle(
                             fontFamily: 'Outfit',
                             fontSize: 16.sp,
