@@ -154,7 +154,7 @@ class _WordFormationPracticeScreenState
         phase: 'practice',
       );
       context.pushReplacement(
-        '/mastery?category=vocabulary&gameType=wordFormation&level=${widget.level}',
+        '/game?category=vocabulary&gameType=wordFormation&level=${widget.level}',
       );
     }
   }
