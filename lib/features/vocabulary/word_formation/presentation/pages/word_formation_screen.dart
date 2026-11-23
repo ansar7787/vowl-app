@@ -53,6 +53,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   String? _selectedDirection;
   int _lastProcessedIndex = -1;
   int _comboStreak = 0;
+  final Set<String> _missedQuestIds = <String>{};
 
   static const int _maxTimeSeconds = 10;
   Timer? _countdownTimer;
@@ -103,6 +104,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
         }
       } else {
         timer.cancel();
+        _missedQuestIds.add(quest.id);
         setState(() {
           _secondsRemaining = 0;
           _shakeCount++;
@@ -153,6 +155,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
     });
 
     if (isMatch) {
+      _missedQuestIds.remove(quest.id);
       _comboStreak++;
       submitCorrectAnswer();
       final sentence = quest.sentence ?? quest.contextSentence ?? '';
@@ -162,23 +165,30 @@ class _WordFormationScreenState extends State<WordFormationScreen>
         di.sl<TtsService>().speak(fullText);
       }
     } else {
+      _missedQuestIds.add(quest.id);
       _comboStreak = 0;
       submitWrongAnswer(quest: quest, userAnswer: selectedWord);
     }
   }
 
-  Widget _buildSpeedArenaBar(Color primaryColor) {
+  Widget _buildSpeedArenaBar(Color primaryColor, bool isRevenge) {
     final isDanger = _secondsRemaining <= 3;
-    final activeColor = isDanger ? AppColors.gameIncorrect : primaryColor;
+    final activeColor = isDanger
+        ? AppColors.gameIncorrect
+        : (isRevenge ? const Color(0xFFF59E0B) : primaryColor);
 
     return Container(
       margin: EdgeInsets.only(top: 4.h, bottom: 8.h),
       padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
       decoration: BoxDecoration(
-        color: activeColor.withValues(alpha: isDanger ? 0.12 : 0.08),
+        color: activeColor.withValues(
+          alpha: isDanger ? 0.12 : (isRevenge ? 0.14 : 0.08),
+        ),
         borderRadius: BorderRadius.circular(12.r),
         border: Border.all(
-          color: activeColor.withValues(alpha: isDanger ? 0.4 : 0.22),
+          color: activeColor.withValues(
+            alpha: isDanger ? 0.4 : (isRevenge ? 0.45 : 0.22),
+          ),
           width: 1.2,
         ),
       ),
@@ -187,7 +197,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
           Icon(Icons.bolt_rounded, color: activeColor, size: 15.r),
           SizedBox(width: 4.w),
           Text(
-            'SPEED ARENA',
+            isRevenge ? 'REVENGE ROUND' : 'SPEED ARENA',
             style: TextStyle(
               fontFamily: 'Outfit',
               fontSize: 10.sp,
@@ -310,6 +320,9 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                   targetWord.isNotEmpty ? targetWord : rootWord,
                 );
               },
+              customHintText: _missedQuestIds.contains(quest.id)
+                  ? 'Revenge Round: Focus on the root word!'
+                  : null,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                 child: Column(
@@ -319,7 +332,10 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                         physics: const BouncingScrollPhysics(),
                         child: Column(
                           children: [
-                            _buildSpeedArenaBar(primaryColor),
+                            _buildSpeedArenaBar(
+                              primaryColor,
+                              _missedQuestIds.contains(quest.id),
+                            ),
                             WordFormationSentenceSlot(
                               sentence: sentence,
                               formedWord: isAns && isCorr == true

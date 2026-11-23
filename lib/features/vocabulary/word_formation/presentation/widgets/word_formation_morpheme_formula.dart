@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/tts_service.dart';
 import 'word_formation_colors.dart';
 
 /// Linguistic formula widget that visually decomposes a formed word
@@ -20,7 +24,7 @@ class WordFormationMorphemeFormula extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final breakdown = _deconstruct(rootWord, formedWord);
+    final breakdown = MorphemeBreakdown.deconstruct(rootWord, formedWord);
     final roleColor = WordFormationColors.forRole(targetRole);
 
     return Container(
@@ -88,27 +92,44 @@ class WordFormationMorphemeFormula extends StatelessWidget {
                   ),
                 ],
                 _buildOperator('='),
-                Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 8.w,
-                    vertical: 4.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: AppColors.gameCorrect.withValues(alpha: 0.16),
-                    borderRadius: BorderRadius.circular(8.r),
-                    border: Border.all(
-                      color: AppColors.gameCorrect.withValues(alpha: 0.5),
-                      width: 1.2,
+                ScaleButton(
+                  onTap: () {
+                    di.sl<HapticService>().selection();
+                    di.sl<TtsService>().speak(formedWord);
+                  },
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 8.w,
+                      vertical: 4.h,
                     ),
-                  ),
-                  child: Text(
-                    formedWord.toUpperCase(),
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w700,
-                      color: AppColors.gameCorrect,
-                      letterSpacing: 0.5,
+                    decoration: BoxDecoration(
+                      color: AppColors.gameCorrect.withValues(alpha: 0.16),
+                      borderRadius: BorderRadius.circular(8.r),
+                      border: Border.all(
+                        color: AppColors.gameCorrect.withValues(alpha: 0.5),
+                        width: 1.2,
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          formedWord.toUpperCase(),
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 12.sp,
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.gameCorrect,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                        SizedBox(width: 4.w),
+                        Icon(
+                          Icons.volume_up_rounded,
+                          size: 13.r,
+                          color: AppColors.gameCorrect,
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -177,8 +198,17 @@ class WordFormationMorphemeFormula extends StatelessWidget {
       ),
     );
   }
+}
 
-  _MorphemeBreakdown _deconstruct(String root, String formed) {
+/// Represents the morphological breakdown of an English word.
+class MorphemeBreakdown {
+  final String? prefix;
+  final String? stem;
+  final String? suffix;
+
+  const MorphemeBreakdown({this.prefix, this.stem, this.suffix});
+
+  static MorphemeBreakdown deconstruct(String root, String formed) {
     final cleanRoot = root.trim().toUpperCase();
     final cleanFormed = formed.trim().toUpperCase();
 
@@ -187,18 +217,8 @@ class WordFormationMorphemeFormula extends StatelessWidget {
 
     // Detect known English prefixes
     const prefixes = [
-      'UN',
-      'IN',
-      'IM',
-      'IL',
-      'IR',
-      'DIS',
-      'MIS',
-      'RE',
-      'NON',
-      'OVER',
-      'UNDER',
-      'OUT',
+      'UN', 'IN', 'IM', 'IL', 'IR', 'DIS', 'MIS', 'RE', 'NON',
+      'OVER', 'UNDER', 'OUT',
     ];
 
     for (final p in prefixes) {
@@ -210,53 +230,22 @@ class WordFormationMorphemeFormula extends StatelessWidget {
     }
 
     String? suffix;
+    String stem = remainder;
     const suffixes = [
-      'ATION',
-      'ITION',
-      'SION',
-      'TION',
-      'MENT',
-      'NESS',
-      'ITY',
-      'ANCE',
-      'ENCE',
-      'SHIP',
-      'HOOD',
-      'ISM',
-      'IVELY',
-      'FULLY',
-      'LESSLY',
-      'ABLY',
-      'IBLY',
-      'ALLY',
-      'LY',
-      'IVE',
-      'OUS',
-      'FUL',
-      'LESS',
-      'ABLE',
-      'IBLE',
-      'IC',
-      'AL',
-      'ARY',
-      'ORY',
-      'ATE',
+      'ATION', 'ITION', 'SION', 'TION', 'MENT', 'NESS', 'ITY', 'ANCE', 'ENCE',
+      'SHIP', 'HOOD', 'ISM', 'IVELY', 'FULLY', 'LESSLY', 'ABLY', 'IBLY',
+      'ALLY', 'LY', 'IVE', 'OUS', 'FUL', 'LESS', 'ABLE', 'IBLE', 'IC',
+      'AL', 'ARY', 'ORY', 'ATE',
     ];
 
     for (final s in suffixes) {
       if (remainder.endsWith(s) && !cleanRoot.endsWith(s)) {
         suffix = '-$s';
+        stem = remainder.substring(0, remainder.length - s.length);
         break;
       }
     }
 
-    return _MorphemeBreakdown(prefix: prefix, suffix: suffix);
+    return MorphemeBreakdown(prefix: prefix, stem: stem, suffix: suffix);
   }
-}
-
-class _MorphemeBreakdown {
-  final String? prefix;
-  final String? suffix;
-
-  const _MorphemeBreakdown({this.prefix, this.suffix});
 }
