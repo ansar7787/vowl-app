@@ -91,6 +91,9 @@ class _WordFormationScreenState extends State<WordFormationScreen>
         timer.cancel();
         return;
       }
+      if (ModalRoute.of(context)?.isCurrent != true) {
+        return;
+      }
       if (_secondsRemaining > 1) {
         setState(() {
           _secondsRemaining--;

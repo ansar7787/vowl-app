@@ -207,7 +207,9 @@ class _WordFormationPracticeScreenState
                       southWord: southWord,
                       westWord: westWord,
                       selectedDirection: _selectedDirection,
-                      correctDirection: _isAnswered ? correctDir : null,
+                      correctDirection: (_isAnswered || _isCorrect == false)
+                          ? correctDir
+                          : null,
                       isAnswered: _isAnswered,
                       primaryColor: primaryColor,
                       comboStreak: _comboStreak,

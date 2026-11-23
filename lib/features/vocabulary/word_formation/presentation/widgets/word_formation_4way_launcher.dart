@@ -236,6 +236,14 @@ class WordFormation4WayLauncher extends StatelessWidget {
       } else {
         opacity = 0.55;
       }
+    } else if (isSelected && correctDirection != null && !isTargetCorrect) {
+      borderColor = AppColors.gameIncorrect;
+      bgColor = AppColors.gameIncorrect.withValues(alpha: 0.15);
+      trailingStatus = Icon(
+        Icons.cancel_rounded,
+        color: AppColors.gameIncorrect,
+        size: 18.r,
+      );
     }
 
     return Opacity(
