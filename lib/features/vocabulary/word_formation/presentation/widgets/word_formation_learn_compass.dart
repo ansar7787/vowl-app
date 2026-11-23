@@ -6,6 +6,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
+import 'word_formation_colors.dart';
 
 /// Interactive discovery compass card used in Learn phase to explore 4-way morphological shifts.
 class WordFormationLearnCompass extends StatefulWidget {
@@ -67,6 +68,7 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
     final activeRole = (active['role'] as String? ?? '').toUpperCase();
     final activeRule = active['rule'] as String? ?? '';
     final activeExample = active['example'] as String? ?? '';
+    final activeColor = WordFormationColors.forDirection(_activeDirection);
 
     return Container(
       width: double.infinity,
@@ -92,18 +94,38 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          // 4-Way Compass Switcher Chips
+          // 4-Way Compass Switcher Chips with distinct role hues
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
-                _buildRoleChip('north', 'NOUN', Icons.north_rounded),
+                _buildRoleChip(
+                  direction: 'north',
+                  label: 'NOUN',
+                  icon: Icons.north_rounded,
+                  color: WordFormationColors.northNoun,
+                ),
                 SizedBox(width: 8.w),
-                _buildRoleChip('east', 'ADJECTIVE', Icons.east_rounded),
+                _buildRoleChip(
+                  direction: 'east',
+                  label: 'ADJECTIVE',
+                  icon: Icons.east_rounded,
+                  color: WordFormationColors.eastAdjective,
+                ),
                 SizedBox(width: 8.w),
-                _buildRoleChip('south', 'ADVERB', Icons.south_rounded),
+                _buildRoleChip(
+                  direction: 'south',
+                  label: 'ADVERB',
+                  icon: Icons.south_rounded,
+                  color: WordFormationColors.southAdverb,
+                ),
                 SizedBox(width: 8.w),
-                _buildRoleChip('west', 'OPPOSITE', Icons.west_rounded),
+                _buildRoleChip(
+                  direction: 'west',
+                  label: 'OPPOSITE',
+                  icon: Icons.west_rounded,
+                  color: WordFormationColors.westOpposite,
+                ),
               ],
             ),
           ),
@@ -115,11 +137,19 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
             width: double.infinity,
             padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
             decoration: BoxDecoration(
-              color: widget.primaryColor.withValues(alpha: 0.08),
+              color: activeColor.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(16.r),
               border: Border.all(
-                color: widget.primaryColor.withValues(alpha: 0.2),
+                color: activeColor.withValues(alpha: 0.35),
+                width: 1.5,
               ),
+              boxShadow: [
+                BoxShadow(
+                  color: activeColor.withValues(alpha: 0.1),
+                  blurRadius: 12,
+                  offset: const Offset(0, 3),
+                ),
+              ],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -132,7 +162,7 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
                         vertical: 3.h,
                       ),
                       decoration: BoxDecoration(
-                        color: widget.primaryColor,
+                        color: activeColor,
                         borderRadius: BorderRadius.circular(6.r),
                       ),
                       child: Text(
@@ -140,7 +170,7 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 10.sp,
-                          fontWeight: FontWeight.w700,
+                          fontWeight: FontWeight.w800,
                           color: Colors.white,
                           letterSpacing: 0.8,
                         ),
@@ -155,7 +185,7 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
                       },
                       child: Icon(
                         Icons.volume_up_rounded,
-                        color: widget.primaryColor,
+                        color: activeColor,
                         size: 20.r,
                       ),
                     ),
@@ -178,7 +208,7 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
                     children: [
                       Icon(
                         Icons.auto_fix_high_rounded,
-                        color: widget.primaryColor,
+                        color: activeColor,
                         size: 14.r,
                       ),
                       SizedBox(width: 6.w),
@@ -189,7 +219,7 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
                             fontFamily: 'Outfit',
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w600,
-                            color: widget.primaryColor,
+                            color: activeColor,
                           ),
                         ),
                       ),
@@ -217,7 +247,12 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
     );
   }
 
-  Widget _buildRoleChip(String direction, String label, IconData icon) {
+  Widget _buildRoleChip({
+    required String direction,
+    required String label,
+    required IconData icon,
+    required Color color,
+  }) {
     final isSelected = _activeDirection == direction;
 
     return ScaleButton(
@@ -225,15 +260,20 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
         decoration: BoxDecoration(
-          color: isSelected
-              ? widget.primaryColor
-              : widget.primaryColor.withValues(alpha: 0.1),
+          color: isSelected ? color : color.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(10.r),
           border: Border.all(
-            color: isSelected
-                ? widget.primaryColor
-                : widget.primaryColor.withValues(alpha: 0.25),
+            color: isSelected ? color : color.withValues(alpha: 0.28),
+            width: isSelected ? 1.8 : 1.0,
           ),
+          boxShadow: [
+            if (isSelected)
+              BoxShadow(
+                color: color.withValues(alpha: 0.25),
+                blurRadius: 8,
+                offset: const Offset(0, 2),
+              ),
+          ],
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
@@ -241,7 +281,7 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
             Icon(
               icon,
               size: 13.r,
-              color: isSelected ? Colors.white : widget.primaryColor,
+              color: isSelected ? Colors.white : color,
             ),
             SizedBox(width: 4.w),
             Text(
@@ -250,7 +290,7 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
                 fontFamily: 'Outfit',
                 fontSize: 11.sp,
                 fontWeight: FontWeight.w700,
-                color: isSelected ? Colors.white : widget.primaryColor,
+                color: isSelected ? Colors.white : color,
               ),
             ),
           ],

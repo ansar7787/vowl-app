@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/shakeable_wrapper.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
+import 'word_formation_colors.dart';
 
 /// Card rendering the sentence context with an animated morphological slot.
 class WordFormationSentenceSlot extends StatelessWidget {
@@ -38,6 +38,7 @@ class WordFormationSentenceSlot extends StatelessWidget {
     final parts = sentence.split('_______');
     final beforeText = parts.isNotEmpty ? parts[0] : sentence;
     final afterText = parts.length > 1 ? parts[1] : '';
+    final roleColor = WordFormationColors.forRole(targetRole);
 
     final cardContent = Container(
       width: double.infinity,
@@ -52,14 +53,14 @@ class WordFormationSentenceSlot extends StatelessWidget {
               ? (isCorrect == true
                     ? AppColors.gameCorrect.withValues(alpha: 0.5)
                     : AppColors.gameIncorrect.withValues(alpha: 0.5))
-              : primaryColor.withValues(alpha: 0.25),
+              : roleColor.withValues(alpha: 0.35),
           width: 1.5,
         ),
         boxShadow: [
           BoxShadow(
             color: isAnswered && isCorrect == true
                 ? AppColors.gameCorrect.withValues(alpha: 0.12)
-                : primaryColor.withValues(alpha: 0.05),
+                : roleColor.withValues(alpha: 0.06),
             blurRadius: 16,
             offset: const Offset(0, 4),
           ),
@@ -76,15 +77,19 @@ class WordFormationSentenceSlot extends StatelessWidget {
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
                   decoration: BoxDecoration(
-                    color: primaryColor.withValues(alpha: 0.12),
+                    color: roleColor.withValues(alpha: 0.14),
                     borderRadius: BorderRadius.circular(8.r),
+                    border: Border.all(
+                      color: roleColor.withValues(alpha: 0.3),
+                      width: 1.0,
+                    ),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(
-                        Icons.psychology_rounded,
-                        color: primaryColor,
+                        Icons.auto_fix_normal_rounded,
+                        color: roleColor,
                         size: 14.r,
                       ),
                       SizedBox(width: 4.w),
@@ -99,7 +104,7 @@ class WordFormationSentenceSlot extends StatelessWidget {
                             fontFamily: 'Outfit',
                             fontSize: 11.sp,
                             fontWeight: FontWeight.w700,
-                            color: primaryColor,
+                            color: roleColor,
                             letterSpacing: 0.8,
                           ),
                         ),
@@ -159,19 +164,19 @@ class WordFormationSentenceSlot extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: isAnswered
                           ? (isCorrect == true
-                                ? AppColors.gameCorrect.withValues(alpha: 0.15)
+                                ? AppColors.gameCorrect.withValues(alpha: 0.18)
                                 : AppColors.gameIncorrect.withValues(
-                                    alpha: 0.15,
+                                    alpha: 0.18,
                                   ))
-                          : primaryColor.withValues(alpha: 0.1),
+                          : roleColor.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8.r),
                       border: Border.all(
                         color: isAnswered
                             ? (isCorrect == true
                                   ? AppColors.gameCorrect
                                   : AppColors.gameIncorrect)
-                            : primaryColor,
-                        width: 1.5,
+                            : roleColor,
+                        width: 1.8,
                       ),
                     ),
                     child: Text(
@@ -181,12 +186,12 @@ class WordFormationSentenceSlot extends StatelessWidget {
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 15.sp,
-                        fontWeight: FontWeight.w700,
+                        fontWeight: FontWeight.w800,
                         color: isAnswered
                             ? (isCorrect == true
                                   ? AppColors.gameCorrect
                                   : AppColors.gameIncorrect)
-                            : primaryColor,
+                            : roleColor,
                         letterSpacing: 0.5,
                       ),
                     ),
@@ -255,12 +260,15 @@ class WordFormationSentenceSlot extends StatelessWidget {
                   ),
                 ],
               ),
-            ).animate().fadeIn(duration: 250.ms).slideY(begin: 0.1, end: 0),
+            ),
           ],
         ],
       ),
     );
 
-    return ShakeableWrapper(shakeCount: shakeCount, child: cardContent);
+    return ShakeableWrapper(
+      shakeCount: shakeCount,
+      child: cardContent,
+    );
   }
 }

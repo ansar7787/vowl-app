@@ -181,6 +181,7 @@ void main() {
         expect(find.byType(WordFormation4WayLauncher), findsOneWidget);
       } finally {
         await tester.pumpWidget(const SizedBox());
+        await tester.pumpAndSettle();
         tester.view.resetPhysicalSize();
         tester.view.resetDevicePixelRatio();
       }
@@ -209,6 +210,7 @@ void main() {
         ).called(1);
       } finally {
         await tester.pumpWidget(const SizedBox());
+        await tester.pumpAndSettle();
         tester.view.resetPhysicalSize();
         tester.view.resetDevicePixelRatio();
       }
@@ -239,6 +241,7 @@ void main() {
         ).called(1);
       } finally {
         await tester.pumpWidget(const SizedBox());
+        await tester.pumpAndSettle();
         tester.view.resetPhysicalSize();
         tester.view.resetDevicePixelRatio();
       }
@@ -271,6 +274,7 @@ void main() {
           ).called(greaterThanOrEqualTo(1));
         } finally {
           await tester.pumpWidget(const SizedBox());
+          await tester.pumpAndSettle();
           tester.view.resetPhysicalSize();
           tester.view.resetDevicePixelRatio();
         }

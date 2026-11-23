@@ -157,6 +157,13 @@ class _WordFormationScreenState extends State<WordFormationScreen>
         final targetWord = quest.targetWord ?? quest.correctAnswer ?? '';
         final correctIndex = quest.correctAnswerIndex;
         final correctDir = _directionFromIndex(correctIndex);
+        final targetRoleName = correctIndex == 0
+            ? 'Noun (North ⬆️)'
+            : (correctIndex == 1
+                ? 'Adjective (East ➡️)'
+                : (correctIndex == 2
+                    ? 'Adverb (South ⬇️)'
+                    : 'Opposite (West ⬅️)'));
 
         final northWord = options.isNotEmpty ? options[0] : '${rootWord}_NOUN';
         final eastWord = options.length > 1 ? options[1] : '${rootWord}_ADJ';
@@ -212,7 +219,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                               formedWord: isAns && isCorr == true
                                   ? targetWord
                                   : null,
-                              targetRole: 'Target Word',
+                              targetRole: targetRoleName,
                               roleClue: quest.hint,
                               isAnswered: isAns,
                               isCorrect: isCorr,
