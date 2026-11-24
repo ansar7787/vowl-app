@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,6 +9,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
+import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/presentation/layout/vocabulary_base_layout.dart';
@@ -15,6 +17,7 @@ import 'package:vowl/features/vocabulary/presentation/mixins/vocabulary_game_scr
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/controllers/prefix_suffix_controller.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_combo_hud.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_precision_slicer.dart';
+import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_translation_banner.dart';
 
 /// Interactive Prefix & Suffix Mastery Game Screen: "Morpheme Precision Slicer".
 ///
@@ -68,6 +71,9 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
   void initState() {
     super.initState();
     _controller = PrefixSuffixController();
+    if (di.sl.isRegistered<TtsService>()) {
+      unawaited(di.sl<TtsService>().preWarm(locale: 'en-US'));
+    }
     initVocabularyGame();
   }
 
@@ -275,43 +281,14 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                     ),
                     SizedBox(height: 16.h),
 
-                    // Semantic Context & Definition
+                    // Semantic Context & Definition with 1-Click Translation & Native Audio
                     if (quest.definition != null &&
                         quest.definition!.isNotEmpty) ...[
-                      Container(
-                        width: double.infinity,
-                        padding: EdgeInsets.all(12.w),
-                        decoration: BoxDecoration(
-                          color: isDark ? AppColors.slate800 : Colors.white,
-                          borderRadius: BorderRadius.circular(14.r),
-                          border: Border.all(
-                            color: isDark
-                                ? AppColors.slate700
-                                : AppColors.slate200,
-                          ),
-                          boxShadow: isDark
-                              ? null
-                              : [
-                                  BoxShadow(
-                                    color: Colors.black.withValues(alpha: 0.03),
-                                    blurRadius: 6,
-                                    offset: const Offset(0, 2),
-                                  ),
-                                ],
-                        ),
-                        child: Text(
-                          quest.definition!,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontFamily: 'Inter',
-                            fontSize: 13.sp,
-                            fontWeight: FontWeight.w400,
-                            height: 1.45,
-                            color: isDark
-                                ? AppColors.slate300
-                                : AppColors.slate700,
-                          ),
-                        ),
+                      PrefixSuffixTranslationBanner(
+                        originalText: quest.definition!,
+                        isDark: isDark,
+                        accentColor: AppColors.indigo500,
+                        label: 'Definition & Meaning',
                       ),
                     ],
                     SizedBox(height: 16.h),

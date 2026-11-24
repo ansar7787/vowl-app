@@ -149,6 +149,15 @@ void main() {
         locale: any(named: 'locale'),
       ),
     ).thenAnswer((_) async {});
+    when(
+      () => mockTtsService.preWarm(
+        locale: any(named: 'locale'),
+        preset: any(named: 'preset'),
+      ),
+    ).thenAnswer((_) async {});
+    when(
+      () => mockTtsService.isSpeakingNotifier,
+    ).thenReturn(ValueNotifier<bool>(false));
 
     when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
 

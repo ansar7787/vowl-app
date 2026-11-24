@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_morphology_helper.dart';
+import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_translation_banner.dart';
 
 /// Interactive Discovery Card for Prefix & Suffix Learn Phase ("Affix Tumbler Sandbox").
 class PrefixSuffixDiscoveryCard extends StatelessWidget {
@@ -35,37 +36,35 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
     required String text,
     required Color color,
     IconData? icon,
-  }) {
-    return Container(
-      constraints: BoxConstraints(maxWidth: 256.w),
-      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.12),
-        borderRadius: BorderRadius.circular(6.r),
-        border: Border.all(color: color.withValues(alpha: 0.4)),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (icon != null) ...[
-            Icon(icon, size: 11.sp, color: color),
-            SizedBox(width: 4.w),
-          ],
-          Flexible(
-            child: Text(
-              text,
-              style: TextStyle(
-                fontFamily: 'Inter',
-                fontSize: 10.sp,
-                fontWeight: FontWeight.w600,
-                color: color,
-              ),
+  }) => Container(
+    constraints: BoxConstraints(maxWidth: 256.w),
+    padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+    decoration: BoxDecoration(
+      color: color.withValues(alpha: 0.12),
+      borderRadius: BorderRadius.circular(6.r),
+      border: Border.all(color: color.withValues(alpha: 0.4)),
+    ),
+    child: Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        if (icon != null) ...[
+          Icon(icon, size: 11.sp, color: color),
+          SizedBox(width: 4.w),
+        ],
+        Flexible(
+          child: Text(
+            text,
+            style: TextStyle(
+              fontFamily: 'Inter',
+              fontSize: 10.sp,
+              fontWeight: FontWeight.w600,
+              color: color,
             ),
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
 
   Widget _buildOperator(String symbol, {Color? color}) => Padding(
     padding: EdgeInsets.symmetric(horizontal: 6.w),
@@ -125,18 +124,17 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
     required String tip,
     Color? color,
     double size = 22,
-  }) {
-    if (onTap == null) return const SizedBox.shrink();
-    return IconButton(
-      onPressed: () {
-        HapticFeedback.lightImpact();
-        onTap();
-      },
-      icon: Icon(icon, color: color ?? AppColors.indigo400, size: size.sp),
-      tooltip: tip,
-      splashRadius: 20.r,
-    );
-  }
+  }) => onTap == null
+      ? const SizedBox.shrink()
+      : IconButton(
+          onPressed: () {
+            HapticFeedback.lightImpact();
+            onTap();
+          },
+          icon: Icon(icon, color: color ?? AppColors.indigo400, size: size.sp),
+          tooltip: tip,
+          splashRadius: 20.r,
+        );
 
   Widget _buildHighlightedSentence(bool isDark) {
     final lowerSentence = contextSentence.toLowerCase();
@@ -369,6 +367,15 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
 
             // Context Sentence
             _buildHighlightedSentence(isDark),
+            SizedBox(height: 10.h),
+
+            // 1-Click AI Translation & Native Pronunciation TTS
+            PrefixSuffixTranslationBanner(
+              originalText: '$definition ($contextSentence)',
+              accentColor: AppColors.violet500,
+              isDark: isDark,
+              label: 'Definition & Context',
+            ),
           ],
         ),
       ),

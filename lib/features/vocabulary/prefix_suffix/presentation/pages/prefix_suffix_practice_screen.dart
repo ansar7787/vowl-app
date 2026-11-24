@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -9,8 +10,10 @@ import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/controllers/prefix_suffix_controller.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_clue_banner.dart';
+import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_translation_banner.dart';
 
 /// Practice Phase Screen for Prefix & Suffix: "Vault Combination Cracker".
 ///
@@ -40,6 +43,9 @@ class _PrefixSuffixPracticeScreenState
   void initState() {
     super.initState();
     _controller = PrefixSuffixController();
+    if (di.sl.isRegistered<TtsService>()) {
+      unawaited(di.sl<TtsService>().preWarm(locale: 'en-US'));
+    }
     _loadCurriculum();
   }
 
@@ -156,20 +162,22 @@ class _PrefixSuffixPracticeScreenState
     final questData = _rawQuests[_currentIndex];
     final rootWord = questData['rootWord'] as String? ?? 'WORD';
     final rootMeaning = questData['rootMeaning'] as String? ?? '';
-    final contextSentence = questData['contextSentence'] as String? ??
+    final contextSentence =
+        questData['contextSentence'] as String? ??
         questData['clueSentence'] as String? ??
         '';
-    final correctAnswer = questData['correctAnswer'] as String? ??
+    final correctAnswer =
+        questData['correctAnswer'] as String? ??
         questData['targetAffix'] as String? ??
         '';
-    final rawOptions = (questData['options'] as List<dynamic>?) ??
+    final rawOptions =
+        (questData['options'] as List<dynamic>?) ??
         (questData['tumblerWheelOptions'] as List<dynamic>?) ??
         [];
     final options = rawOptions.map((e) => e.toString()).toList();
     final hint = questData['hint'] as String? ?? '';
     final explanation = questData['explanation'] as String? ?? '';
-        questData['jamExplanation'] as String? ??
-        '';
+    questData['jamExplanation'] as String? ?? '';
 
     return ListenableBuilder(
       listenable: _controller,
@@ -202,7 +210,13 @@ class _PrefixSuffixPracticeScreenState
                   isJammed: isJammed,
                   isUnlocked: isUnlocked,
                 ),
-                SizedBox(height: 18.h),
+                PrefixSuffixTranslationBanner(
+                  originalText: contextSentence.replaceAll('{{gap}}', '___'),
+                  isDark: isDark,
+                  accentColor: AppColors.indigo500,
+                  label: 'Clue Sentence',
+                ),
+                SizedBox(height: 10.h),
 
                 // Dial Selection Prompt with Practice Reassurance
                 Text(
@@ -290,32 +304,13 @@ class _PrefixSuffixPracticeScreenState
 
                 // Pedagogical Explanation on unlock
                 if (isUnlocked && explanation.isNotEmpty) ...[
-                  Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 14.w,
-                      vertical: 10.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColors.emerald500.withValues(alpha: 0.1),
-                      borderRadius: BorderRadius.circular(12.r),
-                      border: Border.all(
-                        color: AppColors.emerald500.withValues(alpha: 0.3),
-                      ),
-                    ),
-                    child: Text(
-                      explanation,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontFamily: 'Inter',
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w500,
-                        height: 1.4,
-                        color: AppColors.emerald500,
-                      ),
-                    ),
+                  PrefixSuffixTranslationBanner(
+                    originalText: explanation,
+                    isDark: isDark,
+                    accentColor: AppColors.emerald500,
+                    label: 'Explanation Breakdown',
                   ),
-                  SizedBox(height: 14.h),
+                  SizedBox(height: 10.h),
                 ],
 
                 // Unlimited Hint Button

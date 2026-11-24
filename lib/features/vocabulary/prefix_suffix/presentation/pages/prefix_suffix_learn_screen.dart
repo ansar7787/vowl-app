@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -36,6 +37,9 @@ class _PrefixSuffixLearnScreenState extends State<PrefixSuffixLearnScreen> {
   @override
   void initState() {
     super.initState();
+    if (di.sl.isRegistered<TtsService>()) {
+      unawaited(di.sl<TtsService>().preWarm(locale: 'en-US'));
+    }
     _loadCurriculum();
   }
 
