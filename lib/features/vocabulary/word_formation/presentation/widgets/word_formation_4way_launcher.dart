@@ -191,7 +191,7 @@ class _WordFormation4WayLauncherState extends State<WordFormation4WayLauncher> {
       comboLabel = '2x';
     } else if (widget.comboStreak >= 3) {
       orbColor = const Color(0xFFEAB308);
-      comboLabel = '3x 🔥';
+      comboLabel = '${widget.comboStreak}x';
     }
 
     return Container(

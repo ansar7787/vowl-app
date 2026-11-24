@@ -220,7 +220,7 @@ class _WordFormationPracticeScreenState
                       rootWord: rootWord,
                       targetRole: targetRole,
                       roleClue: _dueReviewRoots.contains(rootWord)
-                          ? '🔥 Spaced Review: Master this word!'
+                          ? 'Spaced Review: Focus on the root word!'
                           : roleClue,
                       isAnswered: _isAnswered,
                       isCorrect: _isCorrect,

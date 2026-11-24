@@ -49,6 +49,11 @@ class _WordFormationSentenceSlotState extends State<WordFormationSentenceSlot> {
   String? _targetLanguageCode;
   bool _showTranslated = false;
 
+  String _stripEmoji(String text) => text.replaceAll(
+        RegExp(r'[\u{1F300}-\u{1F9FF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE00}-\u{FE0F}]', unicode: true),
+        '',
+      );
+
   @override
   void didUpdateWidget(covariant WordFormationSentenceSlot oldWidget) {
     super.didUpdateWidget(oldWidget);
@@ -75,9 +80,7 @@ class _WordFormationSentenceSlotState extends State<WordFormationSentenceSlot> {
       width: double.infinity,
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
       decoration: BoxDecoration(
-        color: isDark
-            ? Colors.white.withValues(alpha: 0.05)
-            : Colors.black.withValues(alpha: 0.02),
+        color: isDark ? Colors.white.withValues(alpha: 0.05) : Colors.black.withValues(alpha: 0.02),
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
           color: statusColor.withValues(alpha: widget.isCorrect != null ? 0.45 : 0.28),
@@ -85,9 +88,7 @@ class _WordFormationSentenceSlotState extends State<WordFormationSentenceSlot> {
         ),
         boxShadow: [
           BoxShadow(
-            color: (widget.isAnswered && widget.isCorrect == true
-                    ? AppColors.gameCorrect
-                    : roleColor)
+            color: (widget.isAnswered && widget.isCorrect == true ? AppColors.gameCorrect : roleColor)
                 .withValues(alpha: widget.isAnswered && widget.isCorrect == true ? 0.1 : 0.05),
             blurRadius: 12,
             offset: const Offset(0, 3),
@@ -111,10 +112,7 @@ class _WordFormationSentenceSlotState extends State<WordFormationSentenceSlot> {
                           decoration: BoxDecoration(
                             color: widget.primaryColor.withValues(alpha: 0.12),
                             borderRadius: BorderRadius.circular(8.r),
-                            border: Border.all(
-                              color: widget.primaryColor.withValues(alpha: 0.28),
-                              width: 1.0,
-                            ),
+                            border: Border.all(color: widget.primaryColor.withValues(alpha: 0.28), width: 1.0),
                           ),
                           child: FittedBox(
                             fit: BoxFit.scaleDown,
@@ -236,14 +234,9 @@ class _WordFormationSentenceSlotState extends State<WordFormationSentenceSlot> {
                     padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 3.h),
                     margin: EdgeInsets.symmetric(horizontal: 4.w),
                     decoration: BoxDecoration(
-                      color: widget.isAnswered
-                          ? statusColor.withValues(alpha: 0.16)
-                          : roleColor.withValues(alpha: 0.08),
+                      color: widget.isAnswered ? statusColor.withValues(alpha: 0.16) : roleColor.withValues(alpha: 0.08),
                       borderRadius: BorderRadius.circular(8.r),
-                      border: Border.all(
-                        color: widget.isAnswered ? statusColor : roleColor,
-                        width: 1.5,
-                      ),
+                      border: Border.all(color: widget.isAnswered ? statusColor : roleColor, width: 1.5),
                     ),
                     child: WordFormationSlotContent(
                       isAnswered: widget.isAnswered,
@@ -343,7 +336,7 @@ class _WordFormationSentenceSlotState extends State<WordFormationSentenceSlot> {
                 SizedBox(width: 6.w),
                 Expanded(
                   child: Text(
-                    widget.roleClue!,
+                    _stripEmoji(widget.roleClue!),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 12.sp,
@@ -380,7 +373,7 @@ class _WordFormationSentenceSlotState extends State<WordFormationSentenceSlot> {
                   SizedBox(width: 6.w),
                   Expanded(
                     child: Text(
-                      widget.bounceFeedback!,
+                      _stripEmoji(widget.bounceFeedback!),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 12.sp,

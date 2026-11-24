@@ -110,40 +110,21 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          // 4-Way Compass Switcher Chips with distinct role hues
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                _buildRoleChip(
-                  direction: 'north',
-                  label: 'NOUN',
-                  icon: Icons.north_rounded,
-                  color: WordFormationColors.northNoun,
-                ),
-                SizedBox(width: 8.w),
-                _buildRoleChip(
-                  direction: 'east',
-                  label: 'ADJECTIVE',
-                  icon: Icons.east_rounded,
-                  color: WordFormationColors.eastAdjective,
-                ),
-                SizedBox(width: 8.w),
-                _buildRoleChip(
-                  direction: 'south',
-                  label: 'ADVERB',
-                  icon: Icons.south_rounded,
-                  color: WordFormationColors.southAdverb,
-                ),
-                SizedBox(width: 8.w),
-                _buildRoleChip(
-                  direction: 'west',
-                  label: 'OPPOSITE',
-                  icon: Icons.west_rounded,
-                  color: WordFormationColors.westOpposite,
-                ),
-              ],
-            ),
+          // 4-Way Compass Switcher Grid (Full width, zero side-cutting)
+          Row(
+            children: [
+              Expanded(child: _buildRoleChip(direction: 'north', label: 'NOUN', icon: Icons.north_rounded, color: WordFormationColors.northNoun)),
+              SizedBox(width: 8.w),
+              Expanded(child: _buildRoleChip(direction: 'east', label: 'ADJECTIVE', icon: Icons.east_rounded, color: WordFormationColors.eastAdjective)),
+            ],
+          ),
+          SizedBox(height: 8.h),
+          Row(
+            children: [
+              Expanded(child: _buildRoleChip(direction: 'south', label: 'ADVERB', icon: Icons.south_rounded, color: WordFormationColors.southAdverb)),
+              SizedBox(width: 8.w),
+              Expanded(child: _buildRoleChip(direction: 'west', label: 'OPPOSITE', icon: Icons.west_rounded, color: WordFormationColors.westOpposite)),
+            ],
           ),
           SizedBox(height: 16.h),
 
@@ -374,21 +355,27 @@ class _WordFormationLearnCompassState extends State<WordFormationLearnCompass> {
           ],
         ),
         child: Row(
-          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
               icon,
               size: 13.r,
               color: isSelected ? Colors.white : color,
             ),
-            SizedBox(width: 4.w),
-            Text(
-              label,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.w600,
-                color: isSelected ? Colors.white : color,
+            SizedBox(width: 5.w),
+            Flexible(
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  label,
+                  style: TextStyle(
+                    fontFamily: 'Outfit',
+                    fontSize: 11.sp,
+                    fontWeight: FontWeight.w700,
+                    color: isSelected ? Colors.white : color,
+                    letterSpacing: 0.3,
+                  ),
+                ),
               ),
             ),
           ],

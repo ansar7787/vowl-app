@@ -195,7 +195,7 @@ class WordFormationCurriculumService {
           'correctDirection': 'north',
           'targetRole': 'Noun',
           'roleClue':
-              "The adjective 'unanimous' must describe a NOUN (North ⬆️).",
+              "The adjective 'unanimous' must describe a NOUN (North).",
           'northNoun': 'DECISION',
           'eastAdjective': 'DECISIVE',
           'southAdverb': 'DECISIVELY',
@@ -207,7 +207,7 @@ class WordFormationCurriculumService {
             'INDECISIVE',
           ],
           'bounceFeedback':
-              "Notice: 'unanimous' is an adjective, which describes a NOUN (North ⬆️)!",
+              "Notice: 'unanimous' is an adjective, which describes a NOUN (North)!",
         },
       ),
       PhasedQuest(
@@ -224,7 +224,7 @@ class WordFormationCurriculumService {
           'correctDirection': 'east',
           'targetRole': 'Adjective',
           'roleClue':
-              "Modifies the noun 'mindset' ➔ Needs an ADJECTIVE (East ➡️).",
+              "Modifies the noun 'mindset' ➔ Needs an ADJECTIVE (East).",
           'northNoun': 'CREATION',
           'eastAdjective': 'CREATIVE',
           'southAdverb': 'CREATIVELY',
@@ -236,7 +236,7 @@ class WordFormationCurriculumService {
             'UNCREATIVE',
           ],
           'bounceFeedback':
-              "Notice: Modifying 'mindset' requires an ADJECTIVE (East ➡️)!",
+              "Notice: Modifying 'mindset' requires an ADJECTIVE (East)!",
         },
       ),
     ];

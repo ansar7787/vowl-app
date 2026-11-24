@@ -95,7 +95,7 @@ void main() {
       },
     );
 
-    testWidgets('advances to next card on continue action', (tester) async {
+    testWidgets('advances to next card and navigates back with previous button', (tester) async {
       await tester.pumpWidget(
         buildTestableWidget(const WordFormationLearnScreen(level: 1)),
       );
@@ -107,6 +107,12 @@ void main() {
         await tester.ensureVisible(nextFinder.first);
         await tester.tap(nextFinder.first);
         await tester.pumpAndSettle();
+
+        final backFinder = find.byIcon(Icons.arrow_back_rounded);
+        if (backFinder.evaluate().isNotEmpty) {
+          await tester.tap(backFinder.first);
+          await tester.pumpAndSettle();
+        }
       }
     });
   });

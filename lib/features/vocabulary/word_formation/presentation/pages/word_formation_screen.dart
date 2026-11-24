@@ -62,6 +62,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   Timer? _countdownTimer;
   int _secondsRemaining = _maxTimeSeconds;
   VocabularyQuest? _activeQuest;
+  VocabularyQuest? _lastQuest;
 
   @override
   void initState() {
@@ -259,7 +260,13 @@ class _WordFormationScreenState extends State<WordFormationScreen>
       listenWhen: vocabularyListenWhen,
       listener: onVocabularyStateChanged,
       builder: (context, state) {
-        if (state is! VocabularyLoaded || state.currentQuestOrNull == null) {
+        if (state is VocabularyLoaded) {
+          _lastQuest = state.currentQuestOrNull ?? _lastQuest;
+        }
+
+        final quest = (state is VocabularyLoaded ? state.currentQuestOrNull : null) ?? _lastQuest;
+
+        if (quest == null) {
           return Scaffold(
             backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             body: SafeArea(
@@ -268,9 +275,8 @@ class _WordFormationScreenState extends State<WordFormationScreen>
           );
         }
 
-        final quest = state.currentQuest;
         _activeQuest = quest;
-        if (state.currentIndex != _lastProcessedIndex) {
+        if (state is VocabularyLoaded && state.currentIndex != _lastProcessedIndex) {
           _lastProcessedIndex = state.currentIndex;
           _selectedDirection = null;
           _startTimer(quest);
@@ -311,7 +317,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
               disablePadding: true,
               isAnswered: isAns,
               isCorrect: isCorr,
-              isFinalFailure: state.isFinalFailure,
+              isFinalFailure: state is VocabularyLoaded ? state.isFinalFailure : false,
               showConfetti: confetti,
               onContinue: () {
                 _countdownTimer?.cancel();
@@ -331,9 +337,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
               },
               onHint: () {
                 dispatchHintUsed();
-                di.sl<TtsService>().speak(
-                  targetWord.isNotEmpty ? targetWord : rootWord,
-                );
+                di.sl<TtsService>().speak(targetWord.isNotEmpty ? targetWord : rootWord);
               },
               customHintText: isRevenge ? 'Spaced Review: Focus on the root word!' : null,
               child: Padding(
@@ -345,13 +349,12 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                         physics: const BouncingScrollPhysics(),
                         child: Column(
                           children: [
-                            SizedBox(height: 12.h),
+                            SizedBox(height: 20.h),
                             _buildSpeedArenaBar(primaryColor, isRevenge),
+                            SizedBox(height: 16.h),
                             WordFormationSentenceSlot(
                               sentence: sentence,
-                              formedWord: isAns && isCorr == true
-                                  ? targetWord
-                                  : null,
+                              formedWord: isAns && isCorr == true ? targetWord : null,
                               rootWord: rootWord,
                               targetRole: targetRoleName,
                               roleClue: quest.hint,
@@ -360,7 +363,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                               primaryColor: primaryColor,
                               shakeCount: _shakeCount,
                             ),
-                            SizedBox(height: 16.h),
+                            SizedBox(height: 18.h),
                             WordFormation4WayLauncher(
                               northWord: northWord,
                               eastWord: eastWord,
@@ -371,13 +374,9 @@ class _WordFormationScreenState extends State<WordFormationScreen>
                               isAnswered: isAns,
                               primaryColor: primaryColor,
                               comboStreak: _comboStreak,
-                              onDirectionSelected: (dir) =>
-                                  _onDirectionSelected(
-                                    dir,
-                                    quest,
-                                    options,
-                                    correctIndex,
-                                  ),
+                              onDirectionSelected: (dir) => _onDirectionSelected(
+                                dir, quest, options, correctIndex,
+                              ),
                             ),
                             SizedBox(height: 16.h),
                           ],

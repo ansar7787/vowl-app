@@ -56,6 +56,15 @@ class _WordFormationLearnScreenState extends State<WordFormationLearnScreen> {
     super.dispose();
   }
 
+  void _onPrevious() {
+    TtsSpeakerButtonWidget.stopAll();
+    if (_currentIndex > 0) {
+      setState(() {
+        _currentIndex--;
+      });
+    }
+  }
+
   void _onContinue() {
     TtsSpeakerButtonWidget.stopAll();
     if (_currentIndex < _quests.length - 1) {
@@ -115,6 +124,7 @@ class _WordFormationLearnScreenState extends State<WordFormationLearnScreen> {
       gameType: 'wordFormation',
       level: widget.level,
       onComplete: _onContinue,
+      onPrevious: _currentIndex > 0 ? _onPrevious : null,
       actionLabel: _currentIndex < _quests.length - 1
           ? 'Next Word'
           : 'Start Practice',
