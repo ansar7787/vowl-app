@@ -209,7 +209,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
       ),
       child: Row(
         children: [
-          Icon(Icons.bolt_rounded, color: activeColor, size: 15.r),
+          Icon(Icons.bolt_rounded, color: activeColor, size: 14.r),
           SizedBox(width: 4.w),
           Text(
             isRevenge ? 'REVENGE ROUND' : 'SPEED ARENA',
@@ -218,30 +218,35 @@ class _WordFormationScreenState extends State<WordFormationScreen>
               fontSize: 10.sp,
               fontWeight: FontWeight.w700,
               color: activeColor,
-              letterSpacing: 0.8,
+              letterSpacing: 0.6,
             ),
           ),
-          const Spacer(),
-          Icon(Icons.timer_rounded, color: activeColor, size: 14.r),
-          SizedBox(width: 4.w),
+          SizedBox(width: 8.w),
+          Container(
+            width: 1.w,
+            height: 12.h,
+            color: activeColor.withValues(alpha: 0.25),
+          ),
+          SizedBox(width: 8.w),
+          Icon(Icons.timer_rounded, color: activeColor, size: 13.r),
+          SizedBox(width: 3.w),
           Text(
             '${_secondsRemaining}s',
             style: TextStyle(
               fontFamily: 'Outfit',
-              fontSize: 12.sp,
+              fontSize: 11.sp,
               fontWeight: FontWeight.w800,
               color: activeColor,
             ),
           ),
           SizedBox(width: 8.w),
-          SizedBox(
-            width: 60.w,
+          Expanded(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(4.r),
               child: LinearProgressIndicator(
                 value: (_secondsRemaining / timeLimit).clamp(0.0, 1.0),
-                minHeight: 5.h,
-                backgroundColor: primaryColor.withValues(alpha: 0.12),
+                minHeight: 5.5.h,
+                backgroundColor: primaryColor.withValues(alpha: 0.14),
                 valueColor: AlwaysStoppedAnimation<Color>(activeColor),
               ),
             ),
@@ -308,7 +313,6 @@ class _WordFormationScreenState extends State<WordFormationScreen>
             final isAns = isAnsweredNotifier.value;
             final isCorr = isCorrectNotifier.value;
             final confetti = showConfettiNotifier.value;
-
             final isRevenge = _missedQuestIds.contains(quest.id) || _dueReviewRoots.contains(rootWord);
 
             return VocabularyBaseLayout(
@@ -322,9 +326,8 @@ class _WordFormationScreenState extends State<WordFormationScreen>
               onContinue: () {
                 _countdownTimer?.cancel();
                 TtsSpeakerButtonWidget.stopAll();
-                final currentState = context.read<VocabularyBloc>().state;
-                final isFinal = currentState is VocabularyLoaded &&
-                    (currentState.isFinalFailure || currentState.livesRemaining <= 0);
+                final cur = context.read<VocabularyBloc>().state;
+                final isFinal = cur is VocabularyLoaded && (cur.isFinalFailure || cur.livesRemaining <= 0);
 
                 if (isCorr == false && !isFinal) {
                   isAnsweredNotifier.value = false;
