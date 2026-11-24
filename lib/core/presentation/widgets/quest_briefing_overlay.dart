@@ -178,30 +178,12 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                               mainAxisSize: MainAxisSize.min,
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
-                                // 1. Centered Hero Icon
+                                // 1. Centered Hero Icon (Unboxed, pure hero glyph)
                                 Center(
-                                  child: Container(
-                                    width: 44.r,
-                                    height: 44.r,
-                                    decoration: BoxDecoration(
-                                      color: widget.primaryColor.withValues(
-                                        alpha: isDark ? 0.16 : 0.10,
-                                      ),
-                                      borderRadius: BorderRadius.circular(14.r),
-                                      border: Border.all(
-                                        color: widget.primaryColor.withValues(
-                                          alpha: isDark ? 0.35 : 0.22,
-                                        ),
-                                        width: 1,
-                                      ),
-                                    ),
-                                    child: Center(
-                                      child: Icon(
-                                        widget.icon,
-                                        color: widget.primaryColor,
-                                        size: 22.r,
-                                      ),
-                                    ),
+                                  child: Icon(
+                                    widget.icon,
+                                    color: widget.primaryColor,
+                                    size: 40.r,
                                   ),
                                 ),
                                 SizedBox(height: 10.h),
