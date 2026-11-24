@@ -27,6 +27,18 @@ class _DailyWordsSprintCardState extends State<DailyWordsSprintCard> {
   void initState() {
     super.initState();
     DiscoveryDeck.dailyCompletionNotifier.addListener(_onCompletionChanged);
+    DailyWordsService.changeNotifier.addListener(_onCompletionChanged);
+    _ensureServiceInitialized();
+  }
+
+  Future<void> _ensureServiceInitialized() async {
+    if (di.sl.isRegistered<DailyWordsService>()) {
+      final service = di.sl<DailyWordsService>();
+      if (!service.isInitialized) {
+        await service.init();
+        if (mounted) setState(() {});
+      }
+    }
   }
 
   void _onCompletionChanged() {
@@ -36,6 +48,7 @@ class _DailyWordsSprintCardState extends State<DailyWordsSprintCard> {
   @override
   void dispose() {
     DiscoveryDeck.dailyCompletionNotifier.removeListener(_onCompletionChanged);
+    DailyWordsService.changeNotifier.removeListener(_onCompletionChanged);
     super.dispose();
   }
 

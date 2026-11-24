@@ -733,6 +733,12 @@ void main() {
 
         await pumpIntonationMimic(tester, level: 1, height: 1100);
 
+        final infoBtn = find.byIcon(Icons.info_outline_rounded);
+        if (infoBtn.evaluate().isNotEmpty) {
+          await tester.tap(infoBtn);
+          await tester.pumpAndSettle();
+        }
+
         expect(find.byType(GameBriefingLayer), findsOneWidget);
 
         final briefingBtn = find.descendant(
@@ -741,8 +747,7 @@ void main() {
         );
         expect(briefingBtn, findsOneWidget);
         await tester.tap(briefingBtn);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 600));
+        await tester.pumpAndSettle();
 
         expect(find.byType(GameBriefingLayer), findsNothing);
         expect(find.byType(IntonationMimicVerticalFader), findsOneWidget);

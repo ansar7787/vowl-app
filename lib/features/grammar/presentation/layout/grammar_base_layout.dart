@@ -49,6 +49,12 @@ class GrammarBaseLayout extends StatelessWidget {
   /// Whether default layout padding should be suppressed.
   final bool disablePadding;
 
+  /// Optional callback invoked when pausing the game.
+  final VoidCallback? onPause;
+
+  /// Optional callback invoked when resuming the game.
+  final VoidCallback? onResume;
+
   /// Creates a [GrammarBaseLayout] widget.
   const GrammarBaseLayout({
     super.key,
@@ -63,6 +69,8 @@ class GrammarBaseLayout extends StatelessWidget {
     this.showConfetti = false,
     this.useScrolling = false,
     this.disablePadding = false,
+    this.onPause,
+    this.onResume,
   });
 
   @override
@@ -81,6 +89,8 @@ class GrammarBaseLayout extends StatelessWidget {
       useScrolling: useScrolling,
       disablePadding: disablePadding,
       horizontalPadding: AppSpacing.compact,
+      onBriefingShow: onPause,
+      onBriefingDismiss: onResume,
     );
 
     return GameBaseLayout<GrammarBloc, GrammarState>(
@@ -106,9 +116,11 @@ class GrammarBaseLayout extends StatelessWidget {
           isHintUsedOnCurrentQuest: isHintUsed,
           isHintEnabled: hintShouldBeEnabled,
           onPause: () {
+            onPause?.call();
             VowlPauseBottomSheet.show(
               context,
               category: 'grammar',
+              onResume: onResume,
               onRestart: () {
                 context.read<GrammarBloc>().add(
                   FetchGrammarQuests(gameType: gameType, level: level),

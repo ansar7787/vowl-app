@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:intl/intl.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,7 +22,7 @@ import 'package:vowl/features/daily_words/domain/entities/word_progress.dart';
 import 'package:vowl/features/daily_words/presentation/bloc/daily_words_bloc.dart';
 
 /// Filter categories for the user's personal vocabulary word bank.
-enum WordBankFilter { all, today, learning, reviewing, mastered }
+enum WordBankFilter { all, today, practice, mastered }
 
 /// Searchable personal word bank screen showcasing learned vocabulary,
 /// mastery stages (learning, reviewing, mastered), and spaced repetition status.
@@ -51,10 +52,10 @@ class _WordBankScreenState extends State<WordBankScreen> {
 
     if (widget.initialFilter == 'today') {
       _currentFilter = WordBankFilter.today;
-    } else if (widget.initialFilter == 'learning') {
-      _currentFilter = WordBankFilter.learning;
-    } else if (widget.initialFilter == 'reviewing') {
-      _currentFilter = WordBankFilter.reviewing;
+    } else if (widget.initialFilter == 'learning' ||
+        widget.initialFilter == 'reviewing' ||
+        widget.initialFilter == 'practice') {
+      _currentFilter = WordBankFilter.practice;
     } else if (widget.initialFilter == 'mastered') {
       _currentFilter = WordBankFilter.mastered;
     } else {
@@ -112,13 +113,13 @@ class _WordBankScreenState extends State<WordBankScreen> {
           SafeArea(
             child: BlocBuilder<DailyWordsBloc, DailyWordsState>(
               builder: (context, state) {
-                if (state.status == DailyWordsStatus.loading) {
+                if (state.status == DailyWordsStatus.loading ||
+                    state.status == DailyWordsStatus.initial) {
                   return const Center(child: CircularProgressIndicator());
                 }
 
                 return _buildSliverContent(
                   allWords: state.wordBankEntries,
-                  stats: state.masteryStats,
                   isDark: isDark,
                 );
               },
@@ -131,7 +132,6 @@ class _WordBankScreenState extends State<WordBankScreen> {
 
   Widget _buildSliverContent({
     required List<WordProgress> allWords,
-    required Map<String, int> stats,
     required bool isDark,
   }) {
     final service = di.sl<DailyWordsService>();
@@ -147,39 +147,40 @@ class _WordBankScreenState extends State<WordBankScreen> {
         .toList();
     final masteredWords = allWords.where((w) => w.box >= 3).toList();
 
-    return CustomScrollView(
-      physics: const BouncingScrollPhysics(),
-      slivers: [
-        _buildSliverAppBar(context, isDark),
-        SliverToBoxAdapter(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _buildSearchBar(context, isDark),
-              _buildMasteryStats(stats, isDark),
-              _buildFilterTabs(
-                totalCount: allWords.length,
-                todayCount: todayWords.length,
-                learningCount: learningWords.length,
-                reviewingCount: reviewingWords.length,
-                masteredCount: masteredWords.length,
-                isDark: isDark,
-              ),
-              SizedBox(height: 8.h),
-            ],
+    return ScrollConfiguration(
+      behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+      child: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
+        slivers: [
+          _buildSliverAppBar(context, isDark),
+          SliverToBoxAdapter(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _buildSearchBar(context, isDark),
+                _buildSegmentedFilterBar(
+                  totalCount: allWords.length,
+                  todayCount: todayWords.length,
+                  practiceCount: learningWords.length + reviewingWords.length,
+                  masteredCount: masteredWords.length,
+                  isDark: isDark,
+                ),
+                SizedBox(height: 4.h),
+              ],
+            ),
           ),
-        ),
-        ..._buildSliverWordSections(
-          allWords: allWords,
-          todayWords: todayWords,
-          learningWords: learningWords,
-          reviewingWords: reviewingWords,
-          masteredWords: masteredWords,
-          query: query,
-          isDark: isDark,
-        ),
-        SliverToBoxAdapter(child: SizedBox(height: 32.h)),
-      ],
+          ..._buildSliverWordSections(
+            allWords: allWords,
+            todayWords: todayWords,
+            learningWords: learningWords,
+            reviewingWords: reviewingWords,
+            masteredWords: masteredWords,
+            query: query,
+            isDark: isDark,
+          ),
+          SliverToBoxAdapter(child: SizedBox(height: 32.h)),
+        ],
+      ),
     );
   }
 
@@ -298,235 +299,179 @@ class _WordBankScreenState extends State<WordBankScreen> {
     );
   }
 
-  Widget _buildMasteryStats(Map<String, int> stats, bool isDark) {
-    return Padding(
-      padding: EdgeInsets.fromLTRB(
-        AppSpacing.screen,
-        12.h,
-        AppSpacing.screen,
-        6.h,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          _StatIndicator(
-            label: 'Learning',
-            count: stats['learning'] ?? 0,
-            color: AppColors.blue500,
-            isDark: isDark,
-            isSelected: _currentFilter == WordBankFilter.learning,
-            onTap: () {
-              _haptics.selection();
-              setState(() {
-                _currentFilter = _currentFilter == WordBankFilter.learning
-                    ? WordBankFilter.all
-                    : WordBankFilter.learning;
-              });
-            },
-          ),
-          _StatIndicator(
-            label: 'Reviewing',
-            count: stats['reviewing'] ?? 0,
-            color: AppColors.amber500,
-            isDark: isDark,
-            isSelected: _currentFilter == WordBankFilter.reviewing,
-            onTap: () {
-              _haptics.selection();
-              setState(() {
-                _currentFilter = _currentFilter == WordBankFilter.reviewing
-                    ? WordBankFilter.all
-                    : WordBankFilter.reviewing;
-              });
-            },
-          ),
-          _StatIndicator(
-            label: 'Mastered',
-            count: stats['mastered'] ?? 0,
-            color: AppColors.emerald500,
-            isDark: isDark,
-            isSelected: _currentFilter == WordBankFilter.mastered,
-            onTap: () {
-              _haptics.selection();
-              setState(() {
-                _currentFilter = _currentFilter == WordBankFilter.mastered
-                    ? WordBankFilter.all
-                    : WordBankFilter.mastered;
-              });
-            },
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildFilterTabs({
+  Widget _buildSegmentedFilterBar({
     required int totalCount,
     required int todayCount,
-    required int learningCount,
-    required int reviewingCount,
+    required int practiceCount,
     required int masteredCount,
     required bool isDark,
   }) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      physics: const BouncingScrollPhysics(),
+    final isMidnight =
+        isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
+    final containerBg = isMidnight
+        ? AppColors.midnightSurface
+        : (isDark
+              ? AppColors.slate800.withValues(alpha: 0.6)
+              : AppColors.slate100);
+
+    return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: AppSpacing.screen,
         vertical: 8.h,
       ),
-      child: Row(
-        children: [
-          _buildFilterChip(
-            label: 'All',
-            count: totalCount,
-            isSelected: _currentFilter == WordBankFilter.all,
-            color: AppColors.indigo500,
-            isDark: isDark,
-            onTap: () {
-              _haptics.selection();
-              setState(() => _currentFilter = WordBankFilter.all);
-            },
+      child: Container(
+        padding: EdgeInsets.all(4.r),
+        decoration: BoxDecoration(
+          color: containerBg,
+          borderRadius: BorderRadius.circular(16.r),
+          border: Border.all(
+            color: isMidnight
+                ? Colors.white.withValues(alpha: 0.1)
+                : (isDark
+                      ? Colors.white.withValues(alpha: 0.06)
+                      : AppColors.slate200),
+            width: 1,
           ),
-          SizedBox(width: 8.w),
-          _buildFilterChip(
-            label: 'Today',
-            icon: Icons.bolt_rounded,
-            count: todayCount,
-            isSelected: _currentFilter == WordBankFilter.today,
-            color: AppColors.indigo500,
-            isDark: isDark,
-            onTap: () {
-              _haptics.selection();
-              setState(() => _currentFilter = WordBankFilter.today);
-            },
-          ),
-          SizedBox(width: 8.w),
-          _buildFilterChip(
-            label: 'Learning',
-            icon: Icons.school_rounded,
-            count: learningCount,
-            isSelected: _currentFilter == WordBankFilter.learning,
-            color: AppColors.blue500,
-            isDark: isDark,
-            onTap: () {
-              _haptics.selection();
-              setState(() => _currentFilter = WordBankFilter.learning);
-            },
-          ),
-          SizedBox(width: 8.w),
-          _buildFilterChip(
-            label: 'Reviewing',
-            icon: Icons.loop_rounded,
-            count: reviewingCount,
-            isSelected: _currentFilter == WordBankFilter.reviewing,
-            color: AppColors.amber500,
-            isDark: isDark,
-            onTap: () {
-              _haptics.selection();
-              setState(() => _currentFilter = WordBankFilter.reviewing);
-            },
-          ),
-          SizedBox(width: 8.w),
-          _buildFilterChip(
-            label: 'Mastered',
-            icon: Icons.workspace_premium_rounded,
-            count: masteredCount,
-            isSelected: _currentFilter == WordBankFilter.mastered,
-            color: AppColors.emerald500,
-            isDark: isDark,
-            onTap: () {
-              _haptics.selection();
-              setState(() => _currentFilter = WordBankFilter.mastered);
-            },
-          ),
-        ],
+        ),
+        child: Row(
+          children: [
+            Expanded(
+              child: _buildSegmentTab(
+                label: 'All',
+                count: totalCount,
+                isSelected: _currentFilter == WordBankFilter.all,
+                activeColor: AppColors.indigo500,
+                isDark: isDark,
+                onTap: () {
+                  _haptics.selection();
+                  setState(() => _currentFilter = WordBankFilter.all);
+                },
+              ),
+            ),
+            SizedBox(width: 4.w),
+            Expanded(
+              child: _buildSegmentTab(
+                label: 'Today',
+                count: todayCount,
+                isSelected: _currentFilter == WordBankFilter.today,
+                activeColor: AppColors.amber500,
+                isDark: isDark,
+                onTap: () {
+                  _haptics.selection();
+                  setState(() => _currentFilter = WordBankFilter.today);
+                },
+              ),
+            ),
+            SizedBox(width: 4.w),
+            Expanded(
+              child: _buildSegmentTab(
+                label: 'Practice',
+                count: practiceCount,
+                isSelected: _currentFilter == WordBankFilter.practice,
+                activeColor: AppColors.blue500,
+                isDark: isDark,
+                onTap: () {
+                  _haptics.selection();
+                  setState(() => _currentFilter = WordBankFilter.practice);
+                },
+              ),
+            ),
+            SizedBox(width: 4.w),
+            Expanded(
+              child: _buildSegmentTab(
+                label: 'Mastered',
+                count: masteredCount,
+                isSelected: _currentFilter == WordBankFilter.mastered,
+                activeColor: AppColors.emerald500,
+                isDark: isDark,
+                onTap: () {
+                  _haptics.selection();
+                  setState(() => _currentFilter = WordBankFilter.mastered);
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 
-  Widget _buildFilterChip({
+  Widget _buildSegmentTab({
     required String label,
     required int count,
     required bool isSelected,
-    required Color color,
+    required Color activeColor,
     required bool isDark,
     required VoidCallback onTap,
-    IconData? icon,
   }) {
     return GestureDetector(
       onTap: onTap,
+      behavior: HitTestBehavior.opaque,
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
-        padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 7.h),
+        curve: Curves.easeOutCubic,
+        padding: EdgeInsets.symmetric(vertical: 8.h),
         decoration: BoxDecoration(
           color: isSelected
-              ? color
-              : (isDark
-                    ? Colors.white.withValues(alpha: 0.06)
-                    : AppColors.slate100),
-          borderRadius: BorderRadius.circular(20.r),
-          border: Border.all(
-            color: isSelected
-                ? color
-                : (isDark
-                      ? Colors.white.withValues(alpha: 0.08)
-                      : AppColors.slate200),
-            width: 1,
-          ),
-          boxShadow: isSelected
+              ? (isDark ? activeColor.withValues(alpha: 0.28) : Colors.white)
+              : Colors.transparent,
+          borderRadius: BorderRadius.circular(12.r),
+          boxShadow: isSelected && !isDark
               ? [
                   BoxShadow(
-                    color: color.withValues(alpha: 0.3),
-                    blurRadius: 8,
-                    offset: const Offset(0, 2),
+                    color: Colors.black.withValues(alpha: 0.05),
+                    blurRadius: 4,
+                    offset: const Offset(0, 1),
                   ),
                 ]
               : null,
+          border: isSelected
+              ? Border.all(
+                  color: isDark
+                      ? activeColor.withValues(alpha: 0.5)
+                      : activeColor.withValues(alpha: 0.25),
+                  width: 1,
+                )
+              : Border.all(color: Colors.transparent, width: 1),
         ),
-        child: Row(
+        child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            if (icon != null) ...[
-              Icon(
-                icon,
-                size: 14.r,
-                color: isSelected
-                    ? Colors.white
-                    : (isDark ? Colors.white70 : AppColors.slate600),
-              ),
-              SizedBox(width: 5.w),
-            ],
             Text(
               label,
               style: TextStyle(
                 fontFamily: 'Outfit',
-                fontSize: 13.sp,
-                fontWeight: isSelected ? FontWeight.w700 : FontWeight.w600,
+                fontSize: 12.5.sp,
+                fontWeight: isSelected ? FontWeight.w800 : FontWeight.w600,
                 color: isSelected
-                    ? Colors.white
-                    : (isDark ? Colors.white70 : AppColors.slate700),
+                    ? (isDark ? Colors.white : activeColor)
+                    : (isDark ? Colors.white54 : AppColors.slate500),
+                height: 1.1,
               ),
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
             ),
-            SizedBox(width: 6.w),
+            SizedBox(height: 3.h),
             Container(
               padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 1.h),
               decoration: BoxDecoration(
                 color: isSelected
-                    ? Colors.white.withValues(alpha: 0.25)
+                    ? activeColor.withValues(alpha: isDark ? 0.4 : 0.15)
                     : (isDark
-                          ? Colors.white.withValues(alpha: 0.1)
-                          : AppColors.slate200),
-                borderRadius: BorderRadius.circular(10.r),
+                          ? Colors.white.withValues(alpha: 0.06)
+                          : AppColors.slate200.withValues(alpha: 0.6)),
+                borderRadius: BorderRadius.circular(8.r),
               ),
               child: Text(
                 '$count',
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 11.sp,
+                  fontSize: 10.5.sp,
                   fontWeight: FontWeight.w700,
                   color: isSelected
-                      ? Colors.white
-                      : (isDark ? Colors.white70 : AppColors.slate600),
+                      ? (isDark ? Colors.white : activeColor)
+                      : (isDark ? Colors.white54 : AppColors.slate600),
+                  height: 1.1,
                 ),
               ),
             ),
@@ -551,11 +496,8 @@ class _WordBankScreenState extends State<WordBankScreen> {
         case WordBankFilter.today:
           pool = todayWords;
           break;
-        case WordBankFilter.learning:
-          pool = learningWords;
-          break;
-        case WordBankFilter.reviewing:
-          pool = reviewingWords;
+        case WordBankFilter.practice:
+          pool = [...learningWords, ...reviewingWords];
           break;
         case WordBankFilter.mastered:
           pool = masteredWords;
@@ -614,6 +556,48 @@ class _WordBankScreenState extends State<WordBankScreen> {
               color: AppColors.indigo500,
               icon: Icons.bolt_rounded,
               isDark: isDark,
+              trailingAction: GestureDetector(
+                onTap: () {
+                  _haptics.selection();
+                  context.push(AppRouter.dailyWordsRoute);
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 4.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppColors.indigo500.withValues(
+                      alpha: isDark ? 0.25 : 0.1,
+                    ),
+                    borderRadius: BorderRadius.circular(20.r),
+                    border: Border.all(
+                      color: AppColors.indigo500.withValues(alpha: 0.3),
+                      width: 1,
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.play_arrow_rounded,
+                        size: 15.r,
+                        color: AppColors.indigo500,
+                      ),
+                      SizedBox(width: 3.w),
+                      Text(
+                        'Practice',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.5.sp,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.indigo500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
           ),
         ),
@@ -629,80 +613,76 @@ class _WordBankScreenState extends State<WordBankScreen> {
       ];
     }
 
-    if (_currentFilter == WordBankFilter.learning) {
-      if (learningWords.isEmpty) {
+    if (_currentFilter == WordBankFilter.practice) {
+      final practiceWords = [...learningWords, ...reviewingWords];
+      if (practiceWords.isEmpty) {
         return [
           SliverToBoxAdapter(
             child: _buildEmptyState(
               context,
               isDark,
-              customMessage: 'No words currently in learning.',
+              customMessage: 'No words currently in practice. All caught up!',
               icon: Icons.school_rounded,
             ),
           ),
         ];
       }
-      return [
-        SliverToBoxAdapter(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
-            child: _buildSectionHeader(
-              title: 'Learning',
-              count: learningWords.length,
-              color: AppColors.blue500,
-              icon: Icons.school_rounded,
-              isDark: isDark,
-            ),
-          ),
-        ),
-        SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
-          sliver: SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) => _buildWordCard(learningWords[index], isDark),
-              childCount: learningWords.length,
-            ),
-          ),
-        ),
-      ];
-    }
-
-    if (_currentFilter == WordBankFilter.reviewing) {
-      if (reviewingWords.isEmpty) {
-        return [
+      final slivers = <Widget>[];
+      if (learningWords.isNotEmpty) {
+        slivers.add(
           SliverToBoxAdapter(
-            child: _buildEmptyState(
-              context,
-              isDark,
-              customMessage: 'No words pending review right now.',
-              icon: Icons.loop_rounded,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
+              child: _buildSectionHeader(
+                title: 'Learning',
+                count: learningWords.length,
+                color: AppColors.blue500,
+                icon: Icons.school_rounded,
+                isDark: isDark,
+              ),
             ),
           ),
-        ];
-      }
-      return [
-        SliverToBoxAdapter(
-          child: Padding(
+        );
+        slivers.add(
+          SliverPadding(
             padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
-            child: _buildSectionHeader(
-              title: 'Reviewing',
-              count: reviewingWords.length,
-              color: AppColors.amber500,
-              icon: Icons.loop_rounded,
-              isDark: isDark,
+            sliver: SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) => _buildWordCard(learningWords[index], isDark),
+                childCount: learningWords.length,
+              ),
             ),
           ),
-        ),
-        SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
-          sliver: SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) => _buildWordCard(reviewingWords[index], isDark),
-              childCount: reviewingWords.length,
+        );
+      }
+      if (reviewingWords.isNotEmpty) {
+        slivers.add(
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
+              child: _buildSectionHeader(
+                title: 'Reviewing',
+                count: reviewingWords.length,
+                color: AppColors.amber500,
+                icon: Icons.loop_rounded,
+                isDark: isDark,
+              ),
             ),
           ),
-        ),
-      ];
+        );
+        slivers.add(
+          SliverPadding(
+            padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
+            sliver: SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) => _buildWordCard(reviewingWords[index], isDark),
+                childCount: reviewingWords.length,
+              ),
+            ),
+          ),
+        );
+      }
+      return slivers;
     }
 
     if (_currentFilter == WordBankFilter.mastered) {
@@ -743,7 +723,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
       ];
     }
 
-    // Default: WordBankFilter.all -> Sections for Learning, Reviewing, Mastered!
+    // Default: WordBankFilter.all -> Sections for Learning, Reviewing, Mastered (no duplicate Today section)!
     if (allWords.isEmpty) {
       return [SliverToBoxAdapter(child: _buildEmptyState(context, isDark))];
     }
@@ -837,12 +817,39 @@ class _WordBankScreenState extends State<WordBankScreen> {
     return slivers;
   }
 
+  String _formatLearnedDate(String rawDate, int box) {
+    final prefix = box >= 3 ? 'Mastered' : 'Learned';
+    if (rawDate.isEmpty) return '$prefix recently';
+    try {
+      final now = DateTime.now();
+      final todayStr =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+      final yesterday = now.subtract(const Duration(days: 1));
+      final yesterdayStr =
+          '${yesterday.year}-${yesterday.month.toString().padLeft(2, '0')}-${yesterday.day.toString().padLeft(2, '0')}';
+
+      if (rawDate == todayStr) {
+        return '$prefix today';
+      }
+      if (rawDate == yesterdayStr) {
+        return '$prefix yesterday';
+      }
+
+      final parsed = DateTime.tryParse(rawDate);
+      if (parsed != null) {
+        return '$prefix on ${DateFormat.MMMd().format(parsed)}';
+      }
+    } catch (_) {}
+    return '$prefix on $rawDate';
+  }
+
   Widget _buildSectionHeader({
     required String title,
     required int count,
     required Color color,
     required IconData icon,
     required bool isDark,
+    Widget? trailingAction,
   }) {
     return Padding(
       padding: EdgeInsets.fromLTRB(4.w, 14.h, 4.w, 10.h),
@@ -850,33 +857,48 @@ class _WordBankScreenState extends State<WordBankScreen> {
         children: [
           Icon(icon, size: 16.r, color: color),
           SizedBox(width: 8.w),
-          Text(
-            title.toUpperCase(),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w800,
-              letterSpacing: 1.0,
-              color: color,
+          Flexible(
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Flexible(
+                  child: Text(
+                    title.toUpperCase(),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 1.0,
+                      color: color,
+                    ),
+                  ),
+                ),
+                SizedBox(width: 8.w),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
+                  decoration: BoxDecoration(
+                    color: color.withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(10.r),
+                  ),
+                  child: Text(
+                    '$count',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w700,
+                      color: color,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
-          SizedBox(width: 8.w),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
-            decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.15),
-              borderRadius: BorderRadius.circular(10.r),
-            ),
-            child: Text(
-              '$count',
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.w700,
-                color: color,
-              ),
-            ),
-          ),
+          if (trailingAction != null) ...[
+            const Spacer(),
+            trailingAction,
+          ],
         ],
       ),
     );
@@ -913,7 +935,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
                       ),
                       SizedBox(height: 4.h),
                       AutoSizeText(
-                        'Learned on ${word.learnedDate}',
+                        _formatLearnedDate(word.learnedDate, word.box),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
@@ -969,13 +991,23 @@ class _WordBankScreenState extends State<WordBankScreen> {
         isDismissible: true,
         backgroundColor: Colors.transparent,
         builder: (sheetContext) {
+          final isMidnight = isDark &&
+              Theme.of(sheetContext).scaffoldBackgroundColor == Colors.black;
           return Container(
             constraints: BoxConstraints(
               maxHeight: MediaQuery.of(sheetContext).size.height * 0.8,
             ),
             decoration: BoxDecoration(
-              color: isDark ? AppColors.slate900 : Colors.white,
+              color: isMidnight
+                  ? AppColors.midnightSurface
+                  : (isDark ? AppColors.slate900 : Colors.white),
               borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
+              border: isMidnight
+                  ? Border.all(
+                      color: Colors.white.withValues(alpha: 0.12),
+                      width: 1,
+                    )
+                  : null,
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withValues(alpha: 0.25),
@@ -1188,14 +1220,19 @@ class _WordBankScreenState extends State<WordBankScreen> {
                         vertical: 10.h,
                       ),
                       decoration: BoxDecoration(
-                        color: isDark ? AppColors.slate800 : AppColors.slate100,
+                        color: isMidnight
+                            ? AppColors.midnightNavy
+                            : (isDark ? AppColors.slate800 : AppColors.slate100),
                         borderRadius: BorderRadius.circular(12.r),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Learned: ${progress.learnedDate}',
+                            _formatLearnedDate(
+                              progress.learnedDate,
+                              progress.box,
+                            ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 12.sp,
@@ -1326,13 +1363,23 @@ class _WordBankScreenState extends State<WordBankScreen> {
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (modalContext) {
+        final isMidnight = isDark &&
+            Theme.of(modalContext).scaffoldBackgroundColor == Colors.black;
         final bottomInset = MediaQuery.of(modalContext).viewInsets.bottom;
         return Padding(
           padding: EdgeInsets.only(bottom: bottomInset),
           child: Container(
             decoration: BoxDecoration(
-              color: isDark ? AppColors.slate900 : Colors.white,
+              color: isMidnight
+                  ? AppColors.midnightSurface
+                  : (isDark ? AppColors.slate900 : Colors.white),
               borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
+              border: isMidnight
+                  ? Border.all(
+                      color: Colors.white.withValues(alpha: 0.12),
+                      width: 1,
+                    )
+                  : null,
             ),
             child: SafeArea(
               top: false,
@@ -1522,78 +1569,5 @@ class _WordBankScreenState extends State<WordBankScreen> {
         ),
       ),
     );
-  }
-}
-
-class _StatIndicator extends StatelessWidget {
-  final String label;
-  final int count;
-  final Color color;
-  final bool isDark;
-  final bool isSelected;
-  final VoidCallback? onTap;
-
-  const _StatIndicator({
-    required this.label,
-    required this.count,
-    required this.color,
-    required this.isDark,
-    this.isSelected = false,
-    this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    final content = AnimatedContainer(
-      duration: const Duration(milliseconds: 200),
-      padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
-      decoration: BoxDecoration(
-        color: isSelected
-            ? color.withValues(alpha: isDark ? 0.25 : 0.12)
-            : Colors.transparent,
-        borderRadius: BorderRadius.circular(14.r),
-        border: Border.all(
-          color: isSelected ? color : Colors.transparent,
-          width: 1.5,
-        ),
-      ),
-      child: Column(
-        children: [
-          Text(
-            '$count',
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 22.sp,
-              fontWeight: FontWeight.w700,
-              color: isSelected
-                  ? color
-                  : Theme.of(context).colorScheme.onSurface,
-            ),
-          ),
-          SizedBox(height: 4.h),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
-            decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.15),
-              borderRadius: BorderRadius.circular(8.r),
-            ),
-            child: Text(
-              label.toUpperCase(),
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.w600,
-                color: color,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-
-    if (onTap != null) {
-      return GestureDetector(onTap: onTap, child: content);
-    }
-    return content;
   }
 }

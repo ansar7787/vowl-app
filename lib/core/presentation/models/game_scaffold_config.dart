@@ -17,6 +17,8 @@ class GameScaffoldConfig {
   final bool disablePadding;
   final bool resizeToAvoidBottomInset;
   final double? horizontalPadding;
+  final VoidCallback? onBriefingShow;
+  final VoidCallback? onBriefingDismiss;
 
   const GameScaffoldConfig({
     required this.gameType,
@@ -32,5 +34,7 @@ class GameScaffoldConfig {
     this.disablePadding = false,
     this.resizeToAvoidBottomInset = false,
     this.horizontalPadding,
+    this.onBriefingShow,
+    this.onBriefingDismiss,
   });
 }

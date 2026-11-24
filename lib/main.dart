@@ -262,6 +262,18 @@ void main() async {
     }
   }
 
+  // Eagerly initialize DailyWordsService before first frame so Home screen
+  // evaluates completion status with zero frame lag or flicker.
+  try {
+    if (di.sl.isRegistered<DailyWordsService>()) {
+      await di.sl<DailyWordsService>().init();
+    }
+  } catch (e) {
+    if (kDebugMode) {
+      debugPrint('Warning: Failed to init DailyWordsService in main: $e');
+    }
+  }
+
   runApp(const MyApp());
 
   // Native splash will be removed dynamically in SplashPage once the image is decoded!

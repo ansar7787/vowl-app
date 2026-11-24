@@ -115,6 +115,7 @@ class _PitchPatternMatchScreenState extends State<PitchPatternMatchScreen>
         timer.cancel();
         return;
       }
+      if (ModalRoute.of(context)?.isCurrent != true) return;
       currentStep++;
       _previewProgress.value = (currentStep / steps).clamp(0.0, 1.0);
 

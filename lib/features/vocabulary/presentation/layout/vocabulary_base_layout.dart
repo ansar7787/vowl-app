@@ -57,6 +57,12 @@ class VocabularyBaseLayout extends StatelessWidget {
   /// Whether this game follows a two-stage interactive cycle.
   final bool hasStage2;
 
+  /// Optional callback invoked when pausing the game.
+  final VoidCallback? onPause;
+
+  /// Optional callback invoked when resuming the game.
+  final VoidCallback? onResume;
+
   /// Creates a [VocabularyBaseLayout] instance.
   const VocabularyBaseLayout({
     super.key,
@@ -73,6 +79,8 @@ class VocabularyBaseLayout extends StatelessWidget {
     this.disablePadding = false,
     this.customHintText,
     this.hasStage2 = false,
+    this.onPause,
+    this.onResume,
   });
 
   @override
@@ -95,6 +103,8 @@ class VocabularyBaseLayout extends StatelessWidget {
       showConfetti: showConfetti,
       useScrolling: useScrolling,
       disablePadding: disablePadding,
+      onBriefingShow: onPause,
+      onBriefingDismiss: onResume,
     );
 
     return GameBaseLayout<VocabularyBloc, VocabularyState>(
@@ -123,9 +133,11 @@ class VocabularyBaseLayout extends StatelessWidget {
           isHintEnabled: hintShouldBeEnabled,
           showHint: !isAnswered,
           onPause: () {
+            onPause?.call();
             VowlPauseBottomSheet.show(
               context,
               category: 'vocabulary',
+              onResume: onResume,
               onRestart: () {
                 context.read<VocabularyBloc>().add(
                   FetchVocabularyQuests(gameType: gameType, level: level),

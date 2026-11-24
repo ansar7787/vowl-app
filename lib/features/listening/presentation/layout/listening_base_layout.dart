@@ -94,6 +94,12 @@ class ListeningBaseLayout extends StatefulWidget {
   /// override [showConfetti], [useScrolling], and [disablePadding].
   final ListeningBaseLayoutConfig? config;
 
+  /// Optional callback invoked when pausing the game.
+  final VoidCallback? onPause;
+
+  /// Optional callback invoked when resuming the game.
+  final VoidCallback? onResume;
+
   /// Creates a [ListeningBaseLayout] scaffold.
   const ListeningBaseLayout({
     super.key,
@@ -112,6 +118,8 @@ class ListeningBaseLayout extends StatefulWidget {
     this.useScrolling = false,
     this.disablePadding = false,
     this.config,
+    this.onPause,
+    this.onResume,
   });
 
   /// Resolves the effective config: explicit [config] wins; otherwise the
@@ -239,6 +247,8 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
           showConfetti: effectiveConfig.showConfetti,
           useScrolling: false, // Handled internally
           disablePadding: true, // Handled internally
+          onBriefingShow: widget.onPause,
+          onBriefingDismiss: widget.onResume,
         );
 
         return GameBaseLayout<ListeningBloc, ListeningState>(
@@ -263,9 +273,11 @@ class _ListeningBaseLayoutState extends State<ListeningBaseLayout>
               isHintUsedOnCurrentQuest: s is ListeningLoaded ? s.hintUsed : false,
               isHintEnabled: currentQuest != null && !widget.isAnswered,
               onPause: () {
+                widget.onPause?.call();
                 VowlPauseBottomSheet.show(
                   context,
                   category: 'listening',
+                  onResume: widget.onResume,
                   onRestart: () {
                     context.read<ListeningBloc>().add(
                       FetchListeningQuests(

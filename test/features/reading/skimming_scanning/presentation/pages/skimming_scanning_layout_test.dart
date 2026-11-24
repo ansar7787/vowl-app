@@ -11,6 +11,7 @@ import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_tim
 import 'package:vowl/core/presentation/widgets/game_briefing_layer.dart';
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/ad_service.dart';
@@ -428,18 +429,22 @@ void main() {
 
         await pumpSkimmingScanning(tester, level: 1);
 
+        final infoBtn = find.byIcon(Icons.info_outline_rounded);
+        if (infoBtn.evaluate().isNotEmpty) {
+          await tester.tap(infoBtn);
+          await tester.pumpAndSettle();
+        }
+
         expect(find.byType(GameBriefingLayer), findsOneWidget);
         expect(find.text('SKIM & SCAN'), findsOneWidget);
-        final startBtn = find.text('START SCANNING');
+        final startBtn = find.descendant(
+          of: find.byType(GameBriefingLayer),
+          matching: find.byType(ScaleButton),
+        );
         expect(startBtn, findsOneWidget);
 
-        await tester.ensureVisible(startBtn);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 500));
-
         await tester.tap(startBtn);
-        await tester.pump();
-        await tester.pump(const Duration(milliseconds: 600));
+        await tester.pumpAndSettle();
 
         expect(find.byType(GameBriefingLayer), findsNothing);
         expect(find.byType(SkimmingScanningTerminal), findsOneWidget);

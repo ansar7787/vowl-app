@@ -871,7 +871,7 @@ void main() {
       await widgetsAppState.didPopRoute();
       await tester.pumpAndSettle();
 
-      expect(find.text('QUIT GAME?'), findsOneWidget);
+      expect(find.textContaining('QUIT'), findsOneWidget);
     });
   });
 

@@ -411,6 +411,34 @@ void main() {
 
       await bloc.close();
     });
+
+    test('advancing past the last word immediately emits sessionComplete', () async {
+      final bloc = DailyWordsBloc(service: mockService);
+
+      final testWordSet = DailyWordSet(
+        day: 1,
+        theme: 'Essential Foundations',
+        words: [sampleWord1, sampleWord2],
+      );
+
+      bloc.emit(
+        DailyWordsState(
+          status: DailyWordsStatus.loaded,
+          wordSet: testWordSet,
+          currentIndex: 1,
+          totalWordsLearned: 1,
+          currentDay: 1,
+        ),
+      );
+
+      bloc.add(const DailyWordNextRequested());
+      await Future<void>.delayed(Duration.zero);
+
+      expect(bloc.state.status, DailyWordsStatus.sessionComplete);
+      expect(bloc.state.currentIndex, 2);
+
+      await bloc.close();
+    });
   });
 
   group('DailyWords Widget Rendering', () {

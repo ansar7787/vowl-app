@@ -1,3 +1,4 @@
+import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -88,6 +89,24 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
     }
   }
 
+  bool _wasPausedByScopeOrRoute = false;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final isBriefingOpen = GameBriefingScope.isOpen(context);
+    final isRouteCurrent = ModalRoute.of(context)?.isCurrent ?? true;
+    final shouldPause = isBriefingOpen || !isRouteCurrent;
+
+    if (shouldPause && !_wasPausedByScopeOrRoute) {
+      _wasPausedByScopeOrRoute = true;
+      pause();
+    } else if (!shouldPause && _wasPausedByScopeOrRoute) {
+      _wasPausedByScopeOrRoute = false;
+      resume();
+    }
+  }
+
   @override
   void didUpdateWidget(covariant SpeedChallengeTimer oldWidget) {
     super.didUpdateWidget(oldWidget);
@@ -156,7 +175,14 @@ class SpeedChallengeTimerState extends State<SpeedChallengeTimer>
     final duration = newDurationSeconds ?? widget.durationSeconds;
     _controller.duration = Duration(seconds: duration);
     _remainingSecondsNotifier.value = duration;
-    _controller.forward(from: 0.0);
+    final isBriefingOpen = mounted ? GameBriefingScope.isOpen(context) : false;
+    final isRouteCurrent =
+        mounted ? (ModalRoute.of(context)?.isCurrent ?? true) : true;
+    if (isBriefingOpen || !isRouteCurrent) {
+      _controller.stop();
+    } else {
+      _controller.forward(from: 0.0);
+    }
   }
 
   /// Stop the timer and mark as completed (user answered in time).

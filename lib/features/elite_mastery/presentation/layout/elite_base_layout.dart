@@ -86,7 +86,15 @@ class EliteBaseLayout extends StatelessWidget {
     this.scrollController,
     this.disablePadding = false,
     this.fullScreenContent = false,
+    this.onPause,
+    this.onResume,
   });
+
+  /// Optional callback invoked when pausing the game.
+  final VoidCallback? onPause;
+
+  /// Optional callback invoked when resuming the game.
+  final VoidCallback? onResume;
 
   @override
   Widget build(BuildContext context) {
@@ -138,6 +146,8 @@ class EliteBaseLayout extends StatelessWidget {
       useScrolling: useScrolling,
       disablePadding: disablePadding,
       horizontalPadding: AppSpacing.compact,
+      onBriefingShow: onPause,
+      onBriefingDismiss: onResume,
     );
 
     return GameBaseLayout<EliteMasteryBloc, EliteMasteryState>(
@@ -164,9 +174,11 @@ class EliteBaseLayout extends StatelessWidget {
           isHintUsedOnCurrentQuest: isLoaded ? dynamicState.isHintUsed : false,
           isHintEnabled: !isAnswered,
           onPause: () {
+            onPause?.call();
             VowlPauseBottomSheet.show(
               context,
               category: 'elitemastery',
+              onResume: onResume,
               onRestart: () {
                 context.read<EliteMasteryBloc>().add(
                   FetchEliteMasteryQuests(gameType: gameType, level: level),

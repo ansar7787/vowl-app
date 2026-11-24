@@ -58,6 +58,7 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
   @override
   void initState() {
     super.initState();
+    timerKey = _timerKey;
     _scrollController = ScrollController();
     _mainScrollController = ScrollController();
     initReadingGame();
@@ -156,6 +157,8 @@ class _SkimmingScanningScreenState extends State<SkimmingScanningScreen>
               disablePadding: true,
               gameType: widget.gameType,
               level: widget.level,
+              onPause: onGamePaused,
+              onResume: onGameResumed,
               isAnswered: isAnsweredNotifier.value,
               isCorrect: isCorrectNotifier.value,
               showConfetti: showConfettiNotifier.value,

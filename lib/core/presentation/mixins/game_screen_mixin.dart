@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/game_mechanics/shared/speed_challenge_timer.dart';
+import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 import 'package:vowl/core/presentation/widgets/game_dialog_helper.dart';
 import 'package:vowl/core/presentation/widgets/games/dialogs/vowl_pause_bottom_sheet.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
@@ -66,6 +67,21 @@ mixin GameScreenMixin<T extends StatefulWidget> on State<T> {
       onPause: onGamePaused,
       onResume: onGameResumed,
     );
+  }
+
+  bool _wasBriefingOpen = false;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final isBriefingOpen = GameBriefingScope.isOpen(context);
+    if (isBriefingOpen && !_wasBriefingOpen) {
+      _wasBriefingOpen = true;
+      onGamePaused();
+    } else if (!isBriefingOpen && _wasBriefingOpen) {
+      _wasBriefingOpen = false;
+      onGameResumed();
+    }
   }
 
   void onGamePaused() {

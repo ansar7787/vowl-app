@@ -16,7 +16,9 @@ import 'package:vowl/core/presentation/widgets/game_scaffold.dart';
 import 'package:vowl/core/presentation/layout/game_briefing_scope.dart';
 
 /// Levels on which the briefing overlay is shown automatically.
-const Set<int> _kBriefingLevels = {1, 100};
+/// Empty set: briefing overlay is NEVER shown automatically to prevent
+/// unwanted gameplay interruptions and timer desync. It is 100% on-demand via the (i) button.
+const Set<int> _kBriefingLevels = {};
 
 /// Lives count that must remain for the TTS nudge to trigger.
 const int _kLastLifeThreshold = 1;
@@ -93,6 +95,11 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
     _soundService = di.sl<SoundService>();
     _hapticService = di.sl<HapticService>();
     _showBriefing = _kBriefingLevels.contains(widget.config.level);
+    if (_showBriefing) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) widget.config.onBriefingShow?.call();
+      });
+    }
 
     _ttsErrorListener = () {
       final error = TtsErrorNotifier.instance.errorNotifier.value;
@@ -230,7 +237,15 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
           return PopScope(
             canPop: canDirectlyPop,
             onPopInvokedWithResult: (didPop, _) {
-              if (!didPop && !isGameOver) _onExitPressed(context);
+              if (!didPop && !isGameOver) {
+                if (_showBriefing) {
+                  widget.config.onBriefingDismiss?.call();
+                  _showBriefing = false;
+                  _updateState();
+                  return;
+                }
+                _onExitPressed(context);
+              }
             },
             child: MediaQuery(
               data: MediaQuery.of(context).copyWith(
@@ -242,14 +257,18 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
                 valueListenable: _stateHash,
                 builder: (context, _, child) {
                   void triggerBriefing() {
+                    FocusManager.instance.primaryFocus?.unfocus();
                     _ttsService.stop();
                     _soundService.stopTts();
+                    _soundService.stopAudio();
+                    widget.config.onBriefingShow?.call();
                     _showBriefing = true;
                     _updateState();
                   }
 
                   return GameBriefingScope(
                     showBriefing: triggerBriefing,
+                    isBriefingOpen: _showBriefing,
                     child: GameScaffold<S>(
                       state: state,
                       baseState: baseState,
@@ -263,6 +282,7 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
                           !isComplete &&
                           baseState is! GameOverState,
                       onBriefingDismiss: () {
+                        widget.config.onBriefingDismiss?.call();
                         _showBriefing = false;
                         _updateState();
                       },

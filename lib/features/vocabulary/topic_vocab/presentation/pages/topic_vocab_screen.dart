@@ -55,6 +55,19 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
   int _bonusSeconds = 0;
   int _totalSeconds = 45;
   int _remainingSeconds = 45;
+  bool _isPaused = false;
+
+  @override
+  void onGamePaused() {
+    super.onGamePaused();
+    _isPaused = true;
+  }
+
+  @override
+  void onGameResumed() {
+    super.onGameResumed();
+    _isPaused = false;
+  }
 
   int _computeTotalSeconds(VocabularyQuest quest) {
     final count = quest.options?.length ?? 6;
@@ -108,6 +121,7 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
         timer.cancel();
         return;
       }
+      if (_isPaused) return;
       if (_remainingSeconds > 1) {
         setState(() {
           _remainingSeconds--;
@@ -295,6 +309,8 @@ class _TopicVocabScreenState extends State<TopicVocabScreen>
             return VocabularyBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
+              onPause: onGamePaused,
+              onResume: onGameResumed,
               isAnswered: isAnsweredNotifier.value,
               isCorrect: isCorrectNotifier.value,
               isFinalFailure:

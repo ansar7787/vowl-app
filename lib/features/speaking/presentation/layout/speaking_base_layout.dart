@@ -72,6 +72,12 @@ class SpeakingBaseLayout extends StatelessWidget {
   /// Optional haptic feedback service override.
   final HapticService? hapticService;
 
+  /// Optional callback invoked when pausing the game.
+  final VoidCallback? onPause;
+
+  /// Optional callback invoked when resuming the game.
+  final VoidCallback? onResume;
+
   /// Creates a [SpeakingBaseLayout] scaffold.
   const SpeakingBaseLayout({
     super.key,
@@ -91,6 +97,8 @@ class SpeakingBaseLayout extends StatelessWidget {
     this.ttsService,
     this.soundService,
     this.hapticService,
+    this.onPause,
+    this.onResume,
   });
 
   @override
@@ -116,6 +124,8 @@ class SpeakingBaseLayout extends StatelessWidget {
       showConfetti: showConfetti,
       useScrolling: useScrolling,
       disablePadding: disablePadding,
+      onBriefingShow: onPause,
+      onBriefingDismiss: onResume,
     );
 
     return GameBaseLayout<SpeakingBloc, SpeakingState>(
@@ -141,9 +151,11 @@ class SpeakingBaseLayout extends StatelessWidget {
           isHintUsedOnCurrentQuest: isHintUsed,
           isHintEnabled: showHintButton && currentQuest != null && !isAnswered,
           onPause: () {
+            onPause?.call();
             VowlPauseBottomSheet.show(
               context,
               category: 'speaking',
+              onResume: onResume,
               onRestart: () {
                 context.read<SpeakingBloc>().add(
                   FetchSpeakingQuests(gameType: gameType, level: level),

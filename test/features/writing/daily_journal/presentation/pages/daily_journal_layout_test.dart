@@ -976,6 +976,12 @@ void main() {
     ) async {
       await pumpScreen(tester, level: 1, surfaceSize: const Size(390, 1000));
 
+      final infoBtn = find.byIcon(Icons.info_outline_rounded);
+      if (infoBtn.evaluate().isNotEmpty) {
+        await tester.tap(infoBtn);
+        await tester.pumpAndSettle();
+      }
+
       expect(find.byType(QuestBriefingOverlay), findsOneWidget);
 
       final startButton = find.descendant(

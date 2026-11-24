@@ -117,6 +117,7 @@ class _IntonationMimicScreenState extends State<IntonationMimicScreen>
         timer.cancel();
         return;
       }
+      if (ModalRoute.of(context)?.isCurrent != true) return;
       currentStep++;
       _cartPosition.value = (currentStep / steps).clamp(0.0, 1.0);
 

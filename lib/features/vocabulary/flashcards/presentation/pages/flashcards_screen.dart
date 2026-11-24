@@ -55,6 +55,18 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
   VocabularyQuest? _lastQuest;
 
   @override
+  void onGamePaused() {
+    super.onGamePaused();
+    _controller.pauseTimer();
+  }
+
+  @override
+  void onGameResumed() {
+    super.onGameResumed();
+    _controller.resumeTimer();
+  }
+
+  @override
   void initState() {
     super.initState();
     final initialBlocState = context.read<VocabularyBloc>().state;
@@ -157,6 +169,8 @@ class _FlashcardsScreenState extends State<FlashcardsScreen>
             return VocabularyBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
+              onPause: onGamePaused,
+              onResume: onGameResumed,
               isAnswered: _controller.isAnswered,
               isCorrect: _controller.isCorrect,
               isFinalFailure: state is VocabularyLoaded
