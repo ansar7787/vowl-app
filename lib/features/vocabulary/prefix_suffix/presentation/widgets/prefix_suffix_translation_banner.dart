@@ -95,6 +95,8 @@ class _PrefixSuffixTranslationBannerState
                 child: Text(
                   widget.label ??
                       (isTranslatedActive ? 'Translation' : 'English'),
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontFamily: 'Inter',
                     fontSize: 11.sp,

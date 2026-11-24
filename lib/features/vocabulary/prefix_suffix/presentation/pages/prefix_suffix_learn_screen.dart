@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/phases/learn_phase_scaffold.dart';
 import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_discovery_card.dart';
@@ -41,6 +42,12 @@ class _PrefixSuffixLearnScreenState extends State<PrefixSuffixLearnScreen> {
       unawaited(di.sl<TtsService>().preWarm(locale: 'en-US'));
     }
     _loadCurriculum();
+  }
+
+  @override
+  void dispose() {
+    TtsSpeakerButtonWidget.stopAll();
+    super.dispose();
   }
 
   int get _batchStart => ((widget.level - 1) ~/ 10) * 10 + 1;
@@ -196,6 +203,7 @@ class _PrefixSuffixLearnScreenState extends State<PrefixSuffixLearnScreen> {
           : 'Start Practice',
       onPrevious: _currentIndex > 0
           ? () {
+              TtsSpeakerButtonWidget.stopAll();
               setState(() {
                 _currentIndex--;
                 _selectedDialIndex = 0;
@@ -203,6 +211,7 @@ class _PrefixSuffixLearnScreenState extends State<PrefixSuffixLearnScreen> {
             }
           : null,
       onComplete: () {
+        TtsSpeakerButtonWidget.stopAll();
         if (_currentIndex < _rawQuests.length - 1) {
           setState(() {
             _currentIndex++;

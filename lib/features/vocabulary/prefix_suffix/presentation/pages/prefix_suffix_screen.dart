@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/mixins/game_screen_mixin.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
@@ -79,9 +80,16 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
 
   @override
   void dispose() {
+    TtsSpeakerButtonWidget.stopAll();
     _controller.dispose();
     disposeVocabularyGame();
     super.dispose();
+  }
+
+  @override
+  void onGamePaused() {
+    super.onGamePaused();
+    TtsSpeakerButtonWidget.stopAll();
   }
 
   void _startTimer(VocabularyQuest quest) {
@@ -105,6 +113,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
 
   void _onQuestLoaded(VocabularyQuest quest) {
     if (_currentQuest?.id == quest.id) return;
+    TtsSpeakerButtonWidget.stopAll();
     _currentQuest = quest;
     _controller.resetForNextQuest();
     _startTimer(quest);

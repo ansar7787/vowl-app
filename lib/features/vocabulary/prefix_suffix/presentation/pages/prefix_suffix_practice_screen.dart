@@ -7,9 +7,11 @@ import 'package:go_router/go_router.dart';
 import 'package:vowl/core/presentation/phases/phase_progress_recorder.dart';
 import 'package:vowl/core/presentation/phases/practice_phase_scaffold.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
+import 'package:vowl/core/presentation/widgets/tts_speaker_button_widget.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/utils/haptic_service.dart';
 import 'package:vowl/core/utils/injection_container.dart' as di;
+import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/controllers/prefix_suffix_controller.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_clue_banner.dart';
@@ -51,6 +53,7 @@ class _PrefixSuffixPracticeScreenState
 
   @override
   void dispose() {
+    TtsSpeakerButtonWidget.stopAll();
     _controller.dispose();
     super.dispose();
   }
@@ -103,8 +106,14 @@ class _PrefixSuffixPracticeScreenState
 
   void _onAffixSelected(String option, String correctAnswer) {
     if (_controller.isUnlocked) return;
-
     final isCorrect = _controller.slotAffix(option, correctAnswer);
+    if (di.sl.isRegistered<SoundService>()) {
+      try {
+        isCorrect
+            ? di.sl<SoundService>().playCorrect()
+            : di.sl<SoundService>().playSoftWrong();
+      } catch (_) {}
+    }
     if (di.sl.isRegistered<HapticService>()) {
       isCorrect
           ? di.sl<HapticService>().selection()
@@ -131,6 +140,7 @@ class _PrefixSuffixPracticeScreenState
   }
 
   void _nextWord() {
+    TtsSpeakerButtonWidget.stopAll();
     if (_currentIndex < _rawQuests.length - 1) {
       setState(() {
         _currentIndex++;
@@ -173,11 +183,13 @@ class _PrefixSuffixPracticeScreenState
     final rawOptions =
         (questData['options'] as List<dynamic>?) ??
         (questData['tumblerWheelOptions'] as List<dynamic>?) ??
-        [];
+        const [];
     final options = rawOptions.map((e) => e.toString()).toList();
     final hint = questData['hint'] as String? ?? '';
-    final explanation = questData['explanation'] as String? ?? '';
-    questData['jamExplanation'] as String? ?? '';
+    final explanation =
+        questData['explanation'] as String? ??
+        questData['jamExplanation'] as String? ??
+        '';
 
     return ListenableBuilder(
       listenable: _controller,
@@ -194,7 +206,7 @@ class _PrefixSuffixPracticeScreenState
           totalExercises: _rawQuests.length,
           actionLabel: _currentIndex < _rawQuests.length - 1
               ? 'Next Question'
-              : 'Finish Practice',
+              : 'Start Mastery',
           isActionEnabled: isUnlocked,
           onComplete: isUnlocked ? _nextWord : () {},
           child: SingleChildScrollView(
@@ -335,36 +347,6 @@ class _PrefixSuffixPracticeScreenState
                       ),
                     ),
                   ),
-
-                // Continue Button when unlocked
-                if (isUnlocked) ...[
-                  SizedBox(height: 10.h),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 48.h,
-                    child: ElevatedButton(
-                      onPressed: _nextWord,
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: AppColors.emerald500,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(14.r),
-                        ),
-                      ),
-                      child: Text(
-                        _currentIndex < _rawQuests.length - 1
-                            ? 'Next Question'
-                            : 'Start Mastery',
-                        style: TextStyle(
-                          fontFamily: 'Inter',
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w600,
-                          letterSpacing: 0.3,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
                 SizedBox(height: 20.h),
               ],
             ),

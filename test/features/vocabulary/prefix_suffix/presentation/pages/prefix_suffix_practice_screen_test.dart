@@ -35,6 +35,7 @@ void main() {
       () => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')),
     ).thenAnswer((_) async {});
     when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
+    when(() => mockSoundService.playSoftWrong()).thenAnswer((_) async {});
 
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
     when(
