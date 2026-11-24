@@ -160,11 +160,13 @@ void main() {
       );
 
       test(
-        'evaluateSlice correctly handles unbreakable imposter roots with cutIndex 0',
+        'evaluateSlice correctly rewards cutting secondaryCutIndex in dual-affix words',
         () {
+          // Word UNACCEPTABLE: primary cut at 2 (UN|ACCEPTABLE), secondary cut at 8 (UNACCEPT|ABLE)
           final result = controller.evaluateSlice(
-            cutIndex: 0,
-            correctCutIndex: 0,
+            cutIndex: 8,
+            correctCutIndex: 2,
+            secondaryCutIndex: 8,
           );
           expect(result, isTrue);
           expect(controller.isSliced, isTrue);

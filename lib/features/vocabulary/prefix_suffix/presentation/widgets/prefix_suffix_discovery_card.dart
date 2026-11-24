@@ -15,6 +15,7 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
   final String contextSentence;
   final String? partOfSpeech;
   final VoidCallback? onPlayTts;
+  final VoidCallback? onPlayRootTts;
 
   const PrefixSuffixDiscoveryCard({
     super.key,
@@ -27,62 +28,95 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
     required this.contextSentence,
     this.partOfSpeech,
     this.onPlayTts,
+    this.onPlayRootTts,
   });
 
-  Widget _buildOperator(String symbol, {Color? color}) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 6.w),
-      child: Text(
-        symbol,
-        style: TextStyle(
-          fontFamily: 'Inter',
-          fontSize: 16.sp,
-          fontWeight: FontWeight.w700,
-          color: color ?? AppColors.slate500,
-        ),
+  Widget _buildTag({
+    required String text,
+    required Color color,
+    IconData? icon,
+  }) {
+    return Container(
+      constraints: BoxConstraints(maxWidth: 256.w),
+      padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.12),
+        borderRadius: BorderRadius.circular(6.r),
+        border: Border.all(color: color.withValues(alpha: 0.4)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (icon != null) ...[
+            Icon(icon, size: 11.sp, color: color),
+            SizedBox(width: 4.w),
+          ],
+          Flexible(
+            child: Text(
+              text,
+              style: TextStyle(
+                fontFamily: 'Inter',
+                fontSize: 10.sp,
+                fontWeight: FontWeight.w600,
+                color: color,
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
+
+  Widget _buildOperator(String symbol, {Color? color}) => Padding(
+    padding: EdgeInsets.symmetric(horizontal: 6.w),
+    child: Text(
+      symbol,
+      style: TextStyle(
+        fontFamily: 'Inter',
+        fontSize: 16.sp,
+        fontWeight: FontWeight.w700,
+        color: color ?? AppColors.slate500,
+      ),
+    ),
+  );
 
   Widget _buildMorphemeChip({
     required String text,
     required Color color,
     required String label,
-  }) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
-          decoration: BoxDecoration(
-            color: color.withValues(alpha: 0.15),
-            borderRadius: BorderRadius.circular(10.r),
-            border: Border.all(color: color, width: 1.5),
-          ),
-          child: Text(
-            text,
-            style: TextStyle(
-              fontFamily: 'Inter',
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w700,
-              letterSpacing: 0.5,
-              color: color,
-            ),
-          ),
+  }) => Column(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      Container(
+        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+        decoration: BoxDecoration(
+          color: color.withValues(alpha: 0.15),
+          borderRadius: BorderRadius.circular(10.r),
+          border: Border.all(color: color, width: 1.5),
         ),
-        SizedBox(height: 3.h),
-        Text(
-          label,
+        child: Text(
+          text,
           style: TextStyle(
             fontFamily: 'Inter',
-            fontSize: 10.sp,
-            fontWeight: FontWeight.w600,
-            color: AppColors.slate400,
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w700,
+            letterSpacing: 0.5,
+            color: color,
           ),
         ),
-      ],
-    );
-  }
+      ),
+      SizedBox(height: 3.h),
+      Text(
+        label,
+        style: TextStyle(
+          fontFamily: 'Inter',
+          fontSize: 10.sp,
+          fontWeight: FontWeight.w600,
+          color: AppColors.slate400,
+        ),
+      ),
+    ],
+  );
 
   Widget _buildHighlightedSentence() {
     final lowerSentence = contextSentence.toLowerCase();
@@ -129,29 +163,27 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
     );
   }
 
-  String _formatSyllabicBreakdown() {
-    final cleanAffix = affix.replaceAll('-', '').trim();
-    if (cleanAffix.isNotEmpty &&
-        affixType.toLowerCase() == 'prefix' &&
-        combinedWord.toUpperCase().startsWith(cleanAffix.toUpperCase())) {
-      final remainder = combinedWord.substring(cleanAffix.length);
-      return '$cleanAffix • $remainder';
-    } else if (cleanAffix.isNotEmpty &&
-        affixType.toLowerCase() == 'suffix' &&
-        combinedWord.toUpperCase().endsWith(cleanAffix.toUpperCase())) {
-      final base = combinedWord.substring(
-        0,
-        combinedWord.length - cleanAffix.length,
-      );
-      return '$base • $cleanAffix';
-    }
-    return combinedWord;
-  }
-
   @override
   Widget build(BuildContext context) {
     final isPrefix = affixType.toLowerCase() == 'prefix';
-    final syllabicWord = _formatSyllabicBreakdown();
+    final syllabicWord = PrefixSuffixMorphologyHelper.formatSyllabicBreakdown(
+      combinedWord: combinedWord,
+      affix: affix,
+      affixType: affixType,
+    );
+    final mutation = PrefixSuffixMorphologyHelper.detectSpellingMutation(
+      affix: affix,
+      rootWord: rootWord,
+      combinedWord: combinedWord,
+    );
+    final antonym = PrefixSuffixMorphologyHelper.detectAntonymShift(
+      affix: affix,
+    );
+    final pos = PrefixSuffixMorphologyHelper.detectPosShift(
+      affix: affix,
+      affixType: affixType,
+      partOfSpeech: partOfSpeech,
+    );
 
     return AnimatedSwitcher(
       duration: const Duration(milliseconds: 250),
@@ -211,79 +243,33 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
             ),
             SizedBox(height: 10.h),
 
-            // Grammar Shift & Spelling Mutation Chips
+            // Grammar Shift, Spelling Mutation & Antonym Chips
             Wrap(
               spacing: 6.w,
               runSpacing: 4.h,
               alignment: WrapAlignment.center,
               children: [
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
-                  decoration: BoxDecoration(
-                    color: AppColors.indigo500.withValues(alpha: 0.15),
-                    borderRadius: BorderRadius.circular(6.r),
-                    border: Border.all(
-                      color: AppColors.indigo400.withValues(alpha: 0.4),
-                    ),
-                  ),
-                  child: Text(
-                    'Part of speech: ${PrefixSuffixMorphologyHelper.detectPosShift(affix: affix, affixType: affixType, partOfSpeech: partOfSpeech)}',
-                    style: TextStyle(
-                      fontFamily: 'Inter',
-                      fontSize: 10.5.sp,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.indigo400,
-                    ),
-                  ),
+                _buildTag(
+                  text: 'Part of speech: $pos',
+                  color: AppColors.indigo400,
                 ),
-                if (PrefixSuffixMorphologyHelper.detectSpellingMutation(
-                      affix: affix,
-                      rootWord: rootWord,
-                      combinedWord: combinedWord,
-                    ) !=
-                    null)
-                  Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 8.w,
-                      vertical: 3.h,
-                    ),
-                    decoration: BoxDecoration(
-                      color: AppColors.amber500.withValues(alpha: 0.12),
-                      borderRadius: BorderRadius.circular(6.r),
-                      border: Border.all(
-                        color: AppColors.amber500.withValues(alpha: 0.4),
-                      ),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.lightbulb_outline_rounded,
-                          size: 11.sp,
-                          color: AppColors.amber500,
-                        ),
-                        SizedBox(width: 3.w),
-                        Text(
-                          PrefixSuffixMorphologyHelper.detectSpellingMutation(
-                            affix: affix,
-                            rootWord: rootWord,
-                            combinedWord: combinedWord,
-                          )!,
-                          style: TextStyle(
-                            fontFamily: 'Inter',
-                            fontSize: 9.5.sp,
-                            fontWeight: FontWeight.w600,
-                            color: AppColors.amber500,
-                          ),
-                        ),
-                      ],
-                    ),
+                if (mutation != null)
+                  _buildTag(
+                    text: mutation,
+                    color: AppColors.amber500,
+                    icon: Icons.lightbulb_outline_rounded,
+                  ),
+                if (antonym != null)
+                  _buildTag(
+                    text: antonym,
+                    color: AppColors.violet500,
+                    icon: Icons.swap_horiz_rounded,
                   ),
               ],
             ),
             SizedBox(height: 10.h),
 
-            // Synthesized Word Display Header with Syllabic Marker & TTS
+            // Synthesized Word Display Header with Syllabic Marker & Dual Audio (Word & Root)
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -303,7 +289,7 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
                   ),
                 ),
                 if (onPlayTts != null) ...[
-                  SizedBox(width: 8.w),
+                  SizedBox(width: 6.w),
                   IconButton(
                     onPressed: () {
                       HapticFeedback.lightImpact();
@@ -314,7 +300,23 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
                       color: AppColors.indigo400,
                       size: 22.sp,
                     ),
-                    tooltip: 'Listen to pronunciation',
+                    tooltip: 'Listen to $combinedWord',
+                    splashRadius: 20.r,
+                  ),
+                ],
+                if (onPlayRootTts != null) ...[
+                  SizedBox(width: 2.w),
+                  IconButton(
+                    onPressed: () {
+                      HapticFeedback.lightImpact();
+                      onPlayRootTts?.call();
+                    },
+                    icon: Icon(
+                      Icons.record_voice_over_outlined,
+                      color: AppColors.slate400,
+                      size: 20.sp,
+                    ),
+                    tooltip: 'Listen to root $rootWord',
                     splashRadius: 20.r,
                   ),
                 ],

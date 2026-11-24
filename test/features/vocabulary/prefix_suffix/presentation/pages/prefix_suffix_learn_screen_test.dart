@@ -86,10 +86,18 @@ void main() {
         expect(find.byType(PrefixSuffixDiscoveryCard), findsOneWidget);
         expect(find.text('New Word'), findsOneWidget);
 
-        // Verify TTS button interaction
-        final ttsButton = find.byTooltip('Listen to pronunciation');
+        // Verify TTS button interaction (combined word)
+        final ttsButton = find.byIcon(Icons.volume_up_rounded);
         if (ttsButton.evaluate().isNotEmpty) {
-          await tester.tap(ttsButton);
+          await tester.tap(ttsButton.first);
+          await tester.pump();
+          verify(() => mockTtsService.speak(any())).called(1);
+        }
+
+        // Verify Root TTS button interaction
+        final rootTtsButton = find.byIcon(Icons.record_voice_over_outlined);
+        if (rootTtsButton.evaluate().isNotEmpty) {
+          await tester.tap(rootTtsButton.first);
           await tester.pump();
           verify(() => mockTtsService.speak(any())).called(1);
         }

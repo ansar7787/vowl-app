@@ -3,11 +3,13 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_laser_painter.dart';
+import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_scissor_pad.dart';
 
 /// Laser Seam Slicer Widget for Prefix & Suffix Mastery Phase ("Morpheme Precision Slicer").
 class PrefixSuffixPrecisionSlicer extends StatefulWidget {
   final String word;
   final int correctCutIndex;
+  final int? secondaryCutIndex;
   final ValueChanged<int> onSlice;
   final bool isSliced;
   final bool isWrongCut;
@@ -17,6 +19,7 @@ class PrefixSuffixPrecisionSlicer extends StatefulWidget {
     super.key,
     required this.word,
     required this.correctCutIndex,
+    this.secondaryCutIndex,
     required this.onSlice,
     this.isSliced = false,
     this.isWrongCut = false,
@@ -277,108 +280,22 @@ class _PrefixSuffixPrecisionSlicerState
               ),
             ),
             SizedBox(height: 12.h),
-
-            // WCAG Accessible Scissor Buttons
-            Wrap(
-              spacing: 6.w,
-              runSpacing: 6.h,
-              alignment: WrapAlignment.center,
-              children: [
-                for (int seam = 1; seam < letters.length; seam++)
-                  _buildScissorButton(seam, letters),
-              ],
+            PrefixSuffixScissorPad(
+              letters: letters,
+              correctCutIndex: widget.correctCutIndex,
+              secondaryCutIndex: widget.secondaryCutIndex,
+              lastCut: _lastCut,
+              isSliced: widget.isSliced,
+              isWrongCut: widget.isWrongCut,
+              isAnswered: widget.isAnswered,
+              onSlice: (seam) {
+                setState(() => _lastCut = seam);
+                widget.onSlice(seam);
+              },
             ),
-            SizedBox(height: 8.h),
-            _buildShieldButton(),
           ],
         );
       },
-    );
-  }
-
-  Widget _buildScissorButton(int seam, List<String> letters) {
-    final isCorrect = widget.isSliced && seam == widget.correctCutIndex;
-    final isWrong = widget.isWrongCut && _lastCut == seam;
-    final activeColor = isCorrect
-        ? AppColors.emerald500
-        : (isWrong ? AppColors.red500 : null);
-
-    return OutlinedButton.icon(
-      onPressed: widget.isAnswered
-          ? null
-          : () {
-              HapticFeedback.selectionClick();
-              setState(() => _lastCut = seam);
-              widget.onSlice(seam);
-            },
-      style: OutlinedButton.styleFrom(
-        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
-        minimumSize: Size(44.w, 36.h),
-        backgroundColor: isWrong
-            ? AppColors.red500.withValues(alpha: 0.15)
-            : null,
-        side: BorderSide(color: activeColor ?? AppColors.slate700),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),
-      ),
-      icon: Icon(
-        Icons.content_cut_rounded,
-        size: 14.sp,
-        color: activeColor ?? AppColors.slate400,
-      ),
-      label: Text(
-        '${letters.sublist(0, seam).join()}|${letters.sublist(seam).join()}',
-        style: TextStyle(
-          fontFamily: 'Inter',
-          fontSize: 11.sp,
-          fontWeight: FontWeight.w600,
-          color: AppColors.slate50,
-        ),
-      ),
-    );
-  }
-
-  Widget _buildShieldButton() {
-    final isCorrect = widget.isSliced && widget.correctCutIndex == 0;
-    final isWrong = widget.isWrongCut && _lastCut == 0;
-    final bg = isCorrect
-        ? AppColors.emerald500.withValues(alpha: 0.15)
-        : (isWrong
-              ? AppColors.red500.withValues(alpha: 0.15)
-              : AppColors.slate800);
-    final border = isCorrect
-        ? AppColors.emerald500
-        : (isWrong ? AppColors.red500 : AppColors.slate700);
-    final text = isCorrect
-        ? AppColors.emerald500
-        : (isWrong ? AppColors.red500 : AppColors.slate300);
-
-    return OutlinedButton.icon(
-      onPressed: widget.isAnswered
-          ? null
-          : () {
-              HapticFeedback.mediumImpact();
-              setState(() => _lastCut = 0);
-              widget.onSlice(0);
-            },
-      style: OutlinedButton.styleFrom(
-        backgroundColor: bg,
-        side: BorderSide(color: border, width: 1.5),
-        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.r),
-        ),
-      ),
-      icon: Icon(Icons.shield_outlined, size: 14.sp, color: text),
-      label: Text(
-        'Pure Root (No Affix)',
-        style: TextStyle(
-          fontFamily: 'Inter',
-          fontSize: 11.sp,
-          fontWeight: FontWeight.w600,
-          letterSpacing: 0.3,
-          color: text,
-        ),
-      ),
     );
   }
 }

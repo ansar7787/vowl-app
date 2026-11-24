@@ -229,6 +229,7 @@ class _PrefixSuffixLearnScreenState extends State<PrefixSuffixLearnScreen> {
               definition: activeComb['definition'] as String? ?? '',
               contextSentence: activeComb['context'] as String? ?? '',
               onPlayTts: () => _speakWord(combinedWord),
+              onPlayRootTts: () => _speakWord(rootWord),
             ),
             SizedBox(height: 24.h),
           ],

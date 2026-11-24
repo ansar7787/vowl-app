@@ -137,13 +137,29 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
     return (word.length ~/ 2).clamp(1, (word.length - 1).clamp(1, 99));
   }
 
+  int? _calculateSecondaryCutIndex(VocabularyQuest quest) {
+    final word = quest.word ?? '';
+    final prefix = quest.prefix?.replaceAll('-', '').trim() ?? '';
+    final suffix = quest.suffix?.replaceAll('-', '').trim() ?? '';
+    if (prefix.isNotEmpty &&
+        suffix.isNotEmpty &&
+        word.toUpperCase().startsWith(prefix.toUpperCase()) &&
+        word.toUpperCase().endsWith(suffix.toUpperCase()) &&
+        word.length > prefix.length + suffix.length) {
+      return word.length - suffix.length;
+    }
+    return null;
+  }
+
   void _handleSlice(int severedSeam, VocabularyQuest quest) {
     if (isAnsweredNotifier.value) return;
 
     final correctSeam = _calculateCorrectCutIndex(quest);
+    final secondarySeam = _calculateSecondaryCutIndex(quest);
     final isCorrect = _controller.evaluateSlice(
       cutIndex: severedSeam,
       correctCutIndex: correctSeam,
+      secondaryCutIndex: secondarySeam,
     );
 
     if (isCorrect) {
@@ -248,6 +264,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                     PrefixSuffixPrecisionSlicer(
                       word: word,
                       correctCutIndex: correctCutIndex,
+                      secondaryCutIndex: _calculateSecondaryCutIndex(quest),
                       isSliced: _controller.isSliced,
                       isWrongCut: _controller.isWrongCut,
                       isAnswered: isAnsweredNotifier.value,

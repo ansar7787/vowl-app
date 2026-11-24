@@ -76,4 +76,84 @@ class PrefixSuffixMorphologyHelper {
     }
     return null;
   }
+
+  /// Detects polar opposite affixes or semantic inversion patterns.
+  static String? detectAntonymShift({required String affix}) {
+    final clean = affix.replaceAll('-', '').toUpperCase().trim();
+    switch (clean) {
+      case 'FUL':
+        return 'Opposite: -LESS (e.g. careful ⇄ careless)';
+      case 'LESS':
+        return 'Opposite: -FUL (e.g. helpless ⇄ helpful)';
+      case 'UN':
+      case 'DIS':
+      case 'IN':
+      case 'IM':
+      case 'IR':
+      case 'IL':
+        return 'Negation: Reverses root polarity';
+      case 'PRE':
+        return 'Temporal: Action before / in advance';
+      case 'POST':
+        return 'Temporal: Action after / subsequent';
+      case 'OVER':
+        return 'Degree: Beyond limit / excessive';
+      case 'UNDER':
+        return 'Degree: Below standard / insufficient';
+      default:
+        return null;
+    }
+  }
+
+  /// Generates real-time spatial clue explaining an incorrect seam cut.
+  static String formatSeamDiagnostic({
+    required int? attemptedCut,
+    required int correctCut,
+    int? secondaryCut,
+  }) {
+    if (attemptedCut == null) return '';
+    if (correctCut == 0) {
+      return 'Pure root (no affix) — tap the Shield!';
+    }
+    if (attemptedCut == 0) {
+      return 'This word has an affix! Look for the seam.';
+    }
+
+    int target = correctCut;
+    if (secondaryCut != null && secondaryCut > 0) {
+      final diff1 = (attemptedCut - correctCut).abs();
+      final diff2 = (attemptedCut - secondaryCut).abs();
+      if (diff2 < diff1) target = secondaryCut;
+    }
+
+    final diff = (target - attemptedCut).abs();
+    final letterUnit = diff == 1 ? 'letter' : 'letters';
+    return attemptedCut < target
+        ? 'Cut $diff $letterUnit further right.'
+        : 'Cut $diff $letterUnit further left.';
+  }
+
+  /// Formats the combined word with a syllabic dot separating affix and root.
+  static String formatSyllabicBreakdown({
+    required String combinedWord,
+    required String affix,
+    required String affixType,
+  }) {
+    final cleanAffix = affix.replaceAll('-', '').trim();
+    if (cleanAffix.isNotEmpty &&
+        affixType.toLowerCase() == 'prefix' &&
+        combinedWord.toUpperCase().startsWith(cleanAffix.toUpperCase())) {
+      final remainder = combinedWord.substring(cleanAffix.length);
+      return '$cleanAffix • $remainder';
+    } else if (cleanAffix.isNotEmpty &&
+        affixType.toLowerCase() == 'suffix' &&
+        combinedWord.toUpperCase().endsWith(cleanAffix.toUpperCase())) {
+      final base = combinedWord.substring(
+        0,
+        combinedWord.length - cleanAffix.length,
+      );
+      return '$base • $cleanAffix';
+    }
+    return combinedWord;
+  }
 }

@@ -108,16 +108,22 @@ class PrefixSuffixController extends ChangeNotifier {
     _masteryTimer = null;
   }
 
-  /// Evaluates a slice attempt at [cutIndex] against [correctCutIndex].
+  /// Evaluates a slice attempt at [cutIndex] against [correctCutIndex] or optional [secondaryCutIndex].
   ///
-  /// Returns `true` if the cut severed the correct seam.
-  bool evaluateSlice({required int cutIndex, required int correctCutIndex}) {
+  /// Returns `true` if the cut severed a legitimate morpheme seam.
+  bool evaluateSlice({
+    required int cutIndex,
+    required int correctCutIndex,
+    int? secondaryCutIndex,
+  }) {
     if (_isAnswered) return false;
 
     _isAnswered = true;
     stopMasteryTimer();
 
-    final isCorrect = cutIndex == correctCutIndex;
+    final isCorrect =
+        cutIndex == correctCutIndex ||
+        (secondaryCutIndex != null && cutIndex == secondaryCutIndex);
     if (isCorrect) {
       _isSliced = true;
       _isWrongCut = false;
