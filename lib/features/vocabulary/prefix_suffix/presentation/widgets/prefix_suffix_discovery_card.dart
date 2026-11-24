@@ -84,13 +84,14 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
     required String text,
     required Color color,
     required String label,
+    bool isDark = true,
   }) => Column(
     mainAxisSize: MainAxisSize.min,
     children: [
       Container(
         padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
         decoration: BoxDecoration(
-          color: color.withValues(alpha: 0.15),
+          color: color.withValues(alpha: isDark ? 0.15 : 0.1),
           borderRadius: BorderRadius.circular(10.r),
           border: Border.all(color: color, width: 1.5),
         ),
@@ -112,7 +113,7 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
           fontFamily: 'Inter',
           fontSize: 10.sp,
           fontWeight: FontWeight.w600,
-          color: AppColors.slate400,
+          color: isDark ? AppColors.slate400 : AppColors.slate600,
         ),
       ),
     ],
@@ -137,7 +138,7 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
     );
   }
 
-  Widget _buildHighlightedSentence() {
+  Widget _buildHighlightedSentence(bool isDark) {
     final lowerSentence = contextSentence.toLowerCase();
     final lowerWord = combinedWord.toLowerCase();
     final baseStyle = TextStyle(
@@ -145,7 +146,7 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
       fontSize: 13.5.sp,
       fontWeight: FontWeight.w400,
       height: 1.45,
-      color: AppColors.slate400,
+      color: isDark ? AppColors.slate400 : AppColors.slate600,
     );
     if (!lowerSentence.contains(lowerWord)) {
       return Text(
@@ -179,6 +180,9 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    final cardBg = isDark ? AppColors.slate900 : Colors.white;
+    final cardBorder = isDark ? AppColors.slate800 : AppColors.slate200;
     final isPrefix = affixType.toLowerCase() == 'prefix';
     final syllabicWord = PrefixSuffixMorphologyHelper.formatSyllabicBreakdown(
       combinedWord: combinedWord,
@@ -215,12 +219,14 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
         width: double.infinity,
         padding: EdgeInsets.all(16.w),
         decoration: BoxDecoration(
-          color: AppColors.slate800,
+          color: cardBg,
           borderRadius: BorderRadius.circular(24.r),
-          border: Border.all(color: AppColors.slate700, width: 1.5),
+          border: Border.all(color: cardBorder, width: 1.5),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.16),
+              color: isDark
+                  ? Colors.black.withValues(alpha: 0.16)
+                  : AppColors.indigo500.withValues(alpha: 0.06),
               blurRadius: 16,
               offset: const Offset(0, 6),
             ),
@@ -239,18 +245,21 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
                     text: isPrefix ? affix : rootWord,
                     color: isPrefix ? AppColors.violet500 : AppColors.indigo400,
                     label: isPrefix ? 'Prefix' : 'Root',
+                    isDark: isDark,
                   ),
                   _buildOperator('+'),
                   _buildMorphemeChip(
                     text: isPrefix ? rootWord : affix,
                     color: isPrefix ? AppColors.indigo400 : AppColors.violet500,
                     label: isPrefix ? 'Root' : 'Suffix',
+                    isDark: isDark,
                   ),
                   _buildOperator('➔', color: AppColors.emerald500),
                   _buildMorphemeChip(
                     text: combinedWord,
                     color: AppColors.emerald500,
                     label: 'New Word',
+                    isDark: isDark,
                   ),
                 ],
               ),
@@ -297,7 +306,7 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
                         fontSize: 22.sp,
                         fontWeight: FontWeight.w700,
                         letterSpacing: 1.0,
-                        color: AppColors.slate50,
+                        color: isDark ? AppColors.slate50 : AppColors.slate900,
                       ),
                     ),
                   ),
@@ -311,7 +320,7 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
                 _buildAudioBtn(
                   onTap: onPlayRootTts,
                   icon: Icons.record_voice_over_outlined,
-                  color: AppColors.slate400,
+                  color: isDark ? AppColors.slate400 : AppColors.slate500,
                   size: 20,
                   tip: 'Listen to root $rootWord',
                 ),
@@ -331,7 +340,7 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
                 fontSize: 11.5.sp,
                 fontStyle: FontStyle.italic,
                 letterSpacing: 0.5,
-                color: AppColors.slate400,
+                color: isDark ? AppColors.slate400 : AppColors.slate600,
               ),
             ),
             SizedBox(height: 8.h),
@@ -353,13 +362,13 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
                 fontSize: 14.sp,
                 fontWeight: FontWeight.w500,
                 height: 1.45,
-                color: AppColors.slate100,
+                color: isDark ? AppColors.slate100 : AppColors.slate800,
               ),
             ),
             SizedBox(height: 10.h),
 
             // Context Sentence
-            _buildHighlightedSentence(),
+            _buildHighlightedSentence(isDark),
           ],
         ),
       ),

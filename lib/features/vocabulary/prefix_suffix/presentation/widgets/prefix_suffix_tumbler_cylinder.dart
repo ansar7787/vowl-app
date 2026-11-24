@@ -89,7 +89,10 @@ class _PrefixSuffixTumblerCylinderState
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final themeColor = widget.accentColor ?? AppColors.indigo500;
+    final cylinderBg = isDark ? AppColors.slate900 : Colors.white;
+    final cylinderBorder = isDark ? AppColors.slate800 : AppColors.slate200;
     final itemExtent = 52.h;
 
     return Column(
@@ -132,7 +135,7 @@ class _PrefixSuffixTumblerCylinderState
                 fontFamily: 'Inter',
                 fontSize: 10.sp,
                 fontWeight: FontWeight.w500,
-                color: AppColors.slate400,
+                color: isDark ? AppColors.slate400 : AppColors.slate600,
               ),
             ),
           ],
@@ -144,12 +147,12 @@ class _PrefixSuffixTumblerCylinderState
           height: 190.h,
           width: double.infinity,
           decoration: BoxDecoration(
-            color: AppColors.slate800,
+            color: cylinderBg,
             borderRadius: BorderRadius.circular(20.r),
-            border: Border.all(color: AppColors.slate700, width: 1.5),
+            border: Border.all(color: cylinderBorder, width: 1.5),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withValues(alpha: 0.22),
+                color: Colors.black.withValues(alpha: isDark ? 0.22 : 0.05),
                 blurRadius: 14,
                 offset: const Offset(0, 5),
               ),
@@ -226,8 +229,12 @@ class _PrefixSuffixTumblerCylinderState
                               : FontWeight.w600,
                           letterSpacing: 1.2,
                           color: isSelected
-                              ? AppColors.slate50
-                              : AppColors.slate500,
+                              ? (isDark
+                                    ? AppColors.slate50
+                                    : AppColors.slate900)
+                              : (isDark
+                                    ? AppColors.slate500
+                                    : AppColors.slate400),
                         ),
                         child: Text(itemText),
                       ),
@@ -252,10 +259,7 @@ class _PrefixSuffixTumblerCylinderState
                       gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
-                        colors: [
-                          AppColors.slate800,
-                          AppColors.slate800.withValues(alpha: 0.0),
-                        ],
+                        colors: [cylinderBg, cylinderBg.withValues(alpha: 0.0)],
                       ),
                     ),
                     alignment: Alignment.topCenter,
@@ -263,7 +267,8 @@ class _PrefixSuffixTumblerCylinderState
                     child: Icon(
                       Icons.keyboard_arrow_up_rounded,
                       size: 18.sp,
-                      color: AppColors.slate500.withValues(alpha: 0.6),
+                      color: (isDark ? AppColors.slate500 : AppColors.slate400)
+                          .withValues(alpha: 0.6),
                     ),
                   ),
                 ),
@@ -285,10 +290,7 @@ class _PrefixSuffixTumblerCylinderState
                       gradient: LinearGradient(
                         begin: Alignment.bottomCenter,
                         end: Alignment.topCenter,
-                        colors: [
-                          AppColors.slate800,
-                          AppColors.slate800.withValues(alpha: 0.0),
-                        ],
+                        colors: [cylinderBg, cylinderBg.withValues(alpha: 0.0)],
                       ),
                     ),
                     alignment: Alignment.bottomCenter,
@@ -296,7 +298,8 @@ class _PrefixSuffixTumblerCylinderState
                     child: Icon(
                       Icons.keyboard_arrow_down_rounded,
                       size: 18.sp,
-                      color: AppColors.slate500.withValues(alpha: 0.6),
+                      color: (isDark ? AppColors.slate500 : AppColors.slate400)
+                          .withValues(alpha: 0.6),
                     ),
                   ),
                 ),

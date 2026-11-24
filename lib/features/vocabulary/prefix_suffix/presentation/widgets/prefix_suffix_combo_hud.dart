@@ -41,20 +41,32 @@ class PrefixSuffixComboHud extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final timerColor = _getTimerColor();
     final isCritical = secondsRemaining <= 2 && secondsRemaining > 0;
 
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 8.h),
       decoration: BoxDecoration(
-        color: AppColors.slate800.withValues(alpha: 0.7),
+        color: isDark
+            ? AppColors.slate800.withValues(alpha: 0.7)
+            : Colors.white,
         borderRadius: BorderRadius.circular(16.r),
         border: Border.all(
           color: isCritical
               ? AppColors.red500.withValues(alpha: 0.8)
-              : AppColors.slate700,
+              : (isDark ? AppColors.slate700 : AppColors.slate200),
           width: isCritical ? 1.5 : 1.0,
         ),
+        boxShadow: isDark
+            ? null
+            : [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.04),
+                  blurRadius: 8,
+                  offset: const Offset(0, 2),
+                ),
+              ],
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -78,7 +90,9 @@ class PrefixSuffixComboHud extends StatelessWidget {
                           size: 20.sp,
                           color: comboMultiplier > 1
                               ? AppColors.amber500
-                              : AppColors.slate500,
+                              : (isDark
+                                    ? AppColors.slate500
+                                    : AppColors.slate400),
                         ),
                       ),
                       SizedBox(width: 4.w),
@@ -91,7 +105,9 @@ class PrefixSuffixComboHud extends StatelessWidget {
                           letterSpacing: 0.3,
                           color: comboMultiplier > 1
                               ? AppColors.amber500
-                              : AppColors.slate400,
+                              : (isDark
+                                    ? AppColors.slate400
+                                    : AppColors.slate600),
                         ),
                       ),
                       if (currentStreak > 1) ...[
@@ -102,7 +118,9 @@ class PrefixSuffixComboHud extends StatelessWidget {
                             vertical: 2.h,
                           ),
                           decoration: BoxDecoration(
-                            color: AppColors.indigo500.withValues(alpha: 0.2),
+                            color: isDark
+                                ? AppColors.indigo500.withValues(alpha: 0.2)
+                                : AppColors.indigo50,
                             borderRadius: BorderRadius.circular(8.r),
                           ),
                           child: Text(
@@ -111,7 +129,9 @@ class PrefixSuffixComboHud extends StatelessWidget {
                               fontFamily: 'Inter',
                               fontSize: 10.sp,
                               fontWeight: FontWeight.w600,
-                              color: AppColors.indigo400,
+                              color: isDark
+                                  ? AppColors.indigo400
+                                  : AppColors.indigo600,
                             ),
                           ),
                         ),
@@ -149,7 +169,10 @@ class PrefixSuffixComboHud extends StatelessWidget {
               height: 6.h,
               child: Stack(
                 children: [
-                  Container(width: double.infinity, color: AppColors.slate700),
+                  Container(
+                    width: double.infinity,
+                    color: isDark ? AppColors.slate700 : AppColors.slate200,
+                  ),
                   FractionallySizedBox(
                     alignment: Alignment.centerLeft,
                     widthFactor: timeFraction.clamp(0.0, 1.0),

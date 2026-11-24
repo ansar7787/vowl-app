@@ -27,7 +27,7 @@ class PrefixSuffixScissorPad extends StatelessWidget {
     required this.onSlice,
   });
 
-  Widget _buildScissorButton(int seam) {
+  Widget _buildScissorButton(int seam, bool isDark) {
     final isCorrect =
         isSliced &&
         (seam == correctCutIndex ||
@@ -49,14 +49,18 @@ class PrefixSuffixScissorPad extends StatelessWidget {
         minimumSize: Size(44.w, 36.h),
         backgroundColor: isWrong
             ? AppColors.red500.withValues(alpha: 0.15)
-            : null,
-        side: BorderSide(color: activeColor ?? AppColors.slate700),
+            : (isDark ? AppColors.slate800 : Colors.white),
+        side: BorderSide(
+          color:
+              activeColor ?? (isDark ? AppColors.slate700 : AppColors.slate300),
+        ),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),
       ),
       icon: Icon(
         Icons.content_cut_rounded,
         size: 14.sp,
-        color: activeColor ?? AppColors.slate400,
+        color:
+            activeColor ?? (isDark ? AppColors.slate400 : AppColors.slate500),
       ),
       label: Text(
         '${letters.sublist(0, seam).join()}|${letters.sublist(seam).join()}',
@@ -64,26 +68,30 @@ class PrefixSuffixScissorPad extends StatelessWidget {
           fontFamily: 'Inter',
           fontSize: 11.sp,
           fontWeight: FontWeight.w600,
-          color: AppColors.slate50,
+          color: isDark ? AppColors.slate50 : AppColors.slate900,
         ),
       ),
     );
   }
 
-  Widget _buildShieldButton() {
+  Widget _buildShieldButton(bool isDark) {
     final isCorrect = isSliced && correctCutIndex == 0;
     final isWrong = isWrongCut && lastCut == 0;
     final bg = isCorrect
         ? AppColors.emerald500.withValues(alpha: 0.15)
         : (isWrong
               ? AppColors.red500.withValues(alpha: 0.15)
-              : AppColors.slate800);
+              : (isDark ? AppColors.slate800 : Colors.white));
     final border = isCorrect
         ? AppColors.emerald500
-        : (isWrong ? AppColors.red500 : AppColors.slate700);
+        : (isWrong
+              ? AppColors.red500
+              : (isDark ? AppColors.slate700 : AppColors.slate300));
     final text = isCorrect
         ? AppColors.emerald500
-        : (isWrong ? AppColors.red500 : AppColors.slate300);
+        : (isWrong
+              ? AppColors.red500
+              : (isDark ? AppColors.slate300 : AppColors.slate700));
 
     return OutlinedButton.icon(
       onPressed: isAnswered
@@ -116,6 +124,7 @@ class PrefixSuffixScissorPad extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -125,17 +134,19 @@ class PrefixSuffixScissorPad extends StatelessWidget {
           alignment: WrapAlignment.center,
           children: [
             for (int seam = 1; seam < letters.length; seam++)
-              _buildScissorButton(seam),
+              _buildScissorButton(seam, isDark),
           ],
         ),
         SizedBox(height: 8.h),
-        _buildShieldButton(),
+        _buildShieldButton(isDark),
         if (isWrongCut && lastCut != null) ...[
           SizedBox(height: 8.h),
           Container(
             padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
             decoration: BoxDecoration(
-              color: AppColors.red500.withValues(alpha: 0.12),
+              color: isDark
+                  ? AppColors.red500.withValues(alpha: 0.12)
+                  : AppColors.red500.withValues(alpha: 0.08),
               borderRadius: BorderRadius.circular(8.r),
               border: Border.all(
                 color: AppColors.red500.withValues(alpha: 0.35),

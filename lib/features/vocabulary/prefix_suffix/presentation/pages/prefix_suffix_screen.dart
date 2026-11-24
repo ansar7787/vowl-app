@@ -183,13 +183,16 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return BlocConsumer<VocabularyBloc, VocabularyState>(
       listenWhen: vocabularyListenWhen,
       listener: onVocabularyStateChanged,
       builder: (context, state) {
         if (state is! VocabularyLoaded) {
           return Scaffold(
-            backgroundColor: AppColors.slate900,
+            backgroundColor: isDark
+                ? AppColors.slate900
+                : const Color(0xFFF8FAFC),
             body: Center(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -255,7 +258,7 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w600,
                         letterSpacing: 0.2,
-                        color: AppColors.slate50,
+                        color: isDark ? AppColors.slate50 : AppColors.slate900,
                       ),
                     ),
                     SizedBox(height: 16.h),
@@ -279,9 +282,22 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                         width: double.infinity,
                         padding: EdgeInsets.all(12.w),
                         decoration: BoxDecoration(
-                          color: AppColors.slate800,
+                          color: isDark ? AppColors.slate800 : Colors.white,
                           borderRadius: BorderRadius.circular(14.r),
-                          border: Border.all(color: AppColors.slate700),
+                          border: Border.all(
+                            color: isDark
+                                ? AppColors.slate700
+                                : AppColors.slate200,
+                          ),
+                          boxShadow: isDark
+                              ? null
+                              : [
+                                  BoxShadow(
+                                    color: Colors.black.withValues(alpha: 0.03),
+                                    blurRadius: 6,
+                                    offset: const Offset(0, 2),
+                                  ),
+                                ],
                         ),
                         child: Text(
                           quest.definition!,
@@ -291,7 +307,9 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
                             fontSize: 13.sp,
                             fontWeight: FontWeight.w400,
                             height: 1.45,
-                            color: AppColors.slate300,
+                            color: isDark
+                                ? AppColors.slate300
+                                : AppColors.slate700,
                           ),
                         ),
                       ),

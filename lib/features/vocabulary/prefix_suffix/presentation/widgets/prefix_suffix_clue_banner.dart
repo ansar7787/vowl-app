@@ -79,9 +79,10 @@ class _PrefixSuffixClueBannerState extends State<PrefixSuffixClueBanner>
     super.dispose();
   }
 
-  Widget _buildSentenceWithGap() {
+  Widget _buildSentenceWithGap(bool isDark) {
     final rawSentence = widget.contextSentence;
     const gapPlaceholder = '{{gap}}';
+    final textColor = isDark ? AppColors.slate50 : AppColors.slate900;
 
     if (!rawSentence.contains(gapPlaceholder)) {
       return Text(
@@ -91,7 +92,7 @@ class _PrefixSuffixClueBannerState extends State<PrefixSuffixClueBanner>
           fontFamily: 'Inter',
           fontSize: 15.sp,
           height: 1.45,
-          color: AppColors.slate50,
+          color: textColor,
           fontWeight: FontWeight.w500,
         ),
       );
@@ -109,7 +110,7 @@ class _PrefixSuffixClueBannerState extends State<PrefixSuffixClueBanner>
     } else if (hasSlotted) {
       slotColor = AppColors.indigo500;
     } else {
-      slotColor = AppColors.slate500;
+      slotColor = isDark ? AppColors.slate500 : AppColors.slate400;
     }
 
     return RichText(
@@ -119,7 +120,7 @@ class _PrefixSuffixClueBannerState extends State<PrefixSuffixClueBanner>
           fontFamily: 'Inter',
           fontSize: 15.sp,
           height: 1.45,
-          color: AppColors.slate50,
+          color: textColor,
           fontWeight: FontWeight.w500,
         ),
         children: [
@@ -155,6 +156,7 @@ class _PrefixSuffixClueBannerState extends State<PrefixSuffixClueBanner>
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     Color borderColor;
     Color statusBg;
     IconData lockIcon;
@@ -171,8 +173,8 @@ class _PrefixSuffixClueBannerState extends State<PrefixSuffixClueBanner>
       lockIcon = Icons.lock_clock_rounded;
       statusLabel = 'Not quite — try again';
     } else {
-      borderColor = AppColors.slate700;
-      statusBg = AppColors.slate800;
+      borderColor = isDark ? AppColors.slate700 : AppColors.slate300;
+      statusBg = isDark ? AppColors.slate800 : AppColors.slate100;
       lockIcon = Icons.lock_outline_rounded;
       statusLabel = 'Find the missing affix';
     }
@@ -189,12 +191,12 @@ class _PrefixSuffixClueBannerState extends State<PrefixSuffixClueBanner>
         width: double.infinity,
         padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
         decoration: BoxDecoration(
-          color: AppColors.slate800,
+          color: isDark ? AppColors.slate900 : Colors.white,
           borderRadius: BorderRadius.circular(20.r),
           border: Border.all(color: borderColor, width: 1.5),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.1),
+              color: Colors.black.withValues(alpha: isDark ? 0.1 : 0.04),
               blurRadius: 10,
               offset: const Offset(0, 4),
             ),
@@ -276,7 +278,7 @@ class _PrefixSuffixClueBannerState extends State<PrefixSuffixClueBanner>
             SizedBox(height: 12.h),
 
             // Sentence Clue
-            _buildSentenceWithGap(),
+            _buildSentenceWithGap(isDark),
             SizedBox(height: 8.h),
 
             // Root Meaning Hint
@@ -288,7 +290,7 @@ class _PrefixSuffixClueBannerState extends State<PrefixSuffixClueBanner>
                   fontFamily: 'Inter',
                   fontSize: 11.5.sp,
                   fontStyle: FontStyle.italic,
-                  color: AppColors.slate400,
+                  color: isDark ? AppColors.slate400 : AppColors.slate600,
                 ),
               ),
             ],

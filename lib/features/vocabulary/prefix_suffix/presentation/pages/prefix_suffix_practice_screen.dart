@@ -177,6 +177,7 @@ class _PrefixSuffixPracticeScreenState
       builder: (context, _) {
         final isUnlocked = _controller.isUnlocked;
         final isJammed = _controller.isJammed;
+        final isDark = Theme.of(context).brightness == Brightness.dark;
 
         return PracticePhaseScaffold(
           title: 'Word Vault',
@@ -218,7 +219,11 @@ class _PrefixSuffixPracticeScreenState
                     letterSpacing: 0.2,
                     color: isUnlocked
                         ? AppColors.emerald500
-                        : (isJammed ? AppColors.amber500 : AppColors.slate400),
+                        : (isJammed
+                              ? AppColors.amber500
+                              : (isDark
+                                    ? AppColors.slate400
+                                    : AppColors.slate600)),
                   ),
                 ),
                 SizedBox(height: 14.h),
@@ -230,18 +235,20 @@ class _PrefixSuffixPracticeScreenState
                   alignment: WrapAlignment.center,
                   children: options.map((option) {
                     final isSelected = _controller.slottedAffix == option;
-                    Color btnBorder = AppColors.slate700;
-                    Color btnBg = AppColors.slate800;
-                    Color textColor = AppColors.slate50;
-
-                    if (isSelected && (isUnlocked || isJammed)) {
-                      final activeColor = isUnlocked
-                          ? AppColors.emerald500
-                          : AppColors.red500;
-                      btnBorder = activeColor;
-                      btnBg = activeColor.withValues(alpha: 0.15);
-                      textColor = activeColor;
-                    }
+                    final isHighlighted =
+                        isSelected && (isUnlocked || isJammed);
+                    final activeColor = isUnlocked
+                        ? AppColors.emerald500
+                        : AppColors.red500;
+                    final btnBorder = isHighlighted
+                        ? activeColor
+                        : (isDark ? AppColors.slate700 : AppColors.slate300);
+                    final btnBg = isHighlighted
+                        ? activeColor.withValues(alpha: 0.15)
+                        : (isDark ? AppColors.slate800 : Colors.white);
+                    final textColor = isHighlighted
+                        ? activeColor
+                        : (isDark ? AppColors.slate50 : AppColors.slate900);
 
                     return AnimatedScale(
                       scale: isSelected ? 1.03 : 1.0,
@@ -313,13 +320,11 @@ class _PrefixSuffixPracticeScreenState
                 ],
 
                 // Unlimited Hint Button
-                if (!isUnlocked && hint.isNotEmpty) ...[
+                if (!isUnlocked && hint.isNotEmpty)
                   TextButton.icon(
                     onPressed: () {
                       _controller.useHint();
-                      setState(() {
-                        _showHint = true;
-                      });
+                      setState(() => _showHint = true);
                     },
                     icon: Icon(
                       Icons.lightbulb_outline_rounded,
@@ -336,7 +341,6 @@ class _PrefixSuffixPracticeScreenState
                       ),
                     ),
                   ),
-                ],
 
                 // Continue Button when unlocked
                 if (isUnlocked) ...[
