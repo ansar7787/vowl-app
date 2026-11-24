@@ -478,5 +478,91 @@ void main() {
         );
       },
     );
+
+    testWidgets(
+      'renders WordCardFront with translated word and fires onSpeakTranslated',
+      (tester) async {
+        bool speakCalled = false;
+        await tester.pumpWidget(
+          ScreenUtilInit(
+            designSize: const Size(393, 852),
+            builder: (context, child) => MaterialApp(
+              home: Scaffold(
+                body: WordCardFront(
+                  word: sampleWord1,
+                  isDark: false,
+                  onSpeak: () {},
+                  onTranslate: () {},
+                  isTranslating: false,
+                  translatedWord: 'resistente',
+                  onSpeakTranslated: () {
+                    speakCalled = true;
+                  },
+                ),
+              ),
+            ),
+          ),
+        );
+
+        expect(find.text('resistente'), findsOneWidget);
+        await tester.tap(find.text('resistente'));
+        await tester.pump();
+        expect(speakCalled, isTrue);
+      },
+    );
+
+    testWidgets(
+      'renders WordCardBack with translated definition and example with TTS buttons',
+      (tester) async {
+        bool defTtsCalled = false;
+        bool exTtsCalled = false;
+
+        await tester.pumpWidget(
+          ScreenUtilInit(
+            designSize: const Size(393, 852),
+            builder: (context, child) => MaterialApp(
+              home: Scaffold(
+                body: WordCardBack(
+                  word: sampleWord1,
+                  isDark: false,
+                  onSpeak: () {},
+                  onTranslate: () {},
+                  isTranslating: false,
+                  translatedDefinition: 'Capaz de recuperarse rápidamente.',
+                  translatedExample: 'Ella es notablemente resistente.',
+                  onSpeakTranslatedDefinition: () {
+                    defTtsCalled = true;
+                  },
+                  onSpeakTranslatedExample: () {
+                    exTtsCalled = true;
+                  },
+                ),
+              ),
+            ),
+          ),
+        );
+
+        expect(find.text('Capaz de recuperarse rápidamente.'), findsOneWidget);
+        expect(find.text('"Ella es notablemente resistente."'), findsOneWidget);
+
+        // Tap translated definition TTS
+        final defFinder = find.bySemanticsLabel('Listen to translated definition');
+        expect(defFinder, findsOneWidget);
+        await tester.tap(defFinder);
+        await tester.pump();
+        expect(defTtsCalled, isTrue);
+
+        // Tap translated example TTS
+        final exFinder = find.bySemanticsLabel('Listen to translated example');
+        expect(exFinder, findsOneWidget);
+        await tester.ensureVisible(exFinder);
+        await tester.tap(exFinder);
+        await tester.pump();
+        expect(exTtsCalled, isTrue);
+
+        // Verify no RawScrollbar exists
+        expect(find.byType(RawScrollbar), findsNothing);
+      },
+    );
   });
 }

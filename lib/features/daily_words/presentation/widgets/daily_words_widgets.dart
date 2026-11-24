@@ -9,7 +9,6 @@ import 'package:vowl/features/daily_words/domain/entities/daily_word.dart';
 import 'package:vowl/core/presentation/widgets/glass_tile.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 import 'package:vowl/core/theme/app_spacing.dart';
-import 'package:vowl/core/presentation/game_mechanics/typing/type_to_confirm_overlay.dart';
 
 /// Interactive front side of a daily flashcard displaying word text, phonetics,
 /// audio pronunciation controls, and translation actions.
@@ -18,6 +17,7 @@ class WordCardFront extends StatelessWidget {
   final bool isDark;
   final VoidCallback onSpeak;
   final VoidCallback? onSpeakSlow;
+  final VoidCallback? onSpeakTranslated;
   final VoidCallback onTranslate;
   final bool isTranslating;
   final String? translatedWord;
@@ -31,6 +31,7 @@ class WordCardFront extends StatelessWidget {
     required this.isDark,
     required this.onSpeak,
     this.onSpeakSlow,
+    this.onSpeakTranslated,
     required this.onTranslate,
     required this.isTranslating,
     this.translatedWord,
@@ -47,149 +48,205 @@ class WordCardFront extends StatelessWidget {
       child: GlassTile(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         child: Center(
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                // Top badges: POS + Difficulty + Frequency Rank
-                Wrap(
-                  alignment: WrapAlignment.center,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  spacing: 8.w,
-                  runSpacing: 6.h,
-                  children: [
-                    Semantics(
-                      label: 'Part of speech: ${word.partOfSpeech}',
-                      child: Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 10.w,
-                          vertical: 4.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: AppColors.indigo500.withValues(alpha: 0.1),
-                          borderRadius: BorderRadius.circular(12.r),
-                          border: Border.all(
-                            color: AppColors.indigo500.withValues(alpha: 0.25),
+          child: ScrollConfiguration(
+            behavior:
+                ScrollConfiguration.of(context).copyWith(scrollbars: false),
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Top badges: POS + Difficulty + Frequency Rank
+                  Wrap(
+                    alignment: WrapAlignment.center,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    spacing: 8.w,
+                    runSpacing: 6.h,
+                    children: [
+                      Semantics(
+                        label: 'Part of speech: ${word.partOfSpeech}',
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 10.w,
+                            vertical: 4.h,
                           ),
-                        ),
-                        child: Text(
-                          word.partOfSpeech.toUpperCase(),
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 11.sp,
-                            fontWeight: FontWeight.w700,
-                            color: AppColors.indigo500,
-                            letterSpacing: 0.5,
+                          decoration: BoxDecoration(
+                            color: AppColors.indigo500.withValues(alpha: 0.1),
+                            borderRadius: BorderRadius.circular(12.r),
+                            border: Border.all(
+                              color:
+                                  AppColors.indigo500.withValues(alpha: 0.25),
+                            ),
+                          ),
+                          child: Text(
+                            word.partOfSpeech.toUpperCase(),
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.indigo500,
+                              letterSpacing: 0.5,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    _DifficultyBadge(difficulty: difficulty),
-                    if (word.frequencyRank > 0)
-                      _FrequencyRankBadge(frequencyRank: word.frequencyRank),
-                  ],
-                ),
-                SizedBox(height: 24.h),
-                // Word text with 2-line safety (never truncated)
-                AutoSizeText(
-                  word.word,
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 34.sp,
-                    fontWeight: FontWeight.w700,
-                    color: isDark ? Colors.white : AppColors.slate900,
-                    letterSpacing: -0.5,
+                      _DifficultyBadge(difficulty: difficulty),
+                      if (word.frequencyRank > 0)
+                        _FrequencyRankBadge(frequencyRank: word.frequencyRank),
+                    ],
                   ),
-                  maxLines: 2,
-                  minFontSize: 20,
-                ),
-                if (translatedWord != null) ...[
-                  SizedBox(height: 8.h),
+                  SizedBox(height: 24.h),
+                  // Word text with 2-line safety (never truncated)
                   AutoSizeText(
-                    translatedWord!,
+                    word.word,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Outfit',
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.emerald500,
+                      fontSize: 34.sp,
+                      fontWeight: FontWeight.w700,
+                      color: isDark ? Colors.white : AppColors.slate900,
+                      letterSpacing: -0.5,
                     ),
                     maxLines: 2,
-                    minFontSize: 14,
+                    minFontSize: 20,
                   ),
-                ],
-                SizedBox(height: 12.h),
-                InkWell(
-                  onTap: onSpeakSlow ?? onSpeak,
-                  borderRadius: BorderRadius.circular(8.r),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 8.w,
-                      vertical: 4.h,
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        AutoSizeText(
-                          word.phonetic,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontFamily: 'Outfit',
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w400,
-                            color: isDark
-                                ? Colors.white.withValues(alpha: 0.6)
-                                : AppColors.slate500,
+                  if (translatedWord != null) ...[
+                    SizedBox(height: 10.h),
+                    Semantics(
+                      button: true,
+                      label: 'Listen to translated word $translatedWord',
+                      child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          onTap: onSpeakTranslated,
+                          borderRadius: BorderRadius.circular(14.r),
+                          child: Container(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 14.w,
+                              vertical: 6.h,
+                            ),
+                            decoration: BoxDecoration(
+                              color: AppColors.emerald500.withValues(
+                                alpha: 0.12,
+                              ),
+                              borderRadius: BorderRadius.circular(14.r),
+                              border: Border.all(
+                                color: AppColors.emerald500.withValues(
+                                  alpha: 0.28,
+                                ),
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  Icons.volume_up_rounded,
+                                  size: 17.r,
+                                  color: AppColors.emerald500,
+                                ),
+                                SizedBox(width: 6.w),
+                                Flexible(
+                                  child: AutoSizeText(
+                                    translatedWord!,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 18.sp,
+                                      fontWeight: FontWeight.w700,
+                                      color: AppColors.emerald500,
+                                    ),
+                                    maxLines: 2,
+                                    minFontSize: 14,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                          maxLines: 2,
-                          minFontSize: 12,
                         ),
-                        SizedBox(width: 6.w),
-                        Icon(
-                          Icons.volume_down_rounded,
-                          size: 14.r,
-                          color: isDark
-                              ? Colors.white.withValues(alpha: 0.4)
-                              : AppColors.slate400,
-                        ),
-                      ],
+                      ),
+                    ),
+                  ],
+                  SizedBox(height: 12.h),
+                  InkWell(
+                    onTap: onSpeakSlow ?? onSpeak,
+                    borderRadius: BorderRadius.circular(8.r),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 8.w,
+                        vertical: 4.h,
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          AutoSizeText(
+                            word.phonetic,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontFamily: 'Outfit',
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w400,
+                              color: isDark
+                                  ? Colors.white.withValues(alpha: 0.6)
+                                  : AppColors.slate500,
+                            ),
+                            maxLines: 2,
+                            minFontSize: 12,
+                          ),
+                          SizedBox(width: 6.w),
+                          Icon(
+                            Icons.volume_down_rounded,
+                            size: 14.r,
+                            color: isDark
+                                ? Colors.white.withValues(alpha: 0.4)
+                                : AppColors.slate400,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(height: 28.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    _TranslateButton(
-                      isTranslating: isTranslating,
-                      isTranslated: translatedWord != null,
-                      onTap: onTranslate,
-                    ),
-                    SizedBox(width: 12.w),
-                    DailyWordsIconButton(
-                      icon: Icons.volume_up_rounded,
-                      onTap: onSpeak,
-                      tooltip: 'Listen to pronunciation',
-                    ),
-                    if (onSpeakSlow != null) ...[
+                  SizedBox(height: 28.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      _TranslateButton(
+                        isTranslating: isTranslating,
+                        isTranslated: translatedWord != null,
+                        onTap: onTranslate,
+                      ),
                       SizedBox(width: 12.w),
                       DailyWordsIconButton(
-                        icon: Icons.slow_motion_video_rounded,
-                        onTap: onSpeakSlow!,
-                        tooltip: 'Listen slowly for clear pronunciation',
+                        icon: Icons.volume_up_rounded,
+                        onTap: onSpeak,
+                        tooltip: 'Listen to pronunciation',
                       ),
+                      if (onSpeakSlow != null) ...[
+                        SizedBox(width: 12.w),
+                        DailyWordsIconButton(
+                          icon: Icons.slow_motion_video_rounded,
+                          onTap: onSpeakSlow!,
+                          tooltip: 'Listen slowly for clear pronunciation',
+                        ),
+                      ],
+                      if (translatedWord != null &&
+                          onSpeakTranslated != null) ...[
+                        SizedBox(width: 12.w),
+                        DailyWordsIconButton(
+                          icon: Icons.volume_up_rounded,
+                          onTap: onSpeakTranslated!,
+                          tooltip: 'Listen to translated pronunciation',
+                          color: AppColors.emerald500,
+                        ),
+                      ],
                     ],
+                  ),
+                  // Tap to flip hint
+                  if (showFlipHint) ...[
+                    SizedBox(height: 20.h),
+                    _FlipHint(isDark: isDark),
                   ],
-                ),
-                // Tap to flip hint
-                if (showFlipHint) ...[
-                  SizedBox(height: 20.h),
-                  _FlipHint(isDark: isDark),
                 ],
-              ],
+              ),
             ),
           ),
         ),
@@ -199,20 +256,19 @@ class WordCardFront extends StatelessWidget {
 }
 
 /// Reverse side of the daily flashcard showing definitions, contextual examples,
-/// and mastery quiz prompts.
+/// and native translated explanations.
 class WordCardBack extends StatelessWidget {
   final DailyWord word;
   final bool isDark;
   final VoidCallback onSpeak;
   final VoidCallback onTranslate;
   final VoidCallback? onSpeakExample;
+  final VoidCallback? onSpeakTranslatedDefinition;
+  final VoidCallback? onSpeakTranslatedExample;
   final bool isTranslating;
   final String? translatedDefinition;
   final String? translatedExample;
-  final bool showTypeToConfirm;
   final ScrollController? scrollController;
-  final VoidCallback? onTypingConfirmed;
-  final VoidCallback? onTypingSkipped;
 
   const WordCardBack({
     super.key,
@@ -221,205 +277,271 @@ class WordCardBack extends StatelessWidget {
     required this.onSpeak,
     required this.onTranslate,
     this.onSpeakExample,
+    this.onSpeakTranslatedDefinition,
+    this.onSpeakTranslatedExample,
     required this.isTranslating,
     this.translatedDefinition,
     this.translatedExample,
-    this.showTypeToConfirm = false,
     this.scrollController,
-    this.onTypingConfirmed,
-    this.onTypingSkipped,
   });
 
   @override
   Widget build(BuildContext context) {
-    final scrollChild = SingleChildScrollView(
-      controller: scrollController,
-      physics: const BouncingScrollPhysics(),
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 6.h),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: AutoSizeText(
-                    word.word,
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 22.sp,
-                      fontWeight: FontWeight.w700,
-                      color: AppColors.indigo500,
-                      letterSpacing: -0.3,
-                    ),
-                    maxLines: 2,
-                    minFontSize: 16,
-                  ),
-                ),
-                SizedBox(width: 8.w),
-                _TranslateButton(
-                  isTranslating: isTranslating,
-                  isTranslated: translatedDefinition != null,
-                  onTap: onTranslate,
-                ),
-                SizedBox(width: 8.w),
-                DailyWordsIconButton(
-                  icon: Icons.volume_up_rounded,
-                  onTap: onSpeak,
-                  tooltip: 'Listen to ${word.word}',
-                ),
-              ],
-            ),
-            SizedBox(height: 12.h),
-            Divider(color: isDark ? Colors.white12 : Colors.black12, height: 1),
-            SizedBox(height: 14.h),
-            // Definition section
-            SectionLabel(
-              label: context.tr(
-                'daily_words.definition',
-                fallback: 'Definition',
-              ),
-            ),
-            SizedBox(height: 8.h),
-            Text(
-              word.definition,
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w400,
-                color: isDark
-                    ? Colors.white.withValues(alpha: 0.95)
-                    : AppColors.slate800,
-                height: 1.55,
-              ),
-            ),
-            if (translatedDefinition != null) ...[
+    final scrollChild = ScrollConfiguration(
+      behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+      child: SingleChildScrollView(
+        controller: scrollController,
+        physics: const BouncingScrollPhysics(),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 14.h),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
               SizedBox(height: 6.h),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: AutoSizeText(
+                      word.word,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 22.sp,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.indigo500,
+                        letterSpacing: -0.3,
+                      ),
+                      maxLines: 2,
+                      minFontSize: 16,
+                    ),
+                  ),
+                  SizedBox(width: 8.w),
+                  _TranslateButton(
+                    isTranslating: isTranslating,
+                    isTranslated: translatedDefinition != null,
+                    onTap: onTranslate,
+                  ),
+                  SizedBox(width: 8.w),
+                  DailyWordsIconButton(
+                    icon: Icons.volume_up_rounded,
+                    onTap: onSpeak,
+                    tooltip: 'Listen to ${word.word}',
+                  ),
+                ],
+              ),
+              SizedBox(height: 12.h),
+              Divider(
+                color: isDark ? Colors.white12 : Colors.black12,
+                height: 1,
+              ),
+              SizedBox(height: 14.h),
+              // Definition section
+              SectionLabel(
+                label: context.tr(
+                  'daily_words.definition',
+                  fallback: 'Definition',
+                ),
+              ),
+              SizedBox(height: 8.h),
               Text(
-                translatedDefinition!,
+                word.definition,
                 style: TextStyle(
                   fontFamily: 'Outfit',
-                  fontSize: 15.sp,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w400,
-                  color: AppColors.emerald500,
-                  height: 1.5,
+                  color: isDark
+                      ? Colors.white.withValues(alpha: 0.95)
+                      : AppColors.slate800,
+                  height: 1.55,
                 ),
               ),
-            ],
-            SizedBox(height: 16.h),
-            // Example section with TTS button
-            Row(
-              children: [
-                SectionLabel(
-                  label: context.tr('daily_words.example', fallback: 'Example'),
-                ),
-                const Spacer(),
-                if (onSpeakExample != null)
-                  Semantics(
-                    button: true,
-                    label: 'Listen to example sentence',
-                    child: InkWell(
-                      onTap: onSpeakExample,
-                      borderRadius: BorderRadius.circular(12.r),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 8.w,
-                          vertical: 4.h,
+              if (translatedDefinition != null) ...[
+                SizedBox(height: 8.h),
+                Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 12.w,
+                    vertical: 8.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppColors.emerald500.withValues(alpha: 0.08),
+                    borderRadius: BorderRadius.circular(12.r),
+                    border: Border.all(
+                      color: AppColors.emerald500.withValues(alpha: 0.2),
+                    ),
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          translatedDefinition!,
+                          style: TextStyle(
+                            fontFamily: 'Outfit',
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.emerald500,
+                            height: 1.5,
+                          ),
                         ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Icon(
-                              Icons.volume_up_rounded,
-                              size: 16.r,
-                              color: AppColors.indigo500,
-                            ),
-                            SizedBox(width: 4.w),
-                            Text(
-                              context.tr(
-                                'daily_words.listen',
-                                fallback: 'Listen',
+                      ),
+                      if (onSpeakTranslatedDefinition != null) ...[
+                        SizedBox(width: 4.w),
+                        Semantics(
+                          button: true,
+                          label: 'Listen to translated definition',
+                          child: Material(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              onTap: onSpeakTranslatedDefinition,
+                              borderRadius: BorderRadius.circular(10.r),
+                              child: Container(
+                                width: 36.r,
+                                height: 36.r,
+                                alignment: Alignment.center,
+                                child: Icon(
+                                  Icons.volume_up_rounded,
+                                  size: 20.r,
+                                  color: AppColors.emerald500,
+                                ),
                               ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ],
+                  ),
+                ),
+              ],
+              SizedBox(height: 16.h),
+              // Example section with TTS button
+              Row(
+                children: [
+                  SectionLabel(
+                    label: context.tr(
+                      'daily_words.example',
+                      fallback: 'Example',
+                    ),
+                  ),
+                  const Spacer(),
+                  if (onSpeakExample != null)
+                    Semantics(
+                      button: true,
+                      label: 'Listen to example sentence',
+                      child: InkWell(
+                        onTap: onSpeakExample,
+                        borderRadius: BorderRadius.circular(12.r),
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 8.w,
+                            vertical: 4.h,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                Icons.volume_up_rounded,
+                                size: 16.r,
+                                color: AppColors.indigo500,
+                              ),
+                              SizedBox(width: 4.w),
+                              Text(
+                                context.tr(
+                                  'daily_words.listen',
+                                  fallback: 'Listen',
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 12.sp,
+                                  fontWeight: FontWeight.w700,
+                                  color: AppColors.indigo500,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+              SizedBox(height: 8.h),
+              Container(
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
+                decoration: BoxDecoration(
+                  color: AppColors.indigo500.withValues(alpha: 0.08),
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
+                    color: AppColors.indigo500.withValues(alpha: 0.15),
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      '"${word.example}"',
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 15.sp,
+                        fontWeight: FontWeight.w400,
+                        fontStyle: FontStyle.italic,
+                        color: isDark
+                            ? Colors.white.withValues(alpha: 0.85)
+                            : AppColors.slate700,
+                        height: 1.55,
+                      ),
+                    ),
+                    if (translatedExample != null) ...[
+                      SizedBox(height: 8.h),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            child: Text(
+                              '"${translatedExample!}"',
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 12.sp,
-                                fontWeight: FontWeight.w700,
-                                color: AppColors.indigo500,
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w400,
+                                fontStyle: FontStyle.italic,
+                                color: AppColors.emerald500,
+                                height: 1.5,
+                              ),
+                            ),
+                          ),
+                          if (onSpeakTranslatedExample != null) ...[
+                            SizedBox(width: 4.w),
+                            Semantics(
+                              button: true,
+                              label: 'Listen to translated example',
+                              child: Material(
+                                color: Colors.transparent,
+                                child: InkWell(
+                                  onTap: onSpeakTranslatedExample,
+                                  borderRadius: BorderRadius.circular(10.r),
+                                  child: Container(
+                                    width: 36.r,
+                                    height: 36.r,
+                                    alignment: Alignment.center,
+                                    child: Icon(
+                                      Icons.volume_up_rounded,
+                                      size: 20.r,
+                                      color: AppColors.emerald500,
+                                    ),
+                                  ),
+                                ),
                               ),
                             ),
                           ],
-                        ),
+                        ],
                       ),
-                    ),
-                  ),
-              ],
-            ),
-            SizedBox(height: 8.h),
-            Container(
-              width: double.infinity,
-              padding: EdgeInsets.symmetric(horizontal: 14.w, vertical: 12.h),
-              decoration: BoxDecoration(
-                color: AppColors.indigo500.withValues(alpha: 0.08),
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(
-                  color: AppColors.indigo500.withValues(alpha: 0.15),
+                    ],
+                  ],
                 ),
               ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '"${word.example}"',
-                    style: TextStyle(
-                      fontFamily: 'Outfit',
-                      fontSize: 15.sp,
-                      fontWeight: FontWeight.w400,
-                      fontStyle: FontStyle.italic,
-                      color: isDark
-                          ? Colors.white.withValues(alpha: 0.85)
-                          : AppColors.slate700,
-                      height: 1.55,
-                    ),
-                  ),
-                  if (translatedExample != null) ...[
-                    SizedBox(height: 8.h),
-                    Text(
-                      '"${translatedExample!}"',
-                      style: TextStyle(
-                        fontFamily: 'Outfit',
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w400,
-                        fontStyle: FontStyle.italic,
-                        color: AppColors.emerald500,
-                        height: 1.5,
-                      ),
-                    ),
-                  ],
-                ],
-              ),
-            ),
-            if (showTypeToConfirm) ...[
-              SizedBox(height: 16.h),
-              TypeToConfirmOverlay(
-                expectedText: word.word,
-                displayText: word.word,
-                primaryColor: AppColors.emerald500,
-                isPositioned: false,
-                allowSkip: true,
-                onConfirmed: onTypingConfirmed ?? () {},
-                onSkipped: onTypingSkipped ?? () {},
-              ),
-              SizedBox(
-                height: MediaQuery.viewInsetsOf(context).bottom > 0
-                    ? MediaQuery.viewInsetsOf(context).bottom + 40.h
-                    : 40.h,
-              ),
-            ] else ...[
               SizedBox(height: 20.h),
             ],
-          ],
+          ),
         ),
       ),
     );
@@ -429,16 +551,7 @@ class WordCardBack extends StatelessWidget {
           '${word.word} card back: definition and example. Tap card or button to flip back.',
       child: GlassTile(
         padding: EdgeInsets.zero,
-        child: scrollController != null
-            ? RawScrollbar(
-                controller: scrollController,
-                thumbColor: isDark ? Colors.white30 : Colors.black26,
-                radius: Radius.circular(4.r),
-                thickness: 3.w,
-                padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 6.h),
-                child: scrollChild,
-              )
-            : scrollChild,
+        child: scrollChild,
       ),
     );
   }
@@ -562,16 +675,19 @@ class DailyWordsIconButton extends StatelessWidget {
   final IconData icon;
   final VoidCallback onTap;
   final String? tooltip;
+  final Color? color;
 
   const DailyWordsIconButton({
     super.key,
     required this.icon,
     required this.onTap,
     this.tooltip,
+    this.color,
   });
 
   @override
   Widget build(BuildContext context) {
+    final effectiveColor = color ?? AppColors.indigo500;
     return Semantics(
       button: true,
       label: tooltip ?? 'Action button',
@@ -584,11 +700,11 @@ class DailyWordsIconButton extends StatelessWidget {
             width: 48.r,
             height: 48.r,
             decoration: BoxDecoration(
-              color: AppColors.indigo500.withValues(alpha: 0.1),
+              color: effectiveColor.withValues(alpha: 0.1),
               shape: BoxShape.circle,
             ),
             child: Center(
-              child: Icon(icon, color: AppColors.indigo500, size: 22.r),
+              child: Icon(icon, color: effectiveColor, size: 22.r),
             ),
           ),
         ),
@@ -764,10 +880,13 @@ class SessionCompleteView extends StatelessWidget {
         ? 'Cycle $cycle · Lesson $effectiveDay'
         : 'Lesson $day';
     return Center(
-      child: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+      child: ScrollConfiguration(
+        behavior:
+            ScrollConfiguration.of(context).copyWith(scrollbars: false),
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -1023,7 +1142,7 @@ class SessionCompleteView extends StatelessWidget {
                     label: Text(
                       context.tr(
                         'daily_words.practice_again',
-                        fallback: 'Practice Today\'s Words Again',
+                        fallback: "Review Today's Words",
                       ),
                       style: TextStyle(
                         fontFamily: 'Outfit',
@@ -1076,6 +1195,7 @@ class SessionCompleteView extends StatelessWidget {
             ],
           ),
         ),
+      ),
       ),
     );
   }

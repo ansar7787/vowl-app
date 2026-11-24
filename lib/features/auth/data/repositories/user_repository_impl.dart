@@ -58,48 +58,105 @@ class UserRepositoryImpl
         return Left(ServerFailure('user-not-authenticated'));
       }
       final docRef = _firestore.collection('users').doc(effectiveUid);
-      // UserModel.fromEntity is the single source of truth for the
-      // entity→model field mapping (see its doc comment) — previously this
-      // method hand-listed all ~48 fields itself, which meant a field added
-      // to UserEntity in the future could silently never get persisted here
-      // unless someone remembered to also update this call site.
       final userModel = UserModel.fromEntity(user);
+      final newMap = userModel.toMap();
 
-      final map = userModel.toMap();
+      // Differential update: Determine exactly which fields changed
+      // compared to the cached local profile (or existing server document).
+      // Writing all ~48 fields unconditionally trips strict Firestore security
+      // rules (rate limits, key limits, duel stats, VIP guards) even when only
+      // benign fields (streak, lastLoginDate, mascot, accessories) are updated.
+      final cachedUser = await _localDataSource.getCachedUser();
+      Map<String, dynamic>? oldMap = cachedUser?.toMap();
 
-      // FIX (CRITICAL — DATA LOSS): Firestore Security Rules enforce a
-      // rate-limit guard that requires `lastRewardTimestamp == request.time`
-      // on any write that changes `totalExp` or `coins`.
-      // Without this, the generic updateUser() merge-write silently gets
-      // PERMISSION_DENIED whenever it touches those fields, causing data
-      // to appear saved in-memory but never actually persist to Firestore.
-      // On app restart, the old Firestore data comes back and all in-session
-      // progress (coins, XP, stars, levels) is lost.
-      //
-      // We detect whether this write changes any rate-limited field by
-      // comparing against the last-known Firestore state. Since we can't
-      // cheaply read the server doc here, we unconditionally include the
-      // timestamp whenever the map contains any of the guarded fields —
-      // the rules only enforce the cooldown when those fields *actually*
-      // differ from the server value, and `FieldValue.serverTimestamp()`
-      // always satisfies `== request.time`.
-      if (map.containsKey('totalExp') || map.containsKey('coins')) {
-        map['lastRewardTimestamp'] = FieldValue.serverTimestamp();
+      if (oldMap == null) {
+        try {
+          final snapshot = await docRef.get(
+            const GetOptions(source: Source.serverAndCache),
+          );
+          if (snapshot.exists && snapshot.data() != null) {
+            oldMap = snapshot.data();
+          }
+        } catch (_) {}
       }
 
-      // Preserve active device FCM push token when merging domain entities
-      // where fcmToken was not tracked in memory.
-      if (map['fcmToken'] == null) {
-        map.remove('fcmToken');
+      final Map<String, dynamic> updatePayload = {};
+      if (oldMap != null) {
+        for (final entry in newMap.entries) {
+          final key = entry.key;
+          final newVal = entry.value;
+          final oldVal = oldMap[key];
+
+          // Preserve active device FCM push token when merging domain entities
+          // where fcmToken was not tracked in memory.
+          if (key == 'fcmToken' && newVal == null) {
+            continue;
+          }
+
+          if (!_areValuesEqual(newVal, oldVal)) {
+            updatePayload[key] = newVal;
+          }
+        }
+      } else {
+        updatePayload.addAll(newMap);
+        if (updatePayload['fcmToken'] == null) {
+          updatePayload.remove('fcmToken');
+        }
       }
 
-      await docRef.set(map, SetOptions(merge: true));
-      _localDataSource.cacheUser(userModel);
+      // If no fields actually changed, complete immediately and update local cache.
+      if (updatePayload.isEmpty) {
+        await _localDataSource.cacheUser(userModel);
+        return const Right(null);
+      }
+
+      // Only stamp `lastRewardTimestamp` if totalExp or coins actually changed
+      if (updatePayload.containsKey('totalExp') ||
+          updatePayload.containsKey('coins')) {
+        updatePayload['lastRewardTimestamp'] = FieldValue.serverTimestamp();
+      }
+
+      await docRef.set(updatePayload, SetOptions(merge: true));
+      await _localDataSource.cacheUser(userModel);
       return const Right(null);
     } catch (e) {
       _log('UserRepository: updateUser failed for ${user.id}: $e');
       return Left(handleFirebaseException(e));
     }
+  }
+
+  static bool _areValuesEqual(dynamic a, dynamic b) {
+    if (identical(a, b)) return true;
+    if (a == null && b == null) return true;
+    if (a == null || b == null) return false;
+    if (a is Timestamp && b is Timestamp) {
+      return a == b;
+    }
+    if (a is DateTime && b is DateTime) {
+      return a.isAtSameMomentAs(b);
+    }
+    if (a is Timestamp && b is DateTime) {
+      return a.toDate().isAtSameMomentAs(b);
+    }
+    if (a is DateTime && b is Timestamp) {
+      return a.isAtSameMomentAs(b.toDate());
+    }
+    if (a is List && b is List) {
+      if (a.length != b.length) return false;
+      for (int i = 0; i < a.length; i++) {
+        if (!_areValuesEqual(a[i], b[i])) return false;
+      }
+      return true;
+    }
+    if (a is Map && b is Map) {
+      if (a.length != b.length) return false;
+      for (final key in a.keys) {
+        if (!b.containsKey(key)) return false;
+        if (!_areValuesEqual(a[key], b[key])) return false;
+      }
+      return true;
+    }
+    return a == b;
   }
 
   // ---------------------------------------------------------------------------
