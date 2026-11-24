@@ -208,6 +208,7 @@ class _PrefixSuffixLearnScreenState extends State<PrefixSuffixLearnScreen> {
           children: [
             // Mechanical Tumbler Cylinder
             PrefixSuffixTumblerCylinder(
+              key: ValueKey('tumbler_${_currentIndex}_${widget.level}'),
               items: dialItems,
               initialIndex: safeIndex,
               title: affixType == 'prefix' ? 'Choose Prefix' : 'Choose Suffix',

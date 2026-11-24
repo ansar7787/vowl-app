@@ -43,7 +43,7 @@ class PrefixSuffixMorphologyHelper {
       if (const {'IZE', 'IFY', 'ATE', 'EN'}.contains(clean)) return 'VERB';
     }
     return partOfSpeech ??
-        (affixType.toLowerCase() == 'prefix' ? 'MEANING SHIFT' : 'SYNTHESIS');
+        (affixType.toLowerCase() == 'prefix' ? 'MEANING SHIFT' : 'NEW WORD');
   }
 
   /// Identifies spelling mutations and phonetic assimilation rules.

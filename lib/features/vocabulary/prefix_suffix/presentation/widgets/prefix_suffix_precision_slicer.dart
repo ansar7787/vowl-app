@@ -36,8 +36,11 @@ class _PrefixSuffixPrecisionSlicerState
     with SingleTickerProviderStateMixin {
   Offset? _dragStart;
   Offset? _dragCurrent;
+  Offset? _dragStartGlobal;
+  Offset? _dragCurrentGlobal;
   int? _lastCut;
   final GlobalKey _wordContainerKey = GlobalKey();
+  final GlobalKey _lettersKey = GlobalKey();
 
   late final AnimationController _splitController;
   late final Animation<double> _splitAnimation;
@@ -80,13 +83,18 @@ class _PrefixSuffixPrecisionSlicerState
       setState(() {
         _dragStart = details.localPosition;
         _dragCurrent = details.localPosition;
+        _dragStartGlobal = details.globalPosition;
+        _dragCurrentGlobal = details.globalPosition;
       });
     }
   }
 
   void _onPanUpdate(DragUpdateDetails details) {
     if (!widget.isAnswered) {
-      setState(() => _dragCurrent = details.localPosition);
+      setState(() {
+        _dragCurrent = details.localPosition;
+        _dragCurrentGlobal = details.globalPosition;
+      });
     }
   }
 
@@ -94,29 +102,69 @@ class _PrefixSuffixPrecisionSlicerState
     if (!widget.isAnswered && _dragStart != null && _dragCurrent != null) {
       final dy = _dragCurrent!.dy - _dragStart!.dy;
       if (dy.abs() >= 24) {
-        _detectAndExecuteCut((_dragStart!.dx + _dragCurrent!.dx) / 2.0);
+        final midGlobal =
+            (_dragStartGlobal != null && _dragCurrentGlobal != null)
+            ? (_dragStartGlobal! + _dragCurrentGlobal!) / 2.0
+            : null;
+        _detectAndExecuteCut(
+          midGlobal: midGlobal,
+          fallbackLocalX: (_dragStart!.dx + _dragCurrent!.dx) / 2.0,
+        );
       }
     }
     setState(() {
       _dragStart = null;
       _dragCurrent = null;
+      _dragStartGlobal = null;
+      _dragCurrentGlobal = null;
     });
   }
 
-  void _detectAndExecuteCut(double localX) {
-    final box =
-        _wordContainerKey.currentContext?.findRenderObject() as RenderBox?;
-    if (box != null && widget.word.length >= 2) {
-      final letterWidth = box.size.width / widget.word.length;
-      int targetSeam = (localX / letterWidth).round();
+  void _detectAndExecuteCut({
+    required Offset? midGlobal,
+    required double fallbackLocalX,
+  }) {
+    if (widget.word.length < 2) return;
 
-      // Magnetic seam snap tolerance (42% letter width window) for mobile touch precision
+    final lettersBox =
+        _lettersKey.currentContext?.findRenderObject() as RenderBox?;
+    if (lettersBox != null && midGlobal != null) {
+      final localInLetters = lettersBox.globalToLocal(midGlobal);
+      final letterWidth = lettersBox.size.width / widget.word.length;
+      int targetSeam = (localInLetters.dx / letterWidth).round();
+
       if (widget.correctCutIndex > 0) {
-        final dist = (localX - widget.correctCutIndex * letterWidth).abs();
+        final dist = (localInLetters.dx - widget.correctCutIndex * letterWidth)
+            .abs();
         if (dist <= letterWidth * 0.42) targetSeam = widget.correctCutIndex;
       }
       if (widget.secondaryCutIndex != null && widget.secondaryCutIndex! > 0) {
-        final dist = (localX - widget.secondaryCutIndex! * letterWidth).abs();
+        final dist =
+            (localInLetters.dx - widget.secondaryCutIndex! * letterWidth).abs();
+        if (dist <= letterWidth * 0.42) targetSeam = widget.secondaryCutIndex!;
+      }
+
+      final clamped = targetSeam.clamp(1, widget.word.length - 1);
+      HapticFeedback.mediumImpact();
+      setState(() => _lastCut = clamped);
+      widget.onSlice(clamped);
+      return;
+    }
+
+    final box =
+        _wordContainerKey.currentContext?.findRenderObject() as RenderBox?;
+    if (box != null) {
+      final letterWidth = box.size.width / widget.word.length;
+      int targetSeam = (fallbackLocalX / letterWidth).round();
+
+      if (widget.correctCutIndex > 0) {
+        final dist = (fallbackLocalX - widget.correctCutIndex * letterWidth)
+            .abs();
+        if (dist <= letterWidth * 0.42) targetSeam = widget.correctCutIndex;
+      }
+      if (widget.secondaryCutIndex != null && widget.secondaryCutIndex! > 0) {
+        final dist = (fallbackLocalX - widget.secondaryCutIndex! * letterWidth)
+            .abs();
         if (dist <= letterWidth * 0.42) targetSeam = widget.secondaryCutIndex!;
       }
 
@@ -268,6 +316,7 @@ class _PrefixSuffixPrecisionSlicerState
                       FittedBox(
                         fit: BoxFit.scaleDown,
                         child: Row(
+                          key: _lettersKey,
                           mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.min,
                           children: [
