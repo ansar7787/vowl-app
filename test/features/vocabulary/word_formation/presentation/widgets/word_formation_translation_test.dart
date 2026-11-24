@@ -80,14 +80,16 @@ void main() {
       expect(find.byType(TranslateButtonWidget), findsOneWidget);
     });
 
-    testWidgets('WordFormationSentenceSlot renders sentence and TranslateButtonWidget', (tester) async {
+    testWidgets('WordFormationSentenceSlot renders sentence and TranslateButtonWidget with attached formedWord', (tester) async {
       await tester.pumpWidget(
         buildTestableWidget(
           const WordFormationSentenceSlot(
             sentence: 'She is a very _______ manager.',
+            formedWord: 'DECISIVE',
             rootWord: 'DECIDE',
             targetRole: 'Adjective',
-            isAnswered: false,
+            isAnswered: true,
+            isCorrect: true,
             primaryColor: Colors.deepPurple,
           ),
         ),
@@ -97,6 +99,8 @@ void main() {
       expect(find.text('ROOT: DECIDE'), findsOneWidget);
       expect(find.text('TARGET: ADJECTIVE'), findsOneWidget);
       expect(find.byType(TranslateButtonWidget), findsOneWidget);
+      final translateBtn = tester.widget<TranslateButtonWidget>(find.byType(TranslateButtonWidget));
+      expect(translateBtn.originalText, 'She is a very DECISIVE manager.');
     });
 
     testWidgets('WordFormationLearnCompass resets active direction to north on word change', (tester) async {
@@ -113,12 +117,13 @@ void main() {
       );
       await tester.pump();
 
-      expect(find.text('DECISION'), findsOneWidget);
+      // DECISION appears in North role button and active morph display
+      expect(find.text('DECISION'), findsNWidgets(2));
 
       // Tap East (Adjective)
       await tester.tap(find.text('ADJECTIVE'));
       await tester.pump(const Duration(milliseconds: 300));
-      expect(find.text('DECISIVE'), findsOneWidget);
+      expect(find.text('DECISIVE'), findsNWidgets(2));
 
       // Now update widget with a new word (CONCLUDE)
       await tester.pumpWidget(
@@ -135,7 +140,7 @@ void main() {
       await tester.pump(const Duration(milliseconds: 300));
 
       // Must have reset back to North (CONCLUSION)
-      expect(find.text('CONCLUSION'), findsOneWidget);
+      expect(find.text('CONCLUSION'), findsNWidgets(2));
       await tester.pump(const Duration(milliseconds: 300));
     });
   });

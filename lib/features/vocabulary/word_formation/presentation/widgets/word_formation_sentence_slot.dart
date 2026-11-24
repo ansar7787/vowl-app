@@ -28,15 +28,9 @@ class WordFormationSentenceSlot extends StatefulWidget {
   const WordFormationSentenceSlot({
     super.key,
     required this.sentence,
-    this.formedWord,
-    this.rootWord,
-    this.targetRole,
-    this.roleClue,
-    required this.isAnswered,
-    this.isCorrect,
-    required this.primaryColor,
-    this.bounceFeedback,
-    this.shakeCount = 0,
+    this.formedWord, this.rootWord, this.targetRole, this.roleClue,
+    required this.isAnswered, this.isCorrect, required this.primaryColor,
+    this.bounceFeedback, this.shakeCount = 0,
   });
 
   @override
@@ -57,7 +51,7 @@ class _WordFormationSentenceSlotState extends State<WordFormationSentenceSlot> {
   @override
   void didUpdateWidget(covariant WordFormationSentenceSlot oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.sentence != widget.sentence) {
+    if (oldWidget.sentence != widget.sentence || oldWidget.formedWord != widget.formedWord) {
       _translatedSentence = null;
       _targetLanguageCode = null;
       _showTranslated = false;
@@ -71,6 +65,9 @@ class _WordFormationSentenceSlotState extends State<WordFormationSentenceSlot> {
     final beforeText = parts.isNotEmpty ? parts[0] : widget.sentence;
     final afterText = parts.length > 1 ? parts[1] : '';
     final roleColor = WordFormationColors.forRole(widget.targetRole);
+    final textToTranslate = (widget.formedWord != null && widget.formedWord!.isNotEmpty)
+        ? widget.sentence.replaceAll('_______', widget.formedWord!)
+        : widget.sentence.replaceAll('_______', '_____');
 
     final statusColor = widget.isCorrect == true
         ? AppColors.gameCorrect
@@ -177,7 +174,7 @@ class _WordFormationSentenceSlotState extends State<WordFormationSentenceSlot> {
               SizedBox(width: 4.w),
               // Context Sentence Translation Button
               TranslateButtonWidget(
-                originalText: widget.sentence.replaceAll('_______', '_____'),
+                originalText: textToTranslate,
                 onTranslationComplete: (translated) {
                   setState(() {
                     _translatedSentence = translated;
