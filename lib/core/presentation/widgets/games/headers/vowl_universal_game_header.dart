@@ -171,6 +171,9 @@ class VowlUniversalGameHeader extends StatelessWidget {
                                     ),
                                     child: Text(
                                       phaseBadge!,
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                      textScaler: const TextScaler.linear(1.0),
                                       style: TextStyle(
                                         fontFamily: 'Outfit',
                                         fontSize: 8.5.sp,
