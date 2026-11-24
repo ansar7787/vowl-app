@@ -118,20 +118,40 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
     ],
   );
 
+  Widget _buildAudioBtn({
+    required VoidCallback? onTap,
+    required IconData icon,
+    required String tip,
+    Color? color,
+    double size = 22,
+  }) {
+    if (onTap == null) return const SizedBox.shrink();
+    return IconButton(
+      onPressed: () {
+        HapticFeedback.lightImpact();
+        onTap();
+      },
+      icon: Icon(icon, color: color ?? AppColors.indigo400, size: size.sp),
+      tooltip: tip,
+      splashRadius: 20.r,
+    );
+  }
+
   Widget _buildHighlightedSentence() {
     final lowerSentence = contextSentence.toLowerCase();
     final lowerWord = combinedWord.toLowerCase();
+    final baseStyle = TextStyle(
+      fontFamily: 'Inter',
+      fontSize: 13.5.sp,
+      fontWeight: FontWeight.w400,
+      height: 1.45,
+      color: AppColors.slate400,
+    );
     if (!lowerSentence.contains(lowerWord)) {
       return Text(
         contextSentence,
         textAlign: TextAlign.center,
-        style: TextStyle(
-          fontFamily: 'Inter',
-          fontSize: 13.5.sp,
-          fontWeight: FontWeight.w400,
-          height: 1.45,
-          color: AppColors.slate400,
-        ),
+        style: baseStyle,
       );
     }
     final matchStart = lowerSentence.indexOf(lowerWord);
@@ -139,13 +159,7 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-        style: TextStyle(
-          fontFamily: 'Inter',
-          fontSize: 13.5.sp,
-          fontWeight: FontWeight.w400,
-          height: 1.45,
-          color: AppColors.slate400,
-        ),
+        style: baseStyle,
         children: [
           TextSpan(text: contextSentence.substring(0, matchStart)),
           TextSpan(
@@ -288,74 +302,45 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                if (onPlayTts != null) ...[
-                  SizedBox(width: 6.w),
-                  IconButton(
-                    onPressed: () {
-                      HapticFeedback.lightImpact();
-                      onPlayTts?.call();
-                    },
-                    icon: Icon(
-                      Icons.volume_up_rounded,
-                      color: AppColors.indigo400,
-                      size: 22.sp,
-                    ),
-                    tooltip: 'Listen to $combinedWord',
-                    splashRadius: 20.r,
-                  ),
-                ],
-                if (onPlayRootTts != null) ...[
-                  SizedBox(width: 2.w),
-                  IconButton(
-                    onPressed: () {
-                      HapticFeedback.lightImpact();
-                      onPlayRootTts?.call();
-                    },
-                    icon: Icon(
-                      Icons.record_voice_over_outlined,
-                      color: AppColors.slate400,
-                      size: 20.sp,
-                    ),
-                    tooltip: 'Listen to root $rootWord',
-                    splashRadius: 20.r,
-                  ),
-                ],
+                SizedBox(width: 4.w),
+                _buildAudioBtn(
+                  onTap: onPlayTts,
+                  icon: Icons.volume_up_rounded,
+                  tip: 'Listen to $combinedWord',
+                ),
+                _buildAudioBtn(
+                  onTap: onPlayRootTts,
+                  icon: Icons.record_voice_over_outlined,
+                  color: AppColors.slate400,
+                  size: 20,
+                  tip: 'Listen to root $rootWord',
+                ),
               ],
+            ),
+            SizedBox(height: 2.h),
+
+            // Acoustic Syllabic Stress Subtitle
+            Text(
+              PrefixSuffixMorphologyHelper.formatPhoneticStress(
+                combinedWord: combinedWord,
+                affix: affix,
+                affixType: affixType,
+              ),
+              style: TextStyle(
+                fontFamily: 'Inter',
+                fontSize: 11.5.sp,
+                fontStyle: FontStyle.italic,
+                letterSpacing: 0.5,
+                color: AppColors.slate400,
+              ),
             ),
             SizedBox(height: 8.h),
 
             // Affix Meaning Banner
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-              decoration: BoxDecoration(
-                color: AppColors.violet500.withValues(alpha: 0.1),
-                borderRadius: BorderRadius.circular(10.r),
-                border: Border.all(
-                  color: AppColors.violet500.withValues(alpha: 0.3),
-                ),
-              ),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    Icons.auto_awesome,
-                    size: 14.sp,
-                    color: AppColors.violet500,
-                  ),
-                  SizedBox(width: 6.w),
-                  Flexible(
-                    child: Text(
-                      'Meaning: $affixMeaning',
-                      style: TextStyle(
-                        fontFamily: 'Inter',
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.violet500,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+            _buildTag(
+              text: 'Meaning: $affixMeaning',
+              color: AppColors.violet500,
+              icon: Icons.auto_awesome,
             ),
             SizedBox(height: 12.h),
 

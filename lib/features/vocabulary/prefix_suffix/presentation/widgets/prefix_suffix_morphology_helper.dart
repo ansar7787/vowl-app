@@ -156,4 +156,24 @@ class PrefixSuffixMorphologyHelper {
     }
     return combinedWord;
   }
+
+  /// Generates syllabic stress accent representation (ˈ / ˌ) for acoustic clarity.
+  static String formatPhoneticStress({
+    required String combinedWord,
+    required String affix,
+    required String affixType,
+  }) {
+    final clean = affix.replaceAll('-', '').trim().toLowerCase();
+    final word = combinedWord.trim().toLowerCase();
+    if (clean.isEmpty) return '/ $word /';
+
+    if (affixType.toLowerCase() == 'prefix' && word.startsWith(clean)) {
+      final remainder = word.substring(clean.length);
+      return '/ ˌ$clean · ˈ$remainder /';
+    } else if (affixType.toLowerCase() == 'suffix' && word.endsWith(clean)) {
+      final base = word.substring(0, word.length - clean.length);
+      return '/ ˈ$base · $clean /';
+    }
+    return '/ $word /';
+  }
 }

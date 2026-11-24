@@ -107,8 +107,20 @@ class _PrefixSuffixPrecisionSlicerState
     final box =
         _wordContainerKey.currentContext?.findRenderObject() as RenderBox?;
     if (box != null && widget.word.length >= 2) {
-      final seam = (localX / (box.size.width / widget.word.length)).round();
-      final clamped = seam.clamp(1, widget.word.length - 1);
+      final letterWidth = box.size.width / widget.word.length;
+      int targetSeam = (localX / letterWidth).round();
+
+      // Magnetic seam snap tolerance (42% letter width window) for mobile touch precision
+      if (widget.correctCutIndex > 0) {
+        final dist = (localX - widget.correctCutIndex * letterWidth).abs();
+        if (dist <= letterWidth * 0.42) targetSeam = widget.correctCutIndex;
+      }
+      if (widget.secondaryCutIndex != null && widget.secondaryCutIndex! > 0) {
+        final dist = (localX - widget.secondaryCutIndex! * letterWidth).abs();
+        if (dist <= letterWidth * 0.42) targetSeam = widget.secondaryCutIndex!;
+      }
+
+      final clamped = targetSeam.clamp(1, widget.word.length - 1);
       HapticFeedback.mediumImpact();
       setState(() => _lastCut = clamped);
       widget.onSlice(clamped);
