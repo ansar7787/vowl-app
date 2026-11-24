@@ -55,6 +55,12 @@ class ReadingBaseLayout extends StatelessWidget {
   /// Whether this reading game features a secondary interaction stage.
   final bool hasStage2;
 
+  /// Optional callback invoked when pausing the game.
+  final VoidCallback? onPause;
+
+  /// Optional callback invoked when resuming the game.
+  final VoidCallback? onResume;
+
   /// Creates a [ReadingBaseLayout] widget.
   const ReadingBaseLayout({
     super.key,
@@ -71,6 +77,8 @@ class ReadingBaseLayout extends StatelessWidget {
     this.useScrolling = false,
     this.disablePadding = false,
     this.hasStage2 = false,
+    this.onPause,
+    this.onResume,
   });
 
   @override
@@ -119,6 +127,8 @@ class ReadingBaseLayout extends StatelessWidget {
           showConfetti: showConfetti,
           useScrolling: false, // ReadingContentArea handles scrolling
           disablePadding: true, // ReadingContentArea handles padding
+          onBriefingShow: onPause,
+          onBriefingDismiss: onResume,
         );
 
         return GameBaseLayout<ReadingBloc, ReadingState>(
@@ -150,9 +160,11 @@ class ReadingBaseLayout extends StatelessWidget {
                   isHintUsedOnCurrentQuest: (s is ReadingLoaded) ? s.hintUsed : false,
                   isHintEnabled: currentQuest != null && !isAnswered,
                   onPause: () {
+                    onPause?.call();
                     VowlPauseBottomSheet.show(
                       context,
                       category: 'reading',
+                      onResume: onResume,
                       onRestart: () {
                         context.read<ReadingBloc>().add(
                           FetchReadingQuests(gameType: gameType, level: level),

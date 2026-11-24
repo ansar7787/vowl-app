@@ -173,6 +173,7 @@ class _ElevatorPitchRecorderState extends State<ElevatorPitchRecorder> {
 
     _countdownTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (!mounted) return;
+      if (ModalRoute.of(context)?.isCurrent != true) return;
       if (_secondsLeft.value > 0) {
         _secondsLeft.value--;
       } else {

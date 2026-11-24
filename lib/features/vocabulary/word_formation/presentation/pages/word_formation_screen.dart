@@ -63,6 +63,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   int _secondsRemaining = _maxTimeSeconds;
   VocabularyQuest? _activeQuest;
   VocabularyQuest? _lastQuest;
+  bool _isPaused = false;
 
   @override
   void initState() {
@@ -85,6 +86,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   @override
   void onGamePaused() {
     super.onGamePaused();
+    _isPaused = true;
     _countdownTimer?.cancel();
     TtsSpeakerButtonWidget.stopAll();
   }
@@ -92,6 +94,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
   @override
   void onGameResumed() {
     super.onGameResumed();
+    _isPaused = false;
     if (!isAnswered && _secondsRemaining > 0 && mounted && _activeQuest != null) {
       _startTimer(_activeQuest!, resetSeconds: false);
     }
@@ -124,6 +127,7 @@ class _WordFormationScreenState extends State<WordFormationScreen>
         timer.cancel();
         return;
       }
+      if (_isPaused) return;
       if (ModalRoute.of(context)?.isCurrent != true) return;
       if (_secondsRemaining > 1) {
         setState(() => _secondsRemaining--);
@@ -318,6 +322,8 @@ class _WordFormationScreenState extends State<WordFormationScreen>
             return VocabularyBaseLayout(
               gameType: widget.gameType,
               level: widget.level,
+              onPause: onGamePaused,
+              onResume: onGameResumed,
               disablePadding: true,
               isAnswered: isAns,
               isCorrect: isCorr,

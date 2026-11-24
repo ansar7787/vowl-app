@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vowl/core/data/models/phased_quest_model.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/widgets/quest_briefing_overlay.dart';
 import 'package:vowl/core/utils/game_instruction_service.dart';
@@ -21,10 +20,21 @@ class GameBriefingLayer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const phasedGames = {'flashcards', 'synonymSearch', 'antonymSearch', 'contextClues', 'phrasalVerbs', 'idioms', 'academicWord', 'topicVocab', 'wordFormation', 'prefixSuffix', 'collocations', 'contextualUsage'};
+    const phasedGames = {
+      'flashcards',
+      'synonymSearch',
+      'antonymSearch',
+      'contextClues',
+      'phrasalVerbs',
+      'idioms',
+      'academicWord',
+      'topicVocab',
+      'wordFormation',
+      'prefixSuffix',
+      'collocations',
+      'contextualUsage',
+    };
     final isPhased = phasedGames.contains(gameType.name);
-
-    final cefr = PhasedQuest.getCefrForLevel(level);
 
     final briefing = GameInstructionService.getBriefing(
       context,
@@ -33,7 +43,9 @@ class GameBriefingLayer extends StatelessWidget {
       level: level,
     );
     return QuestBriefingOverlay(
-      phaseBadge: isPhased ? '🏆 MASTERY PHASE • LEVEL $level • $cefr' : null,
+      phaseBadge: isPhased
+          ? 'MASTERY PHASE • LEVEL $level'
+          : 'MISSION BRIEFING • LEVEL $level',
       title: briefing.title,
       objective: briefing.objective,
       rules: briefing.rules,

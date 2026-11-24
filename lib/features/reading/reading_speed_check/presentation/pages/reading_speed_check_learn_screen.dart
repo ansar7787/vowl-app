@@ -119,6 +119,7 @@ class _ReadingSpeedCheckLearnScreenState
       });
       _pacerTimer = Timer.periodic(const Duration(milliseconds: 450), (timer) {
         if (!mounted) return;
+        if (ModalRoute.of(context)?.isCurrent != true) return;
         setState(() {
           if (_highlightedChunk < chunks.length - 1) {
             _highlightedChunk++;

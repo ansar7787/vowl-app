@@ -122,6 +122,7 @@ class _ReadingSpeedCheckPracticeScreenState
     // Start live reading timer
     _readingTimer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (!mounted) return;
+      if (ModalRoute.of(context)?.isCurrent != true) return;
       setState(() {
         _elapsedSeconds++;
       });

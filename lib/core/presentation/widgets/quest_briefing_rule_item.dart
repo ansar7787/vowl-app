@@ -57,6 +57,7 @@ class QuestBriefingRuleItem extends StatelessWidget {
             child: Center(
               child: Text(
                 '$index',
+                textScaler: const TextScaler.linear(1.0),
                 style: TextStyle(
                   fontFamily: 'Outfit',
                   fontSize: 11.5.sp,

@@ -129,12 +129,16 @@ class VowlUniversalGameHeader extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Flexible(
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Flexible(
-                                  child: Text(
+                            child: FittedBox(
+                              fit: BoxFit.scaleDown,
+                              alignment: isRtl
+                                  ? Alignment.centerRight
+                                  : Alignment.centerLeft,
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Text(
                                     context.tr(
                                       'game_progress.level_label',
                                       fallback: 'LEVEL $level',
@@ -151,40 +155,40 @@ class VowlUniversalGameHeader extends StatelessWidget {
                                       letterSpacing: 0.8,
                                     ),
                                   ),
-                                ),
-                                if (phaseBadge != null) ...[
-                                  SizedBox(width: 5.w),
-                                  Container(
-                                    padding: EdgeInsets.symmetric(
-                                      horizontal: 6.w,
-                                      vertical: 1.5.h,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: (phaseBadgeColor ?? AppColors.rose500)
-                                          .withValues(alpha: 0.15),
-                                      borderRadius: BorderRadius.circular(6.r),
-                                      border: Border.all(
+                                  if (phaseBadge != null) ...[
+                                    SizedBox(width: 5.w),
+                                    Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 6.w,
+                                        vertical: 1.5.h,
+                                      ),
+                                      decoration: BoxDecoration(
                                         color: (phaseBadgeColor ?? AppColors.rose500)
-                                            .withValues(alpha: 0.35),
-                                        width: 0.8,
+                                            .withValues(alpha: 0.15),
+                                        borderRadius: BorderRadius.circular(6.r),
+                                        border: Border.all(
+                                          color: (phaseBadgeColor ?? AppColors.rose500)
+                                              .withValues(alpha: 0.35),
+                                          width: 0.8,
+                                        ),
+                                      ),
+                                      child: Text(
+                                        phaseBadge!,
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                        textScaler: const TextScaler.linear(1.0),
+                                        style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 8.5.sp,
+                                          fontWeight: FontWeight.w900,
+                                          letterSpacing: 0.6,
+                                          color: phaseBadgeColor ?? AppColors.rose500,
+                                        ),
                                       ),
                                     ),
-                                    child: Text(
-                                      phaseBadge!,
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                      textScaler: const TextScaler.linear(1.0),
-                                      style: TextStyle(
-                                        fontFamily: 'Outfit',
-                                        fontSize: 8.5.sp,
-                                        fontWeight: FontWeight.w900,
-                                        letterSpacing: 0.6,
-                                        color: phaseBadgeColor ?? AppColors.rose500,
-                                      ),
-                                    ),
-                                  ),
+                                  ],
                                 ],
-                              ],
+                              ),
                             ),
                           ),
                           SizedBox(width: 4.w),

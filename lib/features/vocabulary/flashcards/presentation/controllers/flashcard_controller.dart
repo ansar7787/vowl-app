@@ -40,6 +40,16 @@ class FlashcardMasteryController extends ChangeNotifier {
     required this.onSubmitResult,
   }) : _hapticService = hapticService;
 
+  bool isPaused = false;
+
+  void pauseTimer() {
+    isPaused = true;
+  }
+
+  void resumeTimer() {
+    isPaused = false;
+  }
+
   @override
   void notifyListeners() {
     if (!_isDisposed) {
@@ -61,6 +71,7 @@ class FlashcardMasteryController extends ChangeNotifier {
           timer.cancel();
           return;
         }
+        if (isPaused) return;
 
         _currentTick++;
         final progress = (totalTicks - _currentTick) / totalTicks;

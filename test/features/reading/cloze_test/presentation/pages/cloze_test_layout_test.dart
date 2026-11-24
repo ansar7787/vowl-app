@@ -7,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:vowl/core/domain/entities/game_quest.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_theme.dart';
 import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/ad_service.dart';
@@ -471,14 +472,23 @@ void main() {
       (tester) async {
         await pumpClozeTest(tester, level: 1);
 
+        final infoBtn = find.byIcon(Icons.info_outline_rounded);
+        if (infoBtn.evaluate().isNotEmpty) {
+          await tester.tap(infoBtn);
+          await tester.pumpAndSettle();
+        }
+
         expect(find.byType(GameBriefingLayer), findsOneWidget);
 
-        final startButton = find.byType(ElevatedButton);
-        if (startButton.evaluate().isNotEmpty) {
-          await tester.tap(startButton);
-          await tester.pumpAndSettle();
-          expect(find.byType(GameBriefingLayer), findsNothing);
-        }
+        final startButton = find.descendant(
+          of: find.byType(GameBriefingLayer),
+          matching: find.byType(ScaleButton),
+        );
+        expect(startButton, findsOneWidget);
+        await tester.tap(startButton);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 600));
+        expect(find.byType(GameBriefingLayer), findsNothing);
       },
     );
 

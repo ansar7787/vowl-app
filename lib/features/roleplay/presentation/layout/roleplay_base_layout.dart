@@ -55,6 +55,12 @@ class RoleplayBaseLayout extends StatelessWidget {
   /// Whether default padding around the child should be disabled.
   final bool disablePadding;
 
+  /// Optional callback invoked when pausing the game.
+  final VoidCallback? onPause;
+
+  /// Optional callback invoked when resuming the game.
+  final VoidCallback? onResume;
+
   /// Identifier for the mascot asset.
   final String mascotId;
 
@@ -79,6 +85,8 @@ class RoleplayBaseLayout extends StatelessWidget {
     this.useScrolling = false,
     this.disablePadding = false,
     this.fullScreenContent = false,
+    this.onPause,
+    this.onResume,
   });
 
   @override
@@ -110,6 +118,8 @@ class RoleplayBaseLayout extends StatelessWidget {
       useScrolling: useScrolling,
       disablePadding: disablePadding,
       horizontalPadding: AppSpacing.compact,
+      onBriefingShow: onPause,
+      onBriefingDismiss: onResume,
     );
 
     return GameBaseLayout<RoleplayBloc, RoleplayState>(
@@ -133,9 +143,11 @@ class RoleplayBaseLayout extends StatelessWidget {
           isHintUsedOnCurrentQuest: state is RoleplayLoaded ? state.hintUsed : false,
           isHintEnabled: currentQuest != null && !isAnswered,
           onPause: () {
+            onPause?.call();
             VowlPauseBottomSheet.show(
               context,
               category: 'roleplay',
+              onResume: onResume,
               onRestart: () {
                 context.read<RoleplayBloc>().add(
                   FetchRoleplayQuests(gameType: gameType, level: level),

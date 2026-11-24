@@ -9,6 +9,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/presentation/game_mechanics/reading/evidence_highlight_wrapper.dart';
 import 'package:vowl/core/presentation/widgets/game_briefing_layer.dart';
+import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/presentation/widgets/quest_hint_button.dart';
 import 'package:vowl/core/presentation/widgets/shimmer_loading.dart';
 import 'package:vowl/core/theme/app_theme.dart';
@@ -633,13 +634,19 @@ void main() {
     ) async {
       await pumpTrueFalseReading(tester, level: 1);
 
+      final infoBtn = find.byIcon(Icons.info_outline_rounded);
+      if (infoBtn.evaluate().isNotEmpty) {
+        await tester.tap(infoBtn);
+        await tester.pumpAndSettle();
+      }
+
       expect(find.byType(GameBriefingLayer), findsOneWidget);
 
-      final startBtn = find.text('VERIFY TRUTH');
+      final startBtn = find.descendant(
+        of: find.byType(GameBriefingLayer),
+        matching: find.byType(ScaleButton),
+      );
       expect(startBtn, findsOneWidget);
-
-      await tester.ensureVisible(startBtn);
-      await tester.pump(const Duration(milliseconds: 500));
 
       await tester.tap(startBtn);
       await tester.pump();

@@ -708,6 +708,12 @@ void main() {
 
       await pumpDialectDrill(tester, level: 1, height: 1100);
 
+      final infoBtn = find.byIcon(Icons.info_outline_rounded);
+      if (infoBtn.evaluate().isNotEmpty) {
+        await tester.tap(infoBtn);
+        await tester.pumpAndSettle();
+      }
+
       expect(find.byType(GameBriefingLayer), findsOneWidget);
 
       final briefingBtn = find.descendant(

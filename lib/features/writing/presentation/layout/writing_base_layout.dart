@@ -48,6 +48,12 @@ class WritingBaseLayout extends StatelessWidget {
   /// Whether standard edge insets should be omitted.
   final bool disablePadding;
 
+  /// Optional callback invoked when pausing the game.
+  final VoidCallback? onPause;
+
+  /// Optional callback invoked when resuming the game.
+  final VoidCallback? onResume;
+
   /// Creates a [WritingBaseLayout] instance.
   const WritingBaseLayout({
     super.key,
@@ -62,6 +68,8 @@ class WritingBaseLayout extends StatelessWidget {
     this.showConfetti = false,
     this.useScrolling = false,
     this.disablePadding = false,
+    this.onPause,
+    this.onResume,
   });
 
   @override
@@ -80,6 +88,8 @@ class WritingBaseLayout extends StatelessWidget {
       disablePadding: disablePadding,
       resizeToAvoidBottomInset: true,
       horizontalPadding: AppSpacing.compact,
+      onBriefingShow: onPause,
+      onBriefingDismiss: onResume,
     );
 
     return GameBaseLayout<WritingBloc, WritingState>(
@@ -105,9 +115,11 @@ class WritingBaseLayout extends StatelessWidget {
           isHintUsedOnCurrentQuest: isHintUsed,
           isHintEnabled: hintShouldBeEnabled,
           onPause: () {
+            onPause?.call();
             VowlPauseBottomSheet.show(
               context,
               category: 'writing',
+              onResume: onResume,
               onRestart: () {
                 context.read<WritingBloc>().add(
                   FetchWritingQuests(gameType: gameType, level: level),

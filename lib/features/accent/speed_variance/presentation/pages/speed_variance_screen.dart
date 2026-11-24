@@ -65,6 +65,7 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
   @override
   void initState() {
     super.initState();
+    timerKey = _timerKey;
     initAccentGame();
   }
 
@@ -286,6 +287,8 @@ class _SpeedVarianceScreenState extends State<SpeedVarianceScreen>
               return AccentBaseLayout(
                 gameType: widget.gameType,
                 level: widget.level,
+                onPause: onGamePaused,
+                onResume: onGameResumed,
                 isAnswered: isAnsweredNotifier.value,
                 isCorrect: isCorrectNotifier.value,
                 showConfetti: showConfettiNotifier.value,

@@ -49,6 +49,12 @@ class AccentBaseLayout extends StatelessWidget {
   /// Whether layout padding around the content body should be suppressed.
   final bool disablePadding;
 
+  /// Optional callback invoked when pausing the game.
+  final VoidCallback? onPause;
+
+  /// Optional callback invoked when resuming the game.
+  final VoidCallback? onResume;
+
   /// Creates an [AccentBaseLayout] widget.
   const AccentBaseLayout({
     super.key,
@@ -63,6 +69,8 @@ class AccentBaseLayout extends StatelessWidget {
     this.showConfetti = false,
     this.useScrolling = false,
     this.disablePadding = false,
+    this.onPause,
+    this.onResume,
   });
 
   @override
@@ -96,6 +104,8 @@ class AccentBaseLayout extends StatelessWidget {
       showConfetti: showConfetti,
       useScrolling: false, // Handled internally by AccentContentBody
       disablePadding: true, // Handled internally by AccentContentBody
+      onBriefingShow: onPause,
+      onBriefingDismiss: onResume,
     );
 
     return GameBaseLayout<AccentBloc, AccentState>(
@@ -117,9 +127,11 @@ class AccentBaseLayout extends StatelessWidget {
           isHintUsedOnCurrentQuest: state is AccentLoaded ? state.hintUsed : false,
           isHintEnabled: currentQuest != null && !isAnswered,
           onPause: () {
+            onPause?.call();
             VowlPauseBottomSheet.show(
               context,
               category: 'accent',
+              onResume: onResume,
               onRestart: () {
                 context.read<AccentBloc>().add(
                   FetchAccentQuests(gameType: gameType, level: level),
