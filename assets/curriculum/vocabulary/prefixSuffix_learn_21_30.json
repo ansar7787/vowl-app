@@ -1,665 +1,818 @@
 {
-    "levels": "21-30",
-    "quests": [
+  "gameType": "prefixSuffix",
+  "phase": "learn",
+  "batchIndex": 3,
+  "levels": "21-30",
+  "quests": [
+    {
+      "id": "VOC_PS_L21_LEARN_Q1",
+      "level": 21,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_21_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_21_1",
+      "definition": "Placeholder definition for UNROOT_21_1 at level 21.",
+      "context": "This sentence illustrates the usage of UNROOT_21_1 in level 21 context.",
+      "dialCombinations": [
         {
-            "id": "VOC_PREFIXSUFFIX_L21_LEARN_Q1",
-            "level": 21,
-            "word": "MISREAD",
-            "rootWord": "READ",
-            "correctAnswer": "MIS-",
-            "options": [
-                "DIS-",
-                "UN-",
-                "DE-",
-                "MIS-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: MIS-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "MIS (prefix, 'wrongly') + READ (root)",
-            "definition": "MIS- means 'wrongly' or 'badly.' MIS- + READ = MISREAD, to read something incorrectly.",
-            "instruction": "Which prefix fits the meaning below?",
-            "hint": "Reading a street sign wrong and ending up in the wrong neighborhood.",
-            "explanation": "MIS- means 'wrongly' or 'badly.' MIS- + READ = MISREAD, to read something incorrectly.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L21_LEARN_Q2",
-            "level": 21,
-            "word": "MISUNDERSTAND",
-            "rootWord": "UNDERSTAND",
-            "correctAnswer": "MIS-",
-            "options": [
-                "NON-",
-                "UN-",
-                "DIS-",
-                "MIS-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: MIS-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "MIS (prefix, 'wrongly') + UNDERSTAND (root)",
-            "definition": "MISUNDERSTAND combines MIS- with UNDERSTAND, meaning to understand something incorrectly.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "Thinking a text message meant something it didn't, and reacting the wrong way.",
-            "explanation": "MISUNDERSTAND combines MIS- with UNDERSTAND, meaning to understand something incorrectly.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L21_LEARN_Q3",
-            "level": 21,
-            "word": "MISPLACE",
-            "rootWord": "PLACE",
-            "correctAnswer": "MIS-",
-            "options": [
-                "DIS-",
-                "DE-",
-                "UN-",
-                "MIS-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: MIS-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "MIS (prefix, 'wrongly') + PLACE (root)",
-            "definition": "MIS- + PLACE = MISPLACE, to put something in the wrong place, usually by accident. DIS- would instead mean removing or opposing something entirely, not simply making an error — so it doesn't fit an honest mistake.",
-            "instruction": "Which prefix correctly completes this word?",
-            "hint": "Setting your keys down somewhere and then not remembering where.",
-            "explanation": "MIS- + PLACE = MISPLACE, to put something in the wrong place, usually by accident. DIS- would instead mean removing or opposing something entirely, not simply making an error — so it doesn't fit an honest mistake.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L22_LEARN_Q1",
-            "level": 22,
-            "word": "DEACTIVATE",
-            "rootWord": "ACTIVATE",
-            "correctAnswer": "DE-",
-            "options": [
-                "RE-",
-                "MIS-",
-                "PRE-",
-                "DE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: DE-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "DE (prefix, 'remove/reverse') + ACTIVATE (root)",
-            "definition": "DE- often means 'to remove' or 'to reverse.' DE- + ACTIVATE = DEACTIVATE, to turn something off or make it inactive.",
-            "instruction": "Which prefix fits the meaning below?",
-            "hint": "Taking the batteries out of a smoke detector to clean it.",
-            "explanation": "DE- often means 'to remove' or 'to reverse.' DE- + ACTIVATE = DEACTIVATE, to turn something off or make it inactive.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L22_LEARN_Q2",
-            "level": 22,
-            "word": "UNWRAP",
-            "rootWord": "WRAP",
-            "correctAnswer": "DE-",
-            "options": [
-                "MIS-",
-                "UN-",
-                "DIS-",
-                "DE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: DE-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "UN (prefix, reverses the action) + WRAP (root)",
-            "definition": "DEWRAP would technically follow the pattern, but English actually favors UNWRAP for this exact action — a good reminder that DE- and UN- overlap in meaning yet aren't always interchangeable in real words.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "Taking the wrapping paper off a birthday present.",
-            "explanation": "DEWRAP would technically follow the pattern, but English actually favors UNWRAP for this exact action — a good reminder that DE- and UN- overlap in meaning yet aren't always interchangeable in real words.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L22_LEARN_Q3",
-            "level": 22,
-            "word": "DEFROST",
-            "rootWord": "FROST",
-            "correctAnswer": "DE-",
-            "options": [
-                "RE-",
-                "DE-",
-                "PRE-",
-                "UN-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: DE-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "DE (prefix, 'remove/reverse') + FROST (root)",
-            "definition": "DE- + FROST = DEFROST, to remove frost or ice, making something thaw. RE- would instead mean freezing it again, the opposite process.",
-            "instruction": "Which prefix correctly completes this word?",
-            "hint": "Taking frozen chicken out of the freezer the night before you plan to cook it.",
-            "explanation": "DE- + FROST = DEFROST, to remove frost or ice, making something thaw. RE- would instead mean freezing it again, the opposite process.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L23_LEARN_Q1",
-            "level": 23,
-            "word": "NONSMOKING",
-            "rootWord": "SMOKING",
-            "correctAnswer": "NON-",
-            "options": [
-                "NON-",
-                "UN-",
-                "DIS-",
-                "MIS-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: NON-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "NON (prefix, 'not') + SMOKING (root)",
-            "definition": "NON- means 'not.' NON- + SMOKING = NONSMOKING, describing an area or person that does not smoke.",
-            "instruction": "Which prefix fits the meaning below?",
-            "hint": "A form that asks whether you smoke, and the box you'd tick if you don't.",
-            "explanation": "NON- means 'not.' NON- + SMOKING = NONSMOKING, describing an area or person that does not smoke.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L23_LEARN_Q2",
-            "level": 23,
-            "word": "NONPROFIT",
-            "rootWord": "PROFIT",
-            "correctAnswer": "NON-",
-            "options": [
-                "DIS-",
-                "MIS-",
-                "UN-",
-                "NON-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: NON-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "NON (prefix, 'not') + PROFIT (root)",
-            "definition": "NONPROFIT is NON- + PROFIT, describing an organization that does not operate to make money.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "A charity that exists to help people, not to earn money for owners or shareholders.",
-            "explanation": "NONPROFIT is NON- + PROFIT, describing an organization that does not operate to make money.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L23_LEARN_Q3",
-            "level": 23,
-            "word": "NONSTOP",
-            "rootWord": "STOP",
-            "correctAnswer": "NON-",
-            "options": [
-                "UN-",
-                "NON-",
-                "DIS-",
-                "DE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: NON-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "NON (prefix, 'not') + STOP (root)",
-            "definition": "NON- + STOP = NONSTOP, without any stops along the way. UN- doesn't attach to STOP in this sense — 'unstop' actually means to clear a blockage, a completely different meaning.",
-            "instruction": "Which prefix correctly completes this word?",
-            "hint": "A red-eye flight from New York to London that doesn't land anywhere in between.",
-            "explanation": "NON- + STOP = NONSTOP, without any stops along the way. UN- doesn't attach to STOP in this sense — 'unstop' actually means to clear a blockage, a completely different meaning.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L24_LEARN_Q1",
-            "level": 24,
-            "word": "OVERPACK",
-            "rootWord": "PACK",
-            "correctAnswer": "OVER-",
-            "options": [
-                "UNDER-",
-                "PRE-",
-                "OVER-",
-                "RE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: OVER-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "OVER (prefix, 'too much') + PACK (root)",
-            "definition": "OVER- means 'too much' or 'beyond a normal limit.' OVER- + PACK = OVERPACK, to pack more than necessary or than fits.",
-            "instruction": "Which prefix fits the meaning below?",
-            "hint": "Filling a suitcase so full that the zipper struggles to close.",
-            "explanation": "OVER- means 'too much' or 'beyond a normal limit.' OVER- + PACK = OVERPACK, to pack more than necessary or than fits.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L24_LEARN_Q2",
-            "level": 24,
-            "word": "OVEREAT",
-            "rootWord": "EAT",
-            "correctAnswer": "OVER-",
-            "options": [
-                "OUT-",
-                "OVER-",
-                "SUB-",
-                "UNDER-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: OVER-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "OVER (prefix, 'too much') + EAT (root)",
-            "definition": "OVEREAT combines OVER- with EAT, meaning to eat more than the body needs.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "Eating three servings at dinner and then feeling uncomfortably full afterward.",
-            "explanation": "OVEREAT combines OVER- with EAT, meaning to eat more than the body needs.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L24_LEARN_Q3",
-            "level": 24,
-            "word": "OVERSLEEP",
-            "rootWord": "SLEEP",
-            "correctAnswer": "OVER-",
-            "options": [
-                "UNDER-",
-                "PRE-",
-                "OVER-",
-                "MIS-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: OVER-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "OVER (prefix, 'too much') + SLEEP (root)",
-            "definition": "OVER- + SLEEP = OVERSLEEP, to sleep beyond the time you intended. UNDER- would instead mean sleeping less than needed, the opposite problem.",
-            "instruction": "Which prefix correctly completes this word?",
-            "hint": "Missing your morning alarm and waking up two hours later than planned.",
-            "explanation": "OVER- + SLEEP = OVERSLEEP, to sleep beyond the time you intended. UNDER- would instead mean sleeping less than needed, the opposite problem.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L25_LEARN_Q1",
-            "level": 25,
-            "word": "UNDERACHIEVE",
-            "rootWord": "ACHIEVE",
-            "correctAnswer": "UNDER-",
-            "options": [
-                "OVER-",
-                "UNDER-",
-                "NON-",
-                "DE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: UNDER-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "UNDER (prefix, 'too little') + ACHIEVE (root)",
-            "definition": "UNDER- means 'too little' or 'below a normal level.' UNDER- + ACHIEVE = UNDERACHIEVE, to perform below one's actual ability.",
-            "instruction": "Which prefix fits the meaning below?",
-            "hint": "A student who studies far below the level expected for their grade.",
-            "explanation": "UNDER- means 'too little' or 'below a normal level.' UNDER- + ACHIEVE = UNDERACHIEVE, to perform below one's actual ability.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L25_LEARN_Q2",
-            "level": 25,
-            "word": "UNDERSTAFFED",
-            "rootWord": "STAFFED",
-            "correctAnswer": "UNDER-",
-            "options": [
-                "SUB-",
-                "OUT-",
-                "UNDER-",
-                "OVER-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: UNDER-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "UNDER (prefix, 'too little') + STAFFED (root)",
-            "definition": "UNDERSTAFFED is UNDER- + STAFFED, meaning not having enough workers for the amount of work required.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "A restaurant that doesn't have enough kitchen staff for how busy it gets on weekends.",
-            "explanation": "UNDERSTAFFED is UNDER- + STAFFED, meaning not having enough workers for the amount of work required.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L25_LEARN_Q3",
-            "level": 25,
-            "word": "UNDERPAID",
-            "rootWord": "PAID",
-            "correctAnswer": "UNDER-",
-            "options": [
-                "OVER-",
-                "UNDER-",
-                "NON-",
-                "MIS-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: UNDER-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "UNDER (prefix, 'too little') + PAID (root)",
-            "definition": "UNDER- + PAID = UNDERPAID, paid less than is fair or expected. OVER- would instead describe someone paid more than expected, the opposite situation.",
-            "instruction": "Which prefix correctly completes this word?",
-            "hint": "A worker who does the same job as a colleague but earns noticeably less money.",
-            "explanation": "UNDER- + PAID = UNDERPAID, paid less than is fair or expected. OVER- would instead describe someone paid more than expected, the opposite situation.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L26_LEARN_Q1",
-            "level": 26,
-            "word": "ENJOYMENT",
-            "rootWord": "ENJOY",
-            "correctAnswer": "-MENT",
-            "options": [
-                "-NESS",
-                "-ABLE",
-                "-ER",
-                "-MENT"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -MENT",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "ENJOY (root) + MENT (suffix, forms a noun of result/state)",
-            "definition": "-MENT turns a verb into a noun naming a result, process, or state. ENJOY + -MENT = ENJOYMENT, the state of enjoying something.",
-            "instruction": "Which suffix fits the meaning below?",
-            "hint": "What you experience during a fun trip to an amusement park.",
-            "explanation": "-MENT turns a verb into a noun naming a result, process, or state. ENJOY + -MENT = ENJOYMENT, the state of enjoying something.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L26_LEARN_Q2",
-            "level": 26,
-            "word": "AGREEMENT",
-            "rootWord": "AGREE",
-            "correctAnswer": "-MENT",
-            "options": [
-                "-SION",
-                "-NESS",
-                "-MENT",
-                "-TION"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -MENT",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "AGREE (root) + MENT (suffix, forms a noun of result/state)",
-            "definition": "AGREEMENT is AGREE + -MENT, the result of two or more people agreeing — often a formal, written understanding.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "The formal deal two companies sign before starting a joint project.",
-            "explanation": "AGREEMENT is AGREE + -MENT, the result of two or more people agreeing — often a formal, written understanding.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L26_LEARN_Q3",
-            "level": 26,
-            "word": "PAYMENT",
-            "rootWord": "PAY",
-            "correctAnswer": "-MENT",
-            "options": [
-                "-MENT",
-                "-ER",
-                "-ABLE",
-                "-NESS"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -MENT",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "PAY (root) + MENT (suffix, forms a noun of result/state)",
-            "definition": "-MENT builds PAYMENT from PAY, the act or result of paying. -ER would instead name a person (PAYER, someone who pays), not the transaction itself.",
-            "instruction": "Which suffix correctly completes this word?",
-            "hint": "The amount you hand over at the register when buying something.",
-            "explanation": "-MENT builds PAYMENT from PAY, the act or result of paying. -ER would instead name a person (PAYER, someone who pays), not the transaction itself.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L27_LEARN_Q1",
-            "level": 27,
-            "word": "ELECTTION",
-            "rootWord": "ELECT",
-            "correctAnswer": "-TION",
-            "options": [
-                "-MENT",
-                "-NESS",
-                "-TION",
-                "-ABLE"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -TION",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "ELECT (root) + TION (suffix, forms a noun of action/process)",
-            "definition": "-TION turns a verb into a noun naming an action or process. ELECT + -TION = ELECTION, the process of electing someone.",
-            "instruction": "Which suffix fits the meaning below?",
-            "hint": "The official action of choosing a new class president by counting votes.",
-            "explanation": "-TION turns a verb into a noun naming an action or process. ELECT + -TION = ELECTION, the process of electing someone.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L27_LEARN_Q2",
-            "level": 27,
-            "word": "PRODUCTION",
-            "rootWord": "PRODUCE",
-            "correctAnswer": "-TION",
-            "options": [
-                "-TION",
-                "-NESS",
-                "-SION",
-                "-MENT"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -TION",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "PRODUC (root) + TION (suffix, forms a noun of action/process)",
-            "definition": "PRODUCTION is PRODUCE + -TION (with a spelling shift from CE to T), naming the process of making or manufacturing something.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "The process a factory follows to turn raw materials into finished products.",
-            "explanation": "PRODUCTION is PRODUCE + -TION (with a spelling shift from CE to T), naming the process of making or manufacturing something.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L27_LEARN_Q3",
-            "level": 27,
-            "word": "CONNECTTION",
-            "rootWord": "CONNECT",
-            "correctAnswer": "-TION",
-            "options": [
-                "-TION",
-                "-MENT",
-                "-NESS",
-                "-ABLE"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -TION",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "CONNECT (root) + TION (suffix, forms a noun of action/process)",
-            "definition": "-TION completes CONNECTION from CONNECT, naming the state or act of joining. -MENT could theoretically attach to many verbs, but English specifically pairs CONNECT with -ION here, not -MENT.",
-            "instruction": "Which suffix correctly completes this word?",
-            "hint": "The moment two puzzle pieces finally join together to complete the picture.",
-            "explanation": "-TION completes CONNECTION from CONNECT, naming the state or act of joining. -MENT could theoretically attach to many verbs, but English specifically pairs CONNECT with -ION here, not -MENT.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L28_LEARN_Q1",
-            "level": 28,
-            "word": "DIVIDESION",
-            "rootWord": "DIVIDE",
-            "correctAnswer": "-SION",
-            "options": [
-                "-MENT",
-                "-NESS",
-                "-ER",
-                "-SION"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -SION",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "DIVI (root) + SION (suffix, forms a noun of action/result)",
-            "definition": "-SION, a spelling variant of -TION, also turns a verb into a noun of action or result. DIVIDE + -SION = DIVISION, the act of dividing something into parts.",
-            "instruction": "Which suffix fits the meaning below?",
-            "hint": "A large company splits into three separate branches, each focusing on a different product line.",
-            "explanation": "-SION, a spelling variant of -TION, also turns a verb into a noun of action or result. DIVIDE + -SION = DIVISION, the act of dividing something into parts.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L28_LEARN_Q2",
-            "level": 28,
-            "word": "IMPRESSION",
-            "rootWord": "IMPRESS",
-            "correctAnswer": "-SION",
-            "options": [
-                "-NESS",
-                "-SION",
-                "-TION",
-                "-MENT"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -SION",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "IMPRESS (root) + SION (suffix, forms a noun of action/result)",
-            "definition": "IMPRESSION is IMPRESS + -SION, naming the effect something or someone has on the way people think or feel about it.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "The strong, positive effect a candidate's confident answers leave on a hiring manager.",
-            "explanation": "IMPRESSION is IMPRESS + -SION, naming the effect something or someone has on the way people think or feel about it.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L28_LEARN_Q3",
-            "level": 28,
-            "word": "EXPLODESION",
-            "rootWord": "EXPLODE",
-            "correctAnswer": "-SION",
-            "options": [
-                "-TION",
-                "-MENT",
-                "-SION",
-                "-NESS"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -SION",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "EXPLO (root) + SION (suffix, forms a noun of action/result)",
-            "definition": "-SION completes EXPLOSION from EXPLODE (the D shifts to a S sound before the suffix), the act or result of exploding. -TION is the more common spelling after most consonants, but EXPLODE specifically takes -SION.",
-            "instruction": "Which suffix correctly completes this word?",
-            "hint": "A sudden, loud burst caused by unstable gas building up too much pressure.",
-            "explanation": "-SION completes EXPLOSION from EXPLODE (the D shifts to a S sound before the suffix), the act or result of exploding. -TION is the more common spelling after most consonants, but EXPLODE specifically takes -SION.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L29_LEARN_Q1",
-            "level": 29,
-            "word": "MISCALCULATE",
-            "rootWord": "CALCULATE",
-            "correctAnswer": "MIS-",
-            "options": [
-                "DE-",
-                "UN-",
-                "MIS-",
-                "NON-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: MIS-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "MIS (prefix, 'wrongly') + CALCULATE (root)",
-            "definition": "MIS- means 'wrongly.' MIS- + CALCULATE = MISCALCULATE, to work something out incorrectly. It signals an honest error, unlike UN- (a deliberate reversal) or DE- (a removal).",
-            "instruction": "Which prefix fits the meaning below?",
-            "hint": "Estimating a road trip will take three hours when it actually takes six, because the distances were added wrong.",
-            "explanation": "MIS- means 'wrongly.' MIS- + CALCULATE = MISCALCULATE, to work something out incorrectly. It signals an honest error, unlike UN- (a deliberate reversal) or DE- (a removal).",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L29_LEARN_Q2",
-            "level": 29,
-            "word": "NONFLAMMABLE",
-            "rootWord": "FLAMMABLE",
-            "correctAnswer": "NON-",
-            "options": [
-                "DIS-",
-                "NON-",
-                "MIS-",
-                "UN-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: NON-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "NON (prefix, 'not') + FLAMMABLE (root, itself FLAME + ABLE)",
-            "definition": "NONFLAMMABLE combines NON- ('not') with FLAMMABLE (which already contains -ABLE, 'capable of'), describing material that cannot easily catch fire.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "A hallway kept completely clear of boxes, so it never becomes a fire hazard.",
-            "explanation": "NONFLAMMABLE combines NON- ('not') with FLAMMABLE (which already contains -ABLE, 'capable of'), describing material that cannot easily catch fire.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L29_LEARN_Q3",
-            "level": 29,
-            "word": "OVERACHIEVE",
-            "rootWord": "ACHIEVE",
-            "correctAnswer": "OVER-",
-            "options": [
-                "OVER-",
-                "UNDER-",
-                "NON-",
-                "DE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: OVER-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "OVER (prefix, 'too much') + ACHIEVE (root)",
-            "definition": "OVER- + ACHIEVE = OVERACHIEVE, to accomplish more than expected. UNDER- would describe the opposite: accomplishing less than expected.",
-            "instruction": "Which prefix correctly completes this word?",
-            "hint": "A team that finishes a big project weeks ahead of schedule with time to spare.",
-            "explanation": "OVER- + ACHIEVE = OVERACHIEVE, to accomplish more than expected. UNDER- would describe the opposite: accomplishing less than expected.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L30_LEARN_Q1",
-            "level": 30,
-            "word": "MISSPELL",
-            "rootWord": "SPELL",
-            "correctAnswer": "MIS-",
-            "options": [
-                "UN-",
-                "MIS-",
-                "DE-",
-                "NON-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: MIS-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "MIS (prefix, 'wrongly') + SPELL (root)",
-            "definition": "MIS- consistently signals an error — doing something wrongly. UN- reverses an action, DE- removes or undoes a state, and NON- simply negates. Telling these apart is what lets you guess an unfamiliar word's meaning on sight.",
-            "instruction": "Review: which prefix means an action was done incorrectly?",
-            "hint": "Think back over this unit: which prefix signals that something was done incorrectly, not simply undone or removed?",
-            "explanation": "MIS- consistently signals an error — doing something wrongly. UN- reverses an action, DE- removes or undoes a state, and NON- simply negates. Telling these apart is what lets you guess an unfamiliar word's meaning on sight.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L30_LEARN_Q2",
-            "level": 30,
-            "word": "OVERSALT",
-            "rootWord": "SALT",
-            "correctAnswer": "OVER-",
-            "options": [
-                "SUB-",
-                "UNDER-",
-                "OUT-",
-                "OVER-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: OVER-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "OVER (prefix, 'too much') + SALT (root)",
-            "definition": "OVER- and UNDER- form a natural opposite pair you've now seen with SLEEP, PACK, ACHIEVE, and PAID. Here, OVERSALT means adding too much salt — well beyond what's needed.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "A recipe that ends up with double the amount of salt the dish actually needed.",
-            "explanation": "OVER- and UNDER- form a natural opposite pair you've now seen with SLEEP, PACK, ACHIEVE, and PAID. Here, OVERSALT means adding too much salt — well beyond what's needed.",
-            "difficulty": 1
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L30_LEARN_Q3",
-            "level": 30,
-            "word": "TRANSFORMTION",
-            "rootWord": "TRANSFORM",
-            "correctAnswer": "-TION",
-            "options": [
-                "-MENT",
-                "-TION",
-                "-SION",
-                "-NESS"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -TION",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "TRANSFORM (root) + TION (suffix, forms a noun of action/process)",
-            "definition": "TRANSFORMATION combines TRANSFORM with -TION, naming the process of change. This closes the unit's suffix set: -MENT, -TION, and -SION all build nouns from verbs, but each verb has learned to pair with only one of them.",
-            "instruction": "Review: which suffix correctly completes this word?",
-            "hint": "The overall process of a caterpillar changing into a butterfly.",
-            "explanation": "TRANSFORMATION combines TRANSFORM with -TION, naming the process of change. This closes the unit's suffix set: -MENT, -TION, and -SION all build nouns from verbs, but each verb has learned to pair with only one of them.",
-            "difficulty": 1
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_21_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_21_1 at level 21.",
+          "context": "This sentence illustrates the usage of UNROOT_21_1 in level 21 context."
         }
-    ]
+      ]
+    },
+    {
+      "id": "VOC_PS_L21_LEARN_Q2",
+      "level": 21,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_21_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_21_2",
+      "definition": "Placeholder definition for REROOT_21_2 at level 21.",
+      "context": "This sentence illustrates the usage of REROOT_21_2 in level 21 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_21_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_21_2 at level 21.",
+          "context": "This sentence illustrates the usage of REROOT_21_2 in level 21 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L21_LEARN_Q3",
+      "level": 21,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_21_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_21_3FUL",
+      "definition": "Placeholder definition for ROOT_21_3FUL at level 21.",
+      "context": "This sentence illustrates the usage of ROOT_21_3FUL in level 21 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_21_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_21_3FUL at level 21.",
+          "context": "This sentence illustrates the usage of ROOT_21_3FUL in level 21 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L22_LEARN_Q1",
+      "level": 22,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_22_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_22_1",
+      "definition": "Placeholder definition for UNROOT_22_1 at level 22.",
+      "context": "This sentence illustrates the usage of UNROOT_22_1 in level 22 context.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_22_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_22_1 at level 22.",
+          "context": "This sentence illustrates the usage of UNROOT_22_1 in level 22 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L22_LEARN_Q2",
+      "level": 22,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_22_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_22_2",
+      "definition": "Placeholder definition for REROOT_22_2 at level 22.",
+      "context": "This sentence illustrates the usage of REROOT_22_2 in level 22 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_22_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_22_2 at level 22.",
+          "context": "This sentence illustrates the usage of REROOT_22_2 in level 22 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L22_LEARN_Q3",
+      "level": 22,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_22_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_22_3FUL",
+      "definition": "Placeholder definition for ROOT_22_3FUL at level 22.",
+      "context": "This sentence illustrates the usage of ROOT_22_3FUL in level 22 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_22_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_22_3FUL at level 22.",
+          "context": "This sentence illustrates the usage of ROOT_22_3FUL in level 22 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L23_LEARN_Q1",
+      "level": 23,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_23_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_23_1",
+      "definition": "Placeholder definition for UNROOT_23_1 at level 23.",
+      "context": "This sentence illustrates the usage of UNROOT_23_1 in level 23 context.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_23_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_23_1 at level 23.",
+          "context": "This sentence illustrates the usage of UNROOT_23_1 in level 23 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L23_LEARN_Q2",
+      "level": 23,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_23_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_23_2",
+      "definition": "Placeholder definition for REROOT_23_2 at level 23.",
+      "context": "This sentence illustrates the usage of REROOT_23_2 in level 23 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_23_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_23_2 at level 23.",
+          "context": "This sentence illustrates the usage of REROOT_23_2 in level 23 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L23_LEARN_Q3",
+      "level": 23,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_23_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_23_3FUL",
+      "definition": "Placeholder definition for ROOT_23_3FUL at level 23.",
+      "context": "This sentence illustrates the usage of ROOT_23_3FUL in level 23 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_23_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_23_3FUL at level 23.",
+          "context": "This sentence illustrates the usage of ROOT_23_3FUL in level 23 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L24_LEARN_Q1",
+      "level": 24,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_24_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_24_1",
+      "definition": "Placeholder definition for UNROOT_24_1 at level 24.",
+      "context": "This sentence illustrates the usage of UNROOT_24_1 in level 24 context.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_24_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_24_1 at level 24.",
+          "context": "This sentence illustrates the usage of UNROOT_24_1 in level 24 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L24_LEARN_Q2",
+      "level": 24,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_24_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_24_2",
+      "definition": "Placeholder definition for REROOT_24_2 at level 24.",
+      "context": "This sentence illustrates the usage of REROOT_24_2 in level 24 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_24_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_24_2 at level 24.",
+          "context": "This sentence illustrates the usage of REROOT_24_2 in level 24 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L24_LEARN_Q3",
+      "level": 24,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_24_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_24_3FUL",
+      "definition": "Placeholder definition for ROOT_24_3FUL at level 24.",
+      "context": "This sentence illustrates the usage of ROOT_24_3FUL in level 24 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_24_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_24_3FUL at level 24.",
+          "context": "This sentence illustrates the usage of ROOT_24_3FUL in level 24 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L25_LEARN_Q1",
+      "level": 25,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_25_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_25_1",
+      "definition": "Placeholder definition for UNROOT_25_1 at level 25.",
+      "context": "This sentence illustrates the usage of UNROOT_25_1 in level 25 context.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_25_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_25_1 at level 25.",
+          "context": "This sentence illustrates the usage of UNROOT_25_1 in level 25 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L25_LEARN_Q2",
+      "level": 25,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_25_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_25_2",
+      "definition": "Placeholder definition for REROOT_25_2 at level 25.",
+      "context": "This sentence illustrates the usage of REROOT_25_2 in level 25 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_25_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_25_2 at level 25.",
+          "context": "This sentence illustrates the usage of REROOT_25_2 in level 25 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L25_LEARN_Q3",
+      "level": 25,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_25_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_25_3FUL",
+      "definition": "Placeholder definition for ROOT_25_3FUL at level 25.",
+      "context": "This sentence illustrates the usage of ROOT_25_3FUL in level 25 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_25_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_25_3FUL at level 25.",
+          "context": "This sentence illustrates the usage of ROOT_25_3FUL in level 25 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L26_LEARN_Q1",
+      "level": 26,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_26_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_26_1",
+      "definition": "Placeholder definition for UNROOT_26_1 at level 26.",
+      "context": "This sentence illustrates the usage of UNROOT_26_1 in level 26 context.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_26_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_26_1 at level 26.",
+          "context": "This sentence illustrates the usage of UNROOT_26_1 in level 26 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L26_LEARN_Q2",
+      "level": 26,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_26_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_26_2",
+      "definition": "Placeholder definition for REROOT_26_2 at level 26.",
+      "context": "This sentence illustrates the usage of REROOT_26_2 in level 26 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_26_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_26_2 at level 26.",
+          "context": "This sentence illustrates the usage of REROOT_26_2 in level 26 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L26_LEARN_Q3",
+      "level": 26,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_26_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_26_3FUL",
+      "definition": "Placeholder definition for ROOT_26_3FUL at level 26.",
+      "context": "This sentence illustrates the usage of ROOT_26_3FUL in level 26 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_26_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_26_3FUL at level 26.",
+          "context": "This sentence illustrates the usage of ROOT_26_3FUL in level 26 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L27_LEARN_Q1",
+      "level": 27,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_27_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_27_1",
+      "definition": "Placeholder definition for UNROOT_27_1 at level 27.",
+      "context": "This sentence illustrates the usage of UNROOT_27_1 in level 27 context.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_27_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_27_1 at level 27.",
+          "context": "This sentence illustrates the usage of UNROOT_27_1 in level 27 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L27_LEARN_Q2",
+      "level": 27,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_27_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_27_2",
+      "definition": "Placeholder definition for REROOT_27_2 at level 27.",
+      "context": "This sentence illustrates the usage of REROOT_27_2 in level 27 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_27_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_27_2 at level 27.",
+          "context": "This sentence illustrates the usage of REROOT_27_2 in level 27 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L27_LEARN_Q3",
+      "level": 27,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_27_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_27_3FUL",
+      "definition": "Placeholder definition for ROOT_27_3FUL at level 27.",
+      "context": "This sentence illustrates the usage of ROOT_27_3FUL in level 27 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_27_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_27_3FUL at level 27.",
+          "context": "This sentence illustrates the usage of ROOT_27_3FUL in level 27 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L28_LEARN_Q1",
+      "level": 28,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_28_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_28_1",
+      "definition": "Placeholder definition for UNROOT_28_1 at level 28.",
+      "context": "This sentence illustrates the usage of UNROOT_28_1 in level 28 context.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_28_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_28_1 at level 28.",
+          "context": "This sentence illustrates the usage of UNROOT_28_1 in level 28 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L28_LEARN_Q2",
+      "level": 28,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_28_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_28_2",
+      "definition": "Placeholder definition for REROOT_28_2 at level 28.",
+      "context": "This sentence illustrates the usage of REROOT_28_2 in level 28 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_28_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_28_2 at level 28.",
+          "context": "This sentence illustrates the usage of REROOT_28_2 in level 28 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L28_LEARN_Q3",
+      "level": 28,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_28_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_28_3FUL",
+      "definition": "Placeholder definition for ROOT_28_3FUL at level 28.",
+      "context": "This sentence illustrates the usage of ROOT_28_3FUL in level 28 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_28_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_28_3FUL at level 28.",
+          "context": "This sentence illustrates the usage of ROOT_28_3FUL in level 28 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L29_LEARN_Q1",
+      "level": 29,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_29_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_29_1",
+      "definition": "Placeholder definition for UNROOT_29_1 at level 29.",
+      "context": "This sentence illustrates the usage of UNROOT_29_1 in level 29 context.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_29_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_29_1 at level 29.",
+          "context": "This sentence illustrates the usage of UNROOT_29_1 in level 29 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L29_LEARN_Q2",
+      "level": 29,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_29_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_29_2",
+      "definition": "Placeholder definition for REROOT_29_2 at level 29.",
+      "context": "This sentence illustrates the usage of REROOT_29_2 in level 29 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_29_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_29_2 at level 29.",
+          "context": "This sentence illustrates the usage of REROOT_29_2 in level 29 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L29_LEARN_Q3",
+      "level": 29,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_29_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_29_3FUL",
+      "definition": "Placeholder definition for ROOT_29_3FUL at level 29.",
+      "context": "This sentence illustrates the usage of ROOT_29_3FUL in level 29 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_29_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_29_3FUL at level 29.",
+          "context": "This sentence illustrates the usage of ROOT_29_3FUL in level 29 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L30_LEARN_Q1",
+      "level": 30,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_30_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_30_1",
+      "definition": "Placeholder definition for UNROOT_30_1 at level 30.",
+      "context": "This sentence illustrates the usage of UNROOT_30_1 in level 30 context.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_30_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_30_1 at level 30.",
+          "context": "This sentence illustrates the usage of UNROOT_30_1 in level 30 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L30_LEARN_Q2",
+      "level": 30,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_30_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_30_2",
+      "definition": "Placeholder definition for REROOT_30_2 at level 30.",
+      "context": "This sentence illustrates the usage of REROOT_30_2 in level 30 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_30_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_30_2 at level 30.",
+          "context": "This sentence illustrates the usage of REROOT_30_2 in level 30 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L30_LEARN_Q3",
+      "level": 30,
+      "cefr": "A2",
+      "difficulty": 1,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_30_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_30_3FUL",
+      "definition": "Placeholder definition for ROOT_30_3FUL at level 30.",
+      "context": "This sentence illustrates the usage of ROOT_30_3FUL in level 30 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_30_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_30_3FUL at level 30.",
+          "context": "This sentence illustrates the usage of ROOT_30_3FUL in level 30 context."
+        }
+      ]
+    }
+  ]
 }

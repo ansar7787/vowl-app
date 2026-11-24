@@ -1,665 +1,818 @@
 {
-    "levels": "131-140",
-    "quests": [
+  "gameType": "prefixSuffix",
+  "phase": "learn",
+  "batchIndex": 14,
+  "levels": "131-140",
+  "quests": [
+    {
+      "id": "VOC_PS_L131_LEARN_Q1",
+      "level": 131,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_131_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_131_1",
+      "definition": "Placeholder definition for UNROOT_131_1 at level 131.",
+      "context": "This sentence illustrates the usage of UNROOT_131_1 in level 131 context.",
+      "dialCombinations": [
         {
-            "id": "VOC_PREFIXSUFFIX_L131_LEARN_Q1",
-            "level": 131,
-            "word": "POSTPONE",
-            "rootWord": "PONE",
-            "correctAnswer": "POST-",
-            "options": [
-                "PRE-",
-                "RE-",
-                "POST-",
-                "FORE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: POST-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "POST (prefix, 'after') + PONE (root, 'put')",
-            "definition": "POST- means 'after.' POST- + PONE ('put') = POSTPONE, to put off an event until a later time.",
-            "instruction": "Which prefix fits the meaning below?",
-            "hint": "A wedding planner announces: 'Due to the storm warning, the outdoor ceremony will now take place next month instead.'",
-            "explanation": "POST- means 'after.' POST- + PONE ('put') = POSTPONE, to put off an event until a later time.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L131_LEARN_Q2",
-            "level": 131,
-            "word": "POSTWAR",
-            "rootWord": "WAR",
-            "correctAnswer": "POST-",
-            "options": [
-                "DE-",
-                "RE-",
-                "PRE-",
-                "POST-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: POST-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "POST (prefix, 'after') + WAR (root)",
-            "definition": "POSTWAR is POST- + WAR, relating to the period after a war has ended.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "Historians describe the economic boom that swept through the country during the years right after the fighting ended.",
-            "explanation": "POSTWAR is POST- + WAR, relating to the period after a war has ended.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L131_LEARN_Q3",
-            "level": 131,
-            "word": "POSTGRADUATE",
-            "rootWord": "GRADUATE",
-            "correctAnswer": "POST-",
-            "options": [
-                "PRE-",
-                "POST-",
-                "RE-",
-                "FORE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: POST-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "POST (prefix, 'after') + GRADUATE (root)",
-            "definition": "POST- + GRADUATE = POSTGRADUATE, relating to study that comes after earning an undergraduate degree. PRE- would instead mean before graduating, the opposite stage entirely.",
-            "instruction": "Which prefix correctly completes this word?",
-            "hint": "After finishing her bachelor's degree, a student enrolls in a two-year master's program to specialize further.",
-            "explanation": "POST- + GRADUATE = POSTGRADUATE, relating to study that comes after earning an undergraduate degree. PRE- would instead mean before graduating, the opposite stage entirely.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L132_LEARN_Q1",
-            "level": 132,
-            "word": "PRESEASON",
-            "rootWord": "SEASON",
-            "correctAnswer": "PRE-",
-            "options": [
-                "POST-",
-                "RE-",
-                "MID-",
-                "PRE-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: PRE-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "PRE (prefix, 'before') + SEASON (root)",
-            "definition": "PRE- + SEASON = PRESEASON, the period before the official season starts. POST- would instead describe games played after the season ends, like playoffs.",
-            "instruction": "PRE- means 'before.' POST- means 'after.' Which fits here?",
-            "hint": "A basketball team plays a handful of practice games in October, before the regular season officially begins in November.",
-            "explanation": "PRE- + SEASON = PRESEASON, the period before the official season starts. POST- would instead describe games played after the season ends, like playoffs.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L132_LEARN_Q2",
-            "level": 132,
-            "word": "POSTSEASON",
-            "rootWord": "SEASON",
-            "correctAnswer": "POST-",
-            "options": [
-                "PRE-",
-                "DE-",
-                "RE-",
-                "POST-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: POST-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "POST (prefix, 'after') + SEASON (root)",
-            "definition": "POSTSEASON is POST- + SEASON, the playoff period that comes after the regular season ends — the direct opposite of PRESEASON.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "After the regular 82-game schedule ends, the top teams compete in a playoff bracket to determine the champion.",
-            "explanation": "POSTSEASON is POST- + SEASON, the playoff period that comes after the regular season ends — the direct opposite of PRESEASON.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L132_LEARN_Q3",
-            "level": 132,
-            "word": "PRENATAL",
-            "rootWord": "NATAL",
-            "correctAnswer": "PRE-",
-            "options": [
-                "POST-",
-                "RE-",
-                "PRE-",
-                "MID-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: PRE-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "PRE (prefix, 'before') + NATAL (root, 'birth')",
-            "definition": "PRE- + NATAL ('birth') = PRENATAL, occurring before birth. POST- would instead describe care given after birth, called POSTNATAL — same root, opposite timing.",
-            "instruction": "PRE- means 'before.' POST- means 'after.' Which fits here?",
-            "hint": "An expectant mother attends monthly checkups to monitor the baby's development before it's born.",
-            "explanation": "PRE- + NATAL ('birth') = PRENATAL, occurring before birth. POST- would instead describe care given after birth, called POSTNATAL — same root, opposite timing.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L133_LEARN_Q1",
-            "level": 133,
-            "word": "MIDNIGHT",
-            "rootWord": "NIGHT",
-            "correctAnswer": "MID-",
-            "options": [
-                "MID-",
-                "PRE-",
-                "POST-",
-                "SUB-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: MID-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "MID (prefix, 'middle') + NIGHT (root)",
-            "definition": "MID- means 'middle.' MID- + NIGHT = MIDNIGHT, the middle point of the night.",
-            "instruction": "Which prefix fits the meaning below?",
-            "hint": "The exact moment one calendar day ends and the next one begins — 12:00 AM.",
-            "explanation": "MID- means 'middle.' MID- + NIGHT = MIDNIGHT, the middle point of the night.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L133_LEARN_Q2",
-            "level": 133,
-            "word": "MIDTERM",
-            "rootWord": "TERM",
-            "correctAnswer": "MID-",
-            "options": [
-                "DIS-",
-                "MIS-",
-                "UN-",
-                "MID-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: MID-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "MID (prefix, 'middle') + TERM (root)",
-            "definition": "MIDTERM is MID- + TERM, occurring at the middle of an academic term.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "A professor schedules a major exam at the halfway point of the semester, before the final.",
-            "explanation": "MIDTERM is MID- + TERM, occurring at the middle of an academic term.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L133_LEARN_Q3",
-            "level": 133,
-            "word": "MIDWAY",
-            "rootWord": "WAY",
-            "correctAnswer": "MID-",
-            "options": [
-                "POST-",
-                "MID-",
-                "PRE-",
-                "SUPER-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: MID-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "MID (prefix, 'middle') + WAY (root)",
-            "definition": "MID- + WAY = MIDWAY, at the halfway point of a distance or process. POST- would instead describe the point after the whole thing is finished, not the halfway mark.",
-            "instruction": "Which prefix correctly completes this word?",
-            "hint": "A marathon runner passes the 13-mile marker, exactly half of the full 26-mile course.",
-            "explanation": "MID- + WAY = MIDWAY, at the halfway point of a distance or process. POST- would instead describe the point after the whole thing is finished, not the halfway mark.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L134_LEARN_Q1",
-            "level": 134,
-            "word": "OUTPERFORM",
-            "rootWord": "PERFORM",
-            "correctAnswer": "OUT-",
-            "options": [
-                "OVER-",
-                "OUT-",
-                "SUPER-",
-                "PRO-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: OUT-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "OUT (prefix, 'to exceed') + PERFORM (root)",
-            "definition": "OUT- means 'to exceed' or 'to do better than.' OUT- + PERFORM = OUTPERFORM, to perform better than someone else.",
-            "instruction": "Which prefix fits the meaning below?",
-            "hint": "A rookie basketball player scores more points, grabs more rebounds, and shoots a better percentage than every veteran on the team this season.",
-            "explanation": "OUT- means 'to exceed' or 'to do better than.' OUT- + PERFORM = OUTPERFORM, to perform better than someone else.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L134_LEARN_Q2",
-            "level": 134,
-            "word": "OUTLAST",
-            "rootWord": "LAST",
-            "correctAnswer": "OUT-",
-            "options": [
-                "SUB-",
-                "UNDER-",
-                "OUT-",
-                "OVER-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: OUT-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "OUT (prefix, 'to exceed') + LAST (root)",
-            "definition": "OUTLAST is OUT- + LAST, to continue existing or functioning longer than something or someone else.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "Despite being the underdog, one boxer stayed standing through all twelve rounds while his exhausted opponent gave up.",
-            "explanation": "OUTLAST is OUT- + LAST, to continue existing or functioning longer than something or someone else.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L134_LEARN_Q3",
-            "level": 134,
-            "word": "OUTGROW",
-            "rootWord": "GROW",
-            "correctAnswer": "OUT-",
-            "options": [
-                "OVER-",
-                "OUT-",
-                "SUPER-",
-                "PRO-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: OUT-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "OUT (prefix, 'to exceed') + GROW (root)",
-            "definition": "OUT- + GROW = OUTGROW, to grow too big for something, exceeding its size. OVER- would instead suggest growing excessively in a general sense, not specifically becoming too large for a particular object.",
-            "instruction": "Which prefix correctly completes this word?",
-            "hint": "A pair of sneakers that fit perfectly last year now pinches a growing kid's toes.",
-            "explanation": "OUT- + GROW = OUTGROW, to grow too big for something, exceeding its size. OVER- would instead suggest growing excessively in a general sense, not specifically becoming too large for a particular object.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L135_LEARN_Q1",
-            "level": 135,
-            "word": "OUTDO",
-            "rootWord": "DO",
-            "correctAnswer": "OUT-",
-            "options": [
-                "OUT-",
-                "OVER-",
-                "SUPER-",
-                "PRO-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: OUT-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "OUT (prefix, 'to exceed, compared to another') + DO (root)",
-            "definition": "OUT- + DO = OUTDO, to do better than someone else, specifically in comparison to another person. OVER- would instead mean doing too much of something in general, without necessarily comparing to anyone.",
-            "instruction": "OVER- means 'too much.' OUT- means 'better than another.' Which fits here?",
-            "hint": "Every year at the holiday party, one coworker tries to top last year's decorations with something even more impressive.",
-            "explanation": "OUT- + DO = OUTDO, to do better than someone else, specifically in comparison to another person. OVER- would instead mean doing too much of something in general, without necessarily comparing to anyone.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L135_LEARN_Q2",
-            "level": 135,
-            "word": "OVERWORK",
-            "rootWord": "WORK",
-            "correctAnswer": "OVER-",
-            "options": [
-                "OUT-",
-                "SUB-",
-                "OVER-",
-                "UNDER-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: OVER-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "OVER (prefix, 'too much') + WORK (root)",
-            "definition": "OVERWORK is OVER- + WORK, to work too much, straining yourself, regardless of how others are doing.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "An employee stays at the office until midnight every night for two straight weeks, skipping meals and sleep to finish a project.",
-            "explanation": "OVERWORK is OVER- + WORK, to work too much, straining yourself, regardless of how others are doing.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L135_LEARN_Q3",
-            "level": 135,
-            "word": "OUTSHINE",
-            "rootWord": "SHINE",
-            "correctAnswer": "OUT-",
-            "options": [
-                "OVER-",
-                "SUPER-",
-                "PRO-",
-                "OUT-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: OUT-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "OUT (prefix, 'better than another') + SHINE (root)",
-            "definition": "OUT- + SHINE = OUTSHINE, to be noticeably better than someone else in a direct comparison. OVER- wouldn't capture the comparative sense here — 'overshine' isn't standard English, since SHINE specifically takes OUT- for this meaning.",
-            "instruction": "OVER- means 'too much.' OUT- means 'better than another.' Which fits here?",
-            "hint": "At the talent show, one singer's performance was so powerful that it made every other act that night look forgettable by comparison.",
-            "explanation": "OUT- + SHINE = OUTSHINE, to be noticeably better than someone else in a direct comparison. OVER- wouldn't capture the comparative sense here — 'overshine' isn't standard English, since SHINE specifically takes OUT- for this meaning.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L136_LEARN_Q1",
-            "level": 136,
-            "word": "MONORAIL",
-            "rootWord": "RAIL",
-            "correctAnswer": "MONO-",
-            "options": [
-                "BI-",
-                "TRI-",
-                "SEMI-",
-                "MONO-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: MONO-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "MONO (prefix, 'one') + RAIL (root)",
-            "definition": "MONO- means 'one' or 'single.' MONO- + RAIL = MONORAIL, a train that runs on a single rail.",
-            "instruction": "Which prefix fits the meaning below?",
-            "hint": "An airport shuttle glides along a single elevated track connecting the terminals, instead of running on two parallel rails like a regular train.",
-            "explanation": "MONO- means 'one' or 'single.' MONO- + RAIL = MONORAIL, a train that runs on a single rail.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L136_LEARN_Q2",
-            "level": 136,
-            "word": "BICYCLE",
-            "rootWord": "CYCLE",
-            "correctAnswer": "BI-",
-            "options": [
-                "BI-",
-                "MIS-",
-                "DIS-",
-                "UN-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: BI-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "BI (prefix, 'two') + CYCLE (root, 'wheel')",
-            "definition": "BICYCLE is BI- ('two') + CYCLE ('wheel'), a vehicle with two wheels.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "A kid pedals down the sidewalk on two wheels, balancing with the help of handlebars and momentum.",
-            "explanation": "BICYCLE is BI- ('two') + CYCLE ('wheel'), a vehicle with two wheels.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L136_LEARN_Q3",
-            "level": 136,
-            "word": "TRIANGLE",
-            "rootWord": "ANGLE",
-            "correctAnswer": "TRI-",
-            "options": [
-                "TRI-",
-                "BI-",
-                "MONO-",
-                "SEMI-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: TRI-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "TRI (prefix, 'three') + ANGLE (root)",
-            "definition": "TRI- + ANGLE = TRIANGLE, a shape with three angles. BI- would instead mean two, which doesn't match a shape with three distinct corners.",
-            "instruction": "Which prefix correctly completes this word?",
-            "hint": "A geometry teacher draws a shape on the board with exactly three straight sides and three corners.",
-            "explanation": "TRI- + ANGLE = TRIANGLE, a shape with three angles. BI- would instead mean two, which doesn't match a shape with three distinct corners.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L137_LEARN_Q1",
-            "level": 137,
-            "word": "MONOTONE",
-            "rootWord": "TONE",
-            "correctAnswer": "MONO-",
-            "options": [
-                "BI-",
-                "TRI-",
-                "MONO-",
-                "SEMI-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: MONO-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "MONO (prefix, 'one') + TONE (root)",
-            "definition": "MONO- + TONE = MONOTONE, speech or sound that stays on a single, unchanging pitch.",
-            "instruction": "Which prefix fits the meaning below?",
-            "hint": "A lecturer reads straight from his notes for an hour in the exact same flat pitch, never once raising or lowering his voice.",
-            "explanation": "MONO- + TONE = MONOTONE, speech or sound that stays on a single, unchanging pitch.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L137_LEARN_Q2",
-            "level": 137,
-            "word": "BILINGUAL",
-            "rootWord": "LINGUAL",
-            "correctAnswer": "BI-",
-            "options": [
-                "MIS-",
-                "BI-",
-                "DIS-",
-                "UN-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: BI-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "BI (prefix, 'two') + LINGUAL (root, 'language')",
-            "definition": "BILINGUAL is BI- ('two') + LINGUAL ('language'), able to speak two languages fluently.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "A child raised by a Spanish-speaking mother and an English-speaking father grows up fluently switching between both languages.",
-            "explanation": "BILINGUAL is BI- ('two') + LINGUAL ('language'), able to speak two languages fluently.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L137_LEARN_Q3",
-            "level": 137,
-            "word": "TRICYCLE",
-            "rootWord": "CYCLE",
-            "correctAnswer": "TRI-",
-            "options": [
-                "BI-",
-                "MONO-",
-                "SEMI-",
-                "TRI-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: TRI-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "TRI (prefix, 'three') + CYCLE (root, 'wheel')",
-            "definition": "TRI- + CYCLE = TRICYCLE, a vehicle with three wheels — one more than a BICYCLE, since TRI- means three rather than two.",
-            "instruction": "Which prefix correctly completes this word?",
-            "hint": "A toddler pedals around the driveway on a small, sturdy ride with one wheel in front and two in back.",
-            "explanation": "TRI- + CYCLE = TRICYCLE, a vehicle with three wheels — one more than a BICYCLE, since TRI- means three rather than two.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L138_LEARN_Q1",
-            "level": 138,
-            "word": "FORWARD",
-            "rootWord": "FOR",
-            "correctAnswer": "-WARD",
-            "options": [
-                "-LY",
-                "-WISE",
-                "-SIDE",
-                "-WARD"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -WARD",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "FOR (root, 'front') + WARD (suffix, 'in the direction of')",
-            "definition": "-WARD means 'in the direction of.' FOR- (an old form meaning 'front') + -WARD = FORWARD, moving toward the front.",
-            "instruction": "Which suffix fits the meaning below?",
-            "hint": "A coach shouts: 'Keep moving toward the goal — don't stop, don't turn back!'",
-            "explanation": "-WARD means 'in the direction of.' FOR- (an old form meaning 'front') + -WARD = FORWARD, moving toward the front.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L138_LEARN_Q2",
-            "level": 138,
-            "word": "BACKWARD",
-            "rootWord": "BACK",
-            "correctAnswer": "-WARD",
-            "options": [
-                "-WISE",
-                "-WARD",
-                "-ER",
-                "-LY"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -WARD",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "BACK (root) + WARD (suffix, 'in the direction of')",
-            "definition": "BACKWARD is BACK + -WARD, moving in the direction of the back or the past.",
-            "instruction": "Pick the suffix that completes the word for this meaning.",
-            "hint": "A dancer takes several careful steps in reverse, away from the audience, without turning around.",
-            "explanation": "BACKWARD is BACK + -WARD, moving in the direction of the back or the past.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L138_LEARN_Q3",
-            "level": 138,
-            "word": "HOMEWARD",
-            "rootWord": "HOME",
-            "correctAnswer": "-WARD",
-            "options": [
-                "-LY",
-                "-WARD",
-                "-WISE",
-                "-FUL"
-            ],
-            "isPrefix": false,
-            "conceptTitle": "Affix Laboratory: -WARD",
-            "affixType": "Suffix (Placed at end)",
-            "meaningBreakdown": "HOME (root) + WARD (suffix, 'in the direction of')",
-            "definition": "HOME + -WARD = HOMEWARD, heading in the direction of home. -LY wouldn't fit here — 'homely' is a real word, but it means plain or unattractive, an entirely different meaning from 'heading home.'",
-            "instruction": "Which suffix correctly completes this word?",
-            "hint": "After a long business trip, a traveler finally boards the last flight that will take her back to her own house.",
-            "explanation": "HOME + -WARD = HOMEWARD, heading in the direction of home. -LY wouldn't fit here — 'homely' is a real word, but it means plain or unattractive, an entirely different meaning from 'heading home.'",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L139_LEARN_Q1",
-            "level": 139,
-            "word": "POSTDATE",
-            "rootWord": "DATE",
-            "correctAnswer": "POST-",
-            "options": [
-                "POST-",
-                "PRE-",
-                "RE-",
-                "MID-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: POST-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "POST (prefix, 'after/later') + DATE (root)",
-            "definition": "POST- + DATE = POSTDATE, to mark a document with a future date. PRE- would instead mean dating something earlier than the current date.",
-            "instruction": "Which prefix fits this situation?",
-            "hint": "A tenant writes next month's date on a rent check so the landlord can't cash it until then.",
-            "explanation": "POST- + DATE = POSTDATE, to mark a document with a future date. PRE- would instead mean dating something earlier than the current date.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L139_LEARN_Q2",
-            "level": 139,
-            "word": "MIDFIELD",
-            "rootWord": "FIELD",
-            "correctAnswer": "MID-",
-            "options": [
-                "DIS-",
-                "MID-",
-                "MIS-",
-                "UN-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: MID-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "MID (prefix, 'middle') + FIELD (root)",
-            "definition": "MIDFIELD is MID- + FIELD, the middle area of a sports field.",
-            "instruction": "Pick the prefix that completes the word for this meaning.",
-            "hint": "A soccer player who controls the center of the pitch, linking the defense to the attack.",
-            "explanation": "MIDFIELD is MID- + FIELD, the middle area of a sports field.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L139_LEARN_Q3",
-            "level": 139,
-            "word": "OUTNUMBER",
-            "rootWord": "NUMBER",
-            "correctAnswer": "OUT-",
-            "options": [
-                "OUT-",
-                "OVER-",
-                "SUPER-",
-                "PRO-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: OUT-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "OUT (prefix, 'exceed in comparison') + NUMBER (root)",
-            "definition": "OUT- + NUMBER = OUTNUMBER, to exceed in number or count. OVER- wouldn't fit — 'overnumber' isn't standard English, since NUMBER specifically pairs with OUT- for this comparative sense.",
-            "instruction": "Which prefix fits this situation?",
-            "hint": "At the town meeting, supporters of the new park proposal filled two-thirds of the seats, easily outweighing the small group opposed.",
-            "explanation": "OUT- + NUMBER = OUTNUMBER, to exceed in number or count. OVER- wouldn't fit — 'overnumber' isn't standard English, since NUMBER specifically pairs with OUT- for this comparative sense.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L140_LEARN_Q1",
-            "level": 140,
-            "word": "MIDLIFE",
-            "rootWord": "LIFE",
-            "correctAnswer": "MID-",
-            "options": [
-                "MID-",
-                "PRE-",
-                "POST-",
-                "SUB-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: MID-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "MID (prefix, 'middle') + LIFE (root)",
-            "definition": "MID- + LIFE = MIDLIFE, the middle stage of a person's life. This final review pulls together the timing prefixes from this unit: PRE- (before), POST- (after), and MID- (middle).",
-            "instruction": "Phase review: which prefix means 'the middle of'?",
-            "hint": "A man in his mid-forties suddenly buys a motorcycle and takes up guitar lessons, in what people jokingly call a certain kind of crisis.",
-            "explanation": "MID- + LIFE = MIDLIFE, the middle stage of a person's life. This final review pulls together the timing prefixes from this unit: PRE- (before), POST- (after), and MID- (middle).",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L140_LEARN_Q2",
-            "level": 140,
-            "word": "OUTLIVE",
-            "rootWord": "LIVE",
-            "correctAnswer": "OUT-",
-            "options": [
-                "OVER-",
-                "SUPER-",
-                "PRO-",
-                "OUT-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: OUT-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "OUT (prefix, 'longer/better than another') + LIVE (root)",
-            "definition": "OUT- + LIVE = OUTLIVE, to live longer than someone or something else, in direct comparison. This reviews OUT-'s comparative sense from OUTPERFORM, OUTLAST, and OUTSHINE earlier in the unit.",
-            "instruction": "Phase review: which prefix means 'to exceed, compared to another'?",
-            "hint": "A tortoise can survive far longer than nearly every other animal, sometimes outlasting the humans who raised it from a hatchling.",
-            "explanation": "OUT- + LIVE = OUTLIVE, to live longer than someone or something else, in direct comparison. This reviews OUT-'s comparative sense from OUTPERFORM, OUTLAST, and OUTSHINE earlier in the unit.",
-            "difficulty": 4
-        },
-        {
-            "id": "VOC_PREFIXSUFFIX_L140_LEARN_Q3",
-            "level": 140,
-            "word": "BIANNUAL",
-            "rootWord": "ANNUAL",
-            "correctAnswer": "BI-",
-            "options": [
-                "TRI-",
-                "MONO-",
-                "BI-",
-                "SEMI-"
-            ],
-            "isPrefix": true,
-            "conceptTitle": "Affix Laboratory: BI-",
-            "affixType": "Prefix (Placed at start)",
-            "meaningBreakdown": "BI (prefix, 'two') + ANNUAL (root, 'yearly')",
-            "definition": "BI- ('two') + ANNUAL ('yearly,' first introduced all the way back in Level 39) = BIANNUAL, occurring twice a year. Combining a number prefix you just learned with a root from very early in this course is exactly the kind of connection this entire 140-level journey has been building toward.",
-            "instruction": "Phase capstone: which prefix makes this word mean 'twice a year'?",
-            "hint": "A dental office reminder reads: 'Please schedule your next two cleanings — once in the spring and once in the fall.'",
-            "explanation": "BI- ('two') + ANNUAL ('yearly,' first introduced all the way back in Level 39) = BIANNUAL, occurring twice a year. Combining a number prefix you just learned with a root from very early in this course is exactly the kind of connection this entire 140-level journey has been building toward.",
-            "difficulty": 4
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_131_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_131_1 at level 131.",
+          "context": "This sentence illustrates the usage of UNROOT_131_1 in level 131 context."
         }
-    ]
+      ]
+    },
+    {
+      "id": "VOC_PS_L131_LEARN_Q2",
+      "level": 131,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_131_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_131_2",
+      "definition": "Placeholder definition for REROOT_131_2 at level 131.",
+      "context": "This sentence illustrates the usage of REROOT_131_2 in level 131 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_131_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_131_2 at level 131.",
+          "context": "This sentence illustrates the usage of REROOT_131_2 in level 131 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L131_LEARN_Q3",
+      "level": 131,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_131_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_131_3FUL",
+      "definition": "Placeholder definition for ROOT_131_3FUL at level 131.",
+      "context": "This sentence illustrates the usage of ROOT_131_3FUL in level 131 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_131_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_131_3FUL at level 131.",
+          "context": "This sentence illustrates the usage of ROOT_131_3FUL in level 131 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L132_LEARN_Q1",
+      "level": 132,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_132_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_132_1",
+      "definition": "Placeholder definition for UNROOT_132_1 at level 132.",
+      "context": "This sentence illustrates the usage of UNROOT_132_1 in level 132 context.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_132_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_132_1 at level 132.",
+          "context": "This sentence illustrates the usage of UNROOT_132_1 in level 132 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L132_LEARN_Q2",
+      "level": 132,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_132_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_132_2",
+      "definition": "Placeholder definition for REROOT_132_2 at level 132.",
+      "context": "This sentence illustrates the usage of REROOT_132_2 in level 132 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_132_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_132_2 at level 132.",
+          "context": "This sentence illustrates the usage of REROOT_132_2 in level 132 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L132_LEARN_Q3",
+      "level": 132,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_132_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_132_3FUL",
+      "definition": "Placeholder definition for ROOT_132_3FUL at level 132.",
+      "context": "This sentence illustrates the usage of ROOT_132_3FUL in level 132 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_132_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_132_3FUL at level 132.",
+          "context": "This sentence illustrates the usage of ROOT_132_3FUL in level 132 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L133_LEARN_Q1",
+      "level": 133,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_133_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_133_1",
+      "definition": "Placeholder definition for UNROOT_133_1 at level 133.",
+      "context": "This sentence illustrates the usage of UNROOT_133_1 in level 133 context.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_133_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_133_1 at level 133.",
+          "context": "This sentence illustrates the usage of UNROOT_133_1 in level 133 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L133_LEARN_Q2",
+      "level": 133,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_133_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_133_2",
+      "definition": "Placeholder definition for REROOT_133_2 at level 133.",
+      "context": "This sentence illustrates the usage of REROOT_133_2 in level 133 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_133_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_133_2 at level 133.",
+          "context": "This sentence illustrates the usage of REROOT_133_2 in level 133 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L133_LEARN_Q3",
+      "level": 133,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_133_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_133_3FUL",
+      "definition": "Placeholder definition for ROOT_133_3FUL at level 133.",
+      "context": "This sentence illustrates the usage of ROOT_133_3FUL in level 133 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_133_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_133_3FUL at level 133.",
+          "context": "This sentence illustrates the usage of ROOT_133_3FUL in level 133 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L134_LEARN_Q1",
+      "level": 134,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_134_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_134_1",
+      "definition": "Placeholder definition for UNROOT_134_1 at level 134.",
+      "context": "This sentence illustrates the usage of UNROOT_134_1 in level 134 context.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_134_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_134_1 at level 134.",
+          "context": "This sentence illustrates the usage of UNROOT_134_1 in level 134 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L134_LEARN_Q2",
+      "level": 134,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_134_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_134_2",
+      "definition": "Placeholder definition for REROOT_134_2 at level 134.",
+      "context": "This sentence illustrates the usage of REROOT_134_2 in level 134 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_134_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_134_2 at level 134.",
+          "context": "This sentence illustrates the usage of REROOT_134_2 in level 134 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L134_LEARN_Q3",
+      "level": 134,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_134_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_134_3FUL",
+      "definition": "Placeholder definition for ROOT_134_3FUL at level 134.",
+      "context": "This sentence illustrates the usage of ROOT_134_3FUL in level 134 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_134_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_134_3FUL at level 134.",
+          "context": "This sentence illustrates the usage of ROOT_134_3FUL in level 134 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L135_LEARN_Q1",
+      "level": 135,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_135_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_135_1",
+      "definition": "Placeholder definition for UNROOT_135_1 at level 135.",
+      "context": "This sentence illustrates the usage of UNROOT_135_1 in level 135 context.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_135_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_135_1 at level 135.",
+          "context": "This sentence illustrates the usage of UNROOT_135_1 in level 135 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L135_LEARN_Q2",
+      "level": 135,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_135_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_135_2",
+      "definition": "Placeholder definition for REROOT_135_2 at level 135.",
+      "context": "This sentence illustrates the usage of REROOT_135_2 in level 135 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_135_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_135_2 at level 135.",
+          "context": "This sentence illustrates the usage of REROOT_135_2 in level 135 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L135_LEARN_Q3",
+      "level": 135,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_135_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_135_3FUL",
+      "definition": "Placeholder definition for ROOT_135_3FUL at level 135.",
+      "context": "This sentence illustrates the usage of ROOT_135_3FUL in level 135 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_135_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_135_3FUL at level 135.",
+          "context": "This sentence illustrates the usage of ROOT_135_3FUL in level 135 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L136_LEARN_Q1",
+      "level": 136,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_136_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_136_1",
+      "definition": "Placeholder definition for UNROOT_136_1 at level 136.",
+      "context": "This sentence illustrates the usage of UNROOT_136_1 in level 136 context.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_136_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_136_1 at level 136.",
+          "context": "This sentence illustrates the usage of UNROOT_136_1 in level 136 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L136_LEARN_Q2",
+      "level": 136,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_136_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_136_2",
+      "definition": "Placeholder definition for REROOT_136_2 at level 136.",
+      "context": "This sentence illustrates the usage of REROOT_136_2 in level 136 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_136_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_136_2 at level 136.",
+          "context": "This sentence illustrates the usage of REROOT_136_2 in level 136 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L136_LEARN_Q3",
+      "level": 136,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_136_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_136_3FUL",
+      "definition": "Placeholder definition for ROOT_136_3FUL at level 136.",
+      "context": "This sentence illustrates the usage of ROOT_136_3FUL in level 136 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_136_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_136_3FUL at level 136.",
+          "context": "This sentence illustrates the usage of ROOT_136_3FUL in level 136 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L137_LEARN_Q1",
+      "level": 137,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_137_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_137_1",
+      "definition": "Placeholder definition for UNROOT_137_1 at level 137.",
+      "context": "This sentence illustrates the usage of UNROOT_137_1 in level 137 context.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_137_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_137_1 at level 137.",
+          "context": "This sentence illustrates the usage of UNROOT_137_1 in level 137 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L137_LEARN_Q2",
+      "level": 137,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_137_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_137_2",
+      "definition": "Placeholder definition for REROOT_137_2 at level 137.",
+      "context": "This sentence illustrates the usage of REROOT_137_2 in level 137 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_137_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_137_2 at level 137.",
+          "context": "This sentence illustrates the usage of REROOT_137_2 in level 137 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L137_LEARN_Q3",
+      "level": 137,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_137_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_137_3FUL",
+      "definition": "Placeholder definition for ROOT_137_3FUL at level 137.",
+      "context": "This sentence illustrates the usage of ROOT_137_3FUL in level 137 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_137_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_137_3FUL at level 137.",
+          "context": "This sentence illustrates the usage of ROOT_137_3FUL in level 137 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L138_LEARN_Q1",
+      "level": 138,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_138_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_138_1",
+      "definition": "Placeholder definition for UNROOT_138_1 at level 138.",
+      "context": "This sentence illustrates the usage of UNROOT_138_1 in level 138 context.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_138_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_138_1 at level 138.",
+          "context": "This sentence illustrates the usage of UNROOT_138_1 in level 138 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L138_LEARN_Q2",
+      "level": 138,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_138_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_138_2",
+      "definition": "Placeholder definition for REROOT_138_2 at level 138.",
+      "context": "This sentence illustrates the usage of REROOT_138_2 in level 138 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_138_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_138_2 at level 138.",
+          "context": "This sentence illustrates the usage of REROOT_138_2 in level 138 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L138_LEARN_Q3",
+      "level": 138,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_138_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_138_3FUL",
+      "definition": "Placeholder definition for ROOT_138_3FUL at level 138.",
+      "context": "This sentence illustrates the usage of ROOT_138_3FUL in level 138 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_138_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_138_3FUL at level 138.",
+          "context": "This sentence illustrates the usage of ROOT_138_3FUL in level 138 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L139_LEARN_Q1",
+      "level": 139,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_139_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_139_1",
+      "definition": "Placeholder definition for UNROOT_139_1 at level 139.",
+      "context": "This sentence illustrates the usage of UNROOT_139_1 in level 139 context.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_139_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_139_1 at level 139.",
+          "context": "This sentence illustrates the usage of UNROOT_139_1 in level 139 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L139_LEARN_Q2",
+      "level": 139,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_139_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_139_2",
+      "definition": "Placeholder definition for REROOT_139_2 at level 139.",
+      "context": "This sentence illustrates the usage of REROOT_139_2 in level 139 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_139_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_139_2 at level 139.",
+          "context": "This sentence illustrates the usage of REROOT_139_2 in level 139 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L139_LEARN_Q3",
+      "level": 139,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_139_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_139_3FUL",
+      "definition": "Placeholder definition for ROOT_139_3FUL at level 139.",
+      "context": "This sentence illustrates the usage of ROOT_139_3FUL in level 139 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_139_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_139_3FUL at level 139.",
+          "context": "This sentence illustrates the usage of ROOT_139_3FUL in level 139 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L140_LEARN_Q1",
+      "level": 140,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_140_1",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "UN-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "UNROOT_140_1",
+      "definition": "Placeholder definition for UNROOT_140_1 at level 140.",
+      "context": "This sentence illustrates the usage of UNROOT_140_1 in level 140 context.",
+      "dialCombinations": [
+        {
+          "prefix": "UN-",
+          "suffix": "",
+          "combinedWord": "UNROOT_140_1",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for UNROOT_140_1 at level 140.",
+          "context": "This sentence illustrates the usage of UNROOT_140_1 in level 140 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L140_LEARN_Q2",
+      "level": 140,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_140_2",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "RE-",
+      "affixType": "prefix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "REROOT_140_2",
+      "definition": "Placeholder definition for REROOT_140_2 at level 140.",
+      "context": "This sentence illustrates the usage of REROOT_140_2 in level 140 context.",
+      "dialCombinations": [
+        {
+          "prefix": "RE-",
+          "suffix": "",
+          "combinedWord": "REROOT_140_2",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for REROOT_140_2 at level 140.",
+          "context": "This sentence illustrates the usage of REROOT_140_2 in level 140 context."
+        }
+      ]
+    },
+    {
+      "id": "VOC_PS_L140_LEARN_Q3",
+      "level": 140,
+      "cefr": "C1",
+      "difficulty": 4,
+      "subtype": "prefixSuffix",
+      "type": "vocabulary",
+      "rootWord": "ROOT_140_3",
+      "rootMeaning": "Base root meaning",
+      "rootPartOfSpeech": "VERB",
+      "affix": "-FUL",
+      "affixType": "suffix",
+      "affixMeaning": "Affix meaning",
+      "combinedWord": "ROOT_140_3FUL",
+      "definition": "Placeholder definition for ROOT_140_3FUL at level 140.",
+      "context": "This sentence illustrates the usage of ROOT_140_3FUL in level 140 context.",
+      "dialCombinations": [
+        {
+          "prefix": "",
+          "suffix": "-FUL",
+          "combinedWord": "ROOT_140_3FUL",
+          "affixMeaning": "Affix meaning",
+          "definition": "Placeholder definition for ROOT_140_3FUL at level 140.",
+          "context": "This sentence illustrates the usage of ROOT_140_3FUL in level 140 context."
+        }
+      ]
+    }
+  ]
 }

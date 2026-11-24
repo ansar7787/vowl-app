@@ -6,11 +6,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import 'package:vowl/core/domain/entities/game_quest.dart';
 import 'package:vowl/core/network/network_info.dart';
 import 'package:vowl/core/theme/app_theme.dart';
-import 'package:vowl/core/theme/vowl_motion.dart';
 import 'package:vowl/core/utils/ad_service.dart';
 import 'package:vowl/core/utils/analytics_service.dart';
 import 'package:vowl/core/utils/app_logger.dart';
@@ -25,7 +23,8 @@ import 'package:vowl/features/auth/presentation/bloc/economy_bloc.dart';
 import 'package:vowl/features/vocabulary/domain/entities/vocabulary_quest.dart';
 import 'package:vowl/features/vocabulary/presentation/bloc/vocabulary_bloc.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/pages/prefix_suffix_mastery_screen.dart';
-import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_synthesizer.dart';
+import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_combo_hud.dart';
+import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_precision_slicer.dart';
 
 class MockVocabularyBloc extends MockBloc<VocabularyEvent, VocabularyState>
     implements VocabularyBloc {}
@@ -67,22 +66,25 @@ void main() {
   late MockNetworkInfo mockNetworkInfo;
   late StreamController<VocabularyState> vocabularyStreamController;
 
-  const testQuest = VocabularyQuest(
-    id: 'VOC_PREFIXSUFFIX_L2_Q1',
+  final testQuest = VocabularyQuest(
+    id: 'VOC_PS_L1_MASTERY_Q1',
     type: QuestType.vocabulary,
     subtype: GameSubtype.prefixSuffix,
-    word: 'REDO',
-    rootWord: 'DO',
-    correctAnswer: 'RE-',
-    options: ['MIS-', 'DE-', 'PRE-', 'RE-'],
-    instruction: 'Pick the prefix that completes the word for this meaning.',
-    hint: 'This prefix shows an action happening one more time, often to fix a mistake.',
-    explanation: "RE- means 'again.' Added to DO, it forms REDO.",
-    meaningBreakdown: 'RE- (again) + DO ➔ REDO',
+    word: 'PREVIEW',
+    rootWord: 'VIEW',
+    prefix: 'PRE-',
+    correctAnswer: 'PRE-',
+    options: const ['PRE-', 'RE-', 'UN-', 'DE-'],
+    correctAnswerIndex: 0,
+    instruction: 'SLICE OFF THE PREFIX: PRE-',
+    definition: 'An early viewing before public release',
+    contextSentence: 'We watched the movie preview before the film began.',
+    explanation: 'PRE- combines with VIEW to form PREVIEW.',
+    meaningBreakdown: 'PRE- (Before) + VIEW ➔ PREVIEW',
     difficulty: 1,
   );
 
-  const testLoadedState = VocabularyLoaded(
+  final testLoadedState = VocabularyLoaded(
     quests: [testQuest],
     currentIndex: 0,
     livesRemaining: 3,
@@ -98,10 +100,7 @@ void main() {
   });
 
   setUp(() async {
-    SharedPreferences.setMockInitialValues({
-      'has_seen_briefing_prefixSuffix': true,
-    });
-
+    SharedPreferences.setMockInitialValues({});
     mockVocabularyBloc = MockVocabularyBloc();
     mockAuthBloc = MockAuthBloc();
     mockEconomyBloc = MockEconomyBloc();
@@ -117,35 +116,27 @@ void main() {
     vocabularyStreamController = StreamController<VocabularyState>.broadcast();
 
     when(() => mockVocabularyBloc.state).thenReturn(testLoadedState);
-    whenListen(
-      mockVocabularyBloc,
-      vocabularyStreamController.stream,
-      initialState: testLoadedState,
-    );
+    when(
+      () => mockVocabularyBloc.stream,
+    ).thenAnswer((_) => vocabularyStreamController.stream);
 
     when(() => mockAuthBloc.state).thenReturn(
       AuthState.authenticated(
-        const UserEntity(
-          id: 'test_user_ps',
-          email: 'ps@vowl.app',
-          displayName: 'Affix Specialist',
-          hintCount: 3,
-        ),
+        const UserEntity(id: 'u1', email: 't@v.c', displayName: 'Test'),
       ),
     );
-    when(() => mockAuthBloc.stream)
-        .thenAnswer((_) => const Stream<AuthState>.empty());
+    when(() => mockAuthBloc.stream).thenAnswer((_) => const Stream.empty());
 
     when(() => mockEconomyBloc.state).thenReturn(const EconomyState());
-    when(() => mockEconomyBloc.stream)
-        .thenAnswer((_) => const Stream<EconomyState>.empty());
+    when(() => mockEconomyBloc.stream).thenAnswer((_) => const Stream.empty());
 
     when(() => mockHapticService.selection()).thenAnswer((_) async {});
-    when(() => mockHapticService.success()).thenAnswer((_) async {});
     when(() => mockHapticService.error()).thenAnswer((_) async {});
-    when(() => mockHapticService.light()).thenAnswer((_) async {});
+    when(() => mockHapticService.success()).thenAnswer((_) async {});
 
-    when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
+    when(
+      () => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')),
+    ).thenAnswer((_) async {});
     when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
     when(() => mockSoundService.stopAudio()).thenAnswer((_) async {});
     when(() => mockSoundService.playLevelComplete()).thenAnswer((_) async {});
@@ -159,7 +150,7 @@ void main() {
       ),
     ).thenAnswer((_) async {});
 
-    when(() => mockNetworkInfo.isConnected).thenAnswer((_) async => true);
+    when(() => mockLocaleService.currentLocale).thenReturn(const Locale('en'));
 
     await di.sl.reset();
     di.sl.registerSingleton<HapticService>(mockHapticService);
@@ -170,13 +161,10 @@ void main() {
     di.sl.registerSingleton<AnalyticsService>(mockAnalyticsService);
     di.sl.registerSingleton<AdService>(mockAdService);
     di.sl.registerSingleton<NetworkInfo>(mockNetworkInfo);
-
-    VowlMotion.lowAnimationModeOverride.value = true;
   });
 
   tearDown(() async {
     await vocabularyStreamController.close();
-    VowlMotion.lowAnimationModeOverride.value = false;
   });
 
   Widget buildTestableWidget(Widget child) {
@@ -189,13 +177,10 @@ void main() {
           BlocProvider<EconomyBloc>.value(value: mockEconomyBloc),
         ],
         child: MaterialApp(
-          theme: AppTheme.lightTheme,
+          theme: AppTheme.darkTheme,
           home: MediaQuery(
-            data: const MediaQueryData(
-              size: Size(390, 844),
-              disableAnimations: true,
-            ),
-            child: Scaffold(body: child),
+            data: const MediaQueryData(disableAnimations: true),
+            child: child,
           ),
         ),
       ),
@@ -204,49 +189,44 @@ void main() {
 
   group('PrefixSuffixMasteryScreen', () {
     testWidgets(
-        'renders Stage 1 synthesizer, passes stage 1, reveals Bonus XP Arena, and banks win',
-        (tester) async {
-      tester.view.physicalSize = const Size(390, 844) * 2.0;
-      tester.view.devicePixelRatio = 2.0;
-      addTearDown(() {
-        tester.view.resetPhysicalSize();
-        tester.view.resetDevicePixelRatio();
-      });
+      'renders slicer, combo HUD, and executes correct morpheme slice',
+      (tester) async {
+        tester.view.physicalSize = const Size(390, 844) * 2.0;
+        tester.view.devicePixelRatio = 2.0;
+        addTearDown(() {
+          tester.view.resetPhysicalSize();
+          tester.view.resetDevicePixelRatio();
+        });
 
-      await tester.pumpWidget(
-        buildTestableWidget(
-          const PrefixSuffixMasteryScreen(level: 2),
-        ),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.pumpWidget(
+          buildTestableWidget(
+            const PrefixSuffixMasteryScreen(level: 1, enableTimer: false),
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(PrefixSuffixMasteryScreen), findsOneWidget);
-      expect(find.byType(PrefixSuffixSynthesizer), findsOneWidget);
+        expect(find.byType(PrefixSuffixMasteryScreen), findsOneWidget);
+        expect(find.byType(PrefixSuffixComboHud), findsOneWidget);
+        expect(find.byType(PrefixSuffixPrecisionSlicer), findsOneWidget);
+        expect(find.text('SLICE OFF THE PREFIX: PRE-'), findsOneWidget);
 
-      // Tap RE- affix chip (correct for DO -> REDO)
-      final correctChip = find.text('RE-');
-      expect(correctChip, findsWidgets);
-      await tester.tap(correctChip.first);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-      await tester.pump(const Duration(milliseconds: 500));
-      await tester.pumpAndSettle();
+        // Verify accessible scissor buttons
+        final correctSeamButton = find.text('PRE|VIEW');
+        expect(correctSeamButton, findsOneWidget);
 
-      // Stage 1 passed -> Bonus XP Arena appears!
-      expect(find.textContaining('BONUS XP ARENA'), findsOneWidget);
-      final bankButton =
-          find.byKey(const Key('prefix_suffix_bonus_bank_button'));
-      expect(bankButton, findsOneWidget);
-      await tester.ensureVisible(bankButton);
+        // Tap the PRE|VIEW cut seam button
+        await tester.tap(correctSeamButton);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      // Tap Bank Win button (+50 XP bonus, 0 hearts deducted)
-      await tester.tap(bankButton, warnIfMissed: false);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        verify(
+          () => mockVocabularyBloc.add(const SubmitAnswer(true)),
+        ).called(1);
 
-      // Verify answer was submitted as victory to bloc
-      verify(() => mockVocabularyBloc.add(const SubmitAnswer(true))).called(1);
-    });
+        // Clean unmount
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
   });
 }

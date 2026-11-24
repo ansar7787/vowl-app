@@ -7,6 +7,7 @@ import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/sound_service.dart';
 import 'package:vowl/core/utils/tts_service.dart';
 import 'package:vowl/features/vocabulary/prefix_suffix/presentation/pages/prefix_suffix_practice_screen.dart';
+import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_clue_banner.dart';
 
 class MockHapticService extends Mock implements HapticService {}
 
@@ -30,7 +31,9 @@ void main() {
     when(() => mockHapticService.success()).thenAnswer((_) async {});
     when(() => mockHapticService.error()).thenAnswer((_) async {});
 
-    when(() => mockSoundService.playCorrect()).thenAnswer((_) async {});
+    when(
+      () => mockSoundService.playCorrect(comboStep: any(named: 'comboStep')),
+    ).thenAnswer((_) async {});
     when(() => mockSoundService.playWrong()).thenAnswer((_) async {});
 
     when(() => mockTtsService.stop()).thenAnswer((_) async {});
@@ -62,54 +65,52 @@ void main() {
 
   group('PrefixSuffixPracticeScreen', () {
     testWidgets(
-        'renders Drill 1 affix matching, Drill 2 word synthesis confirmation, and advances',
-        (tester) async {
-      tester.view.physicalSize = const Size(390, 844) * 2.0;
-      tester.view.devicePixelRatio = 2.0;
-      addTearDown(() {
-        tester.view.resetPhysicalSize();
-        tester.view.resetDevicePixelRatio();
-      });
+      'renders vault clue banner and cracks combination on correct chip',
+      (tester) async {
+        tester.view.physicalSize = const Size(390, 844) * 2.0;
+        tester.view.devicePixelRatio = 2.0;
+        addTearDown(() {
+          tester.view.resetPhysicalSize();
+          tester.view.resetDevicePixelRatio();
+        });
 
-      await tester.pumpWidget(
-        buildTestableWidget(
-          const PrefixSuffixPracticeScreen(level: 1),
-        ),
-      );
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        await tester.pumpWidget(
+          buildTestableWidget(const PrefixSuffixPracticeScreen(level: 1)),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
 
-      expect(find.byType(PrefixSuffixPracticeScreen), findsOneWidget);
-      expect(find.text('DRILL 1: AFFIX MATCHING'), findsOneWidget);
+        expect(find.byType(PrefixSuffixPracticeScreen), findsOneWidget);
+        expect(find.byType(PrefixSuffixClueBanner), findsOneWidget);
+        expect(find.text('COMBINATION LOCKED'), findsOneWidget);
 
-      // Tap RE-
-      final affixChip = find.text('RE-');
-      expect(affixChip, findsWidgets);
-      await tester.ensureVisible(affixChip.first);
-      await tester.tap(affixChip.first, warnIfMissed: false);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Verify incorrect choice triggers jammed feedback
+        final wrongOption = find.text('RE-');
+        if (wrongOption.evaluate().isNotEmpty) {
+          await tester.tap(wrongOption.first);
+          await tester.pump();
+          await tester.pump(const Duration(milliseconds: 200));
+          expect(find.text('COMBINATION JAMMED'), findsOneWidget);
+        }
 
-      // Drill 2 should appear
-      expect(find.text('DRILL 2: WORD SYNTHESIS CONFIRMATION'), findsOneWidget);
-      final checkButton = find.text('Check');
-      expect(checkButton, findsOneWidget);
+        // Tap correct choice
+        final correctOption = find.text('PRE-');
+        expect(correctOption, findsWidgets);
+        await tester.tap(correctOption.first);
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 200));
 
-      // Enter the target word in Drill 2
-      final textField = find.byType(TextField);
-      expect(textField, findsOneWidget);
-      await tester.enterText(textField, 'REDO');
-      await tester.tap(checkButton, warnIfMissed: false);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
+        // Vault is unlatched
+        expect(find.text('VAULT UNLATCHED'), findsOneWidget);
+        expect(find.text('COMBINATION UNLOCKED!'), findsOneWidget);
 
-      // Advance to next drill
-      final nextButton = find.textContaining('Next Drill');
-      expect(nextButton, findsOneWidget);
-      await tester.ensureVisible(nextButton);
-      await tester.tap(nextButton, warnIfMissed: false);
-      await tester.pump();
-      await tester.pump(const Duration(milliseconds: 300));
-    });
+        // Hint trigger
+        final hintButton = find.text('Need a Clue?');
+        if (hintButton.evaluate().isNotEmpty) {
+          await tester.tap(hintButton);
+          await tester.pump();
+        }
+      },
+    );
   });
 }
