@@ -573,6 +573,8 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       );
     }
 
+    final isLastWord = state.currentIndex >= state.totalWords - 1;
+
     _slideTween.end = const Offset(1.5, 0);
     await _slideController.forward();
     if (!mounted) return;
@@ -580,6 +582,14 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     if (_cardScrollController.hasClients) {
       _cardScrollController.jumpTo(0);
     }
+
+    if (isLastWord) {
+      // Do not snap card back or replay entrance for the completed 10th word
+      _isAnimating.value = false;
+      context.read<DailyWordsBloc>().add(const DailyWordNextRequested());
+      return;
+    }
+
     _slideController.reset();
     _flipController.reset();
     _isFlipped.value = false;
@@ -636,6 +646,8 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
       context.read<DailyWordsBloc>().add(DailyWordMarkedReviewLater(word));
     }
 
+    final isLastWord = state.currentIndex >= state.totalWords - 1;
+
     _slideTween.end = const Offset(-1.5, 0); // Slide left for review later
     await _slideController.forward();
     if (!mounted) return;
@@ -643,6 +655,14 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
     if (_cardScrollController.hasClients) {
       _cardScrollController.jumpTo(0);
     }
+
+    if (isLastWord) {
+      // Do not snap card back or replay entrance for the completed 10th word
+      _isAnimating.value = false;
+      context.read<DailyWordsBloc>().add(const DailyWordNextRequested());
+      return;
+    }
+
     _slideController.reset();
     _flipController.reset();
     _isFlipped.value = false;
@@ -856,51 +876,81 @@ class _DailyWordsScreenState extends State<DailyWordsScreen>
             body: Stack(
               children: [
                 const MeshGradientBackground(showLetters: false),
-                if (state.status == DailyWordsStatus.loading)
-                  _buildShimmerLoading(isDark)
-                else if (state.status == DailyWordsStatus.error)
-                  SafeArea(
-                    child: DailyWordsErrorView(
-                      message: state.errorMessage ?? '',
-                    ),
-                  )
-                else if (state.status == DailyWordsStatus.sessionComplete)
-                  SafeArea(
-                    child: Builder(
-                      builder: (context) {
-                        final authUser = context.watch<AuthBloc>().state.user;
-                        final streakVal =
-                            authUser != null ? authUser.currentStreak : state.streak;
-                        final wordsCount = state.learnedThisSession.isNotEmpty
-                            ? state.learnedThisSession.length
-                            : (state.wordSet?.words.length ?? 10);
-                        return SessionCompleteView(
-                          streak: streakVal,
-                          totalLearned: state.totalWordsLearned,
-                          day: state.currentDay,
-                          wordsThisSession: wordsCount,
-                          wordsForReview: state.reviewedThisSession.length,
-                          isPremium: authUser?.isPremium ?? false,
-                          onReviewAgain: () {
-                            _unlockedUpToIndex.value = 9;
-                            context.read<DailyWordsBloc>().add(
-                              const DailySessionRestartRequested(),
-                            );
-                          },
-                          onWordsTodayTap: () =>
-                              context.push('/word-bank?filter=today'),
-                          onTotalWordsTap: () =>
-                              context.push('/word-bank?filter=all'),
-                          onStreakTap: () =>
-                              context.push(AppRouter.streakRoute),
-                        );
-                      },
-                    ),
-                  )
-                else if (state.currentWord != null)
-                  _buildContent(context, state, state.currentWord!, isDark)
-                else
-                  _buildShimmerLoading(isDark),
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 280),
+                  switchInCurve: Curves.easeOutCubic,
+                  switchOutCurve: Curves.easeInCubic,
+                  child: state.status == DailyWordsStatus.loading
+                      ? _buildShimmerLoading(isDark)
+                      : state.status == DailyWordsStatus.error
+                          ? SafeArea(
+                              key: const ValueKey('error_view'),
+                              child: DailyWordsErrorView(
+                                message: state.errorMessage ?? '',
+                              ),
+                            )
+                          : state.status == DailyWordsStatus.sessionComplete
+                              ? SafeArea(
+                                  key: const ValueKey('complete_view'),
+                                  child: Builder(
+                                    builder: (context) {
+                                      final authUser =
+                                          context.watch<AuthBloc>().state.user;
+                                      final streakVal = authUser != null
+                                          ? authUser.currentStreak
+                                          : state.streak;
+                                      final wordsCount =
+                                          state.learnedThisSession.isNotEmpty
+                                              ? state.learnedThisSession.length
+                                              : (state.wordSet?.words.length ??
+                                                  10);
+                                      return SessionCompleteView(
+                                        streak: streakVal,
+                                        totalLearned: state.totalWordsLearned,
+                                        day: state.currentDay,
+                                        wordsThisSession: wordsCount,
+                                        wordsForReview:
+                                            state.reviewedThisSession.length,
+                                        isPremium:
+                                            authUser?.isPremium ?? false,
+                                        onReviewAgain: () {
+                                          _unlockedUpToIndex.value = 9;
+                                          _slideController.reset();
+                                          _flipController.reset();
+                                          _isFlipped.value = false;
+                                          _isAnimating.value = false;
+                                          _showFlipHint.value = true;
+                                          _translatedWord.value = null;
+                                          _translatedDefinition.value = null;
+                                          _translatedExample.value = null;
+                                          _entranceController.value = 0.0;
+                                          _entranceController.forward();
+                                          context.read<DailyWordsBloc>().add(
+                                            const DailySessionRestartRequested(),
+                                          );
+                                        },
+                                        onWordsTodayTap: () =>
+                                            context.push('/word-bank?filter=today'),
+                                        onTotalWordsTap: () =>
+                                            context.push('/word-bank?filter=all'),
+                                        onStreakTap: () =>
+                                            context.push(AppRouter.streakRoute),
+                                      );
+                                    },
+                                  ),
+                                )
+                              : state.currentWord != null
+                                  ? KeyedSubtree(
+                                      key: const ValueKey('card_view'),
+                                      child: _buildContent(
+                                        context,
+                                        state,
+                                        state.currentWord!,
+                                        isDark,
+                                      ),
+                                    )
+                                  : _buildShimmerLoading(isDark),
+                ),
                 if (state.status == DailyWordsStatus.sessionComplete)
                   const IgnorePointer(child: GameConfetti()),
               ],

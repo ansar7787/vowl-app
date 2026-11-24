@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -401,27 +402,48 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
   ) async {
     final nextIndex = state.currentIndex + 1;
     if (nextIndex >= state.totalWords) {
-      // Session complete
+      // Session complete: persist progress immediately
       await _service.completeDailySession();
       DiscoveryDeck.notifySequenceCompleted();
-      if (di.sl.isRegistered<UpdateUserRewards>()) {
-        try {
-          await di.sl<UpdateUserRewards>().call(
-            UpdateUserRewardsParams(
-              gameType: 'daily_words',
-              xpIncrease: 5,
-              coinIncrease: 10,
-              level: _service.completedDay > 0
-                  ? _service.completedDay
-                  : _service.currentDay,
-            ),
-          );
-        } catch (e) {
-          if (kDebugMode) {
-            debugPrint('DailyWordsBloc: failed to update rewards: $e');
-          }
+
+      final completedDay = _service.completedDay > 0
+          ? _service.completedDay
+          : _service.currentDay;
+
+      // Emit sessionComplete IMMEDIATELY with 0ms UI delay
+      emit(
+        state.copyWith(
+          status: DailyWordsStatus.sessionComplete,
+          currentIndex: nextIndex,
+          currentDay: completedDay,
+        ),
+      );
+
+      // Perform rewards update and notification scheduling asynchronously in background
+      unawaited(_handleBackgroundCompletionTasks(completedDay));
+    } else {
+      emit(state.copyWith(currentIndex: nextIndex));
+    }
+  }
+
+  Future<void> _handleBackgroundCompletionTasks(int completedDay) async {
+    if (di.sl.isRegistered<UpdateUserRewards>()) {
+      try {
+        await di.sl<UpdateUserRewards>().call(
+          UpdateUserRewardsParams(
+            gameType: 'daily_words',
+            xpIncrease: 5,
+            coinIncrease: 10,
+            level: completedDay,
+          ),
+        );
+      } catch (e) {
+        if (kDebugMode) {
+          debugPrint('DailyWordsBloc: failed to update rewards: $e');
         }
       }
+    }
+    if (di.sl.isRegistered<NotificationService>()) {
       try {
         final dueWordsList = _service.wordsForReview
             .map((w) => w.word)
@@ -433,18 +455,6 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
       } catch (e) {
         if (kDebugMode) debugPrint('Failed to schedule reminder: $e');
       }
-
-      emit(
-        state.copyWith(
-          status: DailyWordsStatus.sessionComplete,
-          currentIndex: nextIndex,
-          currentDay: _service.completedDay > 0
-              ? _service.completedDay
-              : _service.currentDay,
-        ),
-      );
-    } else {
-      emit(state.copyWith(currentIndex: nextIndex));
     }
   }
 
