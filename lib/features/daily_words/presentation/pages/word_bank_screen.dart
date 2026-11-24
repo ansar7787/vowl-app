@@ -113,7 +113,8 @@ class _WordBankScreenState extends State<WordBankScreen> {
           SafeArea(
             child: BlocBuilder<DailyWordsBloc, DailyWordsState>(
               builder: (context, state) {
-                if (state.status == DailyWordsStatus.loading) {
+                if (state.status == DailyWordsStatus.loading ||
+                    state.status == DailyWordsStatus.initial) {
                   return const Center(child: CircularProgressIndicator());
                 }
 
@@ -856,31 +857,42 @@ class _WordBankScreenState extends State<WordBankScreen> {
         children: [
           Icon(icon, size: 16.r, color: color),
           SizedBox(width: 8.w),
-          Text(
-            title.toUpperCase(),
-            style: TextStyle(
-              fontFamily: 'Outfit',
-              fontSize: 12.sp,
-              fontWeight: FontWeight.w800,
-              letterSpacing: 1.0,
-              color: color,
-            ),
-          ),
-          SizedBox(width: 8.w),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
-            decoration: BoxDecoration(
-              color: color.withValues(alpha: 0.15),
-              borderRadius: BorderRadius.circular(10.r),
-            ),
-            child: Text(
-              '$count',
-              style: TextStyle(
-                fontFamily: 'Outfit',
-                fontSize: 11.sp,
-                fontWeight: FontWeight.w700,
-                color: color,
-              ),
+          Flexible(
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Flexible(
+                  child: Text(
+                    title.toUpperCase(),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 1.0,
+                      color: color,
+                    ),
+                  ),
+                ),
+                SizedBox(width: 8.w),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
+                  decoration: BoxDecoration(
+                    color: color.withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(10.r),
+                  ),
+                  child: Text(
+                    '$count',
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 11.sp,
+                      fontWeight: FontWeight.w700,
+                      color: color,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           if (trailingAction != null) ...[
@@ -979,13 +991,23 @@ class _WordBankScreenState extends State<WordBankScreen> {
         isDismissible: true,
         backgroundColor: Colors.transparent,
         builder: (sheetContext) {
+          final isMidnight = isDark &&
+              Theme.of(sheetContext).scaffoldBackgroundColor == Colors.black;
           return Container(
             constraints: BoxConstraints(
               maxHeight: MediaQuery.of(sheetContext).size.height * 0.8,
             ),
             decoration: BoxDecoration(
-              color: isDark ? AppColors.slate900 : Colors.white,
+              color: isMidnight
+                  ? AppColors.midnightSurface
+                  : (isDark ? AppColors.slate900 : Colors.white),
               borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
+              border: isMidnight
+                  ? Border.all(
+                      color: Colors.white.withValues(alpha: 0.12),
+                      width: 1,
+                    )
+                  : null,
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withValues(alpha: 0.25),
@@ -1198,7 +1220,9 @@ class _WordBankScreenState extends State<WordBankScreen> {
                         vertical: 10.h,
                       ),
                       decoration: BoxDecoration(
-                        color: isDark ? AppColors.slate800 : AppColors.slate100,
+                        color: isMidnight
+                            ? AppColors.midnightNavy
+                            : (isDark ? AppColors.slate800 : AppColors.slate100),
                         borderRadius: BorderRadius.circular(12.r),
                       ),
                       child: Row(
@@ -1339,13 +1363,23 @@ class _WordBankScreenState extends State<WordBankScreen> {
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       builder: (modalContext) {
+        final isMidnight = isDark &&
+            Theme.of(modalContext).scaffoldBackgroundColor == Colors.black;
         final bottomInset = MediaQuery.of(modalContext).viewInsets.bottom;
         return Padding(
           padding: EdgeInsets.only(bottom: bottomInset),
           child: Container(
             decoration: BoxDecoration(
-              color: isDark ? AppColors.slate900 : Colors.white,
+              color: isMidnight
+                  ? AppColors.midnightSurface
+                  : (isDark ? AppColors.slate900 : Colors.white),
               borderRadius: BorderRadius.vertical(top: Radius.circular(28.r)),
+              border: isMidnight
+                  ? Border.all(
+                      color: Colors.white.withValues(alpha: 0.12),
+                      width: 1,
+                    )
+                  : null,
             ),
             child: SafeArea(
               top: false,

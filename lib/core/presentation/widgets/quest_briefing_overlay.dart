@@ -354,6 +354,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                       widget.phaseBadge!,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
+                      textScaler: const TextScaler.linear(1.0),
                       style: TextStyle(
                         fontFamily: 'Outfit',
                         fontSize: 10.5.sp,
@@ -372,6 +373,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                         .toUpperCase(),
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
+                    textScaler: const TextScaler.linear(1.0),
                     style: TextStyle(
                       fontFamily: 'Outfit',
                       fontSize: 10.5.sp,
