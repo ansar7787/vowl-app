@@ -48,7 +48,9 @@ class _PrefixSuffixTumblerCylinderState
   @override
   void initState() {
     super.initState();
-    _currentIndex = widget.initialIndex.clamp(0, widget.items.length - 1);
+    _currentIndex = widget.items.isEmpty
+        ? 0
+        : widget.initialIndex.clamp(0, widget.items.length - 1);
     _scrollController = FixedExtentScrollController(initialItem: _currentIndex);
   }
 
@@ -57,7 +59,9 @@ class _PrefixSuffixTumblerCylinderState
     super.didUpdateWidget(oldWidget);
     if (oldWidget.items != widget.items ||
         oldWidget.initialIndex != widget.initialIndex) {
-      final targetIndex = widget.initialIndex.clamp(0, widget.items.length - 1);
+      final targetIndex = widget.items.isEmpty
+          ? 0
+          : widget.initialIndex.clamp(0, widget.items.length - 1);
       if (_currentIndex != targetIndex) {
         _currentIndex = targetIndex;
         if (_scrollController.hasClients) {
@@ -218,7 +222,7 @@ class _PrefixSuffixTumblerCylinderState
                           fontFamily: 'Inter',
                           fontSize: isSelected ? 19.sp : 14.sp,
                           fontWeight: isSelected
-                              ? FontWeight.w900
+                              ? FontWeight.w700
                               : FontWeight.w600,
                           letterSpacing: 1.2,
                           color: isSelected

@@ -33,6 +33,7 @@ class _PrefixSuffixPrecisionSlicerState
     with SingleTickerProviderStateMixin {
   Offset? _dragStart;
   Offset? _dragCurrent;
+  int? _lastCut;
   final GlobalKey _wordContainerKey = GlobalKey();
 
   late final AnimationController _splitController;
@@ -54,6 +55,9 @@ class _PrefixSuffixPrecisionSlicerState
   @override
   void didUpdateWidget(covariant PrefixSuffixPrecisionSlicer oldWidget) {
     super.didUpdateWidget(oldWidget);
+    if (!widget.isSliced && !widget.isWrongCut) {
+      _lastCut = null;
+    }
     if (widget.isSliced && !oldWidget.isSliced) {
       _splitController.forward(from: 0.0);
     } else if (!widget.isSliced && oldWidget.isSliced) {
@@ -100,8 +104,10 @@ class _PrefixSuffixPrecisionSlicerState
         _wordContainerKey.currentContext?.findRenderObject() as RenderBox?;
     if (box != null && widget.word.length >= 2) {
       final seam = (localX / (box.size.width / widget.word.length)).round();
+      final clamped = seam.clamp(1, widget.word.length - 1);
       HapticFeedback.mediumImpact();
-      widget.onSlice(seam.clamp(1, widget.word.length - 1));
+      setState(() => _lastCut = clamped);
+      widget.onSlice(clamped);
     }
   }
 
@@ -163,7 +169,9 @@ class _PrefixSuffixPrecisionSlicerState
   @override
   Widget build(BuildContext context) {
     final letters = widget.word.split('');
-    final cutSeam = widget.correctCutIndex.clamp(1, letters.length - 1);
+    final cutSeam = letters.length < 2
+        ? 0
+        : widget.correctCutIndex.clamp(1, letters.length - 1);
 
     return AnimatedBuilder(
       animation: _splitAnimation,
@@ -277,45 +285,7 @@ class _PrefixSuffixPrecisionSlicerState
               alignment: WrapAlignment.center,
               children: [
                 for (int seam = 1; seam < letters.length; seam++)
-                  OutlinedButton.icon(
-                    onPressed: widget.isAnswered
-                        ? null
-                        : () {
-                            HapticFeedback.selectionClick();
-                            widget.onSlice(seam);
-                          },
-                    style: OutlinedButton.styleFrom(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 8.w,
-                        vertical: 4.h,
-                      ),
-                      minimumSize: Size(44.w, 36.h),
-                      side: BorderSide(
-                        color: widget.isSliced && seam == widget.correctCutIndex
-                            ? AppColors.emerald500
-                            : AppColors.slate700,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.r),
-                      ),
-                    ),
-                    icon: Icon(
-                      Icons.content_cut_rounded,
-                      size: 14.sp,
-                      color: widget.isSliced && seam == widget.correctCutIndex
-                          ? AppColors.emerald500
-                          : AppColors.slate400,
-                    ),
-                    label: Text(
-                      '${letters.sublist(0, seam).join()}|${letters.sublist(seam).join()}',
-                      style: TextStyle(
-                        fontFamily: 'Inter',
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.slate50,
-                      ),
-                    ),
-                  ),
+                  _buildScissorButton(seam, letters),
               ],
             ),
             SizedBox(height: 8.h),
@@ -326,22 +296,68 @@ class _PrefixSuffixPrecisionSlicerState
     );
   }
 
+  Widget _buildScissorButton(int seam, List<String> letters) {
+    final isCorrect = widget.isSliced && seam == widget.correctCutIndex;
+    final isWrong = widget.isWrongCut && _lastCut == seam;
+    final activeColor = isCorrect
+        ? AppColors.emerald500
+        : (isWrong ? AppColors.red500 : null);
+
+    return OutlinedButton.icon(
+      onPressed: widget.isAnswered
+          ? null
+          : () {
+              HapticFeedback.selectionClick();
+              setState(() => _lastCut = seam);
+              widget.onSlice(seam);
+            },
+      style: OutlinedButton.styleFrom(
+        padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
+        minimumSize: Size(44.w, 36.h),
+        backgroundColor: isWrong
+            ? AppColors.red500.withValues(alpha: 0.15)
+            : null,
+        side: BorderSide(color: activeColor ?? AppColors.slate700),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.r)),
+      ),
+      icon: Icon(
+        Icons.content_cut_rounded,
+        size: 14.sp,
+        color: activeColor ?? AppColors.slate400,
+      ),
+      label: Text(
+        '${letters.sublist(0, seam).join()}|${letters.sublist(seam).join()}',
+        style: TextStyle(
+          fontFamily: 'Inter',
+          fontSize: 11.sp,
+          fontWeight: FontWeight.w600,
+          color: AppColors.slate50,
+        ),
+      ),
+    );
+  }
+
   Widget _buildShieldButton() {
     final isCorrect = widget.isSliced && widget.correctCutIndex == 0;
-    final isWrong = widget.isWrongCut && widget.correctCutIndex == 0;
+    final isWrong = widget.isWrongCut && _lastCut == 0;
     final bg = isCorrect
         ? AppColors.emerald500.withValues(alpha: 0.15)
         : (isWrong
               ? AppColors.red500.withValues(alpha: 0.15)
               : AppColors.slate800);
-    final border = isCorrect ? AppColors.emerald500 : AppColors.slate700;
-    final text = isCorrect ? AppColors.emerald500 : AppColors.slate300;
+    final border = isCorrect
+        ? AppColors.emerald500
+        : (isWrong ? AppColors.red500 : AppColors.slate700);
+    final text = isCorrect
+        ? AppColors.emerald500
+        : (isWrong ? AppColors.red500 : AppColors.slate300);
 
     return OutlinedButton.icon(
       onPressed: widget.isAnswered
           ? null
           : () {
               HapticFeedback.mediumImpact();
+              setState(() => _lastCut = 0);
               widget.onSlice(0);
             },
       style: OutlinedButton.styleFrom(

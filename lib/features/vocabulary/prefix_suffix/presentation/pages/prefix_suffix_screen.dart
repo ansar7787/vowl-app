@@ -78,27 +78,30 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
     super.dispose();
   }
 
+  void _startTimer(VocabularyQuest quest) {
+    if (!widget.enableTimer) return;
+    _controller.startMasteryTimer(
+      durationSeconds: 5,
+      onExpired: () {
+        if (!isAnsweredNotifier.value && mounted) {
+          _controller.evaluateSlice(cutIndex: -1, correctCutIndex: 0);
+          if (di.sl.isRegistered<SoundService>()) {
+            di.sl<SoundService>().playWrong();
+          }
+          if (di.sl.isRegistered<HapticService>()) {
+            di.sl<HapticService>().error();
+          }
+          submitWrongAnswer(quest: quest, userAnswer: 'timeout');
+        }
+      },
+    );
+  }
+
   void _onQuestLoaded(VocabularyQuest quest) {
     if (_currentQuest?.id == quest.id) return;
     _currentQuest = quest;
     _controller.resetForNextQuest();
-    if (widget.enableTimer) {
-      _controller.startMasteryTimer(
-        durationSeconds: 5,
-        onExpired: () {
-          if (!isAnsweredNotifier.value && mounted) {
-            _controller.evaluateSlice(cutIndex: -1, correctCutIndex: 0);
-            if (di.sl.isRegistered<SoundService>()) {
-              di.sl<SoundService>().playWrong();
-            }
-            if (di.sl.isRegistered<HapticService>()) {
-              di.sl<HapticService>().error();
-            }
-            submitWrongAnswer(quest: quest, userAnswer: 'timeout');
-          }
-        },
-      );
-    }
+    _startTimer(quest);
   }
 
   int _calculateCorrectCutIndex(VocabularyQuest quest) {
@@ -203,6 +206,9 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
               isAnsweredNotifier.value = false;
               isCorrectNotifier.value = null;
               _controller.resetForNextQuest();
+              if (_currentQuest != null) {
+                _startTimer(_currentQuest!);
+              }
             } else {
               context.read<VocabularyBloc>().add(const NextQuestion());
             }

@@ -131,11 +131,13 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
 
   String _formatSyllabicBreakdown() {
     final cleanAffix = affix.replaceAll('-', '').trim();
-    if (affixType.toLowerCase() == 'prefix' &&
+    if (cleanAffix.isNotEmpty &&
+        affixType.toLowerCase() == 'prefix' &&
         combinedWord.toUpperCase().startsWith(cleanAffix.toUpperCase())) {
       final remainder = combinedWord.substring(cleanAffix.length);
       return '$cleanAffix • $remainder';
-    } else if (affixType.toLowerCase() == 'suffix' &&
+    } else if (cleanAffix.isNotEmpty &&
+        affixType.toLowerCase() == 'suffix' &&
         combinedWord.toUpperCase().endsWith(cleanAffix.toUpperCase())) {
       final base = combinedWord.substring(
         0,
@@ -285,14 +287,19 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  syllabicWord,
-                  style: TextStyle(
-                    fontFamily: 'Inter',
-                    fontSize: 22.sp,
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 1.0,
-                    color: AppColors.slate50,
+                Flexible(
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      syllabicWord,
+                      style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontSize: 22.sp,
+                        fontWeight: FontWeight.w700,
+                        letterSpacing: 1.0,
+                        color: AppColors.slate50,
+                      ),
+                    ),
                   ),
                 ),
                 if (onPlayTts != null) ...[
