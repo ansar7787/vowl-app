@@ -166,7 +166,11 @@ void main() {
     await vocabularyStreamController.close();
   });
 
-  Widget buildTestableWidget(Widget child, Size size) {
+  Widget buildTestableWidget(
+    Widget child,
+    Size size, {
+    EdgeInsets insets = EdgeInsets.zero,
+  }) {
     return ScreenUtilInit(
       designSize: const Size(390, 844),
       builder: (context, _) => MultiBlocProvider(
@@ -178,7 +182,12 @@ void main() {
         child: MaterialApp(
           theme: AppTheme.darkTheme,
           home: MediaQuery(
-            data: MediaQueryData(size: size, disableAnimations: true),
+            data: MediaQueryData(
+              size: size,
+              padding: insets,
+              viewPadding: insets,
+              disableAnimations: true,
+            ),
             child: child,
           ),
         ),
@@ -269,5 +278,67 @@ void main() {
         },
       );
     }
+
+    testWidgets(
+      'Learn, Practice, and Mastery screens render safely with 3-button navigation (48dp bottom insets) without overflow or collision',
+      (tester) async {
+        const size = Size(360, 640);
+        const navInsets = EdgeInsets.only(top: 24.0, bottom: 48.0);
+        tester.view.physicalSize = size * 2.0;
+        tester.view.devicePixelRatio = 2.0;
+        tester.view.padding = FakeViewPadding(
+          top: 48.0,
+          bottom: 96.0,
+          left: 0,
+          right: 0,
+        );
+        addTearDown(() {
+          tester.view.resetPhysicalSize();
+          tester.view.resetDevicePixelRatio();
+          tester.view.resetPadding();
+        });
+
+        // 1. Learn Screen
+        await tester.pumpWidget(
+          buildTestableWidget(
+            const PrefixSuffixLearnScreen(level: 1),
+            size,
+            insets: navInsets,
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        expect(tester.takeException(), isNull);
+        expect(find.byType(PrefixSuffixLearnScreen), findsOneWidget);
+
+        // 2. Practice Screen
+        await tester.pumpWidget(
+          buildTestableWidget(
+            const PrefixSuffixPracticeScreen(level: 1),
+            size,
+            insets: navInsets,
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        expect(tester.takeException(), isNull);
+        expect(find.byType(PrefixSuffixPracticeScreen), findsOneWidget);
+
+        // 3. Mastery Screen
+        await tester.pumpWidget(
+          buildTestableWidget(
+            const PrefixSuffixScreen(level: 1, enableTimer: false),
+            size,
+            insets: navInsets,
+          ),
+        );
+        await tester.pump();
+        await tester.pump(const Duration(milliseconds: 300));
+        expect(tester.takeException(), isNull);
+        expect(find.byType(PrefixSuffixScreen), findsOneWidget);
+
+        await tester.pumpWidget(const SizedBox());
+      },
+    );
   });
 }
