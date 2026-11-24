@@ -5,10 +5,10 @@ import 'package:vowl/core/theme/app_colors.dart';
 
 /// 3D Mechanical Tumbler Cylinder for the Prefix & Suffix Learn Phase ("Affix Tumbler Sandbox").
 ///
-/// Simulates a precision combination dial using [ListWheelScrollView.useDelegate].
 /// Features:
 /// - 3D cylindrical perspective curvature with top/bottom fade gradients.
-/// - Center crosshair focus reticle with illuminated active item.
+/// - Center crosshair focus reticle with illuminated active item and notch markers.
+/// - Subtle directional chevrons indicating rotational scrollability.
 /// - Haptic selection feedback on dial rotation.
 class PrefixSuffixTumblerCylinder extends StatefulWidget {
   /// Items to display along the cylindrical tumbler barrel.
@@ -92,24 +92,47 @@ class _PrefixSuffixTumblerCylinderState
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        // Dial Label Badge
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
-          decoration: BoxDecoration(
-            color: themeColor.withValues(alpha: 0.12),
-            borderRadius: BorderRadius.circular(8.r),
-            border: Border.all(color: themeColor.withValues(alpha: 0.3)),
-          ),
-          child: Text(
-            widget.title,
-            style: TextStyle(
-              fontFamily: 'Inter',
-              fontSize: 10.sp,
-              fontWeight: FontWeight.w800,
-              letterSpacing: 1.0,
-              color: themeColor,
+        // Dial Label & Swipe Hint Header
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 4.h),
+              decoration: BoxDecoration(
+                color: themeColor.withValues(alpha: 0.12),
+                borderRadius: BorderRadius.circular(8.r),
+                border: Border.all(color: themeColor.withValues(alpha: 0.3)),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(Icons.tune_rounded, size: 12.sp, color: themeColor),
+                  SizedBox(width: 4.w),
+                  Text(
+                    widget.title,
+                    style: TextStyle(
+                      fontFamily: 'Inter',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w800,
+                      letterSpacing: 1.0,
+                      color: themeColor,
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
+            SizedBox(width: 8.w),
+            Text(
+              'SWIPE TO ROTATE',
+              style: TextStyle(
+                fontFamily: 'Inter',
+                fontSize: 9.sp,
+                fontWeight: FontWeight.w700,
+                letterSpacing: 0.8,
+                color: AppColors.slate500,
+              ),
+            ),
+          ],
         ),
         SizedBox(height: 10.h),
 
@@ -123,25 +146,52 @@ class _PrefixSuffixTumblerCylinderState
             border: Border.all(color: AppColors.slate700, width: 1.5),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withValues(alpha: 0.18),
-                blurRadius: 12,
-                offset: const Offset(0, 4),
+                color: Colors.black.withValues(alpha: 0.22),
+                blurRadius: 14,
+                offset: const Offset(0, 5),
               ),
             ],
           ),
           child: Stack(
             alignment: Alignment.center,
             children: [
-              // Center Focus Reticle
+              // Center Focus Reticle with Side Notch Indicators
               Positioned(
                 left: 12.w,
                 right: 12.w,
                 height: itemExtent,
                 child: Container(
                   decoration: BoxDecoration(
-                    color: themeColor.withValues(alpha: 0.1),
+                    color: themeColor.withValues(alpha: 0.12),
                     borderRadius: BorderRadius.circular(12.r),
-                    border: Border.all(color: themeColor, width: 1.5),
+                    border: Border.all(color: themeColor, width: 1.8),
+                    boxShadow: [
+                      BoxShadow(
+                        color: themeColor.withValues(alpha: 0.25),
+                        blurRadius: 8,
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 6.w),
+                        child: Icon(
+                          Icons.arrow_right_rounded,
+                          size: 16.sp,
+                          color: themeColor,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(right: 6.w),
+                        child: Icon(
+                          Icons.arrow_left_rounded,
+                          size: 16.sp,
+                          color: themeColor,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -167,7 +217,7 @@ class _PrefixSuffixTumblerCylinderState
                         duration: const Duration(milliseconds: 150),
                         style: TextStyle(
                           fontFamily: 'Inter',
-                          fontSize: isSelected ? 18.sp : 14.sp,
+                          fontSize: isSelected ? 19.sp : 14.sp,
                           fontWeight: isSelected
                               ? FontWeight.w900
                               : FontWeight.w600,
@@ -183,12 +233,12 @@ class _PrefixSuffixTumblerCylinderState
                 ),
               ),
 
-              // Top Vignette Gradient
+              // Top Vignette Gradient + Top Chevron Hint
               Positioned(
                 top: 0,
                 left: 0,
                 right: 0,
-                height: 50.h,
+                height: 52.h,
                 child: IgnorePointer(
                   child: Container(
                     decoration: BoxDecoration(
@@ -205,16 +255,23 @@ class _PrefixSuffixTumblerCylinderState
                         ],
                       ),
                     ),
+                    alignment: Alignment.topCenter,
+                    padding: EdgeInsets.only(top: 4.h),
+                    child: Icon(
+                      Icons.keyboard_arrow_up_rounded,
+                      size: 18.sp,
+                      color: AppColors.slate500.withValues(alpha: 0.6),
+                    ),
                   ),
                 ),
               ),
 
-              // Bottom Vignette Gradient
+              // Bottom Vignette Gradient + Bottom Chevron Hint
               Positioned(
                 bottom: 0,
                 left: 0,
                 right: 0,
-                height: 50.h,
+                height: 52.h,
                 child: IgnorePointer(
                   child: Container(
                     decoration: BoxDecoration(
@@ -230,6 +287,13 @@ class _PrefixSuffixTumblerCylinderState
                           AppColors.slate800.withValues(alpha: 0.0),
                         ],
                       ),
+                    ),
+                    alignment: Alignment.bottomCenter,
+                    padding: EdgeInsets.only(bottom: 4.h),
+                    child: Icon(
+                      Icons.keyboard_arrow_down_rounded,
+                      size: 18.sp,
+                      color: AppColors.slate500.withValues(alpha: 0.6),
                     ),
                   ),
                 ),

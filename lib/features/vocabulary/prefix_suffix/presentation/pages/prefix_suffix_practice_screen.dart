@@ -180,6 +180,9 @@ class _PrefixSuffixPracticeScreenState
     return ListenableBuilder(
       listenable: _controller,
       builder: (context, _) {
+        final isUnlocked = _controller.isUnlocked;
+        final isJammed = _controller.isJammed;
+
         return PracticePhaseScaffold(
           title: 'Vault Combination Cracker',
           gameType: 'prefixSuffix',
@@ -189,8 +192,8 @@ class _PrefixSuffixPracticeScreenState
           actionLabel: _currentIndex < _rawQuests.length - 1
               ? 'Next Combination'
               : 'Finish Practice',
-          isActionEnabled: _controller.isUnlocked,
-          onComplete: _controller.isUnlocked ? _nextWord : () {},
+          isActionEnabled: isUnlocked,
+          onComplete: isUnlocked ? _nextWord : () {},
           child: SingleChildScrollView(
             padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 8.h),
             child: Column(
@@ -201,26 +204,26 @@ class _PrefixSuffixPracticeScreenState
                   rootMeaning: rootMeaning,
                   contextSentence: contextSentence,
                   slottedAffix: _controller.slottedAffix,
-                  isJammed: _controller.isJammed,
-                  isUnlocked: _controller.isUnlocked,
+                  isJammed: isJammed,
+                  isUnlocked: isUnlocked,
                 ),
-                SizedBox(height: 20.h),
+                SizedBox(height: 18.h),
 
-                // Dial Selection Prompt
+                // Dial Selection Prompt with Practice Reassurance
                 Text(
-                  _controller.isUnlocked
+                  isUnlocked
                       ? 'COMBINATION UNLOCKED!'
-                      : 'SELECT THE MATCHING AFFIX',
+                      : (isJammed
+                            ? 'JAMMED — ZERO HEARTS LOST! TRY AGAIN'
+                            : 'SELECT THE MATCHING AFFIX'),
                   style: TextStyle(
                     fontFamily: 'Inter',
-                    fontSize: 13.sp,
+                    fontSize: 12.sp,
                     fontWeight: FontWeight.w800,
-                    letterSpacing: 1.0,
-                    color: _controller.isUnlocked
+                    letterSpacing: 0.8,
+                    color: isUnlocked
                         ? AppColors.emerald500
-                        : (_controller.isJammed
-                              ? AppColors.red500
-                              : AppColors.slate400),
+                        : (isJammed ? AppColors.amber500 : AppColors.slate400),
                   ),
                 ),
                 SizedBox(height: 14.h),
@@ -237,49 +240,58 @@ class _PrefixSuffixPracticeScreenState
                     Color textColor = AppColors.slate50;
 
                     if (isSelected) {
-                      if (_controller.isUnlocked) {
+                      if (isUnlocked) {
                         btnBorder = AppColors.emerald500;
                         btnBg = AppColors.emerald500.withValues(alpha: 0.15);
                         textColor = AppColors.emerald500;
-                      } else if (_controller.isJammed) {
+                      } else if (isJammed) {
                         btnBorder = AppColors.red500;
                         btnBg = AppColors.red500.withValues(alpha: 0.15);
                         textColor = AppColors.red500;
                       }
                     }
 
-                    return SizedBox(
-                      width: 140.w,
-                      height: 52.h,
-                      child: OutlinedButton(
-                        onPressed: _controller.isUnlocked
-                            ? null
-                            : () => _onAffixSelected(option, correctAnswer),
-                        style: OutlinedButton.styleFrom(
-                          backgroundColor: btnBg,
-                          side: BorderSide(color: btnBorder, width: 2.0),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(14.r),
+                    return AnimatedScale(
+                      scale: isSelected ? 1.03 : 1.0,
+                      duration: const Duration(milliseconds: 150),
+                      child: SizedBox(
+                        width: 130.w,
+                        height: 48.h,
+                        child: OutlinedButton(
+                          onPressed: isUnlocked
+                              ? null
+                              : () {
+                                  HapticFeedback.selectionClick();
+                                  _onAffixSelected(option, correctAnswer);
+                                },
+                          style: OutlinedButton.styleFrom(
+                            backgroundColor: btnBg,
+                            side: BorderSide(color: btnBorder, width: 2.0),
+                            elevation: isSelected ? 4 : 0,
+                            shadowColor: btnBorder.withValues(alpha: 0.4),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(14.r),
+                            ),
                           ),
-                        ),
-                        child: Text(
-                          option,
-                          style: TextStyle(
-                            fontFamily: 'Inter',
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w900,
-                            letterSpacing: 1.0,
-                            color: textColor,
+                          child: Text(
+                            option,
+                            style: TextStyle(
+                              fontFamily: 'Inter',
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w900,
+                              letterSpacing: 1.0,
+                              color: textColor,
+                            ),
                           ),
                         ),
                       ),
                     );
                   }).toList(),
                 ),
-                SizedBox(height: 18.h),
+                SizedBox(height: 16.h),
 
-                // Explanation on unlock
-                if (_controller.isUnlocked && explanation.isNotEmpty) ...[
+                // Pedagogical Explanation on unlock
+                if (isUnlocked && explanation.isNotEmpty) ...[
                   Container(
                     width: double.infinity,
                     padding: EdgeInsets.symmetric(
@@ -304,11 +316,11 @@ class _PrefixSuffixPracticeScreenState
                       ),
                     ),
                   ),
-                  SizedBox(height: 16.h),
+                  SizedBox(height: 14.h),
                 ],
 
                 // Unlimited Hint Button
-                if (!_controller.isUnlocked && hint.isNotEmpty) ...[
+                if (!isUnlocked && hint.isNotEmpty) ...[
                   TextButton.icon(
                     onPressed: () {
                       _controller.useHint();
@@ -334,11 +346,11 @@ class _PrefixSuffixPracticeScreenState
                 ],
 
                 // Continue Button when unlocked
-                if (_controller.isUnlocked) ...[
+                if (isUnlocked) ...[
                   SizedBox(height: 10.h),
                   SizedBox(
                     width: double.infinity,
-                    height: 50.h,
+                    height: 48.h,
                     child: ElevatedButton(
                       onPressed: _nextWord,
                       style: ElevatedButton.styleFrom(
@@ -353,7 +365,7 @@ class _PrefixSuffixPracticeScreenState
                             : 'FINISH PRACTICE',
                         style: TextStyle(
                           fontFamily: 'Inter',
-                          fontSize: 14.sp,
+                          fontSize: 13.sp,
                           fontWeight: FontWeight.w900,
                           letterSpacing: 1.0,
                           color: Colors.white,

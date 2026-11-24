@@ -4,29 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
 /// Laser Seam Slicer Widget for Prefix & Suffix Mastery Phase ("Morpheme Precision Slicer").
-///
-/// Features:
-/// - Displays the target word as individual typographic letter tiles.
-/// - Neon downward laser blade swipe gesture detection across letter seam boundaries.
-/// - Letter separation animation upon successful morpheme severing.
-/// - Scissor icon tap-targets beneath each seam for WCAG accessibility.
 class PrefixSuffixPrecisionSlicer extends StatefulWidget {
-  /// The word being sliced (e.g. "PREVIEW").
   final String word;
-
-  /// The index of the correct seam cut (e.g. 3 for PRE|VIEW).
   final int correctCutIndex;
-
-  /// Callback when a seam is severed, passing the severed cut index.
   final ValueChanged<int> onSlice;
-
-  /// Whether the word has been successfully sliced.
   final bool isSliced;
-
-  /// Whether an erroneous slice attempt occurred.
   final bool isWrongCut;
-
-  /// Whether the current quest has been answered.
   final bool isAnswered;
 
   const PrefixSuffixPrecisionSlicer({
@@ -84,36 +67,27 @@ class _PrefixSuffixPrecisionSlicerState
   }
 
   void _onPanStart(DragStartDetails details) {
-    if (widget.isAnswered) return;
-    setState(() {
-      _dragStart = details.localPosition;
-      _dragCurrent = details.localPosition;
-    });
+    if (!widget.isAnswered) {
+      setState(() {
+        _dragStart = details.localPosition;
+        _dragCurrent = details.localPosition;
+      });
+    }
   }
 
   void _onPanUpdate(DragUpdateDetails details) {
-    if (widget.isAnswered) return;
-    setState(() {
-      _dragCurrent = details.localPosition;
-    });
+    if (!widget.isAnswered) {
+      setState(() => _dragCurrent = details.localPosition);
+    }
   }
 
   void _onPanEnd(DragEndDetails details) {
-    if (widget.isAnswered || _dragStart == null || _dragCurrent == null) {
-      setState(() {
-        _dragStart = null;
-        _dragCurrent = null;
-      });
-      return;
+    if (!widget.isAnswered && _dragStart != null && _dragCurrent != null) {
+      final dy = _dragCurrent!.dy - _dragStart!.dy;
+      if (dy.abs() >= 24) {
+        _detectAndExecuteCut((_dragStart!.dx + _dragCurrent!.dx) / 2.0);
+      }
     }
-
-    final dy = _dragCurrent!.dy - _dragStart!.dy;
-    // Require downward slash gesture with minimum vertical displacement
-    if (dy.abs() >= 24) {
-      final averageX = (_dragStart!.dx + _dragCurrent!.dx) / 2.0;
-      _detectAndExecuteCut(averageX);
-    }
-
     setState(() {
       _dragStart = null;
       _dragCurrent = null;
@@ -121,37 +95,29 @@ class _PrefixSuffixPrecisionSlicerState
   }
 
   void _detectAndExecuteCut(double localX) {
-    final renderBox =
+    final box =
         _wordContainerKey.currentContext?.findRenderObject() as RenderBox?;
-    if (renderBox == null) return;
-
-    final wordWidth = renderBox.size.width;
-    final letterCount = widget.word.length;
-    if (letterCount < 2) return;
-
-    final letterWidth = wordWidth / letterCount;
-    // Find closest seam boundary index between 1 and letterCount - 1
-    int closestSeam = (localX / letterWidth).round();
-    closestSeam = closestSeam.clamp(1, letterCount - 1);
-
+    if (box == null || widget.word.length < 2) return;
+    final seam = (localX / (box.size.width / widget.word.length)).round();
     HapticFeedback.mediumImpact();
-    widget.onSlice(closestSeam);
+    widget.onSlice(seam.clamp(1, widget.word.length - 1));
   }
 
   Widget _buildLetterTile(String letter, {required bool isHighlighted}) {
+    final borderColor = isHighlighted
+        ? AppColors.indigo400
+        : AppColors.slate700;
+    final bgColor = isHighlighted
+        ? AppColors.indigo500.withValues(alpha: 0.18)
+        : AppColors.slate800;
     return Container(
       width: 32.w,
       height: 48.h,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: isHighlighted
-            ? AppColors.indigo500.withValues(alpha: 0.18)
-            : AppColors.slate800,
+        color: bgColor,
         borderRadius: BorderRadius.circular(10.r),
-        border: Border.all(
-          color: isHighlighted ? AppColors.indigo400 : AppColors.slate700,
-          width: 1.5,
-        ),
+        border: Border.all(color: borderColor, width: 1.5),
         boxShadow: isHighlighted
             ? [
                 BoxShadow(
@@ -181,7 +147,8 @@ class _PrefixSuffixPrecisionSlicerState
     return AnimatedBuilder(
       animation: _splitAnimation,
       builder: (context, child) {
-        final splitShift = _splitAnimation.value * 12.w;
+        final splitShift = _splitAnimation.value * 14.w;
+        final tiltAngle = _splitAnimation.value * 0.04;
 
         return Column(
           mainAxisSize: MainAxisSize.min,
@@ -202,7 +169,7 @@ class _PrefixSuffixPrecisionSlicerState
                   key: _wordContainerKey,
                   padding: EdgeInsets.symmetric(
                     horizontal: 10.w,
-                    vertical: 20.h,
+                    vertical: 16.h,
                   ),
                   decoration: BoxDecoration(
                     color: AppColors.slate900.withValues(alpha: 0.5),
@@ -216,64 +183,107 @@ class _PrefixSuffixPrecisionSlicerState
                       width: 2.0,
                     ),
                   ),
-                  child: FittedBox(
-                    fit: BoxFit.scaleDown,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        // Prefix letters (Shift Left on slice)
-                        Transform.translate(
-                          offset: Offset(-splitShift, 0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 8.h),
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
                           child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              for (int i = 0; i < cutSeam; i++)
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 2.w,
-                                  ),
-                                  child: _buildLetterTile(
-                                    letters[i],
-                                    isHighlighted: widget.isSliced,
-                                  ),
+                              Icon(
+                                Icons.swipe_vertical_rounded,
+                                size: 13.sp,
+                                color: AppColors.slate400,
+                              ),
+                              SizedBox(width: 4.w),
+                              Text(
+                                'SWIPE DOWN ACROSS A SEAM TO SLICE',
+                                style: TextStyle(
+                                  fontFamily: 'Inter',
+                                  fontSize: 10.sp,
+                                  fontWeight: FontWeight.w700,
+                                  letterSpacing: 0.8,
+                                  color: AppColors.slate400,
                                 ),
+                              ),
                             ],
                           ),
                         ),
-
-                        // Severed Gap Indicator when sliced
-                        if (widget.isSliced) ...[
-                          SizedBox(width: 6.w),
-                          Icon(
-                            Icons.content_cut_rounded,
-                            size: 16.sp,
-                            color: AppColors.emerald500,
-                          ),
-                          SizedBox(width: 6.w),
-                        ],
-
-                        // Root / Suffix letters (Shift Right on slice)
-                        Transform.translate(
-                          offset: Offset(splitShift, 0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              for (int i = cutSeam; i < letters.length; i++)
-                                Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 2.w,
-                                  ),
-                                  child: _buildLetterTile(
-                                    letters[i],
-                                    isHighlighted: widget.isSliced,
-                                  ),
+                      ),
+                      FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            // Prefix letters (Shift Left & Tilt Left on slice)
+                            Transform.translate(
+                              offset: Offset(-splitShift, 0),
+                              child: Transform.rotate(
+                                angle: -tiltAngle,
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    for (int i = 0; i < cutSeam; i++)
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 2.w,
+                                        ),
+                                        child: _buildLetterTile(
+                                          letters[i],
+                                          isHighlighted: widget.isSliced,
+                                        ),
+                                      ),
+                                  ],
                                 ),
+                              ),
+                            ),
+
+                            // Severed Gap Indicator when sliced
+                            if (widget.isSliced) ...[
+                              SizedBox(width: 6.w),
+                              Icon(
+                                Icons.content_cut_rounded,
+                                size: 16.sp,
+                                color: AppColors.emerald500,
+                              ),
+                              SizedBox(width: 6.w),
                             ],
-                          ),
+
+                            // Root letters (Shift Right & Tilt Right on slice)
+                            Transform.translate(
+                              offset: Offset(splitShift, 0),
+                              child: Transform.rotate(
+                                angle: tiltAngle,
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    for (
+                                      int i = cutSeam;
+                                      i < letters.length;
+                                      i++
+                                    )
+                                      Padding(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 2.w,
+                                        ),
+                                        child: _buildLetterTile(
+                                          letters[i],
+                                          isHighlighted: widget.isSliced,
+                                        ),
+                                      ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -341,34 +351,31 @@ class _LaserPainter extends CustomPainter {
   final Offset? current;
   final bool isWrong;
 
+  static final _corePaint = Paint()
+    ..color = Colors.white
+    ..strokeWidth = 2.0
+    ..strokeCap = StrokeCap.round
+    ..style = PaintingStyle.stroke;
+
   _LaserPainter({this.start, this.current, this.isWrong = false});
 
   @override
   void paint(Canvas canvas, Size size) {
     if (start == null || current == null) return;
-
-    final bladeColor = isWrong ? AppColors.red500 : AppColors.violet500;
-
-    final glowPaint = Paint()
-      ..color = bladeColor.withValues(alpha: 0.5)
+    final glow = Paint()
+      ..color = (isWrong ? AppColors.red500 : AppColors.violet500).withValues(
+        alpha: 0.5,
+      )
       ..strokeWidth = 6.0
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
-
-    final corePaint = Paint()
-      ..color = Colors.white
-      ..strokeWidth = 2.0
-      ..strokeCap = StrokeCap.round
-      ..style = PaintingStyle.stroke;
-
-    canvas.drawLine(start!, current!, glowPaint);
-    canvas.drawLine(start!, current!, corePaint);
+    canvas.drawLine(start!, current!, glow);
+    canvas.drawLine(start!, current!, _corePaint);
   }
 
   @override
-  bool shouldRepaint(covariant _LaserPainter oldDelegate) {
-    return oldDelegate.start != start ||
-        oldDelegate.current != current ||
-        oldDelegate.isWrong != isWrong;
-  }
+  bool shouldRepaint(covariant _LaserPainter oldDelegate) =>
+      oldDelegate.start != start ||
+      oldDelegate.current != current ||
+      oldDelegate.isWrong != isWrong;
 }

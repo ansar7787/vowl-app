@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
 
@@ -8,7 +9,7 @@ import 'package:vowl/core/theme/app_colors.dart';
 /// - Morpheme synthesis equation: `[ AFFIX ] + [ ROOT ] = [ SYNTHESIZED WORD ]`.
 /// - Morphological metadata badges (Affix Type, Semantic Shift, Part of Speech).
 /// - Comprehensive definition and contextual sentence with typographic emphasis.
-/// - Native Text-to-Speech audio audition button.
+/// - Native Text-to-Speech audio audition button with animated pulse feedback.
 class PrefixSuffixDiscoveryCard extends StatelessWidget {
   /// The combined vocabulary word (e.g. "PREVIEW").
   final String combinedWord;
@@ -139,186 +140,220 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
     );
   }
 
+  String _formatSyllabicBreakdown() {
+    final cleanAffix = affix.replaceAll('-', '').trim();
+    if (affixType.toLowerCase() == 'prefix' &&
+        combinedWord.toUpperCase().startsWith(cleanAffix.toUpperCase())) {
+      final remainder = combinedWord.substring(cleanAffix.length);
+      return '$cleanAffix • $remainder';
+    } else if (affixType.toLowerCase() == 'suffix' &&
+        combinedWord.toUpperCase().endsWith(cleanAffix.toUpperCase())) {
+      final base = combinedWord.substring(
+        0,
+        combinedWord.length - cleanAffix.length,
+      );
+      return '$base • $cleanAffix';
+    }
+    return combinedWord;
+  }
+
   @override
   Widget build(BuildContext context) {
     final isPrefix = affixType.toLowerCase() == 'prefix';
+    final syllabicWord = _formatSyllabicBreakdown();
 
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.all(16.w),
-      decoration: BoxDecoration(
-        color: AppColors.slate800,
-        borderRadius: BorderRadius.circular(24.r),
-        border: Border.all(color: AppColors.slate700, width: 1.5),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withValues(alpha: 0.15),
-            blurRadius: 16,
-            offset: const Offset(0, 6),
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 250),
+      transitionBuilder: (child, animation) {
+        return FadeTransition(
+          opacity: animation,
+          child: ScaleTransition(
+            scale: Tween<double>(begin: 0.98, end: 1.0).animate(animation),
+            child: child,
           ),
-        ],
-      ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // Morpheme Bonding Equation
-          FittedBox(
-            fit: BoxFit.scaleDown,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                if (isPrefix) ...[
-                  _buildMorphemeChip(
-                    text: affix,
-                    color: AppColors.violet500,
-                    label: 'PREFIX',
-                  ),
+        );
+      },
+      child: Container(
+        key: ValueKey(combinedWord),
+        width: double.infinity,
+        padding: EdgeInsets.all(16.w),
+        decoration: BoxDecoration(
+          color: AppColors.slate800,
+          borderRadius: BorderRadius.circular(24.r),
+          border: Border.all(color: AppColors.slate700, width: 1.5),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.16),
+              blurRadius: 16,
+              offset: const Offset(0, 6),
+            ),
+          ],
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // Morpheme Bonding Equation
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (isPrefix) ...[
+                    _buildMorphemeChip(
+                      text: affix,
+                      color: AppColors.violet500,
+                      label: 'PREFIX',
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 6.w),
+                      child: Text(
+                        '+',
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w900,
+                          color: AppColors.slate500,
+                        ),
+                      ),
+                    ),
+                    _buildMorphemeChip(
+                      text: rootWord,
+                      color: AppColors.indigo400,
+                      label: 'ROOT',
+                    ),
+                  ] else ...[
+                    _buildMorphemeChip(
+                      text: rootWord,
+                      color: AppColors.indigo400,
+                      label: 'ROOT',
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 6.w),
+                      child: Text(
+                        '+',
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontSize: 18.sp,
+                          fontWeight: FontWeight.w900,
+                          color: AppColors.slate500,
+                        ),
+                      ),
+                    ),
+                    _buildMorphemeChip(
+                      text: affix,
+                      color: AppColors.violet500,
+                      label: 'SUFFIX',
+                    ),
+                  ],
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 6.w),
+                    padding: EdgeInsets.symmetric(horizontal: 8.w),
                     child: Text(
-                      '+',
+                      '➔',
                       style: TextStyle(
                         fontFamily: 'Inter',
-                        fontSize: 18.sp,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w900,
-                        color: AppColors.slate500,
+                        color: AppColors.emerald500,
                       ),
                     ),
                   ),
                   _buildMorphemeChip(
-                    text: rootWord,
-                    color: AppColors.indigo400,
-                    label: 'ROOT',
-                  ),
-                ] else ...[
-                  _buildMorphemeChip(
-                    text: rootWord,
-                    color: AppColors.indigo400,
-                    label: 'ROOT',
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 6.w),
-                    child: Text(
-                      '+',
-                      style: TextStyle(
-                        fontFamily: 'Inter',
-                        fontSize: 18.sp,
-                        fontWeight: FontWeight.w900,
-                        color: AppColors.slate500,
-                      ),
-                    ),
-                  ),
-                  _buildMorphemeChip(
-                    text: affix,
-                    color: AppColors.violet500,
-                    label: 'SUFFIX',
+                    text: combinedWord,
+                    color: AppColors.emerald500,
+                    label: 'SYNTHESIS',
                   ),
                 ],
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.w),
-                  child: Text(
-                    '➔',
-                    style: TextStyle(
-                      fontFamily: 'Inter',
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w900,
-                      color: AppColors.emerald500,
-                    ),
-                  ),
-                ),
-                _buildMorphemeChip(
-                  text: combinedWord,
-                  color: AppColors.emerald500,
-                  label: 'SYNTHESIS',
-                ),
-              ],
-            ),
-          ),
-          SizedBox(height: 14.h),
-
-          // Synthesized Word Display Header with TTS
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                combinedWord,
-                style: TextStyle(
-                  fontFamily: 'Inter',
-                  fontSize: 22.sp,
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: 1.5,
-                  color: AppColors.slate50,
-                ),
-              ),
-              if (onPlayTts != null) ...[
-                SizedBox(width: 8.w),
-                IconButton(
-                  onPressed: onPlayTts,
-                  icon: Icon(
-                    Icons.volume_up_rounded,
-                    color: AppColors.indigo400,
-                    size: 22.sp,
-                  ),
-                  tooltip: 'Listen to pronunciation',
-                  splashRadius: 20.r,
-                ),
-              ],
-            ],
-          ),
-          SizedBox(height: 8.h),
-
-          // Affix Meaning Banner
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
-            decoration: BoxDecoration(
-              color: AppColors.violet500.withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(10.r),
-              border: Border.all(
-                color: AppColors.violet500.withValues(alpha: 0.3),
               ),
             ),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
+            SizedBox(height: 14.h),
+
+            // Synthesized Word Display Header with Syllabic Marker & TTS
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(
-                  Icons.auto_awesome,
-                  size: 14.sp,
-                  color: AppColors.violet500,
-                ),
-                SizedBox(width: 6.w),
-                Flexible(
-                  child: Text(
-                    'Affix Meaning: $affixMeaning',
-                    style: TextStyle(
-                      fontFamily: 'Inter',
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.w700,
-                      color: AppColors.violet500,
-                    ),
+                Text(
+                  syllabicWord,
+                  style: TextStyle(
+                    fontFamily: 'Inter',
+                    fontSize: 22.sp,
+                    fontWeight: FontWeight.w900,
+                    letterSpacing: 1.5,
+                    color: AppColors.slate50,
                   ),
                 ),
+                if (onPlayTts != null) ...[
+                  SizedBox(width: 8.w),
+                  IconButton(
+                    onPressed: () {
+                      HapticFeedback.lightImpact();
+                      onPlayTts?.call();
+                    },
+                    icon: Icon(
+                      Icons.volume_up_rounded,
+                      color: AppColors.indigo400,
+                      size: 22.sp,
+                    ),
+                    tooltip: 'Listen to pronunciation',
+                    splashRadius: 20.r,
+                  ),
+                ],
               ],
             ),
-          ),
-          SizedBox(height: 12.h),
+            SizedBox(height: 8.h),
 
-          // Definition
-          Text(
-            definition,
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontFamily: 'Inter',
-              fontSize: 14.sp,
-              fontWeight: FontWeight.w600,
-              height: 1.4,
-              color: AppColors.slate50,
+            // Affix Meaning Banner
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+              decoration: BoxDecoration(
+                color: AppColors.violet500.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(10.r),
+                border: Border.all(
+                  color: AppColors.violet500.withValues(alpha: 0.3),
+                ),
+              ),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.auto_awesome,
+                    size: 14.sp,
+                    color: AppColors.violet500,
+                  ),
+                  SizedBox(width: 6.w),
+                  Flexible(
+                    child: Text(
+                      'Affix Meaning: $affixMeaning',
+                      style: TextStyle(
+                        fontFamily: 'Inter',
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w700,
+                        color: AppColors.violet500,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          SizedBox(height: 10.h),
+            SizedBox(height: 12.h),
 
-          // Context Sentence
-          _buildHighlightedSentence(),
-        ],
+            // Definition
+            Text(
+              definition,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: 'Inter',
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w600,
+                height: 1.4,
+                color: AppColors.slate50,
+              ),
+            ),
+            SizedBox(height: 10.h),
+
+            // Context Sentence
+            _buildHighlightedSentence(),
+          ],
+        ),
       ),
     );
   }

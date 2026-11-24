@@ -69,12 +69,17 @@ class PrefixSuffixComboHud extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   child: Row(
                     children: [
-                      Icon(
-                        Icons.local_fire_department_rounded,
-                        size: 20.sp,
-                        color: comboMultiplier > 1
-                            ? AppColors.amber500
-                            : AppColors.slate500,
+                      AnimatedScale(
+                        scale: comboMultiplier > 1 ? 1.2 : 1.0,
+                        duration: const Duration(milliseconds: 200),
+                        curve: Curves.elasticOut,
+                        child: Icon(
+                          Icons.local_fire_department_rounded,
+                          size: 20.sp,
+                          color: comboMultiplier > 1
+                              ? AppColors.amber500
+                              : AppColors.slate500,
+                        ),
                       ),
                       SizedBox(width: 4.w),
                       Text(
