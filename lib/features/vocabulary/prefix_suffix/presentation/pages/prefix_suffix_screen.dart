@@ -102,6 +102,13 @@ class _PrefixSuffixScreenState extends State<PrefixSuffixScreen>
   }
 
   int _calculateCorrectCutIndex(VocabularyQuest quest) {
+    if (quest.instruction.toUpperCase().contains('UNBREAKABLE') ||
+        quest.instruction.toUpperCase().contains('IMPOSTER') ||
+        quest.correctAnswer?.toUpperCase().trim() == 'NONE' ||
+        quest.correctAnswer?.toUpperCase().trim() == '0') {
+      return 0;
+    }
+
     final word = quest.word ?? '';
     final prefix = quest.prefix?.replaceAll('-', '').trim() ?? '';
     if (prefix.isNotEmpty &&

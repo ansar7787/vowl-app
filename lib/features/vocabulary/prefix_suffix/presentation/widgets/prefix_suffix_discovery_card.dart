@@ -2,40 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_morphology_helper.dart';
 
 /// Interactive Discovery Card for Prefix & Suffix Learn Phase ("Affix Tumbler Sandbox").
-///
-/// Features:
-/// - Morpheme synthesis equation: `[ AFFIX ] + [ ROOT ] = [ SYNTHESIZED WORD ]`.
-/// - Morphological metadata badges (Affix Type, Semantic Shift, Part of Speech).
-/// - Comprehensive definition and contextual sentence with typographic emphasis.
-/// - Native Text-to-Speech audio audition button with animated pulse feedback.
 class PrefixSuffixDiscoveryCard extends StatelessWidget {
-  /// The combined vocabulary word (e.g. "PREVIEW").
   final String combinedWord;
-
-  /// The base root word (e.g. "VIEW").
   final String rootWord;
-
-  /// The active bound affix (e.g. "PRE-").
   final String affix;
-
-  /// Whether the affix is a 'prefix' or 'suffix'.
   final String affixType;
-
-  /// Semantic meaning of the affix (e.g. "Before / In advance").
   final String affixMeaning;
-
-  /// Full definition of the combined word.
   final String definition;
-
-  /// Illustrative sentence showing proper usage.
   final String contextSentence;
-
-  /// Part of speech of the root or combined word.
   final String? partOfSpeech;
-
-  /// Optional callback to trigger native TTS audio pronunciation.
   final VoidCallback? onPlayTts;
 
   const PrefixSuffixDiscoveryCard({
@@ -50,6 +28,21 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
     this.partOfSpeech,
     this.onPlayTts,
   });
+
+  Widget _buildOperator(String symbol, {Color? color}) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 6.w),
+      child: Text(
+        symbol,
+        style: TextStyle(
+          fontFamily: 'Inter',
+          fontSize: 16.sp,
+          fontWeight: FontWeight.w900,
+          color: color ?? AppColors.slate500,
+        ),
+      ),
+    );
+  }
 
   Widget _buildMorphemeChip({
     required String text,
@@ -92,7 +85,9 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
   }
 
   Widget _buildHighlightedSentence() {
-    if (!contextSentence.toUpperCase().contains(combinedWord.toUpperCase())) {
+    final lowerSentence = contextSentence.toLowerCase();
+    final lowerWord = combinedWord.toLowerCase();
+    if (!lowerSentence.contains(lowerWord)) {
       return Text(
         contextSentence,
         textAlign: TextAlign.center,
@@ -104,16 +99,8 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
         ),
       );
     }
-
-    final lowerSentence = contextSentence.toLowerCase();
-    final lowerWord = combinedWord.toLowerCase();
     final matchStart = lowerSentence.indexOf(lowerWord);
     final matchEnd = matchStart + lowerWord.length;
-
-    final before = contextSentence.substring(0, matchStart);
-    final match = contextSentence.substring(matchStart, matchEnd);
-    final after = contextSentence.substring(matchEnd);
-
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
@@ -124,9 +111,9 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
           color: AppColors.slate400,
         ),
         children: [
-          TextSpan(text: before),
+          TextSpan(text: contextSentence.substring(0, matchStart)),
           TextSpan(
-            text: match,
+            text: contextSentence.substring(matchStart, matchEnd),
             style: TextStyle(
               fontWeight: FontWeight.w900,
               color: AppColors.indigo400,
@@ -134,7 +121,7 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
               decorationColor: AppColors.indigo500.withValues(alpha: 0.6),
             ),
           ),
-          TextSpan(text: after),
+          TextSpan(text: contextSentence.substring(matchEnd)),
         ],
       ),
     );
@@ -198,65 +185,18 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  if (isPrefix) ...[
-                    _buildMorphemeChip(
-                      text: affix,
-                      color: AppColors.violet500,
-                      label: 'PREFIX',
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 6.w),
-                      child: Text(
-                        '+',
-                        style: TextStyle(
-                          fontFamily: 'Inter',
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w900,
-                          color: AppColors.slate500,
-                        ),
-                      ),
-                    ),
-                    _buildMorphemeChip(
-                      text: rootWord,
-                      color: AppColors.indigo400,
-                      label: 'ROOT',
-                    ),
-                  ] else ...[
-                    _buildMorphemeChip(
-                      text: rootWord,
-                      color: AppColors.indigo400,
-                      label: 'ROOT',
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 6.w),
-                      child: Text(
-                        '+',
-                        style: TextStyle(
-                          fontFamily: 'Inter',
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w900,
-                          color: AppColors.slate500,
-                        ),
-                      ),
-                    ),
-                    _buildMorphemeChip(
-                      text: affix,
-                      color: AppColors.violet500,
-                      label: 'SUFFIX',
-                    ),
-                  ],
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8.w),
-                    child: Text(
-                      '➔',
-                      style: TextStyle(
-                        fontFamily: 'Inter',
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w900,
-                        color: AppColors.emerald500,
-                      ),
-                    ),
+                  _buildMorphemeChip(
+                    text: isPrefix ? affix : rootWord,
+                    color: isPrefix ? AppColors.violet500 : AppColors.indigo400,
+                    label: isPrefix ? 'PREFIX' : 'ROOT',
                   ),
+                  _buildOperator('+'),
+                  _buildMorphemeChip(
+                    text: isPrefix ? rootWord : affix,
+                    color: isPrefix ? AppColors.indigo400 : AppColors.violet500,
+                    label: isPrefix ? 'ROOT' : 'SUFFIX',
+                  ),
+                  _buildOperator('➔', color: AppColors.emerald500),
                   _buildMorphemeChip(
                     text: combinedWord,
                     color: AppColors.emerald500,
@@ -265,7 +205,79 @@ class PrefixSuffixDiscoveryCard extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 14.h),
+            SizedBox(height: 10.h),
+
+            // Grammar Shift & Spelling Mutation Chips
+            Wrap(
+              spacing: 6.w,
+              runSpacing: 4.h,
+              alignment: WrapAlignment.center,
+              children: [
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+                  decoration: BoxDecoration(
+                    color: AppColors.indigo500.withValues(alpha: 0.15),
+                    borderRadius: BorderRadius.circular(6.r),
+                    border: Border.all(
+                      color: AppColors.indigo400.withValues(alpha: 0.4),
+                    ),
+                  ),
+                  child: Text(
+                    'GRAMMAR: ${PrefixSuffixMorphologyHelper.detectPosShift(affix: affix, affixType: affixType, partOfSpeech: partOfSpeech)}',
+                    style: TextStyle(
+                      fontFamily: 'Inter',
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w800,
+                      color: AppColors.indigo400,
+                    ),
+                  ),
+                ),
+                if (PrefixSuffixMorphologyHelper.detectSpellingMutation(
+                      affix: affix,
+                      rootWord: rootWord,
+                      combinedWord: combinedWord,
+                    ) !=
+                    null)
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 8.w,
+                      vertical: 3.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: AppColors.amber500.withValues(alpha: 0.12),
+                      borderRadius: BorderRadius.circular(6.r),
+                      border: Border.all(
+                        color: AppColors.amber500.withValues(alpha: 0.4),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.lightbulb_outline_rounded,
+                          size: 11.sp,
+                          color: AppColors.amber500,
+                        ),
+                        SizedBox(width: 3.w),
+                        Text(
+                          PrefixSuffixMorphologyHelper.detectSpellingMutation(
+                            affix: affix,
+                            rootWord: rootWord,
+                            combinedWord: combinedWord,
+                          )!,
+                          style: TextStyle(
+                            fontFamily: 'Inter',
+                            fontSize: 9.sp,
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.amber500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+              ],
+            ),
+            SizedBox(height: 10.h),
 
             // Synthesized Word Display Header with Syllabic Marker & TTS
             Row(

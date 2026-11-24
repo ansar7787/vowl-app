@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/features/vocabulary/prefix_suffix/presentation/widgets/prefix_suffix_laser_painter.dart';
 
 /// Laser Seam Slicer Widget for Prefix & Suffix Mastery Phase ("Morpheme Precision Slicer").
 class PrefixSuffixPrecisionSlicer extends StatefulWidget {
@@ -97,10 +98,11 @@ class _PrefixSuffixPrecisionSlicerState
   void _detectAndExecuteCut(double localX) {
     final box =
         _wordContainerKey.currentContext?.findRenderObject() as RenderBox?;
-    if (box == null || widget.word.length < 2) return;
-    final seam = (localX / (box.size.width / widget.word.length)).round();
-    HapticFeedback.mediumImpact();
-    widget.onSlice(seam.clamp(1, widget.word.length - 1));
+    if (box != null && widget.word.length >= 2) {
+      final seam = (localX / (box.size.width / widget.word.length)).round();
+      HapticFeedback.mediumImpact();
+      widget.onSlice(seam.clamp(1, widget.word.length - 1));
+    }
   }
 
   Widget _buildLetterTile(String letter, {required bool isHighlighted}) {
@@ -139,6 +141,25 @@ class _PrefixSuffixPrecisionSlicerState
     );
   }
 
+  Widget _buildLetterGroup(List<String> items, double shift, double angle) {
+    return Transform.translate(
+      offset: Offset(shift, 0),
+      child: Transform.rotate(
+        angle: angle,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            for (final l in items)
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 2.w),
+                child: _buildLetterTile(l, isHighlighted: widget.isSliced),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final letters = widget.word.split('');
@@ -160,7 +181,7 @@ class _PrefixSuffixPrecisionSlicerState
               onPanEnd: _onPanEnd,
               behavior: HitTestBehavior.opaque,
               child: CustomPaint(
-                foregroundPainter: _LaserPainter(
+                foregroundPainter: PrefixSuffixLaserPainter(
                   start: _dragStart,
                   current: _dragCurrent,
                   isWrong: widget.isWrongCut,
@@ -220,30 +241,11 @@ class _PrefixSuffixPrecisionSlicerState
                           mainAxisAlignment: MainAxisAlignment.center,
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            // Prefix letters (Shift Left & Tilt Left on slice)
-                            Transform.translate(
-                              offset: Offset(-splitShift, 0),
-                              child: Transform.rotate(
-                                angle: -tiltAngle,
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    for (int i = 0; i < cutSeam; i++)
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 2.w,
-                                        ),
-                                        child: _buildLetterTile(
-                                          letters[i],
-                                          isHighlighted: widget.isSliced,
-                                        ),
-                                      ),
-                                  ],
-                                ),
-                              ),
+                            _buildLetterGroup(
+                              letters.sublist(0, cutSeam),
+                              -splitShift,
+                              -tiltAngle,
                             ),
-
-                            // Severed Gap Indicator when sliced
                             if (widget.isSliced) ...[
                               SizedBox(width: 6.w),
                               Icon(
@@ -253,32 +255,10 @@ class _PrefixSuffixPrecisionSlicerState
                               ),
                               SizedBox(width: 6.w),
                             ],
-
-                            // Root letters (Shift Right & Tilt Right on slice)
-                            Transform.translate(
-                              offset: Offset(splitShift, 0),
-                              child: Transform.rotate(
-                                angle: tiltAngle,
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    for (
-                                      int i = cutSeam;
-                                      i < letters.length;
-                                      i++
-                                    )
-                                      Padding(
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: 2.w,
-                                        ),
-                                        child: _buildLetterTile(
-                                          letters[i],
-                                          isHighlighted: widget.isSliced,
-                                        ),
-                                      ),
-                                  ],
-                                ),
-                              ),
+                            _buildLetterGroup(
+                              letters.sublist(cutSeam),
+                              splitShift,
+                              tiltAngle,
                             ),
                           ],
                         ),
@@ -338,44 +318,51 @@ class _PrefixSuffixPrecisionSlicerState
                   ),
               ],
             ),
+            SizedBox(height: 8.h),
+            _buildShieldButton(),
           ],
         );
       },
     );
   }
-}
 
-/// Custom painter for real-time laser swipe trail.
-class _LaserPainter extends CustomPainter {
-  final Offset? start;
-  final Offset? current;
-  final bool isWrong;
+  Widget _buildShieldButton() {
+    final isCorrect = widget.isSliced && widget.correctCutIndex == 0;
+    final isWrong = widget.isWrongCut && widget.correctCutIndex == 0;
+    final bg = isCorrect
+        ? AppColors.emerald500.withValues(alpha: 0.15)
+        : (isWrong
+              ? AppColors.red500.withValues(alpha: 0.15)
+              : AppColors.slate800);
+    final border = isCorrect ? AppColors.emerald500 : AppColors.slate700;
+    final text = isCorrect ? AppColors.emerald500 : AppColors.slate300;
 
-  static final _corePaint = Paint()
-    ..color = Colors.white
-    ..strokeWidth = 2.0
-    ..strokeCap = StrokeCap.round
-    ..style = PaintingStyle.stroke;
-
-  _LaserPainter({this.start, this.current, this.isWrong = false});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    if (start == null || current == null) return;
-    final glow = Paint()
-      ..color = (isWrong ? AppColors.red500 : AppColors.violet500).withValues(
-        alpha: 0.5,
-      )
-      ..strokeWidth = 6.0
-      ..strokeCap = StrokeCap.round
-      ..style = PaintingStyle.stroke;
-    canvas.drawLine(start!, current!, glow);
-    canvas.drawLine(start!, current!, _corePaint);
+    return OutlinedButton.icon(
+      onPressed: widget.isAnswered
+          ? null
+          : () {
+              HapticFeedback.mediumImpact();
+              widget.onSlice(0);
+            },
+      style: OutlinedButton.styleFrom(
+        backgroundColor: bg,
+        side: BorderSide(color: border, width: 1.5),
+        padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.r),
+        ),
+      ),
+      icon: Icon(Icons.shield_outlined, size: 14.sp, color: text),
+      label: Text(
+        'UNBREAKABLE ROOT (NO AFFIX)',
+        style: TextStyle(
+          fontFamily: 'Inter',
+          fontSize: 10.sp,
+          fontWeight: FontWeight.w800,
+          letterSpacing: 0.8,
+          color: text,
+        ),
+      ),
+    );
   }
-
-  @override
-  bool shouldRepaint(covariant _LaserPainter oldDelegate) =>
-      oldDelegate.start != start ||
-      oldDelegate.current != current ||
-      oldDelegate.isWrong != isWrong;
 }
