@@ -24,6 +24,7 @@ class WordFormationCurriculumService {
 
   // In-memory cache to eliminate redundant disk reads across phase transitions
   final Map<String, List<PhasedQuest>> _cache = {};
+  final Map<String, List<PhasedQuest>> _batchCache = {};
 
   /// Loads curriculum quests for the Learn phase.
   Future<List<PhasedQuest>> getLearnQuests(int level) async {
@@ -36,12 +37,22 @@ class WordFormationCurriculumService {
       return _cache[cacheKey]!;
     }
 
+    final batchKey = 'learn_${startLevel}_$endLevel';
+    if (_batchCache.containsKey(batchKey)) {
+      final all = _batchCache[batchKey]!;
+      final levelQuests = all.where((q) => q.level == level).toList();
+      final result = levelQuests.isNotEmpty ? levelQuests : all;
+      _cache[cacheKey] = result;
+      return result;
+    }
+
     try {
       final path =
           'assets/curriculum/vocabulary/wordFormation_learn_${startLevel}_$endLevel.json';
       final jsonStr = await _bundle.loadString(path);
       final data = jsonDecode(jsonStr) as Map<String, dynamic>;
       final batch = PhasedQuestBatch.fromJson(data);
+      _batchCache[batchKey] = batch.quests;
 
       final levelQuests = batch.quests.where((q) => q.level == level).toList();
       final result = levelQuests.isNotEmpty ? levelQuests : batch.quests;
@@ -63,12 +74,22 @@ class WordFormationCurriculumService {
       return _cache[cacheKey]!;
     }
 
+    final batchKey = 'practice_${startLevel}_$endLevel';
+    if (_batchCache.containsKey(batchKey)) {
+      final all = _batchCache[batchKey]!;
+      final levelQuests = all.where((q) => q.level == level).toList();
+      final result = levelQuests.isNotEmpty ? levelQuests : all;
+      _cache[cacheKey] = result;
+      return result;
+    }
+
     try {
       final path =
           'assets/curriculum/vocabulary/wordFormation_practice_${startLevel}_$endLevel.json';
       final jsonStr = await _bundle.loadString(path);
       final data = jsonDecode(jsonStr) as Map<String, dynamic>;
       final batch = PhasedQuestBatch.fromJson(data);
+      _batchCache[batchKey] = batch.quests;
 
       final levelQuests = batch.quests.where((q) => q.level == level).toList();
       final result = levelQuests.isNotEmpty ? levelQuests : batch.quests;
@@ -80,7 +101,10 @@ class WordFormationCurriculumService {
   }
 
   /// Clears in-memory cache.
-  void clearCache() => _cache.clear();
+  void clearCache() {
+    _cache.clear();
+    _batchCache.clear();
+  }
 
   List<PhasedQuest> _buildLearnFallback(int level) {
     return [

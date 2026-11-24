@@ -22,6 +22,13 @@ void main() {
       expect(identical(quests, cachedQuests), isTrue);
     });
 
+    test('getLearnQuests loads subsequent levels in same batch from batch cache', () async {
+      final level1 = await service.getLearnQuests(1);
+      expect(level1, isNotEmpty);
+      final level2 = await service.getLearnQuests(2);
+      expect(level2, isNotEmpty);
+    });
+
     test('getPracticeQuests returns quests with direction and target role', () async {
       final quests = await service.getPracticeQuests(1);
       expect(quests, isNotEmpty);
