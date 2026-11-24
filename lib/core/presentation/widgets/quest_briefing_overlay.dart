@@ -49,10 +49,12 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
   void initState() {
     super.initState();
     _ruleWidgets = widget.rules.asMap().entries.map((entry) {
+      final isLast = entry.key == widget.rules.length - 1;
       return QuestBriefingRuleItem(
         index: entry.key + 1,
         rule: entry.value,
         primaryColor: widget.primaryColor,
+        isLast: isLast,
       );
     }).toList(growable: false);
   }
@@ -83,37 +85,51 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
     final isMidnight =
         isDark && Theme.of(context).scaffoldBackgroundColor == Colors.black;
 
-    // ── Pure Deliberate Surfaces (Zero Neon) ──────────────────────────────────
+    // ── Pure Deliberate Surfaces (Zero Neon, No Flat Blinding White) ────────
+    // Pure #FFFFFF against dark scrim creates extreme glare and looks flat.
+    // We use a warm porcelain surface (0xFFFAFBFC) paired with a dual-tier shadow system.
     final cardBg = isMidnight
         ? Colors.black
-        : (isDark ? const Color(0xFF18181B) : Colors.white);
+        : (isDark ? const Color(0xFF18181B) : const Color(0xFFFAFBFC));
 
     final cardBorder = isMidnight
         ? Colors.white.withValues(alpha: 0.16)
-        : (isDark ? Colors.white.withValues(alpha: 0.10) : AppColors.slate200);
+        : (isDark
+              ? Colors.white.withValues(alpha: 0.10)
+              : const Color(0xFFE2E8F0));
 
     final backdropColor = isMidnight
         ? Colors.black.withValues(alpha: 0.85)
         : (isDark
-              ? Colors.black.withValues(alpha: 0.70)
+              ? Colors.black.withValues(alpha: 0.72)
               : Colors.black.withValues(alpha: 0.45));
 
-    final cardShadow = isMidnight
+    final cardShadows = isMidnight
         ? null
         : (isDark
-              ? BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.40),
-                  blurRadius: 24,
-                  offset: const Offset(0, 8),
-                )
-              : BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.08),
-                  blurRadius: 24,
-                  offset: const Offset(0, 8),
-                ));
+              ? [
+                  BoxShadow(
+                    color: Colors.black.withValues(alpha: 0.45),
+                    blurRadius: 28,
+                    offset: const Offset(0, 10),
+                  ),
+                ]
+              : [
+                  const BoxShadow(
+                    color: Color(0x06000000),
+                    blurRadius: 8,
+                    offset: Offset(0, 2),
+                  ),
+                  const BoxShadow(
+                    color: Color(0x0D000000),
+                    blurRadius: 28,
+                    offset: Offset(0, 10),
+                  ),
+                ]);
 
-    final titleCol = isDark ? Colors.white : AppColors.slate900;
-    final subtitleCol = isDark ? Colors.white70 : AppColors.slate600;
+    final titleCol = isDark ? Colors.white : const Color(0xFF0F172A);
+    final subtitleCol =
+        isDark ? const Color(0xFFA1A1AA) : const Color(0xFF475569);
 
     return Semantics(
       label: context.tr(
@@ -137,7 +153,9 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                 // Card Center
                 Center(
                   child: ScrollConfiguration(
-                    behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+                    behavior: ScrollConfiguration.of(
+                      context,
+                    ).copyWith(scrollbars: false),
                     child: SingleChildScrollView(
                       padding: EdgeInsets.symmetric(
                         horizontal: 16.w,
@@ -152,7 +170,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                           color: cardBg,
                           borderRadius: BorderRadius.circular(24.r),
                           border: Border.all(color: cardBorder, width: 1.0),
-                          boxShadow: cardShadow != null ? [cardShadow] : null,
+                          boxShadow: cardShadows,
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -162,27 +180,27 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                             _buildTopBar(context, isDark, isMidnight),
                             SizedBox(height: 16.h),
 
-                            // 2. Title (Left-aligned, w700)
+                            // 2. Title (Elevated scale, w800 bold anchor)
                             Text(
                               widget.title,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 20.sp,
-                                fontWeight: FontWeight.w700,
+                                fontSize: 23.sp,
+                                fontWeight: FontWeight.w800,
                                 color: titleCol,
-                                letterSpacing: -0.3,
-                                height: 1.25,
+                                letterSpacing: -0.4,
+                                height: 1.22,
                               ),
                             ),
 
-                            // 3. Objective (Clean subtitle, no redundant grey box)
+                            // 3. Objective (Clean subtitle)
                             if (widget.objective.isNotEmpty) ...[
                               SizedBox(height: 6.h),
                               Text(
                                 widget.objective,
                                 style: TextStyle(
                                   fontFamily: 'Outfit',
-                                  fontSize: 13.5.sp,
+                                  fontSize: 14.sp,
                                   fontWeight: FontWeight.w400,
                                   color: subtitleCol,
                                   height: 1.45,
@@ -190,48 +208,74 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                               ),
                             ],
 
-                            // 4. Subtle Divider
-                            SizedBox(height: 16.h),
-                            Divider(
-                              color: isMidnight
-                                  ? Colors.white.withValues(alpha: 0.10)
-                                  : (isDark
-                                        ? Colors.white.withValues(alpha: 0.08)
-                                        : AppColors.slate200),
-                              height: 1,
-                            ),
-                            SizedBox(height: 14.h),
-
-                            // 5. "HOW TO PLAY" Section
+                            // 4. "HOW TO PLAY" Recessed Island Container
                             if (_ruleWidgets.isNotEmpty) ...[
-                              Row(
-                                children: [
-                                  Text(
-                                    context.tr(
-                                      'games.how_to_play',
-                                      fallback: 'HOW TO PLAY',
-                                    ),
-                                    style: TextStyle(
-                                      fontFamily: 'Outfit',
-                                      fontSize: 11.sp,
-                                      fontWeight: FontWeight.w700,
-                                      letterSpacing: 1.0,
-                                      color: isDark
-                                          ? Colors.white38
-                                          : AppColors.slate400,
-                                    ),
+                              SizedBox(height: 16.h),
+                              Container(
+                                width: double.infinity,
+                                padding: EdgeInsets.all(14.r),
+                                decoration: BoxDecoration(
+                                  color: isMidnight
+                                      ? const Color(0xFF0F0F12)
+                                      : (isDark
+                                            ? const Color(0xFF202024)
+                                            : const Color(0xFFF1F5F9)),
+                                  borderRadius: BorderRadius.circular(16.r),
+                                  border: Border.all(
+                                    color: isMidnight
+                                        ? Colors.white.withValues(alpha: 0.10)
+                                        : (isDark
+                                              ? Colors.white.withValues(
+                                                  alpha: 0.07,
+                                                )
+                                              : const Color(0xFFE2E8F0)),
+                                    width: 1,
                                   ),
-                                ],
+                                ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.checklist_rounded,
+                                          size: 15.r,
+                                          color: isDark
+                                              ? Colors.white38
+                                              : const Color(0xFF64748B),
+                                        ),
+                                        SizedBox(width: 6.w),
+                                        Text(
+                                          context
+                                              .tr(
+                                                'games.how_to_play',
+                                                fallback: 'HOW TO PLAY',
+                                              )
+                                              .toUpperCase(),
+                                          style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 11.sp,
+                                            fontWeight: FontWeight.w800,
+                                            letterSpacing: 1.1,
+                                            color: isDark
+                                                ? Colors.white38
+                                                : const Color(0xFF64748B),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(height: 12.h),
+                                    ..._ruleWidgets,
+                                  ],
+                                ),
                               ),
-                              SizedBox(height: 10.h),
-                              ..._ruleWidgets,
                             ],
 
-                            // 6. Pro-Tip Strip (Subtle, elegant warm accent)
+                            // 5. Pro-Tip Strip (Subtle, elegant warm accent)
                             if (widget.tip.isNotEmpty)
                               _buildTipStrip(isDark, isMidnight),
 
-                            // 7. Solid Tactile Primary CTA Button (Zero Neon Glow)
+                            // 6. Solid Tactile Primary CTA Button (Zero Neon Glow, Modern Chevron)
                             SizedBox(height: 18.h),
                             _buildCtaButton(),
                           ],
@@ -352,21 +396,21 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
               borderRadius: BorderRadius.circular(20.r),
               onTap: _handleDismiss,
               child: Container(
-                width: 34.r,
-                height: 34.r,
+                width: 32.r,
+                height: 32.r,
                 decoration: BoxDecoration(
                   color: isMidnight
                       ? Colors.white.withValues(alpha: 0.08)
                       : (isDark
                             ? Colors.white.withValues(alpha: 0.08)
-                            : Colors.black.withValues(alpha: 0.05)),
+                            : const Color(0xFFF1F5F9)),
                   shape: BoxShape.circle,
                 ),
                 child: Center(
                   child: Icon(
                     Icons.close_rounded,
                     size: 18.r,
-                    color: isDark ? Colors.white70 : AppColors.slate600,
+                    color: isDark ? Colors.white70 : const Color(0xFF475569),
                   ),
                 ),
               ),
@@ -383,34 +427,34 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
         : widget.tip;
 
     final bg = isMidnight
-        ? AppColors.amber500.withValues(alpha: 0.08)
+        ? AppColors.amber500.withValues(alpha: 0.06)
         : (isDark
               ? AppColors.amber500.withValues(alpha: 0.08)
               : const Color(0xFFFFFBEB)); // Amber-50
 
     final border = isMidnight
-        ? AppColors.amber500.withValues(alpha: 0.22)
+        ? AppColors.amber500.withValues(alpha: 0.24)
         : (isDark
-              ? AppColors.amber500.withValues(alpha: 0.20)
+              ? AppColors.amber500.withValues(alpha: 0.22)
               : const Color(0xFFFDE68A)); // Amber-200
 
-    final iconCol = isDark ? AppColors.amber400 : const Color(0xFFB45309);
+    final iconCol = isDark ? const Color(0xFFFBBF24) : const Color(0xFFB45309);
     final textCol = isDark
-        ? Colors.white.withValues(alpha: 0.88)
-        : AppColors.slate800;
+        ? Colors.white.withValues(alpha: 0.90)
+        : const Color(0xFF1E293B);
 
     return Container(
-      margin: EdgeInsets.only(top: 8.h),
-      padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 10.h),
+      margin: EdgeInsets.only(top: 12.h),
+      padding: EdgeInsets.symmetric(horizontal: 13.w, vertical: 10.h),
       decoration: BoxDecoration(
         color: bg,
-        borderRadius: BorderRadius.circular(12.r),
+        borderRadius: BorderRadius.circular(14.r),
         border: Border.all(color: border, width: 1),
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(Icons.lightbulb_outline_rounded, color: iconCol, size: 16.r),
+          Icon(Icons.auto_awesome_rounded, color: iconCol, size: 16.r),
           SizedBox(width: 8.w),
           Expanded(
             child: Text.rich(
@@ -419,14 +463,14 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                   TextSpan(
                     text: 'Pro-Tip: ',
                     style: TextStyle(
-                      fontWeight: FontWeight.w700,
+                      fontWeight: FontWeight.w800,
                       color: iconCol,
                     ),
                   ),
                   TextSpan(
                     text: tipText,
                     style: TextStyle(
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.w500,
                       color: textCol,
                     ),
                   ),
@@ -435,7 +479,7 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
               style: TextStyle(
                 fontFamily: 'Outfit',
                 fontSize: 12.5.sp,
-                height: 1.4,
+                height: 1.42,
               ),
             ),
           ),
@@ -475,11 +519,15 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
                   fontSize: 15.sp,
                   fontWeight: FontWeight.w700,
                   color: Colors.white,
-                  letterSpacing: 0.5,
+                  letterSpacing: 0.4,
                 ),
               ),
               SizedBox(width: 8.w),
-              Icon(Icons.arrow_forward_rounded, size: 16.r, color: Colors.white),
+              Icon(
+                Icons.arrow_forward_ios_rounded,
+                size: 13.r,
+                color: Colors.white,
+              ),
             ],
           ),
         ),
