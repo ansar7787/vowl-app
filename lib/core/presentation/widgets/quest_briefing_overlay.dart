@@ -3,6 +3,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:vowl/core/presentation/widgets/scale_button.dart';
 import 'package:vowl/core/theme/app_colors.dart';
+import 'package:vowl/core/utils/haptic_service.dart';
+import 'package:vowl/core/utils/injection_container.dart' as di;
 import 'package:vowl/core/utils/locale_service.dart';
 import 'quest_briefing_rule_item.dart';
 
@@ -63,6 +65,9 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
 
   void _handleDismiss() {
     if (_isExitingNotifier.value || !mounted) return;
+    try {
+      di.sl<HapticService>().light();
+    } catch (_) {}
     _isExitingNotifier.value = true;
     Future<void>.delayed(
       _animDuration + const Duration(milliseconds: 20),
@@ -131,113 +136,116 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
 
                 // Card Center
                 Center(
-                  child: SingleChildScrollView(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 16.w,
-                      vertical: 24.h,
-                    ),
-                    physics: const BouncingScrollPhysics(),
-                    child: Container(
-                      width: double.infinity,
-                      constraints: const BoxConstraints(maxWidth: 460),
-                      padding: EdgeInsets.all(22.r),
-                      decoration: BoxDecoration(
-                        color: cardBg,
-                        borderRadius: BorderRadius.circular(24.r),
-                        border: Border.all(color: cardBorder, width: 1.0),
-                        boxShadow: cardShadow != null ? [cardShadow] : null,
+                  child: ScrollConfiguration(
+                    behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+                    child: SingleChildScrollView(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 16.w,
+                        vertical: 24.h,
                       ),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // 1. Top Bar: Category Pill / Phase Badge & Close Button
-                          _buildTopBar(context, isDark, isMidnight),
-                          SizedBox(height: 16.h),
+                      physics: const BouncingScrollPhysics(),
+                      child: Container(
+                        width: double.infinity,
+                        constraints: const BoxConstraints(maxWidth: 460),
+                        padding: EdgeInsets.all(22.r),
+                        decoration: BoxDecoration(
+                          color: cardBg,
+                          borderRadius: BorderRadius.circular(24.r),
+                          border: Border.all(color: cardBorder, width: 1.0),
+                          boxShadow: cardShadow != null ? [cardShadow] : null,
+                        ),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // 1. Top Bar: Category Pill / Phase Badge & Close Button
+                            _buildTopBar(context, isDark, isMidnight),
+                            SizedBox(height: 16.h),
 
-                          // 2. Title (Left-aligned, w700)
-                          Text(
-                            widget.title,
-                            style: TextStyle(
-                              fontFamily: 'Outfit',
-                              fontSize: 20.sp,
-                              fontWeight: FontWeight.w700,
-                              color: titleCol,
-                              letterSpacing: -0.3,
-                              height: 1.25,
-                            ),
-                          ),
-
-                          // 3. Objective (Clean subtitle, no redundant grey box)
-                          if (widget.objective.isNotEmpty) ...[
-                            SizedBox(height: 6.h),
+                            // 2. Title (Left-aligned, w700)
                             Text(
-                              widget.objective,
+                              widget.title,
                               style: TextStyle(
                                 fontFamily: 'Outfit',
-                                fontSize: 13.5.sp,
-                                fontWeight: FontWeight.w400,
-                                color: subtitleCol,
-                                height: 1.45,
+                                fontSize: 20.sp,
+                                fontWeight: FontWeight.w700,
+                                color: titleCol,
+                                letterSpacing: -0.3,
+                                height: 1.25,
                               ),
                             ),
-                          ],
 
-                          // 4. Subtle Divider
-                          SizedBox(height: 16.h),
-                          Divider(
-                            color: isMidnight
-                                ? Colors.white.withValues(alpha: 0.10)
-                                : (isDark
-                                      ? Colors.white.withValues(alpha: 0.08)
-                                      : AppColors.slate200),
-                            height: 1,
-                          ),
-                          SizedBox(height: 14.h),
-
-                          // 5. "HOW TO PLAY" Section
-                          if (_ruleWidgets.isNotEmpty) ...[
-                            Row(
-                              children: [
-                                Text(
-                                  context.tr(
-                                    'games.how_to_play',
-                                    fallback: 'HOW TO PLAY',
-                                  ),
-                                  style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 11.sp,
-                                    fontWeight: FontWeight.w700,
-                                    letterSpacing: 1.0,
-                                    color: isDark
-                                        ? Colors.white38
-                                        : AppColors.slate400,
-                                  ),
+                            // 3. Objective (Clean subtitle, no redundant grey box)
+                            if (widget.objective.isNotEmpty) ...[
+                              SizedBox(height: 6.h),
+                              Text(
+                                widget.objective,
+                                style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 13.5.sp,
+                                  fontWeight: FontWeight.w400,
+                                  color: subtitleCol,
+                                  height: 1.45,
                                 ),
-                              ],
+                              ),
+                            ],
+
+                            // 4. Subtle Divider
+                            SizedBox(height: 16.h),
+                            Divider(
+                              color: isMidnight
+                                  ? Colors.white.withValues(alpha: 0.10)
+                                  : (isDark
+                                        ? Colors.white.withValues(alpha: 0.08)
+                                        : AppColors.slate200),
+                              height: 1,
                             ),
-                            SizedBox(height: 10.h),
-                            ..._ruleWidgets,
+                            SizedBox(height: 14.h),
+
+                            // 5. "HOW TO PLAY" Section
+                            if (_ruleWidgets.isNotEmpty) ...[
+                              Row(
+                                children: [
+                                  Text(
+                                    context.tr(
+                                      'games.how_to_play',
+                                      fallback: 'HOW TO PLAY',
+                                    ),
+                                    style: TextStyle(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 11.sp,
+                                      fontWeight: FontWeight.w700,
+                                      letterSpacing: 1.0,
+                                      color: isDark
+                                          ? Colors.white38
+                                          : AppColors.slate400,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(height: 10.h),
+                              ..._ruleWidgets,
+                            ],
+
+                            // 6. Pro-Tip Strip (Subtle, elegant warm accent)
+                            if (widget.tip.isNotEmpty)
+                              _buildTipStrip(isDark, isMidnight),
+
+                            // 7. Solid Tactile Primary CTA Button (Zero Neon Glow)
+                            SizedBox(height: 18.h),
+                            _buildCtaButton(),
                           ],
-
-                          // 6. Pro-Tip Strip (Subtle, elegant warm accent)
-                          if (widget.tip.isNotEmpty)
-                            _buildTipStrip(isDark, isMidnight),
-
-                          // 7. Solid Tactile Primary CTA Button (Zero Neon Glow)
-                          SizedBox(height: 18.h),
-                          _buildCtaButton(),
-                        ],
-                      ),
-                    )
-                        .animate(target: isExiting ? 1 : 0)
-                        .scale(
-                          begin: const Offset(1, 1),
-                          end: const Offset(0.95, 0.95),
-                          duration: _animDuration,
-                          curve: Curves.easeIn,
-                        )
-                        .fadeOut(duration: 200.ms),
+                        ),
+                      )
+                          .animate(target: isExiting ? 1 : 0)
+                          .scale(
+                            begin: const Offset(1, 1),
+                            end: const Offset(0.95, 0.95),
+                            duration: _animDuration,
+                            curve: Curves.easeIn,
+                          )
+                          .fadeOut(duration: 200.ms),
+                    ),
                   ),
                 ),
               ],
@@ -251,76 +259,88 @@ class _QuestBriefingOverlayState extends State<QuestBriefingOverlay> {
   Widget _buildTopBar(BuildContext context, bool isDark, bool isMidnight) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         // Category Icon & Badge
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              width: 34.r,
-              height: 34.r,
-              decoration: BoxDecoration(
-                color: widget.primaryColor.withValues(
-                  alpha: isDark ? 0.16 : 0.10,
-                ),
-                borderRadius: BorderRadius.circular(10.r),
-                border: Border.all(
-                  color: widget.primaryColor.withValues(
-                    alpha: isDark ? 0.35 : 0.20,
-                  ),
-                  width: 1,
-                ),
-              ),
-              child: Center(
-                child: Icon(
-                  widget.icon,
-                  color: widget.primaryColor,
-                  size: 18.r,
-                ),
-              ),
-            ),
-            SizedBox(width: 8.w),
-            if (widget.phaseBadge != null)
+        Expanded(
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 3.h),
+                width: 34.r,
+                height: 34.r,
                 decoration: BoxDecoration(
                   color: widget.primaryColor.withValues(
-                    alpha: isDark ? 0.15 : 0.10,
+                    alpha: isDark ? 0.16 : 0.10,
                   ),
-                  borderRadius: BorderRadius.circular(8.r),
+                  borderRadius: BorderRadius.circular(10.r),
                   border: Border.all(
                     color: widget.primaryColor.withValues(
-                      alpha: isDark ? 0.35 : 0.25,
+                      alpha: isDark ? 0.35 : 0.20,
                     ),
                     width: 1,
                   ),
                 ),
-                child: Text(
-                  widget.phaseBadge!,
-                  style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontSize: 10.5.sp,
-                    fontWeight: FontWeight.w700,
+                child: Center(
+                  child: Icon(
+                    widget.icon,
                     color: widget.primaryColor,
-                    letterSpacing: 0.6,
+                    size: 18.r,
                   ),
                 ),
-              )
-            else
-              Text(
-                context
-                    .tr('common.mission_briefing', fallback: 'MISSION BRIEFING')
-                    .toUpperCase(),
-                style: TextStyle(
-                  fontFamily: 'Outfit',
-                  fontSize: 10.5.sp,
-                  fontWeight: FontWeight.w700,
-                  color: widget.primaryColor,
-                  letterSpacing: 1.2,
-                ),
               ),
-          ],
+              SizedBox(width: 8.w),
+              if (widget.phaseBadge != null)
+                Flexible(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 3.h),
+                    decoration: BoxDecoration(
+                      color: widget.primaryColor.withValues(
+                        alpha: isDark ? 0.15 : 0.10,
+                      ),
+                      borderRadius: BorderRadius.circular(8.r),
+                      border: Border.all(
+                        color: widget.primaryColor.withValues(
+                          alpha: isDark ? 0.35 : 0.25,
+                        ),
+                        width: 1,
+                      ),
+                    ),
+                    child: Text(
+                      widget.phaseBadge!,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontFamily: 'Outfit',
+                        fontSize: 10.5.sp,
+                        fontWeight: FontWeight.w700,
+                        color: widget.primaryColor,
+                        letterSpacing: 0.6,
+                      ),
+                    ),
+                  ),
+                )
+              else
+                Flexible(
+                  child: Text(
+                    context
+                        .tr('common.mission_briefing', fallback: 'MISSION BRIEFING')
+                        .toUpperCase(),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontSize: 10.5.sp,
+                      fontWeight: FontWeight.w700,
+                      color: widget.primaryColor,
+                      letterSpacing: 1.2,
+                    ),
+                  ),
+                ),
+            ],
+          ),
         ),
+        SizedBox(width: 8.w),
 
         // Dismiss / Close Button (✕)
         Semantics(

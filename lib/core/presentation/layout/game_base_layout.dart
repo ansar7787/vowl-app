@@ -230,7 +230,14 @@ class _GameBaseLayoutState<B extends StateStreamableSource<S>, S>
           return PopScope(
             canPop: canDirectlyPop,
             onPopInvokedWithResult: (didPop, _) {
-              if (!didPop && !isGameOver) _onExitPressed(context);
+              if (!didPop && !isGameOver) {
+                if (_showBriefing) {
+                  _showBriefing = false;
+                  _updateState();
+                  return;
+                }
+                _onExitPressed(context);
+              }
             },
             child: MediaQuery(
               data: MediaQuery.of(context).copyWith(
