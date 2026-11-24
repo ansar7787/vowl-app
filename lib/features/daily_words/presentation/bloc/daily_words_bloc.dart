@@ -561,6 +561,7 @@ class DailyWordsBloc extends Bloc<DailyWordsEvent, DailyWordsState> {
     );
     emit(
       state.copyWith(
+        status: DailyWordsStatus.loaded,
         wordBankEntries: results,
         reviewQueue: _service.wordsForReview,
         masteryStats: _service.masteryStats,
