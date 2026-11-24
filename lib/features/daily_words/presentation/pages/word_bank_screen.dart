@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:intl/intl.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -554,6 +555,48 @@ class _WordBankScreenState extends State<WordBankScreen> {
               color: AppColors.indigo500,
               icon: Icons.bolt_rounded,
               isDark: isDark,
+              trailingAction: GestureDetector(
+                onTap: () {
+                  _haptics.selection();
+                  context.push(AppRouter.dailyWordsRoute);
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 10.w,
+                    vertical: 4.h,
+                  ),
+                  decoration: BoxDecoration(
+                    color: AppColors.indigo500.withValues(
+                      alpha: isDark ? 0.25 : 0.1,
+                    ),
+                    borderRadius: BorderRadius.circular(20.r),
+                    border: Border.all(
+                      color: AppColors.indigo500.withValues(alpha: 0.3),
+                      width: 1,
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(
+                        Icons.play_arrow_rounded,
+                        size: 15.r,
+                        color: AppColors.indigo500,
+                      ),
+                      SizedBox(width: 3.w),
+                      Text(
+                        'Practice',
+                        style: TextStyle(
+                          fontFamily: 'Outfit',
+                          fontSize: 11.5.sp,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.indigo500,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
           ),
         ),
@@ -590,7 +633,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
               child: _buildSectionHeader(
-                title: 'Learning (Box 1)',
+                title: 'Learning',
                 count: learningWords.length,
                 color: AppColors.blue500,
                 icon: Icons.school_rounded,
@@ -617,7 +660,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
               child: _buildSectionHeader(
-                title: 'Reviewing (Box 2)',
+                title: 'Reviewing',
                 count: reviewingWords.length,
                 color: AppColors.amber500,
                 icon: Icons.loop_rounded,
@@ -679,40 +722,12 @@ class _WordBankScreenState extends State<WordBankScreen> {
       ];
     }
 
-    // Default: WordBankFilter.all -> Sections for Today, Learning, Reviewing, Mastered!
+    // Default: WordBankFilter.all -> Sections for Learning, Reviewing, Mastered (no duplicate Today section)!
     if (allWords.isEmpty) {
       return [SliverToBoxAdapter(child: _buildEmptyState(context, isDark))];
     }
 
     final slivers = <Widget>[];
-
-    if (todayWords.isNotEmpty) {
-      slivers.add(
-        SliverToBoxAdapter(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
-            child: _buildSectionHeader(
-              title: "Today's Words",
-              count: todayWords.length,
-              color: AppColors.indigo500,
-              icon: Icons.bolt_rounded,
-              isDark: isDark,
-            ),
-          ),
-        ),
-      );
-      slivers.add(
-        SliverPadding(
-          padding: EdgeInsets.symmetric(horizontal: AppSpacing.screen),
-          sliver: SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) => _buildWordCard(todayWords[index], isDark),
-              childCount: todayWords.length,
-            ),
-          ),
-        ),
-      );
-    }
 
     if (learningWords.isNotEmpty) {
       slivers.add(
@@ -801,12 +816,39 @@ class _WordBankScreenState extends State<WordBankScreen> {
     return slivers;
   }
 
+  String _formatLearnedDate(String rawDate, int box) {
+    final prefix = box >= 3 ? 'Mastered' : 'Learned';
+    if (rawDate.isEmpty) return '$prefix recently';
+    try {
+      final now = DateTime.now();
+      final todayStr =
+          '${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}';
+      final yesterday = now.subtract(const Duration(days: 1));
+      final yesterdayStr =
+          '${yesterday.year}-${yesterday.month.toString().padLeft(2, '0')}-${yesterday.day.toString().padLeft(2, '0')}';
+
+      if (rawDate == todayStr) {
+        return '$prefix today';
+      }
+      if (rawDate == yesterdayStr) {
+        return '$prefix yesterday';
+      }
+
+      final parsed = DateTime.tryParse(rawDate);
+      if (parsed != null) {
+        return '$prefix on ${DateFormat.MMMd().format(parsed)}';
+      }
+    } catch (_) {}
+    return '$prefix on $rawDate';
+  }
+
   Widget _buildSectionHeader({
     required String title,
     required int count,
     required Color color,
     required IconData icon,
     required bool isDark,
+    Widget? trailingAction,
   }) {
     return Padding(
       padding: EdgeInsets.fromLTRB(4.w, 14.h, 4.w, 10.h),
@@ -841,6 +883,10 @@ class _WordBankScreenState extends State<WordBankScreen> {
               ),
             ),
           ),
+          if (trailingAction != null) ...[
+            const Spacer(),
+            trailingAction,
+          ],
         ],
       ),
     );
@@ -877,7 +923,7 @@ class _WordBankScreenState extends State<WordBankScreen> {
                       ),
                       SizedBox(height: 4.h),
                       AutoSizeText(
-                        'Learned on ${word.learnedDate}',
+                        _formatLearnedDate(word.learnedDate, word.box),
                         style: TextStyle(
                           fontFamily: 'Outfit',
                           fontSize: 12.sp,
@@ -1159,7 +1205,10 @@ class _WordBankScreenState extends State<WordBankScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Learned: ${progress.learnedDate}',
+                            _formatLearnedDate(
+                              progress.learnedDate,
+                              progress.box,
+                            ),
                             style: TextStyle(
                               fontFamily: 'Outfit',
                               fontSize: 12.sp,
